@@ -16,13 +16,22 @@ Replace the dual homepage CTAs (“Find Trusted Movers” / “Get My Move Estim
 
 ## Structure
 
-| UI phase | Steps |
-|---------|--------|
-| Plan | Route (From / To ZIPs) |
-| Build | Shortlist (max 3) → Inventory (templates) |
-| Book | Report + outreach + optional save |
+| UI phase | Steps | Visual tone |
+|---------|--------|-------------|
+| Plan | Route (From / To ZIPs) | Sky — focused route entry |
+| Build | Shortlist (max 3) → Inventory (templates) | Violet — selection + live load metrics |
+| Book | Report Ready (conversion) | Emerald — celebratory payoff |
 
-**Readiness score (0–100):** route +20, shortlist +20, inventory +40, report +20.
+**Readiness score (0–100):** route +20, shortlist +20, inventory +40, report +20. On the report step the score is an achievement badge (not a tiny pill).
+
+### Report Ready (Book) hierarchy
+
+1. Celebratory header + readiness achievement  
+2. Unified quote-brief card (route · load · truck) with inventory preview toggle  
+3. Primary full-width CTA: **Send report to all N movers**  
+4. Compact shortlist checklist + ⋯ overflow (copy template / email / profile / remove)  
+5. “What happens next” (reply time, same inventory, no lead resellers)  
+6. Tertiary links: edit inventory, copy plan, save My Move
 
 ## Technical
 

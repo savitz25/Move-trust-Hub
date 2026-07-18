@@ -6,12 +6,9 @@ import {
   ArrowRight,
   Check,
   ChevronLeft,
-  ClipboardCopy,
-  KeyRound,
   Loader2,
-  Mail,
-  MapPin,
   Navigation,
+  Route,
   Sparkles,
   Truck,
 } from 'lucide-react';
@@ -65,6 +62,7 @@ import type {
   MyMovePlanStep,
   PlanInventoryItem,
 } from '@/lib/my-move-plan/types';
+import { ReportReadyStep } from '@/components/my-move-plan/report-ready-step';
 import { cn } from '@/lib/utils';
 
 type RouteResponse = HomeRouteResult & {
@@ -75,10 +73,37 @@ type RouteResponse = HomeRouteResult & {
 const PRESET_OPTIONS = MOVE_PRESETS.filter((p) => p.id !== 'custom');
 
 const PHASES = [
-  { id: 'plan', label: 'Plan' },
-  { id: 'build', label: 'Build' },
-  { id: 'book', label: 'Book' },
+  { id: 'plan', label: 'Plan', hint: 'Route' },
+  { id: 'build', label: 'Build', hint: 'Movers + load' },
+  { id: 'book', label: 'Book', hint: 'Report' },
 ] as const;
+
+const PHASE_SHELL: Record<
+  'plan' | 'build' | 'book',
+  { shell: string; progress: string; chip: string; eyebrow: string }
+> = {
+  plan: {
+    shell:
+      'border-sky-200/70 bg-gradient-to-b from-sky-50/90 via-white to-white shadow-sky-900/5',
+    progress: 'bg-sky-600',
+    chip: 'border-sky-200 bg-sky-50 text-sky-800',
+    eyebrow: 'Plan · lock your route',
+  },
+  build: {
+    shell:
+      'border-violet-200/70 bg-gradient-to-b from-violet-50/80 via-white to-white shadow-violet-900/5',
+    progress: 'bg-violet-600',
+    chip: 'border-violet-200 bg-violet-50 text-violet-800',
+    eyebrow: 'Build · shortlist & inventory',
+  },
+  book: {
+    shell:
+      'border-emerald-200/80 bg-gradient-to-b from-emerald-50/70 via-white to-white shadow-emerald-900/5',
+    progress: 'bg-emerald-600',
+    chip: 'border-emerald-200 bg-emerald-50 text-emerald-800',
+    eyebrow: 'Book · report & estimates',
+  },
+};
 
 type WizardProps = {
   fallbackMovers?: HomeRouteMover[];
@@ -313,7 +338,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
           description: 'Review and send from your mail app. Add your name and phone before sending.',
         });
       } catch {
-        toast.error('Could not open your email app — use Copy request instead.');
+        toast.error('Could not open your email app — use Copy email template instead.');
       }
     },
     [fromPlace, toPlace, drivingMiles, inventory]
@@ -330,9 +355,32 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
     });
     try {
       await navigator.clipboard.writeText(body);
-      toast.success(`Estimate request for ${mover.name} copied`);
+      toast.success(`Email template for ${mover.name} copied`);
     } catch {
       toast.error('Could not copy — try again');
+    }
+  };
+
+  const copyAllOutreachTemplates = async () => {
+    if (shortlist.length === 0) return;
+    const blocks = shortlist.map((mover) => {
+      const { body } = buildOutreachEmail({
+        from: fromPlace,
+        to: toPlace,
+        drivingMiles,
+        inventory,
+        estimatedWeight: weight,
+        mover,
+      });
+      return `========== ${mover.name} ==========\n${body}`;
+    });
+    try {
+      await navigator.clipboard.writeText(blocks.join('\n\n'));
+      toast.success(`Copied ${shortlist.length} estimate templates`, {
+        description: 'Paste into separate emails for each mover so they quote the same inventory.',
+      });
+    } catch {
+      toast.error('Could not copy templates — try one mover at a time');
     }
   };
 
@@ -342,7 +390,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
 
       if (saveMyMove.loading) {
         toast.message('Preparing sign-in…', {
-          description: 'Try Email again in a moment.',
+          description: 'Try again in a moment.',
         });
         stashPendingWizardOutreach({
           companySlug: mover.slug,
@@ -356,7 +404,6 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
           companySlug: mover.slug,
           companyName: mover.name,
         });
-        // Also save mover + email details after auth (My Move shortlist)
         stashPendingSaveAction({
           type: 'mover',
           payload: {
@@ -367,12 +414,11 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
         });
         setEmailPendingSlug(mover.slug);
         saveMyMove.openSaveModal({
-          // Return to wizard (not Move HQ) so outreach can complete
           redirectPath: MY_MOVE_PLAN_RETURN_PATH,
           context: 'mover',
         });
         toast.message('Sign in to send estimate requests', {
-          description: 'Save My Move keeps your plan and opens a ready-to-send email draft.',
+          description: 'Your plan is saved — we’ll open a ready-to-send draft after you sign in.',
         });
         return;
       }
@@ -382,6 +428,56 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
     },
     [persistPlan, saveMyMove, openEstimateMailto]
   );
+
+  const handleSendAll = useCallback(() => {
+    persistPlan();
+    if (shortlist.length === 0) {
+      toast.message('Shortlist is empty', {
+        description: 'Pick up to 3 movers so they all quote the same inventory.',
+      });
+      setStep('shortlist');
+      return;
+    }
+
+    if (saveMyMove.loading) {
+      toast.message('Preparing sign-in…');
+      return;
+    }
+
+    if (!saveMyMove.user) {
+      const first = shortlist[0];
+      stashPendingWizardOutreach({
+        companySlug: first.slug,
+        companyName: first.name,
+      });
+      stashPendingSaveAction({
+        type: 'mover',
+        payload: {
+          companySlug: first.slug,
+          companyName: first.name,
+          sendEmail: true,
+        },
+      });
+      setEmailPendingSlug(first.slug);
+      saveMyMove.openSaveModal({
+        redirectPath: MY_MOVE_PLAN_RETURN_PATH,
+        context: 'mover',
+      });
+      toast.message('Sign in to send your report', {
+        description: 'After sign-in we open your first draft and copy all templates.',
+      });
+      return;
+    }
+
+    void copyAllOutreachTemplates().then(() => {
+      openEstimateMailto(shortlist[0]);
+      if (shortlist.length > 1) {
+        toast.message('First draft opened', {
+          description: `All ${shortlist.length} templates are on your clipboard for the other movers.`,
+        });
+      }
+    });
+  }, [persistPlan, shortlist, saveMyMove, openEstimateMailto, fromPlace, toPlace, drivingMiles, inventory, weight]);
 
   // Allow a new post-auth outreach after sign-out
   useEffect(() => {
@@ -438,13 +534,18 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
   const openSave = useCallback(() => {
     persistPlan();
     saveMyMove.openSaveModal({
-      // Land on My Move so create-password offer runs after first save/sign-in
       redirectPath: '/my-move',
       context: 'dashboard',
     });
   }, [saveMyMove, persistPlan]);
 
+  const removeMover = useCallback((slug: string) => {
+    setShortlist((prev) => prev.filter((m) => m.slug !== slug));
+    toast.message('Removed from shortlist');
+  }, []);
+
   const signedInUser = saveMyMove.user;
+  const phaseTheme = PHASE_SHELL[activePhase];
   const userHasPassword = Boolean(
     signedInUser &&
       (((signedInUser.user_metadata ?? {}) as Record<string, unknown>)[
@@ -465,22 +566,39 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
 
   return (
     <div id={MY_MOVE_PLAN_SECTION_ID} className="w-full scroll-mt-24">
-      <div className="rounded-3xl border border-white/60 bg-white/90 p-4 shadow-xl shadow-primary/10 backdrop-blur-md sm:p-6 md:p-8">
-        {/* Phase + readiness */}
-        <div className="mb-5 space-y-3">
+      <div
+        className={cn(
+          'rounded-3xl border p-4 shadow-xl backdrop-blur-md sm:p-6 md:p-8 transition-colors duration-300',
+          phaseTheme.shell
+        )}
+      >
+        {/* Phase stepper */}
+        <div className="mb-6 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
               <Sparkles className="h-4 w-4 text-primary" aria-hidden />
-              My Move Plan — city or ZIP · no lead form
+              <span>
+                My Move Plan
+                <span className="hidden sm:inline"> · no lead forms · independent</span>
+              </span>
             </div>
-            <div
-              className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary"
-              aria-live="polite"
-            >
-              Move readiness {readiness}
-              <span className="font-normal text-muted-foreground">/100</span>
-            </div>
+            {step !== 'report' ? (
+              <div
+                className={cn(
+                  'inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold',
+                  phaseTheme.chip
+                )}
+                aria-live="polite"
+              >
+                Readiness {readiness}
+                <span className="font-normal opacity-70">/100</span>
+              </div>
+            ) : null}
           </div>
+
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            {phaseTheme.eyebrow}
+          </p>
 
           <div className="flex items-center gap-1 sm:gap-2" role="list" aria-label="Plan phases">
             {PHASES.map((phase, idx) => {
@@ -493,16 +611,26 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                 <div key={phase.id} className="flex flex-1 items-center gap-1 sm:gap-2" role="listitem">
                   <div
                     className={cn(
-                      'flex h-8 flex-1 items-center justify-center rounded-full text-xs font-semibold transition-colors sm:h-9 sm:text-sm',
-                      active && 'bg-primary text-primary-foreground shadow-sm',
-                      done && !active && 'bg-primary/15 text-primary',
-                      !active && !done && 'bg-muted text-muted-foreground'
+                      'flex min-h-9 flex-1 flex-col items-center justify-center rounded-2xl px-1 py-1.5 text-center text-xs font-semibold transition-colors sm:min-h-11 sm:text-sm',
+                      active && activePhase === 'plan' && 'bg-sky-600 text-white shadow-sm',
+                      active && activePhase === 'build' && 'bg-violet-600 text-white shadow-sm',
+                      active && activePhase === 'book' && 'bg-emerald-600 text-white shadow-sm',
+                      done && !active && 'bg-foreground/10 text-foreground',
+                      !active && !done && 'bg-muted/80 text-muted-foreground'
                     )}
                   >
-                    {done && !active ? (
-                      <Check className="h-3.5 w-3.5" aria-hidden />
-                    ) : null}
-                    <span className={cn(done && !active && 'ml-1')}>{phase.label}</span>
+                    <span className="inline-flex items-center gap-1">
+                      {done && !active ? <Check className="h-3.5 w-3.5" aria-hidden /> : null}
+                      {phase.label}
+                    </span>
+                    <span
+                      className={cn(
+                        'hidden text-[10px] font-normal sm:block',
+                        active ? 'text-white/80' : 'text-muted-foreground'
+                      )}
+                    >
+                      {phase.hint}
+                    </span>
                   </div>
                   {idx < PHASES.length - 1 ? (
                     <div className="hidden h-px w-3 bg-border sm:block" aria-hidden />
@@ -512,24 +640,28 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
             })}
           </div>
 
-          <div className="h-1.5 overflow-hidden rounded-full bg-muted">
+          <div className="h-1.5 overflow-hidden rounded-full bg-muted/80">
             <div
-              className="h-full rounded-full bg-primary transition-all duration-500 ease-out"
+              className={cn('h-full rounded-full transition-all duration-500 ease-out', phaseTheme.progress)}
               style={{ width: `${barPct}%` }}
             />
           </div>
         </div>
 
-        {/* STEP: route */}
+        {/* STEP: route (Plan) */}
         {step === 'route' ? (
-          <div className="space-y-4">
-            <div>
-              <h2 className="text-lg font-semibold tracking-tight sm:text-xl">
+          <div className="space-y-5">
+            <div className="rounded-2xl border border-sky-100 bg-white/80 p-4 sm:p-5">
+              <div className="mb-1 flex items-center gap-2 text-sky-700">
+                <Route className="h-4 w-4" aria-hidden />
+                <span className="text-xs font-semibold uppercase tracking-wide">Step 1 · Plan</span>
+              </div>
+              <h2 className="text-xl font-semibold tracking-tight text-[#0A2540] sm:text-2xl">
                 Where are you moving?
               </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Confirm origin (required) and destination. We&apos;ll match movers near pickup
-                and track distance for your plan.
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                Start with your pickup city or ZIP. Destination is optional — we&apos;ll match
+                trusted movers near origin and estimate distance for your report.
               </p>
             </div>
 
@@ -548,7 +680,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                 className="hidden h-14 w-12 shrink-0 items-center justify-center sm:flex sm:h-16"
                 aria-hidden
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sky-700">
                   <Navigation className="h-5 w-5" />
                 </div>
               </div>
@@ -564,19 +696,26 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
             </div>
 
             {fromPlace ? (
-              <p className="text-sm text-muted-foreground">
-                Route:{' '}
+              <div className="flex flex-wrap items-center gap-2 rounded-xl border border-sky-200/80 bg-sky-50/80 px-3 py-2.5 text-sm">
+                <Check className="h-4 w-4 text-sky-700" aria-hidden />
                 <span className="font-semibold text-foreground">
                   {fromPlace.label}
                   {toPlace ? ` → ${toPlace.label}` : ''}
                 </span>
                 {drivingMiles ? (
-                  <> · ~{drivingMiles.toLocaleString()} mi est.</>
+                  <Badge variant="secondary" className="tabular-nums">
+                    ~{drivingMiles.toLocaleString()} mi
+                  </Badge>
+                ) : routeLoading ? (
+                  <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                    <Loader2 className="h-3 w-3 animate-spin" /> Calculating route…
+                  </span>
                 ) : null}
-              </p>
+              </div>
             ) : (
               <p className="text-sm text-muted-foreground">
-                Type a city (e.g. Boca Raton) or ZIP — confirm City, State when asked.
+                Type a city (e.g. Boca Raton) or ZIP — confirm City, State when asked. You&apos;re
+                almost ready to build your plan.
               </p>
             )}
 
@@ -585,25 +724,28 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
               size="lg"
               disabled={!fromPlace || routeLoading}
               onClick={goToShortlist}
-              className="h-14 w-full gap-2 rounded-2xl text-base font-semibold shadow-md sm:h-16 sm:text-lg"
+              className="h-14 w-full gap-2 rounded-2xl bg-sky-600 text-base font-semibold shadow-md hover:bg-sky-700 sm:h-16 sm:text-lg"
             >
               {routeLoading ? (
                 <Loader2 className="h-5 w-5 animate-spin" aria-hidden />
               ) : (
                 <Truck className="h-5 w-5" aria-hidden />
               )}
-              Start My Move Plan
+              Continue to shortlist
               <ArrowRight className="h-5 w-5" aria-hidden />
             </Button>
           </div>
         ) : null}
 
-        {/* STEP: shortlist */}
+        {/* STEP: shortlist (Build) */}
         {step === 'shortlist' ? (
           <div className="space-y-4">
-            <div className="flex items-start justify-between gap-3">
+            <div className="flex items-start justify-between gap-3 rounded-2xl border border-violet-100 bg-white/80 p-4">
               <div>
-                <h2 className="text-lg font-semibold tracking-tight sm:text-xl">
+                <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-violet-700">
+                  Step 2 · Build · Shortlist
+                </div>
+                <h2 className="text-xl font-semibold tracking-tight text-[#0A2540] sm:text-2xl">
                   Pick up to 3 movers
                 </h2>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -611,18 +753,24 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                   <span className="font-medium text-foreground">
                     {route?.localAreaLabel || fromPlace?.label || 'your area'}
                   </span>
-                  . You can edit this later.
+                  . Same inventory goes to each later — that&apos;s the fair comparison.
                 </p>
               </div>
-              <Badge variant="outline" className="shrink-0">
+              <Badge
+                className={cn(
+                  'shrink-0 border-violet-200 bg-violet-100 text-violet-900 hover:bg-violet-100',
+                  shortlist.length === 3 && 'border-emerald-200 bg-emerald-100 text-emerald-900'
+                )}
+              >
                 {shortlist.length}/3
               </Badge>
             </div>
 
-            <div className="rounded-xl border border-primary/15 bg-primary/5 px-3 py-2 text-xs leading-relaxed text-foreground sm:text-sm">
-              <strong className="font-semibold">Why 3?</strong> Getting three estimates on the{' '}
-              <em>same</em> inventory is the only way to compare fairly — we help you send
-              identical details to each mover.
+            <div className="rounded-2xl border border-violet-200/70 bg-violet-50/90 px-4 py-3 text-sm leading-relaxed text-foreground">
+              <strong className="font-semibold text-violet-900">Why 3?</strong>{' '}
+              Getting three estimates on the <em>same</em> inventory is the only way to compare
+              fairly — no sales pitch, no lead broker middleman. We help you send identical
+              details to each mover.
             </div>
 
             <p className="text-xs text-muted-foreground">
@@ -676,8 +824,8 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                               className={cn(
                                 'rounded-2xl border p-3 text-left transition-all',
                                 selected
-                                  ? 'border-primary bg-primary/10 shadow-sm'
-                                  : 'border-border bg-card hover:border-primary/40'
+                                  ? 'border-violet-500 bg-violet-50 shadow-sm ring-1 ring-violet-200'
+                                  : 'border-border bg-card hover:border-violet-300'
                               )}
                             >
                               <div className="flex items-start justify-between gap-2">
@@ -687,7 +835,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                                   </div>
                                   <Badge
                                     variant="outline"
-                                    className="mt-1 border-primary/20 bg-background px-1.5 py-0 text-[10px] font-medium capitalize text-primary"
+                                    className="mt-1 border-violet-200 bg-background px-1.5 py-0 text-[10px] font-medium capitalize text-violet-800"
                                   >
                                     {group.tier}
                                   </Badge>
@@ -696,7 +844,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                                   className={cn(
                                     'flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[10px]',
                                     selected
-                                      ? 'border-primary bg-primary text-primary-foreground'
+                                      ? 'border-violet-600 bg-violet-600 text-white'
                                       : 'border-muted-foreground/30'
                                   )}
                                 >
@@ -712,7 +860,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                                   <EditorialReviewVolume count={m.reviewCount} />
                                 </span>
                               </div>
-                              <div className="mt-1 text-xs font-medium text-primary">
+                              <div className="mt-1 text-xs font-medium text-violet-800">
                                 Score {m.reputationScore}/100
                               </div>
                             </button>
@@ -728,13 +876,17 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
             <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
               <Button type="button" variant="ghost" onClick={() => setStep('route')} className="gap-1">
                 <ChevronLeft className="h-4 w-4" />
-                Back
+                Back to route
               </Button>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Button type="button" variant="outline" onClick={goToInventory}>
                   Skip for now
                 </Button>
-                <Button type="button" onClick={goToInventory} className="gap-2">
+                <Button
+                  type="button"
+                  onClick={goToInventory}
+                  className="gap-2 bg-violet-600 hover:bg-violet-700"
+                >
                   Continue to inventory
                   <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -743,15 +895,19 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
           </div>
         ) : null}
 
-        {/* STEP: inventory */}
+        {/* STEP: inventory (Build) */}
         {step === 'inventory' ? (
           <div className="space-y-4">
-            <div>
-              <h2 className="text-lg font-semibold tracking-tight sm:text-xl">
+            <div className="rounded-2xl border border-violet-100 bg-white/80 p-4">
+              <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-violet-700">
+                Step 2 · Build · Inventory
+              </div>
+              <h2 className="text-xl font-semibold tracking-tight text-[#0A2540] sm:text-2xl">
                 How big is your move?
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Tap a home size — we pre-load typical items. Adjust quantities; totals update live.
+                Tap a home size template — we pre-load typical items. Adjust quantities; volume,
+                weight, and truck size update live.
               </p>
             </div>
 
@@ -763,9 +919,9 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                   onClick={() => applyPreset(p.id)}
                   className={cn(
                     'flex min-h-[72px] flex-col items-center justify-center gap-1 rounded-xl border-2 px-2 py-3 text-center transition-all',
-                    'hover:border-primary hover:bg-primary/5 active:scale-[0.98]',
+                    'hover:border-violet-400 hover:bg-violet-50/80 active:scale-[0.98]',
                     preset === p.id
-                      ? 'border-primary bg-primary/10 shadow-sm'
+                      ? 'border-violet-600 bg-violet-100/80 shadow-sm'
                       : 'border-border/70 bg-card'
                   )}
                 >
@@ -778,7 +934,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
             </div>
 
             {totals.totalVolume > 0 ? (
-              <div className="rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-background p-4">
+              <div className="rounded-2xl border border-violet-200/60 bg-gradient-to-br from-violet-50/80 via-white to-white p-4 shadow-sm">
                 <div className="grid gap-3 sm:grid-cols-3">
                   <div>
                     <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
@@ -819,7 +975,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                   </div>
                   <div className="h-2 overflow-hidden rounded-full bg-muted">
                     <div
-                      className="h-full rounded-full bg-emerald-500 transition-all duration-300"
+                      className="h-full rounded-full bg-violet-500 transition-all duration-300"
                       style={{ width: `${truck.gaugePercent}%` }}
                     />
                   </div>
@@ -895,7 +1051,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                 type="button"
                 disabled={totals.totalVolume <= 0}
                 onClick={goToReport}
-                className="gap-2"
+                className="gap-2 bg-violet-600 hover:bg-violet-700"
               >
                 See my move report
                 <ArrowRight className="h-4 w-4" />
@@ -904,186 +1060,34 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
           </div>
         ) : null}
 
-        {/* STEP: report */}
+        {/* STEP: report (Book · Report Ready) */}
         {step === 'report' ? (
-          <div className="space-y-5">
-            <div>
-              <Badge className="mb-2 bg-emerald-600 hover:bg-emerald-600">
-                Report ready — no account required
-              </Badge>
-              <h2 className="text-lg font-semibold tracking-tight sm:text-xl">
-                Your personalized move report
-              </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Use this profile when you request estimates so every mover quotes the same load.
-              </p>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border bg-card p-4">
-                <div className="mb-1 flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  <MapPin className="h-3.5 w-3.5" />
-                  Route
-                </div>
-                <div className="font-semibold">
-                  {fromPlace?.label ?? '—'}
-                  {toPlace ? (
-                    <>
-                      <br />
-                      <span className="text-muted-foreground">→</span> {toPlace.label}
-                    </>
-                  ) : null}
-                </div>
-                {drivingMiles ? (
-                  <div className="mt-1 text-sm text-muted-foreground">
-                    ~{drivingMiles.toLocaleString()} miles
-                  </div>
-                ) : null}
-              </div>
-              <div className="rounded-2xl border bg-card p-4">
-                <div className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  Inventory profile
-                </div>
-                <div className="text-2xl font-semibold tabular-nums">
-                  {totals.totalVolume.toLocaleString()}{' '}
-                  <span className="text-sm font-normal text-muted-foreground">cu ft</span>
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  ~{weight.toLocaleString()} lbs · {totals.totalItems} items
-                </div>
-                <div className="mt-2 text-sm font-medium text-foreground">{truck.truck}</div>
-                <div className="text-xs text-muted-foreground">
-                  {truck.label} · {truck.movers}
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border p-4">
-              <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-                <h3 className="font-semibold">Request estimates from your shortlist</h3>
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setStep('shortlist')}
-                >
-                  Edit shortlist
-                </Button>
-              </div>
-
-              {shortlist.length === 0 ? (
-                <p className="text-sm text-muted-foreground">
-                  No movers selected yet.{' '}
-                  <button
-                    type="button"
-                    className="font-medium text-primary hover:underline"
-                    onClick={() => setStep('shortlist')}
-                  >
-                    Pick up to 3
-                  </button>{' '}
-                  so you can send the same inventory to each.
-                </p>
-              ) : (
-                <ul className="space-y-3">
-                  {shortlist.map((m) => {
-                    const emailBusy = emailPendingSlug === m.slug;
-                    return (
-                      <li
-                        key={m.slug}
-                        className="flex flex-col gap-2 rounded-xl border bg-muted/30 p-3 sm:flex-row sm:items-center sm:justify-between"
-                      >
-                        <div>
-                          <div className="font-semibold">{m.name}</div>
-                          <div className="text-xs text-muted-foreground">{m.headquarters}</div>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          <Button
-                            type="button"
-                            size="sm"
-                            variant="outline"
-                            className="gap-1"
-                            onClick={() => void copyOutreach(m)}
-                          >
-                            <ClipboardCopy className="h-3.5 w-3.5" />
-                            Copy request
-                          </Button>
-                          <Button
-                            type="button"
-                            size="sm"
-                            className="gap-1"
-                            disabled={saveMyMove.loading && emailBusy}
-                            onClick={() => handleEmailOutreach(m)}
-                          >
-                            <Mail className="h-3.5 w-3.5" />
-                            {emailBusy && !signedInUser ? 'Sign in…' : 'Email'}
-                          </Button>
-                          <Button type="button" size="sm" variant="ghost" asChild>
-                            <Link
-                              href={profileHref(m.slug)}
-                              onClick={() => persistPlan()}
-                            >
-                              Profile
-                            </Link>
-                          </Button>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
-            </div>
-
-            <div className="flex flex-col gap-2 rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <div className="font-semibold">
-                  {signedInUser ? 'Your plan is ready to keep' : 'Save this plan for later?'}
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  {signedInUser
-                    ? 'Signed in — open Move HQ anytime, or add a password for faster future logins.'
-                    : 'Optional free My Move profile — email your plan or come back anytime. Your report is already yours above.'}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <Button type="button" variant="outline" className="gap-1" onClick={() => void copyPlan()}>
-                  <ClipboardCopy className="h-4 w-4" />
-                  Copy full plan
-                </Button>
-                {signedInUser ? (
-                  <Button type="button" variant="outline" asChild className="gap-1">
-                    <Link href="/my-move">Open Move HQ</Link>
-                  </Button>
-                ) : (
-                  <Button type="button" onClick={openSave} className="gap-1">
-                    Save My Move
-                  </Button>
-                )}
-                {offerPasswordUpgrade ? (
-                  <Button type="button" className="gap-1" asChild>
-                    <Link href="/my-move/create-password?next=%2Fmy-move">
-                      <KeyRound className="h-4 w-4" />
-                      Create password
-                    </Link>
-                  </Button>
-                ) : null}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
-              <Button
-                type="button"
-                variant="ghost"
-                onClick={() => setStep('inventory')}
-                className="gap-1"
-              >
-                <ChevronLeft className="h-4 w-4" />
-                Edit inventory
-              </Button>
-              <Button type="button" variant="outline" asChild>
-                <Link href="/moving-calculator">Refine in full calculator</Link>
-              </Button>
-            </div>
-          </div>
+          <ReportReadyStep
+            readiness={readiness}
+            fromPlace={fromPlace}
+            toPlace={toPlace}
+            drivingMiles={drivingMiles}
+            inventory={inventory}
+            totalVolume={totals.totalVolume}
+            totalItems={totals.totalItems}
+            weight={weight}
+            truck={truck}
+            shortlist={shortlist}
+            signedIn={Boolean(signedInUser)}
+            emailPendingSlug={emailPendingSlug}
+            offerPasswordUpgrade={offerPasswordUpgrade}
+            authLoading={saveMyMove.loading}
+            profileHref={profileHref}
+            onSendAll={handleSendAll}
+            onEmailMover={handleEmailOutreach}
+            onCopyTemplate={(m) => void copyOutreach(m)}
+            onCopyPlan={() => void copyPlan()}
+            onSaveMyMove={openSave}
+            onEditInventory={() => setStep('inventory')}
+            onEditShortlist={() => setStep('shortlist')}
+            onRemoveMover={removeMover}
+            onPersistPlan={persistPlan}
+          />
         ) : null}
       </div>
 
