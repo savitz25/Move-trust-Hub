@@ -220,7 +220,7 @@ export default function HawaiiClusterPage() {
           <section className="py-12 md:py-16 bg-muted/20">
             <div className="container mx-auto px-4 max-w-6xl">
               <h2 className="text-2xl font-semibold tracking-tight mb-6">
-                More Hawaii Cities — Coming Soon
+                More Hawaii Cities 
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {otherHawaiiCities.map((market) => (
