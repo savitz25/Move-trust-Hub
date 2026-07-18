@@ -1,0 +1,676 @@
+{
+  "stateSlug": "arkansas",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "jr-brown-inc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "arkansas",
+      "local": 1,
+      "state": 1,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "ashley",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "baxter",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "benton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "boone",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "bradley",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "calhoun",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "carroll",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "chicot",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "clark",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "cleburne",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "cleveland",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "columbia",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "conway",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "craighead",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "crawford",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "crittenden",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "cross",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "dallas",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "desha",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "drew",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "faulkner",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "fulton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "garland",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "grant",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "greene",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "hempstead",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "hot-spring",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "howard",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "independence",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "izard",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "johnson",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lafayette",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lawrence",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lee",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "little-river",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "logan",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lonoke",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "marion",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "miller",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "mississippi",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "monroe",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "nevada",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "newton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "ouachita",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "perry",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "phillips",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "pike",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "poinsett",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "polk",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "pope",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "prairie",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "pulaski",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "randolph",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "saline",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "scott",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "searcy",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "sebastian",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "sevier",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "sharp",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "st-francis",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "stone",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "van-buren",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "white",
+      "local": 1,
+      "state": 1,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "woodruff",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "yell",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "arkansas": 25,
+    "ashley": 25,
+    "baxter": 25,
+    "benton": 25,
+    "boone": 25,
+    "bradley": 25,
+    "calhoun": 25,
+    "carroll": 25,
+    "chicot": 25,
+    "clark": 25,
+    "clay": 25,
+    "cleburne": 25,
+    "cleveland": 25,
+    "columbia": 25,
+    "conway": 25,
+    "craighead": 25,
+    "crawford": 25,
+    "crittenden": 25,
+    "cross": 25,
+    "dallas": 25,
+    "desha": 25,
+    "drew": 25,
+    "faulkner": 25,
+    "franklin": 25,
+    "fulton": 25,
+    "garland": 25,
+    "grant": 25,
+    "greene": 25,
+    "hempstead": 25,
+    "hot-spring": 25,
+    "howard": 25,
+    "independence": 25,
+    "izard": 25,
+    "jackson": 25,
+    "jefferson": 25,
+    "johnson": 25,
+    "lafayette": 25,
+    "lawrence": 25,
+    "lee": 25,
+    "lincoln": 25,
+    "little-river": 25,
+    "logan": 25,
+    "lonoke": 25,
+    "madison": 25,
+    "marion": 25,
+    "miller": 25,
+    "mississippi": 25,
+    "monroe": 25,
+    "montgomery": 25,
+    "nevada": 25,
+    "newton": 25,
+    "ouachita": 25,
+    "perry": 25,
+    "phillips": 25,
+    "pike": 25,
+    "poinsett": 25,
+    "polk": 25,
+    "pope": 25,
+    "prairie": 25,
+    "pulaski": 25,
+    "randolph": 25,
+    "saline": 25,
+    "scott": 25,
+    "searcy": 25,
+    "sebastian": 25,
+    "sevier": 25,
+    "sharp": 25,
+    "st-francis": 25,
+    "stone": 25,
+    "union": 25,
+    "van-buren": 25,
+    "washington": 25,
+    "white": 25,
+    "woodruff": 25,
+    "yell": 25
+  },
+  "major": {
+    "pulaski": {
+      "county": "pulaski",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "benton": {
+      "county": "benton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "washington": {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "sebastian": {
+      "county": "sebastian",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "faulkner": {
+      "county": "faulkner",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  }
+}

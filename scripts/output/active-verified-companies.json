@@ -1,0 +1,2436 @@
+[
+  {
+    "id": "2-college-brothers-moving-and-storage",
+    "slug": "2-college-brothers-moving-and-storage",
+    "name": "2 College Brothers Moving and Storage",
+    "headquarters": "Gainesville",
+    "usdot_number": "2787568",
+    "mc_number": "982991",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 1449
+  },
+  {
+    "id": "a-c-white-transfer-storage",
+    "slug": "a-c-white-transfer-storage",
+    "name": "A.C. White Transfer & Storage",
+    "headquarters": "Atlanta",
+    "usdot_number": "125550",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 91
+  },
+  {
+    "id": "absolute-moving-storage",
+    "slug": "absolute-moving-storage",
+    "name": "Absolute Moving & Storage",
+    "headquarters": "Wilmington",
+    "usdot_number": "1774499",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 184
+  },
+  {
+    "id": "adsi-moving-systems",
+    "slug": "adsi-moving-systems",
+    "name": "ADSI Moving Systems",
+    "headquarters": "Augusta",
+    "usdot_number": "754250",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 93
+  },
+  {
+    "id": "all-my-sons-moving-storage-birmingham",
+    "slug": "all-my-sons-moving-storage-birmingham",
+    "name": "All My Sons Moving & Storage Birmingham",
+    "headquarters": "Hoover",
+    "usdot_number": "1605569",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.6,
+    "review_count": 2511
+  },
+  {
+    "id": "all-my-sons-moving-storage-knoxville",
+    "slug": "all-my-sons-moving-storage-knoxville",
+    "name": "All My Sons Moving & Storage Knoxville",
+    "headquarters": "Knoxville",
+    "usdot_number": "2087637",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 2296
+  },
+  {
+    "id": "all-my-sons-moving-storage-memphis",
+    "slug": "all-my-sons-moving-storage-memphis",
+    "name": "All My Sons Moving & Storage Memphis",
+    "headquarters": "Memphis",
+    "usdot_number": "2117516",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 3297
+  },
+  {
+    "id": "all-my-sons-moving-storage-nashville",
+    "slug": "all-my-sons-moving-storage-nashville",
+    "name": "All My Sons Moving & Storage Nashville",
+    "headquarters": "Nashville",
+    "usdot_number": "825563",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 3515
+  },
+  {
+    "id": "all-my-sons-moving-storage-savannah",
+    "slug": "all-my-sons-moving-storage-savannah",
+    "name": "All My Sons Moving & Storage Savannah",
+    "headquarters": "Savannah",
+    "usdot_number": "902281",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.7,
+    "review_count": 2204
+  },
+  {
+    "id": "allied",
+    "slug": "allied-van-lines",
+    "name": "Allied Van Lines",
+    "headquarters": "Oakbrook Terrace, IL",
+    "usdot_number": "125563",
+    "mc_number": "15735",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Auto Transport",
+      "Carrier"
+    ],
+    "specialties": [
+      "Corporate Relocation",
+      "Military",
+      "Senior Moves"
+    ],
+    "overall_rating": 3.8,
+    "review_count": 6
+  },
+  {
+    "id": "american-moving-hauling",
+    "slug": "american-moving-hauling",
+    "name": "American Moving & Hauling",
+    "headquarters": "Winston-Salem",
+    "usdot_number": "2007351",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 1320
+  },
+  {
+    "id": "american-van-lines",
+    "slug": "american-van-lines",
+    "name": "American Van Lines",
+    "headquarters": "Davie, FL",
+    "usdot_number": "614506",
+    "mc_number": "295026",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Carrier"
+    ],
+    "specialties": [
+      "Residential",
+      "Senior Moves",
+      "Piano"
+    ],
+    "overall_rating": 4.3,
+    "review_count": 2135
+  },
+  {
+    "id": "american-van-lines-of-sf-llc",
+    "slug": "american-van-lines-of-sf-llc",
+    "name": "AMERICAN VAN LINES OF SF LLC",
+    "headquarters": "1525 NW 3RD ST STE 8  , DEERFIELD BCH, FL, 33442",
+    "usdot_number": "3709259",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Broker"
+    ],
+    "specialties": [],
+    "overall_rating": 4.3,
+    "review_count": 2135
+  },
+  {
+    "id": "amerisafe",
+    "slug": "amerisafe-van-lines",
+    "name": "Amerisafe Van Lines",
+    "headquarters": "Boynton Beach, FL",
+    "usdot_number": "3341650",
+    "mc_number": "1066696",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Carrier"
+    ],
+    "specialties": [
+      "Residential",
+      "Senior Moves",
+      "Small Business"
+    ],
+    "overall_rating": 4.8,
+    "review_count": 675
+  },
+  {
+    "id": "amex-moving-and-storage-llc",
+    "slug": "amex-moving-and-storage-llc",
+    "name": "AMEX MOVING AND STORAGE LLC",
+    "headquarters": "21-00  MORLOT AVE STE 6, FAIR LAWN, NJ, 07410",
+    "usdot_number": "3101918",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 1149
+  },
+  {
+    "id": "armstrong-relocation-birmingham",
+    "slug": "armstrong-relocation-birmingham",
+    "name": "Armstrong Relocation Birmingham",
+    "headquarters": "Alabaster",
+    "usdot_number": "1270079",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 57
+  },
+  {
+    "id": "armstrong-relocation-durham",
+    "slug": "armstrong-relocation-durham",
+    "name": "Armstrong Relocation Durham",
+    "headquarters": "Durham",
+    "usdot_number": "1170867",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 184
+  },
+  {
+    "id": "armstrong-relocation-jackson",
+    "slug": "armstrong-relocation-jackson",
+    "name": "Armstrong Relocation Jackson",
+    "headquarters": "Madison",
+    "usdot_number": "1925341",
+    "mc_number": "16850",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 61
+  },
+  {
+    "id": "armstrong-relocation-nashville",
+    "slug": "armstrong-relocation-nashville",
+    "name": "Armstrong Relocation Nashville",
+    "headquarters": "La Vergne",
+    "usdot_number": "1463768",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.3,
+    "review_count": 110
+  },
+  {
+    "id": "arpin",
+    "slug": "arpin-van-lines",
+    "name": "Arpin Van Lines",
+    "headquarters": "West Warwick, RI",
+    "usdot_number": "125563",
+    "mc_number": "621",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Carrier"
+    ],
+    "specialties": [
+      "Fine Art",
+      "Antiques",
+      "Pianos",
+      "Senior Moves"
+    ],
+    "overall_rating": 4.6,
+    "review_count": 21
+  },
+  {
+    "id": "ashe-van-lines-moving-and-storage",
+    "slug": "ashe-van-lines-moving-and-storage",
+    "name": "Ashe Van Lines Moving and Storage",
+    "headquarters": "Hickory",
+    "usdot_number": "2844367",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 286
+  },
+  {
+    "id": "asheville-area-movers",
+    "slug": "asheville-area-movers",
+    "name": "Asheville Area Movers",
+    "headquarters": "Asheville",
+    "usdot_number": "3020455",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 917
+  },
+  {
+    "id": "athens-moving-experts",
+    "slug": "athens-moving-experts",
+    "name": "Athens Moving Experts",
+    "headquarters": "Raleigh",
+    "usdot_number": "3205320",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 1345
+  },
+  {
+    "id": "atlas",
+    "slug": "atlas-van-lines",
+    "name": "Atlas Van Lines",
+    "headquarters": "Evansville, IN",
+    "usdot_number": "125563",
+    "mc_number": "79658",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Auto Transport",
+      "Carrier"
+    ],
+    "specialties": [
+      "Corporate",
+      "International",
+      "Exhibits"
+    ],
+    "overall_rating": 4.5,
+    "review_count": 757
+  },
+  {
+    "id": "atmosphere-movers",
+    "slug": "atmosphere-movers",
+    "name": "Atmosphere Movers",
+    "headquarters": "Baton Rouge",
+    "usdot_number": "1980694",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 171
+  },
+  {
+    "id": "barry-elwood-jones",
+    "slug": "barry-elwood-jones",
+    "name": "BARRY ELWOOD JONES",
+    "headquarters": "1191 SERVICE DRIVE, GARDNERVILLE, NV, 89410",
+    "usdot_number": "384361",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "GARDNERVILLE, NV",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 465
+  },
+  {
+    "id": "beulah-moving-storage",
+    "slug": "beulah-moving-storage",
+    "name": "Beulah Moving & Storage",
+    "headquarters": "Beulah",
+    "usdot_number": "4323483",
+    "mc_number": "851763",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.3,
+    "review_count": 314
+  },
+  {
+    "id": "brandon-express-moving",
+    "slug": "brandon-express-moving",
+    "name": "Brandon Express Moving",
+    "headquarters": "Brandon",
+    "usdot_number": "2989016",
+    "mc_number": "109012",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 56
+  },
+  {
+    "id": "brooks-transfer-storage",
+    "slug": "brooks-transfer-storage",
+    "name": "Brooks Transfer & Storage",
+    "headquarters": "Knoxville",
+    "usdot_number": "120995",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 141
+  },
+  {
+    "id": "brothers-ez-moving-of-alabama",
+    "slug": "brothers-ez-moving-of-alabama",
+    "name": "Brothers EZ Moving of Alabama",
+    "headquarters": "Killen",
+    "usdot_number": "3411160",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 131
+  },
+  {
+    "id": "budget-movers-of-augusta",
+    "slug": "budget-movers-of-augusta",
+    "name": "Budget Movers of Augusta",
+    "headquarters": "Augusta",
+    "usdot_number": "2145512",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.3,
+    "review_count": 113
+  },
+  {
+    "id": "cass-county-moving",
+    "slug": "cass-county-moving",
+    "name": "Cass County Moving",
+    "headquarters": "Cassopolis",
+    "usdot_number": "4550032",
+    "mc_number": "925144",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 69
+  },
+  {
+    "id": "cicero-s-moving-storage",
+    "slug": "cicero-s-moving-storage",
+    "name": "Cicero's Moving & Storage",
+    "headquarters": "Macon",
+    "usdot_number": "980198",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.1,
+    "review_count": 43
+  },
+  {
+    "id": "cirta-moving-llc",
+    "slug": "cirta-moving-llc",
+    "name": "CIRTA MOVING LLC",
+    "headquarters": "95 E MAIN ST STE 106, DENVILLE, NJ, 07834-2158",
+    "usdot_number": "4074980",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 53
+  },
+  {
+    "id": "clare-moving-storage",
+    "slug": "clare-moving-storage",
+    "name": "Clare Moving & Storage",
+    "headquarters": "Clare",
+    "usdot_number": "3335675",
+    "mc_number": "828099",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 37
+  },
+  {
+    "id": "coleman-worldwide-moving-augusta",
+    "slug": "coleman-worldwide-moving-augusta",
+    "name": "Coleman Worldwide Moving Augusta",
+    "headquarters": "Augusta",
+    "usdot_number": "2897746",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 322
+  },
+  {
+    "id": "college-hunks-hauling-junk-moving-chattanooga",
+    "slug": "college-hunks-hauling-junk-moving-chattanooga",
+    "name": "College Hunks Hauling Junk & Moving Chattanooga",
+    "headquarters": "Chattanooga",
+    "usdot_number": "3969328",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 300
+  },
+  {
+    "id": "college-hunks-hauling-junk-moving-nashville",
+    "slug": "college-hunks-hauling-junk-moving-nashville",
+    "name": "College Hunks Hauling Junk & Moving Nashville",
+    "headquarters": "Nashville",
+    "usdot_number": "2533629",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.7,
+    "review_count": 2379
+  },
+  {
+    "id": "colonial-van-lines",
+    "slug": "colonial-van-lines",
+    "name": "Colonial Van Lines",
+    "headquarters": "Pompano Beach, FL",
+    "usdot_number": "143437",
+    "mc_number": "707818",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [
+      "Standard Household",
+      "Small Business"
+    ],
+    "overall_rating": 3.8,
+    "review_count": 3570
+  },
+  {
+    "id": "cord-moving-storage-memphis",
+    "slug": "cord-moving-storage-memphis",
+    "name": "Cord Moving & Storage Memphis",
+    "headquarters": "Memphis",
+    "usdot_number": "181102",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.7,
+    "review_count": 251
+  },
+  {
+    "id": "corrigan-moving-systems",
+    "slug": "corrigan-moving-systems",
+    "name": "Corrigan Moving Systems",
+    "headquarters": "Buffalo",
+    "usdot_number": "153343",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 686
+  },
+  {
+    "id": "crossin-moving-storage",
+    "slug": "crossin-moving-storage",
+    "name": "Crossin Moving & Storage",
+    "headquarters": "Lufkin",
+    "usdot_number": "1573959",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 180
+  },
+  {
+    "id": "dimon-bacorn-company-of-binghamton",
+    "slug": "dimon-bacorn-company-of-binghamton",
+    "name": "Dimon & Bacorn Company of Binghamton",
+    "headquarters": "Binghamton",
+    "usdot_number": "15010",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.6,
+    "review_count": 75
+  },
+  {
+    "id": "elizabeth-s-moving-storage",
+    "slug": "elizabeth-s-moving-storage",
+    "name": "Elizabeth's Moving & Storage",
+    "headquarters": "Chattanooga",
+    "usdot_number": "2438253",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 81
+  },
+  {
+    "id": "faith-moving-llc",
+    "slug": "faith-moving-llc",
+    "name": "FAITH MOVING LLC",
+    "headquarters": "1503 GOLF COURSE RD SE SUITE D, RIO RANCHO, NM, 87124",
+    "usdot_number": "3542515",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "RIO RANCHO, NM",
+    "services": [
+      "Full Service"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 272
+  },
+  {
+    "id": "fortson-moving-systems",
+    "slug": "fortson-moving-systems",
+    "name": "Fortson Moving Systems",
+    "headquarters": "Oneonta",
+    "usdot_number": "723427",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 114
+  },
+  {
+    "id": "gasperson-moving-storage",
+    "slug": "gasperson-moving-storage",
+    "name": "Gasperson Moving & Storage",
+    "headquarters": "Asheville",
+    "usdot_number": "281010",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.6,
+    "review_count": 113
+  },
+  {
+    "id": "gentle-giant",
+    "slug": "gentle-giant-moving",
+    "name": "Gentle Giant Moving Company",
+    "headquarters": "Somerville, MA",
+    "usdot_number": "373544",
+    "mc_number": "228137",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Northeast",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Carrier"
+    ],
+    "specialties": [
+      "White Glove",
+      "Art",
+      "Antiques",
+      "Pianos"
+    ],
+    "overall_rating": 4.9,
+    "review_count": 1492
+  },
+  {
+    "id": "gentlemen-movers-inc",
+    "slug": "gentlemen-movers-inc",
+    "name": "Gentlemen Movers Inc.",
+    "headquarters": "Columbia",
+    "usdot_number": "1442337",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 225
+  },
+  {
+    "id": "georgia-home-movers-llc",
+    "slug": "georgia-home-movers-llc",
+    "name": "GEORGIA HOME MOVERS LLC",
+    "headquarters": "1412 CANTON RD, MARIETTA, GA, 30066",
+    "usdot_number": "2985787",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": false,
+    "coverage": "Atlanta, GA",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 936
+  },
+  {
+    "id": "good-guys-moving-delivery-chattanooga",
+    "slug": "good-guys-moving-delivery-chattanooga",
+    "name": "Good Guys Moving & Delivery Chattanooga",
+    "headquarters": "Chattanooga",
+    "usdot_number": "1906318",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 660
+  },
+  {
+    "id": "gouffon-moving-storage",
+    "slug": "gouffon-moving-storage",
+    "name": "Gouffon Moving & Storage",
+    "headquarters": "Knoxville",
+    "usdot_number": "553340",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.7,
+    "review_count": 945
+  },
+  {
+    "id": "graebel",
+    "slug": "graebel-van-lines",
+    "name": "Graebel Van Lines",
+    "headquarters": "Aurora, CO",
+    "usdot_number": "125563",
+    "mc_number": "125563",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Auto Transport",
+      "Carrier"
+    ],
+    "specialties": [
+      "Corporate Relocation",
+      "Executive",
+      "International"
+    ],
+    "overall_rating": 3.7,
+    "review_count": 21
+  },
+  {
+    "id": "hardy-moving-storage",
+    "slug": "hardy-moving-storage",
+    "name": "Hardy Moving & Storage",
+    "headquarters": "Harbinger",
+    "usdot_number": "4073065",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 38
+  },
+  {
+    "id": "hhg-movers",
+    "slug": "hhg-movers",
+    "name": "HHG Movers",
+    "headquarters": "Albany",
+    "usdot_number": "2792009",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 164
+  },
+  {
+    "id": "hills-moving-storage",
+    "slug": "hills-moving-storage",
+    "name": "Hills Moving & Storage",
+    "headquarters": "Bakersfield",
+    "usdot_number": "4128186",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 624
+  },
+  {
+    "id": "hired-hands-moving-company",
+    "slug": "hired-hands-moving-company",
+    "name": "Hired Hands Moving Company",
+    "headquarters": "Ithaca",
+    "usdot_number": "967169",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 89
+  },
+  {
+    "id": "home-and-office-movers-llc",
+    "slug": "home-and-office-movers-llc",
+    "name": "HOME AND OFFICE MOVERS LLC",
+    "headquarters": "1332 LONDONTOWN BLVD STE 108F, ELDERSBURG, MD, 21784",
+    "usdot_number": "3415437",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 68
+  },
+  {
+    "id": "horne-moving-systems",
+    "slug": "horne-moving-systems",
+    "name": "Horne Moving Systems",
+    "headquarters": "Goldsboro, NC",
+    "usdot_number": "304797",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 20
+  },
+  {
+    "id": "house-to-house-moving",
+    "slug": "house-to-house-moving",
+    "name": "House to House Moving",
+    "headquarters": "Thomasville",
+    "usdot_number": "3120882",
+    "mc_number": "87878",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 25
+  },
+  {
+    "id": "j-e-thomas-sons-moving",
+    "slug": "j-e-thomas-sons-moving",
+    "name": "J.E. Thomas & Sons Moving",
+    "headquarters": "Jacksonville",
+    "usdot_number": "1418527",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.7,
+    "review_count": 95
+  },
+  {
+    "id": "jega-movers-llc",
+    "slug": "jega-movers-llc",
+    "name": "JEGA Movers LLC",
+    "headquarters": "Columbia",
+    "usdot_number": "3583359",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.7,
+    "review_count": 177
+  },
+  {
+    "id": "jk-moving",
+    "slug": "jk-moving-services",
+    "name": "JK Moving Services",
+    "headquarters": "Sterling, VA",
+    "usdot_number": "1065394",
+    "mc_number": "225850",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Auto Transport",
+      "Carrier"
+    ],
+    "specialties": [
+      "Executive Relocation",
+      "Tech Industry",
+      "Fine Arts"
+    ],
+    "overall_rating": 4.6,
+    "review_count": 2130
+  },
+  {
+    "id": "jp-moving-llc",
+    "slug": "jp-moving-llc",
+    "name": "JP MOVING LLC",
+    "headquarters": "424 ALCANO CIRCLE NE, RIO RANCHO, NM, 87124",
+    "usdot_number": "3585744",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "RIO RANCHO, NM",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 317
+  },
+  {
+    "id": "jr-brown-inc",
+    "slug": "jr-brown-inc",
+    "name": "JR BROWN INC",
+    "headquarters": "8815 HIGHWAY 270 WEST, WHITE HALL, AR, 71602",
+    "usdot_number": "3046622",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 5
+  },
+  {
+    "id": "juggernauts-moving-n-storage-llc",
+    "slug": "juggernauts-moving-n-storage-llc",
+    "name": "JUGGERNAUTS MOVING N STORAGE LLC",
+    "headquarters": "18850 MASONIC BLVD, ROSEVILLE, MI, 48066-1296",
+    "usdot_number": "3130181",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": false,
+    "coverage": "Chesterfield, MO; Farmington, NM; Farmington, UT; Marysville, WA; Charlotte, NC; Baltimore, MD; Rochester, MN; Richmond, VA; Columbus, IN; Columbus, OH",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 0,
+    "review_count": 0
+  },
+  {
+    "id": "lake-county-moving",
+    "slug": "lake-county-moving",
+    "name": "Lake County Moving",
+    "headquarters": "Baldwin",
+    "usdot_number": "3919190",
+    "mc_number": "822754",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 505
+  },
+  {
+    "id": "later-gator-moving-llc",
+    "slug": "later-gator-moving-llc",
+    "name": "Later Gator Moving LLC",
+    "headquarters": "Ocala",
+    "usdot_number": "3337911",
+    "mc_number": "1064843",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 14
+  },
+  {
+    "id": "lee-moving-storage",
+    "slug": "lee-moving-storage",
+    "name": "Lee Moving & Storage",
+    "headquarters": "Baton Rouge",
+    "usdot_number": "3372702",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 216
+  },
+  {
+    "id": "little-guys-movers",
+    "slug": "little-guys-movers",
+    "name": "Little Guys Movers",
+    "headquarters": "College Station",
+    "usdot_number": "1931566",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 624
+  },
+  {
+    "id": "mark-the-mover",
+    "slug": "mark-the-mover",
+    "name": "Mark the Mover",
+    "headquarters": "Atlanta",
+    "usdot_number": "758674",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.6,
+    "review_count": 124
+  },
+  {
+    "id": "mayflower",
+    "slug": "mayflower-transit",
+    "name": "Mayflower Transit",
+    "headquarters": "Indianapolis, IN",
+    "usdot_number": "125563",
+    "mc_number": "2934",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Carrier"
+    ],
+    "specialties": [
+      "Military",
+      "Senior Relocation",
+      "Corporate"
+    ],
+    "overall_rating": 4.4,
+    "review_count": 65
+  },
+  {
+    "id": "mccarley-moving-storage",
+    "slug": "mccarley-moving-storage",
+    "name": "McCarley Moving & Storage",
+    "headquarters": "Columbus",
+    "usdot_number": "92776",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.1,
+    "review_count": 77
+  },
+  {
+    "id": "mccorquodale-transfer",
+    "slug": "mccorquodale-transfer",
+    "name": "McCorquodale Transfer",
+    "headquarters": "Montgomery",
+    "usdot_number": "713589",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 34
+  },
+  {
+    "id": "meathead-movers",
+    "slug": "meathead-movers",
+    "name": "Meathead Movers",
+    "headquarters": "San Luis Obispo",
+    "usdot_number": "921143",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 1162
+  },
+  {
+    "id": "mighty-moving-knoxville",
+    "slug": "mighty-moving-knoxville",
+    "name": "Mighty Moving Knoxville",
+    "headquarters": "Knoxville",
+    "usdot_number": "3788656",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 117
+  },
+  {
+    "id": "miracle-movers-raleigh",
+    "slug": "miracle-movers-raleigh",
+    "name": "Miracle Movers Raleigh",
+    "headquarters": "Raleigh",
+    "usdot_number": "2461529",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.6,
+    "review_count": 879
+  },
+  {
+    "id": "monro-moving-storage",
+    "slug": "monro-moving-storage",
+    "name": "Monro Moving & Storage",
+    "headquarters": "Augusta",
+    "usdot_number": "2799088",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.2,
+    "review_count": 17
+  },
+  {
+    "id": "morse-moving-storage-inc",
+    "slug": "morse-moving-storage-inc",
+    "name": "MORSE MOVING & STORAGE INC",
+    "headquarters": "10049 HARRISON STE 500, ROMULUS, MI, 48174",
+    "usdot_number": "274486",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": false,
+    "coverage": "Farmington, NM; Farmington, UT; Cleveland, OH; Plymouth, MN; Erie, PA; Hettinger, IN; Harrisville, MI; Baker City, OR; Prattville, AL; DeWitt, AR",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 664
+  },
+  {
+    "id": "mother-lode-van-storage",
+    "slug": "mother-lode-van-storage",
+    "name": "Mother Lode Van & Storage",
+    "headquarters": "Rancho Cordova",
+    "usdot_number": "1885461",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 263
+  },
+  {
+    "id": "mountain-lake-mover",
+    "slug": "mountain-lake-mover",
+    "name": "Mountain Lake Mover",
+    "headquarters": "South Lake Tahoe",
+    "usdot_number": "173472",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 8
+  },
+  {
+    "id": "movers-201-inc",
+    "slug": "movers-201-inc",
+    "name": "Movers 201 Inc.",
+    "headquarters": "Ramsey",
+    "usdot_number": "1929143",
+    "mc_number": "689440",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 466
+  },
+  {
+    "id": "naglee-moving-storage",
+    "slug": "naglee-moving-storage",
+    "name": "Naglee Moving & Storage",
+    "headquarters": "Elmira",
+    "usdot_number": "15251",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 56
+  },
+  {
+    "id": "national",
+    "slug": "national-van-lines",
+    "name": "National Van Lines",
+    "headquarters": "Broadview, IL",
+    "usdot_number": "70851",
+    "mc_number": "42866",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [
+      "Household Goods",
+      "Small Business"
+    ],
+    "overall_rating": 4.2,
+    "review_count": 363
+  },
+  {
+    "id": "new-latitude-movers",
+    "slug": "new-latitude-movers",
+    "name": "New Latitude Movers",
+    "headquarters": "Birmingham",
+    "usdot_number": "2179652",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 1172
+  },
+  {
+    "id": "nilson-van-and-storage",
+    "slug": "nilson-van-and-storage",
+    "name": "Nilson Van and Storage",
+    "headquarters": "Savannah, GA",
+    "usdot_number": "122025",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 3.9,
+    "review_count": 57
+  },
+  {
+    "id": "north-american",
+    "slug": "north-american-van-lines",
+    "name": "North American Van Lines",
+    "headquarters": "Fort Wayne, IN",
+    "usdot_number": "70851",
+    "mc_number": "107012",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Auto Transport",
+      "Carrier"
+    ],
+    "specialties": [
+      "High-Value Items",
+      "Electronics",
+      "Art & Antiques"
+    ],
+    "overall_rating": 3.2,
+    "review_count": 30
+  },
+  {
+    "id": "northern-michigan-moving",
+    "slug": "northern-michigan-moving",
+    "name": "Northern Michigan Moving",
+    "headquarters": "Traverse City",
+    "usdot_number": "1398726",
+    "mc_number": "884143",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 607
+  },
+  {
+    "id": "obx-movers",
+    "slug": "obx-movers",
+    "name": "OBX Movers",
+    "headquarters": "Powells Point",
+    "usdot_number": "2550206",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 214
+  },
+  {
+    "id": "ocean-moving-storage-corp",
+    "slug": "ocean-moving-storage-corp",
+    "name": "OCEAN MOVING & STORAGE CORP",
+    "headquarters": "20200 W DIXIE HWY STE 902, AVENTURA, FL, 33180-1926",
+    "usdot_number": "1780669",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 205
+  },
+  {
+    "id": "on-track-moving",
+    "slug": "on-track-moving",
+    "name": "On Track Moving",
+    "headquarters": "Bishop",
+    "usdot_number": "2551548",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 570
+  },
+  {
+    "id": "osceola-county-moving",
+    "slug": "osceola-county-moving",
+    "name": "Osceola County Moving",
+    "headquarters": "Reed City",
+    "usdot_number": "3632936",
+    "mc_number": "884980",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 491
+  },
+  {
+    "id": "our-family-moving-storage",
+    "slug": "our-family-moving-storage",
+    "name": "Our Family Moving & Storage",
+    "headquarters": "Fort Lauderdale",
+    "usdot_number": "3374772",
+    "mc_number": "1082468",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 1658
+  },
+  {
+    "id": "ox-strong-moving",
+    "slug": "ox-strong-moving",
+    "name": "Ox Strong Moving",
+    "headquarters": "Fort Lauderdale",
+    "usdot_number": "3588230",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 419
+  },
+  {
+    "id": "page-relocation",
+    "slug": "page-relocation",
+    "name": "Page Relocation",
+    "headquarters": "Canton",
+    "usdot_number": "3429630",
+    "mc_number": "1111955",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 525
+  },
+  {
+    "id": "phelps-moving-storage",
+    "slug": "phelps-moving-storage",
+    "name": "Phelps Moving & Storage",
+    "headquarters": "Columbus",
+    "usdot_number": "1166324",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.1,
+    "review_count": 10
+  },
+  {
+    "id": "royal-hawaiian-movers-inc",
+    "slug": "royal-hawaiian-movers-inc",
+    "name": "ROYAL HAWAIIAN MOVERS INC",
+    "headquarters": "3017 UALENA ST, HONOLULU, HI, 96819",
+    "usdot_number": "227698",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 363
+  },
+  {
+    "id": "rushmore-van-lines-inc",
+    "slug": "rushmore-van-lines-inc",
+    "name": "RUSHMORE VAN LINES INC",
+    "headquarters": "714 SOUTH HILL STREET STE304, LOS ANGELES, CA, 90014",
+    "usdot_number": "4086767",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Brandon, MS; Brandon, SD",
+    "services": [
+      "Full Service"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 73
+  },
+  {
+    "id": "safebound-logistics-llc",
+    "slug": "safebound-logistics-llc",
+    "name": "SAFEBOUND LOGISTICS LLC",
+    "headquarters": "6051 SOUTHERN BLVD #400, WEST PALM BEACH, FL, 33413",
+    "usdot_number": "2900155",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Fort Lauderdale, FL; Delray Beach, FL; Boca Raton, FL; Hollywood, FL; Seattle, WA; Chicago, IL; Jackson, MS; Jackson, WY; Tacoma, WA; Miami, FL",
+    "services": [
+      "Full Service"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 2433
+  },
+  {
+    "id": "secure-moving-storage",
+    "slug": "secure-moving-storage",
+    "name": "Secure Moving & Storage",
+    "headquarters": "Pelham",
+    "usdot_number": "70719",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 124
+  },
+  {
+    "id": "smooth-move-charleston",
+    "slug": "smooth-move-charleston",
+    "name": "Smooth Move Charleston",
+    "headquarters": "North Charleston",
+    "usdot_number": "2357653",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 874
+  },
+  {
+    "id": "spyder-moving-storage-memphis",
+    "slug": "spyder-moving-storage-memphis",
+    "name": "Spyder Moving & Storage Memphis",
+    "headquarters": "Memphis",
+    "usdot_number": "3187084",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 50
+  },
+  {
+    "id": "spyder-moving-kalamazoo",
+    "slug": "spyder-moving-kalamazoo",
+    "name": "Spyder Moving Kalamazoo",
+    "headquarters": "Portage",
+    "usdot_number": "4474403",
+    "mc_number": "848687",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 6
+  },
+  {
+    "id": "stanford-van-lines-inc",
+    "slug": "stanford-van-lines-inc",
+    "name": "STANFORD VAN LINES INC",
+    "headquarters": "17600 N WILLIAMS ST, THORNTON, IL, 60476-1287",
+    "usdot_number": "3978928",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.6,
+    "review_count": 641
+  },
+  {
+    "id": "stevens",
+    "slug": "stevens-worldwide",
+    "name": "Stevens Worldwide Van Lines",
+    "headquarters": "Saginaw, MI",
+    "usdot_number": "72029",
+    "mc_number": "1063",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Auto Transport",
+      "Carrier"
+    ],
+    "specialties": [
+      "Military",
+      "Corporate",
+      "Government"
+    ],
+    "overall_rating": 4.3,
+    "review_count": 16
+  },
+  {
+    "id": "stewart-moving-storage",
+    "slug": "stewart-moving-storage",
+    "name": "Stewart Moving & Storage",
+    "headquarters": "Fayetteville",
+    "usdot_number": "1194537",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 1239
+  },
+  {
+    "id": "suddath-relocation-systems-charlotte",
+    "slug": "suddath-relocation-systems-charlotte",
+    "name": "Suddath Relocation Systems Charlotte",
+    "headquarters": "Charlotte",
+    "usdot_number": "29609",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.6,
+    "review_count": 169
+  },
+  {
+    "id": "sunbelt-moving-delivery-inc",
+    "slug": "sunbelt-moving-delivery-inc",
+    "name": "Sunbelt Moving & Delivery, Inc.",
+    "headquarters": "Gainesville",
+    "usdot_number": "2799474",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 257
+  },
+  {
+    "id": "suttons-bay-moving-storage",
+    "slug": "suttons-bay-moving-storage",
+    "name": "Suttons Bay Moving & Storage",
+    "headquarters": "Suttons Bay",
+    "usdot_number": "2533789",
+    "mc_number": "939841",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 5,
+    "review_count": 76
+  },
+  {
+    "id": "tawas-city-moving-storage",
+    "slug": "tawas-city-moving-storage",
+    "name": "Tawas City Moving & Storage",
+    "headquarters": "Tawas City",
+    "usdot_number": "4465712",
+    "mc_number": "866316",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 98
+  },
+  {
+    "id": "the-home-moving-solution",
+    "slug": "the-home-moving-solution",
+    "name": "The Home Moving Solution",
+    "headquarters": "Albany",
+    "usdot_number": "3239067",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 116
+  },
+  {
+    "id": "the-moving-truck-inc",
+    "slug": "the-moving-truck-inc",
+    "name": "The Moving Truck Inc",
+    "headquarters": "Dothan",
+    "usdot_number": "3170846",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.2,
+    "review_count": 46
+  },
+  {
+    "id": "this-side-up-moving-storage",
+    "slug": "this-side-up-moving-storage",
+    "name": "This Side Up Moving & Storage",
+    "headquarters": "Huntsville",
+    "usdot_number": "1874024",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 735
+  },
+  {
+    "id": "todd-s-easy-moves",
+    "slug": "todd-s-easy-moves",
+    "name": "Todd's Easy Moves",
+    "headquarters": "Winston-Salem",
+    "usdot_number": "2390090",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 40
+  },
+  {
+    "id": "trosa-moving",
+    "slug": "trosa-moving",
+    "name": "TROSA Moving",
+    "headquarters": "Durham",
+    "usdot_number": "675014",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.3,
+    "review_count": 250
+  },
+  {
+    "id": "troy-humphrey-moving-storage",
+    "slug": "troy-humphrey-moving-storage",
+    "name": "Troy Humphrey Moving & Storage",
+    "headquarters": "Jacksonville",
+    "usdot_number": "90823",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4,
+    "review_count": 118
+  },
+  {
+    "id": "two-men-and-truck",
+    "slug": "two-men-and-a-truck",
+    "name": "Two Men and a Truck",
+    "headquarters": "Lansing, MI",
+    "usdot_number": "2256609",
+    "mc_number": "820431",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [
+      "Local + Long Distance",
+      "Packing Services",
+      "Junk Removal"
+    ],
+    "overall_rating": 4.5,
+    "review_count": 476
+  },
+  {
+    "id": "two-men-and-a-truck-auburn",
+    "slug": "two-men-and-a-truck-auburn",
+    "name": "Two Men and a Truck Auburn",
+    "headquarters": "Auburn",
+    "usdot_number": "2527384",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 215
+  },
+  {
+    "id": "two-men-and-a-truck-chico",
+    "slug": "two-men-and-a-truck-chico",
+    "name": "Two Men and a Truck Chico",
+    "headquarters": "Chico",
+    "usdot_number": "3421940",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.6,
+    "review_count": 165
+  },
+  {
+    "id": "two-men-and-a-truck-fresno",
+    "slug": "two-men-and-a-truck-fresno",
+    "name": "Two Men and a Truck Fresno",
+    "headquarters": "Fresno",
+    "usdot_number": "2973885",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier / Broker"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 313
+  },
+  {
+    "id": "two-men-and-a-truck-gainesville",
+    "slug": "two-men-and-a-truck-gainesville",
+    "name": "Two Men and a Truck Gainesville",
+    "headquarters": "Gainesville, FL",
+    "usdot_number": "1669783",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 316
+  },
+  {
+    "id": "two-men-and-a-truck-knoxville",
+    "slug": "two-men-and-a-truck-knoxville",
+    "name": "Two Men and a Truck Knoxville",
+    "headquarters": "Knoxville",
+    "usdot_number": "2254709",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.4,
+    "review_count": 390
+  },
+  {
+    "id": "two-men-and-a-truck-memphis",
+    "slug": "two-men-and-a-truck-memphis",
+    "name": "Two Men and a Truck Memphis",
+    "headquarters": "Memphis",
+    "usdot_number": "4336160",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.5,
+    "review_count": 1018
+  },
+  {
+    "id": "usa-family-moving-of-atlanta-llc",
+    "slug": "usa-family-moving-of-atlanta-llc",
+    "name": "USA FAMILY MOVING OF ATLANTA LLC",
+    "headquarters": "341 CURIE DRIVE, ALPHARETTA, GA, 30005",
+    "usdot_number": "3447326",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "ALPHARETTA, GA",
+    "services": [
+      "Full Service",
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 2900
+  },
+  {
+    "id": "vellar-holdings-llc",
+    "slug": "vellar-holdings-llc",
+    "name": "VELLAR HOLDINGS LLC",
+    "headquarters": "7789 NW BEACON SQUARE BLVD, BOCA RATON, FL, 33487",
+    "usdot_number": "3475743",
+    "mc_number": null,
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Boca Raton, FL; Erie, PA",
+    "services": [
+      "Full Service",
+      "Broker"
+    ],
+    "specialties": [],
+    "overall_rating": 4.8,
+    "review_count": 130
+  },
+  {
+    "id": "upack-we-move-u",
+    "slug": "we-move-u",
+    "name": "We Move U",
+    "headquarters": "Indianapolis, IN",
+    "usdot_number": "1778016",
+    "mc_number": "648740",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "Continental US",
+    "services": [
+      "Container / Portable",
+      "Carrier"
+    ],
+    "specialties": [
+      "Portable Storage",
+      "DIY Hybrid"
+    ],
+    "overall_rating": 4.8,
+    "review_count": 875
+  },
+  {
+    "id": "wheaton",
+    "slug": "wheaton-world-wide",
+    "name": "Wheaton World Wide Moving",
+    "headquarters": "Indianapolis, IN",
+    "usdot_number": "125563",
+    "mc_number": "87113",
+    "is_verified": true,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": "All 50 States",
+    "services": [
+      "Full Service",
+      "Storage",
+      "Carrier"
+    ],
+    "specialties": [
+      "Residential",
+      "High Value Goods"
+    ],
+    "overall_rating": 4.6,
+    "review_count": 973
+  },
+  {
+    "id": "wirks-moving-storage",
+    "slug": "wirks-moving-storage",
+    "name": "Wirks Moving & Storage",
+    "headquarters": "Marietta",
+    "usdot_number": "1942465",
+    "mc_number": "699457",
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 2988
+  },
+  {
+    "id": "you-move-me-charlotte",
+    "slug": "you-move-me-charlotte",
+    "name": "You Move Me Charlotte",
+    "headquarters": "Charlotte",
+    "usdot_number": "2518689",
+    "mc_number": null,
+    "is_verified": false,
+    "out_of_service": false,
+    "authority_active": true,
+    "coverage": null,
+    "services": [
+      "Carrier"
+    ],
+    "specialties": [],
+    "overall_rating": 4.9,
+    "review_count": 1110
+  }
+]

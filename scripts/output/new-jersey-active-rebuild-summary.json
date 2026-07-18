@@ -1,0 +1,252 @@
+{
+  "stateSlug": "new-jersey",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "amex-moving-and-storage-llc",
+    "cirta-moving-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "atlantic",
+      "local": 1,
+      "state": 2,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "bergen",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "burlington",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "camden",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "cape-may",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "cumberland",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "essex",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "gloucester",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "hudson",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "hunterdon",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "mercer",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "middlesex",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "monmouth",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "morris",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "ocean",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "passaic",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "salem",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "somerset",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "sussex",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    {
+      "county": "warren",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "atlantic": 25,
+    "bergen": 25,
+    "burlington": 25,
+    "camden": 25,
+    "cape-may": 25,
+    "cumberland": 25,
+    "essex": 25,
+    "gloucester": 25,
+    "hudson": 25,
+    "hunterdon": 25,
+    "mercer": 25,
+    "middlesex": 25,
+    "monmouth": 25,
+    "morris": 25,
+    "ocean": 25,
+    "passaic": 25,
+    "salem": 25,
+    "somerset": 25,
+    "sussex": 25,
+    "union": 25,
+    "warren": 25
+  },
+  "major": {
+    "bergen": {
+      "county": "bergen",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    "middlesex": {
+      "county": "middlesex",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    "essex": {
+      "county": "essex",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    "hudson": {
+      "county": "hudson",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    "monmouth": {
+      "county": "monmouth",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    },
+    "ocean": {
+      "county": "ocean",
+      "local": 0,
+      "state": 3,
+      "national": 22,
+      "total": 25
+    }
+  }
+}

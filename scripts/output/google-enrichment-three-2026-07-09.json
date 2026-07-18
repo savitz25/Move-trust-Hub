@@ -1,0 +1,36 @@
+{
+  "executedAt": "2026-07-09T15:57:59.575Z",
+  "dryRun": false,
+  "results": [
+    {
+      "label": "Brothers EZ Moving of Alabama",
+      "status": "updated",
+      "slug": "brothers-ez-moving-of-alabama",
+      "rating": 4.8,
+      "reviewCount": 131,
+      "snippets": 3,
+      "placeName": "Brothers EZ Moving of Alabama",
+      "placeId": "ChIJZ0ctCyA2fYgRVuEY-Xx6MPY"
+    },
+    {
+      "label": "JEGA Movers LLC",
+      "status": "updated",
+      "slug": "jega-movers-llc",
+      "rating": 4.7,
+      "reviewCount": 177,
+      "snippets": 3,
+      "placeName": "JEGA Movers LLC",
+      "placeId": "ChIJdWWq1siz-IgRBpOyf38-9Ls"
+    },
+    {
+      "label": "Budget Movers of Augusta",
+      "status": "updated",
+      "slug": "budget-movers-of-augusta",
+      "rating": 4.3,
+      "reviewCount": 113,
+      "snippets": 3,
+      "placeName": "Budget Movers of Augusta, Inc.",
+      "placeId": "ChIJ_ZGsQsrFYSYRsEFd7jRMBQ4"
+    }
+  ]
+}

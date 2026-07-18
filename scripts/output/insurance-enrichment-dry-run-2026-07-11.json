@@ -1,0 +1,14 @@
+{
+  "executedAt": "2026-07-11T16:05:35.603Z",
+  "totalTargets": 744,
+  "status": "ok",
+  "mode": "full",
+  "dryRun": true,
+  "processed": 1,
+  "enriched": 1,
+  "skipped": 0,
+  "failed": 0,
+  "manualReview": 0,
+  "errors": [],
+  "durationMs": 7223
+}

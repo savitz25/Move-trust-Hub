@@ -1,0 +1,611 @@
+{
+  "stateSlug": "alabama",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "autauga",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "baldwin",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "barbour",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "bibb",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "blount",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "bullock",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "butler",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "calhoun",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "chambers",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cherokee",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "chilton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "choctaw",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "clarke",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cleburne",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "coffee",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "colbert",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "conecuh",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "coosa",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "covington",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "crenshaw",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cullman",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dale",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dallas",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dekalb",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "elmore",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "escambia",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "etowah",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "fayette",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "geneva",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "greene",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hale",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "henry",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "houston",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lamar",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lauderdale",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lawrence",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lee",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "limestone",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lowndes",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "macon",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "marengo",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "marion",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "marshall",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "mobile",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "monroe",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "morgan",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "perry",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "pickens",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "pike",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "randolph",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "russell",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "shelby",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "st-clair",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "sumter",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "talladega",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "tallapoosa",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "tuscaloosa",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "walker",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "wilcox",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "winston",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "autauga": 25,
+    "baldwin": 25,
+    "barbour": 25,
+    "bibb": 25,
+    "blount": 25,
+    "bullock": 25,
+    "butler": 25,
+    "calhoun": 25,
+    "chambers": 25,
+    "cherokee": 25,
+    "chilton": 25,
+    "choctaw": 25,
+    "clarke": 25,
+    "clay": 25,
+    "cleburne": 25,
+    "coffee": 25,
+    "colbert": 25,
+    "conecuh": 25,
+    "coosa": 25,
+    "covington": 25,
+    "crenshaw": 25,
+    "cullman": 25,
+    "dale": 25,
+    "dallas": 25,
+    "dekalb": 25,
+    "elmore": 25,
+    "escambia": 25,
+    "etowah": 25,
+    "fayette": 25,
+    "franklin": 25,
+    "geneva": 25,
+    "greene": 25,
+    "hale": 25,
+    "henry": 25,
+    "houston": 25,
+    "jackson": 25,
+    "jefferson": 25,
+    "lamar": 25,
+    "lauderdale": 25,
+    "lawrence": 25,
+    "lee": 25,
+    "limestone": 25,
+    "lowndes": 25,
+    "macon": 25,
+    "madison": 25,
+    "marengo": 25,
+    "marion": 25,
+    "marshall": 25,
+    "mobile": 25,
+    "monroe": 25,
+    "montgomery": 25,
+    "morgan": 25,
+    "perry": 25,
+    "pickens": 25,
+    "pike": 25,
+    "randolph": 25,
+    "russell": 25,
+    "shelby": 25,
+    "st-clair": 25,
+    "sumter": 25,
+    "talladega": 25,
+    "tallapoosa": 25,
+    "tuscaloosa": 25,
+    "walker": 25,
+    "washington": 25,
+    "wilcox": 25,
+    "winston": 25
+  },
+  "major": {
+    "jefferson": {
+      "county": "jefferson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "mobile": {
+      "county": "mobile",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "madison": {
+      "county": "madison",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "montgomery": {
+      "county": "montgomery",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "shelby": {
+      "county": "shelby",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  }
+}

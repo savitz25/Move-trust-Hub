@@ -1,0 +1,835 @@
+{
+  "stateSlug": "tennessee",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "anderson",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "bedford",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "benton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "bledsoe",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "blount",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "bradley",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "campbell",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cannon",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "carroll",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "carter",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cheatham",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "chester",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "claiborne",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cocke",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "coffee",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "crockett",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cumberland",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "davidson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "decatur",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dekalb",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dickson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dyer",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "fayette",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "fentress",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "gibson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "giles",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "grainger",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "greene",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "grundy",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hamblen",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hamilton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hancock",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hardeman",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hardin",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hawkins",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "haywood",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "henderson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "henry",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hickman",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "houston",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "humphreys",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "johnson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "knox",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lake",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lauderdale",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lawrence",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lewis",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "loudon",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "macon",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "marion",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "marshall",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "maury",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "mcminn",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "mcnairy",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "meigs",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "monroe",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "moore",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "morgan",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "obion",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "overton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "perry",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "pickett",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "polk",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "putnam",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "rhea",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "roane",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "robertson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "rutherford",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "scott",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "sequatchie",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "sevier",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "shelby",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "smith",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "stewart",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "sullivan",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "sumner",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "tipton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "trousdale",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "unicoi",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "van-buren",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "warren",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "wayne",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "weakley",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "white",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "williamson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "wilson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "anderson": 25,
+    "bedford": 25,
+    "benton": 25,
+    "bledsoe": 25,
+    "blount": 25,
+    "bradley": 25,
+    "campbell": 25,
+    "cannon": 25,
+    "carroll": 25,
+    "carter": 25,
+    "cheatham": 25,
+    "chester": 25,
+    "claiborne": 25,
+    "clay": 25,
+    "cocke": 25,
+    "coffee": 25,
+    "crockett": 25,
+    "cumberland": 25,
+    "davidson": 25,
+    "decatur": 25,
+    "dekalb": 25,
+    "dickson": 25,
+    "dyer": 25,
+    "fayette": 25,
+    "fentress": 25,
+    "franklin": 25,
+    "gibson": 25,
+    "giles": 25,
+    "grainger": 25,
+    "greene": 25,
+    "grundy": 25,
+    "hamblen": 25,
+    "hamilton": 25,
+    "hancock": 25,
+    "hardeman": 25,
+    "hardin": 25,
+    "hawkins": 25,
+    "haywood": 25,
+    "henderson": 25,
+    "henry": 25,
+    "hickman": 25,
+    "houston": 25,
+    "humphreys": 25,
+    "jackson": 25,
+    "jefferson": 25,
+    "johnson": 25,
+    "knox": 25,
+    "lake": 25,
+    "lauderdale": 25,
+    "lawrence": 25,
+    "lewis": 25,
+    "lincoln": 25,
+    "loudon": 25,
+    "macon": 25,
+    "madison": 25,
+    "marion": 25,
+    "marshall": 25,
+    "maury": 25,
+    "mcminn": 25,
+    "mcnairy": 25,
+    "meigs": 25,
+    "monroe": 25,
+    "montgomery": 25,
+    "moore": 25,
+    "morgan": 25,
+    "obion": 25,
+    "overton": 25,
+    "perry": 25,
+    "pickett": 25,
+    "polk": 25,
+    "putnam": 25,
+    "rhea": 25,
+    "roane": 25,
+    "robertson": 25,
+    "rutherford": 25,
+    "scott": 25,
+    "sequatchie": 25,
+    "sevier": 25,
+    "shelby": 25,
+    "smith": 25,
+    "stewart": 25,
+    "sullivan": 25,
+    "sumner": 25,
+    "tipton": 25,
+    "trousdale": 25,
+    "unicoi": 25,
+    "union": 25,
+    "van-buren": 25,
+    "warren": 25,
+    "washington": 25,
+    "wayne": 25,
+    "weakley": 25,
+    "white": 25,
+    "williamson": 25,
+    "wilson": 25
+  },
+  "major": {
+    "shelby": {
+      "county": "shelby",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "davidson": {
+      "county": "davidson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "knox": {
+      "county": "knox",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "hamilton": {
+      "county": "hamilton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "rutherford": {
+      "county": "rutherford",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  }
+}

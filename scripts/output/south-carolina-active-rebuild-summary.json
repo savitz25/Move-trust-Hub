@@ -1,0 +1,443 @@
+{
+  "stateSlug": "south-carolina",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "abbeville",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "aiken",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "allendale",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "anderson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "bamberg",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "barnwell",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "beaufort",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "berkeley",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "calhoun",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "charleston",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cherokee",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "chester",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "chesterfield",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "clarendon",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "colleton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "darlington",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dillon",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dorchester",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "edgefield",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "fairfield",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "florence",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "georgetown",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "greenville",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "greenwood",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hampton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "horry",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jasper",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "kershaw",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lancaster",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "laurens",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lee",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lexington",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "marion",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "marlboro",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "mccormick",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "newberry",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "oconee",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "orangeburg",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "pickens",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "richland",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "saluda",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "spartanburg",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "sumter",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "williamsburg",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "york",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "abbeville": 25,
+    "aiken": 25,
+    "allendale": 25,
+    "anderson": 25,
+    "bamberg": 25,
+    "barnwell": 25,
+    "beaufort": 25,
+    "berkeley": 25,
+    "calhoun": 25,
+    "charleston": 25,
+    "cherokee": 25,
+    "chester": 25,
+    "chesterfield": 25,
+    "clarendon": 25,
+    "colleton": 25,
+    "darlington": 25,
+    "dillon": 25,
+    "dorchester": 25,
+    "edgefield": 25,
+    "fairfield": 25,
+    "florence": 25,
+    "georgetown": 25,
+    "greenville": 25,
+    "greenwood": 25,
+    "hampton": 25,
+    "horry": 25,
+    "jasper": 25,
+    "kershaw": 25,
+    "lancaster": 25,
+    "laurens": 25,
+    "lee": 25,
+    "lexington": 25,
+    "marion": 25,
+    "marlboro": 25,
+    "mccormick": 25,
+    "newberry": 25,
+    "oconee": 25,
+    "orangeburg": 25,
+    "pickens": 25,
+    "richland": 25,
+    "saluda": 25,
+    "spartanburg": 25,
+    "sumter": 25,
+    "union": 25,
+    "williamsburg": 25,
+    "york": 25
+  },
+  "major": {
+    "greenville": {
+      "county": "greenville",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "richland": {
+      "county": "richland",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "charleston": {
+      "county": "charleston",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "horry": {
+      "county": "horry",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "spartanburg": {
+      "county": "spartanburg",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  }
+}

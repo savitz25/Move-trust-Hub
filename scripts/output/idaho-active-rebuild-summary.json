@@ -1,0 +1,425 @@
+{
+  "stateSlug": "idaho",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "ada",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "adams",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "bannock",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "bear-lake",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "benewah",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "bingham",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "blaine",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "boise",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "bonner",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "bonneville",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "boundary",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "butte",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "camas",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "canyon",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "caribou",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "cassia",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "clark",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "clearwater",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "custer",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "elmore",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "fremont",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "gem",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "gooding",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "idaho",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "jerome",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "kootenai",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "latah",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lemhi",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lewis",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "minidoka",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "nez-perce",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "oneida",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "owyhee",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "payette",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "power",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "shoshone",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "teton",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "twin-falls",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "valley",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    }
+  ],
+  "counts": {
+    "ada": 24,
+    "adams": 24,
+    "bannock": 24,
+    "bear-lake": 24,
+    "benewah": 24,
+    "bingham": 24,
+    "blaine": 24,
+    "boise": 24,
+    "bonner": 24,
+    "bonneville": 24,
+    "boundary": 24,
+    "butte": 24,
+    "camas": 24,
+    "canyon": 24,
+    "caribou": 24,
+    "cassia": 24,
+    "clark": 24,
+    "clearwater": 24,
+    "custer": 24,
+    "elmore": 24,
+    "franklin": 24,
+    "fremont": 24,
+    "gem": 24,
+    "gooding": 24,
+    "idaho": 24,
+    "jefferson": 24,
+    "jerome": 24,
+    "kootenai": 24,
+    "latah": 24,
+    "lemhi": 24,
+    "lewis": 24,
+    "lincoln": 24,
+    "madison": 24,
+    "minidoka": 24,
+    "nez-perce": 24,
+    "oneida": 24,
+    "owyhee": 24,
+    "payette": 24,
+    "power": 24,
+    "shoshone": 24,
+    "teton": 24,
+    "twin-falls": 24,
+    "valley": 24,
+    "washington": 24
+  },
+  "major": {
+    "ada": {
+      "county": "ada",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "canyon": {
+      "county": "canyon",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "kootenai": {
+      "county": "kootenai",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "bonneville": {
+      "county": "bonneville",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "twin-falls": {
+      "county": "twin-falls",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    }
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "stateSlug": "utah",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "beaver",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "box-elder",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "cache",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "carbon",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "daggett",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "davis",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "duchesne",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "emery",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "garfield",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "grand",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "iron",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "juab",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "kane",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "millard",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "morgan",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "piute",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "rich",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "salt-lake",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "san-juan",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sanpete",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sevier",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "summit",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "tooele",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "uintah",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "utah",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wasatch",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wayne",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "weber",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    }
+  ],
+  "counts": {
+    "beaver": 24,
+    "box-elder": 24,
+    "cache": 24,
+    "carbon": 24,
+    "daggett": 24,
+    "davis": 24,
+    "duchesne": 24,
+    "emery": 24,
+    "garfield": 24,
+    "grand": 24,
+    "iron": 24,
+    "juab": 24,
+    "kane": 24,
+    "millard": 24,
+    "morgan": 24,
+    "piute": 24,
+    "rich": 24,
+    "salt-lake": 24,
+    "san-juan": 24,
+    "sanpete": 24,
+    "sevier": 24,
+    "summit": 24,
+    "tooele": 24,
+    "uintah": 24,
+    "utah": 24,
+    "wasatch": 24,
+    "washington": 24,
+    "wayne": 24,
+    "weber": 24
+  },
+  "major": {
+    "salt-lake": {
+      "county": "salt-lake",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "utah": {
+      "county": "utah",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "davis": {
+      "county": "davis",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "weber": {
+      "county": "weber",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "washington": {
+      "county": "washington",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    }
+  }
+}

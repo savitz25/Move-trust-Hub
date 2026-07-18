@@ -1,0 +1,596 @@
+{
+  "stateSlug": "south-dakota",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "rushmore-van-lines-inc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "aurora",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "beadle",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "bennett",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "bon-homme",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "brookings",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "brown",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "brule",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "buffalo",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "butte",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "campbell",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "charles-mix",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "clark",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "codington",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "corson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "custer",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "davison",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "day",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "deuel",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "dewey",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "douglas",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "edmunds",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "fall-river",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "faulk",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "grant",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "gregory",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "haakon",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hamlin",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hand",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hanson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "harding",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hughes",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hutchinson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "hyde",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jerauld",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jones",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "kingsbury",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lake",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lawrence",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lyman",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "marshall",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "mccook",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "mcpherson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "meade",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "mellette",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "miner",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "minnehaha",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "moody",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "pennington",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "perkins",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "potter",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "roberts",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "sanborn",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "shannon",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "spink",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "stanley",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "sully",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "todd",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "tripp",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "turner",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "walworth",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "yankton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "ziebach",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "aurora": 25,
+    "beadle": 25,
+    "bennett": 25,
+    "bon-homme": 25,
+    "brookings": 25,
+    "brown": 25,
+    "brule": 25,
+    "buffalo": 25,
+    "butte": 25,
+    "campbell": 25,
+    "charles-mix": 25,
+    "clark": 25,
+    "clay": 25,
+    "codington": 25,
+    "corson": 25,
+    "custer": 25,
+    "davison": 25,
+    "day": 25,
+    "deuel": 25,
+    "dewey": 25,
+    "douglas": 25,
+    "edmunds": 25,
+    "fall-river": 25,
+    "faulk": 25,
+    "grant": 25,
+    "gregory": 25,
+    "haakon": 25,
+    "hamlin": 25,
+    "hand": 25,
+    "hanson": 25,
+    "harding": 25,
+    "hughes": 25,
+    "hutchinson": 25,
+    "hyde": 25,
+    "jackson": 25,
+    "jerauld": 25,
+    "jones": 25,
+    "kingsbury": 25,
+    "lake": 25,
+    "lawrence": 25,
+    "lincoln": 25,
+    "lyman": 25,
+    "marshall": 25,
+    "mccook": 25,
+    "mcpherson": 25,
+    "meade": 25,
+    "mellette": 25,
+    "miner": 25,
+    "minnehaha": 25,
+    "moody": 25,
+    "pennington": 25,
+    "perkins": 25,
+    "potter": 25,
+    "roberts": 25,
+    "sanborn": 25,
+    "shannon": 25,
+    "spink": 25,
+    "stanley": 25,
+    "sully": 25,
+    "todd": 25,
+    "tripp": 25,
+    "turner": 25,
+    "union": 25,
+    "walworth": 25,
+    "yankton": 25,
+    "ziebach": 25
+  },
+  "major": {
+    "minnehaha": {
+      "county": "minnehaha",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    "pennington": {
+      "county": "pennington",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "lincoln": {
+      "county": "lincoln",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "brown": {
+      "county": "brown",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-14T19:53:13.007Z",
+  "generatedAt": "2026-07-15T04:05:15.058Z",
   "origin": "https://www.movetrusthub.com",
   "totalCounties": 3143,
   "failureCount": 0,
   "pass": true,
-  "durationMs": 35005,
+  "durationMs": 39405,
   "failures": [],
   "tierSpotCheck": {
     "nebraska/sherman": {

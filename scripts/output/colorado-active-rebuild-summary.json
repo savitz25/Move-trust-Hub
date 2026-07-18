@@ -1,0 +1,594 @@
+{
+  "stateSlug": "colorado",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "graebel-van-lines"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "adams",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "alamosa",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "arapahoe",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "archuleta",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "baca",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "bent",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "boulder",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "broomfield",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "chaffee",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "cheyenne",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "clear-creek",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "conejos",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "costilla",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "crowley",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "custer",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "delta",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "denver",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "dolores",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "douglas",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "eagle",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "el-paso",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "elbert",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "fremont",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "garfield",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "gilpin",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "grand",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "gunnison",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "hinsdale",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "huerfano",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "kiowa",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "kit-carson",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "la-plata",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "lake",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "larimer",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "las-animas",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "logan",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "mesa",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "mineral",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "moffat",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "montezuma",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "montrose",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "morgan",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "otero",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "ouray",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "park",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "phillips",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "pitkin",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "prowers",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "pueblo",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "rio-blanco",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "rio-grande",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "routt",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "saguache",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "san-juan",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "san-miguel",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "sedgwick",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "summit",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "teller",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "weld",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "yuma",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    }
+  ],
+  "counts": {
+    "adams": 24,
+    "alamosa": 24,
+    "arapahoe": 24,
+    "archuleta": 24,
+    "baca": 24,
+    "bent": 24,
+    "boulder": 24,
+    "broomfield": 24,
+    "chaffee": 24,
+    "cheyenne": 24,
+    "clear-creek": 24,
+    "conejos": 24,
+    "costilla": 24,
+    "crowley": 24,
+    "custer": 24,
+    "delta": 24,
+    "denver": 24,
+    "dolores": 24,
+    "douglas": 24,
+    "eagle": 24,
+    "el-paso": 24,
+    "elbert": 24,
+    "fremont": 24,
+    "garfield": 24,
+    "gilpin": 24,
+    "grand": 24,
+    "gunnison": 24,
+    "hinsdale": 24,
+    "huerfano": 24,
+    "jackson": 24,
+    "jefferson": 24,
+    "kiowa": 24,
+    "kit-carson": 24,
+    "la-plata": 24,
+    "lake": 24,
+    "larimer": 24,
+    "las-animas": 24,
+    "lincoln": 24,
+    "logan": 24,
+    "mesa": 24,
+    "mineral": 24,
+    "moffat": 24,
+    "montezuma": 24,
+    "montrose": 24,
+    "morgan": 24,
+    "otero": 24,
+    "ouray": 24,
+    "park": 24,
+    "phillips": 24,
+    "pitkin": 24,
+    "prowers": 24,
+    "pueblo": 24,
+    "rio-blanco": 24,
+    "rio-grande": 24,
+    "routt": 24,
+    "saguache": 24,
+    "san-juan": 24,
+    "san-miguel": 24,
+    "sedgwick": 24,
+    "summit": 24,
+    "teller": 24,
+    "washington": 24,
+    "weld": 24,
+    "yuma": 24
+  },
+  "major": {
+    "denver": {
+      "county": "denver",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    "el-paso": {
+      "county": "el-paso",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    "arapahoe": {
+      "county": "arapahoe",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    "jefferson": {
+      "county": "jefferson",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    "adams": {
+      "county": "adams",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    "boulder": {
+      "county": "boulder",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    }
+  }
+}

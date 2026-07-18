@@ -35,6 +35,11 @@ Replace the dual homepage CTAs (“Find Trusted Movers” / “Get My Move Estim
 
 After the report (or first Save My Move sign-in), customers may create an optional password for faster logins — same standards as the Verified Mover Portal (Supabase Auth, strength rules, skippable). Magic link remains the default. Manage under **My Move → Settings**.
 
+## Estimate email + profile back-nav
+
+- **Email** on the report shortlist requires My Move sign-in (modal if signed out), then opens a prefilled estimate-request draft. Pending outreach is stashed across auth.
+- Profile links use `?from=/#my-move-plan` so company **Back to My Move Plan** returns to the homepage wizard; plan state lives in `sessionStorage` (`mth-my-move-plan-v1`).
+
 ## Out of v1
 
 - PDF email send, public inventory URL, Apple login, full room-by-room wizard UI

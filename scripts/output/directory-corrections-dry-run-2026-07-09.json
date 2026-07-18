@@ -1,0 +1,122 @@
+{
+  "executedAt": "2026-07-09T13:57:13.481Z",
+  "dryRun": true,
+  "jkMoving": {
+    "before": {
+      "usdot_number": "146576",
+      "mc_number": "225850",
+      "authority_active": false,
+      "fmcsa_safety_rating": "Not Rated"
+    },
+    "after": {
+      "slug": "jk-moving-services",
+      "oldDot": "146576",
+      "newDot": "1065394",
+      "legalName": "JK MOVING & STORAGE INC",
+      "fieldChanges": [
+        {
+          "field": "entity_type",
+          "oldValue": null,
+          "newValue": "CARRIER",
+          "severity": "info"
+        },
+        {
+          "field": "power_units",
+          "oldValue": "7",
+          "newValue": "173",
+          "severity": "info"
+        },
+        {
+          "field": "authority_status",
+          "oldValue": null,
+          "newValue": "Common: Active · Contract: Active · Broker: None",
+          "severity": "info"
+        },
+        {
+          "field": "authority_active",
+          "oldValue": "false",
+          "newValue": "true",
+          "severity": "info"
+        }
+      ],
+      "displayFields": {
+        "entityType": "CARRIER",
+        "usdotStatus": "ACTIVE",
+        "powerUnits": "173",
+        "mcNumber": "225850",
+        "authorityStatus": "Common: Active · Contract: Active · Broker: None",
+        "safetyRating": "Not Rated",
+        "complaintsLast12m": "0"
+      },
+      "dryRun": true
+    }
+  },
+  "removals": [
+    {
+      "id": "pensey",
+      "slug": "pensey-moving",
+      "name": "Pensey Moving & Storage",
+      "usdot_number": "2108844",
+      "mc_number": "735400",
+      "headquarters": "Phoenix, AZ",
+      "relatedCounts": {
+        "reviews": 1,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "would_delete"
+    },
+    {
+      "id": "safeway",
+      "slug": "safeway-moving",
+      "name": "Safeway Moving",
+      "usdot_number": "2041756",
+      "mc_number": "716130",
+      "headquarters": "Chicago, IL",
+      "relatedCounts": {
+        "reviews": 2,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "would_delete"
+    },
+    {
+      "id": "royal",
+      "slug": "royal-moving",
+      "name": "Royal Moving & Storage",
+      "usdot_number": "2401924",
+      "mc_number": "826184",
+      "headquarters": "Los Angeles, CA",
+      "relatedCounts": {
+        "reviews": 1,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "would_delete"
+    },
+    {
+      "id": "atx-movers-llc",
+      "slug": "atx-movers-llc",
+      "name": "ATX MOVERS LLC",
+      "usdot_number": "1938615",
+      "mc_number": null,
+      "headquarters": "1779 WELLS BRNCH PKWY 110B-277, AUSTIN, TX, 78728",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 1
+      },
+      "status": "would_delete"
+    }
+  ],
+  "verification": {
+    "skipped": true
+  },
+  "revalidation": {
+    "skipped": true
+  }
+}

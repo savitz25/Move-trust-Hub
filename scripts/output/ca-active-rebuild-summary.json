@@ -1,0 +1,539 @@
+{
+  "activeCompanies": 126,
+  "displayable": 126,
+  "skippedLicense": [],
+  "excludedInactive": [
+    "georgia-home-movers-llc",
+    "juggernauts-moving-n-storage-llc",
+    "morse-moving-storage-inc"
+  ],
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "rushmore-van-lines-inc",
+    "hills-moving-storage",
+    "meathead-movers",
+    "mother-lode-van-storage",
+    "two-men-and-a-truck-chico",
+    "two-men-and-a-truck-fresno"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "alameda",
+      "local": 1,
+      "state": 6,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "alpine",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "amador",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "butte",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "calaveras",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "colusa",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "contra-costa",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "del-norte",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "el-dorado",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "fresno",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "glenn",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "humboldt",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "imperial",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "inyo",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "kern",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "kings",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "lake",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "lassen",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "los-angeles",
+      "local": 1,
+      "state": 6,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "madera",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "marin",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "mariposa",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "mendocino",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "merced",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "modoc",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "mono",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "monterey",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "napa",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "nevada",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "orange",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "placer",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "plumas",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "riverside",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "sacramento",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "san-benito",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "san-bernardino",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "san-diego",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "san-francisco",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "san-joaquin",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "san-luis-obispo",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "san-mateo",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "santa-barbara",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "santa-clara",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "santa-cruz",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "shasta",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "sierra",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "siskiyou",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "solano",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "sonoma",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "stanislaus",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "sutter",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "tehama",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "trinity",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "tulare",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "tuolumne",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "ventura",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "yolo",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    {
+      "county": "yuba",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    }
+  ],
+  "major": {
+    "los-angeles": {
+      "county": "los-angeles",
+      "local": 1,
+      "state": 6,
+      "national": 24,
+      "total": 31
+    },
+    "orange": {
+      "county": "orange",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "san-diego": {
+      "county": "san-diego",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "santa-clara": {
+      "county": "santa-clara",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "alameda": {
+      "county": "alameda",
+      "local": 1,
+      "state": 6,
+      "national": 24,
+      "total": 31
+    },
+    "sacramento": {
+      "county": "sacramento",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "san-francisco": {
+      "county": "san-francisco",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "riverside": {
+      "county": "riverside",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "san-bernardino": {
+      "county": "san-bernardino",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "contra-costa": {
+      "county": "contra-costa",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "san-mateo": {
+      "county": "san-mateo",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    },
+    "ventura": {
+      "county": "ventura",
+      "local": 0,
+      "state": 7,
+      "national": 24,
+      "total": 31
+    }
+  }
+}

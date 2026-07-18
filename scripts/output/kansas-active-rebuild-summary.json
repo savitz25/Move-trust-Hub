@@ -1,0 +1,913 @@
+{
+  "stateSlug": "kansas",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "allen",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "anderson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "atchison",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "barber",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "barton",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "bourbon",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "brown",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "butler",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "chase",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "chautauqua",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "cherokee",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "cheyenne",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "clark",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "cloud",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "coffey",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "comanche",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "cowley",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "crawford",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "decatur",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "dickinson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "doniphan",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "douglas",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "edwards",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "elk",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "ellis",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "ellsworth",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "finney",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "ford",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "geary",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "gove",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "graham",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "grant",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "gray",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "greeley",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "greenwood",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "hamilton",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "harper",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "harvey",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "haskell",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "hodgeman",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "jewell",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "johnson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "kearny",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "kingman",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "kiowa",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "labette",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lane",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "leavenworth",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "linn",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "logan",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lyon",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "marion",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "marshall",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "mcpherson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "meade",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "miami",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "mitchell",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "morris",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "morton",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "nemaha",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "neosho",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "ness",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "norton",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "osage",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "osborne",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "ottawa",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "pawnee",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "phillips",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "pottawatomie",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "pratt",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "rawlins",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "reno",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "republic",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "rice",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "riley",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "rooks",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "rush",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "russell",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "saline",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "scott",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sedgwick",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "seward",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "shawnee",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sheridan",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sherman",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "smith",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "stafford",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "stanton",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "stevens",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sumner",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "thomas",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "trego",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wabaunsee",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wallace",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wichita",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wilson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "woodson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wyandotte",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    }
+  ],
+  "counts": {
+    "allen": 24,
+    "anderson": 24,
+    "atchison": 24,
+    "barber": 24,
+    "barton": 24,
+    "bourbon": 24,
+    "brown": 24,
+    "butler": 24,
+    "chase": 24,
+    "chautauqua": 24,
+    "cherokee": 24,
+    "cheyenne": 24,
+    "clark": 24,
+    "clay": 24,
+    "cloud": 24,
+    "coffey": 24,
+    "comanche": 24,
+    "cowley": 24,
+    "crawford": 24,
+    "decatur": 24,
+    "dickinson": 24,
+    "doniphan": 24,
+    "douglas": 24,
+    "edwards": 24,
+    "elk": 24,
+    "ellis": 24,
+    "ellsworth": 24,
+    "finney": 24,
+    "ford": 24,
+    "franklin": 24,
+    "geary": 24,
+    "gove": 24,
+    "graham": 24,
+    "grant": 24,
+    "gray": 24,
+    "greeley": 24,
+    "greenwood": 24,
+    "hamilton": 24,
+    "harper": 24,
+    "harvey": 24,
+    "haskell": 24,
+    "hodgeman": 24,
+    "jackson": 24,
+    "jefferson": 24,
+    "jewell": 24,
+    "johnson": 24,
+    "kearny": 24,
+    "kingman": 24,
+    "kiowa": 24,
+    "labette": 24,
+    "lane": 24,
+    "leavenworth": 24,
+    "lincoln": 24,
+    "linn": 24,
+    "logan": 24,
+    "lyon": 24,
+    "marion": 24,
+    "marshall": 24,
+    "mcpherson": 24,
+    "meade": 24,
+    "miami": 24,
+    "mitchell": 24,
+    "montgomery": 24,
+    "morris": 24,
+    "morton": 24,
+    "nemaha": 24,
+    "neosho": 24,
+    "ness": 24,
+    "norton": 24,
+    "osage": 24,
+    "osborne": 24,
+    "ottawa": 24,
+    "pawnee": 24,
+    "phillips": 24,
+    "pottawatomie": 24,
+    "pratt": 24,
+    "rawlins": 24,
+    "reno": 24,
+    "republic": 24,
+    "rice": 24,
+    "riley": 24,
+    "rooks": 24,
+    "rush": 24,
+    "russell": 24,
+    "saline": 24,
+    "scott": 24,
+    "sedgwick": 24,
+    "seward": 24,
+    "shawnee": 24,
+    "sheridan": 24,
+    "sherman": 24,
+    "smith": 24,
+    "stafford": 24,
+    "stanton": 24,
+    "stevens": 24,
+    "sumner": 24,
+    "thomas": 24,
+    "trego": 24,
+    "wabaunsee": 24,
+    "wallace": 24,
+    "washington": 24,
+    "wichita": 24,
+    "wilson": 24,
+    "woodson": 24,
+    "wyandotte": 24
+  },
+  "major": {
+    "johnson": {
+      "county": "johnson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "sedgwick": {
+      "county": "sedgwick",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "shawnee": {
+      "county": "shawnee",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "wyandotte": {
+      "county": "wyandotte",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "douglas": {
+      "county": "douglas",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    }
+  }
+}

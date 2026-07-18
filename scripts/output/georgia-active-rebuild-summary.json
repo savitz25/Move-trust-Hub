@@ -1,0 +1,1356 @@
+{
+  "stateSlug": "georgia",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "usa-family-moving-of-atlanta-llc",
+    "nilson-van-and-storage"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "appling",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "atkinson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bacon",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "baker",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "baldwin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "banks",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "barrow",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bartow",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "ben-hill",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "berrien",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bibb",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bleckley",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "brantley",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "brooks",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bryan",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bulloch",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "burke",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "butts",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "calhoun",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "camden",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "candler",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "carroll",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "catoosa",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "charlton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "chatham",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "chattahoochee",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "chattooga",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cherokee",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "clarke",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "clayton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "clinch",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cobb",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "coffee",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "colquitt",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "columbia",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cook",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "coweta",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "crawford",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "crisp",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dade",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dawson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "decatur",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dekalb",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dodge",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dooly",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dougherty",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "douglas",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "early",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "echols",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "effingham",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "elbert",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "emanuel",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "evans",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "fannin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "fayette",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "floyd",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "forsyth",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "fulton",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "gilmer",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "glascock",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "glynn",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "gordon",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "grady",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "greene",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "gwinnett",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "habersham",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hall",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hancock",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "haralson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "harris",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hart",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "heard",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "henry",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "houston",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "irwin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jasper",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jeff-davis",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jenkins",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "johnson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jones",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lamar",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lanier",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "laurens",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lee",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "liberty",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "long",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lowndes",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lumpkin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "macon",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "marion",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mcduffie",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mcintosh",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "meriwether",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "miller",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mitchell",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "monroe",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "morgan",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "murray",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "muscogee",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "newton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "oconee",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "oglethorpe",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "paulding",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "peach",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "pickens",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "pierce",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "pike",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "polk",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "pulaski",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "putnam",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "quitman",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "rabun",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "randolph",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "richmond",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "rockdale",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "schley",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "screven",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "seminole",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "spalding",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "stephens",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "stewart",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "sumter",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "talbot",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "taliaferro",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "tattnall",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "taylor",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "telfair",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "terrell",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "thomas",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "tift",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "toombs",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "towns",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "treutlen",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "troup",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "turner",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "twiggs",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "upson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "walker",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "walton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "ware",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "warren",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wayne",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "webster",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wheeler",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "white",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "whitfield",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wilcox",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wilkes",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wilkinson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "worth",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    }
+  ],
+  "counts": {
+    "appling": 27,
+    "atkinson": 27,
+    "bacon": 27,
+    "baker": 27,
+    "baldwin": 27,
+    "banks": 27,
+    "barrow": 27,
+    "bartow": 27,
+    "ben-hill": 27,
+    "berrien": 27,
+    "bibb": 27,
+    "bleckley": 27,
+    "brantley": 27,
+    "brooks": 27,
+    "bryan": 27,
+    "bulloch": 27,
+    "burke": 27,
+    "butts": 27,
+    "calhoun": 27,
+    "camden": 27,
+    "candler": 27,
+    "carroll": 27,
+    "catoosa": 27,
+    "charlton": 27,
+    "chatham": 27,
+    "chattahoochee": 27,
+    "chattooga": 27,
+    "cherokee": 27,
+    "clarke": 27,
+    "clay": 27,
+    "clayton": 27,
+    "clinch": 27,
+    "cobb": 27,
+    "coffee": 27,
+    "colquitt": 27,
+    "columbia": 27,
+    "cook": 27,
+    "coweta": 27,
+    "crawford": 27,
+    "crisp": 27,
+    "dade": 27,
+    "dawson": 27,
+    "decatur": 27,
+    "dekalb": 27,
+    "dodge": 27,
+    "dooly": 27,
+    "dougherty": 27,
+    "douglas": 27,
+    "early": 27,
+    "echols": 27,
+    "effingham": 27,
+    "elbert": 27,
+    "emanuel": 27,
+    "evans": 27,
+    "fannin": 27,
+    "fayette": 27,
+    "floyd": 27,
+    "forsyth": 27,
+    "franklin": 27,
+    "fulton": 27,
+    "gilmer": 27,
+    "glascock": 27,
+    "glynn": 27,
+    "gordon": 27,
+    "grady": 27,
+    "greene": 27,
+    "gwinnett": 27,
+    "habersham": 27,
+    "hall": 27,
+    "hancock": 27,
+    "haralson": 27,
+    "harris": 27,
+    "hart": 27,
+    "heard": 27,
+    "henry": 27,
+    "houston": 27,
+    "irwin": 27,
+    "jackson": 27,
+    "jasper": 27,
+    "jeff-davis": 27,
+    "jefferson": 27,
+    "jenkins": 27,
+    "johnson": 27,
+    "jones": 27,
+    "lamar": 27,
+    "lanier": 27,
+    "laurens": 27,
+    "lee": 27,
+    "liberty": 27,
+    "lincoln": 27,
+    "long": 27,
+    "lowndes": 27,
+    "lumpkin": 27,
+    "macon": 27,
+    "madison": 27,
+    "marion": 27,
+    "mcduffie": 27,
+    "mcintosh": 27,
+    "meriwether": 27,
+    "miller": 27,
+    "mitchell": 27,
+    "monroe": 27,
+    "montgomery": 27,
+    "morgan": 27,
+    "murray": 27,
+    "muscogee": 27,
+    "newton": 27,
+    "oconee": 27,
+    "oglethorpe": 27,
+    "paulding": 27,
+    "peach": 27,
+    "pickens": 27,
+    "pierce": 27,
+    "pike": 27,
+    "polk": 27,
+    "pulaski": 27,
+    "putnam": 27,
+    "quitman": 27,
+    "rabun": 27,
+    "randolph": 27,
+    "richmond": 27,
+    "rockdale": 27,
+    "schley": 27,
+    "screven": 27,
+    "seminole": 27,
+    "spalding": 27,
+    "stephens": 27,
+    "stewart": 27,
+    "sumter": 27,
+    "talbot": 27,
+    "taliaferro": 27,
+    "tattnall": 27,
+    "taylor": 27,
+    "telfair": 27,
+    "terrell": 27,
+    "thomas": 27,
+    "tift": 27,
+    "toombs": 27,
+    "towns": 27,
+    "treutlen": 27,
+    "troup": 27,
+    "turner": 27,
+    "twiggs": 27,
+    "union": 27,
+    "upson": 27,
+    "walker": 27,
+    "walton": 27,
+    "ware": 27,
+    "warren": 27,
+    "washington": 27,
+    "wayne": 27,
+    "webster": 27,
+    "wheeler": 27,
+    "white": 27,
+    "whitfield": 27,
+    "wilcox": 27,
+    "wilkes": 27,
+    "wilkinson": 27,
+    "worth": 27
+  },
+  "major": {
+    "fulton": {
+      "county": "fulton",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    "gwinnett": {
+      "county": "gwinnett",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "dekalb": {
+      "county": "dekalb",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "cobb": {
+      "county": "cobb",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "chatham": {
+      "county": "chatham",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "richmond": {
+      "county": "richmond",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "summary": {
+    "executedAt": "2026-07-11T04:56:18.334Z",
+    "totalLenders": 647,
+    "enrichedInStore": 642,
+    "batches": 22,
+    "totalEnriched": 632,
+    "totalSkipped": 5,
+    "totalFailed": 0,
+    "durationMs": 5851503
+  },
+  "batches": [
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 274348
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 290350
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 272509
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 275312
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 300315
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 29,
+      "skipped": 1,
+      "failed": 0,
+      "errors": [
+        {
+          "slug": "american-pacific-mortgage-inland-empire",
+          "message": "cfpb: This operation was aborted"
+        }
+      ],
+      "durationMs": 270425
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 273135
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 29,
+      "skipped": 1,
+      "failed": 0,
+      "errors": [
+        {
+          "slug": "silverton-mortgage-foothills",
+          "message": "cfpb: This operation was aborted"
+        }
+      ],
+      "durationMs": 267976
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 278077
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 273310
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 284808
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 282534
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 29,
+      "skipped": 1,
+      "failed": 0,
+      "errors": [
+        {
+          "slug": "nova-home-loans-worcester",
+          "message": "cfpb: This operation was aborted"
+        }
+      ],
+      "durationMs": 282558
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 270503
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 29,
+      "skipped": 1,
+      "failed": 0,
+      "errors": [
+        {
+          "slug": "new-american-funding-albany",
+          "message": "cfpb: This operation was aborted"
+        }
+      ],
+      "durationMs": 270775
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 281880
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 275562
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 287842
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 265192
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 30,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 251670
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 30,
+      "enriched": 29,
+      "skipped": 1,
+      "failed": 0,
+      "errors": [
+        {
+          "slug": "local-shore-independent-mortgage",
+          "message": "cfpb: This operation was aborted"
+        }
+      ],
+      "durationMs": 257041
+    },
+    {
+      "status": "ok",
+      "mode": "full",
+      "dryRun": false,
+      "processed": 7,
+      "enriched": 7,
+      "skipped": 0,
+      "failed": 0,
+      "errors": [],
+      "durationMs": 65381
+    }
+  ]
+}

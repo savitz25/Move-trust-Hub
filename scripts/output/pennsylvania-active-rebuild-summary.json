@@ -1,0 +1,612 @@
+{
+  "stateSlug": "pennsylvania",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "vellar-holdings-llc",
+    "safebound-logistics-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "adams",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "allegheny",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "armstrong",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "beaver",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "bedford",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "berks",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "blair",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "bradford",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "bucks",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "butler",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "cambria",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "cameron",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "carbon",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "centre",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "chester",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "clarion",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "clearfield",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "clinton",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "columbia",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "crawford",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "cumberland",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "dauphin",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "delaware",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "elk",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "erie",
+      "local": 2,
+      "state": 0,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "fayette",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "forest",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "fulton",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "greene",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "huntingdon",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "indiana",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "juniata",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lackawanna",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lancaster",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lawrence",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lebanon",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lehigh",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "luzerne",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lycoming",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mckean",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mercer",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mifflin",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "monroe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "montour",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "northampton",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "northumberland",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "perry",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "philadelphia",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pike",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "potter",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "schuylkill",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "snyder",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "somerset",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "sullivan",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "susquehanna",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "tioga",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "venango",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "warren",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "wayne",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "westmoreland",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "wyoming",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "york",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  ],
+  "counts": {
+    "adams": 26,
+    "allegheny": 26,
+    "armstrong": 26,
+    "beaver": 26,
+    "bedford": 26,
+    "berks": 26,
+    "blair": 26,
+    "bradford": 26,
+    "bucks": 26,
+    "butler": 26,
+    "cambria": 26,
+    "cameron": 26,
+    "carbon": 26,
+    "centre": 26,
+    "chester": 26,
+    "clarion": 26,
+    "clearfield": 26,
+    "clinton": 26,
+    "columbia": 26,
+    "crawford": 26,
+    "cumberland": 26,
+    "dauphin": 26,
+    "delaware": 26,
+    "elk": 26,
+    "erie": 26,
+    "fayette": 26,
+    "forest": 26,
+    "franklin": 26,
+    "fulton": 26,
+    "greene": 26,
+    "huntingdon": 26,
+    "indiana": 26,
+    "jefferson": 26,
+    "juniata": 26,
+    "lackawanna": 26,
+    "lancaster": 26,
+    "lawrence": 26,
+    "lebanon": 26,
+    "lehigh": 26,
+    "luzerne": 26,
+    "lycoming": 26,
+    "mckean": 26,
+    "mercer": 26,
+    "mifflin": 26,
+    "monroe": 26,
+    "montgomery": 26,
+    "montour": 26,
+    "northampton": 26,
+    "northumberland": 26,
+    "perry": 26,
+    "philadelphia": 26,
+    "pike": 26,
+    "potter": 26,
+    "schuylkill": 26,
+    "snyder": 26,
+    "somerset": 26,
+    "sullivan": 26,
+    "susquehanna": 26,
+    "tioga": 26,
+    "union": 26,
+    "venango": 26,
+    "warren": 26,
+    "washington": 26,
+    "wayne": 26,
+    "westmoreland": 26,
+    "wyoming": 26,
+    "york": 26
+  },
+  "major": {
+    "philadelphia": {
+      "county": "philadelphia",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "allegheny": {
+      "county": "allegheny",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "montgomery": {
+      "county": "montgomery",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "bucks": {
+      "county": "bucks",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "delaware": {
+      "county": "delaware",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "stateSlug": "washington",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "adams",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "asotin",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "benton",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "chelan",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "clallam",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "clark",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "columbia",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "cowlitz",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "douglas",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "ferry",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "garfield",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "grant",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "grays-harbor",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "island",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "king",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "kitsap",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "kittitas",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "klickitat",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lewis",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "mason",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "okanogan",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "pacific",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "pend-oreille",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "pierce",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "san-juan",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "skagit",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "skamania",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "snohomish",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "spokane",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "stevens",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "thurston",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "wahkiakum",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "walla-walla",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "whatcom",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "whitman",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    {
+      "county": "yakima",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "adams": 25,
+    "asotin": 25,
+    "benton": 25,
+    "chelan": 25,
+    "clallam": 25,
+    "clark": 25,
+    "columbia": 25,
+    "cowlitz": 25,
+    "douglas": 25,
+    "ferry": 25,
+    "franklin": 25,
+    "garfield": 25,
+    "grant": 25,
+    "grays-harbor": 25,
+    "island": 25,
+    "jefferson": 25,
+    "king": 25,
+    "kitsap": 25,
+    "kittitas": 25,
+    "klickitat": 25,
+    "lewis": 25,
+    "lincoln": 25,
+    "mason": 25,
+    "okanogan": 25,
+    "pacific": 25,
+    "pend-oreille": 25,
+    "pierce": 25,
+    "san-juan": 25,
+    "skagit": 25,
+    "skamania": 25,
+    "snohomish": 25,
+    "spokane": 25,
+    "stevens": 25,
+    "thurston": 25,
+    "wahkiakum": 25,
+    "walla-walla": 25,
+    "whatcom": 25,
+    "whitman": 25,
+    "yakima": 25
+  },
+  "major": {
+    "king": {
+      "county": "king",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    "pierce": {
+      "county": "pierce",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    },
+    "snohomish": {
+      "county": "snohomish",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "spokane": {
+      "county": "spokane",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "clark": {
+      "county": "clark",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "thurston": {
+      "county": "thurston",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "kitsap": {
+      "county": "kitsap",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "whatcom": {
+      "county": "whatcom",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    },
+    "yakima": {
+      "county": "yakima",
+      "local": 0,
+      "state": 1,
+      "national": 24,
+      "total": 25
+    }
+  }
+}

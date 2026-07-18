@@ -1,0 +1,747 @@
+{
+  "stateSlug": "michigan",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "stevens-worldwide",
+    "two-men-and-a-truck"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "alcona",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "alger",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "allegan",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "alpena",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "antrim",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "arenac",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "baraga",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "barry",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "bay",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "benzie",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "berrien",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "branch",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "calhoun",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "cass",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "charlevoix",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "cheboygan",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "chippewa",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "clare",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "clinton",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "crawford",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "delta",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "dickinson",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "eaton",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "emmet",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "genesee",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "gladwin",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "gogebic",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "grand-traverse",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "gratiot",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "hillsdale",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "houghton",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "huron",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "ingham",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "ionia",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "iosco",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "iron",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "isabella",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "kalamazoo",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "kalkaska",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "kent",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "keweenaw",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "lake",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "lapeer",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "leelanau",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "lenawee",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "livingston",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "luce",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "mackinac",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "macomb",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "manistee",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "marquette",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "mason",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "mecosta",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "menominee",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "midland",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "missaukee",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "monroe",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "montcalm",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "montmorency",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "muskegon",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "newaygo",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "oakland",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "oceana",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "ogemaw",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "ontonagon",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "osceola",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "oscoda",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "otsego",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "ottawa",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "presque-isle",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "roscommon",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "saginaw",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "sanilac",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "schoolcraft",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "shiawassee",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "st-clair",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "st-joseph",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "tuscola",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "van-buren",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "washtenaw",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "wayne",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    {
+      "county": "wexford",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    }
+  ],
+  "counts": {
+    "alcona": 24,
+    "alger": 24,
+    "allegan": 24,
+    "alpena": 24,
+    "antrim": 24,
+    "arenac": 24,
+    "baraga": 24,
+    "barry": 24,
+    "bay": 24,
+    "benzie": 24,
+    "berrien": 24,
+    "branch": 24,
+    "calhoun": 24,
+    "cass": 24,
+    "charlevoix": 24,
+    "cheboygan": 24,
+    "chippewa": 24,
+    "clare": 24,
+    "clinton": 24,
+    "crawford": 24,
+    "delta": 24,
+    "dickinson": 24,
+    "eaton": 24,
+    "emmet": 24,
+    "genesee": 24,
+    "gladwin": 24,
+    "gogebic": 24,
+    "grand-traverse": 24,
+    "gratiot": 24,
+    "hillsdale": 24,
+    "houghton": 24,
+    "huron": 24,
+    "ingham": 24,
+    "ionia": 24,
+    "iosco": 24,
+    "iron": 24,
+    "isabella": 24,
+    "jackson": 24,
+    "kalamazoo": 24,
+    "kalkaska": 24,
+    "kent": 24,
+    "keweenaw": 24,
+    "lake": 24,
+    "lapeer": 24,
+    "leelanau": 24,
+    "lenawee": 24,
+    "livingston": 24,
+    "luce": 24,
+    "mackinac": 24,
+    "macomb": 24,
+    "manistee": 24,
+    "marquette": 24,
+    "mason": 24,
+    "mecosta": 24,
+    "menominee": 24,
+    "midland": 24,
+    "missaukee": 24,
+    "monroe": 24,
+    "montcalm": 24,
+    "montmorency": 24,
+    "muskegon": 24,
+    "newaygo": 24,
+    "oakland": 24,
+    "oceana": 24,
+    "ogemaw": 24,
+    "ontonagon": 24,
+    "osceola": 24,
+    "oscoda": 24,
+    "otsego": 24,
+    "ottawa": 24,
+    "presque-isle": 24,
+    "roscommon": 24,
+    "saginaw": 24,
+    "sanilac": 24,
+    "schoolcraft": 24,
+    "shiawassee": 24,
+    "st-clair": 24,
+    "st-joseph": 24,
+    "tuscola": 24,
+    "van-buren": 24,
+    "washtenaw": 24,
+    "wayne": 24,
+    "wexford": 24
+  },
+  "major": {
+    "wayne": {
+      "county": "wayne",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    "oakland": {
+      "county": "oakland",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    "macomb": {
+      "county": "macomb",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    "kent": {
+      "county": "kent",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    "genesee": {
+      "county": "genesee",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    },
+    "washtenaw": {
+      "county": "washtenaw",
+      "local": 0,
+      "state": 2,
+      "national": 22,
+      "total": 24
+    }
+  }
+}

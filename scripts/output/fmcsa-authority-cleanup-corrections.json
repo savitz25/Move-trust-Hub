@@ -1,0 +1,31 @@
+{
+  "correctedAt": "2026-07-09T14:45:00.000Z",
+  "issue": "Initial cleanup classifyRemoval matched 'Inactive' substring in broker authority labels, removing 3 companies with authority_active=true.",
+  "falsePositivesRemoved": [
+    {
+      "slug": "horne-moving-systems",
+      "name": "Horne Moving Systems",
+      "usdot_number": "304797",
+      "authority_active": true,
+      "authorityStatus": "Common: Active · Contract: None · Broker: Inactive"
+    },
+    {
+      "slug": "nilson-van-and-storage",
+      "name": "Nilson Van and Storage",
+      "usdot_number": "122025",
+      "authority_active": true,
+      "authorityStatus": "Common: Active · Contract: Active · Broker: Inactive"
+    },
+    {
+      "slug": "two-men-and-a-truck-gainesville",
+      "name": "Two Men and a Truck Gainesville",
+      "usdot_number": "1669783",
+      "authority_active": true,
+      "authorityStatus": "Common: Active · Contract: Inactive · Broker: None"
+    }
+  ],
+  "restored": true,
+  "finalDirectoryCount": 119,
+  "finalInactiveAuthorityCount": 0,
+  "netRemovals": 125
+}

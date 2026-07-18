@@ -1,0 +1,268 @@
+{
+  "stateSlug": "maryland",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "home-and-office-movers-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "allegany",
+      "local": 1,
+      "state": 1,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "anne-arundel",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "baltimore",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "baltimore-city",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "calvert",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "caroline",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "carroll",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "cecil",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "charles",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "dorchester",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "frederick",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "garrett",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "harford",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "howard",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "kent",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "prince-georges",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "queen-annes",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "somerset",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "st-marys",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "talbot",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "wicomico",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "worcester",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "allegany": 25,
+    "anne-arundel": 25,
+    "baltimore": 25,
+    "baltimore-city": 25,
+    "calvert": 25,
+    "caroline": 25,
+    "carroll": 25,
+    "cecil": 25,
+    "charles": 25,
+    "dorchester": 25,
+    "frederick": 25,
+    "garrett": 25,
+    "harford": 25,
+    "howard": 25,
+    "kent": 25,
+    "montgomery": 25,
+    "prince-georges": 25,
+    "queen-annes": 25,
+    "somerset": 25,
+    "st-marys": 25,
+    "talbot": 25,
+    "washington": 25,
+    "wicomico": 25,
+    "worcester": 25
+  },
+  "major": {
+    "montgomery": {
+      "county": "montgomery",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "prince-georges": {
+      "county": "prince-georges",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "baltimore": {
+      "county": "baltimore",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "anne-arundel": {
+      "county": "anne-arundel",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "howard": {
+      "county": "howard",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  }
+}

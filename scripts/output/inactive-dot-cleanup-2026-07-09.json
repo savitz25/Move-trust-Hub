@@ -1,0 +1,35 @@
+{
+  "executedAt": "2026-07-09T14:50:51.739Z",
+  "dryRun": false,
+  "totalWithUsdot": 119,
+  "totalUpdated": 1,
+  "totalRemoved": 0,
+  "totalDotCorrected": 1,
+  "batchSummaries": [
+    {
+      "offset": 0,
+      "processed": 40,
+      "updated": 1,
+      "removed": 0,
+      "dotCorrected": 1,
+      "failed": 0
+    },
+    {
+      "offset": 40,
+      "processed": 40,
+      "updated": 0,
+      "removed": 0,
+      "dotCorrected": 0,
+      "failed": 0
+    },
+    {
+      "offset": 80,
+      "processed": 39,
+      "updated": 0,
+      "removed": 0,
+      "dotCorrected": 0,
+      "failed": 0
+    }
+  ],
+  "removals": []
+}

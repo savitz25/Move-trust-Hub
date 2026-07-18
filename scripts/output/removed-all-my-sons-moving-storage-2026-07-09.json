@@ -1,0 +1,77 @@
+{
+  "removedAt": "2026-07-09T16:00:23.206Z",
+  "dryRun": false,
+  "company": {
+    "id": "all-my-sons-moving-storage",
+    "slug": "all-my-sons-moving-storage",
+    "name": "All My Sons Moving & Storage",
+    "headquarters": "Fort Lauderdale",
+    "usdot_number": "2139129",
+    "mc_number": null,
+    "is_verified": false,
+    "overall_rating": null,
+    "review_count": 0,
+    "verification_sources": {
+      "google": {
+        "name": null,
+        "rating": null,
+        "source": "google_places_api",
+        "status": "not_found",
+        "place_id": null,
+        "last_fetched": "2026-07-08T17:39:58.752Z",
+        "review_count": null,
+        "review_snippets": [],
+        "formatted_address": null
+      },
+      "public_scrape": {
+        "sources": {
+          "bbb": {
+            "url": "https://www.bbb.org/us/tx/carrollton/profile/moving-and-storage-companies/all-my-sons-moving-storage-0875-23004916",
+            "method": "public_scrape",
+            "status": "ok"
+          },
+          "yelp": {
+            "url": "https://www.yelp.com/search?find_desc=All%20My%20Sons%20Moving%20%26%20Storage&find_loc=Fort%20Lauderdale",
+            "error": "Request failed",
+            "method": "public_scrape",
+            "status": "error"
+          },
+          "trustpilot": {
+            "url": "https://www.trustpilot.com/search?query=All%20My%20Sons%20Moving%20%26%20Storage%20moving",
+            "error": "Request failed",
+            "method": "public_scrape",
+            "status": "error"
+          }
+        },
+        "bbb_rating": "A+",
+        "confidence": "public",
+        "bbb_details": {
+          "profile_url": "https://www.bbb.org/us/tx/carrollton/profile/moving-and-storage-companies/all-my-sons-moving-storage-0875-23004916",
+          "review_snippets": [],
+          "accredited_since": null,
+          "file_opened_date": null,
+          "accreditation_status": "BBB Accredited Business"
+        },
+        "yelp_rating": null,
+        "bbb_accredited": true,
+        "bbb_file_opened": null,
+        "bbb_profile_url": "https://www.bbb.org/us/tx/carrollton/profile/moving-and-storage-companies/all-my-sons-moving-storage-0875-23004916",
+        "last_scraped_at": "2026-07-08T17:39:58.753Z",
+        "bbb_review_count": null,
+        "trustpilot_rating": null,
+        "yelp_review_count": null,
+        "bbb_recent_reviews": [],
+        "bbb_accredited_since": null,
+        "trustpilot_review_count": null,
+        "bbb_accreditation_status": "BBB Accredited Business"
+      },
+      "enrichment_stub": true
+    }
+  },
+  "related": {
+    "reviews": 0,
+    "fmcsa_change_log": 0,
+    "bbb_change_log": 0,
+    "company_suggestions": 0
+  }
+}

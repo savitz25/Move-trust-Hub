@@ -24,12 +24,14 @@ import {
   LocationPlaceInput,
   type ConfirmedPlace,
 } from '@/components/location/location-place-input';
-import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
+import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import {
   MY_MOVE_PASSWORD_ENABLED_KEY,
   MY_MOVE_PASSWORD_PROMPT_DISMISSED_KEY,
 } from '@/lib/save-my-move/password-meta';
 import { PORTAL_PASSWORD_ENABLED_KEY } from '@/lib/portal/password-meta';
+import { stashPendingSaveAction } from '@/lib/save-my-move/pending-action';
+import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import type { HomeRouteMover, HomeRouteResult } from '@/lib/home/resolve-route-from-zip';
 import {
   MOVE_PRESETS,
@@ -44,6 +46,14 @@ import {
   buildFullPlanClipboard,
   buildOutreachEmail,
 } from '@/lib/my-move-plan/outreach';
+import {
+  consumePendingWizardOutreach,
+  stashPendingWizardOutreach,
+} from '@/lib/my-move-plan/pending-outreach';
+import {
+  MY_MOVE_PLAN_RETURN_PATH,
+  MY_MOVE_PLAN_SECTION_ID,
+} from '@/lib/my-move-plan/return-path';
 import {
   computeMoveReadiness,
   phaseProgress,
@@ -77,7 +87,7 @@ type WizardProps = {
 export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
   const fromId = useId();
   const toId = useId();
-  const saveMyMove = useSaveMyMoveOptional();
+  const saveMyMove = useSaveMyMove();
 
   const [step, setStep] = useState<MyMovePlanStep>('route');
   const [fromText, setFromText] = useState('');
@@ -91,10 +101,12 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
   const [preset, setPreset] = useState<MovePresetId | null>(null);
   const [inventory, setInventory] = useState<PlanInventoryItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
+  const [emailPendingSlug, setEmailPendingSlug] = useState<string | null>(null);
 
   const routeAbort = useRef<AbortController | null>(null);
+  const outreachHandledRef = useRef(false);
 
-  // Resume session
+  // Resume session + scroll back to wizard after profile navigation
   useEffect(() => {
     const saved = loadMyMovePlan();
     if (saved?.fromPlace) {
@@ -111,6 +123,15 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
       if (saved.step && saved.step !== 'route') setStep(saved.step);
     }
     setHydrated(true);
+
+    if (typeof window !== 'undefined' && window.location.hash === `#${MY_MOVE_PLAN_SECTION_ID}`) {
+      // Wait a frame so restored step content is in the DOM
+      window.requestAnimationFrame(() => {
+        document
+          .getElementById(MY_MOVE_PLAN_SECTION_ID)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
   }, []);
 
   const planSnapshot: MyMovePlanState = useMemo(
@@ -249,6 +270,55 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
     }
   };
 
+  const persistPlan = useCallback(() => {
+    saveMyMovePlan(planSnapshot);
+  }, [planSnapshot]);
+
+  const profileHref = useCallback((slug: string) => {
+    // Persist before leave so Back restores shortlist/inventory/step
+    saveMyMovePlan({
+      step,
+      fromPlace,
+      toPlace,
+      drivingMiles,
+      shortlist,
+      preset,
+      inventory,
+      updatedAt: new Date().toISOString(),
+    });
+    return buildCompanyProfileHref(slug, MY_MOVE_PLAN_RETURN_PATH);
+  }, [step, fromPlace, toPlace, drivingMiles, shortlist, preset, inventory]);
+
+  const openEstimateMailto = useCallback(
+    (mover: HomeRouteMover, planOverride?: MyMovePlanState | null) => {
+      const plan = planOverride ?? loadMyMovePlan();
+      const from = plan?.fromPlace ?? fromPlace;
+      const to = plan?.toPlace ?? toPlace;
+      const miles = plan?.drivingMiles ?? drivingMiles;
+      const items = plan?.inventory?.length ? plan.inventory : inventory;
+      const estWeight = estimateWeight(planInventoryTotals(items).totalVolume);
+
+      const { mailto } = buildOutreachEmail({
+        from,
+        to,
+        drivingMiles: miles,
+        inventory: items,
+        estimatedWeight: estWeight,
+        mover,
+      });
+      try {
+        // Prefer assigning location for broader mobile client support
+        window.location.href = mailto;
+        toast.success(`Opening email draft for ${mover.name}`, {
+          description: 'Review and send from your mail app. Add your name and phone before sending.',
+        });
+      } catch {
+        toast.error('Could not open your email app — use Copy request instead.');
+      }
+    },
+    [fromPlace, toPlace, drivingMiles, inventory]
+  );
+
   const copyOutreach = async (mover: HomeRouteMover) => {
     const { body } = buildOutreachEmail({
       from: fromPlace,
@@ -266,15 +336,115 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
     }
   };
 
+  const handleEmailOutreach = useCallback(
+    (mover: HomeRouteMover) => {
+      persistPlan();
+
+      if (saveMyMove.loading) {
+        toast.message('Preparing sign-in…', {
+          description: 'Try Email again in a moment.',
+        });
+        stashPendingWizardOutreach({
+          companySlug: mover.slug,
+          companyName: mover.name,
+        });
+        return;
+      }
+
+      if (!saveMyMove.user) {
+        stashPendingWizardOutreach({
+          companySlug: mover.slug,
+          companyName: mover.name,
+        });
+        // Also save mover + email details after auth (My Move shortlist)
+        stashPendingSaveAction({
+          type: 'mover',
+          payload: {
+            companySlug: mover.slug,
+            companyName: mover.name,
+            sendEmail: true,
+          },
+        });
+        setEmailPendingSlug(mover.slug);
+        saveMyMove.openSaveModal({
+          // Return to wizard (not Move HQ) so outreach can complete
+          redirectPath: MY_MOVE_PLAN_RETURN_PATH,
+          context: 'mover',
+        });
+        toast.message('Sign in to send estimate requests', {
+          description: 'Save My Move keeps your plan and opens a ready-to-send email draft.',
+        });
+        return;
+      }
+
+      setEmailPendingSlug(null);
+      openEstimateMailto(mover);
+    },
+    [persistPlan, saveMyMove, openEstimateMailto]
+  );
+
+  // Allow a new post-auth outreach after sign-out
+  useEffect(() => {
+    if (!saveMyMove.user) {
+      outreachHandledRef.current = false;
+    }
+  }, [saveMyMove.user]);
+
+  // After magic-link / OAuth / password sign-in, complete a stashed estimate email
+  useEffect(() => {
+    if (!hydrated || saveMyMove.loading || !saveMyMove.user) return;
+    if (outreachHandledRef.current) return;
+
+    const pending = consumePendingWizardOutreach();
+    if (!pending) {
+      setEmailPendingSlug(null);
+      return;
+    }
+
+    outreachHandledRef.current = true;
+    setEmailPendingSlug(null);
+
+    const plan = loadMyMovePlan();
+    const moverFromState =
+      shortlist.find((m) => m.slug === pending.companySlug) ||
+      plan?.shortlist.find((m) => m.slug === pending.companySlug);
+
+    const mover: HomeRouteMover = moverFromState ?? {
+      slug: pending.companySlug,
+      name: pending.companyName,
+      headquarters: '',
+      overallRating: 0,
+      reviewCount: 0,
+      reputationScore: 0,
+      isVerified: false,
+      usdotNumber: '',
+      mcNumber: '',
+      shortDescription: '',
+      services: [],
+      coverageTier: 'national',
+    };
+
+    // Restore wizard context after auth round-trip
+    if (plan?.step) {
+      setStep(plan.step);
+    }
+
+    // Small delay so mail clients don't compete with auth redirect paint
+    window.setTimeout(() => {
+      openEstimateMailto(mover, plan);
+    }, 350);
+  }, [hydrated, saveMyMove.loading, saveMyMove.user, shortlist, openEstimateMailto]);
+
   const openSave = useCallback(() => {
-    saveMyMove?.openSaveModal({
+    persistPlan();
+    saveMyMove.openSaveModal({
       // Land on My Move so create-password offer runs after first save/sign-in
       redirectPath: '/my-move',
       context: 'dashboard',
     });
-  }, [saveMyMove]);
+  }, [saveMyMove, persistPlan]);
 
-  const signedInUser = saveMyMove?.user ?? null;
+  const signedInUser = saveMyMove.user;
   const userHasPassword = Boolean(
     signedInUser &&
       (((signedInUser.user_metadata ?? {}) as Record<string, unknown>)[
@@ -294,7 +464,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
     Boolean(signedInUser) && !userHasPassword && !userDismissedPasswordPrompt;
 
   return (
-    <div className="w-full">
+    <div id={MY_MOVE_PLAN_SECTION_ID} className="w-full scroll-mt-24">
       <div className="rounded-3xl border border-white/60 bg-white/90 p-4 shadow-xl shadow-primary/10 backdrop-blur-md sm:p-6 md:p-8">
         {/* Phase + readiness */}
         <div className="mb-5 space-y-3">
@@ -816,14 +986,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
               ) : (
                 <ul className="space-y-3">
                   {shortlist.map((m) => {
-                    const { mailto } = buildOutreachEmail({
-                      from: fromPlace,
-                      to: toPlace,
-                      drivingMiles,
-                      inventory,
-                      estimatedWeight: weight,
-                      mover: m,
-                    });
+                    const emailBusy = emailPendingSlug === m.slug;
                     return (
                       <li
                         key={m.slug}
@@ -844,14 +1007,23 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                             <ClipboardCopy className="h-3.5 w-3.5" />
                             Copy request
                           </Button>
-                          <Button type="button" size="sm" className="gap-1" asChild>
-                            <a href={mailto}>
-                              <Mail className="h-3.5 w-3.5" />
-                              Email
-                            </a>
+                          <Button
+                            type="button"
+                            size="sm"
+                            className="gap-1"
+                            disabled={saveMyMove.loading && emailBusy}
+                            onClick={() => handleEmailOutreach(m)}
+                          >
+                            <Mail className="h-3.5 w-3.5" />
+                            {emailBusy && !signedInUser ? 'Sign in…' : 'Email'}
                           </Button>
                           <Button type="button" size="sm" variant="ghost" asChild>
-                            <Link href={`/companies/${m.slug}`}>Profile</Link>
+                            <Link
+                              href={profileHref(m.slug)}
+                              onClick={() => persistPlan()}
+                            >
+                              Profile
+                            </Link>
                           </Button>
                         </div>
                       </li>
@@ -937,7 +1109,8 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
             {movers.slice(0, 4).map((m) => (
               <Link
                 key={m.slug}
-                href={`/companies/${m.slug}`}
+                href={profileHref(m.slug)}
+                onClick={() => persistPlan()}
                 className="group rounded-2xl border bg-card p-4 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
               >
                 <div className="mb-1 font-semibold group-hover:text-primary">{m.name}</div>

@@ -1,0 +1,55 @@
+{
+  "stateSlug": "district-of-columbia",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "district-of-columbia",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "district-of-columbia": 25
+  },
+  "major": {
+    "district-of-columbia": {
+      "county": "district-of-columbia",
+      "local": 1,
+      "state": 0,
+      "national": 24,
+      "total": 25
+    }
+  }
+}

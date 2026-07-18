@@ -1,0 +1,521 @@
+{
+  "stateSlug": "montana",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "beaverhead",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "big-horn",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "blaine",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "broadwater",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "carbon",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "carter",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "cascade",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "chouteau",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "custer",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "daniels",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "dawson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "deer-lodge",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "fallon",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "fergus",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "flathead",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "gallatin",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "garfield",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "glacier",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "golden-valley",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "granite",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "hill",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "judith-basin",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lake",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lewis-and-clark",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "liberty",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "mccone",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "meagher",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "mineral",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "missoula",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "musselshell",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "park",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "petroleum",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "phillips",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "pondera",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "powder-river",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "powell",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "prairie",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "ravalli",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "richland",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "roosevelt",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "rosebud",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sanders",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sheridan",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "silver-bow",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "stillwater",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "sweet-grass",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "teton",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "toole",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "treasure",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "valley",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wheatland",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "wibaux",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    {
+      "county": "yellowstone",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    }
+  ],
+  "counts": {
+    "beaverhead": 24,
+    "big-horn": 24,
+    "blaine": 24,
+    "broadwater": 24,
+    "carbon": 24,
+    "carter": 24,
+    "cascade": 24,
+    "chouteau": 24,
+    "custer": 24,
+    "daniels": 24,
+    "dawson": 24,
+    "deer-lodge": 24,
+    "fallon": 24,
+    "fergus": 24,
+    "flathead": 24,
+    "gallatin": 24,
+    "garfield": 24,
+    "glacier": 24,
+    "golden-valley": 24,
+    "granite": 24,
+    "hill": 24,
+    "jefferson": 24,
+    "judith-basin": 24,
+    "lake": 24,
+    "lewis-and-clark": 24,
+    "liberty": 24,
+    "lincoln": 24,
+    "madison": 24,
+    "mccone": 24,
+    "meagher": 24,
+    "mineral": 24,
+    "missoula": 24,
+    "musselshell": 24,
+    "park": 24,
+    "petroleum": 24,
+    "phillips": 24,
+    "pondera": 24,
+    "powder-river": 24,
+    "powell": 24,
+    "prairie": 24,
+    "ravalli": 24,
+    "richland": 24,
+    "roosevelt": 24,
+    "rosebud": 24,
+    "sanders": 24,
+    "sheridan": 24,
+    "silver-bow": 24,
+    "stillwater": 24,
+    "sweet-grass": 24,
+    "teton": 24,
+    "toole": 24,
+    "treasure": 24,
+    "valley": 24,
+    "wheatland": 24,
+    "wibaux": 24,
+    "yellowstone": 24
+  },
+  "major": {
+    "yellowstone": {
+      "county": "yellowstone",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "missoula": {
+      "county": "missoula",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "gallatin": {
+      "county": "gallatin",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "flathead": {
+      "county": "flathead",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    },
+    "cascade": {
+      "county": "cascade",
+      "local": 0,
+      "state": 0,
+      "national": 24,
+      "total": 24
+    }
+  }
+}

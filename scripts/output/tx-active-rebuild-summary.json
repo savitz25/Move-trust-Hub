@@ -1,0 +1,1902 @@
+{
+  "activeCompanies": 126,
+  "displayable": 126,
+  "skippedLicense": [],
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "crossin-moving-storage",
+    "little-guys-movers"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "anderson",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "andrews",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "angelina",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "aransas",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "archer",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "armstrong",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "atascosa",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "austin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bailey",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bandera",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bastrop",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "baylor",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bee",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bell",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bexar",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "blanco",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "borden",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bosque",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "bowie",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "brazoria",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "brazos",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "brewster",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "briscoe",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "brooks",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "brown",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "burleson",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "burnet",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "caldwell",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "calhoun",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "callahan",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cameron",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "camp",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "carson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cass",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "castro",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "chambers",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cherokee",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "childress",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cochran",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "coke",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "coleman",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "collin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "collingsworth",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "colorado",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "comal",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "comanche",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "concho",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cooke",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "coryell",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "cottle",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "crane",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "crockett",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "crosby",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "culberson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dallam",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dallas",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dawson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "deaf-smith",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "delta",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "denton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dewitt",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dickens",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "dimmit",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "donley",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "duval",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "eastland",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "ector",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "edwards",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "el-paso",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "ellis",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "erath",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "falls",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "fannin",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "fayette",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "fisher",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "floyd",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "foard",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "fort-bend",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "freestone",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "frio",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "gaines",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "galveston",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "garza",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "gillespie",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "glasscock",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "goliad",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "gonzales",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "gray",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "grayson",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "gregg",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "grimes",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "guadalupe",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hale",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hall",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hamilton",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hansford",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hardeman",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hardin",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "harris",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "harrison",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hartley",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "haskell",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hays",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hemphill",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "henderson",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hidalgo",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hill",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hockley",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hood",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hopkins",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "houston",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "howard",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hudspeth",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hunt",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "hutchinson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "irion",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jack",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jasper",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jeff-davis",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jim-hogg",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jim-wells",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "johnson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "jones",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "karnes",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "kaufman",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "kendall",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "kenedy",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "kent",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "kerr",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "kimble",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "king",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "kinney",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "kleberg",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "knox",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "la-salle",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lamar",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lamb",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lampasas",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lavaca",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lee",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "leon",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "liberty",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "limestone",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lipscomb",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "live-oak",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "llano",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "loving",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lubbock",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "lynn",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "marion",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "martin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mason",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "matagorda",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "maverick",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mcculloch",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mclennan",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mcmullen",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "medina",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "menard",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "midland",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "milam",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mills",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "mitchell",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "montague",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "moore",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "morris",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "motley",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "nacogdoches",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "navarro",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "newton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "nolan",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "nueces",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "ochiltree",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "oldham",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "orange",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "palo-pinto",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "panola",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "parker",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "parmer",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "pecos",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "polk",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "potter",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "presidio",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "rains",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "randall",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "reagan",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "real",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "red-river",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "reeves",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "refugio",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "roberts",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "robertson",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "rockwall",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "runnels",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "rusk",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "sabine",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "san-augustine",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "san-jacinto",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "san-patricio",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "san-saba",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "schleicher",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "scurry",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "shackelford",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "shelby",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "sherman",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "smith",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "somervell",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "starr",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "stephens",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "sterling",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "stonewall",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "sutton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "swisher",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "tarrant",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "taylor",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "terrell",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "terry",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "throckmorton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "titus",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "tom-green",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "travis",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "trinity",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "tyler",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "upshur",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "upton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "uvalde",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "val-verde",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "van-zandt",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "victoria",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "walker",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "waller",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "ward",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "webb",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wharton",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wheeler",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wichita",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wilbarger",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "willacy",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "williamson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wilson",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "winkler",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wise",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "wood",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "yoakum",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "young",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "zapata",
+      "local": 1,
+      "state": 2,
+      "national": 24,
+      "total": 27
+    },
+    {
+      "county": "zavala",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    }
+  ],
+  "major": {
+    "harris": {
+      "county": "harris",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "dallas": {
+      "county": "dallas",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "tarrant": {
+      "county": "tarrant",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "bexar": {
+      "county": "bexar",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "travis": {
+      "county": "travis",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "collin": {
+      "county": "collin",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "denton": {
+      "county": "denton",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "fort-bend": {
+      "county": "fort-bend",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "el-paso": {
+      "county": "el-paso",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "hidalgo": {
+      "county": "hidalgo",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "williamson": {
+      "county": "williamson",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    },
+    "montgomery": {
+      "county": "montgomery",
+      "local": 0,
+      "state": 3,
+      "national": 24,
+      "total": 27
+    }
+  }
+}

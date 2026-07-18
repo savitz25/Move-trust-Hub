@@ -1,0 +1,768 @@
+{
+  "base": "https://www.movetrusthub.com",
+  "finishedAt": "2026-07-17T18:36:11.720Z",
+  "stages": [
+    {
+      "stage": "warmup",
+      "concurrency": 1,
+      "totalRequests": 30,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "durationSec": "3.64",
+      "throughputRps": "8.24"
+    },
+    {
+      "stage": "light_10",
+      "concurrency": 10,
+      "totalRequests": 50,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "durationSec": "1.17",
+      "throughputRps": "42.59"
+    },
+    {
+      "stage": "moderate_25",
+      "concurrency": 25,
+      "totalRequests": 40,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "durationSec": "1.23",
+      "throughputRps": "32.47"
+    },
+    {
+      "stage": "peak_50",
+      "concurrency": 50,
+      "totalRequests": 30,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "durationSec": "0.50",
+      "throughputRps": "60.34"
+    }
+  ],
+  "detail": [
+    {
+      "stage": "warmup",
+      "endpoint": "insurance_home",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 58,
+      "p95": 417,
+      "p99": 417,
+      "max": 417,
+      "avgBytes": 112364,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "local_movers_index",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 286,
+      "p95": 350,
+      "p99": 350,
+      "max": 350,
+      "avgBytes": 109664,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "PRERENDER": 1,
+        "HIT": 2
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "moving_calculator",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 63,
+      "p95": 65,
+      "p99": 65,
+      "max": 65,
+      "avgBytes": 78587,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "api_companies",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 104,
+      "p95": 260,
+      "p99": 260,
+      "max": 260,
+      "avgBytes": 519772,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "PRERENDER": 1,
+        "HIT": 2
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "destination_sample",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 99,
+      "p95": 268,
+      "p99": 268,
+      "max": 268,
+      "avgBytes": 639820,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "PRERENDER": 1,
+        "HIT": 2
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "lender_home",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 79,
+      "p95": 141,
+      "p99": 141,
+      "max": 141,
+      "avgBytes": 802160,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "companies_directory",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 65,
+      "p95": 75,
+      "p99": 75,
+      "max": 75,
+      "avgBytes": 500522,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "company_profile",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 46,
+      "p95": 165,
+      "p99": 165,
+      "max": 165,
+      "avgBytes": 62327,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "MISS": 1,
+        "HIT": 2
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "homepage",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 63,
+      "p95": 125,
+      "p99": 125,
+      "max": 125,
+      "avgBytes": 98641,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "warmup",
+      "endpoint": "portal_login",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 98,
+      "p95": 192,
+      "p99": 192,
+      "max": 192,
+      "avgBytes": 46564,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "MISS": 3
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "insurance_home",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 290,
+      "p95": 312,
+      "p99": 312,
+      "max": 312,
+      "avgBytes": 112364,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "company_profile",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 147,
+      "p95": 276,
+      "p99": 276,
+      "max": 276,
+      "avgBytes": 62327,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "local_movers_index",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 134,
+      "p95": 301,
+      "p99": 301,
+      "max": 301,
+      "avgBytes": 109664,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "portal_login",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 129,
+      "p95": 330,
+      "p99": 330,
+      "max": 330,
+      "avgBytes": 46564,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "MISS": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "moving_calculator",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 146,
+      "p95": 656,
+      "p99": 656,
+      "max": 656,
+      "avgBytes": 78587,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "lender_home",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 238,
+      "p95": 489,
+      "p99": 489,
+      "max": 489,
+      "avgBytes": 802160,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "companies_directory",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 253,
+      "p95": 592,
+      "p99": 592,
+      "max": 592,
+      "avgBytes": 500522,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "destination_sample",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 216,
+      "p95": 299,
+      "p99": 299,
+      "max": 299,
+      "avgBytes": 639820,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "homepage",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 134,
+      "p95": 157,
+      "p99": 157,
+      "max": 157,
+      "avgBytes": 98641,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "light_10",
+      "endpoint": "api_companies",
+      "n": 5,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 216,
+      "p95": 222,
+      "p99": 222,
+      "max": 222,
+      "avgBytes": 519772,
+      "statuses": {
+        "200": 5
+      },
+      "caches": {
+        "HIT": 5
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "portal_login",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 602,
+      "p95": 712,
+      "p99": 712,
+      "max": 712,
+      "avgBytes": 46564,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "MISS": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "homepage",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 585,
+      "p95": 728,
+      "p99": 728,
+      "max": 728,
+      "avgBytes": 98641,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "insurance_home",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 286,
+      "p95": 585,
+      "p99": 585,
+      "max": 585,
+      "avgBytes": 112364,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "local_movers_index",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 581,
+      "p95": 613,
+      "p99": 613,
+      "max": 613,
+      "avgBytes": 109664,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "moving_calculator",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 241,
+      "p95": 772,
+      "p99": 772,
+      "max": 772,
+      "avgBytes": 78587,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "company_profile",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 624,
+      "p95": 645,
+      "p99": 645,
+      "max": 645,
+      "avgBytes": 62327,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "companies_directory",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 997,
+      "p95": 1046,
+      "p99": 1046,
+      "max": 1046,
+      "avgBytes": 500522,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "destination_sample",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 618,
+      "p95": 1081,
+      "p99": 1081,
+      "max": 1081,
+      "avgBytes": 639820,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "api_companies",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 454,
+      "p95": 1051,
+      "p99": 1051,
+      "max": 1051,
+      "avgBytes": 519772,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "moderate_25",
+      "endpoint": "lender_home",
+      "n": 4,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 614,
+      "p95": 1136,
+      "p99": 1136,
+      "max": 1136,
+      "avgBytes": 802160,
+      "statuses": {
+        "200": 4
+      },
+      "caches": {
+        "HIT": 4
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "company_profile",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 184,
+      "p95": 192,
+      "p99": 192,
+      "max": 192,
+      "avgBytes": 62327,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "homepage",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 281,
+      "p95": 282,
+      "p99": 282,
+      "max": 282,
+      "avgBytes": 98641,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "moving_calculator",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 306,
+      "p95": 367,
+      "p99": 367,
+      "max": 367,
+      "avgBytes": 78587,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "local_movers_index",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 305,
+      "p95": 382,
+      "p99": 382,
+      "max": 382,
+      "avgBytes": 109664,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "insurance_home",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 302,
+      "p95": 321,
+      "p99": 321,
+      "max": 321,
+      "avgBytes": 112364,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "portal_login",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 315,
+      "p95": 477,
+      "p99": 477,
+      "max": 477,
+      "avgBytes": 46564,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "MISS": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "api_companies",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 349,
+      "p95": 351,
+      "p99": 351,
+      "max": 351,
+      "avgBytes": 519772,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "companies_directory",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 415,
+      "p95": 419,
+      "p99": 419,
+      "max": 419,
+      "avgBytes": 500522,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "destination_sample",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 421,
+      "p95": 428,
+      "p99": 428,
+      "max": 428,
+      "avgBytes": 639820,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    },
+    {
+      "stage": "peak_50",
+      "endpoint": "lender_home",
+      "n": 3,
+      "errors": 0,
+      "errorRate": "0.0%",
+      "p50": 448,
+      "p95": 449,
+      "p99": 449,
+      "max": 449,
+      "avgBytes": 802160,
+      "statuses": {
+        "200": 3
+      },
+      "caches": {
+        "HIT": 3
+      }
+    }
+  ]
+}

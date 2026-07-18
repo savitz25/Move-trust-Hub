@@ -10,7 +10,13 @@ export function sanitizeCompanyReturnPath(from: string | null | undefined): stri
       return decoded;
     }
 
-    const pathOnly = decoded.split('#')[0];
+    const pathOnly = decoded.split(/[?#]/)[0] || '/';
+
+    // Homepage My Move Plan wizard (state restored from sessionStorage)
+    if (pathOnly === '/') {
+      return decoded;
+    }
+
     if (
       pathOnly === '/local-movers' ||
       pathOnly.startsWith('/local-movers/') ||
@@ -64,6 +70,11 @@ export function companyProfileBackLabel(returnPath: string): string {
     const search = url.searchParams.get('search');
     if (pathname === '/companies') {
       return search ? `Back to results for “${search}”` : 'Back to Directory';
+    }
+
+    // My Move Plan wizard lives on the homepage
+    if (pathname === '/' || pathname === '') {
+      return 'Back to My Move Plan';
     }
 
     if (pathname === '/local-movers') {

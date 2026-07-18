@@ -1,0 +1,226 @@
+{
+  "stateSlug": "nevada",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "barry-elwood-jones",
+    "safebound-logistics-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "carson-city",
+      "local": 2,
+      "state": 0,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "churchill",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "clark",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "douglas",
+      "local": 1,
+      "state": 1,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "elko",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "esmeralda",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "eureka",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "humboldt",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lander",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lyon",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mineral",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "nye",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pershing",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "storey",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "washoe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "white-pine",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  ],
+  "counts": {
+    "carson-city": 26,
+    "churchill": 26,
+    "clark": 26,
+    "douglas": 26,
+    "elko": 26,
+    "esmeralda": 26,
+    "eureka": 26,
+    "humboldt": 26,
+    "lander": 26,
+    "lincoln": 26,
+    "lyon": 26,
+    "mineral": 26,
+    "nye": 26,
+    "pershing": 26,
+    "storey": 26,
+    "washoe": 26,
+    "white-pine": 26
+  },
+  "major": {
+    "clark": {
+      "county": "clark",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "washoe": {
+      "county": "washoe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "carson-city": {
+      "county": "carson-city",
+      "local": 2,
+      "state": 0,
+      "national": 24,
+      "total": 26
+    },
+    "douglas": {
+      "county": "douglas",
+      "local": 1,
+      "state": 1,
+      "national": 24,
+      "total": 26
+    },
+    "lyon": {
+      "county": "lyon",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "nye": {
+      "county": "nye",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "elko": {
+      "county": "elko",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  }
+}

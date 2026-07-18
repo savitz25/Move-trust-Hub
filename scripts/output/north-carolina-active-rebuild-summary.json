@@ -1,0 +1,876 @@
+{
+  "stateSlug": "north-carolina",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "horne-moving-systems"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "alamance",
+      "local": 1,
+      "state": 1,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "alexander",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "alleghany",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "anson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "ashe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "avery",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "beaufort",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "bertie",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "bladen",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "brunswick",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "buncombe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "burke",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "cabarrus",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "caldwell",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "camden",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "carteret",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "caswell",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "catawba",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "chatham",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "cherokee",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "chowan",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "cleveland",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "columbus",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "craven",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "cumberland",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "currituck",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "dare",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "davidson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "davie",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "duplin",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "durham",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "edgecombe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "forsyth",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "gaston",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "gates",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "graham",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "granville",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "greene",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "guilford",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "halifax",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "harnett",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "haywood",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "henderson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "hertford",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "hoke",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "hyde",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "iredell",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "johnston",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "jones",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lee",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lenoir",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "macon",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "martin",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mcdowell",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mecklenburg",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mitchell",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "moore",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "nash",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "new-hanover",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "northampton",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "onslow",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "orange",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pamlico",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pasquotank",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pender",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "perquimans",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "person",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pitt",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "polk",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "randolph",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "richmond",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "robeson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "rockingham",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "rowan",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "rutherford",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "sampson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "scotland",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "stanly",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "stokes",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "surry",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "swain",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "transylvania",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "tyrrell",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "vance",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "wake",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "warren",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "watauga",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "wayne",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "wilkes",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "wilson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "yadkin",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "yancey",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  ],
+  "counts": {
+    "alamance": 26,
+    "alexander": 26,
+    "alleghany": 26,
+    "anson": 26,
+    "ashe": 26,
+    "avery": 26,
+    "beaufort": 26,
+    "bertie": 26,
+    "bladen": 26,
+    "brunswick": 26,
+    "buncombe": 26,
+    "burke": 26,
+    "cabarrus": 26,
+    "caldwell": 26,
+    "camden": 26,
+    "carteret": 26,
+    "caswell": 26,
+    "catawba": 26,
+    "chatham": 26,
+    "cherokee": 26,
+    "chowan": 26,
+    "clay": 26,
+    "cleveland": 26,
+    "columbus": 26,
+    "craven": 26,
+    "cumberland": 26,
+    "currituck": 26,
+    "dare": 26,
+    "davidson": 26,
+    "davie": 26,
+    "duplin": 26,
+    "durham": 26,
+    "edgecombe": 26,
+    "forsyth": 26,
+    "franklin": 26,
+    "gaston": 26,
+    "gates": 26,
+    "graham": 26,
+    "granville": 26,
+    "greene": 26,
+    "guilford": 26,
+    "halifax": 26,
+    "harnett": 26,
+    "haywood": 26,
+    "henderson": 26,
+    "hertford": 26,
+    "hoke": 26,
+    "hyde": 26,
+    "iredell": 26,
+    "jackson": 26,
+    "johnston": 26,
+    "jones": 26,
+    "lee": 26,
+    "lenoir": 26,
+    "lincoln": 26,
+    "macon": 26,
+    "madison": 26,
+    "martin": 26,
+    "mcdowell": 26,
+    "mecklenburg": 26,
+    "mitchell": 26,
+    "montgomery": 26,
+    "moore": 26,
+    "nash": 26,
+    "new-hanover": 26,
+    "northampton": 26,
+    "onslow": 26,
+    "orange": 26,
+    "pamlico": 26,
+    "pasquotank": 26,
+    "pender": 26,
+    "perquimans": 26,
+    "person": 26,
+    "pitt": 26,
+    "polk": 26,
+    "randolph": 26,
+    "richmond": 26,
+    "robeson": 26,
+    "rockingham": 26,
+    "rowan": 26,
+    "rutherford": 26,
+    "sampson": 26,
+    "scotland": 26,
+    "stanly": 26,
+    "stokes": 26,
+    "surry": 26,
+    "swain": 26,
+    "transylvania": 26,
+    "tyrrell": 26,
+    "union": 26,
+    "vance": 26,
+    "wake": 26,
+    "warren": 26,
+    "washington": 26,
+    "watauga": 26,
+    "wayne": 26,
+    "wilkes": 26,
+    "wilson": 26,
+    "yadkin": 26,
+    "yancey": 26
+  },
+  "major": {
+    "mecklenburg": {
+      "county": "mecklenburg",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "wake": {
+      "county": "wake",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "guilford": {
+      "county": "guilford",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "forsyth": {
+      "county": "forsyth",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "durham": {
+      "county": "durham",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  }
+}

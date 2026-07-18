@@ -1,0 +1,116 @@
+{
+  "stateSlug": "rhode-island",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "arpin-van-lines"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "bristol",
+      "local": 1,
+      "state": 1,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "kent",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "newport",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "providence",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "bristol": 25,
+    "kent": 25,
+    "newport": 25,
+    "providence": 25,
+    "washington": 25
+  },
+  "major": {
+    "providence": {
+      "county": "providence",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "kent": {
+      "county": "kent",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "washington": {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "newport": {
+      "county": "newport",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "bristol": {
+      "county": "bristol",
+      "local": 1,
+      "state": 1,
+      "national": 23,
+      "total": 25
+    }
+  }
+}

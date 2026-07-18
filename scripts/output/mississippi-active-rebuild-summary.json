@@ -1,0 +1,732 @@
+{
+  "stateSlug": "mississippi",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "rushmore-van-lines-inc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "adams",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "alcorn",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "amite",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "attala",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "benton",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "bolivar",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "calhoun",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "carroll",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "chickasaw",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "choctaw",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "claiborne",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "clarke",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "clay",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "coahoma",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "copiah",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "covington",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "desoto",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "forrest",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "george",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "greene",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "grenada",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "hancock",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "harrison",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "hinds",
+      "local": 1,
+      "state": 1,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "holmes",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "humphreys",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "issaquena",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "itawamba",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "jackson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "jasper",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "jefferson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "jefferson-davis",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "jones",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "kemper",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lafayette",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lamar",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lauderdale",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lawrence",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "leake",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lee",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "leflore",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lowndes",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "marion",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "marshall",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "monroe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "neshoba",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "newton",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "noxubee",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "oktibbeha",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "panola",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pearl-river",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "perry",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pike",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "pontotoc",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "prentiss",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "quitman",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "rankin",
+      "local": 1,
+      "state": 1,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "scott",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "sharkey",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "simpson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "smith",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "stone",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "sunflower",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "tallahatchie",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "tate",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "tippah",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "tishomingo",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "tunica",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "walthall",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "warren",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "wayne",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "webster",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "wilkinson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "winston",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "yalobusha",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "yazoo",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  ],
+  "counts": {
+    "adams": 26,
+    "alcorn": 26,
+    "amite": 26,
+    "attala": 26,
+    "benton": 26,
+    "bolivar": 26,
+    "calhoun": 26,
+    "carroll": 26,
+    "chickasaw": 26,
+    "choctaw": 26,
+    "claiborne": 26,
+    "clarke": 26,
+    "clay": 26,
+    "coahoma": 26,
+    "copiah": 26,
+    "covington": 26,
+    "desoto": 26,
+    "forrest": 26,
+    "franklin": 26,
+    "george": 26,
+    "greene": 26,
+    "grenada": 26,
+    "hancock": 26,
+    "harrison": 26,
+    "hinds": 26,
+    "holmes": 26,
+    "humphreys": 26,
+    "issaquena": 26,
+    "itawamba": 26,
+    "jackson": 26,
+    "jasper": 26,
+    "jefferson": 26,
+    "jefferson-davis": 26,
+    "jones": 26,
+    "kemper": 26,
+    "lafayette": 26,
+    "lamar": 26,
+    "lauderdale": 26,
+    "lawrence": 26,
+    "leake": 26,
+    "lee": 26,
+    "leflore": 26,
+    "lincoln": 26,
+    "lowndes": 26,
+    "madison": 26,
+    "marion": 26,
+    "marshall": 26,
+    "monroe": 26,
+    "montgomery": 26,
+    "neshoba": 26,
+    "newton": 26,
+    "noxubee": 26,
+    "oktibbeha": 26,
+    "panola": 26,
+    "pearl-river": 26,
+    "perry": 26,
+    "pike": 26,
+    "pontotoc": 26,
+    "prentiss": 26,
+    "quitman": 26,
+    "rankin": 26,
+    "scott": 26,
+    "sharkey": 26,
+    "simpson": 26,
+    "smith": 26,
+    "stone": 26,
+    "sunflower": 26,
+    "tallahatchie": 26,
+    "tate": 26,
+    "tippah": 26,
+    "tishomingo": 26,
+    "tunica": 26,
+    "union": 26,
+    "walthall": 26,
+    "warren": 26,
+    "washington": 26,
+    "wayne": 26,
+    "webster": 26,
+    "wilkinson": 26,
+    "winston": 26,
+    "yalobusha": 26,
+    "yazoo": 26
+  },
+  "major": {
+    "hinds": {
+      "county": "hinds",
+      "local": 1,
+      "state": 1,
+      "national": 24,
+      "total": 26
+    },
+    "harrison": {
+      "county": "harrison",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "desoto": {
+      "county": "desoto",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "rankin": {
+      "county": "rankin",
+      "local": 1,
+      "state": 1,
+      "national": 24,
+      "total": 26
+    },
+    "jackson": {
+      "county": "jackson",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  }
+}

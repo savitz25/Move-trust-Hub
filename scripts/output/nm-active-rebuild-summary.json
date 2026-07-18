@@ -1,0 +1,332 @@
+{
+  "activeCompanies": 126,
+  "displayable": 126,
+  "stateWideCompanies": [
+    "jp-moving-llc",
+    "faith-moving-llc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "bernalillo",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "catron",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "chaves",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "cibola",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "colfax",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "curry",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "de-baca",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "doa-ana",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "eddy",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "grant",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "guadalupe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "harding",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "hidalgo",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lea",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "lincoln",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "los-alamos",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "luna",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mckinley",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "mora",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "otero",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "quay",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "rio-arriba",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "roosevelt",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "san-juan",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "san-miguel",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "sandoval",
+      "local": 2,
+      "state": 0,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "santa-fe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "sierra",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "socorro",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "taos",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "torrance",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "union",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    {
+      "county": "valencia",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  ],
+  "major": {
+    "bernalillo": {
+      "county": "bernalillo",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "santa-fe": {
+      "county": "santa-fe",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "sandoval": {
+      "county": "sandoval",
+      "local": 2,
+      "state": 0,
+      "national": 24,
+      "total": 26
+    },
+    "san-juan": {
+      "county": "san-juan",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "valencia": {
+      "county": "valencia",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "mckinley": {
+      "county": "mckinley",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "eddy": {
+      "county": "eddy",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "lea": {
+      "county": "lea",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    },
+    "chaves": {
+      "county": "chaves",
+      "local": 0,
+      "state": 2,
+      "national": 24,
+      "total": 26
+    }
+  }
+}

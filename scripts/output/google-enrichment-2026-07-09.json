@@ -1,0 +1,97 @@
+{
+  "executedAt": "2026-07-09T15:14:03.764Z",
+  "dryRun": false,
+  "results": [
+    {
+      "label": "Horne Moving Systems",
+      "status": "updated",
+      "slug": "horne-moving-systems",
+      "name": "Horne Moving Systems",
+      "rating": 4.5,
+      "reviewCount": 20,
+      "snippets": 3,
+      "placeName": "Horne Moving Systems"
+    },
+    {
+      "label": "Nilson Van and Storage",
+      "status": "updated",
+      "slug": "nilson-van-and-storage",
+      "name": "Nilson Van and Storage",
+      "rating": 3.9,
+      "reviewCount": 57,
+      "snippets": 3,
+      "placeName": "Nilson Van & Storage"
+    },
+    {
+      "label": "Two Men and a Truck Gainesville",
+      "status": "updated",
+      "slug": "two-men-and-a-truck-gainesville",
+      "name": "Two Men and a Truck Gainesville",
+      "rating": 4.8,
+      "reviewCount": 316,
+      "snippets": 3,
+      "placeName": "Two Men and a Truck Moving"
+    },
+    {
+      "label": "JEGA Movers LLC",
+      "status": "no_google_match",
+      "slug": "jega-movers-llc",
+      "name": "JEGA Movers LLC",
+      "message": "not_found"
+    },
+    {
+      "label": "Mountain Lake Mover",
+      "status": "updated",
+      "slug": "mountain-lake-mover",
+      "name": "Mountain Lake Mover",
+      "rating": 4.5,
+      "reviewCount": 8,
+      "snippets": 3,
+      "placeName": "Owens Bros Transfer Co"
+    },
+    {
+      "label": "All My Sons Moving & Storage",
+      "status": "updated",
+      "slug": "all-my-sons-moving-storage-birmingham",
+      "name": "All My Sons Moving & Storage Birmingham",
+      "rating": 4.6,
+      "reviewCount": 2511,
+      "snippets": 3,
+      "placeName": "All My Sons Moving & Storage"
+    },
+    {
+      "label": "Brothers EZ Moving of Alabama",
+      "status": "no_google_match",
+      "slug": "brothers-ez-moving-of-alabama",
+      "name": "Brothers EZ Moving of Alabama",
+      "message": "not_found"
+    },
+    {
+      "label": "Budget Movers of Augusta",
+      "status": "no_google_match",
+      "slug": "budget-movers-of-augusta",
+      "name": "Budget Movers of Augusta",
+      "message": "not_found"
+    },
+    {
+      "label": "Lee Moving & Storage",
+      "status": "updated",
+      "slug": "lee-moving-storage",
+      "name": "Lee Moving & Storage",
+      "rating": 4.9,
+      "reviewCount": 216,
+      "snippets": 3,
+      "placeName": "Lee Moving & Storage, Inc."
+    },
+    {
+      "label": "Mighty Moving Knoxville",
+      "status": "updated",
+      "slug": "mighty-moving-knoxville",
+      "name": "Mighty Moving Knoxville",
+      "rating": 4.9,
+      "reviewCount": 117,
+      "snippets": 3,
+      "placeName": "Mighty Moving & Storage"
+    }
+  ]
+}

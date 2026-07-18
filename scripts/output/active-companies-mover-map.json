@@ -1,0 +1,1132 @@
+[
+  {
+    "slug": "2-college-brothers-moving-and-storage",
+    "moverId": "directory-2-college-brothers-moving-and-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Gainesville",
+    "name": "2 College Brothers Moving and Storage",
+    "source": "built"
+  },
+  {
+    "slug": "a-c-white-transfer-storage",
+    "moverId": "directory-a-c-white-transfer-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Atlanta",
+    "name": "A.C. White Transfer & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "absolute-moving-storage",
+    "moverId": "directory-absolute-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Wilmington",
+    "name": "Absolute Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "adsi-moving-systems",
+    "moverId": "directory-adsi-moving-systems",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Augusta",
+    "name": "ADSI Moving Systems",
+    "source": "built"
+  },
+  {
+    "slug": "all-my-sons-moving-storage-birmingham",
+    "moverId": "directory-all-my-sons-moving-storage-birmingham",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Hoover",
+    "name": "All My Sons Moving & Storage Birmingham",
+    "source": "built"
+  },
+  {
+    "slug": "all-my-sons-moving-storage-knoxville",
+    "moverId": "directory-all-my-sons-moving-storage-knoxville",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Knoxville",
+    "name": "All My Sons Moving & Storage Knoxville",
+    "source": "built"
+  },
+  {
+    "slug": "all-my-sons-moving-storage-memphis",
+    "moverId": "directory-all-my-sons-moving-storage-memphis",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Memphis",
+    "name": "All My Sons Moving & Storage Memphis",
+    "source": "built"
+  },
+  {
+    "slug": "all-my-sons-moving-storage-nashville",
+    "moverId": "directory-all-my-sons-moving-storage-nashville",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Nashville",
+    "name": "All My Sons Moving & Storage Nashville",
+    "source": "built"
+  },
+  {
+    "slug": "all-my-sons-moving-storage-savannah",
+    "moverId": "directory-all-my-sons-moving-storage-savannah",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Savannah",
+    "name": "All My Sons Moving & Storage Savannah",
+    "source": "built"
+  },
+  {
+    "slug": "allied-van-lines",
+    "moverId": "directory-allied-van-lines",
+    "curated": true,
+    "city": "Oakbrook Terrace",
+    "name": "Allied Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "american-moving-hauling",
+    "moverId": "directory-american-moving-hauling",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Winston-Salem",
+    "name": "American Moving & Hauling",
+    "source": "built"
+  },
+  {
+    "slug": "american-van-lines",
+    "moverId": "american-van-lines",
+    "curated": true,
+    "city": "Davie",
+    "name": "American Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "american-van-lines-of-sf-llc",
+    "moverId": "directory-american-van-lines-of-sf-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "1525 NW 3RD ST STE 8",
+    "name": "AMERICAN VAN LINES OF SF LLC",
+    "source": "built"
+  },
+  {
+    "slug": "amerisafe-van-lines",
+    "moverId": "amerisafe-van-lines",
+    "curated": true,
+    "city": "Boynton Beach",
+    "name": "Amerisafe Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "amex-moving-and-storage-llc",
+    "moverId": "directory-amex-moving-and-storage-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "21-00  MORLOT AVE STE 6",
+    "name": "AMEX MOVING AND STORAGE LLC",
+    "source": "built"
+  },
+  {
+    "slug": "armstrong-relocation-birmingham",
+    "moverId": "armstrong-relocation-birmingham",
+    "curated": true,
+    "city": "Alabaster",
+    "name": "Armstrong Relocation Birmingham",
+    "source": "catalog"
+  },
+  {
+    "slug": "armstrong-relocation-durham",
+    "moverId": "armstrong-relocation-durham",
+    "curated": true,
+    "city": "Durham",
+    "name": "Armstrong Relocation Durham",
+    "source": "catalog"
+  },
+  {
+    "slug": "armstrong-relocation-jackson",
+    "moverId": "directory-armstrong-relocation-jackson",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Madison",
+    "name": "Armstrong Relocation Jackson",
+    "source": "built"
+  },
+  {
+    "slug": "armstrong-relocation-nashville",
+    "moverId": "armstrong-relocation-nashville",
+    "curated": true,
+    "city": "La Vergne",
+    "name": "Armstrong Relocation Nashville",
+    "source": "catalog"
+  },
+  {
+    "slug": "arpin-van-lines",
+    "moverId": "directory-arpin-van-lines",
+    "curated": true,
+    "city": "West Warwick",
+    "name": "Arpin Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "ashe-van-lines-moving-and-storage",
+    "moverId": "directory-ashe-van-lines-moving-and-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Hickory",
+    "name": "Ashe Van Lines Moving and Storage",
+    "source": "built"
+  },
+  {
+    "slug": "asheville-area-movers",
+    "moverId": "asheville-area-movers",
+    "curated": true,
+    "city": "Asheville",
+    "name": "Asheville Area Movers",
+    "source": "catalog"
+  },
+  {
+    "slug": "athens-moving-experts",
+    "moverId": "directory-athens-moving-experts",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Raleigh",
+    "name": "Athens Moving Experts",
+    "source": "built"
+  },
+  {
+    "slug": "atlas-van-lines",
+    "moverId": "directory-atlas-van-lines",
+    "curated": true,
+    "city": "Evansville",
+    "name": "Atlas Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "atmosphere-movers",
+    "moverId": "directory-atmosphere-movers",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Baton Rouge",
+    "name": "Atmosphere Movers",
+    "source": "built"
+  },
+  {
+    "slug": "barry-elwood-jones",
+    "moverId": "directory-barry-elwood-jones",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "1191 SERVICE DRIVE",
+    "name": "BARRY ELWOOD JONES",
+    "source": "built"
+  },
+  {
+    "slug": "beulah-moving-storage",
+    "moverId": "directory-beulah-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Beulah",
+    "name": "Beulah Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "brandon-express-moving",
+    "moverId": "brandon-express-moving",
+    "curated": true,
+    "city": "Brandon",
+    "name": "Brandon Express Moving",
+    "source": "catalog"
+  },
+  {
+    "slug": "brooks-transfer-storage",
+    "moverId": "directory-brooks-transfer-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Knoxville",
+    "name": "Brooks Transfer & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "brothers-ez-moving-of-alabama",
+    "moverId": "directory-brothers-ez-moving-of-alabama",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Killen",
+    "name": "Brothers EZ Moving of Alabama",
+    "source": "built"
+  },
+  {
+    "slug": "budget-movers-of-augusta",
+    "moverId": "directory-budget-movers-of-augusta",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Augusta",
+    "name": "Budget Movers of Augusta",
+    "source": "built"
+  },
+  {
+    "slug": "cass-county-moving",
+    "moverId": "directory-cass-county-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Cassopolis",
+    "name": "Cass County Moving",
+    "source": "built"
+  },
+  {
+    "slug": "cicero-s-moving-storage",
+    "moverId": "directory-cicero-s-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Macon",
+    "name": "Cicero's Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "cirta-moving-llc",
+    "moverId": "directory-cirta-moving-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "95 E MAIN ST STE 106",
+    "name": "CIRTA MOVING LLC",
+    "source": "built"
+  },
+  {
+    "slug": "clare-moving-storage",
+    "moverId": "directory-clare-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Clare",
+    "name": "Clare Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "coleman-worldwide-moving-augusta",
+    "moverId": "directory-coleman-worldwide-moving-augusta",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Augusta",
+    "name": "Coleman Worldwide Moving Augusta",
+    "source": "built"
+  },
+  {
+    "slug": "college-hunks-hauling-junk-moving-chattanooga",
+    "moverId": "directory-college-hunks-hauling-junk-moving-chattanooga",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Chattanooga",
+    "name": "College Hunks Hauling Junk & Moving Chattanooga",
+    "source": "built"
+  },
+  {
+    "slug": "college-hunks-hauling-junk-moving-nashville",
+    "moverId": "directory-college-hunks-hauling-junk-moving-nashville",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Nashville",
+    "name": "College Hunks Hauling Junk & Moving Nashville",
+    "source": "built"
+  },
+  {
+    "slug": "colonial-van-lines",
+    "moverId": "colonial-van-lines",
+    "curated": true,
+    "city": "Pompano Beach",
+    "name": "Colonial Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "cord-moving-storage-memphis",
+    "moverId": "directory-cord-moving-storage-memphis",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Memphis",
+    "name": "Cord Moving & Storage Memphis",
+    "source": "built"
+  },
+  {
+    "slug": "corrigan-moving-systems",
+    "moverId": "directory-corrigan-moving-systems",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Buffalo",
+    "name": "Corrigan Moving Systems",
+    "source": "built"
+  },
+  {
+    "slug": "crossin-moving-storage",
+    "moverId": "directory-crossin-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Lufkin",
+    "name": "Crossin Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "dimon-bacorn-company-of-binghamton",
+    "moverId": "directory-dimon-bacorn-company-of-binghamton",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Binghamton",
+    "name": "Dimon & Bacorn Company of Binghamton",
+    "source": "built"
+  },
+  {
+    "slug": "elizabeth-s-moving-storage",
+    "moverId": "directory-elizabeth-s-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Chattanooga",
+    "name": "Elizabeth's Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "faith-moving-llc",
+    "moverId": "directory-faith-moving-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "1503 GOLF COURSE RD SE SUITE D",
+    "name": "FAITH MOVING LLC",
+    "source": "built"
+  },
+  {
+    "slug": "fortson-moving-systems",
+    "moverId": "directory-fortson-moving-systems",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Oneonta",
+    "name": "Fortson Moving Systems",
+    "source": "built"
+  },
+  {
+    "slug": "gasperson-moving-storage",
+    "moverId": "directory-gasperson-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Asheville",
+    "name": "Gasperson Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "gentle-giant-moving",
+    "moverId": "directory-gentle-giant-moving",
+    "curated": true,
+    "city": "Somerville",
+    "name": "Gentle Giant Moving Company",
+    "source": "catalog"
+  },
+  {
+    "slug": "gentlemen-movers-inc",
+    "moverId": "directory-gentlemen-movers-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Columbia",
+    "name": "Gentlemen Movers Inc.",
+    "source": "built"
+  },
+  {
+    "slug": "georgia-home-movers-llc",
+    "moverId": "directory-georgia-home-movers-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "1412 CANTON RD",
+    "name": "GEORGIA HOME MOVERS LLC",
+    "source": "built"
+  },
+  {
+    "slug": "good-guys-moving-delivery-chattanooga",
+    "moverId": "directory-good-guys-moving-delivery-chattanooga",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Chattanooga",
+    "name": "Good Guys Moving & Delivery Chattanooga",
+    "source": "built"
+  },
+  {
+    "slug": "gouffon-moving-storage",
+    "moverId": "directory-gouffon-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Knoxville",
+    "name": "Gouffon Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "graebel-van-lines",
+    "moverId": "directory-graebel-van-lines",
+    "curated": true,
+    "city": "Aurora",
+    "name": "Graebel Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "hardy-moving-storage",
+    "moverId": "directory-hardy-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Harbinger",
+    "name": "Hardy Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "hhg-movers",
+    "moverId": "directory-hhg-movers",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Albany",
+    "name": "HHG Movers",
+    "source": "built"
+  },
+  {
+    "slug": "hills-moving-storage",
+    "moverId": "directory-hills-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Bakersfield",
+    "name": "Hills Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "hired-hands-moving-company",
+    "moverId": "directory-hired-hands-moving-company",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Ithaca",
+    "name": "Hired Hands Moving Company",
+    "source": "built"
+  },
+  {
+    "slug": "home-and-office-movers-llc",
+    "moverId": "directory-home-and-office-movers-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "1332 LONDONTOWN BLVD STE 108F",
+    "name": "HOME AND OFFICE MOVERS LLC",
+    "source": "built"
+  },
+  {
+    "slug": "horne-moving-systems",
+    "moverId": "directory-horne-moving-systems",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Goldsboro",
+    "name": "Horne Moving Systems",
+    "source": "built"
+  },
+  {
+    "slug": "house-to-house-moving",
+    "moverId": "directory-house-to-house-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Thomasville",
+    "name": "House to House Moving",
+    "source": "built"
+  },
+  {
+    "slug": "j-e-thomas-sons-moving",
+    "moverId": "directory-j-e-thomas-sons-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Jacksonville",
+    "name": "J.E. Thomas & Sons Moving",
+    "source": "built"
+  },
+  {
+    "slug": "jega-movers-llc",
+    "moverId": "directory-jega-movers-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Columbia",
+    "name": "JEGA Movers LLC",
+    "source": "built"
+  },
+  {
+    "slug": "jk-moving-services",
+    "moverId": "directory-jk-moving-services",
+    "curated": true,
+    "city": "Sterling",
+    "name": "JK Moving Services",
+    "source": "catalog"
+  },
+  {
+    "slug": "jp-moving-llc",
+    "moverId": "directory-jp-moving-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "424 ALCANO CIRCLE NE",
+    "name": "JP MOVING LLC",
+    "source": "built"
+  },
+  {
+    "slug": "jr-brown-inc",
+    "moverId": "directory-jr-brown-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "8815 HIGHWAY 270 WEST",
+    "name": "JR BROWN INC",
+    "source": "built"
+  },
+  {
+    "slug": "juggernauts-moving-n-storage-llc",
+    "moverId": "directory-juggernauts-moving-n-storage-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "18850 MASONIC BLVD",
+    "name": "JUGGERNAUTS MOVING N STORAGE LLC",
+    "source": "built"
+  },
+  {
+    "slug": "lake-county-moving",
+    "moverId": "directory-lake-county-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Baldwin",
+    "name": "Lake County Moving",
+    "source": "built"
+  },
+  {
+    "slug": "later-gator-moving-llc",
+    "moverId": "directory-later-gator-moving-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Ocala",
+    "name": "Later Gator Moving LLC",
+    "source": "built"
+  },
+  {
+    "slug": "lee-moving-storage",
+    "moverId": "directory-lee-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Baton Rouge",
+    "name": "Lee Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "little-guys-movers",
+    "moverId": "directory-little-guys-movers",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "College Station",
+    "name": "Little Guys Movers",
+    "source": "built"
+  },
+  {
+    "slug": "mark-the-mover",
+    "moverId": "directory-mark-the-mover",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Atlanta",
+    "name": "Mark the Mover",
+    "source": "built"
+  },
+  {
+    "slug": "mayflower-transit",
+    "moverId": "directory-mayflower-transit",
+    "curated": true,
+    "city": "Indianapolis",
+    "name": "Mayflower Transit",
+    "source": "catalog"
+  },
+  {
+    "slug": "mccarley-moving-storage",
+    "moverId": "directory-mccarley-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Columbus",
+    "name": "McCarley Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "mccorquodale-transfer",
+    "moverId": "directory-mccorquodale-transfer",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Montgomery",
+    "name": "McCorquodale Transfer",
+    "source": "built"
+  },
+  {
+    "slug": "meathead-movers",
+    "moverId": "directory-meathead-movers",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "San Luis Obispo",
+    "name": "Meathead Movers",
+    "source": "built"
+  },
+  {
+    "slug": "mighty-moving-knoxville",
+    "moverId": "mighty-moving-knoxville",
+    "curated": true,
+    "city": "Knoxville",
+    "name": "Mighty Moving Knoxville",
+    "source": "catalog"
+  },
+  {
+    "slug": "miracle-movers-raleigh",
+    "moverId": "miracle-movers-raleigh",
+    "curated": true,
+    "city": "Raleigh",
+    "name": "Miracle Movers Raleigh",
+    "source": "catalog"
+  },
+  {
+    "slug": "monro-moving-storage",
+    "moverId": "directory-monro-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Augusta",
+    "name": "Monro Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "morse-moving-storage-inc",
+    "moverId": "directory-morse-moving-storage-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "10049 HARRISON STE 500",
+    "name": "MORSE MOVING & STORAGE INC",
+    "source": "built"
+  },
+  {
+    "slug": "mother-lode-van-storage",
+    "moverId": "directory-mother-lode-van-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Rancho Cordova",
+    "name": "Mother Lode Van & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "mountain-lake-mover",
+    "moverId": "directory-mountain-lake-mover",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "South Lake Tahoe",
+    "name": "Mountain Lake Mover",
+    "source": "built"
+  },
+  {
+    "slug": "movers-201-inc",
+    "moverId": "directory-movers-201-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Ramsey",
+    "name": "Movers 201 Inc.",
+    "source": "built"
+  },
+  {
+    "slug": "naglee-moving-storage",
+    "moverId": "directory-naglee-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Elmira",
+    "name": "Naglee Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "national-van-lines",
+    "moverId": "directory-national-van-lines",
+    "curated": true,
+    "city": "Broadview",
+    "name": "National Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "new-latitude-movers",
+    "moverId": "directory-new-latitude-movers",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Birmingham",
+    "name": "New Latitude Movers",
+    "source": "built"
+  },
+  {
+    "slug": "nilson-van-and-storage",
+    "moverId": "directory-nilson-van-and-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Savannah",
+    "name": "Nilson Van and Storage",
+    "source": "built"
+  },
+  {
+    "slug": "north-american-van-lines",
+    "moverId": "directory-north-american-van-lines",
+    "curated": true,
+    "city": "Fort Wayne",
+    "name": "North American Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "northern-michigan-moving",
+    "moverId": "directory-northern-michigan-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Traverse City",
+    "name": "Northern Michigan Moving",
+    "source": "built"
+  },
+  {
+    "slug": "obx-movers",
+    "moverId": "directory-obx-movers",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Powells Point",
+    "name": "OBX Movers",
+    "source": "built"
+  },
+  {
+    "slug": "ocean-moving-storage-corp",
+    "moverId": "directory-ocean-moving-storage-corp",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "20200 W DIXIE HWY STE 902",
+    "name": "OCEAN MOVING & STORAGE CORP",
+    "source": "built"
+  },
+  {
+    "slug": "on-track-moving",
+    "moverId": "directory-on-track-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Bishop",
+    "name": "On Track Moving",
+    "source": "built"
+  },
+  {
+    "slug": "osceola-county-moving",
+    "moverId": "directory-osceola-county-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Reed City",
+    "name": "Osceola County Moving",
+    "source": "built"
+  },
+  {
+    "slug": "our-family-moving-storage",
+    "moverId": "our-family-moving-storage",
+    "curated": true,
+    "city": "Fort Lauderdale",
+    "name": "Our Family Moving & Storage",
+    "source": "catalog"
+  },
+  {
+    "slug": "ox-strong-moving",
+    "moverId": "directory-ox-strong-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Fort Lauderdale",
+    "name": "Ox Strong Moving",
+    "source": "built"
+  },
+  {
+    "slug": "page-relocation",
+    "moverId": "directory-page-relocation",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Canton",
+    "name": "Page Relocation",
+    "source": "built"
+  },
+  {
+    "slug": "phelps-moving-storage",
+    "moverId": "directory-phelps-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Columbus",
+    "name": "Phelps Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "royal-hawaiian-movers-inc",
+    "moverId": "directory-royal-hawaiian-movers-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "3017 UALENA ST",
+    "name": "ROYAL HAWAIIAN MOVERS INC",
+    "source": "built"
+  },
+  {
+    "slug": "rushmore-van-lines-inc",
+    "moverId": "directory-rushmore-van-lines-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "714 SOUTH HILL STREET STE304",
+    "name": "RUSHMORE VAN LINES INC",
+    "source": "built"
+  },
+  {
+    "slug": "safebound-logistics-llc",
+    "moverId": "directory-safebound-logistics-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "6051 SOUTHERN BLVD #400",
+    "name": "SAFEBOUND LOGISTICS LLC",
+    "source": "built"
+  },
+  {
+    "slug": "secure-moving-storage",
+    "moverId": "directory-secure-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Pelham",
+    "name": "Secure Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "smooth-move-charleston",
+    "moverId": "smooth-move-charleston",
+    "curated": true,
+    "city": "North Charleston",
+    "name": "Smooth Move Charleston",
+    "source": "catalog"
+  },
+  {
+    "slug": "spyder-moving-storage-memphis",
+    "moverId": "directory-spyder-moving-storage-memphis",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Memphis",
+    "name": "Spyder Moving & Storage Memphis",
+    "source": "built"
+  },
+  {
+    "slug": "spyder-moving-kalamazoo",
+    "moverId": "directory-spyder-moving-kalamazoo",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Portage",
+    "name": "Spyder Moving Kalamazoo",
+    "source": "built"
+  },
+  {
+    "slug": "stanford-van-lines-inc",
+    "moverId": "directory-stanford-van-lines-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "17600 N WILLIAMS ST",
+    "name": "STANFORD VAN LINES INC",
+    "source": "built"
+  },
+  {
+    "slug": "stevens-worldwide",
+    "moverId": "directory-stevens-worldwide",
+    "curated": true,
+    "city": "Saginaw",
+    "name": "Stevens Worldwide Van Lines",
+    "source": "catalog"
+  },
+  {
+    "slug": "stewart-moving-storage",
+    "moverId": "stewart-moving-storage",
+    "curated": false,
+    "city": "Jacksonville",
+    "name": "Stewart Moving & Storage",
+    "source": "catalog",
+    "reason": "license_missing_usdot"
+  },
+  {
+    "slug": "suddath-relocation-systems-charlotte",
+    "moverId": "directory-suddath-relocation-systems-charlotte",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Charlotte",
+    "name": "Suddath Relocation Systems Charlotte",
+    "source": "built"
+  },
+  {
+    "slug": "sunbelt-moving-delivery-inc",
+    "moverId": "directory-sunbelt-moving-delivery-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Gainesville",
+    "name": "Sunbelt Moving & Delivery, Inc.",
+    "source": "built"
+  },
+  {
+    "slug": "suttons-bay-moving-storage",
+    "moverId": "directory-suttons-bay-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Suttons Bay",
+    "name": "Suttons Bay Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "tawas-city-moving-storage",
+    "moverId": "directory-tawas-city-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Tawas City",
+    "name": "Tawas City Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "the-home-moving-solution",
+    "moverId": "directory-the-home-moving-solution",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Albany",
+    "name": "The Home Moving Solution",
+    "source": "built"
+  },
+  {
+    "slug": "the-moving-truck-inc",
+    "moverId": "directory-the-moving-truck-inc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Dothan",
+    "name": "The Moving Truck Inc",
+    "source": "built"
+  },
+  {
+    "slug": "this-side-up-moving-storage",
+    "moverId": "directory-this-side-up-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Huntsville",
+    "name": "This Side Up Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "todd-s-easy-moves",
+    "moverId": "directory-todd-s-easy-moves",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Winston-Salem",
+    "name": "Todd's Easy Moves",
+    "source": "built"
+  },
+  {
+    "slug": "trosa-moving",
+    "moverId": "directory-trosa-moving",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Durham",
+    "name": "TROSA Moving",
+    "source": "built"
+  },
+  {
+    "slug": "troy-humphrey-moving-storage",
+    "moverId": "directory-troy-humphrey-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Jacksonville",
+    "name": "Troy Humphrey Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "two-men-and-a-truck",
+    "moverId": "directory-two-men-and-a-truck",
+    "curated": true,
+    "city": "Lansing",
+    "name": "Two Men and a Truck",
+    "source": "catalog"
+  },
+  {
+    "slug": "two-men-and-a-truck-auburn",
+    "moverId": "directory-two-men-and-a-truck-auburn",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Auburn",
+    "name": "Two Men and a Truck Auburn",
+    "source": "built"
+  },
+  {
+    "slug": "two-men-and-a-truck-chico",
+    "moverId": "two-men-and-a-truck-chico",
+    "curated": true,
+    "city": "Chico",
+    "name": "Two Men and a Truck Chico",
+    "source": "catalog"
+  },
+  {
+    "slug": "two-men-and-a-truck-fresno",
+    "moverId": "two-men-and-a-truck-fresno",
+    "curated": true,
+    "city": "Fresno",
+    "name": "Two Men and a Truck Fresno",
+    "source": "catalog"
+  },
+  {
+    "slug": "two-men-and-a-truck-gainesville",
+    "moverId": "two-men-and-a-truck-gainesville",
+    "curated": true,
+    "city": "Gainesville",
+    "name": "Two Men and a Truck Gainesville",
+    "source": "catalog"
+  },
+  {
+    "slug": "two-men-and-a-truck-knoxville",
+    "moverId": "two-men-and-a-truck-knoxville",
+    "curated": true,
+    "city": "Knoxville",
+    "name": "Two Men and a Truck Knoxville",
+    "source": "catalog"
+  },
+  {
+    "slug": "two-men-and-a-truck-memphis",
+    "moverId": "two-men-and-a-truck-memphis",
+    "curated": true,
+    "city": "Memphis",
+    "name": "Two Men and a Truck Memphis",
+    "source": "catalog"
+  },
+  {
+    "slug": "usa-family-moving-of-atlanta-llc",
+    "moverId": "directory-usa-family-moving-of-atlanta-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "341 CURIE DRIVE",
+    "name": "USA FAMILY MOVING OF ATLANTA LLC",
+    "source": "built"
+  },
+  {
+    "slug": "vellar-holdings-llc",
+    "moverId": "directory-vellar-holdings-llc",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "7789 NW BEACON SQUARE BLVD",
+    "name": "VELLAR HOLDINGS LLC",
+    "source": "built"
+  },
+  {
+    "slug": "we-move-u",
+    "moverId": "directory-we-move-u",
+    "curated": true,
+    "city": "Indianapolis",
+    "name": "We Move U",
+    "source": "catalog"
+  },
+  {
+    "slug": "wheaton-world-wide",
+    "moverId": "directory-wheaton-world-wide",
+    "curated": true,
+    "city": "Indianapolis",
+    "name": "Wheaton World Wide Moving",
+    "source": "catalog"
+  },
+  {
+    "slug": "wirks-moving-storage",
+    "moverId": "directory-wirks-moving-storage",
+    "curated": true,
+    "reason": "onboarded_directory_profile",
+    "city": "Marietta",
+    "name": "Wirks Moving & Storage",
+    "source": "built"
+  },
+  {
+    "slug": "you-move-me-charlotte",
+    "moverId": "you-move-me-charlotte",
+    "curated": true,
+    "city": "Charlotte",
+    "name": "You Move Me Charlotte",
+    "source": "catalog"
+  }
+]

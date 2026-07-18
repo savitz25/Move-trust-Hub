@@ -1,0 +1,108 @@
+{
+  "stateSlug": "hawaii",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "royal-hawaiian-movers-inc"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "hawaii",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "honolulu",
+      "local": 1,
+      "state": 0,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "kalawao",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "kauai",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    {
+      "county": "maui",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    }
+  ],
+  "counts": {
+    "hawaii": 24,
+    "honolulu": 24,
+    "kalawao": 24,
+    "kauai": 24,
+    "maui": 24
+  },
+  "major": {
+    "honolulu": {
+      "county": "honolulu",
+      "local": 1,
+      "state": 0,
+      "national": 23,
+      "total": 24
+    },
+    "hawaii": {
+      "county": "hawaii",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    "maui": {
+      "county": "maui",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    },
+    "kauai": {
+      "county": "kauai",
+      "local": 0,
+      "state": 1,
+      "national": 23,
+      "total": 24
+    }
+  }
+}

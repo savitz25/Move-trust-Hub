@@ -16,6 +16,8 @@ const SaveMyMoveProvider = dynamic(
 function needsAuthImmediately(pathname: string | null): boolean {
   if (!pathname) return false;
   return (
+    // Homepage wizard: Email / Save actions must open the auth modal without a silent no-op
+    pathname === '/' ||
     pathname === '/my-move' ||
     pathname.startsWith('/my-move/') ||
     pathname === '/portal' ||

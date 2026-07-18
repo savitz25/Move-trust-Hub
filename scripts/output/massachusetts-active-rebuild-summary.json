@@ -1,0 +1,188 @@
+{
+  "stateSlug": "massachusetts",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "gentle-giant-moving"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "barnstable",
+      "local": 1,
+      "state": 1,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "berkshire",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "bristol",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "dukes",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "essex",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "hampden",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "hampshire",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "middlesex",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "nantucket",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "norfolk",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "plymouth",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "suffolk",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "worcester",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "barnstable": 25,
+    "berkshire": 25,
+    "bristol": 25,
+    "dukes": 25,
+    "essex": 25,
+    "franklin": 25,
+    "hampden": 25,
+    "hampshire": 25,
+    "middlesex": 25,
+    "nantucket": 25,
+    "norfolk": 25,
+    "plymouth": 25,
+    "suffolk": 25,
+    "worcester": 25
+  },
+  "major": {
+    "middlesex": {
+      "county": "middlesex",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "worcester": {
+      "county": "worcester",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "essex": {
+      "county": "essex",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "suffolk": {
+      "county": "suffolk",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "norfolk": {
+      "county": "norfolk",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  }
+}

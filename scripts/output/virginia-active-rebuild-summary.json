@@ -1,0 +1,1148 @@
+{
+  "stateSlug": "virginia",
+  "activeCompanies": 129,
+  "displayable": 129,
+  "stateWideCompanies": [
+    "safebound-logistics-llc",
+    "jk-moving-services"
+  ],
+  "nationalCompanies": [
+    "allied-van-lines",
+    "american-van-lines",
+    "american-van-lines-of-sf-llc",
+    "amerisafe-van-lines",
+    "amex-moving-and-storage-llc",
+    "arpin-van-lines",
+    "atlas-van-lines",
+    "cirta-moving-llc",
+    "colonial-van-lines",
+    "gentle-giant-moving",
+    "graebel-van-lines",
+    "home-and-office-movers-llc",
+    "jk-moving-services",
+    "jr-brown-inc",
+    "mayflower-transit",
+    "national-van-lines",
+    "north-american-van-lines",
+    "ocean-moving-storage-corp",
+    "royal-hawaiian-movers-inc",
+    "stanford-van-lines-inc",
+    "stevens-worldwide",
+    "two-men-and-a-truck",
+    "we-move-u",
+    "wheaton-world-wide"
+  ],
+  "counties": [
+    {
+      "county": "accomack",
+      "local": 1,
+      "state": 1,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "albemarle",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "alexandria",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "alleghany",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "amelia",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "amherst",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "appomattox",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "arlington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "augusta",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "bath",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "bedford",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "bedford-city",
+      "local": 2,
+      "state": 0,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "bland",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "botetourt",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "bristol",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "brunswick",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "buchanan",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "buckingham",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "buena-vista",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "campbell",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "caroline",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "carroll",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "charles-city",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "charlotte",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "charlottesville",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "chesapeake",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "chesterfield",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "clarke",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "colonial-heights",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "covington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "craig",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "culpeper",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "cumberland",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "danville",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "dickenson",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "dinwiddie",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "emporia",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "essex",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "fairfax",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "fairfax-city",
+      "local": 2,
+      "state": 0,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "falls-church",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "fauquier",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "floyd",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "fluvanna",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "franklin",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "franklin-city",
+      "local": 2,
+      "state": 0,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "frederick",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "fredericksburg",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "galax",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "giles",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "gloucester",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "goochland",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "grayson",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "greene",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "greensville",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "halifax",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "hampton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "hanover",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "harrisonburg",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "henrico",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "henry",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "highland",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "hopewell",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "isle-of-wight",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "james-city",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "king-and-queen",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "king-george",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "king-william",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lancaster",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lee",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lexington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "loudoun",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "louisa",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lunenburg",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "lynchburg",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "madison",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "manassas",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "manassas-park",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "martinsville",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "mathews",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "mecklenburg",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "middlesex",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "montgomery",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "nelson",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "new-kent",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "newport-news",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "norfolk",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "northampton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "northumberland",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "norton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "nottoway",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "orange",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "page",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "patrick",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "petersburg",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "pittsylvania",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "poquoson",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "portsmouth",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "powhatan",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "prince-edward",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "prince-george",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "prince-william",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "pulaski",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "radford",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "rappahannock",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "richmond",
+      "local": 2,
+      "state": 0,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "richmond-county",
+      "local": 2,
+      "state": 0,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "roanoke",
+      "local": 2,
+      "state": 0,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "roanoke-county",
+      "local": 2,
+      "state": 0,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "rockbridge",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "rockingham",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "russell",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "salem",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "scott",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "shenandoah",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "smyth",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "southampton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "spotsylvania",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "stafford",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "staunton",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "suffolk",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "surry",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "sussex",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "tazewell",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "virginia-beach",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "warren",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "washington",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "waynesboro",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "westmoreland",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "williamsburg",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "winchester",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "wise",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "wythe",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    {
+      "county": "york",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  ],
+  "counts": {
+    "accomack": 25,
+    "albemarle": 25,
+    "alexandria": 25,
+    "alleghany": 25,
+    "amelia": 25,
+    "amherst": 25,
+    "appomattox": 25,
+    "arlington": 25,
+    "augusta": 25,
+    "bath": 25,
+    "bedford": 25,
+    "bedford-city": 25,
+    "bland": 25,
+    "botetourt": 25,
+    "bristol": 25,
+    "brunswick": 25,
+    "buchanan": 25,
+    "buckingham": 25,
+    "buena-vista": 25,
+    "campbell": 25,
+    "caroline": 25,
+    "carroll": 25,
+    "charles-city": 25,
+    "charlotte": 25,
+    "charlottesville": 25,
+    "chesapeake": 25,
+    "chesterfield": 25,
+    "clarke": 25,
+    "colonial-heights": 25,
+    "covington": 25,
+    "craig": 25,
+    "culpeper": 25,
+    "cumberland": 25,
+    "danville": 25,
+    "dickenson": 25,
+    "dinwiddie": 25,
+    "emporia": 25,
+    "essex": 25,
+    "fairfax": 25,
+    "fairfax-city": 25,
+    "falls-church": 25,
+    "fauquier": 25,
+    "floyd": 25,
+    "fluvanna": 25,
+    "franklin": 25,
+    "franklin-city": 25,
+    "frederick": 25,
+    "fredericksburg": 25,
+    "galax": 25,
+    "giles": 25,
+    "gloucester": 25,
+    "goochland": 25,
+    "grayson": 25,
+    "greene": 25,
+    "greensville": 25,
+    "halifax": 25,
+    "hampton": 25,
+    "hanover": 25,
+    "harrisonburg": 25,
+    "henrico": 25,
+    "henry": 25,
+    "highland": 25,
+    "hopewell": 25,
+    "isle-of-wight": 25,
+    "james-city": 25,
+    "king-and-queen": 25,
+    "king-george": 25,
+    "king-william": 25,
+    "lancaster": 25,
+    "lee": 25,
+    "lexington": 25,
+    "loudoun": 25,
+    "louisa": 25,
+    "lunenburg": 25,
+    "lynchburg": 25,
+    "madison": 25,
+    "manassas": 25,
+    "manassas-park": 25,
+    "martinsville": 25,
+    "mathews": 25,
+    "mecklenburg": 25,
+    "middlesex": 25,
+    "montgomery": 25,
+    "nelson": 25,
+    "new-kent": 25,
+    "newport-news": 25,
+    "norfolk": 25,
+    "northampton": 25,
+    "northumberland": 25,
+    "norton": 25,
+    "nottoway": 25,
+    "orange": 25,
+    "page": 25,
+    "patrick": 25,
+    "petersburg": 25,
+    "pittsylvania": 25,
+    "poquoson": 25,
+    "portsmouth": 25,
+    "powhatan": 25,
+    "prince-edward": 25,
+    "prince-george": 25,
+    "prince-william": 25,
+    "pulaski": 25,
+    "radford": 25,
+    "rappahannock": 25,
+    "richmond": 25,
+    "richmond-county": 25,
+    "roanoke": 25,
+    "roanoke-county": 25,
+    "rockbridge": 25,
+    "rockingham": 25,
+    "russell": 25,
+    "salem": 25,
+    "scott": 25,
+    "shenandoah": 25,
+    "smyth": 25,
+    "southampton": 25,
+    "spotsylvania": 25,
+    "stafford": 25,
+    "staunton": 25,
+    "suffolk": 25,
+    "surry": 25,
+    "sussex": 25,
+    "tazewell": 25,
+    "virginia-beach": 25,
+    "warren": 25,
+    "washington": 25,
+    "waynesboro": 25,
+    "westmoreland": 25,
+    "williamsburg": 25,
+    "winchester": 25,
+    "wise": 25,
+    "wythe": 25,
+    "york": 25
+  },
+  "major": {
+    "fairfax": {
+      "county": "fairfax",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "virginia-beach": {
+      "county": "virginia-beach",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "prince-william": {
+      "county": "prince-william",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "loudoun": {
+      "county": "loudoun",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    },
+    "chesterfield": {
+      "county": "chesterfield",
+      "local": 0,
+      "state": 2,
+      "national": 23,
+      "total": 25
+    }
+  }
+}

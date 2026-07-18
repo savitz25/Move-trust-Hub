@@ -1,0 +1,2645 @@
+{
+  "executedAt": "2026-07-09T14:31:16.209Z",
+  "dryRun": false,
+  "skipRefresh": false,
+  "refreshSummary": {
+    "totalWithUsdot": 244,
+    "summaries": [
+      {
+        "offset": 0,
+        "processed": 40,
+        "updated": 0,
+        "unchanged": 40,
+        "failed": 0,
+        "nameRecovered": 0,
+        "errors": []
+      },
+      {
+        "offset": 40,
+        "processed": 40,
+        "updated": 0,
+        "unchanged": 40,
+        "failed": 0,
+        "nameRecovered": 0,
+        "errors": []
+      },
+      {
+        "offset": 80,
+        "processed": 40,
+        "updated": 0,
+        "unchanged": 40,
+        "failed": 0,
+        "nameRecovered": 0,
+        "errors": []
+      },
+      {
+        "offset": 120,
+        "processed": 40,
+        "updated": 4,
+        "unchanged": 36,
+        "failed": 0,
+        "nameRecovered": 0,
+        "errors": []
+      },
+      {
+        "offset": 160,
+        "processed": 40,
+        "updated": 0,
+        "unchanged": 40,
+        "failed": 0,
+        "nameRecovered": 0,
+        "errors": []
+      },
+      {
+        "offset": 200,
+        "processed": 40,
+        "updated": 0,
+        "unchanged": 40,
+        "failed": 0,
+        "nameRecovered": 0,
+        "errors": []
+      },
+      {
+        "offset": 240,
+        "processed": 4,
+        "updated": 0,
+        "unchanged": 4,
+        "failed": 0,
+        "nameRecovered": 0,
+        "errors": []
+      }
+    ]
+  },
+  "scannedWithUsdot": 244,
+  "removedCount": 128,
+  "removals": [
+    {
+      "id": "1st-coast-express-moving-company",
+      "slug": "1st-coast-express-moving-company",
+      "name": "1st Coast Express Moving Company",
+      "usdot_number": "3685430",
+      "mc_number": null,
+      "headquarters": "Jacksonville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:21.923+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "a-1-freeman-moving-group-memphis",
+      "slug": "a-1-freeman-moving-group-memphis",
+      "name": "A-1 Freeman Moving Group Memphis",
+      "usdot_number": "940723",
+      "mc_number": null,
+      "headquarters": "Memphis",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:23.619+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "admiral-movers",
+      "slug": "admiral-movers",
+      "name": "Admiral Movers",
+      "usdot_number": "1254788",
+      "mc_number": null,
+      "headquarters": "Montgomery",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:26.154+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "alachua-county-movers",
+      "slug": "alachua-county-movers",
+      "name": "Alachua County Movers",
+      "usdot_number": "2799007",
+      "mc_number": "89213",
+      "headquarters": "Gainesville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T19:49:27.823+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "alcona-county-moving",
+      "slug": "alcona-county-moving",
+      "name": "Alcona County Moving",
+      "usdot_number": "4191768",
+      "mc_number": "940008",
+      "headquarters": "Harrisville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T19:49:28.664+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "alger-county-moving",
+      "slug": "alger-county-moving",
+      "name": "Alger County Moving",
+      "usdot_number": "2863346",
+      "mc_number": "900486",
+      "headquarters": "Munising",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:23:54.214+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "all-my-sons-moving-storage-chattanooga",
+      "slug": "all-my-sons-moving-storage-chattanooga",
+      "name": "All My Sons Moving & Storage Chattanooga",
+      "usdot_number": "4011607",
+      "mc_number": null,
+      "headquarters": "Chattanooga",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:23:56+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "appalachian-moving-storage",
+      "slug": "appalachian-moving-storage",
+      "name": "Appalachian Moving & Storage",
+      "usdot_number": "2180471",
+      "mc_number": null,
+      "headquarters": "Boone",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: Inactive · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T19:48:12.076+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "apple-moving-augusta",
+      "slug": "apple-moving-augusta",
+      "name": "Apple Moving Augusta",
+      "usdot_number": "1934458",
+      "mc_number": null,
+      "headquarters": "Augusta",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:48:12.902+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "asap-moving-delivery-service",
+      "slug": "asap-moving-delivery-service",
+      "name": "ASAP Moving & Delivery Service",
+      "usdot_number": "3537136",
+      "mc_number": null,
+      "headquarters": "Dothan",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T21:03:07.501+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "atlanta-moving-storage",
+      "slug": "atlanta-moving-storage",
+      "name": "Atlanta Moving & Storage",
+      "usdot_number": "3044205",
+      "mc_number": "922273",
+      "headquarters": "Atlanta",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:12.922+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "awesome-moving-services",
+      "slug": "awesome-moving-services",
+      "name": "Awesome Moving Services",
+      "usdot_number": "4357625",
+      "mc_number": null,
+      "headquarters": "Tuscaloosa",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:23:58.859+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "badie-moving-company",
+      "slug": "badie-moving-company",
+      "name": "Badie Moving Company",
+      "usdot_number": "3658395",
+      "mc_number": null,
+      "headquarters": "Statesboro",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:23:59.434+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "baldwin-moving-storage",
+      "slug": "baldwin-moving-storage",
+      "name": "Baldwin Moving & Storage",
+      "usdot_number": "2894954",
+      "mc_number": "920858",
+      "headquarters": "Grand Blanc",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:00.042+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "barringer-moving-storage",
+      "slug": "barringer-moving-storage",
+      "name": "Barringer Moving & Storage",
+      "usdot_number": "2062164",
+      "mc_number": null,
+      "headquarters": "Newton",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: Inactive · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:00.604+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "best-in-broward-movers-llc",
+      "slug": "best-in-broward-movers-llc",
+      "name": "Best in Broward Movers LLC",
+      "usdot_number": "3070632",
+      "mc_number": null,
+      "headquarters": "North Lauderdale",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:14.603+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "big-rapids-moving-storage",
+      "slug": "big-rapids-moving-storage",
+      "name": "Big Rapids Moving & Storage",
+      "usdot_number": "4564539",
+      "mc_number": "810459",
+      "headquarters": "Big Rapids",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:25:15.743+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "black-tie-moving-huntsville",
+      "slug": "black-tie-moving-huntsville",
+      "name": "Black Tie Moving Huntsville",
+      "usdot_number": "2407712",
+      "mc_number": null,
+      "headquarters": "Huntsville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:16.316+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "blue-water-moving",
+      "slug": "blue-water-moving",
+      "name": "Blue Water Moving",
+      "usdot_number": "5328612",
+      "mc_number": "836552",
+      "headquarters": "Marysville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:45:55.455+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "boerman-moving-storage",
+      "slug": "boerman-moving-storage",
+      "name": "Boerman Moving & Storage",
+      "usdot_number": "3277955",
+      "mc_number": "924011",
+      "headquarters": "Grand Rapids",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:16.86+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "branch-county-moving",
+      "slug": "branch-county-moving",
+      "name": "Branch County Moving",
+      "usdot_number": "3242072",
+      "mc_number": "923944",
+      "headquarters": "Coldwater",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:17.422+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "brevard-local-movers",
+      "slug": "brevard-local-movers",
+      "name": "Brevard Local Movers",
+      "usdot_number": "2866784",
+      "mc_number": "96990",
+      "headquarters": "Melbourne",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:18.56+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "bristol-moving-storage-llc",
+      "slug": "bristol-moving-storage-llc",
+      "name": "BRISTOL MOVING & STORAGE LLC",
+      "usdot_number": "4149046",
+      "mc_number": null,
+      "headquarters": "77 MICHAEL RD, SPOTSWOOD, NJ, 08884",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:36.177+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 1
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "c-k-local-movers",
+      "slug": "c-k-local-movers",
+      "name": "C K Local Movers",
+      "usdot_number": "1646232",
+      "mc_number": null,
+      "headquarters": "Olean",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:39.003+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "caro-moving-storage",
+      "slug": "caro-moving-storage",
+      "name": "Caro Moving & Storage",
+      "usdot_number": "2371053",
+      "mc_number": "916033",
+      "headquarters": "Caro",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:39.578+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "changing-spaces-moving",
+      "slug": "changing-spaces-moving",
+      "name": "Changing Spaces Moving",
+      "usdot_number": "1164434",
+      "mc_number": null,
+      "headquarters": "Birmingham",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:40.69+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "charlevoix-county-moving",
+      "slug": "charlevoix-county-moving",
+      "name": "Charlevoix County Moving",
+      "usdot_number": "3524486",
+      "mc_number": "844930",
+      "headquarters": "Charlevoix",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:41.236+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "charlotte-harbor-moving",
+      "slug": "charlotte-harbor-moving",
+      "name": "Charlotte Harbor Moving",
+      "usdot_number": "2889006",
+      "mc_number": "99112",
+      "headquarters": "Punta Gorda",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:06.121+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "christopher-s-moving-storage-of-the-shoals",
+      "slug": "christopher-s-moving-storage-of-the-shoals",
+      "name": "Christopher's Moving & Storage of the Shoals",
+      "usdot_number": "2908921",
+      "mc_number": null,
+      "headquarters": "Florence",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:06.791+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "citrus-county-movers",
+      "slug": "citrus-county-movers",
+      "name": "Citrus County Movers",
+      "usdot_number": "2777885",
+      "mc_number": "86991",
+      "headquarters": "Inverness",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:58.419+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "clearwater-bay-movers",
+      "slug": "clearwater-bay-movers",
+      "name": "Clearwater Bay Movers",
+      "usdot_number": "2978905",
+      "mc_number": "108901",
+      "headquarters": "Clearwater",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:59.542+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "clinton-county-moving",
+      "slug": "clinton-county-moving",
+      "name": "Clinton County Moving",
+      "usdot_number": "2881354",
+      "mc_number": "860974",
+      "headquarters": "St. Johns",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:00.088+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "college-hunks-hauling-junk-kalamazoo",
+      "slug": "college-hunks-hauling-junk-kalamazoo",
+      "name": "College Hunks Hauling Junk Kalamazoo",
+      "usdot_number": "3397408",
+      "mc_number": "856600",
+      "headquarters": "Kalamazoo",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:47:18.123+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "college-hunks-hauling-junk-moving-knoxville",
+      "slug": "college-hunks-hauling-junk-moving-knoxville",
+      "name": "College Hunks Hauling Junk & Moving Knoxville",
+      "usdot_number": "2845521",
+      "mc_number": null,
+      "headquarters": "Knoxville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:42.354+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "college-hunks-moving-savannah",
+      "slug": "college-hunks-moving-savannah",
+      "name": "College Hunks Moving Savannah",
+      "usdot_number": "2378173",
+      "mc_number": null,
+      "headquarters": "Savannah",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:43.512+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "collier-local-lines",
+      "slug": "collier-local-lines",
+      "name": "Collier Local Lines",
+      "usdot_number": "2877895",
+      "mc_number": "98001",
+      "headquarters": "Naples",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:44.086+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "corrigan-moving-systems-grand-rapids",
+      "slug": "corrigan-moving-systems-grand-rapids",
+      "name": "Corrigan Moving Systems Grand Rapids",
+      "usdot_number": "10714",
+      "mc_number": "10714",
+      "headquarters": "Grand Rapids",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: Inactive · Broker: Inactive",
+      "fmcsa_last_checked": "2026-07-08T21:03:11.022+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "crabtree-family-moving",
+      "slug": "crabtree-family-moving",
+      "name": "Crabtree Family Moving",
+      "usdot_number": "2507399",
+      "mc_number": null,
+      "headquarters": "Raleigh",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T21:03:11.614+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "crystal-falls-moving-storage",
+      "slug": "crystal-falls-moving-storage",
+      "name": "Crystal Falls Moving & Storage",
+      "usdot_number": "3068582",
+      "mc_number": "920654",
+      "headquarters": "Crystal Falls",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: Inactive · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T21:03:12.794+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "delta-county-moving",
+      "slug": "delta-county-moving",
+      "name": "Delta County Moving",
+      "usdot_number": "2715120",
+      "mc_number": "883884",
+      "headquarters": "Escanaba",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T21:03:13.384+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "driftwood-moving-company",
+      "slug": "driftwood-moving-company",
+      "name": "Driftwood Moving Company",
+      "usdot_number": "3136921",
+      "mc_number": null,
+      "headquarters": "Brunswick",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T21:03:14.815+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "eagle-river-moving-storage",
+      "slug": "eagle-river-moving-storage",
+      "name": "Eagle River Moving & Storage",
+      "usdot_number": "4467255",
+      "mc_number": "917195",
+      "headquarters": "Eagle River",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T21:03:15.408+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "east-carolina-moving",
+      "slug": "east-carolina-moving",
+      "name": "East Carolina Moving",
+      "usdot_number": "2323062",
+      "mc_number": null,
+      "headquarters": "Greenville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T21:03:15.997+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "flint-moving-storage",
+      "slug": "flint-moving-storage",
+      "name": "Flint Moving & Storage",
+      "usdot_number": "3200998",
+      "mc_number": "872662",
+      "headquarters": "Flint",
+      "reason": "out_of_service",
+      "authority_active": false,
+      "out_of_service": true,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:48:37.276+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "frisbie-moving-storage",
+      "slug": "frisbie-moving-storage",
+      "name": "Frisbie Moving & Storage",
+      "usdot_number": "2682037",
+      "mc_number": "807013",
+      "headquarters": "Taylor",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:48:38.568+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "gainesville-local-movers",
+      "slug": "gainesville-local-movers",
+      "name": "Gainesville Local Movers",
+      "usdot_number": "2800118",
+      "mc_number": "90324",
+      "headquarters": "Gainesville",
+      "reason": "out_of_service",
+      "authority_active": false,
+      "out_of_service": true,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:48:39.347+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "georgia-home-movers",
+      "slug": "georgia-home-movers",
+      "name": "Georgia Home Movers",
+      "usdot_number": "2985787",
+      "mc_number": null,
+      "headquarters": "Marietta",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:48:55.25+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "gogebic-county-moving",
+      "slug": "gogebic-county-moving",
+      "name": "Gogebic County Moving",
+      "usdot_number": "2852668",
+      "mc_number": "946224",
+      "headquarters": "Ironwood",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:49:09.389+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "got2move",
+      "slug": "got2move",
+      "name": "Got2Move",
+      "usdot_number": "3070307",
+      "mc_number": null,
+      "headquarters": "San Francisco",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:23:50.318+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "grand-traverse-county-moving",
+      "slug": "grand-traverse-county-moving",
+      "name": "Grand Traverse County Moving",
+      "usdot_number": "2351142",
+      "mc_number": "905698",
+      "headquarters": "Traverse City",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: Inactive",
+      "fmcsa_last_checked": "2026-07-09T14:23:52.005+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "greenville-moving-storage",
+      "slug": "greenville-moving-storage",
+      "name": "Greenville Moving & Storage",
+      "usdot_number": "4535413",
+      "mc_number": "938045",
+      "headquarters": "Greenville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:23:52.582+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "handy-guys-moving",
+      "slug": "handy-guys-moving",
+      "name": "Handy Guys Moving",
+      "usdot_number": "2801865",
+      "mc_number": null,
+      "headquarters": "Mobile",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:23:53.14+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "hardee-local-movers",
+      "slug": "hardee-local-movers",
+      "name": "Hardee Local Movers",
+      "usdot_number": "2722330",
+      "mc_number": "81436",
+      "headquarters": "Wauchula",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:39.034+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "hart-moving-storage",
+      "slug": "hart-moving-storage",
+      "name": "Hart Moving & Storage",
+      "usdot_number": "5509091",
+      "mc_number": "811031",
+      "headquarters": "Hart",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: Inactive · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:49:46.562+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "highlands-moving-co",
+      "slug": "highlands-moving-co",
+      "name": "Highlands Moving Co.",
+      "usdot_number": "2733441",
+      "mc_number": "82547",
+      "headquarters": "Sebring",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:23:42.56+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "holland-moving-storage",
+      "slug": "holland-moving-storage",
+      "name": "Holland Moving & Storage",
+      "usdot_number": "4097375",
+      "mc_number": "843615",
+      "headquarters": "Holland",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: Inactive",
+      "fmcsa_last_checked": "2026-07-09T14:24:45.242+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "horne-moving-systems",
+      "slug": "horne-moving-systems",
+      "name": "Horne Moving Systems",
+      "usdot_number": "304797",
+      "mc_number": null,
+      "headquarters": "Goldsboro",
+      "reason": "authority_inactive",
+      "authority_active": true,
+      "out_of_service": false,
+      "authorityStatus": "Common: Active · Contract: None · Broker: Inactive",
+      "fmcsa_last_checked": "2026-07-09T14:24:45.817+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "houghton-moving-storage",
+      "slug": "houghton-moving-storage",
+      "name": "Houghton Moving & Storage",
+      "usdot_number": "4521253",
+      "mc_number": "844481",
+      "headquarters": "Houghton",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:50:21.208+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "jackson-moving-storage",
+      "slug": "jackson-moving-storage",
+      "name": "Jackson Moving & Storage",
+      "usdot_number": "2108927",
+      "mc_number": "840287",
+      "headquarters": "Jackson",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:46.952+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "jj-s-moving-storage",
+      "slug": "jj-s-moving-storage",
+      "name": "JJ's Moving & Storage",
+      "usdot_number": "6396339",
+      "mc_number": "908899",
+      "headquarters": "Grand Rapids",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:51:20.418+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "jj-s-moving-storage-kalamazoo",
+      "slug": "jj-s-moving-storage-kalamazoo",
+      "name": "JJ's Moving & Storage Kalamazoo",
+      "usdot_number": "3424128",
+      "mc_number": "882088",
+      "headquarters": "Kalamazoo",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:48.059+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "jj-s-moving-storage-lansing",
+      "slug": "jj-s-moving-storage-lansing",
+      "name": "JJ's Moving & Storage Lansing",
+      "usdot_number": "8362229",
+      "mc_number": "897861",
+      "headquarters": "Lansing",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:51:30.891+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "joe-bonnie-son-moving-storage",
+      "slug": "joe-bonnie-son-moving-storage",
+      "name": "Joe Bonnie & Son Moving & Storage",
+      "usdot_number": "2031216",
+      "mc_number": "713396",
+      "headquarters": "Delray Beach",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:48.634+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "jubilee-city-movers",
+      "slug": "jubilee-city-movers",
+      "name": "Jubilee City Movers",
+      "usdot_number": "4099369",
+      "mc_number": null,
+      "headquarters": "Montgomery",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:25:19.714+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "juggernaut-movers-detroit",
+      "slug": "juggernaut-movers-detroit",
+      "name": "Juggernaut Movers Detroit",
+      "usdot_number": "2582829",
+      "mc_number": "883961",
+      "headquarters": "Westland",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:20.304+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "kalamazoo-county-moving",
+      "slug": "kalamazoo-county-moving",
+      "name": "Kalamazoo County Moving",
+      "usdot_number": "2393818",
+      "mc_number": "912742",
+      "headquarters": "Kalamazoo",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:31.82+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "kalkaska-county-moving",
+      "slug": "kalkaska-county-moving",
+      "name": "Kalkaska County Moving",
+      "usdot_number": "2734626",
+      "mc_number": "824102",
+      "headquarters": "Kalkaska",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:32.379+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "kent-county-moving",
+      "slug": "kent-county-moving",
+      "name": "Kent County Moving",
+      "usdot_number": "2489888",
+      "mc_number": "928144",
+      "headquarters": "Grand Rapids",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: Inactive",
+      "fmcsa_last_checked": "2026-07-09T14:24:32.926+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "key-largo-local-moving",
+      "slug": "key-largo-local-moving",
+      "name": "Key Largo Local Moving",
+      "usdot_number": "2744552",
+      "mc_number": "83658",
+      "headquarters": "Key Largo",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:33.49+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "knoxville-moving-company",
+      "slug": "knoxville-moving-company",
+      "name": "Knoxville Moving Company",
+      "usdot_number": "4275217",
+      "mc_number": null,
+      "headquarters": "Knoxville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:34.065+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "lake-city-moving-storage",
+      "slug": "lake-city-moving-storage",
+      "name": "Lake City Moving & Storage",
+      "usdot_number": "2816983",
+      "mc_number": "812011",
+      "headquarters": "Lake City",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:59:26.89+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "lapeer-moving-storage",
+      "slug": "lapeer-moving-storage",
+      "name": "Lapeer Moving & Storage",
+      "usdot_number": "4564223",
+      "mc_number": "849859",
+      "headquarters": "Lapeer",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:59:28.1+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "leelanau-county-moving",
+      "slug": "leelanau-county-moving",
+      "name": "Leelanau County Moving",
+      "usdot_number": "3065834",
+      "mc_number": "866030",
+      "headquarters": "Leland",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:51:59.65+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "levy-local-moving",
+      "slug": "levy-local-moving",
+      "name": "Levy Local Moving",
+      "usdot_number": "2766774",
+      "mc_number": "85880",
+      "headquarters": "Bronson",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:52:07.154+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "ludington-moving-storage",
+      "slug": "ludington-moving-storage",
+      "name": "Ludington Moving & Storage",
+      "usdot_number": "3650495",
+      "mc_number": "900475",
+      "headquarters": "Ludington",
+      "reason": "out_of_service",
+      "authority_active": false,
+      "out_of_service": true,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:52:22.809+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "manistee-moving-storage",
+      "slug": "manistee-moving-storage",
+      "name": "Manistee Moving & Storage",
+      "usdot_number": "4272953",
+      "mc_number": "888973",
+      "headquarters": "Manistee",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:52:44.256+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "marathon-keys-moving",
+      "slug": "marathon-keys-moving",
+      "name": "Marathon Keys Moving",
+      "usdot_number": "2755663",
+      "mc_number": "84769",
+      "headquarters": "Marathon",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:52:51.944+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "master-movers-nashville",
+      "slug": "master-movers-nashville",
+      "name": "Master Movers Nashville",
+      "usdot_number": "897743",
+      "mc_number": null,
+      "headquarters": "Nashville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:59:29.452+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "mecosta-county-moving",
+      "slug": "mecosta-county-moving",
+      "name": "Mecosta County Moving",
+      "usdot_number": "2685300",
+      "mc_number": "845296",
+      "headquarters": "Big Rapids",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:59:32.594+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "midland-county-moving",
+      "slug": "midland-county-moving",
+      "name": "Midland County Moving",
+      "usdot_number": "4415822",
+      "mc_number": "830082",
+      "headquarters": "Midland",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:23:44.382+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "mio-moving-storage",
+      "slug": "mio-moving-storage",
+      "name": "Mio Moving & Storage",
+      "usdot_number": "3397483",
+      "mc_number": "910971",
+      "headquarters": "Mio",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:23:45.551+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "monroe-county-moving",
+      "slug": "monroe-county-moving",
+      "name": "Monroe County Moving",
+      "usdot_number": "2943772",
+      "mc_number": "900724",
+      "headquarters": "Monroe",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:23:47.374+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "monroe-moving-storage",
+      "slug": "monroe-moving-storage",
+      "name": "Monroe Moving & Storage",
+      "usdot_number": "4087341",
+      "mc_number": "875705",
+      "headquarters": "Monroe",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:23:47.953+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "montcalm-county-moving",
+      "slug": "montcalm-county-moving",
+      "name": "Montcalm County Moving",
+      "usdot_number": "2327570",
+      "mc_number": "948670",
+      "headquarters": "Stanton",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T21:03:17.158+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "morningstar-moving-storage",
+      "slug": "morningstar-moving-storage",
+      "name": "MorningStar Moving & Storage",
+      "usdot_number": "4141053",
+      "mc_number": null,
+      "headquarters": "Oakland",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T21:03:17.764+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "motivated-movers",
+      "slug": "motivated-movers",
+      "name": "Motivated Movers",
+      "usdot_number": "3201516",
+      "mc_number": null,
+      "headquarters": "Panama City",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:53:37.314+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "moving-apt",
+      "slug": "moving-apt",
+      "name": "Moving APT",
+      "usdot_number": "1877726",
+      "mc_number": "677526",
+      "headquarters": "Miami, FL",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:53:48.257+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "moving-masters-iv",
+      "slug": "moving-masters-iv",
+      "name": "Moving Masters IV",
+      "usdot_number": "3740431",
+      "mc_number": null,
+      "headquarters": "El Centro",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:53:48.85+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "mudanza-moving",
+      "slug": "mudanza-moving",
+      "name": "Mudanza Moving",
+      "usdot_number": "3873581",
+      "mc_number": null,
+      "headquarters": "Valdosta",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:53:49.566+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "munising-moving-storage",
+      "slug": "munising-moving-storage",
+      "name": "Munising Moving & Storage",
+      "usdot_number": "3466882",
+      "mc_number": "824326",
+      "headquarters": "Munising",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:53:50.219+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "music-city-movers",
+      "slug": "music-city-movers",
+      "name": "Music City Movers",
+      "usdot_number": "1831165",
+      "mc_number": null,
+      "headquarters": "Nashville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:53:51.046+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "muskegon-county-moving",
+      "slug": "muskegon-county-moving",
+      "name": "Muskegon County Moving",
+      "usdot_number": "2349678",
+      "mc_number": "879058",
+      "headquarters": "Muskegon",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: Inactive · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:53:51.731+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "newberry-moving-storage",
+      "slug": "newberry-moving-storage",
+      "name": "Newberry Moving & Storage",
+      "usdot_number": "3965092",
+      "mc_number": "882168",
+      "headquarters": "Newberry",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:54:08.189+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "nilson-van-and-storage",
+      "slug": "nilson-van-and-storage",
+      "name": "Nilson Van and Storage",
+      "usdot_number": "122025",
+      "mc_number": null,
+      "headquarters": "Savannah",
+      "reason": "authority_inactive",
+      "authority_active": true,
+      "out_of_service": false,
+      "authorityStatus": "Common: Active · Contract: Active · Broker: Inactive",
+      "fmcsa_last_checked": "2026-07-08T21:03:18.885+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "oceana-county-moving",
+      "slug": "oceana-county-moving",
+      "name": "Oceana County Moving",
+      "usdot_number": "2737578",
+      "mc_number": "865670",
+      "headquarters": "Hart",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:48:58.252+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "okaloosa-local-lines",
+      "slug": "okaloosa-local-lines",
+      "name": "Okaloosa Local Lines",
+      "usdot_number": "2811229",
+      "mc_number": "91435",
+      "headquarters": "Crestview",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:48:59.09+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "okeechobee-moving-services",
+      "slug": "okeechobee-moving-services",
+      "name": "Okeechobee Moving Services",
+      "usdot_number": "2711219",
+      "mc_number": "80325",
+      "headquarters": "Okeechobee",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:48:59.913+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "oscoda-county-moving",
+      "slug": "oscoda-county-moving",
+      "name": "Oscoda County Moving",
+      "usdot_number": "3234382",
+      "mc_number": "810242",
+      "headquarters": "Mio",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:02.429+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "owosso-moving-storage",
+      "slug": "owosso-moving-storage",
+      "name": "Owosso Moving & Storage",
+      "usdot_number": "2797508",
+      "mc_number": "824388",
+      "headquarters": "Owosso",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:04.096+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "pensacola-bay-movers",
+      "slug": "pensacola-bay-movers",
+      "name": "Pensacola Bay Movers",
+      "usdot_number": "2844562",
+      "mc_number": "94768",
+      "headquarters": "Pensacola",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T19:49:06.613+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "perez-moving-co",
+      "slug": "perez-moving-co",
+      "name": "Perez Moving Co",
+      "usdot_number": "4270090",
+      "mc_number": null,
+      "headquarters": "Valdosta",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:59:33.307+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "petoskey-moving-storage",
+      "slug": "petoskey-moving-storage",
+      "name": "Petoskey Moving & Storage",
+      "usdot_number": "3835417",
+      "mc_number": "911405",
+      "headquarters": "Petoskey",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:59:33.915+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "rochester-moving-storage",
+      "slug": "rochester-moving-storage",
+      "name": "Rochester Moving & Storage",
+      "usdot_number": "1622882",
+      "mc_number": null,
+      "headquarters": "Rochester",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:25:00.632+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "rogers-city-moving-storage",
+      "slug": "rogers-city-moving-storage",
+      "name": "Rogers City Moving & Storage",
+      "usdot_number": "3680132",
+      "mc_number": "897796",
+      "headquarters": "Rogers City",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:59:34.523+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "rose-van-lines-grand-rapids",
+      "slug": "rose-van-lines-grand-rapids",
+      "name": "Rose Van Lines Grand Rapids",
+      "usdot_number": "3838453",
+      "mc_number": "915265",
+      "headquarters": "Wyoming",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T20:59:35.083+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "rose-van-lines-lansing",
+      "slug": "rose-van-lines-lansing",
+      "name": "Rose Van Lines Lansing",
+      "usdot_number": "3122423",
+      "mc_number": "875507",
+      "headquarters": "Lansing",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T20:59:35.67+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "saginaw-moving-storage",
+      "slug": "saginaw-moving-storage",
+      "name": "Saginaw Moving & Storage",
+      "usdot_number": "4284577",
+      "mc_number": "838517",
+      "headquarters": "Saginaw",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:49.242+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "sanilac-county-moving",
+      "slug": "sanilac-county-moving",
+      "name": "Sanilac County Moving",
+      "usdot_number": "3803218",
+      "mc_number": "923830",
+      "headquarters": "Sandusky",
+      "reason": "out_of_service",
+      "authority_active": false,
+      "out_of_service": true,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:49.851+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "sault-ste-marie-moving-storage",
+      "slug": "sault-ste-marie-moving-storage",
+      "name": "Sault Ste. Marie Moving & Storage",
+      "usdot_number": "2661115",
+      "mc_number": "936183",
+      "headquarters": "Sault Ste. Marie",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:50.441+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "simple-moving-solutions",
+      "slug": "simple-moving-solutions",
+      "name": "Simple Moving Solutions",
+      "usdot_number": "3286446",
+      "mc_number": null,
+      "headquarters": "Dudley",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:51.611+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "smart-move-wilson-moving-storage",
+      "slug": "smart-move-wilson-moving-storage",
+      "name": "Smart Move Wilson Moving & Storage",
+      "usdot_number": "2500357",
+      "mc_number": null,
+      "headquarters": "Wilson",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:52.17+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "spyder-moving-grand-rapids",
+      "slug": "spyder-moving-grand-rapids",
+      "name": "Spyder Moving Grand Rapids",
+      "usdot_number": "3186998",
+      "mc_number": "877022",
+      "headquarters": "Grand Rapids",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:24:53.295+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "st-joseph-moving-storage",
+      "slug": "st-joseph-moving-storage",
+      "name": "St. Joseph Moving & Storage",
+      "usdot_number": "3440785",
+      "mc_number": "817173",
+      "headquarters": "St. Joseph",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:01.176+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "standish-moving-storage",
+      "slug": "standish-moving-storage",
+      "name": "Standish Moving & Storage",
+      "usdot_number": "2092309",
+      "mc_number": "808737",
+      "headquarters": "Standish",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:25:01.767+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "stanton-moving-storage",
+      "slug": "stanton-moving-storage",
+      "name": "Stanton Moving & Storage",
+      "usdot_number": "3843087",
+      "mc_number": "897047",
+      "headquarters": "Stanton",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:02.341+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "sturgis-moving-storage",
+      "slug": "sturgis-moving-storage",
+      "name": "Sturgis Moving & Storage",
+      "usdot_number": "3794971",
+      "mc_number": "831123",
+      "headquarters": "Sturgis",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: None · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:25:04.086+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "sunny-moving-company",
+      "slug": "sunny-moving-company",
+      "name": "Sunny Moving Company",
+      "usdot_number": "3333531",
+      "mc_number": null,
+      "headquarters": "Daly City",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:05.875+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "suwannee-county-movers",
+      "slug": "suwannee-county-movers",
+      "name": "Suwannee County Movers",
+      "usdot_number": "2788996",
+      "mc_number": "88102",
+      "headquarters": "Live Oak",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:07.194+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "t-t-moving-and-packing",
+      "slug": "t-t-moving-and-packing",
+      "name": "T&T Moving and Packing",
+      "usdot_number": "4020489",
+      "mc_number": null,
+      "headquarters": "Brunswick",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:25:07.771+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "texas-moving-company",
+      "slug": "texas-moving-company",
+      "name": "Texas Moving Company",
+      "usdot_number": "136463",
+      "mc_number": null,
+      "headquarters": "Midland",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:24:55.59+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "three-rivers-moving-storage",
+      "slug": "three-rivers-moving-storage",
+      "name": "Three Rivers Moving & Storage",
+      "usdot_number": "4225002",
+      "mc_number": "849090",
+      "headquarters": "Three Rivers",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:23:38.445+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "triangle-movers",
+      "slug": "triangle-movers",
+      "name": "Triangle Movers",
+      "usdot_number": "1125320",
+      "mc_number": null,
+      "headquarters": "Newburgh",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-09T14:23:39.616+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "troy-moving-storage",
+      "slug": "troy-moving-storage",
+      "name": "Troy Moving & Storage",
+      "usdot_number": "3664181",
+      "mc_number": "840233",
+      "headquarters": "Troy",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:11.886+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "two-men-and-a-truck-detroit-dearborn",
+      "slug": "two-men-and-a-truck-detroit-dearborn",
+      "name": "Two Men and a Truck Detroit / Dearborn",
+      "usdot_number": "2481414",
+      "mc_number": "886367",
+      "headquarters": "Dearborn",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:15.24+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "two-men-and-a-truck-gainesville",
+      "slug": "two-men-and-a-truck-gainesville",
+      "name": "Two Men and a Truck Gainesville",
+      "usdot_number": "1669783",
+      "mc_number": null,
+      "headquarters": "Gainesville",
+      "reason": "authority_inactive",
+      "authority_active": true,
+      "out_of_service": false,
+      "authorityStatus": "Common: Active · Contract: Inactive · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T19:49:16.936+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "two-men-and-a-truck-nashville",
+      "slug": "two-men-and-a-truck-nashville",
+      "name": "Two Men and a Truck Nashville",
+      "usdot_number": "1296157",
+      "mc_number": null,
+      "headquarters": "Nashville",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-08T19:49:19.421+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "tyler-moving-storage",
+      "slug": "tyler-moving-storage",
+      "name": "Tyler Moving & Storage",
+      "usdot_number": "2045778",
+      "mc_number": null,
+      "headquarters": "Tyler",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": null,
+      "fmcsa_last_checked": "2026-07-08T19:49:20.247+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    },
+    {
+      "id": "wexford-county-moving",
+      "slug": "wexford-county-moving",
+      "name": "Wexford County Moving",
+      "usdot_number": "3913242",
+      "mc_number": "803646",
+      "headquarters": "Cadillac",
+      "reason": "authority_inactive",
+      "authority_active": false,
+      "out_of_service": false,
+      "authorityStatus": "Common: Inactive · Contract: None · Broker: None",
+      "fmcsa_last_checked": "2026-07-09T14:25:08.951+00:00",
+      "relatedCounts": {
+        "reviews": 0,
+        "fmcsa_change_log": 0,
+        "bbb_change_log": 0,
+        "company_suggestions": 0
+      },
+      "status": "deleted"
+    }
+  ],
+  "verification": {
+    "remainingCompanies": 116,
+    "remainingInactiveAuthority": []
+  },
+  "revalidation": {
+    "revalidated": false,
+    "note": "Cache revalidation skipped outside Next.js — deploy or 60s TTL will clear directory cache"
+  }
+}

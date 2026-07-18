@@ -1,0 +1,12 @@
+{
+  "executedAt": "2026-07-11T04:57:16.443Z",
+  "status": "ok",
+  "mode": "full",
+  "dryRun": false,
+  "processed": 1,
+  "enriched": 1,
+  "skipped": 0,
+  "failed": 0,
+  "errors": [],
+  "durationMs": 7105
+}
