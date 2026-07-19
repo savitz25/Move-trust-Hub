@@ -3,8 +3,11 @@
 import { useState, useTransition } from 'react';
 import { format } from 'date-fns';
 import Link from 'next/link';
-import { Check, ExternalLink, Loader2, MapPin, X } from 'lucide-react';
-import { moderateSuggestion } from '@/actions/moderate-suggestions';
+import { Check, ExternalLink, Loader2, MapPin, Trash2, X } from 'lucide-react';
+import {
+  deleteSuggestion,
+  moderateSuggestion,
+} from '@/actions/moderate-suggestions';
 import { AdminCoveragePreview } from '@/components/suggestions/admin-coverage-preview';
 import { AdminEnrichedPreview } from '@/components/verification/admin-enriched-preview';
 import type { PendingSuggestion } from '@/lib/suggestions/queries';
@@ -41,6 +44,26 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
       } else {
         toast.success(action === 'approve' ? 'Suggestion approved' : 'Suggestion rejected');
       }
+    });
+  }
+
+  function handleDelete(suggestion: PendingSuggestion) {
+    const label = suggestion.legal_name || suggestion.name;
+    if (
+      !confirm(
+        `Permanently delete suggestion “${label}” from the system?\n\nThis cannot be undone.`
+      )
+    ) {
+      return;
+    }
+    startTransition(async () => {
+      const res = await deleteSuggestion({ suggestionId: suggestion.id });
+      if (!res.success) {
+        toast.error(res.error ?? 'Delete failed');
+        return;
+      }
+      setQueue((q) => q.filter((s) => s.id !== suggestion.id));
+      toast.success(`Deleted ${label}`);
     });
   }
 
@@ -129,7 +152,7 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
               the office address, and revalidates directory caches.
             </p>
 
-            <div className="mt-4 flex gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               <Button
                 size="sm"
                 className="gap-1"
@@ -148,6 +171,20 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
               >
                 {pending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <X className="h-3.5 w-3.5" />}
                 Reject
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="gap-1 text-destructive border-destructive/40 hover:bg-destructive/10 hover:text-destructive"
+                disabled={pending}
+                onClick={() => handleDelete(suggestion)}
+              >
+                {pending ? (
+                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                ) : (
+                  <Trash2 className="h-3.5 w-3.5" />
+                )}
+                Delete permanently
               </Button>
             </div>
           </Card>

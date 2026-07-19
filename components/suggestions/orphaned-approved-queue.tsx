@@ -3,8 +3,11 @@
 import { useState, useTransition } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import { Loader2, RefreshCw } from 'lucide-react';
-import { repairOrphanedApprovedSuggestion } from '@/actions/moderate-suggestions';
+import { Loader2, RefreshCw, Trash2 } from 'lucide-react';
+import {
+  deleteSuggestion,
+  repairOrphanedApprovedSuggestion,
+} from '@/actions/moderate-suggestions';
 import {
   predictedProfileSlugForSuggestion,
   type OrphanedApprovedSuggestion,
@@ -45,13 +48,34 @@ export function OrphanedApprovedQueue({ initialOrphans }: Props) {
     });
   }
 
+  function handleDelete(suggestion: OrphanedApprovedSuggestion) {
+    const label = suggestion.legal_name || suggestion.name;
+    if (
+      !confirm(
+        `Permanently delete suggestion “${label}” from the system?\n\nThis cannot be undone. It will not recreate a company profile.`
+      )
+    ) {
+      return;
+    }
+    startTransition(async () => {
+      const res = await deleteSuggestion({ suggestionId: suggestion.id });
+      if (!res.success) {
+        toast.error(res.error ?? 'Delete failed');
+        return;
+      }
+      setOrphans((rows) => rows.filter((row) => row.id !== suggestion.id));
+      toast.success(`Deleted ${label}`);
+    });
+  }
+
   return (
     <div className="mb-8 space-y-3">
       <div>
         <h2 className="text-lg font-semibold">Approved but missing profile</h2>
         <p className="text-sm text-muted-foreground">
           These suggestions were marked approved but no readable company row exists. Use
-          &quot;Publish profile&quot; to create the directory entry.
+          &quot;Publish profile&quot; to create the directory entry, or delete them permanently
+          if they should not be on the site.
         </p>
       </div>
       {orphans.map((suggestion) => {
@@ -80,19 +104,35 @@ export function OrphanedApprovedQueue({ initialOrphans }: Props) {
                 {format(new Date(suggestion.created_at), 'PPp')}
               </time>
             </div>
-            <Button
-              size="sm"
-              className="mt-4 gap-1"
-              disabled={pending}
-              onClick={() => handleRepair(suggestion.id)}
-            >
-              {pending ? (
-                <Loader2 className="h-3.5 w-3.5 animate-spin" />
-              ) : (
-                <RefreshCw className="h-3.5 w-3.5" />
-              )}
-              Publish profile
-            </Button>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Button
+                size="sm"
+                className="gap-1"
+                disabled={pending}
+                onClick={() => handleRepair(suggestion.id)}
+              >
+                {pending ? (
+                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                ) : (
+                  <RefreshCw className="h-3.5 w-3.5" />
+                )}
+                Publish profile
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="gap-1 text-destructive border-destructive/40 hover:bg-destructive/10 hover:text-destructive"
+                disabled={pending}
+                onClick={() => handleDelete(suggestion)}
+              >
+                {pending ? (
+                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                ) : (
+                  <Trash2 className="h-3.5 w-3.5" />
+                )}
+                Delete permanently
+              </Button>
+            </div>
           </Card>
         );
       })}

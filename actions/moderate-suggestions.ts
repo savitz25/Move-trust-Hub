@@ -125,6 +125,62 @@ export async function moderateSuggestion(params: {
   }
 }
 
+/**
+ * Permanently delete a company suggestion (pending, approved orphan, or rejected).
+ * Does not delete a published company row — only the suggestion record.
+ */
+export async function deleteSuggestion(params: {
+  suggestionId: string;
+}): Promise<ModerateSuggestionResult> {
+  try {
+    await assertAdminSession();
+  } catch {
+    return { success: false, error: 'Unauthorized' };
+  }
+
+  if (!isSupabaseAdminConfigured()) {
+    return { success: false, error: 'Supabase admin not configured' };
+  }
+
+  const id = params.suggestionId?.trim();
+  if (!id) {
+    return { success: false, error: 'Suggestion id is required' };
+  }
+
+  const admin = createAdminClient();
+  const { data: existing, error: fetchError } = await admin
+    .from('company_suggestions')
+    .select('id, name, legal_name, status, usdot')
+    .eq('id', id)
+    .maybeSingle();
+
+  if (fetchError) {
+    return { success: false, error: fetchError.message };
+  }
+  if (!existing) {
+    return { success: false, error: 'Suggestion not found' };
+  }
+
+  const { error: deleteError } = await admin
+    .from('company_suggestions')
+    .delete()
+    .eq('id', id);
+
+  if (deleteError) {
+    return { success: false, error: deleteError.message };
+  }
+
+  logger.info('suggestion.deleted', {
+    suggestionId: id,
+    name: existing.legal_name || existing.name,
+    status: existing.status,
+    usdot: existing.usdot,
+  });
+
+  revalidatePath('/admin/suggestions', 'page');
+  return { success: true };
+}
+
 export async function repairOrphanedApprovedSuggestion(params: {
   suggestionId: string;
 }): Promise<ModerateSuggestionResult> {
