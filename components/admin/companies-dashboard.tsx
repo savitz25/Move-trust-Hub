@@ -19,8 +19,13 @@ import {
   Loader2,
   RefreshCw,
   Search,
+  Trash2,
 } from 'lucide-react';
-import { exportAdminCompaniesCsv, listAdminCompanies } from '@/actions/admin-companies';
+import {
+  deleteAdminCompany,
+  exportAdminCompaniesCsv,
+  listAdminCompanies,
+} from '@/actions/admin-companies';
 import { refreshCompanyAllDataAction } from '@/actions/admin-refresh-company';
 import type { AdminCompanyListItem, AdminCompanyStatus } from '@/lib/admin/company-dashboard-types';
 import type { AdminCompanyStats } from '@/actions/admin-company-stats';
@@ -175,7 +180,7 @@ export function CompaniesDashboard({
         id: 'actions',
         header: '',
         cell: ({ row }) => (
-          <div className="flex justify-end gap-2">
+          <div className="flex justify-end gap-1 sm:gap-2">
             <Button
               size="sm"
               variant="outline"
@@ -206,11 +211,44 @@ export function CompaniesDashboard({
             >
               <RefreshCw className="h-4 w-4" />
             </Button>
+            <Button
+              size="sm"
+              variant="ghost"
+              className="text-destructive hover:bg-destructive/10 hover:text-destructive"
+              title={`Delete ${row.original.name} from the directory`}
+              onClick={() => {
+                const name = row.original.name;
+                const slug = row.original.slug;
+                if (
+                  !confirm(
+                    `Permanently delete “${name}” from the directory?\n\nThis removes the company profile and cannot be undone.`
+                  )
+                ) {
+                  return;
+                }
+                startTransition(async () => {
+                  const result = await deleteAdminCompany(row.original.id);
+                  if (result.success) {
+                    toast.success(`Deleted ${name}`);
+                    setCompanies((prev) => prev.filter((c) => c.id !== row.original.id));
+                    if (editId === row.original.id) {
+                      setEditOpen(false);
+                      setEditId(null);
+                    }
+                  } else {
+                    toast.error(result.error ?? `Could not delete ${slug}`);
+                  }
+                });
+              }}
+            >
+              <Trash2 className="h-4 w-4" />
+              <span className="sr-only">Delete</span>
+            </Button>
           </div>
         ),
       },
     ],
-    [reload]
+    [reload, editId]
   );
 
   const table = useReactTable({
@@ -281,7 +319,8 @@ export function CompaniesDashboard({
         <div>
           <h2 className="text-2xl font-bold text-[#0A2540]">Company Management</h2>
           <p className="text-sm text-muted-foreground">
-            Search, edit, and refresh FMCSA, Google, and BBB data for directory movers.
+            Search, edit, refresh, or delete directory movers. Delete permanently removes a
+            company from the public site.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

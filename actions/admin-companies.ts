@@ -8,6 +8,7 @@ import type {
   AdminCompanyUpdateInput,
   AdminRefreshAuditEntry,
 } from '@/lib/admin/company-dashboard-types';
+import { revalidatePath } from 'next/cache';
 import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
@@ -156,6 +157,59 @@ export async function updateAdminCompany(
 
   revalidatePublishedCompany(input.slug.trim());
   return { success: true };
+}
+
+/**
+ * Permanently remove a company from the live directory.
+ * Cleans related destination assignments when present.
+ */
+export async function deleteAdminCompany(
+  companyId: string
+): Promise<{ success: boolean; error?: string; slug?: string }> {
+  await assertAdminSession();
+
+  if (!isSupabaseAdminConfigured()) {
+    return { success: false, error: 'Database not configured' };
+  }
+
+  const id = companyId?.trim();
+  if (!id) {
+    return { success: false, error: 'Company id is required' };
+  }
+
+  const admin = createAdminClient();
+  const { data: existing, error: fetchError } = await admin
+    .from('companies')
+    .select('id, slug, name')
+    .eq('id', id)
+    .maybeSingle();
+
+  if (fetchError) {
+    return { success: false, error: fetchError.message };
+  }
+  if (!existing) {
+    return { success: false, error: 'Company not found' };
+  }
+
+  // Best-effort cleanup of destination assignments (ignore if table missing)
+  const { error: destError } = await admin
+    .from('company_destination_assignments')
+    .delete()
+    .eq('company_id', id);
+  if (destError) {
+    // Non-fatal when table/FK not present
+    console.warn('[deleteAdminCompany] destination cleanup', destError.message);
+  }
+
+  const { error: deleteError } = await admin.from('companies').delete().eq('id', id);
+  if (deleteError) {
+    return { success: false, error: deleteError.message };
+  }
+
+  revalidatePublishedCompany(existing.slug);
+  revalidatePath('/admin');
+
+  return { success: true, slug: existing.slug };
 }
 
 export async function exportAdminCompaniesCsv(): Promise<string> {
