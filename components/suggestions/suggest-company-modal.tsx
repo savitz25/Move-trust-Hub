@@ -5,21 +5,27 @@ import Link from 'next/link';
 import { Building2, ExternalLink, Loader2, PlusCircle } from 'lucide-react';
 import {
   getSuggestionSubmitterDefaults,
+  previewLocalCompanySuggestion,
   submitCompanySuggestion,
 } from '@/actions/suggest-company';
+import { LocalCountyPicker } from '@/components/suggestions/local-county-picker';
 import { OnboardingCarrierLookup } from '@/components/suggestions/onboarding-carrier-lookup';
 import { OnboardingCoverageConsent } from '@/components/suggestions/onboarding-coverage-consent';
+import { ServiceScopeStep } from '@/components/suggestions/service-scope-step';
 import { MultiSourcePreviewCard } from '@/components/verification/multi-source-preview-card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import type { EnrichedCompanyPreview } from '@/lib/suggestions/types';
+import type { ServiceScope, SelectedCounty } from '@/lib/suggestions/service-scope';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
+import { US_STATES } from '@/lib/verify-dot/us-states';
 import { toast } from 'sonner';
 
 type SubmitSuccessState = {
   profileSlug: string;
   pendingReview: boolean;
+  serviceScope: ServiceScope;
 };
 
 type Props = {
@@ -32,6 +38,8 @@ type Props = {
   loadingPreview?: boolean;
   previewError?: string | null;
   onEnrichedPreviewChange?: (preview: EnrichedCompanyPreview | null) => void;
+  /** Skip scope step when opened from DOT verify with known interstate carrier */
+  forceScope?: ServiceScope | null;
 };
 
 export function SuggestCompanyModal({
@@ -44,10 +52,17 @@ export function SuggestCompanyModal({
   loadingPreview = false,
   previewError = null,
   onEnrichedPreviewChange,
+  forceScope = null,
 }: Props) {
+  const [serviceScope, setServiceScope] = useState<ServiceScope | null>(
+    forceScope ?? (initialCarrierQuery ? 'interstate' : null)
+  );
   const [activePreview, setActivePreview] = useState<EnrichedCompanyPreview | null>(enrichedPreview);
   const [carrierQuery, setCarrierQuery] = useState(initialCarrierQuery);
   const [lookupError, setLookupError] = useState<string | null>(previewError);
+  const [localName, setLocalName] = useState(initialName);
+  const [localState, setLocalState] = useState('');
+  const [selectedCounties, setSelectedCounties] = useState<SelectedCounty[]>([]);
   const [details, setDetails] = useState('');
   const [suggestedByName, setSuggestedByName] = useState('');
   const [suggestedByEmail, setSuggestedByEmail] = useState('');
@@ -59,23 +74,28 @@ export function SuggestCompanyModal({
   const [submitSuccess, setSubmitSuccess] = useState<SubmitSuccessState | null>(null);
   const [pending, startTransition] = useTransition();
 
-  const readyToSubmit = Boolean(activePreview?.fmcsa?.legalName && carrierQuery.trim());
+  const isLocal = serviceScope === 'intrastate';
+  const readyInterstate = Boolean(activePreview?.fmcsa?.legalName && carrierQuery.trim());
+  const readyLocal =
+    Boolean(localName.trim().length >= 2) &&
+    localState.length === 2 &&
+    selectedCounties.length > 0 &&
+    Boolean(activePreview?.google || activePreview?.publicScrape);
+  const readyToSubmit = isLocal ? readyLocal : readyInterstate;
 
   useEffect(() => {
     if (open && enrichedPreview?.fmcsa) {
       setActivePreview(enrichedPreview);
+      if (!serviceScope) setServiceScope('interstate');
     }
-  }, [open, enrichedPreview]);
+  }, [open, enrichedPreview, serviceScope]);
 
   useEffect(() => {
-    if (open) {
-      setLookupError(previewError);
-    }
+    if (open) setLookupError(previewError);
   }, [open, previewError]);
 
   useEffect(() => {
     if (!open) return;
-
     getSuggestionSubmitterDefaults().then((defaults) => {
       setIsTrustedSubmitter(defaults.isTrustedSubmitter);
       if (defaults.isTrustedSubmitter) {
@@ -86,9 +106,13 @@ export function SuggestCompanyModal({
   }, [open]);
 
   function resetForm() {
+    setServiceScope(forceScope ?? (initialCarrierQuery ? 'interstate' : null));
     setActivePreview(null);
     setCarrierQuery(initialCarrierQuery);
     setLookupError(null);
+    setLocalName(initialName);
+    setLocalState('');
+    setSelectedCounties([]);
     setDetails('');
     setSuggestedByName('');
     setSuggestedByEmail('');
@@ -112,14 +136,50 @@ export function SuggestCompanyModal({
     onEnrichedPreviewChange?.(preview);
   }
 
+  function handleLocalSearch(e: React.FormEvent) {
+    e.preventDefault();
+    startTransition(async () => {
+      setLookupError(null);
+      const res = await previewLocalCompanySuggestion({
+        companyName: localName,
+        stateCode: localState,
+      });
+      if (!res.success || !res.preview) {
+        setLookupError(res.error ?? 'Could not find this local mover.');
+        setActivePreview(null);
+        return;
+      }
+      setActivePreview(res.preview);
+      onEnrichedPreviewChange?.(res.preview);
+      if (res.preview.google?.formatted_address) {
+        // keep for submit headquarters
+      }
+    });
+  }
+
+  const preselectCountyKeys =
+    websiteCoverage?.counties
+      ?.map((c) => {
+        if (typeof c === 'string') return c;
+        const rec = c as { stateSlug?: string; countySlug?: string };
+        if (rec.stateSlug && rec.countySlug) return `${rec.stateSlug}/${rec.countySlug}`;
+        return '';
+      })
+      .filter(Boolean) ?? [];
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!readyToSubmit) return;
+    if (!readyToSubmit || !serviceScope) return;
 
     startTransition(async () => {
+      const google = activePreview?.google;
       const res = await submitCompanySuggestion({
-        carrierQuery,
-        name: null,
+        serviceScope,
+        carrierQuery: isLocal ? null : carrierQuery,
+        name: isLocal
+          ? localName || google?.name || null
+          : null,
+        stateCode: isLocal ? localState : null,
         details: details || null,
         suggestedByName,
         suggestedByEmail,
@@ -132,9 +192,15 @@ export function SuggestCompanyModal({
               fetchedAt: activePreview.fetchedAt,
             }
           : null,
-        coverageConsent,
-        websiteUrl: websiteUrl || null,
-        coverageSnapshot: websiteCoverage,
+        coverageConsent: isLocal ? false : coverageConsent,
+        websiteUrl: websiteUrl || google?.website_url || null,
+        coverageSnapshot: isLocal ? null : websiteCoverage,
+        selectedCounties: isLocal ? selectedCounties : [],
+        headquarters:
+          google?.formatted_address ||
+          activePreview?.fmcsa?.headquarters ||
+          null,
+        phone: google?.phone || activePreview?.fmcsa?.phone || null,
       });
 
       if (!res.success) {
@@ -157,13 +223,18 @@ export function SuggestCompanyModal({
         setSubmitSuccess({
           profileSlug: res.profileSlug,
           pendingReview: Boolean(res.pendingReview),
+          serviceScope,
         });
       }
       setSubmitted(true);
       if (res.pendingReview) {
         toast.success('Submission received — pending admin review.');
       } else {
-        toast.success('Company published to the directory.');
+        toast.success(
+          isLocal
+            ? 'Local mover published to selected county pages.'
+            : 'Company published to the directory.'
+        );
       }
     });
   }
@@ -183,23 +254,22 @@ export function SuggestCompanyModal({
           <div className="px-6 pb-6 space-y-4">
             <p className="text-sm leading-relaxed text-muted-foreground">
               {submitSuccess?.pendingReview
-                ? 'Thank you — your submission is in the admin review queue. FMCSA, Google, and BBB data are on file. Once approved, the profile will be live at the link below (usually within one business day).'
-                : 'Published — this company is live in the main directory with county and destination placement from the headquarters address and any explicit website service areas you approved.'}
+                ? submitSuccess.serviceScope === 'intrastate'
+                  ? 'Thank you — your local mover submission is in the admin queue. After approval, it will appear only on the county pages you selected (not the main interstate directory).'
+                  : 'Thank you — your submission is in the admin review queue. Once approved, the profile will be live in the interstate directory.'
+                : submitSuccess?.serviceScope === 'intrastate'
+                  ? 'Published as a local/in-state mover on the county pages you selected.'
+                  : 'Published — this company is live in the main interstate directory.'}
             </p>
             {submitSuccess?.profileSlug ? (
               <div className="rounded-md border bg-muted/40 p-4 space-y-2">
                 <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  {submitSuccess.pendingReview ? 'Expected profile URL' : 'Live profile'}
+                  Profile path
                 </p>
                 <p className="text-sm font-mono text-foreground">
                   /companies/{submitSuccess.profileSlug}
                 </p>
-                {submitSuccess.pendingReview ? (
-                  <p className="text-xs text-muted-foreground">
-                    This URL is reserved for after admin approval. It will show &quot;not found&quot;
-                    until then — that is expected.
-                  </p>
-                ) : (
+                {!submitSuccess.pendingReview ? (
                   <Link
                     href={`/companies/${submitSuccess.profileSlug}`}
                     className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
@@ -207,7 +277,7 @@ export function SuggestCompanyModal({
                     View profile
                     <ExternalLink className="h-3.5 w-3.5" />
                   </Link>
-                )}
+                ) : null}
               </div>
             ) : null}
             <Button className="w-full" onClick={() => handleOpenChange(false)}>
@@ -217,12 +287,35 @@ export function SuggestCompanyModal({
         ) : loadingPreview ? (
           <div className="px-6 pb-8 flex flex-col items-center gap-3 text-sm text-muted-foreground">
             <Loader2 className="h-6 w-6 animate-spin text-primary" />
-            Pulling FMCSA, Google Places, and BBB data…
+            Pulling verification data…
           </div>
         ) : (
           <div className="px-6 pb-6 space-y-4">
-            {!readyToSubmit ? (
+            {!serviceScope ? (
+              <ServiceScopeStep
+                value={serviceScope}
+                onChange={setServiceScope}
+                disabled={pending}
+              />
+            ) : serviceScope === 'interstate' && !readyInterstate ? (
               <>
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-xs font-medium uppercase tracking-wide text-sky-800">
+                    Interstate · FMCSA required
+                  </p>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="text-xs h-7"
+                    onClick={() => {
+                      setServiceScope(null);
+                      setActivePreview(null);
+                    }}
+                  >
+                    Change type
+                  </Button>
+                </div>
                 <OnboardingCarrierLookup
                   initialCarrierQuery={initialCarrierQuery}
                   initialCompanyName={initialName}
@@ -236,39 +329,142 @@ export function SuggestCompanyModal({
                   </p>
                 ) : null}
               </>
+            ) : serviceScope === 'intrastate' && !readyLocal ? (
+              <>
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-xs font-medium uppercase tracking-wide text-emerald-800">
+                    Intrastate / Local · no USDOT
+                  </p>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="text-xs h-7"
+                    onClick={() => {
+                      setServiceScope(null);
+                      setActivePreview(null);
+                      setSelectedCounties([]);
+                    }}
+                  >
+                    Change type
+                  </Button>
+                </div>
+                <form onSubmit={handleLocalSearch} className="space-y-3">
+                  <div>
+                    <label className="text-sm font-medium" htmlFor="local-name">
+                      Business name
+                    </label>
+                    <Input
+                      id="local-name"
+                      value={localName}
+                      onChange={(e) => setLocalName(e.target.value)}
+                      className="mt-1.5"
+                      placeholder="e.g. Metro Local Movers"
+                      disabled={pending}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium" htmlFor="local-state">
+                      State
+                    </label>
+                    <select
+                      id="local-state"
+                      value={localState}
+                      onChange={(e) => {
+                        setLocalState(e.target.value);
+                        setSelectedCounties([]);
+                        setActivePreview(null);
+                      }}
+                      className="mt-1.5 flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+                      required
+                      disabled={pending}
+                    >
+                      <option value="">Select state…</option>
+                      {US_STATES.map((s) => (
+                        <option key={s.value} value={s.value}>
+                          {s.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <Button type="submit" className="w-full" disabled={pending}>
+                    {pending ? (
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    ) : (
+                      <PlusCircle className="h-4 w-4 mr-2" />
+                    )}
+                    Look up with Google
+                  </Button>
+                </form>
+                {lookupError ? (
+                  <p className="text-sm text-destructive" role="alert">
+                    {lookupError}
+                  </p>
+                ) : null}
+                {activePreview ? (
+                  <div className="space-y-3">
+                    <MultiSourcePreviewCard preview={activePreview} />
+                    <LocalCountyPicker
+                      stateCode={localState}
+                      selected={selectedCounties}
+                      onChange={setSelectedCounties}
+                      disabled={pending}
+                      preselectKeys={preselectCountyKeys}
+                    />
+                  </div>
+                ) : null}
+              </>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    {isLocal ? 'Local / in-state' : 'Interstate'} · review & submit
+                  </p>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="text-xs h-7"
+                    onClick={() => {
+                      setActivePreview(null);
+                      if (!isLocal) setCarrierQuery('');
+                      onEnrichedPreviewChange?.(null);
+                    }}
+                    disabled={pending}
+                  >
+                    Back
+                  </Button>
+                </div>
+
                 <p className="text-sm text-muted-foreground">
-                  {isTrustedSubmitter
-                    ? 'Admin mode — review the preview below, then publish directly to the directory. No daily limits apply while you are logged in.'
-                    : 'Review the multi-source preview below. FMCSA is primary; Google is supplemental; BBB/public scrape is lowest confidence. Add optional notes, then submit for admin review.'}
+                  {isLocal
+                    ? 'Local movers are labeled as in-state and listed only on selected county pages — not the main /companies directory.'
+                    : isTrustedSubmitter
+                      ? 'Admin mode — review the preview, then publish to the interstate directory.'
+                      : 'Review the multi-source preview. FMCSA is primary for interstate movers.'}
                 </p>
 
-                <MultiSourcePreviewCard preview={activePreview!} />
+                {activePreview ? <MultiSourcePreviewCard preview={activePreview} /> : null}
 
-                <OnboardingCoverageConsent
-                  defaultWebsiteUrl={activePreview?.google?.website_url ?? ''}
-                  coverage={websiteCoverage}
-                  onCoverageChange={setWebsiteCoverage}
-                  onConsentChange={setCoverageConsent}
-                  onWebsiteUrlChange={setWebsiteUrl}
-                  disabled={pending}
-                />
-
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  className="text-xs"
-                  onClick={() => {
-                    setActivePreview(null);
-                    setCarrierQuery('');
-                    onEnrichedPreviewChange?.(null);
-                  }}
-                  disabled={pending}
-                >
-                  Search a different carrier
-                </Button>
+                {isLocal ? (
+                  <LocalCountyPicker
+                    stateCode={localState}
+                    selected={selectedCounties}
+                    onChange={setSelectedCounties}
+                    disabled={pending}
+                    preselectKeys={preselectCountyKeys}
+                  />
+                ) : (
+                  <OnboardingCoverageConsent
+                    defaultWebsiteUrl={activePreview?.google?.website_url ?? ''}
+                    coverage={websiteCoverage}
+                    onCoverageChange={setWebsiteCoverage}
+                    onConsentChange={setCoverageConsent}
+                    onWebsiteUrlChange={setWebsiteUrl}
+                    disabled={pending}
+                  />
+                )}
 
                 <div>
                   <label htmlFor="suggest-details" className="text-sm font-medium">
@@ -278,8 +474,8 @@ export function SuggestCompanyModal({
                     id="suggest-details"
                     value={details}
                     onChange={(e) => setDetails(e.target.value)}
-                    placeholder="Why you’re adding this carrier, website, or service area…"
-                    className="mt-1.5 flex min-h-[88px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    placeholder="Service area notes, website, or why you’re adding this mover…"
+                    className="mt-1.5 flex min-h-[88px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                     maxLength={1000}
                     disabled={pending}
                   />
@@ -317,27 +513,11 @@ export function SuggestCompanyModal({
                   </div>
                 </div>
 
-                <input
-                  type="text"
-                  name="website"
-                  className="hidden"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                />
-
-                <Button type="submit" className="w-full gap-2" disabled={pending}>
+                <Button type="submit" className="w-full" disabled={pending || !readyToSubmit}>
                   {pending ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      {isTrustedSubmitter ? 'Publishing to directory…' : 'Submitting to review queue…'}
-                    </>
-                  ) : (
-                    <>
-                      <PlusCircle className="h-4 w-4" />
-                      {isTrustedSubmitter ? 'Publish to Directory' : 'Add to Directory'}
-                    </>
-                  )}
+                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  ) : null}
+                  {isTrustedSubmitter ? 'Publish now' : 'Submit for review'}
                 </Button>
               </form>
             )}

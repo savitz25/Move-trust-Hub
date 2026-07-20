@@ -1,0 +1,863 @@
+{
+  "stats": {
+    "total": 141,
+    "updated": 140,
+    "unchanged": 0,
+    "withAddress": 140,
+    "withPhone": 0,
+    "missingAddress": 0,
+    "missingPhone": 140,
+    "noUsdot": 0,
+    "fetchFailed": 1,
+    "errors": []
+  },
+  "results": [
+    {
+      "slug": "2-college-brothers-moving-and-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "a-c-white-transfer-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "aaa-affordable-pallets-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "absolute-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "adsi-moving-systems",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "all-my-sons-moving-storage-birmingham",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "all-my-sons-moving-storage-knoxville",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "all-my-sons-moving-storage-memphis",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "all-my-sons-moving-storage-nashville",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "all-my-sons-moving-storage-savannah",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "allied-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "american-moving-hauling",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "american-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "american-van-lines-of-sf-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "amerisafe-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "amex-moving-and-storage-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "armstrong-relocation-birmingham",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "armstrong-relocation-durham",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "armstrong-relocation-jackson",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "armstrong-relocation-nashville",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "arpin-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "arthur-j-kenyon",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "ashe-van-lines-moving-and-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "asheville-area-movers",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "athens-moving-experts",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "atlas-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "atmosphere-movers",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "barry-elwood-jones",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "beulah-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "blue-hauling-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "brandon-express-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "brooks-transfer-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "brothers-ez-moving-of-alabama",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "budget-movers-of-augusta",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "cass-county-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "cicero-s-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "cirta-moving-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "clare-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "coleman-worldwide-moving-augusta",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "college-hunks-hauling-junk-moving-chattanooga",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "college-hunks-hauling-junk-moving-nashville",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "colonial-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "cord-moving-storage-memphis",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "corrigan-moving-systems",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "crossin-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "dimon-bacorn-company-of-binghamton",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "dumbo-movers-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "elizabeth-s-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "faith-moving-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "fortson-moving-systems",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "fremont-movers-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "gasperson-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "gentle-giant-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "gentlemen-movers-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "georgia-home-movers-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "good-guys-moving-delivery-chattanooga",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "gouffon-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "graebel-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "hardy-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "hhg-movers",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "hills-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "hired-hands-moving-company",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "home-and-office-movers-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "horne-moving-systems",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "house-to-house-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "j-e-thomas-sons-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "jega-movers-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "jk-moving-services",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "jp-moving-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "jr-brown-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "juggernauts-moving-n-storage-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "lake-county-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "later-gator-moving-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "lee-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "little-guys-movers",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "mark-the-mover",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "mayflower-transit",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "mccarley-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "mccorquodale-transfer",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "meathead-movers",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "midnite-hustle-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "mighty-moving-knoxville",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "miracle-movers-raleigh",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "monro-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "morse-moving-storage-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "mother-lode-van-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "mountain-lake-mover",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "mountain-moving-storage-of-santa-fe-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "movers-201-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "naglee-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "national-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "new-latitude-movers",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "nilson-van-and-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "north-american-van-lines",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "northern-michigan-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "northern-michigan-moving-2",
+      "status": "fetch_failed",
+      "error": "HTTP 504"
+    },
+    {
+      "slug": "obx-movers",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "ocean-moving-storage-corp",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "on-track-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "osceola-county-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "our-family-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "ox-strong-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "page-relocation",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "phelps-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "rickey-s-gold-country-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "royal-hawaiian-movers-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "rushmore-van-lines-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "safebound-logistics-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "secure-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "smooth-move-charleston",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "spyder-moving-kalamazoo",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "spyder-moving-storage-memphis",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "stanford-van-lines-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "steven-v-wagner",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "stevens-worldwide",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "stewart-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "suddath-relocation-systems-charlotte",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "sunbelt-moving-delivery-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "suttons-bay-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "tawas-city-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "the-home-moving-solution",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "the-moving-truck-inc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "this-side-up-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "todd-s-easy-moves",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "trosa-moving",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "troy-humphrey-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "two-men-and-a-truck",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "two-men-and-a-truck-auburn",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "two-men-and-a-truck-chico",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "two-men-and-a-truck-fresno",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "two-men-and-a-truck-gainesville",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "two-men-and-a-truck-knoxville",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "two-men-and-a-truck-memphis",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "usa-family-moving-of-atlanta-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "vellar-holdings-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "we-move-u",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "wheaton-world-wide",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "wirks-moving-storage",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "you-move-me-charlotte",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "zambrano-produce-llc",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    },
+    {
+      "slug": "zeev-kahana",
+      "status": "updated",
+      "hasAddress": true,
+      "hasPhone": false
+    }
+  ],
+  "dryRun": false,
+  "hasContactCols": false
+}

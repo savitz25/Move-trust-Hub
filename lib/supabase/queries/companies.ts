@@ -127,6 +127,11 @@ function mapRow(row: Record<string, unknown>): Company {
     website: (row.website as string) || '',
     physicalAddress: fmcsaFields.physicalAddress,
     phone: fmcsaFields.phone,
+    serviceScope:
+      row.service_scope === 'intrastate' ? 'intrastate' : 'interstate',
+    coverageCounties: Array.isArray(row.coverage_counties)
+      ? (row.coverage_counties as Company['coverageCounties'])
+      : [],
     usdotNumber: (row.usdot_number as string) || '',
     mcNumber: (row.mc_number as string) || '',
     fmcsaSafetyRating:

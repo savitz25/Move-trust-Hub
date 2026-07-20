@@ -7,6 +7,7 @@ const SEARCH_FIELD_MASK = [
   'places.websiteUri',
   'places.rating',
   'places.userRatingCount',
+  'places.nationalPhoneNumber',
   'places.reviews',
 ].join(',');
 
@@ -17,6 +18,8 @@ const DETAILS_FIELD_MASK = [
   'websiteUri',
   'rating',
   'userRatingCount',
+  'nationalPhoneNumber',
+  'internationalPhoneNumber',
   'reviews',
 ].join(',');
 
@@ -27,6 +30,8 @@ type PlacePayload = {
   websiteUri?: string;
   rating?: number;
   userRatingCount?: number;
+  nationalPhoneNumber?: string;
+  internationalPhoneNumber?: string;
   reviews?: Array<{
     text?: { text?: string };
     rating?: number;
@@ -73,6 +78,11 @@ function mapPlaceToGoogleData(place: PlacePayload, now: string): GooglePlacesDat
       author: r.authorAttribution?.displayName,
     })) ?? [];
 
+  const phone =
+    place.nationalPhoneNumber?.trim() ||
+    place.internationalPhoneNumber?.trim() ||
+    null;
+
   return {
     source: 'google_places_api',
     place_id: place.id ?? null,
@@ -81,6 +91,7 @@ function mapPlaceToGoogleData(place: PlacePayload, now: string): GooglePlacesDat
     review_count: place.userRatingCount ?? null,
     formatted_address: place.formattedAddress ?? null,
     website_url: place.websiteUri?.trim() || null,
+    phone,
     review_snippets: snippets.filter((s) => s.text.length > 0),
     last_fetched: now,
     status: 'ok',
@@ -89,6 +100,8 @@ function mapPlaceToGoogleData(place: PlacePayload, now: string): GooglePlacesDat
       displayName: place.displayName?.text,
       rating: place.rating,
       userRatingCount: place.userRatingCount,
+      nationalPhoneNumber: place.nationalPhoneNumber,
+      internationalPhoneNumber: place.internationalPhoneNumber,
     },
   };
 }
@@ -106,6 +119,7 @@ function emptyGoogleData(
     review_count: null,
     formatted_address: null,
     website_url: null,
+    phone: null,
     review_snippets: [],
     last_fetched: now,
     status,

@@ -16,6 +16,10 @@ import type { Company } from '@/types';
  * enrichment (ratings, authority flags) stays current. Does NOT re-merge the
  * full local-mover catalog (that previously inflated the list to 397).
  */
+function isInterstateDirectoryCompany(company: Company): boolean {
+  return company.serviceScope !== 'intrastate';
+}
+
 async function buildUnifiedDirectory(): Promise<Company[]> {
   const directoryCompanies = await getCompaniesCached();
 
@@ -28,15 +32,19 @@ async function buildUnifiedDirectory(): Promise<Company[]> {
       outOfService: false,
       usdotStatus: 'ACTIVE' as const,
       isVerified: true,
+      serviceScope: 'interstate' as const,
     };
   });
 
-  return mergeDirectoryCompanies(directoryCompanies, activeCatalogCompanies);
+  // Local/intrastate movers are county-page only — never the main /companies list.
+  return mergeDirectoryCompanies(directoryCompanies, activeCatalogCompanies).filter(
+    isInterstateDirectoryCompany
+  );
 }
 
 /** Cached interstate directory listing for /companies and slug resolution. */
 export const getUnifiedDirectoryCompanies = unstable_cache(
   buildUnifiedDirectory,
-  ['unified-movers-directory-v3-active-catalog'],
+  ['unified-movers-directory-v4-scope'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );

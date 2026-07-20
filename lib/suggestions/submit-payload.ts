@@ -34,6 +34,8 @@ export type CompanySuggestionInsertRow = {
   fmcsa_raw: Json | null;
   google_data?: Json | null;
   public_scrape_data?: Json | null;
+  service_scope?: string;
+  selected_counties?: Json;
 };
 
 export function buildCompanySuggestionInsertRow(input: {
@@ -42,7 +44,7 @@ export function buildCompanySuggestionInsertRow(input: {
   fmcsa: SuggestionFmcsaData | null;
   carrierParsed: ReturnType<
     typeof import('@/lib/verify-dot/schema').parseCarrierNumber
-  >;
+  > | null;
   enrichment: CompanyEnrichmentResult;
   userIp: string | null;
   emailHash: string;
@@ -54,6 +56,7 @@ export function buildCompanySuggestionInsertRow(input: {
     input;
   const includeEnrichment = input.includeEnrichment !== false;
 
+  const scope = parsed.serviceScope === 'intrastate' ? 'intrastate' : 'interstate';
   const row: CompanySuggestionInsertRow = {
     name: companyName.slice(0, 200),
     usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
@@ -67,9 +70,12 @@ export function buildCompanySuggestionInsertRow(input: {
     email_hash: emailHash,
     source_page: parsed.sourcePage || '/companies',
     legal_name: (fmcsa?.legalName ?? companyName).slice(0, 200),
-    headquarters: fmcsa?.headquarters ?? null,
-    phone: fmcsa?.phone ?? null,
-    authority_status: fmcsa?.authorityStatus ?? null,
+    headquarters: fmcsa?.headquarters ?? parsed.headquarters ?? null,
+    phone: fmcsa?.phone ?? parsed.phone ?? null,
+    authority_status:
+      scope === 'intrastate' ? 'Local / in-state (no USDOT)' : fmcsa?.authorityStatus ?? null,
+    service_scope: scope,
+    selected_counties: (parsed.selectedCounties ?? []) as unknown as Json,
     fmcsa_preview: packFmcsaPreviewWithEnrichment(
       fmcsa ? toFmcsaSuggestionPreview(fmcsa) : null,
       enrichment

@@ -31,6 +31,8 @@ export type Database = {
           website: string | null;
           physical_address: string | null;
           phone: string | null;
+          service_scope: string;
+          coverage_counties: Json;
           usdot_number: string | null;
           mc_number: string | null;
           fmcsa_safety_rating: string | null;
@@ -389,6 +391,8 @@ export type Database = {
           moderation_note: string | null;
           moderated_at: string | null;
           moderated_by: string | null;
+          service_scope: string;
+          selected_counties: Json;
           created_at: string;
           updated_at: string;
         };
@@ -412,6 +416,8 @@ export type Database = {
           fmcsa_raw?: Json | null;
           google_data?: Json | null;
           public_scrape_data?: Json | null;
+          service_scope?: string;
+          selected_counties?: Json;
         };
         Update: Partial<Database['public']['Tables']['company_suggestions']['Row']>;
         Relationships: [];

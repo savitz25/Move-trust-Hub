@@ -35,6 +35,13 @@ export interface Company {
   physicalAddress?: string | null;
   /** Business phone from FMCSA (or onboarding) */
   phone?: string | null;
+  /**
+   * interstate = USDOT movers for main /companies directory.
+   * intrastate = local/in-state only (county pages).
+   */
+  serviceScope?: 'interstate' | 'intrastate' | null;
+  /** Local coverage counties (intrastate). */
+  coverageCounties?: Array<{ stateSlug: string; countySlug: string; name?: string }> | null;
 
   // Licensing & Compliance (FMCSA)
   usdotNumber: string;

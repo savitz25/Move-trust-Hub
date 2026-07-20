@@ -18,6 +18,8 @@ export type GooglePlacesData = {
   review_count: number | null;
   formatted_address: string | null;
   website_url: string | null;
+  /** National or international phone when Places returns it */
+  phone?: string | null;
   review_snippets: Array<{
     text: string;
     rating: number;

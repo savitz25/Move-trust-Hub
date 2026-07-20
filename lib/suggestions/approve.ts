@@ -19,6 +19,10 @@ import { ensurePublishableCompanySlug } from '@/lib/utils/company-slug';
 import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { resolveUniqueCompanySlug } from '@/lib/suggestions/slug';
 import { resolveApprovalEnrichment } from '@/lib/suggestions/suggestion-enrichment-storage';
+import {
+  normalizeSelectedCounties,
+  parseServiceScope,
+} from '@/lib/suggestions/service-scope';
 import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 import type { Json } from '@/types/supabase';
 
@@ -36,13 +40,20 @@ export type CompanySuggestionRow = {
   fmcsa_raw: Json | null;
   google_data?: Json | null;
   public_scrape_data?: Json | null;
+  service_scope?: string | null;
+  selected_counties?: Json | null;
 };
 
 export async function approveSuggestionToCompany(
   suggestion: CompanySuggestionRow
 ): Promise<{ companyId: string; slug: string } | null> {
   const admin = createAdminClient();
-  const usdot = suggestion.usdot?.replace(/\D/g, '') || null;
+  const serviceScope = parseServiceScope(suggestion.service_scope);
+  const selectedCounties = normalizeSelectedCounties(suggestion.selected_counties);
+  const usdot =
+    serviceScope === 'intrastate'
+      ? null
+      : suggestion.usdot?.replace(/\D/g, '') || null;
   const displayName = suggestion.legal_name || suggestion.name;
   const resolvedSlug = await resolveUniqueCompanySlug({ name: displayName, usdot });
   const slug = ensurePublishableCompanySlug({
@@ -53,7 +64,7 @@ export async function approveSuggestionToCompany(
   const companyId = slug;
 
   let liveSnapshot: Awaited<ReturnType<typeof fetchFmcsaCarrierSnapshot>> = null;
-  if (usdot && !suggestion.fmcsa_raw) {
+  if (serviceScope === 'interstate' && usdot && !suggestion.fmcsa_raw) {
     try {
       liveSnapshot = await fetchFmcsaCarrierSnapshot(usdot, suggestion.mc_number);
     } catch (err) {
@@ -64,7 +75,10 @@ export async function approveSuggestionToCompany(
     }
   }
 
-  const snapshot = resolvePublishFmcsaSnapshot(suggestion, liveSnapshot);
+  const snapshot =
+    serviceScope === 'intrastate'
+      ? null
+      : resolvePublishFmcsaSnapshot(suggestion, liveSnapshot);
 
   const resolvedEnrichment = await resolveApprovalEnrichment(suggestion);
   const googleData = resolvedEnrichment.google;
@@ -199,7 +213,12 @@ export async function approveSuggestionToCompany(
       twoStar: 0,
       oneStar: 0,
     },
-    is_verified: isPublishVerified(snapshot),
+    is_verified:
+      serviceScope === 'intrastate'
+        ? Boolean(googleData?.status === 'ok')
+        : isPublishVerified(snapshot),
+    service_scope: serviceScope,
+    coverage_counties: selectedCounties as unknown as Json,
     last_updated: new Date().toISOString(),
   };
 

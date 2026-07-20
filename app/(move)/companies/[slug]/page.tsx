@@ -213,6 +213,20 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
             </CardContent>
           </Card>
 
+          {company.serviceScope === 'intrastate' ? (
+            <Card className="border-emerald-200 bg-emerald-50/40">
+              <CardHeader>
+                <CardTitle>Local / in-state mover</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground leading-relaxed">
+                This company is listed as an <strong className="text-foreground">intrastate (local)</strong>{' '}
+                mover — it operates within a state and does not require FMCSA interstate authority on
+                this profile. It appears on selected county pages only, not the main interstate
+                directory.
+              </CardContent>
+            </Card>
+          ) : null}
+
           {/* Licensing & Compliance */}
           <Card>
             <CardHeader>

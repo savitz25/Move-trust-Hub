@@ -244,6 +244,79 @@ export async function previewEnrichedCompanySuggestion(input: {
   };
 }
 
+export async function listCountiesForLocalCoverage(stateCode: string): Promise<{
+  success: boolean;
+  counties?: Array<{
+    stateSlug: string;
+    countySlug: string;
+    name: string;
+    stateCode: string;
+    stateName: string;
+  }>;
+  error?: string;
+}> {
+  try {
+    const { listCountiesForStateCode } = await import('@/lib/local-movers/list-state-counties');
+    const counties = listCountiesForStateCode(stateCode);
+    if (!counties.length) {
+      return { success: false, error: 'No counties found for that state.' };
+    }
+    return { success: true, counties };
+  } catch (err) {
+    return {
+      success: false,
+      error: err instanceof Error ? err.message : 'Could not load counties.',
+    };
+  }
+}
+
+/** Google-primary preview for local/intrastate movers (no FMCSA). */
+export async function previewLocalCompanySuggestion(input: {
+  companyName: string;
+  stateCode: string;
+}): Promise<PreviewEnrichedSuggestionResult> {
+  const name = input.companyName?.trim();
+  const state = input.stateCode?.trim().toUpperCase();
+  if (!name || name.length < 2) {
+    return { success: false, error: 'Enter the mover’s business name.' };
+  }
+  if (!state || state.length !== 2) {
+    return { success: false, error: 'Select a state.' };
+  }
+
+  try {
+    const enrichment = await enrichCompanySources({
+      legalName: name,
+      state,
+      headquarters: `${name}, ${state}`,
+      businessCategory: 'local moving company',
+    });
+
+    if (enrichment.google?.status !== 'ok' && !enrichment.publicScrape) {
+      return {
+        success: false,
+        error:
+          'Could not find this business on Google. Check the name and state, then try again.',
+      };
+    }
+
+    return {
+      success: true,
+      preview: {
+        fmcsa: null,
+        google: enrichment.google,
+        publicScrape: enrichment.publicScrape,
+        fetchedAt: enrichment.fetchedAt,
+      },
+    };
+  } catch (err) {
+    return {
+      success: false,
+      error: err instanceof Error ? err.message : 'Local mover lookup failed.',
+    };
+  }
+}
+
 export async function submitCompanySuggestion(
   raw: unknown
 ): Promise<SubmitSuggestionResult> {
@@ -267,12 +340,15 @@ export async function submitCompanySuggestion(
       };
     }
 
-    const carrierParsed = parseCarrierNumber(parsed.data.carrierQuery!);
-    if (!carrierParsed) {
+    const isLocal = parsed.data.serviceScope === 'intrastate';
+    const carrierParsed = isLocal
+      ? null
+      : parseCarrierNumber(parsed.data.carrierQuery!);
+    if (!isLocal && !carrierParsed) {
       return {
         success: false,
         error:
-          'FMCSA verification is required before submitting. Search by USDOT/MC or Name + State.',
+          'FMCSA verification is required for interstate movers. Search by USDOT/MC or Name + State.',
       };
     }
 
@@ -290,32 +366,47 @@ export async function submitCompanySuggestion(
       return { success: false, error: rateCheck.reason };
     }
 
-    const fmcsa = await lookupFmcsaForSuggestion(parsed.data.carrierQuery!);
-    const companyName = fmcsa?.legalName?.trim();
+    let fmcsa: Awaited<ReturnType<typeof lookupFmcsaForSuggestion>> = null;
+    let companyName = parsed.data.name?.trim() || '';
 
-    if (!companyName) {
-      return {
-        success: false,
-        error: 'Could not verify this carrier with FMCSA. Confirm the USDOT/MC number and try again.',
-      };
+    if (!isLocal) {
+      fmcsa = await lookupFmcsaForSuggestion(parsed.data.carrierQuery!);
+      companyName = fmcsa?.legalName?.trim() || companyName;
+      if (!companyName) {
+        return {
+          success: false,
+          error:
+            'Could not verify this carrier with FMCSA. Confirm the USDOT/MC number and try again.',
+        };
+      }
+    } else if (!companyName) {
+      return { success: false, error: 'Enter the local mover’s business name.' };
     }
 
     const enrichment = await resolveSubmissionEnrichment({
       legalName: companyName,
-      headquarters: fmcsa?.headquarters,
-      phone: fmcsa?.phone,
+      headquarters:
+        fmcsa?.headquarters ||
+        parsed.data.headquarters ||
+        (parsed.data.stateCode
+          ? `${companyName}, ${parsed.data.stateCode}`
+          : null),
+      phone: fmcsa?.phone || parsed.data.phone || null,
       snapshot: parsed.data.enrichmentSnapshot,
     });
 
     const websiteFallback =
       parsed.data.websiteUrl ||
       parsed.data.enrichmentSnapshot?.google?.website_url ||
+      enrichment.google?.website_url ||
       null;
     const coverage = await resolveSubmissionCoverage(parsed.data, websiteFallback);
 
     const duplicateCheck = await checkSuggestionDuplicate({
       name: companyName,
-      usdot: fmcsa?.usdot ?? (carrierParsed.type === 'DOT' ? carrierParsed.value : null),
+      usdot: isLocal
+        ? null
+        : fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
     });
 
     if (duplicateCheck.duplicate) {

@@ -86,6 +86,11 @@ export default function VerifyDotPage() {
             and link you to the official SAFER Company Snapshot, even if the
             company isn&apos;t in our directory yet.
           </p>
+          <p className="mt-3 text-sm text-muted-foreground max-w-2xl">
+            This tool is for <strong className="text-foreground">interstate</strong> carriers
+            (USDOT required). To add a local / in-state mover that does not cross state lines,
+            use <strong className="text-foreground">Add Company</strong> and choose Intrastate.
+          </p>
           <div className="mt-6">
             <PageHeroCta />
           </div>

@@ -89,7 +89,10 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="font-semibold text-lg">{suggestion.legal_name || suggestion.name}</span>
                   <Badge variant="outline">Pending</Badge>
-                  {hasFmcsa ? (
+                  {(suggestion as { service_scope?: string }).service_scope ===
+                  'intrastate' ? (
+                    <Badge variant="secondary">Local / intrastate</Badge>
+                  ) : hasFmcsa ? (
                     <Badge variant="default">FMCSA primary</Badge>
                   ) : (
                     <Badge variant="destructive">Missing FMCSA</Badge>
@@ -156,7 +159,12 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
               <Button
                 size="sm"
                 className="gap-1"
-                disabled={pending || !hasFmcsa}
+                disabled={
+                  pending ||
+                  ((suggestion as { service_scope?: string }).service_scope !==
+                    'intrastate' &&
+                    !hasFmcsa)
+                }
                 onClick={() => handleAction(suggestion.id, 'approve')}
               >
                 {pending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Check className="h-3.5 w-3.5" />}

@@ -22,11 +22,13 @@ export type PendingSuggestion = {
   fmcsa_raw: Record<string, unknown> | null;
   google_data: Record<string, unknown> | null;
   public_scrape_data: Record<string, unknown> | null;
+  service_scope?: string | null;
+  selected_counties?: unknown;
   created_at: string;
 };
 
 const PENDING_SUGGESTION_COLUMNS_FULL =
-  'id, name, usdot, mc_number, details, suggested_by_name, suggested_by_email, legal_name, headquarters, phone, authority_status, source_page, fmcsa_preview, fmcsa_raw, google_data, public_scrape_data, created_at';
+  'id, name, usdot, mc_number, details, suggested_by_name, suggested_by_email, legal_name, headquarters, phone, authority_status, source_page, fmcsa_preview, fmcsa_raw, google_data, public_scrape_data, service_scope, selected_counties, created_at';
 
 const PENDING_SUGGESTION_COLUMNS_CORE =
   'id, name, usdot, mc_number, details, suggested_by_name, suggested_by_email, legal_name, headquarters, phone, authority_status, source_page, fmcsa_preview, fmcsa_raw, created_at';

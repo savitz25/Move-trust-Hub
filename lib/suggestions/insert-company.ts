@@ -62,16 +62,19 @@ function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
     'revocation_date',
   ];
   const contactCols = ['physical_address', 'phone'];
+  const scopeCols = ['service_scope', 'coverage_counties'];
 
   const withoutEnrichment = stripKeys(baseRow, enrichmentCols);
   const withoutFmcsaExtended = stripKeys(withoutEnrichment, fmcsaExtendedCols);
   const withoutContact = stripKeys(withoutFmcsaExtended, contactCols);
+  const withoutScope = stripKeys(withoutContact, scopeCols);
 
   return [
     { label: 'full', row: baseRow },
     { label: 'without_enrichment', row: withoutEnrichment },
     { label: 'without_fmcsa_extended', row: withoutFmcsaExtended },
     { label: 'without_contact_cols', row: withoutContact },
+    { label: 'without_scope_cols', row: withoutScope },
   ];
 }
 

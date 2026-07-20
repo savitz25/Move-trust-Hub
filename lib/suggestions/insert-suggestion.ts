@@ -56,7 +56,13 @@ export async function insertCompanySuggestion(
     isMissingEnrichmentColumnError(firstError.message) ||
     firstError.code === 'PGRST204'
   ) {
-    const { google_data: _g, public_scrape_data: _p, ...coreRow } = row;
+    const {
+      google_data: _g,
+      public_scrape_data: _p,
+      service_scope: _s,
+      selected_counties: _c,
+      ...coreRow
+    } = row;
     const retry = await insertRow(admin, coreRow);
 
     if (retry.data?.id) {

@@ -3,9 +3,16 @@ import { coverageSnapshotSchema } from '@/lib/suggestions/coverage-snapshot-sche
 import { enrichmentSnapshotSchema } from '@/lib/suggestions/enrichment-snapshot-schema';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
+const selectedCountySchema = z.object({
+  stateSlug: z.string().trim().min(2).max(80),
+  countySlug: z.string().trim().min(1).max(80),
+  name: z.string().trim().max(120).optional(),
+});
+
 export const suggestCompanySchema = z
   .object({
-    /** USDOT or MC — when valid, server uses FMCSA as source of truth */
+    serviceScope: z.enum(['interstate', 'intrastate']).default('interstate'),
+    /** USDOT or MC — required for interstate */
     carrierQuery: z
       .string()
       .trim()
@@ -13,11 +20,19 @@ export const suggestCompanySchema = z
       .optional()
       .nullable()
       .or(z.literal('').transform(() => null)),
-    /** Ignored when carrierQuery resolves to a valid FMCSA record */
+    /** Company display name (required for intrastate; optional when FMCSA provides legal name) */
     name: z
       .string()
       .trim()
       .max(120)
+      .optional()
+      .nullable()
+      .or(z.literal('').transform(() => null)),
+    /** State code (e.g. TX) — required for intrastate name search path */
+    stateCode: z
+      .string()
+      .trim()
+      .max(2)
       .optional()
       .nullable()
       .or(z.literal('').transform(() => null)),
@@ -33,7 +48,6 @@ export const suggestCompanySchema = z
     sourcePage: z.string().max(120).optional().nullable(),
     /** Honeypot — must be empty */
     website: z.string().max(0).optional().nullable(),
-    /** Optional preview snapshot from modal — avoids duplicate scrape on submit */
     enrichmentSnapshot: enrichmentSnapshotSchema,
     coverageConsent: z.boolean().optional().default(false),
     websiteUrl: z
@@ -44,8 +58,49 @@ export const suggestCompanySchema = z
       .nullable()
       .or(z.literal('').transform(() => null)),
     coverageSnapshot: coverageSnapshotSchema,
+    /** Local/intrastate: user-confirmed counties */
+    selectedCounties: z.array(selectedCountySchema).optional().default([]),
+    headquarters: z
+      .string()
+      .trim()
+      .max(300)
+      .optional()
+      .nullable()
+      .or(z.literal('').transform(() => null)),
+    phone: z
+      .string()
+      .trim()
+      .max(40)
+      .optional()
+      .nullable()
+      .or(z.literal('').transform(() => null)),
   })
   .superRefine((data, ctx) => {
+    if (data.serviceScope === 'intrastate') {
+      if (!data.name || data.name.length < 2) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'Enter the local mover’s business name.',
+          path: ['name'],
+        });
+      }
+      if (!data.stateCode || data.stateCode.length !== 2) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'Select the state where this mover operates.',
+          path: ['stateCode'],
+        });
+      }
+      if (!data.selectedCounties?.length) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'Select at least one county this mover serves.',
+          path: ['selectedCounties'],
+        });
+      }
+      return;
+    }
+
     const carrier = data.carrierQuery ? parseCarrierNumber(data.carrierQuery) : null;
     if (!carrier) {
       ctx.addIssue({
