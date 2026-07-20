@@ -180,13 +180,53 @@ export type ResolvedPublicCompanyNames = {
   shouldUpdateStoredName: boolean;
 };
 
+const DISPLAY_STOP_TOKENS = new Set([
+  'llc',
+  'inc',
+  'corp',
+  'ltd',
+  'lp',
+  'pllc',
+  'co',
+  'the',
+  'and',
+  'of',
+  'a',
+  'an',
+  'company',
+  'companies',
+]);
+
+function displayNameTokens(value: string): string[] {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]+/g, ' ')
+    .split(/\s+/)
+    .filter((t) => t && !DISPLAY_STOP_TOKENS.has(t) && t.length > 1);
+}
+
+function tokenOverlapRatio(a: string, b: string): number {
+  const ta = new Set(displayNameTokens(a));
+  const tb = new Set(displayNameTokens(b));
+  if (!ta.size || !tb.size) return 0;
+  let hit = 0;
+  for (const t of ta) if (tb.has(t)) hit++;
+  return hit / Math.min(ta.size, tb.size);
+}
+
 /**
  * Whether to replace a stored directory name with the FMCSA-derived public name.
- * Preserves curated labels (e.g. "Allied Van Lines") that are neither legal nor DBA.
+ *
+ * Prefer a distinct DBA when the current name is still the legal entity, or when
+ * the DBA is clearly the same brand family (token overlap). Never swap unrelated
+ * parent-agent brands (e.g. Allied → Mayflower).
  */
 export function shouldApplyFmcsaPublicName(
   storedName: string | null | undefined,
-  resolved: Pick<ResolvedPublicCompanyNames, 'publicName' | 'legalName' | 'prefersDba'>
+  resolved: Pick<
+    ResolvedPublicCompanyNames,
+    'publicName' | 'legalName' | 'dbaName' | 'prefersDba'
+  >
 ): boolean {
   const stored = stringOrNull(storedName);
   if (!resolved.publicName) return false;
@@ -196,30 +236,63 @@ export function shouldApplyFmcsaPublicName(
   const publicKey = normalizeCompanyNameKey(resolved.publicName);
   if (storedKey === publicKey) {
     // Same underlying name: only reformat ALL CAPS → title case.
-    // Keep spaced curated forms over jammed FMCSA DBAs (e.g. "Amerisafe Van Lines").
     if (/\s/.test(stored) && !/\s/.test(resolved.publicName)) return false;
     if (/[a-z]/.test(stored)) return false;
     return stored.trim() !== resolved.publicName.trim();
   }
 
-  // Replace legal-entity labels with DBA when FMCSA provides a distinct trade name.
-  if (
-    resolved.prefersDba &&
-    resolved.legalName &&
-    storedKey === normalizeCompanyNameKey(resolved.legalName)
-  ) {
-    return true;
+  if (stripEntitySuffixKey(stored) === stripEntitySuffixKey(resolved.publicName)) {
+    return false;
   }
 
-  return false;
+  if (
+    resolved.prefersDba &&
+    !/\s/.test(resolved.publicName) &&
+    /\s/.test(stored) &&
+    publicKey.length >= 10 &&
+    (publicKey === storedKey ||
+      storedKey.includes(publicKey) ||
+      publicKey.includes(storedKey))
+  ) {
+    return false;
+  }
+
+  if (!resolved.prefersDba) {
+    if (
+      resolved.legalName &&
+      storedKey === normalizeCompanyNameKey(resolved.legalName) &&
+      !/[a-z]/.test(stored)
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  const currentIsLegal =
+    Boolean(resolved.legalName) &&
+    (storedKey === normalizeCompanyNameKey(resolved.legalName!) ||
+      stripEntitySuffixKey(stored) === stripEntitySuffixKey(resolved.legalName!));
+
+  if (currentIsLegal) return true;
+
+  // Curated brand: only refine when DBA shares brand tokens (same family).
+  const overlap = tokenOverlapRatio(stored, resolved.publicName);
+  if (overlap < 0.5) return false;
+
+  const curTokens = displayNameTokens(stored);
+  const dbaTokens = displayNameTokens(resolved.publicName);
+  if (dbaTokens.length >= curTokens.length + 3 && resolved.publicName.length > stored.length * 1.4) {
+    return false;
+  }
+
+  return true;
 }
 
 /**
  * Resolve public + legal names from stored company/suggestion FMCSA fields.
  *
- * Rule: when DBA differs from legal, prefer DBA as the public name for onboarding
- * and for records still titled with the legal entity. Do not overwrite curated
- * directory names that already differ from the legal name.
+ * Rule: when DBA differs from legal (and from the current public name), prefer
+ * DBA as the public-facing name. Legal name remains available for licensing.
  */
 export function resolvePublicCompanyNameFromSources(input: {
   storedName?: string | null;
