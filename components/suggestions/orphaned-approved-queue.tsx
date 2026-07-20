@@ -49,7 +49,7 @@ export function OrphanedApprovedQueue({ initialOrphans }: Props) {
   }
 
   function handleDelete(suggestion: OrphanedApprovedSuggestion) {
-    const label = suggestion.legal_name || suggestion.name;
+    const label = suggestion.name || suggestion.legal_name;
     if (
       !confirm(
         `Permanently delete suggestion “${label}” from the system?\n\nThis cannot be undone. It will not recreate a company profile.`
@@ -86,7 +86,7 @@ export function OrphanedApprovedQueue({ initialOrphans }: Props) {
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="font-semibold">
-                    {suggestion.legal_name || suggestion.name}
+                    {suggestion.name || suggestion.legal_name}
                   </span>
                   <Badge variant="warning">Missing profile</Badge>
                   {suggestion.usdot ? (

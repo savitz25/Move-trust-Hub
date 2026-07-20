@@ -12,6 +12,7 @@ import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
 import { INACTIVE_DOT_NO_MATCH_REASON } from '@/lib/fmcsa/refresh/inactive-dot';
 import type { CompanyRefreshRow } from '@/lib/fmcsa/refresh/types';
 import { supportsEntityTypeColumn } from '@/lib/fmcsa/refresh/entity-type-column';
+import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
@@ -72,6 +73,17 @@ function buildFmcsaUpdatePayload(
     last_updated: new Date().toISOString().slice(0, 10),
     updated_at: new Date().toISOString(),
   };
+
+  // Prefer DBA only when the stored name is still the legal entity (not curated).
+  const publicNames = resolvePublicCompanyNameFromSources({
+    storedName: company.name,
+    legalName: snapshot.legalName,
+    dbaName: snapshot.dbaName,
+    fmcsaRaw: snapshot.raw,
+  });
+  if (publicNames.shouldUpdateStoredName && publicNames.publicName) {
+    payload.name = publicNames.publicName;
+  }
 
   // Prefer FMCSA street address / phone when present (do not clear existing if missing)
   if (contact.physical_address) {

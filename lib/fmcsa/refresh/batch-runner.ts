@@ -16,6 +16,7 @@ import type {
   InactiveDotRemovalRecord,
 } from '@/lib/fmcsa/refresh/types';
 import { supportsEntityTypeColumn } from '@/lib/fmcsa/refresh/entity-type-column';
+import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import type { ServiceType } from '@/types';
@@ -101,6 +102,16 @@ function buildFmcsaUpdatePayload(
     last_updated: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   };
+
+  const publicNames = resolvePublicCompanyNameFromSources({
+    storedName: company.name,
+    legalName: snapshot.legalName,
+    dbaName: snapshot.dbaName,
+    fmcsaRaw: snapshot.raw,
+  });
+  if (publicNames.shouldUpdateStoredName && publicNames.publicName) {
+    payload.name = publicNames.publicName;
+  }
 
   if (contact.physicalAddress) {
     payload.physical_address = contact.physicalAddress;

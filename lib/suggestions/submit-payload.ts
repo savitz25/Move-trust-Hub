@@ -13,6 +13,7 @@ import { mergeCoverageIntoFmcsaPreview } from '@/lib/suggestions/suggestion-cove
 import { packFmcsaPreviewWithEnrichment } from '@/lib/suggestions/suggestion-enrichment-storage';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
 import { toFmcsaSuggestionPreview } from '@/lib/suggestions/fmcsa-lookup';
+import { preferPublicCompanyName } from '@/lib/companies/public-display-name';
 
 export type CompanySuggestionInsertRow = {
   name: string;
@@ -57,8 +58,14 @@ export function buildCompanySuggestionInsertRow(input: {
   const includeEnrichment = input.includeEnrichment !== false;
 
   const scope = parsed.serviceScope === 'intrastate' ? 'intrastate' : 'interstate';
+  const publicName =
+    preferPublicCompanyName({
+      legalName: fmcsa?.legalName,
+      dbaName: fmcsa?.dbaName,
+      fallback: companyName,
+    }) || companyName;
   const row: CompanySuggestionInsertRow = {
-    name: companyName.slice(0, 200),
+    name: publicName.slice(0, 200),
     usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
     mc_number: fmcsa?.mcNumber ?? (carrierParsed?.type === 'MC' ? carrierParsed.value : null),
     details: parsed.details ?? null,

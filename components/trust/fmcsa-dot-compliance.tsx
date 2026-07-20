@@ -10,11 +10,18 @@ import {
   normalizeMc,
   normalizeUsdot,
 } from '@/lib/trust/license-verification';
+import {
+  extractLegalFromFmcsaRaw,
+  formatFmcsaDisplayName,
+  normalizeCompanyNameKey,
+} from '@/lib/companies/public-display-name';
 import type { Company } from '@/types';
 
 type Props = {
   company: Pick<
     Company,
+    | 'name'
+    | 'fmcsaLegalName'
     | 'usdotNumber'
     | 'mcNumber'
     | 'entityType'
@@ -111,6 +118,17 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
     company.physicalAddress?.trim() || company.headquarters?.trim() || null;
   const phoneRaw = company.phone?.trim() || null;
 
+  const legalFromRaw = extractLegalFromFmcsaRaw(fmcsaRaw);
+  const legalNameRaw =
+    company.fmcsaLegalName?.trim() || legalFromRaw || null;
+  const legalName = legalNameRaw ? formatFmcsaDisplayName(legalNameRaw) : null;
+  const publicName = company.name?.trim() || '';
+  // Show legal name when it differs from the DBA-preferred public display name.
+  const showLegalName =
+    legalName &&
+    publicName &&
+    normalizeCompanyNameKey(legalName) !== normalizeCompanyNameKey(publicName);
+
   const rows: Array<{
     label: string;
     value: string | null;
@@ -120,6 +138,9 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
     wide?: boolean;
   }> = [
     { label: 'Entity Type', value: entityTypeDisplay, muted: entityTypeDisplay === ENTITY_TYPE_NOT_AVAILABLE },
+    ...(showLegalName
+      ? [{ label: 'Legal Name', value: legalName, wide: true as const }]
+      : []),
     { label: 'US DOT Number', value: usdotLabel, mono: true },
     { label: 'MC Number', value: mcLabel, mono: true },
     { label: 'US DOT Status', value: formatUsdotStatus(company.usdotStatus) },

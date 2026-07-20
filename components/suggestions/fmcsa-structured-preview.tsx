@@ -1,6 +1,10 @@
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { FmcsaFieldGrid } from '@/components/suggestions/fmcsa-field-grid';
+import {
+  formatFmcsaDisplayName,
+  preferPublicCompanyName,
+} from '@/lib/companies/public-display-name';
 import type { FmcsaPreview } from '@/lib/verify-dot/fmcsa';
 
 type Props = {
@@ -10,6 +14,18 @@ type Props = {
 };
 
 export function FmcsaStructuredPreview({ preview, displayNumber, inDirectory = false }: Props) {
+  const publicName = preferPublicCompanyName({
+    legalName: preview.legalName,
+    dbaName: preview.dbaName,
+  });
+  const legalDisplay = preview.legalName
+    ? formatFmcsaDisplayName(preview.legalName)
+    : null;
+  const showLegalSecondary =
+    Boolean(preview.dbaName) &&
+    Boolean(legalDisplay) &&
+    publicName.toLowerCase() !== (legalDisplay ?? '').toLowerCase();
+
   return (
     <Card className="border-primary/20 bg-primary/5 p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -21,9 +37,13 @@ export function FmcsaStructuredPreview({ preview, displayNumber, inDirectory = f
                 ? 'FMCSA Verified Data'
                 : 'Carrier Preview'}
           </Badge>
-          <h2 className="text-xl font-semibold tracking-tight">{preview.legalName}</h2>
-          {preview.dbaName ? (
-            <p className="text-sm text-muted-foreground mt-1">DBA: {preview.dbaName}</p>
+          <h2 className="text-xl font-semibold tracking-tight">
+            {publicName || preview.legalName}
+          </h2>
+          {showLegalSecondary ? (
+            <p className="text-sm text-muted-foreground mt-1">
+              Legal name: {legalDisplay}
+            </p>
           ) : null}
         </div>
         {preview.usdotStatus ? (

@@ -13,6 +13,7 @@ import {
   lookupFmcsaForSuggestion,
   toFmcsaSuggestionPreview,
 } from '@/lib/suggestions/fmcsa-lookup';
+import { preferPublicCompanyName } from '@/lib/companies/public-display-name';
 import type { EnrichedCompanyPreview, FmcsaSuggestionPreview } from '@/lib/suggestions/types';
 import { resolveSubmissionEnrichment } from '@/lib/suggestions/enrichment-snapshot';
 import { enrichCompanySources } from '@/lib/verification/enrich-company';
@@ -371,7 +372,12 @@ export async function submitCompanySuggestion(
 
     if (!isLocal) {
       fmcsa = await lookupFmcsaForSuggestion(parsed.data.carrierQuery!);
-      companyName = fmcsa?.legalName?.trim() || companyName;
+      companyName =
+        preferPublicCompanyName({
+          legalName: fmcsa?.legalName,
+          dbaName: fmcsa?.dbaName,
+          fallback: companyName,
+        }) || companyName;
       if (!companyName) {
         return {
           success: false,
@@ -384,6 +390,7 @@ export async function submitCompanySuggestion(
     }
 
     const enrichment = await resolveSubmissionEnrichment({
+      // Prefer trade name for Places/BBB match quality; legal stays on legal_name column.
       legalName: companyName,
       headquarters:
         fmcsa?.headquarters ||

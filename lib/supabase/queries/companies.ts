@@ -20,6 +20,7 @@ import {
   resolvePublicScrapeFromRow,
 } from '@/lib/verification/resolve-company-row';
 import { extractFmcsaFieldsFromRow } from '@/lib/fmcsa/company-from-row';
+import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
 import type { Company } from '@/types';
 import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload';
 
@@ -67,6 +68,7 @@ const COMPANY_LIST_CORE_COLUMNS = [
   'website',
   'usdot_number',
   'mc_number',
+  'fmcsa_legal_name',
   'fmcsa_safety_rating',
   'fmcsa_complaints',
   'fmcsa_shipments',
@@ -114,11 +116,17 @@ export const COMPANY_LIST_COLUMNS =
 function mapRow(row: Record<string, unknown>): Company {
   const baseServices = (row.services as Company['services']) || [];
   const fmcsaFields = extractFmcsaFieldsFromRow(row, baseServices);
+  const publicNames = resolvePublicCompanyNameFromSources({
+    storedName: row.name as string,
+    fmcsaLegalName: row.fmcsa_legal_name as string | null | undefined,
+    fmcsaRaw: row.fmcsa_raw,
+  });
 
   return normalizeCompanyForDisplay({
     id: row.id as string,
     slug: row.slug as string,
-    name: row.name as string,
+    // Prefer DBA over legal entity name for all public directory surfaces.
+    name: publicNames.publicName,
     logo: (row.logo as string) || undefined,
     shortDescription: (row.short_description as string) || '',
     description: (row.description as string) || '',
@@ -134,6 +142,7 @@ function mapRow(row: Record<string, unknown>): Company {
       : [],
     usdotNumber: (row.usdot_number as string) || '',
     mcNumber: (row.mc_number as string) || '',
+    fmcsaLegalName: publicNames.legalName,
     fmcsaSafetyRating:
       (row.fmcsa_safety_rating as Company['fmcsaSafetyRating']) || 'Not Rated',
     fmcsaComplaints: (row.fmcsa_complaints as number) || 0,

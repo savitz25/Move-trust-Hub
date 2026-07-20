@@ -23,6 +23,7 @@ import {
   normalizeSelectedCounties,
   parseServiceScope,
 } from '@/lib/suggestions/service-scope';
+import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
 import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 import type { Json } from '@/types/supabase';
 
@@ -54,14 +55,6 @@ export async function approveSuggestionToCompany(
     serviceScope === 'intrastate'
       ? null
       : suggestion.usdot?.replace(/\D/g, '') || null;
-  const displayName = suggestion.legal_name || suggestion.name;
-  const resolvedSlug = await resolveUniqueCompanySlug({ name: displayName, usdot });
-  const slug = ensurePublishableCompanySlug({
-    slug: resolvedSlug,
-    name: displayName,
-    usdot,
-  });
-  const companyId = slug;
 
   let liveSnapshot: Awaited<ReturnType<typeof fetchFmcsaCarrierSnapshot>> = null;
   if (serviceScope === 'interstate' && usdot && !suggestion.fmcsa_raw) {
@@ -79,6 +72,30 @@ export async function approveSuggestionToCompany(
     serviceScope === 'intrastate'
       ? null
       : resolvePublishFmcsaSnapshot(suggestion, liveSnapshot);
+
+  // Public name prefers FMCSA DBA over legal entity name when they differ.
+  const nameResolution = resolvePublicCompanyNameFromSources({
+    storedName: suggestion.name,
+    fmcsaLegalName: suggestion.legal_name,
+    legalName: snapshot?.legalName ?? suggestion.legal_name,
+    dbaName: snapshot?.dbaName ?? null,
+    fmcsaRaw: snapshot?.raw ?? suggestion.fmcsa_raw,
+    fmcsaPreview: suggestion.fmcsa_preview,
+    forceFmcsaPreference: true,
+  });
+  const displayName = nameResolution.publicName;
+  const legalNameForStorage =
+    nameResolution.legalName ||
+    snapshot?.legalName ||
+    suggestion.legal_name ||
+    suggestion.name;
+  const resolvedSlug = await resolveUniqueCompanySlug({ name: displayName, usdot });
+  const slug = ensurePublishableCompanySlug({
+    slug: resolvedSlug,
+    name: displayName,
+    usdot,
+  });
+  const companyId = slug;
 
   const resolvedEnrichment = await resolveApprovalEnrichment(suggestion);
   const googleData = resolvedEnrichment.google;
@@ -154,7 +171,7 @@ export async function approveSuggestionToCompany(
     coverage: coverageLabel,
     fmcsaRaw: (snapshot?.raw ?? suggestion.fmcsa_raw) as Json | null,
     fmcsaLastChecked: snapshot ? new Date().toISOString() : null,
-    fmcsaLegalName: snapshot?.legalName ?? suggestion.legal_name,
+    fmcsaLegalName: snapshot?.legalName ?? legalNameForStorage,
     fmcsaSafetyRating: snapshot?.safetyRating ?? 'Not Rated',
     authorityActive: snapshot?.authorityActive ?? null,
     outOfService: snapshot?.outOfService ?? false,
@@ -189,7 +206,7 @@ export async function approveSuggestionToCompany(
     revocation_date: snapshot?.revocationDate ?? null,
     data_hash: dataHash,
     fmcsa_last_checked: snapshot ? new Date().toISOString() : null,
-    fmcsa_legal_name: snapshot?.legalName ?? suggestion.legal_name,
+    fmcsa_legal_name: snapshot?.legalName ?? legalNameForStorage,
     fmcsa_raw: snapshot?.raw ?? suggestion.fmcsa_raw,
     bbb_rating: bbbRating,
     bbb_accredited: Boolean(publicScrape?.bbb_accredited),

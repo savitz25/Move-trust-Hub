@@ -46,6 +46,11 @@ export interface Company {
   // Licensing & Compliance (FMCSA)
   usdotNumber: string;
   mcNumber: string;
+  /**
+   * FMCSA legal entity name (when different from public `name` / DBA).
+   * Shown in Licensing & Compliance; directory cards use `name` (DBA-preferred).
+   */
+  fmcsaLegalName?: string | null;
   fmcsaSafetyRating: 'Satisfactory' | 'Conditional' | 'Unsatisfactory' | 'Not Rated';
   fmcsaComplaints: number; // last 2 years reported
   fmcsaShipments: number; // approx reported

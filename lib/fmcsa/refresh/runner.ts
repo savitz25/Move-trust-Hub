@@ -17,6 +17,7 @@ import type {
   RefreshRunResult,
   RefreshRunStatus,
 } from '@/lib/fmcsa/refresh/types';
+import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 
@@ -273,6 +274,15 @@ export async function runFmcsaRefresh(options: RefreshOptions): Promise<RefreshR
       last_updated: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
+    const publicNames = resolvePublicCompanyNameFromSources({
+      storedName: company.name,
+      legalName: snapshot.legalName,
+      dbaName: snapshot.dbaName,
+      fmcsaRaw: snapshot.raw,
+    });
+    if (publicNames.shouldUpdateStoredName && publicNames.publicName) {
+      updateRow.name = publicNames.publicName;
+    }
     if (contact.physicalAddress) {
       updateRow.physical_address = contact.physicalAddress;
       if (!company.headquarters?.trim()) {

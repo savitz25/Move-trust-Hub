@@ -48,7 +48,8 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
   }
 
   function handleDelete(suggestion: PendingSuggestion) {
-    const label = suggestion.legal_name || suggestion.name;
+    // Prefer stored public name (DBA when available) over legal entity name.
+    const label = suggestion.name || suggestion.legal_name;
     if (
       !confirm(
         `Permanently delete suggestion “${label}” from the system?\n\nThis cannot be undone.`
