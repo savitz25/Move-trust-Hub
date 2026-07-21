@@ -1,4 +1,5 @@
 import type { CompanyEnrichmentInput, GooglePlacesData } from '@/lib/verification/types';
+import { logger } from '@/lib/logging/logger';
 
 const SEARCH_FIELD_MASK = [
   'places.id',
@@ -22,6 +23,9 @@ const DETAILS_FIELD_MASK = [
   'internationalPhoneNumber',
   'reviews',
 ].join(',');
+
+const MAX_RETRIES = 3;
+const RETRY_BASE_MS = 400;
 
 type PlacePayload = {
   id?: string;
@@ -47,6 +51,21 @@ export function getGooglePlacesApiKey(): string | null {
 
 export function isGooglePlacesConfigured(): boolean {
   return Boolean(getGooglePlacesApiKey());
+}
+
+/** True when a snapshot is usable for public profile display. */
+export function isUsableGoogleSnapshot(
+  data: GooglePlacesData | null | undefined
+): boolean {
+  if (!data) return false;
+  const status = data.status ?? 'ok';
+  if (status !== 'ok') return false;
+  return (
+    (data.rating != null && data.rating > 0) ||
+    (data.review_count != null && data.review_count > 0) ||
+    (data.review_snippets?.length ?? 0) > 0 ||
+    Boolean(data.place_id)
+  );
 }
 
 function buildTextQuery(input: CompanyEnrichmentInput): string {
@@ -127,6 +146,46 @@ function emptyGoogleData(
   };
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+function shouldRetryStatus(status: number): boolean {
+  return status === 429 || status === 500 || status === 502 || status === 503 || status === 504;
+}
+
+async function fetchWithRetry(
+  url: string,
+  init: RequestInit,
+  context: Record<string, unknown>
+): Promise<Response> {
+  let lastError: Error | null = null;
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+      const res = await fetch(url, init);
+      if (res.ok || !shouldRetryStatus(res.status) || attempt === MAX_RETRIES - 1) {
+        return res;
+      }
+      logger.warn('google_places.retry', {
+        ...context,
+        attempt: attempt + 1,
+        status: res.status,
+      });
+      await sleep(RETRY_BASE_MS * Math.pow(2, attempt));
+    } catch (err) {
+      lastError = err instanceof Error ? err : new Error(String(err));
+      if (attempt === MAX_RETRIES - 1) throw lastError;
+      logger.warn('google_places.retry_exception', {
+        ...context,
+        attempt: attempt + 1,
+        message: lastError.message,
+      });
+      await sleep(RETRY_BASE_MS * Math.pow(2, attempt));
+    }
+  }
+  throw lastError ?? new Error('Google Places request failed');
+}
+
 export async function fetchGooglePlacesByPlaceId(placeId: string): Promise<GooglePlacesData> {
   const now = new Date().toISOString();
   const apiKey = getGooglePlacesApiKey();
@@ -140,17 +199,21 @@ export async function fetchGooglePlacesByPlaceId(placeId: string): Promise<Googl
   }
 
   try {
-    const res = await fetch(`https://places.googleapis.com/v1/places/${encodeURIComponent(id)}`, {
-      cache: 'no-store',
-      headers: {
-        'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': DETAILS_FIELD_MASK,
+    const res = await fetchWithRetry(
+      `https://places.googleapis.com/v1/places/${encodeURIComponent(id)}`,
+      {
+        cache: 'no-store',
+        headers: {
+          'X-Goog-Api-Key': apiKey,
+          'X-Goog-FieldMask': DETAILS_FIELD_MASK,
+        },
       },
-    });
+      { op: 'details', placeId: id }
+    );
 
     if (!res.ok) {
       const errText = await res.text().catch(() => '');
-      console.error('[google_places.details_failed]', {
+      logger.error('google_places.details_failed', {
         status: res.status,
         placeId: id,
         body: errText.slice(0, 300),
@@ -169,7 +232,7 @@ export async function fetchGooglePlacesByPlaceId(placeId: string): Promise<Googl
 
     return mapPlaceToGoogleData(place, now);
   } catch (err) {
-    console.error('[google_places.details_exception]', {
+    logger.error('google_places.details_exception', {
       placeId: id,
       message: err instanceof Error ? err.message : String(err),
     });
@@ -188,6 +251,7 @@ export async function fetchGooglePlacesData(
   const apiKey = getGooglePlacesApiKey();
 
   if (!apiKey) {
+    logger.warn('google_places.skipped', { reason: 'GOOGLE_PLACES_API_KEY not configured' });
     return emptyGoogleData(now, 'skipped', 'Google Places API key not configured');
   }
 
@@ -203,22 +267,25 @@ export async function fetchGooglePlacesData(
   });
 
   try {
-    const res = await fetch('https://places.googleapis.com/v1/places:searchText', {
-      method: 'POST',
-      cache: 'no-store',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': SEARCH_FIELD_MASK,
+    const res = await fetchWithRetry(
+      'https://places.googleapis.com/v1/places:searchText',
+      {
+        method: 'POST',
+        cache: 'no-store',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Goog-Api-Key': apiKey,
+          'X-Goog-FieldMask': SEARCH_FIELD_MASK,
+        },
+        body: JSON.stringify({ textQuery, maxResultCount: 1 }),
       },
-      body: JSON.stringify({ textQuery, maxResultCount: 1 }),
-    });
+      { op: 'searchText', query: textQuery.slice(0, 120) }
+    );
 
     if (!res.ok) {
       const errText = await res.text().catch(() => '');
       const message = `Google Places API ${res.status}: ${errText.slice(0, 200)}`;
-      // Surface quota / auth failures in server logs (Vercel) without crashing enrichment.
-      console.error('[google_places.searchText_failed]', {
+      logger.error('google_places.searchText_failed', {
         status: res.status,
         query: textQuery.slice(0, 120),
         body: errText.slice(0, 300),
@@ -229,12 +296,21 @@ export async function fetchGooglePlacesData(
     const json = (await res.json()) as { places?: PlacePayload[] };
     const place = json.places?.[0];
     if (!place) {
+      logger.info('google_places.not_found', { query: textQuery.slice(0, 120) });
       return emptyGoogleData(now, 'not_found');
     }
 
-    return mapPlaceToGoogleData(place, now);
+    const mapped = mapPlaceToGoogleData(place, now);
+    logger.info('google_places.ok', {
+      query: textQuery.slice(0, 120),
+      placeId: mapped.place_id,
+      rating: mapped.rating,
+      reviewCount: mapped.review_count,
+      snippets: mapped.review_snippets?.length ?? 0,
+    });
+    return mapped;
   } catch (err) {
-    console.error('[google_places.searchText_exception]', {
+    logger.error('google_places.searchText_exception', {
       query: textQuery.slice(0, 120),
       message: err instanceof Error ? err.message : String(err),
     });
@@ -244,4 +320,22 @@ export async function fetchGooglePlacesData(
       err instanceof Error ? err.message : 'Google Places request failed'
     );
   }
+}
+
+/**
+ * Prefer a successful snapshot; never let a failed fetch replace good data.
+ */
+export function mergeGoogleSnapshots(
+  existing: GooglePlacesData | null | undefined,
+  incoming: GooglePlacesData | null | undefined
+): GooglePlacesData | null {
+  if (!incoming) return existing ?? null;
+  if (!existing) return incoming;
+  if (isUsableGoogleSnapshot(existing) && !isUsableGoogleSnapshot(incoming)) {
+    return existing;
+  }
+  if (isUsableGoogleSnapshot(incoming)) return incoming;
+  if (isUsableGoogleSnapshot(existing)) return existing;
+  // Both unusable — keep the newer error/not_found for diagnostics
+  return incoming;
 }

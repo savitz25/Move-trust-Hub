@@ -3,6 +3,7 @@ import type {
   GooglePlacesData,
   PublicScrapeData,
 } from '@/lib/verification/types';
+import { isUsableGoogleSnapshot } from '@/lib/verification/google-places';
 
 /** Only refresh enrichment when missing or older than this many days. */
 export const ENRICHMENT_STALE_DAYS = 30;
@@ -47,7 +48,12 @@ export function publicScrapeFromVerificationSources(
 
 export function parseGoogleData(raw: unknown): GooglePlacesData | null {
   if (!raw || typeof raw !== 'object') return null;
-  return raw as GooglePlacesData;
+  const data = raw as GooglePlacesData;
+  // Legacy snapshots may omit status but still have rating/place_id.
+  if (!data.status && (data.rating != null || data.place_id || data.review_count != null)) {
+    return { ...data, status: 'ok', source: data.source ?? 'google_places_api' };
+  }
+  return data;
 }
 
 export function parsePublicScrapeData(raw: unknown): PublicScrapeData | null {
@@ -71,10 +77,11 @@ export function needsGoogleEnrichment(
 ): boolean {
   if (options?.force) return true;
   if (!google) return true;
-  if (google.status === 'ok' && (google.rating != null || google.review_count != null)) {
+  if (isUsableGoogleSnapshot(google)) {
     return isEnrichmentStale(google.last_fetched);
   }
-  return isEnrichmentStale(google.last_fetched);
+  // Failed / not_found / skipped — retry sooner than full stale window
+  return isEnrichmentStale(google.last_fetched, 3);
 }
 
 export function needsPublicScrapeEnrichment(
@@ -120,16 +127,24 @@ export function buildVerificationBackfillUpdate(
     const existing = googleFromVerificationSources(row.verification_sources);
     const incoming = enrichment.google;
 
+    // Never overwrite a usable Google snapshot with a failed / empty fetch.
     const shouldApply =
-      incoming.status === 'ok' ||
-      incoming.status === 'not_found' ||
-      !existing;
+      isUsableGoogleSnapshot(incoming) ||
+      (!isUsableGoogleSnapshot(existing) &&
+        (incoming.status === 'not_found' ||
+          incoming.status === 'error' ||
+          incoming.status === 'skipped' ||
+          !existing));
 
     if (shouldApply) {
-      nextSources.google = incoming;
+      nextSources.google = isUsableGoogleSnapshot(incoming)
+        ? incoming
+        : existing && isUsableGoogleSnapshot(existing)
+          ? existing
+          : incoming;
       changed = true;
 
-      if (incoming.status === 'ok' && incoming.rating != null && incoming.rating > 0) {
+      if (isUsableGoogleSnapshot(incoming) && incoming.rating != null && incoming.rating > 0) {
         updates.overall_rating = incoming.rating;
         if (incoming.review_count != null) {
           updates.review_count = incoming.review_count;

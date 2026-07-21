@@ -57,7 +57,12 @@ const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
  * PostgREST reject the whole query, and the previous core fallback dropped
  * verification_sources, so profiles always showed “Google Places data is not loaded”.
  */
-const COMPANY_LIST_CORE_COLUMNS = [
+/**
+ * Safe projection that must succeed even when optional contact columns lag migrations.
+ * Google Places snapshots live in verification_sources (always selected).
+ * phone / email / physical_address are optional extras appended when available.
+ */
+const COMPANY_LIST_BASE_COLUMNS = [
   'id',
   'slug',
   'name',
@@ -69,10 +74,6 @@ const COMPANY_LIST_CORE_COLUMNS = [
   'usdot_number',
   'mc_number',
   'fmcsa_legal_name',
-  'phone',
-  'email',
-  'website',
-  'physical_address',
   'fmcsa_safety_rating',
   'fmcsa_complaints',
   'fmcsa_shipments',
@@ -107,6 +108,11 @@ const COMPANY_LIST_CORE_COLUMNS = [
   // Google Places + BBB scrape snapshots live here in production.
   'verification_sources',
 ].join(', ');
+
+/** Contact columns that may not exist until migrations are applied. */
+const COMPANY_LIST_CONTACT_COLUMNS = 'phone, email, physical_address';
+
+const COMPANY_LIST_CORE_COLUMNS = `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_LIST_CONTACT_COLUMNS}`;
 
 /**
  * Optional legacy enrichment columns — only when COMPANY_LIST_ENRICHMENT=1
@@ -270,19 +276,32 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
   let data = primary.data;
   let error = primary.error;
 
-  // Production may lag migrations (e.g. missing public_scrape_data). Retry core columns.
+  // Production may lag migrations (missing email/phone/google_data). Progressive fallback.
   if (error && isSchemaColumnError(error)) {
-    companyListSelectMode = 'core';
-    logger.warn('companies.fetch_retry_core_columns', {
+    logger.warn('companies.fetch_retry_without_contact_columns', {
       code: error.code,
       message: error.message,
-      hint: 'Run supabase/migrations/20260708140000_ensure_companies_directory.sql',
     });
-    const retry = await withTimeout(
-      selectCompanyList(supabase, COMPANY_LIST_CORE_COLUMNS),
+    let retry = await withTimeout(
+      selectCompanyList(supabase, COMPANY_LIST_BASE_COLUMNS),
       COMPANIES_FETCH_TIMEOUT_MS,
-      'core-retry'
+      'base-retry'
     );
+    if (retry?.error && isSchemaColumnError(retry.error)) {
+      companyListSelectMode = 'core';
+      logger.warn('companies.fetch_retry_minimal', {
+        code: retry.error.code,
+        message: retry.error.message,
+      });
+      retry = await withTimeout(
+        selectCompanyList(
+          supabase,
+          'id, slug, name, headquarters, website, usdot_number, mc_number, overall_rating, review_count, reputation_score, bbb_rating, bbb_accredited, services, specialties, is_verified, last_updated, verification_sources, fmcsa_raw'
+        ),
+        COMPANIES_FETCH_TIMEOUT_MS,
+        'minimal-retry'
+      );
+    }
     if (!retry) {
       return [...seedCompanies];
     }
@@ -334,8 +353,8 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
-  // Bump when projection includes verification_sources for Google Places display
-  ['companies-directory-v6-verification-sources'],
+  // Bump when Google resolve + contact-column fallback change
+  ['companies-directory-v7-google-stable'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
@@ -383,14 +402,26 @@ async function resolveCompanyBySlugOrUsdotInner(
     .maybeSingle();
 
   if (slugError && isSchemaColumnError(slugError)) {
-    companyListSelectMode = 'core';
-    const core = await supabase
+    // Drop contact columns that may lag migrations (email/phone/physical_address).
+    const base = await supabase
       .from('companies')
-      .select(COMPANY_LIST_CORE_COLUMNS)
+      .select(COMPANY_LIST_BASE_COLUMNS)
       .or(`slug.eq.${input},id.eq.${input}`)
       .maybeSingle();
-    bySlugOrId = core.data;
-    slugError = core.error;
+    bySlugOrId = base.data;
+    slugError = base.error;
+    if (slugError && isSchemaColumnError(slugError)) {
+      companyListSelectMode = 'core';
+      const minimal = await supabase
+        .from('companies')
+        .select(
+          'id, slug, name, headquarters, website, usdot_number, mc_number, overall_rating, review_count, reputation_score, bbb_rating, bbb_accredited, services, specialties, is_verified, last_updated, verification_sources, fmcsa_raw, fmcsa_legal_name'
+        )
+        .or(`slug.eq.${input},id.eq.${input}`)
+        .maybeSingle();
+      bySlugOrId = minimal.data;
+      slugError = minimal.error;
+    }
   }
 
   if (!slugError && bySlugOrId) {

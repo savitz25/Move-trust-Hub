@@ -27,8 +27,16 @@ export function buildVerificationSourcesFromOnboarding(input: {
     sources.fmcsa = { ...sources.fmcsa, raw: input.fmcsaRaw };
   }
 
-  if (input.google) {
+  // Only store usable Google snapshots in verification_sources (never empty failures).
+  if (input.google?.status === 'ok') {
     sources.google = input.google;
+  } else if (
+    input.google &&
+    (input.google.rating != null ||
+      input.google.place_id ||
+      (input.google.review_snippets?.length ?? 0) > 0)
+  ) {
+    sources.google = { ...input.google, status: 'ok' };
   }
 
   if (input.publicScrape) {

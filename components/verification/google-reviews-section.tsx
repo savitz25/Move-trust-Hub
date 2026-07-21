@@ -188,8 +188,13 @@ export function GoogleReviewsSection({
         ) : (
           <div className="rounded-md border border-dashed bg-muted/20 px-4 py-6 text-center space-y-2">
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Google Places data is not loaded for {companyName}. Use industry-reported ratings in
-              the stats above, or confirm directly on Google Maps before booking.
+              {data?.status === 'error'
+                ? `We could not refresh the Google Places snapshot for ${companyName} right now${
+                    data.error ? ` (${data.error.slice(0, 80)})` : ''
+                  }. Ratings above may still reflect the last successful sync — confirm on Google Maps before booking.`
+                : data?.status === 'not_found'
+                  ? `No matching Google Business Profile was found for ${companyName}. Use industry-reported ratings above, or search Google to confirm public reviews.`
+                  : `A live Google Places snapshot is not stored for ${companyName} yet. Use industry-reported ratings above, or confirm directly on Google Maps before booking.`}
             </p>
             <Link
               href={buildGoogleAttributionSearchUrl(companyName)}

@@ -13,6 +13,7 @@ import { toJsonbColumn } from '@/lib/suggestions/jsonb-payload';
 import { logger } from '@/lib/logging/logger';
 import type { Database } from '@/types/supabase';
 import type { Json } from '@/types/supabase';
+import { mergeGoogleSnapshots } from '@/lib/verification/google-places';
 import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 
 export type PublishedEnrichmentInput = {
@@ -84,11 +85,7 @@ function mergeGoogle(
   existing: GooglePlacesData | null,
   incoming: GooglePlacesData | null
 ): GooglePlacesData | null {
-  if (!incoming) return existing;
-  if (!existing || existing.status !== 'ok') return incoming;
-  if (incoming.status !== 'ok') return existing;
-  if ((existing.rating ?? 0) > 0 && (incoming.rating ?? 0) <= 0) return existing;
-  return incoming;
+  return mergeGoogleSnapshots(existing, incoming);
 }
 
 function mergePublicScrape(

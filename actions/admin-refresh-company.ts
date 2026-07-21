@@ -82,34 +82,29 @@ export async function refreshCompanyGoogleAction(companyId: string): Promise<Adm
     headquarters: String(row.headquarters ?? ''),
   });
 
-  if (google.status === 'error') {
-    return { success: false, error: google.error ?? 'Google Places request failed' };
-  }
-
   if (google.status === 'skipped') {
     return { success: false, error: 'GOOGLE_PLACES_API_KEY not configured' };
   }
 
-  const updates: Record<string, unknown> = {
-    google_data: google.status === 'ok' ? google : row.google_data,
-    last_updated: new Date().toISOString().slice(0, 10),
-    updated_at: new Date().toISOString(),
-  };
-
-  let fieldsUpdated = 1;
-  if (google.status === 'ok' && google.rating != null && google.rating > 0) {
-    updates.overall_rating = google.rating;
-    if (google.review_count != null) updates.review_count = google.review_count;
-    fieldsUpdated = 3;
+  if (google.status === 'error') {
+    return { success: false, error: google.error ?? 'Google Places request failed' };
   }
 
   const admin = createAdminClient();
-  const { error } = await admin.from('companies').update(updates as never).eq('id', companyId);
+  // Always write verification_sources.google (profile read path) + google_data when present.
+  const { persistGoogleSnapshot } = await import(
+    '@/lib/verification/persist-google-snapshot'
+  );
+  const persisted = await persistGoogleSnapshot(admin, companyId, google, {
+    existingRow: row,
+  });
 
-  if (error) {
-    logger.error('admin.refresh_google_failed', { companyId, error: error.message });
-    return { success: false, error: error.message };
+  if (!persisted.ok) {
+    logger.error('admin.refresh_google_failed', { companyId, error: persisted.error });
+    return { success: false, error: persisted.error ?? 'Failed to save Google data' };
   }
+
+  const fieldsUpdated = persisted.applied ? (google.rating != null ? 3 : 1) : 0;
 
   revalidatePublishedCompany(String(row.slug));
   const refreshed = await fetchCompanyRow(companyId);
@@ -117,7 +112,9 @@ export async function refreshCompanyGoogleAction(companyId: string): Promise<Adm
   return {
     success: true,
     fieldsUpdated,
-    message: `Google data refreshed — ${google.review_count ?? 0} reviews`,
+    message: persisted.applied
+      ? `Google data refreshed — ${google.review_count ?? 0} reviews (rating ${google.rating ?? '—'})`
+      : `Kept existing Google snapshot (incoming status: ${google.status})`,
     company: refreshed ? mapAdminListItem(refreshed) : undefined,
   };
 }
