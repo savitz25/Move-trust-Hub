@@ -49,9 +49,9 @@ export async function approveSuggestionToCompany(
   suggestion: CompanySuggestionRow
 ): Promise<{ companyId: string; slug: string } | null> {
   const admin = createAdminClient();
-  const serviceScope = parseServiceScope(suggestion.service_scope);
+  let serviceScope = parseServiceScope(suggestion.service_scope);
   const selectedCounties = normalizeSelectedCounties(suggestion.selected_counties);
-  const usdot =
+  let usdot =
     serviceScope === 'intrastate'
       ? null
       : suggestion.usdot?.replace(/\D/g, '') || null;
@@ -68,10 +68,67 @@ export async function approveSuggestionToCompany(
     }
   }
 
-  const snapshot =
+  let snapshot =
     serviceScope === 'intrastate'
       ? null
       : resolvePublishFmcsaSnapshot(suggestion, liveSnapshot);
+
+  // Guard: never publish USDOT-without-OA as interstate in the main directory.
+  if (serviceScope === 'interstate') {
+    const {
+      shouldForceIntrastateFromAuthority,
+      authorityRoutingFromFmcsaRaw,
+      forceIntrastateUserMessage,
+    } = await import('@/lib/fmcsa/authority-routing');
+    const raw =
+      (snapshot?.raw as Record<string, unknown> | undefined) ??
+      (suggestion.fmcsa_raw && typeof suggestion.fmcsa_raw === 'object'
+        ? (suggestion.fmcsa_raw as Record<string, unknown>)
+        : null);
+    const preview =
+      suggestion.fmcsa_preview && typeof suggestion.fmcsa_preview === 'object'
+        ? (suggestion.fmcsa_preview as Record<string, unknown>)
+        : null;
+    const forceLocal = shouldForceIntrastateFromAuthority({
+      ...authorityRoutingFromFmcsaRaw(raw),
+      usdotStatus:
+        (preview?.usdotStatus as string | undefined) ??
+        (snapshot?.allowedToOperate ? 'ACTIVE' : null),
+      allowedToOperate:
+        snapshot?.allowedToOperate != null
+          ? snapshot.allowedToOperate
+            ? 'Y'
+            : 'N'
+          : (preview?.allowedToOperate as string | undefined) ?? null,
+      authorityStatus:
+        suggestion.authority_status ??
+        (preview?.authorityStatus as string | undefined) ??
+        null,
+      authorityActive: snapshot?.authorityActive ?? null,
+      fmcsaRaw: raw,
+    });
+    if (forceLocal) {
+      if (selectedCounties.length === 0) {
+        logger.warn('approve.blocked_not_authorized_interstate', {
+          suggestionId: suggestion.id,
+          usdot,
+          message: forceIntrastateUserMessage(),
+        });
+        throw new Error(
+          'This carrier has no interstate operating authority (NOT AUTHORIZED). ' +
+            'Onboard as Intrastate / Local with county selection — do not publish to the main directory.'
+        );
+      }
+      logger.info('approve.forced_intrastate_from_authority', {
+        suggestionId: suggestion.id,
+        usdot,
+        countyCount: selectedCounties.length,
+      });
+      serviceScope = 'intrastate';
+      usdot = null;
+      snapshot = null;
+    }
+  }
 
   // Public name prefers FMCSA DBA over legal entity name when they differ.
   const nameResolution = resolvePublicCompanyNameFromSources({

@@ -77,9 +77,19 @@ export function buildCompanySuggestionInsertRow(input: {
       dbaName: fmcsa?.dbaName,
       fallback: companyName,
     }) || companyName;
+  // Keep USDOT on the suggestion for admin reference even when publishing local-only.
+  // Publish path nulls usdot for intrastate so they never enter the interstate directory identity.
+  const usdotForSuggestion =
+    fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null);
+  const authorityLabel =
+    scope === 'intrastate'
+      ? fmcsa
+        ? 'Local / in-state (USDOT without interstate OA)'
+        : 'Local / in-state (no USDOT)'
+      : fmcsa?.authorityStatus ?? null;
   const row: CompanySuggestionInsertRow = {
     name: publicName.slice(0, 200),
-    usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
+    usdot: usdotForSuggestion,
     mc_number: fmcsa?.mcNumber ?? (carrierParsed?.type === 'MC' ? carrierParsed.value : null),
     details: parsed.details ?? null,
     status: 'pending',
@@ -98,8 +108,7 @@ export function buildCompanySuggestionInsertRow(input: {
       enrichment.google?.phone ??
       null,
     contact_email: input.resolvedContactEmail ?? parsed.contactEmail ?? null,
-    authority_status:
-      scope === 'intrastate' ? 'Local / in-state (no USDOT)' : fmcsa?.authorityStatus ?? null,
+    authority_status: authorityLabel,
     service_scope: scope,
     selected_counties: (parsed.selectedCounties ?? []) as unknown as Json,
     fmcsa_preview: packFmcsaPreviewWithEnrichment(

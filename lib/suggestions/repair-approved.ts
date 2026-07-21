@@ -79,7 +79,14 @@ export async function publishSuggestionToDirectory(
     })
     .eq('id', suggestion.id);
 
+  // Prefer published company scope (approve may coerce NOT AUTHORIZED → intrastate).
+  const { data: publishedCompany } = await admin
+    .from('companies')
+    .select('service_scope')
+    .eq('id', published.companyId)
+    .maybeSingle();
   const serviceScope =
+    publishedCompany?.service_scope === 'intrastate' ||
     (suggestion as { service_scope?: string }).service_scope === 'intrastate'
       ? 'intrastate'
       : 'interstate';

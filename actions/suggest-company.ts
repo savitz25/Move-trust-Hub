@@ -41,6 +41,10 @@ export type SubmitSuggestionResult = {
   /** Link to existing profile when duplicate already in directory */
   existingProfileSlug?: string;
   pendingReview?: boolean;
+  /**
+   * USDOT active but no interstate OA — client must switch to Intrastate / Local funnel.
+   */
+  forceIntrastate?: boolean;
 };
 
 export type PreviewFmcsaSuggestionResult = {
@@ -381,7 +385,9 @@ export async function submitCompanySuggestion(
       };
     }
 
-    const isLocal = parsed.data.serviceScope === 'intrastate';
+    let serviceScope: 'interstate' | 'intrastate' =
+      parsed.data.serviceScope === 'intrastate' ? 'intrastate' : 'interstate';
+    let isLocal = serviceScope === 'intrastate';
     const carrierParsed = isLocal
       ? null
       : parseCarrierNumber(parsed.data.carrierQuery!);
@@ -424,6 +430,44 @@ export async function submitCompanySuggestion(
           error:
             'Could not verify this carrier with FMCSA. Confirm the USDOT/MC number and try again.',
         };
+      }
+
+      // USDOT active + no interstate OA → refuse interstate publish; force local funnel.
+      const {
+        shouldForceIntrastateFromAuthority,
+        forceIntrastateUserMessage,
+        authorityRoutingFromFmcsaRaw,
+      } = await import('@/lib/fmcsa/authority-routing');
+      const rawForRouting =
+        fmcsa?.fmcsaRaw && typeof fmcsa.fmcsaRaw === 'object'
+          ? (fmcsa.fmcsaRaw as Record<string, unknown>)
+          : null;
+      const forceLocal = shouldForceIntrastateFromAuthority({
+        ...authorityRoutingFromFmcsaRaw(rawForRouting),
+        usdotStatus: fmcsa?.fmcsaPreview?.usdotStatus ?? null,
+        allowedToOperate:
+          fmcsa?.allowedToOperate ?? fmcsa?.fmcsaPreview?.allowedToOperate ?? null,
+        authorityStatus:
+          fmcsa?.authorityStatus ?? fmcsa?.fmcsaPreview?.authorityStatus ?? null,
+        fmcsaRaw: rawForRouting,
+      });
+      if (forceLocal) {
+        // If client already sent counties, accept as intrastate; otherwise instruct UI handoff.
+        if (!parsed.data.selectedCounties?.length || !parsed.data.stateCode) {
+          return {
+            success: false,
+            error: forceIntrastateUserMessage(),
+            forceIntrastate: true,
+          };
+        }
+        serviceScope = 'intrastate';
+        isLocal = true;
+        companyName =
+          preferPublicCompanyName({
+            legalName: fmcsa?.legalName,
+            dbaName: fmcsa?.dbaName,
+            fallback: companyName,
+          }) || companyName;
       }
     } else if (!companyName) {
       return { success: false, error: 'Enter the local mover’s business name.' };
@@ -498,13 +542,16 @@ export async function submitCompanySuggestion(
     const row = buildCompanySuggestionInsertRow({
       parsed: {
         ...parsed.data,
+        // Coerced scope when NOT AUTHORIZED forced local after interstate submit.
+        serviceScope,
         phone: resolvedContact.phone ?? parsed.data.phone,
         contactEmail: resolvedContact.email ?? parsed.data.contactEmail,
         websiteUrl: resolvedContact.website ?? parsed.data.websiteUrl,
       },
       companyName,
       fmcsa,
-      carrierParsed,
+      // Local publish must not rely on carrier for identity (USDOT kept in fmcsa columns only).
+      carrierParsed: isLocal ? null : carrierParsed,
       enrichment,
       userIp,
       emailHash,
@@ -523,6 +570,7 @@ export async function submitCompanySuggestion(
     logger.info('suggestion.submitted', {
       suggestionId: insertResult.id,
       usdot: fmcsa?.usdot,
+      serviceScope,
       hasFmcsa: Boolean(fmcsa),
       hasGoogle: Boolean(enrichment.google?.status === 'ok'),
       hasPublicScrape: Boolean(enrichment.publicScrape),
@@ -541,7 +589,10 @@ export async function submitCompanySuggestion(
 
     const profileSlug = predictCompanyProfileSlug({
       name: companyName,
-      usdot: fmcsa?.usdot ?? (carrierParsed.type === 'DOT' ? carrierParsed.value : null),
+      // Local / forced-intrastate profiles are name-based (not main interstate DOT slug).
+      usdot: isLocal
+        ? null
+        : fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
     });
 
     if (trustedSubmitter) {

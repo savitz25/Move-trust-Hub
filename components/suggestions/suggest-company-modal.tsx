@@ -20,6 +20,12 @@ import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from '@
 import type { EnrichedCompanyPreview } from '@/lib/suggestions/types';
 import type { ServiceScope, SelectedCounty } from '@/lib/suggestions/service-scope';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
+import {
+  authorityRoutingFromSuggestionPreview,
+  forceIntrastateUserMessage,
+  shouldForceIntrastateFromAuthority,
+} from '@/lib/fmcsa/authority-routing';
+import { preferPublicCompanyName } from '@/lib/companies/public-display-name';
 import { US_STATES } from '@/lib/verify-dot/us-states';
 import { toast } from 'sonner';
 
@@ -79,6 +85,9 @@ export function SuggestCompanyModal({
   const [submitted, setSubmitted] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<SubmitSuccessState | null>(null);
   const [pending, startTransition] = useTransition();
+  /** Set when FMCSA has USDOT active but no interstate operating authority */
+  const [forcedLocalFromAuthority, setForcedLocalFromAuthority] = useState(false);
+  const [authorityHandoffMessage, setAuthorityHandoffMessage] = useState<string | null>(null);
 
   const isLocal = serviceScope === 'intrastate';
   const readyInterstate = Boolean(activePreview?.fmcsa?.legalName && carrierQuery.trim());
@@ -90,24 +99,36 @@ export function SuggestCompanyModal({
   const readyToSubmit = isLocal ? readyLocal : readyInterstate;
 
   useEffect(() => {
-    if (open && enrichedPreview?.fmcsa) {
-      setActivePreview(enrichedPreview);
-      if (!serviceScope) setServiceScope(forceScope ?? 'interstate');
+    if (!open || !enrichedPreview?.fmcsa) return;
+    // Pre-loaded verify/DOT preview: apply NOT AUTHORIZED → local handoff immediately.
+    if (applyNotAuthorizedIntrastateHandoff(enrichedPreview, carrierQuery || initialCarrierQuery)) {
+      return;
     }
-  }, [open, enrichedPreview, serviceScope, forceScope]);
+    setActivePreview(enrichedPreview);
+    if (!serviceScope) setServiceScope(forceScope ?? 'interstate');
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- handoff is intentional on open/preview change
+  }, [open, enrichedPreview]);
 
   useEffect(() => {
     if (open) setLookupError(previewError);
   }, [open, previewError]);
 
   // Apply forced scope + prefill when opening (e.g. Verify DOT → Local funnel).
+  // Do not override NOT AUTHORIZED → intrastate handoff with forceScope=interstate.
   useEffect(() => {
     if (!open) return;
-    if (forceScope) setServiceScope(forceScope);
-    if (initialName) setLocalName(initialName);
-    if (initialState) setLocalState(initialState);
+    if (forceScope && !forcedLocalFromAuthority) setServiceScope(forceScope);
+    if (initialName && !forcedLocalFromAuthority) setLocalName(initialName);
+    if (initialState && !forcedLocalFromAuthority) setLocalState(initialState);
     if (initialCarrierQuery) setCarrierQuery(initialCarrierQuery);
-  }, [open, forceScope, initialName, initialState, initialCarrierQuery]);
+  }, [
+    open,
+    forceScope,
+    initialName,
+    initialState,
+    initialCarrierQuery,
+    forcedLocalFromAuthority,
+  ]);
 
   useEffect(() => {
     if (!open) return;
@@ -138,7 +159,42 @@ export function SuggestCompanyModal({
     setCompanyEmail('');
     setSubmitted(false);
     setSubmitSuccess(null);
+    setForcedLocalFromAuthority(false);
+    setAuthorityHandoffMessage(null);
     onEnrichedPreviewChange?.(null);
+  }
+
+  /** Apply NOT AUTHORIZED → Intrastate handoff while keeping FMCSA contact fields. */
+  function applyNotAuthorizedIntrastateHandoff(
+    preview: EnrichedCompanyPreview,
+    query: string
+  ): boolean {
+    const fmcsa = preview.fmcsa;
+    if (!fmcsa) return false;
+    const routing = authorityRoutingFromSuggestionPreview(fmcsa);
+    if (!shouldForceIntrastateFromAuthority(routing)) return false;
+
+    const publicName = preferPublicCompanyName({
+      legalName: fmcsa.legalName,
+      dbaName: fmcsa.dbaName,
+      fallback: fmcsa.legalName || initialName,
+    });
+    const stateCode = (fmcsa.addressState || '').trim().toUpperCase().slice(0, 2);
+
+    setServiceScope('intrastate');
+    setForcedLocalFromAuthority(true);
+    setAuthorityHandoffMessage(forceIntrastateUserMessage());
+    setCarrierQuery(query);
+    setLocalName(publicName || fmcsa.legalName || initialName || '');
+    if (stateCode.length === 2) setLocalState(stateCode);
+    const ph = fmcsa.phone?.trim() || preview.google?.phone?.trim() || '';
+    if (ph) setCompanyPhone(ph);
+    const site = preview.google?.website_url?.trim() || '';
+    if (site) setWebsiteUrl(site);
+    // Keep full multi-source preview (FMCSA contact + Google) for local path.
+    setActivePreview(preview);
+    onEnrichedPreviewChange?.(preview);
+    return true;
   }
 
   function handleOpenChange(next: boolean) {
@@ -147,9 +203,19 @@ export function SuggestCompanyModal({
   }
 
   function handlePreviewReady(preview: EnrichedCompanyPreview, query: string) {
-    setActivePreview(preview);
-    setCarrierQuery(query);
     setLookupError(null);
+    setCarrierQuery(query);
+
+    if (applyNotAuthorizedIntrastateHandoff(preview, query)) {
+      toast.message('Routed to Local / Intrastate', {
+        description: 'No interstate operating authority on this USDOT.',
+      });
+      return;
+    }
+
+    setForcedLocalFromAuthority(false);
+    setAuthorityHandoffMessage(null);
+    setActivePreview(preview);
     onEnrichedPreviewChange?.(preview);
     const site = preview.google?.website_url?.trim() || '';
     if (site) setWebsiteUrl(site);
@@ -172,18 +238,28 @@ export function SuggestCompanyModal({
       });
       if (!res.success || !res.preview) {
         setLookupError(res.error ?? 'Could not find this local mover.');
-        setActivePreview(null);
+        // Keep FMCSA-only preview when Google fails after NOT AUTHORIZED handoff.
+        if (!forcedLocalFromAuthority) setActivePreview(null);
         return;
       }
-      setActivePreview(res.preview);
-      onEnrichedPreviewChange?.(res.preview);
-      const googleSite = res.preview.google?.website_url?.trim() ?? '';
+      // Preserve FMCSA contact data from the handoff when merging Google results.
+      const merged: EnrichedCompanyPreview = {
+        ...res.preview,
+        fmcsa: res.preview.fmcsa ?? activePreview?.fmcsa ?? null,
+      };
+      setActivePreview(merged);
+      onEnrichedPreviewChange?.(merged);
+      const googleSite = merged.google?.website_url?.trim() ?? '';
       if (googleSite) {
         setWebsiteUrl(googleSite);
       }
-      const googlePhone = res.preview.google?.phone?.trim() ?? '';
-      if (googlePhone) {
-        setCompanyPhone(googlePhone);
+      const nextPhone =
+        companyPhone.trim() ||
+        merged.google?.phone?.trim() ||
+        merged.fmcsa?.phone?.trim() ||
+        '';
+      if (nextPhone) {
+        setCompanyPhone(nextPhone);
       }
     });
   }
@@ -244,6 +320,15 @@ export function SuggestCompanyModal({
       });
 
       if (!res.success) {
+        if (res.forceIntrastate && activePreview) {
+          applyNotAuthorizedIntrastateHandoff(activePreview, carrierQuery);
+          toast.message('Routed to Local / Intrastate', {
+            description:
+              res.error ??
+              'No interstate operating authority — continue with county selection.',
+          });
+          return;
+        }
         if (res.existingProfileSlug) {
           toast.error(
             <span>
@@ -373,22 +458,74 @@ export function SuggestCompanyModal({
               <>
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-xs font-medium uppercase tracking-wide text-emerald-800">
-                    Intrastate / Local · no USDOT
+                    {forcedLocalFromAuthority
+                      ? 'Intrastate / Local · USDOT without interstate authority'
+                      : 'Intrastate / Local · no USDOT required'}
                   </p>
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    className="text-xs h-7"
-                    onClick={() => {
-                      setServiceScope(null);
-                      setActivePreview(null);
-                      setSelectedCounties([]);
-                    }}
-                  >
-                    Change type
-                  </Button>
+                  {!forcedLocalFromAuthority ? (
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      className="text-xs h-7"
+                      onClick={() => {
+                        setServiceScope(null);
+                        setActivePreview(null);
+                        setSelectedCounties([]);
+                      }}
+                    >
+                      Change type
+                    </Button>
+                  ) : null}
                 </div>
+                {authorityHandoffMessage ? (
+                  <div
+                    className="rounded-lg border border-amber-200/80 bg-amber-50/80 p-3 text-sm text-amber-950 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-50"
+                    role="status"
+                  >
+                    <p className="font-semibold">No interstate operating authority</p>
+                    <p className="mt-1 text-xs leading-relaxed opacity-90">
+                      {authorityHandoffMessage}
+                    </p>
+                    {activePreview?.fmcsa ? (
+                      <dl className="mt-2 grid gap-1 text-xs sm:grid-cols-2">
+                        {activePreview.fmcsa.dbaName || activePreview.fmcsa.legalName ? (
+                          <div>
+                            <dt className="text-muted-foreground">Public name</dt>
+                            <dd className="font-medium">
+                              {preferPublicCompanyName({
+                                legalName: activePreview.fmcsa.legalName,
+                                dbaName: activePreview.fmcsa.dbaName,
+                              })}
+                            </dd>
+                          </div>
+                        ) : null}
+                        {activePreview.fmcsa.usdot ? (
+                          <div>
+                            <dt className="text-muted-foreground">USDOT (reference only)</dt>
+                            <dd className="font-mono font-medium">{activePreview.fmcsa.usdot}</dd>
+                          </div>
+                        ) : null}
+                        {activePreview.fmcsa.authorityStatus ? (
+                          <div className="sm:col-span-2">
+                            <dt className="text-muted-foreground">Authority</dt>
+                            <dd className="font-medium">{activePreview.fmcsa.authorityStatus}</dd>
+                          </div>
+                        ) : null}
+                        {activePreview.fmcsa.headquarters || activePreview.fmcsa.phone ? (
+                          <div className="sm:col-span-2">
+                            <dt className="text-muted-foreground">Kept from FMCSA</dt>
+                            <dd className="font-medium">
+                              {[activePreview.fmcsa.headquarters, activePreview.fmcsa.phone]
+                                .filter(Boolean)
+                                .join(' · ')}
+                            </dd>
+                          </div>
+                        ) : null}
+                      </dl>
+                    ) : null}
+                  </div>
+                ) : null}
                 <form onSubmit={handleLocalSearch} className="space-y-3">
                   <div>
                     <label className="text-sm font-medium" htmlFor="local-name">
@@ -414,7 +551,17 @@ export function SuggestCompanyModal({
                       onChange={(e) => {
                         setLocalState(e.target.value);
                         setSelectedCounties([]);
-                        setActivePreview(null);
+                        // Keep FMCSA snapshot on state change when forced local; clear Google-only preview.
+                        if (forcedLocalFromAuthority && activePreview?.fmcsa) {
+                          setActivePreview({
+                            fmcsa: activePreview.fmcsa,
+                            google: null,
+                            publicScrape: null,
+                            fetchedAt: activePreview.fetchedAt,
+                          });
+                        } else {
+                          setActivePreview(null);
+                        }
                       }}
                       className="mt-1.5 flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
                       required
