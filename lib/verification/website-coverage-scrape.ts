@@ -9,7 +9,9 @@ import {
 } from '@/lib/verification/scrape-rate-limit';
 
 const MAX_PAGES = 4;
-const MAX_HTML_BYTES = 250_000;
+/** Head + footer sample so service-area footers and city lists are not dropped. */
+const MAX_HTML_HEAD_BYTES = 200_000;
+const MAX_HTML_TAIL_BYTES = 120_000;
 
 const COVERAGE_PATH_HINTS = [
   '/service-area',
@@ -110,8 +112,13 @@ async function fetchWebsiteHtml(url: string): Promise<string | null> {
       },
     });
     if (!res.ok) return null;
-    const text = await res.text();
-    return text.slice(0, MAX_HTML_BYTES);
+    const full = await res.text();
+    if (full.length <= MAX_HTML_HEAD_BYTES + MAX_HTML_TAIL_BYTES) return full;
+    return (
+      full.slice(0, MAX_HTML_HEAD_BYTES) +
+      '\n' +
+      full.slice(-MAX_HTML_TAIL_BYTES)
+    );
   } catch {
     return null;
   } finally {

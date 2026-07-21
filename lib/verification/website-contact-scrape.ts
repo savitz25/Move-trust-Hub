@@ -5,8 +5,10 @@ import {
 } from '@/lib/verification/scrape-rate-limit';
 import { logger } from '@/lib/logging/logger';
 
-const MAX_HTML_BYTES = 250_000;
-const MAX_PAGES = 4;
+/** Full pages can be large; keep head + footer so mailto: in footers is not truncated. */
+const MAX_HTML_HEAD_BYTES = 200_000;
+const MAX_HTML_TAIL_BYTES = 150_000;
+const MAX_PAGES = 5;
 
 const CONTACT_PATH_HINTS = [
   '/contact',
@@ -35,6 +37,12 @@ const JUNK_EMAIL_LOCAL = new Set([
   'hostmaster',
   'abuse',
   'spam',
+  'privacy',
+  'legal',
+  'careers',
+  'jobs',
+  'press',
+  'media',
 ]);
 
 const JUNK_EMAIL_DOMAINS = new Set([
@@ -47,7 +55,25 @@ const JUNK_EMAIL_DOMAINS = new Set([
   'googleapis.com',
   'gstatic.com',
   'cloudflare.com',
+  'wix.com',
+  'godaddy.com',
+  'squarespace.com',
+  'wordpress.com',
+  'elementor.com',
 ]);
+
+/** Local-parts that look like SEO/spam tooling, not business contact */
+const JUNK_EMAIL_LOCAL_SUBSTRINGS = [
+  'seo.',
+  'seo@',
+  'outreach',
+  'noreply',
+  'no-reply',
+  'donotreply',
+  'mailer',
+  'newsletter',
+  'subscribe',
+];
 
 export type WebsiteContactData = {
   websiteUrl: string | null;
@@ -153,6 +179,19 @@ function extractContactLinks(html: string, baseUrl: string): string[] {
   return ordered.slice(0, 3);
 }
 
+/**
+ * Fetch HTML and keep both the document head and footer.
+ * Large mover sites often put mailto: only in the footer beyond a simple byte cap.
+ */
+function sampleHtmlForContact(full: string): string {
+  if (full.length <= MAX_HTML_HEAD_BYTES + MAX_HTML_TAIL_BYTES) return full;
+  return (
+    full.slice(0, MAX_HTML_HEAD_BYTES) +
+    '\n<!-- mth-html-mid-omitted -->\n' +
+    full.slice(-MAX_HTML_TAIL_BYTES)
+  );
+}
+
 async function fetchWebsiteHtml(url: string): Promise<string | null> {
   await waitForScrapeSlot(new URL(url).hostname);
   const controller = new AbortController();
@@ -168,7 +207,8 @@ async function fetchWebsiteHtml(url: string): Promise<string | null> {
       },
     });
     if (!res.ok) return null;
-    return (await res.text()).slice(0, MAX_HTML_BYTES);
+    const full = await res.text();
+    return sampleHtmlForContact(full);
   } catch {
     return null;
   } finally {
@@ -178,10 +218,63 @@ async function fetchWebsiteHtml(url: string): Promise<string | null> {
 
 function extractMailtoEmails(html: string): string[] {
   const found: string[] = [];
-  const re = /mailto:([a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})/gi;
+  // mailto:contact@x.com and mailto:contact%40x.com?subject=...
+  const re = /mailto:([^"'>\s]+)/gi;
   let m: RegExpExecArray | null;
   while ((m = re.exec(html)) !== null) {
-    if (m[1]) found.push(m[1]);
+    let raw = m[1] ?? '';
+    try {
+      raw = decodeURIComponent(raw);
+    } catch {
+      // keep raw
+    }
+    raw = raw.split('?')[0]?.split('&')[0]?.trim() ?? '';
+    raw = raw.replace(/^mailto:/i, '');
+    if (raw.includes('@')) found.push(raw);
+  }
+  return found;
+}
+
+function extractEmailsFromAttributes(html: string): string[] {
+  const found: string[] = [];
+  // data-email="contact@…" / data-mail / href without mailto already handled
+  const attrRe =
+    /(?:data-email|data-mail|data-contact-email|data-cfemail)=["']([^"']+)["']/gi;
+  let m: RegExpExecArray | null;
+  while ((m = attrRe.exec(html)) !== null) {
+    const raw = (m[1] ?? '').trim();
+    if (raw.includes('@')) found.push(raw);
+  }
+  return found;
+}
+
+function extractEmailsFromJsonLd(html: string): string[] {
+  const found: string[] = [];
+  const re =
+    /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html)) !== null) {
+    const block = m[1] ?? '';
+    const emailFields = block.match(/"email"\s*:\s*"([^"]+)"/gi);
+    if (emailFields) {
+      for (const field of emailFields) {
+        const val = field.match(/:\s*"([^"]+)"/);
+        if (val?.[1]?.includes('@')) found.push(val[1]);
+      }
+    }
+    found.push(...extractEmailsFromText(block));
+  }
+  return found;
+}
+
+/** contact [at] domain.com / contact(at)domain.com obfuscation */
+function extractObfuscatedEmails(text: string): string[] {
+  const found: string[] = [];
+  const re =
+    /\b([a-zA-Z0-9._%+\-]+)\s*(?:\[at\]|\(at\)|\sat\s|@)\s*([a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})\b/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    if (m[1] && m[2]) found.push(`${m[1]}@${m[2]}`);
   }
   return found;
 }
@@ -253,31 +346,70 @@ function extractPhonesFromJsonLd(html: string): string[] {
 function isUsableEmail(email: string): boolean {
   const lower = email.toLowerCase().trim();
   if (!lower.includes('@') || lower.length > 120) return false;
-  if (lower.endsWith('.png') || lower.endsWith('.jpg') || lower.endsWith('.webp')) return false;
+  if (
+    lower.endsWith('.png') ||
+    lower.endsWith('.jpg') ||
+    lower.endsWith('.jpeg') ||
+    lower.endsWith('.webp') ||
+    lower.endsWith('.gif') ||
+    lower.endsWith('.svg')
+  ) {
+    return false;
+  }
   if (lower.includes('sentry') || lower.includes('wixpress')) return false;
   const [local, domain] = lower.split('@');
   if (!local || !domain) return false;
   if (JUNK_EMAIL_LOCAL.has(local)) return false;
   if (JUNK_EMAIL_DOMAINS.has(domain)) return false;
   if (domain.includes('example.')) return false;
+  if (JUNK_EMAIL_LOCAL_SUBSTRINGS.some((s) => local.includes(s) || lower.includes(s))) {
+    return false;
+  }
+  // Reject image/file-like locals
+  if (/\.(png|jpe?g|gif|webp|svg|css|js)$/i.test(local)) return false;
   return true;
 }
 
-/** Prefer info@, contact@, office@, hello@, then domain-matching, then first usable. */
+/** Prefer site-domain contact@ / info@, then preferred locals, then any domain match. */
 function pickPrimaryEmail(emails: string[], websiteHost?: string | null): string | null {
-  const cleaned = [...new Set(emails.map((e) => e.toLowerCase().trim()).filter(isUsableEmail))];
+  const cleaned = [
+    ...new Set(emails.map((e) => e.toLowerCase().trim()).filter(isUsableEmail)),
+  ];
   if (!cleaned.length) return null;
 
-  const preferredLocal = ['info', 'contact', 'office', 'hello', 'sales', 'moves', 'dispatch', 'admin'];
+  const host = websiteHost?.replace(/^www\./, '').toLowerCase() || null;
+  const preferredLocal = [
+    'contact',
+    'info',
+    'office',
+    'hello',
+    'sales',
+    'moves',
+    'dispatch',
+    'admin',
+    'support',
+    'estimate',
+    'quotes',
+    'quote',
+  ];
+
+  // 1) Preferred local-part ON the business domain
+  if (host) {
+    for (const local of preferredLocal) {
+      const hit = cleaned.find((e) => e === `${local}@${host}`);
+      if (hit) return hit;
+    }
+    // 2) Any email on the business domain
+    const domainMatch = cleaned.find(
+      (e) => e.endsWith(`@${host}`) || e.endsWith(`.${host}`)
+    );
+    if (domainMatch) return domainMatch;
+  }
+
+  // 3) Preferred local-part on any domain
   for (const local of preferredLocal) {
     const hit = cleaned.find((e) => e.startsWith(`${local}@`));
     if (hit) return hit;
-  }
-
-  if (websiteHost) {
-    const host = websiteHost.replace(/^www\./, '').toLowerCase();
-    const domainMatch = cleaned.find((e) => e.endsWith(`@${host}`) || e.endsWith(`.${host}`));
-    if (domainMatch) return domainMatch;
   }
 
   return cleaned[0] ?? null;
@@ -304,8 +436,20 @@ function pickPrimaryPhone(phones: string[]): string | null {
     .map((p) => normalizePhoneDisplay(p))
     .filter((p): p is string => Boolean(p));
   const unique = [...new Set(normalized)];
-  // Prefer tel:-sourced / non-555 already filtered; first unique is fine
-  return unique[0] ?? null;
+  if (!unique.length) return null;
+
+  // Prefer geographic US numbers over toll-free when both exist (local movers).
+  const isTollFree = (p: string) => {
+    const d = p.replace(/\D/g, '').slice(-10);
+    return /^(800|888|877|866|855|844|833)/.test(d);
+  };
+  const local = unique.find((p) => !isTollFree(p));
+  // Prefer well-known CA LA area codes when present
+  const laArea = unique.find((p) => {
+    const d = p.replace(/\D/g, '').slice(-10);
+    return /^(310|213|323|424|818|747|562|626|661)/.test(d);
+  });
+  return laArea || local || unique[0] || null;
 }
 
 function extractContactsFromHtml(html: string): { emails: string[]; phones: string[] } {
@@ -313,7 +457,10 @@ function extractContactsFromHtml(html: string): { emails: string[]; phones: stri
   const text = htmlToText(decoded);
   const emails = [
     ...extractMailtoEmails(decoded),
+    ...extractEmailsFromAttributes(decoded),
+    ...extractEmailsFromJsonLd(decoded),
     ...extractEmailsFromText(text),
+    ...extractObfuscatedEmails(text),
   ];
   const phones = [
     ...extractTelPhones(decoded),
