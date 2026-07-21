@@ -10,6 +10,8 @@ type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
+/** ISR: pick up nearby local movers within ~150mi after approval. */
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   return ssgParams(getPublishedCityHubSlugs()
