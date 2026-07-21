@@ -4,6 +4,7 @@ import { Building2, MapPin } from 'lucide-react';
 import type { VerifyDotNameCandidate } from '@/actions/verify-dot';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { DotVerifierNotListedCta } from '@/components/verify-dot/dot-verifier-not-listed-cta';
 
 type Props = {
   companyName: string;
@@ -12,6 +13,9 @@ type Props = {
   onSelect: (candidate: VerifyDotNameCandidate) => void;
   selectingDot: string | null;
   disabled?: boolean;
+  sourcePage?: string;
+  /** Hide when embedded inside Suggest Company onboarding (avoids nested modals). */
+  showNotListedCta?: boolean;
 };
 
 function formatMc(mc: string | null): string {
@@ -34,6 +38,8 @@ export function DotVerifierNamePicker({
   onSelect,
   selectingDot,
   disabled,
+  sourcePage = '/verify-dot',
+  showNotListedCta = true,
 }: Props) {
   return (
     <div className="space-y-4" role="region" aria-label="Select the correct carrier">
@@ -93,6 +99,15 @@ export function DotVerifierNamePicker({
           );
         })}
       </ul>
+
+      {showNotListedCta ? (
+        <DotVerifierNotListedCta
+          sourcePage={sourcePage}
+          companyName={companyName}
+          stateCode={state}
+          context="name-results"
+        />
+      ) : null}
     </div>
   );
 }

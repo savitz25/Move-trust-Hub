@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import type { VerifyDotResult } from '@/actions/verify-dot';
 import { FmcsaStructuredPreview } from '@/components/suggestions/fmcsa-structured-preview';
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
+import { DotVerifierNotListedCta } from '@/components/verify-dot/dot-verifier-not-listed-cta';
 import { fmcsaPreviewFromVerifyResult } from '@/lib/suggestions/from-verify';
 import { shouldForceIntrastateFromAuthority } from '@/lib/fmcsa/authority-routing';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
@@ -26,9 +27,18 @@ const ADD_LOCAL_LABEL = 'Add as Local / In-State Mover';
 
 type Props = {
   result: VerifyDotResult;
+  sourcePage?: string;
+  /** Name + state from the search form when user arrived via Name search */
+  prefillName?: string;
+  prefillState?: string;
 };
 
-export function DotVerifierResults({ result }: Props) {
+export function DotVerifierResults({
+  result,
+  sourcePage = '/verify-dot',
+  prefillName,
+  prefillState,
+}: Props) {
   if (!result.success) return null;
 
   const preview = result.preview;
@@ -40,10 +50,19 @@ export function DotVerifierResults({ result }: Props) {
   const reviewHref = buildReviewPageUrl({
     carrier: carrierQuery || undefined,
     slug: validCarrier ? slugFromCarrier(validCarrier.type, validCarrier.value) : undefined,
-    sourcePage: '/verify-dot',
+    sourcePage,
   });
   const dotPreviewForSuggest = fmcsaPreviewFromVerifyResult(result);
   const showAddToDirectory = !inDirectory && Boolean(validCarrier) && hasPreview;
+  const notListedName =
+    prefillName?.trim() ||
+    preview?.dbaName ||
+    preview?.legalName ||
+    '';
+  const notListedState =
+    prefillState?.trim().toUpperCase().slice(0, 2) ||
+    preview?.addressState?.trim().toUpperCase().slice(0, 2) ||
+    '';
 
   /** USDOT active/registered but no interstate Operating Authority → local only */
   const forceLocalFromAuthority =
@@ -232,7 +251,7 @@ export function DotVerifierResults({ result }: Props) {
                 : 'Submit this carrier for review — we will verify it against FMCSA before publishing.'}
           </p>
           <SuggestCompanyCta
-            sourcePage="/verify-dot"
+            sourcePage={sourcePage}
             carrierQuery={carrierQuery}
             dotPreview={dotPreviewForSuggest}
             className="min-h-[48px]"
@@ -240,6 +259,14 @@ export function DotVerifierResults({ result }: Props) {
           />
         </div>
       ) : null}
+
+      <DotVerifierNotListedCta
+        sourcePage={sourcePage}
+        companyName={notListedName}
+        stateCode={notListedState}
+        carrierQuery={carrierQuery}
+        context="dot-results"
+      />
 
       <p className="text-xs text-muted-foreground">
         {saferUrl ? (

@@ -228,6 +228,7 @@ export function OnboardingCarrierLookup({
           onSelect={handleSelectCandidate}
           selectingDot={selectingDot}
           disabled={pending || disabled}
+          showNotListedCta={false}
         />
       ) : null}
     </div>

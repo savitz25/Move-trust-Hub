@@ -396,13 +396,24 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
               onSelect={handleCandidateSelect}
               selectingDot={selectingDot}
               disabled={loading}
+              sourcePage={sourcePage}
             />
           </div>
         ) : null}
 
         {result?.success && hasFmcsaMatch(result) ? (
           <div className="mt-6 pt-6 border-t">
-            <DotVerifierResults result={result} />
+            <DotVerifierResults
+              result={result}
+              sourcePage={sourcePage}
+              prefillName={nameSearchLabel?.name || companyName.trim() || undefined}
+              prefillState={
+                nameSearchLabel?.state ||
+                state ||
+                result.preview?.addressState ||
+                undefined
+              }
+            />
           </div>
         ) : null}
       </Card>
