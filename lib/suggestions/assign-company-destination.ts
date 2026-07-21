@@ -118,9 +118,23 @@ export async function assignApprovedCompanyToDestinations(params: {
   }
 
   try {
-    revalidateTag(APPROVED_COUNTY_MOVERS_TAG);
+    const { revalidateLocalMoverCountyPages } = await import(
+      '@/lib/local-movers/revalidate-county-pages'
+    );
+    revalidateLocalMoverCountyPages(
+      assignedCounties.map((c) => ({
+        stateSlug: c.stateSlug,
+        countySlug: c.countySlug,
+      })),
+      { companySlug: params.companySlug, reason: 'destination_assign' }
+    );
   } catch {
     // next/cache is unavailable outside the Next.js runtime (CLI repair scripts).
+    try {
+      revalidateTag(APPROVED_COUNTY_MOVERS_TAG);
+    } catch {
+      // ignore
+    }
   }
 
   logger.info('onboarding.destination_assigned', {
