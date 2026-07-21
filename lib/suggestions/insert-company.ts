@@ -78,11 +78,20 @@ function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
     { label: 'without_optional_contact_cols', row: withoutContact },
   ];
 
-  // Last-resort only for interstate rows; local must keep service_scope.
+  // Interstate may drop scope cols when schema is lagging.
   if (!isLocal && scopeCols.length) {
     attempts.push({
       label: 'without_scope_cols',
       row: stripKeys(withoutContact, scopeCols),
+    });
+  }
+
+  // Local last-resort: still publish the company row so county assignments can attach.
+  // County placement uses company_destination_assignments, not only coverage_counties JSON.
+  if (isLocal) {
+    attempts.push({
+      label: 'local_without_scope_cols_last_resort',
+      row: stripKeys(withoutContact, ['service_scope', 'coverage_counties']),
     });
   }
 

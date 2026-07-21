@@ -39,6 +39,9 @@ type SubmitSuccessState = {
   profileSlug: string;
   pendingReview: boolean;
   serviceScope: ServiceScope;
+  adminPublished?: boolean;
+  publishedCounties?: Array<{ stateSlug: string; countySlug: string; name?: string }>;
+  message?: string;
 };
 
 type Props = {
@@ -359,12 +362,7 @@ export function SuggestCompanyModal({
         }
         if (res.existingProfileSlug) {
           toast.error(
-            <span>
-              {res.error ?? 'This company is already listed.'}{' '}
-              <Link href={`/companies/${res.existingProfileSlug}`} className="underline font-medium">
-                View profile
-              </Link>
-            </span>
+            `${res.error ?? 'This company is already listed.'} Profile: /companies/${res.existingProfileSlug}`
           );
         } else {
           toast.error(res.error ?? 'Submission failed');
@@ -372,22 +370,32 @@ export function SuggestCompanyModal({
         return;
       }
 
-      if (res.profileSlug) {
-        setSubmitSuccess({
-          profileSlug: res.profileSlug,
-          pendingReview: Boolean(res.pendingReview),
-          serviceScope,
-        });
-      }
+      // Always show the confirmation panel when the server accepted the submission.
+      setSubmitSuccess({
+        profileSlug: res.profileSlug || '',
+        pendingReview: Boolean(res.pendingReview),
+        serviceScope,
+        adminPublished: Boolean(res.adminPublished),
+        publishedCounties: res.publishedCounties ?? (isLocal ? selectedCounties : undefined),
+        message: res.message,
+      });
       setSubmitted(true);
+
       if (res.pendingReview) {
-        toast.success('Submission received — pending admin review.');
-      } else {
         toast.success(
           isLocal
-            ? 'Local mover published to selected county pages.'
-            : 'Company published to the directory.'
+            ? 'Local mover saved — pending final placement review.'
+            : 'Submission received — pending admin review.'
         );
+      } else if (isLocal) {
+        const n = res.publishedCounties?.length ?? selectedCounties.length;
+        toast.success(
+          n > 0
+            ? `Published to ${n} county page${n === 1 ? '' : 's'}.`
+            : 'Local mover published to selected county pages.'
+        );
+      } else {
+        toast.success('Company published to the directory.');
       }
     });
   }
@@ -405,15 +413,62 @@ export function SuggestCompanyModal({
 
         {submitted ? (
           <div className="px-6 pb-6 space-y-4">
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {submitSuccess?.pendingReview
-                ? submitSuccess.serviceScope === 'intrastate'
-                  ? 'Thank you — your local mover submission is in the admin queue. After approval, it will appear only on the county pages you selected (not the main interstate directory).'
-                  : 'Thank you — your submission is in the admin review queue. Once approved, the profile will be live in the interstate directory.'
-                : submitSuccess?.serviceScope === 'intrastate'
-                  ? 'Published as a local/in-state mover on the county pages you selected.'
-                  : 'Published — this company is live in the main interstate directory.'}
-            </p>
+            {submitSuccess?.adminPublished &&
+            submitSuccess.serviceScope === 'intrastate' &&
+            !submitSuccess.pendingReview ? (
+              <div className="rounded-lg border border-emerald-300/80 bg-emerald-50/70 p-4 space-y-2 dark:border-emerald-800/50 dark:bg-emerald-950/30">
+                <p className="text-sm font-semibold text-emerald-950 dark:text-emerald-50">
+                  Local mover added to the system
+                </p>
+                <p className="text-sm leading-relaxed text-emerald-950/90 dark:text-emerald-50/90">
+                  {submitSuccess.message ||
+                    'This company is live on the selected county pages only (not the main interstate directory).'}
+                </p>
+              </div>
+            ) : (
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {submitSuccess?.message
+                  ? submitSuccess.message
+                  : submitSuccess?.pendingReview
+                    ? submitSuccess.serviceScope === 'intrastate'
+                      ? 'Thank you — your local mover submission is saved with the counties you selected. It will appear on those county pages after final approval (not the main interstate directory).'
+                      : 'Thank you — your submission is in the admin review queue. Once approved, the profile will be live in the interstate directory.'
+                    : submitSuccess?.serviceScope === 'intrastate'
+                      ? 'Published as a local/in-state mover on the county pages you selected.'
+                      : 'Published — this company is live in the main interstate directory.'}
+              </p>
+            )}
+
+            {submitSuccess?.serviceScope === 'intrastate' &&
+            (submitSuccess.publishedCounties?.length ?? 0) > 0 ? (
+              <div className="rounded-md border bg-muted/40 p-4 space-y-2">
+                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  {submitSuccess.pendingReview ? 'Selected counties' : 'County pages'}
+                </p>
+                <ul className="text-sm text-foreground space-y-1">
+                  {submitSuccess.publishedCounties!.map((c) => (
+                    <li key={`${c.stateSlug}/${c.countySlug}`}>
+                      {c.name || c.countySlug.replace(/-/g, ' ')}{' '}
+                      <span className="text-muted-foreground">
+                        ({c.stateSlug}/{c.countySlug})
+                      </span>
+                      {!submitSuccess.pendingReview ? (
+                        <>
+                          {' · '}
+                          <Link
+                            href={`/local-movers/${c.stateSlug}/${c.countySlug}`}
+                            className="text-primary hover:underline"
+                          >
+                            Open page
+                          </Link>
+                        </>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
             {submitSuccess?.profileSlug ? (
               <div className="rounded-md border bg-muted/40 p-4 space-y-2">
                 <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">

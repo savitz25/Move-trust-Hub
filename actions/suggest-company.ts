@@ -49,6 +49,8 @@ import type { SuggestCompanyInput } from '@/lib/suggestions/schema';
 export type SubmitSuggestionResult = {
   success: boolean;
   error?: string;
+  /** Optional non-error notice (e.g. soft-queue after partial admin publish). */
+  message?: string;
   suggestionId?: string;
   /** Predicted profile slug after admin approval */
   profileSlug?: string;
@@ -59,6 +61,10 @@ export type SubmitSuggestionResult = {
    * USDOT active but no interstate OA — client must switch to Intrastate / Local funnel.
    */
   forceIntrastate?: boolean;
+  /** Local publish: counties the mover was placed on (admin auto-publish). */
+  publishedCounties?: Array<{ stateSlug: string; countySlug: string; name?: string }>;
+  /** True when trusted admin path ran auto-publish. */
+  adminPublished?: boolean;
 };
 
 export type PreviewFmcsaSuggestionResult = {
@@ -744,13 +750,16 @@ export async function submitCompanySuggestion(
         .maybeSingle();
 
       if (fetchError || !suggestionRow) {
+        // Soft success: row exists; admin can publish from the queue.
         return {
-          success: false,
-          error:
-            'Suggestion saved but could not be loaded for immediate publish. Check /admin/suggestions.',
+          success: true,
           suggestionId: insertResult.id,
           profileSlug,
           pendingReview: true,
+          adminPublished: false,
+          publishedCounties: isLocal ? selectedCounties : undefined,
+          message:
+            'Saved. Immediate publish could not load the suggestion row — finish from /admin/suggestions if needed.',
         };
       }
 
@@ -784,12 +793,18 @@ export async function submitCompanySuggestion(
             ok: false,
             error: approved.error,
           });
+          // Soft success: suggestion is saved. Never toast a hard error after insert —
+          // admins still get a confirmation page; the queue can finish publish.
           return {
-            success: false,
-            error: `Admin publish failed: ${approved.error}. Suggestion is in the queue.`,
+            success: true,
             suggestionId: insertResult.id,
             profileSlug,
             pendingReview: true,
+            adminPublished: false,
+            publishedCounties: isLocal ? selectedCounties : undefined,
+            message: isLocal
+              ? `Saved. Live county publish needs a quick fix (${approved.error}). The mover is in the admin queue with your selected counties.`
+              : `Saved to the admin queue (${approved.error}). You can approve it from /admin/suggestions.`,
           };
         }
 
@@ -809,8 +824,15 @@ export async function submitCompanySuggestion(
           suggestionId: insertResult.id,
           profileSlug: approved.slug,
           pendingReview: false,
+          adminPublished: true,
+          publishedCounties: isLocal ? selectedCounties : undefined,
+          message: isLocal
+            ? `Local mover published to ${selectedCounties.length} selected count${selectedCounties.length === 1 ? 'y' : 'ies'}.`
+            : 'Company published to the interstate directory.',
         };
       } catch (publishErr) {
+        const publishMessage =
+          publishErr instanceof Error ? publishErr.message : String(publishErr);
         logAdminPublish({
           suggestionId: insertResult.id,
           slug: profileSlug,
@@ -819,18 +841,19 @@ export async function submitCompanySuggestion(
           countyCount: selectedCounties.length,
           fillRate: fill.fillRate,
           ok: false,
-          error:
-            publishErr instanceof Error ? publishErr.message : String(publishErr),
+          error: publishMessage,
         });
+        // Soft success after insert — confirmation page, not a broken error screen.
         return {
-          success: false,
-          error:
-            publishErr instanceof Error
-              ? `Admin publish failed: ${publishErr.message}`
-              : 'Admin publish failed. Suggestion is saved for review.',
+          success: true,
           suggestionId: insertResult.id,
           profileSlug,
           pendingReview: true,
+          adminPublished: false,
+          publishedCounties: isLocal ? selectedCounties : undefined,
+          message: isLocal
+            ? `Saved with your county selections. Publish will complete from the admin queue (${publishMessage}).`
+            : `Saved for review (${publishMessage}).`,
         };
       }
     }

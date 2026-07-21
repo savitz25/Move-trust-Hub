@@ -134,8 +134,16 @@ export async function publishSuggestionToDirectory(
     });
   }
 
-  revalidatePublishedCompany(published.slug);
-  revalidateDestinationPaths(suggestion.headquarters);
+  try {
+    revalidatePublishedCompany(published.slug);
+    revalidateDestinationPaths(suggestion.headquarters);
+  } catch (revalErr) {
+    logger.warn('company.publish_revalidate_failed', {
+      suggestionId: suggestion.id,
+      slug: published.slug,
+      message: revalErr instanceof Error ? revalErr.message : String(revalErr),
+    });
+  }
 
   return published;
 }
