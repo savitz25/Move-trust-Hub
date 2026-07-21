@@ -109,10 +109,19 @@ const COMPANY_LIST_BASE_COLUMNS = [
   'verification_sources',
 ].join(', ');
 
-/** Contact columns that may not exist until migrations are applied. */
-const COMPANY_LIST_CONTACT_COLUMNS = 'phone, email, physical_address';
+/**
+ * Progressive contact projections. Missing `email` must NOT drop `phone`.
+ * Order: richest → safest.
+ */
+const COMPANY_LIST_PROJECTIONS = [
+  `${COMPANY_LIST_BASE_COLUMNS}, phone, email, physical_address`,
+  `${COMPANY_LIST_BASE_COLUMNS}, phone, physical_address`,
+  `${COMPANY_LIST_BASE_COLUMNS}, phone`,
+  `${COMPANY_LIST_BASE_COLUMNS}, physical_address`,
+  COMPANY_LIST_BASE_COLUMNS,
+] as const;
 
-const COMPANY_LIST_CORE_COLUMNS = `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_LIST_CONTACT_COLUMNS}`;
+const COMPANY_LIST_CORE_COLUMNS = COMPANY_LIST_PROJECTIONS[0];
 
 /**
  * Optional legacy enrichment columns — only when COMPANY_LIST_ENRICHMENT=1
@@ -123,6 +132,17 @@ export const COMPANY_LIST_COLUMNS =
     ? [COMPANY_LIST_CORE_COLUMNS, 'google_data', 'public_scrape_data'].join(', ')
     : COMPANY_LIST_CORE_COLUMNS;
 
+/** Try projections until PostgREST accepts the select (handles lagging migrations). */
+export function companyListProjectionCandidates(includeLegacyEnrichment: boolean): string[] {
+  if (includeLegacyEnrichment) {
+    return [
+      `${COMPANY_LIST_PROJECTIONS[0]}, google_data, public_scrape_data`,
+      ...COMPANY_LIST_PROJECTIONS,
+    ];
+  }
+  return [...COMPANY_LIST_PROJECTIONS];
+}
+
 function mapRow(row: Record<string, unknown>): Company {
   const baseServices = (row.services as Company['services']) || [];
   const fmcsaFields = extractFmcsaFieldsFromRow(row, baseServices);
@@ -131,6 +151,25 @@ function mapRow(row: Record<string, unknown>): Company {
     fmcsaLegalName: row.fmcsa_legal_name as string | null | undefined,
     fmcsaRaw: row.fmcsa_raw,
   });
+
+  const vs =
+    row.verification_sources && typeof row.verification_sources === 'object'
+      ? (row.verification_sources as Record<string, unknown>)
+      : null;
+  const googleFromSources =
+    vs?.google && typeof vs.google === 'object'
+      ? (vs.google as { website_url?: string | null; phone?: string | null })
+      : null;
+
+  const phoneResolved =
+    fmcsaFields.phone ||
+    (typeof row.phone === 'string' ? row.phone.trim() : '') ||
+    googleFromSources?.phone ||
+    null;
+  const websiteResolved =
+    (typeof row.website === 'string' ? row.website.trim() : '') ||
+    googleFromSources?.website_url?.trim() ||
+    '';
 
   return normalizeCompanyForDisplay({
     id: row.id as string,
@@ -142,11 +181,10 @@ function mapRow(row: Record<string, unknown>): Company {
     description: (row.description as string) || '',
     foundedYear: (row.founded_year as number) || 0,
     headquarters: (row.headquarters as string) || '',
-    website: (row.website as string) || '',
+    website: websiteResolved,
     physicalAddress: fmcsaFields.physicalAddress,
-    phone: fmcsaFields.phone || (row.phone as string) || null,
-    email: (row.email as string) || null,
-    website: ((row.website as string) || '').trim() || '',
+    phone: phoneResolved || null,
+    email: (typeof row.email === 'string' ? row.email.trim() : null) || null,
     serviceScope:
       row.service_scope === 'intrastate' ? 'intrastate' : 'interstate',
     coverageCounties: Array.isArray(row.coverage_counties)
@@ -259,54 +297,37 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     return [...seedCompanies];
   }
 
-  const primaryColumns =
-    companyListSelectMode === 'core' ? COMPANY_LIST_CORE_COLUMNS : COMPANY_LIST_COLUMNS;
-
-  const primary = await withTimeout(
-    selectCompanyList(supabase, primaryColumns),
-    COMPANIES_FETCH_TIMEOUT_MS,
-    companyListSelectMode
+  const projections = companyListProjectionCandidates(
+    companyListSelectMode === 'full'
   );
 
-  if (!primary) {
-    // Timed out under SSG concurrency — seed is better than a 60s page hang.
-    return [...seedCompanies];
-  }
+  let data: unknown[] | null = null;
+  let error: { code?: string; message?: string } | null = null;
 
-  let data = primary.data;
-  let error = primary.error;
-
-  // Production may lag migrations (missing email/phone/google_data). Progressive fallback.
-  if (error && isSchemaColumnError(error)) {
-    logger.warn('companies.fetch_retry_without_contact_columns', {
-      code: error.code,
-      message: error.message,
-    });
-    let retry = await withTimeout(
-      selectCompanyList(supabase, COMPANY_LIST_BASE_COLUMNS),
+  for (let i = 0; i < projections.length; i++) {
+    const cols = projections[i]!;
+    const result = await withTimeout(
+      selectCompanyList(supabase, cols),
       COMPANIES_FETCH_TIMEOUT_MS,
-      'base-retry'
+      `proj-${i}`
     );
-    if (retry?.error && isSchemaColumnError(retry.error)) {
-      companyListSelectMode = 'core';
-      logger.warn('companies.fetch_retry_minimal', {
-        code: retry.error.code,
-        message: retry.error.message,
+    if (!result) {
+      // Timeout — try next projection only if first timed out under load
+      if (i === 0) return [...seedCompanies];
+      continue;
+    }
+    if (result.error && isSchemaColumnError(result.error)) {
+      logger.warn('companies.fetch_projection_retry', {
+        projection: i,
+        code: result.error.code,
+        message: result.error.message,
       });
-      retry = await withTimeout(
-        selectCompanyList(
-          supabase,
-          'id, slug, name, headquarters, website, usdot_number, mc_number, overall_rating, review_count, reputation_score, bbb_rating, bbb_accredited, services, specialties, is_verified, last_updated, verification_sources, fmcsa_raw'
-        ),
-        COMPANIES_FETCH_TIMEOUT_MS,
-        'minimal-retry'
-      );
+      error = result.error;
+      continue;
     }
-    if (!retry) {
-      return [...seedCompanies];
-    }
-    data = retry.data;
-    error = retry.error;
+    data = result.data;
+    error = result.error;
+    break;
   }
 
   if (error) {
@@ -354,7 +375,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
   // Bump when Google resolve + contact-column fallback change
-  ['companies-directory-v7-google-stable'],
+  ['companies-directory-v8-phone-projections'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
@@ -391,37 +412,33 @@ async function resolveCompanyBySlugOrUsdotInner(
   supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
   input: string
 ): Promise<Company | undefined> {
-  // Prefer safe projection — select('*') can break when schema cache lists missing columns.
-  const profileSelect =
-    companyListSelectMode === 'core' ? COMPANY_LIST_CORE_COLUMNS : COMPANY_LIST_COLUMNS;
+  // Progressive projection so a missing `email` column never drops `phone`.
+  const projections = companyListProjectionCandidates(
+    companyListSelectMode === 'full'
+  );
 
-  let { data: bySlugOrId, error: slugError } = await supabase
-    .from('companies')
-    .select(profileSelect)
-    .or(`slug.eq.${input},id.eq.${input}`)
-    .maybeSingle();
+  let bySlugOrId: Record<string, unknown> | null = null;
+  let slugError: { code?: string; message?: string } | null = null;
 
-  if (slugError && isSchemaColumnError(slugError)) {
-    // Drop contact columns that may lag migrations (email/phone/physical_address).
-    const base = await supabase
+  for (let i = 0; i < projections.length; i++) {
+    const cols = projections[i]!;
+    const result = await supabase
       .from('companies')
-      .select(COMPANY_LIST_BASE_COLUMNS)
+      .select(cols)
       .or(`slug.eq.${input},id.eq.${input}`)
       .maybeSingle();
-    bySlugOrId = base.data;
-    slugError = base.error;
-    if (slugError && isSchemaColumnError(slugError)) {
-      companyListSelectMode = 'core';
-      const minimal = await supabase
-        .from('companies')
-        .select(
-          'id, slug, name, headquarters, website, usdot_number, mc_number, overall_rating, review_count, reputation_score, bbb_rating, bbb_accredited, services, specialties, is_verified, last_updated, verification_sources, fmcsa_raw, fmcsa_legal_name'
-        )
-        .or(`slug.eq.${input},id.eq.${input}`)
-        .maybeSingle();
-      bySlugOrId = minimal.data;
-      slugError = minimal.error;
+    if (result.error && isSchemaColumnError(result.error)) {
+      slugError = result.error;
+      logger.warn('companies.profile_projection_retry', {
+        projection: i,
+        code: result.error.code,
+        message: result.error.message,
+      });
+      continue;
     }
+    bySlugOrId = result.data as Record<string, unknown> | null;
+    slugError = result.error;
+    break;
   }
 
   if (!slugError && bySlugOrId) {
@@ -435,31 +452,35 @@ async function resolveCompanyBySlugOrUsdotInner(
     }
   }
 
-  const listCols =
-    companyListSelectMode === 'core' ? COMPANY_LIST_CORE_COLUMNS : COMPANY_LIST_COLUMNS;
+  async function selectOne(
+    apply: (cols: string) => PromiseLike<{
+      data: unknown;
+      error: { code?: string; message?: string } | null;
+    }>
+  ): Promise<Record<string, unknown> | null> {
+    for (const cols of projections) {
+      const result = await apply(cols);
+      if (result.error && isSchemaColumnError(result.error)) continue;
+      if (!result.error && result.data) {
+        return result.data as Record<string, unknown>;
+      }
+    }
+    return null;
+  }
 
   const usdot = parseUsdotFromSlugInput(input) ?? normalizeCompanyUsdot(input);
   if (usdot) {
-    const { data: byUsdot, error: usdotError } = await supabase
-      .from('companies')
-      .select(listCols)
-      .eq('usdot_number', usdot)
-      .maybeSingle();
-    if (!usdotError && byUsdot) {
-      return mapRow(byUsdot as Record<string, unknown>);
-    }
+    const byUsdot = await selectOne((cols) =>
+      supabase.from('companies').select(cols).eq('usdot_number', usdot).maybeSingle()
+    );
+    if (byUsdot) return mapRow(byUsdot);
   }
 
   const nameFromSlug = input.includes('-') ? input.replace(/-/g, ' ') : input;
-  const { data: byName, error: nameError } = await supabase
-    .from('companies')
-    .select(listCols)
-    .ilike('name', nameFromSlug)
-    .limit(1)
-    .maybeSingle();
-  if (!nameError && byName) {
-    return mapRow(byName as Record<string, unknown>);
-  }
+  const byName = await selectOne((cols) =>
+    supabase.from('companies').select(cols).ilike('name', nameFromSlug).limit(1).maybeSingle()
+  );
+  if (byName) return mapRow(byName);
 
   const predictedSlug = buildCompanySlugBase({ name: nameFromSlug, usdot: null });
   if (predictedSlug && predictedSlug !== input) {

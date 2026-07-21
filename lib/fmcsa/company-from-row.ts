@@ -39,9 +39,25 @@ export function extractContactFromFmcsaRaw(raw: unknown): {
   const carrier = asCarrierLike(raw);
   if (!carrier) return { physicalAddress: null, phone: null };
   const address = buildAddressParts(carrier);
+  // QCMobile census often omits telephone; check nested/common aliases.
+  const nested =
+    asCarrierLike(carrier.carrier) ??
+    asCarrierLike(carrier.content) ??
+    asCarrierLike(asCarrierLike(carrier.content)?.carrier);
+  const phone =
+    stringOrNull(carrier.telephone) ??
+    stringOrNull(carrier.phone) ??
+    stringOrNull(carrier.phoneNumber) ??
+    stringOrNull(carrier.cellPhone) ??
+    stringOrNull(carrier.businessPhone) ??
+    (nested
+      ? stringOrNull(nested.telephone) ??
+        stringOrNull(nested.phone) ??
+        stringOrNull(nested.phoneNumber)
+      : null);
   return {
     physicalAddress: address.combined,
-    phone: stringOrNull(carrier.telephone) ?? stringOrNull(carrier.phone),
+    phone,
   };
 }
 
@@ -66,7 +82,20 @@ export function extractFmcsaFieldsFromRow(
   const powerUnits = carrier ? extractPowerUnits(carrier) : null;
   const services = mergeServicesWithEntityType(existingServices, entityType);
   const fromRawContact = extractContactFromFmcsaRaw(row.fmcsa_raw);
-  const googlePhone = phoneFromGoogleData(row.google_data);
+  // Prefer legacy google_data column, then verification_sources.google (production path).
+  const googlePhone =
+    phoneFromGoogleData(row.google_data) ||
+    phoneFromGoogleData(
+      row.verification_sources && typeof row.verification_sources === 'object'
+        ? (row.verification_sources as Record<string, unknown>).google
+        : null
+    );
+  const googleAddress = addressFromGoogleData(
+    row.google_data ||
+      (row.verification_sources && typeof row.verification_sources === 'object'
+        ? (row.verification_sources as Record<string, unknown>).google
+        : null)
+  );
 
   return {
     entityType,
@@ -76,13 +105,15 @@ export function extractFmcsaFieldsFromRow(
     physicalAddress:
       stringOrNull(row.physical_address) ||
       fromRawContact.physicalAddress ||
+      googleAddress ||
       stringOrNull(row.headquarters),
-    // Prefer FMCSA telephone; fall back to Google Places when census omits phone
+    // Prefer column → FMCSA raw → Google Places (verification_sources or google_data)
     phone: stringOrNull(row.phone) || fromRawContact.phone || googlePhone,
   };
 }
 
-function phoneFromGoogleData(google: unknown): string | null {
+/** Exported for profile/contact mapping when google lives only under verification_sources. */
+export function phoneFromGoogleData(google: unknown): string | null {
   if (!google || typeof google !== 'object') return null;
   const g = google as Record<string, unknown>;
   const direct = stringOrNull(g.phone);
@@ -98,4 +129,9 @@ function phoneFromGoogleData(google: unknown): string | null {
     );
   }
   return null;
+}
+
+function addressFromGoogleData(google: unknown): string | null {
+  if (!google || typeof google !== 'object') return null;
+  return stringOrNull((google as Record<string, unknown>).formatted_address);
 }
