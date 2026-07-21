@@ -16,11 +16,13 @@ import type { VerifyDotResult } from '@/actions/verify-dot';
 import { FmcsaStructuredPreview } from '@/components/suggestions/fmcsa-structured-preview';
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
 import { fmcsaPreviewFromVerifyResult } from '@/lib/suggestions/from-verify';
+import { shouldForceIntrastateFromAuthority } from '@/lib/fmcsa/authority-routing';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 import { buildReviewPageUrl } from '@/lib/reviews/review-url';
 import { slugFromCarrier } from '@/lib/reviews/schema';
 
 const ADD_DIRECTORY_LABEL = 'Add This Company to Our Directory';
+const ADD_LOCAL_LABEL = 'Add as Local / In-State Mover';
 
 type Props = {
   result: VerifyDotResult;
@@ -42,6 +44,16 @@ export function DotVerifierResults({ result }: Props) {
   });
   const dotPreviewForSuggest = fmcsaPreviewFromVerifyResult(result);
   const showAddToDirectory = !inDirectory && Boolean(validCarrier) && hasPreview;
+
+  /** USDOT active/registered but no interstate Operating Authority → local only */
+  const forceLocalFromAuthority =
+    hasPreview &&
+    Boolean(preview) &&
+    shouldForceIntrastateFromAuthority({
+      usdotStatus: preview?.usdotStatus ?? null,
+      allowedToOperate: preview?.allowedToOperate ?? null,
+      authorityStatus: preview?.authorityStatus ?? null,
+    });
 
   const statusBanner = inDirectory ? (
     <div
@@ -98,6 +110,48 @@ export function DotVerifierResults({ result }: Props) {
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
       {statusBanner}
+
+      {forceLocalFromAuthority ? (
+        <div
+          className="flex items-start gap-3 rounded-lg border border-amber-300/90 bg-amber-50 p-4 dark:border-amber-800/60 dark:bg-amber-950/40"
+          role="status"
+        >
+          <AlertTriangle
+            className="h-5 w-5 shrink-0 text-amber-700 dark:text-amber-400 mt-0.5"
+            aria-hidden="true"
+          />
+          <div className="space-y-1.5 min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-medium text-amber-950 dark:text-amber-50">
+                No interstate operating authority
+              </p>
+              <Badge
+                variant="outline"
+                className="border-amber-400/80 bg-amber-100/80 text-amber-950 dark:border-amber-700 dark:bg-amber-900/50 dark:text-amber-50"
+              >
+                Local / in-state only
+              </Badge>
+            </div>
+            <p className="text-sm text-amber-950/90 dark:text-amber-50/90 leading-relaxed">
+              This USDOT may show as active, but FMCSA lists no interstate Operating Authority
+              (Not Authorized). Many legitimate local movers register a USDOT for customer trust
+              without applying for interstate authority. Treat this carrier as{' '}
+              <strong>local / in-state only</strong> — not an interstate mover.
+            </p>
+            {preview?.authorityStatus ? (
+              <p className="text-xs font-mono text-amber-900/70 dark:text-amber-100/70">
+                Authority: {preview.authorityStatus}
+              </p>
+            ) : null}
+            {!inDirectory ? (
+              <p className="text-xs text-amber-900/80 dark:text-amber-100/80 leading-relaxed">
+                If you add them to Move Trust Hub, onboarding will use the local/county funnel and
+                keep useful FMCSA contact data (name, address, phone).
+              </p>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
 
       {hasPreview && preview ? (
         <>
@@ -160,21 +214,29 @@ export function DotVerifierResults({ result }: Props) {
       </div>
 
       {showAddToDirectory ? (
-        <div className="rounded-lg border-2 border-primary/25 bg-primary/5 p-5 text-center space-y-3">
+        <div
+          className={
+            forceLocalFromAuthority
+              ? 'rounded-lg border-2 border-amber-300/80 bg-amber-50/50 p-5 text-center space-y-3 dark:border-amber-800/50 dark:bg-amber-950/20'
+              : 'rounded-lg border-2 border-primary/25 bg-primary/5 p-5 text-center space-y-3'
+          }
+        >
           <Badge variant="secondary" className="mb-1">
-            Not in directory
+            {forceLocalFromAuthority ? 'Local / county pages only' : 'Not in directory'}
           </Badge>
           <p className="text-sm text-muted-foreground">
-            {hasPreview
-              ? `Add ${preview?.legalName ?? carrierQuery} to Move Trust Hub using verified FMCSA data.`
-              : 'Submit this carrier for review — we will verify it against FMCSA before publishing.'}
+            {forceLocalFromAuthority
+              ? `Add ${preview?.dbaName || preview?.legalName || carrierQuery} as a local/in-state mover. We’ll keep FMCSA name, address, and phone, then finish with Google, website, and county selection — not the main interstate directory.`
+              : hasPreview
+                ? `Add ${preview?.legalName ?? carrierQuery} to Move Trust Hub using verified FMCSA data.`
+                : 'Submit this carrier for review — we will verify it against FMCSA before publishing.'}
           </p>
           <SuggestCompanyCta
             sourcePage="/verify-dot"
             carrierQuery={carrierQuery}
             dotPreview={dotPreviewForSuggest}
             className="min-h-[48px]"
-            label={ADD_DIRECTORY_LABEL}
+            label={forceLocalFromAuthority ? ADD_LOCAL_LABEL : ADD_DIRECTORY_LABEL}
           />
         </div>
       ) : null}
