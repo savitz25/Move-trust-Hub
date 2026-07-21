@@ -7,6 +7,7 @@ import {
   SCRAPE_USER_AGENT,
   waitForScrapeSlot,
 } from '@/lib/verification/scrape-rate-limit';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 
 const MAX_PAGES = 4;
 /** Head + footer sample so service-area footers and city lists are not dropped. */
@@ -28,17 +29,7 @@ const COVERAGE_PATH_HINTS = [
 ];
 
 function normalizeWebsiteUrl(raw: string): string | null {
-  const trimmed = raw.trim();
-  if (!trimmed) return null;
-  try {
-    const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
-    const url = new URL(withProtocol);
-    if (!['http:', 'https:'].includes(url.protocol)) return null;
-    url.hash = '';
-    return url.toString().replace(/\/$/, '');
-  } catch {
-    return null;
-  }
+  return normalizeCompanyWebsiteUrl(raw);
 }
 
 function htmlToText(html: string): string {

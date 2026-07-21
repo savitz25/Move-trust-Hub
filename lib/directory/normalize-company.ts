@@ -1,4 +1,5 @@
 import type { Company } from '@/types';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 
 const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
   fiveStar: 0,
@@ -23,7 +24,7 @@ export function normalizeCompanyForDisplay(company: Company): Company {
       company.shortDescription?.trim() || 'Profile details are being updated.',
     description: company.description?.trim() || '',
     headquarters: company.headquarters?.trim() || '',
-    website: company.website?.trim() || '',
+    website: normalizeCompanyWebsiteUrl(company.website) || company.website?.trim() || '',
     usdotNumber: company.usdotNumber?.trim() || '',
     mcNumber: company.mcNumber?.trim() || '',
     foundedYear: Number(company.foundedYear) > 0 ? Number(company.foundedYear) : 0,

@@ -3,6 +3,7 @@
  */
 
 import { isPlaceholderPhone } from '@/lib/verification/website-contact-scrape';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 import type { SelectedCounty } from '@/lib/suggestions/service-scope';
 import { localStates } from '@/lib/local-movers/states';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
@@ -27,31 +28,30 @@ export function isUsableEmail(value: string | null | undefined): boolean {
 
 export function isUsableWebsite(value: string | null | undefined): boolean {
   if (!isUsableContactValue(value)) return false;
-  try {
-    const withProtocol = /^https?:\/\//i.test(value!)
-      ? value!
-      : `https://${value!.trim()}`;
-    const u = new URL(withProtocol);
-    return u.protocol === 'http:' || u.protocol === 'https:';
-  } catch {
-    return false;
-  }
+  return Boolean(normalizeCompanyWebsiteUrl(value));
 }
 
 /**
  * Prefer existing good data over empty/placeholder/failed incoming values.
  * Never overwrites a valid phone with 555, empty, or failed scrape.
+ * Website values are always returned in cleaned form (no UTM / tracking query).
  */
 export function preferGoodContactField(
   existing: string | null | undefined,
   incoming: string | null | undefined,
   kind: 'phone' | 'email' | 'website' | 'text' = 'text'
 ): string | null {
+  if (kind === 'website') {
+    return (
+      normalizeCompanyWebsiteUrl(existing) ||
+      normalizeCompanyWebsiteUrl(incoming) ||
+      null
+    );
+  }
   const usable = (v: string | null | undefined): string | null => {
     if (!v?.trim()) return null;
     if (kind === 'phone' && !isUsablePhone(v)) return null;
     if (kind === 'email' && !isUsableEmail(v)) return null;
-    if (kind === 'website' && !isUsableWebsite(v)) return null;
     if (kind === 'text' && !isUsableContactValue(v)) return null;
     return v.trim();
   };

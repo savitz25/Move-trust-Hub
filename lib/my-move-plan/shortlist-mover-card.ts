@@ -1,3 +1,5 @@
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
+
 /**
  * Self-contained shortlisted mover snapshot for Move Report email + PDF.
  * Enough detail to contact and verify a carrier without opening the website.
@@ -58,7 +60,5 @@ export function telHref(phone: string): string {
 }
 
 export function normalizeWebsiteHref(website: string): string {
-  const w = website.trim();
-  if (!w) return w;
-  return w.startsWith('http') ? w : `https://${w}`;
+  return normalizeCompanyWebsiteUrl(website) || website.trim();
 }

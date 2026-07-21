@@ -34,6 +34,7 @@ import {
   preferExistingContactField,
   resolveCompanyContact,
 } from '../lib/suggestions/resolve-company-contact';
+import { preferGoodContactField } from '../lib/suggestions/onboarding-guards';
 import {
   parseGoogleData,
   parsePublicScrapeData,
@@ -463,7 +464,8 @@ async function main() {
 
       const nextPhone = preferExistingContactField(row.phone, contact.phone);
       const nextEmail = preferExistingContactField(row.email, contact.email);
-      const nextWebsite = preferExistingContactField(row.website, contact.website);
+      // Always store cleaned websites (strip UTM / tracking query from Places URLs).
+      const nextWebsite = preferGoodContactField(row.website, contact.website, 'website');
       const nextAddress = preferExistingContactField(
         row.physical_address,
         contact.address

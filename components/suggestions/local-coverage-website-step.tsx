@@ -9,6 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 
 type Props = {
   /** Pre-fill from Google Places when available */
@@ -53,13 +54,16 @@ export function LocalCoverageWebsiteStep({
   preferredStateCode = null,
   disabled = false,
 }: Props) {
-  const [websiteUrl, setWebsiteUrl] = useState(defaultWebsiteUrl?.trim() ?? '');
+  const [websiteUrl, setWebsiteUrl] = useState(
+    () => normalizeCompanyWebsiteUrl(defaultWebsiteUrl) || defaultWebsiteUrl?.trim() || ''
+  );
   const [scanError, setScanError] = useState<string | null>(null);
   const [scanNote, setScanNote] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
 
   useEffect(() => {
-    const next = defaultWebsiteUrl?.trim() ?? '';
+    const next =
+      normalizeCompanyWebsiteUrl(defaultWebsiteUrl) || defaultWebsiteUrl?.trim() || '';
     if (next && !websiteUrl) {
       setWebsiteUrl(next);
       onWebsiteUrlChange(next);
@@ -75,10 +79,16 @@ export function LocalCoverageWebsiteStep({
   }
 
   function handleScan() {
-    const url = websiteUrl.trim();
-    if (!url) {
+    const cleaned =
+      normalizeCompanyWebsiteUrl(websiteUrl) || websiteUrl.trim();
+    if (!cleaned) {
       setScanError('Enter a website URL first, then scan for coverage and contact details.');
       return;
+    }
+    // Reflect cleaned URL in the field so the user sees (and can edit) the canonical form.
+    if (cleaned !== websiteUrl.trim()) {
+      setWebsiteUrl(cleaned);
+      onWebsiteUrlChange(cleaned);
     }
 
     startTransition(async () => {
@@ -87,11 +97,11 @@ export function LocalCoverageWebsiteStep({
 
       const [coverageRes, contactRes] = await Promise.all([
         scrapeWebsiteCoverageForOnboarding({
-          websiteUrl: url,
+          websiteUrl: cleaned,
           consentGiven: true,
           preferredStateCode,
         }),
-        scrapeWebsiteContactForOnboarding({ websiteUrl: url }),
+        scrapeWebsiteContactForOnboarding({ websiteUrl: cleaned }),
       ]);
 
       if (coverageRes.success && coverageRes.coverage) {

@@ -21,6 +21,7 @@ import {
   preferExistingContactField,
   resolveCompanyContact,
 } from '../lib/suggestions/resolve-company-contact';
+import { preferGoodContactField } from '../lib/suggestions/onboarding-guards';
 import {
   parseGoogleData,
   parseVerificationSources,
@@ -216,7 +217,7 @@ async function main() {
 
       const nextPhone = preferExistingContactField(row.phone, resolved.phone);
       const nextEmail = preferExistingContactField(row.email, resolved.email);
-      const nextWebsite = preferExistingContactField(row.website, resolved.website);
+      const nextWebsite = preferGoodContactField(row.website, resolved.website, 'website');
       const nextAddress = preferExistingContactField(
         row.physical_address,
         resolved.address

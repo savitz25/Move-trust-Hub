@@ -8,6 +8,7 @@ import {
   scoreGooglePlaceMatch,
   type GooglePlacesQueryVariant,
 } from '@/lib/verification/google-places-name-queries';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 import { logger } from '@/lib/logging/logger';
 
 const SEARCH_FIELD_MASK = [
@@ -110,7 +111,8 @@ function mapPlaceToGoogleData(
     rating: place.rating ?? null,
     review_count: place.userRatingCount ?? null,
     formatted_address: place.formattedAddress ?? null,
-    website_url: place.websiteUri?.trim() || null,
+    // Places often returns city landings + UTM spam — store origin only.
+    website_url: normalizeCompanyWebsiteUrl(place.websiteUri, { preferOrigin: true }),
     phone,
     review_snippets: snippets.filter((s) => s.text.length > 0),
     last_fetched: now,

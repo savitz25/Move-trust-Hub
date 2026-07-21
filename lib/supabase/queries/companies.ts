@@ -21,6 +21,7 @@ import {
 } from '@/lib/verification/resolve-company-row';
 import { extractFmcsaFieldsFromRow } from '@/lib/fmcsa/company-from-row';
 import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 import type { Company } from '@/types';
 import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload';
 
@@ -166,10 +167,11 @@ function mapRow(row: Record<string, unknown>): Company {
     (typeof row.phone === 'string' ? row.phone.trim() : '') ||
     googleFromSources?.phone ||
     null;
-  const websiteResolved =
+  const websiteRaw =
     (typeof row.website === 'string' ? row.website.trim() : '') ||
     googleFromSources?.website_url?.trim() ||
     '';
+  const websiteResolved = normalizeCompanyWebsiteUrl(websiteRaw) || websiteRaw;
 
   return normalizeCompanyForDisplay({
     id: row.id as string,

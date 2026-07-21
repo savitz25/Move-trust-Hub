@@ -32,6 +32,7 @@ import {
   PRIMARY_ADMIN_ONBOARDING_EMAIL,
 } from '@/lib/suggestions/trusted-emails';
 import { US_STATES } from '@/lib/verify-dot/us-states';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 import { toast } from 'sonner';
 
 type SubmitSuccessState = {
@@ -203,7 +204,10 @@ export function SuggestCompanyModal({
     if (stateCode.length === 2) setLocalState(stateCode);
     const ph = fmcsa.phone?.trim() || preview.google?.phone?.trim() || '';
     if (ph) setCompanyPhone(ph);
-    const site = preview.google?.website_url?.trim() || '';
+    const site =
+      normalizeCompanyWebsiteUrl(preview.google?.website_url) ||
+      preview.google?.website_url?.trim() ||
+      '';
     if (site) setWebsiteUrl(site);
     // Keep full multi-source preview (FMCSA contact + Google) for local path.
     setActivePreview(preview);
@@ -231,7 +235,10 @@ export function SuggestCompanyModal({
     setAuthorityHandoffMessage(null);
     setActivePreview(preview);
     onEnrichedPreviewChange?.(preview);
-    const site = preview.google?.website_url?.trim() || '';
+    const site =
+      normalizeCompanyWebsiteUrl(preview.google?.website_url) ||
+      preview.google?.website_url?.trim() ||
+      '';
     if (site) setWebsiteUrl(site);
     const ph =
       preview.google?.phone?.trim() ||
@@ -263,7 +270,10 @@ export function SuggestCompanyModal({
       };
       setActivePreview(merged);
       onEnrichedPreviewChange?.(merged);
-      const googleSite = merged.google?.website_url?.trim() ?? '';
+      const googleSite =
+        normalizeCompanyWebsiteUrl(merged.google?.website_url) ||
+        merged.google?.website_url?.trim() ||
+        '';
       if (googleSite) {
         setWebsiteUrl(googleSite);
       }

@@ -9,6 +9,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 
 type Props = {
   defaultWebsiteUrl?: string | null;
@@ -49,13 +50,16 @@ export function OnboardingCoverageConsent({
   disabled = false,
 }: Props) {
   const [consent, setConsent] = useState(false);
-  const [websiteUrl, setWebsiteUrl] = useState(defaultWebsiteUrl?.trim() ?? '');
+  const [websiteUrl, setWebsiteUrl] = useState(
+    () => normalizeCompanyWebsiteUrl(defaultWebsiteUrl) || defaultWebsiteUrl?.trim() || ''
+  );
   const [scanError, setScanError] = useState<string | null>(null);
   const [scanNote, setScanNote] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
 
   useEffect(() => {
-    const next = defaultWebsiteUrl?.trim() ?? '';
+    const next =
+      normalizeCompanyWebsiteUrl(defaultWebsiteUrl) || defaultWebsiteUrl?.trim() || '';
     if (next && !websiteUrl) {
       setWebsiteUrl(next);
       onWebsiteUrlChange(next);
@@ -79,7 +83,13 @@ export function OnboardingCoverageConsent({
   }
 
   function handleScan() {
-    if (!websiteUrl.trim()) return;
+    const cleaned =
+      normalizeCompanyWebsiteUrl(websiteUrl) || websiteUrl.trim();
+    if (!cleaned) return;
+    if (cleaned !== websiteUrl.trim()) {
+      setWebsiteUrl(cleaned);
+      onWebsiteUrlChange(cleaned);
+    }
 
     startTransition(async () => {
       setScanError(null);
@@ -88,12 +98,12 @@ export function OnboardingCoverageConsent({
       // Contact scrape always runs when user scans (consent via action).
       // Coverage still requires explicit checkbox for interstate destination expansion.
       const contactPromise = scrapeWebsiteContactForOnboarding({
-        websiteUrl: websiteUrl.trim(),
+        websiteUrl: cleaned,
       });
 
       const coveragePromise = consent
         ? scrapeWebsiteCoverageForOnboarding({
-            websiteUrl: websiteUrl.trim(),
+            websiteUrl: cleaned,
             consentGiven: true,
             preferredStateCode,
           })

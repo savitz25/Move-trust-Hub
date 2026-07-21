@@ -2,6 +2,10 @@ import type { ReactNode } from 'react';
 import { Building2, Globe, Mail, MapPin, Phone } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Company } from '@/types';
+import {
+  formatWebsiteDisplayLabel,
+  normalizeCompanyWebsiteUrl,
+} from '@/lib/verification/normalize-website-url';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -29,16 +33,11 @@ function telHref(phone: string): string {
 }
 
 function websiteHref(website: string): string {
-  const w = website.trim();
-  if (!w) return w;
-  return /^https?:\/\//i.test(w) ? w : `https://${w}`;
+  return normalizeCompanyWebsiteUrl(website) || website.trim();
 }
 
 function websiteLabel(website: string): string {
-  return website
-    .trim()
-    .replace(/^https?:\/\//i, '')
-    .replace(/\/$/, '');
+  return formatWebsiteDisplayLabel(website);
 }
 
 /**

@@ -4,6 +4,7 @@ import {
   normalizePhoneDisplay,
   scrapeWebsiteContact,
 } from '@/lib/verification/website-contact-scrape';
+import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 import { preferGoodContactField } from '@/lib/suggestions/onboarding-guards';
 import { logger } from '@/lib/logging/logger';
 
@@ -36,16 +37,7 @@ function cleanEmail(raw?: string | null): string | null {
 }
 
 function cleanWebsite(raw?: string | null): string | null {
-  if (!raw?.trim()) return null;
-  const t = raw.trim();
-  try {
-    const withProtocol = /^https?:\/\//i.test(t) ? t : `https://${t}`;
-    const u = new URL(withProtocol);
-    if (!['http:', 'https:'].includes(u.protocol)) return null;
-    return u.toString().replace(/\/$/, '').slice(0, 300);
-  } catch {
-    return null;
-  }
+  return normalizeCompanyWebsiteUrl(raw);
 }
 
 function cleanAddress(raw?: string | null): string | null {
