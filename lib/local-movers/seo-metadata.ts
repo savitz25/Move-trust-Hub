@@ -4,6 +4,7 @@ import {
   type CountyIndexDecision,
 } from '@/lib/local-movers/county-indexability';
 import { buildCountyPageTitle } from '@/lib/local-movers/county-display-copy';
+import { getCountyIntelligencePack } from '@/lib/local-movers/county-intelligence/registry';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import {
   buildCountyDescription,
@@ -25,8 +26,13 @@ export function buildCountyPageMetadata(
   path: string,
   indexDecision?: CountyIndexDecision
 ): Metadata {
-  const title = buildCountyPageTitle(county, getSeoYear());
-  const description = buildCountyDescription(county, stateName, movers.length);
+  const intelligence = getCountyIntelligencePack(county.stateSlug, county.slug);
+  const title = intelligence?.h1
+    ? `${intelligence.h1} | ${getSeoYear()}`
+    : buildCountyPageTitle(county, getSeoYear());
+  const descriptionFinal = intelligence
+    ? `Moving in ${county.name} County, ${stateName}? Zone-by-zone access tips, cost drivers, seasonal timing, parking/COI notes, and ${movers.length || 'verified'} movers — the ${intelligence.hubTitle}.`
+    : buildCountyDescription(county, stateName, movers.length);
   const url = `${SITE_URL}${path}`;
   const documentTitle = formatDocumentTitle(title);
   const resolvedIndexDecision =
@@ -35,10 +41,14 @@ export function buildCountyPageMetadata(
 
   return {
     title: absoluteDocumentTitle(title),
-    description,
+    description: descriptionFinal,
     alternates: { canonical: url },
-    openGraph: buildOpenGraph({ title: documentTitle, description, url }),
-    twitter: buildTwitter({ title: documentTitle, description }),
+    openGraph: buildOpenGraph({
+      title: documentTitle,
+      description: descriptionFinal,
+      url,
+    }),
+    twitter: buildTwitter({ title: documentTitle, description: descriptionFinal }),
     robots: shouldIndex
       ? { index: true, follow: true }
       : { index: false, follow: true },
