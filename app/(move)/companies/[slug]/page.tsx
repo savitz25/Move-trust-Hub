@@ -27,6 +27,7 @@ import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
 
 import { directoryVerifiedLabel } from '@/lib/trust/company-display-policy';
 import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
+import { CompanyContactCard } from '@/components/company/company-contact-card';
 import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
 import { LicenseMetadataDescription } from '@/components/trust/license-display';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
@@ -186,6 +187,18 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
       />
 
       <CompanyProfileStats company={company} />
+
+      <div className="mb-8 grid gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-1">
+          <CompanyContactCard company={company} />
+        </div>
+        <div className="lg:col-span-2 flex flex-col justify-center text-sm text-muted-foreground">
+          <p className="leading-relaxed">
+            Reach this mover using the contact details on the left. Licensing and safety details are
+            in the section below — always confirm USDOT authority on FMCSA before you book.
+          </p>
+        </div>
+      </div>
 
       <CompanyProfileReviewSources company={company} googleData={company.googleData} />
 

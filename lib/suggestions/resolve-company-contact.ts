@@ -1,5 +1,3 @@
-import 'server-only';
-
 import type { WebsiteContactData } from '@/lib/verification/website-contact-scrape';
 import {
   normalizePhoneDisplay,
@@ -11,10 +9,13 @@ export type ResolvedCompanyContact = {
   phone: string | null;
   email: string | null;
   website: string | null;
+  /** Best physical / street-style address */
+  address: string | null;
   sources: {
     phone: string | null;
     email: string | null;
     website: string | null;
+    address: string | null;
   };
   websiteContact: WebsiteContactData | null;
 };
@@ -44,20 +45,44 @@ function cleanWebsite(raw?: string | null): string | null {
   }
 }
 
+function cleanAddress(raw?: string | null): string | null {
+  if (!raw?.trim()) return null;
+  return raw.trim().replace(/\s+/g, ' ').slice(0, 400);
+}
+
+function firstFilled(
+  candidates: Array<{ value: string | null; source: string }>
+): { value: string | null; source: string | null } {
+  for (const c of candidates) {
+    if (c.value) return { value: c.value, source: c.source };
+  }
+  return { value: null, source: null };
+}
+
 /**
- * Cascade contact fields for onboarding:
- * FMCSA → Google Places → user-provided → website scrape (phone/email).
- * Website is taken from Google / user / scrape URL.
+ * Cascade contact fields for onboarding / backfill:
+ * Address: FMCSA physical → Google formatted → headquarters / user
+ * Phone: FMCSA → Google → user → website scrape
+ * Email: user → website scrape
+ * Website: user → Google → scrape URL
+ *
+ * Never returns empty strings; null when unknown.
+ * Skips network scrape when phone + email already resolved (unless forceScrape).
  */
 export async function resolveCompanyContact(input: {
   fmcsaPhone?: string | null;
+  fmcsaAddress?: string | null;
   googlePhone?: string | null;
   googleWebsite?: string | null;
+  googleAddress?: string | null;
   userPhone?: string | null;
   userEmail?: string | null;
   userWebsite?: string | null;
-  /** When false, skip network scrape (still merges non-website sources). */
+  userAddress?: string | null;
+  headquarters?: string | null;
+  /** When false, skip network scrape. Default true if phone or email still missing. */
   scrapeWebsite?: boolean;
+  forceScrape?: boolean;
   context?: string;
 }): Promise<ResolvedCompanyContact> {
   const website =
@@ -65,8 +90,23 @@ export async function resolveCompanyContact(input: {
     cleanWebsite(input.googleWebsite) ||
     null;
 
+  const phonePre = firstFilled([
+    { value: cleanPhone(input.fmcsaPhone), source: 'fmcsa' },
+    { value: cleanPhone(input.googlePhone), source: 'google' },
+    { value: cleanPhone(input.userPhone), source: 'user' },
+  ]);
+  const emailPre = firstFilled([
+    { value: cleanEmail(input.userEmail), source: 'user' },
+  ]);
+
+  const needsScrape =
+    input.forceScrape === true ||
+    (input.scrapeWebsite !== false &&
+      Boolean(website) &&
+      (!phonePre.value || !emailPre.value));
+
   let websiteContact: WebsiteContactData | null = null;
-  if (input.scrapeWebsite !== false && website) {
+  if (needsScrape && website) {
     try {
       websiteContact = await scrapeWebsiteContact({ websiteUrl: website });
       logger.info('contact.website_scrape', {
@@ -85,37 +125,22 @@ export async function resolveCompanyContact(input: {
     }
   }
 
-  // Phone: FMCSA → Google → user → website
-  const phoneCandidates: Array<{ value: string | null; source: string }> = [
-    { value: cleanPhone(input.fmcsaPhone), source: 'fmcsa' },
-    { value: cleanPhone(input.googlePhone), source: 'google' },
-    { value: cleanPhone(input.userPhone), source: 'user' },
+  const phone = firstFilled([
+    { value: phonePre.value, source: phonePre.source ?? 'user' },
     { value: cleanPhone(websiteContact?.phone), source: 'website' },
-  ];
-  let phone: string | null = null;
-  let phoneSource: string | null = null;
-  for (const c of phoneCandidates) {
-    if (c.value) {
-      phone = c.value;
-      phoneSource = c.source;
-      break;
-    }
-  }
+  ]);
 
-  // Email: user → website (FMCSA/Google rarely provide business email)
-  const emailCandidates: Array<{ value: string | null; source: string }> = [
-    { value: cleanEmail(input.userEmail), source: 'user' },
+  const email = firstFilled([
+    { value: emailPre.value, source: emailPre.source ?? 'user' },
     { value: cleanEmail(websiteContact?.email), source: 'website' },
-  ];
-  let email: string | null = null;
-  let emailSource: string | null = null;
-  for (const c of emailCandidates) {
-    if (c.value) {
-      email = c.value;
-      emailSource = c.source;
-      break;
-    }
-  }
+  ]);
+
+  const address = firstFilled([
+    { value: cleanAddress(input.fmcsaAddress), source: 'fmcsa' },
+    { value: cleanAddress(input.googleAddress), source: 'google' },
+    { value: cleanAddress(input.userAddress), source: 'user' },
+    { value: cleanAddress(input.headquarters), source: 'headquarters' },
+  ]);
 
   const websiteSource = website
     ? input.userWebsite?.trim()
@@ -126,14 +151,26 @@ export async function resolveCompanyContact(input: {
     : null;
 
   return {
-    phone,
-    email,
+    phone: phone.value,
+    email: email.value,
     website,
+    address: address.value,
     sources: {
-      phone: phoneSource,
-      email: emailSource,
+      phone: phone.source,
+      email: email.source,
       website: websiteSource,
+      address: address.source,
     },
     websiteContact,
   };
+}
+
+/** Prefer non-empty existing over empty incoming (safe backfill merge). */
+export function preferExistingContactField(
+  existing: string | null | undefined,
+  incoming: string | null | undefined
+): string | null {
+  const e = existing?.trim() || null;
+  const i = incoming?.trim() || null;
+  return e || i || null;
 }

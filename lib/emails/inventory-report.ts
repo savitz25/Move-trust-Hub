@@ -199,7 +199,12 @@ function buildShortlistMoverCardsHtml(movers: ShortlistMoverCard[]): string {
     .map((m, idx) => {
       const detailRows: string[] = [];
 
-      // Contact — clickable phone / email first
+      // Core contact block: address → phone → email → website (all clickable where possible)
+      if (m.address != null && String(m.address).trim()) {
+        detailRows.push(
+          moverDetailRow('Address', escapeHtml(String(m.address).trim()))
+        );
+      }
       if (m.phone != null && String(m.phone).trim()) {
         const phone = String(m.phone).trim();
         detailRows.push(
@@ -226,11 +231,6 @@ function buildShortlistMoverCardsHtml(movers: ShortlistMoverCard[]): string {
             'Website',
             `<a href="${escapeHtml(href)}" style="color:#0077D4;text-decoration:none;font-weight:600;">${escapeHtml(website.replace(/^https?:\/\//i, ''))}</a>`
           )
-        );
-      }
-      if (m.address != null && String(m.address).trim()) {
-        detailRows.push(
-          moverDetailRow('Address', escapeHtml(String(m.address).trim()))
         );
       }
 

@@ -151,21 +151,28 @@ export async function approveSuggestionToCompany(
     (suggestion as { contact_email?: string | null }).contact_email?.trim() || null;
   const resolvedContact = await resolveCompanyContact({
     fmcsaPhone: contactFromSnapshot.phone || suggestion.phone,
+    fmcsaAddress: contactFromSnapshot.physicalAddress,
     googlePhone: googleData?.phone,
     googleWebsite: googleData?.website_url,
+    googleAddress: googleData?.formatted_address,
     userPhone: suggestion.phone,
     userEmail: suggestionEmail,
     userWebsite:
       websiteCoverage?.websiteUrl ||
       googleData?.website_url ||
       null,
-    // Scrape when we still lack phone or email and have a website to read.
+    headquarters: headquarters || suggestion.headquarters,
     scrapeWebsite: true,
     context: 'approve_publish',
   });
   const phone = resolvedContact.phone;
   const contactEmail = resolvedContact.email;
   const websiteUrl = resolvedContact.website || '';
+  const physicalAddress =
+    resolvedContact.address ||
+    contactFromSnapshot.physicalAddress ||
+    headquarters ||
+    null;
 
   const verificationSources = buildVerificationSourcesFromOnboarding({
     fmcsaSnapshot: snapshot,
@@ -209,9 +216,8 @@ export async function approveSuggestionToCompany(
     description:
       suggestion.details ||
       `${displayName} was added to Move Trust Hub through our multi-source onboarding process. FMCSA licensing is primary; Google and public ratings are supplemental.`,
-    headquarters,
-    physical_address:
-      contactFromSnapshot.physicalAddress || headquarters || null,
+    headquarters: physicalAddress || headquarters,
+    physical_address: physicalAddress,
     phone,
     email: contactEmail,
     website: websiteUrl,

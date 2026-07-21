@@ -99,20 +99,23 @@ function companyToShortlistCard(
   fmcsaExtras?: { phone?: string | null }
 ): ShortlistMoverCard {
   const google = company.googleData;
+  // Prefer persisted company columns (filled by onboarding cascade), then enrichment.
   const phone =
+    nonEmptyString(company.phone) ||
     phoneFromGoogleData(google) ||
     nonEmptyString(fmcsaExtras?.phone) ||
     null;
   const address =
+    nonEmptyString(company.physicalAddress) ||
     nonEmptyString(google?.formatted_address) ||
     nonEmptyString(company.headquarters) ||
     null;
   const website =
     nonEmptyString(company.website) || nonEmptyString(google?.website_url) || null;
 
-  // Email is rarely in directory data; still surface if present on enrichment blobs
   const googleRec = google as Record<string, unknown> | null | undefined;
   const email =
+    emailFromUnknown(company.email) ||
     emailFromUnknown(googleRec?.email) ||
     emailFromUnknown(
       googleRec?.raw_response && typeof googleRec.raw_response === 'object'

@@ -1,5 +1,3 @@
-import 'server-only';
-
 import {
   SCRAPE_TIMEOUT_MS,
   SCRAPE_USER_AGENT,
