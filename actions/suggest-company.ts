@@ -190,13 +190,13 @@ export async function scrapeWebsiteContactForOnboarding(input: {
 
 export async function getSuggestionSubmitterDefaults(): Promise<SuggestionSubmitterDefaults> {
   const defaults = getAdminSubmitterDefaults();
-  // Admin session → prefill + trusted. Email-only trust is applied at submit time.
+  // Prefill only for logged-in admin sessions. Email-based trust applies at submit
+  // when the form email matches a configured admin address (e.g. info@movetrusthub.com).
   const admin = await isAdminSession();
-  const trusted = admin || (await isTrustedCompanySubmitter(defaults.email));
   return {
-    isTrustedSubmitter: trusted,
-    suggestedByName: admin || trusted ? defaults.name : '',
-    suggestedByEmail: admin || trusted ? defaults.email : '',
+    isTrustedSubmitter: admin,
+    suggestedByName: admin ? defaults.name : '',
+    suggestedByEmail: admin ? defaults.email : '',
   };
 }
 
