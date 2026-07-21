@@ -7,10 +7,7 @@ import { checkSuggestionDuplicate } from '@/lib/suggestions/duplicates';
 import { getAdminSubmitterDefaults } from '@/lib/admin/submitter-defaults';
 import { approveAndPublishSuggestion } from '@/lib/suggestions/auto-approve';
 import { checkSuggestionRateLimit } from '@/lib/suggestions/rate-limit';
-import {
-  isTrustedCompanySubmitter,
-  resolveTrustedSubmitter,
-} from '@/lib/suggestions/trusted-submitter';
+import { resolveTrustedSubmitter } from '@/lib/suggestions/trusted-submitter';
 import { isAdminSession } from '@/lib/admin/auth';
 import {
   lookupFmcsaForSuggestion,
