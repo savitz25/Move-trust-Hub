@@ -36,6 +36,8 @@ export const utahCountyOverrides: Partial<
 };
 
 export function applyUtahCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'utah') return county;
   const override = utahCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

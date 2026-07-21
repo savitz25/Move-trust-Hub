@@ -62,6 +62,8 @@ export const westVirginiaCountyOverrides: Partial<
 };
 
 export function applyWestVirginiaCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'west-virginia') return county;
   const override = westVirginiaCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

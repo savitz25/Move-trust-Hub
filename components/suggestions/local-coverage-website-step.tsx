@@ -21,8 +21,21 @@ type Props = {
   email?: string;
   onPhoneChange?: (phone: string) => void;
   onEmailChange?: (email: string) => void;
+  /** Constrain coverage to this state (e.g. OR for local funnel) */
+  preferredStateCode?: string | null;
   disabled?: boolean;
 };
+
+function isEmptyOrPlaceholderPhone(value: string | undefined): boolean {
+  if (!value?.trim()) return true;
+  const digits = value.replace(/\D/g, '');
+  let d = digits;
+  if (d.length === 11 && d.startsWith('1')) d = d.slice(1);
+  if (d.length !== 10) return false;
+  if (/^555/.test(d)) return true;
+  if (/^(\d)\1{9}$/.test(d)) return true;
+  return false;
+}
 
 /**
  * Website field + coverage + contact scrape for Intrastate / Local onboarding.
@@ -37,6 +50,7 @@ export function LocalCoverageWebsiteStep({
   email = '',
   onPhoneChange,
   onEmailChange,
+  preferredStateCode = null,
   disabled = false,
 }: Props) {
   const [websiteUrl, setWebsiteUrl] = useState(defaultWebsiteUrl?.trim() ?? '');
@@ -75,6 +89,7 @@ export function LocalCoverageWebsiteStep({
         scrapeWebsiteCoverageForOnboarding({
           websiteUrl: url,
           consentGiven: true,
+          preferredStateCode,
         }),
         scrapeWebsiteContactForOnboarding({ websiteUrl: url }),
       ]);
@@ -85,11 +100,11 @@ export function LocalCoverageWebsiteStep({
         onCoverageChange(coverageRes.coverage);
       }
 
-      if (contactRes.phone && onPhoneChange && !phone.trim()) {
-        onPhoneChange(contactRes.phone);
-      } else if (contactRes.phone && onPhoneChange) {
-        // Prefer website phone only if field empty; still show as note if different
-        onPhoneChange(phone.trim() || contactRes.phone);
+      // Always apply scraped phone when field is empty or still a 555 placeholder
+      if (contactRes.phone && onPhoneChange) {
+        if (isEmptyOrPlaceholderPhone(phone)) {
+          onPhoneChange(contactRes.phone);
+        }
       }
       if (contactRes.email && onEmailChange && !email.trim()) {
         onEmailChange(contactRes.email);
@@ -119,8 +134,14 @@ export function LocalCoverageWebsiteStep({
         (coverageRes.coverage.counties?.length ?? 0) === 0
       ) {
         setScanError(
-          (scanNote ? '' : '') ||
-            'No county-level service areas found. Select counties manually; contact fields were still updated when available.'
+          'No county-level service areas found. Select counties manually; contact fields were still updated when available.'
+        );
+      } else if ((coverageRes.coverage?.counties?.length ?? 0) > 0) {
+        const n = coverageRes.coverage!.counties.length;
+        setScanNote((prev) =>
+          prev
+            ? `${prev} · ${n} count${n === 1 ? 'y' : 'ies'} pre-selected from website cities.`
+            : `${n} count${n === 1 ? 'y' : 'ies'} pre-selected from website cities — adjust below if needed.`
         );
       }
     });

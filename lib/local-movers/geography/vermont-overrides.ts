@@ -21,6 +21,8 @@ export const vermontCountyOverrides: Partial<
 };
 
 export function applyVermontCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'vermont') return county;
   const override = vermontCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

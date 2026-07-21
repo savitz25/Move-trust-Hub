@@ -12,6 +12,8 @@ export const hawaiiCountyOverrides: Partial<
 };
 
 export function applyHawaiiCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'hawaii') return county;
   const override = hawaiiCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

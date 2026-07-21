@@ -603,6 +603,7 @@ export function SuggestCompanyModal({
                       email={companyEmail}
                       onPhoneChange={setCompanyPhone}
                       onEmailChange={setCompanyEmail}
+                      preferredStateCode={localState || null}
                       disabled={pending}
                     />
                     <LocalCountyPicker
@@ -661,6 +662,7 @@ export function SuggestCompanyModal({
                       email={companyEmail}
                       onPhoneChange={setCompanyPhone}
                       onEmailChange={setCompanyEmail}
+                      preferredStateCode={localState || null}
                       disabled={pending}
                     />
                     <LocalCountyPicker
@@ -685,6 +687,10 @@ export function SuggestCompanyModal({
                     email={companyEmail}
                     onPhoneChange={setCompanyPhone}
                     onEmailChange={setCompanyEmail}
+                    preferredStateCode={
+                      activePreview?.fmcsa?.addressState?.trim().toUpperCase().slice(0, 2) ||
+                      null
+                    }
                     disabled={pending}
                   />
                 )}

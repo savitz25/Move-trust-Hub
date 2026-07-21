@@ -21,6 +21,8 @@ export const massachusettsCountyOverrides: Partial<
 };
 
 export function applyMassachusettsCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'massachusetts') return county;
   const override = massachusettsCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

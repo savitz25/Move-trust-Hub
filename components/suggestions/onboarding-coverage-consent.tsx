@@ -20,8 +20,20 @@ type Props = {
   email?: string;
   onPhoneChange?: (phone: string) => void;
   onEmailChange?: (email: string) => void;
+  preferredStateCode?: string | null;
   disabled?: boolean;
 };
+
+function isEmptyOrPlaceholderPhone(value: string | undefined): boolean {
+  if (!value?.trim()) return true;
+  const digits = value.replace(/\D/g, '');
+  let d = digits;
+  if (d.length === 11 && d.startsWith('1')) d = d.slice(1);
+  if (d.length !== 10) return false;
+  if (/^555/.test(d)) return true;
+  if (/^(\d)\1{9}$/.test(d)) return true;
+  return false;
+}
 
 export function OnboardingCoverageConsent({
   defaultWebsiteUrl = '',
@@ -33,6 +45,7 @@ export function OnboardingCoverageConsent({
   email = '',
   onPhoneChange,
   onEmailChange,
+  preferredStateCode = null,
   disabled = false,
 }: Props) {
   const [consent, setConsent] = useState(false);
@@ -82,13 +95,14 @@ export function OnboardingCoverageConsent({
         ? scrapeWebsiteCoverageForOnboarding({
             websiteUrl: websiteUrl.trim(),
             consentGiven: true,
+            preferredStateCode,
           })
         : Promise.resolve(null);
 
       const [contactRes, coverageRes] = await Promise.all([contactPromise, coveragePromise]);
 
-      if (contactRes.phone && onPhoneChange) {
-        onPhoneChange(phone.trim() || contactRes.phone);
+      if (contactRes.phone && onPhoneChange && isEmptyOrPlaceholderPhone(phone)) {
+        onPhoneChange(contactRes.phone);
       }
       if (contactRes.email && onEmailChange) {
         onEmailChange(email.trim() || contactRes.email);

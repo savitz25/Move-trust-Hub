@@ -63,6 +63,8 @@ export const montanaCountyOverrides: Partial<
 };
 
 export function applyMontanaCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'montana') return county;
   const override = montanaCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

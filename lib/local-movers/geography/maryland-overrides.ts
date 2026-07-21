@@ -31,6 +31,8 @@ export const marylandCountyOverrides: Partial<
 };
 
 export function applyMarylandCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'maryland') return county;
   const override = marylandCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

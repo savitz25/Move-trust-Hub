@@ -12,6 +12,8 @@ export const rhodeIslandCountyOverrides: Partial<
 };
 
 export function applyRhodeIslandCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'rhode-island') return county;
   const override = rhodeIslandCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

@@ -30,6 +30,8 @@ export const wyomingCountyOverrides: Partial<
 };
 
 export function applyWyomingCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'wyoming') return county;
   const override = wyomingCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

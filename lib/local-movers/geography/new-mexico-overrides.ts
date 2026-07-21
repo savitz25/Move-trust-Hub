@@ -40,6 +40,8 @@ export const newMexicoCountyOverrides: Partial<
 };
 
 export function applyNewMexicoCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'new-mexico') return county;
   const override = newMexicoCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

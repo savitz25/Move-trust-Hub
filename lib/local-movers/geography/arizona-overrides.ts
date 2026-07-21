@@ -22,6 +22,8 @@ export const arizonaCountyOverrides: Partial<
 };
 
 export function applyArizonaCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'arizona') return county;
   const override = arizonaCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

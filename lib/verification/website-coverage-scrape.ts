@@ -8,16 +8,21 @@ import {
   waitForScrapeSlot,
 } from '@/lib/verification/scrape-rate-limit';
 
-const MAX_PAGES = 2;
+const MAX_PAGES = 4;
 const MAX_HTML_BYTES = 250_000;
 
 const COVERAGE_PATH_HINTS = [
   '/service-area',
   '/service-areas',
-  '/locations',
-  '/coverage',
   '/areas-we-serve',
   '/where-we-serve',
+  '/area',
+  '/areas',
+  '/locations',
+  '/coverage',
+  '/services',
+  '/service',
+  '/faq',
 ];
 
 function normalizeWebsiteUrl(raw: string): string | null {
@@ -36,6 +41,14 @@ function normalizeWebsiteUrl(raw: string): string | null {
 
 function htmlToText(html: string): string {
   return html
+    .replace(/&#(\d+);/g, (_, n) => {
+      const code = Number(n);
+      return Number.isFinite(code) ? String.fromCharCode(code) : ' ';
+    })
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => {
+      const code = parseInt(h, 16);
+      return Number.isFinite(code) ? String.fromCharCode(code) : ' ';
+    })
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ')
@@ -66,7 +79,19 @@ function extractCoverageLinks(html: string, baseUrl: string): string[] {
     }
   }
 
-  return [...links].slice(0, 1);
+  // Prefer dedicated area pages first
+  const ordered = [...links].sort((a, b) => {
+    const score = (u: string) => {
+      const l = u.toLowerCase();
+      if (l.includes('service-area') || l.includes('areas-we-serve')) return 0;
+      if (l.includes('/area')) return 1;
+      if (l.includes('/services')) return 2;
+      if (l.includes('/locations')) return 3;
+      return 4;
+    };
+    return score(a) - score(b);
+  });
+  return ordered.slice(0, 3);
 }
 
 async function fetchWebsiteHtml(url: string): Promise<string | null> {
@@ -97,6 +122,8 @@ async function fetchWebsiteHtml(url: string): Promise<string | null> {
 export async function scrapeWebsiteCoverage(input: {
   websiteUrl: string;
   consentGiven: boolean;
+  /** Constrain cities/counties to this state (onboarding / FMCSA HQ state). */
+  preferredStateCode?: string | null;
 }): Promise<WebsiteCoverageData> {
   const now = new Date().toISOString();
   const websiteUrl = normalizeWebsiteUrl(input.websiteUrl);
@@ -167,11 +194,29 @@ export async function scrapeWebsiteCoverage(input: {
   if (pagesFetched.length < MAX_PAGES) {
     const extraLinks = extractCoverageLinks(homeHtml, websiteUrl);
     for (const link of extraLinks) {
+      if (pagesFetched.length >= MAX_PAGES) break;
+      if (pagesFetched.includes(link)) continue;
       const extraHtml = await fetchWebsiteHtml(link);
       if (!extraHtml) continue;
       pagesFetched.push(link);
       textChunks.push(htmlToText(extraHtml));
-      break;
+    }
+  }
+
+  // Always try common service-area paths even when not linked from the homepage.
+  for (const path of ['/services', '/area', '/service-areas', '/contact']) {
+    if (pagesFetched.length >= MAX_PAGES) break;
+    try {
+      const candidate = new URL(path, websiteUrl).toString().replace(/\/$/, '');
+      if (pagesFetched.some((p) => p.replace(/\/$/, '') === candidate)) continue;
+      const extraHtml = await fetchWebsiteHtml(candidate);
+      if (!extraHtml || extraHtml.length < 800) continue;
+      // Skip soft-404 shells
+      if (/page not found|404|does not exist/i.test(extraHtml.slice(0, 2000))) continue;
+      pagesFetched.push(candidate);
+      textChunks.push(htmlToText(extraHtml));
+    } catch {
+      // ignore
     }
   }
 
@@ -179,6 +224,7 @@ export async function scrapeWebsiteCoverage(input: {
   const parsed = parseCoverageText(combinedText, {
     consentGiven: true,
     websiteUrl,
+    preferredStateCode: input.preferredStateCode,
   });
 
   return {

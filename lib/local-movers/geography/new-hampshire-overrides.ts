@@ -17,6 +17,8 @@ export const newHampshireCountyOverrides: Partial<
 };
 
 export function applyNewHampshireCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'new-hampshire') return county;
   const override = newHampshireCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

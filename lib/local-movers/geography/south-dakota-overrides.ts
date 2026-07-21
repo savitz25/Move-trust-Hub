@@ -73,6 +73,8 @@ export const southDakotaCountyOverrides: Partial<
 };
 
 export function applySouthDakotaCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'south-dakota') return county;
   const override = southDakotaCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

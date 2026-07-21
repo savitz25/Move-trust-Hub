@@ -23,6 +23,8 @@ export const maineCountyOverrides: Partial<
 };
 
 export function applyMaineCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'maine') return county;
   const override = maineCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

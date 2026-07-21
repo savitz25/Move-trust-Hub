@@ -12,6 +12,8 @@ export const alaskaCountyOverrides: Partial<
 };
 
 export function applyAlaskaCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'alaska') return county;
   const override = alaskaCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

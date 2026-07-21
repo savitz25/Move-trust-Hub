@@ -51,6 +51,8 @@ export const idahoCountyOverrides: Partial<
 };
 
 export function applyIdahoCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'idaho') return county;
   const override = idahoCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

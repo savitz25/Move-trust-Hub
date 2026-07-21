@@ -74,6 +74,8 @@ export const pennsylvaniaCountyOverrides: Partial<
 };
 
 export function applyPennsylvaniaCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'pennsylvania') return county;
   const override = pennsylvaniaCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

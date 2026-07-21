@@ -10,6 +10,8 @@ export const delawareCountyOverrides: Partial<
 };
 
 export function applyDelawareCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'delaware') return county;
   const override = delawareCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

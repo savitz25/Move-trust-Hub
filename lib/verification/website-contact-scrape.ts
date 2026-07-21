@@ -5,7 +5,7 @@ import {
 } from '@/lib/verification/scrape-rate-limit';
 
 const MAX_HTML_BYTES = 250_000;
-const MAX_PAGES = 3;
+const MAX_PAGES = 4;
 
 const CONTACT_PATH_HINTS = [
   '/contact',
@@ -15,7 +15,12 @@ const CONTACT_PATH_HINTS = [
   '/locations',
   '/get-a-quote',
   '/quote',
+  '/services',
+  '/area',
 ];
+
+/** Always try these paths (order matters) even when not linked from the homepage. */
+const FORCE_CONTACT_PATHS = ['/contact', '/contact-us', '/about', '/services'];
 
 /** Disposable / junk email local-parts to skip */
 const JUNK_EMAIL_LOCAL = new Set([
@@ -69,17 +74,51 @@ function normalizeWebsiteUrl(raw: string): string | null {
   }
 }
 
-function htmlToText(html: string): string {
+function decodeHtmlEntities(html: string): string {
   return html
+    .replace(/&#(\d+);/g, (_, n) => {
+      const code = Number(n);
+      return Number.isFinite(code) ? String.fromCharCode(code) : ' ';
+    })
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => {
+      const code = parseInt(h, 16);
+      return Number.isFinite(code) ? String.fromCharCode(code) : ' ';
+    })
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&#64;/gi, '@');
+}
+
+function htmlToText(html: string): string {
+  return decodeHtmlEntities(html)
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/&amp;/gi, '&')
-    .replace(/&#64;/gi, '@')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+/** True for fake / form-placeholder numbers that must never win over a real scrape. */
+export function isPlaceholderPhone(value: string | null | undefined): boolean {
+  if (!value?.trim()) return true;
+  const digits = value.replace(/\D/g, '');
+  let d = digits;
+  if (d.length === 11 && d.startsWith('1')) d = d.slice(1);
+  if (d.length !== 10) return false;
+  // 555-0100…555-0199 (NANP fictitious), all-same, 000/111, classic form placeholders
+  if (/^5550[0-1]\d{2}$/.test(d)) return true;
+  if (/^555555\d{4}$/.test(d)) return true;
+  if (/^(\d)\1{9}$/.test(d)) return true;
+  if (d === '1234567890' || d === '0123456789') return true;
+  // Invalid NPA: area code cannot start with 0 or 1
+  if (d[0] === '0' || d[0] === '1') return true;
+  if (d[3] === '0' || d[3] === '1') return true;
+  return false;
 }
 
 function extractContactLinks(html: string, baseUrl: string): string[] {
@@ -100,7 +139,17 @@ function extractContactLinks(html: string, baseUrl: string): string[] {
       // ignore
     }
   }
-  return [...links].slice(0, 2);
+  const ordered = [...links].sort((a, b) => {
+    const rank = (u: string) => {
+      const l = u.toLowerCase();
+      if (l.includes('/contact')) return 0;
+      if (l.includes('/about')) return 1;
+      if (l.includes('/services')) return 2;
+      return 3;
+    };
+    return rank(a) - rank(b);
+  });
+  return ordered.slice(0, 3);
 }
 
 async function fetchWebsiteHtml(url: string): Promise<string | null> {
@@ -152,10 +201,52 @@ function extractEmailsFromText(text: string): string[] {
 }
 
 function extractPhonesFromText(text: string): string[] {
-  // US-centric phone patterns
-  const re =
+  const found: string[] = [];
+
+  // Standard compact US patterns: (541) 900-6565, 541-900-6565, 541.900.6565
+  const compact =
     /(?:\+?1[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)\d{3}[-.\s]?\d{4}\b/g;
-  return text.match(re) ?? [];
+  found.push(...(text.match(compact) ?? []));
+
+  // Spaced / decorative digits used by some themes to defeat scrapers:
+  // "( 5 4 1 ) 9 0 0 - 6 5 6 5"
+  const spaced =
+    /\(\s*\d(?:\s+\d){2}\s*\)\s*\d(?:\s+\d){2}\s*[-–—.]?\s*\d(?:\s+\d){3}/g;
+  for (const m of text.match(spaced) ?? []) {
+    found.push(m);
+  }
+
+  // Phone: … label followed by digits (allows spaced digits between)
+  const labeled =
+    /(?:phone|call|tel|mobile|cell|contact)\s*[:#]?\s*((?:\+?1[\s.-]*)?(?:\(?\d[\d\s().-]{8,}\d))/gi;
+  let lm: RegExpExecArray | null;
+  while ((lm = labeled.exec(text)) !== null) {
+    if (lm[1]) found.push(lm[1]);
+  }
+
+  return found;
+}
+
+function extractPhonesFromJsonLd(html: string): string[] {
+  const found: string[] = [];
+  const re =
+    /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html)) !== null) {
+    const block = m[1] ?? '';
+    const phoneFields = block.match(
+      /"telephone"\s*:\s*"([^"]+)"|"phone"\s*:\s*"([^"]+)"/gi
+    );
+    if (phoneFields) {
+      for (const field of phoneFields) {
+        const val = field.match(/:\s*"([^"]+)"/);
+        if (val?.[1]) found.push(val[1]);
+      }
+    }
+    // Also scan JSON-LD plain text for phone shapes
+    found.push(...extractPhonesFromText(block));
+  }
+  return found;
 }
 
 function isUsableEmail(email: string): boolean {
@@ -202,7 +293,9 @@ export function normalizePhoneDisplay(raw: string): string | null {
     }
     return null;
   }
-  return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+  const formatted = `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+  if (isPlaceholderPhone(formatted)) return null;
+  return formatted;
 }
 
 function pickPrimaryPhone(phones: string[]): string | null {
@@ -210,17 +303,21 @@ function pickPrimaryPhone(phones: string[]): string | null {
     .map((p) => normalizePhoneDisplay(p))
     .filter((p): p is string => Boolean(p));
   const unique = [...new Set(normalized)];
+  // Prefer tel:-sourced / non-555 already filtered; first unique is fine
   return unique[0] ?? null;
 }
 
 function extractContactsFromHtml(html: string): { emails: string[]; phones: string[] } {
+  const decoded = decodeHtmlEntities(html);
+  const text = htmlToText(decoded);
   const emails = [
-    ...extractMailtoEmails(html),
-    ...extractEmailsFromText(htmlToText(html)),
+    ...extractMailtoEmails(decoded),
+    ...extractEmailsFromText(text),
   ];
   const phones = [
-    ...extractTelPhones(html),
-    ...extractPhonesFromText(htmlToText(html)),
+    ...extractTelPhones(decoded),
+    ...extractPhonesFromJsonLd(decoded),
+    ...extractPhonesFromText(text),
   ];
   return { emails, phones };
 }
@@ -275,16 +372,32 @@ export async function scrapeWebsiteContact(input: {
     allPhones.push(...phones);
   }
 
-  const extraLinks = extractContactLinks(homeHtml, websiteUrl);
+  const extraLinks = [
+    ...FORCE_CONTACT_PATHS.map((path) => {
+      try {
+        return new URL(path, websiteUrl).toString().replace(/\/$/, '');
+      } catch {
+        return null;
+      }
+    }).filter((u): u is string => Boolean(u)),
+    ...extractContactLinks(homeHtml, websiteUrl),
+  ];
+
+  const seenLinks = new Set<string>(pagesFetched.map((p) => p.replace(/\/$/, '')));
   for (const link of extraLinks) {
     if (pagesFetched.length >= MAX_PAGES) break;
-    if (pagesFetched.includes(link)) continue;
+    const key = link.replace(/\/$/, '');
+    if (seenLinks.has(key)) continue;
+    seenLinks.add(key);
     const html = await fetchWebsiteHtml(link);
-    if (!html) continue;
+    if (!html || html.length < 500) continue;
+    if (/page not found|404|does not exist/i.test(html.slice(0, 2000))) continue;
     pagesFetched.push(link);
     const { emails, phones } = extractContactsFromHtml(html);
     allEmails.push(...emails);
     allPhones.push(...phones);
+    // Early exit once we have a real phone + email
+    if (pickPrimaryPhone(allPhones) && pickPrimaryEmail(allEmails)) break;
   }
 
   let host: string | null = null;

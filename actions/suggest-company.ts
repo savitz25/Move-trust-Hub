@@ -120,9 +120,15 @@ async function resolveSubmissionCoverage(
 export async function scrapeWebsiteCoverageForOnboarding(input: {
   websiteUrl: string;
   consentGiven: boolean;
+  /** Onboarding state — keeps coverage cities/counties in-state only */
+  preferredStateCode?: string | null;
 }): Promise<ScrapeWebsiteCoverageResult> {
   try {
-    const coverage = await scrapeWebsiteCoverage(input);
+    const coverage = await scrapeWebsiteCoverage({
+      websiteUrl: input.websiteUrl,
+      consentGiven: input.consentGiven,
+      preferredStateCode: input.preferredStateCode,
+    });
     if (coverage.status === 'error') {
       return {
         success: false,

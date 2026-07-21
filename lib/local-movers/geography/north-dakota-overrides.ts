@@ -60,6 +60,8 @@ export const northDakotaCountyOverrides: Partial<
 };
 
 export function applyNorthDakotaCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'north-dakota') return county;
   const override = northDakotaCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

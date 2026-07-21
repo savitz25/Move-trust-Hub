@@ -71,6 +71,8 @@ export const coloradoCountyOverrides: Partial<
 };
 
 export function applyColoradoCountyOverrides(county: LocalCounty): LocalCounty {
+  
+if (county.stateSlug !== 'colorado') return county;
   const override = coloradoCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

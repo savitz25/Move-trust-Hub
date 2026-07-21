@@ -1,5 +1,6 @@
 import type { WebsiteContactData } from '@/lib/verification/website-contact-scrape';
 import {
+  isPlaceholderPhone,
   normalizePhoneDisplay,
   scrapeWebsiteContact,
 } from '@/lib/verification/website-contact-scrape';
@@ -22,7 +23,8 @@ export type ResolvedCompanyContact = {
 
 function cleanPhone(raw?: string | null): string | null {
   if (!raw?.trim()) return null;
-  return normalizePhoneDisplay(raw) ?? raw.trim().slice(0, 40);
+  if (isPlaceholderPhone(raw)) return null;
+  return normalizePhoneDisplay(raw);
 }
 
 function cleanEmail(raw?: string | null): string | null {
