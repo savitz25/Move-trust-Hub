@@ -59,8 +59,60 @@ function htmlToText(html: string): string {
     .replace(/&amp;/gi, '&')
     .replace(/&quot;/gi, '"')
     .replace(/&#39;/gi, "'")
+    .replace(/\bC\s+ounty\b/gi, 'County')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+/**
+ * Surface county names from footer "Moving Areas" lists and /county/ URL slugs.
+ * Scoped to list sections so mega-menus don't invent statewide coverage.
+ */
+function extractCountyHintsFromHtml(html: string): string {
+  const lower = html.toLowerCase();
+  const markers = [
+    'moving areas',
+    'service areas',
+    'counties served',
+    'counties we serve',
+    'areas we serve',
+  ];
+  const chunks: string[] = [];
+  for (const marker of markers) {
+    let from = 0;
+    while (from < lower.length && chunks.length < 6) {
+      const idx = lower.indexOf(marker, from);
+      if (idx < 0) break;
+      chunks.push(html.slice(idx, Math.min(html.length, idx + 4500)));
+      from = idx + marker.length;
+    }
+  }
+  // Footer-only fallback (where Trek keeps Moving Areas)
+  if (!chunks.length && html.length > 80_000) {
+    chunks.push(html.slice(-180_000));
+  }
+  const scope = chunks.join('\n');
+  if (!scope) return '';
+
+  const hints: string[] = [];
+  const hrefRe = /\/county\/(?:movers-)?([a-z0-9-]+?)(?:-movers)?\//gi;
+  let m: RegExpExecArray | null;
+  while ((m = hrefRe.exec(scope)) !== null) {
+    let slug = (m[1] ?? '').replace(/-/g, ' ').trim();
+    // /county/movers-orange-county/ → "orange county" → still ok as "orange county County"
+    slug = slug.replace(/\s+county$/i, '').trim();
+    if (slug.length >= 3 && slug !== 'san francisco') {
+      // broken Trek link pairs SF with San Mateo; skip bare SF slug from that href
+      hints.push(`${slug} County`);
+    }
+  }
+  const labelRe = />([^<]*?County)\s*</gi;
+  while ((m = labelRe.exec(scope)) !== null) {
+    const label = (m[1] ?? '').replace(/\s+/g, ' ').trim();
+    if (label.length >= 6 && label.length <= 50) hints.push(label);
+  }
+  if (!hints.length) return '';
+  return `Moving Areas ${[...new Set(hints)].join(' ')}`;
 }
 
 function extractCoverageLinks(html: string, baseUrl: string): string[] {
@@ -196,7 +248,9 @@ export async function scrapeWebsiteCoverage(input: {
   }
 
   pagesFetched.push(websiteUrl);
+  // Preserve county-list link labels (footer "Moving Areas") and /county/ URL slugs
   textChunks.push(htmlToText(homeHtml));
+  textChunks.push(extractCountyHintsFromHtml(homeHtml));
 
   if (pagesFetched.length < MAX_PAGES) {
     const extraLinks = extractCoverageLinks(homeHtml, websiteUrl);

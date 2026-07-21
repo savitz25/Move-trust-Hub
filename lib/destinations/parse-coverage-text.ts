@@ -177,38 +177,136 @@ function extractCityStatePairs(text: string): ParsedCoverageCity[] {
   return found;
 }
 
+/** Headings that introduce an explicit multi-county service list. */
+const COUNTY_LIST_MARKERS = [
+  'moving areas',
+  'moving area',
+  'service areas',
+  'service area',
+  'areas we serve',
+  'counties we serve',
+  'counties served',
+  'counties & areas',
+  'counties and areas',
+  'coverage areas',
+  'coverage area',
+  'areas served',
+  'cities we serve',
+  'locations we serve',
+  'local service',
+  'neighborhoods we',
+  'we serve',
+];
+
 /**
  * Pull windows of text around service-area language so we don't map every city
  * mentioned site-wide (footer SEO cities, blog posts, etc.).
  */
 function extractServiceAreaWindows(text: string): string {
   const lower = text.toLowerCase();
-  const markers = [
-    'service area',
-    'service areas',
-    'areas we serve',
-    'cities we serve',
-    'locations we serve',
-    'areas served',
-    'we serve',
-    'serving',
-    'coverage area',
-    'local service',
-    'neighborhoods we',
-  ];
   const windows: string[] = [];
-  for (const marker of markers) {
+  for (const marker of COUNTY_LIST_MARKERS) {
     let from = 0;
     while (from < lower.length) {
       const idx = lower.indexOf(marker, from);
       if (idx < 0) break;
-      windows.push(text.slice(Math.max(0, idx - 80), Math.min(text.length, idx + 900)));
+      // County lists in footers can be long (10+ items) — take a wide window
+      windows.push(text.slice(Math.max(0, idx - 40), Math.min(text.length, idx + 2800)));
       from = idx + marker.length;
-      if (windows.length >= 12) break;
+      if (windows.length >= 16) break;
     }
-    if (windows.length >= 12) break;
+    if (windows.length >= 16) break;
   }
   return windows.length ? windows.join('\n') : '';
+}
+
+/**
+ * Common short/alias forms → county name as stored in geography data.
+ * Keys and values are normalizePlace forms (no spaces).
+ */
+const COUNTY_NAME_ALIASES: Record<string, string> = {
+  la: 'losangeles',
+  losangeles: 'losangeles',
+  orange: 'orange',
+  orangecounty: 'orange',
+  socal: 'losangeles',
+  sf: 'sanfrancisco',
+  sanfran: 'sanfrancisco',
+  sanfrancisco: 'sanfrancisco',
+  sdmates: 'sanmateo',
+  sanmateo: 'sanmateo',
+  sbernardino: 'sanbernardino',
+  sanbernardino: 'sanbernardino',
+  santaclara: 'santaclara',
+  siliconvalley: 'santaclara',
+};
+
+/**
+ * Extract an explicit multi-county list from "Moving Areas" / "Service Areas" sections.
+ * High-recall for footer/nav county lists while still state-constrained.
+ */
+export function extractExplicitCountyList(
+  text: string,
+  preferredStateCode?: string | null
+): ParsedCoverageCounty[] {
+  const preferred = preferredStateCode?.trim().toUpperCase() || null;
+  const states = preferred
+    ? localStates.filter((s) => s.code === preferred)
+    : localStates;
+  if (!states.length) return [];
+
+  const windows = extractServiceAreaWindows(text);
+  // Always also scan a dedicated pass for "X County" density (list-like passages)
+  const listPassages = extractCountyListPassages(text);
+  const scoped = [windows, listPassages, text.slice(0, 50_000)].filter(Boolean).join('\n');
+  const haystack = normalizePlace(scoped);
+
+  const found: ParsedCoverageCounty[] = [];
+  const seen = new Set<string>();
+
+  for (const state of states) {
+    for (const county of getCountiesForState(state.slug)) {
+      const countyNorm = normalizePlace(county.name);
+      if (countyNorm.length < 3) continue;
+
+      const patterns = [
+        `${countyNorm} county`,
+        `${countyNorm}county`,
+        // "Orange County" when name is already "Orange"
+        countyNorm.endsWith('county') ? countyNorm : null,
+      ].filter(Boolean) as string[];
+
+      // Aliases pointing at this county
+      for (const [alias, target] of Object.entries(COUNTY_NAME_ALIASES)) {
+        if (target === countyNorm || target === normalizePlace(county.name)) {
+          patterns.push(`${alias} county`, `${alias}county`);
+        }
+      }
+
+      const matched = patterns.some((p) => haystack.includes(p));
+      if (!matched) continue;
+
+      const key = `${state.slug}/${county.slug}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      found.push({
+        stateSlug: state.slug,
+        countySlug: county.slug,
+        label: county.name,
+      });
+    }
+  }
+
+  return found;
+}
+
+/**
+ * Find dense "… County … County …" passages (bullets flattened to text).
+ */
+function extractCountyListPassages(text: string): string {
+  const re = /(?:[A-Za-z.'\-\s]{2,40}\s+County[\s,;/|·•]*){3,}/g;
+  const hits = text.match(re) ?? [];
+  return hits.slice(0, 8).join('\n');
 }
 
 /**
@@ -286,10 +384,14 @@ function extractCounties(
 
   const serviceContext =
     haystack.includes('service area') ||
+    haystack.includes('moving area') ||
     haystack.includes('areas we serve') ||
+    haystack.includes('counties we serve') ||
+    haystack.includes('counties served') ||
     haystack.includes('cities we serve') ||
     haystack.includes('we serve') ||
-    haystack.includes('serving');
+    haystack.includes('serving') ||
+    haystack.includes('coverage area');
 
   if (options?.requireServiceContext && preferred && !serviceContext) {
     return [];
@@ -299,8 +401,9 @@ function extractCounties(
     for (const county of getCountiesForState(state.slug)) {
       const countyNorm = normalizePlace(county.name);
       const withSuffix = `${countyNorm} county`;
-      // Short county names are too noisy (Lee, Lake, Polk, etc.)
-      if (countyNorm.length < 5) continue;
+      // Allow short names (Napa=4) when we have service context; keep min 4 otherwise
+      const minLen = options?.requireServiceContext || serviceContext ? 4 : 5;
+      if (countyNorm.length < minLen) continue;
       if (!haystack.includes(withSuffix)) continue;
       found.push({
         stateSlug: state.slug,
@@ -345,7 +448,8 @@ function dominantMetroSlugs(countySlugs: string[]): Set<string> | null {
 function tightenCountiesForState(
   cities: ParsedCoverageCity[],
   counties: ParsedCoverageCounty[],
-  preferredStateCode: string | null
+  preferredStateCode: string | null,
+  options?: { trustExplicitCountyList?: boolean }
 ): { cities: ParsedCoverageCity[]; counties: ParsedCoverageCounty[] } {
   if (!preferredStateCode) return { cities, counties };
 
@@ -353,11 +457,25 @@ function tightenCountiesForState(
   const fromPairs = cities.flatMap((c) =>
     countyAssignmentsFromParsedCity(c.city, c.stateCode)
   );
-  let merged = mergeCounties(fromPairs, counties);
+  let merged = mergeCounties(
+    // Explicit "Moving Areas" county lists take priority over city-derived alone
+    options?.trustExplicitCountyList ? counties : [],
+    fromPairs,
+    counties
+  );
 
   const preferredSlug = localStates.find((s) => s.code === preferredStateCode)?.slug;
   if (preferredSlug) {
     merged = merged.filter((c) => c.stateSlug === preferredSlug);
+  }
+
+  // When we already have a multi-county explicit list (Moving Areas), keep it intact.
+  if (options?.trustExplicitCountyList && counties.length >= 3) {
+    const MAX_EXPLICIT = 16;
+    return {
+      cities,
+      counties: merged.slice(0, MAX_EXPLICIT),
+    };
   }
 
   // CA only: drop isolated SEO cities in a different metro when a clear hub dominates
@@ -394,10 +512,9 @@ function tightenCountiesForState(
     }
   }
 
-  // Hard cap — local onboarding rarely needs 20 counties from one scan
-  const MAX_COUNTIES = 6;
+  // Hard cap for non-explicit lists
+  const MAX_COUNTIES = 10;
   if (merged.length > MAX_COUNTIES) {
-    // Keep counties that came from the densest cluster of mapped cities
     const counts = new Map<string, number>();
     for (const c of fromPairs) {
       const k = `${c.stateSlug}/${c.countySlug}`;
@@ -527,8 +644,12 @@ export function parseCoverageText(
     };
   }
 
-  const normalized = text.replace(/\s+/g, ' ').trim();
-  if (!normalized) {
+  // Repair broken footer HTML like "San Mateo C ounty" → "San Mateo County"
+  const source = text
+    .replace(/\bC\s+ounty\b/gi, 'County')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!source) {
     return {
       consentGiven: true,
       websiteUrl: options?.websiteUrl ?? null,
@@ -545,8 +666,8 @@ export function parseCoverageText(
     };
   }
 
-  const regions = preferredStateCode ? [] : extractRegions(text);
-  let stateSlugs = extractStateSlugs(text);
+  const regions = preferredStateCode ? [] : extractRegions(source);
+  let stateSlugs = extractStateSlugs(source);
   if (preferredStateCode) {
     const preferred = localStates.find((s) => s.code === preferredStateCode);
     stateSlugs = preferred ? [preferred.slug] : stateSlugs.filter((slug) => {
@@ -557,15 +678,21 @@ export function parseCoverageText(
   }
 
   // When onboarding in a state, prefer service-area windows over whole-page SEO cities.
-  const serviceWindows = preferredStateCode ? extractServiceAreaWindows(text) : '';
-  const scopedText = serviceWindows || text;
+  const serviceWindows = preferredStateCode ? extractServiceAreaWindows(source) : '';
+  const scopedText = serviceWindows || source;
 
-  const pairCitiesAll = extractCityStatePairs(text);
+  // Highest signal: explicit multi-county lists ("Moving Areas", footer county links, etc.)
+  const explicitCountyList = preferredStateCode
+    ? extractExplicitCountyList(source, preferredStateCode)
+    : extractExplicitCountyList(source, null);
+  const trustExplicitCountyList = explicitCountyList.length >= 2;
+
+  const pairCitiesAll = extractCityStatePairs(source);
   const pairCitiesScoped = serviceWindows
     ? extractCityStatePairs(serviceWindows)
     : pairCitiesAll;
 
-  // Explicit City,ST in preferred state is highest signal
+  // Explicit City,ST in preferred state is high signal for cities
   let pairCities = pairCitiesAll.filter((c) =>
     preferredStateCode ? c.stateCode === preferredStateCode : true
   );
@@ -577,10 +704,14 @@ export function parseCoverageText(
     pairCities = pairInWindow;
   }
 
-  // Only fall back to market/seat substring matching when no City,ST pairs found
+  // Only fall back to market/seat substring matching when no City,ST pairs and no county list
   let marketCities: ParsedCoverageCity[] = [];
   let knownInState: ParsedCoverageCity[] = [];
-  if (preferredStateCode && pairCities.length === 0) {
+  if (
+    preferredStateCode &&
+    pairCities.length === 0 &&
+    !trustExplicitCountyList
+  ) {
     marketCities = extractMarketCities(scopedText, preferredStateCode);
     knownInState = extractKnownCitiesInState(scopedText, preferredStateCode);
   }
@@ -590,20 +721,21 @@ export function parseCoverageText(
     cities = cities.filter((c) => c.stateCode === preferredStateCode);
   }
 
-  // Bare "X County" only from service windows when we have a preferred state
+  // Bare "X County" from service windows + explicit list
   let counties = preferredStateCode
-    ? extractCounties(scopedText || text, preferredStateCode, {
-        requireServiceContext: true,
+    ? extractCounties(scopedText || source, preferredStateCode, {
+        requireServiceContext: !trustExplicitCountyList,
       })
-    : extractCounties(text, preferredStateCode);
+    : extractCounties(source, preferredStateCode);
+  counties = mergeCounties(explicitCountyList, counties);
 
-  const officeAddresses = extractOfficeAddresses(text).filter((addr) => {
+  const officeAddresses = extractOfficeAddresses(source).filter((addr) => {
     if (!preferredStateCode) return true;
     const parsed = parseHeadquarters(addr);
     return !parsed.state || parsed.state === preferredStateCode;
   });
 
-  const hasNational = containsNationalLanguage(text);
+  const hasNational = containsNationalLanguage(source);
   const explicitGeoCount =
     stateSlugs.length + cities.length + counties.length + officeAddresses.length + regions.length;
   const isNationalOnly = hasNational && cities.length === 0 && counties.length === 0;
@@ -630,18 +762,23 @@ export function parseCoverageText(
     )]);
   }
 
-  // City → county mapping
+  // City → county mapping (supplement explicit lists; never replace them)
   const fromCities = cities.flatMap((c) =>
     countyAssignmentsFromParsedCity(c.city, c.stateCode)
   );
-  // When we have city→county maps, prefer those over bare county name hits
-  counties =
-    fromCities.length > 0
-      ? mergeCounties(fromCities)
-      : mergeCounties(counties, fromCities);
+  if (trustExplicitCountyList) {
+    // Explicit "Moving Areas" / multi-county list is authoritative
+    counties = mergeCounties(explicitCountyList, fromCities, counties);
+  } else if (fromCities.length > 0) {
+    counties = mergeCounties(fromCities, counties);
+  } else {
+    counties = mergeCounties(counties, fromCities);
+  }
 
   if (preferredStateCode) {
-    const tightened = tightenCountiesForState(cities, counties, preferredStateCode);
+    const tightened = tightenCountiesForState(cities, counties, preferredStateCode, {
+      trustExplicitCountyList,
+    });
     cities = tightened.cities;
     counties = tightened.counties;
   }
@@ -673,6 +810,6 @@ export function parseCoverageText(
     officeAddresses,
     regions: preferredStateCode ? [] : regions,
     pagesFetched: [],
-    rawSnippets: normalized.slice(0, 2000).split(/(?<=\.)\s+/).slice(0, 8),
+    rawSnippets: source.slice(0, 2000).split(/(?<=\.)\s+/).slice(0, 8),
   };
 }

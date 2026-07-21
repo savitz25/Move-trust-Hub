@@ -59,17 +59,28 @@ async function main() {
     cov.counties.every((c) => c.stateSlug === 'california'),
     'all counties California'
   );
-  assert(cov.counties.length <= 6, `county cap ≤6 (got ${cov.counties.length})`);
+  // Trek Moving Areas lists 11 counties — require high recall on the explicit list
+  const expected = [
+    'los-angeles',
+    'orange',
+    'ventura',
+    'riverside',
+    'san-bernardino',
+    'santa-clara',
+    'san-mateo',
+    'sacramento',
+    'napa',
+    'sonoma',
+    'marin',
+  ];
+  const got = new Set(cov.counties.map((c) => c.countySlug));
+  const missing = expected.filter((c) => !got.has(c));
   assert(
-    cov.counties.some((c) => c.countySlug === 'los-angeles'),
-    'includes Los Angeles County'
+    missing.length === 0,
+    `all 11 Moving Areas counties (missing: ${missing.join(', ') || 'none'}; got ${[...got].join(', ')})`
   );
-  assert(
-    !cov.counties.some((c) =>
-      ['napa', 'marin', 'yolo', 'solano', 'sonoma'].includes(c.countySlug)
-    ),
-    'no Northern CA SEO counties'
-  );
+  assert(cov.counties.length >= 11, `at least 11 counties (got ${cov.counties.length})`);
+  assert(cov.counties.length <= 16, `not exploding past list (got ${cov.counties.length})`);
   assert(
     !cov.cities.some((c) => c.stateCode !== 'CA'),
     'no out-of-state cities'
