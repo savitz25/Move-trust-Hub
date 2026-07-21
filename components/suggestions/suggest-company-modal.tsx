@@ -141,6 +141,15 @@ export function SuggestCompanyModal({
     });
   }, [open]);
 
+  // Mirror server trust for known admin email so Local funnel shows "Publish now".
+  useEffect(() => {
+    const email = suggestedByEmail.trim().toLowerCase();
+    if (email === 'info@movetrusthub.com') {
+      setIsTrustedSubmitter(true);
+      if (!suggestedByName.trim()) setSuggestedByName('Michael Henry');
+    }
+  }, [suggestedByEmail, suggestedByName]);
+
   function resetForm() {
     setServiceScope(forceScope ?? (initialCarrierQuery ? 'interstate' : null));
     setActivePreview(null);

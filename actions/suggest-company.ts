@@ -7,7 +7,10 @@ import { checkSuggestionDuplicate } from '@/lib/suggestions/duplicates';
 import { getAdminSubmitterDefaults } from '@/lib/admin/submitter-defaults';
 import { approveAndPublishSuggestion } from '@/lib/suggestions/auto-approve';
 import { checkSuggestionRateLimit } from '@/lib/suggestions/rate-limit';
-import { isTrustedCompanySubmitter } from '@/lib/suggestions/trusted-submitter';
+import {
+  isTrustedCompanySubmitter,
+  resolveTrustedSubmitter,
+} from '@/lib/suggestions/trusted-submitter';
 import { isAdminSession } from '@/lib/admin/auth';
 import {
   lookupFmcsaForSuggestion,
@@ -187,11 +190,13 @@ export async function scrapeWebsiteContactForOnboarding(input: {
 
 export async function getSuggestionSubmitterDefaults(): Promise<SuggestionSubmitterDefaults> {
   const defaults = getAdminSubmitterDefaults();
+  // Admin session → prefill + trusted. Email-only trust is applied at submit time.
   const admin = await isAdminSession();
+  const trusted = admin || (await isTrustedCompanySubmitter(defaults.email));
   return {
-    isTrustedSubmitter: admin,
-    suggestedByName: admin ? defaults.name : '',
-    suggestedByEmail: admin ? defaults.email : '',
+    isTrustedSubmitter: trusted,
+    suggestedByName: admin || trusted ? defaults.name : '',
+    suggestedByEmail: admin || trusted ? defaults.email : '',
   };
 }
 
@@ -412,7 +417,10 @@ export async function submitCompanySuggestion(
 
     const headerStore = await headers();
     const userIp = clientIpFromHeaders(headerStore);
-    const trustedSubmitter = await isTrustedCompanySubmitter();
+    // Same admin privileges for Interstate AND Intrastate: session cookie or
+    // configured admin email (e.g. info@movetrusthub.com).
+    const trust = await resolveTrustedSubmitter(parsed.data.suggestedByEmail);
+    const trustedSubmitter = trust.trusted;
 
     const rateCheck = await checkSuggestionRateLimit({
       ip: userIp,
@@ -584,12 +592,15 @@ export async function submitCompanySuggestion(
       suggestionId: insertResult.id,
       usdot: fmcsa?.usdot,
       serviceScope,
+      isLocal,
       hasFmcsa: Boolean(fmcsa),
       hasGoogle: Boolean(enrichment.google?.status === 'ok'),
       hasPublicScrape: Boolean(enrichment.publicScrape),
       enrichmentStored: insertResult.enrichmentStored,
       trustedDot: true,
       trustedSubmitter,
+      trustedReason: trust.reason,
+      selectedCountyCount: parsed.data.selectedCounties?.length ?? 0,
       coverageStatus: coverage.status,
       coverageNationalOnly: coverage.isNationalOnly,
       coverageSummary: coverage.summary,
@@ -608,6 +619,7 @@ export async function submitCompanySuggestion(
         : fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
     });
 
+    // Admin / trusted: unlimited + skip moderation for both interstate and local funnels.
     if (trustedSubmitter) {
       const { data: suggestionRow, error: fetchError } = await admin
         .from('company_suggestions')
@@ -622,25 +634,73 @@ export async function submitCompanySuggestion(
         };
       }
 
-      const approved = await approveAndPublishSuggestion(suggestionRow, 'admin_direct');
-      if (!approved.ok) {
+      // Ensure scope/counties survive even if DB insert fell back without those columns.
+      const rowForPublish = {
+        ...suggestionRow,
+        service_scope:
+          (suggestionRow as { service_scope?: string | null }).service_scope ?? serviceScope,
+        selected_counties:
+          (suggestionRow as { selected_counties?: unknown }).selected_counties ??
+          parsed.data.selectedCounties ??
+          [],
+      };
+
+      try {
+        const approved = await approveAndPublishSuggestion(
+          rowForPublish as typeof suggestionRow,
+          trust.reason === 'admin_email' ? 'admin_email_direct' : 'admin_direct'
+        );
+        if (!approved.ok) {
+          logger.error('suggestion.admin_publish_failed', {
+            suggestionId: insertResult.id,
+            serviceScope,
+            error: approved.error,
+            trustedReason: trust.reason,
+          });
+          return {
+            success: false,
+            error: approved.error,
+            suggestionId: insertResult.id,
+            profileSlug,
+            pendingReview: true,
+          };
+        }
+
+        logger.info('suggestion.admin_published', {
+          suggestionId: insertResult.id,
+          slug: approved.slug,
+          serviceScope,
+          isLocal,
+          trustedReason: trust.reason,
+          countyCount: parsed.data.selectedCounties?.length ?? 0,
+        });
+
+        return {
+          success: true,
+          suggestionId: insertResult.id,
+          profileSlug: approved.slug,
+          pendingReview: false,
+        };
+      } catch (publishErr) {
+        logger.error('suggestion.admin_publish_exception', {
+          suggestionId: insertResult.id,
+          serviceScope,
+          message: publishErr instanceof Error ? publishErr.message : String(publishErr),
+        });
         return {
           success: false,
-          error: approved.error,
+          error:
+            publishErr instanceof Error
+              ? publishErr.message
+              : 'Admin publish failed. Suggestion is saved for review.',
           suggestionId: insertResult.id,
           profileSlug,
           pendingReview: true,
         };
       }
-
-      return {
-        success: true,
-        suggestionId: insertResult.id,
-        profileSlug: approved.slug,
-        pendingReview: false,
-      };
     }
 
+    // Non-admin: pending moderation (rate limits already applied above).
     return {
       success: true,
       suggestionId: insertResult.id,
