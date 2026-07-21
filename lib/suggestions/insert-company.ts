@@ -61,7 +61,7 @@ function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
     'complaints_last_12m',
     'revocation_date',
   ];
-  const contactCols = ['physical_address', 'phone'];
+  const contactCols = ['physical_address', 'phone', 'email'];
   const scopeCols = ['service_scope', 'coverage_counties'];
 
   const withoutEnrichment = stripKeys(baseRow, enrichmentCols);

@@ -135,6 +135,46 @@ export async function scrapeWebsiteCoverageForOnboarding(input: {
   }
 }
 
+export type ScrapeWebsiteContactResult = {
+  success: boolean;
+  phone?: string | null;
+  email?: string | null;
+  websiteUrl?: string | null;
+  error?: string;
+};
+
+/** Scrape public website for business phone + email (onboarding). */
+export async function scrapeWebsiteContactForOnboarding(input: {
+  websiteUrl: string;
+}): Promise<ScrapeWebsiteContactResult> {
+  try {
+    const { scrapeWebsiteContact } = await import(
+      '@/lib/verification/website-contact-scrape'
+    );
+    const contact = await scrapeWebsiteContact({ websiteUrl: input.websiteUrl });
+    if (contact.status === 'error') {
+      return {
+        success: false,
+        phone: contact.phone,
+        email: contact.email,
+        websiteUrl: contact.websiteUrl,
+        error: contact.error ?? 'Could not read contact details from this website.',
+      };
+    }
+    return {
+      success: true,
+      phone: contact.phone,
+      email: contact.email,
+      websiteUrl: contact.websiteUrl,
+    };
+  } catch (err) {
+    return {
+      success: false,
+      error: err instanceof Error ? err.message : 'Website contact scan failed.',
+    };
+  }
+}
+
 export async function getSuggestionSubmitterDefaults(): Promise<SuggestionSubmitterDefaults> {
   const defaults = getAdminSubmitterDefaults();
   const admin = await isAdminSession();
@@ -407,7 +447,34 @@ export async function submitCompanySuggestion(
       parsed.data.enrichmentSnapshot?.google?.website_url ||
       enrichment.google?.website_url ||
       null;
-    const coverage = await resolveSubmissionCoverage(parsed.data, websiteFallback);
+
+    // Contact cascade: FMCSA → Google → user → website scrape (phone + email).
+    const { resolveCompanyContact } = await import(
+      '@/lib/suggestions/resolve-company-contact'
+    );
+    const resolvedContact = await resolveCompanyContact({
+      fmcsaPhone: fmcsa?.phone,
+      googlePhone: enrichment.google?.phone,
+      googleWebsite: enrichment.google?.website_url,
+      userPhone: parsed.data.phone,
+      userEmail: parsed.data.contactEmail,
+      userWebsite: websiteFallback,
+      scrapeWebsite: Boolean(websiteFallback),
+      context: isLocal ? 'local_onboarding' : 'interstate_onboarding',
+    });
+
+    // Prefer resolved website for coverage scrape URL as well.
+    const coverage = await resolveSubmissionCoverage(
+      {
+        ...parsed.data,
+        websiteUrl: resolvedContact.website || parsed.data.websiteUrl,
+        // Contact scrape implies consent for reading the same public pages.
+        coverageConsent:
+          parsed.data.coverageConsent ||
+          Boolean(resolvedContact.website && isLocal),
+      },
+      resolvedContact.website || websiteFallback
+    );
 
     const duplicateCheck = await checkSuggestionDuplicate({
       name: companyName,
@@ -429,7 +496,12 @@ export async function submitCompanySuggestion(
     const ipHash = userIp ? hashIp(userIp) : null;
 
     const row = buildCompanySuggestionInsertRow({
-      parsed: parsed.data,
+      parsed: {
+        ...parsed.data,
+        phone: resolvedContact.phone ?? parsed.data.phone,
+        contactEmail: resolvedContact.email ?? parsed.data.contactEmail,
+        websiteUrl: resolvedContact.website ?? parsed.data.websiteUrl,
+      },
       companyName,
       fmcsa,
       carrierParsed,
@@ -438,6 +510,8 @@ export async function submitCompanySuggestion(
       emailHash,
       ipHash,
       coverage,
+      resolvedPhone: resolvedContact.phone,
+      resolvedContactEmail: resolvedContact.email,
     });
 
     const insertResult = await insertCompanySuggestion(admin, row);
@@ -458,6 +532,11 @@ export async function submitCompanySuggestion(
       coverageStatus: coverage.status,
       coverageNationalOnly: coverage.isNationalOnly,
       coverageSummary: coverage.summary,
+      hasPhone: Boolean(resolvedContact.phone),
+      hasEmail: Boolean(resolvedContact.email),
+      hasWebsite: Boolean(resolvedContact.website),
+      phoneSource: resolvedContact.sources.phone,
+      emailSource: resolvedContact.sources.email,
     });
 
     const profileSlug = predictCompanyProfileSlug({

@@ -1,8 +1,11 @@
 'use client';
 
 import { useEffect, useState, useTransition } from 'react';
-import { Globe2, Loader2, MapPinned } from 'lucide-react';
-import { scrapeWebsiteCoverageForOnboarding } from '@/actions/suggest-company';
+import { Globe2, Loader2, MapPinned, Phone, Mail } from 'lucide-react';
+import {
+  scrapeWebsiteContactForOnboarding,
+  scrapeWebsiteCoverageForOnboarding,
+} from '@/actions/suggest-company';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
@@ -13,13 +16,16 @@ type Props = {
   coverage: WebsiteCoverageData | null;
   onCoverageChange: (coverage: WebsiteCoverageData | null) => void;
   onWebsiteUrlChange: (url: string) => void;
-  /** Called after a successful scan so parent can pre-select counties */
-  onScanComplete?: (coverage: WebsiteCoverageData) => void;
+  /** Phone / email discovered or edited for company contact */
+  phone?: string;
+  email?: string;
+  onPhoneChange?: (phone: string) => void;
+  onEmailChange?: (email: string) => void;
   disabled?: boolean;
 };
 
 /**
- * Website field + optional coverage scan for Intrastate / Local onboarding.
+ * Website field + coverage + contact scrape for Intrastate / Local onboarding.
  * Never blocks county selection — scan failures still allow manual picks.
  */
 export function LocalCoverageWebsiteStep({
@@ -27,80 +33,112 @@ export function LocalCoverageWebsiteStep({
   coverage,
   onCoverageChange,
   onWebsiteUrlChange,
-  onScanComplete,
+  phone = '',
+  email = '',
+  onPhoneChange,
+  onEmailChange,
   disabled = false,
 }: Props) {
   const [websiteUrl, setWebsiteUrl] = useState(defaultWebsiteUrl?.trim() ?? '');
   const [scanError, setScanError] = useState<string | null>(null);
+  const [scanNote, setScanNote] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
 
-  // Keep field in sync when Google Places returns a website after lookup.
   useEffect(() => {
     const next = defaultWebsiteUrl?.trim() ?? '';
     if (next && !websiteUrl) {
       setWebsiteUrl(next);
       onWebsiteUrlChange(next);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- only seed from Google once available
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultWebsiteUrl]);
 
   function updateWebsiteUrl(next: string) {
     setWebsiteUrl(next);
     onWebsiteUrlChange(next);
     setScanError(null);
+    setScanNote(null);
   }
 
   function handleScan() {
     const url = websiteUrl.trim();
     if (!url) {
-      setScanError('Enter a website URL first, then scan for coverage areas.');
+      setScanError('Enter a website URL first, then scan for coverage and contact details.');
       return;
     }
 
     startTransition(async () => {
       setScanError(null);
-      const res = await scrapeWebsiteCoverageForOnboarding({
-        websiteUrl: url,
-        consentGiven: true,
-      });
+      setScanNote(null);
 
-      if (!res.success || !res.coverage) {
+      const [coverageRes, contactRes] = await Promise.all([
+        scrapeWebsiteCoverageForOnboarding({
+          websiteUrl: url,
+          consentGiven: true,
+        }),
+        scrapeWebsiteContactForOnboarding({ websiteUrl: url }),
+      ]);
+
+      if (coverageRes.success && coverageRes.coverage) {
+        onCoverageChange(coverageRes.coverage);
+      } else if (coverageRes.coverage) {
+        onCoverageChange(coverageRes.coverage);
+      }
+
+      if (contactRes.phone && onPhoneChange && !phone.trim()) {
+        onPhoneChange(contactRes.phone);
+      } else if (contactRes.phone && onPhoneChange) {
+        // Prefer website phone only if field empty; still show as note if different
+        onPhoneChange(phone.trim() || contactRes.phone);
+      }
+      if (contactRes.email && onEmailChange && !email.trim()) {
+        onEmailChange(contactRes.email);
+      } else if (contactRes.email && onEmailChange) {
+        onEmailChange(email.trim() || contactRes.email);
+      }
+
+      const notes: string[] = [];
+      if (contactRes.phone) notes.push(`phone ${contactRes.phone}`);
+      if (contactRes.email) notes.push(`email ${contactRes.email}`);
+      if (notes.length) {
+        setScanNote(`Contact found: ${notes.join(' · ')}. You can edit below.`);
+      }
+
+      if (!coverageRes.success && !contactRes.success) {
         setScanError(
-          res.error ??
-            'Could not read coverage areas from this website. You can still select counties manually below.'
+          coverageRes.error ||
+            contactRes.error ||
+            'Could not read this website. You can still enter contact details and select counties manually.'
         );
-        if (res.coverage) onCoverageChange(res.coverage);
         return;
       }
 
-      onCoverageChange(res.coverage);
-      onScanComplete?.(res.coverage);
-
       if (
-        res.coverage.status === 'ok' &&
-        !res.coverage.isNationalOnly &&
-        (res.coverage.counties?.length ?? 0) === 0 &&
-        (res.coverage.cities?.length ?? 0) === 0
+        coverageRes.coverage?.status === 'ok' &&
+        !coverageRes.coverage.isNationalOnly &&
+        (coverageRes.coverage.counties?.length ?? 0) === 0
       ) {
         setScanError(
-          'No county-level service areas found on the site. Select counties manually below.'
+          (scanNote ? '' : '') ||
+            'No county-level service areas found. Select counties manually; contact fields were still updated when available.'
         );
       }
     });
   }
 
   const countyCount = coverage?.counties?.length ?? 0;
-  const cityCount = coverage?.cities?.length ?? 0;
 
   return (
     <div className="rounded-lg border border-emerald-200/70 bg-emerald-50/40 p-4 space-y-3 dark:border-emerald-900/40 dark:bg-emerald-950/20">
       <div className="flex items-start gap-2">
         <Globe2 className="h-4 w-4 text-emerald-800 dark:text-emerald-300 mt-0.5 shrink-0" />
         <div className="space-y-1 min-w-0">
-          <p className="text-sm font-medium text-foreground">Company website &amp; coverage</p>
+          <p className="text-sm font-medium text-foreground">
+            Website, contact &amp; coverage
+          </p>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Add the mover&apos;s website so we can try to detect service areas and pre-select
-            matching counties. You can always edit the URL and the county list yourself.
+            Add the mover&apos;s website so we can find phone, email, and service areas. Google
+            Places often pre-fills the site — you can edit anything before submitting.
           </p>
         </div>
       </div>
@@ -122,13 +160,42 @@ export function LocalCoverageWebsiteStep({
         />
         {defaultWebsiteUrl?.trim() ? (
           <p className="text-xs text-muted-foreground mt-1">
-            Pre-filled from Google Places when available — paste a different URL if needed.
+            Pre-filled from Google Places when available.
           </p>
-        ) : (
-          <p className="text-xs text-muted-foreground mt-1">
-            Optional. If Google didn&apos;t return a site, paste one to scan for coverage.
-          </p>
-        )}
+        ) : null}
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div>
+          <label htmlFor="local-company-phone" className="text-sm font-medium flex items-center gap-1.5">
+            <Phone className="h-3.5 w-3.5" aria-hidden />
+            Business phone
+          </label>
+          <Input
+            id="local-company-phone"
+            type="tel"
+            value={phone}
+            onChange={(e) => onPhoneChange?.(e.target.value)}
+            placeholder="(555) 555-5555"
+            className="mt-1.5"
+            disabled={disabled || pending}
+          />
+        </div>
+        <div>
+          <label htmlFor="local-company-email" className="text-sm font-medium flex items-center gap-1.5">
+            <Mail className="h-3.5 w-3.5" aria-hidden />
+            Business email
+          </label>
+          <Input
+            id="local-company-email"
+            type="email"
+            value={email}
+            onChange={(e) => onEmailChange?.(e.target.value)}
+            placeholder="info@example.com"
+            className="mt-1.5"
+            disabled={disabled || pending}
+          />
+        </div>
       </div>
 
       <Button
@@ -142,15 +209,21 @@ export function LocalCoverageWebsiteStep({
         {pending ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
-            Scanning website for coverage…
+            Scanning website…
           </>
         ) : (
           <>
             <MapPinned className="h-4 w-4" />
-            Scan website for coverage areas
+            Scan website for contact &amp; coverage
           </>
         )}
       </Button>
+
+      {scanNote ? (
+        <p className="text-xs text-emerald-900 dark:text-emerald-100" role="status">
+          {scanNote}
+        </p>
+      ) : null}
 
       {scanError ? (
         <p className="text-xs text-amber-800 dark:text-amber-200" role="status">
@@ -161,28 +234,19 @@ export function LocalCoverageWebsiteStep({
       {coverage?.status === 'ok' ? (
         <div className="rounded-md border border-primary/20 bg-background p-3 space-y-1">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            Scan results
+            Coverage scan
           </p>
           {coverage.isNationalOnly ? (
             <p className="text-sm text-muted-foreground">
-              The site uses broad/national language. Pick the counties this local mover actually
-              serves below.
+              Broad/national language on the site — pick the counties this local mover serves below.
             </p>
           ) : coverage.summary ? (
             <p className="text-sm text-foreground">{coverage.summary}</p>
           ) : (
             <p className="text-sm text-muted-foreground">
-              Found {countyCount} county match{countyCount === 1 ? '' : 'es'}
-              {cityCount > 0 ? ` and ${cityCount} city mention${cityCount === 1 ? '' : 's'}` : ''}.
-              Matching counties in this state are highlighted for review.
+              Found {countyCount} county match{countyCount === 1 ? '' : 'es'} for pre-selection.
             </p>
           )}
-          {countyCount > 0 ? (
-            <p className="text-xs text-emerald-800 dark:text-emerald-300 pt-1">
-              {countyCount} county area{countyCount === 1 ? '' : 's'} detected — we pre-selected
-              matches in this state. Adjust the list anytime.
-            </p>
-          ) : null}
         </div>
       ) : null}
     </div>

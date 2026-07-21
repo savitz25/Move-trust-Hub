@@ -32,6 +32,8 @@ type Props = {
     | 'outOfService'
     | 'physicalAddress'
     | 'phone'
+    | 'email'
+    | 'website'
     | 'headquarters'
   >;
   /** Optional raw FMCSA payload for display-time entity type resolution */
@@ -117,6 +119,8 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
   const physicalAddress =
     company.physicalAddress?.trim() || company.headquarters?.trim() || null;
   const phoneRaw = company.phone?.trim() || null;
+  const emailRaw = company.email?.trim() || null;
+  const websiteRaw = company.website?.trim() || null;
 
   const legalFromRaw = extractLegalFromFmcsaRaw(fmcsaRaw);
   const legalNameRaw =
@@ -161,6 +165,23 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
       label: 'Phone',
       value: phoneRaw ? formatPhoneDisplay(phoneRaw) : null,
       href: phoneRaw ? `tel:${telHref(phoneRaw)}` : null,
+    },
+    {
+      label: 'Email',
+      value: emailRaw,
+      href: emailRaw ? `mailto:${emailRaw}` : null,
+    },
+    {
+      label: 'Website',
+      value: websiteRaw
+        ? websiteRaw.replace(/^https?:\/\//i, '').replace(/\/$/, '')
+        : null,
+      href: websiteRaw
+        ? websiteRaw.startsWith('http')
+          ? websiteRaw
+          : `https://${websiteRaw}`
+        : null,
+      wide: true,
     },
   ].filter((row) => row.value);
 

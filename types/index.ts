@@ -33,8 +33,10 @@ export interface Company {
   website: string;
   /** FMCSA physical street address when captured */
   physicalAddress?: string | null;
-  /** Business phone from FMCSA (or onboarding) */
+  /** Business phone from FMCSA / Google / website scrape */
   phone?: string | null;
+  /** Business contact email (website scrape or onboarding) */
+  email?: string | null;
   /**
    * interstate = USDOT movers for main /companies directory.
    * intrastate = local/in-state only (county pages).

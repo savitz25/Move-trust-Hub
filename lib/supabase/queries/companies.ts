@@ -69,6 +69,10 @@ const COMPANY_LIST_CORE_COLUMNS = [
   'usdot_number',
   'mc_number',
   'fmcsa_legal_name',
+  'phone',
+  'email',
+  'website',
+  'physical_address',
   'fmcsa_safety_rating',
   'fmcsa_complaints',
   'fmcsa_shipments',
@@ -134,7 +138,9 @@ function mapRow(row: Record<string, unknown>): Company {
     headquarters: (row.headquarters as string) || '',
     website: (row.website as string) || '',
     physicalAddress: fmcsaFields.physicalAddress,
-    phone: fmcsaFields.phone,
+    phone: fmcsaFields.phone || (row.phone as string) || null,
+    email: (row.email as string) || null,
+    website: ((row.website as string) || '').trim() || '',
     serviceScope:
       row.service_scope === 'intrastate' ? 'intrastate' : 'interstate',
     coverageCounties: Array.isArray(row.coverage_counties)

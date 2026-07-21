@@ -74,6 +74,19 @@ export const suggestCompanySchema = z
       .optional()
       .nullable()
       .or(z.literal('').transform(() => null)),
+    /** Company business email (not the submitter's email) */
+    contactEmail: z
+      .string()
+      .trim()
+      .max(254)
+      .optional()
+      .nullable()
+      .or(z.literal('').transform(() => null))
+      .transform((v) => {
+        if (!v) return null;
+        const e = v.toLowerCase();
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) ? e : null;
+      }),
   })
   .superRefine((data, ctx) => {
     if (data.serviceScope === 'intrastate') {

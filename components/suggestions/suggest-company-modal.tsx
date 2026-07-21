@@ -74,6 +74,8 @@ export function SuggestCompanyModal({
   const [coverageConsent, setCoverageConsent] = useState(false);
   const [websiteUrl, setWebsiteUrl] = useState('');
   const [websiteCoverage, setWebsiteCoverage] = useState<WebsiteCoverageData | null>(null);
+  const [companyPhone, setCompanyPhone] = useState('');
+  const [companyEmail, setCompanyEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<SubmitSuccessState | null>(null);
   const [pending, startTransition] = useTransition();
@@ -132,6 +134,8 @@ export function SuggestCompanyModal({
     setCoverageConsent(false);
     setWebsiteUrl('');
     setWebsiteCoverage(null);
+    setCompanyPhone('');
+    setCompanyEmail('');
     setSubmitted(false);
     setSubmitSuccess(null);
     onEnrichedPreviewChange?.(null);
@@ -147,6 +151,13 @@ export function SuggestCompanyModal({
     setCarrierQuery(query);
     setLookupError(null);
     onEnrichedPreviewChange?.(preview);
+    const site = preview.google?.website_url?.trim() || '';
+    if (site) setWebsiteUrl(site);
+    const ph =
+      preview.google?.phone?.trim() ||
+      preview.fmcsa?.phone?.trim() ||
+      '';
+    if (ph) setCompanyPhone(ph);
   }
 
   function handleLocalSearch(e: React.FormEvent) {
@@ -169,6 +180,10 @@ export function SuggestCompanyModal({
       const googleSite = res.preview.google?.website_url?.trim() ?? '';
       if (googleSite) {
         setWebsiteUrl(googleSite);
+      }
+      const googlePhone = res.preview.google?.phone?.trim() ?? '';
+      if (googlePhone) {
+        setCompanyPhone(googlePhone);
       }
     });
   }
@@ -209,7 +224,8 @@ export function SuggestCompanyModal({
             }
           : null,
         coverageConsent: isLocal
-          ? Boolean(websiteCoverage && websiteCoverage.status === 'ok')
+          ? Boolean(websiteCoverage && websiteCoverage.status === 'ok') ||
+            Boolean(websiteUrl || google?.website_url)
           : coverageConsent,
         websiteUrl: websiteUrl || google?.website_url || null,
         // Store website scan for local too (helps admin review); counties still drive placement.
@@ -219,7 +235,12 @@ export function SuggestCompanyModal({
           google?.formatted_address ||
           activePreview?.fmcsa?.headquarters ||
           null,
-        phone: google?.phone || activePreview?.fmcsa?.phone || null,
+        phone:
+          companyPhone.trim() ||
+          google?.phone ||
+          activePreview?.fmcsa?.phone ||
+          null,
+        contactEmail: companyEmail.trim() || null,
       });
 
       if (!res.success) {
@@ -431,6 +452,10 @@ export function SuggestCompanyModal({
                       coverage={websiteCoverage}
                       onCoverageChange={setWebsiteCoverage}
                       onWebsiteUrlChange={setWebsiteUrl}
+                      phone={companyPhone}
+                      email={companyEmail}
+                      onPhoneChange={setCompanyPhone}
+                      onEmailChange={setCompanyEmail}
                       disabled={pending}
                     />
                     <LocalCountyPicker
@@ -485,6 +510,10 @@ export function SuggestCompanyModal({
                       coverage={websiteCoverage}
                       onCoverageChange={setWebsiteCoverage}
                       onWebsiteUrlChange={setWebsiteUrl}
+                      phone={companyPhone}
+                      email={companyEmail}
+                      onPhoneChange={setCompanyPhone}
+                      onEmailChange={setCompanyEmail}
                       disabled={pending}
                     />
                     <LocalCountyPicker
@@ -505,6 +534,10 @@ export function SuggestCompanyModal({
                     onCoverageChange={setWebsiteCoverage}
                     onConsentChange={setCoverageConsent}
                     onWebsiteUrlChange={setWebsiteUrl}
+                    phone={companyPhone}
+                    email={companyEmail}
+                    onPhoneChange={setCompanyPhone}
+                    onEmailChange={setCompanyEmail}
                     disabled={pending}
                   />
                 )}

@@ -61,6 +61,7 @@ export async function insertCompanySuggestion(
       public_scrape_data: _p,
       service_scope: _s,
       selected_counties: _c,
+      contact_email: _ce,
       ...coreRow
     } = row;
     const retry = await insertRow(admin, coreRow);

@@ -30,6 +30,7 @@ export type CompanySuggestionInsertRow = {
   legal_name: string;
   headquarters: string | null | undefined;
   phone: string | null | undefined;
+  contact_email?: string | null;
   authority_status: string | null | undefined;
   fmcsa_preview: Json | null;
   fmcsa_raw: Json | null;
@@ -52,9 +53,21 @@ export function buildCompanySuggestionInsertRow(input: {
   ipHash: string | null;
   includeEnrichment?: boolean;
   coverage?: WebsiteCoverageData | null;
+  /** Merged contact after FMCSA → Google → website cascade */
+  resolvedPhone?: string | null;
+  resolvedContactEmail?: string | null;
 }): CompanySuggestionInsertRow {
-  const { parsed, companyName, fmcsa, carrierParsed, enrichment, userIp, emailHash, ipHash, coverage } =
-    input;
+  const {
+    parsed,
+    companyName,
+    fmcsa,
+    carrierParsed,
+    enrichment,
+    userIp,
+    emailHash,
+    ipHash,
+    coverage,
+  } = input;
   const includeEnrichment = input.includeEnrichment !== false;
 
   const scope = parsed.serviceScope === 'intrastate' ? 'intrastate' : 'interstate';
@@ -78,7 +91,13 @@ export function buildCompanySuggestionInsertRow(input: {
     source_page: parsed.sourcePage || '/companies',
     legal_name: (fmcsa?.legalName ?? companyName).slice(0, 200),
     headquarters: fmcsa?.headquarters ?? parsed.headquarters ?? null,
-    phone: fmcsa?.phone ?? parsed.phone ?? null,
+    phone:
+      input.resolvedPhone ??
+      fmcsa?.phone ??
+      parsed.phone ??
+      enrichment.google?.phone ??
+      null,
+    contact_email: input.resolvedContactEmail ?? parsed.contactEmail ?? null,
     authority_status:
       scope === 'intrastate' ? 'Local / in-state (no USDOT)' : fmcsa?.authorityStatus ?? null,
     service_scope: scope,

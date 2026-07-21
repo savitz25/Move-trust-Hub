@@ -31,6 +31,7 @@ export type Database = {
           website: string | null;
           physical_address: string | null;
           phone: string | null;
+          email: string | null;
           service_scope: string;
           coverage_counties: Json;
           usdot_number: string | null;
@@ -382,6 +383,7 @@ export type Database = {
           legal_name: string | null;
           headquarters: string | null;
           phone: string | null;
+          contact_email: string | null;
           authority_status: string | null;
           fmcsa_preview: Json | null;
           fmcsa_raw: Json | null;
@@ -411,6 +413,7 @@ export type Database = {
           legal_name?: string | null;
           headquarters?: string | null;
           phone?: string | null;
+          contact_email?: string | null;
           authority_status?: string | null;
           fmcsa_preview?: Json | null;
           fmcsa_raw?: Json | null;

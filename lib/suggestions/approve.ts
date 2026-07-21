@@ -140,13 +140,32 @@ export async function approveSuggestionToCompany(
     suggestion.headquarters ||
     contactFromSnapshot.physicalAddress ||
     '';
-  const phone =
-    suggestion.phone?.trim() || contactFromSnapshot.phone || null;
   const websiteCoverage = coverageFromSuggestionRow(suggestion);
   const coverageLabel = formatCompanyCoverageLabel(headquarters, websiteCoverage);
-  const websiteUrl =
-    websiteCoverage?.websiteUrl ||
-    (googleData?.website_url?.trim() ? googleData.website_url.trim() : '');
+
+  // Contact cascade at publish: suggestion/FMCSA/Google + website scrape if still incomplete.
+  const { resolveCompanyContact } = await import(
+    '@/lib/suggestions/resolve-company-contact'
+  );
+  const suggestionEmail =
+    (suggestion as { contact_email?: string | null }).contact_email?.trim() || null;
+  const resolvedContact = await resolveCompanyContact({
+    fmcsaPhone: contactFromSnapshot.phone || suggestion.phone,
+    googlePhone: googleData?.phone,
+    googleWebsite: googleData?.website_url,
+    userPhone: suggestion.phone,
+    userEmail: suggestionEmail,
+    userWebsite:
+      websiteCoverage?.websiteUrl ||
+      googleData?.website_url ||
+      null,
+    // Scrape when we still lack phone or email and have a website to read.
+    scrapeWebsite: true,
+    context: 'approve_publish',
+  });
+  const phone = resolvedContact.phone;
+  const contactEmail = resolvedContact.email;
+  const websiteUrl = resolvedContact.website || '';
 
   const verificationSources = buildVerificationSourcesFromOnboarding({
     fmcsaSnapshot: snapshot,
@@ -194,6 +213,7 @@ export async function approveSuggestionToCompany(
     physical_address:
       contactFromSnapshot.physicalAddress || headquarters || null,
     phone,
+    email: contactEmail,
     website: websiteUrl,
     usdot_number: usdot ? usdot : null,
     mc_number: suggestion.mc_number || snapshot?.mcNumber || null,
