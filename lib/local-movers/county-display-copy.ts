@@ -15,8 +15,17 @@ export function buildCountyPageH1(county: LocalCounty): string {
 export function buildCountyHeroIntro(
   countyLabel: string,
   moverCount: number,
-  isRegionalFallback: boolean
+  isRegionalFallback: boolean,
+  /** When set (hyper-local pack), prepends county-specific intelligence opener */
+  intelligenceOpener?: string | null
 ): string {
+  if (intelligenceOpener?.trim()) {
+    const base =
+      moverCount > 0
+        ? ` Below: ${moverCount} verified listing${moverCount === 1 ? '' : 's'} serving ${countyLabel}, plus zone tips, cost drivers, and practical resources.`
+        : ` We are still expanding verified listings for ${countyLabel} — use the intelligence sections and directory search while more local profiles are added.`;
+    return `${intelligenceOpener.trim()}${base}`;
+  }
   if (moverCount === 0) {
     return `We are building verified mover listings for ${countyLabel}. Use the directory search below or browse our interstate mover index while listings are added.`;
   }

@@ -315,19 +315,22 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   'los-angeles': {
     marketNotes:
-      'Los Angeles County is the most populous county in the U.S. with extreme urban density, diverse neighborhoods, and world-class logistics challenges. Moves often involve high-rises, apartments, and sprawling residential areas.',
+      'Los Angeles County is the most populous U.S. county and a patchwork of micro-markets: Westside condos, San Fernando Valley heat, DTLA high-rises, South Bay port traffic, Pasadena Craftsman homes, Hollywood Hills shuttles, and Antelope Valley long-hauls. Freeway time (405/10/101/710) often drives hourly billing more than map miles. For zone-by-zone access tips, COI/elevator rules, BHGS vs FMCSA notes, and seasonal timing, see the LA County Moving Intelligence sections on this page.',
     costs: {
       studioRange: '$650–$1,600+',
       familyRange: '$2,800–$7,000+',
-      avgHourly: '$130–$200/hr for a 2-person crew',
-      note: 'LA moves often reflect high-rise elevator fees, freeway traffic, and neighborhood-specific building requirements across Downtown, Santa Monica, Pasadena, and Long Beach.',
+      avgHourly: '$130–$200+/hr for a 2-person crew',
+      note: 'Cross-zone and high-rise moves trend higher — elevator COIs, shuttle trucks in the hills, parking permits, and peak freeway windows (Westside, DTLA, Long Beach, Pasadena, Antelope Valley) can add more than square footage alone.',
     },
     tips: [
-      'Most buildings require elevator reservations, move-in fees, and certificates of insurance.',
-      'Traffic is extreme on all freeways; plan for peak avoidance.',
-      'Verify coverage for specific areas (Downtown LA, Santa Monica, Pasadena, Long Beach, etc.).',
-      'Confirm high-value insurance and building-specific expertise.',
-      'Book well in advance for peak seasons.',
+      'Get building COI language and elevator windows before you compare hourly quotes.',
+      'Ask if the estimate is portal-to-portal and how peak 405/10/101 time is billed.',
+      'Hillside and canyon streets often need shuttle trucks — budget $150–$400+ when access is tight.',
+      'Confirm city parking / temporary no-parking responsibility (LA City, Santa Monica, Pasadena, Long Beach differ).',
+      'Intrastate CA moves: check BHGS licensing; interstate legs need FMCSA authority.',
+      'Prefer mid-month Tue–Thu starts; avoid end-of-month summer Saturdays when possible.',
+      'For Antelope Valley ↔ basin moves, treat drive time as a long local haul in the written estimate.',
+      'Share driveway photos and building rules with the estimator — not just the address.',
     ],
   },
   madera: {

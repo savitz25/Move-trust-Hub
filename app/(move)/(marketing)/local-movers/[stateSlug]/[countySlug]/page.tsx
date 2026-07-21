@@ -182,6 +182,9 @@ import {
   buildCountyHeroIntro,
   buildMoversSectionHeading,
 } from '@/lib/local-movers/county-display-copy';
+import { getCountyIntelligencePack } from '@/lib/local-movers/county-intelligence/registry';
+import { CountyIntelligenceHub } from '@/components/local-movers/county-intelligence-hub';
+import { CountyZoneMoverFilter } from '@/components/local-movers/county-zone-mover-filter';
 import { ssgParams } from '@/lib/ssg/ssg-params';
 import {
   buildCountyCostGuide,
@@ -234,6 +237,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
     indexDecision,
   } = seo;
   const countyLabel = buildCountyLabel(county);
+  const intelligence = getCountyIntelligencePack(stateSlug, countySlug);
   const faqItems = buildCountyFaqItems(county, state.name, movers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
@@ -424,20 +428,25 @@ export default async function LocalMoversCountyPage({ params }: Props) {
 
         <header className="mb-8">
           <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">
-            {state.name} · {county.stateCode}
+            {intelligence?.eyebrow ?? `${state.name} · ${county.stateCode}`}
           </p>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
-            {buildCountyH1(county)}
+            {intelligence?.h1 ?? buildCountyH1(county)}
           </h1>
-          {county.seat && (
+          {county.seat && !intelligence ? (
             <p className="text-muted-foreground mb-3">
               {stateSlug === 'louisiana' ? 'Parish seat' : 'County seat'}:{' '}
               {county.seat}
             </p>
-          )}
+          ) : null}
           <p className="text-muted-foreground leading-relaxed">
-            {buildCountyHeroIntro(countyLabel, movers.length, isRegionalFallback)}{' '}
-            {movers.length > 0 ? (
+            {buildCountyHeroIntro(
+              countyLabel,
+              movers.length,
+              isRegionalFallback,
+              intelligence?.heroOpener
+            )}{' '}
+            {movers.length > 0 && !intelligence ? (
               <>
                 Full profiles are in our{' '}
                 <Link href="/companies" className="text-primary font-medium hover:underline">
@@ -447,11 +456,16 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               </>
             ) : null}
           </p>
-          {marketNotes && (
+          {intelligence?.heroCredibility ? (
+            <p className="mt-3 text-xs font-medium text-foreground/80 rounded-lg border bg-primary/5 px-3 py-2">
+              {intelligence.heroCredibility}
+            </p>
+          ) : null}
+          {marketNotes && !intelligence ? (
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed rounded-xl border bg-muted/20 px-4 py-3">
               {marketNotes}
             </p>
-          )}
+          ) : null}
           {isRegionalFallback && (
             <p className="mt-3 text-xs text-muted-foreground rounded-lg border bg-muted/30 px-3 py-2">
               Movers listed serve the greater {county.metro?.replace(/-/g, ' ')} region
@@ -491,7 +505,22 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           <TrustToolsBar className="mt-4" />
         </header>
 
-        {indexDecision.tier === 'index' && movers.length > 0 ? (
+        {/* Hyper-local intelligence (LA first; other counties register packs over time) */}
+        {intelligence ? <CountyIntelligenceHub pack={intelligence} /> : null}
+
+        {indexDecision.tier === 'index' && movers.length > 0 && !intelligence ? (
+          <CountyMarketInsightsPanel
+            countyLabel={countyLabel}
+            stateName={state.name}
+            stateCode={county.stateCode}
+            insights={marketInsights}
+            outboundRoutes={outboundRoutes}
+            inboundRoutes={inboundRoutes}
+          />
+        ) : null}
+
+        {/* Compact insights still useful under full intelligence packs */}
+        {intelligence && indexDecision.tier === 'index' && movers.length > 0 ? (
           <CountyMarketInsightsPanel
             countyLabel={countyLabel}
             stateName={state.name}
@@ -521,19 +550,30 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             {buildMoversSectionHeading(countyLabel, movers.length)}
           </h2>
           {movers.length > 0 ? (
-            <ol className="space-y-4 list-none p-0 m-0">
-              {movers.map((mover, index) => (
-                <li key={mover.id}>
-                  <LocalMoverCard
-                    mover={mover}
-                    rank={index + 1}
-                    countyLabel={countyLabel}
-                    stateCode={county.stateCode}
-                    profileReturnPath={path}
-                  />
-                </li>
-              ))}
-            </ol>
+            intelligence ? (
+              <CountyZoneMoverFilter
+                movers={movers}
+                zones={intelligence.zones}
+                countyLabel={countyLabel}
+                stateCode={county.stateCode}
+                profileReturnPath={path}
+                directoryHint={intelligence.directoryHint}
+              />
+            ) : (
+              <ol className="space-y-4 list-none p-0 m-0">
+                {movers.map((mover, index) => (
+                  <li key={mover.id}>
+                    <LocalMoverCard
+                      mover={mover}
+                      rank={index + 1}
+                      countyLabel={countyLabel}
+                      stateCode={county.stateCode}
+                      profileReturnPath={path}
+                    />
+                  </li>
+                ))}
+              </ol>
+            )
           ) : (
             <div className="rounded-2xl border bg-muted/30 p-6 text-sm text-muted-foreground">
               Mover listings for this county are being added. Browse{' '}
@@ -549,9 +589,13 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           )}
         </section>
 
-        <CountyCostSection countyLabel={countyLabel} stateName={state.name} costs={costs} />
-
-        <CountyTipsSection countyLabel={countyLabel} tips={tips} />
+        {/* Generic cost/tips still show when no intelligence pack; packs include richer cost/seasonal sections */}
+        {!intelligence ? (
+          <>
+            <CountyCostSection countyLabel={countyLabel} stateName={state.name} costs={costs} />
+            <CountyTipsSection countyLabel={countyLabel} tips={tips} />
+          </>
+        ) : null}
 
         {visibleTestimonials.length > 0 ? (
           <CountyTestimonialSection
