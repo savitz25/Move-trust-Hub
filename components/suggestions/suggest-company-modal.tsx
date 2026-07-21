@@ -35,6 +35,8 @@ type Props = {
   enrichedPreview?: EnrichedCompanyPreview | null;
   carrierQuery?: string;
   initialName?: string;
+  /** Prefill state for intrastate / local funnel (2-letter code) */
+  initialState?: string;
   loadingPreview?: boolean;
   previewError?: string | null;
   onEnrichedPreviewChange?: (preview: EnrichedCompanyPreview | null) => void;
@@ -49,6 +51,7 @@ export function SuggestCompanyModal({
   enrichedPreview = null,
   carrierQuery: initialCarrierQuery = '',
   initialName = '',
+  initialState = '',
   loadingPreview = false,
   previewError = null,
   onEnrichedPreviewChange,
@@ -61,7 +64,7 @@ export function SuggestCompanyModal({
   const [carrierQuery, setCarrierQuery] = useState(initialCarrierQuery);
   const [lookupError, setLookupError] = useState<string | null>(previewError);
   const [localName, setLocalName] = useState(initialName);
-  const [localState, setLocalState] = useState('');
+  const [localState, setLocalState] = useState(initialState);
   const [selectedCounties, setSelectedCounties] = useState<SelectedCounty[]>([]);
   const [details, setDetails] = useState('');
   const [suggestedByName, setSuggestedByName] = useState('');
@@ -86,13 +89,22 @@ export function SuggestCompanyModal({
   useEffect(() => {
     if (open && enrichedPreview?.fmcsa) {
       setActivePreview(enrichedPreview);
-      if (!serviceScope) setServiceScope('interstate');
+      if (!serviceScope) setServiceScope(forceScope ?? 'interstate');
     }
-  }, [open, enrichedPreview, serviceScope]);
+  }, [open, enrichedPreview, serviceScope, forceScope]);
 
   useEffect(() => {
     if (open) setLookupError(previewError);
   }, [open, previewError]);
+
+  // Apply forced scope + prefill when opening (e.g. Verify DOT → Local funnel).
+  useEffect(() => {
+    if (!open) return;
+    if (forceScope) setServiceScope(forceScope);
+    if (initialName) setLocalName(initialName);
+    if (initialState) setLocalState(initialState);
+    if (initialCarrierQuery) setCarrierQuery(initialCarrierQuery);
+  }, [open, forceScope, initialName, initialState, initialCarrierQuery]);
 
   useEffect(() => {
     if (!open) return;
@@ -111,7 +123,7 @@ export function SuggestCompanyModal({
     setCarrierQuery(initialCarrierQuery);
     setLookupError(null);
     setLocalName(initialName);
-    setLocalState('');
+    setLocalState(initialState);
     setSelectedCounties([]);
     setDetails('');
     setSuggestedByName('');

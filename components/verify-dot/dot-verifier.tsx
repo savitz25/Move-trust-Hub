@@ -16,6 +16,10 @@ import { Select } from '@/components/ui/select';
 import { Card } from '@/components/ui/card';
 import { DotVerifierResults } from '@/components/verify-dot/dot-verifier-results';
 import { DotVerifierNamePicker } from '@/components/verify-dot/dot-verifier-name-picker';
+import {
+  DotVerifierNoMatch,
+  type NoMatchContext,
+} from '@/components/verify-dot/dot-verifier-no-match';
 import { popularDestinationLinks } from '@/lib/verify-dot/seo';
 import { US_STATES } from '@/lib/verify-dot/us-states';
 import { cn } from '@/lib/utils';
@@ -25,6 +29,10 @@ type SearchMode = 'license' | 'name';
 type Props = {
   sourcePage?: string;
 };
+
+function hasFmcsaMatch(res: VerifyDotResult): boolean {
+  return Boolean(res.preview?.legalName || res.directorySlug);
+}
 
 export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
   const searchParams = useSearchParams();
@@ -42,6 +50,7 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
     null
   );
   const [selectingDot, setSelectingDot] = useState<string | null>(null);
+  const [noMatch, setNoMatch] = useState<NoMatchContext | null>(null);
 
   useEffect(() => {
     const prefill = searchParams.get('q') || searchParams.get('carrier') || '';
@@ -54,6 +63,7 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
     setNameCandidates(null);
     setNameSearchLabel(null);
     setSelectingDot(null);
+    setNoMatch(null);
   }, []);
 
   function switchMode(next: SearchMode) {
@@ -62,7 +72,10 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
     resetResults();
   }
 
-  async function runVerification(dotQuery: string) {
+  async function runVerification(
+    dotQuery: string,
+    options?: { fromNameSearch?: boolean; companyName?: string; stateCode?: string }
+  ) {
     const res = await verifyCarrierNumber({
       query: dotQuery,
       sourcePage,
@@ -73,8 +86,22 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
       return false;
     }
 
+    if (!hasFmcsaMatch(res)) {
+      setResult(null);
+      setNameCandidates(null);
+      setNoMatch({
+        mode: options?.fromNameSearch ? 'name' : 'license',
+        searchLabel: res.displayNumber ?? dotQuery.trim(),
+        companyName: options?.companyName,
+        stateCode: options?.stateCode,
+        carrierQuery: res.displayNumber ?? dotQuery.trim(),
+      });
+      return false;
+    }
+
     setResult(res);
     setNameCandidates(null);
+    setNoMatch(null);
     return true;
   }
 
@@ -103,29 +130,38 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
     setLoading(true);
     resetResults();
 
+    const trimmedName = companyName.trim();
+
     try {
       const search = await searchCarriersByNameState({
-        companyName: companyName.trim(),
+        companyName: trimmedName,
         state,
         sourcePage,
       });
 
       if (!search.success || !search.candidates?.length) {
-        setError(
-          search.error ??
-            `No carriers found for "${companyName}" in ${state}. Try DOT/MC search instead.`
-        );
+        // Not a hard error — open the interstate/intrastate decision flow.
+        setNoMatch({
+          mode: 'name',
+          searchLabel: `"${trimmedName}" in ${state}`,
+          companyName: trimmedName,
+          stateCode: state,
+        });
         return;
       }
 
       setNameSearchLabel({
-        name: search.companyName ?? companyName.trim(),
+        name: search.companyName ?? trimmedName,
         state: search.state ?? state,
       });
 
       if (search.candidates.length === 1) {
         setSelectingDot(search.candidates[0]!.dotNumber);
-        await runVerification(search.candidates[0]!.dotNumber);
+        await runVerification(search.candidates[0]!.dotNumber, {
+          fromNameSearch: true,
+          companyName: trimmedName,
+          stateCode: state,
+        });
         setSelectingDot(null);
         return;
       }
@@ -144,9 +180,14 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
     setSelectingDot(candidate.dotNumber);
     setError(null);
     setResult(null);
+    setNoMatch(null);
 
     try {
-      await runVerification(candidate.dotNumber);
+      await runVerification(candidate.dotNumber, {
+        fromNameSearch: true,
+        companyName: nameSearchLabel?.name ?? companyName.trim(),
+        stateCode: nameSearchLabel?.state ?? state,
+      });
     } catch (err) {
       console.error('[DOT Verify select]', err);
       setError('Verification failed. Please try again.');
@@ -324,6 +365,28 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
           </p>
         ) : null}
 
+        {noMatch ? (
+          <DotVerifierNoMatch
+            context={noMatch}
+            sourcePage={sourcePage}
+            onDismiss={() => setNoMatch(null)}
+            onSwitchToLicense={() => {
+              setMode('license');
+              setNoMatch(null);
+              setError(null);
+              setResult(null);
+              setNameCandidates(null);
+            }}
+            onSwitchToName={() => {
+              setMode('name');
+              setNoMatch(null);
+              setError(null);
+              setResult(null);
+              setNameCandidates(null);
+            }}
+          />
+        ) : null}
+
         {nameCandidates && nameSearchLabel ? (
           <div className="mt-6 pt-6 border-t">
             <DotVerifierNamePicker
@@ -337,7 +400,7 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
           </div>
         ) : null}
 
-        {result?.success ? (
+        {result?.success && hasFmcsaMatch(result) ? (
           <div className="mt-6 pt-6 border-t">
             <DotVerifierResults result={result} />
           </div>
