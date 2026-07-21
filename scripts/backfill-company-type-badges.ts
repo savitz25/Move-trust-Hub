@@ -1,8 +1,8 @@
 /**
  * Backfill company type signals used for Carrier / Broker / Local Mover badges.
  *
- * - Intrastate: ensure service_scope = 'intrastate' (badge derives from scope)
- * - Interstate: set entity_type from fmcsa_raw when missing; merge Carrier/Broker into services
+ * - Prefer service_scope when the column exists
+ * - Interstate: set entity_type from fmcsa_raw; merge Carrier/Broker into services
  *
  * Usage:
  *   npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-type-badges.ts --dry-run
@@ -61,9 +61,7 @@ function asServices(raw: unknown): ServiceType[] {
 
 function servicesEqual(a: ServiceType[], b: ServiceType[]): boolean {
   if (a.length !== b.length) return false;
-  const sa = [...a].sort().join('|');
-  const sb = [...b].sort().join('|');
-  return sa === sb;
+  return [...a].sort().join('|') === [...b].sort().join('|');
 }
 
 async function main() {
@@ -78,24 +76,36 @@ async function main() {
 
   const admin = createClient(url, key, { auth: { persistSession: false } });
 
-  let query = admin
-    .from('companies')
-    .select(
-      'id, slug, name, service_scope, entity_type, services, fmcsa_raw, usdot_number, is_verified'
-    )
-    .order('slug');
+  // Prefer full select; fall back when service_scope / coverage migrations lag prod.
+  const selectFull =
+    'id, slug, name, service_scope, entity_type, services, fmcsa_raw, usdot_number, is_verified';
+  const selectCore =
+    'id, slug, name, entity_type, services, fmcsa_raw, usdot_number, is_verified';
 
-  if (slug) query = query.eq('slug', slug);
-  if (limit > 0) query = query.limit(limit);
+  async function loadRows(select: string) {
+    let query = admin.from('companies').select(select).order('slug');
+    if (slug) query = query.eq('slug', slug);
+    if (limit > 0) query = query.limit(limit);
+    return query;
+  }
 
-  const { data, error } = await query;
+  let { data, error } = await loadRows(selectFull);
+  let hasServiceScope = true;
+  if (error && /service_scope/i.test(error.message)) {
+    console.warn('service_scope column missing — backfilling entity_type/services only');
+    hasServiceScope = false;
+    ({ data, error } = await loadRows(selectCore));
+  }
+
   if (error) {
     console.error('Query failed:', error.message);
     process.exit(1);
   }
 
-  const rows = data ?? [];
-  console.log(`Loaded ${rows.length} companies${dryRun ? ' (dry-run)' : ''}`);
+  const rows = (data ?? []) as Array<Record<string, unknown>>;
+  console.log(
+    `Loaded ${rows.length} companies${dryRun ? ' (dry-run)' : ''} · service_scope=${hasServiceScope}`
+  );
 
   let updated = 0;
   let skipped = 0;
@@ -104,15 +114,16 @@ async function main() {
   let servicesMerged = 0;
 
   for (const row of rows) {
+    const usdot = String(row.usdot_number ?? '').replace(/\D/g, '');
+    const storedScope = row.service_scope as string | undefined;
     const scope =
-      row.service_scope === 'intrastate'
+      storedScope === 'intrastate'
         ? 'intrastate'
-        : row.service_scope === 'interstate'
+        : storedScope === 'interstate'
           ? 'interstate'
-          : // Heuristic: no USDOT → treat as local if verified local onboard
-            !row.usdot_number
-            ? 'intrastate'
-            : 'interstate';
+          : usdot.length >= 5
+            ? 'interstate'
+            : 'intrastate';
 
     const patch: Record<string, unknown> = {};
     const fmcsaRaw =
@@ -121,25 +132,26 @@ async function main() {
         : null;
 
     if (scope === 'intrastate') {
-      if (row.service_scope !== 'intrastate') {
+      if (hasServiceScope && storedScope !== 'intrastate') {
         patch.service_scope = 'intrastate';
         localScoped += 1;
       }
-      // Local movers do not need FMCSA entity_type for the Local Mover badge.
     } else {
-      if (row.service_scope !== 'interstate' && row.service_scope == null) {
-        // Only set interstate when column was null; don't flip unknown intrastate without USDOT
-        if (row.usdot_number) patch.service_scope = 'interstate';
+      if (hasServiceScope && !storedScope && usdot.length >= 5) {
+        patch.service_scope = 'interstate';
       }
 
       const resolved =
-        formatEntityTypeLabel(row.entity_type) ||
+        formatEntityTypeLabel(row.entity_type as string | null) ||
         (fmcsaRaw ? resolveEntityTypeFromFmcsaRaw(fmcsaRaw) : null);
 
       const entityLabel =
         resolved && resolved !== 'Not Available' ? resolved : null;
 
-      if (entityLabel && formatEntityTypeLabel(row.entity_type) !== entityLabel) {
+      if (
+        entityLabel &&
+        formatEntityTypeLabel(row.entity_type as string | null) !== entityLabel
+      ) {
         patch.entity_type = entityLabel;
         entityFilled += 1;
       }
@@ -147,7 +159,7 @@ async function main() {
       const currentServices = asServices(row.services);
       const nextServices = mergeServicesWithEntityType(
         currentServices,
-        entityLabel || row.entity_type
+        entityLabel || (row.entity_type as string | null)
       );
       if (!servicesEqual(currentServices, nextServices)) {
         patch.services = nextServices;
@@ -168,7 +180,7 @@ async function main() {
       const { error: upErr } = await admin
         .from('companies')
         .update(patch)
-        .eq('id', row.id);
+        .eq('id', row.id as string);
       if (upErr) {
         console.error(`  FAIL ${row.slug}: ${upErr.message}`);
         continue;
@@ -184,8 +196,14 @@ async function main() {
     localScoped,
     entityFilled,
     servicesMerged,
+    hasServiceScope,
     dryRun,
   });
+  if (!hasServiceScope) {
+    console.log(
+      '\nNOTE: Apply migration 20260718160000_interstate_intrastate_scope.sql so Local Mover badges use service_scope permanently.'
+    );
+  }
 }
 
 main().catch((e) => {

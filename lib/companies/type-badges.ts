@@ -59,9 +59,28 @@ export type TypeBadgeInput = {
   entityType?: string | null;
   services?: ServiceType[] | null;
   fmcsaRaw?: Record<string, unknown> | null;
+  /** USDOT digits — absence helps detect local when service_scope column is missing */
+  usdotNumber?: string | null;
   /** Local-movers catalog flag when Company is not available */
   isLocalOnly?: boolean;
 };
+
+function looksLocalWithoutScopeColumn(input: TypeBadgeInput): boolean {
+  // Prod may lag the service_scope migration; treat no-USDOT + no FMCSA entity as local.
+  const usdot = (input.usdotNumber ?? '').replace(/\D/g, '');
+  if (usdot.length >= 5) return false;
+  const entity = formatEntityTypeLabel(input.entityType);
+  if (entity && entity !== 'Not Available') return false;
+  const services = input.services ?? [];
+  if (
+    services.includes('Carrier') ||
+    services.includes('Broker') ||
+    services.includes('Carrier / Broker')
+  ) {
+    return false;
+  }
+  return true;
+}
 
 /**
  * Resolve 0–1 primary type badges for a company.
@@ -70,6 +89,13 @@ export type TypeBadgeInput = {
 export function resolveCompanyTypeBadges(input: TypeBadgeInput): CompanyTypeBadge[] {
   const scope = (input.serviceScope ?? '').toLowerCase();
   if (scope === 'intrastate' || input.isLocalOnly) {
+    return [LOCAL_BADGE];
+  }
+  // When scope is unset/default interstate but company has no USDOT identity, prefer Local Mover.
+  if (scope !== 'interstate' && looksLocalWithoutScopeColumn(input)) {
+    return [LOCAL_BADGE];
+  }
+  if (!scope && looksLocalWithoutScopeColumn(input)) {
     return [LOCAL_BADGE];
   }
 
@@ -107,7 +133,7 @@ export function resolveCompanyTypeBadges(input: TypeBadgeInput): CompanyTypeBadg
 }
 
 export function resolveCompanyTypeBadgesFromCompany(
-  company: Pick<Company, 'serviceScope' | 'entityType' | 'services'> & {
+  company: Pick<Company, 'serviceScope' | 'entityType' | 'services' | 'usdotNumber'> & {
     fmcsaRaw?: Record<string, unknown> | null;
   }
 ): CompanyTypeBadge[] {
@@ -116,6 +142,7 @@ export function resolveCompanyTypeBadgesFromCompany(
     entityType: company.entityType,
     services: company.services,
     fmcsaRaw: company.fmcsaRaw ?? null,
+    usdotNumber: company.usdotNumber,
   });
 }
 
