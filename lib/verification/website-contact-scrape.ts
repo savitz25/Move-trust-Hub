@@ -24,7 +24,14 @@ const CONTACT_PATH_HINTS = [
 ];
 
 /** Always try these paths (order matters) even when not linked from the homepage. */
-const FORCE_CONTACT_PATHS = ['/contact', '/contact-us', '/about', '/services'];
+const FORCE_CONTACT_PATHS = [
+  '/contact-us',
+  '/contact',
+  '/contactus',
+  '/about',
+  '/about-us',
+  '/services',
+];
 
 /** Disposable / junk email local-parts to skip */
 const JUNK_EMAIL_LOCAL = new Set([
@@ -207,6 +214,58 @@ async function fetchWebsiteHtml(url: string): Promise<string | null> {
   }
 }
 
+/**
+ * Cloudflare Email Address Obfuscation (data-cfemail / email-protection#HEX).
+ * Encoded form is XOR'd hex and never contains a literal `@`.
+ * @see https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/
+ */
+export function decodeCloudflareEmail(encoded: string): string | null {
+  const hex = encoded.trim().replace(/^#/, '');
+  if (!/^[0-9a-fA-F]{4,}$/.test(hex) || hex.length % 2 !== 0) return null;
+  try {
+    const key = parseInt(hex.slice(0, 2), 16);
+    if (!Number.isFinite(key)) return null;
+    let email = '';
+    for (let n = 2; n < hex.length; n += 2) {
+      const code = parseInt(hex.slice(n, n + 2), 16) ^ key;
+      if (!Number.isFinite(code) || code < 32 || code > 126) return null;
+      email += String.fromCharCode(code);
+    }
+    if (!email.includes('@') || email.length < 5) return null;
+    return email;
+  } catch {
+    return null;
+  }
+}
+
+function extractCloudflareEmails(html: string): string[] {
+  const found: string[] = [];
+
+  // <a href="/cdn-cgi/l/email-protection#HEX" … data-cfemail="HEX">
+  const attrRe = /data-cfemail=["']([0-9a-fA-F]+)["']/gi;
+  let m: RegExpExecArray | null;
+  while ((m = attrRe.exec(html)) !== null) {
+    const decoded = decodeCloudflareEmail(m[1] ?? '');
+    if (decoded) found.push(decoded);
+  }
+
+  const hrefRe = /(?:cdn-cgi\/l\/)?email-protection(?:#|%23|=)([0-9a-fA-F]{6,})/gi;
+  while ((m = hrefRe.exec(html)) !== null) {
+    const decoded = decodeCloudflareEmail(m[1] ?? '');
+    if (decoded) found.push(decoded);
+  }
+
+  // Cloudflare sometimes leaves the hex inside class __cf_email__ spans
+  const spanRe =
+    /class=["'][^"']*__cf_email__[^"']*["'][^>]*data-cfemail=["']([0-9a-fA-F]+)["']/gi;
+  while ((m = spanRe.exec(html)) !== null) {
+    const decoded = decodeCloudflareEmail(m[1] ?? '');
+    if (decoded) found.push(decoded);
+  }
+
+  return found;
+}
+
 function extractMailtoEmails(html: string): string[] {
   const found: string[] = [];
   // mailto:contact@x.com and mailto:contact%40x.com?subject=...
@@ -221,6 +280,13 @@ function extractMailtoEmails(html: string): string[] {
     }
     raw = raw.split('?')[0]?.split('&')[0]?.trim() ?? '';
     raw = raw.replace(/^mailto:/i, '');
+    // Cloudflare wraps mailto as /cdn-cgi/l/email-protection#…
+    if (/email-protection/i.test(raw) || /^[0-9a-fA-F]{8,}$/.test(raw)) {
+      const hex = raw.includes('#') ? raw.split('#').pop() : raw;
+      const decoded = decodeCloudflareEmail(hex ?? '');
+      if (decoded) found.push(decoded);
+      continue;
+    }
     if (raw.includes('@')) found.push(raw);
   }
   return found;
@@ -228,15 +294,37 @@ function extractMailtoEmails(html: string): string[] {
 
 function extractEmailsFromAttributes(html: string): string[] {
   const found: string[] = [];
-  // data-email="contact@…" / data-mail / href without mailto already handled
+  // data-email="contact@…" / data-mail (plain, not Cloudflare)
   const attrRe =
-    /(?:data-email|data-mail|data-contact-email|data-cfemail)=["']([^"']+)["']/gi;
+    /(?:data-email|data-mail|data-contact-email)=["']([^"']+)["']/gi;
   let m: RegExpExecArray | null;
   while ((m = attrRe.exec(html)) !== null) {
     const raw = (m[1] ?? '').trim();
-    if (raw.includes('@')) found.push(raw);
+    if (raw.includes('@')) {
+      found.push(raw);
+      continue;
+    }
+    // Some themes store Cloudflare hex in data-email
+    const decoded = decodeCloudflareEmail(raw);
+    if (decoded) found.push(decoded);
   }
   return found;
+}
+
+/**
+ * Catch emails split across tags or zero-width chars after entity decode:
+ * info<span>@</span>domain.com  ·  info&#64;domain.com
+ */
+function extractEmailsFromRawHtml(html: string): string[] {
+  const loose = decodeHtmlEntities(html)
+    // drop tags but keep content order so info</a>@domain stays contiguous after strip
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/[\u200B-\u200D\uFEFF]/g, '')
+    .replace(/\s*@\s*/g, '@')
+    .replace(/\s*\.\s*/g, '.');
+  return extractEmailsFromText(loose);
 }
 
 function extractEmailsFromJsonLd(html: string): string[] {
@@ -258,14 +346,20 @@ function extractEmailsFromJsonLd(html: string): string[] {
   return found;
 }
 
-/** contact [at] domain.com / contact(at)domain.com obfuscation */
+/** contact [at] domain.com / contact(at)domain.com / contact AT domain.com obfuscation */
 function extractObfuscatedEmails(text: string): string[] {
   const found: string[] = [];
   const re =
-    /\b([a-zA-Z0-9._%+\-]+)\s*(?:\[at\]|\(at\)|\sat\s|@)\s*([a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})\b/gi;
+    /\b([a-zA-Z0-9._%+\-]+)\s*(?:\[(?:\s*at\s*|\s*@\s*)\]|\((?:\s*at\s*|\s*@\s*)\)|\s+at\s+|@|&#64;|&commat;)\s*([a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})\b/gi;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text)) !== null) {
-    if (m[1] && m[2]) found.push(`${m[1]}@${m[2]}`);
+    if (m[1] && m[2]) found.push(`${m[1]}@${m[2].replace(/\s+/g, '')}`);
+  }
+  // info [dot] com style on domain only already covered; also "name AT domain DOT com"
+  const dotRe =
+    /\b([a-zA-Z0-9._%+\-]+)\s*(?:\[at\]|\(at\)|\s+at\s+)\s*([a-zA-Z0-9\-]+)\s*(?:\[dot\]|\(dot\)|\s+dot\s+)\s*([a-zA-Z]{2,})\b/gi;
+  while ((m = dotRe.exec(text)) !== null) {
+    if (m[1] && m[2] && m[3]) found.push(`${m[1]}@${m[2]}.${m[3]}`);
   }
   return found;
 }
@@ -447,11 +541,16 @@ function extractContactsFromHtml(html: string): { emails: string[]; phones: stri
   const decoded = decodeHtmlEntities(html);
   const text = htmlToText(decoded);
   const emails = [
+    // Cloudflare first — most common reason plain regex finds nothing on modern mover sites
+    ...extractCloudflareEmails(html),
+    ...extractCloudflareEmails(decoded),
     ...extractMailtoEmails(decoded),
     ...extractEmailsFromAttributes(decoded),
     ...extractEmailsFromJsonLd(decoded),
     ...extractEmailsFromText(text),
+    ...extractEmailsFromRawHtml(html),
     ...extractObfuscatedEmails(text),
+    ...extractObfuscatedEmails(decoded),
   ];
   const phones = [
     ...extractTelPhones(decoded),
@@ -511,40 +610,49 @@ export async function scrapeWebsiteContact(input: {
     allPhones.push(...phones);
   }
 
-  const extraLinks = [
-    ...FORCE_CONTACT_PATHS.map((path) => {
-      try {
-        return new URL(path, websiteUrl).toString().replace(/\/$/, '');
-      } catch {
-        return null;
-      }
-    }).filter((u): u is string => Boolean(u)),
-    ...extractContactLinks(homeHtml, websiteUrl),
-  ];
-
-  const seenLinks = new Set<string>(pagesFetched.map((p) => p.replace(/\/$/, '')));
-  for (const link of extraLinks) {
-    if (pagesFetched.length >= MAX_PAGES) break;
-    const key = link.replace(/\/$/, '');
-    if (seenLinks.has(key)) continue;
-    seenLinks.add(key);
-    const html = await fetchWebsiteHtml(link);
-    if (!html || html.length < 500) continue;
-    if (/page not found|404|does not exist/i.test(html.slice(0, 2000))) continue;
-    pagesFetched.push(link);
-    const { emails, phones } = extractContactsFromHtml(html);
-    allEmails.push(...emails);
-    allPhones.push(...phones);
-    // Early exit once we have a real phone + email
-    if (pickPrimaryPhone(allPhones) && pickPrimaryEmail(allEmails)) break;
-  }
-
-  let host: string | null = null;
+  let hostForPick: string | null = null;
   try {
-    host = new URL(websiteUrl).hostname;
+    hostForPick = new URL(websiteUrl).hostname;
   } catch {
-    host = null;
+    hostForPick = null;
   }
+
+  // Prefer business-domain email when deciding early exit after the first page.
+  const hasPhoneAndEmail = () =>
+    Boolean(pickPrimaryPhone(allPhones) && pickPrimaryEmail(allEmails, hostForPick));
+
+  if (!hasPhoneAndEmail()) {
+    const extraLinks = [
+      ...FORCE_CONTACT_PATHS.map((path) => {
+        try {
+          // Resolve against origin so /contact-us works even when the start URL is a deep path.
+          const origin = new URL(websiteUrl).origin;
+          return new URL(path, origin).toString().replace(/\/$/, '');
+        } catch {
+          return null;
+        }
+      }).filter((u): u is string => Boolean(u)),
+      ...extractContactLinks(homeHtml, websiteUrl),
+    ];
+
+    const seenLinks = new Set<string>(pagesFetched.map((p) => p.replace(/\/$/, '')));
+    for (const link of extraLinks) {
+      if (pagesFetched.length >= MAX_PAGES) break;
+      if (hasPhoneAndEmail()) break;
+      const key = link.replace(/\/$/, '');
+      if (seenLinks.has(key)) continue;
+      seenLinks.add(key);
+      const html = await fetchWebsiteHtml(link);
+      if (!html || html.length < 500) continue;
+      if (/page not found|404|does not exist/i.test(html.slice(0, 2000))) continue;
+      pagesFetched.push(link);
+      const { emails, phones } = extractContactsFromHtml(html);
+      allEmails.push(...emails);
+      allPhones.push(...phones);
+    }
+  }
+
+  const host = hostForPick;
 
   const email = pickPrimaryEmail(allEmails, host);
   const phone = pickPrimaryPhone(allPhones);

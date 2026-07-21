@@ -114,8 +114,8 @@ export function OnboardingCoverageConsent({
       if (contactRes.phone && onPhoneChange && isEmptyOrPlaceholderPhone(phone)) {
         onPhoneChange(contactRes.phone);
       }
-      if (contactRes.email && onEmailChange) {
-        onEmailChange(email.trim() || contactRes.email);
+      if (contactRes.email && onEmailChange && !email.trim()) {
+        onEmailChange(contactRes.email);
       }
 
       const notes: string[] = [];

@@ -111,15 +111,12 @@ export function LocalCoverageWebsiteStep({
       }
 
       // Always apply scraped phone when field is empty or still a 555 placeholder
-      if (contactRes.phone && onPhoneChange) {
-        if (isEmptyOrPlaceholderPhone(phone)) {
-          onPhoneChange(contactRes.phone);
-        }
+      if (contactRes.phone && onPhoneChange && isEmptyOrPlaceholderPhone(phone)) {
+        onPhoneChange(contactRes.phone);
       }
+      // Always fill Business email when empty — scraped value is the canonical source
       if (contactRes.email && onEmailChange && !email.trim()) {
         onEmailChange(contactRes.email);
-      } else if (contactRes.email && onEmailChange) {
-        onEmailChange(email.trim() || contactRes.email);
       }
 
       const notes: string[] = [];
