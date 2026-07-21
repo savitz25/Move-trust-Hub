@@ -63,6 +63,8 @@ function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
   ];
   // Never strip phone/email/website if present — only strip empty contact columns as fallback.
   const contactCols = ['physical_address', 'email'];
+  // entity_type is optional (Carrier/Broker badge); drop if schema lagging.
+  const typeCols = ['entity_type'];
   // CRITICAL: never strip service_scope for intrastate — prevents local movers landing as interstate.
   const isLocal = baseRow.service_scope === 'intrastate';
   const scopeCols = isLocal ? [] : ['service_scope', 'coverage_counties'];
@@ -70,19 +72,21 @@ function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
   const withoutEnrichment = stripKeys(baseRow, enrichmentCols);
   const withoutFmcsaExtended = stripKeys(withoutEnrichment, fmcsaExtendedCols);
   const withoutContact = stripKeys(withoutFmcsaExtended, contactCols);
+  const withoutType = stripKeys(withoutContact, typeCols);
 
   const attempts: InsertAttempt[] = [
     { label: 'full', row: baseRow },
     { label: 'without_enrichment', row: withoutEnrichment },
     { label: 'without_fmcsa_extended', row: withoutFmcsaExtended },
     { label: 'without_optional_contact_cols', row: withoutContact },
+    { label: 'without_entity_type', row: withoutType },
   ];
 
   // Interstate may drop scope cols when schema is lagging.
   if (!isLocal && scopeCols.length) {
     attempts.push({
       label: 'without_scope_cols',
-      row: stripKeys(withoutContact, scopeCols),
+      row: stripKeys(withoutType, scopeCols),
     });
   }
 
@@ -91,7 +95,7 @@ function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
   if (isLocal) {
     attempts.push({
       label: 'local_without_scope_cols_last_resort',
-      row: stripKeys(withoutContact, ['service_scope', 'coverage_counties']),
+      row: stripKeys(withoutType, ['service_scope', 'coverage_counties']),
     });
   }
 

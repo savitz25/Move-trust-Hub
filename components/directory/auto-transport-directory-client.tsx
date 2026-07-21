@@ -12,6 +12,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowUpDown, Filter, Plus, X, Truck } from 'lucide-react';
 
 import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
+import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 
@@ -263,7 +264,10 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                       {company.name}
                     </Link>
                     <div className="text-sm text-muted-foreground mt-0.5">{company.headquarters}</div>
-                    <CompanyVerificationBadges company={company} size="compact" className="mt-1.5 justify-start" />
+                    <div className="mt-1.5 flex flex-wrap items-center gap-1">
+                      <CompanyTypeBadges company={company} size="compact" />
+                      <CompanyVerificationBadges company={company} size="compact" className="justify-start" />
+                    </div>
                   </div>
                   <div className="text-right">
                     <StarRating rating={company.overallRating} />

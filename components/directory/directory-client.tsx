@@ -17,6 +17,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { ChevronDown, Filter, Loader2, X } from 'lucide-react';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { CompanyCard } from '@/components/directory/company-card';
+import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { DirectoryEmptyState } from '@/components/directory/directory-empty-state';
 import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
@@ -568,11 +569,14 @@ export function DirectoryClient({
                         <div className="text-xs text-muted-foreground">
                           {formatCompanyHeadquarters(c.headquarters)}
                         </div>
-                        <CompanyVerificationBadges
-                          company={c}
-                          size="compact"
-                          className="mt-1.5 justify-start"
-                        />
+                        <div className="mt-1.5 flex flex-wrap items-center gap-1">
+                          <CompanyTypeBadges company={c} size="compact" />
+                          <CompanyVerificationBadges
+                            company={c}
+                            size="compact"
+                            className="justify-start"
+                          />
+                        </div>
                       </td>
                       <td className="font-semibold text-center">{c.reputationScore ?? 0}</td>
                       <td>

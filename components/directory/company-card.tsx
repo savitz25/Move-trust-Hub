@@ -5,6 +5,7 @@ import type { Company } from '@/types';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { StarRating } from '@/components/ui/star-rating';
+import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
@@ -59,7 +60,10 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
           >
             {company.name}
           </Link>
-          <CompanyVerificationBadges company={company} size="compact" className="justify-start" />
+          <div className="flex flex-wrap items-center gap-1.5">
+            <CompanyTypeBadges company={company} size="compact" />
+            <CompanyVerificationBadges company={company} size="compact" className="justify-start" />
+          </div>
         </div>
 
         <div className="text-sm text-muted-foreground mt-1">{locationLine}</div>

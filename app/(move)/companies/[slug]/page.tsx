@@ -37,6 +37,7 @@ import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
 import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
 import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
 import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
+import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness';
@@ -136,6 +137,7 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
         <div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
+            <CompanyTypeBadges company={company} size="default" className="shrink-0" />
             <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />

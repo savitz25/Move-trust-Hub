@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
@@ -74,14 +75,15 @@ export function LocalMoverCard({
                   Recently added
                 </Badge>
               ) : null}
-              {mover.isLocalOnly ? (
-                <Badge
-                  variant="outline"
-                  className="text-[10px] font-medium border-emerald-400/70 text-emerald-800 dark:text-emerald-200"
-                >
-                  Local / in-state
-                </Badge>
-              ) : null}
+              <CompanyTypeBadges
+                size="compact"
+                input={{
+                  isLocalOnly: Boolean(mover.isLocalOnly),
+                  serviceScope: mover.isLocalOnly ? 'intrastate' : undefined,
+                  // Catalog / directory interstate movers may carry Carrier|Broker in services.
+                  services: mover.services as never,
+                }}
+              />
             </div>
             <p className="text-xs text-muted-foreground mt-0.5">{locationLine}</p>
           </div>

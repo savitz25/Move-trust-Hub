@@ -34,6 +34,10 @@ import {
   logContactFillRates,
 } from '@/lib/suggestions/onboarding-observability';
 import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
+import { servicesForPublishedCompany } from '@/lib/companies/type-badges';
+import {
+  resolveEntityTypeFromFmcsaRaw,
+} from '@/lib/fmcsa/entity-type-display';
 import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 import type { Json } from '@/types/supabase';
 
@@ -376,7 +380,19 @@ export async function approveSuggestionToCompany(
     avg_price_per_move: 0,
     price_range: '$$',
     coverage: coverageLabel,
-    services: ['Full Service'],
+    services: servicesForPublishedCompany({
+      serviceScope,
+      entityType:
+        serviceScope === 'intrastate'
+          ? null
+          : resolveEntityTypeFromFmcsaRaw(
+              (snapshot?.raw as Record<string, unknown> | undefined) ??
+                (suggestion.fmcsa_raw && typeof suggestion.fmcsa_raw === 'object'
+                  ? (suggestion.fmcsa_raw as Record<string, unknown>)
+                  : null)
+            ),
+      baseServices: ['Full Service'],
+    }),
     specialties: [],
     rating_breakdown: {
       fiveStar: 0,
@@ -393,6 +409,16 @@ export async function approveSuggestionToCompany(
         : isPublishVerified(snapshot),
     service_scope: serviceScope,
     coverage_counties: selectedCounties as unknown as Json,
+    // FMCSA entity type for Carrier / Broker badges (interstate only).
+    entity_type:
+      serviceScope === 'intrastate'
+        ? null
+        : resolveEntityTypeFromFmcsaRaw(
+            (snapshot?.raw as Record<string, unknown> | undefined) ??
+              (suggestion.fmcsa_raw && typeof suggestion.fmcsa_raw === 'object'
+                ? (suggestion.fmcsa_raw as Record<string, unknown>)
+                : null)
+          ),
     last_updated: new Date().toISOString(),
   };
 
