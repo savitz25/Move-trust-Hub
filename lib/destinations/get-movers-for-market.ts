@@ -1,4 +1,5 @@
 import { parseCountyKey } from '@/lib/destinations/county-keys';
+import { countyKeysForHubMarket } from '@/lib/destinations/hub-adjacent-counties';
 import type { Market } from '@/lib/destinations/types';
 import { getMoversForCounty } from '@/lib/local-movers';
 import type { LocalMover } from '@/lib/local-movers/types';
@@ -50,7 +51,8 @@ export function buildMarketMoverEntries(
 }
 
 export function getMoversForMarket(market: Market, limit = 18): MarketMoverEntry[] {
-  const countyResults = market.primaryCounties.map((countyKey) => {
+  const countyKeys = countyKeysForHubMarket(market.slug, market.primaryCounties);
+  const countyResults = countyKeys.map((countyKey) => {
     const parsed = parseCountyKey(countyKey);
     return {
       countyKey,

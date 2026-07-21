@@ -12,7 +12,7 @@ import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-m
 export { APPROVED_COUNTY_MOVERS_TAG };
 
 const COMPANY_MOVER_SELECT =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope';
 
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
@@ -41,6 +41,7 @@ type CompanyMoverRow = {
   services?: unknown;
   specialties?: unknown;
   is_verified?: boolean | null;
+  service_scope?: string | null;
 };
 
 function countyKey(stateSlug: string, countySlug: string): string {
@@ -106,21 +107,36 @@ async function loadAllApprovedMoversByCounty(): Promise<Record<string, LocalMove
 
     for (let i = 0; i < companyIds.length; i += IN_CHUNK) {
       const chunk = companyIds.slice(i, i + IN_CHUNK);
-      const { data: companies, error: companyError } = await admin
+      // Prefer filter in query; fall back without service_scope if column missing.
+      let companies: CompanyMoverRow[] | null = null;
+      const withScope = await admin
         .from('companies')
         .select(COMPANY_MOVER_SELECT)
         .in('id', chunk)
-        .eq('is_verified', true);
+        .or('is_verified.eq.true,service_scope.eq.intrastate');
 
-      if (companyError) {
-        logger.error('approved_movers.companies_failed', {
-          code: companyError.code,
-          message: companyError.message,
-        });
-        return {};
+      if (withScope.error) {
+        const fallback = await admin
+          .from('companies')
+          .select(
+            'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified'
+          )
+          .in('id', chunk);
+        if (fallback.error) {
+          logger.error('approved_movers.companies_failed', {
+            code: withScope.error.code,
+            message: withScope.error.message,
+            fallback: fallback.error.message,
+          });
+          return {};
+        }
+        // Without service_scope column, include all assigned companies (assignments already gate local).
+        companies = (fallback.data ?? []) as CompanyMoverRow[];
+      } else {
+        companies = (withScope.data ?? []) as CompanyMoverRow[];
       }
 
-      for (const company of (companies ?? []) as CompanyMoverRow[]) {
+      for (const company of companies) {
         companiesById.set(company.id, company);
       }
     }
@@ -158,7 +174,8 @@ async function loadAllApprovedMoversByCounty(): Promise<Record<string, LocalMove
 
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  ['approved-county-movers-all-v1'],
+  // bump cache key when eligibility rules change (local/intrastate without is_verified)
+  ['approved-county-movers-all-v2-local'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 300 }
 );
 

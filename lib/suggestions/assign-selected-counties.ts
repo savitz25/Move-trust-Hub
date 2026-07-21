@@ -77,6 +77,26 @@ export async function assignSelectedCounties(params: {
     // CLI / non-Next runtime
   }
 
+  // Revalidate county pages + related hub paths so new locals appear immediately.
+  try {
+    const { revalidatePath } = await import('next/cache');
+    const stateSlugs = new Set(assignedCounties.map((c) => c.stateSlug));
+    for (const county of assignedCounties) {
+      revalidatePath(`/local-movers/${county.stateSlug}/${county.countySlug}`, 'page');
+    }
+    for (const stateSlug of stateSlugs) {
+      revalidatePath(`/local-movers/${stateSlug}`, 'page');
+      revalidatePath(`/local-movers/${stateSlug}`, 'layout');
+    }
+    // Oregon hubs commonly linked from Lane/Douglas placement
+    if (stateSlugs.has('oregon')) {
+      revalidatePath('/moving-to/oregon/eugene-or', 'page');
+      revalidatePath('/moving-to/oregon', 'page');
+    }
+  } catch {
+    // CLI / non-Next runtime
+  }
+
   logger.info('onboarding.local_counties_assigned', {
     companySlug: params.companySlug,
     count: assignedCounties.length,

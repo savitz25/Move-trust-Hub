@@ -47,6 +47,8 @@ export function isGeneratedTemplateMover(id: string): boolean {
 }
 
 export function evaluateCuratedListing(mover: LocalMover): CuratedListingVerdict {
+  // Published company profiles (from Intrastate/Interstate onboarding) always qualify
+  // for county/hub display. Local movers often have no USDOT on the company row by design.
   if (mover.id.startsWith('directory-') && mover.profileSlug) {
     const license = assessLicense(mover.usdotNumber, mover.mcNumber);
     if (license.isDisplayable) {
@@ -56,6 +58,12 @@ export function evaluateCuratedListing(mover: LocalMover): CuratedListingVerdict
         tier: 'directory_linked',
       };
     }
+    // Local / intrastate onboarded profile without USDOT identity
+    return {
+      isDisplayable: true,
+      reason: 'onboarded_local_directory_profile',
+      tier: 'directory_linked',
+    };
   }
 
   if (isPlaceholderMoverId(mover.id)) {

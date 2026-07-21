@@ -385,9 +385,11 @@ export async function approveSuggestionToCompany(
       twoStar: 0,
       oneStar: 0,
     },
+    // Local movers must be eligible for county pages even without Google Places.
+    // Interstate still requires FMCSA publish verification.
     is_verified:
       serviceScope === 'intrastate'
-        ? Boolean(googleData?.status === 'ok')
+        ? true
         : isPublishVerified(snapshot),
     service_scope: serviceScope,
     coverage_counties: selectedCounties as unknown as Json,
