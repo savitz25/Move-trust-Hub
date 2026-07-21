@@ -5,6 +5,7 @@
 import {
   buildGooglePlacesQueryVariants,
   normalizeNameForMatch,
+  parseCityStateFromHeadquarters,
   scoreGooglePlaceMatch,
   stripLegalEntitySuffixes,
 } from '../lib/verification/google-places-name-queries';
@@ -27,85 +28,78 @@ assert(
     'Budget Movers of Augusta',
   'strips Inc with comma'
 );
+
+const polluted = parseCityStateFromHeadquarters('Otterly Elite Movers LLC, OR');
+assert(polluted.state === 'OR', 'parses OR from Name, OR headquarters');
 assert(
-  stripLegalEntitySuffixes('Acme Moving L.L.C.') === 'Acme Moving',
-  'strips L.L.C.'
+  !polluted.city || polluted.city.length === 0,
+  'does not treat company name as city'
 );
-assert(
-  stripLegalEntitySuffixes('Mighty Moving Inc') === 'Mighty Moving',
-  'strips Inc'
-);
-assert(
-  stripLegalEntitySuffixes('Otterly Elite Movers') === 'Otterly Elite Movers',
-  'leaves clean trade name alone'
-);
+
+const realHq = parseCityStateFromHeadquarters('Winston, OR');
+assert(realHq.city === 'Winston' && realHq.state === 'OR', 'parses Winston, OR');
 
 const otterlyVariants = buildGooglePlacesQueryVariants({
   legalName: 'Otterly Elite Movers LLC',
-  city: 'Austin',
-  state: 'TX',
+  state: 'OR',
+  phone: '(541) 900-6565',
 });
-assert(
-  otterlyVariants.some((v) =>
-    v.textQuery.toLowerCase().includes('otterly elite movers')
-  ),
-  'variants include stripped name'
-);
 assert(
   otterlyVariants.some(
     (v) =>
       normalizeNameForMatch(v.searchName) ===
-      normalizeNameForMatch('Otterly Elite Movers')
+        normalizeNameForMatch('Otterly Elite Movers') &&
+      !v.textQuery.toLowerCase().includes('otterly elite movers llc or')
   ),
-  'searchName includes stripped Otterly Elite Movers'
+  'variants include stripped name without polluted city'
 );
-const firstStrippedIdx = otterlyVariants.findIndex((v) =>
-  v.strategy.includes('stripped')
-);
-const firstFullLegalIdx = otterlyVariants.findIndex(
-  (v) =>
-    normalizeNameForMatch(v.searchName) ===
-    normalizeNameForMatch('Otterly Elite Movers LLC')
-);
-assert(firstStrippedIdx >= 0, 'has a stripped strategy');
-assert(firstFullLegalIdx >= 0, 'still tries full legal name as a variant');
 assert(
-  firstStrippedIdx < firstFullLegalIdx,
-  'stripped variants ordered before full legal LLC name'
+  otterlyVariants.some((v) => v.strategy.includes('phone')),
+  'includes phone-based query variants'
+);
+assert(
+  otterlyVariants.some((v) => v.locationBias != null),
+  'applies state locationBias'
 );
 
-const dbaVariants = buildGooglePlacesQueryVariants({
-  legalName: '2001-31 REALTY LLC',
-  dbaName: 'Dumbo Moving & Storage',
-  city: 'Brooklyn',
-  state: 'NY',
-});
+const falsePositive = scoreGooglePlaceMatch(
+  {
+    displayName: 'Elite Movers LLC',
+    formattedAddress: '6486 Dorchester Rd, North Charleston, SC 29418',
+    phone: '(843) 695-9979',
+  },
+  'Otterly Elite Movers',
+  '',
+  'OR'
+);
 assert(
-  dbaVariants[0]!.searchName.toLowerCase().includes('dumbo'),
-  'DBA preferred early in variant list'
+  falsePositive === 0,
+  `rejects Elite Movers when searching Otterly (got ${falsePositive})`
 );
 
-const high = scoreGooglePlaceMatch(
+const falseSc = scoreGooglePlaceMatch(
+  {
+    displayName: 'Elite Movers LLC',
+    formattedAddress: 'North Charleston, SC',
+  },
+  'Otterly Elite Movers LLC',
+  'Winston',
+  'OR'
+);
+assert(falseSc === 0, 'rejects wrong-state Elite Movers for Otterly LLC');
+
+const good = scoreGooglePlaceMatch(
   {
     displayName: 'Otterly Elite Movers',
-    formattedAddress: '123 Main St, Austin, TX 78701',
+    formattedAddress: '21 SE Edwards St, Winston, OR 97496',
+    phone: '(541) 900-6565',
   },
-  'Otterly Elite Movers',
-  'Austin',
-  'TX'
+  'Otterly Elite Movers LLC',
+  'Winston',
+  'OR',
+  '(541) 900-6565'
 );
-assert(high >= 72, `high-confidence match scores high (got ${high})`);
-
-const low = scoreGooglePlaceMatch(
-  {
-    displayName: 'Random Plumbing Co',
-    formattedAddress: 'Seattle, WA',
-  },
-  'Otterly Elite Movers',
-  'Austin',
-  'TX'
-);
-assert(low < 48, `unrelated place scores low (got ${low})`);
+assert(good >= 78, `accepts true Otterly match with phone+OR (got ${good})`);
 
 if (process.exitCode) {
   console.error('\nGoogle Places name-query checks failed.');

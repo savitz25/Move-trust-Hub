@@ -242,6 +242,7 @@ async function buildEnrichedPreview(input: {
     city: fmcsaPreview.addressCity,
     state: fmcsaPreview.addressState,
     usdotNumber: fmcsa.usdot,
+    // Prefer trade name for Places when DBA differs; multi-query still tries legal + stripped.
   });
 
   return {
@@ -331,10 +332,13 @@ export async function previewLocalCompanySuggestion(input: {
   }
 
   try {
+    // Do NOT put company name into headquarters — that pollutes city parsing
+    // ("Otterly Elite Movers LLC, OR" was treated as city=company name).
     const enrichment = await enrichCompanySources({
       legalName: name,
+      dbaName: null,
       state,
-      headquarters: `${name}, ${state}`,
+      headquarters: state,
       businessCategory: 'local moving company',
     });
 

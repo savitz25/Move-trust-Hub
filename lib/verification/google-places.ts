@@ -256,9 +256,28 @@ export async function fetchGooglePlacesByPlaceId(placeId: string): Promise<Googl
 
 async function searchTextPlaces(
   apiKey: string,
-  textQuery: string
+  textQuery: string,
+  locationBias?: { latitude: number; longitude: number; radiusMeters: number }
 ): Promise<{ places: PlacePayload[]; error?: string; httpStatus?: number }> {
   try {
+    const body: Record<string, unknown> = {
+      textQuery,
+      maxResultCount: SEARCH_MAX_RESULTS,
+      regionCode: 'US',
+    };
+    if (locationBias) {
+      body.locationBias = {
+        circle: {
+          center: {
+            latitude: locationBias.latitude,
+            longitude: locationBias.longitude,
+          },
+          // Places API (New) hard-caps circle radius at 50_000 meters.
+          radius: Math.min(50_000, Math.max(1, locationBias.radiusMeters)),
+        },
+      };
+    }
+
     const res = await fetchWithRetry(
       'https://places.googleapis.com/v1/places:searchText',
       {
@@ -269,7 +288,7 @@ async function searchTextPlaces(
           'X-Goog-Api-Key': apiKey,
           'X-Goog-FieldMask': SEARCH_FIELD_MASK,
         },
-        body: JSON.stringify({ textQuery, maxResultCount: SEARCH_MAX_RESULTS }),
+        body: JSON.stringify(body),
       },
       { op: 'searchText', query: textQuery.slice(0, 120) }
     );
@@ -349,7 +368,11 @@ export async function fetchGooglePlacesData(
     const variant = variants[i]!;
     tried.push(variant.strategy);
 
-    const { places, error } = await searchTextPlaces(apiKey, variant.textQuery);
+    const { places, error } = await searchTextPlaces(
+      apiKey,
+      variant.textQuery,
+      variant.locationBias
+    );
     if (error) lastError = error;
 
     for (const place of places) {
@@ -357,10 +380,16 @@ export async function fetchGooglePlacesData(
         {
           displayName: place.displayName?.text,
           formattedAddress: place.formattedAddress,
+          phone:
+            place.nationalPhoneNumber?.trim() ||
+            place.internationalPhoneNumber?.trim() ||
+            null,
+          websiteUri: place.websiteUri ?? null,
         },
         variant.searchName,
         city,
-        state
+        state,
+        input.phone
       );
       if (!best || score > best.score) {
         best = { place, score, variant, attempt: i + 1 };
