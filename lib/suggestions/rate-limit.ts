@@ -3,6 +3,7 @@ import 'server-only';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { hashEmail, hashIp } from '@/lib/reviews/hash';
+import { isTrustedSubmitterEmail } from '@/lib/suggestions/trusted-emails';
 
 const IP_DAILY_LIMIT = 5;
 const EMAIL_DAILY_LIMIT = 3;
@@ -16,7 +17,9 @@ export async function checkSuggestionRateLimit(params: {
   email: string;
   bypass?: boolean;
 }): Promise<SuggestionRateLimitResult> {
-  if (params.bypass) {
+  // Failsafe: admin emails (info@movetrusthub.com, etc.) never hit daily caps —
+  // even if the caller forgot to set bypass.
+  if (params.bypass || isTrustedSubmitterEmail(params.email)) {
     return { allowed: true };
   }
 

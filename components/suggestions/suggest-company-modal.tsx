@@ -26,6 +26,11 @@ import {
   shouldForceIntrastateFromAuthority,
 } from '@/lib/fmcsa/authority-routing';
 import { preferPublicCompanyName } from '@/lib/companies/public-display-name';
+import {
+  ADMIN_SUBMITTER_DISPLAY_NAME,
+  isTrustedSubmitterEmail,
+  PRIMARY_ADMIN_ONBOARDING_EMAIL,
+} from '@/lib/suggestions/trusted-emails';
 import { US_STATES } from '@/lib/verify-dot/us-states';
 import { toast } from 'sonner';
 
@@ -141,12 +146,12 @@ export function SuggestCompanyModal({
     });
   }, [open]);
 
-  // Mirror server trust for known admin email so Local funnel shows "Publish now".
+  // Mirror server trust: info@movetrusthub.com (and configured admin emails) →
+  // unlimited + Publish now for BOTH Interstate and Local funnels.
   useEffect(() => {
-    const email = suggestedByEmail.trim().toLowerCase();
-    if (email === 'info@movetrusthub.com') {
+    if (isTrustedSubmitterEmail(suggestedByEmail)) {
       setIsTrustedSubmitter(true);
-      if (!suggestedByName.trim()) setSuggestedByName('Michael Henry');
+      if (!suggestedByName.trim()) setSuggestedByName(ADMIN_SUBMITTER_DISPLAY_NAME);
     }
   }, [suggestedByEmail, suggestedByName]);
 
@@ -297,8 +302,12 @@ export function SuggestCompanyModal({
           : null,
         stateCode: isLocal ? localState : null,
         details: details || null,
-        suggestedByName,
-        suggestedByEmail,
+        suggestedByName:
+          suggestedByName.trim() ||
+          (isTrustedSubmitterEmail(suggestedByEmail)
+            ? ADMIN_SUBMITTER_DISPLAY_NAME
+            : suggestedByName),
+        suggestedByEmail: suggestedByEmail.trim().toLowerCase(),
         sourcePage,
         website: '',
         enrichmentSnapshot: activePreview
@@ -747,15 +756,28 @@ export function SuggestCompanyModal({
                       required
                       maxLength={254}
                       disabled={pending}
+                      placeholder={PRIMARY_ADMIN_ONBOARDING_EMAIL}
                     />
                   </div>
                 </div>
+
+                {isTrustedSubmitter || isTrustedSubmitterEmail(suggestedByEmail) ? (
+                  <p className="text-xs text-emerald-800 dark:text-emerald-200 rounded-md border border-emerald-200/70 bg-emerald-50/60 px-3 py-2 dark:border-emerald-900/40 dark:bg-emerald-950/30">
+                    Admin mode ({PRIMARY_ADMIN_ONBOARDING_EMAIL}): unlimited onboarding — publishes
+                    live immediately
+                    {isLocal
+                      ? ' to selected county pages only (not the main interstate directory).'
+                      : ' to the interstate directory.'}
+                  </p>
+                ) : null}
 
                 <Button type="submit" className="w-full" disabled={pending || !readyToSubmit}>
                   {pending ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : null}
-                  {isTrustedSubmitter ? 'Publish now' : 'Submit for review'}
+                  {isTrustedSubmitter || isTrustedSubmitterEmail(suggestedByEmail)
+                    ? 'Publish now'
+                    : 'Submit for review'}
                 </Button>
               </form>
             )}

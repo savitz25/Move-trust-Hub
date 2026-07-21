@@ -20,6 +20,11 @@ function assert(cond: boolean, msg: string) {
 assert(normalizeTrustedEmail('  Info@MoveTrustHub.com ') === 'info@movetrusthub.com', 'normalize');
 assert(isTrustedSubmitterEmail('info@movetrusthub.com'), 'info@ is trusted');
 assert(isTrustedSubmitterEmail('INFO@MOVETRUSTHUB.COM'), 'info@ case-insensitive');
+assert(isTrustedSubmitterEmail(' info@movetrusthub.com '), 'info@ with spaces');
+assert(
+  isTrustedSubmitterEmail('info+bulk@movetrusthub.com'),
+  'info+tag@movetrusthub.com trusted'
+);
 assert(!isTrustedSubmitterEmail('random@example.com'), 'random email not trusted');
 assert(
   getTrustedSubmitterEmails().includes('info@movetrusthub.com'),

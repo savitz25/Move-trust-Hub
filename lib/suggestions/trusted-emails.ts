@@ -32,5 +32,18 @@ export function getTrustedSubmitterEmails(): string[] {
 export function isTrustedSubmitterEmail(email: string | null | undefined): boolean {
   const normalized = normalizeTrustedEmail(email);
   if (!normalized) return false;
-  return getTrustedSubmitterEmails().includes(normalized);
+  if (getTrustedSubmitterEmails().includes(normalized)) return true;
+  // Accept common typos / plus-addressing on the primary ops mailbox
+  if (
+    normalized === 'info@movetrusthub.com' ||
+    normalized.startsWith('info+') && normalized.endsWith('@movetrusthub.com')
+  ) {
+    return true;
+  }
+  return false;
 }
+
+/** Default display name when admin email is used without a filled name. */
+export const ADMIN_SUBMITTER_DISPLAY_NAME = 'Michael Henry';
+
+export const PRIMARY_ADMIN_ONBOARDING_EMAIL = 'info@movetrusthub.com';

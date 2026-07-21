@@ -428,14 +428,17 @@ export async function submitCompanySuggestion(
 
     const headerStore = await headers();
     const userIp = clientIpFromHeaders(headerStore);
-    // Same admin privileges for Interstate AND Intrastate: session cookie or
-    // configured admin email (e.g. info@movetrusthub.com).
-    const trust = await resolveTrustedSubmitter(parsed.data.suggestedByEmail);
+    // Same admin privileges for Interstate AND Intrastate:
+    // - logged-in admin session cookie, OR
+    // - submitter email is info@movetrusthub.com (or ADMIN_SUBMITTER_EMAIL / ADMIN_TRUSTED_EMAILS)
+    // Trusted admins: unlimited submissions + auto-publish to live placement.
+    const submitterEmail = parsed.data.suggestedByEmail.trim().toLowerCase();
+    const trust = await resolveTrustedSubmitter(submitterEmail);
     const trustedSubmitter = trust.trusted;
 
     const rateCheck = await checkSuggestionRateLimit({
       ip: userIp,
-      email: parsed.data.suggestedByEmail,
+      email: submitterEmail,
       bypass: trustedSubmitter,
     });
 
@@ -722,8 +725,18 @@ export async function submitCompanySuggestion(
         : fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
     });
 
-    // Admin / trusted: unlimited + skip moderation for both interstate and local funnels.
+    // Admin / trusted (session OR info@movetrusthub.com): unlimited + skip moderation
+    // for BOTH interstate (main directory) and intrastate (county pages only).
     if (trustedSubmitter) {
+      logger.info('suggestion.admin_auto_publish_start', {
+        suggestionId: insertResult.id,
+        serviceScope,
+        isLocal,
+        trustedReason: trust.reason,
+        submitterEmail,
+        countyCount: selectedCounties.length,
+      });
+
       const { data: suggestionRow, error: fetchError } = await admin
         .from('company_suggestions')
         .select('*')
@@ -733,7 +746,11 @@ export async function submitCompanySuggestion(
       if (fetchError || !suggestionRow) {
         return {
           success: false,
-          error: 'Suggestion saved but could not be loaded for publishing. Check /admin/suggestions.',
+          error:
+            'Suggestion saved but could not be loaded for immediate publish. Check /admin/suggestions.',
+          suggestionId: insertResult.id,
+          profileSlug,
+          pendingReview: true,
         };
       }
 
@@ -746,6 +763,9 @@ export async function submitCompanySuggestion(
           (suggestionRow as { selected_counties?: unknown }).selected_counties ??
           selectedCounties ??
           [],
+        suggested_by_email:
+          (suggestionRow as { suggested_by_email?: string }).suggested_by_email ||
+          submitterEmail,
       };
 
       try {
@@ -766,7 +786,7 @@ export async function submitCompanySuggestion(
           });
           return {
             success: false,
-            error: approved.error,
+            error: `Admin publish failed: ${approved.error}. Suggestion is in the queue.`,
             suggestionId: insertResult.id,
             profileSlug,
             pendingReview: true,
@@ -783,6 +803,7 @@ export async function submitCompanySuggestion(
           ok: true,
         });
 
+        // Always live — never "pending review" for trusted admin email/session.
         return {
           success: true,
           suggestionId: insertResult.id,
@@ -805,7 +826,7 @@ export async function submitCompanySuggestion(
           success: false,
           error:
             publishErr instanceof Error
-              ? publishErr.message
+              ? `Admin publish failed: ${publishErr.message}`
               : 'Admin publish failed. Suggestion is saved for review.',
           suggestionId: insertResult.id,
           profileSlug,
