@@ -61,21 +61,32 @@ function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
     'complaints_last_12m',
     'revocation_date',
   ];
-  const contactCols = ['physical_address', 'phone', 'email'];
-  const scopeCols = ['service_scope', 'coverage_counties'];
+  // Never strip phone/email/website if present — only strip empty contact columns as fallback.
+  const contactCols = ['physical_address', 'email'];
+  // CRITICAL: never strip service_scope for intrastate — prevents local movers landing as interstate.
+  const isLocal = baseRow.service_scope === 'intrastate';
+  const scopeCols = isLocal ? [] : ['service_scope', 'coverage_counties'];
 
   const withoutEnrichment = stripKeys(baseRow, enrichmentCols);
   const withoutFmcsaExtended = stripKeys(withoutEnrichment, fmcsaExtendedCols);
   const withoutContact = stripKeys(withoutFmcsaExtended, contactCols);
-  const withoutScope = stripKeys(withoutContact, scopeCols);
 
-  return [
+  const attempts: InsertAttempt[] = [
     { label: 'full', row: baseRow },
     { label: 'without_enrichment', row: withoutEnrichment },
     { label: 'without_fmcsa_extended', row: withoutFmcsaExtended },
-    { label: 'without_contact_cols', row: withoutContact },
-    { label: 'without_scope_cols', row: withoutScope },
+    { label: 'without_optional_contact_cols', row: withoutContact },
   ];
+
+  // Last-resort only for interstate rows; local must keep service_scope.
+  if (!isLocal && scopeCols.length) {
+    attempts.push({
+      label: 'without_scope_cols',
+      row: stripKeys(withoutContact, scopeCols),
+    });
+  }
+
+  return attempts;
 }
 
 export function sanitizeCompanyInsertRow(row: CompanyInsertPayload): CompanyInsertPayload {

@@ -4,6 +4,7 @@ import {
   normalizePhoneDisplay,
   scrapeWebsiteContact,
 } from '@/lib/verification/website-contact-scrape';
+import { preferGoodContactField } from '@/lib/suggestions/onboarding-guards';
 import { logger } from '@/lib/logging/logger';
 
 export type ResolvedCompanyContact = {
@@ -167,12 +168,14 @@ export async function resolveCompanyContact(input: {
   };
 }
 
-/** Prefer non-empty existing over empty incoming (safe backfill merge). */
+/** Prefer non-empty existing over empty/placeholder incoming (safe backfill merge). */
 export function preferExistingContactField(
   existing: string | null | undefined,
   incoming: string | null | undefined
 ): string | null {
-  const e = existing?.trim() || null;
-  const i = incoming?.trim() || null;
-  return e || i || null;
+  const looksPhone = (v?: string | null) => Boolean(v && /\d{7,}/.test(v));
+  if (looksPhone(existing) || looksPhone(incoming)) {
+    return preferGoodContactField(existing, incoming, 'phone');
+  }
+  return preferGoodContactField(existing, incoming, 'text');
 }

@@ -3,6 +3,7 @@ import {
   SCRAPE_USER_AGENT,
   waitForScrapeSlot,
 } from '@/lib/verification/scrape-rate-limit';
+import { logger } from '@/lib/logging/logger';
 
 const MAX_HTML_BYTES = 250_000;
 const MAX_PAGES = 4;
@@ -417,6 +418,10 @@ export async function scrapeWebsiteContact(input: {
   ];
 
   if (!email && !phone) {
+    logger.info('website_contact.not_found', {
+      websiteUrl,
+      pagesFetched: pagesFetched.length,
+    });
     return {
       websiteUrl,
       scrapedAt: now,
@@ -428,6 +433,14 @@ export async function scrapeWebsiteContact(input: {
       pagesFetched,
     };
   }
+
+  logger.info('website_contact.ok', {
+    websiteUrl,
+    hasPhone: Boolean(phone),
+    hasEmail: Boolean(email),
+    phone,
+    pagesFetched: pagesFetched.length,
+  });
 
   return {
     websiteUrl,

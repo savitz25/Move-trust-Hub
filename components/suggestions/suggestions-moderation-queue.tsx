@@ -82,17 +82,38 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
         const hasFmcsa = Boolean(suggestion.usdot || suggestion.fmcsa_raw || suggestion.fmcsa_preview);
         const hasGoogle = Boolean(suggestion.google_data);
         const hasPublic = Boolean(suggestion.public_scrape_data);
+        const isLocal =
+          (suggestion as { service_scope?: string }).service_scope === 'intrastate';
+        const publicName = suggestion.name || suggestion.legal_name;
+        const countyCount = Array.isArray(suggestion.selected_counties)
+          ? suggestion.selected_counties.length
+          : 0;
+        const contactBits = [
+          suggestion.phone ? 'Phone' : null,
+          suggestion.headquarters ? 'Address' : null,
+          hasGoogle ? 'Google' : null,
+          hasFmcsa ? 'FMCSA' : null,
+        ].filter(Boolean);
 
         return (
           <Card key={suggestion.id} className="p-5">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="font-semibold text-lg">{suggestion.legal_name || suggestion.name}</span>
+                  <span className="font-semibold text-lg">{publicName}</span>
+                  {suggestion.legal_name &&
+                  suggestion.name &&
+                  suggestion.legal_name !== suggestion.name ? (
+                    <span className="text-xs text-muted-foreground">
+                      Legal: {suggestion.legal_name}
+                    </span>
+                  ) : null}
                   <Badge variant="outline">Pending</Badge>
-                  {(suggestion as { service_scope?: string }).service_scope ===
-                  'intrastate' ? (
-                    <Badge variant="secondary">Local / intrastate</Badge>
+                  {isLocal ? (
+                    <Badge variant="secondary">
+                      Local / intrastate
+                      {countyCount > 0 ? ` · ${countyCount} counties` : ''}
+                    </Badge>
                   ) : hasFmcsa ? (
                     <Badge variant="default">FMCSA primary</Badge>
                   ) : (
@@ -110,6 +131,16 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
                 <p className="text-sm text-muted-foreground mt-1">
                   {suggestion.suggested_by_name} · {suggestion.suggested_by_email}
                 </p>
+                {contactBits.length ? (
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Contact fields: {contactBits.join(' · ')}
+                    {suggestion.phone ? ` · ${suggestion.phone}` : ''}
+                  </p>
+                ) : (
+                  <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">
+                    Weak contact data — review phone/website before approve when possible.
+                  </p>
+                )}
               </div>
               <time className="text-xs text-muted-foreground">
                 {format(new Date(suggestion.created_at), 'PPp')}
@@ -152,8 +183,9 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
             ) : null}
 
             <p className="mt-3 text-xs text-muted-foreground">
-              Approving publishes the company profile, attaches all source data, sets coverage from
-              the office address, and revalidates directory caches.
+              {isLocal
+                ? 'Approving publishes as a local/in-state mover on the selected county pages only — not the main interstate /companies directory.'
+                : 'Approving publishes the company profile to the interstate directory, attaches source data, and revalidates directory caches.'}
             </p>
 
             <div className="mt-4 flex flex-wrap gap-2">

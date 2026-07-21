@@ -10,6 +10,20 @@ import { checkSuggestionRateLimit } from '@/lib/suggestions/rate-limit';
 import { resolveTrustedSubmitter } from '@/lib/suggestions/trusted-submitter';
 import { isAdminSession } from '@/lib/admin/auth';
 import {
+  filterCountiesToState,
+  hasMinimumPublishContact,
+  isUsablePhone,
+  preferGoodContactField,
+} from '@/lib/suggestions/onboarding-guards';
+import {
+  logAdminPublish,
+  logAuthorityRouteToIntrastate,
+  logContactFillRates,
+  logCountyPreselection,
+  logOnboardingEvent,
+} from '@/lib/suggestions/onboarding-observability';
+import { normalizeSelectedCounties } from '@/lib/suggestions/service-scope';
+import {
   lookupFmcsaForSuggestion,
   toFmcsaSuggestionPreview,
 } from '@/lib/suggestions/fmcsa-lookup';
@@ -426,6 +440,11 @@ export async function submitCompanySuggestion(
     });
 
     if (!rateCheck.allowed) {
+      logOnboardingEvent('rate_limited', {
+        email: parsed.data.suggestedByEmail,
+        serviceScope,
+        reason: rateCheck.reason,
+      });
       return { success: false, error: rateCheck.reason };
     }
 
@@ -468,6 +487,13 @@ export async function submitCompanySuggestion(
         fmcsaRaw: rawForRouting,
       });
       if (forceLocal) {
+        logAuthorityRouteToIntrastate({
+          usdot: fmcsa?.usdot,
+          legalName: fmcsa?.legalName,
+          dbaName: fmcsa?.dbaName,
+          authorityStatus: fmcsa?.authorityStatus,
+          source: 'submit',
+        });
         // If client already sent counties, accept as intrastate; otherwise instruct UI handoff.
         if (!parsed.data.selectedCounties?.length || !parsed.data.stateCode) {
           return {
@@ -546,12 +572,89 @@ export async function submitCompanySuggestion(
     });
 
     if (duplicateCheck.duplicate) {
+      logOnboardingEvent('duplicate', {
+        name: companyName,
+        serviceScope,
+        reason: duplicateCheck.reason,
+      });
       return {
         success: false,
         error: duplicateCheck.reason,
         existingProfileSlug: duplicateCheck.existingSlug,
       };
     }
+
+    // Hard guards: never store placeholder phones; never mix out-of-state counties.
+    const safePhone = preferGoodContactField(
+      resolvedContact.phone,
+      parsed.data.phone,
+      'phone'
+    );
+    const safeEmail = preferGoodContactField(
+      resolvedContact.email,
+      parsed.data.contactEmail,
+      'email'
+    );
+    const safeWebsite = preferGoodContactField(
+      resolvedContact.website,
+      parsed.data.websiteUrl,
+      'website'
+    );
+
+    let selectedCounties = normalizeSelectedCounties(parsed.data.selectedCounties);
+    if (isLocal && parsed.data.stateCode) {
+      const before = selectedCounties.length;
+      selectedCounties = filterCountiesToState(selectedCounties, parsed.data.stateCode);
+      if (selectedCounties.length !== before) {
+        logOnboardingEvent('coverage_constrained', {
+          stateCode: parsed.data.stateCode,
+          before,
+          after: selectedCounties.length,
+        });
+      }
+      if (!selectedCounties.length) {
+        return {
+          success: false,
+          error:
+            'Select at least one county in the onboarding state. Out-of-state counties were removed.',
+        };
+      }
+      logCountyPreselection({
+        context: 'submit',
+        stateCode: parsed.data.stateCode,
+        countyCount: selectedCounties.length,
+        counties: selectedCounties.map((c) => `${c.stateSlug}/${c.countySlug}`),
+      });
+    }
+
+    // Soft gate for local admin publish: prefer phone or website before auto-publish.
+    if (
+      isLocal &&
+      trustedSubmitter &&
+      !hasMinimumPublishContact({ phone: safePhone, website: safeWebsite })
+    ) {
+      logger.warn('onboarding.local_publish_weak_contact', {
+        name: companyName,
+        stateCode: parsed.data.stateCode,
+        hint: 'Admin local publish without phone or website — continuing with available data.',
+      });
+    }
+
+    const fill = logContactFillRates(
+      isLocal ? 'submit_intrastate' : 'submit_interstate',
+      {
+        name: companyName,
+        address: resolvedContact.address || parsed.data.headquarters,
+        phone: safePhone,
+        email: safeEmail,
+        website: safeWebsite,
+      },
+      {
+        serviceScope,
+        trustedSubmitter,
+        googleStatus: enrichment.google?.status ?? null,
+      }
+    );
 
     const admin = createAdminClient();
     const emailHash = hashEmail(parsed.data.suggestedByEmail);
@@ -562,9 +665,10 @@ export async function submitCompanySuggestion(
         ...parsed.data,
         // Coerced scope when NOT AUTHORIZED forced local after interstate submit.
         serviceScope,
-        phone: resolvedContact.phone ?? parsed.data.phone,
-        contactEmail: resolvedContact.email ?? parsed.data.contactEmail,
-        websiteUrl: resolvedContact.website ?? parsed.data.websiteUrl,
+        selectedCounties,
+        phone: safePhone,
+        contactEmail: safeEmail,
+        websiteUrl: safeWebsite,
       },
       companyName,
       fmcsa,
@@ -575,8 +679,8 @@ export async function submitCompanySuggestion(
       emailHash,
       ipHash,
       coverage,
-      resolvedPhone: resolvedContact.phone,
-      resolvedContactEmail: resolvedContact.email,
+      resolvedPhone: safePhone,
+      resolvedContactEmail: safeEmail,
     });
 
     const insertResult = await insertCompanySuggestion(admin, row);
@@ -597,15 +701,17 @@ export async function submitCompanySuggestion(
       trustedDot: true,
       trustedSubmitter,
       trustedReason: trust.reason,
-      selectedCountyCount: parsed.data.selectedCounties?.length ?? 0,
+      selectedCountyCount: selectedCounties.length,
       coverageStatus: coverage.status,
       coverageNationalOnly: coverage.isNationalOnly,
       coverageSummary: coverage.summary,
-      hasPhone: Boolean(resolvedContact.phone),
-      hasEmail: Boolean(resolvedContact.email),
-      hasWebsite: Boolean(resolvedContact.website),
+      hasPhone: Boolean(safePhone),
+      hasEmail: Boolean(safeEmail),
+      hasWebsite: Boolean(safeWebsite),
+      phoneIsPlaceholder: safePhone ? !isUsablePhone(safePhone) : false,
       phoneSource: resolvedContact.sources.phone,
       emailSource: resolvedContact.sources.email,
+      fillRate: fill.fillRate,
     });
 
     const profileSlug = predictCompanyProfileSlug({
@@ -638,7 +744,7 @@ export async function submitCompanySuggestion(
           (suggestionRow as { service_scope?: string | null }).service_scope ?? serviceScope,
         selected_counties:
           (suggestionRow as { selected_counties?: unknown }).selected_counties ??
-          parsed.data.selectedCounties ??
+          selectedCounties ??
           [],
       };
 
@@ -648,11 +754,15 @@ export async function submitCompanySuggestion(
           trust.reason === 'admin_email' ? 'admin_email_direct' : 'admin_direct'
         );
         if (!approved.ok) {
-          logger.error('suggestion.admin_publish_failed', {
+          logAdminPublish({
             suggestionId: insertResult.id,
+            slug: profileSlug,
             serviceScope,
-            error: approved.error,
             trustedReason: trust.reason,
+            countyCount: selectedCounties.length,
+            fillRate: fill.fillRate,
+            ok: false,
+            error: approved.error,
           });
           return {
             success: false,
@@ -663,13 +773,14 @@ export async function submitCompanySuggestion(
           };
         }
 
-        logger.info('suggestion.admin_published', {
+        logAdminPublish({
           suggestionId: insertResult.id,
           slug: approved.slug,
           serviceScope,
-          isLocal,
           trustedReason: trust.reason,
-          countyCount: parsed.data.selectedCounties?.length ?? 0,
+          countyCount: selectedCounties.length,
+          fillRate: fill.fillRate,
+          ok: true,
         });
 
         return {
@@ -679,10 +790,16 @@ export async function submitCompanySuggestion(
           pendingReview: false,
         };
       } catch (publishErr) {
-        logger.error('suggestion.admin_publish_exception', {
+        logAdminPublish({
           suggestionId: insertResult.id,
+          slug: profileSlug,
           serviceScope,
-          message: publishErr instanceof Error ? publishErr.message : String(publishErr),
+          trustedReason: trust.reason,
+          countyCount: selectedCounties.length,
+          fillRate: fill.fillRate,
+          ok: false,
+          error:
+            publishErr instanceof Error ? publishErr.message : String(publishErr),
         });
         return {
           success: false,
@@ -698,6 +815,12 @@ export async function submitCompanySuggestion(
     }
 
     // Non-admin: pending moderation (rate limits already applied above).
+    logOnboardingEvent('submitted_pending', {
+      suggestionId: insertResult.id,
+      serviceScope,
+      fillRate: fill.fillRate,
+      profileSlug,
+    });
     return {
       success: true,
       suggestionId: insertResult.id,

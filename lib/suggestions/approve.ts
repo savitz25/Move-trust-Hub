@@ -23,6 +23,16 @@ import {
   normalizeSelectedCounties,
   parseServiceScope,
 } from '@/lib/suggestions/service-scope';
+import {
+  assertLocalPublishShape,
+  filterCountiesToState,
+  isUsablePhone,
+  preferGoodContactField,
+} from '@/lib/suggestions/onboarding-guards';
+import {
+  logAuthorityRouteToIntrastate,
+  logContactFillRates,
+} from '@/lib/suggestions/onboarding-observability';
 import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
 import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 import type { Json } from '@/types/supabase';
@@ -50,7 +60,7 @@ export async function approveSuggestionToCompany(
 ): Promise<{ companyId: string; slug: string } | null> {
   const admin = createAdminClient();
   let serviceScope = parseServiceScope(suggestion.service_scope);
-  const selectedCounties = normalizeSelectedCounties(suggestion.selected_counties);
+  let selectedCounties = normalizeSelectedCounties(suggestion.selected_counties);
   let usdot =
     serviceScope === 'intrastate'
       ? null
@@ -119,14 +129,48 @@ export async function approveSuggestionToCompany(
             'Onboard as Intrastate / Local with county selection — do not publish to the main directory.'
         );
       }
-      logger.info('approve.forced_intrastate_from_authority', {
-        suggestionId: suggestion.id,
+      logAuthorityRouteToIntrastate({
         usdot,
-        countyCount: selectedCounties.length,
+        legalName: suggestion.legal_name,
+        dbaName: null,
+        authorityStatus: suggestion.authority_status,
+        source: 'approve',
       });
       serviceScope = 'intrastate';
       usdot = null;
       snapshot = null;
+    }
+  }
+
+  // Local shape: no USDOT identity in main directory; counties in-state only.
+  const localShape = assertLocalPublishShape({ serviceScope, usdot });
+  serviceScope = localShape.serviceScope;
+  usdot = localShape.usdot;
+
+  if (serviceScope === 'intrastate' && selectedCounties.length > 0) {
+    // Infer state from first county and drop foreign counties.
+    const primaryStateSlug = selectedCounties[0]?.stateSlug;
+    const stateCode = primaryStateSlug
+      ? (
+          await import('@/lib/local-movers/states')
+        ).localStates.find((s) => s.slug === primaryStateSlug)?.code
+      : null;
+    if (stateCode) {
+      const before = selectedCounties.length;
+      selectedCounties = filterCountiesToState(selectedCounties, stateCode);
+      if (selectedCounties.length < before) {
+        logger.warn('approve.counties_constrained_to_state', {
+          suggestionId: suggestion.id,
+          stateCode,
+          before,
+          after: selectedCounties.length,
+        });
+      }
+    }
+    if (!selectedCounties.length) {
+      throw new Error(
+        'Intrastate publish requires at least one in-state county. Out-of-state counties were removed.'
+      );
     }
   }
 
@@ -222,14 +266,38 @@ export async function approveSuggestionToCompany(
     scrapeWebsite: true,
     context: 'approve_publish',
   });
-  const phone = resolvedContact.phone;
-  const contactEmail = resolvedContact.email;
-  const websiteUrl = resolvedContact.website || '';
+  // Never overwrite good contact with empty/placeholder.
+  const phone =
+    preferGoodContactField(suggestion.phone, resolvedContact.phone, 'phone') ||
+    (isUsablePhone(resolvedContact.phone) ? resolvedContact.phone : null);
+  const contactEmail = preferGoodContactField(
+    (suggestion as { contact_email?: string | null }).contact_email,
+    resolvedContact.email,
+    'email'
+  );
+  const websiteUrl =
+    preferGoodContactField(
+      null,
+      resolvedContact.website,
+      'website'
+    ) || '';
   const physicalAddress =
     resolvedContact.address ||
     contactFromSnapshot.physicalAddress ||
     headquarters ||
     null;
+
+  logContactFillRates(
+    serviceScope === 'intrastate' ? 'approve_intrastate' : 'approve_interstate',
+    {
+      name: displayName,
+      address: physicalAddress,
+      phone,
+      email: contactEmail,
+      website: websiteUrl,
+    },
+    { suggestionId: suggestion.id, serviceScope }
+  );
 
   const verificationSources = buildVerificationSourcesFromOnboarding({
     fmcsaSnapshot: snapshot,
@@ -269,10 +337,14 @@ export async function approveSuggestionToCompany(
     name: displayName,
     short_description:
       suggestion.details?.slice(0, 200) ||
-      `Interstate moving company${usdot ? ` (USDOT ${usdot})` : ''}.`,
+      (serviceScope === 'intrastate'
+        ? 'Local / in-state moving company.'
+        : `Interstate moving company${usdot ? ` (USDOT ${usdot})` : ''}.`),
     description:
       suggestion.details ||
-      `${displayName} was added to Move Trust Hub through our multi-source onboarding process. FMCSA licensing is primary; Google and public ratings are supplemental.`,
+      (serviceScope === 'intrastate'
+        ? `${displayName} was added as a local/in-state mover. Listed on selected county pages only — not the main interstate directory.`
+        : `${displayName} was added to Move Trust Hub through our multi-source onboarding process. FMCSA licensing is primary; Google and public ratings are supplemental.`),
     headquarters: physicalAddress || headquarters,
     physical_address: physicalAddress,
     phone,
@@ -343,7 +415,11 @@ export async function approveSuggestionToCompany(
     slug: publishedSlug,
     companyId: publishedId,
     existingRecord: insertResult.existing,
-    usdot,
+    serviceScope,
+    usdot: serviceScope === 'intrastate' ? null : usdot,
+    countyCount: selectedCounties.length,
+    hasPhone: Boolean(phone),
+    hasWebsite: Boolean(websiteUrl),
     hasGoogleOnSuggestion: Boolean(googleData),
     hasPublicScrapeOnSuggestion: Boolean(publicScrape),
     hasFmcsaOnSuggestion: Boolean(suggestion.fmcsa_raw || snapshot),
