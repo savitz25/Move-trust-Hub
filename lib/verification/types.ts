@@ -91,6 +91,11 @@ export type PublicScrapeData = {
 
 export type CompanyEnrichmentInput = {
   legalName: string;
+  /**
+   * FMCSA DBA / trade name when different from legalName.
+   * Tried early in multi-query Google Places matching.
+   */
+  dbaName?: string | null;
   headquarters?: string | null;
   city?: string | null;
   state?: string | null;

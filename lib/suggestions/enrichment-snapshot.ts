@@ -19,8 +19,11 @@ function isFresh(fetchedAt?: string | null): boolean {
  */
 export async function resolveSubmissionEnrichment(input: {
   legalName: string;
+  dbaName?: string | null;
   headquarters?: string | null;
   phone?: string | null;
+  city?: string | null;
+  state?: string | null;
   snapshot?: EnrichmentSnapshotInput;
 }): Promise<CompanyEnrichmentResult> {
   const snapshot = input.snapshot;
@@ -39,7 +42,10 @@ export async function resolveSubmissionEnrichment(input: {
 
   return enrichCompanySources({
     legalName: input.legalName,
+    dbaName: input.dbaName,
     headquarters: input.headquarters,
     phone: input.phone,
+    city: input.city,
+    state: input.state,
   });
 }

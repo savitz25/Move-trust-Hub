@@ -1,4 +1,13 @@
 import type { CompanyEnrichmentInput, GooglePlacesData } from '@/lib/verification/types';
+import {
+  buildGooglePlacesQueryVariants,
+  GOOGLE_PLACES_HIGH_CONFIDENCE_SCORE,
+  GOOGLE_PLACES_MAX_QUERY_ATTEMPTS,
+  GOOGLE_PLACES_MIN_ACCEPT_SCORE,
+  parseCityStateFromHeadquarters,
+  scoreGooglePlaceMatch,
+  type GooglePlacesQueryVariant,
+} from '@/lib/verification/google-places-name-queries';
 import { logger } from '@/lib/logging/logger';
 
 const SEARCH_FIELD_MASK = [
@@ -26,6 +35,8 @@ const DETAILS_FIELD_MASK = [
 
 const MAX_RETRIES = 3;
 const RETRY_BASE_MS = 400;
+/** Candidates per text search so we can score the best (not only rank-1). */
+const SEARCH_MAX_RESULTS = 5;
 
 type PlacePayload = {
   id?: string;
@@ -68,27 +79,17 @@ export function isUsableGoogleSnapshot(
   );
 }
 
-function buildTextQuery(input: CompanyEnrichmentInput): string {
-  const category = input.businessCategory?.trim() || 'moving company';
-  const parts = [input.legalName, category];
-  if (input.city) parts.push(input.city);
-  if (input.state) parts.push(input.state);
-  else if (input.headquarters) parts.push(input.headquarters);
-  return parts.filter(Boolean).join(' ');
-}
-
-function parseCityState(headquarters?: string | null): { city: string; state: string } {
-  if (!headquarters) return { city: '', state: '' };
-  const parts = headquarters.split(',').map((p) => p.trim());
-  if (parts.length >= 2) {
-    const state = parts[parts.length - 1].replace(/\d{5}(-\d{4})?/, '').trim();
-    const city = parts[parts.length - 2] || parts[0];
-    return { city, state: state.slice(0, 2).toUpperCase() };
+function mapPlaceToGoogleData(
+  place: PlacePayload,
+  now: string,
+  matchMeta?: {
+    strategy?: string;
+    query?: string;
+    searchName?: string;
+    score?: number;
+    attempt?: number;
   }
-  return { city: parts[0] ?? '', state: '' };
-}
-
-function mapPlaceToGoogleData(place: PlacePayload, now: string): GooglePlacesData {
+): GooglePlacesData {
   const snippets =
     place.reviews?.slice(0, 3).map((r) => ({
       text: (r.text?.text ?? '').slice(0, 280),
@@ -121,6 +122,15 @@ function mapPlaceToGoogleData(place: PlacePayload, now: string): GooglePlacesDat
       userRatingCount: place.userRatingCount,
       nationalPhoneNumber: place.nationalPhoneNumber,
       internationalPhoneNumber: place.internationalPhoneNumber,
+      ...(matchMeta?.strategy
+        ? {
+            match_strategy: matchMeta.strategy,
+            match_query: matchMeta.query,
+            match_search_name: matchMeta.searchName,
+            match_score: matchMeta.score,
+            match_attempt: matchMeta.attempt,
+          }
+        : {}),
     },
   };
 }
@@ -244,6 +254,57 @@ export async function fetchGooglePlacesByPlaceId(placeId: string): Promise<Googl
   }
 }
 
+async function searchTextPlaces(
+  apiKey: string,
+  textQuery: string
+): Promise<{ places: PlacePayload[]; error?: string; httpStatus?: number }> {
+  try {
+    const res = await fetchWithRetry(
+      'https://places.googleapis.com/v1/places:searchText',
+      {
+        method: 'POST',
+        cache: 'no-store',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Goog-Api-Key': apiKey,
+          'X-Goog-FieldMask': SEARCH_FIELD_MASK,
+        },
+        body: JSON.stringify({ textQuery, maxResultCount: SEARCH_MAX_RESULTS }),
+      },
+      { op: 'searchText', query: textQuery.slice(0, 120) }
+    );
+
+    if (!res.ok) {
+      const errText = await res.text().catch(() => '');
+      logger.error('google_places.searchText_failed', {
+        status: res.status,
+        query: textQuery.slice(0, 120),
+        body: errText.slice(0, 300),
+      });
+      return {
+        places: [],
+        error: `Google Places API ${res.status}: ${errText.slice(0, 200)}`,
+        httpStatus: res.status,
+      };
+    }
+
+    const json = (await res.json()) as { places?: PlacePayload[] };
+    return { places: json.places ?? [] };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    logger.error('google_places.searchText_exception', {
+      query: textQuery.slice(0, 120),
+      message,
+    });
+    return { places: [], error: message };
+  }
+}
+
+/**
+ * Multi-query Google Places text search:
+ * prefer DBA / suffix-stripped trade names, score name + location, accept
+ * high-confidence matches without manual intervention.
+ */
 export async function fetchGooglePlacesData(
   input: CompanyEnrichmentInput
 ): Promise<GooglePlacesData> {
@@ -259,67 +320,106 @@ export async function fetchGooglePlacesData(
     return fetchGooglePlacesByPlaceId(input.placeId);
   }
 
-  const geo = parseCityState(input.headquarters);
-  const textQuery = buildTextQuery({
+  if (!input.legalName?.trim() && !input.dbaName?.trim()) {
+    return emptyGoogleData(now, 'not_found', 'No company name provided for Google Places search');
+  }
+
+  const geo = parseCityStateFromHeadquarters(input.headquarters);
+  const city = (input.city ?? geo.city ?? '').trim();
+  const state = (input.state ?? geo.state ?? '').trim().toUpperCase().slice(0, 2);
+
+  const variants = buildGooglePlacesQueryVariants({
     ...input,
-    city: input.city ?? geo.city,
-    state: input.state ?? geo.state,
-  });
+    city: city || input.city,
+    state: state || input.state,
+  }).slice(0, GOOGLE_PLACES_MAX_QUERY_ATTEMPTS);
 
-  try {
-    const res = await fetchWithRetry(
-      'https://places.googleapis.com/v1/places:searchText',
-      {
-        method: 'POST',
-        cache: 'no-store',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Goog-Api-Key': apiKey,
-          'X-Goog-FieldMask': SEARCH_FIELD_MASK,
+  let best:
+    | {
+        place: PlacePayload;
+        score: number;
+        variant: GooglePlacesQueryVariant;
+        attempt: number;
+      }
+    | null = null;
+  let lastError: string | undefined;
+  const tried: string[] = [];
+
+  for (let i = 0; i < variants.length; i++) {
+    const variant = variants[i]!;
+    tried.push(variant.strategy);
+
+    const { places, error } = await searchTextPlaces(apiKey, variant.textQuery);
+    if (error) lastError = error;
+
+    for (const place of places) {
+      const score = scoreGooglePlaceMatch(
+        {
+          displayName: place.displayName?.text,
+          formattedAddress: place.formattedAddress,
         },
-        body: JSON.stringify({ textQuery, maxResultCount: 1 }),
-      },
-      { op: 'searchText', query: textQuery.slice(0, 120) }
-    );
-
-    if (!res.ok) {
-      const errText = await res.text().catch(() => '');
-      const message = `Google Places API ${res.status}: ${errText.slice(0, 200)}`;
-      logger.error('google_places.searchText_failed', {
-        status: res.status,
-        query: textQuery.slice(0, 120),
-        body: errText.slice(0, 300),
-      });
-      return emptyGoogleData(now, 'error', message);
+        variant.searchName,
+        city,
+        state
+      );
+      if (!best || score > best.score) {
+        best = { place, score, variant, attempt: i + 1 };
+      }
     }
 
-    const json = (await res.json()) as { places?: PlacePayload[] };
-    const place = json.places?.[0];
-    if (!place) {
-      logger.info('google_places.not_found', { query: textQuery.slice(0, 120) });
-      return emptyGoogleData(now, 'not_found');
+    if (best && best.score >= GOOGLE_PLACES_HIGH_CONFIDENCE_SCORE) {
+      break;
     }
+  }
 
-    const mapped = mapPlaceToGoogleData(place, now);
+  if (best && best.score >= GOOGLE_PLACES_MIN_ACCEPT_SCORE) {
+    const mapped = mapPlaceToGoogleData(best.place, now, {
+      strategy: best.variant.strategy,
+      query: best.variant.textQuery,
+      searchName: best.variant.searchName,
+      score: best.score,
+      attempt: best.attempt,
+    });
     logger.info('google_places.ok', {
-      query: textQuery.slice(0, 120),
+      legalName: input.legalName?.slice(0, 80),
+      dbaName: input.dbaName?.slice(0, 80) ?? null,
+      strategy: best.variant.strategy,
+      query: best.variant.textQuery.slice(0, 120),
+      searchName: best.variant.searchName.slice(0, 80),
+      matchScore: best.score,
+      attempt: best.attempt,
+      triedStrategies: tried,
       placeId: mapped.place_id,
+      placeName: mapped.name,
       rating: mapped.rating,
       reviewCount: mapped.review_count,
+      hasPhone: Boolean(mapped.phone),
+      hasWebsite: Boolean(mapped.website_url),
       snippets: mapped.review_snippets?.length ?? 0,
     });
     return mapped;
-  } catch (err) {
-    logger.error('google_places.searchText_exception', {
-      query: textQuery.slice(0, 120),
-      message: err instanceof Error ? err.message : String(err),
-    });
-    return emptyGoogleData(
-      now,
-      'error',
-      err instanceof Error ? err.message : 'Google Places request failed'
-    );
   }
+
+  logger.info('google_places.not_found', {
+    legalName: input.legalName?.slice(0, 80),
+    dbaName: input.dbaName?.slice(0, 80) ?? null,
+    triedStrategies: tried,
+    bestScore: best?.score ?? null,
+    bestName: best?.place.displayName?.text?.slice(0, 80) ?? null,
+    lastError: lastError?.slice(0, 200),
+  });
+
+  if (lastError && !best) {
+    return emptyGoogleData(now, 'error', lastError);
+  }
+
+  return emptyGoogleData(
+    now,
+    'not_found',
+    best
+      ? `No high-confidence Google match (best score ${best.score})`
+      : undefined
+  );
 }
 
 /**

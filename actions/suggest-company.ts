@@ -236,6 +236,7 @@ async function buildEnrichedPreview(input: {
 
   const enrichment = await enrichCompanySources({
     legalName,
+    dbaName: fmcsa.dbaName,
     headquarters: fmcsa.headquarters,
     phone: fmcsa.phone,
     city: fmcsaPreview.addressCity,
@@ -476,6 +477,7 @@ export async function submitCompanySuggestion(
     const enrichment = await resolveSubmissionEnrichment({
       // Prefer trade name for Places/BBB match quality; legal stays on legal_name column.
       legalName: companyName,
+      dbaName: fmcsa?.dbaName ?? null,
       headquarters:
         fmcsa?.headquarters ||
         parsed.data.headquarters ||
@@ -483,6 +485,7 @@ export async function submitCompanySuggestion(
           ? `${companyName}, ${parsed.data.stateCode}`
           : null),
       phone: fmcsa?.phone || parsed.data.phone || null,
+      state: parsed.data.stateCode || undefined,
       snapshot: parsed.data.enrichmentSnapshot,
     });
 

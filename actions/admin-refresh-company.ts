@@ -17,7 +17,7 @@ async function fetchCompanyRow(companyId: string) {
   const { data, error } = await admin
     .from('companies')
     .select(
-      'id, slug, name, headquarters, usdot_number, google_data, public_scrape_data, bbb_rating, bbb_accredited, overall_rating, review_count, authority_active, out_of_service, reputation_score, last_updated, fmcsa_last_checked, bbb_last_checked'
+      'id, slug, name, headquarters, usdot_number, fmcsa_legal_name, google_data, public_scrape_data, bbb_rating, bbb_accredited, overall_rating, review_count, authority_active, out_of_service, reputation_score, last_updated, fmcsa_last_checked, bbb_last_checked'
     )
     .eq('id', companyId)
     .maybeSingle();
@@ -77,8 +77,14 @@ export async function refreshCompanyGoogleAction(companyId: string): Promise<Adm
   const row = await fetchCompanyRow(companyId);
   if (!row) return { success: false, error: 'Company not found' };
 
+  const displayName = String(row.name ?? '').trim();
+  const fmcsaLegal = String(row.fmcsa_legal_name ?? '').trim();
+  const legalName = fmcsaLegal || displayName;
+  const dbaName =
+    displayName && fmcsaLegal && displayName !== fmcsaLegal ? displayName : null;
   const google = await fetchGooglePlacesData({
-    legalName: String(row.name),
+    legalName,
+    dbaName,
     headquarters: String(row.headquarters ?? ''),
   });
 

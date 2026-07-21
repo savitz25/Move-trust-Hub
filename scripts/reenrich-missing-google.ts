@@ -116,7 +116,7 @@ async function main() {
     const { data, error } = await admin
       .from('companies')
       .select(
-        'id, slug, name, headquarters, verification_sources, google_data, overall_rating, review_count, out_of_service'
+        'id, slug, name, headquarters, fmcsa_legal_name, verification_sources, google_data, overall_rating, review_count, out_of_service'
       )
       .eq('slug', onlySlug)
       .maybeSingle();
@@ -127,7 +127,7 @@ async function main() {
       let q = admin
         .from('companies')
         .select(
-          'id, slug, name, headquarters, verification_sources, google_data, overall_rating, review_count, out_of_service'
+          'id, slug, name, headquarters, fmcsa_legal_name, verification_sources, google_data, overall_rating, review_count, out_of_service'
         )
         .range(from, from + 499);
       if (activeOnly) {
@@ -219,8 +219,13 @@ async function main() {
     process.stdout.write(`→ ${row.slug} … `);
 
     try {
+      const fmcsaLegal = (
+        row as Row & { fmcsa_legal_name?: string | null }
+      ).fmcsa_legal_name?.trim();
       const google = await fetchGooglePlacesData({
-        legalName: row.name,
+        legalName: fmcsaLegal || row.name,
+        dbaName:
+          fmcsaLegal && row.name && row.name !== fmcsaLegal ? row.name : null,
         headquarters: row.headquarters,
       });
 

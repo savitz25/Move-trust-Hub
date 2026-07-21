@@ -332,8 +332,22 @@ async function main() {
       // ── 2. Google Places ──
       sources.push('google');
       await sleep(callGapMs);
+      const fmcsaLegal: string | null =
+        typeof patch.fmcsa_legal_name === 'string'
+          ? patch.fmcsa_legal_name
+          : row.fmcsa_legal_name || null;
+      let fmcsaDba: string | null = null;
+      if (fmcsaRaw && typeof fmcsaRaw === 'object') {
+        const rawDba = (fmcsaRaw as { dbaName?: unknown }).dbaName;
+        if (typeof rawDba === 'string' && rawDba.trim()) fmcsaDba = rawDba.trim();
+      }
+      const googleLegal = fmcsaLegal || row.name;
+      const googleDba: string | null =
+        fmcsaDba ||
+        (row.name && googleLegal && row.name !== googleLegal ? row.name : null);
       const googleIncoming = await fetchGooglePlacesData({
-        legalName: row.name,
+        legalName: googleLegal,
+        dbaName: googleDba,
         headquarters: row.headquarters || fmcsaContact.physicalAddress,
       });
       const googleMerged = mergeGoogleSnapshots(googleExisting, googleIncoming);

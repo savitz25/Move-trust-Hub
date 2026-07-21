@@ -36,7 +36,7 @@ export async function refreshCompanyVerificationData(
   const { data: company, error: fetchError } = await admin
     .from('companies')
     .select(
-      'id, slug, name, headquarters, google_data, public_scrape_data, verification_sources, overall_rating, review_count'
+      'id, slug, name, headquarters, fmcsa_legal_name, google_data, public_scrape_data, verification_sources, overall_rating, review_count'
     )
     .eq('id', companyId)
     .maybeSingle();
@@ -45,9 +45,27 @@ export async function refreshCompanyVerificationData(
     return { success: false, error: 'Company not found' };
   }
 
+  // Supabase generated types may lag schema; cast for progressive column selects.
+  const companyRow = company as unknown as {
+    id: string;
+    slug: string;
+    name: string;
+    headquarters: string | null;
+    fmcsa_legal_name?: string | null;
+    verification_sources?: unknown;
+    google_data?: unknown;
+    public_scrape_data?: unknown;
+    overall_rating?: number | null;
+    review_count?: number | null;
+  };
+
+  const fmcsaLegal = companyRow.fmcsa_legal_name?.trim() || null;
+  const displayName = companyRow.name?.trim() || '';
   const enrichment = await enrichCompanySources({
-    legalName: company.name,
-    headquarters: company.headquarters,
+    legalName: fmcsaLegal || displayName,
+    dbaName:
+      fmcsaLegal && displayName && displayName !== fmcsaLegal ? displayName : null,
+    headquarters: companyRow.headquarters,
   });
 
   if (enrichment.google) {
@@ -55,7 +73,7 @@ export async function refreshCompanyVerificationData(
       admin,
       companyId,
       enrichment.google,
-      { existingRow: company as Record<string, unknown> }
+      { existingRow: companyRow as Record<string, unknown> }
     );
     if (!persisted.ok) {
       return { success: false, error: persisted.error ?? 'Failed to save Google data' };
@@ -64,9 +82,7 @@ export async function refreshCompanyVerificationData(
 
   // Merge public scrape into verification_sources without clobbering google.
   if (enrichment.publicScrape) {
-    const sources = parseVerificationSources(
-      (company as { verification_sources?: unknown }).verification_sources
-    );
+    const sources = parseVerificationSources(companyRow.verification_sources);
     const nextSources: VerificationSources = {
       ...sources,
       public_scrape: enrichment.publicScrape,
@@ -106,6 +122,6 @@ export async function refreshCompanyVerificationData(
     }
   }
 
-  revalidatePublishedCompany(company.slug);
+  revalidatePublishedCompany(companyRow.slug);
   return { success: true };
 }

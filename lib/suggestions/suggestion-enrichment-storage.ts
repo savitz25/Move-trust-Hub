@@ -83,7 +83,9 @@ export async function resolveApprovalEnrichment(row: {
   const { city, state } = parseHeadquarters(row.headquarters);
 
   return enrichCompanySources({
-    legalName,
+    // name is often DBA/public; legal_name is entity — multi-query tries both.
+    legalName: row.legal_name || legalName,
+    dbaName: row.name && row.name !== row.legal_name ? row.name : null,
     headquarters: row.headquarters,
     phone: row.phone,
     city,
