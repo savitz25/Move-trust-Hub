@@ -9,6 +9,7 @@ import {
   submitCompanySuggestion,
 } from '@/actions/suggest-company';
 import { LocalCountyPicker } from '@/components/suggestions/local-county-picker';
+import { LocalCoverageWebsiteStep } from '@/components/suggestions/local-coverage-website-step';
 import { OnboardingCarrierLookup } from '@/components/suggestions/onboarding-carrier-lookup';
 import { OnboardingCoverageConsent } from '@/components/suggestions/onboarding-coverage-consent';
 import { ServiceScopeStep } from '@/components/suggestions/service-scope-step';
@@ -152,6 +153,8 @@ export function SuggestCompanyModal({
     e.preventDefault();
     startTransition(async () => {
       setLookupError(null);
+      setWebsiteCoverage(null);
+      setSelectedCounties([]);
       const res = await previewLocalCompanySuggestion({
         companyName: localName,
         stateCode: localState,
@@ -163,8 +166,9 @@ export function SuggestCompanyModal({
       }
       setActivePreview(res.preview);
       onEnrichedPreviewChange?.(res.preview);
-      if (res.preview.google?.formatted_address) {
-        // keep for submit headquarters
+      const googleSite = res.preview.google?.website_url?.trim() ?? '';
+      if (googleSite) {
+        setWebsiteUrl(googleSite);
       }
     });
   }
@@ -204,9 +208,12 @@ export function SuggestCompanyModal({
               fetchedAt: activePreview.fetchedAt,
             }
           : null,
-        coverageConsent: isLocal ? false : coverageConsent,
+        coverageConsent: isLocal
+          ? Boolean(websiteCoverage && websiteCoverage.status === 'ok')
+          : coverageConsent,
         websiteUrl: websiteUrl || google?.website_url || null,
-        coverageSnapshot: isLocal ? null : websiteCoverage,
+        // Store website scan for local too (helps admin review); counties still drive placement.
+        coverageSnapshot: websiteCoverage,
         selectedCounties: isLocal ? selectedCounties : [],
         headquarters:
           google?.formatted_address ||
@@ -417,12 +424,22 @@ export function SuggestCompanyModal({
                 {activePreview ? (
                   <div className="space-y-3">
                     <MultiSourcePreviewCard preview={activePreview} />
+                    <LocalCoverageWebsiteStep
+                      defaultWebsiteUrl={
+                        websiteUrl || activePreview.google?.website_url || ''
+                      }
+                      coverage={websiteCoverage}
+                      onCoverageChange={setWebsiteCoverage}
+                      onWebsiteUrlChange={setWebsiteUrl}
+                      disabled={pending}
+                    />
                     <LocalCountyPicker
                       stateCode={localState}
                       selected={selectedCounties}
                       onChange={setSelectedCounties}
                       disabled={pending}
                       preselectKeys={preselectCountyKeys}
+                      autoSelectedKeys={preselectCountyKeys}
                     />
                   </div>
                 ) : null}
@@ -460,16 +477,30 @@ export function SuggestCompanyModal({
                 {activePreview ? <MultiSourcePreviewCard preview={activePreview} /> : null}
 
                 {isLocal ? (
-                  <LocalCountyPicker
-                    stateCode={localState}
-                    selected={selectedCounties}
-                    onChange={setSelectedCounties}
-                    disabled={pending}
-                    preselectKeys={preselectCountyKeys}
-                  />
+                  <div className="space-y-3">
+                    <LocalCoverageWebsiteStep
+                      defaultWebsiteUrl={
+                        websiteUrl || activePreview?.google?.website_url || ''
+                      }
+                      coverage={websiteCoverage}
+                      onCoverageChange={setWebsiteCoverage}
+                      onWebsiteUrlChange={setWebsiteUrl}
+                      disabled={pending}
+                    />
+                    <LocalCountyPicker
+                      stateCode={localState}
+                      selected={selectedCounties}
+                      onChange={setSelectedCounties}
+                      disabled={pending}
+                      preselectKeys={preselectCountyKeys}
+                      autoSelectedKeys={preselectCountyKeys}
+                    />
+                  </div>
                 ) : (
                   <OnboardingCoverageConsent
-                    defaultWebsiteUrl={activePreview?.google?.website_url ?? ''}
+                    defaultWebsiteUrl={
+                      websiteUrl || activePreview?.google?.website_url || ''
+                    }
                     coverage={websiteCoverage}
                     onCoverageChange={setWebsiteCoverage}
                     onConsentChange={setCoverageConsent}
