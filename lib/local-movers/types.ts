@@ -13,6 +13,14 @@ export type LocalMover = {
   bbbRating?: string;
   city: string;
   website?: string;
+  /** Onboarded directory company (vs seed/catalog). */
+  listingSource?: 'directory' | 'catalog';
+  /** Intrastate / local-only (county pages, not main interstate directory). */
+  isLocalOnly?: boolean;
+  /** ISO timestamp when company row was last updated (directory listings). */
+  lastUpdated?: string;
+  /** Highlight newly published local movers on county pages. */
+  recentlyAdded?: boolean;
 };
 
 export type LocalCounty = {

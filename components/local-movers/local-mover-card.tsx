@@ -68,6 +68,21 @@ export function LocalMoverCard({
                 mover.name
               )}
             </h3>
+            <div className="flex flex-wrap items-center gap-1.5 mt-1">
+              {mover.recentlyAdded ? (
+                <Badge className="text-[10px] font-semibold bg-emerald-600 hover:bg-emerald-600">
+                  Recently added
+                </Badge>
+              ) : null}
+              {mover.isLocalOnly ? (
+                <Badge
+                  variant="outline"
+                  className="text-[10px] font-medium border-emerald-400/70 text-emerald-800 dark:text-emerald-200"
+                >
+                  Local / in-state
+                </Badge>
+              ) : null}
+            </div>
             <p className="text-xs text-muted-foreground mt-0.5">{locationLine}</p>
           </div>
         </div>

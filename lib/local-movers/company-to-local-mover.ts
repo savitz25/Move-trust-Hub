@@ -13,7 +13,12 @@ type CompanyMoverSource = {
   review_count?: number | null;
   services?: unknown;
   specialties?: unknown;
+  service_scope?: string | null;
+  last_updated?: string | null;
+  updated_at?: string | null;
 };
+
+const RECENT_MS = 1000 * 60 * 60 * 24 * 30; // 30 days
 
 function mapServices(services: unknown): string[] {
   if (!Array.isArray(services) || services.length === 0) return ['Long Distance'];
@@ -24,9 +29,18 @@ function mapServices(services: unknown): string[] {
   });
 }
 
+function isRecentlyAdded(iso: string | null | undefined): boolean {
+  if (!iso) return false;
+  const t = Date.parse(iso);
+  if (!Number.isFinite(t)) return false;
+  return Date.now() - t < RECENT_MS;
+}
+
 /** Convert a published directory company row into a local-movers catalog entry. */
 export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
   const city = company.headquarters?.split(',')[0]?.trim() ?? company.headquarters ?? '';
+  const lastUpdated = company.last_updated || company.updated_at || undefined;
+  const isLocalOnly = company.service_scope === 'intrastate';
   return {
     id: `directory-${company.slug}`,
     name: company.name,
@@ -42,5 +56,9 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
       (company.fmcsa_safety_rating as LocalMover['fmcsaSafetyRating']) || 'Not Rated',
     bbbRating: company.bbb_rating || undefined,
     city,
+    listingSource: 'directory',
+    isLocalOnly,
+    lastUpdated: lastUpdated || undefined,
+    recentlyAdded: isRecentlyAdded(lastUpdated),
   };
 }

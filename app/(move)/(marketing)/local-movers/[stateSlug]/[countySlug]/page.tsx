@@ -199,6 +199,11 @@ type Props = { params: Promise<{ stateSlug: string; countySlug: string }> };
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
+/**
+ * ISR: refresh county lists/counts periodically so newly approved local movers
+ * appear even if a publish-time revalidate was missed.
+ */
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   return ssgParams(getAllCountyParams().map(({ stateSlug, countySlug }) => ({

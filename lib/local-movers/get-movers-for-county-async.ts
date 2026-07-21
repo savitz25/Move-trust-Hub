@@ -29,13 +29,17 @@ export async function getMoversForCountyAsync(
   if (!approved.length) return base;
 
   const hasExplicitAssignment = hasExplicitCountyAssignment(stateSlug, countySlug);
+  // Always room for every approved local + a healthy catalog fill for large markets.
   const displayLimit = Math.max(
     hasExplicitAssignment ? LARGE_MARKET_MAX_MOVERS : MAX_MOVERS_PER_COUNTY,
-    base.movers.length + approved.length
+    base.movers.length + approved.length,
+    approved.length + 10
   );
 
   return {
     ...base,
+    // Once directory locals are present, treat as explicit county coverage (not pure regional fallback).
+    isRegionalFallback: base.isRegionalFallback && approved.length === 0,
     movers: mergeApprovedMovers(base.movers, approved, displayLimit),
   };
 }

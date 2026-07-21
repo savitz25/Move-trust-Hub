@@ -73,31 +73,23 @@ export async function approveAndPublishSuggestion(
     revalidatePath('/companies', 'layout');
     revalidatePath(`/companies/${published.slug}`, 'page');
 
-    // Local / intrastate: also refresh county pages where the mover was placed.
+    // Local / intrastate: bust approved-mover tag + every selected county page.
     const scope =
       (suggestion as { service_scope?: string | null }).service_scope === 'intrastate'
         ? 'intrastate'
         : 'interstate';
     if (scope === 'intrastate') {
-      const counties = (suggestion as { selected_counties?: unknown }).selected_counties;
-      if (Array.isArray(counties)) {
-        const stateSlugs = new Set<string>();
-        for (const entry of counties) {
-          if (!entry || typeof entry !== 'object') continue;
-          const rec = entry as { stateSlug?: string; countySlug?: string };
-          if (rec.stateSlug) {
-            stateSlugs.add(rec.stateSlug);
-            revalidatePath(`/local-movers/${rec.stateSlug}`, 'page');
-            if (rec.countySlug) {
-              revalidatePath(`/local-movers/${rec.stateSlug}/${rec.countySlug}`, 'page');
-            }
-          }
-        }
-        for (const stateSlug of stateSlugs) {
-          revalidatePath(`/local-movers/${stateSlug}`, 'layout');
-        }
-      }
-      revalidatePath('/local-movers', 'page');
+      const { normalizeSelectedCounties } = await import('@/lib/suggestions/service-scope');
+      const { revalidateLocalMoverCountyPages } = await import(
+        '@/lib/local-movers/revalidate-county-pages'
+      );
+      const counties = normalizeSelectedCounties(
+        (suggestion as { selected_counties?: unknown }).selected_counties
+      );
+      revalidateLocalMoverCountyPages(counties, {
+        companySlug: published.slug,
+        reason: 'admin_auto_approve',
+      });
     }
   } catch (revalErr) {
     logger.warn('suggestion.auto_approve_revalidate_failed', {

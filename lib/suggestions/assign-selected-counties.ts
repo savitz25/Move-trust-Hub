@@ -1,12 +1,11 @@
 import 'server-only';
 
-import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-movers-tag';
+import { revalidateLocalMoverCountyPages } from '@/lib/local-movers/revalidate-county-pages';
 import { logger } from '@/lib/logging/logger';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import type { SelectedCounty } from '@/lib/suggestions/service-scope';
 import type { Database } from '@/types/supabase';
-import { revalidateTag } from 'next/cache';
 
 type DestinationAssignmentInsert =
   Database['public']['Tables']['company_destination_assignments']['Insert'];
@@ -71,27 +70,21 @@ export async function assignSelectedCounties(params: {
     assignedCounties.push(county);
   }
 
-  try {
-    revalidateTag(APPROVED_COUNTY_MOVERS_TAG);
-  } catch {
-    // CLI / non-Next runtime
-  }
+  revalidateLocalMoverCountyPages(assignedCounties, {
+    companySlug: params.companySlug,
+    reason: 'assign_selected_counties',
+  });
 
-  // Revalidate county pages + related hub paths so new locals appear immediately.
+  // Hub pages commonly linked from county placement
   try {
     const { revalidatePath } = await import('next/cache');
     const stateSlugs = new Set(assignedCounties.map((c) => c.stateSlug));
-    for (const county of assignedCounties) {
-      revalidatePath(`/local-movers/${county.stateSlug}/${county.countySlug}`, 'page');
-    }
-    for (const stateSlug of stateSlugs) {
-      revalidatePath(`/local-movers/${stateSlug}`, 'page');
-      revalidatePath(`/local-movers/${stateSlug}`, 'layout');
-    }
-    // Oregon hubs commonly linked from Lane/Douglas placement
     if (stateSlugs.has('oregon')) {
       revalidatePath('/moving-to/oregon/eugene-or', 'page');
       revalidatePath('/moving-to/oregon', 'page');
+    }
+    if (stateSlugs.has('california')) {
+      revalidatePath('/moving-to/california', 'page');
     }
   } catch {
     // CLI / non-Next runtime
