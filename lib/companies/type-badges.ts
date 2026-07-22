@@ -9,6 +9,11 @@
  * 5. Last resort → Local Mover if no USDOT, else Carrier
  */
 
+import {
+  companyResolvesAsLocalMover,
+  isLocalMover,
+  type LocalMoverInput,
+} from '@/lib/companies/is-local-mover';
 import { extractEntityType } from '@/lib/fmcsa/carrier-fields';
 import { mergeServicesWithEntityType } from '@/lib/fmcsa/derive-directory-services';
 import {
@@ -16,6 +21,9 @@ import {
   resolveEntityTypeForDisplay,
 } from '@/lib/fmcsa/entity-type-display';
 import type { Company, ServiceType } from '@/types';
+
+export { companyResolvesAsLocalMover, isLocalMover };
+export type { LocalMoverInput };
 
 export type CompanyTypeBadgeId =
   | 'local-mover'
@@ -58,15 +66,7 @@ export const CARRIER_BROKER_BADGE: CompanyTypeBadge = {
   variant: 'mixed',
 };
 
-export type TypeBadgeInput = {
-  serviceScope?: string | null;
-  entityType?: string | null;
-  services?: Array<string | ServiceType> | null;
-  fmcsaRaw?: Record<string, unknown> | null;
-  usdotNumber?: string | null;
-  mcNumber?: string | null;
-  isLocalOnly?: boolean;
-};
+export type TypeBadgeInput = LocalMoverInput;
 
 function usdotDigits(value: string | null | undefined): string {
   return (value ?? '').replace(/\D/g, '');
@@ -125,38 +125,6 @@ function fmcsaSuggestsMixed(raw: Record<string, unknown> | null | undefined): bo
   const carrierActive =
     /ACTIVE|AUTHORIZED|Y|YES/.test(common) || /ACTIVE|AUTHORIZED|Y|YES/.test(contract);
   return brokerActive && carrierActive;
-}
-
-function hasCarrierOrBrokerSignal(input: TypeBadgeInput): boolean {
-  const entity = formatEntityTypeLabel(input.entityType);
-  if (entity && entity !== 'Not Available') return true;
-  if (input.fmcsaRaw) {
-    const fromRaw = formatEntityTypeLabel(extractEntityType(input.fmcsaRaw));
-    if (fromRaw && fromRaw !== 'Not Available') return true;
-    if (fmcsaSuggestsBrokerOnly(input.fmcsaRaw) || fmcsaSuggestsMixed(input.fmcsaRaw)) {
-      return true;
-    }
-  }
-  const services = servicesList(input);
-  if (servicesSuggestBroker(services) || servicesSuggestMixed(services)) return true;
-  if (services.some((s) => /^carrier$/i.test(s.trim()))) return true;
-  return false;
-}
-
-/**
- * Local when: explicit intrastate flag, or no USDOT identity and no carrier/broker signals.
- * (Handles lagging service_scope column and directory DTOs that omit scope.)
- */
-function isLocalMover(input: TypeBadgeInput): boolean {
-  if (input.isLocalOnly) return true;
-  const scope = (input.serviceScope ?? '').toLowerCase().trim();
-  if (scope === 'intrastate') return true;
-  if (scope === 'interstate') {
-    // Explicit interstate with no USDOT and no entity is still treated as local (bad data).
-    return !hasUsdot(input) && !hasCarrierOrBrokerSignal(input);
-  }
-  // Unset / missing scope
-  return !hasUsdot(input) && !hasCarrierOrBrokerSignal(input);
 }
 
 function badgeFromEntityLabel(label: string | null | undefined): CompanyTypeBadge | null {

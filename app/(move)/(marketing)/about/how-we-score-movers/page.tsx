@@ -289,7 +289,7 @@ export default async function HowWeScoreMoversPage() {
             </div>
           </div>
 
-          <VerificationBadgeLegend showAnchors />
+          <VerificationBadgeLegend showAnchors collapsible={false} />
         </section>
 
         <div className="rounded-2xl border bg-muted/20 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

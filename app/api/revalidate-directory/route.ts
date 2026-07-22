@@ -1,6 +1,7 @@
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
+import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-movers-tag';
 
 export const runtime = 'nodejs';
 
@@ -19,16 +20,18 @@ export async function POST(request: NextRequest) {
   }
 
   revalidateTag(COMPANIES_DIRECTORY_TAG);
+  revalidateTag(APPROVED_COUNTY_MOVERS_TAG);
   revalidatePath('/companies', 'page');
   revalidatePath('/companies', 'layout');
   revalidatePath('/compare', 'page');
+  revalidatePath('/local-movers', 'layout');
   revalidatePath('/sitemap.xml');
 
   return NextResponse.json({
     ok: true,
     revalidated: true,
-    tag: COMPANIES_DIRECTORY_TAG,
-    paths: ['/companies', '/compare', '/sitemap.xml'],
+    tags: [COMPANIES_DIRECTORY_TAG, APPROVED_COUNTY_MOVERS_TAG],
+    paths: ['/companies', '/compare', '/local-movers', '/sitemap.xml'],
     at: new Date().toISOString(),
   });
 }

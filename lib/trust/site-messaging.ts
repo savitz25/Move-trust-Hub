@@ -15,6 +15,33 @@ export const DIRECTORY_INDEPENDENCE_TAGLINE =
 // Note: do not re-export from site-stats here — that module is server-only.
 // Import methodology helpers from '@/lib/trust/site-stats' in Server Components.
 
+/** Company type badges shown next to the profile name. */
+export const TYPE_BADGE_LEGEND = [
+  {
+    id: 'local-mover',
+    label: 'Local Mover',
+    description:
+      'In-state only movers. They hold a USDOT number for legitimacy but do not have interstate operating authority. They serve specific counties within one state.',
+  },
+  {
+    id: 'carrier',
+    label: 'Carrier',
+    description:
+      'FMCSA-licensed interstate mover authorized to transport household goods across state lines.',
+  },
+  {
+    id: 'broker',
+    label: 'Broker',
+    description:
+      'Arranges moves but does not perform the transportation. Works with licensed carriers.',
+  },
+  {
+    id: 'carrier-broker',
+    label: 'Carrier/Broker',
+    description: 'Holds both carrier and broker authority.',
+  },
+] as const;
+
 export const VERIFICATION_BADGE_LEGEND = [
   {
     id: 'directory',

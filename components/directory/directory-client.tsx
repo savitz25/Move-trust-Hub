@@ -58,19 +58,39 @@ function serviceFilterLabel(service: ServiceType): string {
   return service;
 }
 
+function parseCountiesFromSearchParams(searchParams: URLSearchParams): string[] {
+  const out: string[] = [];
+  const push = (raw: string | null) => {
+    if (!raw) return;
+    for (const piece of raw.split(',')) {
+      const s = piece.trim().toLowerCase();
+      if (s) out.push(s);
+    }
+  };
+  push(searchParams.get('counties'));
+  push(searchParams.get('counties[]'));
+  push(searchParams.get('coverageCounties'));
+  for (const value of searchParams.getAll('counties')) push(value);
+  for (const value of searchParams.getAll('counties[]')) push(value);
+  return [...new Set(out)];
+}
+
 function coverageFilterFromUrl(searchParams: URLSearchParams): DirectoryCoverageFilter {
+  const state =
+    searchParams.get('state') || searchParams.get('coverageState') || null;
+  const counties = parseCountiesFromSearchParams(searchParams);
+
   return normalizeCoverageFilter({
     coverage: searchParams.get('coverage') || 'Any',
+    state,
+    counties,
     coverageFilter: {
       mode:
         (searchParams.get('coverageMode') as DirectoryCoverageFilter['mode']) ||
-        'any',
+        (state || counties.length ? 'state' : 'any'),
       region: (searchParams.get('coverageRegion') as DirectoryCoverageFilter['region']) || null,
-      stateCode: searchParams.get('coverageState') || null,
-      countySlugs: (searchParams.get('coverageCounties') || '')
-        .split(',')
-        .map((s) => s.trim())
-        .filter(Boolean),
+      stateCode: state,
+      countySlugs: counties,
     },
   });
 }
@@ -258,8 +278,11 @@ export function DirectoryClient({
           params.set('coverage', cf.region);
         }
         if (cf.mode === 'state' && cf.stateCode) {
-          params.set('coverageState', cf.stateCode);
+          // Canonical direct-link params: /companies?state=AZ&counties=maricopa,pima
+          params.set('state', cf.stateCode.toUpperCase());
+          params.set('coverageState', cf.stateCode.toUpperCase());
           if (cf.countySlugs?.length) {
+            params.set('counties', cf.countySlugs.join(','));
             params.set('coverageCounties', cf.countySlugs.join(','));
           }
         }
@@ -427,9 +450,10 @@ export function DirectoryClient({
         }`}
         aria-hidden={!showFilters}
       >
-        <div className="min-h-0 overflow-hidden">
+        {/* overflow-visible when open so State/County multi-select is not clipped */}
+        <div className={showFilters ? 'min-h-0 overflow-visible' : 'min-h-0 overflow-hidden'}>
           <Card className="p-5">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               <div>
                 <div className="text-xs font-medium mb-1.5 text-muted-foreground">MINIMUM RATING</div>
                 <div className="flex gap-2 items-center">
@@ -462,13 +486,6 @@ export function DirectoryClient({
                     ${(filters.maxPrice || 12000).toLocaleString()}
                   </div>
                 </div>
-              </div>
-
-              <div className="col-span-2 sm:col-span-1 md:col-span-2 min-w-0">
-                <DirectoryCoverageFilterControl
-                  value={coverageFilter}
-                  onChange={setCoverageFilter}
-                />
               </div>
 
               <div>
@@ -505,6 +522,14 @@ export function DirectoryClient({
                   Show only verified listings
                 </label>
               </div>
+            </div>
+
+            {/* Full-width coverage row so State + county multi-select is always visible */}
+            <div className="mt-5 pt-4 border-t border-border/60">
+              <DirectoryCoverageFilterControl
+                value={coverageFilter}
+                onChange={setCoverageFilter}
+              />
             </div>
 
             <div className="mt-5">

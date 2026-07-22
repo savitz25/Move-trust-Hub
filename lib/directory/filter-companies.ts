@@ -1,15 +1,22 @@
 import {
+  companyGeoPriorityScore,
+  companyIsLocal,
   companyMatchesCoverageFilter,
   normalizeCoverageFilter,
+  shouldPrioritizeLocalMoversInCoverage,
 } from '@/lib/directory/coverage-filter';
 import { applyScopeToCompanies, type DirectorySearchScope } from '@/lib/directory/search-scope';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
-import { companyMatchesServiceFilter } from '@/lib/fmcsa/derive-directory-services';
+import { companyMatchesServiceFilter } from '@/lib/directory/service-filter';
 import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
 import type { Company, DirectoryFilters } from '@/types';
 
 export type DirectoryFilterInput = Partial<DirectoryFilters> & {
   scope?: DirectorySearchScope;
+  /** URL shorthand: state=AZ */
+  state?: string | null;
+  /** URL shorthand: counties / counties[] */
+  counties?: string[] | null;
 };
 
 function compareBySort(
@@ -49,17 +56,15 @@ export function filterCompanies(
   let result = applyScopeToCompanies([...companies], filters.scope);
   const searchQuery = filters.search?.trim() ?? '';
 
+  const searchScores = new Map<string, number>();
   if (searchQuery.length > 0) {
     result = result
-      .map((company) => ({
-        company,
-        score: scoreCompanySearch(company, searchQuery, filters.scope),
-      }))
-      .filter((row) => row.score > 0)
-      .sort((a, b) => {
-        if (b.score !== a.score) return b.score - a.score;
-        return compareBySort(a.company, b.company, filters.sort);
+      .map((company) => {
+        const score = scoreCompanySearch(company, searchQuery, filters.scope);
+        searchScores.set(company.id || company.slug, score);
+        return { company, score };
       })
+      .filter((row) => row.score > 0)
       .map((row) => row.company);
   }
 
@@ -77,7 +82,13 @@ export function filterCompanies(
     );
   }
 
-  const coverageFilter = normalizeCoverageFilter(filters);
+  const coverageFilter = normalizeCoverageFilter({
+    coverage: filters.coverage,
+    coverageFilter: filters.coverageFilter,
+    state: filters.state,
+    counties: filters.counties,
+  });
+
   if (coverageFilter.mode !== 'any') {
     result = result.filter((c) => companyMatchesCoverageFilter(c, coverageFilter));
   }
@@ -87,7 +98,7 @@ export function filterCompanies(
   const wantsLocalMovers =
     Boolean(filters.services?.includes('Local Mover')) || coverageFilter.mode === 'state';
   if (!wantsLocalMovers) {
-    result = result.filter((c) => c.serviceScope !== 'intrastate');
+    result = result.filter((c) => !companyIsLocal(c));
   }
 
   if (filters.bbbMin) {
@@ -119,9 +130,28 @@ export function filterCompanies(
     });
   }
 
-  if (searchQuery.length === 0) {
-    result.sort((a, b) => compareBySort(a, b, filters.sort));
-  }
+  const prioritizeLocals = shouldPrioritizeLocalMoversInCoverage(
+    filters.services,
+    coverageFilter
+  );
+
+  result.sort((a, b) => {
+    const geoA = companyGeoPriorityScore(a, coverageFilter, {
+      prioritizeLocalMovers: prioritizeLocals,
+    });
+    const geoB = companyGeoPriorityScore(b, coverageFilter, {
+      prioritizeLocalMovers: prioritizeLocals,
+    });
+    if (geoB !== geoA) return geoB - geoA;
+
+    if (searchQuery.length > 0) {
+      const sa = searchScores.get(a.id || a.slug) ?? 0;
+      const sb = searchScores.get(b.id || b.slug) ?? 0;
+      if (sb !== sa) return sb - sa;
+    }
+
+    return compareBySort(a, b, filters.sort);
+  });
 
   return result;
 }

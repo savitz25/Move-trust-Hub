@@ -66,41 +66,42 @@ export function DirectoryCoverageFilterControl({ value, onChange, className }: P
   }
 
   return (
-    <div className={cn('space-y-2 min-w-0', className)}>
+    <div className={cn('space-y-2 min-w-0 w-full', className)}>
       <div className="text-xs font-medium mb-1.5 text-muted-foreground">COVERAGE</div>
-      <Select
-        value={value.mode}
-        onChange={(e) => setMode(e.target.value as DirectoryCoverageFilter['mode'])}
-        aria-label="Coverage type"
-      >
-        {MODES.map((m) => (
-          <option key={m.id} value={m.id}>
-            {m.label}
-          </option>
-        ))}
-      </Select>
 
-      {value.mode === 'regional' ? (
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         <Select
-          value={value.region || 'South'}
-          onChange={(e) =>
-            onChange({
-              mode: 'regional',
-              region: e.target.value as Region,
-            })
-          }
-          aria-label="Region"
+          value={value.mode}
+          onChange={(e) => setMode(e.target.value as DirectoryCoverageFilter['mode'])}
+          aria-label="Coverage type"
         >
-          {REGIONAL_COVERAGE_OPTIONS.map((r) => (
-            <option key={r} value={r}>
-              {r}
+          {MODES.map((m) => (
+            <option key={m.id} value={m.id}>
+              {m.label}
             </option>
           ))}
         </Select>
-      ) : null}
 
-      {value.mode === 'state' ? (
-        <>
+        {value.mode === 'regional' ? (
+          <Select
+            value={value.region || 'South'}
+            onChange={(e) =>
+              onChange({
+                mode: 'regional',
+                region: e.target.value as Region,
+              })
+            }
+            aria-label="Region"
+          >
+            {REGIONAL_COVERAGE_OPTIONS.map((r) => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </Select>
+        ) : null}
+
+        {value.mode === 'state' ? (
           <Select
             value={value.stateCode || ''}
             onChange={(e) =>
@@ -119,12 +120,23 @@ export function DirectoryCoverageFilterControl({ value, onChange, className }: P
               </option>
             ))}
           </Select>
+        ) : null}
+      </div>
 
-          {value.stateCode && counties.length > 0 ? (
-            <div className="max-h-36 overflow-y-auto rounded-md border bg-muted/20 p-2">
-              <p className="text-[10px] font-medium text-muted-foreground mb-1.5 uppercase tracking-wide">
-                Counties (optional — leave empty for whole state)
-              </p>
+      {value.mode === 'state' && value.stateCode ? (
+        <div className="rounded-md border bg-muted/20 p-3">
+          <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+            <p className="text-[10px] font-medium text-muted-foreground uppercase tracking-wide">
+              Counties (optional)
+            </p>
+            <p className="text-[11px] text-muted-foreground">
+              {selectedCounties.size > 0
+                ? `${selectedCounties.size} selected — click to toggle`
+                : 'Leave empty for whole state'}
+            </p>
+          </div>
+          {counties.length > 0 ? (
+            <div className="max-h-48 overflow-y-auto overscroll-contain">
               <div className="flex flex-wrap gap-1.5">
                 {counties.map((c) => {
                   const active = selectedCounties.has(c.slug);
@@ -146,13 +158,25 @@ export function DirectoryCoverageFilterControl({ value, onChange, className }: P
                 })}
               </div>
             </div>
-          ) : null}
-        </>
+          ) : (
+            <p className="text-xs text-muted-foreground">
+              No county list available for this state.
+            </p>
+          )}
+        </div>
       ) : null}
 
       {value.mode === 'national' ? (
         <p className="text-[11px] text-muted-foreground leading-relaxed">
           Nationwide / continental coverage only (excludes local/in-state movers).
+        </p>
+      ) : null}
+
+      {value.mode === 'state' ? (
+        <p className="text-[11px] text-muted-foreground leading-relaxed">
+          {value.countySlugs && value.countySlugs.length > 0
+            ? 'Shows movers assigned to or serving the selected counties. Local movers are listed first.'
+            : 'Shows interstate carriers/brokers that operate in this state plus local movers based there. Local movers are listed first.'}
         </p>
       ) : null}
     </div>

@@ -149,15 +149,17 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
             </div>
           ) : null}
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
-          {verification.directoryVerified || verification.fmcsa || verification.bbb ? (
-            <div className="mt-4 space-y-2">
-              <p className="text-xs text-muted-foreground max-w-xl leading-relaxed">
-                <strong className="text-foreground">FMCSA</strong> — {FMCSA_PLAIN_ENGLISH}
-              </p>
-              <SeeHowWeVetLink className="text-xs" />
-              <VerificationBadgeLegend className="mt-2" />
-            </div>
-          ) : null}
+          <div className="mt-4 space-y-2">
+            {verification.directoryVerified || verification.fmcsa || verification.bbb ? (
+              <>
+                <p className="text-xs text-muted-foreground max-w-xl leading-relaxed">
+                  <strong className="text-foreground">FMCSA</strong> — {FMCSA_PLAIN_ENGLISH}
+                </p>
+                <SeeHowWeVetLink className="text-xs" />
+              </>
+            ) : null}
+            <VerificationBadgeLegend className="mt-2" />
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <a href={company.website} target="_blank" rel="noopener" className="flex items-center gap-1 text-sm text-primary hover:underline">

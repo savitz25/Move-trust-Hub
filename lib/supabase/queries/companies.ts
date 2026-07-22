@@ -110,11 +110,18 @@ const COMPANY_LIST_BASE_COLUMNS = [
   'verification_sources',
 ].join(', ');
 
+/** Intrastate / local coverage — may lag behind contact columns on older DBs. */
+const COMPANY_SCOPE_COLUMNS = 'service_scope, coverage_counties';
+
 /**
- * Progressive contact projections. Missing `email` must NOT drop `phone`.
- * Order: richest → safest.
+ * Progressive projections. Missing optional columns must NOT drop the whole list.
+ * Order: richest (scope + contacts) → scope only → contacts only → base.
  */
 const COMPANY_LIST_PROJECTIONS = [
+  `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_SCOPE_COLUMNS}, phone, email, physical_address`,
+  `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_SCOPE_COLUMNS}, phone, physical_address`,
+  `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_SCOPE_COLUMNS}, phone`,
+  `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_SCOPE_COLUMNS}`,
   `${COMPANY_LIST_BASE_COLUMNS}, phone, email, physical_address`,
   `${COMPANY_LIST_BASE_COLUMNS}, phone, physical_address`,
   `${COMPANY_LIST_BASE_COLUMNS}, phone`,
@@ -147,6 +154,7 @@ export function companyListProjectionCandidates(includeLegacyEnrichment: boolean
 function mapRow(row: Record<string, unknown>): Company {
   const baseServices = (row.services as Company['services']) || [];
   const fmcsaFields = extractFmcsaFieldsFromRow(row, baseServices);
+  // Prefer FMCSA DBA over legal entity name for all public list/profile surfaces.
   const publicNames = resolvePublicCompanyNameFromSources({
     storedName: row.name as string,
     fmcsaLegalName: row.fmcsa_legal_name as string | null | undefined,
@@ -381,8 +389,8 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
-  // Bump when Google resolve + contact-column fallback change
-  ['companies-directory-v8-phone-projections'],
+  // v10: include service_scope + coverage_counties when present (Local Mover / geo filters)
+  ['companies-directory-v10-scope-coverage'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 

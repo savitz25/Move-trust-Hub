@@ -3,6 +3,7 @@
  * Supports National, Regional, and State + optional counties.
  */
 
+import { companyResolvesAsLocalMover } from '@/lib/companies/is-local-mover';
 import type { Company, DirectoryCoverageFilter, Region } from '@/types';
 
 export const NATIONAL_COVERAGE_LABELS = new Set([
@@ -117,8 +118,21 @@ export function extractStateCodeFromHeadquarters(
 ): string | null {
   if (!headquarters?.trim()) return null;
   const hq = headquarters.trim();
-  const codeMatch = hq.match(/\b([A-Z]{2})\b(?:\s+\d{5})?$/);
-  if (codeMatch?.[1] && STATE_CODE_TO_NAME[codeMatch[1]]) return codeMatch[1];
+
+  // "City, ST" or "City, ST 12345" at end
+  const codeMatch = hq.match(/\b([A-Z]{2})\b(?:\s+\d{5}(?:-\d{4})?)?$/i);
+  if (codeMatch?.[1]) {
+    const code = codeMatch[1].toUpperCase();
+    if (STATE_CODE_TO_NAME[code]) return code;
+  }
+
+  // "…, ST, 97496" or "…, ST," mid-string (common FMCSA style)
+  const midMatch = hq.match(/,\s*([A-Z]{2})\s*(?:,|$)/i);
+  if (midMatch?.[1]) {
+    const code = midMatch[1].toUpperCase();
+    if (STATE_CODE_TO_NAME[code]) return code;
+  }
+
   const lower = hq.toLowerCase();
   for (const [code, name] of Object.entries(STATE_CODE_TO_NAME)) {
     if (lower.endsWith(name.toLowerCase()) || lower.includes(`, ${name.toLowerCase()}`)) {
@@ -139,8 +153,17 @@ function companyCoverageCounties(company: Company): Array<{ stateSlug: string; c
     .filter((c) => c.stateSlug && c.countySlug);
 }
 
-export function companyIsLocal(company: Pick<Company, 'serviceScope'>): boolean {
-  return company.serviceScope === 'intrastate';
+/** True for Local Mover badge / intrastate companies (not only service_scope column). */
+export function companyIsLocal(
+  company: Pick<
+    Company,
+    'serviceScope' | 'entityType' | 'services' | 'usdotNumber' | 'mcNumber'
+  > & {
+    fmcsaRaw?: Record<string, unknown> | null;
+    isLocalOnly?: boolean;
+  }
+): boolean {
+  return companyResolvesAsLocalMover(company);
 }
 
 export function companyIsNational(company: Company): boolean {
@@ -188,6 +211,11 @@ export function companyServesState(company: Company, stateCode: string): boolean
   return false;
 }
 
+/**
+ * County-level match (mirrors county local-mover pages).
+ * Prefer explicit coverage_counties / destination assignments — do not flood
+ * results with every national carrier when a county is selected.
+ */
 export function companyServesAnyCounty(
   company: Company,
   stateCode: string,
@@ -198,39 +226,131 @@ export function companyServesAnyCounty(
   if (!stateSlug || !countySlugs.length) return companyServesState(company, code);
 
   const want = new Set(countySlugs.map((s) => s.toLowerCase()));
+  const counties = companyCoverageCounties(company);
 
-  if (companyIsLocal(company)) {
-    const counties = companyCoverageCounties(company);
-    return counties.some(
-      (c) => c.stateSlug === stateSlug && want.has(c.countySlug)
-    );
+  if (counties.some((c) => c.stateSlug === stateSlug && want.has(c.countySlug))) {
+    return true;
   }
 
-  // Interstate national/regional: treat as serving any county in the state
-  if (companyIsNational(company) || isRegionalCoverageLabel(company.coverage)) {
+  // Local with no county list yet: HQ in state is a soft match (same as county page lag).
+  if (companyIsLocal(company) && counties.length === 0) {
     return companyServesState(company, code);
   }
 
-  // HQ in state without county granularity
-  return companyServesState(company, code);
+  // Interstate without assignment to this county: exclude (county page does not list them all).
+  return false;
+}
+
+/**
+ * Relevance score for state/county directory results.
+ * Higher = sort earlier. Locals rise to the top unless type chips force Carrier/Broker only.
+ */
+export function companyGeoPriorityScore(
+  company: Company,
+  filter: DirectoryCoverageFilter,
+  options?: { prioritizeLocalMovers?: boolean }
+): number {
+  if (filter.mode !== 'state' || !filter.stateCode) return 0;
+
+  const prioritize = options?.prioritizeLocalMovers !== false;
+  const isLocal = companyIsLocal(company);
+  const counties = filter.countySlugs ?? [];
+  const hasCountyFilter = counties.length > 0;
+  const inCounty =
+    hasCountyFilter && companyServesAnyCounty(company, filter.stateCode, counties);
+  const inState = companyServesState(company, filter.stateCode);
+
+  if (!inState && !inCounty) return 0;
+
+  if (prioritize) {
+    // County search: local-in-county strongest, then other locals in state, then assigned interstate
+    if (hasCountyFilter) {
+      if (isLocal && inCounty) return 400;
+      if (isLocal && inState) return 300;
+      if (inCounty) return 200;
+      return 50;
+    }
+    // State search: all locals first, then interstate serving the state
+    if (isLocal) return 300;
+    return 100;
+  }
+
+  // Type filter suppressed local boost — still nudge county assignments slightly
+  if (hasCountyFilter && inCounty) return 20;
+  return 0;
+}
+
+/** True when state/county results should sort Local Mover companies first. */
+export function shouldPrioritizeLocalMoversInCoverage(
+  services: string[] | null | undefined,
+  coverage: DirectoryCoverageFilter
+): boolean {
+  if (coverage.mode !== 'state') return false;
+  const typeChips = (services ?? []).filter(
+    (s) =>
+      s === 'Carrier' ||
+      s === 'Broker' ||
+      s === 'Carrier / Broker' ||
+      s === 'Local Mover'
+  );
+  // User explicitly filtered to carrier/broker types only → no local boost
+  if (
+    typeChips.length > 0 &&
+    !typeChips.includes('Local Mover') &&
+    typeChips.every((s) => s === 'Carrier' || s === 'Broker' || s === 'Carrier / Broker')
+  ) {
+    return false;
+  }
+  return true;
 }
 
 /**
  * Resolve structured filter from legacy `coverage` string or full coverageFilter.
+ * Also accepts direct `state` + `countySlugs` shorthand.
  */
 export function normalizeCoverageFilter(
   filters: {
     coverage?: string | null;
     coverageFilter?: DirectoryCoverageFilter | null;
+    /** Shorthand: 2-letter state code (URL `state`) */
+    state?: string | null;
+    /** Shorthand county slugs (URL `counties` / `counties[]`) */
+    counties?: string[] | null;
   }
 ): DirectoryCoverageFilter {
-  if (filters.coverageFilter?.mode) {
+  const fromFilter = filters.coverageFilter;
+  const stateFromShorthand = (filters.state || '').trim().toUpperCase();
+  const countiesFromShorthand = (filters.counties ?? [])
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+
+  // Explicit structured filter wins when mode is set
+  if (fromFilter?.mode && fromFilter.mode !== 'any') {
     return {
-      mode: filters.coverageFilter.mode,
-      region: filters.coverageFilter.region ?? null,
-      stateCode: filters.coverageFilter.stateCode ?? null,
-      countySlugs: filters.coverageFilter.countySlugs ?? [],
+      mode: fromFilter.mode,
+      region: fromFilter.region ?? null,
+      stateCode: fromFilter.stateCode ?? (stateFromShorthand || null),
+      countySlugs:
+        fromFilter.countySlugs?.length
+          ? fromFilter.countySlugs
+          : countiesFromShorthand,
     };
+  }
+
+  // state=AZ or coverageFilter.stateCode without mode
+  const stateCode =
+    (fromFilter?.stateCode || stateFromShorthand || '').trim().toUpperCase() || null;
+  const countySlugs =
+    fromFilter?.countySlugs?.length
+      ? fromFilter.countySlugs
+      : countiesFromShorthand;
+
+  if (stateCode && STATE_CODE_TO_NAME[stateCode]) {
+    return { mode: 'state', stateCode, countySlugs };
+  }
+
+  if (fromFilter?.mode === 'any') {
+    return { mode: 'any' };
   }
 
   const c = (filters.coverage || 'Any').trim();
@@ -248,6 +368,12 @@ export function normalizeCoverageFilter(
   const asCode = c.length === 2 ? c.toUpperCase() : null;
   if (asCode && STATE_CODE_TO_NAME[asCode]) {
     return { mode: 'state', stateCode: asCode, countySlugs: [] };
+  }
+  // Full state name
+  for (const [code, name] of Object.entries(STATE_CODE_TO_NAME)) {
+    if (name.toLowerCase() === c.toLowerCase()) {
+      return { mode: 'state', stateCode: code, countySlugs: [] };
+    }
   }
   return { mode: 'any' };
 }

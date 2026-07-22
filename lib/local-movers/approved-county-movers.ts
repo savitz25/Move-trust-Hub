@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { unstable_cache } from 'next/cache';
+import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
@@ -13,7 +14,7 @@ import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-m
 export { APPROVED_COUNTY_MOVERS_TAG };
 
 const COMPANY_MOVER_SELECT =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw';
 
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
@@ -46,7 +47,20 @@ type CompanyMoverRow = {
   entity_type?: string | null;
   coverage_counties?: unknown;
   last_updated?: string | null;
+  fmcsa_legal_name?: string | null;
+  fmcsa_raw?: unknown;
 };
+
+/** Apply DBA preference so county cards match full profiles and the main directory. */
+function withPublicDisplayName(company: CompanyMoverRow): CompanyMoverRow {
+  const resolved = resolvePublicCompanyNameFromSources({
+    storedName: company.name,
+    fmcsaLegalName: company.fmcsa_legal_name,
+    fmcsaRaw: company.fmcsa_raw,
+  });
+  if (!resolved.publicName || resolved.publicName === company.name) return company;
+  return { ...company, name: resolved.publicName };
+}
 
 function countyKey(stateSlug: string, countySlug: string): string {
   return `${stateSlug}::${countySlug}`;
@@ -135,7 +149,7 @@ async function loadCompaniesByIds(
     }
 
     for (const company of companies) {
-      companiesById.set(company.id, company);
+      companiesById.set(company.id, withPublicDisplayName(company));
     }
   }
 
@@ -179,10 +193,11 @@ async function loadIntrastateCoverageCounties(
     if (!rows.length) break;
 
     for (const company of rows) {
-      const counties = normalizeSelectedCounties(company.coverage_counties);
+      const named = withPublicDisplayName(company);
+      const counties = normalizeSelectedCounties(named.coverage_counties);
       for (const c of counties) {
         out.push({
-          company,
+          company: named,
           stateSlug: c.stateSlug,
           countySlug: c.countySlug,
         });
@@ -288,8 +303,8 @@ async function loadAllApprovedMoversByCounty(): Promise<Record<string, LocalMove
 
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  // bump when entity_type is selected for county type badges
-  ['approved-county-movers-all-v4-entity-type'],
+  // v5: resolve DBA public names for county local-mover cards
+  ['approved-county-movers-all-v5-dba-names'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
 

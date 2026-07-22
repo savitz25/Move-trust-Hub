@@ -1,4 +1,4 @@
-import type { Company, ServiceType } from '@/types';
+import type { ServiceType } from '@/types';
 
 const ENTITY_TYPE_SERVICE_MAP: Record<string, ServiceType> = {
   BROKER: 'Broker',
@@ -41,25 +41,4 @@ export function mergeServicesWithEntityType(
   const derived = deriveServicesFromEntityType(entityType);
   if (!derived.length) return services;
   return [...new Set([...services, ...derived])];
-}
-
-/** Whether a company matches a single Services Offered filter chip. */
-export function companyMatchesServiceFilter(
-  company: Pick<Company, 'services' | 'entityType' | 'serviceScope'>,
-  service: ServiceType
-): boolean {
-  // Local / intrastate funnel
-  if (service === 'Local Mover') {
-    return company.serviceScope === 'intrastate';
-  }
-
-  const services = Array.isArray(company.services) ? company.services : [];
-  if (services.includes(service)) return true;
-
-  const entityType = normalizeFmcsaEntityType(company.entityType);
-  if (!entityType) return false;
-
-  const key = entityTypeKey(entityType);
-  const mapped = ENTITY_TYPE_SERVICE_MAP[key];
-  return mapped === service;
 }
