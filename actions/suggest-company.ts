@@ -563,6 +563,202 @@ export async function submitCompanySuggestion(
       return { success: false, error: 'Enter the local mover’s business name.' };
     }
 
+    // -------------------------------------------------------------------------
+    // Admin local FAST PATH: skip live Google/coverage scrapes and the full
+    // approve pipeline. Direct company + county write so the UI never hangs on
+    // "processing" waiting for enrichment or mass revalidation.
+    // -------------------------------------------------------------------------
+    if (trustedSubmitter && isLocal) {
+      let selectedCountiesFast = normalizeSelectedCounties(
+        parsed.data.selectedCounties
+      );
+      if (parsed.data.stateCode) {
+        selectedCountiesFast = filterCountiesToState(
+          selectedCountiesFast,
+          parsed.data.stateCode
+        );
+      }
+      if (!selectedCountiesFast.length) {
+        return {
+          success: false,
+          error:
+            'Select at least one county in the onboarding state for local placement.',
+        };
+      }
+
+      const snap = parsed.data.enrichmentSnapshot;
+      const google = snap?.google;
+      const fastPhone =
+        preferGoodContactField(
+          parsed.data.phone,
+          google && 'phone' in google ? String(google.phone ?? '') : null,
+          'phone'
+        ) || null;
+      const fastWebsite =
+        preferGoodContactField(
+          parsed.data.websiteUrl,
+          google && 'website_url' in google
+            ? String(google.website_url ?? '')
+            : null,
+          'website'
+        ) || null;
+      const fastEmail =
+        preferGoodContactField(parsed.data.contactEmail, null, 'email') || null;
+      const fastHq =
+        (google && 'formatted_address' in google
+          ? String(google.formatted_address ?? '')
+          : null) ||
+        parsed.data.headquarters ||
+        (parsed.data.stateCode
+          ? `${companyName}, ${parsed.data.stateCode}`
+          : companyName);
+
+      logger.info('suggestion.admin_local_fast_path_start', {
+        submitTraceId,
+        name: companyName,
+        countyCount: selectedCountiesFast.length,
+        hasSnapshot: Boolean(snap),
+        hasPhone: Boolean(fastPhone),
+        hasWebsite: Boolean(fastWebsite),
+      });
+
+      try {
+        const { publishLocalCompanyDirect } = await import(
+          '@/lib/suggestions/publish-local-direct'
+        );
+        const direct = await publishLocalCompanyDirect({
+          name: companyName,
+          stateCode: parsed.data.stateCode,
+          headquarters: fastHq,
+          phone: fastPhone,
+          email: fastEmail,
+          website: fastWebsite,
+          selectedCounties: selectedCountiesFast,
+          details: parsed.data.details,
+          googleData: (google as never) ?? null,
+          publicScrapeData: (snap?.publicScrape as never) ?? null,
+        });
+
+        if (direct.ok) {
+          // Best-effort audit row — never block success. Cap wait so a slow
+          // company_suggestions insert cannot re-introduce the "processing" hang.
+          // Fire-and-forget audit with short race; attach catch so late failure is logged.
+          const auditPromise = (async () => {
+            const admin = createAdminClient();
+            const emailHash = hashEmail(parsed.data.suggestedByEmail);
+            const ipHash = userIp ? hashIp(userIp) : null;
+            const skippedCoverage: WebsiteCoverageData = {
+              consentGiven: true,
+              websiteUrl: fastWebsite,
+              scrapedAt: new Date().toISOString(),
+              status: 'skipped',
+              isNationalOnly: false,
+              summary: 'admin_local_fast_path',
+              stateSlugs: [],
+              cities: [],
+              counties: [],
+              officeAddresses: [],
+              regions: [],
+              pagesFetched: [],
+              rawSnippets: [],
+            };
+            const auditRow = buildCompanySuggestionInsertRow({
+              parsed: {
+                ...parsed.data,
+                serviceScope: 'intrastate',
+                selectedCounties: selectedCountiesFast,
+                phone: fastPhone,
+                contactEmail: fastEmail,
+                websiteUrl: fastWebsite,
+              },
+              companyName,
+              fmcsa: null,
+              carrierParsed: null,
+              enrichment: {
+                google: (google as never) ?? null,
+                publicScrape: (snap?.publicScrape as never) ?? null,
+                fetchedAt: snap?.fetchedAt ?? new Date().toISOString(),
+              },
+              userIp,
+              emailHash,
+              ipHash,
+              coverage: skippedCoverage,
+              resolvedPhone: fastPhone,
+              resolvedContactEmail: fastEmail,
+            });
+            const ins = await insertCompanySuggestion(admin, {
+              ...auditRow,
+              status: 'approved',
+              company_id: direct.companyId,
+              moderated_at: new Date().toISOString(),
+              moderated_by: 'admin_local_fast_path',
+            } as never);
+            if (ins.ok) {
+              logger.info('suggestion.admin_local_fast_path_audit_ok', {
+                submitTraceId,
+                suggestionId: ins.id,
+                slug: direct.slug,
+              });
+            }
+          })().catch((auditErr: unknown) => {
+            logger.warn('suggestion.admin_local_fast_path_audit_failed', {
+              submitTraceId,
+              slug: direct.slug,
+              message:
+                auditErr instanceof Error
+                  ? auditErr.message
+                  : String(auditErr),
+            });
+          });
+          await Promise.race([
+            auditPromise,
+            new Promise<void>((resolve) => setTimeout(resolve, 2500)),
+          ]);
+
+          logAdminPublish({
+            suggestionId: 'fast_path',
+            slug: direct.slug,
+            serviceScope: 'intrastate',
+            trustedReason: trust.reason,
+            countyCount: selectedCountiesFast.length,
+            fillRate: 0,
+            ok: true,
+          });
+
+          return {
+            success: true,
+            profileSlug: direct.slug,
+            pendingReview: false,
+            adminPublished: true,
+            publishedCounties: selectedCountiesFast,
+            message: `Local mover published to ${direct.countiesAssigned} count${direct.countiesAssigned === 1 ? 'y' : 'ies'}.`,
+          };
+        }
+
+        // Do not fall through to live enrichment/scrapes — that re-hangs the UI.
+        logger.error('suggestion.admin_local_fast_path_failed', {
+          submitTraceId,
+          error: direct.error,
+          step: direct.step,
+        });
+        return {
+          success: false,
+          error: `Local publish failed (${direct.step}): ${direct.error}`,
+        };
+      } catch (fastErr) {
+        const message =
+          fastErr instanceof Error ? fastErr.message : String(fastErr);
+        logger.error('suggestion.admin_local_fast_path_threw', {
+          submitTraceId,
+          message,
+        });
+        return {
+          success: false,
+          error: `Local publish failed: ${message}`,
+        };
+      }
+    }
+
     const enrichment = await resolveSubmissionEnrichment({
       // Prefer trade name for Places/BBB match quality; legal stays on legal_name column.
       legalName: companyName,
@@ -585,6 +781,7 @@ export async function submitCompanySuggestion(
       null;
 
     // Contact cascade: FMCSA → Google → user → website scrape (phone + email).
+    // Trusted local already tried fast path; skip network scrape to avoid hangs.
     const { resolveCompanyContact } = await import(
       '@/lib/suggestions/resolve-company-contact'
     );
@@ -595,22 +792,39 @@ export async function submitCompanySuggestion(
       userPhone: parsed.data.phone,
       userEmail: parsed.data.contactEmail,
       userWebsite: websiteFallback,
-      scrapeWebsite: Boolean(websiteFallback),
+      scrapeWebsite: !(trustedSubmitter && isLocal) && Boolean(websiteFallback),
       context: isLocal ? 'local_onboarding' : 'interstate_onboarding',
     });
 
     // Prefer resolved website for coverage scrape URL as well.
-    const coverage = await resolveSubmissionCoverage(
-      {
-        ...parsed.data,
-        websiteUrl: resolvedContact.website || parsed.data.websiteUrl,
-        // Contact scrape implies consent for reading the same public pages.
-        coverageConsent:
-          parsed.data.coverageConsent ||
-          Boolean(resolvedContact.website && isLocal),
-      },
-      resolvedContact.website || websiteFallback
-    );
+    // Skip slow coverage scrape for trusted local (counties already selected).
+    const coverage: WebsiteCoverageData =
+      trustedSubmitter && isLocal
+        ? {
+            consentGiven: true,
+            websiteUrl: resolvedContact.website || websiteFallback,
+            scrapedAt: new Date().toISOString(),
+            status: 'skipped',
+            isNationalOnly: false,
+            summary: 'skipped_trusted_local',
+            stateSlugs: [],
+            cities: [],
+            counties: [],
+            officeAddresses: [],
+            regions: [],
+            pagesFetched: [],
+            rawSnippets: [],
+          }
+        : await resolveSubmissionCoverage(
+            {
+              ...parsed.data,
+              websiteUrl: resolvedContact.website || parsed.data.websiteUrl,
+              coverageConsent:
+                parsed.data.coverageConsent ||
+                Boolean(resolvedContact.website && isLocal),
+            },
+            resolvedContact.website || websiteFallback
+          );
 
     const duplicateCheck = await checkSuggestionDuplicate({
       name: companyName,

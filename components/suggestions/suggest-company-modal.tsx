@@ -93,10 +93,15 @@ export function SuggestCompanyModal({
   const [companyEmail, setCompanyEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<SubmitSuccessState | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitPhase, setSubmitPhase] = useState<'idle' | 'publishing' | 'saving'>('idle');
   const [pending, startTransition] = useTransition();
   /** Set when FMCSA has USDOT active but no interstate operating authority */
   const [forcedLocalFromAuthority, setForcedLocalFromAuthority] = useState(false);
   const [authorityHandoffMessage, setAuthorityHandoffMessage] = useState<string | null>(null);
+
+  /** Client-side ceiling so a hung server action never leaves the UI on “processing”. */
+  const SUBMIT_TIMEOUT_MS = 45_000;
 
   const isLocal = serviceScope === 'intrastate';
   const readyInterstate = Boolean(activePreview?.fmcsa?.legalName && carrierQuery.trim());
@@ -177,6 +182,8 @@ export function SuggestCompanyModal({
     setCompanyEmail('');
     setSubmitted(false);
     setSubmitSuccess(null);
+    setSubmitError(null);
+    setSubmitPhase('idle');
     setForcedLocalFromAuthority(false);
     setAuthorityHandoffMessage(null);
     onEnrichedPreviewChange?.(null);
@@ -306,8 +313,15 @@ export function SuggestCompanyModal({
     if (!readyToSubmit || !serviceScope) return;
 
     startTransition(async () => {
+      setSubmitError(null);
+      const adminMode =
+        isTrustedSubmitter || isTrustedSubmitterEmail(suggestedByEmail);
+      setSubmitPhase(
+        adminMode || isLocal ? 'publishing' : 'saving'
+      );
+
       const google = activePreview?.google;
-      const res = await submitCompanySuggestion({
+      const payload = {
         serviceScope,
         carrierQuery: isLocal ? null : carrierQuery,
         name: isLocal
@@ -348,54 +362,81 @@ export function SuggestCompanyModal({
           activePreview?.fmcsa?.phone ||
           null,
         contactEmail: companyEmail.trim() || null,
-      });
+      };
 
-      if (!res.success) {
-        if (res.forceIntrastate && activePreview) {
-          applyNotAuthorizedIntrastateHandoff(activePreview, carrierQuery);
-          toast.message('Routed to Local / Intrastate', {
-            description:
-              res.error ??
-              'No interstate operating authority — continue with county selection.',
-          });
+      try {
+        const res = await Promise.race([
+          submitCompanySuggestion(payload),
+          new Promise<never>((_, reject) => {
+            setTimeout(() => {
+              reject(
+                new Error(
+                  isLocal
+                    ? 'Publish is taking too long. The company may still have been saved — check county pages or /admin/suggestions, then try again if needed.'
+                    : 'Submission is taking too long. Please wait a moment and try again.'
+                )
+              );
+            }, SUBMIT_TIMEOUT_MS);
+          }),
+        ]);
+
+        if (!res.success) {
+          if (res.forceIntrastate && activePreview) {
+            applyNotAuthorizedIntrastateHandoff(activePreview, carrierQuery);
+            setSubmitPhase('idle');
+            toast.message('Routed to Local / Intrastate', {
+              description:
+                res.error ??
+                'No interstate operating authority — continue with county selection.',
+            });
+            return;
+          }
+          const errMsg = res.existingProfileSlug
+            ? `${res.error ?? 'This company is already listed.'} Profile: /companies/${res.existingProfileSlug}`
+            : res.error ?? 'Submission failed';
+          setSubmitError(errMsg);
+          setSubmitPhase('idle');
+          toast.error(errMsg);
           return;
         }
-        if (res.existingProfileSlug) {
-          toast.error(
-            `${res.error ?? 'This company is already listed.'} Profile: /companies/${res.existingProfileSlug}`
+
+        // Always show the confirmation panel when the server accepted the submission.
+        setSubmitSuccess({
+          profileSlug: res.profileSlug || '',
+          pendingReview: Boolean(res.pendingReview),
+          serviceScope,
+          adminPublished: Boolean(res.adminPublished),
+          publishedCounties:
+            res.publishedCounties ?? (isLocal ? selectedCounties : undefined),
+          message: res.message,
+        });
+        setSubmitted(true);
+        setSubmitPhase('idle');
+
+        if (res.pendingReview) {
+          toast.success(
+            isLocal
+              ? 'Local mover saved — pending final placement review.'
+              : 'Submission received — pending admin review.'
+          );
+        } else if (isLocal) {
+          const n = res.publishedCounties?.length ?? selectedCounties.length;
+          toast.success(
+            n > 0
+              ? `Published to ${n} county page${n === 1 ? '' : 's'}.`
+              : 'Local mover published to selected county pages.'
           );
         } else {
-          toast.error(res.error ?? 'Submission failed');
+          toast.success('Company published to the directory.');
         }
-        return;
-      }
-
-      // Always show the confirmation panel when the server accepted the submission.
-      setSubmitSuccess({
-        profileSlug: res.profileSlug || '',
-        pendingReview: Boolean(res.pendingReview),
-        serviceScope,
-        adminPublished: Boolean(res.adminPublished),
-        publishedCounties: res.publishedCounties ?? (isLocal ? selectedCounties : undefined),
-        message: res.message,
-      });
-      setSubmitted(true);
-
-      if (res.pendingReview) {
-        toast.success(
-          isLocal
-            ? 'Local mover saved — pending final placement review.'
-            : 'Submission received — pending admin review.'
-        );
-      } else if (isLocal) {
-        const n = res.publishedCounties?.length ?? selectedCounties.length;
-        toast.success(
-          n > 0
-            ? `Published to ${n} county page${n === 1 ? '' : 's'}.`
-            : 'Local mover published to selected county pages.'
-        );
-      } else {
-        toast.success('Company published to the directory.');
+      } catch (err) {
+        const message =
+          err instanceof Error
+            ? err.message
+            : 'Something went wrong while publishing. Please try again.';
+        setSubmitError(message);
+        setSubmitPhase('idle');
+        toast.error(message);
       }
     });
   }
@@ -836,13 +877,55 @@ export function SuggestCompanyModal({
                   </p>
                 ) : null}
 
+                {pending && submitPhase !== 'idle' ? (
+                  <div
+                    className="flex items-start gap-2 rounded-md border border-sky-200/80 bg-sky-50/70 px-3 py-2 text-sm text-sky-950 dark:border-sky-900/40 dark:bg-sky-950/30 dark:text-sky-50"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    <Loader2 className="mt-0.5 h-4 w-4 shrink-0 animate-spin text-primary" />
+                    <div>
+                      <p className="font-medium">
+                        {submitPhase === 'publishing'
+                          ? isLocal
+                            ? 'Publishing local mover…'
+                            : 'Publishing to directory…'
+                          : 'Saving submission…'}
+                      </p>
+                      <p className="mt-0.5 text-xs opacity-90">
+                        {isLocal
+                          ? 'Writing company, county placements, and refreshing county pages. This usually takes a few seconds.'
+                          : 'Please wait — do not close this dialog.'}
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
+
+                {submitError ? (
+                  <div
+                    className="rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm text-destructive"
+                    role="alert"
+                  >
+                    <p className="font-medium">Publish failed</p>
+                    <p className="mt-0.5 text-xs leading-relaxed opacity-95">
+                      {submitError}
+                    </p>
+                  </div>
+                ) : null}
+
                 <Button type="submit" className="w-full" disabled={pending || !readyToSubmit}>
                   {pending ? (
                     <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                   ) : null}
-                  {isTrustedSubmitter || isTrustedSubmitterEmail(suggestedByEmail)
-                    ? 'Publish now'
-                    : 'Submit for review'}
+                  {pending
+                    ? submitPhase === 'publishing'
+                      ? isLocal
+                        ? 'Publishing…'
+                        : 'Publishing…'
+                      : 'Saving…'
+                    : isTrustedSubmitter || isTrustedSubmitterEmail(suggestedByEmail)
+                      ? 'Publish now'
+                      : 'Submit for review'}
                 </Button>
               </form>
             )}

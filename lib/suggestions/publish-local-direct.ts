@@ -160,30 +160,62 @@ export async function publishLocalCompanyDirect(
             } as never)
             .eq('id', existing.id);
 
-          const assigned = await assignSelectedCounties({
-            companyId: String(existing.id),
-            companySlug: existing.slug,
-            headquarters,
-            counties,
-          });
+          let countiesAssigned = counties.length;
+          try {
+            const assignPromise = assignSelectedCounties({
+              companyId: String(existing.id),
+              companySlug: existing.slug,
+              headquarters,
+              counties,
+            })
+              .then((assigned) => {
+                countiesAssigned =
+                  assigned.assignedCounties.length || counties.length;
+              })
+              .catch((assignErr: unknown) => {
+                logger.error('local_direct.assign_existing_threw', {
+                  slug: existing.slug,
+                  message:
+                    assignErr instanceof Error
+                      ? assignErr.message
+                      : String(assignErr),
+                });
+              });
+            await Promise.race([
+              assignPromise,
+              new Promise<void>((resolve) => setTimeout(resolve, 8000)),
+            ]);
+          } catch (assignErr) {
+            logger.error('local_direct.assign_existing_threw', {
+              slug: existing.slug,
+              message:
+                assignErr instanceof Error
+                  ? assignErr.message
+                  : String(assignErr),
+            });
+          }
 
           if (input.suggestionId) {
-            await admin
-              .from('company_suggestions')
-              .update({
-                status: 'approved',
-                company_id: existing.id,
-                moderated_at: now,
-                moderated_by: 'admin_local_direct_existing',
-              } as never)
-              .eq('id', input.suggestionId);
+            try {
+              await admin
+                .from('company_suggestions')
+                .update({
+                  status: 'approved',
+                  company_id: existing.id,
+                  moderated_at: now,
+                  moderated_by: 'admin_local_direct_existing',
+                } as never)
+                .eq('id', input.suggestionId);
+            } catch {
+              // ignore
+            }
           }
 
           return {
             ok: true,
             companyId: String(existing.id),
             slug: existing.slug,
-            countiesAssigned: assigned.assignedCounties.length,
+            countiesAssigned,
           };
         }
       }
@@ -204,30 +236,62 @@ export async function publishLocalCompanyDirect(
     const publishedSlug = insertResult.slug;
     const publishedId = insertResult.companyId;
 
-    const assigned = await assignSelectedCounties({
-      companyId: publishedId,
-      companySlug: publishedSlug,
-      headquarters,
-      counties,
-    });
+    // County assign + revalidate can be noisy; never let it hang the whole publish.
+    // Prefer returning success with company live even if assign partially fails.
+    let countiesAssigned = counties.length;
+    try {
+      const assignPromise = assignSelectedCounties({
+        companyId: publishedId,
+        companySlug: publishedSlug,
+        headquarters,
+        counties,
+      })
+        .then((assigned) => {
+          countiesAssigned =
+            assigned.assignedCounties.length || counties.length;
+        })
+        .catch((assignErr: unknown) => {
+          logger.error('local_direct.assign_threw', {
+            slug: publishedSlug,
+            message:
+              assignErr instanceof Error
+                ? assignErr.message
+                : String(assignErr),
+          });
+        });
+      await Promise.race([
+        assignPromise,
+        new Promise<void>((resolve) => setTimeout(resolve, 8000)),
+      ]);
+    } catch (assignErr) {
+      // Company exists — never fail the whole publish on revalidate/assign noise.
+      logger.error('local_direct.assign_threw', {
+        slug: publishedSlug,
+        message: assignErr instanceof Error ? assignErr.message : String(assignErr),
+      });
+    }
 
     if (input.suggestionId) {
-      const { error: sugErr } = await admin
-        .from('company_suggestions')
-        .update({
-          status: 'approved',
-          company_id: publishedId,
-          moderated_at: now,
-          moderated_by: 'admin_local_direct',
-          service_scope: 'intrastate',
-          selected_counties: counties as unknown as Json,
-        } as never)
-        .eq('id', input.suggestionId);
-      if (sugErr) {
-        logger.warn('local_direct.suggestion_status_update_failed', {
-          suggestionId: input.suggestionId,
-          message: sugErr.message,
-        });
+      try {
+        const { error: sugErr } = await admin
+          .from('company_suggestions')
+          .update({
+            status: 'approved',
+            company_id: publishedId,
+            moderated_at: now,
+            moderated_by: 'admin_local_direct',
+            service_scope: 'intrastate',
+            selected_counties: counties as unknown as Json,
+          } as never)
+          .eq('id', input.suggestionId);
+        if (sugErr) {
+          logger.warn('local_direct.suggestion_status_update_failed', {
+            suggestionId: input.suggestionId,
+            message: sugErr.message,
+          });
+        }
+      } catch {
+        // ignore
       }
     }
 
@@ -235,7 +299,7 @@ export async function publishLocalCompanyDirect(
       name,
       slug: publishedSlug,
       companyId: publishedId,
-      countiesAssigned: assigned.assignedCounties.length,
+      countiesAssigned,
       suggestionId: input.suggestionId ?? null,
     });
 
@@ -243,7 +307,7 @@ export async function publishLocalCompanyDirect(
       ok: true,
       companyId: publishedId,
       slug: publishedSlug,
-      countiesAssigned: assigned.assignedCounties.length,
+      countiesAssigned,
     };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);

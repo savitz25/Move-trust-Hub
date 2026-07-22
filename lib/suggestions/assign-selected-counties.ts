@@ -3,6 +3,7 @@ import 'server-only';
 import { getMarketPath } from '@/lib/destinations/markets';
 import {
   findNearbyHubsForCounties,
+  MAX_NEARBY_HUBS_PER_COMPANY,
   NEARBY_HUB_MAX_MILES,
 } from '@/lib/destinations/hub-proximity';
 import { revalidateLocalMoverCountyPages } from '@/lib/local-movers/revalidate-county-pages';
@@ -48,7 +49,11 @@ export async function assignSelectedCounties(params: {
   // Nearby destination hubs (~150 mi) for tagging + cache revalidation.
   // Hub pages pull movers via primary + adjacent + proximity counties (read path),
   // so we do NOT copy the company onto other counties (avoids county-page spam).
-  const nearbyAll = findNearbyHubsForCounties(counties, NEARBY_HUB_MAX_MILES);
+  // Cap hubs aggressively so revalidation cannot hang the publish server action.
+  const nearbyAll = findNearbyHubsForCounties(counties, NEARBY_HUB_MAX_MILES).slice(
+    0,
+    Math.min(MAX_NEARBY_HUBS_PER_COMPANY, 4)
+  );
   const nearestHubSlug = nearbyAll[0]?.market.slug ?? null;
 
   // Replace prior assignments for this company so local coverage stays accurate
