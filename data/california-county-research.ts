@@ -10,19 +10,19 @@ export type CuratedCountyResearch = {
 export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   alameda: {
     marketNotes:
-      'Alameda County is a major Bay Area county with dense urban (Oakland, Berkeley) and suburban areas. Moves often involve high-rises, apartments, and family homes with strong local options.',
+      'Alameda County (~1.64M) is the East Bay’s core contrast: dense Oakland/Berkeley urban stock and hills, I-880 southern corridor (Hayward–Fremont), City of Alameda island access, and Tri-Valley suburbs (Livermore, Pleasanton, Dublin). COI/elevators, steep driveways, Port of Oakland freight, UC Berkeley calendars, and 880/580/80/680/24 timing define many “local” jobs.',
     costs: {
-      studioRange: '$550–$1,200',
-      familyRange: '$2,200–$5,000+',
-      avgHourly: '$140–$210/hr for a 2-person crew',
-      note: 'Oakland, Berkeley, and Fremont moves often reflect elevator reservations, Bay Bridge traffic, and high-value urban handling.',
+      studioRange: '$650–$1,700+',
+      familyRange: '$2,800–$7,500+',
+      avgHourly: '$140–$215/hr for a 2-person crew',
+      note: 'Hillside shuttles, elevator/COI soft costs, and Oakland ↔ Tri-Valley multi-freeway hauls push many quotes above base ranges.',
     },
     tips: [
-      'Many buildings require elevator reservations and certificates of insurance.',
-      'Heavy traffic on I-880, I-580, and Bay Bridge approaches.',
-      'Verify coverage for Oakland, Berkeley, Fremont, and Hayward.',
-      'Confirm insurance for high-value urban items.',
-      'Book early for peak seasons.',
+      'Send building COI and elevator rules with the estimate for Oakland, Berkeley, and Emeryville multi-unit.',
+      'Share driveway/approach photos for Oakland and Berkeley hills — full-size trucks often cannot reach the door.',
+      'Treat Oakland/Berkeley ↔ Livermore/Pleasanton as a long East Bay local with honest portal-to-portal time.',
+      'Avoid peak UC Berkeley move-in/out weeks when flexible; reserve elevator windows early.',
+      'Build buffer near I-880 industrial corridors and Bay Bridge–influenced approaches.',
     ],
   },
   alpine: {

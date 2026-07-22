@@ -10,27 +10,27 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   alameda: [
     {
       quote:
-        'MorningStar handled our Oakland high-rise move professionally — efficient crew, elevator coordination, and careful handling throughout.',
+        'Oakland high-rise needed COI and a freight-elevator window — the crew handled the building packet, padded the elevator, and still beat the afternoon 580 mess. Felt like East Bay urban work they do weekly.',
       name: 'David R.',
-      location: 'Oakland, CA',
+      location: 'Downtown Oakland, CA',
       rating: 5,
-      moveType: 'High-Rise',
+      moveType: 'High-rise / elevator',
     },
     {
       quote:
-        'Got2Move provided excellent customer service for our Berkeley apartment move — smooth, efficient, and transparent pricing.',
+        'Berkeley hills driveway was too steep for a full truck. They staged below, shuttle-carried carefully, and were honest about long-carry time. Not a flat Silicon Valley script.',
       name: 'Maria L.',
-      location: 'Berkeley, CA',
+      location: 'Berkeley hills, CA',
       rating: 5,
-      moveType: 'Apartment',
+      moveType: 'Hillside',
     },
     {
       quote:
-        'Roadway Moving exceeded expectations on our Fremont family home relocation — professional team and careful handling of our furnishings.',
+        'Fremont to Pleasanton on a weekday — they built I-680/I-580 traffic into the plan, cleared our HOA gate list, and kept portal-to-portal pricing transparent across the Tri-Valley hop.',
       name: 'James K.',
-      location: 'Fremont, CA',
+      location: 'Fremont → Pleasanton, CA',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'Corridor / Tri-Valley',
     },
   ],
   alpine: [
