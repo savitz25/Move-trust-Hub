@@ -3,6 +3,10 @@ import 'server-only';
 import { unstable_cache } from 'next/cache';
 import { activeDirectoryMovers } from '@/data/active-directory-movers';
 import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
+import {
+  companyCountyLookupKeys,
+  enrichDirectoryWithStaticCountyCoverage,
+} from '@/lib/directory/enrich-static-county-coverage';
 import { localMoverToCompany } from '@/lib/directory/local-mover-to-company';
 import {
   getAssignmentCountiesByCompanyKey,
@@ -20,8 +24,10 @@ import type { Company } from '@/types';
  * Local movers appear when the user selects the "Local Mover" service filter or
  * filters by state/county coverage.
  *
- * Destination assignments are merged into coverageCounties so state/county
- * filters match the same set as local-mover county pages.
+ * County coverage is aligned with /local-movers/[state]/[county] pages:
+ * 1) DB destination assignments
+ * 2) Curated static county catalog assignments (same source as county pages)
+ * 3) Inject catalog movers that appear on county pages but are not in Supabase
  */
 async function buildUnifiedDirectory(): Promise<Company[]> {
   const [directoryCompanies, assignmentMap] = await Promise.all([
@@ -44,22 +50,35 @@ async function buildUnifiedDirectory(): Promise<Company[]> {
 
   const merged = mergeDirectoryCompanies(directoryCompanies, activeCatalogCompanies);
 
-  return merged.map((company) => {
-    const assigned =
-      assignmentMap.get((company.slug || '').toLowerCase()) ||
-      assignmentMap.get((company.id || '').toLowerCase());
+  const withDbAssignments = merged.map((company) => {
+    let assigned = assignmentMap.get((company.slug || '').toLowerCase());
+    if (!assigned?.length) {
+      assigned = assignmentMap.get((company.id || '').toLowerCase());
+    }
+    // Also try directory- / bare aliases used in county assignment files
+    if (!assigned?.length) {
+      for (const key of companyCountyLookupKeys(company)) {
+        const hit = assignmentMap.get(key);
+        if (hit?.length) {
+          assigned = hit;
+          break;
+        }
+      }
+    }
     if (!assigned?.length) return company;
     return {
       ...company,
       coverageCounties: mergeCoverageWithAssignments(company.coverageCounties, assigned),
     };
   });
+
+  return enrichDirectoryWithStaticCountyCoverage(withDbAssignments);
 }
 
 /** Cached directory listing for /companies and slug resolution. */
 export const getUnifiedDirectoryCompanies = unstable_cache(
   buildUnifiedDirectory,
-  // v8: assignment counties + local-first state/county ranking
-  ['unified-movers-directory-v8-state-county'],
+  // v9: static county catalog coverage matches local-movers county pages
+  ['unified-movers-directory-v9-county-catalog'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );

@@ -88,9 +88,13 @@ export function prepareCompaniesForDirectoryClient(companies: Company[]): Compan
           entityType: c.entityType ?? null,
           /** Required for Local Mover vs Carrier type badges on directory cards */
           serviceScope: c.serviceScope ?? null,
-          /** Local coverage for state/county directory filters */
+          /**
+           * Local/state coverage for directory geo filters.
+           * Keep a high cap so multi-county nationals still match county pages
+           * (e.g. Florida markets assign ~60+ counties on some carriers).
+           */
           coverageCounties: Array.isArray(c.coverageCounties)
-            ? c.coverageCounties.slice(0, 40)
+            ? c.coverageCounties.slice(0, 200)
             : [],
           powerUnits: c.powerUnits,
           bbbRating: c.bbbRating,

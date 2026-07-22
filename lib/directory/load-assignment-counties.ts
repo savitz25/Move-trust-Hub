@@ -2,14 +2,16 @@ import 'server-only';
 
 import { unstable_cache } from 'next/cache';
 import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
+import {
+  mergeCoverageWithAssignments,
+  type AssignmentCounty,
+} from '@/lib/directory/coverage-counties-merge';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { logger } from '@/lib/logging/logger';
 
-export type AssignmentCounty = {
-  stateSlug: string;
-  countySlug: string;
-};
+export type { AssignmentCounty };
+export { mergeCoverageWithAssignments };
 
 const PAGE_SIZE = 1000;
 
@@ -80,35 +82,3 @@ export const getAssignmentCountiesByCompanyKey = unstable_cache(
   ['directory-assignment-counties-v1'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 120 }
 );
-
-/** Merge assignment counties into company.coverageCounties (deduped). */
-export function mergeCoverageWithAssignments(
-  existing: Array<{ stateSlug: string; countySlug: string; name?: string }> | null | undefined,
-  assigned: AssignmentCounty[] | undefined
-): Array<{ stateSlug: string; countySlug: string; name?: string }> {
-  const out: Array<{ stateSlug: string; countySlug: string; name?: string }> = [];
-  const seen = new Set<string>();
-
-  for (const c of existing ?? []) {
-    const stateSlug = String(c.stateSlug || '')
-      .trim()
-      .toLowerCase();
-    const countySlug = String(c.countySlug || '')
-      .trim()
-      .toLowerCase();
-    if (!stateSlug || !countySlug) continue;
-    const key = `${stateSlug}/${countySlug}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push({ stateSlug, countySlug, name: c.name });
-  }
-
-  for (const c of assigned ?? []) {
-    const key = `${c.stateSlug}/${c.countySlug}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push({ stateSlug: c.stateSlug, countySlug: c.countySlug });
-  }
-
-  return out;
-}
