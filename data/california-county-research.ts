@@ -622,19 +622,19 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   'san-diego': {
     marketNotes:
-      'San Diego County is a major coastal county with dense urban, suburban, and beach communities. Moves often involve military (many bases), residential, and beach properties.',
+      'San Diego County is a military-heavy coastal market (Navy + Marine Corps bases, Camp Pendleton influence in North County) with dense condo/HOA cores, beach neighborhoods with limited truck staging, and long “local” hauls on I-5, I-15, I-8, and I-805. PCS peaks and building COI rules drive calendars as much as square footage.',
     costs: {
-      studioRange: '$550–$1,200',
-      familyRange: '$2,200–$5,000+',
-      avgHourly: '$125–$190/hr for a 2-person crew',
-      note: 'San Diego, Chula Vista, and Oceanside moves often reflect military PCS timing, coastal sand protection, and I-5/I-805 freeway traffic.',
+      studioRange: '$600–$1,500+',
+      familyRange: '$2,600–$6,500+',
+      avgHourly: '$125–$195/hr for a 2-person crew',
+      note: 'Downtown/Mission Valley towers, beach shuttles, PCS peak weeks, and cross-zone freeway time (e.g. Oceanside ↔ Chula Vista) push many jobs above base ranges.',
     },
     tips: [
-      'Military PCS moves require specialized experience.',
-      'Beach and coastal properties require sand protection.',
-      'Heavy traffic on I-5, I-8, and 805 Freeway.',
-      'Verify coverage for San Diego, Chula Vista, Oceanside, and Escondido.',
-      'Confirm high-value insurance.',
+      'Share base housing or gate-adjacent addresses early — access and wait time can be billable.',
+      'Send HOA/building COI and elevator rules with the estimate (downtown, coastal, Mission Valley).',
+      'Expect shuttle or long-carry on many PB, Mission Beach, OB, and Coronado streets.',
+      'Book around PCS peaks (late spring–summer, end-of-month) 3–6 weeks ahead for Saturdays.',
+      'Protect against salt air and sand; schedule inland East County starts early in summer heat.',
     ],
   },
   'san-francisco': {

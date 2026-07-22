@@ -946,27 +946,27 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   'san-diego': [
     {
       quote:
-        'Piece of Cake Moving made our San Diego military PCS move stress-free — professional crew with great base-access coordination.',
+        'Our PCS from Naval Base San Diego base housing to a Carlsbad condo went smoothly — the crew knew gate timing, packed for temporary lodging, and handled the HOA elevator window without drama.',
       name: 'Lt. James P.',
-      location: 'San Diego, CA',
+      location: 'Naval Base San Diego area → Carlsbad, CA',
       rating: 5,
-      moveType: 'Military',
+      moveType: 'Military PCS',
     },
     {
       quote:
-        'Booth Movers handled our Oceanside coastal home relocation with outstanding care — careful sand protection and excellent communication.',
+        'Moving out of a Pacific Beach walk-up meant no truck at the door. They staged legally two blocks away, protected floors from sand, and still finished before the afternoon I-5 mess.',
       name: 'Melissa R.',
-      location: 'Oceanside, CA',
+      location: 'Pacific Beach, San Diego, CA',
       rating: 5,
-      moveType: 'Coastal',
+      moveType: 'Coastal condo',
     },
     {
       quote:
-        'California Premier Moving provided dependable service for our Chula Vista suburban move — efficient despite heavy I-805 traffic.',
+        'Chula Vista to La Mesa on a weekday — they built I-805 traffic into the plan, padded our HOA COI, and were transparent about portal-to-portal hours. Felt like a San Diego crew, not a generic SoCal script.',
       name: 'Carlos M.',
-      location: 'Chula Vista, CA',
+      location: 'Chula Vista → La Mesa, CA',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'South Bay residential',
     },
   ],
   'san-francisco': [

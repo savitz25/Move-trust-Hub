@@ -37,7 +37,9 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               'rounded-xl border bg-background/90 px-2 py-3 font-medium shadow-sm transition-colors hover:border-primary/50 hover:bg-primary/5',
               i % 3 === 0 && 'sm:col-span-1',
               z.id === 'antelope' && 'sm:col-span-2',
-              z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50'
+              z.id === 'north-county' && 'sm:col-span-2',
+              z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
+              z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>
@@ -105,8 +107,8 @@ export function CountyIntelligenceHub({ pack, className }: Props) {
           Hyper-local zone breakdown
         </h2>
         <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-          Treat each zone as its own logistics problem. Housing stock, truck access, and crew
-          expertise differ more across LA County than across many entire states.
+          {pack.zonesIntro ??
+            'Treat each zone as its own logistics problem. Housing stock, truck access, and crew expertise can vary more across this county than across many entire states.'}
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {pack.zones.map((z) => (

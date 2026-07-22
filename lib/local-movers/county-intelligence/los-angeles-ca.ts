@@ -61,6 +61,8 @@ export const losAngelesCountyIntelligence: CountyIntelligencePack = {
       },
     ],
   },
+  zonesIntro:
+    'Treat each zone as its own logistics problem. Housing stock, truck access, and crew expertise differ more across LA County than across many entire states.',
   zones: [
     {
       id: 'westside',

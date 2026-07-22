@@ -52,6 +52,8 @@ export type CountyIntelligencePack = {
     bullets: Array<{ title: string; detail: string }>;
   };
   zones: CountyIntelligenceZone[];
+  /** Optional intro under “Hyper-local zone breakdown” (defaults to a generic line). */
+  zonesIntro?: string;
   costDrivers: {
     title: string;
     intro: string;

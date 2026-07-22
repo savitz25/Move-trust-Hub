@@ -1,7 +1,11 @@
 import { losAngelesCountyIntelligence } from '@/lib/local-movers/county-intelligence/los-angeles-ca';
+import { sanDiegoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-diego-ca';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
-const PACKS: CountyIntelligencePack[] = [losAngelesCountyIntelligence];
+const PACKS: CountyIntelligencePack[] = [
+  losAngelesCountyIntelligence,
+  sanDiegoCountyIntelligence,
+];
 
 const byKey = new Map(
   PACKS.map((p) => [`${p.stateSlug}/${p.countySlug}`, p] as const)
