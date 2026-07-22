@@ -2,6 +2,7 @@ import { alamedaCountyIntelligence } from '@/lib/local-movers/county-intelligenc
 import { losAngelesCountyIntelligence } from '@/lib/local-movers/county-intelligence/los-angeles-ca';
 import { orangeCountyIntelligence } from '@/lib/local-movers/county-intelligence/orange-ca';
 import { riversideCountyIntelligence } from '@/lib/local-movers/county-intelligence/riverside-ca';
+import { sacramentoCountyIntelligence } from '@/lib/local-movers/county-intelligence/sacramento-ca';
 import { sanBernardinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-bernardino-ca';
 import { sanDiegoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-diego-ca';
 import { santaClaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-clara-ca';
@@ -12,6 +13,7 @@ const PACKS: CountyIntelligencePack[] = [
   losAngelesCountyIntelligence,
   orangeCountyIntelligence,
   riversideCountyIntelligence,
+  sacramentoCountyIntelligence,
   sanBernardinoCountyIntelligence,
   sanDiegoCountyIntelligence,
   santaClaraCountyIntelligence,

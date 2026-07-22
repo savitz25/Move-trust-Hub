@@ -868,27 +868,27 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   sacramento: [
     {
       quote:
-        'Mother Lode Van handled our Sacramento capital-area move professionally — efficient crew with great government-relocation timing coordination.',
+        'Agency start date put us Midtown on a Wednesday — the crew cleared the building elevator window, staged cleanly near the Capitol grid, and finished before the afternoon heat. Felt like capital-region work they know.',
       name: 'James F.',
-      location: 'Sacramento, CA',
+      location: 'Midtown Sacramento, CA',
       rating: 5,
-      moveType: 'Corporate',
+      moveType: 'Government relocation',
     },
     {
       quote:
-        "Ernie's Moving provided excellent service for our Elk Grove family home relocation — careful handling despite Highway 50 traffic.",
+        'Elk Grove HOA wanted COI and a weekday truck window — they handled the packet, protected floors, and built SR-99 traffic into the plan from Natomas. Not a generic Valley script.',
       name: 'Nicole B.',
       location: 'Elk Grove, CA',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'Planned community',
     },
     {
       quote:
-        'California Capital Movers drove in with fair pricing and professional service for our Citrus Heights suburban move.',
+        'July move Folsom to East Sac — 6:30 a.m. start, heat protection for electronics, and honest US-50 portal-to-portal time. Afternoon heat would have wrecked the day.',
       name: 'Donald R.',
-      location: 'Citrus Heights, CA',
+      location: 'Folsom → East Sacramento, CA',
       rating: 5,
-      moveType: 'Suburban',
+      moveType: 'Summer / heat season',
     },
   ],
   'san-benito': [

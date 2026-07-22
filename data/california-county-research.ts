@@ -572,19 +572,19 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   sacramento: {
     marketNotes:
-      'Sacramento County is the state capital with strong government, medical, and suburban communities. Moves often involve residential and corporate relocations.',
+      'Sacramento County (~1.62M) is the capital region: government/agency workforce turnover, strong Bay Area inbound migration, extreme summer heat (95–105°F+), Midtown/Downtown multi-unit stock, and large master-planned suburbs (Elk Grove, Natomas, Folsom). I-5, I-80, US-50, SR-99, and Business 80 define cross-town “local” timing.',
     costs: {
-      studioRange: '$500–$1,000',
-      familyRange: '$1,900–$4,000',
-      avgHourly: '$110–$165/hr for a 2-person crew',
-      note: 'Sacramento, Elk Grove, and Citrus Heights moves often reflect government and university calendar timing, I-5/Highway 50 traffic, and suburban HOA requirements.',
+      studioRange: '$550–$1,400+',
+      familyRange: '$2,400–$6,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Heat windows, HOA soft costs in Elk Grove/Natomas/Folsom, Midtown elevators, and multi-freeway suburb-to-core hauls push many jobs above base ranges.',
     },
     tips: [
-      'Government and university moves may require specific timing.',
-      'Verify coverage for Sacramento, Elk Grove, and Citrus Heights.',
-      'Heavy traffic on I-5 and Highway 50.',
-      'Obtain multiple estimates.',
-      'Confirm insurance for high-value homes.',
+      'Schedule summer loads early morning — peak afternoon heat is an operational risk.',
+      'Send HOA/COI packets for Elk Grove, Natomas, and Folsom planned communities with the estimate.',
+      'Confirm elevator windows for Downtown/Midtown multi-unit buildings.',
+      'Build I-5 / US-50 / SR-99 peak time into suburb-to-core quotes.',
+      'Share hard government or Bay Area transfer dates early for crew availability.',
     ],
   },
   'san-benito': {
