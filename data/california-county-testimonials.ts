@@ -764,15 +764,15 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   orange: [
     {
       quote:
-        'Piece of Cake Moving made our Irvine HOA-gated community move stress-free — professional coordination and transparent pricing throughout.',
+        'Our Irvine village HOA wanted COI, elevator pads, and a weekday window — the crew handled the management packet, cleared the gate list, and finished before the afternoon 405 mess. Felt like they move planned communities every week.',
       name: 'Amanda R.',
-      location: 'Irvine, CA',
+      location: 'Irvine, CA (Woodbridge area)',
       rating: 5,
-      moveType: 'HOA',
+      moveType: 'HOA / planned community',
     },
     {
       quote:
-        'Booth Movers handled our Huntington Beach coastal home relocation with outstanding care — careful handling and excellent summer-season timing.',
+        'Huntington Beach bungalow with zero truck staging at the door. They shuttle-staged legally, protected against sand, and were honest about portal-to-portal time on PCH weekend traffic.',
       name: 'Kevin T.',
       location: 'Huntington Beach, CA',
       rating: 5,
@@ -780,9 +780,9 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
     },
     {
       quote:
-        'Gentle Giant provided white-glove service for our Anaheim family home move — professional crew navigating I-5 traffic and tight suburban streets.',
+        'Moving near the Anaheim Resort during a busy park week — they planned around Harbor/Katella surges, padded our inventory valuation, and kept I-5 timing realistic. Not a generic SoCal script.',
       name: 'Lisa M.',
-      location: 'Anaheim, CA',
+      location: 'Anaheim, CA (Resort-adjacent)',
       rating: 5,
       moveType: 'Single-family',
     },

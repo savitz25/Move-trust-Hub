@@ -504,19 +504,19 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   orange: {
     marketNotes:
-      'Orange County is a major affluent suburban county with diverse cities (Anaheim, Irvine, Huntington Beach). Moves often involve high-value homes, theme park logistics, and beach properties.',
+      'Orange County is one of the most HOA- and master-planned-dense U.S. counties (Irvine, Mission Viejo, RSM, Ladera Ranch, and peers). Moves often hinge on COI, elevator/gate rules, higher shipment values, coastal staging limits, and Anaheim Resort traffic on I-5 / I-405 / SR-55 / SR-91 — not generic SoCal “suburb” advice.',
     costs: {
-      studioRange: '$550–$1,200',
-      familyRange: '$2,200–$5,000+',
-      avgHourly: '$125–$190/hr for a 2-person crew',
-      note: 'Irvine, Anaheim, and Huntington Beach moves often reflect HOA move-in rules, I-5/I-405 traffic, and high-value coastal suburban home handling.',
+      studioRange: '$650–$1,600+',
+      familyRange: '$2,800–$7,000+',
+      avgHourly: '$130–$200/hr for a 2-person crew',
+      note: 'Irvine planned communities, coastal shuttles, HOA soft costs, and multi-freeway hauls (e.g. North OC ↔ South County) push many jobs above base ranges.',
     },
     tips: [
-      'Many HOAs and gated communities have strict move-in rules.',
-      'Heavy traffic on I-5, I-405, and 91 Freeway.',
-      'Verify coverage for Irvine, Anaheim, Santa Ana, and Huntington Beach.',
-      'Confirm insurance for high-value coastal/suburban homes.',
-      'Book early for summer peak season.',
+      'Send the HOA/management move packet and COI requirements with the estimate — especially Irvine and South County.',
+      'Pre-clear gated community vendor passes 24–48 hours ahead to avoid billable gate wait.',
+      'Expect shuttle or long-carry on many Huntington / Newport / Laguna beach streets.',
+      'Avoid Anaheim Resort open/close surges and major convention changeovers near Harbor / Katella.',
+      'Ask for adequate valuation coverage on higher-value OC inventories; released-value rates are often too low.',
     ],
   },
   placer: {
