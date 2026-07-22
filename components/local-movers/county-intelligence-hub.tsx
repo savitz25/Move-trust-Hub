@@ -69,6 +69,9 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'morristown-core' && 'sm:col-span-2',
               z.id === 'parsippany-corridor' && 'sm:col-span-2',
               z.id === 'western-morris' && 'sm:col-span-2',
+              z.id === 'phillipsburg-delaware' && 'sm:col-span-2',
+              z.id === 'western-blairstown' && 'sm:col-span-2',
+              z.id === 'hackettstown' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
@@ -170,6 +173,18 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'randolph-denville' &&
                 'border-emerald-300/70 dark:border-emerald-800/50',
               z.id === 'western-morris' &&
+                'border-amber-300/70 dark:border-amber-800/50',
+              z.id === 'phillipsburg-delaware' &&
+                'border-sky-300/70 dark:border-sky-800/50',
+              z.id === 'central-warren' &&
+                'border-slate-300/70 dark:border-slate-700/50',
+              z.id === 'hackettstown' &&
+                'border-indigo-300/70 dark:border-indigo-800/50',
+              z.id === 'belvidere-north' &&
+                'border-cyan-300/70 dark:border-cyan-800/50',
+              z.id === 'western-blairstown' &&
+                'border-emerald-300/70 dark:border-emerald-800/50',
+              z.id === 'eastern-approaches' &&
                 'border-amber-300/70 dark:border-amber-800/50'
             )}
           >

@@ -14,6 +14,7 @@ import { sacramentoCountyIntelligence } from '@/lib/local-movers/county-intellig
 import { sanBernardinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-bernardino-ca';
 import { sanDiegoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-diego-ca';
 import { santaClaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-clara-ca';
+import { warrenCountyIntelligence } from '@/lib/local-movers/county-intelligence/warren-nj';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 const PACKS: CountyIntelligencePack[] = [
@@ -33,6 +34,7 @@ const PACKS: CountyIntelligencePack[] = [
   sanBernardinoCountyIntelligence,
   sanDiegoCountyIntelligence,
   santaClaraCountyIntelligence,
+  warrenCountyIntelligence,
 ];
 
 const byKey = new Map(

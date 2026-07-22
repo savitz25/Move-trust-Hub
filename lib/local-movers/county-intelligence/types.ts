@@ -1,6 +1,6 @@
 /**
  * Hyper-local county intelligence packs — structured content for premium county guides.
- * Flagship packs: California counties + Bergen, Essex, Middlesex, Monmouth, Morris & Ocean County, NJ (and expanding).
+ * Flagship packs: California counties + major NJ counties (incl. rural Warren) and expanding.
  */
 
 export type CountyIntelligenceZone = {

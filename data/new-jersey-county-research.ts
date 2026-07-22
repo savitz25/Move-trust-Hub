@@ -350,19 +350,19 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   warren: {
     marketNotes:
-      'Warren County is rural and scenic with small towns (Phillipsburg, Belvidere) and Delaware River frontage. Moves often involve residential, farm, and commuter properties with limited local infrastructure.',
+      'Warren County is northwestern New Jersey with rural and small-town character far lower-density than Bergen, Essex, Hudson, or Middlesex. County seat Belvidere; largest community Phillipsburg on the Delaware River (across from Easton, PA) creates frequent NJ–PA / Lehigh Valley move dimensions. Hackettstown, Washington, Blairstown, and townships feature long driveways, farm-adjacent lots, and thinner local crew coverage. Relative affordability draws outbound movers from higher-cost NJ counties. Elevators/high-rises are rare — access, travel time, and coverage matter most.',
     costs: {
-      studioRange: '$450–$900',
-      familyRange: '$1,600–$3,400',
-      avgHourly: '$100–$150/hr for a 2-person crew',
-      note: 'Belvidere and Phillipsburg moves may reflect rural driveways, riverfront access, and travel from regional North Jersey crews.',
+      studioRange: '$450–$1,200+',
+      familyRange: '$1,400–$3,600+',
+      avgHourly: '$110–$175+/hr for a 2-person crew',
+      note: 'Rural long driveways, regional crew travel fees, and NJ–PA interstate pairs often matter more than urban elevator soft costs; ask if quotes are portal-to-portal.',
     },
     tips: [
-      'Rural properties may involve long driveways or specialized access.',
-      'Confirm explicit regional service to Belvidere and Phillipsburg.',
-      'Storage is limited locally; use nearby facilities.',
-      'Obtain multiple estimates in this low-volume market.',
-      'Verify credentials for farm or riverfront properties.',
+      'Share driveway/approach photos for rural and farm-adjacent properties — truck size and turnaround are the main constraints.',
+      'Confirm the mover actually serves your specific Warren town or rural road; coverage is thinner than dense counties.',
+      'Phillipsburg–Easton / Lehigh Valley jobs may need FMCSA interstate authority — pure NJ legs follow New Jersey household-goods frameworks.',
+      'Ask about travel fees and local storage options; crews and warehouses often sit outside the county.',
+      'Prefer mid-week mornings for I-80 runs and long rural daylight access; book Saturdays early when crews must travel in.',
     ],
   },
 };

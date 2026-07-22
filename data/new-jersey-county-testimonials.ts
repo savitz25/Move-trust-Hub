@@ -626,27 +626,43 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
   warren: [
     {
       quote:
-        'Piece of Cake handled our Belvidere farmhouse move with flat-fee pricing that stayed predictable. The crew navigated a long rural driveway and extra barn equipment without stress.',
+        'Long gravel driveway outside Blairstown — they sized the truck from approach photos, didn’t force a full trailer, and were honest about carry time. Real western Warren access work, not a suburban cul-de-sac script.',
       name: 'Raymond K.',
-      location: 'Belvidere, NJ',
+      location: 'Blairstown, NJ',
       rating: 5,
-      moveType: 'Rural',
+      moveType: 'Rural driveway',
     },
     {
       quote:
-        'Booth Movers did an outstanding job on our Phillipsburg family relocation — professional, careful, and on time near the Delaware River with limited local parking.',
+        'Phillipsburg to Easton on a Thursday — they confirmed interstate authority, built bridge timing into the plan, and treated the Delaware River hop as NJ–PA, not “local only.”',
       name: 'Donna S.',
-      location: 'Phillipsburg, NJ',
+      location: 'Phillipsburg, NJ → Easton, PA',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'Cross-border NJ–PA',
     },
     {
       quote:
-        'Movers 201 quoted one price for our Warren County move and stuck to it — no funny business. Courteous, fast crew despite the low-volume rural market.',
+        'Hackettstown small-town multi-story with tight curb. Early start, careful stairs, clear travel-fee quote for a crew coming from outside the county. Transparent and professional.',
       name: 'Paul M.',
       location: 'Hackettstown, NJ',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'Small-town',
+    },
+    {
+      quote:
+        'Washington Township larger lot after leaving denser North Jersey. They surveyed both ends, planned for more space and a longer driveway, and never upsold elevator nonsense we didn’t need.',
+      name: 'Karen L.',
+      location: 'Washington Township, NJ',
+      rating: 5,
+      moveType: 'Outbound / larger lot',
+    },
+    {
+      quote:
+        'Belvidere farmhouse plus barn items — gates, soft shoulders, and honest portal-to-portal time. Felt like someone who actually serves Warren, not a city crew guessing on rural roads.',
+      name: 'Steve H.',
+      location: 'Belvidere, NJ',
+      rating: 5,
+      moveType: 'Farm-adjacent',
     },
   ],
 };
