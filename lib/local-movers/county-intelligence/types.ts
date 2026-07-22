@@ -1,6 +1,6 @@
 /**
  * Hyper-local county intelligence packs — structured content for premium county guides.
- * Start with LA County; other counties can register the same shape later.
+ * Flagship packs: California counties + Essex County, NJ (and expanding).
  */
 
 export type CountyIntelligenceZone = {

@@ -112,19 +112,19 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   essex: {
     marketNotes:
-      'Essex County is densely populated with urban Newark, affluent suburbs (Millburn, Montclair), and diverse communities. Moves often involve high-rises, family homes, and cross-river logistics to NYC with significant traffic considerations.',
+      'Essex County is one of the densest U.S. counties: Newark’s multi-family and high-rise core contrasts sharply with Montclair, South Orange, Maplewood, Livingston, Millburn, and Short Hills. Moves routinely need COI/elevator windows, municipal parking permits, and honest portal-to-portal time on the Garden State Parkway, I-280, Route 21, Route 24, and Route 10 — plus frequent NYC-oriented relocations between the city and Essex suburbs.',
     costs: {
-      studioRange: '$500–$1,100',
-      familyRange: '$2,000–$4,500+',
-      avgHourly: '$125–$185/hr for a 2-person crew',
-      note: 'Newark high-rises and Millburn/Montclair suburban moves often reflect elevator fees, parking permits, and Garden State Parkway or I-280 traffic windows.',
+      studioRange: '$550–$1,500+',
+      familyRange: '$1,700–$4,200+',
+      avgHourly: '$130–$200+/hr for a 2-person crew',
+      note: 'Newark elevators/permits, Victorian long carries in Montclair/Maplewood, and Livingston–Short Hills high-value homes often push above base ranges; cross-zone Parkway/I-280 pairs add labor time.',
     },
     tips: [
-      'Urban high-rises and Newark areas require elevator reservations and building approvals.',
-      'Suburban towns have HOA rules and parking restrictions.',
-      'Heavy traffic on I-280, Garden State Parkway, and bridges to NYC.',
-      'Diverse neighborhoods benefit from multilingual crews.',
-      'Verify insurance for high-value urban/suburban properties.',
+      'Newark high-rises and multi-family buildings almost always need COI, elevator reservations, and early curb staging or parking permits.',
+      'Montclair, Glen Ridge, and Maplewood Victorians often mean narrow stairs and long carries — smaller trucks beat forcing a full trailer onto side streets.',
+      'Garden State Parkway, I-280, Route 21, Route 24, and Route 10 control billable hours; ask if quotes are portal-to-portal.',
+      'Livingston, Millburn, and Short Hills frequently involve higher-value contents and HOA or neighborhood rules — collect packets before move day.',
+      'NYC-oriented moves (Manhattan/Brooklyn ↔ Essex) need interstate authority when state lines are crossed; pure NJ legs follow New Jersey household-goods frameworks.',
     ],
   },
   gloucester: {

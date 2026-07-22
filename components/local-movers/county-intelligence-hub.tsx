@@ -51,6 +51,9 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'east-county' && 'sm:col-span-2',
               z.id === 'clovis-ne' && 'sm:col-span-2',
               z.id === 'ag-surround' && 'sm:col-span-2',
+              z.id === 'newark-core' && 'sm:col-span-2',
+              z.id === 'west-affluent' && 'sm:col-span-2',
+              z.id === 'far-west' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
@@ -78,7 +81,19 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'clovis-ne' &&
                 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'ag-surround' &&
-                'border-amber-400/70 dark:border-amber-700/50'
+                'border-amber-400/70 dark:border-amber-700/50',
+              z.id === 'newark-core' &&
+                'border-indigo-300/70 dark:border-indigo-800/50',
+              z.id === 'inner-ring' &&
+                'border-slate-300/70 dark:border-slate-700/50',
+              z.id === 'north-northwest' &&
+                'border-sky-300/70 dark:border-sky-800/50',
+              z.id === 'west-affluent' &&
+                'border-emerald-300/70 dark:border-emerald-800/50',
+              z.id === 'maplewood-so' &&
+                'border-amber-300/70 dark:border-amber-800/50',
+              z.id === 'far-west' &&
+                'border-violet-300/70 dark:border-violet-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>

@@ -166,27 +166,43 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
   essex: [
     {
       quote:
-        'Booth Movers handled our Montclair colonial with outstanding care — professional, on time, and no damage through a tight suburban street with limited parking near the Parkway.',
+        'Newark high-rise needed a COI and a freight-elevator window — the crew handled the building packet, padded the elevator, and still beat the afternoon Route 21 mess. Felt like Essex urban work they do weekly, not a generic North Jersey script.',
+      name: 'Andre J.',
+      location: 'Downtown Newark, NJ',
+      rating: 5,
+      moveType: 'High-rise / elevator',
+    },
+    {
+      quote:
+        'Montclair Victorian stairs were narrow and the truck couldn’t sit on our block. They staged legally, long-carried carefully, and were honest about labor time. Not a flat Livingston driveway job.',
       name: 'Priya N.',
       location: 'Montclair, NJ',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'Victorian / long-carry',
     },
     {
       quote:
-        'Piece of Cake made our Newark high-rise move stress-free with transparent flat-fee pricing. The crew coordinated elevator reservations and building approvals without a hitch.',
-      name: 'Andre J.',
-      location: 'Newark, NJ',
-      rating: 5,
-      moveType: 'High-rise',
-    },
-    {
-      quote:
-        'Movers 201 quoted one price and stuck to it — no funny business. Professional, courteous, and fast through our Millburn relocation despite heavy I-280 traffic.',
+        'Maplewood to Short Hills on a weekday — they built Parkway and Route 24 traffic into the plan, cleared our association move rules, and kept portal-to-portal pricing transparent across the west Essex hop.',
       name: 'Susan L.',
-      location: 'Millburn, NJ',
+      location: 'Maplewood → Short Hills, NJ',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'Cross-zone / suburban',
+    },
+    {
+      quote:
+        'Ironbound multi-family with no freight elevator and zero curb by 10 a.m. They secured temporary no-parking signs the day before and finished before the dinner rush. Exactly the density problem we were worried about.',
+      name: 'Carlos M.',
+      location: 'Ironbound, Newark, NJ',
+      rating: 5,
+      moveType: 'Walk-up / dense urban',
+    },
+    {
+      quote:
+        'East Orange walk-up to Livingston single-family — completely different access at each end. They sized the truck for the origin stairs and still protected floors at the suburban destination. Essex contrast done right.',
+      name: 'Keisha R.',
+      location: 'East Orange → Livingston, NJ',
+      rating: 5,
+      moveType: 'Urban-to-suburb',
     },
   ],
   gloucester: [
