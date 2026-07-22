@@ -21,8 +21,9 @@ import type { Company } from '@/types';
  *
  * Merges live Supabase companies (interstate + local) with the active-directory
  * catalog snapshot. DB rows win on duplicate USDOT/slug so enrichment stays current.
- * Local movers appear when the user selects the "Local Mover" service filter or
- * filters by state/county coverage.
+ * Default browse is interstate-focused. Local/intrastate movers appear when the
+ * user selects "Local Mover", filters by state/county, or enters a search term
+ * (name/slug match) so newly added locals are discoverable in /companies.
  *
  * County coverage is aligned with /local-movers/[state]/[county] pages:
  * 1) DB destination assignments

@@ -93,10 +93,15 @@ export function filterCompanies(
     result = result.filter((c) => companyMatchesCoverageFilter(c, coverageFilter));
   }
 
-  // Default /companies browse stays interstate-focused unless the user asks for locals
-  // (Local Mover service chip) or geographic state/county coverage.
+  // Default /companies browse stays interstate-focused unless the user:
+  // - selects Local Mover service filter,
+  // - filters by state/county coverage, or
+  // - enters a search term (name/slug/DOT) — local/intrastate companies must be findable.
+  const hasActiveSearch = searchQuery.length > 0;
   const wantsLocalMovers =
-    Boolean(filters.services?.includes('Local Mover')) || coverageFilter.mode === 'state';
+    Boolean(filters.services?.includes('Local Mover')) ||
+    coverageFilter.mode === 'state' ||
+    hasActiveSearch;
   if (!wantsLocalMovers) {
     result = result.filter((c) => !companyIsLocal(c));
   }

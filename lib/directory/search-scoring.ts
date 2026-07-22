@@ -57,6 +57,7 @@ export function scoreCompanySearch(
 
   const qNorm = normalizeText(query);
   const name = normalizeText(company.name ?? '');
+  const slug = normalizeText((company.slug ?? '').replace(/-/g, ' '));
   const description = normalizeText(company.shortDescription ?? '');
   const headquarters = normalizeText(company.headquarters ?? '');
   const specialties = (Array.isArray(company.specialties) ? company.specialties : [])
@@ -82,13 +83,19 @@ export function scoreCompanySearch(
   const boost = scopeBoost(company, scope);
 
   if (name === qNorm) return 1000 + boost;
+  if (slug && slug === qNorm) return 980 + boost;
   if (name.startsWith(qNorm)) return 900 + boost;
+  if (slug && slug.startsWith(qNorm)) return 880 + boost;
   if (name.split(' ').some((word) => word.startsWith(qNorm))) return 820 + boost;
 
   const fuzzy = fuzzyNameScore(name, qNorm);
   if (fuzzy > 0) return fuzzy + boost;
 
+  const fuzzySlug = slug ? fuzzyNameScore(slug, qNorm) : 0;
+  if (fuzzySlug > 0) return Math.max(fuzzySlug - 20, 1) + boost;
+
   if (name.includes(qNorm)) return 600 + boost;
+  if (slug && slug.includes(qNorm)) return 560 + boost;
 
   if (headquarters.includes(qNorm)) return 350 + boost;
   if (specialties.includes(qNorm)) return 320 + boost;
