@@ -1,6 +1,6 @@
 /**
  * Hyper-local county intelligence packs — structured content for premium county guides.
- * Flagship packs: California counties + Bergen, Essex & Monmouth County, NJ (and expanding).
+ * Flagship packs: California counties + Bergen, Essex, Monmouth & Ocean County, NJ (and expanding).
  */
 
 export type CountyIntelligenceZone = {

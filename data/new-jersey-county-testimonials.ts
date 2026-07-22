@@ -422,27 +422,43 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
   ocean: [
     {
       quote:
-        'Piece of Cake handled our Toms River family move with flat-fee pricing that stayed predictable. Professional crew navigated Parkway traffic and HOA rules without stress.',
-      name: 'Barbara M.',
-      location: 'Toms River, NJ',
-      rating: 5,
-      moveType: 'Single-family',
-    },
-    {
-      quote:
-        'SeaCure drove out from Tuckerton for our Lavallette shore house move — on time, careful with sand near the beach, and we received a refund for finishing ahead of schedule.',
+        'LBI summer house on a Thursday — they used a smaller truck, protected floors from sand, and built Route 72 time into the plan. Not a generic Shore script; actual barrier-island work.',
       name: 'Frank P.',
-      location: 'Lavallette, NJ',
+      location: 'Long Beach Island, NJ',
       rating: 5,
-      moveType: 'Coastal',
+      moveType: 'Barrier island',
     },
     {
       quote:
-        'Booth Movers did an outstanding job on our Lakewood relocation — professional, careful, and on time through a retiree community with strict move-in windows.',
+        'Jackson 55+ community needed COI and an approved morning window — the crew handled the packet and kept pricing honest. True inland Ocean retirement-community job.',
+      name: 'Barbara M.',
+      location: 'Jackson, NJ',
+      rating: 5,
+      moveType: '55+ / HOA',
+    },
+    {
+      quote:
+        'Lakewood multi-family block with zero curb by late morning. They started early, sized the truck for the street, and never priced us like a bayfront cottage. Density done right.',
       name: 'Ruth E.',
       location: 'Lakewood, NJ',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'Dense multi-family',
+    },
+    {
+      quote:
+        'Toms River to Seaside on a weekday — they treated Route 37 as the bottleneck, staged legally on the island, and finished before beach traffic locked the block.',
+      name: 'Chris D.',
+      location: 'Toms River → Seaside Park, NJ',
+      rating: 5,
+      moveType: 'Inland-to-barrier',
+    },
+    {
+      quote:
+        'Point Pleasant Beach multi-story with tight staging in June. Mid-week crew, sand mats, and honest long-carry time. Exactly the northern shore problem we worried about.',
+      name: 'Megan S.',
+      location: 'Point Pleasant Beach, NJ',
+      rating: 5,
+      moveType: 'Shore multi-story',
     },
   ],
   passaic: [

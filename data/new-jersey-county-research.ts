@@ -248,19 +248,19 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   ocean: {
     marketNotes:
-      'Ocean County is a major shore county with Toms River, Lakewood, and coastal communities. Moves often involve retiree communities, seasonal beach properties, and family residential with tourism considerations.',
+      'Ocean County (~674,000–679,000 residents) pairs barrier-island shore towns (Point Pleasant Beach, Seaside, Lavallette, Long Beach Island) with inland Toms River, Brick, Jackson, and Manchester. Lakewood is denser and demographically distinct from shore cottages or 55+ communities. Summer tourism, causeway timing (Routes 37/72), Parkway congestion, flood-zone logistics, and retirement-community HOA rules define most jobs.',
     costs: {
-      studioRange: '$450–$950',
-      familyRange: '$1,700–$3,800',
-      avgHourly: '$110–$165/hr for a 2-person crew',
-      note: 'Toms River, Lakewood, and barrier-island moves often reflect summer tourism demand, retiree community rules, and Garden State Parkway traffic.',
+      studioRange: '$500–$1,350+',
+      familyRange: '$1,600–$4,000+',
+      avgHourly: '$120–$190+/hr for a 2-person crew',
+      note: 'LBI/Seaside staging, peak summer weekends, Lakewood density labor, and Jackson/Manchester 55+ HOA soft costs often push above base ranges; inland↔island pairs add Parkway/Route 37–72 time.',
     },
     tips: [
-      'Beach and barrier island properties require sand protection and access planning.',
-      'Summer tourism increases demand; book early.',
-      'Many retiree communities have specific move-in rules.',
-      'Garden State Parkway traffic can delay moves.',
-      'Verify coverage for Toms River, Lakewood, and coastal towns.',
+      'Prefer mid-week morning windows for barrier islands May–September — Saturday curb space and causeways fill early.',
+      'Do not price Lakewood like a bayfront cottage; survey density, multi-unit access, and local calendars separately.',
+      'Collect HOA packets for Jackson, Manchester, and other 55+ / planned communities before move day.',
+      'Build sand protection, humidity-aware packing, and weather flexibility into LBI and flood-zone inventories.',
+      'Ask whether quotes are portal-to-portal on GSP / Routes 9–37–70–72, especially Toms River ↔ island pairs.',
     ],
   },
   passaic: {
