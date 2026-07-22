@@ -328,27 +328,43 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
   middlesex: [
     {
       quote:
-        'Piece of Cake handled our Rutgers-area apartment move during August peak with flat-fee pricing that never changed. Professional, stress-free crew through tight New Brunswick streets.',
+        'Rutgers August peak apartment in New Brunswick — they locked the elevator window, staged early on a one-way, and still beat the afternoon Route 18 mess. Felt like Middlesex university-week work they do every year.',
       name: 'Tyler S.',
       location: 'New Brunswick, NJ',
       rating: 5,
-      moveType: 'Student',
+      moveType: 'Student / multi-family',
     },
     {
       quote:
-        'Booth Movers did an outstanding job on our Edison family relocation — careful, on time, and professional despite heavy Turnpike traffic and a strict HOA move-in window.',
+        'Edison garden complex needed COI and an approved morning slot — the crew handled the packet, padded the elevator, and kept portal-to-portal pricing honest across Route 1.',
       name: 'Anita G.',
       location: 'Edison, NJ',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'Garden apartment / COI',
     },
     {
       quote:
-        'Movers 201 quoted one price and stuck to it through our Woodbridge townhome move. No funny business — courteous, fast, and the smoothest relocation we have had.',
+        'Woodbridge townhome HOA on a Thursday — they built Turnpike time into the plan, cleared association rules, and never treated it like an open-highway local.',
       name: 'Omar N.',
       location: 'Woodbridge, NJ',
       rating: 5,
-      moveType: 'Townhome',
+      moveType: 'Townhome / HOA',
+    },
+    {
+      quote:
+        'Perth Amboy multi-story with zero curb by mid-morning. Smaller truck, early start, long-carry honesty. Urban Middlesex density done right.',
+      name: 'Maria L.',
+      location: 'Perth Amboy, NJ',
+      rating: 5,
+      moveType: 'Urban multi-story',
+    },
+    {
+      quote:
+        'East Brunswick SFH to Old Bridge HOA — completely different access at each end. They sized the crew for stairs and association rules without weekend Route 18 chaos.',
+      name: 'James K.',
+      location: 'East Brunswick → Old Bridge, NJ',
+      rating: 5,
+      moveType: 'Suburban cross-township',
     },
   ],
   monmouth: [

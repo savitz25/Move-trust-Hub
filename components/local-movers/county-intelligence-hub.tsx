@@ -63,6 +63,9 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'barrier-islands' && 'sm:col-span-2',
               z.id === 'lakewood' && 'sm:col-span-2',
               z.id === 'western-inland' && 'sm:col-span-2',
+              z.id === 'new-brunswick-rutgers' && 'sm:col-span-2',
+              z.id === 'edison' && 'sm:col-span-2',
+              z.id === 'woodbridge-corridor' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
@@ -136,7 +139,23 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'western-inland' &&
                 'border-emerald-300/70 dark:border-emerald-800/50',
               z.id === 'southern-ocean' &&
-                'border-teal-300/70 dark:border-teal-800/50'
+                'border-teal-300/70 dark:border-teal-800/50',
+              z.id === 'new-brunswick-rutgers' &&
+                'border-rose-300/70 dark:border-rose-800/50',
+              z.id === 'edison' &&
+                'border-sky-300/70 dark:border-sky-800/50',
+              z.id === 'woodbridge-corridor' &&
+                'border-orange-300/70 dark:border-orange-800/50',
+              z.id === 'perth-amboy' &&
+                'border-cyan-300/70 dark:border-cyan-800/50',
+              z.id === 'piscataway' &&
+                'border-indigo-300/70 dark:border-indigo-800/50',
+              z.id === 'east-brunswick' &&
+                'border-emerald-300/70 dark:border-emerald-800/50',
+              z.id === 'old-bridge-south' &&
+                'border-amber-300/70 dark:border-amber-800/50',
+              z.id === 'south-brunswick' &&
+                'border-lime-300/70 dark:border-lime-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>

@@ -197,19 +197,19 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   middlesex: {
     marketNotes:
-      'Middlesex County is densely populated with university towns (New Brunswick/Rutgers), suburban areas (Edison, Woodbridge), and industrial/commercial hubs. Moves often involve student, family, and corporate relocations with strong regional support.',
+      'Middlesex County is a large, diverse central New Jersey market between NYC-metro gravity and Shore corridors. County seat New Brunswick (Rutgers) drives May/August student and faculty peaks; dense townships (Edison, Woodbridge, Piscataway), older urban cores (Perth Amboy), and suburbs (East Brunswick, Old Bridge, South Brunswick) mix multi-family COI jobs with HOA townhomes and SFH. Turnpike, Parkway, Routes 1/9/18/27, and logistics corridors control portal-to-portal time.',
     costs: {
-      studioRange: '$500–$1,000',
-      familyRange: '$1,900–$4,000',
-      avgHourly: '$120–$175/hr for a 2-person crew',
-      note: 'New Brunswick, Edison, and Woodbridge moves may reflect Rutgers student peaks, Turnpike traffic, and suburban HOA move-in rules.',
+      studioRange: '$550–$1,450+',
+      familyRange: '$1,700–$4,200+',
+      avgHourly: '$125–$195+/hr for a 2-person crew',
+      note: 'Rutgers peak weeks, multi-family COI/elevators, and Turnpike/Route 1 congestion often push above base ranges; cross-township pairs add labor time.',
     },
     tips: [
-      'University areas (Rutgers) have seasonal student move peaks (Aug/May).',
-      'Suburban HOAs and new developments have move-in rules.',
-      'Heavy traffic on NJ Turnpike, Garden State Parkway, and Route 1.',
-      'Diverse communities benefit from multilingual crews.',
-      'Verify coverage for New Brunswick, Edison, and Woodbridge.',
+      'Book New Brunswick / Highland Park multi-family early for May and August Rutgers peaks — or target mid-week off-peak windows.',
+      'Collect COI and elevator packets for garden apartments and condo/townhome communities in Edison, Woodbridge, and Piscataway.',
+      'Prefer mid-week mornings to avoid Turnpike, Parkway, Route 1, and Route 18 peaks.',
+      'Perth Amboy and downtown New Brunswick often need smaller trucks and early curb staging.',
+      'Multilingual crews and clear written inventories help across one of NJ’s most diverse counties; confirm interstate authority if the job crosses into New York.',
     ],
   },
   monmouth: {
