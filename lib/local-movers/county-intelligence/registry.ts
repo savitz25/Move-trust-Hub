@@ -6,6 +6,7 @@ import { fresnoCountyIntelligence } from '@/lib/local-movers/county-intelligence
 import { losAngelesCountyIntelligence } from '@/lib/local-movers/county-intelligence/los-angeles-ca';
 import { middlesexCountyIntelligence } from '@/lib/local-movers/county-intelligence/middlesex-nj';
 import { monmouthCountyIntelligence } from '@/lib/local-movers/county-intelligence/monmouth-nj';
+import { morrisCountyIntelligence } from '@/lib/local-movers/county-intelligence/morris-nj';
 import { oceanCountyIntelligence } from '@/lib/local-movers/county-intelligence/ocean-nj';
 import { orangeCountyIntelligence } from '@/lib/local-movers/county-intelligence/orange-ca';
 import { riversideCountyIntelligence } from '@/lib/local-movers/county-intelligence/riverside-ca';
@@ -24,6 +25,7 @@ const PACKS: CountyIntelligencePack[] = [
   losAngelesCountyIntelligence,
   middlesexCountyIntelligence,
   monmouthCountyIntelligence,
+  morrisCountyIntelligence,
   oceanCountyIntelligence,
   orangeCountyIntelligence,
   riversideCountyIntelligence,

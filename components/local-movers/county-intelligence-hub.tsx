@@ -66,6 +66,9 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'new-brunswick-rutgers' && 'sm:col-span-2',
               z.id === 'edison' && 'sm:col-span-2',
               z.id === 'woodbridge-corridor' && 'sm:col-span-2',
+              z.id === 'morristown-core' && 'sm:col-span-2',
+              z.id === 'parsippany-corridor' && 'sm:col-span-2',
+              z.id === 'western-morris' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
@@ -155,7 +158,19 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'old-bridge-south' &&
                 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'south-brunswick' &&
-                'border-lime-300/70 dark:border-lime-800/50'
+                'border-lime-300/70 dark:border-lime-800/50',
+              z.id === 'morristown-core' &&
+                'border-rose-300/70 dark:border-rose-800/50',
+              z.id === 'parsippany-corridor' &&
+                'border-orange-300/70 dark:border-orange-800/50',
+              z.id === 'madison-chatham' &&
+                'border-violet-300/70 dark:border-violet-800/50',
+              z.id === 'dover-rockaway' &&
+                'border-slate-300/70 dark:border-slate-700/50',
+              z.id === 'randolph-denville' &&
+                'border-emerald-300/70 dark:border-emerald-800/50',
+              z.id === 'western-morris' &&
+                'border-amber-300/70 dark:border-amber-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>

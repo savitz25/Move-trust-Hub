@@ -412,7 +412,7 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
   morris: [
     {
       quote:
-        'Piece of Cake handled our Morristown historic home move with flat-fee pricing that never changed. The crew was preservation-sensitive with original moldings and careful through tight downtown streets.',
+        'Morristown historic multi-story — tight downtown staging and original moldings. They used a smaller truck, protected floors, and treated it like careful historic work, not a generic North Jersey local.',
       name: 'Victoria L.',
       location: 'Morristown, NJ',
       rating: 5,
@@ -420,19 +420,35 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
     },
     {
       quote:
-        'Booth Movers did an outstanding job on our Parsippany family relocation — professional, on time, and careful with high-value furniture through a strict HOA move-in window.',
+        'Parsippany HOA needed COI and a weekday morning window near the Route 10 corridor. They built I-80/I-287 time into the plan and kept high-value furniture intact. Corporate-corridor Morris done right.',
       name: 'Richard T.',
       location: 'Parsippany, NJ',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'HOA / corporate corridor',
     },
     {
       quote:
-        'Movers 201 quoted one price and stuck to it through our Madison-area move. No funny business — courteous, fast, and smooth despite heavy I-287 traffic.',
+        'Madison village street couldn’t take a full trailer. Long-carry honesty, careful inventory, and mid-week timing beat weekend downtown chaos.',
       name: 'Nina S.',
       location: 'Madison, NJ',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'Village / high-value',
+    },
+    {
+      quote:
+        'Randolph wooded driveway was steep and branchy. Approach photos first, right truck size, and clear valuation talk for a larger-lot move. Not a flat cul-de-sac script.',
+      name: 'Daniel K.',
+      location: 'Randolph, NJ',
+      rating: 5,
+      moveType: 'Hillside / larger lot',
+    },
+    {
+      quote:
+        'Chester larger-lot to Morristown condo — completely different access at each end. Portal-to-portal pricing stayed honest across western Morris and the I-287 approach.',
+      name: 'Emily R.',
+      location: 'Chester → Morristown, NJ',
+      rating: 5,
+      moveType: 'Western-to-core',
     },
   ],
   ocean: [

@@ -231,19 +231,19 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   morris: {
     marketNotes:
-      'Morris County is affluent suburban with Morristown, Parsippany, and historic towns. Moves often involve family residential, corporate, and upscale properties with strong commuter ties to NYC.',
+      'Morris County is an affluent North Jersey market mixing historic towns (Morristown, Madison, Chatham), corporate/pharma corridors (Parsippany–Troy Hills on Routes 10/46), and more spacious single-family communities than denser Bergen/Essex/Hudson. Western townships (Roxbury, Chester, Washington, Mendham edge) add larger lots and wooded access. Higher home values, HOA rules, and I-80/I-287 congestion define most jobs; professional and executive relocations sit beside school-year family moves.',
     costs: {
-      studioRange: '$500–$1,000',
-      familyRange: '$1,900–$4,000',
-      avgHourly: '$120–$180/hr for a 2-person crew',
-      note: 'Morristown and Parsippany moves may reflect upscale HOA rules, historic home handling, and I-287 commuter traffic.',
+      studioRange: '$600–$1,500+',
+      familyRange: '$1,900–$4,600+',
+      avgHourly: '$135–$210+/hr for a 2-person crew',
+      note: 'Larger homes, long carries, HOA soft costs, high-value valuation needs, and I-80/I-287 portal-to-portal time often push above denser urban-county base ranges.',
     },
     tips: [
-      'Affluent suburbs and HOAs have strict move-in rules and parking restrictions.',
-      'Historic districts require preservation-sensitive handling for older homes.',
-      'Heavy commuter traffic on I-287, I-80, and Route 10.',
-      'Obtain multiple estimates in this competitive market.',
-      'Verify coverage for Morristown, Parsippany, and outlying towns.',
+      'Collect HOA packets and confirm approved hours for planned communities before move day.',
+      'Historic Morristown/Madison/Chatham blocks often need smaller trucks and careful handling of multi-story inventories.',
+      'Share driveway/approach photos for hillside or wooded western and Randolph–Denville properties.',
+      'Prefer mid-week mornings to avoid I-80, I-287, Route 10, and Route 24 peaks near Parsippany and Morristown.',
+      'Discuss valuation coverage for higher-value shipments; pure NJ legs follow New Jersey household-goods frameworks, while NY-crossing jobs need FMCSA interstate authority.',
     ],
   },
   ocean: {
