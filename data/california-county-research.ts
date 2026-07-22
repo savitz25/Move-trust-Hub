@@ -605,19 +605,19 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   'san-bernardino': {
     marketNotes:
-      'San Bernardino County is one of the largest counties in the U.S. with urban San Bernardino, suburban areas, high desert, and mountain communities. Moves often involve residential, military, and desert properties.',
+      'San Bernardino County (~2.22M residents) is one of the largest U.S. counties by area: West Valley urban/suburban corridors, High Desert cities, mountain communities (Big Bear / Lake Arrowhead), and Morongo Basin remote desert — plus military logistics (Fort Irwin, Twentynine Palms, MCLB Barstow). More affordable than coastal LA/OC; heat, elevation, and 1–2+ hour cross-zone distances define many “local” jobs.',
     costs: {
-      studioRange: '$500–$1,000',
-      familyRange: '$1,900–$4,200',
-      avgHourly: '$110–$170/hr for a 2-person crew',
-      note: 'San Bernardino, Rancho Cucamonga, and Ontario moves often reflect high-desert heat planning, Big Bear seasonal access, and I-10/I-15 freeway traffic.',
+      studioRange: '$550–$1,400+',
+      familyRange: '$2,500–$7,000+',
+      avgHourly: '$115–$185/hr for a 2-person crew',
+      note: 'Valley ↔ high desert/mountains distance, summer heat windows, cabin access/shuttles, warehouse traffic on I-10/I-15/I-215/SR-210, and remote base-adjacent jobs push many quotes above base ranges.',
     },
     tips: [
-      'High desert (Victorville, Barstow) requires heat and distance planning.',
-      'Mountain areas (Big Bear, Lake Arrowhead) have seasonal and access challenges.',
-      'Heavy traffic on I-10, I-15, and 210 Freeway.',
-      'Verify coverage for San Bernardino, Rancho Cucamonga, and Ontario.',
-      'Confirm insurance for high-value properties.',
+      'Schedule summer valley and high-desert loads early morning; protect against heat and dust.',
+      'For Big Bear / Lake Arrowhead, share driveway photos, truck limits, and weather-flexible dates.',
+      'Get city-to-city drive assumptions in writing for long pairs (e.g. Ontario ↔ Victorville).',
+      'Send HOA/gate rules for newer West Valley and High Desert planned communities.',
+      'Military remote destinations (Fort Irwin, 29 Palms, Barstow) need explicit travel and access planning.',
     ],
   },
   'san-diego': {

@@ -1,6 +1,7 @@
 import { losAngelesCountyIntelligence } from '@/lib/local-movers/county-intelligence/los-angeles-ca';
 import { orangeCountyIntelligence } from '@/lib/local-movers/county-intelligence/orange-ca';
 import { riversideCountyIntelligence } from '@/lib/local-movers/county-intelligence/riverside-ca';
+import { sanBernardinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-bernardino-ca';
 import { sanDiegoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-diego-ca';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
@@ -8,6 +9,7 @@ const PACKS: CountyIntelligencePack[] = [
   losAngelesCountyIntelligence,
   orangeCountyIntelligence,
   riversideCountyIntelligence,
+  sanBernardinoCountyIntelligence,
   sanDiegoCountyIntelligence,
 ];
 

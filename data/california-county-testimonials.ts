@@ -920,27 +920,27 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   'san-bernardino': [
     {
       quote:
-        'Piece of Cake Moving made our Rancho Cucamonga suburban move stress-free — professional crew and transparent pricing throughout the Inland Empire.',
+        'Rancho Cucamonga HOA wanted COI and a weekday window — the crew cleared the packet, staged cleanly, and still beat the afternoon 210 backup. Felt like West Valley work they do every week.',
       name: 'Marcus D.',
       location: 'Rancho Cucamonga, CA',
       rating: 5,
-      moveType: 'Suburban',
+      moveType: 'Planned community',
     },
     {
       quote:
-        'Booth Movers handled our Ontario family home relocation with outstanding care — efficient despite heavy 210 Freeway traffic.',
+        'Fontana to Big Bear cabin: they used a smaller truck for the last stretch, planned around the grade, and were honest that weather could slide the date. Not a flatland IE script.',
       name: 'Sandra W.',
-      location: 'Ontario, CA',
+      location: 'Fontana → Big Bear Lake, CA',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'Mountain cabin',
     },
     {
       quote:
-        'California Premier Moving provided dependable service for our Victorville high-desert move — professional heat-season planning and careful handling.',
+        'July move into Victorville — 6 a.m. start, dust and heat protection, and clear portal-to-portal time from the West Valley. Afternoon heat would have been a disaster without that plan.',
       name: 'Raymond H.',
       location: 'Victorville, CA',
       rating: 5,
-      moveType: 'Desert',
+      moveType: 'High desert / heat season',
     },
   ],
   'san-diego': [
