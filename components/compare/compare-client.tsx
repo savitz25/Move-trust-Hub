@@ -10,6 +10,7 @@ import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { X } from 'lucide-react';
+import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { getLicenseDisplay, LICENSE_PENDING_MESSAGE } from '@/lib/trust/company-display-policy';
 import { SaveComparisonButton } from '@/components/save-my-move/save-comparison-button';
 
@@ -104,14 +105,24 @@ export function CompareClient({ allCompanies }: Props) {
               <th className="w-40 text-left pl-5">Criteria</th>
               {selected.map(c => (
                 <th key={c.id} className="text-left min-w-[210px]">
-                  <div className="flex justify-between items-start pr-3">
-                    <Link href={`/companies/${c.slug}`} className="font-semibold hover:underline">{c.name}</Link>
-                    <CompanyTypeBadges company={c} size="compact" className="mt-1 justify-center" />
-                    <button onClick={() => store.removeCompany(c.slug)} className="text-muted-foreground hover:text-foreground">
+                  <div className="flex justify-between items-start pr-3 gap-2">
+                    <div className="min-w-0">
+                      <Link href={`/companies/${c.slug}`} className="font-semibold hover:underline">
+                        {c.name}
+                      </Link>
+                      <CompanyTypeBadges company={c} size="compact" className="mt-1" />
+                      <div className="text-xs font-normal text-muted-foreground mt-0.5">
+                        {c.headquarters}
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => store.removeCompany(c.slug)}
+                      className="text-muted-foreground hover:text-foreground shrink-0"
+                    >
                       <X className="h-4 w-4" />
                     </button>
                   </div>
-                  <div className="text-xs font-normal text-muted-foreground">{c.headquarters}</div>
                 </th>
               ))}
             </tr>
