@@ -28,6 +28,8 @@ type Props = { params: Promise<{ stateSlug: string }> };
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
+/** ISR: pick up new approved local movers on county badges within ~5 minutes (also revalidated on publish). */
+export const revalidate = 300;
 
 export async function generateStaticParams() {
   return ssgParams(localStates.map((state) => ({ stateSlug: state.slug })));
@@ -53,7 +55,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
   if (!state) notFound();
 
   const counties = getCountiesForState(stateSlug);
-  const hubRows = buildStateHubCountyRows(stateSlug, counties);
+  const hubRows = await buildStateHubCountyRows(stateSlug, counties);
   const hubStats = buildStateHubStats(hubRows);
   const tier1QuickLinks = pickTier1QuickLinks(hubRows, stateSlug === 'florida' ? 10 : 8);
   const hasCounties = stateHasCounties(stateSlug);

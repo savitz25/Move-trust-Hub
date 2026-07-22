@@ -1,9 +1,12 @@
+import 'server-only';
+
 import { hasDeepCountyResearch } from '@/data/deep-county-research';
 import { evaluateCountyIndexability } from '@/lib/local-movers/county-indexability';
 import { isBatchTemplateCountyResearch } from '@/lib/local-movers/county-content-quality';
 import { getCountyResearch } from '@/lib/local-movers/county-research';
 import { getCountyGuideTierMeta } from '@/lib/local-movers/county-tier';
-import { getCountyPath, getMoversForCounty } from '@/lib/local-movers/index';
+import { getCountyPath } from '@/lib/local-movers/index';
+import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
 import { getCountyMarketMoverCount } from '@/lib/local-movers/county-market-mover-counts';
 import type { LocalCounty } from '@/lib/local-movers/types';
 
@@ -24,17 +27,29 @@ export type StateHubStats = {
   totalCounties: number;
 };
 
-export function buildStateHubCountyRows(
+/**
+ * Build county grid rows for /local-movers/[state].
+ *
+ * Mover counts use the same async path as county pages (static catalog + approved
+ * directory locals from Supabase) so badges match after new locals are published.
+ */
+export async function buildStateHubCountyRows(
   stateSlug: string,
   counties: LocalCounty[]
-): StateHubCountyRow[] {
-  return counties
-    .map((county) => {
-      const listedCount =
-        getMoversForCounty(stateSlug, county.slug)?.movers.length ?? 0;
+): Promise<StateHubCountyRow[]> {
+  const rows = await Promise.all(
+    counties.map(async (county) => {
+      const listed = await getMoversForCountyAsync(stateSlug, county.slug);
+      // Canonical live count — same set of movers rendered on the county page.
+      const listedCount = listed?.movers.length ?? 0;
       const mappedCount = getCountyMarketMoverCount(stateSlug, county.slug);
       const moverCount =
-        listedCount > 0 ? listedCount : mappedCount !== null ? mappedCount : 0;
+        listed != null
+          ? listedCount
+          : mappedCount !== null
+            ? mappedCount
+            : 0;
+
       const indexDecision = evaluateCountyIndexability(stateSlug, county.slug);
       const tierMeta = getCountyGuideTierMeta(
         indexDecision,
@@ -63,19 +78,23 @@ export function buildStateHubCountyRows(
         href: getCountyPath(stateSlug, county.slug),
       };
     })
-    .sort(
-      (a, b) =>
-        b.sortIndex - a.sortIndex ||
-        b.moverCount - a.moverCount ||
-        a.county.name.localeCompare(b.county.name)
-    );
+  );
+
+  return rows.sort(
+    (a, b) =>
+      b.sortIndex - a.sortIndex ||
+      b.moverCount - a.moverCount ||
+      a.county.name.localeCompare(b.county.name)
+  );
 }
 
 export function buildStateHubStats(rows: StateHubCountyRow[]): StateHubStats {
   return {
     tier1Count: rows.filter((r) => r.isTier1).length,
     deepGuideCount: rows.filter((r) => r.isDeepGuide).length,
-    enrichedCount: rows.filter((r) => r.guideBadge === 'Enriched' || r.guideBadge === 'Deep guide').length,
+    enrichedCount: rows.filter(
+      (r) => r.guideBadge === 'Enriched' || r.guideBadge === 'Deep guide'
+    ).length,
     totalCounties: rows.length,
   };
 }
