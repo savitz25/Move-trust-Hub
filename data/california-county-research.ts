@@ -111,19 +111,19 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   'contra-costa': {
     marketNotes:
-      'Contra Costa County is a large suburban county with Walnut Creek, Concord, and Antioch. Moves often involve family homes and commuter properties.',
+      'Contra Costa County (~1.17M) has a sharp West→Lamorinda→East County gradient: denser West/Central communities, affluent hillside Lamorinda towns, Walnut Creek/San Ramon cores, and fast-growing East County (Antioch, Brentwood). Strong inbound migration from SF/Oakland/Silicon Valley; canyon access, HOA tracts, BART-adjacent multi-unit stock, and I-680/SR-4/SR-24 timing define many “local” jobs.',
     costs: {
-      studioRange: '$550–$1,100',
-      familyRange: '$2,000–$4,500',
-      avgHourly: '$135–$200/hr for a 2-person crew',
-      note: 'Walnut Creek, Concord, and Antioch moves often reflect HOA move-in rules, I-680 traffic, and high-value suburban home handling.',
+      studioRange: '$600–$1,600+',
+      familyRange: '$2,800–$7,500+',
+      avgHourly: '$135–$210/hr for a 2-person crew',
+      note: 'Lamorinda hillside shuttles, HOA soft costs in San Ramon/East County, and West↔East multi-freeway hauls push many quotes above base ranges.',
     },
     tips: [
-      'Many HOAs have strict move-in rules.',
-      'Heavy traffic on I-680 and Highway 4.',
-      'Verify coverage for Walnut Creek, Concord, and Antioch.',
-      'Confirm insurance for high-value homes.',
-      'Book early for peak seasons.',
+      'Share driveway/approach photos for Lafayette, Orinda, and Moraga — full-size trucks often cannot reach the door.',
+      'Send HOA/COI packets for San Ramon Dougherty Valley and East County planned communities with the estimate.',
+      'Treat West County ↔ East County as a long local with honest portal-to-portal time on I-680/SR-4.',
+      'Confirm elevator rules for multi-unit near BART and Walnut Creek cores.',
+      'Book peak spring/summer Saturdays early for inbound Bay Area transplants.',
     ],
   },
   'del-norte': {

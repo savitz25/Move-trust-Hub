@@ -166,27 +166,27 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   'contra-costa': [
     {
       quote:
-        'MorningStar made our Walnut Creek move stress-free — professional crew, HOA coordination, and excellent handling of our furnishings.',
+        'Orinda canyon driveway was too steep for a full truck — they staged below, shuttle-carried carefully, and protected high-value furniture. Felt like Lamorinda work, not a flat East Bay script.',
       name: 'Jennifer H.',
+      location: 'Orinda, CA',
+      rating: 5,
+      moveType: 'Hillside / canyon',
+    },
+    {
+      quote:
+        'Walnut Creek condo needed COI and a weekday elevator window — the crew handled the building packet and still beat the afternoon 680 mess into Concord.',
+      name: 'Michael D.',
       location: 'Walnut Creek, CA',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'Condo / elevator',
     },
     {
       quote:
-        'Got2Move provided outstanding customer service for our Concord relocation — smooth, efficient, and transparent pricing.',
-      name: 'Michael D.',
-      location: 'Concord, CA',
-      rating: 5,
-      moveType: 'Residential',
-    },
-    {
-      quote:
-        'Roadway Moving exceeded expectations on our Antioch family home move — professional team and careful handling throughout.',
+        'Bay Area transplant move into Brentwood — HOA packet cleared early, summer heat start at 7 a.m., and honest SR-4 portal-to-portal time from Pleasant Hill. Transparent and local.',
       name: 'Patricia G.',
-      location: 'Antioch, CA',
+      location: 'Pleasant Hill → Brentwood, CA',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'East County growth',
     },
   ],
   'del-norte': [
