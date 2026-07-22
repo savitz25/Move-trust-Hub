@@ -102,6 +102,7 @@ import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county
 import {
   buildCountyLabel,
   buildCountyPlaceSchema,
+  buildEmbeddedCompanyReview,
   buildFaqSchema,
   buildMoverSchemaNode,
   buildMoversItemListName,
@@ -537,20 +538,23 @@ export function buildCountySchemaGraph({
       )
       .filter((node): node is Record<string, unknown> => node !== null);
 
-    // Attach each review onto its company node for stronger association + rich results.
+    // Attach FULL review objects (not bare @id stubs) onto the company node.
+    // Bare { "@id": "..." } stubs cause GSC "missing itemReviewed" when Google
+    // expands company.review without resolving the standalone Review node.
     for (const review of reviewNodes) {
       const itemReviewed = review.itemReviewed as Record<string, unknown> | undefined;
       const reviewedId = String(itemReviewed?.['@id'] ?? '');
       if (!reviewedId) continue;
       const company = graph.find((node) => String(node['@id'] ?? '') === reviewedId);
       if (!company) continue;
+      const embedded = buildEmbeddedCompanyReview(review, company);
       const existing = company.review;
       if (Array.isArray(existing)) {
-        existing.push({ '@id': review['@id'] });
-      } else if (existing) {
-        company.review = [existing, { '@id': review['@id'] }];
+        existing.push(embedded);
+      } else if (existing && typeof existing === 'object') {
+        company.review = [existing, embedded];
       } else {
-        company.review = [{ '@id': review['@id'] }];
+        company.review = [embedded];
       }
     }
 

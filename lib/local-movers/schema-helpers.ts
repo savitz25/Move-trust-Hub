@@ -225,20 +225,27 @@ export function resolveReviewedMover(
 }
 
 /**
- * Valid Review.itemReviewed for Google rich results: MovingCompany + LocalBusiness
- * for the specific mover being reviewed — never AdministrativeArea / county place.
+ * Valid Review.itemReviewed for Google rich results.
+ *
+ * Critical GSC rules:
+ * - Must be LocalBusiness / MovingCompany (or Product/Service) — NEVER Place / AdministrativeArea
+ * - Do NOT nest AdministrativeArea inside itemReviewed (GSC reports that as
+ *   "Invalid object type for field itemReviewed")
+ * - Prefer a single concrete @type string for maximum rich-results compatibility
  */
 export function buildMoverItemReviewed(
   mover: LocalMover,
   pageUrl: string,
   county: LocalCounty | undefined,
-  stateName: string | undefined,
-  placeId: string | undefined,
+  _stateName: string | undefined,
+  _placeId: string | undefined,
   buildMoverUrl: (mover: LocalMover, pageUrl: string) => string
 ): Record<string, unknown> {
   const name = mover.name.trim();
   const item: Record<string, unknown> = {
-    '@type': ['MovingCompany', 'LocalBusiness'],
+    // Single type — dual arrays + nested Place types confuse some GSC validators
+    '@type': 'MovingCompany',
+    additionalType: 'https://schema.org/LocalBusiness',
     '@id': buildMoverSchemaId(pageUrl, mover.id),
     name,
     url: buildMoverUrl(mover, pageUrl),
@@ -254,15 +261,22 @@ export function buildMoverItemReviewed(
     };
   }
 
-  if (county && stateName && placeId) {
-    item.areaServed = {
-      '@type': 'AdministrativeArea',
-      '@id': placeId,
-      name: buildCountyPlaceName(county, stateName),
-    };
-  }
+  // Intentionally no areaServed / AdministrativeArea here — county place stays a
+  // top-level graph node only, not nested under Review.itemReviewed.
 
   return item;
+}
+
+/** Normalize author to schema.org Person — GSC rejects non-Person / empty authors. */
+export function buildReviewAuthorNode(rawName: string): Record<string, unknown> | null {
+  const name = rawName.replace(/\s+/g, ' ').trim();
+  if (!name) return null;
+  // Drop pure non-word noise; keep normal person labels (incl. "Michael R." / "Lt. James P.")
+  if (!/[\p{L}\p{N}]/u.test(name)) return null;
+  return {
+    '@type': 'Person',
+    name,
+  };
 }
 
 /**
@@ -466,14 +480,19 @@ export function buildReviewSchemaNode(
   movers: LocalMover[] = [],
   buildMoverUrl: (mover: LocalMover, pageUrl: string) => string = defaultBuildMoverUrl
 ): Record<string, unknown> | null {
-  const authorName = testimonial.name?.trim();
   const reviewBody = testimonial.quote?.trim();
-  if (!authorName || !reviewBody) return null;
+  if (!reviewBody) return null;
+
+  const author = buildReviewAuthorNode(testimonial.name ?? '');
+  if (!author) return null;
 
   // Google Review rich results require itemReviewed to be a real business (or product/service),
   // never AdministrativeArea / Place. Only emit reviews we can attribute to a listed mover.
   const mover = resolveReviewedMover(testimonial, movers);
   if (!mover?.name?.trim()) return null;
+
+  const ratingValue = Number(testimonial.rating);
+  if (!Number.isFinite(ratingValue) || ratingValue <= 0) return null;
 
   const itemReviewed = buildMoverItemReviewed(
     mover,
@@ -484,19 +503,19 @@ export function buildReviewSchemaNode(
     buildMoverUrl
   );
 
+  // Absolute requirement: itemReviewed must exist and be a business type
+  if (!itemReviewed?.name || !itemReviewed['@type']) return null;
+
   const node: Record<string, unknown> = {
     '@type': 'Review',
     '@id': `${pageUrl}#review-${index + 1}`,
     name: buildReviewSchemaName(testimonial),
     reviewBody,
     datePublished: testimonial.date ?? datePublished ?? undefined,
-    author: {
-      '@type': 'Person',
-      name: authorName,
-    },
+    author,
     reviewRating: {
       '@type': 'Rating',
-      ratingValue: String(testimonial.rating),
+      ratingValue: String(ratingValue),
       bestRating: '5',
       worstRating: '1',
     },
@@ -511,6 +530,33 @@ export function buildReviewSchemaNode(
   }
 
   return node;
+}
+
+/**
+ * Compact Review payload for nesting under a MovingCompany.review property.
+ * Always includes itemReviewed + Person author so GSC never sees a bare @id stub.
+ */
+export function buildEmbeddedCompanyReview(
+  reviewNode: Record<string, unknown>,
+  companyNode: Record<string, unknown>
+): Record<string, unknown> {
+  const companyId = String(companyNode['@id'] ?? '');
+  const companyName = String(companyNode.name ?? '');
+  return {
+    '@type': 'Review',
+    '@id': reviewNode['@id'],
+    name: reviewNode.name,
+    reviewBody: reviewNode.reviewBody,
+    datePublished: reviewNode.datePublished,
+    author: reviewNode.author,
+    reviewRating: reviewNode.reviewRating,
+    itemReviewed: {
+      '@type': 'MovingCompany',
+      additionalType: 'https://schema.org/LocalBusiness',
+      ...(companyId ? { '@id': companyId } : {}),
+      ...(companyName ? { name: companyName } : {}),
+    },
+  };
 }
 
 function defaultBuildMoverUrl(mover: LocalMover, pageUrl: string): string {
@@ -577,6 +623,165 @@ function findGraphPageUrl(graph: Record<string, unknown>[]): string | undefined 
   return undefined;
 }
 
+function validateReviewNodeFields(
+  node: Record<string, unknown>,
+  reviewId: string,
+  base: { stateSlug: string; countySlug: string },
+  moverIds: Set<string>,
+  moverNames: Set<string>,
+  pageUrl: string | undefined
+): SchemaValidationIssue[] {
+  const issues: SchemaValidationIssue[] = [];
+  const itemReviewed = node.itemReviewed as Record<string, unknown> | undefined;
+
+  if (!itemReviewed) {
+    issues.push({
+      ...base,
+      issue: `Review missing itemReviewed (${reviewId})`,
+    });
+  } else {
+    if (!itemReviewed.name) {
+      issues.push({
+        ...base,
+        issue: `Review missing itemReviewed.name (${reviewId})`,
+      });
+    }
+
+    const reviewedType = itemReviewed['@type'];
+    const reviewedTypes = Array.isArray(reviewedType)
+      ? reviewedType.map(String)
+      : reviewedType
+        ? [String(reviewedType)]
+        : [];
+
+    // Explicit ban — root GSC error
+    if (
+      reviewedTypes.includes('AdministrativeArea') ||
+      reviewedTypes.includes('Place') ||
+      reviewedTypes.includes('City') ||
+      reviewedTypes.includes('State') ||
+      reviewedTypes.includes('Country')
+    ) {
+      issues.push({
+        ...base,
+        issue: `Review itemReviewed must not be a place type (got "${reviewedTypes.join(', ')}") (${reviewId})`,
+      });
+    }
+
+    // Nested areaServed Place types also trigger GSC "invalid object type for itemReviewed"
+    const areaServed = itemReviewed.areaServed as Record<string, unknown> | undefined;
+    if (areaServed) {
+      const asTypes = nodeTypes(areaServed);
+      if (
+        asTypes.includes('AdministrativeArea') ||
+        asTypes.includes('Place') ||
+        asTypes.includes('City')
+      ) {
+        issues.push({
+          ...base,
+          issue: `Review itemReviewed must not nest AdministrativeArea/Place in areaServed (${reviewId})`,
+        });
+      }
+    }
+
+    const hasBusinessType =
+      reviewedTypes.includes('LocalBusiness') ||
+      reviewedTypes.includes('MovingCompany') ||
+      reviewedTypes.includes('Organization');
+    if (!hasBusinessType) {
+      issues.push({
+        ...base,
+        issue: `Review itemReviewed must have @type LocalBusiness or MovingCompany, got "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
+      });
+    }
+
+    const reviewedId = String(itemReviewed['@id'] ?? '');
+    if (!reviewedId) {
+      issues.push({
+        ...base,
+        issue: `Review itemReviewed missing @id (${reviewId})`,
+      });
+    } else if (reviewedId.endsWith(LOCAL_MOVING_SERVICE_FRAGMENT)) {
+      issues.push({
+        ...base,
+        issue: `Review itemReviewed must reference a mover, not #local-moving-service (${reviewId})`,
+      });
+    } else if (pageUrl && !reviewedId.includes('#mover-') && moverIds.size > 0) {
+      issues.push({
+        ...base,
+        issue: `Review itemReviewed @id should be a #mover-* node, got "${reviewedId}" (${reviewId})`,
+      });
+    } else if (moverIds.size > 0 && !moverIds.has(reviewedId)) {
+      issues.push({
+        ...base,
+        issue: `Review itemReviewed @id "${reviewedId}" has no matching MovingCompany node (${reviewId})`,
+      });
+    }
+
+    if (
+      itemReviewed.name &&
+      moverNames.size > 0 &&
+      !moverNames.has(String(itemReviewed.name))
+    ) {
+      issues.push({
+        ...base,
+        issue: `Review itemReviewed.name "${String(itemReviewed.name)}" does not match a listed mover (${reviewId})`,
+      });
+    }
+  }
+
+  if (!node.reviewBody) {
+    issues.push({
+      ...base,
+      issue: `Review missing reviewBody (${reviewId})`,
+    });
+  }
+
+  if (!node.datePublished) {
+    issues.push({
+      ...base,
+      issue: `Review missing datePublished (${reviewId})`,
+    });
+  }
+
+  const author = node.author as Record<string, unknown> | string | undefined;
+  if (!author) {
+    issues.push({
+      ...base,
+      issue: `Review missing author (${reviewId})`,
+    });
+  } else if (typeof author === 'string') {
+    issues.push({
+      ...base,
+      issue: `Review author must be Person object, got string (${reviewId})`,
+    });
+  } else {
+    const authorTypes = nodeTypes(author);
+    if (!authorTypes.includes('Person')) {
+      issues.push({
+        ...base,
+        issue: `Review author must have @type Person, got "${authorTypes.join(', ') || 'none'}" (${reviewId})`,
+      });
+    }
+    if (!author.name || !String(author.name).trim()) {
+      issues.push({
+        ...base,
+        issue: `Review missing author.name (${reviewId})`,
+      });
+    }
+  }
+
+  const reviewRating = node.reviewRating as Record<string, unknown> | undefined;
+  if (!reviewRating?.ratingValue) {
+    issues.push({
+      ...base,
+      issue: `Review missing reviewRating.ratingValue (${reviewId})`,
+    });
+  }
+
+  return issues;
+}
+
 export function validateCountySchemaGraph(
   graph: Record<string, unknown>[],
   county: LocalCounty,
@@ -626,118 +831,47 @@ export function validateCountySchemaGraph(
 
     if (types.includes('Review')) {
       reviewCount += 1;
-      const itemReviewed = node.itemReviewed as Record<string, unknown> | undefined;
-      const reviewId = nodeId;
+      issues.push(
+        ...validateReviewNodeFields(node, nodeId, base, moverIds, moverNames, pageUrl)
+      );
+    }
 
-      if (!itemReviewed) {
-        issues.push({
-          ...base,
-          issue: `Review missing itemReviewed (${reviewId})`,
-        });
-      } else {
-        if (!itemReviewed.name) {
+    // Nested reviews on company nodes (must also be complete — no bare @id stubs)
+    if (
+      (types.includes('MovingCompany') || types.includes('LocalBusiness')) &&
+      nodeId.includes('#mover-') &&
+      node.review != null
+    ) {
+      const nested = Array.isArray(node.review) ? node.review : [node.review];
+      for (const raw of nested) {
+        if (!raw || typeof raw !== 'object') {
           issues.push({
             ...base,
-            issue: `Review missing itemReviewed.name (${reviewId})`,
+            issue: `Company ${nodeId} has non-object review entry`,
           });
+          continue;
         }
-
-        const reviewedType = itemReviewed['@type'];
-        const reviewedTypes = Array.isArray(reviewedType)
-          ? reviewedType.map(String)
-          : reviewedType
-            ? [String(reviewedType)]
-            : [];
-
-        // Explicit ban — root GSC error
-        if (
-          reviewedTypes.includes('AdministrativeArea') ||
-          reviewedTypes.includes('Place') ||
-          reviewedTypes.includes('City') ||
-          reviewedTypes.includes('State') ||
-          reviewedTypes.includes('Country')
-        ) {
+        const nestedReview = raw as Record<string, unknown>;
+        const nestedTypes = nodeTypes(nestedReview);
+        // Bare { "@id": "..." } stubs lack @type Review and itemReviewed
+        if (!nestedTypes.includes('Review')) {
           issues.push({
             ...base,
-            issue: `Review itemReviewed must not be a place type (got "${reviewedTypes.join(', ')}") (${reviewId})`,
+            issue: `Company ${nodeId} nested review must be a full Review object, not a bare @id stub`,
           });
+          continue;
         }
-
-        const hasBusinessType =
-          reviewedTypes.includes('LocalBusiness') ||
-          reviewedTypes.includes('MovingCompany') ||
-          reviewedTypes.includes('Organization');
-        if (!hasBusinessType) {
-          issues.push({
-            ...base,
-            issue: `Review itemReviewed must have @type LocalBusiness or MovingCompany, got "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
-          });
-        }
-
-        const reviewedId = String(itemReviewed['@id'] ?? '');
-        if (!reviewedId) {
-          issues.push({
-            ...base,
-            issue: `Review itemReviewed missing @id (${reviewId})`,
-          });
-        } else if (reviewedId.endsWith(LOCAL_MOVING_SERVICE_FRAGMENT)) {
-          issues.push({
-            ...base,
-            issue: `Review itemReviewed must reference a mover, not #local-moving-service (${reviewId})`,
-          });
-        } else if (pageUrl && !reviewedId.includes('#mover-') && moverIds.size > 0) {
-          issues.push({
-            ...base,
-            issue: `Review itemReviewed @id should be a #mover-* node, got "${reviewedId}" (${reviewId})`,
-          });
-        } else if (moverIds.size > 0 && !moverIds.has(reviewedId)) {
-          issues.push({
-            ...base,
-            issue: `Review itemReviewed @id "${reviewedId}" has no matching MovingCompany node (${reviewId})`,
-          });
-        }
-
-        if (
-          itemReviewed.name &&
-          moverNames.size > 0 &&
-          !moverNames.has(String(itemReviewed.name))
-        ) {
-          // Soft signal — name should match a listed mover
-          issues.push({
-            ...base,
-            issue: `Review itemReviewed.name "${String(itemReviewed.name)}" does not match a listed mover (${reviewId})`,
-          });
-        }
-      }
-
-      if (!node.reviewBody) {
-        issues.push({
-          ...base,
-          issue: `Review missing reviewBody (${reviewId})`,
-        });
-      }
-
-      if (!node.datePublished) {
-        issues.push({
-          ...base,
-          issue: `Review missing datePublished (${reviewId})`,
-        });
-      }
-
-      const author = node.author as Record<string, unknown> | undefined;
-      if (!author?.name) {
-        issues.push({
-          ...base,
-          issue: `Review missing author.name (${reviewId})`,
-        });
-      }
-
-      const reviewRating = node.reviewRating as Record<string, unknown> | undefined;
-      if (!reviewRating?.ratingValue) {
-        issues.push({
-          ...base,
-          issue: `Review missing reviewRating.ratingValue (${reviewId})`,
-        });
+        reviewCount += 1;
+        issues.push(
+          ...validateReviewNodeFields(
+            nestedReview,
+            String(nestedReview['@id'] ?? `${nodeId}#nested-review`),
+            base,
+            moverIds,
+            moverNames,
+            pageUrl
+          )
+        );
       }
     }
 
