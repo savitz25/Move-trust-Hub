@@ -244,27 +244,27 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   fresno: [
     {
       quote:
-        'Meathead Movers Fresno handled our Clovis relocation professionally — efficient crew and careful handling of our belongings.',
+        'July move into Clovis — 6:30 a.m. start, HOA packet cleared early, and heat protection for electronics. Afternoon 100°+ heat would have wrecked the day without that plan.',
       name: 'Carlos R.',
       location: 'Clovis, CA',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'Summer / planned community',
     },
     {
       quote:
-        'Two Men and a Truck Fresno provided excellent service for our Fresno family home move — transparent pricing and professional team.',
+        'North Fresno to southwest Fresno on a weekday — they built Highway 41/99 traffic into the plan and were transparent about portal-to-portal hours. Felt like real Valley work.',
       name: 'Angela M.',
-      location: 'Fresno, CA',
+      location: 'North Fresno → SW Fresno, CA',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'Cross-town',
     },
     {
       quote:
-        'California Express Movers drove in with fair pricing and dependable service for our Central Valley corporate relocation.',
+        'Bay Area transplant into Fresno with a shop on a rural-edge lot near Sanger — they planned the longer approach, listed outbuildings on the survey, and started before the heat. Not a coastal script.',
       name: 'David K.',
-      location: 'Fresno, CA',
+      location: 'Fresno / Sanger edge, CA',
       rating: 5,
-      moveType: 'Corporate',
+      moveType: 'Inbound / ag-edge',
     },
   ],
   glenn: [

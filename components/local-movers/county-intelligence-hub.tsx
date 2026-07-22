@@ -49,6 +49,8 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'downtown-midtown' && 'sm:col-span-2',
               z.id === 'lamorinda' && 'sm:col-span-2',
               z.id === 'east-county' && 'sm:col-span-2',
+              z.id === 'clovis-ne' && 'sm:col-span-2',
+              z.id === 'ag-surround' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
@@ -72,7 +74,11 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'lamorinda' &&
                 'border-fuchsia-300/70 dark:border-fuchsia-800/50',
               z.id === 'east-county' &&
-                'border-yellow-300/70 dark:border-yellow-800/50'
+                'border-yellow-300/70 dark:border-yellow-800/50',
+              z.id === 'clovis-ne' &&
+                'border-sky-300/70 dark:border-sky-800/50',
+              z.id === 'ag-surround' &&
+                'border-amber-400/70 dark:border-amber-700/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>

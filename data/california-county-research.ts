@@ -162,19 +162,19 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   fresno: {
     marketNotes:
-      'Fresno County is a major Central Valley county with urban Fresno and agricultural areas. Moves often involve residential, farm, and corporate relocations.',
+      'Fresno County is a major Central Valley market anchored by Fresno and growing Clovis suburbs, with surrounding ag towns (Sanger, Reedley, Selma, Kerman, Coalinga edge). Extreme summer heat (often 100°F+), relative affordability vs coastal CA/Bay Area, inbound migration, and Hwy 99/41/180 timing define many “local” jobs — urban core, planned suburbs, and farm-edge access are different logistics problems.',
     costs: {
-      studioRange: '$450–$950',
-      familyRange: '$1,700–$3,800',
-      avgHourly: '$105–$155/hr for a 2-person crew',
-      note: 'Fresno and Clovis moves often reflect agricultural-property handling, Highway 99 traffic, and strong local mover competition.',
+      studioRange: '$500–$1,200+',
+      familyRange: '$2,200–$5,500+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Peak heat windows, Clovis HOA soft costs, cross-town 99/41/180 time, and agricultural-edge approaches push many quotes above base ranges.',
     },
     tips: [
-      'Agricultural properties may require equipment handling.',
-      'Verify coverage for Fresno, Clovis, and surrounding areas.',
-      'Heavy traffic on Highway 99 and 41.',
-      'Obtain multiple estimates.',
-      'Confirm insurance for high-value items.',
+      'Schedule summer loads early morning — mid-afternoon heat is an operational risk.',
+      'Send HOA/COI packets for newer Clovis and northeast Fresno developments with the estimate.',
+      'Treat Fresno/Clovis ↔ Sanger/Reedley/Selma as long locals with honest portal-to-portal time.',
+      'Mention sheds, shops, and unpaved access on ag-edge properties.',
+      'Book peak spring/summer Saturdays early for coastal inbound family moves.',
     ],
   },
   glenn: {
