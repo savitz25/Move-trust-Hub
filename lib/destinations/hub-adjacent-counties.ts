@@ -23,10 +23,39 @@ export const HUB_MARKET_ADJACENT_COUNTIES: Record<string, string[]> = {
   // Hillsboro/Beaverton — Multnomah adjacency for westside
   'hillsboro-beaverton-or': ['multnomah-or'],
   // SoCal: Inland Empire ↔ Orange / LA / San Diego corridors (~30–100 mi)
-  'riverside-san-bernardino-ca': ['orange-ca', 'los-angeles-ca', 'san-diego-ca'],
-  'san-diego-ca': ['orange-ca', 'riverside-ca'],
-  'palmdale-lancaster-ca': ['orange-ca', 'ventura-ca'],
-  'ventura-oxnard-ca': ['los-angeles-ca', 'orange-ca'],
+  'riverside-san-bernardino-ca': [
+    'orange-ca',
+    'los-angeles-ca',
+    'san-diego-ca',
+    'san-bernardino-ca',
+    'riverside-ca',
+  ],
+  'san-diego-ca': ['orange-ca', 'riverside-ca', 'imperial-ca'],
+  'palmdale-lancaster-ca': [
+    'orange-ca',
+    'ventura-ca',
+    'san-bernardino-ca',
+    'kern-ca',
+  ],
+  'ventura-oxnard-ca': ['los-angeles-ca', 'orange-ca', 'santa-barbara-ca'],
+  // Central Valley + capital + north
+  'bakersfield-ca': ['tulare-ca', 'kings-ca', 'san-luis-obispo-ca', 'los-angeles-ca'],
+  'fresno-ca': ['madera-ca', 'kings-ca', 'tulare-ca', 'merced-ca'],
+  'stockton-ca': [
+    'stanislaus-ca',
+    'sacramento-ca',
+    'contra-costa-ca',
+    'alameda-ca',
+  ],
+  'modesto-ca': ['san-joaquin-ca', 'merced-ca', 'tuolumne-ca', 'santa-clara-ca'],
+  'sacramento-ca': [
+    'placer-ca',
+    'yolo-ca',
+    'el-dorado-ca',
+    'san-joaquin-ca',
+    'sutter-ca',
+  ],
+  'redding-ca': ['tehama-ca', 'butte-ca', 'trinity-ca', 'siskiyou-ca'],
 };
 
 /** County keys to load for a hub market (primary + manual adjacent + proximity). */

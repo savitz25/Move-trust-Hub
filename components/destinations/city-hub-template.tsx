@@ -7,7 +7,11 @@ import { DestinationMapSnippet } from '@/components/destinations/destination-map
 import { DestinationQuoteCta } from '@/components/destinations/destination-quote-cta';
 import { DestinationInterstateCard } from '@/components/destinations/destination-interstate-card';
 import { DestinationCostVisual } from '@/components/destinations/destination-cost-visual';
-import { getMoversForMarketAsync } from '@/lib/destinations/get-movers-for-market-async';
+import {
+  getEnrichedMoversForCaHub,
+  getMoversForMarketAsync,
+} from '@/lib/destinations/get-movers-for-market-async';
+import { isCaEnrichedHub } from '@/lib/destinations/ca-hub-mover-enrichment';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCityHubSchemaGraph } from '@/lib/seo/build-city-hub-schema';
 import { SITE_URL } from '@/lib/seo/site-metadata';
@@ -37,14 +41,22 @@ export async function CityHubTemplate({ market, content }: Props) {
   const destinationLabel = `${market.displayName}, ${market.stateCode}`;
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
   // Single market fetch — avoid double county/DB work during SSG of thousands of city hubs.
-  const marketMovers = await getMoversForMarketAsync(market, 100);
-  const localMovers = marketMovers.slice(0, 6);
-  const totalMovers = marketMovers.length;
-  const featuredCompanies = (
-    await Promise.all(
-      content.featuredInterstateSlugs.map((slug) => getCompanyBySlugAsync(slug))
-    )
-  ).filter((company): company is NonNullable<typeof company> => Boolean(company));
+  const useCaEnrichment = isCaEnrichedHub(market.slug);
+  const enriched = useCaEnrichment
+    ? await getEnrichedMoversForCaHub(market, content.featuredInterstateSlugs)
+    : null;
+  const marketMovers = enriched
+    ? enriched.movers
+    : await getMoversForMarketAsync(market, 100);
+  const localMovers = marketMovers.slice(0, useCaEnrichment ? 9 : 6);
+  const totalMovers = enriched ? enriched.totalAvailable : marketMovers.length;
+  const featuredCompanies = useCaEnrichment
+    ? []
+    : (
+        await Promise.all(
+          content.featuredInterstateSlugs.map((slug) => getCompanyBySlugAsync(slug))
+        )
+      ).filter((company): company is NonNullable<typeof company> => Boolean(company));
 
   const clusterParent = market.clusterParent
     ? getMarketBySlug(market.clusterParent)
@@ -185,8 +197,9 @@ export async function CityHubTemplate({ market, content }: Props) {
                 Top Movers Serving {destinationLabel}
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl">
-                Featured FMCSA-licensed interstate carriers plus vetted local movers from{' '}
-                {countyLabels.join(', ')}. Confirm current licensing before booking.
+                {useCaEnrichment
+                  ? `Local movers from ${countyLabels.join(', ')} and nearby counties, plus strong statewide carriers that serve the area. Up to nine featured options — confirm current licensing before booking.`
+                  : `Featured FMCSA-licensed interstate carriers plus vetted local movers from ${countyLabels.join(', ')}. Confirm current licensing before booking.`}
               </p>
             </div>
             <Link
@@ -213,35 +226,64 @@ export async function CityHubTemplate({ market, content }: Props) {
             </div>
           ) : null}
 
-          {featuredCompanies.length > 0 && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8" role="list">
-              {featuredCompanies.map((company, index) => (
-                <DestinationInterstateCard
-                  key={company.slug}
-                  company={company}
+          {useCaEnrichment && localMovers.length > 0 ? (
+            <div
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+              role="list"
+              aria-label={`Up to nine movers serving ${destinationLabel}`}
+            >
+              {localMovers.map((entry, index) => (
+                <LocalMoverCard
+                  key={entry.mover.id}
+                  mover={entry.mover}
                   rank={index + 1}
-                  areaLabel={countyLabels[index] ?? destinationLabel}
+                  countyLabel={entry.countyLabel}
+                  stateCode={entry.stateCode}
                   profileReturnPath={content.seo.canonicalPath}
                 />
               ))}
             </div>
-          )}
-
-          {localMovers.length > 0 && (
+          ) : (
             <>
-              <h3 className="text-lg font-semibold mb-4">Local &amp; regional movers by county</h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" role="list">
-                {localMovers.slice(0, 3).map((entry, index) => (
-                  <LocalMoverCard
-                    key={entry.mover.id}
-                    mover={entry.mover}
-                    rank={index + 1}
-                    countyLabel={entry.countyLabel}
-                    stateCode={entry.stateCode}
-                    profileReturnPath={content.seo.canonicalPath}
-                  />
-                ))}
-              </div>
+              {featuredCompanies.length > 0 && (
+                <div
+                  className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8"
+                  role="list"
+                >
+                  {featuredCompanies.map((company, index) => (
+                    <DestinationInterstateCard
+                      key={company.slug}
+                      company={company}
+                      rank={index + 1}
+                      areaLabel={countyLabels[index] ?? destinationLabel}
+                      profileReturnPath={content.seo.canonicalPath}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {localMovers.length > 0 && (
+                <>
+                  <h3 className="text-lg font-semibold mb-4">
+                    Local &amp; regional movers by county
+                  </h3>
+                  <div
+                    className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+                    role="list"
+                  >
+                    {localMovers.slice(0, 3).map((entry, index) => (
+                      <LocalMoverCard
+                        key={entry.mover.id}
+                        mover={entry.mover}
+                        rank={index + 1}
+                        countyLabel={entry.countyLabel}
+                        stateCode={entry.stateCode}
+                        profileReturnPath={content.seo.canonicalPath}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           )}
         </div>

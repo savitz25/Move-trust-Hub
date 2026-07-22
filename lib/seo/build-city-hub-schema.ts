@@ -70,7 +70,8 @@ export function buildCityHubSchemaGraph(
 
   const destinationLabel = `${market.displayName}, ${market.stateCode}`;
   const serviceId = buildDestinationServiceId(canonical);
-  const featuredMovers = movers.slice(0, 6);
+  // Enriched CA hubs pass up to 9; other hubs typically pass fewer.
+  const featuredMovers = movers.slice(0, 9);
 
   const breadcrumbItems = [
     {
