@@ -188,7 +188,12 @@ function mapRow(row: Record<string, unknown>): Company {
     phone: phoneResolved || null,
     email: (typeof row.email === 'string' ? row.email.trim() : null) || null,
     serviceScope:
-      row.service_scope === 'intrastate' ? 'intrastate' : 'interstate',
+      row.service_scope === 'intrastate'
+        ? 'intrastate'
+        : row.service_scope === 'interstate'
+          ? 'interstate'
+          : // Column missing / null — leave unset so type badges can infer Local vs Carrier
+            null,
     coverageCounties: Array.isArray(row.coverage_counties)
       ? (row.coverage_counties as Company['coverageCounties'])
       : [],

@@ -14,6 +14,7 @@ type CompanyMoverSource = {
   services?: unknown;
   specialties?: unknown;
   service_scope?: string | null;
+  entity_type?: string | null;
   last_updated?: string | null;
   updated_at?: string | null;
 };
@@ -24,7 +25,8 @@ function mapServices(services: unknown): string[] {
   if (!Array.isArray(services) || services.length === 0) return ['Long Distance'];
   return services.map((service) => {
     const value = String(service);
-    if (value === 'Full Service' || value === 'Carrier') return 'Long Distance';
+    // Keep Carrier/Broker labels for type badges; only rewrite generic full-service.
+    if (value === 'Full Service') return 'Long Distance';
     return value;
   });
 }
@@ -40,7 +42,10 @@ function isRecentlyAdded(iso: string | null | undefined): boolean {
 export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
   const city = company.headquarters?.split(',')[0]?.trim() ?? company.headquarters ?? '';
   const lastUpdated = company.last_updated || company.updated_at || undefined;
-  const isLocalOnly = company.service_scope === 'intrastate';
+  const usdot = (company.usdot_number || '').replace(/\D/g, '');
+  const isLocalOnly =
+    company.service_scope === 'intrastate' ||
+    (!usdot && company.service_scope !== 'interstate');
   return {
     id: `directory-${company.slug}`,
     name: company.name,
@@ -58,6 +63,7 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
     city,
     listingSource: 'directory',
     isLocalOnly,
+    entityType: company.entity_type ?? null,
     lastUpdated: lastUpdated || undefined,
     recentlyAdded: isRecentlyAdded(lastUpdated),
   };

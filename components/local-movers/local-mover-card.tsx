@@ -79,9 +79,15 @@ export function LocalMoverCard({
                 size="compact"
                 input={{
                   isLocalOnly: Boolean(mover.isLocalOnly),
-                  serviceScope: mover.isLocalOnly ? 'intrastate' : undefined,
-                  // Catalog / directory interstate movers may carry Carrier|Broker in services.
-                  services: mover.services as never,
+                  serviceScope: mover.isLocalOnly
+                    ? 'intrastate'
+                    : mover.usdotNumber
+                      ? 'interstate'
+                      : undefined,
+                  entityType: mover.entityType,
+                  usdotNumber: mover.usdotNumber,
+                  mcNumber: mover.mcNumber,
+                  services: mover.services,
                 }}
               />
             </div>

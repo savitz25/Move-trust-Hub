@@ -17,6 +17,8 @@ export type LocalMover = {
   listingSource?: 'directory' | 'catalog';
   /** Intrastate / local-only (county pages, not main interstate directory). */
   isLocalOnly?: boolean;
+  /** FMCSA entity type when known (for Carrier/Broker badges on county lists). */
+  entityType?: string | null;
   /** ISO timestamp when company row was last updated (directory listings). */
   lastUpdated?: string;
   /** Highlight newly published local movers on county pages. */

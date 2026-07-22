@@ -1,8 +1,15 @@
 /**
- * Company type badges for directory / profile / county UI.
- * Derived from onboarding funnel (service_scope) + FMCSA entity type.
+ * Centralized company type badges for directory / profile / county UI.
+ *
+ * Priority:
+ * 1. service_scope = intrastate (or isLocalOnly) → Local Mover
+ * 2. Infer local when no USDOT and no carrier/broker signals
+ * 3. entity_type / fmcsa_raw / services → Carrier | Broker | Carrier/Broker
+ * 4. USDOT present → default Carrier
+ * 5. Last resort → Local Mover if no USDOT, else Carrier
  */
 
+import { extractEntityType } from '@/lib/fmcsa/carrier-fields';
 import { mergeServicesWithEntityType } from '@/lib/fmcsa/derive-directory-services';
 import {
   formatEntityTypeLabel,
@@ -18,36 +25,33 @@ export type CompanyTypeBadgeId =
 
 export type CompanyTypeBadge = {
   id: CompanyTypeBadgeId;
-  /** User-facing label */
   label: string;
-  /** Short help text for title attributes */
   description: string;
-  /** Visual variant for Badge styling */
   variant: 'local' | 'carrier' | 'broker' | 'mixed';
 };
 
-const LOCAL_BADGE: CompanyTypeBadge = {
+export const LOCAL_MOVER_BADGE: CompanyTypeBadge = {
   id: 'local-mover',
   label: 'Local Mover',
   description: 'Intrastate / local mover — listed on selected county pages only',
   variant: 'local',
 };
 
-const CARRIER_BADGE: CompanyTypeBadge = {
+export const CARRIER_BADGE: CompanyTypeBadge = {
   id: 'carrier',
   label: 'Carrier',
   description: 'FMCSA entity type: Carrier (interstate operating authority)',
   variant: 'carrier',
 };
 
-const BROKER_BADGE: CompanyTypeBadge = {
+export const BROKER_BADGE: CompanyTypeBadge = {
   id: 'broker',
   label: 'Broker',
   description: 'FMCSA entity type: Broker',
   variant: 'broker',
 };
 
-const MIXED_BADGE: CompanyTypeBadge = {
+export const CARRIER_BROKER_BADGE: CompanyTypeBadge = {
   id: 'carrier-broker',
   label: 'Carrier/Broker',
   description: 'FMCSA entity type: Carrier and Broker authority',
@@ -57,83 +61,167 @@ const MIXED_BADGE: CompanyTypeBadge = {
 export type TypeBadgeInput = {
   serviceScope?: string | null;
   entityType?: string | null;
-  services?: ServiceType[] | null;
+  services?: Array<string | ServiceType> | null;
   fmcsaRaw?: Record<string, unknown> | null;
-  /** USDOT digits — absence helps detect local when service_scope column is missing */
   usdotNumber?: string | null;
-  /** Local-movers catalog flag when Company is not available */
+  mcNumber?: string | null;
   isLocalOnly?: boolean;
 };
 
-function looksLocalWithoutScopeColumn(input: TypeBadgeInput): boolean {
-  // Prod may lag the service_scope migration; treat no-USDOT + no FMCSA entity as local.
-  const usdot = (input.usdotNumber ?? '').replace(/\D/g, '');
-  if (usdot.length >= 5) return false;
+function usdotDigits(value: string | null | undefined): string {
+  return (value ?? '').replace(/\D/g, '');
+}
+
+function hasUsdot(input: TypeBadgeInput): boolean {
+  return usdotDigits(input.usdotNumber).length >= 5;
+}
+
+function servicesList(input: TypeBadgeInput): string[] {
+  if (!Array.isArray(input.services)) return [];
+  return input.services.map((s) => String(s));
+}
+
+function servicesSuggestBroker(services: string[]): boolean {
+  return services.some((s) => /broker/i.test(s));
+}
+
+function servicesSuggestCarrier(services: string[]): boolean {
+  return services.some(
+    (s) =>
+      /^carrier$/i.test(s.trim()) ||
+      /carrier\s*\/\s*broker/i.test(s) ||
+      /full service/i.test(s)
+  );
+}
+
+function servicesSuggestMixed(services: string[]): boolean {
+  return services.some((s) => /carrier\s*\/\s*broker|broker\s*\/\s*carrier/i.test(s));
+}
+
+/** Broker signals from FMCSA raw when entity_type is blank. */
+function fmcsaSuggestsBrokerOnly(raw: Record<string, unknown> | null | undefined): boolean {
+  if (!raw || typeof raw !== 'object') return false;
+  const broker =
+    String(raw.brokerAuthorityStatus ?? raw.brokerAuthority ?? '').toUpperCase();
+  const common =
+    String(raw.commonAuthorityStatus ?? raw.commonAuthority ?? '').toUpperCase();
+  const contract =
+    String(raw.contractAuthorityStatus ?? raw.contractAuthority ?? '').toUpperCase();
+  const brokerActive = /ACTIVE|AUTHORIZED|Y|YES/.test(broker);
+  const carrierActive =
+    /ACTIVE|AUTHORIZED|Y|YES/.test(common) || /ACTIVE|AUTHORIZED|Y|YES/.test(contract);
+  return brokerActive && !carrierActive;
+}
+
+function fmcsaSuggestsMixed(raw: Record<string, unknown> | null | undefined): boolean {
+  if (!raw || typeof raw !== 'object') return false;
+  const broker =
+    String(raw.brokerAuthorityStatus ?? raw.brokerAuthority ?? '').toUpperCase();
+  const common =
+    String(raw.commonAuthorityStatus ?? raw.commonAuthority ?? '').toUpperCase();
+  const contract =
+    String(raw.contractAuthorityStatus ?? raw.contractAuthority ?? '').toUpperCase();
+  const brokerActive = /ACTIVE|AUTHORIZED|Y|YES/.test(broker);
+  const carrierActive =
+    /ACTIVE|AUTHORIZED|Y|YES/.test(common) || /ACTIVE|AUTHORIZED|Y|YES/.test(contract);
+  return brokerActive && carrierActive;
+}
+
+function hasCarrierOrBrokerSignal(input: TypeBadgeInput): boolean {
   const entity = formatEntityTypeLabel(input.entityType);
-  if (entity && entity !== 'Not Available') return false;
-  const services = input.services ?? [];
-  if (
-    services.includes('Carrier') ||
-    services.includes('Broker') ||
-    services.includes('Carrier / Broker')
-  ) {
-    return false;
+  if (entity && entity !== 'Not Available') return true;
+  if (input.fmcsaRaw) {
+    const fromRaw = formatEntityTypeLabel(extractEntityType(input.fmcsaRaw));
+    if (fromRaw && fromRaw !== 'Not Available') return true;
+    if (fmcsaSuggestsBrokerOnly(input.fmcsaRaw) || fmcsaSuggestsMixed(input.fmcsaRaw)) {
+      return true;
+    }
   }
-  return true;
+  const services = servicesList(input);
+  if (servicesSuggestBroker(services) || servicesSuggestMixed(services)) return true;
+  if (services.some((s) => /^carrier$/i.test(s.trim()))) return true;
+  return false;
 }
 
 /**
- * Resolve 0–1 primary type badges for a company.
- * Local movers always get "Local Mover". Interstate get Carrier / Broker / Carrier/Broker.
+ * Local when: explicit intrastate flag, or no USDOT identity and no carrier/broker signals.
+ * (Handles lagging service_scope column and directory DTOs that omit scope.)
  */
-export function resolveCompanyTypeBadges(input: TypeBadgeInput): CompanyTypeBadge[] {
-  const scope = (input.serviceScope ?? '').toLowerCase();
-  if (scope === 'intrastate' || input.isLocalOnly) {
-    return [LOCAL_BADGE];
+function isLocalMover(input: TypeBadgeInput): boolean {
+  if (input.isLocalOnly) return true;
+  const scope = (input.serviceScope ?? '').toLowerCase().trim();
+  if (scope === 'intrastate') return true;
+  if (scope === 'interstate') {
+    // Explicit interstate with no USDOT and no entity is still treated as local (bad data).
+    return !hasUsdot(input) && !hasCarrierOrBrokerSignal(input);
   }
-  // When scope is unset/default interstate but company has no USDOT identity, prefer Local Mover.
-  if (scope !== 'interstate' && looksLocalWithoutScopeColumn(input)) {
-    return [LOCAL_BADGE];
-  }
-  if (!scope && looksLocalWithoutScopeColumn(input)) {
-    return [LOCAL_BADGE];
-  }
+  // Unset / missing scope
+  return !hasUsdot(input) && !hasCarrierOrBrokerSignal(input);
+}
 
+function badgeFromEntityLabel(label: string | null | undefined): CompanyTypeBadge | null {
+  if (!label || label === 'Not Available') return null;
+  const key = label.toUpperCase().replace(/\s+/g, '');
+  if (key === 'CARRIER/BROKER' || key === 'BROKER/CARRIER') return CARRIER_BROKER_BADGE;
+  if (key === 'BROKER') return BROKER_BADGE;
+  if (key === 'CARRIER') return CARRIER_BADGE;
+  // Other census types — still show a type badge
+  return {
+    id: 'carrier',
+    label,
+    description: `FMCSA entity type: ${label}`,
+    variant: 'carrier',
+  };
+}
+
+function resolveInterstateTypeBadge(input: TypeBadgeInput): CompanyTypeBadge {
+  const services = servicesList(input);
+
+  // 1) Stored / resolved entity type (includes fmcsa_raw extract via resolveEntityTypeForDisplay)
   const label =
     resolveEntityTypeForDisplay({
       entityType: input.entityType,
       fmcsaRaw: input.fmcsaRaw ?? null,
-      services: input.services ?? undefined,
+      services: services as ServiceType[],
     }) || formatEntityTypeLabel(input.entityType);
 
-  if (!label || label === 'Not Available') {
-    // Fallback from service tags only when entity type is unknown
-    const services = input.services ?? [];
-    if (services.includes('Carrier / Broker')) return [MIXED_BADGE];
-    if (services.includes('Broker') && services.includes('Carrier')) return [MIXED_BADGE];
-    if (services.includes('Broker')) return [BROKER_BADGE];
-    if (services.includes('Carrier')) return [CARRIER_BADGE];
-    return [];
+  const fromLabel = badgeFromEntityLabel(label);
+  if (fromLabel) return fromLabel;
+
+  // 2) Authority flags in fmcsa_raw
+  if (fmcsaSuggestsMixed(input.fmcsaRaw)) return CARRIER_BROKER_BADGE;
+  if (fmcsaSuggestsBrokerOnly(input.fmcsaRaw)) return BROKER_BADGE;
+
+  // 3) Services tags
+  if (servicesSuggestMixed(services)) return CARRIER_BROKER_BADGE;
+  if (servicesSuggestBroker(services) && servicesSuggestCarrier(services)) {
+    return CARRIER_BROKER_BADGE;
   }
+  if (servicesSuggestBroker(services)) return BROKER_BADGE;
+  if (services.some((s) => /^carrier$/i.test(s.trim()))) return CARRIER_BADGE;
 
-  const key = label.toUpperCase().replace(/\s+/g, '');
-  if (key === 'CARRIER/BROKER' || key === 'BROKER/CARRIER') return [MIXED_BADGE];
-  if (key === 'BROKER') return [BROKER_BADGE];
-  if (key === 'CARRIER') return [CARRIER_BADGE];
+  // 4) Default for interstate / USDOT companies
+  if (hasUsdot(input)) return CARRIER_BADGE;
 
-  // Unknown FMCSA census types (e.g. Freight Forwarder) — show cleaned label once
-  return [
-    {
-      id: 'carrier',
-      label,
-      description: `FMCSA entity type: ${label}`,
-      variant: 'carrier',
-    },
-  ];
+  // 5) Directory listing with no signals — still show Carrier (main directory = interstate)
+  return CARRIER_BADGE;
+}
+
+/**
+ * Resolve type badges for a company (always returns at least one badge when possible).
+ */
+export function resolveCompanyTypeBadges(input: TypeBadgeInput): CompanyTypeBadge[] {
+  if (isLocalMover(input)) {
+    return [LOCAL_MOVER_BADGE];
+  }
+  return [resolveInterstateTypeBadge(input)];
 }
 
 export function resolveCompanyTypeBadgesFromCompany(
-  company: Pick<Company, 'serviceScope' | 'entityType' | 'services' | 'usdotNumber'> & {
+  company: Pick<
+    Company,
+    'serviceScope' | 'entityType' | 'services' | 'usdotNumber' | 'mcNumber'
+  > & {
     fmcsaRaw?: Record<string, unknown> | null;
   }
 ): CompanyTypeBadge[] {
@@ -143,6 +231,7 @@ export function resolveCompanyTypeBadgesFromCompany(
     services: company.services,
     fmcsaRaw: company.fmcsaRaw ?? null,
     usdotNumber: company.usdotNumber,
+    mcNumber: company.mcNumber,
   });
 }
 

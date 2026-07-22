@@ -21,20 +21,31 @@ const VARIANT_CLASS: Record<CompanyTypeBadge['variant'], string> = {
 
 type Size = 'compact' | 'default';
 
+type CompanyLike = Pick<
+  Company,
+  'serviceScope' | 'entityType' | 'services' | 'usdotNumber' | 'mcNumber'
+> & {
+  fmcsaRaw?: Record<string, unknown> | null;
+};
+
 type Props = {
-  company?: Pick<Company, 'serviceScope' | 'entityType' | 'services'> & {
-    fmcsaRaw?: Record<string, unknown> | null;
-  };
+  company?: CompanyLike | null;
   /** When company is not available (e.g. LocalMover catalog) */
-  input?: TypeBadgeInput;
+  input?: TypeBadgeInput | null;
   size?: Size;
   className?: string;
 };
 
 /**
- * Type badges: Local Mover (intrastate) or Carrier / Broker / Carrier/Broker (interstate).
+ * Type badges: Local Mover | Carrier | Broker | Carrier/Broker.
+ * Always resolves from the centralized helper so directory + profile stay in sync.
  */
-export function CompanyTypeBadges({ company, input, size = 'default', className }: Props) {
+export function CompanyTypeBadges({
+  company,
+  input,
+  size = 'default',
+  className,
+}: Props) {
   const badges = company
     ? resolveCompanyTypeBadgesFromCompany(company)
     : input

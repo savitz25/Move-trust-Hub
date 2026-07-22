@@ -85,7 +85,9 @@ export function prepareCompaniesForDirectoryClient(companies: Company[]): Compan
           authorityActive: c.authorityActive,
           outOfService: c.outOfService,
           usdotStatus: c.usdotStatus,
-          entityType: c.entityType,
+          entityType: c.entityType ?? null,
+          /** Required for Local Mover vs Carrier type badges on directory cards */
+          serviceScope: c.serviceScope ?? null,
           powerUnits: c.powerUnits,
           bbbRating: c.bbbRating,
           bbbAccredited: c.bbbAccredited,

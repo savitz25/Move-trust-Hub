@@ -27,6 +27,8 @@ export function normalizeCompanyForDisplay(company: Company): Company {
     website: normalizeCompanyWebsiteUrl(company.website) || company.website?.trim() || '',
     usdotNumber: company.usdotNumber?.trim() || '',
     mcNumber: company.mcNumber?.trim() || '',
+    entityType: company.entityType ?? null,
+    serviceScope: company.serviceScope ?? null,
     foundedYear: Number(company.foundedYear) > 0 ? Number(company.foundedYear) : 0,
     fmcsaSafetyRating: company.fmcsaSafetyRating || 'Not Rated',
     fmcsaComplaints: Number(company.fmcsaComplaints) || 0,

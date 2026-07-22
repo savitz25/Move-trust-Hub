@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getAutoTransportBySlugAsync } from '@/lib/data-server';
 import { directoryVerifiedLabel } from '@/lib/trust/company-display-policy';
 import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
+import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
@@ -65,6 +66,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
+            <CompanyTypeBadges company={company} size="default" className="shrink-0" />
             <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
           </div>
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>

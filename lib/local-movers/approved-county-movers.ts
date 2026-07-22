@@ -13,7 +13,7 @@ import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-m
 export { APPROVED_COUNTY_MOVERS_TAG };
 
 const COMPANY_MOVER_SELECT =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, coverage_counties, last_updated';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated';
 
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
@@ -43,6 +43,7 @@ type CompanyMoverRow = {
   specialties?: unknown;
   is_verified?: boolean | null;
   service_scope?: string | null;
+  entity_type?: string | null;
   coverage_counties?: unknown;
   last_updated?: string | null;
 };
@@ -287,8 +288,8 @@ async function loadAllApprovedMoversByCounty(): Promise<Record<string, LocalMove
 
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  // bump when eligibility / coverage_counties merge changes
-  ['approved-county-movers-all-v3-local-coverage'],
+  // bump when entity_type is selected for county type badges
+  ['approved-county-movers-all-v4-entity-type'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
 

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Star, ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import type { Company } from '@/types';
 
@@ -30,8 +31,11 @@ export function DestinationInterstateCard({
             <h3 className="text-lg font-semibold tracking-tight leading-tight">
               {company.name}
             </h3>
+            <div className="mt-1 flex flex-wrap items-center gap-1.5">
+              <CompanyTypeBadges company={company} size="compact" />
+            </div>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Interstate carrier · Serves {areaLabel}
+              Serves {areaLabel}
             </p>
           </div>
         </div>
