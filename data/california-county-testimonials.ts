@@ -1102,27 +1102,27 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   'santa-clara': [
     {
       quote:
-        'Piece of Cake Moving made our Sunnyvale tech-campus area move stress-free — professional HOA coordination and transparent pricing throughout.',
+        'Sunnyvale condo HOA wanted COI and a weekday elevator window — the crew handled the management packet, packed our multi-monitor setup carefully, and finished before the 101 afternoon mess. Felt like Silicon Valley work they do weekly.',
       name: 'Alex C.',
       location: 'Sunnyvale, CA',
       rating: 5,
-      moveType: 'Corporate',
+      moveType: 'Tech corridor condo',
     },
     {
       quote:
-        'Booth Movers handled our San Jose high-value home relocation with outstanding care — efficient despite heavy I-880 traffic.',
+        'Los Gatos hillside home with tight turnaround — they used a smaller truck for the last stretch, protected high-value furniture, and were transparent about portal-to-portal time on 85. Not a generic Bay Area script.',
       name: 'Priya N.',
-      location: 'San Jose, CA',
+      location: 'Los Gatos, CA',
       rating: 5,
-      moveType: 'High-Value',
+      moveType: 'West Valley SFH',
     },
     {
       quote:
-        'Fairprice Movers provided excellent local Silicon Valley service for our Mountain View apartment move — careful and efficient throughout.',
+        'Corporate start date forced a mid-week Mountain View → Campbell move. They planned around 280/87 peaks, inventory’d our home office gear, and kept valuation coverage realistic for the shipment.',
       name: 'Jason L.',
-      location: 'Mountain View, CA',
+      location: 'Mountain View → Campbell, CA',
       rating: 5,
-      moveType: 'Apartment',
+      moveType: 'Tech relocation',
     },
   ],
   'santa-cruz': [

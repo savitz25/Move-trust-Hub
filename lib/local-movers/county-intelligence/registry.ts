@@ -3,6 +3,7 @@ import { orangeCountyIntelligence } from '@/lib/local-movers/county-intelligence
 import { riversideCountyIntelligence } from '@/lib/local-movers/county-intelligence/riverside-ca';
 import { sanBernardinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-bernardino-ca';
 import { sanDiegoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-diego-ca';
+import { santaClaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-clara-ca';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 const PACKS: CountyIntelligencePack[] = [
@@ -11,6 +12,7 @@ const PACKS: CountyIntelligencePack[] = [
   riversideCountyIntelligence,
   sanBernardinoCountyIntelligence,
   sanDiegoCountyIntelligence,
+  santaClaraCountyIntelligence,
 ];
 
 const byKey = new Map(

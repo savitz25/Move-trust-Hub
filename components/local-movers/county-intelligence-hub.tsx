@@ -42,6 +42,7 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'coachella-valley' && 'sm:col-span-2',
               z.id === 'high-desert' && 'sm:col-span-2',
               z.id === 'mountains' && 'sm:col-span-2',
+              z.id === 'north-tech' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
@@ -51,7 +52,9 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'high-desert' &&
                 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'mountains' &&
-                'border-emerald-300/70 dark:border-emerald-800/50'
+                'border-emerald-300/70 dark:border-emerald-800/50',
+              z.id === 'north-tech' &&
+                'border-cyan-300/70 dark:border-cyan-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>

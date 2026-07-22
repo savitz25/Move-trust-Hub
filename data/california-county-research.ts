@@ -724,19 +724,19 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   'santa-clara': {
     marketNotes:
-      'Santa Clara County is the heart of Silicon Valley with San Jose, Palo Alto, and Sunnyvale. Moves often involve high-tech corporate, high-value residential, and apartment relocations.',
+      'Santa Clara County (~1.91–1.92M) is Silicon Valley’s core: extreme housing costs and high shipment values, tech/corporate relocation waves, dense HOA-condo paperwork, and freeway timing on US-101, I-280, I-880, SR-85, SR-87, and SR-237. North County tech corridor moves differ sharply from West Valley SFH and South County (Morgan Hill/Gilroy) long locals.',
     costs: {
-      studioRange: '$650–$1,500',
-      familyRange: '$2,800–$6,500+',
-      avgHourly: '$145–$210/hr for a 2-person crew',
-      note: 'San Jose, Sunnyvale, and Mountain View moves often reflect tech-campus HOA rules, US 101/I-880 traffic, and high-value executive home handling.',
+      studioRange: '$700–$1,800+',
+      familyRange: '$3,200–$8,500+',
+      avgHourly: '$145–$220/hr for a 2-person crew',
+      note: 'North County elevator/COI soft costs, high-value electronics packing, West Valley hillside access, and multi-freeway hauls (e.g. Palo Alto ↔ South County) push many jobs above base ranges.',
     },
     tips: [
-      'Many tech campuses and HOAs have strict move-in rules.',
-      'Heavy traffic on US 101, I-280, and I-880.',
-      'Verify coverage for San Jose, Sunnyvale, and Mountain View.',
-      'Confirm high-value insurance for tech executive homes.',
-      'Book early for peak seasons.',
+      'Send HOA/building COI and elevator rules with the estimate — especially Sunnyvale, Santa Clara, Mountain View, and San Jose multi-unit.',
+      'Inventory multi-monitor and specialty tech gear; request adequate valuation coverage.',
+      'Schedule around 101/280/237 commute peaks and campus shift changes when possible.',
+      'Treat South County ↔ North County as a long local haul with honest portal-to-portal time.',
+      'Share driveway photos for Los Gatos / Saratoga foothill properties.',
     ],
   },
   'santa-cruz': {
