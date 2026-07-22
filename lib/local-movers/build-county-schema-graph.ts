@@ -520,8 +520,10 @@ export function buildCountySchemaGraph({
   }
 
   if (testimonials?.length) {
-    // Reviews reference the actual MovingCompany being reviewed (never AdministrativeArea
-    // or a county-level pseudo LocalBusiness). GSC "Invalid object type for field itemReviewed".
+    // Reviews target a real listed mover as LocalBusiness itemReviewed (never
+    // AdministrativeArea / Place). Google Review snippets do not accept MovingCompany
+    // alone as itemReviewed — LocalBusiness is required. GSC errors we prevent:
+    // "Invalid object type for field itemReviewed", missing itemReviewed, invalid author.
     const reviewNodes = testimonials
       .map((testimonial, index) =>
         buildReviewSchemaNode(
@@ -548,6 +550,15 @@ export function buildCountySchemaGraph({
       const company = graph.find((node) => String(node['@id'] ?? '') === reviewedId);
       if (!company) continue;
       const embedded = buildEmbeddedCompanyReview(review, company);
+      // Drop incomplete embeds (missing author / itemReviewed / rating)
+      if (
+        !embedded.itemReviewed ||
+        !embedded.author ||
+        !embedded.reviewRating ||
+        !embedded.reviewBody
+      ) {
+        continue;
+      }
       const existing = company.review;
       if (Array.isArray(existing)) {
         existing.push(embedded);

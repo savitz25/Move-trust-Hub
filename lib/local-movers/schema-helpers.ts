@@ -227,11 +227,13 @@ export function resolveReviewedMover(
 /**
  * Valid Review.itemReviewed for Google rich results.
  *
- * Critical GSC rules:
- * - Must be LocalBusiness / MovingCompany (or Product/Service) — NEVER Place / AdministrativeArea
- * - Do NOT nest AdministrativeArea inside itemReviewed (GSC reports that as
- *   "Invalid object type for field itemReviewed")
- * - Prefer a single concrete @type string for maximum rich-results compatibility
+ * Critical GSC rules (Review snippet):
+ * - Google’s supported itemReviewed types list includes LocalBusiness / Organization /
+ *   Product / Service — NOT schema.org MovingCompany alone. Using MovingCompany as the
+ *   sole @type triggers “Invalid object type for field itemReviewed”.
+ * - Never use Place / AdministrativeArea / City as itemReviewed.
+ * - Do NOT nest AdministrativeArea inside itemReviewed (same GSC error).
+ * - Prefer a single concrete @type string Google explicitly supports.
  */
 export function buildMoverItemReviewed(
   mover: LocalMover,
@@ -243,9 +245,10 @@ export function buildMoverItemReviewed(
 ): Record<string, unknown> {
   const name = mover.name.trim();
   const item: Record<string, unknown> = {
-    // Single type — dual arrays + nested Place types confuse some GSC validators
-    '@type': 'MovingCompany',
-    additionalType: 'https://schema.org/LocalBusiness',
+    // LocalBusiness is on Google’s Review.itemReviewed allow-list.
+    // MovingCompany alone is NOT — keep it only as additionalType for semantics.
+    '@type': 'LocalBusiness',
+    additionalType: 'https://schema.org/MovingCompany',
     '@id': buildMoverSchemaId(pageUrl, mover.id),
     name,
     url: buildMoverUrl(mover, pageUrl),
@@ -392,7 +395,9 @@ export function buildMoverSchemaNode(
   if (!name) return null;
 
   const node: Record<string, unknown> = {
-    '@type': ['MovingCompany', 'LocalBusiness'],
+    // LocalBusiness first — when Google resolves Review.itemReviewed via @id onto this
+    // node, the primary type must be on the Review-snippet allow-list.
+    '@type': ['LocalBusiness', 'MovingCompany'],
     '@id': buildMoverSchemaId(pageUrl, mover.id),
     name,
     url: buildMoverUrl(mover, pageUrl),
@@ -503,8 +508,24 @@ export function buildReviewSchemaNode(
     buildMoverUrl
   );
 
-  // Absolute requirement: itemReviewed must exist and be a business type
-  if (!itemReviewed?.name || !itemReviewed['@type']) return null;
+  // Absolute requirement: itemReviewed must exist and be LocalBusiness (Google allow-list)
+  const reviewedType = itemReviewed['@type'];
+  const reviewedTypes = Array.isArray(reviewedType)
+    ? reviewedType.map(String)
+    : reviewedType
+      ? [String(reviewedType)]
+      : [];
+  if (
+    !itemReviewed?.name ||
+    !reviewedTypes.includes('LocalBusiness')
+  ) {
+    return null;
+  }
+
+  // Strip any accidental place nesting before emit
+  delete itemReviewed.areaServed;
+  delete itemReviewed.containedInPlace;
+  delete itemReviewed.containsPlace;
 
   const node: Record<string, unknown> = {
     '@type': 'Review',
@@ -512,7 +533,7 @@ export function buildReviewSchemaNode(
     name: buildReviewSchemaName(testimonial),
     reviewBody,
     datePublished: testimonial.date ?? datePublished ?? undefined,
-    author,
+    author, // always { @type: Person, name }
     reviewRating: {
       '@type': 'Rating',
       ratingValue: String(ratingValue),
@@ -533,8 +554,9 @@ export function buildReviewSchemaNode(
 }
 
 /**
- * Compact Review payload for nesting under a MovingCompany.review property.
- * Always includes itemReviewed + Person author so GSC never sees a bare @id stub.
+ * Compact Review payload for nesting under a company.review property.
+ * Always includes a full itemReviewed + Person author so GSC never sees a bare @id stub
+ * or an itemReviewed type outside Google’s Review allow-list.
  */
 export function buildEmbeddedCompanyReview(
   reviewNode: Record<string, unknown>,
@@ -542,20 +564,74 @@ export function buildEmbeddedCompanyReview(
 ): Record<string, unknown> {
   const companyId = String(companyNode['@id'] ?? '');
   const companyName = String(companyNode.name ?? '');
+  const companyUrl = companyNode.url ? String(companyNode.url) : undefined;
+  const companyAddress =
+    companyNode.address && typeof companyNode.address === 'object'
+      ? (companyNode.address as Record<string, unknown>)
+      : undefined;
+
+  // Prefer the standalone review’s already-validated itemReviewed when present.
+  const sourceItem =
+    reviewNode.itemReviewed && typeof reviewNode.itemReviewed === 'object'
+      ? (reviewNode.itemReviewed as Record<string, unknown>)
+      : null;
+
+  const itemReviewed: Record<string, unknown> = sourceItem
+    ? {
+        ...sourceItem,
+        // Force LocalBusiness even if an older path set MovingCompany alone.
+        '@type': 'LocalBusiness',
+        additionalType:
+          sourceItem.additionalType ?? 'https://schema.org/MovingCompany',
+      }
+    : {
+        '@type': 'LocalBusiness',
+        additionalType: 'https://schema.org/MovingCompany',
+        ...(companyId ? { '@id': companyId } : {}),
+        ...(companyName ? { name: companyName } : {}),
+        ...(companyUrl ? { url: companyUrl } : {}),
+        ...(companyAddress ? { address: companyAddress } : {}),
+      };
+
+  // Never let place-like nesting leak into company.review itemReviewed.
+  delete itemReviewed.areaServed;
+  delete itemReviewed.containedInPlace;
+  delete itemReviewed.containsPlace;
+
+  const author = reviewNode.author;
+  const safeAuthor =
+    author && typeof author === 'object'
+      ? author
+      : typeof author === 'string' && author.trim()
+        ? { '@type': 'Person', name: author.trim() }
+        : undefined;
+
+  const rating = reviewNode.reviewRating;
+  const safeRating =
+    rating && typeof rating === 'object'
+      ? {
+          '@type': 'Rating',
+          ratingValue: String(
+            (rating as Record<string, unknown>).ratingValue ?? ''
+          ),
+          bestRating: String(
+            (rating as Record<string, unknown>).bestRating ?? '5'
+          ),
+          worstRating: String(
+            (rating as Record<string, unknown>).worstRating ?? '1'
+          ),
+        }
+      : undefined;
+
   return {
     '@type': 'Review',
     '@id': reviewNode['@id'],
     name: reviewNode.name,
     reviewBody: reviewNode.reviewBody,
     datePublished: reviewNode.datePublished,
-    author: reviewNode.author,
-    reviewRating: reviewNode.reviewRating,
-    itemReviewed: {
-      '@type': 'MovingCompany',
-      additionalType: 'https://schema.org/LocalBusiness',
-      ...(companyId ? { '@id': companyId } : {}),
-      ...(companyName ? { name: companyName } : {}),
-    },
+    ...(safeAuthor ? { author: safeAuthor } : {}),
+    ...(safeRating && safeRating.ratingValue ? { reviewRating: safeRating } : {}),
+    itemReviewed,
   };
 }
 
@@ -684,14 +760,17 @@ function validateReviewNodeFields(
       }
     }
 
-    const hasBusinessType =
+    // Google Review snippets require LocalBusiness (or Organization/Product/Service).
+    // MovingCompany alone is NOT on Google’s allow-list and fails GSC validation.
+    const hasGoogleAllowlistedType =
       reviewedTypes.includes('LocalBusiness') ||
-      reviewedTypes.includes('MovingCompany') ||
-      reviewedTypes.includes('Organization');
-    if (!hasBusinessType) {
+      reviewedTypes.includes('Organization') ||
+      reviewedTypes.includes('Product') ||
+      reviewedTypes.includes('Service');
+    if (!hasGoogleAllowlistedType) {
       issues.push({
         ...base,
-        issue: `Review itemReviewed must have @type LocalBusiness or MovingCompany, got "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
+        issue: `Review itemReviewed must have @type LocalBusiness (Google allow-list), got "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
       });
     }
 
