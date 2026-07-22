@@ -20,6 +20,11 @@ export type DuplicateCheckResult =
 export async function checkSuggestionDuplicate(params: {
   name: string;
   usdot?: string | null;
+  /**
+   * Trusted admin local onboarding: only block on real directory USDOT collisions,
+   * not soft name / pending-queue matches (admins re-publish often).
+   */
+  bypassNameAndPending?: boolean;
 }): Promise<DuplicateCheckResult> {
   if (!isSupabaseAdminConfigured()) {
     return { duplicate: false };
@@ -70,6 +75,10 @@ export async function checkSuggestionDuplicate(params: {
         reason: 'This company is already pending review. We will add it shortly.',
       };
     }
+  }
+
+  if (params.bypassNameAndPending) {
+    return { duplicate: false };
   }
 
   const { data: nameMatches } = await admin

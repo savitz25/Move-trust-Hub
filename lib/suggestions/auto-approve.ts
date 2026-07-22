@@ -20,18 +20,57 @@ export async function approveAndPublishSuggestion(
 ): Promise<AutoApproveResult> {
   const admin = createAdminClient();
 
+  // Force local flags onto the suggestion object before publish.
+  const isLocal =
+    (suggestion as { service_scope?: string | null }).service_scope === 'intrastate';
+  if (isLocal) {
+    (suggestion as { service_scope?: string }).service_scope = 'intrastate';
+  }
+
   let published: { companyId: string; slug: string };
   try {
     const result = await publishSuggestionToDirectory(suggestion);
     if (!result) {
+      logger.error('suggestion.auto_approve_publish_null', {
+        suggestionId: suggestion.id,
+        name: suggestion.name,
+        serviceScope: (suggestion as { service_scope?: string }).service_scope,
+        countyCount: Array.isArray(
+          (suggestion as { selected_counties?: unknown }).selected_counties
+        )
+          ? ((suggestion as { selected_counties: unknown[] }).selected_counties).length
+          : 0,
+      });
       return { ok: false, error: 'Failed to create company record' };
     }
     published = result;
+
+    // Hard-guarantee local company shape after publish.
+    if (isLocal) {
+      const counties =
+        (suggestion as { selected_counties?: unknown }).selected_counties ?? [];
+      const { error: flagErr } = await admin
+        .from('companies')
+        .update({
+          is_verified: true,
+          service_scope: 'intrastate',
+          coverage_counties: counties as never,
+        } as never)
+        .eq('id', published.companyId);
+      if (flagErr) {
+        logger.warn('suggestion.auto_approve_local_flags_failed', {
+          companyId: published.companyId,
+          message: flagErr.message,
+        });
+      }
+    }
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     logger.error('suggestion.auto_approve_publish_threw', {
       suggestionId: suggestion.id,
+      name: suggestion.name,
       message,
+      stack: err instanceof Error ? err.stack : undefined,
     });
     return { ok: false, error: message };
   }

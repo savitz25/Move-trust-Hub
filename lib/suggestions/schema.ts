@@ -48,16 +48,39 @@ export const suggestCompanySchema = z
     sourcePage: z.string().max(120).optional().nullable(),
     /** Honeypot — must be empty */
     website: z.string().max(0).optional().nullable(),
-    enrichmentSnapshot: enrichmentSnapshotSchema,
+    // Never fail the whole submission on a bad enrichment payload — drop it instead.
+    enrichmentSnapshot: z
+      .unknown()
+      .optional()
+      .nullable()
+      .transform((val) => {
+        if (val == null) return null;
+        const r = enrichmentSnapshotSchema.safeParse(val);
+        return r.success ? r.data : null;
+      }),
     coverageConsent: z.boolean().optional().default(false),
     websiteUrl: z
       .string()
       .trim()
-      .max(300)
+      .max(2000)
       .optional()
       .nullable()
-      .or(z.literal('').transform(() => null)),
-    coverageSnapshot: coverageSnapshotSchema,
+      .or(z.literal('').transform(() => null))
+      .transform((v) => {
+        if (!v) return null;
+        // Keep under DB/display limits after optional UTM stripping client-side
+        return v.slice(0, 300);
+      }),
+    // Same: invalid coverage snapshots must not block save
+    coverageSnapshot: z
+      .unknown()
+      .optional()
+      .nullable()
+      .transform((val) => {
+        if (val == null) return null;
+        const r = coverageSnapshotSchema.safeParse(val);
+        return r.success ? r.data : null;
+      }),
     /** Local/intrastate: user-confirmed counties */
     selectedCounties: z.array(selectedCountySchema).optional().default([]),
     headquarters: z
