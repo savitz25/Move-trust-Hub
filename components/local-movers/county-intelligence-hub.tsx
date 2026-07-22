@@ -39,10 +39,13 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'antelope' && 'sm:col-span-2',
               z.id === 'north-county' && 'sm:col-span-2',
               z.id === 'irvine-planned' && 'sm:col-span-2',
+              z.id === 'coachella-valley' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
-                'border-violet-300/70 dark:border-violet-800/50'
+                'border-violet-300/70 dark:border-violet-800/50',
+              z.id === 'coachella-valley' &&
+                'border-orange-300/70 dark:border-orange-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>

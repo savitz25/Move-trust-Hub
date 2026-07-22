@@ -842,27 +842,27 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
   riverside: [
     {
       quote:
-        'California Premier Moving handled our Temecula suburban move professionally — efficient crew and great coordination despite I-15 traffic.',
+        'Temecula HOA needed COI and a weekday window — the crew cleared the gate list, finished before the afternoon I-15 backup, and treated our planned-community rules like routine Inland Empire work.',
       name: 'Rachel N.',
       location: 'Temecula, CA',
       rating: 5,
-      moveType: 'Suburban',
+      moveType: 'Planned community',
     },
     {
       quote:
-        'Piece of Cake Moving provided dependable Inland Empire service for our Moreno Valley relocation — careful handling and transparent pricing.',
+        'Corona to Moreno Valley on a weekday — they built SR-91 / I-15 warehouse traffic into the plan and were transparent about portal-to-portal hours. Felt like a real IE crew, not a coastal script.',
       name: 'Oscar V.',
-      location: 'Moreno Valley, CA',
+      location: 'Corona → Moreno Valley, CA',
       rating: 5,
-      moveType: 'Residential',
+      moveType: 'Western Riverside',
     },
     {
       quote:
-        'Booth Movers handled our Palm Springs desert home move with outstanding care — professional heat-season planning and excellent communication.',
+        'July move into Palm Desert: 6 a.m. start, heat protection for electronics, and honest drive time from western Riverside. Without that planning the afternoon heat would have wrecked the day.',
       name: 'Valerie S.',
-      location: 'Palm Springs, CA',
+      location: 'Palm Desert, CA',
       rating: 5,
-      moveType: 'Desert',
+      moveType: 'Desert / heat season',
     },
   ],
   sacramento: [

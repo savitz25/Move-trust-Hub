@@ -555,19 +555,19 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   riverside: {
     marketNotes:
-      'Riverside County is one of California\'s largest and fastest-growing counties with urban Riverside, desert communities, and Coachella Valley influence. Moves often involve residential, desert, and suburban properties.',
+      'Riverside County (~2.5M residents) is a major Inland Empire growth market: more affordable than coastal LA/OC, extreme summer heat (especially Coachella Valley), long inter-zone distances, warehouse freeway traffic on I-15/I-10/I-215/SR-60/SR-91, and a mix of western suburbs, Temecula Valley planned communities, and desert resort cities.',
     costs: {
-      studioRange: '$500–$1,000',
-      familyRange: '$1,900–$4,200',
-      avgHourly: '$110–$170/hr for a 2-person crew',
-      note: 'Riverside, Moreno Valley, and Temecula moves often reflect desert heat planning, Coachella Valley seasonal peaks, and I-10/I-15 freeway traffic.',
+      studioRange: '$550–$1,400+',
+      familyRange: '$2,400–$6,500+',
+      avgHourly: '$115–$185/hr for a 2-person crew',
+      note: 'Western core ↔ Coachella Valley distance, summer heat windows, HOAs in Temecula/Eastvale/desert communities, and IE logistics traffic push many jobs above base ranges.',
     },
     tips: [
-      'Desert areas (Palm Springs, Coachella) require heat and seasonal planning.',
-      'Verify coverage for Riverside, Moreno Valley, and Temecula.',
-      'Heavy traffic on I-10, I-15, and 91 Freeway.',
-      'Obtain multiple estimates.',
-      'Confirm insurance for high-value homes.',
+      'Schedule summer loads early morning — especially Palm Springs–area and eastern desert addresses.',
+      'Get city-to-city drive assumptions in writing for long IE pairs (e.g. Corona ↔ Indio).',
+      'Send HOA/gate rules for Temecula Valley, Eastvale, and Coachella Valley planned communities.',
+      'Budget portal-to-portal time around warehouse traffic on I-15, I-10, and I-215.',
+      'Protect electronics and finished goods from extreme heat in sealed trucks.',
     ],
   },
   sacramento: {
