@@ -354,11 +354,20 @@ export function normalizeCoverageFilter(
   }
 
   const c = (filters.coverage || 'Any').trim();
-  if (!c || c === 'Any') return { mode: 'any' };
-  if (c === 'National' || NATIONAL_COVERAGE_LABELS.has(c as never)) {
+  if (!c || c === 'Any' || c.toLowerCase() === 'any') return { mode: 'any' };
+  // Mode tokens used in URLs: coverage=state|national|regional
+  const lower = c.toLowerCase();
+  if (lower === 'state' || lower === 'county' || lower === 'state / county') {
+    return {
+      mode: 'state',
+      stateCode: stateCode && STATE_CODE_TO_NAME[stateCode] ? stateCode : null,
+      countySlugs,
+    };
+  }
+  if (lower === 'national' || lower === 'nationwide' || NATIONAL_COVERAGE_LABELS.has(c as never)) {
     return { mode: 'national' };
   }
-  if (c === 'Regional') {
+  if (lower === 'regional' || lower === 'region' || c === 'Regional') {
     return { mode: 'regional', region: 'South' };
   }
   if (REGIONAL_COVERAGE_OPTIONS.some((r) => r === c)) {

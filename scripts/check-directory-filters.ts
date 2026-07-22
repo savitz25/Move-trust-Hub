@@ -219,5 +219,15 @@ assert(
   'state + counties[] URL shorthand'
 );
 
+const fromCoverageState = normalizeCoverageFilter({
+  coverage: 'state',
+  state: 'AZ',
+  counties: ['maricopa'],
+});
+assert(
+  fromCoverageState.mode === 'state' && fromCoverageState.stateCode === 'AZ',
+  'coverage=state&state=AZ URL form'
+);
+
 if (process.exitCode) process.exit(1);
 console.log('\nDirectory filter checks passed.');

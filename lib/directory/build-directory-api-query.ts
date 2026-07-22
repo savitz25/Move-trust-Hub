@@ -49,6 +49,16 @@ export function parseCountiesParam(
   return [...new Set(out)];
 }
 
+function normalizeModeToken(raw: string | undefined): DirectoryCoverageFilter['mode'] | null {
+  if (!raw) return null;
+  const t = raw.trim().toLowerCase();
+  if (t === 'any') return 'any';
+  if (t === 'national' || t === 'nationwide') return 'national';
+  if (t === 'regional' || t === 'region') return 'regional';
+  if (t === 'state' || t === 'county' || t === 'state / county') return 'state';
+  return null;
+}
+
 function parseCoverageFilterFromParams(
   searchParams: Record<string, string | string[] | undefined>
 ): DirectoryCoverageFilter {
@@ -58,42 +68,32 @@ function parseCoverageFilterFromParams(
     firstParam(searchParams.coverageState) ||
     null;
 
-  const modeRaw = firstParam(searchParams.coverageMode);
+  // Accept coverage=state and coverageMode=state (user-facing direct links)
+  const modeFromCoverage = normalizeModeToken(firstParam(searchParams.coverage));
+  const modeFromMode = normalizeModeToken(firstParam(searchParams.coverageMode));
+  const modeRaw = modeFromMode || modeFromCoverage;
 
-  // Prefer explicit state= / counties for direct links
-  if (state || counties.length > 0) {
+  // Prefer explicit state= / counties / coverage=state for direct links
+  if (modeRaw === 'state' || state || counties.length > 0) {
     return normalizeCoverageFilter({
       state,
       counties,
-      coverageFilter:
-        modeRaw === 'regional' || modeRaw === 'national' || modeRaw === 'any'
-          ? {
-              mode: modeRaw,
-              region:
-                (firstParam(searchParams.coverageRegion) as DirectoryCoverageFilter['region']) ||
-                null,
-              stateCode: state,
-              countySlugs: counties,
-            }
-          : {
-              mode: 'state',
-              stateCode: state,
-              countySlugs: counties,
-            },
+      coverageFilter: {
+        mode: 'state',
+        stateCode: state,
+        countySlugs: counties,
+      },
     });
   }
 
-  if (
-    modeRaw === 'national' ||
-    modeRaw === 'regional' ||
-    modeRaw === 'state' ||
-    modeRaw === 'any'
-  ) {
+  if (modeRaw === 'national' || modeRaw === 'regional' || modeRaw === 'any') {
     return {
       mode: modeRaw,
-      region: (firstParam(searchParams.coverageRegion) as DirectoryCoverageFilter['region']) || null,
-      stateCode: firstParam(searchParams.coverageState) || null,
-      countySlugs: counties,
+      region:
+        (firstParam(searchParams.coverageRegion) as DirectoryCoverageFilter['region']) ||
+        null,
+      stateCode: null,
+      countySlugs: [],
     };
   }
 
@@ -158,22 +158,22 @@ function appendCoverageParams(
   const cf = normalizeCoverageFilter(filters);
   if (cf.mode === 'any') return;
 
+  // Canonical mode token: coverage=state|national|regional
+  params.set('coverage', cf.mode);
+  params.set('coverageMode', cf.mode);
+
   if (cf.mode === 'regional' && cf.region) {
-    params.set('coverageMode', 'regional');
     params.set('coverageRegion', cf.region);
-    params.set('coverage', cf.region);
     return;
   }
   if (cf.mode === 'national') {
-    params.set('coverageMode', 'national');
-    params.set('coverage', 'National');
     return;
   }
-  if (cf.mode === 'state' && cf.stateCode) {
-    // Canonical direct-link params
-    params.set('state', cf.stateCode.toUpperCase());
-    params.set('coverageMode', 'state');
-    params.set('coverageState', cf.stateCode.toUpperCase());
+  if (cf.mode === 'state') {
+    if (cf.stateCode) {
+      params.set('state', cf.stateCode.toUpperCase());
+      params.set('coverageState', cf.stateCode.toUpperCase());
+    }
     if (cf.countySlugs?.length) {
       params.set('counties', cf.countySlugs.join(','));
       params.set('coverageCounties', cf.countySlugs.join(','));

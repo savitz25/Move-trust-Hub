@@ -75,22 +75,67 @@ function parseCountiesFromSearchParams(searchParams: URLSearchParams): string[] 
   return [...new Set(out)];
 }
 
+/** Map URL coverage / coverageMode → structured mode. */
+function modeFromUrl(searchParams: URLSearchParams): DirectoryCoverageFilter['mode'] | null {
+  const coverage = (searchParams.get('coverage') || '').trim().toLowerCase();
+  const mode = (searchParams.get('coverageMode') || '').trim().toLowerCase();
+  const raw = mode || coverage;
+  if (raw === 'any') return 'any';
+  if (raw === 'national' || raw === 'nationwide') return 'national';
+  if (raw === 'regional' || raw === 'region') return 'regional';
+  if (raw === 'state' || raw === 'state / county' || raw === 'county') return 'state';
+  return null;
+}
+
 function coverageFilterFromUrl(searchParams: URLSearchParams): DirectoryCoverageFilter {
   const state =
     searchParams.get('state') || searchParams.get('coverageState') || null;
   const counties = parseCountiesFromSearchParams(searchParams);
+  const modeHint = modeFromUrl(searchParams);
+  const regionParam =
+    searchParams.get('coverageRegion') ||
+    (searchParams.get('coverage') &&
+    !['any', 'national', 'nationwide', 'regional', 'region', 'state', 'county'].includes(
+      (searchParams.get('coverage') || '').toLowerCase()
+    )
+      ? searchParams.get('coverage')
+      : null);
+
+  // Direct links: ?coverage=state&state=AZ&counties=maricopa
+  if (modeHint === 'state' || state || counties.length > 0) {
+    return normalizeCoverageFilter({
+      state,
+      counties,
+      coverageFilter: {
+        mode: 'state',
+        stateCode: state,
+        countySlugs: counties,
+      },
+    });
+  }
+
+  if (modeHint === 'national') {
+    return { mode: 'national' };
+  }
+
+  if (modeHint === 'regional') {
+    return {
+      mode: 'regional',
+      region: (regionParam as DirectoryCoverageFilter['region']) || 'South',
+    };
+  }
+
+  if (modeHint === 'any') {
+    return { mode: 'any' };
+  }
 
   return normalizeCoverageFilter({
     coverage: searchParams.get('coverage') || 'Any',
-    state,
-    counties,
     coverageFilter: {
-      mode:
-        (searchParams.get('coverageMode') as DirectoryCoverageFilter['mode']) ||
-        (state || counties.length ? 'state' : 'any'),
+      mode: 'any',
       region: (searchParams.get('coverageRegion') as DirectoryCoverageFilter['region']) || null,
-      stateCode: state,
-      countySlugs: counties,
+      stateCode: null,
+      countySlugs: [],
     },
   });
 }
@@ -271,14 +316,16 @@ export function DirectoryClient({
 
       const cf = normalizeCoverageFilter(filters);
       if (cf.mode !== 'any') {
+        // Canonical: ?coverage=state&state=AZ&counties=maricopa
+        params.set('coverage', cf.mode);
         params.set('coverageMode', cf.mode);
-        if (cf.mode === 'national') params.set('coverage', 'National');
+        if (cf.mode === 'national') {
+          // keep legacy synonym
+        }
         if (cf.mode === 'regional' && cf.region) {
           params.set('coverageRegion', cf.region);
-          params.set('coverage', cf.region);
         }
         if (cf.mode === 'state' && cf.stateCode) {
-          // Canonical direct-link params: /companies?state=AZ&counties=maricopa,pima
           params.set('state', cf.stateCode.toUpperCase());
           params.set('coverageState', cf.stateCode.toUpperCase());
           if (cf.countySlugs?.length) {
@@ -307,14 +354,13 @@ export function DirectoryClient({
     setFilters((prev) => ({
       ...prev,
       coverageFilter,
+      // Legacy region field; mode + state live on coverageFilter (and URL coverage=state)
       coverage:
-        coverageFilter.mode === 'any'
-          ? 'Any'
-          : coverageFilter.mode === 'national'
-            ? 'National'
-            : coverageFilter.mode === 'regional' && coverageFilter.region
-              ? coverageFilter.region
-              : 'Any',
+        coverageFilter.mode === 'national'
+          ? 'National'
+          : coverageFilter.mode === 'regional' && coverageFilter.region
+            ? coverageFilter.region
+            : 'Any',
     }));
   };
 
@@ -392,8 +438,15 @@ export function DirectoryClient({
               />
             ) : null}
           </div>
-          <Button variant="outline" size="sm" onClick={() => setShowFilters(!showFilters)} className="gap-1.5 shrink-0">
-            <Filter className="h-4 w-4" /> Filters{' '}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowFilters(!showFilters)}
+            className="gap-1.5 shrink-0"
+            aria-expanded={showFilters}
+          >
+            <Filter className="h-4 w-4" />
+            {showFilters ? 'Hide filters' : 'Filters'}
             {activeFilterCount > 0 ? (
               <Badge variant="secondary" className="ml-1 px-1.5">
                 {activeFilterCount}
@@ -442,122 +495,110 @@ export function DirectoryClient({
         </div>
       </div>
 
-      <div
-        className={`grid transition-[grid-template-rows,opacity,margin] duration-200 ease-out ${
-          showFilters
-            ? 'mb-6 grid-rows-[1fr] opacity-100'
-            : 'mb-0 grid-rows-[0fr] opacity-0 pointer-events-none'
-        }`}
-        aria-hidden={!showFilters}
-      >
-        {/* overflow-visible when open so State/County multi-select is not clipped */}
-        <div className={showFilters ? 'min-h-0 overflow-visible' : 'min-h-0 overflow-hidden'}>
-          <Card className="p-5">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-              <div>
-                <div className="text-xs font-medium mb-1.5 text-muted-foreground">MINIMUM RATING</div>
-                <div className="flex gap-2 items-center">
-                  {[3.5, 4, 4.5].map((r) => (
-                    <Button
-                      key={r}
-                      size="sm"
-                      variant={filters.minRating === r ? 'default' : 'outline'}
-                      onClick={() => updateFilter('minRating', filters.minRating === r ? 0 : r)}
-                    >
-                      {r}+
-                    </Button>
-                  ))}
-                </div>
-              </div>
+      {showFilters ? (
+        <Card className="mb-6 p-5 space-y-5" data-testid="directory-filters-panel">
+          {/* Coverage first — State / County must be obvious and fully expandable */}
+          <DirectoryCoverageFilterControl
+            value={coverageFilter}
+            onChange={setCoverageFilter}
+          />
 
-              <div className="min-w-0">
-                <div className="text-xs font-medium mb-1.5 text-muted-foreground">MAX AVG. PRICE</div>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="range"
-                    min={3000}
-                    max={12000}
-                    step={250}
-                    value={filters.maxPrice}
-                    onChange={(e) => updateFilter('maxPrice', Number(e.target.value))}
-                    className="flex-1 accent-primary min-w-0"
-                  />
-                  <div className="text-sm font-medium tabular-nums whitespace-nowrap w-16 text-right">
-                    ${(filters.maxPrice || 12000).toLocaleString()}
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div className="text-xs font-medium mb-1.5 text-muted-foreground">MIN BBB RATING</div>
-                <div className="flex flex-wrap gap-1.5">
-                  {BBB_OPTIONS.map((b) => (
-                    <button
-                      key={b}
-                      type="button"
-                      onClick={() => updateFilter('bbbMin', filters.bbbMin === b ? undefined : b)}
-                      className={`filter-chip text-xs ${filters.bbbMin === b ? 'filter-chip-active' : ''}`}
-                    >
-                      {b}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-2 pt-1">
-                <label className="flex items-center gap-2 text-sm cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={!!filters.onlyFullService}
-                    onChange={(e) => updateFilter('onlyFullService', e.target.checked)}
-                  />
-                  Full-Service movers only
-                </label>
-                <label className="flex items-center gap-2 text-sm cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={!!filters.onlyVerified}
-                    onChange={(e) => updateFilter('onlyVerified', e.target.checked)}
-                  />
-                  Show only verified listings
-                </label>
-              </div>
-            </div>
-
-            {/* Full-width coverage row so State + county multi-select is always visible */}
-            <div className="mt-5 pt-4 border-t border-border/60">
-              <DirectoryCoverageFilterControl
-                value={coverageFilter}
-                onChange={setCoverageFilter}
-              />
-            </div>
-
-            <div className="mt-5">
-              <div className="text-xs font-medium mb-2 text-muted-foreground">SERVICES OFFERED</div>
-              <div className="flex flex-wrap gap-2">
-                {SERVICE_OPTIONS.map((svc) => (
-                  <button
-                    key={svc}
-                    type="button"
-                    onClick={() => toggleService(svc)}
-                    className={`filter-chip ${selectedServices.includes(svc) ? 'filter-chip-active' : ''}`}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 pt-1 border-t border-border/60">
+            <div>
+              <div className="text-xs font-medium mb-1.5 text-muted-foreground">MINIMUM RATING</div>
+              <div className="flex gap-2 items-center">
+                {[3.5, 4, 4.5].map((r) => (
+                  <Button
+                    key={r}
+                    size="sm"
+                    variant={filters.minRating === r ? 'default' : 'outline'}
+                    onClick={() => updateFilter('minRating', filters.minRating === r ? 0 : r)}
                   >
-                    {serviceFilterLabel(svc)}
+                    {r}+
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div className="min-w-0">
+              <div className="text-xs font-medium mb-1.5 text-muted-foreground">MAX AVG. PRICE</div>
+              <div className="flex items-center gap-2">
+                <input
+                  type="range"
+                  min={3000}
+                  max={12000}
+                  step={250}
+                  value={filters.maxPrice}
+                  onChange={(e) => updateFilter('maxPrice', Number(e.target.value))}
+                  className="flex-1 accent-primary min-w-0"
+                />
+                <div className="text-sm font-medium tabular-nums whitespace-nowrap w-16 text-right">
+                  ${(filters.maxPrice || 12000).toLocaleString()}
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="text-xs font-medium mb-1.5 text-muted-foreground">MIN BBB RATING</div>
+              <div className="flex flex-wrap gap-1.5">
+                {BBB_OPTIONS.map((b) => (
+                  <button
+                    key={b}
+                    type="button"
+                    onClick={() => updateFilter('bbbMin', filters.bbbMin === b ? undefined : b)}
+                    className={`filter-chip text-xs ${filters.bbbMin === b ? 'filter-chip-active' : ''}`}
+                  >
+                    {b}
                   </button>
                 ))}
               </div>
             </div>
 
-            {activeFilterCount > 0 ? (
-              <div className="mt-4 text-right">
-                <Button variant="ghost" size="sm" onClick={clearAllFilters} className="gap-1 text-xs">
-                  <X className="h-3.5 w-3.5" /> Clear all filters
-                </Button>
-              </div>
-            ) : null}
-          </Card>
-        </div>
-      </div>
+            <div className="space-y-2 pt-1">
+              <label className="flex items-center gap-2 text-sm cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={!!filters.onlyFullService}
+                  onChange={(e) => updateFilter('onlyFullService', e.target.checked)}
+                />
+                Full-Service movers only
+              </label>
+              <label className="flex items-center gap-2 text-sm cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={!!filters.onlyVerified}
+                  onChange={(e) => updateFilter('onlyVerified', e.target.checked)}
+                />
+                Show only verified listings
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div className="text-xs font-medium mb-2 text-muted-foreground">SERVICES OFFERED</div>
+            <div className="flex flex-wrap gap-2">
+              {SERVICE_OPTIONS.map((svc) => (
+                <button
+                  key={svc}
+                  type="button"
+                  onClick={() => toggleService(svc)}
+                  className={`filter-chip ${selectedServices.includes(svc) ? 'filter-chip-active' : ''}`}
+                >
+                  {serviceFilterLabel(svc)}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {activeFilterCount > 0 ? (
+            <div className="text-right">
+              <Button variant="ghost" size="sm" onClick={clearAllFilters} className="gap-1 text-xs">
+                <X className="h-3.5 w-3.5" /> Clear all filters
+              </Button>
+            </div>
+          ) : null}
+        </Card>
+      ) : null}
 
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 mb-3 text-sm min-h-[1.25rem]">
         <div aria-live="polite" aria-atomic="true" className="text-muted-foreground">
