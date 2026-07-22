@@ -10,6 +10,8 @@ type Props = {
   insights: CountyMarketInsights;
   outboundRoutes?: StateRouteLink[];
   inboundRoutes?: StateRouteLink[];
+  /** When true, drop outer card chrome (used inside county guide accordion). */
+  embedded?: boolean;
 };
 
 export function CountyMarketInsightsPanel({
@@ -19,21 +21,21 @@ export function CountyMarketInsightsPanel({
   insights,
   outboundRoutes = [],
   inboundRoutes = [],
+  embedded = false,
 }: Props) {
   if (insights.moverCount === 0) return null;
 
-  return (
-    <section
-      className="mb-10 rounded-2xl border bg-gradient-to-br from-primary/5 to-background p-6"
-      aria-labelledby="county-insights-heading"
-    >
-      <h2
-        id="county-insights-heading"
-        className="text-xl font-semibold tracking-tight mb-4 flex items-center gap-2"
-      >
-        <TrendingUp className="h-5 w-5 text-primary" aria-hidden="true" />
-        {countyLabel} moving market snapshot
-      </h2>
+  const body = (
+    <>
+      {!embedded ? (
+        <h2
+          id="county-insights-heading"
+          className="text-xl font-semibold tracking-tight mb-4 flex items-center gap-2"
+        >
+          <TrendingUp className="h-5 w-5 text-primary" aria-hidden="true" />
+          {countyLabel} moving market snapshot
+        </h2>
+      ) : null}
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
         <div className="rounded-xl border bg-card p-4">
@@ -211,6 +213,17 @@ export function CountyMarketInsightsPanel({
           </Link>
         </div>
       )}
+    </>
+  );
+
+  if (embedded) return <div>{body}</div>;
+
+  return (
+    <section
+      className="mb-10 rounded-2xl border bg-gradient-to-br from-primary/5 to-background p-6"
+      aria-labelledby="county-insights-heading"
+    >
+      {body}
     </section>
   );
 }

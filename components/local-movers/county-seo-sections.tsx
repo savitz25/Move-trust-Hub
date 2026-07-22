@@ -6,17 +6,22 @@ export function CountyCostSection({
   countyLabel,
   stateName,
   costs,
+  embedded = false,
 }: {
   countyLabel: string;
   stateName: string;
   costs: CountyCostGuide;
+  /** When true, drop outer card chrome (used inside county guide accordion). */
+  embedded?: boolean;
 }) {
-  return (
-    <section className="mb-10 rounded-2xl border bg-card p-6">
-      <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-2">
-        <DollarSign className="h-5 w-5 text-primary" aria-hidden="true" />
-        Average local moving costs in {countyLabel}
-      </h2>
+  const body = (
+    <>
+      {!embedded ? (
+        <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-2">
+          <DollarSign className="h-5 w-5 text-primary" aria-hidden="true" />
+          Average local moving costs in {countyLabel}
+        </h2>
+      ) : null}
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">
         Pricing varies by home size, distance within {stateName}, stairs, and packing needs.
         These ranges reflect typical local move costs in {countyLabel} for {new Date().getFullYear()}:
@@ -50,23 +55,31 @@ export function CountyCostSection({
         </Link>
         .
       </p>
-    </section>
+    </>
   );
+
+  if (embedded) return <div>{body}</div>;
+
+  return <section className="mb-10 rounded-2xl border bg-card p-6">{body}</section>;
 }
 
 export function CountyTipsSection({
   countyLabel,
   tips,
+  embedded = false,
 }: {
   countyLabel: string;
   tips: string[];
+  embedded?: boolean;
 }) {
-  return (
-    <section className="mb-10 rounded-2xl border bg-muted/20 p-6">
-      <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-2">
-        <Lightbulb className="h-5 w-5 text-primary" aria-hidden="true" />
-        Tips for moving in {countyLabel}
-      </h2>
+  const body = (
+    <>
+      {!embedded ? (
+        <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-2">
+          <Lightbulb className="h-5 w-5 text-primary" aria-hidden="true" />
+          Tips for moving in {countyLabel}
+        </h2>
+      ) : null}
       <ul className="space-y-2.5 text-sm text-muted-foreground">
         {tips.map((tip) => (
           <li key={tip} className="flex items-start gap-2 leading-relaxed">
@@ -86,31 +99,36 @@ export function CountyTipsSection({
         </Link>
         .
       </p>
-    </section>
+    </>
   );
+
+  if (embedded) return <div>{body}</div>;
+
+  return <section className="mb-10 rounded-2xl border bg-muted/20 p-6">{body}</section>;
 }
 
 export function CountyTestimonialSection({
   testimonials,
   countyLabel,
+  embedded = false,
 }: {
   testimonials: CountyTestimonial[];
   countyLabel: string;
+  embedded?: boolean;
 }) {
   if (!testimonials.length) return null;
 
-  return (
-    <section
-      className="mb-10 rounded-2xl border border-primary/15 bg-primary/5 p-6"
-      aria-labelledby="county-attributed-reviews-heading"
-    >
-      <h2
-        id="county-attributed-reviews-heading"
-        className="text-lg font-semibold tracking-tight mb-2 flex items-center gap-2"
-      >
-        <MessageSquareQuote className="h-5 w-5 text-primary" aria-hidden="true" />
-        Attributed reviews for movers serving {countyLabel}
-      </h2>
+  const body = (
+    <>
+      {!embedded ? (
+        <h2
+          id="county-attributed-reviews-heading"
+          className="text-lg font-semibold tracking-tight mb-2 flex items-center gap-2"
+        >
+          <MessageSquareQuote className="h-5 w-5 text-primary" aria-hidden="true" />
+          Attributed reviews for movers serving {countyLabel}
+        </h2>
+      ) : null}
       <p className="text-xs text-muted-foreground mb-4">
         Named Google reviews from our interstate directory listings. We do not display
         representative or county-specific fabricated quotes. Verify current reviews,
@@ -162,6 +180,17 @@ export function CountyTestimonialSection({
           </figure>
         ))}
       </div>
+    </>
+  );
+
+  if (embedded) return <div>{body}</div>;
+
+  return (
+    <section
+      className="mb-10 rounded-2xl border border-primary/15 bg-primary/5 p-6"
+      aria-labelledby="county-attributed-reviews-heading"
+    >
+      {body}
     </section>
   );
 }
@@ -169,16 +198,20 @@ export function CountyTestimonialSection({
 export function CountyFaqSection({
   countyLabel,
   faqItems,
+  embedded = false,
 }: {
   countyLabel: string;
   faqItems: CountyFaqItem[];
+  embedded?: boolean;
 }) {
-  return (
-    <section className="mb-10 rounded-2xl border bg-card p-6">
-      <h2 className="text-xl font-semibold tracking-tight mb-4 flex items-center gap-2">
-        <HelpCircle className="h-5 w-5 text-primary" aria-hidden="true" />
-        FAQ: Local movers in {countyLabel}
-      </h2>
+  const body = (
+    <>
+      {!embedded ? (
+        <h2 className="text-xl font-semibold tracking-tight mb-4 flex items-center gap-2">
+          <HelpCircle className="h-5 w-5 text-primary" aria-hidden="true" />
+          FAQ: Local movers in {countyLabel}
+        </h2>
+      ) : null}
       <div className="space-y-5">
         {faqItems.map((item) => (
           <div key={item.question}>
@@ -187,6 +220,10 @@ export function CountyFaqSection({
           </div>
         ))}
       </div>
-    </section>
+    </>
   );
+
+  if (embedded) return <div>{body}</div>;
+
+  return <section className="mb-10 rounded-2xl border bg-card p-6">{body}</section>;
 }

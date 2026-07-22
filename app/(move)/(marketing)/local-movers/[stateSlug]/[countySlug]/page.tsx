@@ -160,6 +160,9 @@ import {
   CountyTipsSection,
 } from '@/components/local-movers/county-seo-sections';
 import { CountyMarketInsightsPanel } from '@/components/local-movers/county-market-insights';
+import { CountyCompactStats } from '@/components/local-movers/county-compact-stats';
+import { CountyJumpToMovers } from '@/components/local-movers/county-jump-to-movers';
+import { CountyGuideAccordion } from '@/components/local-movers/county-guide-accordion';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { EditorialTeamPanel } from '@/components/trust/editorial-team-panel';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
@@ -175,6 +178,13 @@ import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { CountyPageHeroCta } from '@/components/local-movers/county-page-hero-cta';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
+import {
+  DollarSign,
+  HelpCircle,
+  Lightbulb,
+  MessageSquareQuote,
+  TrendingUp,
+} from 'lucide-react';
 
 import { shouldUseCuratedTestimonials } from '@/lib/local-movers/county-indexability';
 import { resolveCountyPageSeo } from '@/lib/local-movers/county-page-seo';
@@ -416,7 +426,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         testimonials={visibleTestimonials}
       />
 
-      <main className="container mx-auto px-4 py-10 max-w-3xl">
+      <main className="container mx-auto px-4 py-10 max-w-3xl pb-24 sm:pb-10">
         <LocalMoversBreadcrumbs
           crumbs={[
             { label: 'Home', href: '/' },
@@ -495,57 +505,34 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               .
             </p>
           )}
-          <div className="mt-6">
-            <CountyPageHeroCta
+          {indexDecision.tier === 'index' && movers.length > 0 ? (
+            <CountyCompactStats
               countyLabel={countyLabel}
-              stateName={state.name}
-              stateSlug={state.slug}
+              insights={marketInsights}
+              className="mt-5"
+            />
+          ) : null}
+
+          {/* Primary intent: jump to listings (sticky until #movers is reached) */}
+          <div className="mt-6">
+            <CountyJumpToMovers
+              countyLabel={countyLabel}
+              moverCount={movers.length}
+              targetId="movers"
             />
           </div>
-          <TrustToolsBar className="mt-4" />
         </header>
 
-        {/* Hyper-local intelligence (LA first; other counties register packs over time) */}
-        {intelligence ? <CountyIntelligenceHub pack={intelligence} /> : null}
-
-        {indexDecision.tier === 'index' && movers.length > 0 && !intelligence ? (
-          <CountyMarketInsightsPanel
-            countyLabel={countyLabel}
-            stateName={state.name}
-            stateCode={county.stateCode}
-            insights={marketInsights}
-            outboundRoutes={outboundRoutes}
-            inboundRoutes={inboundRoutes}
-          />
-        ) : null}
-
-        {/* Compact insights still useful under full intelligence packs */}
-        {intelligence && indexDecision.tier === 'index' && movers.length > 0 ? (
-          <CountyMarketInsightsPanel
-            countyLabel={countyLabel}
-            stateName={state.name}
-            stateCode={county.stateCode}
-            insights={marketInsights}
-            outboundRoutes={outboundRoutes}
-            inboundRoutes={inboundRoutes}
-          />
-        ) : null}
-
-        <div className="mb-10">
-          <DirectorySearchEmbed
-            sourcePage={path}
-            scope={{
-              stateCode: county.stateCode,
-              stateName: state.name,
-              countyLabel,
-              preferredMoverIds: movers.map((m) => m.id),
-            }}
-            heading="Search the full mover directory"
-            description={`Find any licensed mover nationwide — same search as /companies. Prefer listings serving ${countyLabel}.`}
-          />
-        </div>
-
-        <section className="mb-10" id="movers" aria-labelledby="movers-heading">
+        {/*
+          Mover list is the first major content block after the hero + jump CTA.
+          Hyper-local intelligence packs (e.g. LA) and generic educational sections
+          live below in collapsible county guide panels — content preserved, not deleted.
+        */}
+        <section
+          className="mb-10 scroll-mt-28"
+          id="movers"
+          aria-labelledby="movers-heading"
+        >
           <h2 id="movers-heading" className="text-2xl font-semibold tracking-tight mb-4">
             {buildMoversSectionHeading(countyLabel, movers.length)}
           </h2>
@@ -589,22 +576,126 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           )}
         </section>
 
-        {/* Generic cost/tips still show when no intelligence pack; packs include richer cost/seasonal sections */}
-        {!intelligence ? (
-          <>
-            <CountyCostSection countyLabel={countyLabel} stateName={state.name} costs={costs} />
-            <CountyTipsSection countyLabel={countyLabel} tips={tips} />
-          </>
-        ) : null}
-
-        {visibleTestimonials.length > 0 ? (
-          <CountyTestimonialSection
-            testimonials={visibleTestimonials}
+        <div className="mb-8">
+          <CountyPageHeroCta
             countyLabel={countyLabel}
+            stateName={state.name}
+            stateSlug={state.slug}
           />
-        ) : null}
+          <TrustToolsBar className="mt-4" />
+        </div>
 
-        <CountyFaqSection countyLabel={countyLabel} faqItems={faqItems} />
+        <div className="mb-10">
+          <DirectorySearchEmbed
+            sourcePage={path}
+            scope={{
+              stateCode: county.stateCode,
+              stateName: state.name,
+              countyLabel,
+              preferredMoverIds: movers.map((m) => m.id),
+            }}
+            heading="Search the full mover directory"
+            description={`Find any licensed mover nationwide — same search as /companies. Prefer listings serving ${countyLabel}.`}
+          />
+        </div>
+
+        <CountyGuideAccordion
+          countyLabel={countyLabel}
+          sections={[
+            ...(intelligence
+              ? [
+                  {
+                    id: 'county-intelligence',
+                    title: `${countyLabel} local moving intelligence`,
+                    summary:
+                      'Zones, parking/HOA rules, seasonal notes, costs, and hyper-local guidance for this market.',
+                    icon: <TrendingUp className="h-4 w-4" aria-hidden="true" />,
+                    children: <CountyIntelligenceHub pack={intelligence} />,
+                  },
+                ]
+              : []),
+            ...(indexDecision.tier === 'index' && movers.length > 0
+              ? [
+                  {
+                    id: 'market-insights',
+                    title: `${countyLabel} market insights & local rules`,
+                    summary:
+                      'Service mix, cost snapshot, migration trends, parking notes, and popular routes.',
+                    icon: <TrendingUp className="h-4 w-4" aria-hidden="true" />,
+                    children: (
+                      <CountyMarketInsightsPanel
+                        countyLabel={countyLabel}
+                        stateName={state.name}
+                        stateCode={county.stateCode}
+                        insights={marketInsights}
+                        outboundRoutes={outboundRoutes}
+                        inboundRoutes={inboundRoutes}
+                        embedded
+                      />
+                    ),
+                  },
+                ]
+              : []),
+            // Generic cost/tips when no intelligence pack (packs include richer cost/seasonal sections)
+            ...(!intelligence
+              ? [
+                  {
+                    id: 'costs',
+                    title: `Average local moving costs in ${countyLabel}`,
+                    summary: `${costs.studioRange} studio · ${costs.familyRange} family home · ${costs.avgHourly}`,
+                    icon: <DollarSign className="h-4 w-4" aria-hidden="true" />,
+                    children: (
+                      <CountyCostSection
+                        countyLabel={countyLabel}
+                        stateName={state.name}
+                        costs={costs}
+                        embedded
+                      />
+                    ),
+                  },
+                  {
+                    id: 'tips',
+                    title: `Tips for moving in ${countyLabel}`,
+                    summary: `${tips.length} practical local tips for a smoother move day.`,
+                    icon: <Lightbulb className="h-4 w-4" aria-hidden="true" />,
+                    children: (
+                      <CountyTipsSection countyLabel={countyLabel} tips={tips} embedded />
+                    ),
+                  },
+                ]
+              : []),
+            ...(visibleTestimonials.length > 0
+              ? [
+                  {
+                    id: 'reviews',
+                    title: `Attributed reviews for movers serving ${countyLabel}`,
+                    summary: `${visibleTestimonials.length} named Google reviews from verified directory listings.`,
+                    icon: <MessageSquareQuote className="h-4 w-4" aria-hidden="true" />,
+                    children: (
+                      <CountyTestimonialSection
+                        testimonials={visibleTestimonials}
+                        countyLabel={countyLabel}
+                        embedded
+                      />
+                    ),
+                  },
+                ]
+              : []),
+            {
+              id: 'faq',
+              title: `FAQ: Local movers in ${countyLabel}`,
+              summary: `${faqItems.length} answers about costs, licensing, and hiring locally.`,
+              icon: <HelpCircle className="h-4 w-4" aria-hidden="true" />,
+              children: (
+                <CountyFaqSection
+                  countyLabel={countyLabel}
+                  faqItems={faqItems}
+                  embedded
+                />
+              ),
+            },
+          ]}
+        />
 
         <HowWeScorePanel className="mb-10" compact={indexDecision.tier === 'noindex'} />
 
