@@ -147,7 +147,11 @@ export function buildLocalMovingServiceId(pageUrl: string): string {
   return `${pageUrl}${LOCAL_MOVING_SERVICE_FRAGMENT}`;
 }
 
-/** Display name for the county-level LocalBusiness that Reviews reference. */
+/**
+ * @deprecated County-level pseudo LocalBusiness is NOT a valid Review.itemReviewed target.
+ * Reviews must reference a real MovingCompany / LocalBusiness (the mover being reviewed).
+ * Kept only for any residual callers; prefer buildMoverItemReviewed.
+ */
 export function buildLocalMovingServiceName(
   county: LocalCounty | undefined,
   stateName: string | undefined
@@ -158,6 +162,7 @@ export function buildLocalMovingServiceName(
   return 'Local Moving Services';
 }
 
+/** @deprecated Do not use as Review.itemReviewed — Google rejects place-like stand-ins. */
 export function buildLocalMovingServiceSchemaNode(
   county: LocalCounty | undefined,
   stateName: string | undefined,
@@ -190,6 +195,79 @@ export function buildLocalMovingServiceSchemaNode(
   };
 }
 
+export function buildMoverSchemaId(pageUrl: string, moverId: string): string {
+  return `${pageUrl}#mover-${moverId}`;
+}
+
+/** Resolve the mover a county testimonial is about (companySlug / companyName / profile). */
+export function resolveReviewedMover(
+  testimonial: CountyTestimonial,
+  movers: LocalMover[] = []
+): LocalMover | undefined {
+  const slug = testimonial.companySlug?.trim().toLowerCase();
+  if (slug) {
+    const bySlug = movers.find(
+      (m) =>
+        m.profileSlug?.toLowerCase() === slug ||
+        m.id.toLowerCase() === slug ||
+        m.id.toLowerCase() === `directory-${slug}`
+    );
+    if (bySlug) return bySlug;
+  }
+
+  const companyName = testimonial.companyName?.trim().toLowerCase();
+  if (companyName) {
+    const byName = movers.find((m) => m.name.trim().toLowerCase() === companyName);
+    if (byName) return byName;
+  }
+
+  return undefined;
+}
+
+/**
+ * Valid Review.itemReviewed for Google rich results: MovingCompany + LocalBusiness
+ * for the specific mover being reviewed — never AdministrativeArea / county place.
+ */
+export function buildMoverItemReviewed(
+  mover: LocalMover,
+  pageUrl: string,
+  county: LocalCounty | undefined,
+  stateName: string | undefined,
+  placeId: string | undefined,
+  buildMoverUrl: (mover: LocalMover, pageUrl: string) => string
+): Record<string, unknown> {
+  const name = mover.name.trim();
+  const item: Record<string, unknown> = {
+    '@type': ['MovingCompany', 'LocalBusiness'],
+    '@id': buildMoverSchemaId(pageUrl, mover.id),
+    name,
+    url: buildMoverUrl(mover, pageUrl),
+  };
+
+  const locality = mover.city?.trim();
+  if (locality || county?.stateCode) {
+    item.address = {
+      '@type': 'PostalAddress',
+      ...(locality ? { addressLocality: locality } : {}),
+      ...(county?.stateCode ? { addressRegion: county.stateCode } : {}),
+      addressCountry: 'US',
+    };
+  }
+
+  if (county && stateName && placeId) {
+    item.areaServed = {
+      '@type': 'AdministrativeArea',
+      '@id': placeId,
+      name: buildCountyPlaceName(county, stateName),
+    };
+  }
+
+  return item;
+}
+
+/**
+ * @deprecated Prefer buildMoverItemReviewed — county pseudo-business is invalid for Review snippets.
+ */
 export function buildSchemaItemReviewed(
   county: LocalCounty | undefined,
   stateName: string | undefined,
@@ -301,7 +379,7 @@ export function buildMoverSchemaNode(
 
   const node: Record<string, unknown> = {
     '@type': ['MovingCompany', 'LocalBusiness'],
-    '@id': `${pageUrl}#mover-${mover.id}`,
+    '@id': buildMoverSchemaId(pageUrl, mover.id),
     name,
     url: buildMoverUrl(mover, pageUrl),
   };
@@ -384,15 +462,29 @@ export function buildReviewSchemaNode(
   county: LocalCounty | undefined,
   stateName: string | undefined,
   placeId: string,
-  datePublished?: string
+  datePublished?: string,
+  movers: LocalMover[] = [],
+  buildMoverUrl: (mover: LocalMover, pageUrl: string) => string = defaultBuildMoverUrl
 ): Record<string, unknown> | null {
   const authorName = testimonial.name?.trim();
   const reviewBody = testimonial.quote?.trim();
   if (!authorName || !reviewBody) return null;
 
-  const itemReviewed = buildSchemaItemReviewed(county, stateName, placeId, pageUrl);
+  // Google Review rich results require itemReviewed to be a real business (or product/service),
+  // never AdministrativeArea / Place. Only emit reviews we can attribute to a listed mover.
+  const mover = resolveReviewedMover(testimonial, movers);
+  if (!mover?.name?.trim()) return null;
 
-  return {
+  const itemReviewed = buildMoverItemReviewed(
+    mover,
+    pageUrl,
+    county,
+    stateName,
+    placeId,
+    buildMoverUrl
+  );
+
+  const node: Record<string, unknown> = {
     '@type': 'Review',
     '@id': `${pageUrl}#review-${index + 1}`,
     name: buildReviewSchemaName(testimonial),
@@ -410,6 +502,22 @@ export function buildReviewSchemaNode(
     },
     itemReviewed,
   };
+
+  if (testimonial.source) {
+    node.publisher = {
+      '@type': 'Organization',
+      name: testimonial.source,
+    };
+  }
+
+  return node;
+}
+
+function defaultBuildMoverUrl(mover: LocalMover, pageUrl: string): string {
+  if (mover.profileSlug) {
+    return `https://www.movetrusthub.com/companies/${mover.profileSlug}`;
+  }
+  return `${pageUrl}#mover-${mover.id}`;
 }
 
 /** Recursively remove undefined/null entries so JSON-LD stays valid. */
@@ -477,45 +585,38 @@ export function validateCountySchemaGraph(
   const issues: SchemaValidationIssue[] = [];
   const base = { stateSlug: county.stateSlug, countySlug: county.slug };
   const pageUrl = findGraphPageUrl(graph);
-  const expectedServiceId = pageUrl ? buildLocalMovingServiceId(pageUrl) : undefined;
-  const expectedServiceName = buildLocalMovingServiceName(county, stateName);
+
+  const moverIds = new Set<string>();
+  const moverNames = new Set<string>();
+  for (const node of graph) {
+    const types = nodeTypes(node);
+    const nodeId = String(node['@id'] ?? '');
+    if (
+      (types.includes('MovingCompany') || types.includes('LocalBusiness')) &&
+      nodeId.includes('#mover-')
+    ) {
+      moverIds.add(nodeId);
+      if (node.name) moverNames.add(String(node.name));
+    }
+  }
 
   let reviewCount = 0;
-  let hasLocalMovingServiceNode = false;
 
   for (const node of graph) {
     const types = nodeTypes(node);
     const nodeId = String(node['@id'] ?? 'no @id');
 
+    // Pseudo county LocalBusiness must never appear as Review.itemReviewed
     if (nodeId.endsWith(LOCAL_MOVING_SERVICE_FRAGMENT)) {
-      hasLocalMovingServiceNode = true;
-      if (!types.includes('LocalBusiness')) {
-        issues.push({
-          ...base,
-          issue: `local-moving-service node must have @type LocalBusiness (${nodeId})`,
-        });
-      }
-      if (expectedServiceId && nodeId !== expectedServiceId) {
-        issues.push({
-          ...base,
-          issue: `local-moving-service @id must be "${expectedServiceId}", got "${nodeId}"`,
-        });
-      }
-      if (!node.name) {
-        issues.push({
-          ...base,
-          issue: `local-moving-service node missing name (${nodeId})`,
-        });
-      } else if (node.name !== expectedServiceName) {
-        issues.push({
-          ...base,
-          issue: `local-moving-service name must be "${expectedServiceName}", got "${String(node.name)}"`,
-        });
-      }
+      issues.push({
+        ...base,
+        issue: `Deprecated local-moving-service node present (${nodeId}); Reviews must target real movers`,
+      });
     }
 
     for (const type of types) {
-      if (SCHEMA_REQUIRED_TYPES.has(type) && !node.name) {
+      // Reviews use a human title; AdministrativeArea/WebPage already checked elsewhere
+      if (SCHEMA_REQUIRED_TYPES.has(type) && type !== 'Review' && !node.name) {
         issues.push({
           ...base,
           issue: `${type} node missing required "name" (${nodeId})`,
@@ -539,11 +640,6 @@ export function validateCountySchemaGraph(
             ...base,
             issue: `Review missing itemReviewed.name (${reviewId})`,
           });
-        } else if (itemReviewed.name !== expectedServiceName) {
-          issues.push({
-            ...base,
-            issue: `Review itemReviewed.name must be "${expectedServiceName}", got "${String(itemReviewed.name)}" (${reviewId})`,
-          });
         }
 
         const reviewedType = itemReviewed['@type'];
@@ -553,10 +649,28 @@ export function validateCountySchemaGraph(
             ? [String(reviewedType)]
             : [];
 
-        if (!reviewedTypes.includes('LocalBusiness')) {
+        // Explicit ban — root GSC error
+        if (
+          reviewedTypes.includes('AdministrativeArea') ||
+          reviewedTypes.includes('Place') ||
+          reviewedTypes.includes('City') ||
+          reviewedTypes.includes('State') ||
+          reviewedTypes.includes('Country')
+        ) {
           issues.push({
             ...base,
-            issue: `Review itemReviewed must have @type LocalBusiness, got "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
+            issue: `Review itemReviewed must not be a place type (got "${reviewedTypes.join(', ')}") (${reviewId})`,
+          });
+        }
+
+        const hasBusinessType =
+          reviewedTypes.includes('LocalBusiness') ||
+          reviewedTypes.includes('MovingCompany') ||
+          reviewedTypes.includes('Organization');
+        if (!hasBusinessType) {
+          issues.push({
+            ...base,
+            issue: `Review itemReviewed must have @type LocalBusiness or MovingCompany, got "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
           });
         }
 
@@ -566,10 +680,32 @@ export function validateCountySchemaGraph(
             ...base,
             issue: `Review itemReviewed missing @id (${reviewId})`,
           });
-        } else if (expectedServiceId && reviewedId !== expectedServiceId) {
+        } else if (reviewedId.endsWith(LOCAL_MOVING_SERVICE_FRAGMENT)) {
           issues.push({
             ...base,
-            issue: `Review itemReviewed @id must be "${expectedServiceId}", got "${reviewedId}" (${reviewId})`,
+            issue: `Review itemReviewed must reference a mover, not #local-moving-service (${reviewId})`,
+          });
+        } else if (pageUrl && !reviewedId.includes('#mover-') && moverIds.size > 0) {
+          issues.push({
+            ...base,
+            issue: `Review itemReviewed @id should be a #mover-* node, got "${reviewedId}" (${reviewId})`,
+          });
+        } else if (moverIds.size > 0 && !moverIds.has(reviewedId)) {
+          issues.push({
+            ...base,
+            issue: `Review itemReviewed @id "${reviewedId}" has no matching MovingCompany node (${reviewId})`,
+          });
+        }
+
+        if (
+          itemReviewed.name &&
+          moverNames.size > 0 &&
+          !moverNames.has(String(itemReviewed.name))
+        ) {
+          // Soft signal — name should match a listed mover
+          issues.push({
+            ...base,
+            issue: `Review itemReviewed.name "${String(itemReviewed.name)}" does not match a listed mover (${reviewId})`,
           });
         }
       }
@@ -626,10 +762,11 @@ export function validateCountySchemaGraph(
     }
   }
 
-  if (reviewCount > 0 && !hasLocalMovingServiceNode) {
+  // Ensure every Review is backed by at least one real mover business node
+  if (reviewCount > 0 && moverIds.size === 0) {
     issues.push({
       ...base,
-      issue: `Graph has ${reviewCount} Review node(s) but no local-moving-service LocalBusiness node`,
+      issue: `Graph has ${reviewCount} Review node(s) but no MovingCompany/LocalBusiness mover nodes`,
     });
   }
 

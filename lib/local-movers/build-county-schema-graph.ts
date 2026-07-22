@@ -103,7 +103,6 @@ import {
   buildCountyLabel,
   buildCountyPlaceSchema,
   buildFaqSchema,
-  buildLocalMovingServiceSchemaNode,
   buildMoverSchemaNode,
   buildMoversItemListName,
   buildReviewSchemaNode,
@@ -520,22 +519,42 @@ export function buildCountySchemaGraph({
   }
 
   if (testimonials?.length) {
-    graph.push(buildLocalMovingServiceSchemaNode(county, stateName, placeId, url));
-    graph.push(
-      ...testimonials
-        .map((testimonial, index) =>
-          buildReviewSchemaNode(
-            testimonial,
-            index,
-            url,
-            county,
-            stateName,
-            placeId,
-            contentModified
-          )
+    // Reviews reference the actual MovingCompany being reviewed (never AdministrativeArea
+    // or a county-level pseudo LocalBusiness). GSC "Invalid object type for field itemReviewed".
+    const reviewNodes = testimonials
+      .map((testimonial, index) =>
+        buildReviewSchemaNode(
+          testimonial,
+          index,
+          url,
+          county,
+          stateName,
+          placeId,
+          contentModified,
+          movers ?? [],
+          buildMoverUrl
         )
-        .filter((node): node is Record<string, unknown> => node !== null)
-    );
+      )
+      .filter((node): node is Record<string, unknown> => node !== null);
+
+    // Attach each review onto its company node for stronger association + rich results.
+    for (const review of reviewNodes) {
+      const itemReviewed = review.itemReviewed as Record<string, unknown> | undefined;
+      const reviewedId = String(itemReviewed?.['@id'] ?? '');
+      if (!reviewedId) continue;
+      const company = graph.find((node) => String(node['@id'] ?? '') === reviewedId);
+      if (!company) continue;
+      const existing = company.review;
+      if (Array.isArray(existing)) {
+        existing.push({ '@id': review['@id'] });
+      } else if (existing) {
+        company.review = [existing, { '@id': review['@id'] }];
+      } else {
+        company.review = [{ '@id': review['@id'] }];
+      }
+    }
+
+    graph.push(...reviewNodes);
   }
 
   return graph;

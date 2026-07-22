@@ -3,9 +3,10 @@
  * Run: npm run validate:county-schema
  *
  * Review snippet checks (via validateCountySchemaGraph):
- * - Every Review has itemReviewed with @type LocalBusiness, @id, and name
- * - itemReviewed.@id matches {pageUrl}#local-moving-service
- * - A matching local-moving-service LocalBusiness node exists in the graph
+ * - Every Review has itemReviewed with @type LocalBusiness and/or MovingCompany
+ * - itemReviewed is never AdministrativeArea / Place / City
+ * - itemReviewed.@id matches a #mover-* company node on the page
+ * - itemReviewed.name matches a listed mover (real company, not county stand-in)
  * - Required Review fields: reviewBody, author.name, reviewRating.ratingValue, datePublished
  */
 import { buildCountySchemaGraph } from '../lib/local-movers/build-county-schema-graph';
