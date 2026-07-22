@@ -1,8 +1,15 @@
 'use client';
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Company, DirectoryFilters, SortOption, ServiceType } from '@/types';
+import {
+  Company,
+  DirectoryCoverageFilter,
+  DirectoryFilters,
+  SortOption,
+  ServiceType,
+} from '@/types';
 import { buildDirectoryApiQuery } from '@/lib/directory/build-directory-api-query';
+import { normalizeCoverageFilter } from '@/lib/directory/coverage-filter';
 import { DIRECTORY_PAGE_SIZE } from '@/lib/directory/page-size';
 import type { DirectorySearchScope } from '@/lib/directory/search-scope';
 import { useCompareStore } from '@/store/compare-store';
@@ -19,6 +26,7 @@ import { EditorialReviewVolume } from '@/components/trust/editorial-review-volum
 import { CompanyCard } from '@/components/directory/company-card';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
+import { DirectoryCoverageFilterControl } from '@/components/directory/directory-coverage-filter';
 import { DirectoryEmptyState } from '@/components/directory/directory-empty-state';
 import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import {
@@ -39,13 +47,32 @@ const SERVICE_OPTIONS: ServiceType[] = [
   'Carrier',
   'Broker',
   'Carrier / Broker',
+  'Local Mover',
   'Container / Portable',
   'Auto Transport',
   'Storage',
 ];
 
 function serviceFilterLabel(service: ServiceType): string {
-  return service === 'Carrier / Broker' ? 'Carrier/Broker' : service;
+  if (service === 'Carrier / Broker') return 'Carrier/Broker';
+  return service;
+}
+
+function coverageFilterFromUrl(searchParams: URLSearchParams): DirectoryCoverageFilter {
+  return normalizeCoverageFilter({
+    coverage: searchParams.get('coverage') || 'Any',
+    coverageFilter: {
+      mode:
+        (searchParams.get('coverageMode') as DirectoryCoverageFilter['mode']) ||
+        'any',
+      region: (searchParams.get('coverageRegion') as DirectoryCoverageFilter['region']) || null,
+      stateCode: searchParams.get('coverageState') || null,
+      countySlugs: (searchParams.get('coverageCounties') || '')
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean),
+    },
+  });
 }
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: 'reputation', label: 'Reputation Score (High → Low)' },
@@ -57,7 +84,6 @@ const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: 'complaints', label: 'Lowest Complaint Ratio' },
 ];
 
-const COVERAGE_OPTIONS = ['Any', 'All 50 States', 'Continental US', 'East Coast', 'West Coast', 'Midwest', 'South', 'Northeast'] as const;
 const BBB_OPTIONS = ['A+', 'A', 'A-', 'B+', 'B', 'B-'];
 
 interface Props {
@@ -98,6 +124,7 @@ export function DirectoryClient({
     minRating: Number(searchParams.get('minRating')) || 0,
     maxPrice: Number(searchParams.get('maxPrice')) || 12000,
     coverage: (searchParams.get('coverage') as DirectoryFilters['coverage']) || 'Any',
+    coverageFilter: coverageFilterFromUrl(searchParams),
     onlyFullService: searchParams.get('full') === 'true',
     onlyVerified: searchParams.get('verified') === 'true',
     bbbMin: searchParams.get('bbbMin') || undefined,
@@ -217,11 +244,26 @@ export function DirectoryClient({
       if (filters.sort && filters.sort !== 'reputation') params.set('sort', filters.sort);
       if (filters.minRating) params.set('minRating', String(filters.minRating));
       if (filters.maxPrice && filters.maxPrice < 12000) params.set('maxPrice', String(filters.maxPrice));
-      if (filters.coverage && filters.coverage !== 'Any') params.set('coverage', filters.coverage);
       if (filters.onlyFullService) params.set('full', 'true');
       if (filters.onlyVerified) params.set('verified', 'true');
       if (filters.bbbMin) params.set('bbbMin', filters.bbbMin);
       if (selectedServices.length) params.set('services', selectedServices.join(','));
+
+      const cf = normalizeCoverageFilter(filters);
+      if (cf.mode !== 'any') {
+        params.set('coverageMode', cf.mode);
+        if (cf.mode === 'national') params.set('coverage', 'National');
+        if (cf.mode === 'regional' && cf.region) {
+          params.set('coverageRegion', cf.region);
+          params.set('coverage', cf.region);
+        }
+        if (cf.mode === 'state' && cf.stateCode) {
+          params.set('coverageState', cf.stateCode);
+          if (cf.countySlugs?.length) {
+            params.set('coverageCounties', cf.countySlugs.join(','));
+          }
+        }
+      }
 
       const nextQuery = params.toString();
       const currentQuery = searchParams.toString();
@@ -238,6 +280,21 @@ export function DirectoryClient({
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
+  const setCoverageFilter = (coverageFilter: DirectoryCoverageFilter) => {
+    setFilters((prev) => ({
+      ...prev,
+      coverageFilter,
+      coverage:
+        coverageFilter.mode === 'any'
+          ? 'Any'
+          : coverageFilter.mode === 'national'
+            ? 'National'
+            : coverageFilter.mode === 'regional' && coverageFilter.region
+              ? coverageFilter.region
+              : 'Any',
+    }));
+  };
+
   const toggleService = (svc: ServiceType) => {
     setSelectedServices((prev) =>
       prev.includes(svc) ? prev.filter((s) => s !== svc) : [...prev, svc]
@@ -252,6 +309,7 @@ export function DirectoryClient({
       minRating: 0,
       maxPrice: 12000,
       coverage: 'Any',
+      coverageFilter: { mode: 'any' },
       onlyFullService: false,
       onlyVerified: false,
       bbbMin: undefined,
@@ -273,12 +331,13 @@ export function DirectoryClient({
     void fetchPage(companies.length, remaining, true);
   };
 
+  const coverageFilter = normalizeCoverageFilter(filters);
   const activeFilterCount = [
     debouncedSearch.trim().length > 0,
     filters.minRating && filters.minRating > 0,
     filters.maxPrice && filters.maxPrice < 12000,
     selectedServices.length,
-    filters.coverage !== 'Any',
+    coverageFilter.mode !== 'any',
     filters.onlyFullService,
     filters.onlyVerified,
     Boolean(filters.bbbMin),
@@ -405,18 +464,11 @@ export function DirectoryClient({
                 </div>
               </div>
 
-              <div>
-                <div className="text-xs font-medium mb-1.5 text-muted-foreground">COVERAGE</div>
-                <Select
-                  value={filters.coverage}
-                  onChange={(e) => updateFilter('coverage', e.target.value as DirectoryFilters['coverage'])}
-                >
-                  {COVERAGE_OPTIONS.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </Select>
+              <div className="col-span-2 sm:col-span-1 md:col-span-2 min-w-0">
+                <DirectoryCoverageFilterControl
+                  value={coverageFilter}
+                  onChange={setCoverageFilter}
+                />
               </div>
 
               <div>

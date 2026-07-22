@@ -5,6 +5,7 @@ export type ServiceType =
   | 'Carrier'
   | 'Broker'
   | 'Carrier / Broker'
+  | 'Local Mover'
   | 'Container / Portable'
   | 'Auto Transport'
   | 'Storage';
@@ -20,6 +21,19 @@ export type Region =
   | 'Southeast'
   | 'Southwest'
   | 'Pacific Northwest';
+
+/** Intelligent coverage filter for /companies directory */
+export type CoverageFilterMode = 'any' | 'national' | 'regional' | 'state';
+
+export type DirectoryCoverageFilter = {
+  mode: CoverageFilterMode;
+  /** When mode = regional */
+  region?: Region | null;
+  /** 2-letter state code when mode = state */
+  stateCode?: string | null;
+  /** County slugs within stateCode (empty = whole state) */
+  countySlugs?: string[];
+};
 
 export interface Company {
   id: string;
@@ -142,7 +156,10 @@ export interface DirectoryFilters {
   minRating: number;
   maxPrice: number;
   services: ServiceType[];
-  coverage: Region | 'Any';
+  /** @deprecated Prefer coverageFilter — kept for URL/API backward compatibility */
+  coverage: Region | 'Any' | 'National' | 'Regional';
+  /** Structured coverage: National / Regional / State / County */
+  coverageFilter?: DirectoryCoverageFilter;
   bbbMin?: string;
   onlyFullService: boolean;
   onlyVerified: boolean;

@@ -88,6 +88,10 @@ export function prepareCompaniesForDirectoryClient(companies: Company[]): Compan
           entityType: c.entityType ?? null,
           /** Required for Local Mover vs Carrier type badges on directory cards */
           serviceScope: c.serviceScope ?? null,
+          /** Local coverage for state/county directory filters */
+          coverageCounties: Array.isArray(c.coverageCounties)
+            ? c.coverageCounties.slice(0, 40)
+            : [],
           powerUnits: c.powerUnits,
           bbbRating: c.bbbRating,
           bbbAccredited: c.bbbAccredited,

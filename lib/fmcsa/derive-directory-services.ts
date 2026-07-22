@@ -45,9 +45,14 @@ export function mergeServicesWithEntityType(
 
 /** Whether a company matches a single Services Offered filter chip. */
 export function companyMatchesServiceFilter(
-  company: Pick<Company, 'services' | 'entityType'>,
+  company: Pick<Company, 'services' | 'entityType' | 'serviceScope'>,
   service: ServiceType
 ): boolean {
+  // Local / intrastate funnel
+  if (service === 'Local Mover') {
+    return company.serviceScope === 'intrastate';
+  }
+
   const services = Array.isArray(company.services) ? company.services : [];
   if (services.includes(service)) return true;
 

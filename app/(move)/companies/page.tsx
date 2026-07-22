@@ -63,7 +63,8 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
           </h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">
             Your shortlist starts here. Search interstate movers licensed by the U.S. Department of
-            Transportation (FMCSA) for state-to-state moves — filter by coverage, services, price, and
+            Transportation (FMCSA) for state-to-state moves — filter by Local Mover, coverage
+            (national / state / county), services, price, and
             reputation. Every profile includes{' '}
             <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
               FMCSA licensing

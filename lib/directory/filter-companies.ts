@@ -1,3 +1,7 @@
+import {
+  companyMatchesCoverageFilter,
+  normalizeCoverageFilter,
+} from '@/lib/directory/coverage-filter';
 import { applyScopeToCompanies, type DirectorySearchScope } from '@/lib/directory/search-scope';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
 import { companyMatchesServiceFilter } from '@/lib/fmcsa/derive-directory-services';
@@ -73,10 +77,17 @@ export function filterCompanies(
     );
   }
 
-  if (filters.coverage && filters.coverage !== 'Any') {
-    result = result.filter(
-      (c) => c.coverage === filters.coverage || c.coverage === 'All 50 States'
-    );
+  const coverageFilter = normalizeCoverageFilter(filters);
+  if (coverageFilter.mode !== 'any') {
+    result = result.filter((c) => companyMatchesCoverageFilter(c, coverageFilter));
+  }
+
+  // Default /companies browse stays interstate-focused unless the user asks for locals
+  // (Local Mover service chip) or geographic state/county coverage.
+  const wantsLocalMovers =
+    Boolean(filters.services?.includes('Local Mover')) || coverageFilter.mode === 'state';
+  if (!wantsLocalMovers) {
+    result = result.filter((c) => c.serviceScope !== 'intrastate');
   }
 
   if (filters.bbbMin) {

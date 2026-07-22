@@ -11,15 +11,11 @@ import type { Company } from '@/types';
 /**
  * Public movers directory for /companies.
  *
- * Merges live Supabase companies with the active-directory catalog snapshot
- * (~120–130 FMCSA-active movers). DB rows win on duplicate USDOT/slug so
- * enrichment (ratings, authority flags) stays current. Does NOT re-merge the
- * full local-mover catalog (that previously inflated the list to 397).
+ * Merges live Supabase companies (interstate + local) with the active-directory
+ * catalog snapshot. DB rows win on duplicate USDOT/slug so enrichment stays current.
+ * Local movers appear when the user selects the "Local Mover" service filter or
+ * filters by state/county coverage.
  */
-function isInterstateDirectoryCompany(company: Company): boolean {
-  return company.serviceScope !== 'intrastate';
-}
-
 async function buildUnifiedDirectory(): Promise<Company[]> {
   const directoryCompanies = await getCompaniesCached();
 
@@ -36,15 +32,12 @@ async function buildUnifiedDirectory(): Promise<Company[]> {
     };
   });
 
-  // Local/intrastate movers are county-page only — never the main /companies list.
-  return mergeDirectoryCompanies(directoryCompanies, activeCatalogCompanies).filter(
-    isInterstateDirectoryCompany
-  );
+  return mergeDirectoryCompanies(directoryCompanies, activeCatalogCompanies);
 }
 
-/** Cached interstate directory listing for /companies and slug resolution. */
+/** Cached directory listing for /companies and slug resolution. */
 export const getUnifiedDirectoryCompanies = unstable_cache(
   buildUnifiedDirectory,
-  ['unified-movers-directory-v4-scope'],
+  ['unified-movers-directory-v5-local-filter'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );

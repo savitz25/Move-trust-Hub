@@ -1,6 +1,12 @@
-import type { DirectoryFilters, ServiceType, SortOption } from '@/types';
+import type {
+  DirectoryCoverageFilter,
+  DirectoryFilters,
+  ServiceType,
+  SortOption,
+} from '@/types';
 import type { DirectoryFilterInput } from '@/lib/directory/filter-companies';
 import { DIRECTORY_PAGE_SIZE } from '@/lib/directory/page-size';
+import { normalizeCoverageFilter } from '@/lib/directory/coverage-filter';
 
 const SORT_OPTIONS = new Set<SortOption>([
   'reputation',
@@ -17,6 +23,31 @@ function firstParam(
 ): string | undefined {
   if (Array.isArray(value)) return value[0];
   return value;
+}
+
+function parseCoverageFilterFromParams(
+  searchParams: Record<string, string | string[] | undefined>
+): DirectoryCoverageFilter {
+  const modeRaw = firstParam(searchParams.coverageMode);
+  if (
+    modeRaw === 'national' ||
+    modeRaw === 'regional' ||
+    modeRaw === 'state' ||
+    modeRaw === 'any'
+  ) {
+    const countiesRaw = firstParam(searchParams.coverageCounties) || '';
+    return {
+      mode: modeRaw,
+      region: (firstParam(searchParams.coverageRegion) as DirectoryCoverageFilter['region']) || null,
+      stateCode: firstParam(searchParams.coverageState) || null,
+      countySlugs: countiesRaw
+        ? countiesRaw.split(',').map((s) => s.trim()).filter(Boolean)
+        : [],
+    };
+  }
+  return normalizeCoverageFilter({
+    coverage: (firstParam(searchParams.coverage) as DirectoryFilters['coverage']) || 'Any',
+  });
 }
 
 /** Parse directory filters from Next.js `searchParams` (SSR). */
@@ -39,6 +70,7 @@ export function directoryFiltersFromSearchParams(
 
   const maxPriceRaw = Number(firstParam(searchParams.maxPrice));
   const minRatingRaw = Number(firstParam(searchParams.minRating));
+  const coverageFilter = parseCoverageFilterFromParams(searchParams);
 
   return {
     search: firstParam(searchParams.search)?.trim() ?? '',
@@ -47,6 +79,7 @@ export function directoryFiltersFromSearchParams(
     maxPrice: Number.isFinite(maxPriceRaw) && maxPriceRaw > 0 ? maxPriceRaw : 12000,
     coverage:
       (firstParam(searchParams.coverage) as DirectoryFilters['coverage']) || 'Any',
+    coverageFilter,
     onlyFullService:
       firstParam(searchParams.full) === 'true' ||
       firstParam(searchParams.full) === '1',
@@ -56,6 +89,30 @@ export function directoryFiltersFromSearchParams(
     bbbMin: firstParam(searchParams.bbbMin) || undefined,
     services,
   };
+}
+
+function appendCoverageParams(
+  params: URLSearchParams,
+  filters: Partial<DirectoryFilters>
+) {
+  const cf = normalizeCoverageFilter(filters);
+  if (cf.mode === 'any') return;
+
+  params.set('coverageMode', cf.mode);
+  if (cf.mode === 'regional' && cf.region) {
+    params.set('coverageRegion', cf.region);
+    // legacy
+    params.set('coverage', cf.region);
+  }
+  if (cf.mode === 'national') {
+    params.set('coverage', 'National');
+  }
+  if (cf.mode === 'state' && cf.stateCode) {
+    params.set('coverageState', cf.stateCode.toUpperCase());
+    if (cf.countySlugs?.length) {
+      params.set('coverageCounties', cf.countySlugs.join(','));
+    }
+  }
 }
 
 /** Build query string for GET /api/directory/companies */
@@ -79,9 +136,7 @@ export function buildDirectoryApiQuery(options: {
   if (filters.maxPrice && filters.maxPrice < 12000) {
     params.set('maxPrice', String(filters.maxPrice));
   }
-  if (filters.coverage && filters.coverage !== 'Any') {
-    params.set('coverage', filters.coverage);
-  }
+  appendCoverageParams(params, filters);
   if (filters.onlyFullService) params.set('full', 'true');
   if (filters.onlyVerified) params.set('verified', 'true');
   if (filters.bbbMin) params.set('bbbMin', filters.bbbMin);
