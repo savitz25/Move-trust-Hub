@@ -1,4 +1,5 @@
 import { alamedaCountyIntelligence } from '@/lib/local-movers/county-intelligence/alameda-ca';
+import { bergenCountyIntelligence } from '@/lib/local-movers/county-intelligence/bergen-nj';
 import { contraCostaCountyIntelligence } from '@/lib/local-movers/county-intelligence/contra-costa-ca';
 import { essexCountyIntelligence } from '@/lib/local-movers/county-intelligence/essex-nj';
 import { fresnoCountyIntelligence } from '@/lib/local-movers/county-intelligence/fresno-ca';
@@ -14,6 +15,7 @@ import type { CountyIntelligencePack } from '@/lib/local-movers/county-intellige
 
 const PACKS: CountyIntelligencePack[] = [
   alamedaCountyIntelligence,
+  bergenCountyIntelligence,
   contraCostaCountyIntelligence,
   essexCountyIntelligence,
   fresnoCountyIntelligence,

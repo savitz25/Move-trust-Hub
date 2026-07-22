@@ -57,6 +57,9 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'central-shore' && 'sm:col-span-2',
               z.id === 'western-inland' && 'sm:col-span-2',
               z.id === 'red-bank-two-river' && 'sm:col-span-2',
+              z.id === 'hudson-waterfront' && 'sm:col-span-2',
+              z.id === 'northern-affluent' && 'sm:col-span-2',
+              z.id === 'englewood-east' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
@@ -108,7 +111,19 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'southwestern' &&
                 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'route-35-corridor' &&
-                'border-orange-300/70 dark:border-orange-800/50'
+                'border-orange-300/70 dark:border-orange-800/50',
+              z.id === 'hudson-waterfront' &&
+                'border-sky-300/70 dark:border-sky-800/50',
+              z.id === 'hackensack-valley' &&
+                'border-slate-300/70 dark:border-slate-700/50',
+              z.id === 'route-17-paramus' &&
+                'border-orange-300/70 dark:border-orange-800/50',
+              z.id === 'northern-affluent' &&
+                'border-emerald-300/70 dark:border-emerald-800/50',
+              z.id === 'englewood-east' &&
+                'border-indigo-300/70 dark:border-indigo-800/50',
+              z.id === 'southern-meadowlands' &&
+                'border-amber-300/70 dark:border-amber-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>

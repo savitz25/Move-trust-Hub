@@ -36,27 +36,43 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
   bergen: [
     {
       quote:
-        'Booth Movers handled our Paramus colonial with real care — professional crew, on-time arrival, and not a scratch on the floors or doorways. Easily the smoothest Bergen County move we have had.',
+        'Fort Lee high-rise needed COI and a freight-elevator window — the crew handled the building packet, padded the elevator, and still beat the afternoon GWB mess. Felt like Bergen waterfront work they do weekly, not a generic North Jersey script.',
       name: 'Elena V.',
+      location: 'Fort Lee, NJ',
+      rating: 5,
+      moveType: 'High-rise / elevator',
+    },
+    {
+      quote:
+        'Ridgewood Victorian stairs were narrow and the truck couldn’t sit on our block. They staged legally, long-carried carefully, and were honest about labor time. Not a flat driveway job.',
+      name: 'David P.',
+      location: 'Ridgewood, NJ',
+      rating: 5,
+      moveType: 'Victorian / long-carry',
+    },
+    {
+      quote:
+        'Hackensack multi-family to Wyckoff single-family — completely different access at each end. They sized the truck for the origin elevator rules and still protected floors at the suburban destination.',
+      name: 'Sofia M.',
+      location: 'Hackensack → Wyckoff, NJ',
+      rating: 5,
+      moveType: 'Urban-to-suburb',
+    },
+    {
+      quote:
+        'Paramus origin off Route 17 on a Thursday — they built retail traffic into the plan, kept portal-to-portal pricing transparent, and never treated it like an open-highway local.',
+      name: 'James K.',
       location: 'Paramus, NJ',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'Route 17 corridor',
     },
     {
       quote:
-        'Movers 201 quoted one price and stuck to it with no surprises. The team was courteous, fast, and careful moving us from Hackensack into a tighter Ridgewood street with limited parking.',
-      name: 'David P.',
-      location: 'Hackensack, NJ',
+        'Teaneck walk-up with zero curb by 10 a.m. They secured temporary no-parking signs the day before and finished before school pickup traffic locked the block. Exactly the density problem we worried about.',
+      name: 'Priya N.',
+      location: 'Teaneck, NJ',
       rating: 5,
-      moveType: 'Residential',
-    },
-    {
-      quote:
-        'Unwind Moving earned every five-star review — Sebastian and the crew made our Garfield apartment relocation stress-free with clear communication from quote through completion.',
-      name: 'Sofia M.',
-      location: 'Garfield, NJ',
-      rating: 5,
-      moveType: 'Apartment',
+      moveType: 'Dense multi-family',
     },
   ],
   burlington: [

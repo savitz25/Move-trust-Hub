@@ -27,19 +27,19 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   bergen: {
     marketNotes:
-      'Bergen County is one of New Jersey’s most populous and affluent counties with dense suburban communities, proximity to NYC, and diverse residential moves. Moves often involve high-rises, family homes, and cross-river logistics.',
+      'Bergen County is New Jersey’s most populous county (~955,000–980,000 residents) and one of the densest U.S. suburban markets. Fort Lee–Edgewater Hudson waterfront high-rises (COI/elevators) contrast sharply with affluent inland towns (Ridgewood, Wyckoff, Saddle River, Tenafly). George Washington Bridge adjacency drives Manhattan-oriented relocations; Route 17/Paramus, Route 4, I-80, and the Parkway control portal-to-portal time. High home values and tight older street grids define most jobs.',
     costs: {
-      studioRange: '$500–$1,100',
-      familyRange: '$2,000–$4,500+',
-      avgHourly: '$125–$185/hr for a 2-person crew',
-      note: 'Hackensack, Paramus, and Ridgewood moves often reflect parking permits, elevator reservations, and George Washington Bridge traffic windows.',
+      studioRange: '$600–$1,600+',
+      familyRange: '$1,900–$4,600+',
+      avgHourly: '$135–$210+/hr for a 2-person crew',
+      note: 'Fort Lee elevators/permits, Ridgewood–Wyckoff high-value homes, and GWB/Route 17 congestion often push above base ranges; cross-zone pairs add labor time.',
     },
     tips: [
-      'Many communities have tight parking and HOA rules; confirm building requirements early.',
-      'Proximity to NYC and George Washington Bridge affects traffic and timing.',
-      'High-value suburban homes common; verify insurance coverage.',
-      'Obtain multiple estimates due to competitive market.',
-      'Confirm service for specific towns (Hackensack, Paramus, Ridgewood, etc.).',
+      'Fort Lee and Edgewater high-rises almost always need COI, elevator reservations, and early curb staging or parking permits.',
+      'Ridgewood, Wyckoff, and Saddle River jobs need careful-handling inventories and realistic long-carry labor on village streets.',
+      'Avoid GWB and Route 17 peaks (7–9 a.m., 3–7 p.m., Paramus weekend retail) when scheduling trucks.',
+      'Collect building or HOA packets before move day for multi-unit and planned communities.',
+      'NYC-oriented moves need interstate authority when state lines are crossed; pure NJ legs follow New Jersey household-goods frameworks.',
     ],
   },
   burlington: {
