@@ -54,6 +54,9 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'newark-core' && 'sm:col-span-2',
               z.id === 'west-affluent' && 'sm:col-span-2',
               z.id === 'far-west' && 'sm:col-span-2',
+              z.id === 'central-shore' && 'sm:col-span-2',
+              z.id === 'western-inland' && 'sm:col-span-2',
+              z.id === 'red-bank-two-river' && 'sm:col-span-2',
               z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
               z.id === 'irvine-planned' &&
@@ -93,7 +96,19 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               z.id === 'maplewood-so' &&
                 'border-amber-300/70 dark:border-amber-800/50',
               z.id === 'far-west' &&
-                'border-violet-300/70 dark:border-violet-800/50'
+                'border-violet-300/70 dark:border-violet-800/50',
+              z.id === 'northern-shore' &&
+                'border-sky-300/70 dark:border-sky-800/50',
+              z.id === 'central-shore' &&
+                'border-cyan-300/70 dark:border-cyan-800/50',
+              z.id === 'red-bank-two-river' &&
+                'border-indigo-300/70 dark:border-indigo-800/50',
+              z.id === 'western-inland' &&
+                'border-emerald-300/70 dark:border-emerald-800/50',
+              z.id === 'southwestern' &&
+                'border-amber-300/70 dark:border-amber-800/50',
+              z.id === 'route-35-corridor' &&
+                'border-orange-300/70 dark:border-orange-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>

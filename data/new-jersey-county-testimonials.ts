@@ -338,27 +338,43 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
   monmouth: [
     {
       quote:
-        'Piece of Cake handled our Freehold suburban move with flat-fee pricing that stayed predictable. Professional crew navigated HOA rules and Parkway traffic without a hitch.',
-      name: 'Laura K.',
-      location: 'Freehold, NJ',
-      rating: 5,
-      moveType: 'Single-family',
-    },
-    {
-      quote:
-        'Booth Movers did an outstanding job on our Asbury Park shore-area relocation — careful with sand near the boardwalk, on time, and professional through a busy summer weekend.',
+        'Asbury Park multi-story near the boardwalk — no room for a full trailer in July. They staged legally mid-week, protected floors from sand, and still beat the afternoon Route 35 mess. Felt like Monmouth shore work they do weekly, not a generic Shore script.',
       name: 'Mike D.',
       location: 'Asbury Park, NJ',
       rating: 5,
-      moveType: 'Coastal',
+      moveType: 'Shore multi-story',
     },
     {
       quote:
-        'Movers 201 quoted one price and delivered through our Long Branch condo move. No funny business — courteous, fast, and the smoothest shore relocation we have had.',
+        'Marlboro HOA needed COI and an approved morning window — the crew handled the packet, padded floors, and kept portal-to-portal pricing honest across Route 9. True inland Monmouth suburban job.',
+      name: 'Laura K.',
+      location: 'Marlboro, NJ',
+      rating: 5,
+      moveType: 'HOA / planned community',
+    },
+    {
+      quote:
+        'Long Branch condo elevator reservation was the whole game. They locked the freight window, coordinated building management, and finished before beach traffic locked the block.',
       name: 'Jennifer A.',
       location: 'Long Branch, NJ',
       rating: 5,
-      moveType: 'Condo',
+      moveType: 'Condo / elevator',
+    },
+    {
+      quote:
+        'Freehold Township to Manasquan on a Thursday — they built Parkway and Route 34 time into the plan, used a smaller truck at the shore end, and never treated it like a flat driveway local.',
+      name: 'Chris P.',
+      location: 'Freehold → Manasquan, NJ',
+      rating: 5,
+      moveType: 'Inland-to-shore',
+    },
+    {
+      quote:
+        'Red Bank downtown origin with tight curb, then Rumson destination with a long carry and high-value contents. Careful handling and early staging made the Two River hop actually work.',
+      name: 'Priya S.',
+      location: 'Red Bank → Rumson, NJ',
+      rating: 5,
+      moveType: 'Two River / high-value',
     },
   ],
   morris: [
