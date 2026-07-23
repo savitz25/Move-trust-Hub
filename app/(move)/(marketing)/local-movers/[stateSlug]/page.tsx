@@ -10,6 +10,7 @@ import { DirectorySearchEmbed } from '@/components/directory/directory-search-em
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { StateHubTier1Links } from '@/components/local-movers/state-hub-tier1-links';
 import { StateCountyMap } from '@/components/map/StateCountyMap';
+import { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 import { getLocalState, localStates } from '@/lib/local-movers/states';
 import {
   buildStateDescription,
@@ -143,7 +144,17 @@ export default async function LocalMoversStatePage({ params }: Props) {
                     states include deep county research and ratings.
                   </p>
                 </div>
-                <StateCountyMap stateSlug={state.slug} stateName={state.name} />
+                <StateCountyMap
+                  stateSlug={state.slug}
+                  stateName={state.name}
+                  countyMeta={hubRows.map((row) => ({
+                    slug: row.county.slug,
+                    label: buildCountyLabel(row.county),
+                    moverCount: row.moverCount,
+                    guideBadge: row.guideBadge,
+                    isDeepGuide: row.isDeepGuide,
+                  }))}
+                />
               </section>
             ) : null}
 
