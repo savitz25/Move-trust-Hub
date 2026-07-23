@@ -181,6 +181,7 @@ import { CountyPopularRoutesSection } from '@/components/local-movers/county-pop
 import { NjRegulatoryClarity } from '@/components/local-movers/nj-regulatory-clarity';
 import { CaRegulatoryClarity } from '@/components/local-movers/ca-regulatory-clarity';
 import { FlRegulatoryClarity } from '@/components/local-movers/fl-regulatory-clarity';
+import { TxRegulatoryClarity } from '@/components/local-movers/tx-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
@@ -740,6 +741,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         ) : null}
         {stateSlug === 'florida' ? (
           <FlRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'texas' ? (
+          <TxRegulatoryClarity countyLabel={countyLabel} />
         ) : null}
 
         {popularRoutes.length > 0 ? (

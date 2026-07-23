@@ -1519,6 +1519,510 @@ const FL_ROUTES: Record<string, CountyPopularRoute[]> = {
   ],
 };
 
+/** Texas — Texas Triangle, energy/tech/military, CA & Northeast/Midwest inflows, border markets. */
+const TX_ROUTES: Record<string, CountyPopularRoute[]> = {
+  harris: [
+    {
+      label: 'Within Harris (Downtown / Medical Center ↔ Energy Corridor / Katy)',
+      direction: 'within',
+      context:
+        'High-rise freight elevators vs master-planned HOAs; I-10 and 610 loop traffic reshape crew hours.',
+    },
+    {
+      label: 'San Diego / SoCal → Greater Houston',
+      direction: 'inbound',
+      context:
+        'Energy, healthcare, and cost-of-living inflows; plan volume surveys for large single-family stock.',
+      href: '/resources/routes/san-diego-to-houston',
+    },
+    {
+      label: 'California → Houston metro (statewide corridor)',
+      direction: 'inbound',
+      context:
+        'Long-haul West Coast exits into Gulf Coast housing; dedicated vs consolidated transit spreads matter.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Houston ↔ Austin / San Antonio (Texas Triangle)',
+      direction: 'outbound',
+      context:
+        'Regional corporate and family hops; treat as multi-hour logistics, not a short suburban quote.',
+    },
+    {
+      label: 'New York / Northeast → Harris County job markets',
+      direction: 'inbound',
+      context:
+        'Finance, energy trading, and medical relocations; elevator and garage access on mid-rise stock.',
+      href: '/resources/routes/new-york-to-texas',
+    },
+    {
+      label: 'Houston → California reverse career moves',
+      direction: 'outbound',
+      context:
+        'Tech and dual-coast household goods; FMCSA carriers and full inventory valuation recommended.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  dallas: [
+    {
+      label: 'Within Dallas County (Uptown / Downtown ↔ Oak Cliff / Lake Highlands)',
+      direction: 'within',
+      context:
+        'High-rise COIs and street permits downtown vs single-family cul-de-sacs — truck type changes.',
+    },
+    {
+      label: 'Los Angeles → Dallas–Fort Worth career corridors',
+      direction: 'inbound',
+      context:
+        'Corporate and cost-of-living exits from SoCal; volume drives linehaul more than map miles.',
+      href: '/resources/routes/los-angeles-to-dallas-fort-worth',
+    },
+    {
+      label: 'Illinois / Midwest → Dallas metro',
+      direction: 'inbound',
+      context:
+        'Corporate HQ and family Sun Belt moves; summer heat shapes delivery windows and crew pacing.',
+      href: '/resources/routes/illinois-to-texas',
+    },
+    {
+      label: 'Dallas ↔ Fort Worth / Collin northern suburbs',
+      direction: 'within',
+      context:
+        'Cross-metro DFW pairs on I-35 / I-635; empty miles and HOA gate codes dominate short-hop quotes.',
+    },
+    {
+      label: 'Northeast & Mid-Atlantic → Dallas job centers',
+      direction: 'inbound',
+      context:
+        'Professional relocations into Uptown, Las Colinas-adjacent, and southern suburbs.',
+      href: '/resources/routes/new-york-to-texas',
+    },
+    {
+      label: 'Dallas → California entertainment & tech exits',
+      direction: 'outbound',
+      context:
+        'Coast-bound reverse flows; multi-day interstate household goods, not local hourly crews.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  tarrant: [
+    {
+      label: 'Within Tarrant (Fort Worth Cultural District ↔ Arlington / Southlake)',
+      direction: 'within',
+      context:
+        'Urban near-downtown stock vs northern master-planned communities — access rules differ sharply.',
+    },
+    {
+      label: 'Los Angeles → Fort Worth / Mid-Cities DFW',
+      direction: 'inbound',
+      context:
+        'Often chosen as a Dallas-adjacent alternative; still full interstate packing and valuation needs.',
+      href: '/resources/routes/los-angeles-to-dallas-fort-worth',
+    },
+    {
+      label: 'Military & defense-adjacent PCS into Tarrant',
+      direction: 'inbound',
+      context:
+        'NAS Fort Worth JRB and defense-contractor timing; flexible load days beat rock-bottom hourly rates.',
+    },
+    {
+      label: 'California → Tarrant / western DFW suburbs',
+      direction: 'inbound',
+      context:
+        'Family and aerospace-adjacent inflows; HOA certificates are routine in newer subdivisions.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Tarrant ↔ Dallas County cross-metro hops',
+      direction: 'within',
+      context:
+        'I-30 / 183 corridor pairs; treat as regional logistics with traffic-window planning.',
+    },
+    {
+      label: 'Fort Worth → California reverse moves',
+      direction: 'outbound',
+      context:
+        'Career and dual-home coasts; use FMCSA household-goods carriers for true interstate legs.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  bexar: [
+    {
+      label: 'Within Bexar (Downtown / Pearl ↔ Stone Oak / Westover Hills)',
+      direction: 'within',
+      context:
+        'River-walk tower elevators vs Hill Country edge HOAs; summer heat and hills change load plans.',
+    },
+    {
+      label: 'Military PCS → Joint Base San Antonio area',
+      direction: 'inbound',
+      context:
+        'Lackland, Fort Sam, and Randolph timing; short-notice local crews fill fast around order cycles.',
+    },
+    {
+      label: 'California → San Antonio metro',
+      direction: 'inbound',
+      context:
+        'Cost and lifestyle exits into military-adjacent and medical job markets.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'San Antonio ↔ Austin / Houston (Triangle legs)',
+      direction: 'outbound',
+      context:
+        'I-35 and I-10 regional career hops; not a same-day suburban quote when furniture volume is full.',
+    },
+    {
+      label: 'Midwest → Bexar County family corridors',
+      direction: 'inbound',
+      context:
+        'Illinois and broader Midwest inflows into suburban single-family stock.',
+      href: '/resources/routes/illinois-to-texas',
+    },
+    {
+      label: 'San Antonio → California outbound careers',
+      direction: 'outbound',
+      context:
+        'Long-haul West Coast household goods; inventory surveys beat map-mile estimates.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  travis: [
+    {
+      label: 'Within Travis (Downtown / East Austin ↔ Domain / South Congress corridors)',
+      direction: 'within',
+      context:
+        'Condo freight elevators and street permits vs suburban garages — accessorials dominate cost.',
+    },
+    {
+      label: 'San Francisco Bay Area → Austin tech corridor',
+      direction: 'inbound',
+      context:
+        'Tech and startup relocations; elevators and timed windows on multifamily are common.',
+      href: '/resources/routes/san-francisco-to-austin',
+    },
+    {
+      label: 'California → Greater Austin (statewide)',
+      direction: 'inbound',
+      context:
+        'Broader West Coast cost exits beyond SF; volume and transit spreads matter on consolidated trucks.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Northeast / New Jersey → Austin job markets',
+      direction: 'inbound',
+      context:
+        'Finance and remote-hybrid professionals; COI and parking rules on central condos.',
+      href: '/resources/routes/new-jersey-to-texas',
+    },
+    {
+      label: 'Austin ↔ Houston / Dallas (Texas Triangle)',
+      direction: 'outbound',
+      context:
+        'Corporate multi-city pairs; plan for multi-hour interstate-style logistics inside Texas.',
+    },
+    {
+      label: 'Austin → California reverse tech moves',
+      direction: 'outbound',
+      context:
+        'Return-to-coast and dual-office households; FMCSA authority required for true interstate legs.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  collin: [
+    {
+      label: 'Within Collin (Plano ↔ Frisco / McKinney / Allen)',
+      direction: 'within',
+      context:
+        'Corporate north-DFW stock; HOA certificates, gate codes, and large-home inventories are routine.',
+    },
+    {
+      label: 'Los Angeles → Collin County / northern DFW suburbs',
+      direction: 'inbound',
+      context:
+        'Tech, telecom, and family cost exits into master-planned communities.',
+      href: '/resources/routes/los-angeles-to-dallas-fort-worth',
+    },
+    {
+      label: 'Illinois / Chicago corridor → Collin corporate suburbs',
+      direction: 'inbound',
+      context:
+        'HQ and professional relocations; summer delivery heat and HOA windows shape the day.',
+      href: '/resources/routes/illinois-to-texas',
+    },
+    {
+      label: 'New York → Plano / Frisco professional corridors',
+      direction: 'inbound',
+      context:
+        'Finance and corporate inflows; not a downtown high-rise job — large single-family surveys matter.',
+      href: '/resources/routes/new-york-to-texas',
+    },
+    {
+      label: 'Collin ↔ Dallas County reverse-commute hops',
+      direction: 'within',
+      context:
+        'North-south DFW pairs on the Tollway / 75; empty miles add more than raw drive time suggests.',
+    },
+    {
+      label: 'Collin → California outbound careers',
+      direction: 'outbound',
+      context:
+        'Coast-bound household goods from large suburban inventories; full packing scopes are common.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  denton: [
+    {
+      label: 'Within Denton (Denton / Lewisville ↔ Flower Mound / Argyle)',
+      direction: 'within',
+      context:
+        'University-adjacent turnover vs lakeside and ranch-edge homes — truck access varies block by block.',
+    },
+    {
+      label: 'California → Denton County growth corridor',
+      direction: 'inbound',
+      context:
+        'DFW spillover housing for cost-sensitive families leaving the West Coast.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Minnesota / Upper Midwest → Denton metro edge',
+      direction: 'inbound',
+      context:
+        'Climate and job-driven Sun Belt moves into newer subdivisions and townhome stock.',
+      href: '/resources/routes/minnesota-to-texas',
+    },
+    {
+      label: 'Los Angeles → western / northern DFW via Denton',
+      direction: 'inbound',
+      context:
+        'Often priced as DFW-wide; confirm final city for elevator vs single-family labor models.',
+      href: '/resources/routes/los-angeles-to-dallas-fort-worth',
+    },
+    {
+      label: 'Denton ↔ Collin / Tarrant cross-county hops',
+      direction: 'within',
+      context:
+        'I-35E / 121 regional pairs; treat as logistics hops with traffic-window planning.',
+    },
+    {
+      label: 'Denton County → California reverse moves',
+      direction: 'outbound',
+      context:
+        'Long-haul West Coast exits; inventory volume from larger homes drives linehaul.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  'fort-bend': [
+    {
+      label: 'Within Fort Bend (Sugar Land ↔ Missouri City / Richmond–Rosenberg)',
+      direction: 'within',
+      context:
+        'Master-planned HOAs, gated communities, and large single-family inventories dominate quotes.',
+    },
+    {
+      label: 'San Diego → Fort Bend / southwest Houston suburbs',
+      direction: 'inbound',
+      context:
+        'Energy and healthcare families choosing Fort Bend over dense Houston core housing.',
+      href: '/resources/routes/san-diego-to-houston',
+    },
+    {
+      label: 'California → Fort Bend County',
+      direction: 'inbound',
+      context:
+        'Cost and school-district-driven West Coast exits into planned communities.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Massachusetts / New England → Fort Bend family corridors',
+      direction: 'inbound',
+      context:
+        'Corporate and medical relocations; full household-goods surveys for large suburban homes.',
+      href: '/resources/routes/massachusetts-to-texas',
+    },
+    {
+      label: 'Fort Bend ↔ Harris County Medical Center / Energy Corridor',
+      direction: 'within',
+      context:
+        'Cross-county commute-pattern moves; HOA gate timing plus urban elevator rules on one end.',
+    },
+    {
+      label: 'Fort Bend → California reverse family moves',
+      direction: 'outbound',
+      context:
+        'Coast-bound dual-home and career logistics; FMCSA carriers for interstate household goods.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  montgomery: [
+    {
+      label: 'Within Montgomery (The Woodlands ↔ Conroe / Spring / Magnolia)',
+      direction: 'within',
+      context:
+        'Forest-edge HOAs and corporate campuses; tree-lined streets and gate codes shape load day.',
+    },
+    {
+      label: 'California → The Woodlands / Montgomery energy suburbs',
+      direction: 'inbound',
+      context:
+        'Energy and corporate transfers into master-planned north-Houston stock.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Pennsylvania / Mid-Atlantic → Montgomery County',
+      direction: 'inbound',
+      context:
+        'Professional and family Sun Belt moves; not a downtown high-rise job.',
+      href: '/resources/routes/pennsylvania-to-texas',
+    },
+    {
+      label: 'San Diego → north Houston / Montgomery corridor',
+      direction: 'inbound',
+      context:
+        'Gulf Coast energy inflows landing north of the Loop rather than core Harris towers.',
+      href: '/resources/routes/san-diego-to-houston',
+    },
+    {
+      label: 'Montgomery ↔ Harris County reverse-commute hops',
+      direction: 'within',
+      context:
+        'I-45 corridor pairs; empty miles and HOA access matter more than map distance.',
+    },
+    {
+      label: 'Montgomery → California outbound careers',
+      direction: 'outbound',
+      context:
+        'Long-haul reverse moves from large suburban inventories; packing scope drives price.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  williamson: [
+    {
+      label: 'Within Williamson (Round Rock ↔ Georgetown / Cedar Park / Hutto)',
+      direction: 'within',
+      context:
+        'North-Austin tech and family stock; HOA windows and two-car garages are the default model.',
+    },
+    {
+      label: 'San Francisco → Round Rock / north Austin tech edge',
+      direction: 'inbound',
+      context:
+        'Bay Area cost exits into Williamson rather than central Travis condos.',
+      href: '/resources/routes/san-francisco-to-austin',
+    },
+    {
+      label: 'California → Williamson County growth towns',
+      direction: 'inbound',
+      context:
+        'Broader West Coast inflows into new construction and master-planned communities.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'New York → north Austin / Williamson job markets',
+      direction: 'inbound',
+      context:
+        'Tech and corporate relocations; single-family surveys beat downtown elevator quotes.',
+      href: '/resources/routes/new-york-to-texas',
+    },
+    {
+      label: 'Williamson ↔ Travis County (Domain / downtown Austin)',
+      direction: 'within',
+      context:
+        'North-south metro pairs; one end HOA, the other freight elevator — plan both access rules.',
+    },
+    {
+      label: 'Williamson → California reverse tech moves',
+      direction: 'outbound',
+      context:
+        'Return-to-coast household goods; multi-day interstate planning and valuation coverage.',
+      href: '/resources/routes/texas-to-california',
+    },
+  ],
+  'el-paso': [
+    {
+      label: 'Within El Paso (Westside / Downtown ↔ Eastside / Mission Valley)',
+      direction: 'within',
+      context:
+        'Desert hills, military-adjacent timing, and bilingual customer coordination shape crew plans.',
+    },
+    {
+      label: 'Fort Bliss PCS & defense-contractor moves',
+      direction: 'inbound',
+      context:
+        'Order cycles drive short-notice demand; flexible dates matter more than rock-bottom hourly rates.',
+    },
+    {
+      label: 'California ↔ El Paso (I-10 borderland corridor)',
+      direction: 'inbound',
+      context:
+        'West Coast family and logistics-linked inflows along the southern I-10 spine.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'El Paso → California outbound (I-10 west)',
+      direction: 'outbound',
+      context:
+        'Common reverse corridor for careers and dual-state households; FMCSA for interstate goods.',
+      href: '/resources/routes/texas-to-california',
+    },
+    {
+      label: 'Midwest → El Paso military & medical corridors',
+      direction: 'inbound',
+      context:
+        'Illinois and broader Midwest PCS-adjacent and hospital-system relocations.',
+      href: '/resources/routes/illinois-to-texas',
+    },
+    {
+      label: 'Cross-border / Juárez-adjacent household logistics',
+      direction: 'within',
+      context:
+        'U.S.-side origin/destination only for interstate carriers; customs and dual-address plans need clarity early.',
+    },
+  ],
+  hidalgo: [
+    {
+      label: 'Within Hidalgo (McAllen ↔ Edinburg / Mission / Pharr)',
+      direction: 'within',
+      context:
+        'Rio Grande Valley metro hops; heat, HOA gates, and family multi-stop loads are common.',
+    },
+    {
+      label: 'California → Rio Grande Valley / Hidalgo County',
+      direction: 'inbound',
+      context:
+        'Family reunification and cost-driven West Coast exits into Valley single-family stock.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Midwest → McAllen–Edinburg medical & retail corridors',
+      direction: 'inbound',
+      context:
+        'Healthcare and distribution hiring pulls; summer heat shapes delivery windows.',
+      href: '/resources/routes/minnesota-to-texas',
+    },
+    {
+      label: 'Hidalgo → Houston / San Antonio (in-state northbound)',
+      direction: 'outbound',
+      context:
+        'Valley-to-Triangle career and school moves; long empty miles inside Texas change crew pricing.',
+    },
+    {
+      label: 'Hidalgo → California outbound family corridors',
+      direction: 'outbound',
+      context:
+        'Westbound interstate household goods; full inventory and valuation coverage recommended.',
+      href: '/resources/routes/texas-to-california',
+    },
+    {
+      label: 'Border-adjacent / Mexico-linked household planning',
+      direction: 'within',
+      context:
+        'U.S. addresses only for licensed interstate movers; dual-country storage and customs are separate scopes.',
+    },
+  ],
+};
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -1526,5 +2030,6 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'new-jersey') return NJ_ROUTES[countySlug] ?? [];
   if (stateSlug === 'california') return CA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'florida') return FL_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'texas') return TX_ROUTES[countySlug] ?? [];
   return [];
 }

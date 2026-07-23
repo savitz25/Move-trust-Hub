@@ -43,11 +43,24 @@ import { polkCountyIntelligence } from '@/lib/local-movers/county-intelligence/f
 import { brevardCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/brevard-fl';
 import { pascoCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/pasco-fl';
 import { volusiaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/volusia-fl';
+// Texas Core 12
+import { harrisCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/harris-tx';
+import { dallasCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/dallas-tx';
+import { tarrantCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/tarrant-tx';
+import { bexarCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/bexar-tx';
+import { travisCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/travis-tx';
+import { collinCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/collin-tx';
+import { dentonCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/denton-tx';
+import { fortBendCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/fort-bend-tx';
+import { montgomeryCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/montgomery-tx';
+import { williamsonCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/williamson-tx';
+import { elPasoCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/el-paso-tx';
+import { hidalgoCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/hidalgo-tx';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
@@ -84,6 +97,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   brevardCountyIntelligence,
   pascoCountyIntelligence,
   volusiaCountyIntelligence,
+  // Texas Core 12
+  harrisCountyIntelligence,
+  dallasCountyIntelligence,
+  tarrantCountyIntelligence,
+  bexarCountyIntelligence,
+  travisCountyIntelligence,
+  collinCountyIntelligence,
+  dentonCountyIntelligence,
+  fortBendCountyIntelligence,
+  montgomeryCountyIntelligence,
+  williamsonCountyIntelligence,
+  elPasoCountyIntelligence,
+  hidalgoCountyIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -168,4 +194,20 @@ export const FL_TIER1_CORE12 = [
   'brevard',
   'pasco',
   'volusia',
+] as const;
+
+/** Texas Tier-1 Core 12. */
+export const TX_TIER1_CORE12 = [
+  'harris',
+  'dallas',
+  'tarrant',
+  'bexar',
+  'travis',
+  'collin',
+  'denton',
+  'fort-bend',
+  'montgomery',
+  'williamson',
+  'el-paso',
+  'hidalgo',
 ] as const;
