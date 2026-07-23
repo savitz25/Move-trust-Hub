@@ -1,0 +1,68 @@
+{
+  "new-hampshire": {
+    "seacoast-south": [
+      "rockingham",
+      "strafford",
+      "hillsborough"
+    ],
+    "central-nh": [
+      "merrimack",
+      "belknap",
+      "sullivan"
+    ],
+    "lakes-north": [
+      "carroll",
+      "grafton",
+      "coos"
+    ],
+    "southwest-nh": [
+      "cheshire"
+    ]
+  },
+  "vermont": {
+    "northwest-vt": [
+      "chittenden",
+      "franklin",
+      "grand-isle",
+      "lamoille"
+    ],
+    "central-vt": [
+      "washington",
+      "addison",
+      "orange",
+      "windsor"
+    ],
+    "southern-vt": [
+      "bennington",
+      "windham",
+      "rutland"
+    ],
+    "northeast-kingdom": [
+      "caledonia",
+      "essex",
+      "orleans"
+    ]
+  },
+  "rhode-island": {
+    "providence-metro": [
+      "providence",
+      "bristol",
+      "kent"
+    ],
+    "south-county-coast": [
+      "washington",
+      "newport"
+    ]
+  },
+  "delaware": {
+    "new-castle": [
+      "new-castle"
+    ],
+    "kent": [
+      "kent"
+    ],
+    "sussex": [
+      "sussex"
+    ]
+  }
+}

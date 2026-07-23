@@ -102,6 +102,10 @@ const STATE_NAMES = {
   'north-dakota': 'North Dakota',
   'south-dakota': 'South Dakota',
   maine: 'Maine',
+  'new-hampshire': 'New Hampshire',
+  vermont: 'Vermont',
+  'rhode-island': 'Rhode Island',
+  delaware: 'Delaware',
 };
 
 for (const file of packFiles) {

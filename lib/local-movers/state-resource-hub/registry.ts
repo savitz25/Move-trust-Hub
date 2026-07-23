@@ -5,6 +5,7 @@ import { arkansasStateResourceHub } from '@/lib/local-movers/state-resource-hub/
 import { californiaStateResourceHub } from '@/lib/local-movers/state-resource-hub/california';
 import { coloradoStateResourceHub } from '@/lib/local-movers/state-resource-hub/colorado';
 import { connecticutStateResourceHub } from '@/lib/local-movers/state-resource-hub/connecticut';
+import { delawareStateResourceHub } from '@/lib/local-movers/state-resource-hub/delaware';
 import { floridaStateResourceHub } from '@/lib/local-movers/state-resource-hub/florida';
 import { georgiaStateResourceHub } from '@/lib/local-movers/state-resource-hub/georgia';
 import { hawaiiStateResourceHub } from '@/lib/local-movers/state-resource-hub/hawaii';
@@ -25,6 +26,7 @@ import { missouriStateResourceHub } from '@/lib/local-movers/state-resource-hub/
 import { montanaStateResourceHub } from '@/lib/local-movers/state-resource-hub/montana';
 import { nebraskaStateResourceHub } from '@/lib/local-movers/state-resource-hub/nebraska';
 import { nevadaStateResourceHub } from '@/lib/local-movers/state-resource-hub/nevada';
+import { newHampshireStateResourceHub } from '@/lib/local-movers/state-resource-hub/new-hampshire';
 import { newJerseyStateResourceHub } from '@/lib/local-movers/state-resource-hub/new-jersey';
 import { newMexicoStateResourceHub } from '@/lib/local-movers/state-resource-hub/new-mexico';
 import { newYorkStateResourceHub } from '@/lib/local-movers/state-resource-hub/new-york';
@@ -34,11 +36,13 @@ import { ohioStateResourceHub } from '@/lib/local-movers/state-resource-hub/ohio
 import { oklahomaStateResourceHub } from '@/lib/local-movers/state-resource-hub/oklahoma';
 import { oregonStateResourceHub } from '@/lib/local-movers/state-resource-hub/oregon';
 import { pennsylvaniaStateResourceHub } from '@/lib/local-movers/state-resource-hub/pennsylvania';
+import { rhodeIslandStateResourceHub } from '@/lib/local-movers/state-resource-hub/rhode-island';
 import { southCarolinaStateResourceHub } from '@/lib/local-movers/state-resource-hub/south-carolina';
 import { southDakotaStateResourceHub } from '@/lib/local-movers/state-resource-hub/south-dakota';
 import { tennesseeStateResourceHub } from '@/lib/local-movers/state-resource-hub/tennessee';
 import { texasStateResourceHub } from '@/lib/local-movers/state-resource-hub/texas';
 import { utahStateResourceHub } from '@/lib/local-movers/state-resource-hub/utah';
+import { vermontStateResourceHub } from '@/lib/local-movers/state-resource-hub/vermont';
 import { virginiaStateResourceHub } from '@/lib/local-movers/state-resource-hub/virginia';
 import { washingtonStateResourceHub } from '@/lib/local-movers/state-resource-hub/washington';
 import { westVirginiaStateResourceHub } from '@/lib/local-movers/state-resource-hub/west-virginia';
@@ -54,6 +58,7 @@ const PACKS: StateResourceHubPack[] = [
   californiaStateResourceHub,
   coloradoStateResourceHub,
   connecticutStateResourceHub,
+  delawareStateResourceHub,
   floridaStateResourceHub,
   georgiaStateResourceHub,
   hawaiiStateResourceHub,
@@ -74,6 +79,7 @@ const PACKS: StateResourceHubPack[] = [
   montanaStateResourceHub,
   nebraskaStateResourceHub,
   nevadaStateResourceHub,
+  newHampshireStateResourceHub,
   newJerseyStateResourceHub,
   newMexicoStateResourceHub,
   newYorkStateResourceHub,
@@ -83,11 +89,13 @@ const PACKS: StateResourceHubPack[] = [
   oklahomaStateResourceHub,
   oregonStateResourceHub,
   pennsylvaniaStateResourceHub,
+  rhodeIslandStateResourceHub,
   southCarolinaStateResourceHub,
   southDakotaStateResourceHub,
   tennesseeStateResourceHub,
   texasStateResourceHub,
   utahStateResourceHub,
+  vermontStateResourceHub,
   virginiaStateResourceHub,
   washingtonStateResourceHub,
   westVirginiaStateResourceHub,
