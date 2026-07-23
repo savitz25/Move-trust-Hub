@@ -28,14 +28,18 @@ for (const re of BANNED_IN_SHARED) {
   }
 }
 
-// Any literal "California" in JSX string literals (double/single quotes) is suspicious.
+// Strip block + line comments before scanning for user-facing string literals.
+const srcNoComments = src
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .replace(/(^|[^:])\/\/.*$/gm, '$1');
+
+// User-facing string literals that hard-code California (exclude code identifiers).
 const jsxStringHits = [
-  ...src.matchAll(/(['"`])([^'"`]*California[^'"`]*)\1/g),
+  ...srcNoComments.matchAll(/(['"`])([^'"`]*\bCalifornia\b[^'"`]*)\1/g),
 ].filter((m) => {
   const s = m[2];
-  // Allow comments / docstrings that say "master template" without user-facing copy
-  if (/master template/i.test(s)) return false;
   if (/never hard-code/i.test(s)) return false;
+  if (/master template/i.test(s)) return false;
   return true;
 });
 
