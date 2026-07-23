@@ -13,7 +13,10 @@ import { riversideCountyIntelligence } from '@/lib/local-movers/county-intellige
 import { sacramentoCountyIntelligence } from '@/lib/local-movers/county-intelligence/sacramento-ca';
 import { sanBernardinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-bernardino-ca';
 import { sanDiegoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-diego-ca';
+import { sanFranciscoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-francisco-ca';
+import { sanMateoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-mateo-ca';
 import { santaClaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-clara-ca';
+import { venturaCountyIntelligence } from '@/lib/local-movers/county-intelligence/ventura-ca';
 import { warrenCountyIntelligence } from '@/lib/local-movers/county-intelligence/warren-nj';
 import { atlanticCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/atlantic-nj';
 import { gloucesterCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/gloucester-nj';
@@ -21,14 +24,14 @@ import { hunterdonCountyNjIntelligence } from '@/lib/local-movers/county-intelli
 import { mercerCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/mercer-nj';
 import { somersetCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/somerset-nj';
 import { sussexCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/sussex-nj';
+import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Prefer root-level flagship packs (richer logistics drafts on main).
- * Subfolder packs fill Mercer / Somerset / Atlantic / Gloucester / Hunterdon / Sussex.
- * Ocean + Warren root packs stay primary (also enhanced with relocation below via patch).
+ * Flagship CA packs + NJ Tier-1 packs.
+ * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  */
-const PACKS: CountyIntelligencePack[] = [
+const RAW_PACKS: CountyIntelligencePack[] = [
   alamedaCountyIntelligence,
   bergenCountyIntelligence,
   contraCostaCountyIntelligence,
@@ -44,9 +47,11 @@ const PACKS: CountyIntelligencePack[] = [
   sacramentoCountyIntelligence,
   sanBernardinoCountyIntelligence,
   sanDiegoCountyIntelligence,
+  sanFranciscoCountyIntelligence,
+  sanMateoCountyIntelligence,
   santaClaraCountyIntelligence,
+  venturaCountyIntelligence,
   warrenCountyIntelligence,
-  // NJ Tier-1 wave (unique packs)
   mercerCountyNjIntelligence,
   somersetCountyNjIntelligence,
   atlanticCountyNjIntelligence,
@@ -54,6 +59,10 @@ const PACKS: CountyIntelligencePack[] = [
   hunterdonCountyNjIntelligence,
   sussexCountyNjIntelligence,
 ];
+
+const PACKS: CountyIntelligencePack[] = RAW_PACKS.map((pack) =>
+  pack.stateSlug === 'california' ? enhanceCaliforniaIntelligencePack(pack) : pack
+);
 
 const byKey = new Map(
   PACKS.map((p) => [`${p.stateSlug}/${p.countySlug}`, p] as const)
@@ -77,3 +86,19 @@ export function hasCountyIntelligencePack(
 export function listCountyIntelligencePacks(): CountyIntelligencePack[] {
   return [...PACKS];
 }
+
+/** Core 12 CA Tier-1 county slugs (product launch set). */
+export const CA_TIER1_CORE12 = [
+  'los-angeles',
+  'orange',
+  'san-diego',
+  'santa-clara',
+  'alameda',
+  'riverside',
+  'san-bernardino',
+  'sacramento',
+  'contra-costa',
+  'san-francisco',
+  'san-mateo',
+  'ventura',
+] as const;

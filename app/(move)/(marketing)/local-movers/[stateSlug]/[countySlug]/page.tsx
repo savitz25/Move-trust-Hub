@@ -179,6 +179,7 @@ import { SegmentedCountyMoverLists } from '@/components/local-movers/progressive
 import { CountyIntentPaths } from '@/components/local-movers/county-intent-paths';
 import { CountyPopularRoutesSection } from '@/components/local-movers/county-popular-routes';
 import { NjRegulatoryClarity } from '@/components/local-movers/nj-regulatory-clarity';
+import { CaRegulatoryClarity } from '@/components/local-movers/ca-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
@@ -729,6 +730,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
 
         {stateSlug === 'new-jersey' ? (
           <NjRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'california' ? (
+          <CaRegulatoryClarity countyLabel={countyLabel} />
         ) : null}
 
         {popularRoutes.length > 0 ? (
