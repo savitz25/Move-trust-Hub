@@ -82,11 +82,19 @@ import { erieCountyIntelligence } from '@/lib/local-movers/county-intelligence/n
 import { monroeCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/monroe-ny';
 import { onondagaCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/onondaga-ny';
 import { albanyCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/albany-ny';
+// Arizona Core 7
+import { maricopaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/maricopa-az';
+import { pimaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/pima-az';
+import { pinalCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/pinal-az';
+import { yavapaiCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/yavapai-az';
+import { mohaveCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/mohave-az';
+import { yumaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/yuma-az';
+import { coconinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/coconino-az';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
@@ -163,6 +171,14 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   monroeCountyIntelligence,
   onondagaCountyIntelligence,
   albanyCountyIntelligence,
+  // Arizona Core 7
+  maricopaCountyIntelligence,
+  pimaCountyIntelligence,
+  pinalCountyIntelligence,
+  yavapaiCountyIntelligence,
+  mohaveCountyIntelligence,
+  yumaCountyIntelligence,
+  coconinoCountyIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -317,4 +333,15 @@ export const NY_TIER1_CORE12 = [
   'monroe',
   'onondaga',
   'albany',
+] as const;
+
+/** Arizona Tier-1 Core 7. */
+export const AZ_TIER1_CORE7 = [
+  'maricopa',
+  'pima',
+  'pinal',
+  'yavapai',
+  'mohave',
+  'yuma',
+  'coconino',
 ] as const;

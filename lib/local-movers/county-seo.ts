@@ -287,7 +287,9 @@ export function buildCountyFaqItems(
               ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Georgia household goods moves are generally regulated by the Georgia Department of Public Safety (DPS) Motor Carrier Compliance Division (MCCD). FMCSA does not cover every in-state Georgia job; confirm Georgia household goods mover credentials vs FMCSA for your exact origin and destination before you deposit.`
               : county.stateSlug === 'new-york'
                 ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate New York household goods moves are generally subject to New York State Department of Transportation (NYSDOT) authority and consumer-information requirements. FMCSA does not cover every in-state New York job; confirm NYSDOT household goods credentials vs FMCSA for your exact origin and destination before you deposit.`
-                : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                : county.stateSlug === 'arizona'
+                  ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Arizona does not operate a dedicated statewide household-goods mover certificate program like California BHGS, Florida FDACS, Texas TxDMV, or New York NYSDOT. For in-state jobs, still verify Arizona Corporation Commission business entity status, demand written estimates and insurance proof, and use consumer complaint channels. Confirm FMCSA for any move that crosses state lines before you deposit.`
+                  : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

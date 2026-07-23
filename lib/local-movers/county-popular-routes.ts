@@ -2987,6 +2987,289 @@ const NY_ROUTES: Record<string, CountyPopularRoute[]> = {
   ],
 };
 
+const AZ_ROUTES: Record<string, CountyPopularRoute[]> = {
+  maricopa: [
+    {
+      label: 'Within Maricopa (Phoenix / Scottsdale ↔ East Valley / West Valley)',
+      direction: 'within',
+      context:
+        'Master-planned HOAs, golf-course cul-de-sacs, and summer heat windows matter more than map miles.',
+    },
+    {
+      label: 'Southern California → Greater Phoenix corporate & family inflows',
+      direction: 'inbound',
+      context:
+        'I-10 cost-of-living and tech/finance exits from LA/OC/SD; plan volume surveys for large single-family stock.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Phoenix metro ↔ Tucson (I-10 desert corridor)',
+      direction: 'outbound',
+      context:
+        'Common university, healthcare, and dual-metro job hops; multi-hour logistics, not a short suburban quote.',
+    },
+    {
+      label: 'Phoenix ↔ Flagstaff elevation moves (desert to pine country)',
+      direction: 'outbound',
+      context:
+        'Roughly 7,000 ft gain; summer monsoon and winter snow on I-17 reshape crew hours and truck choice.',
+    },
+    {
+      label: 'Midwest snowbirds → Scottsdale / East Valley winter homes',
+      direction: 'inbound',
+      context:
+        'Seasonal dual-home demand from Illinois and Minnesota corridors; peak delivery windows cluster Oct–Apr.',
+      href: '/resources/routes/illinois-to-arizona',
+    },
+    {
+      label: 'Maricopa corporate HQ / remote-work reverse exits to California',
+      direction: 'outbound',
+      context:
+        'Return-to-coast and dual-state household goods; FMCSA carriers and full inventory valuation recommended.',
+    },
+  ],
+  pima: [
+    {
+      label: 'Within Pima (Tucson central / University ↔ Oro Valley / Marana)',
+      direction: 'within',
+      context:
+        'Foothill driveways and gated communities vs denser midtown stock; shuttle need shows up on surveys.',
+    },
+    {
+      label: 'California → Tucson retirement & lifestyle corridors',
+      direction: 'inbound',
+      context:
+        'SoCal empty-nesters and remote workers trading coastal premiums for desert space and lower taxes.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Tucson ↔ Phoenix metro career & family hops',
+      direction: 'outbound',
+      context:
+        'I-10 northbound job and healthcare moves; treat as full-day desert linehaul with heat staging plans.',
+    },
+    {
+      label: 'Minnesota / Upper Midwest → Tucson snowbird winter bases',
+      direction: 'inbound',
+      context:
+        'Classic cold-to-desert seasonal path; book early for peak winter arrivals and RV-adjacent household goods.',
+      href: '/resources/routes/minnesota-to-arizona',
+    },
+    {
+      label: 'Pima → Flagstaff / high-country summer homes',
+      direction: 'outbound',
+      context:
+        'Elevation relief moves; winter delivery windows on mountain routes differ sharply from valley summer heat.',
+    },
+    {
+      label: 'Davis-Monthan / military-adjacent PCS into greater Tucson',
+      direction: 'inbound',
+      context:
+        'PCS cycles create clustered demand; flexible delivery dates and base-area access rules dominate the plan.',
+    },
+  ],
+  pinal: [
+    {
+      label: 'Within Pinal (San Tan Valley / Queen Creek edge ↔ Casa Grande / Florence)',
+      direction: 'within',
+      context:
+        'Fast-growth master plans and long empty miles between towns; crew drive time often exceeds load time.',
+    },
+    {
+      label: 'Phoenix East Valley overflow → Pinal new-build corridors',
+      direction: 'inbound',
+      context:
+        'Affordability spill from Maricopa; HOA gate codes and unfinished streets are routine on move day.',
+    },
+    {
+      label: 'California → Pinal County starter & remote-work homes',
+      direction: 'inbound',
+      context:
+        'I-10 / I-8 linked West Coast exits into newer subdivisions between Phoenix and Tucson metros.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Pinal ↔ Tucson job & university family moves',
+      direction: 'outbound',
+      context:
+        'Southbound I-10 hops for UA-adjacent employment; multi-hour desert logistics with summer heat pacing.',
+    },
+    {
+      label: 'Illinois / Midwest → Pinal Sun Belt affordability corridor',
+      direction: 'inbound',
+      context:
+        'Corporate and family relocations seeking new construction between the two major AZ metros.',
+      href: '/resources/routes/illinois-to-arizona',
+    },
+    {
+      label: 'Pinal → Phoenix metro reverse career upgrades',
+      direction: 'outbound',
+      context:
+        'Job-center returns north into Maricopa; still a full logistics day when HOAs and elevators stack delays.',
+    },
+  ],
+  yavapai: [
+    {
+      label: 'Within Yavapai (Prescott / Prescott Valley ↔ Cottonwood / Verde Valley)',
+      direction: 'within',
+      context:
+        'Mountain grades, pine-country driveways, and four-season weather change truck type vs valley quotes.',
+    },
+    {
+      label: 'Phoenix metro → Prescott elevation & retirement moves',
+      direction: 'inbound',
+      context:
+        'Desert-to-mile-high lifestyle upgrades; I-17 weather and altitude shape both pickup and delivery windows.',
+    },
+    {
+      label: 'California → Prescott / Yavapai lifestyle & remote-work hubs',
+      direction: 'inbound',
+      context:
+        'SoCal exits seeking four seasons and lower density; hillside accessorials still apply at origin and dest.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Yavapai ↔ Flagstaff high-country pairs',
+      direction: 'outbound',
+      context:
+        'Northern AZ pine-belt hops; winter chain and storm delays are real planning factors, not edge cases.',
+    },
+    {
+      label: 'Midwest retirees → Prescott area year-round homes',
+      direction: 'inbound',
+      context:
+        'Snowbird-to-permanent transitions from Illinois corridors; full household goods, not seasonal partial loads.',
+      href: '/resources/routes/illinois-to-arizona',
+    },
+    {
+      label: 'Yavapai → Phoenix Valley medical & family support moves',
+      direction: 'outbound',
+      context:
+        'Down-elevation returns for healthcare access and adult-child proximity; plan heat staging on summer deliveries.',
+    },
+  ],
+  mohave: [
+    {
+      label: 'Within Mohave (Kingman ↔ Lake Havasu City / Bullhead River corridor)',
+      direction: 'within',
+      context:
+        'Long county spans and river-city staging; boat, golf-cart, and HOA rules often add inventory complexity.',
+    },
+    {
+      label: 'Southern California → Lake Havasu / Colorado River second homes',
+      direction: 'inbound',
+      context:
+        'Weekend-and-retirement inflows across the CA border; summer heat and waterfront access drive crew plans.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Mohave ↔ Las Vegas / southern Nevada job & family hops',
+      direction: 'outbound',
+      context:
+        'Cross-border regional moves; confirm interstate household-goods authority even when the drive feels local.',
+    },
+    {
+      label: 'Midwest snowbirds → Mohave winter river & desert bases',
+      direction: 'inbound',
+      context:
+        'Seasonal dual-home demand; peak winter booking for carriers serving Kingman–Havasu–Bullhead stock.',
+      href: '/resources/routes/minnesota-to-arizona',
+    },
+    {
+      label: 'Mohave → Phoenix metro healthcare & family support',
+      direction: 'outbound',
+      context:
+        'I-40 / US-93 linked down-state moves; multi-hour desert linehaul with limited shuttle options in rural legs.',
+    },
+    {
+      label: 'I-40 corridor corporate & logistics relocations into Kingman area',
+      direction: 'inbound',
+      context:
+        'Freight-adjacent employment and lower-cost housing draws; warehouse-district access differs from lakefront HOAs.',
+    },
+  ],
+  yuma: [
+    {
+      label: 'Within Yuma (city core ↔ Foothills / agricultural edge communities)',
+      direction: 'within',
+      context:
+        'Ag-season traffic and winter visitor density reshape crew hours; confirm driveway and irrigation clearances.',
+    },
+    {
+      label: 'Southern California → Yuma snowbird & border-region homes',
+      direction: 'inbound',
+      context:
+        'I-8 linked SoCal seasonal and permanent moves; peak winter arrivals compete hard for truck capacity.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Yuma ↔ Phoenix metro medical, military-family & job hops',
+      direction: 'outbound',
+      context:
+        'I-8 / I-10 multi-hour desert corridor; summer heat and monsoon timing dominate delivery scheduling.',
+    },
+    {
+      label: 'Upper Midwest → Yuma winter visitor household goods',
+      direction: 'inbound',
+      context:
+        'Classic snowbird path into one of AZ’s densest seasonal markets; partial loads and storage-in-transit are common.',
+      href: '/resources/routes/minnesota-to-arizona',
+    },
+    {
+      label: 'Yuma → Tucson / Pima lifestyle and family moves',
+      direction: 'outbound',
+      context:
+        'Eastbound desert hops for university, healthcare, and dual-county family networks — not a local hourly job.',
+    },
+    {
+      label: 'Marine Corps Air Station Yuma / military-adjacent PCS cycles',
+      direction: 'inbound',
+      context:
+        'PCS clustering around base timelines; TMO windows and flexible delivery dates matter more than map miles.',
+    },
+  ],
+  coconino: [
+    {
+      label: 'Within Coconino (Flagstaff ↔ Sedona / page-edge high-country towns)',
+      direction: 'within',
+      context:
+        'Mountain grades, snow seasons, and tourism traffic; truck type and chain readiness beat pure mileage quotes.',
+    },
+    {
+      label: 'Phoenix Valley → Flagstaff elevation & four-season moves',
+      direction: 'inbound',
+      context:
+        'Desert-to-7,000-ft lifestyle shifts on I-17; winter storms and summer monsoon both reshape crew windows.',
+    },
+    {
+      label: 'California → Flagstaff / Coconino remote-work & outdoor lifestyle',
+      direction: 'inbound',
+      context:
+        'West Coast exits seeking pine country and NAU-adjacent energy; hillside and snow-access surveys are essential.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Flagstaff ↔ Phoenix corporate reverse & winter-escape pairs',
+      direction: 'outbound',
+      context:
+        'Down-elevation job returns and dual-home logistics; plan inventory for climate-sensitive goods both directions.',
+    },
+    {
+      label: 'Midwest → northern Arizona high-country permanent homes',
+      direction: 'inbound',
+      context:
+        'Illinois and broader Midwest relocations into Flagstaff-area stock; full interstate household goods, not local crews.',
+      href: '/resources/routes/illinois-to-arizona',
+    },
+    {
+      label: 'Coconino tourism / hospitality workforce turnover near Sedona–Flagstaff',
+      direction: 'within',
+      context:
+        'Lease-end clusters and short-notice local demand; HOA and vacation-rental access rules dominate the day.',
+    },
+  ],
+};
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -2997,5 +3280,6 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'texas') return TX_ROUTES[countySlug] ?? [];
   if (stateSlug === 'georgia') return GA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'new-york') return NY_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'arizona') return AZ_ROUTES[countySlug] ?? [];
   return [];
 }
