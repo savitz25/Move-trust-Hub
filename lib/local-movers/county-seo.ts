@@ -283,7 +283,9 @@ export function buildCountyFaqItems(
           ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Florida household moves are generally subject to Florida Statutes Chapter 507 registration administered by the Florida Department of Agriculture and Consumer Services (FDACS). FMCSA does not cover every in-state Florida job; confirm FDACS registration vs FMCSA for your exact origin and destination before you deposit.`
           : county.stateSlug === 'texas'
             ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Texas household goods moves generally require active Texas Department of Motor Vehicles (TxDMV) household goods authority. FMCSA does not cover every in-state Texas job; confirm TxDMV authority vs FMCSA for your exact origin and destination before you deposit.`
-            : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+            : county.stateSlug === 'georgia'
+              ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Georgia household goods moves are generally regulated by the Georgia Department of Public Safety (DPS) Motor Carrier Compliance Division (MCCD). FMCSA does not cover every in-state Georgia job; confirm Georgia household goods mover credentials vs FMCSA for your exact origin and destination before you deposit.`
+              : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

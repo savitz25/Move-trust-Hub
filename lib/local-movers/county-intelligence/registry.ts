@@ -56,11 +56,24 @@ import { montgomeryCountyIntelligence } from '@/lib/local-movers/county-intellig
 import { williamsonCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/williamson-tx';
 import { elPasoCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/el-paso-tx';
 import { hidalgoCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/hidalgo-tx';
+// Georgia Core 6 (metro) + Wave 2
+import { fultonCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/fulton-ga';
+import { gwinnettCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/gwinnett-ga';
+import { cobbCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/cobb-ga';
+import { dekalbCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/dekalb-ga';
+import { cherokeeCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/cherokee-ga';
+import { forsythCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/forsyth-ga';
+import { claytonCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/clayton-ga';
+import { henryCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/henry-ga';
+import { hallCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/hall-ga';
+import { chathamCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/chatham-ga';
+import { richmondCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/richmond-ga';
+import { muscogeeCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/muscogee-ga';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
@@ -110,6 +123,20 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   williamsonCountyIntelligence,
   elPasoCountyIntelligence,
   hidalgoCountyIntelligence,
+  // Georgia Core 6 (metro)
+  fultonCountyIntelligence,
+  gwinnettCountyIntelligence,
+  cobbCountyIntelligence,
+  dekalbCountyIntelligence,
+  cherokeeCountyIntelligence,
+  forsythCountyIntelligence,
+  // Georgia Wave 2
+  claytonCountyIntelligence,
+  henryCountyIntelligence,
+  hallCountyIntelligence,
+  chathamCountyIntelligence,
+  richmondCountyIntelligence,
+  muscogeeCountyIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -211,3 +238,41 @@ export const TX_TIER1_CORE12 = [
   'el-paso',
   'hidalgo',
 ] as const;
+
+/** Georgia Tier-1 Core 12 (metro + coastal/regional). */
+export const GA_TIER1_CORE12 = [
+  'fulton',
+  'gwinnett',
+  'cobb',
+  'dekalb',
+  'chatham',
+  'cherokee',
+  'clayton',
+  'forsyth',
+  'henry',
+  'hall',
+  'richmond',
+  'muscogee',
+] as const;
+
+/** @deprecated Use GA_TIER1_CORE12 */
+export const GA_TIER1_CORE6 = [
+  'fulton',
+  'gwinnett',
+  'cobb',
+  'dekalb',
+  'cherokee',
+  'forsyth',
+] as const;
+
+/** @deprecated Use GA_TIER1_CORE12 */
+export const GA_TIER1_WAVE2 = [
+  'clayton',
+  'henry',
+  'hall',
+  'chatham',
+  'richmond',
+  'muscogee',
+] as const;
+
+export const GA_TIER1_ALL = [...GA_TIER1_CORE12] as const;

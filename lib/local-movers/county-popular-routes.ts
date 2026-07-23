@@ -2023,6 +2023,491 @@ const TX_ROUTES: Record<string, CountyPopularRoute[]> = {
   ],
 };
 
+const GA_ROUTES: Record<string, CountyPopularRoute[]> = {
+  fulton: [
+    {
+      label: 'Within Fulton (Midtown / Buckhead ↔ South Fulton / Alpharetta edge)',
+      direction: 'within',
+      context:
+        'High-rise freight elevators and street permits downtown vs gated north-metro HOAs — access rules drive the quote.',
+    },
+    {
+      label: 'New Jersey / Tri-State → Atlanta core job markets',
+      direction: 'inbound',
+      context:
+        'Finance, logistics HQ, and corporate relocations into Midtown and Perimeter-adjacent stock.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+    {
+      label: 'Illinois / Midwest → Fulton County career corridors',
+      direction: 'inbound',
+      context:
+        'Sun Belt HQ and consulting inflows; summer heat and mid-rise COIs shape delivery windows.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+    {
+      label: 'Atlanta ↔ Savannah (I-16 / I-75 coastal corridor)',
+      direction: 'outbound',
+      context:
+        'In-state long haul for port, film, and lifestyle moves; empty miles change crew pricing vs a suburban hop.',
+    },
+    {
+      label: 'Fulton ↔ Cobb / Gwinnett / DeKalb cross-county hops',
+      direction: 'within',
+      context:
+        'Metro pairs on I-75, I-85, and the Perimeter; treat as logistics days, not short hourly local quotes.',
+    },
+    {
+      label: 'Florida → Atlanta reverse career & family moves',
+      direction: 'inbound',
+      context:
+        'I-75 northbound household goods from South Florida and Central Florida job markets; FMCSA for interstate legs.',
+    },
+  ],
+  gwinnett: [
+    {
+      label: 'Within Gwinnett (Lawrenceville ↔ Duluth / Suwanee / Peachtree Corners)',
+      direction: 'within',
+      context:
+        'Diverse single-family and townhome stock; HOA gate codes and long cul-de-sac carries are routine.',
+    },
+    {
+      label: 'Massachusetts / New England → Gwinnett suburbs',
+      direction: 'inbound',
+      context:
+        'Family and tech-adjacent relocations seeking schools and space outside the Atlanta core.',
+      href: '/resources/routes/massachusetts-to-georgia',
+    },
+    {
+      label: 'Minnesota / Upper Midwest → Gwinnett County',
+      direction: 'inbound',
+      context:
+        'Cost-of-living and corporate Sun Belt exits into northern metro housing corridors.',
+      href: '/resources/routes/minnesota-to-georgia',
+    },
+    {
+      label: 'Gwinnett ↔ Fulton / DeKalb job-center commutes',
+      direction: 'within',
+      context:
+        'I-85 and 316 corridor hops; empty miles and elevator buildings at the destination change the plan.',
+    },
+    {
+      label: 'Gwinnett → Augusta / Richmond County (I-20 east)',
+      direction: 'outbound',
+      context:
+        'In-state medical and family moves along the I-20 spine; longer than a metro suburb pair.',
+    },
+    {
+      label: 'Northeast snowbird-adjacent → Gwinnett family housing',
+      direction: 'inbound',
+      context:
+        'Tri-State and Mid-Atlantic households choosing northern suburbs over city high-rises.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+  ],
+  cobb: [
+    {
+      label: 'Within Cobb (Marietta ↔ Kennesaw / Smyrna / East Cobb)',
+      direction: 'within',
+      context:
+        'Northwest metro single-family density; I-75 congestion and HOA certificates reshape load-day timing.',
+    },
+    {
+      label: 'Illinois → Cobb County corporate & aerospace corridors',
+      direction: 'inbound',
+      context:
+        'Midwest professional inflows into Marietta–Kennesaw housing; volume surveys beat map-mile guesses.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+    {
+      label: 'New Jersey → Northwest Atlanta / Cobb suburbs',
+      direction: 'inbound',
+      context:
+        'Family long-distance into school-driven markets; plan full inventory and valuation coverage.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+    {
+      label: 'Cobb ↔ Fulton (Cumberland / Vinings ↔ Midtown)',
+      direction: 'within',
+      context:
+        'Cross-county urban–suburban pairs; freight elevators at one end and driveway carries at the other.',
+    },
+    {
+      label: 'Cobb → Columbus / Muscogee (I-85 / I-185 south)',
+      direction: 'outbound',
+      context:
+        'In-state moves toward Fort Moore–adjacent job markets; multi-hour Georgia logistics, not a local hop.',
+    },
+    {
+      label: 'Florida Panhandle & North Florida → Cobb',
+      direction: 'inbound',
+      context:
+        'I-75 / I-10 linked family and military-spouse relocations into northwest metro stock.',
+    },
+  ],
+  dekalb: [
+    {
+      label: 'Within DeKalb (Decatur ↔ Brookhaven / Stone Mountain / Stonecrest)',
+      direction: 'within',
+      context:
+        'Intown bungalows and mid-rise stock vs eastern single-family; truck size and parking rules differ by pocket.',
+    },
+    {
+      label: 'Massachusetts → Decatur / intown DeKalb',
+      direction: 'inbound',
+      context:
+        'Academic, nonprofit, and healthcare relocations into walkable east-metro neighborhoods.',
+      href: '/resources/routes/massachusetts-to-georgia',
+    },
+    {
+      label: 'Midwest → DeKalb County (Emory / CDC–adjacent corridors)',
+      direction: 'inbound',
+      context:
+        'Research and hospital-system inflows; timed building access and street permits are common.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+    {
+      label: 'DeKalb ↔ Gwinnett / Fulton perimeter hops',
+      direction: 'within',
+      context:
+        'I-285 and Clairmont/Buford Highway corridors; treat as regional metro logistics with traffic buffers.',
+    },
+    {
+      label: 'DeKalb → Savannah / Chatham coastal corridor',
+      direction: 'outbound',
+      context:
+        'Atlanta-to-coast lifestyle and film-adjacent moves; long in-state haul with different climate packing needs.',
+    },
+    {
+      label: 'South Florida → East Atlanta / DeKalb',
+      direction: 'inbound',
+      context:
+        'I-75 northbound reverse Sun Belt moves into intown and eastern suburban housing.',
+    },
+  ],
+  chatham: [
+    {
+      label: 'Within Chatham (Historic District ↔ Pooler / Savannah suburbs)',
+      direction: 'within',
+      context:
+        'Cobblestone and tight historic blocks vs master-planned west-side HOAs — shuttle trucks are often required downtown.',
+    },
+    {
+      label: 'Atlanta metro → Savannah (Fulton / metro → Chatham)',
+      direction: 'inbound',
+      context:
+        'Port, tourism, and coastal lifestyle pulls from the capital region; multi-hour in-state planning.',
+    },
+    {
+      label: 'New Jersey / Northeast → Savannah coastal markets',
+      direction: 'inbound',
+      context:
+        'Retirement-adjacent and remote-work inflows; humidity and historic-building access dominate origin surveys.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+    {
+      label: 'Florida → Savannah / Hilton Head–adjacent Georgia side',
+      direction: 'inbound',
+      context:
+        'I-95 corridor family and second-home moves; interstate household goods, not local hourly crews.',
+    },
+    {
+      label: 'Chatham → Atlanta reverse career moves',
+      direction: 'outbound',
+      context:
+        'Coast-to-capital job changes; volume and valuation matter more than short-haul metro rates.',
+    },
+    {
+      label: 'Minnesota / Midwest → Coastal Georgia / Chatham',
+      direction: 'inbound',
+      context:
+        'Sun Belt exits into Savannah metro housing; plan multi-day linehaul and weather-aware delivery windows.',
+      href: '/resources/routes/minnesota-to-georgia',
+    },
+  ],
+  cherokee: [
+    {
+      label: 'Within Cherokee (Canton ↔ Woodstock / Holly Springs)',
+      direction: 'within',
+      context:
+        'North-metro growth corridors; longer driveway carries and HOA gate schedules shape crew hours.',
+    },
+    {
+      label: 'Illinois / Midwest → Cherokee County space & schools',
+      direction: 'inbound',
+      context:
+        'Family Sun Belt moves past the Perimeter into larger-lot stock; inventory surveys capture stairs and basements.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+    {
+      label: 'Cherokee ↔ Cobb / Fulton (I-575 / I-75 job links)',
+      direction: 'within',
+      context:
+        'Common reverse-commute and upgrade hops; empty miles north of the Perimeter change short-hop pricing.',
+    },
+    {
+      label: 'Massachusetts → North Atlanta / Cherokee suburbs',
+      direction: 'inbound',
+      context:
+        'New England professional households choosing Woodstock–Canton corridors over intown high-rises.',
+      href: '/resources/routes/massachusetts-to-georgia',
+    },
+    {
+      label: 'Cherokee → Florida family & snowbird corridors',
+      direction: 'outbound',
+      context:
+        'Southbound I-75 long-distance; FMCSA carriers and full packing scopes for interstate goods.',
+    },
+    {
+      label: 'Northeast → Cherokee County lifestyle inflows',
+      direction: 'inbound',
+      context:
+        'Tri-State cost and space exits into northern metro single-family markets.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+  ],
+  clayton: [
+    {
+      label: 'Within Clayton (Jonesboro ↔ Morrow / Riverdale / Lovejoy)',
+      direction: 'within',
+      context:
+        'South-metro apartment and single-family mix; Hartsfield-adjacent traffic windows reshape load times.',
+    },
+    {
+      label: 'Airport-area / ATL-adjacent multifamily moves',
+      direction: 'within',
+      context:
+        'Flight-path noise corridors and tight parking; elevators and management COIs dominate the day.',
+    },
+    {
+      label: 'Florida → South Atlanta / Clayton County',
+      direction: 'inbound',
+      context:
+        'I-75 northbound job and family moves into more affordable south-metro housing stock.',
+    },
+    {
+      label: 'Midwest → Clayton logistics & warehouse corridors',
+      direction: 'inbound',
+      context:
+        'Distribution and aviation-adjacent hiring pulls; summer heat shapes crew pacing on delivery day.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+    {
+      label: 'Clayton ↔ Fulton / Henry cross-county hops',
+      direction: 'within',
+      context:
+        'I-75 and 675 pairs; treat as metro logistics with rush-hour buffers, not a same-street local move.',
+    },
+    {
+      label: 'New Jersey → South metro Atlanta / Clayton',
+      direction: 'inbound',
+      context:
+        'Cost-sensitive Northeast exits into south-metro single-family and townhome markets.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+  ],
+  forsyth: [
+    {
+      label: 'Within Forsyth (Cumming ↔ South Forsyth / Lake Lanier edge)',
+      direction: 'within',
+      context:
+        'Affluent north-metro stock; HOA certificates, lake-adjacent access, and long cul-de-sacs are common.',
+    },
+    {
+      label: 'Minnesota → Forsyth County / Cumming corridors',
+      direction: 'inbound',
+      context:
+        'Upper Midwest family and corporate Sun Belt moves into top-rated school zones.',
+      href: '/resources/routes/minnesota-to-georgia',
+    },
+    {
+      label: 'Forsyth ↔ Gwinnett / Fulton (GA-400 spine)',
+      direction: 'within',
+      context:
+        'North-metro job and upgrade hops along 400; empty miles and gate codes drive short-haul quotes.',
+    },
+    {
+      label: 'Massachusetts → North metro / Forsyth',
+      direction: 'inbound',
+      context:
+        'New England professional relocations seeking space north of Atlanta without full rural isolation.',
+      href: '/resources/routes/massachusetts-to-georgia',
+    },
+    {
+      label: 'Forsyth → Savannah / coastal Georgia',
+      direction: 'outbound',
+      context:
+        'In-state lifestyle shifts from lake-country suburbs to the coast; multi-hour Georgia linehaul planning.',
+    },
+    {
+      label: 'Northeast → Forsyth County school-driven moves',
+      direction: 'inbound',
+      context:
+        'Tri-State households prioritizing schools and new construction over intown density.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+  ],
+  henry: [
+    {
+      label: 'Within Henry (McDonough ↔ Stockbridge / Locust Grove)',
+      direction: 'within',
+      context:
+        'Southeast metro growth; master-planned HOAs and I-75 south traffic windows change crew timing.',
+    },
+    {
+      label: 'Illinois → Henry County affordable metro edge',
+      direction: 'inbound',
+      context:
+        'Midwest family inflows seeking newer construction south of the Perimeter.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+    {
+      label: 'Henry ↔ Clayton / Fulton (I-75 south corridor)',
+      direction: 'within',
+      context:
+        'Airport-adjacent and downtown job links; treat as regional metro hops with rush-hour padding.',
+    },
+    {
+      label: 'Florida → Henry County / McDonough area',
+      direction: 'inbound',
+      context:
+        'Northbound I-75 household goods from Florida job markets into southeast metro housing.',
+    },
+    {
+      label: 'Henry → Augusta / Richmond (I-20 / I-75 connectors)',
+      direction: 'outbound',
+      context:
+        'In-state medical and family moves toward the CSRA; longer than a south-metro suburb pair.',
+    },
+    {
+      label: 'Northeast → Southeast Atlanta / Henry suburbs',
+      direction: 'inbound',
+      context:
+        'Cost-driven Tri-State exits into Stockbridge–McDonough single-family corridors.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+  ],
+  hall: [
+    {
+      label: 'Within Hall (Gainesville ↔ Flowery Branch / Oakwood)',
+      direction: 'within',
+      context:
+        'Lake Lanier and poultry-industry corridors; rural driveways mix with growing suburban HOAs.',
+    },
+    {
+      label: 'Minnesota / Upper Midwest → Gainesville / Hall County',
+      direction: 'inbound',
+      context:
+        'Manufacturing and healthcare Sun Belt pulls; inventory surveys should capture stairs and outbuildings.',
+      href: '/resources/routes/minnesota-to-georgia',
+    },
+    {
+      label: 'Hall ↔ Forsyth / Gwinnett (I-985 / Lanier corridor)',
+      direction: 'within',
+      context:
+        'Northeast-metro upgrade and reverse-commute hops; empty miles north of the Perimeter matter.',
+    },
+    {
+      label: 'Massachusetts → Hall County / Lake Lanier edge',
+      direction: 'inbound',
+      context:
+        'New England lifestyle moves toward lake-adjacent housing outside core Atlanta density.',
+      href: '/resources/routes/massachusetts-to-georgia',
+    },
+    {
+      label: 'Hall → Atlanta core / Fulton job centers',
+      direction: 'outbound',
+      context:
+        'Gainesville-to-city career moves; multi-hour same-state logistics vs a short suburban quote.',
+    },
+    {
+      label: 'Florida → Northeast Georgia / Hall',
+      direction: 'inbound',
+      context:
+        'I-75 / I-985 linked family relocations into Gainesville metro stock; interstate packing scopes apply.',
+    },
+  ],
+  richmond: [
+    {
+      label: 'Within Richmond (Downtown Augusta ↔ Martinez / Evans edge)',
+      direction: 'within',
+      context:
+        'River-city mid-rises and medical-district access vs CSRA suburban HOAs — truck and permit rules differ.',
+    },
+    {
+      label: 'Fort Eisenhower (Gordon) PCS & contractor moves',
+      direction: 'inbound',
+      context:
+        'Order cycles drive short-notice demand; flexible dates beat rock-bottom local hourly rates.',
+    },
+    {
+      label: 'Atlanta metro → Augusta / Richmond County',
+      direction: 'inbound',
+      context:
+        'I-20 east medical, cyber, and family moves from the capital region; in-state long haul planning.',
+    },
+    {
+      label: 'New Jersey / Northeast → Augusta CSRA markets',
+      direction: 'inbound',
+      context:
+        'Military-spouse, medical, and retirement-adjacent inflows along the I-20 corridor.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+    {
+      label: 'Illinois / Midwest → Augusta medical & defense corridors',
+      direction: 'inbound',
+      context:
+        'Hospital-system and Fort Eisenhower–adjacent professional relocations.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+    {
+      label: 'Richmond → Atlanta reverse career moves',
+      direction: 'outbound',
+      context:
+        'CSRA-to-capital job changes; volume-based interstate-style planning even when staying in Georgia.',
+    },
+  ],
+  muscogee: [
+    {
+      label: 'Within Muscogee (Uptown Columbus ↔ Midland / Fort Moore edge)',
+      direction: 'within',
+      context:
+        'River-city stock vs post-adjacent suburbs; base access windows and gate procedures change the day.',
+    },
+    {
+      label: 'Fort Moore (Benning) PCS household goods',
+      direction: 'inbound',
+      context:
+        'PCS cycles create clustered demand; TMO timelines and flexible delivery windows matter most.',
+    },
+    {
+      label: 'Atlanta metro → Columbus / Muscogee',
+      direction: 'inbound',
+      context:
+        'I-85 / I-185 south career and military-family moves; multi-hour in-state logistics from the capital.',
+    },
+    {
+      label: 'Midwest → Columbus GA / Fort Moore corridors',
+      direction: 'inbound',
+      context:
+        'Illinois and broader Midwest PCS-adjacent and contractor relocations into the Chattahoochee valley.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+    {
+      label: 'Florida → Columbus / Muscogee military & family moves',
+      direction: 'inbound',
+      context:
+        'I-10 / I-75 linked PCS and spouse employment hops; interstate household goods, not local hourly crews.',
+    },
+    {
+      label: 'Muscogee → Atlanta / Fulton reverse career exits',
+      direction: 'outbound',
+      context:
+        'Post-service and corporate moves north to the capital region; plan full inventory and valuation coverage.',
+    },
+  ],
+};
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -2031,5 +2516,6 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'california') return CA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'florida') return FL_ROUTES[countySlug] ?? [];
   if (stateSlug === 'texas') return TX_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'georgia') return GA_ROUTES[countySlug] ?? [];
   return [];
 }

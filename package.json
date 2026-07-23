@@ -35,6 +35,7 @@
     "qa:ca-tier1": "tsx scripts/qa-ca-tier1.ts",
     "qa:fl-tier1": "tsx scripts/qa-fl-tier1.ts",
     "qa:tx-tier1": "tsx scripts/qa-tx-tier1.ts",
+    "qa:ga-tier1": "tsx scripts/qa-ga-tier1.ts",
     "guard:canonical-county-metadata": "tsx scripts/guard-canonical-county-metadata.ts",
     "guard:testimonials": "tsx scripts/guard-county-testimonial-imports.ts",
     "guard:content-exemptions": "tsx scripts/guard-content-tier-exemptions.ts",
