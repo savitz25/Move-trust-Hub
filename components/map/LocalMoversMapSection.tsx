@@ -45,7 +45,8 @@ export function LocalMoversMapSection() {
             Browse Local Movers by State &amp; County
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Click any state to explore counties, then click a county to see top local movers.
+            Click any state to open its full local movers landing page — county guides,
+            mover counts, and tools. Use the list below if you prefer text links.
           </p>
         </div>
 

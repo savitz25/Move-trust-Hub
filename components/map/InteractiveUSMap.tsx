@@ -1,10 +1,9 @@
 'use client';
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, CheckCircle2, MapPin, Search } from 'lucide-react';
+import { CheckCircle2, Search } from 'lucide-react';
 import type {
   MapSearchResult,
-  MapStateCountiesGeo,
   MapStateMeta,
   MapStatesFile,
 } from '@/lib/map/types';
@@ -17,10 +16,12 @@ const CURATED_FILL = '#0d9488';
 const CURATED_HOVER = '#14b8a6';
 const DEFAULT_FILL = '#cbd5e1';
 const DEFAULT_HOVER = '#94a3b8';
-const COUNTY_FILL = '#e2e8f0';
-const COUNTY_HOVER = '#0d9488';
 const STROKE = '#f8fafc';
 
+/**
+ * National US map for discovery. State selection navigates to
+ * /local-movers/{state-slug} — no in-place zoom/filter.
+ */
 export function InteractiveUSMap({ statesMeta }: Props) {
   const searchId = useId();
   const listboxId = useId();
@@ -29,10 +30,7 @@ export function InteractiveUSMap({ statesMeta }: Props) {
 
   const [isVisible, setIsVisible] = useState(false);
   const [statesGeo, setStatesGeo] = useState<MapStatesFile | null>(null);
-  const [countyGeo, setCountyGeo] = useState<MapStateCountiesGeo | null>(null);
-  const [activeStateSlug, setActiveStateSlug] = useState<string | null>(null);
   const [loadingGeo, setLoadingGeo] = useState(false);
-  const [loadingCounties, setLoadingCounties] = useState(false);
 
   const [query, setQuery] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
@@ -42,11 +40,6 @@ export function InteractiveUSMap({ statesMeta }: Props) {
 
   const curatedBySlug = useMemo(
     () => new Map(statesMeta.map((s) => [s.slug, s.curated])),
-    [statesMeta]
-  );
-
-  const stateNameBySlug = useMemo(
-    () => new Map(statesMeta.map((s) => [s.slug, s.name])),
     [statesMeta]
   );
 
@@ -116,76 +109,12 @@ export function InteractiveUSMap({ statesMeta }: Props) {
     };
   }, [isVisible, statesGeo]);
 
-  const loadStateCounties = useCallback(async (stateSlug: string) => {
-    setLoadingCounties(true);
-    setActiveStateSlug(stateSlug);
-
-    try {
-      const res = await fetch(`/geo/counties/${stateSlug}.json`);
-      if (!res.ok) throw new Error('County geo not found');
-      const data = (await res.json()) as MapStateCountiesGeo;
-      setCountyGeo(data);
-    } catch {
-      setActiveStateSlug(null);
-      setCountyGeo(null);
-    } finally {
-      setLoadingCounties(false);
-    }
+  /** Real navigation — state landers or county pages. */
+  const handleSearchSelect = useCallback((result: MapSearchResult) => {
+    setQuery('');
+    setSearchOpen(false);
+    window.location.href = result.href;
   }, []);
-
-  const handleBack = useCallback(() => {
-    setActiveStateSlug(null);
-    setCountyGeo(null);
-  }, []);
-
-  const handleStateActivate = useCallback(
-    (stateSlug: string, event?: React.MouseEvent | React.KeyboardEvent) => {
-      if (event) event.preventDefault();
-      void loadStateCounties(stateSlug);
-    },
-    [loadStateCounties]
-  );
-
-  const handleSearchSelect = useCallback(
-    (result: MapSearchResult) => {
-      setQuery('');
-      setSearchOpen(false);
-
-      if (result.type === 'county') {
-        window.location.href = result.href;
-        return;
-      }
-
-      if (result.stateSlug) {
-        void loadStateCounties(result.stateSlug);
-      }
-    },
-    [loadStateCounties]
-  );
-
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && activeStateSlug) {
-        handleBack();
-      }
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [activeStateSlug, handleBack]);
-
-  const currentViewBox =
-    activeStateSlug && countyGeo
-      ? countyGeo.viewBox
-      : statesGeo?.viewBox ?? '0 0 960 500';
-
-  const activeStateName = activeStateSlug
-    ? stateNameBySlug.get(activeStateSlug)
-    : null;
-
-  const liveMessage = activeStateName
-    ? `Showing counties in ${activeStateName}. Press Escape to return to the national map.`
-    : 'Showing all U.S. states. Click a state to explore its counties.';
 
   return (
     <div ref={containerRef} className="space-y-4">
@@ -244,40 +173,39 @@ export function InteractiveUSMap({ statesMeta }: Props) {
               className="absolute z-20 mt-1 w-full max-h-64 overflow-auto rounded-xl border bg-popover shadow-lg py-1"
             >
               {searchResults.map((result, index) => (
-                <li key={`${result.type}-${result.href}`} role="option" aria-selected={index === highlightIndex}>
-                  <button
-                    type="button"
-                    className={`w-full text-left px-3 py-2 text-sm hover:bg-muted/60 ${
+                <li
+                  key={`${result.type}-${result.href}`}
+                  role="option"
+                  aria-selected={index === highlightIndex}
+                >
+                  <a
+                    href={result.href}
+                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-muted/60 ${
                       index === highlightIndex ? 'bg-muted/60' : ''
                     }`}
                     onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => handleSearchSelect(result)}
+                    onClick={() => {
+                      setQuery('');
+                      setSearchOpen(false);
+                    }}
                   >
                     <span className="font-medium">{result.label}</span>
                     {result.sublabel && (
-                      <span className="text-muted-foreground ml-2">{result.sublabel}</span>
+                      <span className="text-muted-foreground ml-2">
+                        {result.sublabel}
+                      </span>
                     )}
                     <span className="sr-only">
-                      {result.type === 'state' ? 'State' : 'County'}
+                      {result.type === 'state'
+                        ? 'Open state local movers page'
+                        : 'Open county local movers page'}
                     </span>
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
           )}
         </div>
-
-        {activeStateSlug && (
-          <button
-            type="button"
-            onClick={handleBack}
-            className="inline-flex items-center gap-2 rounded-xl border bg-background px-4 py-2.5 text-sm font-medium hover:bg-muted/50 transition-colors shrink-0"
-            aria-label="Back to national map"
-          >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            All states
-          </button>
-        )}
       </div>
 
       <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
@@ -297,22 +225,23 @@ export function InteractiveUSMap({ statesMeta }: Props) {
           />
           All states
         </span>
+        <span className="inline-flex items-center gap-1.5 text-muted-foreground/90">
+          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+          Click a state to open its full county guide
+        </span>
       </div>
 
       <div
         className="relative w-full rounded-2xl border bg-gradient-to-b from-slate-50 to-white overflow-hidden"
         role="region"
-        aria-label={
-          activeStateName
-            ? `Interactive map of ${activeStateName} counties`
-            : 'Interactive map of United States states'
-        }
+        aria-label="Interactive map of United States states"
       >
         <p id={liveRegionId} className="sr-only" aria-live="polite">
-          {liveMessage}
+          Showing all U.S. states. Activate a state to open its local movers landing
+          page with county guides.
         </p>
 
-        {(loadingGeo || loadingCounties) && (
+        {loadingGeo && (
           <div
             className="absolute inset-0 z-10 flex items-center justify-center bg-background/40 backdrop-blur-[1px]"
             aria-hidden="true"
@@ -327,100 +256,60 @@ export function InteractiveUSMap({ statesMeta }: Props) {
           </div>
         ) : (
           <svg
-            viewBox={currentViewBox}
-            className="w-full h-auto max-h-[520px] touch-manipulation transition-[viewBox] duration-500 ease-in-out"
+            viewBox={statesGeo?.viewBox ?? '0 0 960 500'}
+            className="w-full h-auto max-h-[520px] touch-manipulation"
             preserveAspectRatio="xMidYMid meet"
             aria-describedby={liveRegionId}
           >
-            <title>
-              {activeStateName
-                ? `${activeStateName} county map for local movers`
-                : 'United States map for browsing local movers by state'}
-            </title>
+            <title>United States map for browsing local movers by state</title>
             <desc>
-              {activeStateName
-                ? `Click a county in ${activeStateName} to view top local movers in that area.`
-                : 'Click any state to zoom in and explore county-level local mover guides.'}
+              Click any state to open its dedicated local movers page with county
+              guides. Fully curated states are highlighted in teal.
             </desc>
 
-            {activeStateSlug && countyGeo ? (
-              <g key={`counties-${activeStateSlug}`}>
-                {countyGeo.counties.map((county) => (
-                  <a
-                    key={county.slug}
-                    href={county.href}
-                    aria-label={`${county.name}, ${activeStateName} local movers`}
-                    className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 rounded-sm"
-                  >
-                    <path
-                      d={county.path}
-                      fill={COUNTY_FILL}
-                      stroke={STROKE}
-                      strokeWidth={0.5}
-                      className="transition-colors duration-150 cursor-pointer"
-                      style={{ vectorEffect: 'non-scaling-stroke' }}
-                      onMouseEnter={(e) => {
-                        (e.target as SVGPathElement).setAttribute('fill', COUNTY_HOVER);
-                      }}
-                      onMouseLeave={(e) => {
-                        (e.target as SVGPathElement).setAttribute('fill', COUNTY_FILL);
-                      }}
-                    />
-                  </a>
-                ))}
-              </g>
-            ) : (
-              statesGeo && (
-                <g key="states">
-                  {statesGeo.states.map((state) => {
-                    const curated = curatedBySlug.get(state.slug) ?? state.curated;
-                    return (
-                      <a
-                        key={state.slug}
-                        href={state.href}
-                        aria-label={`${state.name}${curated ? ', fully curated local mover guides' : ''}. Click to explore counties.`}
-                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1"
-                        onClick={(e) => handleStateActivate(state.slug, e)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            handleStateActivate(state.slug, e);
-                          }
+            {statesGeo && (
+              <g key="states">
+                {statesGeo.states.map((state) => {
+                  const curated = curatedBySlug.get(state.slug) ?? state.curated;
+                  // Prefer meta href (canonical /local-movers/{slug}) over geo file
+                  const href =
+                    statesMeta.find((s) => s.slug === state.slug)?.href ??
+                    state.href;
+                  return (
+                    <a
+                      key={state.slug}
+                      href={href}
+                      aria-label={`${state.name}${
+                        curated ? ', fully curated local mover guides' : ''
+                      }. Open ${state.name} local movers page.`}
+                      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1"
+                    >
+                      <path
+                        d={state.path}
+                        fill={curated ? CURATED_FILL : DEFAULT_FILL}
+                        stroke={STROKE}
+                        strokeWidth={0.75}
+                        className="transition-colors duration-150 cursor-pointer"
+                        style={{ vectorEffect: 'non-scaling-stroke' }}
+                        onMouseEnter={(e) => {
+                          (e.target as SVGPathElement).setAttribute(
+                            'fill',
+                            curated ? CURATED_HOVER : DEFAULT_HOVER
+                          );
                         }}
-                      >
-                        <path
-                          d={state.path}
-                          fill={curated ? CURATED_FILL : DEFAULT_FILL}
-                          stroke={STROKE}
-                          strokeWidth={0.75}
-                          className="transition-colors duration-150 cursor-pointer"
-                          style={{ vectorEffect: 'non-scaling-stroke' }}
-                          onMouseEnter={(e) => {
-                            (e.target as SVGPathElement).setAttribute(
-                              'fill',
-                              curated ? CURATED_HOVER : DEFAULT_HOVER
-                            );
-                          }}
-                          onMouseLeave={(e) => {
-                            (e.target as SVGPathElement).setAttribute(
-                              'fill',
-                              curated ? CURATED_FILL : DEFAULT_FILL
-                            );
-                          }}
-                        />
-                      </a>
-                    );
-                  })}
-                </g>
-              )
+                        onMouseLeave={(e) => {
+                          (e.target as SVGPathElement).setAttribute(
+                            'fill',
+                            curated ? CURATED_FILL : DEFAULT_FILL
+                          );
+                        }}
+                      />
+                    </a>
+                  );
+                })}
+              </g>
             )}
           </svg>
-        )}
-
-        {activeStateName && (
-          <div className="absolute top-3 left-3 rounded-lg bg-background/90 border px-3 py-1.5 text-sm font-medium shadow-sm">
-            <MapPin className="inline h-3.5 w-3.5 mr-1 text-primary" aria-hidden="true" />
-            {activeStateName}
-          </div>
         )}
       </div>
     </div>

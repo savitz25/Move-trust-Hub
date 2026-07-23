@@ -9,6 +9,7 @@ import { PageHeroCta } from '@/components/conversion/page-hero-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { StateHubTier1Links } from '@/components/local-movers/state-hub-tier1-links';
+import { StateCountyMap } from '@/components/map/StateCountyMap';
 import { getLocalState, localStates } from '@/lib/local-movers/states';
 import {
   buildStateDescription,
@@ -124,6 +125,28 @@ export default async function LocalMoversStatePage({ params }: Props) {
         {hasCounties ? (
           <>
             <StateHubTier1Links stateName={state.name} links={tier1QuickLinks} />
+
+            {state.slug !== 'district-of-columbia' ? (
+              <section
+                className="mb-12"
+                aria-labelledby="state-county-map-heading"
+              >
+                <div className="mb-4">
+                  <h2
+                    id="state-county-map-heading"
+                    className="text-2xl font-semibold tracking-tight text-slate-900"
+                  >
+                    Explore {state.name} on the map
+                  </h2>
+                  <p className="mt-1.5 text-sm text-slate-500">
+                    Click any county to open its local movers guide. Fully curated
+                    states include deep county research and ratings.
+                  </p>
+                </div>
+                <StateCountyMap stateSlug={state.slug} stateName={state.name} />
+              </section>
+            ) : null}
+
             <section className="mb-14">
               <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
                 <div>
