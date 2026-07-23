@@ -1,0 +1,284 @@
+{
+  "nebraska": {
+    "omaha-metro": [
+      "douglas",
+      "sarpy",
+      "washington",
+      "cass",
+      "saunders",
+      "dodge",
+      "burt"
+    ],
+    "lincoln-southeast": [
+      "lancaster",
+      "seward",
+      "gage",
+      "otoe",
+      "johnson",
+      "nemaha",
+      "richardson",
+      "pawnee",
+      "jefferson",
+      "saline",
+      "fillmore",
+      "thayer",
+      "nuckolls",
+      "clay",
+      "webster",
+      "franklin",
+      "adams",
+      "york",
+      "butler",
+      "polk",
+      "hamilton"
+    ],
+    "central-ne": [
+      "hall",
+      "buffalo",
+      "dawson",
+      "phelps",
+      "kearney",
+      "howard",
+      "merrick",
+      "nance",
+      "platte",
+      "colfax",
+      "madison",
+      "stanton",
+      "cuming",
+      "thurston",
+      "wayne",
+      "pierce",
+      "antelope",
+      "boone",
+      "greeley",
+      "valley",
+      "sherman",
+      "custer",
+      "loup",
+      "garfield",
+      "wheeler",
+      "holt",
+      "boyd",
+      "knox",
+      "cedar",
+      "dixon",
+      "dakota"
+    ],
+    "western-ne": [
+      "lincoln",
+      "keith",
+      "perkins",
+      "chase",
+      "dundy",
+      "hitchcock",
+      "red-willow",
+      "frontier",
+      "gosper",
+      "furnas",
+      "harlan",
+      "hayes"
+    ],
+    "panhandle": [
+      "scotts-bluff",
+      "banner",
+      "kimball",
+      "cheyenne",
+      "deuel",
+      "morrill",
+      "box-butte",
+      "dawes",
+      "sioux",
+      "sheridan",
+      "garden",
+      "arthur",
+      "grant",
+      "hooker",
+      "thomas",
+      "mcpherson",
+      "logan",
+      "cherry",
+      "keya-paha",
+      "brown",
+      "rock",
+      "blaine"
+    ]
+  },
+  "idaho": {
+    "treasure-valley": [
+      "ada",
+      "canyon",
+      "gem",
+      "payette",
+      "owyhee",
+      "elmore",
+      "boise",
+      "valley",
+      "adams",
+      "washington"
+    ],
+    "eastern-id": [
+      "bonneville",
+      "bannock",
+      "bingham",
+      "madison",
+      "jefferson",
+      "fremont",
+      "teton",
+      "clark",
+      "butte",
+      "power",
+      "caribou",
+      "bear-lake",
+      "franklin",
+      "oneida"
+    ],
+    "magic-valley": [
+      "twin-falls",
+      "jerome",
+      "cassia",
+      "minidoka",
+      "gooding",
+      "lincoln",
+      "camas",
+      "blaine"
+    ],
+    "north-id": [
+      "kootenai",
+      "bonner",
+      "boundary",
+      "shoshone",
+      "benewah",
+      "latah",
+      "nez-perce",
+      "clearwater",
+      "lewis",
+      "idaho"
+    ],
+    "central-mountain": [
+      "custer",
+      "lemhi"
+    ]
+  },
+  "west-virginia": {
+    "northern-panhandle": [
+      "ohio",
+      "brooke",
+      "hancock",
+      "marshall",
+      "wetzel",
+      "tyler"
+    ],
+    "eastern-panhandle": [
+      "berkeley",
+      "jefferson",
+      "morgan",
+      "hampshire",
+      "hardy",
+      "mineral",
+      "grant",
+      "pendleton"
+    ],
+    "north-central": [
+      "monongalia",
+      "marion",
+      "harrison",
+      "taylor",
+      "preston",
+      "tucker",
+      "randolph",
+      "barbour",
+      "upshur",
+      "lewis",
+      "doddridge",
+      "ritchie",
+      "gilmer",
+      "braxton",
+      "webster"
+    ],
+    "kanawha-valley": [
+      "kanawha",
+      "putnam",
+      "cabell",
+      "wayne",
+      "lincoln",
+      "boone",
+      "logan",
+      "mingo",
+      "clay",
+      "roane",
+      "jackson",
+      "mason",
+      "wirt",
+      "wood",
+      "pleasants",
+      "calhoun"
+    ],
+    "southern-wv": [
+      "raleigh",
+      "fayette",
+      "nicholas",
+      "greenbrier",
+      "summers",
+      "monroe",
+      "mercer",
+      "wyoming",
+      "mcdowell",
+      "pocahontas"
+    ]
+  },
+  "hawaii": {
+    "oahu": [
+      "honolulu"
+    ],
+    "maui-county": [
+      "maui",
+      "kalawao"
+    ],
+    "hawaii-island": [
+      "hawaii"
+    ],
+    "kauai": [
+      "kauai"
+    ]
+  },
+  "alaska": {
+    "anchorage-southcentral": [
+      "anchorage",
+      "matanuska-susitna",
+      "kenai-peninsula",
+      "valdez-cordova",
+      "kodiak-island"
+    ],
+    "interior": [
+      "fairbanks-north-star",
+      "denali",
+      "southeast-fairbanks",
+      "yukon-koyukuk"
+    ],
+    "southeast": [
+      "juneau",
+      "ketchikan-gateway",
+      "sitka",
+      "petersburg",
+      "wrangell",
+      "haines",
+      "skagway",
+      "hoonah-angoon",
+      "prince-of-wales-hyder",
+      "yakutat"
+    ],
+    "southwest-bush": [
+      "bethel",
+      "wade-hampton",
+      "dillingham",
+      "bristol-bay",
+      "lake-and-peninsula",
+      "aleutians-east",
+      "aleutians-west",
+      "nome",
+      "northwest-arctic",
+      "north-slope"
+    ]
+  }
+}

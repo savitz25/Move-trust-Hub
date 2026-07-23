@@ -92,6 +92,11 @@ const STATE_NAMES = {
   mississippi: 'Mississippi',
   nevada: 'Nevada',
   'new-mexico': 'New Mexico',
+  nebraska: 'Nebraska',
+  idaho: 'Idaho',
+  'west-virginia': 'West Virginia',
+  hawaii: 'Hawaii',
+  alaska: 'Alaska',
 };
 
 for (const file of packFiles) {
