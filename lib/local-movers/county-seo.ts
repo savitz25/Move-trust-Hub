@@ -259,9 +259,25 @@ export function buildCountyFaqItems(
   const countyLabel = buildCountyLabel(county);
   const location = county.seat ?? countyLabel;
   const costs = buildCountyCostGuide(county, stateName);
-  const topMovers = movers.slice(0, 3);
-  const topMover = movers[0];
-  const topMoverList = topMovers.map((m) => `${m.name} (${m.rating}â˜…)`).join(', ');
+  const eligibleTop = movers.filter(
+    (m) => (m.rating ?? 0) >= 4.0 && (m.reviewCount ?? 0) >= 5
+  );
+  const topMovers = eligibleTop.slice(0, 3);
+  const topMoverList = topMovers
+    .map((m) => `${m.name} (${m.rating}★, ${m.reviewCount.toLocaleString()} reviews)`)
+    .join(', ');
+
+  const bestMoversAnswer =
+    topMovers.length > 1
+      ? `Among verified listings with real review volume serving ${location}, higher-rated options include ${topMoverList}. We prioritize true local/in-state signals when available, then ratings, licensing completeness, and review volume — never zero-review shells as “top-rated.”`
+      : topMovers.length === 1
+        ? `Among verified listings with real review volume serving ${location}, ${topMovers[0]!.name} currently shows ${topMovers[0]!.rating}★ from ${topMovers[0]!.reviewCount.toLocaleString()} industry-reported reviews. Compare full listings on this page and verify licensing before booking.`
+        : `We do not label zero-review or unrated shells as top-rated. Compare verified movers on this page by licensing, local/in-state fit, and review basis — then confirm credentials on FMCSA.gov (and state public-mover rules for purely intrastate work).`;
+
+  const licensingAnswer =
+    county.stateSlug === 'new-jersey'
+      ? `Interstate moves (crossing state lines) require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate New Jersey moves are regulated under New Jersey’s public movers framework (Division of Consumer Affairs), not FMCSA alone. FMCSA does not cover every local NJ job; confirm the correct authority for your move type.`
+      : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {
@@ -270,32 +286,37 @@ export function buildCountyFaqItems(
     },
     {
       question: `What are the best local movers in ${countyLabel}?`,
-      answer: topMovers.length > 1
-        ? `Top-rated movers serving ${location} include ${topMoverList}. We rank companies by Google ratings, FMCSA licensing, review volume, and service fit for ${countyLabel}, ${county.stateCode}.`
-        : topMover
-          ? `Top-rated options serving ${location} include ${topMover.name} (${topMover.rating}â˜… from ${topMover.reviewCount.toLocaleString()} reviews). We rank movers by customer ratings, FMCSA licensing, review volume, and service fit for ${countyLabel}.`
-          : `We rank local movers in ${countyLabel} by customer ratings, FMCSA USDOT/MC licensing, review volume, and BBB standing. Compare companies on this page and verify current licensing on FMCSA.gov before booking.`,
+      answer: bestMoversAnswer,
     },
     {
       question: `Do local movers in ${stateName} need an FMCSA license?`,
-      answer: `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, requirements vary â€” but reputable companies still carry proper licensing and insurance. Always verify credentials on FMCSA.gov before paying a deposit.`,
+      answer: licensingAnswer,
     },
     {
       question: `How far in advance should I book movers in ${location}?`,
-      answer: `For local moves in ${countyLabel}, book 2â€“4 weeks ahead for standard timing. Peak season (Mayâ€“September), month-end turns, and weekends in ${location} may require 4â€“6 weeks lead time. Last-minute moves are sometimes available but cost more.`,
+      answer: `For local moves in ${countyLabel}, book 2–4 weeks ahead for standard timing. Peak season (May–September), month-end turns, and weekends in ${location} may require 4–6 weeks lead time. Last-minute moves are sometimes available but cost more.`,
     },
     {
       question: `What is the difference between local and interstate movers in ${countyLabel}?`,
-      answer: `Local movers handle in-county and short-distance relocations, often priced hourly or by crew size. Interstate movers transport goods across state lines under FMCSA regulation. If your move leaves ${stateName}, use our interstate directory and moving calculator to compare licensed long-distance carriers.`,
+      answer: `Local and in-state movers handle in-county and short-distance relocations, often priced hourly or by crew size. National/long-distance carriers transport goods under FMCSA regulation when the move crosses state lines. Listings on this page separate local/in-state companies from national carriers serving ${countyLabel} so you can choose the right fit.`,
     },
     {
       question: `How do I avoid moving scams in ${countyLabel}?`,
-      answer: `Get written estimates after an inventory survey, avoid large upfront deposits via wire or gift cards, verify USDOT numbers on FMCSA.gov, and compare multiple companies. Read our guide on spotting red flags before booking movers in ${location}.`,
+      answer: `Get written estimates after an inventory survey, avoid large upfront deposits via wire or gift cards, verify USDOT numbers on FMCSA.gov (and NJ public-mover credentials for in-state-only jobs when applicable), and compare multiple companies. Read our guide on spotting red flags before booking movers in ${location}.`,
     },
   ];
 
   const extras = getDeepCountyFaqExtras(county.stateSlug, county.slug) ?? [];
-  return [...baseFaqs, ...extras];
+  // Dedupe by normalized question text — deep extras must not repeat base FAQs.
+  const seen = new Set<string>();
+  const deduped: CountyFaqItem[] = [];
+  for (const item of [...baseFaqs, ...extras]) {
+    const key = item.question.trim().toLowerCase().replace(/\s+/g, ' ');
+    if (seen.has(key)) continue;
+    seen.add(key);
+    deduped.push(item);
+  }
+  return deduped;
 }
 
 export type CountyCostGuide = {

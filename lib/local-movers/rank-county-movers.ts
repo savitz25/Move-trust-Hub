@@ -20,7 +20,13 @@ export function localRelevanceScore(mover: LocalMover, county: LocalCounty): num
   // Directory listings with verified scope beat anonymous catalog seeds.
   if (mover.listingSource === 'directory') score += 8;
 
-  if (city) {
+  const hqState = (mover.headquartersState ?? '').toUpperCase();
+  const pageState = (county.stateCode ?? '').toUpperCase();
+  // City/seat name matches only count when HQ state is unknown or matches the page state.
+  // Prevents "Somerville, MA" from scoring as local for Somerville (Somerset County), NJ.
+  const stateAllowsLocalNameMatch = !hqState || !pageState || hqState === pageState;
+
+  if (city && stateAllowsLocalNameMatch) {
     // HQ city matches county seat (strong local signal).
     if (seat && (city === seat || city.includes(seat) || seat.includes(city))) {
       score += 50;
@@ -33,12 +39,18 @@ export function localRelevanceScore(mover: LocalMover, county: LocalCounty): num
 
   // Honest local-market language in description (not used alone as proof).
   if (
+    stateAllowsLocalNameMatch &&
     countyName.length >= 3 &&
     (desc.includes(`${countyName} county`) ||
       desc.includes(`serves ${countyName}`) ||
       name.includes(countyName))
   ) {
     score += 12;
+  }
+
+  // Explicit in-state HQ is a strong local signal even without seat match.
+  if (hqState && pageState && hqState === pageState) {
+    score += 40;
   }
 
   return score;

@@ -27,6 +27,14 @@ export type LicenseAssessment = {
 
 /** Known placeholder or editorial test values — never display. */
 const KNOWN_PLACEHOLDER_USDOTS = new Set([
+  '0',
+  '00',
+  '000',
+  '0000',
+  '00000',
+  '000000',
+  '0000000',
+  '00000000',
   '2345678',
   '1234567',
   '3124567',
@@ -37,6 +45,13 @@ const KNOWN_PLACEHOLDER_USDOTS = new Set([
   '2045678',
   '7654321',
   '1111111',
+  '2222222',
+  '3333333',
+  '4444444',
+  '5555555',
+  '6666666',
+  '7777777',
+  '8888888',
   '9999999',
   '987654',
   '3201234',

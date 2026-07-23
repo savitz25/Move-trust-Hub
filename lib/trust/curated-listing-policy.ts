@@ -47,10 +47,18 @@ export function isGeneratedTemplateMover(id: string): boolean {
 }
 
 export function evaluateCuratedListing(mover: LocalMover): CuratedListingVerdict {
-  // Published company profiles (from Intrastate/Interstate onboarding) always qualify
-  // for county/hub display. Local movers often have no USDOT on the company row by design.
+  // Published company profiles: allow only when license is clean OR truly absent
+  // (local/intrastate with no USDOT). Never let placeholder/suspicious USDOTs through.
   if (mover.id.startsWith('directory-') && mover.profileSlug) {
+    const hasUsdot = Boolean(normalizeUsdot(mover.usdotNumber));
     const license = assessLicense(mover.usdotNumber, mover.mcNumber);
+    if (hasUsdot && !license.isDisplayable) {
+      return {
+        isDisplayable: false,
+        reason: `directory_license_${license.issues[0] ?? 'invalid'}`,
+        tier: 'excluded',
+      };
+    }
     if (license.isDisplayable) {
       return {
         isDisplayable: true,

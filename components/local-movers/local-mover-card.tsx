@@ -19,6 +19,7 @@ export function LocalMoverCard({
   mover: LocalMover;
   rank: number;
   countyLabel?: string;
+  /** Page county state — used only for "Serves …" context, never as HQ state. */
   stateCode?: string;
   /** When set, profile links return to this page (e.g. county directory). */
   profileReturnPath?: string;
@@ -36,19 +37,23 @@ export function LocalMoverCard({
     : null;
 
   const license = getLicenseDisplay(mover);
-
+  const hqState = mover.headquartersState?.toUpperCase();
+  // Never stamp the page county's state onto an out-of-state HQ city.
   const locationLine = [
-    mover.city,
-    stateCode ?? undefined,
+    mover.city || undefined,
+    hqState || undefined,
     countyLabel ? `Serves ${countyLabel}` : undefined,
   ]
     .filter(Boolean)
     .join(' · ');
 
+  const hasReviewBasis = (mover.reviewCount ?? 0) > 0 && (mover.rating ?? 0) > 0;
+  const isUnratedVerified = !hasReviewBasis && license.status === 'verified';
+
   return (
     <article
       id={`mover-${mover.id}`}
-      aria-label={`#${rank} ${mover.name} — local mover${countyLabel ? ` in ${countyLabel}` : ''}`}
+      aria-label={`#${rank} ${mover.name}${countyLabel ? ` serving ${countyLabel}` : ''}`}
       className="rounded-2xl border bg-card p-5 sm:p-6 shadow-sm hover:border-primary/30 transition-colors"
     >
       <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
@@ -75,6 +80,16 @@ export function LocalMoverCard({
                   Recently added
                 </Badge>
               ) : null}
+              {mover.isLocalOnly ||
+              (hqState && stateCode && hqState === stateCode.toUpperCase()) ? (
+                <Badge variant="outline" className="text-[10px] font-semibold border-emerald-300 text-emerald-800">
+                  {mover.isLocalOnly ? 'Local / intrastate' : 'In-state HQ'}
+                </Badge>
+              ) : hqState ? (
+                <Badge variant="outline" className="text-[10px] font-medium">
+                  National / long-distance
+                </Badge>
+              ) : null}
               <CompanyTypeBadges
                 size="compact"
                 input={{
@@ -91,19 +106,31 @@ export function LocalMoverCard({
                 }}
               />
             </div>
-            <p className="text-xs text-muted-foreground mt-0.5">{locationLine}</p>
+            {locationLine ? (
+              <p className="text-xs text-muted-foreground mt-0.5">{locationLine}</p>
+            ) : null}
           </div>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700">
-          <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
-          {mover.rating.toFixed(1)}
-          <span
-            className="text-xs font-normal text-muted-foreground"
-            title="Industry-reported volume from third-party platforms — not verified on Move Trust Hub"
-          >
-            ({mover.reviewCount.toLocaleString()} industry-reported)
-          </span>
-        </div>
+        {hasReviewBasis ? (
+          <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700">
+            <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
+            {mover.rating.toFixed(1)}
+            <span
+              className="text-xs font-normal text-muted-foreground"
+              title="Industry-reported volume from third-party platforms — not verified on Move Trust Hub"
+            >
+              ({mover.reviewCount.toLocaleString()} industry-reported)
+            </span>
+          </div>
+        ) : isUnratedVerified ? (
+          <div className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
+            Verified — awaiting reviews
+          </div>
+        ) : (
+          <div className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
+            No public rating yet
+          </div>
+        )}
       </div>
 
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -134,12 +161,12 @@ export function LocalMoverCard({
             <span className="font-medium text-foreground">MC:</span> {license.mc}
           </div>
         ) : null}
-        {mover.fmcsaSafetyRating && (
+        {mover.fmcsaSafetyRating && license.status === 'verified' ? (
           <div className="inline-flex items-center gap-1">
             <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
             FMCSA: {mover.fmcsaSafetyRating}
           </div>
-        )}
+        ) : null}
         {mover.bbbRating && (
           <div>
             <span className="font-medium text-foreground">BBB:</span> {mover.bbbRating}

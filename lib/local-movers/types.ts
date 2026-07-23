@@ -11,7 +11,13 @@ export type LocalMover = {
   mcNumber?: string;
   fmcsaSafetyRating?: 'Satisfactory' | 'Conditional' | 'Unsatisfactory' | 'Not Rated';
   bbbRating?: string;
+  /** HQ city only — never the page county's city. */
   city: string;
+  /**
+   * True HQ state code (e.g. FL, IN) when known from headquarters.
+   * Must never be overwritten with the county page's state.
+   */
+  headquartersState?: string;
   website?: string;
   /** Onboarded directory company (vs seed/catalog). */
   listingSource?: 'directory' | 'catalog';

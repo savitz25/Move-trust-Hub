@@ -1,9 +1,10 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { ProgressiveCountyMoverList } from '@/components/local-movers/progressive-county-mover-list';
+import { SegmentedCountyMoverLists } from '@/components/local-movers/progressive-county-mover-list';
 import type { CountyIntelligenceZone } from '@/lib/local-movers/county-intelligence/types';
-import type { LocalMover } from '@/lib/local-movers/types';
+import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
+import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -11,6 +12,8 @@ type Props = {
   zones: CountyIntelligenceZone[];
   countyLabel: string;
   stateCode: string;
+  stateName: string;
+  county: LocalCounty;
   profileReturnPath: string;
   directoryHint?: string;
 };
@@ -22,13 +25,15 @@ function moverMatchesZone(mover: LocalMover, zone: CountyIntelligenceZone): bool
 
 /**
  * Soft zone filter for county mover lists when a hyper-local pack defines zones.
- * Top-10 progressive reveal applies to the filtered result set.
+ * Progressive + local/national segmentation applies to the filtered result set.
  */
 export function CountyZoneMoverFilter({
   movers,
   zones,
   countyLabel,
   stateCode,
+  stateName,
+  county,
   profileReturnPath,
   directoryHint,
 }: Props) {
@@ -39,9 +44,13 @@ export function CountyZoneMoverFilter({
     const zone = zones.find((z) => z.id === zoneId);
     if (!zone) return movers;
     const hit = movers.filter((m) => moverMatchesZone(m, zone));
-    // If no HQ match, still show full list with a note rather than empty.
     return hit.length ? hit : movers;
   }, [movers, zoneId, zones]);
+
+  const segments = useMemo(
+    () => segmentCountyMovers(filtered, county),
+    [filtered, county]
+  );
 
   const emptyMatch =
     zoneId !== 'all' &&
@@ -94,10 +103,12 @@ export function CountyZoneMoverFilter({
         </p>
       ) : null}
 
-      <ProgressiveCountyMoverList
-        movers={filtered}
+      <SegmentedCountyMoverLists
+        localInState={segments.localInState}
+        national={segments.national}
         countyLabel={countyLabel}
         stateCode={stateCode}
+        stateName={stateName}
         profileReturnPath={profileReturnPath}
         listKey={zoneId}
       />

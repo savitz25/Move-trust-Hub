@@ -31,6 +31,7 @@
     "audit:legacy-county-metadata": "tsx scripts/diagnose-legacy-county-metadata.ts",
     "capture:blocking-url-evidence": "tsx scripts/capture-blocking-url-evidence.ts",
     "verify:progressive-movers": "tsx scripts/verify-progressive-county-movers.ts",
+    "qa:nj-tier1-trust": "tsx scripts/qa-nj-tier1-trust.ts",
     "guard:canonical-county-metadata": "tsx scripts/guard-canonical-county-metadata.ts",
     "guard:testimonials": "tsx scripts/guard-county-testimonial-imports.ts",
     "guard:content-exemptions": "tsx scripts/guard-content-tier-exemptions.ts",

@@ -173,7 +173,13 @@ import {
   getOutboundRouteLinksForState,
 } from '@/lib/local-movers/state-route-links';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
-import { ProgressiveCountyMoverList } from '@/components/local-movers/progressive-county-mover-list';
+import { SegmentedCountyMoverLists } from '@/components/local-movers/progressive-county-mover-list';
+import { CountyIntentPaths } from '@/components/local-movers/county-intent-paths';
+import { CountyPopularRoutesSection } from '@/components/local-movers/county-popular-routes';
+import { NjRegulatoryClarity } from '@/components/local-movers/nj-regulatory-clarity';
+import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
+import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
+import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { CountyPageHeroCta } from '@/components/local-movers/county-page-hero-cta';
@@ -201,7 +207,6 @@ import {
   buildCountyFaqItems,
   buildCountyH1,
   buildCountyMarketNotes,
-  buildCountyTestimonials,
   buildCountyTips,
   buildCountyLabel,
   getAllCountyParams,
@@ -251,12 +256,20 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const faqItems = buildCountyFaqItems(county, state.name, movers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
-  const testimonials = buildCountyTestimonials(county, state.name, movers);
-  const visibleTestimonials = shouldUseCuratedTestimonials(movers) ? testimonials : [];
+  const segments = segmentCountyMovers(movers, county);
+  const reviewBlock = buildCountyReviewBlock(movers, 3, {
+    preferLocalMovers: segments.localInState,
+    countyLabel,
+  });
+  const visibleTestimonials =
+    shouldUseCuratedTestimonials(movers) && reviewBlock.reviews.length > 0
+      ? reviewBlock.reviews
+      : [];
   const marketNotes = buildCountyMarketNotes(county);
   const marketInsights = buildCountyMarketInsights(stateSlug, countySlug, county, movers);
   const outboundRoutes = getOutboundRouteLinksForState(county.stateCode);
   const inboundRoutes = getInboundRouteLinksForState(county.stateCode);
+  const popularRoutes = getCountyPopularRoutes(stateSlug, countySlug);
   const nearbyCounties =
     stateSlug === 'california'
       ? getCaliforniaNearbyCounties(countySlug)
@@ -521,6 +534,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               targetId="movers"
             />
           </div>
+          <CountyIntentPaths countyLabel={countyLabel} />
         </header>
 
         {/*
@@ -543,14 +557,18 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                 zones={intelligence.zones}
                 countyLabel={countyLabel}
                 stateCode={county.stateCode}
+                stateName={state.name}
+                county={county}
                 profileReturnPath={path}
                 directoryHint={intelligence.directoryHint}
               />
             ) : (
-              <ProgressiveCountyMoverList
-                movers={movers}
+              <SegmentedCountyMoverLists
+                localInState={segments.localInState}
+                national={segments.national}
                 countyLabel={countyLabel}
                 stateCode={county.stateCode}
+                stateName={state.name}
                 profileReturnPath={path}
               />
             )
@@ -661,8 +679,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               ? [
                   {
                     id: 'reviews',
-                    title: `Attributed reviews for movers serving ${countyLabel}`,
-                    summary: `${visibleTestimonials.length} named Google reviews from verified directory listings.`,
+                    title: reviewBlock.title,
+                    summary: reviewBlock.summary,
                     icon: <MessageSquareQuote className="h-4 w-4" aria-hidden="true" />,
                     children: (
                       <CountyTestimonialSection
@@ -689,6 +707,14 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             },
           ]}
         />
+
+        {stateSlug === 'new-jersey' ? (
+          <NjRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+
+        {popularRoutes.length > 0 ? (
+          <CountyPopularRoutesSection countyLabel={countyLabel} routes={popularRoutes} />
+        ) : null}
 
         <HowWeScorePanel className="mb-10" compact={indexDecision.tier === 'noindex'} />
 

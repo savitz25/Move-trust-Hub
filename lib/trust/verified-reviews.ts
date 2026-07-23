@@ -59,29 +59,92 @@ export function getAttributableReviewsForMover(mover: LocalMover, limit = 3): At
   return getAttributableReviewsForCompany(companyId, limit);
 }
 
-/** Pull 1–3 recent attributable Google reviews from directory-linked county movers. */
+export type CountyReviewBlock = {
+  reviews: AttributableReview[];
+  hasLocalSource: boolean;
+  title: string;
+  summary: string;
+};
+
+/**
+ * Pull attributable Google reviews from directory-linked movers on this list.
+ * Prefer local/in-state movers; if only national carriers contribute, title honestly.
+ */
+export function buildCountyReviewBlock(
+  movers: LocalMover[],
+  maxReviews = 3,
+  options?: { preferLocalMovers?: LocalMover[]; countyLabel?: string }
+): CountyReviewBlock {
+  const countyLabel = options?.countyLabel ?? 'this county';
+  const prefer = options?.preferLocalMovers?.length
+    ? options.preferLocalMovers
+    : movers;
+  const preferIds = new Set(prefer.map((m) => m.id));
+
+  const collect = (pool: LocalMover[]): AttributableReview[] => {
+    const out: AttributableReview[] = [];
+    const seen = new Set<string>();
+    for (const mover of pool) {
+      if (!mover.profileSlug) continue;
+      for (const review of getAttributableReviewsForMover(mover, 2)) {
+        if (seen.has(review.reviewId)) continue;
+        seen.add(review.reviewId);
+        out.push({
+          ...review,
+          companyName: review.companyName ?? mover.name,
+          companySlug: mover.profileSlug,
+        });
+        if (out.length >= maxReviews) return out;
+      }
+    }
+    return out;
+  };
+
+  let reviews = collect(prefer);
+  const hasLocalSource =
+    prefer.length > 0 &&
+    reviews.some((r) =>
+      prefer.some((m) => m.profileSlug && m.profileSlug === r.companySlug)
+    );
+
+  if (reviews.length < maxReviews) {
+    const rest = movers.filter((m) => !preferIds.has(m.id));
+    const seen = new Set(reviews.map((r) => r.reviewId));
+    for (const r of collect(rest)) {
+      if (seen.has(r.reviewId)) continue;
+      reviews.push(r);
+      if (reviews.length >= maxReviews) break;
+    }
+  }
+
+  reviews = reviews.sort((a, b) => b.date.localeCompare(a.date)).slice(0, maxReviews);
+
+  if (reviews.length === 0) {
+    return { reviews: [], hasLocalSource: false, title: '', summary: '' };
+  }
+
+  if (hasLocalSource) {
+    return {
+      reviews,
+      hasLocalSource: true,
+      title: `Attributed reviews from carriers linked on this ${countyLabel} page`,
+      summary: `${reviews.length} named Google reviews from directory listings on this page (not claimed as ${countyLabel}-only experiences).`,
+    };
+  }
+
+  return {
+    reviews,
+    hasLocalSource: false,
+    title: `Named Google reviews from directory carriers that serve ${countyLabel}`,
+    summary: `These reviews are national/company-level — not ${countyLabel}-specific social proof. Shown only for carriers listed on this page.`,
+  };
+}
+
 export function buildAttributableCountyReviews(
   movers: LocalMover[],
   maxReviews = 3
 ): AttributableReview[] {
-  const reviews: AttributableReview[] = [];
-  const seen = new Set<string>();
-
-  for (const mover of movers) {
-    if (!mover.profileSlug) continue;
-    for (const review of getAttributableReviewsForMover(mover, 2)) {
-      if (seen.has(review.reviewId)) continue;
-      seen.add(review.reviewId);
-      reviews.push({
-        ...review,
-        companyName: review.companyName ?? mover.name,
-        companySlug: mover.profileSlug,
-      });
-      if (reviews.length >= maxReviews) return reviews;
-    }
-  }
-
-  return reviews.sort((a, b) => b.date.localeCompare(a.date)).slice(0, maxReviews);
+  return buildCountyReviewBlock(movers, maxReviews).reviews;
 }
 
 export function hasAttributableCountyReviews(movers: LocalMover[]): boolean {

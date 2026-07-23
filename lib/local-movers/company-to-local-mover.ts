@@ -1,3 +1,4 @@
+import { parseHeadquarters } from '@/lib/local-movers/parse-headquarters';
 import type { LocalMover } from '@/lib/local-movers/types';
 
 type CompanyMoverSource = {
@@ -40,7 +41,7 @@ function isRecentlyAdded(iso: string | null | undefined): boolean {
 
 /** Convert a published directory company row into a local-movers catalog entry. */
 export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
-  const city = company.headquarters?.split(',')[0]?.trim() ?? company.headquarters ?? '';
+  const hq = parseHeadquarters(company.headquarters);
   const lastUpdated = company.last_updated || company.updated_at || undefined;
   const usdot = (company.usdot_number || '').replace(/\D/g, '');
   const isLocalOnly =
@@ -60,7 +61,8 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
     fmcsaSafetyRating:
       (company.fmcsa_safety_rating as LocalMover['fmcsaSafetyRating']) || 'Not Rated',
     bbbRating: company.bbb_rating || undefined,
-    city,
+    city: hq.city,
+    headquartersState: hq.stateCode,
     listingSource: 'directory',
     isLocalOnly,
     entityType: company.entity_type ?? null,
