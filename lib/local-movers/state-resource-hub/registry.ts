@@ -1,3 +1,4 @@
+import { alabamaStateResourceHub } from '@/lib/local-movers/state-resource-hub/alabama';
 import { arizonaStateResourceHub } from '@/lib/local-movers/state-resource-hub/arizona';
 import { californiaStateResourceHub } from '@/lib/local-movers/state-resource-hub/california';
 import { coloradoStateResourceHub } from '@/lib/local-movers/state-resource-hub/colorado';
@@ -5,9 +6,12 @@ import { floridaStateResourceHub } from '@/lib/local-movers/state-resource-hub/f
 import { georgiaStateResourceHub } from '@/lib/local-movers/state-resource-hub/georgia';
 import { illinoisStateResourceHub } from '@/lib/local-movers/state-resource-hub/illinois';
 import { indianaStateResourceHub } from '@/lib/local-movers/state-resource-hub/indiana';
+import { kentuckyStateResourceHub } from '@/lib/local-movers/state-resource-hub/kentucky';
+import { louisianaStateResourceHub } from '@/lib/local-movers/state-resource-hub/louisiana';
 import { marylandStateResourceHub } from '@/lib/local-movers/state-resource-hub/maryland';
 import { massachusettsStateResourceHub } from '@/lib/local-movers/state-resource-hub/massachusetts';
 import { michiganStateResourceHub } from '@/lib/local-movers/state-resource-hub/michigan';
+import { minnesotaStateResourceHub } from '@/lib/local-movers/state-resource-hub/minnesota';
 import { missouriStateResourceHub } from '@/lib/local-movers/state-resource-hub/missouri';
 import { newJerseyStateResourceHub } from '@/lib/local-movers/state-resource-hub/new-jersey';
 import { newYorkStateResourceHub } from '@/lib/local-movers/state-resource-hub/new-york';
@@ -19,9 +23,11 @@ import { tennesseeStateResourceHub } from '@/lib/local-movers/state-resource-hub
 import { texasStateResourceHub } from '@/lib/local-movers/state-resource-hub/texas';
 import { virginiaStateResourceHub } from '@/lib/local-movers/state-resource-hub/virginia';
 import { washingtonStateResourceHub } from '@/lib/local-movers/state-resource-hub/washington';
+import { wisconsinStateResourceHub } from '@/lib/local-movers/state-resource-hub/wisconsin';
 import type { StateResourceHubPack } from '@/lib/local-movers/state-resource-hub/types';
 
 const PACKS: StateResourceHubPack[] = [
+  alabamaStateResourceHub,
   arizonaStateResourceHub,
   californiaStateResourceHub,
   coloradoStateResourceHub,
@@ -29,9 +35,12 @@ const PACKS: StateResourceHubPack[] = [
   georgiaStateResourceHub,
   illinoisStateResourceHub,
   indianaStateResourceHub,
+  kentuckyStateResourceHub,
+  louisianaStateResourceHub,
   marylandStateResourceHub,
   massachusettsStateResourceHub,
   michiganStateResourceHub,
+  minnesotaStateResourceHub,
   missouriStateResourceHub,
   newJerseyStateResourceHub,
   newYorkStateResourceHub,
@@ -43,6 +52,7 @@ const PACKS: StateResourceHubPack[] = [
   texasStateResourceHub,
   virginiaStateResourceHub,
   washingtonStateResourceHub,
+  wisconsinStateResourceHub,
 ];
 
 const bySlug = new Map(PACKS.map((p) => [p.stateSlug, p] as const));
