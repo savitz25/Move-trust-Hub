@@ -26,6 +26,8 @@ import { cn } from '@/lib/utils';
 
 type Props = {
   pack: StateResourceHubPack;
+  /** Full state display name (e.g. "Texas") — required for UI labels. */
+  stateName: string;
   hubRows: StateHubCountyRow[];
   totalMoverListings: number;
   path: string;
@@ -108,12 +110,16 @@ function SectionHeading({
 }
 
 /**
- * High-authority state resource hub (California master template).
+ * High-authority state resource hub (California is the master template pack).
  * Server Component — critical copy is in the initial HTML for crawlability.
  * Client islands: sticky nav + interactive map only.
+ *
+ * All user-facing geography names must come from `stateName` / `pack` data —
+ * never hard-code "California" (or any other state) in UI strings.
  */
 export function StateResourceHub({
   pack,
+  stateName,
   hubRows,
   totalMoverListings,
   path: _path,
@@ -412,7 +418,7 @@ export function StateResourceHub({
             id="hub-regions-heading"
             eyebrow="State → region → county"
             title="Explore by region"
-            intro="California is many markets. Start with a region, then open the county guide that matches your addresses. Expand a card to see every county in that region."
+            intro={`${stateName} is many markets. Start with a region, then open the county guide that matches your addresses. Expand a card to see every county in that region.`}
             icon={<MapPinned className="h-6 w-6 text-primary" aria-hidden />}
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -505,9 +511,7 @@ export function StateResourceHub({
         />
         <StateCountyMap
           stateSlug={pack.stateSlug}
-          stateName={
-            pack.stateSlug === 'california' ? 'California' : pack.stateCode
-          }
+          stateName={stateName}
           countyMeta={countyMeta}
         />
         {/* Crawlable text fallback */}
@@ -718,7 +722,7 @@ export function StateResourceHub({
           <details className="mt-3 rounded-2xl border border-slate-200 bg-white">
             <summary className="cursor-pointer list-none px-5 py-4 text-sm font-semibold text-slate-900 marker:content-none [&::-webkit-details-marker]:hidden">
               <span className="flex items-center justify-between gap-2">
-                Show more California challenges
+                {`Show more ${stateName} challenges`}
                 <ChevronRight className="h-4 w-4 text-slate-400" />
               </span>
             </summary>
@@ -914,7 +918,7 @@ export function StateResourceHub({
       >
         <SectionHeading
           id="hub-faq-heading"
-          title={`${pack.stateCode === 'CA' ? 'California' : pack.stateCode} moving FAQ`}
+          title={`${stateName} moving FAQ`}
           intro="State-level answers only — open a county guide for neighborhood access, parking, and local market detail."
         />
         <div className="space-y-3">

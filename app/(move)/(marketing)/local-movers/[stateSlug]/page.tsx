@@ -177,6 +177,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
           <>
             <StateResourceHub
               pack={hubPack}
+              stateName={state.name}
               hubRows={hubRows}
               totalMoverListings={totalMoverListings}
               path={path}
