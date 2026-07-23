@@ -9,7 +9,9 @@ import { PageHeroCta } from '@/components/conversion/page-hero-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { StateHubTier1Links } from '@/components/local-movers/state-hub-tier1-links';
+import { StateResourceHub } from '@/components/local-movers/state-hub/state-resource-hub';
 import { StateCountyMap } from '@/components/map/StateCountyMap';
+import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 import { getLocalState, localStates } from '@/lib/local-movers/states';
 import {
@@ -23,8 +25,18 @@ import {
   buildStateHubStats,
   pickTier1QuickLinks,
 } from '@/lib/local-movers/state-hub-helpers';
+import { getStateResourceHubPack } from '@/lib/local-movers/state-resource-hub/registry';
 import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
 import { ssgParams } from '@/lib/ssg/ssg-params';
+import {
+  absoluteDocumentTitle,
+  formatDocumentTitle,
+} from '@/lib/seo/document-title';
+import {
+  SITE_URL,
+  buildOpenGraph,
+  buildTwitter,
+} from '@/lib/seo/site-metadata';
 
 type Props = { params: Promise<{ stateSlug: string }> };
 
@@ -43,11 +55,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!state) return {};
 
   const counties = getCountiesForState(stateSlug);
+  const hubPack = getStateResourceHubPack(stateSlug);
+  const path = getStatePath(state.slug);
+
+  if (hubPack) {
+    const documentTitle = formatDocumentTitle(hubPack.metaTitle);
+    return {
+      title: absoluteDocumentTitle(hubPack.metaTitle),
+      description: hubPack.metaDescription,
+      alternates: { canonical: `${SITE_URL}${path}` },
+      openGraph: buildOpenGraph({
+        title: documentTitle,
+        description: hubPack.metaDescription,
+        url: `${SITE_URL}${path}`,
+      }),
+      twitter: buildTwitter({
+        title: documentTitle,
+        description: hubPack.metaDescription,
+      }),
+      robots: { index: true, follow: true },
+      category: 'Local Moving Services',
+    };
+  }
+
   return buildStatePageMetadata(
     state.name,
     state.code,
     counties.length,
-    getStatePath(state.slug)
+    path
   );
 }
 
@@ -59,11 +94,23 @@ export default async function LocalMoversStatePage({ params }: Props) {
   const counties = getCountiesForState(stateSlug);
   const hubRows = await buildStateHubCountyRows(stateSlug, counties);
   const hubStats = buildStateHubStats(hubRows);
-  const tier1QuickLinks = pickTier1QuickLinks(hubRows, stateSlug === 'florida' ? 10 : 8);
+  const tier1QuickLinks = pickTier1QuickLinks(
+    hubRows,
+    stateSlug === 'florida' ? 10 : 8
+  );
   const hasCounties = stateHasCounties(stateSlug);
-  const title = buildStateTitle(state.name, counties.length);
-  const description = buildStateDescription(state.name, counties.length);
+  const hubPack = getStateResourceHubPack(stateSlug);
+  const title = hubPack?.metaTitle ?? buildStateTitle(state.name, counties.length);
+  const description =
+    hubPack?.metaDescription ??
+    buildStateDescription(state.name, counties.length);
   const path = `/local-movers/${state.slug}`;
+  const totalMoverListings = hubRows.reduce((sum, r) => sum + r.moverCount, 0);
+
+  const faqItems = hubPack?.faq.map((f) => ({
+    question: f.question,
+    answer: f.answer,
+  }));
 
   return (
     <>
@@ -77,9 +124,47 @@ export default async function LocalMoversStatePage({ params }: Props) {
           { name: state.name, path },
         ]}
         stateName={state.name}
+        faqItems={faqItems}
       />
 
-      <div className="container mx-auto px-4 py-10 max-w-5xl">
+      {hubPack ? (
+        <JsonLd
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: hubPack.h1,
+            description: hubPack.metaDescription,
+            url: `${SITE_URL}${path}`,
+            isPartOf: {
+              '@type': 'WebSite',
+              name: 'Move Trust Hub',
+              url: SITE_URL,
+            },
+            about: {
+              '@type': 'State',
+              name: state.name,
+              addressRegion: state.code,
+            },
+            mainEntity: {
+              '@type': 'ItemList',
+              name: `${state.name} county moving guides`,
+              numberOfItems: hubRows.length,
+              itemListElement: hubRows.slice(0, 58).map((row, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: buildCountyLabel(row.county),
+                url: `${SITE_URL}${row.href}`,
+              })),
+            },
+          }}
+        />
+      ) : null}
+
+      <div
+        className={`container mx-auto px-4 py-10 ${
+          hubPack ? 'max-w-6xl' : 'max-w-5xl'
+        }`}
+      >
         <LocalMoversBreadcrumbs
           crumbs={[
             { label: 'Home', href: '/' },
@@ -88,139 +173,166 @@ export default async function LocalMoversStatePage({ params }: Props) {
           ]}
         />
 
-        <div className="mb-8">
-          <div className="inline-flex items-center gap-2 rounded-full border bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
-            {state.code}
-          </div>
-          <h1 className="text-4xl font-semibold tracking-tight mb-3">
-            Local Movers in {state.name}
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-            {hasCounties
-              ? description
-              : `Independent local mover research for ${state.name}. Browse our interstate directory and moving calculator while county guides expand.`}
-          </p>
-          {hasCounties ? (
-            <p className="mt-3 text-sm text-muted-foreground">
-              {hubStats.deepGuideCount > 0 ? `${hubStats.deepGuideCount} deep guides · ` : ''}
-              {hubStats.tier1Count} Tier 1 · {hubStats.totalCounties} county guides
-            </p>
-          ) : null}
-          <div className="mt-6">
-            <PageHeroCta
-              tertiaryLabel={`Browse ${state.name} Counties`}
-              tertiaryHref={`/local-movers/${state.slug}`}
-            />
-          </div>
-        </div>
-
-        <div className="mb-12">
-          <DirectorySearchEmbed
-            sourcePage={path}
-            scope={{ stateCode: state.code, stateName: state.name }}
-            heading={`Search movers in ${state.name}`}
-            description="Uses the same nationwide directory as /companies. Optionally prefer movers serving this state."
-          />
-        </div>
-
-        {hasCounties ? (
+        {hubPack ? (
           <>
-            <StateHubTier1Links stateName={state.name} links={tier1QuickLinks} />
-
-            {state.slug !== 'district-of-columbia' ? (
-              <section
-                className="mb-12"
-                aria-labelledby="state-county-map-heading"
-              >
-                <div className="mb-4">
-                  <h2
-                    id="state-county-map-heading"
-                    className="text-2xl font-semibold tracking-tight text-slate-900"
-                  >
-                    Explore {state.name} on the map
-                  </h2>
-                  <p className="mt-1.5 text-sm text-slate-500">
-                    Click any county to open its local movers guide. Fully curated
-                    states include deep county research and ratings.
-                  </p>
-                </div>
-                <StateCountyMap
-                  stateSlug={state.slug}
-                  stateName={state.name}
-                  countyMeta={hubRows.map((row) => ({
-                    slug: row.county.slug,
-                    label: buildCountyLabel(row.county),
-                    moverCount: row.moverCount,
-                    guideBadge: row.guideBadge,
-                    isDeepGuide: row.isDeepGuide,
-                  }))}
-                />
-              </section>
-            ) : null}
-
-            <section className="mb-14">
-              <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-                    {state.slug === 'district-of-columbia'
-                      ? 'Washington, DC local mover guide'
-                      : `Counties in ${state.name}`}
-                  </h2>
-                  <p className="mt-1.5 text-sm text-slate-500">
-                    {state.slug === 'district-of-columbia'
-                      ? 'Curated local movers for the capital region'
-                      : `${hubStats.totalCounties} county guides · ${hubStats.tier1Count} Tier 1 · ${hubStats.deepGuideCount} deep guides · Deep/Tier 1 listed first`}
-                  </p>
-                </div>
-              </div>
-              <div className="mb-4 flex flex-wrap gap-2 text-[11px] text-slate-500">
-                <span className="rounded-full bg-sky-50 px-2 py-1 font-semibold text-sky-900 ring-1 ring-sky-200/80">
-                  Deep guide
-                </span>
-                <span className="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-800 ring-1 ring-emerald-200/80">
-                  Tier 1
-                </span>
-                <span className="rounded-full bg-amber-50 px-2 py-1 font-semibold text-amber-800 ring-1 ring-amber-200/80">
-                  Limited
-                </span>
-              </div>
-              <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
-                {hubRows.map(({ county, moverCount, guideBadge, href }) => (
-                  <CountyGridCard
-                    key={county.slug}
-                    href={href}
-                    name={county.name}
-                    seat={county.seat}
-                    moverCount={moverCount}
-                    guideBadge={guideBadge}
-                  />
-                ))}
-              </div>
-            </section>
+            <StateResourceHub
+              pack={hubPack}
+              hubRows={hubRows}
+              totalMoverListings={totalMoverListings}
+              path={path}
+            />
+            <CountyInternalLinks
+              stateName={state.name}
+              stateSlug={state.slug}
+              countyLabel={state.name}
+            />
+            <LocalMoversCta countyName={state.name} stateSlug={state.slug} />
           </>
         ) : (
-          <section className="mb-12 rounded-2xl border bg-muted/30 p-6 sm:p-8">
-            <h2 className="text-xl font-semibold mb-2">County guides in progress</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Use our interstate mover directory and moving calculator while county-level
-              guides for {state.name} are being expanded.
-            </p>
-            <Link
-              href="/companies"
-              className="text-sm font-semibold text-primary hover:underline"
-            >
-              Browse interstate movers →
-            </Link>
-          </section>
+          <>
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 rounded-full border bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
+                {state.code}
+              </div>
+              <h1 className="text-4xl font-semibold tracking-tight mb-3">
+                Local Movers in {state.name}
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+                {hasCounties
+                  ? description
+                  : `Independent local mover research for ${state.name}. Browse our interstate directory and moving calculator while county guides expand.`}
+              </p>
+              {hasCounties ? (
+                <p className="mt-3 text-sm text-muted-foreground">
+                  {hubStats.deepGuideCount > 0
+                    ? `${hubStats.deepGuideCount} deep guides · `
+                    : ''}
+                  {hubStats.tier1Count} Tier 1 · {hubStats.totalCounties} county
+                  guides
+                </p>
+              ) : null}
+              <div className="mt-6">
+                <PageHeroCta
+                  tertiaryLabel={`Browse ${state.name} Counties`}
+                  tertiaryHref={`/local-movers/${state.slug}`}
+                />
+              </div>
+            </div>
+
+            <div className="mb-12">
+              <DirectorySearchEmbed
+                sourcePage={path}
+                scope={{ stateCode: state.code, stateName: state.name }}
+                heading={`Search movers in ${state.name}`}
+                description="Uses the same nationwide directory as /companies. Optionally prefer movers serving this state."
+              />
+            </div>
+
+            {hasCounties ? (
+              <>
+                <StateHubTier1Links
+                  stateName={state.name}
+                  links={tier1QuickLinks}
+                />
+
+                {state.slug !== 'district-of-columbia' ? (
+                  <section
+                    className="mb-12"
+                    aria-labelledby="state-county-map-heading"
+                  >
+                    <div className="mb-4">
+                      <h2
+                        id="state-county-map-heading"
+                        className="text-2xl font-semibold tracking-tight text-slate-900"
+                      >
+                        Explore {state.name} on the map
+                      </h2>
+                      <p className="mt-1.5 text-sm text-slate-500">
+                        Click any county to open its local movers guide. Fully
+                        curated states include deep county research and ratings.
+                      </p>
+                    </div>
+                    <StateCountyMap
+                      stateSlug={state.slug}
+                      stateName={state.name}
+                      countyMeta={hubRows.map((row) => ({
+                        slug: row.county.slug,
+                        label: buildCountyLabel(row.county),
+                        moverCount: row.moverCount,
+                        guideBadge: row.guideBadge,
+                        isDeepGuide: row.isDeepGuide,
+                      }))}
+                    />
+                  </section>
+                ) : null}
+
+                <section className="mb-14">
+                  <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                      <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                        {state.slug === 'district-of-columbia'
+                          ? 'Washington, DC local mover guide'
+                          : `Counties in ${state.name}`}
+                      </h2>
+                      <p className="mt-1.5 text-sm text-slate-500">
+                        {state.slug === 'district-of-columbia'
+                          ? 'Curated local movers for the capital region'
+                          : `${hubStats.totalCounties} county guides · ${hubStats.tier1Count} Tier 1 · ${hubStats.deepGuideCount} deep guides · Deep/Tier 1 listed first`}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mb-4 flex flex-wrap gap-2 text-[11px] text-slate-500">
+                    <span className="rounded-full bg-sky-50 px-2 py-1 font-semibold text-sky-900 ring-1 ring-sky-200/80">
+                      Deep guide
+                    </span>
+                    <span className="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-800 ring-1 ring-emerald-200/80">
+                      Tier 1
+                    </span>
+                    <span className="rounded-full bg-amber-50 px-2 py-1 font-semibold text-amber-800 ring-1 ring-amber-200/80">
+                      Limited
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
+                    {hubRows.map(({ county, moverCount, guideBadge, href }) => (
+                      <CountyGridCard
+                        key={county.slug}
+                        href={href}
+                        name={county.name}
+                        seat={county.seat}
+                        moverCount={moverCount}
+                        guideBadge={guideBadge}
+                      />
+                    ))}
+                  </div>
+                </section>
+              </>
+            ) : (
+              <section className="mb-12 rounded-2xl border bg-muted/30 p-6 sm:p-8">
+                <h2 className="text-xl font-semibold mb-2">
+                  County guides in progress
+                </h2>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  Use our interstate mover directory and moving calculator while
+                  county-level guides for {state.name} are being expanded.
+                </p>
+                <Link
+                  href="/companies"
+                  className="text-sm font-semibold text-primary hover:underline"
+                >
+                  Browse interstate movers →
+                </Link>
+              </section>
+            )}
+
+            <CountyInternalLinks
+              stateName={state.name}
+              stateSlug={state.slug}
+              countyLabel={state.name}
+            />
+
+            <LocalMoversCta countyName={state.name} stateSlug={state.slug} />
+          </>
         )}
-
-        <CountyInternalLinks
-          stateName={state.name}
-          stateSlug={state.slug}
-          countyLabel={state.name}
-        />
-
-        <LocalMoversCta countyName={state.name} stateSlug={state.slug} />
       </div>
     </>
   );
