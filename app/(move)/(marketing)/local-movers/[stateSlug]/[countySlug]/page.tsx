@@ -173,7 +173,7 @@ import {
   getOutboundRouteLinksForState,
 } from '@/lib/local-movers/state-route-links';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
-import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
+import { ProgressiveCountyMoverList } from '@/components/local-movers/progressive-county-mover-list';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { CountyPageHeroCta } from '@/components/local-movers/county-page-hero-cta';
@@ -547,19 +547,12 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                 directoryHint={intelligence.directoryHint}
               />
             ) : (
-              <ol className="space-y-4 list-none p-0 m-0">
-                {movers.map((mover, index) => (
-                  <li key={mover.id}>
-                    <LocalMoverCard
-                      mover={mover}
-                      rank={index + 1}
-                      countyLabel={countyLabel}
-                      stateCode={county.stateCode}
-                      profileReturnPath={path}
-                    />
-                  </li>
-                ))}
-              </ol>
+              <ProgressiveCountyMoverList
+                movers={movers}
+                countyLabel={countyLabel}
+                stateCode={county.stateCode}
+                profileReturnPath={path}
+              />
             )
           ) : (
             <div className="rounded-2xl border bg-muted/30 p-6 text-sm text-muted-foreground">
@@ -871,11 +864,19 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         <section className="mb-10 rounded-2xl border bg-card p-6">
           <h2 className="text-lg font-semibold mb-2">How we rank local movers</h2>
           <ul className="text-sm text-muted-foreground space-y-2 leading-relaxed">
-            <li>• Customer ratings and review volume</li>
-            <li>• FMCSA USDOT/MC licensing and safety rating when available</li>
-            <li>• Service fit for local and short-distance moves</li>
+            <li>
+              • Local priority first — true local/intrastate movers and companies
+              headquartered in this county or seat (we never invent local status)
+            </li>
+            <li>• Then ratings, review volume, and licensing completeness</li>
+            <li>• FMCSA USDOT/MC and safety rating when available</li>
             <li>• BBB standing where reported</li>
+            <li>• Stable name/id tie-breakers so order stays consistent</li>
           </ul>
+          <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+            Pages with more than 10 movers show the top 10 first; use &ldquo;Show next 10&rdquo;
+            or &ldquo;Show all movers&rdquo; to expand without leaving this page.
+          </p>
           <p className="text-xs text-muted-foreground mt-4">
             Always verify current licensing on{' '}
             <a

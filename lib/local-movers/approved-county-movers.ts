@@ -67,13 +67,13 @@ function countyKey(stateSlug: string, countySlug: string): string {
 }
 
 function sortMoversForCounty(movers: LocalMover[]): LocalMover[] {
+  // Preliminary order before county-context rankCountyMovers (applied at page assembly).
   return [...movers].sort((a, b) => {
-    // Recently added local/directory listings first
-    if (Boolean(a.recentlyAdded) !== Boolean(b.recentlyAdded)) {
-      return a.recentlyAdded ? -1 : 1;
-    }
     if (Boolean(a.isLocalOnly) !== Boolean(b.isLocalOnly)) {
       return a.isLocalOnly ? -1 : 1;
+    }
+    if (Boolean(a.recentlyAdded) !== Boolean(b.recentlyAdded)) {
+      return a.recentlyAdded ? -1 : 1;
     }
     const aTime = a.lastUpdated ? Date.parse(a.lastUpdated) : 0;
     const bTime = b.lastUpdated ? Date.parse(b.lastUpdated) : 0;

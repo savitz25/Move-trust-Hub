@@ -6,6 +6,7 @@ import {
   hasExplicitCountyAssignment,
 } from '@/lib/local-movers/index';
 import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
+import { rankCountyMovers } from '@/lib/local-movers/rank-county-movers';
 import { isProductionBuildPhase } from '@/lib/ssg/ssg-params';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -36,10 +37,11 @@ export async function getMoversForCountyAsync(
     approved.length + 10
   );
 
+  const merged = mergeApprovedMovers(base.movers, approved, displayLimit);
   return {
     ...base,
     // Once directory locals are present, treat as explicit county coverage (not pure regional fallback).
     isRegionalFallback: base.isRegionalFallback && approved.length === 0,
-    movers: mergeApprovedMovers(base.movers, approved, displayLimit),
+    movers: rankCountyMovers(merged, base.county),
   };
 }

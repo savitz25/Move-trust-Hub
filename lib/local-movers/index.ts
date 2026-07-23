@@ -58,6 +58,7 @@ import { getCounty } from '@/lib/local-movers/geography/index';
 import { getLocalState } from '@/lib/local-movers/states';
 import { isCuratedMover } from '@/lib/trust/curated-listing-policy';
 import { filterAssignmentMoverIds } from '@/lib/trust/fabricated-mover-id';
+import { rankCountyMovers } from '@/lib/local-movers/rank-county-movers';
 
 const MAX_MOVERS_PER_COUNTY = 10;
 /** Explicit assignments may list more than 10 — show full curated set (CA uses ~20–30). */
@@ -190,10 +191,13 @@ export function getMoversForCounty(
     ? Math.min(moverIds.length, LARGE_MARKET_MAX_MOVERS)
     : MAX_MOVERS_PER_COUNTY;
 
-  const movers = (hasExplicitAssignment
+  const sliced = (hasExplicitAssignment
     ? resolved
     : resolved.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
   ).slice(0, displayLimit);
+
+  // Local-first + quality ranking (deterministic) before progressive reveal on the page.
+  const movers = rankCountyMovers(sliced, county);
 
   return {
     county,

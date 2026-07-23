@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
+import { ProgressiveCountyMoverList } from '@/components/local-movers/progressive-county-mover-list';
 import type { CountyIntelligenceZone } from '@/lib/local-movers/county-intelligence/types';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { cn } from '@/lib/utils';
@@ -22,6 +22,7 @@ function moverMatchesZone(mover: LocalMover, zone: CountyIntelligenceZone): bool
 
 /**
  * Soft zone filter for county mover lists when a hyper-local pack defines zones.
+ * Top-10 progressive reveal applies to the filtered result set.
  */
 export function CountyZoneMoverFilter({
   movers,
@@ -93,19 +94,13 @@ export function CountyZoneMoverFilter({
         </p>
       ) : null}
 
-      <ol className="space-y-4 list-none p-0 m-0">
-        {filtered.map((mover, index) => (
-          <li key={mover.id}>
-            <LocalMoverCard
-              mover={mover}
-              rank={index + 1}
-              countyLabel={countyLabel}
-              stateCode={stateCode}
-              profileReturnPath={profileReturnPath}
-            />
-          </li>
-        ))}
-      </ol>
+      <ProgressiveCountyMoverList
+        movers={filtered}
+        countyLabel={countyLabel}
+        stateCode={stateCode}
+        profileReturnPath={profileReturnPath}
+        listKey={zoneId}
+      />
     </div>
   );
 }
