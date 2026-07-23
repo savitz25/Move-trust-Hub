@@ -418,5 +418,144 @@ export const warrenCountyIntelligence: CountyIntelligencePack = {
   },
   directoryHint:
     'Filter listings by zone (Phillipsburg/River, Central Warren, Hackettstown, Belvidere North, Western Warren, Eastern Approaches) when available. Confirm the mover actually serves your town or rural road, ask about travel fees, and clarify NJ–PA licensing for Delaware River pairs — access and coverage are the defining issues here, not elevators.',
+  collapsibleDeepContent: true,
+  sectionOrder: [
+    'whatMakesDifferent',
+    'relocation',
+    'zones',
+    'specialized',
+    'costDrivers',
+    'seasonal',
+    'resources',
+  ],
+  specialized: [
+    {
+      id: 'cross-border-pa',
+      title: 'Delaware River / PA cross-border module',
+      intro:
+        'Phillipsburg–Easton life patterns often cross state lines — licensing changes when either address is in Pennsylvania.',
+      bullets: [
+        'Require USDOT/MC on any estimate that touches PA.',
+        'Bridge congestion at shift changes can erase “short hop” assumptions.',
+        'Ask about travel fees when crews stage outside Warren.',
+        'Storage on either side of the river can simplify multi-day closings.',
+      ],
+    },
+    {
+      id: 'rural-access',
+      title: 'Rural driveway & long-access module',
+      intro: 'Country parcels need a site plan, not just square footage.',
+      bullets: [
+        'Share driveway photos, gate codes, and low-wire notes.',
+        'Mark septic lids and wells so trucks do not drive over them.',
+        'Have a weather backup for unpaved drives after rain or thaw.',
+      ],
+    },
+  ],
+  relocation: {
+    title: 'Relocating to Warren County',
+    intro:
+      'Lower density, river recreation, and cross-border job access — with fewer urban amenities and longer specialty drives.',
+    modules: [
+      {
+        id: 'schools',
+        title: 'Schools',
+        intro:
+          'Warren uses local and regional districts serving Phillipsburg, Washington, Blairstown-area communities, and other municipalities. Match every parcel to the correct feeder.',
+        bullets: [
+          {
+            title: 'Regional high schools',
+            detail:
+              'Many students attend regional high schools drawing multiple municipalities — research both elementary and secondary campuses via NJ DOE reports.',
+          },
+          {
+            title: 'Program breadth',
+            detail:
+              'Smaller systems may differ from large suburban districts in AP/arts/athletics mix — visit and ask.',
+          },
+        ],
+      },
+      {
+        id: 'hospitals',
+        title: 'Healthcare',
+        bullets: [
+          {
+            title: 'Phillipsburg–Easton corridor systems',
+            detail:
+              'Residents often use hospital systems serving the river corridor; confirm in-network campuses and transfer pathways.',
+          },
+          {
+            title: 'Rural EMS reality',
+            detail:
+              'Response and transfer times can be longer than dense North Jersey — discuss special medical needs before moving.',
+          },
+        ],
+      },
+      {
+        id: 'housing',
+        title: 'Housing & costs',
+        bullets: [
+          {
+            title: 'Relative affordability',
+            detail:
+              'Often more attainable than eastern NJ counties for comparable land; river-view and renovated historic stock still premiums.',
+          },
+          {
+            title: 'Older housing share',
+            detail: 'Budget for systems updates on charming but older homes.',
+          },
+        ],
+      },
+      {
+        id: 'town-fit',
+        title: 'Town fit',
+        bullets: [
+          { title: 'Phillipsburg', detail: 'River-town energy and PA convenience.' },
+          { title: 'Washington / Hackettstown approaches', detail: 'Smaller downtown practical living.' },
+          { title: 'Belvidere', detail: 'Quieter county-seat scale.' },
+          { title: 'Rural townships', detail: 'Privacy and acreage — car mandatory.' },
+        ],
+      },
+      {
+        id: 'jobs',
+        title: 'Jobs & commuting',
+        bullets: [
+          {
+            title: 'Lehigh Valley links',
+            detail: 'Easton/Allentown-direction jobs are part of the regional labor market.',
+          },
+          {
+            title: 'Local employers',
+            detail: 'Healthcare, logistics, education, small manufacturing, agriculture-adjacent work.',
+          },
+        ],
+      },
+      {
+        id: 'lifestyle',
+        title: 'Lifestyle',
+        bullets: [
+          {
+            title: 'River & ridge outdoors',
+            detail: 'Delaware recreation and Appalachian approaches are major draws.',
+          },
+          {
+            title: 'Quieter services',
+            detail: 'Fewer late-night amenities than metro counties — plan supply runs.',
+          },
+        ],
+      },
+      {
+        id: 'demographics',
+        title: 'Who lives here',
+        bullets: [
+          {
+            title: 'Lower density west',
+            detail:
+              'Warren remains comparatively rural within New Jersey, with boroughs and townships rather than continuous suburbia (Census density patterns).',
+          },
+        ],
+      },
+    ],
+  },
   lastReviewed: '2026-07-22',
 };

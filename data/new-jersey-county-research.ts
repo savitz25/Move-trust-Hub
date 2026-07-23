@@ -10,19 +10,19 @@ export type CuratedCountyResearch = {
 export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   atlantic: {
     marketNotes:
-      'Atlantic County centers on Atlantic City tourism, coastal properties, and suburban/rural areas. Moves often involve condos, seasonal properties, and residential relocations with casino/hospitality considerations.',
+      'Atlantic County pairs a casino/boardwalk high-rise market with Downbeach towns (Ventnor, Margate, Longport), mainland suburbs (Egg Harbor Township, Galloway), and western edges around Hammonton. Logistics swing from freight elevators and COI paperwork in Atlantic City towers to shuttle trucks on narrow beach blocks and standard suburban HOAs inland. Tourism seasons and Atlantic City Expressway congestion change billable time more than raw mileage. Sources: U.S. Census Bureau county profiles; FMCSA licensing database (fmcsa.gov) for interstate legs; Move Trust Hub verified listings.',
     costs: {
       studioRange: '$450–$950',
       familyRange: '$1,800–$4,000',
       avgHourly: '$110–$165/hr for a 2-person crew',
-      note: 'Atlantic City, Egg Harbor, and shore-area moves often reflect condo elevator fees, summer tourism-season demand, and parking restrictions near the boardwalk.',
+      note: 'Atlantic City elevators, Downbeach shuttles, and summer event weekends create wider price bands than inland mainland moves of the same inventory size.',
     },
     tips: [
-      'Coastal/boardwalk properties require sand protection and elevator coordination.',
-      'Summer tourism peaks demand; book early.',
-      'Condos/HOAs have strict rules—obtain approvals early.',
-      'Verify coverage for Atlantic City, Egg Harbor, and outlying areas.',
-      'Confirm insurance for waterfront/high-value items.',
+      'Reserve freight elevators and collect COI templates for Atlantic City condos before locking a crew.',
+      'Budget shuttle contingency for Ventnor/Margate/Longport beach blocks where full trailers cannot stage.',
+      'Avoid major casino-event weekends when flexible — approaches clog and hourly clocks run.',
+      'Mainland Egg Harbor / Galloway moves still need HOA checks, but usually not sand/shuttle adders.',
+      'If the job crosses into Pennsylvania, require interstate (FMCSA) authority — not a local-only crew.',
     ],
   },
   bergen: {
@@ -129,19 +129,19 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   gloucester: {
     marketNotes:
-      'Gloucester County is suburban/rural with growing communities (Mullica Hill, Glassboro, Deptford). Moves often involve family residential, agricultural properties, and commuter relocations to Philadelphia/Camden.',
+      'Gloucester County is a South Jersey growth corridor: Deptford and Washington Township retail arterials, Glassboro’s Rowan University calendar, Mullica Hill new-construction HOAs, and still-rural southern townships with long driveways. Philadelphia job access via bridges and I-295 shapes commuting — and can turn a “local” day expensive at rush hour. Sources: U.S. Census Bureau QuickFacts and county growth patterns; FMCSA licensing database (fmcsa.gov) when either address is out of state; Move Trust Hub verified listings.',
     costs: {
       studioRange: '$450–$900',
       familyRange: '$1,600–$3,500',
       avgHourly: '$100–$155/hr for a 2-person crew',
-      note: 'Woodbury, Glassboro, and Deptford moves may reflect HOA rules, I-295 traffic, and rural driveway access for agricultural properties.',
+      note: 'New-construction HOAs and rural deadhead from regional crews matter more than prestige ZIP pricing; NJ↔PA legs require interstate authority.',
     },
     tips: [
-      'Suburban developments and HOAs have move-in rules and parking restrictions.',
-      'Rural/agricultural areas may require longer driveways or equipment handling.',
-      'Proximity to I-295 and Philadelphia influences traffic.',
-      'Obtain multiple estimates in this moderate South Jersey market.',
-      'Verify coverage for Woodbury, Glassboro, and outlying towns.',
+      'Collect HOA COI requirements for new townhome and single-family associations before move day.',
+      'Glassboro semester peaks fill trucks — avoid late-August student weekends if you can.',
+      'Send driveway photos for southern township parcels with gravel or soft shoulders.',
+      'Time I-295 / bridge approaches outside peak commute when the inventory is large.',
+      'Any Pennsylvania destination changes licensing: ask for USDOT/MC on the estimate.',
     ],
   },
   hudson: {
@@ -163,36 +163,36 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   hunterdon: {
     marketNotes:
-      'Hunterdon County is suburban/rural with historic towns (Flemington, Clinton) and affluent residential areas. Moves often involve family homes, equestrian/farm properties, and commuter relocations to NYC/Philadelphia.',
+      'Hunterdon County is lower-density west-central New Jersey: Flemington services, Clinton and High Bridge village streets, Delaware River townships, and agricultural/equestrian edges. Moves fail when estimates ignore long driveways, soft ground, historic stair geometry, and I-78 peak commuting. Cell coverage can drop in valleys — gate codes on paper matter. Sources: U.S. Census Bureau density/population context; FMCSA licensing database (fmcsa.gov); Move Trust Hub verified listings.',
     costs: {
       studioRange: '$450–$950',
       familyRange: '$1,700–$3,600',
       avgHourly: '$110–$165/hr for a 2-person crew',
-      note: 'Flemington and Clinton moves may reflect historic home preservation, long rural driveways, and I-78 commuter traffic windows.',
+      note: 'Driveway shuttles and extra stair labor on historic homes push costs more than short map mileage suggests.',
     },
     tips: [
-      'Rural or equestrian properties may require long driveways or specialized equipment handling.',
-      'Historic districts have preservation considerations for older homes.',
-      'Commuter traffic on I-78 and US-22 can affect timing.',
-      'Obtain multiple estimates in this moderate-volume market.',
-      'Verify coverage for Flemington, Clinton, and outlying towns.',
+      'Send video of the last quarter-mile of driveway, including gates and overhead wires.',
+      'Mark septic lids and wells so trucks do not drive over them.',
+      'For older village homes, measure stair turns before accepting a “standard local” quote.',
+      'Avoid I-78 eastbound peaks if the crew is billing portal-to-portal.',
+      'List barn/workshop items explicitly — they are the usual day-of surprise.',
     ],
   },
   mercer: {
     marketNotes:
-      'Mercer County includes Trenton (capital), affluent Princeton, and suburban/rural areas. Moves often involve government, university (Princeton), family residential, and commuter properties with strong regional support.',
+      'Mercer County compresses New Jersey’s capital (Trenton), a global university town (Princeton), Route 1 professional parks, Hamilton suburban stock, and Hopewell-area rural lots into one county. Access friction swings from urban stairs and campus streets to HOA townhomes and western long driveways. Academic calendars and state schedules create predictable demand spikes. Sources: U.S. Census Bureau QuickFacts; FMCSA licensing database (fmcsa.gov); Move Trust Hub verified listings.',
     costs: {
       studioRange: '$450–$950',
       familyRange: '$1,700–$3,600',
       avgHourly: '$110–$165/hr for a 2-person crew',
-      note: 'Trenton, Princeton, and Hamilton moves may reflect university timing, Route 1 traffic, and suburban HOA move-in rules.',
+      note: 'Princeton narrow-street shuttles and Trenton multi-story carries widen ranges versus same-inventory Hopewell ranch moves.',
     },
     tips: [
-      'Princeton and suburban HOAs have move-in rules and parking restrictions.',
-      'Government and university moves may require specific timing.',
-      'I-95 and Route 1 traffic can affect scheduling.',
-      'Rural western areas may involve longer driveways.',
-      'Verify coverage for Trenton, Princeton, and Hamilton.',
+      'Avoid Princeton reunions/alumni weekends and late-August campus turnovers when dates are flexible.',
+      'Share street-width photos for borough addresses — many predate modern box trucks.',
+      'Collect HOA COI templates for Route 1 corridor townhomes early.',
+      'Start mid-morning to miss the worst Route 1 commute crush when moving between office parks and homes.',
+      'Western Hopewell parcels need driveway/soft-ground planning after rain.',
     ],
   },
   middlesex: {
@@ -248,7 +248,7 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   ocean: {
     marketNotes:
-      'Ocean County (~674,000–679,000 residents) pairs barrier-island shore towns (Point Pleasant Beach, Seaside, Lavallette, Long Beach Island) with inland Toms River, Brick, Jackson, and Manchester. Lakewood is denser and demographically distinct from shore cottages or 55+ communities. Summer tourism, causeway timing (Routes 37/72), Parkway congestion, flood-zone logistics, and retirement-community HOA rules define most jobs.',
+      'Ocean County (~674,000–679,000 residents) pairs barrier-island shore towns (Point Pleasant Beach, Seaside, Lavallette, Long Beach Island) with inland Toms River, Brick, Jackson, and Manchester. Lakewood is denser and demographically distinct from shore cottages or 55+ communities. Summer tourism, causeway timing (Routes 37/72), Parkway congestion, flood-zone logistics, and retirement-community HOA rules define most jobs. Sources: U.S. Census Bureau QuickFacts (Ocean County); FMCSA licensing database (fmcsa.gov); Move Trust Hub verified listings.',
     costs: {
       studioRange: '$500–$1,350+',
       familyRange: '$1,600–$4,000+',
@@ -299,36 +299,36 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   somerset: {
     marketNotes:
-      'Somerset County is affluent suburban with Bridgewater, Somerville, and historic towns. Moves often involve family residential, corporate, and upscale properties with strong commuter ties to NYC.',
+      'Somerset County is affluent Central Jersey suburbia: Bridgewater corporate/retail core, Somerville’s walkable downtown stock, Hillsborough/Montgomery family subdivisions, and Bernards-area upscale pockets. HOA certificates, cul-de-sac geometry, and high-value packing tiers drive cost more than beach tourism. I-287 and Route 22 peak hours inflate portal-to-portal billing. Sources: U.S. Census Bureau QuickFacts; FMCSA licensing database (fmcsa.gov); Move Trust Hub verified listings.',
     costs: {
       studioRange: '$500–$1,000',
       familyRange: '$1,900–$4,000',
       avgHourly: '$120–$175/hr for a 2-person crew',
-      note: 'Somerville and Bridgewater moves may reflect upscale HOA rules, historic home handling, and I-287 commuter traffic.',
+      note: 'Executive packing and HOA admin friction are common adders even when mileage is short.',
     },
     tips: [
-      'Suburban HOAs and new developments have strict move-in rules.',
-      'Historic districts require preservation-sensitive handling.',
-      'Heavy commuter traffic on I-287 and Route 22.',
-      'Obtain multiple estimates in this competitive market.',
-      'Verify coverage for Somerville, Bridgewater, and outlying towns.',
+      'Request the association COI template the day you sign the lease or close.',
+      'Measure cul-de-sac turn radius and low wires before accepting a full-trailer plan.',
+      'Start midweek mornings to avoid I-287/Route 22 commute crush.',
+      'Line-item full packing for fine furniture and wine/storage rooms.',
+      'Confirm elevator overtime rules for mid-rise townhome communities.',
     ],
   },
   sussex: {
     marketNotes:
-      'Sussex County is rural and scenic with lakes, mountains, and small towns (Newton, Sparta). Moves often involve residential, farm/equestrian, and seasonal properties with limited local infrastructure.',
+      'Sussex County is northwest New Jersey highlands living: Sparta and lake associations, Newton as a service hub, Vernon recreation belts, and western rural roads. Steep grades, winter ice, association truck limits, and longer crew travel times dominate logistics. Sources: U.S. Census Bureau density/population context for northwest NJ counties; FMCSA licensing database (fmcsa.gov); Move Trust Hub verified listings.',
     costs: {
       studioRange: '$450–$900',
       familyRange: '$1,600–$3,400',
       avgHourly: '$100–$150/hr for a 2-person crew',
-      note: 'Newton and Sparta moves may reflect lake-property access, long rural driveways, and travel from regional North Jersey crews.',
+      note: 'Travel minimums and grade shuttles often exceed what a flat suburban quote assumes.',
     },
     tips: [
-      'Rural or lake properties may involve long driveways or specialized access.',
-      'Confirm explicit regional service to Newton and outlying areas.',
-      'Storage is limited locally; use nearby facilities.',
-      'Obtain multiple estimates in this low-volume market.',
-      'Verify credentials for farm or high-value rural properties.',
+      'Photo steep drives and tree tunnels; ask about shuttle from the main road.',
+      'Read lake association truck-size and hour limits before booking.',
+      'Build a winter weather go/no-go call into December–March closings.',
+      'Print gate codes — valley cell coverage can drop.',
+      'Clarify travel minimums when crews stage from denser counties.',
     ],
   },
   union: {
@@ -350,7 +350,7 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   warren: {
     marketNotes:
-      'Warren County is northwestern New Jersey with rural and small-town character far lower-density than Bergen, Essex, Hudson, or Middlesex. County seat Belvidere; largest community Phillipsburg on the Delaware River (across from Easton, PA) creates frequent NJ–PA / Lehigh Valley move dimensions. Hackettstown, Washington, Blairstown, and townships feature long driveways, farm-adjacent lots, and thinner local crew coverage. Relative affordability draws outbound movers from higher-cost NJ counties. Elevators/high-rises are rare — access, travel time, and coverage matter most.',
+      'Warren County is northwestern New Jersey with rural and small-town character far lower-density than Bergen, Essex, Hudson, or Middlesex. County seat Belvidere; largest community Phillipsburg on the Delaware River (across from Easton, PA) creates frequent NJ–PA / Lehigh Valley move dimensions. Hackettstown, Washington, Blairstown, and townships feature long driveways, farm-adjacent lots, and thinner local crew coverage. Relative affordability draws outbound movers from higher-cost NJ counties. Elevators/high-rises are rare — access, travel time, and coverage matter most. Sources: U.S. Census Bureau county context; FMCSA licensing database (fmcsa.gov); Move Trust Hub verified listings.',
     costs: {
       studioRange: '$450–$1,200+',
       familyRange: '$1,400–$3,600+',

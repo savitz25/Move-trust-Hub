@@ -15,8 +15,19 @@ import { sanBernardinoCountyIntelligence } from '@/lib/local-movers/county-intel
 import { sanDiegoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-diego-ca';
 import { santaClaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-clara-ca';
 import { warrenCountyIntelligence } from '@/lib/local-movers/county-intelligence/warren-nj';
+import { atlanticCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/atlantic-nj';
+import { gloucesterCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/gloucester-nj';
+import { hunterdonCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/hunterdon-nj';
+import { mercerCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/mercer-nj';
+import { somersetCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/somerset-nj';
+import { sussexCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/sussex-nj';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
+/**
+ * Prefer root-level flagship packs (richer logistics drafts on main).
+ * Subfolder packs fill Mercer / Somerset / Atlantic / Gloucester / Hunterdon / Sussex.
+ * Ocean + Warren root packs stay primary (also enhanced with relocation below via patch).
+ */
 const PACKS: CountyIntelligencePack[] = [
   alamedaCountyIntelligence,
   bergenCountyIntelligence,
@@ -35,6 +46,13 @@ const PACKS: CountyIntelligencePack[] = [
   sanDiegoCountyIntelligence,
   santaClaraCountyIntelligence,
   warrenCountyIntelligence,
+  // NJ Tier-1 wave (unique packs)
+  mercerCountyNjIntelligence,
+  somersetCountyNjIntelligence,
+  atlanticCountyNjIntelligence,
+  gloucesterCountyNjIntelligence,
+  hunterdonCountyNjIntelligence,
+  sussexCountyNjIntelligence,
 ];
 
 const byKey = new Map(
@@ -54,4 +72,8 @@ export function hasCountyIntelligencePack(
   countySlug: string
 ): boolean {
   return byKey.has(`${stateSlug}/${countySlug}`);
+}
+
+export function listCountyIntelligencePacks(): CountyIntelligencePack[] {
+  return [...PACKS];
 }

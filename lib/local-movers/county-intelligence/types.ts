@@ -1,6 +1,6 @@
 /**
  * Hyper-local county intelligence packs — structured content for premium county guides.
- * Flagship packs: California counties + major NJ counties (incl. rural Warren) and expanding.
+ * Flagship packs: California counties + major NJ counties and expanding.
  */
 
 export type CountyIntelligenceZone = {
@@ -33,6 +33,36 @@ export type CountyIntelligenceSeason = {
   detail: string;
 };
 
+export type CountyIntelligenceBullet = {
+  title?: string;
+  detail: string;
+};
+
+/** Specialized logistics module (shore, rural, HOA, university, etc.) */
+export type CountySpecializedModule = {
+  id: string;
+  title: string;
+  intro: string;
+  bullets: string[];
+};
+
+/** Relocation research module (schools, hospitals, housing, jobs, …) */
+export type CountyRelocationModule = {
+  id: string;
+  title: string;
+  intro?: string;
+  bullets: CountyIntelligenceBullet[];
+};
+
+export type CountyIntelligenceSectionId =
+  | 'whatMakesDifferent'
+  | 'zones'
+  | 'costDrivers'
+  | 'seasonal'
+  | 'specialized'
+  | 'relocation'
+  | 'resources';
+
 export type CountyIntelligencePack = {
   stateSlug: string;
   countySlug: string;
@@ -52,7 +82,9 @@ export type CountyIntelligencePack = {
     bullets: Array<{ title: string; detail: string }>;
   };
   zones: CountyIntelligenceZone[];
-  /** Optional intro under “Hyper-local zone breakdown” (defaults to a generic line). */
+  /** Override default zones section title (anti-sameness) */
+  zonesHeading?: string;
+  /** Optional intro under zone breakdown */
   zonesIntro?: string;
   costDrivers: {
     title: string;
@@ -65,11 +97,37 @@ export type CountyIntelligencePack = {
     intro: string;
     items: CountyIntelligenceSeason[];
   };
+  /** Optional specialized logistics modules (shore, rural access, HOA, etc.) */
+  specialized?: CountySpecializedModule[];
+  /**
+   * Relocation research — schools, hospitals, housing, towns, jobs, lifestyle, demographics.
+   */
+  relocation?: {
+    title: string;
+    intro: string;
+    modules: CountyRelocationModule[];
+  };
   resources: {
     title: string;
     intro: string;
     items: CountyIntelligenceResource[];
   };
+  /** Section render order for anti-sameness */
+  sectionOrder?: CountyIntelligenceSectionId[];
+  /**
+   * When true, deep sections render as collapsed accordions so mover listings stay primary.
+   */
+  collapsibleDeepContent?: boolean;
   directoryHint?: string;
   lastReviewed: string; // ISO date
 };
+
+export const DEFAULT_INTELLIGENCE_SECTION_ORDER: CountyIntelligenceSectionId[] = [
+  'whatMakesDifferent',
+  'zones',
+  'costDrivers',
+  'seasonal',
+  'specialized',
+  'relocation',
+  'resources',
+];

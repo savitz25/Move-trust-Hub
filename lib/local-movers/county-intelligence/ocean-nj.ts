@@ -441,5 +441,139 @@ export const oceanCountyIntelligence: CountyIntelligencePack = {
   },
   directoryHint:
     'Filter listings by zone (N. Shore/Brick, Barrier/LBI, Toms River, Lakewood, Western Inland, Southern Ocean) when available. Confirm summer island staging and 55+ HOA rules for Jackson/Manchester — and never price Lakewood like a barrier cottage.',
+  collapsibleDeepContent: true,
+  sectionOrder: [
+    'whatMakesDifferent',
+    'zones',
+    'specialized',
+    'seasonal',
+    'costDrivers',
+    'relocation',
+    'resources',
+  ],
+  specialized: [
+    {
+      id: 'shore-seasonal',
+      title: 'Shore, island & seasonal logistics',
+      intro:
+        'Barrier-island and peak-summer jobs need staging and weather plans that inland Ocean parcels may not.',
+      bullets: [
+        'Prefer mid-week island loads May–September when causeways and curb space are calmer.',
+        'Confirm shuttle fees for LBI / Seaside / Ortley streets that cannot take a full trailer.',
+        'Collect 55+ / HOA COI packets for Jackson and Manchester before move day.',
+        'Price Lakewood multi-family access separately from bayfront cottages.',
+      ],
+    },
+  ],
+  relocation: {
+    title: 'Considering a move to Ocean County?',
+    intro:
+      'Shore lifestyle vs inland townships vs Lakewood’s distinct housing patterns — pick the pocket first, then validate schools and healthcare access.',
+    modules: [
+      {
+        id: 'schools',
+        title: 'Schools & education',
+        intro:
+          'Ocean County uses multiple municipal and regional districts (Toms River Regional, Brick, Lakewood, Jackson, and others). Match every listing address to the correct district.',
+        bullets: [
+          {
+            title: 'Town-first district check',
+            detail:
+              'Use NJ DOE performance reports and district boundary tools — marketing town names can span feeders.',
+          },
+          {
+            title: 'Shore vs inland calendars',
+            detail:
+              'Barrier communities and inland growth areas do not share the same enrollment pressures or bus patterns.',
+          },
+          {
+            title: 'Lakewood context',
+            detail:
+              'Private and religious schooling options shape local calendars and traffic; factor mid-year transfer logistics carefully.',
+          },
+        ],
+      },
+      {
+        id: 'hospitals',
+        title: 'Hospitals & healthcare',
+        bullets: [
+          {
+            title: 'Community Medical Center (Toms River) & Ocean University Medical Center (Brick)',
+            detail:
+              'Primary acute-care anchors for much of the county — confirm specialties and insurer networks.',
+          },
+          {
+            title: 'Island drive times',
+            detail:
+              'Map ER access in peak summer traffic from barrier addresses; minutes stretch on holiday weekends.',
+          },
+        ],
+      },
+      {
+        id: 'housing',
+        title: 'Housing & cost of living',
+        bullets: [
+          {
+            title: 'Three housing worlds',
+            detail:
+              'Barrier/elevated stock, inland tracts and 55+ communities, and denser Lakewood multi-family — insurance and access differ for each.',
+          },
+          {
+            title: 'Flood awareness',
+            detail:
+              'Check FEMA maps for coastal and bay parcels; flood insurance can dominate monthly costs.',
+          },
+        ],
+      },
+      {
+        id: 'town-fit',
+        title: 'Town fit',
+        bullets: [
+          { title: 'Families wanting space', detail: 'Jackson and inland Toms River / Brick corridors.' },
+          { title: 'Retirees', detail: '55+ communities with strict move windows — read the rules PDF.' },
+          { title: 'Shore lifestyle', detail: 'Point Pleasant Beach, LBI, and bay towns trade commute ease for water access.' },
+        ],
+      },
+      {
+        id: 'jobs',
+        title: 'Jobs & commute',
+        bullets: [
+          {
+            title: 'Local anchors',
+            detail: 'Healthcare, retail, tourism/hospitality, education, and public sector roles.',
+          },
+          {
+            title: 'Parkway north',
+            detail: 'Some residents commute toward Monmouth and further north; summer Fridays reverse-shore traffic is real.',
+          },
+        ],
+      },
+      {
+        id: 'lifestyle',
+        title: 'Lifestyle & climate',
+        bullets: [
+          {
+            title: 'Seasonal swing',
+            detail: 'Summer visitors change traffic and parking; winters are quieter on the barrier islands.',
+          },
+          {
+            title: 'Outdoors',
+            detail: 'Beaches, Barnegat Bay recreation, and Island Beach State Park access are major draws.',
+          },
+        ],
+      },
+      {
+        id: 'demographics',
+        title: 'Who lives here',
+        bullets: [
+          {
+            title: 'Large, mixed county',
+            detail:
+              'Among New Jersey’s larger counties by population, with retiree presence alongside family and year-round working households (U.S. Census Bureau).',
+          },
+        ],
+      },
+    ],
+  },
   lastReviewed: '2026-07-22',
 };

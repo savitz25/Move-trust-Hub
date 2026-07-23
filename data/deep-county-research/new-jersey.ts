@@ -15,6 +15,20 @@ const NJ_WAVE3_SLUGS = [
   'burlington',
 ] as const;
 
+/** Tier-1 upgrade wave — shore, capital, affluent suburban, South Jersey, rural NW. */
+const NJ_WAVE4_SLUGS = [
+  'ocean',
+  'mercer',
+  'somerset',
+  'atlantic',
+  'gloucester',
+  'hunterdon',
+  'sussex',
+  'warren',
+] as const;
+
+const NJ_DEEP_SLUGS = [...NJ_WAVE3_SLUGS, ...NJ_WAVE4_SLUGS] as const;
+
 const NJ_METRO_SLUGS = new Set([
   'hudson',
   'essex',
@@ -22,10 +36,15 @@ const NJ_METRO_SLUGS = new Set([
   'middlesex',
   'monmouth',
   'union',
+  'ocean',
+  'mercer',
+  'somerset',
+  'atlantic',
+  'gloucester',
 ]);
 
 const njSubset = Object.fromEntries(
-  NJ_WAVE3_SLUGS.filter((slug) => newJerseyCountyResearch[slug]).map((slug) => [
+  NJ_DEEP_SLUGS.filter((slug) => newJerseyCountyResearch[slug]).map((slug) => [
     slug,
     newJerseyCountyResearch[slug],
   ])

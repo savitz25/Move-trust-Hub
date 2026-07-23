@@ -1,14 +1,29 @@
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import {
   AlertTriangle,
+  Building2,
   Calendar,
+  ChevronDown,
   DollarSign,
   ExternalLink,
+  GraduationCap,
+  HeartPulse,
+  Home,
   MapPinned,
   Navigation,
   Sparkles,
+  Users,
+  Briefcase,
+  Trees,
 } from 'lucide-react';
-import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import type {
+  CountyIntelligencePack,
+  CountyIntelligenceSectionId,
+  CountyRelocationModule,
+  CountySpecializedModule,
+} from '@/lib/local-movers/county-intelligence/types';
+import { DEFAULT_INTELLIGENCE_SECTION_ORDER } from '@/lib/local-movers/county-intelligence/types';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -37,155 +52,7 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
               'rounded-xl border bg-background/90 px-2 py-3 font-medium shadow-sm transition-colors hover:border-primary/50 hover:bg-primary/5',
               i % 3 === 0 && 'sm:col-span-1',
               z.id === 'antelope' && 'sm:col-span-2',
-              z.id === 'north-county' && 'sm:col-span-2',
-              z.id === 'irvine-planned' && 'sm:col-span-2',
-              z.id === 'coachella-valley' && 'sm:col-span-2',
-              z.id === 'high-desert' && 'sm:col-span-2',
-              z.id === 'mountains' && 'sm:col-span-2',
-              z.id === 'north-tech' && 'sm:col-span-2',
-              z.id === 'berkeley-hills' && 'sm:col-span-2',
-              z.id === 'tri-valley' && 'sm:col-span-2',
-              z.id === 'elk-grove-south' && 'sm:col-span-2',
-              z.id === 'downtown-midtown' && 'sm:col-span-2',
-              z.id === 'lamorinda' && 'sm:col-span-2',
-              z.id === 'east-county' && 'sm:col-span-2',
-              z.id === 'clovis-ne' && 'sm:col-span-2',
-              z.id === 'ag-surround' && 'sm:col-span-2',
-              z.id === 'newark-core' && 'sm:col-span-2',
-              z.id === 'west-affluent' && 'sm:col-span-2',
-              z.id === 'far-west' && 'sm:col-span-2',
-              z.id === 'central-shore' && 'sm:col-span-2',
-              z.id === 'western-inland' && 'sm:col-span-2',
-              z.id === 'red-bank-two-river' && 'sm:col-span-2',
-              z.id === 'hudson-waterfront' && 'sm:col-span-2',
-              z.id === 'northern-affluent' && 'sm:col-span-2',
-              z.id === 'englewood-east' && 'sm:col-span-2',
-              z.id === 'barrier-islands' && 'sm:col-span-2',
-              z.id === 'lakewood' && 'sm:col-span-2',
-              z.id === 'western-inland' && 'sm:col-span-2',
-              z.id === 'new-brunswick-rutgers' && 'sm:col-span-2',
-              z.id === 'edison' && 'sm:col-span-2',
-              z.id === 'woodbridge-corridor' && 'sm:col-span-2',
-              z.id === 'morristown-core' && 'sm:col-span-2',
-              z.id === 'parsippany-corridor' && 'sm:col-span-2',
-              z.id === 'western-morris' && 'sm:col-span-2',
-              z.id === 'phillipsburg-delaware' && 'sm:col-span-2',
-              z.id === 'western-blairstown' && 'sm:col-span-2',
-              z.id === 'hackettstown' && 'sm:col-span-2',
-              z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50',
-              z.id === 'coastal' && 'border-sky-300/70 dark:border-sky-800/50',
-              z.id === 'irvine-planned' &&
-                'border-violet-300/70 dark:border-violet-800/50',
-              z.id === 'coachella-valley' &&
-                'border-orange-300/70 dark:border-orange-800/50',
-              z.id === 'high-desert' &&
-                'border-amber-300/70 dark:border-amber-800/50',
-              z.id === 'mountains' &&
-                'border-emerald-300/70 dark:border-emerald-800/50',
-              z.id === 'north-tech' &&
-                'border-cyan-300/70 dark:border-cyan-800/50',
-              z.id === 'berkeley-hills' &&
-                'border-rose-300/70 dark:border-rose-800/50',
-              z.id === 'tri-valley' &&
-                'border-lime-300/70 dark:border-lime-800/50',
-              z.id === 'elk-grove-south' &&
-                'border-teal-300/70 dark:border-teal-800/50',
-              z.id === 'downtown-midtown' &&
-                'border-indigo-300/70 dark:border-indigo-800/50',
-              z.id === 'lamorinda' &&
-                'border-fuchsia-300/70 dark:border-fuchsia-800/50',
-              z.id === 'east-county' &&
-                'border-yellow-300/70 dark:border-yellow-800/50',
-              z.id === 'clovis-ne' &&
-                'border-sky-300/70 dark:border-sky-800/50',
-              z.id === 'ag-surround' &&
-                'border-amber-400/70 dark:border-amber-700/50',
-              z.id === 'newark-core' &&
-                'border-indigo-300/70 dark:border-indigo-800/50',
-              z.id === 'inner-ring' &&
-                'border-slate-300/70 dark:border-slate-700/50',
-              z.id === 'north-northwest' &&
-                'border-sky-300/70 dark:border-sky-800/50',
-              z.id === 'west-affluent' &&
-                'border-emerald-300/70 dark:border-emerald-800/50',
-              z.id === 'maplewood-so' &&
-                'border-amber-300/70 dark:border-amber-800/50',
-              z.id === 'far-west' &&
-                'border-violet-300/70 dark:border-violet-800/50',
-              z.id === 'northern-shore' &&
-                'border-sky-300/70 dark:border-sky-800/50',
-              z.id === 'central-shore' &&
-                'border-cyan-300/70 dark:border-cyan-800/50',
-              z.id === 'red-bank-two-river' &&
-                'border-indigo-300/70 dark:border-indigo-800/50',
-              z.id === 'western-inland' &&
-                'border-emerald-300/70 dark:border-emerald-800/50',
-              z.id === 'southwestern' &&
-                'border-amber-300/70 dark:border-amber-800/50',
-              z.id === 'route-35-corridor' &&
-                'border-orange-300/70 dark:border-orange-800/50',
-              z.id === 'hudson-waterfront' &&
-                'border-sky-300/70 dark:border-sky-800/50',
-              z.id === 'hackensack-valley' &&
-                'border-slate-300/70 dark:border-slate-700/50',
-              z.id === 'route-17-paramus' &&
-                'border-orange-300/70 dark:border-orange-800/50',
-              z.id === 'northern-affluent' &&
-                'border-emerald-300/70 dark:border-emerald-800/50',
-              z.id === 'englewood-east' &&
-                'border-indigo-300/70 dark:border-indigo-800/50',
-              z.id === 'southern-meadowlands' &&
-                'border-amber-300/70 dark:border-amber-800/50',
-              z.id === 'barrier-islands' &&
-                'border-cyan-300/70 dark:border-cyan-800/50',
-              z.id === 'toms-river' &&
-                'border-sky-300/70 dark:border-sky-800/50',
-              z.id === 'lakewood' &&
-                'border-violet-300/70 dark:border-violet-800/50',
-              z.id === 'western-inland' &&
-                'border-emerald-300/70 dark:border-emerald-800/50',
-              z.id === 'southern-ocean' &&
-                'border-teal-300/70 dark:border-teal-800/50',
-              z.id === 'new-brunswick-rutgers' &&
-                'border-rose-300/70 dark:border-rose-800/50',
-              z.id === 'edison' &&
-                'border-sky-300/70 dark:border-sky-800/50',
-              z.id === 'woodbridge-corridor' &&
-                'border-orange-300/70 dark:border-orange-800/50',
-              z.id === 'perth-amboy' &&
-                'border-cyan-300/70 dark:border-cyan-800/50',
-              z.id === 'piscataway' &&
-                'border-indigo-300/70 dark:border-indigo-800/50',
-              z.id === 'east-brunswick' &&
-                'border-emerald-300/70 dark:border-emerald-800/50',
-              z.id === 'old-bridge-south' &&
-                'border-amber-300/70 dark:border-amber-800/50',
-              z.id === 'south-brunswick' &&
-                'border-lime-300/70 dark:border-lime-800/50',
-              z.id === 'morristown-core' &&
-                'border-rose-300/70 dark:border-rose-800/50',
-              z.id === 'parsippany-corridor' &&
-                'border-orange-300/70 dark:border-orange-800/50',
-              z.id === 'madison-chatham' &&
-                'border-violet-300/70 dark:border-violet-800/50',
-              z.id === 'dover-rockaway' &&
-                'border-slate-300/70 dark:border-slate-700/50',
-              z.id === 'randolph-denville' &&
-                'border-emerald-300/70 dark:border-emerald-800/50',
-              z.id === 'western-morris' &&
-                'border-amber-300/70 dark:border-amber-800/50',
-              z.id === 'phillipsburg-delaware' &&
-                'border-sky-300/70 dark:border-sky-800/50',
-              z.id === 'central-warren' &&
-                'border-slate-300/70 dark:border-slate-700/50',
-              z.id === 'hackettstown' &&
-                'border-indigo-300/70 dark:border-indigo-800/50',
-              z.id === 'belvidere-north' &&
-                'border-cyan-300/70 dark:border-cyan-800/50',
-              z.id === 'western-blairstown' &&
-                'border-emerald-300/70 dark:border-emerald-800/50',
-              z.id === 'eastern-approaches' &&
-                'border-amber-300/70 dark:border-amber-800/50'
+              z.id === 'hills' && 'border-amber-300/70 dark:border-amber-800/50'
             )}
           >
             <span className="block text-foreground leading-snug">{z.shortName}</span>
@@ -194,15 +61,142 @@ function ZoneMapSchematic({ pack }: { pack: CountyIntelligencePack }) {
       </div>
       <p className="mt-3 text-[11px] text-muted-foreground leading-relaxed">
         Zones are for planning — not political boundaries. Jump to a zone for housing types and
-        access tips, then filter the mover list below.
+        access tips.
       </p>
     </div>
   );
 }
 
+function AccordionSection({
+  id,
+  title,
+  icon,
+  children,
+  defaultOpen = false,
+  collapsible,
+}: {
+  id: string;
+  title: string;
+  icon: ReactNode;
+  children: ReactNode;
+  defaultOpen?: boolean;
+  collapsible: boolean;
+}) {
+  if (!collapsible) {
+    return (
+      <section className="rounded-2xl border bg-card p-6 sm:p-7" aria-labelledby={id}>
+        <h2 id={id} className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 flex items-center gap-2">
+          {icon}
+          {title}
+        </h2>
+        {children}
+      </section>
+    );
+  }
+
+  return (
+    <details
+      id={id}
+      className="group rounded-2xl border bg-card open:bg-card"
+      open={defaultOpen || undefined}
+    >
+      <summary className="cursor-pointer list-none flex items-center justify-between gap-3 p-5 sm:p-6 font-semibold tracking-tight text-base sm:text-lg [&::-webkit-details-marker]:hidden">
+        <span className="inline-flex items-center gap-2 min-w-0">
+          {icon}
+          <span className="truncate">{title}</span>
+        </span>
+        <ChevronDown
+          className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+          aria-hidden
+        />
+      </summary>
+      <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-border/60 pt-4">{children}</div>
+    </details>
+  );
+}
+
+function relocationIcon(moduleId: string) {
+  if (moduleId.includes('school') || moduleId.includes('education'))
+    return <GraduationCap className="h-5 w-5 text-primary shrink-0" aria-hidden />;
+  if (moduleId.includes('hospital') || moduleId.includes('health'))
+    return <HeartPulse className="h-5 w-5 text-primary shrink-0" aria-hidden />;
+  if (moduleId.includes('hous') || moduleId.includes('cost'))
+    return <Home className="h-5 w-5 text-primary shrink-0" aria-hidden />;
+  if (moduleId.includes('job') || moduleId.includes('commute'))
+    return <Briefcase className="h-5 w-5 text-primary shrink-0" aria-hidden />;
+  if (moduleId.includes('town') || moduleId.includes('neighbor') || moduleId.includes('fit'))
+    return <Building2 className="h-5 w-5 text-primary shrink-0" aria-hidden />;
+  if (moduleId.includes('demo') || moduleId.includes('who'))
+    return <Users className="h-5 w-5 text-primary shrink-0" aria-hidden />;
+  if (moduleId.includes('life') || moduleId.includes('outdoor') || moduleId.includes('climate'))
+    return <Trees className="h-5 w-5 text-primary shrink-0" aria-hidden />;
+  return <Sparkles className="h-5 w-5 text-primary shrink-0" aria-hidden />;
+}
+
+function RelocationBlock({
+  module,
+  collapsible,
+}: {
+  module: CountyRelocationModule;
+  collapsible: boolean;
+}) {
+  return (
+    <AccordionSection
+      id={`reloc-${module.id}`}
+      title={module.title}
+      icon={relocationIcon(module.id)}
+      collapsible={collapsible}
+    >
+      {module.intro ? (
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4">{module.intro}</p>
+      ) : null}
+      <ul className="space-y-3">
+        {module.bullets.map((b, i) => (
+          <li key={b.title ?? i} className="text-sm leading-relaxed flex gap-2">
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+            <div>
+              {b.title ? (
+                <span className="font-semibold text-foreground">{b.title}. </span>
+              ) : null}
+              <span className="text-muted-foreground">{b.detail}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </AccordionSection>
+  );
+}
+
+function SpecializedBlock({
+  module,
+  collapsible,
+}: {
+  module: CountySpecializedModule;
+  collapsible: boolean;
+}) {
+  return (
+    <AccordionSection
+      id={`spec-${module.id}`}
+      title={module.title}
+      icon={<AlertTriangle className="h-5 w-5 text-amber-600 shrink-0" aria-hidden />}
+      collapsible={collapsible}
+    >
+      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{module.intro}</p>
+      <ul className="space-y-2.5 text-sm text-muted-foreground">
+        {module.bullets.map((b) => (
+          <li key={b} className="flex gap-2 leading-relaxed">
+            <span className="text-primary">·</span>
+            {b}
+          </li>
+        ))}
+      </ul>
+    </AccordionSection>
+  );
+}
+
 /**
- * Hyper-local county intelligence sections (LA first; reusable pack shape).
- * Renders only when a curated pack is registered for the county.
+ * Hyper-local county intelligence + relocation research.
+ * When collapsibleDeepContent is set, sections accordion so movers stay primary on the page.
  */
 export function CountyIntelligenceHub({ pack, className }: Props) {
   const reviewed = new Date(pack.lastReviewed).toLocaleDateString('en-US', {
@@ -210,197 +204,238 @@ export function CountyIntelligenceHub({ pack, className }: Props) {
     month: 'long',
     day: 'numeric',
   });
+  const collapsible = Boolean(pack.collapsibleDeepContent);
+  const order =
+    pack.sectionOrder?.length ? pack.sectionOrder : DEFAULT_INTELLIGENCE_SECTION_ORDER;
+
+  const renderSection = (id: CountyIntelligenceSectionId) => {
+    switch (id) {
+      case 'whatMakesDifferent':
+        return (
+          <AccordionSection
+            key={id}
+            id="county-diff-heading"
+            title={pack.whatMakesDifferent.title}
+            icon={<AlertTriangle className="h-5 w-5 text-amber-600 shrink-0" aria-hidden />}
+            collapsible={collapsible}
+            defaultOpen={!collapsible}
+          >
+            <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+              {pack.whatMakesDifferent.intro}
+            </p>
+            <ul className="space-y-4">
+              {pack.whatMakesDifferent.bullets.map((b) => (
+                <li key={b.title} className="flex gap-3 text-sm leading-relaxed">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <div>
+                    <p className="font-semibold text-foreground">{b.title}</p>
+                    <p className="text-muted-foreground mt-0.5">{b.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </AccordionSection>
+        );
+      case 'zones':
+        return (
+          <div key={id} className="space-y-4">
+            <AccordionSection
+              id="county-zones-heading"
+              title={pack.zonesHeading ?? 'Hyper-local zone breakdown'}
+              icon={<Navigation className="h-5 w-5 text-primary shrink-0" aria-hidden />}
+              collapsible={collapsible}
+            >
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                {pack.zonesIntro ??
+                  'Treat each zone as its own logistics problem. Housing stock and truck access differ across the county.'}
+              </p>
+              <ZoneMapSchematic pack={pack} />
+              <div className="grid gap-4 sm:grid-cols-2 mt-5">
+                {pack.zones.map((z) => (
+                  <article
+                    key={z.id}
+                    id={`zone-${z.id}`}
+                    className="rounded-2xl border bg-muted/15 p-5 scroll-mt-24"
+                  >
+                    <h3 className="font-semibold text-foreground tracking-tight">{z.name}</h3>
+                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                      {z.neighborhoods.slice(0, 6).join(' · ')}
+                      {z.neighborhoods.length > 6 ? '…' : ''}
+                    </p>
+                    <p className="text-sm mt-3">
+                      <span className="font-medium text-foreground">Housing: </span>
+                      <span className="text-muted-foreground">{z.housingTypes}</span>
+                    </p>
+                    <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                      {z.challenges.map((c) => (
+                        <li key={c} className="flex gap-2">
+                          <span className="text-primary">·</span>
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-3 text-sm leading-relaxed rounded-lg border bg-background/80 px-3 py-2">
+                      <span className="font-medium text-foreground">Mover tip: </span>
+                      <span className="text-muted-foreground">{z.moverTips}</span>
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </AccordionSection>
+          </div>
+        );
+      case 'costDrivers':
+        return (
+          <AccordionSection
+            key={id}
+            id="county-cost-intel-heading"
+            title={pack.costDrivers.title}
+            icon={<DollarSign className="h-5 w-5 text-primary shrink-0" aria-hidden />}
+            collapsible={collapsible}
+          >
+            <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+              {pack.costDrivers.intro}
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3 mb-5">
+              {pack.costDrivers.ranges.map((r) => (
+                <div key={r.label} className="rounded-xl border bg-muted/20 p-4">
+                  <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1">
+                    {r.label}
+                  </div>
+                  <div className="text-lg font-semibold tabular-nums">{r.value}</div>
+                  {r.note ? (
+                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{r.note}</p>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+            <ul className="space-y-3">
+              {pack.costDrivers.drivers.map((d) => (
+                <li key={d.title} className="text-sm leading-relaxed">
+                  <span className="font-semibold text-foreground">{d.title}. </span>
+                  <span className="text-muted-foreground">{d.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </AccordionSection>
+        );
+      case 'seasonal':
+        return (
+          <AccordionSection
+            key={id}
+            id="county-seasonal-heading"
+            title={pack.seasonal.title}
+            icon={<Calendar className="h-5 w-5 text-primary shrink-0" aria-hidden />}
+            collapsible={collapsible}
+          >
+            <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+              {pack.seasonal.intro}
+            </p>
+            <ul className="space-y-4">
+              {pack.seasonal.items.map((item) => (
+                <li key={item.title} className="text-sm leading-relaxed">
+                  <p className="font-semibold text-foreground">{item.title}</p>
+                  <p className="text-muted-foreground mt-0.5">{item.detail}</p>
+                </li>
+              ))}
+            </ul>
+          </AccordionSection>
+        );
+      case 'specialized':
+        if (!pack.specialized?.length) return null;
+        return (
+          <div key={id} className="space-y-4">
+            {pack.specialized.map((m) => (
+              <SpecializedBlock key={m.id} module={m} collapsible={collapsible} />
+            ))}
+          </div>
+        );
+      case 'relocation':
+        if (!pack.relocation?.modules.length) return null;
+        return (
+          <div key={id} className="space-y-4">
+            <div className="rounded-2xl border border-primary/20 bg-primary/5 px-5 py-4">
+              <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
+                {pack.relocation.title}
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-1.5">
+                {pack.relocation.intro}
+              </p>
+            </div>
+            {pack.relocation.modules.map((m) => (
+              <RelocationBlock key={m.id} module={m} collapsible={collapsible} />
+            ))}
+          </div>
+        );
+      case 'resources':
+        return (
+          <AccordionSection
+            key={id}
+            id="county-resources-heading"
+            title={pack.resources.title}
+            icon={<Sparkles className="h-5 w-5 text-primary shrink-0" aria-hidden />}
+            collapsible={collapsible}
+          >
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              {pack.resources.intro}
+            </p>
+            <ul className="space-y-2.5">
+              {pack.resources.items.map((item) => {
+                const isExternal = item.external || item.href.startsWith('http');
+                return (
+                  <li key={item.href + item.label}>
+                    {isExternal ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex flex-wrap items-baseline gap-x-2 text-sm font-medium text-primary hover:underline"
+                      >
+                        {item.label}
+                        <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-70" aria-hidden />
+                        {item.note ? (
+                          <span className="font-normal text-muted-foreground">— {item.note}</span>
+                        ) : null}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="inline-flex flex-wrap items-baseline gap-x-2 text-sm font-medium text-primary hover:underline"
+                      >
+                        {item.label}
+                        {item.note ? (
+                          <span className="font-normal text-muted-foreground">— {item.note}</span>
+                        ) : null}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+            <p className="text-xs text-muted-foreground mt-5">
+              Intelligence last reviewed {reviewed}. Rules, fees, and district boundaries change —
+              verify on official sites before move day.
+            </p>
+          </AccordionSection>
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
-    <div className={cn('space-y-10 mb-10', className)}>
-      {/* What makes it different */}
-      <section
-        className="rounded-2xl border bg-card p-6 sm:p-7"
-        aria-labelledby="county-diff-heading"
-      >
-        <h2
-          id="county-diff-heading"
-          className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 flex items-center gap-2"
-        >
-          <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0" aria-hidden />
-          {pack.whatMakesDifferent.title}
-        </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-          {pack.whatMakesDifferent.intro}
+    <div
+      className={cn('space-y-4 mb-10', className)}
+      id="county-intelligence"
+      data-testid="county-intelligence-hub"
+    >
+      {collapsible ? (
+        <p className="text-sm text-muted-foreground leading-relaxed rounded-xl border bg-muted/20 px-4 py-3">
+          Expand sections below for county-specific moving logistics and relocation research
+          (schools, healthcare, towns, and commute patterns). Mover listings stay above this guide.
         </p>
-        <ul className="space-y-4">
-          {pack.whatMakesDifferent.bullets.map((b) => (
-            <li key={b.title} className="flex gap-3 text-sm leading-relaxed">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <div>
-                <p className="font-semibold text-foreground">{b.title}</p>
-                <p className="text-muted-foreground mt-0.5">{b.detail}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <ZoneMapSchematic pack={pack} />
-
-      {/* Zones */}
-      <section aria-labelledby="county-zones-heading">
-        <h2
-          id="county-zones-heading"
-          className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 flex items-center gap-2"
-        >
-          <Navigation className="h-5 w-5 text-primary shrink-0" aria-hidden />
-          Hyper-local zone breakdown
-        </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-          {pack.zonesIntro ??
-            'Treat each zone as its own logistics problem. Housing stock, truck access, and crew expertise can vary more across this county than across many entire states.'}
-        </p>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {pack.zones.map((z) => (
-            <article
-              key={z.id}
-              id={`zone-${z.id}`}
-              className="rounded-2xl border bg-muted/15 p-5 scroll-mt-24"
-            >
-              <h3 className="font-semibold text-foreground tracking-tight">{z.name}</h3>
-              <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                {z.neighborhoods.slice(0, 6).join(' · ')}
-                {z.neighborhoods.length > 6 ? '…' : ''}
-              </p>
-              <p className="text-sm mt-3">
-                <span className="font-medium text-foreground">Housing: </span>
-                <span className="text-muted-foreground">{z.housingTypes}</span>
-              </p>
-              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
-                {z.challenges.map((c) => (
-                  <li key={c} className="flex gap-2">
-                    <span className="text-primary">·</span>
-                    {c}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-3 text-sm leading-relaxed rounded-lg border bg-background/80 px-3 py-2">
-                <span className="font-medium text-foreground">Mover tip: </span>
-                <span className="text-muted-foreground">{z.moverTips}</span>
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Costs */}
-      <section
-        className="rounded-2xl border bg-card p-6 sm:p-7"
-        aria-labelledby="county-cost-intel-heading"
-      >
-        <h2
-          id="county-cost-intel-heading"
-          className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 flex items-center gap-2"
-        >
-          <DollarSign className="h-5 w-5 text-primary shrink-0" aria-hidden />
-          {pack.costDrivers.title}
-        </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-          {pack.costDrivers.intro}
-        </p>
-        <div className="grid sm:grid-cols-2 gap-3 mb-5">
-          {pack.costDrivers.ranges.map((r) => (
-            <div key={r.label} className="rounded-xl border bg-muted/20 p-4">
-              <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1">
-                {r.label}
-              </div>
-              <div className="text-lg font-semibold tabular-nums">{r.value}</div>
-              {r.note ? (
-                <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{r.note}</p>
-              ) : null}
-            </div>
-          ))}
-        </div>
-        <ul className="space-y-3">
-          {pack.costDrivers.drivers.map((d) => (
-            <li key={d.title} className="text-sm leading-relaxed">
-              <span className="font-semibold text-foreground">{d.title}. </span>
-              <span className="text-muted-foreground">{d.detail}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Seasonal */}
-      <section
-        className="rounded-2xl border bg-muted/20 p-6 sm:p-7"
-        aria-labelledby="county-seasonal-heading"
-      >
-        <h2
-          id="county-seasonal-heading"
-          className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 flex items-center gap-2"
-        >
-          <Calendar className="h-5 w-5 text-primary shrink-0" aria-hidden />
-          {pack.seasonal.title}
-        </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-5">{pack.seasonal.intro}</p>
-        <ul className="space-y-4">
-          {pack.seasonal.items.map((item) => (
-            <li key={item.title} className="text-sm leading-relaxed">
-              <p className="font-semibold text-foreground">{item.title}</p>
-              <p className="text-muted-foreground mt-0.5">{item.detail}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Resources */}
-      <section
-        className="rounded-2xl border bg-card p-6 sm:p-7"
-        aria-labelledby="county-resources-heading"
-      >
-        <h2
-          id="county-resources-heading"
-          className="text-xl sm:text-2xl font-semibold tracking-tight mb-2 flex items-center gap-2"
-        >
-          <Sparkles className="h-5 w-5 text-primary shrink-0" aria-hidden />
-          {pack.resources.title}
-        </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4">{pack.resources.intro}</p>
-        <ul className="space-y-2.5">
-          {pack.resources.items.map((item) => {
-            const isExternal = item.external || item.href.startsWith('http');
-            return (
-              <li key={item.href + item.label}>
-                {isExternal ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex flex-wrap items-baseline gap-x-2 text-sm font-medium text-primary hover:underline"
-                  >
-                    {item.label}
-                    <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-70" aria-hidden />
-                    {item.note ? (
-                      <span className="font-normal text-muted-foreground">— {item.note}</span>
-                    ) : null}
-                  </a>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="inline-flex flex-wrap items-baseline gap-x-2 text-sm font-medium text-primary hover:underline"
-                  >
-                    {item.label}
-                    {item.note ? (
-                      <span className="font-normal text-muted-foreground">— {item.note}</span>
-                    ) : null}
-                  </Link>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-        <p className="text-xs text-muted-foreground mt-5">
-          Intelligence last reviewed {reviewed}. Rules and fees change — verify on official city
-          and agency sites before move day.
-        </p>
-      </section>
+      ) : null}
+      {order.map((sectionId) => renderSection(sectionId))}
     </div>
   );
 }
