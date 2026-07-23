@@ -24,28 +24,28 @@ export const californiaStateResourceHub: StateResourceHubPack = {
     {
       id: 'within',
       label: 'Moving Within California',
-      href: '#ca-regulations',
+      href: '#hub-regulations',
       description:
         'Confirm BHGS rules for in-state work, then compare local costs and open the counties you will use.',
     },
     {
       id: 'to',
       label: 'Moving To California',
-      href: '#ca-regions',
+      href: '#hub-regions',
       description:
         'Choose a region first, then a county guide for parking, HOAs, elevators, and metro logistics.',
     },
     {
       id: 'from',
       label: 'Moving From California',
-      href: '#ca-routes',
+      href: '#hub-routes',
       description:
         'Review outbound corridors, confirm interstate FMCSA authority, and size inventory for the long haul.',
     },
     {
       id: 'unsure',
       label: 'Not Sure Yet',
-      href: '#ca-why-different',
+      href: '#hub-why-different',
       description:
         'Start with how California markets differ, then use the calculator and map to narrow your plan.',
     },
@@ -60,7 +60,7 @@ export const californiaStateResourceHub: StateResourceHubPack = {
   },
   tertiaryCta: {
     label: 'Explore Regions & Counties',
-    href: '#ca-regions',
+    href: '#hub-regions',
   },
   whyDifferent: {
     title: 'Why moving in California is different',

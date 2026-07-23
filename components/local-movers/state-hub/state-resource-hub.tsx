@@ -201,11 +201,11 @@ export function StateResourceHub({
       {/* —— Intent selector (dominant, SSR) —— */}
       <section
         className="mb-8 scroll-mt-28"
-        id="ca-intent"
-        aria-labelledby="ca-intent-heading"
+        id="hub-intent"
+        aria-labelledby="hub-intent-heading"
       >
         <h2
-          id="ca-intent-heading"
+          id="hub-intent-heading"
           className="mb-3 text-lg font-semibold tracking-tight text-slate-900 scroll-mt-28"
         >
           What kind of move are you planning?
@@ -242,11 +242,11 @@ export function StateResourceHub({
       {/* —— Why different (SSR bridge) —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-why-different"
-        aria-labelledby="ca-why-different-heading"
+        id="hub-why-different"
+        aria-labelledby="hub-why-different-heading"
       >
         <SectionHeading
-          id="ca-why-different-heading"
+          id="hub-why-different-heading"
           eyebrow="Orientation"
           title={pack.whyDifferent.title}
         />
@@ -266,11 +266,11 @@ export function StateResourceHub({
       {/* —— Snapshot —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-snapshot"
-        aria-labelledby="ca-snapshot-heading"
+        id="hub-snapshot"
+        aria-labelledby="hub-snapshot-heading"
       >
         <SectionHeading
-          id="ca-snapshot-heading"
+          id="hub-snapshot-heading"
           eyebrow="At a glance"
           title={pack.snapshot.title}
           intro={pack.snapshot.methodology}
@@ -301,11 +301,11 @@ export function StateResourceHub({
       {/* —— Regulations —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-regulations"
-        aria-labelledby="ca-regulations-heading"
+        id="hub-regulations"
+        aria-labelledby="hub-regulations-heading"
       >
         <SectionHeading
-          id="ca-regulations-heading"
+          id="hub-regulations-heading"
           eyebrow="Consumer protection"
           title={pack.regulations.title}
           intro={pack.regulations.intro}
@@ -405,11 +405,11 @@ export function StateResourceHub({
       {showRegions ? (
         <section
           className="mb-12 scroll-mt-28"
-          id="ca-regions"
-          aria-labelledby="ca-regions-heading"
+          id="hub-regions"
+          aria-labelledby="hub-regions-heading"
         >
           <SectionHeading
-            id="ca-regions-heading"
+            id="hub-regions-heading"
             eyebrow="State → region → county"
             title="Explore by region"
             intro="California is many markets. Start with a region, then open the county guide that matches your addresses. Expand a card to see every county in that region."
@@ -488,17 +488,17 @@ export function StateResourceHub({
           <NextStepCtas pack={pack} compact />
         </section>
       ) : (
-        <div id="ca-regions" className="scroll-mt-28" />
+        <div id="hub-regions" className="scroll-mt-28" />
       )}
 
       {/* —— Map (client island for interaction; labels in aria) —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-map"
-        aria-labelledby="ca-map-heading"
+        id="hub-map"
+        aria-labelledby="hub-map-heading"
       >
         <SectionHeading
-          id="ca-map-heading"
+          id="hub-map-heading"
           eyebrow="Interactive map"
           title="Explore counties on the map"
           intro="Hover or focus a county for its name and mover count. Click to open the county guide. Prefer text? Use regions above or the full directory below."
@@ -523,11 +523,11 @@ export function StateResourceHub({
       {/* —— Costs —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-costs"
-        aria-labelledby="ca-costs-heading"
+        id="hub-costs"
+        aria-labelledby="hub-costs-heading"
       >
         <SectionHeading
-          id="ca-costs-heading"
+          id="hub-costs-heading"
           eyebrow="Planning ranges"
           title={pack.costs.title}
           intro={pack.costs.intro}
@@ -599,11 +599,11 @@ export function StateResourceHub({
       {/* —— Routes —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-routes"
-        aria-labelledby="ca-routes-heading"
+        id="hub-routes"
+        aria-labelledby="hub-routes-heading"
       >
         <SectionHeading
-          id="ca-routes-heading"
+          id="hub-routes-heading"
           title={pack.routes.title}
           intro={pack.routes.intro}
         />
@@ -691,11 +691,11 @@ export function StateResourceHub({
       {/* —— Challenges —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-challenges"
-        aria-labelledby="ca-challenges-heading"
+        id="hub-challenges"
+        aria-labelledby="hub-challenges-heading"
       >
         <SectionHeading
-          id="ca-challenges-heading"
+          id="hub-challenges-heading"
           title={pack.challenges.title}
           intro={pack.challenges.intro}
         />
@@ -742,11 +742,11 @@ export function StateResourceHub({
       {/* —— Full county directory —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-counties"
-        aria-labelledby="ca-counties-heading"
+        id="hub-counties"
+        aria-labelledby="hub-counties-heading"
       >
         <SectionHeading
-          id="ca-counties-heading"
+          id="hub-counties-heading"
           eyebrow="Complete directory"
           title={`All ${hubRows.length} county guides`}
           intro="Deep and Tier 1 research first. Expand for the full list. Every card links to a live county page."
@@ -823,11 +823,11 @@ export function StateResourceHub({
       {/* —— Tools —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-tools"
-        aria-labelledby="ca-tools-heading"
+        id="hub-tools"
+        aria-labelledby="hub-tools-heading"
       >
         <SectionHeading
-          id="ca-tools-heading"
+          id="hub-tools-heading"
           title="Tools & planning"
           intro="Use these tools before you request quotes — inventory accuracy and license checks save money and stress."
           icon={<BookOpen className="h-6 w-6 text-primary" aria-hidden />}
@@ -854,12 +854,12 @@ export function StateResourceHub({
       {/* —— Trust / E-E-A-T —— */}
       <section
         className="mb-12 scroll-mt-28"
-        id="ca-trust"
-        aria-labelledby="ca-trust-heading"
+        id="hub-trust"
+        aria-labelledby="hub-trust-heading"
       >
         <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-7">
           <h2
-            id="ca-trust-heading"
+            id="hub-trust-heading"
             className="flex items-center gap-2 text-xl font-semibold text-slate-900 scroll-mt-28"
           >
             <ShieldCheck className="h-5 w-5 text-teal-700" aria-hidden />
@@ -909,11 +909,11 @@ export function StateResourceHub({
       {/* —— FAQ (SSR details) —— */}
       <section
         className="mb-10 scroll-mt-28"
-        id="ca-faq"
-        aria-labelledby="ca-faq-heading"
+        id="hub-faq"
+        aria-labelledby="hub-faq-heading"
       >
         <SectionHeading
-          id="ca-faq-heading"
+          id="hub-faq-heading"
           title={`${pack.stateCode === 'CA' ? 'California' : pack.stateCode} moving FAQ`}
           intro="State-level answers only — open a county guide for neighborhood access, parking, and local market detail."
         />
