@@ -49,7 +49,8 @@ export function MoveCoachTip({ hub }: { hub: HubId }) {
   const tip = useMemo(() => coachTipForPath(pathname, completed), [pathname, completed]);
   const next = useMemo(() => nextRecommendedStep(completed), [completed]);
 
-  if (hub !== 'move' || dismissed) return null;
+  // Tool pages need a clean focus — skip coach chrome on verification.
+  if (hub !== 'move' || dismissed || pathname === '/verify-dot') return null;
 
   function handleDismiss() {
     sessionStorage.setItem(`mth-coach-dismiss-${pathname}`, '1');

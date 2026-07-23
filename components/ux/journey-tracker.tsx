@@ -40,7 +40,8 @@ export function JourneyTracker({ hub }: { hub: HubId }) {
 
   const progress = useMemo(() => journeyProgressPercent(milestones), [milestones]);
 
-  if (hub !== 'move' || milestones.length === 0) return null;
+  // Keep verification tool free of progress chrome.
+  if (hub !== 'move' || milestones.length === 0 || pathname === '/verify-dot') return null;
 
   return (
     <div
