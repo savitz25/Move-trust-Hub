@@ -279,7 +279,9 @@ export function buildCountyFaqItems(
       ? `Interstate moves (crossing state lines) require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate New Jersey moves are regulated under New Jersey’s public movers framework (Division of Consumer Affairs), not FMCSA alone. FMCSA does not cover every local NJ job; confirm the correct authority for your move type.`
       : county.stateSlug === 'california'
         ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate California moves are generally overseen by the California Bureau of Household Goods and Services (BHGS). FMCSA does not cover every in-state CA job; confirm BHGS vs FMCSA for your exact origin and destination before you deposit.`
-        : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+        : county.stateSlug === 'florida'
+          ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Florida household moves are generally subject to Florida Statutes Chapter 507 registration administered by the Florida Department of Agriculture and Consumer Services (FDACS). FMCSA does not cover every in-state Florida job; confirm FDACS registration vs FMCSA for your exact origin and destination before you deposit.`
+          : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

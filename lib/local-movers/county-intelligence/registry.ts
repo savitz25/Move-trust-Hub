@@ -30,26 +30,34 @@ import { hunterdonCountyNjIntelligence } from '@/lib/local-movers/county-intelli
 import { mercerCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/mercer-nj';
 import { somersetCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/somerset-nj';
 import { sussexCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/sussex-nj';
+// Florida Core 12
+import { miamiDadeCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/miami-dade-fl';
+import { browardCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/broward-fl';
+import { palmBeachCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/palm-beach-fl';
+import { hillsboroughCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/hillsborough-fl';
+import { orangeCountyFlIntelligence } from '@/lib/local-movers/county-intelligence/florida/orange-fl';
+import { pinellasCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/pinellas-fl';
+import { duvalCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/duval-fl';
+import { leeCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/lee-fl';
+import { polkCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/polk-fl';
+import { brevardCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/brevard-fl';
+import { pascoCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/pasco-fl';
+import { volusiaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/volusia-fl';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA packs + NJ Tier-1 packs.
+ * Flagship CA / FL / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
+  // California
   alamedaCountyIntelligence,
-  bergenCountyIntelligence,
   contraCostaCountyIntelligence,
-  essexCountyIntelligence,
   fresnoCountyIntelligence,
   kernCountyIntelligence,
   losAngelesCountyIntelligence,
-  middlesexCountyIntelligence,
-  monmouthCountyIntelligence,
   montereyCountyIntelligence,
-  morrisCountyIntelligence,
-  oceanCountyIntelligence,
   orangeCountyIntelligence,
   placerCountyIntelligence,
   riversideCountyIntelligence,
@@ -63,6 +71,26 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   santaClaraCountyIntelligence,
   sonomaCountyIntelligence,
   venturaCountyIntelligence,
+  // Florida Core 12
+  miamiDadeCountyIntelligence,
+  browardCountyIntelligence,
+  palmBeachCountyIntelligence,
+  hillsboroughCountyIntelligence,
+  orangeCountyFlIntelligence,
+  pinellasCountyIntelligence,
+  duvalCountyIntelligence,
+  leeCountyIntelligence,
+  polkCountyIntelligence,
+  brevardCountyIntelligence,
+  pascoCountyIntelligence,
+  volusiaCountyIntelligence,
+  // New Jersey
+  bergenCountyIntelligence,
+  essexCountyIntelligence,
+  middlesexCountyIntelligence,
+  monmouthCountyIntelligence,
+  morrisCountyIntelligence,
+  oceanCountyIntelligence,
   warrenCountyIntelligence,
   mercerCountyNjIntelligence,
   somersetCountyNjIntelligence,
@@ -99,7 +127,6 @@ export function listCountyIntelligencePacks(): CountyIntelligencePack[] {
   return [...PACKS];
 }
 
-/** Core 12 CA Tier-1 county slugs (first wave). */
 export const CA_TIER1_CORE12 = [
   'los-angeles',
   'orange',
@@ -115,7 +142,6 @@ export const CA_TIER1_CORE12 = [
   'ventura',
 ] as const;
 
-/** Wave-2 CA Tier-1 counties (Central Valley / North / Central Coast). */
 export const CA_TIER1_WAVE2 = [
   'fresno',
   'kern',
@@ -126,5 +152,20 @@ export const CA_TIER1_WAVE2 = [
   'monterey',
 ] as const;
 
-/** Full CA Tier-1 set on locked template. */
 export const CA_TIER1_ALL = [...CA_TIER1_CORE12, ...CA_TIER1_WAVE2] as const;
+
+/** Florida Tier-1 Core 12. */
+export const FL_TIER1_CORE12 = [
+  'miami-dade',
+  'broward',
+  'palm-beach',
+  'hillsborough',
+  'orange',
+  'pinellas',
+  'duval',
+  'lee',
+  'polk',
+  'brevard',
+  'pasco',
+  'volusia',
+] as const;

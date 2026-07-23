@@ -1021,11 +1021,510 @@ const CA_ROUTES: Record<string, CountyPopularRoute[]> = {
   ],
 };
 
+/** Florida county routes — region-specific (South FL ≠ Tampa Bay ≠ Orlando ≠ Jax). */
+const FL_ROUTES: Record<string, CountyPopularRoute[]> = {
+  'miami-dade': [
+    {
+      label: 'Within Miami-Dade (Brickell / Downtown ↔ Coral Gables / Kendall)',
+      direction: 'within',
+      context:
+        'High-rise freight elevators, COIs, and street permits dominate cost more than map miles.',
+    },
+    {
+      label: 'Miami Beach / South Beach condo and hotel-adjacent moves',
+      direction: 'within',
+      context:
+        'Loading zones, flood-prone parking, and building blackout windows — survey access first.',
+    },
+    {
+      label: 'Northeast & Mid-Atlantic → Greater Miami',
+      direction: 'inbound',
+      context:
+        'Snowbird and career inflows into dense condo stock; reserve elevators weeks ahead in peak.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'New Jersey / Tri-State → Miami metro',
+      direction: 'inbound',
+      context:
+        'Family and professional relocations; international shipping add-ons are common at origin/dest.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Miami-Dade → Northeast return / dual-home corridors',
+      direction: 'outbound',
+      context:
+        'Seasonal reverse flows; volume and valuation coverage matter more than hourly local rates.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+    {
+      label: 'Homestead / South Dade single-family & HOA moves',
+      direction: 'within',
+      context:
+        'Longer empty miles from the urban core; HOA certificates and gate codes shape load day.',
+    },
+  ],
+  broward: [
+    {
+      label: 'Within Broward (Fort Lauderdale ↔ Hollywood / Plantation / Coral Springs)',
+      direction: 'within',
+      context:
+        'Canal-adjacent streets, mid-rise elevators, and I-95 traffic windows change crew hours.',
+    },
+    {
+      label: 'Las Olas / downtown Fort Lauderdale waterfront condos',
+      direction: 'within',
+      context:
+        'Tight staging and boat-traffic-adjacent blocks; COI and freight-elevator rules are routine.',
+    },
+    {
+      label: 'Northeast → Broward beaches & western suburbs',
+      direction: 'inbound',
+      context:
+        'Often chosen as a Miami-adjacent alternative; building access still drives origin fees.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Pennsylvania / Mid-Atlantic → Broward County',
+      direction: 'inbound',
+      context:
+        'Retirement and remote-work inflows into Weston, Parkland, and coastal multifamily.',
+      href: '/resources/routes/pennsylvania-to-florida',
+    },
+    {
+      label: 'Broward ↔ Miami-Dade / Palm Beach cross-county hops',
+      direction: 'within',
+      context:
+        'Regional pairs on I-95 / Turnpike; treat as logistics hops, not short suburban quotes.',
+    },
+    {
+      label: 'Broward → Northeast seasonal reverse moves',
+      direction: 'outbound',
+      context:
+        'Snowbird return legs; plan multi-day interstate household goods, not local hourly crews.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  'palm-beach': [
+    {
+      label: 'Within Palm Beach (West Palm ↔ Boca Raton / Jupiter / Wellington)',
+      direction: 'within',
+      context:
+        'Golf-community HOAs, gated estates, and high-value inventory surveys beat map-mile quotes.',
+    },
+    {
+      label: 'Island / Intracoastal access (Palm Beach island & coastal cores)',
+      direction: 'within',
+      context:
+        'Bridge timing, limited truck length, and luxury packing standards — not a mainland tract job.',
+    },
+    {
+      label: 'Northeast & New Jersey → Palm Beach retirement corridors',
+      direction: 'inbound',
+      context:
+        'Classic snowbird and permanent relocation demand; peak winter booking fills carriers early.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'New York metro → Boca / Delray / West Palm',
+      direction: 'inbound',
+      context:
+        'Family and empty-nester inflows; condo elevators and HOA windows are the access bottleneck.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Illinois / Midwest → Palm Beach County',
+      direction: 'inbound',
+      context:
+        'Longer Sun Belt legs into coastal and western communities; volume estimates drive linehaul.',
+      href: '/resources/routes/illinois-to-florida',
+    },
+    {
+      label: 'Palm Beach → Northeast dual-residence logistics',
+      direction: 'outbound',
+      context:
+        'Seasonal household goods north; FMCSA authority and valuation coverage required.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  hillsborough: [
+    {
+      label: 'Within Hillsborough (Tampa core ↔ Brandon / Riverview / Carrollwood)',
+      direction: 'within',
+      context:
+        'Bay-area traffic, downtown elevators, and suburban garage stock — not a South Florida high-rise day.',
+    },
+    {
+      label: 'South Tampa / Hyde Park / Channelside multi-unit',
+      direction: 'within',
+      context:
+        'Urban street parking and building COIs; shuttle need shows up on older blocks near the bay.',
+    },
+    {
+      label: 'Northeast → Tampa Bay job & lifestyle markets',
+      direction: 'inbound',
+      context:
+        'Finance, healthcare, and remote-work inflows; plan for humidity packing and storm-season windows.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Midwest → Hillsborough / Greater Tampa',
+      direction: 'inbound',
+      context:
+        'Cost and career corridors into I-4 suburbs; longer empty miles from coastal origins possible.',
+      href: '/resources/routes/illinois-to-florida',
+    },
+    {
+      label: 'Hillsborough ↔ Pinellas / Pasco cross-bay pairs',
+      direction: 'within',
+      context:
+        'Bridge and causeway timing matter; treat as regional logistics, not a short local hop.',
+    },
+    {
+      label: 'Tampa Bay → Northeast career reverse moves',
+      direction: 'outbound',
+      context:
+        'Corporate and family exits north; multi-day interstate linehaul with inventory surveys.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  orange: [
+    {
+      label: 'Within Orange (Downtown Orlando ↔ Winter Park / Dr. Phillips / Lake Nona)',
+      direction: 'within',
+      context:
+        'Tourism traffic, theme-park-adjacent timing, and master-planned HOAs reshape load windows.',
+    },
+    {
+      label: 'International Drive / tourist-corridor apartments',
+      direction: 'within',
+      context:
+        'Short-term rental and hospitality turnover; elevators and guest-traffic blackout hours are common.',
+    },
+    {
+      label: 'Northeast → Orlando metro (jobs, theme parks, healthcare)',
+      direction: 'inbound',
+      context:
+        'Career and family inflows into I-4 suburbs; not interchangeable with Miami condo logistics.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Massachusetts / New England → Orange County FL',
+      direction: 'inbound',
+      context:
+        'Lifestyle and remote-work relocations; summer heat and afternoon storms affect delivery windows.',
+      href: '/resources/routes/massachusetts-to-florida',
+    },
+    {
+      label: 'Orange ↔ Seminole / Osceola / Lake County pairs',
+      direction: 'within',
+      context:
+        'Central Florida sprawl on I-4 and 417; longer empty miles than downtown-only quotes imply.',
+    },
+    {
+      label: 'Orlando → Northeast / Mid-Atlantic reverse corridors',
+      direction: 'outbound',
+      context:
+        'Job-change and family long-distance; FMCSA carriers for true interstate household goods.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  pinellas: [
+    {
+      label: 'Within Pinellas (St. Petersburg ↔ Clearwater / Largo / Seminole)',
+      direction: 'within',
+      context:
+        'Peninsula geography, beach traffic, and bridge approaches — staging beats raw map miles.',
+    },
+    {
+      label: 'Downtown St. Pete / waterfront condo corridor',
+      direction: 'within',
+      context:
+        'Freight elevators, street permits, and festival calendars; reserve access early in peak season.',
+    },
+    {
+      label: 'Northeast → Pinellas beaches & barrier islands',
+      direction: 'inbound',
+      context:
+        'Retirement and lifestyle inflows; causeway and truck-length limits change equipment choices.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Minnesota / Upper Midwest → Pinellas County',
+      direction: 'inbound',
+      context:
+        'Classic snowbird corridor into Clearwater and coastal multifamily; winter booking spikes.',
+      href: '/resources/routes/minnesota-to-florida',
+    },
+    {
+      label: 'Pinellas ↔ Hillsborough cross-bay (Gandy / Howard Frankland)',
+      direction: 'within',
+      context:
+        'Bridge timing and traffic peaks; treat as a regional hop with different origin vs dest access.',
+    },
+    {
+      label: 'Pinellas → Northeast seasonal reverse moves',
+      direction: 'outbound',
+      context:
+        'Snowbird return north; plan consolidated vs dedicated transit spreads carefully.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  duval: [
+    {
+      label: 'Within Duval (Downtown Jacksonville ↔ Southside / Riverside / Beaches)',
+      direction: 'within',
+      context:
+        'River-crossing traffic, naval-adjacent timing, and suburban sprawl — Northeast FL, not South FL.',
+    },
+    {
+      label: 'Jacksonville Beaches / Intracoastal access moves',
+      direction: 'within',
+      context:
+        'Bridge approaches and tourism peaks; truck length and staging differ from inland Southside.',
+    },
+    {
+      label: 'Northeast → Jacksonville job & military markets',
+      direction: 'inbound',
+      context:
+        'Logistics, finance, and PCS-related inflows; plan building COIs on urban multifamily.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Pennsylvania / Mid-Atlantic → Duval County',
+      direction: 'inbound',
+      context:
+        'I-95 corridor inflows into growing suburbs; longer empty miles than beach-only quotes suggest.',
+      href: '/resources/routes/pennsylvania-to-florida',
+    },
+    {
+      label: 'Duval ↔ St. Johns / Clay / Nassau cross-county pairs',
+      direction: 'within',
+      context:
+        'North Florida regional hops; treat as real logistics days, not short local apartment jobs.',
+    },
+    {
+      label: 'Jacksonville → Northeast / Mid-Atlantic reverse moves',
+      direction: 'outbound',
+      context:
+        'Career and family long-distance north; FMCSA authority for interstate household goods.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  lee: [
+    {
+      label: 'Within Lee (Fort Myers ↔ Cape Coral / Estero / Bonita Springs)',
+      direction: 'within',
+      context:
+        'Canal-lot driveways, hurricane rebuild stock, and bridge traffic — Southwest FL logistics.',
+    },
+    {
+      label: 'Cape Coral / waterfront single-family corridors',
+      direction: 'within',
+      context:
+        'Long canal streets and limited turnarounds; survey for truck size before hourly comparisons.',
+    },
+    {
+      label: 'Northeast & Mid-Atlantic → Fort Myers / Lee snowbird markets',
+      direction: 'inbound',
+      context:
+        'Seasonal and permanent inflows; peak winter demand fills crews and long-distance capacity.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Midwest → Lee County (Fort Myers / Cape Coral)',
+      direction: 'inbound',
+      context:
+        'Classic snowbird corridor; garage-heavy homes and HOA rules dominate destination access.',
+      href: '/resources/routes/illinois-to-florida',
+    },
+    {
+      label: 'Lee ↔ Collier / Charlotte cross-county pairs',
+      direction: 'within',
+      context:
+        'SWFL regional hops on I-75; storm-season windows can reshape delivery schedules.',
+    },
+    {
+      label: 'Lee → Northeast seasonal reverse logistics',
+      direction: 'outbound',
+      context:
+        'Snowbird return legs; multi-day interstate with careful inventory and valuation planning.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  polk: [
+    {
+      label: 'Within Polk (Lakeland ↔ Winter Haven / Bartow / Haines City)',
+      direction: 'within',
+      context:
+        'Inland I-4 midpoint sprawl between Tampa and Orlando — not a beach-access or high-rise day.',
+    },
+    {
+      label: 'Lakeland / Winter Haven family single-family moves',
+      direction: 'within',
+      context:
+        'Garage stock, cul-de-sac staging, and longer empty miles across a large rural-suburban county.',
+    },
+    {
+      label: 'Northeast → Polk / Central Florida affordability corridor',
+      direction: 'inbound',
+      context:
+        'Cost-driven inflows between Tampa and Orlando metros; plan humidity packing and storm season.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Pennsylvania → Polk County growth markets',
+      direction: 'inbound',
+      context:
+        'Family long-distance into I-4 suburbs; volume surveys beat hourly local-style quotes.',
+      href: '/resources/routes/pennsylvania-to-florida',
+    },
+    {
+      label: 'Polk ↔ Hillsborough / Orange / Osceola job-corridor pairs',
+      direction: 'within',
+      context:
+        'Commuter-belt regional hops; treat as logistics days with different origin and dest rules.',
+    },
+    {
+      label: 'Polk → Northeast reverse / dual-home moves',
+      direction: 'outbound',
+      context:
+        'Family and seasonal exits north; FMCSA carriers for true interstate household goods.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  brevard: [
+    {
+      label: 'Within Brevard (Melbourne ↔ Cocoa / Palm Bay / Titusville)',
+      direction: 'within',
+      context:
+        'Space Coast sprawl on US-1 and I-95; longer empty miles than a single beach-town quote implies.',
+    },
+    {
+      label: 'Cocoa Beach / barrier-island access moves',
+      direction: 'within',
+      context:
+        'Causeway timing, tourist traffic, and limited staging — equipment choice differs from inland Palm Bay.',
+    },
+    {
+      label: 'Northeast → Space Coast (aerospace & lifestyle)',
+      direction: 'inbound',
+      context:
+        'Tech, defense, and retirement inflows; not interchangeable with Miami or Orlando condo logistics.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'New Jersey → Brevard County',
+      direction: 'inbound',
+      context:
+        'Family and snowbird corridors into coastal and mainland stock; winter booking still spikes.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Brevard ↔ Orange / Volusia / Indian River pairs',
+      direction: 'within',
+      context:
+        'East-central Florida regional hops; plan real drive time, not downtown-only hourly math.',
+    },
+    {
+      label: 'Brevard → Northeast reverse corridors',
+      direction: 'outbound',
+      context:
+        'Career and family long-distance north; multi-day interstate with inventory-driven pricing.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  pasco: [
+    {
+      label: 'Within Pasco (Wesley Chapel ↔ New Port Richey / Land O\' Lakes / Zephyrhills)',
+      direction: 'within',
+      context:
+        'North Tampa Bay growth suburbs and Gulf-adjacent towns — sprawl and HOAs, not urban high-rises.',
+    },
+    {
+      label: 'Wesley Chapel / Wiregrass master-planned communities',
+      direction: 'within',
+      context:
+        'HOA certificates, gate codes, and new-construction streets; garage-heavy inventory is common.',
+    },
+    {
+      label: 'Northeast → Pasco / North Tampa Bay affordability belt',
+      direction: 'inbound',
+      context:
+        'Family cost exits into growing suburbs; humidity and storm season shape delivery windows.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Midwest → Pasco County',
+      direction: 'inbound',
+      context:
+        'Snowbird and permanent inflows into Gulf-side and inland stock; volume estimates drive linehaul.',
+      href: '/resources/routes/illinois-to-florida',
+    },
+    {
+      label: 'Pasco ↔ Hillsborough / Pinellas / Hernando pairs',
+      direction: 'within',
+      context:
+        'Tampa Bay north-side regional hops; bridge and highway peaks change crew day length.',
+    },
+    {
+      label: 'Pasco → Northeast reverse / family long-distance',
+      direction: 'outbound',
+      context:
+        'Job-change exits north; FMCSA carriers and valuation coverage for interstate household goods.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  volusia: [
+    {
+      label: 'Within Volusia (Daytona Beach ↔ Deltona / Port Orange / Ormond Beach)',
+      direction: 'within',
+      context:
+        'I-95 and beach-tourism traffic; inland Deltona stock differs sharply from coastal access rules.',
+    },
+    {
+      label: 'Daytona / beachside condo and event-calendar moves',
+      direction: 'within',
+      context:
+        'Race weeks and spring-break peaks raise parking and loading friction — book access early.',
+    },
+    {
+      label: 'Northeast → Volusia beaches & I-95 corridor',
+      direction: 'inbound',
+      context:
+        'Retirement and lifestyle inflows; not a Miami high-rise job and not an Orlando theme-park corridor.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Pennsylvania → Volusia County',
+      direction: 'inbound',
+      context:
+        'Mid-Atlantic snowbird and family moves into coastal and inland communities.',
+      href: '/resources/routes/pennsylvania-to-florida',
+    },
+    {
+      label: 'California → Volusia / Central-East Florida',
+      direction: 'inbound',
+      context:
+        'Long-haul Sun Belt inflows; transit spreads widen on consolidated trucks.',
+      href: '/resources/routes/california-to-florida',
+    },
+    {
+      label: 'Volusia → Northeast reverse seasonal moves',
+      direction: 'outbound',
+      context:
+        'Snowbird and dual-home logistics north; multi-day interstate household goods planning.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+};
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
 ): CountyPopularRoute[] {
   if (stateSlug === 'new-jersey') return NJ_ROUTES[countySlug] ?? [];
   if (stateSlug === 'california') return CA_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'florida') return FL_ROUTES[countySlug] ?? [];
   return [];
 }
