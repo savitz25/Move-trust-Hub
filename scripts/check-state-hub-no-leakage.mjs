@@ -97,6 +97,11 @@ const STATE_NAMES = {
   'west-virginia': 'West Virginia',
   hawaii: 'Hawaii',
   alaska: 'Alaska',
+  montana: 'Montana',
+  wyoming: 'Wyoming',
+  'north-dakota': 'North Dakota',
+  'south-dakota': 'South Dakota',
+  maine: 'Maine',
 };
 
 for (const file of packFiles) {
