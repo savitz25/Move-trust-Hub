@@ -8,6 +8,7 @@ import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
 import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
 import { assessLicense } from '@/lib/trust/license-verification';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
+import { sanitizeMoverDescription } from '@/lib/local-movers/sanitize-mover-description';
 
 export function LocalMoverCard({
   mover,
@@ -134,7 +135,11 @@ export function LocalMoverCard({
       </div>
 
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-        {mover.shortDescription}
+        {sanitizeMoverDescription(
+          mover.name,
+          mover.shortDescription,
+          mover.usdotNumber
+        )}
       </p>
 
       <div className="flex flex-wrap gap-1.5 mb-4" aria-label="Services offered">

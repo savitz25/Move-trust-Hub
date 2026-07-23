@@ -10,12 +10,15 @@ export const bronxCountyIntelligence: CountyIntelligencePack = {
   stateSlug: 'new-york',
   countySlug: 'bronx',
   hubTitle: 'Bronx County Moving Intelligence Hub',
-  eyebrow: 'Bronx · Mixed stock, elevators & walk-ups, arterial & borough-to-borough',
-  h1: 'Moving in the Bronx: Elevators, Walk-Ups, Arterial Traffic & Borough-to-Borough Guide',
+  eyebrow:
+    'The Bronx (Bronx County) · New York City borough logistics · coterminous with Bronx County',
+  h1: 'Moving in The Bronx (Bronx County), New York City: Elevators, Walk-Ups & Borough Logistics',
   heroOpener:
-    'Bronx County is a mixed-stock moving market under one borough name. Elevator co-ops and mid-rises sit blocks from walk-up multi-family; riverdale-style houses and hills contrast with dense southern corridors. Grand Concourse, the Cross Bronx Expressway, Major Deegan, and bridge approaches rewrite portal time on pairs that look short on a map. Borough-to-borough jobs — Bronx ↔ Manhattan, Bronx ↔ Westchester, Bronx ↔ Queens — are everyday logistics, not special cases. A Fordham walk-up, a Riverdale co-op, a Throgs Neck house, and a South Bronx mid-rise do not share truck access or traffic risk. This hub is for people actually moving in the Bronx — not generic NYC tips recycled from Manhattan towers or Brooklyn brownstones.',
+    'The Bronx (Bronx County) is coterminous with the Bronx borough of New York City — a mixed-stock moving market under one borough name. Elevator co-ops and mid-rises sit blocks from walk-up multi-family; Riverdale-style houses and hills contrast with dense southern corridors. Grand Concourse, the Cross Bronx Expressway, Major Deegan (I-87), I-95, and bridge approaches rewrite portal time on pairs that look short on a map. Borough-to-borough jobs — Bronx ↔ Manhattan, Bronx ↔ Westchester, Bronx ↔ Queens — are everyday logistics, not special cases. A Fordham walk-up, a Riverdale co-op, a Throgs Neck house, and a South Bronx mid-rise do not share truck access or traffic risk. This hub is for people actually moving in the Bronx — not generic NYC tips recycled from Manhattan towers or Brooklyn brownstones.',
   heroCredibility:
     'NYSDOT household goods for intrastate New York moves · FMCSA for interstate legs · Bronx mixed-access & arterial traffic awareness · Curated directory listings',
+  majorCorridors:
+    'I-87 (Major Deegan) · I-95 · Cross Bronx Expressway · Bruckner Expressway · Grand Concourse',
   collapsibleDeepContent: true,
   sectionOrder: [
     'whatMakesDifferent',

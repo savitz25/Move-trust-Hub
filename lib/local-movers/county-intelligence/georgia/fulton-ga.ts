@@ -16,6 +16,7 @@ export const fultonCountyIntelligence: CountyIntelligencePack = {
     'Fulton County is Atlanta’s vertical-and-corridor engine under one county label: Midtown and Downtown towers with freight elevators and COI packets, Buckhead high-rises and tree-lined estates with tight curb staging, intown neighborhoods on connector-adjacent grids, and a very different south Fulton pattern of suburban tracts and longer portal times. A Midtown condo, a Buckhead townhome, a West Midtown loft, and a south Fulton single-family home do not share truck access, parking reality, or drive-time risk. I-75/85 through the Connector, GA-400, I-285, and event days rewrite “local” estimates that ignore building packets and traffic windows. This hub is for people actually moving in Fulton — not generic metro-Atlanta tips recycled from Gwinnett or Cobb.',
   heroCredibility:
     'Georgia DPS / MCCD household goods for intrastate Georgia moves · FMCSA for interstate legs · Atlanta high-rise COI & Connector awareness · Curated directory listings',
+  majorCorridors: 'I-75/85 Connector · I-285 · GA-400 · I-20',
   collapsibleDeepContent: true,
   sectionOrder: [
     'whatMakesDifferent',

@@ -15,6 +15,7 @@ export const palmBeachCountyIntelligence: CountyIntelligencePack = {
     'Palm Beach County stretches from Boca Raton and Delray through West Palm Beach to Jupiter and the western ag-edge communities — a long north–south market that punishes “one local rate” thinking. Coastal and barrier addresses bring condo COI rules, gated estates, and careful-handling expectations; inland corridors from Boynton and Lake Worth through Wellington and Royal Palm Beach flip to HOA villages, equestrian edges, and Turnpike / I-95 portal time. Seasonal residents compress demand in winter; hurricane season rewrites contingency on the coast. This hub is for people actually moving in Palm Beach County — not generic South Florida tips recycled from Fort Lauderdale or Miami.',
   heroCredibility:
     'FDACS Ch. 507 for intrastate Florida moves · FMCSA for interstate legs · Seasonal & HOA/gated awareness · Curated directory listings',
+  majorCorridors: 'I-95 · Florida Turnpike · US-1 · PGA Boulevard · Glades Road corridors',
   collapsibleDeepContent: true,
   sectionOrder: [
     'whatMakesDifferent',

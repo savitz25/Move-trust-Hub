@@ -15,6 +15,7 @@ export const orangeCountyFlIntelligence: CountyIntelligencePack = {
     'Orange County, Florida is the Orlando tourism engine plus a wide suburban ring — International Drive and resort corridors, Winter Park and College Park denser pockets, Lake Nona and Horizon West growth, UCF-area student turnover, and OIA flight-path logistics. Theme-park calendars, convention weeks, and I-4 bottlenecks shape truck timing more than map miles. This guide is for Florida Orange County moves — not California Orange County, and not a renamed Miami or Tampa script.',
   heroCredibility:
     'Orlando tourism peaks · Attraction & I-4 corridor-aware · FDACS Ch. 507 (intrastate) · FMCSA when interstate · Curated listings',
+  majorCorridors: 'I-4 · FL-408 · FL-417 · US-17/92 · International Drive',
   collapsibleDeepContent: true,
   sectionOrder: [
     'whatMakesDifferent',

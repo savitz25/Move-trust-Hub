@@ -119,6 +119,12 @@ export type CountyIntelligencePack = {
    */
   collapsibleDeepContent?: boolean;
   directoryHint?: string;
+  /**
+   * Factual major roads/routes for the County Moving Snapshot only.
+   * Must be real corridors (I-4, I-95, Cross Bronx Expressway, etc.) —
+   * never operational commentary (tourism calendars, HOA density, curb staging).
+   */
+  majorCorridors?: string;
   lastReviewed: string; // ISO date
 };
 

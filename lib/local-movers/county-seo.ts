@@ -251,6 +251,31 @@ export type CountyFaqItem = {
   answer: string;
 };
 
+/**
+ * State-correct intrastate credential phrase for scam-avoidance / FAQ copy.
+ * Never defaults to New Jersey language outside NJ.
+ */
+export function stateIntrastateCredentialPhrase(stateSlug: string): string {
+  switch (stateSlug) {
+    case 'new-jersey':
+      return 'NJ public-mover credentials for in-state-only jobs when applicable';
+    case 'florida':
+      return 'FDACS registration for in-state-only jobs when applicable';
+    case 'new-york':
+      return 'NYSDOT authority for in-state-only jobs when applicable';
+    case 'georgia':
+      return 'GA DPS/MCCD licensing for in-state-only jobs when applicable';
+    case 'texas':
+      return 'TxDMV certificate for in-state-only jobs when applicable';
+    case 'california':
+      return 'BHGS credentials for in-state-only jobs when applicable';
+    case 'arizona':
+      return 'ACC business registration (and FMCSA for interstate) for applicable jobs';
+    default:
+      return 'state mover credentials for in-state-only jobs when applicable';
+  }
+}
+
 export function buildCountyFaqItems(
   county: LocalCounty,
   stateName: string,
@@ -266,13 +291,14 @@ export function buildCountyFaqItems(
   const topMoverList = topMovers
     .map((m) => `${m.name} (${m.rating}★, ${m.reviewCount.toLocaleString()} reviews)`)
     .join(', ');
+  const stateCredPhrase = stateIntrastateCredentialPhrase(county.stateSlug);
 
   const bestMoversAnswer =
     topMovers.length > 1
       ? `Among verified listings with real review volume serving ${location}, higher-rated options include ${topMoverList}. We prioritize true local/in-state signals when available, then ratings, licensing completeness, and review volume — never zero-review shells as “top-rated.”`
       : topMovers.length === 1
         ? `Among verified listings with real review volume serving ${location}, ${topMovers[0]!.name} currently shows ${topMovers[0]!.rating}★ from ${topMovers[0]!.reviewCount.toLocaleString()} industry-reported reviews. Compare full listings on this page and verify licensing before booking.`
-        : `We do not label zero-review or unrated shells as top-rated. Compare verified movers on this page by licensing, local/in-state fit, and review basis — then confirm credentials on FMCSA.gov (and state public-mover rules for purely intrastate work).`;
+        : `We do not label zero-review or unrated shells as top-rated. Compare verified movers on this page by licensing, local/in-state fit, and review basis — then confirm credentials on FMCSA.gov (and ${stateCredPhrase}).`;
 
   const licensingAnswer =
     county.stateSlug === 'new-jersey'
@@ -314,7 +340,7 @@ export function buildCountyFaqItems(
     },
     {
       question: `How do I avoid moving scams in ${countyLabel}?`,
-      answer: `Get written estimates after an inventory survey, avoid large upfront deposits via wire or gift cards, verify USDOT numbers on FMCSA.gov (and NJ public-mover credentials for in-state-only jobs when applicable), and compare multiple companies. Read our guide on spotting red flags before booking movers in ${location}.`,
+      answer: `Get written estimates after an inventory survey, avoid large upfront deposits via wire or gift cards, verify USDOT numbers on FMCSA.gov (and ${stateCredPhrase}), and compare multiple companies. Read our guide on spotting red flags before booking movers in ${location}.`,
     },
   ];
 

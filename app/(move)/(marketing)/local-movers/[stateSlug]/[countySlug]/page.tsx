@@ -268,6 +268,18 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const reviewBlock = buildCountyReviewBlock(movers, 3, {
     preferLocalMovers: segments.localInState,
     countyLabel,
+    marketTokens: [
+      county.name,
+      county.seat ?? '',
+      countyLabel,
+      state.name,
+      county.stateCode,
+      // Bronx borough synonym for market mention matching
+      stateSlug === 'new-york' && countySlug === 'bronx' ? 'bronx' : '',
+      stateSlug === 'new-york' && countySlug === 'bronx' ? 'the bronx' : '',
+    ].filter(Boolean),
+    stateName: state.name,
+    stateCode: county.stateCode,
   });
   // Suppress review quotes unless at least one local/in-state source contributed
   // (avoids out-of-area reviews under county-local social proof).

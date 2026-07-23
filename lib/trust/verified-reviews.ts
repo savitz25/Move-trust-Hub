@@ -17,6 +17,61 @@ const SLUG_TO_COMPANY_ID: Record<string, string> = Object.fromEntries(
   seedCompanies.map((c) => [c.slug, c.id])
 );
 
+/** Full state names used to detect clearly off-market review locations. */
+const US_STATE_NAMES = [
+  'Alabama',
+  'Alaska',
+  'Arizona',
+  'Arkansas',
+  'California',
+  'Colorado',
+  'Connecticut',
+  'Delaware',
+  'Florida',
+  'Georgia',
+  'Hawaii',
+  'Idaho',
+  'Illinois',
+  'Indiana',
+  'Iowa',
+  'Kansas',
+  'Kentucky',
+  'Louisiana',
+  'Maine',
+  'Maryland',
+  'Massachusetts',
+  'Michigan',
+  'Minnesota',
+  'Mississippi',
+  'Missouri',
+  'Montana',
+  'Nebraska',
+  'Nevada',
+  'New Hampshire',
+  'New Jersey',
+  'New Mexico',
+  'New York',
+  'North Carolina',
+  'North Dakota',
+  'Ohio',
+  'Oklahoma',
+  'Oregon',
+  'Pennsylvania',
+  'Rhode Island',
+  'South Carolina',
+  'South Dakota',
+  'Tennessee',
+  'Texas',
+  'Utah',
+  'Vermont',
+  'Virginia',
+  'Washington',
+  'West Virginia',
+  'Wisconsin',
+  'Wyoming',
+  'District of Columbia',
+] as const;
+
 export function companyIdFromProfileSlug(profileSlug: string): string | undefined {
   return SLUG_TO_COMPANY_ID[profileSlug] ?? getCompanyBySlug(profileSlug)?.id;
 }
@@ -66,20 +121,96 @@ export type CountyReviewBlock = {
   summary: string;
 };
 
+export type CountyReviewBlockOptions = {
+  preferLocalMovers?: LocalMover[];
+  countyLabel?: string;
+  /** County seat / short name tokens for local-market mention scoring */
+  marketTokens?: string[];
+  /** Full state name, e.g. "Florida" */
+  stateName?: string;
+  /** State code, e.g. "FL" */
+  stateCode?: string;
+};
+
+function buildMarketTokens(options?: CountyReviewBlockOptions): string[] {
+  const tokens = new Set<string>();
+  for (const t of options?.marketTokens ?? []) {
+    const v = t.trim().toLowerCase();
+    if (v.length >= 3) tokens.add(v);
+  }
+  const label = (options?.countyLabel ?? '').toLowerCase();
+  if (label.length >= 3) {
+    tokens.add(label);
+    tokens.add(label.replace(/\s+county\b/, '').trim());
+  }
+  if (options?.stateName) tokens.add(options.stateName.toLowerCase());
+  if (options?.stateCode) tokens.add(options.stateCode.toLowerCase());
+  return [...tokens].filter(Boolean);
+}
+
+/** Prefer reviews that mention county/state/local market in quote or location. */
+export function reviewMentionsLocalMarket(
+  review: AttributableReview,
+  marketTokens: string[]
+): boolean {
+  if (marketTokens.length === 0) return false;
+  const hay = `${review.quote} ${review.location}`.toLowerCase();
+  return marketTokens.some((t) => t.length >= 3 && hay.includes(t));
+}
+
+/**
+ * True when review location clearly names a different US state than the page state
+ * (e.g. Atlanta, GA on a Dallas page; Nashville on an Orlando page).
+ */
+export function reviewLocationConflictsWithPageState(
+  location: string,
+  stateName?: string,
+  stateCode?: string
+): boolean {
+  if (!stateName && !stateCode) return false;
+  const loc = location.trim();
+  if (!loc || /^united states$/i.test(loc)) return false;
+
+  const pageName = (stateName ?? '').toLowerCase();
+  const pageCode = (stateCode ?? '').toUpperCase();
+
+  // Longer names first so "West Virginia" wins over "Virginia".
+  const names = [...US_STATE_NAMES].sort((a, b) => b.length - a.length);
+  for (const name of names) {
+    if (pageName && name.toLowerCase() === pageName) continue;
+    const re = new RegExp(`\\b${name.replace(/\s+/g, '\\s+')}\\b`, 'i');
+    if (re.test(loc)) return true;
+  }
+
+  // Two-letter state codes after comma: "Atlanta, GA"
+  const codeMatch = loc.match(/,\s*([A-Za-z]{2})\s*$/);
+  if (codeMatch) {
+    const code = codeMatch[1]!.toUpperCase();
+    if (pageCode && code !== pageCode && code !== 'US' && code !== 'USA') return true;
+  }
+
+  return false;
+}
+
 /**
  * Pull attributable Google reviews from directory-linked movers on this list.
- * Prefer local/in-state movers; if only national carriers contribute, title honestly.
+ *
+ * Global Tier 1 rule:
+ * A) Prefer reviews that mention the county/state/local market
+ * B) If no sufficiently local/attributable reviews → suppress the block
+ * C) Never backfill national/off-market review trios onto county pages
  */
 export function buildCountyReviewBlock(
   movers: LocalMover[],
   maxReviews = 3,
-  options?: { preferLocalMovers?: LocalMover[]; countyLabel?: string }
+  options?: CountyReviewBlockOptions
 ): CountyReviewBlock {
   const countyLabel = options?.countyLabel ?? 'this county';
   // Explicit preferLocalMovers (even empty) means: only treat those as in-market sources.
   // Empty local segment → suppress county-page review quotes entirely (schema-safe).
   const preferProvided = options?.preferLocalMovers !== undefined;
   const prefer = preferProvided ? options!.preferLocalMovers! : movers;
+  const marketTokens = buildMarketTokens(options);
 
   if (preferProvided && prefer.length === 0) {
     return { reviews: [], hasLocalSource: false, title: '', summary: '' };
@@ -92,15 +223,23 @@ export function buildCountyReviewBlock(
     const seen = new Set<string>();
     for (const mover of pool) {
       if (!mover.profileSlug) continue;
-      for (const review of getAttributableReviewsForMover(mover, 2)) {
+      for (const review of getAttributableReviewsForMover(mover, 4)) {
         if (seen.has(review.reviewId)) continue;
+        if (
+          reviewLocationConflictsWithPageState(
+            review.location,
+            options?.stateName,
+            options?.stateCode
+          )
+        ) {
+          continue;
+        }
         seen.add(review.reviewId);
         out.push({
           ...review,
           companyName: review.companyName ?? mover.name,
           companySlug: mover.profileSlug,
         });
-        if (out.length >= maxReviews) return out;
       }
     }
     return out;
@@ -108,40 +247,71 @@ export function buildCountyReviewBlock(
 
   // Only collect from preferred (local/in-state) pool when prefer was provided.
   // Do not backfill national-only reviews onto county pages.
-  let reviews = collect(prefer);
-  if (!preferProvided && reviews.length < maxReviews) {
+  let candidates = collect(prefer);
+  if (!preferProvided && candidates.length < maxReviews * 2) {
     const rest = movers.filter((m) => !preferIds.has(m.id));
-    const seen = new Set(reviews.map((r) => r.reviewId));
+    const seen = new Set(candidates.map((r) => r.reviewId));
     for (const r of collect(rest)) {
       if (seen.has(r.reviewId)) continue;
-      reviews.push(r);
-      if (reviews.length >= maxReviews) break;
+      candidates.push(r);
     }
   }
 
-  reviews = reviews.sort((a, b) => b.date.localeCompare(a.date)).slice(0, maxReviews);
+  if (candidates.length === 0) {
+    return { reviews: [], hasLocalSource: false, title: '', summary: '' };
+  }
+
+  // A) Prefer market-mention reviews; B) if none are local enough when tokens known, suppress.
+  const localMention = candidates.filter((r) => reviewMentionsLocalMarket(r, marketTokens));
+  let selected: AttributableReview[];
+
+  if (localMention.length > 0) {
+    selected = localMention
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .slice(0, maxReviews);
+  } else if (preferProvided && marketTokens.length > 0) {
+    // Prefer-local path with market tokens but no review text mentions the market:
+    // still allow company-attributable local/in-state reviews (directory-linked).
+    // Off-state location conflicts already filtered. Do not invent off-market trios.
+    selected = candidates
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .slice(0, maxReviews);
+  } else if (preferProvided) {
+    selected = candidates
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .slice(0, maxReviews);
+  } else {
+    // No prefer pool and no market mentions → suppress (avoid recycled national trios).
+    return { reviews: [], hasLocalSource: false, title: '', summary: '' };
+  }
+
   const hasLocalSource =
     preferProvided &&
-    reviews.length > 0 &&
-    reviews.some((r) =>
+    selected.length > 0 &&
+    selected.some((r) =>
       prefer.some((m) => m.profileSlug && m.profileSlug === r.companySlug)
     );
 
-  if (reviews.length === 0) {
+  // B) County pages that pass preferLocalMovers only show the block when hasLocalSource.
+  if (preferProvided && !hasLocalSource) {
+    return { reviews: [], hasLocalSource: false, title: '', summary: '' };
+  }
+
+  if (selected.length === 0) {
     return { reviews: [], hasLocalSource: false, title: '', summary: '' };
   }
 
   if (hasLocalSource || preferProvided) {
     return {
-      reviews,
+      reviews: selected,
       hasLocalSource: true,
       title: `Attributed reviews from local/in-state carriers on this ${countyLabel} page`,
-      summary: `${reviews.length} named Google reviews from local/in-state directory listings on this page (not claimed as ${countyLabel}-only experiences).`,
+      summary: `${selected.length} named Google reviews from local/in-state directory listings on this page (not claimed as ${countyLabel}-only experiences).`,
     };
   }
 
   return {
-    reviews,
+    reviews: selected,
     hasLocalSource: false,
     title: `Named Google reviews from directory carriers that serve ${countyLabel}`,
     summary: `These reviews are national/company-level — not ${countyLabel}-specific social proof.`,

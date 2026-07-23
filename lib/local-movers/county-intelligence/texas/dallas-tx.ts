@@ -15,6 +15,7 @@ export const dallasCountyIntelligence: CountyIntelligencePack = {
     'Dallas County is a freeway-grid metro: downtown and Uptown vertical living on one side, dense northern suburbs and corporate campuses on another, and older east/south neighborhoods with different street widths and inventory profiles. A Victory Park high-rise, an East Dallas craftsman, a Richardson condo, and a Mesquite ranch do not share truck access or portal time. I-35E, I-635 (LBJ), US-75, I-30, and the Dallas North Tollway turn short map miles into long load windows at peak. This hub is for people actually moving in Dallas County — not generic DFW tips that erase Fort Worth or Collin growth patterns.',
   heroCredibility:
     'TxDMV household goods for intrastate Texas moves · FMCSA for interstate legs · Dallas core vs northern suburb contrast · Curated directory listings',
+  majorCorridors: 'I-35E · I-30 · I-635 · Dallas North Tollway · PGBT',
   collapsibleDeepContent: true,
   sectionOrder: [
     'whatMakesDifferent',
