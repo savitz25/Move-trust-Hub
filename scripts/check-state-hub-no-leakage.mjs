@@ -62,6 +62,16 @@ const STATE_NAMES = {
   'new-york': 'New York',
   georgia: 'Georgia',
   arizona: 'Arizona',
+  illinois: 'Illinois',
+  pennsylvania: 'Pennsylvania',
+  'north-carolina': 'North Carolina',
+  washington: 'Washington',
+  ohio: 'Ohio',
+  colorado: 'Colorado',
+  virginia: 'Virginia',
+  michigan: 'Michigan',
+  'new-jersey': 'New Jersey',
+  tennessee: 'Tennessee',
 };
 
 for (const file of packFiles) {
