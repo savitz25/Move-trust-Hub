@@ -777,6 +777,248 @@ const CA_ROUTES: Record<string, CountyPopularRoute[]> = {
         'Cul-de-sac staging and garage-heavy inventory; surveys should capture outdoor equipment.',
     },
   ],
+  kern: [
+    {
+      label: 'Within Kern (Bakersfield ↔ Southwest / Rosedale)',
+      direction: 'within',
+      context:
+        'Metro tract and HOA jobs; summer heat and longer cross-town pairs on 99 / 58 matter more than map miles.',
+    },
+    {
+      label: 'Bakersfield ↔ Tehachapi / mountain-edge towns',
+      direction: 'within',
+      context:
+        'Elevation, wind, and grade access; full trailers may need staging plans on mountain approaches.',
+    },
+    {
+      label: 'LA / OC → Bakersfield value housing',
+      direction: 'inbound',
+      context:
+        'Cost-driven SoCal inflows; industrial and ag-related employment anchors local demand.',
+      href: '/resources/routes/texas-to-california',
+    },
+    {
+      label: 'Kern → Arizona / Nevada job markets',
+      direction: 'outbound',
+      context:
+        'Short desert interstate; heat planning on both ends for summer deliveries.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Kern → Texas energy / logistics corridors',
+      direction: 'outbound',
+      context:
+        'Long-distance household goods; volume estimates drive linehaul more than hourly local rates.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Ridgecrest / Lake Isabella edge properties',
+      direction: 'within',
+      context:
+        'Longer empty miles and rural approaches; surveys should capture outbuildings and unpaved access.',
+    },
+  ],
+  'san-joaquin': [
+    {
+      label: 'Within San Joaquin (Stockton ↔ Tracy / Manteca / Lathrop)',
+      direction: 'within',
+      context:
+        'Core urban multi-unit vs warehouse-adjacent new growth; HOA windows common in Tracy/Lathrop tracts.',
+    },
+    {
+      label: 'Bay Area → Tracy / South County overflow',
+      direction: 'inbound',
+      context:
+        'Altamont / 580–205 commute housing demand; end-of-month weekends fill early.',
+    },
+    {
+      label: 'Stockton core multi-unit and older SFH',
+      direction: 'within',
+      context:
+        'Stairs, tight streets, and longer carries; photo the approach with the estimate request.',
+    },
+    {
+      label: 'San Joaquin → Sacramento metro',
+      direction: 'outbound',
+      context:
+        'Short regional hop; still confirm portal-to-portal pricing on peak I-5 windows.',
+    },
+    {
+      label: 'Central Valley → Arizona / Texas',
+      direction: 'outbound',
+      context:
+        'Affordability-driven long-distance; FMCSA carriers for out-of-state legs.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Lodi / North County wine-adjacent towns',
+      direction: 'within',
+      context:
+        'Smaller downtowns and rural edges; harvest-season traffic can slow two-lane approaches.',
+    },
+  ],
+  sonoma: [
+    {
+      label: 'Within Sonoma (Santa Rosa ↔ Petaluma / Rohnert Park)',
+      direction: 'within',
+      context:
+        'Urban multi-unit and suburban tracts; 101 timing between city clusters is a line item.',
+    },
+    {
+      label: 'Wine-country towns (Healdsburg / Sonoma / Sebastopol)',
+      direction: 'within',
+      context:
+        'Tourism-season congestion and rural/ag approaches; harvest weeks change street access.',
+    },
+    {
+      label: 'Bay Area / SF → Sonoma lifestyle',
+      direction: 'inbound',
+      context:
+        'Hybrid remote and lifestyle inflows; premium inventory and HOA rules on newer tracts.',
+      href: '/resources/routes/texas-to-california',
+    },
+    {
+      label: 'Sonoma → Oregon / Washington',
+      direction: 'outbound',
+      context:
+        'Coastal-to-PNW lifestyle exits; multi-day interstate household goods.',
+      href: '/resources/routes/california-to-oregon',
+    },
+    {
+      label: 'Sonoma → Southern California job markets',
+      direction: 'outbound',
+      context:
+        'I-5 long-haul; wine-country origin accessorials still matter at pickup.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Rural/ag edge and hillside properties',
+      direction: 'within',
+      context:
+        'Driveway grade, soft shoulders, and fire-season access windows; survey early.',
+    },
+  ],
+  placer: [
+    {
+      label: 'Within South Placer (Roseville ↔ Rocklin / Lincoln)',
+      direction: 'within',
+      context:
+        'HOA master-plans and cul-de-sac staging; garage-heavy inventory is common.',
+    },
+    {
+      label: 'Roseville / Rocklin ↔ Auburn foothills',
+      direction: 'within',
+      context:
+        'Elevation and windier approaches; truck length and turn radius change above the valley floor.',
+    },
+    {
+      label: 'Bay Area → Placer / Sacramento spillover',
+      direction: 'inbound',
+      context:
+        'Cost and space-driven family inflows into South Placer growth cities.',
+    },
+    {
+      label: 'Placer → Reno / Northern Nevada',
+      direction: 'outbound',
+      context:
+        'Sierra corridor interstate; winter weather can reshape delivery windows.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Placer → Pacific Northwest',
+      direction: 'outbound',
+      context:
+        'I-5 long-distance lifestyle moves; volume estimates beat hourly local quotes.',
+      href: '/resources/routes/california-to-oregon',
+    },
+    {
+      label: 'Sierra-edge seasonal and second-home logistics',
+      direction: 'within',
+      context:
+        'Toward Tahoe approaches: snow, chain controls, and limited staging — not a Roseville tract job.',
+    },
+  ],
+  'santa-barbara': [
+    {
+      label: 'Within coastal Santa Barbara (SB core ↔ Montecito / Carpinteria)',
+      direction: 'within',
+      context:
+        'Constrained streets, elevators, and high-value inventory; COI and staging dominate cost.',
+    },
+    {
+      label: 'Goleta / UCSB corridor multi-unit',
+      direction: 'within',
+      context:
+        'Student and staff turnover calendars; elevators and lease-end clusters fill crews.',
+    },
+    {
+      label: 'Santa Barbara ↔ North County (Santa Maria / Lompoc)',
+      direction: 'within',
+      context:
+        'Long county pairs on 101 / 154; treat as a real logistics hop, not a short local.',
+    },
+    {
+      label: 'LA / Ventura → Santa Barbara coast',
+      direction: 'inbound',
+      context:
+        'Lifestyle and professional inflows; coastal access rules differ from LA density.',
+      href: '/resources/routes/texas-to-california',
+    },
+    {
+      label: 'Santa Barbara → Bay Area / Silicon Valley',
+      direction: 'outbound',
+      context:
+        'Coast-to-coast California long local/interstate planning; high-value packing matters.',
+      href: '/resources/routes/san-francisco-to-austin',
+    },
+    {
+      label: 'Santa Barbara → Arizona / Texas',
+      direction: 'outbound',
+      context:
+        'Long-distance household goods; FMCSA carriers for out-of-state legs.',
+      href: '/resources/routes/california-to-arizona',
+    },
+  ],
+  monterey: [
+    {
+      label: 'Within Monterey Peninsula (Monterey ↔ Pacific Grove / Carmel)',
+      direction: 'within',
+      context:
+        'Tourism traffic, tight coastal streets, and condo/elevator rules shape the day.',
+    },
+    {
+      label: 'Peninsula ↔ Salinas Valley (Salinas / Mid Valley)',
+      direction: 'within',
+      context:
+        'Coastal vs ag-valley contrast; longer empty miles and different housing stock.',
+    },
+    {
+      label: 'Bay Area → Monterey Peninsula lifestyle',
+      direction: 'inbound',
+      context:
+        'Second-home and remote-work inflows; peak tourism weeks raise access friction.',
+    },
+    {
+      label: 'Salinas Valley ag-adjacent family moves',
+      direction: 'within',
+      context:
+        'Inland heat and farm-road approaches; not interchangeable with Carmel access.',
+    },
+    {
+      label: 'Monterey → Southern California',
+      direction: 'outbound',
+      context:
+        '101 corridor long-distance; coastal origin packing for salt air and hills.',
+      href: '/resources/routes/california-to-arizona',
+    },
+    {
+      label: 'Monterey → Pacific Northwest',
+      direction: 'outbound',
+      context:
+        'Coastal-to-PNW lifestyle exits; multi-day interstate household goods.',
+      href: '/resources/routes/california-to-oregon',
+    },
+  ],
 };
 
 export function getCountyPopularRoutes(

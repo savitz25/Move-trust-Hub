@@ -3,19 +3,25 @@ import { bergenCountyIntelligence } from '@/lib/local-movers/county-intelligence
 import { contraCostaCountyIntelligence } from '@/lib/local-movers/county-intelligence/contra-costa-ca';
 import { essexCountyIntelligence } from '@/lib/local-movers/county-intelligence/essex-nj';
 import { fresnoCountyIntelligence } from '@/lib/local-movers/county-intelligence/fresno-ca';
+import { kernCountyIntelligence } from '@/lib/local-movers/county-intelligence/kern-ca';
 import { losAngelesCountyIntelligence } from '@/lib/local-movers/county-intelligence/los-angeles-ca';
 import { middlesexCountyIntelligence } from '@/lib/local-movers/county-intelligence/middlesex-nj';
 import { monmouthCountyIntelligence } from '@/lib/local-movers/county-intelligence/monmouth-nj';
+import { montereyCountyIntelligence } from '@/lib/local-movers/county-intelligence/monterey-ca';
 import { morrisCountyIntelligence } from '@/lib/local-movers/county-intelligence/morris-nj';
 import { oceanCountyIntelligence } from '@/lib/local-movers/county-intelligence/ocean-nj';
 import { orangeCountyIntelligence } from '@/lib/local-movers/county-intelligence/orange-ca';
+import { placerCountyIntelligence } from '@/lib/local-movers/county-intelligence/placer-ca';
 import { riversideCountyIntelligence } from '@/lib/local-movers/county-intelligence/riverside-ca';
 import { sacramentoCountyIntelligence } from '@/lib/local-movers/county-intelligence/sacramento-ca';
 import { sanBernardinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-bernardino-ca';
 import { sanDiegoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-diego-ca';
 import { sanFranciscoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-francisco-ca';
+import { sanJoaquinCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-joaquin-ca';
 import { sanMateoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-mateo-ca';
+import { santaBarbaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-barbara-ca';
 import { santaClaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-clara-ca';
+import { sonomaCountyIntelligence } from '@/lib/local-movers/county-intelligence/sonoma-ca';
 import { venturaCountyIntelligence } from '@/lib/local-movers/county-intelligence/ventura-ca';
 import { warrenCountyIntelligence } from '@/lib/local-movers/county-intelligence/warren-nj';
 import { atlanticCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/atlantic-nj';
@@ -37,19 +43,25 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   contraCostaCountyIntelligence,
   essexCountyIntelligence,
   fresnoCountyIntelligence,
+  kernCountyIntelligence,
   losAngelesCountyIntelligence,
   middlesexCountyIntelligence,
   monmouthCountyIntelligence,
+  montereyCountyIntelligence,
   morrisCountyIntelligence,
   oceanCountyIntelligence,
   orangeCountyIntelligence,
+  placerCountyIntelligence,
   riversideCountyIntelligence,
   sacramentoCountyIntelligence,
   sanBernardinoCountyIntelligence,
   sanDiegoCountyIntelligence,
   sanFranciscoCountyIntelligence,
+  sanJoaquinCountyIntelligence,
   sanMateoCountyIntelligence,
+  santaBarbaraCountyIntelligence,
   santaClaraCountyIntelligence,
+  sonomaCountyIntelligence,
   venturaCountyIntelligence,
   warrenCountyIntelligence,
   mercerCountyNjIntelligence,
@@ -87,7 +99,7 @@ export function listCountyIntelligencePacks(): CountyIntelligencePack[] {
   return [...PACKS];
 }
 
-/** Core 12 CA Tier-1 county slugs (product launch set). */
+/** Core 12 CA Tier-1 county slugs (first wave). */
 export const CA_TIER1_CORE12 = [
   'los-angeles',
   'orange',
@@ -102,3 +114,17 @@ export const CA_TIER1_CORE12 = [
   'san-mateo',
   'ventura',
 ] as const;
+
+/** Wave-2 CA Tier-1 counties (Central Valley / North / Central Coast). */
+export const CA_TIER1_WAVE2 = [
+  'fresno',
+  'kern',
+  'san-joaquin',
+  'sonoma',
+  'placer',
+  'santa-barbara',
+  'monterey',
+] as const;
+
+/** Full CA Tier-1 set on locked template. */
+export const CA_TIER1_ALL = [...CA_TIER1_CORE12, ...CA_TIER1_WAVE2] as const;

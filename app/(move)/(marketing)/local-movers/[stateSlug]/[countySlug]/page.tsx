@@ -550,7 +550,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               targetId="movers"
             />
           </div>
-          <CountyIntentPaths countyLabel={countyLabel} />
+          <CountyIntentPaths
+            countyLabel={countyLabel}
+            stateHubHref={getStatePath(state.slug)}
+          />
         </header>
 
         {/*

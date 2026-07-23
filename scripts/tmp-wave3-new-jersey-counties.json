@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "atlantic",
+    "name": "Atlantic"
+  },
+  {
+    "slug": "bergen",
+    "name": "Bergen"
+  },
+  {
+    "slug": "burlington",
+    "name": "Burlington"
+  },
+  {
+    "slug": "camden",
+    "name": "Camden"
+  },
+  {
+    "slug": "cape-may",
+    "name": "Cape May"
+  },
+  {
+    "slug": "cumberland",
+    "name": "Cumberland"
+  },
+  {
+    "slug": "essex",
+    "name": "Essex"
+  },
+  {
+    "slug": "gloucester",
+    "name": "Gloucester"
+  },
+  {
+    "slug": "hudson",
+    "name": "Hudson"
+  },
+  {
+    "slug": "hunterdon",
+    "name": "Hunterdon"
+  },
+  {
+    "slug": "mercer",
+    "name": "Mercer"
+  },
+  {
+    "slug": "middlesex",
+    "name": "Middlesex"
+  },
+  {
+    "slug": "monmouth",
+    "name": "Monmouth"
+  },
+  {
+    "slug": "morris",
+    "name": "Morris"
+  },
+  {
+    "slug": "ocean",
+    "name": "Ocean"
+  },
+  {
+    "slug": "passaic",
+    "name": "Passaic"
+  },
+  {
+    "slug": "salem",
+    "name": "Salem"
+  },
+  {
+    "slug": "somerset",
+    "name": "Somerset"
+  },
+  {
+    "slug": "sussex",
+    "name": "Sussex"
+  },
+  {
+    "slug": "union",
+    "name": "Union"
+  },
+  {
+    "slug": "warren",
+    "name": "Warren"
+  }
+]

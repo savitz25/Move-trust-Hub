@@ -1,0 +1,258 @@
+[
+  {
+    "slug": "adams",
+    "name": "Adams"
+  },
+  {
+    "slug": "alamosa",
+    "name": "Alamosa"
+  },
+  {
+    "slug": "arapahoe",
+    "name": "Arapahoe"
+  },
+  {
+    "slug": "archuleta",
+    "name": "Archuleta"
+  },
+  {
+    "slug": "baca",
+    "name": "Baca"
+  },
+  {
+    "slug": "bent",
+    "name": "Bent"
+  },
+  {
+    "slug": "boulder",
+    "name": "Boulder"
+  },
+  {
+    "slug": "broomfield",
+    "name": "Broomfield"
+  },
+  {
+    "slug": "chaffee",
+    "name": "Chaffee"
+  },
+  {
+    "slug": "cheyenne",
+    "name": "Cheyenne"
+  },
+  {
+    "slug": "clear-creek",
+    "name": "Clear Creek"
+  },
+  {
+    "slug": "conejos",
+    "name": "Conejos"
+  },
+  {
+    "slug": "costilla",
+    "name": "Costilla"
+  },
+  {
+    "slug": "crowley",
+    "name": "Crowley"
+  },
+  {
+    "slug": "custer",
+    "name": "Custer"
+  },
+  {
+    "slug": "delta",
+    "name": "Delta"
+  },
+  {
+    "slug": "denver",
+    "name": "Denver"
+  },
+  {
+    "slug": "dolores",
+    "name": "Dolores"
+  },
+  {
+    "slug": "douglas",
+    "name": "Douglas"
+  },
+  {
+    "slug": "eagle",
+    "name": "Eagle"
+  },
+  {
+    "slug": "el-paso",
+    "name": "El Paso"
+  },
+  {
+    "slug": "elbert",
+    "name": "Elbert"
+  },
+  {
+    "slug": "fremont",
+    "name": "Fremont"
+  },
+  {
+    "slug": "garfield",
+    "name": "Garfield"
+  },
+  {
+    "slug": "gilpin",
+    "name": "Gilpin"
+  },
+  {
+    "slug": "grand",
+    "name": "Grand"
+  },
+  {
+    "slug": "gunnison",
+    "name": "Gunnison"
+  },
+  {
+    "slug": "hinsdale",
+    "name": "Hinsdale"
+  },
+  {
+    "slug": "huerfano",
+    "name": "Huerfano"
+  },
+  {
+    "slug": "jackson",
+    "name": "Jackson"
+  },
+  {
+    "slug": "jefferson",
+    "name": "Jefferson"
+  },
+  {
+    "slug": "kiowa",
+    "name": "Kiowa"
+  },
+  {
+    "slug": "kit-carson",
+    "name": "Kit Carson"
+  },
+  {
+    "slug": "la-plata",
+    "name": "La Plata"
+  },
+  {
+    "slug": "lake",
+    "name": "Lake"
+  },
+  {
+    "slug": "larimer",
+    "name": "Larimer"
+  },
+  {
+    "slug": "las-animas",
+    "name": "Las Animas"
+  },
+  {
+    "slug": "lincoln",
+    "name": "Lincoln"
+  },
+  {
+    "slug": "logan",
+    "name": "Logan"
+  },
+  {
+    "slug": "mesa",
+    "name": "Mesa"
+  },
+  {
+    "slug": "mineral",
+    "name": "Mineral"
+  },
+  {
+    "slug": "moffat",
+    "name": "Moffat"
+  },
+  {
+    "slug": "montezuma",
+    "name": "Montezuma"
+  },
+  {
+    "slug": "montrose",
+    "name": "Montrose"
+  },
+  {
+    "slug": "morgan",
+    "name": "Morgan"
+  },
+  {
+    "slug": "otero",
+    "name": "Otero"
+  },
+  {
+    "slug": "ouray",
+    "name": "Ouray"
+  },
+  {
+    "slug": "park",
+    "name": "Park"
+  },
+  {
+    "slug": "phillips",
+    "name": "Phillips"
+  },
+  {
+    "slug": "pitkin",
+    "name": "Pitkin"
+  },
+  {
+    "slug": "prowers",
+    "name": "Prowers"
+  },
+  {
+    "slug": "pueblo",
+    "name": "Pueblo"
+  },
+  {
+    "slug": "rio-blanco",
+    "name": "Rio Blanco"
+  },
+  {
+    "slug": "rio-grande",
+    "name": "Rio Grande"
+  },
+  {
+    "slug": "routt",
+    "name": "Routt"
+  },
+  {
+    "slug": "saguache",
+    "name": "Saguache"
+  },
+  {
+    "slug": "san-juan",
+    "name": "San Juan"
+  },
+  {
+    "slug": "san-miguel",
+    "name": "San Miguel"
+  },
+  {
+    "slug": "sedgwick",
+    "name": "Sedgwick"
+  },
+  {
+    "slug": "summit",
+    "name": "Summit"
+  },
+  {
+    "slug": "teller",
+    "name": "Teller"
+  },
+  {
+    "slug": "washington",
+    "name": "Washington"
+  },
+  {
+    "slug": "weld",
+    "name": "Weld"
+  },
+  {
+    "slug": "yuma",
+    "name": "Yuma"
+  }
+]
