@@ -1,8 +1,8 @@
 import type { StateResourceHubPack } from '@/lib/local-movers/state-resource-hub/types';
 
 /**
- * California Moving Resource Hub — Phase 1 + Phase 2 content modules.
- * Used by /local-movers/california as the master state-hub template.
+ * California Moving Resource Hub — polished master template.
+ * Used by /local-movers/california. Every CA county appears in exactly one region.
  */
 export const californiaStateResourceHub: StateResourceHubPack = {
   stateSlug: 'california',
@@ -26,21 +26,28 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       label: 'Moving Within California',
       href: '#ca-regulations',
       description:
-        'Intrastate rules (BHGS), local vs long in-state costs, and county-by-county access tips.',
+        'Confirm BHGS rules for in-state work, then compare local costs and open the counties you will use.',
     },
     {
       id: 'to',
       label: 'Moving To California',
       href: '#ca-regions',
       description:
-        'Pick a region, open deep county guides, and plan parking, HOAs, and metro logistics.',
+        'Choose a region first, then a county guide for parking, HOAs, elevators, and metro logistics.',
     },
     {
       id: 'from',
       label: 'Moving From California',
       href: '#ca-routes',
       description:
-        'Popular outbound routes, interstate authority checks, and inventory planning for long hauls.',
+        'Review outbound corridors, confirm interstate FMCSA authority, and size inventory for the long haul.',
+    },
+    {
+      id: 'unsure',
+      label: 'Not Sure Yet',
+      href: '#ca-why-different',
+      description:
+        'Start with how California markets differ, then use the calculator and map to narrow your plan.',
     },
   ],
   primaryCta: {
@@ -48,13 +55,24 @@ export const californiaStateResourceHub: StateResourceHubPack = {
     href: '/moving-calculator',
   },
   secondaryCta: {
-    label: 'Search licensed movers',
+    label: 'Find & Compare Movers',
     href: '/companies',
+  },
+  tertiaryCta: {
+    label: 'Explore Regions & Counties',
+    href: '#ca-regions',
+  },
+  whyDifferent: {
+    title: 'Why moving in California is different',
+    paragraphs: [
+      'California is not one moving market. Coastal high-rises, Inland Empire tracts, Central Valley heat, Bay Area hills, and Sierra/rural approaches produce completely different truck access, labor time, and soft costs — even when the map distance looks similar.',
+      'Intrastate jobs are regulated by California’s Bureau of Household Goods and Services (BHGS). Interstate jobs need federal FMCSA authority. Treat licensing, peak season, and county-level access rules as first-class planning inputs — then drill into the region and county that match your addresses.',
+    ],
   },
   snapshot: {
     title: 'California moving snapshot',
     methodology:
-      'Cost ranges are planning estimates based on typical California local and intrastate patterns (labor markets, accessorials, and distance). They are not quotes. Always compare written estimates from licensed movers. Mover counts reflect curated county listings plus verified directory carriers.',
+      'Snapshot figures are planning orientation only. Cost bands reflect typical California local and intrastate patterns; they are not bids. Mover counts combine curated county listings and verified directory carriers. Always compare written estimates from licensed movers.',
     stats: [
       {
         label: 'Typical local move (studio–2BR)',
@@ -89,42 +107,43 @@ export const californiaStateResourceHub: StateResourceHubPack = {
     ],
   },
   regulations: {
+    mode: 'strong_state_regulator',
     title: 'California moving regulations & consumer protection',
     intro:
-      'California is one of the few states where in-state household moves have a dedicated state regulator separate from federal interstate rules. Knowing which license applies protects you from unlicensed operators.',
+      'California separates in-state household goods regulation from federal interstate rules. Match the license to the job before you pay a deposit.',
     interstate: {
-      title: 'Interstate (crossing state lines) → FMCSA / USDOT',
+      title: 'Interstate (any leg outside California)',
       body:
-        'If your origin or destination is outside California, the mover generally needs active FMCSA operating authority and a USDOT number. Verify carriers on FMCSA SAFER before you deposit money. A California-only BHGS permit alone is not enough for a Texas or Arizona delivery.',
+        'If origin or destination is outside California, the carrier generally needs active FMCSA operating authority and a USDOT number. Verify on FMCSA SAFER. A California BHGS Household Mover permit alone does not authorize an interstate delivery (for example to Texas or Arizona).',
     },
     intrastate: {
-      title: 'Intrastate (entirely within California) → BHGS',
+      title: 'Intrastate (entirely within California)',
       body:
-        'Moves that start and end in California are typically regulated by the Bureau of Household Goods and Services (BHGS) under the California Department of Consumer Affairs. Household movers must hold a valid California Household Mover permit (often discussed as a “CAL-T” style permit). Confirm the permit is active for the company name on your estimate.',
+        'Moves that start and end in California are typically overseen by the Bureau of Household Goods and Services (BHGS), California Department of Consumer Affairs. Household movers must hold a current California Household Mover permit. Confirm the legal company name on your estimate matches an active permit in the official DCA / BHGS license search.',
     },
     verifySteps: [
-      'Decide whether your move is entirely in California (BHGS) or crosses a state line (FMCSA / USDOT).',
-      'Match the legal company name on the estimate to the name in the official license search.',
-      'For intrastate: search the BHGS Household Mover license lookup and confirm active status.',
-      'For interstate: look up the USDOT / MC on FMCSA SAFER and check out-of-service flags.',
-      'Get a written estimate, ask about valuation coverage, and never pay large cash deposits to unverified operators.',
-      'Keep copies of the estimate, inventory, and any Not-to-Exceed or maximum-rate documents.',
+      'Classify the job: entirely in California (BHGS) vs any out-of-state leg (FMCSA / USDOT).',
+      'Copy the exact legal name from the written estimate.',
+      'Intrastate: search that name in the official DCA license search and confirm an active Household Mover permit.',
+      'Interstate: look up USDOT / MC on FMCSA SAFER; review out-of-service and authority status.',
+      'Refuse large cash deposits to unverified operators; keep the estimate, inventory, and disclosures.',
+      'Ask for required consumer information materials and how the final price can change under the estimate type you signed.',
     ],
     protections: [
       {
-        title: 'Important Information for Persons Moving Household Goods',
+        title: 'Consumer information materials',
         detail:
-          'Licensed California household movers are expected to provide consumer information materials required under BHGS rules. Ask for the booklet / disclosures before you sign.',
+          'Licensed California household movers are expected to provide required consumer information (commonly discussed as the “Important Information for Persons Moving Household Goods” materials). Ask for disclosures before you sign.',
       },
       {
         title: 'Written estimates & rate frameworks',
         detail:
-          'California household movers operate under regulated rate frameworks (including maximum-rate / Not-to-Exceed concepts depending on the move type and tariff). Demand clarity in writing on how the final price can change.',
+          'California household movers operate under regulated rate frameworks. Demand written clarity on maximum charges, Not-to-Exceed language where applicable, and what can change the price (stairs, long carry, packing, delays).',
       },
       {
         title: 'Complaints & enforcement',
         detail:
-          'BHGS handles consumer complaints against California household movers. FMCSA and state AGs play roles on interstate fraud. Document everything.',
+          'BHGS accepts consumer complaints involving California household movers. Interstate fraud and authority issues may involve FMCSA and other agencies. Keep records.',
       },
     ],
     officialLinks: [
@@ -134,7 +153,7 @@ export const californiaStateResourceHub: StateResourceHubPack = {
         external: true,
       },
       {
-        label: 'BHGS — License search',
+        label: 'Official DCA license search',
         href: 'https://search.dca.ca.gov/',
         external: true,
       },
@@ -148,6 +167,8 @@ export const californiaStateResourceHub: StateResourceHubPack = {
         href: '/verify-dot',
       },
     ],
+    disclaimer:
+      'Licensing rules and search tools can change. Always verify current permit or authority status on official government sites for the company named on your estimate. This page is educational, not legal advice.',
   },
   regions: [
     {
@@ -155,7 +176,11 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       name: 'Bay Area',
       shortName: 'Bay Area',
       blurb:
-        'Hills, high-rises, ferry/bridge timing, and tech-driven demand from SF to Silicon Valley and the East Bay.',
+        'Hills, high-rises, bridge/ferry timing, and tech-driven demand from San Francisco to Silicon Valley and the East Bay.',
+      challenges: [
+        'Steep driveways and street parking limits',
+        'Elevator COI windows in multi-unit buildings',
+      ],
       countySlugs: [
         'san-francisco',
         'san-mateo',
@@ -168,6 +193,7 @@ export const californiaStateResourceHub: StateResourceHubPack = {
         'solano',
         'santa-cruz',
       ],
+      ctaLabel: 'Explore Bay Area counties',
     },
     {
       id: 'la-metro',
@@ -175,7 +201,12 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       shortName: 'LA Metro',
       blurb:
         'Freeway time, elevators/COI, parking permits, and micro-markets from the Westside to the Valley and South Bay.',
+      challenges: [
+        'Parking permits and building access rules',
+        'Long portal-to-portal freeway time',
+      ],
       countySlugs: ['los-angeles', 'ventura'],
+      ctaLabel: 'Explore LA Metro counties',
     },
     {
       id: 'orange-coastal',
@@ -183,7 +214,12 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       shortName: 'Orange / Coastal',
       blurb:
         'Planned communities, HOAs, coastal access, and high-value suburban inventories.',
+      challenges: [
+        'HOA move windows and COI requirements',
+        'High-value contents and careful-handling expectations',
+      ],
       countySlugs: ['orange'],
+      ctaLabel: 'Explore Orange County',
     },
     {
       id: 'san-diego',
@@ -191,7 +227,12 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       shortName: 'San Diego',
       blurb:
         'Coastal density, military and biotech moves, and heat inland toward East County and Imperial.',
+      challenges: [
+        'Coastal multi-unit access vs inland heat',
+        'Military / seasonal calendar spikes',
+      ],
       countySlugs: ['san-diego', 'imperial'],
+      ctaLabel: 'Explore San Diego region',
     },
     {
       id: 'inland-empire',
@@ -199,7 +240,12 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       shortName: 'Inland Empire',
       blurb:
         'Logistics corridors, new tracts, HOAs, and long portal-to-portal hauls on the 10/15/60/91.',
+      challenges: [
+        'New-construction HOA rules',
+        'Heat and long freeway hauls',
+      ],
       countySlugs: ['riverside', 'san-bernardino'],
+      ctaLabel: 'Explore Inland Empire',
     },
     {
       id: 'central-valley',
@@ -207,6 +253,10 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       shortName: 'Central Valley',
       blurb:
         'Long distances, summer heat, ag-adjacent access, and growing family markets from Bakersfield to Stockton.',
+      challenges: [
+        'Extreme summer heat windows',
+        'Longer in-region distances',
+      ],
       countySlugs: [
         'kern',
         'tulare',
@@ -217,6 +267,7 @@ export const californiaStateResourceHub: StateResourceHubPack = {
         'stanislaus',
         'san-joaquin',
       ],
+      ctaLabel: 'Explore Central Valley',
     },
     {
       id: 'sacramento',
@@ -224,6 +275,10 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       shortName: 'Sacramento',
       blurb:
         'Capital employment, foothill approaches, and suburban growth in Placer, El Dorado, and Yolo.',
+      challenges: [
+        'Foothill / wildfire-season planning',
+        'Suburban HOA and school-calendar peaks',
+      ],
       countySlugs: [
         'sacramento',
         'placer',
@@ -235,6 +290,7 @@ export const californiaStateResourceHub: StateResourceHubPack = {
         'calaveras',
         'tuolumne',
       ],
+      ctaLabel: 'Explore Sacramento region',
     },
     {
       id: 'central-coast',
@@ -242,12 +298,17 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       shortName: 'Central Coast',
       blurb:
         '101 corridor towns, tourism seasonality, and mixed coastal / inland access from Monterey to Santa Barbara.',
+      challenges: [
+        'Tourism-season congestion',
+        'Coastal access and hill approaches',
+      ],
       countySlugs: [
         'monterey',
         'san-benito',
         'san-luis-obispo',
         'santa-barbara',
       ],
+      ctaLabel: 'Explore Central Coast',
     },
     {
       id: 'northern-sierra',
@@ -255,6 +316,10 @@ export const californiaStateResourceHub: StateResourceHubPack = {
       shortName: 'North / Sierra',
       blurb:
         'Rural and mountain access, wildfire-season planning, and thinner crew coverage outside major hubs.',
+      challenges: [
+        'Rural driveway and mountain access',
+        'Wildfire-season timing flexibility',
+      ],
       countySlugs: [
         'butte',
         'shasta',
@@ -277,12 +342,19 @@ export const californiaStateResourceHub: StateResourceHubPack = {
         'inyo',
         'mariposa',
       ],
+      ctaLabel: 'Explore North / Sierra',
     },
   ],
   costs: {
     title: 'California moving costs',
     intro:
-      'California pricing reflects high labor markets, accessorials (elevators, permits, long carries), fuel, and long distances between metros. Use these as planning bands — then run a personalized inventory through the calculator.',
+      'California pricing reflects coastal labor markets, accessorials, fuel, and long distances between metros. Use ranges for planning, then inventory your home in the calculator.',
+    methodology: {
+      title: 'How we estimate California moving costs',
+      lastReviewed: '2026-07-22',
+      body:
+        'These ranges are planning estimates, not quotes. They combine typical California local and intrastate market patterns: home size, distance, accessorials (elevators, permits, long carries, stairs), seasonal demand, and regional labor rates. Actual bids vary by inventory, access, packing, valuation, and date. Always compare written estimates from movers licensed for your exact route (BHGS for in-state; FMCSA for interstate).',
+    },
     ranges: [
       {
         label: 'Local studio / 1BR (simple access)',
@@ -322,31 +394,49 @@ export const californiaStateResourceHub: StateResourceHubPack = {
     title: 'Popular California moving routes',
     intro:
       'California is both a major origin and destination. Outbound interstate moves need FMCSA authority; in-state corridors need BHGS-permitted household movers.',
+    migrationProfile: 'outbound_dominant',
     outbound: [
       {
         label: 'California → Texas',
         href: '/moving-to/texas',
-        note: 'One of the highest-volume outbound lanes — plan for multi-day transit and summer heat at destination.',
+        origins: 'LA Basin, Bay Area, San Diego, Sacramento',
+        transit: 'Multi-day linehaul; ~1,200–1,800+ miles depending on metros',
+        planningNote:
+          'One of the highest-volume outbound lanes — summer heat at destination and large inventories are common.',
+        note: 'Confirm interstate FMCSA authority; plan multi-day transit and heat protection for electronics.',
       },
       {
         label: 'California → Arizona',
         href: '/moving-to/arizona',
-        note: 'I-10 corridor demand; heat and HOA rules at Phoenix/Tucson common.',
+        origins: 'Southern California, Inland Empire, Central Valley',
+        transit: 'Often 1–3 day corridor via I-10 / I-8',
+        planningNote:
+          'HOA and heat windows at Phoenix/Tucson matter as much as linehaul miles.',
+        note: 'Shorter interstate hop than TX; still requires FMCSA authority.',
       },
       {
         label: 'California → Nevada',
         href: '/moving-to/nevada',
-        note: 'Shorter interstate hop; still requires interstate authority.',
+        origins: 'Southern California, Bay Area (longer)',
+        transit: 'Often same-week via I-15 or I-80 corridors',
+        planningNote: 'Short interstate — do not use an intrastate-only permit.',
+        note: 'Verify USDOT; apartment elevators at Las Vegas/Reno destinations are common.',
       },
       {
         label: 'California → Washington',
         href: '/moving-to/washington',
-        note: 'I-5 northbound; rain-season packing and apartment elevators at destination.',
+        origins: 'Bay Area, Northern California, LA',
+        transit: 'I-5 northbound multi-day',
+        planningNote: 'Rain-season packing and Seattle multi-unit access at delivery.',
+        note: 'Popular for Bay Area outbound households; confirm interstate authority.',
       },
       {
         label: 'California → Oregon',
         href: '/moving-to/oregon',
-        note: 'Popular for Bay Area and Northern California outbound households.',
+        origins: 'Bay Area, Sacramento, Northern California',
+        transit: 'I-5 corridor; shorter than WA for northern origins',
+        planningNote: 'Portland multi-unit and Willamette Valley SFH access differ.',
+        note: 'Strong outbound lane for Northern California and Bay Area.',
       },
     ],
     inbound: [
@@ -354,6 +444,9 @@ export const californiaStateResourceHub: StateResourceHubPack = {
         label: 'Moving to Los Angeles County',
         href: '/local-movers/california/los-angeles',
         note: 'Deep zone guide for freeways, COI, and micro-markets.',
+        origins: 'National inbound + California internal',
+        transit: 'Varies by origin; local access often dominates cost',
+        planningNote: 'Use the LA intelligence pack for zone-level access tips.',
       },
       {
         label: 'Moving to San Diego County',
@@ -445,7 +538,7 @@ export const californiaStateResourceHub: StateResourceHubPack = {
     {
       question: 'How are movers regulated in California?',
       answer:
-        'Moves entirely within California are generally regulated by the Bureau of Household Goods and Services (BHGS) under the California Department of Consumer Affairs — household movers need a valid California Household Mover permit. Moves that cross state lines fall under federal FMCSA rules and require active interstate operating authority and a USDOT number. Confirm which framework applies to your exact origin and destination.',
+        'Moves entirely within California are generally regulated by the Bureau of Household Goods and Services (BHGS) under the California Department of Consumer Affairs — household movers need a valid California Household Mover permit. Moves that cross state lines fall under federal FMCSA rules and require active interstate operating authority and a USDOT number. Confirm which framework applies to your exact origin and destination, and verify status on official government tools.',
     },
     {
       question: 'What is the difference between a local and long-distance move in California?',
@@ -455,7 +548,7 @@ export const californiaStateResourceHub: StateResourceHubPack = {
     {
       question: 'How do I verify a California mover is legally allowed to operate?',
       answer:
-        'For in-state moves, search the company name in the official BHGS / DCA license lookup and confirm an active Household Mover permit. For interstate moves, look up the USDOT or MC number on FMCSA SAFER. Match the legal name on your estimate to the license record, and use Move Trust Hub’s Verify DOT tool as a second check.',
+        'For in-state moves, search the company name in the official DCA license search and confirm an active Household Mover permit. For interstate moves, look up the USDOT or MC number on FMCSA SAFER. Match the legal name on your estimate to the license record, and use Move Trust Hub’s Verify DOT tool as a second check. Rules and records can change — re-check before you pay a deposit.',
     },
     {
       question: 'When is the best time to move in California?',
@@ -477,11 +570,19 @@ export const californiaStateResourceHub: StateResourceHubPack = {
     byline: 'Curated by the Move Trust Hub editorial team',
     lastReviewed: '2026-07-22',
     methodology:
-      'County guides combine public licensing checks, directory verification, and editorial research. Rankings and listings are independent — we do not accept lead fees or paid placement for inclusion.',
+      'County guides combine public licensing checks, directory verification, and editorial research. Rankings and listings are independent — we do not accept lead fees or paid placement for inclusion. Cost ranges are planning estimates derived from typical California market patterns, not live bids.',
     independence:
       'Move Trust Hub is an independent research and directory resource. We are not a moving company and do not sell your lead to movers for a fee.',
+    sources: [
+      { label: 'BHGS / California DCA — Household Movers', href: 'https://bhgs.dca.ca.gov/' },
+      { label: 'DCA official license search', href: 'https://search.dca.ca.gov/' },
+      { label: 'FMCSA SAFER', href: 'https://safer.fmcsa.dot.gov/' },
+      { label: 'How we score movers', href: '/about/how-we-score-movers' },
+    ],
   },
   stickyNav: [
+    { id: 'ca-intent', label: 'Start' },
+    { id: 'ca-why-different', label: 'Why CA' },
     { id: 'ca-snapshot', label: 'Snapshot' },
     { id: 'ca-regulations', label: 'Regulations' },
     { id: 'ca-regions', label: 'Regions' },
