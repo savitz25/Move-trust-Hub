@@ -82,6 +82,11 @@ const STATE_NAMES = {
   alabama: 'Alabama',
   louisiana: 'Louisiana',
   kentucky: 'Kentucky',
+  oregon: 'Oregon',
+  oklahoma: 'Oklahoma',
+  connecticut: 'Connecticut',
+  iowa: 'Iowa',
+  arkansas: 'Arkansas',
 };
 
 for (const file of packFiles) {
