@@ -2508,6 +2508,485 @@ const GA_ROUTES: Record<string, CountyPopularRoute[]> = {
   ],
 };
 
+/** New York — borough density, LI/Westchester suburbs, upstate metros (not NYC clones). */
+const NY_ROUTES: Record<string, CountyPopularRoute[]> = {
+  kings: [
+    {
+      label: 'Within Brooklyn (Park Slope / Heights ↔ Bushwick / Bay Ridge)',
+      direction: 'within',
+      context:
+        'Brownstone walk-ups, freight elevators, and street-permit blocks — access beats map miles every time.',
+    },
+    {
+      label: 'Brooklyn ↔ Manhattan (Williamsburg / Dumbo ↔ Midtown / FiDi)',
+      direction: 'within',
+      context:
+        'Bridge timing, dock reservations, and elevator banks; treat as two urban access surveys, not one local hop.',
+    },
+    {
+      label: 'Brooklyn ↔ Queens / Bronx cross-borough pairs',
+      direction: 'within',
+      context:
+        'BQE and BQE-adjacent congestion reshape crew start times; truck size limits differ by neighborhood stock.',
+    },
+    {
+      label: 'Brooklyn → Florida snowbird & permanent exits',
+      direction: 'outbound',
+      context:
+        'Classic NYC→Sun Belt corridor; volume and valuation matter more than hourly local rates.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'New Jersey / Hudson County → Brooklyn',
+      direction: 'inbound',
+      context:
+        'Cross-harbor inflows into brownstone and condo stock; COIs and curb rules dominate load day.',
+    },
+    {
+      label: 'Brooklyn → Long Island / Nassau space upgrades',
+      direction: 'outbound',
+      context:
+        'Family school and yard moves; one end walk-up stairs, the other driveway staging — plan both ends.',
+    },
+  ],
+  queens: [
+    {
+      label: 'Within Queens (Astoria / LIC ↔ Flushing / Jamaica / Forest Hills)',
+      direction: 'within',
+      context:
+        'Dense multi-unit vs co-op elevators; longer empty miles across the borough than Manhattan-style quotes imply.',
+    },
+    {
+      label: 'Queens ↔ Brooklyn / Manhattan job-center hops',
+      direction: 'within',
+      context:
+        'Cross-borough pairs on the BQE / Midtown Tunnel; elevators and street permits at both ends.',
+    },
+    {
+      label: 'Queens → Nassau / Suffolk Long Island suburbs',
+      direction: 'outbound',
+      context:
+        'Classic upgrade corridor for space and schools; inventory shifts from walk-ups to garage-heavy homes.',
+    },
+    {
+      label: 'Queens → Florida retirement & dual-home corridors',
+      direction: 'outbound',
+      context:
+        'Snowbird and permanent relocations; peak winter booking fills long-distance capacity early.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Connecticut / Fairfield → Queens multifamily',
+      direction: 'inbound',
+      context:
+        'Reverse-commute and cost-sensitive inflows; co-op board rules and elevator windows are common.',
+    },
+    {
+      label: 'JFK / airport-adjacent apartment turnover',
+      direction: 'within',
+      context:
+        'Hospitality and aviation-linked leases; tight parking and building blackout hours near flight paths.',
+    },
+  ],
+  'new-york': [
+    {
+      label: 'Within Manhattan (UWS / UES ↔ Midtown / Downtown towers)',
+      direction: 'within',
+      context:
+        'Freight elevators, COIs, and street permits are the entire job — map miles barely matter.',
+    },
+    {
+      label: 'Manhattan ↔ Brooklyn / Queens cross-borough',
+      direction: 'within',
+      context:
+        'Bridge and tunnel timing plus two dense access surveys; shuttle trucks appear on tight blocks.',
+    },
+    {
+      label: 'Manhattan → Westchester / Connecticut suburbs',
+      direction: 'outbound',
+      context:
+        'Family and empty-nester exits from tower living; high-value packing and elevator reservations at origin.',
+    },
+    {
+      label: 'Manhattan → Florida snowbird & second-home corridors',
+      direction: 'outbound',
+      context:
+        'Signature NYC→FL household-goods corridor; dedicated vs consolidated transit spreads matter.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'California / West Coast → Manhattan career inflows',
+      direction: 'inbound',
+      context:
+        'Coast-to-coast tech and finance arrivals into dense delivery access; building rules start days early.',
+      href: '/resources/routes/california-to-new-york',
+    },
+    {
+      label: 'New Jersey PATH / ferry corridors → Manhattan',
+      direction: 'inbound',
+      context:
+        'Cross-Hudson professional moves; dock and elevator banks dominate destination day more than miles.',
+    },
+  ],
+  bronx: [
+    {
+      label: 'Within the Bronx (Riverdale ↔ Fordham / South Bronx / Throgs Neck)',
+      direction: 'within',
+      context:
+        'Walk-up density, elevator co-ops, and Cross Bronx traffic windows — not a Manhattan tower day.',
+    },
+    {
+      label: 'Bronx ↔ Manhattan / Westchester reverse-commute pairs',
+      direction: 'within',
+      context:
+        'I-87 / Major Deegan timing; one end urban stairs, the other suburban driveway or mid-rise elevators.',
+    },
+    {
+      label: 'Bronx → Florida family & retirement exits',
+      direction: 'outbound',
+      context:
+        'Long-distance Sun Belt moves; volume surveys beat hourly local thinking for true interstate legs.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Connecticut / lower New England → Bronx',
+      direction: 'inbound',
+      context:
+        'Cost and family inflows into Bronx multifamily; confirm elevator COIs before comparing crew rates.',
+    },
+    {
+      label: 'Bronx ↔ Brooklyn / Queens cross-borough logistics',
+      direction: 'within',
+      context:
+        'Longer empty miles than a single-neighborhood hop; truck staging rules differ pocket by pocket.',
+    },
+    {
+      label: 'Pennsylvania / Mid-Atlantic → Bronx job markets',
+      direction: 'inbound',
+      context:
+        'Healthcare and logistics-adjacent relocations; plan curb access and building management contacts early.',
+    },
+  ],
+  richmond: [
+    {
+      label: 'Within Staten Island (St. George ↔ New Dorp / Tottenville)',
+      direction: 'within',
+      context:
+        'Ferry-terminal density vs South Shore single-family; longer local distances than map miles suggest.',
+    },
+    {
+      label: 'Staten Island ↔ Brooklyn / Manhattan (bridge & ferry corridors)',
+      direction: 'within',
+      context:
+        'Verrazzano timing and ferry-adjacent staging; treat as real logistics, not a short suburban quote.',
+    },
+    {
+      label: 'New Jersey (Bayonne / Middlesex) → Staten Island',
+      direction: 'inbound',
+      context:
+        'Cross-harbor and Outerbridge inflows into SI single-family stock; driveway access is the norm.',
+    },
+    {
+      label: 'Staten Island → Florida snowbird corridors',
+      direction: 'outbound',
+      context:
+        'Retirement and dual-home exits; garage-heavy inventories need full volume estimates.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Staten Island → New Jersey reverse / dual-state hops',
+      direction: 'outbound',
+      context:
+        'Short interstate across the Kill; FMCSA authority still applies when the job crosses state lines.',
+    },
+    {
+      label: 'North Shore multifamily & South Shore ranch stock',
+      direction: 'within',
+      context:
+        'Elevator buildings near the ferry vs cul-de-sac staging inland — truck type changes by zip.',
+    },
+  ],
+  nassau: [
+    {
+      label: 'Within Nassau (Hempstead / Garden City ↔ Great Neck / Long Beach)',
+      direction: 'within',
+      context:
+        'North Shore estates vs South Shore beach access; HOA and village parking rules reshape load day.',
+    },
+    {
+      label: 'NYC boroughs → Nassau County space & schools',
+      direction: 'inbound',
+      context:
+        'Classic upgrade corridor from Queens and Brooklyn; origin walk-ups meet destination driveway staging.',
+    },
+    {
+      label: 'Nassau → Florida retirement & snowbird exits',
+      direction: 'outbound',
+      context:
+        'High-volume LI→Sun Belt household goods; peak winter booking fills carriers early.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Nassau ↔ Suffolk east-end / mid-Island pairs',
+      direction: 'within',
+      context:
+        'LIE congestion and longer empty miles; treat as regional logistics, not a same-town local hop.',
+    },
+    {
+      label: 'Connecticut / Westchester → Nassau reverse moves',
+      direction: 'inbound',
+      context:
+        'Family and dual-home logistics into LI suburbs; ferry and bridge timing can shape equipment choice.',
+    },
+    {
+      label: 'Nassau → Myrtle Beach / Carolinas lifestyle exits',
+      direction: 'outbound',
+      context:
+        'Popular secondary Sun Belt corridor beyond Florida; multi-day interstate with inventory-driven pricing.',
+      href: '/resources/routes/new-york-to-myrtle-beach',
+    },
+  ],
+  suffolk: [
+    {
+      label: 'Within Suffolk (Huntington / Babylon ↔ Brookhaven / Riverhead)',
+      direction: 'within',
+      context:
+        'West-end density vs East End rural and second-home stock — truck access and empty miles differ sharply.',
+    },
+    {
+      label: 'Hamptons / North Fork seasonal & second-home moves',
+      direction: 'within',
+      context:
+        'Tourism peaks, long driveway carries, and weather holds; not interchangeable with western Suffolk tracts.',
+    },
+    {
+      label: 'NYC / Nassau → Suffolk County space upgrades',
+      direction: 'inbound',
+      context:
+        'Family and remote-work inflows further east; LIE timing and larger-home inventories dominate quotes.',
+    },
+    {
+      label: 'Suffolk → Florida snowbird & permanent relocations',
+      direction: 'outbound',
+      context:
+        'Classic LI retirement corridor; volume and valuation coverage beat hourly local rates.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Suffolk → Texas job & cost corridors',
+      direction: 'outbound',
+      context:
+        'Long-distance career exits; FMCSA carriers and full packing scopes for true interstate goods.',
+      href: '/resources/routes/new-york-to-texas',
+    },
+    {
+      label: 'Connecticut ferry-adjacent → eastern Suffolk',
+      direction: 'inbound',
+      context:
+        'Cross-Sound lifestyle moves; destination access is rural/coastal, not NYC elevator logistics.',
+    },
+  ],
+  westchester: [
+    {
+      label: 'Within Westchester (Yonkers / White Plains ↔ Scarsdale / Peekskill)',
+      direction: 'within',
+      context:
+        'Dense south-county multifamily vs northern lots; Metro-North corridor traffic shapes crew hours.',
+    },
+    {
+      label: 'Manhattan / Bronx → Westchester schools & space',
+      direction: 'inbound',
+      context:
+        'Classic suburban upgrade; origin elevators and destination HOA/driveway rules on the same job.',
+    },
+    {
+      label: 'Westchester → Florida retirement corridors',
+      direction: 'outbound',
+      context:
+        'Empty-nester and dual-home Sun Belt exits; high-value suburban inventory needs careful packing scope.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Connecticut (Fairfield) ↔ Westchester cross-border pairs',
+      direction: 'within',
+      context:
+        'Short interstate when crossing the state line; confirm authority even when drive time looks local.',
+    },
+    {
+      label: 'Westchester → Texas / Sun Belt career exits',
+      direction: 'outbound',
+      context:
+        'Corporate and family long-distance; volume estimates drive linehaul more than map miles.',
+      href: '/resources/routes/new-york-to-texas',
+    },
+    {
+      label: 'New Jersey / Rockland → Westchester reverse hops',
+      direction: 'inbound',
+      context:
+        'Tappan Zee / I-287 corridor moves; treat as regional logistics with different origin and dest access.',
+    },
+  ],
+  erie: [
+    {
+      label: 'Within Erie (Buffalo core ↔ Amherst / Cheektowaga / Orchard Park)',
+      direction: 'within',
+      context:
+        'Lake-effect winters, older walk-ups, and suburban HOAs — Western NY logistics, not NYC density.',
+    },
+    {
+      label: 'Buffalo ↔ Niagara Falls / Northtowns pairs',
+      direction: 'within',
+      context:
+        'Regional empty miles and border-adjacent timing; winter access can reshape delivery windows.',
+    },
+    {
+      label: 'Erie → NYC / downstate career moves',
+      direction: 'outbound',
+      context:
+        'Upstate-to-metro household goods; destination elevators and COIs dominate arrival day.',
+    },
+    {
+      label: 'Pennsylvania / Ohio → Buffalo metro',
+      direction: 'inbound',
+      context:
+        'I-90 corridor inflows into healthcare and education markets; plan for snow-season staging.',
+    },
+    {
+      label: 'Erie → Florida snowbird & retirement exits',
+      direction: 'outbound',
+      context:
+        'Western NY→Sun Belt long-distance; multi-day interstate with inventory-driven pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Florida → Buffalo reverse / dual-home returns',
+      direction: 'inbound',
+      context:
+        'Seasonal reverse flows north; volume and valuation coverage for true interstate household goods.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  monroe: [
+    {
+      label: 'Within Monroe (Rochester core ↔ Henrietta / Webster / Pittsford)',
+      direction: 'within',
+      context:
+        'University and medical corridors vs eastern suburbs; winter weather and stairs change crew plans.',
+    },
+    {
+      label: 'Rochester ↔ Finger Lakes / Canandaigua edge towns',
+      direction: 'within',
+      context:
+        'Longer empty miles and lake-adjacent access; not a same-day downtown-only quote.',
+    },
+    {
+      label: 'Monroe → NYC / Westchester job markets',
+      direction: 'outbound',
+      context:
+        'Upstate professional exits to downstate density; plan elevator and street-permit delivery access.',
+    },
+    {
+      label: 'Pennsylvania / Mid-Atlantic → Rochester metro',
+      direction: 'inbound',
+      context:
+        'Healthcare, optics, and education inflows; snow-season windows matter more than coastal packing rules.',
+    },
+    {
+      label: 'Monroe → Florida retirement corridors',
+      direction: 'outbound',
+      context:
+        'Classic upstate snowbird path; FMCSA carriers and full packing scopes for interstate goods.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'California → Rochester / Monroe career inflows',
+      direction: 'inbound',
+      context:
+        'Long-haul tech and optics-adjacent arrivals; multi-day transit into a non-coastal metro.',
+      href: '/resources/routes/california-to-new-york',
+    },
+  ],
+  onondaga: [
+    {
+      label: 'Within Onondaga (Syracuse core ↔ Liverpool / Cicero / Manlius)',
+      direction: 'within',
+      context:
+        'University and medical stock vs suburban tracts; lake-effect snow reshapes winter load days.',
+    },
+    {
+      label: 'Syracuse ↔ Utica / Central NY regional pairs',
+      direction: 'within',
+      context:
+        'I-90 corridor hops with real empty miles; treat as logistics days, not short suburban quotes.',
+    },
+    {
+      label: 'Onondaga → NYC metro career & family moves',
+      direction: 'outbound',
+      context:
+        'Upstate-to-downstate household goods; destination access is elevators and permits, not driveways.',
+    },
+    {
+      label: 'New Jersey / Pennsylvania → Syracuse job markets',
+      direction: 'inbound',
+      context:
+        'Education, healthcare, and logistics inflows along I-81 / I-90; winter staging plans recommended.',
+    },
+    {
+      label: 'Onondaga → Florida snowbird exits',
+      direction: 'outbound',
+      context:
+        'Central NY→Sun Belt long-distance; volume estimates drive linehaul more than hourly local rates.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Florida → Syracuse reverse seasonal moves',
+      direction: 'inbound',
+      context:
+        'Snowbird return and dual-home logistics north; multi-day interstate with careful inventory surveys.',
+      href: '/resources/routes/florida-to-new-york',
+    },
+  ],
+  albany: [
+    {
+      label: 'Within Albany County (Downtown / Center Square ↔ Colonie / Bethlehem)',
+      direction: 'within',
+      context:
+        'Capital-region multifamily vs suburban HOAs; state-worker calendars cluster end-of-month demand.',
+    },
+    {
+      label: 'Albany ↔ Saratoga / Capital District pairs',
+      direction: 'within',
+      context:
+        'I-87 corridor regional hops; tourism peaks near Saratoga change staging and hotel-adjacent access.',
+    },
+    {
+      label: 'Albany → NYC / downstate government & career moves',
+      direction: 'outbound',
+      context:
+        'Capital-to-city household goods; destination elevators and COIs dominate arrival more than miles.',
+    },
+    {
+      label: 'New Jersey / Mid-Atlantic → Albany capital markets',
+      direction: 'inbound',
+      context:
+        'State, healthcare, and education inflows; not interchangeable with NYC brownstone logistics.',
+    },
+    {
+      label: 'Albany → Florida retirement & dual-home corridors',
+      direction: 'outbound',
+      context:
+        'Capital-region snowbird path; plan multi-day interstate and valuation coverage carefully.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Massachusetts / New England → Capital Region',
+      direction: 'inbound',
+      context:
+        'I-90 corridor professional moves into Albany–Colonie stock; winter weather shapes delivery windows.',
+    },
+  ],
+};
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -2517,5 +2996,6 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'florida') return FL_ROUTES[countySlug] ?? [];
   if (stateSlug === 'texas') return TX_ROUTES[countySlug] ?? [];
   if (stateSlug === 'georgia') return GA_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'new-york') return NY_ROUTES[countySlug] ?? [];
   return [];
 }

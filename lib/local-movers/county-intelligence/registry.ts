@@ -69,11 +69,24 @@ import { hallCountyIntelligence } from '@/lib/local-movers/county-intelligence/g
 import { chathamCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/chatham-ga';
 import { richmondCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/richmond-ga';
 import { muscogeeCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/muscogee-ga';
+// New York Core 12
+import { kingsCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/kings-ny';
+import { queensCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/queens-ny';
+import { newYorkCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/new-york-ny';
+import { bronxCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/bronx-ny';
+import { richmondCountyIntelligence as richmondCountyNyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/richmond-ny';
+import { nassauCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/nassau-ny';
+import { suffolkCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/suffolk-ny';
+import { westchesterCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/westchester-ny';
+import { erieCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/erie-ny';
+import { monroeCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/monroe-ny';
+import { onondagaCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/onondaga-ny';
+import { albanyCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/albany-ny';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
@@ -137,6 +150,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   chathamCountyIntelligence,
   richmondCountyIntelligence,
   muscogeeCountyIntelligence,
+  // New York Core 12
+  kingsCountyIntelligence,
+  queensCountyIntelligence,
+  newYorkCountyIntelligence,
+  bronxCountyIntelligence,
+  richmondCountyNyIntelligence,
+  nassauCountyIntelligence,
+  suffolkCountyIntelligence,
+  westchesterCountyIntelligence,
+  erieCountyIntelligence,
+  monroeCountyIntelligence,
+  onondagaCountyIntelligence,
+  albanyCountyIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -276,3 +302,19 @@ export const GA_TIER1_WAVE2 = [
 ] as const;
 
 export const GA_TIER1_ALL = [...GA_TIER1_CORE12] as const;
+
+/** New York Tier-1 Core 12 (NYC boroughs + LI + Westchester + upstate). */
+export const NY_TIER1_CORE12 = [
+  'kings',
+  'queens',
+  'new-york',
+  'bronx',
+  'richmond',
+  'nassau',
+  'suffolk',
+  'westchester',
+  'erie',
+  'monroe',
+  'onondaga',
+  'albany',
+] as const;
