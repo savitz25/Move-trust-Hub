@@ -1,4 +1,8 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  getCountyMajorCorridors,
+  isFactualCorridorList,
+} from '@/lib/local-movers/county-major-corridors';
 import type { CountyPopularRoute } from '@/lib/local-movers/county-popular-routes';
 
 export type CountyMovingSnapshot = {
@@ -16,7 +20,7 @@ const CORRIDOR_FIELD_BLOCKLIST =
 
 /**
  * Extract road/route-like tokens from free text (I-4, US-1, FL-408, expressways, etc.).
- * Used only as a fallback when pack.majorCorridors is not set.
+ * Used only as a last-resort fallback when pack + curated map lack corridors.
  */
 export function extractRoadCorridorTokens(text: string, max = 6): string[] {
   if (!text.trim()) return [];
@@ -47,11 +51,23 @@ export function extractRoadCorridorTokens(text: string, max = 6): string[] {
 }
 
 function resolveMajorCorridors(pack: CountyIntelligencePack): string {
+  // 1) Pack-level explicit list (when set and factual)
   const explicit = pack.majorCorridors?.trim();
-  if (explicit && !CORRIDOR_FIELD_BLOCKLIST.test(explicit)) {
+  if (
+    explicit &&
+    !CORRIDOR_FIELD_BLOCKLIST.test(explicit) &&
+    isFactualCorridorList(explicit)
+  ) {
     return explicit;
   }
 
+  // 2) Global curated Tier-1 map (all shipped states)
+  const curated = getCountyMajorCorridors(pack.stateSlug, pack.countySlug)?.trim();
+  if (curated && isFactualCorridorList(curated)) {
+    return curated;
+  }
+
+  // 3) Extract road tokens from pack prose (never promote essay titles)
   const corpus = [
     pack.heroOpener,
     pack.heroCredibility ?? '',

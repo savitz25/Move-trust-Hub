@@ -39,6 +39,7 @@
     "qa:ny-tier1": "tsx scripts/qa-ny-tier1.ts",
     "qa:az-tier1": "tsx scripts/qa-az-tier1.ts",
     "qa:tier1-polish": "tsx scripts/qa-tier1-polish.ts",
+    "qa:tier1-global-polish": "tsx scripts/qa-tier1-global-polish.ts",
     "guard:canonical-county-metadata": "tsx scripts/guard-canonical-county-metadata.ts",
     "guard:testimonials": "tsx scripts/guard-county-testimonial-imports.ts",
     "guard:content-exemptions": "tsx scripts/guard-content-tier-exemptions.ts",

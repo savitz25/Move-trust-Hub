@@ -268,9 +268,9 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
     case 'texas':
       return 'TxDMV certificate for in-state-only jobs when applicable';
     case 'california':
-      return 'BHGS credentials for in-state-only jobs when applicable';
+      return 'BHGS permit/registration for in-state-only jobs when applicable';
     case 'arizona':
-      return 'ACC business registration (and FMCSA for interstate) for applicable jobs';
+      return 'ACC business registration + FMCSA for interstate when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
