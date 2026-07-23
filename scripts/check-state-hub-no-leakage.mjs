@@ -72,6 +72,11 @@ const STATE_NAMES = {
   michigan: 'Michigan',
   'new-jersey': 'New Jersey',
   tennessee: 'Tennessee',
+  massachusetts: 'Massachusetts',
+  maryland: 'Maryland',
+  indiana: 'Indiana',
+  missouri: 'Missouri',
+  'south-carolina': 'South Carolina',
 };
 
 for (const file of packFiles) {
