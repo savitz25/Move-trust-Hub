@@ -1,54 +1,61 @@
-import type { CountyMarketInsights } from '@/lib/local-movers/county-market-insights';
-
 type Props = {
   countyLabel: string;
-  insights: CountyMarketInsights;
+  /** Total movers listed as serving this county */
+  moverCount: number;
+  /** Movers with a displayable USDOT on file */
+  usdotCount: number;
+  /** Local / in-state segment size */
+  localCount: number;
+  /** National / long-distance segment size */
+  nationalCount: number;
   className?: string;
 };
 
 /**
- * Lightweight trust/market strip for the hero — full narrative lives in the guide accordion.
+ * Honest market strip — never labels all listings as “verified” without counts.
  */
-export function CountyCompactStats({ countyLabel, insights, className }: Props) {
-  if (insights.moverCount === 0) return null;
+export function CountyCompactStats({
+  countyLabel,
+  moverCount,
+  usdotCount,
+  localCount,
+  nationalCount,
+  className,
+}: Props) {
+  if (moverCount === 0) return null;
 
   return (
-    <div
-      className={className}
-      aria-label={`${countyLabel} market snapshot`}
-    >
+    <div className={className} aria-label={`${countyLabel} listing snapshot`}>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
         <div className="rounded-xl border bg-card px-3 py-2.5">
           <div className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            Verified
+            Serving {countyLabel.replace(/ County$/i, '')}
+          </div>
+          <div className="text-lg sm:text-xl font-semibold tabular-nums">{moverCount}</div>
+          <div className="text-[10px] text-muted-foreground mt-0.5">movers on this page</div>
+        </div>
+        <div className="rounded-xl border bg-card px-3 py-2.5">
+          <div className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            USDOT / FMCSA
           </div>
           <div className="text-lg sm:text-xl font-semibold tabular-nums">
-            {insights.moverCount}
+            {usdotCount}
+          </div>
+          <div className="text-[10px] text-muted-foreground mt-0.5">
+            of {moverCount} with records on file
           </div>
         </div>
         <div className="rounded-xl border bg-card px-3 py-2.5">
           <div className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            Avg rating
+            Local / in-state
           </div>
-          <div className="text-lg sm:text-xl font-semibold tabular-nums">
-            {insights.avgRating > 0 ? `${insights.avgRating}★` : '—'}
-          </div>
+          <div className="text-lg sm:text-xl font-semibold tabular-nums">{localCount}</div>
         </div>
         <div className="rounded-xl border bg-card px-3 py-2.5">
           <div className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            USDOT
+            National / LD
           </div>
-          <div className="text-lg sm:text-xl font-semibold tabular-nums">
-            {insights.usdotVerifiedCount}/{insights.moverCount}
-          </div>
-        </div>
-        <div className="rounded-xl border bg-card px-3 py-2.5">
-          <div className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            Reviews
-          </div>
-          <div className="text-lg sm:text-xl font-semibold tabular-nums">
-            {insights.attributableReviewCount}
-          </div>
+          <div className="text-lg sm:text-xl font-semibold tabular-nums">{nationalCount}</div>
         </div>
       </div>
     </div>

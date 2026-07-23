@@ -76,9 +76,15 @@ export function buildCountyReviewBlock(
   options?: { preferLocalMovers?: LocalMover[]; countyLabel?: string }
 ): CountyReviewBlock {
   const countyLabel = options?.countyLabel ?? 'this county';
-  const prefer = options?.preferLocalMovers?.length
-    ? options.preferLocalMovers
-    : movers;
+  // Explicit preferLocalMovers (even empty) means: only treat those as in-market sources.
+  // Empty local segment → suppress county-page review quotes entirely (schema-safe).
+  const preferProvided = options?.preferLocalMovers !== undefined;
+  const prefer = preferProvided ? options!.preferLocalMovers! : movers;
+
+  if (preferProvided && prefer.length === 0) {
+    return { reviews: [], hasLocalSource: false, title: '', summary: '' };
+  }
+
   const preferIds = new Set(prefer.map((m) => m.id));
 
   const collect = (pool: LocalMover[]): AttributableReview[] => {
@@ -100,14 +106,10 @@ export function buildCountyReviewBlock(
     return out;
   };
 
+  // Only collect from preferred (local/in-state) pool when prefer was provided.
+  // Do not backfill national-only reviews onto county pages.
   let reviews = collect(prefer);
-  const hasLocalSource =
-    prefer.length > 0 &&
-    reviews.some((r) =>
-      prefer.some((m) => m.profileSlug && m.profileSlug === r.companySlug)
-    );
-
-  if (reviews.length < maxReviews) {
+  if (!preferProvided && reviews.length < maxReviews) {
     const rest = movers.filter((m) => !preferIds.has(m.id));
     const seen = new Set(reviews.map((r) => r.reviewId));
     for (const r of collect(rest)) {
@@ -118,17 +120,23 @@ export function buildCountyReviewBlock(
   }
 
   reviews = reviews.sort((a, b) => b.date.localeCompare(a.date)).slice(0, maxReviews);
+  const hasLocalSource =
+    preferProvided &&
+    reviews.length > 0 &&
+    reviews.some((r) =>
+      prefer.some((m) => m.profileSlug && m.profileSlug === r.companySlug)
+    );
 
   if (reviews.length === 0) {
     return { reviews: [], hasLocalSource: false, title: '', summary: '' };
   }
 
-  if (hasLocalSource) {
+  if (hasLocalSource || preferProvided) {
     return {
       reviews,
       hasLocalSource: true,
-      title: `Attributed reviews from carriers linked on this ${countyLabel} page`,
-      summary: `${reviews.length} named Google reviews from directory listings on this page (not claimed as ${countyLabel}-only experiences).`,
+      title: `Attributed reviews from local/in-state carriers on this ${countyLabel} page`,
+      summary: `${reviews.length} named Google reviews from local/in-state directory listings on this page (not claimed as ${countyLabel}-only experiences).`,
     };
   }
 
@@ -136,7 +144,7 @@ export function buildCountyReviewBlock(
     reviews,
     hasLocalSource: false,
     title: `Named Google reviews from directory carriers that serve ${countyLabel}`,
-    summary: `These reviews are national/company-level — not ${countyLabel}-specific social proof. Shown only for carriers listed on this page.`,
+    summary: `These reviews are national/company-level — not ${countyLabel}-specific social proof.`,
   };
 }
 

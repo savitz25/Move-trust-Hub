@@ -161,6 +161,8 @@ import {
 } from '@/components/local-movers/county-seo-sections';
 import { CountyMarketInsightsPanel } from '@/components/local-movers/county-market-insights';
 import { CountyCompactStats } from '@/components/local-movers/county-compact-stats';
+import { CountyMovingSnapshotCard } from '@/components/local-movers/county-moving-snapshot';
+import { buildCountyMovingSnapshot } from '@/lib/local-movers/county-moving-snapshot';
 import { CountyJumpToMovers } from '@/components/local-movers/county-jump-to-movers';
 import { CountyGuideAccordion } from '@/components/local-movers/county-guide-accordion';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
@@ -261,8 +263,12 @@ export default async function LocalMoversCountyPage({ params }: Props) {
     preferLocalMovers: segments.localInState,
     countyLabel,
   });
+  // Suppress review quotes unless at least one local/in-state source contributed
+  // (avoids out-of-area reviews under county-local social proof).
   const visibleTestimonials =
-    shouldUseCuratedTestimonials(movers) && reviewBlock.reviews.length > 0
+    shouldUseCuratedTestimonials(movers) &&
+    reviewBlock.hasLocalSource &&
+    reviewBlock.reviews.length > 0
       ? reviewBlock.reviews
       : [];
   const marketNotes = buildCountyMarketNotes(county);
@@ -270,6 +276,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const outboundRoutes = getOutboundRouteLinksForState(county.stateCode);
   const inboundRoutes = getInboundRouteLinksForState(county.stateCode);
   const popularRoutes = getCountyPopularRoutes(stateSlug, countySlug);
+  const movingSnapshot = buildCountyMovingSnapshot(intelligence, popularRoutes, countyLabel);
+  const usdotCount = movers.filter((m) => Boolean(m.usdotNumber?.trim())).length;
   const nearbyCounties =
     stateSlug === 'california'
       ? getCaliforniaNearbyCounties(countySlug)
@@ -518,12 +526,19 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               .
             </p>
           )}
-          {indexDecision.tier === 'index' && movers.length > 0 ? (
+          {movers.length > 0 ? (
             <CountyCompactStats
               countyLabel={countyLabel}
-              insights={marketInsights}
+              moverCount={movers.length}
+              usdotCount={usdotCount}
+              localCount={segments.localInState.length}
+              nationalCount={segments.national.length}
               className="mt-5"
             />
+          ) : null}
+
+          {movingSnapshot ? (
+            <CountyMovingSnapshotCard countyLabel={countyLabel} snapshot={movingSnapshot} />
           ) : null}
 
           {/* Primary intent: jump to listings (sticky until #movers is reached) */}
@@ -625,7 +640,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                   },
                 ]
               : []),
-            ...(indexDecision.tier === 'index' && movers.length > 0
+            // When an intelligence pack exists it already covers zones, costs, seasonal,
+            // and relocation — skip market-insights to avoid duplicate major sections.
+            ...(!intelligence && indexDecision.tier === 'index' && movers.length > 0
               ? [
                   {
                     id: 'market-insights',
@@ -641,13 +658,15 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                         insights={marketInsights}
                         outboundRoutes={outboundRoutes}
                         inboundRoutes={inboundRoutes}
+                        localCount={segments.localInState.length}
+                        nationalCount={segments.national.length}
                         embedded
                       />
                     ),
                   },
                 ]
               : []),
-            // Generic cost/tips when no intelligence pack (packs include richer cost/seasonal sections)
+            // Generic cost/tips only when no intelligence pack (packs include richer sections)
             ...(!intelligence
               ? [
                   {

@@ -10,6 +10,8 @@ type Props = {
   insights: CountyMarketInsights;
   outboundRoutes?: StateRouteLink[];
   inboundRoutes?: StateRouteLink[];
+  localCount?: number;
+  nationalCount?: number;
   /** When true, drop outer card chrome (used inside county guide accordion). */
   embedded?: boolean;
 };
@@ -21,6 +23,8 @@ export function CountyMarketInsightsPanel({
   insights,
   outboundRoutes = [],
   inboundRoutes = [],
+  localCount,
+  nationalCount,
   embedded = false,
 }: Props) {
   if (insights.moverCount === 0) return null;
@@ -40,9 +44,14 @@ export function CountyMarketInsightsPanel({
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
         <div className="rounded-xl border bg-card p-4">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
-            Verified movers
+            Movers serving area
           </div>
           <div className="text-2xl font-semibold tabular-nums">{insights.moverCount}</div>
+          {typeof localCount === 'number' && typeof nationalCount === 'number' ? (
+            <div className="text-xs text-muted-foreground mt-0.5">
+              {localCount} local/in-state · {nationalCount} national
+            </div>
+          ) : null}
         </div>
         <div className="rounded-xl border bg-card p-4">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
@@ -57,7 +66,7 @@ export function CountyMarketInsightsPanel({
         </div>
         <div className="rounded-xl border bg-card p-4">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
-            USDOT on file
+            USDOT / FMCSA on file
           </div>
           <div className="text-2xl font-semibold tabular-nums">
             {insights.usdotVerifiedCount}/{insights.moverCount}
@@ -65,12 +74,14 @@ export function CountyMarketInsightsPanel({
         </div>
         <div className="rounded-xl border bg-card p-4">
           <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
-            Attributed reviews
+            In-market review quotes
           </div>
           <div className="text-2xl font-semibold tabular-nums">
             {insights.attributableReviewCount}
           </div>
-          <div className="text-xs text-muted-foreground mt-0.5">Directory-linked Google</div>
+          <div className="text-xs text-muted-foreground mt-0.5">
+            Shown only when local/in-state sources exist
+          </div>
         </div>
       </div>
 

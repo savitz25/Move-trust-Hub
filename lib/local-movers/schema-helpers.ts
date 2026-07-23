@@ -254,15 +254,8 @@ export function buildMoverItemReviewed(
     url: buildMoverUrl(mover, pageUrl),
   };
 
-  const locality = mover.city?.trim();
-  if (locality || county?.stateCode) {
-    item.address = {
-      '@type': 'PostalAddress',
-      ...(locality ? { addressLocality: locality } : {}),
-      ...(county?.stateCode ? { addressRegion: county.stateCode } : {}),
-      addressCountry: 'US',
-    };
-  }
+  const address = buildMoverHeadquartersAddress(mover);
+  if (address) item.address = address;
 
   // Intentionally no areaServed / AdministrativeArea here — county place stays a
   // top-level graph node only, not nested under Review.itemReviewed.
@@ -383,6 +376,24 @@ export function buildFaqSchema(
   };
 }
 
+/**
+ * Carrier HQ PostalAddress for JSON-LD — never inherits the county page's state.
+ * addressLocality = HQ city; addressRegion = true headquartersState when known.
+ */
+export function buildMoverHeadquartersAddress(
+  mover: LocalMover
+): Record<string, unknown> | null {
+  const locality = mover.city?.trim();
+  const region = mover.headquartersState?.trim().toUpperCase();
+  if (!locality && !region) return null;
+  return {
+    '@type': 'PostalAddress',
+    ...(locality ? { addressLocality: locality } : {}),
+    ...(region ? { addressRegion: region } : {}),
+    addressCountry: 'US',
+  };
+}
+
 export function buildMoverSchemaNode(
   mover: LocalMover,
   pageUrl: string,
@@ -408,15 +419,8 @@ export function buildMoverSchemaNode(
 
   if (mover.website) node.sameAs = mover.website;
 
-  const locality = mover.city?.trim();
-  if (locality || county?.stateCode) {
-    node.address = {
-      '@type': 'PostalAddress',
-      ...(locality ? { addressLocality: locality } : {}),
-      ...(county?.stateCode ? { addressRegion: county.stateCode } : {}),
-      addressCountry: 'US',
-    };
-  }
+  const address = buildMoverHeadquartersAddress(mover);
+  if (address) node.address = address;
 
   if (moverHasSchemaAggregateRating(mover) && mover.rating > 0 && mover.reviewCount > 0) {
     node.aggregateRating = {
