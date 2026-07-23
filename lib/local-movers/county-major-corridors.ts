@@ -1,7 +1,7 @@
 /**
  * Factual major roads/routes for County Moving Snapshot "Major corridors".
  * Roads only — never operational commentary (HOA density, tourism calendars, curb staging).
- * Covers all shipped Tier-1 intelligence packs (CA, FL, TX, GA, NY, AZ, NJ).
+ * Covers all shipped Tier-1 intelligence packs (CA, FL, TX, GA, NY, AZ, NJ, SC).
  */
 
 const CORRIDORS: Record<string, string> = {
@@ -98,6 +98,35 @@ const CORRIDORS: Record<string, string> = {
   'arizona/yuma': 'I-8 · US-95 · AZ-195 · Business 8 · 4th Avenue corridor',
   'arizona/coconino': 'I-40 · I-17 · US-89 · US-180 · AZ-89A',
 
+  // ——— South Carolina Core 12 ———
+  'south-carolina/greenville': 'I-85 · I-385 · US-123 · SC-183 · Woodruff Road · Pelham Road',
+  'south-carolina/charleston': 'I-26 · I-526 · US-17 · SC-7 · peninsula approaches',
+  'south-carolina/richland': 'I-20 · I-26 · I-77 · US-1 · SC-277',
+  'south-carolina/horry': 'US-17 · SC-31 (Carolina Bays) · US-501 · SC-9',
+  'south-carolina/spartanburg': 'I-85 · I-26 · US-221 · Business I-85 links',
+  'south-carolina/york': 'I-77 · US-21 · SC-161 · SC-5 · SC-160',
+  'south-carolina/lexington': 'I-20 · I-26 · US-1 · US-378',
+  'south-carolina/berkeley': 'I-26 · US-52 · US-17A · Clements Ferry corridors',
+  'south-carolina/beaufort': 'US-278 · US-21 · SC-170 · island-causeway approaches',
+  'south-carolina/dorchester': 'I-26 · US-78 · SC-165 · Summerville arterials',
+  'south-carolina/anderson': 'I-85 · US-76 · SC-28 · SC-81',
+  'south-carolina/florence': 'I-95 · I-20 · US-52 · US-76',
+
+  // ——— North Carolina Core 12 ———
+  'north-carolina/mecklenburg': 'I-77 · I-85 · I-485 · US-74 · NC-16 · Billy Graham Pkwy',
+  'north-carolina/wake': 'I-40 · I-440 · I-540 · US-1 · US-70 · NC-54',
+  'north-carolina/guilford': 'I-40 · I-85 · US-29 · US-220 · Bryan Boulevard · Wendover Avenue',
+  'north-carolina/forsyth': 'I-40 · US-52 · US-421 · I-285 · Business 40 · Silas Creek Pkwy',
+  'north-carolina/durham': 'I-40 · I-85 · NC-147 (Durham Freeway) · US-15-501 · NC-55',
+  'north-carolina/cumberland':
+    'I-95 · All American Freeway · NC-24 · NC-87 · Bragg Boulevard · Raeford Road',
+  'north-carolina/buncombe': 'I-40 · I-26 · US-19/23 · US-70 · Smoky Park Hwy · tunnel approaches',
+  'north-carolina/new-hanover': 'I-40 terminus · US-17 · US-74/76 · Oleander Drive · College Road',
+  'north-carolina/union': 'US-74 · I-485 links · NC-16 · NC-84 · Providence Road corridor',
+  'north-carolina/cabarrus': 'I-85 · US-29 · Concord Mills Blvd · NC-49 · NC-73',
+  'north-carolina/gaston': 'I-85 · US-321 · US-74 · NC-279 · Wilkinson Blvd',
+  'north-carolina/onslow': 'US-17 · NC-24 · Western Boulevard · Lejeune Boulevard · base-access roads',
+
   // ——— New Jersey (shared Tier-1 template) ———
   'new-jersey/bergen': 'I-95 / NJ Turnpike · I-80 · Route 17 · Route 4 · GWB approaches',
   'new-jersey/essex': 'I-280 · Garden State Pkwy · I-78 · Route 21 · Route 24',
@@ -126,7 +155,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
     v
   );
 }

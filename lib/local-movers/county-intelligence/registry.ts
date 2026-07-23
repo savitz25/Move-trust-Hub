@@ -90,11 +90,24 @@ import { yavapaiCountyIntelligence } from '@/lib/local-movers/county-intelligenc
 import { mohaveCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/mohave-az';
 import { yumaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/yuma-az';
 import { coconinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/coconino-az';
+// North Carolina Core 12
+import { mecklenburgCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/mecklenburg-nc';
+import { wakeCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/wake-nc';
+import { guilfordCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/guilford-nc';
+import { forsythCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/forsyth-nc';
+import { durhamCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/durham-nc';
+import { cumberlandCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/cumberland-nc';
+import { buncombeCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/buncombe-nc';
+import { newHanoverCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/new-hanover-nc';
+import { unionCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/union-nc';
+import { cabarrusCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/cabarrus-nc';
+import { gastonCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/gaston-nc';
+import { onslowCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/onslow-nc';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
@@ -179,6 +192,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   mohaveCountyIntelligence,
   yumaCountyIntelligence,
   coconinoCountyIntelligence,
+  // North Carolina Core 12
+  mecklenburgCountyNcIntelligence,
+  wakeCountyNcIntelligence,
+  guilfordCountyNcIntelligence,
+  forsythCountyNcIntelligence,
+  durhamCountyNcIntelligence,
+  cumberlandCountyNcIntelligence,
+  buncombeCountyNcIntelligence,
+  newHanoverCountyNcIntelligence,
+  unionCountyNcIntelligence,
+  cabarrusCountyNcIntelligence,
+  gastonCountyNcIntelligence,
+  onslowCountyNcIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -344,4 +370,36 @@ export const AZ_TIER1_CORE7 = [
   'mohave',
   'yuma',
   'coconino',
+] as const;
+
+/** South Carolina Tier-1 Core 12. */
+export const SC_TIER1_CORE12 = [
+  'greenville',
+  'charleston',
+  'richland',
+  'horry',
+  'spartanburg',
+  'york',
+  'lexington',
+  'berkeley',
+  'beaufort',
+  'dorchester',
+  'anderson',
+  'florence',
+] as const;
+
+/** North Carolina Tier-1 Core 12. */
+export const NC_TIER1_CORE12 = [
+  'mecklenburg',
+  'wake',
+  'guilford',
+  'forsyth',
+  'durham',
+  'cumberland',
+  'buncombe',
+  'new-hanover',
+  'union',
+  'cabarrus',
+  'gaston',
+  'onslow',
 ] as const;

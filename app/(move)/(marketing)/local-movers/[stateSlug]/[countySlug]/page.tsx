@@ -185,6 +185,7 @@ import { TxRegulatoryClarity } from '@/components/local-movers/tx-regulatory-cla
 import { GaRegulatoryClarity } from '@/components/local-movers/ga-regulatory-clarity';
 import { NyRegulatoryClarity } from '@/components/local-movers/ny-regulatory-clarity';
 import { AzRegulatoryClarity } from '@/components/local-movers/az-regulatory-clarity';
+import { NcRegulatoryClarity } from '@/components/local-movers/nc-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
@@ -768,6 +769,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         ) : null}
         {stateSlug === 'arizona' ? (
           <AzRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'north-carolina' ? (
+          <NcRegulatoryClarity countyLabel={countyLabel} />
         ) : null}
 
         {popularRoutes.length > 0 ? (

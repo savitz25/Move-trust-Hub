@@ -271,6 +271,8 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'BHGS permit/registration for in-state-only jobs when applicable';
     case 'arizona':
       return 'ACC business registration + FMCSA for interstate when applicable';
+    case 'north-carolina':
+      return 'NCUC household goods certificate (C-#) for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -315,7 +317,9 @@ export function buildCountyFaqItems(
                 ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate New York household goods moves are generally subject to New York State Department of Transportation (NYSDOT) authority and consumer-information requirements. FMCSA does not cover every in-state New York job; confirm NYSDOT household goods credentials vs FMCSA for your exact origin and destination before you deposit.`
                 : county.stateSlug === 'arizona'
                   ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Arizona does not operate a dedicated statewide household-goods mover certificate program like California BHGS, Florida FDACS, Texas TxDMV, or New York NYSDOT. For in-state jobs, still verify Arizona Corporation Commission business entity status, demand written estimates and insurance proof, and use consumer complaint channels. Confirm FMCSA for any move that crosses state lines before you deposit.`
-                  : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                  : county.stateSlug === 'north-carolina'
+                    ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate North Carolina household goods moves are generally regulated by the North Carolina Utilities Commission (NCUC). Confirm the mover holds a current NCUC household goods certificate (often a C-# on estimates) and understand Maximum Rate Tariff / consumer-information rules that apply to regulated in-state household moves. FMCSA does not cover every in-state North Carolina job; confirm NCUC vs FMCSA for your exact origin and destination before you deposit.`
+                    : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {
