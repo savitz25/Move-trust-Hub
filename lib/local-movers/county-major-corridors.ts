@@ -63,6 +63,22 @@ const CORRIDORS: Record<string, string> = {
   'florida/st-lucie': 'I-95 · Florida Turnpike · US-1 · FL-70 · A1A approaches',
   'florida/marion': 'I-75 · US-27 · US-301 · US-441 · FL-40',
   'florida/escambia': 'I-10 · I-110 · US-98 · US-29 · Pensacola Beach approaches',
+  // Florida Tier 2 Wave 2
+  'florida/charlotte': 'I-75 · US-41 · FL-776 · Peace River / harbor approaches · local arterial grid',
+  'florida/hernando': 'US-19 · Suncoast Parkway (FL-589) · FL-50 · I-75 (east approach) · local Spring Hill grid',
+  'florida/citrus': 'US-19 · US-41 · FL-44 · FL-486 · local Nature Coast grid',
+  'florida/indian-river': 'I-95 · US-1 · FL-60 · A1A · local Vero Beach grid',
+  'florida/martin': 'I-95 · Florida Turnpike · US-1 · A1A · local Stuart grid',
+  'florida/st-johns': 'I-95 · US-1 · FL-16 · A1A · Nocatee Parkway approaches',
+  'florida/clay': 'US-17 · Blanding Blvd · FL-21 · I-295 approaches · local Orange Park grid',
+  'florida/nassau': 'I-95 · A1A · US-17 · FL-200 · Amelia Island approaches',
+  'florida/alachua': 'I-75 · US-441 · FL-24 · FL-26 · local Gainesville grid',
+  'florida/leon': 'I-10 · US-27 · US-90 · Capital Circle · local Tallahassee grid',
+  'florida/bay': 'US-98 · US-231 · FL-79 · FL-77 · Panama City Beach approaches',
+  'florida/okaloosa': 'US-98 · FL-85 · FL-293 · I-10 (north approach) · Destin approaches',
+  'florida/santa-rosa': 'I-10 · US-90 · FL-87 · FL-281 · Gulf Breeze approaches',
+  'florida/flagler': 'I-95 · US-1 · FL-100 · A1A · local Palm Coast grid',
+  'florida/sumter': 'I-75 · Florida Turnpike · US-301 · FL-44 · The Villages arterial grid',
 
   // ——— Texas ———
   'texas/harris': 'I-10 · I-45 · I-69/US-59 · Beltway 8 · Sam Houston Tollway · Hardy Toll Road',

@@ -64,6 +64,23 @@ import { lakeCountyIntelligence } from '@/lib/local-movers/county-intelligence/f
 import { stLucieCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/st-lucie-fl';
 import { marionCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/marion-fl';
 import { escambiaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/escambia-fl';
+// Florida Tier 2 Wave 2
+import { charlotteCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/charlotte-fl';
+import { hernandoCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/hernando-fl';
+import { citrusCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/citrus-fl';
+import { indianRiverCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/indian-river-fl';
+import { martinCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/martin-fl';
+import { stJohnsCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/st-johns-fl';
+import { clayCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/clay-fl';
+import { nassauCountyIntelligence as nassauCountyFlIntelligence } from '@/lib/local-movers/county-intelligence/florida/nassau-fl';
+import { alachuaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/alachua-fl';
+import { leonCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/leon-fl';
+// Florida Tier 2 Wave 3 (Panhandle + NE coastal + Central FL retirement)
+import { bayCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/bay-fl';
+import { okaloosaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/okaloosa-fl';
+import { santaRosaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/santa-rosa-fl';
+import { flaglerCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/flagler-fl';
+import { sumterCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/sumter-fl';
 // Texas Core 12
 import { harrisCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/harris-tx';
 import { dallasCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/dallas-tx';
@@ -538,6 +555,22 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   stLucieCountyIntelligence,
   marionCountyIntelligence,
   escambiaCountyIntelligence,
+  // Florida Tier 2 Wave 2 (15 counties — collars, Treasure Coast, Jax collars, independents, Panhandle)
+  charlotteCountyIntelligence,
+  hernandoCountyIntelligence,
+  citrusCountyIntelligence,
+  indianRiverCountyIntelligence,
+  martinCountyIntelligence,
+  stJohnsCountyIntelligence,
+  clayCountyIntelligence,
+  nassauCountyFlIntelligence,
+  alachuaCountyIntelligence,
+  leonCountyIntelligence,
+  bayCountyIntelligence,
+  okaloosaCountyIntelligence,
+  santaRosaCountyIntelligence,
+  flaglerCountyIntelligence,
+  sumterCountyIntelligence,
   // Texas Tier 1 Core 5 (flagship metros — do not demote)
   harrisCountyIntelligence,
   dallasCountyIntelligence,
@@ -1108,6 +1141,39 @@ export const FL_TIER2_WAVE1 = [
   'st-lucie',
   'marion',
   'escambia',
+] as const;
+
+/**
+ * Florida Tier 2 Wave 2 — 15 secondary markets on the locked Tier 2 content contract.
+ * SWFL secondary, north-bay fringe, Nature Coast, Treasure Coast, Jax collars,
+ * university/capital independents, Panhandle, Flagler, Sumter.
+ * Do not rebuild Wave 1 or Tier 1 Core 9.
+ */
+export const FL_TIER2_WAVE2 = [
+  'charlotte',
+  'hernando',
+  'citrus',
+  'indian-river',
+  'martin',
+  'st-johns',
+  'clay',
+  'nassau',
+  'alachua',
+  'leon',
+  'bay',
+  'okaloosa',
+  'santa-rosa',
+  'flagler',
+  'sumter',
+] as const;
+
+/** @deprecated Merged into FL_TIER2_WAVE2. */
+export const FL_TIER2_WAVE3 = [
+  'bay',
+  'okaloosa',
+  'santa-rosa',
+  'flagler',
+  'sumter',
 ] as const;
 
 /**
