@@ -192,11 +192,22 @@ import { kitsapCountyWaIntelligence } from '@/lib/local-movers/county-intelligen
 import { whatcomCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/whatcom-wa';
 import { bentonCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/benton-wa';
 import { yakimaCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/yakima-wa';
+// Michigan Core 10
+import { wayneCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/wayne-mi';
+import { oaklandCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/oakland-mi';
+import { macombCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/macomb-mi';
+import { kentCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/kent-mi';
+import { washtenawCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/washtenaw-mi';
+import { geneseeCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/genesee-mi';
+import { ottawaCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/ottawa-mi';
+import { inghamCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/ingham-mi';
+import { kalamazooCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/kalamazoo-mi';
+import { saginawCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/saginaw-mi';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -383,6 +394,17 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   whatcomCountyWaIntelligence,
   bentonCountyWaIntelligence,
   yakimaCountyWaIntelligence,
+  // Michigan Core 10
+  wayneCountyMiIntelligence,
+  oaklandCountyMiIntelligence,
+  macombCountyMiIntelligence,
+  kentCountyMiIntelligence,
+  washtenawCountyMiIntelligence,
+  geneseeCountyMiIntelligence,
+  ottawaCountyMiIntelligence,
+  inghamCountyMiIntelligence,
+  kalamazooCountyMiIntelligence,
+  saginawCountyMiIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -672,4 +694,18 @@ export const OH_TIER1_CORE12 = [
   'mahoning',
   'warren',
   'lake',
+] as const;
+
+/** Michigan Tier-1 Core 10. */
+export const MI_TIER1_CORE10 = [
+  'wayne',
+  'oakland',
+  'macomb',
+  'kent',
+  'washtenaw',
+  'genesee',
+  'ottawa',
+  'ingham',
+  'kalamazoo',
+  'saginaw',
 ] as const;

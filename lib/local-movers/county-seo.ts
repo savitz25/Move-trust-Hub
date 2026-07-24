@@ -287,6 +287,8 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'PUCO household goods authority for in-state-only jobs when applicable';
     case 'colorado':
       return 'Colorado PUC household goods (HHG) permit for in-state-only jobs when applicable';
+    case 'michigan':
+      return 'Michigan motor carrier / household goods authority (MSP CVED) for in-state-only jobs when applicable';
     case 'washington':
       return 'Washington UTC household goods permit for in-state-only jobs when applicable';
     default:
@@ -349,9 +351,11 @@ export function buildCountyFaqItems(
                                 ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Ohio household goods moves are generally regulated by the Public Utilities Commission of Ohio (PUCO). Confirm the mover holds active PUCO household goods authority, carries required insurance, and matches the legal name on your estimate. FMCSA does not cover every in-state Ohio job; confirm PUCO vs FMCSA for your exact origin and destination before you deposit.`
                                 : county.stateSlug === 'colorado'
                                   ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Colorado household goods moves generally require a valid Colorado Public Utilities Commission (PUC) household goods (HHG) permit under Title 40, Article 10.1, C.R.S. Search the Colorado PUC permit tools and match the legal name on your estimate. FMCSA does not cover every in-state Colorado job; confirm Colorado PUC HHG authority vs FMCSA for your exact origin and destination before you deposit.`
-                                  : county.stateSlug === 'washington'
-                                    ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Washington household goods moves generally require a valid Utilities and Transportation Commission (UTC) household goods permit — operating without one is illegal under UTC consumer guidance. Look up the company on UTC permitted-mover tools, confirm active status, and ask for required consumer moving guide materials. FMCSA does not cover every in-state Washington job; confirm UTC vs FMCSA for your exact origin and destination before you deposit.`
-                                    : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                                  : county.stateSlug === 'michigan'
+                                    ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Michigan household goods moves by for-hire carriers are generally subject to Michigan motor carrier / household goods operating authority under the Motor Carrier Act, administered through the Michigan State Police Commercial Vehicle Enforcement Division (MSP CVED). Confirm active Michigan authority matching the legal name on your estimate (MSP CAP search tools when available). FMCSA does not cover every in-state Michigan job; confirm Michigan motor carrier authority vs FMCSA for your exact origin and destination before you deposit.`
+                                    : county.stateSlug === 'washington'
+                                      ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Washington household goods moves generally require a valid Utilities and Transportation Commission (UTC) household goods permit — operating without one is illegal under UTC consumer guidance. Look up the company on UTC permitted-mover tools, confirm active status, and ask for required consumer moving guide materials. FMCSA does not cover every in-state Washington job; confirm UTC vs FMCSA for your exact origin and destination before you deposit.`
+                                      : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

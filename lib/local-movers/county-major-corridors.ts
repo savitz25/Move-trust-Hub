@@ -150,6 +150,18 @@ const CORRIDORS: Record<string, string> = {
   'washington/benton': 'I-82 · US-395 · SR-240 · SR-224',
   'washington/yakima': 'I-82 · US-12 · SR-24 · SR-821',
 
+  // ——— Michigan Core 10 ———
+  'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',
+  'michigan/oakland': 'I-75 · I-696 · M-59 · Telegraph · Woodward corridors',
+  'michigan/macomb': 'I-94 · M-53 · M-59 · I-696 links · Gratiot corridors',
+  'michigan/kent': 'I-96 · I-196 · US-131 · M-6 · 28th Street corridors',
+  'michigan/washtenaw': 'I-94 · US-23 · M-14 · State Street corridors',
+  'michigan/genesee': 'I-75 · I-69 · M-21 · Dort Highway corridors',
+  'michigan/ottawa': 'I-96 · US-31 · M-6 links · lakeshore corridors',
+  'michigan/ingham': 'I-96 · I-69 · US-127 · Saginaw Hwy corridors',
+  'michigan/kalamazoo': 'I-94 · US-131 · M-43 · Stadium Drive corridors',
+  'michigan/saginaw': 'I-75 · I-675 · M-46 · M-13 corridors',
+
   // ——— Virginia Core 12 ———
   'virginia/fairfax': 'I-66 · I-495 · VA-28 · Dulles Toll Road · VA-236 · I-95 links',
   'virginia/prince-william': 'I-95 · I-66 · VA-234 · US-1 · Prince William Pkwy',
@@ -249,7 +261,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
     v
   );
 }

@@ -190,6 +190,7 @@ import { TnRegulatoryClarity } from '@/components/local-movers/tn-regulatory-cla
 import { VaRegulatoryClarity } from '@/components/local-movers/va-regulatory-clarity';
 import { PaRegulatoryClarity } from '@/components/local-movers/pa-regulatory-clarity';
 import { OhRegulatoryClarity } from '@/components/local-movers/oh-regulatory-clarity';
+import { MiRegulatoryClarity } from '@/components/local-movers/mi-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
@@ -788,6 +789,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         ) : null}
         {stateSlug === 'ohio' ? (
           <OhRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'michigan' ? (
+          <MiRegulatoryClarity countyLabel={countyLabel} />
         ) : null}
 
         {popularRoutes.length > 0 ? (

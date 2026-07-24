@@ -5062,8 +5062,92 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'ohio') return OH_ROUTES[countySlug] ?? [];
   if (stateSlug === 'colorado') return CO_ROUTES[countySlug] ?? [];
   if (stateSlug === 'washington') return WA_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'michigan') return MI_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const MI_ROUTES: Record<string, CountyPopularRoute[]> = {
+  wayne: [
+    { label: 'Within Wayne (Downtown / Midtown ↔ Dearborn / Livonia / Downriver)', direction: 'within', context: 'City elevators and older stock vs west-Wayne and Downriver SFH — portal time dominates.' },
+    { label: 'Midwest / Chicago → Detroit metro housing & jobs', direction: 'inbound', context: 'Interstate household goods into city multi-unit and suburban stock.', href: '/resources/routes/illinois-to-michigan' },
+    { label: 'Detroit ↔ Grand Rapids / Lansing in-state pairs', direction: 'outbound', context: 'I-96 long hauls across Michigan; MSP CVED for pure in-state jobs.' },
+    { label: 'Wayne ↔ Oakland / Macomb collar pairs', direction: 'within', context: 'City vs north-metro vs east-metro logistics differ — keep county lines clear.' },
+    { label: 'Sun Belt ↔ Detroit reverse family & auto relo', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs; winter access contingency.' },
+    { label: 'Detroit → Ohio / Indiana / Ontario border pairs', direction: 'outbound', context: 'I-75/I-94 interstate or border logistics; confirm FMCSA for out-of-state legs.' },
+  ],
+  oakland: [
+    { label: 'Within Oakland (Troy / Birmingham ↔ Rochester Hills / Farmington Hills)', direction: 'within', context: 'Corporate HOA and village-core curb limits — not Detroit walk-up product.' },
+    { label: 'Corporate HQ & supplier relo → Troy / Auburn Hills', direction: 'inbound', context: 'Hard report dates and executive inventories dominate north-metro calendars.' },
+    { label: 'Oakland ↔ Wayne / Macomb metro pairs', direction: 'within', context: 'I-75/I-696 multi-county logistics; clarify north-metro vs city vs east-metro.' },
+    { label: 'California / Texas → Oakland County executive housing', direction: 'inbound', context: 'Interstate household goods into HOA and village multi-unit stock.' },
+    { label: 'Oakland → Grand Rapids / out-of-state career exits', direction: 'outbound', context: 'I-96 westbound or interstate; confirm Michigan authority vs FMCSA for the full route.' },
+    { label: 'Chicago ↔ Oakland north-metro professional corridors', direction: 'inbound', context: 'I-94 interstate household goods into Troy/Birmingham product.' },
+  ],
+  macomb: [
+    { label: 'Within Macomb (Warren ↔ Sterling Heights / Clinton Twp / northern townships)', direction: 'within', context: 'Industrial-suburban mix and multi-family lease waves — not Birmingham village defaults.' },
+    { label: 'Manufacturing / defense workforce → Warren / Sterling Heights', direction: 'inbound', context: 'Shift-change windows and plant-adjacent traffic reshape crew timing.' },
+    { label: 'Macomb ↔ Wayne / Oakland metro pairs', direction: 'within', context: 'I-94/M-59 east-metro logistics; keep county lines clear on estimates.' },
+    { label: 'Midwest → Macomb east-metro housing', direction: 'inbound', context: 'Interstate arrivals into SFH and multi-family stock.' },
+    { label: 'Macomb → Genesee / Bay region pairs', direction: 'outbound', context: 'I-75 northbound regional hauls; Michigan authority for pure in-state jobs.' },
+    { label: 'Macomb → Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required out of Michigan.' },
+  ],
+  kent: [
+    { label: 'Within Kent (Downtown GR / Heritage Hill ↔ Wyoming / Kentwood / Cascade)', direction: 'within', context: 'Core elevators and stairs vs south-belt multi-family — not SE Michigan defaults.' },
+    { label: 'Chicago / Midwest → Grand Rapids west-MI jobs & housing', direction: 'inbound', context: 'Interstate household goods into core multi-unit and suburban stock.' },
+    { label: 'Grand Rapids ↔ Detroit metro in-state pairs', direction: 'outbound', context: 'I-96 long hauls; MSP CVED for pure Michigan jobs.' },
+    { label: 'Kent ↔ Ottawa lakeshore collar pairs', direction: 'within', context: 'GR core vs Holland/Jenison lakeshore logistics — not clones.' },
+    { label: 'West Michigan furniture / healthcare relo corridors', direction: 'inbound', context: 'Hard report dates and manufacturing calendars reshape windows.' },
+    { label: 'Grand Rapids → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Michigan; volume surveys recommended.' },
+  ],
+  washtenaw: [
+    { label: 'Within Washtenaw (Central Ann Arbor / campus ↔ Pittsfield / Ypsilanti / Saline)', direction: 'within', context: 'University multi-unit vs township HOA — not Detroit neighborhood product.' },
+    { label: 'U-M / tech / medical inflows → Ann Arbor constrained housing', direction: 'inbound', context: 'Academic peaks and research hard dates dominate calendars.' },
+    { label: 'Ann Arbor ↔ Detroit metro (I-94) pairs', direction: 'within', context: 'Looks local on maps; I-94 peak portal time is a real billable factor.' },
+    { label: 'California / East Coast → Ann Arbor tech & research markets', direction: 'inbound', context: 'Interstate household goods into campus multi-unit and township stock.' },
+    { label: 'Washtenaw ↔ Lansing / Jackson regional pairs', direction: 'outbound', context: 'I-94 / US-23 mid-Michigan logistics; Michigan authority for pure in-state jobs.' },
+    { label: 'Ann Arbor → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Michigan.' },
+  ],
+  genesee: [
+    { label: 'Within Genesee (Flint core ↔ Grand Blanc / Fenton / Davison)', direction: 'within', context: 'Older multi-unit vs southern suburban product — not Detroit collar clones.' },
+    { label: 'In-state MI → Flint regional jobs & housing', direction: 'inbound', context: 'Recovery and workforce relo into multi-unit and suburban stock.' },
+    { label: 'Flint ↔ Detroit metro (I-75) pairs', direction: 'outbound', context: 'I-75 long locals; price portal time honestly.' },
+    { label: 'Genesee ↔ Saginaw / Lansing regional pairs', direction: 'within', context: 'I-75/I-69 mid-Michigan logistics; keep county lines clear.' },
+    { label: 'Midwest → Genesee manufacturing & healthcare corridors', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Genesee → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Michigan.' },
+  ],
+  ottawa: [
+    { label: 'Within Ottawa (Holland / Zeeland ↔ Grand Haven / Jenison–Hudsonville)', direction: 'within', context: 'Lakeshore staging vs GR-collar HOA — not downtown Grand Rapids elevators.' },
+    { label: 'Tourism & lakeshore seasonal turns → Holland / Grand Haven', direction: 'inbound', context: 'Summer weekends and festival windows reshape shore access.' },
+    { label: 'Ottawa ↔ Kent (Grand Rapids) pairs', direction: 'within', context: 'US-31/I-196 west-MI logistics; clarify Ottawa vs Kent destinations.' },
+    { label: 'Chicago / Midwest → Holland lakeshore housing', direction: 'inbound', context: 'Interstate household goods into shore and growth-suburb stock.' },
+    { label: 'Ottawa → Detroit metro in-state pairs', direction: 'outbound', context: 'I-96 eastbound; MSP CVED for pure Michigan jobs.' },
+    { label: 'Ottawa → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Michigan.' },
+  ],
+  ingham: [
+    { label: 'Within Ingham (Downtown Lansing ↔ East Lansing / MSU ↔ Okemos–Haslett)', direction: 'within', context: 'Capital elevators and campus multi-unit vs east-suburb HOA — not Ann Arbor clones.' },
+    { label: 'State government & MSU inflows → Lansing / East Lansing', direction: 'inbound', context: 'Session timing and academic peaks cluster demand.' },
+    { label: 'Lansing ↔ Detroit / Grand Rapids in-state pairs', direction: 'outbound', context: 'I-96 long hauls; Michigan authority for pure in-state jobs.' },
+    { label: 'Ingham ↔ Washtenaw / Genesee regional pairs', direction: 'within', context: 'I-96/I-69 mid-Michigan logistics; clarify capital vs university markets.' },
+    { label: 'Midwest → Lansing capital & campus housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Lansing → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Michigan.' },
+  ],
+  kalamazoo: [
+    { label: 'Within Kalamazoo (Downtown / Vine ↔ WMU multi-unit ↔ Portage)', direction: 'within', context: 'Near-core stairs and campus waves vs Portage HOA — not GR or Detroit defaults.' },
+    { label: 'WMU / healthcare / manufacturing relo → Kalamazoo metro', direction: 'inbound', context: 'Academic peaks and hard report dates reshape windows.' },
+    { label: 'Kalamazoo ↔ Grand Rapids / Detroit in-state pairs', direction: 'outbound', context: 'US-131 / I-94 logistics; MSP CVED for pure Michigan jobs.' },
+    { label: 'Chicago ↔ Kalamazoo (I-94) pairs', direction: 'inbound', context: 'Interstate household goods into campus multi-unit and suburban stock.' },
+    { label: 'Kalamazoo ↔ Holland / Battle Creek regional pairs', direction: 'within', context: 'Southwest Michigan regional hauls; keep county lines clear.' },
+    { label: 'Kalamazoo → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Michigan.' },
+  ],
+  saginaw: [
+    { label: 'Within Saginaw (City core ↔ Saginaw Twp / Freeland / Bridgeport edges)', direction: 'within', context: 'Older multi-unit vs township SFH — not Detroit collar product.' },
+    { label: 'Bay-region jobs & healthcare → Saginaw housing', direction: 'inbound', context: 'Regional relo into multi-unit and township stock.' },
+    { label: 'Saginaw ↔ Flint / Bay City / Midland pairs', direction: 'within', context: 'I-75/I-675 Great Lakes bay logistics; price empty miles honestly.' },
+    { label: 'Saginaw ↔ Detroit metro (I-75) pairs', direction: 'outbound', context: 'Long I-75 locals; Michigan authority for pure in-state jobs.' },
+    { label: 'Midwest → Saginaw bay regional markets', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Saginaw → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Michigan.' },
+  ],
+};
 
 const OH_ROUTES: Record<string, CountyPopularRoute[]> = {
   franklin: [
