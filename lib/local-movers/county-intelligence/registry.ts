@@ -1,14 +1,22 @@
 import { alamedaCountyIntelligence } from '@/lib/local-movers/county-intelligence/alameda-ca';
 import { bergenCountyIntelligence } from '@/lib/local-movers/county-intelligence/bergen-nj';
+import { butteCountyIntelligence } from '@/lib/local-movers/county-intelligence/butte-ca';
 import { contraCostaCountyIntelligence } from '@/lib/local-movers/county-intelligence/contra-costa-ca';
+import { elDoradoCountyIntelligence } from '@/lib/local-movers/county-intelligence/el-dorado-ca';
 import { essexCountyIntelligence } from '@/lib/local-movers/county-intelligence/essex-nj';
 import { fresnoCountyIntelligence } from '@/lib/local-movers/county-intelligence/fresno-ca';
+import { humboldtCountyIntelligence } from '@/lib/local-movers/county-intelligence/humboldt-ca';
+import { imperialCountyIntelligence } from '@/lib/local-movers/county-intelligence/imperial-ca';
 import { kernCountyIntelligence } from '@/lib/local-movers/county-intelligence/kern-ca';
 import { losAngelesCountyIntelligence } from '@/lib/local-movers/county-intelligence/los-angeles-ca';
+import { maderaCountyIntelligence } from '@/lib/local-movers/county-intelligence/madera-ca';
+import { marinCountyIntelligence } from '@/lib/local-movers/county-intelligence/marin-ca';
+import { mercedCountyIntelligence } from '@/lib/local-movers/county-intelligence/merced-ca';
 import { middlesexCountyIntelligence } from '@/lib/local-movers/county-intelligence/middlesex-nj';
 import { monmouthCountyIntelligence } from '@/lib/local-movers/county-intelligence/monmouth-nj';
 import { montereyCountyIntelligence } from '@/lib/local-movers/county-intelligence/monterey-ca';
 import { morrisCountyIntelligence } from '@/lib/local-movers/county-intelligence/morris-nj';
+import { napaCountyIntelligence } from '@/lib/local-movers/county-intelligence/napa-ca';
 import { oceanCountyIntelligence } from '@/lib/local-movers/county-intelligence/ocean-nj';
 import { orangeCountyIntelligence } from '@/lib/local-movers/county-intelligence/orange-ca';
 import { placerCountyIntelligence } from '@/lib/local-movers/county-intelligence/placer-ca';
@@ -21,9 +29,13 @@ import { sanJoaquinCountyIntelligence } from '@/lib/local-movers/county-intellig
 import { sanMateoCountyIntelligence } from '@/lib/local-movers/county-intelligence/san-mateo-ca';
 import { santaBarbaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-barbara-ca';
 import { santaClaraCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-clara-ca';
+import { santaCruzCountyIntelligence } from '@/lib/local-movers/county-intelligence/santa-cruz-ca';
+import { shastaCountyIntelligence } from '@/lib/local-movers/county-intelligence/shasta-ca';
 import { sonomaCountyIntelligence } from '@/lib/local-movers/county-intelligence/sonoma-ca';
+import { tulareCountyIntelligence } from '@/lib/local-movers/county-intelligence/tulare-ca';
 import { venturaCountyIntelligence } from '@/lib/local-movers/county-intelligence/ventura-ca';
 import { warrenCountyIntelligence } from '@/lib/local-movers/county-intelligence/warren-nj';
+import { yoloCountyIntelligence } from '@/lib/local-movers/county-intelligence/yolo-ca';
 import { atlanticCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/atlantic-nj';
 import { gloucesterCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/gloucester-nj';
 import { hunterdonCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/hunterdon-nj';
@@ -444,11 +456,19 @@ import type { CountyIntelligencePack } from '@/lib/local-movers/county-intellige
 const RAW_PACKS: CountyIntelligencePack[] = [
   // California
   alamedaCountyIntelligence,
+  butteCountyIntelligence,
   contraCostaCountyIntelligence,
+  elDoradoCountyIntelligence,
   fresnoCountyIntelligence,
+  humboldtCountyIntelligence,
+  imperialCountyIntelligence,
   kernCountyIntelligence,
   losAngelesCountyIntelligence,
+  maderaCountyIntelligence,
+  marinCountyIntelligence,
+  mercedCountyIntelligence,
   montereyCountyIntelligence,
+  napaCountyIntelligence,
   orangeCountyIntelligence,
   placerCountyIntelligence,
   riversideCountyIntelligence,
@@ -460,8 +480,12 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   sanMateoCountyIntelligence,
   santaBarbaraCountyIntelligence,
   santaClaraCountyIntelligence,
+  santaCruzCountyIntelligence,
+  shastaCountyIntelligence,
   sonomaCountyIntelligence,
+  tulareCountyIntelligence,
   venturaCountyIntelligence,
+  yoloCountyIntelligence,
   // Florida Core 12
   miamiDadeCountyIntelligence,
   browardCountyIntelligence,
@@ -951,8 +975,32 @@ export const CA_TIER2_WAVE1 = [
   'monterey',
 ] as const;
 
-/** @deprecated Use CA_TIER1_CORE12 + CA_TIER2_WAVE1 for editorial tiers. */
-export const CA_TIER1_ALL = [...CA_TIER1_CORE12, ...CA_TIER2_WAVE1] as const;
+/**
+ * California Tier 2 Wave 2 — remaining worthy secondary markets on the locked Tier 2
+ * content contract (parent compare, 2–4 zones, 2–3 specialized, compressed relocation).
+ * Not rural programmatic fill. Do not rebuild Wave 1 or Core 12.
+ */
+export const CA_TIER2_WAVE2 = [
+  'tulare',
+  'santa-cruz',
+  'marin',
+  'yolo',
+  'el-dorado',
+  'butte',
+  'napa',
+  'merced',
+  'shasta',
+  'imperial',
+  'humboldt',
+  'madera',
+] as const;
+
+/** @deprecated Use CA_TIER1_CORE12 + CA_TIER2_WAVE1 + CA_TIER2_WAVE2. */
+export const CA_TIER1_ALL = [
+  ...CA_TIER1_CORE12,
+  ...CA_TIER2_WAVE1,
+  ...CA_TIER2_WAVE2,
+] as const;
 
 /** Florida Tier-1 Core 12. */
 export const FL_TIER1_CORE12 = [

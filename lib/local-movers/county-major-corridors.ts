@@ -27,6 +27,19 @@ const CORRIDORS: Record<string, string> = {
   'california/placer': 'I-80 · CA-65 · CA-49 · I-80 Donner approaches',
   'california/santa-barbara': 'US-101 · CA-154 · CA-1 · CA-246',
   'california/monterey': 'CA-1 · CA-68 · US-101 · CA-156 · CA-183',
+  // CA Tier 2 Wave 2
+  'california/tulare': 'CA-99 · CA-198 · CA-63 · CA-65 · CA-190',
+  'california/santa-cruz': 'CA-1 · CA-17 · CA-9 · CA-129 · CA-152 approaches',
+  'california/marin': 'US-101 · CA-1 · Sir Francis Drake · CA-37 · Golden Gate approaches',
+  'california/yolo': 'I-80 · I-5 · US-50 approaches · CA-113 · CA-16',
+  'california/el-dorado': 'US-50 · CA-49 · I-80 approaches · CA-193',
+  'california/butte': 'CA-99 · CA-32 · CA-70 · CA-162',
+  'california/napa': 'CA-29 · CA-12 · CA-121 · CA-128 · Silverado Trail',
+  'california/merced': 'CA-99 · CA-140 · CA-59 · CA-152 · CA-165',
+  'california/shasta': 'I-5 · CA-44 · CA-299 · CA-273 · CA-89 approaches',
+  'california/imperial': 'I-8 · CA-86 · CA-111 · CA-98 · CA-78',
+  'california/humboldt': 'US-101 · CA-299 · CA-36 · CA-255 · local coastal arterials',
+  'california/madera': 'CA-99 · CA-145 · CA-41 · CA-152 · CA-233',
 
   // ——— Florida ———
   'florida/miami-dade': 'I-95 · I-75 · Florida Turnpike · US-1 · Dolphin Expressway (FL-836)',
