@@ -259,14 +259,27 @@ import { stJosephCountyInIntelligence } from '@/lib/local-movers/county-intellig
 import { elkhartCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/elkhart-in';
 import { tippecanoeCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/tippecanoe-in';
 import { vanderburghCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/vanderburgh-in';
+// Missouri Core 6
+import { stLouisCountyMoIntelligence } from '@/lib/local-movers/county-intelligence/missouri/st-louis-mo';
+import { jacksonCountyMoIntelligence } from '@/lib/local-movers/county-intelligence/missouri/jackson-mo';
+import { stCharlesCountyMoIntelligence } from '@/lib/local-movers/county-intelligence/missouri/st-charles-mo';
+import { greeneCountyMoIntelligence } from '@/lib/local-movers/county-intelligence/missouri/greene-mo';
+import { clayCountyMoIntelligence } from '@/lib/local-movers/county-intelligence/missouri/clay-mo';
+import { jeffersonCountyMoIntelligence } from '@/lib/local-movers/county-intelligence/missouri/jefferson-mo';
+// South Carolina Core 6
+import { greenvilleCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/greenville-sc';
+import { charlestonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/charleston-sc';
+import { richlandCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/richland-sc';
+import { horryCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/horry-sc';
+import { spartanburgCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/spartanburg-sc';
+import { lexingtonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/lexington-sc';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
- * Note: SC packs must not be registered until their source files are committed to git
- * (orphan registry imports break production builds).
+ * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
   // California
@@ -517,6 +530,20 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   elkhartCountyInIntelligence,
   tippecanoeCountyInIntelligence,
   vanderburghCountyInIntelligence,
+  // Missouri Core 6
+  stLouisCountyMoIntelligence,
+  jacksonCountyMoIntelligence,
+  stCharlesCountyMoIntelligence,
+  greeneCountyMoIntelligence,
+  clayCountyMoIntelligence,
+  jeffersonCountyMoIntelligence,
+  // South Carolina Core 6
+  greenvilleCountyScIntelligence,
+  charlestonCountyScIntelligence,
+  richlandCountyScIntelligence,
+  horryCountyScIntelligence,
+  spartanburgCountyScIntelligence,
+  lexingtonCountyScIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -894,4 +921,24 @@ export const IN_TIER1_CORE8 = [
   'elkhart',
   'tippecanoe',
   'vanderburgh',
+] as const;
+
+/** Missouri Tier-1 Core 6 (St. Louis County + KC/Jackson + collars + Springfield). */
+export const MO_TIER1_CORE6 = [
+  'st-louis',
+  'jackson',
+  'st-charles',
+  'greene',
+  'clay',
+  'jefferson',
+] as const;
+
+/** South Carolina Tier-1 Core 6 (Upstate + Lowcountry + Midlands + Grand Strand). */
+export const SC_TIER1_CORE6 = [
+  'greenville',
+  'charleston',
+  'richland',
+  'horry',
+  'spartanburg',
+  'lexington',
 ] as const;

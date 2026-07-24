@@ -303,6 +303,8 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'written estimates, insurance proof, and WisDOT for-hire credentials when applicable for in-state-only jobs';
     case 'indiana':
       return 'Indiana DOR household goods operating authority (IC 8-2.1-22) for in-state-only jobs when applicable';
+    case 'missouri':
+      return 'MoDOT household goods operating authority for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -379,7 +381,11 @@ export function buildCountyFaqItems(
                                                 ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Wisconsin generally does not operate a dedicated household-goods state certificate program comparable to Minnesota or Illinois. For purely local/intrastate Wisconsin moves, insist on a written estimate matching the legal business name, cargo and liability insurance certificates, and clear inventory terms — and ask whether WisDOT for-hire motor carrier credentials apply. FMCSA does not cover every in-state Wisconsin job; confirm insurance, written contracts, and FMCSA for any out-of-state leg before you deposit.`
                                                 : county.stateSlug === 'indiana'
                                                   ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Indiana household goods moves by for-hire carriers generally require a Certificate of Public Convenience and Necessity (Indiana Operating Authority) from the Indiana Department of Revenue (DOR) Motor Carrier Services under IC 8-2.1-22. Confirm active permanent authority matching the legal name on your estimate, and that written estimates align with the carrier’s filed tariff. FMCSA does not cover every in-state Indiana job; confirm Indiana DOR household goods authority vs FMCSA for your exact origin and destination before you deposit.`
-                                                  : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                                                  : county.stateSlug === 'missouri'
+                                                    ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Missouri household goods moves by for-hire carriers generally require operating authority from MoDOT Motor Carrier Services before operating in or between Missouri municipalities and related intrastate household goods service. Verify the mover on MoDOT MCS household goods resources and insist on free written estimates matching the legal name. FMCSA does not cover every in-state Missouri job; confirm MoDOT household goods authority vs FMCSA for your exact origin and destination before you deposit.`
+                                                    : county.stateSlug === 'south-carolina'
+                                                      ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate South Carolina household goods moves generally require Class E certification under the Office of Regulatory Staff (ORS) / PSC transportation framework. Ask for the certificate number, verify with ORS, and confirm credentials match the legal name on your estimate. FMCSA does not cover every in-state South Carolina job; confirm Class E / ORS vs FMCSA for your exact origin and destination before you deposit.`
+                                                      : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

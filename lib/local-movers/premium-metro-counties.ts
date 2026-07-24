@@ -194,6 +194,13 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'wisconsin', countySlug: 'kenosha' },
   { stateSlug: 'wisconsin', countySlug: 'outagamie' },
   { stateSlug: 'wisconsin', countySlug: 'winnebago' },
+  // Missouri Core 6
+  { stateSlug: 'missouri', countySlug: 'st-louis' },
+  { stateSlug: 'missouri', countySlug: 'jackson' },
+  { stateSlug: 'missouri', countySlug: 'st-charles' },
+  { stateSlug: 'missouri', countySlug: 'greene' },
+  { stateSlug: 'missouri', countySlug: 'clay' },
+  { stateSlug: 'missouri', countySlug: 'jefferson' },
 ] as const;
 
 const premiumMetroKeySet = new Set(

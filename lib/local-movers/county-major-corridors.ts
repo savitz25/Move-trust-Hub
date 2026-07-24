@@ -99,13 +99,13 @@ const CORRIDORS: Record<string, string> = {
   'arizona/coconino': 'I-40 · I-17 · US-89 · US-180 · AZ-89A',
 
   // ——— South Carolina Core 12 ———
-  'south-carolina/greenville': 'I-85 · I-385 · US-123 · SC-183 · Woodruff Road · Pelham Road',
-  'south-carolina/charleston': 'I-26 · I-526 · US-17 · SC-7 · peninsula approaches',
-  'south-carolina/richland': 'I-20 · I-26 · I-77 · US-1 · SC-277',
-  'south-carolina/horry': 'US-17 · SC-31 (Carolina Bays) · US-501 · SC-9',
-  'south-carolina/spartanburg': 'I-85 · I-26 · US-221 · Business I-85 links',
+  'south-carolina/greenville': 'I-85 · I-385 · US-25 · SC-14 · local arterial grid',
+  'south-carolina/charleston': 'I-26 · I-526 · US-17 · SC-7 · local peninsula/island approaches',
+  'south-carolina/richland': 'I-20 · I-26 · I-77 · US-1 · local Columbia grid',
+  'south-carolina/horry': 'US-17 · SC-31 (Carolina Bays) · SC-22 · US-501',
+  'south-carolina/spartanburg': 'I-85 · I-26 · US-221 · SC-9 · local arterial grid',
   'south-carolina/york': 'I-77 · US-21 · SC-161 · SC-5 · SC-160',
-  'south-carolina/lexington': 'I-20 · I-26 · US-1 · US-378',
+  'south-carolina/lexington': 'I-20 · I-26 · US-1 · US-378 · local arterial grid',
   'south-carolina/berkeley': 'I-26 · US-52 · US-17A · Clements Ferry corridors',
   'south-carolina/beaufort': 'US-278 · US-21 · SC-170 · island-causeway approaches',
   'south-carolina/dorchester': 'I-26 · US-78 · SC-165 · Summerville arterials',
@@ -182,7 +182,15 @@ const CORRIDORS: Record<string, string> = {
   'wisconsin/outagamie': 'I-41 · US-10 · WI-441 · WI-47 · local Fox Cities grid',
   'wisconsin/winnebago': 'I-41 · US-45 · WI-21 · WI-44 · local Oshkosh grid',
 
-  // ——— Michigan Core 10 ———
+  
+  // ——— Missouri Core 6 ———
+  'missouri/st-louis': 'I-70 · I-64 · I-44 · I-270 · I-55 · local arterial grid',
+  'missouri/jackson': 'I-70 · I-35 · I-29 · I-435 · US-71 · local KC grid',
+  'missouri/st-charles': 'I-70 · I-64 · MO-370 · MO-94',
+  'missouri/greene': 'I-44 · US-60 · US-65 · local Springfield grid',
+  'missouri/clay': 'I-35 · I-29 · I-435 · MO-291',
+  'missouri/jefferson': 'I-55 · US-61/67 · MO-21 · MO-30',
+// ——— Michigan Core 10 ———
   'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',
   'michigan/oakland': 'I-75 · I-696 · M-59 · Telegraph · Woodward corridors',
   'michigan/macomb': 'I-94 · M-53 · M-59 · I-696 links · Gratiot corridors',

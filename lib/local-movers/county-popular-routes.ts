@@ -5068,6 +5068,7 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'massachusetts') return MA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'minnesota') return MN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'wisconsin') return WI_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'missouri') return MO_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   return [];
 }
@@ -5573,6 +5574,58 @@ const WI_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'AirVenture week freeflow constraints near Oshkosh', direction: 'within', context: 'Late July congestion rewrites local portal times — prefer other weeks when flexible.' },
     { label: 'Winnebago County, WI → Florida reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Milwaukee / Midwest → Oshkosh regional housing', direction: 'inbound', context: 'Interstate or long in-state hauls into multi-unit and suburban stock.' },
+  ],
+};
+
+
+const MO_ROUTES: Record<string, CountyPopularRoute[]> = {
+  'st-louis': [
+    { label: 'Within St. Louis County, MO (Clayton / West County ↔ North / South County)', direction: 'within', context: 'Inner-ring elevators vs West County HOA multi-family — I-270 portal time dominates. Missouri only, not Minnesota St. Louis County.' },
+    { label: 'Illinois Metro East → St. Louis County housing', direction: 'inbound', context: 'Short interstate hops need FMCSA even when map miles look local.' },
+    { label: 'St. Louis County ↔ St. Charles west-metro pairs', direction: 'within', context: 'I-70 / I-64 growth logistics; keep county lines clear.' },
+    { label: 'Kansas City → St. Louis in-state long hauls', direction: 'inbound', context: 'I-70 cross-state-of-MO career moves; MoDOT HHG for pure in-state jobs.' },
+    { label: 'St. Louis County → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Chicago / Midwest → St. Louis County professional corridors', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  jackson: [
+    { label: 'Within Jackson (Downtown KC / Midtown ↔ Independence / Lee’s Summit)', direction: 'within', context: 'Urban multi-unit vs eastern suburban product — Kansas City MO, not St. Louis.' },
+    { label: 'Kansas / Johnson County → Jackson County housing', direction: 'inbound', context: 'Short border hops need FMCSA; clarify MoDOT vs interstate early.' },
+    { label: 'Jackson ↔ Clay Northland pairs', direction: 'within', context: 'I-35 / I-435 multi-county logistics; keep county lines clear.' },
+    { label: 'St. Louis → Kansas City in-state long hauls', direction: 'inbound', context: 'I-70 cross-state-of-MO; MoDOT HHG for pure in-state jobs.' },
+    { label: 'Jackson → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Texas / Southwest → KC MO professional corridors', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  'st-charles': [
+    { label: 'Within St. Charles (St. Charles city ↔ O’Fallon / St. Peters / Wentzville)', direction: 'within', context: 'West metro growth multi-family vs river-town product — not St. Louis County inner-ring clones.' },
+    { label: 'St. Louis County → St. Charles west-metro housing', direction: 'inbound', context: 'I-70 / MO-370 collar logistics; portal time dominates at peak.' },
+    { label: 'St. Charles ↔ St. Louis County multi-county pairs', direction: 'within', context: 'Keep county lines clear; access products differ.' },
+    { label: 'Illinois → St. Charles growth housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'St. Charles → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'St. Charles → Kansas City in-state long hauls', direction: 'outbound', context: 'I-70 long locals; MoDOT HHG for pure in-state jobs.' },
+  ],
+  greene: [
+    { label: 'Within Greene (Downtown Springfield ↔ Nixa / Republic edges)', direction: 'within', context: 'Southwest MO regional product — not St. Louis or KC spillover.' },
+    { label: 'St. Louis / KC → Springfield in-state long hauls', direction: 'inbound', context: 'I-44 long locals; MoDOT HHG for pure in-state jobs.' },
+    { label: 'Arkansas / Oklahoma → Springfield regional housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Campus and healthcare relo → Springfield multi-unit', direction: 'inbound', context: 'Hard report dates and lease waves cluster demand.' },
+    { label: 'Greene → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Greene → Branson / Ozarks regional pairs', direction: 'within', context: 'US-65 logistics; price empty miles honestly.' },
+  ],
+  clay: [
+    { label: 'Within Clay (North Kansas City / Gladstone ↔ Liberty / Kearney)', direction: 'within', context: 'Northland multi-family vs growth SFH — not Jackson downtown defaults.' },
+    { label: 'Jackson County → Clay Northland housing', direction: 'inbound', context: 'I-35 / I-435 multi-county logistics; keep county lines clear.' },
+    { label: 'Kansas → Clay County border pairs', direction: 'inbound', context: 'Short interstate hops need FMCSA.' },
+    { label: 'Clay ↔ Platte north-metro pairs', direction: 'within', context: 'Northland logistics; clarify county lines.' },
+    { label: 'Clay → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest → Northland professional corridors', direction: 'inbound', context: 'Interstate household goods into multi-family and suburban stock.' },
+  ],
+  jefferson: [
+    { label: 'Within Jefferson (Arnold / High Ridge ↔ Festus / Hillsboro edges)', direction: 'within', context: 'South metro fringe product — not St. Louis County West County HOA defaults.' },
+    { label: 'St. Louis County → Jefferson south-metro housing', direction: 'inbound', context: 'I-55 collar logistics; empty miles matter.' },
+    { label: 'Jefferson ↔ St. Louis County multi-county pairs', direction: 'within', context: 'Keep county lines clear; access products differ.' },
+    { label: 'Illinois → Jefferson fringe housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Jefferson → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Jefferson → Cape / southeast MO regional pairs', direction: 'outbound', context: 'I-55 long locals; MoDOT HHG for pure in-state jobs.' },
   ],
 };
 

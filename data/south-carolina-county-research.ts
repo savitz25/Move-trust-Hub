@@ -631,12 +631,12 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         note: 'Horry County pricing reflects Grand Strand coastal demand, peak tourist season scheduling, retirement relocation volume, and Myrtle Beach crew travel.',
       },
       tips: [
-        'Verify explicit coverage for Myrtle Beach, Conway, and North Myrtle Beach before booking.',
-        'Tourist season traffic and coastal access require advance planning — confirm crew arrival windows.',
-        'Confirm insurance and valuation for high-value beach and retirement properties before booking.',
-        'Book early for peak seasons and month-end lease turnover.',
-        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-      ],
+      'Build tourism peaks and US-17 / SC-31 freeflow into every estimate — seasonal calendars rewrite local hours.',
+      'Survey vacation multi-unit elevators separately from year-round inland SFH; do not price like Charleston peninsula stock.',
+      'Price US-17 / SC-31 (Carolina Bays) / SC-22 / US-501 portal time honestly.',
+      'Verify SC Class E / ORS authority for pure in-state jobs; FMCSA for interstate legs.',
+      'Avoid peak summer Friday–Sunday windows when flexible; book peak weeks early.',
+    ],
     },
     spartanburg: {
       marketNotes:
@@ -648,12 +648,12 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         note: 'Spartanburg County pricing reflects Upstate industrial corridor demand, I-85 traffic, and Greenville-Spartanburg metro crew availability.',
       },
       tips: [
-        'Verify explicit coverage for Spartanburg, Greer, and surrounding Spartanburg County addresses before booking.',
-        'Upstate industrial and highway traffic impacts scheduling — confirm crew arrival windows.',
-        'Confirm insurance and valuation for high-value homes before booking.',
-        'Book early for peak seasons and month-end lease turnover.',
-        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Spartanburg and Greenville-area crews.',
-      ],
+      'Treat Spartanburg as Upstate industrial / I-85 product — not a Greenville downtown rename.',
+      'Price I-85 / I-26 / US-221 / SC-9 portal time honestly for mill-town and growth pairs.',
+      'Survey older mill-town multi-unit separately from suburban HOA multi-family.',
+      'Verify SC Class E / ORS authority for pure in-state jobs; FMCSA for NC or other interstate legs.',
+      'Prefer mid-week mornings; manufacturing calendars reshape freeflow.',
+    ],
     },
     york: {
       marketNotes:
@@ -733,12 +733,12 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         note: 'Lexington County pricing reflects Columbia-metro suburban growth, I-26 corridor traffic, and Midlands crew availability from Columbia and Sumter bases.',
       },
       tips: [
-        'Verify explicit coverage for Lexington, Irmo, and West Columbia areas before booking.',
-        'Columbia-area traffic on I-26 and US-1 impacts scheduling — confirm crew arrival windows.',
-        'Confirm insurance and valuation for high-value suburban homes before booking.',
-        'Book early for peak seasons and month-end lease turnover.',
-        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia-area crews.',
-      ],
+      'Treat Lexington as west Columbia suburbs — not Richland capital core elevators as the default.',
+      'Collect HOA packets for multi-family; price I-20 / I-26 / US-1 / US-378 portal time honestly.',
+      'Clarify Lexington vs Richland county lines on every multi-address estimate.',
+      'Verify SC Class E / ORS authority for pure in-state jobs; FMCSA for interstate legs.',
+      'Prefer mid-week early starts; school peaks pack west-metro fleets first.',
+    ],
     },
     charleston: {
       marketNotes:
@@ -750,12 +750,12 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         note: 'Charleston County pricing reflects Lowcountry coastal demand, historic-district access logistics, bridge traffic, and peak tourist season scheduling.',
       },
       tips: [
-        'Verify explicit coverage for Charleston, Mount Pleasant, and James Island before booking.',
-        'Coastal access, bridge traffic, and hurricane preparedness are critical — confirm weather contingency policies.',
-        'Confirm insurance and valuation for high-value historic and waterfront properties before booking.',
-        'Book early for peak tourist and moving seasons.',
-        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-      ],
+      'Survey peninsula stairs, narrow streets, and bridge approaches separately from West Ashley multi-family.',
+      'Price I-26 / I-526 / US-17 / SC-7 portal time honestly; island pairs need extra staging buffers.',
+      'Plan humidity and historic-district access constraints into outdoor carries and truck sizing.',
+      'Verify SC Class E / ORS authority for pure in-state jobs; FMCSA for interstate legs.',
+      'Prefer mid-week mornings; tourism and peak-season weekends pack peninsula curb first.',
+    ],
     },
     richland: {
       marketNotes:
@@ -767,12 +767,12 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         note: 'Richland County pricing reflects Columbia capital-region demand, Fort Jackson PCS seasonality, university corridor traffic, and Midlands crew availability.',
       },
       tips: [
-        'Verify explicit coverage for Columbia, Irmo, and Fort Jackson areas before booking.',
-        'Government and university traffic impacts scheduling — confirm crew arrival windows.',
-        'Confirm insurance and valuation for high-value and military relocations before booking.',
-        'Book early for peak seasons and military PCS windows.',
-        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia-area crews.',
-      ],
+      'Treat Columbia capital multi-unit and Fort Jackson-adjacent calendars as Midlands product — not Charleston peninsula defaults.',
+      'Price I-20 / I-26 / I-77 / US-1 portal time honestly for capital ↔ suburb pairs.',
+      'Collect elevator/COI rules for downtown multi-unit; survey suburban HOA multi-family separately.',
+      'Verify SC Class E / ORS authority for pure in-state jobs; FMCSA for interstate legs.',
+      'Prefer mid-week starts; capital and school calendars cluster mid-month demand.',
+    ],
     },
     greenville: {
       marketNotes:
@@ -784,12 +784,12 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         note: 'Greenville County pricing reflects Upstate metro growth, downtown and suburban turnover, and Greenville-Spartanburg corridor traffic.',
       },
       tips: [
-        'Verify explicit coverage for Greenville, Greer, and Mauldin areas before booking.',
-        'Upstate highway and urban traffic impacts scheduling — confirm crew arrival windows.',
-        'Confirm insurance and valuation for high-value homes before booking.',
-        'Book early for peak seasons and month-end lease turnover.',
-        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Greenville and Spartanburg-area crews.',
-      ],
+      'Reserve curb staging and building COIs early for downtown Greenville and West End multi-unit stock.',
+      'Collect HOA packets for Five Forks / Simpsonville / Greer multi-family; survey Travelers Rest edges separately.',
+      'Price I-85 / I-385 / US-25 / SC-14 portal time honestly for Upstate pairs.',
+      'Verify SC Class E / ORS household goods authority for pure in-state jobs; FMCSA for NC or other interstate legs.',
+      'Prefer mid-week early starts; manufacturing shift windows reshape freeflow.',
+    ],
     },
   };
 
