@@ -240,6 +240,18 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'mississippi', countySlug: 'rankin' },
   { stateSlug: 'mississippi', countySlug: 'madison' },
   { stateSlug: 'mississippi', countySlug: 'jackson' },
+  // New Hampshire Core 5
+  { stateSlug: 'new-hampshire', countySlug: 'hillsborough' },
+  { stateSlug: 'new-hampshire', countySlug: 'rockingham' },
+  { stateSlug: 'new-hampshire', countySlug: 'merrimack' },
+  { stateSlug: 'new-hampshire', countySlug: 'strafford' },
+  { stateSlug: 'new-hampshire', countySlug: 'grafton' },
+  // Maine Core 5
+  { stateSlug: 'maine', countySlug: 'cumberland' },
+  { stateSlug: 'maine', countySlug: 'york' },
+  { stateSlug: 'maine', countySlug: 'penobscot' },
+  { stateSlug: 'maine', countySlug: 'kennebec' },
+  { stateSlug: 'maine', countySlug: 'androscoggin' },
 ] as const;
 
 const premiumMetroKeySet = new Set(

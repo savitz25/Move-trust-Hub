@@ -5075,6 +5075,8 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'iowa') return IA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'kansas') return KS_ROUTES[countySlug] ?? [];
   if (stateSlug === 'mississippi') return MS_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'new-hampshire') return NH_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'maine') return ME_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'connecticut') return CT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
@@ -5082,8 +5084,368 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'louisiana') return LA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'arkansas') return AR_ROUTES[countySlug] ?? [];
   if (stateSlug === 'new-mexico') return NM_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'nebraska') return NE_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'idaho') return ID_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const NE_ROUTES: Record<string, CountyPopularRoute[]> = {
+  douglas: [
+    {
+      label: 'Within Douglas (Downtown / Midtown Omaha ↔ West Omaha / Elkhorn edges)',
+      direction: 'within',
+      context: 'River-city multi-unit and west-suburb HOA — Douglas County NE Omaha only, not Douglas KS/NV.',
+    },
+    {
+      label: 'Corporate / healthcare relo → Omaha metro',
+      direction: 'inbound',
+      context: 'Hard report dates reshape eastern Nebraska calendars.',
+    },
+    {
+      label: 'Douglas ↔ Sarpy south-metro pairs',
+      direction: 'within',
+      context: 'I-80 / US-75 multi-county logistics; city core vs Bellevue/Papillion product differs.',
+    },
+    {
+      label: 'Chicago / Denver / Kansas City ↔ Omaha markets',
+      direction: 'inbound',
+      context: 'I-80 interstate household goods; FMCSA when leaving Nebraska.',
+    },
+    {
+      label: 'Douglas ↔ Lincoln (Lancaster) in-state pairs',
+      direction: 'outbound',
+      context: 'I-80 long locals; Nebraska PSC license for pure in-state jobs.',
+    },
+    {
+      label: 'Omaha → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Nebraska.',
+    },
+  ],
+  lancaster: [
+    {
+      label: 'Within Lancaster (Downtown Lincoln ↔ South / East / Northwest growth rings)',
+      direction: 'within',
+      context: 'Capital + university multi-unit — Lancaster NE Lincoln only, not Lancaster PA.',
+    },
+    {
+      label: 'State government / UNL relo → Lincoln',
+      direction: 'inbound',
+      context: 'Capital calendars and semester waves reshape windows.',
+    },
+    {
+      label: 'Lancaster ↔ Douglas (Omaha) in-state pairs',
+      direction: 'outbound',
+      context: 'I-80 multi-county logistics; capital vs Omaha product differs.',
+    },
+    {
+      label: 'Denver / Kansas City / Des Moines ↔ Lincoln markets',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Nebraska.',
+    },
+    {
+      label: 'Lancaster ↔ Grand Island / Kearney I-80 pairs',
+      direction: 'outbound',
+      context: 'I-80 westbound; PSC license for pure in-state jobs.',
+    },
+    {
+      label: 'Lincoln → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Nebraska.',
+    },
+  ],
+  sarpy: [
+    {
+      label: 'Within Sarpy (Bellevue ↔ Papillion / La Vista / Gretna edges)',
+      direction: 'within',
+      context: 'South Omaha metro growth and Offutt-adjacent timing — not Douglas city core rename.',
+    },
+    {
+      label: 'Military / family relo → Bellevue / Papillion',
+      direction: 'inbound',
+      context: 'Hard report dates and HOA packets reshape south-metro windows.',
+    },
+    {
+      label: 'Sarpy ↔ Douglas metro pairs',
+      direction: 'within',
+      context: 'I-80 / US-75 multi-county logistics; south growth vs Omaha core product differs.',
+    },
+    {
+      label: 'Kansas City / Des Moines ↔ Sarpy growth markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into HOA tracts; FMCSA when leaving Nebraska.',
+    },
+    {
+      label: 'Sarpy ↔ Lincoln in-state pairs',
+      direction: 'outbound',
+      context: 'I-80 westbound; PSC license for pure in-state jobs.',
+    },
+    {
+      label: 'Sarpy → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Nebraska.',
+    },
+  ],
+  hall: [
+    {
+      label: 'Within Hall (Downtown Grand Island ↔ south / west growth edges)',
+      direction: 'within',
+      context: 'Central Nebraska regional hub — not Omaha west clone product.',
+    },
+    {
+      label: 'Ag / industrial / healthcare relo → Grand Island',
+      direction: 'inbound',
+      context: 'Hard report dates reshape central I-80 calendars.',
+    },
+    {
+      label: 'Hall ↔ Kearney (Buffalo) I-80 pairs',
+      direction: 'within',
+      context: 'I-80 multi-county logistics; regional hubs with distinct access profiles.',
+    },
+    {
+      label: 'Omaha / Lincoln ↔ Grand Island in-state pairs',
+      direction: 'outbound',
+      context: 'I-80 long hauls; PSC license for pure in-state jobs.',
+    },
+    {
+      label: 'Denver / Kansas City ↔ Grand Island markets',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Nebraska.',
+    },
+    {
+      label: 'Grand Island → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Nebraska.',
+    },
+  ],
+  buffalo: [
+    {
+      label: 'Within Buffalo (Downtown Kearney ↔ university / I-80 growth edges)',
+      direction: 'within',
+      context: 'Central-west regional hub — Buffalo County NE (Kearney) only, not Buffalo NY.',
+    },
+    {
+      label: 'University / healthcare relo → Kearney',
+      direction: 'inbound',
+      context: 'Campus and hospital calendars reshape I-80 mid-state windows.',
+    },
+    {
+      label: 'Buffalo ↔ Grand Island (Hall) I-80 pairs',
+      direction: 'within',
+      context: 'I-80 multi-county logistics between distinct regional hubs.',
+    },
+    {
+      label: 'Omaha / Lincoln ↔ Kearney in-state pairs',
+      direction: 'outbound',
+      context: 'I-80 long hauls; PSC license for pure in-state jobs.',
+    },
+    {
+      label: 'Denver / Colorado ↔ Kearney markets',
+      direction: 'inbound',
+      context: 'I-80 interstate household goods; FMCSA when leaving Nebraska.',
+    },
+    {
+      label: 'Kearney → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Nebraska.',
+    },
+  ],
+  dodge: [
+    {
+      label: 'Within Dodge (Downtown Fremont ↔ north / east / industrial edges)',
+      direction: 'within',
+      context: 'Mid-size market north of Omaha — not Douglas County north rename.',
+    },
+    {
+      label: 'Industrial / family relo → Fremont',
+      direction: 'inbound',
+      context: 'Hard report dates reshape mid-market windows.',
+    },
+    {
+      label: 'Dodge ↔ Douglas / Sarpy metro pairs',
+      direction: 'within',
+      context: 'US-275 / US-30 multi-county logistics; mid-market vs Omaha core product differs.',
+    },
+    {
+      label: 'Omaha overflow → Fremont mid-market',
+      direction: 'inbound',
+      context: 'Shorter regional hauls; PSC license for pure in-state jobs.',
+    },
+    {
+      label: 'Iowa / Kansas ↔ Fremont pairs',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Nebraska.',
+    },
+    {
+      label: 'Fremont → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Nebraska.',
+    },
+  ],
+};
+
+const ID_ROUTES: Record<string, CountyPopularRoute[]> = {
+  ada: [
+    {
+      label: 'Within Ada (Downtown / North End Boise ↔ foothills / Meridian / Eagle edges)',
+      direction: 'within',
+      context: 'Treasure Valley core multi-unit and foothills access — not Canyon Nampa product.',
+    },
+    {
+      label: 'Tech / healthcare / state relo → Boise',
+      direction: 'inbound',
+      context: 'Hard report dates reshape Treasure Valley calendars.',
+    },
+    {
+      label: 'Ada ↔ Canyon (Nampa–Caldwell) TV pairs',
+      direction: 'within',
+      context: 'I-84 multi-county logistics; Boise core vs west-valley growth product differs.',
+    },
+    {
+      label: 'Seattle / Portland / Salt Lake ↔ Boise markets',
+      direction: 'inbound',
+      context: 'I-84 interstate household goods; FMCSA when leaving Idaho.',
+    },
+    {
+      label: 'Ada ↔ Twin Falls / Idaho Falls in-state pairs',
+      direction: 'outbound',
+      context: 'I-84 / I-15 long hauls; IPUC-applicable authority for pure in-state jobs.',
+    },
+    {
+      label: 'Boise → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Idaho.',
+    },
+  ],
+  canyon: [
+    {
+      label: 'Within Canyon (Nampa ↔ Caldwell / Middleton / I-84 growth edges)',
+      direction: 'within',
+      context: 'Treasure Valley west growth HOA — not Ada/Boise rename.',
+    },
+    {
+      label: 'Boise overflow → Nampa / Caldwell growth',
+      direction: 'inbound',
+      context: 'I-84 west-valley logistics; HOA packets dominate.',
+    },
+    {
+      label: 'Canyon ↔ Ada metro pairs',
+      direction: 'within',
+      context: 'I-84 multi-county logistics; west growth vs Boise core product differs.',
+    },
+    {
+      label: 'Portland / Salt Lake ↔ Canyon growth markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into HOA tracts; FMCSA when leaving Idaho.',
+    },
+    {
+      label: 'Canyon ↔ Twin Falls Magic Valley pairs',
+      direction: 'outbound',
+      context: 'I-84 eastbound; IPUC-applicable authority for pure in-state jobs.',
+    },
+    {
+      label: 'Canyon → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Idaho.',
+    },
+  ],
+  kootenai: [
+    {
+      label: "Within Kootenai (Downtown Coeur d'Alene ↔ Post Falls / Hayden / lakeside edges)",
+      direction: 'within',
+      context: 'North Idaho lakeside and tourism logistics — not Treasure Valley product.',
+    },
+    {
+      label: "Tourism / second-home / family relo → Coeur d'Alene",
+      direction: 'inbound',
+      context: 'Seasonal peaks and lakeside access reshape windows.',
+    },
+    {
+      label: 'Kootenai ↔ Spokane, WA pairs',
+      direction: 'outbound',
+      context: 'I-90 interstate household goods; FMCSA when any leg leaves Idaho.',
+    },
+    {
+      label: 'Seattle / Portland ↔ North Idaho markets',
+      direction: 'inbound',
+      context: 'I-90 interstate household goods into multi-unit and lakeside stock.',
+    },
+    {
+      label: 'Kootenai ↔ Boise / Treasure Valley in-state pairs',
+      direction: 'outbound',
+      context: 'Long north–south hauls; IPUC-applicable authority for pure in-state jobs.',
+    },
+    {
+      label: "Coeur d'Alene → out-of-state reverse exits",
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Idaho.',
+    },
+  ],
+  bonneville: [
+    {
+      label: 'Within Bonneville (Downtown Idaho Falls ↔ Ammon / I-15 growth edges)',
+      direction: 'within',
+      context: 'Eastern Idaho regional hub on the Snake River plain — not Treasure Valley east.',
+    },
+    {
+      label: 'Labs / energy / healthcare relo → Idaho Falls',
+      direction: 'inbound',
+      context: 'Hard report dates reshape eastern calendars.',
+    },
+    {
+      label: 'Bonneville ↔ Rexburg / Pocatello corridor pairs',
+      direction: 'within',
+      context: 'I-15 multi-county logistics; regional eastern ID product.',
+    },
+    {
+      label: 'Salt Lake / Boise ↔ Idaho Falls markets',
+      direction: 'inbound',
+      context: 'I-15 interstate/in-state mix; clarify IPUC vs FMCSA for the full route.',
+    },
+    {
+      label: 'Bonneville ↔ Twin Falls / Magic Valley pairs',
+      direction: 'outbound',
+      context: 'Cross-southern Idaho logistics; IPUC-applicable for pure in-state jobs.',
+    },
+    {
+      label: 'Idaho Falls → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Idaho.',
+    },
+  ],
+  'twin-falls': [
+    {
+      label: 'Within Twin Falls (Downtown Twin Falls ↔ canyon-edge / I-84 growth suburbs)',
+      direction: 'within',
+      context: 'Magic Valley regional hub — not Boise south rename.',
+    },
+    {
+      label: 'Ag / healthcare / family relo → Twin Falls',
+      direction: 'inbound',
+      context: 'Hard report dates reshape south-central calendars.',
+    },
+    {
+      label: 'Twin Falls ↔ Boise / Treasure Valley I-84 pairs',
+      direction: 'outbound',
+      context: 'I-84 long hauls; IPUC-applicable authority for pure in-state jobs.',
+    },
+    {
+      label: 'Salt Lake / Reno ↔ Magic Valley markets',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Idaho.',
+    },
+    {
+      label: 'Twin Falls ↔ Idaho Falls eastern pairs',
+      direction: 'outbound',
+      context: 'Southern Idaho cross-state logistics; keep Magic Valley product distinct.',
+    },
+    {
+      label: 'Twin Falls → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Idaho.',
+    },
+  ],
+};
 
 const AR_ROUTES: Record<string, CountyPopularRoute[]> = {
   pulaski: [
@@ -6507,6 +6869,92 @@ const MS_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Alabama / Louisiana → Pascagoula–Ocean Springs housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Jackson County, MS → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Industrial / shipyard workforce relo → coastal multi-unit', direction: 'inbound', context: 'Shift calendars reshape crew timing near industrial corridors.' },
+  ],
+};
+
+const NH_ROUTES: Record<string, CountyPopularRoute[]> = {
+  hillsborough: [
+    { label: 'Within Hillsborough (Manchester multi-unit ↔ Nashua / Bedford suburbs)', direction: 'within', context: 'Manchester–Nashua I-93 density — not Seacoast or Concord capital defaults.' },
+    { label: 'Massachusetts → Manchester–Nashua housing', direction: 'inbound', context: 'Short MA border hops need FMCSA even when map miles look local.' },
+    { label: 'Hillsborough ↔ Rockingham / Merrimack multi-county pairs', direction: 'within', context: 'Southern NH logistics; keep county product differences clear.' },
+    { label: 'Hillsborough → Boston reverse career pairs', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Florida / Sun Belt → southern NH reverse family moves', direction: 'inbound', context: 'Interstate household goods into mill multi-unit and suburban stock.' },
+    { label: 'Corporate / professional relo → Nashua multi-family', direction: 'inbound', context: 'HOA windows and Everett Turnpike freeflow dominate growth corridors.' },
+  ],
+  rockingham: [
+    { label: 'Within Rockingham (Portsmouth ↔ Hampton / Exeter / Derry west)', direction: 'within', context: 'Seacoast tourism + residential mix — not Manchester–Nashua I-93 clones.' },
+    { label: 'Massachusetts → Seacoast housing', direction: 'inbound', context: 'I-95 short interstate hops need FMCSA.' },
+    { label: 'Rockingham ↔ Strafford Spaulding pairs', direction: 'within', context: 'Seacoast vs Dover–Rochester products differ — keep county lines clear.' },
+    { label: 'Rockingham → Maine / Massachusetts reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Tourism / seasonal turns → coastal multi-unit', direction: 'inbound', context: 'Peak summer freeflow rewrites local hours on US-1 corridors.' },
+    { label: 'Hillsborough → Rockingham in-state pairs', direction: 'inbound', context: 'NH-101 / I-93 logistics; NH household goods carrier authority for pure in-state jobs.' },
+  ],
+  merrimack: [
+    { label: 'Within Merrimack (Downtown Concord ↔ west / south suburbs)', direction: 'within', context: 'Capital multi-unit vs suburban product — not Manchester density defaults.' },
+    { label: 'Capital / state workforce relo → Concord multi-unit', direction: 'inbound', context: 'Mid-month report dates often matter more than Saturday peaks.' },
+    { label: 'Manchester → Concord in-state pairs', direction: 'inbound', context: 'I-93 long locals; NH household goods carrier authority for pure in-state jobs.' },
+    { label: 'Merrimack ↔ Hillsborough / Grafton pairs', direction: 'within', context: 'Capital vs southern density vs Upper Valley products differ.' },
+    { label: 'Merrimack → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Massachusetts → Concord capital housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  strafford: [
+    { label: 'Within Strafford (Dover multi-unit ↔ Rochester / Somersworth)', direction: 'within', context: 'Dover–Rochester Spaulding product — not Portsmouth seacoast tourism clones alone.' },
+    { label: 'UNH semester inflows → Durham multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'Strafford ↔ Rockingham seacoast pairs', direction: 'within', context: 'Spaulding / US-4 logistics; keep Dover vs Portsmouth products clear.' },
+    { label: 'Maine → Dover–Rochester housing', direction: 'inbound', context: 'Short interstate hops need FMCSA.' },
+    { label: 'Strafford → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Hillsborough → Strafford in-state pairs', direction: 'inbound', context: 'NH-16 / I-93 logistics; NH household goods carrier authority for pure in-state jobs.' },
+  ],
+  grafton: [
+    { label: 'Within Grafton (Lebanon multi-unit ↔ Hanover / Upper Valley edges)', direction: 'within', context: 'Upper Valley Dartmouth product — not southern NH I-93 density north.' },
+    { label: 'Dartmouth / medical relo → Hanover–Lebanon multi-unit', direction: 'inbound', context: 'Academic calendars and hard report dates reshape crew timing.' },
+    { label: 'Vermont → Upper Valley housing', direction: 'inbound', context: 'Short CT River hops need FMCSA even when map miles look local.' },
+    { label: 'Grafton ↔ Merrimack capital pairs', direction: 'within', context: 'I-89 logistics; keep Upper Valley vs Concord products clear.' },
+    { label: 'Grafton → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Boston / southern NH → Upper Valley in-state long hauls', direction: 'inbound', context: 'I-89 / I-93 logistics; NH household goods carrier authority for pure in-state jobs.' },
+  ],
+};
+
+const ME_ROUTES: Record<string, CountyPopularRoute[]> = {
+  cumberland: [
+    { label: 'Within Cumberland (Portland peninsula ↔ South Portland / Westbrook)', direction: 'within', context: 'Portland multi-unit coastal core — not York seacoast south clones or Bangor.' },
+    { label: 'Massachusetts / New Hampshire → Portland housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required for cross-state legs.' },
+    { label: 'Cumberland ↔ York southern pairs', direction: 'within', context: 'I-95 / US-1 logistics; keep Portland vs Biddeford product differences clear.' },
+    { label: 'Cumberland → Bangor / Augusta in-state pairs', direction: 'outbound', context: 'I-95 long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Cumberland → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Tourism / seasonal turns → Portland multi-unit', direction: 'inbound', context: 'Peak summer freeflow rewrites local hours on peninsula and US-1 corridors.' },
+  ],
+  york: [
+    { label: 'Within York (Biddeford–Saco ↔ Kennebunk / Sanford inland)', direction: 'within', context: 'Southern seacoast product — not Portland peninsula defaults.' },
+    { label: 'New Hampshire → York County housing', direction: 'inbound', context: 'Short NH border hops need FMCSA even when map miles look local.' },
+    { label: 'York ↔ Cumberland Portland pairs', direction: 'within', context: 'I-95 / US-1 logistics; keep Biddeford vs Portland product differences clear.' },
+    { label: 'Tourism / OOB seasonal turns → coastal multi-unit', direction: 'inbound', context: 'Peak summer freeflow rewrites local hours on US-1 corridors.' },
+    { label: 'York → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Massachusetts → southern Maine seacoast housing', direction: 'inbound', context: 'I-95 interstate household goods into coastal and Sanford stock.' },
+  ],
+  penobscot: [
+    { label: 'Within Penobscot (Downtown Bangor ↔ Brewer / Orono campus edges)', direction: 'within', context: 'Bangor regional hub — not Portland density north.' },
+    { label: 'UMaine semester inflows → Orono multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'Portland → Bangor in-state long hauls', direction: 'inbound', context: 'I-95 long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Penobscot ↔ Kennebec capital pairs', direction: 'within', context: 'I-95 central Maine logistics; keep Bangor vs Augusta products clear.' },
+    { label: 'Penobscot → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Healthcare / regional workforce relo → Bangor multi-unit', direction: 'inbound', context: 'Hard report dates and winter access reshape crew timing.' },
+  ],
+  kennebec: [
+    { label: 'Within Kennebec (Augusta capital ↔ Hallowell / Waterville north)', direction: 'within', context: 'Capital multi-unit vs river-town product — not Portland north clones.' },
+    { label: 'Capital / state workforce relo → Augusta multi-unit', direction: 'inbound', context: 'Mid-month report dates often matter more than Saturday peaks.' },
+    { label: 'Portland → Augusta in-state pairs', direction: 'inbound', context: 'I-95 long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Kennebec ↔ Penobscot / Androscoggin pairs', direction: 'within', context: 'Central Maine logistics; keep capital vs Bangor vs L-A products clear.' },
+    { label: 'Kennebec → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'New Hampshire → Augusta capital housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  androscoggin: [
+    { label: 'Within Androscoggin (Lewiston multi-unit ↔ Auburn / Lisbon edges)', direction: 'within', context: 'Lewiston–Auburn mill-city densification — not Portland west clones.' },
+    { label: 'Mill / healthcare workforce relo → L-A multi-unit', direction: 'inbound', context: 'Older mill stairs and river-crossing freeflow dominate estimate risk.' },
+    { label: 'Portland → Lewiston–Auburn in-state pairs', direction: 'inbound', context: 'I-95 / ME-4 logistics; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Androscoggin ↔ Cumberland / Kennebec pairs', direction: 'within', context: 'Mid-coast inland twin cities vs Portland vs capital products differ.' },
+    { label: 'Androscoggin → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Massachusetts / New Hampshire → L-A housing', direction: 'inbound', context: 'Interstate household goods into mill multi-unit and suburban stock.' },
   ],
 };
 

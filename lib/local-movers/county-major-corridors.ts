@@ -235,7 +235,19 @@ const CORRIDORS: Record<string, string> = {
   'mississippi/madison': 'I-55 · MS-22 · US-51 · local north-metro grid',
   'mississippi/jackson': 'I-10 · US-90 · MS-63 · local Pascagoula/OS grid',
 
+  // ——— New Hampshire Core 5 ———
+  'new-hampshire/hillsborough': 'I-93 · I-293 · NH-101 · US-3 · local arterial grid',
+  'new-hampshire/rockingham': 'I-95 · NH-101 · NH-16 · US-1 · local seacoast grid',
+  'new-hampshire/merrimack': 'I-93 · I-89 · US-4 · US-202 · local Concord grid',
+  'new-hampshire/strafford': 'NH-16 (Spaulding) · US-4 · local Dover/Rochester grid',
+  'new-hampshire/grafton': 'I-89 · I-91 links · US-4 · local Upper Valley grid',
 
+  // ——— Maine Core 5 ———
+  'maine/cumberland': 'I-295 · I-95 · US-1 · ME-25 · local Portland grid',
+  'maine/york': 'I-95 · US-1 · ME-109 · ME-111 · local southern ME grid',
+  'maine/penobscot': 'I-95 · US-2 · ME-15 · local Bangor grid',
+  'maine/kennebec': 'I-95 · US-201 · US-202 · local Augusta grid',
+  'maine/androscoggin': 'I-95 · ME-4 · ME-11 · US-202 · local L-A grid',
 
 // ——— Michigan Core 10 ———
   'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',
@@ -325,6 +337,21 @@ const CORRIDORS: Record<string, string> = {
   'new-mexico/doa-ana': 'I-10 · I-25 · US-70 · local Las Cruces grid',
   'new-mexico/sandoval': 'I-25 · US-550 · NM-528 · local Rio Rancho grid',
   'new-mexico/san-juan': 'US-64 · US-550 · NM-516 · local Farmington grid',
+
+  // ——— Nebraska Core 6 ———
+  'nebraska/douglas': 'I-80 · I-480 · I-680 · US-75 · US-6 · local Omaha grid',
+  'nebraska/lancaster': 'I-80 · US-77 · US-34 · local Lincoln grid',
+  'nebraska/sarpy': 'I-80 · US-75 · NE-370 · local south-metro grid',
+  'nebraska/hall': 'I-80 · US-34 · US-281 · local Grand Island grid',
+  'nebraska/buffalo': 'I-80 · US-30 · NE-10 · local Kearney grid',
+  'nebraska/dodge': 'US-30 · US-77 · US-275 · local Fremont grid',
+
+  // ——— Idaho Core 5 ———
+  'idaho/ada': 'I-84 · US-20/26 · ID-55 · local Boise arterial grid',
+  'idaho/canyon': 'I-84 · US-20/26 · ID-45 · local Nampa/Caldwell grid',
+  'idaho/kootenai': 'I-90 · US-95 · ID-41 · local CdA grid',
+  'idaho/bonneville': 'I-15 · US-20 · US-26 · local Idaho Falls grid',
+  'idaho/twin-falls': 'I-84 · US-93 · US-30 · local Twin Falls grid',
 
   // ——— Virginia Core 12 ———
   'virginia/fairfax': 'I-66 · I-495 · VA-28 · Dulles Toll Road · VA-236 · I-95 links',
@@ -425,7 +452,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}(\/\d{1,3})?|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|OR[-\s]?\d{1,3}|MD[-\s]?\d{1,3}|CT[-\s]?\d{1,3}|UT[-\s]?\d{1,3}|AL[-\s]?\d{1,3}|LA[-\s]?\d{1,3}|AR[-\s]?\d{1,3}|NM[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Merritt|Legacy)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}(\/\d{1,3})?|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|OR[-\s]?\d{1,3}|MD[-\s]?\d{1,3}|CT[-\s]?\d{1,3}|UT[-\s]?\d{1,3}|AL[-\s]?\d{1,3}|LA[-\s]?\d{1,3}|AR[-\s]?\d{1,3}|NM[-\s]?\d{1,3}|NE[-\s]?\d{1,3}|ID[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Merritt|Legacy)\b/i.test(
     v
   );
 }

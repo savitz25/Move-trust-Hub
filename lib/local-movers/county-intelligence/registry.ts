@@ -314,6 +314,19 @@ import { santaFeCountyNmIntelligence } from '@/lib/local-movers/county-intellige
 import { doaAnaCountyNmIntelligence } from '@/lib/local-movers/county-intelligence/new-mexico/doa-ana-nm';
 import { sandovalCountyNmIntelligence } from '@/lib/local-movers/county-intelligence/new-mexico/sandoval-nm';
 import { sanJuanCountyNmIntelligence } from '@/lib/local-movers/county-intelligence/new-mexico/san-juan-nm';
+// Nebraska Core 6
+import { douglasCountyNeIntelligence } from '@/lib/local-movers/county-intelligence/nebraska/douglas-ne';
+import { lancasterCountyNeIntelligence } from '@/lib/local-movers/county-intelligence/nebraska/lancaster-ne';
+import { sarpyCountyNeIntelligence } from '@/lib/local-movers/county-intelligence/nebraska/sarpy-ne';
+import { hallCountyNeIntelligence } from '@/lib/local-movers/county-intelligence/nebraska/hall-ne';
+import { buffaloCountyNeIntelligence } from '@/lib/local-movers/county-intelligence/nebraska/buffalo-ne';
+import { dodgeCountyNeIntelligence } from '@/lib/local-movers/county-intelligence/nebraska/dodge-ne';
+// Idaho Core 5
+import { adaCountyIdIntelligence } from '@/lib/local-movers/county-intelligence/idaho/ada-id';
+import { canyonCountyIdIntelligence } from '@/lib/local-movers/county-intelligence/idaho/canyon-id';
+import { kootenaiCountyIdIntelligence } from '@/lib/local-movers/county-intelligence/idaho/kootenai-id';
+import { bonnevilleCountyIdIntelligence } from '@/lib/local-movers/county-intelligence/idaho/bonneville-id';
+import { twinFallsCountyIdIntelligence } from '@/lib/local-movers/county-intelligence/idaho/twin-falls-id';
 // Kentucky Core 6
 import { jeffersonCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/jefferson-ky';
 import { fayetteCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/fayette-ky';
@@ -355,11 +368,23 @@ import { desotoCountyMsIntelligence } from '@/lib/local-movers/county-intelligen
 import { rankinCountyMsIntelligence } from '@/lib/local-movers/county-intelligence/mississippi/rankin-ms';
 import { madisonCountyMsIntelligence } from '@/lib/local-movers/county-intelligence/mississippi/madison-ms';
 import { jacksonCountyMsIntelligence } from '@/lib/local-movers/county-intelligence/mississippi/jackson-ms';
+// New Hampshire Core 5
+import { hillsboroughCountyNhIntelligence } from '@/lib/local-movers/county-intelligence/new-hampshire/hillsborough-nh';
+import { rockinghamCountyNhIntelligence } from '@/lib/local-movers/county-intelligence/new-hampshire/rockingham-nh';
+import { merrimackCountyNhIntelligence } from '@/lib/local-movers/county-intelligence/new-hampshire/merrimack-nh';
+import { straffordCountyNhIntelligence } from '@/lib/local-movers/county-intelligence/new-hampshire/strafford-nh';
+import { graftonCountyNhIntelligence } from '@/lib/local-movers/county-intelligence/new-hampshire/grafton-nh';
+// Maine Core 5
+import { cumberlandCountyMeIntelligence } from '@/lib/local-movers/county-intelligence/maine/cumberland-me';
+import { yorkCountyMeIntelligence } from '@/lib/local-movers/county-intelligence/maine/york-me';
+import { penobscotCountyMeIntelligence } from '@/lib/local-movers/county-intelligence/maine/penobscot-me';
+import { kennebecCountyMeIntelligence } from '@/lib/local-movers/county-intelligence/maine/kennebec-me';
+import { androscogginCountyMeIntelligence } from '@/lib/local-movers/county-intelligence/maine/androscoggin-me';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
@@ -667,6 +692,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   doaAnaCountyNmIntelligence,
   sandovalCountyNmIntelligence,
   sanJuanCountyNmIntelligence,
+  // Nebraska Core 6
+  douglasCountyNeIntelligence,
+  lancasterCountyNeIntelligence,
+  sarpyCountyNeIntelligence,
+  hallCountyNeIntelligence,
+  buffaloCountyNeIntelligence,
+  dodgeCountyNeIntelligence,
+  // Idaho Core 5
+  adaCountyIdIntelligence,
+  canyonCountyIdIntelligence,
+  kootenaiCountyIdIntelligence,
+  bonnevilleCountyIdIntelligence,
+  twinFallsCountyIdIntelligence,
   // Kentucky Core 6
   jeffersonCountyKyIntelligence,
   fayetteCountyKyIntelligence,
@@ -708,6 +746,18 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   rankinCountyMsIntelligence,
   madisonCountyMsIntelligence,
   jacksonCountyMsIntelligence,
+  // New Hampshire Core 5
+  hillsboroughCountyNhIntelligence,
+  rockinghamCountyNhIntelligence,
+  merrimackCountyNhIntelligence,
+  straffordCountyNhIntelligence,
+  graftonCountyNhIntelligence,
+  // Maine Core 5
+  cumberlandCountyMeIntelligence,
+  yorkCountyMeIntelligence,
+  penobscotCountyMeIntelligence,
+  kennebecCountyMeIntelligence,
+  androscogginCountyMeIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -1146,6 +1196,25 @@ export const NM_TIER1_CORE5 = [
   'san-juan',
 ] as const;
 
+/** Nebraska Tier-1 Core 6 (Omaha + Lincoln + Sarpy + Grand Island + Kearney + Fremont). */
+export const NE_TIER1_CORE6 = [
+  'douglas',
+  'lancaster',
+  'sarpy',
+  'hall',
+  'buffalo',
+  'dodge',
+] as const;
+
+/** Idaho Tier-1 Core 5 (Boise + Canyon TV + CdA + Idaho Falls + Twin Falls). */
+export const ID_TIER1_CORE5 = [
+  'ada',
+  'canyon',
+  'kootenai',
+  'bonneville',
+  'twin-falls',
+] as const;
+
 /** Oklahoma Tier-1 Core 6 (OKC + Tulsa + Norman + west OKC + Lawton + NE Tulsa). */
 export const OK_TIER1_CORE6 = [
   'oklahoma',
@@ -1223,6 +1292,24 @@ export const NV_TIER1_CORE5 = [
   'carson-city',
   'douglas',
   'nye',
+] as const;
+
+/** New Hampshire Tier-1 Core 5 (Manchester–Nashua + Seacoast + Concord + Dover–Rochester + Upper Valley). */
+export const NH_TIER1_CORE5 = [
+  'hillsborough',
+  'rockingham',
+  'merrimack',
+  'strafford',
+  'grafton',
+] as const;
+
+/** Maine Tier-1 Core 5 (Portland + York seacoast + Bangor + Augusta + Lewiston–Auburn). */
+export const ME_TIER1_CORE5 = [
+  'cumberland',
+  'york',
+  'penobscot',
+  'kennebec',
+  'androscoggin',
 ] as const;
 
 
