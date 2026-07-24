@@ -188,6 +188,7 @@ import { AzRegulatoryClarity } from '@/components/local-movers/az-regulatory-cla
 import { NcRegulatoryClarity } from '@/components/local-movers/nc-regulatory-clarity';
 import { TnRegulatoryClarity } from '@/components/local-movers/tn-regulatory-clarity';
 import { VaRegulatoryClarity } from '@/components/local-movers/va-regulatory-clarity';
+import { PaRegulatoryClarity } from '@/components/local-movers/pa-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
@@ -780,6 +781,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         ) : null}
         {stateSlug === 'virginia' ? (
           <VaRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'pennsylvania' ? (
+          <PaRegulatoryClarity countyLabel={countyLabel} />
         ) : null}
 
         {popularRoutes.length > 0 ? (

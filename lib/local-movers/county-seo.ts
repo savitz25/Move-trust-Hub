@@ -279,6 +279,10 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'TDOR motor carrier intrastate authority for in-state-only jobs when applicable';
     case 'virginia':
       return 'Virginia DMV household goods / motor carrier authority for in-state-only jobs when applicable';
+    case 'pennsylvania':
+      return 'PA PUC household goods authority for in-state-only jobs when applicable';
+    case 'illinois':
+      return 'ICC household goods license for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -331,7 +335,11 @@ export function buildCountyFaqItems(
                         ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Tennessee household goods moves by for-hire carriers are generally subject to Tennessee Department of Revenue (TDOR) motor carrier intrastate authority requirements as applicable. Confirm active Tennessee intrastate authority, insurance, and written estimates that match the legal name on the paperwork. FMCSA does not cover every in-state Tennessee job; confirm TDOR intrastate authority vs FMCSA for your exact origin and destination before you deposit.`
                         : county.stateSlug === 'virginia'
                           ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Virginia household goods moves are generally regulated through Virginia DMV Motor Carrier Services. Longer in-state household goods hauls (commonly described around 31+ road miles) typically require Household Goods Carrier authority / Certificate of Fitness frameworks; shorter local jobs (commonly described around 30 miles or less) may fall under Property Carrier-style authority. Confirm which Virginia DMV authorization covers your exact origin, destination, and road miles. FMCSA does not cover every in-state Virginia job; confirm Virginia DMV vs FMCSA for your exact route before you deposit.`
-                          : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                          : county.stateSlug === 'pennsylvania'
+                            ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Pennsylvania household goods moves are generally regulated by the Pennsylvania Public Utility Commission (PUC). Confirm the mover holds active PUC household goods authority, carries required insurance, and matches the legal name on your estimate. FMCSA does not cover every in-state Pennsylvania job; confirm PA PUC vs FMCSA for your exact origin and destination before you deposit.`
+                            : county.stateSlug === 'illinois'
+                              ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Illinois household goods moves by for-hire carriers generally require an Illinois Commerce Commission (ICC) Household Goods license. Search ICC motor carrier tools for an active license matching the legal name on your estimate. FMCSA does not cover every in-state Illinois job; confirm ICC household goods authority vs FMCSA for your exact origin and destination before you deposit.`
+                              : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

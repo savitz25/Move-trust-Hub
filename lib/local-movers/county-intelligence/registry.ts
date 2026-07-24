@@ -131,11 +131,24 @@ import { wilsonCountyTnIntelligence } from '@/lib/local-movers/county-intelligen
 import { blountCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/blount-tn';
 import { sevierCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/sevier-tn';
 import { sullivanCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/sullivan-tn';
+// Pennsylvania Core 12
+import { philadelphiaCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/philadelphia-pa';
+import { alleghenyCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/allegheny-pa';
+import { montgomeryCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/montgomery-pa';
+import { bucksCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/bucks-pa';
+import { delawareCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/delaware-pa';
+import { chesterCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/chester-pa';
+import { lancasterCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/lancaster-pa';
+import { yorkCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/york-pa';
+import { berksCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/berks-pa';
+import { lehighCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/lehigh-pa';
+import { northamptonCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/northampton-pa';
+import { westmorelandCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/westmoreland-pa';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -248,6 +261,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   blountCountyTnIntelligence,
   sevierCountyTnIntelligence,
   sullivanCountyTnIntelligence,
+  // Pennsylvania Core 12
+  philadelphiaCountyPaIntelligence,
+  alleghenyCountyPaIntelligence,
+  montgomeryCountyPaIntelligence,
+  bucksCountyPaIntelligence,
+  delawareCountyPaIntelligence,
+  chesterCountyPaIntelligence,
+  lancasterCountyPaIntelligence,
+  yorkCountyPaIntelligence,
+  berksCountyPaIntelligence,
+  lehighCountyPaIntelligence,
+  northamptonCountyPaIntelligence,
+  westmorelandCountyPaIntelligence,
   // Virginia Core 12
   fairfaxCountyVaIntelligence,
   princeWilliamCountyVaIntelligence,
@@ -474,4 +500,20 @@ export const TN_TIER1_CORE12 = [
   'blount',
   'sevier',
   'sullivan',
+] as const;
+
+/** Pennsylvania Tier-1 Core 12. */
+export const PA_TIER1_CORE12 = [
+  'philadelphia',
+  'allegheny',
+  'montgomery',
+  'bucks',
+  'delaware',
+  'chester',
+  'lancaster',
+  'york',
+  'berks',
+  'lehigh',
+  'northampton',
+  'westmoreland',
 ] as const;

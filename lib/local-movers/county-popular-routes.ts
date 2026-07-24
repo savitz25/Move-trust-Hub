@@ -4789,5 +4789,105 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'south-carolina') return SC_ROUTES[countySlug] ?? [];
   if (stateSlug === 'virginia') return VA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'tennessee') return TN_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'pennsylvania') return PA_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const PA_ROUTES: Record<string, CountyPopularRoute[]> = {
+  philadelphia: [
+    { label: 'Within Philadelphia (Center City ↔ South Philly / Northeast)', direction: 'within', context: 'Elevator COIs downtown vs rowhome curb limits — I-95/I-76 portal time dominates.' },
+    { label: 'New York / New Jersey → Philadelphia career & student markets', direction: 'inbound', context: 'Interstate household goods into city multi-unit and rowhome stock.', href: '/resources/routes/new-jersey-to-pennsylvania' },
+    { label: 'Philadelphia ↔ Pittsburgh (I-76)', direction: 'outbound', context: 'In-state long haul between SEPA and Western PA job markets.' },
+    { label: 'Philadelphia ↔ Montgomery / Bucks / Delaware / Chester collar pairs', direction: 'within', context: 'City-to-collar logistics; keep county lines clear on estimates.' },
+    { label: 'Florida / South ↔ Philadelphia reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Midwest → Philadelphia professional corridors', direction: 'inbound', context: 'Healthcare and corporate inflows into Center City and neighborhood stock.' },
+  ],
+  allegheny: [
+    { label: 'Within Allegheny (Downtown ↔ East End / South Hills / North Hills)', direction: 'within', context: 'Hills, stairs, and Parkway portal time — not Philly rowhome logistics.' },
+    { label: 'Midwest → Pittsburgh healthcare & tech markets', direction: 'inbound', context: 'Interstate household goods into hillside and multi-unit stock.' },
+    { label: 'Pittsburgh ↔ Philadelphia (I-76)', direction: 'outbound', context: 'In-state long haul across Pennsylvania.' },
+    { label: 'Allegheny ↔ Westmoreland east-suburban pairs', direction: 'within', context: 'City-to-east complement logistics; clarify county lines.' },
+    { label: 'Northeast → Pittsburgh career corridors', direction: 'inbound', context: 'Interstate arrivals into city neighborhoods and North Hills multi-family.' },
+    { label: 'Florida ↔ Pittsburgh reverse family moves', direction: 'inbound', context: 'Interstate household goods; winter access contingency on hillside addresses.' },
+  ],
+  montgomery: [
+    { label: 'Within Montgomery (Main Line ↔ King of Prussia / Abington)', direction: 'within', context: 'Collar multi-unit mix — not Center City elevators as the default.' },
+    { label: 'Montgomery ↔ Philadelphia I-76 pairs', direction: 'within', context: 'Northwest collar logistics; portal time dominates at peak.' },
+    { label: 'New York / New Jersey → Main Line & KOP housing', direction: 'inbound', context: 'Interstate arrivals into multi-unit and older SFH stock.' },
+    { label: 'Montgomery ↔ Bucks / Chester / Delaware collar pairs', direction: 'within', context: 'Philly collar cluster with different access products at each end.' },
+    { label: 'Midwest → Montgomery County professional corridors', direction: 'inbound', context: 'Corporate and healthcare inflows into KOP and Main Line multi-family.' },
+    { label: 'Florida ↔ SEPA reverse family moves', direction: 'inbound', context: 'Interstate household goods into collar suburbs; FMCSA for cross-state legs.' },
+  ],
+  bucks: [
+    { label: 'Within Bucks (Lower Bucks ↔ Central / Upper Bucks)', direction: 'within', context: 'I-95 multi-family vs longer northern empty miles.' },
+    { label: 'Bucks ↔ Philadelphia I-95 pairs', direction: 'within', context: 'North collar logistics; portal time dominates at peak.' },
+    { label: 'New York / New Jersey → Bucks County suburbs', direction: 'inbound', context: 'Interstate arrivals into Lower and Central Bucks housing.' },
+    { label: 'Bucks ↔ Montgomery / Northampton edges', direction: 'within', context: 'North SEPA pairs with different river-town and Main Line fabrics.' },
+    { label: 'Florida ↔ Bucks reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Midwest → Bucks County family corridors', direction: 'inbound', context: 'Family inflows seeking space north of Philly.' },
+  ],
+  delaware: [
+    { label: 'Within Delaware County (eastern inner-ring ↔ western townships)', direction: 'within', context: 'Older twins vs HOA pockets — not Chester far-west growth alone.' },
+    { label: 'Delaware ↔ Philadelphia I-95 pairs', direction: 'within', context: 'Western inner-ring logistics; portal time dominates at peak.' },
+    { label: 'New Jersey / Delaware state ↔ Delaware County pairs', direction: 'outbound', context: 'Clarify PA PUC vs FMCSA for destinations outside Pennsylvania.' },
+    { label: 'Delaware ↔ Chester / Montgomery collar pairs', direction: 'within', context: 'Inner-ring vs far-west vs northwest collar differences matter.' },
+    { label: 'Florida ↔ SEPA reverse family moves via I-95', direction: 'inbound', context: 'Interstate household goods into inner-ring stock.' },
+    { label: 'Northeast → Delaware County professional corridors', direction: 'inbound', context: 'Corporate and healthcare inflows into western township multi-family.' },
+  ],
+  chester: [
+    { label: 'Within Chester (West Chester / Exton ↔ eastern approaches)', direction: 'within', context: 'HOA growth and long empty miles — not Delaware inner-ring twins.' },
+    { label: 'Chester ↔ Philadelphia long collar pairs', direction: 'within', context: 'Far-west logistics days more than short hourly locals.' },
+    { label: 'New York / New Jersey → Chester County growth housing', direction: 'inbound', context: 'Interstate arrivals into HOA multi-family and tracts.' },
+    { label: 'Chester ↔ Delaware / Montgomery edges', direction: 'within', context: 'Far-west vs inner-ring vs Main Line access differences.' },
+    { label: 'Florida ↔ SEPA reverse family moves', direction: 'inbound', context: 'Interstate household goods into far-west growth product.' },
+    { label: 'Midwest → Chester County professional corridors', direction: 'inbound', context: 'Corporate inflows into Exton/West Chester multi-family.' },
+  ],
+  lancaster: [
+    { label: 'Within Lancaster (city multi-unit ↔ northern townships)', direction: 'within', context: 'Mid-state city vs township empty miles — not Philly collar patterns.' },
+    { label: 'Lancaster ↔ York / Berks mid-state pairs', direction: 'within', context: 'South-central and Reading-adjacent logistics; keep county lines clear.' },
+    { label: 'Philadelphia / SEPA → Lancaster mid-state moves', direction: 'inbound', context: 'In-state long haul into city and township stock.' },
+    { label: 'New York / New Jersey → Lancaster County', direction: 'inbound', context: 'Interstate household goods into mid-state housing.' },
+    { label: 'Florida ↔ Lancaster reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Midwest → Lancaster manufacturing & healthcare corridors', direction: 'inbound', context: 'Regional employment inflows into township growth product.' },
+  ],
+  york: [
+    { label: 'Within York (city multi-unit ↔ northern I-83 growth)', direction: 'within', context: 'South-central I-83 corridor — not Lancaster tourism edges.' },
+    { label: 'York ↔ Harrisburg / Lancaster mid-state pairs', direction: 'within', context: 'Regional logistics longer than a suburb hop.' },
+    { label: 'Baltimore / Maryland ↔ York County pairs', direction: 'inbound', context: 'Clarify PA PUC vs FMCSA for cross-state destinations.' },
+    { label: 'DC / Northern Virginia → York south-central housing', direction: 'inbound', context: 'Interstate household goods into I-83 growth product.' },
+    { label: 'Florida ↔ York reverse family moves via I-83', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Philadelphia ↔ York in-state long hauls', direction: 'outbound', context: 'SEPA to south-central career and family moves.' },
+  ],
+  berks: [
+    { label: 'Within Berks (Reading city ↔ western suburbs / rural edges)', direction: 'within', context: 'Reading regional fabric — not Philly collar clones.' },
+    { label: 'Berks ↔ Lehigh Valley / Lancaster pairs', direction: 'within', context: 'Mid-state regional logistics; keep county lines clear.' },
+    { label: 'New York / New Jersey → Reading regional markets', direction: 'inbound', context: 'Interstate household goods into city multi-unit and suburban stock.' },
+    { label: 'Philadelphia ↔ Reading in-state pairs', direction: 'inbound', context: 'SEPA to Reading career and family moves.' },
+    { label: 'Florida ↔ Berks reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Midwest → Berks manufacturing & healthcare corridors', direction: 'inbound', context: 'Regional employment inflows into western suburban product.' },
+  ],
+  lehigh: [
+    { label: 'Within Lehigh (Allentown ↔ western suburbs)', direction: 'within', context: 'Allentown multi-unit vs HOA growth — not Bethlehem defaults.' },
+    { label: 'Lehigh ↔ Northampton Valley pairs', direction: 'within', context: 'Everyday Lehigh Valley logistics; clarify county lines.' },
+    { label: 'New York / New Jersey → Allentown & Lehigh Valley housing', direction: 'inbound', context: 'Interstate household goods into Valley multi-family stock.' },
+    { label: 'Philadelphia ↔ Lehigh Valley in-state pairs', direction: 'inbound', context: 'SEPA to Valley career and family moves.' },
+    { label: 'Florida ↔ Lehigh Valley reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Midwest → Lehigh logistics & manufacturing corridors', direction: 'inbound', context: 'Industrial employment inflows into western multi-family product.' },
+  ],
+  northampton: [
+    { label: 'Within Northampton (Bethlehem ↔ Easton / township growth)', direction: 'within', context: 'Dual-city access products — not Allentown clones.' },
+    { label: 'Northampton ↔ Lehigh Valley pairs', direction: 'within', context: 'Everyday Valley logistics; clarify county lines.' },
+    { label: 'New York / New Jersey → Bethlehem / Easton housing', direction: 'inbound', context: 'Interstate household goods; eastern edges may involve NJ destination authority checks.' },
+    { label: 'Northampton ↔ New Jersey border pairs', direction: 'outbound', context: 'Clarify PA PUC vs FMCSA for destinations outside Pennsylvania.' },
+    { label: 'Philadelphia ↔ Northampton in-state pairs', direction: 'inbound', context: 'SEPA to Valley career and family moves.' },
+    { label: 'Florida ↔ Lehigh Valley reverse family moves', direction: 'inbound', context: 'Interstate household goods into Bethlehem/Easton stock.' },
+  ],
+  westmoreland: [
+    { label: 'Within Westmoreland (Greensburg ↔ western approaches / eastern towns)', direction: 'within', context: 'East-of-Pittsburgh towns — not Downtown elevator defaults.' },
+    { label: 'Westmoreland ↔ Allegheny Pittsburgh pairs', direction: 'within', context: 'City-to-east complement logistics; empty miles dominate.' },
+    { label: 'Midwest → Westmoreland / Pittsburgh-east housing', direction: 'inbound', context: 'Interstate household goods into town multi-unit and suburban stock.' },
+    { label: 'Philadelphia ↔ Pittsburgh-east in-state long hauls', direction: 'inbound', context: 'Cross-state-of-PA career moves into Greensburg-area housing.' },
+    { label: 'Florida ↔ Western PA reverse family moves', direction: 'inbound', context: 'Interstate household goods; winter access contingency on rural edges.' },
+    { label: 'Northeast → Westmoreland professional corridors', direction: 'inbound', context: 'Employment inflows into western approach multi-family product.' },
+  ],
+};

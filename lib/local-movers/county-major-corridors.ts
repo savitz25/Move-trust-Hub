@@ -112,6 +112,20 @@ const CORRIDORS: Record<string, string> = {
   'south-carolina/anderson': 'I-85 · US-76 · SC-28 · SC-81',
   'south-carolina/florence': 'I-95 · I-20 · US-52 · US-76',
 
+  // ——— Illinois Core 12 ———
+  'illinois/cook': 'I-90/94 · I-55 · I-290 · I-294 · Lake Shore Drive · local arterial grid',
+  'illinois/dupage': 'I-88 · I-355 · I-294 links · IL-59 · Roosevelt Road corridors',
+  'illinois/lake': 'I-94 · I-294 links · US-41 · IL-60 · IL-120',
+  'illinois/will': 'I-55 · I-80 · I-355 · US-30 · IL-53 links',
+  'illinois/kane': 'I-88 · I-90 · IL-47 · Randall Road corridors',
+  'illinois/mchenry': 'US-14 · IL-31 · IL-47 · I-90 links',
+  'illinois/winnebago': 'I-39 · I-90 · US-20 · IL-251',
+  'illinois/madison': 'I-55 · I-70 · I-255 · IL-3 · US-40',
+  'illinois/st-clair': 'I-64 · I-255 · I-55/70 links · IL-15',
+  'illinois/sangamon': 'I-55 · I-72 · IL-4 · Clear Lake Ave corridors',
+  'illinois/champaign': 'I-57 · I-74 · US-45 · University corridors',
+  'illinois/peoria': 'I-74 · I-474 · IL-29 · US-24',
+
   // ——— Virginia Core 12 ———
   'virginia/fairfax': 'I-66 · I-495 · VA-28 · Dulles Toll Road · VA-236 · I-95 links',
   'virginia/prince-william': 'I-95 · I-66 · VA-234 · US-1 · Prince William Pkwy',
@@ -125,6 +139,20 @@ const CORRIDORS: Record<string, string> = {
   'virginia/norfolk': 'I-64 · I-264 · I-564 · Downtown Tunnel approaches · Naval Base access corridors',
   'virginia/stafford': 'I-95 · US-1 · VA-610 (Garrisonville) · VA-17',
   'virginia/spotsylvania': 'I-95 · VA-3 · US-1 · VA-208',
+
+  // ——— Pennsylvania Core 12 ———
+  'pennsylvania/philadelphia': 'I-95 · I-76 · I-676 · US-1 · Roosevelt Blvd · Broad Street',
+  'pennsylvania/allegheny': 'I-376 · I-279 · I-79 · Parkway East/West/North · PA-28',
+  'pennsylvania/montgomery': 'I-76 · I-476 · US-202 · PA-309 · PA-611',
+  'pennsylvania/bucks': 'I-95 · US-1 · PA-611 · US-202 links · PA-132',
+  'pennsylvania/delaware': 'I-95 · I-476 · US-1 · PA-3 · PA-352',
+  'pennsylvania/chester': 'US-30 · US-202 · PA-100 · I-76 links · PA-3',
+  'pennsylvania/lancaster': 'US-30 · US-222 · PA-283 · I-76 links · PA-23',
+  'pennsylvania/york': 'I-83 · US-30 · PA-74 · PA-462 · I-76 links',
+  'pennsylvania/berks': 'US-222 · US-422 · I-78 links · PA-61 · PA-12',
+  'pennsylvania/lehigh': 'I-78 · PA-22 · PA-309 · US-22 · PA-100',
+  'pennsylvania/northampton': 'I-78 · PA-33 · US-22 · PA-611 · PA-248',
+  'pennsylvania/westmoreland': 'I-76 · US-30 · PA-66 · I-70 links · PA-119',
 
   // ——— Tennessee Core 12 ———
   'tennessee/shelby': 'I-40 · I-55 · I-240 · I-69 links · US-51 · US-61',
@@ -183,7 +211,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Parkway)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
     v
   );
 }
