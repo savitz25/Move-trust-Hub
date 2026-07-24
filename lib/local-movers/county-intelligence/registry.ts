@@ -241,6 +241,15 @@ import { washingtonCountyMnIntelligence } from '@/lib/local-movers/county-intell
 import { olmstedCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/olmsted-mn';
 import { stLouisCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/st-louis-mn';
 import { stearnsCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/stearns-mn';
+// Wisconsin Core 8
+import { milwaukeeCountyWiIntelligence } from '@/lib/local-movers/county-intelligence/wisconsin/milwaukee-wi';
+import { daneCountyWiIntelligence } from '@/lib/local-movers/county-intelligence/wisconsin/dane-wi';
+import { waukeshaCountyWiIntelligence } from '@/lib/local-movers/county-intelligence/wisconsin/waukesha-wi';
+import { brownCountyWiIntelligence } from '@/lib/local-movers/county-intelligence/wisconsin/brown-wi';
+import { racineCountyWiIntelligence } from '@/lib/local-movers/county-intelligence/wisconsin/racine-wi';
+import { kenoshaCountyWiIntelligence } from '@/lib/local-movers/county-intelligence/wisconsin/kenosha-wi';
+import { outagamieCountyWiIntelligence } from '@/lib/local-movers/county-intelligence/wisconsin/outagamie-wi';
+import { winnebagoCountyWiIntelligence } from '@/lib/local-movers/county-intelligence/wisconsin/winnebago-wi';
 // Indiana Core 8
 import { marionCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/marion-in';
 import { hamiltonCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/hamilton-in';
@@ -254,7 +263,7 @@ import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-int
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / IN / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -490,6 +499,15 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   olmstedCountyMnIntelligence,
   stLouisCountyMnIntelligence,
   stearnsCountyMnIntelligence,
+  // Wisconsin Core 8
+  milwaukeeCountyWiIntelligence,
+  daneCountyWiIntelligence,
+  waukeshaCountyWiIntelligence,
+  brownCountyWiIntelligence,
+  racineCountyWiIntelligence,
+  kenoshaCountyWiIntelligence,
+  outagamieCountyWiIntelligence,
+  winnebagoCountyWiIntelligence,
   // Indiana Core 8
   marionCountyInIntelligence,
   hamiltonCountyInIntelligence,
@@ -852,6 +870,18 @@ export const MN_TIER1_CORE8 = [
   'olmsted',
   'st-louis',
   'stearns',
+] as const;
+
+/** Wisconsin Tier-1 Core 8 (Milwaukee + Madison + collars + Green Bay + Fox Cities + Oshkosh). */
+export const WI_TIER1_CORE8 = [
+  'milwaukee',
+  'dane',
+  'waukesha',
+  'brown',
+  'racine',
+  'kenosha',
+  'outagamie',
+  'winnebago',
 ] as const;
 
 /** Indiana Tier-1 Core 8. */

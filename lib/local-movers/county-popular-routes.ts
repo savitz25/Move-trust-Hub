@@ -5067,6 +5067,7 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'maryland') return MD_ROUTES[countySlug] ?? [];
   if (stateSlug === 'massachusetts') return MA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'minnesota') return MN_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'wisconsin') return WI_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   return [];
 }
@@ -5504,6 +5505,74 @@ const MN_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Stearns → Twin Cities reverse career pairs', direction: 'outbound', context: 'I-94 long hauls; confirm MnDOT vs FMCSA for the full route.' },
     { label: 'Stearns → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/minnesota-to-florida' },
     { label: 'Central MN / Fargo corridor pairs via I-94', direction: 'outbound', context: 'Regional hauls; FMCSA required once leaving Minnesota.' },
+  ],
+};
+
+
+const WI_ROUTES: Record<string, CountyPopularRoute[]> = {
+  milwaukee: [
+    { label: 'Within Milwaukee (Downtown / East Side ↔ Wauwatosa / Bay View)', direction: 'within', context: 'Elevator towers and neighborhood walk-ups vs west inner-ring multi-family — portal time on I-94 / I-43 dominates.' },
+    { label: 'Chicago / IL → Milwaukee professional & industrial housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and inner-ring stock; FMCSA required.' },
+    { label: 'Milwaukee ↔ Waukesha west-metro pairs', direction: 'within', context: 'Looks local on maps; I-94 freeflow and city vs HOA products differ.' },
+    { label: 'Milwaukee → Madison / Green Bay in-state pairs', direction: 'outbound', context: 'I-94 / I-41 long hauls; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Milwaukee → Florida / Arizona / Texas reverse exits', direction: 'outbound', context: 'Snowbird and permanent relocations; FMCSA for cross-state legs.' },
+    { label: 'Minnesota Twin Cities → Milwaukee career corridors', direction: 'inbound', context: 'Regional interstate pairs; confirm FMCSA for the full route.' },
+  ],
+  dane: [
+    { label: 'Within Dane (Isthmus / campus ↔ Fitchburg / Middleton / Sun Prairie)', direction: 'within', context: 'Isthmus multi-unit vs suburb-ring HOA product — Beltline portal time dominates.' },
+    { label: 'Milwaukee / Chicago → Madison capital & university housing', direction: 'inbound', context: 'Interstate or long in-state hauls into multi-unit and professional stock.' },
+    { label: 'UW–Madison semester inflows → campus multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'Madison → Milwaukee / Twin Cities reverse career pairs', direction: 'outbound', context: 'I-94 / I-90 long hauls; confirm Wisconsin consumer controls vs FMCSA for the full route.' },
+    { label: 'Dane → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Illinois border → Madison professional corridors', direction: 'inbound', context: 'Regional interstate pairs; FMCSA for cross-state legs.' },
+  ],
+  waukesha: [
+    { label: 'Within Waukesha (Brookfield / New Berlin ↔ Lake Country)', direction: 'within', context: 'West-metro HOA multi-family vs lakeshore SFH — empty miles matter.' },
+    { label: 'Milwaukee → Waukesha west-metro housing', direction: 'inbound', context: 'I-94 collar logistics; portal time dominates at peak.' },
+    { label: 'Chicago / IL → Brookfield corporate suburbs', direction: 'inbound', context: 'Interstate household goods into multi-family and executive SFH; FMCSA required.' },
+    { label: 'Waukesha ↔ Milwaukee multi-county pairs', direction: 'within', context: 'City vs west-metro access products differ — keep county lines clear.' },
+    { label: 'Waukesha → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Waukesha → Madison in-state pairs', direction: 'outbound', context: 'I-94 long locals; written estimates and insurance for pure in-state jobs.' },
+  ],
+  brown: [
+    { label: 'Within Brown (Downtown Green Bay ↔ De Pere / Howard)', direction: 'within', context: 'Near-core multi-unit vs northern growth SFH — not a Fox Cities clone.' },
+    { label: 'Fox Cities / Milwaukee → Green Bay regional housing', direction: 'inbound', context: 'I-41 long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Green Bay ↔ Appleton / Oshkosh regional pairs', direction: 'within', context: 'I-41 northeast logistics; keep county lines clear.' },
+    { label: 'Midwest → Green Bay manufacturing & healthcare corridors', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Brown → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Green Bay event-weekend staging constraints', direction: 'within', context: 'Home schedules reshape curb and freeflow — prefer mid-week when flexible.' },
+  ],
+  racine: [
+    { label: 'Within Racine (Downtown / lakeshore ↔ Mount Pleasant / Burlington)', direction: 'within', context: 'Mid-size lake-city stock vs HOA growth and western empty miles.' },
+    { label: 'Milwaukee → Racine mid-corridor housing', direction: 'inbound', context: 'I-94 logistics; portal time dominates at peak.' },
+    { label: 'Racine ↔ Kenosha southeast pairs', direction: 'within', context: 'Lake corridor multi-county logistics; keep county lines clear.' },
+    { label: 'Chicago / IL → Racine mid-size housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Racine → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Racine → Milwaukee reverse career pairs', direction: 'outbound', context: 'I-94 northbound; written estimates and insurance for pure in-state jobs.' },
+  ],
+  kenosha: [
+    { label: 'Within Kenosha (Downtown / lakeshore ↔ Pleasant Prairie / Twin Lakes)', direction: 'within', context: 'IL-border growth multi-family vs lakeshore and western lake edges.' },
+    { label: 'Chicago / Lake County IL → Kenosha border housing', direction: 'inbound', context: 'Short interstate hops need FMCSA even when map miles look local.' },
+    { label: 'Kenosha ↔ Racine / Milwaukee I-94 pairs', direction: 'within', context: 'Southeast collar logistics; portal time dominates at peak.' },
+    { label: 'Illinois reverse-commute relo → Pleasant Prairie multi-family', direction: 'inbound', context: 'HOA multi-unit and hard report dates dominate growth corridors.' },
+    { label: 'Kenosha → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Kenosha → Milwaukee in-state pairs', direction: 'outbound', context: 'I-94 northbound; written estimates and insurance for pure in-state jobs.' },
+  ],
+  outagamie: [
+    { label: 'Within Outagamie (Downtown Appleton ↔ Grand Chute / Kaukauna)', direction: 'within', context: 'Fox Cities multi-unit vs river-town product — not an Oshkosh clone.' },
+    { label: 'Green Bay / Oshkosh → Appleton Fox Cities pairs', direction: 'within', context: 'I-41 regional logistics; keep county lines clear.' },
+    { label: 'Milwaukee / Midwest → Appleton manufacturing housing', direction: 'inbound', context: 'Interstate or long in-state hauls into multi-unit and suburban stock.' },
+    { label: 'Outagamie → Green Bay / Milwaukee reverse career pairs', direction: 'outbound', context: 'I-41 long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Outagamie → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Manufacturing workforce relo corridors in the Fox Cities', direction: 'inbound', context: 'Shift calendars and industrial freeflow reshape crew timing.' },
+  ],
+  winnebago: [
+    { label: 'Within Winnebago County, WI (Downtown / campus Oshkosh ↔ Neenah / Menasha)', direction: 'within', context: 'Oshkosh multi-unit vs northern Fox Cities edges — not an Appleton clone.' },
+    { label: 'Appleton → Oshkosh I-41 pairs', direction: 'within', context: 'Fox Valley multi-county logistics; clarify Outagamie vs Winnebago addresses.' },
+    { label: 'UW Oshkosh semester inflows → campus multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'AirVenture week freeflow constraints near Oshkosh', direction: 'within', context: 'Late July congestion rewrites local portal times — prefer other weeks when flexible.' },
+    { label: 'Winnebago County, WI → Florida reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Milwaukee / Midwest → Oshkosh regional housing', direction: 'inbound', context: 'Interstate or long in-state hauls into multi-unit and suburban stock.' },
   ],
 };
 

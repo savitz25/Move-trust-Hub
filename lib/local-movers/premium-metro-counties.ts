@@ -185,6 +185,15 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'minnesota', countySlug: 'olmsted' },
   { stateSlug: 'minnesota', countySlug: 'st-louis' },
   { stateSlug: 'minnesota', countySlug: 'stearns' },
+  // Wisconsin Core 8
+  { stateSlug: 'wisconsin', countySlug: 'milwaukee' },
+  { stateSlug: 'wisconsin', countySlug: 'dane' },
+  { stateSlug: 'wisconsin', countySlug: 'waukesha' },
+  { stateSlug: 'wisconsin', countySlug: 'brown' },
+  { stateSlug: 'wisconsin', countySlug: 'racine' },
+  { stateSlug: 'wisconsin', countySlug: 'kenosha' },
+  { stateSlug: 'wisconsin', countySlug: 'outagamie' },
+  { stateSlug: 'wisconsin', countySlug: 'winnebago' },
 ] as const;
 
 const premiumMetroKeySet = new Set(

@@ -172,6 +172,16 @@ const CORRIDORS: Record<string, string> = {
   'minnesota/st-louis': 'I-35 · US-53 · MN-61 (North Shore) · local Duluth grid',
   'minnesota/stearns': 'I-94 · MN-15 · MN-23 · US-10',
 
+  // ——— Wisconsin Core 8 ———
+  'wisconsin/milwaukee': 'I-94 · I-43 · I-894 · US-41/45 · local arterial grid',
+  'wisconsin/dane': 'I-39/90/94 · US-12 · US-18/151 · Beltline corridors',
+  'wisconsin/waukesha': 'I-94 · US-18 · WI-59 · WI-164 · local arterial grid',
+  'wisconsin/brown': 'I-41 · I-43 · US-41 · WI-29 · local Green Bay grid',
+  'wisconsin/racine': 'I-94 · WI-20 · WI-31 · WI-32 · local arterial grid',
+  'wisconsin/kenosha': 'I-94 · WI-50 · WI-158 · WI-31 · IL border approaches',
+  'wisconsin/outagamie': 'I-41 · US-10 · WI-441 · WI-47 · local Fox Cities grid',
+  'wisconsin/winnebago': 'I-41 · US-45 · WI-21 · WI-44 · local Oshkosh grid',
+
   // ——— Michigan Core 10 ———
   'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',
   'michigan/oakland': 'I-75 · I-696 · M-59 · Telegraph · Woodward corridors',
