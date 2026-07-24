@@ -120,18 +120,25 @@ async function checkOne(t: (typeof TARGETS)[0]): Promise<Check> {
   };
 }
 
-const rows: Check[] = [];
-for (const t of TARGETS) {
-  rows.push(await checkOne(t));
+async function main() {
+  const rows: Check[] = [];
+  for (const t of TARGETS) {
+    rows.push(await checkOne(t));
+  }
+
+  const report = {
+    generatedAt: new Date().toISOString(),
+    base: BASE,
+    passCount: rows.filter((r) => r.pass).length,
+    failCount: rows.filter((r) => !r.pass).length,
+    rows,
+  };
+
+  console.log(JSON.stringify(report, null, 2));
+  if (report.failCount > 0) process.exit(1);
 }
 
-const report = {
-  generatedAt: new Date().toISOString(),
-  base: BASE,
-  passCount: rows.filter((r) => r.pass).length,
-  failCount: rows.filter((r) => !r.pass).length,
-  rows,
-};
-
-console.log(JSON.stringify(report, null, 2));
-if (report.failCount > 0) process.exit(1);
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
