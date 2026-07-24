@@ -55,6 +55,15 @@ import { polkCountyIntelligence } from '@/lib/local-movers/county-intelligence/f
 import { brevardCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/brevard-fl';
 import { pascoCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/pasco-fl';
 import { volusiaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/volusia-fl';
+// Florida Tier 2 Wave 1
+import { manateeCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/manatee-fl';
+import { collierCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/collier-fl';
+import { seminoleCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/seminole-fl';
+import { osceolaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/osceola-fl';
+import { lakeCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/lake-fl';
+import { stLucieCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/st-lucie-fl';
+import { marionCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/marion-fl';
+import { escambiaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/escambia-fl';
 // Texas Core 12
 import { harrisCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/harris-tx';
 import { dallasCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/dallas-tx';
@@ -507,7 +516,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   tulareCountyIntelligence,
   venturaCountyIntelligence,
   yoloCountyIntelligence,
-  // Florida Core 12
+  // Florida Tier 1 Core (flagship metros — do not demote)
   miamiDadeCountyIntelligence,
   browardCountyIntelligence,
   palmBeachCountyIntelligence,
@@ -516,10 +525,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   pinellasCountyIntelligence,
   duvalCountyIntelligence,
   leeCountyIntelligence,
+  // Florida Tier 2 Wave 1 (collars + independents)
   polkCountyIntelligence,
   brevardCountyIntelligence,
-  pascoCountyIntelligence,
   volusiaCountyIntelligence,
+  pascoCountyIntelligence,
+  manateeCountyIntelligence,
+  collierCountyIntelligence,
+  seminoleCountyIntelligence,
+  osceolaCountyIntelligence,
+  lakeCountyIntelligence,
+  stLucieCountyIntelligence,
+  marionCountyIntelligence,
+  escambiaCountyIntelligence,
   // Texas Tier 1 Core 5 (flagship metros — do not demote)
   harrisCountyIntelligence,
   dallasCountyIntelligence,
@@ -1045,8 +1063,11 @@ export const CA_TIER1_ALL = [
   ...CA_TIER2_WAVE2,
 ] as const;
 
-/** Florida Tier-1 Core 12. */
-export const FL_TIER1_CORE12 = [
+/**
+ * Florida Tier-1 Core 9 — flagship metros protected from Tier 2 demotion.
+ * Includes Sarasota conceptually even if pack is not yet present.
+ */
+export const FL_TIER1_CORE9 = [
   'miami-dade',
   'broward',
   'palm-beach',
@@ -1055,10 +1076,38 @@ export const FL_TIER1_CORE12 = [
   'pinellas',
   'duval',
   'lee',
+  'sarasota',
+] as const;
+
+/**
+ * @deprecated Historical name — polk/brevard/pasco/volusia moved to FL_TIER2_WAVE1.
+ * Prefer FL_TIER1_CORE9 + FL_TIER2_WAVE1.
+ */
+export const FL_TIER1_CORE12 = [
+  ...FL_TIER1_CORE9.filter((s) => s !== 'sarasota'),
   'polk',
   'brevard',
   'pasco',
   'volusia',
+] as const;
+
+/**
+ * Florida Tier 2 Wave 1 — collars + independent secondary metros on the locked
+ * Tier 2 content contract (Compared with parent, 2–4 zones, schools+hospitals only).
+ */
+export const FL_TIER2_WAVE1 = [
+  'polk',
+  'brevard',
+  'volusia',
+  'pasco',
+  'manatee',
+  'collier',
+  'seminole',
+  'osceola',
+  'lake',
+  'st-lucie',
+  'marion',
+  'escambia',
 ] as const;
 
 /**

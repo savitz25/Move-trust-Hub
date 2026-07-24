@@ -1,149 +1,103 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  finalizeFlTier2Pack,
+  FL_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/florida/fl-tier2-shared';
 
 /**
- * Hand-crafted Brevard County (Space Coast) moving intelligence.
- * Coastal + mainland split, NASA/tourism, bridges, tech/military relocations.
+ * Brevard County — Florida Tier 2 (Space Coast secondary market).
+ * Secondary-market contract vs Orange Tier 1 parent — Melbourne / Palm Bay /
+ * Titusville coastal–mainland split, not Orlando theme-park logistics.
  */
-export const brevardCountyIntelligence: CountyIntelligencePack = {
-  stateSlug: 'florida',
+export const brevardCountyIntelligence: CountyIntelligencePack = finalizeFlTier2Pack({
   countySlug: 'brevard',
-  hubTitle: 'Brevard County Space Coast Moving Intelligence Hub',
-  eyebrow: 'Brevard County · Space Coast · Coastal & mainland guide',
-  h1: 'Moving in Brevard County: Space Coast Bridges, Beachside Condos & Mainland Growth Zones',
+  hubTitle: 'Brevard County Moving Intelligence Hub',
+  eyebrow: 'Brevard · Space Coast · Melbourne / Palm Bay / Titusville',
+  h1: 'Moving in Brevard County: Space Coast — Melbourne, Palm Bay & Titusville',
   heroOpener:
-    'Brevard County is Florida’s Space Coast — Cocoa Beach and beachside barrier strips, Melbourne and Palm Bay mainland sprawl, Titusville north-county character near Kennedy Space Center, Viera planned villages, and Indian River Lagoon bridges that split every “local” estimate in two. Launch tourism, Patrick SFB / military timelines, and A1A summer traffic are operational inputs. This is not a Miami high-rise script or a Tampa causeway clone with different city names.',
+    'Brevard County is Florida’s Space Coast — Melbourne and Palm Bay mainland sprawl, Cocoa/Rockledge mid-county, Titusville north near Kennedy Space Center, and beachside A1A barrier strips — not Orange County theme-park arterials with a different nameplate. I-95, US-1, FL-528, A1A, and FL-520 set lagoon-bridge and north–south timing. Compared with Orange, you get freer mid-day freeflow than tourist-core Orlando gridlock, true coastal/A1A product, and aerospace employment cycles that reshape relocation volume. This guide is for people moving in Brevard as a secondary market with its own role — not a recycled Orlando or Miami beach script.',
   heroCredibility:
-    'Space Coast bridges · Beachside vs mainland · NASA/tourism peaks · FDACS Ch. 507 (intrastate) · FMCSA when interstate · Curated listings',
-  collapsibleDeepContent: true,
-  sectionOrder: [
-    'whatMakesDifferent',
-    'zones',
-    'costDrivers',
-    'seasonal',
-    'specialized',
-    'relocation',
-    'resources',
-  ],
+    'Space Coast · Beachside vs mainland · Aerospace cycles · FDACS Ch. 507 (intrastate) · FMCSA when interstate · Curated listings',
+  majorCorridors: 'I-95 · US-1 · FL-528 · A1A · FL-520',
+  parentCompare: {
+    parentLabel: 'Orange County',
+    parentHref: '/local-movers/florida/orange',
+    title: 'Compared with Orange County',
+    intro:
+      'Brevard is the Space Coast secondary market — Melbourne/Palm Bay mainland, Cocoa/Rockledge mid-county, Titusville north, and beachside A1A — not a drop-in template for Orlando tourist arterials or theme-park guest logistics. Use Orange as the dense Central Florida parent contrast.',
+    bullets: [
+      {
+        title: 'Drive time & corridor relationship',
+        detail:
+          'Orange crews fight I-4 tourist peaks, FL-408, and multi-hour cross-metro pairs through guest traffic. Brevard pairs ride I-95, US-1, FL-528, A1A, and FL-520 — freer mid-day than Orlando core, still peak-heavy on lagoon bridges and A1A summer weekends. Titusville ↔ Palm Bay is a long local, not a short Orlando suburb hop. Portal-to-portal time is real; it is not a theme-park dock job.',
+      },
+      {
+        title: 'Housing stock differences',
+        detail:
+          'Orange mixes tourist multifamily, planned suburbs, and dense apartment product under one county label. Brevard’s ladder is beachside condos and elevated coastal SFH, Melbourne/Viera planned HOAs, Palm Bay larger-lot growth, and Titusville small-city stock — far more barrier-island elevators and lagoon-edge access, far less park-adjacent guest density.',
+      },
+      {
+        title: 'Truck access, HOA & density',
+        detail:
+          'Orange planned villages need HOA packets; tourist cores add curb and elevator friction. Brevard defaults to a beachside vs mainland split — A1A sand staging and reserved elevators on the barrier strip, HOA COI in Viera-area growth, and freer driveway work in many Palm Bay tracts. Expect bridge choke points first, then the truck.',
+      },
+      {
+        title: 'Rough cost posture (qualitative)',
+        detail:
+          'Local Brevard quotes often sit near or slightly below dense Orange tourist-corridor rates for comparable square footage when access is a simple mainland driveway — beach elevators, bridge delay, north–south empty miles, and launch-week scarcity still push prices up. Expect secondary-coast labor rates with coastal access friction as the main premium, not theme-park scarcity alone.',
+      },
+      {
+        title: 'Role difference',
+        detail:
+          'Brevard is the Space Coast employment and beach market — aerospace, military-adjacent timelines, and coastal living — not Orange’s tourism job center and not a thin inland bedroom. Treat it as its own market when matching crews and rate cards.',
+      },
+    ],
+  },
   whatMakesDifferent: {
     title: 'What makes moving in Brevard County different',
     intro:
-      'Barrier-island bridges, launch-week tourism, and a long north–south county shape estimates more than generic Central Florida suburban advice.',
+      'Space Coast realities — coastal/A1A logistics, aerospace employment cycles, lagoon bridges, and humidity heat — that change estimates.',
     bullets: [
       {
         title: 'Beachside vs mainland is the primary split',
         detail:
-          'Cocoa Beach, Satellite Beach, Indialantic, and Melbourne Beach are different products from Palm Bay, Viera, and west Melbourne tracts. Bridge crossings and sand access change truck choice and timing.',
+          'Cocoa Beach, Satellite Beach, and Melbourne Beach are different products from Palm Bay, Viera, and west Melbourne tracts. Bridge crossings and sand access change truck choice and timing.',
       },
       {
-        title: 'Lagoon bridges are line items',
+        title: 'Lagoon bridges & A1A freeflow are line items',
         detail:
-          'Pineda, Eau Gallie, Melbourne, Cocoa, and other crossings create choke points. Peak beach traffic turns short map distances into long portal-to-portal hours.',
+          'Peak beach and launch traffic turns short map distances into long portal-to-portal hours. Ask whether quotes include bridge delay assumptions.',
       },
       {
-        title: 'Space Coast tourism & launch calendars',
+        title: 'Aerospace & military relocation cycles',
         detail:
-          'Launch viewing weeks, cruise/port activity, and beach tourism pack A1A and causeways. Guest traffic can double a “local” truck hour near Cocoa Beach corridors.',
+          'Kennedy Space Center region employment, aerospace contractors, and Patrick SFB–adjacent moves bring PCS-like timelines and high-value equipment inventories more often than pure tourism markets.',
       },
       {
-        title: 'NASA, tech & military relocation patterns',
+        title: 'Coastal humidity & heat on open staging',
         detail:
-          'Kennedy Space Center region employment, aerospace contractors, and Patrick SFB / military-adjacent moves bring PCS-like timelines and high-value equipment inventories more often than pure tourism markets.',
+          'Hot humid summers stress crews, electronics, and sealed packing. Prefer early starts; treat mid-afternoon beachside load-outs as high risk even when the map looks short.',
       },
-      {
-        title: 'Long north–south county distances',
-        detail:
-          'Titusville ↔ Palm Bay is not a quick local. US-1 and I-95 pairs need honest drive assumptions; crews staged in Melbourne may price north-county differently.',
-      },
-      {
-        title: 'Viera and planned-community HOA rules',
-        detail:
-          'Master-planned villages often require COIs, approved hours, and driveway/paver protections that beach cottages do not — paperwork is part of the job.',
-      },
-      {
-        title: 'Coastal wind, salt & storm season',
-        detail:
-          'Salt air, elevated homes, and hurricane windows affect packing, storage, and reschedule policies — especially beachside.',
-      },
-      {
-        title: 'Florida licensing: FDACS Ch. 507 vs FMCSA',
-        detail:
-          'Intrastate household moves generally require FDACS registration under Chapter 507. Interstate legs need FMCSA authority. Match the legal name on the estimate to the correct lookup.',
-      },
+      FL_TIER2_REG_BULLET,
     ],
   },
-  zonesHeading: 'Brevard County zones: beachside, mainland metros & north Space Coast',
+  zonesHeading: 'Brevard zones: Melbourne/Palm Bay, Cocoa/Rockledge, Titusville north & beachside A1A',
   zonesIntro:
-    'Price beachside elevators, mainland HOAs, and Titusville north-county pairs as separate products. “Brevard local” without both sides of the lagoon understates the job.',
+    'Three to four sharp products — not a six-zone dump. Melbourne/Palm Bay mainland, Cocoa/Rockledge mid-county, Titusville north, and beachside A1A price and stage differently under the same Space Coast.',
   zones: [
     {
-      id: 'cocoa-beachside',
-      name: 'Cocoa Beach, Cape Canaveral & mid-beachside',
-      shortName: 'Cocoa Beachside',
-      neighborhoods: [
-        'Cocoa Beach',
-        'Cape Canaveral',
-        'Cocoa beachside corridors',
-        'A1A mid-county multifamily',
-        'Port Canaveral edge influence',
-      ],
-      housingTypes:
-        'Beach condos, elevated coastal SFH, multifamily near A1A, some cottages',
-      challenges: [
-        'Elevator/COI windows and sand protection',
-        'A1A tourist parking scarcity',
-        'Bridge timing from mainland staging',
-        'Launch-week and cruise traffic spikes',
-      ],
-      moverTips:
-        'Reserve elevators early. Avoid launch and peak summer weekend windows when flexible. Budget floor protection and possible shuttle staging on tight beach blocks.',
-      cityKeywords: [
-        'cocoa beach',
-        'cape canaveral',
-        'port canaveral',
-        'a1a',
-      ],
-    },
-    {
-      id: 'satellite-indialantic',
-      name: 'Satellite Beach, Indian Harbour, Indialantic & Melbourne Beach',
-      shortName: 'South beachside',
-      neighborhoods: [
-        'Satellite Beach',
-        'Indian Harbour Beach',
-        'Indialantic',
-        'Melbourne Beach',
-        'South A1A corridors',
-      ],
-      housingTypes:
-        'Beach SFH, low- and mid-rise condos, elevated homes, quieter barrier residential stock',
-      challenges: [
-        'Narrow beach streets and limited truck swing room',
-        'Bridge dependency for mainland pairs',
-        'Sand tracking and salt-air packing needs',
-        'Summer weekend visitor congestion',
-      ],
-      moverTips:
-        'Share driveway and street-width photos. Prefer weekday beachside loads. Confirm building rules for condos in writing before the final estimate.',
-      cityKeywords: [
-        'satellite beach',
-        'indian harbour',
-        'indialantic',
-        'melbourne beach',
-      ],
-    },
-    {
-      id: 'melbourne-viera',
-      name: 'Melbourne, Viera & central mainland',
-      shortName: 'Melbourne / Viera',
+      id: 'melbourne-palm-bay',
+      name: 'Melbourne / Palm Bay Mainland',
+      shortName: 'Melbourne / Palm Bay',
       neighborhoods: [
         'Melbourne',
-        'Viera',
-        'Suntree edge',
+        'Palm Bay',
+        'Viera / Suntree edges',
         'West Melbourne',
-        'Central mainland commercial corridors',
+        'South mainland growth tracts',
       ],
       housingTypes:
-        'Suburban SFH, master-planned HOAs, townhomes, apartments, some older core stock',
+        'Suburban SFH, master-planned HOAs, townhomes, apartments, larger-lot south mainland product',
       challenges: [
         'HOA COI and approved hours in Viera-area villages',
         'I-95 / US-1 congestion on north–south pairs',
@@ -151,9 +105,10 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
         'Cross-lagoon hauls to beachside elevators',
       ],
       moverTips:
-        'Send HOA packets with the estimate. Treat Melbourne ↔ Cocoa Beach as bridge-time locals. Mid-week early starts beat school and beach traffic.',
+        'Send HOA packets with the estimate. Treat Melbourne ↔ Cocoa Beach as bridge-time locals. Mid-week early starts beat school and beach traffic. Price Palm Bay ↔ Titusville as a long local.',
       cityKeywords: [
         'melbourne',
+        'palm bay',
         'viera',
         'suntree',
         'west melbourne',
@@ -161,36 +116,36 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
       ],
     },
     {
-      id: 'palm-bay-south',
-      name: 'Palm Bay & south mainland growth',
-      shortName: 'Palm Bay / South',
+      id: 'cocoa-rockledge',
+      name: 'Cocoa / Rockledge Mid-County',
+      shortName: 'Cocoa / Rockledge',
       neighborhoods: [
-        'Palm Bay',
-        'Southwest Palm Bay growth',
-        'Malabar edge',
-        'South mainland arterials',
-        'Larger-lot southern pockets',
+        'Cocoa',
+        'Rockledge',
+        'Merritt Island lagoon mix',
+        'Mid-county US-1 corridors',
+        'Historic Cocoa Village edge',
       ],
       housingTypes:
-        'Suburban and semi-rural SFH, growing tracts, multifamily pockets, larger lots',
+        'Mix of SFH, multifamily, lagoon-adjacent homes, older and updated stock',
       challenges: [
-        'Long empty miles to north-county and beachside',
-        'Variable driveway quality on larger lots',
-        'Heat on open suburban streets',
-        'Arterial congestion at school peaks',
+        'Bridge choices to beachside and Merritt Island',
+        'Historic-core tight streets near Cocoa Village',
+        'Cross-zone pairs north and south at peak',
+        'Varied elevator vs non-elevator multifamily',
       ],
       moverTips:
-        'Price Palm Bay ↔ Titusville or Palm Bay ↔ Cocoa Beach pairs as long locals. Share long-driveway details. Confirm HOA rules in newer tracts.',
+        'Name preferred bridges on estimates. Share staging constraints for older cores. Clarify Merritt Island vs mainland addresses — they are different access problems.',
       cityKeywords: [
-        'palm bay',
-        'malabar',
-        'south brevard',
-        'southwest palm bay',
+        'cocoa',
+        'rockledge',
+        'merritt island',
+        'cocoa village',
       ],
     },
     {
       id: 'titusville-north',
-      name: 'Titusville, north mainland & KSC-adjacent',
+      name: 'Titusville / North Space Coast',
       shortName: 'Titusville / North',
       neighborhoods: [
         'Titusville',
@@ -217,43 +172,45 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
       ],
     },
     {
-      id: 'cocoa-rockledge-mainland',
-      name: 'Cocoa, Rockledge & mid-mainland',
-      shortName: 'Cocoa / Rockledge',
+      id: 'beachside-a1a',
+      name: 'Beachside A1A (Cocoa Beach to Melbourne Beach)',
+      shortName: 'Beachside A1A',
       neighborhoods: [
-        'Cocoa',
-        'Rockledge',
-        'Merritt Island mainland/lagoon mix',
-        'Mid-county US-1 corridors',
-        'Historic Cocoa Village edge',
+        'Cocoa Beach',
+        'Cape Canaveral',
+        'Satellite Beach / Indian Harbour',
+        'Indialantic',
+        'Melbourne Beach',
       ],
       housingTypes:
-        'Mix of SFH, multifamily, lagoon-adjacent homes, older and updated stock',
+        'Beach condos, elevated coastal SFH, low- and mid-rise multifamily, cottages near A1A',
       challenges: [
-        'Bridge choices to beachside and Merritt Island',
-        'Historic-core tight streets near Cocoa Village',
-        'Cross-zone pairs north and south at peak',
-        'Varied elevator vs non-elevator multifamily',
+        'Elevator/COI windows and sand protection',
+        'A1A tourist parking scarcity',
+        'Bridge timing from mainland staging',
+        'Launch-week and summer weekend traffic spikes',
       ],
       moverTips:
-        'Name preferred bridges on estimates. Share staging constraints for older cores. Clarify Merritt Island vs mainland addresses — they are different access problems.',
+        'Reserve elevators early. Share street-width and driveway photos. Prefer weekday beachside loads. Budget floor protection and possible shuttle staging on tight A1A blocks.',
       cityKeywords: [
-        'cocoa',
-        'rockledge',
-        'merritt island',
-        'cocoa village',
+        'cocoa beach',
+        'cape canaveral',
+        'satellite beach',
+        'indialantic',
+        'melbourne beach',
+        'a1a',
       ],
     },
   ],
   costDrivers: {
     title: 'Pricing & cost drivers inside Brevard County',
     intro:
-      'Bridges, beach elevators, north–south distance, and launch-week traffic move quotes more than square footage alone.',
+      'Same square footage prices differently by lagoon bridges, beach elevators, north–south distance, and whether the job is mainland HOA or A1A coastal.',
     drivers: [
       {
-        title: 'Lagoon bridge delay risk',
+        title: 'Lagoon bridge & A1A delay risk',
         detail:
-          'Peak beach and launch traffic turns hourly jobs into longer billable days on cross-lagoon pairs.',
+          'Peak beach and launch traffic turns hourly jobs into longer billable days on cross-lagoon and beach-strip pairs.',
       },
       {
         title: 'Beachside elevator & sand labor',
@@ -261,30 +218,15 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
           'COIs, reserved elevators, floor protection, and tight street staging stack on barrier islands.',
       },
       {
-        title: 'North–south empty miles',
+        title: 'North–south empty miles & HOA soft costs',
         detail:
-          'Titusville ↔ Palm Bay and similar pairs burn portal-to-portal time that “Brevard local” labels hide.',
-      },
-      {
-        title: 'HOA soft costs in Viera-area growth',
-        detail:
-          'Approved hours and paperwork compress schedule options and add admin labor.',
-      },
-      {
-        title: 'Launch / tourism peak scarcity',
-        detail:
-          'Preferred crews and beachside elevators tighten around major launches and summer weekends.',
-      },
-      {
-        title: 'Storm-season flexibility',
-        detail:
-          'Coastal jobs may need weather holds, storage pivots, or multi-day splits during hurricane season.',
+          'Titusville ↔ Palm Bay pairs burn portal-to-portal time; Viera-area approved hours compress schedule options on mainland growth jobs.',
       },
     ],
     ranges: [
       {
         label: 'Studio / 1BR (same zone, simple access)',
-        value: '$450–$1,100+',
+        value: '$500–$1,200+',
         note: 'Higher with beach elevators, bridges, or launch-week windows',
       },
       {
@@ -293,81 +235,76 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
         note: 'HOA soft costs and cross-lagoon hauls trend up',
       },
       {
-        label: '3–4+ BR (beachside / long north–south / elevated coastal)',
-        value: '$2,200–$6,000+',
+        label: '3–4+ BR (beachside / long north–south)',
+        value: '$2,400–$6,000+',
         note: 'Barrier elevators and Titusville–Palm Bay pairs price highest',
-      },
-      {
-        label: 'Typical 2-person crew rate',
-        value: '$100–$160+/hr',
-        note: 'Portal-to-portal; packing and 3-person crews scale up',
       },
     ],
   },
   seasonal: {
-    title: 'Seasonal, launch & storm intelligence',
+    title: 'Seasonal & humidity calendar intelligence',
     intro:
-      'Brevard peaks follow beach summers, launch calendars, snowbird winters in coastal condos, and hurricane season.',
+      'Brevard peaks follow beach summers, launch calendars, aerospace relocation windows, and hurricane season — not Orlando park calendars alone.',
     items: [
       {
-        title: 'Summer beach tourism (Memorial Day–Labor Day)',
+        title: 'Summer beach & humidity peak: roughly Memorial Day – Labor Day',
         detail:
-          'A1A and bridges worsen on weekends. Prefer weekday beachside condo moves when flexible.',
+          'A1A and bridges worsen on weekends. Prefer weekday beachside loads; plan early starts and heat-safe packing for humidity stress.',
       },
       {
-        title: 'Launch and major viewing events',
+        title: 'Launch weeks & aerospace move clusters',
         detail:
-          'Road congestion near viewing corridors and hotels can stall trucks. Confirm launch calendars against load windows.',
-      },
-      {
-        title: 'Winter coastal seasonal demand',
-        detail:
-          'Some beachside buildings and retiree moves tighten elevators and preferred crews — book early.',
-      },
-      {
-        title: 'Hurricane season (June–November)',
-        detail:
-          'Build flexible date language for coastal addresses. Ask about storage and reschedule policies before deposit.',
+          'Road congestion near viewing corridors and contractor relocation spikes can stall trucks. Confirm launch calendars and report dates against load windows.',
       },
       {
         title: 'Best value: mid-month Tue–Thu, early start',
         detail:
-          'Beat heat, beach traffic, and school peaks. Still honor HOA weekday rules in planned villages.',
+          'Still honor HOA weekday rules in planned villages. Early starts beat heat, humidity, and residual beach traffic even in shoulder seasons.',
       },
     ],
   },
   specialized: [
     {
-      id: 'beachside-bridges',
-      title: 'Beachside condos, A1A access & lagoon bridge logistics',
+      id: 'coastal-a1a',
+      title: 'Coastal / A1A & lagoon bridge logistics',
       intro:
-        'Brevard’s signature operational problem is the barrier–mainland split across Indian River Lagoon bridges.',
+        'Brevard’s signature operational problem is the barrier–mainland split across Indian River Lagoon bridges and A1A staging.',
       bullets: [
         'Name origin and destination sides of the lagoon on every estimate.',
         'Reserve beach condo elevators early; get COI naming requirements in writing.',
         'Budget sand protection and possible shuttle staging on tight A1A blocks.',
         'Avoid peak summer weekend and major launch windows when dates are flexible.',
-        'Confirm truck length limits on narrow beachside streets before dispatch.',
       ],
     },
     {
-      id: 'space-coast-relocations',
-      title: 'Space industry, military & long north–south mainland module',
+      id: 'aerospace-employment',
+      title: 'Aerospace employment cycles & long north–south',
       intro:
-        'Aerospace, Patrick SFB adjacency, and a long county create relocation patterns that pure tourism markets do not.',
+        'Space industry and military-adjacent timelines create relocation patterns that pure tourism markets do not — on a long north–south county.',
       bullets: [
         'Share report dates, storage needs, and whether the job is FDACS intrastate or FMCSA interstate.',
         'Inventory high-value electronics and workshop gear carefully for tech/aerospace households.',
         'Price Titusville ↔ Melbourne/Palm Bay pairs as long locals with honest I-95 / US-1 time.',
         'Send Viera and other HOA packets with the survey for planned-community destinations.',
-        'Ask about climate-controlled storage if launch or storm timing forces a split move.',
+      ],
+    },
+    {
+      id: 'humidity-heat',
+      title: 'Humidity & coastal heat staging',
+      intro:
+        'Hot humid summers define Space Coast crew days more than inland Central Florida shade assumptions.',
+      bullets: [
+        'Prefer 6–10 a.m. starts in peak summer; treat mid-afternoon beachside loads as high risk.',
+        'Request shaded staging where possible and heat-safe packing for electronics and sealed goods.',
+        'Plan water, rotation, and realistic crew endurance on sand and asphalt approaches.',
+        'If the job runs long, discuss split-day options rather than pushing into peak heat and humidity.',
       ],
     },
   ],
   relocation: {
-    title: 'Considering a move to Brevard County?',
+    title: 'Schools & hospitals for relocators',
     intro:
-      'Beachside living, Viera planned suburbs, Palm Bay value, and Titusville space-coast character are different bets — pick bridge tolerance first, then validate schools and flood risk.',
+      'Beachside living, Melbourne/Viera planned suburbs, and Titusville space-coast character are different bets — validate schools and healthcare by pocket, then plan for bridges.',
     modules: [
       {
         id: 'schools',
@@ -378,22 +315,17 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
           {
             title: 'Zone before beach or Viera branding',
             detail:
-              'Use district boundary tools. Beachside and mainland marketing names can span multiple feeders.',
+              'Use district boundary tools. Beachside and mainland marketing names can span multiple feeders — verify with official maps.',
           },
           {
             title: 'Growth pockets',
             detail:
-              'Viera and south mainland growth can pressure capacity — verify current enrollment and construction plans.',
-          },
-          {
-            title: 'Higher education presence',
-            detail:
-              'Eastern Florida State College and nearby university partnerships shape some rental and traffic patterns.',
+              'Viera and south mainland growth can pressure capacity. Do not treat county averages as neighborhood truth.',
           },
           {
             title: 'Research tools',
             detail:
-              'District sites and Florida DOE reports should lead; third-party rankings are secondary.',
+              'District sites and Florida DOE reports should lead; third-party rankings are secondary. Tour campuses when possible.',
           },
         ],
       },
@@ -402,14 +334,14 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
         title: 'Hospitals & healthcare',
         bullets: [
           {
-            title: 'Regional campuses',
+            title: 'Regional acute-care anchors',
             detail:
-              'Health First and other regional facilities serve much of the Space Coast. Map ER drive times including bridge delays from beachside addresses.',
+              'Health First and other regional campuses serve much of the Space Coast. Map ER drive times including bridge delays from beachside addresses.',
           },
           {
             title: 'North vs south access',
             detail:
-              'Titusville and far south Palm Bay can mean longer specialty drives — test peak routes before committing.',
+              'Titusville and far south Palm Bay can mean longer specialty drives — test peak I-95 / US-1 routes before committing.',
           },
           {
             title: 'Relocator tip',
@@ -418,101 +350,12 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
           },
         ],
       },
-      {
-        id: 'housing',
-        title: 'Housing & cost of living',
-        bullets: [
-          {
-            title: 'Price ladder by pocket',
-            detail:
-              'Beachside coastal product, Viera planned homes, Melbourne core, Palm Bay, and Titusville price differently. Insurance and flood exposure can dominate coastal monthly costs.',
-          },
-          {
-            title: 'Stock variety',
-            detail:
-              'Condos, elevated beach SFH, master-planned HOAs, and larger-lot south mainland homes each change move-day access.',
-          },
-          {
-            title: 'Flood & wind diligence',
-            detail:
-              'Pull flood maps and insurance quotes for barrier and lagoon-edge parcels before locking contracts.',
-          },
-        ],
-      },
-      {
-        id: 'town-fit',
-        title: 'Town fit by lifestyle',
-        bullets: [
-          {
-            title: 'Beachside lifestyle',
-            detail:
-              'Ocean access and A1A culture — tourism peaks, salt air, and bridge dependence included.',
-          },
-          {
-            title: 'Viera / Melbourne mainland',
-            detail:
-              'Planned amenities and suburban scale for families — HOA structure and cross-lagoon drives common.',
-          },
-          {
-            title: 'Palm Bay south',
-            detail:
-              'More space and relative value for many households — longer hauls to north-county jobs and beaches.',
-          },
-          {
-            title: 'Titusville / north Space Coast',
-            detail:
-              'KSC-adjacent character and smaller-city scale — distance to south-county amenities is real.',
-          },
-        ],
-      },
-      {
-        id: 'jobs',
-        title: 'Jobs & commute',
-        bullets: [
-          {
-            title: 'Local anchors',
-            detail:
-              'Aerospace and space industry, military-related employment, healthcare, tourism/hospitality, education, and retail are major themes.',
-          },
-          {
-            title: 'Bridge & I-95 commute reality',
-            detail:
-              'Lagoon crossings and north–south corridors set daily drive times more than brochure distance. Test peak runs for any beachside ↔ mainland pair.',
-          },
-          {
-            title: 'Shift & launch schedules',
-            detail:
-              'Space and tourism schedules create non-standard traffic. Hybrid roles still need realistic bridge plans on in-office days.',
-          },
-        ],
-      },
-      {
-        id: 'lifestyle',
-        title: 'Lifestyle & climate',
-        bullets: [
-          {
-            title: 'Space Coast identity',
-            detail:
-              'Launches, beaches, and lagoon recreation define local culture — visitor surges are part of peak weeks.',
-          },
-          {
-            title: 'Heat, humidity & storms',
-            detail:
-              'Hot summers and hurricane season require early move starts and flexible contracts on coastal addresses.',
-          },
-          {
-            title: 'Outdoor access',
-            detail:
-              'Ocean, lagoon, and wildlife refuges are lifestyle draws; waterfront lots add stairs, docks, and soft ground on move day.',
-          },
-        ],
-      },
     ],
   },
   resources: {
-    title: 'Practical Brevard County resources',
+    title: 'Useful Brevard resources',
     intro:
-      'Official links and licensing notes — bridge status, HOA rules, and FDACS registration change; verify before move day.',
+      'Local official links first; directory listings are independent. Verify FDACS for in-state moves and FMCSA for interstate legs before deposits.',
     items: [
       {
         label: 'Brevard County Government',
@@ -531,65 +374,13 @@ export const brevardCountyIntelligence: CountyIntelligencePack = {
         external: true,
       },
       {
-        label: 'City of Cocoa Beach',
-        href: 'https://www.cityofcocoabeach.com/',
-        external: true,
-      },
-      {
-        label: 'City of Titusville',
-        href: 'https://www.titusville.com/',
-        external: true,
-      },
-      {
         label: 'Brevard Public Schools',
         href: 'https://www.brevardschools.org/',
         external: true,
       },
-      {
-        label: 'FDACS — Moving companies (Ch. 507)',
-        href: 'https://www.fdacs.gov/Business-Services/Moving-Companies',
-        note: 'Intrastate household mover registration',
-        external: true,
-      },
-      {
-        label: 'FDACS — Moving within Florida',
-        href: 'https://www.fdacs.gov/Consumer-Resources/Consumer-Rights-and-Responsibilities/Moving-Within-Florida',
-        external: true,
-      },
-      {
-        label: 'FDACS business search',
-        href: 'https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx',
-        external: true,
-      },
-      {
-        label: 'FMCSA SAFER — interstate authority',
-        href: 'https://safer.fmcsa.dot.gov/',
-        note: 'Required when the move crosses state lines',
-        external: true,
-      },
-      {
-        label: 'National Hurricane Center',
-        href: 'https://www.nhc.noaa.gov/',
-        external: true,
-      },
-      {
-        label: 'FEMA flood maps',
-        href: 'https://msc.fema.gov/portal/home',
-        external: true,
-      },
-      {
-        label: 'Move Trust Hub — verify a USDOT',
-        href: '/verify-dot',
-        note: 'Cross-check interstate licensing before deposits',
-      },
-      {
-        label: 'Free moving calculator',
-        href: '/moving-calculator',
-        note: 'Inventory-based volume for local or long-distance',
-      },
     ],
   },
   directoryHint:
-    'Filter by zone (Cocoa Beachside, South beachside, Melbourne/Viera, Palm Bay/South, Titusville/North, Cocoa/Rockledge). Confirm bridge routing, beach elevators, and FDACS registration.',
-  lastReviewed: '2026-07-23',
-};
+    'Filter listings by zone (Melbourne/Palm Bay, Cocoa/Rockledge, Titusville/North, Beachside A1A) when available. Confirm bridge routing, beach elevators, aerospace timeline needs, and heat-window plans — this is Space Coast, not an Orlando suburb rename.',
+  lastReviewed: '2026-07-24',
+});

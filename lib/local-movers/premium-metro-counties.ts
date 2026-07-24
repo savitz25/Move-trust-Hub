@@ -130,7 +130,7 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'new-jersey', countySlug: 'bergen' },
   { stateSlug: 'new-jersey', countySlug: 'middlesex' },
   { stateSlug: 'new-jersey', countySlug: 'monmouth' },
-  // Florida (expand)
+  // Florida Tier 1 cores + Tier 2 Wave 1
   { stateSlug: 'florida', countySlug: 'miami-dade' },
   { stateSlug: 'florida', countySlug: 'broward' },
   { stateSlug: 'florida', countySlug: 'palm-beach' },
@@ -138,6 +138,19 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'florida', countySlug: 'orange' },
   { stateSlug: 'florida', countySlug: 'pinellas' },
   { stateSlug: 'florida', countySlug: 'duval' },
+  { stateSlug: 'florida', countySlug: 'lee' },
+  { stateSlug: 'florida', countySlug: 'polk' },
+  { stateSlug: 'florida', countySlug: 'brevard' },
+  { stateSlug: 'florida', countySlug: 'volusia' },
+  { stateSlug: 'florida', countySlug: 'pasco' },
+  { stateSlug: 'florida', countySlug: 'manatee' },
+  { stateSlug: 'florida', countySlug: 'collier' },
+  { stateSlug: 'florida', countySlug: 'seminole' },
+  { stateSlug: 'florida', countySlug: 'osceola' },
+  { stateSlug: 'florida', countySlug: 'lake' },
+  { stateSlug: 'florida', countySlug: 'st-lucie' },
+  { stateSlug: 'florida', countySlug: 'marion' },
+  { stateSlug: 'florida', countySlug: 'escambia' },
   // South Carolina Core 12
   { stateSlug: 'south-carolina', countySlug: 'greenville' },
   { stateSlug: 'south-carolina', countySlug: 'charleston' },
