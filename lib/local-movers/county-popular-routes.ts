@@ -5066,6 +5066,7 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'oregon') return OR_ROUTES[countySlug] ?? [];
   if (stateSlug === 'maryland') return MD_ROUTES[countySlug] ?? [];
   if (stateSlug === 'massachusetts') return MA_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'minnesota') return MN_ROUTES[countySlug] ?? [];
   return [];
 }
 
@@ -5367,6 +5368,74 @@ const MA_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Boston / Worcester → Pioneer Valley academic markets', direction: 'inbound', context: 'In-state long hauls; Massachusetts DPU for pure in-state jobs.' },
     { label: 'CT → Hampshire valley pairs', direction: 'inbound', context: 'Border and regional interstate legs need FMCSA when leaving Connecticut.' },
     { label: 'Hampshire → Florida / out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required once leaving Massachusetts.', href: '/resources/routes/massachusetts-to-florida' },
+  ],
+};
+
+
+const MN_ROUTES: Record<string, CountyPopularRoute[]> = {
+  hennepin: [
+    { label: 'Within Hennepin (Downtown / Uptown ↔ Edina / Minnetonka / Bloomington)', direction: 'within', context: 'Elevator towers and lakeside walk-ups vs west-metro HOA product — portal time on I-394 / I-494 dominates.' },
+    { label: 'Chicago / Midwest → Minneapolis professional & corporate housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and west-metro stock.' },
+    { label: 'Hennepin ↔ Ramsey (St. Paul) metro pairs', direction: 'within', context: 'Looks local on maps; I-94 freeflow and east- vs west-river access products differ.' },
+    { label: 'Minneapolis → Rochester / Duluth / St. Cloud in-state pairs', direction: 'outbound', context: 'US-52 / I-35 / I-94 long hauls; MnDOT HHG for pure in-state jobs.' },
+    { label: 'Hennepin → Florida / Arizona / Texas reverse exits', direction: 'outbound', context: 'Snowbird and permanent relocations; FMCSA for cross-state legs.', href: '/resources/routes/minnesota-to-florida' },
+    { label: 'Wisconsin → Minneapolis career & family corridors', direction: 'inbound', context: 'Regional interstate pairs; confirm MnDOT vs FMCSA for the full route.' },
+  ],
+  ramsey: [
+    { label: 'Within Ramsey (Downtown St. Paul ↔ Highland / Roseville / Maplewood)', direction: 'within', context: 'Capital multi-unit vs north and east suburban product — not Minneapolis lakeside defaults.' },
+    { label: 'Midwest → St. Paul capital & east-metro housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Ramsey ↔ Hennepin metro pairs', direction: 'within', context: 'I-94 / I-35E multi-county logistics; keep county lines clear.' },
+    { label: 'St. Paul → Woodbury / Washington County, MN east pairs', direction: 'within', context: 'East-metro collar logistics; I-94 / MN-36 freeflow matters.' },
+    { label: 'Ramsey → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/minnesota-to-florida' },
+    { label: 'Wisconsin border → east-metro housing', direction: 'inbound', context: 'Short regional interstate pairs; confirm FMCSA when leaving Wisconsin.' },
+  ],
+  dakota: [
+    { label: 'Within Dakota (Eagan / Burnsville ↔ Apple Valley / Lakeville)', direction: 'within', context: 'South-metro HOA multi-family vs southern growth SFH — empty miles matter.' },
+    { label: 'Minneapolis / St. Paul → Dakota south-metro housing', direction: 'inbound', context: 'I-35 / I-494 collar logistics; portal time dominates at peak.' },
+    { label: 'Dakota ↔ Scott / Hennepin south-metro pairs', direction: 'within', context: 'Multi-county south collar logistics; keep county lines clear.' },
+    { label: 'Midwest → Eagan / Lakeville family corridors', direction: 'inbound', context: 'Interstate household goods into townhomes and growth SFH.' },
+    { label: 'Dakota → Florida / Arizona reverse exits', direction: 'outbound', context: 'Snowbird and permanent relocations; FMCSA required.', href: '/resources/routes/minnesota-to-florida' },
+    { label: 'Dakota → Rochester / southeast MN in-state pairs', direction: 'outbound', context: 'US-52 long locals; MnDOT HHG for pure in-state jobs.' },
+  ],
+  anoka: [
+    { label: 'Within Anoka (Blaine / Coon Rapids ↔ Andover / Anoka city)', direction: 'within', context: 'North-metro growth multi-family vs river-town product — not south-metro clones.' },
+    { label: 'Minneapolis / St. Paul → Anoka north-metro housing', direction: 'inbound', context: 'I-35W / US-10 collar logistics; portal time dominates at peak.' },
+    { label: 'Anoka ↔ Hennepin / Ramsey north pairs', direction: 'within', context: 'Multi-county north-metro logistics; keep county lines clear.' },
+    { label: 'Midwest → Blaine / Andover family corridors', direction: 'inbound', context: 'Interstate household goods into growth SFH and townhomes.' },
+    { label: 'Anoka → St. Cloud / central MN in-state pairs', direction: 'outbound', context: 'US-10 / I-94 long locals; MnDOT HHG for pure in-state jobs.' },
+    { label: 'Anoka → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/minnesota-to-florida' },
+  ],
+  washington: [
+    { label: 'Within Washington County, MN (Woodbury ↔ Stillwater / Cottage Grove)', direction: 'within', context: 'East-metro HOA multi-family vs historic river-town product — Minnesota only, not Washington State.' },
+    { label: 'St. Paul / Ramsey → Woodbury east-metro housing', direction: 'inbound', context: 'I-94 / MN-36 collar logistics; portal time dominates at peak.' },
+    { label: 'Washington County, MN ↔ Wisconsin St. Croix pairs', direction: 'outbound', context: 'Short border hops often need FMCSA — clarify destinations early.' },
+    { label: 'Midwest → Woodbury / Stillwater housing', direction: 'inbound', context: 'Interstate household goods into multi-family and historic stock.' },
+    { label: 'Washington County, MN → Florida reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/minnesota-to-florida' },
+    { label: 'Washington County, MN ↔ Dakota / Ramsey east pairs', direction: 'within', context: 'East-metro multi-county logistics; keep Minnesota county lines clear.' },
+  ],
+  olmsted: [
+    { label: 'Within Olmsted (Downtown Rochester ↔ northwest growth / Byron)', direction: 'within', context: 'Mayo-adjacent elevators vs suburban SFH — not a Twin Cities collar quote.' },
+    { label: 'Twin Cities → Rochester Mayo medical relo', direction: 'inbound', context: 'US-52 long in-state hauls; hard report dates and storage-in-transit common; MnDOT HHG for pure in-state jobs.' },
+    { label: 'Out-of-state medical inflows → Rochester professional housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and growth stock; FMCSA required.' },
+    { label: 'Rochester → Twin Cities reverse career pairs', direction: 'outbound', context: 'US-52 long hauls; confirm MnDOT vs FMCSA for the full route.' },
+    { label: 'Olmsted → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/minnesota-to-florida' },
+    { label: 'Iowa / Wisconsin → Rochester medical markets', direction: 'inbound', context: 'Regional interstate pairs into healthcare housing; FMCSA for cross-state legs.' },
+  ],
+  'st-louis': [
+    { label: 'Within St. Louis County, MN (Downtown Duluth ↔ Hermantown / hillside stock)', direction: 'within', context: 'Hill grades and waterfront multi-unit — not Twin Cities product and not St. Louis, Missouri.' },
+    { label: 'Twin Cities → Duluth / North Shore in-state pairs', direction: 'inbound', context: 'I-35 long hauls; MnDOT HHG for pure in-state jobs; winter contingency matters.' },
+    { label: 'Duluth ↔ Superior, WI border pairs', direction: 'outbound', context: 'Short bridge hops often need FMCSA — clarify destinations early.' },
+    { label: 'Midwest → Duluth port-city & healthcare housing', direction: 'inbound', context: 'Interstate household goods into hillside and multi-unit stock.' },
+    { label: 'North Shore seasonal / second-home turns along MN-61', direction: 'within', context: 'Cabin access and tourism peaks rewrite local hours.' },
+    { label: 'St. Louis County, MN → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/minnesota-to-florida' },
+  ],
+  stearns: [
+    { label: 'Within Stearns (Downtown / campus St. Cloud ↔ Sartell / Sauk Rapids)', direction: 'within', context: 'College multi-unit vs growth HOA product — not a Twin Cities collar hop.' },
+    { label: 'Twin Cities → St. Cloud regional housing & jobs', direction: 'inbound', context: 'I-94 long in-state hauls; MnDOT HHG for pure in-state jobs.' },
+    { label: 'St. Cloud State semester inflows → campus multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'Stearns → Twin Cities reverse career pairs', direction: 'outbound', context: 'I-94 long hauls; confirm MnDOT vs FMCSA for the full route.' },
+    { label: 'Stearns → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/minnesota-to-florida' },
+    { label: 'Central MN / Fargo corridor pairs via I-94', direction: 'outbound', context: 'Regional hauls; FMCSA required once leaving Minnesota.' },
   ],
 };
 

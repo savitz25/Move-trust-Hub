@@ -232,11 +232,20 @@ import { plymouthCountyMaIntelligence } from '@/lib/local-movers/county-intellig
 import { hampdenCountyMaIntelligence } from '@/lib/local-movers/county-intelligence/massachusetts/hampden-ma';
 import { barnstableCountyMaIntelligence } from '@/lib/local-movers/county-intelligence/massachusetts/barnstable-ma';
 import { hampshireCountyMaIntelligence } from '@/lib/local-movers/county-intelligence/massachusetts/hampshire-ma';
+// Minnesota Core 8
+import { hennepinCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/hennepin-mn';
+import { ramseyCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/ramsey-mn';
+import { dakotaCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/dakota-mn';
+import { anokaCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/anoka-mn';
+import { washingtonCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/washington-mn';
+import { olmstedCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/olmsted-mn';
+import { stLouisCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/st-louis-mn';
+import { stearnsCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/stearns-mn';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -463,6 +472,15 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   hampdenCountyMaIntelligence,
   barnstableCountyMaIntelligence,
   hampshireCountyMaIntelligence,
+  // Minnesota Core 8
+  hennepinCountyMnIntelligence,
+  ramseyCountyMnIntelligence,
+  dakotaCountyMnIntelligence,
+  anokaCountyMnIntelligence,
+  washingtonCountyMnIntelligence,
+  olmstedCountyMnIntelligence,
+  stLouisCountyMnIntelligence,
+  stearnsCountyMnIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -804,4 +822,16 @@ export const MA_TIER1_CORE10 = [
   'hampden',
   'barnstable',
   'hampshire',
+] as const;
+
+/** Minnesota Tier-1 Core 8 (Twin Cities core + collars + Rochester/Mayo + Duluth + St. Cloud). */
+export const MN_TIER1_CORE8 = [
+  'hennepin',
+  'ramsey',
+  'dakota',
+  'anoka',
+  'washington',
+  'olmsted',
+  'st-louis',
+  'stearns',
 ] as const;

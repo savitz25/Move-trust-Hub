@@ -162,6 +162,16 @@ const CORRIDORS: Record<string, string> = {
   'massachusetts/barnstable': 'Route 6 · Route 28 · Route 132 · Cape bridges',
   'massachusetts/hampshire': 'I-91 · Route 9 · Route 116 · Route 47',
 
+  // ——— Minnesota Core 8 ———
+  'minnesota/hennepin': 'I-94 · I-35W · I-394 · I-494 · MN-100 · local arterial grid',
+  'minnesota/ramsey': 'I-35E · I-94 · I-694 · US-61 · Snelling corridors',
+  'minnesota/dakota': 'I-35 · I-494 · MN-77 · MN-13 · Cedar corridors',
+  'minnesota/anoka': 'I-35W · US-10 · MN-65 · MN-47 · 610 corridors',
+  'minnesota/washington': 'I-94 · I-494/694 links · MN-36 · MN-5 · St. Croix approaches',
+  'minnesota/olmsted': 'US-52 · US-14 · US-63 · 2nd Street / local grid',
+  'minnesota/st-louis': 'I-35 · US-53 · MN-61 (North Shore) · local Duluth grid',
+  'minnesota/stearns': 'I-94 · MN-15 · MN-23 · US-10',
+
   // ——— Michigan Core 10 ———
   'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',
   'michigan/oakland': 'I-75 · I-696 · M-59 · Telegraph · Woodward corridors',

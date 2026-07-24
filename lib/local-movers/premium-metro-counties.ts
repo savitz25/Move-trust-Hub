@@ -176,6 +176,15 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'massachusetts', countySlug: 'hampden' },
   { stateSlug: 'massachusetts', countySlug: 'barnstable' },
   { stateSlug: 'massachusetts', countySlug: 'hampshire' },
+  // Minnesota Core 8
+  { stateSlug: 'minnesota', countySlug: 'hennepin' },
+  { stateSlug: 'minnesota', countySlug: 'ramsey' },
+  { stateSlug: 'minnesota', countySlug: 'dakota' },
+  { stateSlug: 'minnesota', countySlug: 'anoka' },
+  { stateSlug: 'minnesota', countySlug: 'washington' },
+  { stateSlug: 'minnesota', countySlug: 'olmsted' },
+  { stateSlug: 'minnesota', countySlug: 'st-louis' },
+  { stateSlug: 'minnesota', countySlug: 'stearns' },
 ] as const;
 
 const premiumMetroKeySet = new Set(
