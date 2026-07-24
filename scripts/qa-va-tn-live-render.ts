@@ -72,7 +72,7 @@ async function checkOne(t: (typeof TARGETS)[0]): Promise<Check> {
   const notMoversServing = !/^Movers Serving\b/i.test(h1);
   const majorCorridors =
     /Major corridors/i.test(html) &&
-    /\b(I-\d|US-\d|VA-\d|TN-\d|US-\d{1,3}|Briley|Ellington|Turnpike|Pkwy|Expressway)\b/i.test(
+    /\b(I[-\s]?\d{1,3}|US[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|GW Parkway|Parkway|Pkwy|Expressway|Toll Road|Blvd|Boulevard|Drive)\b/i.test(
       html
     );
   const regulator = t.regulator.test(html);
