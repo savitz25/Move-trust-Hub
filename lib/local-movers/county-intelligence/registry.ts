@@ -392,11 +392,21 @@ import { kentCountyRiIntelligence } from '@/lib/local-movers/county-intelligence
 import { washingtonCountyRiIntelligence } from '@/lib/local-movers/county-intelligence/rhode-island/washington-ri';
 import { newportCountyRiIntelligence } from '@/lib/local-movers/county-intelligence/rhode-island/newport-ri';
 import { bristolCountyRiIntelligence } from '@/lib/local-movers/county-intelligence/rhode-island/bristol-ri';
+// Vermont Core 5
+import { chittendenCountyVtIntelligence } from '@/lib/local-movers/county-intelligence/vermont/chittenden-vt';
+import { washingtonCountyVtIntelligence } from '@/lib/local-movers/county-intelligence/vermont/washington-vt';
+import { rutlandCountyVtIntelligence } from '@/lib/local-movers/county-intelligence/vermont/rutland-vt';
+import { windsorCountyVtIntelligence } from '@/lib/local-movers/county-intelligence/vermont/windsor-vt';
+import { franklinCountyVtIntelligence } from '@/lib/local-movers/county-intelligence/vermont/franklin-vt';
+// Delaware Core 3 (full state)
+import { newCastleCountyDeIntelligence } from '@/lib/local-movers/county-intelligence/delaware/new-castle-de';
+import { kentCountyDeIntelligence } from '@/lib/local-movers/county-intelligence/delaware/kent-de';
+import { sussexCountyDeIntelligence } from '@/lib/local-movers/county-intelligence/delaware/sussex-de';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / WV / RI / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / WV / RI / VT / DE / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
@@ -782,6 +792,16 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   washingtonCountyRiIntelligence,
   newportCountyRiIntelligence,
   bristolCountyRiIntelligence,
+  // Vermont Core 5
+  chittendenCountyVtIntelligence,
+  washingtonCountyVtIntelligence,
+  rutlandCountyVtIntelligence,
+  windsorCountyVtIntelligence,
+  franklinCountyVtIntelligence,
+  // Delaware Core 3 (full state)
+  newCastleCountyDeIntelligence,
+  kentCountyDeIntelligence,
+  sussexCountyDeIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -1353,5 +1373,17 @@ export const RI_TIER1_CORE5 = [
   'newport',
   'bristol',
 ] as const;
+
+/** Vermont Tier-1 Core 5 (Burlington + Montpelier + Rutland + Upper Valley + St. Albans). */
+export const VT_TIER1_CORE5 = [
+  'chittenden',
+  'washington',
+  'rutland',
+  'windsor',
+  'franklin',
+] as const;
+
+/** Delaware Tier-1 Core 3 (full state: New Castle + Kent + Sussex). */
+export const DE_TIER1_CORE3 = ['new-castle', 'kent', 'sussex'] as const;
 
 

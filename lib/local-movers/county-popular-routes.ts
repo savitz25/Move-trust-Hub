@@ -5088,8 +5088,274 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'new-mexico') return NM_ROUTES[countySlug] ?? [];
   if (stateSlug === 'nebraska') return NE_ROUTES[countySlug] ?? [];
   if (stateSlug === 'idaho') return ID_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'vermont') return VT_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'delaware') return DE_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const VT_ROUTES: Record<string, CountyPopularRoute[]> = {
+  chittenden: [
+    {
+      label: 'Within Chittenden (Downtown Burlington ↔ Winooski / Essex / South Burlington)',
+      direction: 'within',
+      context: 'Lake Champlain multi-unit and village approaches — not Montpelier capital product.',
+    },
+    {
+      label: 'University / healthcare / corporate relo → Burlington metro',
+      direction: 'inbound',
+      context: 'Hard report dates reshape Chittenden calendars.',
+    },
+    {
+      label: 'Chittenden ↔ Franklin (St. Albans) I-89 pairs',
+      direction: 'within',
+      context: 'I-89 multi-county logistics; metro vs northwest dairy-country product differs.',
+    },
+    {
+      label: 'Boston / Montreal / New York ↔ Burlington markets',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Vermont.',
+    },
+    {
+      label: 'Chittenden ↔ Montpelier / Barre (Washington VT) pairs',
+      direction: 'outbound',
+      context: 'I-89 southbound; written estimates + insurance for pure in-state jobs.',
+    },
+    {
+      label: 'Burlington → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Vermont.',
+    },
+  ],
+  washington: [
+    {
+      label: 'Within Washington VT (Montpelier ↔ Barre / Berlin / Waterbury edges)',
+      direction: 'within',
+      context:
+        'Capital and granite-city product — Washington County Vermont only, not Washington State, AR, or RI.',
+    },
+    {
+      label: 'State government / healthcare relo → Montpelier / Barre',
+      direction: 'inbound',
+      context: 'Capital calendars reshape central Vermont windows.',
+    },
+    {
+      label: 'Washington VT ↔ Chittenden (Burlington) I-89 pairs',
+      direction: 'outbound',
+      context: 'I-89 multi-county logistics; capital vs Lake Champlain product differs.',
+    },
+    {
+      label: 'Boston / New York ↔ Montpelier markets',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Vermont.',
+    },
+    {
+      label: 'Washington VT ↔ Rutland / Upper Valley pairs',
+      direction: 'within',
+      context: 'US-2 / US-4 regional logistics; keep capital product distinct.',
+    },
+    {
+      label: 'Montpelier → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Vermont.',
+    },
+  ],
+  rutland: [
+    {
+      label: 'Within Rutland (Downtown Rutland ↔ Killington / Castleton / Pittsford edges)',
+      direction: 'within',
+      context: 'Regional hub and ski-country approaches — not Burlington south clone.',
+    },
+    {
+      label: 'Ski-season / second-home turns → Killington corridors',
+      direction: 'inbound',
+      context: 'Winter peaks reshape access and curb staging.',
+    },
+    {
+      label: 'Rutland ↔ Upper Valley (Windsor) pairs',
+      direction: 'within',
+      context: 'US-4 multi-county logistics; ski regional vs I-91 Upper Valley product differs.',
+    },
+    {
+      label: 'Albany / Boston ↔ Rutland markets',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Vermont.',
+    },
+    {
+      label: 'Rutland ↔ Burlington / Montpelier in-state pairs',
+      direction: 'outbound',
+      context: 'US-7 / I-89 long hauls; written estimates for pure in-state jobs.',
+    },
+    {
+      label: 'Rutland → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Vermont.',
+    },
+  ],
+  windsor: [
+    {
+      label: 'Within Windsor (White River Junction ↔ Springfield / Woodstock / Hartford VT edges)',
+      direction: 'within',
+      context: 'Upper Valley / I-91 corridor — not Burlington south rename.',
+    },
+    {
+      label: 'Upper Valley / Dartmouth-adjacent relo → WRJ corridors',
+      direction: 'inbound',
+      context: 'Hard report dates and NH-hop awareness reshape windows.',
+    },
+    {
+      label: 'Windsor ↔ New Hampshire Upper Valley pairs',
+      direction: 'outbound',
+      context: 'I-91 interstate household goods; FMCSA when any leg leaves Vermont.',
+    },
+    {
+      label: 'Boston / New York ↔ Upper Valley markets',
+      direction: 'inbound',
+      context: 'I-91 interstate household goods into village and multi-unit stock.',
+    },
+    {
+      label: 'Windsor ↔ Rutland / Montpelier in-state pairs',
+      direction: 'outbound',
+      context: 'US-4 / I-89 links; written estimates for pure in-state jobs.',
+    },
+    {
+      label: 'Windsor → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Vermont.',
+    },
+  ],
+  franklin: [
+    {
+      label: 'Within Franklin (St. Albans ↔ Swanton / Enosburg / Georgia edges)',
+      direction: 'within',
+      context: 'Northwest dairy/border product — not Chittenden north rename only.',
+    },
+    {
+      label: 'Industrial / border-adjacent relo → St. Albans',
+      direction: 'inbound',
+      context: 'Hard report dates reshape northwest calendars.',
+    },
+    {
+      label: 'Franklin ↔ Chittenden (Burlington) I-89 pairs',
+      direction: 'within',
+      context: 'I-89 multi-county logistics; northwest vs metro product differs.',
+    },
+    {
+      label: 'Montreal / Burlington overflow ↔ Franklin markets',
+      direction: 'inbound',
+      context: 'Cross-border and regional logistics; FMCSA when leaving Vermont.',
+    },
+    {
+      label: 'Franklin ↔ Montpelier in-state pairs',
+      direction: 'outbound',
+      context: 'I-89 long hauls; written estimates for pure in-state jobs.',
+    },
+    {
+      label: 'St. Albans → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Vermont.',
+    },
+  ],
+};
+
+const DE_ROUTES: Record<string, CountyPopularRoute[]> = {
+  'new-castle': [
+    {
+      label: 'Within New Castle (Downtown Wilmington ↔ Newark / Greenville / Middletown edges)',
+      direction: 'within',
+      context: 'I-95 corridor density and multi-unit stock — not Dover capital product.',
+    },
+    {
+      label: 'Corporate / finance / university relo → Wilmington / Newark',
+      direction: 'inbound',
+      context: 'Hard report dates reshape northern Delaware calendars.',
+    },
+    {
+      label: 'New Castle ↔ Kent (Dover) DE-1 pairs',
+      direction: 'within',
+      context: 'DE-1 multi-county logistics; Wilmington corridor vs capital product differs.',
+    },
+    {
+      label: 'Philadelphia / Baltimore / New York ↔ Wilmington markets',
+      direction: 'inbound',
+      context: 'I-95 interstate household goods; FMCSA when leaving Delaware.',
+    },
+    {
+      label: 'New Castle ↔ Sussex beach-season pairs',
+      direction: 'outbound',
+      context: 'DE-1 long hauls; many jobs become interstate at MD/PA borders.',
+    },
+    {
+      label: 'Wilmington → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Delaware.',
+    },
+  ],
+  kent: [
+    {
+      label: 'Within Kent DE (Downtown Dover ↔ Camden / Smyrna / Magnolia edges)',
+      direction: 'within',
+      context: 'Capital and central DE product — Kent County Delaware only, not Kent County RI.',
+    },
+    {
+      label: 'State government / base / agency relo → Dover',
+      direction: 'inbound',
+      context: 'Capital calendars reshape central Delaware windows.',
+    },
+    {
+      label: 'Kent ↔ New Castle (Wilmington) DE-1 pairs',
+      direction: 'within',
+      context: 'DE-1 multi-county logistics; capital vs I-95 corridor product differs.',
+    },
+    {
+      label: 'Kent ↔ Sussex beach markets',
+      direction: 'within',
+      context: 'DE-1 southbound; capital vs beach-season product differs.',
+    },
+    {
+      label: 'Maryland / Pennsylvania ↔ Dover markets',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Delaware.',
+    },
+    {
+      label: 'Dover → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Delaware.',
+    },
+  ],
+  sussex: [
+    {
+      label: 'Within Sussex (Rehoboth / Lewes ↔ Georgetown / Millsboro / Bethany edges)',
+      direction: 'within',
+      context:
+        'Beach-season volume and inland hubs — Sussex County DE only, not Sussex County NJ or VA.',
+    },
+    {
+      label: 'Summer / second-home turns → Rehoboth / Lewes corridors',
+      direction: 'inbound',
+      context: 'Beach-season peaks reshape curb staging and calendars.',
+    },
+    {
+      label: 'Sussex ↔ Kent (Dover) DE-1 pairs',
+      direction: 'within',
+      context: 'DE-1 multi-county logistics; beach vs capital product differs.',
+    },
+    {
+      label: 'Philadelphia / Washington DC ↔ Sussex beach markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into multi-unit and coastal stock; FMCSA when leaving DE.',
+    },
+    {
+      label: 'Sussex ↔ Maryland Eastern Shore pairs',
+      direction: 'outbound',
+      context: 'US-13 interstate household goods; FMCSA when any leg leaves Delaware.',
+    },
+    {
+      label: 'Sussex → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Delaware.',
+    },
+  ],
+};
 
 const NE_ROUTES: Record<string, CountyPopularRoute[]> = {
   douglas: [
