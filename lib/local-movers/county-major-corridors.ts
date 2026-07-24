@@ -204,6 +204,16 @@ const CORRIDORS: Record<string, string> = {
   'maryland/frederick': 'I-70 · I-270 · US-15 · US-40',
   'maryland/harford': 'I-95 · MD-24 · US-1 · MD-22',
 
+  // ——— Indiana Core 8 ———
+  'indiana/marion': 'I-65 · I-70 · I-465 · I-74 · US-31 · local arterial grid',
+  'indiana/hamilton': 'I-69 · US-31 · US-37 · 146th Street corridors',
+  'indiana/lake': 'I-80/94 · I-65 · US-30 · US-41 · local arterial grid',
+  'indiana/allen': 'I-69 · I-469 · US-30 · US-27',
+  'indiana/st-joseph': 'I-80/90 · US-31 · US-20 · SR-23',
+  'indiana/elkhart': 'I-80/90 · US-20 · US-33 · SR-19',
+  'indiana/tippecanoe': 'I-65 · US-52 · US-231 · SR-26',
+  'indiana/vanderburgh': 'I-69 · US-41 · SR-62 · SR-66',
+
   // ——— Virginia Core 12 ———
   'virginia/fairfax': 'I-66 · I-495 · VA-28 · Dulles Toll Road · VA-236 · I-95 links',
   'virginia/prince-william': 'I-95 · I-66 · VA-234 · US-1 · Prince William Pkwy',

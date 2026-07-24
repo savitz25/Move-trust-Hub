@@ -5067,8 +5067,76 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'maryland') return MD_ROUTES[countySlug] ?? [];
   if (stateSlug === 'massachusetts') return MA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'minnesota') return MN_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const IN_ROUTES: Record<string, CountyPopularRoute[]> = {
+  marion: [
+    { label: 'Within Marion (Downtown / midtown ↔ Broad Ripple / west-side / I-465 ring)', direction: 'within', context: 'Elevators and neighborhood curb limits vs ring SFH — portal time dominates.' },
+    { label: 'Midwest / Chicago → Indianapolis capital & logistics markets', direction: 'inbound', context: 'Interstate household goods into core multi-unit and suburban stock.' },
+    { label: 'Indianapolis ↔ Fort Wayne / Evansville / Lafayette in-state pairs', direction: 'outbound', context: 'I-69/I-65 long hauls; Indiana DOR authority for pure in-state jobs.' },
+    { label: 'Marion ↔ Hamilton north-suburb pairs', direction: 'within', context: 'City density vs Carmel/Fishers HOA — keep county lines clear.' },
+    { label: 'Florida / Texas / NC ↔ Indianapolis reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Indianapolis → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Indiana.' },
+  ],
+  hamilton: [
+    { label: 'Within Hamilton (Carmel ↔ Fishers / Noblesville / Westfield)', direction: 'within', context: 'North-metro HOA product — not Marion downtown elevators. Indiana Hamilton, not Ohio.' },
+    { label: 'Corporate relo → Carmel / Fishers campuses', direction: 'inbound', context: 'Hard report dates and HOA packets reshape calendars.' },
+    { label: 'Hamilton ↔ Marion metro pairs', direction: 'within', context: 'I-69/US-31 multi-county logistics; city vs north-suburb product differs.' },
+    { label: 'Chicago / Ohio → north-Indy HOA housing', direction: 'inbound', context: 'Interstate household goods into growth suburbs.' },
+    { label: 'Hamilton → Fort Wayne / out-of-state exits', direction: 'outbound', context: 'I-69 northbound or interstate; confirm DOR vs FMCSA for the full route.' },
+    { label: 'Florida / Sun Belt ↔ Hamilton reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+  ],
+  lake: [
+    { label: 'Within Lake (Hammond / Munster ↔ Merrillville / Crown Point)', direction: 'within', context: 'Chicago-collar multi-unit vs south HOA — not Indianapolis product.' },
+    { label: 'Chicago metro ↔ NW Indiana collar pairs', direction: 'inbound', context: 'I-80/94 interstate household goods; FMCSA when any leg leaves Indiana.' },
+    { label: 'Lake ↔ Porter / LaPorte regional pairs', direction: 'within', context: 'NW Indiana multi-county logistics; keep destinations clear.' },
+    { label: 'Illinois suburbs → Merrillville / Crown Point housing', direction: 'inbound', context: 'Cross-border empty miles and authority rules dominate quotes.' },
+    { label: 'Lake → Indianapolis in-state pairs', direction: 'outbound', context: 'I-65 long hauls; Indiana DOR for pure in-state jobs.' },
+    { label: 'Lake → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Indiana.' },
+  ],
+  allen: [
+    { label: 'Within Allen (Downtown Fort Wayne ↔ north / SW suburbs / New Haven)', direction: 'within', context: 'Regional hub multi-unit vs HOA growth — not Indy collar product.' },
+    { label: 'Midwest manufacturing / healthcare relo → Fort Wayne', direction: 'inbound', context: 'Hard report dates and industrial timing reshape windows.' },
+    { label: 'Fort Wayne ↔ Indianapolis (I-69) pairs', direction: 'outbound', context: 'Long I-69 locals; Indiana DOR for pure in-state jobs.' },
+    { label: 'Allen ↔ St. Joseph / Elkhart north-central pairs', direction: 'within', context: 'NE vs north-central logistics differ; keep county lines clear.' },
+    { label: 'Ohio / Michigan → Fort Wayne regional markets', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Fort Wayne → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Indiana.' },
+  ],
+  'st-joseph': [
+    { label: 'Within St. Joseph (South Bend / ND ↔ Mishawaka / Granger)', direction: 'within', context: 'University multi-unit vs HOA growth — not Elkhart-only manufacturing product.' },
+    { label: 'Notre Dame student & faculty lease cycles', direction: 'within', context: 'August/May clusters; elevators and curb limits dominate near campus.' },
+    { label: 'Chicago / Michigan ↔ South Bend pairs', direction: 'inbound', context: 'I-80/90 interstate household goods; FMCSA when leaving Indiana.' },
+    { label: 'St. Joseph ↔ Elkhart corridor pairs', direction: 'within', context: 'University vs RV/manufacturing product differs at each end.' },
+    { label: 'South Bend ↔ Indianapolis in-state pairs', direction: 'outbound', context: 'US-31 long hauls; Indiana DOR for pure in-state jobs.' },
+    { label: 'South Bend → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Indiana.' },
+  ],
+  elkhart: [
+    { label: 'Within Elkhart (Elkhart city ↔ Goshen / Bristol–Middlebury / Nappanee)', direction: 'within', context: 'RV/manufacturing corridor — not South Bend campus product.' },
+    { label: 'Manufacturing / RV workforce relo → Elkhart corridor', direction: 'inbound', context: 'Plant calendars and shift windows reshape crew timing.' },
+    { label: 'Elkhart ↔ St. Joseph / South Bend pairs', direction: 'within', context: 'US-20 logistics; keep manufacturing vs university product distinct.' },
+    { label: 'Michigan / Illinois ↔ Elkhart industrial markets', direction: 'inbound', context: 'I-80/90 interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Elkhart → Indianapolis in-state pairs', direction: 'outbound', context: 'Long regional hauls; Indiana DOR for pure in-state jobs.' },
+    { label: 'Elkhart → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Indiana.' },
+  ],
+  tippecanoe: [
+    { label: 'Within Tippecanoe (West Lafayette / Purdue ↔ Lafayette / south growth)', direction: 'within', context: 'University multi-unit vs HOA suburbs — not Indy collar product.' },
+    { label: 'Purdue student & faculty lease cycles', direction: 'within', context: 'August/May clusters; elevators and curb limits dominate near campus.' },
+    { label: 'Indianapolis ↔ Lafayette (I-65) pairs', direction: 'inbound', context: 'Looks regional at peak; price portal time honestly.' },
+    { label: 'Chicago / Illinois ↔ Purdue markets', direction: 'inbound', context: 'Interstate household goods into campus multi-unit and suburban stock.' },
+    { label: 'Lafayette ↔ Fort Wayne / Evansville in-state pairs', direction: 'outbound', context: 'Cross-state-of-IN logistics; Indiana DOR for pure in-state jobs.' },
+    { label: 'Lafayette → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Indiana.' },
+  ],
+  vanderburgh: [
+    { label: 'Within Vanderburgh (Downtown Evansville ↔ east suburbs / west industrial)', direction: 'within', context: 'Ohio River city multi-unit vs HOA — not Indy south clone product.' },
+    { label: 'Kentucky / Illinois tri-state ↔ Evansville pairs', direction: 'inbound', context: 'River-city interstate household goods; FMCSA when any leg leaves Indiana.' },
+    { label: 'Evansville ↔ Indianapolis (I-69) pairs', direction: 'outbound', context: 'Long I-69 hauls; Indiana DOR for pure in-state jobs.' },
+    { label: 'Manufacturing / healthcare relo → Evansville', direction: 'inbound', context: 'Hard report dates and industrial timing reshape windows.' },
+    { label: 'Florida / Sun Belt ↔ Evansville reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Evansville → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Indiana.' },
+  ],
+};
 
 const MD_ROUTES: Record<string, CountyPopularRoute[]> = {
   montgomery: [

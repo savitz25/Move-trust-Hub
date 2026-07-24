@@ -241,11 +241,20 @@ import { washingtonCountyMnIntelligence } from '@/lib/local-movers/county-intell
 import { olmstedCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/olmsted-mn';
 import { stLouisCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/st-louis-mn';
 import { stearnsCountyMnIntelligence } from '@/lib/local-movers/county-intelligence/minnesota/stearns-mn';
+// Indiana Core 8
+import { marionCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/marion-in';
+import { hamiltonCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/hamilton-in';
+import { lakeCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/lake-in';
+import { allenCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/allen-in';
+import { stJosephCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/st-joseph-in';
+import { elkhartCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/elkhart-in';
+import { tippecanoeCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/tippecanoe-in';
+import { vanderburghCountyInIntelligence } from '@/lib/local-movers/county-intelligence/indiana/vanderburgh-in';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / IN / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -481,6 +490,15 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   olmstedCountyMnIntelligence,
   stLouisCountyMnIntelligence,
   stearnsCountyMnIntelligence,
+  // Indiana Core 8
+  marionCountyInIntelligence,
+  hamiltonCountyInIntelligence,
+  lakeCountyInIntelligence,
+  allenCountyInIntelligence,
+  stJosephCountyInIntelligence,
+  elkhartCountyInIntelligence,
+  tippecanoeCountyInIntelligence,
+  vanderburghCountyInIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -834,4 +852,16 @@ export const MN_TIER1_CORE8 = [
   'olmsted',
   'st-louis',
   'stearns',
+] as const;
+
+/** Indiana Tier-1 Core 8. */
+export const IN_TIER1_CORE8 = [
+  'marion',
+  'hamilton',
+  'lake',
+  'allen',
+  'st-joseph',
+  'elkhart',
+  'tippecanoe',
+  'vanderburgh',
 ] as const;

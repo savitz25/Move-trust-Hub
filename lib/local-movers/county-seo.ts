@@ -299,6 +299,8 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'Massachusetts DPU operating certificate for in-state-only jobs when applicable';
     case 'minnesota':
       return 'MnDOT household goods mover permit for in-state-only jobs when applicable';
+    case 'indiana':
+      return 'Indiana DOR household goods operating authority (IC 8-2.1-22) for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -371,7 +373,9 @@ export function buildCountyFaqItems(
                                             ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Massachusetts household goods moves generally require a current Department of Public Utilities (DPU) operating certificate. Confirm the company is DPU-licensed via Mass.gov resources, and ensure the bill of lading lists the company name, address, DPU license number, and phone. FMCSA does not cover every in-state Massachusetts job; confirm DPU vs FMCSA for your exact origin and destination before you deposit.`
                                             : county.stateSlug === 'minnesota'
                                               ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Minnesota household goods moves by for-hire carriers generally require a Household Goods Mover Permit from the Minnesota Department of Transportation (MnDOT) Office of Freight and Commercial Vehicle Operations under Minn. Stat. §221.121 frameworks. Search MnDOT OFCVO carrier tools for an active permit matching the legal name on your estimate. FMCSA does not cover every in-state Minnesota job; confirm MnDOT HHG permit vs FMCSA for your exact origin and destination before you deposit.`
-                                              : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                                              : county.stateSlug === 'indiana'
+                                                ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Indiana household goods moves by for-hire carriers generally require a Certificate of Public Convenience and Necessity (Indiana Operating Authority) from the Indiana Department of Revenue (DOR) Motor Carrier Services under IC 8-2.1-22. Confirm active permanent authority matching the legal name on your estimate, and that written estimates align with the carrier’s filed tariff. FMCSA does not cover every in-state Indiana job; confirm Indiana DOR household goods authority vs FMCSA for your exact origin and destination before you deposit.`
+                                                : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

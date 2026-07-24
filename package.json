@@ -48,6 +48,7 @@
     "qa:mi-tier1": "tsx scripts/qa-mi-tier1.ts",
     "qa:or-tier1": "tsx scripts/qa-or-tier1.ts",
     "qa:md-tier1": "tsx scripts/qa-md-tier1.ts",
+    "qa:in-tier1": "tsx scripts/qa-in-tier1.ts",
     "guard:canonical-county-metadata": "tsx scripts/guard-canonical-county-metadata.ts",
     "guard:testimonials": "tsx scripts/guard-county-testimonial-imports.ts",
     "guard:content-exemptions": "tsx scripts/guard-content-tier-exemptions.ts",
