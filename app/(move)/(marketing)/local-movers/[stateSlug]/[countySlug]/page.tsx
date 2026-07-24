@@ -196,6 +196,8 @@ import { MdRegulatoryClarity } from '@/components/local-movers/md-regulatory-cla
 import { InRegulatoryClarity } from '@/components/local-movers/in-regulatory-clarity';
 import { CtRegulatoryClarity } from '@/components/local-movers/ct-regulatory-clarity';
 import { UtRegulatoryClarity } from '@/components/local-movers/ut-regulatory-clarity';
+import { AlRegulatoryClarity } from '@/components/local-movers/al-regulatory-clarity';
+import { LaRegulatoryClarity } from '@/components/local-movers/la-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
@@ -812,6 +814,12 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         ) : null}
         {stateSlug === 'utah' ? (
           <UtRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'alabama' ? (
+          <AlRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'louisiana' ? (
+          <LaRegulatoryClarity countyLabel={countyLabel} />
         ) : null}
 
         {popularRoutes.length > 0 ? (

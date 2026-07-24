@@ -5074,8 +5074,112 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'connecticut') return CT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'alabama') return AL_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'louisiana') return LA_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const AL_ROUTES: Record<string, CountyPopularRoute[]> = {
+  jefferson: [
+    { label: 'Within Jefferson (Downtown Birmingham ↔ Homewood / Hoover edges / west industrial)', direction: 'within', context: 'City multi-unit vs over-the-mountain access — not Huntsville or Mobile product. Jefferson County AL, not KY/MO.' },
+    { label: 'Atlanta / Nashville ↔ Birmingham metro pairs', direction: 'inbound', context: 'I-20/I-65 interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Jefferson ↔ Shelby growth corridor pairs', direction: 'within', context: 'US-280 multi-county logistics; city vs south-suburb product differs.' },
+    { label: 'Jefferson ↔ Madison / Montgomery in-state pairs', direction: 'outbound', context: 'I-65 long hauls; APSC authority for pure in-state jobs.' },
+    { label: 'Florida / Texas ↔ Birmingham reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Birmingham → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Alabama.' },
+  ],
+  mobile: [
+    { label: 'Within Mobile (Downtown / midtown ↔ west Mobile / Daphne-edge approaches)', direction: 'within', context: 'Port-city multi-unit and humidity staging — not Birmingham product.' },
+    { label: 'Port / industrial workforce relo → Mobile corridors', direction: 'inbound', context: 'Hard report dates and industrial timing reshape windows.' },
+    { label: 'Mobile ↔ Baldwin Eastern Shore pairs', direction: 'within', context: 'I-10 bay approaches; city vs Fairhope/Daphne product differs.' },
+    { label: 'New Orleans / Pensacola ↔ Mobile coastal pairs', direction: 'inbound', context: 'I-10 interstate household goods; FMCSA when leaving Alabama.' },
+    { label: 'Mobile ↔ Montgomery / Birmingham in-state pairs', direction: 'outbound', context: 'I-65 long hauls; APSC for pure in-state jobs.' },
+    { label: 'Mobile → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Alabama.' },
+  ],
+  madison: [
+    { label: 'Within Madison (Downtown Huntsville ↔ Research Park / Madison City / Owens Cross Roads edges)', direction: 'within', context: 'Aerospace/tech growth multi-unit and HOA — not Birmingham core product.' },
+    { label: 'Aerospace / defense contractor relo → Huntsville', direction: 'inbound', context: 'Hard report dates dominate north AL calendars.' },
+    { label: 'Madison ↔ Jefferson / Montgomery in-state pairs', direction: 'outbound', context: 'I-65 long hauls; APSC for pure in-state jobs.' },
+    { label: 'Nashville / Atlanta ↔ Huntsville tech markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Florida / Texas ↔ Huntsville reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Huntsville → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Alabama.' },
+  ],
+  montgomery: [
+    { label: 'Within Montgomery (Downtown / capital corridors ↔ east / south suburban rings)', direction: 'within', context: 'Capital multi-unit vs suburban stock — Alabama Montgomery, not Maryland Montgomery.' },
+    { label: 'State government / military relo → Montgomery', direction: 'inbound', context: 'Hard report dates and capital calendars reshape windows.' },
+    { label: 'Montgomery ↔ Birmingham / Mobile in-state pairs', direction: 'outbound', context: 'I-65 long hauls; APSC for pure in-state jobs.' },
+    { label: 'Atlanta ↔ Montgomery capital markets', direction: 'inbound', context: 'I-85 interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Florida / Texas ↔ Montgomery reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Montgomery → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Alabama.' },
+  ],
+  shelby: [
+    { label: 'Within Shelby (Hoover ↔ Alabaster / Pelham / Chelsea edges)', direction: 'within', context: 'South-Birmingham growth HOA product — not Jefferson city core clone.' },
+    { label: 'Birmingham overflow → Shelby growth suburbs', direction: 'inbound', context: 'US-280 / I-65 logistics; HOA packets dominate.' },
+    { label: 'Shelby ↔ Jefferson metro pairs', direction: 'within', context: 'City vs south-suburb product differs; keep county lines clear.' },
+    { label: 'Atlanta / Nashville ↔ Shelby family suburbs', direction: 'inbound', context: 'Interstate household goods into HOA tracts.' },
+    { label: 'Shelby ↔ Montgomery in-state pairs', direction: 'outbound', context: 'I-65 southbound; APSC for pure in-state jobs.' },
+    { label: 'Shelby → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Alabama.' },
+  ],
+  baldwin: [
+    { label: 'Within Baldwin (Daphne / Fairhope ↔ Foley / Gulf Shores / Orange Beach)', direction: 'within', context: 'Eastern Shore residential vs Gulf tourism stock — not Mobile city rename.' },
+    { label: 'Tourism / seasonal turns → Gulf Shores / Orange Beach', direction: 'inbound', context: 'Summer peaks reshape multi-unit and curb staging.' },
+    { label: 'Baldwin ↔ Mobile bay approaches', direction: 'within', context: 'I-10 / US-98 logistics; shore vs port-city product differs.' },
+    { label: 'Florida Panhandle / New Orleans ↔ Baldwin coastal markets', direction: 'inbound', context: 'I-10 interstate household goods; FMCSA when leaving Alabama.' },
+    { label: 'Baldwin ↔ Birmingham / Montgomery in-state pairs', direction: 'outbound', context: 'Long I-65 hauls; APSC for pure in-state jobs.' },
+    { label: 'Baldwin → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Alabama.' },
+  ],
+};
+
+const LA_ROUTES: Record<string, CountyPopularRoute[]> = {
+  orleans: [
+    { label: 'Within Orleans (French Quarter / CBD ↔ Uptown / Mid-City / Bywater)', direction: 'within', context: 'Historic access and elevators — not Metairie HOA product.' },
+    { label: 'Texas / Florida / Atlanta ↔ New Orleans neighborhood markets', direction: 'inbound', context: 'I-10 interstate household goods into multi-unit and raised-home stock.' },
+    { label: 'Orleans ↔ Jefferson Parish pairs', direction: 'within', context: 'City historic access vs Metairie/Kenner product — keep parish lines clear.' },
+    { label: 'Orleans ↔ St. Tammany Northshore pairs', direction: 'within', context: 'Causeway / I-10 logistics; city vs Northshore growth differs.' },
+    { label: 'Orleans ↔ Baton Rouge (I-10) pairs', direction: 'outbound', context: 'Capital corridor long locals; LPSC for pure in-state jobs.' },
+    { label: 'New Orleans → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Louisiana.' },
+  ],
+  'east-baton-rouge': [
+    { label: 'Within East Baton Rouge (Downtown / Mid City ↔ Southdowns / Perkins / Zachary edges)', direction: 'within', context: 'Capital multi-unit and LSU adjacency — not New Orleans product.' },
+    { label: 'State government / LSU relo → Baton Rouge', direction: 'inbound', context: 'Hard report dates and campus waves reshape calendars.' },
+    { label: 'Baton Rouge ↔ New Orleans (I-10) pairs', direction: 'outbound', context: 'Long I-10 locals; LPSC for pure in-state jobs.' },
+    { label: 'Baton Rouge ↔ Lafayette / Acadiana pairs', direction: 'within', context: 'I-10 multi-parish logistics; capital vs Acadiana product differs.' },
+    { label: 'Houston / Dallas ↔ Baton Rouge capital markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Baton Rouge → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Louisiana.' },
+  ],
+  jefferson: [
+    { label: 'Within Jefferson Parish (Metairie ↔ Kenner / West Bank / Harvey edges)', direction: 'within', context: 'NOLA-adjacent suburban multi-unit — Jefferson Parish LA, not Jefferson AL/KY/MO.' },
+    { label: 'Orleans overflow → Metairie / Kenner housing', direction: 'inbound', context: 'I-10 parish logistics; historic city vs suburban product differs.' },
+    { label: 'Jefferson ↔ St. Tammany Northshore pairs', direction: 'within', context: 'Causeway / I-10 multi-parish logistics.' },
+    { label: 'Texas / Florida ↔ Jefferson Parish suburbs', direction: 'inbound', context: 'Interstate household goods into multi-unit and SFH stock.' },
+    { label: 'Jefferson ↔ Baton Rouge in-state pairs', direction: 'outbound', context: 'I-10 long hauls; LPSC for pure in-state jobs.' },
+    { label: 'Jefferson Parish → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Louisiana.' },
+  ],
+  'st-tammany': [
+    { label: 'Within St. Tammany (Slidell ↔ Mandeville / Covington / Madisonville edges)', direction: 'within', context: 'Northshore growth HOA product — not Orleans historic core.' },
+    { label: 'Orleans / Jefferson overflow → Northshore suburbs', direction: 'inbound', context: 'Causeway / I-12 logistics; HOA packets dominate.' },
+    { label: 'St. Tammany ↔ Orleans / Jefferson pairs', direction: 'within', context: 'Northshore vs city vs Metairie product differs at each end.' },
+    { label: 'Mississippi Gulf Coast ↔ St. Tammany pairs', direction: 'inbound', context: 'I-10 interstate household goods; FMCSA when leaving Louisiana.' },
+    { label: 'St. Tammany ↔ Baton Rouge (I-12) pairs', direction: 'outbound', context: 'I-12 long locals; LPSC for pure in-state jobs.' },
+    { label: 'St. Tammany → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Louisiana.' },
+  ],
+  caddo: [
+    { label: 'Within Caddo (Downtown Shreveport ↔ south / east suburbs / Bossier approaches)', direction: 'within', context: 'Northwest LA regional hub — not southern LA clone product.' },
+    { label: 'Texas / Arkansas ↔ Shreveport regional markets', direction: 'inbound', context: 'I-20/I-49 interstate household goods; FMCSA when leaving Louisiana.' },
+    { label: 'Caddo ↔ Baton Rouge / New Orleans in-state pairs', direction: 'outbound', context: 'Long I-49/I-10 hauls; LPSC for pure in-state jobs.' },
+    { label: 'Energy / healthcare relo → Shreveport', direction: 'inbound', context: 'Hard report dates reshape northwest calendars.' },
+    { label: 'Caddo ↔ Lafayette Acadiana pairs', direction: 'within', context: 'I-49 multi-parish logistics; keep regional product distinct.' },
+    { label: 'Shreveport → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Louisiana.' },
+  ],
+  lafayette: [
+    { label: 'Within Lafayette Parish (Downtown / UL corridor ↔ south / east growth suburbs)', direction: 'within', context: 'Acadiana hub multi-unit — Lafayette Parish LA, not Lafayette IN.' },
+    { label: 'Energy / healthcare relo → Lafayette Acadiana', direction: 'inbound', context: 'Hard report dates reshape south-central calendars.' },
+    { label: 'Lafayette ↔ Baton Rouge (I-10) pairs', direction: 'within', context: 'I-10 multi-parish logistics; Acadiana vs capital product differs.' },
+    { label: 'Lafayette ↔ New Orleans / Houston pairs', direction: 'outbound', context: 'I-10 long hauls; clarify LPSC vs FMCSA for the full route.' },
+    { label: 'Texas / Florida ↔ Lafayette reverse family moves', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Lafayette → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Louisiana.' },
+  ],
+};
 
 const CT_ROUTES: Record<string, CountyPopularRoute[]> = {
   fairfield: [

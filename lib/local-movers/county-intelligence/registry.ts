@@ -287,6 +287,20 @@ import { davisCountyUtIntelligence } from '@/lib/local-movers/county-intelligenc
 import { weberCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/weber-ut';
 import { washingtonCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/washington-ut';
 import { cacheCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/cache-ut';
+// Alabama Core 6
+import { jeffersonCountyAlIntelligence } from '@/lib/local-movers/county-intelligence/alabama/jefferson-al';
+import { mobileCountyAlIntelligence } from '@/lib/local-movers/county-intelligence/alabama/mobile-al';
+import { madisonCountyAlIntelligence } from '@/lib/local-movers/county-intelligence/alabama/madison-al';
+import { montgomeryCountyAlIntelligence } from '@/lib/local-movers/county-intelligence/alabama/montgomery-al';
+import { shelbyCountyAlIntelligence } from '@/lib/local-movers/county-intelligence/alabama/shelby-al';
+import { baldwinCountyAlIntelligence } from '@/lib/local-movers/county-intelligence/alabama/baldwin-al';
+// Louisiana Core 6 (parishes)
+import { orleansParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/orleans-la';
+import { eastBatonRougeParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/east-baton-rouge-la';
+import { jeffersonParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/jefferson-la';
+import { stTammanyParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/st-tammany-la';
+import { caddoParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/caddo-la';
+import { lafayetteParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/lafayette-la';
 // Kentucky Core 6
 import { jeffersonCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/jefferson-ky';
 import { fayetteCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/fayette-ky';
@@ -585,6 +599,20 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   weberCountyUtIntelligence,
   washingtonCountyUtIntelligence,
   cacheCountyUtIntelligence,
+  // Alabama Core 6
+  jeffersonCountyAlIntelligence,
+  mobileCountyAlIntelligence,
+  madisonCountyAlIntelligence,
+  montgomeryCountyAlIntelligence,
+  shelbyCountyAlIntelligence,
+  baldwinCountyAlIntelligence,
+  // Louisiana Core 6 (parishes)
+  orleansParishLaIntelligence,
+  eastBatonRougeParishLaIntelligence,
+  jeffersonParishLaIntelligence,
+  stTammanyParishLaIntelligence,
+  caddoParishLaIntelligence,
+  lafayetteParishLaIntelligence,
   // Kentucky Core 6
   jeffersonCountyKyIntelligence,
   fayetteCountyKyIntelligence,
@@ -995,6 +1023,26 @@ export const UT_TIER1_CORE6 = [
   'weber',
   'washington',
   'cache',
+] as const;
+
+/** Alabama Tier-1 Core 6. */
+export const AL_TIER1_CORE6 = [
+  'jefferson',
+  'mobile',
+  'madison',
+  'montgomery',
+  'shelby',
+  'baldwin',
+] as const;
+
+/** Louisiana Tier-1 Core 6 (parishes). */
+export const LA_TIER1_CORE6 = [
+  'orleans',
+  'east-baton-rouge',
+  'jefferson',
+  'st-tammany',
+  'caddo',
+  'lafayette',
 ] as const;
 
 /** Missouri Tier-1 Core 6 (St. Louis County + KC/Jackson + collars + Springfield). */

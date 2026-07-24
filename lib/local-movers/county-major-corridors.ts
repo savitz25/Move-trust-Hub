@@ -263,6 +263,22 @@ const CORRIDORS: Record<string, string> = {
   'utah/washington': 'I-15 · UT-9 · UT-18 · local St. George grid',
   'utah/cache': 'US-89/91 · US-30 · local Logan grid',
 
+  // ——— Alabama Core 6 ———
+  'alabama/jefferson': 'I-20 · I-65 · I-59 · US-280 · US-31 · local arterial grid',
+  'alabama/mobile': 'I-10 · I-65 · US-90 · US-98 · local arterial grid',
+  'alabama/madison': 'I-565 · I-65 · US-72 · US-231 · local Huntsville grid',
+  'alabama/montgomery': 'I-65 · I-85 · US-80 · US-231 · local capital grid',
+  'alabama/shelby': 'I-65 · US-280 · US-31 · AL-119 · local arterial grid',
+  'alabama/baldwin': 'I-10 · US-98 · US-90 · AL-59 · coastal approaches',
+
+  // ——— Louisiana Core 6 (parishes) ———
+  'louisiana/orleans': 'I-10 · I-610 · US-90 · LA-39 · local arterial grid',
+  'louisiana/east-baton-rouge': 'I-10 · I-12 · I-110 · US-61 · local BR grid',
+  'louisiana/jefferson': 'I-10 · I-310 · US-90 · LA-45 · local Metairie/Kenner grid',
+  'louisiana/st-tammany': 'I-12 · I-10 · US-190 · LA-21 · Northshore arterials',
+  'louisiana/caddo': 'I-20 · I-49 · US-71 · local Shreveport grid',
+  'louisiana/lafayette': 'I-10 · I-49 · US-90 · local Lafayette grid',
+
   // ——— Virginia Core 12 ———
   'virginia/fairfax': 'I-66 · I-495 · VA-28 · Dulles Toll Road · VA-236 · I-95 links',
   'virginia/prince-william': 'I-95 · I-66 · VA-234 · US-1 · Prince William Pkwy',
@@ -362,7 +378,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|OR[-\s]?\d{1,3}|MD[-\s]?\d{1,3}|CT[-\s]?\d{1,3}|UT[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Merritt|Legacy)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|OR[-\s]?\d{1,3}|MD[-\s]?\d{1,3}|CT[-\s]?\d{1,3}|UT[-\s]?\d{1,3}|AL[-\s]?\d{1,3}|LA[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Merritt|Legacy)\b/i.test(
     v
   );
 }
