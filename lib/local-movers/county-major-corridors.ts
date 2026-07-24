@@ -54,6 +54,15 @@ const CORRIDORS: Record<string, string> = {
   'florida/brevard': 'I-95 · US-1 · FL-528 · A1A · FL-520',
   'florida/pasco': 'I-75 · US-19 · FL-54 · FL-52 · Suncoast Parkway (FL-589)',
   'florida/volusia': 'I-4 · I-95 · US-1 · FL-40 · A1A',
+  // Florida Tier 2 Wave 1 additions
+  'florida/manatee': 'I-75 · US-41 · US-301 · FL-64 · Anna Maria approaches',
+  'florida/collier': 'I-75 · US-41 · CR-951 · Immokalee Rd · Marco Island approaches',
+  'florida/seminole': 'I-4 · US-17/92 · FL-417 · FL-436 · FL-46',
+  'florida/osceola': 'I-4 · FL-417 · US-192 · Florida Turnpike · neoCity corridors',
+  'florida/lake': 'US-27 · Florida Turnpike · FL-50 · FL-19 · FL-44',
+  'florida/st-lucie': 'I-95 · Florida Turnpike · US-1 · FL-70 · A1A approaches',
+  'florida/marion': 'I-75 · US-27 · US-301 · US-441 · FL-40',
+  'florida/escambia': 'I-10 · I-110 · US-98 · US-29 · Pensacola Beach approaches',
 
   // ——— Texas ———
   'texas/harris': 'I-10 · I-45 · I-69/US-59 · Beltway 8 · Sam Houston Tollway · Hardy Toll Road',
@@ -74,6 +83,22 @@ const CORRIDORS: Record<string, string> = {
   'texas/hays': 'I-35 · SH-21 · SH-80 · FM-1626 · local San Marcos grid',
   'texas/nueces': 'I-37 · SH-358 · US-181 · SH-44 · Padre Island approaches',
   'texas/bell': 'I-35 · I-14 · US-190 · SH-36 · local Killeen–Temple grid',
+  // TX Tier 2 Wave 2
+  'texas/comal': 'I-35 · SH-46 · FM-306 · Loop 337 · local New Braunfels grid',
+  'texas/guadalupe': 'I-10 · SH-130 · US-90 · SH-123 · local Schertz–Cibolo grid',
+  'texas/parker': 'I-20 · US-180 · SH-171 · FM-5 · local Weatherford grid',
+  'texas/johnson': 'I-35W · US-67 · SH-174 · SH-171 · local Cleburne–Burleson grid',
+  'texas/ellis': 'I-35E · US-287 · US-77 · SH-34 · local Waxahachie grid',
+  'texas/kaufman': 'I-20 · US-175 · US-80 · SH-34 · local Forney–Terrell grid',
+  'texas/brazos': 'SH-6 · US-190 · FM-2818 · SH-21 · local Bryan–College Station grid',
+  'texas/lubbock': 'I-27 · US-82 · US-84 · Loop 289 · local Lubbock grid',
+  'texas/mclennan': 'I-35 · US-84 · SH-6 · Loop 340 · local Waco grid',
+  'texas/jefferson': 'I-10 · US-69 · US-96 · SH-73 · local Beaumont–Port Arthur grid',
+  'texas/smith': 'I-20 · US-69 · Loop 323 · SH-31 · local Tyler grid',
+  'texas/cameron': 'I-69E · US-77 · US-83 · SH-48 · local Brownsville–Harlingen grid',
+  'texas/webb': 'I-35 · US-59 · Loop 20 · SH-359 · local Laredo grid',
+  'texas/midland': 'I-20 · SH-349 · Loop 250 · SH-158 · local Midland grid',
+  'texas/ector': 'I-20 · US-385 · Loop 338 · SH-191 · local Odessa grid',
 
   // ——— Georgia ———
   'georgia/fulton': 'I-75/85 Connector · I-285 · GA-400 · I-20',

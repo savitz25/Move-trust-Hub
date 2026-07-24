@@ -73,6 +73,22 @@ import { elPasoCountyIntelligence } from '@/lib/local-movers/county-intelligence
 import { hidalgoCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/hidalgo-tx';
 import { nuecesCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/nueces-tx';
 import { bellCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/bell-tx';
+// Texas Tier 2 Wave 2
+import { comalCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/comal-tx';
+import { guadalupeCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/guadalupe-tx';
+import { parkerCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/parker-tx';
+import { johnsonCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/johnson-tx';
+import { ellisCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/ellis-tx';
+import { kaufmanCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/kaufman-tx';
+import { brazosCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/brazos-tx';
+import { lubbockCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/lubbock-tx';
+import { mclennanCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/mclennan-tx';
+import { jeffersonCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/jefferson-tx';
+import { smithCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/smith-tx';
+import { cameronCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/cameron-tx';
+import { webbCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/webb-tx';
+import { midlandCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/midland-tx';
+import { ectorCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/ector-tx';
 // Georgia Core 6 (metro) + Wave 2
 import { fultonCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/fulton-ga';
 import { gwinnettCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/gwinnett-ga';
@@ -523,6 +539,22 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   hidalgoCountyIntelligence,
   nuecesCountyIntelligence,
   bellCountyIntelligence,
+  // Texas Tier 2 Wave 2
+  comalCountyIntelligence,
+  guadalupeCountyIntelligence,
+  parkerCountyIntelligence,
+  johnsonCountyIntelligence,
+  ellisCountyIntelligence,
+  kaufmanCountyIntelligence,
+  brazosCountyIntelligence,
+  lubbockCountyIntelligence,
+  mclennanCountyIntelligence,
+  jeffersonCountyIntelligence,
+  smithCountyIntelligence,
+  cameronCountyIntelligence,
+  webbCountyIntelligence,
+  midlandCountyIntelligence,
+  ectorCountyIntelligence,
   // Georgia Core 6 (metro)
   fultonCountyIntelligence,
   gwinnettCountyIntelligence,
@@ -1058,6 +1090,29 @@ export const TX_TIER2_WAVE1 = [
   'hidalgo',
   'nueces',
   'bell',
+] as const;
+
+/**
+ * Texas Tier 2 Wave 2 — SA/Austin/DFW collars + independent secondary metros on the
+ * locked Tier 2 content contract (Compared with parent, 2–4 zones, schools+hospitals only).
+ * Do not rebuild Wave 1 or Tier 1 Core 5.
+ */
+export const TX_TIER2_WAVE2 = [
+  'comal',
+  'guadalupe',
+  'parker',
+  'johnson',
+  'ellis',
+  'kaufman',
+  'brazos',
+  'lubbock',
+  'mclennan',
+  'jefferson',
+  'smith',
+  'cameron',
+  'webb',
+  'midland',
+  'ector',
 ] as const;
 
 /**
