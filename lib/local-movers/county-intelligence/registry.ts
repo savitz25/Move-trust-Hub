@@ -144,11 +144,24 @@ import { berksCountyPaIntelligence } from '@/lib/local-movers/county-intelligenc
 import { lehighCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/lehigh-pa';
 import { northamptonCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/northampton-pa';
 import { westmorelandCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/westmoreland-pa';
+// Illinois Core 12
+import { cookCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/cook-il';
+import { duPageCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/dupage-il';
+import { lakeCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/lake-il';
+import { willCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/will-il';
+import { kaneCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/kane-il';
+import { mcHenryCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/mchenry-il';
+import { winnebagoCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/winnebago-il';
+import { madisonCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/madison-il';
+import { stClairCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/st-clair-il';
+import { sangamonCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/sangamon-il';
+import { champaignCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/champaign-il';
+import { peoriaCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/peoria-il';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -287,6 +300,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   norfolkCityVaIntelligence,
   staffordCountyVaIntelligence,
   spotsylvaniaCountyVaIntelligence,
+  // Illinois Core 12
+  cookCountyIlIntelligence,
+  duPageCountyIlIntelligence,
+  lakeCountyIlIntelligence,
+  willCountyIlIntelligence,
+  kaneCountyIlIntelligence,
+  mcHenryCountyIlIntelligence,
+  winnebagoCountyIlIntelligence,
+  madisonCountyIlIntelligence,
+  stClairCountyIlIntelligence,
+  sangamonCountyIlIntelligence,
+  champaignCountyIlIntelligence,
+  peoriaCountyIlIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -500,6 +526,22 @@ export const TN_TIER1_CORE12 = [
   'blount',
   'sevier',
   'sullivan',
+] as const;
+
+/** Illinois Tier-1 Core 12 (Chicago metro + collar + Metro East + downstate hubs). */
+export const IL_TIER1_CORE12 = [
+  'cook',
+  'dupage',
+  'lake',
+  'will',
+  'kane',
+  'mchenry',
+  'winnebago',
+  'madison',
+  'st-clair',
+  'sangamon',
+  'champaign',
+  'peoria',
 ] as const;
 
 /** Pennsylvania Tier-1 Core 12. */

@@ -4774,6 +4774,106 @@ const TN_ROUTES: Record<string, CountyPopularRoute[]> = {
   ],
 };
 
+const IL_ROUTES: Record<string, CountyPopularRoute[]> = {
+  cook: [
+    { label: 'Within Cook (Downtown / Near North ↔ South Side / West Side / NW Side)', direction: 'within', context: 'Elevator COI and street permits downtown vs alley walk-ups and bungalow belts — not one local rate.' },
+    { label: 'National → Chicago career & student markets', direction: 'inbound', context: 'Interstate household goods into high-rises and multi-unit stock; winter access plans matter.' },
+    { label: 'Cook ↔ DuPage / Lake / Will / Kane collar pairs', direction: 'within', context: 'City-to-collar logistics; I-290/I-294/I-90 portal time dominates.' },
+    { label: 'Chicago ↔ Milwaukee / Northwest Indiana metro pairs', direction: 'outbound', context: 'Short interstate hops; FMCSA required once leaving Illinois.' },
+    { label: 'Cook → Texas / Sun Belt long-distance exits', direction: 'outbound', context: 'Family and corporate interstate; volume surveys beat hourly guesses.', href: '/resources/routes/california-to-texas' },
+    { label: 'Lake Shore Drive / downtown high-rise turns', direction: 'within', context: 'Elevator reservations and curb rules fail estimates more often than packing skill.' },
+  ],
+  dupage: [
+    { label: 'Within DuPage (Naperville ↔ Wheaton / Oak Brook / Lombard)', direction: 'within', context: 'Collar HOA and corporate multi-unit product — not Chicago elevator defaults.' },
+    { label: 'Cook County overflow → DuPage suburbs', direction: 'inbound', context: 'Space and school-seeking inflows; I-88 / I-355 timing shapes crew hours.' },
+    { label: 'DuPage ↔ Kane / Will / Cook pairs', direction: 'within', context: 'West-collar multi-county logistics; clarify county lines on estimates.' },
+    { label: 'DuPage → Wisconsin / Indiana interstate legs', direction: 'outbound', context: 'Regional career moves; FMCSA required beyond Illinois.' },
+    { label: 'Naperville / Warrenville HOA growth stock', direction: 'within', context: 'Gate lists and long driveways; collect packets early.' },
+    { label: 'DuPage → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Family interstate household goods; inventory surveys recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  lake: [
+    { label: 'Within Lake (North Shore edge ↔ Waukegan / Gurnee / Libertyville)', direction: 'within', context: 'Estate long-carries vs inland HOA growth; US-41 and I-94 timing differ by pocket.' },
+    { label: 'Chicago metro overflow → Lake County suburbs', direction: 'inbound', context: 'North-collar growth and North Shore lifestyle product — not DuPage clone.' },
+    { label: 'Lake ↔ Cook / McHenry pairs', direction: 'within', context: 'Tollway portal time and county-line clarity on every estimate.' },
+    { label: 'Lake → Wisconsin border interstate legs', direction: 'outbound', context: 'Short northbound hops can leave Illinois; confirm FMCSA when they do.' },
+    { label: 'North Shore estate and multi-unit mix', direction: 'within', context: 'Long carries, older stock, and HOA rules; photo access early.' },
+    { label: 'Lake → Sun Belt long-distance exits', direction: 'outbound', context: 'Interstate household goods; volume calculator recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  will: [
+    { label: 'Within Will (Joliet ↔ Plainfield / New Lenox / Bolingbrook edge)', direction: 'within', context: 'South-collar growth and industrial adjacency; I-55 / I-80 portal time matters.' },
+    { label: 'Cook / DuPage overflow → Will growth suburbs', direction: 'inbound', context: 'Affordability and new-build HOA product south of the core.' },
+    { label: 'Will ↔ Cook / DuPage / Kane pairs', direction: 'within', context: 'South and southwest collar logistics; warehouse traffic can slow trucks.' },
+    { label: 'Will → Indiana border interstate legs', direction: 'outbound', context: 'I-80 eastbound can cross state lines quickly; FMCSA when it does.' },
+    { label: 'Joliet multi-unit and industrial-edge housing', direction: 'within', context: 'Different product than Naperville HOA villages — survey access carefully.' },
+    { label: 'Will → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Family interstate; inventory surveys recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  kane: [
+    { label: 'Within Kane (Aurora ↔ Elgin / St. Charles / Geneva Fox River towns)', direction: 'within', context: 'Fox River bridges and Randall Road spine; west-collar product not Chicago elevators.' },
+    { label: 'Cook / DuPage overflow → Kane growth corridors', direction: 'inbound', context: 'West-collar space-seeking inflows; I-88 / I-90 timing shapes start times.' },
+    { label: 'Kane ↔ DuPage / McHenry pairs', direction: 'within', context: 'Clarify county lines; longer empty miles than near-city collar.' },
+    { label: 'Kane → Wisconsin / Indiana interstate career legs', direction: 'outbound', context: 'FMCSA required once leaving Illinois.' },
+    { label: 'Elgin / Aurora multi-unit and older SFH mix', direction: 'within', context: 'Stairs and curb constraints mixed with HOA growth villages.' },
+    { label: 'Kane → Sun Belt long-distance exits', direction: 'outbound', context: 'Interstate household goods; volume surveys recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  mchenry: [
+    { label: 'Within McHenry (Crystal Lake ↔ Woodstock / Huntley / McHenry)', direction: 'within', context: 'Far-north collar empty miles and lower density; not a Naperville clone.' },
+    { label: 'Cook / Lake overflow → McHenry space markets', direction: 'inbound', context: 'Longer suburban runs and rural-edge driveways; photo access early.' },
+    { label: 'McHenry ↔ Lake / Kane / Cook pairs', direction: 'within', context: 'US-14 / IL-47 logistics; crew drive time often rivals load time.' },
+    { label: 'McHenry → Wisconsin interstate legs', direction: 'outbound', context: 'Northern approaches can leave Illinois; confirm FMCSA when they do.' },
+    { label: 'Huntley / Lake-in-the-Hills growth HOAs', direction: 'within', context: 'Gate lists and school-season Saturday demand; book peak weekends early.' },
+    { label: 'McHenry → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Family interstate household goods; inventory surveys recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  winnebago: [
+    { label: 'Within Winnebago (Rockford core ↔ Loves Park / Machesney / South Beloit edge)', direction: 'within', context: 'Rock River regional product — not Chicago collar logistics.' },
+    { label: 'Midwest / Chicago reverse → Rockford regional markets', direction: 'inbound', context: 'Manufacturing and healthcare inflows into multi-unit and SFH stock.' },
+    { label: 'Winnebago ↔ Boone / Ogle regional pairs', direction: 'within', context: 'Longer empty miles between northern Illinois towns.' },
+    { label: 'Rockford → Chicago career exits', direction: 'outbound', context: 'I-90 corridor professional moves; confirm ICC vs FMCSA for the full route.' },
+    { label: 'Rockford → Wisconsin border interstate legs', direction: 'outbound', context: 'South Beloit approaches can cross state lines; FMCSA when they do.' },
+    { label: 'Rockford → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Interstate household goods; volume calculator recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  madison: [
+    { label: 'Within Madison (Edwardsville / Glen Carbon ↔ Alton / Collinsville / Granite City)', direction: 'within', context: 'Metro East St. Louis-facing product — not Chicago collar.' },
+    { label: 'Missouri / St. Louis metro → Madison County IL suburbs', direction: 'inbound', context: 'Cross-river inflows; clarify Illinois ICC vs interstate FMCSA authority.' },
+    { label: 'Madison ↔ St. Clair Metro East pairs', direction: 'within', context: 'Partner counties with different cores; I-255 / I-55/70 timing matters.' },
+    { label: 'Madison → Chicago / Indy career exits', direction: 'outbound', context: 'I-55 north or east professional moves; FMCSA when leaving Illinois.' },
+    { label: 'SIUE / Edwardsville multi-family and growth suburbs', direction: 'within', context: 'Lease cycles and HOA product mixed with river-adjacent stock.' },
+    { label: 'Madison → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Interstate household goods; inventory surveys recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  'st-clair': [
+    { label: "Within St. Clair (Belleville ↔ O'Fallon / Shiloh / East St. Louis edges)", direction: 'within', context: 'Metro East partner to Madison — Scott AFB adjacency, not Edwardsville clone.' },
+    { label: 'Scott AFB PCS & military family moves', direction: 'inbound', context: 'Hard report dates and storage-in-transit near base-adjacent housing.' },
+    { label: 'St. Clair ↔ Madison / St. Louis MO pairs', direction: 'outbound', context: 'I-64 / I-255 logistics; Missouri destinations need FMCSA.' },
+    { label: "Belleville multi-unit and older SFH grids", direction: 'within', context: "Stairs and curb constraints differ from O'Fallon HOA growth." },
+    { label: 'St. Clair → Chicago / Midwest career exits', direction: 'outbound', context: 'I-55 / I-70 professional moves; confirm ICC vs FMCSA.' },
+    { label: 'St. Clair → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Interstate household goods; volume surveys recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  sangamon: [
+    { label: 'Within Sangamon (Downtown Springfield ↔ west / south suburbs)', direction: 'within', context: 'Capital-city multi-unit vs suburban SFH — not Chicago product.' },
+    { label: 'In-state IL → Springfield government / medical markets', direction: 'inbound', context: 'Session and agency calendars create mid-week demand clusters.' },
+    { label: 'Sangamon ↔ Champaign / Peoria regional pairs', direction: 'within', context: 'Central Illinois long locals; empty miles matter.' },
+    { label: 'Springfield → Chicago / St. Louis career exits', direction: 'outbound', context: 'I-55 corridor professional moves; FMCSA when leaving Illinois.' },
+    { label: 'Medical corridor multi-family turns', direction: 'within', context: 'Elevator buildings near hospital districts; mid-month lease waves.' },
+    { label: 'Sangamon → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Interstate household goods; inventory surveys recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  champaign: [
+    { label: 'Within Champaign (Campustown / Urbana ↔ Savoy / Mahomet)', direction: 'within', context: 'University lease peaks vs family suburban product — not Chicago collar.' },
+    { label: 'National student & faculty inflows → Champaign–Urbana', direction: 'inbound', context: 'August/May clusters; stairs and multi-unit access dominate near campus.' },
+    { label: 'Champaign ↔ Sangamon / McLean regional pairs', direction: 'within', context: 'I-57 / I-74 long locals; price portal time honestly.' },
+    { label: 'Champaign → Chicago / Indy career exits', direction: 'outbound', context: 'I-57 north or I-74 east professional moves; FMCSA out of state.' },
+    { label: 'Campustown multi-unit turnover waves', direction: 'within', context: 'Short notice lease ends; book peak weekends early.' },
+    { label: 'Champaign → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Interstate household goods; volume calculator recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+  peoria: [
+    { label: 'Within Peoria (Medical District / Downtown ↔ Heights / Dunlap edges)', direction: 'within', context: 'Central Illinois hub — bluff grades and medical multi-unit, not Chicago elevators as default.' },
+    { label: 'Midwest → Peoria medical & manufacturing markets', direction: 'inbound', context: 'Healthcare and industrial employment inflows into multi-unit and SFH stock.' },
+    { label: 'Peoria ↔ Tazewell (East Peoria) pairs', direction: 'within', context: 'River-crossing logistics; clarify Peoria County vs Tazewell addresses.' },
+    { label: 'Peoria → Chicago / St. Louis career exits', direction: 'outbound', context: 'I-74 corridor professional moves; FMCSA when leaving Illinois.' },
+    { label: 'Dunlap / northern growth HOA stock', direction: 'within', context: 'Gate lists and longer empty miles from core yards.' },
+    { label: 'Peoria → Florida / Sun Belt long-distance', direction: 'outbound', context: 'Interstate household goods; inventory surveys recommended.', href: '/resources/routes/new-jersey-to-florida' },
+  ],
+};
+
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -4790,6 +4890,7 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'virginia') return VA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'tennessee') return TN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'pennsylvania') return PA_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'illinois') return IL_ROUTES[countySlug] ?? [];
   return [];
 }
 
