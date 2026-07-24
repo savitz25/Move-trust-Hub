@@ -4675,6 +4675,105 @@ const VA_ROUTES: Record<string, CountyPopularRoute[]> = {
   ],
 };
 
+const TN_ROUTES: Record<string, CountyPopularRoute[]> = {
+  shelby: [
+    { label: 'Within Shelby (Midtown ↔ East Memphis / Germantown)', direction: 'within', context: 'Stairs and curb near core vs HOA southeast rings — I-240 portal time dominates.' },
+    { label: 'Midwest / Illinois → Memphis logistics & healthcare markets', direction: 'inbound', context: 'Interstate household goods into river-city stock; heat pacing on unload days.', href: '/resources/routes/illinois-to-tennessee' },
+    { label: 'Florida ↔ Memphis reverse family & career moves', direction: 'inbound', context: 'I-55/I-40 northbound household goods; FMCSA for interstate legs.' },
+    { label: 'Memphis ↔ Nashville (I-40)', direction: 'outbound', context: 'In-state long haul between West Tennessee and Middle Tennessee job markets.' },
+    { label: 'Shelby ↔ Arkansas / Mississippi border pairs', direction: 'outbound', context: 'Cross-state metro edges; clarify TDOR vs FMCSA authority.' },
+    { label: 'Northeast → Memphis distribution corridors', direction: 'inbound', context: 'Interstate arrivals into East Memphis and southeast suburban housing.' },
+  ],
+  davidson: [
+    { label: 'Within Davidson (Gulch / Downtown ↔ East Nashville / Antioch)', direction: 'within', context: 'Tower elevators vs neighborhood stairs vs outer multi-family — not one local rate.' },
+    { label: 'Northeast → Nashville music, healthcare & tech markets', direction: 'inbound', context: 'Corporate and creative relocations into core and near-core stock.', href: '/resources/routes/new-jersey-to-tennessee' },
+    { label: 'Florida ↔ Nashville reverse career & lifestyle moves', direction: 'inbound', context: 'I-65/I-24 household goods; event-week curb rules reshape unload windows.' },
+    { label: 'Davidson ↔ Williamson / Rutherford / Sumner / Wilson metro pairs', direction: 'within', context: 'Nashville-ring logistics; keep county lines clear on estimates.' },
+    { label: 'Nashville ↔ Memphis (I-40)', direction: 'outbound', context: 'In-state long haul between Middle and West Tennessee.' },
+    { label: 'Midwest → Nashville professional corridors', direction: 'inbound', context: 'Healthcare and corporate inflows into multi-unit and neighborhood stock.', href: '/resources/routes/illinois-to-tennessee' },
+  ],
+  knox: [
+    { label: 'Within Knox (Downtown / UT ↔ West Knoxville / foothills)', direction: 'within', context: 'Campus multi-family vs HOA west growth vs hillside driveways.' },
+    { label: 'Northeast / Florida → Knoxville regional hub markets', direction: 'inbound', context: 'Interstate household goods into East Tennessee housing; I-40 approach buffers.' },
+    { label: 'Knox ↔ Blount (Maryville / Alcoa) pairs', direction: 'within', context: 'US-129 everyday regional logistics; clarify county lines.' },
+    { label: 'Knoxville ↔ Nashville (I-40)', direction: 'outbound', context: 'In-state long haul for career moves west.' },
+    { label: 'Midwest → Knoxville energy/research corridors', direction: 'inbound', context: 'Professional and research inflows into west Knox and near-core stock.' },
+    { label: 'Knox ↔ Sevier tourism-adjacent reverse moves', direction: 'outbound', context: 'Residential-to-tourism-edge pairs; not full cabin product unless surveyed.' },
+  ],
+  hamilton: [
+    { label: 'Within Hamilton (Downtown / Southside ↔ East Brainerd / Hixson)', direction: 'within', context: 'River-core elevators vs eastern HOA growth vs northern multi-family.' },
+    { label: 'Northeast / Florida → Chattanooga lifestyle & manufacturing markets', direction: 'inbound', context: 'Interstate household goods into river-and-ridge stock.' },
+    { label: 'Hamilton ↔ North Georgia border pairs', direction: 'outbound', context: 'Cross-state metro edges; clarify TDOR vs FMCSA authority.' },
+    { label: 'Chattanooga ↔ Nashville (I-24)', direction: 'outbound', context: 'In-state long haul for career moves northwest.' },
+    { label: 'Midwest → Chattanooga industrial & healthcare corridors', direction: 'inbound', context: 'Manufacturing and clinical employment inflows.' },
+    { label: 'Hamilton ↔ Knoxville regional pairs (I-75)', direction: 'outbound', context: 'East Tennessee regional hauls longer than a suburb hop.' },
+  ],
+  rutherford: [
+    { label: 'Within Rutherford (Murfreesboro growth ↔ Smyrna / La Vergne)', direction: 'within', context: 'HOA new construction vs industrial-adjacent multi-family.' },
+    { label: 'Rutherford ↔ Davidson I-24 pairs', direction: 'within', context: 'Southeast Nashville overflow logistics; portal time dominates at peak.' },
+    { label: 'Northeast / Florida → Murfreesboro growth housing', direction: 'inbound', context: 'Interstate arrivals into HOA multi-family and tracts.' },
+    { label: 'Midwest → Rutherford manufacturing & logistics corridors', direction: 'inbound', context: 'Industrial employment inflows into Smyrna-area housing.' },
+    { label: 'Rutherford ↔ Williamson / Wilson ring pairs', direction: 'within', context: 'Different suburb-ring fabrics under one metro label — not clones.' },
+    { label: 'Florida ↔ Middle Tennessee reverse family moves via I-24', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+  ],
+  williamson: [
+    { label: 'Within Williamson (Franklin estates ↔ Brentwood / Cool Springs)', direction: 'within', context: 'Higher-value inventory and HOA gates — not Rutherford growth-tract pricing.' },
+    { label: 'Williamson ↔ Davidson I-65 pairs', direction: 'within', context: 'Premium south corridor logistics into Nashville core.' },
+    { label: 'Northeast → Franklin / Brentwood professional markets', direction: 'inbound', context: 'Interstate arrivals into estate and multi-unit Cool Springs product.' },
+    { label: 'Florida ↔ Williamson reverse lifestyle moves', direction: 'inbound', context: 'Higher-value household goods; careful-handling surveys required.' },
+    { label: 'Midwest → Cool Springs corporate corridors', direction: 'inbound', context: 'Corporate apartment and executive moves into elevator product.' },
+    { label: 'Williamson ↔ Rutherford south Middle Tennessee edges', direction: 'within', context: 'South metro pairs with different HOA and price mixes.' },
+  ],
+  montgomery: [
+    { label: 'Within Montgomery (Fort Campbell–adjacent multi-family ↔ Sango growth)', direction: 'within', context: 'PCS lease waves vs HOA villages — I-24/US-41A timing dominates.' },
+    { label: 'Military PCS lanes → Fort Campbell / Clarksville', direction: 'inbound', context: 'Order-driven household goods; report dates drive the plan more than preferred Saturdays.' },
+    { label: 'Northeast → Fort Campbell PCS households', direction: 'inbound', context: 'Interstate military moves; FMCSA for cross-state legs.' },
+    { label: 'Montgomery ↔ Kentucky border pairs', direction: 'outbound', context: 'Clarify Tennessee vs Kentucky authority and empty miles.' },
+    { label: 'Florida → Clarksville reverse PCS', direction: 'inbound', context: 'I-24 northbound military and family household goods.' },
+    { label: 'Montgomery → Nashville metro post-service career moves', direction: 'outbound', context: 'In-state long haul after separation into Davidson-ring housing.' },
+  ],
+  sumner: [
+    { label: 'Within Sumner (Hendersonville HOA growth ↔ Gallatin / lake edges)', direction: 'within', context: 'North-ring multi-family vs lake-adjacent driveways.' },
+    { label: 'Sumner ↔ Davidson I-65 / Vietnam Veterans pairs', direction: 'within', context: 'North Nashville overflow logistics; portal time dominates at peak.' },
+    { label: 'Northeast / Florida → Hendersonville growth housing', direction: 'inbound', context: 'Interstate arrivals into north-ring HOA product.' },
+    { label: 'Midwest → Sumner County family corridors', direction: 'inbound', context: 'Family and professional inflows seeking space north of Nashville.' },
+    { label: 'Sumner ↔ Wilson / Robertson edges', direction: 'within', context: 'Different north/east ring fabrics — not identical route blobs.' },
+    { label: 'Florida ↔ Middle Tennessee reverse family moves via I-65', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+  ],
+  wilson: [
+    { label: 'Within Wilson (Mt. Juliet HOA growth ↔ Lebanon)', direction: 'within', context: 'I-40 multi-family vs town mixed stock.' },
+    { label: 'Wilson ↔ Davidson I-40 pairs', direction: 'within', context: 'East Nashville overflow logistics; portal time dominates at peak.' },
+    { label: 'Northeast / Florida → Mt. Juliet growth housing', direction: 'inbound', context: 'Interstate arrivals into east-ring HOA product.' },
+    { label: 'Midwest → Wilson County family corridors', direction: 'inbound', context: 'Family and logistics employment inflows along I-40.' },
+    { label: 'Wilson ↔ Rutherford / Sumner ring pairs', direction: 'within', context: 'East vs southeast vs north ring differences matter on access surveys.' },
+    { label: 'Florida ↔ Middle Tennessee reverse family moves via I-40', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+  ],
+  blount: [
+    { label: 'Within Blount (Maryville ↔ Alcoa / foothill edges)', direction: 'within', context: 'Valley HOA product vs hillside driveways vs airport corridors.' },
+    { label: 'Blount ↔ Knox (US-129 / Alcoa Hwy) pairs', direction: 'within', context: 'Knoxville-south overflow logistics; keep county lines clear.' },
+    { label: 'Northeast / Florida → Maryville foothill markets', direction: 'inbound', context: 'Interstate household goods into East Tennessee foothill housing.' },
+    { label: 'Blount ↔ Sevier park-approach edges', direction: 'outbound', context: 'Residential-to-tourism-edge pairs; survey cabin access separately.' },
+    { label: 'Midwest → Blount County regional housing', direction: 'inbound', context: 'Employment and lifestyle inflows near Knoxville metro south.' },
+    { label: 'Blount → Nashville long in-state career moves', direction: 'outbound', context: 'I-40 westbound household goods longer than a foothill hop.' },
+  ],
+  sevier: [
+    { label: 'Within Sevier (Sevierville ↔ Pigeon Forge / Gatlinburg cabins)', direction: 'within', context: 'Town multi-family vs tourism curb peaks vs steep cabin approaches.' },
+    { label: 'Northeast / Florida → Sevier tourism & second-home markets', direction: 'inbound', context: 'Interstate household goods into cabin and condo product; seasonal buffers required.' },
+    { label: 'Midwest → Pigeon Forge / Gatlinburg lifestyle moves', direction: 'inbound', context: 'Vacation-property and hospitality workforce logistics.' },
+    { label: 'Sevier ↔ Knox / Blount reverse residential moves', direction: 'outbound', context: 'Tourism-edge to valley housing pairs; not identical access surveys.' },
+    { label: 'Leaf-season / summer peak tourism moves', direction: 'within', context: 'US-441/US-321 congestion can dominate labor hours more than inventory size.' },
+    { label: 'Florida ↔ East Tennessee tourism reverse moves', direction: 'inbound', context: 'Interstate household goods; storm and mountain weather contingency.' },
+  ],
+  sullivan: [
+    { label: 'Within Sullivan (Kingsport ↔ Bristol TN / Blountville corridors)', direction: 'within', context: 'Industrial-residential mix vs state-line edges vs corridor multi-family.' },
+    { label: 'Sullivan ↔ Virginia Bristol / Tri-Cities border pairs', direction: 'outbound', context: 'Clarify Tennessee vs Virginia destinations for TDOR vs FMCSA.' },
+    { label: 'Northeast / Midwest → Tri-Cities manufacturing & healthcare markets', direction: 'inbound', context: 'Interstate household goods into Kingsport–Bristol housing.' },
+    { label: 'Florida ↔ Tri-Cities reverse family moves', direction: 'inbound', context: 'I-81 corridor household goods; FMCSA for interstate legs.' },
+    { label: 'Sullivan ↔ Washington County TN / Johnson City-area pairs', direction: 'within', context: 'Tri-Cities regional logistics longer than a single-city hop.' },
+    { label: 'Tri-Cities → Nashville / Knoxville career moves', direction: 'outbound', context: 'In-state long hauls out of Northeast Tennessee.' },
+  ],
+};
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -4689,5 +4788,6 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'north-carolina') return NC_ROUTES[countySlug] ?? [];
   if (stateSlug === 'south-carolina') return SC_ROUTES[countySlug] ?? [];
   if (stateSlug === 'virginia') return VA_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'tennessee') return TN_ROUTES[countySlug] ?? [];
   return [];
 }
