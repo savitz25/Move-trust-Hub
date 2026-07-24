@@ -402,11 +402,27 @@ import { franklinCountyVtIntelligence } from '@/lib/local-movers/county-intellig
 import { newCastleCountyDeIntelligence } from '@/lib/local-movers/county-intelligence/delaware/new-castle-de';
 import { kentCountyDeIntelligence } from '@/lib/local-movers/county-intelligence/delaware/kent-de';
 import { sussexCountyDeIntelligence } from '@/lib/local-movers/county-intelligence/delaware/sussex-de';
+// Alaska Core 4
+import { anchorageCountyAkIntelligence } from '@/lib/local-movers/county-intelligence/alaska/anchorage-ak';
+import { fairbanksNorthStarCountyAkIntelligence } from '@/lib/local-movers/county-intelligence/alaska/fairbanks-north-star-ak';
+import { matanuskaSusitnaCountyAkIntelligence } from '@/lib/local-movers/county-intelligence/alaska/matanuska-susitna-ak';
+import { juneauCountyAkIntelligence } from '@/lib/local-movers/county-intelligence/alaska/juneau-ak';
+// Hawaii Core 4
+import { honoluluCountyHiIntelligence } from '@/lib/local-movers/county-intelligence/hawaii/honolulu-hi';
+import { hawaiiCountyHiIntelligence } from '@/lib/local-movers/county-intelligence/hawaii/hawaii-hi';
+import { mauiCountyHiIntelligence } from '@/lib/local-movers/county-intelligence/hawaii/maui-hi';
+import { kauaiCountyHiIntelligence } from '@/lib/local-movers/county-intelligence/hawaii/kauai-hi';
+// Montana Core 5
+import { yellowstoneCountyMtIntelligence } from '@/lib/local-movers/county-intelligence/montana/yellowstone-mt';
+import { missoulaCountyMtIntelligence } from '@/lib/local-movers/county-intelligence/montana/missoula-mt';
+import { gallatinCountyMtIntelligence } from '@/lib/local-movers/county-intelligence/montana/gallatin-mt';
+import { cascadeCountyMtIntelligence } from '@/lib/local-movers/county-intelligence/montana/cascade-mt';
+import { lewisAndClarkCountyMtIntelligence } from '@/lib/local-movers/county-intelligence/montana/lewis-and-clark-mt';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / WV / RI / VT / DE / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / WV / RI / VT / DE / AK / HI / MT / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
@@ -802,6 +818,22 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   newCastleCountyDeIntelligence,
   kentCountyDeIntelligence,
   sussexCountyDeIntelligence,
+  // Alaska Core 4
+  anchorageCountyAkIntelligence,
+  fairbanksNorthStarCountyAkIntelligence,
+  matanuskaSusitnaCountyAkIntelligence,
+  juneauCountyAkIntelligence,
+  // Hawaii Core 4
+  honoluluCountyHiIntelligence,
+  hawaiiCountyHiIntelligence,
+  mauiCountyHiIntelligence,
+  kauaiCountyHiIntelligence,
+  // Montana Core 5
+  yellowstoneCountyMtIntelligence,
+  missoulaCountyMtIntelligence,
+  gallatinCountyMtIntelligence,
+  cascadeCountyMtIntelligence,
+  lewisAndClarkCountyMtIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -1385,5 +1417,25 @@ export const VT_TIER1_CORE5 = [
 
 /** Delaware Tier-1 Core 3 (full state: New Castle + Kent + Sussex). */
 export const DE_TIER1_CORE3 = ['new-castle', 'kent', 'sussex'] as const;
+
+/** Alaska Tier-1 Core 4 (Anchorage + Fairbanks + Mat-Su + Juneau). */
+export const AK_TIER1_CORE4 = [
+  'anchorage',
+  'fairbanks-north-star',
+  'matanuska-susitna',
+  'juneau',
+] as const;
+
+/** Hawaii Tier-1 Core 4 (Oʻahu + Big Island + Maui + Kauaʻi). */
+export const HI_TIER1_CORE4 = ['honolulu', 'hawaii', 'maui', 'kauai'] as const;
+
+/** Montana Tier-1 Core 5 (Billings + Missoula + Bozeman + Great Falls + Helena). */
+export const MT_TIER1_CORE5 = [
+  'yellowstone',
+  'missoula',
+  'gallatin',
+  'cascade',
+  'lewis-and-clark',
+] as const;
 
 

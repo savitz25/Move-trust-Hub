@@ -5079,6 +5079,9 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'maine') return ME_ROUTES[countySlug] ?? [];
   if (stateSlug === 'west-virginia') return WV_ROUTES[countySlug] ?? [];
   if (stateSlug === 'rhode-island') return RI_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'alaska') return AK_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'hawaii') return HI_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'montana') return MT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'connecticut') return CT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
@@ -7309,6 +7312,119 @@ const RI_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Massachusetts → Barrington / East Bay housing', direction: 'inbound', context: 'Short interstate hops need FMCSA.' },
     { label: 'Bristol County, RI → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Family / waterfront relo → Barrington multi-family', direction: 'inbound', context: 'Driveway geometry and East Bay freeflow dominate estimate risk.' },
+  ],
+};
+
+const AK_ROUTES: Record<string, CountyPopularRoute[]> = {
+  anchorage: [
+    { label: 'Within Anchorage (Downtown multi-unit ↔ Hillside / Midtown / Eagle River)', direction: 'within', context: 'Municipal core product — not Fairbanks Interior or Juneau ferry defaults.' },
+    { label: 'Mat-Su / Wasilla → Anchorage daily pairs', direction: 'within', context: 'Glenn / Parks corridor logistics; long empty miles at peak.' },
+    { label: 'Fairbanks → Anchorage in-state long hauls', direction: 'inbound', context: 'Parks Highway multi-day locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Lower 48 / Outside → Anchorage housing', direction: 'inbound', context: 'Barge/air components common; FMCSA for interstate legs.' },
+    { label: 'Military PCS → JBER-adjacent multi-unit and SFH', direction: 'inbound', context: 'Hard report dates and base access reshape crew timing.' },
+    { label: 'Anchorage → Outside reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  'fairbanks-north-star': [
+    { label: 'Within Fairbanks North Star (Downtown ↔ UAF / North Pole)', direction: 'within', context: 'Interior product with extreme cold logistics — not Anchorage Southcentral defaults.' },
+    { label: 'Anchorage → Fairbanks in-state long hauls', direction: 'inbound', context: 'Parks Highway multi-day locals; freeze-up windows matter.' },
+    { label: 'Military / university relo → Fairbanks multi-unit', direction: 'inbound', context: 'PCS and semester peaks cluster curb demand.' },
+    { label: 'Lower 48 / Outside → Fairbanks Interior housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required; winter staging critical.' },
+    { label: 'Fairbanks → Anchorage reverse career pairs', direction: 'outbound', context: 'In-state long haul on Parks Highway.' },
+    { label: 'Fairbanks → Outside reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  'matanuska-susitna': [
+    { label: 'Within Mat-Su (Wasilla ↔ Palmer / Big Lake growth)', direction: 'within', context: 'Valley growth product toward Anchorage — not Anchorage city multi-unit defaults.' },
+    { label: 'Anchorage ↔ Mat-Su daily pairs', direction: 'within', context: 'Glenn / Parks freeflow; portal time dominates at peak.' },
+    { label: 'Lower 48 → Mat-Su growth housing', direction: 'inbound', context: 'Interstate household goods into Wasilla/Palmer stock; FMCSA required.' },
+    { label: 'Mat-Su → Fairbanks in-state pairs', direction: 'outbound', context: 'Parks Highway long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Mat-Su → Outside reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Family / growth relo → Wasilla multi-family', direction: 'inbound', context: 'Long driveway and rural-edge access surveys dominate estimate risk.' },
+  ],
+  juneau: [
+    { label: 'Within Juneau (Downtown capital ↔ Mendenhall Valley / Douglas)', direction: 'within', context: 'Capital constrained road network — not Anchorage highway defaults; ferry/air logistics matter.' },
+    { label: 'Capital / state workforce relo → Juneau multi-unit', direction: 'inbound', context: 'Mid-month report dates and ferry schedules often matter more than Saturday peaks.' },
+    { label: 'Anchorage / Southcentral → Juneau capital pairs', direction: 'inbound', context: 'Air or ferry components dominate; not a pure highway local.' },
+    { label: 'Lower 48 / Outside → Juneau housing', direction: 'inbound', context: 'Interstate household goods via barge/air; FMCSA required.' },
+    { label: 'Juneau → Outside reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Southeast Alaska ferry-linked community pairs', direction: 'within', context: 'Ferry schedules rewrite staging more than road miles alone.' },
+  ],
+};
+
+const HI_ROUTES: Record<string, CountyPopularRoute[]> = {
+  honolulu: [
+    { label: 'Within Honolulu County / Oʻahu (Downtown ↔ Pearl City / Kapolei / Windward)', direction: 'within', context: 'Oʻahu density and condo elevators — not Big Island Hilo–Kona product.' },
+    { label: 'Inter-island → Oʻahu housing', direction: 'inbound', context: 'Barge/air components; Hawaii PUC HHG CPCN for pure inter-island jobs.' },
+    { label: 'Mainland → Honolulu housing', direction: 'inbound', context: 'Container logistics; FMCSA required for mainland legs.' },
+    { label: 'Military PCS → Pearl Harbor / Hickam-adjacent multi-unit', direction: 'inbound', context: 'Base access and hard report dates reshape crew timing.' },
+    { label: 'Honolulu → Neighbor Island reverse exits', direction: 'outbound', context: 'Inter-island barge/air; Hawaii PUC for pure in-state jobs.' },
+    { label: 'Honolulu → Mainland reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  hawaii: [
+    { label: 'Within Hawaii County / Big Island (Hilo ↔ Kona / Waimea)', direction: 'within', context: 'Big Island split markets — NOT Honolulu/Oʻahu and not the whole state of Hawaii as one product.' },
+    { label: 'Oʻahu → Big Island inter-island pairs', direction: 'inbound', context: 'Barge/air components; Hawaii PUC HHG CPCN for pure inter-island jobs.' },
+    { label: 'Mainland → Hilo / Kona housing', direction: 'inbound', context: 'Container logistics; FMCSA required for mainland legs.' },
+    { label: 'Hilo ↔ Kona cross-island pairs', direction: 'within', context: 'Belt Road long empty miles; rural and lava-zone approaches where accurate.' },
+    { label: 'Hawaii County → Neighbor Island reverse exits', direction: 'outbound', context: 'Inter-island barge/air; Hawaii PUC for pure in-state jobs.' },
+    { label: 'Hawaii County → Mainland reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  maui: [
+    { label: 'Within Maui (Kahului–Wailuku ↔ Kihei / West Maui / Upcountry)', direction: 'within', context: 'Resort + residential mix — not Oʻahu elevator defaults alone.' },
+    { label: 'Oʻahu → Maui inter-island pairs', direction: 'inbound', context: 'Barge/air components; Hawaii PUC HHG CPCN for pure inter-island jobs.' },
+    { label: 'Mainland → Maui housing', direction: 'inbound', context: 'Container logistics; FMCSA required for mainland legs.' },
+    { label: 'Tourism / seasonal turns → resort multi-unit', direction: 'inbound', context: 'Peak freeflow rewrites local hours on coastal corridors.' },
+    { label: 'Maui → Neighbor Island reverse exits', direction: 'outbound', context: 'Inter-island barge/air; Hawaii PUC for pure in-state jobs.' },
+    { label: 'Maui → Mainland reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  kauai: [
+    { label: 'Within Kauaʻi (Līhuʻe ↔ East Side / North Shore / South Shore)', direction: 'within', context: 'Island constraints and tourism logistics — not Oʻahu density clones.' },
+    { label: 'Oʻahu → Kauaʻi inter-island pairs', direction: 'inbound', context: 'Barge/air components; Hawaii PUC HHG CPCN for pure inter-island jobs.' },
+    { label: 'Mainland → Kauaʻi housing', direction: 'inbound', context: 'Container logistics; FMCSA required for mainland legs.' },
+    { label: 'Tourism / seasonal turns → North Shore and South Shore multi-unit', direction: 'inbound', context: 'Limited staging and peak freeflow dominate estimate risk.' },
+    { label: 'Kauaʻi → Neighbor Island reverse exits', direction: 'outbound', context: 'Inter-island barge/air; Hawaii PUC for pure in-state jobs.' },
+    { label: 'Kauaʻi → Mainland reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+};
+
+const MT_ROUTES: Record<string, CountyPopularRoute[]> = {
+  yellowstone: [
+    { label: 'Within Yellowstone County (Downtown Billings ↔ Heights / West End / Laurel)', direction: 'within', context: 'Billings regional hub — not Yellowstone National Park as the primary market label.' },
+    { label: 'Bozeman / Missoula → Billings in-state pairs', direction: 'inbound', context: 'I-90 long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Wyoming / North Dakota → Billings housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Energy / healthcare workforce relo → Billings multi-unit', direction: 'inbound', context: 'Hard report dates reshape crew timing.' },
+    { label: 'Yellowstone County → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Yellowstone County ↔ Gallatin Bozeman pairs', direction: 'within', context: 'Billings hub vs Bozeman growth products differ — keep county lines clear.' },
+  ],
+  missoula: [
+    { label: 'Within Missoula (Downtown / UM ↔ South Hills / Orchard Homes)', direction: 'within', context: 'Western MT university hub — not Billings east defaults.' },
+    { label: 'UM semester inflows → campus multi-unit', direction: 'inbound', context: 'August and May peaks cluster elevators and curb demand.' },
+    { label: 'Billings / Bozeman → Missoula in-state pairs', direction: 'inbound', context: 'I-90 long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Idaho / Washington → Missoula housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Missoula → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Missoula ↔ Flathead / western valley pairs', direction: 'within', context: 'Mountain weather and long empty miles reshape local hours.' },
+  ],
+  gallatin: [
+    { label: 'Within Gallatin (Downtown Bozeman ↔ Belgrade / Four Corners / Big Sky edges)', direction: 'within', context: 'Bozeman growth / tech + outdoor economy — not Billings west clones.' },
+    { label: 'MSU semester inflows → campus multi-unit', direction: 'inbound', context: 'August and May peaks cluster multi-unit curb demand.' },
+    { label: 'Billings → Bozeman in-state pairs', direction: 'inbound', context: 'I-90 long locals; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Colorado / California → Bozeman growth housing', direction: 'inbound', context: 'Interstate household goods into valley multi-family; FMCSA required.' },
+    { label: 'Gallatin → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Gallatin ↔ Yellowstone County Billings pairs', direction: 'within', context: 'Bozeman growth vs Billings hub products differ — keep county lines clear.' },
+  ],
+  cascade: [
+    { label: 'Within Cascade (Downtown Great Falls ↔ northwest / southwest neighborhoods)', direction: 'within', context: 'Great Falls regional / Missouri River product — not Billings or Bozeman defaults.' },
+    { label: 'Military / regional workforce relo → Great Falls multi-unit', direction: 'inbound', context: 'Hard report dates and Malmstrom-adjacent access reshape crew timing where accurate.' },
+    { label: 'Billings / Helena → Great Falls in-state pairs', direction: 'inbound', context: 'I-15 / US-87 logistics; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Canada-border / Hi-Line regional pairs', direction: 'inbound', context: 'Long empty miles; clarify authority for any out-of-state leg.' },
+    { label: 'Cascade → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Cascade ↔ Lewis and Clark capital pairs', direction: 'within', context: 'Great Falls vs Helena products differ — keep county lines clear.' },
+  ],
+  'lewis-and-clark': [
+    { label: 'Within Lewis and Clark (Downtown Helena ↔ East Helena / valley edges)', direction: 'within', context: 'Helena capital product — not Billings hub or Bozeman growth defaults.' },
+    { label: 'Capital / state workforce relo → Helena multi-unit', direction: 'inbound', context: 'Mid-month report dates often matter more than Saturday peaks.' },
+    { label: 'Billings / Missoula / Great Falls → Helena in-state pairs', direction: 'inbound', context: 'I-15 / US-12 logistics; written estimates and insurance for pure in-state jobs.' },
+    { label: 'Lewis and Clark → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Idaho / Wyoming → Helena capital housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Lewis and Clark ↔ Cascade Great Falls pairs', direction: 'within', context: 'Capital vs regional river-city products differ.' },
   ],
 };
 

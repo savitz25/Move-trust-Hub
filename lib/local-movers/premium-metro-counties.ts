@@ -264,6 +264,22 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'rhode-island', countySlug: 'washington' },
   { stateSlug: 'rhode-island', countySlug: 'newport' },
   { stateSlug: 'rhode-island', countySlug: 'bristol' },
+  // Alaska Core 4
+  { stateSlug: 'alaska', countySlug: 'anchorage' },
+  { stateSlug: 'alaska', countySlug: 'fairbanks-north-star' },
+  { stateSlug: 'alaska', countySlug: 'matanuska-susitna' },
+  { stateSlug: 'alaska', countySlug: 'juneau' },
+  // Hawaii Core 4
+  { stateSlug: 'hawaii', countySlug: 'honolulu' },
+  { stateSlug: 'hawaii', countySlug: 'hawaii' },
+  { stateSlug: 'hawaii', countySlug: 'maui' },
+  { stateSlug: 'hawaii', countySlug: 'kauai' },
+  // Montana Core 5
+  { stateSlug: 'montana', countySlug: 'yellowstone' },
+  { stateSlug: 'montana', countySlug: 'missoula' },
+  { stateSlug: 'montana', countySlug: 'gallatin' },
+  { stateSlug: 'montana', countySlug: 'cascade' },
+  { stateSlug: 'montana', countySlug: 'lewis-and-clark' },
 ] as const;
 
 const premiumMetroKeySet = new Set(
