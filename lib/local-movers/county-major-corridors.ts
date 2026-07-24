@@ -140,6 +140,20 @@ const CORRIDORS: Record<string, string> = {
   'virginia/stafford': 'I-95 · US-1 · VA-610 (Garrisonville) · VA-17',
   'virginia/spotsylvania': 'I-95 · VA-3 · US-1 · VA-208',
 
+  // ——— Ohio Core 12 ———
+  'ohio/franklin': 'I-70 · I-71 · I-270 · I-670 · US-23 · US-33',
+  'ohio/cuyahoga': 'I-90 · I-71 · I-77 · I-480 · SR-2 · Shoreway links',
+  'ohio/hamilton': 'I-71 · I-75 · I-74 · I-275 · US-50 · Columbia Pkwy',
+  'ohio/summit': 'I-76 · I-77 · I-271 · SR-8 · SR-18 · Cleveland-Massillon Rd',
+  'ohio/montgomery': 'I-70 · I-75 · US-35 · SR-4 · SR-48 · Needmore Rd corridors',
+  'ohio/lucas': 'I-75 · I-280 · I-475 · US-23 · SR-2 · Anthony Wayne Trail',
+  'ohio/butler': 'I-75 · I-275 · SR-4 · US-127 · SR-129 · Cincinnati-Dayton Rd',
+  'ohio/stark': 'I-77 · US-30 · US-62 · I-76 links · SR-43 · Tuscarawas St',
+  'ohio/lorain': 'I-90 · SR-2 · SR-57 · US-20 · SR-58 · Midway Mall corridors',
+  'ohio/mahoning': 'I-80 · I-680 · US-62 · SR-11 · Market St · Belmont Ave',
+  'ohio/warren': 'I-71 · I-75 links · SR-48 · US-22/3 · SR-123 · Mason-Montgomery Rd',
+  'ohio/lake': 'I-90 · SR-2 · US-20 · SR-44 · SR-91 · Vine Street corridors',
+
   // ——— Pennsylvania Core 12 ———
   'pennsylvania/philadelphia': 'I-95 · I-76 · I-676 · US-1 · Roosevelt Blvd · Broad Street',
   'pennsylvania/allegheny': 'I-376 · I-279 · I-79 · Parkway East/West/North · PA-28',

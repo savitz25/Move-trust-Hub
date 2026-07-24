@@ -4891,8 +4891,108 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'tennessee') return TN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'pennsylvania') return PA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'illinois') return IL_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'ohio') return OH_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const OH_ROUTES: Record<string, CountyPopularRoute[]> = {
+  franklin: [
+    { label: 'Within Franklin (Downtown / Short North ↔ Dublin / Grove City)', direction: 'within', context: 'Elevator COIs and brick streets vs I-270 belt HOA product — portal time dominates.' },
+    { label: 'Midwest → Columbus capital, campus & logistics markets', direction: 'inbound', context: 'Interstate household goods into core multi-unit and suburban stock.' },
+    { label: 'Columbus ↔ Cleveland / Cincinnati in-state pairs', direction: 'outbound', context: 'I-71 long hauls between Ohio Big 3 metros.' },
+    { label: 'Franklin ↔ Delaware / Licking / Fairfield edges', direction: 'within', context: 'Capital-region collar logistics; keep county lines clear.' },
+    { label: 'Florida / South ↔ Columbus reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Northeast → Columbus professional corridors', direction: 'inbound', context: 'Corporate and healthcare inflows into Short North and belt multi-family.' },
+  ],
+  cuyahoga: [
+    { label: 'Within Cuyahoga (Downtown ↔ West Side / Heights / Westshore)', direction: 'within', context: 'Neighborhood micro-markets and lake-effect winter risk — not Columbus belt patterns.' },
+    { label: 'Pittsburgh ↔ Cleveland NE Ohio pairs', direction: 'inbound', context: 'I-80/I-76 interstate household goods into city and suburban stock.' },
+    { label: 'Cleveland ↔ Columbus / Cincinnati in-state pairs', direction: 'outbound', context: 'I-71 long hauls between Ohio metros.' },
+    { label: 'Cuyahoga ↔ Lorain / Lake / Summit collar pairs', direction: 'within', context: 'City vs west-shore vs east-shore vs Akron-adjacent logistics differ.' },
+    { label: 'Midwest → Cleveland healthcare & manufacturing corridors', direction: 'inbound', context: 'Interstate arrivals into multi-unit and Heights product.' },
+    { label: 'Florida ↔ Cleveland reverse family moves', direction: 'inbound', context: 'Interstate household goods; winter access contingency on hillside addresses.' },
+  ],
+  hamilton: [
+    { label: 'Within Hamilton (Downtown / Over-the-Rhine ↔ Hyde Park / West Side)', direction: 'within', context: 'Hills, stairs, and river-city curb limits — not collar HOA defaults.' },
+    { label: 'Kentucky ↔ Cincinnati river-city pairs', direction: 'inbound', context: 'Clarify Ohio PUCO vs FMCSA for KY destinations; empty miles across the river.' },
+    { label: 'Cincinnati ↔ Columbus / Cleveland in-state pairs', direction: 'outbound', context: 'I-71 long hauls between Ohio Big 3 metros.' },
+    { label: 'Hamilton ↔ Butler / Warren collar pairs', direction: 'within', context: 'Urban hills vs west/north growth collars — not clones.' },
+    { label: 'Midwest → Cincinnati professional & logistics corridors', direction: 'inbound', context: 'Interstate household goods into neighborhood and multi-unit stock.' },
+    { label: 'Florida / South ↔ Cincinnati reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+  ],
+  summit: [
+    { label: 'Within Summit (Akron core ↔ Cuyahoga Falls / Fairlawn)', direction: 'within', context: 'Akron regional fabric — not a Cleveland neighborhood clone.' },
+    { label: 'Summit ↔ Cuyahoga / Stark NE Ohio pairs', direction: 'within', context: 'Akron–Cleveland and Akron–Canton logistics; keep county lines clear.' },
+    { label: 'Pittsburgh ↔ Akron regional pairs', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Midwest → Akron manufacturing & healthcare corridors', direction: 'inbound', context: 'Employment inflows into city and suburban product.' },
+    { label: 'Akron ↔ Columbus in-state pairs', direction: 'outbound', context: 'I-71/I-76 long hauls longer than a suburb hop.' },
+    { label: 'Florida ↔ NE Ohio reverse family moves via I-71/I-76', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+  ],
+  montgomery: [
+    { label: 'Within Montgomery (Dayton core ↔ Kettering / Beavercreek edges)', direction: 'within', context: 'Dayton regional hub — Wright-Patt adjacency shapes demand.' },
+    { label: 'Montgomery ↔ Greene / Clark regional pairs', direction: 'within', context: 'Dayton metro logistics; keep county lines clear.' },
+    { label: 'Midwest → Dayton / Wright-Patt employment markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Dayton ↔ Cincinnati / Columbus in-state pairs', direction: 'outbound', context: 'I-75/I-70 long hauls between OH hubs.' },
+    { label: 'Florida / South ↔ Dayton reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Northeast → Dayton professional corridors', direction: 'inbound', context: 'Corporate and defense-adjacent inflows into suburban multi-family.' },
+  ],
+  lucas: [
+    { label: 'Within Lucas (Toledo core ↔ suburbs / Maumee edges)', direction: 'within', context: 'Lake-plain logistics and MI border adjacency — not Columbus belt patterns.' },
+    { label: 'Michigan ↔ Toledo border pairs', direction: 'inbound', context: 'Clarify Ohio PUCO vs FMCSA for MI destinations.' },
+    { label: 'Toledo ↔ Cleveland / Columbus / Detroit-region pairs', direction: 'outbound', context: 'I-75/I-80 long hauls and interstate legs as applicable.' },
+    { label: 'Midwest → Toledo logistics & manufacturing corridors', direction: 'inbound', context: 'Interstate household goods into city multi-unit and suburban stock.' },
+    { label: 'Florida ↔ Toledo reverse family moves via I-75', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Lucas ↔ Wood / Ottawa edges', direction: 'within', context: 'NW Ohio regional pairs; keep county lines clear.' },
+  ],
+  butler: [
+    { label: 'Within Butler (Hamilton city ↔ West Chester / Fairfield growth)', direction: 'within', context: 'Collar growth and Hamilton city stock — not Cincinnati urban hills defaults.' },
+    { label: 'Butler ↔ Hamilton County Cincinnati pairs', direction: 'within', context: 'West/north collar logistics; empty miles into the city core.' },
+    { label: 'Butler ↔ Warren NE Cincinnati collar pairs', direction: 'within', context: 'Different collar fabrics west vs northeast of Cincinnati.' },
+    { label: 'Kentucky / Midwest → Butler County growth housing', direction: 'inbound', context: 'Interstate or regional arrivals into HOA multi-family product.' },
+    { label: 'Cincinnati metro ↔ Columbus in-state long hauls via I-71', direction: 'outbound', context: 'Collar-origin interstate-adjacent in-state career moves.' },
+    { label: 'Florida / South ↔ SW Ohio reverse family moves', direction: 'inbound', context: 'Interstate household goods into Butler growth corridors.' },
+  ],
+  stark: [
+    { label: 'Within Stark (Canton core ↔ Jackson Township / North Canton)', direction: 'within', context: 'Canton regional fabric — not Akron or Cleveland clones.' },
+    { label: 'Stark ↔ Summit / Mahoning NE Ohio pairs', direction: 'within', context: 'Canton–Akron and Canton–Youngstown logistics; keep county lines clear.' },
+    { label: 'Pittsburgh ↔ Canton regional pairs', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Midwest → Canton manufacturing & healthcare corridors', direction: 'inbound', context: 'Employment inflows into city and township product.' },
+    { label: 'Canton ↔ Cleveland / Columbus in-state pairs', direction: 'outbound', context: 'I-77 long hauls longer than a suburb hop.' },
+    { label: 'Florida ↔ NE Ohio reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+  ],
+  lorain: [
+    { label: 'Within Lorain (Elyria / Lorain city ↔ Avon / Amherst edges)', direction: 'within', context: 'West-of-Cleveland lake shore and inland mix — not Cuyahoga neighborhood defaults.' },
+    { label: 'Lorain ↔ Cuyahoga Cleveland pairs', direction: 'within', context: 'West collar logistics; I-90 portal time dominates at peak.' },
+    { label: 'Lorain ↔ Lake / Medina edges', direction: 'within', context: 'Different shore and inland collar fabrics around Cleveland.' },
+    { label: 'Midwest → Lorain County industrial & suburban housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and HOA product.' },
+    { label: 'Pittsburgh ↔ Lorain / west-Cleveland pairs', direction: 'inbound', context: 'Interstate household goods into lake-plain stock.' },
+    { label: 'Florida ↔ NE Ohio reverse family moves via I-90', direction: 'inbound', context: 'Interstate household goods; lake-effect winter contingency.' },
+  ],
+  mahoning: [
+    { label: 'Within Mahoning (Youngstown core ↔ Boardman / Austintown)', direction: 'within', context: 'Youngstown regional fabric — not Cleveland or Akron clones.' },
+    { label: 'Mahoning ↔ Trumbull / Columbiana edges', direction: 'within', context: 'Mahoning Valley logistics; keep county lines clear.' },
+    { label: 'Pittsburgh ↔ Youngstown regional pairs', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Youngstown ↔ Cleveland / Akron in-state pairs', direction: 'outbound', context: 'I-80/I-76 long hauls longer than a suburb hop.' },
+    { label: 'Midwest → Youngstown manufacturing corridors', direction: 'inbound', context: 'Employment inflows into city and township product.' },
+    { label: 'Florida ↔ NE Ohio reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+  ],
+  warren: [
+    { label: 'Within Warren (Mason / Lebanon ↔ Springboro edges)', direction: 'within', context: 'NE Cincinnati collar growth — not urban Cincinnati hills defaults.' },
+    { label: 'Warren ↔ Hamilton County Cincinnati pairs', direction: 'within', context: 'Northeast collar logistics; empty miles into the city core.' },
+    { label: 'Warren ↔ Butler west/north collar pairs', direction: 'within', context: 'Different Cincinnati collar fabrics NE vs west.' },
+    { label: 'Kentucky / Midwest → Warren County growth housing', direction: 'inbound', context: 'Interstate or regional arrivals into HOA multi-family product.' },
+    { label: 'Cincinnati metro ↔ Columbus in-state long hauls via I-71', direction: 'outbound', context: 'Collar-origin career moves along the I-71 spine.' },
+    { label: 'Florida / South ↔ SW Ohio reverse family moves', direction: 'inbound', context: 'Interstate household goods into Mason/Lebanon corridors.' },
+  ],
+  lake: [
+    { label: 'Within Lake (Mentor / Willoughby ↔ Painesville / Madison edges)', direction: 'within', context: 'East-of-Cleveland lake shore — not Cuyahoga city neighborhood defaults.' },
+    { label: 'Lake ↔ Cuyahoga Cleveland pairs', direction: 'within', context: 'East collar logistics; I-90/SR-2 portal time dominates at peak.' },
+    { label: 'Lake ↔ Geauga / Ashtabula edges', direction: 'within', context: 'Eastern NE Ohio pairs; keep county lines clear.' },
+    { label: 'Pittsburgh ↔ Lake County / east-Cleveland pairs', direction: 'inbound', context: 'Interstate household goods into shore multi-unit and suburban stock.' },
+    { label: 'Midwest → Lake County suburban housing', direction: 'inbound', context: 'Employment and family inflows into Mentor corridor product.' },
+    { label: 'Florida ↔ NE Ohio reverse family moves via I-90', direction: 'inbound', context: 'Interstate household goods; lake-effect winter contingency.' },
+  ],
+};
 
 const PA_ROUTES: Record<string, CountyPopularRoute[]> = {
   philadelphia: [

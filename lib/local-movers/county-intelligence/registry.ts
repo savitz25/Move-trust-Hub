@@ -157,11 +157,24 @@ import { stClairCountyIlIntelligence } from '@/lib/local-movers/county-intellige
 import { sangamonCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/sangamon-il';
 import { champaignCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/champaign-il';
 import { peoriaCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/peoria-il';
+// Ohio Core 12
+import { franklinCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/franklin-oh';
+import { cuyahogaCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/cuyahoga-oh';
+import { hamiltonCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/hamilton-oh';
+import { summitCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/summit-oh';
+import { montgomeryCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/montgomery-oh';
+import { lucasCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/lucas-oh';
+import { butlerCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/butler-oh';
+import { starkCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/stark-oh';
+import { lorainCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/lorain-oh';
+import { mahoningCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/mahoning-oh';
+import { warrenCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/warren-oh';
+import { lakeCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/lake-oh';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -313,6 +326,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   sangamonCountyIlIntelligence,
   champaignCountyIlIntelligence,
   peoriaCountyIlIntelligence,
+  // Ohio Core 12
+  franklinCountyOhIntelligence,
+  cuyahogaCountyOhIntelligence,
+  hamiltonCountyOhIntelligence,
+  summitCountyOhIntelligence,
+  montgomeryCountyOhIntelligence,
+  lucasCountyOhIntelligence,
+  butlerCountyOhIntelligence,
+  starkCountyOhIntelligence,
+  lorainCountyOhIntelligence,
+  mahoningCountyOhIntelligence,
+  warrenCountyOhIntelligence,
+  lakeCountyOhIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -558,4 +584,20 @@ export const PA_TIER1_CORE12 = [
   'lehigh',
   'northampton',
   'westmoreland',
+] as const;
+
+/** Ohio Tier-1 Core 12. */
+export const OH_TIER1_CORE12 = [
+  'franklin',
+  'cuyahoga',
+  'hamilton',
+  'summit',
+  'montgomery',
+  'lucas',
+  'butler',
+  'stark',
+  'lorain',
+  'mahoning',
+  'warren',
+  'lake',
 ] as const;
