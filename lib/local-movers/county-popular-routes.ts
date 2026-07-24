@@ -5093,8 +5093,116 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'idaho') return ID_ROUTES[countySlug] ?? [];
   if (stateSlug === 'vermont') return VT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'delaware') return DE_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'north-dakota') return ND_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'south-dakota') return SD_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'wyoming') return WY_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const ND_ROUTES: Record<string, CountyPopularRoute[]> = {
+  cass: [
+    { label: 'Within Cass (Downtown Fargo ↔ West Fargo / south growth / rural valley edges)', direction: 'within', context: 'Fargo–Moorhead Red River Valley product — not Bismarck capital product.' },
+    { label: 'Corporate / healthcare / university relo → Fargo metro', direction: 'inbound', context: 'Hard report dates reshape eastern ND calendars.' },
+    { label: 'Cass ↔ Moorhead / Minnesota pairs', direction: 'outbound', context: 'I-94 interstate household goods; FMCSA when leaving North Dakota.' },
+    { label: 'Cass ↔ Bismarck (Burleigh) I-94 pairs', direction: 'outbound', context: 'I-94 long hauls; NDDOT HHG permit for pure in-state jobs.' },
+    { label: 'Minneapolis / Winnipeg corridors ↔ Fargo markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Fargo → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving North Dakota.' },
+  ],
+  burleigh: [
+    { label: 'Within Burleigh (Downtown Bismarck ↔ north / south growth / Lincoln edges)', direction: 'within', context: 'Capital Missouri Plateau product — not Fargo valley clone.' },
+    { label: 'State government / healthcare relo → Bismarck', direction: 'inbound', context: 'Capital calendars reshape central ND windows.' },
+    { label: 'Burleigh ↔ Mandan / Morton pairs', direction: 'within', context: 'I-94 multi-county logistics; capital vs west-bank product differs.' },
+    { label: 'Burleigh ↔ Fargo / Minot in-state pairs', direction: 'outbound', context: 'I-94 / US-83 long hauls; NDDOT HHG permit for pure in-state jobs.' },
+    { label: 'Minneapolis / Denver ↔ Bismarck markets', direction: 'inbound', context: 'Interstate household goods; FMCSA when leaving North Dakota.' },
+    { label: 'Bismarck → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving North Dakota.' },
+  ],
+  'grand-forks': [
+    { label: 'Within Grand Forks (Downtown / UND corridor ↔ south / west growth belts)', direction: 'within', context: 'University and border-metro product — not Fargo south rename.' },
+    { label: 'University / semester waves → Grand Forks', direction: 'inbound', context: 'Campus calendars reshape northern Red River windows.' },
+    { label: 'Grand Forks ↔ East Grand Forks / Minnesota pairs', direction: 'outbound', context: 'Interstate household goods; FMCSA when leaving North Dakota.' },
+    { label: 'Grand Forks ↔ Fargo I-29 pairs', direction: 'within', context: 'I-29 multi-county logistics; border metro vs Fargo core product differs.' },
+    { label: 'Minneapolis / Winnipeg ↔ Grand Forks markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Grand Forks → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving North Dakota.' },
+  ],
+  ward: [
+    { label: 'Within Ward (Downtown Minot ↔ south / north belts / base-adjacent edges)', direction: 'within', context: 'Minot regional and military-adjacent product — not Fargo west clone.' },
+    { label: 'Military PCS / energy relo → Minot', direction: 'inbound', context: 'Hard report dates reshape northwest ND calendars.' },
+    { label: 'Ward ↔ Bismarck / Fargo in-state pairs', direction: 'outbound', context: 'US-83 / US-2 long hauls; NDDOT HHG permit for pure in-state jobs.' },
+    { label: 'Minneapolis / Canada-adjacent corridors ↔ Minot markets', direction: 'inbound', context: 'Interstate household goods; FMCSA when leaving North Dakota.' },
+    { label: 'Ward ↔ Grand Forks US-2 pairs', direction: 'within', context: 'US-2 multi-county logistics; keep regional product distinct.' },
+    { label: 'Minot → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving North Dakota.' },
+  ],
+};
+
+const SD_ROUTES: Record<string, CountyPopularRoute[]> = {
+  minnehaha: [
+    { label: 'Within Minnehaha (Downtown Sioux Falls ↔ west / south / east growth belts)', direction: 'within', context: 'Sioux Falls core multi-unit and suburban product — not Rapid City Black Hills product.' },
+    { label: 'Corporate / healthcare relo → Sioux Falls', direction: 'inbound', context: 'Hard report dates reshape eastern SD calendars.' },
+    { label: 'Minnehaha ↔ Lincoln SD south-metro pairs', direction: 'within', context: 'I-29 multi-county logistics; city core vs Harrisburg–Tea growth differs.' },
+    { label: 'Minneapolis / Omaha / Sioux City ↔ Sioux Falls markets', direction: 'inbound', context: 'Interstate household goods; FMCSA when leaving South Dakota.' },
+    { label: 'Minnehaha ↔ Rapid City I-90 pairs', direction: 'outbound', context: 'I-90 long hauls; written estimates + insurance for pure in-state jobs.' },
+    { label: 'Sioux Falls → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving South Dakota.' },
+  ],
+  pennington: [
+    { label: 'Within Pennington (Downtown Rapid City ↔ west hills / east growth / Box Elder edges)', direction: 'within', context: 'Black Hills tourism and residential product — not Sioux Falls west rename.' },
+    { label: 'Tourism / second-home / healthcare relo → Rapid City', direction: 'inbound', context: 'Seasonal peaks reshape Black Hills windows.' },
+    { label: 'Pennington ↔ Black Hills corridor pairs', direction: 'within', context: 'US-16 / I-90 tourism logistics; hills access vs valley stock differs.' },
+    { label: 'Denver / Minneapolis ↔ Rapid City markets', direction: 'inbound', context: 'I-90 interstate household goods; FMCSA when leaving South Dakota.' },
+    { label: 'Pennington ↔ Sioux Falls I-90 pairs', direction: 'outbound', context: 'I-90 long hauls; written estimates for pure in-state jobs.' },
+    { label: 'Rapid City → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving South Dakota.' },
+  ],
+  lincoln: [
+    { label: 'Within Lincoln SD (Harrisburg ↔ Tea / Canton / south I-29 growth edges)', direction: 'within', context: 'Sioux Falls south-metro growth — Lincoln County South Dakota only, not Lincoln NE.' },
+    { label: 'Sioux Falls overflow → Harrisburg / Tea growth suburbs', direction: 'inbound', context: 'I-29 south-metro logistics; HOA packets dominate.' },
+    { label: 'Lincoln SD ↔ Minnehaha metro pairs', direction: 'within', context: 'City core vs south growth product differs; keep county lines clear.' },
+    { label: 'Omaha / Sioux City ↔ Lincoln SD growth markets', direction: 'inbound', context: 'Interstate household goods into HOA tracts; FMCSA when leaving South Dakota.' },
+    { label: 'Lincoln SD ↔ Iowa / Nebraska border pairs', direction: 'outbound', context: 'I-29 interstate household goods; FMCSA when any leg leaves South Dakota.' },
+    { label: 'Lincoln SD → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving South Dakota.' },
+  ],
+  brown: [
+    { label: 'Within Brown (Downtown Aberdeen ↔ south / west growth edges)', direction: 'within', context: 'Aberdeen regional hub — not Sioux Falls north clone.' },
+    { label: 'Healthcare / industrial relo → Aberdeen', direction: 'inbound', context: 'Hard report dates reshape northeast SD calendars.' },
+    { label: 'Brown ↔ Sioux Falls / Rapid City in-state pairs', direction: 'outbound', context: 'US-12 / I-29 long hauls; written estimates for pure in-state jobs.' },
+    { label: 'Fargo / Minneapolis ↔ Aberdeen markets', direction: 'inbound', context: 'Interstate household goods; FMCSA when leaving South Dakota.' },
+    { label: 'Brown ↔ North Dakota border pairs', direction: 'outbound', context: 'US-281 interstate household goods; FMCSA when leaving South Dakota.' },
+    { label: 'Aberdeen → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving South Dakota.' },
+  ],
+};
+
+const WY_ROUTES: Record<string, CountyPopularRoute[]> = {
+  laramie: [
+    { label: 'Within Laramie County (Downtown Cheyenne ↔ north / south belts / Warren AFB edges)', direction: 'within', context: 'Cheyenne capital product in Laramie County WY — not the city of Laramie (Albany County).' },
+    { label: 'State government / military PCS relo → Cheyenne', direction: 'inbound', context: 'Capital and base calendars reshape southeast WY windows.' },
+    { label: 'Laramie County ↔ Fort Collins / Colorado Front Range pairs', direction: 'outbound', context: 'I-25 interstate household goods; FMCSA when leaving Wyoming.' },
+    { label: 'Laramie County ↔ Casper / Rock Springs in-state pairs', direction: 'outbound', context: 'I-25 / I-80 long hauls; WYDOT authority for pure in-state jobs.' },
+    { label: 'Denver / Salt Lake ↔ Cheyenne markets', direction: 'inbound', context: 'I-25/I-80 interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Cheyenne → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Wyoming.' },
+  ],
+  natrona: [
+    { label: 'Within Natrona (Downtown Casper ↔ south / west / north growth edges)', direction: 'within', context: 'Casper regional energy hub — not Cheyenne capital product.' },
+    { label: 'Energy / healthcare relo → Casper', direction: 'inbound', context: 'Hard report dates reshape central WY calendars.' },
+    { label: 'Natrona ↔ Cheyenne / Gillette in-state pairs', direction: 'outbound', context: 'I-25 long hauls; WYDOT authority for pure in-state jobs.' },
+    { label: 'Denver / Billings ↔ Casper markets', direction: 'inbound', context: 'Interstate household goods; FMCSA when leaving Wyoming.' },
+    { label: 'Natrona ↔ Rock Springs I-80 pairs', direction: 'within', context: 'Cross-state I-25/I-80 logistics; energy hub vs I-80 corridor product differs.' },
+    { label: 'Casper → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Wyoming.' },
+  ],
+  campbell: [
+    { label: 'Within Campbell (Downtown Gillette ↔ south / north energy-corridor edges)', direction: 'within', context: 'Powder River Basin regional product — not Casper south rename.' },
+    { label: 'Energy / industrial relo → Gillette', direction: 'inbound', context: 'Hard report dates reshape northeast WY calendars.' },
+    { label: 'Campbell ↔ Casper / Sheridan in-state pairs', direction: 'outbound', context: 'I-90 / US-14 long hauls; WYDOT authority for pure in-state jobs.' },
+    { label: 'Billings / Rapid City ↔ Gillette markets', direction: 'inbound', context: 'I-90 interstate household goods; FMCSA when leaving Wyoming.' },
+    { label: 'Campbell ↔ Cheyenne long pairs', direction: 'outbound', context: 'Cross-state logistics; keep Powder River product distinct.' },
+    { label: 'Gillette → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Wyoming.' },
+  ],
+  sweetwater: [
+    { label: 'Within Sweetwater (Rock Springs ↔ Green River / I-80 corridor edges)', direction: 'within', context: 'I-80 corridor industrial-residential mix — not Cheyenne or Casper clone.' },
+    { label: 'Energy / industrial relo → Rock Springs / Green River', direction: 'inbound', context: 'Hard report dates reshape southwest WY calendars.' },
+    { label: 'Sweetwater ↔ Salt Lake / Utah pairs', direction: 'outbound', context: 'I-80 interstate household goods; FMCSA when leaving Wyoming.' },
+    { label: 'Sweetwater ↔ Cheyenne / Casper in-state pairs', direction: 'outbound', context: 'I-80 long hauls; WYDOT authority for pure in-state jobs.' },
+    { label: 'Denver / Boise corridors ↔ Sweetwater markets', direction: 'inbound', context: 'I-80 interstate household goods into multi-unit and corridor stock.' },
+    { label: 'Rock Springs → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Wyoming.' },
+  ],
+};
 
 const VT_ROUTES: Record<string, CountyPopularRoute[]> = {
   chittenden: [

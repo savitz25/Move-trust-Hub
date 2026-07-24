@@ -418,11 +418,26 @@ import { missoulaCountyMtIntelligence } from '@/lib/local-movers/county-intellig
 import { gallatinCountyMtIntelligence } from '@/lib/local-movers/county-intelligence/montana/gallatin-mt';
 import { cascadeCountyMtIntelligence } from '@/lib/local-movers/county-intelligence/montana/cascade-mt';
 import { lewisAndClarkCountyMtIntelligence } from '@/lib/local-movers/county-intelligence/montana/lewis-and-clark-mt';
+// North Dakota Core 4
+import { cassCountyNdIntelligence } from '@/lib/local-movers/county-intelligence/north-dakota/cass-nd';
+import { burleighCountyNdIntelligence } from '@/lib/local-movers/county-intelligence/north-dakota/burleigh-nd';
+import { grandForksCountyNdIntelligence } from '@/lib/local-movers/county-intelligence/north-dakota/grand-forks-nd';
+import { wardCountyNdIntelligence } from '@/lib/local-movers/county-intelligence/north-dakota/ward-nd';
+// South Dakota Core 4
+import { minnehahaCountySdIntelligence } from '@/lib/local-movers/county-intelligence/south-dakota/minnehaha-sd';
+import { penningtonCountySdIntelligence } from '@/lib/local-movers/county-intelligence/south-dakota/pennington-sd';
+import { lincolnCountySdIntelligence } from '@/lib/local-movers/county-intelligence/south-dakota/lincoln-sd';
+import { brownCountySdIntelligence } from '@/lib/local-movers/county-intelligence/south-dakota/brown-sd';
+// Wyoming Core 4
+import { laramieCountyWyIntelligence } from '@/lib/local-movers/county-intelligence/wyoming/laramie-wy';
+import { natronaCountyWyIntelligence } from '@/lib/local-movers/county-intelligence/wyoming/natrona-wy';
+import { campbellCountyWyIntelligence } from '@/lib/local-movers/county-intelligence/wyoming/campbell-wy';
+import { sweetwaterCountyWyIntelligence } from '@/lib/local-movers/county-intelligence/wyoming/sweetwater-wy';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / WV / RI / VT / DE / AK / HI / MT / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / WV / RI / VT / DE / AK / HI / MT / ND / SD / WY / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
@@ -834,6 +849,21 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   gallatinCountyMtIntelligence,
   cascadeCountyMtIntelligence,
   lewisAndClarkCountyMtIntelligence,
+  // North Dakota Core 4
+  cassCountyNdIntelligence,
+  burleighCountyNdIntelligence,
+  grandForksCountyNdIntelligence,
+  wardCountyNdIntelligence,
+  // South Dakota Core 4
+  minnehahaCountySdIntelligence,
+  penningtonCountySdIntelligence,
+  lincolnCountySdIntelligence,
+  brownCountySdIntelligence,
+  // Wyoming Core 4
+  laramieCountyWyIntelligence,
+  natronaCountyWyIntelligence,
+  campbellCountyWyIntelligence,
+  sweetwaterCountyWyIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -1437,5 +1467,14 @@ export const MT_TIER1_CORE5 = [
   'cascade',
   'lewis-and-clark',
 ] as const;
+
+/** North Dakota Tier-1 Core 4 (Fargo + Bismarck + Grand Forks + Minot). */
+export const ND_TIER1_CORE4 = ['cass', 'burleigh', 'grand-forks', 'ward'] as const;
+
+/** South Dakota Tier-1 Core 4 (Sioux Falls + Rapid City + Lincoln south-metro + Aberdeen). */
+export const SD_TIER1_CORE4 = ['minnehaha', 'pennington', 'lincoln', 'brown'] as const;
+
+/** Wyoming Tier-1 Core 4 (Cheyenne/Laramie County + Casper + Gillette + Rock Springs). */
+export const WY_TIER1_CORE4 = ['laramie', 'natrona', 'campbell', 'sweetwater'] as const;
 
 
