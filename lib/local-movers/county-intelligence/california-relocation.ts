@@ -2150,6 +2150,29 @@ export function enhanceCaliforniaIntelligencePack(
     collapsibleDeepContent: true,
   };
 
+  // Tier 2 packs ship their own compressed contract — do not inflate with Tier 1 dumps.
+  if (pack.contentTier === 'tier2') {
+    const baseOrder =
+      next.sectionOrder?.length
+        ? [...next.sectionOrder]
+        : [...DEFAULT_INTELLIGENCE_SECTION_ORDER];
+    if (next.specialized?.length && !baseOrder.includes('specialized')) {
+      const resourcesIdx = baseOrder.indexOf('resources');
+      if (resourcesIdx >= 0) baseOrder.splice(resourcesIdx, 0, 'specialized');
+      else baseOrder.push('specialized');
+    }
+    if (next.relocation && !baseOrder.includes('relocation')) {
+      const resourcesIdx = baseOrder.indexOf('resources');
+      if (resourcesIdx >= 0) baseOrder.splice(resourcesIdx, 0, 'relocation');
+      else baseOrder.push('relocation');
+    }
+    if (next.parentCompare && !baseOrder.includes('parentCompare')) {
+      baseOrder.unshift('parentCompare');
+    }
+    next.sectionOrder = baseOrder;
+    return next;
+  }
+
   if (!next.relocation && relocation) {
     next.relocation = {
       title: relocation.title,

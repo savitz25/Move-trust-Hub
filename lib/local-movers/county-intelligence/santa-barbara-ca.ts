@@ -1,301 +1,223 @@
-import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  finalizeCaTier2Pack,
+  CA_TIER2_BHGS_BULLET,
+} from '@/lib/local-movers/county-intelligence/ca-tier2-shared';
 
 /**
- * Hand-crafted Santa Barbara County moving intelligence.
- * Used by /local-movers/california/santa-barbara and the shared intelligence template.
- *
- * Differentiators vs Ventura / LA: coastal constrained streets + high-cost housing core
- * (Santa Barbara, Montecito, Carpinteria) vs Goleta / UCSB and sprawling North County
- * (Santa Maria, Lompoc, Buellton) along US-101 — not a Ventura or South Bay clone.
+ * Santa Barbara County — California Tier 2 (coastal secondary).
+ * Parent: Ventura County (coastal corridor neighbor). Not an LA clone; not Ventura-only.
  */
-export const santaBarbaraCountyIntelligence: CountyIntelligencePack = {
-  stateSlug: 'california',
+export const santaBarbaraCountyIntelligence = finalizeCaTier2Pack({
   countySlug: 'santa-barbara',
   hubTitle: 'Santa Barbara County Moving Intelligence Hub',
-  eyebrow: 'Santa Barbara County · Coast & North County guide',
-  h1: 'Moving in Santa Barbara County: Coastal Core, Goleta & North County Zone Guide',
+  eyebrow: 'Santa Barbara County · Coastal secondary · 101 corridor',
+  h1: 'Moving in Santa Barbara County: Coastal Secondary, Narrow Roads & US-101',
   heroOpener:
-    'Santa Barbara County is two logistics worlds under one name. The coastal core — Santa Barbara, Montecito, Carpinteria, Summerland — packs high-cost housing onto constrained streets, hillside driveways, HOA estates, and downtown blocks where full-size trucks often cannot stage at the door. Goleta and Isla Vista add UCSB turnover, apartment density, and airport-adjacent timing. North County — Santa Maria, Orcutt, Lompoc, Buellton, Solvang — sits inland on agricultural and valley patterns with different access, heat, and price points. US-101 is the spine that turns “local” into a long haul between coast and Santa Maria. This guide is for people moving in Santa Barbara County — not Ventura tips with the city name swapped, and not generic Central Coast copy.',
+    'Santa Barbara County is a coastal secondary market with its own split — not a Los Angeles logistics clone and not Ventura with the city names swapped. The South Coast packs premium housing onto narrow streets, hillside driveways, and estate lanes where full-size trucks often cannot stage at the door. Goleta adds university-adjacent multi-unit density. Santa Ynez Valley mixes tourism towns and ranch edges on CA-154 / CA-246. Santa Maria and North County sit on a longer 101 haul with ag traffic and inland heat. Quote coast access and corridor time explicitly — “Santa Barbara County local” fails when the pair spans Montecito and Santa Maria.',
   heroCredibility:
-    'Coastal core vs North County · Constrained streets & 101 spine · Intrastate CA (BHGS) · FMCSA when interstate · Curated listings',
-  collapsibleDeepContent: true,
-  sectionOrder: [
-    'whatMakesDifferent',
-    'zones',
-    'costDrivers',
-    'seasonal',
-    'specialized',
-    'relocation',
-    'resources',
-  ],
-  whatMakesDifferent: {
-    title: 'What makes moving in Santa Barbara County different',
+    'Coastal secondary · Narrow-road access · US-101 spine · BHGS in-state · FMCSA interstate · Curated listings',
+  majorCorridors: 'US-101 · CA-154 · CA-1 · CA-246',
+  parentCompare: {
+    parentLabel: 'Ventura County',
+    parentHref: '/local-movers/california/ventura',
+    title: 'How Santa Barbara County differs from Ventura County',
     intro:
-      'These are the local realities that change estimates — coastal constrained access, premium housing soft costs, Goleta/UCSB volume, and the long 101 run to North County.',
+      'Both sit on the coastal 101 secondary belt north of LA — but Santa Barbara’s constrained South Coast, wine-valley interior, and long North County run are not Oxnard/Ventura/Thousand Oaks products. Use this when one address is Ventura County and the other is Santa Barbara.',
     bullets: [
       {
-        title: 'Coastal core and North County are different products',
+        title: 'Corridor & drive time',
         detail:
-          'A Montecito estate, a downtown Santa Barbara condo, a Goleta tract, and a Santa Maria or Lompoc suburban home share a county label but not truck access, labor hours, or drive-time assumptions. Get both cities into the estimate — “Santa Barbara County local” is too vague when the pair spans coast and North County.',
+          'US-101 is the spine; CA-154 and CA-246 serve Santa Ynez Valley pairs; CA-1 touches coastal edges. Carpinteria ↔ Ventura can feel neighboring; Santa Barbara city ↔ Santa Maria or Lompoc is a long-local 101 job with Gaviota-area constraints Ventura grid pairs never see.',
       },
       {
-        title: 'Constrained coastal streets rewrite truck plans',
+        title: 'Housing differences',
         detail:
-          'Santa Barbara’s Riviera hillsides, Mission-adjacent blocks, Montecito lanes, and Carpinteria beach streets often mean limited staging, tight turns, low branches, and long carries. Shuttle vans or smaller trucks are common. Share approach photos and max truck length before move day — do not assume a 26′ box reaches the door.',
+          'Montecito estates, Riviera hillsides, downtown Santa Barbara multi-unit, Goleta/UCSB stock, Solvang visitor-core cottages, and Santa Maria suburban tracts replace much of Ventura’s suburban plain and Conejo-style planned density. Premium coastal inventory is a larger share of day-to-day work on the South Coast.',
       },
       {
-        title: 'Higher-cost housing means higher-stakes inventories',
+        title: 'Truck access, HOA & density',
         detail:
-          'Coastal and Montecito inventories often include art, wine, design furniture, and remodel-sensitive finishes. Cheap released-value coverage is frequently inadequate. Discuss valuation, packing levels, and floor protection early — and expect HOA/estate COI packets on many premium addresses.',
+          'Narrow coastal lanes, estate gates, and long carries are default on many South Coast jobs. Shuttle language is common. North County and valley towns reopen suburban staging — but deadhead from coastal yards is the cost. Do not import Ventura arterial assumptions into Riviera or Montecito streets.',
       },
       {
-        title: 'US-101 is a billable line item, not background noise',
+        title: 'Cost posture',
         detail:
-          'The 101 spine links Carpinteria through Santa Barbara and Goleta to Buellton and Santa Maria. Coast ↔ Santa Maria or Lompoc can burn hours at peak and through Gaviota-area constraints. Hourly crews feel every delay — ask how portal-to-portal time is priced and whether cross-zone pairs are still “local” on the rate card.',
+          'Coastal staging, estate soft costs, and high-value packing push South Coast prices above many Ventura suburban locals of similar bedrooms. Coast ↔ North County 101 time can dominate the bill even when square footage looks ordinary.',
       },
       {
-        title: 'Goleta / UCSB creates a distinct turnover market',
+        title: 'Market role',
         detail:
-          'Isla Vista, student-heavy multi-unit stock, and academic calendars drive concentrated load-outs that do not match Montecito estate timing. Elevator reservations, parking scarcity, and end-of-quarter peaks matter — treat campus-adjacent jobs as their own product.',
-      },
-      {
-        title: 'North County ag and valley logistics',
-        detail:
-          'Santa Maria, Orcutt, Lompoc, and surrounding valley towns mix suburban tracts with agricultural traffic and longer deadheads from coastal crews. Mid-day freight near farm corridors can stall “short” locals. Heat inland also diverges from marine-layer coast on the same calendar day.',
-      },
-      {
-        title: 'Fire, wind & hillside risk on the South Coast edge',
-        detail:
-          'Hillside and canyon-edge pockets (Riviera, Montecito foothills, some Carpinteria and Goleta edges) face fire-season and wind operational risk. Crews may delay outdoor packing or reschedule on red-flag days. Ask about weather contingency before late-summer and fall peaks.',
-      },
-      {
-        title: 'California intrastate rules (BHGS) + FMCSA when interstate',
-        detail:
-          'Moves entirely within California are generally overseen by the California Bureau of Household Goods and Services (BHGS). Interstate legs (e.g. Santa Barbara → out-of-state) need FMCSA authority. Confirm which license applies to your exact origin and destination before deposit.',
+          'Independent coastal secondary on the 101 belt: tourism and university peaks on the South Coast, ag-influenced North County volume, wine-valley specialty access. Popular routes bias to Ventura/LA corridor context and internal coast–valley pairs — not an LA County rate card alone.',
       },
     ],
   },
-  zonesHeading: 'Santa Barbara County move zones',
+  whatMakesDifferent: {
+    title: 'What makes moving in Santa Barbara County different',
+    intro:
+      'Coastal-secondary realities — narrow-road access, estate soft costs, 101 cross-zone time, and California licensing.',
+    bullets: [
+      {
+        title: 'South Coast narrow roads rewrite truck plans',
+        detail:
+          'Riviera grades, Montecito lanes, downtown blocks, and beach-adjacent Carpinteria streets often need smaller trucks, shuttles, or long carries. Share approach photos and max truck length before move day.',
+      },
+      {
+        title: 'US-101 makes coast ↔ North County a timed product',
+        detail:
+          'Santa Barbara ↔ Santa Maria or Buellton is not map-mile “local.” Peak 101 and corridor constraints are billable. Confirm whether cross-zone pairs stay on a local rate card.',
+      },
+      {
+        title: 'Estate / HOA packets and tourism curb fights',
+        detail:
+          'Gate lists, COI, and approved hours are common on premium South Coast and some valley addresses. Solvang and waterfront visitor peaks steal staging space on weekends.',
+      },
+      {
+        title: 'Goleta / UCSB vs Santa Ynez vs Santa Maria are different climates',
+        detail:
+          'Student multi-unit peaks, wine-country tourism towns, and inland North County heat do not share Montecito estate timing. Name both pockets on the estimate.',
+      },
+      CA_TIER2_BHGS_BULLET,
+    ],
+  },
   zonesIntro:
-    'Treat each zone as its own access and traffic problem. Coastal constrained streets, Goleta/UCSB density, and North County valley moves are not interchangeable — and 101 distance rewrites “local.”',
+    'Four sharp zones — city/Goleta coastal core, broader South Coast estates, Santa Ynez Valley, and Santa Maria North County. Access and 101 distance define the job.',
   zones: [
     {
-      id: 'sb-coastal-core',
-      name: 'Santa Barbara Coastal Core — City, Mesa, Riviera',
-      shortName: 'SB Core',
+      id: 'sb-goleta',
+      name: 'Santa Barbara City & Goleta',
+      shortName: 'SB / Goleta',
       neighborhoods: [
         'Downtown Santa Barbara',
-        'Upper East / Mission area',
         'The Mesa',
-        'Riviera / Riviera hillside',
-        'Westside Santa Barbara',
-        'Eastside Santa Barbara',
+        'Riviera / hillside',
+        'Goleta',
+        'Isla Vista',
+        'UCSB-adjacent',
       ],
       housingTypes:
-        'Downtown multi-unit and condos, hillside SFH, Mesa mid-century homes, premium finishes, limited street staging',
+        'Downtown multi-unit and condos, hillside SFH, suburban Goleta tracts, student multi-unit',
       challenges: [
         'Constrained downtown and hillside truck staging',
-        'Riviera grades, tight turns, and long carries',
-        'Condo COI and elevator windows',
-        'US-101 congestion through the city at peak',
+        'Isla Vista parking scarcity and academic peaks',
+        'US-101 congestion through the coastal core',
       ],
       moverTips:
-        'Expect shuttle or long-carry on many Riviera and downtown-adjacent streets. Send condo rules early. Prefer mid-week mornings; protect floors and finishes on higher-value inventories.',
+        'Expect shuttle or long-carry on many Riviera and dense downtown blocks. Book early around UCSB quarter ends. Prefer mid-week mornings when building windows allow.',
       cityKeywords: [
         'santa barbara',
+        'goleta',
+        'isla vista',
+        'ucsb',
         'mesa',
         'riviera',
-        'downtown santa barbara',
-        'mission canyon',
-        'upper east',
-        'westside santa barbara',
+        'ellwood',
       ],
     },
     {
-      id: 'montecito-carp',
-      name: 'Montecito, Summerland & Carpinteria Coast',
-      shortName: 'Montecito / Carp',
+      id: 'south-coast',
+      name: 'South Coast — Montecito, Summerland & Carpinteria',
+      shortName: 'South Coast',
       neighborhoods: [
         'Montecito',
         'Summerland',
         'Carpinteria',
         'Hope Ranch edge',
         'Toro Canyon edge',
-        'Padaro / beach-adjacent Carpinteria',
       ],
       housingTypes:
-        'Estate and larger-lot SFH, gated HOA communities, coastal cottages, beach-adjacent homes, some multi-unit in Carpinteria',
+        'Estate and larger-lot SFH, gated HOA communities, coastal cottages, beach-adjacent homes',
       challenges: [
         'Gate lists, COI, and estate access protocols',
-        'Narrow lanes and limited turnaround on estate streets',
-        'High-value inventory and finish protection expectations',
-        'Beach and salt-air packing near Carpinteria waterfront',
+        'Narrow lanes and limited turnaround',
+        'High-value inventory and finish protection',
       ],
       moverTips:
-        'Treat Montecito as access-first: driveway photos, gate codes, and approved hours belong in the survey. Carpinteria beach blocks may need smaller trucks or long carries. Budget valuation and packing for premium inventories.',
+        'Access-first: driveway photos, gate codes, approved hours. Budget valuation and packing for premium inventories. Carpinteria beach blocks may need smaller trucks.',
       cityKeywords: [
         'montecito',
         'summerland',
         'carpinteria',
         'hope ranch',
         'toro canyon',
-        'padaro',
       ],
     },
     {
-      id: 'goleta-ucsb',
-      name: 'Goleta, Isla Vista & UCSB Corridor',
-      shortName: 'Goleta / UCSB',
-      neighborhoods: [
-        'Goleta',
-        'Isla Vista',
-        'UCSB-adjacent',
-        'Old Town Goleta',
-        'Ellwood',
-        'Santa Barbara Airport corridor',
-      ],
-      housingTypes:
-        'Suburban SFH, student multi-unit, apartments and condos, planned tracts, airport-adjacent rentals',
-      challenges: [
-        'Isla Vista parking scarcity and multi-unit load-outs',
-        'Academic calendar peak turnover',
-        'Airport and 101 weave timing',
-        'Elevator and landlord move-window rules',
-      ],
-      moverTips:
-        'Share unit floor, elevator status, and parking plan for Isla Vista and dense Goleta multi-unit. Book early around quarter ends. Build buffer near airport approaches when either address sits on the corridor.',
-      cityKeywords: [
-        'goleta',
-        'isla vista',
-        'ucsb',
-        'university of california santa barbara',
-        'ellwood',
-        'old town goleta',
-      ],
-    },
-    {
-      id: 'santa-maria-north',
-      name: 'Santa Maria, Orcutt & North County Hub',
-      shortName: 'Santa Maria',
-      neighborhoods: [
-        'Santa Maria',
-        'Orcutt',
-        'Betteravia corridor edge',
-        'Northwest Santa Maria',
-        'East Santa Maria',
-      ],
-      housingTypes:
-        'Suburban SFH, multi-family, newer tracts, ag-adjacent edges, some HOA communities',
-      challenges: [
-        'Long 101 haul from South Coast crews',
-        'Ag and commercial truck traffic near field corridors',
-        'Inland heat vs marine-layer coast the same day',
-        'Cross-zone pricing when paired with coastal core',
-      ],
-      moverTips:
-        'Price Santa Maria ↔ Santa Barbara as a timed 101 job, not map-mile “local.” Note ag-corridor adjacency so crews build freight buffer. Summer inland starts should run early for heat.',
-      cityKeywords: [
-        'santa maria',
-        'orcutt',
-        'betteravia',
-        'north county santa barbara',
-      ],
-    },
-    {
-      id: 'lompoc-valley',
-      name: 'Lompoc Valley & Vandenberg-Adjacent',
-      shortName: 'Lompoc',
-      neighborhoods: [
-        'Lompoc',
-        'Mission Hills',
-        'Vandenberg Village',
-        'Vandenberg SFB edge',
-        'Mesa Oaks edge',
-      ],
-      housingTypes:
-        'Suburban SFH, multi-family, base-adjacent housing, valley tracts',
-      challenges: [
-        'Distance from South Coast staging yards',
-        'Base-adjacent access rules when applicable',
-        'Valley fog and wind patterns on some days',
-        'Limited same-day pairing with Montecito-style estate jobs',
-      ],
-      moverTips:
-        'Confirm if either address is near base gates or restricted corridors. Treat Lompoc ↔ coastal core as long-local with honest deadhead. Share driveway and street width photos for hillside or cul-de-sac pockets.',
-      cityKeywords: [
-        'lompoc',
-        'vandenberg',
-        'vandenberg village',
-        'mission hills lompoc',
-        'vandenberg space force',
-      ],
-    },
-    {
-      id: 'santa-ynez',
-      name: 'Santa Ynez Valley — Buellton, Solvang, Los Olivos',
+      id: 'santa-ynez-valley',
+      name: 'Santa Ynez Valley — Buellton, Solvang & Los Olivos',
       shortName: 'Santa Ynez',
       neighborhoods: [
         'Buellton',
         'Solvang',
         'Los Olivos',
         'Santa Ynez',
-        'Ballard edge',
         'Los Alamos edge',
       ],
       housingTypes:
         'Valley SFH, wine-country estates, small-town multi-unit, ranch-edge lots',
       challenges: [
-        'Narrow town streets (especially Solvang visitor core)',
-        'Estate and ranch access with long carries',
-        '101 / 154 connection timing to coast or Santa Maria',
-        'Tourism congestion on weekends in Solvang',
+        'Narrow tourist-core streets (Solvang)',
+        'Estate and ranch long carries',
+        '101 / 154 timing to coast or Santa Maria',
       ],
       moverTips:
-        'Avoid peak tourist weekends in Solvang when flexible. Ranch and estate jobs need approach photos and outbuilding inventory. Price valley ↔ coast pairs as timed corridor jobs.',
+        'Avoid peak tourist weekends in Solvang when flexible. Ranch jobs need approach photos and outbuilding inventory. Price valley ↔ coast as timed corridor work.',
       cityKeywords: [
         'buellton',
         'solvang',
         'los olivos',
         'santa ynez',
-        'ballard',
         'los alamos',
+        'ballard',
+      ],
+    },
+    {
+      id: 'santa-maria-north',
+      name: 'Santa Maria & North County',
+      shortName: 'Santa Maria North',
+      neighborhoods: [
+        'Santa Maria',
+        'Orcutt',
+        'Lompoc',
+        'Vandenberg Village edge',
+        'Northwest / East Santa Maria',
+      ],
+      housingTypes:
+        'Suburban SFH, multi-family, newer tracts, ag-adjacent edges, base-adjacent housing',
+      challenges: [
+        'Long 101 haul from South Coast yards',
+        'Ag and commercial truck traffic',
+        'Inland heat vs marine-layer coast the same day',
+      ],
+      moverTips:
+        'Price Santa Maria or Lompoc ↔ Santa Barbara as timed 101 jobs. Early inland starts in summer. Note base-adjacent access rules near Vandenberg edges when applicable.',
+      cityKeywords: [
+        'santa maria',
+        'orcutt',
+        'lompoc',
+        'vandenberg',
+        'betteravia',
       ],
     },
   ],
   costDrivers: {
     title: 'Pricing & cost drivers inside Santa Barbara County',
     intro:
-      'Two “local” moves of the same square footage can differ sharply depending on coastal staging, estate soft costs, and whether the pair rides 101 between the South Coast and North County.',
+      'Compressed drivers — 101 cross-zone time, coastal narrow-road staging, and estate soft costs.',
     drivers: [
       {
-        title: 'US-101 cross-zone time (coast ↔ North County)',
+        title: 'US-101 cross-zone time (coast ↔ North County / valley)',
         detail:
-          'Santa Barbara ↔ Santa Maria, Goleta ↔ Lompoc, or Montecito ↔ Buellton can burn 60–120+ minutes each way depending on traffic and corridor constraints. Hourly billing follows the clock.',
+          'Santa Barbara ↔ Santa Maria, Goleta ↔ Lompoc, or Montecito ↔ Buellton can burn an hour-plus each way. Hourly billing follows the clock.',
       },
       {
         title: 'Coastal staging, shuttles & long carries',
         detail:
-          'Downtown, Riviera, Montecito lanes, and beach-adjacent Carpinteria blocks often need smaller trucks or long carries. Ask for shuttle and stair/long-carry fees in writing.',
+          'Downtown, Riviera, Montecito lanes, and beach blocks often need smaller trucks or long carries. Get shuttle and stair fees in writing.',
       },
       {
-        title: 'Estate / HOA soft costs',
+        title: 'Estate / HOA soft costs & high-value packing',
         detail:
-          'Gate lists, Certificates of Insurance, approved hours, and floor protection add soft costs before labor starts — common in Montecito, Hope Ranch edges, and planned communities.',
-      },
-      {
-        title: 'High-value packing & valuation',
-        detail:
-          'Art, wine, and finish-sensitive inventories on the coastal core raise packing labor and coverage needs beyond a basic released-value move.',
-      },
-      {
-        title: 'UCSB / multi-unit density (Goleta–Isla Vista)',
-        detail:
-          'Elevator windows, parking scarcity, and concentrated academic peaks add labor hours and scheduling risk even on small square-footage jobs.',
-      },
-      {
-        title: 'Fire / wind contingency risk',
-        detail:
-          'Red-flag and high-wind days can force hillside reschedules. Clarify cancellation and weather policies before late-summer and fall peaks.',
+          'Gate lists, COI, approved hours, and art/wine packing raise soft costs before labor starts on premium South Coast inventories.',
       },
     ],
     ranges: [
@@ -314,108 +236,85 @@ export const santaBarbaraCountyIntelligence: CountyIntelligencePack = {
         value: '$3,000–$9,000+',
         note: 'Montecito access and coast↔Santa Maria pairs price highest',
       },
-      {
-        label: 'Typical 2-person crew rate',
-        value: '$130–$210+/hr',
-        note: 'Portal-to-portal; packing and 3-person crews scale up',
-      },
     ],
   },
   seasonal: {
-    title: 'Seasonal, academic & calendar intelligence',
+    title: 'Seasonal intelligence',
     intro:
-      'South Coast weather is often mild — school calendars, tourism, UCSB quarters, 101 peaks, and fire/wind seasons set the real operational risk.',
+      'Mild South Coast weather hides tourism, academic, and fire/wind operational risk — plus North County summer heat.',
     items: [
       {
-        title: 'Peak residential: late spring – early fall weekends',
+        title: 'Peak residential & UCSB windows',
         detail:
-          'School calendars and end-of-month leases fill Saturdays across the coastal core and Goleta. Book 2–4 weeks ahead for popular windows.',
-      },
-      {
-        title: 'UCSB / Isla Vista academic peaks',
-        detail:
-          'Quarter starts and ends concentrate multi-unit load-outs. Book early and confirm elevator/parking rules well before move day.',
-      },
-      {
-        title: 'Fire season & red-flag windows (typically late summer – fall, variable)',
-        detail:
-          'Wildfire risk and red-flag warnings can restrict hillside work and outdoor packing on Riviera, Montecito foothills, and canyon edges. Build schedule flexibility.',
+          'Late spring–early fall weekends and quarter-end multi-unit load-outs fill coastal and Goleta capacity. Book 2–4 weeks ahead for popular windows.',
       },
       {
         title: 'Tourism pressure (Solvang, waterfront, downtown)',
         detail:
-          'Weekend visitor traffic tightens staging near Solvang, Stearns Wharf-adjacent corridors, and popular beach blocks. Mid-week mornings win when HOA windows allow.',
+          'Weekend visitor traffic tightens staging near Solvang and popular beach or downtown corridors. Mid-week mornings win when HOA windows allow.',
       },
       {
-        title: 'North County summer heat vs marine layer',
+        title: 'Fire / wind season & inland heat',
         detail:
-          'Santa Maria and Lompoc afternoons can run much hotter than the coastal core. Early starts protect crews and electronics on inland jobs.',
-      },
-      {
-        title: 'Best value: mid-month Tue–Thu mornings',
-        detail:
-          'Still plan around HOA weekday windows and academic peaks. Avoid last Friday/Saturday of the month when leases collide — and check wind/fire forecasts in season.',
+          'Red-flag and high-wind days can restrict hillside work on Riviera and Montecito edges. Santa Maria and Lompoc afternoons run hotter — early inland starts protect crews.',
       },
     ],
   },
   specialized: [
     {
-      id: 'coastal-constrained-101',
-      title: 'Coastal constrained streets & US-101 corridor logistics',
+      id: 'coastal-narrow-road',
+      title: 'Coastal narrow-road & shuttle logistics',
       intro:
-        'Santa Barbara County’s defining move problem is often access-on-the-coast plus distance-on-101 when the other address sits in North County or the Santa Ynez Valley.',
+        'South Coast access is often the job — not square footage alone.',
       bullets: [
-        'Price portal-to-portal time honestly for any pair that rides 101 between the South Coast and Santa Maria, Lompoc, or Buellton.',
-        'Share driveway, street-width, and turnaround photos for Riviera, Montecito, and hillside coastal homes before booking.',
-        'Expect shuttle or long-carry language on constrained downtown and estate streets — get fees in writing.',
-        'Prefer mid-morning starts that miss the worst commute peaks when HOA or building windows allow.',
-        'If one address is coastal-premium and the other is North County suburban, confirm whether the mover’s “local” rate card still applies or if a long-local / distance schedule is used.',
+        'Share driveway, street-width, and turnaround photos for Riviera, Montecito, and hillside homes before booking.',
+        'Expect shuttle or long-carry language on constrained downtown and estate streets — price it explicitly.',
+        'Prefer mid-morning starts that miss the worst 101 commute peaks when building windows allow.',
       ],
     },
     {
-      id: 'ucsb-north-county-split',
-      title: 'UCSB turnover & North County valley module',
+      id: 'hoa-estate',
+      title: 'HOA, estate & high-value inventory',
       intro:
-        'Goleta/Isla Vista multi-unit peaks and Santa Maria–Lompoc valley logistics do not behave like Montecito estate moves — size the crew and schedule to the pocket.',
+        'Premium South Coast and gated addresses need paperwork and packing depth suburban North County jobs may not.',
       bullets: [
-        'Isla Vista and dense Goleta buildings need elevator reservations, parking plans, and landlord move rules confirmed in writing.',
-        'Align booking with academic calendars when either party is student- or staff-driven.',
-        'North County addresses should note ag/industrial adjacency so crews build freight-traffic buffer.',
-        'Inland summer heat changes start times even when Santa Barbara beach weather looks mild.',
-        'Base-adjacent Lompoc / Vandenberg-area jobs may need extra access documentation — ask early if gates or IDs apply.',
+        'Collect gate lists, COI, approved hours, and floor-protection rules before deposit.',
+        'Discuss valuation and specialty packing for art, wine, and finish-sensitive inventories early.',
+        'If one address is coastal-premium and the other is North County suburban, confirm local vs long-local rate cards.',
+      ],
+    },
+    {
+      id: 'tourism-peaks',
+      title: 'Tourism & visitor-core peaks',
+      intro:
+        'Solvang, waterfront, and downtown visitor calendars steal curb space residential movers want on Saturdays.',
+      bullets: [
+        'Avoid major festival and peak tourist weekends in Solvang and waterfront corridors when flexible.',
+        'Build buffer for event weeks that close or restrict staging near visitor cores.',
+        'Align Goleta multi-unit bookings with academic calendars when either party is student- or staff-driven.',
       ],
     },
   ],
   relocation: {
     title: 'Considering a move to Santa Barbara County?',
     intro:
-      'Coastal lifestyle, Goleta practicality, wine-country valley towns, and North County affordability are different bets — pick the pocket first, then validate schools, healthcare, and 101 commute tolerance.',
+      'Compressed relocator notes — schools and hospitals by pocket, then test 101 commute tolerance between coast and North County.',
     modules: [
       {
         id: 'schools',
         title: 'Schools & education',
         intro:
-          'Santa Barbara County uses multiple districts (e.g., Santa Barbara Unified, Goleta Union and related high-school feeders, Carpinteria Unified, Santa Maria-Bonita / Santa Maria Joint Union systems, Lompoc Unified, Buellton Union / Solvang / other valley districts, and others). Match every listing address to the correct district.',
+          'Multiple districts (Santa Barbara Unified, Goleta Union and related high-school feeders, Carpinteria Unified, Santa Maria-area systems, Lompoc Unified, valley districts, and others). Match every listing to the correct boundary.',
         bullets: [
           {
             title: 'Town-first district check',
             detail:
-              'Use official district boundary tools and the California School Dashboard. Marketing city names and unincorporated pockets (Montecito, Isla Vista, Orcutt) can span feeders.',
+              'Use official district tools and the California School Dashboard. Unincorporated pockets (Montecito, Isla Vista, Orcutt) can span feeders.',
           },
           {
             title: 'Coast vs Goleta vs North County',
             detail:
-              'Enrollment pressures, program offerings, and bus patterns differ sharply between South Coast, Goleta, Santa Maria, and Lompoc — do not treat county averages as neighborhood truth.',
-          },
-          {
-            title: 'Research tools',
-            detail:
-              'District sites and state dashboard data should lead; third-party rankings are secondary signals only.',
-          },
-          {
-            title: 'Higher education presence',
-            detail:
-              'UCSB and community colleges shape rental demand, traffic, and housing competition near Goleta and Isla Vista — useful for student, staff, and research households.',
+              'Program mix and enrollment pressure differ sharply by pocket. UCSB shapes rental demand and traffic near Goleta and Isla Vista.',
           },
         ],
       },
@@ -424,117 +323,23 @@ export const santaBarbaraCountyIntelligence: CountyIntelligencePack = {
         title: 'Hospitals & healthcare',
         bullets: [
           {
-            title: 'County acute-care anchors',
+            title: 'Acute-care anchors',
             detail:
-              'Cottage Health campuses on the South Coast, Marian Regional (Santa Maria), Lompoc Valley Medical Center, and other regional facilities serve different pockets — map ER drive times at rush hour from your target neighborhood.',
+              'Cottage Health campuses on the South Coast, Marian Regional (Santa Maria), Lompoc Valley Medical Center, and other facilities serve different pockets — map ER drive times at rush hour from your target neighborhood.',
           },
           {
-            title: 'Specialty care spillover',
+            title: 'Specialty spillover',
             detail:
-              'Some residents travel to larger Southern California systems for specialty care. Confirm insurer networks and realistic appointment drive times on 101.',
-          },
-          {
-            title: 'Relocator tip',
-            detail:
-              'Transfer pediatric and specialty care early if mid-treatment; book first appointments before peak summer and academic move chaos.',
-          },
-        ],
-      },
-      {
-        id: 'housing',
-        title: 'Housing & cost of living',
-        bullets: [
-          {
-            title: 'Price ladder by pocket',
-            detail:
-              'Montecito and coastal Santa Barbara often price far above Goleta, and North County (Santa Maria, Lompoc) is a different affordability band entirely. Compare total monthly costs, not sticker price alone.',
-          },
-          {
-            title: 'Stock variety',
-            detail:
-              'Hillside estates, downtown condos, student multi-unit, suburban tracts, and ranch-edge lots — insurance, HOA dues, and access rules vary widely.',
-          },
-          {
-            title: 'Wildfire & insurance awareness',
-            detail:
-              'Hillside and wildland-urban interface parcels can face higher insurance scrutiny. Factor insurance availability and cost into foothill and canyon-edge searches.',
-          },
-        ],
-      },
-      {
-        id: 'town-fit',
-        title: 'Town fit by lifestyle',
-        bullets: [
-          {
-            title: 'Coastal lifestyle premium',
-            detail:
-              'Santa Barbara, Montecito, and Carpinteria for beach access and urban amenities — with constrained staging and higher housing costs on move day and every month after.',
-          },
-          {
-            title: 'Goleta practicality',
-            detail:
-              'More suburban layouts and UCSB-adjacent energy; multi-unit rules and academic peaks shape the experience.',
-          },
-          {
-            title: 'North County value & space',
-            detail:
-              'Santa Maria, Orcutt, and Lompoc for relatively more space per dollar — with inland climate and longer coast access via 101.',
-          },
-          {
-            title: 'Wine-country valley character',
-            detail:
-              'Solvang, Los Olivos, Buellton, and Santa Ynez for small-town and estate living with tourism and ranch-access tradeoffs.',
-          },
-        ],
-      },
-      {
-        id: 'jobs',
-        title: 'Jobs & commute',
-        bullets: [
-          {
-            title: 'Local anchors',
-            detail:
-              'Healthcare, higher education (UCSB), tourism and hospitality, agriculture and food processing (especially North County), aerospace/defense-adjacent roles near Vandenberg, tech/professional services, and public sector.',
-          },
-          {
-            title: '101 corridor reality',
-            detail:
-              'Coast ↔ North County commuting is a real daily cost. Peak 101 times should drive housing choice more than brochure distance.',
-          },
-          {
-            title: 'Hybrid / local options',
-            detail:
-              'Some professional and remote-capable roles reduce daily corridor trips — still validate broadband and coworking by pocket if that matters to you.',
-          },
-        ],
-      },
-      {
-        id: 'lifestyle',
-        title: 'Lifestyle & climate',
-        bullets: [
-          {
-            title: 'Coast vs inland microclimates',
-            detail:
-              'Marine layer and milder temps on the South Coast vs hotter Santa Maria / Lompoc afternoons. Same county, different packing and start-time logic.',
-          },
-          {
-            title: 'Outdoors & culture',
-            detail:
-              'Beaches, wine country, hiking, and downtown cultural amenities are major draws; weekend visitor traffic affects coastal and Solvang staging.',
-          },
-          {
-            title: 'Seasonal risk literacy',
-            detail:
-              'Fire and wind seasons are part of living here for hillside and foothill households — emergency kits, evacuation routes, and insurance reviews belong in relocation planning, not after move-in.',
+              'Some residents use larger Southern California systems for specialty care. Confirm insurer networks and realistic 101 appointment times before choosing a far-north or valley-only address.',
           },
         ],
       },
     ],
   },
   resources: {
-    title: 'Practical Santa Barbara County resources',
+    title: 'Useful Santa Barbara County resources',
     intro:
-      'Official links and licensing notes — HOA, parking, fire restrictions, and city rules change; verify before move day.',
+      'Local official links first. BHGS, FMCSA, and Move Trust Hub tools are added automatically for licensing checks.',
     items: [
       {
         label: 'County of Santa Barbara',
@@ -548,84 +353,13 @@ export const santaBarbaraCountyIntelligence: CountyIntelligencePack = {
         external: true,
       },
       {
-        label: 'City of Goleta',
-        href: 'https://www.cityofgoleta.org/',
-        external: true,
-      },
-      {
-        label: 'City of Carpinteria',
-        href: 'https://carpinteriaca.gov/',
-        external: true,
-      },
-      {
         label: 'City of Santa Maria',
         href: 'https://www.cityofsantamaria.org/',
         external: true,
       },
-      {
-        label: 'City of Lompoc',
-        href: 'https://www.cityoflompoc.com/',
-        external: true,
-      },
-      {
-        label: 'City of Buellton',
-        href: 'https://www.cityofbuellton.com/',
-        external: true,
-      },
-      {
-        label: 'City of Solvang',
-        href: 'https://www.cityofsolvang.com/',
-        external: true,
-      },
-      {
-        label: 'UC Santa Barbara',
-        href: 'https://www.ucsb.edu/',
-        note: 'Campus calendars and student housing context',
-        external: true,
-      },
-      {
-        label: 'CAL FIRE — incident & readiness information',
-        href: 'https://www.fire.ca.gov/',
-        note: 'Check fire conditions during wildfire season',
-        external: true,
-      },
-      {
-        label: 'National Weather Service — Los Angeles/Oxnard',
-        href: 'https://www.weather.gov/lox/',
-        note: 'Wind and red-flag context for move planning',
-        external: true,
-      },
-      {
-        label: 'CA BHGS — household movers (intrastate)',
-        href: 'https://bhgs.dca.ca.gov/',
-        note: 'California Bureau of Household Goods and Services',
-        external: true,
-      },
-      {
-        label: 'FMCSA SAFER — interstate authority',
-        href: 'https://safer.fmcsa.dot.gov/',
-        note: 'Required when the move crosses state lines',
-        external: true,
-      },
-      {
-        label: 'Southern California Edison / local utility check',
-        href: 'https://www.sce.com/',
-        note: 'Electric service for much of the county — confirm by address',
-        external: true,
-      },
-      {
-        label: 'Move Trust Hub — verify a USDOT',
-        href: '/verify-dot',
-        note: 'Cross-check interstate licensing before deposits',
-      },
-      {
-        label: 'Free moving calculator',
-        href: '/moving-calculator',
-        note: 'Inventory-based volume for local or long-distance',
-      },
     ],
   },
   directoryHint:
-    'Filter listings by zone (SB Core, Montecito/Carp, Goleta/UCSB, Santa Maria, Lompoc, Santa Ynez) when available. Confirm coastal access/shuttle needs, HOA/estate COI, 101 travel time to North County, and fire/wind contingency for hillside pairs.',
-  lastReviewed: '2026-07-23',
-};
+    'Filter by zone (SB/Goleta, South Coast, Santa Ynez, Santa Maria North) when available. Confirm narrow-road/shuttle needs, estate COI, and 101 time for coast↔North County pairs — not Ventura or LA assumptions alone.',
+  lastReviewed: '2026-07-24',
+});

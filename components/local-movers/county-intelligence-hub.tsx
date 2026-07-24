@@ -210,6 +210,49 @@ export function CountyIntelligenceHub({ pack, className }: Props) {
 
   const renderSection = (id: CountyIntelligenceSectionId) => {
     switch (id) {
+      case 'parentCompare': {
+        const pc = pack.parentCompare;
+        if (!pc?.bullets?.length) return null;
+        return (
+          <AccordionSection
+            key={id}
+            id="county-parent-compare-heading"
+            title={pc.title}
+            icon={<Navigation className="h-5 w-5 text-primary shrink-0" aria-hidden />}
+            collapsible={collapsible}
+            defaultOpen={!collapsible}
+          >
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              {pc.intro}
+            </p>
+            {pc.parentHref ? (
+              <p className="text-sm mb-5">
+                <Link
+                  href={pc.parentHref}
+                  className="font-medium text-primary hover:underline"
+                >
+                  Compare with {pc.parentLabel} guide →
+                </Link>
+              </p>
+            ) : (
+              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-5">
+                Compared with {pc.parentLabel}
+              </p>
+            )}
+            <ul className="space-y-4">
+              {pc.bullets.map((b) => (
+                <li key={b.title} className="flex gap-3 text-sm leading-relaxed">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <div>
+                    <p className="font-semibold text-foreground">{b.title}</p>
+                    <p className="text-muted-foreground mt-0.5">{b.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </AccordionSection>
+        );
+      }
       case 'whatMakesDifferent':
         return (
           <AccordionSection
@@ -218,7 +261,7 @@ export function CountyIntelligenceHub({ pack, className }: Props) {
             title={pack.whatMakesDifferent.title}
             icon={<AlertTriangle className="h-5 w-5 text-amber-600 shrink-0" aria-hidden />}
             collapsible={collapsible}
-            defaultOpen={!collapsible}
+            defaultOpen={!collapsible && pack.contentTier !== 'tier2'}
           >
             <p className="text-sm text-muted-foreground leading-relaxed mb-5">
               {pack.whatMakesDifferent.intro}
@@ -431,8 +474,9 @@ export function CountyIntelligenceHub({ pack, className }: Props) {
     >
       {collapsible ? (
         <p className="text-sm text-muted-foreground leading-relaxed rounded-xl border bg-muted/20 px-4 py-3">
-          Expand sections below for county-specific moving logistics and relocation research
-          (schools, healthcare, towns, and commute patterns). Mover listings stay above this guide.
+          {pack.contentTier === 'tier2'
+            ? 'Secondary-market guide: expand sections for parent-metro comparison, local zones, access constraints, and compressed schools/healthcare notes. Mover listings stay above this guide.'
+            : 'Expand sections below for county-specific moving logistics and relocation research (schools, healthcare, towns, and commute patterns). Mover listings stay above this guide.'}
         </p>
       ) : null}
       {order.map((sectionId) => renderSection(sectionId))}

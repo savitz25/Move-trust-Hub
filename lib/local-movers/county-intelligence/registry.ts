@@ -922,6 +922,11 @@ export const CA_TIER1_CORE12 = [
   'ventura',
 ] as const;
 
+/**
+ * @deprecated Historical name — these markets now ship under the locked Tier 2
+ * content contract (parent compare, 2–4 zones, compressed relocation).
+ * Prefer CA_TIER2_WAVE1.
+ */
 export const CA_TIER1_WAVE2 = [
   'fresno',
   'kern',
@@ -932,7 +937,22 @@ export const CA_TIER1_WAVE2 = [
   'monterey',
 ] as const;
 
-export const CA_TIER1_ALL = [...CA_TIER1_CORE12, ...CA_TIER1_WAVE2] as const;
+/**
+ * California Tier 2 Wave 1 — secondary markets on the locked Tier 2 content contract
+ * (not a thinner Tier 1 clone). Same design system / BHGS / directory honesty.
+ */
+export const CA_TIER2_WAVE1 = [
+  'fresno',
+  'kern',
+  'san-joaquin',
+  'sonoma',
+  'placer',
+  'santa-barbara',
+  'monterey',
+] as const;
+
+/** @deprecated Use CA_TIER1_CORE12 + CA_TIER2_WAVE1 for editorial tiers. */
+export const CA_TIER1_ALL = [...CA_TIER1_CORE12, ...CA_TIER2_WAVE1] as const;
 
 /** Florida Tier-1 Core 12. */
 export const FL_TIER1_CORE12 = [

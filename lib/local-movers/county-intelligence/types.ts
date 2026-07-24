@@ -54,7 +54,27 @@ export type CountyRelocationModule = {
   bullets: CountyIntelligenceBullet[];
 };
 
+/**
+ * Editorial content tier for intelligence packs.
+ * Tier 1 = flagship metro depth. Tier 2 = secondary-market contract
+ * (parent compare, fewer zones, sharper constraints) — not a thinner clone.
+ * Independent of SEO indexability tiers in county-tier.ts.
+ */
+export type CountyIntelligenceContentTier = 'tier1' | 'tier2';
+
+/** Parent-metro comparison module required on Tier 2 packs. */
+export type CountyParentCompare = {
+  /** e.g. "Los Angeles County" */
+  parentLabel: string;
+  /** Optional internal link to parent Tier 1 guide */
+  parentHref?: string;
+  title: string;
+  intro: string;
+  bullets: Array<{ title: string; detail: string }>;
+};
+
 export type CountyIntelligenceSectionId =
+  | 'parentCompare'
   | 'whatMakesDifferent'
   | 'zones'
   | 'costDrivers'
@@ -76,6 +96,15 @@ export type CountyIntelligencePack = {
   heroOpener: string;
   /** One-line credibility strip under hero */
   heroCredibility?: string;
+  /**
+   * Editorial content tier. Tier 2 packs must include parentCompare,
+   * 2–4 zones, 2–3 specialized modules, and compressed relocation.
+   */
+  contentTier?: CountyIntelligenceContentTier;
+  /**
+   * Required for contentTier === 'tier2': comparison vs nearest parent Tier 1 market.
+   */
+  parentCompare?: CountyParentCompare;
   whatMakesDifferent: {
     title: string;
     intro: string;
@@ -101,6 +130,7 @@ export type CountyIntelligencePack = {
   specialized?: CountySpecializedModule[];
   /**
    * Relocation research — schools, hospitals, housing, towns, jobs, lifestyle, demographics.
+   * Tier 2: keep compressed (schools + hospitals primary).
    */
   relocation?: {
     title: string;
@@ -129,6 +159,18 @@ export type CountyIntelligencePack = {
 };
 
 export const DEFAULT_INTELLIGENCE_SECTION_ORDER: CountyIntelligenceSectionId[] = [
+  'whatMakesDifferent',
+  'zones',
+  'costDrivers',
+  'seasonal',
+  'specialized',
+  'relocation',
+  'resources',
+];
+
+/** Locked Tier 2 section order: parent compare first, then compressed local intel. */
+export const TIER2_INTELLIGENCE_SECTION_ORDER: CountyIntelligenceSectionId[] = [
+  'parentCompare',
   'whatMakesDifferent',
   'zones',
   'costDrivers',
