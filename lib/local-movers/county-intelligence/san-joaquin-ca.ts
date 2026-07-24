@@ -307,7 +307,7 @@ export const sanJoaquinCountyIntelligence: CountyIntelligencePack = finalizeCaTi
     },
   ],
   relocation: {
-    title: 'Considering a move to San Joaquin County?',
+    title: 'Schools & hospitals for relocators',
     intro:
       'Stockton urban value, Tracy–Manteca collar growth, and Lodi character are different bets — validate schools and healthcare by pocket, then test whether a Bay commute is livable from that driveway.',
     modules: [

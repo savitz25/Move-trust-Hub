@@ -315,7 +315,7 @@ export const kernCountyIntelligence: CountyIntelligencePack = finalizeCaTier2Pac
     },
   ],
   relocation: {
-    title: 'Considering a move to Kern County?',
+    title: 'Schools & hospitals for relocators',
     intro:
       'Bakersfield metro affordability, north-valley ag towns, Tehachapi mountain living, and Ridgecrest high-desert life are different bets — validate schools and healthcare by pocket first.',
     modules: [

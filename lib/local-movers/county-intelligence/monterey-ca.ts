@@ -20,7 +20,7 @@ export const montereyCountyIntelligence = finalizeCaTier2Pack({
   parentCompare: {
     parentLabel: 'Santa Clara County',
     parentHref: '/local-movers/california/santa-clara',
-    title: 'How Monterey County differs from Santa Clara County (South Bay)',
+    title: 'Compared with Santa Clara County (South Bay)',
     intro:
       'Monterey is a Central Coast secondary south of the South Bay — tourism and ag logistics, not Silicon Valley office-park density. Use this when one address is Santa Clara County and the other is Monterey.',
     bullets: [
@@ -295,7 +295,7 @@ export const montereyCountyIntelligence = finalizeCaTier2Pack({
     },
   ],
   relocation: {
-    title: 'Considering a move to Monterey County?',
+    title: 'Schools & hospitals for relocators',
     intro:
       'Compressed relocator notes — schools and hospitals by pocket, then test Peninsula↔valley commute tolerance before choosing on price alone.',
     modules: [

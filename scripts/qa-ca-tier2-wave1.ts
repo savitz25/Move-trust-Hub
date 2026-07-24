@@ -71,6 +71,18 @@ function audit(slug: string): Row {
 
   checks.contentTier2 = pack.contentTier === 'tier2';
   checks.parentCompare = Boolean(pack.parentCompare?.bullets?.length >= 3);
+  checks.parentTitleComparedWith = Boolean(
+    pack.parentCompare?.title &&
+      /^Compared with/i.test(pack.parentCompare.title)
+  );
+  checks.relocOnlySchoolsHospitals = Boolean(
+    pack.relocation?.modules?.length &&
+      pack.relocation.modules.every(
+        (m) =>
+          /school|education/i.test(m.title) || /hospital|health/i.test(m.title)
+      ) &&
+      pack.relocation.modules.length <= 2
+  );
   checks.narrativeH1 =
     Boolean(h1) && !/^Movers Serving/i.test(h1) && h1.length > 20;
   checks.zones2to4 = pack.zones.length >= 2 && pack.zones.length <= 4;
@@ -110,6 +122,8 @@ function audit(slug: string): Row {
   const pass = Boolean(
     checks.contentTier2 &&
       checks.parentCompare &&
+      checks.parentTitleComparedWith &&
+      checks.relocOnlySchoolsHospitals &&
       checks.narrativeH1 &&
       checks.zones2to4 &&
       checks.zoneIdsUnique &&

@@ -20,7 +20,7 @@ export const placerCountyIntelligence = finalizeCaTier2Pack({
   parentCompare: {
     parentLabel: 'Sacramento County',
     parentHref: '/local-movers/california/sacramento',
-    title: 'How Placer County differs from Sacramento County',
+    title: 'Compared with Sacramento County',
     intro:
       'Placer is the growth collar east and northeast of the capital region — newer planned stock and elevation edges, not Midtown/East Sac multi-unit density. Use this when one address sits in Sacramento County and the other in Placer.',
     bullets: [
@@ -293,7 +293,7 @@ export const placerCountyIntelligence = finalizeCaTier2Pack({
     },
   ],
   relocation: {
-    title: 'Considering a move to Placer County?',
+    title: 'Schools & hospitals for relocators',
     intro:
       'Compressed relocator notes — schools and hospitals by pocket, then test I-80 commute and elevation weather for the address you want.',
     modules: [

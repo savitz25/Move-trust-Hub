@@ -213,17 +213,24 @@ export function CountyIntelligenceHub({ pack, className }: Props) {
       case 'parentCompare': {
         const pc = pack.parentCompare;
         if (!pc?.bullets?.length) return null;
+        // Tier 2 contract: parent compare must be immediately visible (not buried collapsed).
+        const compareTitle = /^Compared with/i.test(pc.title)
+          ? pc.title
+          : `Compared with ${pc.parentLabel}`;
         return (
           <AccordionSection
             key={id}
             id="county-parent-compare-heading"
-            title={pc.title}
+            title={compareTitle}
             icon={<Navigation className="h-5 w-5 text-primary shrink-0" aria-hidden />}
             collapsible={collapsible}
-            defaultOpen={!collapsible}
+            defaultOpen
           >
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               {pc.intro}
+            </p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+              Compared with {pc.parentLabel}
             </p>
             {pc.parentHref ? (
               <p className="text-sm mb-5">
@@ -231,14 +238,10 @@ export function CountyIntelligenceHub({ pack, className }: Props) {
                   href={pc.parentHref}
                   className="font-medium text-primary hover:underline"
                 >
-                  Compare with {pc.parentLabel} guide →
+                  Open {pc.parentLabel} Tier 1 guide →
                 </Link>
               </p>
-            ) : (
-              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-5">
-                Compared with {pc.parentLabel}
-              </p>
-            )}
+            ) : null}
             <ul className="space-y-4">
               {pc.bullets.map((b) => (
                 <li key={b.title} className="flex gap-3 text-sm leading-relaxed">

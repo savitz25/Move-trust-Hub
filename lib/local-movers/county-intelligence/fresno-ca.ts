@@ -316,7 +316,7 @@ export const fresnoCountyIntelligence: CountyIntelligencePack = finalizeCaTier2P
     },
   ],
   relocation: {
-    title: 'Considering a move to Fresno County?',
+    title: 'Schools & hospitals for relocators',
     intro:
       'Independent mid-metro value, Clovis growth, and ag-edge living are different bets — validate schools and healthcare by pocket, then plan for valley heat.',
     modules: [

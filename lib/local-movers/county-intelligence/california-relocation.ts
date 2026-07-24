@@ -2152,6 +2152,23 @@ export function enhanceCaliforniaIntelligencePack(
 
   // Tier 2 packs ship their own compressed contract — do not inflate with Tier 1 dumps.
   if (pack.contentTier === 'tier2') {
+    // Hard-cap relocation to move-relevant schools + hospitals only.
+    if (next.relocation?.modules?.length) {
+      const kept = next.relocation.modules.filter(
+        (m) => /school|education/i.test(m.title) || /hospital|health/i.test(m.title)
+      );
+      if (kept.length) {
+        next.relocation = {
+          title: next.relocation.title.replace(
+            /Is .+ the right fit\?/i,
+            'Schools & hospitals for relocators'
+          ),
+          intro:
+            'Compressed secondary-market notes only — primary school districts and acute-care access that affect move-in. Full lifestyle essays belong on Tier 1 flagship pages.',
+          modules: kept.slice(0, 2),
+        };
+      }
+    }
     const baseOrder =
       next.sectionOrder?.length
         ? [...next.sectionOrder]
@@ -2169,7 +2186,13 @@ export function enhanceCaliforniaIntelligencePack(
     if (next.parentCompare && !baseOrder.includes('parentCompare')) {
       baseOrder.unshift('parentCompare');
     }
-    next.sectionOrder = baseOrder;
+    // Parent compare always first for Tier 2 visibility.
+    if (baseOrder.includes('parentCompare') && baseOrder[0] !== 'parentCompare') {
+      const without = baseOrder.filter((id) => id !== 'parentCompare');
+      next.sectionOrder = ['parentCompare', ...without];
+    } else {
+      next.sectionOrder = baseOrder;
+    }
     return next;
   }
 

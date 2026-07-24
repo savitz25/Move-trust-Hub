@@ -20,7 +20,7 @@ export const sonomaCountyIntelligence = finalizeCaTier2Pack({
   parentCompare: {
     parentLabel: 'Bay Area (San Francisco & San Mateo)',
     parentHref: '/local-movers/california/san-francisco',
-    title: 'How Sonoma County differs from the San Francisco Bay core',
+    title: 'Compared with San Francisco Bay Area (SF / San Mateo corridors)',
     intro:
       'Sonoma is a North Bay secondary and wine-country collar — not SF/Peninsula elevator density, not pure Marin commute product. Use this comparison when origin or destination sits in the Bay Tier 1 market.',
     bullets: [
@@ -292,7 +292,7 @@ export const sonomaCountyIntelligence = finalizeCaTier2Pack({
     },
   ],
   relocation: {
-    title: 'Considering a move to Sonoma County?',
+    title: 'Schools & hospitals for relocators',
     intro:
       'Compressed relocator notes — validate schools and healthcare by pocket, then test 101 commute and fire-insurance tolerance for the address you actually want.',
     modules: [

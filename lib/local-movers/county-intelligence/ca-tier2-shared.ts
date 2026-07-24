@@ -74,7 +74,7 @@ export type CaTier2PackInput = Omit<
 export function finalizeCaTier2Pack(pack: CaTier2PackInput): CountyIntelligencePack {
   const zones = pack.zones ?? [];
   const specialized = pack.specialized ?? [];
-  const relocModules = pack.relocation?.modules ?? [];
+  let relocModules = pack.relocation?.modules ?? [];
 
   if (zones.length < 2 || zones.length > 4) {
     // Soft guard — QA enforces strictly; keep production resilient.
@@ -91,13 +91,28 @@ export function finalizeCaTier2Pack(pack: CaTier2PackInput): CountyIntelligenceP
     console.warn(`[ca-tier2] ${pack.countySlug}: parentCompare is required`);
   }
 
-  const hasSchools = relocModules.some((m) => /school/i.test(m.title));
+  // Enforce schools + hospitals only — strip Tier 1 lifestyle/jobs dumps if present.
+  relocModules = relocModules.filter(
+    (m) => /school|education/i.test(m.title) || /hospital|health/i.test(m.title)
+  );
+
+  const hasSchools = relocModules.some((m) => /school|education/i.test(m.title));
   const hasHospitals = relocModules.some((m) => /hospital|health/i.test(m.title));
   if (!hasSchools || !hasHospitals) {
     console.warn(
       `[ca-tier2] ${pack.countySlug}: compressed relocation should include schools + hospitals`
     );
   }
+
+  // Normalize parentCompare title for live HTML discoverability.
+  const parentCompare = pack.parentCompare
+    ? {
+        ...pack.parentCompare,
+        title: /^Compared with/i.test(pack.parentCompare.title)
+          ? pack.parentCompare.title
+          : `Compared with ${pack.parentCompare.parentLabel}`,
+      }
+    : pack.parentCompare;
 
   const localResources = pack.resources?.items ?? [];
   const seen = new Set(localResources.map((r) => r.href));
@@ -114,8 +129,20 @@ export function finalizeCaTier2Pack(pack: CaTier2PackInput): CountyIntelligenceP
     ...pack,
     stateSlug: 'california',
     contentTier: 'tier2',
+    parentCompare,
     collapsibleDeepContent: pack.collapsibleDeepContent ?? true,
     sectionOrder: pack.sectionOrder ?? TIER2_INTELLIGENCE_SECTION_ORDER,
+    relocation: pack.relocation
+      ? {
+          title: 'Schools & hospitals for relocators',
+          intro:
+            pack.relocation.intro?.includes('Compressed') ||
+            pack.relocation.intro?.includes('move-relevant')
+              ? pack.relocation.intro
+              : 'Compressed secondary-market notes — primary districts and acute-care access that affect move-in. Not a full Tier 1 lifestyle essay.',
+          modules: relocModules.slice(0, 2),
+        }
+      : pack.relocation,
     resources: {
       title: pack.resources?.title ?? `Useful ${marketLabel} resources`,
       intro:

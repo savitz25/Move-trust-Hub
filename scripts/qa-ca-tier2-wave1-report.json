@@ -13,6 +13,8 @@
       "checks": {
         "contentTier2": true,
         "parentCompare": true,
+        "parentTitleComparedWith": true,
+        "relocOnlySchoolsHospitals": true,
         "narrativeH1": true,
         "zones2to4": true,
         "zoneIdsUnique": true,
@@ -43,6 +45,8 @@
       "checks": {
         "contentTier2": true,
         "parentCompare": true,
+        "parentTitleComparedWith": true,
+        "relocOnlySchoolsHospitals": true,
         "narrativeH1": true,
         "zones2to4": true,
         "zoneIdsUnique": true,
@@ -73,6 +77,8 @@
       "checks": {
         "contentTier2": true,
         "parentCompare": true,
+        "parentTitleComparedWith": true,
+        "relocOnlySchoolsHospitals": true,
         "narrativeH1": true,
         "zones2to4": true,
         "zoneIdsUnique": true,
@@ -103,6 +109,8 @@
       "checks": {
         "contentTier2": true,
         "parentCompare": true,
+        "parentTitleComparedWith": true,
+        "relocOnlySchoolsHospitals": true,
         "narrativeH1": true,
         "zones2to4": true,
         "zoneIdsUnique": true,
@@ -133,6 +141,8 @@
       "checks": {
         "contentTier2": true,
         "parentCompare": true,
+        "parentTitleComparedWith": true,
+        "relocOnlySchoolsHospitals": true,
         "narrativeH1": true,
         "zones2to4": true,
         "zoneIdsUnique": true,
@@ -163,6 +173,8 @@
       "checks": {
         "contentTier2": true,
         "parentCompare": true,
+        "parentTitleComparedWith": true,
+        "relocOnlySchoolsHospitals": true,
         "narrativeH1": true,
         "zones2to4": true,
         "zoneIdsUnique": true,
@@ -193,6 +205,8 @@
       "checks": {
         "contentTier2": true,
         "parentCompare": true,
+        "parentTitleComparedWith": true,
+        "relocOnlySchoolsHospitals": true,
         "narrativeH1": true,
         "zones2to4": true,
         "zoneIdsUnique": true,

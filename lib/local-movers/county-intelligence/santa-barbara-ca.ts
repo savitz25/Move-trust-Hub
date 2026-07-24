@@ -20,7 +20,7 @@ export const santaBarbaraCountyIntelligence = finalizeCaTier2Pack({
   parentCompare: {
     parentLabel: 'Ventura County',
     parentHref: '/local-movers/california/ventura',
-    title: 'How Santa Barbara County differs from Ventura County',
+    title: 'Compared with Ventura County (and LA County coastal contrast)',
     intro:
       'Both sit on the coastal 101 secondary belt north of LA — but Santa Barbara’s constrained South Coast, wine-valley interior, and long North County run are not Oxnard/Ventura/Thousand Oaks products. Use this when one address is Ventura County and the other is Santa Barbara.',
     bullets: [
@@ -296,7 +296,7 @@ export const santaBarbaraCountyIntelligence = finalizeCaTier2Pack({
     },
   ],
   relocation: {
-    title: 'Considering a move to Santa Barbara County?',
+    title: 'Schools & hospitals for relocators',
     intro:
       'Compressed relocator notes — schools and hospitals by pocket, then test 101 commute tolerance between coast and North County.',
     modules: [
