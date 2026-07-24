@@ -1,399 +1,336 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  finalizeTxTier2Pack,
+  TX_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/texas/tx-tier2-shared';
 
 /**
- * Hand-crafted Montgomery County, Texas moving intelligence.
- * Differentiators: The Woodlands master-planned core, Conroe growth, north Houston /
- * exurban expansion along I-45 — not Fort Bend SW Sugar Land scripts or Harris downtown elevators.
+ * Montgomery County — Texas Tier 2 (Houston north collar).
+ * Secondary-market contract vs Harris Tier 1 parent — The Woodlands / Conroe /
+ * I-45 growth, not Houston core elevators or Fort Bend SW Sugar Land scripts.
  */
-export const montgomeryCountyIntelligence: CountyIntelligencePack = {
-  stateSlug: 'texas',
+export const montgomeryCountyIntelligence: CountyIntelligencePack = finalizeTxTier2Pack({
   countySlug: 'montgomery',
   hubTitle: 'Montgomery County Moving Intelligence Hub',
-  eyebrow: 'Montgomery · The Woodlands, Conroe & north Houston growth',
-  h1: 'Moving in Montgomery County: The Woodlands, Conroe Growth & North Houston Guide',
+  eyebrow: 'Montgomery · Houston north collar · The Woodlands / Conroe',
+  h1: 'Moving in Montgomery County: Houston North Collar — The Woodlands, Conroe Growth & I-45',
   heroOpener:
-    'Montgomery County is north Houston’s suburban–exurban growth belt — The Woodlands’ master-planned villages on one side, Conroe expansion and Lake Conroe edges on the other, and I-45 corridor towns absorbing Harris overflow. This is not Fort Bend’s Sugar Land script and not downtown Houston elevators. Woodlands HOAs, golf-course and forested lots, and strict move windows dominate the south-central core; Conroe and Magnolia bring newer tracts and longer arterials; Willis, New Caney, and Splendora edges feel more exurban. Piney-woods canopy, summer heat, and school calendars shape every crew day. This guide is for people moving in Montgomery County — Woodlands logistics plus north-metro growth — not a recycled Houston core pack.',
+    'Montgomery County is Houston’s north collar — The Woodlands’ master-planned villages on one side, Conroe expansion and Lake Conroe edges on the other, and I-45 corridor towns absorbing Harris overflow. This is not Fort Bend’s Sugar Land script and not downtown Houston elevators. Woodlands HOAs, forested lots, and strict move windows dominate the south-central core; Conroe and Magnolia bring newer tracts and longer arterials; Spring/Oak Ridge edges sit on the Harris seam. Compared with Harris, you get freer I-45 freeflow than Medical Center gridlock, canopy and lake access Harris core never sees, and HOA density concentrated in planned villages rather than tower docks. This guide is for people moving in Montgomery as a north collar market — not a recycled Houston core pack.',
   heroCredibility:
-    'The Woodlands · North Houston / Conroe growth · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
-  collapsibleDeepContent: true,
-  sectionOrder: [
-    'whatMakesDifferent',
-    'zones',
-    'costDrivers',
-    'seasonal',
-    'specialized',
-    'relocation',
-    'resources',
-  ],
-  whatMakesDifferent: {
-    title: 'What makes moving in Montgomery County different',
+    'Houston north collar · The Woodlands / Conroe · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
+  majorCorridors: 'I-45 · SH-99 · FM-1488 · SH-242 · US-59 (south approach)',
+  parentCompare: {
+    parentLabel: 'Harris County',
+    parentHref: '/local-movers/texas/harris',
+    title: 'Compared with Harris County',
     intro:
-      'These are Montgomery realities — The Woodlands planned-village access, Conroe growth, Lake Conroe edges, and I-45 corridor timing — not interchangeable “Houston suburb” boilerplate.',
+      'Montgomery is the Houston north growth collar — The Woodlands, Conroe, Spring/Oak Ridge edges, and Magnolia/west growth — not a drop-in template for downtown elevators, Energy Corridor towers, or bayou-core flood logistics. Use Harris as the dense metro parent contrast.',
     bullets: [
       {
-        title: 'The Woodlands and Conroe growth are different products',
+        title: 'Drive time & corridor relationship',
         detail:
-          'A Woodlands village HOA home, a Conroe new build, a Lake Conroe waterfront approach, and a New Caney larger-lot do not share gate rules, truck access, or inventory profiles. Name both origin and destination communities on every estimate.',
+          'Harris crews fight I-10, Beltway 8, and multi-hour cross-county pairs into downtown and the Medical Center. Montgomery pairs ride I-45, SH-99, FM-1488, SH-242, and the US-59 south approach — freer mid-day than Inner Loop, still peak-heavy on Woodlands ↔ Conroe and Spring-edge commute windows. Portal-to-portal time is real; it is not a short Houston dock job.',
       },
       {
-        title: 'Woodlands logistics are paperwork- and canopy-first',
+        title: 'Housing stock differences',
         detail:
-          'Master-planned villages require COI, approved hours, and gate coordination. Forested lots add canopy clearance, longer carries, and limited turnaround that open prairie suburbs never see.',
+          'Harris mixes towers, bungalows, bayou ranchers, and west-side HOAs under one county label. Montgomery’s ladder is Woodlands master-planned villages, Conroe new construction, Spring/Oak Ridge suburban stock, Magnolia larger-lot growth, and lake-edge product — far less elevator density, far more canopy clearance and gate lists.',
       },
       {
-        title: 'North Houston spillover fills the I-45 spine',
+        title: 'Truck access, HOA & density',
         detail:
-          'Households choose Montgomery for schools, newer housing, and relative value while commuting into Harris job centers. Peak spring/summer and end-of-month windows book first along Spring, Oak Ridge North, and Woodlands-adjacent corridors.',
+          'Harris core needs COI elevators and curb permits. Montgomery defaults to Woodlands-style HOA packets, forested driveway carries, and longer approaches into Conroe/Magnolia growth. Lake and private-road edges add constraints open Harris prairie suburbs rarely see.',
       },
       {
-        title: 'I-45 / 99 / 242 / 105 timing rewrites “local” ETAs',
+        title: 'Rough cost posture (qualitative)',
         detail:
-          'Map miles between The Woodlands, Conroe, and Magnolia understate peak portal time. Hourly crews feel every bottleneck — ask how drive time is priced.',
+          'Local Montgomery quotes often sit near secondary-collar rates for simple driveway access — HOA soft costs, I-45 peak time, canopy/long-carry labor, and lake-edge access still push prices up. Expect planned-village friction and distance premiums, not downtown dock scarcity.',
       },
       {
-        title: 'Lake Conroe edges are access jobs',
+        title: 'Role difference',
         detail:
-          'Waterfront approaches, private roads, boat-traffic weekends, and weather-sensitive docks create staging constraints that inland cul-de-sacs never see. Share approach photos.',
-      },
-      {
-        title: 'Exurban east and north edges lower service density',
-        detail:
-          'New Caney, Splendora, Willis, and rural-north parcels can mean longer deadhead, soft shoulders, and fewer same-day crew options than Woodlands core.',
-      },
-      {
-        title: 'Gulf Coast heat and storm season stress outdoor work',
-        detail:
-          'Summer heat under canopy still exhausts crews on long carries; tropical systems and heavy rain can cancel outdoor packing. Early starts and flexible dates outperform rigid peak Saturdays.',
-      },
-      {
-        title: 'Texas intrastate rules (TxDMV) + FMCSA when interstate',
-        detail:
-          'Moves entirely within Texas are generally overseen under Texas Department of Motor Vehicles (TxDMV) household-goods / motor-carrier frameworks. Interstate legs need active FMCSA USDOT (and usually MC) authority. Confirm which license applies before deposit.',
+          'Montgomery is Houston’s north bedroom and planned-growth engine — Woodlands logistics, Conroe expansion, and I-45 spillover — not Harris’s job-center core and not Fort Bend’s SW Sugar Land product. Treat it as its own collar market when matching crews and rate cards.',
       },
     ],
   },
-  zonesHeading: 'Montgomery County access zones',
+  whatMakesDifferent: {
+    title: 'What makes moving in Montgomery County different',
+    intro:
+      'North collar realities — Woodlands HOA density, I-45 freeflow with real peaks, lake/edge access, and piney-woods canopy — that change estimates.',
+    bullets: [
+      {
+        title: 'Woodlands master-planned is a different product than Conroe growth',
+        detail:
+          'A Woodlands village HOA home, a Conroe new build, a Spring-edge tract, and a Magnolia larger-lot do not share gate rules, truck access, or inventory profiles. Name both origin and destination communities on every estimate.',
+      },
+      {
+        title: 'I-45 freeflow is not Harris gridlock — still a line item',
+        detail:
+          'Woodlands ↔ Conroe or Spring ↔ Magnolia pairs freer than Inner Loop still burn billable time at school and commute peaks. Ask whether quotes are portal-to-portal.',
+      },
+      {
+        title: 'Canopy, HOA, and lake-edge access stack',
+        detail:
+          'Forested lots add clearance and longer carries; lake and private-road approaches add staging risk Harris core scripts miss. Share approach photos early.',
+      },
+      {
+        title: 'Gulf Coast heat under pine canopy still exhausts crews',
+        detail:
+          'Summer heat and humidity slow long driveway carries even with shade. Prefer early starts; treat mid-afternoon load-outs as high risk in peak season.',
+      },
+      TX_TIER2_REG_BULLET,
+    ],
+  },
+  zonesHeading: 'Montgomery zones: The Woodlands, Conroe, Spring/Oak Ridge & Magnolia west',
   zonesIntro:
-    'Plan by The Woodlands villages, Conroe core/growth, Lake Conroe edges, Magnolia/west growth, and east/exurban I-45 towns — each has its own access and traffic profile.',
+    'Three to four sharp products — not a six-zone dump. Woodlands planned core, Conroe growth, Spring/Oak Ridge Harris-seam suburbs, and Magnolia/west edges price and stage differently under the same north collar.',
   zones: [
     {
       id: 'the-woodlands',
-      name: 'The Woodlands — master-planned village core',
+      name: 'The Woodlands Master-Planned Villages',
       shortName: 'The Woodlands',
       neighborhoods: [
-        'Village of Cochran’s Crossing',
-        'Village of Indian Springs',
-        'Village of Sterling Ridge',
-        'Village of Alden Bridge',
-        'Town Center / East Shore edges',
-        'Creekside Park (as applicable)',
+        'The Woodlands Town Center edge',
+        'Village cores (Cochran’s Crossing, Sterling Ridge & peers)',
+        'Grogans Mill / Panther Creek edges',
+        'Golf-course and forested lots',
+        'I-45 / Research Forest corridors',
       ],
       housingTypes:
-        'Master-planned HOA SFH, townhomes, some mid-rise and multi-family near Town Center',
+        'Master-planned HOA SFH, townhomes, some multi-family, forested and golf-edge product',
       challenges: [
-        'Strict HOA COI, gate lists, and approved move hours',
-        'Canopy clearance and forested-lot long carries',
-        'I-45 / Research Forest / Woodlands Parkway congestion',
-        'High family and corporate transfer volume',
+        'HOA COI, approved hours, and gate lists as default',
+        'Canopy clearance and longer driveway carries',
+        'I-45 / local arterial peaks toward Houston',
+        'High family-move volume on summer weekends',
       ],
       moverTips:
-        'Collect village HOA packets before booking. Measure canopy and driveway clearance. Prefer weekday morning windows. Woodlands ↔ Conroe is a multi-zone haul — price portal time honestly.',
+        'Send HOA management packets with the estimate. Mid-week early starts beat heat and school traffic. Inventory canopy clearance and family-volume SFH carefully. Clarify Woodlands ↔ Conroe or Harris drive assumptions.',
       cityKeywords: [
         'the woodlands',
         'woodlands',
-        'cochran',
-        'alden bridge',
+        'grogans mill',
+        'cochrans crossing',
         'sterling ridge',
-        'creekside park',
+        'research forest',
+        'panther creek',
       ],
     },
     {
-      id: 'conroe-core-growth',
-      name: 'Conroe core & northern growth',
+      id: 'conroe-growth',
+      name: 'Conroe Core & Growth',
       shortName: 'Conroe',
       neighborhoods: [
-        'Downtown / historic Conroe',
-        'South Conroe growth',
-        'North Conroe tracts',
-        'Grand Central Park and similar villages',
-        'FM 1488 / 105 corridor residential',
+        'Downtown Conroe edges',
+        'Newer Conroe subdivisions',
+        'Lake Conroe approach neighborhoods',
+        'I-45 / SH-105 corridors',
+        'East and west Conroe tracts',
       ],
       housingTypes:
-        'Mix of older SFH, newer HOA tracts, multi-family, some large two-story product',
+        'Established SFH, new-construction tracts, multi-family, some lake-adjacent product',
       challenges: [
-        'Mixed historic-grid staging vs new HOA rules',
-        'I-45 interchange timing',
-        'High inbound volume from north Houston spillover',
-        'School-calendar Saturday demand',
+        'Rapid growth and incomplete roads in newest phases',
+        'I-45 peak congestion toward The Woodlands / Houston',
+        'Longer empty miles from Woodlands staging for north jobs',
+        'Varied HOA density vs pure Woodlands villages',
       ],
       moverTips:
-        'Clarify HOA vs non-HOA rules by address. Early summer starts beat heat. Price Conroe ↔ Woodlands and Conroe ↔ Magnolia with honest arterial time.',
+        'Do not price Conroe new builds exactly like Woodlands HOA villages — access and paperwork differ. Build I-45 timing into north↔south pairs. Early starts still win in summer heat.',
       cityKeywords: [
         'conroe',
-        'grand central park',
         'downtown conroe',
-        'fm 1488',
+        'lake conroe',
+        'sh 105',
+        'conroe tx',
+        'north montgomery',
       ],
     },
     {
-      id: 'lake-conroe',
-      name: 'Lake Conroe edges & waterfront approaches',
-      shortName: 'Lake Conroe',
+      id: 'spring-oak-ridge',
+      name: 'Spring / Oak Ridge North Edges',
+      shortName: 'Spring / Oak Ridge',
       neighborhoods: [
-        'Lake Conroe west/east shores',
-        'Montgomery (city) lake-adjacent',
-        'Cape Conroe and similar communities',
-        'Private road and gated lake villages',
+        'Oak Ridge North',
+        'Spring-edge Montgomery pockets',
+        'I-45 south approach',
+        'SH-242 corridors',
+        'Harris–Montgomery seam suburbs',
       ],
       housingTypes:
-        'Waterfront and lake-view SFH, gated communities, some multi-family and weekend homes',
+        'Suburban SFH, established tracts, multi-family pockets, some HOA product',
       challenges: [
-        'Private roads, gates, and limited truck turnaround',
-        'Weekend recreation traffic',
-        'Weather-sensitive docks and soft approaches',
-        'Longer deadhead from I-45 core crews',
+        'I-45 commute peaks into Harris job centers',
+        'County-line confusion on estimates and drive assumptions',
+        'Mixed HOA density vs pure Woodlands core',
+        'Cross-county pairs into Spring / Klein / Houston north',
       ],
       moverTips:
-        'Share approach, gate, and turnaround photos. Avoid peak lake-weekend staging when flexible. Confirm vehicle size for private roads before dispatch.',
+        'Clarify Montgomery vs Harris address on every estimate. Build I-45 and SH-242 timing into southbound pairs. Confirm HOA rules when present — do not assume Woodlands-level paperwork on every Spring-edge street.',
       cityKeywords: [
-        'lake conroe',
-        'montgomery tx',
-        'cape conroe',
-        'lake',
-        'waterfront',
+        'oak ridge north',
+        'spring',
+        'spring tx',
+        'sh 242',
+        'i-45 spring',
+        'montgomery spring',
       ],
     },
     {
       id: 'magnolia-west',
-      name: 'Magnolia, Tomball-edge & western growth',
-      shortName: 'Magnolia / West',
+      name: 'Magnolia & West Edges',
+      shortName: 'Magnolia / west',
       neighborhoods: [
         'Magnolia',
-        'Todd Mission edge',
-        'FM 1774 / 1488 west corridors',
-        'Tomball-adjacent Montgomery County pockets',
-        'Newer west master-planned tracts',
+        'FM-1488 corridors',
+        'West Montgomery growth tracts',
+        'Larger-lot and rural-edge homes',
+        'SH-249 approach edges',
       ],
       housingTypes:
-        'Newer HOA SFH, larger-lot suburban, some multi-family and rural-edge',
+        'New-construction SFH, larger-lot suburban, some rural-edge and acreage-adjacent product',
       challenges: [
-        'HOA COI in planned villages',
-        'Longer arterials to I-45 / Woodlands job centers',
-        'New-construction incomplete roads',
-        'Lower service density than Woodlands core',
+        'Longer approaches and empty miles from Woodlands/Conroe staging',
+        'FM-1488 and SH-99 peak timing',
+        'Softer shoulders and truck-turn constraints on edge roads',
+        'Lower same-day crew density than Woodlands core',
       ],
       moverTips:
-        'Collect HOA packets early. Confirm access the week of the move in new sections. Magnolia ↔ Woodlands is a classic underquoted local.',
+        'Treat Magnolia/west pairs as long-local jobs. Ask whether pure local rate cards still apply. Note gates, gravel approaches, and outbuildings on the survey. Prefer mid-week starts over peak FM-1488 traffic.',
       cityKeywords: [
         'magnolia',
-        'tomball',
-        'fm 1774',
         'magnolia tx',
-      ],
-    },
-    {
-      id: 'spring-oak-ridge-south',
-      name: 'Spring, Oak Ridge North & southern I-45 edge',
-      shortName: 'Spring / South',
-      neighborhoods: [
-        'Spring (Montgomery portions)',
-        'Oak Ridge North',
-        'Shenandoah',
-        'I-45 southern corridor multi-family',
-        'Harris County line edges',
-      ],
-      housingTypes:
-        'Suburban SFH, multi-family, townhomes, some HOA tracts',
-      challenges: [
-        'Peak I-45 congestion toward Houston',
-        'Apartment elevator windows and COI',
-        'Cross-county pairs into Harris employment centers',
-        'High end-of-month lease churn',
-      ],
-      moverTips:
-        'Price portal-to-portal time for Spring-edge ↔ Woodlands or downtown Houston pairs honestly. Collect apartment management rules early.',
-      cityKeywords: [
-        'spring',
-        'oak ridge north',
-        'shenandoah',
-        'i-45',
-        'spring tx',
-      ],
-    },
-    {
-      id: 'east-exurban',
-      name: 'New Caney, Porter, Splendora & east exurban',
-      shortName: 'East Exurban',
-      neighborhoods: [
-        'New Caney',
-        'Porter',
-        'Splendora',
-        'Roman Forest edge',
-        'East FM 1314 / 1485 corridors',
-      ],
-      housingTypes:
-        'Larger-lot SFH, acreage edges, some newer tracts, limited multi-unit',
-      challenges: [
-        'Long deadhead and lower service density',
-        'Soft shoulders and private-road access',
-        '99 / east arterial timing',
-        'Not interchangeable with Woodlands HOA logistics',
-      ],
-      moverTips:
-        'Send driveway and road-surface photos. Confirm truck size. East exurban ↔ Woodlands or Conroe needs explicit time and access pricing.',
-      cityKeywords: [
-        'new caney',
-        'porter',
-        'splendora',
-        'roman forest',
-        'porter tx',
+        'fm 1488',
+        'west montgomery',
+        'sh 249',
+        'tomball edge',
       ],
     },
   ],
   costDrivers: {
     title: 'Pricing & cost drivers inside Montgomery County',
     intro:
-      'Two “local” moves of the same square footage can differ sharply depending on Woodlands HOA soft costs, canopy carries, Lake Conroe access, I-45 portal time, and whether the pair stays in village core or stretches to Magnolia or east exurban edges.',
+      'Same square footage prices differently by Woodlands HOA soft costs, I-45 portal time, and whether the job is planned-village stock or Magnolia/lake long-local.',
     drivers: [
       {
-        title: 'Woodlands HOA & canopy access',
+        title: 'HOA soft costs in The Woodlands',
         detail:
-          'COI, approved hours, gate lists, and forested long carries add soft costs and labor hours before the truck rolls far.',
+          'COI, approved hours, and gate coordination in Woodlands villages add paperwork and can force weekday-only windows.',
       },
       {
-        title: 'I-45 / cross-zone corridor time',
+        title: 'I-45 / 99 / 242 corridor portal time',
         detail:
-          'Woodlands ↔ Conroe, Spring-edge ↔ Magnolia, or any peak I-45 leg can burn far more clock than map miles suggest.',
+          'Woodlands ↔ Conroe or Spring ↔ Magnolia pairs burn more portal-to-portal time than map miles suggest at peak — freer than Harris core, still billable.',
       },
       {
-        title: 'Lake Conroe private-road access',
+        title: 'Canopy, lake-edge & long-local access',
         detail:
-          'Gates, limited turnaround, and waterfront approaches add delay risk — photos prevent underquotes.',
-      },
-      {
-        title: 'Exurban deadhead (east / far north)',
-        detail:
-          'New Caney, Splendora, and rural-north parcels lower crew density and raise portal time versus Woodlands core.',
-      },
-      {
-        title: 'Peak school and corporate calendars',
-        detail:
-          'Late May–August weekends and transfer cycles raise booking lead times across planned villages.',
+          'Forested carries, private-road lake approaches, and Magnolia empty miles add labor and vehicle risk versus pure open-tract driveway jobs.',
       },
     ],
     ranges: [
       {
         label: 'Studio / 1BR (same zone, simple access)',
-        value: '$450–$1,450+',
-        note: 'Higher with elevators, HOA windows, or canopy long-carry',
+        value: '$550–$1,400+',
+        note: 'Higher with multi-unit long carries or peak heat windows',
       },
       {
         label: '2–3BR house / planned community',
-        value: '$1,500–$4,300+',
-        note: 'Woodlands HOA soft costs and multi-zone hauls trend up',
+        value: '$1,600–$3,900+',
+        note: 'Woodlands HOA soft costs and I-45 hauls trend up',
       },
       {
-        label: '3–4+ BR (cross-zone / lake / exurban)',
-        value: '$2,400–$7,200+',
-        note: 'Lake access and east/west long locals price highest',
-      },
-      {
-        label: 'Typical 2-person crew rate',
-        value: '$115–$190+/hr',
-        note: 'Portal-to-portal; packing and 3-person crews scale up',
+        label: '3–4+ BR (cross-zone / lake or Magnolia edge)',
+        value: '$2,400–$6,000+',
+        note: 'Long-local, canopy, and multi-HOA jobs price highest',
       },
     ],
   },
   seasonal: {
-    title: 'Seasonal, heat, storm & school-calendar intelligence',
+    title: 'Seasonal & heat calendar intelligence',
     intro:
-      'Gulf Coast heat, tropical systems, piney-woods weather, and north Houston school calendars set residential peaks across Montgomery County.',
+      'Montgomery peaks follow extreme heat, school calendars, and north Houston spillover — not downtown lease density alone.',
     items: [
       {
-        title: 'Peak residential: late spring – early fall weekends',
+        title: 'Summer heat peak: roughly June – September',
         detail:
-          'School calendars and end-of-month leases fill Saturdays across The Woodlands, Conroe, and Spring-edge. Book 2–4 weeks ahead for popular village HOA windows.',
+          'Plan early-morning loads, extra water, and heat-safe packing. Mid-afternoon moves in peak heat are high risk even under canopy.',
       },
       {
-        title: 'Summer heat under canopy still matters',
+        title: 'School & family calendars (Woodlands / Conroe)',
         detail:
-          'Forested lots do not eliminate heat stress on long carries. Prefer early starts and heat-safe packing for electronics and sealed goods.',
+          'Late spring through early fall weekends fill first for family SFH moves. Book 2–4 weeks ahead for popular Saturdays in The Woodlands and Conroe growth.',
       },
       {
-        title: 'Tropical storm / heavy-rain windows',
+        title: 'Best value: mid-month Tue–Thu, early start',
         detail:
-          'Storm systems can flood approaches and cancel outdoor packing — especially near lake and low edges. Build flexibility and ask about weather policies.',
-      },
-      {
-        title: 'Lake-weekend recreation traffic',
-        detail:
-          'Peak summer weekends near Lake Conroe complicate staging. Mid-week or early-morning starts usually stage cleaner.',
-      },
-      {
-        title: 'Best value: mid-month Tue–Thu mornings',
-        detail:
-          'Still plan around HOA weekday windows. Avoid last Friday/Saturday of the month when leases and family moves collide.',
+          'Still plan around HOA weekday windows when applicable. Early starts win even in shoulder seasons when heat and I-45 peaks are the real constraints.',
       },
     ],
   },
   specialized: [
     {
-      id: 'woodlands-hoa-canopy',
-      title: 'The Woodlands HOA, canopy & village logistics module',
+      id: 'woodlands-hoa-master-planned',
+      title: 'Woodlands HOA & master-planned logistics',
       intro:
-        'Montgomery County’s signature problem is planned-village paperwork plus forested-lot access — not open prairie cul-de-sacs alone.',
+        'Montgomery’s signature product is The Woodlands planned-village access — gate lists, COI, and canopy SFH that Harris core elevator jobs do not share.',
       bullets: [
-        'Collect village HOA COI, gate lists, and approved hours before the survey is final.',
-        'Measure canopy clearance, driveway width, and turnaround for forested lots before dispatching a full-size truck.',
-        'Prefer weekday morning windows near Town Center and school corridors.',
-        'Price Woodlands internal village-to-village pairs honestly — parkway congestion still bills on the clock.',
-        'Corporate and healthcare transfers often need mid-week freight-style precision — confirm elevator rules near Town Center multi-unit.',
+        'Send HOA management packets, COI requirements, and gate lists with the estimate.',
+        'Confirm approved move hours and floor-protection rules before booking Saturday crews.',
+        'Inventory family-volume SFH and canopy clearance carefully.',
+        'Share driveway, cul-de-sac, and truck-length constraints for forested villages.',
       ],
     },
     {
-      id: 'conroe-lake-exurban-growth',
-      title: 'Conroe growth, Lake Conroe & exurban expansion module',
+      id: 'i45-freeflow',
+      title: 'I-45 freeflow & north-corridor timing',
       intro:
-        'North and east growth need long-local pricing and access photos that Woodlands village jobs may not.',
+        'I-45, SH-99, FM-1488, and SH-242 turn “local” Montgomery pairs into corridor-timed jobs.',
       bullets: [
-        'Share private-road and waterfront approach photos for Lake Conroe addresses.',
-        'Confirm new-construction access the week of the move in Conroe and Magnolia growth sections.',
-        'Ask whether “local” rate cards still apply for New Caney / Splendora / far Magnolia legs.',
-        'Map peak I-45 timing for Spring-edge pairs into Harris County employment.',
-        'Rural and acreage edges need soft-shoulder and truck-size confirmation before booking.',
+        'Price portal-to-portal time honestly for Woodlands ↔ Conroe and Spring ↔ Magnolia pairs.',
+        'Build buffer for school and commute peaks on I-45 south toward Harris.',
+        'Note construction and growth traffic on SH-99 and FM-1488 western approaches.',
+        'Ask whether cross-zone pairs still use a pure local rate card or a long-local schedule.',
+      ],
+    },
+    {
+      id: 'lake-edge-access',
+      title: 'Lake Conroe & edge access',
+      intro:
+        'Waterfront approaches, private roads, and Magnolia rural-edge parcels are not interchangeable with Woodlands cul-de-sacs.',
+      bullets: [
+        'Share approach photos, private-road rules, and dock/boat-traffic constraints early.',
+        'Note soft shoulders, gates, and outbuildings on Magnolia/west surveys.',
+        'Build weather buffer for heavy rain and storm season on edge approaches.',
+        'Price empty miles honestly when staging from Woodlands or Conroe core.',
       ],
     },
   ],
   relocation: {
-    title: 'Considering a move to Montgomery County?',
+    title: 'Schools & hospitals for relocators',
     intro:
-      'The Woodlands planned living, Conroe growth, Lake Conroe recreation, and east exurban edges are different bets — pick the pocket first, then validate schools, healthcare, I-45 commute tolerance, and HOA lifestyle fit.',
+      'North collar value, Woodlands villages, and Conroe growth are different bets — validate schools and healthcare by pocket, then plan for heat and HOA calendars.',
     modules: [
       {
         id: 'schools',
         title: 'Schools & education',
         intro:
-          'Montgomery County spans multiple districts (e.g., Conroe ISD — including The Woodlands area campuses — Magnolia ISD, New Caney ISD, Willis ISD, Montgomery ISD, and others). Match every listing address to the correct district.',
+          'Major systems include Conroe ISD (serving The Woodlands and much of central Montgomery) and Magnolia ISD on western edges, plus other local districts. Match every listing address to the correct boundary.',
         bullets: [
           {
-            title: 'Town-first district check',
+            title: 'Conroe ISD & The Woodlands feeders',
             detail:
-              'Use official district boundary tools and TEA resources. Marketing community names and unincorporated pockets can span feeders.',
+              'Many Woodlands and Conroe addresses fall in Conroe ISD with multiple high-school feeders. Marketing village names can span attendance zones — verify with official boundary tools.',
           },
           {
-            title: 'Woodlands vs growth systems',
+            title: 'Magnolia ISD & edge districts',
             detail:
-              'Enrollment pressures and facility plans differ between established Woodlands-area campuses and rapid Conroe / east-county growth — do not treat county averages as neighborhood truth.',
+              'Western growth and Magnolia product often use Magnolia ISD or other edge systems. Do not treat county averages as neighborhood truth.',
           },
           {
             title: 'Research tools',
             detail:
-              'District sites and TEA data should lead; third-party rankings are secondary signals only.',
-          },
-          {
-            title: 'Higher education presence',
-            detail:
-              'Lone Star College and nearby Houston institutions shape some staff and student housing demand along the I-45 corridor.',
+              'District sites and state data should lead; third-party rankings are secondary. Tour campuses when possible.',
           },
         ],
       },
@@ -404,125 +341,31 @@ export const montgomeryCountyIntelligence: CountyIntelligencePack = {
           {
             title: 'County acute-care anchors',
             detail:
-              'Houston Methodist The Woodlands, Memorial Hermann The Woodlands, HCA Houston Conroe, and other north-metro campuses cover much of the county — map ER drive times at rush hour from your target village or lake edge.',
+              'Houston Methodist The Woodlands, Memorial Hermann The Woodlands, HCA Houston Healthcare Conroe, and other campuses serve greater Montgomery. Map ER drive times at rush hour from your target village.',
           },
           {
-            title: 'Houston specialty spillover',
+            title: 'Harris specialty spillover',
             detail:
-              'Some residents use Texas Medical Center specialty systems. Confirm insurer networks and realistic I-45 appointment drive times.',
+              'Texas Medical Center and north Houston specialty care remain common for complex needs. Confirm insurer networks and realistic I-45 times.',
           },
           {
             title: 'Relocator tip',
             detail:
-              'Transfer pediatric and specialty care early if mid-treatment; book first appointments before peak summer village move chaos.',
-          },
-        ],
-      },
-      {
-        id: 'housing',
-        title: 'Housing & cost of living',
-        bullets: [
-          {
-            title: 'Price ladder by pocket',
-            detail:
-              'Woodlands villages, Conroe growth, Lake Conroe waterfront, and east exurban lots often price differently. Compare total monthly costs (HOA, insurance, commute), not sticker price alone.',
-          },
-          {
-            title: 'HOA-dominant Woodlands stock',
-            detail:
-              'Village covenants, dues, and move-day restrictions are part of the lifestyle cost in much of the south-central core.',
-          },
-          {
-            title: 'Flood / drainage awareness',
-            detail:
-              'Gulf Coast drainage and low-edge parcels can affect insurance and access — verify by address, not by community marketing name.',
-          },
-        ],
-      },
-      {
-        id: 'town-fit',
-        title: 'Town fit by lifestyle',
-        bullets: [
-          {
-            title: 'The Woodlands planned living',
-            detail:
-              'Amenity villages, trails, and corporate adjacency — with HOA paperwork and canopy access on move day.',
-          },
-          {
-            title: 'Conroe growth & town character',
-            detail:
-              'Mix of historic core and new tracts — with I-45 timing and expanding inventory.',
-          },
-          {
-            title: 'Lake Conroe recreation',
-            detail:
-              'Waterfront lifestyle — only if you accept private-road logistics and weekend traffic.',
-          },
-          {
-            title: 'West growth / east exurban',
-            detail:
-              'Magnolia newer housing or New Caney larger lots — with longer service distances and different HOA density.',
-          },
-        ],
-      },
-      {
-        id: 'jobs',
-        title: 'Jobs & commute',
-        bullets: [
-          {
-            title: 'Local anchors',
-            detail:
-              'Healthcare, corporate campuses near The Woodlands, retail, education, energy-services spillover, and growing Conroe commercial nodes.',
-          },
-          {
-            title: 'I-45 north Houston patterns',
-            detail:
-              'Many residents commute within Montgomery or into Harris County. Peak I-45 and 99 times should drive housing choice more than brochure distance.',
-          },
-          {
-            title: 'Hybrid / local options',
-            detail:
-              'Some professional and remote-capable roles reduce daily metro trips — still validate broadband and coworking by pocket if that matters to you.',
-          },
-        ],
-      },
-      {
-        id: 'lifestyle',
-        title: 'Lifestyle & climate',
-        bullets: [
-          {
-            title: 'Piney-woods & Gulf Coast climate',
-            detail:
-              'Hot, humid summers, mild winters, canopy shade, and tropical-storm season — plan move windows around heat and weather alerts.',
-          },
-          {
-            title: 'Outdoors',
-            detail:
-              'Trails, parks, and Lake Conroe recreation are major draws; weekend traffic affects lake-edge staging.',
-          },
-          {
-            title: 'Suburban vs exurban choice',
-            detail:
-              'Village amenity living and east/west larger-lot living coexist — visit both on a weekday commute and a Saturday before choosing.',
+              'Transfer pediatric and specialty care early if mid-treatment; book first appointments before peak summer move chaos.',
           },
         ],
       },
     ],
   },
   resources: {
-    title: 'Practical Montgomery County resources',
+    title: 'Useful Montgomery resources',
     intro:
-      'Official links and licensing notes — HOA, parking, and community rules change; verify before move day.',
+      'Local official links first; directory listings are independent. Verify Texas TxDMV for in-state moves and FMCSA for interstate legs before deposits.',
     items: [
-      {
-        label: 'Montgomery County',
-        href: 'https://www.mctx.org/',
-        note: 'County services hub',
-        external: true,
-      },
       {
         label: 'The Woodlands Township',
         href: 'https://www.thewoodlandstownship-tx.gov/',
+        note: 'Township services; village HOA rules are separate',
         external: true,
       },
       {
@@ -531,51 +374,13 @@ export const montgomeryCountyIntelligence: CountyIntelligencePack = {
         external: true,
       },
       {
-        label: 'City of Magnolia',
-        href: 'https://www.cityofmagnolia.com/',
+        label: 'Montgomery County — official site',
+        href: 'https://www.mctx.org/',
         external: true,
-      },
-      {
-        label: 'City of Oak Ridge North',
-        href: 'https://www.oakridgenorth.com/',
-        external: true,
-      },
-      {
-        label: 'City of Shenandoah',
-        href: 'https://www.shenandoahtx.us/',
-        external: true,
-      },
-      {
-        label: 'TxDOT — road conditions & construction',
-        href: 'https://www.txdot.gov/',
-        note: 'Check I-45 and corridor delays for long locals',
-        external: true,
-      },
-      {
-        label: 'TxDMV — motor carrier / household goods',
-        href: 'https://www.txdmv.gov/',
-        note: 'Texas Department of Motor Vehicles (intrastate frameworks)',
-        external: true,
-      },
-      {
-        label: 'FMCSA SAFER — interstate authority',
-        href: 'https://safer.fmcsa.dot.gov/',
-        note: 'Required when the move crosses state lines',
-        external: true,
-      },
-      {
-        label: 'Move Trust Hub — verify a USDOT',
-        href: '/verify-dot',
-        note: 'Cross-check interstate licensing before deposits',
-      },
-      {
-        label: 'Free moving calculator',
-        href: '/moving-calculator',
-        note: 'Inventory-based volume for local or long-distance',
       },
     ],
   },
   directoryHint:
-    'Filter listings by zone (The Woodlands, Conroe, Lake Conroe, Magnolia/West, Spring/South, East Exurban) when available. Confirm village HOA/COI and canopy access for The Woodlands, lake approach photos for waterfront, and honest I-45 time — not Fort Bend or downtown Houston assumptions.',
-  lastReviewed: '2026-07-23',
-};
+    'Filter listings by zone (The Woodlands, Conroe, Spring/Oak Ridge, Magnolia/west) when available. Confirm HOA packets for Woodlands villages, I-45 drive assumptions, and lake/edge access notes — this is a Houston north collar, not Harris core.',
+  lastReviewed: '2026-07-24',
+});

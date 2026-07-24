@@ -1,86 +1,93 @@
-import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  finalizeTxTier2Pack,
+  TX_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/texas/tx-tier2-shared';
 
 /**
- * Hand-crafted Denton County, Texas moving intelligence.
- * Differentiators: north DFW growth corridor, University of North Texas / TWU student turnover,
- * suburban expansion (Frisco-edge, Little Elm, Prosper-edge) — not Dallas County core elevators
- * or Collin-only Plano/McKinney scripts.
+ * Denton County — Texas Tier 2 (DFW northwest collar).
+ * Parent: Dallas County (Tarrant contrast ok). Denton / Lewisville / Flower Mound —
+ * NOT a renamed Dallas or Collin pack.
  */
-export const dentonCountyIntelligence: CountyIntelligencePack = {
-  stateSlug: 'texas',
+export const dentonCountyIntelligence = finalizeTxTier2Pack({
   countySlug: 'denton',
   hubTitle: 'Denton County Moving Intelligence Hub',
-  eyebrow: 'Denton County · North DFW growth & university corridor',
-  h1: 'Moving in Denton County: North DFW Growth, Denton University Town & Suburban Expansion Guide',
+  eyebrow: 'Denton County · DFW NW — Denton / Lewisville / Flower Mound',
+  h1: 'Moving in Denton County: DFW Northwest Collar — Denton, Lewisville & Flower Mound',
   heroOpener:
-    'Denton County is north DFW’s growth engine — not Dallas County with a different zip code. The City of Denton still runs on university calendars, older street grids, and I-35E staging, while Frisco-edge, Little Elm, Providence Village, and Prosper-adjacent tracts bring master-planned HOAs, wide suburban arterials, and end-of-month lease churn. Flower Mound and Highland Village flip toward lake-adjacent and larger-lot product; Lewisville and Carrollton edges absorb metro density without downtown Dallas elevators. Summer heat, school calendars, and DFW spillover fill Saturday crews first. This guide is for people actually moving in Denton County — north-metro expansion plus university town logistics — not a recycled Dallas or Collin script.',
+    'Denton County is DFW’s northwest collar — university-town Denton, Lewisville multi-family corridors, Flower Mound larger-lot suburbs, and Corinth/Lake Dallas edges — not Dallas County with different freeways and not a Collin Plano/McKinney script. UNT and TWU calendars pack short-notice apartments; I-35E, I-35W, US-380, Loop 288, and Sam Rayburn Tollway freeflow still bill at peak; HOA suburban growth fills Saturdays first. A near-campus walk-up, a Lewisville elevator building, a Flower Mound cul-de-sac two-story, and a Lake Dallas growth tract do not share truck access. Quote the pocket and the I-35 pair — never a recycled Dallas-core rate card.',
   heroCredibility:
-    'North DFW growth · University & suburban expansion · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
-  collapsibleDeepContent: true,
-  sectionOrder: [
-    'whatMakesDifferent',
-    'zones',
-    'costDrivers',
-    'seasonal',
-    'specialized',
-    'relocation',
-    'resources',
-  ],
+    'DFW northwest collar · University & HOA suburban growth · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
+  majorCorridors: 'I-35E · I-35W · US-380 · Loop 288 · Sam Rayburn Tollway',
+  parentCompare: {
+    parentLabel: 'Dallas County',
+    parentHref: '/local-movers/texas/dallas',
+    title: 'Compared with Dallas County',
+    intro:
+      'Denton is the northwest DFW collar above Dallas County — university-town density in Denton proper, suburban HOA growth south and east, and freer mid-day I-35 freeflow than Dallas urban core. Tarrant contrast: more university cycle and lake-edge product than Fort Worth industrial west. Use this when one address sits in Dallas County (or Tarrant) and the other in Denton.',
+    bullets: [
+      {
+        title: 'Drive time & corridor relationship',
+        detail:
+          'Dallas County crews fight I-35E south, I-30, I-635, and dense urban arterials. Denton pairs ride I-35E, I-35W, US-380, Loop 288, and Sam Rayburn Tollway with freer mid-day flow — Denton ↔ Lewisville or Flower Mound ↔ Corinth still burns portal-to-portal time at peak, but it is not a downtown Dallas elevator job. Cross-county Denton ↔ Dallas (and Tarrant) pairs are long locals on the I-35 spine.',
+      },
+      {
+        title: 'Housing stock differences',
+        detail:
+          'Dallas mixes vertical multi-family and inner-ring SFH. Denton’s ladder is UNT/TWU student and workforce apartments, Lewisville multi-family and suburban tracts, Flower Mound/Highland Village larger-lot HOA SFH, and Corinth/Lake Dallas growth edges — more university turnover and lake-adjacent product, less Uptown high-rise.',
+      },
+      {
+        title: 'Truck access, HOA & density',
+        detail:
+          'Denton stages more driveway, cul-de-sac, and campus-adjacent curb work than Dallas core elevators. HOAs dominate Flower Mound and many growth villages; campus multi-unit buildings add elevator/COI packets. Lake-edge and larger-lot carries replace downtown dock fights as the hard suburban cases.',
+      },
+      {
+        title: 'Rough cost posture (qualitative)',
+        detail:
+          'Same-zone Denton jobs can look secondary-market simple until university peaks, HOA windows, and peak I-35 time hit. Cross-zone collar pairs into Dallas or Tarrant raise the bill above pure in-town Denton quotes. Do not assume Dallas-core rates transfer without naming both cities and corridors.',
+      },
+      {
+        title: 'Role difference',
+        detail:
+          'Denton is DFW NW’s university-plus-suburban growth collar — Denton/Lewisville/Flower Mound identity — not a Dallas bedroom dump and not Collin’s Plano/Frisco corporate HQ belt. Match crews to campus calendars, I-35 freeflow timing, and HOA paperwork.',
+      },
+    ],
+  },
   whatMakesDifferent: {
     title: 'What makes moving in Denton County different',
     intro:
-      'These are Denton County realities — university-town access, north DFW HOA growth, and I-35E corridor timing — not interchangeable “DFW metro” boilerplate.',
+      'Northwest-collar realities — university cycles, I-35 freeflow, HOA suburban growth, and Texas licensing — that a renamed Dallas pack would miss.',
     bullets: [
       {
-        title: 'University Denton and north-suburb growth are different products',
+        title: 'University Denton and suburban growth are different products',
         detail:
-          'A near-campus apartment, a downtown Denton bungalow, a Little Elm two-story, and a Frisco-edge HOA home do not share truck access, parking rules, or inventory profiles. Name both origin and destination cities on every estimate — “Denton County local” is too vague.',
+          'A near-campus apartment, a downtown Denton bungalow, a Lewisville multi-family unit, and a Flower Mound HOA home do not share truck access. Name both cities — “Denton County local” fails across campus vs lake-edge last-mile.',
       },
       {
         title: 'UNT / TWU calendars drive student and staff turnover',
         detail:
-          'August, December, and May windows pack crews with short-notice apartment moves, elevator buildings, and high volume near campus. Mid-semester Saturdays still book; start-of-term peaks require earlier lead time.',
+          'August, December, and May windows pack crews with short-notice apartment moves, elevators, and high volume near campus. Start-of-term peaks need earlier lead time than pure suburban markets expect.',
       },
       {
-        title: 'North DFW spillover fills planned communities first',
+        title: 'I-35 freeflow is not Dallas gridlock — still clock time',
         detail:
-          'Households choosing Denton County for newer housing, schools, and relative value still commute into Collin, Dallas, and Tarrant job centers. Inbound volume tracks Frisco-edge, Little Elm, Argyle, and Prosper-adjacent inventory more than Square-only Denton.',
-      },
-      {
-        title: 'I-35E / I-35W / 121 / 380 timing rewrites “local” ETAs',
-        detail:
-          'Map miles between Denton, Lewisville, Flower Mound, and Frisco-edge understate peak portal time. Hourly crews feel every bottleneck — ask how drive time is priced before you compare rate cards.',
+          'Many households pair addresses across Lewisville, Flower Mound, Corinth, and into Dallas or Tarrant. Peak I-35E/I-35W and 380 delays are billable. Ask how portal-to-portal time is priced.',
       },
       {
         title: 'HOAs dominate much of the suburban growth stock',
         detail:
-          'Master-planned villages require Certificates of Insurance, approved hours, gate lists, and floor protection. Treat the HOA packet as part of the survey — not an afterthought on move morning.',
+          'Master-planned villages require COI, approved hours, gate lists, and floor protection. Treat the HOA packet as part of the survey — not an afterthought on move morning.',
       },
-      {
-        title: 'Lake and larger-lot edges change access',
-        detail:
-          'Flower Mound, Highland Village, and lake-adjacent pockets bring longer carries, cul-de-sac turnaround limits, and weekend recreation traffic that flat apartment corridors never see.',
-      },
-      {
-        title: 'North Texas summer heat stresses open staging',
-        detail:
-          'Afternoon heat on suburban streets and apartment docks slows exterior carries. Early starts, shaded staging, and heat-safe packing for electronics outperform noon load-outs in July and August.',
-      },
-      {
-        title: 'Texas intrastate rules (TxDMV) + FMCSA when interstate',
-        detail:
-          'Moves entirely within Texas are generally overseen under Texas Department of Motor Vehicles (TxDMV) household-goods / motor-carrier frameworks. Interstate legs (e.g. Denton → Oklahoma City or out-of-state) need active FMCSA USDOT (and usually MC) authority. Confirm which license applies to your exact origin and destination before deposit.',
-      },
+      TX_TIER2_REG_BULLET,
     ],
   },
-  zonesHeading: 'Denton County access zones',
+  zonesHeading: 'Denton County zones: university core, southern suburbs & lake edges',
   zonesIntro:
-    'Treat each zone as its own access and traffic problem. University Denton, Lewisville/Carrollton edges, Flower Mound/Highland Village, Little Elm/growth north, and Frisco/Prosper-edge HOAs are not interchangeable.',
+    'Four sharp products — Denton university core, Lewisville/Highland Village corridor, Flower Mound/Highland larger-lot belt, and Corinth/Lake Dallas edges. Not a Dallas zone dump with new labels.',
   zones: [
     {
-      id: 'denton-university',
-      name: 'Denton core — university town & historic grid',
-      shortName: 'Denton Core',
+      id: 'denton-university-core',
+      name: 'Denton University Core: campus, Square & historic grid',
+      shortName: 'Denton university core',
       neighborhoods: [
         'Downtown Denton / The Square',
         'UNT campus-adjacent',
@@ -98,7 +105,7 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
         'I-35E interchange timing into and out of town',
       ],
       moverTips:
-        'Book campus peaks 2–4 weeks ahead when flexible. Share building packets and truck-height limits. Prefer weekday mornings away from game days and move-in weekends. Denton ↔ Lewisville is a classic underquoted “local.”',
+        'Book campus peaks 2–4 weeks ahead when flexible. Share building packets and truck-height limits. Prefer weekday mornings away from game days and move-in weekends. Denton ↔ Lewisville is a classic underquoted local.',
       cityKeywords: [
         'denton',
         'unt',
@@ -109,18 +116,19 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
       ],
     },
     {
-      id: 'lewisville-carrollton-edge',
-      name: 'Lewisville, Carrollton edge & southern corridor',
-      shortName: 'Lewisville / South',
+      id: 'lewisville-highland-village',
+      name: 'Lewisville & Highland Village: southern multi-family & suburban corridor',
+      shortName: 'Lewisville / Highland Village',
       neighborhoods: [
         'Lewisville',
+        'Highland Village',
         'Castle Hills edge',
-        'Carrollton (Denton County edge)',
         'Hebron corridor',
         'Lake Lewisville approaches',
+        'Carrollton (Denton County edge)',
       ],
       housingTypes:
-        'Suburban SFH, townhomes, multi-family, some HOA tracts and older in-town stock',
+        'Suburban SFH, townhomes, multi-family, HOA tracts, older in-town stock, lake-approach homes',
       challenges: [
         'DFW arterial congestion at peak (121 / 35E / local belts)',
         'Apartment elevator windows and COI',
@@ -131,22 +139,23 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
         'Price portal-to-portal time for Lewisville ↔ Denton and Lewisville ↔ Flower Mound honestly. Collect apartment management rules early. Avoid last-Saturday-of-month when flexible.',
       cityKeywords: [
         'lewisville',
-        'carrollton',
+        'highland village',
         'castle hills',
         'hebron',
         'lake lewisville',
+        'carrollton',
       ],
     },
     {
       id: 'flower-mound-highland',
-      name: 'Flower Mound, Highland Village & lake-adjacent',
-      shortName: 'Flower Mound',
+      name: 'Flower Mound / Highland: larger-lot HOA & lake-adjacent belt',
+      shortName: 'Flower Mound / Highland',
       neighborhoods: [
         'Flower Mound',
-        'Highland Village',
         'Double Oak edge',
-        'Lake-adjacent pockets',
         'Larger-lot west/northwest Flower Mound',
+        'Lake-adjacent pockets',
+        'HOA villages and cul-de-sac tracts',
       ],
       housingTypes:
         'Larger-lot SFH, HOA communities, lake-edge homes, some multi-family clusters',
@@ -160,109 +169,56 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
         'Share driveway and turnaround photos for larger-lot homes. Collect HOA packets before locking a Saturday crew. Early summer starts beat heat on open streets.',
       cityKeywords: [
         'flower mound',
-        'highland village',
         'double oak',
         'lake grapevine edge',
+        'flower mound tx',
       ],
     },
     {
-      id: 'little-elm-north-growth',
-      name: 'Little Elm, Providence Village & north growth belt',
-      shortName: 'Little Elm / North',
+      id: 'corinth-lake-dallas-edges',
+      name: 'Corinth, Lake Dallas & eastern growth edges',
+      shortName: 'Corinth / Lake Dallas edges',
       neighborhoods: [
-        'Little Elm',
-        'Oak Point',
-        'Providence Village',
-        'Aubrey edge',
-        'Cross Roads / Krugerville edges',
-        'Newer master-planned villages',
+        'Corinth',
+        'Lake Dallas',
+        'Hickory Creek edge',
+        'Shady Shores edge',
+        'US-380 / eastern growth villages',
+        'Newer master-planned pockets',
       ],
       housingTypes:
-        'Master-planned HOA SFH, newer two-story product, some townhome and multi-family',
+        'Suburban SFH, HOA growth tracts, lake-edge homes, some multi-family and new construction',
       challenges: [
-        'HOA gate lists, COI, and move-hour restrictions',
-        'Longer arterials to I-35E compared with Lewisville core',
-        'New-construction incomplete roads and temporary parking rules',
-        'High inbound volume from DFW spillover',
+        'I-35E / 380 approach timing',
+        'HOA rules in newer villages',
+        'Longer arterials to Denton core or southern job corridors',
+        'New-construction incomplete roads',
       ],
       moverTips:
-        'Collect village HOA packets early. Confirm builder/HOA access the week of the move in new sections. Price Little Elm ↔ Denton or Frisco-edge with honest arterial time.',
+        'Confirm builder/HOA access the week of the move in new sections. Price Corinth ↔ Denton or Lake Dallas ↔ Lewisville with honest arterial time. Collect HOA packets early.',
       cityKeywords: [
-        'little elm',
-        'providence village',
-        'oak point',
-        'aubrey',
-        'cross roads',
-      ],
-    },
-    {
-      id: 'frisco-prosper-edge',
-      name: 'Frisco-edge, Prosper-edge & eastern HOA growth',
-      shortName: 'Frisco / Prosper Edge',
-      neighborhoods: [
-        'Frisco (Denton County portions)',
-        'Prosper-edge / northwest growth',
-        'Celina-edge approaches',
-        'Master-planned villages along 380 / eastern corridors',
-      ],
-      housingTypes:
-        'Master-planned HOA communities, newer SFH tracts, townhomes, some multi-family',
-      challenges: [
-        'Strict HOA windows and COI processing',
-        '380 / 121 / toll-corridor congestion',
-        'Peak spring/summer family move volume',
-        'Cross-county pairs into Collin employment centers',
-      ],
-      moverTips:
-        'HOA paperwork first — many villages turn crews away without COI. Prefer weekday morning windows. Treat Frisco-edge ↔ Denton as a multi-zone haul, not a pure map-mile local.',
-      cityKeywords: [
-        'frisco',
-        'prosper',
-        'celina',
-        '380 corridor',
-        'frisco denton county',
-      ],
-    },
-    {
-      id: 'argyle-roanoke-west',
-      name: 'Argyle, Roanoke, Justin & western larger-lot belt',
-      shortName: 'West / Larger-Lot',
-      neighborhoods: [
-        'Argyle',
-        'Roanoke',
-        'Justin',
-        'Northlake edge',
-        'Trophy Club edge (as applicable)',
-        'Rural-suburban acreage pockets',
-      ],
-      housingTypes:
-        'Larger-lot SFH, acreage and equestrian-edge homes, some HOA villages, limited multi-unit',
-      challenges: [
-        'Longer carries and soft or gravel approaches',
-        'Limited truck turnaround on private roads',
-        'Lower service density than Lewisville core',
-        'Weather-sensitive outdoor packing on open lots',
-      ],
-      moverTips:
-        'Send driveway/approach photos before booking. Confirm vehicle size for private roads. Western larger-lot ↔ university Denton needs honest deadhead and time assumptions.',
-      cityKeywords: [
-        'argyle',
-        'roanoke',
-        'justin',
-        'northlake',
-        'trophy club',
+        'corinth',
+        'lake dallas',
+        'hickory creek',
+        'shady shores',
+        'corinth tx',
       ],
     },
   ],
   costDrivers: {
     title: 'Pricing & cost drivers inside Denton County',
     intro:
-      'Two “local” moves of the same square footage can differ sharply depending on HOA soft costs, university-building elevators, cross-zone I-35E time, and whether the pair stays in Lewisville–Flower Mound or stretches to Little Elm and Frisco-edge growth.',
+      'Same square footage prices differently by university peaks, HOA soft costs, I-35 portal time, and whether the job is campus multi-unit or Flower Mound larger-lot.',
     drivers: [
       {
-        title: 'Cross-zone DFW corridor time',
+        title: 'Cross-zone I-35 / 380 corridor time',
         detail:
-          'Denton ↔ Frisco-edge, Little Elm ↔ Flower Mound, or any 380 / 121 / I-35E peak leg can burn far more clock than map miles suggest. Hourly billing follows the clock.',
+          'Denton ↔ Lewisville, Flower Mound ↔ Corinth, or any peak I-35E / 35W / 380 leg can burn far more clock than map miles suggest. Hourly billing follows the clock.',
+      },
+      {
+        title: 'University multi-unit access',
+        detail:
+          'Elevators, stair carries, and short-notice campus peaks add labor hours and require building coordination suburban HOA jobs may not.',
       },
       {
         title: 'HOA soft costs (growth villages)',
@@ -270,19 +226,9 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
           'COI processing, approved hours, and gate lists add soft costs and can force weekday-only windows before labor starts.',
       },
       {
-        title: 'University multi-unit access',
-        detail:
-          'Elevators, stair carries, and short-notice campus peaks add labor hours and require building coordination that suburban HOA jobs may not.',
-      },
-      {
         title: 'Larger-lot / lake-edge access',
         detail:
-          'Long driveways, cul-de-sacs, and limited turnaround on Flower Mound and western lots add carry time — access photos prevent underquotes.',
-      },
-      {
-        title: 'Peak school and lease calendars',
-        detail:
-          'Late May–August and end-of-month weekends raise booking lead times and can push rates — popular HOA and campus windows fill first.',
+          'Long driveways, cul-de-sacs, and limited turnaround on Flower Mound and lake-edge lots add carry time — access photos prevent underquotes.',
       },
     ],
     ranges: [
@@ -301,37 +247,22 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
         value: '$2,200–$6,500+',
         note: 'Long locals across I-35E / 380 corridors price highest',
       },
-      {
-        label: 'Typical 2-person crew rate',
-        value: '$110–$185+/hr',
-        note: 'Portal-to-portal; packing and 3-person crews scale up',
-      },
     ],
   },
   seasonal: {
-    title: 'Seasonal, heat, university & school-calendar intelligence',
+    title: 'Seasonal, university & school-calendar intelligence',
     intro:
       'North Texas heat, DFW school calendars, and UNT/TWU terms set residential peaks. HOA villages and campus buildings compete for the same Saturday crews.',
     items: [
-      {
-        title: 'Peak residential: late spring – early fall weekends',
-        detail:
-          'School calendars and end-of-month leases fill Saturdays across Lewisville, Flower Mound, Little Elm, and Frisco-edge. Book 2–4 weeks ahead for popular HOA windows.',
-      },
       {
         title: 'University move-in / move-out spikes',
         detail:
           'August, December, and May near UNT and TWU pack apartments and create short-notice demand. Flexible mid-week dates often price better than peak weekends.',
       },
       {
-        title: 'North Texas summer heat',
+        title: 'Peak residential: late spring – early fall weekends',
         detail:
-          'Afternoon heat stresses open suburban staging and apartment docks. Prefer early starts, shaded staging, and heat-safe packing for electronics and sealed goods.',
-      },
-      {
-        title: 'Mild winters, storm-day exceptions',
-        detail:
-          'Ice or severe-storm days can still cancel outdoor packing. Build flexibility around forecast windows rather than assuming year-round perfect weather.',
+          'School calendars and end-of-month leases fill Saturdays across Lewisville, Flower Mound, and Corinth edges. Book 2–4 weeks ahead for popular HOA windows.',
       },
       {
         title: 'Best value: mid-month Tue–Thu mornings',
@@ -342,42 +273,52 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
   },
   specialized: [
     {
-      id: 'university-town-logistics',
-      title: 'University Denton & multi-unit campus logistics',
+      id: 'unt-twu-university-cycle',
+      title: 'UNT / TWU university cycle logistics',
       intro:
         'Denton County’s volume problem near the university core is apartment elevators, short calendars, and dense student turnover — not only HOA cul-de-sacs.',
       bullets: [
         'Collect building COI, elevator reservations, and loading rules before the survey is final.',
         'Expect August/December/May spikes; lock dates early or accept mid-week alternatives.',
         'Inventory for stairs, tight turns, and partial DIY loads common in student moves.',
-        'Price Denton core ↔ southern suburbs with honest I-35E portal time.',
         'Game days and special events can close staging near The Square — check calendars when flexible.',
       ],
     },
     {
-      id: 'north-dfw-hoa-growth',
-      title: 'North DFW growth HOAs & suburban expansion module',
+      id: 'i35-freeflow',
+      title: 'I-35 freeflow & DFW NW corridor timing',
       intro:
-        'Little Elm, Frisco-edge, Prosper-edge, and many planned villages need paperwork-first logistics that university apartments may not.',
+        'Denton’s defining metro relationship is the I-35E/I-35W spine plus 380 and Sam Rayburn — freer than Dallas urban core, still a line item.',
+      bullets: [
+        'Price Denton ↔ Lewisville/Flower Mound and collar pairs into Dallas or Tarrant as portal-to-portal jobs.',
+        'Build peak I-35 and school-traffic buffer into weekday afternoons and Friday evenings.',
+        'Ask whether cross-county pairs still use a pure local rate card or a long-local schedule.',
+        'Loop 288 and local Denton grids still matter for Square-adjacent staging — not just freeway ETAs.',
+      ],
+    },
+    {
+      id: 'hoa-suburban-growth',
+      title: 'HOA suburban growth module',
+      intro:
+        'Flower Mound, Highland Village edges, Corinth growth, and many planned villages need paperwork-first logistics that university apartments may not.',
       bullets: [
         'Collect HOA COI, gate lists, and approved hours before booking — many villages will turn crews away without paperwork.',
         'New-construction sections may have incomplete roads or temporary parking rules — confirm access the week of the move.',
         'Prefer early starts in peak summer heat on open suburban streets.',
-        'If either address ties to Collin or Dallas County employment, map peak commute timing into the rate card conversation.',
-        'Cross-zone pairs (e.g. Flower Mound ↔ Little Elm) are long locals — ask whether “local” rate cards still apply.',
+        'Share driveway and cul-de-sac turnaround photos for larger-lot Flower Mound product.',
       ],
     },
   ],
   relocation: {
-    title: 'Considering a move to Denton County?',
+    title: 'Schools & hospitals for relocators',
     intro:
-      'University-town Denton, lake-adjacent Flower Mound, and north growth HOAs are different bets — pick the pocket first, then validate schools, healthcare, DFW commute tolerance, and housing type.',
+      'Compressed secondary-market notes — primary districts and acute-care access that affect move-in. Not a full Tier 1 lifestyle essay.',
     modules: [
       {
         id: 'schools',
         title: 'Schools & education',
         intro:
-          'Denton County spans multiple districts (e.g., Denton ISD, Lewisville ISD, Frisco ISD portions, Little Elm ISD, Argyle ISD, Northwest ISD edges, and others). Match every listing address to the correct district.',
+          'Denton County spans multiple districts (e.g., Denton ISD, Lewisville ISD, Little Elm ISD, Argyle ISD, Northwest ISD edges, and others). Match every listing address to the correct district.',
         bullets: [
           {
             title: 'Town-first district check',
@@ -387,12 +328,7 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
           {
             title: 'Growth vs established systems',
             detail:
-              'Enrollment pressures and facility plans differ between rapid-growth north/east villages and longer-established Denton or Lewisville corridors — do not treat county averages as neighborhood truth.',
-          },
-          {
-            title: 'Research tools',
-            detail:
-              'District sites and TEA data should lead; third-party rankings are secondary signals only.',
+              'Enrollment pressures differ between rapid-growth edges and longer-established Denton or Lewisville corridors — do not treat county averages as neighborhood truth.',
           },
           {
             title: 'Higher education presence',
@@ -415,108 +351,14 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
             detail:
               'Some residents use Dallas or Collin specialty systems. Confirm insurer networks and realistic appointment drive times on I-35E / 121 / 380.',
           },
-          {
-            title: 'Relocator tip',
-            detail:
-              'Transfer pediatric and specialty care early if mid-treatment; book first appointments before peak summer move chaos.',
-          },
-        ],
-      },
-      {
-        id: 'housing',
-        title: 'Housing & cost of living',
-        bullets: [
-          {
-            title: 'Price ladder by pocket',
-            detail:
-              'University multi-unit, Lewisville suburbs, Flower Mound larger lots, and Little Elm / Frisco-edge HOAs often price differently. Compare total monthly costs (HOA, insurance, tolls, commute), not sticker price alone.',
-          },
-          {
-            title: 'Stock variety',
-            detail:
-              'Master-planned HOAs, student apartments, lake-adjacent SFH, and western acreage edges — dues, access rules, and insurance vary widely.',
-          },
-          {
-            title: 'New construction volume',
-            detail:
-              'North growth belts add inventory quickly; builder warranties, incomplete amenities, and temporary access rules can affect move-in logistics.',
-          },
-        ],
-      },
-      {
-        id: 'town-fit',
-        title: 'Town fit by lifestyle',
-        bullets: [
-          {
-            title: 'University town character',
-            detail:
-              'City of Denton for campus energy, Square culture, and mixed older housing — with apartment peaks and event traffic.',
-          },
-          {
-            title: 'Established south-metro suburbs',
-            detail:
-              'Lewisville and related corridors for DFW access and mixed housing stock — with arterial congestion.',
-          },
-          {
-            title: 'Lake-adjacent / larger-lot',
-            detail:
-              'Flower Mound and Highland Village for space and recreation access — with HOA rules and longer carries.',
-          },
-          {
-            title: 'North growth HOAs',
-            detail:
-              'Little Elm, Providence Village, Frisco-edge for newer planned communities — only if you accept paperwork logistics and longer corridor drives.',
-          },
-        ],
-      },
-      {
-        id: 'jobs',
-        title: 'Jobs & commute',
-        bullets: [
-          {
-            title: 'Local anchors',
-            detail:
-              'Higher education, healthcare, retail and logistics, public sector, and growing north-metro employment — plus strong economic ties into the broader DFW job market.',
-          },
-          {
-            title: 'North DFW corridor patterns',
-            detail:
-              'Many residents commute within Denton County or toward Dallas, Collin, and Tarrant centers. Peak I-35E / 121 / 380 times should drive housing choice more than brochure distance.',
-          },
-          {
-            title: 'Hybrid / local options',
-            detail:
-              'Some professional and remote-capable roles reduce daily metro trips — still validate broadband and coworking by pocket if that matters to you.',
-          },
-        ],
-      },
-      {
-        id: 'lifestyle',
-        title: 'Lifestyle & climate',
-        bullets: [
-          {
-            title: 'North Texas climate reality',
-            detail:
-              'Hot summers, mild winters, and occasional severe-storm days — plan move windows around heat and weather alerts.',
-          },
-          {
-            title: 'Outdoors & recreation',
-            detail:
-              'Lake Lewisville recreation, trails, and suburban greenbelts are major draws; weekend traffic affects lake-edge staging.',
-          },
-          {
-            title: 'Growth vs town character',
-            detail:
-              'Rapid suburban expansion coexists with university-town identity — choose the lifestyle pocket before locking a lease or purchase.',
-          },
         ],
       },
     ],
   },
   resources: {
-    title: 'Practical Denton County resources',
+    title: 'Useful Denton County resources',
     intro:
-      'Official links and licensing notes — HOA, parking, and city rules change; verify before move day.',
+      'Local official links first. TxDMV, FMCSA, and Move Trust Hub tools are added automatically for licensing checks.',
     items: [
       {
         label: 'Denton County',
@@ -540,46 +382,14 @@ export const dentonCountyIntelligence: CountyIntelligencePack = {
         external: true,
       },
       {
-        label: 'Town of Little Elm',
-        href: 'https://www.littleelm.org/',
-        external: true,
-      },
-      {
-        label: 'City of Frisco',
-        href: 'https://www.friscotexas.gov/',
-        external: true,
-      },
-      {
         label: 'TxDOT — road conditions & construction',
         href: 'https://www.txdot.gov/',
         note: 'Check corridor delays for long locals',
         external: true,
       },
-      {
-        label: 'TxDMV — motor carrier / household goods',
-        href: 'https://www.txdmv.gov/',
-        note: 'Texas Department of Motor Vehicles (intrastate frameworks)',
-        external: true,
-      },
-      {
-        label: 'FMCSA SAFER — interstate authority',
-        href: 'https://safer.fmcsa.dot.gov/',
-        note: 'Required when the move crosses state lines',
-        external: true,
-      },
-      {
-        label: 'Move Trust Hub — verify a USDOT',
-        href: '/verify-dot',
-        note: 'Cross-check interstate licensing before deposits',
-      },
-      {
-        label: 'Free moving calculator',
-        href: '/moving-calculator',
-        note: 'Inventory-based volume for local or long-distance',
-      },
     ],
   },
   directoryHint:
-    'Filter listings by zone (Denton Core, Lewisville/South, Flower Mound, Little Elm/North, Frisco/Prosper Edge, West/Larger-Lot) when available. Confirm HOA/COI for growth villages, building packets near UNT/TWU, and honest I-35E corridor time — not Dallas County core assumptions.',
-  lastReviewed: '2026-07-23',
-};
+    'Filter by zone (Denton university core, Lewisville/Highland Village, Flower Mound/Highland, Corinth/Lake Dallas edges) when available. Confirm campus packets near UNT/TWU, HOA/COI for suburban growth, and honest I-35 freeflow time — this is a DFW NW collar, not a renamed Dallas pack. Parent market: Dallas guide for metro-core context.',
+  lastReviewed: '2026-07-24',
+});

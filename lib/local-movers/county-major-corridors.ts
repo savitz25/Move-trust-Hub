@@ -68,6 +68,12 @@ const CORRIDORS: Record<string, string> = {
   'texas/williamson': 'I-35 · SH-130 · US-183 · SH-45 · RM-620',
   'texas/el-paso': 'I-10 · US-54 · Loop 375 · I-110 · Mesa Street corridor',
   'texas/hidalgo': 'US-83 · I-2 · I-69C · US-281 · SH-107',
+  // Texas Tier 2 Wave 1 additions
+  'texas/galveston': 'I-45 · SH-87 · SH-146 · Broadway / Seawall approaches · local island grid',
+  'texas/brazoria': 'SH-288 · SH-35 · SH-6 · FM-518 · local Pearland grid',
+  'texas/hays': 'I-35 · SH-21 · SH-80 · FM-1626 · local San Marcos grid',
+  'texas/nueces': 'I-37 · SH-358 · US-181 · SH-44 · Padre Island approaches',
+  'texas/bell': 'I-35 · I-14 · US-190 · SH-36 · local Killeen–Temple grid',
 
   // ——— Georgia ———
   'georgia/fulton': 'I-75/85 Connector · I-285 · GA-400 · I-20',

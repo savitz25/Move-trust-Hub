@@ -65,9 +65,14 @@ import { collinCountyIntelligence } from '@/lib/local-movers/county-intelligence
 import { dentonCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/denton-tx';
 import { fortBendCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/fort-bend-tx';
 import { montgomeryCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/montgomery-tx';
+import { galvestonCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/galveston-tx';
+import { brazoriaCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/brazoria-tx';
 import { williamsonCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/williamson-tx';
+import { haysCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/hays-tx';
 import { elPasoCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/el-paso-tx';
 import { hidalgoCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/hidalgo-tx';
+import { nuecesCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/nueces-tx';
+import { bellCountyIntelligence } from '@/lib/local-movers/county-intelligence/texas/bell-tx';
 // Georgia Core 6 (metro) + Wave 2
 import { fultonCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/fulton-ga';
 import { gwinnettCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/gwinnett-ga';
@@ -499,19 +504,25 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   brevardCountyIntelligence,
   pascoCountyIntelligence,
   volusiaCountyIntelligence,
-  // Texas Core 12
+  // Texas Tier 1 Core 5 (flagship metros — do not demote)
   harrisCountyIntelligence,
   dallasCountyIntelligence,
   tarrantCountyIntelligence,
   bexarCountyIntelligence,
   travisCountyIntelligence,
-  collinCountyIntelligence,
-  dentonCountyIntelligence,
+  // Texas Tier 2 Wave 1 (collars + independent secondary metros)
   fortBendCountyIntelligence,
   montgomeryCountyIntelligence,
+  galvestonCountyIntelligence,
+  brazoriaCountyIntelligence,
+  collinCountyIntelligence,
+  dentonCountyIntelligence,
   williamsonCountyIntelligence,
+  haysCountyIntelligence,
   elPasoCountyIntelligence,
   hidalgoCountyIntelligence,
+  nuecesCountyIntelligence,
+  bellCountyIntelligence,
   // Georgia Core 6 (metro)
   fultonCountyIntelligence,
   gwinnettCountyIntelligence,
@@ -1018,13 +1029,43 @@ export const FL_TIER1_CORE12 = [
   'volusia',
 ] as const;
 
-/** Texas Tier-1 Core 12. */
-export const TX_TIER1_CORE12 = [
+/**
+ * Texas Tier 1 Core 5 — flagship metros only.
+ * Do not rebuild/demote these when shipping Tier 2 waves.
+ */
+export const TX_TIER1_CORE5 = [
   'harris',
   'dallas',
   'tarrant',
   'bexar',
   'travis',
+] as const;
+
+/**
+ * Texas Tier 2 Wave 1 — collars + independent secondary metros on the locked
+ * Tier 2 content contract (Compared with parent, 2–4 zones, schools+hospitals only).
+ */
+export const TX_TIER2_WAVE1 = [
+  'fort-bend',
+  'montgomery',
+  'galveston',
+  'brazoria',
+  'collin',
+  'denton',
+  'williamson',
+  'hays',
+  'el-paso',
+  'hidalgo',
+  'nueces',
+  'bell',
+] as const;
+
+/**
+ * @deprecated Historical name — included collars that are now TX_TIER2_WAVE1.
+ * Prefer TX_TIER1_CORE5 + TX_TIER2_WAVE1.
+ */
+export const TX_TIER1_CORE12 = [
+  ...TX_TIER1_CORE5,
   'collin',
   'denton',
   'fort-bend',

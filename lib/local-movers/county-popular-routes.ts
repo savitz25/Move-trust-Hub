@@ -2118,6 +2118,46 @@ const TX_ROUTES: Record<string, CountyPopularRoute[]> = {
         'U.S. addresses only for licensed interstate movers; dual-country storage and customs are separate scopes.',
     },
   ],
+  galveston: [
+    { label: 'Within Galveston (Island ↔ League City / mainland north)', direction: 'within', context: 'Causeway and island staging vs mainland HOA product — not a renamed Harris core job.' },
+    { label: 'Harris County → Galveston coastal / island housing', direction: 'inbound', context: 'Houston parent overflow; I-45 freeflow and humidity reshape load windows.' },
+    { label: 'Mainland ↔ Galveston Island weekend / vacation-residential pairs', direction: 'within', context: 'Seawall and short-block access; shuttles may replace full trailers.' },
+    { label: 'Out-of-state → Galveston County coastal housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Galveston → Harris reverse career pairs', direction: 'outbound', context: 'I-45 north to Medical Center / Energy Corridor access products.' },
+    { label: 'Galveston → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  brazoria: [
+    { label: 'Within Brazoria (Pearland ↔ Angleton / Lake Jackson)', direction: 'within', context: 'Houston south collar growth vs mid-county and Brazosport product.' },
+    { label: 'Harris County → Pearland / Manvel growth housing', direction: 'inbound', context: 'SH-288 freeflow; HOA soft costs dominate growth tracts.' },
+    { label: 'Brazoria ↔ Harris Medical Center / downtown pairs', direction: 'within', context: 'Collar-to-core logistics; HOA gates plus urban elevator rules on one end.' },
+    { label: 'Industrial / petro workforce relo → Lake Jackson / Freeport edges', direction: 'inbound', context: 'Shift calendars and industrial freeflow reshape crew timing where accurate.' },
+    { label: 'Out-of-state → Brazoria County housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Brazoria → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  hays: [
+    { label: 'Within Hays (San Marcos ↔ Kyle / Buda growth)', direction: 'within', context: 'Austin south collar — university multi-unit vs I-35 growth HOAs.' },
+    { label: 'Travis County → Kyle / Buda / San Marcos housing', direction: 'inbound', context: 'Austin parent overflow on I-35 south; not a Domain elevator default.' },
+    { label: 'Texas State semester inflows → San Marcos multi-unit', direction: 'inbound', context: 'August and January peaks cluster curb and elevators.' },
+    { label: 'Hays ↔ Travis downtown / Domain pairs', direction: 'within', context: 'South collar to core logistics; portal time dominates at peak.' },
+    { label: 'Out-of-state → Hays County growth housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Hays → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  nueces: [
+    { label: 'Within Nueces (Corpus Christi core ↔ Flour Bluff / Padre approaches)', direction: 'within', context: 'Gulf coastal metro — not a Houston collar rename.' },
+    { label: 'Padre Island / causeway residential pairs', direction: 'within', context: 'Causeway freeflow and coastal staging rewrite local hours.' },
+    { label: 'Houston / San Antonio → Corpus Christi in-state pairs', direction: 'inbound', context: 'I-37 long locals; TxDMV HHG for pure in-state jobs.' },
+    { label: 'Port / industrial workforce relo → coastal multi-unit', direction: 'inbound', context: 'Shift calendars near industrial corridors reshape crew timing.' },
+    { label: 'Out-of-state → Corpus Christi housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Nueces → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  bell: [
+    { label: 'Within Bell (Killeen ↔ Temple / Belton / Harker Heights)', direction: 'within', context: 'Military-regional twin cities — not Austin Domain defaults.' },
+    { label: 'Fort Cavazos PCS / military relo → multi-unit and SFH', direction: 'inbound', context: 'Hard report dates and storage-in-transit are common estimate inputs.' },
+    { label: 'Travis / Williamson → Bell County in-state pairs', direction: 'inbound', context: 'I-35 / I-14 logistics; TxDMV HHG for pure in-state jobs.' },
+    { label: 'Bell ↔ Travis Austin career pairs', direction: 'within', context: 'Central TX long locals; keep capital vs military-regional products clear.' },
+    { label: 'Out-of-state → Killeen–Temple housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Bell → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
 };
 
 const GA_ROUTES: Record<string, CountyPopularRoute[]> = {

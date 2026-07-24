@@ -1,397 +1,334 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  finalizeTxTier2Pack,
+  TX_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/texas/tx-tier2-shared';
 
 /**
- * Hand-crafted Fort Bend County, Texas moving intelligence.
- * Differentiators: Sugar Land / Missouri City / Katy-edge master-planned communities,
- * Houston SW overflow, diverse HOA density — not Harris County downtown elevators
- * or Montgomery Woodlands-north scripts.
+ * Fort Bend County — Texas Tier 2 (Houston SW collar).
+ * Secondary-market contract vs Harris Tier 1 parent — Sugar Land / Missouri City /
+ * Rosenberg master-planned growth, not Houston core elevators or Montgomery north scripts.
  */
-export const fortBendCountyIntelligence: CountyIntelligencePack = {
-  stateSlug: 'texas',
+export const fortBendCountyIntelligence: CountyIntelligencePack = finalizeTxTier2Pack({
   countySlug: 'fort-bend',
   hubTitle: 'Fort Bend County Moving Intelligence Hub',
-  eyebrow: 'Fort Bend · Sugar Land, Katy-edge & Houston SW growth',
-  h1: 'Moving in Fort Bend County: Sugar Land HOAs, Katy-Edge Growth & Houston SW Guide',
+  eyebrow: 'Fort Bend · Houston SW collar · Sugar Land / Missouri City / Rosenberg',
+  h1: 'Moving in Fort Bend County: Houston SW Collar — Sugar Land HOAs, Missouri City & Rosenberg Growth',
   heroOpener:
-    'Fort Bend County is Houston’s southwest overflow engine — master-planned villages, strict HOAs, and energy-corridor commutes — not downtown Harris County with a different nameplate. Sugar Land and Missouri City run on planned-community logistics, lake and golf-course edges, and US-59 / I-69 timing. Katy-edge and Fulshear bring newer tracts and long arterial hauls; Richmond–Rosenberg still carry historic-grid and Brazos-river-adjacent character; Sienna and southern villages feel purpose-built suburban. Summer heat, school calendars, and Houston metro spillover pack Saturday crews. This guide is for people moving in Fort Bend — planned-community access plus SW metro reality — not a recycled Houston core or The Woodlands script.',
+    'Fort Bend County is Houston’s southwest collar — master-planned villages, strict HOAs, and energy-corridor spillover — not Harris County downtown elevators with a different nameplate. Sugar Land and Missouri City run on planned-community logistics, lake and golf-course edges, and US-59 / I-69 timing. Richmond–Rosenberg still carry historic-grid and Brazos-adjacent character; Katy-edge and Fulshear bring newer tracts and Grand Parkway long locals. Compared with Harris, you get freer SW freeflow than Inner Loop gridlock, denser HOA paperwork than many Houston core SFH blocks, and almost no vertical tower product. This guide is for people moving in Fort Bend as a SW collar market with its own role — not a recycled Houston core or The Woodlands script.',
   heroCredibility:
-    'Sugar Land / Katy-edge HOAs · Houston SW overflow · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
-  collapsibleDeepContent: true,
-  sectionOrder: [
-    'whatMakesDifferent',
-    'zones',
-    'costDrivers',
-    'seasonal',
-    'specialized',
-    'relocation',
-    'resources',
-  ],
-  whatMakesDifferent: {
-    title: 'What makes moving in Fort Bend County different',
+    'Houston SW collar · Sugar Land / Missouri City master-planned · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
+  majorCorridors: 'US-59/I-69 · Grand Parkway (SH-99) · Westpark Tollway · US-90A · SH-6',
+  parentCompare: {
+    parentLabel: 'Harris County',
+    parentHref: '/local-movers/texas/harris',
+    title: 'Compared with Harris County',
     intro:
-      'These are Fort Bend realities — master-planned HOA density, Houston SW spillover, and long suburban arterials — not interchangeable “Houston metro” boilerplate.',
+      'Fort Bend is the Houston SW growth collar — Sugar Land, Missouri City, Richmond–Rosenberg, and Katy-edge/Fulshear — not a drop-in template for downtown elevators, Energy Corridor high-rises, or bayou-core flood logistics. Use Harris as the dense metro parent contrast.',
     bullets: [
       {
-        title: 'Master-planned Fort Bend is a different product than Houston core',
+        title: 'Drive time & corridor relationship',
         detail:
-          'A Sugar Land HOA two-story, a Sienna village home, a Richmond bungalow, and a Katy-edge new build do not share gate rules, truck access, or inventory profiles. Name both origin and destination communities on every estimate.',
+          'Harris crews fight I-10, I-45, Beltway 8, and multi-hour cross-county pairs into Medical Center and downtown. Fort Bend pairs ride US-59/I-69, Westpark Tollway, Grand Parkway (SH-99), US-90A, and SH-6 — freer mid-day than Inner Loop, still peak-heavy on Sugar Land ↔ Energy Corridor and Fulshear ↔ Rosenberg hauls. Portal-to-portal time is real; it is not a 45-minute downtown dock job.',
       },
       {
-        title: 'HOA paperwork is the default, not the exception',
+        title: 'Housing stock differences',
         detail:
-          'Certificates of Insurance, approved hours, gate lists, elevator/clubhouse rules, and floor protection dominate much of Sugar Land, Missouri City, Fulshear, and southern planned stock. Treat the HOA packet as part of the survey.',
+          'Harris mixes towers, bungalows, bayou ranchers, and west-side HOAs under one county label. Fort Bend’s ladder is overwhelmingly master-planned SFH, golf-course and lake-edge product, historic Richmond–Rosenberg stock, and rapid western new construction — far less elevator density, far more gate lists and cul-de-sac staging.',
       },
       {
-        title: 'Houston SW spillover drives inbound volume',
+        title: 'Truck access, HOA & density',
         detail:
-          'Households choose Fort Bend for schools, newer housing, and relative value while commuting into the Energy Corridor, Medical Center, and broader Harris job market. Peak spring/summer and end-of-month windows book first.',
+          'Harris core needs COI elevators and curb permits; many Harris suburbs still allow freer driveway work. Fort Bend defaults to HOA packets — approved hours, COI, gate lists, and truck-length limits across Sugar Land, Sienna, Fulshear, and Missouri City villages. Expect paperwork first, then the truck.',
       },
       {
-        title: 'US-59 / I-69 / Grand Parkway / Westpark timing rewrites ETAs',
+        title: 'Rough cost posture (qualitative)',
         detail:
-          'Map miles between Sugar Land, Katy-edge, and Rosenberg understate peak portal time. Hourly crews feel every bottleneck — ask how drive time is priced.',
+          'Local Fort Bend quotes often sit near or slightly below dense Harris urban rates for comparable square footage when access is a simple driveway — HOA soft costs, tollway last-mile, heat windows, and long SW arterials still push prices up. Expect secondary-collar labor rates with planned-community friction as the main premium, not downtown dock scarcity.',
       },
       {
-        title: 'Katy-edge and Fulshear growth are long-local jobs',
+        title: 'Role difference',
         detail:
-          'Newer western tracts look “close” on a map and still burn billable time on incomplete roads, HOA gates, and Grand Parkway congestion. Confirm whether “local” rate cards still apply.',
-      },
-      {
-        title: 'Flood and drainage awareness belongs in surveys',
-        detail:
-          'Gulf Coast storm seasons and low-lying approaches can affect driveway access, reschedule risk, and ground-floor inventory planning. Discuss weather contingency for tropical systems.',
-      },
-      {
-        title: 'Gulf Coast heat and humidity stress open staging',
-        detail:
-          'Summer afternoons on open suburban streets slow exterior carries. Early starts and heat-safe packing outperform noon load-outs in peak season.',
-      },
-      {
-        title: 'Texas intrastate rules (TxDMV) + FMCSA when interstate',
-        detail:
-          'Moves entirely within Texas are generally overseen under Texas Department of Motor Vehicles (TxDMV) household-goods / motor-carrier frameworks. Interstate legs need active FMCSA USDOT (and usually MC) authority. Confirm which license applies before deposit.',
+          'Fort Bend is Houston’s SW bedroom and planned-growth engine — schools, energy-corridor commutes, and master-planned inventory — not Harris’s job-center core and not Montgomery’s Woodlands/I-45 north product. Treat it as its own collar market when matching crews and rate cards.',
       },
     ],
   },
-  zonesHeading: 'Fort Bend access zones',
+  whatMakesDifferent: {
+    title: 'What makes moving in Fort Bend County different',
+    intro:
+      'SW collar realities — master-planned HOA density, tollway last-mile, heat on suburban streets, and freer 59/99 corridors than Harris core — that change estimates.',
+    bullets: [
+      {
+        title: 'Master-planned HOA is the default product',
+        detail:
+          'Sugar Land villages, Sienna, Fulshear tracts, and much of Missouri City treat COI, approved hours, and gate lists as standard. A Richmond bungalow and a guarded two-story are not interchangeable jobs — put both communities on the estimate.',
+      },
+      {
+        title: 'US-59 / Westpark / Grand Parkway timing is a line item',
+        detail:
+          'Sugar Land ↔ Katy-edge or Rosenberg ↔ Energy Corridor pairs freer than Inner Loop still burn billable time at school and commute peaks. Ask whether quotes are portal-to-portal.',
+      },
+      {
+        title: 'Tollway last-mile and incomplete western roads',
+        detail:
+          'Westpark Tollway and SH-99 approaches plus newer Fulshear/Katy-edge streets can add gates, construction detours, and truck-length constraints that pure Harris core scripts miss.',
+      },
+      {
+        title: 'Gulf Coast heat on open suburban staging',
+        detail:
+          'June–September afternoons on asphalt cul-de-sacs stress crews and sealed goods. Prefer early starts; treat mid-afternoon load-outs as high risk even when the map looks short.',
+      },
+      TX_TIER2_REG_BULLET,
+    ],
+  },
+  zonesHeading: 'Fort Bend zones: Sugar Land core, Missouri City / Sienna, Richmond–Rosenberg & Katy-edge',
   zonesIntro:
-    'Plan by Sugar Land core, Missouri City / east Fort Bend, Katy-edge / Fulshear growth, Richmond–Rosenberg, and southern planned villages — each has its own HOA and traffic profile.',
+    'Three to four sharp products — not a six-zone dump. Sugar Land planned core, Missouri City/Sienna east, Richmond–Rosenberg mid-county, and Katy-edge/Fulshear growth price and stage differently under the same SW collar.',
   zones: [
     {
-      id: 'sugar-land-core',
-      name: 'Sugar Land — planned-community core',
+      id: 'sugar-land-planned',
+      name: 'Sugar Land Master-Planned Core',
       shortName: 'Sugar Land',
       neighborhoods: [
+        'Sugar Land Town Square edge',
         'First Colony area',
-        'New Territory',
-        'Greatwood edge',
-        'Telfair / newer villages',
-        'Town Center / retail corridors',
-        'Lake and golf-course edges',
+        'New Territory / Greatwood edges',
+        'Lake / golf-course villages',
+        'US-59 / Highway 6 corridors',
       ],
       housingTypes:
-        'Master-planned HOA SFH, townhomes, some multi-family and active-adult pockets',
+        'Master-planned HOA SFH, townhomes, some multi-family, golf-course and lake-edge product',
       challenges: [
-        'Strict HOA COI, gate lists, and move-hour windows',
-        'US-59 / I-69 and local arterial congestion',
-        'Lake/golf-edge longer carries and cul-de-sacs',
-        'High family move volume in school-calendar peaks',
+        'HOA COI, approved hours, and gate lists as default',
+        'Cul-de-sac and truck-length constraints in newer villages',
+        'US-59 / SH-6 peak congestion toward Houston',
+        'High family-move volume on summer weekends',
       ],
       moverTips:
-        'Collect HOA packets before booking. Prefer weekday morning windows. Early summer starts beat heat. Sugar Land ↔ Katy-edge is a long local — price portal time honestly.',
+        'Send HOA management packets with the estimate. Mid-week early starts beat heat and school traffic. Inventory family-volume SFH carefully — suburban loads often exceed older Harris bungalows. Clarify Sugar Land ↔ Energy Corridor drive assumptions.',
       cityKeywords: [
         'sugar land',
         'first colony',
         'new territory',
-        'telfair',
         'greatwood',
+        'sugar land town square',
+        'highway 6 sugar land',
       ],
     },
     {
-      id: 'missouri-city-east',
-      name: 'Missouri City, Stafford edge & eastern Fort Bend',
-      shortName: 'Missouri City / East',
+      id: 'missouri-city-sienna',
+      name: 'Missouri City & Sienna',
+      shortName: 'Missouri City / Sienna',
       neighborhoods: [
         'Missouri City',
+        'Sienna',
         'Quail Valley edges',
-        'Sienna-adjacent east approaches',
-        'Stafford (edge patterns)',
-        'Highway 6 / 90A corridors',
+        'SH-6 / FM corridors',
+        'East Fort Bend planned villages',
       ],
       housingTypes:
-        'HOA SFH, older suburban stock, multi-family, some townhome clusters',
+        'Planned-community SFH, established suburban tracts, golf-edge product, multi-family pockets',
       challenges: [
-        'HOA and apartment COI requirements',
-        'Cross-county pairs into Harris employment centers',
-        'Peak arterial congestion toward Houston',
-        'Mixed older and planned-community access rules',
+        'HOA rules across Sienna and many Missouri City villages',
+        'SH-6 and Beltway-approach peaks toward Harris',
+        'Longer carries on larger-lot and golf-edge homes',
+        'Cross-county pairs into southwest Houston',
       ],
       moverTips:
-        'Clarify which HOA or apartment management rules apply. Price Missouri City ↔ Medical Center or Energy Corridor pairs as metro-timing jobs. Avoid last-Saturday-of-month when flexible.',
+        'Treat Sienna as HOA-first. Confirm gate lists and truck size limits early. Build SH-6 timing into east↔west Fort Bend pairs. Share driveway and cul-de-sac photos for larger two-stories.',
       cityKeywords: [
         'missouri city',
-        'stafford',
+        'sienna',
         'quail valley',
-        'highway 6',
-      ],
-    },
-    {
-      id: 'katy-fulshear-west',
-      name: 'Katy-edge, Fulshear & western growth',
-      shortName: 'Katy / Fulshear',
-      neighborhoods: [
-        'Katy (Fort Bend portions)',
-        'Fulshear',
-        'Cross Creek Ranch and similar villages',
-        'Grand Parkway western corridors',
-        'Newer master-planned west tracts',
-      ],
-      housingTypes:
-        'New master-planned HOA communities, larger two-story product, some multi-family',
-      challenges: [
-        'HOA gates, COI, and approved hours as default',
-        'New-construction incomplete roads and temporary rules',
-        'Grand Parkway / I-10 approach congestion',
-        'Long deadhead from Sugar Land core crews',
-      ],
-      moverTips:
-        'Confirm builder/HOA access the week of the move. Share gate codes and parking maps. Treat Fulshear ↔ Sugar Land as multi-zone — not a pure map-mile local.',
-      cityKeywords: [
-        'katy',
-        'fulshear',
-        'cross creek ranch',
-        'grand parkway',
-        'fort bend katy',
+        'sienna plantation',
+        'east fort bend',
       ],
     },
     {
       id: 'richmond-rosenberg',
-      name: 'Richmond, Rosenberg & Brazos corridor',
-      shortName: 'Richmond / Rosenberg',
+      name: 'Richmond–Rosenberg',
+      shortName: 'Richmond–Rosenberg',
       neighborhoods: [
         'Richmond',
         'Rosenberg',
-        'Historic downtown pockets',
-        'US-59 corridor residential',
-        'Brazos-adjacent edges',
+        'Historic downtown edges',
+        'US-90A corridors',
+        'Brazos-adjacent residential',
       ],
       housingTypes:
-        'Older SFH, in-town multi-unit, suburban tracts, some newer HOA edges',
+        'Historic-grid SFH, mid-century tracts, some newer subdivisions, mixed multi-family',
       challenges: [
-        'Mixed historic-grid staging vs suburban HOA rules',
-        'US-59 timing toward Sugar Land and Houston',
-        'Flood-season awareness on low approaches',
-        'Growing inventory on the edges of town',
+        'Older street grids and tighter parking near historic cores',
+        'US-90A / US-59 approach timing',
+        'Varied access vs pure master-planned product',
+        'Heat on open lots with limited shade',
       ],
       moverTips:
-        'Share street-width and driveway photos for older in-town homes. Price Richmond ↔ Sugar Land with honest corridor time. Discuss weather contingency in storm season.',
+        'Do not price Richmond bungalows like Sugar Land HOA villages — access and inventory differ. Confirm street width and parking. Early starts still win in summer heat.',
       cityKeywords: [
         'richmond',
         'rosenberg',
         'richmond tx',
         'rosenberg tx',
-        'brazos',
+        'us 90a',
+        'fort bend richmond',
       ],
     },
     {
-      id: 'sienna-south',
-      name: 'Sienna & southern planned villages',
-      shortName: 'Sienna / South',
+      id: 'katy-edge-fulshear',
+      name: 'Katy-Edge & Fulshear Growth',
+      shortName: 'Katy-edge / Fulshear',
       neighborhoods: [
-        'Sienna',
-        'Southern master-planned villages',
-        'Riverstone-edge patterns (as applicable)',
-        'Highway 6 south growth',
+        'Fulshear',
+        'Katy-edge Fort Bend tracts',
+        'Cross Creek Ranch edge',
+        'Grand Parkway west growth',
+        'Newer HOA villages',
       ],
       housingTypes:
-        'Master-planned HOA SFH, amenity-centered villages, some multi-family',
+        'New-construction SFH, large master-planned communities, townhomes, rapid growth product',
       challenges: [
-        'Gate lists and strict move windows',
-        'Longer arterials to major freeways',
-        'School-calendar Saturday demand',
-        'Amenity and clubhouse staging restrictions',
+        'HOA gate lists and construction-site approaches',
+        'Grand Parkway (SH-99) peak congestion',
+        'Long empty miles from Sugar Land or Houston staging',
+        'Incomplete roads and truck-turn constraints in newest phases',
       ],
       moverTips:
-        'HOA paperwork first. Prefer mid-week mornings. Early starts in summer. Southern village ↔ Missouri City or Sugar Land needs full portal-to-portal assumptions.',
+        'Treat Katy-edge/Fulshear as long-local jobs. Ask whether pure local rate cards still apply. Send HOA packets early and inventory new-build family volume carefully. Prefer mid-week starts over peak Saturday Grand Parkway traffic.',
       cityKeywords: [
-        'sienna',
-        'sienna plantation',
-        'riverstone',
-        'highway 6 south',
-      ],
-    },
-    {
-      id: 'needville-rural-south',
-      name: 'Needville, Beasley & rural-south edge',
-      shortName: 'Rural South',
-      neighborhoods: [
-        'Needville',
-        'Beasley',
-        'Orchard / rural south pockets',
-        'Agricultural-edge parcels',
-      ],
-      housingTypes:
-        'Rural SFH, acreage homes, limited multi-unit, small-town in-grid stock',
-      challenges: [
-        'Long deadhead and lower service density',
-        'Soft shoulders, private roads, limited turnaround',
-        'Weather-sensitive outdoor packing',
-        'Not interchangeable with Sugar Land HOA logistics',
-      ],
-      moverTips:
-        'Send approach photos and road-surface notes. Confirm truck size for private roads. Rural south ↔ Sugar Land is a long local with different risk than village HOA jobs.',
-      cityKeywords: [
-        'needville',
-        'beasley',
-        'orchard',
-        'fort bend rural',
+        'fulshear',
+        'katy',
+        'cross creek ranch',
+        'grand parkway',
+        'katy edge',
+        'west fort bend',
       ],
     },
   ],
   costDrivers: {
     title: 'Pricing & cost drivers inside Fort Bend County',
     intro:
-      'Two “local” moves of the same square footage can differ sharply depending on HOA soft costs, western growth deadhead, US-59 / Grand Parkway time, and whether the pair stays in Sugar Land villages or stretches to Fulshear or rural south.',
+      'Same square footage prices differently by HOA soft costs, SW corridor time, and whether the job is Sugar Land planned stock or Katy-edge long-local growth.',
     drivers: [
       {
-        title: 'HOA soft costs (majority of planned stock)',
+        title: 'HOA soft costs in planned villages',
         detail:
-          'COI processing, approved hours, and gate lists add soft costs and can force weekday-only windows before labor starts.',
+          'COI, approved hours, and gate coordination in Sugar Land, Sienna, and Fulshear add paperwork and can force weekday-only windows.',
       },
       {
-        title: 'Cross-zone Houston SW corridor time',
+        title: 'SW corridor & tollway portal time',
         detail:
-          'Sugar Land ↔ Fulshear, Missouri City ↔ Energy Corridor pairs, or any Grand Parkway peak leg can burn far more clock than map miles suggest.',
+          'Sugar Land ↔ Fulshear or Missouri City ↔ Energy Corridor pairs burn more portal-to-portal time than map miles suggest at peak — freer than Harris core, still billable.',
       },
       {
-        title: 'New-construction access friction',
+        title: 'Heat-constrained work windows',
         detail:
-          'Incomplete roads, temporary parking, and builder restrictions add delay risk — confirm access the week of the move.',
-      },
-      {
-        title: 'Rural-south / acreage access',
-        detail:
-          'Long carries, soft approaches, and limited turnaround on southern edge parcels add labor hours fast.',
-      },
-      {
-        title: 'Peak school and lease calendars',
-        detail:
-          'Late May–August and end-of-month weekends raise booking lead times across planned communities.',
+          'Summer heat compresses productive hours into mornings. Jobs that slip into peak afternoon heat may need more labor or premium scheduling.',
       },
     ],
     ranges: [
       {
         label: 'Studio / 1BR (same zone, simple access)',
-        value: '$450–$1,450+',
-        note: 'Higher with elevators, HOA windows, or long portal time',
+        value: '$550–$1,400+',
+        note: 'Higher with multi-unit long carries or peak heat windows',
       },
       {
         label: '2–3BR house / planned community',
-        value: '$1,500–$4,200+',
-        note: 'HOA soft costs and multi-zone hauls trend up',
+        value: '$1,600–$3,800+',
+        note: 'HOA soft costs and SW corridor hauls trend up',
       },
       {
-        label: '3–4+ BR (cross-zone / west growth / rural edge)',
-        value: '$2,400–$7,000+',
-        note: 'Long locals toward Fulshear or rural south price highest',
-      },
-      {
-        label: 'Typical 2-person crew rate',
-        value: '$115–$190+/hr',
-        note: 'Portal-to-portal; packing and 3-person crews scale up',
+        label: '3–4+ BR (cross-zone / Katy-edge)',
+        value: '$2,400–$5,800+',
+        note: 'Fulshear/long-local and multi-HOA jobs price highest',
       },
     ],
   },
   seasonal: {
-    title: 'Seasonal, heat, storm & school-calendar intelligence',
+    title: 'Seasonal & heat calendar intelligence',
     intro:
-      'Gulf Coast heat, tropical-storm season, and Houston-metro school calendars set residential peaks across Fort Bend planned communities.',
+      'Fort Bend peaks follow extreme heat, school calendars, and Houston SW spillover — not downtown lease density alone.',
     items: [
       {
-        title: 'Peak residential: late spring – early fall weekends',
+        title: 'Summer heat peak: roughly June – September',
         detail:
-          'School calendars and end-of-month leases fill Saturdays across Sugar Land, Missouri City, and Katy-edge villages. Book 2–4 weeks ahead for popular HOA windows.',
+          'Plan early-morning loads, extra water, and heat-safe packing. Mid-afternoon moves in peak heat are high risk for people and property.',
       },
       {
-        title: 'Gulf Coast summer heat & humidity',
+        title: 'School & family calendars (Sugar Land / Missouri City)',
         detail:
-          'Afternoon heat stresses open suburban staging. Prefer early starts, shaded staging, and heat-safe packing for electronics and sealed goods.',
+          'Late spring through early fall weekends fill first for family SFH moves. Book 2–4 weeks ahead for popular Saturdays in planned villages.',
       },
       {
-        title: 'Tropical storm / heavy-rain windows',
+        title: 'Best value: mid-month Tue–Thu, early start',
         detail:
-          'Storm systems can flood approaches and cancel outdoor packing. Build flexibility and ask about weather reschedule policies in writing.',
-      },
-      {
-        title: 'Energy-sector and corporate transfer cycles',
-        detail:
-          'Corporate moves can cluster mid-month and mid-week — still compete with residential HOA demand on peak Saturdays.',
-      },
-      {
-        title: 'Best value: mid-month Tue–Thu mornings',
-        detail:
-          'Still plan around HOA weekday windows. Avoid last Friday/Saturday of the month when leases and family moves collide.',
+          'Still plan around HOA weekday windows when applicable. Early starts win even in shoulder seasons when heat and arterials are the real constraints.',
       },
     ],
   },
   specialized: [
     {
-      id: 'master-planned-hoa',
-      title: 'Master-planned HOA & Sugar Land logistics module',
+      id: 'hoa-master-planned',
+      title: 'HOA & master-planned logistics',
       intro:
-        'Fort Bend’s volume problem is often gate lists, COI, and approved hours across Sugar Land, Sienna, and similar villages — not downtown elevator docks alone.',
+        'Fort Bend’s defining product is planned-community access — gate lists, COI, and family-volume SFH that Harris core elevator jobs do not share.',
       bullets: [
-        'Collect HOA COI, gate lists, and approved hours before the survey is final — many villages will turn crews away without paperwork.',
-        'Share parking maps and truck-size limits for amenity-centered communities.',
-        'Prefer early starts in peak summer heat on open suburban streets.',
-        'Lake and golf-edge homes need driveway and cul-de-sac photos for accurate carry estimates.',
-        'If either address ties to Harris County employment, map peak US-59 / Westpark / Grand Parkway timing into the rate card.',
+        'Send HOA management packets, COI requirements, and gate lists with the estimate.',
+        'Confirm approved move hours and floor-protection rules before booking Saturday crews.',
+        'Inventory family-volume SFH carefully — suburban loads often exceed older urban condos.',
+        'Share driveway, cul-de-sac, and truck-length constraints for newer villages with tight turns.',
       ],
     },
     {
-      id: 'west-growth-katy-fulshear',
-      title: 'Katy-edge, Fulshear & western growth expansion module',
+      id: 'tollway-last-mile',
+      title: 'Tollway & SW last-mile (59 / Westpark / 99)',
       intro:
-        'Western growth tracts need new-construction access plans and long-local pricing that Sugar Land core HOA jobs may not.',
+        'US-59/I-69, Westpark Tollway, and Grand Parkway turn “local” Fort Bend pairs into corridor-timed jobs.',
       bullets: [
-        'Confirm builder restrictions and incomplete-road access the week of the move.',
-        'Price Fulshear / west Katy ↔ Sugar Land or Missouri City with honest Grand Parkway portal time.',
-        'Ask whether “local” rate cards still apply for western long locals.',
-        'New villages may lack permanent parking rules — get written guidance from management.',
-        'Inventory for large two-story product common in growth tracts — packing and stair time add up.',
+        'Price portal-to-portal time honestly for Sugar Land ↔ Fulshear/Katy-edge and Missouri City ↔ Harris pairs.',
+        'Build buffer for school and commute peaks on SH-6 and US-59.',
+        'Note toll approaches and construction detours on western growth corridors.',
+        'Ask whether cross-zone pairs still use a pure local rate card or a long-local schedule.',
+      ],
+    },
+    {
+      id: 'heat-suburban-density',
+      title: 'Heat & suburban density staging',
+      intro:
+        'Open cul-de-sacs and summer humidity define Fort Bend crew days more than downtown docks.',
+      bullets: [
+        'Prefer 6–10 a.m. starts in peak summer; treat mid-afternoon loads as high risk.',
+        'Request shaded staging where possible and heat-safe packing for electronics and sealed goods.',
+        'Plan water, rotation, and realistic crew endurance on long driveway carries.',
+        'If the job runs long, discuss split-day options rather than pushing into peak heat.',
       ],
     },
   ],
   relocation: {
-    title: 'Considering a move to Fort Bend County?',
+    title: 'Schools & hospitals for relocators',
     intro:
-      'Sugar Land planned living, Katy-edge growth, Richmond–Rosenberg character, and rural south are different bets — pick the pocket first, then validate schools, healthcare, Houston commute tolerance, and HOA lifestyle fit.',
+      'SW collar value, Sugar Land planned villages, and Katy-edge growth are different bets — validate schools and healthcare by pocket, then plan for heat and HOA calendars.',
     modules: [
       {
         id: 'schools',
         title: 'Schools & education',
         intro:
-          'Fort Bend County spans multiple districts (e.g., Fort Bend ISD, Lamar CISD, Katy ISD portions, Needville ISD, and others). Match every listing address to the correct district.',
+          'Major systems include Fort Bend ISD and Lamar CISD, plus Katy ISD spillover on western edges. Match every listing address to the correct boundary.',
         bullets: [
           {
-            title: 'Town-first district check',
+            title: 'Fort Bend ISD vs Lamar CISD',
             detail:
-              'Use official district boundary tools and TEA resources. Marketing city names and master-planned villages can span feeders.',
+              'Sugar Land / Missouri City addresses often fall in Fort Bend ISD; Richmond–Rosenberg and many southern/western growth pockets use Lamar CISD. Marketing names and new tracts can span feeders — verify with official boundary tools.',
           },
           {
-            title: 'Planned-community vs town systems',
+            title: 'Katy ISD edge & growth corridors',
             detail:
-              'Enrollment pressures differ between rapid western growth and longer-established Sugar Land or Richmond corridors — do not treat county averages as neighborhood truth.',
+              'Western Fort Bend / Katy-edge product may sit in Katy ISD. Do not treat county averages as neighborhood truth.',
           },
           {
             title: 'Research tools',
             detail:
-              'District sites and TEA data should lead; third-party rankings are secondary signals only.',
-          },
-          {
-            title: 'Higher education presence',
-            detail:
-              'Nearby Houston and regional campuses shape some staff and student housing demand — useful if your household is campus-affiliated.',
+              'District sites and state data should lead; third-party rankings are secondary. Tour campuses when possible.',
           },
         ],
       },
@@ -402,125 +339,31 @@ export const fortBendCountyIntelligence: CountyIntelligencePack = {
           {
             title: 'County acute-care anchors',
             detail:
-              'Houston Methodist Sugar Land, OakBend, and other Fort Bend / SW Houston campuses cover much of the county — map ER drive times at rush hour from your target village.',
+              'Houston Methodist Sugar Land, Memorial Hermann Sugar Land, OakBend Medical Center (Richmond), and other campuses serve greater Fort Bend. Map ER drive times at rush hour from your target village.',
           },
           {
-            title: 'Texas Medical Center specialty spillover',
+            title: 'Harris specialty spillover',
             detail:
-              'Many residents use Houston specialty systems. Confirm insurer networks and realistic appointment drive times on US-59 / I-69 and Westpark.',
+              'Texas Medical Center and west Houston specialty care remain common for complex needs. Confirm insurer networks and realistic 59/Westpark times.',
           },
           {
             title: 'Relocator tip',
             detail:
-              'Transfer pediatric and specialty care early if mid-treatment; book first appointments before peak summer HOA move chaos.',
-          },
-        ],
-      },
-      {
-        id: 'housing',
-        title: 'Housing & cost of living',
-        bullets: [
-          {
-            title: 'Price ladder by pocket',
-            detail:
-              'Sugar Land villages, Missouri City stock, Katy-edge new builds, and rural south often price differently. Compare total monthly costs (HOA, insurance, tolls, commute), not sticker price alone.',
-          },
-          {
-            title: 'HOA-dominant stock',
-            detail:
-              'Master-planned communities dominate many desirable pockets — dues, architectural rules, and move-day restrictions are part of the lifestyle cost.',
-          },
-          {
-            title: 'Flood / insurance awareness',
-            detail:
-              'Gulf Coast drainage and flood-zone considerations can affect insurance and ground-floor planning — verify by address, not by city marketing name.',
-          },
-        ],
-      },
-      {
-        id: 'town-fit',
-        title: 'Town fit by lifestyle',
-        bullets: [
-          {
-            title: 'Sugar Land planned living',
-            detail:
-              'Amenity villages, retail corridors, and established HOAs — with paperwork-first move days.',
-          },
-          {
-            title: 'Western growth edge',
-            detail:
-              'Katy-edge and Fulshear for newer housing and space — with longer corridor drives and new-construction friction.',
-          },
-          {
-            title: 'Richmond–Rosenberg character',
-            detail:
-              'More mixed historic and suburban texture — with corridor timing toward Houston SW.',
-          },
-          {
-            title: 'Southern / rural edge',
-            detail:
-              'Sienna planned living or Needville-area acreage — only if you accept the access and service-density tradeoffs of each.',
-          },
-        ],
-      },
-      {
-        id: 'jobs',
-        title: 'Jobs & commute',
-        bullets: [
-          {
-            title: 'Local anchors',
-            detail:
-              'Healthcare, retail, education, public sector, and growing commercial nodes — plus strong ties into Houston’s energy, medical, and professional economy.',
-          },
-          {
-            title: 'Houston SW commute patterns',
-            detail:
-              'Many residents commute into Harris County job centers. Peak US-59 / I-69 / Grand Parkway / Westpark times should drive housing choice more than brochure distance.',
-          },
-          {
-            title: 'Hybrid / local options',
-            detail:
-              'Some professional and remote-capable roles reduce daily metro trips — still validate broadband and coworking by pocket if that matters to you.',
-          },
-        ],
-      },
-      {
-        id: 'lifestyle',
-        title: 'Lifestyle & climate',
-        bullets: [
-          {
-            title: 'Gulf Coast climate reality',
-            detail:
-              'Hot, humid summers, mild winters, and tropical-storm season — plan move windows around heat and weather alerts.',
-          },
-          {
-            title: 'Planned-community amenities',
-            detail:
-              'Parks, lakes, trails, and retail villages are major draws; HOA rules govern much of daily life and move logistics.',
-          },
-          {
-            title: 'Diverse suburban culture',
-            detail:
-              'Fort Bend’s diverse communities shape dining, faith, and school life — visit pockets on a weekday and weekend before choosing.',
+              'Transfer pediatric and specialty care early if mid-treatment; book first appointments before peak summer move chaos.',
           },
         ],
       },
     ],
   },
   resources: {
-    title: 'Practical Fort Bend County resources',
+    title: 'Useful Fort Bend resources',
     intro:
-      'Official links and licensing notes — HOA, parking, and city rules change; verify before move day.',
+      'Local official links first; directory listings are independent. Verify Texas TxDMV for in-state moves and FMCSA for interstate legs before deposits.',
     items: [
-      {
-        label: 'Fort Bend County',
-        href: 'https://www.fortbendcountytx.gov/',
-        note: 'County services hub',
-        external: true,
-      },
       {
         label: 'City of Sugar Land',
         href: 'https://www.sugarlandtx.gov/',
+        note: 'City services; HOA rules are separate',
         external: true,
       },
       {
@@ -529,51 +372,13 @@ export const fortBendCountyIntelligence: CountyIntelligencePack = {
         external: true,
       },
       {
-        label: 'City of Richmond',
-        href: 'https://www.richmondtx.gov/',
+        label: 'Fort Bend County — official site',
+        href: 'https://www.fortbendcountytx.gov/',
         external: true,
-      },
-      {
-        label: 'City of Rosenberg',
-        href: 'https://www.rosenbergtx.gov/',
-        external: true,
-      },
-      {
-        label: 'City of Fulshear',
-        href: 'https://www.fulsheartexas.gov/',
-        external: true,
-      },
-      {
-        label: 'TxDOT — road conditions & construction',
-        href: 'https://www.txdot.gov/',
-        note: 'Check corridor delays for long locals',
-        external: true,
-      },
-      {
-        label: 'TxDMV — motor carrier / household goods',
-        href: 'https://www.txdmv.gov/',
-        note: 'Texas Department of Motor Vehicles (intrastate frameworks)',
-        external: true,
-      },
-      {
-        label: 'FMCSA SAFER — interstate authority',
-        href: 'https://safer.fmcsa.dot.gov/',
-        note: 'Required when the move crosses state lines',
-        external: true,
-      },
-      {
-        label: 'Move Trust Hub — verify a USDOT',
-        href: '/verify-dot',
-        note: 'Cross-check interstate licensing before deposits',
-      },
-      {
-        label: 'Free moving calculator',
-        href: '/moving-calculator',
-        note: 'Inventory-based volume for local or long-distance',
       },
     ],
   },
   directoryHint:
-    'Filter listings by zone (Sugar Land, Missouri City/East, Katy/Fulshear, Richmond/Rosenberg, Sienna/South, Rural South) when available. Confirm HOA/COI for planned villages, new-construction access for western growth, and honest US-59 / Grand Parkway time — not Harris County downtown assumptions.',
-  lastReviewed: '2026-07-23',
-};
+    'Filter listings by zone (Sugar Land, Missouri City/Sienna, Richmond–Rosenberg, Katy-edge/Fulshear) when available. Confirm HOA packets, SW corridor drive assumptions, and heat-window plans — this is a Houston SW collar, not Harris core.',
+  lastReviewed: '2026-07-24',
+});

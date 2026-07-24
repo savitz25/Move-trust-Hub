@@ -1,114 +1,124 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  finalizeTxTier2Pack,
+  TX_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/texas/tx-tier2-shared';
 
 /**
- * Hand-crafted Hidalgo County, Texas moving intelligence.
- * Differentiators: Rio Grande Valley border-metro polycentric pattern (McAllen, Edinburg,
- * Mission, Pharr), extreme heat, colonias and growth edges — NOT Texas Triangle
- * (DFW / Houston / Austin) suburban HOA scripts and not El Paso desert-mountain PCS logistics.
+ * Hidalgo County — Texas Tier 2 (independent South TX / McAllen–RGV hub).
+ * Secondary-market contract vs Houston / DFW Tier 1 density defaults — not a
+ * Houston collar and not a thinner Triangle zone dump.
  */
-export const hidalgoCountyIntelligence: CountyIntelligencePack = {
-  stateSlug: 'texas',
+export const hidalgoCountyIntelligence: CountyIntelligencePack = finalizeTxTier2Pack({
   countySlug: 'hidalgo',
   hubTitle: 'Hidalgo County Moving Intelligence Hub',
-  eyebrow: 'Hidalgo · Rio Grande Valley border metro',
-  h1: 'Moving in Hidalgo County: Rio Grande Valley, McAllen–Edinburg & Border-Metro Guide',
+  eyebrow: 'Hidalgo County · Independent McAllen / RGV hub',
+  h1: 'Moving in Hidalgo County: Independent RGV Hub, McAllen Growth & Border-Metro Logistics',
   heroOpener:
-    'Hidalgo County is the Rio Grande Valley’s population core — a polycentric border metro of McAllen, Edinburg, Mission, Pharr, Weslaco, and smaller Valley towns — not a Texas Triangle suburb and not El Paso’s mountain-and-PCS script. Summer heat is extreme and humid compared with far-west desert; winter “snowbird” and family calendars still move volume; medical and retail corridors along Expressway 83 shape jobs; colonias and rural edges need access photos that master-planned DFW villages never require. Cross-town pairs can look short on a map and still burn time on 83 / 281 / local arterials. International bridge approaches and bilingual daily life are normal context, not edge cases. This guide is for people moving in Hidalgo County — RGV border-metro logistics — not a recycled Houston, Austin, or DFW pack.',
+    'Hidalgo County is an independent South Texas / Rio Grande Valley hub — not Houston with freer freeways, and not a Texas Triangle HOA growth collar. McAllen–Mission medical and retail density, Edinburg university and government, Pharr/San Juan bridge-adjacent corridors, and rural/ag RGV edges form their own housing ladder under extreme heat and humidity. Compared with Houston / DFW Tier 1 density defaults, US-83 / I-2 freeflow replaces multi-county basin gridlock, bilingual daily life is normal, and colonias plus multi-family growth are first-class products. This guide is for people moving in Hidalgo County as a secondary market with its own role — not recycled Harris scripts.',
   heroCredibility:
-    'Rio Grande Valley border metro · Extreme heat · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
-  collapsibleDeepContent: true,
-  sectionOrder: [
-    'whatMakesDifferent',
-    'zones',
-    'costDrivers',
-    'seasonal',
-    'specialized',
-    'relocation',
-    'resources',
-  ],
+    'Independent McAllen / RGV hub · Extreme heat · Border-metro logistics · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
+  majorCorridors: 'US-83 · I-2 · I-69C · US-281 · SH-107',
+  parentCompare: {
+    parentLabel: 'Texas Triangle Tier 1 metros (Harris / Dallas density defaults)',
+    parentHref: '/local-movers/texas/harris',
+    title: 'Compared with Houston / DFW Tier 1 density defaults',
+    intro:
+      'Hidalgo is a freestanding Rio Grande Valley border metro far south of the Texas Triangle. Use Houston and DFW as high-density parent contrasts — neither is a drop-in template for polycentric McAllen–Edinburg–Mission routing, RGV heat, or rural/ag edge access.',
+    bullets: [
+      {
+        title: 'Drive time & corridor relationship',
+        detail:
+          'Houston crews fight I-10/I-45/I-69 basin stacks; DFW fights Tollway/I-35 walls. Hidalgo pairs ride US-83 / I-2, I-69C, US-281, and SH-107 with freer mid-day flow — Mission ↔ Edinburg still burns portal-to-portal time at peak, but it is not a Fort Bend ↔ Downtown Houston job. Isolation from the Triangle means long-haul deadhead, not short-hop collar spillover.',
+      },
+      {
+        title: 'Housing stock differences',
+        detail:
+          'Harris/Dallas mix dense elevators, master-planned HOA villages, and multi-county suburban product. Hidalgo’s ladder is McAllen multi-family and medical-corridor apartments, Mission west residential, Edinburg campus/government stock, Pharr/San Juan in-town grids, and rural/ag edges with colonias and manufactured homes — more bilingual multi-generational product, less Triangle HOA default.',
+      },
+      {
+        title: 'Truck access, HOA & density',
+        detail:
+          'Hidalgo stages more driveway and multi-city arterial work than Houston elevator corridors. HOAs exist in growth tracts but are not the Frisco/Katy operating system. Soft shoulders, incomplete paving on edges, and bridge-adjacent freight replace dense curb-staging fights.',
+      },
+      {
+        title: 'Rough cost posture (qualitative)',
+        detail:
+          'Local Hidalgo quotes often sit below Houston/DFW rates for comparable square footage when access is simple — heat windows, cross-Valley 83 time, multi-unit COI, and rural-edge empty miles still push prices up. Expect secondary-market labor rates with RGV heat and distance as the main premiums, not basin gridlock fees.',
+      },
+      {
+        title: 'Role difference',
+        detail:
+          'Hidalgo is an independent South Texas border-metro hub with its own employment base (healthcare, education, retail, government, logistics, trade-adjacent) — not a Houston bedroom collar and not a DFW spillover suburb. Treat it as its own market when matching crews and rate cards.',
+      },
+    ],
+  },
   whatMakesDifferent: {
     title: 'What makes moving in Hidalgo County different',
     intro:
-      'These are Hidalgo / RGV realities — polycentric Valley cities, extreme heat, border-metro traffic, and non-Triangle housing patterns — not interchangeable “Texas suburb” boilerplate.',
+      'Independent RGV realities — polycentric Valley cities, extreme heat, bilingual/cross-border adjacency logistics, and freer 83/281 corridors than Triangle parents — that change estimates.',
     bullets: [
       {
-        title: 'This is not Texas Triangle growth logic',
+        title: 'RGV heat is an operational constraint, not a footnote',
         detail:
-          'Hidalgo does not run on Austin tech spillover, Houston Energy Corridor commutes, or DFW master-planned HOA density as the default story. It is a self-contained Rio Grande Valley metro with its own medical, retail, education, and trade economy. Name both origin and destination cities — “Valley local” is too vague.',
+          'May–September afternoons combine extreme temperature with humidity. Heat stresses crews, electronics, and sealed packaging. Prefer earliest morning load windows in peak summer — Houston marine-influenced habits do not transfer one-for-one to Valley open staging.',
       },
       {
         title: 'Polycentric cities, not one downtown core',
         detail:
-          'McAllen retail and medical corridors, Edinburg university and government, Mission residential west, Pharr industrial and bridge-adjacent patterns, and Mid-Valley towns each have different staging rules. A McAllen apartment and a rural-edge colonia lot are different jobs under one county label.',
+          'McAllen medical/retail, Edinburg university/government, Mission west residential, and Pharr/San Juan bridge-adjacent patterns are different products. “Valley local” is too vague — name both cities and access type on the estimate.',
       },
       {
-        title: 'Extreme heat is a first-order operational risk',
+        title: 'US-83 / I-2 freeflow is not Houston basin — still a line item',
         detail:
-          'RGV summers combine high temperature with humidity that Triangle marketing rarely emphasizes. Early starts, hydration, and heat-safe packing for electronics are operational requirements — not optional comfort tips.',
+          'Cross-Valley pairs freer than Harris still burn billable time at school and commute peaks. Ask whether quotes are portal-to-portal, especially Mission ↔ Edinburg or McAllen ↔ Pharr.',
       },
       {
-        title: 'Expressway 83 / 281 / 107 timing rewrites ETAs',
+        title: 'Rural/ag edges and multi-family growth both matter',
         detail:
-          'Map miles between Mission, McAllen, Edinburg, and Weslaco understate peak portal time. Hourly crews feel every bottleneck — ask how drive time is priced.',
+          'Colonias, soft approaches, and multi-generational inventory coexist with growth apartments and medical-corridor turnover. Inventory access photos and building rules on every survey.',
       },
-      {
-        title: 'Colonias and rural edges need access surveys',
-        detail:
-          'Private roads, incomplete paving, limited turnaround, and soft shoulders appear more often than in Sugar Land or Round Rock HOA scripts. Share approach photos before booking.',
-      },
-      {
-        title: 'Winter visitors and family multi-generational moves',
-        detail:
-          'Seasonal residents and multi-generational households change inventory profiles (medical equipment, outdoor furniture, larger kitchens). Inventory accurately — do not assume young-professional apartment loads.',
-      },
-      {
-        title: 'Border-metro freight and bridge-adjacent congestion',
-        detail:
-          'Port-of-entry and commercial corridors can delay trucks even when residential addresses are not “international moves.” Plan buffers near Pharr and south-arterial peaks.',
-      },
-      {
-        title: 'Texas intrastate rules (TxDMV) + FMCSA when interstate',
-        detail:
-          'Moves entirely within Texas are generally overseen under Texas Department of Motor Vehicles (TxDMV) household-goods / motor-carrier frameworks. Interstate legs (e.g. McAllen → San Antonio is still in-state; McAllen → out-of-state needs FMCSA). Confirm which license applies to your exact origin and destination before deposit.',
-      },
+      TX_TIER2_REG_BULLET,
     ],
   },
-  zonesHeading: 'Hidalgo County access zones',
+  zonesHeading: 'Hidalgo County zones: McAllen/Mission, Edinburg, Pharr/San Juan & RGV edges',
   zonesIntro:
-    'Plan by McAllen core, Edinburg, Mission/west, Pharr/San Juan/Alamo corridor, Mid-Valley (Weslaco/Mercedes), and rural/colonia edges — polycentric Valley access, not one suburban template.',
+    'Four sharp products — not a six-zone dump. McAllen/Mission density, Edinburg campus/government, Pharr/San Juan corridors, and rural/ag RGV edges price and stage differently under the same heat calendar.',
   zones: [
     {
-      id: 'mcallen-core',
-      name: 'McAllen — medical, retail & apartment core',
-      shortName: 'McAllen',
+      id: 'mcallen-mission',
+      name: 'McAllen / Mission',
+      shortName: 'McAllen / Mission',
       neighborhoods: [
         'North McAllen',
         'Central / downtown McAllen',
-        'South McAllen',
         'Medical district edges',
-        'Nolana / 10th Street commercial corridors',
-        'Multi-family apartment clusters',
+        'Mission',
+        'Palmview / west residential growth',
       ],
       housingTypes:
-        'Apartments, townhomes, suburban SFH, some HOA tracts and older in-town stock',
+        'Apartments, townhomes, suburban SFH, some HOA tracts, older in-town stock, medical-corridor multi-family',
       challenges: [
         'Apartment elevator windows and COI',
-        'Expressway 83 and arterial congestion at peak',
+        'US-83 / I-2 arterial congestion at peak',
         'Heat on open docks and parking lots',
-        'High end-of-month lease churn',
+        'High end-of-month lease and medical-corridor churn',
       ],
       moverTips:
-        'Collect building packets early. Prefer earliest morning starts in summer. McAllen ↔ Edinburg or Mission is a classic underquoted “local” — price portal time honestly.',
+        'Collect building packets early. Prefer earliest morning starts in summer. McAllen ↔ Mission is a classic underquoted “local” — price portal time honestly. Mid-week dawn beats Saturday heat and lease peaks.',
       cityKeywords: [
         'mcallen',
         'mc allen',
+        'mission',
+        'palmview',
         'nolana',
         'mcallen tx',
+        'mission tx',
       ],
     },
     {
       id: 'edinburg',
-      name: 'Edinburg — university, government & north growth',
+      name: 'Edinburg',
       shortName: 'Edinburg',
       neighborhoods: [
         'UTRGV / university-adjacent',
@@ -121,7 +131,7 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
         'Student and workforce multi-family, SFH tracts, some newer HOA, government-adjacent housing',
       challenges: [
         'University calendar peaks and short-notice apartment moves',
-        '281 / local arterial timing',
+        'I-69C / US-281 / local arterial timing',
         'Heat on open suburban staging',
         'Mix of campus and family inventory profiles',
       ],
@@ -135,41 +145,13 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
       ],
     },
     {
-      id: 'mission-west',
-      name: 'Mission, Palmview & western Valley',
-      shortName: 'Mission / West',
-      neighborhoods: [
-        'Mission',
-        'Palmview',
-        'Palmhurst edge',
-        'Conway / western corridors',
-        'West residential growth',
-      ],
-      housingTypes:
-        'Suburban SFH, some HOA, multi-family, larger-lot west edges',
-      challenges: [
-        '83 corridor timing toward McAllen',
-        'HOA COI where planned tracts apply',
-        'Summer heat on open streets',
-        'School-calendar Saturday demand',
-      ],
-      moverTips:
-        'Collect HOA packets when applicable. Early starts beat heat. Mission ↔ Pharr or Weslaco is a long Valley local — not a pure map-mile job.',
-      cityKeywords: [
-        'mission',
-        'palmview',
-        'palmhurst',
-        'mission tx',
-      ],
-    },
-    {
-      id: 'pharr-san-juan-alamo',
-      name: 'Pharr, San Juan, Alamo & south-central corridor',
-      shortName: 'Pharr / PSJA',
+      id: 'pharr-san-juan',
+      name: 'Pharr / San Juan',
+      shortName: 'Pharr / San Juan',
       neighborhoods: [
         'Pharr',
         'San Juan',
-        'Alamo',
+        'Alamo edge',
         'Bridge-adjacent and industrial edges',
         'South-central multi-family',
       ],
@@ -192,57 +174,30 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
       ],
     },
     {
-      id: 'mid-valley',
-      name: 'Weslaco, Mercedes, Donna & Mid-Valley',
-      shortName: 'Mid-Valley',
-      neighborhoods: [
-        'Weslaco',
-        'Mercedes',
-        'Donna',
-        'Mid-Valley Expressway 83 towns',
-        'Smaller in-grid residential',
-      ],
-      housingTypes:
-        'In-town SFH, multi-family, some newer tracts, winter-visitor product in pockets',
-      challenges: [
-        'Longer deadhead from McAllen core crews',
-        '83 corridor timing across the Valley',
-        'Heat on open staging',
-        'Lower service density than McAllen core',
-      ],
-      moverTips:
-        'Ask whether “local” rate cards still apply for Mid-Valley ↔ McAllen pairs. Prefer early starts. Inventory for seasonal-resident furniture when relevant.',
-      cityKeywords: [
-        'weslaco',
-        'mercedes',
-        'donna',
-        'mid-valley',
-        'weslaco tx',
-      ],
-    },
-    {
-      id: 'rural-colonia-edges',
-      name: 'Rural edges, colonias & outlying pockets',
-      shortName: 'Rural / Colonia Edges',
+      id: 'rural-ag-rgv-edges',
+      name: 'Rural / ag RGV edges',
+      shortName: 'Rural / ag edges',
       neighborhoods: [
         'Outlying colonia communities',
         'Rural Hidalgo parcels',
         'Agricultural-edge homes',
+        'Mid-Valley approaches (Weslaco edge patterns)',
         'Small communities off main arterials',
       ],
       housingTypes:
-        'Rural SFH, manufactured homes, acreage edges, limited multi-unit',
+        'Rural SFH, manufactured homes, acreage edges, limited multi-unit, multi-generational stock',
       challenges: [
         'Private roads, incomplete paving, soft shoulders',
         'Limited truck turnaround',
-        'Long deadhead and lower crew density',
+        'Longer deadhead from McAllen core crews',
         'Not interchangeable with McAllen apartment logistics',
       ],
       moverTips:
-        'Access photos are mandatory — surface, width, turnaround, and clearance. Confirm vehicle size before dispatch. Price edge ↔ McAllen as long local with access risk explicit.',
+        'Access photos are mandatory — surface, width, turnaround, and clearance. Confirm vehicle size before dispatch. Price edge ↔ McAllen as long local with access risk explicit. Inventory multi-generational and outdoor loads carefully.',
       cityKeywords: [
         'colonia',
         'rural hidalgo',
+        'weslaco',
         'outlying',
         'hidalgo county rural',
       ],
@@ -251,17 +206,17 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
   costDrivers: {
     title: 'Pricing & cost drivers inside Hidalgo County',
     intro:
-      'Two “local” moves of the same square footage can differ sharply depending on apartment elevators in McAllen, rural access on colonia edges, Expressway 83 cross-Valley time, and heat-related pacing — this is not Triangle HOA pricing logic alone.',
+      'Same square footage prices differently by heat window, multi-unit COI, cross-Valley 83 time, and whether the job is city tract or rural/ag edge.',
     drivers: [
+      {
+        title: 'Heat-constrained work windows',
+        detail:
+          'Summer heat and humidity compress productive hours into mornings. Jobs that slip into peak afternoon heat may need more labor days or premium scheduling.',
+      },
       {
         title: 'Cross-Valley corridor time',
         detail:
-          'Mission ↔ Weslaco, Edinburg ↔ Pharr, or any peak 83 / 281 leg can burn far more clock than map miles suggest. Hourly billing follows the clock.',
-      },
-      {
-        title: 'Rural / colonia access',
-        detail:
-          'Soft roads, limited turnaround, and long carries add labor hours and risk — photos prevent underquotes.',
+          'Mission ↔ Edinburg, McAllen ↔ Pharr, or any peak 83 / 281 leg can burn more portal-to-portal time than map miles suggest — freer than Houston, still billable.',
       },
       {
         title: 'Multi-unit medical/retail core access',
@@ -269,14 +224,9 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
           'Elevators, COI, and short-notice apartment turnover in McAllen and Edinburg add coordination soft costs.',
       },
       {
-        title: 'Heat-related pacing',
+        title: 'Rural / ag-edge access',
         detail:
-          'Extreme heat can slow outdoor packing and require earlier starts or extra labor to finish safely.',
-      },
-      {
-        title: 'Seasonal and family inventory complexity',
-        detail:
-          'Winter-visitor and multi-generational households often mean heavier outdoor furniture and medical equipment — inventory accuracy matters.',
+          'Soft roads, limited turnaround, outbuildings, and long carries add labor hours and risk — photos prevent underquotes.',
       },
     ],
     ranges: [
@@ -293,85 +243,80 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
       {
         label: '3–4+ BR (cross-zone / rural edge)',
         value: '$1,900–$5,800+',
-        note: 'Colonia/rural access and Mid-Valley long locals price highest',
-      },
-      {
-        label: 'Typical 2-person crew rate',
-        value: '$95–$170+/hr',
-        note: 'Portal-to-portal; packing and 3-person crews scale up',
+        note: 'Rural/ag access and long Valley locals price highest',
       },
     ],
   },
   seasonal: {
-    title: 'Seasonal, extreme heat & Valley-calendar intelligence',
+    title: 'Seasonal & RGV heat calendar intelligence',
     intro:
-      'RGV heat dominates summer operations. Winter visitor patterns, school calendars, and family moves set secondary peaks — not Triangle tech-transfer scripts.',
+      'Hidalgo peaks follow extreme heat, school calendars, and multi-family/medical-corridor churn — not Houston Energy Corridor or DFW master-planned defaults alone.',
     items: [
       {
-        title: 'Extreme summer heat (primary constraint)',
+        title: 'Extreme summer heat: roughly May – September',
         detail:
-          'Afternoon heat and humidity make open staging inefficient and risky. Prefer earliest morning starts roughly May–September; protect electronics and sealed goods.',
+          'Plan early-morning loads, extra water, and heat-safe packing. Mid-afternoon moves in peak heat and humidity are high risk for people and property.',
       },
       {
-        title: 'School-calendar residential peaks',
+        title: 'School & family calendars + campus peaks',
         detail:
-          'Late spring and August weekends fill family moves across McAllen, Edinburg, Mission, and Mid-Valley. Book 2–3 weeks ahead when flexible.',
+          'Late spring through early fall weekends fill first for family SFH moves; UTRGV-related multi-family turnover spikes near Edinburg. Book 2–3 weeks ahead when flexible.',
       },
       {
-        title: 'Winter visitor / seasonal resident windows',
+        title: 'Best value: mid-month Tue–Thu, early start',
         detail:
-          'Cooler months bring seasonal households and different inventory mixes. Still plan around holiday weeks when crews thin out.',
-      },
-      {
-        title: 'University calendar (Edinburg)',
-        detail:
-          'UTRGV-related turnover can spike multi-family demand near campus — mid-week alternatives often stage cleaner than peak weekends.',
-      },
-      {
-        title: 'Best value: mid-month weekday dawn starts',
-        detail:
-          'Avoid last-Saturday lease collisions. Dawn crews beat heat better than any discount on a noon summer load-out.',
+          'Still plan around apartment elevator windows when applicable. Dawn starts win even in shoulder seasons when heat and arterials are the real constraints.',
       },
     ],
   },
   specialized: [
     {
-      id: 'rgv-polycentric-heat',
-      title: 'RGV polycentric metro & extreme-heat logistics',
+      id: 'rgv-heat',
+      title: 'RGV heat logistics',
       intro:
-        'Hidalgo County’s core problem is multi-city Valley routing plus heat — not Austin-north HOA paperwork or Houston SW master-planned defaults.',
+        'Hidalgo’s defining operational constraint is Valley heat and humidity that Triangle rate cards often underweight.',
       bullets: [
-        'Name both cities on every estimate (e.g. Mission → Edinburg); “Hidalgo local” hides portal time.',
-        'Prefer earliest morning starts; discuss heat pacing and crew size in writing for summer moves.',
-        'Price 83 / 281 cross-Valley pairs honestly — map miles understate peak congestion.',
-        'Collect apartment COI and elevator rules for McAllen and Edinburg multi-unit before booking.',
-        'Buffer time near freight and bridge-adjacent corridors in Pharr and south-central pockets.',
+        'Prefer earliest morning starts in peak summer; treat mid-afternoon loads as high risk.',
+        'Request shaded staging and heat-safe packing for electronics, candles, and sealed goods.',
+        'Plan water, rotation, and realistic crew endurance — heat is a labor and quality issue, not just comfort.',
+        'If the job runs long, discuss split-day or multi-day options rather than pushing into peak heat.',
       ],
     },
     {
-      id: 'rural-colonia-access',
-      title: 'Rural edges, colonias & access-survey module',
+      id: 'bilingual-cross-border-logistics',
+      title: 'Bilingual & cross-border adjacency logistics',
       intro:
-        'Outlying parcels need truck-access discipline that McAllen apartment jobs may not — and that Triangle HOA scripts never mention.',
+        'Border-metro freight, bridge-adjacent congestion, and bilingual daily operations are normal context — not edge cases recycled from Houston collars.',
       bullets: [
-        'Require approach photos: surface, width, overhead clearance, and turnaround before final pricing.',
-        'Confirm vehicle size; full-size trucks may not fit private or incomplete roads.',
-        'Ask whether “local” rate cards still apply for rural edge ↔ McAllen medical-core pairs.',
-        'Plan dust and heat protection for open-lot packing on agricultural edges.',
-        'Inventory manufactured-home and multi-generational loads carefully — shapes and weight differ from apartment studios.',
+        'Buffer time near Pharr and south-central freight / bridge-approach peaks even when the residential address is not an “international move.”',
+        'Name both origin and destination cities; polycentric Valley pairs hide portal time under “Hidalgo local.”',
+        'Expect multi-generational inventory profiles more often than young-professional apartment defaults — inventory accurately.',
+        'Confirm TxDMV vs FMCSA frameworks when any leg leaves Texas; in-state Valley pairs still need honest drive-time assumptions.',
+      ],
+    },
+    {
+      id: 'growth-multi-family',
+      title: 'Growth multi-family & medical-corridor turnover',
+      intro:
+        'McAllen medical/retail and Edinburg campus multi-family bring elevator windows and end-of-month churn that pure rural-edge jobs never see.',
+      bullets: [
+        'Send building packets, COI requirements, and elevator reservations with the estimate.',
+        'Confirm approved move hours before booking Saturday crews in multi-unit buildings.',
+        'Inventory carefully for short-notice apartment loads common near medical and campus corridors.',
+        'Share parking and long-carry constraints for denser McAllen blocks.',
       ],
     },
   ],
   relocation: {
-    title: 'Considering a move to Hidalgo County?',
+    title: 'Schools & hospitals for relocators',
     intro:
-      'McAllen medical/retail living, Edinburg university/government, Mission west residential, Mid-Valley towns, and rural edges are different bets — and none of them are Texas Triangle suburbs. Pick the city pocket first, then validate schools, healthcare, heat tolerance, and commute patterns on 83 / 281.',
+      'Independent RGV hub value, polycentric cities, and extreme heat are different bets — validate schools and healthcare by pocket, then plan for Valley summers.',
     modules: [
       {
         id: 'schools',
         title: 'Schools & education',
         intro:
-          'Hidalgo County spans multiple districts (e.g., McAllen ISD, Edinburg CISD, Mission CISD, Pharr-San Juan-Alamo ISD, Weslaco ISD, Donna ISD, La Joya ISD, Sharyland ISD, and others). Match every listing address to the correct district.',
+          'Major systems include McAllen ISD, Edinburg CISD, Mission CISD, Pharr-San Juan-Alamo ISD, Weslaco ISD, La Joya ISD, Sharyland ISD, and others. Match every listing address to the correct boundary.',
         bullets: [
           {
             title: 'City-first district check',
@@ -381,17 +326,12 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
           {
             title: 'Polycentric systems',
             detail:
-              'Enrollment and program offerings differ across McAllen, Edinburg, Mission, PSJA, and Mid-Valley districts — do not treat county averages as neighborhood truth.',
+              'Enrollment and program offerings differ across McAllen, Edinburg, Mission, and PSJA districts — do not treat county averages as neighborhood truth.',
           },
           {
             title: 'Research tools',
             detail:
-              'District sites and TEA data should lead; third-party rankings are secondary signals only.',
-          },
-          {
-            title: 'Higher education presence',
-            detail:
-              'UTRGV (Edinburg and regional presence) and South Texas College shape staff and student housing demand.',
+              'District sites and TEA data should lead; third-party rankings are secondary. Tour campuses when possible.',
           },
         ],
       },
@@ -402,115 +342,26 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
           {
             title: 'Valley acute-care anchors',
             detail:
-              'DHR Health, South Texas Health System, and other McAllen–Edinburg–Mission area campuses dominate regional care — map ER drive times from Mid-Valley or rural edges at peak heat and traffic.',
+              'DHR Health, South Texas Health System, and other McAllen–Edinburg–Mission area campuses dominate regional care. Map ER drive times from rural edges at peak heat and traffic.',
           },
           {
             title: 'Regional specialty reality',
             detail:
-              'Some specialties require travel to San Antonio or elsewhere. Confirm insurer networks and realistic long-drive plans before relocating mid-treatment.',
+              'Some specialties require travel toward San Antonio or elsewhere. Confirm insurer networks and realistic long-drive plans before relocating mid-treatment.',
           },
           {
             title: 'Relocator tip',
             detail:
-              'Transfer records early; book first appointments before peak summer heat and school-move chaos.',
-          },
-        ],
-      },
-      {
-        id: 'housing',
-        title: 'Housing & cost of living',
-        bullets: [
-          {
-            title: 'Price ladder by city pocket',
-            detail:
-              'McAllen multi-family, Edinburg growth, Mission residential, Mid-Valley towns, and rural edges often price differently. Compare total monthly costs (cooling utilities, insurance, commute), not sticker price alone.',
-          },
-          {
-            title: 'Stock variety beyond HOAs',
-            detail:
-              'Apartments, in-town SFH, manufactured homes, and colonia-edge housing are common — do not assume master-planned Triangle product.',
-          },
-          {
-            title: 'Heat-driven utility costs',
-            detail:
-              'Cooling in peak summer is a major budget line. Factor utility estimates into “affordable” addresses.',
-          },
-        ],
-      },
-      {
-        id: 'town-fit',
-        title: 'Town fit by lifestyle',
-        bullets: [
-          {
-            title: 'McAllen core amenities',
-            detail:
-              'Medical, retail, and dining density — with apartment logistics and 83 congestion.',
-          },
-          {
-            title: 'Edinburg university / government',
-            detail:
-              'Campus energy and public-sector adjacency — with multi-family peaks.',
-          },
-          {
-            title: 'Mission / west residential',
-            detail:
-              'Suburban Valley living with McAllen access — still heat and corridor timing.',
-          },
-          {
-            title: 'Mid-Valley or rural edges',
-            detail:
-              'Quieter towns or acreage — only if you accept longer service distances and access constraints.',
-          },
-        ],
-      },
-      {
-        id: 'jobs',
-        title: 'Jobs & commute',
-        bullets: [
-          {
-            title: 'Local anchors',
-            detail:
-              'Healthcare, education, retail, government, logistics, agriculture-related, and trade-adjacent employment — not Austin tech campuses or Houston energy towers as the default story.',
-          },
-          {
-            title: 'Valley corridor patterns',
-            detail:
-              'Many commutes stay inside Hidalgo on Expressway 83, 281, and local arterials. Peak heat and school traffic should drive housing choice more than brochure distance.',
-          },
-          {
-            title: 'Regional isolation from the Triangle',
-            detail:
-              'San Antonio is the nearer large inland hub; DFW/Houston/Austin are long hauls. Plan career and travel expectations accordingly.',
-          },
-        ],
-      },
-      {
-        id: 'lifestyle',
-        title: 'Lifestyle & climate',
-        bullets: [
-          {
-            title: 'RGV climate reality',
-            detail:
-              'Very hot summers with humidity, mild winters, intense sun — plan move days and daily life around heat safety.',
-          },
-          {
-            title: 'Border-metro culture',
-            detail:
-              'Bilingual daily life, family ties across the border region, and Valley food culture shape neighborhoods in ways Triangle suburbs do not. Visit multiple cities before choosing.',
-          },
-          {
-            title: 'Polycentric living',
-            detail:
-              'You may work in McAllen, live in Mission, and use Edinburg services — test real drive times at 7:30 a.m. and 5:30 p.m. before signing a lease.',
+              'Transfer pediatric and specialty care early if mid-treatment; book first appointments before peak summer heat and school-move chaos.',
           },
         ],
       },
     ],
   },
   resources: {
-    title: 'Practical Hidalgo County resources',
+    title: 'Useful Hidalgo resources',
     intro:
-      'Official links and licensing notes — heat, parking, and city rules change; verify before move day.',
+      'Local official links first; directory listings are independent. Verify TxDMV household goods authority for in-state moves and FMCSA for interstate legs before deposits.',
     items: [
       {
         label: 'Hidalgo County',
@@ -538,48 +389,9 @@ export const hidalgoCountyIntelligence: CountyIntelligencePack = {
         href: 'https://www.pharr-tx.gov/',
         external: true,
       },
-      {
-        label: 'City of Weslaco',
-        href: 'https://www.weslacotx.gov/',
-        external: true,
-      },
-      {
-        label: 'TxDOT — road conditions & construction',
-        href: 'https://www.txdot.gov/',
-        note: 'Check Expressway 83 and corridor delays',
-        external: true,
-      },
-      {
-        label: 'National Weather Service — Brownsville/RGV',
-        href: 'https://www.weather.gov/bro/',
-        note: 'Heat and severe-weather alerts for move planning',
-        external: true,
-      },
-      {
-        label: 'TxDMV — motor carrier / household goods',
-        href: 'https://www.txdmv.gov/',
-        note: 'Texas Department of Motor Vehicles (intrastate frameworks)',
-        external: true,
-      },
-      {
-        label: 'FMCSA SAFER — interstate authority',
-        href: 'https://safer.fmcsa.dot.gov/',
-        note: 'Required when the move crosses state lines',
-        external: true,
-      },
-      {
-        label: 'Move Trust Hub — verify a USDOT',
-        href: '/verify-dot',
-        note: 'Cross-check interstate licensing before deposits',
-      },
-      {
-        label: 'Free moving calculator',
-        href: '/moving-calculator',
-        note: 'Inventory-based volume for local or long-distance',
-      },
     ],
   },
   directoryHint:
-    'Filter listings by zone (McAllen, Edinburg, Mission/West, Pharr/PSJA, Mid-Valley, Rural/Colonia Edges) when available. Confirm heat-aware start times, access photos for rural edges, and honest Expressway 83 portal time — not DFW, Houston, Austin, or El Paso mountain/PCS assumptions.',
-  lastReviewed: '2026-07-23',
-};
+    'Filter listings by zone (McAllen/Mission, Edinburg, Pharr/San Juan, Rural/ag edges) when available. Confirm heat-window plans, multi-unit packets for McAllen growth, and honest US-83 portal time — this is an independent RGV hub, not a Houston collar.',
+  lastReviewed: '2026-07-24',
+});

@@ -1,95 +1,103 @@
-import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  finalizeTxTier2Pack,
+  TX_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/texas/tx-tier2-shared';
 
 /**
- * Hand-crafted Collin County, Texas moving intelligence.
- * Differentiators: Plano/McKinney/Frisco growth, HOA/master-planned, corporate corridor —
- * not Dallas urban core elevators alone, Fort Worth industrial character, or Austin density.
+ * Collin County — Texas Tier 2 (DFW north corporate collar).
+ * Parent: Dallas County. Plano / McKinney / Frisco master-planned growth —
+ * NOT a renamed Dallas urban-core pack.
  */
-export const collinCountyIntelligence: CountyIntelligencePack = {
-  stateSlug: 'texas',
+export const collinCountyIntelligence = finalizeTxTier2Pack({
   countySlug: 'collin',
   hubTitle: 'Collin County Moving Intelligence Hub',
-  eyebrow: 'Collin · Plano, Frisco, McKinney & master-planned growth',
-  h1: 'Moving in Collin County: Plano–Frisco–McKinney Growth & HOA Corridor Guide',
+  eyebrow: 'Collin County · DFW north — Plano / McKinney / Frisco corporate suburbs',
+  h1: 'Moving in Collin County: DFW North Corporate Suburbs — Plano, McKinney & Frisco',
   heroOpener:
-    'Collin County is North Texas’s master-planned growth engine: corporate campuses and multi-family along the Plano/Legacy corridor, sports-and-HQ density in Frisco, historic-plus-new McKinney, and HOA villages that treat gate lists and COI as standard operating procedure. A Legacy mid-rise, a Frisco two-story in a guarded community, a McKinney craft bungalow near the square, and an Allen tract home do not share truck access or portal time. The Dallas North Tollway, US-75, Sam Rayburn Tollway (SH-121), and President George Bush Turnpike turn “suburb to suburb” into multi-freeway work. This hub is for people actually moving in Collin — not Dallas-core tips with Frisco pasted into the title.',
+    'Collin County is DFW’s north corporate collar — Plano Legacy campuses, Frisco HQ and sports-district density, McKinney historic-plus-growth, and Allen/Prosper HOA villages — not Dallas County with Frisco pasted into the title. Master-planned gate lists, corporate multi-family elevators, and the US-75 / PGBT / Dallas North Tollway / SH-121 / US-380 grid define crew days more than downtown elevator permits. A Legacy mid-rise, a Frisco two-story behind a gate, a McKinney craft bungalow near the square, and a Prosper greenfield tract do not share truck access or portal time. Quote the pocket and the corridor pair — never a recycled Dallas-core rate card.',
   heroCredibility:
-    'TxDMV household goods for intrastate Texas moves · FMCSA for interstate legs · Master-planned HOA & corporate corridor focus · Curated directory listings',
-  collapsibleDeepContent: true,
-  sectionOrder: [
-    'whatMakesDifferent',
-    'zones',
-    'costDrivers',
-    'seasonal',
-    'specialized',
-    'relocation',
-    'resources',
-  ],
+    'DFW north corporate collar · HOA master-planned growth · TxDMV household goods (intrastate) · FMCSA when interstate · Curated listings',
+  majorCorridors: 'US-75 · PGBT · Dallas North Tollway · SH-121 · US-380',
+  parentCompare: {
+    parentLabel: 'Dallas County',
+    parentHref: '/local-movers/texas/dallas',
+    title: 'Compared with Dallas County',
+    intro:
+      'Collin is the north DFW corporate and master-planned growth market above Dallas County — freer mid-day freeflow on the tollway grid than I-35E/I-30 urban core, denser HOA paperwork than many Dallas SFH pockets, and far less vertical mid-rise elevator work than Uptown/downtown. Use this when one address sits in Dallas County and the other in Collin.',
+    bullets: [
+      {
+        title: 'Drive time & corridor relationship',
+        detail:
+          'Dallas County crews fight I-35E, I-30, I-635, and dense urban arterials. Collin pairs ride US-75, PGBT, the Dallas North Tollway, SH-121, and US-380 with freer mid-day flow — Plano ↔ Frisco or McKinney ↔ west Plano still burns portal-to-portal time at peak, but it is not a downtown Dallas elevator + I-35E job. Cross-county Collin ↔ Dallas pairs are long locals on the tollway grid.',
+      },
+      {
+        title: 'Housing stock differences',
+        detail:
+          'Dallas mixes vertical multi-family, older urban grids, and inner-ring SFH. Collin’s ladder is Legacy/Frisco corporate multi-family, master-planned HOA SFH (Frisco, Prosper, Celina-edge, west Plano), historic McKinney edges, and rural north greenfield — more gated villages and new construction, less Uptown high-rise product.',
+      },
+      {
+        title: 'Truck access, HOA & density',
+        detail:
+          'Collin stages more driveway, cul-de-sac, and gate-list work than Dallas core. HOA COI, approved hours, and truck size limits are the default in Frisco/Prosper/Allen villages — real soft costs Dallas urban quotes often omit. Elevator packets concentrate in Legacy and Frisco HQ multi-family, not county-wide high-rises.',
+      },
+      {
+        title: 'Rough cost posture (qualitative)',
+        detail:
+          'Same-zone Collin HOA jobs can look suburban-simple until gate lists, corporate elevator windows, and peak tollway time hit. Cross-zone north–south pairs and greenfield incomplete roads raise the bill above pure Plano in-town quotes. Do not assume Dallas-core rates transfer without naming both cities and corridors.',
+      },
+      {
+        title: 'Role difference',
+        detail:
+          'Collin is DFW north’s corporate-suburb and master-planned growth engine — Plano/McKinney/Frisco employment and family SFH volume — not a Dallas bedroom dump and not interchangeable Fort Worth industrial character. Match crews to HOA fluency and tollway timing, not downtown Dallas elevator résumés alone.',
+      },
+    ],
+  },
   whatMakesDifferent: {
     title: 'What makes moving in Collin County different',
     intro:
-      'These are Collin realities — HOA-first master plans, corporate multi-family, and rapid northern growth under one county label — not interchangeable “Dallas suburbs” boilerplate.',
+      'North-collar realities — HOA-first master plans, corporate multi-family, tollway-grid freeflow vs Dallas core, and Texas licensing — that a renamed Dallas pack would miss.',
     bullets: [
       {
-        title: 'HOA and master-planned rules are the default, not the exception',
+        title: 'HOA and master-planned rules are the default',
         detail:
-          'Many Frisco, Prosper, Celina-edge, and west Plano villages enforce gate lists, COI, approved hours, and truck size limits. Treat association packets as part of the survey, not an afterthought.',
+          'Frisco, Prosper, Celina-edge, Allen, and many west Plano villages enforce gate lists, COI, approved hours, and truck limits. Treat association packets as part of the survey — not move-morning surprises.',
       },
       {
         title: 'Corporate corridor multi-family is dense',
         detail:
-          'Legacy, Plano tech/corporate campuses, and Frisco HQ districts generate mid-month apartment turnover with elevators and building windows that pure SFH estimates miss.',
+          'Legacy, Plano campus apartments, and Frisco HQ districts generate mid-month elevator turnover that pure SFH estimates miss. Building windows and COI come before loading starts.',
       },
       {
-        title: 'Suburb-to-suburb still means long portal time',
+        title: 'Tollway-grid freeflow is still a line item',
         detail:
-          'McKinney ↔ west Plano, Allen ↔ Prosper, or Frisco ↔ Richardson-edge pairs ride Tollway / 75 / 121 peaks. Map miles understate rush hour in this growth belt.',
+          'Suburb-to-suburb pairs freer than Dallas urban core still burn billable minutes at school and commute peaks on US-75, Tollway, PGBT, 121, and 380. Ask whether quotes are portal-to-portal.',
       },
       {
-        title: 'Historic McKinney and new tracts are different jobs',
+        title: 'Historic McKinney and rural north edges are different jobs',
         detail:
-          'Downtown McKinney edges can mean older street grids and porch carries; northern greenfield tracts mean construction traffic and unfinished staging. One county name, two skill sets.',
+          'Square-adjacent grids and porch carries are not interchangeable with Prosper/Celina greenfield construction traffic. Name both origin and destination cities — “Collin County local” is too vague.',
       },
-      {
-        title: 'School-calendar family demand dominates summers',
-        detail:
-          'Family SFH moves concentrate May–August across Frisco, McKinney, Allen, and Prosper. Saturday crews book out earlier than pure corporate markets expect.',
-      },
-      {
-        title: 'Sports and entertainment event pockets',
-        detail:
-          'Frisco sports and entertainment districts can choke surface streets on event days — flexible timing beats fighting venue traffic with a box truck.',
-      },
-      {
-        title: 'Cross-county North Texas pairs are routine',
-        detail:
-          'Households regularly move Collin ↔ Dallas, Denton, or Rockwall. Clarify county lines so drive time and licensing assumptions stay accurate.',
-      },
-      {
-        title: 'Intrastate Texas rules vs interstate authority',
-        detail:
-          'Moves entirely within Texas are generally subject to TxDMV household-goods motor-carrier frameworks. Interstate legs need active FMCSA USDOT (and usually MC) authority.',
-      },
+      TX_TIER2_REG_BULLET,
     ],
   },
-  zonesHeading: 'Collin access zones',
+  zonesHeading: 'Collin County zones: corporate suburbs, growth belt & north edges',
   zonesIntro:
-    'Plan by Plano / Legacy corporate, Frisco sports-and-HQ belt, McKinney historic-plus-growth, Allen / Fairview, Prosper / Celina growth edge, and eastern Wylie / Princeton patterns — each has its own HOA and traffic profile.',
+    'Four sharp products — not a six-zone Dallas dump. Plano/Richardson edge, Frisco/McKinney growth, Allen/Prosper HOA belt, and rural north edges price and stage differently under the same tollway calendar.',
   zones: [
     {
-      id: 'plano-legacy',
-      name: 'Plano & Legacy: corporate campuses, mid-rises & west Plano SFH',
-      shortName: 'Plano / Legacy',
+      id: 'plano-richardson-edge',
+      name: 'Plano & Richardson Edge: corporate campuses, mid-rises & established SFH',
+      shortName: 'Plano / Richardson edge',
       neighborhoods: [
         'Legacy corridor',
         'West Plano',
         'East Plano',
         'Willow Bend edges',
-        'Downtown Plano edges',
+        'Richardson / Collin border edges',
         'Corporate multi-family belts',
       ],
       housingTypes:
-        'Mid-rise multi-family, corporate apartments, established SFH, townhomes, some high-amenity product',
+        'Mid-rise multi-family, corporate apartments, established SFH, townhomes, high-amenity product',
       challenges: [
         'Tollway / US-75 corporate congestion',
         'Elevator/COI and apartment move windows',
@@ -104,168 +112,116 @@ export const collinCountyIntelligence: CountyIntelligencePack = {
         'willow bend',
         'west plano',
         'east plano',
+        'richardson',
       ],
     },
     {
-      id: 'frisco-hq',
-      name: 'Frisco: HQ campuses, sports district & master-planned villages',
-      shortName: 'Frisco',
+      id: 'frisco-mckinney-growth',
+      name: 'Frisco & McKinney Growth: HQ campuses, sports district & historic-plus-new',
+      shortName: 'Frisco / McKinney',
       neighborhoods: [
         'Frisco',
         'The Star / sports district edges',
         'West Frisco master plans',
-        'East Frisco tracts',
-        'Frisco multi-family corridors',
-        'Little Elm approach edges',
-      ],
-      housingTypes:
-        'Master-planned SFH, gated HOA communities, mid-rise multi-family, corporate-adjacent apartments',
-      challenges: [
-        'Tollway / Sam Rayburn (121) peaks',
-        'Dense HOA gate lists and COI',
-        'Event-day surface traffic near sports venues',
-        'High summer Saturday family demand',
-      ],
-      moverTips:
-        'Treat Frisco as HOA-first growth work. Avoid major venue event start times for curb-dependent jobs. Book June–August Saturdays early. Photo gate and driveway access.',
-      cityKeywords: [
-        'frisco',
-        'the star',
-        'little elm',
-        'frisco texas',
-      ],
-    },
-    {
-      id: 'mckinney',
-      name: 'McKinney: historic square edges, established neighborhoods & north growth',
-      shortName: 'McKinney',
-      neighborhoods: [
         'Historic McKinney / downtown edges',
-        'Established central McKinney',
         'North McKinney growth',
         'Craig Ranch edges',
-        'West McKinney master plans',
-        'East McKinney tracts',
       ],
       housingTypes:
-        'Historic and renovated SFH, new master-planned product, multi-family, townhomes',
+        'Master-planned SFH, gated HOA communities, historic and renovated SFH, mid-rise multi-family, corporate-adjacent apartments',
       challenges: [
-        'Mix of narrow historic grids and new HOA villages',
-        'US-75 / 121 / 380 congestion patterns',
-        'Construction traffic on northern edges',
-        'Long portal time to west Plano / Frisco job centers',
+        'Tollway / Sam Rayburn (121) / US-75 peaks',
+        'Dense HOA gate lists and COI',
+        'Event-day surface traffic near Frisco venues',
+        'Mix of narrow historic grids and new HOA villages in McKinney',
       ],
       moverTips:
-        'Photo historic-street access near the square. Collect HOA packets for north and west master plans. Price 75/380 peaks honestly for cross-county pairs.',
+        'Treat Frisco as HOA-first growth work. Photo historic-street access near McKinney square. Avoid major venue event starts for curb-dependent jobs. Book June–August Saturdays early.',
       cityKeywords: [
+        'frisco',
         'mckinney',
+        'the star',
         'craig ranch',
         'historic mckinney',
         'downtown mckinney',
       ],
     },
     {
-      id: 'allen-fairview',
-      name: 'Allen, Fairview & Lucas edges',
-      shortName: 'Allen / Fairview',
+      id: 'allen-prosper',
+      name: 'Allen, Prosper & planned-village belt',
+      shortName: 'Allen / Prosper',
       neighborhoods: [
         'Allen',
         'Fairview',
-        'Lucas edges',
-        'Allen multi-family corridors',
+        'Prosper',
         'Watters Creek edges',
-        'East Allen tracts',
+        'Prosper master plans',
+        'Lucas edges',
       ],
       housingTypes:
-        'Suburban SFH, HOA communities, multi-family, some larger-lot edges',
+        'Suburban SFH, HOA communities, multi-family, larger-lot edges, new master-planned product',
       challenges: [
         'US-75 / Sam Rayburn peaks',
-        'HOA move windows',
-        'Event traffic near large venues in Allen',
-        'Cross-zone demand to Frisco and Plano campuses',
+        'HOA move windows and COI processing',
+        'Event traffic near large Allen venues',
+        'Construction traffic and unfinished streets on Prosper edges',
       ],
       moverTips:
-        'Collect HOA packets. Build venue-event buffers when moves sit near major Allen facilities. Prefer early starts for heat on open suburban streets.',
+        'Collect HOA packets before locking Saturday crews. Confirm unfinished road conditions the week of Prosper greenfield moves. Build venue-event buffers near major Allen facilities.',
       cityKeywords: [
         'allen',
+        'prosper',
         'fairview',
         'lucas',
         'watters creek',
       ],
     },
     {
-      id: 'prosper-celina-growth',
-      name: 'Prosper, Celina & far-north greenfield growth',
-      shortName: 'Prosper / Celina',
+      id: 'rural-north-edges',
+      name: 'Rural North Edges: Celina, Princeton, Wylie & far-north growth',
+      shortName: 'Rural north edges',
       neighborhoods: [
-        'Prosper',
         'Celina',
-        'Far-north master plans',
-        'Dallas North Tollway north extension villages',
-        'New construction corridors',
+        'Princeton',
+        'Wylie',
+        'Murphy',
+        'Farmersville edges',
+        'Far-north Tollway extension villages',
       ],
       housingTypes:
-        'New master-planned SFH, HOA villages under construction, limited multi-family, greenfield product',
+        'New master-planned SFH, HOA villages under construction, growth-edge product, limited multi-family',
       challenges: [
         'Construction traffic and incomplete streets',
         'Strict HOA rules in new communities',
         'Long empty-mile time from southern staging',
-        'Tollway north peaks and limited alternate routes',
+        'US-380 / PGBT approach patterns and limited alternate routes',
       ],
       moverTips:
-        'Confirm community truck access and unfinished road conditions the week of the move. Collect HOA packets early. Price long portal legs from Plano/Frisco honestly.',
+        'Confirm community truck access and unfinished roads the week of the move. Price long portal legs from Plano/Frisco honestly. Clarify Rockwall/Hunt border addresses on far-east edges.',
       cityKeywords: [
-        'prosper',
         'celina',
-        'prosper texas',
-        'celina texas',
-      ],
-    },
-    {
-      id: 'east-collin',
-      name: 'East Collin: Wylie, Murphy, Princeton, Farmersville edges',
-      shortName: 'East Collin',
-      neighborhoods: [
-        'Wylie',
-        'Murphy',
-        'Princeton',
-        'Farmersville edges',
-        'Lavon edges',
-        'Nevada / Josephine approach edges',
-      ],
-      housingTypes:
-        'Suburban SFH, HOA tracts, multi-family, growth-edge product',
-      challenges: [
-        'President George Bush Turnpike / Lake Lavon approach patterns',
-        'Long portal time to Tollway job centers',
-        'HOA rules in newer villages',
-        'Rockwall / Hunt border confusion on far edges',
-      ],
-      moverTips:
-        'Treat east Collin ↔ west Plano/Frisco pairs as multi-freeway jobs. Collect HOA packets. Clarify county-line addresses on eastern edges.',
-      cityKeywords: [
+        'princeton',
         'wylie',
         'murphy',
-        'princeton',
         'farmersville',
         'lavon',
       ],
     },
   ],
   costDrivers: {
-    title: 'What drives Collin moving costs',
+    title: 'Pricing & cost drivers inside Collin County',
     intro:
-      'Ranges are market context for local / short regional moves — not quotes. HOA soft costs, corporate multi-family elevators, and tollway-grid portal time separate cheap estimates from real bills.',
+      'Same square footage prices differently by HOA soft costs, corporate elevator windows, tollway-grid portal time, and whether the job is Legacy multi-family or Prosper greenfield.',
     drivers: [
       {
         title: 'HOA gate lists, COI & approved hours',
         detail:
-          'Master-planned communities across Frisco, Prosper, Celina edges, and west Plano add admin time and can force premium weekday slots.',
+          'Master-planned communities across Frisco, Prosper, Celina edges, Allen, and west Plano add admin time and can force premium weekday slots.',
       },
       {
-        title: 'Tollway / US-75 / 121 congestion',
+        title: 'Tollway / US-75 / 121 / 380 congestion',
         detail:
-          'Portal-to-portal billing tracks peaks. Suburb-to-suburb pairs can burn 35–70+ minutes each way at rush.',
+          'Portal-to-portal billing tracks peaks. Suburb-to-suburb pairs can burn 35–70+ minutes each way at rush — freer than Dallas core, still billable.',
       },
       {
         title: 'Corporate multi-family elevator soft costs',
@@ -277,20 +233,10 @@ export const collinCountyIntelligence: CountyIntelligencePack = {
         detail:
           'Incomplete streets, mud, and limited staging on Prosper/Celina-edge builds raise labor hours and risk delays.',
       },
-      {
-        title: 'Peak summer family demand',
-        detail:
-          'School-calendar SFH volume tightens Saturday supply and raises peak pricing May–August.',
-      },
-      {
-        title: 'Cross-county North Texas patterns',
-        detail:
-          'Collin ↔ Dallas, Denton, or Rockwall stops need honest distance assumptions in the written estimate.',
-      },
     ],
     ranges: [
       {
-        label: 'Studio / 1BR (simple access)',
+        label: 'Studio / 1BR (same zone, simple access)',
         value: '$470–$1,350+',
         note: 'Higher with elevators, HOA windows, or peak tollway traffic',
       },
@@ -304,27 +250,17 @@ export const collinCountyIntelligence: CountyIntelligencePack = {
         value: '$2,600–$7,500+',
         note: 'Large HOA homes and long north–south pairs price highest',
       },
-      {
-        label: 'Typical 2-person crew rate',
-        value: '$115–$185+/hr',
-        note: 'Portal-to-portal; packing and larger crews scale up',
-      },
     ],
   },
   seasonal: {
-    title: 'When to schedule a Collin move',
+    title: 'Seasonal & corporate-calendar intelligence',
     intro:
-      'School calendars, corporate lease cycles, new-home closings, and summer heat all reshape access and crew availability.',
+      'Collin peaks follow school calendars, corporate lease cycles, new-home closings, and summer heat — not Dallas downtown lease density alone.',
     items: [
-      {
-        title: 'Best truck windows: mid-week mornings',
-        detail:
-          'Tuesday–Thursday before 9 a.m. usually clear curb space and reduce Tollway / 75 / 121 pain. Avoid month-end Fridays when leases and closings collide.',
-      },
       {
         title: 'Peak family season: May–August',
         detail:
-          'Frisco, McKinney, Allen, and Prosper SFH moves fill Saturday calendars first. Book 2–4 weeks ahead for popular windows.',
+          'Frisco, McKinney, Allen, and Prosper SFH moves fill Saturday calendars first. Book 2–4 weeks ahead for popular HOA windows.',
       },
       {
         title: 'Corporate multi-family turnover',
@@ -332,53 +268,58 @@ export const collinCountyIntelligence: CountyIntelligencePack = {
           'Legacy and Frisco apartments can spike mid-month. Confirm building elevators and COI early.',
       },
       {
-        title: 'New-home closing clusters',
+        title: 'Best value: mid-week mornings',
         detail:
-          'Greenfield villages may see batches of closings that strain local crew supply. Book early when your builder closing date is firm.',
-      },
-      {
-        title: 'Summer heat & event days',
-        detail:
-          'Prefer early starts for heat. Cross-check Frisco/Allen venue calendars for curb-dependent jobs near sports districts.',
+          'Tuesday–Thursday before 9 a.m. usually clear curb space and reduce Tollway / 75 / 121 pain. Avoid month-end Fridays when leases and closings collide.',
       },
     ],
   },
   specialized: [
     {
       id: 'hoa-master-planned',
-      title: 'Master-planned HOA & greenfield access module',
+      title: 'HOA master-planned & greenfield access',
       intro:
-        'Frisco, Prosper, Celina-edge, and many Plano villages fail on gate lists, COI, and construction staging more often than on packing skill.',
+        'Frisco, Prosper, Celina-edge, Allen, and many Plano villages fail on gate lists, COI, and construction staging more often than on packing skill.',
       bullets: [
         'Collect HOA COI, gate lists, approved hours, and truck size limits before the survey is final.',
         'Confirm unfinished road and staging conditions the week of greenfield moves.',
         'Photo driveway, gate, and cul-de-sac turnaround space.',
         'Book peak June–August Saturdays early — family HOA corridors fill first.',
-        'Prefer early summer starts for heat on open new-construction streets.',
       ],
     },
     {
-      id: 'corporate-tollway-corridor',
-      title: 'Corporate multi-family & tollway corridor module',
+      id: 'corporate-relo-calendars',
+      title: 'Corporate relo calendars & multi-family elevators',
       intro:
-        'Legacy, Plano campus apartments, and Frisco HQ multi-family are elevator logistics plus Tollway/75 distance — not historic Dallas bungalow work.',
+        'Legacy, Plano campus apartments, and Frisco HQ multi-family are elevator logistics plus employer-driven timing — not historic Dallas bungalow work.',
       bullets: [
         'Request apartment move packets (COI, elevator hours, dock rules) at lease signing.',
-        'Price portal-to-portal time honestly for Tollway, US-75, and 121 pairs.',
+        'Expect mid-month and fiscal-quarter transfer clusters along corporate corridors.',
         'Reserve freight elevators in writing and reconfirm the day before.',
-        'Avoid major sports/entertainment event start times near Frisco venues when flexible.',
+        'Inventory for partial corporate-paid loads and tight multi-unit turns.',
+      ],
+    },
+    {
+      id: 'tollway-grid-freeflow',
+      title: 'Tollway-grid freeflow logistics',
+      intro:
+        'Collin’s defining corridor stack is US-75, PGBT, Dallas North Tollway, SH-121, and US-380 — freer than Dallas urban core, still a line item.',
+      bullets: [
+        'Price portal-to-portal time honestly for Tollway, US-75, PGBT, 121, and 380 pairs.',
+        'Avoid major Frisco sports/entertainment event start times for curb-dependent jobs when flexible.',
         'Clarify Dallas or Denton border addresses so drive-time assumptions stay accurate.',
+        'Ask whether suburb-to-suburb pairs still use a pure local rate card or a long-local schedule.',
       ],
     },
   ],
   relocation: {
-    title: 'Considering a move to Collin County?',
+    title: 'Schools & hospitals for relocators',
     intro:
-      'Use this as a practical fit checklist — schools, healthcare, master-planned lifestyle — then verify on district and hospital sites. No single ranking captures neighborhood fit.',
+      'Compressed secondary-market notes — primary districts and acute-care access that affect move-in. Not a full Tier 1 lifestyle essay.',
     modules: [
       {
         id: 'schools',
-        title: 'Schools & education landscape',
+        title: 'Schools & education',
         intro:
           'Multiple independent school districts serve Collin County (Plano, Frisco, McKinney, Allen, Prosper, Wylie, and others). Assignment is address-based.',
         bullets: [
@@ -401,7 +342,7 @@ export const collinCountyIntelligence: CountyIntelligencePack = {
       },
       {
         id: 'hospitals',
-        title: 'Hospitals & healthcare access',
+        title: 'Hospitals & healthcare',
         bullets: [
           {
             title: 'Major systems',
@@ -415,91 +356,12 @@ export const collinCountyIntelligence: CountyIntelligencePack = {
           },
         ],
       },
-      {
-        id: 'housing',
-        title: 'Housing character & cost pressures',
-        bullets: [
-          {
-            title: 'Master-planned dominance',
-            detail:
-              'Much of Collin’s newer stock sits in HOA communities with amenities, architectural rules, and dues. Older Plano and historic McKinney offer different character and access profiles.',
-          },
-          {
-            title: 'Cost variation inside the county',
-            detail:
-              'Purchase prices and rents vary by city and master plan. Budget for HOA dues, gate communities, and parking fees in mid-rise product.',
-          },
-          {
-            title: 'New construction pace',
-            detail:
-              'Far-north corridors can feel like active build sites. Visit at commute hours to understand construction traffic and noise before deciding.',
-          },
-        ],
-      },
-      {
-        id: 'town-fit',
-        title: 'Which Collin areas fit whom',
-        bullets: [
-          {
-            title: 'Corporate multi-family lifestyle',
-            detail:
-              'Legacy and Frisco multi-family suit people prioritizing campus proximity and amenities over large yards — still car-dependent at peak.',
-          },
-          {
-            title: 'Family master-planned suburbs',
-            detail:
-              'Frisco, Allen, McKinney growth, Prosper, and similar patterns often appeal for newer homes and school-focused living — with tollway commute tradeoffs.',
-          },
-          {
-            title: 'Historic or quieter edges',
-            detail:
-              'Historic McKinney edges and some eastern Collin cities can feel less “new master plan”; verify commute to western job centers.',
-          },
-        ],
-      },
-      {
-        id: 'jobs',
-        title: 'Jobs & commute patterns',
-        bullets: [
-          {
-            title: 'Employment anchors',
-            detail:
-              'Corporate headquarters, technology and telecom, finance and professional services, healthcare, retail, and sports/entertainment districts shape local employment.',
-          },
-          {
-            title: 'Commute realism',
-            detail:
-              'Most households are car-dependent. Tollway, US-75, 121, and Bush Turnpike peaks are real. Test drive peak routes before choosing solely on purchase price.',
-          },
-        ],
-      },
-      {
-        id: 'lifestyle',
-        title: 'Lifestyle & practical livability',
-        bullets: [
-          {
-            title: 'North Texas growth suburb character',
-            detail:
-              'Collin is defined by master-planned communities and corporate corridors — different from Dallas’s vertical core, Fort Worth’s industrial west, or Austin’s central density.',
-          },
-          {
-            title: 'Climate',
-            detail:
-              'Hot summers and occasional severe storms. Plan outdoor staging and heat-safe move-in logistics.',
-          },
-          {
-            title: 'Amenities and pace',
-            detail:
-              'Retail, sports, and new amenities are abundant in Frisco/Plano corridors; far-north edges can feel more construction-oriented. Visit at peak and off-peak times when deciding.',
-          },
-        ],
-      },
     ],
   },
   resources: {
-    title: 'Useful Collin resources',
+    title: 'Useful Collin County resources',
     intro:
-      'Official links first; directory listings are independent, not endorsements. Verify mover registration before deposits.',
+      'Local official links first. TxDMV, FMCSA, and Move Trust Hub tools are added automatically for licensing checks.',
     items: [
       {
         label: 'Collin County — official site',
@@ -523,56 +385,14 @@ export const collinCountyIntelligence: CountyIntelligencePack = {
         external: true,
       },
       {
-        label: 'Plano ISD',
-        href: 'https://www.pisd.edu/',
-        external: true,
-        note: 'Boundaries & calendars (one of several ISDs)',
-      },
-      {
-        label: 'Frisco ISD',
-        href: 'https://www.friscoisd.org/',
-        external: true,
-      },
-      {
-        label: 'McKinney ISD',
-        href: 'https://www.mckinneyisd.net/',
-        external: true,
-      },
-      {
         label: 'DFW traffic — 511DFW',
         href: 'https://www.511dfw.org/',
         external: true,
         note: 'Tollway, US-75, 121 before load windows',
       },
-      {
-        label: 'TxDMV — household goods movers',
-        href: 'https://www.txdmv.gov/motor-carriers/household-goods-movers',
-        external: true,
-        note: 'Intrastate Texas household-goods motor carrier resources',
-      },
-      {
-        label: 'FMCSA SAFER — interstate authority',
-        href: 'https://safer.fmcsa.dot.gov/',
-        external: true,
-        note: 'Required when the move crosses state lines',
-      },
-      {
-        label: 'Move Trust Hub — verify a USDOT',
-        href: '/verify-dot',
-        note: 'Cross-check interstate licensing before deposits',
-      },
-      {
-        label: 'Free moving calculator',
-        href: '/moving-calculator',
-        note: 'Inventory-based volume for local or long-distance',
-      },
-      {
-        label: 'All Texas local mover guides',
-        href: '/local-movers/texas',
-      },
     ],
   },
   directoryHint:
-    'Prefer crews with master-planned HOA fluency for Frisco/Prosper/Celina; corporate multi-family elevator experience for Legacy and Frisco HQ apartments; honest Tollway/75 timing for suburb-to-suburb pairs. Verify TxDMV for in-state moves and FMCSA for interstate legs.',
-  lastReviewed: '2026-07-23',
-};
+    'Filter by zone (Plano/Richardson edge, Frisco/McKinney, Allen/Prosper, Rural north edges) when available. Confirm HOA packets, corporate elevator windows, and tollway-grid drive assumptions — this is a DFW north corporate collar, not a renamed Dallas pack. Parent market: Dallas guide for metro-core context.',
+  lastReviewed: '2026-07-24',
+});
