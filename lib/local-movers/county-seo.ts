@@ -337,6 +337,10 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'Nebraska PSC Household Goods Mover License for in-state-only jobs when applicable';
     case 'idaho':
       return 'IPUC household goods / motor carrier authority for in-state-only jobs when applicable';
+    case 'west-virginia':
+      return 'WV PSC Motor Carrier household goods Certificate of Convenience and Necessity for in-state-only jobs when applicable';
+    case 'rhode-island':
+      return 'RI DPUC household goods certificate for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -449,7 +453,11 @@ export function buildCountyFaqItems(
                                                                                     ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Nebraska household goods moves by for-hire carriers generally require a Household Goods Mover License from the Nebraska Public Service Commission (PSC). Confirm the company appears on the PSC licensed household goods movers list (often with an ML-# license number) and that the legal name matches your estimate. FMCSA does not cover every in-state Nebraska job; confirm Nebraska PSC household goods license vs FMCSA for your exact origin and destination before you deposit.`
                                                                                     : county.stateSlug === 'idaho'
                                                                                       ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Idaho household goods moves by for-hire carriers are generally subject to Idaho Public Utilities Commission (IPUC) motor carrier / household goods regulatory frameworks as applicable under Idaho law. Confirm required Idaho operating authority, cargo and liability insurance, and a written estimate matching the legal name on the paperwork. FMCSA does not cover every in-state Idaho job; confirm IPUC-applicable household goods authority vs FMCSA for your exact origin and destination before you deposit.`
-                                                                                      : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                                                                                      : county.stateSlug === 'west-virginia'
+                                                                                        ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate West Virginia household goods moves by for-hire carriers generally require Certificate of Convenience and Necessity authority through the Public Service Commission of West Virginia (PSC) Motor Carrier Section for common carriers of household goods. Confirm active PSC Motor Carrier household goods certificate status matching the legal name on your estimate. FMCSA does not cover every in-state West Virginia job; confirm WV PSC household goods certificate vs FMCSA for your exact origin and destination before you deposit.`
+                                                                                        : county.stateSlug === 'rhode-island'
+                                                                                          ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Rhode Island household goods moves by for-hire carriers generally require a certificate from the Rhode Island Division of Public Utilities and Carriers (DPUC) Motor Carriers Division. Applicants must prove fitness, willingness, and ability to provide service; carriers must provide a Bill of Lading as receipt and contract. Confirm active DPUC licensed household goods carrier status matching the legal name on your estimate. FMCSA does not cover every in-state Rhode Island job; confirm RI DPUC household goods certificate vs FMCSA for your exact origin and destination before you deposit.`
+                                                                                          : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

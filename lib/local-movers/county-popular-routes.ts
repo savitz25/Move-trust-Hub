@@ -5077,6 +5077,8 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'mississippi') return MS_ROUTES[countySlug] ?? [];
   if (stateSlug === 'new-hampshire') return NH_ROUTES[countySlug] ?? [];
   if (stateSlug === 'maine') return ME_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'west-virginia') return WV_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'rhode-island') return RI_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'connecticut') return CT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
@@ -6955,6 +6957,92 @@ const ME_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Androscoggin ↔ Cumberland / Kennebec pairs', direction: 'within', context: 'Mid-coast inland twin cities vs Portland vs capital products differ.' },
     { label: 'Androscoggin → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Massachusetts / New Hampshire → L-A housing', direction: 'inbound', context: 'Interstate household goods into mill multi-unit and suburban stock.' },
+  ],
+};
+
+const WV_ROUTES: Record<string, CountyPopularRoute[]> = {
+  kanawha: [
+    { label: 'Within Kanawha (Downtown Charleston ↔ South Hills / Kanawha City)', direction: 'within', context: 'Capital multi-unit vs hillside stock — not Huntington or Eastern Panhandle defaults.' },
+    { label: 'Capital / state workforce relo → Charleston multi-unit', direction: 'inbound', context: 'Mid-month report dates often matter more than Saturday peaks.' },
+    { label: 'Huntington / Morgantown → Charleston in-state pairs', direction: 'inbound', context: 'I-64 / I-79 long locals; WV PSC HHG certificate for pure in-state jobs.' },
+    { label: 'Kanawha ↔ Berkeley Eastern Panhandle pairs', direction: 'within', context: 'Capital vs Panhandle products differ sharply — keep county lines clear.' },
+    { label: 'Kanawha → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Ohio / Virginia → Charleston capital housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  berkeley: [
+    { label: 'Within Berkeley (Martinsburg core ↔ Inwood / Hedgesville growth)', direction: 'within', context: 'Eastern Panhandle growth product — not Charleston capital east clones.' },
+    { label: 'DC–Baltimore / Maryland → Martinsburg housing', direction: 'inbound', context: 'Short interstate hops need FMCSA even when map miles look local.' },
+    { label: 'Berkeley ↔ Jefferson / Morgan panhandle pairs', direction: 'within', context: 'I-81 / WV-9 logistics; keep county lines clear.' },
+    { label: 'Virginia / Pennsylvania → Eastern Panhandle housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Berkeley → Charleston reverse capital pairs', direction: 'outbound', context: 'In-state long haul; WV PSC HHG certificate for pure in-state jobs.' },
+    { label: 'Military / logistics relo → Inwood multi-family', direction: 'inbound', context: 'HOA windows and I-81 freeflow dominate panhandle growth.' },
+  ],
+  monongalia: [
+    { label: 'Within Monongalia (Downtown / campus Morgantown ↔ Cheat Lake / Sabraton)', direction: 'within', context: 'WVU multi-unit vs hillside product — not Charleston density north.' },
+    { label: 'WVU semester inflows → campus multi-unit', direction: 'inbound', context: 'August and May peaks cluster elevators, curb, and game-day freeflow.' },
+    { label: 'Pennsylvania → Morgantown housing', direction: 'inbound', context: 'I-79 / I-68 interstate hops need FMCSA.' },
+    { label: 'Monongalia ↔ Kanawha capital pairs', direction: 'within', context: 'I-79 long locals; WV PSC HHG certificate for pure in-state jobs.' },
+    { label: 'Monongalia → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Healthcare / research relo → Morgantown multi-unit', direction: 'inbound', context: 'Hard report dates and hillside access reshape crew timing.' },
+  ],
+  cabell: [
+    { label: 'Within Cabell (Downtown Huntington ↔ Barboursville / Marshall edges)', direction: 'within', context: 'Tri-State river city product — not Charleston west or Parkersburg north clones.' },
+    { label: 'Marshall semester inflows → campus multi-unit', direction: 'inbound', context: 'August and May peaks cluster curb and older multi-unit demand.' },
+    { label: 'Ohio / Kentucky → Huntington housing', direction: 'inbound', context: 'Short Tri-State hops need FMCSA even when map miles look local.' },
+    { label: 'Cabell ↔ Kanawha capital pairs', direction: 'within', context: 'I-64 long locals; WV PSC HHG certificate for pure in-state jobs.' },
+    { label: 'Cabell → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Cabell ↔ Wood mid-Ohio Valley pairs', direction: 'within', context: 'River-city products differ — keep Huntington vs Parkersburg clear.' },
+  ],
+  wood: [
+    { label: 'Within Wood (Downtown Parkersburg ↔ Vienna / Mineral Wells)', direction: 'within', context: 'Ohio River mid-Ohio Valley product — not Huntington north clones.' },
+    { label: 'Industrial / healthcare workforce relo → Parkersburg multi-unit', direction: 'inbound', context: 'Plant calendars and river-edge freeflow reshape crew timing.' },
+    { label: 'Ohio → Parkersburg housing', direction: 'inbound', context: 'Short river hops need FMCSA even when map miles look local.' },
+    { label: 'Wood ↔ Kanawha capital pairs', direction: 'within', context: 'I-77 long locals; WV PSC HHG certificate for pure in-state jobs.' },
+    { label: 'Wood → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Wood ↔ Cabell river-city pairs', direction: 'within', context: 'Parkersburg vs Huntington products differ — clarify addresses on estimates.' },
+  ],
+};
+
+const RI_ROUTES: Record<string, CountyPopularRoute[]> = {
+  providence: [
+    { label: 'Within Providence County (Downtown / East Side ↔ Cranston / North Providence)', direction: 'within', context: 'Capital triple-decker density — not Warwick suburban or Newport peninsula defaults.' },
+    { label: 'Massachusetts → Providence capital housing', direction: 'inbound', context: 'Short interstate hops need FMCSA even when map miles look local.' },
+    { label: 'Providence ↔ Kent / Bristol multi-county pairs', direction: 'within', context: 'Dense small-state logistics; keep capital vs Warwick vs East Bay products clear.' },
+    { label: 'Providence → Boston reverse career pairs', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Florida / Sun Belt → Providence reverse family moves', direction: 'inbound', context: 'Interstate household goods into triple-deckers and multi-unit stock.' },
+    { label: 'University / hospital relo → East Side multi-unit', direction: 'inbound', context: 'Elevator COIs, scarce curb, and I-95 freeflow dominate capital cores.' },
+  ],
+  kent: [
+    { label: 'Within Kent (Warwick multi-unit ↔ West Warwick / Coventry / East Greenwich)', direction: 'within', context: 'Airport-adjacent suburban product — not Providence capital density clones.' },
+    { label: 'Providence → Warwick / Kent housing', direction: 'inbound', context: 'I-95 / RI-4 collar logistics; RI DPUC HHG certificate for pure in-state jobs.' },
+    { label: 'Kent ↔ Washington South County pairs', direction: 'within', context: 'Suburban vs coastal tourism products differ — keep county lines clear.' },
+    { label: 'Massachusetts → Warwick multi-family', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Kent → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Airport / logistics workforce relo → Warwick multi-unit', direction: 'inbound', context: 'T.F. Green freeflow and HOA windows reshape suburban estimates.' },
+  ],
+  washington: [
+    { label: 'Within Washington County, RI (Narragansett ↔ South Kingstown / URI / Westerly edges)', direction: 'within', context: 'South County coastal product — Rhode Island only, not Washington State and not Washington County AR/UT.' },
+    { label: 'URI semester / tourism inflows → South County multi-unit', direction: 'inbound', context: 'Summer tourism and August peaks cluster coastal curb demand.' },
+    { label: 'Providence → South County in-state pairs', direction: 'inbound', context: 'US-1 / RI-4 logistics; RI DPUC HHG certificate for pure in-state jobs.' },
+    { label: 'Connecticut → Westerly / South County housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Washington County, RI → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Washington County, RI ↔ Newport peninsula pairs', direction: 'within', context: 'South County vs Aquidneck products differ — keep RI county lines clear.' },
+  ],
+  newport: [
+    { label: 'Within Newport (Historic Hill / downtown ↔ Middletown / Portsmouth)', direction: 'within', context: 'Aquidneck peninsula historic access — not Providence coastal clones.' },
+    { label: 'Tourism / seasonal turns → peninsula multi-unit', direction: 'inbound', context: 'Peak summer freeflow rewrites curb and bridge access windows.' },
+    { label: 'Providence → Newport in-state pairs', direction: 'inbound', context: 'RI-138 logistics; RI DPUC HHG certificate for pure in-state jobs.' },
+    { label: 'Massachusetts → Newport housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Newport → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Newport ↔ Washington County, RI South County pairs', direction: 'within', context: 'Peninsula vs South County coastal products differ.' },
+  ],
+  bristol: [
+    { label: 'Within Bristol County, RI (Bristol waterfront ↔ Barrington / Warren)', direction: 'within', context: 'East Bay product — not Providence east clones and not Bristol County MA.' },
+    { label: 'Providence → East Bay housing', direction: 'inbound', context: 'RI-114 logistics; RI DPUC HHG certificate for pure in-state jobs.' },
+    { label: 'Bristol ↔ Providence multi-county pairs', direction: 'within', context: 'East Bay vs capital density products differ — keep county lines clear.' },
+    { label: 'Massachusetts → Barrington / East Bay housing', direction: 'inbound', context: 'Short interstate hops need FMCSA.' },
+    { label: 'Bristol County, RI → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Family / waterfront relo → Barrington multi-family', direction: 'inbound', context: 'Driveway geometry and East Bay freeflow dominate estimate risk.' },
   ],
 };
 

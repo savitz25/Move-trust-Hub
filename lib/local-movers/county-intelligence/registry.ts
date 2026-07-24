@@ -380,11 +380,23 @@ import { yorkCountyMeIntelligence } from '@/lib/local-movers/county-intelligence
 import { penobscotCountyMeIntelligence } from '@/lib/local-movers/county-intelligence/maine/penobscot-me';
 import { kennebecCountyMeIntelligence } from '@/lib/local-movers/county-intelligence/maine/kennebec-me';
 import { androscogginCountyMeIntelligence } from '@/lib/local-movers/county-intelligence/maine/androscoggin-me';
+// West Virginia Core 5
+import { kanawhaCountyWvIntelligence } from '@/lib/local-movers/county-intelligence/west-virginia/kanawha-wv';
+import { berkeleyCountyWvIntelligence } from '@/lib/local-movers/county-intelligence/west-virginia/berkeley-wv';
+import { monongaliaCountyWvIntelligence } from '@/lib/local-movers/county-intelligence/west-virginia/monongalia-wv';
+import { cabellCountyWvIntelligence } from '@/lib/local-movers/county-intelligence/west-virginia/cabell-wv';
+import { woodCountyWvIntelligence } from '@/lib/local-movers/county-intelligence/west-virginia/wood-wv';
+// Rhode Island Core 5
+import { providenceCountyRiIntelligence } from '@/lib/local-movers/county-intelligence/rhode-island/providence-ri';
+import { kentCountyRiIntelligence } from '@/lib/local-movers/county-intelligence/rhode-island/kent-ri';
+import { washingtonCountyRiIntelligence } from '@/lib/local-movers/county-intelligence/rhode-island/washington-ri';
+import { newportCountyRiIntelligence } from '@/lib/local-movers/county-intelligence/rhode-island/newport-ri';
+import { bristolCountyRiIntelligence } from '@/lib/local-movers/county-intelligence/rhode-island/bristol-ri';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / AR / NM / KS / MS / NH / ME / WV / RI / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
@@ -758,6 +770,18 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   penobscotCountyMeIntelligence,
   kennebecCountyMeIntelligence,
   androscogginCountyMeIntelligence,
+  // West Virginia Core 5
+  kanawhaCountyWvIntelligence,
+  berkeleyCountyWvIntelligence,
+  monongaliaCountyWvIntelligence,
+  cabellCountyWvIntelligence,
+  woodCountyWvIntelligence,
+  // Rhode Island Core 5
+  providenceCountyRiIntelligence,
+  kentCountyRiIntelligence,
+  washingtonCountyRiIntelligence,
+  newportCountyRiIntelligence,
+  bristolCountyRiIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -1310,6 +1334,24 @@ export const ME_TIER1_CORE5 = [
   'penobscot',
   'kennebec',
   'androscoggin',
+] as const;
+
+/** West Virginia Tier-1 Core 5 (Charleston + Eastern Panhandle + Morgantown + Huntington + Parkersburg). */
+export const WV_TIER1_CORE5 = [
+  'kanawha',
+  'berkeley',
+  'monongalia',
+  'cabell',
+  'wood',
+] as const;
+
+/** Rhode Island Tier-1 Core 5 (Providence + Kent/Warwick + South County + Newport + East Bay Bristol). */
+export const RI_TIER1_CORE5 = [
+  'providence',
+  'kent',
+  'washington',
+  'newport',
+  'bristol',
 ] as const;
 
 

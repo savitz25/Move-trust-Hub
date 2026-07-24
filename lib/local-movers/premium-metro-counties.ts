@@ -252,6 +252,18 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'maine', countySlug: 'penobscot' },
   { stateSlug: 'maine', countySlug: 'kennebec' },
   { stateSlug: 'maine', countySlug: 'androscoggin' },
+  // West Virginia Core 5
+  { stateSlug: 'west-virginia', countySlug: 'kanawha' },
+  { stateSlug: 'west-virginia', countySlug: 'berkeley' },
+  { stateSlug: 'west-virginia', countySlug: 'monongalia' },
+  { stateSlug: 'west-virginia', countySlug: 'cabell' },
+  { stateSlug: 'west-virginia', countySlug: 'wood' },
+  // Rhode Island Core 5
+  { stateSlug: 'rhode-island', countySlug: 'providence' },
+  { stateSlug: 'rhode-island', countySlug: 'kent' },
+  { stateSlug: 'rhode-island', countySlug: 'washington' },
+  { stateSlug: 'rhode-island', countySlug: 'newport' },
+  { stateSlug: 'rhode-island', countySlug: 'bristol' },
 ] as const;
 
 const premiumMetroKeySet = new Set(

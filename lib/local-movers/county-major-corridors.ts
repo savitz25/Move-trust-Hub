@@ -249,6 +249,20 @@ const CORRIDORS: Record<string, string> = {
   'maine/kennebec': 'I-95 · US-201 · US-202 · local Augusta grid',
   'maine/androscoggin': 'I-95 · ME-4 · ME-11 · US-202 · local L-A grid',
 
+  // ——— West Virginia Core 5 ———
+  'west-virginia/kanawha': 'I-64 · I-77 · US-60 · US-119 · local Charleston grid',
+  'west-virginia/berkeley': 'I-81 · WV-9 · US-11 · local Martinsburg grid',
+  'west-virginia/monongalia': 'I-79 · I-68 · US-119 · local Morgantown grid',
+  'west-virginia/cabell': 'I-64 · US-60 · WV-2 · local Huntington grid',
+  'west-virginia/wood': 'I-77 · US-50 · WV-2 · local Parkersburg grid',
+
+  // ——— Rhode Island Core 5 ———
+  'rhode-island/providence': 'I-95 · I-195 · US-6 · RI-10 · local arterial grid',
+  'rhode-island/kent': 'I-95 · RI-4 · US-1 · local Warwick grid',
+  'rhode-island/washington': 'US-1 · RI-4 · RI-138 · local South County grid',
+  'rhode-island/newport': 'RI-138 · RI-114 · local peninsula grid',
+  'rhode-island/bristol': 'RI-114 · RI-136 · local East Bay grid',
+
 // ——— Michigan Core 10 ———
   'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',
   'michigan/oakland': 'I-75 · I-696 · M-59 · Telegraph · Woodward corridors',
@@ -452,7 +466,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}(\/\d{1,3})?|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|OR[-\s]?\d{1,3}|MD[-\s]?\d{1,3}|CT[-\s]?\d{1,3}|UT[-\s]?\d{1,3}|AL[-\s]?\d{1,3}|LA[-\s]?\d{1,3}|AR[-\s]?\d{1,3}|NM[-\s]?\d{1,3}|NE[-\s]?\d{1,3}|ID[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Merritt|Legacy)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}(\/\d{1,3})?|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|OR[-\s]?\d{1,3}|MD[-\s]?\d{1,3}|CT[-\s]?\d{1,3}|UT[-\s]?\d{1,3}|AL[-\s]?\d{1,3}|LA[-\s]?\d{1,3}|AR[-\s]?\d{1,3}|NM[-\s]?\d{1,3}|NE[-\s]?\d{1,3}|ID[-\s]?\d{1,3}|RI[-\s]?\d{1,3}|WV[-\s]?\d{1,3}|NH[-\s]?\d{1,3}|ME[-\s]?\d{1,3}|KS[-\s]?\d{1,3}|MS[-\s]?\d{1,3}|KY[-\s]?\d{1,3}|NV[-\s]?\d{1,3}|OK[-\s]?\d{1,3}|IA[-\s]?\d{1,3}|MA[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|K[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Merritt|Legacy)\b/i.test(
     v
   );
 }
