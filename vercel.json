@@ -78,7 +78,19 @@
       ]
     },
     {
-      "source": "/:path((?!insurance|lender|admin|api|_next).+)",
+      "source": "/local-movers/:path*",
+      "headers": [
+        { "key": "X-Trust-Hub", "value": "move" },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=60, stale-while-revalidate=3600"
+        },
+        { "key": "CDN-Cache-Control", "value": "max-age=60" },
+        { "key": "Vary", "value": "Accept-Encoding" }
+      ]
+    },
+    {
+      "source": "/:path((?!insurance|lender|admin|api|_next|local-movers).+)",
       "headers": [
         { "key": "X-Trust-Hub", "value": "move" },
         {

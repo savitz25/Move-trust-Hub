@@ -8,6 +8,41 @@ const COUNTY_SUFFIX_PATTERN = /\s(county|parish|borough)$/i;
  * Canonical display label for a county (e.g. "Travis County", "Miami-Dade County").
  * Avoids duplicating "County" when the name already includes it.
  */
+/** Virginia independent cities that must not be labeled as “X County”. */
+const VA_INDEPENDENT_CITY_SLUGS = new Set([
+  'richmond',
+  'virginia-beach',
+  'norfolk',
+  'chesapeake',
+  'alexandria',
+  'hampton',
+  'newport-news',
+  'portsmouth',
+  'suffolk',
+  'lynchburg',
+  'roanoke',
+  'charlottesville',
+  'danville',
+  'harrisonburg',
+  'manassas',
+  'manassas-park',
+  'petersburg',
+  'fredericksburg',
+  'winchester',
+  'staunton',
+  'waynesboro',
+  'bristol',
+  'colonial-heights',
+  'hopewell',
+  'radford',
+  'salem',
+  'falls-church',
+  'poquoson',
+  'fairfax-city',
+  'bedford-city',
+  'franklin-city',
+]);
+
 export function buildCountyLabel(county: LocalCounty): string {
   if (COUNTY_SUFFIX_PATTERN.test(county.name) || /\sCity$/i.test(county.name)) {
     return county.name;
@@ -17,6 +52,13 @@ export function buildCountyLabel(county: LocalCounty): string {
   }
   if (county.stateSlug === 'district-of-columbia') {
     return county.name;
+  }
+  // Virginia independent cities (e.g. Richmond City vs Richmond County / Northern Neck).
+  if (
+    county.stateSlug === 'virginia' &&
+    VA_INDEPENDENT_CITY_SLUGS.has(county.slug)
+  ) {
+    return county.name.endsWith(' City') ? county.name : `${county.name} City`;
   }
   return `${county.name} County`;
 }

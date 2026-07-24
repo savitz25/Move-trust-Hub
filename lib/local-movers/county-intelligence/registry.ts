@@ -103,19 +103,8 @@ import { unionCountyNcIntelligence } from '@/lib/local-movers/county-intelligenc
 import { cabarrusCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/cabarrus-nc';
 import { gastonCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/gaston-nc';
 import { onslowCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/onslow-nc';
-// South Carolina Core 12
-import { greenvilleCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/greenville-sc';
-import { charlestonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/charleston-sc';
-import { richlandCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/richland-sc';
-import { horryCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/horry-sc';
-import { spartanburgCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/spartanburg-sc';
-import { yorkCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/york-sc';
-import { lexingtonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/lexington-sc';
-import { berkeleyCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/berkeley-sc';
-import { beaufortCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/beaufort-sc';
-import { dorchesterCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/dorchester-sc';
-import { andersonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/anderson-sc';
-import { florenceCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/florence-sc';
+// South Carolina Core 12 — intentionally NOT registered until packs are committed
+// (broken imports here prevent production deploys and leave VA/TN pages on stale builds).
 // Virginia Core 12
 import { fairfaxCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/fairfax-va';
 import { princeWilliamCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/prince-william-va';
@@ -146,8 +135,10 @@ import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-int
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / SC / VA / TN / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
+ * Note: SC packs must not be registered until their source files are committed to git
+ * (orphan registry imports break production builds).
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
   // California
@@ -244,19 +235,6 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   cabarrusCountyNcIntelligence,
   gastonCountyNcIntelligence,
   onslowCountyNcIntelligence,
-  // South Carolina Core 12
-  greenvilleCountyScIntelligence,
-  charlestonCountyScIntelligence,
-  richlandCountyScIntelligence,
-  horryCountyScIntelligence,
-  spartanburgCountyScIntelligence,
-  yorkCountyScIntelligence,
-  lexingtonCountyScIntelligence,
-  berkeleyCountyScIntelligence,
-  beaufortCountyScIntelligence,
-  dorchesterCountyScIntelligence,
-  andersonCountyScIntelligence,
-  florenceCountyScIntelligence,
   // Tennessee Core 12
   shelbyCountyTnIntelligence,
   davidsonCountyTnIntelligence,
@@ -448,22 +426,6 @@ export const AZ_TIER1_CORE7 = [
   'mohave',
   'yuma',
   'coconino',
-] as const;
-
-/** South Carolina Tier-1 Core 12. */
-export const SC_TIER1_CORE12 = [
-  'greenville',
-  'charleston',
-  'richland',
-  'horry',
-  'spartanburg',
-  'york',
-  'lexington',
-  'berkeley',
-  'beaufort',
-  'dorchester',
-  'anderson',
-  'florence',
 ] as const;
 
 /** Virginia Tier-1 Core 12 (NoVA + Richmond region + Hampton Roads). */
