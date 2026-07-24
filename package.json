@@ -52,6 +52,7 @@
     "qa:ct-ut-tier1": "tsx scripts/qa-ct-ut-tier1.ts",
     "qa:al-la-tier1": "tsx scripts/qa-al-la-tier1.ts",
     "qa:ar-nm-tier1": "tsx scripts/qa-ar-nm-tier1.ts",
+    "qa:ne-id-tier1": "tsx scripts/qa-ne-id-tier1.ts",
     "guard:canonical-county-metadata": "tsx scripts/guard-canonical-county-metadata.ts",
     "guard:testimonials": "tsx scripts/guard-county-testimonial-imports.ts",
     "guard:content-exemptions": "tsx scripts/guard-content-tier-exemptions.ts",

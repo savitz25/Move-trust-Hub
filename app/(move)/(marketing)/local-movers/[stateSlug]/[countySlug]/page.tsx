@@ -200,6 +200,8 @@ import { AlRegulatoryClarity } from '@/components/local-movers/al-regulatory-cla
 import { LaRegulatoryClarity } from '@/components/local-movers/la-regulatory-clarity';
 import { ArRegulatoryClarity } from '@/components/local-movers/ar-regulatory-clarity';
 import { NmRegulatoryClarity } from '@/components/local-movers/nm-regulatory-clarity';
+import { NeRegulatoryClarity } from '@/components/local-movers/ne-regulatory-clarity';
+import { IdRegulatoryClarity } from '@/components/local-movers/id-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
@@ -828,6 +830,12 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         ) : null}
         {stateSlug === 'new-mexico' ? (
           <NmRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'nebraska' ? (
+          <NeRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'idaho' ? (
+          <IdRegulatoryClarity countyLabel={countyLabel} />
         ) : null}
 
         {popularRoutes.length > 0 ? (
