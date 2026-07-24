@@ -5063,9 +5063,77 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'colorado') return CO_ROUTES[countySlug] ?? [];
   if (stateSlug === 'washington') return WA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'michigan') return MI_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'oregon') return OR_ROUTES[countySlug] ?? [];
   if (stateSlug === 'massachusetts') return MA_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const OR_ROUTES: Record<string, CountyPopularRoute[]> = {
+  multnomah: [
+    { label: 'Within Multnomah (Downtown / Pearl ↔ Eastside / Gresham)', direction: 'within', context: 'Hills, elevators, and bridge portal time — not west-metro HOA defaults.' },
+    { label: 'Seattle ↔ Portland metro pairs', direction: 'inbound', context: 'I-5 interstate household goods into city multi-unit and eastside stock.' },
+    { label: 'California / Bay Area → Portland lifestyle markets', direction: 'inbound', context: 'Interstate arrivals into core condos and neighborhood SFH.', href: '/resources/routes/california-to-oregon' },
+    { label: 'Portland ↔ Eugene / Bend / Medford in-state pairs', direction: 'outbound', context: 'I-5 / US-97 long hauls; ODOT certificate for pure Oregon jobs.' },
+    { label: 'Multnomah ↔ Washington / Clackamas collar pairs', direction: 'within', context: 'Core vs west-metro vs SE-metro logistics differ — keep county lines clear.' },
+    { label: 'Portland → Arizona / Colorado reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required out of Oregon.' },
+  ],
+  washington: [
+    { label: 'Within Washington County OR (Beaverton ↔ Hillsboro / Tigard–Tualatin)', direction: 'within', context: 'Silicon Forest HOA and multi-family — not Multnomah hills product. Oregon Washington County, not WA state.' },
+    { label: 'Tech / semiconductor relo → Hillsboro / Beaverton', direction: 'inbound', context: 'Hard report dates and corporate inventories dominate west-metro calendars.' },
+    { label: 'Washington County OR ↔ Multnomah / Clackamas pairs', direction: 'within', context: 'US-26/OR-217 multi-county logistics; clarify west-metro vs core vs SE-metro.' },
+    { label: 'Seattle / California → Silicon Forest housing', direction: 'inbound', context: 'Interstate household goods into HOA and multi-unit stock.' },
+    { label: 'West metro → Eugene / Bend in-state pairs', direction: 'outbound', context: 'Long Oregon hauls; ODOT for pure in-state jobs.' },
+    { label: 'Washington County OR → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Oregon.' },
+  ],
+  clackamas: [
+    { label: 'Within Clackamas (Oregon City ↔ Happy Valley / West Linn / Wilsonville)', direction: 'within', context: 'SE/south metro hills and HOA growth — not Pearl District elevators.' },
+    { label: 'Portland overflow → Clackamas suburban growth', direction: 'inbound', context: 'HOA packets and I-205 timing reshape crew hours.' },
+    { label: 'Clackamas ↔ Multnomah / Washington County OR pairs', direction: 'within', context: 'I-205 multi-county logistics; keep county lines clear.' },
+    { label: 'California / Midwest → SE-metro housing', direction: 'inbound', context: 'Interstate arrivals into HOA and Oregon City stock.' },
+    { label: 'Clackamas → Salem / Eugene in-state pairs', direction: 'outbound', context: 'I-5 southbound valley hauls; ODOT for pure Oregon jobs.' },
+    { label: 'Clackamas → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Oregon.' },
+  ],
+  lane: [
+    { label: 'Within Lane (Eugene / UO ↔ Springfield / south Eugene suburbs)', direction: 'within', context: 'University multi-unit vs HOA product — not Portland collar defaults.' },
+    { label: 'UO student & faculty lease cycles', direction: 'within', context: 'August clusters; elevators and curb limits dominate near campus.' },
+    { label: 'Portland ↔ Eugene (I-5) pairs', direction: 'inbound', context: 'Valley long locals; price I-5 portal time honestly.' },
+    { label: 'California → Eugene lifestyle & campus markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Eugene ↔ Bend / Medford in-state pairs', direction: 'outbound', context: 'I-5 / mountain-edge logistics; ODOT for pure Oregon jobs.' },
+    { label: 'Eugene → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Oregon.' },
+  ],
+  marion: [
+    { label: 'Within Marion (Downtown Salem ↔ South Salem / Keizer / Woodburn)', direction: 'within', context: 'Capital multi-unit vs mid-valley suburbs — not Eugene campus product.' },
+    { label: 'State government relo → Salem capital housing', direction: 'inbound', context: 'Hard dates and multi-unit access dominate capitol corridors.' },
+    { label: 'Portland ↔ Salem (I-5) pairs', direction: 'inbound', context: 'Looks regional at peak; price portal time honestly.' },
+    { label: 'Salem ↔ Eugene / Albany mid-valley pairs', direction: 'within', context: 'I-5 valley logistics; clarify Marion vs Linn/Lane destinations.' },
+    { label: 'California / Midwest → Salem capital markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Salem → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Oregon.' },
+  ],
+  deschutes: [
+    { label: 'Within Deschutes (Central Bend ↔ westside hills / Redmond / Sisters edges)', direction: 'within', context: 'High-desert growth and tourism pulses — not Willamette Valley product.' },
+    { label: 'Tourism & second-home turns → Bend', direction: 'inbound', context: 'Summer peaks and short windows reshape crew calendars.' },
+    { label: 'Portland ↔ Bend (US-26 / US-97) pairs', direction: 'inbound', context: 'Long central Oregon hauls; ODOT for pure in-state jobs.' },
+    { label: 'California / Colorado → Bend lifestyle markets', direction: 'inbound', context: 'Interstate household goods into HOA and multi-unit stock.' },
+    { label: 'Bend ↔ Eugene / Medford in-state pairs', direction: 'outbound', context: 'Mountain-edge and I-5/US-97 logistics differ at each end.' },
+    { label: 'Bend → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Oregon.' },
+  ],
+  jackson: [
+    { label: 'Within Jackson (Medford ↔ Ashland / Central Point / White City)', direction: 'within', context: 'Rogue Valley multi-unit vs hillside tourism stock — not Portland spillover.' },
+    { label: 'California ↔ Medford / Ashland southern OR pairs', direction: 'inbound', context: 'I-5 interstate household goods into valley and hillside stock.' },
+    { label: 'Portland ↔ Medford (I-5) pairs', direction: 'inbound', context: 'Long southern OR hauls; price empty miles honestly.' },
+    { label: 'Medford ↔ Eugene / Bend in-state pairs', direction: 'outbound', context: 'I-5 / US-97 logistics; ODOT for pure Oregon jobs.' },
+    { label: 'Tourism peaks → Ashland hillside stock', direction: 'within', context: 'Festival windows reshape curb and access.' },
+    { label: 'Medford → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Oregon.' },
+  ],
+  linn: [
+    { label: 'Within Linn (Albany ↔ Lebanon / Sweet Home edges)', direction: 'within', context: 'Mid-valley regional product — not Eugene campus or Salem capital clones.' },
+    { label: 'Portland / Salem ↔ Albany mid-valley pairs', direction: 'inbound', context: 'I-5 valley logistics; price portal time honestly.' },
+    { label: 'Albany ↔ Eugene (I-5) pairs', direction: 'within', context: 'Looks local on maps; keep Linn vs Lane destinations clear.' },
+    { label: 'California / Midwest → Albany regional markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and SFH stock.' },
+    { label: 'Linn ↔ Marion mid-valley pairs', direction: 'within', context: 'I-5 / OR-99E logistics between Albany and Salem markets.' },
+    { label: 'Albany → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Oregon.' },
+  ],
+};
 
 const MI_ROUTES: Record<string, CountyPopularRoute[]> = {
   wayne: [

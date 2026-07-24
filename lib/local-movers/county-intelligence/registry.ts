@@ -203,6 +203,15 @@ import { ottawaCountyMiIntelligence } from '@/lib/local-movers/county-intelligen
 import { inghamCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/ingham-mi';
 import { kalamazooCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/kalamazoo-mi';
 import { saginawCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/saginaw-mi';
+// Oregon Core 8
+import { multnomahCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/multnomah-or';
+import { washingtonCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/washington-or';
+import { clackamasCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/clackamas-or';
+import { laneCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/lane-or';
+import { marionCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/marion-or';
+import { deschutesCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/deschutes-or';
+import { jacksonCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/jackson-or';
+import { linnCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/linn-or';
 // Massachusetts Core 10
 import { middlesexCountyMaIntelligence } from '@/lib/local-movers/county-intelligence/massachusetts/middlesex-ma';
 import { worcesterCountyMaIntelligence } from '@/lib/local-movers/county-intelligence/massachusetts/worcester-ma';
@@ -218,7 +227,7 @@ import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-int
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / MA / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MA / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -416,6 +425,15 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   inghamCountyMiIntelligence,
   kalamazooCountyMiIntelligence,
   saginawCountyMiIntelligence,
+  // Oregon Core 8
+  multnomahCountyOrIntelligence,
+  washingtonCountyOrIntelligence,
+  clackamasCountyOrIntelligence,
+  laneCountyOrIntelligence,
+  marionCountyOrIntelligence,
+  deschutesCountyOrIntelligence,
+  jacksonCountyOrIntelligence,
+  linnCountyOrIntelligence,
   // Massachusetts Core 10
   middlesexCountyMaIntelligence,
   worcesterCountyMaIntelligence,
@@ -730,6 +748,18 @@ export const MI_TIER1_CORE10 = [
   'ingham',
   'kalamazoo',
   'saginaw',
+] as const;
+
+/** Oregon Tier-1 Core 8. */
+export const OR_TIER1_CORE8 = [
+  'multnomah',
+  'washington',
+  'clackamas',
+  'lane',
+  'marion',
+  'deschutes',
+  'jackson',
+  'linn',
 ] as const;
 
 /** Massachusetts Tier-1 Core 10 (Boston core + collar + central + South Shore/Cape + Pioneer Valley). */
