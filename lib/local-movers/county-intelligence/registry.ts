@@ -170,11 +170,22 @@ import { lorainCountyOhIntelligence } from '@/lib/local-movers/county-intelligen
 import { mahoningCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/mahoning-oh';
 import { warrenCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/warren-oh';
 import { lakeCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/lake-oh';
+// Colorado Core 10
+import { denverCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/denver-co';
+import { elPasoCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/el-paso-co';
+import { arapahoeCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/arapahoe-co';
+import { jeffersonCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/jefferson-co';
+import { adamsCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/adams-co';
+import { douglasCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/douglas-co';
+import { larimerCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/larimer-co';
+import { boulderCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/boulder-co';
+import { weldCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/weld-co';
+import { puebloCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/pueblo-co';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -339,6 +350,17 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   mahoningCountyOhIntelligence,
   warrenCountyOhIntelligence,
   lakeCountyOhIntelligence,
+  // Colorado Core 10
+  denverCountyCoIntelligence,
+  elPasoCountyCoIntelligence,
+  arapahoeCountyCoIntelligence,
+  jeffersonCountyCoIntelligence,
+  adamsCountyCoIntelligence,
+  douglasCountyCoIntelligence,
+  larimerCountyCoIntelligence,
+  boulderCountyCoIntelligence,
+  weldCountyCoIntelligence,
+  puebloCountyCoIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -568,6 +590,20 @@ export const IL_TIER1_CORE12 = [
   'sangamon',
   'champaign',
   'peoria',
+] as const;
+
+/** Colorado Tier-1 Core 10 (Denver metro + Front Range + southern hub). */
+export const CO_TIER1_CORE10 = [
+  'denver',
+  'el-paso',
+  'arapahoe',
+  'jefferson',
+  'adams',
+  'douglas',
+  'larimer',
+  'boulder',
+  'weld',
+  'pueblo',
 ] as const;
 
 /** Pennsylvania Tier-1 Core 12. */

@@ -285,6 +285,8 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'ICC household goods license for in-state-only jobs when applicable';
     case 'ohio':
       return 'PUCO household goods authority for in-state-only jobs when applicable';
+    case 'colorado':
+      return 'Colorado PUC household goods (HHG) permit for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -343,7 +345,9 @@ export function buildCountyFaqItems(
                               ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Illinois household goods moves by for-hire carriers generally require an Illinois Commerce Commission (ICC) Household Goods license. Search ICC motor carrier tools for an active license matching the legal name on your estimate. FMCSA does not cover every in-state Illinois job; confirm ICC household goods authority vs FMCSA for your exact origin and destination before you deposit.`
                               : county.stateSlug === 'ohio'
                                 ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Ohio household goods moves are generally regulated by the Public Utilities Commission of Ohio (PUCO). Confirm the mover holds active PUCO household goods authority, carries required insurance, and matches the legal name on your estimate. FMCSA does not cover every in-state Ohio job; confirm PUCO vs FMCSA for your exact origin and destination before you deposit.`
-                                : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                                : county.stateSlug === 'colorado'
+                                  ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Colorado household goods moves generally require a valid Colorado Public Utilities Commission (PUC) household goods (HHG) permit under Title 40, Article 10.1, C.R.S. Search the Colorado PUC permit tools and match the legal name on your estimate. FMCSA does not cover every in-state Colorado job; confirm Colorado PUC HHG authority vs FMCSA for your exact origin and destination before you deposit.`
+                                  : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

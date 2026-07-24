@@ -126,6 +126,18 @@ const CORRIDORS: Record<string, string> = {
   'illinois/champaign': 'I-57 · I-74 · US-45 · University corridors',
   'illinois/peoria': 'I-74 · I-474 · IL-29 · US-24',
 
+  // ——— Colorado Core 10 ———
+  'colorado/denver': 'I-25 · I-70 · I-225 · US-6 · Colfax · local arterial grid',
+  'colorado/el-paso': 'I-25 · US-24 · Powers Blvd · Academy Blvd',
+  'colorado/arapahoe': 'I-25 · I-225 · E-470 · Parker Road · Smoky Hill corridors',
+  'colorado/jefferson': 'I-70 · US-6 · C-470 · Wadsworth · Colfax west',
+  'colorado/adams': 'I-25 · I-76 · E-470 · I-270 · Tower Road corridors',
+  'colorado/douglas': 'I-25 · C-470 · E-470 · US-85 · Founders/Lincoln corridors',
+  'colorado/larimer': 'I-25 · US-34 · US-287 · Harmony Road corridors',
+  'colorado/boulder': 'US-36 · CO-119 · CO-93 · Foothills Pkwy · Canyon corridors',
+  'colorado/weld': 'I-25 · US-34 · US-85 · CO-257 corridors',
+  'colorado/pueblo': 'I-25 · US-50 · CO-47 · Pueblo Blvd corridors',
+
   // ——— Virginia Core 12 ———
   'virginia/fairfax': 'I-66 · I-495 · VA-28 · Dulles Toll Road · VA-236 · I-95 links',
   'virginia/prince-william': 'I-95 · I-66 · VA-234 · US-1 · Prince William Pkwy',
@@ -225,7 +237,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
     v
   );
 }

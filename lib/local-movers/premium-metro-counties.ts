@@ -29,6 +29,11 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'colorado', countySlug: 'arapahoe' },
   { stateSlug: 'colorado', countySlug: 'adams' },
   { stateSlug: 'colorado', countySlug: 'douglas' },
+  { stateSlug: 'colorado', countySlug: 'el-paso' },
+  { stateSlug: 'colorado', countySlug: 'larimer' },
+  { stateSlug: 'colorado', countySlug: 'boulder' },
+  { stateSlug: 'colorado', countySlug: 'weld' },
+  { stateSlug: 'colorado', countySlug: 'pueblo' },
   // Nevada
   { stateSlug: 'nevada', countySlug: 'clark' },
   { stateSlug: 'nevada', countySlug: 'washoe' },

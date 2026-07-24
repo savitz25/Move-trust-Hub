@@ -4874,6 +4874,90 @@ const IL_ROUTES: Record<string, CountyPopularRoute[]> = {
 };
 
 
+const CO_ROUTES: Record<string, CountyPopularRoute[]> = {
+  denver: [
+    { label: 'Within Denver (RiNo / LoDo / Highlands ↔ Capitol Hill / Wash Park)', direction: 'within', context: 'Elevator COI and street permits downtown vs multi-story walk-ups — altitude still hits new crews.' },
+    { label: 'California / Texas / Arizona → Denver lifestyle & tech markets', direction: 'inbound', context: 'High-volume Front Range inflows; I-70 and DIA last-mile shape delivery windows.', href: '/resources/routes/california-to-colorado' },
+    { label: 'Denver ↔ Boulder / Aurora / Lakewood / Highlands Ranch pairs', direction: 'within', context: 'City-to-collar logistics; I-25 / I-70 / C-470 portal time dominates.' },
+    { label: 'Denver → Colorado Springs (I-25 south)', direction: 'outbound', context: 'Common Front Range internal move; still confirm CO PUC HHG for pure in-state jobs.' },
+    { label: 'Midwest → Denver career corridors', direction: 'inbound', context: 'I-70 / I-76 approaches into multi-unit and bungalow stock.' },
+    { label: 'Denver → Seattle / Bay Area reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required out of Colorado.', href: '/resources/routes/california-to-washington' },
+  ],
+  'el-paso': [
+    { label: 'Within El Paso (Downtown / Old Colorado City ↔ Powers / Northgate / Widefield)', direction: 'within', context: 'Military-adjacent product mixed with Springs suburbs — not a Denver collar quote.' },
+    { label: 'Fort Carson / Academy / Peterson PCS inflows', direction: 'inbound', context: 'Hard report dates and storage-in-transit dominate military calendars.' },
+    { label: 'Colorado Springs ↔ Denver / Castle Rock (I-25)', direction: 'within', context: 'Front Range long local; price portal time honestly.' },
+    { label: 'California / Texas → Colorado Springs lifestyle & military markets', direction: 'inbound', context: 'Interstate household goods into elevation and HOA stock.', href: '/resources/routes/california-to-colorado' },
+    { label: 'Colorado Springs → Pueblo / southern Colorado pairs', direction: 'outbound', context: 'In-state regional hauls; CO PUC HHG for pure Colorado jobs.' },
+    { label: 'El Paso → Arizona / Texas reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required out of state.' },
+  ],
+  arapahoe: [
+    { label: 'Within Arapahoe (Aurora ↔ DTC / Centennial / Englewood / Parker edge)', direction: 'within', context: 'South-metro HOA and multi-unit mix — not Denver core elevators as default.' },
+    { label: 'Denver overflow → Arapahoe suburbs', direction: 'inbound', context: 'Space and school-seeking inflows; I-225 / E-470 timing shapes crew hours.' },
+    { label: 'Arapahoe ↔ Denver / Douglas / Adams pairs', direction: 'within', context: 'Collar multi-county logistics; clarify county lines on estimates.' },
+    { label: 'California / Midwest → Aurora / south-metro housing', direction: 'inbound', context: 'Interstate arrivals into HOA tracts and multi-family.', href: '/resources/routes/california-to-colorado' },
+    { label: 'Arapahoe → El Paso County (Springs) pairs', direction: 'outbound', context: 'I-25 southbound Front Range moves; CO PUC for in-state.' },
+    { label: 'Arapahoe → Texas / Arizona long-distance exits', direction: 'outbound', context: 'Interstate household goods; volume surveys recommended.' },
+  ],
+  jefferson: [
+    { label: 'Within Jefferson (Lakewood / Arvada ↔ Golden / foothills edges)', direction: 'within', context: 'West-metro grids and foothills driveways — elevation and grade matter.' },
+    { label: 'Denver core ↔ Jefferson west-metro pairs', direction: 'within', context: 'I-70 / Colfax west / C-470 portal time dominates peak windows.' },
+    { label: 'California / Midwest → Lakewood / Arvada housing', direction: 'inbound', context: 'Interstate household goods into west-metro stock.', href: '/resources/routes/california-to-colorado' },
+    { label: 'Jefferson ↔ Boulder / Denver / Adams pairs', direction: 'within', context: 'Front Range multi-county logistics; clarify foothills access early.' },
+    { label: 'Golden / Evergreen-edge foothills stock', direction: 'within', context: 'Photo grades, turn radius, and winter ice risk before truck sizing.' },
+    { label: 'Jefferson → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Colorado.' },
+  ],
+  adams: [
+    { label: 'Within Adams (Thornton / Westminster edges ↔ Brighton / Commerce City / airport corridor)', direction: 'within', context: 'North-metro growth and DIA-adjacent logistics — not Denver walk-up product.' },
+    { label: 'Denver overflow → Adams new subdivisions', direction: 'inbound', context: 'HOA packets and unfinished streets appear on surveys.' },
+    { label: 'Adams ↔ Denver / Weld / Arapahoe pairs', direction: 'within', context: 'I-25 / I-76 / E-470 timing; industrial traffic near airport corridors.' },
+    { label: 'Midwest → Adams County north-metro housing', direction: 'inbound', context: 'I-76 / I-70 approaches into growth suburbs.' },
+    { label: 'Airport-corridor multi-family and workforce housing', direction: 'within', context: 'Lease waves and early starts beat shift-change congestion.' },
+    { label: 'Adams → interstate Sun Belt exits', direction: 'outbound', context: 'FMCSA required out of Colorado; volume surveys recommended.' },
+  ],
+  douglas: [
+    { label: 'Within Douglas (Highlands Ranch ↔ Parker / Castle Rock / Lone Tree)', direction: 'within', context: 'Master-planned HOAs and longer south-metro runs — not Denver core.' },
+    { label: 'Denver / Arapahoe overflow → Douglas growth villages', direction: 'inbound', context: 'Gate lists and COI dominate Highlands Ranch and Parker product.' },
+    { label: 'Douglas ↔ Denver / El Paso (I-25) pairs', direction: 'within', context: 'South Front Range logistics; price C-470 / E-470 / I-25 portal time honestly.' },
+    { label: 'California / Texas → Castle Rock / Parker housing', direction: 'inbound', context: 'Interstate household goods into HOA tracts.', href: '/resources/routes/california-to-colorado' },
+    { label: 'Lone Tree / RidgeGate multi-unit stock', direction: 'within', context: 'Elevator buildings mixed with HOA SFH — survey access type carefully.' },
+    { label: 'Douglas → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Colorado.' },
+  ],
+  larimer: [
+    { label: 'Within Larimer (Fort Collins / CSU ↔ Loveland / Windsor edge)', direction: 'within', context: 'University multi-unit vs north Front Range suburbs — not Boulder clone.' },
+    { label: 'CSU student & faculty lease cycles', direction: 'within', context: 'August/May clusters; stairs and multi-unit access dominate near campus.' },
+    { label: 'Larimer ↔ Weld / Denver (I-25) pairs', direction: 'within', context: 'North Front Range long locals; I-25 portal time matters.' },
+    { label: 'California / Midwest → Fort Collins lifestyle markets', direction: 'inbound', context: 'Interstate household goods into elevation and HOA stock.', href: '/resources/routes/california-to-colorado' },
+    { label: 'Fort Collins → Denver career pairs', direction: 'outbound', context: 'In-state Front Range moves; CO PUC HHG for pure Colorado jobs.' },
+    { label: 'Larimer → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Colorado.' },
+  ],
+  boulder: [
+    { label: 'Within Boulder (Central Boulder ↔ Gunbarrel / Louisville-Superior edge / foothills)', direction: 'within', context: 'Constrained city access and foothills driveways — not Fort Collins sprawl.' },
+    { label: 'CU / tech inflows → Boulder constrained housing', direction: 'inbound', context: 'Limited curb, multi-unit, and strict local conditions reshape move windows.' },
+    { label: 'Boulder ↔ Denver (US-36) pairs', direction: 'within', context: 'Daily Front Range logistics; US-36 peak congestion is a real billable factor.' },
+    { label: 'California / Seattle → Boulder tech & outdoor markets', direction: 'inbound', context: 'Interstate household goods into constrained city stock.', href: '/resources/routes/california-to-colorado' },
+    { label: 'Boulder ↔ Larimer / Jefferson pairs', direction: 'within', context: 'Mountain-edge and north Front Range product differs at each end.' },
+    { label: 'Boulder → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Colorado.' },
+  ],
+  weld: [
+    { label: 'Within Weld (Greeley ↔ Windsor / Firestone-Frederick / Eaton edges)', direction: 'within', context: 'North plains growth and energy/ag adjacency — not Boulder product.' },
+    { label: 'Energy / ag / manufacturing workforce inflows', direction: 'inbound', context: 'Mid-week hard dates and industrial traffic near growth towns.' },
+    { label: 'Weld ↔ Larimer / Adams / Denver pairs', direction: 'within', context: 'I-25 / US-85 / US-34 logistics; longer empty miles than core metro collar.' },
+    { label: 'Midwest → Greeley / north plains housing', direction: 'inbound', context: 'Interstate household goods into growth suburbs and SFH stock.' },
+    { label: 'Windsor / southern Weld HOA growth', direction: 'within', context: 'Gate lists and school-season Saturday demand; book peak weekends early.' },
+    { label: 'Weld → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Colorado.' },
+  ],
+  pueblo: [
+    { label: 'Within Pueblo (Downtown / Bessemer ↔ north Pueblo / Pueblo West edge)', direction: 'within', context: 'Southern Colorado regional hub — not Denver or Springs clone.' },
+    { label: 'In-state CO → Pueblo affordability & regional jobs', direction: 'inbound', context: 'Front Range reverse and southern CO inflows into multi-unit and SFH stock.' },
+    { label: 'Pueblo ↔ Colorado Springs (I-25) pairs', direction: 'within', context: 'Southern Front Range regional hauls; CO PUC for pure in-state jobs.' },
+    { label: 'Texas / New Mexico → Pueblo regional markets', direction: 'inbound', context: 'I-25 corridor interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Pueblo West / northern growth edges', direction: 'within', context: 'Longer empty miles from core yards; photo access early.' },
+    { label: 'Pueblo → Denver / out-of-state career exits', direction: 'outbound', context: 'I-25 northbound or interstate; confirm CO PUC vs FMCSA for the full route.' },
+  ],
+};
+
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -4892,6 +4976,7 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'pennsylvania') return PA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'illinois') return IL_ROUTES[countySlug] ?? [];
   if (stateSlug === 'ohio') return OH_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'colorado') return CO_ROUTES[countySlug] ?? [];
   return [];
 }
 
