@@ -314,11 +314,25 @@ import { washoeCountyNvIntelligence } from '@/lib/local-movers/county-intelligen
 import { carsonCityNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/carson-city-nv';
 import { douglasCountyNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/douglas-nv';
 import { nyeCountyNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/nye-nv';
+// Oklahoma Core 6
+import { oklahomaCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/oklahoma-ok';
+import { tulsaCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/tulsa-ok';
+import { clevelandCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/cleveland-ok';
+import { canadianCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/canadian-ok';
+import { comancheCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/comanche-ok';
+import { rogersCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/rogers-ok';
+// Iowa Core 6
+import { polkCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/polk-ia';
+import { linnCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/linn-ia';
+import { scottCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/scott-ia';
+import { johnsonCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/johnson-ia';
+import { blackHawkCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/black-hawk-ia';
+import { woodburyCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/woodbury-ia';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / OK / IA / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
@@ -626,6 +640,20 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   carsonCityNvIntelligence,
   douglasCountyNvIntelligence,
   nyeCountyNvIntelligence,
+  // Oklahoma Core 6
+  oklahomaCountyOkIntelligence,
+  tulsaCountyOkIntelligence,
+  clevelandCountyOkIntelligence,
+  canadianCountyOkIntelligence,
+  comancheCountyOkIntelligence,
+  rogersCountyOkIntelligence,
+  // Iowa Core 6
+  polkCountyIaIntelligence,
+  linnCountyIaIntelligence,
+  scottCountyIaIntelligence,
+  johnsonCountyIaIntelligence,
+  blackHawkCountyIaIntelligence,
+  woodburyCountyIaIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -1082,4 +1110,24 @@ export const NV_TIER1_CORE5 = [
   'carson-city',
   'douglas',
   'nye',
+] as const;
+
+/** Oklahoma Tier-1 Core 6 (OKC + Tulsa + Norman + west OKC + Lawton + NE Tulsa). */
+export const OK_TIER1_CORE6 = [
+  'oklahoma',
+  'tulsa',
+  'cleveland',
+  'canadian',
+  'comanche',
+  'rogers',
+] as const;
+
+/** Iowa Tier-1 Core 6 (Des Moines + CR + Quad Cities + Iowa City + Waterloo–CF + Sioux City). */
+export const IA_TIER1_CORE6 = [
+  'polk',
+  'linn',
+  'scott',
+  'johnson',
+  'black-hawk',
+  'woodbury',
 ] as const;

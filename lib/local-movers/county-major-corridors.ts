@@ -204,6 +204,22 @@ const CORRIDORS: Record<string, string> = {
   'nevada/carson-city': 'US-50 · US-395 · I-580 links · local grid',
   'nevada/douglas': 'US-395 · US-50 · NV-207/Tahoe approaches',
   'nevada/nye': 'NV-160 · US-95 · local Pahrump grid',
+  // ——— Oklahoma Core 6 ———
+  'oklahoma/oklahoma': 'I-35 · I-40 · I-44 · I-235 · Kilpatrick Turnpike · local arterial grid',
+  'oklahoma/tulsa': 'I-44 · I-244 · US-75 · US-169 · Creek Turnpike · local arterial grid',
+  'oklahoma/cleveland': 'I-35 · US-77 · OK-9 · local Norman grid',
+  'oklahoma/canadian': 'I-40 · Kilpatrick links · OK-4 · local west-metro grid',
+  'oklahoma/comanche': 'I-44 · US-62 · US-281 · local Lawton grid',
+  'oklahoma/rogers': 'I-44 · OK-66 · OK-20 · local northeast metro grid',
+
+  // ——— Iowa Core 6 ———
+  'iowa/polk': 'I-35 · I-80 · I-235 · US-6 · local Des Moines grid',
+  'iowa/linn': 'I-380 · US-30 · US-151 · local Cedar Rapids grid',
+  'iowa/scott': 'I-74 · I-80 · US-61 · US-67 · local Quad Cities grid',
+  'iowa/johnson': 'I-80 · US-218 · US-6 · local Iowa City grid',
+  'iowa/black-hawk': 'I-380 · US-20 · US-218 · local Waterloo/Cedar Falls grid',
+  'iowa/woodbury': 'I-29 · US-20 · US-75 · local Sioux City grid',
+
 
 // ——— Michigan Core 10 ———
   'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',

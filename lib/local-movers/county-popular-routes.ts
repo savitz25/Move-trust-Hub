@@ -5071,6 +5071,8 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'missouri') return MO_ROUTES[countySlug] ?? [];
   if (stateSlug === 'kentucky') return KY_ROUTES[countySlug] ?? [];
   if (stateSlug === 'nevada') return NV_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'oklahoma') return OK_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'iowa') return IA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'connecticut') return CT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
@@ -5932,6 +5934,110 @@ const NV_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Nye → Las Vegas reverse commute housing pairs', direction: 'outbound', context: 'NV-160 freeflow; NTA CPCN for pure in-state jobs.' },
     { label: 'Nye → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Retirement and second-home inflows → Pahrump multi-family and SFH', direction: 'inbound', context: 'HOA multi-family and long driveway stock both appear.' },
+  ],
+};
+
+
+const OK_ROUTES: Record<string, CountyPopularRoute[]> = {
+  oklahoma: [
+    { label: 'Within Oklahoma County (Downtown / Midtown OKC ↔ North / West suburbs)', direction: 'within', context: 'Oklahoma County / OKC product — county-clear, not statewide-only framing; elevators vs HOA multi-family differ.' },
+    { label: 'Texas / DFW → Oklahoma City housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'OKC ↔ Tulsa in-state pairs', direction: 'outbound', context: 'I-44 long locals; OCC HHG certificate for pure in-state jobs.' },
+    { label: 'Oklahoma County ↔ Cleveland (Norman) pairs', direction: 'within', context: 'I-35 south-metro logistics; keep county lines clear.' },
+    { label: 'OKC → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest → Oklahoma City professional & energy corridors', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  tulsa: [
+    { label: 'Within Tulsa (Midtown ↔ South Tulsa / Broken Arrow edges)', direction: 'within', context: 'River-city multi-unit vs south suburban HOA product — not OKC defaults.' },
+    { label: 'OKC → Tulsa in-state pairs', direction: 'inbound', context: 'I-44 long locals; OCC HHG certificate for pure in-state jobs.' },
+    { label: 'Tulsa ↔ Rogers / NE metro pairs', direction: 'within', context: 'I-44 / turnpike logistics; keep county lines clear.' },
+    { label: 'Texas / Arkansas → Tulsa housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Tulsa → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest → Tulsa professional corridors', direction: 'inbound', context: 'Interstate household goods into midtown multi-unit and suburban stock.' },
+  ],
+  cleveland: [
+    { label: 'Within Cleveland County, OK (Norman core ↔ OU multi-unit / south growth)', direction: 'within', context: 'Norman / OU product — Oklahoma only, not Cleveland Ohio.' },
+    { label: 'OU semester inflows → campus multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'Oklahoma County ↔ Cleveland (Norman) pairs', direction: 'within', context: 'I-35 south-metro logistics; keep county lines clear.' },
+    { label: 'Texas → Norman / Cleveland County housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Cleveland County, OK → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Cleveland → Tulsa / regional reverse career pairs', direction: 'outbound', context: 'I-44 / I-35 logistics; OCC for pure in-state jobs.' },
+  ],
+  canadian: [
+    { label: 'Within Canadian (Yukon / Mustang ↔ west OKC growth edges)', direction: 'within', context: 'West-metro HOA multi-family — not downtown Oklahoma County elevators as default.' },
+    { label: 'Oklahoma County → Canadian west-metro housing', direction: 'inbound', context: 'I-40 / Kilpatrick collar logistics; portal time dominates at peak.' },
+    { label: 'Canadian ↔ Oklahoma County multi-county pairs', direction: 'within', context: 'Keep county lines clear; access products differ.' },
+    { label: 'Texas → west OKC / Canadian growth housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Canadian → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Canadian → Tulsa in-state long hauls', direction: 'outbound', context: 'I-44 long locals; OCC HHG certificate for pure in-state jobs.' },
+  ],
+  comanche: [
+    { label: 'Within Comanche (Lawton core ↔ Fort Sill-adjacent edges)', direction: 'within', context: 'Southwest regional product with military-adjacent calendars where accurate.' },
+    { label: 'Fort Sill PCS / military relo → Lawton multi-unit and SFH', direction: 'inbound', context: 'Hard report dates and storage-in-transit are common estimate inputs.' },
+    { label: 'OKC / Tulsa → Lawton in-state pairs', direction: 'inbound', context: 'I-44 long locals; OCC HHG certificate for pure in-state jobs.' },
+    { label: 'Texas → Lawton / Comanche housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Comanche → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Comanche → OKC reverse career pairs', direction: 'outbound', context: 'I-44 freeflow; OCC for pure in-state jobs.' },
+  ],
+  rogers: [
+    { label: 'Within Rogers (Claremore ↔ Catoosa / NE Tulsa fringe)', direction: 'within', context: 'Northeast Tulsa metro fringe — not Tulsa midtown defaults.' },
+    { label: 'Tulsa County → Rogers NE metro housing', direction: 'inbound', context: 'I-44 / OK-66 collar logistics; empty miles matter.' },
+    { label: 'Rogers ↔ Tulsa multi-county pairs', direction: 'within', context: 'Keep county lines clear; access products differ.' },
+    { label: 'Arkansas / Missouri → Rogers fringe housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Rogers → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Rogers → OKC in-state long hauls', direction: 'outbound', context: 'I-44 long locals; OCC HHG certificate for pure in-state jobs.' },
+  ],
+};
+
+
+const IA_ROUTES: Record<string, CountyPopularRoute[]> = {
+  polk: [
+    { label: 'Within Polk (Downtown Des Moines ↔ West Des Moines / Ankeny / Urbandale)', direction: 'within', context: 'Insurance/corporate multi-unit vs suburban HOA product — portal time on I-235 / I-35 dominates.' },
+    { label: 'Chicago / Midwest → Des Moines professional housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Des Moines ↔ Cedar Rapids / Iowa City in-state pairs', direction: 'outbound', context: 'I-80 / I-35 long locals; Iowa DOT HHG permit for pure in-state jobs.' },
+    { label: 'Polk ↔ Dallas / Warren collar pairs', direction: 'within', context: 'Metro multi-county logistics; keep county lines clear.' },
+    { label: 'Polk → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Nebraska / Minnesota → Des Moines housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  linn: [
+    { label: 'Within Linn (Downtown Cedar Rapids ↔ Marion / Hiawatha growth)', direction: 'within', context: 'Regional industrial + residential mix — not Des Moines east.' },
+    { label: 'Des Moines → Cedar Rapids in-state pairs', direction: 'inbound', context: 'I-80 / I-380 logistics; Iowa DOT HHG permit for pure in-state jobs.' },
+    { label: 'Linn ↔ Johnson (Iowa City) pairs', direction: 'within', context: 'I-380 / US-218 corridor logistics; keep county lines clear.' },
+    { label: 'Chicago / Illinois → Cedar Rapids housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Linn → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Manufacturing workforce relo → Cedar Rapids multi-family', direction: 'inbound', context: 'Shift calendars reshape crew timing.' },
+  ],
+  scott: [
+    { label: 'Within Scott (Davenport ↔ Bettendorf / Quad Cities IA edges)', direction: 'within', context: 'Mississippi River / Quad Cities product — not Des Moines east.' },
+    { label: 'Illinois Quad Cities → Scott County housing', direction: 'inbound', context: 'Short river hops need FMCSA even when map miles look local.' },
+    { label: 'Scott ↔ Muscatine / Clinton regional pairs', direction: 'within', context: 'River corridor logistics; keep county lines clear.' },
+    { label: 'Des Moines / Cedar Rapids → Quad Cities in-state pairs', direction: 'inbound', context: 'I-80 long locals; Iowa DOT HHG permit for pure in-state jobs.' },
+    { label: 'Scott → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Chicago → Davenport / Quad Cities housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  johnson: [
+    { label: 'Within Johnson County, IA (Iowa City / campus ↔ Coralville / North Liberty)', direction: 'within', context: 'University multi-unit vs growth multi-family — Iowa only, not Johnson KS/TN.' },
+    { label: 'UI semester inflows → campus multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'Cedar Rapids ↔ Iowa City pairs', direction: 'within', context: 'I-380 / US-218 logistics; keep Linn vs Johnson lines clear.' },
+    { label: 'Des Moines → Iowa City in-state pairs', direction: 'inbound', context: 'I-80 long locals; Iowa DOT HHG permit for pure in-state jobs.' },
+    { label: 'Johnson County, IA → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Chicago / Midwest → Iowa City academic housing', direction: 'inbound', context: 'Interstate household goods into campus multi-unit and suburban stock.' },
+  ],
+  'black-hawk': [
+    { label: 'Within Black Hawk (Waterloo ↔ Cedar Falls twin markets)', direction: 'within', context: 'Twin-market multi-unit and campus product — not Cedar Rapids or Des Moines clones.' },
+    { label: 'UNI / campus peaks → Cedar Falls multi-unit', direction: 'inbound', context: 'Semester waves cluster elevators and curb demand.' },
+    { label: 'Cedar Rapids → Waterloo–Cedar Falls in-state pairs', direction: 'inbound', context: 'I-380 logistics; Iowa DOT HHG permit for pure in-state jobs.' },
+    { label: 'Black Hawk ↔ Bremer / Butler regional pairs', direction: 'within', context: 'Northeast Iowa logistics; keep county lines clear.' },
+    { label: 'Black Hawk → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Minnesota / Wisconsin → Waterloo–Cedar Falls housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  woodbury: [
+    { label: 'Within Woodbury (Sioux City core ↔ Sergeant Bluff / suburb edges)', direction: 'within', context: 'Western Iowa Missouri River product — not central Iowa Des Moines spillover.' },
+    { label: 'Nebraska / South Dakota → Sioux City housing', direction: 'inbound', context: 'Short border hops need FMCSA even when map miles look local.' },
+    { label: 'Des Moines → Sioux City in-state long hauls', direction: 'inbound', context: 'I-80 / I-29 logistics; Iowa DOT HHG permit for pure in-state jobs.' },
+    { label: 'Woodbury ↔ Plymouth / Cherokee regional pairs', direction: 'within', context: 'Northwest Iowa logistics; keep county lines clear.' },
+    { label: 'Woodbury → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest → Sioux City regional housing & jobs', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
   ],
 };
 

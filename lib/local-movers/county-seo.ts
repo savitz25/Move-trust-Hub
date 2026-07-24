@@ -317,6 +317,10 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'APSC Motor Carrier Services household goods authority for in-state-only jobs when applicable';
     case 'louisiana':
       return 'LPSC household goods common carrier certificate for in-state-only jobs when applicable';
+    case 'oklahoma':
+      return 'OCC Household Goods Certificate for in-state-only jobs when applicable';
+    case 'iowa':
+      return 'Iowa DOT Intrastate Motor Carrier Permit (household goods) for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -409,7 +413,11 @@ export function buildCountyFaqItems(
                                                                 ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Alabama household goods moves by for-hire carriers generally require Alabama Public Service Commission (APSC) Motor Carrier Services intrastate authority under the Alabama Motor Carrier Act (Title 37 Chapter 3), including cargo and liability insurance filings and an approved tariff. Confirm active APSC authority matching the legal name on your estimate. FMCSA does not cover every in-state Alabama job; confirm APSC household goods authority vs FMCSA for your exact origin and destination before you deposit.`
                                                                 : county.stateSlug === 'louisiana'
                                                                   ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Louisiana household goods moves are regulated by the Louisiana Public Service Commission (LPSC). Intrastate movers generally must hold a common carrier certificate from the LPSC before engaging in household goods moving activities (La. R.S. 45:164.E). Confirm the company is registered and in good standing, and obtain a written estimate matching the legal name on the paperwork. FMCSA does not cover every in-state Louisiana job; confirm LPSC household goods authority vs FMCSA for your exact origin and destination before you deposit.`
-                                                                  : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                                                                  : county.stateSlug === 'oklahoma'
+                                                                    ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Oklahoma household goods moves — even shipments wholly within city limits — generally require a Household Goods Certificate from the Oklahoma Corporation Commission (OCC) Transportation Division. Confirm active certificate status matching the legal name on your estimate. FMCSA does not cover every in-state Oklahoma job; confirm OCC household goods certificate vs FMCSA for your exact origin and destination before you deposit.`
+                                                                    : county.stateSlug === 'iowa'
+                                                                      ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Iowa household goods moves by for-hire carriers generally require an Intrastate Motor Carrier Permit from the Iowa DOT Office of Motor Carrier Services, with household goods tariffs filed, posted, and approved. Confirm permit status and written rate clarity matching the legal name on your estimate. FMCSA does not cover every in-state Iowa job; confirm Iowa DOT household goods authority vs FMCSA for your exact origin and destination before you deposit.`
+                                                                      : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

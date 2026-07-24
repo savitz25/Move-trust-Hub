@@ -212,6 +212,20 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'nevada', countySlug: 'carson-city' },
   { stateSlug: 'nevada', countySlug: 'douglas' },
   { stateSlug: 'nevada', countySlug: 'nye' },
+  // Oklahoma Core 6
+  { stateSlug: 'oklahoma', countySlug: 'oklahoma' },
+  { stateSlug: 'oklahoma', countySlug: 'tulsa' },
+  { stateSlug: 'oklahoma', countySlug: 'cleveland' },
+  { stateSlug: 'oklahoma', countySlug: 'canadian' },
+  { stateSlug: 'oklahoma', countySlug: 'comanche' },
+  { stateSlug: 'oklahoma', countySlug: 'rogers' },
+  // Iowa Core 6
+  { stateSlug: 'iowa', countySlug: 'polk' },
+  { stateSlug: 'iowa', countySlug: 'linn' },
+  { stateSlug: 'iowa', countySlug: 'scott' },
+  { stateSlug: 'iowa', countySlug: 'johnson' },
+  { stateSlug: 'iowa', countySlug: 'black-hawk' },
+  { stateSlug: 'iowa', countySlug: 'woodbury' },
 ] as const;
 
 const premiumMetroKeySet = new Set(
