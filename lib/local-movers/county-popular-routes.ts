@@ -5070,8 +5070,112 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'wisconsin') return WI_ROUTES[countySlug] ?? [];
   if (stateSlug === 'missouri') return MO_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'connecticut') return CT_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const CT_ROUTES: Record<string, CountyPopularRoute[]> = {
+  fairfield: [
+    { label: 'Within Fairfield (Stamford ↔ Greenwich / Norwalk / Bridgeport)', direction: 'within', context: 'NYC-collar elevators and coastal HOA — not Hartford capital product.' },
+    { label: 'NYC / Westchester ↔ Fairfield reverse-commute pairs', direction: 'inbound', context: 'I-95 interstate household goods; FMCSA when any leg leaves Connecticut.' },
+    { label: 'Fairfield ↔ Hartford / New Haven in-state pairs', direction: 'within', context: 'I-95/I-91 long locals; CTDOT certificate for pure in-state jobs.' },
+    { label: 'Boston / Providence ↔ Fairfield professional corridors', direction: 'inbound', context: 'I-95 interstate household goods into coastal multi-unit stock.' },
+    { label: 'Florida / Sun Belt ↔ Fairfield reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Fairfield → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Connecticut.' },
+  ],
+  hartford: [
+    { label: 'Within Hartford (Downtown ↔ West Hartford / Manchester / Farmington Valley)', direction: 'within', context: 'Capital multi-unit vs HOA suburbs — not Fairfield NYC collar.' },
+    { label: 'Insurance / capital relo → Hartford corridors', direction: 'inbound', context: 'Hard report dates and building packets reshape calendars.' },
+    { label: 'Hartford ↔ Fairfield / New Haven in-state pairs', direction: 'within', context: 'I-84/I-91 multi-county logistics; keep market product distinct.' },
+    { label: 'Boston / NYC ↔ Hartford capital markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Springfield MA ↔ Hartford pairs', direction: 'inbound', context: 'I-91 regional interstate; clarify CTDOT vs FMCSA for the full route.' },
+    { label: 'Hartford → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Connecticut.' },
+  ],
+  'new-haven': [
+    { label: 'Within New Haven (Downtown / Yale ↔ Hamden / Milford shoreline)', direction: 'within', context: 'University multi-unit vs shoreline stock — not Stamford corporate defaults.' },
+    { label: 'Yale student & faculty lease cycles', direction: 'within', context: 'August/May clusters; elevators and curb limits dominate near campus.' },
+    { label: 'New Haven ↔ Fairfield / Hartford in-state pairs', direction: 'within', context: 'I-95/I-91 logistics; university vs capital vs NYC-collar product differs.' },
+    { label: 'NYC / Boston ↔ New Haven university markets', direction: 'inbound', context: 'Interstate household goods into campus multi-unit and shoreline stock.' },
+    { label: 'Florida / Sun Belt ↔ New Haven reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'New Haven → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Connecticut.' },
+  ],
+  'new-london': [
+    { label: 'Within New London (New London / Groton ↔ Norwich / Waterford shore)', direction: 'within', context: 'Shoreline and defense-adjacent stock — not Hartford capital product.' },
+    { label: 'Defense / shipyard PCS → Groton / New London housing', direction: 'inbound', context: 'Hard report dates reshape eastern CT calendars.' },
+    { label: 'New London ↔ New Haven / Rhode Island pairs', direction: 'within', context: 'I-95 logistics; clarify CTDOT vs FMCSA when crossing into RI.' },
+    { label: 'Ferry / tourism peaks → shoreline multi-unit', direction: 'within', context: 'Summer weekends reshape curb staging.' },
+    { label: 'NYC / Boston ↔ New London shoreline markets', direction: 'inbound', context: 'I-95 interstate household goods into shore and inland stock.' },
+    { label: 'New London → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Connecticut.' },
+  ],
+  litchfield: [
+    { label: 'Within Litchfield (Torrington ↔ Litchfield towns / US-7 northwest)', direction: 'within', context: 'Northwest hills and quiet markets — not Fairfield NYC collar.' },
+    { label: 'Second-home seasonal turns → northwest hills', direction: 'inbound', context: 'Summer weekends and driveway grades reshape access.' },
+    { label: 'Litchfield ↔ Hartford / Fairfield in-state pairs', direction: 'within', context: 'US-7/CT-8 long locals; CTDOT for pure in-state jobs.' },
+    { label: 'NY / MA ↔ Litchfield rural-suburban markets', direction: 'inbound', context: 'Interstate household goods into hillside SFH stock.' },
+    { label: 'Litchfield → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Connecticut.' },
+    { label: 'Winter ice hillside contingency moves', direction: 'within', context: 'Confirm driveway grades and contingency before truck sizing.' },
+  ],
+  middlesex: [
+    { label: 'Within Middlesex (Middletown ↔ Cromwell / shoreline approaches)', direction: 'within', context: 'CT River valley multi-unit — not Hartford south clone and not MA Middlesex.' },
+    { label: 'Hartford ↔ Middletown (CT-9 / I-91) pairs', direction: 'within', context: 'Looks short on maps; portal time still matters at peak.' },
+    { label: 'Shoreline tourism peaks → Old Saybrook approaches', direction: 'within', context: 'Summer weekends reshape curb staging on US-1 approaches.' },
+    { label: 'NYC / Boston ↔ Middlesex river-valley markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and shoreline stock.' },
+    { label: 'Middlesex ↔ New Haven / Hartford in-state pairs', direction: 'within', context: 'CT-9 multi-county logistics; keep county lines clear.' },
+    { label: 'Middlesex → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Connecticut.' },
+  ],
+};
+
+const UT_ROUTES: Record<string, CountyPopularRoute[]> = {
+  'salt-lake': [
+    { label: 'Within Salt Lake (Downtown / Sugar House ↔ east bench / west valley / Sandy)', direction: 'within', context: 'Elevators and bench grades vs west multi-family — portal time dominates.' },
+    { label: 'California / Arizona / Colorado → Salt Lake Valley markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and HOA stock.' },
+    { label: 'Salt Lake ↔ Utah County (I-15) pairs', direction: 'within', context: 'Wasatch Front long locals; UDOT credentials for pure in-state jobs.' },
+    { label: 'Salt Lake ↔ Davis / Weber north Front pairs', direction: 'within', context: 'I-15 multi-county logistics; core vs suburb product differs.' },
+    { label: 'Ski-season / canyon traffic contingency moves', direction: 'within', context: 'Winter ice and canyon congestion reshape east-bench access.' },
+    { label: 'Salt Lake → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Utah.' },
+  ],
+  utah: [
+    { label: 'Within Utah County (Provo / BYU ↔ Orem / Lehi tech corridor)', direction: 'within', context: 'Campus multi-unit vs Silicon Slopes HOA — county-clear Provo/Orem/Lehi product, not statewide Utah copy.' },
+    { label: 'BYU / UVU student & faculty lease cycles', direction: 'within', context: 'August/May clusters; elevators and curb limits dominate near campus.' },
+    { label: 'Utah County ↔ Salt Lake County (I-15) pairs', direction: 'within', context: 'South Front long locals; keep Utah County vs Salt Lake County destinations clear.' },
+    { label: 'California / Texas → Lehi tech & Provo family markets', direction: 'inbound', context: 'Interstate household goods into HOA and multi-unit stock.' },
+    { label: 'Utah County → St. George / out-of-state exits', direction: 'outbound', context: 'I-15 southbound or interstate; confirm UDOT vs FMCSA for the full route.' },
+    { label: 'Utah County → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Utah.' },
+  ],
+  davis: [
+    { label: 'Within Davis (Bountiful ↔ Farmington / Layton / Clearfield)', direction: 'within', context: 'North Front suburban HOA bridge — not SLC downtown elevators.' },
+    { label: 'Hill AFB / PCS → Clearfield / Layton housing', direction: 'inbound', context: 'Hard report dates reshape north Front calendars.' },
+    { label: 'Davis ↔ Salt Lake / Weber pairs', direction: 'within', context: 'I-15 multi-county logistics; keep suburb vs core vs Ogden product distinct.' },
+    { label: 'California / Colorado → Davis family suburbs', direction: 'inbound', context: 'Interstate household goods into HOA tracts.' },
+    { label: 'Davis → Cache / out-of-state exits', direction: 'outbound', context: 'Northbound regional or interstate; confirm UDOT vs FMCSA.' },
+    { label: 'Davis → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Utah.' },
+  ],
+  weber: [
+    { label: 'Within Weber (Downtown Ogden ↔ east bench / Roy / North Ogden)', direction: 'within', context: 'Regional hub multi-unit and bench grades — not Davis HOA-only product.' },
+    { label: 'Manufacturing / healthcare relo → Ogden', direction: 'inbound', context: 'Hard report dates and industrial timing reshape windows.' },
+    { label: 'Weber ↔ Davis / Salt Lake (I-15) pairs', direction: 'within', context: 'North Front long locals; keep Ogden vs suburb product distinct.' },
+    { label: 'Weber ↔ Cache (US-89/91) pairs', direction: 'within', context: 'Northern valley logistics; price empty miles honestly.' },
+    { label: 'Idaho / Wyoming ↔ Ogden regional markets', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Ogden → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Utah.' },
+  ],
+  washington: [
+    { label: 'Within Washington County UT (St. George ↔ Washington City / Hurricane / Ivins)', direction: 'within', context: 'Southern Utah desert HOA growth — never Seattle or King County product.' },
+    { label: 'Snowbird / tourism seasonal turns → St. George', direction: 'inbound', context: 'Winter peaks reshape multi-unit and HOA demand.' },
+    { label: 'Las Vegas ↔ St. George (I-15) pairs', direction: 'inbound', context: 'Interstate household goods; FMCSA when any leg leaves Utah.' },
+    { label: 'Salt Lake / Utah County ↔ St. George in-state pairs', direction: 'inbound', context: 'Long I-15 hauls; UDOT credentials for pure in-state jobs.' },
+    { label: 'California / Arizona → St. George growth markets', direction: 'inbound', context: 'Interstate household goods into desert HOA stock.' },
+    { label: 'St. George → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Utah — never WA UTC framing.' },
+  ],
+  cache: [
+    { label: 'Within Cache (Logan / USU ↔ North Logan / Smithfield / Hyrum)', direction: 'within', context: 'University multi-unit vs valley suburbs — not Salt Lake spillover.' },
+    { label: 'USU student & faculty lease cycles', direction: 'within', context: 'August/May clusters; elevators and curb limits dominate near campus.' },
+    { label: 'Cache ↔ Weber / Salt Lake pairs', direction: 'outbound', context: 'US-89/91 long hauls; UDOT for pure in-state jobs.' },
+    { label: 'Idaho ↔ Logan regional markets', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'California / Colorado → Cache Valley housing', direction: 'inbound', context: 'Interstate arrivals into multi-unit and SFH stock.' },
+    { label: 'Logan → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Utah.' },
+  ],
+};
 
 const IN_ROUTES: Record<string, CountyPopularRoute[]> = {
   marion: [

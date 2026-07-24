@@ -232,6 +232,22 @@ const CORRIDORS: Record<string, string> = {
   'indiana/tippecanoe': 'I-65 · US-52 · US-231 · SR-26',
   'indiana/vanderburgh': 'I-69 · US-41 · SR-62 · SR-66',
 
+  // ——— Connecticut Core 6 ———
+  'connecticut/fairfield': 'I-95 · Merritt Parkway (CT-15) · I-84 · US-1 · US-7',
+  'connecticut/hartford': 'I-84 · I-91 · CT-2 · CT-9 · local arterial grid',
+  'connecticut/new-haven': 'I-95 · I-91 · CT-15 · US-1',
+  'connecticut/new-london': 'I-95 · CT-2 · CT-32 · US-1',
+  'connecticut/litchfield': 'US-7 · US-202 · CT-8 · CT-4',
+  'connecticut/middlesex': 'CT-9 · CT-66 · I-91 links · US-1 approaches',
+
+  // ——— Utah Core 6 ———
+  'utah/salt-lake': 'I-15 · I-80 · I-215 · US-89 · local arterial grid',
+  'utah/utah': 'I-15 · US-89 · US-189 · local arterial grid',
+  'utah/davis': 'I-15 · US-89 · Legacy Parkway · local arterial grid',
+  'utah/weber': 'I-15 · I-84 · US-89 · local Ogden grid',
+  'utah/washington': 'I-15 · UT-9 · UT-18 · local St. George grid',
+  'utah/cache': 'US-89/91 · US-30 · local Logan grid',
+
   // ——— Virginia Core 12 ———
   'virginia/fairfax': 'I-66 · I-495 · VA-28 · Dulles Toll Road · VA-236 · I-95 links',
   'virginia/prince-william': 'I-95 · I-66 · VA-234 · US-1 · Prince William Pkwy',
@@ -331,7 +347,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|OR[-\s]?\d{1,3}|MD[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}(\/\d{1,3})?[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|IL[-\s]?\d{1,3}|PA[-\s]?\d{1,3}|OH[-\s]?\d{1,3}|CO[-\s]?\d{1,3}|WA[-\s]?\d{1,3}|MI[-\s]?\d{1,3}|OR[-\s]?\d{1,3}|MD[-\s]?\d{1,3}|CT[-\s]?\d{1,3}|UT[-\s]?\d{1,3}|M[-\s]?\d{1,3}|[CE]-\d{2,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Merritt|Legacy)\b/i.test(
     v
   );
 }

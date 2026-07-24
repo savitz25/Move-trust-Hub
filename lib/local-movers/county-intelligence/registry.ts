@@ -273,11 +273,25 @@ import { richlandCountyScIntelligence } from '@/lib/local-movers/county-intellig
 import { horryCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/horry-sc';
 import { spartanburgCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/spartanburg-sc';
 import { lexingtonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/lexington-sc';
+// Connecticut Core 6
+import { fairfieldCountyCtIntelligence } from '@/lib/local-movers/county-intelligence/connecticut/fairfield-ct';
+import { hartfordCountyCtIntelligence } from '@/lib/local-movers/county-intelligence/connecticut/hartford-ct';
+import { newHavenCountyCtIntelligence } from '@/lib/local-movers/county-intelligence/connecticut/new-haven-ct';
+import { newLondonCountyCtIntelligence } from '@/lib/local-movers/county-intelligence/connecticut/new-london-ct';
+import { litchfieldCountyCtIntelligence } from '@/lib/local-movers/county-intelligence/connecticut/litchfield-ct';
+import { middlesexCountyCtIntelligence } from '@/lib/local-movers/county-intelligence/connecticut/middlesex-ct';
+// Utah Core 6
+import { saltLakeCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/salt-lake-ut';
+import { utahCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/utah-ut';
+import { davisCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/davis-ut';
+import { weberCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/weber-ut';
+import { washingtonCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/washington-ut';
+import { cacheCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/cache-ut';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
@@ -544,6 +558,20 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   horryCountyScIntelligence,
   spartanburgCountyScIntelligence,
   lexingtonCountyScIntelligence,
+  // Connecticut Core 6
+  fairfieldCountyCtIntelligence,
+  hartfordCountyCtIntelligence,
+  newHavenCountyCtIntelligence,
+  newLondonCountyCtIntelligence,
+  litchfieldCountyCtIntelligence,
+  middlesexCountyCtIntelligence,
+  // Utah Core 6
+  saltLakeCountyUtIntelligence,
+  utahCountyUtIntelligence,
+  davisCountyUtIntelligence,
+  weberCountyUtIntelligence,
+  washingtonCountyUtIntelligence,
+  cacheCountyUtIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -921,6 +949,26 @@ export const IN_TIER1_CORE8 = [
   'elkhart',
   'tippecanoe',
   'vanderburgh',
+] as const;
+
+/** Connecticut Tier-1 Core 6. */
+export const CT_TIER1_CORE6 = [
+  'fairfield',
+  'hartford',
+  'new-haven',
+  'new-london',
+  'litchfield',
+  'middlesex',
+] as const;
+
+/** Utah Tier-1 Core 6. */
+export const UT_TIER1_CORE6 = [
+  'salt-lake',
+  'utah',
+  'davis',
+  'weber',
+  'washington',
+  'cache',
 ] as const;
 
 /** Missouri Tier-1 Core 6 (St. Louis County + KC/Jackson + collars + Springfield). */
