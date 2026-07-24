@@ -212,6 +212,15 @@ import { marionCountyOrIntelligence } from '@/lib/local-movers/county-intelligen
 import { deschutesCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/deschutes-or';
 import { jacksonCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/jackson-or';
 import { linnCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/linn-or';
+// Maryland Core 8
+import { montgomeryCountyMdIntelligence } from '@/lib/local-movers/county-intelligence/maryland/montgomery-md';
+import { princeGeorgesCountyMdIntelligence } from '@/lib/local-movers/county-intelligence/maryland/prince-georges-md';
+import { baltimoreCountyMdIntelligence } from '@/lib/local-movers/county-intelligence/maryland/baltimore-md';
+import { anneArundelCountyMdIntelligence } from '@/lib/local-movers/county-intelligence/maryland/anne-arundel-md';
+import { howardCountyMdIntelligence } from '@/lib/local-movers/county-intelligence/maryland/howard-md';
+import { frederickCountyMdIntelligence } from '@/lib/local-movers/county-intelligence/maryland/frederick-md';
+import { harfordCountyMdIntelligence } from '@/lib/local-movers/county-intelligence/maryland/harford-md';
+import { baltimoreCityMdIntelligence } from '@/lib/local-movers/county-intelligence/maryland/baltimore-city-md';
 // Massachusetts Core 10
 import { middlesexCountyMaIntelligence } from '@/lib/local-movers/county-intelligence/massachusetts/middlesex-ma';
 import { worcesterCountyMaIntelligence } from '@/lib/local-movers/county-intelligence/massachusetts/worcester-ma';
@@ -227,7 +236,7 @@ import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-int
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MA / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -434,6 +443,15 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   deschutesCountyOrIntelligence,
   jacksonCountyOrIntelligence,
   linnCountyOrIntelligence,
+  // Maryland Core 8
+  montgomeryCountyMdIntelligence,
+  princeGeorgesCountyMdIntelligence,
+  baltimoreCountyMdIntelligence,
+  anneArundelCountyMdIntelligence,
+  howardCountyMdIntelligence,
+  frederickCountyMdIntelligence,
+  harfordCountyMdIntelligence,
+  baltimoreCityMdIntelligence,
   // Massachusetts Core 10
   middlesexCountyMaIntelligence,
   worcesterCountyMaIntelligence,
@@ -760,6 +778,18 @@ export const OR_TIER1_CORE8 = [
   'deschutes',
   'jackson',
   'linn',
+] as const;
+
+/** Maryland Tier-1 Core 8 (includes Baltimore City independent-city slug). */
+export const MD_TIER1_CORE8 = [
+  'montgomery',
+  'prince-georges',
+  'baltimore',
+  'anne-arundel',
+  'howard',
+  'frederick',
+  'harford',
+  'baltimore-city',
 ] as const;
 
 /** Massachusetts Tier-1 Core 10 (Boston core + collar + central + South Shore/Cape + Pioneer Valley). */

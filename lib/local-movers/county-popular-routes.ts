@@ -5064,9 +5064,77 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'washington') return WA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'michigan') return MI_ROUTES[countySlug] ?? [];
   if (stateSlug === 'oregon') return OR_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'maryland') return MD_ROUTES[countySlug] ?? [];
   if (stateSlug === 'massachusetts') return MA_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const MD_ROUTES: Record<string, CountyPopularRoute[]> = {
+  montgomery: [
+    { label: 'Within Montgomery (Bethesda / Silver Spring ↔ Rockville / Germantown)', direction: 'within', context: 'High-rise elevators vs outer I-270 HOA product — portal time dominates.' },
+    { label: 'Federal / contractor relo → Bethesda / Rockville corridors', direction: 'inbound', context: 'Hard report dates and building packets reshape calendars.' },
+    { label: 'Northern VA / DC ↔ Montgomery metro pairs', direction: 'inbound', context: 'I-495 multi-jurisdiction logistics; clarify MD HHG registration vs FMCSA for cross-state legs.' },
+    { label: 'Montgomery ↔ Prince George\'s / Howard pairs', direction: 'within', context: 'Beltway multi-county logistics; keep county lines clear.' },
+    { label: 'Florida / Texas / NC ↔ Montgomery reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Montgomery → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Maryland.' },
+  ],
+  'prince-georges': [
+    { label: 'Within Prince George\'s (National Harbor ↔ College Park / Bowie / Upper Marlboro)', direction: 'within', context: 'Waterfront multi-unit vs suburban HOA — not Montgomery northwest product.' },
+    { label: 'UMD student & faculty lease cycles → College Park', direction: 'within', context: 'August/May clusters; elevators and curb limits dominate.' },
+    { label: 'DC / VA ↔ Prince George\'s east-metro pairs', direction: 'inbound', context: 'I-495/I-95 logistics; FMCSA when any leg leaves Maryland.' },
+    { label: 'Prince George\'s ↔ Montgomery / Anne Arundel pairs', direction: 'within', context: 'East-of-DC multi-county logistics; keep destinations clear.' },
+    { label: 'Florida / Sun Belt ↔ PG reverse family moves', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+    { label: 'Prince George\'s → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Maryland.' },
+  ],
+  baltimore: [
+    { label: 'Within Baltimore County (Towson ↔ Owings Mills / White Marsh / Catonsville)', direction: 'within', context: 'Metro-ring multi-unit and HOA product — not city row-home defaults.' },
+    { label: 'Baltimore City ↔ Baltimore County ring pairs', direction: 'within', context: 'I-83/I-695 logistics; city stairs vs county HOA differ at each end.' },
+    { label: 'PA / NJ / DE → Baltimore County suburban housing', direction: 'inbound', context: 'I-95 interstate household goods into ring stock.' },
+    { label: 'Baltimore County ↔ Howard / Harford pairs', direction: 'within', context: 'I-95 multi-county logistics; keep county lines clear.' },
+    { label: 'Florida / NC ↔ Baltimore reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Baltimore County → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Maryland.' },
+  ],
+  'baltimore-city': [
+    { label: 'Within Baltimore City (Harbor East / downtown ↔ Canton / Hampden / NW corridors)', direction: 'within', context: 'Rowhomes and elevators — not county HOA product.' },
+    { label: 'Baltimore County ↔ City micro-market pairs', direction: 'within', context: 'I-83/I-95 short hauls with completely different access products at each end.' },
+    { label: 'PA / NJ / NY → Baltimore City neighborhood housing', direction: 'inbound', context: 'Interstate household goods into rowhomes and towers.' },
+    { label: 'DC ↔ Baltimore City professional corridors', direction: 'inbound', context: 'I-95 interstate household goods; FMCSA required.' },
+    { label: 'Florida / Sun Belt ↔ City reverse family moves', direction: 'inbound', context: 'Interstate household goods; narrow-street access contingency.' },
+    { label: 'Baltimore City → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Maryland.' },
+  ],
+  'anne-arundel': [
+    { label: 'Within Anne Arundel (Annapolis ↔ Crofton / Odenton / Glen Burnie)', direction: 'within', context: 'Capital historic stock vs DoD-adjacent HOA — not Columbia planned villages.' },
+    { label: 'Naval Academy / DoD PCS → west county housing', direction: 'inbound', context: 'Hard report dates and storage-in-transit dominate military calendars.' },
+    { label: 'DC / VA ↔ Annapolis capital pairs', direction: 'inbound', context: 'US-50 logistics; clarify MD registration vs FMCSA for cross-state legs.' },
+    { label: 'Anne Arundel ↔ Howard / Prince George\'s pairs', direction: 'within', context: 'MD-32 / US-50 multi-county logistics; keep destinations clear.' },
+    { label: 'Florida / NC ↔ Annapolis reverse family moves', direction: 'inbound', context: 'Interstate household goods into capital and suburban stock.' },
+    { label: 'Anne Arundel → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Maryland.' },
+  ],
+  howard: [
+    { label: 'Within Howard (Columbia villages ↔ Ellicott City / North Laurel)', direction: 'within', context: 'Planned-community HOA vs older stock — not Annapolis capital product.' },
+    { label: 'School-driven moves → Columbia villages', direction: 'inbound', context: 'Summer peaks cluster HOA and multi-unit demand.' },
+    { label: 'DC / Baltimore ↔ Howard mid-corridor pairs', direction: 'inbound', context: 'US-29 / I-95 portal time is a real billable factor.' },
+    { label: 'Howard ↔ Montgomery / Anne Arundel / Baltimore County pairs', direction: 'within', context: 'Mid-corridor multi-county logistics; keep county lines clear.' },
+    { label: 'Florida / Sun Belt ↔ Columbia reverse family moves', direction: 'inbound', context: 'Interstate household goods into HOA tracts.' },
+    { label: 'Howard → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Maryland.' },
+  ],
+  frederick: [
+    { label: 'Within Frederick (Downtown ↔ Urbana / I-270 growth / north US-15)', direction: 'within', context: 'Historic multi-unit vs growth HOA — not Montgomery core density.' },
+    { label: 'DC-commute growth → Urbana / I-270 corridor housing', direction: 'inbound', context: 'Longer empty miles than close-in Montgomery jobs.' },
+    { label: 'Frederick ↔ Montgomery (I-270) pairs', direction: 'within', context: 'West-corridor long locals; price portal time honestly.' },
+    { label: 'PA / WV ↔ Frederick regional markets', direction: 'inbound', context: 'I-70 / US-15 interstate or border pairs; confirm FMCSA when leaving Maryland.' },
+    { label: 'Florida / NC ↔ Frederick reverse family moves', direction: 'inbound', context: 'Interstate household goods into growth suburbs.' },
+    { label: 'Frederick → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Maryland.' },
+  ],
+  harford: [
+    { label: 'Within Harford (Bel Air ↔ Aberdeen / Edgewood / north rural edges)', direction: 'within', context: 'Northeast fringe HOA and APG adjacency — not Towson clone product.' },
+    { label: 'APG / military relo → Aberdeen / Bel Air housing', direction: 'inbound', context: 'Hard report dates reshape northeast-fringe calendars.' },
+    { label: 'Harford ↔ Baltimore County / City pairs', direction: 'within', context: 'I-95 logistics; fringe suburbs vs metro ring vs city stock differ.' },
+    { label: 'PA / DE → Harford fringe housing', direction: 'inbound', context: 'I-95 interstate household goods into suburban stock.' },
+    { label: 'Florida / Sun Belt ↔ Harford reverse family moves', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
+    { label: 'Harford → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Maryland.' },
+  ],
+};
 
 const OR_ROUTES: Record<string, CountyPopularRoute[]> = {
   multnomah: [

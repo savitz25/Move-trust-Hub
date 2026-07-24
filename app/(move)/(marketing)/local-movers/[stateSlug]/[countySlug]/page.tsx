@@ -192,6 +192,7 @@ import { PaRegulatoryClarity } from '@/components/local-movers/pa-regulatory-cla
 import { OhRegulatoryClarity } from '@/components/local-movers/oh-regulatory-clarity';
 import { MiRegulatoryClarity } from '@/components/local-movers/mi-regulatory-clarity';
 import { OrRegulatoryClarity } from '@/components/local-movers/or-regulatory-clarity';
+import { MdRegulatoryClarity } from '@/components/local-movers/md-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
@@ -796,6 +797,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         ) : null}
         {stateSlug === 'oregon' ? (
           <OrRegulatoryClarity countyLabel={countyLabel} />
+        ) : null}
+        {stateSlug === 'maryland' ? (
+          <MdRegulatoryClarity countyLabel={countyLabel} />
         ) : null}
 
         {popularRoutes.length > 0 ? (
