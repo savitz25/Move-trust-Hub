@@ -165,6 +165,17 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'oregon', countySlug: 'washington' },
   { stateSlug: 'utah', countySlug: 'salt-lake' },
   { stateSlug: 'utah', countySlug: 'utah' },
+  // Massachusetts Core 10
+  { stateSlug: 'massachusetts', countySlug: 'middlesex' },
+  { stateSlug: 'massachusetts', countySlug: 'worcester' },
+  { stateSlug: 'massachusetts', countySlug: 'essex' },
+  { stateSlug: 'massachusetts', countySlug: 'suffolk' },
+  { stateSlug: 'massachusetts', countySlug: 'norfolk' },
+  { stateSlug: 'massachusetts', countySlug: 'bristol' },
+  { stateSlug: 'massachusetts', countySlug: 'plymouth' },
+  { stateSlug: 'massachusetts', countySlug: 'hampden' },
+  { stateSlug: 'massachusetts', countySlug: 'barnstable' },
+  { stateSlug: 'massachusetts', countySlug: 'hampshire' },
 ] as const;
 
 const premiumMetroKeySet = new Set(

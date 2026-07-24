@@ -150,6 +150,18 @@ const CORRIDORS: Record<string, string> = {
   'washington/benton': 'I-82 · US-395 · SR-240 · SR-224',
   'washington/yakima': 'I-82 · US-12 · SR-24 · SR-821',
 
+  // ——— Massachusetts Core 10 ———
+  'massachusetts/suffolk': 'I-90 · I-93 · US-1 · Storrow Drive · local arterial grid',
+  'massachusetts/middlesex': 'I-95 · I-93 · Route 2 · Route 3 · Route 128/I-95 belt',
+  'massachusetts/norfolk': 'I-93 · I-95 · Route 3 · Route 28 · Route 1A',
+  'massachusetts/essex': 'I-95 · Route 1 · Route 128 · Route 114',
+  'massachusetts/worcester': 'I-290 · I-90 · I-190 · Route 9 · Route 20',
+  'massachusetts/bristol': 'I-195 · Route 24 · Route 6 · Route 140',
+  'massachusetts/plymouth': 'Route 3 · Route 24 · Route 44 · Route 18',
+  'massachusetts/hampden': 'I-91 · I-90 · Route 5 · Route 20',
+  'massachusetts/barnstable': 'Route 6 · Route 28 · Route 132 · Cape bridges',
+  'massachusetts/hampshire': 'I-91 · Route 9 · Route 116 · Route 47',
+
   // ——— Michigan Core 10 ———
   'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',
   'michigan/oakland': 'I-75 · I-696 · M-59 · Telegraph · Woodward corridors',

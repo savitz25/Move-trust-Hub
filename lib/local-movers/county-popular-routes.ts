@@ -5063,6 +5063,7 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'colorado') return CO_ROUTES[countySlug] ?? [];
   if (stateSlug === 'washington') return WA_ROUTES[countySlug] ?? [];
   if (stateSlug === 'michigan') return MI_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'massachusetts') return MA_ROUTES[countySlug] ?? [];
   return [];
 }
 
@@ -5146,6 +5147,90 @@ const MI_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Saginaw ↔ Detroit metro (I-75) pairs', direction: 'outbound', context: 'Long I-75 locals; Michigan authority for pure in-state jobs.' },
     { label: 'Midwest → Saginaw bay regional markets', direction: 'inbound', context: 'Interstate household goods; FMCSA for cross-state legs.' },
     { label: 'Saginaw → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Michigan.' },
+  ],
+};
+
+
+const MA_ROUTES: Record<string, CountyPopularRoute[]> = {
+  middlesex: [
+    { label: 'Within Middlesex (Cambridge / Somerville ↔ Lexington / Concord / Waltham)', direction: 'within', context: 'Dense walk-ups vs western-suburb SFH — access products differ; portal time on Route 2 / I-95 dominates.' },
+    { label: 'NY / NJ / CT → Cambridge / Route 128 tech & university housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock; FMCSA required.' },
+    { label: 'Middlesex ↔ Suffolk (Boston) metro pairs', direction: 'within', context: 'Looks local on maps; I-93 / Storrow / Red Line–adjacent curb rules rewrite labor.' },
+    { label: 'Middlesex → Worcester / western MA in-state pairs', direction: 'outbound', context: 'I-90 / Route 9 long hauls; Massachusetts DPU for pure in-state jobs.' },
+    { label: 'Middlesex → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Snowbird and permanent relocations; FMCSA for cross-state legs.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'NH Seacoast / Hillsborough → Middlesex professional corridors', direction: 'inbound', context: 'Regional interstate or cross-border pairs; confirm DPU vs FMCSA for the full route.' },
+  ],
+  worcester: [
+    { label: 'Within Worcester (city three-deckers ↔ Shrewsbury / Westborough / Leominster)', direction: 'within', context: 'Central MA hub product — not a Boston-west suburb clone; empty miles matter.' },
+    { label: 'Boston metro → Worcester in-state career & housing pairs', direction: 'inbound', context: 'I-90 / I-290 long locals; Massachusetts DPU for pure in-state jobs.' },
+    { label: 'Worcester ↔ Springfield / Pioneer Valley pairs', direction: 'within', context: 'I-90 / Route 9 cross-state-of-MA logistics; keep county lines clear.' },
+    { label: 'NY / NJ / CT → Worcester regional markets', direction: 'inbound', context: 'Interstate household goods into city multi-unit and east-suburban stock.' },
+    { label: 'Worcester → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required out of Massachusetts.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'Worcester → RI / NH border pairs', direction: 'outbound', context: 'Short border hops can still require FMCSA — clarify destinations early.' },
+  ],
+  essex: [
+    { label: 'Within Essex (Lynn / Salem / Gloucester ↔ Andover / Lawrence / Haverhill)', direction: 'within', context: 'North Shore coastal vs inland mill-city product — not interchangeable quotes.' },
+    { label: 'Boston / Suffolk → North Shore housing', direction: 'inbound', context: 'I-95 / Route 1 / Route 128 collar logistics; portal time dominates at peak.' },
+    { label: 'NY / NJ → Essex County coastal & inland markets', direction: 'inbound', context: 'Interstate household goods into historic cores and waterfront stock.' },
+    { label: 'Essex → NH Seacoast pairs', direction: 'outbound', context: 'Clarify Massachusetts DPU vs FMCSA when any leg leaves Massachusetts.' },
+    { label: 'Essex → Florida snowbird corridors', direction: 'outbound', context: 'Seasonal long-distance; FMCSA carriers and volume surveys recommended.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'Essex ↔ Middlesex metro pairs', direction: 'within', context: 'North-metro multi-county logistics; keep county lines clear on estimates.' },
+  ],
+  suffolk: [
+    { label: 'Within Suffolk (Back Bay / downtown ↔ South End / JP / East Boston / Dorchester)', direction: 'within', context: 'Elevator towers vs brownstone/triple-decker product — neighborhood micro-markets rewrite labor.' },
+    { label: 'NY / NJ / CT → Boston professional & university housing', direction: 'inbound', context: 'Interstate household goods into elevators and constrained curb; FMCSA required.' },
+    { label: 'Suffolk ↔ Middlesex / Norfolk / Essex metro pairs', direction: 'within', context: 'Greater Boston multi-county pairs; I-90 / I-93 / Storrow portal time is billable.' },
+    { label: 'Boston → Worcester / Springfield in-state long hauls', direction: 'outbound', context: 'I-90 cross-state-of-MA career moves; Massachusetts DPU for pure in-state jobs.' },
+    { label: 'Boston → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Snowbird and permanent relocations; FMCSA for cross-state legs.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'Florida → Boston reverse family & professional returns', direction: 'inbound', context: 'Interstate household goods into dense urban stock; elevators and permits first.' },
+  ],
+  norfolk: [
+    { label: 'Within Norfolk (Quincy / Brookline-adjacent ↔ Needham / Westwood / Sharon)', direction: 'within', context: 'South-metro multi-unit vs HOA driveway SFH — not a single access product.' },
+    { label: 'Boston / Suffolk → Norfolk south-metro housing', direction: 'inbound', context: 'I-93 / Route 3 / Route 28 collar logistics; portal time dominates at peak.' },
+    { label: 'NY / NJ → Norfolk County suburbs', direction: 'inbound', context: 'Interstate household goods into multifamily and SFH stock.' },
+    { label: 'Norfolk ↔ Plymouth / Bristol south-shore pairs', direction: 'within', context: 'South-of-Boston multi-county logistics; keep county lines clear.' },
+    { label: 'Norfolk → Florida snowbird corridors', direction: 'outbound', context: 'Interstate household goods; FMCSA required out of Massachusetts.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'Norfolk → Rhode Island border pairs', direction: 'outbound', context: 'Short hops can still require FMCSA — clarify destinations early.' },
+  ],
+  bristol: [
+    { label: 'Within Bristol (New Bedford / Fall River ↔ Taunton / Attleboro)', direction: 'within', context: 'South Coast triple-decker and hill-street product — not Boston collar defaults.' },
+    { label: 'Providence / RI → Bristol County South Coast housing', direction: 'inbound', context: 'Cross-border pairs need FMCSA even when map miles look local.' },
+    { label: 'Boston metro → Fall River / New Bedford in-state pairs', direction: 'inbound', context: 'Route 24 / I-195 long locals; Massachusetts DPU for pure in-state jobs.' },
+    { label: 'Bristol ↔ Plymouth / Norfolk pairs', direction: 'within', context: 'Southeastern MA multi-county logistics; price empty miles honestly.' },
+    { label: 'Bristol → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'NY / NJ / CT → South Coast markets', direction: 'inbound', context: 'Interstate arrivals into mill-city multi-unit and Attleboro growth stock.' },
+  ],
+  plymouth: [
+    { label: 'Within Plymouth (Hingham / Duxbury ↔ Brockton / Plymouth town)', direction: 'within', context: 'Coastal narrow streets and historic cores vs inland triple-decker product.' },
+    { label: 'Boston / Suffolk → South Shore housing', direction: 'inbound', context: 'Route 3 collar logistics; summer coastal traffic rewrites portal time.' },
+    { label: 'Plymouth ↔ Barnstable Cape-bound pairs', direction: 'within', context: 'Stage through South Shore toward Cape Cod; bridge and Route 6 peaks matter.' },
+    { label: 'NY / NJ → Plymouth County suburbs & coastal towns', direction: 'inbound', context: 'Interstate household goods into South Shore SFH and multi-unit stock.' },
+    { label: 'Plymouth → Florida snowbird corridors', direction: 'outbound', context: 'Seasonal long-distance; FMCSA carriers recommended.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'Plymouth ↔ Norfolk / Bristol south-metro pairs', direction: 'within', context: 'Southeastern multi-county logistics; keep county lines clear on estimates.' },
+  ],
+  hampden: [
+    { label: 'Within Hampden (Springfield ↔ Holyoke / Chicopee / Longmeadow)', direction: 'within', context: 'Pioneer Valley urban three-deckers and mill stock — not Boston-metro product.' },
+    { label: 'Hartford / CT → Springfield metro pairs', direction: 'inbound', context: 'I-91 border hops often need FMCSA; clarify MA DPU vs interstate early.' },
+    { label: 'Boston / Worcester → Springfield in-state long hauls', direction: 'inbound', context: 'I-90 / I-91 cross-state-of-MA career moves; Massachusetts DPU for pure in-state jobs.' },
+    { label: 'Hampden ↔ Hampshire Pioneer Valley pairs', direction: 'within', context: 'Springfield urban vs Northampton/Amherst college-town logistics differ.' },
+    { label: 'Hampden → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'NY / NJ → Pioneer Valley housing & jobs', direction: 'inbound', context: 'Interstate arrivals into city multi-unit and suburban stock.' },
+  ],
+  barnstable: [
+    { label: 'Within Barnstable (Mid-Cape / Hyannis ↔ Outer Cape / Provincetown–Truro)', direction: 'within', context: 'Bridge access, Route 6 / Route 28 peaks, and Outer Cape small-truck needs rewrite local hours.' },
+    { label: 'Boston / South Shore → Cape Cod seasonal & year-round housing', direction: 'inbound', context: 'Route 3 → bridges → Route 6 logistics; summer weekends are a real billable factor.' },
+    { label: 'NY / NJ / CT → Cape Cod second-home & retirement corridors', direction: 'inbound', context: 'Interstate household goods into coastal stock; FMCSA required.' },
+    { label: 'Barnstable → Florida snowbird reverse lanes', direction: 'outbound', context: 'Seasonal long-distance; book carriers early for winter exits.', href: '/resources/routes/massachusetts-to-florida' },
+    { label: 'Barnstable ↔ Plymouth staging pairs', direction: 'within', context: 'Common Cape approach logistics; price bridge timing honestly.' },
+    { label: 'Off-season Cape → Boston reverse professional returns', direction: 'outbound', context: 'Shoulder-season windows clear bridge approaches faster than July–August peaks.' },
+  ],
+  hampshire: [
+    { label: 'Within Hampshire (Northampton ↔ Amherst / Hadley / Five College belt)', direction: 'within', context: 'College-town curb limits and academic lease waves — not Springfield three-decker defaults alone.' },
+    { label: 'UMass / Five College inflows → Amherst / Northampton housing', direction: 'inbound', context: 'Semester peaks cluster multi-unit demand; book elevators and curb early.' },
+    { label: 'Hampshire ↔ Hampden (Springfield) Pioneer Valley pairs', direction: 'within', context: 'I-91 valley logistics; urban vs college-town access products differ.' },
+    { label: 'Boston / Worcester → Pioneer Valley academic markets', direction: 'inbound', context: 'In-state long hauls; Massachusetts DPU for pure in-state jobs.' },
+    { label: 'CT → Hampshire valley pairs', direction: 'inbound', context: 'Border and regional interstate legs need FMCSA when leaving Connecticut.' },
+    { label: 'Hampshire → Florida / out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required once leaving Massachusetts.', href: '/resources/routes/massachusetts-to-florida' },
   ],
 };
 
