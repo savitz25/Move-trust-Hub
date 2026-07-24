@@ -5078,8 +5078,371 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'alabama') return AL_ROUTES[countySlug] ?? [];
   if (stateSlug === 'louisiana') return LA_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'arkansas') return AR_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'new-mexico') return NM_ROUTES[countySlug] ?? [];
   return [];
 }
+
+const AR_ROUTES: Record<string, CountyPopularRoute[]> = {
+  pulaski: [
+    {
+      label: 'Within Pulaski (Downtown Little Rock ↔ West Little Rock / NLR / Maumelle edges)',
+      direction: 'within',
+      context:
+        'River-city multi-unit and west-suburb HOA — not Northwest Arkansas Bentonville product.',
+    },
+    {
+      label: 'State government / healthcare relo → Little Rock',
+      direction: 'inbound',
+      context: 'Capital calendars and campus/hospital report dates reshape windows.',
+    },
+    {
+      label: 'Pulaski ↔ Saline / Faulkner south-north metro pairs',
+      direction: 'within',
+      context: 'I-30 / I-40 multi-county logistics; city vs fringe product differs.',
+    },
+    {
+      label: 'Dallas / Memphis / Oklahoma City ↔ Little Rock capital markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into multi-unit and suburban stock; FMCSA when leaving Arkansas.',
+    },
+    {
+      label: 'Pulaski ↔ Northwest Arkansas (Benton / Washington) in-state pairs',
+      direction: 'outbound',
+      context: 'I-40 / I-49 long hauls; ArDOT authority for pure in-state jobs.',
+    },
+    {
+      label: 'Little Rock → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Arkansas.',
+    },
+  ],
+  benton: [
+    {
+      label: 'Within Benton (Bentonville ↔ Rogers / Centerton / Bella Vista edges)',
+      direction: 'within',
+      context: 'NWA corporate growth HOA — not Fayetteville university product and not Benton MO.',
+    },
+    {
+      label: 'Corporate HQ / supplier relo → Bentonville / Rogers',
+      direction: 'inbound',
+      context: 'Hard report dates dominate Northwest Arkansas calendars.',
+    },
+    {
+      label: 'Benton ↔ Washington County NWA pairs',
+      direction: 'within',
+      context: 'I-49 multi-county logistics; corporate HOA vs UA multi-unit product differs.',
+    },
+    {
+      label: 'Dallas / Kansas City / Tulsa ↔ Benton County NWA markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into HOA tracts; FMCSA when leaving Arkansas.',
+    },
+    {
+      label: 'Benton ↔ Little Rock / Fort Smith in-state pairs',
+      direction: 'outbound',
+      context: 'I-49 / I-40 long hauls; ArDOT for pure in-state jobs.',
+    },
+    {
+      label: 'Bentonville → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Arkansas.',
+    },
+  ],
+  washington: [
+    {
+      label: 'Within Washington AR (Downtown Fayetteville ↔ Springdale / Johnson / UA corridor)',
+      direction: 'within',
+      context:
+        'University of Arkansas multi-unit — Washington County Arkansas NWA only, not Washington State or Washington County UT.',
+    },
+    {
+      label: 'University / semester waves → Fayetteville',
+      direction: 'inbound',
+      context: 'Campus lease turns cluster demand around semester edges.',
+    },
+    {
+      label: 'Washington ↔ Benton NWA pairs',
+      direction: 'within',
+      context: 'I-49 multi-county logistics; UA multi-unit vs Bentonville HOA product differs.',
+    },
+    {
+      label: 'Texas / Missouri / Oklahoma ↔ Fayetteville markets',
+      direction: 'inbound',
+      context: 'Interstate household goods; FMCSA when leaving Arkansas.',
+    },
+    {
+      label: 'Washington ↔ Little Rock / Fort Smith in-state pairs',
+      direction: 'outbound',
+      context: 'I-49 / I-40 long hauls; ArDOT for pure in-state jobs.',
+    },
+    {
+      label: 'Fayetteville → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Arkansas.',
+    },
+  ],
+  sebastian: [
+    {
+      label: 'Within Sebastian (Downtown Fort Smith ↔ south / east suburbs / Van Buren approaches)',
+      direction: 'within',
+      context: 'Western AR regional hub on the Arkansas River — not Little Rock west clone.',
+    },
+    {
+      label: 'Industrial / healthcare relo → Fort Smith',
+      direction: 'inbound',
+      context: 'Hard report dates and OK-border timing reshape windows.',
+    },
+    {
+      label: 'Sebastian ↔ Oklahoma border / Tulsa pairs',
+      direction: 'outbound',
+      context: 'I-40 interstate household goods; FMCSA when any leg leaves Arkansas.',
+    },
+    {
+      label: 'Sebastian ↔ Little Rock / NWA in-state pairs',
+      direction: 'outbound',
+      context: 'I-40 / I-49 long hauls; ArDOT for pure in-state jobs.',
+    },
+    {
+      label: 'Dallas / Oklahoma City ↔ Fort Smith regional markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into multi-unit and suburban stock.',
+    },
+    {
+      label: 'Fort Smith → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Arkansas.',
+    },
+  ],
+  faulkner: [
+    {
+      label: 'Within Faulkner (Downtown Conway ↔ south / east growth / Mayflower edges)',
+      direction: 'within',
+      context: 'I-40 north-central growth HOA — not Little Rock north rename only.',
+    },
+    {
+      label: 'University / healthcare relo → Conway',
+      direction: 'inbound',
+      context: 'Campus and hospital calendars reshape mid-state windows.',
+    },
+    {
+      label: 'Faulkner ↔ Pulaski metro pairs',
+      direction: 'within',
+      context: 'I-40 multi-county logistics; Conway growth vs LR core product differs.',
+    },
+    {
+      label: 'Memphis / Dallas ↔ Conway growth markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into HOA tracts; FMCSA when leaving Arkansas.',
+    },
+    {
+      label: 'Faulkner ↔ NWA / Fort Smith in-state pairs',
+      direction: 'outbound',
+      context: 'I-40 long hauls; ArDOT for pure in-state jobs.',
+    },
+    {
+      label: 'Conway → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Arkansas.',
+    },
+  ],
+  saline: [
+    {
+      label: 'Within Saline (Benton city ↔ Bryant / Haskell / Hot Springs Village approaches)',
+      direction: 'within',
+      context:
+        'South Little Rock metro fringe — Benton (city in Saline) is not Benton County NWA.',
+    },
+    {
+      label: 'Little Rock overflow → Benton / Bryant growth suburbs',
+      direction: 'inbound',
+      context: 'I-30 south-metro logistics; HOA packets dominate.',
+    },
+    {
+      label: 'Saline ↔ Pulaski metro pairs',
+      direction: 'within',
+      context: 'City core vs south-fringe product differs; keep county lines clear.',
+    },
+    {
+      label: 'Texas / Tennessee ↔ Saline south-metro markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into HOA tracts; FMCSA when leaving Arkansas.',
+    },
+    {
+      label: 'Saline ↔ Faulkner / Hot Springs corridor pairs',
+      direction: 'within',
+      context: 'Multi-county central AR logistics; ArDOT for pure in-state jobs.',
+    },
+    {
+      label: 'Saline → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving Arkansas.',
+    },
+  ],
+};
+
+const NM_ROUTES: Record<string, CountyPopularRoute[]> = {
+  bernalillo: [
+    {
+      label: 'Within Bernalillo (Downtown / Nob Hill ↔ NE Heights / Westside / South Valley)',
+      direction: 'within',
+      context: 'Heights vs valley access and I-25/I-40 timing — not Santa Fe capital product.',
+    },
+    {
+      label: 'Labs / military / corporate relo → Albuquerque',
+      direction: 'inbound',
+      context: 'Hard report dates reshape metro calendars.',
+    },
+    {
+      label: 'Bernalillo ↔ Sandoval (Rio Rancho) metro pairs',
+      direction: 'within',
+      context: 'I-25 / NM-528 multi-county logistics; city vs north growth product differs.',
+    },
+    {
+      label: 'Texas / Arizona / Colorado ↔ Albuquerque markets',
+      direction: 'inbound',
+      context: 'I-40/I-25 interstate household goods; FMCSA when leaving New Mexico.',
+    },
+    {
+      label: 'Bernalillo ↔ Santa Fe / Las Cruces in-state pairs',
+      direction: 'outbound',
+      context: 'I-25 long hauls; NMDOT TRB authority for pure in-state jobs.',
+    },
+    {
+      label: 'Albuquerque → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving New Mexico.',
+    },
+  ],
+  'santa-fe': [
+    {
+      label: 'Within Santa Fe (Historic core ↔ South Capital / Eldorado / NM-599 edges)',
+      direction: 'within',
+      context: 'Capital historic access and elevation logistics — not Albuquerque rename.',
+    },
+    {
+      label: 'State government / arts / second-home relo → Santa Fe',
+      direction: 'inbound',
+      context: 'Capital calendars and tourism peaks reshape windows.',
+    },
+    {
+      label: 'Santa Fe ↔ Albuquerque (I-25) pairs',
+      direction: 'within',
+      context: 'Capital vs metro product differs; adobe/historic access is not Heights HOA default.',
+    },
+    {
+      label: 'Colorado / Texas / California ↔ Santa Fe markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into historic and high-country stock; FMCSA when leaving NM.',
+    },
+    {
+      label: 'Santa Fe ↔ Los Alamos / Española corridor pairs',
+      direction: 'within',
+      context: 'US-84/285 regional logistics; NMDOT TRB for pure in-state jobs.',
+    },
+    {
+      label: 'Santa Fe → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving New Mexico.',
+    },
+  ],
+  'doa-ana': [
+    {
+      label: 'Within Doña Ana (Downtown Las Cruces ↔ Mesilla / East Mesa / NMSU edges)',
+      direction: 'within',
+      context: 'Southern border-adjacent college hub — not Albuquerque south rename.',
+    },
+    {
+      label: 'University / military spillover relo → Las Cruces',
+      direction: 'inbound',
+      context: 'NMSU and White Sands / Holloman-adjacent calendars reshape windows.',
+    },
+    {
+      label: 'Doña Ana ↔ El Paso, TX pairs',
+      direction: 'outbound',
+      context: 'I-10 interstate household goods; FMCSA when any leg leaves New Mexico.',
+    },
+    {
+      label: 'Doña Ana ↔ Albuquerque (I-25) in-state pairs',
+      direction: 'outbound',
+      context: 'Long I-25 hauls; NMDOT TRB for pure in-state jobs.',
+    },
+    {
+      label: 'Arizona / Texas ↔ Las Cruces markets',
+      direction: 'inbound',
+      context: 'I-10 interstate household goods into multi-unit and desert-suburb stock.',
+    },
+    {
+      label: 'Las Cruces → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving New Mexico.',
+    },
+  ],
+  sandoval: [
+    {
+      label: 'Within Sandoval (Rio Rancho ↔ Corrales / Bernalillo town / US-550 edges)',
+      direction: 'within',
+      context: 'North Albuquerque metro growth — not Bernalillo County city rename.',
+    },
+    {
+      label: 'Albuquerque overflow → Rio Rancho growth suburbs',
+      direction: 'inbound',
+      context: 'I-25 / NM-528 logistics; HOA packets dominate.',
+    },
+    {
+      label: 'Sandoval ↔ Bernalillo metro pairs',
+      direction: 'within',
+      context: 'City core vs north growth product differs; keep county lines clear.',
+    },
+    {
+      label: 'Texas / Colorado ↔ Sandoval growth markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into HOA tracts; FMCSA when leaving New Mexico.',
+    },
+    {
+      label: 'Sandoval ↔ Santa Fe in-state pairs',
+      direction: 'outbound',
+      context: 'I-25 northbound; NMDOT TRB for pure in-state jobs.',
+    },
+    {
+      label: 'Rio Rancho → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving New Mexico.',
+    },
+  ],
+  'san-juan': [
+    {
+      label: 'Within San Juan (Downtown Farmington ↔ Bloomfield / Aztec / US-64 edges)',
+      direction: 'within',
+      context: 'Four Corners regional hub — not Albuquerque north clone.',
+    },
+    {
+      label: 'Energy / healthcare relo → Farmington',
+      direction: 'inbound',
+      context: 'Hard report dates reshape northwest NM calendars.',
+    },
+    {
+      label: 'San Juan ↔ Colorado / Arizona Four Corners pairs',
+      direction: 'outbound',
+      context: 'US-550 / US-64 interstate household goods; FMCSA when leaving New Mexico.',
+    },
+    {
+      label: 'San Juan ↔ Albuquerque in-state pairs',
+      direction: 'outbound',
+      context: 'US-550 long hauls; NMDOT TRB for pure in-state jobs.',
+    },
+    {
+      label: 'Texas / Utah ↔ Farmington regional markets',
+      direction: 'inbound',
+      context: 'Interstate household goods into multi-unit and suburban stock.',
+    },
+    {
+      label: 'Farmington → out-of-state reverse exits',
+      direction: 'outbound',
+      context: 'FMCSA required once leaving New Mexico.',
+    },
+  ],
+};
 
 const AL_ROUTES: Record<string, CountyPopularRoute[]> = {
   jefferson: [

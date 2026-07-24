@@ -301,6 +301,19 @@ import { jeffersonParishLaIntelligence } from '@/lib/local-movers/county-intelli
 import { stTammanyParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/st-tammany-la';
 import { caddoParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/caddo-la';
 import { lafayetteParishLaIntelligence } from '@/lib/local-movers/county-intelligence/louisiana/lafayette-la';
+// Arkansas Core 6
+import { pulaskiCountyArIntelligence } from '@/lib/local-movers/county-intelligence/arkansas/pulaski-ar';
+import { bentonCountyArIntelligence } from '@/lib/local-movers/county-intelligence/arkansas/benton-ar';
+import { washingtonCountyArIntelligence } from '@/lib/local-movers/county-intelligence/arkansas/washington-ar';
+import { sebastianCountyArIntelligence } from '@/lib/local-movers/county-intelligence/arkansas/sebastian-ar';
+import { faulknerCountyArIntelligence } from '@/lib/local-movers/county-intelligence/arkansas/faulkner-ar';
+import { salineCountyArIntelligence } from '@/lib/local-movers/county-intelligence/arkansas/saline-ar';
+// New Mexico Core 5
+import { bernalilloCountyNmIntelligence } from '@/lib/local-movers/county-intelligence/new-mexico/bernalillo-nm';
+import { santaFeCountyNmIntelligence } from '@/lib/local-movers/county-intelligence/new-mexico/santa-fe-nm';
+import { doaAnaCountyNmIntelligence } from '@/lib/local-movers/county-intelligence/new-mexico/doa-ana-nm';
+import { sandovalCountyNmIntelligence } from '@/lib/local-movers/county-intelligence/new-mexico/sandoval-nm';
+import { sanJuanCountyNmIntelligence } from '@/lib/local-movers/county-intelligence/new-mexico/san-juan-nm';
 // Kentucky Core 6
 import { jeffersonCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/jefferson-ky';
 import { fayetteCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/fayette-ky';
@@ -314,20 +327,6 @@ import { washoeCountyNvIntelligence } from '@/lib/local-movers/county-intelligen
 import { carsonCityNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/carson-city-nv';
 import { douglasCountyNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/douglas-nv';
 import { nyeCountyNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/nye-nv';
-// Oklahoma Core 6
-import { oklahomaCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/oklahoma-ok';
-import { tulsaCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/tulsa-ok';
-import { clevelandCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/cleveland-ok';
-import { canadianCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/canadian-ok';
-import { comancheCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/comanche-ok';
-import { rogersCountyOkIntelligence } from '@/lib/local-movers/county-intelligence/oklahoma/rogers-ok';
-// Iowa Core 6
-import { polkCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/polk-ia';
-import { linnCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/linn-ia';
-import { scottCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/scott-ia';
-import { johnsonCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/johnson-ia';
-import { blackHawkCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/black-hawk-ia';
-import { woodburyCountyIaIntelligence } from '@/lib/local-movers/county-intelligence/iowa/woodbury-ia';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
@@ -627,6 +626,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   stTammanyParishLaIntelligence,
   caddoParishLaIntelligence,
   lafayetteParishLaIntelligence,
+  // Arkansas Core 6
+  pulaskiCountyArIntelligence,
+  bentonCountyArIntelligence,
+  washingtonCountyArIntelligence,
+  sebastianCountyArIntelligence,
+  faulknerCountyArIntelligence,
+  salineCountyArIntelligence,
+  // New Mexico Core 5
+  bernalilloCountyNmIntelligence,
+  santaFeCountyNmIntelligence,
+  doaAnaCountyNmIntelligence,
+  sandovalCountyNmIntelligence,
+  sanJuanCountyNmIntelligence,
   // Kentucky Core 6
   jeffersonCountyKyIntelligence,
   fayetteCountyKyIntelligence,
@@ -640,20 +652,6 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   carsonCityNvIntelligence,
   douglasCountyNvIntelligence,
   nyeCountyNvIntelligence,
-  // Oklahoma Core 6
-  oklahomaCountyOkIntelligence,
-  tulsaCountyOkIntelligence,
-  clevelandCountyOkIntelligence,
-  canadianCountyOkIntelligence,
-  comancheCountyOkIntelligence,
-  rogersCountyOkIntelligence,
-  // Iowa Core 6
-  polkCountyIaIntelligence,
-  linnCountyIaIntelligence,
-  scottCountyIaIntelligence,
-  johnsonCountyIaIntelligence,
-  blackHawkCountyIaIntelligence,
-  woodburyCountyIaIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -1073,6 +1071,25 @@ export const LA_TIER1_CORE6 = [
   'lafayette',
 ] as const;
 
+/** Arkansas Tier-1 Core 6 (Little Rock + NWA + Fort Smith + Conway + Saline). */
+export const AR_TIER1_CORE6 = [
+  'pulaski',
+  'benton',
+  'washington',
+  'sebastian',
+  'faulkner',
+  'saline',
+] as const;
+
+/** New Mexico Tier-1 Core 5 (Albuquerque + Santa Fe + Las Cruces + Rio Rancho + Farmington). */
+export const NM_TIER1_CORE5 = [
+  'bernalillo',
+  'santa-fe',
+  'doa-ana',
+  'sandoval',
+  'san-juan',
+] as const;
+
 /** Missouri Tier-1 Core 6 (St. Louis County + KC/Jackson + collars + Springfield). */
 export const MO_TIER1_CORE6 = [
   'st-louis',
@@ -1112,22 +1129,4 @@ export const NV_TIER1_CORE5 = [
   'nye',
 ] as const;
 
-/** Oklahoma Tier-1 Core 6 (OKC + Tulsa + Norman + west OKC + Lawton + NE Tulsa). */
-export const OK_TIER1_CORE6 = [
-  'oklahoma',
-  'tulsa',
-  'cleveland',
-  'canadian',
-  'comanche',
-  'rogers',
-] as const;
 
-/** Iowa Tier-1 Core 6 (Des Moines + CR + Quad Cities + Iowa City + Waterloo–CF + Sioux City). */
-export const IA_TIER1_CORE6 = [
-  'polk',
-  'linn',
-  'scott',
-  'johnson',
-  'black-hawk',
-  'woodbury',
-] as const;

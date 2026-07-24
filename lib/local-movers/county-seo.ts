@@ -321,6 +321,10 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'OCC Household Goods Certificate for in-state-only jobs when applicable';
     case 'iowa':
       return 'Iowa DOT Intrastate Motor Carrier Permit (household goods) for in-state-only jobs when applicable';
+    case 'arkansas':
+      return 'ArDOT Arkansas Intrastate Operating Authority for in-state-only jobs when applicable';
+    case 'new-mexico':
+      return 'NMDOT TRB household goods authority for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -417,7 +421,11 @@ export function buildCountyFaqItems(
                                                                     ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Oklahoma household goods moves — even shipments wholly within city limits — generally require a Household Goods Certificate from the Oklahoma Corporation Commission (OCC) Transportation Division. Confirm active certificate status matching the legal name on your estimate. FMCSA does not cover every in-state Oklahoma job; confirm OCC household goods certificate vs FMCSA for your exact origin and destination before you deposit.`
                                                                     : county.stateSlug === 'iowa'
                                                                       ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Iowa household goods moves by for-hire carriers generally require an Intrastate Motor Carrier Permit from the Iowa DOT Office of Motor Carrier Services, with household goods tariffs filed, posted, and approved. Confirm permit status and written rate clarity matching the legal name on your estimate. FMCSA does not cover every in-state Iowa job; confirm Iowa DOT household goods authority vs FMCSA for your exact origin and destination before you deposit.`
-                                                                      : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                                                                      : county.stateSlug === 'arkansas'
+                                                                        ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Arkansas household goods moves by for-hire carriers transporting property wholly within Arkansas generally require Arkansas Intrastate Operating Authority from the Arkansas Department of Transportation (ArDOT). Confirm active ArDOT intrastate authority matching the legal name on your estimate. FMCSA does not cover every in-state Arkansas job; confirm ArDOT Intrastate Authority vs FMCSA for your exact origin and destination before you deposit.`
+                                                                        : county.stateSlug === 'new-mexico'
+                                                                          ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate New Mexico household goods moves by for-hire carriers are generally regulated through the New Mexico Department of Transportation Transportation Regulation Bureau (TRB) household goods framework (statewide motor-carrier consumer regulation historically associated with the Public Regulation Commission transportation docket). Confirm current New Mexico household goods operating authority matching the legal name on your estimate. FMCSA does not cover every in-state New Mexico job; confirm NMDOT TRB household goods authority vs FMCSA for your exact origin and destination before you deposit.`
+                                                                          : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {
