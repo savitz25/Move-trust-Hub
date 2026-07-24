@@ -5069,6 +5069,8 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'minnesota') return MN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'wisconsin') return WI_ROUTES[countySlug] ?? [];
   if (stateSlug === 'missouri') return MO_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'kentucky') return KY_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'nevada') return NV_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'connecticut') return CT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
@@ -5730,6 +5732,102 @@ const MO_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Illinois → Jefferson fringe housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Jefferson → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Jefferson → Cape / southeast MO regional pairs', direction: 'outbound', context: 'I-55 long locals; MoDOT HHG for pure in-state jobs.' },
+  ],
+};
+
+
+const KY_ROUTES: Record<string, CountyPopularRoute[]> = {
+  jefferson: [
+    { label: 'Within Jefferson County, KY (East End ↔ South End / Downtown Louisville)', direction: 'within', context: 'Louisville neighborhood and East End HOA product — Kentucky only, not Jefferson County MO.' },
+    { label: 'Indiana / Southern IN → Louisville housing', direction: 'inbound', context: 'Short bridge hops need FMCSA; clarify KYTC vs interstate early.' },
+    { label: 'Louisville ↔ Lexington in-state pairs', direction: 'outbound', context: 'I-64 long locals; KYTC HHG for pure in-state jobs.' },
+    { label: 'Louisville ↔ NKY / Cincinnati collar pairs', direction: 'outbound', context: 'I-71 freeflow; Ohio destinations need FMCSA.' },
+    { label: 'Jefferson County, KY → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest → Louisville professional & healthcare corridors', direction: 'inbound', context: 'Interstate household goods into multi-unit and East End stock.' },
+  ],
+  fayette: [
+    { label: 'Within Fayette (Downtown / campus ↔ horse-country suburbs)', direction: 'within', context: 'Lexington university multi-unit vs suburban HOA product — not Louisville.' },
+    { label: 'Louisville → Lexington in-state pairs', direction: 'inbound', context: 'I-64 long locals; KYTC HHG for pure in-state jobs.' },
+    { label: 'UK semester inflows → campus multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'Ohio / Indiana → Lexington professional housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Fayette → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Fayette → Cincinnati / NKY reverse career pairs', direction: 'outbound', context: 'I-75 freeflow; FMCSA once entering Ohio.' },
+  ],
+  kenton: [
+    { label: 'Within Kenton (Covington ↔ Independence / suburban NKY)', direction: 'within', context: 'Ohio River urban multi-unit vs suburban growth — Northern Kentucky, not Louisville.' },
+    { label: 'Cincinnati / Hamilton County OH → Kenton housing', direction: 'inbound', context: 'Short interstate hops need FMCSA even when map miles look local.' },
+    { label: 'Kenton ↔ Boone North Kentucky pairs', direction: 'within', context: 'I-275 multi-county logistics; keep county lines clear.' },
+    { label: 'Louisville → NKY in-state pairs', direction: 'inbound', context: 'I-71 long locals; KYTC HHG for pure in-state jobs.' },
+    { label: 'Kenton → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest → Covington / NKY professional corridors', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  boone: [
+    { label: 'Within Boone (Florence / CVG corridor ↔ Hebron / Union growth)', direction: 'within', context: 'Airport-corridor multi-family vs growth SFH — not Covington urban defaults.' },
+    { label: 'Cincinnati / OH → Boone County CVG-corridor housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required; airport freeflow matters.' },
+    { label: 'Boone ↔ Kenton NKY pairs', direction: 'within', context: 'I-71/75 / I-275 logistics; keep county lines clear.' },
+    { label: 'Louisville → Boone in-state pairs', direction: 'inbound', context: 'I-71 long locals; KYTC HHG for pure in-state jobs.' },
+    { label: 'Boone → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Corporate / airport-adjacent relo → Florence multi-family', direction: 'inbound', context: 'Hard report dates and HOA windows dominate growth corridors.' },
+  ],
+  warren: [
+    { label: 'Within Warren (Downtown Bowling Green ↔ suburb rings)', direction: 'within', context: 'South-central regional product — not Louisville south spillover.' },
+    { label: 'Louisville / Nashville → Bowling Green in-state or regional pairs', direction: 'inbound', context: 'I-65 logistics; KYTC for pure KY jobs; FMCSA for TN legs.' },
+    { label: 'Campus and manufacturing relo → Bowling Green multi-unit', direction: 'inbound', context: 'Lease waves and hard report dates cluster demand.' },
+    { label: 'Warren → Louisville / Lexington reverse career pairs', direction: 'outbound', context: 'I-65 / parkway logistics; KYTC HHG for pure in-state jobs.' },
+    { label: 'Warren → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest → Bowling Green regional housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  hardin: [
+    { label: 'Within Hardin (Elizabethtown ↔ Radcliff / Fort Knox-adjacent edges)', direction: 'within', context: 'I-65 regional product with military-adjacent calendars where accurate.' },
+    { label: 'Louisville → Elizabethtown in-state pairs', direction: 'inbound', context: 'I-65 long locals; KYTC HHG for pure in-state jobs.' },
+    { label: 'Fort Knox PCS / military relo → Hardin multi-unit and SFH', direction: 'inbound', context: 'Hard report dates and storage-in-transit are common estimate inputs.' },
+    { label: 'Hardin → Louisville reverse career pairs', direction: 'outbound', context: 'I-65 freeflow; KYTC HHG for pure in-state jobs.' },
+    { label: 'Hardin → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Tennessee / Midwest → Hardin regional housing', direction: 'inbound', context: 'Interstate or long regional hauls; confirm KYTC vs FMCSA for the full route.' },
+  ],
+};
+
+
+const NV_ROUTES: Record<string, CountyPopularRoute[]> = {
+  clark: [
+    { label: 'Within Clark (Strip-adjacent / downtown ↔ Henderson / Summerlin / North Las Vegas)', direction: 'within', context: 'Elevator towers and HOA multi-family vs valley SFH — heat and I-15 freeflow dominate.' },
+    { label: 'California / SoCal → Las Vegas Valley housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required; heat pacing matters.' },
+    { label: 'Clark ↔ Nye (Pahrump) desert pairs', direction: 'within', context: 'NV-160 long empty miles; price portal time honestly.' },
+    { label: 'Las Vegas → Reno in-state long hauls', direction: 'outbound', context: 'US-95 long locals; NTA CPCN for pure in-state jobs.' },
+    { label: 'Clark → out-of-state reverse exits (CA / AZ / TX)', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest / East → Las Vegas professional & hospitality corridors', direction: 'inbound', context: 'Interstate household goods into multi-unit and HOA stock.' },
+  ],
+  washoe: [
+    { label: 'Within Washoe (Downtown Reno / Midtown ↔ Sparks / foothill edges)', direction: 'within', context: 'Urban multi-unit vs industrial and foothill product — not Las Vegas Valley.' },
+    { label: 'California / Bay Area → Reno–Sparks housing', direction: 'inbound', context: 'I-80 interstate household goods; FMCSA required.' },
+    { label: 'Washoe ↔ Carson City capital pairs', direction: 'within', context: 'US-395 / I-580 logistics; keep market differences clear.' },
+    { label: 'Reno → Las Vegas in-state long hauls', direction: 'outbound', context: 'US-95 long locals; NTA CPCN for pure in-state jobs.' },
+    { label: 'Washoe → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Warehouse / industrial workforce relo → Sparks multi-family', direction: 'inbound', context: 'Shift calendars and I-80 freeflow reshape crew timing.' },
+  ],
+  'carson-city': [
+    { label: 'Within Carson City (downtown / capital core ↔ valley edges)', direction: 'within', context: 'Capital-scale multi-unit and smaller urban grid — not Reno south clone.' },
+    { label: 'Reno → Carson City capital housing', direction: 'inbound', context: 'US-395 / I-580 links; NTA CPCN for pure in-state jobs.' },
+    { label: 'Carson City ↔ Douglas / Carson Valley pairs', direction: 'within', context: 'Valley logistics; keep city-county vs Douglas lines clear.' },
+    { label: 'California → Carson City capital corridors', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Carson City → Las Vegas in-state long hauls', direction: 'outbound', context: 'US-95 long locals; NTA CPCN for pure in-state jobs.' },
+    { label: 'Carson City → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  douglas: [
+    { label: 'Within Douglas (Minden–Gardnerville ↔ Tahoe NV approaches)', direction: 'within', context: 'Carson Valley and Tahoe access product — not Las Vegas.' },
+    { label: 'Carson City / Reno → Douglas Valley housing', direction: 'inbound', context: 'US-395 logistics; NTA CPCN for pure in-state jobs.' },
+    { label: 'California Tahoe / South Lake → Douglas NV pairs', direction: 'inbound', context: 'Short border hops need FMCSA; seasonal freeflow matters.' },
+    { label: 'Douglas → Reno reverse career pairs', direction: 'outbound', context: 'US-395 freeflow; NTA CPCN for pure in-state jobs.' },
+    { label: 'Douglas → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Seasonal second-home turns along Tahoe NV approaches', direction: 'within', context: 'Summer tourism and winter weather rewrite local hours.' },
+  ],
+  nye: [
+    { label: 'Within Nye (Pahrump growth ↔ desert edges)', direction: 'within', context: 'Desert exurban product — not a Clark County rename.' },
+    { label: 'Las Vegas / Clark → Pahrump pairs', direction: 'inbound', context: 'NV-160 long empty miles; heat pacing and portal time dominate.' },
+    { label: 'California → Pahrump housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Nye → Las Vegas reverse commute housing pairs', direction: 'outbound', context: 'NV-160 freeflow; NTA CPCN for pure in-state jobs.' },
+    { label: 'Nye → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Retirement and second-home inflows → Pahrump multi-family and SFH', direction: 'inbound', context: 'HOA multi-family and long driveway stock both appear.' },
   ],
 };
 

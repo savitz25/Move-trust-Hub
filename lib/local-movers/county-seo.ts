@@ -309,6 +309,10 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'CTDOT household goods carrier certificate for in-state-only jobs when applicable';
     case 'utah':
       return 'UDOT motor carrier credentials and insurance for in-state-only jobs when applicable';
+    case 'kentucky':
+      return 'KYTC Division of Motor Carriers household goods certificate (DMT/DVR) for in-state-only jobs when applicable';
+    case 'nevada':
+      return 'NTA household goods CPCN for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -393,7 +397,11 @@ export function buildCountyFaqItems(
                                                         ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Connecticut household goods moves by for-hire carriers generally require a Household Goods Carrier Certificate from the Connecticut Department of Transportation (CTDOT), administered through Public Transportation / Regulatory Compliance frameworks. Confirm active certificate status matching the legal name on your estimate. FMCSA does not cover every in-state Connecticut job; confirm CTDOT household goods certificate vs FMCSA for your exact origin and destination before you deposit.`
                                                         : county.stateSlug === 'utah'
                                                           ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Utah household goods moves by for-hire carriers operating commercial motor vehicles generally must comply with Utah Department of Transportation (UDOT) Motor Carrier Division registration, insurance, and safety frameworks. Confirm written estimates matching the legal name on paperwork and required insurance. FMCSA does not cover every in-state Utah job; confirm UDOT-applicable credentials vs FMCSA for your exact origin and destination before you deposit.`
-                                                          : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                                                          : county.stateSlug === 'kentucky'
+                                                            ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Kentucky household goods moves generally require a licensed household goods mover under the Kentucky Transportation Cabinet, Department of Vehicle Regulation, Division of Motor Carriers (often referenced with a KY DMT/DVR household goods license number). Request written estimates and match the legal name to KYTC consumer resources. FMCSA does not cover every in-state Kentucky job; confirm KYTC household goods authority vs FMCSA for your exact origin and destination before you deposit.`
+                                                            : county.stateSlug === 'nevada'
+                                                              ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Nevada household goods moves generally require a Certificate of Public Convenience and Necessity (CPCN) from the Nevada Transportation Authority under NRS/NAC 706 frameworks. Confirm active NTA household goods certificate status matching the legal name on your estimate. FMCSA does not cover every in-state Nevada job; confirm NTA CPCN vs FMCSA for your exact origin and destination before you deposit.`
+                                                              : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

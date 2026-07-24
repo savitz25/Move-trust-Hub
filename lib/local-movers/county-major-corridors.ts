@@ -190,6 +190,21 @@ const CORRIDORS: Record<string, string> = {
   'missouri/greene': 'I-44 · US-60 · US-65 · local Springfield grid',
   'missouri/clay': 'I-35 · I-29 · I-435 · MO-291',
   'missouri/jefferson': 'I-55 · US-61/67 · MO-21 · MO-30',
+  // ——— Kentucky Core 6 ———
+  'kentucky/jefferson': 'I-64 · I-65 · I-71 · I-264 · I-265 · local arterial grid',
+  'kentucky/fayette': 'I-64 · I-75 · US-60 · US-27 · New Circle corridors',
+  'kentucky/kenton': 'I-71/75 · I-275 · KY-16 · KY-17 · local NKY grid',
+  'kentucky/boone': 'I-71/75 · I-275 · KY-18 · KY-237 · CVG approaches',
+  'kentucky/warren': 'I-65 · US-31W · US-68 · local Bowling Green grid',
+  'kentucky/hardin': 'I-65 · US-31W · KY-313 · local Elizabethtown grid',
+
+  // ——— Nevada Core 5 ———
+  'nevada/clark': 'I-15 · I-215 · US-95 · US-93 · local Las Vegas arterial grid',
+  'nevada/washoe': 'I-80 · US-395 · I-580 · local Reno/Sparks grid',
+  'nevada/carson-city': 'US-50 · US-395 · I-580 links · local grid',
+  'nevada/douglas': 'US-395 · US-50 · NV-207/Tahoe approaches',
+  'nevada/nye': 'NV-160 · US-95 · local Pahrump grid',
+
 // ——— Michigan Core 10 ———
   'michigan/wayne': 'I-75 · I-94 · I-96 · I-275 · M-10 · arterial grid',
   'michigan/oakland': 'I-75 · I-696 · M-59 · Telegraph · Woodward corridors',

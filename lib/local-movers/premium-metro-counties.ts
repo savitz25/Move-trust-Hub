@@ -201,6 +201,17 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'missouri', countySlug: 'greene' },
   { stateSlug: 'missouri', countySlug: 'clay' },
   { stateSlug: 'missouri', countySlug: 'jefferson' },
+  // Kentucky Core 6
+  { stateSlug: 'kentucky', countySlug: 'jefferson' },
+  { stateSlug: 'kentucky', countySlug: 'fayette' },
+  { stateSlug: 'kentucky', countySlug: 'kenton' },
+  { stateSlug: 'kentucky', countySlug: 'boone' },
+  { stateSlug: 'kentucky', countySlug: 'warren' },
+  { stateSlug: 'kentucky', countySlug: 'hardin' },
+  // Nevada Core 5 (clark/washoe already listed above)
+  { stateSlug: 'nevada', countySlug: 'carson-city' },
+  { stateSlug: 'nevada', countySlug: 'douglas' },
+  { stateSlug: 'nevada', countySlug: 'nye' },
 ] as const;
 
 const premiumMetroKeySet = new Set(

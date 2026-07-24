@@ -287,11 +287,24 @@ import { davisCountyUtIntelligence } from '@/lib/local-movers/county-intelligenc
 import { weberCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/weber-ut';
 import { washingtonCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/washington-ut';
 import { cacheCountyUtIntelligence } from '@/lib/local-movers/county-intelligence/utah/cache-ut';
+// Kentucky Core 6
+import { jeffersonCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/jefferson-ky';
+import { fayetteCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/fayette-ky';
+import { kentonCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/kenton-ky';
+import { booneCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/boone-ky';
+import { warrenCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/warren-ky';
+import { hardinCountyKyIntelligence } from '@/lib/local-movers/county-intelligence/kentucky/hardin-ky';
+// Nevada Core 5
+import { clarkCountyNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/clark-nv';
+import { washoeCountyNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/washoe-nv';
+import { carsonCityNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/carson-city-nv';
+import { douglasCountyNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/douglas-nv';
+import { nyeCountyNvIntelligence } from '@/lib/local-movers/county-intelligence/nevada/nye-nv';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / MI / OR / MD / MA / MN / WI / IN / MO / SC / CT / UT / KY / NV / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Only register packs whose source files are committed together (orphan registry imports break production builds).
  */
@@ -572,6 +585,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   weberCountyUtIntelligence,
   washingtonCountyUtIntelligence,
   cacheCountyUtIntelligence,
+  // Kentucky Core 6
+  jeffersonCountyKyIntelligence,
+  fayetteCountyKyIntelligence,
+  kentonCountyKyIntelligence,
+  booneCountyKyIntelligence,
+  warrenCountyKyIntelligence,
+  hardinCountyKyIntelligence,
+  // Nevada Core 5
+  clarkCountyNvIntelligence,
+  washoeCountyNvIntelligence,
+  carsonCityNvIntelligence,
+  douglasCountyNvIntelligence,
+  nyeCountyNvIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -989,4 +1015,23 @@ export const SC_TIER1_CORE6 = [
   'horry',
   'spartanburg',
   'lexington',
+] as const;
+
+/** Kentucky Tier-1 Core 6 (Louisville + Lexington + NKY + Bowling Green + Elizabethtown). */
+export const KY_TIER1_CORE6 = [
+  'jefferson',
+  'fayette',
+  'kenton',
+  'boone',
+  'warren',
+  'hardin',
+] as const;
+
+/** Nevada Tier-1 Core 5 (Las Vegas Valley + Reno + Carson + Douglas + Nye). */
+export const NV_TIER1_CORE5 = [
+  'clark',
+  'washoe',
+  'carson-city',
+  'douglas',
+  'nye',
 ] as const;
