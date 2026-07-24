@@ -219,6 +219,22 @@ const CORRIDORS: Record<string, string> = {
   'iowa/johnson': 'I-80 · US-218 · US-6 · local Iowa City grid',
   'iowa/black-hawk': 'I-380 · US-20 · US-218 · local Waterloo/Cedar Falls grid',
   'iowa/woodbury': 'I-29 · US-20 · US-75 · local Sioux City grid',
+  // ——— Kansas Core 6 ———
+  'kansas/johnson': 'I-35 · I-435 · US-69 · K-10 · local JOCO arterial grid',
+  'kansas/sedgwick': 'I-135 · I-235 · US-54 · K-96 · local Wichita grid',
+  'kansas/shawnee': 'I-70 · US-75 · US-24 · local Topeka grid',
+  'kansas/wyandotte': 'I-70 · I-635 · US-69 · local KCK grid',
+  'kansas/douglas': 'I-70 · US-40 · US-59 · K-10 · local Lawrence grid',
+  'kansas/leavenworth': 'US-73 · K-7 · K-92 · I-70 links · local arterial grid',
+
+  // ——— Mississippi Core 6 ———
+  'mississippi/hinds': 'I-55 · I-20 · US-49 · US-51 · local Jackson grid',
+  'mississippi/harrison': 'I-10 · US-90 · US-49 · local Gulf Coast grid',
+  'mississippi/desoto': 'I-55 · I-69 · US-51 · US-78 · local Southaven grid',
+  'mississippi/rankin': 'I-20 · US-80 · MS-25 · local east-metro grid',
+  'mississippi/madison': 'I-55 · MS-22 · US-51 · local north-metro grid',
+  'mississippi/jackson': 'I-10 · US-90 · MS-63 · local Pascagoula/OS grid',
+
 
 
 // ——— Michigan Core 10 ———

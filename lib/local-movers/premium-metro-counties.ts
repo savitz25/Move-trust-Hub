@@ -226,6 +226,20 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'iowa', countySlug: 'johnson' },
   { stateSlug: 'iowa', countySlug: 'black-hawk' },
   { stateSlug: 'iowa', countySlug: 'woodbury' },
+  // Kansas Core 6
+  { stateSlug: 'kansas', countySlug: 'johnson' },
+  { stateSlug: 'kansas', countySlug: 'sedgwick' },
+  { stateSlug: 'kansas', countySlug: 'shawnee' },
+  { stateSlug: 'kansas', countySlug: 'wyandotte' },
+  { stateSlug: 'kansas', countySlug: 'douglas' },
+  { stateSlug: 'kansas', countySlug: 'leavenworth' },
+  // Mississippi Core 6
+  { stateSlug: 'mississippi', countySlug: 'hinds' },
+  { stateSlug: 'mississippi', countySlug: 'harrison' },
+  { stateSlug: 'mississippi', countySlug: 'desoto' },
+  { stateSlug: 'mississippi', countySlug: 'rankin' },
+  { stateSlug: 'mississippi', countySlug: 'madison' },
+  { stateSlug: 'mississippi', countySlug: 'jackson' },
 ] as const;
 
 const premiumMetroKeySet = new Set(

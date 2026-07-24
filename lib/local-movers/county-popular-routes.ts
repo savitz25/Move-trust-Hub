@@ -5073,6 +5073,8 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'nevada') return NV_ROUTES[countySlug] ?? [];
   if (stateSlug === 'oklahoma') return OK_ROUTES[countySlug] ?? [];
   if (stateSlug === 'iowa') return IA_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'kansas') return KS_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'mississippi') return MS_ROUTES[countySlug] ?? [];
   if (stateSlug === 'indiana') return IN_ROUTES[countySlug] ?? [];
   if (stateSlug === 'connecticut') return CT_ROUTES[countySlug] ?? [];
   if (stateSlug === 'utah') return UT_ROUTES[countySlug] ?? [];
@@ -6401,6 +6403,110 @@ const IA_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Woodbury ↔ Plymouth / Cherokee regional pairs', direction: 'within', context: 'Northwest Iowa logistics; keep county lines clear.' },
     { label: 'Woodbury → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
     { label: 'Midwest → Sioux City regional housing & jobs', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+};
+
+
+const KS_ROUTES: Record<string, CountyPopularRoute[]> = {
+  johnson: [
+    { label: 'Within Johnson County, KS (Overland Park ↔ Olathe / Lenexa / Shawnee)', direction: 'within', context: 'JOCO corporate HOA multi-family — Kansas only, not Johnson County IA.' },
+    { label: 'Missouri / KCMO → JOCO housing', direction: 'inbound', context: 'Short interstate hops need FMCSA; clarify KCC vs interstate early.' },
+    { label: 'Johnson ↔ Wyandotte multi-county pairs', direction: 'within', context: 'KC metro KS-side logistics; keep JOCO vs KCK product differences clear.' },
+    { label: 'Wichita / Topeka → JOCO in-state pairs', direction: 'inbound', context: 'I-35 / I-70 long locals; KCC HHG authority for pure in-state jobs.' },
+    { label: 'Johnson County, KS → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Corporate HQ relo → Overland Park multi-family', direction: 'inbound', context: 'Hard report dates and HOA windows dominate growth corridors.' },
+  ],
+  sedgwick: [
+    { label: 'Within Sedgwick (Downtown / midtown Wichita ↔ east / west suburbs)', direction: 'within', context: 'Wichita regional product — not Kansas City metro defaults.' },
+    { label: 'Aircraft / industrial workforce relo → Wichita multi-unit', direction: 'inbound', context: 'Shift calendars and plant-adjacent freeflow reshape crew timing.' },
+    { label: 'KC metro → Wichita in-state long hauls', direction: 'inbound', context: 'I-35 long locals; KCC HHG authority for pure in-state jobs.' },
+    { label: 'Oklahoma / Texas → Wichita housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Sedgwick → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Sedgwick → Topeka / Lawrence reverse career pairs', direction: 'outbound', context: 'I-135 / I-70 logistics; KCC for pure in-state jobs.' },
+  ],
+  shawnee: [
+    { label: 'Within Shawnee (Downtown Topeka ↔ west / south suburbs)', direction: 'within', context: 'Capital multi-unit vs suburban HOA product — not JOCO corporate defaults.' },
+    { label: 'KC metro → Topeka in-state pairs', direction: 'inbound', context: 'I-70 long locals; KCC HHG authority for pure in-state jobs.' },
+    { label: 'Capital / state workforce relo → Topeka multi-unit', direction: 'inbound', context: 'Mid-month report dates often matter more than Saturday peaks.' },
+    { label: 'Wichita → Topeka in-state pairs', direction: 'inbound', context: 'I-335 / I-70 logistics; KCC for pure in-state jobs.' },
+    { label: 'Shawnee → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Missouri → Topeka capital housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  wyandotte: [
+    { label: 'Within Wyandotte (Downtown KCK ↔ west / south growth edges)', direction: 'within', context: 'Kansas City, Kansas urban product — not Kansas City, Missouri and not JOCO HOA defaults.' },
+    { label: 'Missouri / KCMO → Wyandotte / KCK housing', direction: 'inbound', context: 'Short interstate hops need FMCSA even when map miles look local.' },
+    { label: 'Wyandotte ↔ Johnson JOCO pairs', direction: 'within', context: 'Urban KCK vs suburban JOCO products differ — keep county lines clear.' },
+    { label: 'Topeka / Lawrence → KCK in-state pairs', direction: 'inbound', context: 'I-70 long locals; KCC HHG authority for pure in-state jobs.' },
+    { label: 'Wyandotte → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Midwest → KCK professional corridors', direction: 'inbound', context: 'Interstate household goods into multi-unit and suburban stock.' },
+  ],
+  douglas: [
+    { label: 'Within Douglas County, KS (Downtown / campus Lawrence ↔ west growth)', direction: 'within', context: 'KU multi-unit vs suburban product — Kansas only, not Douglas County NV.' },
+    { label: 'KU semester inflows → campus multi-unit', direction: 'inbound', context: 'August and January peaks cluster elevators and curb demand.' },
+    { label: 'KC metro → Lawrence in-state pairs', direction: 'inbound', context: 'K-10 / I-70 logistics; KCC HHG authority for pure in-state jobs.' },
+    { label: 'Topeka ↔ Lawrence pairs', direction: 'within', context: 'US-40 / I-70 logistics; keep county lines clear.' },
+    { label: 'Douglas County, KS → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Missouri → Lawrence academic housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+  ],
+  leavenworth: [
+    { label: 'Within Leavenworth (Leavenworth / Lansing ↔ base-adjacent edges)', direction: 'within', context: 'North KC metro product with Fort Leavenworth adjacency where accurate.' },
+    { label: 'Fort Leavenworth PCS / military relo → multi-unit and SFH', direction: 'inbound', context: 'Hard report dates and storage-in-transit are common estimate inputs.' },
+    { label: 'JOCO / KCK → Leavenworth north-metro pairs', direction: 'within', context: 'US-73 / K-7 logistics; keep county lines clear.' },
+    { label: 'Missouri → Leavenworth housing', direction: 'inbound', context: 'Short interstate hops need FMCSA.' },
+    { label: 'Leavenworth → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Leavenworth → Topeka / Lawrence reverse career pairs', direction: 'outbound', context: 'I-70 logistics; KCC for pure in-state jobs.' },
+  ],
+};
+
+
+const MS_ROUTES: Record<string, CountyPopularRoute[]> = {
+  hinds: [
+    { label: 'Within Hinds (Downtown / Fondren Jackson ↔ south / west metro edges)', direction: 'within', context: 'Jackson the city / capital metro core — not Jackson County Gulf Coast product.' },
+    { label: 'Hinds ↔ Rankin / Madison metro pairs', direction: 'within', context: 'I-55 / I-20 multi-county logistics; keep capital-core vs collar products clear.' },
+    { label: 'Memphis / Gulf Coast → Jackson in-state pairs', direction: 'inbound', context: 'I-55 / US-49 long locals; MDOT HHG authority for pure in-state jobs.' },
+    { label: 'Texas / Louisiana → Jackson capital housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Hinds → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Capital / professional relo → Jackson multi-unit', direction: 'inbound', context: 'Mid-month report dates often matter more than Saturday peaks.' },
+  ],
+  harrison: [
+    { label: 'Within Harrison (Gulfport ↔ Biloxi / coastal multi-unit)', direction: 'within', context: 'Gulf Coast tourism + residential mix — not Jackson metro south.' },
+    { label: 'Jackson metro → Gulf Coast in-state pairs', direction: 'inbound', context: 'US-49 long locals; MDOT HHG authority for pure in-state jobs.' },
+    { label: 'Harrison ↔ Jackson County coast pairs', direction: 'within', context: 'I-10 coastal logistics; keep Gulfport–Biloxi vs Pascagoula product differences clear.' },
+    { label: 'Louisiana / Alabama → Gulf Coast housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Harrison → Florida / Sun Belt reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Tourism / seasonal turns → coastal multi-unit', direction: 'inbound', context: 'Peak summer freeflow rewrites local hours on US-90 corridors.' },
+  ],
+  desoto: [
+    { label: 'Within DeSoto (Southaven ↔ Olive Branch / Horn Lake growth)', direction: 'within', context: 'Memphis collar product — not central Mississippi Jackson metro.' },
+    { label: 'Tennessee / Memphis → DeSoto housing', direction: 'inbound', context: 'Short interstate hops need FMCSA even when map miles look local.' },
+    { label: 'DeSoto ↔ Tunica / Marshall regional pairs', direction: 'within', context: 'North MS logistics; keep county lines clear.' },
+    { label: 'Jackson metro → DeSoto in-state pairs', direction: 'inbound', context: 'I-55 long locals; MDOT HHG authority for pure in-state jobs.' },
+    { label: 'DeSoto → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Corporate / logistics relo → Southaven multi-family', direction: 'inbound', context: 'HOA windows and I-55 freeflow dominate collar growth.' },
+  ],
+  rankin: [
+    { label: 'Within Rankin (Pearl / Brandon ↔ Flowood / east-metro growth)', direction: 'within', context: 'East Jackson metro product — must differ from Madison north-metro HOA patterns.' },
+    { label: 'Hinds → Rankin east-metro housing', direction: 'inbound', context: 'I-20 collar logistics; keep county lines clear.' },
+    { label: 'Rankin ↔ Madison multi-county pairs', direction: 'within', context: 'East vs north metro products differ — clarify addresses on estimates.' },
+    { label: 'Gulf Coast → Rankin in-state pairs', direction: 'inbound', context: 'US-49 / I-55 logistics; MDOT HHG authority for pure in-state jobs.' },
+    { label: 'Rankin → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Family / school relo → Brandon multi-family', direction: 'inbound', context: 'School peaks pack east-metro fleets first.' },
+  ],
+  madison: [
+    { label: 'Within Madison County, MS (Madison / Ridgeland ↔ north growth edges)', direction: 'within', context: 'North Jackson metro product — Mississippi only, not Madison County AL.' },
+    { label: 'Hinds → Madison north-metro housing', direction: 'inbound', context: 'I-55 collar logistics; keep county lines clear.' },
+    { label: 'Madison ↔ Rankin multi-county pairs', direction: 'within', context: 'North vs east metro products differ — clarify addresses on estimates.' },
+    { label: 'Memphis → Madison County, MS in-state pairs', direction: 'inbound', context: 'I-55 long locals; MDOT HHG authority for pure in-state jobs.' },
+    { label: 'Madison County, MS → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Professional / HOA relo → Ridgeland multi-family', direction: 'inbound', context: 'HOA COI packets and I-55 freeflow dominate north-metro growth.' },
+  ],
+  jackson: [
+    { label: 'Within Jackson County, MS (Pascagoula ↔ Ocean Springs / coastal edges)', direction: 'within', context: 'Gulf Coast industrial + residential — NOT Jackson the city (Hinds) and NOT Jackson County MO.' },
+    { label: 'Harrison Coast → Jackson County, MS pairs', direction: 'within', context: 'I-10 / US-90 coastal logistics; keep Biloxi vs Pascagoula product differences clear.' },
+    { label: 'Jackson metro (Hinds) → Jackson County coast in-state pairs', direction: 'inbound', context: 'US-49 / I-59 logistics; MDOT HHG authority for pure in-state jobs.' },
+    { label: 'Alabama / Louisiana → Pascagoula–Ocean Springs housing', direction: 'inbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Jackson County, MS → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; FMCSA required.' },
+    { label: 'Industrial / shipyard workforce relo → coastal multi-unit', direction: 'inbound', context: 'Shift calendars reshape crew timing near industrial corridors.' },
   ],
 };
 
