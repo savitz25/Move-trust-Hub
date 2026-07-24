@@ -4958,6 +4958,90 @@ const CO_ROUTES: Record<string, CountyPopularRoute[]> = {
 };
 
 
+const WA_ROUTES: Record<string, CountyPopularRoute[]> = {
+  king: [
+    { label: 'Within King (Seattle core ↔ Bellevue / Redmond / Renton / South King)', direction: 'within', context: 'Hills, stairs, and elevator COIs downtown vs Eastside HOA tech corridors — not one local rate.' },
+    { label: 'California / Texas / Colorado → Seattle & Eastside tech markets', direction: 'inbound', context: 'High-volume Puget Sound inflows; rain-window packing and building packets dominate.', href: '/resources/routes/california-to-washington' },
+    { label: 'King ↔ Pierce / Snohomish / Kitsap pairs', direction: 'within', context: 'I-5 / I-405 / ferry-adjacent logistics; clarify county lines and bridge timing.' },
+    { label: 'Seattle ↔ Portland OR career pairs', direction: 'outbound', context: 'I-5 interstate; FMCSA required once leaving Washington.' },
+    { label: 'Eastside multi-unit tech turnover', direction: 'within', context: 'Bellevue/Redmond elevators and HOA rules; mid-month lease waves pack freights elevators first.' },
+    { label: 'King → out-of-state reverse exits', direction: 'outbound', context: 'Interstate household goods; volume surveys recommended.', href: '/resources/routes/california-to-texas' },
+  ],
+  pierce: [
+    { label: 'Within Pierce (Tacoma ↔ Lakewood / Puyallup / Gig Harbor edges)', direction: 'within', context: 'South-Sound grids and JBLM adjacency — not a Seattle Eastside quote.' },
+    { label: 'JBLM / military PCS inflows', direction: 'inbound', context: 'Hard report dates and storage-in-transit dominate military calendars.' },
+    { label: 'Pierce ↔ King / Thurston pairs', direction: 'within', context: 'I-5 south-Sound logistics; SR-16 peninsula approaches differ from Tacoma core.' },
+    { label: 'California / Midwest → Tacoma south-Sound housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and SFH stock.', href: '/resources/routes/california-to-washington' },
+    { label: 'Tacoma multi-unit and hillside stock', direction: 'within', context: 'Stairs, curb limits, and rain staging — survey access early.' },
+    { label: 'Pierce → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Washington.' },
+  ],
+  snohomish: [
+    { label: 'Within Snohomish (Everett ↔ Lynnwood / Mill Creek / Monroe)', direction: 'within', context: 'North-metro growth mixed with industrial corridors — not King Eastside clone.' },
+    { label: 'Boeing / industrial workforce & north-metro inflows', direction: 'inbound', context: 'Shift calendars and multi-family lease waves along I-5 north.' },
+    { label: 'Snohomish ↔ King (I-5 / I-405) pairs', direction: 'within', context: 'North-metro to Seattle logistics; portal time dominates at peak.' },
+    { label: 'California / Midwest → Everett / south Snohomish housing', direction: 'inbound', context: 'Interstate household goods into growth suburbs.', href: '/resources/routes/california-to-washington' },
+    { label: 'Lynnwood–Mill Creek HOA and multi-unit mix', direction: 'within', context: 'Gate lists and elevators; collect packets early.' },
+    { label: 'Snohomish → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Washington.' },
+  ],
+  spokane: [
+    { label: 'Within Spokane (Downtown / South Hill ↔ Valley / Northside)', direction: 'within', context: 'Eastern WA hub product — continental climate, not Puget Sound rain logistics.' },
+    { label: 'Midwest / Idaho → Spokane regional markets', direction: 'inbound', context: 'I-90 corridor household goods into hillside and Valley stock.' },
+    { label: 'Spokane ↔ Coeur d\'Alene ID pairs', direction: 'outbound', context: 'Short interstate hops; FMCSA required once leaving Washington.' },
+    { label: 'California / Colorado → Spokane lifestyle markets', direction: 'inbound', context: 'Interstate arrivals into elevation-adjacent Inland Northwest housing.', href: '/resources/routes/california-to-washington' },
+    { label: 'South Hill multi-story and Valley growth edges', direction: 'within', context: 'Grades and longer empty miles differ by pocket — survey access early.' },
+    { label: 'Spokane → Seattle / coast reverse exits', direction: 'outbound', context: 'I-90 westbound long in-state or interstate; confirm UTC vs FMCSA for the full route.' },
+  ],
+  clark: [
+    { label: 'Within Clark (Vancouver core ↔ Camas / Battle Ground / Salmon Creek)', direction: 'within', context: 'Portland-adjacent WA suburbs — not Seattle spillover product.' },
+    { label: 'Portland OR ↔ Vancouver WA cross-border pairs', direction: 'outbound', context: 'Bridge crossings flip authority to interstate FMCSA even for short map miles.' },
+    { label: 'California / Midwest → Clark County housing', direction: 'inbound', context: 'I-5 northbound inflows into Vancouver multi-unit and SFH stock.', href: '/resources/routes/california-to-washington' },
+    { label: 'Clark ↔ Cowlitz / Thurston regional pairs', direction: 'within', context: 'I-5 south-Sound to southwest WA logistics; empty miles matter.' },
+    { label: 'Camas / east-county HOA growth', direction: 'within', context: 'Gate lists and school-season Saturdays; book peak weekends early.' },
+    { label: 'Clark → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Washington (including Oregon destinations).' },
+  ],
+  thurston: [
+    { label: 'Within Thurston (Olympia / Capitol ↔ Lacey / Tumwater)', direction: 'within', context: 'Capital multi-unit and south-Sound suburbs — not Seattle or Tacoma clones.' },
+    { label: 'State government / session-related inflows', direction: 'inbound', context: 'Mid-week hard dates near Capitol corridors; elevator and curb rules apply.' },
+    { label: 'Thurston ↔ Pierce / King pairs', direction: 'within', context: 'I-5 south-Sound logistics; price portal time honestly.' },
+    { label: 'California / Midwest → Olympia south-Sound housing', direction: 'inbound', context: 'Interstate household goods into multi-unit and SFH stock.', href: '/resources/routes/california-to-washington' },
+    { label: 'Lacey–Tumwater growth multi-family', direction: 'within', context: 'Lease waves and HOA rules; mid-week starts beat peaks.' },
+    { label: 'Thurston → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Washington.' },
+  ],
+  kitsap: [
+    { label: 'Within Kitsap (Bremerton ↔ Silverdale / Poulsbo / Port Orchard)', direction: 'within', context: 'Peninsula access and ferry windows — not King Eastside freeways as default.' },
+    { label: 'Naval / peninsula workforce inflows', direction: 'inbound', context: 'Base-adjacent calendars and multi-unit stock near Bremerton corridors.' },
+    { label: 'Kitsap ↔ King (ferry / SR-16) pairs', direction: 'within', context: 'Ferry sailings and bridge approaches rewrite “local” estimates.' },
+    { label: 'California / Midwest → Kitsap peninsula housing', direction: 'inbound', context: 'Interstate household goods into hills and multi-unit stock.', href: '/resources/routes/california-to-washington' },
+    { label: 'Silverdale / north Kitsap HOA and retail corridors', direction: 'within', context: 'Gate lists and rain staging; photo driveway grades early.' },
+    { label: 'Kitsap → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Washington.' },
+  ],
+  whatcom: [
+    { label: 'Within Whatcom (Bellingham / WWU ↔ Ferndale / Lynden / Blaine edges)', direction: 'within', context: 'Northern I-5 and border adjacency — not Seattle metro product.' },
+    { label: 'Student / faculty / northern I-5 inflows', direction: 'inbound', context: 'WWU lease clusters and Canadian-border-adjacent household patterns.' },
+    { label: 'Whatcom ↔ Skagit / Snohomish pairs', direction: 'within', context: 'I-5 north logistics; empty miles between towns matter.' },
+    { label: 'California / Midwest → Bellingham lifestyle markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and SFH stock.', href: '/resources/routes/california-to-washington' },
+    { label: 'Blaine / border-edge and Sudden Valley stock', direction: 'within', context: 'Longer empty miles and HOA rules; survey access early.' },
+    { label: 'Whatcom → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Washington (including Canada-bound logistics checks).' },
+  ],
+  benton: [
+    { label: 'Within Benton (Kennewick ↔ Richland edges / west Richland)', direction: 'within', context: 'Tri-Cities inland product — heat/wind and bridge pairs, not Puget Sound rain logistics.' },
+    { label: 'Lab / energy / Tri-Cities workforce inflows', direction: 'inbound', context: 'Hard dates and multi-family lease waves near employment corridors.' },
+    { label: 'Benton ↔ Franklin (Pasco) / Yakima pairs', direction: 'within', context: 'River crossings and I-82 logistics; clarify county lines.' },
+    { label: 'California / Colorado → Tri-Cities markets', direction: 'inbound', context: 'Interstate household goods into inland housing stock.', href: '/resources/routes/california-to-washington' },
+    { label: 'Kennewick multi-unit and west-side growth', direction: 'within', context: 'Elevators mixed with SFH; summer heat pacing matters on open carries.' },
+    { label: 'Benton → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Washington (including Idaho/Oregon lanes).' },
+  ],
+  yakima: [
+    { label: 'Within Yakima (Downtown / West Valley ↔ Selah / Union Gap edges)', direction: 'within', context: 'Central WA ag/regional hub — not a Seattle collar quote.' },
+    { label: 'Ag / harvest / regional workforce patterns', direction: 'inbound', context: 'Seasonal demand and outbuildings appear on rural-edge surveys.' },
+    { label: 'Yakima ↔ Benton / Kittitas pairs', direction: 'within', context: 'I-82 corridor long locals; empty miles matter.' },
+    { label: 'California / Midwest → Yakima regional markets', direction: 'inbound', context: 'Interstate household goods into multi-unit and SFH stock.', href: '/resources/routes/california-to-washington' },
+    { label: 'West Valley HOA and older core mix', direction: 'within', context: 'Access products differ by pocket — survey stairs and driveways carefully.' },
+    { label: 'Yakima → out-of-state reverse exits', direction: 'outbound', context: 'FMCSA required once leaving Washington.' },
+  ],
+};
+
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -4977,6 +5061,7 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'illinois') return IL_ROUTES[countySlug] ?? [];
   if (stateSlug === 'ohio') return OH_ROUTES[countySlug] ?? [];
   if (stateSlug === 'colorado') return CO_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'washington') return WA_ROUTES[countySlug] ?? [];
   return [];
 }
 

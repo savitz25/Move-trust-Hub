@@ -6,10 +6,17 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   // Arizona
   { stateSlug: 'arizona', countySlug: 'maricopa' },
   { stateSlug: 'arizona', countySlug: 'pima' },
-  // Washington
+  // Washington Core 10
   { stateSlug: 'washington', countySlug: 'king' },
   { stateSlug: 'washington', countySlug: 'pierce' },
   { stateSlug: 'washington', countySlug: 'snohomish' },
+  { stateSlug: 'washington', countySlug: 'spokane' },
+  { stateSlug: 'washington', countySlug: 'clark' },
+  { stateSlug: 'washington', countySlug: 'thurston' },
+  { stateSlug: 'washington', countySlug: 'kitsap' },
+  { stateSlug: 'washington', countySlug: 'whatcom' },
+  { stateSlug: 'washington', countySlug: 'benton' },
+  { stateSlug: 'washington', countySlug: 'yakima' },
   // Illinois
   { stateSlug: 'illinois', countySlug: 'cook' },
   { stateSlug: 'illinois', countySlug: 'dupage' },

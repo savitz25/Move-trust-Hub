@@ -181,11 +181,22 @@ import { larimerCountyCoIntelligence } from '@/lib/local-movers/county-intellige
 import { boulderCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/boulder-co';
 import { weldCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/weld-co';
 import { puebloCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/pueblo-co';
+// Washington Core 10
+import { kingCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/king-wa';
+import { pierceCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/pierce-wa';
+import { snohomishCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/snohomish-wa';
+import { spokaneCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/spokane-wa';
+import { clarkCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/clark-wa';
+import { thurstonCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/thurston-wa';
+import { kitsapCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/kitsap-wa';
+import { whatcomCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/whatcom-wa';
+import { bentonCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/benton-wa';
+import { yakimaCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/yakima-wa';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / VA / TN / PA / IL / OH / CO / WA / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  * Note: SC packs must not be registered until their source files are committed to git
  * (orphan registry imports break production builds).
@@ -361,6 +372,17 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   boulderCountyCoIntelligence,
   weldCountyCoIntelligence,
   puebloCountyCoIntelligence,
+  // Washington Core 10
+  kingCountyWaIntelligence,
+  pierceCountyWaIntelligence,
+  snohomishCountyWaIntelligence,
+  spokaneCountyWaIntelligence,
+  clarkCountyWaIntelligence,
+  thurstonCountyWaIntelligence,
+  kitsapCountyWaIntelligence,
+  whatcomCountyWaIntelligence,
+  bentonCountyWaIntelligence,
+  yakimaCountyWaIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -604,6 +626,20 @@ export const CO_TIER1_CORE10 = [
   'boulder',
   'weld',
   'pueblo',
+] as const;
+
+/** Washington Tier-1 Core 10 (Puget Sound + eastern + inland + border markets). */
+export const WA_TIER1_CORE10 = [
+  'king',
+  'pierce',
+  'snohomish',
+  'spokane',
+  'clark',
+  'thurston',
+  'kitsap',
+  'whatcom',
+  'benton',
+  'yakima',
 ] as const;
 
 /** Pennsylvania Tier-1 Core 12. */
