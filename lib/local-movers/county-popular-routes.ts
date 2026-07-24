@@ -3733,6 +3733,948 @@ const NC_ROUTES: Record<string, CountyPopularRoute[]> = {
   ],
 };
 
+const SC_ROUTES: Record<string, CountyPopularRoute[]> = {
+  greenville: [
+    {
+      label: 'Within Greenville (Downtown ↔ Greer / Simpsonville / Five Forks)',
+      direction: 'within',
+      context:
+        'I-85 and Woodruff Road portal time; HOA gate lists dominate south-suburb family moves.',
+    },
+    {
+      label: 'Northeast / Midwest → Upstate SC manufacturing corridor',
+      direction: 'inbound',
+      context:
+        'Corporate and plant-adjacent inflows along I-85; mid-week hard dates compete with Saturday SFH demand.',
+    },
+    {
+      label: 'Greenville ↔ Spartanburg / Anderson Upstate hops',
+      direction: 'within',
+      context:
+        'Common dual-county residential and job moves; still confirm Class E authority for pure in-state jobs.',
+    },
+    {
+      label: 'Greenville → Charlotte / NC job markets',
+      direction: 'outbound',
+      context:
+        'Cross-border career moves; FMCSA required once any leg leaves South Carolina.',
+    },
+    {
+      label: 'Greenville → Florida / Sun Belt long-distance',
+      direction: 'outbound',
+      context:
+        'Family and retirement interstate; volume survey and valuation matter more than local hourly rates.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Downtown loft / West End multi-story stock',
+      direction: 'within',
+      context:
+        'Curb staging and stairs dominate; building COIs and early starts beat Saturday event windows.',
+    },
+  ],
+  charleston: [
+    {
+      label: 'Within Charleston (Peninsula ↔ West Ashley / Mount Pleasant / James Island)',
+      direction: 'within',
+      context:
+        'Peninsula COI and narrow streets vs mainland HOAs; humidity packing is routine.',
+    },
+    {
+      label: 'Northeast / Midwest → Charleston metro lifestyle inflows',
+      direction: 'inbound',
+      context:
+        'Historic and coastal demand; peninsula access rules often drive origin/destination soft costs.',
+    },
+    {
+      label: 'Charleston ↔ Berkeley / Dorchester growth suburbs',
+      direction: 'within',
+      context:
+        'Northwest and north growth overflow; longer suburban runs than peninsula map miles suggest.',
+    },
+    {
+      label: 'Charleston → Atlanta / Charlotte career corridors',
+      direction: 'outbound',
+      context:
+        'Regional interstate professional moves; FMCSA carriers and full inventory planning recommended.',
+    },
+    {
+      label: 'Charleston → Florida coastal retirement corridors',
+      direction: 'outbound',
+      context:
+        'Long-distance coastal-to-coastal household goods; peak winter booking for carriers.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Island / barrier approaches (IOP, Sullivan’s, Kiawah-edge patterns)',
+      direction: 'within',
+      context:
+        'Bridge timing, HOA rules, and truck length limits; confirm access before peak tourist weekends.',
+    },
+  ],
+  richland: [
+    {
+      label: 'Within Richland (Downtown Columbia ↔ Northeast / Forest Acres / Fort Jackson edge)',
+      direction: 'within',
+      context:
+        'Capital multifamily vs suburban tracts; PCS windows near Fort Jackson create clustered demand.',
+    },
+    {
+      label: 'In-state SC → Columbia capital / university / state-job moves',
+      direction: 'inbound',
+      context:
+        'Midlands employment and USC-adjacent rentals; mid-month lease turns spike elevator demand.',
+    },
+    {
+      label: 'Richland ↔ Lexington west-Columbia suburbs',
+      direction: 'within',
+      context:
+        'Daily dual-county household pattern; still one state — Class E rules, different access products.',
+    },
+    {
+      label: 'Columbia → Charlotte / Atlanta professional exits',
+      direction: 'outbound',
+      context:
+        'I-77 / I-20 career corridors; interstate authority required once leaving South Carolina.',
+    },
+    {
+      label: 'Fort Jackson PCS inbound / outbound clusters',
+      direction: 'inbound',
+      context:
+        'Hard report dates and storage-in-transit are common; flexible delivery windows reduce stress.',
+    },
+    {
+      label: 'Columbia → Florida / Sun Belt family long-distance',
+      direction: 'outbound',
+      context:
+        'Volume estimates and FMCSA carriers dominate pricing more than local hourly rates.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  horry: [
+    {
+      label: 'Within Horry (Myrtle Beach oceanfront ↔ Carolina Forest / Conway / North Myrtle)',
+      direction: 'within',
+      context:
+        'High-rise elevators and tourist traffic vs inland HOA tracts; US-17 / SC-31 timing matters.',
+    },
+    {
+      label: 'Northeast / Midwest snowbird & second-home inflows',
+      direction: 'inbound',
+      context:
+        'Seasonal dual-home demand; peak spring/fall turns compete for elevators and coastal staging.',
+    },
+    {
+      label: 'Horry vacation-rental / condo turnover waves',
+      direction: 'within',
+      context:
+        'Owner changeovers and short-term rental resets create mid-week clusters beyond pure residential moves.',
+    },
+    {
+      label: 'Myrtle Beach → Charlotte / Raleigh career exits',
+      direction: 'outbound',
+      context:
+        'Lifestyle reverse moves inland; treat as multi-hour interstate planning with FMCSA carriers.',
+    },
+    {
+      label: 'Horry → Florida further-south coastal retirement',
+      direction: 'outbound',
+      context:
+        'Coastal-to-coastal long-distance; inventory and humidity packing still matter at origin.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Conway / inland growth vs oceanfront towers',
+      direction: 'within',
+      context:
+        'Do not price inland SFH like oceanfront high-rises — elevator and curb soft costs diverge sharply.',
+    },
+  ],
+  spartanburg: [
+    {
+      label: 'Within Spartanburg (City core ↔ Boiling Springs / Duncan / Lyman edges)',
+      direction: 'within',
+      context:
+        'Industrial-adjacent residential mixed with suburban HOAs; I-85 / I-26 timing shapes crew hours.',
+    },
+    {
+      label: 'Manufacturing corridor inflows along I-85',
+      direction: 'inbound',
+      context:
+        'Plant and logistics hiring pulls household goods mid-week; hard report dates are common.',
+    },
+    {
+      label: 'Spartanburg ↔ Greenville dual-Upstate pairs',
+      direction: 'within',
+      context:
+        'Complement markets, not clones; price portal time honestly on I-85 between the two cores.',
+    },
+    {
+      label: 'Spartanburg → Charlotte / NC job markets',
+      direction: 'outbound',
+      context:
+        'Cross-border career moves; FMCSA required for any NC destination leg.',
+    },
+    {
+      label: 'Spartanburg → Florida / Sun Belt family long-distance',
+      direction: 'outbound',
+      context:
+        'Interstate household goods with full inventory surveys; not a local hourly quote.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Boiling Springs / North Spartanburg growth suburbs',
+      direction: 'within',
+      context:
+        'HOA packets and school-season Saturday demand; book peak weekends early.',
+    },
+  ],
+  york: [
+    {
+      label: 'Within York (Rock Hill ↔ Fort Mill / Tega Cay / Lake Wylie)',
+      direction: 'within',
+      context:
+        'Charlotte-spillover HOAs and lake-edge access; I-77 peaks rewrite short map miles.',
+    },
+    {
+      label: 'Charlotte / Mecklenburg overflow → Rock Hill & Fort Mill',
+      direction: 'inbound',
+      context:
+        'Cross-border SC–NC affordability spill; destination is SC Class E if pure in-state delivery, FMCSA if origin is NC.',
+    },
+    {
+      label: 'York SC ↔ Charlotte NC daily-commute household moves',
+      direction: 'outbound',
+      context:
+        'Interstate authority required even for short I-77 hops once the state line is crossed.',
+    },
+    {
+      label: 'Fort Mill master-planned HOA villages',
+      direction: 'within',
+      context:
+        'Gate lists, COI, and truck limits dominate; collect packets before the survey is final.',
+    },
+    {
+      label: 'York → further Sun Belt / Florida long-distance',
+      direction: 'outbound',
+      context:
+        'Family interstate exits; volume and valuation drive price more than Rock Hill curb rules.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Lake Wylie / Tega Cay waterfront-edge stock',
+      direction: 'within',
+      context:
+        'Driveway grade, dock gear, and HOA rules; photo access before dispatch.',
+    },
+  ],
+  lexington: [
+    {
+      label: 'Within Lexington (Town of Lexington ↔ Irmo / Cayce / Lake Murray edges)',
+      direction: 'within',
+      context:
+        'West-Columbia suburbs and lake-adjacent lots; HOA and driveway access vary by pocket.',
+    },
+    {
+      label: 'In-state SC → Lexington growth suburbs',
+      direction: 'inbound',
+      context:
+        'Midlands affordability and school-seeking inflows west of Columbia — not a Richland downtown product.',
+    },
+    {
+      label: 'Lexington ↔ Richland dual-Midlands pairs',
+      direction: 'within',
+      context:
+        'Common household pattern across the Congaree; clarify county lines for inventory and timing.',
+    },
+    {
+      label: 'Lexington → Charlotte / Atlanta career exits',
+      direction: 'outbound',
+      context:
+        'I-77 / I-20 professional interstate moves; FMCSA carriers required out of state.',
+    },
+    {
+      label: 'Lake Murray second-home and primary residence turns',
+      direction: 'within',
+      context:
+        'Seasonal and weekend demand spikes; long carries and outdoor inventory are common.',
+    },
+    {
+      label: 'Lexington → Florida family long-distance',
+      direction: 'outbound',
+      context:
+        'Sun Belt exits with full household goods; use volume calculator and FMCSA-authorized carriers.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  berkeley: [
+    {
+      label: 'Within Berkeley (Goose Creek / Hanahan ↔ Cainhoy / Nexton / Moncks Corner)',
+      direction: 'within',
+      context:
+        'Longer suburban runs and newer subdivisions; Clements Ferry and US-52 timing matter.',
+    },
+    {
+      label: 'Charleston metro overflow → Berkeley growth corridors',
+      direction: 'inbound',
+      context:
+        'North/east growth from peninsula pricing; HOA villages and unfinished streets appear on surveys.',
+    },
+    {
+      label: 'Berkeley ↔ Charleston / Dorchester tri-county pairs',
+      direction: 'within',
+      context:
+        'Daily Lowcountry multi-county moves; still SC Class E if entirely in-state — access products differ by county.',
+    },
+    {
+      label: 'Berkeley → Charlotte / Atlanta career exits',
+      direction: 'outbound',
+      context:
+        'Regional interstate professional moves; FMCSA required beyond South Carolina.',
+    },
+    {
+      label: 'Cainhoy / Clements Ferry new-build corridors',
+      direction: 'within',
+      context:
+        'Construction traffic and HOA rules; share gate codes and driveway photos early.',
+    },
+    {
+      label: 'Berkeley → Florida coastal long-distance',
+      direction: 'outbound',
+      context:
+        'Lifestyle interstate; inventory packing for humidity still starts at the SC origin.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  beaufort: [
+    {
+      label: 'Within Beaufort (Hilton Head ↔ Bluffton / Beaufort / Port Royal)',
+      direction: 'within',
+      context:
+        'Gated communities and causeway timing; not a Myrtle Beach high-rise product.',
+    },
+    {
+      label: 'Northeast / Midwest → Hilton Head & Bluffton second-home inflows',
+      direction: 'inbound',
+      context:
+        'Seasonal and retirement demand; HOA packets and truck limits dominate island approaches.',
+    },
+    {
+      label: 'Beaufort County gated / resort-edge turns',
+      direction: 'within',
+      context:
+        'Security desks, COI, and approved hours; reconfirm the day before for US-278 island legs.',
+    },
+    {
+      label: 'Beaufort → Charleston / Savannah regional hops',
+      direction: 'outbound',
+      context:
+        'Coastal Lowcountry pairs; clarify SC-only vs GA interstate (Savannah) authority needs.',
+    },
+    {
+      label: 'Hilton Head → further Florida coastal retirement',
+      direction: 'outbound',
+      context:
+        'Coastal-to-coastal long-distance; FMCSA carriers and careful packing for humidity.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Lady’s Island / St. Helena / mainland Beaufort mix',
+      direction: 'within',
+      context:
+        'Bridge timing and mixed SFH stock; do not price like Hilton Head gated estates.',
+    },
+  ],
+  dorchester: [
+    {
+      label: 'Within Dorchester (Summerville historic ↔ Nexton / Ladson edges / rural west)',
+      direction: 'within',
+      context:
+        'HOA growth villages vs older Summerville grids; I-26 / US-78 timing shapes crew hours.',
+    },
+    {
+      label: 'Charleston metro northwest overflow → Summerville / Dorchester',
+      direction: 'inbound',
+      context:
+        'Affordability and space seeking from peninsula and near-core pricing; HOA packets are routine.',
+    },
+    {
+      label: 'Dorchester ↔ Charleston / Berkeley tri-county pairs',
+      direction: 'within',
+      context:
+        'Common Lowcountry multi-county household moves; access rules differ even when authority is still Class E in-state.',
+    },
+    {
+      label: 'Dorchester → Charlotte / Atlanta career exits',
+      direction: 'outbound',
+      context:
+        'Regional interstate; FMCSA required out of South Carolina.',
+    },
+    {
+      label: 'Nexton / east Summerville master-planned growth',
+      direction: 'within',
+      context:
+        'New streets, gate lists, and school-season Saturday demand; book peak weekends early.',
+    },
+    {
+      label: 'Dorchester → Florida family long-distance',
+      direction: 'outbound',
+      context:
+        'Sun Belt interstate with full inventory surveys; not a local HOA-only quote.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  anderson: [
+    {
+      label: 'Within Anderson (City core ↔ Lake Hartwell / Northlake / Pendleton edges)',
+      direction: 'within',
+      context:
+        'Lake lots and rural-suburban mix; I-85 timing for any Greenville-linked pair.',
+    },
+    {
+      label: 'Upstate manufacturing & I-85 secondary-market inflows',
+      direction: 'inbound',
+      context:
+        'Plant and logistics demand without Greenville downtown curb complexity.',
+    },
+    {
+      label: 'Anderson ↔ Greenville / Clemson-area pairs',
+      direction: 'within',
+      context:
+        'Common Upstate multi-county moves; price I-85 portal time honestly.',
+    },
+    {
+      label: 'Anderson → Charlotte / Atlanta career exits',
+      direction: 'outbound',
+      context:
+        'Interstate professional moves; FMCSA required beyond SC.',
+    },
+    {
+      label: 'Lake Hartwell second-home and primary residence turns',
+      direction: 'within',
+      context:
+        'Driveway grade, docks, and outdoor inventory; photo access before dispatch.',
+    },
+    {
+      label: 'Anderson → Florida / Sun Belt long-distance',
+      direction: 'outbound',
+      context:
+        'Family interstate household goods; volume calculator recommended.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  florence: [
+    {
+      label: 'Within Florence (Medical / downtown core ↔ west Florence / I-95 logistics edges)',
+      direction: 'within',
+      context:
+        'Pee Dee hub product — medical multifamily and suburban SFH, not coastal high-rises.',
+    },
+    {
+      label: 'I-95 / I-20 corridor inflows into Florence regional hub',
+      direction: 'inbound',
+      context:
+        'Healthcare, logistics, and regional employment draws; mid-week hard dates are common.',
+    },
+    {
+      label: 'Florence ↔ Myrtle Beach / Coastal Carolina lifestyle hops',
+      direction: 'outbound',
+      context:
+        'In-state coastal pairs still need honest drive time; Class E for pure SC legs.',
+    },
+    {
+      label: 'Florence → Charlotte / Raleigh / Atlanta career exits',
+      direction: 'outbound',
+      context:
+        'I-95 / I-20 professional interstate moves; FMCSA required out of state.',
+    },
+    {
+      label: 'Pee Dee rural-to-hub consolidation moves',
+      direction: 'within',
+      context:
+        'Longer empty miles from surrounding towns; inventory surveys beat map-mile guesses.',
+    },
+    {
+      label: 'Florence → Florida / Sun Belt long-distance',
+      direction: 'outbound',
+      context:
+        'I-95 corridor interstate household goods; volume and valuation drive price.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+};
+
+const VA_ROUTES: Record<string, CountyPopularRoute[]> = {
+  fairfax: [
+    {
+      label: 'Within Fairfax (Tysons / Reston ↔ Springfield / Annandale / McLean)',
+      direction: 'within',
+      context:
+        'High-rise COI windows and HOA suburbs on the same map; I-66 / I-495 portal time dominates cross-county pairs.',
+    },
+    {
+      label: 'Nationwide federal / contractor inflows → Fairfax employment corridors',
+      direction: 'inbound',
+      context:
+        'Defense, intel, and contractor relos cluster near Tysons, Reston, and Springfield; hard report dates are common.',
+    },
+    {
+      label: 'Fairfax ↔ Arlington / Alexandria urban pairs',
+      direction: 'within',
+      context:
+        'Still Virginia in-state for pure VA jobs — but tower access rules differ sharply from Fairfax HOA product.',
+    },
+    {
+      label: 'Fairfax → Maryland / DC cross-border job moves',
+      direction: 'outbound',
+      context:
+        'Beltway interstate authority required once any leg leaves Virginia; confirm FMCSA for MD/DC destinations.',
+    },
+    {
+      label: 'Fairfax → Texas / Sun Belt long-distance exits',
+      direction: 'outbound',
+      context:
+        'Corporate and family interstate household goods; volume surveys matter more than local hourly rates.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      label: 'Tysons / Reston tower and mid-rise stock',
+      direction: 'within',
+      context:
+        'Elevator reservations, COI, and dock rules fail estimates more often than packing skill.',
+    },
+  ],
+  'prince-william': [
+    {
+      label: 'Within Prince William (Woodbridge ↔ Manassas / Gainesville / Dale City)',
+      direction: 'within',
+      context:
+        'I-95 and VA-234 growth corridors; HOA gate lists and long suburban runs.',
+    },
+    {
+      label: 'Quantico-adjacent PCS & military family moves',
+      direction: 'inbound',
+      context:
+        'Hard report dates and storage-in-transit near base-adjacent housing; flexible delivery windows help.',
+    },
+    {
+      label: 'Prince William ↔ Fairfax / Loudoun job-driven hops',
+      direction: 'within',
+      context:
+        'Common NoVA multi-county pairs; price I-95 / I-66 portal time honestly.',
+    },
+    {
+      label: 'Prince William → Maryland / DC metro interstate legs',
+      direction: 'outbound',
+      context:
+        'Short map miles can still be interstate; FMCSA required beyond Virginia.',
+    },
+    {
+      label: 'Woodbridge / Dale City HOA family moves',
+      direction: 'within',
+      context:
+        'Master-planned communities and school-season Saturday demand; book peak weekends early.',
+    },
+    {
+      label: 'Prince William → Florida / Carolinas long-distance',
+      direction: 'outbound',
+      context:
+        'Family interstate exits; use volume calculator and FMCSA-authorized carriers.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  loudoun: [
+    {
+      label: 'Within Loudoun (Ashburn / Sterling ↔ Leesburg / South Riding)',
+      direction: 'within',
+      context:
+        'Data-center east vs historic Leesburg vs planned communities; Dulles Toll Road timing matters.',
+    },
+    {
+      label: 'Tech / data-center workforce inflows → Ashburn corridor',
+      direction: 'inbound',
+      context:
+        'Corporate hard dates and HOA villages dominate; mid-week starts beat school peaks.',
+    },
+    {
+      label: 'Loudoun ↔ Fairfax / Arlington professional pairs',
+      direction: 'within',
+      context:
+        'In-state NoVA moves with very different access products at each end.',
+    },
+    {
+      label: 'Loudoun → West Virginia / Maryland border interstate legs',
+      direction: 'outbound',
+      context:
+        'US-15 and western approaches can cross state lines quickly; confirm FMCSA when they do.',
+    },
+    {
+      label: 'Leesburg / western Loudoun larger-lot stock',
+      direction: 'within',
+      context:
+        'Longer driveways and rural-edge access; photo grades and turn radius before dispatch.',
+    },
+    {
+      label: 'Loudoun → Texas / Sun Belt corporate long-distance',
+      direction: 'outbound',
+      context:
+        'Interstate household goods with full inventory surveys; not a local HOA-only quote.',
+      href: '/resources/routes/california-to-texas',
+    },
+  ],
+  chesterfield: [
+    {
+      label: 'Within Chesterfield (Midlothian ↔ Chester / Brandermill / Swift Creek)',
+      direction: 'within',
+      context:
+        'Southside master-planned growth; Chippenham and VA-288 portal time shapes crew hours.',
+    },
+    {
+      label: 'In-state VA → Chesterfield family suburban inflows',
+      direction: 'inbound',
+      context:
+        'Richmond-region affordability and school-seeking growth — not a NoVA Beltway product.',
+    },
+    {
+      label: 'Chesterfield ↔ Henrico / Richmond City dual-region pairs',
+      direction: 'within',
+      context:
+        'Common capital-region multi-jurisdiction moves; clarify city vs county addresses.',
+    },
+    {
+      label: 'Chesterfield → NoVA / DC career exits',
+      direction: 'outbound',
+      context:
+        'I-95 northbound professional interstate moves when leaving Virginia; FMCSA required out of state.',
+    },
+    {
+      label: 'Brandermill / Swift Creek HOA villages',
+      direction: 'within',
+      context:
+        'Gate lists and COI; collect packets before the survey is final.',
+    },
+    {
+      label: 'Chesterfield → Carolinas / Florida long-distance',
+      direction: 'outbound',
+      context:
+        'Family Sun Belt exits with full household goods; volume surveys recommended.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  henrico: [
+    {
+      label: 'Within Henrico (Short Pump / west end ↔ east end / RIC approaches)',
+      direction: 'within',
+      context:
+        'West-end growth and retail corridors vs east-end patterns; I-64 / I-295 timing matters.',
+    },
+    {
+      label: 'In-state VA → Henrico west-end / Short Pump growth',
+      direction: 'inbound',
+      context:
+        'Suburban employment and retail-corridor demand; HOA product is common.',
+    },
+    {
+      label: 'Henrico ↔ Chesterfield / Richmond City pairs',
+      direction: 'within',
+      context:
+        'Daily capital-region hops; access rules differ even when Virginia DMV still applies in-state.',
+    },
+    {
+      label: 'Henrico → NoVA / Maryland interstate career moves',
+      direction: 'outbound',
+      context:
+        'I-95 / I-64 professional exits; FMCSA required beyond Virginia.',
+    },
+    {
+      label: 'Short Pump / Innsbrook-edge multifamily and SFH mix',
+      direction: 'within',
+      context:
+        'Elevator buildings and HOA SFH on the same corridors; survey access type carefully.',
+    },
+    {
+      label: 'Henrico → Florida / Sun Belt long-distance',
+      direction: 'outbound',
+      context:
+        'Interstate household goods; inventory and valuation drive price more than local hourly rates.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  'virginia-beach': [
+    {
+      label: 'Within Virginia Beach (Oceanfront ↔ Kempsville / Great Neck / Princess Anne)',
+      direction: 'within',
+      context:
+        'Resort curb and high-rises vs inland HOA suburbs; Shore Drive and I-264 timing matter.',
+    },
+    {
+      label: 'Military family / PCS inflows to Virginia Beach',
+      direction: 'inbound',
+      context:
+        'NAS Oceana-adjacent and broader military calendars create hard-date clusters.',
+    },
+    {
+      label: 'Virginia Beach ↔ Norfolk / Chesapeake Hampton Roads pairs',
+      direction: 'within',
+      context:
+        'Tunnel and bridge logistics; do not price like a simple suburban hop.',
+    },
+    {
+      label: 'Virginia Beach → NoVA / DC career exits',
+      direction: 'outbound',
+      context:
+        'Long in-state or interstate professional moves; confirm VA DMV vs FMCSA for the full route.',
+    },
+    {
+      label: 'Oceanfront condo / hotel-adjacent turns',
+      direction: 'within',
+      context:
+        'Elevators, tourist traffic, and limited staging; avoid peak beach weekends when flexible.',
+    },
+    {
+      label: 'Virginia Beach → Florida coastal long-distance',
+      direction: 'outbound',
+      context:
+        'Coastal-to-coastal interstate household goods; humidity packing still starts at origin.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  arlington: [
+    {
+      label: 'Within Arlington (Rosslyn / Courthouse ↔ Pentagon City / Crystal City / Ballston)',
+      direction: 'within',
+      context:
+        'Near-universal elevator/COI product; curb staging is the job, not a footnote.',
+    },
+    {
+      label: 'Federal / contractor inflows → Arlington urban core',
+      direction: 'inbound',
+      context:
+        'Pentagon-adjacent and agency calendars create mid-week hard dates and dock competition.',
+    },
+    {
+      label: 'Arlington ↔ Fairfax / Alexandria / DC cross-border pairs',
+      direction: 'outbound',
+      context:
+        'DC destinations are interstate; short map miles still need FMCSA when leaving Virginia.',
+    },
+    {
+      label: 'Arlington high-rise turnover waves',
+      direction: 'within',
+      context:
+        'Mid-month lease ends and building window conflicts; reserve elevators early.',
+    },
+    {
+      label: 'Arlington → Maryland suburban job moves',
+      direction: 'outbound',
+      context:
+        'Beltway interstate household goods; confirm FMCSA and building packets at both ends.',
+    },
+    {
+      label: 'Arlington → Sun Belt long-distance exits',
+      direction: 'outbound',
+      context:
+        'Urban origin complexity plus interstate linehaul; full inventory surveys recommended.',
+      href: '/resources/routes/california-to-texas',
+    },
+  ],
+  richmond: [
+    {
+      label: 'Within Richmond City (Fan / Museum District ↔ Downtown / Southside city neighborhoods)',
+      direction: 'within',
+      context:
+        'Row homes, narrow streets, and elevators; independent-city rules differ from Henrico/Chesterfield suburbs.',
+    },
+    {
+      label: 'In-state VA → Richmond capital / university / urban lifestyle inflows',
+      direction: 'inbound',
+      context:
+        'State government, VCU-adjacent, and urban redevelopment demand; curb staging dominates.',
+    },
+    {
+      label: 'Richmond City ↔ Henrico / Chesterfield suburban pairs',
+      direction: 'within',
+      context:
+        'Clarify city vs county addresses; access products differ under one metro name.',
+    },
+    {
+      label: 'Richmond → NoVA / DC career exits',
+      direction: 'outbound',
+      context:
+        'I-95 northbound professional moves; FMCSA required once leaving Virginia.',
+    },
+    {
+      label: 'Fan / Museum District row-home and multi-story stock',
+      direction: 'within',
+      context:
+        'Stairs, limited truck length, and street parking competition; photo access early.',
+    },
+    {
+      label: 'Richmond → Carolinas / Florida long-distance',
+      direction: 'outbound',
+      context:
+        'Family interstate household goods on I-95 corridor; volume calculator recommended.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  chesapeake: [
+    {
+      label: 'Within Chesapeake (Greenbrier ↔ Western Branch / Deep Creek / Great Bridge)',
+      direction: 'within',
+      context:
+        'City-scale suburban distances; Dominion Blvd and I-64 timing shape crew hours.',
+    },
+    {
+      label: 'Hampton Roads military overflow → Chesapeake suburbs',
+      direction: 'inbound',
+      context:
+        'Growth and HOA product without oceanfront tourism curb constraints.',
+    },
+    {
+      label: 'Chesapeake ↔ Virginia Beach / Norfolk pairs',
+      direction: 'within',
+      context:
+        'Tunnel and bridge logistics; price portal time honestly across independent cities.',
+    },
+    {
+      label: 'Chesapeake → NoVA / Carolinas career or family exits',
+      direction: 'outbound',
+      context:
+        'Confirm Virginia DMV for pure in-state long hauls vs FMCSA for out-of-state legs.',
+    },
+    {
+      label: 'Greenbrier HOA and retail-corridor stock',
+      direction: 'within',
+      context:
+        'Gate lists and peak retail congestion; mid-week mornings clear staging.',
+    },
+    {
+      label: 'Chesapeake → Florida long-distance',
+      direction: 'outbound',
+      context:
+        'Interstate household goods; inventory surveys beat map-mile guesses.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  norfolk: [
+    {
+      label: 'Within Norfolk (Downtown / Ghent ↔ Naval Station edges / Ocean View)',
+      direction: 'within',
+      context:
+        'Denser urban stock and tunnel approaches; not a Virginia Beach resort product.',
+    },
+    {
+      label: 'Naval Station Norfolk PCS & fleet-family moves',
+      direction: 'inbound',
+      context:
+        'Hard report dates, base-adjacent access rules, and storage-in-transit are common.',
+    },
+    {
+      label: 'Norfolk ↔ Virginia Beach / Chesapeake / Portsmouth pairs',
+      direction: 'within',
+      context:
+        'Tunnels and bridges rewrite “local” estimates; share timing constraints early.',
+    },
+    {
+      label: 'Norfolk → NoVA / DC career exits',
+      direction: 'outbound',
+      context:
+        'Long I-64 / I-95 professional moves; FMCSA when leaving Virginia.',
+    },
+    {
+      label: 'Ghent / Downtown multi-story and curb-constrained stock',
+      direction: 'within',
+      context:
+        'Stairs, limited truck length, and parking competition; photo staging options.',
+    },
+    {
+      label: 'Norfolk → Florida / Sun Belt long-distance',
+      direction: 'outbound',
+      context:
+        'Port-city origin complexity plus interstate linehaul; full inventory recommended.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  stafford: [
+    {
+      label: 'Within Stafford (Garrisonville / VA-610 ↔ Aquia / southern Stafford)',
+      direction: 'within',
+      context:
+        'I-95 NoVA-commute growth and HOA product; VA-610 congestion shapes start times.',
+    },
+    {
+      label: 'Quantico-adjacent PCS & federal commute inflows',
+      direction: 'inbound',
+      context:
+        'Military and DC-commute calendars create hard dates and mid-week demand.',
+    },
+    {
+      label: 'Stafford ↔ Prince William / Fairfax job pairs',
+      direction: 'within',
+      context:
+        'I-95 corridor multi-county NoVA face; price portal time honestly.',
+    },
+    {
+      label: 'Stafford → Maryland / DC interstate legs',
+      direction: 'outbound',
+      context:
+        'Short northbound hops can still leave Virginia; confirm FMCSA when they do.',
+    },
+    {
+      label: 'Stafford HOA growth villages',
+      direction: 'within',
+      context:
+        'Gate lists and school-season Saturday demand; book peak weekends early.',
+    },
+    {
+      label: 'Stafford → Carolinas / Florida long-distance',
+      direction: 'outbound',
+      context:
+        'Family interstate exits via I-95; volume calculator recommended.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  spotsylvania: [
+    {
+      label: 'Within Spotsylvania (VA-3 / Massaponax ↔ Courtland / Lake Anna edges)',
+      direction: 'within',
+      context:
+        'Fredericksburg-area growth south of NoVA; longer rural-suburban runs than Stafford’s I-95 face.',
+    },
+    {
+      label: 'In-state VA → Spotsylvania affordability growth',
+      direction: 'inbound',
+      context:
+        'Households trading NoVA prices for space; HOA and new-build access are common.',
+    },
+    {
+      label: 'Spotsylvania ↔ Stafford / Fredericksburg-area pairs',
+      direction: 'within',
+      context:
+        'Clarify city vs county addresses; VA-3 and I-95 timing differ by pocket.',
+    },
+    {
+      label: 'Spotsylvania → NoVA / DC career exits',
+      direction: 'outbound',
+      context:
+        'I-95 northbound professional moves; FMCSA required out of Virginia.',
+    },
+    {
+      label: 'Lake Anna / western edge larger-lot stock',
+      direction: 'within',
+      context:
+        'Longer driveways and seasonal second-home turns; photo access before dispatch.',
+    },
+    {
+      label: 'Spotsylvania → Carolinas / Florida long-distance',
+      direction: 'outbound',
+      context:
+        'I-95 Sun Belt interstate household goods; inventory surveys recommended.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+};
+
 export function getCountyPopularRoutes(
   stateSlug: string,
   countySlug: string
@@ -3745,5 +4687,7 @@ export function getCountyPopularRoutes(
   if (stateSlug === 'new-york') return NY_ROUTES[countySlug] ?? [];
   if (stateSlug === 'arizona') return AZ_ROUTES[countySlug] ?? [];
   if (stateSlug === 'north-carolina') return NC_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'south-carolina') return SC_ROUTES[countySlug] ?? [];
+  if (stateSlug === 'virginia') return VA_ROUTES[countySlug] ?? [];
   return [];
 }

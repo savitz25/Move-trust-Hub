@@ -112,6 +112,34 @@ const CORRIDORS: Record<string, string> = {
   'south-carolina/anderson': 'I-85 · US-76 · SC-28 · SC-81',
   'south-carolina/florence': 'I-95 · I-20 · US-52 · US-76',
 
+  // ——— Virginia Core 12 ———
+  'virginia/fairfax': 'I-66 · I-495 · VA-28 · Dulles Toll Road · VA-236 · I-95 links',
+  'virginia/prince-william': 'I-95 · I-66 · VA-234 · US-1 · Prince William Pkwy',
+  'virginia/loudoun': 'VA-7 · VA-28 · Dulles Toll Road · US-15 · Loudoun County Pkwy',
+  'virginia/chesterfield': 'Chippenham Pkwy · VA-288 · US-60 · US-360 · I-95 links',
+  'virginia/henrico': 'I-64 · I-295 · US-33 · US-250 · Parham Road corridors',
+  'virginia/virginia-beach': 'I-264 · I-64 · VA-44 links · Shore Drive · Virginia Beach Blvd',
+  'virginia/arlington': 'I-395 · I-66 · GW Parkway · VA-50 · local arterial grid',
+  'virginia/richmond': 'I-95 · I-64 · I-195 · Downtown Expressway · Broad Street corridor',
+  'virginia/chesapeake': 'I-64 · I-464 · VA-168 · Dominion Blvd · Greenbrier Pkwy',
+  'virginia/norfolk': 'I-64 · I-264 · I-564 · Downtown Tunnel approaches · Naval Base access corridors',
+  'virginia/stafford': 'I-95 · US-1 · VA-610 (Garrisonville) · VA-17',
+  'virginia/spotsylvania': 'I-95 · VA-3 · US-1 · VA-208',
+
+  // ——— Tennessee Core 12 ———
+  'tennessee/shelby': 'I-40 · I-55 · I-240 · I-69 links · US-51 · US-61',
+  'tennessee/davidson': 'I-40 · I-24 · I-65 · Briley Pkwy · Ellington Pkwy · US-41',
+  'tennessee/knox': 'I-40 · I-75 · I-640 · US-129 · Alcoa Hwy · Kingston Pike',
+  'tennessee/hamilton': 'I-24 · I-75 · US-27 · TN-153 · Broad Street corridor',
+  'tennessee/rutherford': 'I-24 · US-41/70S · TN-840 links · Medical Center Pkwy · Old Fort Pkwy',
+  'tennessee/williamson': 'I-65 · TN-840 · US-31 · Cool Springs Blvd · Hillsboro Rd corridors',
+  'tennessee/montgomery': 'I-24 · US-41A · TN-374 · 101st Airborne Pkwy · Fort Campbell Blvd',
+  'tennessee/sumner': 'I-65 · Vietnam Veterans Blvd · US-31E · TN-386 · Gallatin Pike',
+  'tennessee/wilson': 'I-40 · US-70 · TN-109 · Mt. Juliet Road · Lebanon Pike corridors',
+  'tennessee/blount': 'US-129 · US-321 · I-140 links · Alcoa Hwy · scenic foothill approaches',
+  'tennessee/sevier': 'US-441 · US-321 · US-411 · Forks of the River Pkwy · tourism spur corridors',
+  'tennessee/sullivan': 'I-81 · I-26 · US-11W · US-23 · State of Franklin Rd corridors',
+
   // ——— North Carolina Core 12 ———
   'north-carolina/mecklenburg': 'I-77 · I-85 · I-485 · US-74 · NC-16 · Billy Graham Pkwy',
   'north-carolina/wake': 'I-40 · I-440 · I-540 · US-1 · US-70 · NC-54',
@@ -155,7 +183,7 @@ export function isFactualCorridorList(value: string): boolean {
     return false;
   }
   // At least one road-like token (I-10, US-101, Loop 101, Route 17, etc.)
-  return /\b(I[-\s]?\d{1,3}[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac)\b/i.test(
+  return /\b(I[-\s]?\d{1,3}[A-Z]?|US[-\s]?\d{1,3}|FL[-\s]?\d{1,3}|CA[-\s]?\d{1,3}|GA[-\s]?\d{1,3}|NY[-\s]?\d{1,3}|AZ[-\s]?\d{1,3}|SC[-\s]?\d{1,3}|NC[-\s]?\d{1,3}|VA[-\s]?\d{1,3}|TN[-\s]?\d{1,3}|SR[-\s]?\d{1,3}|SH[-\s]?\d{1,3}|Route\s+\d{1,3}|Loop\s+\d{1,3}|Turnpike|Parkway|Expressway|Pkwy|Tollway|PGBT|Connector|Highway|Blvd|Boulevard|Drive|ACE|GWB|FDR|MoPac|Parkway)\b/i.test(
     v
   );
 }

@@ -103,11 +103,50 @@ import { unionCountyNcIntelligence } from '@/lib/local-movers/county-intelligenc
 import { cabarrusCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/cabarrus-nc';
 import { gastonCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/gaston-nc';
 import { onslowCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/onslow-nc';
+// South Carolina Core 12
+import { greenvilleCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/greenville-sc';
+import { charlestonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/charleston-sc';
+import { richlandCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/richland-sc';
+import { horryCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/horry-sc';
+import { spartanburgCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/spartanburg-sc';
+import { yorkCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/york-sc';
+import { lexingtonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/lexington-sc';
+import { berkeleyCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/berkeley-sc';
+import { beaufortCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/beaufort-sc';
+import { dorchesterCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/dorchester-sc';
+import { andersonCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/anderson-sc';
+import { florenceCountyScIntelligence } from '@/lib/local-movers/county-intelligence/south-carolina/florence-sc';
+// Virginia Core 12
+import { fairfaxCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/fairfax-va';
+import { princeWilliamCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/prince-william-va';
+import { loudounCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/loudoun-va';
+import { chesterfieldCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/chesterfield-va';
+import { henricoCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/henrico-va';
+import { virginiaBeachCityVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/virginia-beach-va';
+import { arlingtonCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/arlington-va';
+import { richmondCityVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/richmond-va';
+import { chesapeakeCityVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/chesapeake-va';
+import { norfolkCityVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/norfolk-va';
+import { staffordCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/stafford-va';
+import { spotsylvaniaCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/spotsylvania-va';
+// Tennessee Core 12
+import { shelbyCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/shelby-tn';
+import { davidsonCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/davidson-tn';
+import { knoxCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/knox-tn';
+import { hamiltonCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/hamilton-tn';
+import { rutherfordCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/rutherford-tn';
+import { williamsonCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/williamson-tn';
+import { montgomeryCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/montgomery-tn';
+import { sumnerCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/sumner-tn';
+import { wilsonCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/wilson-tn';
+import { blountCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/blount-tn';
+import { sevierCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/sevier-tn';
+import { sullivanCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/sullivan-tn';
 import { enhanceCaliforniaIntelligencePack } from '@/lib/local-movers/county-intelligence/california-relocation';
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
 
 /**
- * Flagship CA / FL / TX / GA / NY / AZ / NC / NJ Tier-1 intelligence packs.
+ * Flagship CA / FL / TX / GA / NY / AZ / NC / SC / VA / TN / NJ Tier-1 intelligence packs.
  * California packs are post-processed for relocation, specialized modules, and collapsible deep content.
  */
 const RAW_PACKS: CountyIntelligencePack[] = [
@@ -205,6 +244,45 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   cabarrusCountyNcIntelligence,
   gastonCountyNcIntelligence,
   onslowCountyNcIntelligence,
+  // South Carolina Core 12
+  greenvilleCountyScIntelligence,
+  charlestonCountyScIntelligence,
+  richlandCountyScIntelligence,
+  horryCountyScIntelligence,
+  spartanburgCountyScIntelligence,
+  yorkCountyScIntelligence,
+  lexingtonCountyScIntelligence,
+  berkeleyCountyScIntelligence,
+  beaufortCountyScIntelligence,
+  dorchesterCountyScIntelligence,
+  andersonCountyScIntelligence,
+  florenceCountyScIntelligence,
+  // Tennessee Core 12
+  shelbyCountyTnIntelligence,
+  davidsonCountyTnIntelligence,
+  knoxCountyTnIntelligence,
+  hamiltonCountyTnIntelligence,
+  rutherfordCountyTnIntelligence,
+  williamsonCountyTnIntelligence,
+  montgomeryCountyTnIntelligence,
+  sumnerCountyTnIntelligence,
+  wilsonCountyTnIntelligence,
+  blountCountyTnIntelligence,
+  sevierCountyTnIntelligence,
+  sullivanCountyTnIntelligence,
+  // Virginia Core 12
+  fairfaxCountyVaIntelligence,
+  princeWilliamCountyVaIntelligence,
+  loudounCountyVaIntelligence,
+  chesterfieldCountyVaIntelligence,
+  henricoCountyVaIntelligence,
+  virginiaBeachCityVaIntelligence,
+  arlingtonCountyVaIntelligence,
+  richmondCityVaIntelligence,
+  chesapeakeCityVaIntelligence,
+  norfolkCityVaIntelligence,
+  staffordCountyVaIntelligence,
+  spotsylvaniaCountyVaIntelligence,
   // New Jersey
   bergenCountyIntelligence,
   essexCountyIntelligence,
@@ -388,6 +466,22 @@ export const SC_TIER1_CORE12 = [
   'florence',
 ] as const;
 
+/** Virginia Tier-1 Core 12 (NoVA + Richmond region + Hampton Roads). */
+export const VA_TIER1_CORE12 = [
+  'fairfax',
+  'prince-william',
+  'loudoun',
+  'chesterfield',
+  'henrico',
+  'virginia-beach',
+  'arlington',
+  'richmond',
+  'chesapeake',
+  'norfolk',
+  'stafford',
+  'spotsylvania',
+] as const;
+
 /** North Carolina Tier-1 Core 12. */
 export const NC_TIER1_CORE12 = [
   'mecklenburg',
@@ -402,4 +496,20 @@ export const NC_TIER1_CORE12 = [
   'cabarrus',
   'gaston',
   'onslow',
+] as const;
+
+/** Tennessee Tier-1 Core 12. */
+export const TN_TIER1_CORE12 = [
+  'shelby',
+  'davidson',
+  'knox',
+  'hamilton',
+  'rutherford',
+  'williamson',
+  'montgomery',
+  'sumner',
+  'wilson',
+  'blount',
+  'sevier',
+  'sullivan',
 ] as const;

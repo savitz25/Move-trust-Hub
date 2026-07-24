@@ -273,6 +273,12 @@ export function stateIntrastateCredentialPhrase(stateSlug: string): string {
       return 'ACC business registration + FMCSA for interstate when applicable';
     case 'north-carolina':
       return 'NCUC household goods certificate (C-#) for in-state-only jobs when applicable';
+    case 'south-carolina':
+      return 'SC Class E / ORS household goods authority for in-state-only jobs when applicable';
+    case 'tennessee':
+      return 'TDOR motor carrier intrastate authority for in-state-only jobs when applicable';
+    case 'virginia':
+      return 'Virginia DMV household goods / motor carrier authority for in-state-only jobs when applicable';
     default:
       return 'state mover credentials for in-state-only jobs when applicable';
   }
@@ -319,7 +325,13 @@ export function buildCountyFaqItems(
                   ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Arizona does not operate a dedicated statewide household-goods mover certificate program like California BHGS, Florida FDACS, Texas TxDMV, or New York NYSDOT. For in-state jobs, still verify Arizona Corporation Commission business entity status, demand written estimates and insurance proof, and use consumer complaint channels. Confirm FMCSA for any move that crosses state lines before you deposit.`
                   : county.stateSlug === 'north-carolina'
                     ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate North Carolina household goods moves are generally regulated by the North Carolina Utilities Commission (NCUC). Confirm the mover holds a current NCUC household goods certificate (often a C-# on estimates) and understand Maximum Rate Tariff / consumer-information rules that apply to regulated in-state household moves. FMCSA does not cover every in-state North Carolina job; confirm NCUC vs FMCSA for your exact origin and destination before you deposit.`
-                    : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
+                    : county.stateSlug === 'south-carolina'
+                      ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate South Carolina household goods moves generally require Class E certification under the Office of Regulatory Staff (ORS) / PSC transportation framework. Ask for the certificate number, verify with ORS, and confirm credentials match the legal name on your estimate. FMCSA does not cover every in-state South Carolina job; confirm Class E / ORS vs FMCSA for your exact origin and destination before you deposit.`
+                      : county.stateSlug === 'tennessee'
+                        ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Tennessee household goods moves by for-hire carriers are generally subject to Tennessee Department of Revenue (TDOR) motor carrier intrastate authority requirements as applicable. Confirm active Tennessee intrastate authority, insurance, and written estimates that match the legal name on the paperwork. FMCSA does not cover every in-state Tennessee job; confirm TDOR intrastate authority vs FMCSA for your exact origin and destination before you deposit.`
+                        : county.stateSlug === 'virginia'
+                          ? `Interstate moves require active FMCSA USDOT and usually MC authority — verify on FMCSA SAFER. Purely local/intrastate Virginia household goods moves are generally regulated through Virginia DMV Motor Carrier Services. Longer in-state household goods hauls (commonly described around 31+ road miles) typically require Household Goods Carrier authority / Certificate of Fitness frameworks; shorter local jobs (commonly described around 30 miles or less) may fall under Property Carrier-style authority. Confirm which Virginia DMV authorization covers your exact origin, destination, and road miles. FMCSA does not cover every in-state Virginia job; confirm Virginia DMV vs FMCSA for your exact route before you deposit.`
+                          : `Interstate movers must hold active FMCSA USDOT and MC numbers. For purely local moves within ${stateName}, state rules may apply in addition to (or instead of) FMCSA. Always verify credentials before paying a deposit.`;
 
   const baseFaqs: CountyFaqItem[] = [
     {

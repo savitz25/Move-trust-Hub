@@ -11,6 +11,8 @@ import {
   GA_TIER1_CORE12,
   NY_TIER1_CORE12,
   TX_TIER1_CORE12,
+  SC_TIER1_CORE12,
+  VA_TIER1_CORE12,
   getCountyIntelligencePack,
   listCountyIntelligencePacks,
 } from '../lib/local-movers/county-intelligence/registry';
@@ -39,6 +41,8 @@ const STATE_NAME: Record<string, string> = {
   'new-york': 'New York',
   arizona: 'Arizona',
   'new-jersey': 'New Jersey',
+  'south-carolina': 'South Carolina',
+  virginia: 'Virginia',
 };
 
 const TIER1_TARGETS: Array<{ stateSlug: string; countySlug: string }> = [
@@ -48,6 +52,8 @@ const TIER1_TARGETS: Array<{ stateSlug: string; countySlug: string }> = [
   ...GA_TIER1_CORE12.map((c) => ({ stateSlug: 'georgia', countySlug: c })),
   ...NY_TIER1_CORE12.map((c) => ({ stateSlug: 'new-york', countySlug: c })),
   ...AZ_TIER1_CORE7.map((c) => ({ stateSlug: 'arizona', countySlug: c })),
+  ...SC_TIER1_CORE12.map((c) => ({ stateSlug: 'south-carolina', countySlug: c })),
+  ...VA_TIER1_CORE12.map((c) => ({ stateSlug: 'virginia', countySlug: c })),
 ];
 
 // Sample pages for report spotlight
@@ -58,6 +64,10 @@ const SPOTLIGHT = [
   'georgia/fulton',
   'new-york/bronx',
   'arizona/maricopa',
+  'south-carolina/charleston',
+  'south-carolina/greenville',
+  'virginia/fairfax',
+  'virginia/arlington',
 ];
 
 type Row = {
