@@ -1,184 +1,238 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
-import { finalizeNcPack } from '@/lib/local-movers/county-intelligence/north-carolina/nc-shared';
+import {
+  finalizeNcTier2Pack,
+  NC_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/north-carolina/nc-tier2-shared';
 
-/** Onslow County, NC — Jacksonville + Camp Lejeune PCS (Marines), not Fort Liberty. */
-export const onslowCountyNcIntelligence: CountyIntelligencePack = finalizeNcPack({
+/**
+ * onslow — NC Tier 2 Wave 1
+ */
+export const onslowCountyNcTier2Intelligence: CountyIntelligencePack = finalizeNcTier2Pack({
   countySlug: 'onslow',
   hubTitle: 'Onslow County Moving Intelligence Hub',
-  eyebrow: 'Onslow · Jacksonville, Camp Lejeune PCS & coastal plain logistics',
-  h1: 'Moving in Onslow County: Camp Lejeune PCS, Jacksonville Access & Coastal Plain Logistics',
+  eyebrow: 'Onslow · Jacksonville — Camp Lejeune / coastal military',
+  h1: 'Moving in Onslow County: Jacksonville, Camp Lejeune PCS & Coastal Access',
   heroOpener:
-    'Onslow County is a Marine Corps PCS market on the coastal plain: Camp Lejeune and related installation access reshape housing turnover in Jacksonville; multi-family corridors along Western and Lejeune boulevards absorb order-driven demand; and humidity, storms, and longer coastal-plain empty miles differ from Piedmont freeways. A base-adjacent apartment, a Jacksonville multi-family unit, a Hubert-edge rental, and a rural-edge house do not share truck access or report-date pressure. This hub is for Onslow — not Fayetteville/Fort Liberty copy, and not Wilmington beach-tourism logistics.',
+    'Onslow County is coastal military independent product — Camp Lejeune PCS calendars, Jacksonville multi-family corridors, coastal-edge humidity and storm risk, and freeflow on US-17 / NC-24 that is not Wilmington beach tourism with different labels. Expect order-driven report dates, base-access logistics, and coastal-plain empty miles under one county. This guide is for people moving in Onslow as Camp Lejeune PCS market — not a New Hanover rename and not Fort Liberty copy.',
   heroCredibility:
-    'NCUC household goods certificate (C-#) for intrastate NC moves · FMCSA for interstate · Camp Lejeune PCS & coastal plain awareness · Curated listings',
+    'Camp Lejeune PCS · Jacksonville multi-family · Coastal plain · NCUC household goods · FMCSA when interstate · Curated listings',
   majorCorridors: 'US-17 · NC-24 · Western Boulevard · Lejeune Boulevard · base-access roads',
-  whatMakesDifferent: {
-    title: 'What makes moving in Onslow County different',
-    intro: 'Marine installation PCS calendars and coastal-plain access — not Army Cumberland patterns or Charlotte beltways.',
+  lastReviewed: '2026-07-24',
+  parentCompare: {
+    parentLabel: 'independent coastal military (vs New Hanover / Wilmington defaults)',
+    parentHref: '/local-movers/north-carolina/new-hanover',
+    title: 'Compared with independent coastal military (vs New Hanover / Wilmington defaults)',
+    intro:
+      'Onslow is Camp Lejeune PCS coastal military product — not New Hanover Wilmington tourism density and not Cumberland Fort Liberty Army patterns alone.',
     bullets: [
-      { title: 'Camp Lejeune PCS orders compress calendars', detail: 'Report dates drive surveys and load days more than civilian weekend preference.' },
-      { title: 'Jacksonville multi-family corridors turn over quickly', detail: 'Elevators, parking, and month-end clusters stack around training and permanent-change cycles.' },
-      { title: 'US-17 and NC-24 are the spine, not an interstate grid', detail: 'Portal time is real even without I-77-scale freeways; empty miles still matter.' },
-      { title: 'Coastal plain humidity and storm risk affect staging', detail: 'Protect cardboard and electronics; confirm weather contingency language.' },
-      { title: 'Onslow is not Cumberland', detail: 'Marine base access and Jacksonville geography differ from Fort Liberty/Fayetteville. Do not reuse Bragg copy.' },
-      { title: 'Intrastate NC rules vs interstate authority', detail: 'In-state household moves generally need NCUC C-#. Interstate PCS needs FMCSA.' },
+      {
+        title: 'Drive time & corridor relationship',
+        detail:
+          'New Hanover crews fight I-40 terminus coastal peaks and beach association freeflow. Onslow pairs ride US-17, NC-24, and base-access roads — freer mid-day coastal plain freeflow, still peak-heavy on Jacksonville arterials and PCS lease-end clusters.',
+      },
+      {
+        title: 'Housing stock differences',
+        detail:
+          'New Hanover mixes historic downtown and beach elevators. Onslow mixes base-adjacent multi-family, Jacksonville multi-unit, and coastal-edge rentals — more PCS turnover product, less continuous Wilmington tourism density.',
+      },
+      {
+        title: 'Truck access & density',
+        detail:
+          'Base-adjacent apartments need COIs and parking plans; humidity protection matters; rural inland edges add soft shoulders.',
+      },
+      {
+        title: 'Rough cost posture (qualitative)',
+        detail:
+          'Local Onslow quotes often track coastal military secondary rates for multi-family — PCS peaks and humidity staging can price above quiet inland driveway jobs.',
+      },
+      {
+        title: 'Role difference',
+        detail:
+          'Onslow is Camp Lejeune PCS independent coastal military — not Wilmington or Fort Liberty product renamed.',
+      }
     ],
   },
-  zonesHeading: 'Onslow access zones',
-  zonesIntro: 'Plan by base-adjacent Jacksonville multi-family, central Jacksonville, coastal-edge communities, and inland rural edges.',
+  whatMakesDifferent: {
+    title: 'What makes moving in Onslow County different',
+    intro: 'PCS report dates, Jacksonville multi-family, and coastal humidity — not interchangeable Wilmington boilerplate.',
+    bullets: [
+      {
+        title: 'Camp Lejeune PCS orders compress calendars',
+        detail:
+          'Report dates drive surveys more than preferred Saturdays.',
+      },
+      {
+        title: 'Jacksonville multi-family corridors turn over quickly',
+        detail:
+          'Elevators, parking, and month-end clusters stack around training cycles.',
+      },
+      {
+        title: 'US-17 / NC-24 freeflow is still billable',
+        detail:
+          'Coastal-plain pairs freer mid-day still peak hard. Ask portal-to-portal.',
+      },
+      {
+        title: 'Humidity and storm risk affect staging',
+        detail:
+          'Protect cardboard and electronics; confirm weather contingency language.',
+      },
+      NC_TIER2_REG_BULLET,
+    ],
+  },
+  zonesHeading: 'Onslow zones: base-adjacent multi-family, central Jacksonville, coastal edges & inland lots',
+  zonesIntro: 'Two to four sharp products — base multi-family, city core, coastal edges, and inland lots.',
   zones: [
     {
-      id: 'base-adjacent-jax',
+      id: 'base-adjacent',
       name: 'Camp Lejeune–adjacent multi-family',
-      shortName: 'Base-adjacent',
-      neighborhoods: ['Lejeune Boulevard corridors', 'Western Boulevard multi-family', 'Base housing-adjacent rentals', 'Piney Green edges'],
-      housingTypes: 'Multi-family, townhomes, military-workforce rentals',
-      challenges: ['PCS lease-end waves', 'Access/ID rules', 'Tight parking'],
-      moverTips: 'Confirm access requirements early. Align to order dates. Photo elevators and parking.',
-      cityKeywords: ['camp lejeune', 'lejeune', 'jacksonville', 'western boulevard', 'piney green'],
+      shortName: 'Base adjacent',
+      neighborhoods: ["Lejeune Boulevard multi-family","base-adjacent apartments"],
+      housingTypes: 'Multi-family, apartments',
+      challenges: ["PCS clusters","Parking limits","COI packets"],
+      moverTips: 'Book around report dates; collect building rules.',
+      cityKeywords: ["jacksonville base","lejeune"],
     },
     {
-      id: 'central-jacksonville',
-      name: 'Central Jacksonville corridors',
-      shortName: 'Central Jacksonville',
-      neighborhoods: ['Central Jacksonville', 'Gum Branch edges', 'Retail corridor multi-family', 'Older SFH pockets'],
-      housingTypes: 'Multi-family, SFH, townhomes',
-      challenges: ['Arterial congestion', 'Mixed access types', 'Month-end turnover'],
-      moverTips: 'Prefer mid-week early starts when orders allow. Confirm unit access type.',
-      cityKeywords: ['jacksonville', 'gum branch', 'onslow'],
+      id: 'jacksonville-core',
+      name: 'Central Jacksonville multi-unit & older stock',
+      shortName: 'Jacksonville',
+      neighborhoods: ["Jacksonville","Western Boulevard corridors"],
+      housingTypes: 'Multi-unit, older SFH, townhomes',
+      challenges: ["Stairs/elevators","Street parking","US-17 freeflow"],
+      moverTips: 'Inventory access type; prefer mid-week mornings when possible.',
+      cityKeywords: ["jacksonville"],
     },
     {
       id: 'coastal-edge',
-      name: 'Coastal-edge & beach-adjacent approaches',
+      name: 'Coastal-edge communities',
       shortName: 'Coastal edge',
-      neighborhoods: ['Swansboro edges', 'Hubert', 'Sneads Ferry edges', 'Coastal plain multi-family'],
-      housingTypes: 'SFH, multi-family, vacation-adjacent rentals',
-      challenges: ['Longer empty miles', 'Storm and humidity risk', 'Seasonal traffic pulses'],
-      moverTips: 'Share access photos. Build weather contingency. Do not price as Wilmington tourism product without surveying.',
-      cityKeywords: ['swansboro', 'hubert', 'sneads ferry', 'coastal'],
+      neighborhoods: ["Hubert edges","Sneads Ferry edges","coastal rentals"],
+      housingTypes: 'SFH, multi-family, rentals',
+      challenges: ["Humidity","Storm risk","Narrow approaches"],
+      moverTips: 'Protect loads from humidity; photo last-mile.',
+      cityKeywords: ["hubert","sneads ferry"],
     },
     {
-      id: 'inland-rural',
-      name: 'Inland & rural-edge Onslow',
-      shortName: 'Inland / rural edge',
-      neighborhoods: ['Richlands edges', 'Inland tracts', 'Rural driveway lots'],
-      housingTypes: 'SFH, rural-edge lots, limited multi-family',
-      challenges: ['Long empty miles', 'Soft surfaces after rain', 'Limited alternate routes'],
-      moverTips: 'Survey driveway and truck turn radius. Prefer early starts for long inland pairs.',
-      cityKeywords: ['richlands', 'inland', 'rural onslow'],
-    },
+      id: 'inland-lots',
+      name: 'Western inland larger lots',
+      shortName: 'Inland lots',
+      neighborhoods: ["Richlands edges","western tracts"],
+      housingTypes: 'Larger lots, rural approaches',
+      challenges: ["Empty miles","Soft shoulders"],
+      moverTips: 'Survey approaches; prefer early starts for long pairs.',
+      cityKeywords: ["richlands","west onslow"],
+    }
   ],
-  costDrivers: {
-    title: 'What drives Onslow moving costs',
-    intro: 'PCS timing, multi-family access, and coastal-plain empty miles drive quotes.',
-    drivers: [
-      { title: 'Compressed PCS timelines', detail: 'Rush calendars raise peak pricing risk.' },
-      { title: 'Multi-family elevators and parking', detail: 'Base-adjacent apartments add labor and wait time.' },
-      { title: 'US-17 / NC-24 distance', detail: 'Portal-to-portal time still matters without an interstate lattice.' },
-      { title: 'Humidity and storm contingency', detail: 'Protection and reschedule language affect total cost risk.' },
-    ],
-    ranges: [
-      { label: 'Studio / 1BR (simple access)', value: '$400–$1,200+', note: 'Higher near base multi-family peaks' },
-      { label: '2–3BR apartment or modest SFH', value: '$1,150–$3,400+', note: 'PCS rush windows trend up' },
-      { label: '3–4+ BR / long local / interstate start', value: '$2,100–$7,200+', note: 'Interstate PCS legs are full household goods jobs' },
-      { label: 'Typical 2-person crew rate', value: '$100–$170+/hr', note: 'Portal-to-portal for local legs' },
-    ],
-  },
-  seasonal: {
-    title: 'When to schedule an Onslow move',
-    intro: 'Marine PCS seasons and storm risk stack demand differently than Piedmont metros.',
-    items: [
-      { title: 'PCS peak seasons', detail: 'High-volume windows fill crews first. Book to order dates immediately.' },
-      { title: 'Best flexible windows: mid-week early mornings', detail: 'Reduce arterial pain when orders allow.' },
-      { title: 'Hurricane season awareness', detail: 'Late summer–fall storm risk; confirm contingency language.' },
-      { title: 'Humidity year-round logistics', detail: 'Protect cardboard and electronics on open carries.' },
-    ],
-  },
   specialized: [
     {
-      id: 'camp-lejeune-pcs',
-      title: 'Camp Lejeune PCS & coastal plain module',
-      intro: 'Onslow estimates fail when Marine report dates or coastal-plain access are ignored.',
-      bullets: [
-        'Align survey, pack, and delivery to PCS timelines.',
-        'Confirm base-adjacent access rules and IDs early.',
-        'Price US-17 and NC-24 pairs portal-to-portal.',
-        'Build humidity/storm contingency into outdoor staging plans.',
-        'Verify NCUC C-# for in-state-only legs and FMCSA for interstate PCS.',
-        'Do not reuse Fort Liberty/Fayetteville assumptions here.',
-      ],
+      id: 'pcs-cycles',
+      title: 'Camp Lejeune PCS cycle module',
+      intro: 'Order-driven calendars dominate volume.',
+      bullets: ["Align surveys with report dates.","Document inventory carefully for military claims processes."],
     },
+    {
+      id: 'jax-multi',
+      title: 'Jacksonville multi-family access',
+      intro: 'Elevators and parking are first-class cost drivers.',
+      bullets: ["Collect COI and elevator reservations early.","Month-end clusters stack; book capacity early."],
+    },
+    {
+      id: 'coastal-plain',
+      title: 'Coastal plain freeflow & weather',
+      intro: 'US-17/NC-24 pairs and humidity rewrite quiet Piedmont assumptions.',
+      bullets: ["Price portal-to-portal honestly.","Build weather contingency into unload plans."],
+    }
   ],
   relocation: {
-    title: 'Considering a move to Onslow County?',
-    intro: 'Practical fit checklist for military and civilian households — verify on official sources.',
+    title: 'Schools & hospitals for relocators',
+    intro:
+      'Compressed secondary-market notes — primary districts and acute-care access that affect move-in.',
     modules: [
       {
         id: 'schools',
-        title: 'Schools & education landscape',
+        title: 'Schools & education',
+        intro: 'Onslow families compare Onslow County Schools feeders across Jacksonville and coastal communities — verify address boundaries; do not assume New Hanover maps apply.',
         bullets: [
-          { title: 'How districts work here', detail: 'Onslow County Schools is the primary public K–12 system. Assignment is address-based; military families should confirm zoning for off-base housing.' },
-          { title: 'Turnover and capacity', detail: 'Military mobility can affect enrollment. Ask about calendars and capacity when touring.' },
-          { title: 'Research sources', detail: 'District tools, NCDPI data, and school visits beat ranking screenshots.' },
+          {
+            title: 'District-first shopping',
+            detail:
+              'Use NCDPI data and district maps; do not assume a city name equals one feeder pattern.',
+          },
+          {
+            title: 'Capacity & calendars',
+            detail:
+              'Growth pockets, university towns, and military markets can tighten housing near school and term calendars.',
+          },
         ],
       },
       {
         id: 'hospitals',
-        title: 'Hospitals & healthcare access',
+        title: 'Hospitals & healthcare',
         bullets: [
-          { title: 'Major systems', detail: 'Onslow Memorial and other facilities serve Jacksonville corridors; military beneficiaries also navigate TRICARE networks. Confirm coverage.' },
-          { title: 'What relocators should do', detail: 'Map drive times from base-adjacent housing. Transfer records early.' },
+          {
+            title: 'Acute-care anchors',
+            detail: 'Onslow Memorial Hospital, Naval Medical facilities for eligible populations, and regional specialty spillover serve the county; map peak US-17 / NC-24 times for ER access.',
+          },
+          {
+            title: 'Peak drive times',
+            detail:
+              'Map ER access at commute peaks, not only off-hour freeflow.',
+          },
         ],
       },
+    ],
+  },
+  costDrivers: {
+    title: 'Pricing & cost drivers',
+    intro: 'PCS peaks, multi-family access, and coastal humidity staging often matter more than raw miles.',
+    drivers: [
       {
-        id: 'housing',
-        title: 'Housing character & cost pressures',
-        bullets: [
-          { title: 'Base-adjacent multi-family density', detail: 'High turnover product near major boulevards.' },
-          { title: 'Coastal-edge and inland contrast', detail: 'Humidity/storm risk near coast; longer empty miles inland.' },
-          { title: 'Military housing decisions', detail: 'On-base vs off-base choices change access rules and commute patterns.' },
-        ],
+        title: 'Corridor freeflow',
+        detail: 'Peak windows inflate hourly bills on short-looking pairs.',
       },
       {
-        id: 'town-fit',
-        title: 'Which Onslow areas fit whom',
-        bullets: [
-          { title: 'Base-adjacent convenience', detail: 'Short commute with multi-family move-day logistics.' },
-          { title: 'Central Jacksonville pattern', detail: 'Retail corridors and mixed stock with arterial congestion.' },
-          { title: 'Coastal-edge pattern', detail: 'Different humidity and seasonal traffic profile than inland tracts.' },
-        ],
+        title: 'Access soft costs',
+        detail: 'Building packets, stairs, or last-mile shuttles add labor hours.',
       },
       {
-        id: 'jobs',
-        title: 'Jobs & commute patterns',
-        bullets: [
-          { title: 'Employment anchors', detail: 'Marine installation, healthcare, retail, education, and coastal services shape employment.' },
-          { title: 'Commute realism', detail: 'US-17, NC-24, Western, and Lejeune boulevards peak are real. Test drive peak routes.' },
-        ],
+        title: 'Long empty-mile edges',
+        detail: 'Far pockets price differently from seat suburbs.',
+      },
+    ],
+    ranges: [
+      { label: 'Studio / 1-BR', value: '$450–$1,200+' },
+      { label: '3–4 BR home', value: '$1,600–$4,200+', note: 'Higher with access friction' },
+      { label: '2-person crew', value: '$115–$185+/hr' },
+    ],
+  },
+  seasonal: {
+    title: 'Seasonal & calendar notes',
+    intro: 'PCS cycles, school years, hurricane season, and humidity reshape demand more than pure civilian weekend calendars.',
+    items: [
+      {
+        title: 'Late spring – early fall',
+        detail: 'Family closings and peak calendars fill Saturday crews first.',
       },
       {
-        id: 'lifestyle',
-        title: 'Lifestyle & practical livability',
-        bullets: [
-          { title: 'Marine-community identity', detail: 'Onslow rhythms follow installation calendars and coastal plain geography.' },
-          { title: 'Climate', detail: 'Hot humid summers, storms, and hurricane-season risk. Plan staging contingency.' },
-          { title: 'Pace', detail: 'PCS seasons feel busier. Visit peak and off-peak when choosing housing.' },
-        ],
+        title: 'Institutional & weather windows',
+        detail:
+          'School, university, PCS, tourism, or storm seasons can outrank pure weekend preference.',
       },
     ],
   },
   resources: {
-    title: 'Useful Onslow resources',
-    intro: 'Official links first. Verify NCUC in-state and FMCSA interstate.',
+    title: 'Useful resources',
+    intro:
+      'Official links first; directory listings are independent. Verify NCUC household-goods certification for in-state North Carolina moves and FMCSA for interstate legs.',
     items: [
-      { label: 'Onslow County — official site', href: 'https://www.onslowcountync.gov/', external: true },
-      { label: 'City of Jacksonville', href: 'https://www.jacksonvillenc.gov/', external: true },
-      { label: 'Onslow County Schools', href: 'https://www.onslow.k12.nc.us/', external: true },
-      { label: 'Marine Corps Base Camp Lejeune', href: 'https://www.lejeune.marines.mil/', external: true, note: 'Installation information; confirm access rules for contractors' },
-      { label: 'NCDOT traffic / 511', href: 'https://drivenc.gov/', external: true },
+      {
+        label: 'independent coastal military (vs New Hanover / Wilmington defaults) movers (parent contrast)',
+        href: '/local-movers/north-carolina/new-hanover',
+      },
+      {
+        label: 'Cumberland County movers',
+        href: '/local-movers/north-carolina/cumberland',
+      },
     ],
   },
-  directoryHint:
-    'Prefer PCS-fluent crews for Camp Lejeune timelines; multi-family experience on Western/Lejeune corridors; coastal humidity/storm awareness. Verify NCUC C-# and FMCSA for the correct move type.',
-  lastReviewed: '2026-07-23',
 });

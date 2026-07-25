@@ -5354,16 +5354,18 @@ const NC_ROUTES: Record<string, CountyPopularRoute[]> = {
         'HOA master plans and longer empty miles — not Uptown elevator product.',
     },
     {
-      label: 'Northeast → South Charlotte overflow housing',
+      label: 'Mecklenburg / Charlotte → Union south collar',
       direction: 'inbound',
+      href: '/local-movers/north-carolina/mecklenburg',
       context:
-        'Interstate arrivals into Union HOA growth; last-mile is driveway and gate logistics.',
+        'Parent-market hops on US-74 / I-485 into Indian Trail and Weddington HOA growth.',
     },
     {
-      label: 'Union ↔ Mecklenburg cross-county Charlotte pairs',
-      direction: 'within',
+      label: 'Union → Mecklenburg job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/mecklenburg',
       context:
-        'US-74 and I-485 links; price as logistics days, not short hourly locals.',
+        'South-collar professionals into Uptown elevators and South End multi-family.',
     },
     {
       label: 'Florida → Union County family housing',
@@ -5392,16 +5394,18 @@ const NC_ROUTES: Record<string, CountyPopularRoute[]> = {
         'Master-planned gates vs revitalizing multi-family — different access surveys.',
     },
     {
-      label: 'Cabarrus ↔ Mecklenburg I-85 pairs',
-      direction: 'within',
+      label: 'Mecklenburg → Cabarrus I-85 northeast collar',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/mecklenburg',
       context:
-        'Northeast Charlotte corridor logistics; portal time dominates at peak.',
+        'Parent-market hops on I-85 into Concord and Harrisburg growth product.',
     },
     {
-      label: 'Northeast → Concord / Kannapolis growth markets',
-      direction: 'inbound',
+      label: 'Cabarrus → Mecklenburg / University City job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/mecklenburg',
       context:
-        'Interstate household goods into I-85 spillover housing.',
+        'NE-collar professionals into Mecklenburg multi-family and Uptown stock.',
     },
     {
       label: 'Florida → Cabarrus reverse family moves',
@@ -5430,16 +5434,18 @@ const NC_ROUTES: Record<string, CountyPopularRoute[]> = {
         'Industrial-residential mix east toward Charlotte — not Ballantyne HOA clones.',
     },
     {
-      label: 'Gaston ↔ Mecklenburg I-85 / Wilkinson pairs',
-      direction: 'within',
+      label: 'Mecklenburg → Gaston west collar',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/mecklenburg',
       context:
-        'West Charlotte overflow logistics; clarify county lines on every estimate.',
+        'Parent-market hops on I-85 / Wilkinson into Belmont and Gastonia product.',
     },
     {
-      label: 'Northeast → Gaston County value / space markets',
-      direction: 'inbound',
+      label: 'Gaston → Mecklenburg job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/mecklenburg',
       context:
-        'Interstate arrivals seeking western Charlotte-metro housing.',
+        'West-collar professionals into Uptown elevators and west Charlotte multi-family.',
     },
     {
       label: 'Florida → Gaston reverse family moves',
@@ -5458,6 +5464,249 @@ const NC_ROUTES: Record<string, CountyPopularRoute[]> = {
       direction: 'inbound',
       context:
         'Industrial employment inflows into mixed Gaston stock.',
+    },
+  ],
+  iredell: [
+    {
+      label: 'Within Iredell (Mooresville ↔ Statesville / Lake Norman edges)',
+      direction: 'within',
+      context:
+        'Lake association last-mile vs seat multi-story — not Huntersville-only product.',
+    },
+    {
+      label: 'Mecklenburg → Iredell I-77 north / Lake Norman collar',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/mecklenburg',
+      context:
+        'Parent-market hops on I-77 into Mooresville growth and lake-edge housing.',
+    },
+    {
+      label: 'Iredell → Mecklenburg / Charlotte job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/mecklenburg',
+      context:
+        'North-collar professionals into Uptown elevators and north-ring multi-family.',
+    },
+    {
+      label: 'Northeast → Mooresville / Lake Norman lifestyle markets',
+      direction: 'inbound',
+      context:
+        'Interstate household goods into north-metro growth; lake last-mile dominates unload day.',
+    },
+    {
+      label: 'Florida → Iredell reverse family moves',
+      direction: 'inbound',
+      context:
+        'Sun Belt reverse into Lake Norman-edge and Mooresville multi-family; FMCSA interstate.',
+    },
+    {
+      label: 'Iredell ↔ Cabarrus / Gaston Charlotte-ring pairs',
+      direction: 'within',
+      context:
+        'Metro-ring logistics with different lake vs industrial fabrics.',
+    },
+  ],
+  johnston: [
+    {
+      label: 'Within Johnston (Clayton ↔ Smithfield / Benson)',
+      direction: 'within',
+      context:
+        'South-collar multi-family vs logistics-edge SFH — not downtown Raleigh elevators.',
+    },
+    {
+      label: 'Wake / Raleigh → Johnston south growth collar',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/wake',
+      context:
+        'Parent-market hops on I-40 / NC-42 into Clayton HOA and multi-family growth.',
+    },
+    {
+      label: 'Johnston → Wake / Triangle job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/wake',
+      context:
+        'South-collar professionals into capital elevators and Cary multi-family.',
+    },
+    {
+      label: 'Florida / I-95 → Johnston logistics-edge housing',
+      direction: 'inbound',
+      context:
+        'I-95 corridor household goods; FMCSA when either end is out of NC.',
+    },
+    {
+      label: 'Johnston ↔ Durham / Orange Triangle edges',
+      direction: 'within',
+      context:
+        'Regional Triangle pairs with different university vs logistics fabrics.',
+    },
+    {
+      label: 'Midwest → Clayton growth corridors',
+      direction: 'inbound',
+      context:
+        'Family and corporate inflows seeking space outside Wake core pricing.',
+    },
+  ],
+  orange: [
+    {
+      label: 'Within Orange (Chapel Hill / Carrboro ↔ Hillsborough)',
+      direction: 'within',
+      context:
+        'Campus multi-story vs seat SFH — term calendars rewrite pure Saturday plans.',
+    },
+    {
+      label: 'Durham → Orange university Triangle pairs',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/durham',
+      context:
+        'Parent-market hops on US-15-501 into Chapel Hill and Carrboro density.',
+    },
+    {
+      label: 'Orange → Durham / RTP research markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/durham',
+      context:
+        'University-town professionals into research multi-family and adaptive-reuse elevators.',
+    },
+    {
+      label: 'Wake → Orange / Chapel Hill edges',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/wake',
+      context:
+        'Capital-to-university regional pairs; clarify county lines on every estimate.',
+    },
+    {
+      label: 'Northeast → Chapel Hill academic & medical markets',
+      direction: 'inbound',
+      context:
+        'Interstate household goods into near-campus multi-family; FMCSA for cross-state legs.',
+    },
+    {
+      label: 'Orange → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context:
+        'Family long-distance from university-town stock; volume estimates drive linehaul.',
+    },
+  ],
+  alamance: [
+    {
+      label: 'Within Alamance (Burlington ↔ Mebane / Graham)',
+      direction: 'within',
+      context:
+        'Mill-town multi-story vs growth HOAs — mid-corridor empty miles matter.',
+    },
+    {
+      label: 'Guilford / Triad → Alamance mid-corridor',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/guilford',
+      context:
+        'Parent-biased I-40/I-85 hops into Burlington and Mebane product.',
+    },
+    {
+      label: 'Alamance → Guilford / Greensboro job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/guilford',
+      context:
+        'Mid-corridor professionals into Triad multi-story and industrial-residential stock.',
+    },
+    {
+      label: 'Orange / Triangle → Alamance Mebane growth',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/orange',
+      context:
+        'Triangle spillover into HOA growth; not a Chapel Hill campus day rate.',
+    },
+    {
+      label: 'Florida → Alamance reverse family moves',
+      direction: 'inbound',
+      context:
+        'I-95/I-40 household goods into mid-corridor housing; FMCSA interstate.',
+    },
+    {
+      label: 'Alamance → Charlotte metro career hauls',
+      direction: 'outbound',
+      context:
+        'In-state long haul on I-85; empty miles change pricing vs a Mebane hop.',
+    },
+  ],
+  davidson: [
+    {
+      label: 'Within Davidson (Lexington ↔ Thomasville / mid-county)',
+      direction: 'within',
+      context:
+        'Seat multi-story vs furniture-region multi-unit — discontinuous town pairs.',
+    },
+    {
+      label: 'Forsyth / Winston-Salem → Davidson Triad south',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/forsyth',
+      context:
+        'Parent-biased I-85 hops into Lexington and Thomasville product.',
+    },
+    {
+      label: 'Davidson → Forsyth job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/forsyth',
+      context:
+        'Triad-south professionals into Winston-Salem multi-story and suburban stock.',
+    },
+    {
+      label: 'Guilford → Davidson furniture-region pairs',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/guilford',
+      context:
+        'Greensboro/High Point edges into Thomasville multi-unit fabric.',
+    },
+    {
+      label: 'Florida → Davidson reverse family moves',
+      direction: 'inbound',
+      context:
+        'I-85 household goods into Triad-south housing; FMCSA interstate.',
+    },
+    {
+      label: 'Davidson → Charlotte metro (I-85)',
+      direction: 'outbound',
+      context:
+        'In-state career hauls south; longer than a Thomasville local.',
+    },
+  ],
+  catawba: [
+    {
+      label: 'Within Catawba (Hickory ↔ Newton / Conover / Lake Hickory)',
+      direction: 'within',
+      context:
+        'Furniture-hub multi-story vs lake last-mile — not Charlotte beltway product.',
+    },
+    {
+      label: 'Charlotte / Mecklenburg → Hickory western Piedmont',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/mecklenburg',
+      context:
+        'Distant parent contrast; I-40 empty miles into independent hub stock.',
+    },
+    {
+      label: 'Catawba → Charlotte job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/mecklenburg',
+      context:
+        'Western Piedmont professionals into banking-core elevators — long in-state haul.',
+    },
+    {
+      label: 'Northeast / Midwest → Hickory manufacturing markets',
+      direction: 'inbound',
+      context:
+        'Interstate household goods into furniture/manufacturing hub housing.',
+    },
+    {
+      label: 'Catawba ↔ Gaston / Iredell Piedmont pairs',
+      direction: 'within',
+      context:
+        'Western Piedmont regional pairs with different industrial fabrics.',
+    },
+    {
+      label: 'Florida → Catawba reverse family moves',
+      direction: 'inbound',
+      context:
+        'Sun Belt reverse into Hickory multi-story and lake-edge stock; FMCSA interstate.',
     },
   ],
   onslow: [
@@ -5482,20 +5731,103 @@ const NC_ROUTES: Record<string, CountyPopularRoute[]> = {
     {
       label: 'Onslow ↔ Cumberland (Marine ↔ Army installation transfers)',
       direction: 'outbound',
+      href: '/local-movers/north-carolina/cumberland',
       context:
         'In-state military transfer pairs; different base-access rules at each end — not interchangeable copy.',
     },
     {
-      label: 'Florida → Jacksonville NC reverse PCS',
-      direction: 'inbound',
+      label: 'Onslow vs Wilmington defaults (not a New Hanover rename)',
+      direction: 'within',
+      href: '/local-movers/north-carolina/new-hanover',
       context:
-        'Coastal-plain military and family household goods; storm-season contingency.',
+        'PCS multi-family logistics differ from Wilmington tourism and historic downtown product.',
     },
     {
       label: 'Onslow → Triangle / Charlotte post-service career moves',
       direction: 'outbound',
       context:
         'In-state long haul after separation into Piedmont job markets.',
+    },
+  ],
+  pitt: [
+    {
+      label: 'Within Pitt (Greenville ECU edge ↔ Winterville / medical corridors)',
+      direction: 'within',
+      context:
+        'Campus multi-story vs medical multi-family — term and shift calendars matter.',
+    },
+    {
+      label: 'Triangle → Greenville ECU/medical hub',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/wake',
+      context:
+        'Distant Triangle contrast; US-264 empty miles into independent eastern hub stock.',
+    },
+    {
+      label: 'Pitt → Triangle job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/wake',
+      context:
+        'Eastern professionals into capital/tech multi-family — long in-state haul.',
+    },
+    {
+      label: 'Northeast → ECU / medical employment markets',
+      direction: 'inbound',
+      context:
+        'Interstate household goods into near-campus and hospital multi-family.',
+    },
+    {
+      label: 'Pitt ↔ New Hanover coastal pairs',
+      direction: 'within',
+      href: '/local-movers/north-carolina/new-hanover',
+      context:
+        'Eastern NC pairs; medical hub product differs from Wilmington tourism density.',
+    },
+    {
+      label: 'Florida → Greenville reverse family moves',
+      direction: 'inbound',
+      context:
+        'I-95 corridor household goods into eastern NC; FMCSA interstate.',
+    },
+  ],
+  brunswick: [
+    {
+      label: 'Within Brunswick (Leland ↔ Southport / Oak Island)',
+      direction: 'within',
+      context:
+        'Inland HOA growth vs beach association last-mile — truck type changes by zone.',
+    },
+    {
+      label: 'New Hanover / Wilmington → Brunswick south coastal collar',
+      direction: 'inbound',
+      href: '/local-movers/north-carolina/new-hanover',
+      context:
+        'Parent-market hops on US-17 into Leland multi-family and coastal growth.',
+    },
+    {
+      label: 'Brunswick → Wilmington / New Hanover job markets',
+      direction: 'outbound',
+      href: '/local-movers/north-carolina/new-hanover',
+      context:
+        'South-collar professionals into historic downtown and midtown multi-family.',
+    },
+    {
+      label: 'Northeast / Midwest → Brunswick coastal lifestyle',
+      direction: 'inbound',
+      context:
+        'Interstate household goods into Leland growth and island associations.',
+    },
+    {
+      label: 'Florida ↔ Brunswick reverse coastal moves',
+      direction: 'inbound',
+      context:
+        'I-95 corridor coastal pairs; storm-season contingency on both ends.',
+    },
+    {
+      label: 'Brunswick → Triangle career hauls (US-17 / I-40)',
+      direction: 'outbound',
+      context:
+        'Coastal-to-Triangle in-state hauls; longer than a Leland local.',
     },
   ],
 };

@@ -1,183 +1,235 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
-import { finalizeNcPack } from '@/lib/local-movers/county-intelligence/north-carolina/nc-shared';
+import {
+  finalizeNcTier2Pack,
+  NC_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/north-carolina/nc-tier2-shared';
 
-/** Cabarrus County, NC — Concord/Kannapolis NE Charlotte corridor (not Mecklenburg clone). */
-export const cabarrusCountyNcIntelligence: CountyIntelligencePack = finalizeNcPack({
+/**
+ * cabarrus — NC Tier 2 Wave 1
+ */
+export const cabarrusCountyNcTier2Intelligence: CountyIntelligencePack = finalizeNcTier2Pack({
   countySlug: 'cabarrus',
   hubTitle: 'Cabarrus County Moving Intelligence Hub',
-  eyebrow: 'Cabarrus · Concord, Kannapolis & Charlotte NE corridor',
-  h1: 'Moving in Cabarrus County: Concord Growth, Kannapolis Revitalization & I-85 Logistics',
+  eyebrow: 'Cabarrus · Charlotte NE · Concord / Kannapolis',
+  h1: 'Moving in Cabarrus County: Concord, Kannapolis & I-85 Northeast Growth',
   heroOpener:
-    'Cabarrus County is Charlotte’s northeast growth corridor: Concord multi-family and HOA rings, Kannapolis revitalization stock, I-85 portal time into Mecklenburg, and event/retail traffic pulses near major venues and Concord Mills that are not South End elevator jobs. A Concord HOA two-story, a Kannapolis multi-family unit, a Harrisburg-edge townhome, and a Midland rural-edge house do not share truck access or timing risk. This hub is for Cabarrus — not a renamed Mecklenburg Uptown guide.',
+    'Cabarrus County is Charlotte’s northeast I-85 collar — Concord HOA and multi-family growth, Kannapolis revitalizing multi-unit stock, Harrisburg edges, and motorsports/retail corridor freeflow that is not Mecklenburg University City with different labels. Expect I-85 portal time, event-week traffic near major venues, and mixed industrial-residential product under one county. This guide is for people moving in Cabarrus as NE Charlotte growth collar — not a Mecklenburg rename.',
   heroCredibility:
-    'NCUC household goods certificate (C-#) for intrastate NC moves · FMCSA for interstate · I-85 NE corridor & venue-traffic awareness · Curated listings',
+    'Charlotte NE collar · I-85 growth · Concord / Kannapolis · NCUC household goods · FMCSA when interstate · Curated listings',
   majorCorridors: 'I-85 · US-29 · Concord Mills Blvd · NC-49 · NC-73',
-  whatMakesDifferent: {
-    title: 'What makes moving in Cabarrus County different',
-    intro: 'Northeast Charlotte spillover with venue/retail pulses — not Uptown towers or Union south-side HOA patterns alone.',
+  lastReviewed: '2026-07-24',
+  parentCompare: {
+    parentLabel: 'Mecklenburg County',
+    parentHref: '/local-movers/north-carolina/mecklenburg',
+    title: 'Compared with Mecklenburg County',
+    intro:
+      'Cabarrus is Charlotte NE I-85 growth collar — not Mecklenburg Uptown elevators and not pure rural Piedmont freeflow.',
     bullets: [
-      { title: 'I-85 defines Charlotte-linked portal time', detail: 'Cross-county pairs look local on maps and regional at peak.' },
-      { title: 'HOA growth product is common in Concord corridors', detail: 'Gate lists and approved hours are routine.' },
-      { title: 'Event and retail traffic pulses matter near major venues and Concord Mills', detail: 'Load windows can collide with event calendars — ask crews how they plan around peaks.' },
-      { title: 'Kannapolis stock can differ from brand-new Concord HOAs', detail: 'Older and revitalizing multi-unit needs different access surveys.' },
-      { title: 'Cabarrus is not Mecklenburg', detail: 'Less vertical core product; more I-85 suburban logistics.' },
-      { title: 'Intrastate NC rules vs interstate authority', detail: 'In-state household moves generally need NCUC C-#. Interstate needs FMCSA.' },
+      {
+        title: 'Drive time & corridor relationship',
+        detail:
+          'Mecklenburg crews fight beltway peaks into University City and Uptown. Cabarrus pairs ride I-85, US-29, and NC-49 — freer mid-day northeast of the ring, still peak-heavy toward Mecklenburg portals and Concord Mills retail weekends.',
+      },
+      {
+        title: 'Housing stock differences',
+        detail:
+          'Mecklenburg mixes towers and University multi-family. Cabarrus mixes Concord HOA SFH, Kannapolis multi-unit, and Harrisburg growth — more I-85 spillover product, less continuous South End loft density.',
+      },
+      {
+        title: 'Truck access & density',
+        detail:
+          'HOA packets and arterial multi-family curb plans dominate; event weeks near major venues rewrite staging uncommon on quiet Ballantyne cul-de-sacs.',
+      },
+      {
+        title: 'Rough cost posture (qualitative)',
+        detail:
+          'Local Cabarrus quotes often track NE-metro suburb rates for driveway SFH — I-85 peaks and multi-unit access still push prices up.',
+      },
+      {
+        title: 'Role difference',
+        detail:
+          'Cabarrus is Charlotte NE I-85 collar — not Mecklenburg core renamed.',
+      }
     ],
   },
-  zonesHeading: 'Cabarrus access zones',
-  zonesIntro: 'Plan by Concord growth, Kannapolis core, Harrisburg edges, and eastern/rural approaches.',
+  whatMakesDifferent: {
+    title: 'What makes moving in Cabarrus County different',
+    intro: 'I-85 freeflow, Concord/Kannapolis mixed stock, and event-week staging — not interchangeable Mecklenburg boilerplate.',
+    bullets: [
+      {
+        title: 'I-85 peaks rewrite short-looking locals',
+        detail:
+          'Cabarrus ↔ Mecklenburg pairs freer mid-day still burn clock at commute peaks. Ask portal-to-portal.',
+      },
+      {
+        title: 'Concord HOA growth is first-class product',
+        detail:
+          'Gate lists and approved hours are standard on planned villages.',
+      },
+      {
+        title: 'Kannapolis multi-unit differs from pure SFH HOAs',
+        detail:
+          'Elevators and curb plans need inventories different from Harrisburg driveways.',
+      },
+      {
+        title: 'Motorsports/retail event weeks reshape freeflow',
+        detail:
+          'Major venue calendars can erase “quiet suburban” unload assumptions.',
+      },
+      NC_TIER2_REG_BULLET,
+    ],
+  },
+  zonesHeading: 'Cabarrus zones: Concord growth, Kannapolis multi-unit, Harrisburg edges & eastern lots',
+  zonesIntro: 'Two to four sharp products under one NE I-85 collar label.',
   zones: [
     {
       id: 'concord-growth',
-      name: 'Concord multi-family & HOA growth',
-      shortName: 'Concord growth',
-      neighborhoods: ['Concord', 'Concord Mills edges', 'NC-49 multi-family', 'HOA master plans'],
+      name: 'Concord HOA & multi-family growth',
+      shortName: 'Concord',
+      neighborhoods: ["Concord","growth villages","Concord Mills edges"],
       housingTypes: 'HOA SFH, townhomes, multi-family',
-      challenges: ['HOA rules', 'I-85 / Concord Mills congestion', 'Event-day traffic pulses'],
-      moverTips: 'Collect HOA packets. Avoid major event peaks when flexible. Build I-85 buffer.',
-      cityKeywords: ['concord', 'concord mills', 'cabarrus'],
+      challenges: ["HOA packets","I-85 peaks","Retail congestion"],
+      moverTips: 'Collect HOA COIs; build I-85 buffer.',
+      cityKeywords: ["concord","concord mills"],
     },
     {
       id: 'kannapolis',
-      name: 'Kannapolis revitalization & multi-unit',
+      name: 'Kannapolis multi-unit & revitalizing stock',
       shortName: 'Kannapolis',
-      neighborhoods: ['Kannapolis', 'Downtown Kannapolis edges', 'Research campus-adjacent multi-family', 'Older SFH pockets'],
-      housingTypes: 'Multi-family, older SFH, townhomes',
-      challenges: ['Mixed access types', 'US-29 congestion', 'Elevator vs stair variety'],
-      moverTips: 'Confirm unit access type. Photo curb for older blocks. Prefer mid-week mornings.',
-      cityKeywords: ['kannapolis', 'north cabarrus'],
+      neighborhoods: ["Kannapolis","downtown edges","multi-family corridors"],
+      housingTypes: 'Multi-unit, older SFH, townhomes',
+      challenges: ["Elevators/stairs","Street parking","Mixed curb"],
+      moverTips: 'Confirm elevator rules; inventory stairs.',
+      cityKeywords: ["kannapolis"],
     },
     {
-      id: 'harrisburg-edge',
-      name: 'Harrisburg & southwest Cabarrus edges',
-      shortName: 'Harrisburg edge',
-      neighborhoods: ['Harrisburg', 'I-485 approach edges', 'Southwest HOA villages'],
-      housingTypes: 'HOA SFH, townhomes, multi-family',
-      challenges: ['Mecklenburg-linked congestion', 'HOA rules', 'Longer empty miles to eastern Cabarrus'],
-      moverTips: 'Clarify Cabarrus vs Mecklenburg addresses. Price cross-county pairs honestly.',
-      cityKeywords: ['harrisburg', 'southwest cabarrus'],
+      id: 'harrisburg',
+      name: 'Harrisburg / west edge toward Mecklenburg',
+      shortName: 'Harrisburg',
+      neighborhoods: ["Harrisburg","western edges"],
+      housingTypes: 'HOA SFH, multi-family',
+      challenges: ["I-85 freeflow","HOA rules"],
+      moverTips: 'Clarify Mecklenburg second addresses early.',
+      cityKeywords: ["harrisburg"],
     },
     {
-      id: 'east-rural',
-      name: 'Eastern Cabarrus & Midland edges',
-      shortName: 'East / Midland',
-      neighborhoods: ['Midland', 'Eastern tracts', 'Rural driveway lots'],
+      id: 'east-edge',
+      name: 'Eastern Cabarrus larger lots',
+      shortName: 'East edge',
+      neighborhoods: ["Mount Pleasant edges","eastern tracts"],
       housingTypes: 'SFH, rural-edge lots',
-      challenges: ['Long empty miles', 'Limited alternate routes', 'Soft surfaces after rain'],
-      moverTips: 'Survey driveway access. Prefer early starts for long east-county pairs.',
-      cityKeywords: ['midland', 'east cabarrus', 'rural'],
-    },
+      challenges: ["Empty miles","Soft shoulders"],
+      moverTips: 'Survey approaches; prefer early starts.',
+      cityKeywords: ["mount pleasant","east cabarrus"],
+    }
   ],
-  costDrivers: {
-    title: 'What drives Cabarrus moving costs',
-    intro: 'I-85 empty miles, HOA soft costs, and event-day timing drive quotes.',
-    drivers: [
-      { title: 'I-85 Charlotte-linked congestion', detail: 'Portal-to-portal spikes at peak.' },
-      { title: 'HOA gate lists and approved hours', detail: 'Soft costs push demand into peak windows.' },
-      { title: 'Venue / retail traffic pulses', detail: 'Load windows can collide with major events.' },
-      { title: 'Cross-county empty miles', detail: 'Mecklenburg destinations raise staging distance.' },
-    ],
-    ranges: [
-      { label: 'Studio / 1BR (simple access)', value: '$450–$1,300+', note: 'Higher with HOA soft costs' },
-      { label: '2–3BR HOA SFH or multi-family', value: '$1,350–$3,700+', note: 'I-85 pairs trend up' },
-      { label: '3–4+ BR / long Charlotte-linked', value: '$2,400–$6,900+', note: 'Cross-county pairs price highest' },
-      { label: 'Typical 2-person crew rate', value: '$110–$180+/hr', note: 'Portal-to-portal' },
-    ],
-  },
-  seasonal: {
-    title: 'When to schedule a Cabarrus move',
-    intro: 'Family seasons, multi-family turns, and major event calendars reshape access.',
-    items: [
-      { title: 'Best windows: mid-week early mornings', detail: 'Reduce I-85 pain and clear HOA hours.' },
-      { title: 'Avoid major event peaks when flexible', detail: 'Venue and retail corridors can lock curb access.' },
-      { title: 'Peak family season: late May–mid-August', detail: 'Book suburban Saturdays early.' },
-      { title: 'Summer heat and storms', detail: 'Prefer early starts on open suburban streets.' },
-    ],
-  },
   specialized: [
     {
-      id: 'cabarrus-i85-venue',
-      title: 'I-85 NE corridor & venue-traffic module',
-      intro: 'Cabarrus estimates fail when event pulses or Charlotte empty miles are ignored.',
-      bullets: [
-        'Ask about event calendars near major venues when load dates are flexible.',
-        'Collect HOA packets for Concord growth product.',
-        'Price I-85 Mecklenburg pairs portal-to-portal.',
-        'Clarify Cabarrus vs Mecklenburg addresses.',
-        'Verify NCUC C-# in-state and FMCSA interstate.',
-      ],
+      id: 'i85-ne',
+      title: 'I-85 northeast freeflow',
+      intro: 'NE-metro pairs still peak hard toward Mecklenburg.',
+      bullets: ["Price portal-to-portal honestly.","Build buffers for Concord Mills and event weekends."],
     },
+    {
+      id: 'concord-hoa',
+      title: 'Concord HOA growth module',
+      intro: 'Planned suburbs dominate family volume.',
+      bullets: ["Collect COI and gate lists early.","Do not quote Uptown elevator rates for driveway SFH."],
+    },
+    {
+      id: 'kannapolis-multi',
+      title: 'Kannapolis multi-unit access',
+      intro: 'Revitalizing multi-family is a first-class product.',
+      bullets: ["Inventory elevators vs stairs before comparing hourly rates.","Temporary no-parking often beats long carries."],
+    }
   ],
   relocation: {
-    title: 'Considering a move to Cabarrus County?',
-    intro: 'Practical fit checklist — verify on official sources. No invented rankings.',
+    title: 'Schools & hospitals for relocators',
+    intro:
+      'Compressed secondary-market notes — primary districts and acute-care access that affect move-in.',
     modules: [
       {
         id: 'schools',
-        title: 'Schools & education landscape',
+        title: 'Schools & education',
+        intro: 'Cabarrus families compare Cabarrus County Schools and Kannapolis City Schools feeders — verify address boundaries; do not assume Charlotte-Mecklenburg maps apply.',
         bullets: [
-          { title: 'How districts work here', detail: 'Cabarrus County Schools and Kannapolis City Schools serve different addresses. Confirm zoning carefully.' },
-          { title: 'Growth areas', detail: 'Concord corridors can see enrollment pressure. Ask about capacity when touring.' },
-          { title: 'Research sources', detail: 'District tools, NCDPI data, and campus visits beat ranking screenshots.' },
+          {
+            title: 'District-first shopping',
+            detail:
+              'Use NCDPI data and district maps; do not assume a city name equals one feeder pattern.',
+          },
+          {
+            title: 'Capacity & calendars',
+            detail:
+              'Growth pockets, university towns, and military markets can tighten housing near school and term calendars.',
+          },
         ],
       },
       {
         id: 'hospitals',
-        title: 'Hospitals & healthcare access',
+        title: 'Hospitals & healthcare',
         bullets: [
-          { title: 'Major systems', detail: 'Atrium Health Cabarrus and Charlotte-metro systems serve residents. Confirm networks.' },
-          { title: 'What relocators should do', detail: 'Map peak-hour I-85 times into Mecklenburg specialty care. Transfer records early.' },
+          {
+            title: 'Acute-care anchors',
+            detail: 'Atrium Health Cabarrus and Charlotte specialty spillover serve the county; map peak I-85 times for ER access.',
+          },
+          {
+            title: 'Peak drive times',
+            detail:
+              'Map ER access at commute peaks, not only off-hour freeflow.',
+          },
         ],
       },
+    ],
+  },
+  costDrivers: {
+    title: 'Pricing & cost drivers',
+    intro: 'I-85 freeflow, HOA soft costs, and multi-unit access often matter more than raw miles.',
+    drivers: [
       {
-        id: 'housing',
-        title: 'Housing character & cost pressures',
-        bullets: [
-          { title: 'Growth HOA product vs revitalizing stock', detail: 'Concord master plans differ from older/revitalizing Kannapolis multi-unit.' },
-          { title: 'Cost variation', detail: 'Southwest edges may price closer to Charlotte spillover.' },
-          { title: 'HOA governance', detail: 'Many communities control move hours and truck size.' },
-        ],
+        title: 'Corridor freeflow',
+        detail: 'Peak windows inflate hourly bills on short-looking pairs.',
       },
       {
-        id: 'town-fit',
-        title: 'Which Cabarrus areas fit whom',
-        bullets: [
-          { title: 'Concord growth lifestyle', detail: 'Newer HOA product with I-85 commute risk.' },
-          { title: 'Kannapolis pattern', detail: 'Revitalizing multi-unit and mixed stock with different access surveys.' },
-          { title: 'Harrisburg edge pattern', detail: 'Closer Mecklenburg access with cross-county logistics on move day.' },
-        ],
+        title: 'Access soft costs',
+        detail: 'Building packets, stairs, or last-mile shuttles add labor hours.',
       },
       {
-        id: 'jobs',
-        title: 'Jobs & commute patterns',
-        bullets: [
-          { title: 'Employment anchors', detail: 'Many residents commute into Mecklenburg; local healthcare, retail, manufacturing, and services also employ residents.' },
-          { title: 'Commute realism', detail: 'I-85 peaks are real. Test drive peak routes into Charlotte.' },
-        ],
+        title: 'Long empty-mile edges',
+        detail: 'Far pockets price differently from seat suburbs.',
+      },
+    ],
+    ranges: [
+      { label: 'Studio / 1-BR', value: '$450–$1,200+' },
+      { label: '3–4 BR home', value: '$1,600–$4,200+', note: 'Higher with access friction' },
+      { label: '2-person crew', value: '$115–$185+/hr' },
+    ],
+  },
+  seasonal: {
+    title: 'Seasonal & calendar notes',
+    intro: 'School years, lease ends, and major-event weeks reshape demand by pocket.',
+    items: [
+      {
+        title: 'Late spring – early fall',
+        detail: 'Family closings and peak calendars fill Saturday crews first.',
       },
       {
-        id: 'lifestyle',
-        title: 'Lifestyle & practical livability',
-        bullets: [
-          { title: 'NE Charlotte corridor identity', detail: 'Cabarrus is I-85 growth adjacent to Charlotte — not Uptown vertical living.' },
-          { title: 'Climate', detail: 'Hot humid summers and storms. Plan outdoor staging contingency.' },
-          { title: 'Event-day pace', detail: 'Major venues can change traffic feel. Visit peak and off-peak.' },
-        ],
+        title: 'Institutional & weather windows',
+        detail:
+          'School, university, PCS, tourism, or storm seasons can outrank pure weekend preference.',
       },
     ],
   },
   resources: {
-    title: 'Useful Cabarrus resources',
-    intro: 'Official links first. Verify NCUC in-state and FMCSA interstate.',
+    title: 'Useful resources',
+    intro:
+      'Official links first; directory listings are independent. Verify NCUC household-goods certification for in-state North Carolina moves and FMCSA for interstate legs.',
     items: [
-      { label: 'Cabarrus County — official site', href: 'https://www.cabarruscounty.us/', external: true },
-      { label: 'City of Concord', href: 'https://www.concordnc.gov/', external: true },
-      { label: 'City of Kannapolis', href: 'https://www.kannapolisnc.gov/', external: true },
-      { label: 'Cabarrus County Schools', href: 'https://www.cabarrus.k12.nc.us/', external: true },
-      { label: 'NCDOT traffic / 511', href: 'https://drivenc.gov/', external: true },
+      {
+        label: 'Mecklenburg County movers (parent contrast)',
+        href: '/local-movers/north-carolina/mecklenburg',
+      },
+
     ],
   },
-  directoryHint:
-    'Prefer HOA fluency for Concord growth; I-85 buffer for Charlotte pairs; event-calendar awareness near major venues. Verify NCUC C-# and FMCSA.',
-  lastReviewed: '2026-07-23',
 });

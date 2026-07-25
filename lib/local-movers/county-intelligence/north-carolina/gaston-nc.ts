@@ -1,182 +1,235 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
-import { finalizeNcPack } from '@/lib/local-movers/county-intelligence/north-carolina/nc-shared';
+import {
+  finalizeNcTier2Pack,
+  NC_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/north-carolina/nc-tier2-shared';
 
-/** Gaston County, NC — west Charlotte overflow (not Mecklenburg clone). */
-export const gastonCountyNcIntelligence: CountyIntelligencePack = finalizeNcPack({
+/**
+ * gaston — NC Tier 2 Wave 1
+ */
+export const gastonCountyNcTier2Intelligence: CountyIntelligencePack = finalizeNcTier2Pack({
   countySlug: 'gaston',
   hubTitle: 'Gaston County Moving Intelligence Hub',
-  eyebrow: 'Gaston · West Charlotte overflow, Gastonia mix & I-85 corridor',
-  h1: 'Moving in Gaston County: West Charlotte Overflow, Gastonia Access & I-85 Logistics',
+  eyebrow: 'Gaston · Charlotte west · Gastonia / Belmont',
+  h1: 'Moving in Gaston County: Gastonia, Belmont & West-Collar I-85 Access',
   heroOpener:
-    'Gaston County is Charlotte’s western overflow market: Gastonia industrial-and-residential mix, Belmont and Mount Holly edges that feel closer to Mecklenburg, I-85 and US-321 portal time, and older mill-town stock that is not Ballantyne HOA product. A Gastonia multi-family unit, a Belmont near-river home, a Mount Holly HOA two-story, and a Cherryville rural-edge house do not share truck access or commute risk. This hub is for Gaston — not a renamed Mecklenburg South End guide.',
+    'Gaston County is Charlotte’s western collar — Gastonia seat multi-story and industrial-residential mix, Belmont and Mount Holly east-edge growth toward the river, Cramerton and Dallas corridors, and I-85 / US-321 freeflow that is not Ballantyne HOA product with western labels. Expect mixed mill-town stock, west-collar empty miles, and river-edge densification under one county. This guide is for people moving in Gaston as west-metro collar — not a Mecklenburg rename.',
   heroCredibility:
-    'NCUC household goods certificate (C-#) for intrastate NC moves · FMCSA for interstate · West Charlotte I-85 corridor awareness · Curated listings',
+    'Charlotte west collar · Gastonia / Belmont · I-85 / US-321 · NCUC household goods · FMCSA when interstate · Curated listings',
   majorCorridors: 'I-85 · US-321 · US-74 · NC-279 · Wilkinson Blvd',
+  lastReviewed: '2026-07-24',
+  parentCompare: {
+    parentLabel: 'Mecklenburg County',
+    parentHref: '/local-movers/north-carolina/mecklenburg',
+    title: 'Compared with Mecklenburg County',
+    intro:
+      'Gaston is Charlotte west collar on I-85 / Wilkinson — not Mecklenburg South End elevators and not pure rural foothills freeflow.',
+    bullets: [
+      {
+        title: 'Drive time & corridor relationship',
+        detail:
+          'Mecklenburg crews fight west approaches and Uptown peaks. Gaston pairs ride I-85, Wilkinson Blvd, and US-321 — freer mid-day west of the river, still peak-heavy toward Mecklenburg portals and Belmont/Mount Holly commute windows.',
+      },
+      {
+        title: 'Housing stock differences',
+        detail:
+          'Mecklenburg mixes towers and south-ring HOAs. Gaston mixes Gastonia multi-story, mill-era stock, Belmont multi-family growth, and western larger lots — more industrial-residential fabric, less continuous Uptown vertical product.',
+      },
+      {
+        title: 'Truck access & density',
+        detail:
+          'Older seat streets need curb plans; east-edge growth adds HOA packets; soft shoulders appear farther west.',
+      },
+      {
+        title: 'Rough cost posture (qualitative)',
+        detail:
+          'Local Gaston quotes often sit near west-metro secondary rates for driveway SFH — multi-story access and empty miles still push prices up.',
+      },
+      {
+        title: 'Role difference',
+        detail:
+          'Gaston is Charlotte west collar — not Mecklenburg core renamed.',
+      }
+    ],
+  },
   whatMakesDifferent: {
     title: 'What makes moving in Gaston County different',
-    intro: 'West Charlotte spillover with industrial-residential mix — not Uptown elevators or Union south HOA rings alone.',
+    intro: 'West-collar freeflow, mill-town multi-story, and river-edge growth — not interchangeable Ballantyne boilerplate.',
     bullets: [
-      { title: 'I-85 defines Charlotte-linked portal time', detail: 'Cross-county pairs burn clock at peak.' },
-      { title: 'Gastonia stock mixes older SFH, multi-family, and industrial adjacency', detail: 'Access surveys matter more than ZIP labels.' },
-      { title: 'Belmont / Mount Holly edges feel closer to Mecklenburg logistics', detail: 'Still keep county lines clear on estimates.' },
-      { title: 'US-321 and Wilkinson corridors reshape north–south timing', detail: 'Not every job is an I-85 hop.' },
-      { title: 'Gaston is not Mecklenburg', detail: 'Less vertical core product; more western suburban and mill-town fabric.' },
-      { title: 'Intrastate NC rules vs interstate authority', detail: 'In-state household moves generally need NCUC C-#. Interstate needs FMCSA.' },
+      {
+        title: 'I-85 / Wilkinson freeflow is still billable',
+        detail:
+          'Gaston ↔ Mecklenburg pairs freer mid-day still peak hard. Ask portal-to-portal.',
+      },
+      {
+        title: 'Gastonia multi-story is first-class product',
+        detail:
+          'Seat stairs and curb plans need inventories different from Belmont growth cul-de-sacs.',
+      },
+      {
+        title: 'Belmont / Mount Holly east edge densifies',
+        detail:
+          'Multi-family and HOA soft costs appear closer to the river.',
+      },
+      {
+        title: 'Industrial-residential mix rewrites truck type',
+        detail:
+          'Mill-adjacent streets reject pure south-ring HOA day-rate assumptions.',
+      },
+      NC_TIER2_REG_BULLET,
     ],
   },
-  zonesHeading: 'Gaston access zones',
-  zonesIntro: 'Plan by Gastonia core, Belmont/Mount Holly eastern edges, northern growth, and western rural approaches.',
+  zonesHeading: 'Gaston zones: Gastonia seat, Belmont/Mount Holly east, US-321 corridor & western lots',
+  zonesIntro: 'Two to four sharp products — seat multi-story, east growth, corridor stock, and western lots.',
   zones: [
     {
-      id: 'gastonia-core',
-      name: 'Gastonia core & multi-family corridors',
-      shortName: 'Gastonia core',
-      neighborhoods: ['Gastonia', 'Downtown Gastonia edges', 'Franklin Boulevard multi-family', 'Older SFH pockets'],
-      housingTypes: 'Older SFH, multi-family, townhomes',
-      challenges: ['Mixed access types', 'Arterial congestion', 'Industrial-adjacent staging friction'],
-      moverTips: 'Photo curb for older blocks. Confirm elevator vs stair access. Prefer mid-week mornings.',
-      cityKeywords: ['gastonia', 'franklin', 'gaston'],
+      id: 'gastonia-seat',
+      name: 'Gastonia multi-story & industrial-residential',
+      shortName: 'Gastonia',
+      neighborhoods: ["Gastonia","downtown edges","mill-adjacent stock"],
+      housingTypes: 'Multi-story, multi-unit, older SFH',
+      challenges: ["Stairs","Tight streets","I-85 freeflow"],
+      moverTips: 'Inventory stairs; plan temporary no-parking.',
+      cityKeywords: ["gastonia"],
     },
     {
-      id: 'belmont-mt-holly',
-      name: 'Belmont, Mount Holly & eastern edges',
-      shortName: 'East edges',
-      neighborhoods: ['Belmont', 'Mount Holly', 'Cramerton edges', 'River-edge neighborhoods'],
-      housingTypes: 'SFH, multi-family, some HOA product',
-      challenges: ['Mecklenburg-linked congestion', 'US-74 / Wilkinson friction', 'County-line address confusion'],
-      moverTips: 'Clarify Gaston vs Mecklenburg addresses. Build I-85/Wilkinson buffer. Survey river-edge access carefully.',
-      cityKeywords: ['belmont', 'mount holly', 'cramerton'],
-    },
-    {
-      id: 'north-growth',
-      name: 'Northern Gaston multi-family & US-321',
-      shortName: 'North growth',
-      neighborhoods: ['Dallas edges', 'Stanley edges', 'US-321 multi-family', 'Northern HOA villages'],
+      id: 'east-edge',
+      name: 'Belmont / Mount Holly / Cramerton east edge',
+      shortName: 'East edge',
+      neighborhoods: ["Belmont","Mount Holly","Cramerton"],
       housingTypes: 'Multi-family, HOA SFH, townhomes',
-      challenges: ['US-321 congestion', 'HOA rules', 'Longer empty miles to eastern edges'],
-      moverTips: 'Collect HOA packets. Prefer early starts for long north–south pairs.',
-      cityKeywords: ['dallas', 'stanley', 'us-321', 'north gaston'],
+      challenges: ["HOA packets","Wilkinson peaks","River-bridge freeflow"],
+      moverTips: 'Collect HOA COIs; build bridge/commute buffers.',
+      cityKeywords: ["belmont","mount holly","cramerton"],
     },
     {
-      id: 'west-rural',
-      name: 'Western Gaston & Cherryville edges',
-      shortName: 'West / Cherryville',
-      neighborhoods: ['Cherryville', 'Bessemer City edges', 'Western rural lots'],
-      housingTypes: 'SFH, rural-edge lots',
-      challenges: ['Long empty miles', 'Limited alternate routes', 'Soft surfaces after rain'],
-      moverTips: 'Survey driveway access. Prefer early starts for long west-county pairs.',
-      cityKeywords: ['cherryville', 'bessemer city', 'west gaston'],
+      id: 'us321',
+      name: 'US-321 / Dallas corridor',
+      shortName: 'US-321 corridor',
+      neighborhoods: ["Dallas","High Shoals edges","US-321 multi-family"],
+      housingTypes: 'SFH, multi-family, mixed stock',
+      challenges: ["Arterial timing","Mixed access"],
+      moverTips: 'Prefer early starts; confirm driveway depth.',
+      cityKeywords: ["dallas","high shoals"],
     },
+    {
+      id: 'west-lots',
+      name: 'Western Gaston larger lots',
+      shortName: 'West lots',
+      neighborhoods: ["Bessemer City edges","Cherryville edges","western tracts"],
+      housingTypes: 'Larger lots, rural approaches',
+      challenges: ["Empty miles","Soft shoulders"],
+      moverTips: 'Photo approaches; soft ground after rain can block heavy trucks.',
+      cityKeywords: ["bessemer city","cherryville"],
+    }
   ],
-  costDrivers: {
-    title: 'What drives Gaston moving costs',
-    intro: 'I-85 empty miles, mixed stock access, and western distance drive quotes.',
-    drivers: [
-      { title: 'I-85 Charlotte-linked congestion', detail: 'Portal-to-portal spikes at peak.' },
-      { title: 'Older core stairs and curb friction', detail: 'Labor hours rise without elevators.' },
-      { title: 'Eastern edge cross-county pairs', detail: 'Mecklenburg destinations raise staging distance.' },
-      { title: 'Western empty miles', detail: 'Cherryville-edge jobs are not short Gastonia hops.' },
-    ],
-    ranges: [
-      { label: 'Studio / 1BR (simple access)', value: '$400–$1,250+', note: 'Higher with stairs or peak freeways' },
-      { label: '2–3BR condo or modest SFH', value: '$1,250–$3,500+', note: 'I-85 pairs trend up' },
-      { label: '3–4+ BR / long Charlotte-linked', value: '$2,300–$6,600+', note: 'Cross-county pairs price highest' },
-      { label: 'Typical 2-person crew rate', value: '$100–$175+/hr', note: 'Portal-to-portal' },
-    ],
-  },
-  seasonal: {
-    title: 'When to schedule a Gaston move',
-    intro: 'Family seasons and Charlotte-metro spillover reshape calendars.',
-    items: [
-      { title: 'Best windows: mid-week early mornings', detail: 'Reduce I-85/Wilkinson pain.' },
-      { title: 'Peak family season: late May–mid-August', detail: 'Book suburban Saturdays early.' },
-      { title: 'Month-end multi-family turns', detail: 'Lease clusters fill crews in growth corridors.' },
-      { title: 'Summer heat and storms', detail: 'Prefer early starts on open streets.' },
-    ],
-  },
   specialized: [
     {
-      id: 'west-charlotte-gaston',
-      title: 'West Charlotte overflow & industrial-residential module',
-      intro: 'Gaston estimates fail when Mecklenburg pairs or mixed Gastonia stock are ignored.',
-      bullets: [
-        'Clarify Gaston vs Mecklenburg addresses on every estimate.',
-        'Price I-85 pairs portal-to-portal.',
-        'Survey older SFH stairs and curb carefully.',
-        'Collect HOA packets for northern growth product.',
-        'Verify NCUC C-# in-state and FMCSA interstate.',
-      ],
+      id: 'west-collar',
+      title: 'I-85 / Wilkinson west-collar freeflow',
+      intro: 'West-metro pairs still peak hard toward Mecklenburg.',
+      bullets: ["Price portal-to-portal honestly.","Clarify Mecklenburg second addresses early."],
     },
+    {
+      id: 'east-growth',
+      title: 'Belmont / Mount Holly growth module',
+      intro: 'East-edge densification is the river product.',
+      bullets: ["Collect HOA packets before the estimate is final.","Build buffers for bridge and I-85 peaks."],
+    },
+    {
+      id: 'gastonia-seat',
+      title: 'Gastonia multi-story access',
+      intro: 'Seat stairs are a first-class cost driver.',
+      bullets: ["Inventory floor counts before comparing hourly rates.","Temporary no-parking often beats long carries."],
+    }
   ],
   relocation: {
-    title: 'Considering a move to Gaston County?',
-    intro: 'Practical fit checklist — verify on official sources. No invented rankings.',
+    title: 'Schools & hospitals for relocators',
+    intro:
+      'Compressed secondary-market notes — primary districts and acute-care access that affect move-in.',
     modules: [
       {
         id: 'schools',
-        title: 'Schools & education landscape',
+        title: 'Schools & education',
+        intro: 'Gaston families compare Gaston County Schools feeders across Gastonia, Belmont, Mount Holly, and western towns — verify address boundaries.',
         bullets: [
-          { title: 'How districts work here', detail: 'Gaston County Schools is the primary public K–12 system. Assignment is address-based.' },
-          { title: 'Growth areas', detail: 'Eastern edges can see enrollment pressure tied to Charlotte spillover. Ask about capacity when touring.' },
-          { title: 'Research sources', detail: 'District tools, NCDPI data, and campus visits beat ranking screenshots.' },
+          {
+            title: 'District-first shopping',
+            detail:
+              'Use NCDPI data and district maps; do not assume a city name equals one feeder pattern.',
+          },
+          {
+            title: 'Capacity & calendars',
+            detail:
+              'Growth pockets, university towns, and military markets can tighten housing near school and term calendars.',
+          },
         ],
       },
       {
         id: 'hospitals',
-        title: 'Hospitals & healthcare access',
+        title: 'Hospitals & healthcare',
         bullets: [
-          { title: 'Major systems', detail: 'CaroMont Health and Charlotte-metro systems serve residents. Confirm networks.' },
-          { title: 'What relocators should do', detail: 'Map peak-hour times into Mecklenburg specialty care. Transfer records early.' },
+          {
+            title: 'Acute-care anchors',
+            detail: 'CaroMont Regional and Charlotte specialty spillover serve the county; map peak I-85 / Wilkinson times for ER access.',
+          },
+          {
+            title: 'Peak drive times',
+            detail:
+              'Map ER access at commute peaks, not only off-hour freeflow.',
+          },
         ],
       },
+    ],
+  },
+  costDrivers: {
+    title: 'Pricing & cost drivers',
+    intro: 'West-collar freeflow, multi-story access, and HOA soft costs on the east edge often matter more than raw miles.',
+    drivers: [
       {
-        id: 'housing',
-        title: 'Housing character & cost pressures',
-        bullets: [
-          { title: 'Eastern spillover vs western value patterns', detail: 'Belmont/Mount Holly often price differently from western rural edges.' },
-          { title: 'Mixed stock realities', detail: 'Older Gastonia product needs different access surveys than new HOA villages.' },
-          { title: 'Commute tradeoffs', detail: 'Home price savings can be offset by longer Charlotte job commutes.' },
-        ],
+        title: 'Corridor freeflow',
+        detail: 'Peak windows inflate hourly bills on short-looking pairs.',
       },
       {
-        id: 'town-fit',
-        title: 'Which Gaston areas fit whom',
-        bullets: [
-          { title: 'Eastern edge lifestyle', detail: 'Closer Charlotte access with cross-county move logistics.' },
-          { title: 'Gastonia core pattern', detail: 'Mixed industrial-residential fabric with varied access.' },
-          { title: 'Western pattern', detail: 'More space and longer empty-mile logistics.' },
-        ],
+        title: 'Access soft costs',
+        detail: 'Building packets, stairs, or last-mile shuttles add labor hours.',
       },
       {
-        id: 'jobs',
-        title: 'Jobs & commute patterns',
-        bullets: [
-          { title: 'Employment anchors', detail: 'Many residents commute into Mecklenburg; local manufacturing, healthcare, retail, and services also employ residents.' },
-          { title: 'Commute realism', detail: 'I-85, US-321, and Wilkinson peaks are real. Test drive peak routes into Charlotte.' },
-        ],
+        title: 'Long empty-mile edges',
+        detail: 'Far pockets price differently from seat suburbs.',
+      },
+    ],
+    ranges: [
+      { label: 'Studio / 1-BR', value: '$450–$1,200+' },
+      { label: '3–4 BR home', value: '$1,600–$4,200+', note: 'Higher with access friction' },
+      { label: '2-person crew', value: '$115–$185+/hr' },
+    ],
+  },
+  seasonal: {
+    title: 'Seasonal & calendar notes',
+    intro: 'School years, lease ends, and winter ice on western approaches reshape demand by pocket.',
+    items: [
+      {
+        title: 'Late spring – early fall',
+        detail: 'Family closings and peak calendars fill Saturday crews first.',
       },
       {
-        id: 'lifestyle',
-        title: 'Lifestyle & practical livability',
-        bullets: [
-          { title: 'West Charlotte overflow identity', detail: 'Gaston is western suburban and mill-town fabric — not Uptown vertical living.' },
-          { title: 'Climate', detail: 'Hot humid summers and storms. Plan outdoor staging contingency.' },
-          { title: 'Pace', detail: 'Eastern edges feel more Charlotte-linked; western areas quieter. Visit peak and off-peak.' },
-        ],
+        title: 'Institutional & weather windows',
+        detail:
+          'School, university, PCS, tourism, or storm seasons can outrank pure weekend preference.',
       },
     ],
   },
   resources: {
-    title: 'Useful Gaston resources',
-    intro: 'Official links first. Verify NCUC in-state and FMCSA interstate.',
+    title: 'Useful resources',
+    intro:
+      'Official links first; directory listings are independent. Verify NCUC household-goods certification for in-state North Carolina moves and FMCSA for interstate legs.',
     items: [
-      { label: 'Gaston County — official site', href: 'https://www.gastongov.com/', external: true },
-      { label: 'City of Gastonia', href: 'https://www.cityofgastonia.com/', external: true },
-      { label: 'Gaston County Schools', href: 'https://www.gaston.k12.nc.us/', external: true },
-      { label: 'NCDOT traffic / 511', href: 'https://drivenc.gov/', external: true },
+      {
+        label: 'Mecklenburg County movers (parent contrast)',
+        href: '/local-movers/north-carolina/mecklenburg',
+      },
+
     ],
   },
-  directoryHint:
-    'Prefer mixed-stock access experience for Gastonia; I-85 buffer for Charlotte pairs; clarify Gaston vs Mecklenburg addresses. Verify NCUC C-# and FMCSA.',
-  lastReviewed: '2026-07-23',
 });

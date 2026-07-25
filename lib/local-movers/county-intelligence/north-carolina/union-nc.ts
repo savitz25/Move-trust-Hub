@@ -1,182 +1,235 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
-import { finalizeNcPack } from '@/lib/local-movers/county-intelligence/north-carolina/nc-shared';
+import {
+  finalizeNcTier2Pack,
+  NC_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/north-carolina/nc-tier2-shared';
 
-/** Union County, NC — south Charlotte overflow (not Mecklenburg clone). */
-export const unionCountyNcIntelligence: CountyIntelligencePack = finalizeNcPack({
+/**
+ * union — NC Tier 2 Wave 1
+ */
+export const unionCountyNcTier2Intelligence: CountyIntelligencePack = finalizeNcTier2Pack({
   countySlug: 'union',
   hubTitle: 'Union County Moving Intelligence Hub',
-  eyebrow: 'Union · South Charlotte overflow, HOA growth & longer suburban access',
-  h1: 'Moving in Union County: South Charlotte Overflow, HOA Villages & US-74 Logistics',
+  eyebrow: 'Union · Charlotte south collar · Monroe / Indian Trail / Weddington',
+  h1: 'Moving in Union County: Monroe, Indian Trail & South-Metro US-74 Growth',
   heroOpener:
-    'Union County is Charlotte’s south/southeast overflow market: master-planned HOA density, longer empty miles from Uptown yards, US-74 and I-485 link congestion, and towns like Monroe, Indian Trail, and Weddington that are not South End loft logistics. A Wesley Chapel HOA two-story, a Monroe multi-family unit, a Waxhaw growth tract, and a rural-edge lot do not share truck access or portal time. This hub is for Union — not a renamed Mecklenburg page with different suburbs.',
+    'Union County is Charlotte’s south collar — Monroe seat multi-family, Indian Trail and Wesley Chapel HOA growth, Weddington and Waxhaw edges, and US-74 / I-485 freeflow that is not Uptown elevators with different suburb labels. Expect master-plan gate lists, longer empty miles from Mecklenburg yards, and driveway HOA product that prices differently from South End COIs. This guide is for people moving in Union as south-metro growth collar — not a Mecklenburg rename.',
   heroCredibility:
-    'NCUC household goods certificate (C-#) for intrastate NC moves · FMCSA for interstate · South Charlotte HOA & longer-haul awareness · Curated listings',
+    'Charlotte south collar · HOA growth · US-74 freeflow · NCUC household goods · FMCSA when interstate · Curated listings',
   majorCorridors: 'US-74 · I-485 links · NC-16 · NC-84 · Providence Road corridor',
-  whatMakesDifferent: {
-    title: 'What makes moving in Union County different',
-    intro: 'HOA growth and longer suburban access from Charlotte core — not Uptown elevators as the default product.',
+  lastReviewed: '2026-07-24',
+  parentCompare: {
+    parentLabel: 'Mecklenburg County',
+    parentHref: '/local-movers/north-carolina/mecklenburg',
+    title: 'Compared with Mecklenburg County',
+    intro:
+      'Union is Charlotte south-collar HOA growth on US-74 — not Mecklenburg Uptown/South End vertical product and not pure rural Piedmont freeflow.',
     bullets: [
-      { title: 'Master-planned HOAs dominate many addresses', detail: 'Gate lists, COI, truck limits, and approved hours are routine.' },
-      { title: 'Empty miles from Charlotte yards are real', detail: 'Even “local” Union pairs can price as distance work for center-city based crews.' },
-      { title: 'US-74 and I-485 links define portal time', detail: 'Cross-county Mecklenburg jobs burn clock at peak.' },
-      { title: 'Town centers differ from pure bedroom tracts', detail: 'Monroe and older pockets can mean tighter streets than brand-new HOA villages.' },
-      { title: 'Union is not Mecklenburg', detail: 'Less vertical product; more driveway HOA logistics. Do not reuse Uptown tower copy.' },
-      { title: 'Intrastate NC rules vs interstate authority', detail: 'In-state household moves generally need NCUC C-#. Interstate needs FMCSA.' },
+      {
+        title: 'Drive time & corridor relationship',
+        detail:
+          'Mecklenburg crews fight I-77/I-85 peaks and elevator freights. Union pairs ride US-74, I-485 links, and NC-16 — freer mid-day south of the ring, still peak-heavy toward Mecklenburg portals and Providence corridors. Portal-to-portal time is real; it is not a South End elevator day.',
+      },
+      {
+        title: 'Housing stock differences',
+        detail:
+          'Mecklenburg mixes towers, South End mid-rises, and Ballantyne HOAs. Union mixes Monroe multi-family, Indian Trail/Wesley Chapel planned SFH, and Waxhaw larger lots — more continuous south-collar HOA product, less freight-elevator density.',
+      },
+      {
+        title: 'Truck access & density',
+        detail:
+          'HOA COIs, gate lists, and approved hours dominate more often than Uptown street permits. Rural-edge eastern lots add soft shoulders uncommon on Myers Park stairs.',
+      },
+      {
+        title: 'Rough cost posture (qualitative)',
+        detail:
+          'Local Union quotes often sit near south-metro suburb rates for driveway SFH — empty miles from Charlotte yards and HOA soft costs still push prices up vs map miles alone.',
+      },
+      {
+        title: 'Role difference',
+        detail:
+          'Union is Charlotte south collar growth — not Mecklenburg core product renamed.',
+      }
     ],
   },
-  zonesHeading: 'Union access zones',
-  zonesIntro: 'Plan by Indian Trail/Wesley Chapel growth, Waxhaw/Weddington edges, Monroe core, and eastern rural approaches.',
+  whatMakesDifferent: {
+    title: 'What makes moving in Union County different',
+    intro: 'South-collar HOA density, US-74 freeflow, and empty miles from Charlotte yards — not interchangeable Uptown boilerplate.',
+    bullets: [
+      {
+        title: 'US-74 / I-485 peaks rewrite short locals',
+        detail:
+          'Union ↔ Mecklenburg pairs freer mid-day still burn billable time at commute peaks. Ask portal-to-portal.',
+      },
+      {
+        title: 'Master-plan HOA is first-class product',
+        detail:
+          'Gate lists, truck limits, and approved hours are standard survey inputs on Indian Trail and Wesley Chapel growth.',
+      },
+      {
+        title: 'Empty miles from Mecklenburg yards are real',
+        detail:
+          'Even “local” Union pairs can price as distance work for Uptown-based crews.',
+      },
+      {
+        title: 'Monroe multi-family differs from pure HOA cul-de-sacs',
+        detail:
+          'Seat stairs and curb plans need inventories different from brand-new villages.',
+      },
+      NC_TIER2_REG_BULLET,
+    ],
+  },
+  zonesHeading: 'Union zones: NW growth HOAs, Weddington/Waxhaw edges, Monroe seat & eastern rural lots',
+  zonesIntro: 'Two to four sharp products — growth HOAs, southwest edges, seat multi-family, and eastern lots.',
   zones: [
     {
-      id: 'indian-trail-wesley',
-      name: 'Indian Trail, Wesley Chapel & northwest growth',
+      id: 'nw-growth',
+      name: 'Indian Trail / Wesley Chapel / Stallings growth',
       shortName: 'NW growth',
-      neighborhoods: ['Indian Trail', 'Wesley Chapel', 'Stallings edges', 'HOA master plans'],
+      neighborhoods: ["Indian Trail","Wesley Chapel","Stallings"],
       housingTypes: 'HOA SFH, townhomes, multi-family',
-      challenges: ['Dense HOA rules', 'I-485 link congestion', 'Long cul-de-sac carries'],
-      moverTips: 'Collect HOA packets first. Price Mecklenburg-linked pairs honestly. Share gate photos.',
-      cityKeywords: ['indian trail', 'wesley chapel', 'stallings'],
+      challenges: ["HOA packets","I-485 peaks","Long cul-de-sacs"],
+      moverTips: 'Collect HOA COIs; build I-485 buffer for Mecklenburg pairs.',
+      cityKeywords: ["indian trail","wesley chapel","stallings"],
     },
     {
-      id: 'waxhaw-weddington',
-      name: 'Waxhaw, Weddington & south/west edges',
+      id: 'sw-edges',
+      name: 'Weddington / Waxhaw / Marvin edges',
       shortName: 'SW edges',
-      neighborhoods: ['Waxhaw', 'Weddington', 'Marvin edges', 'Providence Road corridor'],
-      housingTypes: 'HOA SFH, larger lots, some multi-family',
-      challenges: ['Longer empty miles', 'HOA rules', 'NC-16 / Providence congestion'],
-      moverTips: 'Prefer early starts. Survey driveway depth. Clarify Union vs Mecklenburg addresses.',
-      cityKeywords: ['waxhaw', 'weddington', 'marvin', 'providence'],
+      neighborhoods: ["Weddington","Waxhaw","Marvin"],
+      housingTypes: 'HOA SFH, larger lots',
+      challenges: ["Longer empty miles","NC-16 congestion","HOA rules"],
+      moverTips: 'Prefer early starts; survey driveway depth.',
+      cityKeywords: ["weddington","waxhaw","marvin"],
     },
     {
-      id: 'monroe-core',
-      name: 'Monroe core & central Union',
+      id: 'monroe-seat',
+      name: 'Monroe seat multi-family & older stock',
       shortName: 'Monroe',
-      neighborhoods: ['Monroe', 'Downtown Monroe edges', 'Central multi-family', 'Older SFH pockets'],
-      housingTypes: 'Older SFH, multi-family, townhomes',
-      challenges: ['Mixed access types', 'US-74 congestion', 'Tighter older streets'],
-      moverTips: 'Photo curb for older blocks. Confirm elevator vs stair access on multi-family.',
-      cityKeywords: ['monroe', 'union county'],
+      neighborhoods: ["Monroe","downtown edges","central multi-family"],
+      housingTypes: 'Multi-family, older SFH, townhomes',
+      challenges: ["Stairs","US-74 congestion","Mixed curb"],
+      moverTips: 'Photo curb; confirm elevator vs stair access.',
+      cityKeywords: ["monroe"],
     },
     {
       id: 'east-rural',
-      name: 'Eastern Union rural-edge growth',
-      shortName: 'East / rural edge',
-      neighborhoods: ['Marshville edges', 'Eastern tracts', 'Rural driveway lots'],
+      name: 'Eastern Union rural-edge lots',
+      shortName: 'East edge',
+      neighborhoods: ["Marshville edges","eastern tracts"],
       housingTypes: 'SFH, rural-edge lots',
-      challenges: ['Long empty miles', 'Soft surfaces after rain', 'Limited alternate routes'],
-      moverTips: 'Survey truck access. Prefer early starts for long east-county pairs.',
-      cityKeywords: ['marshville', 'east union', 'rural'],
-    },
+      challenges: ["Empty miles","Soft shoulders"],
+      moverTips: 'Survey truck access; prefer early starts for long pairs.',
+      cityKeywords: ["marshville","east union"],
+    }
   ],
-  costDrivers: {
-    title: 'What drives Union moving costs',
-    intro: 'HOA soft costs and Charlotte-linked empty miles drive quotes more than square footage alone.',
-    drivers: [
-      { title: 'HOA gate lists and approved hours', detail: 'Soft costs and peak-window pressure.' },
-      { title: 'Empty miles from Charlotte yards', detail: 'Distance work disguised as “local.”' },
-      { title: 'US-74 / I-485 link congestion', detail: 'Portal-to-portal spikes at peak.' },
-      { title: 'Long cul-de-sac carries', detail: 'Labor hours rise on new master plans.' },
-    ],
-    ranges: [
-      { label: 'Studio / 1BR (simple access)', value: '$450–$1,300+', note: 'Higher with HOA soft costs' },
-      { label: '2–3BR HOA SFH or multi-family', value: '$1,400–$3,800+', note: 'Distance from Charlotte trends up' },
-      { label: '3–4+ BR / long Charlotte-linked', value: '$2,500–$7,000+', note: 'Cross-county pairs price highest' },
-      { label: 'Typical 2-person crew rate', value: '$110–$180+/hr', note: 'Portal-to-portal' },
-    ],
-  },
-  seasonal: {
-    title: 'When to schedule a Union move',
-    intro: 'Family seasons and Charlotte-metro demand spillover reshape calendars.',
-    items: [
-      { title: 'Best windows: mid-week early mornings', detail: 'Reduce US-74/I-485 pain and clear HOA-approved hours.' },
-      { title: 'Peak family season: late May–mid-August', detail: 'Book suburban Saturdays early.' },
-      { title: 'Month-end multi-family turns', detail: 'Lease clusters fill crews in growth corridors.' },
-      { title: 'Summer heat and storms', detail: 'Prefer early starts on open suburban streets.' },
-    ],
-  },
   specialized: [
     {
-      id: 'south-charlotte-hoa-overflow',
-      title: 'South Charlotte HOA overflow module',
-      intro: 'Union estimates fail when HOA rules and Charlotte empty miles are ignored.',
-      bullets: [
-        'Collect HOA COI, gate lists, and truck limits before surveys finalize.',
-        'Price Mecklenburg-linked pairs as logistics days.',
-        'Share driveway and cul-de-sac photos for new villages.',
-        'Clarify Union vs Mecklenburg addresses on every estimate.',
-        'Verify NCUC C-# in-state and FMCSA interstate.',
-      ],
+      id: 'hoa-south',
+      title: 'South-collar HOA growth module',
+      intro: 'Master-plan rules dominate Union family volume.',
+      bullets: ["Collect COI and gate lists before the estimate is final.","Saturday HOA windows push demand into peak crew slots."],
     },
+    {
+      id: 'us74-freeflow',
+      title: 'US-74 / I-485 freeflow',
+      intro: 'South-metro pairs still peak hard toward Mecklenburg.',
+      bullets: ["Price portal-to-portal honestly.","Clarify Mecklenburg second addresses for drive-time assumptions."],
+    },
+    {
+      id: 'monroe-access',
+      title: 'Monroe seat multi-family access',
+      intro: 'Seat density differs from pure cul-de-sac HOAs.',
+      bullets: ["Inventory stairs and street width.","Temporary no-parking often beats long carries."],
+    }
   ],
   relocation: {
-    title: 'Considering a move to Union County?',
-    intro: 'Practical fit checklist — verify on official sources. No invented rankings.',
+    title: 'Schools & hospitals for relocators',
+    intro:
+      'Compressed secondary-market notes — primary districts and acute-care access that affect move-in.',
     modules: [
       {
         id: 'schools',
-        title: 'Schools & education landscape',
+        title: 'Schools & education',
+        intro: 'Union families compare Union County Public Schools feeders across Indian Trail, Monroe, Weddington, and Waxhaw — verify address boundaries; do not assume Charlotte-Mecklenburg maps apply.',
         bullets: [
-          { title: 'How districts work here', detail: 'Union County Public Schools is the primary public K–12 system. Assignment is address-based.' },
-          { title: 'Growth areas and capacity', detail: 'Northwest growth corridors can see enrollment pressure. Ask about capacity when touring.' },
-          { title: 'Research sources', detail: 'District tools, NCDPI data, and campus visits beat ranking screenshots.' },
+          {
+            title: 'District-first shopping',
+            detail:
+              'Use NCDPI data and district maps; do not assume a city name equals one feeder pattern.',
+          },
+          {
+            title: 'Capacity & calendars',
+            detail:
+              'Growth pockets, university towns, and military markets can tighten housing near school and term calendars.',
+          },
         ],
       },
       {
         id: 'hospitals',
-        title: 'Hospitals & healthcare access',
+        title: 'Hospitals & healthcare',
         bullets: [
-          { title: 'Major systems', detail: 'Atrium Health Union and Charlotte-metro systems serve residents. Confirm networks and drive times.' },
-          { title: 'What relocators should do', detail: 'Map peak-hour times into Mecklenburg specialty care. Transfer records early.' },
+          {
+            title: 'Acute-care anchors',
+            detail: 'Atrium Health Union and Charlotte specialty spillover serve the county; map peak US-74 / I-485 times for ER access.',
+          },
+          {
+            title: 'Peak drive times',
+            detail:
+              'Map ER access at commute peaks, not only off-hour freeflow.',
+          },
         ],
       },
+    ],
+  },
+  costDrivers: {
+    title: 'Pricing & cost drivers',
+    intro: 'HOA soft costs, US-74 freeflow, and empty miles from Charlotte yards often matter more than raw miles.',
+    drivers: [
       {
-        id: 'housing',
-        title: 'Housing character & cost pressures',
-        bullets: [
-          { title: 'HOA growth product', detail: 'Many addresses are master-planned with dues and move-day rules.' },
-          { title: 'Cost variation', detail: 'Northwest edges often price closer to Charlotte spillover; eastern areas differ.' },
-          { title: 'Commute tradeoffs', detail: 'Home price savings can be offset by longer Charlotte job commutes.' },
-        ],
+        title: 'Corridor freeflow',
+        detail: 'Peak windows inflate hourly bills on short-looking pairs.',
       },
       {
-        id: 'town-fit',
-        title: 'Which Union areas fit whom',
-        bullets: [
-          { title: 'Northwest growth lifestyle', detail: 'Newer HOA product with Charlotte access and freeway risk.' },
-          { title: 'Waxhaw / Weddington pattern', detail: 'Larger-lot and family amenities with longer empty-mile logistics.' },
-          { title: 'Monroe core pattern', detail: 'More mixed older stock and town-center access.' },
-        ],
+        title: 'Access soft costs',
+        detail: 'Building packets, stairs, or last-mile shuttles add labor hours.',
       },
       {
-        id: 'jobs',
-        title: 'Jobs & commute patterns',
-        bullets: [
-          { title: 'Employment anchors', detail: 'Many residents commute into Mecklenburg; local retail, education, healthcare, and services also employ residents.' },
-          { title: 'Commute realism', detail: 'US-74 and I-485 peaks are real. Test drive peak routes into Charlotte.' },
-        ],
+        title: 'Long empty-mile edges',
+        detail: 'Far pockets price differently from seat suburbs.',
+      },
+    ],
+    ranges: [
+      { label: 'Studio / 1-BR', value: '$450–$1,200+' },
+      { label: '3–4 BR home', value: '$1,600–$4,200+', note: 'Higher with access friction' },
+      { label: '2-person crew', value: '$115–$185+/hr' },
+    ],
+  },
+  seasonal: {
+    title: 'Seasonal & calendar notes',
+    intro: 'School years and summer family closings reshape demand more than Uptown corporate calendars alone.',
+    items: [
+      {
+        title: 'Late spring – early fall',
+        detail: 'Family closings and peak calendars fill Saturday crews first.',
       },
       {
-        id: 'lifestyle',
-        title: 'Lifestyle & practical livability',
-        bullets: [
-          { title: 'South Charlotte overflow identity', detail: 'Union is suburban growth adjacent to Charlotte — not Uptown vertical living.' },
-          { title: 'Climate', detail: 'Hot humid summers and storms. Plan outdoor staging contingency.' },
-          { title: 'Pace', detail: 'Family-suburban feel dominates many corridors. Visit peak commute hours.' },
-        ],
+        title: 'Institutional & weather windows',
+        detail:
+          'School, university, PCS, tourism, or storm seasons can outrank pure weekend preference.',
       },
     ],
   },
   resources: {
-    title: 'Useful Union resources',
-    intro: 'Official links first. Verify NCUC in-state and FMCSA interstate.',
+    title: 'Useful resources',
+    intro:
+      'Official links first; directory listings are independent. Verify NCUC household-goods certification for in-state North Carolina moves and FMCSA for interstate legs.',
     items: [
-      { label: 'Union County — official site', href: 'https://www.unioncountync.gov/', external: true },
-      { label: 'City of Monroe', href: 'https://www.monroenc.org/', external: true },
-      { label: 'Union County Public Schools', href: 'https://www.ucps.k12.nc.us/', external: true },
-      { label: 'NCDOT traffic / 511', href: 'https://drivenc.gov/', external: true },
+      {
+        label: 'Mecklenburg County movers (parent contrast)',
+        href: '/local-movers/north-carolina/mecklenburg',
+      },
+
     ],
   },
-  directoryHint:
-    'Prefer HOA fluency for master-planned villages; honest empty-mile pricing from Charlotte yards; US-74/I-485 buffer language. Verify NCUC C-# and FMCSA.',
-  lastReviewed: '2026-07-23',
 });
