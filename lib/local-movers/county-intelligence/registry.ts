@@ -368,8 +368,18 @@ import { clarkCountyWaIntelligence } from '@/lib/local-movers/county-intelligenc
 import { thurstonCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/thurston-wa';
 import { kitsapCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/kitsap-wa';
 import { whatcomCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/whatcom-wa';
-import { bentonCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/benton-wa';
-import { yakimaCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/yakima-wa';
+import { bentonCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/benton-wa';
+import { yakimaCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/yakima-wa';
+import { skagitCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/skagit-wa';
+import { franklinCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/franklin-wa';
+import { cowlitzCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/cowlitz-wa';
+import { islandCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/island-wa';
+import { lewisCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/lewis-wa';
+import { grantCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/grant-wa';
+import { chelanCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/chelan-wa';
+import { clallamCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/clallam-wa';
+import { wallaWallaCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/walla-walla-wa';
+import { kittitasCountyWaTier2Intelligence } from '@/lib/local-movers/county-intelligence/washington/kittitas-wa';
 // Michigan Core 10
 import { wayneCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/wayne-mi';
 import { oaklandCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/oakland-mi';
@@ -971,7 +981,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   tellerCountyCoTier2Intelligence,
   fremontCountyCoTier2Intelligence,
   broomfieldCountyCoTier2Intelligence,
-  // Washington Core 10
+  // Washington Tier 1 core 8 + Tier 2 Wave 1
   kingCountyWaIntelligence,
   pierceCountyWaIntelligence,
   snohomishCountyWaIntelligence,
@@ -980,8 +990,18 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   thurstonCountyWaIntelligence,
   kitsapCountyWaIntelligence,
   whatcomCountyWaIntelligence,
-  bentonCountyWaIntelligence,
-  yakimaCountyWaIntelligence,
+  bentonCountyWaTier2Intelligence,
+  yakimaCountyWaTier2Intelligence,
+  skagitCountyWaTier2Intelligence,
+  franklinCountyWaTier2Intelligence,
+  cowlitzCountyWaTier2Intelligence,
+  islandCountyWaTier2Intelligence,
+  lewisCountyWaTier2Intelligence,
+  grantCountyWaTier2Intelligence,
+  chelanCountyWaTier2Intelligence,
+  clallamCountyWaTier2Intelligence,
+  wallaWallaCountyWaTier2Intelligence,
+  kittitasCountyWaTier2Intelligence,
   // Michigan Tier 1 core (8)
   wayneCountyMiIntelligence,
   oaklandCountyMiIntelligence,
@@ -1805,7 +1825,7 @@ export const CO_TIER2_WAVE1 = [
   'broomfield',
 ] as const;
 
-/** Washington Tier-1 Core 10 (Puget Sound + eastern + inland + border markets). */
+/** Washington Tier-1 Core 8 (Puget Sound + Spokane + Clark + Whatcom). */
 export const WA_TIER1_CORE10 = [
   'king',
   'pierce',
@@ -1815,8 +1835,22 @@ export const WA_TIER1_CORE10 = [
   'thurston',
   'kitsap',
   'whatcom',
-  'benton',
+] as const;
+
+/** Washington Tier 2 Wave 1 (I-5 collars + interior hubs + peninsula/island). */
+export const WA_TIER2_WAVE1 = [
+  'skagit',
   'yakima',
+  'benton',
+  'franklin',
+  'cowlitz',
+  'island',
+  'lewis',
+  'grant',
+  'chelan',
+  'clallam',
+  'walla-walla',
+  'kittitas',
 ] as const;
 
 /** Pennsylvania Tier-1 Core 12 (SEPA + Pitt + mid-state + LV + Erie). */
