@@ -105,6 +105,14 @@ export function CompanyLocalCountyLinks({
           <Link href="/verify-dot" className="underline underline-offset-2">
             Verify DOT
           </Link>
+          {' · '}
+          <Link href="/compare" className="underline underline-offset-2">
+            Compare movers
+          </Link>
+          {' · '}
+          <Link href="/about/how-we-score-movers" className="underline underline-offset-2">
+            Trust Center
+          </Link>
         </p>
       </CardContent>
     </Card>

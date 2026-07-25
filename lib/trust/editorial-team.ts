@@ -10,8 +10,11 @@ export type EditorialExpert = {
 
 export const EDITORIAL_ORGANIZATION = {
   name: 'Move Trust Hub Editorial Team',
-  url: 'https://www.movetrusthub.com/about',
+  url: 'https://www.movetrusthub.com/about/editorial-team',
 } as const;
+
+/** Canonical public page for bylines and Person schema @id targets */
+export const EDITORIAL_TEAM_PAGE_PATH = '/about/editorial-team';
 
 export const EDITORIAL_EXPERTS: EditorialExpert[] = [
   {
@@ -52,12 +55,14 @@ export function getPrimaryEditorForContent(
 }
 
 export function buildEditorPersonSchema(expert: EditorialExpert) {
+  const pageUrl = `https://www.movetrusthub.com${EDITORIAL_TEAM_PAGE_PATH}`;
   return {
     '@type': 'Person',
-    '@id': `https://www.movetrusthub.com/about#editor-${expert.id}`,
+    '@id': `${pageUrl}#editor-${expert.id}`,
     name: expert.name,
     jobTitle: expert.role,
     description: expert.bio,
+    url: `${pageUrl}#editor-${expert.id}`,
     worksFor: {
       '@type': 'Organization',
       name: 'Move Trust Hub',
@@ -65,4 +70,8 @@ export function buildEditorPersonSchema(expert: EditorialExpert) {
     },
     knowsAbout: expert.expertise,
   };
+}
+
+export function editorialExpertHref(expertId: string): string {
+  return `${EDITORIAL_TEAM_PAGE_PATH}#editor-${expertId}`;
 }

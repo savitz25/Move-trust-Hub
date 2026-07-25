@@ -78,12 +78,12 @@ export const calculatorFaqItems = [
   {
     question: 'How do I calculate cubic feet for an interstate move?',
     answer:
-      'Add each furniture item and box to your inventory using room-by-room or quick-add mode. Move Trust Hub sums industry-standard item volumes to calculate your total cubic feet automatically.',
+      'Add each furniture item and box to your inventory using room-by-room or quick-add mode. Move Trust Hub sums industry-standard item volumes to calculate your total cubic feet automatically. Export the list so every carrier prices the same documented load.',
   },
   {
     question: 'How accurate is the weight estimate in this moving calculator?',
     answer:
-      'Weight is estimated at 7 pounds per cubic foot, a common industry average for household goods. Actual weight varies by item density and packing style, but the estimate is useful for comparing mover quotes.',
+      'Weight is estimated at 7 pounds per cubic foot, a common industry average for household goods. Actual weight varies by item density and packing style. Use the estimate for planning and quote comparison — not as a binding weight ticket.',
   },
   {
     question: 'What truck size do I need based on cubic footage?',
@@ -94,6 +94,11 @@ export const calculatorFaqItems = [
     question: 'Should I add items by room or use quick add?',
     answer:
       'Room-by-room mode is recommended for the most accurate inventory because items are organized by space. Quick add is faster when you already know what you are moving and want a rapid estimate.',
+  },
+  {
+    question: 'How do calculator estimates relate to county cost ranges and route guides?',
+    answer:
+      'Cubic-foot estimates help carriers quote consistently. County pages and interstate route guides provide editorial cost context for markets and corridors. Neither replaces a written survey estimate. After you finish, browse the FMCSA directory, local county guides, or high-demand route guides for next steps.',
   },
 ];
 

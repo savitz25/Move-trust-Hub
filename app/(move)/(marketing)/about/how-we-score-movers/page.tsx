@@ -44,8 +44,8 @@ import {
 
 export const metadata = buildResourceMetadata(
   METHODOLOGY_PAGE_PATH,
-  'How We Score Movers — Reputation, Reviews & Vetting Criteria',
-  'Transparent methodology for Move Trust Hub reputation scores, review attribution, FMCSA licensing checks, and how we vet movers. Independent directory — honest review counts.'
+  'Trust Center — How We Score, Vet & Source Mover Data',
+  'Move Trust Hub Trust Center: reputation score methodology, FMCSA data use, hosted vs third-party review policy, independence (no paid rankings), data sources, and corrections process.'
 );
 
 export default async function HowWeScoreMoversPage() {
@@ -57,10 +57,10 @@ export default async function HowWeScoreMoversPage() {
         data={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'How We Score Movers',
+          name: 'Move Trust Hub Trust Center',
           url: `${SITE_URL}${METHODOLOGY_PAGE_PATH}`,
           description:
-            'Move Trust Hub scoring methodology for reputation scores, review attribution, and FMCSA verification.',
+            'Move Trust Hub Trust Center: reputation methodology, review policy, FMCSA data use, independence, and corrections.',
           isPartOf: { '@type': 'WebSite', name: 'Move Trust Hub', url: SITE_URL },
         }}
       />
@@ -74,16 +74,39 @@ export default async function HowWeScoreMoversPage() {
             />
           </div>
           <Badge variant="secondary" className="mb-4">
-            Transparency · Methodology
+            Trust Center · Methodology
           </Badge>
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
-            How We Score Movers
+            Move Trust Hub Trust Center
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            {DIRECTORY_INDEPENDENCE_TAGLINE} This page explains every number you see on our
-            directory — reputation scores, review counts, verification badges, and how we vet
-            listings.
+            {DIRECTORY_INDEPENDENCE_TAGLINE} This is the canonical methodology destination for
+            reputation scores, review policy, FMCSA data use, independence, and how we vet listings.
+            County and profile pages link here instead of repeating long boilerplate.
           </p>
+          <nav
+            aria-label="Trust Center sections"
+            className="mt-5 flex flex-wrap gap-2 text-xs font-medium"
+          >
+            {[
+              { href: '#how-we-vet', label: 'How we vet' },
+              { href: '#reputation-score', label: 'Reputation Score' },
+              { href: '#review-attribution', label: 'Review policy' },
+              { href: '#data-sources', label: 'Data sources' },
+              { href: '#independence', label: 'Independence' },
+              { href: '#limitations', label: 'Limitations' },
+              { href: '#corrections', label: 'Corrections' },
+              { href: '#badges', label: 'Badges' },
+            ].map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="rounded-full border bg-background px-3 py-1.5 hover:border-primary/40 hover:text-primary transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <span className="rounded-full border bg-background px-3 py-1.5 tabular-nums">
               {stats.verifiedMovers.toLocaleString()} FMCSA-licensed listings
@@ -190,7 +213,7 @@ export default async function HowWeScoreMoversPage() {
               <Star className="h-5 w-5 text-amber-600" aria-hidden="true" />
             </div>
             <div>
-              <h2 className="text-2xl font-semibold tracking-tight">Review Attribution</h2>
+              <h2 className="text-2xl font-semibold tracking-tight">Review policy</h2>
               <p className="text-muted-foreground mt-2 leading-relaxed">
                 {REVIEW_TRANSPARENCY_DISCLAIMER}
               </p>
@@ -200,15 +223,20 @@ export default async function HowWeScoreMoversPage() {
           <div className="grid gap-4 sm:grid-cols-3">
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle className="text-base">Attributed Google reviews we publish</CardTitle>
+                <CardTitle className="text-base">Hosted / moderated reviews</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground leading-relaxed">
-                <p className="font-semibold text-foreground text-lg tabular-nums mb-2">
-                  {formatAttributedReviewsLabel(stats.attributableReviews)}
-                </p>
-                {ATTRIBUTED_REVIEWS_EXPLANATION} This total is calculated from live directory data
-                (Google review snippets on company profiles plus curated on-site excerpts) and updates
-                automatically as companies are added.
+                Community submissions on <Link href="/review" className="text-primary underline">/review</Link>{' '}
+                are moderated before publish. Only those reviews may appear in schema.org Review /
+                AggregateRating markup on community profiles.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Third-party ratings (external)</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground leading-relaxed">
+                Google, BBB, and similar platforms are shown as <strong className="text-foreground">labeled external references</strong> with outbound links. We do not republish full third-party review body text. Count: {formatAttributedReviewsLabel(stats.attributableReviews)} historical references on file (not schema).
               </CardContent>
             </Card>
             <Card>
@@ -217,20 +245,65 @@ export default async function HowWeScoreMoversPage() {
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground leading-relaxed">
                 <p className="mb-2">{EDITORIAL_REVIEW_VOLUME_NOTE}</p>
-                Shown on directory cards and profiles as context for editorial star ratings — never
-                combined with on-site counts.
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-base">Google Places snapshot</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground leading-relaxed">
-                Live API data when available (rating + short attributed excerpts). Confirm
-                independently on Google Maps before booking.
+                Display-only context on directory cards — never mixed into AggregateRating schema.
               </CardContent>
             </Card>
           </div>
+          <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+            {ATTRIBUTED_REVIEWS_EXPLANATION}
+          </p>
+        </section>
+
+        <section id="independence" className="scroll-mt-24">
+          <div className="flex items-start gap-3 mb-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+              <Scale className="h-5 w-5 text-primary" aria-hidden="true" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">Independence & paid rankings</h2>
+              <p className="text-muted-foreground mt-2 leading-relaxed">
+                Move Trust Hub is an independent research directory. We do not sell leads to movers,
+                accept paid placements for higher rankings, or boost scores for advertising partners.
+                Contact tools help you reach carriers you choose — we are not a quote marketplace.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="limitations" className="scroll-mt-24">
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">Data sources & limitations</h2>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 leading-relaxed">
+            <li>
+              <strong className="text-foreground">FMCSA</strong> provides licensing, authority, and
+              safety context — not consumer pricing tables or star ratings.
+            </li>
+            <li>
+              Local cost ranges on county pages are <strong className="text-foreground">editorial estimates</strong> from market research, not government price data.
+            </li>
+            <li>
+              Google Places and BBB snapshots can lag or mismatch; always re-check official sources before booking.
+            </li>
+            <li>
+              Reputation Score is an editorial composite, not a substitute for multiple written estimates and in-person diligence.
+            </li>
+          </ul>
+        </section>
+
+        <section id="corrections" className="scroll-mt-24 rounded-2xl border bg-muted/20 p-6">
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">Corrections & updates</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Found outdated licensing, a wrong DBA, or a listing that should be removed?{' '}
+            <Link href="/contact" className="text-primary font-medium underline underline-offset-2">
+              Contact editorial
+            </Link>{' '}
+            or use company claim/portal flows when available. We refresh FMCSA fields on a scheduled
+            cadence and revalidate county/directory pages after publish events. Named researchers are
+            listed on the{' '}
+            <Link href="/about/editorial-team" className="text-primary font-medium underline underline-offset-2">
+              editorial team page
+            </Link>
+            .
+          </p>
         </section>
 
         {/* Data Sources */}
@@ -268,7 +341,7 @@ export default async function HowWeScoreMoversPage() {
               <Star className="h-4 w-4 shrink-0 mt-0.5 text-amber-600" aria-hidden="true" />
               <span>
                 <strong className="text-foreground">Google Places API</strong> — live rating
-                snapshots and attributed review snippets where configured
+                snapshots as external references (full review bodies not republished)
               </span>
             </li>
           </ul>

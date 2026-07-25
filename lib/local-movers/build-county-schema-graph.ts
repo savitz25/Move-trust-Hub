@@ -478,9 +478,10 @@ export function buildCountySchemaGraph({
       dateModified: contentModified,
       author: {
         '@type': 'Person',
-        '@id': `${SITE_URL}/about#editor-elena-vargas`,
+        '@id': `${SITE_URL}/about/editorial-team#editor-elena-vargas`,
         name: 'Elena Vargas',
         jobTitle: 'Local Markets Research Lead',
+        url: `${SITE_URL}/about/editorial-team#editor-elena-vargas`,
         worksFor: { '@id': ORG_ID },
       },
       publisher: { '@id': ORG_ID },

@@ -39,21 +39,21 @@ export function CountyInternalLinks({
     },
     {
       href: getStatePath(stateSlug),
-      label: `All ${stateName} Counties`,
-      description: `Browse local mover guides across ${stateName}`,
+      label: `${stateName} state mover hub`,
+      description: `County guides and local movers across ${stateName}`,
       icon: MapPin,
     },
   ];
 
   const guides = [
     { href: '/verify-dot', label: 'Verify a DOT Number' },
-    { href: '/review', label: 'Leave a Mover Review' },
-    { href: '/resources/how-to-choose#reputation-score', label: 'How We Score Movers' },
+    { href: '/compare', label: 'Compare Movers Side-by-Side' },
+    { href: '/about/how-we-score-movers', label: 'Trust Center — How We Score' },
+    { href: '/review', label: 'Leave a Moderated Review' },
     { href: '/resources/fmcsa', label: 'FMCSA Licensing Guide' },
     { href: '/resources/scams', label: 'Avoid Moving Scams' },
     { href: '/resources/checklist', label: 'Moving Checklist' },
     { href: '/resources/routes', label: 'Interstate Route Guides' },
-    { href: '/compare', label: 'Compare Movers Side-by-Side' },
   ];
 
   return (

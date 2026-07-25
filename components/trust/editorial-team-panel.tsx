@@ -2,9 +2,12 @@ import Link from 'next/link';
 import { User, BookOpen } from 'lucide-react';
 import {
   EDITORIAL_EXPERTS,
+  EDITORIAL_TEAM_PAGE_PATH,
+  editorialExpertHref,
   getPrimaryEditorForContent,
   type EditorialExpert,
 } from '@/lib/trust/editorial-team';
+import { METHODOLOGY_PAGE_PATH } from '@/lib/trust/methodology-paths';
 
 type Props = {
   contentType?: 'county' | 'route' | 'city-hub' | 'directory';
@@ -52,12 +55,12 @@ export function EditorialTeamPanel({
       )}
 
       <p className="text-xs text-muted-foreground mt-4">
-        <Link href="/about" className="text-primary font-medium hover:underline">
-          About our editorial standards
+        <Link href={EDITORIAL_TEAM_PAGE_PATH} className="text-primary font-medium hover:underline">
+          Full editorial team
         </Link>
         {' · '}
-        <Link href="/resources/how-to-choose#reputation-score" className="text-primary hover:underline">
-          How we score movers
+        <Link href={METHODOLOGY_PAGE_PATH} className="text-primary hover:underline">
+          Trust Center methodology
         </Link>
         {' · '}
         <Link href="/verify-dot" className="text-primary hover:underline">
@@ -76,7 +79,14 @@ function ExpertCard({ expert, primary = false }: { expert: EditorialExpert; prim
       <div className="flex items-center gap-2 mb-2">
         <User className="h-4 w-4 text-primary" aria-hidden="true" />
         <div>
-          <div className="font-medium text-sm">{expert.name}</div>
+          <div className="font-medium text-sm">
+            <Link
+              href={editorialExpertHref(expert.id)}
+              className="hover:text-primary hover:underline underline-offset-2"
+            >
+              {expert.name}
+            </Link>
+          </div>
           <div className="text-xs text-muted-foreground">{expert.role}</div>
         </div>
       </div>

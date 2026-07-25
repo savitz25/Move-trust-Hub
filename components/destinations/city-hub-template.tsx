@@ -468,7 +468,7 @@ export async function CityHubTemplate({ market, content }: Props) {
       <section className="py-12 md:py-16 border-b">
         <div className="container mx-auto px-4 max-w-6xl space-y-6">
           <div className="grid lg:grid-cols-2 gap-6">
-            <HowWeScorePanel />
+            <HowWeScorePanel compact />
             <VerificationTransparency />
           </div>
           <EditorialTeamPanel contentType="city-hub" compact />

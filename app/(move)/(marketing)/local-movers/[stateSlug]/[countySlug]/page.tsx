@@ -862,7 +862,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           <CountyPopularRoutesSection countyLabel={countyLabel} routes={popularRoutes} />
         ) : null}
 
-        <HowWeScorePanel className="mb-10" compact={indexDecision.tier === 'noindex'} />
+        {/* Phase 3: short summary only — full methodology lives on Trust Center */}
+        <HowWeScorePanel className="mb-10" compact />
 
         <VerificationTransparency className="mb-10" />
 

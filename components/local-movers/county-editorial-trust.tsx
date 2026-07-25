@@ -113,10 +113,10 @@ export function CountyEditorialTrust({
         >
           FMCSA SAFER
         </a>
-        . Review schema appears only for directory-linked movers with named, attributable
-        Google reviews — never fabricated testimonials.{' '}
-        <Link href="/resources/how-to-choose#reputation-score" className="text-primary font-medium hover:underline">
-          See how we score movers
+        . Structured Review schema is reserved for moderated community reviews we host — not
+        third-party Google/BBB body text. Full policy:{' '}
+        <Link href="/about/how-we-score-movers" className="text-primary font-medium hover:underline">
+          Trust Center methodology
         </Link>
         .
       </p>

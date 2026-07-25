@@ -27,17 +27,48 @@ function CalculatorPageFooterInner() {
   }
 
   return (
-    <div className="mt-8 rounded-xl border bg-card p-5 text-sm text-muted-foreground">
-      <p>
-        Ready to research carriers?{' '}
-        <Link href="/companies" className="text-primary font-medium hover:underline">
-          Compare trusted movers
-        </Link>{' '}
-        in our independent directory, or{' '}
-        <Link href="/contact" className="text-primary font-medium hover:underline">
-          contact us
-        </Link>{' '}
-        with questions about your estimate.
+    <div className="mt-8 space-y-4">
+      <div className="rounded-xl border bg-card p-5 text-sm text-muted-foreground leading-relaxed">
+        <p className="font-medium text-foreground mb-2">Next research steps</p>
+        <ul className="list-disc pl-5 space-y-1.5">
+          <li>
+            <Link href="/companies" className="text-primary font-medium hover:underline">
+              Browse the FMCSA mover directory
+            </Link>{' '}
+            — independent listings, no lead fees
+          </li>
+          <li>
+            <Link href="/local-movers" className="text-primary font-medium hover:underline">
+              Local movers by state and county
+            </Link>
+          </li>
+          <li>
+            <Link href="/compare" className="text-primary font-medium hover:underline">
+              Compare up to four movers side-by-side
+            </Link>
+          </li>
+          <li>
+            <Link href="/verify-dot" className="text-primary font-medium hover:underline">
+              Verify a USDOT / MC number
+            </Link>
+          </li>
+          <li>
+            <Link href="/resources/routes" className="text-primary font-medium hover:underline">
+              Interstate route cost &amp; planning guides
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/about/how-we-score-movers"
+              className="text-primary font-medium hover:underline"
+            >
+              Trust Center — how we score and vet movers
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <p className="text-xs text-muted-foreground text-center">
+        Calculator outputs are volume estimates only — not binding quotes from carriers.
       </p>
     </div>
   );

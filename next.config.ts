@@ -191,6 +191,27 @@ const nextConfig: NextConfig = {
         destination: '/moving-to/south-carolina/hilton-head-sc',
         permanent: true,
       },
+      // Phase 3 Trust Center — consolidate methodology aliases to one canonical URL
+      {
+        source: '/about/trust-center',
+        destination: '/about/how-we-score-movers',
+        permanent: true,
+      },
+      {
+        source: '/about/trust',
+        destination: '/about/how-we-score-movers',
+        permanent: true,
+      },
+      {
+        source: '/resources/how-we-score-movers',
+        destination: '/about/how-we-score-movers',
+        permanent: true,
+      },
+      {
+        source: '/resources/how-we-score-movers/:path*',
+        destination: '/about/how-we-score-movers',
+        permanent: true,
+      },
       ...getAllHubRedirects(),
     ];
   },

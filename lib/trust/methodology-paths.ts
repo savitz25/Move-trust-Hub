@@ -1,6 +1,14 @@
 /** Client-safe methodology paths — no server-only imports. */
 
+/**
+ * Canonical Trust Center / methodology URL (Phase 3).
+ * All “how we score / how we vet / reputation” links must point here.
+ * Aliases (301): /about/trust-center, /about/trust, /resources/how-we-score-movers
+ */
 export const METHODOLOGY_PAGE_PATH = '/about/how-we-score-movers';
+
+/** Display name for the consolidated Trust Center destination */
+export const TRUST_CENTER_TITLE = 'Move Trust Hub Trust Center';
 
 export const METHODOLOGY_ANCHORS = {
   reputationScore: 'reputation-score',
@@ -8,6 +16,9 @@ export const METHODOLOGY_ANCHORS = {
   dataSources: 'data-sources',
   badges: 'badges',
   vetting: 'how-we-vet',
+  independence: 'independence',
+  corrections: 'corrections',
+  limitations: 'limitations',
 } as const;
 
 export type MethodologyReturnContext = {

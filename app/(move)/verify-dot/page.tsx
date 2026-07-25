@@ -130,6 +130,17 @@ export default function VerifyDotPage() {
           <Link href="/moving-calculator" className="font-medium text-primary underline underline-offset-2">
             Moving calculator
           </Link>
+          {' · '}
+          <Link href="/compare" className="font-medium text-primary underline underline-offset-2">
+            Side-by-side compare
+          </Link>
+          {' · '}
+          <Link
+            href="/about/how-we-score-movers"
+            className="font-medium text-primary underline underline-offset-2"
+          >
+            Trust Center
+          </Link>
           .
         </p>
       </div>

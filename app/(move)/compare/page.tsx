@@ -45,6 +45,10 @@ export default async function ComparePage() {
         <Link href="/moving-calculator" className="text-primary underline underline-offset-2">
           free moving calculator
         </Link>
+        , or read the{' '}
+        <Link href="/about/how-we-score-movers" className="text-primary underline underline-offset-2">
+          Trust Center methodology
+        </Link>
         .
       </p>
 

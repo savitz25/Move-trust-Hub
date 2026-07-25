@@ -96,8 +96,8 @@ export function CountyTipsSection({
       </ul>
       <p className="text-sm text-muted-foreground mt-4">
         New to vetting movers? Read our{' '}
-        <Link href="/resources/how-to-choose#reputation-score" className="text-primary font-medium hover:underline">
-          how we score movers
+        <Link href="/about/how-we-score-movers" className="text-primary font-medium hover:underline">
+          Trust Center methodology
         </Link>{' '}
         and{' '}
         <Link href="/resources/scams" className="text-primary font-medium hover:underline">
