@@ -6,6 +6,7 @@ import './globals.css';
 import { SchemaInjector } from '@/components/hub/schema-injector';
 
 import { buildTrustHubNetworkSchema } from '@/lib/hub/schemas';
+import { GoogleAnalyticsRoot } from '@/components/analytics/google-analytics-root';
 import { DeferredUiStyles } from '@/components/performance/deferred-ui-styles';
 import { ThirdPartyOrchestrator } from '@/components/performance/third-party-orchestrator';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
@@ -35,6 +36,8 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <SchemaInjector data={buildTrustHubNetworkSchema()} />
         {children}
+        {/* GA4 at root — not interaction-gated, survives page-level SEO deploys */}
+        <GoogleAnalyticsRoot />
         <DeferredUiStyles />
         <ThirdPartyOrchestrator />
       </body>

@@ -17,10 +17,13 @@ export type PerformanceFlags = {
 };
 
 export const DEFAULT_PERFORMANCE_FLAGS: PerformanceFlags = {
+  /** GA4 is always loaded from root layout (GoogleAnalyticsRoot) — flag unused for gating. */
   enableGtag: true,
   enableVercelAnalytics: true,
+  /** Hub page views are handled by GaPageViewTracker in root layout. */
   enableHubAnalytics: true,
   enableChatbot: false,
+  /** Applies to Vercel Analytics / chatbot only — not GA4. */
   deferThirdPartyUntilInteraction: true,
   htmlCacheSeconds: 86_400,
   apiCacheSeconds: 3_600,

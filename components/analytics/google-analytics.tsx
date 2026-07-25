@@ -3,14 +3,22 @@ import {
   GA_CROSS_DOMAIN_LINKS,
   GA_MEASUREMENT_ID,
   isGaConfigured,
+  warnIfGaMisconfigured,
 } from '@/lib/analytics/ga-config';
+import { GaPageViewTracker } from '@/components/analytics/ga-page-view-tracker';
 
 /**
- * GA4 gtag — loads afterInteractive on every hub (Move, Lender, Insurance).
- * Mounted once in app/layout.tsx so all routes are covered.
+ * Root-level GA4 — must stay in app/layout.tsx so page/SEO deploys cannot drop it.
+ * - Loads gtag afterInteractive (not interaction-gated)
+ * - First page_view via config send_page_view
+ * - SPA navigations via GaPageViewTracker
  */
 export function GoogleAnalytics() {
-  if (!isGaConfigured()) return null;
+  warnIfGaMisconfigured();
+
+  if (!isGaConfigured()) {
+    return null;
+  }
 
   const linkerDomains = JSON.stringify([...GA_CROSS_DOMAIN_LINKS]);
 
@@ -28,10 +36,12 @@ export function GoogleAnalytics() {
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}', {
             send_page_view: true,
+            anonymize_ip: false,
             linker: { domains: ${linkerDomains} }
           });
         `}
       </Script>
+      <GaPageViewTracker />
     </>
   );
 }

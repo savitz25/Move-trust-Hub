@@ -3,14 +3,13 @@
 import { useEffect, useState } from 'react';
 import type { PerformanceFlags } from '@/lib/edge-config/types';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
-import { DeferredGtag } from '@/components/performance/deferred-gtag';
 import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
-import { DeferredHubAnalytics } from '@/components/hub/deferred-hub-analytics';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 
 /**
- * Single mount for third-party scripts — all deferred off the PSI critical path.
- * Flags load client-side so the root layout does not block on Edge Config.
+ * Non-GA third parties (Vercel Analytics, chatbot) may stay deferred for PSI.
+ * GA4 lives permanently in app/layout.tsx via GoogleAnalyticsRoot — do not
+ * re-mount DeferredGtag here (avoids double-loading and interaction gates).
  */
 export function ThirdPartyOrchestrator({
   flags: initialFlags,
@@ -33,10 +32,6 @@ export function ThirdPartyOrchestrator({
 
   return (
     <>
-      {flags.enableGtag ? <DeferredGtag interactionOnly={interactionOnly} /> : null}
-      {flags.enableHubAnalytics ? (
-        <DeferredHubAnalytics interactionOnly={interactionOnly} />
-      ) : null}
       {flags.enableVercelAnalytics ? (
         <DeferredAnalytics interactionOnly={interactionOnly} />
       ) : null}
