@@ -4071,6 +4071,363 @@ const NY_ROUTES: Record<string, CountyPopularRoute[]> = {
         'Planned-community packets vs village streets — truck type and hours change by address.',
     },
   ],
+  tompkins: [
+    {
+      label: 'Within Tompkins (Ithaca ↔ Lansing / Dryden)',
+      direction: 'within',
+      context: 'Hill multi-story vs outer SFH — university term calendars spike local demand.',
+    },
+    {
+      label: 'Broome / Southern Tier → Ithaca university hub',
+      direction: 'inbound',
+      context: 'Regional inflows into Cornell/Ithaca College product — not a Broome rename.',
+      href: '/local-movers/new-york/broome',
+    },
+    {
+      label: 'Tompkins → Syracuse / Central NY pairs',
+      direction: 'outbound',
+      context: 'Finger Lakes ↔ Central NY logistics; FMCSA when any leg leaves New York.',
+      href: '/local-movers/new-york/onondaga',
+    },
+    {
+      label: 'Tompkins → NYC / downstate career moves',
+      direction: 'outbound',
+      context: 'University exits to elevators and street permits; destination COIs dominate arrival.',
+    },
+    {
+      label: 'Cornell / Ithaca College term-start / term-end moves',
+      direction: 'within',
+      context: 'Student and faculty calendars fill crews first — book curb windows early.',
+    },
+  ],
+  chemung: [
+    {
+      label: 'Within Chemung (Elmira ↔ Horseheads / Big Flats)',
+      direction: 'within',
+      context: 'City multi-story vs growth corridors — not Binghamton university density.',
+    },
+    {
+      label: 'Broome → Chemung Southern Tier west',
+      direction: 'inbound',
+      context: 'Parent Southern Tier hops west into Elmira–Horseheads product along I-86.',
+      href: '/local-movers/new-york/broome',
+    },
+    {
+      label: 'Chemung → Broome / Binghamton hub',
+      direction: 'outbound',
+      context: 'Eastbound Southern Tier employment and university pairs.',
+      href: '/local-movers/new-york/broome',
+    },
+    {
+      label: 'Pennsylvania → Elmira Southern Tier',
+      direction: 'inbound',
+      context: 'I-86 interstate inflows; FMCSA required on any PA leg.',
+    },
+    {
+      label: 'Chemung → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context: 'Southern Tier long-distance; inventory-driven interstate pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  jefferson: [
+    {
+      label: 'Within Jefferson (Watertown ↔ Fort Drum adjacent)',
+      direction: 'within',
+      context: 'City multi-story vs base multi-family — PCS windows spike demand.',
+    },
+    {
+      label: 'Syracuse / Central NY → Watertown / Fort Drum',
+      direction: 'inbound',
+      context: 'Military-regional inflows north on I-81 — not an Onondaga rename.',
+      href: '/local-movers/new-york/onondaga',
+    },
+    {
+      label: 'Fort Drum PCS outbound / inbound cycles',
+      direction: 'outbound',
+      context: 'Order calendars create multi-family turnover; book early on peak PCS months.',
+    },
+    {
+      label: 'Jefferson → North Country / St. Lawrence pairs',
+      direction: 'outbound',
+      context: 'Longer empty-mile regional logistics across North Country spines.',
+    },
+    {
+      label: 'Jefferson → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context: 'Military and family long-distance; FMCSA carriers only for interstate.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  chautauqua: [
+    {
+      label: 'Within Chautauqua (Jamestown ↔ Dunkirk / Fredonia)',
+      direction: 'within',
+      context: 'Secondary city multi-story vs lake/college edges — lake-effect winter matters.',
+    },
+    {
+      label: 'Erie / Buffalo → Chautauqua western NY',
+      direction: 'inbound',
+      context: 'Parent metro outbound into Jamestown–lake product — not an Erie rename.',
+      href: '/local-movers/new-york/erie',
+    },
+    {
+      label: 'Chautauqua → Buffalo / Erie job markets',
+      direction: 'outbound',
+      context: 'Western NY professionals into denser Buffalo multi-story stock.',
+      href: '/local-movers/new-york/erie',
+    },
+    {
+      label: 'Chautauqua Institution / lake seasonal moves',
+      direction: 'within',
+      context: 'Summer tourism rewrites village staging — not a pure Jamestown driveway day.',
+    },
+    {
+      label: 'Chautauqua → PA / OH / Florida exits',
+      direction: 'outbound',
+      context: 'Border and long-distance legs need FMCSA authority.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  clinton: [
+    {
+      label: 'Within Clinton (Plattsburgh ↔ lake edge / rural)',
+      direction: 'within',
+      context: 'North Country city multi-story vs lake and rural empty miles.',
+    },
+    {
+      label: 'Capital Region / Saratoga → Plattsburgh North Country',
+      direction: 'inbound',
+      context: 'Long I-87 north inflows — not Saratoga growth suburbs renamed.',
+      href: '/local-movers/new-york/saratoga',
+    },
+    {
+      label: 'Clinton → Vermont / border-adjacent pairs',
+      direction: 'outbound',
+      context: 'Short-looking border hops still need FMCSA authority.',
+    },
+    {
+      label: 'Clinton → Albany / Capital job markets',
+      direction: 'outbound',
+      context: 'Southbound Northway career moves into denser capital stock.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'Clinton → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context: 'North Country long-distance; multi-day interstate with inventory pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  'st-lawrence': [
+    {
+      label: 'Within St. Lawrence (Canton / Potsdam ↔ Massena)',
+      direction: 'within',
+      context: 'College multi-family vs river industrial city — extreme empty miles are real.',
+    },
+    {
+      label: 'Jefferson / Watertown → St. Lawrence North Country',
+      direction: 'inbound',
+      context: 'Regional North Country hops into dispersed college and river stock.',
+      href: '/local-movers/new-york/jefferson',
+    },
+    {
+      label: 'Canton / Potsdam term-start / term-end moves',
+      direction: 'within',
+      context: 'College calendars fill crews without Binghamton-style continuous density.',
+    },
+    {
+      label: 'St. Lawrence → Canada-facing / border pairs',
+      direction: 'outbound',
+      context: 'Border-adjacent destinations need FMCSA authority clarity.',
+    },
+    {
+      label: 'St. Lawrence → Syracuse / downstate exits',
+      direction: 'outbound',
+      context: 'Long empty-mile starts into denser metro stock; inventory-driven pricing.',
+      href: '/local-movers/new-york/onondaga',
+    },
+  ],
+  oswego: [
+    {
+      label: 'Within Oswego (Oswego city ↔ Fulton / lake towns)',
+      direction: 'within',
+      context: 'Lake-city multi-story vs inland corridors — lake-effect winter rewrites mornings.',
+    },
+    {
+      label: 'Onondaga / Syracuse → Oswego Lake Ontario edge',
+      direction: 'inbound',
+      context: 'Parent Central NY outbound north — not an Onondaga rename.',
+      href: '/local-movers/new-york/onondaga',
+    },
+    {
+      label: 'Oswego → Syracuse / Onondaga job markets',
+      direction: 'outbound',
+      context: 'North-edge professionals into denser university and medical stock.',
+      href: '/local-movers/new-york/onondaga',
+    },
+    {
+      label: 'Oswego college term-start / term-end moves',
+      direction: 'within',
+      context: 'Student multi-family clusters; book curb windows early.',
+    },
+    {
+      label: 'Oswego → Florida retirement corridors',
+      direction: 'outbound',
+      context: 'Lake Ontario snowbird path; FMCSA carriers only for interstate.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  cayuga: [
+    {
+      label: 'Within Cayuga (Auburn ↔ lake villages)',
+      direction: 'within',
+      context: 'Seat multi-story vs Finger Lakes village stock — seasonal lake access differs.',
+    },
+    {
+      label: 'Onondaga / Syracuse → Auburn Finger Lakes',
+      direction: 'inbound',
+      context: 'Parent Central NY outbound into mid-corridor Auburn product.',
+      href: '/local-movers/new-york/onondaga',
+    },
+    {
+      label: 'Monroe / Rochester → Cayuga mid-corridor',
+      direction: 'inbound',
+      context: 'West-side inflows along I-90 / NY-5–20 — not a Monroe HOA rename.',
+      href: '/local-movers/new-york/monroe',
+    },
+    {
+      label: 'Cayuga → Syracuse or Rochester job markets',
+      direction: 'outbound',
+      context: 'Between-metro freeflow pairs; price portal-to-portal honestly.',
+    },
+    {
+      label: 'Cayuga → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context: 'Finger Lakes long-distance; inventory-driven interstate pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  steuben: [
+    {
+      label: 'Within Steuben (Corning ↔ Hornell / Bath)',
+      direction: 'within',
+      context: 'Industrial-edge multi-story vs seat corridors and ridge empty miles.',
+    },
+    {
+      label: 'Broome / Chemung → Steuben Southern Tier west',
+      direction: 'inbound',
+      context: 'Parent Southern Tier hops west into Corning–Hornell product on I-86.',
+      href: '/local-movers/new-york/broome',
+    },
+    {
+      label: 'Steuben → Chemung / Elmira pairs',
+      direction: 'outbound',
+      context: 'Eastbound Southern Tier logistics — not a Broome university script.',
+      href: '/local-movers/new-york/chemung',
+    },
+    {
+      label: 'Pennsylvania → Corning / Hornell',
+      direction: 'inbound',
+      context: 'Border-adjacent interstate inflows; FMCSA required.',
+    },
+    {
+      label: 'Steuben → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context: 'Southern Tier long-distance; multi-day interstate pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  sullivan: [
+    {
+      label: 'Within Sullivan (Monticello ↔ Liberty / Fallsburg)',
+      direction: 'within',
+      context: 'Seat multi-story vs resort corridors — summer peaks rewrite staging.',
+    },
+    {
+      label: 'Ulster / Orange → Sullivan Catskills interior',
+      direction: 'inbound',
+      context: 'Parent Hudson Valley hops into Monticello–resort product — not an Ulster rename.',
+      href: '/local-movers/new-york/ulster',
+    },
+    {
+      label: 'Sullivan → Orange / NYC-collar job markets',
+      direction: 'outbound',
+      context: 'Catskills exits toward denser outer-collar employment.',
+      href: '/local-movers/new-york/orange',
+    },
+    {
+      label: 'NYC / downstate → Sullivan second-home & resort inflows',
+      direction: 'inbound',
+      context: 'Seasonal and lifestyle arrivals; mountain last-mile dominates the plan.',
+    },
+    {
+      label: 'Sullivan → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context: 'Catskills long-distance; FMCSA carriers and volume surveys required.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  warren: [
+    {
+      label: 'Within Warren (Glens Falls ↔ Queensbury / Lake George)',
+      direction: 'within',
+      context: 'Seat multi-story vs retail corridors and seasonal lake villages.',
+    },
+    {
+      label: 'Saratoga / Capital → Warren Adirondack south',
+      direction: 'inbound',
+      context: 'Parent Capital-collar hops north into Glens Falls–Lake George product — not Saratoga renamed.',
+      href: '/local-movers/new-york/saratoga',
+    },
+    {
+      label: 'Warren → Saratoga / Albany job markets',
+      direction: 'outbound',
+      context: 'Southbound Northway career moves into denser capital-collar stock.',
+      href: '/local-movers/new-york/saratoga',
+    },
+    {
+      label: 'Lake George seasonal / tourism moves',
+      direction: 'within',
+      context: 'Summer peaks tighten village streets — not a pure Queensbury driveway day.',
+    },
+    {
+      label: 'Warren → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context: 'Adirondack-south long-distance; inventory-driven interstate pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
+  columbia: [
+    {
+      label: 'Within Columbia (Hudson ↔ Chatham / Kinderhook)',
+      direction: 'within',
+      context: 'Historic multi-story vs village stock — narrow streets rewrite truck size.',
+    },
+    {
+      label: 'Dutchess → Columbia Upper Hudson',
+      direction: 'inbound',
+      context: 'Parent east-bank hops north into Hudson historic product — not a Dutchess rename.',
+      href: '/local-movers/new-york/dutchess',
+    },
+    {
+      label: 'Columbia → Albany / Capital job markets',
+      direction: 'outbound',
+      context: 'Upper Hudson professionals into denser capital stock.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'NYC / downstate → Columbia second-home inflows',
+      direction: 'inbound',
+      context: 'Arts and weekend arrivals; historic curb rules dominate Hudson city jobs.',
+    },
+    {
+      label: 'Columbia → Massachusetts / Florida exits',
+      direction: 'outbound',
+      context: 'Border and long-distance legs need FMCSA authority.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+  ],
 };
 
 const AZ_ROUTES: Record<string, CountyPopularRoute[]> = {

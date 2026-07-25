@@ -163,6 +163,20 @@ const CORRIDORS: Record<string, string> = {
   'new-york/ulster': 'I-87 · NY-28 · NY-32 · NY-9W · NY-299 · NY-212',
   'new-york/ontario': 'I-90 · I-490 · NY-332 · NY-5 · NY-21 · NY-14 · NY-96',
 
+  // New York Tier 2 Wave 2
+  'new-york/tompkins': 'NY-13 · NY-79 · NY-96 · NY-34 · NY-89 · I-81 (regional approaches)',
+  'new-york/chemung': 'I-86 · NY-17 · NY-14 · NY-13 · NY-352 · US-220 approaches',
+  'new-york/jefferson': 'I-81 · NY-3 · NY-12 · NY-11 · NY-342 · NY-37 approaches',
+  'new-york/chautauqua': 'I-86 · I-90 (north edge) · NY-60 · NY-5 · NY-394 · NY-430',
+  'new-york/clinton': 'I-87 · NY-3 · NY-9 · NY-22 · NY-374 · NY-190',
+  'new-york/st-lawrence': 'US-11 · NY-37 · NY-68 · NY-56 · NY-812 · NY-3 approaches',
+  'new-york/oswego': 'NY-481 · NY-104 · NY-48 · NY-3 · I-81 (east approaches) · NY-69 approaches',
+  'new-york/cayuga': 'I-90 · NY-5 · NY-20 · NY-34 · NY-38 · NY-90',
+  'new-york/steuben': 'I-86 · NY-15 · NY-17 · NY-21 · NY-36 · NY-415',
+  'new-york/sullivan': 'NY-17 · NY-42 · NY-52 · NY-55 · NY-97 · NY-17B',
+  'new-york/warren': 'I-87 · NY-9 · NY-9N · NY-149 · NY-8 · NY-28 approaches',
+  'new-york/columbia': 'I-90 · Taconic State Parkway · NY-9H · NY-9 · NY-23 · NY-66',
+
   // ——— Arizona ———
   'arizona/maricopa': 'I-10 · I-17 · Loop 101 · Loop 202 · US-60 · Loop 303',
   'arizona/pima': 'I-10 · I-19 · AZ-77 · AZ-86 · Grant / Broadway corridors',

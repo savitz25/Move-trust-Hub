@@ -158,6 +158,20 @@ import { oneidaCountyTier2Intelligence } from '@/lib/local-movers/county-intelli
 import { broomeCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/broome-ny';
 import { ulsterCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/ulster-ny';
 import { ontarioCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/ontario-ny';
+// New York Tier 2 Wave 2
+import { tompkinsCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/tompkins-ny';
+import { chemungCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/chemung-ny';
+import { jeffersonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/jefferson-ny';
+import { chautauquaCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/chautauqua-ny';
+import { clintonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/clinton-ny';
+import { stLawrenceCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/st-lawrence-ny';
+import { oswegoCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/oswego-ny';
+import { cayugaCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/cayuga-ny';
+import { steubenCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/steuben-ny';
+import { sullivanCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/sullivan-ny';
+import { warrenCountyNyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/warren-ny';
+import { columbiaCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/columbia-ny';
+
 // Arizona Core 7
 import { maricopaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/maricopa-az';
 import { pimaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/pima-az';
@@ -663,6 +677,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   broomeCountyTier2Intelligence,
   ulsterCountyTier2Intelligence,
   ontarioCountyTier2Intelligence,
+  // New York Tier 2 Wave 2
+  tompkinsCountyTier2Intelligence,
+  chemungCountyTier2Intelligence,
+  jeffersonCountyTier2Intelligence,
+  chautauquaCountyTier2Intelligence,
+  clintonCountyTier2Intelligence,
+  stLawrenceCountyTier2Intelligence,
+  oswegoCountyTier2Intelligence,
+  cayugaCountyTier2Intelligence,
+  steubenCountyTier2Intelligence,
+  sullivanCountyTier2Intelligence,
+  warrenCountyNyTier2Intelligence,
+  columbiaCountyTier2Intelligence,
   // Arizona Core 7
   maricopaCountyIntelligence,
   pimaCountyIntelligence,
@@ -1375,6 +1402,23 @@ export const NY_TIER2_WAVE1 = [
   'ulster',
   'ontario',
 ] as const;
+
+/** New York Tier 2 Wave 2 (Finger Lakes / Southern Tier / North Country / Catskills). */
+export const NY_TIER2_WAVE2 = [
+  'tompkins',
+  'chemung',
+  'jefferson',
+  'chautauqua',
+  'clinton',
+  'st-lawrence',
+  'oswego',
+  'cayuga',
+  'steuben',
+  'sullivan',
+  'warren',
+  'columbia',
+] as const;
+
 
 /** Arizona Tier-1 Core 7. */
 export const AZ_TIER1_CORE7 = [
