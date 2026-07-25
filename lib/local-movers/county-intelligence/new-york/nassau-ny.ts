@@ -6,7 +6,7 @@ import type { CountyIntelligencePack } from '@/lib/local-movers/county-intellige
  * NYC overflow and Queens-border pairs — not Suffolk east-end distance, Westchester hills,
  * or upstate winter metros.
  */
-export const nassauCountyIntelligence: CountyIntelligencePack = {
+export const nassauCountyNyIntelligence: CountyIntelligencePack = {
   stateSlug: 'new-york',
   countySlug: 'nassau',
   hubTitle: 'Nassau County Moving Intelligence Hub',

@@ -6,7 +6,7 @@ import type { CountyIntelligencePack } from '@/lib/local-movers/county-intellige
  * house-and-driveway patterns — not Manhattan freight towers, Brooklyn
  * brownstone walks, Queens co-op sprawl, or Bronx arterial multi-family mix.
  */
-export const richmondCountyIntelligence: CountyIntelligencePack = {
+export const richmondCountyNyIntelligence: CountyIntelligencePack = {
   stateSlug: 'new-york',
   countySlug: 'richmond',
   hubTitle: 'Staten Island (Richmond County) Moving Intelligence Hub',

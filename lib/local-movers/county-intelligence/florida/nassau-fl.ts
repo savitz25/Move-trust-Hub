@@ -9,7 +9,7 @@ import {
  * Parent: Duval County. Fernandina Beach / Yulee —
  * NOT Jacksonville core.
  */
-export const nassauCountyIntelligence: CountyIntelligencePack = finalizeFlTier2Pack({
+export const nassauCountyFlIntelligence: CountyIntelligencePack = finalizeFlTier2Pack({
   countySlug: 'nassau',
   hubTitle: 'Nassau County Moving Intelligence Hub',
   eyebrow: 'Nassau County · Jax north coastal · Fernandina Beach / Yulee',

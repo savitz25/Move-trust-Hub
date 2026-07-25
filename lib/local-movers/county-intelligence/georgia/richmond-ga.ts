@@ -4,7 +4,7 @@ import type { CountyIntelligencePack } from '@/lib/local-movers/county-intellige
  * Hand-crafted Richmond County, Georgia moving intelligence.
  * Augusta metro, military/medical anchors — NOT Atlanta.
  */
-export const richmondCountyIntelligence: CountyIntelligencePack = {
+export const richmondCountyGaIntelligence: CountyIntelligencePack = {
   stateSlug: 'georgia',
   countySlug: 'richmond',
   hubTitle: 'Richmond County Moving Intelligence Hub',

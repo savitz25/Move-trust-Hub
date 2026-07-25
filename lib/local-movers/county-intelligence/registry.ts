@@ -43,7 +43,7 @@ import { mercerCountyTier2Intelligence } from '@/lib/local-movers/county-intelli
 import { camdenCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/camden-tier2';
 import { burlingtonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/burlington-tier2';
 import { capeMayCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/cape-may-tier2';
-import { cumberlandCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/cumberland-tier2';
+import { cumberlandCountyNjTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/cumberland-tier2';
 import { somersetCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/somerset-tier2';
 import { sussexCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/sussex-tier2';
 // Florida Core 12
@@ -76,7 +76,7 @@ import { indianRiverCountyIntelligence } from '@/lib/local-movers/county-intelli
 import { martinCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/martin-fl';
 import { stJohnsCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/st-johns-fl';
 import { clayCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/clay-fl';
-import { nassauCountyIntelligence as nassauCountyFlIntelligence } from '@/lib/local-movers/county-intelligence/florida/nassau-fl';
+import { nassauCountyFlIntelligence } from '@/lib/local-movers/county-intelligence/florida/nassau-fl';
 import { alachuaCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/alachua-fl';
 import { leonCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/leon-fl';
 // Florida Tier 2 Wave 3 (Panhandle + NE coastal + Central FL retirement)
@@ -126,7 +126,7 @@ import { cobbCountyIntelligence } from '@/lib/local-movers/county-intelligence/g
 import { dekalbCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/dekalb-ga';
 import { claytonCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/clayton-ga';
 import { chathamCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/chatham-ga';
-import { richmondCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/richmond-ga';
+import { richmondCountyGaIntelligence } from '@/lib/local-movers/county-intelligence/georgia/richmond-ga';
 import { muscogeeCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/muscogee-ga';
 // Georgia Tier 2 Wave 1
 import { cherokeeCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/cherokee-tier2';
@@ -161,8 +161,8 @@ import { kingsCountyIntelligence } from '@/lib/local-movers/county-intelligence/
 import { queensCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/queens-ny';
 import { newYorkCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/new-york-ny';
 import { bronxCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/bronx-ny';
-import { richmondCountyIntelligence as richmondCountyNyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/richmond-ny';
-import { nassauCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/nassau-ny';
+import { richmondCountyNyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/richmond-ny';
+import { nassauCountyNyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/nassau-ny';
 import { suffolkCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/suffolk-ny';
 import { westchesterCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/westchester-ny';
 import { erieCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/erie-ny';
@@ -304,7 +304,7 @@ import { lehighCountyPaIntelligence } from '@/lib/local-movers/county-intelligen
 import { northamptonCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/northampton-pa';
 import { westmorelandCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/westmoreland-pa';
 // Pennsylvania Tier 2 Wave 1
-import { cumberlandCountyTier2Intelligence as cumberlandCountyPaTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/cumberland-pa';
+import { cumberlandCountyPaTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/cumberland-pa';
 import { washingtonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/washington-pa';
 import { butlerCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/butler-pa';
 import { beaverCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/beaver-pa';
@@ -773,7 +773,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   dekalbCountyIntelligence,
   claytonCountyIntelligence,
   chathamCountyIntelligence,
-  richmondCountyIntelligence,
+  richmondCountyGaIntelligence,
   muscogeeCountyIntelligence,
   // Georgia Tier 2 Wave 1
   cherokeeCountyTier2Intelligence,
@@ -807,7 +807,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   newYorkCountyIntelligence,
   bronxCountyIntelligence,
   richmondCountyNyIntelligence,
-  nassauCountyIntelligence,
+  nassauCountyNyIntelligence,
   suffolkCountyIntelligence,
   westchesterCountyIntelligence,
   erieCountyIntelligence,
@@ -1306,7 +1306,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   camdenCountyTier2Intelligence,
   burlingtonCountyTier2Intelligence,
   capeMayCountyTier2Intelligence,
-  cumberlandCountyTier2Intelligence,
+  cumberlandCountyNjTier2Intelligence,
   somersetCountyTier2Intelligence,
   atlanticCountyTier2Intelligence,
   gloucesterCountyTier2Intelligence,

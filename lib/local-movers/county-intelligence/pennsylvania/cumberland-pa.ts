@@ -7,7 +7,7 @@ import {
 /**
  * cumberland — PA Tier 2 Wave 1
  */
-export const cumberlandCountyTier2Intelligence: CountyIntelligencePack = finalizePaTier2Pack({
+export const cumberlandCountyPaTier2Intelligence: CountyIntelligencePack = finalizePaTier2Pack({
   countySlug: 'cumberland',
   hubTitle: 'Cumberland County Moving Intelligence Hub',
   eyebrow: 'Cumberland · Carlisle / Mechanicsburg — Harrisburg west collar',

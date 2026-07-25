@@ -5,7 +5,7 @@ import {
 } from '@/lib/local-movers/county-intelligence/new-jersey/nj-tier2-shared';
 
 /** Cumberland — NJ Tier 2 Wave 1 · Vineland / Bridgeton interior · parent Atlantic/Camden */
-export const cumberlandCountyTier2Intelligence: CountyIntelligencePack = finalizeNjTier2Pack({
+export const cumberlandCountyNjTier2Intelligence: CountyIntelligencePack = finalizeNjTier2Pack({
   countySlug: 'cumberland',
   hubTitle: 'Cumberland County Moving Intelligence Hub',
   eyebrow: 'Cumberland · South Jersey interior · vs Atlantic / Camden',

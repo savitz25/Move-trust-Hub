@@ -31,6 +31,7 @@
     "audit:legacy-county-metadata": "tsx scripts/diagnose-legacy-county-metadata.ts",
     "capture:blocking-url-evidence": "tsx scripts/capture-blocking-url-evidence.ts",
     "verify:progressive-movers": "tsx scripts/verify-progressive-county-movers.ts",
+    "verify:county-intelligence-registry": "tsx scripts/verify-county-intelligence-registry.ts",
     "qa:nj-tier1-trust": "tsx scripts/qa-nj-tier1-trust.ts",
     "qa:ca-tier1": "tsx scripts/qa-ca-tier1.ts",
     "qa:fl-tier1": "tsx scripts/qa-fl-tier1.ts",
