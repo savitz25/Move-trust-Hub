@@ -18,6 +18,8 @@ import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
 import { SaveMoverButton } from '@/components/save-my-move/save-mover-button';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CoverageAreaCard } from '@/components/map/coverage-area-card';
+import { CompanyLocalCountyLinks } from '@/components/company/company-local-county-links';
+import { InternalLinkHub } from '@/components/seo/internal-link-hub';
 import { getCompanyAssignmentStateSlugs } from '@/lib/map/company-assignment-state-slugs';
 import { ExternalLink } from 'lucide-react';
 import { CompanyProfileBack } from '@/components/directory/company-profile-back-link';
@@ -237,12 +239,19 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground leading-relaxed">
                 This company is listed as an <strong className="text-foreground">intrastate (local)</strong>{' '}
-                mover — it operates within a state and does not require FMCSA interstate authority on
-                this profile. It appears on selected county pages only, not the main interstate
-                directory.
+                mover — it operates within a state and may not require FMCSA interstate authority on
+                this profile. Default directory browse stays interstate-focused; local movers still
+                appear when you search by name or filter by Local Mover / state coverage, and on
+                the county guides they serve.
               </CardContent>
             </Card>
           ) : null}
+
+          <CompanyLocalCountyLinks
+            companyName={company.name}
+            coverageCounties={company.coverageCounties}
+            assignmentStateSlugs={assignmentStateSlugs}
+          />
 
           {/* Licensing & Compliance */}
           <Card>
@@ -389,6 +398,8 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
           </div>
         </div>
       </div>
+
+      <InternalLinkHub className="mt-12" />
     </div>
     </>
   );

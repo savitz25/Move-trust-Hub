@@ -4,10 +4,11 @@ import { TRUST_HUB_LOGO } from '@/lib/hub/config';
 export const SITE_URL = 'https://www.movetrusthub.com';
 export const SITE_NAME = 'Move Trust Hub';
 
+/** Default root title — keep aligned with HOMEPAGE_SEO_TITLE in destination-seo.ts */
 export const HOMEPAGE_TITLE =
-  'Compare FMCSA-Licensed Movers (2026) | MoveTrustHub';
+  'Where Are You Moving? ZIP Planner + FMCSA Movers | MoveTrustHub';
 export const HOMEPAGE_DESCRIPTION =
-  'Compare 25+ FMCSA-licensed interstate movers by verified reviews, pricing, and safety data. Independent directory — no lead fees, no paid placements.';
+  'Enter From & To ZIPs to find trusted movers for your route, estimate move size, and browse county guides. Independent FMCSA directory — no lead fees, no paid placements.';
 
 export const DEFAULT_SITE_DESCRIPTION =
   'Compare FMCSA-licensed interstate movers by reviews, pricing, and reputation. Free moving calculator and trusted long-distance carrier research at Move Trust Hub — independent directory, no lead fees.';

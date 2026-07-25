@@ -57,6 +57,8 @@ export function scoreCompanySearch(
 
   const qNorm = normalizeText(query);
   const name = normalizeText(company.name ?? '');
+  // Legal name (FMCSA) so search still hits when public DBA differs from legal entity.
+  const legalName = normalizeText(company.fmcsaLegalName ?? '');
   const slug = normalizeText((company.slug ?? '').replace(/-/g, ' '));
   const description = normalizeText(company.shortDescription ?? '');
   const headquarters = normalizeText(company.headquarters ?? '');
@@ -83,18 +85,25 @@ export function scoreCompanySearch(
   const boost = scopeBoost(company, scope);
 
   if (name === qNorm) return 1000 + boost;
+  if (legalName && legalName === qNorm) return 990 + boost;
   if (slug && slug === qNorm) return 980 + boost;
   if (name.startsWith(qNorm)) return 900 + boost;
+  if (legalName && legalName.startsWith(qNorm)) return 890 + boost;
   if (slug && slug.startsWith(qNorm)) return 880 + boost;
   if (name.split(' ').some((word) => word.startsWith(qNorm))) return 820 + boost;
+  if (legalName && legalName.split(' ').some((word) => word.startsWith(qNorm))) return 810 + boost;
 
   const fuzzy = fuzzyNameScore(name, qNorm);
   if (fuzzy > 0) return fuzzy + boost;
+
+  const fuzzyLegal = legalName ? fuzzyNameScore(legalName, qNorm) : 0;
+  if (fuzzyLegal > 0) return Math.max(fuzzyLegal - 10, 1) + boost;
 
   const fuzzySlug = slug ? fuzzyNameScore(slug, qNorm) : 0;
   if (fuzzySlug > 0) return Math.max(fuzzySlug - 20, 1) + boost;
 
   if (name.includes(qNorm)) return 600 + boost;
+  if (legalName && legalName.includes(qNorm)) return 580 + boost;
   if (slug && slug.includes(qNorm)) return 560 + boost;
 
   if (headquarters.includes(qNorm)) return 350 + boost;

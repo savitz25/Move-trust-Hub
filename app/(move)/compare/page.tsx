@@ -33,7 +33,19 @@ export default async function ComparePage() {
         <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
           FMCSA ratings
         </Link>
-        , reputation scores, and transparent review data side-by-side.
+        , reputation scores, and transparent review data side-by-side. Also explore{' '}
+        <Link href="/local-movers" className="text-primary underline underline-offset-2">
+          local movers by county
+        </Link>
+        ,{' '}
+        <Link href="/verify-dot" className="text-primary underline underline-offset-2">
+          verify a DOT number
+        </Link>
+        , or estimate volume with the{' '}
+        <Link href="/moving-calculator" className="text-primary underline underline-offset-2">
+          free moving calculator
+        </Link>
+        .
       </p>
 
       {/* Server-rendered discovery list — indexable without client JS */}

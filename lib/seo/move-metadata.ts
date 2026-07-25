@@ -40,7 +40,8 @@ export function buildMovePageMetadata(input: MovePageMetadataInput): Metadata {
       hub: 'move',
     }),
     robots: input.noIndex
-      ? { index: false, follow: false }
+      ? // Faceted/filtered views: stay crawlable for links, keep out of the index.
+        { index: false, follow: true }
       : { index: true, follow: true },
   };
 }

@@ -15,17 +15,35 @@ export function buildCompanyDirectorySchemaGraph(company: Company) {
     name: company.name,
     url: canonical,
     description: company.shortDescription || company.description,
-    ...(company.website ? { sameAs: company.website } : {}),
-    ...(company.headquarters
-      ? {
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: company.headquarters,
-            addressCountry: 'US',
-          },
-        }
-      : {}),
+    parentOrganization: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Move Trust Hub',
+      url: SITE_URL,
+    },
   };
+
+  const sameAs: string[] = [];
+  if (company.website) sameAs.push(company.website);
+  if (sameAs.length === 1) moverNode.sameAs = sameAs[0];
+  else if (sameAs.length > 1) moverNode.sameAs = sameAs;
+
+  if (company.phone?.trim()) {
+    moverNode.telephone = company.phone.trim();
+  }
+
+  if (company.physicalAddress?.trim() || company.headquarters) {
+    moverNode.address = {
+      '@type': 'PostalAddress',
+      ...(company.physicalAddress?.trim()
+        ? { streetAddress: company.physicalAddress.trim() }
+        : {}),
+      ...(company.headquarters
+        ? { addressLocality: company.headquarters }
+        : {}),
+      addressCountry: 'US',
+    };
+  }
 
   if (company.usdotNumber) {
     moverNode.identifier = {
@@ -42,6 +60,9 @@ export function buildCompanyDirectorySchemaGraph(company: Company) {
       value: company.mcNumber,
     };
   }
+
+  // Never invent AggregateRating / Review here — community ratings live on /company/[slug]
+  // with moderated Supabase reviews only (see buildAggregateRatingSchema).
 
   return {
     '@context': 'https://schema.org',

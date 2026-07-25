@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildSaferLookupUrl } from '@/lib/verify-dot/fmcsa';
-import { SITE_URL } from '@/lib/seo/site-metadata';
+import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 import { reviewUrlForMovingCompany } from '@/lib/reviews/review-url';
 
 type Props = {
@@ -23,17 +23,25 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const company = await getMovingCompanyBySlug(slug);
-  if (!company) return { title: 'Carrier Not Found' };
+  if (!company) {
+    return buildMovePageMetadata({
+      title: 'Carrier Not Found',
+      description: 'This community review profile could not be found on Move Trust Hub.',
+      path: `/company/${slug}`,
+      noIndex: true,
+    });
+  }
 
-  const title = `${company.name} Reviews — DOT/MC Verified Profile`;
-  const description = `${company.name} customer reviews on Move Trust Hub. ${company.approved_review_count} moderated reviews, ${Number(company.avg_rating).toFixed(1)}★ average. Verify FMCSA licensing before you book.`;
+  const ratingLabel =
+    company.approved_review_count > 0 && Number(company.avg_rating) > 0
+      ? `${Number(company.avg_rating).toFixed(1)}★ from ${company.approved_review_count} moderated reviews`
+      : 'Moderated customer reviews';
 
-  return {
-    title,
-    description,
-    alternates: { canonical: `${SITE_URL}/company/${slug}` },
-    robots: { index: true, follow: true },
-  };
+  return buildMovePageMetadata({
+    title: `${company.name} Reviews — DOT/MC Profile`,
+    description: `${company.name} on Move Trust Hub. ${ratingLabel}. Independent directory — verify FMCSA licensing before you book.`,
+    path: `/company/${company.slug}`,
+  });
 }
 
 export default async function CompanyReviewProfilePage({ params }: Props) {
@@ -68,6 +76,12 @@ export default async function CompanyReviewProfilePage({ params }: Props) {
     avgRating: Number(company.avg_rating),
     reviewCount: company.approved_review_count,
     reviews,
+    address: company.address,
+    city: company.city,
+    state: company.state,
+    zip: company.zip,
+    phone: company.phone,
+    website: company.website,
   });
 
   return (

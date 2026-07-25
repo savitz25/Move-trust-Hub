@@ -122,6 +122,14 @@ export default function VerifyDotPage() {
           <Link href="/companies" className="font-medium text-primary underline underline-offset-2">
             Browse the mover directory
           </Link>
+          {' · '}
+          <Link href="/local-movers" className="font-medium text-primary underline underline-offset-2">
+            Local movers by county
+          </Link>
+          {' · '}
+          <Link href="/moving-calculator" className="font-medium text-primary underline underline-offset-2">
+            Moving calculator
+          </Link>
           .
         </p>
       </div>

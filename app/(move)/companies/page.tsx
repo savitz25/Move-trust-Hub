@@ -24,15 +24,35 @@ const COMPANIES_TITLE = 'Compare FMCSA-Licensed Interstate Movers | Independent 
 const COMPANIES_DESCRIPTION =
   'Search FMCSA-licensed interstate movers with active operating authority. Sort by reputation, attributable reviews, price, complaints, or years in business. Independent directory — no lead fees.';
 
-export const metadata: Metadata = buildMovePageMetadata({
-  title: COMPANIES_TITLE,
-  description: COMPANIES_DESCRIPTION,
-  path: '/companies',
-});
+/** Faceted/param URLs keep a clean canonical (/companies) and stay noindex to prevent index bloat. */
+function directoryHasFacetParams(
+  params: Record<string, string | string[] | undefined>
+): boolean {
+  const keys = Object.keys(params).filter((k) => {
+    if (k === 'page' || k === 'from') return false;
+    const v = params[k];
+    if (v == null) return false;
+    if (Array.isArray(v)) return v.some((x) => String(x).trim().length > 0);
+    return String(v).trim().length > 0;
+  });
+  return keys.length > 0;
+}
 
 type PageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const params = await searchParams;
+  const faceted = directoryHasFacetParams(params);
+  return buildMovePageMetadata({
+    title: COMPANIES_TITLE,
+    description: COMPANIES_DESCRIPTION,
+    path: '/companies',
+    // Always self-canonical to /companies; noindex when filters/query present.
+    noIndex: faceted,
+  });
+}
 
 export default async function CompaniesDirectoryPage({ searchParams }: PageProps) {
   const params = await searchParams;

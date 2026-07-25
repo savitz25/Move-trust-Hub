@@ -32,6 +32,11 @@ export type StateHubStats = {
  *
  * Mover counts use the same async path as county pages (static catalog + approved
  * directory locals from Supabase) so badges match after new locals are published.
+ *
+ * Note: during `next build` (NEXT_PHASE=phase-production-build) approved Supabase
+ * locals are skipped to avoid bulk SSG timeouts — both state hubs and county pages
+ * share that skip, so counts stay consistent. ISR (revalidate=300 on state hubs,
+ * 60 on counties) + publish revalidation tags refresh live counts after deploy.
  */
 export async function buildStateHubCountyRows(
   stateSlug: string,
@@ -41,6 +46,8 @@ export async function buildStateHubCountyRows(
     counties.map(async (county) => {
       const listed = await getMoversForCountyAsync(stateSlug, county.slug);
       // Canonical live count — same set of movers rendered on the county page.
+      // Prefer listed length always when the county exists (do not fall back to
+      // static market maps that can drift from the rendered list).
       const listedCount = listed?.movers.length ?? 0;
       const mappedCount = getCountyMarketMoverCount(stateSlug, county.slug);
       const moverCount =
