@@ -41,7 +41,7 @@ export type StateHubStats = {
  * Directory badge rule (centralized in `resolveStateHubDirectoryBadge`):
  *   >30 listed movers → "Deep guide"
  *   ≤30 listed movers → "Limited"
- * Editorial override: deep-research counties may stay "Deep guide" under 30.
+ * Strict — no deep-research editorial override this pass (FL 26–30 was mislabeled).
  *
  * Note: during `next build` (NEXT_PHASE=phase-production-build) approved Supabase
  * locals are skipped to avoid bulk SSG timeouts — both state hubs and county pages
@@ -76,11 +76,8 @@ export async function buildStateHubCountyRows(
       const isTier1 = tierMeta.tier === 'tier1';
       const isDeepGuide = hasDeepCountyResearch(stateSlug, county.slug);
 
-      // Badge is count-driven. Editorial override only for genuine deep research
-      // packs (hasDeepCountyResearch) — not for every Tier 2 intelligence stub.
-      const guideBadge = resolveStateHubDirectoryBadge(moverCount, {
-        editorialDeepGuide: isDeepGuide,
-      });
+      // Strict count only — never force Deep guide for ≤30 movers.
+      const guideBadge = resolveStateHubDirectoryBadge(moverCount);
 
       let sortIndex = 0;
       if (guideBadge === 'Deep guide' && isTier1) sortIndex = 3;
