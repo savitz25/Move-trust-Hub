@@ -600,6 +600,19 @@ const CORRIDORS: Record<string, string> = {
   'virginia/newport-news': 'I-64 · US-60 · US-17 · Jefferson Ave · Warwick Blvd · J. Clyde Morris Blvd',
   'virginia/hampton': 'I-64 · I-664 · US-60 · Mercury Blvd · VA-134 · Settlers Landing approaches',
   'virginia/fauquier': 'I-66 · US-17 · US-29 · US-15 · US-211 · VA-28 approaches',
+  // Virginia Tier 2 Wave 2
+  'virginia/portsmouth': 'I-264 · US-17 · US-58 · Midtown/Downtown Tunnel approaches · SR-164',
+  'virginia/suffolk': 'US-13 · US-58 · US-460 · US-17 · SR-10',
+  'virginia/lynchburg': 'US-29 · US-460 · US-501 · SR-163 · Wards Road corridor',
+  'virginia/charlottesville': 'US-29 · US-250 · I-64 edge · SR-20 · Emmet Street corridor',
+  'virginia/bedford': 'US-460 · US-221 · SR-122 · SR-43 · SR-24',
+  'virginia/augusta': 'I-81 · I-64 · US-11 · US-250 · US-340',
+  'virginia/rockingham': 'I-81 · US-11 · US-33 · SR-42 · SR-259',
+  'virginia/culpeper': 'US-29 · US-15 · US-522 · SR-3 · SR-229',
+  'virginia/orange': 'US-15 · US-20 · SR-20 · SR-231 · US-33 regional',
+  'virginia/louisa': 'I-64 · US-15 · US-33 · US-522 · SR-208',
+  'virginia/gloucester': 'US-17 · SR-14 · SR-3 · SR-198 · George Washington Memorial Highway corridor',
+  'virginia/isle-of-wight': 'US-17 · US-258 · SR-10 · SR-32 · US-460 regional',
 
   // ——— Ohio Core 12 ———
   'ohio/franklin': 'I-70 · I-71 · I-270 · I-670 · US-23 · US-33',
@@ -663,6 +676,15 @@ const CORRIDORS: Record<string, string> = {
   'tennessee/blount': 'US-129 · US-321 · I-140 links · Alcoa Hwy · scenic foothill approaches',
   'tennessee/sevier': 'US-441 · US-321 · US-411 · Forks of the River Pkwy · tourism spur corridors',
   'tennessee/sullivan': 'I-81 · I-26 · US-11W · US-23 · State of Franklin Rd corridors',
+  // Tennessee Tier 2 Wave 1 (additional secondary markets)
+  'tennessee/maury': 'I-65 · US-31 · US-412 · SR-50 · SR-99',
+  'tennessee/robertson': 'I-24 · US-41 · US-431 · SR-49 · SR-25',
+  'tennessee/washington': 'I-26 · US-11E · US-321 · SR-67 · SR-75',
+  'tennessee/madison': 'I-40 · US-45 · US-70 · US-412 · SR-18',
+  'tennessee/bradley': 'I-75 · US-11 · US-64 · SR-60 · SR-312',
+  'tennessee/anderson': 'I-75 edge · SR-61 · SR-95 · US-25W · SR-62',
+  'tennessee/putnam': 'I-40 · SR-111 · US-70N · SR-136 · SR-56',
+  'tennessee/dickson': 'I-40 · SR-46 · SR-48 · US-70 · SR-47',
 
   // ——— North Carolina Core 12 ———
   'north-carolina/mecklenburg': 'I-77 · I-85 · I-485 · US-74 · NC-16 · Billy Graham Pkwy',

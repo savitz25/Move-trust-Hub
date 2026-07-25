@@ -257,7 +257,20 @@ import { yorkCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelli
 import { newportNewsCityVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/newport-news-tier2';
 import { hamptonCityVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/hampton-tier2';
 import { fauquierCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/fauquier-tier2';
-// Tennessee Core 12
+// Virginia Tier 2 Wave 2
+import { portsmouthCityVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/portsmouth-tier2';
+import { suffolkCityVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/suffolk-tier2';
+import { lynchburgCityVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/lynchburg-tier2';
+import { charlottesvilleCityVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/charlottesville-tier2';
+import { bedfordCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/bedford-tier2';
+import { augustaCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/augusta-tier2';
+import { rockinghamCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/rockingham-tier2';
+import { culpeperCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/culpeper-tier2';
+import { orangeCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/orange-tier2';
+import { louisaCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/louisa-tier2';
+import { gloucesterCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/gloucester-tier2';
+import { isleOfWightCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/isle-of-wight-tier2';
+// Tennessee Core 8
 import { shelbyCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/shelby-tn';
 import { davidsonCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/davidson-tn';
 import { knoxCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/knox-tn';
@@ -265,11 +278,20 @@ import { hamiltonCountyTnIntelligence } from '@/lib/local-movers/county-intellig
 import { rutherfordCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/rutherford-tn';
 import { williamsonCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/williamson-tn';
 import { montgomeryCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/montgomery-tn';
-import { sumnerCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/sumner-tn';
-import { wilsonCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/wilson-tn';
-import { blountCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/blount-tn';
-import { sevierCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/sevier-tn';
 import { sullivanCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/sullivan-tn';
+// Tennessee Tier 2 Wave 1
+import { sumnerCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/sumner-tier2';
+import { wilsonCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/wilson-tier2';
+import { mauryCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/maury-tier2';
+import { robertsonCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/robertson-tier2';
+import { blountCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/blount-tier2';
+import { sevierCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/sevier-tier2';
+import { washingtonCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/washington-tier2';
+import { madisonCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/madison-tier2';
+import { bradleyCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/bradley-tier2';
+import { andersonCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/anderson-tier2';
+import { putnamCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/putnam-tier2';
+import { dicksonCountyTnTier2Intelligence } from '@/lib/local-movers/county-intelligence/tennessee/dickson-tier2';
 // Pennsylvania Core 12
 import { philadelphiaCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/philadelphia-pa';
 import { alleghenyCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/allegheny-pa';
@@ -863,11 +885,20 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   rutherfordCountyTnIntelligence,
   williamsonCountyTnIntelligence,
   montgomeryCountyTnIntelligence,
-  sumnerCountyTnIntelligence,
-  wilsonCountyTnIntelligence,
-  blountCountyTnIntelligence,
-  sevierCountyTnIntelligence,
   sullivanCountyTnIntelligence,
+  // Tennessee Tier 2 Wave 1
+  sumnerCountyTnTier2Intelligence,
+  wilsonCountyTnTier2Intelligence,
+  mauryCountyTnTier2Intelligence,
+  robertsonCountyTnTier2Intelligence,
+  blountCountyTnTier2Intelligence,
+  sevierCountyTnTier2Intelligence,
+  washingtonCountyTnTier2Intelligence,
+  madisonCountyTnTier2Intelligence,
+  bradleyCountyTnTier2Intelligence,
+  andersonCountyTnTier2Intelligence,
+  putnamCountyTnTier2Intelligence,
+  dicksonCountyTnTier2Intelligence,
   // Pennsylvania Core 12
   philadelphiaCountyPaIntelligence,
   alleghenyCountyPaIntelligence,
@@ -916,6 +947,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   newportNewsCityVaTier2Intelligence,
   hamptonCityVaTier2Intelligence,
   fauquierCountyVaTier2Intelligence,
+  // Virginia Tier 2 Wave 2
+  portsmouthCityVaTier2Intelligence,
+  suffolkCityVaTier2Intelligence,
+  lynchburgCityVaTier2Intelligence,
+  charlottesvilleCityVaTier2Intelligence,
+  bedfordCountyVaTier2Intelligence,
+  augustaCountyVaTier2Intelligence,
+  rockinghamCountyVaTier2Intelligence,
+  culpeperCountyVaTier2Intelligence,
+  orangeCountyVaTier2Intelligence,
+  louisaCountyVaTier2Intelligence,
+  gloucesterCountyVaTier2Intelligence,
+  isleOfWightCountyVaTier2Intelligence,
   // Illinois Tier 1 core 9 + Tier 2 Wave 1
   cookCountyIlIntelligence,
   duPageCountyIlIntelligence,
@@ -1724,6 +1768,22 @@ export const VA_TIER2_WAVE1 = [
   'fauquier',
 ] as const;
 
+/** Virginia Tier 2 Wave 2 — Hampton Roads independents + valley + Piedmont + Middle Peninsula. */
+export const VA_TIER2_WAVE2 = [
+  'portsmouth',
+  'suffolk',
+  'lynchburg',
+  'charlottesville',
+  'bedford',
+  'augusta',
+  'rockingham',
+  'culpeper',
+  'orange',
+  'louisa',
+  'gloucester',
+  'isle-of-wight',
+] as const;
+
 /** North Carolina Tier-1 Core 8 (Charlotte/Triangle/Triad/coast/military/mountain hubs). */
 export const NC_TIER1_CORE12 = [
   'mecklenburg',
@@ -1752,8 +1812,8 @@ export const NC_TIER2_WAVE1 = [
   'brunswick',
 ] as const;
 
-/** Tennessee Tier-1 Core 12. */
-export const TN_TIER1_CORE12 = [
+/** Tennessee Tier-1 Core 8 (locked) — do not rebuild in Tier 2 waves. */
+export const TN_TIER1_CORE = [
   'shelby',
   'davidson',
   'knox',
@@ -1761,11 +1821,26 @@ export const TN_TIER1_CORE12 = [
   'rutherford',
   'williamson',
   'montgomery',
+  'sullivan',
+] as const;
+
+/** @deprecated Prefer TN_TIER1_CORE — Sumner/Wilson/Blount/Sevier moved to Tier 2. */
+export const TN_TIER1_CORE12 = [...TN_TIER1_CORE] as const;
+
+/** Tennessee Tier 2 Wave 1 — Nashville collars + Knox/Chatt/Tri-Cities secondary + independents. */
+export const TN_TIER2_WAVE1 = [
   'sumner',
   'wilson',
+  'maury',
+  'robertson',
   'blount',
   'sevier',
-  'sullivan',
+  'washington',
+  'madison',
+  'bradley',
+  'anderson',
+  'putnam',
+  'dickson',
 ] as const;
 
 /** Illinois Tier-1 Core 9 (Chicago metro + collar + Metro East + Rockford). */
