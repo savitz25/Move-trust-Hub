@@ -34,16 +34,18 @@ import { shastaCountyIntelligence } from '@/lib/local-movers/county-intelligence
 import { sonomaCountyIntelligence } from '@/lib/local-movers/county-intelligence/sonoma-ca';
 import { tulareCountyIntelligence } from '@/lib/local-movers/county-intelligence/tulare-ca';
 import { venturaCountyIntelligence } from '@/lib/local-movers/county-intelligence/ventura-ca';
-import { warrenCountyIntelligence } from '@/lib/local-movers/county-intelligence/warren-nj';
+import { warrenCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/warren-tier2';
 import { yoloCountyIntelligence } from '@/lib/local-movers/county-intelligence/yolo-ca';
-import { atlanticCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/atlantic-nj';
-import { gloucesterCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/gloucester-nj';
-import { hunterdonCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/hunterdon-nj';
+import { atlanticCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/atlantic-tier2';
+import { gloucesterCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/gloucester-tier2';
+import { hunterdonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/hunterdon-tier2';
 import { mercerCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/mercer-tier2';
 import { camdenCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/camden-tier2';
 import { burlingtonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/burlington-tier2';
+import { capeMayCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/cape-may-tier2';
+import { cumberlandCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/cumberland-tier2';
 import { somersetCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/somerset-tier2';
-import { sussexCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/sussex-nj';
+import { sussexCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/sussex-tier2';
 // Florida Core 12
 import { miamiDadeCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/miami-dade-fl';
 import { browardCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/broward-fl';
@@ -991,15 +993,17 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   monmouthCountyIntelligence,
   morrisCountyTier2Intelligence,
   oceanCountyIntelligence,
-  warrenCountyIntelligence,
+  warrenCountyTier2Intelligence,
   mercerCountyTier2Intelligence,
   camdenCountyTier2Intelligence,
   burlingtonCountyTier2Intelligence,
+  capeMayCountyTier2Intelligence,
+  cumberlandCountyTier2Intelligence,
   somersetCountyTier2Intelligence,
-  atlanticCountyNjIntelligence,
-  gloucesterCountyNjIntelligence,
-  hunterdonCountyNjIntelligence,
-  sussexCountyNjIntelligence,
+  atlanticCountyTier2Intelligence,
+  gloucesterCountyTier2Intelligence,
+  hunterdonCountyTier2Intelligence,
+  sussexCountyTier2Intelligence,
 ];
 
 const PACKS: CountyIntelligencePack[] = RAW_PACKS.map((pack) =>
@@ -1138,6 +1142,13 @@ export const NJ_TIER2_WAVE1 = [
   'mercer',
   'camden',
   'burlington',
+  'gloucester',
+  'atlantic',
+  'hunterdon',
+  'sussex',
+  'warren',
+  'cape-may',
+  'cumberland',
 ] as const;
 
 /** NJ Tier 1 core counties — do not rebuild in Tier 2 waves. */

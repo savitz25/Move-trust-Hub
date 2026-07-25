@@ -25,6 +25,8 @@ const NJ_WAVE4_SLUGS = [
   'hunterdon',
   'sussex',
   'warren',
+  'cape-may',
+  'cumberland',
 ] as const;
 
 const NJ_DEEP_SLUGS = [...NJ_WAVE3_SLUGS, ...NJ_WAVE4_SLUGS] as const;

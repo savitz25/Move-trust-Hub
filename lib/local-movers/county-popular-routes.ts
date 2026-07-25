@@ -332,6 +332,62 @@ const NJ_ROUTES: Record<string, CountyPopularRoute[]> = {
       context: 'Older housing stock, stairs, and tight streets — survey access carefully.',
     },
   ],
+  'cape-may': [
+    {
+      label: 'Within Cape May (Cape May ↔ Wildwood / Ocean City)',
+      direction: 'within',
+      context: 'Barrier-island hops; bridge timing and tourist-street staging dominate summer turns.',
+    },
+    {
+      label: 'Mainland Rio Grande / Court House ↔ islands',
+      direction: 'within',
+      context: 'Island to mainland staging and winter storage lanes along Parkway south / Route 9.',
+    },
+    {
+      label: 'Philly / South Jersey → Cape May shore tip',
+      direction: 'inbound',
+      context: 'Seasonal and second-home demand; summer Parkway south congestion.',
+    },
+    {
+      label: 'Cape May → Florida / Sun Belt',
+      direction: 'outbound',
+      context: 'Hospitality and retirement long-distance; FMCSA carriers only for interstate.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Cape May → Atlantic City / mainland Atlantic',
+      direction: 'outbound',
+      context: 'Shore-to-shore workforce and year-round housing swaps — not a Toms River lane.',
+    },
+  ],
+  cumberland: [
+    {
+      label: 'Within Cumberland (Vineland ↔ Millville / Bridgeton)',
+      direction: 'within',
+      context: 'Interior South Jersey city-pairs; ag-adjacent approaches and small-city streets.',
+    },
+    {
+      label: 'Philly / Camden collar → Vineland area',
+      direction: 'inbound',
+      context: 'Interior employment and housing moves; longer empty miles than shore corridors.',
+    },
+    {
+      label: 'Cumberland → Atlantic / Egg Harbor mainland',
+      direction: 'outbound',
+      context: 'Interior–shore connector; not a boardwalk high-rise script.',
+    },
+    {
+      label: 'Cumberland → Florida / Carolinas',
+      direction: 'outbound',
+      context: 'Family long-distance; volume estimates and FMCSA authority required.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Bridgeton county-seat multifamily & older stock',
+      direction: 'within',
+      context: 'Stairs, tight streets, and small-city logistics — survey access carefully.',
+    },
+  ],
 };
 
 /** California county routes — market-specific framing (not LA clones across counties). */
@@ -3519,6 +3575,500 @@ const NY_ROUTES: Record<string, CountyPopularRoute[]> = {
       direction: 'inbound',
       context:
         'I-90 corridor professional moves into Albany–Colonie stock; winter weather shapes delivery windows.',
+    },
+  ],
+  // ——— NY Tier 2 Wave 1 (parent-biased routes) ———
+  rockland: [
+    {
+      label: 'Within Rockland (New City ↔ Nyack / Spring Valley)',
+      direction: 'within',
+      context:
+        'Seat suburbs vs river-village grids and multi-family density — access profiles differ by zone.',
+    },
+    {
+      label: 'Westchester → Rockland reverse / bridge pairs',
+      direction: 'inbound',
+      context:
+        'Parent-market hops over Cuomo Bridge / I-287; portal-to-portal time dominates short-looking pairs.',
+      href: '/local-movers/new-york/westchester',
+    },
+    {
+      label: 'Bergen / NJ → Rockland multi-family & suburbs',
+      direction: 'inbound',
+      context:
+        'Cross-state collar moves; FMCSA authority required even when drive time feels local.',
+      href: '/local-movers/new-jersey/bergen',
+    },
+    {
+      label: 'Rockland → NYC borough career & family moves',
+      direction: 'outbound',
+      context:
+        'North-collar exits into elevators and street permits; destination COIs dominate arrival day.',
+    },
+    {
+      label: 'Rockland → Florida retirement corridors',
+      direction: 'outbound',
+      context:
+        'Suburban snowbird path; multi-day interstate with inventory-driven pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Manhattan / Bronx → Rockland schools & space',
+      direction: 'inbound',
+      context:
+        'Classic NYC→north-collar upgrade; origin elevators and destination driveway/HOA rules on one job.',
+    },
+  ],
+  orange: [
+    {
+      label: 'Within Orange (Newburgh ↔ Middletown / Woodbury)',
+      direction: 'within',
+      context:
+        'River-city stairs vs inland multi-family and retail-corridor SFH — truck type changes by zone.',
+    },
+    {
+      label: 'Westchester / Rockland → Orange outer collar',
+      direction: 'inbound',
+      context:
+        'Parent-biased I-87/I-84 upgrades into larger-lot and mid-market Orange product.',
+      href: '/local-movers/new-york/westchester',
+    },
+    {
+      label: 'Orange → Westchester / NYC job markets',
+      direction: 'outbound',
+      context:
+        'Outer-collar professionals moving closer to city density; destination elevators dominate.',
+      href: '/local-movers/new-york/westchester',
+    },
+    {
+      label: 'NJ / PA → Orange Hudson Valley stock',
+      direction: 'inbound',
+      context:
+        'Interstate collar inflows; confirm FMCSA when either address is out of New York.',
+    },
+    {
+      label: 'Orange → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context:
+        'Family long-distance; volume estimates drive linehaul more than local hourly rates.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Woodbury / Warwick growth SFH moves',
+      direction: 'within',
+      context:
+        'HOA packets and arterial retail peaks — not a Newburgh multi-story plan.',
+    },
+  ],
+  dutchess: [
+    {
+      label: 'Within Dutchess (Poughkeepsie ↔ Beacon / Arlington)',
+      direction: 'within',
+      context:
+        'City multi-story vs rail-village density and eastern lots — access changes by pocket.',
+    },
+    {
+      label: 'Orange / Westchester → Dutchess Mid Hudson',
+      direction: 'inbound',
+      context:
+        'Parent-biased collar moves along I-84 / US-9 into Poughkeepsie–Beacon product.',
+      href: '/local-movers/new-york/orange',
+    },
+    {
+      label: 'Dutchess → NYC / Westchester rail-commute markets',
+      direction: 'outbound',
+      context:
+        'Metro-North corridor professionals; destination elevators and permits dominate arrival.',
+      href: '/local-movers/new-york/westchester',
+    },
+    {
+      label: 'CT / Mid-Atlantic → Dutchess lifestyle inflows',
+      direction: 'inbound',
+      context:
+        'Interstate household goods into mixed-density Mid Hudson stock; verify FMCSA authority.',
+    },
+    {
+      label: 'Dutchess → Florida retirement corridors',
+      direction: 'outbound',
+      context:
+        'Hudson Valley snowbird path; multi-day interstate with careful packing scope.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Eastern Dutchess larger-lot / Amenia edges',
+      direction: 'within',
+      context:
+        'Long empty miles and driveway approaches — not a Beacon village quote.',
+    },
+  ],
+  putnam: [
+    {
+      label: 'Within Putnam (Carmel ↔ Brewster / Lake Carmel)',
+      direction: 'within',
+      context:
+        'Seat suburbs vs lake/hill last-mile — shuttles and long driveways appear often.',
+    },
+    {
+      label: 'Westchester → Putnam outer north collar',
+      direction: 'inbound',
+      context:
+        'Parent-market upgrades into lower-density Putnam product along I-84 / Taconic.',
+      href: '/local-movers/new-york/westchester',
+    },
+    {
+      label: 'Putnam → Westchester / NYC job markets',
+      direction: 'outbound',
+      context:
+        'Outer-collar professionals moving south; destination access is denser than origin lots.',
+      href: '/local-movers/new-york/westchester',
+    },
+    {
+      label: 'CT → Putnam cross-border pairs',
+      direction: 'inbound',
+      context:
+        'Short interstate when crossing the state line; confirm authority even when drive time looks local.',
+    },
+    {
+      label: 'Putnam → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context:
+        'Family long-distance from collar suburbs; FMCSA carriers and volume surveys required.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Lake / hill last-mile specialty moves',
+      direction: 'within',
+      context:
+        'Wooded approaches and seasonal ice — photo the driveway before quoting a pure local rate.',
+    },
+  ],
+  saratoga: [
+    {
+      label: 'Within Saratoga (Saratoga Springs ↔ Clifton Park / Ballston Spa)',
+      direction: 'within',
+      context:
+        'Tourism village density vs planned-suburb HOAs — calendars and truck type change by zone.',
+    },
+    {
+      label: 'Albany County → Saratoga north growth',
+      direction: 'inbound',
+      context:
+        'Parent Capital Region outbound along I-87 into Clifton Park and Springs product.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'Saratoga → Albany capital / government markets',
+      direction: 'outbound',
+      context:
+        'North-collar professionals into Capital multifamily and HOA suburbs.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'New England / Mid-Atlantic → Saratoga lifestyle inflows',
+      direction: 'inbound',
+      context:
+        'Tourism-adjacent and remote-work arrivals; peak race/track seasons tighten staging.',
+    },
+    {
+      label: 'Saratoga → Florida retirement corridors',
+      direction: 'outbound',
+      context:
+        'Capital-north snowbird path; multi-day interstate with inventory-driven pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Saratoga Springs tourism-season local moves',
+      direction: 'within',
+      context:
+        'Village streets and event calendars — book early around peak summer weekends.',
+    },
+  ],
+  schenectady: [
+    {
+      label: 'Within Schenectady (City core ↔ Niskayuna / Rotterdam)',
+      direction: 'within',
+      context:
+        'Urban multi-story vs first-ring suburbs — stairs and HOAs on the same county label.',
+    },
+    {
+      label: 'Albany County → Schenectady west collar',
+      direction: 'inbound',
+      context:
+        'Parent Capital metro hops west along NY-5 / I-890 into Schenectady product.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'Schenectady → Albany capital markets',
+      direction: 'outbound',
+      context:
+        'West-collar professionals into Capital core and Colonie-style suburbs.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'Saratoga / north Capital → Schenectady pairs',
+      direction: 'inbound',
+      context:
+        'Regional Capital District logistics; treat as portal-to-portal days, not pure map miles.',
+      href: '/local-movers/new-york/saratoga',
+    },
+    {
+      label: 'Schenectady → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context:
+        'Capital-collar long-distance; FMCSA carriers and volume estimates required.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'GE / tech-adjacent apartment & SFH moves',
+      direction: 'within',
+      context:
+        'Lease clusters and building packets near employment corridors — confirm management rules early.',
+    },
+  ],
+  rensselaer: [
+    {
+      label: 'Within Rensselaer (Troy ↔ East Greenbush / Rensselaer city)',
+      direction: 'within',
+      context:
+        'East-bank multi-story vs suburban SFH — river hills and stairs change crew plans.',
+    },
+    {
+      label: 'Albany County → Rensselaer east collar',
+      direction: 'inbound',
+      context:
+        'Parent Capital hops across the Hudson / I-90 into Troy and East Greenbush product.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'Rensselaer → Albany capital / west-bank markets',
+      direction: 'outbound',
+      context:
+        'East-collar professionals into Capital multifamily and state-worker suburbs.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'Massachusetts / New England → Rensselaer inflows',
+      direction: 'inbound',
+      context:
+        'I-90 corridor arrivals into east-bank stock; winter weather shapes delivery windows.',
+    },
+    {
+      label: 'Rensselaer → Florida retirement corridors',
+      direction: 'outbound',
+      context:
+        'Capital-east snowbird path; multi-day interstate with careful inventory surveys.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Troy multi-story & college-adjacent moves',
+      direction: 'within',
+      context:
+        'Stairs, tight streets, and term calendars — not an East Greenbush driveway plan.',
+    },
+  ],
+  niagara: [
+    {
+      label: 'Within Niagara (Niagara Falls ↔ North Tonawanda / Lockport)',
+      direction: 'within',
+      context:
+        'Tourism multi-story vs north-collar SFH — staging rules change by zone.',
+    },
+    {
+      label: 'Erie / Buffalo → Niagara north collar',
+      direction: 'inbound',
+      context:
+        'Parent-market hops along I-190 / NY-104 into Falls and Northtowns product.',
+      href: '/local-movers/new-york/erie',
+    },
+    {
+      label: 'Niagara → Buffalo / Erie job markets',
+      direction: 'outbound',
+      context:
+        'North-collar professionals into Buffalo core and Southtowns HOAs.',
+      href: '/local-movers/new-york/erie',
+    },
+    {
+      label: 'Canada / border-adjacent specialized moves',
+      direction: 'outbound',
+      context:
+        'Cross-border logistics need specialized authority — not a pure local NY day.',
+    },
+    {
+      label: 'Niagara → Florida snowbird exits',
+      direction: 'outbound',
+      context:
+        'Western NY→Sun Belt long-distance; multi-day interstate with inventory-driven pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Falls tourism-season multi-story moves',
+      direction: 'within',
+      context:
+        'Visitor parking and peak weekends rewrite curb plans — book early in summer.',
+    },
+  ],
+  oneida: [
+    {
+      label: 'Within Oneida (Utica ↔ Rome / New Hartford)',
+      direction: 'within',
+      context:
+        'City multi-story vs suburban belts — I-90 empty miles appear on cross-valley pairs.',
+    },
+    {
+      label: 'Onondaga / Syracuse → Oneida Mohawk Valley',
+      direction: 'inbound',
+      context:
+        'Parent Central NY hops east along I-90 into Utica–Rome product — not a Syracuse rename.',
+      href: '/local-movers/new-york/onondaga',
+    },
+    {
+      label: 'Oneida → Syracuse / Onondaga job markets',
+      direction: 'outbound',
+      context:
+        'Mohawk Valley professionals into Syracuse university and medical stock.',
+      href: '/local-movers/new-york/onondaga',
+    },
+    {
+      label: 'Albany / Capital → Oneida mid-state pairs',
+      direction: 'inbound',
+      context:
+        'I-90 corridor logistics days; treat empty miles honestly on the estimate.',
+      href: '/local-movers/new-york/albany',
+    },
+    {
+      label: 'Oneida → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context:
+        'Mid-state snowbird path; FMCSA carriers and volume estimates required.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Rome / Griffiss-adjacent local moves',
+      direction: 'within',
+      context:
+        'Corridor SFH and employment-adjacent leases — not a pure Utica walk-up plan.',
+    },
+  ],
+  broome: [
+    {
+      label: 'Within Broome (Binghamton ↔ Vestal / Endicott)',
+      direction: 'within',
+      context:
+        'University multi-story vs suburban belts — term calendars spike local demand.',
+    },
+    {
+      label: 'Pennsylvania → Binghamton Southern Tier hub',
+      direction: 'inbound',
+      context:
+        'I-81 interstate inflows into university and regional employment stock; FMCSA required.',
+    },
+    {
+      label: 'Broome → Syracuse / Central NY pairs',
+      direction: 'outbound',
+      context:
+        'Southern Tier ↔ Central NY logistics; not interchangeable with Binghamton-only rates.',
+      href: '/local-movers/new-york/onondaga',
+    },
+    {
+      label: 'Broome → NYC / downstate career moves',
+      direction: 'outbound',
+      context:
+        'Independent hub exits to elevators and street permits; destination COIs dominate arrival.',
+    },
+    {
+      label: 'Broome → Florida retirement corridors',
+      direction: 'outbound',
+      context:
+        'Southern Tier snowbird path; multi-day interstate with inventory-driven pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Binghamton University term-start / term-end moves',
+      direction: 'within',
+      context:
+        'Student and faculty calendars fill crews first — book elevators and curb windows early.',
+    },
+  ],
+  ulster: [
+    {
+      label: 'Within Ulster (Kingston ↔ New Paltz / Saugerties)',
+      direction: 'within',
+      context:
+        'River-city stock vs college-town density and Catskills-edge lots — access differs by pocket.',
+    },
+    {
+      label: 'Orange / Dutchess → Ulster west Hudson',
+      direction: 'inbound',
+      context:
+        'Parent Hudson Valley hops west into Kingston–New Paltz product along I-87 / NY-299.',
+      href: '/local-movers/new-york/orange',
+    },
+    {
+      label: 'Ulster → Orange / NYC-collar job markets',
+      direction: 'outbound',
+      context:
+        'West-bank professionals moving toward denser collar employment.',
+      href: '/local-movers/new-york/orange',
+    },
+    {
+      label: 'NYC / downstate → Ulster lifestyle & second-home inflows',
+      direction: 'inbound',
+      context:
+        'Catskills-edge and college-town arrivals; tourism peaks tighten village staging.',
+    },
+    {
+      label: 'Ulster → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context:
+        'Hudson west long-distance; FMCSA carriers and volume surveys required.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'New Paltz college-town & tourism-season moves',
+      direction: 'within',
+      context:
+        'Term calendars and weekend tourism rewrite curb plans — not a pure Kingston driveway day.',
+    },
+  ],
+  ontario: [
+    {
+      label: 'Within Ontario (Canandaigua ↔ Geneva / Victor)',
+      direction: 'within',
+      context:
+        'Finger Lakes village stock vs Victor growth HOAs — lake access and planned suburbs differ.',
+    },
+    {
+      label: 'Monroe / Rochester → Ontario south collar',
+      direction: 'inbound',
+      context:
+        'Parent Rochester metro outbound into Canandaigua–Victor product — not a Monroe rename.',
+      href: '/local-movers/new-york/monroe',
+    },
+    {
+      label: 'Ontario → Rochester / Monroe job markets',
+      direction: 'outbound',
+      context:
+        'South-collar professionals into university and medical Rochester stock.',
+      href: '/local-movers/new-york/monroe',
+    },
+    {
+      label: 'Finger Lakes tourism / second-home seasonal moves',
+      direction: 'within',
+      context:
+        'Lake-edge access and summer peaks — photo approaches and plan weekend staging carefully.',
+    },
+    {
+      label: 'Ontario → Florida retirement corridors',
+      direction: 'outbound',
+      context:
+        'Finger Lakes snowbird path; multi-day interstate with inventory-driven pricing.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      label: 'Victor growth HOA & Canandaigua village pairs',
+      direction: 'within',
+      context:
+        'Planned-community packets vs village streets — truck type and hours change by address.',
     },
   ],
 };
