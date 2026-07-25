@@ -234,9 +234,18 @@ const CORRIDORS: Record<string, string> = {
   'illinois/winnebago': 'I-39 · I-90 · US-20 · IL-251',
   'illinois/madison': 'I-55 · I-70 · I-255 · IL-3 · US-40',
   'illinois/st-clair': 'I-64 · I-255 · I-55/70 links · IL-15',
-  'illinois/sangamon': 'I-55 · I-72 · IL-4 · Clear Lake Ave corridors',
-  'illinois/champaign': 'I-57 · I-74 · US-45 · University corridors',
-  'illinois/peoria': 'I-74 · I-474 · IL-29 · US-24',
+  'illinois/sangamon': 'I-55 · I-72 · IL-4 · Clear Lake Ave · Wabash Ave · Dirksen Parkway',
+  'illinois/champaign': 'I-57 · I-74 · US-45 · University Ave · Neil Street · Prospect Avenue',
+  'illinois/peoria': 'I-74 · I-474 · IL-29 · US-24 · IL-6 · War Memorial Drive',
+  'illinois/kendall': 'US-34 · IL-47 · IL-71 · I-88 links · IL-126',
+  'illinois/dekalb': 'I-88 · IL-23 · IL-38 · IL-64 · Peace Road corridor',
+  'illinois/grundy': 'I-80 · IL-47 · IL-113 · US-6 · IL-170',
+  'illinois/kankakee': 'I-57 · US-45 · US-52 · IL-17 · IL-50 · IL-113',
+  'illinois/boone': 'I-90 · US-20 · IL-76 · IL-173 · Business 20',
+  'illinois/tazewell': 'I-74 · I-474 · IL-29 · IL-9 · IL-98 · US-24',
+  'illinois/mclean': 'I-55 · I-74 · I-39 · US-51 · Veterans Pkwy · College Avenue corridor',
+  'illinois/rock-island': 'I-74 · I-280 · I-88 · IL-5 · IL-92 · Avenue of the Cities',
+  'illinois/lasalle': 'I-80 · I-39 · US-6 · US-51 · IL-23 · IL-71 · IL-251',
 
   // ——— Colorado Core 10 ———
   'colorado/denver': 'I-25 · I-70 · I-225 · US-6 · Colfax · local arterial grid',
@@ -555,6 +564,16 @@ const CORRIDORS: Record<string, string> = {
   'ohio/mahoning': 'I-80 · I-680 · US-62 · SR-11 · Market St · Belmont Ave',
   'ohio/warren': 'I-71 · I-75 links · SR-48 · US-22/3 · SR-123 · Mason-Montgomery Rd',
   'ohio/lake': 'I-90 · SR-2 · US-20 · SR-44 · SR-91 · Vine Street corridors',
+
+  // Ohio Tier 2 Wave 1
+  'ohio/delaware': 'US-23 · I-71 · SR-315 · SR-37 · SR-750 · US-36 approaches',
+  'ohio/clermont': 'I-275 · SR-32 · US-50 · SR-125 · SR-28 · Eastgate Blvd corridors',
+  'ohio/medina': 'I-71 · I-76 · I-271 links · SR-18 · SR-3 · SR-94 approaches',
+  'ohio/portage': 'I-76 · I-80 Ohio Turnpike · SR-8 links · SR-59 · SR-14 · SR-43 approaches',
+  'ohio/greene': 'US-35 · I-675 · SR-444 · SR-235 · SR-4 approaches · Colonel Glenn Hwy corridors',
+  'ohio/fairfield': 'US-33 · US-22 · SR-37 · SR-158 · SR-188 · I-70 approaches',
+  'ohio/licking': 'I-70 · SR-161 · SR-16 · SR-79 · SR-37 · US-40 approaches',
+  'ohio/wood': 'I-75 · US-23 · US-6 · SR-25 · SR-64 · SR-582 approaches',
 
   // ——— Pennsylvania Core 12 ———
   'pennsylvania/philadelphia': 'I-95 · I-76 · I-676 · US-1 · Roosevelt Blvd · Broad Street',

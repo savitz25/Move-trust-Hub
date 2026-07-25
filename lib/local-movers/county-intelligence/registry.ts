@@ -287,9 +287,18 @@ import { mcHenryCountyIlIntelligence } from '@/lib/local-movers/county-intellige
 import { winnebagoCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/winnebago-il';
 import { madisonCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/madison-il';
 import { stClairCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/st-clair-il';
-import { sangamonCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/sangamon-il';
-import { champaignCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/champaign-il';
-import { peoriaCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/peoria-il';
+import { sangamonCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/sangamon-il';
+import { champaignCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/champaign-il';
+import { peoriaCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/peoria-il';
+import { kendallCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/kendall-il';
+import { dekalbCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/dekalb-il';
+import { grundyCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/grundy-il';
+import { kankakeeCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/kankakee-il';
+import { booneCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/boone-il';
+import { tazewellCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/tazewell-il';
+import { mcleanCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/mclean-il';
+import { rockIslandCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/rock-island-il';
+import { lasalleCountyIlTier2Intelligence } from '@/lib/local-movers/county-intelligence/illinois/lasalle-il';
 // Ohio Core 12
 import { franklinCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/franklin-oh';
 import { cuyahogaCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/cuyahoga-oh';
@@ -297,12 +306,21 @@ import { hamiltonCountyOhIntelligence } from '@/lib/local-movers/county-intellig
 import { summitCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/summit-oh';
 import { montgomeryCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/montgomery-oh';
 import { lucasCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/lucas-oh';
-import { butlerCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/butler-oh';
 import { starkCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/stark-oh';
-import { lorainCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/lorain-oh';
 import { mahoningCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/mahoning-oh';
-import { warrenCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/warren-oh';
-import { lakeCountyOhIntelligence } from '@/lib/local-movers/county-intelligence/ohio/lake-oh';
+// Ohio Tier 2 Wave 1
+import { delawareCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/delaware-tier2';
+import { warrenCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/warren-tier2';
+import { butlerCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/butler-tier2';
+import { clermontCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/clermont-tier2';
+import { lakeCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/lake-tier2';
+import { lorainCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/lorain-tier2';
+import { medinaCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/medina-tier2';
+import { portageCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/portage-tier2';
+import { greeneCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/greene-tier2';
+import { fairfieldCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/fairfield-tier2';
+import { lickingCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/licking-tier2';
+import { woodCountyOhTier2Intelligence } from '@/lib/local-movers/county-intelligence/ohio/wood-tier2';
 // Colorado Core 10
 import { denverCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/denver-co';
 import { elPasoCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/el-paso-co';
@@ -833,7 +851,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   norfolkCityVaIntelligence,
   staffordCountyVaIntelligence,
   spotsylvaniaCountyVaIntelligence,
-  // Illinois Core 12
+  // Illinois Tier 1 core 9 + Tier 2 Wave 1
   cookCountyIlIntelligence,
   duPageCountyIlIntelligence,
   lakeCountyIlIntelligence,
@@ -843,22 +861,40 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   winnebagoCountyIlIntelligence,
   madisonCountyIlIntelligence,
   stClairCountyIlIntelligence,
-  sangamonCountyIlIntelligence,
-  champaignCountyIlIntelligence,
-  peoriaCountyIlIntelligence,
-  // Ohio Core 12
+  sangamonCountyIlTier2Intelligence,
+  champaignCountyIlTier2Intelligence,
+  peoriaCountyIlTier2Intelligence,
+  kendallCountyIlTier2Intelligence,
+  dekalbCountyIlTier2Intelligence,
+  grundyCountyIlTier2Intelligence,
+  kankakeeCountyIlTier2Intelligence,
+  booneCountyIlTier2Intelligence,
+  tazewellCountyIlTier2Intelligence,
+  mcleanCountyIlTier2Intelligence,
+  rockIslandCountyIlTier2Intelligence,
+  lasalleCountyIlTier2Intelligence,
+  // Ohio Tier 1 core (8)
   franklinCountyOhIntelligence,
   cuyahogaCountyOhIntelligence,
   hamiltonCountyOhIntelligence,
   summitCountyOhIntelligence,
   montgomeryCountyOhIntelligence,
   lucasCountyOhIntelligence,
-  butlerCountyOhIntelligence,
   starkCountyOhIntelligence,
-  lorainCountyOhIntelligence,
   mahoningCountyOhIntelligence,
-  warrenCountyOhIntelligence,
-  lakeCountyOhIntelligence,
+  // Ohio Tier 2 Wave 1
+  delawareCountyOhTier2Intelligence,
+  warrenCountyOhTier2Intelligence,
+  butlerCountyOhTier2Intelligence,
+  clermontCountyOhTier2Intelligence,
+  lakeCountyOhTier2Intelligence,
+  lorainCountyOhTier2Intelligence,
+  medinaCountyOhTier2Intelligence,
+  portageCountyOhTier2Intelligence,
+  greeneCountyOhTier2Intelligence,
+  fairfieldCountyOhTier2Intelligence,
+  lickingCountyOhTier2Intelligence,
+  woodCountyOhTier2Intelligence,
   // Colorado Core 10
   denverCountyCoIntelligence,
   elPasoCountyCoIntelligence,
@@ -1607,7 +1643,7 @@ export const TN_TIER1_CORE12 = [
   'sullivan',
 ] as const;
 
-/** Illinois Tier-1 Core 12 (Chicago metro + collar + Metro East + downstate hubs). */
+/** Illinois Tier-1 Core 9 (Chicago metro + collar + Metro East + Rockford). */
 export const IL_TIER1_CORE12 = [
   'cook',
   'dupage',
@@ -1618,9 +1654,22 @@ export const IL_TIER1_CORE12 = [
   'winnebago',
   'madison',
   'st-clair',
-  'sangamon',
-  'champaign',
+] as const;
+
+/** Illinois Tier 2 Wave 1 (outer collars + central IL independents + Quad Cities / Valley). */
+export const IL_TIER2_WAVE1 = [
+  'kendall',
+  'dekalb',
+  'grundy',
+  'kankakee',
+  'boone',
   'peoria',
+  'tazewell',
+  'mclean',
+  'champaign',
+  'sangamon',
+  'rock-island',
+  'lasalle',
 ] as const;
 
 /** Colorado Tier-1 Core 10 (Denver metro + Front Range + southern hub). */
@@ -1683,20 +1732,35 @@ export const PA_TIER2_WAVE1 = [
   'schuylkill',
 ] as const;
 
-/** Ohio Tier-1 Core 12. */
-export const OH_TIER1_CORE12 = [
-  'franklin',
+/** Ohio Tier 1 core (locked) — do not rebuild in Tier 2 waves. */
+export const OH_TIER1_CORE = [
   'cuyahoga',
+  'franklin',
   'hamilton',
   'summit',
   'montgomery',
   'lucas',
-  'butler',
   'stark',
-  'lorain',
   'mahoning',
+] as const;
+
+/** @deprecated Prefer OH_TIER1_CORE — length is 8. */
+export const OH_TIER1_CORE12 = [...OH_TIER1_CORE] as const;
+
+/** Ohio Tier 2 Wave 1 — metro collars (Columbus / Cincinnati / Cleveland / Akron / Dayton / Toledo). */
+export const OH_TIER2_WAVE1 = [
+  'delaware',
   'warren',
+  'butler',
+  'clermont',
   'lake',
+  'lorain',
+  'medina',
+  'portage',
+  'greene',
+  'fairfield',
+  'licking',
+  'wood',
 ] as const;
 
 /** Michigan Tier-1 Core 10. */
