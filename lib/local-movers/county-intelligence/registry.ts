@@ -1,4 +1,4 @@
-import { alamedaCountyIntelligence } from '@/lib/local-movers/county-intelligence/alameda-ca';
+﻿import { alamedaCountyIntelligence } from '@/lib/local-movers/county-intelligence/alameda-ca';
 import { bergenCountyIntelligence } from '@/lib/local-movers/county-intelligence/bergen-nj';
 import { butteCountyIntelligence } from '@/lib/local-movers/county-intelligence/butte-ca';
 import { contraCostaCountyIntelligence } from '@/lib/local-movers/county-intelligence/contra-costa-ca';
@@ -15,7 +15,7 @@ import { mercedCountyIntelligence } from '@/lib/local-movers/county-intelligence
 import { middlesexCountyIntelligence } from '@/lib/local-movers/county-intelligence/middlesex-nj';
 import { monmouthCountyIntelligence } from '@/lib/local-movers/county-intelligence/monmouth-nj';
 import { montereyCountyIntelligence } from '@/lib/local-movers/county-intelligence/monterey-ca';
-import { morrisCountyIntelligence } from '@/lib/local-movers/county-intelligence/morris-nj';
+import { morrisCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/morris-tier2';
 import { napaCountyIntelligence } from '@/lib/local-movers/county-intelligence/napa-ca';
 import { oceanCountyIntelligence } from '@/lib/local-movers/county-intelligence/ocean-nj';
 import { orangeCountyIntelligence } from '@/lib/local-movers/county-intelligence/orange-ca';
@@ -39,8 +39,10 @@ import { yoloCountyIntelligence } from '@/lib/local-movers/county-intelligence/y
 import { atlanticCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/atlantic-nj';
 import { gloucesterCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/gloucester-nj';
 import { hunterdonCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/hunterdon-nj';
-import { mercerCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/mercer-nj';
-import { somersetCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/somerset-nj';
+import { mercerCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/mercer-tier2';
+import { camdenCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/camden-tier2';
+import { burlingtonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/burlington-tier2';
+import { somersetCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-jersey/somerset-tier2';
 import { sussexCountyNjIntelligence } from '@/lib/local-movers/county-intelligence/new-jersey/sussex-nj';
 // Florida Core 12
 import { miamiDadeCountyIntelligence } from '@/lib/local-movers/county-intelligence/florida/miami-dade-fl';
@@ -162,7 +164,7 @@ import { unionCountyNcIntelligence } from '@/lib/local-movers/county-intelligenc
 import { cabarrusCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/cabarrus-nc';
 import { gastonCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/gaston-nc';
 import { onslowCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/onslow-nc';
-// South Carolina Core 12 — intentionally NOT registered until packs are committed
+// South Carolina Core 12 ΓÇö intentionally NOT registered until packs are committed
 // (broken imports here prevent production deploys and leave VA/TN pages on stale builds).
 // Virginia Core 12
 import { fairfaxCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/fairfax-va';
@@ -533,7 +535,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   tulareCountyIntelligence,
   venturaCountyIntelligence,
   yoloCountyIntelligence,
-  // Florida Tier 1 Core (flagship metros — do not demote)
+  // Florida Tier 1 Core (flagship metros ΓÇö do not demote)
   miamiDadeCountyIntelligence,
   browardCountyIntelligence,
   palmBeachCountyIntelligence,
@@ -555,7 +557,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   stLucieCountyIntelligence,
   marionCountyIntelligence,
   escambiaCountyIntelligence,
-  // Florida Tier 2 Wave 2 (15 counties — collars, Treasure Coast, Jax collars, independents, Panhandle)
+  // Florida Tier 2 Wave 2 (15 counties ΓÇö collars, Treasure Coast, Jax collars, independents, Panhandle)
   charlotteCountyIntelligence,
   hernandoCountyIntelligence,
   citrusCountyIntelligence,
@@ -571,7 +573,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   santaRosaCountyIntelligence,
   flaglerCountyIntelligence,
   sumterCountyIntelligence,
-  // Texas Tier 1 Core 5 (flagship metros — do not demote)
+  // Texas Tier 1 Core 5 (flagship metros ΓÇö do not demote)
   harrisCountyIntelligence,
   dallasCountyIntelligence,
   tarrantCountyIntelligence,
@@ -987,11 +989,13 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   essexCountyIntelligence,
   middlesexCountyIntelligence,
   monmouthCountyIntelligence,
-  morrisCountyIntelligence,
+  morrisCountyTier2Intelligence,
   oceanCountyIntelligence,
   warrenCountyIntelligence,
-  mercerCountyNjIntelligence,
-  somersetCountyNjIntelligence,
+  mercerCountyTier2Intelligence,
+  camdenCountyTier2Intelligence,
+  burlingtonCountyTier2Intelligence,
+  somersetCountyTier2Intelligence,
   atlanticCountyNjIntelligence,
   gloucesterCountyNjIntelligence,
   hunterdonCountyNjIntelligence,
@@ -1041,8 +1045,8 @@ export const CA_TIER1_CORE12 = [
 ] as const;
 
 /**
- * @deprecated Historical name — these markets now ship under the locked Tier 2
- * content contract (parent compare, 2–4 zones, compressed relocation).
+ * @deprecated Historical name ΓÇö these markets now ship under the locked Tier 2
+ * content contract (parent compare, 2ΓÇô4 zones, compressed relocation).
  * Prefer CA_TIER2_WAVE1.
  */
 export const CA_TIER1_WAVE2 = [
@@ -1056,7 +1060,7 @@ export const CA_TIER1_WAVE2 = [
 ] as const;
 
 /**
- * California Tier 2 Wave 1 — secondary markets on the locked Tier 2 content contract
+ * California Tier 2 Wave 1 ΓÇö secondary markets on the locked Tier 2 content contract
  * (not a thinner Tier 1 clone). Same design system / BHGS / directory honesty.
  */
 export const CA_TIER2_WAVE1 = [
@@ -1070,8 +1074,8 @@ export const CA_TIER2_WAVE1 = [
 ] as const;
 
 /**
- * California Tier 2 Wave 2 — remaining worthy secondary markets on the locked Tier 2
- * content contract (parent compare, 2–4 zones, 2–3 specialized, compressed relocation).
+ * California Tier 2 Wave 2 ΓÇö remaining worthy secondary markets on the locked Tier 2
+ * content contract (parent compare, 2ΓÇô4 zones, 2ΓÇô3 specialized, compressed relocation).
  * Not rural programmatic fill. Do not rebuild Wave 1 or Core 12.
  */
 export const CA_TIER2_WAVE2 = [
@@ -1097,7 +1101,7 @@ export const CA_TIER1_ALL = [
 ] as const;
 
 /**
- * Florida Tier-1 Core 9 — flagship metros protected from Tier 2 demotion.
+ * Florida Tier-1 Core 9 ΓÇö flagship metros protected from Tier 2 demotion.
  * Includes Sarasota conceptually even if pack is not yet present.
  */
 export const FL_TIER1_CORE9 = [
@@ -1113,7 +1117,7 @@ export const FL_TIER1_CORE9 = [
 ] as const;
 
 /**
- * @deprecated Historical name — polk/brevard/pasco/volusia moved to FL_TIER2_WAVE1.
+ * @deprecated Historical name ΓÇö polk/brevard/pasco/volusia moved to FL_TIER2_WAVE1.
  * Prefer FL_TIER1_CORE9 + FL_TIER2_WAVE1.
  */
 export const FL_TIER1_CORE12 = [
@@ -1125,9 +1129,29 @@ export const FL_TIER1_CORE12 = [
 ] as const;
 
 /**
- * Florida Tier 2 Wave 1 — collars + independent secondary metros on the locked
- * Tier 2 content contract (Compared with parent, 2–4 zones, schools+hospitals only).
+ * Florida Tier 2 Wave 1 ΓÇö collars + independent secondary metros on the locked
+ * Tier 2 content contract (Compared with parent, 2ΓÇô4 zones, schools+hospitals only).
  */
+export const NJ_TIER2_WAVE1 = [
+  'morris',
+  'somerset',
+  'mercer',
+  'camden',
+  'burlington',
+] as const;
+
+/** NJ Tier 1 core counties — do not rebuild in Tier 2 waves. */
+export const NJ_TIER1_CORE = [
+  'bergen',
+  'essex',
+  'hudson',
+  'middlesex',
+  'union',
+  'passaic',
+  'monmouth',
+  'ocean',
+] as const;
+
 export const FL_TIER2_WAVE1 = [
   'polk',
   'brevard',
@@ -1144,7 +1168,7 @@ export const FL_TIER2_WAVE1 = [
 ] as const;
 
 /**
- * Florida Tier 2 Wave 2 — 15 secondary markets on the locked Tier 2 content contract.
+ * Florida Tier 2 Wave 2 ΓÇö 15 secondary markets on the locked Tier 2 content contract.
  * SWFL secondary, north-bay fringe, Nature Coast, Treasure Coast, Jax collars,
  * university/capital independents, Panhandle, Flagler, Sumter.
  * Do not rebuild Wave 1 or Tier 1 Core 9.
@@ -1177,7 +1201,7 @@ export const FL_TIER2_WAVE3 = [
 ] as const;
 
 /**
- * Texas Tier 1 Core 5 — flagship metros only.
+ * Texas Tier 1 Core 5 ΓÇö flagship metros only.
  * Do not rebuild/demote these when shipping Tier 2 waves.
  */
 export const TX_TIER1_CORE5 = [
@@ -1189,8 +1213,8 @@ export const TX_TIER1_CORE5 = [
 ] as const;
 
 /**
- * Texas Tier 2 Wave 1 — collars + independent secondary metros on the locked
- * Tier 2 content contract (Compared with parent, 2–4 zones, schools+hospitals only).
+ * Texas Tier 2 Wave 1 ΓÇö collars + independent secondary metros on the locked
+ * Tier 2 content contract (Compared with parent, 2ΓÇô4 zones, schools+hospitals only).
  */
 export const TX_TIER2_WAVE1 = [
   'fort-bend',
@@ -1208,8 +1232,8 @@ export const TX_TIER2_WAVE1 = [
 ] as const;
 
 /**
- * Texas Tier 2 Wave 2 — SA/Austin/DFW collars + independent secondary metros on the
- * locked Tier 2 content contract (Compared with parent, 2–4 zones, schools+hospitals only).
+ * Texas Tier 2 Wave 2 ΓÇö SA/Austin/DFW collars + independent secondary metros on the
+ * locked Tier 2 content contract (Compared with parent, 2ΓÇô4 zones, schools+hospitals only).
  * Do not rebuild Wave 1 or Tier 1 Core 5.
  */
 export const TX_TIER2_WAVE2 = [
@@ -1231,7 +1255,7 @@ export const TX_TIER2_WAVE2 = [
 ] as const;
 
 /**
- * @deprecated Historical name — included collars that are now TX_TIER2_WAVE1.
+ * @deprecated Historical name ΓÇö included collars that are now TX_TIER2_WAVE1.
  * Prefer TX_TIER1_CORE5 + TX_TIER2_WAVE1.
  */
 export const TX_TIER1_CORE12 = [
@@ -1610,7 +1634,7 @@ export const OK_TIER1_CORE6 = [
   'rogers',
 ] as const;
 
-/** Iowa Tier-1 Core 6 (Des Moines + CR + Quad Cities + Iowa City + Waterloo–CF + Sioux City). */
+/** Iowa Tier-1 Core 6 (Des Moines + CR + Quad Cities + Iowa City + WaterlooΓÇôCF + Sioux City). */
 export const IA_TIER1_CORE6 = [
   'polk',
   'linn',
@@ -1679,7 +1703,7 @@ export const NV_TIER1_CORE5 = [
   'nye',
 ] as const;
 
-/** New Hampshire Tier-1 Core 5 (Manchester–Nashua + Seacoast + Concord + Dover–Rochester + Upper Valley). */
+/** New Hampshire Tier-1 Core 5 (ManchesterΓÇôNashua + Seacoast + Concord + DoverΓÇôRochester + Upper Valley). */
 export const NH_TIER1_CORE5 = [
   'hillsborough',
   'rockingham',
@@ -1688,7 +1712,7 @@ export const NH_TIER1_CORE5 = [
   'grafton',
 ] as const;
 
-/** Maine Tier-1 Core 5 (Portland + York seacoast + Bangor + Augusta + Lewiston–Auburn). */
+/** Maine Tier-1 Core 5 (Portland + York seacoast + Bangor + Augusta + LewistonΓÇôAuburn). */
 export const ME_TIER1_CORE5 = [
   'cumberland',
   'york',
@@ -1735,7 +1759,7 @@ export const AK_TIER1_CORE4 = [
   'juneau',
 ] as const;
 
-/** Hawaii Tier-1 Core 4 (Oʻahu + Big Island + Maui + Kauaʻi). */
+/** Hawaii Tier-1 Core 4 (O╩╗ahu + Big Island + Maui + Kaua╩╗i). */
 export const HI_TIER1_CORE4 = ['honolulu', 'hawaii', 'maui', 'kauai'] as const;
 
 /** Montana Tier-1 Core 5 (Billings + Missoula + Bozeman + Great Falls + Helena). */

@@ -44,36 +44,36 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   burlington: {
     marketNotes:
-      'Burlington County features suburban growth (Mount Laurel, Marlton), historic towns, and proximity to Philadelphia. Moves often involve family residential, military (near Joint Base McGuire-Dix-Lakehurst), and commuter properties.',
+      'Burlington County is South Jersey’s growth arc north/east of Cherry Hill — Mount Laurel planned communities, Moorestown high-value residential, Mount Holly county-seat scale, and eastern approaches toward Joint Base McGuire-Dix-Lakehurst. Turnpike / I-295 timing and HOA soft costs define more jobs than North Jersey high-rise defaults. Sources: U.S. Census Bureau QuickFacts; FMCSA licensing database (fmcsa.gov); Move Trust Hub verified listings.',
     costs: {
       studioRange: '$450–$950',
       familyRange: '$1,700–$3,800',
       avgHourly: '$105–$160/hr for a 2-person crew',
-      note: 'Mount Holly, Mount Laurel, and Burlington City moves may reflect HOA move-in rules, I-295 traffic windows, and Philadelphia commuter timing.',
+      note: 'Planned-community COIs and long township legs (Mount Laurel ↔ eastern base approaches) widen ranges vs short Cherry Hill cul-de-sac pairs.',
     },
     tips: [
-      'Suburban HOAs and new developments often have move-in rules and parking restrictions.',
-      'Proximity to Philadelphia and I-295/I-95 can affect traffic and timing.',
-      'Military-related moves are common; confirm experience with base logistics.',
-      'Rural/eastern areas may involve longer access roads.',
-      'Verify coverage for Mount Holly, Mount Laurel, and Burlington City.',
+      'Collect Mount Laurel-style HOA COI templates at contract signing — weekday-only windows are common.',
+      'Confirm portal-to-portal terms on Turnpike / I-295 pairs.',
+      'Ask about base gate timing and ID rules for Joint Base–adjacent properties.',
+      'Photo long driveways on eastern township parcels.',
+      'If either address is in Pennsylvania, require FMCSA interstate authority on the estimate.',
     ],
   },
   camden: {
     marketNotes:
-      'Camden County includes urban Camden, suburban areas (Cherry Hill, Voorhees), and growing residential communities. Moves often involve family relocations, cross-river to Philadelphia, and suburban properties with good regional support.',
+      'Camden County is South Jersey’s Philly collar — Cherry Hill and Voorhees suburbs, Haddonfield historic streets, urban Camden multi-story stock, and bridge/PATCO logistics toward Philadelphia. It is not a North Jersey density market: Philly-direction jobs and NJ↔PA licensing matter more than GWB/PATH defaults. Sources: U.S. Census Bureau QuickFacts; FMCSA licensing database (fmcsa.gov); Move Trust Hub verified listings.',
     costs: {
       studioRange: '$450–$950',
       familyRange: '$1,700–$3,800',
       avgHourly: '$105–$160/hr for a 2-person crew',
-      note: 'Cherry Hill, Voorhees, and Camden City moves may reflect HOA rules, Benjamin Franklin Bridge traffic, and Philadelphia cross-river timing.',
+      note: 'Bridge delays and HOA certificates create outliers vs pure township cul-de-sacs; PA destinations change licensing.',
     },
     tips: [
-      'Suburban HOAs and new developments have move-in rules and parking restrictions.',
-      'Proximity to Philadelphia and bridges (e.g., Benjamin Franklin) affects traffic and timing.',
-      'Verify coverage for Cherry Hill, Voorhees, and Camden City.',
-      'Obtain multiple estimates in this competitive South Jersey market.',
-      'Confirm insurance for high-value suburban homes.',
+      'State whether any address is in Pennsylvania before comparing bids.',
+      'Collect Cherry Hill / Voorhees HOA COI packets early.',
+      'Measure Haddonfield street width — some blocks need shuttles.',
+      'Inventory stairs carefully for urban Camden multi-story homes.',
+      'Build Walt Whitman / Ben Franklin peak congestion into arrival windows.',
     ],
   },
   'cape-may': {

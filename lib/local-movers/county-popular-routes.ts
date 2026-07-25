@@ -96,6 +96,100 @@ const NJ_ROUTES: Record<string, CountyPopularRoute[]> = {
       context: 'Short local hops with loading dock rules — get management contacts in writing.',
     },
   ],
+  morris: [
+    {
+      label: 'Within Morris (Morristown ↔ Parsippany / Madison)',
+      direction: 'within',
+      context: 'Historic-town stairs vs corporate-corridor HOAs — access profiles differ by zone.',
+    },
+    {
+      label: 'Essex / Newark area → Morris suburbs',
+      direction: 'inbound',
+      context: 'Parent-density outbound to larger-lot Morris product; HOA packets are common.',
+      href: '/local-movers/new-jersey/essex',
+    },
+    {
+      label: 'Bergen / NYC side → Morris corporate suburbs',
+      direction: 'inbound',
+      context: 'Professional relos along I-80 / I-287; not a high-rise curb job.',
+      href: '/local-movers/new-jersey/bergen',
+    },
+    {
+      label: 'Morris → North Carolina / South Carolina',
+      direction: 'outbound',
+      context: 'Family long-distance; FMCSA carriers and volume estimates required.',
+      href: '/resources/routes/new-jersey-to-south-carolina',
+    },
+    {
+      label: 'Morris → Florida',
+      direction: 'outbound',
+      context: 'Snowbird and permanent relocations; book peak winter capacity early.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Western Morris larger-lot / hillside homes',
+      direction: 'within',
+      context: 'Driveway length, low wires, and winter grades — photo the approach.',
+    },
+  ],
+  camden: [
+    {
+      label: 'Within Camden (Cherry Hill ↔ Voorhees / Haddonfield)',
+      direction: 'within',
+      context: 'Suburban HOAs vs historic street width — truck type changes by town.',
+    },
+    {
+      label: 'Philadelphia → Camden County suburbs',
+      direction: 'inbound',
+      context: 'Cross-river moves; confirm PA/NJ authority when either end is out of state.',
+    },
+    {
+      label: 'Camden → Burlington growth suburbs',
+      direction: 'outbound',
+      context: 'South Jersey collar hops toward Mount Laurel / Moorestown product.',
+      href: '/local-movers/new-jersey/burlington',
+    },
+    {
+      label: 'Camden → Florida / Sun Belt',
+      direction: 'outbound',
+      context: 'Long-distance household goods; FMCSA carriers only for interstate.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Urban Camden multi-story inventory',
+      direction: 'within',
+      context: 'Stairs and limited staging — not a Cherry Hill cul-de-sac plan.',
+    },
+  ],
+  burlington: [
+    {
+      label: 'Within Burlington (Mount Laurel ↔ Moorestown / Mount Holly)',
+      direction: 'within',
+      context: 'Planned-community HOAs and high-value SFH; certificates are routine.',
+    },
+    {
+      label: 'Camden / Cherry Hill → Burlington growth suburbs',
+      direction: 'inbound',
+      context: 'Parent-collar outbound to Turnpike growth product — not a rename of Cherry Hill core.',
+      href: '/local-movers/new-jersey/camden',
+    },
+    {
+      label: 'Philadelphia → Burlington County',
+      direction: 'inbound',
+      context: 'Regional interstate when crossing PA; build I-295 / Turnpike timing into quotes.',
+    },
+    {
+      label: 'Burlington → North Carolina / Florida',
+      direction: 'outbound',
+      context: 'Family long-distance; volume estimates and FMCSA authority required.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      label: 'Eastern Burlington / Joint Base approaches',
+      direction: 'within',
+      context: 'Longer empty miles and possible gate timing — not Mount Laurel HOA defaults.',
+    },
+  ],
   atlantic: [
     {
       label: 'Atlantic City tower / casino-district moves',
