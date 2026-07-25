@@ -1,398 +1,167 @@
 import type { CountyIntelligencePack } from '@/lib/local-movers/county-intelligence/types';
+import {
+  finalizeAzTier2Pack,
+  AZ_TIER2_REG_BULLET,
+} from '@/lib/local-movers/county-intelligence/arizona/az-tier2-shared';
 
 /**
- * Hand-crafted Mohave County, Arizona moving intelligence.
- * Differentiators: northwest Arizona scale, longer regional hauls between dispersed
- * communities, desert heat, river/recreation edges — NOT Phoenix Valley or
- * Prescott elevation scripts.
+ * mohave — AZ Tier 2 Wave 1
  */
-export const mohaveCountyIntelligence: CountyIntelligencePack = {
-  stateSlug: 'arizona',
+export const mohaveCountyAzTier2Intelligence: CountyIntelligencePack = finalizeAzTier2Pack({
   countySlug: 'mohave',
   hubTitle: 'Mohave County Moving Intelligence Hub',
-  eyebrow: 'Mohave County · Northwest Arizona dispersed communities',
-  h1: 'Moving in Mohave County: Northwest Arizona Distance, Heat & Dispersed Town Logistics',
+  eyebrow: 'Mohave · Lake Havasu City / Kingman / Bullhead — NW AZ',
+  h1: 'Moving in Mohave County: Lake Havasu, Kingman & Colorado River Access',
   heroOpener:
-    'Mohave County is not a single metro with suburbs. It is northwest Arizona at scale — Kingman along the I-40/I-40 corridor spine, Lake Havasu City and Colorado River recreation edges, Bullhead City across from Laughlin, and far-flung communities separated by long desert highway miles. A “local” move often is not local at all: crew deadhead, heat exposure, and equipment availability track dispersed towns more than continuous suburban fabric. Summer heat is extreme on river and low-desert floors; wind and dust punish open staging; interstate and state-line legs toward Nevada, California, or Utah are common. This guide is for people actually moving in Mohave — longer regional hauls, heat discipline, and town-by-town access — not a recycled Valley or high-country pack.',
+    'Mohave County is northwest Arizona river and I-40 product — Lake Havasu City multi-family and recreation stock, Kingman multi-story and seat corridors, Bullhead City river-edge density, and freeflow that still peaks toward CA/NV interstate legs. Expect tourism calendars, extreme heat, and border-adjacent authority questions under one county. This guide is for people moving in Mohave as independent NW AZ — not a Phoenix rename.',
   heroCredibility:
-    'Arizona Corporation Commission (ACC) entity verification · FMCSA USDOT for interstate legs · Dispersed NW Arizona logistics · Curated directory listings',
-  collapsibleDeepContent: true,
-  sectionOrder: [
-    'whatMakesDifferent',
-    'zones',
-    'costDrivers',
-    'seasonal',
-    'specialized',
-    'relocation',
-    'resources',
-  ],
-  whatMakesDifferent: {
-    title: 'What makes moving in Mohave County different',
+    'NW AZ independent · Colorado River recreation · I-40 / CA-NV edge · ACC entity diligence · FMCSA when interstate · Curated listings',
+  majorCorridors: 'I-40 · US-93 · AZ-95 · AZ-68 · I-15 northwest edge',
+  lastReviewed: '2026-07-25',
+  parentCompare: {
+    parentLabel: 'independent NW Arizona (vs Maricopa desert defaults)',
+    parentHref: '/local-movers/arizona/maricopa',
+    title: 'Compared with independent NW Arizona (vs Maricopa desert defaults)',
     intro:
-      'Distance between towns, extreme low-desert heat, and multi-state edge logistics define estimates here — not continuous metro density.',
+      'Mohave is independent NW AZ river/recreation and I-40 product — not Maricopa Loop density and not pure rural desert freeflow alone.',
     bullets: [
       {
-        title: 'Dispersed communities break “local” pricing',
+        title: 'Drive time & corridor relationship',
         detail:
-          'Kingman, Lake Havasu City, Bullhead City, and smaller towns sit far enough apart that same-county pairs can bill like regional hauls. Always name exact origin and destination cities — never accept a vague “Mohave local” rate without miles and portal time.',
+          'Maricopa crews fight Valley Loop peaks. Mohave pairs ride I-40, US-93, and AZ-95 — freer mid-day NW freeflow, still peak-heavy on Lake Havasu tourism weekends and Kingman arterials.',
       },
       {
-        title: 'Northwest Arizona is a long-haul geography',
+        title: 'Housing stock differences',
         detail:
-          'I-40, US-93, and river corridors create long deadhead. Crew density is lower than Phoenix; equipment may stage from the nearest town, not from a central metro warehouse.',
+          'Maricopa mixes towers and master plans. Mohave mixes Havasu multi-family, Kingman multi-story, and Bullhead river-edge stock — more recreation and long empty-mile product, less continuous Valley HOA density.',
       },
       {
-        title: 'Extreme heat is a first-order operational risk',
+        title: 'Truck access & density',
         detail:
-          'River and low-desert floors run very hot for much of the year. Early starts, hydration, electronics protection, and shaded staging are safety requirements — not optional polish.',
+          'River-edge and multi-family need curb plans; CA/NV addresses flip authority; rural edges add soft shoulders.',
       },
       {
-        title: 'River / recreation markets have their own calendars',
+        title: 'Rough cost posture (qualitative)',
         detail:
-          'Lake Havasu and Colorado River edges spike with snowbird, second-home, and holiday visitor demand. Waterfront, hillside, and HOA lake communities need access plans Valley suburbs never write.',
+          'Local Mohave quotes often track secondary NW rates for driveway SFH — tourism peaks and interstate legs can price above quiet inland lots.',
       },
       {
-        title: 'State-line adjacency is routine',
+        title: 'Role difference',
         detail:
-          'Bullhead City–Laughlin, California desert approaches, and Nevada corridors mean interstate authority questions appear more often than in interior Arizona counties. Confirm FMCSA when any leg crosses a state line.',
-      },
-      {
-        title: 'Wind, dust, and monsoons affect outdoor packing',
-        detail:
-          'Open desert staging is grit-prone; monsoon bursts and dust events can pause work. Flexible dates beat rigid Saturday-only plans in windy stretches.',
-      },
-      {
-        title: 'Smaller towns and rural parcels need access surveys',
-        detail:
-          'Manufactured-home parks, long dirt drives, and limited turnaround appear frequently outside core retail corridors. Share photos before booking.',
-      },
-      {
-        title: 'ACC entity checks + FMCSA when interstate',
-        detail:
-          'Arizona does not operate a separate statewide household-goods mover license program like some states. Verify business entity status via the Arizona Corporation Commission (ACC), and confirm active FMCSA USDOT (and usually MC) authority for interstate legs. ACC registration alone is not a household-goods operating license.',
-      },
+          'Mohave is independent NW AZ river/I-40 market — not Phoenix product renamed.',
+      }
     ],
   },
-  zonesHeading: 'Mohave County zones: corridor towns, river edges & dispersed pockets',
-  zonesIntro:
-    'Plan by Kingman / I-40, Lake Havasu City, Bullhead City / river, Golden Valley / rural west, and far north or remote communities — each is a logistics island more than a continuous suburb.',
+  whatMakesDifferent: {
+    title: 'What makes moving in Mohave County different',
+    intro: 'River recreation peaks, I-40 freeflow, and CA/NV interstate risk — not interchangeable Valley boilerplate.',
+    bullets: [
+      {
+        title: 'Tourism and recreation peaks rewrite weekends',
+        detail:
+          'Lake Havasu and river towns fill crews and parking at peak season.',
+      },
+      {
+        title: 'CA / NV adjacency creates interstate legs',
+        detail:
+          'Out-of-state addresses require FMCSA authority even on short-looking hops.',
+      },
+      {
+        title: 'I-40 / US-93 freeflow is still billable',
+        detail:
+          'NW pairs freer mid-day still peak hard. Ask portal-to-portal.',
+      },
+      {
+        title: 'Extreme heat still governs summer open carries',
+        detail:
+          'Early starts outperform noon load-outs on open river-edge streets.',
+      },
+      AZ_TIER2_REG_BULLET,
+    ],
+  },
+  zonesHeading: 'Mohave zones: Lake Havasu multi-family, Kingman seat, Bullhead river edge & rural lots',
+  zonesIntro: 'Two to four sharp products — recreation multi-family, seat multi-story, river edge, and rural lots.',
   zones: [
     {
-      id: 'kingman-corridor',
-      name: 'Kingman & I-40 / US-93 corridor',
-      shortName: 'Kingman',
-      neighborhoods: [
-        'Kingman core',
-        'I-40 corridor residential',
-        'Hualapai Mountain approaches',
-        'Industrial and multi-family edges',
-        'Corridor-adjacent growth tracts',
-      ],
-      housingTypes:
-        'SFH, manufactured homes, apartments, some hillside and larger-lot edges',
-      challenges: [
-        'Freight and interstate traffic timing',
-        'Elevation transitions toward mountain edges',
-        'Heat and wind on open staging',
-        'Long deadhead to river cities',
-      ],
-      moverTips:
-        'Price Kingman ↔ Havasu or Bullhead as regional hauls, not neighborhood locals. Share mountain-approach photos when applicable. Prefer earliest summer starts.',
-      cityKeywords: [
-        'kingman',
-        'hualapai',
-        'i-40',
-        'us-93',
-        'mohave valley kingman',
-      ],
-    },
-    {
-      id: 'lake-havasu',
-      name: 'Lake Havasu City & lake recreation edge',
+      id: 'havasu',
+      name: 'Lake Havasu City multi-family & recreation stock',
       shortName: 'Lake Havasu',
-      neighborhoods: [
-        'Lake Havasu City core',
-        'Channel and lake-adjacent neighborhoods',
-        'Hillside / view lots',
-        'HOA and planned lake communities',
-        'Multi-family and snowbird corridors',
-      ],
-      housingTypes:
-        'SFH, lake-view custom, condos, townhomes, seasonal/second-home stock',
-      challenges: [
-        'Hillside grades and limited turnaround',
-        'HOA and gate rules near lake communities',
-        'Extreme heat and reflective waterfront staging',
-        'Snowbird and holiday demand spikes',
-      ],
-      moverTips:
-        'Treat lake-view and hillside addresses as access-first jobs. Collect HOA packets early. Book snowbird season and holiday weekends far ahead.',
-      cityKeywords: [
-        'lake havasu',
-        'lake havasu city',
-        'havasu',
-        'london bridge',
-      ],
+      neighborhoods: ["Lake Havasu City","recreation multi-family","waterfront edges"],
+      housingTypes: 'Multi-family, SFH, tourism stock',
+      challenges: ["Tourism peaks","Elevators/stairs","Heat staging"],
+      moverTips: 'Book around tourism peaks; collect building rules.',
+      cityKeywords: ["lake havasu"],
     },
     {
-      id: 'bullhead-river',
-      name: 'Bullhead City, Mohave Valley & river corridor',
-      shortName: 'Bullhead / River',
-      neighborhoods: [
-        'Bullhead City',
-        'Mohave Valley',
-        'River-adjacent residential',
-        'Fort Mohave edges',
-        'Cross-river Laughlin-oriented corridors',
-      ],
-      housingTypes:
-        'SFH, manufactured homes, multi-family, retirement and casino-economy rentals',
-      challenges: [
-        'Extreme summer heat on the river floor',
-        'State-line and casino-corridor traffic patterns',
-        'Mixed park and older-grid access',
-        'Interstate authority when Nevada addresses appear',
-      ],
-      moverTips:
-        'Confirm whether either address is AZ-only or crosses into Nevada. Plan dawn starts May–September. Inventory carefully for heat-sensitive goods.',
-      cityKeywords: [
-        'bullhead',
-        'bullhead city',
-        'mohave valley',
-        'fort mohave',
-        'laughlin',
-      ],
+      id: 'kingman',
+      name: 'Kingman multi-story & I-40 seat corridors',
+      shortName: 'Kingman',
+      neighborhoods: ["Kingman","downtown edges","I-40 multi-family"],
+      housingTypes: 'Multi-story, multi-unit, older SFH',
+      challenges: ["Stairs","Street parking","I-40 freeflow"],
+      moverTips: 'Inventory stairs; plan temporary no-parking.',
+      cityKeywords: ["kingman"],
     },
     {
-      id: 'golden-valley-rural-west',
-      name: 'Golden Valley, Dolan Springs edge & rural west',
-      shortName: 'Golden Valley / Rural',
-      neighborhoods: [
-        'Golden Valley',
-        'Dolan Springs edge',
-        'Rural large-lot parcels',
-        'Long private drives',
-        'Dispersed unincorporated homes',
-      ],
-      housingTypes:
-        'Manufactured and modular, larger-lot SFH, off-grid-leaning and rural stock',
-      challenges: [
-        'Long dirt or imperfect approaches',
-        'Limited truck turnaround and soft shoulders',
-        'Lower crew density and longer response times',
-        'Wind, dust, and heat on open lots',
-      ],
-      moverTips:
-        'Send driveway surface, width, and gate photos. Ask about shuttle plans. Do not assume Kingman “local” rates cover far rural parcels without mileage.',
-      cityKeywords: [
-        'golden valley',
-        'dolan springs',
-        'rural mohave',
-        'unincorporated mohave',
-      ],
+      id: 'bullhead',
+      name: 'Bullhead City river-edge density',
+      shortName: 'Bullhead',
+      neighborhoods: ["Bullhead City","river multi-family","AZ-95 corridors"],
+      housingTypes: 'Multi-family, SFH, mixed stock',
+      challenges: ["River freeflow","NV adjacency","Heat staging"],
+      moverTips: 'Clarify NV second addresses; prefer early starts.',
+      cityKeywords: ["bullhead city"],
     },
     {
-      id: 'colorado-city-north',
-      name: 'Colorado City, far north & remote Mohave pockets',
-      shortName: 'Far North / Remote',
-      neighborhoods: [
-        'Colorado City area',
-        'Far north corridor communities',
-        'Remote highway-adjacent parcels',
-        'Utah-line approaches (as applicable)',
-        'Low-density residential clusters',
-      ],
-      housingTypes:
-        'Community SFH, larger-lot and rural product, limited multi-unit',
-      challenges: [
-        'Very long deadhead from Kingman or river crews',
-        'Limited equipment availability',
-        'Weather and highway-only access risk',
-        'Interstate adjacency toward Utah',
-      ],
-      moverTips:
-        'Treat far-north jobs as regional or long-distance style planning. Confirm crew origin, overnight needs, and FMCSA if any Utah address is involved.',
-      cityKeywords: [
-        'colorado city',
-        'centennial park',
-        'far north mohave',
-        'utah line',
-      ],
-    },
-    {
-      id: 'havasu-outlying',
-      name: 'Desert Hills, Topock edge & outlying river/desert',
-      shortName: 'Outlying river/desert',
-      neighborhoods: [
-        'Desert Hills',
-        'Topock / Golden Shores edges',
-        'Parker Strip approaches (as applicable)',
-        'Highway-adjacent desert tracts',
-        'Recreation-oriented parcels',
-      ],
-      housingTypes:
-        'Manufactured homes, vacation/recreation stock, larger-lot desert SFH',
-      challenges: [
-        'Longer hauls from primary town cores',
-        'Recreation traffic on peak weekends',
-        'Heat and limited shade for staging',
-        'Variable road quality into parcels',
-      ],
-      moverTips:
-        'Price outlying river/desert pairs with honest deadhead. Share approach photos. Avoid holiday river weekends when possible.',
-      cityKeywords: [
-        'desert hills',
-        'topock',
-        'golden shores',
-        'parker strip',
-        'outlying havasu',
-      ],
-    },
+      id: 'rural-lots',
+      name: 'Golden Valley / rural NW lots',
+      shortName: 'Rural lots',
+      neighborhoods: ["Golden Valley","rural tracts"],
+      housingTypes: 'Larger lots, rural approaches',
+      challenges: ["Empty miles","Soft shoulders"],
+      moverTips: 'Survey approaches; early starts beat heat peaks.',
+      cityKeywords: ["golden valley","rural mohave"],
+    }
   ],
-  costDrivers: {
-    title: 'Pricing & cost drivers inside Mohave County',
-    intro:
-      'Distance between towns, heat pacing, hillside/lake access, and interstate edges move the quote more than square footage alone — this is dispersed northwest Arizona logistics.',
-    drivers: [
-      {
-        title: 'Inter-town deadhead and regional “locals”',
-        detail:
-          'Kingman ↔ Lake Havasu ↔ Bullhead pairs can burn hours of empty or loaded highway time. Portal-to-portal language matters.',
-      },
-      {
-        title: 'Extreme heat labor and scheduling',
-        detail:
-          'Safe summer pacing may require earlier starts, extra crew, or multi-day plans on large inventories.',
-      },
-      {
-        title: 'Hillside / lake / HOA access',
-        detail:
-          'Grades, gates, and limited staging on Havasu view lots add carry labor that flat desert lots do not.',
-      },
-      {
-        title: 'Rural and manufactured-park access',
-        detail:
-          'Long drives, soft surfaces, and tight park streets require surveys and sometimes smaller equipment.',
-      },
-      {
-        title: 'Interstate and multi-state edges',
-        detail:
-          'Nevada/California/Utah legs change authority, pricing, and transit assumptions — confirm FMCSA before deposit.',
-      },
-    ],
-    ranges: [
-      {
-        label: 'Studio / 1BR (same town, simple access)',
-        value: '$350–$1,200+',
-        note: 'Higher with heat peaks, parks, or hillside carries',
-      },
-      {
-        label: '2–3BR house / apartment (same town)',
-        value: '$1,000–$3,400+',
-        note: 'Lake-view and HOA access trend up',
-      },
-      {
-        label: '3–4+ BR or inter-town / regional Mohave',
-        value: '$1,900–$6,500+',
-        note: 'Cross-town desert hauls and remote jobs price highest',
-      },
-      {
-        label: 'Typical 2-person crew rate',
-        value: '$95–$170+/hr',
-        note: 'Portal-to-portal; long deadhead may bill as travel or flat regional',
-      },
-    ],
-  },
-  seasonal: {
-    title: 'Seasonal, heat, wind & snowbird-calendar intelligence',
-    intro:
-      'Extreme summer heat, snowbird and recreation peaks, and wind/dust events set demand more than school-suburb calendars alone.',
-    items: [
-      {
-        title: 'Extreme summer heat (primary constraint)',
-        detail:
-          'River and low-desert afternoons can make open staging unsafe. Prefer earliest morning starts roughly May–September; protect electronics and sealed goods.',
-      },
-      {
-        title: 'Snowbird and second-home windows',
-        detail:
-          'Fall through spring fills lake and river communities with seasonal arrivals and departures. Book early for known seasonal transitions.',
-      },
-      {
-        title: 'Holiday and recreation weekends',
-        detail:
-          'Lake and river holiday peaks crush access and lodging-adjacent curb space. Mid-week moves save clock time.',
-      },
-      {
-        title: 'Wind and dust events',
-        detail:
-          'High winds can pause outdoor packing and grit-contaminate inventory. Keep flexible date language.',
-      },
-      {
-        title: 'Best value: mid-week dawn starts outside holiday crush',
-        detail:
-          'Avoid major river holiday weekends and month-end Saturday peaks when possible.',
-      },
-    ],
-  },
   specialized: [
     {
-      id: 'dispersed-nw-regional-hauls',
-      title: 'Dispersed northwest Arizona regional haul module',
-      intro:
-        'Mohave’s core logistics problem is distance between communities — treat multi-town pairs as regional jobs with honest deadhead.',
-      bullets: [
-        'Never accept a single “Mohave local” price without exact cities, loaded miles, and portal-time rules.',
-        'Ask where the crew and truck stage overnight when origin and destination are hours apart.',
-        'Confirm fuel, travel, and multi-day labor policies in writing for Kingman–Havasu–Bullhead triangles.',
-        'Build heat contingency into long highway days — early departures matter more than on short metro hops.',
-        'When Nevada, California, or Utah addresses appear, verify FMCSA USDOT/MC before any deposit.',
-      ],
+      id: 'river-tourism',
+      title: 'Colorado River recreation module',
+      intro: 'Tourism peaks dominate Havasu and river access.',
+      bullets: ["Book and stage around major recreation weekends.","Confirm multi-family packets early."],
     },
     {
-      id: 'river-heat-recreation-access',
-      title: 'River heat, recreation & lake-access module',
-      intro:
-        'Lake Havasu and Colorado River edges combine extreme heat with hillside, HOA, and visitor-calendar constraints.',
-      bullets: [
-        'Share driveway grade, gate, and turnaround photos for lake-view and hillside homes.',
-        'Collect HOA COI and parking rules early for planned lake communities.',
-        'Prefer dawn starts; discuss heat policies and crew pacing for summer inventories.',
-        'Avoid peak holiday river weekends when curb and bridge-adjacent traffic explode.',
-        'Protect inventory from dust and sun; limit long outdoor sits on reflective surfaces.',
-      ],
+      id: 'ca-nv-edge',
+      title: 'CA / NV interstate edge module',
+      intro: 'Short map miles can still be interstate jobs.',
+      bullets: ["Match ACC diligence vs FMCSA to exact addresses.","Do not recycle Phoenix day rates for river product."],
     },
+    {
+      id: 'i40-freeflow',
+      title: 'I-40 / US-93 freeflow',
+      intro: 'NW pairs still peak hard on arterials.',
+      bullets: ["Price portal-to-portal honestly.","Build buffers for tourism and freight peaks."],
+    }
   ],
   relocation: {
-    title: 'Considering a move to Mohave County?',
+    title: 'Schools & hospitals for relocators',
     intro:
-      'Northwest Arizona living is town-by-town: Kingman corridor practicality, Lake Havasu recreation lifestyle, Bullhead river economy, or true rural dispersion. Pick the community first — distances between them are real lifestyle decisions.',
+      'Compressed secondary-market notes â€” primary districts and acute-care access that affect move-in.',
     modules: [
       {
         id: 'schools',
         title: 'Schools & education',
-        intro:
-          'Mohave spans multiple districts and communities (e.g., Kingman Unified, Lake Havasu Unified, Colorado River Union / Bullhead-area schools, and others). Match every listing address to the correct district.',
+        intro: 'Mohave families compare Lake Havasu, Kingman, Bullhead City, and related district feeders — verify address boundaries.',
         bullets: [
           {
-            title: 'Town-first district check',
+            title: 'District-first shopping',
             detail:
-              'Do not assume county-wide feeders. Rural and unincorporated addresses need official boundary confirmation.',
+              'Use Arizona DOE data and district maps; do not assume a city name equals one feeder pattern.',
           },
           {
-            title: 'Research tools',
+            title: 'Capacity & calendars',
             detail:
-              'District sites and Arizona Department of Education data should lead; third-party rankings are secondary only.',
-          },
-          {
-            title: 'Distance to activities',
-            detail:
-              'In dispersed towns, sports and extracurriculars may mean long drives — factor family logistics, not only classroom metrics.',
-          },
-          {
-            title: 'Seasonal population swings',
-            detail:
-              'Snowbird and tourism markets can change traffic and housing pressure even when school calendars are stable.',
+              'Growth pockets, university towns, and military markets can tighten housing near school and term calendars.',
           },
         ],
       },
@@ -401,176 +170,66 @@ export const mohaveCountyIntelligence: CountyIntelligencePack = {
         title: 'Hospitals & healthcare',
         bullets: [
           {
-            title: 'Community acute-care anchors',
-            detail:
-              'Kingman Regional Medical Center, Havasu Regional Medical Center, Western Arizona Regional Medical Center (Bullhead area), and other campuses serve different poles of the county — map ER drive times from your exact town.',
+            title: 'Acute-care anchors',
+            detail: 'Havasu Regional, Kingman Regional, and Western Arizona Regional (Bullhead) anchor acute care; map peak AZ-95 / I-40 times for ER access.',
           },
           {
-            title: 'Specialty travel reality',
+            title: 'Peak drive times',
             detail:
-              'Some specialties require travel to larger metros (Las Vegas, Phoenix, or elsewhere). Confirm networks before relocating mid-treatment.',
-          },
-          {
-            title: 'Relocator tip',
-            detail:
-              'Transfer records early; summer heat and long highway distances affect appointment reliability.',
+              'Map ER access at commute peaks, not only off-hour freeflow.',
           },
         ],
       },
+    ],
+  },
+  costDrivers: {
+    title: 'Pricing & cost drivers',
+    intro: 'Tourism peaks, multi-family access, interstate authority risk, and heat pacing often matter more than raw miles.',
+    drivers: [
       {
-        id: 'housing',
-        title: 'Housing & cost of living',
-        bullets: [
-          {
-            title: 'Price ladder by town',
-            detail:
-              'Lake-view Havasu product, river-floor Bullhead stock, Kingman corridor homes, and rural parcels price and insure differently. Compare cooling costs and insurance, not sticker price alone.',
-          },
-          {
-            title: 'Manufactured and seasonal stock',
-            detail:
-              'Manufactured-home parks and second-home inventory are common. Lease rules, park access, and seasonal occupancy affect move-day logistics.',
-          },
-          {
-            title: 'Desert utility reality',
-            detail:
-              'Peak summer cooling is a major budget line on river and low-desert floors. Factor utilities into “affordable.”',
-          },
-        ],
+        title: 'Corridor freeflow',
+        detail: 'Peak windows inflate hourly bills on short-looking pairs.',
       },
       {
-        id: 'town-fit',
-        title: 'Town fit by lifestyle',
-        bullets: [
-          {
-            title: 'Kingman / corridor',
-            detail:
-              'Practical highway-hub living with freight and travel influence — more “work and through-traffic” than lake lifestyle.',
-          },
-          {
-            title: 'Lake Havasu City',
-            detail:
-              'Recreation, water, and view-lot living — with heat, HOA access, and visitor-calendar intensity.',
-          },
-          {
-            title: 'Bullhead / river',
-            detail:
-              'River economy and state-line adjacency — extreme heat and multi-state daily life patterns.',
-          },
-          {
-            title: 'Rural / Golden Valley / remote',
-            detail:
-              'Space and lower density — with long service distances and self-sufficiency expectations.',
-          },
-        ],
+        title: 'Access soft costs',
+        detail: 'Building packets, stairs, or last-mile shuttles add labor hours.',
       },
       {
-        id: 'jobs',
-        title: 'Jobs & commute',
-        bullets: [
-          {
-            title: 'Local anchors',
-            detail:
-              'Healthcare, tourism/hospitality, retail, government, trades, logistics/freight, and casino-adjacent employment near the river — not Phoenix metro spillover.',
-          },
-          {
-            title: 'Inter-town commute rarity',
-            detail:
-              'Many people live and work in the same town because highway distances are real. Choosing housing far from the job is a daily desert drive commitment.',
-          },
-          {
-            title: 'Multi-state labor sheds',
-            detail:
-              'Some river households work patterns that touch Nevada. Factor border timing and interstate realities into lifestyle fit.',
-          },
-        ],
+        title: 'Long empty-mile edges',
+        detail: 'Far pockets price differently from seat suburbs.',
+      },
+    ],
+    ranges: [
+      { label: 'Studio / 1-BR', value: '$450â€“$1,200+' },
+      { label: '3â€“4 BR home', value: '$1,600â€“$4,200+', note: 'Higher with access friction' },
+      { label: '2-person crew', value: '$115â€“$185+/hr' },
+    ],
+  },
+  seasonal: {
+    title: 'Seasonal & calendar notes',
+    intro: 'Recreation summers, school years, and extreme heat reshape demand by pocket.',
+    items: [
+      {
+        title: 'Late spring â€“ early fall',
+        detail: 'Family closings and peak calendars fill Saturday crews first.',
       },
       {
-        id: 'lifestyle',
-        title: 'Lifestyle & climate',
-        bullets: [
-          {
-            title: 'Low-desert and river climate',
-            detail:
-              'Very hot summers, mild winters, high sun, and windy stretches define daily life and move planning.',
-          },
-          {
-            title: 'Recreation identity',
-            detail:
-              'Boating, lake, and river culture are central around Havasu and the Colorado — visit in peak heat and on a quiet weekday before deciding.',
-          },
-          {
-            title: 'Dispersion mindset',
-            detail:
-              'Services, friends, and specialists may be a long drive away. Comfort with highway miles is part of Mohave fit.',
-          },
-        ],
+        title: 'Institutional & weather windows',
+        detail:
+          'School, university, PCS, tourism, or storm seasons can outrank pure weekend preference.',
       },
     ],
   },
   resources: {
-    title: 'Practical Mohave County resources',
+    title: 'Useful resources',
     intro:
-      'Official links and verification notes — heat, highway conditions, and town rules change; verify before move day.',
+      'Official links first; directory listings are independent. Verify Arizona Corporation Commission (ACC) entity status for in-state Arizona moves and FMCSA for interstate legs.',
     items: [
       {
-        label: 'Mohave County',
-        href: 'https://www.mohave.gov/',
-        note: 'County services hub',
-        external: true,
+        label: 'independent NW Arizona (vs Maricopa desert defaults) movers (parent contrast)',
+        href: '/local-movers/arizona/maricopa',
       },
-      {
-        label: 'City of Kingman',
-        href: 'https://www.cityofkingman.gov/',
-        external: true,
-      },
-      {
-        label: 'City of Lake Havasu City',
-        href: 'https://www.lhcaz.gov/',
-        external: true,
-      },
-      {
-        label: 'City of Bullhead City',
-        href: 'https://www.bullheadcity.com/',
-        external: true,
-      },
-      {
-        label: 'ADOT — road conditions & construction',
-        href: 'https://azdot.gov/',
-        note: 'Check I-40, US-93, and river corridor delays',
-        external: true,
-      },
-      {
-        label: 'National Weather Service — Las Vegas office (regional desert coverage)',
-        href: 'https://www.weather.gov/vef/',
-        note: 'Heat, wind, and dust alerts for move planning',
-        external: true,
-      },
-      {
-        label: 'Arizona Corporation Commission (ACC) — entity search',
-        href: 'https://www.azcc.gov/',
-        note: 'Verify business entity status (not a household-goods mover license)',
-        external: true,
-      },
-      {
-        label: 'FMCSA SAFER — interstate authority',
-        href: 'https://safer.fmcsa.dot.gov/',
-        note: 'Required when the move crosses state lines',
-        external: true,
-      },
-      {
-        label: 'Move Trust Hub — verify a USDOT',
-        href: '/verify-dot',
-        note: 'Cross-check interstate licensing before deposits',
-      },
-      {
-        label: 'Free moving calculator',
-        href: '/moving-calculator',
-        note: 'Inventory-based volume for local or long-distance',
-      },
+
     ],
   },
-  directoryHint:
-    'Filter listings by zone (Kingman, Lake Havasu, Bullhead/River, Golden Valley/Rural, Far North, Outlying river/desert) when available. Confirm inter-town mileage, heat-aware starts, and ACC + FMCSA checks — not continuous metro assumptions.',
-  lastReviewed: '2026-07-23',
-};
+});
