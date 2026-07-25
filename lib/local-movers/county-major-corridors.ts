@@ -130,6 +130,16 @@ const CORRIDORS: Record<string, string> = {
   'georgia/richmond': 'I-20 · I-520 · US-1 · Gordon Highway · Washington Road',
   'georgia/muscogee': 'I-185 · US-27 · US-280 · Victory Drive · Manchester Expressway',
 
+  // Georgia Tier 2 Wave 1
+  'georgia/fayette': 'GA-54 · GA-74 · GA-85 · I-85 (west approaches) · US-29 approaches',
+  'georgia/douglas': 'I-20 · GA-5 · GA-92 · US-78 · Chapel Hill Road corridors',
+  'georgia/coweta': 'I-85 · US-29 · GA-34 · GA-16 · GA-154 approaches',
+  'georgia/paulding': 'US-278 · GA-61 · GA-92 · GA-120 approaches · I-20 (south approaches)',
+  'georgia/columbia': 'I-20 · Washington Road · Belair Road · Furys Ferry Road · Columbia Road corridors',
+  'georgia/houston': 'I-75 · GA-247 · GA-96 · US-41 · Russell Parkway corridors',
+  'georgia/bibb': 'I-75 · I-16 · US-80 · US-41 · Eisenhower Parkway · Vineville corridors',
+  'georgia/clarke': 'US-78 · US-29 · GA-10 Loop · GA-15 · Atlanta Highway corridors',
+
   // ——— New York ———
   'new-york/kings':
     'I-278 (BQE) · Belt Parkway · Gowanus Expressway · Prospect Expressway · Ocean Pkwy',

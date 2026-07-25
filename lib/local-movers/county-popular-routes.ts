@@ -3098,6 +3098,246 @@ const GA_ROUTES: Record<string, CountyPopularRoute[]> = {
         'Post-service and corporate moves north to the capital region; plan full inventory and valuation coverage.',
     },
   ],
+  fayette: [
+    {
+      label: 'Within Fayette (Peachtree City ↔ Fayetteville)',
+      direction: 'within',
+      context: 'Planned path-city geometry vs seat stock — HOA packets rewrite truck size.',
+    },
+    {
+      label: 'Fulton / Atlanta core → Fayette planned south-metro',
+      direction: 'inbound',
+      context: 'Parent metro outbound into Peachtree City product — not a Henry I-75 rename.',
+      href: '/local-movers/georgia/fulton',
+    },
+    {
+      label: 'Fayette → Fulton / Perimeter job markets',
+      direction: 'outbound',
+      context: 'South-metro professionals into denser intown stock; empty miles matter.',
+      href: '/local-movers/georgia/fulton',
+    },
+    {
+      label: 'Fayette ↔ Henry south-collar pairs',
+      direction: 'within',
+      context: 'Distinct south collars — path-city logistics vs I-75 growth freeflow.',
+      href: '/local-movers/georgia/henry',
+    },
+    {
+      label: 'Northeast → Fayette planned communities',
+      direction: 'inbound',
+      context: 'School-focused inflows into master-plan SFH; FMCSA for interstate legs.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+  ],
+  douglas: [
+    {
+      label: 'Within Douglas (Douglasville ↔ I-20 growth villages)',
+      direction: 'within',
+      context: 'West-metro seat density vs HOA growth — I-20 peaks rewrite short pairs.',
+    },
+    {
+      label: 'Cobb → Douglas I-20 west collar',
+      direction: 'inbound',
+      context: 'Parent northwest metro outbound into Douglasville product — not a Cobb rename.',
+      href: '/local-movers/georgia/cobb',
+    },
+    {
+      label: 'Douglas → Cobb / Fulton job markets',
+      direction: 'outbound',
+      context: 'West-corridor professionals into denser northwest and intown stock.',
+      href: '/local-movers/georgia/cobb',
+    },
+    {
+      label: 'Douglas ↔ Paulding west-metro pairs',
+      direction: 'within',
+      context: 'I-20 west vs US-278 northwest growth — distinct empty-mile profiles.',
+      href: '/local-movers/georgia/paulding',
+    },
+    {
+      label: 'Midwest → Douglas County west-metro suburbs',
+      direction: 'inbound',
+      context: 'Sun Belt exits into I-20 west housing; inventory surveys for SFH volume.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+  ],
+  coweta: [
+    {
+      label: 'Within Coweta (Newnan ↔ Senoia / I-85 growth)',
+      direction: 'within',
+      context: 'Seat multi-story vs film-village and outer HOA growth.',
+    },
+    {
+      label: 'Fulton → Coweta I-85 south outer collar',
+      direction: 'inbound',
+      context: 'Parent metro outbound into Newnan product — not a Fulton rename.',
+      href: '/local-movers/georgia/fulton',
+    },
+    {
+      label: 'Coweta → Fulton / Perimeter job markets',
+      direction: 'outbound',
+      context: 'SW outer-collar professionals into denser metro stock.',
+      href: '/local-movers/georgia/fulton',
+    },
+    {
+      label: 'Senoia film / village seasonal moves',
+      direction: 'within',
+      context: 'Production and tourism windows can tighten small-town curb plans.',
+    },
+    {
+      label: 'Northeast → Coweta outer SW growth',
+      direction: 'inbound',
+      context: 'School and space-driven inflows; FMCSA for interstate legs.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+  ],
+  paulding: [
+    {
+      label: 'Within Paulding (Dallas ↔ Hiram / growth villages)',
+      direction: 'within',
+      context: 'West-northwest outer growth — HOA packets and US-278 freeflow.',
+    },
+    {
+      label: 'Cobb → Paulding west-northwest collar',
+      direction: 'inbound',
+      context: 'Parent northwest metro outbound into Hiram–Dallas product — not a Cobb rename.',
+      href: '/local-movers/georgia/cobb',
+    },
+    {
+      label: 'Paulding → Cobb / Fulton job markets',
+      direction: 'outbound',
+      context: 'Outer-collar professionals into denser northwest stock.',
+      href: '/local-movers/georgia/cobb',
+    },
+    {
+      label: 'Paulding ↔ Douglas west-metro pairs',
+      direction: 'within',
+      context: 'US-278 growth vs I-20 west seat — distinct corridor profiles.',
+      href: '/local-movers/georgia/douglas',
+    },
+    {
+      label: 'Midwest → Paulding County space & schools',
+      direction: 'inbound',
+      context: 'Family Sun Belt moves into outer west-northwest SFH.',
+      href: '/resources/routes/illinois-to-georgia',
+    },
+  ],
+  columbia: [
+    {
+      label: 'Within Columbia (Evans ↔ Martinez / growth villages)',
+      direction: 'within',
+      context: 'CSRA north-collar HOAs — not Augusta core multi-story access.',
+    },
+    {
+      label: 'Richmond / Augusta core → Columbia north collar',
+      direction: 'inbound',
+      context: 'Parent city outbound into Evans–Martinez product — not a Richmond rename.',
+      href: '/local-movers/georgia/richmond',
+    },
+    {
+      label: 'Columbia → Augusta medical / job corridors',
+      direction: 'outbound',
+      context: 'North-collar professionals into denser Richmond stock; portal-to-portal peaks.',
+      href: '/local-movers/georgia/richmond',
+    },
+    {
+      label: 'Columbia → South Carolina border pairs',
+      direction: 'outbound',
+      context: 'Short-looking border hops still need FMCSA authority.',
+    },
+    {
+      label: 'Atlanta metro → CSRA / Columbia County',
+      direction: 'inbound',
+      context: 'I-20 east family and school-driven moves into north-collar suburbs.',
+    },
+  ],
+  houston: [
+    {
+      label: 'Within Houston (Warner Robins ↔ base-adjacent multi-family)',
+      direction: 'within',
+      context: 'PCS windows spike apartment turnover — not a pure SFH suburban day.',
+    },
+    {
+      label: 'Robins AFB PCS inbound / outbound cycles',
+      direction: 'inbound',
+      context: 'Order calendars create multi-family clusters; book early on peak PCS months.',
+    },
+    {
+      label: 'Houston ↔ Bibb / Macon regional pairs',
+      direction: 'outbound',
+      context: 'Middle GA hub hops — not interchangeable with Warner Robins-only rates.',
+      href: '/local-movers/georgia/bibb',
+    },
+    {
+      label: 'Atlanta metro → Warner Robins / Houston County',
+      direction: 'inbound',
+      context: 'I-75 south military-regional inflows; empty miles change pricing vs metro collar hops.',
+    },
+    {
+      label: 'Houston → Florida / Sun Belt exits',
+      direction: 'outbound',
+      context: 'Military and family long-distance; FMCSA carriers only for interstate.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+  ],
+  bibb: [
+    {
+      label: 'Within Bibb (Macon core ↔ medical/university corridors)',
+      direction: 'within',
+      context: 'Multi-story and campus-adjacent stock — stairs and curb rules dominate.',
+    },
+    {
+      label: 'Houston / Warner Robins → Macon hub',
+      direction: 'inbound',
+      context: 'Middle GA regional inflows into medical/university product — not a Houston rename.',
+      href: '/local-movers/georgia/houston',
+    },
+    {
+      label: 'Bibb → Houston / Robins AFB pairs',
+      direction: 'outbound',
+      context: 'Hub-to-base logistics; PCS calendars can still affect destination multi-family.',
+      href: '/local-movers/georgia/houston',
+    },
+    {
+      label: 'Atlanta metro → Macon / Bibb County',
+      direction: 'inbound',
+      context: 'I-75 south regional hub inflows; not an Atlanta collar HOA script.',
+    },
+    {
+      label: 'Bibb → Florida / coastal Georgia exits',
+      direction: 'outbound',
+      context: 'I-75 / I-16 long-distance; inventory-driven interstate pricing.',
+    },
+  ],
+  clarke: [
+    {
+      label: 'Within Clarke (Downtown Athens ↔ campus multi-family)',
+      direction: 'within',
+      context: 'UGA term calendars spike student multi-family — not pure suburban SFH rates.',
+    },
+    {
+      label: 'Gwinnett / Atlanta collar → Athens UGA hub',
+      direction: 'inbound',
+      context: 'Metro outbound into independent university product — not a Gwinnett rename.',
+      href: '/local-movers/georgia/gwinnett',
+    },
+    {
+      label: 'UGA term-start / term-end moves',
+      direction: 'within',
+      context: 'Student and faculty calendars fill crews first — book curb windows early.',
+    },
+    {
+      label: 'Clarke → Atlanta job markets',
+      direction: 'outbound',
+      context: 'University exits into denser metro stock; multi-hour same-state logistics.',
+      href: '/local-movers/georgia/fulton',
+    },
+    {
+      label: 'Northeast → Athens / Clarke County',
+      direction: 'inbound',
+      context: 'University and professional inflows; FMCSA for interstate legs.',
+      href: '/resources/routes/new-jersey-to-georgia',
+    },
+  ],
 };
 
 /** New York — borough density, LI/Westchester suburbs, upstate metros (not NYC clones). */

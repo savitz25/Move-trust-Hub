@@ -124,14 +124,24 @@ import { fultonCountyIntelligence } from '@/lib/local-movers/county-intelligence
 import { gwinnettCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/gwinnett-ga';
 import { cobbCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/cobb-ga';
 import { dekalbCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/dekalb-ga';
-import { cherokeeCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/cherokee-ga';
-import { forsythCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/forsyth-ga';
 import { claytonCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/clayton-ga';
-import { henryCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/henry-ga';
-import { hallCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/hall-ga';
 import { chathamCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/chatham-ga';
 import { richmondCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/richmond-ga';
 import { muscogeeCountyIntelligence } from '@/lib/local-movers/county-intelligence/georgia/muscogee-ga';
+// Georgia Tier 2 Wave 1
+import { cherokeeCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/cherokee-tier2';
+import { forsythCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/forsyth-tier2';
+import { henryCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/henry-tier2';
+import { fayetteCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/fayette-tier2';
+import { douglasCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/douglas-tier2';
+import { cowetaCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/coweta-tier2';
+import { hallCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/hall-tier2';
+import { pauldingCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/paulding-tier2';
+import { columbiaCountyGaTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/columbia-tier2';
+import { houstonCountyGaTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/houston-tier2';
+import { bibbCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/bibb-tier2';
+import { clarkeCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/clarke-tier2';
+
 // New York Core 12
 import { kingsCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/kings-ny';
 import { queensCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/queens-ny';
@@ -648,20 +658,28 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   webbCountyIntelligence,
   midlandCountyIntelligence,
   ectorCountyIntelligence,
-  // Georgia Core 6 (metro)
+  // Georgia Tier 1 core (8)
   fultonCountyIntelligence,
   gwinnettCountyIntelligence,
   cobbCountyIntelligence,
   dekalbCountyIntelligence,
-  cherokeeCountyIntelligence,
-  forsythCountyIntelligence,
-  // Georgia Wave 2
   claytonCountyIntelligence,
-  henryCountyIntelligence,
-  hallCountyIntelligence,
   chathamCountyIntelligence,
   richmondCountyIntelligence,
   muscogeeCountyIntelligence,
+  // Georgia Tier 2 Wave 1
+  cherokeeCountyTier2Intelligence,
+  forsythCountyTier2Intelligence,
+  henryCountyTier2Intelligence,
+  fayetteCountyTier2Intelligence,
+  douglasCountyTier2Intelligence,
+  cowetaCountyTier2Intelligence,
+  hallCountyTier2Intelligence,
+  pauldingCountyTier2Intelligence,
+  columbiaCountyGaTier2Intelligence,
+  houstonCountyGaTier2Intelligence,
+  bibbCountyTier2Intelligence,
+  clarkeCountyTier2Intelligence,
   // New York Core 12
   kingsCountyIntelligence,
   queensCountyIntelligence,
@@ -1356,19 +1374,35 @@ export const TX_TIER1_CORE12 = [
 ] as const;
 
 /** Georgia Tier-1 Core 12 (metro + coastal/regional). */
-export const GA_TIER1_CORE12 = [
+/** Georgia Tier 1 core (locked) — do not rebuild in Tier 2 waves. */
+export const GA_TIER1_CORE = [
   'fulton',
-  'gwinnett',
-  'cobb',
   'dekalb',
-  'chatham',
-  'cherokee',
+  'cobb',
+  'gwinnett',
   'clayton',
-  'forsyth',
-  'henry',
-  'hall',
+  'chatham',
   'richmond',
   'muscogee',
+] as const;
+
+/** @deprecated Prefer GA_TIER1_CORE — name kept for existing QA scripts; length is 8. */
+export const GA_TIER1_CORE12 = [...GA_TIER1_CORE] as const;
+
+/** Georgia Tier 2 Wave 1 — metro collars + CSRA north + Middle GA + Athens. */
+export const GA_TIER2_WAVE1 = [
+  'cherokee',
+  'forsyth',
+  'henry',
+  'fayette',
+  'douglas',
+  'coweta',
+  'hall',
+  'paulding',
+  'columbia',
+  'houston',
+  'bibb',
+  'clarke',
 ] as const;
 
 /** @deprecated Use GA_TIER1_CORE12 */
