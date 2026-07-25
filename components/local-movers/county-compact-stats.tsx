@@ -47,13 +47,16 @@ export function CountyCompactStats({
         </div>
         <div className="rounded-xl border bg-card px-3 py-2.5">
           <div className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            Local / in-state
+            Local (HQ nearby)
           </div>
           <div className="text-lg sm:text-xl font-semibold tabular-nums">{localCount}</div>
+          {localCount === 0 ? (
+            <div className="text-[10px] text-muted-foreground mt-0.5">none listed</div>
+          ) : null}
         </div>
         <div className="rounded-xl border bg-card px-3 py-2.5">
           <div className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            National / LD
+            Regional / LD
           </div>
           <div className="text-lg sm:text-xl font-semibold tabular-nums">{nationalCount}</div>
         </div>

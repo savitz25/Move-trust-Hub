@@ -158,13 +158,18 @@ export function SegmentedCountyMoverLists({
           stateCode={stateCode}
           profileReturnPath={profileReturnPath}
           listKey={`${listKey}-local`}
-          heading={`Local & in-state movers (${localInState.length})`}
-          headingHint={`Companies with ${stateName} headquarters, intrastate scope, or clear in-market presence for ${countyLabel}.`}
+          heading={`Local movers near ${countyLabel} (${localInState.length})`}
+          headingHint={`Intrastate specialists or companies with headquarters in/near ${countyLabel} (${stateName}). Distant same-state HQs are not labeled local.`}
         />
       ) : (
         <div className="rounded-xl border border-amber-200/80 bg-amber-50/40 px-4 py-3 text-sm text-amber-950 dark:border-amber-900/40 dark:bg-amber-950/20 dark:text-amber-100">
-          No dedicated local / in-state listings are in this shortlist yet. National carriers
-          below may serve {countyLabel} — confirm local capability and licensing before booking.
+          <p className="font-medium">No true local movers listed for {countyLabel} yet.</p>
+          <p className="mt-1 text-sm leading-relaxed opacity-90">
+            We only label a company local when it is intrastate-scoped or has clear headquarters
+            presence near this county — not merely an HQ somewhere else in {stateName}. Regional and
+            long-distance carriers below may still serve this market; confirm capability and licensing
+            before booking.
+          </p>
         </div>
       )}
 
@@ -176,8 +181,12 @@ export function SegmentedCountyMoverLists({
           profileReturnPath={profileReturnPath}
           listKey={`${listKey}-national`}
           rankOffset={localInState.length}
-          heading={`National / long-distance carriers serving ${countyLabel} (${national.length})`}
-          headingHint="Interstate companies that can serve this county. HQ may be out of state — we do not re-label them as local."
+          heading={
+            localInState.length === 0
+              ? `Regional carriers serving ${countyLabel} (${national.length})`
+              : `Regional & long-distance carriers serving ${countyLabel} (${national.length})`
+          }
+          headingHint="Companies that can serve this county but do not meet our local HQ / service-radius rules. HQ may be out of county or out of state — we do not re-label them as local movers."
         />
       ) : null}
     </div>

@@ -348,10 +348,10 @@ export function getHomepageAttributableReviews(limit = 4): AttributableReview[] 
     });
 }
 
-/** Mover may emit AggregateRating schema only when directory-linked with attributable reviews. */
-export function moverHasSchemaAggregateRating(mover: LocalMover): boolean {
-  if (!mover.profileSlug) return false;
-  const companyId = companyIdFromProfileSlug(mover.profileSlug);
-  if (!companyId) return false;
-  return getAttributableReviewsForCompany(companyId, 1).length > 0;
+/**
+ * @deprecated Phase 2 trust policy: never emit AggregateRating from industry / Google
+ * attributed volumes. Always false — moderated community ratings only on /company/{slug}.
+ */
+export function moverHasSchemaAggregateRating(_mover: LocalMover): boolean {
+  return false;
 }

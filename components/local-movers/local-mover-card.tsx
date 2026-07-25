@@ -89,7 +89,7 @@ export function LocalMoverCard({
               {mover.isLocalOnly ||
               (hqState && stateCode && hqState === stateCode.toUpperCase()) ? (
                 <Badge variant="outline" className="text-[10px] font-semibold border-emerald-300 text-emerald-800">
-                  {mover.isLocalOnly ? 'Local / intrastate' : 'In-state HQ'}
+                  {mover.isLocalOnly ? 'Local / intrastate' : 'Local HQ nearby'}
                 </Badge>
               ) : hqState ? (
                 <Badge variant="outline" className="text-[10px] font-medium">

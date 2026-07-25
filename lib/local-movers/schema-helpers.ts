@@ -1,6 +1,5 @@
 import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
-import { moverHasSchemaAggregateRating } from '@/lib/trust/verified-reviews';
 
 const COUNTY_SUFFIX_PATTERN = /\s(county|parish|borough)$/i;
 
@@ -464,15 +463,8 @@ export function buildMoverSchemaNode(
   const address = buildMoverHeadquartersAddress(mover);
   if (address) node.address = address;
 
-  if (moverHasSchemaAggregateRating(mover) && mover.rating > 0 && mover.reviewCount > 0) {
-    node.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: String(mover.rating),
-      reviewCount: String(mover.reviewCount),
-      bestRating: '5',
-      worstRating: '1',
-    };
-  }
+  // Never emit AggregateRating from industry-reported volumes (Google/BBB scrape totals).
+  // Hosted/moderated community ratings live only on /company/{slug} JSON-LD.
 
   if (mover.bbbRating) {
     node.award = `BBB ${mover.bbbRating}`;

@@ -494,7 +494,7 @@ export function buildCountyFaqItems(
   const baseFaqs: CountyFaqItem[] = [
     {
       question: `How much do local movers cost in ${countyLabel}, ${stateName}?`,
-      answer: `Local moves in ${countyLabel} typically range from ${costs.studioRange} for studio or one-bedroom apartments to ${costs.familyRange} for larger homes. ${costs.note} Use our moving calculator for interstate estimates or compare vetted movers in our directory.`,
+      answer: `Move Trust Hub editorial estimates for local moves in ${countyLabel} typically range from ${costs.studioRange} for studio or one-bedroom apartments to ${costs.familyRange} for larger homes (not FMCSA price data — FMCSA does not publish consumer rates). ${costs.note} Use our moving calculator for interstate volume estimates or compare carriers in our independent directory.`,
     },
     {
       question: `What are the best local movers in ${countyLabel}?`,

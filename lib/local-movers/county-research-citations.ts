@@ -6,7 +6,10 @@ import { getStateDotCitationList } from '@/lib/local-movers/state-dot-citations'
 
 export const CENSUS_SOURCE = 'U.S. Census Bureau QuickFacts';
 export const FMCSA_SOURCE = 'FMCSA licensing database (fmcsa.gov)';
-export const DIRECTORY_RESEARCH_SOURCE = 'Move Trust Hub independent directory research';
+/** Prefer concrete sources; avoid empty self-referential “Sources: Move Trust Hub…” alone. */
+export const EDITORIAL_COST_SOURCE =
+  'Move Trust Hub editorial estimates (market research — not FMCSA price data)';
+export const DIRECTORY_RESEARCH_SOURCE = EDITORIAL_COST_SOURCE;
 
 const INLINE_CITATION_MARKERS = [
   /census/i,
@@ -73,9 +76,9 @@ export function hasCitedCountyResearchContent(research: CitableResearch | undefi
   return true;
 }
 
-/** Market / logistics research — Census, state DOT, directory notes. Not FMCSA by default. */
+/** Market / logistics research — Census + state DOT. Not FMCSA pricing; not empty self-citation alone. */
 export function buildMarketResearchSources(stateSlug?: string): string[] {
-  const sources = [CENSUS_SOURCE, DIRECTORY_RESEARCH_SOURCE];
+  const sources = [CENSUS_SOURCE];
   if (stateSlug) {
     for (const dot of getStateDotCitationList(stateSlug)) {
       if (!sources.includes(dot)) sources.push(dot);
@@ -90,13 +93,16 @@ export function buildCitationSources(stateSlug?: string): string[] {
 }
 
 function sourcesForTip(tip: string): string[] {
-  if (LICENSING_CLAIM.test(tip)) return [FMCSA_SOURCE];
-  return [DIRECTORY_RESEARCH_SOURCE];
+  // FMCSA only for licensing / authority / safety — never for pricing.
+  if (LICENSING_CLAIM.test(tip) && !/\b(cost|price|hourly|\$|estimate range)\b/i.test(tip)) {
+    return [FMCSA_SOURCE];
+  }
+  return [EDITORIAL_COST_SOURCE];
 }
 
-function sourcesForCostNote(note: string): string[] {
-  if (LICENSING_CLAIM.test(note)) return [FMCSA_SOURCE, 'local carrier estimates'];
-  return ['local carrier estimates', DIRECTORY_RESEARCH_SOURCE];
+function sourcesForCostNote(_note: string): string[] {
+  // Cost ranges are never FMCSA data — FMCSA has no consumer price tables.
+  return [EDITORIAL_COST_SOURCE];
 }
 
 export function applyCountyResearchCitations<T extends CitableResearch>(

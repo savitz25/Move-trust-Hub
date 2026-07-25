@@ -48,7 +48,7 @@ export function enrichStateResearchToDeep(
     marketNotes: `${base.marketNotes}${CENSUS_MIGRATION_NOTE}${dotNote}${INDEPENDENT_DIRECTORY_NOTE}`,
     costs: {
       ...base.costs,
-      note: `${base.costs.note} Ranges reflect FMCSA-licensed carrier market data — obtain written estimates for your inventory.`,
+      note: `${base.costs.note} Ranges are Move Trust Hub editorial estimates based on market research — not FMCSA price data (FMCSA has no consumer pricing tables). Obtain written estimates for your inventory.`,
     },
     tips,
     faqExtras: options?.faqExtras,

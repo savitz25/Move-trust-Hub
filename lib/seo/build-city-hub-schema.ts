@@ -3,7 +3,6 @@ import {
   buildEditorPersonSchema,
   getPrimaryEditorForContent,
 } from '@/lib/trust/editorial-team';
-import { moverHasSchemaAggregateRating } from '@/lib/trust/verified-reviews';
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
 import type { MarketMoverEntry } from '@/lib/destinations/get-movers-for-market';
@@ -42,19 +41,8 @@ function buildDestinationMoverNode(
       '@type': 'City',
       name: destinationLabel,
     },
-    ...(moverHasSchemaAggregateRating(mover) &&
-    mover.rating > 0 &&
-    mover.reviewCount > 0
-      ? {
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: String(mover.rating),
-            reviewCount: String(mover.reviewCount),
-            bestRating: '5',
-            worstRating: '1',
-          },
-        }
-      : {}),
+    // No AggregateRating here — industry-reported volumes must not enter schema.
+    // Moderated community ratings are emitted only on /company/{slug}.
   };
 }
 

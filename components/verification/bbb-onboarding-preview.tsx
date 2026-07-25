@@ -69,7 +69,9 @@ export function BbbOnboardingPreview({ data }: Props) {
                 <span className="font-medium text-foreground">{review.author}: </span>
               ) : null}
               {review.date ? <span>{review.date} — </span> : null}
-              <span className="line-clamp-2">{review.text}</span>
+              <span className="text-muted-foreground">
+                Rating reference only — full BBB review text not shown
+              </span>
             </li>
           ))}
         </ul>

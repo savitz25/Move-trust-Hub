@@ -15,7 +15,7 @@ type TestimonialsSectionProps = {
 export function TestimonialsSection({
   title = 'Directory Research Highlights',
   subtitle =
-    'Attributed Google review excerpts hosted on Move Trust Hub with named reviewers. These are not aggregated industry totals and are not emitted as fabricated AggregateRating schema. Submit moderated reviews on our review page.',
+    'Directory research highlights with external rating references. We do not republish full third-party review bodies or invent AggregateRating schema from industry volumes. Submit moderated community reviews on our review page.',
   className,
   columns = 2,
 }: TestimonialsSectionProps) {
@@ -38,21 +38,22 @@ export function TestimonialsSection({
           {testimonials.map((testimonial) => (
             <Card key={`${testimonial.name}-${testimonial.date ?? testimonial.location}`} className="p-6 h-full flex flex-col">
               <Quote className="h-5 w-5 text-primary/60 mb-3" aria-hidden="true" />
-              <blockquote className="text-base italic leading-relaxed mb-4 flex-1">
-                &ldquo;{testimonial.quote}&rdquo;
-              </blockquote>
-
               <div className="mb-3">
                 <StarRating rating={testimonial.rating} />
               </div>
+
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                {testimonial.rating.toFixed(1)}★ external reference
+                {'source' in testimonial && testimonial.source
+                  ? ` on ${testimonial.source}`
+                  : ''}
+                {' — full review text not republished.'}
+              </p>
 
               <div>
                 <div className="font-semibold">{testimonial.name}</div>
                 <div className="text-sm text-muted-foreground">
                   {testimonial.location}
-                  {'source' in testimonial && testimonial.source ? (
-                    <> · {testimonial.source} review</>
-                  ) : null}
                   {'companyName' in testimonial && testimonial.companyName ? (
                     <> · {testimonial.companyName}</>
                   ) : null}

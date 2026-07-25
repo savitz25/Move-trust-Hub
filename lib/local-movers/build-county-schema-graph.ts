@@ -102,11 +102,9 @@ import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county
 import {
   buildCountyLabel,
   buildCountyPlaceSchema,
-  buildEmbeddedCompanyReview,
   buildFaqSchema,
   buildMoverSchemaNode,
   buildMoversItemListName,
-  buildReviewSchemaNode,
 } from '@/lib/local-movers/schema-helpers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -416,7 +414,9 @@ export function buildCountySchemaGraph({
   county,
   stateName,
   faqItems,
-  testimonials,
+  // testimonials kept for call-site compatibility — not emitted as schema.org Review
+  // (third-party attributed excerpts must not enter structured data).
+  testimonials: _testimonials,
 }: {
   title: string;
   description: string;
@@ -428,6 +428,7 @@ export function buildCountySchemaGraph({
   faqItems?: CountyFaqItem[];
   testimonials?: CountyTestimonial[];
 }): Record<string, unknown>[] {
+  void _testimonials;
   const url = `${SITE_URL}${path}`;
   const placeId = `${url}#place`;
   const countyLabel = county ? buildCountyLabel(county) : undefined;
@@ -517,68 +518,6 @@ export function buildCountySchemaGraph({
 
   if (faqItems?.length && countyLabel) {
     graph.push(buildFaqSchema(faqItems, `${url}#faq`, countyLabel));
-  }
-
-  if (testimonials?.length) {
-    // Reviews target a real listed mover as LocalBusiness itemReviewed (never
-    // AdministrativeArea / Place). Google Review snippets do not accept MovingCompany
-    // alone as itemReviewed — LocalBusiness is required. GSC errors we prevent:
-    // "Invalid object type for field itemReviewed", missing itemReviewed, invalid author.
-    const reviewNodes = testimonials
-      .map((testimonial, index) =>
-        buildReviewSchemaNode(
-          testimonial,
-          index,
-          url,
-          county,
-          stateName,
-          placeId,
-          contentModified,
-          movers ?? [],
-          buildMoverUrl
-        )
-      )
-      .filter((node): node is Record<string, unknown> => node !== null);
-
-    // Attach FULL review objects (not bare @id stubs) onto the company node.
-    // Bare { "@id": "..." } stubs cause GSC "missing itemReviewed" when Google
-    // expands company.review without resolving the standalone Review node.
-    for (const review of reviewNodes) {
-      const itemReviewed = review.itemReviewed as Record<string, unknown> | undefined;
-      const reviewedId = String(itemReviewed?.['@id'] ?? '');
-      if (!reviewedId) continue;
-      const company = graph.find((node) => String(node['@id'] ?? '') === reviewedId);
-      if (!company) continue;
-      const embedded = buildEmbeddedCompanyReview(review, company);
-      // Drop incomplete embeds (missing author / itemReviewed / rating)
-      const embeddedItem = embedded.itemReviewed as Record<string, unknown> | undefined;
-      const embeddedTypes = Array.isArray(embeddedItem?.['@type'])
-        ? (embeddedItem!['@type'] as unknown[]).map(String)
-        : embeddedItem?.['@type']
-          ? [String(embeddedItem['@type'])]
-          : [];
-      if (
-        !embeddedItem ||
-        !embedded.author ||
-        !embedded.reviewRating ||
-        !embedded.reviewBody ||
-        embeddedTypes.includes('AdministrativeArea') ||
-        embeddedTypes.includes('Place') ||
-        !embeddedTypes.includes('LocalBusiness')
-      ) {
-        continue;
-      }
-      const existing = company.review;
-      if (Array.isArray(existing)) {
-        existing.push(embedded);
-      } else if (existing && typeof existing === 'object') {
-        company.review = [existing, embedded];
-      } else {
-        company.review = [embedded];
-      }
-    }
-
-    graph.push(...reviewNodes);
   }
 
   return graph;

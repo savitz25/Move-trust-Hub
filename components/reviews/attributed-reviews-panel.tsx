@@ -1,17 +1,17 @@
+import Link from 'next/link';
+import { ExternalLink } from 'lucide-react';
 import { format } from 'date-fns';
 import type { Review } from '@/types';
 import { Card } from '@/components/ui/card';
 import { StarRating } from '@/components/ui/star-rating';
-import { ReviewSourceBadge } from '@/components/trust/review-source-badge';
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { MetricLabel } from '@/components/trust/metric-label';
 import { isAttributableReview } from '@/lib/trust/verified-reviews';
 import {
-  EXTERNAL_REVIEW_ATTRIBUTION_NOTE,
+  buildGoogleAttributionSearchUrl,
   formatAttributableReviewCount,
 } from '@/lib/trust/review-display-policy';
 import { PROFILE_METRIC_TOOLTIPS } from '@/lib/trust/profile-metrics';
-import { AttributedReviewsLoadMore } from '@/components/reviews/attributed-reviews-load-more';
 
 type Props = {
   companyId: string;
@@ -19,22 +19,26 @@ type Props = {
   initialReviews: Review[];
 };
 
-/** Server-rendered attributed reviews — visible to crawlers without client hydration. */
-export function AttributedReviewsPanel({ companyId, companyName, initialReviews }: Props) {
+/**
+ * Third-party attributed references as short cards with outbound links.
+ * Never republish full review body text; never emit schema.org Review for these.
+ */
+export function AttributedReviewsPanel({ companyName, initialReviews }: Props) {
   const attributable = initialReviews.filter(isAttributableReview);
   const headline = formatAttributableReviewCount(attributable.length);
+  const googleSearch = buildGoogleAttributionSearchUrl(companyName);
 
   return (
     <section id="attributed-reviews" aria-labelledby="attributed-reviews-heading" className="scroll-mt-24">
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-3">
         <div>
           <MetricLabel
-            label="Attributed Google reviews on-site"
+            label="External review references"
             tooltip={PROFILE_METRIC_TOOLTIPS.onSiteReviews}
             className="mb-1"
           />
           <h3 id="attributed-reviews-heading" className="font-semibold text-xl tracking-tight">
-            Attributed Google Reviews
+            External review references
           </h3>
           <p className="text-xs text-muted-foreground mt-0.5">{headline}</p>
         </div>
@@ -43,8 +47,9 @@ export function AttributedReviewsPanel({ companyId, companyName, initialReviews 
       <div className="space-y-3">
         {attributable.length === 0 ? (
           <p className="text-muted-foreground py-6 text-sm leading-relaxed">
-            No attributed Google reviews on Move Trust Hub for this company yet. Industry-reported
-            ratings above come from third-party platforms — confirm on Google Maps before booking.
+            No attributed external review references on file. Industry-reported ratings above come
+            from third-party platforms — confirm on Google Maps before booking. Moderated community
+            reviews (when available) are separate and may appear on the community review profile.
           </p>
         ) : (
           attributable.slice(0, 6).map((review) => (
@@ -67,26 +72,31 @@ export function AttributedReviewsPanel({ companyId, companyName, initialReviews 
                   <span className="font-medium text-foreground">{review.source}</span>
                 </div>
               </div>
-              <p className="mt-3 text-sm leading-relaxed">{review.content}</p>
-              <div className="mt-2">
-                <ReviewSourceBadge review={review} companyName={companyName} />
-              </div>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                {review.rating.toFixed(1)}★ on {review.source} — full review text is not republished
+                here. View the original on {review.source}.
+              </p>
+              <Link
+                href={
+                  review.source === 'Google'
+                    ? googleSearch
+                    : buildGoogleAttributionSearchUrl(`${companyName} ${review.author}`)
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+              >
+                View on {review.source}
+                <ExternalLink className="h-3 w-3" aria-hidden />
+              </Link>
             </Card>
           ))
         )}
       </div>
 
-      {attributable.length > 6 ? (
-        <AttributedReviewsLoadMore
-          companyId={companyId}
-          companyName={companyName}
-          initialCount={6}
-          total={attributable.length}
-        />
-      ) : null}
-
       <p className="text-[10px] text-muted-foreground mt-4 leading-relaxed">
-        {EXTERNAL_REVIEW_ATTRIBUTION_NOTE}
+        External references only — Move Trust Hub does not republish full third-party review bodies.
+        These cards are not emitted as AggregateRating / Review structured data.
       </p>
       <ReviewTransparencyNote compact className="mt-3" />
     </section>

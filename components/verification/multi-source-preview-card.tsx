@@ -41,17 +41,11 @@ export function MultiSourcePreviewCard({ preview, showFmcsa = true }: Props) {
           {google.formatted_address ? (
             <p className="text-xs text-muted-foreground">{google.formatted_address}</p>
           ) : null}
-          {google.review_snippets?.length ? (
-            <ul className="space-y-2 text-xs text-muted-foreground border-t pt-3">
-              {google.review_snippets.slice(0, 3).map((r, i) => (
-                <li key={i}>
-                  <span className="font-medium text-foreground">{r.rating}★</span>
-                  {r.author ? ` · ${r.author}` : ''}
-                  {r.relative_time ? ` · ${r.relative_time}` : ''}
-                  <p className="mt-0.5 line-clamp-2">{r.text}</p>
-                </li>
-              ))}
-            </ul>
+          {google.rating != null || google.review_count != null ? (
+            <p className="text-xs text-muted-foreground border-t pt-3 leading-relaxed">
+              External Google reference only — review body text is not stored or republished here.
+              Confirm full reviews on Google Maps before booking.
+            </p>
           ) : null}
         </Card>
       ) : google?.status === 'error' || google?.status === 'not_found' ? (

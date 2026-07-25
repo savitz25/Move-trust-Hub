@@ -24,7 +24,9 @@ export function CountyCostSection({
       ) : null}
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">
         Pricing varies by home size, distance within {stateName}, stairs, and packing needs.
-        These ranges reflect typical local move costs in {countyLabel} for {new Date().getFullYear()}:
+        These ranges are <strong className="font-medium text-foreground">Move Trust Hub editorial estimates</strong> for
+        typical local moves in {countyLabel} ({new Date().getFullYear()}) — not FMCSA data (FMCSA publishes licensing
+        and safety information, not consumer prices):
       </p>
       <div className="grid sm:grid-cols-2 gap-3 mb-4">
         <div className="rounded-xl border bg-muted/20 p-4">
@@ -41,8 +43,12 @@ export function CountyCostSection({
         </div>
       </div>
       <p className="text-sm text-muted-foreground">
-        <span className="font-medium text-foreground">Typical crew rate:</span> {costs.avgHourly}.{' '}
-        {costs.note}
+        <span className="font-medium text-foreground">Typical crew rate (editorial estimate):</span>{' '}
+        {costs.avgHourly}. {costs.note}
+      </p>
+      <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+        Independent directory research — obtain multiple written estimates. We do not sell leads or
+        accept paid placements for rankings.
       </p>
       <p className="text-sm text-muted-foreground mt-3">
         Leaving {stateName}? Use our{' '}
@@ -126,13 +132,13 @@ export function CountyTestimonialSection({
           className="text-lg font-semibold tracking-tight mb-2 flex items-center gap-2"
         >
           <MessageSquareQuote className="h-5 w-5 text-primary" aria-hidden="true" />
-          Attributed reviews for movers serving {countyLabel}
+          External rating references for movers serving {countyLabel}
         </h2>
       ) : null}
       <p className="text-xs text-muted-foreground mb-4">
-        Named Google reviews from our interstate directory listings. We do not display
-        representative or county-specific fabricated quotes. Verify current reviews,
-        FMCSA licensing, and written estimates before booking.
+        Labeled external references from directory-linked movers. We do not republish full
+        third-party review body text. Verify current reviews, FMCSA licensing, and written
+        estimates before booking.
       </p>
       <div className="space-y-5">
         {testimonials.map((testimonial) => (
@@ -140,9 +146,12 @@ export function CountyTestimonialSection({
             key={`${testimonial.name}-${testimonial.location}`}
             className="rounded-xl border bg-background/60 p-4"
           >
-            <blockquote className="text-sm text-muted-foreground leading-relaxed italic">
-              &ldquo;{testimonial.quote}&rdquo;
-            </blockquote>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {Number(testimonial.rating).toFixed(1)}★
+              {testimonial.source ? ` on ${testimonial.source}` : ''}
+              {testimonial.companyName ? ` · ${testimonial.companyName}` : ''}
+              {' — full review text not republished; confirm on the source platform.'}
+            </p>
             <figcaption className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
               <span className="font-semibold text-foreground">{testimonial.name}</span>
               <span aria-hidden="true">·</span>
@@ -157,12 +166,6 @@ export function CountyTestimonialSection({
                 <>
                   <span aria-hidden="true">·</span>
                   <time dateTime={testimonial.date}>{testimonial.date}</time>
-                </>
-              )}
-              {testimonial.companyName && (
-                <>
-                  <span aria-hidden="true">·</span>
-                  <span>{testimonial.companyName}</span>
                 </>
               )}
               {testimonial.moveType && (

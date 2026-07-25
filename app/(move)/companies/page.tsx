@@ -116,7 +116,7 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
           className="py-16 mt-8 border-t"
           compact
           title="Featured Review Highlights"
-          subtitle="Named Google review excerpts with reviewer attribution — not inflated industry totals."
+          subtitle="Independent directory highlights with FMCSA context — external ratings link out; we do not republish full third-party review text."
         />
 
         <InternalLinkHub className="mt-12" />

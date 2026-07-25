@@ -15,25 +15,32 @@ export type SegmentedCountyMovers = {
 };
 
 /**
- * True local / in-state when we have honest signals only:
- * - isLocalOnly (intrastate scope)
- * - headquartersState matches the page county's state
- * - strong local relevance (HQ city in seat/county name)
+ * Honest local / in-state classification.
+ *
+ * Rules (distance / HQ / service-radius proxy without inventing geo coords):
+ * - Explicit intrastate / local-only scope → local
+ * - Out-of-state headquarters → never local
+ * - Same-state HQ alone is NOT enough (LA carrier is not a “local mover” in Eureka)
+ * - Require strong in-market signals: HQ city ≈ county seat/name, or local-only scope
+ *   (localRelevanceScore ≥ 50 requires city/seat match or isLocalOnly)
+ *
+ * Distant same-state HQs and pure national carriers fall into the regional/national segment.
  */
 export function isLocalOrInStateMover(
   mover: LocalMover,
   county: LocalCounty
 ): boolean {
   if (mover.isLocalOnly) return true;
+
   const hq = (mover.headquartersState ?? '').toUpperCase();
-  const pageState = county.stateCode.toUpperCase();
-  // True in-state HQ always qualifies.
-  if (hq && hq === pageState) return true;
+  const pageState = (county.stateCode ?? '').toUpperCase();
+
   // Out-of-state HQ never qualifies as local/in-state (even if city names collide).
-  if (hq && hq !== pageState) return false;
-  // Unknown HQ state: only strong seat/county name match (score from ranker).
-  if (localRelevanceScore(mover, county) >= 50) return true;
-  return false;
+  if (hq && pageState && hq !== pageState) return false;
+
+  // Require strong local relevance — not merely “somewhere in this state.”
+  // Score ≥ 50 ≈ city/seat match (or isLocalOnly, already handled above).
+  return localRelevanceScore(mover, county) >= 50;
 }
 
 export function segmentCountyMovers(

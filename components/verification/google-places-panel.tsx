@@ -14,18 +14,9 @@ export function GooglePlacesPanel({ data }: { data: GooglePlacesData }) {
       {data.formatted_address ? (
         <p className="text-xs text-muted-foreground">{data.formatted_address}</p>
       ) : null}
-      {data.review_snippets?.length ? (
-        <ul className="space-y-2 text-xs text-muted-foreground border-t border-amber-200/40 pt-2">
-          {data.review_snippets.map((review, index) => (
-            <li key={index}>
-              <span className="font-medium text-foreground">{review.rating}★</span>
-              {review.author ? ` · ${review.author}` : ''}
-              {review.relative_time ? ` · ${review.relative_time}` : ''}
-              <p className="mt-0.5 line-clamp-3">{review.text}</p>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      <p className="text-xs text-muted-foreground border-t border-amber-200/40 pt-2 leading-relaxed">
+        External Google rating reference only — review body text is not republished here.
+      </p>
       {data.last_fetched ? (
         <p className="text-xs text-muted-foreground">
           Last fetched {new Date(data.last_fetched).toLocaleDateString()}

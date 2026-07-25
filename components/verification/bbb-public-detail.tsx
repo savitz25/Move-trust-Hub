@@ -49,23 +49,11 @@ export function BbbPublicDetail({ data }: { data: PublicScrapeData }) {
           </Link>
         </p>
       ) : null}
-      {bbb.recentReviews.length > 0 ? (
-        <div className="mt-2 rounded-md border bg-muted/30 p-3">
-          <p className="text-xs font-semibold text-muted-foreground mb-2">Recent BBB reviews</p>
-          <ul className="space-y-2">
-            {bbb.recentReviews.slice(0, 3).map((review, i) => (
-              <li key={i} className="text-xs leading-relaxed">
-                {review.author ? (
-                  <span className="font-medium text-foreground">{review.author}: </span>
-                ) : null}
-                {review.date ? (
-                  <span className="text-muted-foreground">{review.date} — </span>
-                ) : null}
-                {review.text}
-              </li>
-            ))}
-          </ul>
-        </div>
+      {bbb.reviewCount != null && bbb.reviewCount > 0 ? (
+        <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+          {bbb.reviewCount.toLocaleString()} BBB customer reviews reported
+          {bbb.profileUrl ? ' — view full reviews on the BBB profile (not republished here).' : '.'}
+        </p>
       ) : bbb.reviewCount === 0 ? (
         <p className="text-xs text-muted-foreground">No BBB customer reviews on file yet.</p>
       ) : null}

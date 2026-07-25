@@ -31,8 +31,9 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
       <CardHeader className="pb-2">
         <CardTitle className="text-base">How review numbers on this page work</CardTitle>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Three separate sources — they are not added together. Directory cards and this profile use
-          the same industry-reported total.
+          Three separate sources — they are not added together and are never mixed into schema.org
+          AggregateRating. Directory cards and this profile use the same industry-reported total for
+          display only.
         </p>
       </CardHeader>
       <CardContent>
@@ -100,10 +101,11 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
             />
             <dd className="mt-2 font-semibold">{sources.attributableOnSiteLabel}</dd>
             <dd className="text-xs text-muted-foreground mt-1 leading-relaxed">
-              Named reviewers published on Move Trust Hub — scroll to{' '}
+              External references with outbound links (text not republished) —{' '}
               <Link href="#attributed-reviews" className="text-primary underline underline-offset-2">
-                attributed reviews
+                see references
               </Link>
+              . Moderated community reviews (if any) live on the community profile only.
             </dd>
           </div>
         </dl>

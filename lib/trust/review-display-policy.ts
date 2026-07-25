@@ -7,13 +7,13 @@ import {
 export const NATIVE_REVIEW_VERIFIED_LABEL = 'Verified by Move Trust Hub';
 
 export const REVIEW_TRANSPARENCY_DISCLAIMER =
-  'Move Trust Hub publishes attributed Google customer reviews (named reviewers) and moderated community submissions — not reviews written by the movers. Industry-reported review volumes on profiles reflect third-party platforms and are never mixed into our on-site attributed total.';
+  'Move Trust Hub shows third-party ratings only as labeled external references with outbound links, and hosts moderated community submissions separately. Industry-reported volumes are never mixed into schema.org AggregateRating or Review markup.';
 
 export const EDITORIAL_REVIEW_VOLUME_NOTE =
   'Industry-reported volume from third-party platforms — not verified on Move Trust Hub.';
 
 export const EXTERNAL_REVIEW_ATTRIBUTION_NOTE =
-  'Attributed excerpts sourced from public Google reviews with named reviewers. We do not republish full third-party review feeds.';
+  'External rating references with named reviewers where available. We do not republish full third-party review body text (Google, Trustpilot, BBB, etc.).';
 
 export type ReviewSourceDisplay = {
   label: string;
@@ -35,9 +35,9 @@ export function formatEditorialReviewVolume(count: number): string {
 }
 
 export function formatAttributableReviewCount(count: number): string {
-  if (count === 0) return 'No attributed Google reviews published yet';
-  if (count === 1) return '1 attributed Google review we published';
-  return `${count} attributed Google reviews we published`;
+  if (count === 0) return 'No external review references on file yet';
+  if (count === 1) return '1 external review reference (link out — text not republished)';
+  return `${count} external review references (link out — text not republished)`;
 }
 
 export function getReviewSourceDisplay(review: Review): ReviewSourceDisplay {
