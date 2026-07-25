@@ -235,7 +235,7 @@ import { lehighCountyPaIntelligence } from '@/lib/local-movers/county-intelligen
 import { northamptonCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/northampton-pa';
 import { westmorelandCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/westmoreland-pa';
 // Pennsylvania Tier 2 Wave 1
-import { cumberlandCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/cumberland-pa';
+import { cumberlandCountyTier2Intelligence as cumberlandCountyPaTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/cumberland-pa';
 import { washingtonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/washington-pa';
 import { butlerCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/butler-pa';
 import { beaverCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/beaver-pa';
@@ -749,7 +749,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   northamptonCountyPaIntelligence,
   westmorelandCountyTier2Intelligence,
   // Pennsylvania Tier 2 Wave 1
-  cumberlandCountyTier2Intelligence,
+  cumberlandCountyPaTier2Intelligence,
   washingtonCountyTier2Intelligence,
   butlerCountyTier2Intelligence,
   beaverCountyTier2Intelligence,
