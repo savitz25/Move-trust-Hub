@@ -34,6 +34,7 @@ import {
   formatAvgPricePerMove,
   formatCompanyHeadquarters,
   normalizeCompaniesForDisplay,
+  resolveYearsInBusiness,
 } from '@/lib/directory/normalize-company';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
@@ -706,7 +707,9 @@ export function DirectoryClient({
                       <td className="text-center tabular-nums">
                         {formatAvgPricePerMove(c.avgPricePerMove)}
                       </td>
-                      <td className="text-center">{c.yearsInBusiness ?? 0}</td>
+                      <td className="text-center">
+                        {resolveYearsInBusiness(c.yearsInBusiness, c.foundedYear) ?? '—'}
+                      </td>
                       <td className="text-center text-xs">{ratio}</td>
                       <td className="text-right pr-4">
                         <div className="flex justify-end gap-2">

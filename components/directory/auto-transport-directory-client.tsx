@@ -15,6 +15,7 @@ import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
+import { resolveYearsInBusiness } from '@/lib/directory/normalize-company';
 
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: 'reputation', label: 'Reputation Score (High → Low)' },
@@ -302,7 +303,15 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
 
                 <div className="mt-4 pt-4 border-t flex items-center justify-between text-sm">
                   <div className="text-muted-foreground">
-                    {company.yearsInBusiness} yrs • {company.coverage}
+                    {(() => {
+                      const years = resolveYearsInBusiness(
+                        company.yearsInBusiness,
+                        company.foundedYear
+                      );
+                      return years != null
+                        ? `${years} yrs • ${company.coverage}`
+                        : company.coverage;
+                    })()}
                   </div>
                   <div className="flex gap-2">
                     <Link href={`/auto-transport/${company.slug}`} className="text-primary hover:underline">View Profile</Link>
@@ -353,7 +362,9 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                   <td className="p-3 font-semibold text-primary">{c.reputationScore}</td>
                   <td className="p-3">${c.avgPricePerMove.toLocaleString()}</td>
                   <td className="p-3">{(c.fmcsaComplaints / Math.max(c.fmcsaShipments, 1) * 1000).toFixed(1)}</td>
-                  <td className="p-3">{c.yearsInBusiness}</td>
+                  <td className="p-3">
+                    {resolveYearsInBusiness(c.yearsInBusiness, c.foundedYear) ?? '—'}
+                  </td>
                   <td className="p-3 text-right space-x-2">
                     <Link href={`/auto-transport/${c.slug}`} className="text-primary hover:underline">Profile</Link>
                     <Link href={`/compare?add=${c.slug}`} className="text-primary hover:underline">Compare</Link>

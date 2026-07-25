@@ -8,11 +8,14 @@ import type { Company } from '@/types';
  */
 export function buildCompanyDirectorySchemaGraph(company: Company) {
   const canonical = `${SITE_URL}/companies/${company.slug}`;
+  // Prefer public DBA-facing name already resolved onto company.name.
+  const publicName = (company.name || '').replace(/\s+/g, ' ').trim() || 'Moving company';
 
+  // LocalBusiness first (Google allow-list); MovingCompany for domain semantics.
   const moverNode: Record<string, unknown> = {
-    '@type': ['MovingCompany', 'LocalBusiness'],
+    '@type': ['LocalBusiness', 'MovingCompany'],
     '@id': `${canonical}#company`,
-    name: company.name,
+    name: publicName,
     url: canonical,
     description: company.shortDescription || company.description,
     parentOrganization: {
@@ -24,7 +27,7 @@ export function buildCompanyDirectorySchemaGraph(company: Company) {
   };
 
   const sameAs: string[] = [];
-  if (company.website) sameAs.push(company.website);
+  if (company.website?.trim()) sameAs.push(company.website.trim());
   if (sameAs.length === 1) moverNode.sameAs = sameAs[0];
   else if (sameAs.length > 1) moverNode.sameAs = sameAs;
 
@@ -32,14 +35,14 @@ export function buildCompanyDirectorySchemaGraph(company: Company) {
     moverNode.telephone = company.phone.trim();
   }
 
-  if (company.physicalAddress?.trim() || company.headquarters) {
+  if (company.physicalAddress?.trim() || company.headquarters?.trim()) {
     moverNode.address = {
       '@type': 'PostalAddress',
       ...(company.physicalAddress?.trim()
         ? { streetAddress: company.physicalAddress.trim() }
         : {}),
-      ...(company.headquarters
-        ? { addressLocality: company.headquarters }
+      ...(company.headquarters?.trim()
+        ? { addressLocality: company.headquarters.trim() }
         : {}),
       addressCountry: 'US',
     };
@@ -63,6 +66,10 @@ export function buildCompanyDirectorySchemaGraph(company: Company) {
 
   // Never invent AggregateRating / Review here — community ratings live on /company/[slug]
   // with moderated Supabase reviews only (see buildAggregateRatingSchema).
+  // Never attach AdministrativeArea / Place nesting (Review expand path safety).
+  delete moverNode.areaServed;
+  delete moverNode.containedInPlace;
+  delete moverNode.containsPlace;
 
   return {
     '@context': 'https://schema.org',
@@ -79,13 +86,13 @@ export function buildCompanyDirectorySchemaGraph(company: Company) {
             name: 'Moving Companies',
             item: `${SITE_URL}/companies`,
           },
-          { '@type': 'ListItem', position: 3, name: company.name, item: canonical },
+          { '@type': 'ListItem', position: 3, name: publicName, item: canonical },
         ],
       },
       {
         '@type': 'WebPage',
         '@id': canonical,
-        name: `${company.name} — Reviews, Pricing & FMCSA Info`,
+        name: `${publicName} — Reviews, Pricing & FMCSA Info`,
         url: canonical,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${canonical}#company` },

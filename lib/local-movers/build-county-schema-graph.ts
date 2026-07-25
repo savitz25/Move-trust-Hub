@@ -551,11 +551,20 @@ export function buildCountySchemaGraph({
       if (!company) continue;
       const embedded = buildEmbeddedCompanyReview(review, company);
       // Drop incomplete embeds (missing author / itemReviewed / rating)
+      const embeddedItem = embedded.itemReviewed as Record<string, unknown> | undefined;
+      const embeddedTypes = Array.isArray(embeddedItem?.['@type'])
+        ? (embeddedItem!['@type'] as unknown[]).map(String)
+        : embeddedItem?.['@type']
+          ? [String(embeddedItem['@type'])]
+          : [];
       if (
-        !embedded.itemReviewed ||
+        !embeddedItem ||
         !embedded.author ||
         !embedded.reviewRating ||
-        !embedded.reviewBody
+        !embedded.reviewBody ||
+        embeddedTypes.includes('AdministrativeArea') ||
+        embeddedTypes.includes('Place') ||
+        !embeddedTypes.includes('LocalBusiness')
       ) {
         continue;
       }

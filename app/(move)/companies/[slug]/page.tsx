@@ -46,6 +46,10 @@ import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness'
 import { ClaimProfileCta } from '@/components/portal/claim-cta';
 import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
 import { FMCSA_PLAIN_ENGLISH } from '@/lib/trust/fmcsa-consumer-copy';
+import {
+  formatCompanyTenureLine,
+  isValidFoundedYear,
+} from '@/lib/directory/normalize-company';
 
 
 /** Keep aligned with directory ISR + CDN s-maxage (tag revalidation on publish). */
@@ -127,6 +131,12 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
     verifiedLabel,
   ].filter(Boolean);
 
+  const tenureLine = formatCompanyTenureLine({
+    headquarters: company.headquarters,
+    foundedYear: company.foundedYear,
+    yearsInBusiness: company.yearsInBusiness,
+  });
+
   return (
     <>
       <JsonLd data={buildCompanyDirectorySchemaGraph(company)} />
@@ -150,7 +160,9 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
               <PublicScrapeBadges data={company.publicScrapeData} excludeBbb />
             </div>
           ) : null}
-          <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
+          {tenureLine ? (
+            <div className="text-muted-foreground">{tenureLine}</div>
+          ) : null}
           <div className="mt-4 space-y-2">
             {verification.directoryVerified || verification.fmcsa || verification.bbb ? (
               <>
@@ -360,8 +372,18 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
           <Card>
             <CardHeader><CardTitle className="text-base">Quick Facts</CardTitle></CardHeader>
             <CardContent className="text-sm space-y-3">
-              <div className="flex justify-between"><span className="text-muted-foreground">HQ</span><span>{company.headquarters}</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">Founded</span><span>{company.foundedYear}</span></div>
+              {company.headquarters?.trim() ? (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">HQ</span>
+                  <span>{company.headquarters}</span>
+                </div>
+              ) : null}
+              {isValidFoundedYear(company.foundedYear) ? (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Founded</span>
+                  <span>{company.foundedYear}</span>
+                </div>
+              ) : null}
               <div className="flex justify-between"><span className="text-muted-foreground">Price Tier</span><span>{company.priceRange}</span></div>
               <div className="flex justify-between gap-4">
                 <span className="text-muted-foreground shrink-0">On-site reviews</span>

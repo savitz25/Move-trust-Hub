@@ -508,13 +508,18 @@ export function buildMoverSchemaNode(
     };
   }
 
+  // areaServed must NOT nest AdministrativeArea / Place / State objects on mover
+  // nodes that Reviews target via @id — GSC reports that as invalid itemReviewed.
+  // Use a plain text service-area label only (place entity stays WebPage.about).
   if (county && stateName) {
-    node.areaServed = { '@id': placeId };
+    node.areaServed = `${buildCountyLabel(county)}, ${stateName}`;
   } else if (stateName) {
-    node.areaServed = {
-      '@type': 'State',
-      name: stateName,
-    };
+    node.areaServed = stateName;
+  }
+
+  // Defensive: never leave place-typed nesting that Google merges into itemReviewed.
+  if (node.areaServed && typeof node.areaServed === 'object') {
+    delete node.areaServed;
   }
 
   return node;
@@ -568,10 +573,15 @@ export function buildReviewSchemaNode(
     return null;
   }
 
-  // Strip any accidental place nesting before emit
+  // Strip any accidental place nesting before emit (critical for GSC)
   delete itemReviewed.areaServed;
   delete itemReviewed.containedInPlace;
   delete itemReviewed.containsPlace;
+  // Force allow-listed primary type even if a caller set MovingCompany alone / array.
+  itemReviewed['@type'] = 'LocalBusiness';
+  if (!itemReviewed.additionalType) {
+    itemReviewed.additionalType = 'https://schema.org/MovingCompany';
+  }
 
   const node: Record<string, unknown> = {
     '@type': 'Review',
@@ -645,29 +655,42 @@ export function buildEmbeddedCompanyReview(
   delete itemReviewed.containsPlace;
 
   const author = reviewNode.author;
-  const safeAuthor =
-    author && typeof author === 'object'
-      ? author
-      : typeof author === 'string' && author.trim()
-        ? { '@type': 'Person', name: author.trim() }
-        : undefined;
+  let safeAuthor: Record<string, unknown> | undefined;
+  if (author && typeof author === 'object') {
+    const a = author as Record<string, unknown>;
+    const name = String(a.name ?? '').replace(/\s+/g, ' ').trim();
+    if (name) {
+      safeAuthor = { '@type': 'Person', name };
+    }
+  } else if (typeof author === 'string' && author.trim()) {
+    safeAuthor = { '@type': 'Person', name: author.trim() };
+  }
 
   const rating = reviewNode.reviewRating;
-  const safeRating =
-    rating && typeof rating === 'object'
-      ? {
-          '@type': 'Rating',
-          ratingValue: String(
-            (rating as Record<string, unknown>).ratingValue ?? ''
-          ),
-          bestRating: String(
-            (rating as Record<string, unknown>).bestRating ?? '5'
-          ),
-          worstRating: String(
-            (rating as Record<string, unknown>).worstRating ?? '1'
-          ),
-        }
-      : undefined;
+  let safeRating: Record<string, unknown> | undefined;
+  if (rating && typeof rating === 'object') {
+    const ratingValue = Number((rating as Record<string, unknown>).ratingValue);
+    if (Number.isFinite(ratingValue) && ratingValue >= 1 && ratingValue <= 5) {
+      safeRating = {
+        '@type': 'Rating',
+        ratingValue: String(ratingValue),
+        bestRating: String(
+          (rating as Record<string, unknown>).bestRating ?? '5'
+        ),
+        worstRating: String(
+          (rating as Record<string, unknown>).worstRating ?? '1'
+        ),
+      };
+    }
+  }
+
+  // Incomplete embeds are dropped by the graph builder — require all critical fields.
+  if (!itemReviewed.name || !safeAuthor || !safeRating || !reviewNode.reviewBody) {
+    return {
+      '@type': 'Review',
+      // Marker fields left empty so callers can drop this node
+    };
+  }
 
   return {
     '@type': 'Review',
@@ -675,8 +698,8 @@ export function buildEmbeddedCompanyReview(
     name: reviewNode.name,
     reviewBody: reviewNode.reviewBody,
     datePublished: reviewNode.datePublished,
-    ...(safeAuthor ? { author: safeAuthor } : {}),
-    ...(safeRating && safeRating.ratingValue ? { reviewRating: safeRating } : {}),
+    author: safeAuthor,
+    reviewRating: safeRating,
     itemReviewed,
   };
 }

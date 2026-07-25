@@ -23,6 +23,7 @@ export type AggregateRatingSchemaParams = {
  * Prefer LocalBusiness (allow-listed) with MovingCompany as additionalType —
  * bare MovingCompany alone is rejected by GSC for Review snippets.
  * Never use AdministrativeArea / Place as itemReviewed.
+ * Never nest areaServed / Place types here (GSC treats that as invalid itemReviewed).
  */
 export function buildCompanyReviewItemReviewed(params: {
   companyName: string;
@@ -34,12 +35,14 @@ export function buildCompanyReviewItemReviewed(params: {
   phone?: string | null;
   website?: string | null;
 }): Record<string, unknown> {
+  const name = params.companyName.replace(/\s+/g, ' ').trim();
   const canonical = `${SITE_URL}/company/${params.slug}`;
   const item: Record<string, unknown> = {
+    // LocalBusiness first — Google Review allow-list; MovingCompany alone fails GSC.
     '@type': 'LocalBusiness',
     additionalType: 'https://schema.org/MovingCompany',
     '@id': `${canonical}#company`,
-    name: params.companyName.trim(),
+    name,
     url: canonical,
   };
 
@@ -65,7 +68,61 @@ export function buildCompanyReviewItemReviewed(params: {
     item.sameAs = params.website.trim();
   }
 
+  // Hard ban: place-like nesting must never appear under itemReviewed.
+  delete item.areaServed;
+  delete item.containedInPlace;
+  delete item.containsPlace;
+
   return item;
+}
+
+function buildPersonAuthor(rawName: string | null | undefined): Record<string, unknown> | null {
+  const name = (rawName || '').replace(/\s+/g, ' ').trim();
+  if (!name || !/[\p{L}\p{N}]/u.test(name)) return null;
+  return { '@type': 'Person', name };
+}
+
+function buildNestedReviewNode(
+  review: PublicReview,
+  itemReviewed: Record<string, unknown>
+): Record<string, unknown> | null {
+  const body = (review.content || '').trim();
+  if (!body) return null;
+
+  const ratingValue = Number(review.rating);
+  if (!Number.isFinite(ratingValue) || ratingValue < 1 || ratingValue > 5) return null;
+
+  const author = buildPersonAuthor(review.reviewer_name) ?? {
+    '@type': 'Person',
+    name: 'Verified customer',
+  };
+
+  // Clone itemReviewed without place nesting — never rely on bare @id expansion alone.
+  const reviewed: Record<string, unknown> = {
+    '@type': 'LocalBusiness',
+    additionalType: 'https://schema.org/MovingCompany',
+    '@id': itemReviewed['@id'],
+    name: itemReviewed.name,
+    url: itemReviewed.url,
+  };
+  if (itemReviewed.address) reviewed.address = itemReviewed.address;
+  if (itemReviewed.telephone) reviewed.telephone = itemReviewed.telephone;
+
+  const node: Record<string, unknown> = {
+    '@type': 'Review',
+    author,
+    datePublished: review.created_at?.split('T')[0] || undefined,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: String(ratingValue),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    reviewBody: body,
+    itemReviewed: reviewed,
+  };
+  if (review.title?.trim()) node.name = review.title.trim();
+  return node;
 }
 
 export function buildAggregateRatingSchema(params: AggregateRatingSchemaParams) {
@@ -83,11 +140,10 @@ export function buildAggregateRatingSchema(params: AggregateRatingSchemaParams) 
     website,
   } = params;
   const canonical = `${SITE_URL}/company/${slug}`;
-  const canEmitAggregate =
-    reviewCount >= MIN_REVIEWS_FOR_AGGREGATE && avgRating > 0 && reviews.length > 0;
+  const safeName = companyName.replace(/\s+/g, ' ').trim() || 'Moving company';
 
   const itemReviewedBase = buildCompanyReviewItemReviewed({
-    companyName,
+    companyName: safeName,
     slug,
     address,
     city,
@@ -97,11 +153,11 @@ export function buildAggregateRatingSchema(params: AggregateRatingSchemaParams) 
     website,
   });
 
-  // Primary company node — dual type for directory semantics + Google LocalBusiness.
+  // LocalBusiness first so @id resolution of Review.itemReviewed stays allow-listed.
   const business: Record<string, unknown> = {
-    '@type': ['MovingCompany', 'LocalBusiness'],
+    '@type': ['LocalBusiness', 'MovingCompany'],
     '@id': `${canonical}#company`,
-    name: companyName,
+    name: safeName,
     url: canonical,
     parentOrganization: {
       '@type': 'Organization',
@@ -115,59 +171,62 @@ export function buildAggregateRatingSchema(params: AggregateRatingSchemaParams) 
   if (itemReviewedBase.telephone) business.telephone = itemReviewedBase.telephone;
   if (itemReviewedBase.sameAs) business.sameAs = itemReviewedBase.sameAs;
 
+  // Never attach AdministrativeArea / Place to the business node Google may expand
+  // as itemReviewed via @id.
+  delete business.areaServed;
+  delete business.containedInPlace;
+  delete business.containsPlace;
+
+  const nestedReviews = reviews
+    .slice(0, 5)
+    .map((r) => buildNestedReviewNode(r, itemReviewedBase))
+    .filter((n): n is Record<string, unknown> => n !== null);
+
+  const canEmitAggregate =
+    reviewCount >= MIN_REVIEWS_FOR_AGGREGATE &&
+    avgRating > 0 &&
+    nestedReviews.length > 0;
+
   if (canEmitAggregate) {
     business.aggregateRating = {
       '@type': 'AggregateRating',
-      ratingValue: avgRating.toFixed(1),
+      ratingValue: Number(avgRating).toFixed(1),
       bestRating: '5',
       worstRating: '1',
       ratingCount: reviewCount,
     };
-    business.review = reviews.slice(0, 5).map((r) => {
-      // Each nested Review must carry a full itemReviewed (LocalBusiness) + Person author.
-      // Missing itemReviewed is a GSC critical error on company review profiles.
-      const authorName = (r.reviewer_name || '').replace(/\s+/g, ' ').trim() || 'Verified customer';
-      return {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: authorName },
-        datePublished: r.created_at.split('T')[0],
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: r.rating,
-          bestRating: '5',
-          worstRating: '1',
-        },
-        ...(r.title ? { name: r.title } : {}),
-        reviewBody: r.content,
-        itemReviewed: {
-          '@type': 'LocalBusiness',
-          additionalType: 'https://schema.org/MovingCompany',
-          '@id': `${canonical}#company`,
-          name: companyName,
-          url: canonical,
-        },
-      };
+    business.review = nestedReviews;
+  }
+
+  // Standalone Review nodes (full itemReviewed) help Rich Results Test / GSC
+  // without relying on nested expansion alone.
+  const graph: Record<string, unknown>[] = [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Move Trust Hub',
+      url: SITE_URL,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': canonical,
+      name: `${safeName} — Moderated Customer Reviews`,
+      url: canonical,
+      about: { '@id': `${canonical}#company` },
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+    },
+    business,
+  ];
+
+  for (const [index, review] of nestedReviews.entries()) {
+    graph.push({
+      ...review,
+      '@id': `${canonical}#review-${index + 1}`,
     });
   }
 
   return {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': `${SITE_URL}/#organization`,
-        name: 'Move Trust Hub',
-        url: SITE_URL,
-      },
-      {
-        '@type': 'WebPage',
-        '@id': canonical,
-        name: `${companyName} — Moderated Customer Reviews`,
-        url: canonical,
-        about: { '@id': `${canonical}#company` },
-        isPartOf: { '@id': `${SITE_URL}/#website` },
-      },
-      business,
-    ],
+    '@graph': graph,
   };
 }

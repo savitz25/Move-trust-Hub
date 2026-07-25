@@ -70,8 +70,64 @@ export function formatCompanyHeadquarters(headquarters: string | null | undefine
   return value || 'No address available';
 }
 
-export function formatFoundedLabel(foundedYear: number): string | null {
-  return foundedYear > 0 ? `Est. ${foundedYear}` : null;
+const MIN_FOUNDED_YEAR = 1800;
+
+/** True when a founding year is real (never 0 / missing / far-future). */
+export function isValidFoundedYear(foundedYear: number | null | undefined): boolean {
+  const year = Number(foundedYear);
+  if (!Number.isFinite(year) || year <= 0) return false;
+  const maxYear = new Date().getFullYear() + 1;
+  return year >= MIN_FOUNDED_YEAR && year <= maxYear;
+}
+
+/** Prefer stored years; else derive from a valid founding year. Never returns 0. */
+export function resolveYearsInBusiness(
+  yearsInBusiness: number | null | undefined,
+  foundedYear?: number | null
+): number | null {
+  const stored = Number(yearsInBusiness);
+  if (Number.isFinite(stored) && stored > 0 && stored < 300) return Math.floor(stored);
+  if (isValidFoundedYear(foundedYear)) {
+    const derived = new Date().getFullYear() - Number(foundedYear);
+    if (derived > 0 && derived < 300) return derived;
+  }
+  return null;
+}
+
+export function formatFoundedLabel(foundedYear: number | null | undefined): string | null {
+  return isValidFoundedYear(foundedYear) ? `Est. ${Number(foundedYear)}` : null;
+}
+
+export function formatFoundedPlain(foundedYear: number | null | undefined): string | null {
+  return isValidFoundedYear(foundedYear) ? `Founded ${Number(foundedYear)}` : null;
+}
+
+export function formatYearsInBusinessLabel(
+  yearsInBusiness: number | null | undefined,
+  foundedYear?: number | null
+): string | null {
+  const years = resolveYearsInBusiness(yearsInBusiness, foundedYear);
+  if (years == null) return null;
+  return years === 1 ? '1 year in business' : `${years} years in business`;
+}
+
+/**
+ * Profile subtitle: HQ • Founded YYYY • N years in business.
+ * Omits founded / tenure segments when data is missing or zero.
+ */
+export function formatCompanyTenureLine(input: {
+  headquarters?: string | null;
+  foundedYear?: number | null;
+  yearsInBusiness?: number | null;
+}): string {
+  const parts: string[] = [];
+  const hq = input.headquarters?.trim();
+  if (hq) parts.push(hq);
+  const founded = formatFoundedPlain(input.foundedYear);
+  if (founded) parts.push(founded);
+  const tenure = formatYearsInBusinessLabel(input.yearsInBusiness, input.foundedYear);
+  if (tenure) parts.push(tenure);
+  return parts.join(' • ');
 }
 
 export function formatAvgPricePerMove(price: number | null | undefined): string {

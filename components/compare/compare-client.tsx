@@ -13,6 +13,7 @@ import { X } from 'lucide-react';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { getLicenseDisplay, LICENSE_PENDING_MESSAGE } from '@/lib/trust/company-display-policy';
 import { SaveComparisonButton } from '@/components/save-my-move/save-comparison-button';
+import { resolveYearsInBusiness } from '@/lib/directory/normalize-company';
 
 interface Props {
   allCompanies: Company[];
@@ -60,7 +61,10 @@ export function CompareClient({ allCompanies }: Props) {
     { label: 'Review Count', get: c => c.reviewCount.toLocaleString() },
     { label: 'Avg. Price', get: c => `$${c.avgPricePerMove.toLocaleString()}` },
     { label: 'Price Tier', get: c => c.priceRange },
-    { label: 'Years in Business', get: c => c.yearsInBusiness },
+    {
+      label: 'Years in Business',
+      get: (c) => resolveYearsInBusiness(c.yearsInBusiness, c.foundedYear) ?? '—',
+    },
     { label: 'FMCSA Rating', get: c => <Badge variant={c.fmcsaSafetyRating === 'Satisfactory' ? 'success' : 'warning'}>{c.fmcsaSafetyRating}</Badge> },
     { label: 'Complaints (2yr)', get: c => c.fmcsaComplaints },
     { label: 'Shipments Reported', get: c => c.fmcsaShipments.toLocaleString() },

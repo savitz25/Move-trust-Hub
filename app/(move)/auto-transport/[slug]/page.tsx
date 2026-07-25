@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { formatCompanyTenureLine } from '@/lib/directory/normalize-company';
 
 
 interface Props {
@@ -55,6 +56,12 @@ export default async function AutoTransportProfilePage({ params }: Props) {
     verifiedLabel,
   ].filter(Boolean);
 
+  const tenureLine = formatCompanyTenureLine({
+    headquarters: company.headquarters,
+    foundedYear: company.foundedYear,
+    yearsInBusiness: company.yearsInBusiness,
+  });
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <Link href="/auto-transport" className="inline-flex items-center gap-1 text-sm mb-4 text-muted-foreground hover:text-foreground">
@@ -69,7 +76,9 @@ export default async function AutoTransportProfilePage({ params }: Props) {
             <CompanyTypeBadges company={company} size="default" className="shrink-0" />
             <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
           </div>
-          <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
+          {tenureLine ? (
+            <div className="text-muted-foreground">{tenureLine}</div>
+          ) : null}
           <VerificationBadgeLegend className="mt-4" />
         </div>
         <div className="flex items-center gap-3">
