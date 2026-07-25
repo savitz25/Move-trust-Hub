@@ -230,10 +230,21 @@ import { delawareCountyPaIntelligence } from '@/lib/local-movers/county-intellig
 import { chesterCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/chester-pa';
 import { lancasterCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/lancaster-pa';
 import { yorkCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/york-pa';
-import { berksCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/berks-pa';
+import { berksCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/berks-pa';
 import { lehighCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/lehigh-pa';
 import { northamptonCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/northampton-pa';
-import { westmorelandCountyPaIntelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/westmoreland-pa';
+import { westmorelandCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/westmoreland-pa';
+// Pennsylvania Tier 2 Wave 1
+import { cumberlandCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/cumberland-pa';
+import { washingtonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/washington-pa';
+import { butlerCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/butler-pa';
+import { beaverCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/beaver-pa';
+import { lackawannaCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/lackawanna-pa';
+import { luzerneCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/luzerne-pa';
+import { centreCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/centre-pa';
+import { monroeCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/monroe-pa';
+import { franklinCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/franklin-pa';
+import { schuylkillCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/pennsylvania/schuylkill-pa';
 // Illinois Core 12
 import { cookCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/cook-il';
 import { duPageCountyIlIntelligence } from '@/lib/local-movers/county-intelligence/illinois/dupage-il';
@@ -733,10 +744,21 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   chesterCountyPaIntelligence,
   lancasterCountyPaIntelligence,
   yorkCountyPaIntelligence,
-  berksCountyPaIntelligence,
+  berksCountyTier2Intelligence,
   lehighCountyPaIntelligence,
   northamptonCountyPaIntelligence,
-  westmorelandCountyPaIntelligence,
+  westmorelandCountyTier2Intelligence,
+  // Pennsylvania Tier 2 Wave 1
+  cumberlandCountyTier2Intelligence,
+  washingtonCountyTier2Intelligence,
+  butlerCountyTier2Intelligence,
+  beaverCountyTier2Intelligence,
+  lackawannaCountyTier2Intelligence,
+  luzerneCountyTier2Intelligence,
+  centreCountyTier2Intelligence,
+  monroeCountyTier2Intelligence,
+  franklinCountyTier2Intelligence,
+  schuylkillCountyTier2Intelligence,
   // Virginia Core 12
   fairfaxCountyVaIntelligence,
   princeWilliamCountyVaIntelligence,
@@ -1523,7 +1545,7 @@ export const WA_TIER1_CORE10 = [
   'yakima',
 ] as const;
 
-/** Pennsylvania Tier-1 Core 12. */
+/** Pennsylvania Tier-1 Core 12 (SEPA + Pitt + mid-state + LV + Erie). */
 export const PA_TIER1_CORE12 = [
   'philadelphia',
   'allegheny',
@@ -1533,10 +1555,26 @@ export const PA_TIER1_CORE12 = [
   'chester',
   'lancaster',
   'york',
-  'berks',
+  'dauphin',
   'lehigh',
   'northampton',
+  'erie',
+] as const;
+
+/** Pennsylvania Tier 2 Wave 1 (collars + NEPA + independent secondary). */
+export const PA_TIER2_WAVE1 = [
+  'berks',
+  'cumberland',
   'westmoreland',
+  'washington',
+  'butler',
+  'beaver',
+  'lackawanna',
+  'luzerne',
+  'centre',
+  'monroe',
+  'franklin',
+  'schuylkill',
 ] as const;
 
 /** Ohio Tier-1 Core 12. */

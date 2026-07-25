@@ -541,10 +541,21 @@ const CORRIDORS: Record<string, string> = {
   'pennsylvania/chester': 'US-30 · US-202 · PA-100 · I-76 links · PA-3',
   'pennsylvania/lancaster': 'US-30 · US-222 · PA-283 · I-76 links · PA-23',
   'pennsylvania/york': 'I-83 · US-30 · PA-74 · PA-462 · I-76 links',
-  'pennsylvania/berks': 'US-222 · US-422 · I-78 links · PA-61 · PA-12',
+  'pennsylvania/berks': 'US-222 · I-78 links · US-422 · PA-61 · PA-12 · PA-183',
   'pennsylvania/lehigh': 'I-78 · PA-22 · PA-309 · US-22 · PA-100',
   'pennsylvania/northampton': 'I-78 · PA-33 · US-22 · PA-611 · PA-248',
   'pennsylvania/westmoreland': 'I-76 · US-30 · PA-66 · I-70 links · PA-119',
+  // Pennsylvania Tier 2 Wave 1
+  'pennsylvania/cumberland': 'I-81 · I-76 Turnpike · US-11 · PA-581 · PA-114 · PA-34',
+  'pennsylvania/washington': 'I-70 · I-79 · US-19 · PA-18 · PA-136 · PA-50',
+  'pennsylvania/butler': 'I-79 · I-76 Turnpike · US-422 · PA-8 · PA-228 · PA-68',
+  'pennsylvania/beaver': 'I-376 · PA-65 · PA-51 · PA-18 · Ohio River approaches · PA-68',
+  'pennsylvania/lackawanna': 'I-81 · I-84 · I-380 · US-6 · PA-307 · PA-347',
+  'pennsylvania/luzerne': 'I-81 · PA-309 · PA-115 · US-11 · PA-29 · I-80 links',
+  'pennsylvania/centre': 'I-80 · US-322 · PA-26 · PA-45 · PA-144 · PA-550',
+  'pennsylvania/monroe': 'I-80 · I-84 · PA-33 · PA-611 · PA-940 · PA-209',
+  'pennsylvania/franklin': 'I-81 · US-30 · PA-16 · PA-997 · PA-75 · MD border approaches',
+  'pennsylvania/schuylkill': 'I-81 · PA-61 · US-209 · PA-183 · PA-901 · PA-54',
 
   // ——— Tennessee Core 12 ———
   'tennessee/shelby': 'I-40 · I-55 · I-240 · I-69 links · US-51 · US-61',
