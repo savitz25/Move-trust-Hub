@@ -119,6 +119,8 @@ export function finalizePaTier2Pack(pack: PaTier2PackInput): CountyIntelligenceP
     ...pack,
     stateSlug: 'pennsylvania',
     contentTier: 'tier2',
+    // Default review stamp when authors omit it — prevents "Invalid Date" in hub UI.
+    lastReviewed: pack.lastReviewed || '2026-07-25',
     parentCompare,
     collapsibleDeepContent: pack.collapsibleDeepContent ?? true,
     sectionOrder: pack.sectionOrder ?? TIER2_INTELLIGENCE_SECTION_ORDER,

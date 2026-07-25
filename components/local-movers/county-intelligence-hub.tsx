@@ -199,11 +199,15 @@ function SpecializedBlock({
  * When collapsibleDeepContent is set, sections accordion so movers stay primary on the page.
  */
 export function CountyIntelligenceHub({ pack, className }: Props) {
-  const reviewed = new Date(pack.lastReviewed).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  // Guard missing/malformed lastReviewed — never surface "Invalid Date" in production HTML.
+  const reviewedMs = pack.lastReviewed ? Date.parse(pack.lastReviewed) : Number.NaN;
+  const reviewed = Number.isFinite(reviewedMs)
+    ? new Date(reviewedMs).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    : null;
   const collapsible = Boolean(pack.collapsibleDeepContent);
   const order =
     pack.sectionOrder?.length ? pack.sectionOrder : DEFAULT_INTELLIGENCE_SECTION_ORDER;
@@ -459,8 +463,17 @@ export function CountyIntelligenceHub({ pack, className }: Props) {
               })}
             </ul>
             <p className="text-xs text-muted-foreground mt-5">
-              Intelligence last reviewed {reviewed}. Rules, fees, and district boundaries change —
-              verify on official sites before move day.
+              {reviewed ? (
+                <>
+                  Intelligence last reviewed {reviewed}. Rules, fees, and district boundaries change
+                  — verify on official sites before move day.
+                </>
+              ) : (
+                <>
+                  Rules, fees, and district boundaries change — verify on official sites before move
+                  day.
+                </>
+              )}
             </p>
           </AccordionSection>
         );
