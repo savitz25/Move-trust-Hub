@@ -1,4 +1,4 @@
-﻿import { alamedaCountyIntelligence } from '@/lib/local-movers/county-intelligence/alameda-ca';
+import { alamedaCountyIntelligence } from '@/lib/local-movers/county-intelligence/alameda-ca';
 import { bergenCountyIntelligence } from '@/lib/local-movers/county-intelligence/bergen-nj';
 import { butteCountyIntelligence } from '@/lib/local-movers/county-intelligence/butte-ca';
 import { contraCostaCountyIntelligence } from '@/lib/local-movers/county-intelligence/contra-costa-ca';
@@ -145,6 +145,19 @@ import { erieCountyIntelligence } from '@/lib/local-movers/county-intelligence/n
 import { monroeCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/monroe-ny';
 import { onondagaCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/onondaga-ny';
 import { albanyCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/albany-ny';
+// New York Tier 2 Wave 1
+import { rocklandCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/rockland-ny';
+import { orangeCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/orange-ny';
+import { dutchessCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/dutchess-ny';
+import { putnamCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/putnam-ny';
+import { saratogaCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/saratoga-ny';
+import { schenectadyCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/schenectady-ny';
+import { rensselaerCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/rensselaer-ny';
+import { niagaraCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/niagara-ny';
+import { oneidaCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/oneida-ny';
+import { broomeCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/broome-ny';
+import { ulsterCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/ulster-ny';
+import { ontarioCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/new-york/ontario-ny';
 // Arizona Core 7
 import { maricopaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/maricopa-az';
 import { pimaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/pima-az';
@@ -637,6 +650,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   monroeCountyIntelligence,
   onondagaCountyIntelligence,
   albanyCountyIntelligence,
+  // New York Tier 2 Wave 1
+  rocklandCountyTier2Intelligence,
+  orangeCountyTier2Intelligence,
+  dutchessCountyTier2Intelligence,
+  putnamCountyTier2Intelligence,
+  saratogaCountyTier2Intelligence,
+  schenectadyCountyTier2Intelligence,
+  rensselaerCountyTier2Intelligence,
+  niagaraCountyTier2Intelligence,
+  oneidaCountyTier2Intelligence,
+  broomeCountyTier2Intelligence,
+  ulsterCountyTier2Intelligence,
+  ontarioCountyTier2Intelligence,
   // Arizona Core 7
   maricopaCountyIntelligence,
   pimaCountyIntelligence,
@@ -1332,6 +1358,22 @@ export const NY_TIER1_CORE12 = [
   'monroe',
   'onondaga',
   'albany',
+] as const;
+
+/** New York Tier 2 Wave 1 (Hudson Valley + Capital collar + Buffalo north + mid-state + Finger Lakes). */
+export const NY_TIER2_WAVE1 = [
+  'rockland',
+  'orange',
+  'dutchess',
+  'putnam',
+  'saratoga',
+  'schenectady',
+  'rensselaer',
+  'niagara',
+  'oneida',
+  'broome',
+  'ulster',
+  'ontario',
 ] as const;
 
 /** Arizona Tier-1 Core 7. */

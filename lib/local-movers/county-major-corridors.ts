@@ -148,6 +148,20 @@ const CORRIDORS: Record<string, string> = {
   'new-york/monroe': 'I-490 · I-390 · I-590 · NY-104 · Inner Loop approaches',
   'new-york/onondaga': 'I-81 · I-90 · I-690 · NY-481 · NY-5',
   'new-york/albany': 'I-87 · I-90 · US-9 · NY-7 · I-787',
+  // New York Tier 2 Wave 1
+  'new-york/rockland':
+    'I-87 · Palisades Interstate Parkway · NY-59 · NY-304 · NY-9W · Tappan Zee / Governor Mario M. Cuomo Bridge approaches',
+  'new-york/orange': 'I-87 · I-84 · NY-17 · NY-211 · NY-32 · NY-208',
+  'new-york/dutchess': 'I-84 · US-9 · NY-9D · NY-55 · NY-44 · Metro-North Hudson Line',
+  'new-york/putnam': 'I-84 · Taconic State Parkway · US-6 · NY-22 · NY-301',
+  'new-york/saratoga': 'I-87 · NY-50 · NY-9 · NY-29 · NY-67 · NY-146',
+  'new-york/schenectady': 'I-890 · I-90 · NY-5 · NY-7 · NY-50 · NY-146',
+  'new-york/rensselaer': 'I-90 · I-787 · US-4 · US-9 · NY-7 · NY-43',
+  'new-york/niagara': 'I-190 · I-290 · NY-104 · NY-31 · NY-265 · NY-62',
+  'new-york/oneida': 'I-90 · NY-5 · NY-8 · NY-12 · NY-49 · NY-69',
+  'new-york/broome': 'I-81 · NY-17 · US-11 · NY-26 · NY-434 · NY-201',
+  'new-york/ulster': 'I-87 · NY-28 · NY-32 · NY-9W · NY-299 · NY-212',
+  'new-york/ontario': 'I-90 · I-490 · NY-332 · NY-5 · NY-21 · NY-14 · NY-96',
 
   // ——— Arizona ———
   'arizona/maricopa': 'I-10 · I-17 · Loop 101 · Loop 202 · US-60 · Loop 303',
