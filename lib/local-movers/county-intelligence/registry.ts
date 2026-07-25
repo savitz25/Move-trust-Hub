@@ -347,8 +347,18 @@ import { adamsCountyCoIntelligence } from '@/lib/local-movers/county-intelligenc
 import { douglasCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/douglas-co';
 import { larimerCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/larimer-co';
 import { boulderCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/boulder-co';
-import { weldCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/weld-co';
-import { puebloCountyCoIntelligence } from '@/lib/local-movers/county-intelligence/colorado/pueblo-co';
+import { weldCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/weld-co';
+import { puebloCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/pueblo-co';
+import { mesaCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/mesa-co';
+import { eagleCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/eagle-co';
+import { summitCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/summit-co';
+import { laPlataCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/la-plata-co';
+import { garfieldCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/garfield-co';
+import { routtCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/routt-co';
+import { elbertCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/elbert-co';
+import { tellerCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/teller-co';
+import { fremontCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/fremont-co';
+import { broomfieldCountyCoTier2Intelligence } from '@/lib/local-movers/county-intelligence/colorado/broomfield-co';
 // Washington Core 10
 import { kingCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/king-wa';
 import { pierceCountyWaIntelligence } from '@/lib/local-movers/county-intelligence/washington/pierce-wa';
@@ -367,10 +377,21 @@ import { macombCountyMiIntelligence } from '@/lib/local-movers/county-intelligen
 import { kentCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/kent-mi';
 import { washtenawCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/washtenaw-mi';
 import { geneseeCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/genesee-mi';
-import { ottawaCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/ottawa-mi';
 import { inghamCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/ingham-mi';
 import { kalamazooCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/kalamazoo-mi';
-import { saginawCountyMiIntelligence } from '@/lib/local-movers/county-intelligence/michigan/saginaw-mi';
+// Michigan Tier 2 Wave 1
+import { ottawaCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/ottawa-tier2';
+import { livingstonCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/livingston-tier2';
+import { stClairCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/st-clair-tier2';
+import { monroeCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/monroe-tier2';
+import { jacksonCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/jackson-tier2';
+import { saginawCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/saginaw-tier2';
+import { muskegonCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/muskegon-tier2';
+import { berrienCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/berrien-tier2';
+import { calhounCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/calhoun-tier2';
+import { eatonCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/eaton-tier2';
+import { grandTraverseCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/grand-traverse-tier2';
+import { midlandCountyMiTier2Intelligence } from '@/lib/local-movers/county-intelligence/michigan/midland-tier2';
 // Oregon Core 8
 import { multnomahCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/multnomah-or';
 import { washingtonCountyOrIntelligence } from '@/lib/local-movers/county-intelligence/oregon/washington-or';
@@ -929,7 +950,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   fairfieldCountyOhTier2Intelligence,
   lickingCountyOhTier2Intelligence,
   woodCountyOhTier2Intelligence,
-  // Colorado Core 10
+  // Colorado Tier 1 core 8 + Tier 2 Wave 1
   denverCountyCoIntelligence,
   elPasoCountyCoIntelligence,
   arapahoeCountyCoIntelligence,
@@ -938,8 +959,18 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   douglasCountyCoIntelligence,
   larimerCountyCoIntelligence,
   boulderCountyCoIntelligence,
-  weldCountyCoIntelligence,
-  puebloCountyCoIntelligence,
+  weldCountyCoTier2Intelligence,
+  puebloCountyCoTier2Intelligence,
+  mesaCountyCoTier2Intelligence,
+  eagleCountyCoTier2Intelligence,
+  summitCountyCoTier2Intelligence,
+  laPlataCountyCoTier2Intelligence,
+  garfieldCountyCoTier2Intelligence,
+  routtCountyCoTier2Intelligence,
+  elbertCountyCoTier2Intelligence,
+  tellerCountyCoTier2Intelligence,
+  fremontCountyCoTier2Intelligence,
+  broomfieldCountyCoTier2Intelligence,
   // Washington Core 10
   kingCountyWaIntelligence,
   pierceCountyWaIntelligence,
@@ -951,17 +982,28 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   whatcomCountyWaIntelligence,
   bentonCountyWaIntelligence,
   yakimaCountyWaIntelligence,
-  // Michigan Core 10
+  // Michigan Tier 1 core (8)
   wayneCountyMiIntelligence,
   oaklandCountyMiIntelligence,
   macombCountyMiIntelligence,
   kentCountyMiIntelligence,
   washtenawCountyMiIntelligence,
   geneseeCountyMiIntelligence,
-  ottawaCountyMiIntelligence,
   inghamCountyMiIntelligence,
   kalamazooCountyMiIntelligence,
-  saginawCountyMiIntelligence,
+  // Michigan Tier 2 Wave 1
+  ottawaCountyMiTier2Intelligence,
+  livingstonCountyMiTier2Intelligence,
+  stClairCountyMiTier2Intelligence,
+  monroeCountyMiTier2Intelligence,
+  jacksonCountyMiTier2Intelligence,
+  saginawCountyMiTier2Intelligence,
+  muskegonCountyMiTier2Intelligence,
+  berrienCountyMiTier2Intelligence,
+  calhounCountyMiTier2Intelligence,
+  eatonCountyMiTier2Intelligence,
+  grandTraverseCountyMiTier2Intelligence,
+  midlandCountyMiTier2Intelligence,
   // Oregon Core 8
   multnomahCountyOrIntelligence,
   washingtonCountyOrIntelligence,
@@ -1735,7 +1777,7 @@ export const IL_TIER2_WAVE1 = [
   'lasalle',
 ] as const;
 
-/** Colorado Tier-1 Core 10 (Denver metro + Front Range + southern hub). */
+/** Colorado Tier-1 Core 8 (Denver metro + Front Range hubs). */
 export const CO_TIER1_CORE10 = [
   'denver',
   'el-paso',
@@ -1745,8 +1787,22 @@ export const CO_TIER1_CORE10 = [
   'douglas',
   'larimer',
   'boulder',
+] as const;
+
+/** Colorado Tier 2 Wave 1 (Front Range collars + mountain resorts + Western Slope). */
+export const CO_TIER2_WAVE1 = [
   'weld',
   'pueblo',
+  'mesa',
+  'eagle',
+  'summit',
+  'la-plata',
+  'garfield',
+  'routt',
+  'elbert',
+  'teller',
+  'fremont',
+  'broomfield',
 ] as const;
 
 /** Washington Tier-1 Core 10 (Puget Sound + eastern + inland + border markets). */
@@ -1826,18 +1882,35 @@ export const OH_TIER2_WAVE1 = [
   'wood',
 ] as const;
 
-/** Michigan Tier-1 Core 10. */
-export const MI_TIER1_CORE10 = [
+/** Michigan Tier 1 core (locked) — do not rebuild in Tier 2 waves. */
+export const MI_TIER1_CORE = [
   'wayne',
   'oakland',
   'macomb',
   'kent',
   'washtenaw',
-  'genesee',
-  'ottawa',
   'ingham',
+  'genesee',
   'kalamazoo',
+] as const;
+
+/** @deprecated Prefer MI_TIER1_CORE — Ottawa/Saginaw moved to Tier 2. */
+export const MI_TIER1_CORE10 = [...MI_TIER1_CORE] as const;
+
+/** Michigan Tier 2 Wave 1 — collars + lakeshore + bay + NW independent. */
+export const MI_TIER2_WAVE1 = [
+  'ottawa',
+  'livingston',
+  'st-clair',
+  'monroe',
+  'jackson',
   'saginaw',
+  'muskegon',
+  'berrien',
+  'calhoun',
+  'eaton',
+  'grand-traverse',
+  'midland',
 ] as const;
 
 /** Oregon Tier-1 Core 8. */

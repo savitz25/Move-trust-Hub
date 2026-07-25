@@ -262,8 +262,18 @@ const CORRIDORS: Record<string, string> = {
   'colorado/douglas': 'I-25 · C-470 · E-470 · US-85 · Founders/Lincoln corridors',
   'colorado/larimer': 'I-25 · US-34 · US-287 · Harmony Road corridors',
   'colorado/boulder': 'US-36 · CO-119 · CO-93 · Foothills Pkwy · Canyon corridors',
-  'colorado/weld': 'I-25 · US-34 · US-85 · CO-257 corridors',
-  'colorado/pueblo': 'I-25 · US-50 · CO-47 · Pueblo Blvd corridors',
+  'colorado/weld': 'I-25 · US-34 · US-85 · CO-257 · CO-66 · CO-392',
+  'colorado/pueblo': 'I-25 · US-50 · CO-47 · Pueblo Blvd · Northern Ave corridors',
+  'colorado/mesa': 'I-70 · US-50 · US-6 · CO-340 · 24 Road / Horizon Drive corridors',
+  'colorado/eagle': 'I-70 · US-6 · US-24 · CO-131 · Avon Road / Edwards corridors',
+  'colorado/summit': 'I-70 · CO-9 · US-6 · Swan Mountain Road · Main Street corridors',
+  'colorado/la-plata': 'US-160 · US-550 · CO-172 · CO-151 · Camino del Rio corridor',
+  'colorado/garfield': 'I-70 · CO-82 · CO-13 · US-6 · Grand Avenue corridor',
+  'colorado/routt': 'US-40 · CO-131 · CO-14 · Lincoln Avenue corridor',
+  'colorado/elbert': 'CO-86 · CO-86/CO-83 links · E-470 approaches · Kiowa–Bennett corridors',
+  'colorado/teller': 'US-24 · CO-67 · CO-67/CO-9 links · Woodland Park arterials',
+  'colorado/fremont': 'US-50 · CO-115 · CO-67 · CO-9 · Royal Gorge corridors',
+  'colorado/broomfield': 'US-36 · I-25 · CO-121 · CO-128 · 120th / Midway corridors',
 
   // ——— Washington Core 10 ———
   'washington/king': 'I-5 · I-90 · I-405 · SR-520 · SR-99',
@@ -420,6 +430,18 @@ const CORRIDORS: Record<string, string> = {
   'michigan/ingham': 'I-96 · I-69 · US-127 · Saginaw Hwy corridors',
   'michigan/kalamazoo': 'I-94 · US-131 · M-43 · Stadium Drive corridors',
   'michigan/saginaw': 'I-75 · I-675 · M-46 · M-13 corridors',
+
+  // Michigan Tier 2 Wave 1
+  'michigan/livingston': 'US-23 · I-96 · M-59 · M-36 · Grand River Ave corridors',
+  'michigan/st-clair': 'I-94 · I-69 · M-25 · M-29 · Gratiot Ave links',
+  'michigan/monroe': 'I-75 · US-23 · US-24 · M-50 · Dixie Hwy corridors',
+  'michigan/jackson': 'I-94 · US-127 · M-50 · M-60 · Michigan Ave corridors',
+  'michigan/muskegon': 'US-31 · I-96 links · M-46 · M-120 · lakeshore corridors',
+  'michigan/berrien': 'I-94 · US-31 · M-63 · M-139 · Red Arrow Hwy corridors',
+  'michigan/calhoun': 'I-94 · I-69 · M-66 · M-37 · Capital Ave corridors',
+  'michigan/eaton': 'I-69 · I-96 · M-43 · M-50 · M-99 · Saginaw Hwy links',
+  'michigan/grand-traverse': 'US-31 · M-72 · M-37 · M-22 · Peninsula corridors',
+  'michigan/midland': 'US-10 · M-20 · M-47 · M-30 · Eastman Ave corridors',
 
   // ——— Oregon Core 8 ———
   'oregon/multnomah': 'I-5 · I-84 · I-205 · US-26 · local arterial grid',
