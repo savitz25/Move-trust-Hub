@@ -2,12 +2,11 @@
  * Validates JSON-LD graph integrity for curated-state county pages.
  * Run: npm run validate:county-schema
  *
- * Review snippet checks (via validateCountySchemaGraph):
- * - Every Review has itemReviewed with @type LocalBusiness and/or MovingCompany
- * - itemReviewed is never AdministrativeArea / Place / City
- * - itemReviewed.@id matches a #mover-* company node on the page
- * - itemReviewed.name matches a listed mover (real company, not county stand-in)
- * - Required Review fields: reviewBody, author.name, reviewRating.ratingValue, datePublished
+ * County Review policy (GSC critical):
+ * - County graphs must emit ZERO schema.org Review nodes
+ * - No nested review / aggregateRating on mover or place entities
+ * - itemReviewed must never be AdministrativeArea (place entity is WebPage.about only)
+ * - Moderated community reviews belong on /company/{slug} only
  */
 import { buildCountySchemaGraph } from '../lib/local-movers/build-county-schema-graph';
 import { getCountiesForState, getCounty } from '../lib/local-movers/geography/index';
@@ -1898,6 +1897,27 @@ for (const stateSlug of CURATED_STATES) {
     if (issues.length) {
       for (const issue of issues) {
         console.error(`[${issue.stateSlug}/${issue.countySlug}] ${issue.issue}`);
+        totalIssues += 1;
+      }
+    }
+
+    // Hard policy: county graphs must not emit any Review / nested review / AggregateRating.
+    for (const node of graph) {
+      const types = Array.isArray(node['@type'])
+        ? (node['@type'] as unknown[]).map(String)
+        : node['@type']
+          ? [String(node['@type'])]
+          : [];
+      if (types.includes('Review')) {
+        console.error(
+          `[${stateSlug}/${county.slug}] forbidden Review node still present (${String(node['@id'] ?? 'no-id')})`
+        );
+        totalIssues += 1;
+      }
+      if (node.review || node.reviews || node.aggregateRating || node.itemReviewed) {
+        console.error(
+          `[${stateSlug}/${county.slug}] forbidden review/aggregateRating/itemReviewed field on ${String(node['@id'] ?? node['@type'])}`
+        );
         totalIssues += 1;
       }
     }

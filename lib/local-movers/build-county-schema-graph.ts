@@ -98,13 +98,14 @@ import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
-import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
+import type { CountyFaqItem } from '@/lib/local-movers/county-seo';
 import {
   buildCountyLabel,
   buildCountyPlaceSchema,
   buildFaqSchema,
   buildMoverSchemaNode,
   buildMoversItemListName,
+  stripCountyGraphReviewSchema,
 } from '@/lib/local-movers/schema-helpers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -414,9 +415,6 @@ export function buildCountySchemaGraph({
   county,
   stateName,
   faqItems,
-  // testimonials kept for call-site compatibility — not emitted as schema.org Review
-  // (third-party attributed excerpts must not enter structured data).
-  testimonials: _testimonials,
 }: {
   title: string;
   description: string;
@@ -426,9 +424,12 @@ export function buildCountySchemaGraph({
   county?: LocalCounty;
   stateName?: string;
   faqItems?: CountyFaqItem[];
-  testimonials?: CountyTestimonial[];
+  /**
+   * @deprecated Ignored. County pages never emit Review / AggregateRating JSON-LD
+   * (GSC: itemReviewed must not be AdministrativeArea; editorial scenarios are not reviews).
+   */
+  testimonials?: unknown;
 }): Record<string, unknown>[] {
-  void _testimonials;
   const url = `${SITE_URL}${path}`;
   const placeId = `${url}#place`;
   const countyLabel = county ? buildCountyLabel(county) : undefined;
@@ -521,5 +522,7 @@ export function buildCountySchemaGraph({
     graph.push(buildFaqSchema(faqItems, `${url}#faq`, countyLabel));
   }
 
-  return graph;
+  // Hard guarantee: never ship Review / AggregateRating on county graphs.
+  // AdministrativeArea remains a place entity only (WebPage.about), never itemReviewed.
+  return stripCountyGraphReviewSchema(graph);
 }

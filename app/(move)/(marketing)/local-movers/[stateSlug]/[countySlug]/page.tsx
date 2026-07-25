@@ -484,7 +484,6 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         county={county}
         stateName={state.name}
         faqItems={faqItems}
-        testimonials={visibleTestimonials}
       />
 
       <main className="container mx-auto px-4 py-10 max-w-3xl pb-24 sm:pb-10">
@@ -740,9 +739,14 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             ...(visibleTestimonials.length > 0
               ? [
                   {
-                    id: 'reviews',
-                    title: reviewBlock.title,
-                    summary: reviewBlock.summary,
+                    // Not "reviews" — editorial/external references only (no Review JSON-LD).
+                    id: 'rating-references',
+                    title:
+                      reviewBlock.title?.replace(/reviews?/gi, 'rating references') ||
+                      `External rating references for ${countyLabel}`,
+                    summary:
+                      reviewBlock.summary ||
+                      'Editorial / external rating references — not moderated customer reviews.',
                     icon: <MessageSquareQuote className="h-4 w-4" aria-hidden="true" />,
                     children: (
                       <CountyTestimonialSection

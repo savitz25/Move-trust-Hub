@@ -305,16 +305,16 @@ export function buildCountyReviewBlock(
     return {
       reviews: selected,
       hasLocalSource: true,
-      title: `Attributed reviews from local/in-state carriers on this ${countyLabel} page`,
-      summary: `${selected.length} named Google reviews from local/in-state directory listings on this page (not claimed as ${countyLabel}-only experiences).`,
+      title: `External rating references (local/in-state carriers) — ${countyLabel}`,
+      summary: `${selected.length} labeled external rating references from local/in-state directory listings. Editorial context only — not moderated customer reviews of the county, and not schema.org Review markup.`,
     };
   }
 
   return {
     reviews: selected,
     hasLocalSource: false,
-    title: `Named Google reviews from directory carriers that serve ${countyLabel}`,
-    summary: `These reviews are national/company-level — not ${countyLabel}-specific social proof.`,
+    title: `External rating references for carriers that may serve ${countyLabel}`,
+    summary: `Company-level external rating references — not ${countyLabel}-specific verified reviews, and not structured as schema.org Review.`,
   };
 }
 

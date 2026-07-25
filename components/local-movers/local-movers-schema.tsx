@@ -1,6 +1,6 @@
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCountySchemaGraph } from '@/lib/local-movers/build-county-schema-graph';
-import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
+import type { CountyFaqItem } from '@/lib/local-movers/county-seo';
 import { sanitizeSchemaValue } from '@/lib/local-movers/schema-helpers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -9,6 +9,11 @@ type BreadcrumbItem = {
   path: string;
 };
 
+/**
+ * County / local-movers JSON-LD.
+ * Never accepts testimonials — Review schema is forbidden on these pages
+ * (GSC: itemReviewed AdministrativeArea critical error from editorial blocks).
+ */
 export function LocalMoversSchema({
   title,
   description,
@@ -18,7 +23,6 @@ export function LocalMoversSchema({
   county,
   stateName,
   faqItems,
-  testimonials,
 }: {
   title: string;
   description: string;
@@ -28,7 +32,6 @@ export function LocalMoversSchema({
   county?: LocalCounty;
   stateName?: string;
   faqItems?: CountyFaqItem[];
-  testimonials?: CountyTestimonial[];
 }) {
   const graph = buildCountySchemaGraph({
     title,
@@ -39,7 +42,6 @@ export function LocalMoversSchema({
     county,
     stateName,
     faqItems,
-    testimonials,
   });
 
   return (

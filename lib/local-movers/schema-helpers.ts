@@ -703,6 +703,40 @@ function defaultBuildMoverUrl(mover: LocalMover, pageUrl: string): string {
   return `${pageUrl}#mover-${mover.id}`;
 }
 
+/**
+ * County-page JSON-LD policy (GSC Review critical errors):
+ * - Never emit schema.org Review nodes
+ * - Never nest review / aggregateRating on mover or place entities
+ * - AdministrativeArea is place-only (about), never Review.itemReviewed
+ *
+ * Hosted moderated reviews live only on /company/{slug}.
+ */
+export function stripCountyGraphReviewSchema(
+  graph: Record<string, unknown>[]
+): Record<string, unknown>[] {
+  const isReviewType = (node: Record<string, unknown>): boolean => {
+    const t = node['@type'];
+    if (t === 'Review') return true;
+    if (Array.isArray(t) && t.map(String).includes('Review')) return true;
+    return false;
+  };
+
+  const stripNode = (node: Record<string, unknown>): Record<string, unknown> | null => {
+    if (isReviewType(node)) return null;
+    const next: Record<string, unknown> = { ...node };
+    delete next.review;
+    delete next.reviews;
+    delete next.aggregateRating;
+    // Defensive: never leave place nesting that Google merges into a fake Review.itemReviewed
+    if (next.itemReviewed) delete next.itemReviewed;
+    return next;
+  };
+
+  return graph
+    .map((node) => stripNode(node))
+    .filter((n): n is Record<string, unknown> => n !== null);
+}
+
 /** Recursively remove undefined/null entries so JSON-LD stays valid. */
 export function sanitizeSchemaValue<T>(value: T): T {
   if (Array.isArray(value)) {

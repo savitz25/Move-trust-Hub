@@ -128,7 +128,7 @@ export function CountyTestimonialSection({
     <>
       {!embedded ? (
         <h2
-          id="county-attributed-reviews-heading"
+          id="county-rating-references-heading"
           className="text-lg font-semibold tracking-tight mb-2 flex items-center gap-2"
         >
           <MessageSquareQuote className="h-5 w-5 text-primary" aria-hidden="true" />
@@ -136,9 +136,11 @@ export function CountyTestimonialSection({
         </h2>
       ) : null}
       <p className="text-xs text-muted-foreground mb-4">
-        Labeled external references from directory-linked movers. We do not republish full
-        third-party review body text. Verify current reviews, FMCSA licensing, and written
-        estimates before booking.
+        <strong className="text-foreground">Editorial / planning references only</strong> — not
+        verified customer reviews of this county, and not moderated Move Trust Hub community
+        reviews. We do not mark these up as schema.org Review (itemReviewed is never the county).
+        Full third-party review text is not republished. Confirm ratings on the source platform and
+        verify FMCSA licensing before booking.
       </p>
       <div className="space-y-5">
         {testimonials.map((testimonial) => (
@@ -191,7 +193,7 @@ export function CountyTestimonialSection({
   return (
     <section
       className="mb-10 rounded-2xl border border-primary/15 bg-primary/5 p-6"
-      aria-labelledby="county-attributed-reviews-heading"
+      aria-labelledby="county-rating-references-heading"
     >
       {body}
     </section>
