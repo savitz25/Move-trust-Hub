@@ -93,13 +93,25 @@ for (const slug of VA_TIER2_WAVE2) {
   });
 }
 
-// Name-clash: orange must be Virginia pack
+// Name-clash: orange and warren must be Virginia packs
 const orange = getCountyIntelligencePack('virginia', 'orange');
 if (!orange || orange.stateSlug !== 'virginia') {
   failures.push('orange: VA pack missing or wrong state');
 }
 if (orange && !/Virginia|VA/i.test(orange.h1 + orange.heroOpener)) {
   failures.push('orange: should identify as Virginia in H1/opener for name-clash safety');
+}
+const warren = getCountyIntelligencePack('virginia', 'warren');
+if (!warren || warren.stateSlug !== 'virginia') {
+  failures.push('warren: VA pack missing or wrong state');
+}
+if (warren && !/Virginia|VA|Front Royal/i.test(warren.h1 + warren.heroOpener)) {
+  failures.push('warren: should identify as Virginia / Front Royal for name-clash safety');
+}
+const campbell = getCountyIntelligencePack('virginia', 'campbell');
+const lynchburg = getCountyIntelligencePack('virginia', 'lynchburg');
+if (!campbell || !lynchburg) {
+  failures.push('campbell/lynchburg: both packs required for city vs county distinction');
 }
 
 if (failures.length) {

@@ -6815,6 +6815,20 @@ const VA_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Smithfield historic downtown moves', direction: 'within', context: 'Event peaks and limited truck room; plan shuttles early.' },
     { label: 'Northeast → Isle of Wight County housing', direction: 'inbound', context: 'Family and Roads-edge inflows; FMCSA for interstate legs.' },
   ],
+  campbell: [
+    { label: 'Within Campbell (Timberlake edge ↔ Rustburg / Altavista)', direction: 'within', context: 'Metro-edge growth vs seat vs southern towns — city/county lines first.' },
+    { label: 'Campbell → Lynchburg (parent contrast)', direction: 'outbound', context: 'County into independent-city hill multi-story product.', href: '/local-movers/virginia/lynchburg' },
+    { label: 'Timberlake-edge city/county line moves', direction: 'within', context: 'Continuous-looking addresses fail quotes when jurisdiction is wrong.' },
+    { label: 'Campbell ↔ Bedford County pairs', direction: 'within', context: 'Lake/rural west vs Timberlake east — empty miles matter.', href: '/local-movers/virginia/bedford' },
+    { label: 'Northeast / Midwest → Campbell County housing', direction: 'inbound', context: 'Metro-edge and small-town inflows; FMCSA for interstate legs.' },
+  ],
+  warren: [
+    { label: 'Within Warren VA (Front Royal ↔ I-66 / mountain edges)', direction: 'within', context: 'Small-city core vs commute corridors vs mountain last-mile — not Fauquier estates.' },
+    { label: 'Warren VA → Fauquier (parent contrast)', direction: 'outbound', context: 'North-valley gateway into Piedmont hunt-country product — not a Fauquier rename.', href: '/local-movers/virginia/fauquier' },
+    { label: 'Warren VA → NoVA job markets via I-66', direction: 'outbound', context: 'DC-outer professionals into denser NoVA stock.', href: '/local-movers/virginia/fairfax' },
+    { label: 'Warren VA → Frederick / Winchester valley pairs', direction: 'outbound', context: 'North-valley freeflow; distinct from Front Royal gateway product.', href: '/local-movers/virginia/frederick' },
+    { label: 'Northeast → Front Royal / Warren County VA housing', direction: 'inbound', context: 'Gateway lifestyle inflows; label state as Virginia on interstate BOLs.' },
+  ],
 };
 
 const TN_ROUTES: Record<string, CountyPopularRoute[]> = {
@@ -6970,6 +6984,13 @@ const TN_ROUTES: Record<string, CountyPopularRoute[]> = {
     { label: 'Dickson → Williamson / Franklin pairs', direction: 'outbound', context: 'Southwest metro legs; price portal time honestly.', href: '/local-movers/tennessee/williamson' },
     { label: 'Dickson ↔ Montgomery / Clarksville pairs', direction: 'within', context: 'Different west-middle TN products — not Fort Campbell by default.', href: '/local-movers/tennessee/montgomery' },
     { label: 'Midwest / Florida → Dickson west-collar housing', direction: 'inbound', context: 'Family and space-seeking inflows; FMCSA for interstate legs.' },
+  ],
+  hamblen: [
+    { label: 'Within Hamblen (Morristown core ↔ industrial edges / rural connectors)', direction: 'within', context: 'Small-city seat vs plant-adjacent workforce housing — I-81 freeflow differs by pocket.' },
+    { label: 'Hamblen → Knox / Knoxville (parent contrast)', direction: 'outbound', context: 'I-81 westbound into denser Knox product — not a Knox rename.', href: '/local-movers/tennessee/knox' },
+    { label: 'Hamblen → Washington TN / Johnson City pairs', direction: 'outbound', context: 'East toward Tri-Cities; not Johnson City university defaults.', href: '/local-movers/tennessee/washington' },
+    { label: 'Manufacturing-adjacent workforce housing moves', direction: 'within', context: 'Shift timing near plants rewrites curb plans.' },
+    { label: 'Northeast / Midwest → Morristown I-81 housing', direction: 'inbound', context: 'Employment and family inflows; FMCSA for interstate legs.' },
   ],
 };
 

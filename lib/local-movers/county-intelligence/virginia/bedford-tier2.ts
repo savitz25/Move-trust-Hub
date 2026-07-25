@@ -8,51 +8,51 @@ import {
 export const bedfordCountyVaTier2Intelligence: CountyIntelligencePack = finalizeVaTier2Pack({
   countySlug: 'bedford',
   hubTitle: 'Bedford County Moving Intelligence Hub',
-  eyebrow: 'Bedford · Forest / Smith Mountain Lake · vs Lynchburg',
-  h1: 'Moving in Bedford County: Smith Mountain Lake & Lynchburg’s County Collar',
-  heroOpener: 'Bedford County wraps much of the Lynchburg metro’s countryside — Smith Mountain Lake, Forest growth, town of Bedford, and long rural drives that are not the independent city of Lynchburg itself. Expect lake grades, suburban Forest product, and empty miles across a large county. This guide is for people moving in Bedford County as lake-and-collar product — not Lynchburg hill-street defaults.',
-  heroCredibility: 'County collar · Smith Mountain Lake · Virginia DMV household goods · FMCSA when interstate · Curated listings',
+  eyebrow: 'Bedford · Forest / Smith Mountain Lake · vs Roanoke',
+  h1: 'Moving in Bedford County: Smith Mountain Lake & Roanoke–Lynchburg Rural Collar',
+  heroOpener: 'Bedford County is lake-and-rural-suburban product — Smith Mountain Lake, Forest growth, town of Bedford, and long rural drives that are not a Roanoke County rename and not Lynchburg independent-city hill streets. Expect lake grades, suburban Forest product, and empty miles across a large county. This guide is for people moving in Bedford County as lake/rural-suburban product — not Roanoke valley defaults alone.',
+  heroCredibility: 'Smith Mountain Lake · rural-suburban collar · Virginia DMV household goods · FMCSA when interstate · Curated listings',
   majorCorridors: 'US-460 · US-221 · SR-122 · SR-43 · SR-24',
   lastReviewed: '2026-07-24',
   parentCompare: {
-    parentLabel: 'Lynchburg',
-    parentHref: '/local-movers/virginia/lynchburg',
-    title: 'Compared with Lynchburg',
-    intro: 'Bedford County government and schools differ from Lynchburg city rules — lake last-mile and rural empty miles the hill-city packs understate.',
+    parentLabel: 'Roanoke County',
+    parentHref: '/local-movers/virginia/roanoke',
+    title: 'Compared with Roanoke County',
+    intro: 'Bedford is Smith Mountain Lake and Forest rural-suburban product — related western VA gravity to Roanoke, different lake last-mile and seat fabric.',
     bullets: [
       {
         title: 'Drive time & corridor relationship',
-        detail: 'Lynchburg pairs fight hill grades and downtown staging. Bedford pairs span Forest suburbs, lake communities, and western rural tracts — freeflow is not one number.',
+        detail: 'Roanoke County pairs fight valley suburban peaks toward the independent city. Bedford pairs span Forest growth, lake communities, and western rural tracts — freeflow is not one number and not pure Roanoke Electric Road product.',
       },
       {
         title: 'Housing stock differences',
-        detail: 'Lynchburg mixes hill multi-story and campus apartments. Bedford mixes Forest HOA growth, Smith Mountain Lake homes, and agricultural lots.',
+        detail: 'Roanoke County mixes valley SFH and mountain edges. Bedford mixes Forest HOA growth, Smith Mountain Lake homes, and agricultural lots — more continuous lake recreation product.',
       },
       {
         title: 'Truck access, HOA & density',
-        detail: 'Lake driveways and soft shoulders rewrite truck size more often than pure city elevators.',
+        detail: 'Lake driveways and soft shoulders rewrite truck size more often than pure valley cul-de-sacs.',
       },
       {
         title: 'Rough cost posture (qualitative)',
-        detail: 'Forest SFH can sit near metro-collar rates — lake shuttles and empty miles push differently.',
+        detail: 'Forest SFH can sit near metro-collar rates — lake shuttles and empty miles push differently from Roanoke suburban defaults.',
       },
       {
         title: 'Role difference',
-        detail: 'Bedford County is lake-and-collar identity — not Lynchburg renamed.',
+        detail: 'Bedford County is lake/rural-suburban identity — not Roanoke renamed and not Lynchburg city.',
       }
     ],
   },
   whatMakesDifferent: {
     title: 'What makes moving in Bedford County different',
-    intro: 'Lake property logistics and Lynchburg collar without city rules — not a Lynchburg clone.',
+    intro: 'Lake property logistics and rural-suburban freeflow — not a Roanoke clone.',
     bullets: [
       {
         title: 'Lake-property logistics',
         detail: 'Smith Mountain Lake jobs need grade, width, and seasonal access honesty up front.',
       },
       {
-        title: 'Lynchburg collar without city rules',
-        detail: 'Forest-area households may work in the city but load under county conditions.',
+        title: 'Not a Roanoke rename',
+        detail: 'Forest and lake product is not Roanoke County valley suburban defaults alone.',
       },
       {
         title: 'Rural long-drive economics',
@@ -195,7 +195,7 @@ export const bedfordCountyVaTier2Intelligence: CountyIntelligencePack = finalize
     intro:
       'Official links first; directory listings are independent. Verify Virginia DMV household-goods / motor-carrier authority for in-state moves and FMCSA for interstate legs.',
     items: [
-      { label: 'Lynchburg movers (parent contrast)', href: '/local-movers/virginia/lynchburg' },
+      { label: 'Roanoke County movers (parent contrast)', href: '/local-movers/virginia/roanoke' },
     ],
   },
 });

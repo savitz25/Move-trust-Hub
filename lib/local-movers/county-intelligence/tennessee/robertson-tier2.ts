@@ -8,65 +8,65 @@ import {
 export const robertsonCountyTnTier2Intelligence: CountyIntelligencePack = finalizeTnTier2Pack({
   countySlug: 'robertson',
   hubTitle: 'Robertson County Moving Intelligence Hub',
-  eyebrow: 'Robertson · Springfield · Nashville northwest · vs Davidson',
-  h1: 'Moving in Robertson County: Springfield & Northwest Nashville Collar',
-  heroOpener: 'Robertson County is Nashville’s northwest collar — Springfield seat fabric, White House western reach, Coopertown and Greenbrier crossroads, and I-24 / US-41 freeflow that is not a Davidson rename and not Montgomery’s Fort Campbell PCS story by default. Expect longer rural last-mile, small-city staging, and portal-to-portal time map miles understate.',
-  heroCredibility: 'Northwest Nashville collar · Springfield seat · Tennessee TDOR motor carrier · FMCSA when interstate · Curated listings',
+  eyebrow: 'Robertson · Springfield · KY-border north collar · vs Davidson / Sumner',
+  h1: 'Moving in Robertson County: Springfield & Kentucky-Border North Collar',
+  heroOpener: 'Robertson County is Nashville’s Kentucky-border north collar — Springfield seat fabric, White House western reach, Coopertown and Greenbrier crossroads, and I-24 / US-41 freeflow toward the KY line that is not Sumner’s I-65 Hendersonville lake story and not a Davidson rename. Expect longer rural last-mile, small-city staging, and portal-to-portal time map miles understate. This guide is for people moving in Robertson as KY-border north-collar product — distinct from Sumner north and not Montgomery’s Fort Campbell PCS story by default.',
+  heroCredibility: 'KY-border north collar · Springfield seat · Tennessee TDOR motor carrier · FMCSA when interstate · Curated listings',
   majorCorridors: 'I-24 · US-41 · US-431 · SR-49 · SR-25',
   lastReviewed: '2026-07-24',
   parentCompare: {
     parentLabel: 'Davidson County',
     parentHref: '/local-movers/tennessee/davidson',
     title: 'Compared with Davidson County',
-    intro: 'Robertson is Springfield-centered northwest collar — not downtown Nashville and not Clarksville/Montgomery military product by default.',
+    intro: 'Robertson is Springfield-centered KY-border north collar — not downtown Nashville, not Sumner’s I-65 lake product, and not Clarksville/Montgomery military product by default.',
     bullets: [
       {
         title: 'Drive time & corridor relationship',
-        detail: 'Davidson crews fight core peaks. Robertson pairs ride I-24 and US-41 northwest — freer mid-day off the core, still peak-heavy on Nashville commute windows.',
+        detail: 'Davidson crews fight core peaks. Robertson pairs ride I-24 and US-41 toward the Kentucky border — freer mid-day off the core, still peak-heavy on Nashville commute windows. Sumner’s I-65/Vietnam Veterans freeflow is a different north-ring spine.',
       },
       {
         title: 'Housing stock differences',
-        detail: 'Davidson mixes towers and near-core stairs. Robertson mixes Springfield small-city stock, acreage lots, and border growth toward Sumner.',
+        detail: 'Davidson mixes towers and near-core stairs. Sumner mixes Hendersonville HOA and lake edges. Robertson mixes Springfield small-city stock, acreage lots, and KY-border rural connectors.',
       },
       {
         title: 'Truck access, HOA & density',
-        detail: 'Long driveways and rural approaches dominate over alley and high-rise inventory.',
+        detail: 'Long driveways and rural approaches dominate over alley and high-rise inventory — and over Sumner’s denser lake/HOA product.',
       },
       {
         title: 'Rough cost posture (qualitative)',
-        detail: 'Local Robertson SFH often sits at outer-collar rates — empty miles into Davidson still push premiums.',
+        detail: 'Local Robertson SFH often sits at outer-collar rates — empty miles into Davidson still push premiums; KY border hops add authority complexity.',
       },
       {
         title: 'Role difference',
-        detail: 'Robertson is northwest collar with Springfield identity — not Davidson renamed and not Fort Campbell default.',
+        detail: 'Robertson is KY-border north collar with Springfield identity — not Davidson renamed, not Sumner lake north, and not Fort Campbell default.',
       }
     ],
   },
   whatMakesDifferent: {
     title: 'What makes moving in Robertson County different',
-    intro: 'Springfield small-city logistics and rural last-mile — not a Davidson or Montgomery clone.',
+    intro: 'KY-border freeflow and Springfield rural last-mile — not a Sumner or Davidson clone.',
     bullets: [
+      {
+        title: 'Distinct from Sumner north collar',
+        detail: 'I-24/US-41 KY-border product is not Hendersonville/Gallatin I-65 lake product.',
+      },
       {
         title: 'Northwest freeflow is billable',
         detail: 'Robertson ↔ Davidson pairs freer mid-day still peak hard.',
       },
       {
-        title: 'Rural and acreage access',
-        detail: 'Long lanes rewrite truck size more often than midtown stairs.',
+        title: 'Kentucky border authority risk',
+        detail: 'Short-looking KY hops still need FMCSA — not a pure in-state Sumner pair.',
       },
       {
         title: 'Not Fort Campbell by default',
         detail: 'Montgomery absorbs more military PCS volume — scope the actual job.',
       },
-      {
-        title: 'Interstate legs need FMCSA',
-        detail: 'Kentucky border hops flip authority quickly.',
-      },
       TN_TIER2_REG_BULLET,
     ],
   },
   zonesHeading: 'Robertson zones: Springfield, White House edge, crossroads towns & rural west',
-  zonesIntro: 'Two to four sharp products under one northwest-collar label.',
+  zonesIntro: 'Two to four sharp products under one KY-border north-collar label.',
   zones: [
     {
       id: 'springfield',

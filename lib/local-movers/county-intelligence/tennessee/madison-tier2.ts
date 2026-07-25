@@ -8,17 +8,17 @@ import {
 export const madisonCountyTnTier2Intelligence: CountyIntelligencePack = finalizeTnTier2Pack({
   countySlug: 'madison',
   hubTitle: 'Madison County Moving Intelligence Hub',
-  eyebrow: 'Madison · Jackson · West Tennessee hub · vs Shelby',
-  h1: 'Moving in Madison County: Jackson & West Tennessee’s Inland Hub',
-  heroOpener: 'Madison County is West Tennessee’s inland hub around Jackson — regional medical and university gravity, I-40 midpoint logistics, and small-city fabric that is not a Memphis suburb rename. Expect Jackson neighborhood mix, rural farm edges, and long-haul parent patterns toward Shelby without inheriting Memphis alley defaults. This guide is for people moving in Madison as Jackson product — not Shelby core.',
-  heroCredibility: 'Jackson hub · I-40 West TN · Tennessee TDOR motor carrier · FMCSA when interstate · Curated listings',
+  eyebrow: 'Madison · Jackson · independent West TN hub · vs Memphis defaults',
+  h1: 'Moving in Madison County: Jackson & Independent West Tennessee Hub',
+  heroOpener: 'Madison County is an independent West Tennessee hub around Jackson — regional medical and university gravity, I-40 west midpoint logistics, and small-city fabric that is not a Memphis suburb rename. Expect Jackson neighborhood mix, rural farm edges, and long-haul patterns toward Shelby without inheriting Memphis alley defaults. This guide is for people moving in Madison as independent Jackson product — not Shelby core.',
+  heroCredibility: 'Independent West TN hub · I-40 west · Tennessee TDOR motor carrier · FMCSA when interstate · Curated listings',
   majorCorridors: 'I-40 · US-45 · US-70 · US-412 · SR-18',
   lastReviewed: '2026-07-24',
   parentCompare: {
-    parentLabel: 'Shelby County',
+    parentLabel: 'independent West Tennessee hub (vs Memphis / Shelby defaults)',
     parentHref: '/local-movers/tennessee/shelby',
-    title: 'Compared with Shelby County',
-    intro: 'Madison is Jackson-centered West TN hub — about 80 miles from Memphis, not a Shelby bedroom community and not Nashville collar growth.',
+    title: 'Compared with independent West Tennessee hub (vs Memphis / Shelby defaults)',
+    intro: 'Madison is Jackson-centered independent West TN hub — about 80 miles from Memphis, not a Shelby bedroom community and not Nashville collar growth.',
     bullets: [
       {
         title: 'Drive time & corridor relationship',

@@ -8,29 +8,29 @@ import {
 export const augustaCountyVaTier2Intelligence: CountyIntelligencePack = finalizeVaTier2Pack({
   countySlug: 'augusta',
   hubTitle: 'Augusta County Moving Intelligence Hub',
-  eyebrow: 'Augusta · Fishersville / I-81 valley · vs Rockingham',
-  h1: 'Moving in Augusta County: Staunton–Waynesboro Valley Frame on I-81',
-  heroOpener: 'Augusta County is the Shenandoah Valley frame around the independent cities of Staunton and Waynesboro — I-81 corridor, Fishersville medical node, farm tracts, and valley towns that are not those cities’ governments. Expect county-vs-city confusion, agricultural last-mile, and portal-to-portal time map miles understate. This guide is for people moving in Augusta County as valley-county product.',
-  heroCredibility: 'Shenandoah Valley county · I-81 · Virginia DMV household goods · FMCSA when interstate · Curated listings',
+  eyebrow: 'Augusta · Staunton / Waynesboro edge · independent valley · vs NoVA',
+  h1: 'Moving in Augusta County: Independent Central Shenandoah I-81 / I-64 Crossroads',
+  heroOpener: 'Augusta County is an independent central Shenandoah Valley market around the independent cities of Staunton and Waynesboro — I-81 / I-64 crossroads, Fishersville medical node, farm tracts, and valley towns that are not NoVA product and not those cities’ governments. Expect county-vs-city confusion, agricultural last-mile, and portal-to-portal time map miles understate. This guide is for people moving in Augusta County as independent valley product — not Fairfax-density NoVA.',
+  heroCredibility: 'Independent valley · I-81 / I-64 crossroads · Virginia DMV household goods · FMCSA when interstate · Curated listings',
   majorCorridors: 'I-81 · I-64 · US-11 · US-250 · US-340',
   lastReviewed: '2026-07-24',
   parentCompare: {
-    parentLabel: 'Rockingham County',
-    parentHref: '/local-movers/virginia/rockingham',
-    title: 'Compared with Rockingham County',
-    intro: 'Augusta County excludes Staunton and Waynesboro independent cities — related valley freeflow to Rockingham/Harrisonburg, different seat and school system.',
+    parentLabel: 'independent Shenandoah Valley market (vs NoVA defaults)',
+    parentHref: '/local-movers/virginia/fairfax',
+    title: 'Compared with independent Shenandoah Valley market (vs NoVA defaults)',
+    intro: 'Augusta is I-81 / I-64 valley crossroads product — not NoVA multi-family density and not Rockingham’s JMU ring alone.',
     bullets: [
       {
         title: 'Drive time & corridor relationship',
-        detail: 'Rockingham pairs lean Harrisonburg ring and JMU spillover. Augusta pairs center on Fishersville medical corridor and I-81 farm-to-town freeflow between Staunton and Waynesboro.',
+        detail: 'NoVA crews fight I-66/I-495 peaks. Augusta pairs center on I-81 / I-64 Fishersville medical corridor and farm-to-town freeflow between Staunton and Waynesboro — freer mid-day valley freeflow, still peak-heavy on through-traffic.',
       },
       {
         title: 'Housing stock differences',
-        detail: 'Rockingham mixes county ring suburbs and ag workforce housing. Augusta mixes Fishersville medical-adjacent stock, farm lots, and mountain-edge approaches.',
+        detail: 'NoVA mixes high-rises and dense HOAs. Augusta mixes Fishersville medical-adjacent stock, farm lots, and mountain-edge approaches — more continuous valley rural-suburban product.',
       },
       {
         title: 'Truck access, HOA & density',
-        detail: 'Farm lanes and city-line confusion rewrite plans more often than pure Harrisonburg multi-family defaults.',
+        detail: 'Farm lanes and city-line confusion rewrite plans more often than pure NoVA condo elevators.',
       },
       {
         title: 'Rough cost posture (qualitative)',
@@ -38,24 +38,24 @@ export const augustaCountyVaTier2Intelligence: CountyIntelligencePack = finalize
       },
       {
         title: 'Role difference',
-        detail: 'Augusta is valley county frame identity — not Rockingham renamed and not Staunton/Waynesboro city government.',
+        detail: 'Augusta is independent central valley frame identity — not NoVA renamed and not Staunton/Waynesboro city government.',
       }
     ],
   },
   whatMakesDifferent: {
     title: 'What makes moving in Augusta County different',
-    intro: 'County vs independent cities and valley rural access — not a Harrisonburg clone.',
+    intro: 'I-81 / I-64 valley crossroads — not a NoVA or pure JMU clone.',
     bullets: [
       {
         title: 'County vs independent cities',
         detail: 'Staunton and Waynesboro are not Augusta County — mislabeled quotes fail routing.',
       },
       {
-        title: 'Shenandoah Valley rural access',
-        detail: 'Farm lanes and long drives need early surveys.',
+        title: 'Not NoVA product',
+        detail: 'Valley freeflow and farm last-mile are not Fairfax elevator logistics.',
       },
       {
-        title: 'I-81 corridor timing',
+        title: 'I-81 / I-64 corridor timing',
         detail: 'Valley interstate peaks affect through traffic legs.',
       },
       {

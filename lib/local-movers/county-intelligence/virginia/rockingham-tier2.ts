@@ -8,29 +8,29 @@ import {
 export const rockinghamCountyVaTier2Intelligence: CountyIntelligencePack = finalizeVaTier2Pack({
   countySlug: 'rockingham',
   hubTitle: 'Rockingham County Moving Intelligence Hub',
-  eyebrow: 'Rockingham · Harrisonburg ring / Bridgewater · vs Augusta',
-  h1: 'Moving in Rockingham County: Harrisonburg’s Valley County Frame',
-  heroOpener: 'Rockingham County wraps the independent city of Harrisonburg in the central Shenandoah Valley — JMU-adjacent growth outside city limits, poultry and agriculture employment, and I-81 towns that are not Harrisonburg city government. Expect city/county line confusion, farm lanes, and portal-to-portal time map miles understate. This guide is for people moving in Rockingham County as valley-county product.',
-  heroCredibility: 'Valley county · Harrisonburg ring · Virginia DMV household goods · FMCSA when interstate · Curated listings',
+  eyebrow: 'Rockingham · independent JMU market · Harrisonburg ring · vs Augusta',
+  h1: 'Moving in Rockingham County: Independent JMU / Harrisonburg Valley Market',
+  heroOpener: 'Rockingham County is an independent north-central valley market wrapping Harrisonburg — JMU-adjacent growth outside city limits, poultry and agriculture employment, and I-81 towns that are not Augusta’s Staunton–Waynesboro medical corridor and not Harrisonburg city government. Expect city/county line confusion, farm lanes, and portal-to-portal time map miles understate. This guide is for people moving in Rockingham County as independent JMU-area product — distinct from Augusta.',
+  heroCredibility: 'Independent JMU market · I-81 · Virginia DMV household goods · FMCSA when interstate · Curated listings',
   majorCorridors: 'I-81 · US-11 · US-33 · SR-42 · SR-259',
   lastReviewed: '2026-07-24',
   parentCompare: {
-    parentLabel: 'Augusta County',
+    parentLabel: 'independent JMU / Harrisonburg-area valley market (vs Augusta / NoVA defaults)',
     parentHref: '/local-movers/virginia/augusta',
-    title: 'Compared with Augusta County',
-    intro: 'Rockingham County excludes Harrisonburg independent city — related valley freeflow to Augusta, different seat gravity toward Harrisonburg/JMU.',
+    title: 'Compared with independent JMU / Harrisonburg-area valley market (vs Augusta / NoVA defaults)',
+    intro: 'Rockingham is JMU-adjacent valley product — related I-81 freeflow to Augusta, different university gravity and seat fabric.',
     bullets: [
       {
         title: 'Drive time & corridor relationship',
-        detail: 'Augusta pairs lean Fishersville medical corridor. Rockingham pairs lean Harrisonburg ring, Bridgewater/Dayton towns, and US-33 mountain approaches.',
+        detail: 'Augusta pairs lean Fishersville medical corridor and I-64 links. Rockingham pairs lean Harrisonburg ring, Bridgewater/Dayton towns, and US-33 mountain approaches — freer mid-day JMU-ring freeflow, still peak-heavy on term weekends.',
       },
       {
         title: 'Housing stock differences',
-        detail: 'Augusta mixes medical-adjacent and farm lots. Rockingham mixes county-ring suburbs, ag workforce housing, and mountain-edge communities.',
+        detail: 'Augusta mixes medical-adjacent and farm lots. Rockingham mixes county-ring suburbs, ag workforce housing, and JMU spillover multi-family near the city line.',
       },
       {
         title: 'Truck access, HOA & density',
-        detail: 'City-line confusion and farm lanes rewrite plans more often than pure Harrisonburg multi-family defaults inside the city.',
+        detail: 'City-line confusion and farm lanes rewrite plans more often than pure Fishersville medical freeflow.',
       },
       {
         title: 'Rough cost posture (qualitative)',
@@ -38,14 +38,18 @@ export const rockinghamCountyVaTier2Intelligence: CountyIntelligencePack = final
       },
       {
         title: 'Role difference',
-        detail: 'Rockingham is Harrisonburg’s county frame — not Augusta renamed and not Harrisonburg city government.',
+        detail: 'Rockingham is independent JMU-area valley identity — not Augusta renamed and not Harrisonburg city government.',
       }
     ],
   },
   whatMakesDifferent: {
     title: 'What makes moving in Rockingham County different',
-    intro: 'County vs Harrisonburg city and ag workforce housing — not a city-campus clone.',
+    intro: 'JMU spillover and county vs city lines — not an Augusta clone.',
     bullets: [
+      {
+        title: 'Distinct from Augusta valley frame',
+        detail: 'JMU/Harrisonburg gravity is not Staunton–Waynesboro medical corridor product.',
+      },
       {
         title: 'County vs Harrisonburg city',
         detail: 'JMU move energy spills into the county, but parking and permit rules do not automatically follow.',
@@ -53,10 +57,6 @@ export const rockinghamCountyVaTier2Intelligence: CountyIntelligencePack = final
       {
         title: 'Ag and plant workforce housing',
         detail: 'Shift timing near major employers affects neighborhood access.',
-      },
-      {
-        title: 'Valley interstate logistics',
-        detail: 'I-81 through traffic shapes long-haul ETAs.',
       },
       {
         title: 'Interstate legs need FMCSA',

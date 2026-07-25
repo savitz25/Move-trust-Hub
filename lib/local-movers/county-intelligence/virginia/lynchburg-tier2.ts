@@ -8,25 +8,25 @@ import {
 export const lynchburgCityVaTier2Intelligence: CountyIntelligencePack = finalizeVaTier2Pack({
   countySlug: 'lynchburg',
   hubTitle: 'Lynchburg Moving Intelligence Hub',
-  eyebrow: 'Lynchburg · hill city / Liberty / riverfront · vs Bedford County',
-  h1: 'Moving in Lynchburg: Hill City on the James River',
-  heroOpener: 'Lynchburg is an independent hill city on the James — Liberty University gravity, regional medical campuses, steep streets, and downtown revitalization fabric that is not a Bedford County subdivision rename. Expect grades, university calendars, and city/county line confusion on metro-edge addresses. This guide is for people moving in Lynchburg as independent-city product.',
-  heroCredibility: 'Independent hill city · University & medical · Virginia DMV household goods · FMCSA when interstate · Curated listings',
+  eyebrow: 'Lynchburg · independent central VA hub · vs Campbell County',
+  h1: 'Moving in Lynchburg: Independent Central Virginia Hill City',
+  heroOpener: 'Lynchburg is an independent central Virginia hill city on the James — Liberty University gravity, regional medical campuses, steep streets, and downtown revitalization fabric that is not a Campbell County subdivision rename. Expect grades, university calendars, and city/county line confusion on Timberlake-edge addresses. This guide is for people moving in Lynchburg as independent urban city product — not Campbell County driveway defaults.',
+  heroCredibility: 'Independent central VA hub · University & medical · Virginia DMV household goods · FMCSA when interstate · Curated listings',
   majorCorridors: 'US-29 · US-460 · US-501 · SR-163 · Wards Road corridor',
   lastReviewed: '2026-07-24',
   parentCompare: {
-    parentLabel: 'Bedford County',
-    parentHref: '/local-movers/virginia/bedford',
-    title: 'Compared with Bedford County',
-    intro: 'Lynchburg is an independent city; Bedford County surrounds much of the metro but does not set city parking or school rules — hill grades and university density the county packs understate.',
+    parentLabel: 'independent central Virginia hub (vs Campbell County defaults)',
+    parentHref: '/local-movers/virginia/campbell',
+    title: 'Compared with independent central Virginia hub (vs Campbell County defaults)',
+    intro: 'Lynchburg is an independent city; Campbell County surrounds much of the metro edge but does not set city parking or school rules — hill grades and university density the county packs understate.',
     bullets: [
       {
         title: 'Drive time & corridor relationship',
-        detail: 'Bedford pairs lean Forest suburbs and lake last-mile. Lynchburg pairs fight hill grades, downtown staging, and Liberty-area multi-family peaks.',
+        detail: 'Campbell pairs lean Timberlake edges, Rustburg seat, and southern small towns. Lynchburg pairs fight hill grades, downtown staging, and Liberty-area multi-family peaks.',
       },
       {
         title: 'Housing stock differences',
-        detail: 'Bedford mixes lake homes and rural lots. Lynchburg mixes hill multi-story, campus apartments, and Boonsboro suburbs.',
+        detail: 'Campbell mixes Timberlake-edge SFH and rural south lots. Lynchburg mixes hill multi-story, campus apartments, and Boonsboro suburbs.',
       },
       {
         title: 'Truck access, HOA & density',
@@ -34,17 +34,17 @@ export const lynchburgCityVaTier2Intelligence: CountyIntelligencePack = finalize
       },
       {
         title: 'Rough cost posture (qualitative)',
-        detail: 'Hill and campus multi-family can price above pure Forest driveway rates once stairs and elevators appear.',
+        detail: 'Hill and campus multi-family can price above pure Campbell driveway rates once stairs and elevators appear.',
       },
       {
         title: 'Role difference',
-        detail: 'Lynchburg is independent hill city identity — not Bedford renamed.',
+        detail: 'Lynchburg is independent urban hill city identity — not Campbell County renamed.',
       }
     ],
   },
   whatMakesDifferent: {
     title: 'What makes moving in Lynchburg different',
-    intro: 'Hill grades, university peaks, and independent-city rules — not a Bedford clone.',
+    intro: 'Hill grades, university peaks, and independent-city rules — not a Campbell clone.',
     bullets: [
       {
         title: 'Hill-city truck planning',
@@ -56,7 +56,7 @@ export const lynchburgCityVaTier2Intelligence: CountyIntelligencePack = finalize
       },
       {
         title: 'Independent city rules',
-        detail: 'Do not assume Bedford County permit habits apply inside city limits.',
+        detail: 'Do not assume Campbell County permit habits apply inside city limits.',
       },
       {
         title: 'Interstate legs need FMCSA',

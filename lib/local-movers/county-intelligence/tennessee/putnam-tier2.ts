@@ -8,17 +8,17 @@ import {
 export const putnamCountyTnTier2Intelligence: CountyIntelligencePack = finalizeTnTier2Pack({
   countySlug: 'putnam',
   hubTitle: 'Putnam County Moving Intelligence Hub',
-  eyebrow: 'Putnam · Cookeville · Upper Cumberland · vs Davidson',
-  h1: 'Moving in Putnam County: Cookeville & the Upper Cumberland Hub',
-  heroOpener: 'Putnam County is the Cookeville / Upper Cumberland hub on I-40 between Nashville and Knoxville — Tennessee Tech gravity, regional medical care, and plateau-edge topography that is not a Nashville suburb and not a Knox bedroom. Expect campus-area multi-family, small-city staging, and long I-40 parent legs without inheriting Davidson CBD language. This guide is for people moving in Putnam as Cookeville product.',
-  heroCredibility: 'Cookeville / Tech · Upper Cumberland · Tennessee TDOR motor carrier · FMCSA when interstate · Curated listings',
+  eyebrow: 'Putnam · Cookeville · independent Upper Cumberland · vs Nashville defaults',
+  h1: 'Moving in Putnam County: Cookeville & Independent Upper Cumberland Hub',
+  heroOpener: 'Putnam County is an independent Upper Cumberland hub on I-40 between Nashville and Knoxville — Tennessee Tech gravity, regional medical care, and plateau-edge topography that is not a Nashville suburb and not a Knox bedroom. Expect campus-area multi-family, small-city staging, and long I-40 legs without inheriting Davidson CBD language. This guide is for people moving in Putnam as independent Cookeville product.',
+  heroCredibility: 'Independent Upper Cumberland · Tech / I-40 mid-state · Tennessee TDOR motor carrier · FMCSA when interstate · Curated listings',
   majorCorridors: 'I-40 · SR-111 · US-70N · SR-136 · SR-56',
   lastReviewed: '2026-07-24',
   parentCompare: {
-    parentLabel: 'Davidson County',
+    parentLabel: 'independent Upper Cumberland hub (vs Nashville / Davidson defaults)',
     parentHref: '/local-movers/tennessee/davidson',
-    title: 'Compared with Davidson County',
-    intro: 'Putnam is Cookeville-centered Upper Cumberland hub — roughly 80 miles east of Nashville, not a Davidson collar town like Mt. Juliet.',
+    title: 'Compared with independent Upper Cumberland hub (vs Nashville / Davidson defaults)',
+    intro: 'Putnam is Cookeville-centered independent Upper Cumberland hub — roughly 80 miles east of Nashville, not a Davidson collar town like Mt. Juliet.',
     bullets: [
       {
         title: 'Drive time & corridor relationship',

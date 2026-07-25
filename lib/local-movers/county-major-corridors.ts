@@ -613,6 +613,8 @@ const CORRIDORS: Record<string, string> = {
   'virginia/louisa': 'I-64 · US-15 · US-33 · US-522 · SR-208',
   'virginia/gloucester': 'US-17 · SR-14 · SR-3 · SR-198 · George Washington Memorial Highway corridor',
   'virginia/isle-of-wight': 'US-17 · US-258 · SR-10 · SR-32 · US-460 regional',
+  'virginia/campbell': 'US-29 · US-460 · US-501 · SR-24 · SR-43 approaches',
+  'virginia/warren': 'I-66 · US-340 · US-522 · SR-55 · Skyline Drive approaches',
 
   // ——— Ohio Core 12 ———
   'ohio/franklin': 'I-70 · I-71 · I-270 · I-670 · US-23 · US-33',
@@ -685,6 +687,7 @@ const CORRIDORS: Record<string, string> = {
   'tennessee/anderson': 'I-75 edge · SR-61 · SR-95 · US-25W · SR-62',
   'tennessee/putnam': 'I-40 · SR-111 · US-70N · SR-136 · SR-56',
   'tennessee/dickson': 'I-40 · SR-46 · SR-48 · US-70 · SR-47',
+  'tennessee/hamblen': 'I-81 · US-11E · US-25E · SR-160 · SR-343',
 
   // ——— North Carolina Core 12 ———
   'north-carolina/mecklenburg': 'I-77 · I-85 · I-485 · US-74 · NC-16 · Billy Graham Pkwy',
