@@ -199,11 +199,17 @@ import { columbiaCountyTier2Intelligence } from '@/lib/local-movers/county-intel
 // Arizona Core 7
 import { maricopaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/maricopa-az';
 import { pimaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/pima-az';
-import { pinalCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/pinal-az';
-import { yavapaiCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/yavapai-az';
-import { mohaveCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/mohave-az';
-import { yumaCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/yuma-az';
-import { coconinoCountyIntelligence } from '@/lib/local-movers/county-intelligence/arizona/coconino-az';
+import { pinalCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/pinal-az';
+import { yavapaiCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/yavapai-az';
+import { mohaveCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/mohave-az';
+import { yumaCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/yuma-az';
+import { coconinoCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/coconino-az';
+import { cochiseCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/cochise-az';
+import { navajoCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/navajo-az';
+import { santaCruzCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/santa-cruz-az';
+import { gilaCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/gila-az';
+import { grahamCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/graham-az';
+import { apacheCountyAzTier2Intelligence } from '@/lib/local-movers/county-intelligence/arizona/apache-az';
 // North Carolina Core 12
 import { mecklenburgCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/mecklenburg-nc';
 import { wakeCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/wake-nc';
@@ -238,8 +244,19 @@ import { arlingtonCountyVaIntelligence } from '@/lib/local-movers/county-intelli
 import { richmondCityVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/richmond-va';
 import { chesapeakeCityVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/chesapeake-va';
 import { norfolkCityVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/norfolk-va';
-import { staffordCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/stafford-va';
-import { spotsylvaniaCountyVaIntelligence } from '@/lib/local-movers/county-intelligence/virginia/spotsylvania-va';
+// Virginia Tier 2 Wave 1
+import { staffordCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/stafford-tier2';
+import { spotsylvaniaCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/spotsylvania-tier2';
+import { hanoverCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/hanover-tier2';
+import { albemarleCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/albemarle-tier2';
+import { roanokeCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/roanoke-tier2';
+import { montgomeryCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/montgomery-tier2';
+import { frederickCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/frederick-tier2';
+import { jamesCityCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/james-city-tier2';
+import { yorkCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/york-tier2';
+import { newportNewsCityVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/newport-news-tier2';
+import { hamptonCityVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/hampton-tier2';
+import { fauquierCountyVaTier2Intelligence } from '@/lib/local-movers/county-intelligence/virginia/fauquier-tier2';
 // Tennessee Core 12
 import { shelbyCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/shelby-tn';
 import { davidsonCountyTnIntelligence } from '@/lib/local-movers/county-intelligence/tennessee/davidson-tn';
@@ -772,14 +789,20 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   sullivanCountyTier2Intelligence,
   warrenCountyNyTier2Intelligence,
   columbiaCountyTier2Intelligence,
-  // Arizona Core 7
+  // Arizona Tier 1 (Maricopa) + deep Pima preserved + Tier 2 Wave 1
   maricopaCountyIntelligence,
   pimaCountyIntelligence,
-  pinalCountyIntelligence,
-  yavapaiCountyIntelligence,
-  mohaveCountyIntelligence,
-  yumaCountyIntelligence,
-  coconinoCountyIntelligence,
+  pinalCountyAzTier2Intelligence,
+  yavapaiCountyAzTier2Intelligence,
+  mohaveCountyAzTier2Intelligence,
+  yumaCountyAzTier2Intelligence,
+  coconinoCountyAzTier2Intelligence,
+  cochiseCountyAzTier2Intelligence,
+  navajoCountyAzTier2Intelligence,
+  santaCruzCountyAzTier2Intelligence,
+  gilaCountyAzTier2Intelligence,
+  grahamCountyAzTier2Intelligence,
+  apacheCountyAzTier2Intelligence,
   // North Carolina Tier 1 core 8 + Tier 2 Wave 1
   mecklenburgCountyNcIntelligence,
   wakeCountyNcIntelligence,
@@ -849,8 +872,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   richmondCityVaIntelligence,
   chesapeakeCityVaIntelligence,
   norfolkCityVaIntelligence,
-  staffordCountyVaIntelligence,
-  spotsylvaniaCountyVaIntelligence,
+  // Virginia Tier 2 Wave 1
+  staffordCountyVaTier2Intelligence,
+  spotsylvaniaCountyVaTier2Intelligence,
+  hanoverCountyVaTier2Intelligence,
+  albemarleCountyVaTier2Intelligence,
+  roanokeCountyVaTier2Intelligence,
+  montgomeryCountyVaTier2Intelligence,
+  frederickCountyVaTier2Intelligence,
+  jamesCityCountyVaTier2Intelligence,
+  yorkCountyVaTier2Intelligence,
+  newportNewsCityVaTier2Intelligence,
+  hamptonCityVaTier2Intelligence,
+  fauquierCountyVaTier2Intelligence,
   // Illinois Tier 1 core 9 + Tier 2 Wave 1
   cookCountyIlIntelligence,
   duPageCountyIlIntelligence,
@@ -1572,31 +1606,60 @@ export const NY_TIER2_WAVE2 = [
 ] as const;
 
 
-/** Arizona Tier-1 Core 7. */
+/** Arizona Tier-1 core: Maricopa only. Pima kept as deep hand-crafted pack (not Wave 1). */
 export const AZ_TIER1_CORE7 = [
   'maricopa',
-  'pima',
+] as const;
+
+/**
+ * Arizona Tier 2 Wave 1 (11 counties).
+ * Pima skipped — existing ~580-line Tier-1-depth pack preserved (do not dilute Tucson).
+ */
+export const AZ_TIER2_WAVE1 = [
   'pinal',
   'yavapai',
   'mohave',
   'yuma',
   'coconino',
+  'cochise',
+  'navajo',
+  'santa-cruz',
+  'gila',
+  'graham',
+  'apache',
 ] as const;
 
-/** Virginia Tier-1 Core 12 (NoVA + Richmond region + Hampton Roads). */
-export const VA_TIER1_CORE12 = [
+/** Virginia Tier 1 core (locked) — do not rebuild in Tier 2 waves. */
+export const VA_TIER1_CORE = [
   'fairfax',
-  'prince-william',
-  'loudoun',
-  'chesterfield',
-  'henrico',
-  'virginia-beach',
   'arlington',
-  'richmond',
-  'chesapeake',
+  'loudoun',
+  'prince-william',
+  'virginia-beach',
   'norfolk',
+  'chesapeake',
+  'henrico',
+  'chesterfield',
+  'richmond',
+] as const;
+
+/** @deprecated Prefer VA_TIER1_CORE — Stafford/Spotsylvania moved to Tier 2. */
+export const VA_TIER1_CORE12 = [...VA_TIER1_CORE] as const;
+
+/** Virginia Tier 2 Wave 1 — I-95 collars + independents + Peninsula cities + outer NoVA. */
+export const VA_TIER2_WAVE1 = [
   'stafford',
   'spotsylvania',
+  'hanover',
+  'albemarle',
+  'roanoke',
+  'montgomery',
+  'frederick',
+  'james-city',
+  'york',
+  'newport-news',
+  'hampton',
+  'fauquier',
 ] as const;
 
 /** North Carolina Tier-1 Core 8 (Charlotte/Triangle/Triad/coast/military/mountain hubs). */

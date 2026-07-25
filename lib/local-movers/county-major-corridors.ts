@@ -204,11 +204,17 @@ const CORRIDORS: Record<string, string> = {
   // ——— Arizona ———
   'arizona/maricopa': 'I-10 · I-17 · Loop 101 · Loop 202 · US-60 · Loop 303',
   'arizona/pima': 'I-10 · I-19 · AZ-77 · AZ-86 · Grant / Broadway corridors',
-  'arizona/pinal': 'I-10 · AZ-347 · AZ-79 · US-60 · AZ-287',
-  'arizona/yavapai': 'I-17 · AZ-69 · AZ-89 · AZ-89A · AZ-69/169 corridors',
-  'arizona/mohave': 'I-40 · US-93 · AZ-95 · I-15 (northwest edge) · AZ-68',
+  'arizona/pinal': 'I-10 · AZ-347 · AZ-79 · US-60 · AZ-287 · AZ-87',
+  'arizona/yavapai': 'I-17 · AZ-69 · AZ-89 · AZ-89A · AZ-169 · AZ-260 edges',
+  'arizona/mohave': 'I-40 · US-93 · AZ-95 · AZ-68 · I-15 northwest edge',
   'arizona/yuma': 'I-8 · US-95 · AZ-195 · Business 8 · 4th Avenue corridor',
-  'arizona/coconino': 'I-40 · I-17 · US-89 · US-180 · AZ-89A',
+  'arizona/coconino': 'I-40 · I-17 · US-89 · US-180 · AZ-89A · Milton Road corridor',
+  'arizona/cochise': 'I-10 · AZ-90 · AZ-80 · AZ-92 · US-191',
+  'arizona/navajo': 'I-40 · AZ-77 · AZ-260 · AZ-87 · US-180 edges',
+  'arizona/santa-cruz': 'I-19 · AZ-82 · AZ-83 · Grand Avenue corridor',
+  'arizona/gila': 'AZ-87 · US-60 · AZ-188 · AZ-260 · AZ-77',
+  'arizona/graham': 'US-70 · US-191 · AZ-366 · AZ-266',
+  'arizona/apache': 'US-191 · US-180 · AZ-61 · AZ-260 · I-40 northern approaches',
 
   // ——— South Carolina Core 12 ———
   'south-carolina/greenville': 'I-85 · I-385 · US-25 · SC-14 · local arterial grid',
@@ -550,6 +556,18 @@ const CORRIDORS: Record<string, string> = {
   'virginia/norfolk': 'I-64 · I-264 · I-564 · Downtown Tunnel approaches · Naval Base access corridors',
   'virginia/stafford': 'I-95 · US-1 · VA-610 (Garrisonville) · VA-17',
   'virginia/spotsylvania': 'I-95 · VA-3 · US-1 · VA-208',
+
+  // Virginia Tier 2 Wave 1
+  'virginia/hanover': 'I-95 · I-295 · US-301 · US-360 · VA-54 · VA-156 approaches',
+  'virginia/albemarle': 'I-64 · US-29 · US-250 · VA-20 · VA-240 · VA-6 approaches',
+  'virginia/roanoke': 'I-81 · I-581 links · US-220 · US-460 · VA-419 · Electric Road corridors',
+  'virginia/montgomery': 'I-81 · US-460 · US-11 · VA-114 · VA-8 approaches',
+  'virginia/frederick': 'I-81 · US-11 · US-50 · US-522 · VA-7 approaches · VA-37',
+  'virginia/james-city': 'I-64 · VA-199 · US-60 · VA-5 · VA-31 approaches',
+  'virginia/york': 'I-64 · US-17 · VA-134 · VA-105 · VA-199 links',
+  'virginia/newport-news': 'I-64 · US-60 · US-17 · Jefferson Ave · Warwick Blvd · J. Clyde Morris Blvd',
+  'virginia/hampton': 'I-64 · I-664 · US-60 · Mercury Blvd · VA-134 · Settlers Landing approaches',
+  'virginia/fauquier': 'I-66 · US-17 · US-29 · US-15 · US-211 · VA-28 approaches',
 
   // ——— Ohio Core 12 ———
   'ohio/franklin': 'I-70 · I-71 · I-270 · I-670 · US-23 · US-33',
