@@ -278,19 +278,16 @@ export default async function LocalMoversStatePage({ params }: Props) {
                       <p className="mt-1.5 text-sm text-slate-500">
                         {state.slug === 'district-of-columbia'
                           ? 'Curated local movers for the capital region'
-                          : `${hubStats.totalCounties} county guides · ${hubStats.tier1Count} Tier 1 · ${hubStats.deepGuideCount} deep guides · Deep/Tier 1 listed first`}
+                          : `${hubStats.totalCounties} county guides · ${hubStats.deepGuideCount} Deep guide (31+ movers) · badges follow listed inventory`}
                       </p>
                     </div>
                   </div>
                   <div className="mb-4 flex flex-wrap gap-2 text-[11px] text-slate-500">
                     <span className="rounded-full bg-sky-50 px-2 py-1 font-semibold text-sky-900 ring-1 ring-sky-200/80">
-                      Deep guide
-                    </span>
-                    <span className="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-800 ring-1 ring-emerald-200/80">
-                      Tier 1
+                      Deep guide · 31+ movers
                     </span>
                     <span className="rounded-full bg-amber-50 px-2 py-1 font-semibold text-amber-800 ring-1 ring-amber-200/80">
-                      Limited
+                      Limited · ≤30 movers
                     </span>
                   </div>
                   <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">

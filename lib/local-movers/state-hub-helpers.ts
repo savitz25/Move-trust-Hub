@@ -2,8 +2,10 @@ import 'server-only';
 
 import { hasDeepCountyResearch } from '@/data/deep-county-research';
 import { evaluateCountyIndexability } from '@/lib/local-movers/county-indexability';
-import { isBatchTemplateCountyResearch } from '@/lib/local-movers/county-content-quality';
-import { getCountyResearch } from '@/lib/local-movers/county-research';
+import {
+  resolveStateHubDirectoryBadge,
+  type StateHubDirectoryBadge,
+} from '@/lib/local-movers/county-guide-badge';
 import { getCountyGuideTierMeta } from '@/lib/local-movers/county-tier';
 import { getCountyPath } from '@/lib/local-movers/index';
 import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
@@ -13,9 +15,11 @@ import type { LocalCounty } from '@/lib/local-movers/types';
 export type StateHubCountyRow = {
   county: LocalCounty;
   moverCount: number;
-  guideBadge: string;
+  /** Directory card badge — count-driven (Deep guide / Limited only). */
+  guideBadge: StateHubDirectoryBadge;
   sortIndex: number;
   isTier1: boolean;
+  /** True when deep research content exists (editorial signal, not the badge rule). */
   isDeepGuide: boolean;
   href: string;
 };
@@ -23,6 +27,7 @@ export type StateHubCountyRow = {
 export type StateHubStats = {
   tier1Count: number;
   deepGuideCount: number;
+  /** Counties whose directory badge is Deep guide (count or editorial override). */
   enrichedCount: number;
   totalCounties: number;
 };
@@ -32,6 +37,11 @@ export type StateHubStats = {
  *
  * Mover counts use the same async path as county pages (static catalog + approved
  * directory locals from Supabase) so badges match after new locals are published.
+ *
+ * Directory badge rule (centralized in `resolveStateHubDirectoryBadge`):
+ *   >30 listed movers → "Deep guide"
+ *   ≤30 listed movers → "Limited"
+ * Editorial override: deep-research counties may stay "Deep guide" under 30.
  *
  * Note: during `next build` (NEXT_PHASE=phase-production-build) approved Supabase
  * locals are skipped to avoid bulk SSG timeouts — both state hubs and county pages
@@ -65,20 +75,22 @@ export async function buildStateHubCountyRows(
       );
       const isTier1 = tierMeta.tier === 'tier1';
       const isDeepGuide = hasDeepCountyResearch(stateSlug, county.slug);
-      const enriched = Boolean(
-        getCountyResearch(stateSlug, county.slug) &&
-          !isBatchTemplateCountyResearch(stateSlug, county.slug)
-      );
+
+      // Badge is count-driven. Editorial override only for genuine deep research
+      // packs (hasDeepCountyResearch) — not for every Tier 2 intelligence stub.
+      const guideBadge = resolveStateHubDirectoryBadge(moverCount, {
+        editorialDeepGuide: isDeepGuide,
+      });
 
       let sortIndex = 0;
-      if (isTier1 && isDeepGuide) sortIndex = 3;
-      else if (isTier1 && enriched) sortIndex = 2;
+      if (guideBadge === 'Deep guide' && isTier1) sortIndex = 3;
+      else if (guideBadge === 'Deep guide') sortIndex = 2;
       else if (isTier1) sortIndex = 1;
 
       return {
         county,
         moverCount,
-        guideBadge: tierMeta.badge,
+        guideBadge,
         sortIndex,
         isTier1,
         isDeepGuide,
@@ -98,10 +110,8 @@ export async function buildStateHubCountyRows(
 export function buildStateHubStats(rows: StateHubCountyRow[]): StateHubStats {
   return {
     tier1Count: rows.filter((r) => r.isTier1).length,
-    deepGuideCount: rows.filter((r) => r.isDeepGuide).length,
-    enrichedCount: rows.filter(
-      (r) => r.guideBadge === 'Enriched' || r.guideBadge === 'Deep guide'
-    ).length,
+    deepGuideCount: rows.filter((r) => r.guideBadge === 'Deep guide').length,
+    enrichedCount: rows.filter((r) => r.guideBadge === 'Deep guide').length,
     totalCounties: rows.length,
   };
 }

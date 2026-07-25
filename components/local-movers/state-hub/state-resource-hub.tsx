@@ -161,9 +161,9 @@ export function StateResourceHub({
   const showRegions =
     regionMode !== 'flat_county_list' && pack.regions.length > 0;
 
-  // Progressive county directory: show top tier first in HTML, rest in details
-  const featuredCounties = hubRows.filter((r) => r.isDeepGuide || r.isTier1);
-  const remainingCounties = hubRows.filter((r) => !r.isDeepGuide && !r.isTier1);
+  // Progressive county directory: Deep guide (count-driven) first, then Limited
+  const featuredCounties = hubRows.filter((r) => r.guideBadge === 'Deep guide');
+  const remainingCounties = hubRows.filter((r) => r.guideBadge !== 'Deep guide');
   const featuredShow =
     featuredCounties.length > 0 ? featuredCounties : hubRows.slice(0, 12);
   const restShow =
@@ -753,17 +753,14 @@ export function StateResourceHub({
           id="hub-counties-heading"
           eyebrow="Complete directory"
           title={`All ${hubRows.length} county guides`}
-          intro="Deep and Tier 1 research first. Expand for the full list. Every card links to a live county page."
+          intro="Badges reflect listed mover inventory: Deep guide when more than 30 movers serve the county, Limited when 30 or fewer. Expand for the full list."
         />
         <div className="mb-4 flex flex-wrap gap-2 text-[11px] text-slate-500">
           <span className="rounded-full bg-sky-50 px-2 py-1 font-semibold text-sky-900 ring-1 ring-sky-200/80">
-            Deep guide
-          </span>
-          <span className="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-800 ring-1 ring-emerald-200/80">
-            Tier 1
+            Deep guide · 31+ movers
           </span>
           <span className="rounded-full bg-amber-50 px-2 py-1 font-semibold text-amber-800 ring-1 ring-amber-200/80">
-            Limited
+            Limited · ≤30 movers
           </span>
         </div>
         <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
