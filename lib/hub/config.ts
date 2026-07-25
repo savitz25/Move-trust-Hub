@@ -33,7 +33,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     headerLogoSrc: TRUST_HUB_LOGO.src,
     logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-primary',
-    homeTitle: 'Compare FMCSA-Licensed Movers (2026) | MoveTrustHub',
+    homeTitle: 'Compare FMCSA-Licensed Movers (2026) | Move Trust Hub',
     homeDescription:
       'Compare 25+ FMCSA-licensed interstate movers by verified reviews, pricing, and safety data.',
     metadataTitleTemplate: '%s | Move Trust Hub',

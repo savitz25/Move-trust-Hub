@@ -4,9 +4,9 @@ import { TRUST_HUB_LOGO } from '@/lib/hub/config';
 export const SITE_URL = 'https://www.movetrusthub.com';
 export const SITE_NAME = 'Move Trust Hub';
 
-/** Default root title — keep aligned with HOMEPAGE_SEO_TITLE in destination-seo.ts */
+/** Default root title — keep aligned with HOMEPAGE_SEO_TITLE in destination-seo.ts (no brand suffix; layout template adds | Move Trust Hub). */
 export const HOMEPAGE_TITLE =
-  'Where Are You Moving? ZIP Planner + FMCSA Movers | MoveTrustHub';
+  'Where Are You Moving? ZIP Planner + FMCSA Movers';
 export const HOMEPAGE_DESCRIPTION =
   'Enter From & To ZIPs to find trusted movers for your route, estimate move size, and browse county guides. Independent FMCSA directory — no lead fees, no paid placements.';
 

@@ -6,6 +6,7 @@ import { Plus, X } from 'lucide-react';
 import type { Company } from '@/types';
 import { Button } from '@/components/ui/button';
 import { MethodologyLink } from '@/components/trust/methodology-link';
+import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 
 const SaveMoverButton = dynamic(
   () =>
@@ -32,7 +33,7 @@ type CompareStore = {
 
 type Props = {
   company: Company;
-  profileHref: string;
+  profileReturnPath?: string;
   reviewHref: string;
   compareStore: CompareStore;
 };
@@ -40,7 +41,7 @@ type Props = {
 /** Lazy Save/Email/Claim so the directory card shell stays light. */
 export function CompanyCardActions({
   company,
-  profileHref,
+  profileReturnPath,
   reviewHref,
   compareStore,
 }: Props) {
@@ -69,11 +70,11 @@ export function CompanyCardActions({
               Review
             </Button>
           </Link>
-          <Link href={profileHref}>
+          <CompanyProfileLink slug={company.slug} returnPath={profileReturnPath}>
             <Button size="sm" variant="ghost" className="h-8 px-3">
               Details
             </Button>
-          </Link>
+          </CompanyProfileLink>
           <Button
             size="sm"
             variant={isSelected ? 'default' : 'outline'}

@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
+import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
 import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
 import { assessLicense } from '@/lib/trust/license-verification';
@@ -67,10 +68,14 @@ export function LocalMoverCard({
           </div>
           <div className="min-w-0">
             <h3 className="text-lg font-semibold tracking-tight leading-tight">
-              {profileHref ? (
-                <Link href={profileHref} className="hover:text-primary transition-colors">
+              {profileSlug && profileHref ? (
+                <CompanyProfileLink
+                  slug={profileSlug}
+                  returnPath={profileReturnPath}
+                  className="hover:text-primary transition-colors"
+                >
                   {mover.name}
-                </Link>
+                </CompanyProfileLink>
               ) : (
                 mover.name
               )}
@@ -192,14 +197,15 @@ export function LocalMoverCard({
             Leave a review
           </Link>
         ) : null}
-        {profileHref ? (
-          <Link
-            href={profileHref}
+        {profileSlug && profileHref ? (
+          <CompanyProfileLink
+            slug={profileSlug}
+            returnPath={profileReturnPath}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
           >
             View full profile
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-          </Link>
+          </CompanyProfileLink>
         ) : mover.website ? (
           <a
             href={mover.website}

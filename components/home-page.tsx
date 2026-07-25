@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { HomeBelowFold } from '@/components/home/home-below-fold';
+import { HomeHeroSsr } from '@/components/home/home-hero-ssr';
 import { HomeWizardSection } from '@/components/home/home-wizard-section';
 import { prepareCompaniesForDirectoryClient } from '@/lib/directory/directory-client-payload';
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
@@ -23,7 +24,7 @@ export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
 
   return (
     <div className="flex flex-col">
-      {/* Task-driven hero */}
+      {/* Task-driven hero — SSR H1 + trust links; client ZIP widget only */}
       <section className="relative overflow-hidden border-b">
         {/* High-tech background */}
         <div
@@ -49,6 +50,7 @@ export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         />
 
         <div className="container relative mx-auto px-4 py-10 sm:py-14 md:py-16 lg:py-20">
+          <HomeHeroSsr />
           <HomeWizardSection fallbackMovers={fallbackMovers} />
         </div>
       </section>

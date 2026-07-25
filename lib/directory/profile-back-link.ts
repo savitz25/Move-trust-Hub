@@ -34,12 +34,39 @@ export function sanitizeCompanyReturnPath(from: string | null | undefined): stri
   }
 }
 
-export function buildCompanyProfileHref(slug: string, returnPath?: string | null): string {
-  const base = `/companies/${slug}`;
-  const safeReturn = sanitizeCompanyReturnPath(returnPath ?? null);
-  if (!safeReturn) return base;
-  const params = new URLSearchParams({ from: safeReturn });
-  return `${base}?${params.toString()}`;
+/**
+ * Clean, crawlable company profile URL — never appends ?from= or other tracking params.
+ * Return navigation is stored client-side via storeCompanyReturnPath / sessionStorage.
+ */
+export function buildCompanyProfileHref(slug: string, _returnPath?: string | null): string {
+  const clean = (slug || '').trim().replace(/^\/+|\/+$/g, '');
+  return clean ? `/companies/${clean}` : '/companies';
+}
+
+/** sessionStorage key for profile “back” navigation (not crawlable). */
+export const COMPANY_PROFILE_RETURN_KEY = 'mth:company-profile-return';
+
+export function storeCompanyReturnPath(returnPath?: string | null): void {
+  if (typeof window === 'undefined') return;
+  const safe = sanitizeCompanyReturnPath(returnPath ?? null);
+  try {
+    if (safe) {
+      window.sessionStorage.setItem(COMPANY_PROFILE_RETURN_KEY, safe);
+    }
+  } catch {
+    // private mode / blocked storage — ignore
+  }
+}
+
+export function readCompanyReturnPath(): string | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    return sanitizeCompanyReturnPath(
+      window.sessionStorage.getItem(COMPANY_PROFILE_RETURN_KEY)
+    );
+  } catch {
+    return null;
+  }
 }
 
 function slugToTitle(slug: string): string {

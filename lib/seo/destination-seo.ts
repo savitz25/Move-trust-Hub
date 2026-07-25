@@ -9,9 +9,9 @@ export const DESTINATIONS_INDEX_TITLE =
 export const DESTINATIONS_INDEX_DESCRIPTION =
   'Explore 480+ inbound moving guides for Myrtle Beach, South Florida, Texas, Arizona, and fast-growing relocation markets. Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory — no lead fees.';
 
-/** Refined homepage meta — targets quote + directory + local movers keywords */
+/** Refined homepage meta — brand suffix applied via formatDocumentTitle / absoluteDocumentTitle */
 export const HOMEPAGE_SEO_TITLE =
-  'Where Are You Moving? ZIP Planner + FMCSA Movers | MoveTrustHub';
+  'Where Are You Moving? ZIP Planner + FMCSA Movers';
 export const HOMEPAGE_SEO_DESCRIPTION =
   'Enter From & To ZIPs to find trusted movers for your route, estimate move size, and browse county guides. Independent FMCSA directory — no lead fees, no paid placements.';
 

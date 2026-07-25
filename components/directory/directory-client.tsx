@@ -28,9 +28,8 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { DirectoryCoverageFilterControl } from '@/components/directory/directory-coverage-filter';
 import { DirectoryEmptyState } from '@/components/directory/directory-empty-state';
-import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
+import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 import {
-  companyProfileHref,
   formatAvgPricePerMove,
   formatCompanyHeadquarters,
   normalizeCompaniesForDisplay,
@@ -676,15 +675,16 @@ export function DirectoryClient({
                     1000
                   ).toFixed(1);
                   const selected = compareStore.isSelected(c.slug);
-                  const profileHref = sourcePage
-                    ? buildCompanyProfileHref(c.slug, sourcePage)
-                    : companyProfileHref(c);
                   return (
                     <tr key={c.id || c.slug} className="hover:bg-muted/40 border-b last:border-0">
                       <td className="pl-5 py-3 font-medium">
-                        <Link href={profileHref} className="hover:underline">
+                        <CompanyProfileLink
+                          slug={c.slug}
+                          returnPath={sourcePage}
+                          className="hover:underline"
+                        >
                           {c.name || 'Unnamed company'}
-                        </Link>
+                        </CompanyProfileLink>
                         <div className="text-xs text-muted-foreground">
                           {formatCompanyHeadquarters(c.headquarters)}
                         </div>
@@ -713,11 +713,11 @@ export function DirectoryClient({
                       <td className="text-center text-xs">{ratio}</td>
                       <td className="text-right pr-4">
                         <div className="flex justify-end gap-2">
-                          <Link href={profileHref}>
+                          <CompanyProfileLink slug={c.slug} returnPath={sourcePage}>
                             <Button size="sm" variant="outline">
                               Profile
                             </Button>
-                          </Link>
+                          </CompanyProfileLink>
                           <Button
                             size="sm"
                             variant={selected ? 'default' : 'outline'}

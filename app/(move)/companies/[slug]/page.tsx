@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { notFound, redirect } from 'next/navigation';
 import { getCompanyBySlugAsync, getReviews } from '@/lib/data-server';
 import { JsonLd } from '@/lib/seo/json-ld';
@@ -57,7 +58,6 @@ export const revalidate = 300;
 
 interface Props {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ from?: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -77,7 +77,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     editorialReviewCount: company.reviewCount,
     editorialRating: company.overallRating,
   });
-  // Canonical always uses the resolved company.slug (aliases redirect in the page body).
+  // Absolute self-canonical to clean /companies/{slug} (no query params).
+  // index, follow via buildMovePageMetadata (unless noIndex).
   return buildMovePageMetadata({
     title: `${company.name} — FMCSA Profile, Ratings & Pricing`,
     description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Independent directory — verify FMCSA licensing yourself.`,
@@ -85,15 +86,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function CompanyProfilePage({ params, searchParams }: Props) {
+export default async function CompanyProfilePage({ params }: Props) {
   const { slug } = await params;
-  const { from } = await searchParams;
   const company = await getCompanyBySlugAsync(slug);
 
   if (!company) notFound();
 
+  // Alias slug → canonical slug (clean URL, never re-attach ?from=).
   if (company.slug !== slug) {
-    redirect(buildCompanyProfileHref(company.slug, from));
+    redirect(buildCompanyProfileHref(company.slug));
   }
 
   const reviews = await getReviews(company.id, 8);
@@ -142,7 +143,11 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
       <JsonLd data={buildCompanyDirectorySchemaGraph(company)} />
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <AdminRefreshVerificationShell companyId={company.id} />
-      <CompanyProfileBack fromParam={from} />
+      <Suspense fallback={
+        <div className="mb-4 h-5 w-40 animate-pulse rounded bg-muted" aria-hidden />
+      }>
+        <CompanyProfileBack />
+      </Suspense>
 
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">

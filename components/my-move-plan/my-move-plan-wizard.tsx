@@ -28,7 +28,10 @@ import {
 } from '@/lib/save-my-move/password-meta';
 import { PORTAL_PASSWORD_ENABLED_KEY } from '@/lib/portal/password-meta';
 import { stashPendingSaveAction } from '@/lib/save-my-move/pending-action';
-import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
+import {
+  buildCompanyProfileHref,
+  storeCompanyReturnPath,
+} from '@/lib/directory/profile-back-link';
 import type { HomeRouteMover, HomeRouteResult } from '@/lib/home/resolve-route-from-zip';
 import {
   MOVE_PRESETS,
@@ -399,7 +402,8 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
   }, [planSnapshot]);
 
   const profileHref = useCallback((slug: string) => {
-    // Persist before leave so Back restores shortlist/inventory/step
+    // Persist plan + return path before leave so Back restores shortlist/inventory/step
+    // without polluting crawlable /companies/{slug}?from= URLs.
     saveMyMovePlan({
       step,
       fromPlace,
@@ -410,7 +414,8 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
       inventory,
       updatedAt: new Date().toISOString(),
     });
-    return buildCompanyProfileHref(slug, MY_MOVE_PLAN_RETURN_PATH);
+    storeCompanyReturnPath(MY_MOVE_PLAN_RETURN_PATH);
+    return buildCompanyProfileHref(slug);
   }, [step, fromPlace, toPlace, drivingMiles, shortlist, preset, inventory]);
 
   const openEstimateMailto = useCallback(

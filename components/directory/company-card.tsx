@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import type { Company } from '@/types';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -8,15 +7,14 @@ import { StarRating } from '@/components/ui/star-rating';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
-import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import {
-  companyProfileHref,
   formatCompanyHeadquarters,
   formatFoundedLabel,
   normalizeCompanyForDisplay,
 } from '@/lib/directory/normalize-company';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CompanyCardActions } from '@/components/directory/company-card-actions';
+import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -33,9 +31,6 @@ type Props = {
 
 export function CompanyCard({ company: rawCompany, compareStore, profileReturnPath }: Props) {
   const company = normalizeCompanyForDisplay(rawCompany);
-  const profileHref = profileReturnPath
-    ? buildCompanyProfileHref(company.slug, profileReturnPath)
-    : companyProfileHref(company);
   const foundedLabel = formatFoundedLabel(company.foundedYear);
   const locationLine = [formatCompanyHeadquarters(company.headquarters), foundedLabel]
     .filter(Boolean)
@@ -54,12 +49,13 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
     <Card className="company-card group overflow-hidden flex flex-col">
       <div className="p-5 flex-1">
         <div className="space-y-1.5">
-          <Link
-            href={profileHref}
+          <CompanyProfileLink
+            slug={company.slug}
+            returnPath={profileReturnPath}
             className="font-semibold text-xl tracking-tight group-hover:text-primary transition-colors block"
           >
             {company.name}
-          </Link>
+          </CompanyProfileLink>
           <div className="flex flex-wrap items-center gap-1.5">
             <CompanyTypeBadges company={company} size="compact" />
             <CompanyVerificationBadges company={company} size="compact" className="justify-start" />
@@ -100,7 +96,7 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
 
       <CompanyCardActions
         company={company}
-        profileHref={profileHref}
+        profileReturnPath={profileReturnPath}
         reviewHref={reviewHref}
         compareStore={compareStore}
       />

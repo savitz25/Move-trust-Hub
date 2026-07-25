@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Star, ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
-import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
+import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 import type { Company } from '@/types';
 
 export function DestinationInterstateCard({
@@ -16,7 +16,6 @@ export function DestinationInterstateCard({
   areaLabel: string;
   profileReturnPath?: string;
 }) {
-  const profileHref = buildCompanyProfileHref(company.slug, profileReturnPath);
   return (
     <article className="rounded-2xl border bg-card p-5 sm:p-6 shadow-sm hover:border-primary/30 transition-colors">
       <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
@@ -59,12 +58,13 @@ export function DestinationInterstateCard({
       </div>
 
       <div className="flex gap-2">
-        <Link
-          href={profileHref}
+        <CompanyProfileLink
+          slug={company.slug}
+          returnPath={profileReturnPath}
           className="flex-1 inline-flex items-center justify-center rounded-md bg-primary px-3 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
         >
           View Profile
-        </Link>
+        </CompanyProfileLink>
         <Link
           href="/compare"
           className="inline-flex items-center justify-center rounded-md border px-3 py-2 text-xs font-medium hover:border-primary/40 transition-colors"

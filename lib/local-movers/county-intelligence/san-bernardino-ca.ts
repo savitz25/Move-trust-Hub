@@ -380,7 +380,7 @@ export const sanBernardinoCountyIntelligence: CountyIntelligencePack = {
       },
       {
         label: 'MCLB Barstow',
-        href: 'https://www.mclbbarrstow.marines.mil/',
+        href: 'https://www.mclbbarstow.marines.mil/',
         external: true,
       },
       {

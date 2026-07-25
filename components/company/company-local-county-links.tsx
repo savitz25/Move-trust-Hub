@@ -58,7 +58,11 @@ export function CompanyLocalCountyLinks({
               const stateName = getLocalState(c.stateSlug)?.name ?? c.stateSlug;
               const label =
                 c.name?.trim() ||
-                `${c.countySlug.replace(/-/g, ' ')} County, ${stateName}`;
+                `${c.countySlug
+                  .split('-')
+                  .filter(Boolean)
+                  .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
+                  .join(' ')} County, ${stateName}`;
               return (
                 <li key={`${c.stateSlug}/${c.countySlug}`}>
                   <Link

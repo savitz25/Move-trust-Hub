@@ -55,6 +55,15 @@ export function enrichStateResearchToDeep(
   };
 }
 
+/** Title-case a county slug for user-facing FAQ copy (never "san bernardino"). */
+function titleCaseCountySlug(slug: string): string {
+  return slug
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+    .join(' ');
+}
+
 /** Promote all entries from a state research map into deep research records. */
 export function promoteStateResearchMap(
   stateSlug: string,
@@ -70,7 +79,7 @@ export function promoteStateResearchMap(
           ? buildMetroFaq(
               stateSlug,
               countySlug,
-              countyLabels[countySlug] ?? countySlug.replace(/-/g, ' ')
+              countyLabels[countySlug] ?? titleCaseCountySlug(countySlug)
             )
           : undefined,
       }),
