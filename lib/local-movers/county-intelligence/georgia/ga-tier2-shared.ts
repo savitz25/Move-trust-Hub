@@ -57,10 +57,17 @@ export const GA_TIER2_COMMON_RESOURCES: CountyIntelligenceResource[] = [
 
 export type GaTier2PackInput = Omit<
   CountyIntelligencePack,
-  'stateSlug' | 'collapsibleDeepContent' | 'sectionOrder' | 'contentTier'
+  | 'stateSlug'
+  | 'collapsibleDeepContent'
+  | 'sectionOrder'
+  | 'contentTier'
+  | 'lastReviewed'
 > &
   Partial<
-    Pick<CountyIntelligencePack, 'collapsibleDeepContent' | 'sectionOrder' | 'contentTier'>
+    Pick<
+      CountyIntelligencePack,
+      'collapsibleDeepContent' | 'sectionOrder' | 'contentTier' | 'lastReviewed'
+    >
   > & {
     parentCompare: CountyParentCompare;
   };
@@ -125,6 +132,8 @@ export function finalizeGaTier2Pack(pack: GaTier2PackInput): CountyIntelligenceP
     ...pack,
     stateSlug: 'georgia',
     contentTier: 'tier2',
+    // Hub formats pack.lastReviewed — missing values become "Invalid Date" in the UI.
+    lastReviewed: pack.lastReviewed ?? '2026-07-24',
     parentCompare,
     collapsibleDeepContent: pack.collapsibleDeepContent ?? true,
     sectionOrder: pack.sectionOrder ?? TIER2_INTELLIGENCE_SECTION_ORDER,

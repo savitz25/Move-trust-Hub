@@ -140,6 +140,20 @@ const CORRIDORS: Record<string, string> = {
   'georgia/bibb': 'I-75 · I-16 · US-80 · US-41 · Eisenhower Parkway · Vineville corridors',
   'georgia/clarke': 'US-78 · US-29 · GA-10 Loop · GA-15 · Atlanta Highway corridors',
 
+  // Georgia Tier 2 Wave 2
+  'georgia/bartow': 'I-75 · US-41 · GA-20 · GA-113 · GA-61 approaches',
+  'georgia/carroll': 'I-20 · US-27 · GA-166 · GA-61 · GA-16 approaches',
+  'georgia/rockdale': 'I-20 · GA-138 · GA-20 · US-278 · Sigman Road corridors',
+  'georgia/newton': 'I-20 · US-278 · GA-142 · GA-36 · GA-81 approaches',
+  'georgia/barrow': 'GA-316 · US-29 · GA-11 · GA-81 · GA-211 approaches',
+  'georgia/walton': 'US-78 · GA-11 · GA-81 · GA-20 approaches · GA-138 approaches',
+  'georgia/floyd': 'US-27 · US-411 · GA-20 · GA-53 · GA-1 approaches',
+  'georgia/whitfield': 'I-75 · US-41 · US-76 · GA-52 · GA-3 approaches',
+  'georgia/lowndes': 'I-75 · US-41 · US-84 · GA-38 · GA-31 approaches',
+  'georgia/glynn': 'I-95 · US-17 · US-341 · GA-25 · Torras Causeway / island approaches',
+  'georgia/dougherty': 'US-19 · US-82 · GA-300 · GA-91 · GA-62 approaches',
+  'georgia/troup': 'I-85 · US-27 · US-29 · GA-109 · GA-219 approaches',
+
   // ——— New York ———
   'new-york/kings':
     'I-278 (BQE) · Belt Parkway · Gowanus Expressway · Prospect Expressway · Ocean Pkwy',
@@ -594,7 +608,15 @@ const CORRIDORS: Record<string, string> = {
   'north-carolina/union': 'US-74 · I-485 links · NC-16 · NC-84 · Providence Road corridor',
   'north-carolina/cabarrus': 'I-85 · US-29 · Concord Mills Blvd · NC-49 · NC-73',
   'north-carolina/gaston': 'I-85 · US-321 · US-74 · NC-279 · Wilkinson Blvd',
+  'north-carolina/iredell': 'I-77 · I-40 · US-21 · NC-150 · NC-115 · Brawley School Rd corridor',
+  'north-carolina/johnston': 'I-40 · I-95 · US-70 · US-301 · NC-42 · NC-50',
+  'north-carolina/orange': 'I-40 · US-15-501 · NC-54 · NC-86 · Franklin Street corridor',
+  'north-carolina/alamance': 'I-40 · I-85 · US-70 · NC-49 · NC-54 · NC-87',
+  'north-carolina/davidson': 'I-85 · US-29 · US-52 · US-64 · NC-8 · Business 85',
+  'north-carolina/catawba': 'I-40 · US-321 · US-70 · NC-16 · NC-127 · NC-10',
   'north-carolina/onslow': 'US-17 · NC-24 · Western Boulevard · Lejeune Boulevard · base-access roads',
+  'north-carolina/pitt': 'US-264 · US-13 · NC-11 · NC-33 · NC-43 · Firetower Rd corridor',
+  'north-carolina/brunswick': 'US-17 · US-74/76 · NC-211 · NC-133 · NC-87 · beach-access roads',
 
   // ——— New Jersey (shared Tier-1 template) ———
   'new-jersey/bergen': 'I-95 / NJ Turnpike · I-80 · Route 17 · Route 4 · GWB approaches',

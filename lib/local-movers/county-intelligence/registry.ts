@@ -141,6 +141,20 @@ import { columbiaCountyGaTier2Intelligence } from '@/lib/local-movers/county-int
 import { houstonCountyGaTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/houston-tier2';
 import { bibbCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/bibb-tier2';
 import { clarkeCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/clarke-tier2';
+// Georgia Tier 2 Wave 2
+import { bartowCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/bartow-tier2';
+import { carrollCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/carroll-tier2';
+import { rockdaleCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/rockdale-tier2';
+import { newtonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/newton-tier2';
+import { barrowCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/barrow-tier2';
+import { waltonCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/walton-tier2';
+import { floydCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/floyd-tier2';
+import { whitfieldCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/whitfield-tier2';
+import { lowndesCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/lowndes-tier2';
+import { glynnCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/glynn-tier2';
+import { doughertyCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/dougherty-tier2';
+import { troupCountyTier2Intelligence } from '@/lib/local-movers/county-intelligence/georgia/troup-tier2';
+
 
 // New York Core 12
 import { kingsCountyIntelligence } from '@/lib/local-movers/county-intelligence/new-york/kings-ny';
@@ -199,10 +213,18 @@ import { durhamCountyNcIntelligence } from '@/lib/local-movers/county-intelligen
 import { cumberlandCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/cumberland-nc';
 import { buncombeCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/buncombe-nc';
 import { newHanoverCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/new-hanover-nc';
-import { unionCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/union-nc';
-import { cabarrusCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/cabarrus-nc';
-import { gastonCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/gaston-nc';
-import { onslowCountyNcIntelligence } from '@/lib/local-movers/county-intelligence/north-carolina/onslow-nc';
+import { unionCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/union-nc';
+import { cabarrusCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/cabarrus-nc';
+import { gastonCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/gaston-nc';
+import { iredellCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/iredell-nc';
+import { johnstonCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/johnston-nc';
+import { orangeCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/orange-nc';
+import { alamanceCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/alamance-nc';
+import { davidsonCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/davidson-nc';
+import { catawbaCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/catawba-nc';
+import { onslowCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/onslow-nc';
+import { pittCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/pitt-nc';
+import { brunswickCountyNcTier2Intelligence } from '@/lib/local-movers/county-intelligence/north-carolina/brunswick-nc';
 // South Carolina Core 12 ΓÇö intentionally NOT registered until packs are committed
 // (broken imports here prevent production deploys and leave VA/TN pages on stale builds).
 // Virginia Core 12
@@ -680,6 +702,19 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   houstonCountyGaTier2Intelligence,
   bibbCountyTier2Intelligence,
   clarkeCountyTier2Intelligence,
+  // Georgia Tier 2 Wave 2
+  bartowCountyTier2Intelligence,
+  carrollCountyTier2Intelligence,
+  rockdaleCountyTier2Intelligence,
+  newtonCountyTier2Intelligence,
+  barrowCountyTier2Intelligence,
+  waltonCountyTier2Intelligence,
+  floydCountyTier2Intelligence,
+  whitfieldCountyTier2Intelligence,
+  lowndesCountyTier2Intelligence,
+  glynnCountyTier2Intelligence,
+  doughertyCountyTier2Intelligence,
+  troupCountyTier2Intelligence,
   // New York Core 12
   kingsCountyIntelligence,
   queensCountyIntelligence,
@@ -727,7 +762,7 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   mohaveCountyIntelligence,
   yumaCountyIntelligence,
   coconinoCountyIntelligence,
-  // North Carolina Core 12
+  // North Carolina Tier 1 core 8 + Tier 2 Wave 1
   mecklenburgCountyNcIntelligence,
   wakeCountyNcIntelligence,
   guilfordCountyNcIntelligence,
@@ -736,10 +771,18 @@ const RAW_PACKS: CountyIntelligencePack[] = [
   cumberlandCountyNcIntelligence,
   buncombeCountyNcIntelligence,
   newHanoverCountyNcIntelligence,
-  unionCountyNcIntelligence,
-  cabarrusCountyNcIntelligence,
-  gastonCountyNcIntelligence,
-  onslowCountyNcIntelligence,
+  unionCountyNcTier2Intelligence,
+  cabarrusCountyNcTier2Intelligence,
+  gastonCountyNcTier2Intelligence,
+  iredellCountyNcTier2Intelligence,
+  johnstonCountyNcTier2Intelligence,
+  orangeCountyNcTier2Intelligence,
+  alamanceCountyNcTier2Intelligence,
+  davidsonCountyNcTier2Intelligence,
+  catawbaCountyNcTier2Intelligence,
+  onslowCountyNcTier2Intelligence,
+  pittCountyNcTier2Intelligence,
+  brunswickCountyNcTier2Intelligence,
   // Tennessee Core 12
   shelbyCountyTnIntelligence,
   davidsonCountyTnIntelligence,
@@ -1405,6 +1448,23 @@ export const GA_TIER2_WAVE1 = [
   'clarke',
 ] as const;
 
+/** Georgia Tier 2 Wave 2 — outer collars + independent regional/coastal hubs. */
+export const GA_TIER2_WAVE2 = [
+  'bartow',
+  'carroll',
+  'newton',
+  'rockdale',
+  'barrow',
+  'walton',
+  'floyd',
+  'whitfield',
+  'lowndes',
+  'glynn',
+  'dougherty',
+  'troup',
+] as const;
+
+
 /** @deprecated Use GA_TIER1_CORE12 */
 export const GA_TIER1_CORE6 = [
   'fulton',
@@ -1503,20 +1563,32 @@ export const VA_TIER1_CORE12 = [
   'spotsylvania',
 ] as const;
 
-/** North Carolina Tier-1 Core 12. */
+/** North Carolina Tier-1 Core 8 (Charlotte/Triangle/Triad/coast/military/mountain hubs). */
 export const NC_TIER1_CORE12 = [
   'mecklenburg',
   'wake',
   'guilford',
   'forsyth',
   'durham',
-  'cumberland',
   'buncombe',
   'new-hanover',
+  'cumberland',
+] as const;
+
+/** North Carolina Tier 2 Wave 1 (Charlotte collars + Triangle/Triad secondary + independents). */
+export const NC_TIER2_WAVE1 = [
   'union',
   'cabarrus',
   'gaston',
+  'iredell',
+  'johnston',
+  'orange',
+  'alamance',
+  'davidson',
+  'catawba',
   'onslow',
+  'pitt',
+  'brunswick',
 ] as const;
 
 /** Tennessee Tier-1 Core 12. */
