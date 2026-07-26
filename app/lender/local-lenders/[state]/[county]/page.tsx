@@ -2,16 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { ClusterPageView } from '@/components/lender/cluster-page-view';
-import { LenderCard } from '@/components/lender/LenderCard';
 import { SearchBarLoader } from '@/components/lender/search-bar-loader';
+import { LenderDirectoryLoader } from '@/components/lender/directory/LenderDirectoryLoader';
 import { tryGetClusterContent } from '@/lib/lender/clusters/content';
 import { getAllClusterParams } from '@/lib/lender/clusters/registry';
 import { evaluateLenderClusterIndexability } from '@/lib/hub/indexability';
 import { buildHubMetadata } from '@/lib/hub/metadata';
 import { getEnrichedLendersByCounty } from '@/lib/lender/enrichment/get-enriched';
-import { LenderDirectoryFilters } from '@/components/lender/lender-directory-filters';
 import { ssgParams } from '@/lib/ssg/ssg-params';
-import { Suspense } from 'react';
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
@@ -568,32 +566,26 @@ export default async function CountyLendersPage({
         <SearchBarLoader className="mt-6 max-w-xl" />
       </div>
 
-      <Suspense fallback={null}>
-        <LenderDirectoryFilters />
-      </Suspense>
-
-      <div className="mx-auto max-w-3xl space-y-4">
-        {lenders.length > 0 ? (
-          lenders.map((lender, i) => (
-            <LenderCard
-              key={lender.id}
-              lender={lender}
-              rank={i + 1}
-              countyLabel={countyLabel}
-            />
-          ))
-        ) : (
-          <div className="rounded-2xl border border-zinc-200 bg-white p-8 text-center">
-            <p className="text-zinc-600">
-              We&apos;re expanding coverage in {countyLabel}. Check back soon or{' '}
-              <Link href="/lender/local-lenders" className="text-[#3B82F6] underline">
-                browse all counties
-              </Link>
-              .
-            </p>
-          </div>
-        )}
-      </div>
+      {lenders.length > 0 ? (
+        <LenderDirectoryLoader
+          lenders={lenders}
+          countyLabel={countyLabel}
+          profileReturnPath={`/lender/local-lenders/${state}/${county}`}
+          initialMinRating={minRating ? Number(minRating) : 0}
+          showRank
+          emptyMessage={`We're expanding coverage in ${countyLabel}. Try clearing filters or browse all counties.`}
+        />
+      ) : (
+        <div className="rounded-2xl border border-zinc-200 bg-white p-8 text-center">
+          <p className="text-zinc-600">
+            We&apos;re expanding coverage in {countyLabel}. Check back soon or{' '}
+            <Link href="/lender/local-lenders" className="text-[#3B82F6] underline">
+              browse all counties
+            </Link>
+            .
+          </p>
+        </div>
+      )}
     </div>
   );
 }
