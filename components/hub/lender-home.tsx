@@ -6,6 +6,7 @@ import { HubHowItWorks } from '@/components/hub/hub-how-it-works';
 import { LenderHeroSearch } from '@/components/lender/lender-hero-search';
 import { LenderSearchBoundary } from '@/components/lender/lender-search-boundary';
 import { LenderSearchResults } from '@/components/lender/lender-search-results';
+import { LenderDirectoryLoader } from '@/components/lender/directory/LenderDirectoryLoader';
 import { Button } from '@/components/ui/button';
 import { hubPath } from '@/lib/hub/paths';
 import { lenders } from '@/lib/lender/lenders';
@@ -49,7 +50,40 @@ export function LenderHomePage() {
           </div>
         </HubHeroBanner>
 
-        <LenderSearchResults />
+        {/* Name-search hits from hero only (ZIP still routes to county). No more Top-12 preview. */}
+        <LenderSearchResults showPreview={false} />
+
+        {/* Same progressive 3-column directory as /lender/local-lenders */}
+        <section
+          id="lender-directory"
+          className="border-t border-zinc-200 bg-white py-10 md:py-14"
+          aria-labelledby="lender-directory-heading"
+        >
+          <div className="container mx-auto px-4">
+            <div className="mb-8">
+              <div className="text-xs font-semibold uppercase tracking-[2px] text-[#3B82F6]">
+                Comprehensive Directory
+              </div>
+              <h2
+                id="lender-directory-heading"
+                className="mt-1 text-3xl font-semibold tracking-tight text-[#0A2540] md:text-4xl"
+              >
+                Compare Verified Mortgage Lenders
+              </h2>
+              <p className="mt-2 max-w-2xl text-zinc-600">
+                {lenders.length.toLocaleString()}+ NMLS-verified lenders and brokers. Browse the full
+                directory with filters, sort, and progressive load — the same experience as our
+                local-lenders hub.
+              </p>
+            </div>
+
+            <LenderDirectoryLoader
+              lenders={lenders}
+              profileReturnPath="/lender"
+              showSearch
+            />
+          </div>
+        </section>
 
         <HubTrustBar
           items={[
@@ -81,8 +115,6 @@ export function LenderHomePage() {
             },
           ]}
         />
-
-
       </div>
     </LenderSearchBoundary>
   );
