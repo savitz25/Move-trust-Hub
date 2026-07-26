@@ -37,13 +37,17 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(httpsUrl, 308);
     }
 
-    // Permanent cleanup redirects (also declared in next.config — middleware catches edge cases)
-    if (pathname.startsWith('/insurance/insurance')) {
-      const stripped = pathname.replace(/^\/insurance\/insurance/, '/insurance') || '/insurance';
+    // Permanent cleanup: doubled hub prefixes from bad absolute links.
+    // IMPORTANT: use segment boundary (`/lender/lender/` or exact match), NOT startsWith('/lender/lender')
+    // — that incorrectly matched real profile routes under `/lender/lenders/:slug` and caused a
+    // redirect loop with legacy `/lenders/:path*` → `/lender/lenders/:path*` rules.
+    if (pathname === '/insurance/insurance' || pathname.startsWith('/insurance/insurance/')) {
+      const stripped =
+        pathname.replace(/^\/insurance\/insurance(?=\/|$)/, '/insurance') || '/insurance';
       return NextResponse.redirect(new URL(stripped + request.nextUrl.search, request.url), 308);
     }
-    if (pathname.startsWith('/lender/lender')) {
-      const stripped = pathname.replace(/^\/lender\/lender/, '/lender') || '/lender';
+    if (pathname === '/lender/lender' || pathname.startsWith('/lender/lender/')) {
+      const stripped = pathname.replace(/^\/lender\/lender(?=\/|$)/, '/lender') || '/lender';
       return NextResponse.redirect(new URL(stripped + request.nextUrl.search, request.url), 308);
     }
     if (

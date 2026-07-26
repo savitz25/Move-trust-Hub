@@ -94,10 +94,22 @@ const nextConfig: NextConfig = {
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
   async redirects() {
     return [
-      // GSC 404 cleanup: doubled hub prefixes from bad absolute links
+      // GSC 404 cleanup: doubled hub prefixes from bad absolute links.
+      // Segment paths (`:path*`) only match after a trailing slash, so they do not
+      // collide with real routes like `/lender/lenders/:slug`.
+      {
+        source: '/insurance/insurance',
+        destination: '/insurance',
+        permanent: true,
+      },
       {
         source: '/insurance/insurance/:path*',
         destination: '/insurance/:path*',
+        permanent: true,
+      },
+      {
+        source: '/lender/lender',
+        destination: '/lender',
         permanent: true,
       },
       {
