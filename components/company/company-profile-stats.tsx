@@ -45,15 +45,27 @@ export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfil
         />
         <div
           className="mt-1 flex flex-col gap-1"
-          aria-label={`Editorial star rating: ${company.overallRating.toFixed(1)} out of 5, based on ${company.reviewCount.toLocaleString()} industry-reported reviews`}
+          aria-label={
+            company.overallRating > 0
+              ? `Editorial star rating: ${company.overallRating.toFixed(1)} out of 5, based on ${company.reviewCount.toLocaleString()} industry-reported reviews`
+              : 'Editorial star rating not available yet'
+          }
         >
-          <StarRating rating={company.overallRating} size="lg" showNumber={false} />
-          <p className="text-3xl font-semibold tabular-nums leading-none">
-            {company.overallRating.toFixed(1)}
-          </p>
-          <p className="text-[11px] text-muted-foreground leading-snug">
-            based on <EditorialReviewVolume count={company.reviewCount} />
-          </p>
+          {company.overallRating > 0 ? (
+            <>
+              <StarRating rating={company.overallRating} size="lg" showNumber={false} />
+              <p className="text-3xl font-semibold tabular-nums leading-none">
+                {company.overallRating.toFixed(1)}
+              </p>
+              <p className="text-[11px] text-muted-foreground leading-snug">
+                based on <EditorialReviewVolume count={company.reviewCount} />
+              </p>
+            </>
+          ) : (
+            <p className="text-sm text-muted-foreground leading-snug mt-1">
+              Rating not available yet
+            </p>
+          )}
         </div>
       </Card>
 

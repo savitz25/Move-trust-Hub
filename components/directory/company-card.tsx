@@ -65,13 +65,19 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
         <div className="text-sm text-muted-foreground mt-1">{locationLine}</div>
 
         <div className="mt-3 flex items-baseline gap-2">
-          <StarRating rating={company.overallRating} />
-          <span
-            className="text-xs text-muted-foreground"
-            title="Industry-reported volume from third-party platforms"
-          >
-            (<EditorialReviewVolume count={company.reviewCount} />)
-          </span>
+          {company.overallRating > 0 ? (
+            <>
+              <StarRating rating={company.overallRating} />
+              <span
+                className="text-xs text-muted-foreground"
+                title="Industry-reported volume from third-party platforms (e.g. Google). Not the same as on-site attributable reviews."
+              >
+                (<EditorialReviewVolume count={company.reviewCount} />)
+              </span>
+            </>
+          ) : (
+            <span className="text-xs text-muted-foreground">Rating not available yet</span>
+          )}
         </div>
 
         <div className="mt-2 text-sm line-clamp-2 text-muted-foreground">

@@ -369,8 +369,10 @@ export async function approveSuggestionToCompany(
     fmcsa_raw: snapshot?.raw ?? suggestion.fmcsa_raw,
     bbb_rating: bbbRating,
     bbb_accredited: Boolean(publicScrape?.bbb_accredited),
-    google_data: suggestion.google_data ?? null,
-    public_scrape_data: suggestion.public_scrape_data ?? null,
+    // Prefer resolved enrichment objects (not only raw suggestion columns).
+    google_data: (googleData as unknown as Json | null) ?? suggestion.google_data ?? null,
+    public_scrape_data:
+      (publicScrape as unknown as Json | null) ?? suggestion.public_scrape_data ?? null,
     verification_sources: verificationSources,
     verification_last_synced_at: new Date().toISOString(),
     overall_rating: overallRating,

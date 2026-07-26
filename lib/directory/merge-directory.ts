@@ -46,16 +46,34 @@ function pickPublicDisplayName(directory: Company, catalog: Company): string {
 
 /** Overlay Google/scrape enrichment from a sparse DB stub onto the richer catalog profile. */
 export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): Company {
-  const google = enrichment.googleData ?? base.googleData;
+  // Prefer any usable Google snapshot from either side (DB often has it; catalog rarely).
+  const google =
+    (base.googleData?.status === 'ok' ? base.googleData : null) ??
+    (enrichment.googleData?.status === 'ok' ? enrichment.googleData : null) ??
+    enrichment.googleData ??
+    base.googleData;
   const useGoogleRating = google?.status === 'ok' && google.rating != null && google.rating > 0;
+  const baseRating = base.overallRating > 0 ? base.overallRating : 0;
+  const enrichRating = enrichment.overallRating > 0 ? enrichment.overallRating : 0;
 
   return normalizeCompanyForDisplay({
     ...base,
     googleData: google,
     publicScrapeData: enrichment.publicScrapeData ?? base.publicScrapeData,
-    overallRating: useGoogleRating ? google.rating! : base.overallRating,
-    reviewCount:
-      useGoogleRating && google.review_count != null ? google.review_count : base.reviewCount,
+    // Never clobber a real rating with 0; prefer Google snapshot when columns are empty.
+    overallRating: useGoogleRating
+      ? google.rating!
+      : Math.max(baseRating, enrichRating),
+    reviewCount: useGoogleRating
+      ? google.review_count ?? Math.max(base.reviewCount, enrichment.reviewCount)
+      : Math.max(base.reviewCount, enrichment.reviewCount),
+    bbbRating:
+      base.bbbRating && base.bbbRating !== 'NR'
+        ? base.bbbRating
+        : enrichment.bbbRating && enrichment.bbbRating !== 'NR'
+          ? enrichment.bbbRating
+          : base.bbbRating,
+    bbbAccredited: base.bbbAccredited || enrichment.bbbAccredited,
     lastUpdated: enrichment.lastUpdated || base.lastUpdated,
   });
 }

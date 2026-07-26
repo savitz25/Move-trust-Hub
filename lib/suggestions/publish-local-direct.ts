@@ -4,12 +4,17 @@ import { computeReputationScore } from '@/data/seed-companies';
 import { servicesForPublishedCompany } from '@/lib/companies/type-badges';
 import { logger } from '@/lib/logging/logger';
 import { assignSelectedCounties } from '@/lib/suggestions/assign-selected-counties';
+import { applyPublishedEnrichment } from '@/lib/suggestions/apply-published-enrichment';
+import { buildVerificationSourcesFromOnboarding } from '@/lib/suggestions/build-verification-sources';
 import { insertCompanyWithFallback } from '@/lib/suggestions/insert-company';
 import type { SelectedCounty } from '@/lib/suggestions/service-scope';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { ensurePublishableCompanySlug } from '@/lib/utils/company-slug';
 import { resolveUniqueCompanySlug } from '@/lib/suggestions/slug';
+import { parseGoogleData, parsePublicScrapeData } from '@/lib/verification/backfill-helpers';
+import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 import type { Json } from '@/types/supabase';
+import type { Company } from '@/types';
 
 export type DirectLocalPublishInput = {
   name: string;
@@ -24,6 +29,19 @@ export type DirectLocalPublishInput = {
   publicScrapeData?: Json | null;
   suggestionId?: string | null;
 };
+
+function ratingsFromGoogleSnapshot(google: GooglePlacesData | null): {
+  overallRating: number;
+  reviewCount: number;
+} {
+  if (google?.status === 'ok' && google.rating != null && google.rating > 0) {
+    return {
+      overallRating: google.rating,
+      reviewCount: google.review_count ?? 0,
+    };
+  }
+  return { overallRating: 0, reviewCount: 0 };
+}
 
 export type DirectLocalPublishResult =
   | { ok: true; companyId: string; slug: string; countiesAssigned: number }
@@ -64,6 +82,30 @@ export async function publishLocalCompanyDirect(
       input.headquarters?.trim() ||
       (input.stateCode ? `${name}, ${input.stateCode}` : name);
 
+    // Persist onboard enrichment into the same display fields the directory reads.
+    const googleData = parseGoogleData(input.googleData);
+    const publicScrape = parsePublicScrapeData(input.publicScrapeData);
+    const { overallRating, reviewCount } = ratingsFromGoogleSnapshot(googleData);
+    const bbbRating =
+      (publicScrape?.bbb_rating as Company['bbbRating'] | undefined) || 'NR';
+    const bbbAccredited = Boolean(publicScrape?.bbb_accredited);
+    const reputationScore = computeReputationScore({
+      overallRating,
+      reviewCount,
+      fmcsaComplaints: 0,
+      fmcsaShipments: 1000,
+      bbbRating,
+      bbbAccredited,
+      isVerified: true,
+      yearsInBusiness: 0,
+    });
+    const verificationSources = buildVerificationSourcesFromOnboarding({
+      fmcsaSnapshot: null,
+      fmcsaRaw: null,
+      google: googleData,
+      publicScrape,
+    });
+
     const row = {
       id: companyId,
       slug,
@@ -83,20 +125,12 @@ export async function publishLocalCompanyDirect(
       fmcsa_safety_rating: 'Not Rated',
       fmcsa_complaints: 0,
       fmcsa_shipments: 1000,
-      bbb_rating: 'NR',
-      bbb_accredited: false,
-      overall_rating: 0,
-      review_count: 0,
-      reputation_score: computeReputationScore({
-        overallRating: 0,
-        reviewCount: 0,
-        fmcsaComplaints: 0,
-        fmcsaShipments: 1000,
-        bbbRating: 'NR',
-        bbbAccredited: false,
-        isVerified: true,
-        yearsInBusiness: 0,
-      }),
+      bbb_rating: bbbRating,
+      bbb_accredited: bbbAccredited,
+      // Display fields used by directory cards (not only google_data JSON).
+      overall_rating: overallRating,
+      review_count: reviewCount,
+      reputation_score: reputationScore,
       years_in_business: 0,
       avg_price_per_move: 0,
       price_range: '$$',
@@ -120,6 +154,8 @@ export async function publishLocalCompanyDirect(
       entity_type: null,
       google_data: input.googleData ?? null,
       public_scrape_data: input.publicScrapeData ?? null,
+      verification_sources: verificationSources,
+      verification_last_synced_at: now,
       last_updated: now,
     };
 
@@ -146,7 +182,7 @@ export async function publishLocalCompanyDirect(
             slug: existing.slug,
             companyId: existing.id,
           });
-          // Ensure local flags on existing row
+          // Ensure local flags + onboard enrichment on existing row
           await admin
             .from('companies')
             .update({
@@ -159,6 +195,26 @@ export async function publishLocalCompanyDirect(
               last_updated: now,
             } as never)
             .eq('id', existing.id);
+          await applyPublishedEnrichment(admin, existing.slug, {
+            googleData,
+            publicScrape,
+            verificationSources,
+            overallRating,
+            reviewCount,
+            bbbRating,
+            bbbAccredited,
+            reputationScore,
+            coverage: 'Local / in-state',
+            fmcsaRaw: null,
+            fmcsaLastChecked: null,
+            fmcsaLegalName: null,
+            fmcsaSafetyRating: 'Not Rated',
+            authorityActive: null,
+            outOfService: false,
+            complaintsLast12m: 0,
+            revocationDate: null,
+            dataHash: null,
+          });
 
           let countiesAssigned = counties.length;
           try {
@@ -235,6 +291,38 @@ export async function publishLocalCompanyDirect(
 
     const publishedSlug = insertResult.slug;
     const publishedId = insertResult.companyId;
+
+    // Explicitly copy Google/BBB enrichment onto display columns + verification_sources.
+    // insert may strip enrichment columns on schema lag; applyPublishedEnrichment retries.
+    const enrichmentLog = await applyPublishedEnrichment(admin, publishedSlug, {
+      googleData,
+      publicScrape,
+      verificationSources,
+      overallRating,
+      reviewCount,
+      bbbRating,
+      bbbAccredited,
+      reputationScore,
+      coverage: 'Local / in-state',
+      fmcsaRaw: null,
+      fmcsaLastChecked: null,
+      fmcsaLegalName: null,
+      fmcsaSafetyRating: 'Not Rated',
+      authorityActive: null,
+      outOfService: false,
+      complaintsLast12m: 0,
+      revocationDate: null,
+      dataHash: null,
+    });
+    logger.info('local_direct.enrichment_copied', {
+      slug: publishedSlug,
+      storageMode: enrichmentLog.storageMode,
+      copied: enrichmentLog.copied,
+      googleRating: enrichmentLog.googleRating,
+      googleReviewCount: enrichmentLog.googleReviewCount,
+      bbbRating: enrichmentLog.bbbRating,
+      error: enrichmentLog.error,
+    });
 
     // County assign + revalidate can be noisy; never let it hang the whole publish.
     // Prefer returning success with company live even if assign partially fails.

@@ -152,6 +152,8 @@
     "refresh:fmcsa:batch": "tsx --require ./scripts/stub-server-only.cjs scripts/refresh-fmcsa-batch.ts",
     "refresh:fmcsa:all-entity-types": "tsx --require ./scripts/stub-server-only.cjs scripts/refresh-all-fmcsa-entity-types.ts",
     "refresh:bbb": "tsx scripts/run-bbb-refresh.ts",
+    "enrich:container-auto": "tsx --require ./scripts/stub-server-only.cjs scripts/enrich-container-and-auto-transport.ts",
+    "enrich:local-movers": "tsx --require ./scripts/stub-server-only.cjs scripts/enrich-local-movers-missing-ratings.ts",
     "backfill:verification": "tsx scripts/backfill-company-verification.ts",
     "reenrich:google": "tsx scripts/reenrich-missing-google.ts",
     "reenrich:google:dry": "tsx scripts/reenrich-missing-google.ts --dry-run",

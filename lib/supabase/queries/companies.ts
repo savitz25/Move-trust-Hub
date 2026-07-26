@@ -181,6 +181,32 @@ function mapRow(row: Record<string, unknown>): Company {
     '';
   const websiteResolved = normalizeCompanyWebsiteUrl(websiteRaw) || websiteRaw;
 
+  // Prefer explicit overall_rating; fall back to Google Places snapshot when
+  // onboard wrote google_data / verification_sources.google but left ratings at 0.
+  const googleData = resolveGoogleDataFromRow(row);
+  const publicScrapeData = resolvePublicScrapeFromRow(row);
+  const dbRating = Number(row.overall_rating) || 0;
+  const dbReviews = Number(row.review_count) || 0;
+  const googleOk =
+    googleData?.status === 'ok' &&
+    googleData.rating != null &&
+    googleData.rating > 0;
+  const overallRating = dbRating > 0 ? dbRating : googleOk ? googleData!.rating! : 0;
+  const reviewCount =
+    dbReviews > 0
+      ? dbReviews
+      : googleOk && googleData!.review_count != null
+        ? googleData!.review_count
+        : 0;
+  const bbbFromScrape = publicScrapeData?.bbb_rating;
+  const bbbRating =
+    ((row.bbb_rating as Company['bbbRating']) &&
+    (row.bbb_rating as string) !== 'NR'
+      ? (row.bbb_rating as Company['bbbRating'])
+      : (bbbFromScrape as Company['bbbRating'] | undefined)) || 'NR';
+  const bbbAccredited =
+    Boolean(row.bbb_accredited) || Boolean(publicScrapeData?.bbb_accredited);
+
   return normalizeCompanyForDisplay({
     id: row.id as string,
     slug: row.slug as string,
@@ -218,16 +244,16 @@ function mapRow(row: Record<string, unknown>): Company {
     complaintsLast12m: (row.complaints_last_12m as number) ?? (row.fmcsa_complaints as number) ?? 0,
     revocationDate: (row.revocation_date as string) || null,
     fmcsaDataHash: (row.data_hash as string) || null,
-    bbbRating: (row.bbb_rating as Company['bbbRating']) || 'NR',
-    bbbAccredited: Boolean(row.bbb_accredited),
+    bbbRating,
+    bbbAccredited,
     bbbLastChecked: (row.bbb_last_checked as string) || null,
     complaintsLast36m: (row.complaints_last_36m as number) ?? 0,
     bbbCustomerReviews: (row.bbb_customer_reviews as number) ?? 0,
     bbbDataHash: (row.bbb_data_hash as string) || null,
     bbbBusinessId: (row.bbb_business_id as string) || null,
     bbbAlertCount: (row.bbb_alert_count as number) ?? 0,
-    overallRating: Number(row.overall_rating) || 0,
-    reviewCount: (row.review_count as number) || 0,
+    overallRating,
+    reviewCount,
     reputationScore: (row.reputation_score as number) || 0,
     yearsInBusiness: (row.years_in_business as number) || 0,
     avgPricePerMove: (row.avg_price_per_move as number) || 0,
@@ -242,8 +268,8 @@ function mapRow(row: Record<string, unknown>): Company {
       (row.rating_breakdown as Company['ratingBreakdown']) ?? EMPTY_RATING_BREAKDOWN,
     isVerified: Boolean(row.is_verified),
     lastUpdated: (row.last_updated as string)?.slice?.(0, 10) || '',
-    googleData: resolveGoogleDataFromRow(row),
-    publicScrapeData: resolvePublicScrapeFromRow(row),
+    googleData,
+    publicScrapeData,
   });
 }
 
