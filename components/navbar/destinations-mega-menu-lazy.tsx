@@ -19,7 +19,7 @@ function DestinationsNavTrigger({ onActivate }: { onActivate: () => void }) {
       <Link
         prefetch={false}
         href="/moving-to"
-        className="font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
+        className="font-medium text-[#3d4f63] hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
         onMouseEnter={onActivate}
         onFocus={onActivate}
       >
@@ -27,7 +27,7 @@ function DestinationsNavTrigger({ onActivate }: { onActivate: () => void }) {
       </Link>
       <button
         type="button"
-        className="p-0.5 text-muted-foreground hover:text-foreground transition-colors min-h-[44px] min-w-[28px] flex items-center justify-center"
+        className="p-0.5 text-[#3d4f63] hover:text-foreground transition-colors min-h-11 min-w-11 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
         aria-label="Open destinations menu"
         onMouseEnter={onActivate}
         onFocus={onActivate}
