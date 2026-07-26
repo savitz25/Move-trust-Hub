@@ -1,0 +1,559 @@
+{
+  "reliable-carriers": {
+    "slug": "reliable-carriers",
+    "name": "Reliable Carriers",
+    "overallRating": 4.8,
+    "reviewCount": 135,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJxXCkHwp954gREsq8-ADX6Vg",
+      "name": "Reliable Carriers",
+      "rating": 4.8,
+      "review_count": 135,
+      "formatted_address": "453 Thorpe Rd, Orlando, FL 32824, USA",
+      "website_url": "https://reliablecarriers.com",
+      "phone": "(800) 521-6393",
+      "review_snippets": [
+        {
+          "text": "Bill and Christina McSwain are two true professionals. They take great care and preparing my two cars for transport to Arizona and besides being excellent at what they do the two of the nicest people would like to meet. Just like the company named the Reliable showed up on time o",
+          "rating": 5,
+          "relative_time": "2 months ago",
+          "author": "Germain Villeneuve"
+        },
+        {
+          "text": "I have used Reliable twice in the past with good results.\nThis time the results were even better!  John and Pam were super communicative during the entire time my car went from northern California to Southern Florida.\nThe car came covered and in the same condition as when they pi",
+          "rating": 5,
+          "relative_time": "a month ago",
+          "author": "Ronald Meyers"
+        },
+        {
+          "text": "We had a great transport experience thanks to George and Marsha! They 100% knew what they were doing and treated the car with great care. It was quickly transported from Austin to Miami for a rally. All deadlines were met and the car arrived in perfect shape. Thank you both!!!",
+          "rating": 5,
+          "relative_time": "a month ago",
+          "author": "Christina Kish"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:58.469Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJxXCkHwp954gREsq8-ADX6Vg",
+        "displayName": "Reliable Carriers",
+        "rating": 4.8,
+        "userRatingCount": 135,
+        "nationalPhoneNumber": "(800) 521-6393",
+        "internationalPhoneNumber": "+1 800-521-6393"
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:59.332Z"
+  },
+  "amerifreight-auto-transport": {
+    "slug": "amerifreight-auto-transport",
+    "name": "AmeriFreight Auto Transport",
+    "overallRating": 4.7,
+    "reviewCount": 5133,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJs2HUtgXp9IgRQKF7xpUlnfA",
+      "name": "AmeriFreight Auto Transport",
+      "rating": 4.7,
+      "review_count": 5133,
+      "formatted_address": "205 Greencastle Rd, Tyrone, GA 30290",
+      "website_url": "https://www.amerifreight.net",
+      "phone": "(770) 486-1010",
+      "review_snippets": [
+        {
+          "text": "my experience with AmeriFreight was fantastic. Samantha stayed in constant contact, was extremely cordial and was quick to find a driver for my truck. this was a looooong journey, from CA to VA, and i felt very comfortable throughout. Koba, the delivery driver was also in constan",
+          "rating": 5,
+          "relative_time": "3 weeks ago",
+          "author": "Trey King"
+        },
+        {
+          "text": "AmeriFreight were able to broker the shipping of my trailered boat despite several missteps by carriers.  Samantha at AmeriFreight was superior!  she is trustworthy and persistent.  My broker fee had to be charged and refunded 4 times, due to carriers fault.  She stuck with it an",
+          "rating": 5,
+          "relative_time": "2 weeks ago",
+          "author": "Dan Mitchell"
+        },
+        {
+          "text": "Awesome, from the moment Carolvan picked up the phone. Pleasant, helpful, considerate and upfront about rates etc.\n\nGot my pick up scheduled with a very cool driver, Donit.  Went so smooth and delivered so fast from San Diego, Ca.to Milton, Wa.\n\nRecommend these folks highly. Yes,",
+          "rating": 5,
+          "relative_time": "3 weeks ago",
+          "author": "Heidi Aylen"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:36.434Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJs2HUtgXp9IgRQKF7xpUlnfA",
+        "displayName": "AmeriFreight Auto Transport",
+        "rating": 4.7,
+        "userRatingCount": 5133,
+        "nationalPhoneNumber": "(770) 486-1010",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "AmeriFreight Auto Transport",
+        "match_search_name": "AmeriFreight Auto Transport",
+        "match_score": 100,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:37.430Z"
+  },
+  "nexus-auto-transport": {
+    "slug": "nexus-auto-transport",
+    "name": "Nexus Auto Transport",
+    "overallRating": 4.3,
+    "reviewCount": 7305,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJ93GfGawsDogR_vmhGkSf00s",
+      "name": "Nexus Auto Transport",
+      "rating": 4.3,
+      "review_count": 7305,
+      "formatted_address": "444 N Michigan Ave #1200, Chicago, IL 60611",
+      "website_url": "http://www.nexusautotransport.com",
+      "phone": "(224) 218-2949",
+      "review_snippets": [
+        {
+          "text": "I used Nexus to pick up my deceased father's classic 65' Chevy step side truck from PA and transported to Idaho in an enclosed trailer.This is a very special vehicle to our family since it was the last completed restoration he did before he passed in February. The process was eas",
+          "rating": 5,
+          "relative_time": "a month ago",
+          "author": "Michelle Greim"
+        },
+        {
+          "text": "Overall another good experience with the Nexus Auto Transport team. This was my second time using to coordinate a shipment across the continental US.\n\nThe actual pickup was outside of what I requested, but once it was setup it was moved quickly and on-time. I emailed and called f",
+          "rating": 5,
+          "relative_time": "2 weeks ago",
+          "author": "Markus Borneman"
+        },
+        {
+          "text": "Yesterday I took delivery of my Bronco Raptor. It made its way from Houston, Texas to my residence in New Mexico. I would like to start off by thanking Paul, William and Issac for all their help. From the quote to scheduling pick up and delivery. Their service and support is seco",
+          "rating": 5,
+          "relative_time": "2 months ago",
+          "author": "eric olivas"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:37.430Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJ93GfGawsDogR_vmhGkSf00s",
+        "displayName": "Nexus Auto Transport",
+        "rating": 4.3,
+        "userRatingCount": 7305,
+        "nationalPhoneNumber": "(224) 218-2949",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "Nexus Auto Transport",
+        "match_search_name": "Nexus Auto Transport",
+        "match_score": 53,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:39.840Z"
+  },
+  "mercury-auto-transport": {
+    "slug": "mercury-auto-transport",
+    "name": "Mercury Auto Transport",
+    "overallRating": 4.7,
+    "reviewCount": 9337,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJg_3H3oYH2YgRQDFRJ8zeKAc",
+      "name": "Mercury Auto Transport | Car Shipping Experts",
+      "rating": 4.7,
+      "review_count": 9337,
+      "formatted_address": "2240 SW 70th Ave, Davie, FL 33317",
+      "website_url": "https://mercuryautotransport.com",
+      "phone": "(800) 553-1828",
+      "review_snippets": [
+        {
+          "text": "Erica with Mercury Auto Transport has been AMAZING! I’ve had my Infiniti shipped twice now with them and Erica has taken great care of me both times. My car didn’t run at neither times and I insisted we needed to find a truck with a winch she made it happen and got my car safely ",
+          "rating": 5,
+          "relative_time": "2 weeks ago",
+          "author": "Branden Morrison"
+        },
+        {
+          "text": "I cannot say enough good things about my experience with Mercury Auto Transport, specifically my contact Brian. I found myself in a last minute bind trying to transport my car from Georgia to Arizona, and Brian stepped in and saved the day!\n\nFrom the start Brian was incredibly tr",
+          "rating": 5,
+          "relative_time": "a month ago",
+          "author": "Jana Gladman"
+        },
+        {
+          "text": "BEST CAR TRANSPORT SERVICE!! my friend referred me after her great experience and i will only use this service moving forward. i needed to move from the west to east coast asap and my agent, Matthew Cruz got me a driver the SAME DAY. He understood my situation and showed empathy,",
+          "rating": 5,
+          "relative_time": "8 months ago",
+          "author": "amanda ibanez"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:39.840Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJg_3H3oYH2YgRQDFRJ8zeKAc",
+        "displayName": "Mercury Auto Transport | Car Shipping Experts",
+        "rating": 4.7,
+        "userRatingCount": 9337,
+        "nationalPhoneNumber": "(800) 553-1828",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "Mercury Auto Transport",
+        "match_search_name": "Mercury Auto Transport",
+        "match_score": 92,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:40.715Z"
+  },
+  "shipyourcarnow": {
+    "slug": "shipyourcarnow",
+    "name": "ShipYourCarNow",
+    "overallRating": 4.5,
+    "reviewCount": 2939,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJzzkLQ-3h2IgRd9JbCJvMTcQ",
+      "name": "ShipYourCarNow",
+      "rating": 4.5,
+      "review_count": 2939,
+      "formatted_address": "55 NE 5th Ave Ste 402, Boca Raton, FL 33432",
+      "website_url": "https://shipyourcarnow.com",
+      "phone": "(888) 532-8805",
+      "review_snippets": [
+        {
+          "text": "Adam with SYCN has been excellent to work with. He's assisted me on two of my cross country car moves and each time has been seamless. Constant communication and updates, phone calls to explain the process and then a follow up email to confirm in writing.\n\nAsk for Adam when you b",
+          "rating": 5,
+          "relative_time": "3 weeks ago",
+          "author": "Stuart Hemmes"
+        },
+        {
+          "text": "A friend of mine used Todd Carlisle’s services recently to have his new car shipped. Todd is the man of his word. Very prompt at responding, knowledgeable about the industry, throughly vetted shipping company and its drivers before assigning them to pickup my vehicle from North w",
+          "rating": 5,
+          "relative_time": "6 months ago",
+          "author": "Deepak Sharma"
+        },
+        {
+          "text": "Honestly the best experience I've had with any shipping company hands down. Todd Carlisle over delivered in every aspect on this one. Picked up my new truck with in the pick up window he provided from a dealrship in the middle of nowhere Texas and had it to me in Orange County, C",
+          "rating": 5,
+          "relative_time": "5 months ago",
+          "author": "Doug Briney"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:42.673Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJzzkLQ-3h2IgRd9JbCJvMTcQ",
+        "displayName": "ShipYourCarNow",
+        "rating": 4.5,
+        "userRatingCount": 2939,
+        "nationalPhoneNumber": "(888) 532-8805",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "ShipYourCarNow",
+        "match_search_name": "ShipYourCarNow",
+        "match_score": 100,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:43.475Z"
+  },
+  "bah-logistics": {
+    "slug": "bah-logistics",
+    "name": "BAH Logistics",
+    "overallRating": 4.7,
+    "reviewCount": 598,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJe0Qq4_CXwoARe9VUrUNlCRI",
+      "name": "BAH Logistics | Auto Transport Company",
+      "rating": 4.7,
+      "review_count": 598,
+      "formatted_address": "17620 Sherman Way #105, Van Nuys, CA 91406",
+      "website_url": "http://www.bahlogisticsusa.com",
+      "phone": "(818) 392-8977",
+      "review_snippets": [
+        {
+          "text": "I had an extremely disappointing and frustrating experience with this shipping company. They severely damaged my medical devices during transit—items that are both sensitive and important.\nAfter reporting the issue, I was repeatedly told to file a damage claim, which I did prompt",
+          "rating": 1,
+          "relative_time": "3 months ago",
+          "author": "Piotr Stasiak"
+        },
+        {
+          "text": "I used them for transport my car, and as a customer, I can honestly say that you will never find a company like BAH. They did an excellent job and sent the best gentleman driver — very respectful and professional.\n\nI am extremely satisfied and will definitely use them again and a",
+          "rating": 5,
+          "relative_time": "5 months ago",
+          "author": "Peter Link"
+        },
+        {
+          "text": "I had a great experience working with this company. Communication was clear and consistent throughout the entire process, and their support team was always responsive and helpful whenever I had questions. They provided regular updates, which made everything smooth and stress-free",
+          "rating": 5,
+          "relative_time": "3 months ago",
+          "author": "Porto"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:43.475Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJe0Qq4_CXwoARe9VUrUNlCRI",
+        "displayName": "BAH Logistics | Auto Transport Company",
+        "rating": 4.7,
+        "userRatingCount": 598,
+        "nationalPhoneNumber": "(818) 392-8977",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "BAH Logistics",
+        "match_search_name": "BAH Logistics",
+        "match_score": 74,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:45.399Z"
+  },
+  "roadrunner-auto-transport": {
+    "slug": "roadrunner-auto-transport",
+    "name": "RoadRunner Auto Transport",
+    "overallRating": 4.1,
+    "reviewCount": 8074,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJQz8FekqAwokRX1I3w8_NAY4",
+      "name": "RoadRunner Auto Transport",
+      "rating": 4.1,
+      "review_count": 8074,
+      "formatted_address": "15 Grumman Rd W, Bethpage, NY 11714",
+      "website_url": "https://www.roadrunnerautotransport.com",
+      "phone": "(888) 777-2123",
+      "review_snippets": [
+        {
+          "text": "Ivan was absolutely fantastic. Getting the car in its spot had me a little worried, but he had it in place no problem in seconds (car is inoperable). Super courteous and had the car home when they said they would! Highly recommend.",
+          "rating": 5,
+          "relative_time": "3 weeks ago",
+          "author": "Alexis Kearns"
+        },
+        {
+          "text": "I just had my Toyota MR2 (small sports car 2300 pounds) delivered open carrier behind a 3/4 ton PU from ID to MT, about 400 miles over two mountain passes.  On-line quote $865.  When reservation was made $921.  When a driver was found it went to $1141.  I found the same quote see",
+          "rating": 4,
+          "relative_time": "3 weeks ago",
+          "author": "Wayne Blaine"
+        },
+        {
+          "text": "I had a great experience with this car transport company. They picked up my brand new 2026 Cadillac Escalade on schedule, communicated clearly at every step, and delivered it in pristine condition. The drivers were professional and courteous, and the pricing was fair for the qual",
+          "rating": 5,
+          "relative_time": "3 months ago",
+          "author": "Taner Akyol"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:45.399Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJQz8FekqAwokRX1I3w8_NAY4",
+        "displayName": "RoadRunner Auto Transport",
+        "rating": 4.1,
+        "userRatingCount": 8074,
+        "nationalPhoneNumber": "(888) 777-2123",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "RoadRunner Auto Transport",
+        "match_search_name": "RoadRunner Auto Transport",
+        "match_score": 53,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:47.856Z"
+  },
+  "american-auto-shipping": {
+    "slug": "american-auto-shipping",
+    "name": "American Auto Shipping",
+    "overallRating": 4.6,
+    "reviewCount": 659,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJmbnd-M-glVQREk3oxy_Sk2I",
+      "name": "American Auto Shipping",
+      "rating": 4.6,
+      "review_count": 659,
+      "formatted_address": "3439 NE Sandy Blvd #692a, Portland, OR 97232",
+      "website_url": "http://www.americanautoshipping.com",
+      "phone": "(800) 930-7417",
+      "review_snippets": [
+        {
+          "text": "American Auto Shipping made the whole process of moving my car across the country feel effortless. From start to finish, their team was on point with crystal clear communication, fair pricing, and no surprises. The driver was professional and treated my car like it was his own. I",
+          "rating": 5,
+          "relative_time": "a year ago",
+          "author": "Teresa Parrino"
+        },
+        {
+          "text": "American Auto Shipping was great to work with. Alyssa provided excellent customer service and details on how shipping a car works. No hassle, no hidden costs.  They were able to schedule pickup of a driver  at the quoted/agreed upon price 2 days after making reservation. And the ",
+          "rating": 5,
+          "relative_time": "3 years ago",
+          "author": "Steven StGelais"
+        },
+        {
+          "text": "American Auto Shipping left me worry free and satisfied on shipping my husband Harley and BMW. The staff is very informative and professional. Above all, they stayed in communication the entire process. So far,I've referred a family member that's in the military that needed servi",
+          "rating": 5,
+          "relative_time": "a year ago",
+          "author": "Angela Ruben"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:47.856Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJmbnd-M-glVQREk3oxy_Sk2I",
+        "displayName": "American Auto Shipping",
+        "rating": 4.6,
+        "userRatingCount": 659,
+        "nationalPhoneNumber": "(800) 930-7417",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "American Auto Shipping",
+        "match_search_name": "American Auto Shipping",
+        "match_score": 100,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:48.697Z"
+  },
+  "global-auto-transportation": {
+    "slug": "global-auto-transportation",
+    "name": "Global Auto Transportation",
+    "overallRating": 4,
+    "reviewCount": 11,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJ2UmB_6qZToYRDpXb3SCWj3s",
+      "name": "Global Auto Transportation | Dallas",
+      "rating": 4,
+      "review_count": 11,
+      "formatted_address": "2025 Farrington St, Dallas, TX 75207",
+      "website_url": "https://www.globalautotransportation.com",
+      "phone": "(214) 224-0402",
+      "review_snippets": [
+        {
+          "text": "Excellent service, I was thrilled with the shipment of my Chevrolet Trax from California to Houston, Texas. I highly recommend it. Everything arrived in perfect condition.",
+          "rating": 5,
+          "relative_time": "4 months ago",
+          "author": "Gibran Rosales"
+        },
+        {
+          "text": "We have been using GAT for the past couple years and can't say enough great thing about them. Our rep Bruce always responds quickly and is so easy to work with. When Bruce went on vacation, Sophie filled in for him and was great as well. Their drivers are always nice and on time.",
+          "rating": 5,
+          "relative_time": "4 months ago",
+          "author": "Thom Schulz"
+        },
+        {
+          "text": "Global Auto Transportation made moving my car to Dallas a breeze. The customer service was exceptional, and I felt confident in their ability to handle my vehicle. They offered competitive pricing and timely delivery. I’ll definitely use them again for my next car shipment!",
+          "rating": 5,
+          "relative_time": "a year ago",
+          "author": "Rico Adame"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:50.843Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJ2UmB_6qZToYRDpXb3SCWj3s",
+        "displayName": "Global Auto Transportation | Dallas",
+        "rating": 4,
+        "userRatingCount": 11,
+        "nationalPhoneNumber": "(214) 224-0402",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "Global Auto Transportation",
+        "match_search_name": "Global Auto Transportation",
+        "match_score": 80,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:51.671Z"
+  },
+  "payless-auto-shipping": {
+    "slug": "payless-auto-shipping",
+    "name": "Payless Auto Shipping",
+    "overallRating": 4.7,
+    "reviewCount": 698,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJP_PpQKjjx4kRXRy7d9bhRnU",
+      "name": "Payless Auto Shipping LLC",
+      "rating": 4.7,
+      "review_count": 698,
+      "formatted_address": "9739 Morningview Cir, Perry Hall, MD 21128",
+      "website_url": "https://payless-auto-shipping.com",
+      "phone": "(877) 786-1789",
+      "review_snippets": [
+        {
+          "text": "Driver was a very efficient person. I recommend the company. I don’t do this often but they got my truck there safely no problem thank you very much for your service delivery of my Box Truck guys. Have a good one. I hope the photos came out all right use whatever you can if you d",
+          "rating": 5,
+          "relative_time": "2 months ago",
+          "author": "Frederick Andrews"
+        },
+        {
+          "text": "I had an excellent experience with Payless Auto Shipping. I was in a stressful situation, stuck outside in the cold for hours needing my car towed and delivered quickly, and Hazel truly came through for me. She was incredibly helpful, professional, and reassuring throughout the e",
+          "rating": 5,
+          "relative_time": "3 months ago",
+          "author": "Rita Onwube"
+        },
+        {
+          "text": "Excellent experience using Payless Auto shipping to transport my car from Fargo,ND to Pittsburgh,PA area. Driver showed up on time and took pictures of car and carefully secured it. My car arrived in perfect condition! Thank you to Kim who booked my move and kept me updated on th",
+          "rating": 5,
+          "relative_time": "2 months ago",
+          "author": "Justin Carson"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:55.709Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJP_PpQKjjx4kRXRy7d9bhRnU",
+        "displayName": "Payless Auto Shipping LLC",
+        "rating": 4.7,
+        "userRatingCount": 698,
+        "nationalPhoneNumber": "(877) 786-1789",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "Payless Auto Shipping",
+        "match_search_name": "Payless Auto Shipping",
+        "match_score": 53,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:51:58.469Z"
+  },
+  "uship": {
+    "slug": "uship",
+    "name": "uShip",
+    "overallRating": 4.8,
+    "reviewCount": 5264,
+    "google": {
+      "source": "google_places_api",
+      "place_id": "ChIJD7Z-jZS0RIYRURwgxUXt4js",
+      "name": "uShip",
+      "rating": 4.8,
+      "review_count": 5264,
+      "formatted_address": "708 Congress Ave, Austin, TX 78701",
+      "website_url": "https://www.uship.com",
+      "phone": "(800) 698-7447",
+      "review_snippets": [
+        {
+          "text": "This was my first time using uShip. The platform was very easy to use. I was shipping personal items that included things I was keeping from liquidating my parents home from Kansas to Arizona. I was concerned that precious family photos and items would be damaged or lost. The shi",
+          "rating": 5,
+          "relative_time": "a month ago",
+          "author": "Barbara Davis"
+        },
+        {
+          "text": "My boat and trailer were transported in tact and ahead of schedule.  The driver communicated well. The trailer blew a tire. The driver found a replacement without too much delay. I recommend Aquatoys for your transport needs.",
+          "rating": 5,
+          "relative_time": "a month ago",
+          "author": "Van Singer"
+        },
+        {
+          "text": "Great service, cuts out the broker which sends your load out to carriers for a cheaper price. This can cause delays and bad service.\n\nSo I am truly a fan of a marketplace that allows you to speak directly to the person that is shipping your item.\n\nWe had a 43 foot fifth wheel shi",
+          "rating": 5,
+          "relative_time": "a month ago",
+          "author": "Branden"
+        }
+      ],
+      "last_fetched": "2026-07-26T15:51:59.332Z",
+      "status": "ok",
+      "raw_response": {
+        "id": "ChIJD7Z-jZS0RIYRURwgxUXt4js",
+        "displayName": "uShip",
+        "rating": 4.8,
+        "userRatingCount": 5264,
+        "nationalPhoneNumber": "(800) 698-7447",
+        "match_strategy": "preferred_stripped+bare",
+        "match_query": "uShip",
+        "match_search_name": "uShip",
+        "match_score": 100,
+        "match_attempt": 1
+      }
+    },
+    "updatedAt": "2026-07-26T15:52:00.120Z"
+  }
+}
