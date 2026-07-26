@@ -65,7 +65,7 @@ export const guides: GuideEntry[] = [
     excerpt: 'Protect yourself from rogue brokers, bait-and-switch operators, and hostage-load tactics.',
     category: 'Safety',
     href: '/resources/scams',
-    related: ['fmcsa', 'how-to-choose', 'checklist'],
+    related: ['fmcsa', 'how-to-choose', 'checklist', 'interstate-moving-damage-claims'],
   },
   {
     slug: 'fmcsa',
@@ -76,6 +76,7 @@ export const guides: GuideEntry[] = [
     related: [
       'bill-of-lading-shipper-rights',
       'interstate-moving-insurance',
+      'interstate-moving-damage-claims',
       'how-to-choose',
       'scams',
       'routes',
@@ -90,11 +91,29 @@ export const guides: GuideEntry[] = [
     category: 'Regulation',
     href: '/resources/interstate-moving-insurance',
     related: [
+      'interstate-moving-damage-claims',
       'bill-of-lading-shipper-rights',
       'fmcsa',
       'how-to-choose',
       'carrier-vs-broker',
       'interstate-moving-costs',
+      'checklist',
+    ],
+  },
+  {
+    slug: 'interstate-moving-damage-claims',
+    title:
+      'How to File and Resolve Damage or Loss Claims on an Interstate Move (2026)',
+    excerpt:
+      'After delivery damage or missing items: preserve evidence, document claims, understand valuation, deadlines, denials, FMCSA options, and consumer rights.',
+    category: 'Regulation',
+    href: '/resources/interstate-moving-damage-claims',
+    related: [
+      'interstate-moving-insurance',
+      'bill-of-lading-shipper-rights',
+      'fmcsa',
+      'scams',
+      'how-to-choose',
       'checklist',
     ],
   },
@@ -107,6 +126,7 @@ export const guides: GuideEntry[] = [
     category: 'Regulation',
     href: '/resources/bill-of-lading-shipper-rights',
     related: [
+      'interstate-moving-damage-claims',
       'interstate-moving-insurance',
       'fmcsa',
       'how-to-choose',

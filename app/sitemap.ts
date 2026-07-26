@@ -117,7 +117,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                   )
                 : route === '/resources/interstate-moving-costs' ||
                     route === '/resources/best-time-to-move' ||
-                    route === '/resources/interstate-moving-insurance'
+                    route === '/resources/interstate-moving-insurance' ||
+                    route === '/resources/interstate-moving-damage-claims'
                   ? 0.9
                   : route === '/moving-calculator'
                     ? 0.87
