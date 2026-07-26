@@ -1,16 +1,13 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import {
+  useEffect,
+  useState,
+  type ComponentType,
+  type ReactNode,
+} from 'react';
 import { usePathname } from 'next/navigation';
 import { useDeferredLoad } from '@/lib/hooks/use-deferred-load';
-
-const SaveMyMoveProvider = dynamic(
-  () =>
-    import('@/components/save-my-move/save-my-move-provider').then(
-      (m) => m.SaveMyMoveProvider
-    ),
-  { ssr: false }
-);
 
 /** Routes that need auth/session immediately (must not wait on idle deferral). */
 function needsAuthImmediately(pathname: string | null): boolean {
@@ -25,11 +22,36 @@ function needsAuthImmediately(pathname: string | null): boolean {
   );
 }
 
-export function DeferredSaveMyMove({ children }: { children: React.ReactNode }) {
+type ProviderComponent = ComponentType<{ children: ReactNode }>;
+
+/**
+ * Lazily mounts SaveMyMoveProvider without blanking children.
+ *
+ * next/dynamic with ssr:false would replace the tree with `null` while the chunk
+ * loads — that unmounted the homepage (and could surface as a client exception).
+ * Always render children; wrap only after the provider module resolves.
+ */
+export function DeferredSaveMyMove({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const deferredReady = useDeferredLoad({ idleTimeout: 2500, maxWait: 8000 });
-  const ready = needsAuthImmediately(pathname) || deferredReady;
+  const shouldLoad = needsAuthImmediately(pathname) || deferredReady;
+  const [Provider, setProvider] = useState<ProviderComponent | null>(null);
 
-  if (!ready) return <>{children}</>;
-  return <SaveMyMoveProvider>{children}</SaveMyMoveProvider>;
+  useEffect(() => {
+    if (!shouldLoad) return;
+    let cancelled = false;
+    void import('@/components/save-my-move/save-my-move-provider')
+      .then((m) => {
+        if (!cancelled) setProvider(() => m.SaveMyMoveProvider);
+      })
+      .catch(() => {
+        // Keep children mounted even if the chunk fails — auth actions degrade to no-op fallback.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [shouldLoad]);
+
+  if (!Provider) return <>{children}</>;
+  return <Provider>{children}</Provider>;
 }

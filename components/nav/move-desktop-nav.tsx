@@ -21,7 +21,7 @@ export function MoveDesktopNav() {
           key={link.href}
           prefetch={false}
           href={link.href}
-          className="font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+          className="font-medium text-[#3d4f63] hover:text-foreground transition-colors whitespace-nowrap rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           {link.label}
         </Link>

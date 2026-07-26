@@ -10,7 +10,9 @@ export function HeaderTrustBadge({ className }: HeaderTrustBadgeProps) {
   return (
     <div
       className={cn(
-        'hidden lg:flex items-center rounded-full bg-muted/70 px-2 py-px text-[7px] font-semibold tracking-[0.5px] text-muted-foreground border border-border/50 max-w-[220px] leading-tight text-center',
+        'hidden xl:flex items-center rounded-full border border-border/60 bg-muted/80 px-2.5 py-1',
+        'text-[10px] font-semibold leading-snug tracking-wide text-[#3d4f63]',
+        'max-w-[240px] text-center min-h-8',
         className
       )}
       title={HEADER_TRUST_BADGE}

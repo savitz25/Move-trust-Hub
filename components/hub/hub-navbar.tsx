@@ -16,13 +16,21 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
   const isMoveHub = hubId === 'move';
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav
+      className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      aria-label="Primary"
+    >
       <div className="container mx-auto relative flex h-16 sm:h-[4.5rem] items-center justify-between px-4 overflow-visible">
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <Link prefetch={false} href={homeHref} className="group shrink-0">
+          <Link
+            prefetch={false}
+            href={homeHref}
+            className="group shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            aria-label={`${hub.siteName} home`}
+          >
             <HubLogo hubId={hubId} priority />
           </Link>
-          <HeaderTrustBadge className="hidden xl:flex" />
+          <HeaderTrustBadge />
         </div>
 
         {isMoveHub ? (
@@ -34,13 +42,13 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
                 key={link.href}
                 prefetch={false}
                 href={link.href}
-                className="font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+                className="font-medium text-[#3d4f63] hover:text-foreground transition-colors whitespace-nowrap rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 {link.label}
               </Link>
             ))}
             {hub.ctaLabel && hub.ctaHref ? (
-              <Button size="sm" asChild className="bg-primary hover:bg-primary/90 shadow-sm">
+              <Button size="sm" asChild className="bg-primary hover:bg-primary/90 shadow-sm min-h-9 min-w-[2.75rem]">
                 <Link prefetch={false} href={hub.ctaHref}>
                   {hub.ctaLabel}
                 </Link>

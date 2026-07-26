@@ -1,6 +1,7 @@
 /** Responsive `sizes` presets — keep in sync with layout CSS (hub-logo-slot, footer slots). */
 export const IMAGE_SIZES = {
-  headerLogo: '(max-width: 768px) 180px, 300px',
+  /** Matches .hub-logo-slot: 10rem → 12.5rem → 15rem (never request > ~480px). */
+  headerLogo: '(max-width: 640px) 160px, (max-width: 1024px) 200px, 240px',
   footerLogo: '192px',
   reviewThumb: '80px',
   contentWide: '(max-width: 768px) 100vw, 72rem',

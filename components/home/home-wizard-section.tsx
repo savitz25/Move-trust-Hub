@@ -1,11 +1,39 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { MyMovePlanWizard } from '@/components/my-move-plan/my-move-plan-wizard';
+import dynamic from 'next/dynamic';
 import { ErrorBoundary } from '@/components/error-boundary';
 import type { HomeRouteMover } from '@/lib/home/resolve-route-from-zip';
 import type { MyMovePlanStep } from '@/lib/my-move-plan/types';
 import { stepToPhase } from '@/lib/my-move-plan/readiness';
+
+const MyMovePlanWizard = dynamic(
+  () =>
+    import('@/components/my-move-plan/my-move-plan-wizard').then(
+      (m) => m.MyMovePlanWizard
+    ),
+  {
+    ssr: false,
+    loading: () => <WizardSkeleton />,
+  }
+);
+
+function WizardSkeleton() {
+  return (
+    <div
+      className="min-h-[22rem] rounded-2xl border bg-white/80 p-6 shadow-sm sm:min-h-[24rem]"
+      aria-busy="true"
+      aria-label="Loading move plan"
+    >
+      <div className="mb-4 h-3 w-40 animate-pulse rounded bg-muted" />
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className="h-16 animate-pulse rounded-xl bg-muted/70" />
+        <div className="h-16 animate-pulse rounded-xl bg-muted/70" />
+      </div>
+      <div className="mt-4 h-12 w-full max-w-xs animate-pulse rounded-xl bg-muted/60" />
+    </div>
+  );
+}
 
 const STATUS_BY_PHASE = {
   plan: {
@@ -27,7 +55,7 @@ type Props = {
 };
 
 /**
- * Client-only interactive ZIP / Move Plan island.
+ * Client-only interactive ZIP / Move Plan island (dynamic-imported wizard).
  * H1, intro, and trust links are server-rendered in HomeHeroSsr above this widget.
  */
 export function HomeWizardSection({ fallbackMovers = [] }: Props) {
@@ -41,7 +69,7 @@ export function HomeWizardSection({ fallbackMovers = [] }: Props) {
         <p className="text-xs font-semibold uppercase tracking-wider text-primary">
           {status.label}
         </p>
-        <p className="mx-auto mt-1 max-w-xl text-sm text-muted-foreground">{status.body}</p>
+        <p className="mx-auto mt-1 max-w-xl text-sm text-[#3d4f63]">{status.body}</p>
       </div>
 
       <ErrorBoundary fallbackTitle="My Move Plan hit a temporary issue">
@@ -49,7 +77,7 @@ export function HomeWizardSection({ fallbackMovers = [] }: Props) {
       </ErrorBoundary>
 
       <noscript>
-        <div className="mt-6 rounded-xl border bg-muted/40 p-4 text-sm text-muted-foreground leading-relaxed">
+        <div className="mt-6 rounded-xl border bg-muted/40 p-4 text-sm text-[#3d4f63] leading-relaxed">
           <p className="font-medium text-foreground">JavaScript is off — you can still research:</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>

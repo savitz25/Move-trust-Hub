@@ -19,6 +19,10 @@ async function getFallbackMovers() {
   }
 }
 
+/**
+ * Homepage — SSR H1 (HomeHeroSsr) for LCP; client wizard is dynamic-imported.
+ * Keep metadata / force-static on the route page.
+ */
 export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
   const fallbackMovers = await getFallbackMovers();
 
@@ -26,7 +30,6 @@ export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
     <div className="flex flex-col">
       {/* Task-driven hero — SSR H1 + trust links; client ZIP widget only */}
       <section className="relative overflow-hidden border-b">
-        {/* High-tech background */}
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-100 via-[#F7F8FA] to-[#EEF2F7]"
           aria-hidden
@@ -61,6 +64,7 @@ export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
 
       {mapSection}
 
+      {/* SSR for FAQ/internal links SEO; heavy review carousel is dynamic inside */}
       <HomeBelowFold />
     </div>
   );

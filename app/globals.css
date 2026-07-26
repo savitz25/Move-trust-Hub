@@ -71,7 +71,8 @@
     --secondary: 210 40% 96%;
     --secondary-foreground: 215 28% 17%;
     --muted: 210 40% 96.5%;
-    --muted-foreground: 215 16% 47%;
+    /* ~4.6:1 on white for body/helper text (WCAG AA) */
+    --muted-foreground: 215 18% 36%;
     --accent: 195 100% 50%; /* Bright cyan accent from logo */
     --accent-foreground: 215 28% 17%;
     --destructive: 0 72% 51%;
@@ -100,6 +101,17 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "kern" 1;
+  }
+
+  /* Visible keyboard focus — lifts a11y without painting on mouse-only clicks */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [role='button']:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 }
 

@@ -291,7 +291,7 @@ export function LocationPlaceInput({
         htmlFor={id}
         className={cn(
           'mb-1.5 block text-xs font-semibold uppercase tracking-wider',
-          isHero ? 'text-primary/80' : 'text-muted-foreground'
+          isHero ? 'text-primary' : 'text-[#3d4f63]'
         )}
       >
         {label}

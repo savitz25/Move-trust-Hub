@@ -10,7 +10,8 @@ type TrustHubLogoImageProps = {
 
 /**
  * Site logo — native PNG (optimizer bypass) preserves alpha on light/dark backgrounds.
- * Server-rendered to avoid pulling next/image into the header client bundle.
+ * Display dimensions match CSS .hub-logo-slot; source is 712×192 (~27KB) so we never
+ * request a multi-megapixel optimizer derivative (no w=3840 path).
  */
 export function TrustHubLogoImage({
   variant,
@@ -22,6 +23,7 @@ export function TrustHubLogoImage({
   // Intrinsic attributes match display slot (not source PNG 712×192) for CLS
   const displayW = isHeader ? 240 : 192;
   const displayH = isHeader ? 65 : 52;
+  const sizes = isHeader ? IMAGE_SIZES.headerLogo : IMAGE_SIZES.footerLogo;
 
   return (
     <img
@@ -29,10 +31,12 @@ export function TrustHubLogoImage({
       alt={TRUST_HUB_LOGO.alt}
       width={displayW}
       height={displayH}
+      // Hint decoder the real bitmap is modest; display box is smaller
+      srcSet={`${TRUST_HUB_LOGO.src} ${TRUST_HUB_LOGO.width}w`}
+      sizes={sizes}
       fetchPriority={priority ? 'high' : 'auto'}
       loading={priority ? 'eager' : 'lazy'}
-      decoding={priority ? 'sync' : 'async'}
-      sizes={isHeader ? IMAGE_SIZES.headerLogo : IMAGE_SIZES.footerLogo}
+      decoding={priority ? 'async' : 'async'}
       className={cn(
         'object-contain object-left bg-transparent',
         isHeader
