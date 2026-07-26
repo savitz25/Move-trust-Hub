@@ -4,14 +4,14 @@ import { cn } from '@/lib/utils';
 
 type TrustHubLogoImageProps = {
   variant: 'header' | 'footer';
+  /** When true, eager load — never high-priority (protect H1 LCP). */
   priority?: boolean;
   className?: string;
 };
 
 /**
- * Site logo — native PNG (optimizer bypass) preserves alpha on light/dark backgrounds.
- * Display dimensions match CSS .hub-logo-slot; source is 712×192 (~27KB) so we never
- * request a multi-megapixel optimizer derivative (no w=3840 path).
+ * Site logo — native PNG preserves alpha.
+ * Display box matches CSS .hub-logo-slot; never fetchPriority=high (H1 is LCP).
  */
 export function TrustHubLogoImage({
   variant,
@@ -19,11 +19,8 @@ export function TrustHubLogoImage({
   className,
 }: TrustHubLogoImageProps) {
   const isHeader = variant === 'header';
-
-  // Intrinsic attributes match display slot (not source PNG 712×192) for CLS
   const displayW = isHeader ? 240 : 192;
   const displayH = isHeader ? 65 : 52;
-  const sizes = isHeader ? IMAGE_SIZES.headerLogo : IMAGE_SIZES.footerLogo;
 
   return (
     <img
@@ -31,16 +28,15 @@ export function TrustHubLogoImage({
       alt={TRUST_HUB_LOGO.alt}
       width={displayW}
       height={displayH}
-      // Hint decoder the real bitmap is modest; display box is smaller
-      srcSet={`${TRUST_HUB_LOGO.src} ${TRUST_HUB_LOGO.width}w`}
-      sizes={sizes}
-      fetchPriority={priority ? 'high' : 'auto'}
+      sizes={isHeader ? IMAGE_SIZES.headerLogo : IMAGE_SIZES.footerLogo}
+      // auto priority — do not compete with text LCP
+      fetchPriority="auto"
       loading={priority ? 'eager' : 'lazy'}
-      decoding={priority ? 'async' : 'async'}
+      decoding="async"
       className={cn(
         'object-contain object-left bg-transparent',
         isHeader
-          ? 'h-full w-full transition-transform group-hover:scale-[1.02]'
+          ? 'h-full w-full'
           : 'h-12 w-[192px]',
         className
       )}

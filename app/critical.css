@@ -46,7 +46,7 @@ body {
   padding-inline: 1rem;
 }
 
-/* LCP heroes — match home-page.tsx: text-3xl → sm:4xl → md:5xl → lg:3.25rem */
+/* LCP heroes — solid color + self-hosted 600 so text paints without waiting on logo */
 h1.font-semibold.tracking-tighter,
 h1.font-semibold.tracking-tight {
   font-family: 'Geist', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -54,6 +54,8 @@ h1.font-semibold.tracking-tight {
   line-height: 1.12;
   font-weight: 600;
   letter-spacing: -0.05em;
+  color: #0a2540;
+  content-visibility: visible;
 }
 
 @media (min-width: 640px) {

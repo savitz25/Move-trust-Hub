@@ -8,9 +8,10 @@ import { Calculator, MapPinned, Scale, ShieldCheck } from 'lucide-react';
 export function HomeHeroSsr() {
   return (
     <div className="mx-auto max-w-4xl text-center">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0066b8]">
         Move Trust Hub · Independent directory
       </p>
+      {/* Primary LCP element — solid paint, no client island dependency */}
       <h1 className="mt-3 text-balance font-semibold leading-[1.1] tracking-tighter text-[#0A2540] text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem]">
         Where are you moving from and to?
       </h1>

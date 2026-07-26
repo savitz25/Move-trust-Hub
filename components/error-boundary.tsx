@@ -1,8 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { logger } from '@/lib/logging/logger';
 
 type Props = {
   children: React.ReactNode;
@@ -13,6 +11,7 @@ type Props = {
 
 type State = { hasError: boolean };
 
+/** Lightweight boundary — no shadcn Button / logger in the happy path bundle. */
 export class ErrorBoundary extends React.Component<Props, State> {
   state: State = { hasError: false };
 
@@ -21,10 +20,9 @@ export class ErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
-    logger.error('ui.error_boundary', {
-      message: error.message,
-      componentStack: info.componentStack,
-    });
+    if (typeof console !== 'undefined') {
+      console.error('ui.error_boundary', error.message, info.componentStack);
+    }
   }
 
   render() {
@@ -34,12 +32,13 @@ export class ErrorBoundary extends React.Component<Props, State> {
           <h2 className="text-xl font-semibold">
             {this.props.fallbackTitle ?? 'Something went wrong'}
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p className="mt-2 text-sm text-[#3d4f63]">
             We hit a temporary issue loading this page. Try refreshing, or contact us if
             the problem persists.
           </p>
-          <Button
-            className="mt-6"
+          <button
+            type="button"
+            className="mt-6 inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             onClick={() => {
               this.setState({ hasError: false }, () => {
                 this.props.onRetry?.();
@@ -47,7 +46,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
             }}
           >
             Try again
-          </Button>
+          </button>
         </div>
       );
     }

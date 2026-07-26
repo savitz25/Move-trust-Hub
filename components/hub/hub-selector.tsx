@@ -30,10 +30,11 @@ export function HubSelector({
             aria-selected={isActive}
             href={hubPath(hubId, '/')}
             className={cn(
-              'rounded-full px-3 py-1.5 transition-colors min-h-[32px] flex items-center',
+              'rounded-full px-3 py-1.5 transition-colors min-h-11 min-w-11 flex items-center justify-center',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
               isActive
                 ? 'bg-background text-foreground shadow-sm'
-                : 'text-muted-foreground hover:text-foreground'
+                : 'text-[#3d4f63] hover:text-foreground'
             )}
           >
             {hub.shortName}

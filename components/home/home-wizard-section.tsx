@@ -1,12 +1,14 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { ErrorBoundary } from '@/components/error-boundary';
-import type { HomeRouteMover } from '@/lib/home/resolve-route-from-zip';
-import type { MyMovePlanStep } from '@/lib/my-move-plan/types';
-import { stepToPhase } from '@/lib/my-move-plan/readiness';
+import { MapPin } from 'lucide-react';
 
+/**
+ * Intent-gated Move Plan island.
+ * The full wizard chunk is NOT requested until the user starts the plan (click/focus/keyboard).
+ * Keeps homepage first-load JS free of wizard / directory / comparison graph.
+ */
 const MyMovePlanWizard = dynamic(
   () =>
     import('@/components/my-move-plan/my-move-plan-wizard').then(
@@ -14,14 +16,14 @@ const MyMovePlanWizard = dynamic(
     ),
   {
     ssr: false,
-    loading: () => <WizardSkeleton />,
+    loading: () => <WizardLoadingSlot />,
   }
 );
 
-function WizardSkeleton() {
+function WizardLoadingSlot() {
   return (
     <div
-      className="min-h-[22rem] rounded-2xl border bg-white/80 p-6 shadow-sm sm:min-h-[24rem]"
+      className="min-h-[22rem] rounded-2xl border bg-white/90 p-6 shadow-sm sm:min-h-[24rem]"
       aria-busy="true"
       aria-label="Loading move plan"
     >
@@ -35,46 +37,65 @@ function WizardSkeleton() {
   );
 }
 
-const STATUS_BY_PHASE = {
-  plan: {
-    label: 'Step 1 — Route',
-    body: 'Enter From & To city or ZIP to start your free Move Plan.',
-  },
-  build: {
-    label: 'Step 2 — Shortlist & inventory',
-    body: 'Pick up to three movers and document the same load for comparable estimates.',
-  },
-  book: {
-    label: 'Step 3 — Report ready',
-    body: 'Send one documented plan so every quote uses the same route and inventory.',
-  },
-} as const;
-
-type Props = {
-  fallbackMovers?: HomeRouteMover[];
-};
-
-/**
- * Client-only interactive ZIP / Move Plan island (dynamic-imported wizard).
- * H1, intro, and trust links are server-rendered in HomeHeroSsr above this widget.
- */
-export function HomeWizardSection({ fallbackMovers = [] }: Props) {
-  const [step, setStep] = useState<MyMovePlanStep>('route');
-  const phase = stepToPhase(step);
-  const status = useMemo(() => STATUS_BY_PHASE[phase], [phase]);
-
+/** Lightweight static shell — same height budget as the wizard for CLS. */
+function WizardStartGate({ onStart }: { onStart: () => void }) {
   return (
-    <div className="mx-auto mt-8 max-w-4xl sm:mt-10">
-      <div className="mb-4 text-center sm:mb-5" aria-live="polite">
-        <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-          {status.label}
-        </p>
-        <p className="mx-auto mt-1 max-w-xl text-sm text-[#3d4f63]">{status.body}</p>
+    <div className="min-h-[22rem] rounded-2xl border-2 border-border/80 bg-white/95 p-5 shadow-sm sm:min-h-[24rem] sm:p-6">
+      <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+        Step 1 — Route
+      </p>
+      <p className="mt-1 text-sm text-[#3d4f63]">
+        Enter From &amp; To city or ZIP to start your free Move Plan.
+      </p>
+
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        <label className="block text-left">
+          <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-primary">
+            From
+          </span>
+          <span className="flex min-h-14 items-center gap-2 rounded-2xl border-2 border-border/80 bg-white px-3 shadow-sm">
+            <MapPin className="h-5 w-5 shrink-0 text-[#3d4f63]" aria-hidden />
+            <input
+              type="text"
+              name="move-from-preview"
+              autoComplete="address-level2"
+              placeholder="City or ZIP"
+              className="w-full min-h-11 bg-transparent text-base text-foreground outline-none placeholder:text-[#5a6b7d]"
+              onFocus={onStart}
+              onClick={onStart}
+            />
+          </span>
+        </label>
+        <label className="block text-left">
+          <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-primary">
+            To
+          </span>
+          <span className="flex min-h-14 items-center gap-2 rounded-2xl border-2 border-border/80 bg-white px-3 shadow-sm">
+            <MapPin className="h-5 w-5 shrink-0 text-[#3d4f63]" aria-hidden />
+            <input
+              type="text"
+              name="move-to-preview"
+              autoComplete="address-level2"
+              placeholder="City or ZIP"
+              className="w-full min-h-11 bg-transparent text-base text-foreground outline-none placeholder:text-[#5a6b7d]"
+              onFocus={onStart}
+              onClick={onStart}
+            />
+          </span>
+        </label>
       </div>
 
-      <ErrorBoundary fallbackTitle="My Move Plan hit a temporary issue">
-        <MyMovePlanWizard fallbackMovers={fallbackMovers} onStepChange={setStep} />
-      </ErrorBoundary>
+      <button
+        type="button"
+        onClick={onStart}
+        className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:w-auto sm:min-w-[12rem]"
+      >
+        Start free Move Plan
+      </button>
+
+      <p className="mt-3 text-xs text-[#3d4f63]">
+        No lead fees · Independent directory · Works with city or ZIP
+      </p>
 
       <noscript>
         <div className="mt-6 rounded-xl border bg-muted/40 p-4 text-sm text-[#3d4f63] leading-relaxed">
@@ -103,6 +124,33 @@ export function HomeWizardSection({ fallbackMovers = [] }: Props) {
           </ul>
         </div>
       </noscript>
+    </div>
+  );
+}
+
+type Props = {
+  /** Optional; kept for API compat. Not required for first paint. */
+  fallbackMovers?: unknown[];
+};
+
+/**
+ * Client island for the Move Plan wizard only.
+ * H1 stays in HomeHeroSsr (SSR LCP). Wizard JS loads only after user intent.
+ */
+export function HomeWizardSection(_props: Props = {}) {
+  const [started, setStarted] = useState(false);
+
+  const start = useCallback(() => {
+    setStarted(true);
+  }, []);
+
+  return (
+    <div className="mx-auto mt-8 max-w-4xl sm:mt-10">
+      {started ? (
+        <MyMovePlanWizard fallbackMovers={[]} />
+      ) : (
+        <WizardStartGate onStart={start} />
+      )}
     </div>
   );
 }

@@ -28,6 +28,7 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
             className="group shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             aria-label={`${hub.siteName} home`}
           >
+            {/* eager but not fetchPriority=high — keep SSR H1 as LCP */}
             <HubLogo hubId={hubId} priority />
           </Link>
           <HeaderTrustBadge />

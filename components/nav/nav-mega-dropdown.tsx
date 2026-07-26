@@ -68,17 +68,17 @@ export function NavMegaDropdown({
           <Link
             prefetch={false}
             href={href}
-            className="font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+            className="font-medium text-[#3d4f63] hover:text-foreground transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
             onClick={close}
           >
             {label}
           </Link>
         ) : (
-          <span className="font-medium text-muted-foreground whitespace-nowrap">{label}</span>
+          <span className="font-medium text-[#3d4f63] whitespace-nowrap">{label}</span>
         )}
         <button
           type="button"
-          className="p-0.5 text-muted-foreground hover:text-foreground transition-colors min-h-[44px] min-w-[28px] flex items-center justify-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+          className="p-0.5 text-[#3d4f63] hover:text-foreground transition-colors min-h-11 min-w-11 flex items-center justify-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           aria-expanded={open}
           aria-haspopup="true"
           aria-controls={panelId}
@@ -106,7 +106,7 @@ export function NavMegaDropdown({
           <div className={cn('grid gap-5', columns.length > 1 ? 'sm:grid-cols-2' : 'grid-cols-1')}>
             {columns.map((column) => (
               <div key={column.title}>
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-[#3d4f63] mb-2">
                   {column.title}
                 </p>
                 <ul className="space-y-1" role="list">
@@ -122,7 +122,7 @@ export function NavMegaDropdown({
                           {link.label}
                         </span>
                         {link.description ? (
-                          <span className="text-xs text-muted-foreground leading-snug">
+                          <span className="text-xs text-[#3d4f63] leading-snug">
                             {link.description}
                           </span>
                         ) : null}
