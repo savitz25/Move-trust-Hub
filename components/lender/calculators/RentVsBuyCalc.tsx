@@ -53,7 +53,7 @@ export default function RentVsBuyCalc() {
           <div>
             <label className="text-sm font-medium">Horizon</label>
             <select value={s.horizon} onChange={(e) => update({ horizon: Number(e.target.value) })}
-              className="mt-1 w-full rounded-lg border px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-800">
+              className="mt-1 w-full rounded-lg border border-[#E5E7EB] bg-white px-3 py-2 text-sm text-[#111827] focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/20">
               {[5, 7, 10, 15, 30].map((h) => <option key={h} value={h}>{h} years</option>)}
             </select>
           </div>

@@ -100,33 +100,30 @@ export default function CalculatorsPage() {
       </div>
 
       {/* Hero — decision framing; live tool mounts immediately below via CalculatorHub */}
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0F172A]/5 via-white to-emerald-500/5 dark:from-zinc-900 dark:via-zinc-900 dark:to-emerald-950/20">
+      <section className="border-b border-[#E5E7EB] bg-[#F9FAFB]">
         <div className="container mx-auto px-4 py-10 md:py-14">
           <div className="mx-auto max-w-3xl text-center md:mx-0 md:max-w-2xl md:text-left">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-600">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#2563EB]">
               Working tools first · Marketing second
             </p>
-            <h1 className="text-3xl font-extrabold tracking-tight text-[#0F172A] dark:text-white md:text-5xl">
+            <h1 className="text-3xl font-extrabold tracking-tight text-[#111827] md:text-5xl">
               Mortgage Calculators That Help You Make Better Decisions
             </h1>
-            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+            <p className="mt-4 text-lg text-[#6B7280]">
               Free tools. No account. Independent estimates you can adjust in seconds — then research
               NMLS-verified lenders with{' '}
-              <strong className="font-semibold text-[#0F172A] dark:text-white">
-                zero paid placements
-              </strong>
-              .
+              <strong className="font-semibold text-[#111827]">zero paid placements</strong>.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
               <a
                 href="#flagship-calc"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-700"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#3B82F6] px-6 py-3 text-sm font-bold text-white hover:bg-[#2563EB]"
               >
                 Calculate payment now
               </a>
               <a
                 href="#intent-heading"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-zinc-300 bg-white px-6 py-3 text-sm font-semibold text-[#0F172A] hover:border-emerald-400 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#E5E7EB] bg-white px-6 py-3 text-sm font-semibold text-[#111827] shadow-sm hover:border-[#93C5FD]"
               >
                 Choose your goal
               </a>
@@ -135,32 +132,31 @@ export default function CalculatorsPage() {
         </div>
       </section>
 
-      <div className="border-b border-zinc-200 bg-[#0F172A] py-2.5 text-center text-xs text-zinc-300">
-        <strong className="text-white">Free</strong>
+      <div className="border-b border-[#E5E7EB] bg-white py-2.5 text-center text-xs text-[#6B7280]">
+        <strong className="text-[#111827]">Free</strong>
         {' · '}No sign-up{' · '}Educational estimates{' · '}NMLS-verified directory matching
         {' · '}
-        <span className="text-emerald-300">We do not sell your information</span>
+        <span className="font-medium text-[#047857]">We do not sell your information</span>
       </div>
 
-      {/* Interactive hub: flagship PITI, intent gateway, grid, workspace, lender CTA */}
-      <div className="container mx-auto px-4 py-10 md:py-14">
-        <CalculatorHubLoader />
+      {/* Interactive hub on soft off-white canvas */}
+      <div className="bg-[#F8F9FA]">
+        <div className="container mx-auto px-4 py-10 md:py-14">
+          <CalculatorHubLoader />
+        </div>
       </div>
 
       {/* Educational layer */}
       <section
-        className="border-t border-zinc-200 bg-zinc-50 py-14 dark:border-zinc-800 dark:bg-zinc-900/40"
+        className="border-t border-[#E5E7EB] bg-white py-14"
         aria-labelledby="learning-heading"
       >
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-10 max-w-2xl text-center">
-            <h2
-              id="learning-heading"
-              className="text-2xl font-bold text-[#0F172A] dark:text-white md:text-3xl"
-            >
+            <h2 id="learning-heading" className="text-2xl font-bold text-[#111827] md:text-3xl">
               Understand the numbers
             </h2>
-            <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+            <p className="mt-2 text-[#6B7280]">
               Short explainers so the tools stay useful — not a wall of generic content.
             </p>
           </div>
@@ -168,12 +164,10 @@ export default function CalculatorsPage() {
             {LEARNING.map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-900"
+                className="rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] p-5 shadow-sm"
               >
-                <h3 className="font-bold text-[#0F172A] dark:text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  {item.body}
-                </p>
+                <h3 className="font-bold text-[#111827]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">{item.body}</p>
               </article>
             ))}
           </div>
@@ -181,16 +175,22 @@ export default function CalculatorsPage() {
       </section>
 
       {/* Trust / transparency */}
-      <section className="border-t border-zinc-200 py-10 dark:border-zinc-800" aria-labelledby="trust-heading">
+      <section
+        className="border-t border-[#E5E7EB] bg-[#F8F9FA] py-10"
+        aria-labelledby="trust-heading"
+      >
         <div className="container mx-auto max-w-4xl px-4 text-center">
-          <h2 id="trust-heading" className="text-xl font-bold text-[#0F172A] dark:text-white">
+          <h2 id="trust-heading" className="text-xl font-bold text-[#111827]">
             Trust &amp; transparency
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-[#6B7280]">
             Calculation assumptions (taxes, insurance, PMI formulas) are simplified and editable in
             each tool. Directory matching uses public licensing and independent trust signals — not
             paid ranking. For deposit accounts and banking, see our{' '}
-            <Link href="/lender/fdic-insured-banks" className="font-medium text-emerald-700 hover:underline">
+            <Link
+              href="/lender/fdic-insured-banks"
+              className="font-medium text-[#2563EB] hover:underline"
+            >
               FDIC-insured banks
             </Link>{' '}
             directory.
@@ -202,92 +202,92 @@ export default function CalculatorsPage() {
       </section>
 
       {/* How it works */}
-      <section className="container mx-auto px-4 py-14" aria-labelledby="how-calc-works">
-        <h2
-          id="how-calc-works"
-          className="mb-8 text-center text-2xl font-bold text-[#0F172A] dark:text-white"
-        >
-          How calculators connect to verified lenders
-        </h2>
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
-          {[
-            {
-              step: '01',
-              title: 'Get a useful estimate',
-              desc: 'Start with live PITI above the fold — or pick a journey for affordability, refinance, or comparison tools.',
-            },
-            {
-              step: '02',
-              title: 'See your numbers clearly',
-              desc: 'Large payment totals, breakdowns, and a browser-saved session snapshot keep context while you explore other tools.',
-            },
-            {
-              step: '03',
-              title: 'Research independent lenders',
-              desc: 'Match Me and county search filter NMLS-verified listings. No paid placements. No lead fees for ranking.',
-            },
-          ].map((item) => (
-            <div
-              key={item.step}
-              className="rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-900"
-            >
-              <span className="text-2xl font-bold text-emerald-500/40">{item.step}</span>
-              <h3 className="mt-2 text-lg font-bold text-[#0F172A] dark:text-white">{item.title}</h3>
-              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{item.desc}</p>
-            </div>
-          ))}
+      <section className="bg-white py-14" aria-labelledby="how-calc-works">
+        <div className="container mx-auto px-4">
+          <h2
+            id="how-calc-works"
+            className="mb-8 text-center text-2xl font-bold text-[#111827]"
+          >
+            How calculators connect to verified lenders
+          </h2>
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+            {[
+              {
+                step: '01',
+                title: 'Get a useful estimate',
+                desc: 'Start with live PITI above the fold — or pick a journey for affordability, refinance, or comparison tools.',
+              },
+              {
+                step: '02',
+                title: 'See your numbers clearly',
+                desc: 'Large payment totals, breakdowns, and a browser-saved session snapshot keep context while you explore other tools.',
+              },
+              {
+                step: '03',
+                title: 'Research independent lenders',
+                desc: 'Match Me and county search filter NMLS-verified listings. No paid placements. No lead fees for ranking.',
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] p-6 shadow-sm"
+              >
+                <span className="text-2xl font-bold text-[#BFDBFE]">{item.step}</span>
+                <h3 className="mt-2 text-lg font-bold text-[#111827]">{item.title}</h3>
+                <p className="mt-2 text-sm text-[#6B7280]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
       <section
-        className="border-t border-zinc-200 bg-zinc-50 py-14 dark:border-zinc-800 dark:bg-zinc-900/50"
+        className="border-t border-[#E5E7EB] bg-[#F8F9FA] py-14"
         aria-labelledby="calc-faq"
       >
         <div className="container mx-auto max-w-3xl px-4">
-          <h2
-            id="calc-faq"
-            className="mb-8 text-center text-2xl font-bold text-[#0F172A] dark:text-white"
-          >
+          <h2 id="calc-faq" className="mb-8 text-center text-2xl font-bold text-[#111827]">
             Calculator FAQ
           </h2>
           <div className="space-y-4">
             {FAQ.map((f) => (
               <details
                 key={f.q}
-                className="rounded-xl border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-900"
+                className="rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-sm"
               >
-                <summary className="cursor-pointer font-semibold text-[#0F172A] dark:text-white">
-                  {f.q}
-                </summary>
-                <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{f.a}</p>
+                <summary className="cursor-pointer font-semibold text-[#111827]">{f.q}</summary>
+                <p className="mt-2 text-sm text-[#6B7280]">{f.a}</p>
               </details>
             ))}
           </div>
-          <p className="mt-8 text-center text-sm text-zinc-500">
+          <p className="mt-8 text-center text-sm text-[#6B7280]">
             Explore county lenders:{' '}
             <Link
               href="/lender/local-lenders/florida"
-              className="font-medium text-emerald-600 hover:underline"
+              className="font-medium text-[#2563EB] hover:underline"
             >
               Florida
             </Link>
             {' · '}
             <Link
               href="/lender/local-lenders/texas"
-              className="font-medium text-emerald-600 hover:underline"
+              className="font-medium text-[#2563EB] hover:underline"
             >
               Texas
             </Link>
             {' · '}
             <Link
               href="/lender/local-lenders/california"
-              className="font-medium text-emerald-600 hover:underline"
+              className="font-medium text-[#2563EB] hover:underline"
             >
               California
             </Link>
             {' · '}
-            <Link href="/lender/local-lenders" className="font-medium text-emerald-600 hover:underline">
+            <Link
+              href="/lender/local-lenders"
+              className="font-medium text-[#2563EB] hover:underline"
+            >
               All states
             </Link>
           </p>

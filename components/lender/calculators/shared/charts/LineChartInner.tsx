@@ -22,9 +22,28 @@ export function LineChartInner({
     <div style={{ height }} aria-label="Line chart">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
-          <XAxis dataKey="label" tick={{ fontSize: 11 }} />
-          <YAxis tickFormatter={(v) => fmt(Number(v))} tick={{ fontSize: 11 }} width={56} />
-          <Tooltip formatter={(v) => fmt(Number(v))} />
+          <XAxis
+            dataKey="label"
+            tick={{ fontSize: 11, fill: '#6B7280' }}
+            axisLine={{ stroke: '#E5E7EB' }}
+            tickLine={{ stroke: '#E5E7EB' }}
+          />
+          <YAxis
+            tickFormatter={(v) => fmt(Number(v))}
+            tick={{ fontSize: 11, fill: '#6B7280' }}
+            width={56}
+            axisLine={{ stroke: '#E5E7EB' }}
+            tickLine={{ stroke: '#E5E7EB' }}
+          />
+          <Tooltip
+            formatter={(v) => fmt(Number(v))}
+            contentStyle={{
+              background: '#FFFFFF',
+              border: '1px solid #E5E7EB',
+              borderRadius: 12,
+              color: '#111827',
+            }}
+          />
           <Legend />
           {lines.map((l) => (
             <Line

@@ -33,11 +33,11 @@ export function CalcSlider({
   return (
     <div className={cn('space-y-2', className)}>
       <div className="flex justify-between text-sm">
-        <span className="inline-flex items-center gap-1.5 font-medium text-[#0F172A] dark:text-zinc-200">
+        <span className="inline-flex items-center gap-1.5 font-medium text-[#111827]">
           {label}
           {tip ? <InfoTooltip title={label} description={tip} /> : null}
         </span>
-        <span className="font-bold text-emerald-600">{display}</span>
+        <span className="font-bold tabular-nums text-[#2563EB]">{display}</span>
       </div>
       <Slider
         value={[value]}

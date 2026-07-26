@@ -62,12 +62,12 @@ export function SessionSnapshot() {
 
   if (!snap) {
     return (
-      <div className="rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-5 dark:border-zinc-600 dark:bg-zinc-800/40">
-        <p className="flex items-center gap-2 text-sm font-semibold text-[#0F172A] dark:text-white">
-          <Bookmark className="h-4 w-4 text-emerald-600" aria-hidden />
+      <div className="rounded-2xl border border-dashed border-[#E5E7EB] bg-white p-5 shadow-sm">
+        <p className="flex items-center gap-2 text-sm font-semibold text-[#111827]">
+          <Bookmark className="h-4 w-4 text-[#2563EB]" aria-hidden />
           Your Numbers
         </p>
-        <p className="mt-2 text-sm text-zinc-500">
+        <p className="mt-2 text-sm text-[#6B7280]">
           Adjust the payment calculator above — your scenario is saved in this browser for this
           session.
         </p>
@@ -76,48 +76,42 @@ export function SessionSnapshot() {
   }
 
   return (
-    <div className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50/80 to-white p-5 dark:border-emerald-900 dark:from-emerald-950/30 dark:to-zinc-900">
-      <p className="flex items-center gap-2 text-sm font-semibold text-[#0F172A] dark:text-white">
-        <Bookmark className="h-4 w-4 text-emerald-600" aria-hidden />
+    <div className="rounded-2xl border border-[#BFDBFE] bg-gradient-to-br from-[#EFF6FF] to-white p-5 shadow-sm">
+      <p className="flex items-center gap-2 text-sm font-semibold text-[#111827]">
+        <Bookmark className="h-4 w-4 text-[#2563EB]" aria-hidden />
         Your Numbers
-        <span className="ml-auto rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200">
+        <span className="ml-auto rounded-full bg-[#DBEAFE] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#1E40AF]">
           Saved in browser
         </span>
       </p>
       <dl className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-3 lg:grid-cols-6">
         <div>
-          <dt className="text-[10px] font-semibold uppercase tracking-wide text-zinc-500">Price</dt>
-          <dd className="font-bold tabular-nums text-[#0F172A] dark:text-white">
-            {formatCurrency(snap.homePrice)}
-          </dd>
+          <dt className="text-[10px] font-semibold uppercase tracking-wide text-[#6B7280]">Price</dt>
+          <dd className="font-bold tabular-nums text-[#111827]">{formatCurrency(snap.homePrice)}</dd>
         </div>
         <div>
-          <dt className="text-[10px] font-semibold uppercase tracking-wide text-zinc-500">Down</dt>
-          <dd className="font-bold tabular-nums text-[#0F172A] dark:text-white">{snap.downPct}%</dd>
+          <dt className="text-[10px] font-semibold uppercase tracking-wide text-[#6B7280]">Down</dt>
+          <dd className="font-bold tabular-nums text-[#111827]">{snap.downPct}%</dd>
         </div>
         <div>
-          <dt className="text-[10px] font-semibold uppercase tracking-wide text-zinc-500">Loan</dt>
-          <dd className="font-bold tabular-nums text-[#0F172A] dark:text-white">
-            {formatCurrency(snap.loan)}
-          </dd>
+          <dt className="text-[10px] font-semibold uppercase tracking-wide text-[#6B7280]">Loan</dt>
+          <dd className="font-bold tabular-nums text-[#111827]">{formatCurrency(snap.loan)}</dd>
         </div>
         <div>
-          <dt className="text-[10px] font-semibold uppercase tracking-wide text-zinc-500">Rate</dt>
-          <dd className="font-bold tabular-nums text-[#0F172A] dark:text-white">{snap.rate}%</dd>
+          <dt className="text-[10px] font-semibold uppercase tracking-wide text-[#6B7280]">Rate</dt>
+          <dd className="font-bold tabular-nums text-[#111827]">{snap.rate}%</dd>
         </div>
         <div>
-          <dt className="text-[10px] font-semibold uppercase tracking-wide text-zinc-500">
+          <dt className="text-[10px] font-semibold uppercase tracking-wide text-[#6B7280]">
             Est. payment
           </dt>
-          <dd className="font-bold tabular-nums text-emerald-700 dark:text-emerald-400">
-            {formatCurrency(snap.piti)}/mo
-          </dd>
+          <dd className="font-bold tabular-nums text-[#2563EB]">{formatCurrency(snap.piti)}/mo</dd>
         </div>
         <div>
-          <dt className="text-[10px] font-semibold uppercase tracking-wide text-zinc-500">
+          <dt className="text-[10px] font-semibold uppercase tracking-wide text-[#6B7280]">
             Loan type
           </dt>
-          <dd className="font-bold text-[#0F172A] dark:text-white">{snap.loanType}</dd>
+          <dd className="font-bold text-[#111827]">{snap.loanType}</dd>
         </div>
       </dl>
     </div>

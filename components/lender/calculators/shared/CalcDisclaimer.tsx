@@ -5,7 +5,7 @@ export function CalcDisclaimer({ className }: { className?: string }) {
   return (
     <p
       className={cn(
-        'border-l-[3px] border-emerald-500 bg-emerald-50/50 py-2 pl-3 text-xs leading-relaxed text-zinc-600 dark:bg-emerald-950/20 dark:text-zinc-400',
+        'border-l-[3px] border-[#3B82F6] bg-[#EFF6FF] py-2 pl-3 text-xs leading-relaxed text-[#4B5563]',
         className,
       )}
       role="note"

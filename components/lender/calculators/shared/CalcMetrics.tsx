@@ -1,13 +1,29 @@
 import { cn, formatCurrency } from '@/lib/lender/utils';
 
+/** Large monthly payment / primary result — soft blue highlight on light UI */
 export function ResultHero({
-  label, value, meta, className,
-}: { label: string; value: string; meta?: string; className?: string }) {
+  label,
+  value,
+  meta,
+  className,
+}: {
+  label: string;
+  value: string;
+  meta?: string;
+  className?: string;
+}) {
   return (
-    <div className={cn('rounded-xl bg-gradient-to-br from-[#0F172A] to-[#1E3A5F] p-6 text-center text-white', className)}>
-      <p className="text-sm opacity-85">{label}</p>
-      <p className="text-3xl font-extrabold tracking-tight md:text-4xl">{value}</p>
-      {meta && <p className="mt-2 text-xs opacity-75">{meta}</p>}
+    <div
+      className={cn(
+        'calc-result-hero rounded-2xl border border-[#BFDBFE] bg-gradient-to-br from-[#EFF6FF] to-[#DBEAFE] p-6 text-center shadow-sm',
+        className,
+      )}
+    >
+      <p className="text-sm font-medium text-[#1E40AF]">{label}</p>
+      <p className="mt-1 text-3xl font-extrabold tracking-tight text-[#111827] md:text-4xl">
+        {value}
+      </p>
+      {meta ? <p className="mt-2 text-xs text-[#6B7280]">{meta}</p> : null}
     </div>
   );
 }
@@ -17,15 +33,28 @@ export function MetricGrid({ children }: { children: React.ReactNode }) {
 }
 
 export function MetricCard({
-  label, value, highlight,
-}: { label: string; value: string; highlight?: 'teal' | 'rose' }) {
+  label,
+  value,
+  highlight,
+}: {
+  label: string;
+  value: string;
+  highlight?: 'teal' | 'rose';
+}) {
   return (
-    <div className="rounded-xl bg-zinc-50 p-3 dark:bg-zinc-800/60">
-      <span className="text-[10px] font-semibold uppercase tracking-wider text-zinc-500">{label}</span>
-      <span className={cn('mt-1 block text-base font-bold text-[#0F172A] dark:text-white',
-        highlight === 'teal' && 'text-emerald-600',
-        highlight === 'rose' && 'text-rose-600',
-      )}>{value}</span>
+    <div className="rounded-xl border border-[#E5E7EB] bg-white p-3 shadow-sm">
+      <span className="text-[10px] font-semibold uppercase tracking-wider text-[#6B7280]">
+        {label}
+      </span>
+      <span
+        className={cn(
+          'mt-1 block text-base font-bold text-[#111827]',
+          highlight === 'teal' && 'text-[#059669]',
+          highlight === 'rose' && 'text-rose-600',
+        )}
+      >
+        {value}
+      </span>
     </div>
   );
 }

@@ -1,7 +1,12 @@
 import { cn } from '@/lib/lender/utils';
 
 export function CalcSkeleton({ className }: { className?: string }) {
-  return <div className={cn('animate-pulse rounded-xl bg-zinc-200 dark:bg-zinc-700', className)} aria-hidden="true" />;
+  return (
+    <div
+      className={cn('animate-pulse rounded-xl bg-[#E5E7EB]', className)}
+      aria-hidden="true"
+    />
+  );
 }
 
 export function CalcHubSkeleton() {
