@@ -1,9 +1,9 @@
 import { Company } from '@/types';
 import { portableContainerCompanies } from '@/data/portable-container-companies';
+import { seedAutoTransportCompanies } from '@/data/seed-auto-transport';
 
 // Realistic seed data for 25+ major interstate movers. All values plausible based on public data.
-// Portable container brands (PODS, U-Pack, U-Box, Pack-Rat, etc.) are defined in
-// portable-container-companies.ts and merged below so Container / Portable filter has depth.
+// Portable container + auto transport brands are merged below so service filters have depth.
 const coreSeedCompanies: Company[] = [
   {
     id: 'allied',
@@ -706,11 +706,15 @@ const coreSeedCompanies: Company[] = [
 ];
 
 const portableSlugs = new Set(portableContainerCompanies.map((c) => c.slug));
+const autoTransportSlugs = new Set(seedAutoTransportCompanies.map((c) => c.slug));
 
-/** Core seed + national portable container brands (Container / Portable filter). */
+/** Core seed + portable container + auto transport brands for service filters. */
 export const seedCompanies: Company[] = [
-  ...coreSeedCompanies.filter((c) => !portableSlugs.has(c.slug)),
+  ...coreSeedCompanies.filter(
+    (c) => !portableSlugs.has(c.slug) && !autoTransportSlugs.has(c.slug)
+  ),
   ...portableContainerCompanies,
+  ...seedAutoTransportCompanies,
 ];
 
 // Helper to get company by slug

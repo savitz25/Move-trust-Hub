@@ -85,6 +85,10 @@ function hasPortableContainerService(services: string[]): boolean {
   );
 }
 
+function hasAutoTransportService(services: string[]): boolean {
+  return services.some((s) => /auto\s*transport/i.test(s));
+}
+
 /**
  * Local when: explicit intrastate flag, Local Mover service tag, or no USDOT + no
  * carrier/broker signals (handles missing service_scope column).
@@ -98,8 +102,11 @@ export function isLocalMover(input: LocalMoverInput): boolean {
   if (services.some((s) => /^local\s*mover$/i.test(s.trim()))) return true;
   const scope = (input.serviceScope ?? '').toLowerCase().trim();
   if (scope === 'intrastate') return true;
-  // Multi-state container brands: keep in main interstate directory filters
-  if (hasPortableContainerService(services) && scope !== 'intrastate') {
+  // Multi-state specialty brands: keep in main interstate directory filters
+  if (
+    (hasPortableContainerService(services) || hasAutoTransportService(services)) &&
+    scope !== 'intrastate'
+  ) {
     return false;
   }
   if (scope === 'interstate') {

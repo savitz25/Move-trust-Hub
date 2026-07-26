@@ -79,7 +79,7 @@ async function buildUnifiedDirectory(): Promise<Company[]> {
 /** Cached directory listing for /companies and slug resolution. */
 export const getUnifiedDirectoryCompanies = unstable_cache(
   buildUnifiedDirectory,
-  // v10: national portable container brands (PODS, U-Pack, U-Box, Pack-Rat, …)
-  ['unified-movers-directory-v10-portable-containers'],
+  // v11: portable containers + national auto transport (Montway, Sherpa, …)
+  ['unified-movers-directory-v11-auto-transport'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
