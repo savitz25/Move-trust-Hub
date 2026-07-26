@@ -7,6 +7,7 @@
 
 import { preferPublicCompanyName } from '@/lib/companies/public-display-name';
 import type { CompanyEnrichmentInput } from '@/lib/verification/types';
+import { websiteHostKey } from '@/lib/verification/normalize-website-url';
 
 /** Longer forms first so "L.L.C." / "Incorporated" win over short tokens. */
 const TRAILING_ENTITY_SUFFIX_RE =
@@ -337,7 +338,9 @@ export function scoreGooglePlaceMatch(
   searchName: string,
   city: string,
   state: string,
-  expectedPhone?: string | null
+  expectedPhone?: string | null,
+  expectedWebsite?: string | null,
+  businessCategory?: string | null
 ): number {
   const placeName = place.displayName?.trim() || '';
   if (!placeName || !searchName.trim()) return 0;
@@ -354,9 +357,19 @@ export function scoreGooglePlaceMatch(
 
   // Brand tokens from the query MUST appear in the Google place name.
   // Prevents "Otterly Elite Movers" matching "Elite Movers LLC".
+  // Exception: exact website domain match can rescue a close brand variant.
+  const expectedHost = websiteHostKey(expectedWebsite);
+  const placeHost = websiteHostKey(place.websiteUri);
+  const domainMatch =
+    Boolean(expectedHost) &&
+    Boolean(placeHost) &&
+    (expectedHost === placeHost ||
+      expectedHost.endsWith(`.${placeHost}`) ||
+      placeHost.endsWith(`.${expectedHost}`));
+
   if (distinctive.length > 0) {
     const missing = distinctive.filter((t) => !placeTokenSet.has(t));
-    if (missing.length > 0) {
+    if (missing.length > 0 && !domainMatch) {
       return 0;
     }
   }
@@ -386,6 +399,15 @@ export function scoreGooglePlaceMatch(
     score = Math.max(score, 54 + Math.min(distinctive.length, 3) * 6);
   }
 
+  // Website domain match is the strongest signal for national auto/container brands.
+  if (domainMatch) {
+    score = Math.max(score, 90);
+    score += 12;
+  } else if (expectedHost && placeHost && expectedHost !== placeHost) {
+    // Different official domain → reject or heavily demote (wrong brand/franchise).
+    score -= 40;
+  }
+
   const addr = place.formattedAddress || '';
   const stateU = state.trim().toUpperCase();
   const cityU = city.trim().toUpperCase();
@@ -393,8 +415,8 @@ export function scoreGooglePlaceMatch(
   if (stateU.length === 2) {
     if (addressHasState(addr, stateU)) {
       score += 14;
-    } else if (addr.trim()) {
-      // Known state but place is elsewhere — strongly demote
+    } else if (addr.trim() && !domainMatch) {
+      // Known state but place is elsewhere — strongly demote (unless domain confirmed)
       score -= 35;
     }
   }
@@ -402,7 +424,30 @@ export function scoreGooglePlaceMatch(
     score += 12;
   }
 
-  if (/\b(mov|mover|moving|relocation|transfer)\b/i.test(placeName)) {
+  const cat = (businessCategory ?? '').toLowerCase();
+  const isAutoCategory =
+    /\bauto\b|\bcar\b|vehicle|ship/.test(cat) ||
+    /\bauto\b|\bcar\b|vehicle|ship/.test(tNorm);
+  const isContainerCategory =
+    /container|portable|pods|storage/.test(cat) ||
+    /container|portable|pods|storage/.test(tNorm);
+
+  if (isAutoCategory) {
+    if (/\b(auto|car|vehicle|ship|hauler|carrier)\b/i.test(placeName)) {
+      score += 6;
+    }
+    // Reject wrong-industry HHG local movers with similar names
+    if (
+      /\b(household|hhg|local\s+mover|apartment\s+mover)\b/i.test(placeName) &&
+      !/\b(auto|car|vehicle)\b/i.test(placeName)
+    ) {
+      score -= 25;
+    }
+  } else if (isContainerCategory) {
+    if (/\b(container|portable|storage|pod)\b/i.test(placeName)) {
+      score += 4;
+    }
+  } else if (/\b(mov|mover|moving|relocation|transfer)\b/i.test(placeName)) {
     score += 3;
   }
 
@@ -508,6 +553,19 @@ export function buildGooglePlacesQueryVariants(
 
   // High-value first: cleaned bare name, then geo, then category (LLC last).
   const orderedNames = names;
+  const websiteHost = websiteHostKey(input.website);
+  const nameHintEarly = stripLegalEntitySuffixes(preferred || legal) || preferred || legal;
+
+  // Prefer website-domain-guided queries for national auto/container brands.
+  if (websiteHost) {
+    pushQuery(
+      'website+name',
+      nameHintEarly,
+      [nameHintEarly, websiteHost].filter(Boolean).join(' '),
+      false
+    );
+    pushQuery('website_host', nameHintEarly, websiteHost, false);
+  }
 
   for (const { strategy, name } of orderedNames) {
     // Bare trade name first — "Otterly Elite Movers" without LLC noise

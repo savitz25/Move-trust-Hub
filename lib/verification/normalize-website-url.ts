@@ -145,6 +145,21 @@ export function normalizeCompanyWebsiteUrl(
 }
 
 /**
+ * Registrable-ish host for domain matching (strips www., lowercases).
+ * Returns empty string when URL cannot be parsed.
+ */
+export function websiteHostKey(raw: string | null | undefined): string {
+  const normalized = normalizeCompanyWebsiteUrl(raw, { preferOrigin: true });
+  if (!normalized) return '';
+  try {
+    const host = new URL(normalized).hostname.toLowerCase().replace(/^www\./, '');
+    return host;
+  } catch {
+    return '';
+  }
+}
+
+/**
  * Display label without protocol (and without trailing slash).
  * Also strips residual query noise if present.
  */

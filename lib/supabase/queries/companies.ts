@@ -207,6 +207,18 @@ function mapRow(row: Record<string, unknown>): Company {
   const bbbAccredited =
     Boolean(row.bbb_accredited) || Boolean(publicScrapeData?.bbb_accredited);
 
+  // Prefer street-level Places address when FMCSA/physical is empty or city-only.
+  const fmcsaAddr = (fmcsaFields.physicalAddress || '').trim();
+  const googleAddr =
+    googleOk && googleData?.formatted_address?.trim()
+      ? googleData.formatted_address.trim()
+      : '';
+  const physicalAddressResolved =
+    (fmcsaAddr.length > 12 && /\d/.test(fmcsaAddr) ? fmcsaAddr : '') ||
+    googleAddr ||
+    fmcsaAddr ||
+    null;
+
   return normalizeCompanyForDisplay({
     id: row.id as string,
     slug: row.slug as string,
@@ -218,7 +230,7 @@ function mapRow(row: Record<string, unknown>): Company {
     foundedYear: (row.founded_year as number) || 0,
     headquarters: (row.headquarters as string) || '',
     website: websiteResolved,
-    physicalAddress: fmcsaFields.physicalAddress,
+    physicalAddress: physicalAddressResolved,
     phone: phoneResolved || null,
     email: (typeof row.email === 'string' ? row.email.trim() : null) || null,
     serviceScope:

@@ -10,7 +10,13 @@ import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory'
 import { isSupabaseConfigured } from '@/lib/supabase/config';
 import { resolveCompanyBySlug } from '@/lib/directory/resolve-company';
 import { getReviewsForCompany } from '@/data/seed-reviews';
-import { seedAutoTransportCompanies, getAutoTransportBySlug } from '@/data/seed-auto-transport';
+import { getCompanyBySlug as getSeedCompanyBySlug } from '@/data/seed-companies';
+import {
+  seedAutoTransportCompanies,
+  getAutoTransportBySlug,
+} from '@/data/seed-auto-transport';
+import { portableContainerCompanies } from '@/data/portable-container-companies';
+import { mergeEnrichmentOntoProfile } from '@/lib/directory/merge-directory';
 import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
 import type { Company, Review } from '@/types';
 
@@ -18,12 +24,28 @@ import type { Company, Review } from '@/types';
 export const getAllCompanies = getCompaniesCached;
 
 /**
+ * Prefer richer seed/catalog copy when DB is a thin enrichment stub, while keeping
+ * live Google Places / BBB from Supabase on googleData + publicScrapeData.
+ */
+function mergeDbWithSeedCatalog(db: Company, slug: string): Company {
+  const seed =
+    getSeedCompanyBySlug(slug) ||
+    getAutoTransportBySlug(slug) ||
+    portableContainerCompanies.find((c) => c.slug === slug);
+  if (!seed) return db;
+  // Seed is the editorial base (industry ratings, long description); DB carries Places/BBB.
+  return mergeEnrichmentOntoProfile(seed, db);
+}
+
+/**
  * Profile lookup: prefer single-row DB (or seed) resolution before materializing
  * the full directory — avoids loading every company on cold profile/metadata paths.
  */
 export async function getCompanyBySlugAsync(slug: string): Promise<Company | undefined> {
   const fromDb = await getCompanyBySlugOrUsdotFromDb(slug);
-  if (fromDb && isPubliclyDisplayableCompany(fromDb)) return fromDb;
+  if (fromDb && isPubliclyDisplayableCompany(fromDb)) {
+    return mergeDbWithSeedCatalog(fromDb, slug);
+  }
 
   const companies = await getUnifiedDirectoryCompanies();
   return resolveCompanyBySlug(slug, companies);
@@ -48,14 +70,28 @@ export const getAllReviewsForCompany = cache(async (companyId: string): Promise<
 });
 
 export const getAllAutoTransportCompanies = cache(async (): Promise<Company[]> => {
-  return seedAutoTransportCompanies.filter(isPubliclyDisplayableCompany);
+  const seeds = seedAutoTransportCompanies.filter(isPubliclyDisplayableCompany);
+  if (!isSupabaseConfigured()) return seeds;
+
+  // Overlay live Places/BBB enrichment from Supabase when present.
+  const enriched = await Promise.all(
+    seeds.map(async (seed) => {
+      const fromDb = await getCompanyBySlugOrUsdotFromDb(seed.slug);
+      if (!fromDb) return seed;
+      return mergeEnrichmentOntoProfile(seed, fromDb);
+    })
+  );
+  return enriched;
 });
 
 export async function getAutoTransportBySlugAsync(
   slug: string
 ): Promise<Company | undefined> {
-  const company =
+  const seed =
     seedAutoTransportCompanies.find((c) => c.slug === slug) || getAutoTransportBySlug(slug);
-  if (!company || !isPubliclyDisplayableCompany(company)) return undefined;
-  return company;
+  if (!seed || !isPubliclyDisplayableCompany(seed)) return undefined;
+
+  const fromDb = await getCompanyBySlugOrUsdotFromDb(slug);
+  if (!fromDb) return seed;
+  return mergeEnrichmentOntoProfile(seed, fromDb);
 }

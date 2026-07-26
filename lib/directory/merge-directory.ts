@@ -55,18 +55,54 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
   const useGoogleRating = google?.status === 'ok' && google.rating != null && google.rating > 0;
   const baseRating = base.overallRating > 0 ? base.overallRating : 0;
   const enrichRating = enrichment.overallRating > 0 ? enrichment.overallRating : 0;
+  // Keep industry-reported editorial ratings separate from the Google Places snapshot.
+  // Only fall back to Places for overallRating when both sides have no editorial value
+  // (local movers with empty columns). Never replace seed industry volume with Places count.
+  const editorialRating = Math.max(baseRating, enrichRating);
+  const editorialCount = Math.max(
+    base.reviewCount > 0 ? base.reviewCount : 0,
+    enrichment.reviewCount > 0 ? enrichment.reviewCount : 0
+  );
+
+  const googleAddr =
+    google?.status === 'ok' && google.formatted_address?.trim()
+      ? google.formatted_address.trim()
+      : null;
+  const baseAddr = base.physicalAddress?.trim() || '';
+  const enrichAddr = enrichment.physicalAddress?.trim() || '';
+  // Prefer a fuller street address over thin "City, ST" headquarters-only seeds.
+  const physicalAddress =
+    (baseAddr.length > 12 && /\d/.test(baseAddr) ? baseAddr : null) ||
+    (enrichAddr.length > 12 && /\d/.test(enrichAddr) ? enrichAddr : null) ||
+    googleAddr ||
+    baseAddr ||
+    enrichAddr ||
+    base.physicalAddress ||
+    enrichment.physicalAddress;
 
   return normalizeCompanyForDisplay({
     ...base,
     googleData: google,
     publicScrapeData: enrichment.publicScrapeData ?? base.publicScrapeData,
-    // Never clobber a real rating with 0; prefer Google snapshot when columns are empty.
-    overallRating: useGoogleRating
-      ? google.rating!
-      : Math.max(baseRating, enrichRating),
-    reviewCount: useGoogleRating
-      ? google.review_count ?? Math.max(base.reviewCount, enrichment.reviewCount)
-      : Math.max(base.reviewCount, enrichment.reviewCount),
+    overallRating:
+      editorialRating > 0
+        ? editorialRating
+        : useGoogleRating
+          ? google.rating!
+          : 0,
+    reviewCount:
+      editorialCount > 0
+        ? editorialCount
+        : useGoogleRating && google.review_count != null
+          ? google.review_count
+          : 0,
+    physicalAddress: physicalAddress || base.physicalAddress,
+    phone:
+      base.phone?.trim() ||
+      enrichment.phone?.trim() ||
+      (google?.status === 'ok' ? google.phone : null) ||
+      base.phone ||
+      enrichment.phone,
     bbbRating:
       base.bbbRating && base.bbbRating !== 'NR'
         ? base.bbbRating

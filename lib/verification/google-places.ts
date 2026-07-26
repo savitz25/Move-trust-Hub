@@ -391,7 +391,9 @@ export async function fetchGooglePlacesData(
         variant.searchName,
         city,
         state,
-        input.phone
+        input.phone,
+        input.website,
+        input.businessCategory
       );
       if (!best || score > best.score) {
         best = { place, score, variant, attempt: i + 1 };

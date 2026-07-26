@@ -101,6 +101,11 @@ export type CompanyEnrichmentInput = {
   state?: string | null;
   phone?: string | null;
   usdotNumber?: string | null;
+  /**
+   * Official company website — used for high-confidence domain match
+   * (prefer over name-only when present, critical for national auto brands).
+   */
+  website?: string | null;
   /** When set, fetches Place Details directly (required for service-area businesses). */
   placeId?: string | null;
   /** Appended to Google text search — defaults to "moving company" in mover flows. */
