@@ -154,6 +154,7 @@
     "refresh:bbb": "tsx scripts/run-bbb-refresh.ts",
     "enrich:container-auto": "tsx --require ./scripts/stub-server-only.cjs scripts/enrich-container-and-auto-transport.ts",
     "enrich:auto-transport": "tsx --require ./scripts/stub-server-only.cjs scripts/enrich-auto-transport.ts",
+    "enrich:container": "tsx --require ./scripts/stub-server-only.cjs scripts/enrich-auto-transport.ts --container-only",
     "enrich:local-movers": "tsx --require ./scripts/stub-server-only.cjs scripts/enrich-local-movers-missing-ratings.ts",
     "backfill:verification": "tsx scripts/backfill-company-verification.ts",
     "reenrich:google": "tsx scripts/reenrich-missing-google.ts",

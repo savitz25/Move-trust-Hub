@@ -11,6 +11,8 @@
  *   npm run enrich:auto-transport -- --confirm --limit=50
  *   npm run enrich:auto-transport -- --slugs=reliable-carriers,sherpa-auto-transport --confirm
  *   npm run enrich:auto-transport -- --include-container --confirm
+ *   npm run enrich:auto-transport -- --container-only --confirm
+ *   npm run enrich:container -- --confirm
  *
  * Policy:
  *  - Do NOT overwrite industry-reported overall_rating / review_count with Places
@@ -49,7 +51,9 @@ loadEnvLocal();
 const confirm = process.argv.includes('--confirm');
 const dryRun = process.argv.includes('--dry-run') || !confirm;
 const force = process.argv.includes('--force');
-const includeContainer = process.argv.includes('--include-container');
+const containerOnly = process.argv.includes('--container-only');
+const includeContainer =
+  containerOnly || process.argv.includes('--include-container');
 const limit = Math.max(
   1,
   Number.parseInt(
@@ -397,17 +401,25 @@ async function main() {
     !key!.startsWith('<') &&
     key!.length > 40;
 
-  console.log('── Auto-transport Places + BBB enrichment ──');
+  console.log(
+    containerOnly
+      ? '── Portable container Places + BBB enrichment ──'
+      : '── Auto-transport Places + BBB enrichment ──'
+  );
   console.log(`Mode: ${confirm && !dryRun ? 'LIVE WRITE' : 'AUDIT / DRY-RUN (pass --confirm to write)'}`);
   console.log(`Google Places: ${isGooglePlacesConfigured() ? 'configured' : 'MISSING KEY'}`);
   console.log(`Supabase: ${supabaseOk ? 'configured' : 'placeholder/missing (seed-only audit)'}`);
-  console.log(`Include container: ${includeContainer}`);
+  console.log(
+    `Scope: ${containerOnly ? 'container-only' : includeContainer ? 'auto+container' : 'auto-only'}`
+  );
   console.log(`Limit: ${limit}`);
   if (onlySlugs) console.log(`Slugs filter: ${[...onlySlugs].join(', ')}`);
   console.log('');
 
   const targets: Array<{ company: Company; group: Group }> = [
-    ...seedAutoTransportCompanies.map((c) => ({ company: c, group: 'auto' as const })),
+    ...(containerOnly
+      ? []
+      : seedAutoTransportCompanies.map((c) => ({ company: c, group: 'auto' as const }))),
     ...(includeContainer
       ? portableContainerCompanies.map((c) => ({ company: c, group: 'container' as const }))
       : []),
