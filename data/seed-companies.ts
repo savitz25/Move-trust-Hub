@@ -1,7 +1,10 @@
 import { Company } from '@/types';
+import { portableContainerCompanies } from '@/data/portable-container-companies';
 
 // Realistic seed data for 25+ major interstate movers. All values plausible based on public data.
-export const seedCompanies: Company[] = [
+// Portable container brands (PODS, U-Pack, U-Box, Pack-Rat, etc.) are defined in
+// portable-container-companies.ts and merged below so Container / Portable filter has depth.
+const coreSeedCompanies: Company[] = [
   {
     id: 'allied',
     slug: 'allied-van-lines',
@@ -352,35 +355,6 @@ export const seedCompanies: Company[] = [
     lastUpdated: '2026-03-19',
   },
   {
-    id: 'u-pack',
-    slug: 'u-pack',
-    name: 'U-Pack',
-    shortDescription: 'Affordable hybrid moving solution — you load, they drive.',
-    description: 'U-Pack (by ABF) provides moving containers or semi-trailers. Customers load/unload while the company handles the driving. Excellent value for DIY-oriented customers.',
-    foundedYear: 1997,
-    headquarters: 'Fort Smith, AR',
-    website: 'https://www.upack.com',
-    usdotNumber: '193801',
-    mcNumber: 'MC-69993',
-    fmcsaSafetyRating: 'Satisfactory',
-    fmcsaComplaints: 29,
-    fmcsaShipments: 98000,
-    bbbRating: 'A+',
-    bbbAccredited: true,
-    overallRating: 4.4,
-    reviewCount: 5670,
-    reputationScore: 85,
-    yearsInBusiness: 28,
-    avgPricePerMove: 2890,
-    priceRange: '$ - $$',
-    coverage: 'All 50 States',
-    services: ['Container / Portable'],
-    specialties: ['Budget', 'DIY', 'Student Moves', 'Small Business'],
-    ratingBreakdown: { fiveStar: 3120, fourStar: 1720, threeStar: 590, twoStar: 170, oneStar: 70 },
-    isVerified: true,
-    lastUpdated: '2026-03-14',
-  },
-  {
     id: 'pensey',
     slug: 'pensey-moving',
     name: 'Pensey Moving & Storage',
@@ -729,6 +703,14 @@ export const seedCompanies: Company[] = [
     isVerified: true,
     lastUpdated: '2026-04-05',
   },
+];
+
+const portableSlugs = new Set(portableContainerCompanies.map((c) => c.slug));
+
+/** Core seed + national portable container brands (Container / Portable filter). */
+export const seedCompanies: Company[] = [
+  ...coreSeedCompanies.filter((c) => !portableSlugs.has(c.slug)),
+  ...portableContainerCompanies,
 ];
 
 // Helper to get company by slug

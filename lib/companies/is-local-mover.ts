@@ -79,9 +79,18 @@ function hasCarrierOrBrokerSignal(input: LocalMoverInput): boolean {
   return false;
 }
 
+function hasPortableContainerService(services: string[]): boolean {
+  return services.some((s) =>
+    /container\s*\/\s*portable|portable\s*container|portable\s*storage/i.test(s)
+  );
+}
+
 /**
  * Local when: explicit intrastate flag, Local Mover service tag, or no USDOT + no
  * carrier/broker signals (handles missing service_scope column).
+ *
+ * National portable-container brands (franchise/network) may legitimately lack a
+ * single corporate USDOT — do not treat them as Local Mover solely for that reason.
  */
 export function isLocalMover(input: LocalMoverInput): boolean {
   if (input.isLocalOnly) return true;
@@ -89,6 +98,10 @@ export function isLocalMover(input: LocalMoverInput): boolean {
   if (services.some((s) => /^local\s*mover$/i.test(s.trim()))) return true;
   const scope = (input.serviceScope ?? '').toLowerCase().trim();
   if (scope === 'intrastate') return true;
+  // Multi-state container brands: keep in main interstate directory filters
+  if (hasPortableContainerService(services) && scope !== 'intrastate') {
+    return false;
+  }
   if (scope === 'interstate') {
     return !hasUsdot(input) && !hasCarrierOrBrokerSignal(input);
   }
