@@ -142,6 +142,8 @@ function companyToInsertRow(c: Company): Record<string, unknown> {
     ? null
     : c.mcNumber?.replace(/^MC-?/i, '').replace(/\D/g, '') || null;
 
+  // Core columns only — avoid optional columns missing on older Supabase schemas
+  // (service_scope, google_data, entity_type, etc. differ by migration state).
   return {
     id: c.slug,
     slug: c.slug,
@@ -171,11 +173,6 @@ function companyToInsertRow(c: Company): Record<string, unknown> {
     specialties: c.specialties || [],
     is_verified: Boolean(c.isVerified && usdot),
     last_updated: new Date().toISOString().slice(0, 10),
-    service_scope: c.serviceScope || 'interstate',
-    entity_type: c.entityType || null,
-    authority_active: c.authorityActive ?? (usdot ? true : null),
-    out_of_service: false,
-    usdot_status: c.usdotStatus || (usdot ? 'ACTIVE' : null),
   };
 }
 
@@ -358,18 +355,32 @@ async function fetchDbBySlugs(
 ): Promise<Map<string, DbCompanyRow>> {
   const map = new Map<string, DbCompanyRow>();
   if (!slugs.length) return map;
-  const selectCols =
-    'id, slug, name, headquarters, website, phone, physical_address, overall_rating, review_count, bbb_rating, bbb_accredited, google_data, public_scrape_data, verification_sources, verification_last_synced_at, last_updated, services, entity_type';
+  // Prefer full select; fall back when optional enrichment columns are missing.
+  const selectAttempts = [
+    'id, slug, name, headquarters, website, phone, physical_address, overall_rating, review_count, bbb_rating, bbb_accredited, google_data, public_scrape_data, verification_sources, verification_last_synced_at, last_updated, services',
+    'id, slug, name, headquarters, website, phone, overall_rating, review_count, bbb_rating, bbb_accredited, verification_sources, verification_last_synced_at, last_updated, services',
+    'id, slug, name, headquarters, website, phone, overall_rating, review_count, bbb_rating, bbb_accredited, verification_sources, last_updated',
+  ];
 
   // chunk in 50s
   for (let i = 0; i < slugs.length; i += 50) {
     const chunk = slugs.slice(i, i + 50);
-    const { data, error } = await admin.from('companies').select(selectCols).in('slug', chunk);
-    if (error) {
-      console.warn(`  DB slug fetch warning: ${error.message}`);
+    let data: DbCompanyRow[] | null = null;
+    let lastErr: string | null = null;
+    for (const selectCols of selectAttempts) {
+      const res = await admin.from('companies').select(selectCols).in('slug', chunk);
+      if (!res.error) {
+        data = (res.data ?? []) as DbCompanyRow[];
+        lastErr = null;
+        break;
+      }
+      lastErr = res.error.message;
+    }
+    if (lastErr) {
+      console.warn(`  DB slug fetch warning: ${lastErr}`);
       continue;
     }
-    for (const row of (data ?? []) as DbCompanyRow[]) {
+    for (const row of data ?? []) {
       map.set(row.slug, row);
     }
   }
@@ -512,15 +523,40 @@ async function main() {
       let db = dbMap.get(audit.slug) ?? null;
       if (!db) {
         const insertRow = companyToInsertRow(seed);
-        const { data: upserted, error: upsertErr } = await admin
-          .from('companies')
-          .upsert(insertRow, { onConflict: 'slug' })
-          .select(
-            'id, slug, name, headquarters, website, phone, physical_address, overall_rating, review_count, bbb_rating, bbb_accredited, google_data, public_scrape_data, verification_sources, verification_last_synced_at, last_updated'
-          )
-          .maybeSingle();
-        if (upsertErr) throw new Error(`upsert failed: ${upsertErr.message}`);
-        db = (upserted as DbCompanyRow) ?? null;
+        const selectAfter =
+          'id, slug, name, headquarters, website, phone, overall_rating, review_count, bbb_rating, bbb_accredited, verification_sources, last_updated';
+        let upserted: DbCompanyRow | null = null;
+        let upsertErr: { message: string } | null = null;
+        {
+          const res = await admin
+            .from('companies')
+            .upsert(insertRow, { onConflict: 'slug' })
+            .select(selectAfter)
+            .maybeSingle();
+          upserted = (res.data as DbCompanyRow) ?? null;
+          upsertErr = res.error;
+        }
+        if (upsertErr) {
+          // Retry with minimal identity fields only
+          const minimal = {
+            id: insertRow.id,
+            slug: insertRow.slug,
+            name: insertRow.name,
+            headquarters: insertRow.headquarters,
+            website: insertRow.website,
+            overall_rating: insertRow.overall_rating,
+            review_count: insertRow.review_count,
+            last_updated: insertRow.last_updated,
+          };
+          const res2 = await admin
+            .from('companies')
+            .upsert(minimal, { onConflict: 'slug' })
+            .select(selectAfter)
+            .maybeSingle();
+          if (res2.error) throw new Error(`upsert failed: ${res2.error.message}`);
+          upserted = (res2.data as DbCompanyRow) ?? null;
+        }
+        db = upserted;
         console.log(`  db: upserted`);
       } else {
         console.log(`  db: existing id=${db.id}`);
@@ -567,7 +603,6 @@ async function main() {
           legalName: fmcsaLegal,
           dbaName: name !== fmcsaLegal ? name : null,
           headquarters,
-          website,
           phone: db?.phone || null,
           placeId: googleExisting?.place_id || null,
           businessCategory,
@@ -677,12 +712,25 @@ async function main() {
           .update(patch)
           .eq('slug', audit.slug);
         if (updateErr) {
-          // Retry without optional columns
+          // Retry without optional columns that may be missing on this schema
           delete patch.google_data;
           delete patch.public_scrape_data;
           delete patch.physical_address;
+          delete patch.verification_last_synced_at;
           const retry = await admin.from('companies').update(patch).eq('slug', audit.slug);
-          if (retry.error) throw new Error(`update failed: ${retry.error.message}`);
+          if (retry.error) {
+            // Last resort: verification_sources + ratings only
+            const slim: Record<string, unknown> = {
+              verification_sources: patch.verification_sources,
+              last_updated: patch.last_updated,
+            };
+            if (patch.bbb_rating != null) slim.bbb_rating = patch.bbb_rating;
+            if (patch.bbb_accredited != null) slim.bbb_accredited = patch.bbb_accredited;
+            if (patch.phone) slim.phone = patch.phone;
+            if (patch.website) slim.website = patch.website;
+            const retry2 = await admin.from('companies').update(slim).eq('slug', audit.slug);
+            if (retry2.error) throw new Error(`update failed: ${retry2.error.message}`);
+          }
         }
         updated++;
         console.log(`  saved: ${Object.keys(patch).join(', ')}`);
