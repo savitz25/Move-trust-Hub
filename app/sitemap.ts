@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { headers } from 'next/headers';
 import { getAllCompanies, getAllAutoTransportCompanies } from '@/lib/data-server';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import {
@@ -20,6 +21,8 @@ import {
   getCityHubSitemapPriority,
   getRouteGuideSitemapPriority,
 } from '@/lib/seo/sitemap-priority';
+import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
+import { generateInsuranceSitemap } from '@/lib/insurance/seo/generate-insurance-sitemap';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -46,6 +49,16 @@ const PRIORITY_ROUTE_SLUGS = new Set([
 ]);
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Belt-and-suspenders: if middleware rewrite is skipped, never emit Move URLs on ITH host.
+  try {
+    const host = (await headers()).get('host');
+    if (isInsuranceStandaloneHost(host)) {
+      return generateInsuranceSitemap();
+    }
+  } catch {
+    // Static generation without request headers — Move sitemap only.
+  }
+
   const extendedRouteSlugs = new Set(getExtendedRouteSlugs());
   const companies = await getAllCompanies();
   const autoTransportCompanies = await getAllAutoTransportCompanies();

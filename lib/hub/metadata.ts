@@ -39,6 +39,14 @@ export function buildHubMetadata(
     description: input.description,
     applicationName: config.applicationName,
     category: config.category,
+    // Prevent MoveTrustHub root-layout author leakage onto hub pages
+    ...(hub === 'insurance'
+      ? {
+          creator: 'InsuranceTrustHub',
+          publisher: 'InsuranceTrustHub',
+          authors: [{ name: 'InsuranceTrustHub', url: INSURANCE_SITE_URL }],
+        }
+      : {}),
     alternates: { canonical },
     openGraph: buildOpenGraph({
       title,

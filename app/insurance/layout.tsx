@@ -10,8 +10,9 @@ export const metadata: Metadata = {
   ...buildHubLayoutMetadata('insurance'),
   metadataBase: new URL(INSURANCE_SITE_URL),
   applicationName: insuranceConfig.applicationName,
-  creator: insuranceConfig.siteName,
-  publisher: insuranceConfig.siteName,
+  creator: 'InsuranceTrustHub',
+  publisher: 'InsuranceTrustHub',
+  authors: [{ name: 'InsuranceTrustHub', url: INSURANCE_SITE_URL }],
   title: {
     default: insuranceConfig.homeTitle,
     template: insuranceConfig.metadataTitleTemplate,

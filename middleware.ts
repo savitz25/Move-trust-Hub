@@ -44,6 +44,27 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(httpsUrl, 308);
     }
 
+    // SEO critical: insurancetrusthub.com /sitemap.xml must NOT serve MoveTrustHub URLs.
+    // Matcher previously excluded *.xml so this rewrite never ran — fix explicitly.
+    if (
+      isInsuranceStandaloneHost(host) &&
+      (pathname === '/sitemap.xml' || pathname === '/sitemap')
+    ) {
+      const rewriteUrl = request.nextUrl.clone();
+      rewriteUrl.pathname = '/insurance/sitemap.xml';
+      const requestHeaders = new Headers(request.headers);
+      requestHeaders.set(PATHNAME_HEADER, pathname);
+      requestHeaders.set(HUB_HEADER, 'insurance');
+      const response = NextResponse.rewrite(rewriteUrl, {
+        request: { headers: requestHeaders },
+      });
+      // Short CDN TTL so sitemap corrections propagate quickly after deploys
+      response.headers.set('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+      response.headers.set('CDN-Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+      response.headers.set('X-Trust-Hub', 'insurance');
+      return response;
+    }
+
     // Canonical insurance paths are apex (no /insurance prefix) on insurancetrusthub.com.
     // Keep /insurance/admin on both hosts for monorepo admin isolation.
     const isInsuranceAdmin =
@@ -177,11 +198,14 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    // Must run on insurance apex — not covered by the catch-all (which excludes *.xml)
+    '/sitemap.xml',
+    '/sitemap',
     {
-      // Include sitemap.xml / opengraph so insurance apex can rewrite them.
       // robots.txt stays excluded — app/robots.ts is host-aware.
+      // Other *.xml stay excluded; sitemap is listed explicitly above.
       source:
-        '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap-local|manifest.webmanifest|icon|apple-icon|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2|woff|ttf|otf|xml|txt|webmanifest)$).*)',
+        '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|sitemap-local|manifest.webmanifest|icon|apple-icon|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2|woff|ttf|otf|xml|txt|webmanifest)$).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' },
