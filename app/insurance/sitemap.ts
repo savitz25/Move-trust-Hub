@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/medicare-plan-finder',
     '/tools/aca-eligibility-checker',
     '/tools/prescription-drug-list',
+    '/tools/medicare-provider-lookup',
     '/data/plan-complaint-index',
     '/data/counties',
     '/data/counties/miami-dade-fl',

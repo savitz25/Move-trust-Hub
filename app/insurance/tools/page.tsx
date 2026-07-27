@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BarChart3, Calculator, ClipboardCheck, Pill, ShieldCheck, Wrench } from 'lucide-react';
+import {
+  BarChart3,
+  Calculator,
+  ClipboardCheck,
+  Pill,
+  ShieldCheck,
+  Stethoscope,
+  Wrench,
+} from 'lucide-react';
 import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { Card, CardContent } from '@/components/insurance/ui/card';
 
@@ -12,6 +20,13 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const TOOLS = [
+  {
+    href: '/tools/medicare-provider-lookup',
+    icon: Stethoscope,
+    title: 'Medicare provider lookup',
+    description:
+      'Check whether a doctor or provider appears in CMS Medicare FFS enrollment (PPEF) or Opt Out Affidavits.',
+  },
   {
     href: '/tools/cost-estimator',
     icon: Calculator,
