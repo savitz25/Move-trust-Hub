@@ -29,6 +29,10 @@ export function mergeProviderWithEnrichment(
 
   const rating = enrichment.google_rating ?? provider.rating;
   const reviewCount = enrichment.google_review_count ?? provider.review_count;
+  const isMedicareSpecialist =
+    provider.specialties.includes('Medicare Specialists') ||
+    provider.insurance_types.includes('medicare');
+
   const trustScore =
     enrichment.trust_score ??
     computeProviderTrustScore({
@@ -38,6 +42,9 @@ export function mergeProviderWithEnrichment(
       bbbAccredited: enrichment.bbb_accredited,
       isVerified: provider.is_verified,
       yearsInBusiness: provider.years_in_business,
+      // CMS signals only when NPI known — missing data stays neutral in computeGovernmentStandingScore
+      hasNpi: Boolean(provider.npi),
+      isMedicareSpecialist,
     });
 
   return {
