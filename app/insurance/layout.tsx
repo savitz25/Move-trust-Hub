@@ -17,8 +17,20 @@ export const metadata: Metadata = {
     template: insuranceConfig.metadataTitleTemplate,
   },
   icons: {
-    icon: [{ url: '/insurance/brand/insurance-trust-hub-favicon-32.png', type: 'image/png' }],
-    apple: [{ url: '/insurance/brand/insurance-trust-hub-icon-192.png', type: 'image/png' }],
+    icon: [
+      {
+        url: '/insurance/brand/insurance-trust-hub-favicon-32.png?v=20260728r2',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+    ],
+    apple: [
+      {
+        url: '/insurance/brand/insurance-trust-hub-icon-192.png?v=20260728r2',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+    ],
   },
 };
 

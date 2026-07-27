@@ -5,7 +5,8 @@ import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Bump when replacing public/logo.png to bust immutable CDN/browser cache. */
 export const TRUST_HUB_LOGO_VERSION = '20260727';
-export const INSURANCE_LOGO_VERSION = '20260728';
+/** Bump when replacing public/insurance/brand/* so CDN/browser cache picks up the new mark. */
+export const INSURANCE_LOGO_VERSION = '20260728r2';
 
 /** Canonical Move Trust Hub logo (header/footer). */
 export const TRUST_HUB_LOGO = {
@@ -18,11 +19,11 @@ export const TRUST_HUB_LOGO = {
 /** InsuranceTrustHub brand mark — never use Move logo on insurance host. */
 export const INSURANCE_HUB_LOGO = {
   src: `/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`,
-  headerSrc: `/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`,
-  footerSrc: `/insurance/brand/insurance-trust-hub-logo-stacked.png?v=${INSURANCE_LOGO_VERSION}`,
+  headerSrc: `/insurance/brand/insurance-trust-hub-logo-header.png?v=${INSURANCE_LOGO_VERSION}`,
+  footerSrc: `/insurance/brand/insurance-trust-hub-logo-stacked-sm.png?v=${INSURANCE_LOGO_VERSION}`,
   alt: 'InsuranceTrustHub',
-  width: 712,
-  height: 192,
+  width: 759,
+  height: 239,
 } as const;
 
 /** Absolute logo URL for emails, JSON-LD, and external embeds. */
