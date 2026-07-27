@@ -6,9 +6,9 @@ import { Card, CardContent } from '@/components/insurance/ui/card';
 import { MethodologyBackNav } from '@/components/trust/methodology-back-nav';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'About Insurance Trust Hub — Independence & Verification',
+  title: 'About InsuranceTrustHub — Independence & Verification',
   description:
-    'Learn how Insurance Trust Hub researches agencies, verifies listings, and maintains editorial independence.',
+    'How InsuranceTrustHub researches agencies, verifies DOI/NAIC licenses, and maintains editorial independence — no paid placements or pay-to-rank.',
   path: '/about',
 });
 
@@ -18,14 +18,14 @@ export default function AboutPage() {
       <div className="mb-6">
         <MethodologyBackNav
           fallbackHref="/insurance"
-          fallbackLabel="Back to Insurance Trust Hub"
+          fallbackLabel="Back to InsuranceTrustHub"
         />
       </div>
       <h1 className="section-heading">About {SITE_NAME}</h1>
       <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-        {SITE_NAME} is an independent informational directory. We help consumers research licensed
-        insurance agencies, read moderated reviews, and request quotes — we do not sell insurance
-        policies or receive commissions from listings displayed.
+        {SITE_NAME} is an independent informational directory for researching licensed insurance
+        agents and agencies. We do not sell insurance policies, accept paid placements, or rank
+        listings based on fees or commissions.
       </p>
 
       <section className="mt-12">
@@ -39,32 +39,51 @@ export default function AboutPage() {
           identification and research purposes only. Listing presence does not constitute a
           recommendation or guarantee of service quality.
         </p>
+        <ul className="mt-4 space-y-2 text-muted-foreground leading-relaxed list-disc pl-5">
+          <li>
+            <strong className="text-foreground">No paid placements</strong> — agents cannot pay to
+            appear higher in directory results.
+          </li>
+          <li>
+            <strong className="text-foreground">No pay-to-rank</strong> — ranking and featured
+            modules are not sold.
+          </li>
+          <li>
+            <strong className="text-foreground">No lead-sale marketplace</strong> — we are not a
+            paid lead-matching service.
+          </li>
+        </ul>
       </section>
 
       <section className="mt-12">
         <h2 className="text-2xl font-semibold flex items-center gap-2">
           <BadgeCheck className="h-5 w-5 text-trust" />
-          Verification methodology
+          How agents are verified
         </h2>
         <div className="mt-6 grid gap-4">
           {[
             {
               step: '1',
-              title: 'License cross-check',
-              text: 'We attempt to match agency license numbers against state insurance department public records where available.',
+              title: 'State DOI license cross-check',
+              text: 'We match agent and agency license numbers against state Department of Insurance public records where available, and surface Active status and lines of authority when disclosed.',
             },
             {
               step: '2',
+              title: 'NAIC / NPN references',
+              text: 'Where National Producer Numbers or NAIC references are available, we use them as additional identity anchors for research — consumers should still confirm on official regulator sites.',
+            },
+            {
+              step: '3',
               title: 'Business identity review',
               text: 'Listings include publicly available contact information, carrier appointments, and years in business when disclosed.',
             },
             {
-              step: '3',
+              step: '4',
               title: 'Review moderation',
               text: 'User-submitted reviews are screened for spam, profanity, and obvious conflicts of interest before publication.',
             },
             {
-              step: '4',
+              step: '5',
               title: 'Ongoing corrections',
               text: 'Agencies and consumers can report outdated data via our contact form. Corrections are processed within 5–10 business days.',
             },
@@ -87,14 +106,27 @@ export default function AboutPage() {
       <section className="mt-12">
         <h2 className="text-2xl font-semibold flex items-center gap-2">
           <Database className="h-5 w-5 text-primary" />
+          Editorial standards
+        </h2>
+        <ul className="mt-4 space-y-2 text-muted-foreground leading-relaxed list-disc pl-5">
+          <li>Guides explain consumer choices; they do not recommend specific carriers or agents.</li>
+          <li>Calculators are educational estimates — not binding quotes or underwriting decisions.</li>
+          <li>We label methodology limits and always point readers to official DOI / NAIC sources.</li>
+          <li>Corrections and takedown requests are handled through the contact form.</li>
+        </ul>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-semibold flex items-center gap-2">
+          <Database className="h-5 w-5 text-primary" />
           Data sources
         </h2>
         <ul className="mt-4 space-y-2 text-muted-foreground leading-relaxed list-disc pl-5">
-          <li>State insurance department public license databases</li>
+          <li>State insurance department (DOI) public license databases</li>
+          <li>NAIC and related public producer / regulatory references</li>
           <li>Agency-submitted profile information and voluntary updates</li>
           <li>Moderated consumer reviews submitted through our website</li>
           <li>Industry reference data for educational premium range estimates</li>
-          <li>NAIC and state regulatory publications for destination guides</li>
         </ul>
       </section>
 

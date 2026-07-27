@@ -2,12 +2,11 @@ import type { Metadata } from 'next';
 import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { SITE_EMAIL, SITE_NAME, SITE_URL } from '@/lib/insurance/constants';
 
-/** Phase 0 Class D: redundant legal — noindex, follow. Prefer site /privacy-policy. */
+/** Standalone InsuranceTrustHub legal page (not MoveTrustHub). */
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy Policy',
   description: `Privacy policy for ${SITE_NAME} — how we collect, use, and protect your information.`,
   path: '/privacy',
-  noIndex: true,
 });
 
 export default function PrivacyPage() {

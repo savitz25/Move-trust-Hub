@@ -14,7 +14,7 @@ export const LEGACY_REDIRECT_SOURCES: Record<
   },
   insurancetrusthub: {
     hubId: 'insurance',
-    brand: 'Insurance Trust Hub',
+    brand: 'InsuranceTrustHub',
     host: 'insurancetrusthub.com',
     emoji: '🛡️',
   },

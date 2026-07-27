@@ -10,7 +10,8 @@ import { getVercelHubRedirects, HUB_DOMAIN_REDIRECTS } from '../lib/migration/hu
 
 const ROOT = process.cwd();
 const write = process.argv.includes('--write');
-const redirects = [...getVercelHubRedirects(), ...HUB_DOMAIN_REDIRECTS];
+// Host-based legacy domain rules first, then path rules (Move hosts only).
+const redirects = [...HUB_DOMAIN_REDIRECTS, ...getVercelHubRedirects()];
 
 if (write) {
   const vercelPath = join(ROOT, 'vercel.json');

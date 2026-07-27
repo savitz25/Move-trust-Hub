@@ -1,5 +1,6 @@
 import {
   HEADER_TRUST_BADGE,
+  INSURANCE_HEADER_TRUST_BADGE,
   MOVE_HEADER_TRUST_BADGE,
 } from '@/lib/trust/site-messaging';
 import { cn } from '@/lib/utils';
@@ -8,11 +9,21 @@ type HeaderTrustBadgeProps = {
   className?: string;
   /** When true, use moving-specific copy so chrome reads as a mover authority. */
   moving?: boolean;
+  /** Insurance specialist directory wording. */
+  insurance?: boolean;
 };
 
-/** Nav trust pill — Move hub uses FMCSA/mover wording; finance hubs keep generic. */
-export function HeaderTrustBadge({ className, moving = false }: HeaderTrustBadgeProps) {
-  const label = moving ? MOVE_HEADER_TRUST_BADGE : HEADER_TRUST_BADGE;
+/** Nav trust pill — hub-specific authority copy when provided. */
+export function HeaderTrustBadge({
+  className,
+  moving = false,
+  insurance = false,
+}: HeaderTrustBadgeProps) {
+  const label = moving
+    ? MOVE_HEADER_TRUST_BADGE
+    : insurance
+      ? INSURANCE_HEADER_TRUST_BADGE
+      : HEADER_TRUST_BADGE;
   return (
     <div
       className={cn(

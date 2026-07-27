@@ -2,12 +2,11 @@ import type { Metadata } from 'next';
 import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { DISCLAIMER, SITE_EMAIL, SITE_NAME, SITE_URL } from '@/lib/insurance/constants';
 
-/** Phase 0 Class D: redundant legal — noindex, follow. Prefer site /terms-of-service. */
+/** Standalone InsuranceTrustHub legal page (not MoveTrustHub). */
 export const metadata: Metadata = buildMetadata({
   title: 'Terms of Service',
   description: `Terms of service for using ${SITE_NAME} directory, tools, and resources.`,
   path: '/terms',
-  noIndex: true,
 });
 
 export default function TermsPage() {

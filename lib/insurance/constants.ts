@@ -1,5 +1,5 @@
-export const SITE_NAME = 'Insurance Trust Hub';
-export const SITE_URL = 'https://www.movetrusthub.com/insurance';
+export const SITE_NAME = 'InsuranceTrustHub';
+export const SITE_URL = 'https://www.insurancetrusthub.com';
 export const SITE_EMAIL = 'hello@insurancetrusthub.com';
 
 export const DISCLAIMER =

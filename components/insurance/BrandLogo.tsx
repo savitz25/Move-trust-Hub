@@ -23,7 +23,7 @@ export function BrandLogo({
     <Link
       href={href}
       className="group flex shrink-0 items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-trust focus-visible:ring-offset-2 rounded-lg"
-      aria-label="Insurance Trust Hub — home"
+      aria-label="InsuranceTrustHub — home"
     >
       {image}
     </Link>

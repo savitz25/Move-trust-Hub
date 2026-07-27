@@ -43,7 +43,14 @@ export function finalizeHubSitemap(
 
     if (hub !== 'move') {
       const adminPrefix = HUB_ADMIN_PREFIX[hub];
-      if (pathname === adminPrefix || pathname.startsWith(`${adminPrefix}/`)) {
+      // Canonical insurance URLs omit /insurance; still drop admin if present.
+      const bareAdmin = adminPrefix.replace(/^\/(insurance|lender)/, '') || '/admin';
+      if (
+        pathname === adminPrefix ||
+        pathname.startsWith(`${adminPrefix}/`) ||
+        pathname === bareAdmin ||
+        pathname.startsWith(`${bareAdmin}/`)
+      ) {
         return false;
       }
     }

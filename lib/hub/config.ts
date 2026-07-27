@@ -139,26 +139,26 @@ export const HUBS: Record<HubId, HubConfig> = {
   insurance: {
     id: 'insurance',
     basePath: '/insurance',
-    siteName: 'Insurance Trust Hub',
+    siteName: 'InsuranceTrustHub',
     shortName: 'Insurance',
-    tagline: 'DOI-verified agents with health insurance hub coverage.',
+    tagline: 'Independent, verified insurance agent directory — no paid placements.',
     logoSrc: TRUST_HUB_LOGO.src,
     headerLogoSrc: TRUST_HUB_LOGO.src,
-    logoAlt: TRUST_HUB_LOGO.alt,
+    logoAlt: 'InsuranceTrustHub',
     accentClass: 'text-emerald-600',
     homeTitle: 'Licensed Insurance Agents Directory (2026) | InsuranceTrustHub',
     homeDescription:
-      'Find DOI-verified insurance agents by state. Compare health, Medicare, auto and home specialists. Independent directory — no pay-to-play rankings.',
-    metadataTitleTemplate: '%s | Insurance Trust Hub',
-    applicationName: 'Insurance Trust Hub',
+      'Find DOI-verified insurance agents by state. Compare health, Medicare, auto and home specialists. Independent directory — no paid placements, no pay-to-rank.',
+    metadataTitleTemplate: '%s | InsuranceTrustHub',
+    applicationName: 'InsuranceTrustHub',
     category: 'insurance services',
     navLinks: [
-      { href: hubPath('insurance', '/directory'), label: 'Directories' },
-      { href: hubPath('insurance', '/hubs'), label: 'Health Hubs' },
-      { href: hubPath('insurance', '/hubs/browse'), label: 'State Browser' },
+      { href: hubPath('insurance', '/directory'), label: 'Find Agents' },
+      { href: hubPath('insurance', '/tools'), label: 'Tools' },
       { href: hubPath('insurance', '/calculators'), label: 'Calculators' },
-      { href: hubPath('insurance', '/resources'), label: 'Resources' },
-      { href: hubPath('insurance', '/about'), label: 'Trust & Transparency' },
+      { href: hubPath('insurance', '/resources'), label: 'Guides' },
+      { href: hubPath('insurance', '/hubs'), label: 'Health Hubs' },
+      { href: hubPath('insurance', '/about'), label: 'About' },
       { href: hubPath('insurance', '/contact'), label: 'Contact' },
     ],
     footerColumns: [
@@ -167,29 +167,63 @@ export const HUBS: Record<HubId, HubConfig> = {
         links: [
           { href: hubPath('insurance', '/directory'), label: 'All Agents' },
           { href: hubPath('insurance', '/hubs'), label: 'Health Hubs' },
+          { href: hubPath('insurance', '/hubs/browse'), label: 'Browse by State' },
           { href: hubPath('insurance', '/destinations'), label: 'Destinations' },
         ],
       },
       {
-        title: 'RESOURCES',
+        title: 'TOOLS',
+        links: [
+          {
+            href: hubPath('insurance', '/tools/license-verification'),
+            label: 'License Verification',
+          },
+          {
+            href: hubPath('insurance', '/calculators/aca-subsidy'),
+            label: 'ACA Subsidy Calculator',
+          },
+          {
+            href: hubPath('insurance', '/tools/medicare-plan-finder'),
+            label: 'Medicare Plan Finder',
+          },
+          {
+            href: hubPath('insurance', '/tools/needs-assessment'),
+            label: 'Needs Assessment',
+          },
+          { href: hubPath('insurance', '/calculators'), label: 'All Calculators' },
+        ],
+      },
+      {
+        title: 'GUIDES',
         links: [
           { href: hubPath('insurance', '/resources'), label: 'All Guides' },
+          {
+            href: hubPath('insurance', '/resources/how-to-verify-insurance-agent-license'),
+            label: 'Verify an Agent License',
+          },
+          {
+            href: hubPath('insurance', '/resources/how-to-choose-insurance-agent'),
+            label: 'Choose an Insurance Agent',
+          },
+          {
+            href: hubPath('insurance', '/resources/medicare-advantage-vs-medigap'),
+            label: 'Medicare Advantage vs Medigap',
+          },
           {
             href: hubPath('insurance', '/resources/how-to-choose-health-insurance-plan'),
             label: 'Choose a Health Plan',
           },
-          { href: hubPath('insurance', '/calculators'), label: 'Calculators' },
           { href: hubPath('insurance', '/about'), label: 'How We Verify' },
         ],
       },
     ],
     ctaLabel: 'Find Agents',
-    ctaHref: hubPath('insurance', '/hubs/browse'),
+    ctaHref: hubPath('insurance', '/directory'),
     legalLinks: {
       privacy: hubPath('insurance', '/privacy'),
       terms: hubPath('insurance', '/terms'),
     },
-    trustBadge: HEADER_TRUST_BADGE,
+    trustBadge: 'INDEPENDENT DOI-VERIFIED DIRECTORY',
     verifyAuthority: { label: 'NAIC', href: 'https://www.naic.org/' },
   },
 };

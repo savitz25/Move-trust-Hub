@@ -122,7 +122,7 @@ export function formatBasketForEmail(items: PrescriptionItem[]): string {
   const footer = [
     '',
     '—'.repeat(40),
-    'Created with Insurance Trust Hub (MoveTrustHub).',
+    'Created with InsuranceTrustHub.',
     'Educational organization tool only — not medical advice.',
     'Always verify medications with your pharmacist or doctor.',
   ].join('\n');

@@ -2,13 +2,14 @@
 
 **Primary site:** `https://www.movetrusthub.com`  
 **GA4:** `G-433BDV8MJ` (see `lib/analytics/ga-config.ts`)  
-**Legacy domains (308 → subdirectories):** `lendertrusthub.com`, `insurancetrusthub.com`
+**Legacy domains (308 → subdirectories):** `lendertrusthub.com` only  
+**Standalone specialist:** `insurancetrusthub.com` (no 308 to Move — host rewrite; see `docs/INSURANCE-STANDALONE.md`)
 
-| Hub | URL prefix | Legacy domain |
-|-----|------------|---------------|
-| Move | `/` | *(primary — no redirect)* |
-| Lender | `/lender/*` | `lendertrusthub.com` |
-| Insurance | `/insurance/*` | `insurancetrusthub.com` |
+| Hub | URL prefix | Domain |
+|-----|------------|--------|
+| Move | `/` | `movetrusthub.com` *(primary)* |
+| Lender | `/lender/*` | `lendertrusthub.com` → 308 to Move |
+| Insurance | `/insurance/*` on Move; bare paths on apex | `insurancetrusthub.com` *(standalone)* |
 
 ---
 
@@ -60,7 +61,7 @@ curl.exe -sI https://www.insurancetrusthub.com/directory
 | Request | Status | Location |
 |---------|--------|----------|
 | `lendertrusthub.com/calculators` | `308` | `https://www.movetrusthub.com/lender/calculators?from=lendertrusthub` |
-| `insurancetrusthub.com/directory` | `308` | `https://www.movetrusthub.com/insurance/directory?from=insurancetrusthub` |
+| `insurancetrusthub.com/directory` | `200` | *(no redirect to Move — serves InsuranceTrustHub)* |
 
 Path aliases on movetrusthub.com itself (no host change):
 

@@ -10,7 +10,7 @@ import {
  * Hub migration redirects for movetrusthub.com.
  *
  * Order matters in vercel.json:
- *   1. Host-based legacy domain rules FIRST (lendertrusthub / insurancetrusthub)
+ *   1. Host-based legacy domain rules FIRST (lendertrusthub; insurance is standalone)
  *   2. Specific calculator + alias rules before broad catch-alls
  * Keep in sync with vercel.json `redirects` (edge runs before Next.js).
  *
@@ -131,7 +131,11 @@ function resourceAliasRedirects(): Redirect[] {
   return rules;
 }
 
-/** Standalone Trust Hub domains → movetrusthub.com subdirectories (+ ?from= for welcome banner). */
+/**
+ * Legacy apex domains → movetrusthub.com subdirectories (+ ?from= for welcome banner).
+ * InsuranceTrustHub is standalone: do NOT 308 insurancetrusthub.com here.
+ * Host rewrites live in middleware (see lib/hub/domains.ts).
+ */
 export const HUB_DOMAIN_REDIRECTS: Redirect[] = [
   {
     source: '/:path*',
@@ -145,23 +149,23 @@ export const HUB_DOMAIN_REDIRECTS: Redirect[] = [
     destination: 'https://www.movetrusthub.com/lender/:path*?from=lendertrusthub',
     permanent: true,
   },
-  {
-    source: '/:path*',
-    has: [{ type: 'host', value: 'www.insurancetrusthub.com' }],
-    destination: 'https://www.movetrusthub.com/insurance/:path*?from=insurancetrusthub',
-    permanent: true,
-  },
-  {
-    source: '/:path*',
-    has: [{ type: 'host', value: 'insurancetrusthub.com' }],
-    destination: 'https://www.movetrusthub.com/insurance/:path*?from=insurancetrusthub',
-    permanent: true,
-  },
 ];
+
+/** Path migration rules must not fire on insurancetrusthub.com (standalone apex). */
+const MOVE_HOSTS = ['www.movetrusthub.com', 'movetrusthub.com'] as const;
+
+function scopeToMoveHosts(rules: Redirect[]): Redirect[] {
+  return rules.flatMap((rule) =>
+    MOVE_HOSTS.map((host) => ({
+      ...rule,
+      has: [...(rule.has ?? []), { type: 'host' as const, value: host }],
+    }))
+  );
+}
 
 /** Path redirects for Vercel edge (vercel.json) — includes calculator catch-all. */
 export function getVercelHubRedirects(): Redirect[] {
-  return [
+  return scopeToMoveHosts([
     ...INSURANCE_CALCULATOR_REDIRECTS,
     ...LENDER_CALCULATOR_SLUG_REDIRECTS,
     ...resourceAliasRedirects(),
@@ -170,16 +174,21 @@ export function getVercelHubRedirects(): Redirect[] {
     ...LENDER_ROOT_REDIRECTS,
     CALCULATOR_INDEX_REDIRECT,
     CALCULATOR_VERCEL_CATCHALL,
-  ];
+  ]);
 }
 
 /**
  * Path redirects safe for next.config.
  * Calculator + resource-alias rules live in middleware (Next.js collapses
  * `/calculators/:slug` rules into a broken `/calculators/:path*` catch-all).
+ * Scoped to Move hosts so insurancetrusthub.com is never rewritten by these rules.
  */
 export function getNextConfigHubRedirects(): Redirect[] {
-  return [...INSURANCE_HUB_ALIAS_REDIRECTS, ...INSURANCE_ROOT_REDIRECTS, ...LENDER_ROOT_REDIRECTS];
+  return scopeToMoveHosts([
+    ...INSURANCE_HUB_ALIAS_REDIRECTS,
+    ...INSURANCE_ROOT_REDIRECTS,
+    ...LENDER_ROOT_REDIRECTS,
+  ]);
 }
 
 /** @deprecated Use getVercelHubRedirects or getNextConfigHubRedirects */
@@ -228,9 +237,9 @@ export function resolveHubMigrationRedirect(
       const path = `/lender${pathname === '/' ? '' : pathname}`;
       return `${path}?from=lendertrusthub`;
     }
+    // Insurance apex is standalone — middleware rewrites; never bounce to Move.
     if (h === 'insurancetrusthub.com' || h === 'www.insurancetrusthub.com') {
-      const path = `/insurance${pathname === '/' ? '' : pathname}`;
-      return `${path}?from=insurancetrusthub`;
+      return null;
     }
   }
 

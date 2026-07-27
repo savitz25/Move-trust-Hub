@@ -1,5 +1,10 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { updateSession } from '@/lib/supabase/middleware';
+import {
+  insuranceApexToAppPath,
+  isInsuranceStandaloneHost,
+  shouldRewriteInsurancePath,
+} from '@/lib/hub/domains';
 import { PATHNAME_COOKIE, PATHNAME_HEADER } from '@/lib/hub/paths';
 import { needsAuthSession } from '@/lib/middleware/auth-paths';
 import {
@@ -27,6 +32,7 @@ function applyPublicCacheHeaders(response: NextResponse, sMaxAge: number) {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const host = request.headers.get('host');
 
   try {
     // Force HTTPS when Vercel/edge reports plain HTTP (GSC: http://www.movetrusthub.com/)
@@ -35,6 +41,21 @@ export async function middleware(request: NextRequest) {
       const httpsUrl = request.nextUrl.clone();
       httpsUrl.protocol = 'https:';
       return NextResponse.redirect(httpsUrl, 308);
+    }
+
+    // insurancetrusthub.com: serve insurance hub at bare paths (no 308 to Move).
+    if (isInsuranceStandaloneHost(host) && shouldRewriteInsurancePath(pathname)) {
+      const rewriteUrl = request.nextUrl.clone();
+      rewriteUrl.pathname = insuranceApexToAppPath(pathname);
+      const requestHeaders = new Headers(request.headers);
+      // Public path for chrome/analytics; internal path is the rewrite target.
+      requestHeaders.set(PATHNAME_HEADER, pathname);
+      const response = NextResponse.rewrite(rewriteUrl, {
+        request: { headers: requestHeaders },
+      });
+      const baseTtl = DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
+      applyPublicCacheHeaders(response, htmlCacheSecondsForPath(rewriteUrl.pathname, baseTtl));
+      return response;
     }
 
     // Permanent cleanup: doubled hub prefixes from bad absolute links.
@@ -65,7 +86,7 @@ export async function middleware(request: NextRequest) {
       const { resolveHubMigrationRedirect } = await import('@/lib/migration/hub-redirects');
       const migrationDestination = resolveHubMigrationRedirect(
         pathname,
-        request.headers.get('host') ?? undefined
+        host ?? undefined
       );
       if (migrationDestination) {
         const destination = migrationDestination.startsWith('http')
@@ -125,8 +146,10 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     {
+      // Include sitemap.xml / opengraph so insurance apex can rewrite them.
+      // robots.txt stays excluded — app/robots.ts is host-aware.
       source:
-        '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|sitemap-local|manifest.webmanifest|opengraph-image|twitter-image|icon|apple-icon|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2|woff|ttf|otf|xml|txt|webmanifest)$).*)',
+        '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap-local|manifest.webmanifest|icon|apple-icon|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2|woff|ttf|otf|xml|txt|webmanifest)$).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' },

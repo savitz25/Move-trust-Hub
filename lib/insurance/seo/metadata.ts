@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { TRUST_HUB_LOGO } from '@/lib/hub/config';
+import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
 import { hubCanonicalUrl, normalizeHubMetadataPath } from '@/lib/hub/paths';
 import { SITE_NAME } from '@/lib/insurance/constants';
-import { SITE_URL as ROOT_SITE_URL } from '@/lib/seo/site-metadata';
 
 export const SITE_URL = hubCanonicalUrl('insurance', '/');
 
@@ -12,7 +12,7 @@ export const HOMEPAGE_DESCRIPTION =
   'Compare independent and captive insurance agencies by reviews, specialties, and state licensing. Research auto, home, life, and business coverage options.';
 
 export const DEFAULT_SITE_DESCRIPTION =
-  'Insurance Trust Hub is an independent directory of licensed insurance agencies. Research providers, read verified reviews, and request quotes for auto, home, life, and business insurance.';
+  'InsuranceTrustHub is an independent directory of licensed insurance agencies. Research providers, read verified reviews, and request quotes for auto, home, life, and business insurance — no paid placements.';
 
 export const OG_IMAGE = {
   url: TRUST_HUB_LOGO.src,
@@ -72,7 +72,7 @@ export function buildMetadata(options: BuildMetadataOptions): Metadata {
     applicationName: SITE_NAME,
     category: 'insurance services',
     alternates: { canonical: url },
-    metadataBase: new URL(ROOT_SITE_URL),
+    metadataBase: new URL(INSURANCE_SITE_URL),
     openGraph: buildOpenGraph({
       title: options.title,
       description: options.description,

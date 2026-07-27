@@ -1,4 +1,6 @@
 import { trustHubLogoUrl } from '@/lib/hub/config';
+import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
+import { CONSUMER_TRUST_HUB_ORG } from '@/lib/hub/schemas';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import { SITE_EMAIL, SITE_NAME } from '@/lib/insurance/constants';
 import type { Provider } from '@/types/insurance/provider';
@@ -10,8 +12,9 @@ export const organizationSchema = {
   '@id': `${INSURANCE_HUB_URL}#organization`,
   name: SITE_NAME,
   url: INSURANCE_HUB_URL,
-  logo: trustHubLogoUrl(),
+  logo: trustHubLogoUrl(INSURANCE_SITE_URL),
   email: SITE_EMAIL,
+  parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
   contactPoint: {
     '@type': 'ContactPoint',
     email: SITE_EMAIL,
@@ -20,7 +23,7 @@ export const organizationSchema = {
     availableLanguage: 'English',
   },
   description:
-    'Independent directory of licensed insurance agencies and brokers in the United States. Compare reviews, specialties, and request quotes for personal and commercial coverage.',
+    'Independent directory of licensed insurance agencies and brokers in the United States. Compare reviews, specialties, and request quotes for personal and commercial coverage. No paid placements.',
 };
 
 export const websiteSchema = {
@@ -115,6 +118,6 @@ export function buildLocalBusinessSchema(provider: Provider) {
 export function buildHomepageGraph() {
   return {
     '@context': 'https://schema.org',
-    '@graph': [organizationSchema, websiteSchema, homepageServiceSchema],
+    '@graph': [CONSUMER_TRUST_HUB_ORG, organizationSchema, websiteSchema, homepageServiceSchema],
   };
 }

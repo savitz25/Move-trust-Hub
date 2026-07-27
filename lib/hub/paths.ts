@@ -1,4 +1,5 @@
 import type { HubId } from '@/lib/hub/types';
+import { INSURANCE_SITE_URL, MOVE_SITE_URL } from '@/lib/hub/domains';
 
 export const HUB_HEADER = 'x-trust-hub';
 export const PATHNAME_HEADER = 'x-pathname';
@@ -24,10 +25,21 @@ export function hubPath(hub: HubId, path: string): string {
   return `${base}${clean}`;
 }
 
-/** Canonical URL on movetrusthub.com for a hub-relative path. */
+/**
+ * Canonical absolute URL for a hub-relative path.
+ * Insurance uses insurancetrusthub.com with bare public paths (no /insurance prefix).
+ * Move and lender remain on movetrusthub.com (lender still under /lender).
+ */
 export function hubCanonicalUrl(hub: HubId, path: string = '/'): string {
-  const site = 'https://www.movetrusthub.com';
-  const appPath = hubPath(hub, path);
+  const clean = path.startsWith('/') ? path : `/${path}`;
+
+  if (hub === 'insurance') {
+    const relative = clean === '/' ? '' : clean;
+    return relative ? `${INSURANCE_SITE_URL}${relative}` : INSURANCE_SITE_URL;
+  }
+
+  const site = MOVE_SITE_URL;
+  const appPath = hubPath(hub, clean);
   return appPath === '/' ? site : `${site}${appPath}`;
 }
 

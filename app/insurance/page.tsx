@@ -18,20 +18,25 @@ export const metadata: Metadata = buildHubMetadata('insurance', {
 
 const INSURANCE_HOME_FAQ = [
   {
-    question: 'How does Insurance Trust Hub verify agents?',
+    question: 'How does InsuranceTrustHub verify agents?',
     answer:
-      'We verify state Department of Insurance licensing, NAIC records, and attributed reviews. Agents are listed for research only — we never accept paid placements.',
+      'We verify state Department of Insurance licensing, NAIC records, and attributed reviews. Agents are listed for research only — we never accept paid placements or pay-to-rank fees.',
   },
   {
     question: 'Do you cover health insurance and Medicare?',
     answer:
-      'Yes. Our 54 market health hubs highlight ACA marketplace navigators, Medicare Advantage specialists, and employer-plan advisors in high-enrollment metros.',
+      'Yes. Our market health hubs highlight ACA marketplace navigators, Medicare Advantage specialists, and employer-plan advisors in high-enrollment metros — plus free tools like the ACA subsidy calculator and Medicare plan finder.',
+  },
+  {
+    question: 'Is InsuranceTrustHub part of MoveTrustHub?',
+    answer:
+      'InsuranceTrustHub is an independent specialist site in the ConsumerTrust Hub network. Sister directories include MoveTrustHub for movers. MoveTrustHub does not control insurance rankings or accept insurance paid placements on our behalf.',
   },
 ];
 
 export default function InsuranceHubHomePage() {
   const schema = buildHubHomeSchemaGraph('insurance', INSURANCE_HOME_FAQ, {
-    searchTarget: `${hubCanonicalUrl('insurance', '/')}/hubs/browse?zip={search_term_string}`,
+    searchTarget: `${hubCanonicalUrl('insurance', '/directory')}?q={search_term_string}`,
   });
 
   return (

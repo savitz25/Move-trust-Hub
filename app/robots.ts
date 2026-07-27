@@ -1,8 +1,28 @@
 import type { MetadataRoute } from 'next';
+import { headers } from 'next/headers';
+import {
+  INSURANCE_SITE_URL,
+  MOVE_SITE_URL,
+  isInsuranceStandaloneHost,
+} from '@/lib/hub/domains';
 
-const SITE_URL = 'https://www.movetrusthub.com';
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const host = (await headers()).get('host');
 
-export default function robots(): MetadataRoute.Robots {
+  if (isInsuranceStandaloneHost(host)) {
+    return {
+      rules: [
+        {
+          userAgent: '*',
+          allow: '/',
+          disallow: ['/admin', '/api/', '/insurance/admin', '/_next/', '/lender'],
+        },
+      ],
+      sitemap: `${INSURANCE_SITE_URL}/sitemap.xml`,
+      host: INSURANCE_SITE_URL,
+    };
+  }
+
   return {
     rules: [
       {
@@ -18,11 +38,11 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [
-      `${SITE_URL}/sitemap.xml`,
-      `${SITE_URL}/sitemap-local/sitemap.xml`,
-      `${SITE_URL}/lender/sitemap.xml`,
-      `${SITE_URL}/insurance/sitemap.xml`,
+      `${MOVE_SITE_URL}/sitemap.xml`,
+      `${MOVE_SITE_URL}/sitemap-local/sitemap.xml`,
+      `${MOVE_SITE_URL}/lender/sitemap.xml`,
+      `${MOVE_SITE_URL}/insurance/sitemap.xml`,
     ],
-    host: SITE_URL,
+    host: MOVE_SITE_URL,
   };
 }

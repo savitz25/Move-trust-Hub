@@ -68,37 +68,64 @@
     {
       "source": "/",
       "headers": [
-        { "key": "X-Trust-Hub", "value": "move" },
+        {
+          "key": "X-Trust-Hub",
+          "value": "move"
+        },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
         },
-        { "key": "CDN-Cache-Control", "value": "max-age=86400" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/local-movers/:path*",
       "headers": [
-        { "key": "X-Trust-Hub", "value": "move" },
+        {
+          "key": "X-Trust-Hub",
+          "value": "move"
+        },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=60, stale-while-revalidate=3600"
         },
-        { "key": "CDN-Cache-Control", "value": "max-age=60" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=60"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/:path((?!insurance|lender|admin|api|_next|local-movers).+)",
       "headers": [
-        { "key": "X-Trust-Hub", "value": "move" },
+        {
+          "key": "X-Trust-Hub",
+          "value": "move"
+        },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
         },
-        { "key": "CDN-Cache-Control", "value": "max-age=86400" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
@@ -140,25 +167,43 @@
     {
       "source": "/lender/:path((?!admin(?:/|$)).*)",
       "headers": [
-        { "key": "X-Trust-Hub", "value": "lender" },
+        {
+          "key": "X-Trust-Hub",
+          "value": "lender"
+        },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
         },
-        { "key": "CDN-Cache-Control", "value": "max-age=86400" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
       "source": "/insurance/:path((?!admin(?:/|$)).*)",
       "headers": [
-        { "key": "X-Trust-Hub", "value": "insurance" },
+        {
+          "key": "X-Trust-Hub",
+          "value": "insurance"
+        },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
         },
-        { "key": "CDN-Cache-Control", "value": "max-age=86400" },
-        { "key": "Vary", "value": "Accept-Encoding" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
       ]
     },
     {
@@ -195,7 +240,10 @@
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=604800"
         },
-        { "key": "CDN-Cache-Control", "value": "max-age=3600" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=3600"
+        }
       ]
     },
     {
@@ -205,7 +253,10 @@
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=604800"
         },
-        { "key": "CDN-Cache-Control", "value": "max-age=3600" }
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=3600"
+        }
       ]
     },
     {
@@ -229,34 +280,58 @@
     {
       "source": "/api/refresh/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "private, no-store, max-age=0" },
-        { "key": "CDN-Cache-Control", "value": "no-store" }
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-store"
+        }
       ]
     },
     {
       "source": "/api/chat",
       "headers": [
-        { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        }
       ]
     },
     {
       "source": "/api/send-quote-email",
       "headers": [
-        { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        }
       ]
     },
     {
       "source": "/admin/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "private, no-store, max-age=0" },
-        { "key": "CDN-Cache-Control", "value": "no-store" }
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-store"
+        }
       ]
     },
     {
       "source": "/(insurance|lender)/admin/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "private, no-store, max-age=0" },
-        { "key": "CDN-Cache-Control", "value": "no-store" }
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-store"
+        }
       ]
     }
   ],
@@ -284,326 +359,1500 @@
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/calculators/premium-estimator",
+      "destination": "/insurance/calculators/premium-estimator",
+      "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "www.insurancetrusthub.com"
+          "value": "www.movetrusthub.com"
         }
-      ],
-      "destination": "https://www.movetrusthub.com/insurance/:path*?from=insurancetrusthub",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "insurancetrusthub.com"
-        }
-      ],
-      "destination": "https://www.movetrusthub.com/insurance/:path*?from=insurancetrusthub",
-      "permanent": true
+      ]
     },
     {
       "source": "/calculators/premium-estimator",
       "destination": "/insurance/calculators/premium-estimator",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/medicare-gap",
       "destination": "/insurance/calculators/medicare-gap",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/medicare-gap",
+      "destination": "/insurance/calculators/medicare-gap",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/aca-subsidy",
       "destination": "/insurance/calculators/aca-subsidy",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/aca-subsidy",
+      "destination": "/insurance/calculators/aca-subsidy",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/mortgage-payment",
       "destination": "/lender/calculators?calc=payment",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/mortgage-payment",
+      "destination": "/lender/calculators?calc=payment",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/affordability",
       "destination": "/lender/calculators?calc=affordability",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/affordability",
+      "destination": "/lender/calculators?calc=affordability",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/refinance",
       "destination": "/lender/calculators?calc=refinance",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/refinance",
+      "destination": "/lender/calculators?calc=refinance",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/amortization",
       "destination": "/lender/calculators?calc=amortization",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/amortization",
+      "destination": "/lender/calculators?calc=amortization",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/rent-vs-buy",
       "destination": "/lender/calculators?calc=rent-vs-buy",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/rent-vs-buy",
+      "destination": "/lender/calculators?calc=rent-vs-buy",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/heloc",
       "destination": "/lender/calculators?calc=heloc",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/heloc",
+      "destination": "/lender/calculators?calc=heloc",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/down-payment",
       "destination": "/lender/calculators?calc=down-payment",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/down-payment",
+      "destination": "/lender/calculators?calc=down-payment",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/rental",
       "destination": "/lender/calculators?calc=rental",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/rental",
+      "destination": "/lender/calculators?calc=rental",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/dti",
       "destination": "/lender/calculators?calc=dti",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/dti",
+      "destination": "/lender/calculators?calc=dti",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/closing",
       "destination": "/lender/calculators?calc=closing",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/closing",
+      "destination": "/lender/calculators?calc=closing",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/va",
       "destination": "/lender/calculators?calc=payment",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/va",
+      "destination": "/lender/calculators?calc=payment",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/how-to-choose-health-insurance",
       "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/how-to-choose-health-insurance",
+      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/how-to-choose-health-insurance",
       "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/how-to-choose-health-insurance",
+      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/health-insurance-2026-guide",
       "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/health-insurance-2026-guide",
+      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/health-insurance-2026-guide",
       "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/health-insurance-2026-guide",
+      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/hsa",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/hsa",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/hsa",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/hsa",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/hsa-2026",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/hsa-2026",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/hsa-2026",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/hsa-2026",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/health-savings-account",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/health-savings-account",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/health-savings-account",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/health-savings-account",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/health-savings-accounts",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/health-savings-accounts",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/health-savings-accounts",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/health-savings-accounts",
+      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/understanding-aca-subsidies",
       "destination": "/insurance/resources/aca-obamacare-guide",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/understanding-aca-subsidies",
+      "destination": "/insurance/resources/aca-obamacare-guide",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/understanding-aca-subsidies",
       "destination": "/insurance/resources/aca-obamacare-guide",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/understanding-aca-subsidies",
+      "destination": "/insurance/resources/aca-obamacare-guide",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/texas-auto-insurance",
       "destination": "/insurance/resources/auto-insurance-costs-by-state",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/texas-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/texas-auto-insurance",
       "destination": "/insurance/resources/auto-insurance-costs-by-state",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/texas-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/california-home-insurance",
       "destination": "/insurance/resources/homeowners-insurance-basics",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/california-home-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/california-home-insurance",
       "destination": "/insurance/resources/homeowners-insurance-basics",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/california-home-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/wildfire-insurance",
       "destination": "/insurance/resources/homeowners-insurance-basics",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/wildfire-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/wildfire-insurance",
       "destination": "/insurance/resources/homeowners-insurance-basics",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/wildfire-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/new-york-auto-insurance",
       "destination": "/insurance/resources/auto-insurance-costs-by-state",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/new-york-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/new-york-auto-insurance",
       "destination": "/insurance/resources/auto-insurance-costs-by-state",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/new-york-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/north-carolina-insurance",
       "destination": "/insurance/resources/homeowners-insurance-basics",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/north-carolina-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/north-carolina-insurance",
       "destination": "/insurance/resources/homeowners-insurance-basics",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/north-carolina-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/illinois-auto-insurance",
       "destination": "/insurance/resources/auto-insurance-costs-by-state",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/illinois-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/illinois-auto-insurance",
       "destination": "/insurance/resources/auto-insurance-costs-by-state",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/illinois-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/obamacare-guide",
       "destination": "/insurance/resources/aca-obamacare-guide",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/obamacare-guide",
+      "destination": "/insurance/resources/aca-obamacare-guide",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/obamacare-guide",
       "destination": "/insurance/resources/aca-obamacare-guide",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/obamacare-guide",
+      "destination": "/insurance/resources/aca-obamacare-guide",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/resources/medigap-guide",
       "destination": "/insurance/resources/medicare-advantage-guide",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/resources/medigap-guide",
+      "destination": "/insurance/resources/medicare-advantage-guide",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/resources/medigap-guide",
       "destination": "/insurance/resources/medicare-advantage-guide",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/resources/medigap-guide",
+      "destination": "/insurance/resources/medicare-advantage-guide",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/insurance/hubs/south-florida",
       "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/hubs/south-florida",
+      "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/hubs/south-florida",
       "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/hubs/south-florida",
+      "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/directory",
       "destination": "/insurance/directory",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/directory",
+      "destination": "/insurance/directory",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/directory/:path*",
       "destination": "/insurance/directory/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/directory/:path*",
+      "destination": "/insurance/directory/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/hubs",
       "destination": "/insurance/hubs",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/hubs",
+      "destination": "/insurance/hubs",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/hubs/:path*",
       "destination": "/insurance/hubs/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/hubs/:path*",
+      "destination": "/insurance/hubs/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/destinations",
       "destination": "/insurance/destinations",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/destinations",
+      "destination": "/insurance/destinations",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/destinations/:path*",
       "destination": "/insurance/destinations/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/destinations/:path*",
+      "destination": "/insurance/destinations/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/providers",
       "destination": "/insurance/providers",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/providers",
+      "destination": "/insurance/providers",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/providers/:path*",
       "destination": "/insurance/providers/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/providers/:path*",
+      "destination": "/insurance/providers/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/tools",
       "destination": "/insurance/tools",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools",
+      "destination": "/insurance/tools",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/tools/:path*",
       "destination": "/insurance/tools/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "/insurance/tools/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/privacy",
       "destination": "/insurance/privacy",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/privacy",
+      "destination": "/insurance/privacy",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/terms",
       "destination": "/insurance/terms",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/terms",
+      "destination": "/insurance/terms",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/local-lenders",
       "destination": "/lender/local-lenders",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/local-lenders",
+      "destination": "/lender/local-lenders",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/local-lenders/:path*",
       "destination": "/lender/local-lenders/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/local-lenders/:path*",
+      "destination": "/lender/local-lenders/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/fdic-insured-banks",
       "destination": "/lender/fdic-insured-banks",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/fdic-insured-banks",
+      "destination": "/lender/fdic-insured-banks",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/fdic-insured-banks/:path*",
       "destination": "/lender/fdic-insured-banks/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/fdic-insured-banks/:path*",
+      "destination": "/lender/fdic-insured-banks/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/auto-loan-companies",
       "destination": "/lender/auto-loan-companies",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/auto-loan-companies",
+      "destination": "/lender/auto-loan-companies",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/auto-loan-companies/:path*",
       "destination": "/lender/auto-loan-companies/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/auto-loan-companies/:path*",
+      "destination": "/lender/auto-loan-companies/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/lenders",
       "destination": "/lender/lenders",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/lenders",
+      "destination": "/lender/lenders",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/lenders/:path*",
       "destination": "/lender/lenders/:path*",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/lenders/:path*",
+      "destination": "/lender/lenders/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators",
       "destination": "/lender/calculators",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators",
+      "destination": "/lender/calculators",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     },
     {
       "source": "/calculators/:path*",
       "destination": "/lender/calculators",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/calculators/:path*",
+      "destination": "/lender/calculators",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
     }
   ]
 }

@@ -6,7 +6,7 @@ import { ContactForm } from '@/components/insurance/contact-form';
 import { Card, CardContent } from '@/components/insurance/ui/card';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Contact Insurance Trust Hub',
+  title: 'Contact InsuranceTrustHub',
   description:
     'Get in touch for general inquiries, data corrections, listing updates, partnerships, or press requests.',
   path: '/contact',

@@ -23,8 +23,9 @@ export async function HubChrome({
   children: React.ReactNode;
 }) {
   const isMove = hubId === 'move';
-  // Only show a discreet sister-hub switcher when already inside finance subpaths.
-  const showSecondaryHubSwitcher = hubId === 'lender' || hubId === 'insurance';
+  // Lender still lives as a temporary Move subpath — show discreet sister switcher.
+  // Insurance is a standalone specialist destination: no peer hub switcher in the header.
+  const showSecondaryHubSwitcher = hubId === 'lender';
 
   return (
     <div className="min-h-screen flex flex-col">

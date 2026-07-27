@@ -32,7 +32,7 @@ export const INSURANCE_OG_IMAGE = {
   url: '/insurance/opengraph-image',
   width: 1200,
   height: 630,
-  alt: 'Insurance Trust Hub — DOI-verified insurance agents and health hubs',
+  alt: 'InsuranceTrustHub — independent DOI-verified insurance agent directory',
 } as const;
 
 export type OgHub = 'move' | 'lender' | 'insurance';
@@ -45,7 +45,7 @@ export function getOgImageForHub(hub: OgHub = 'move') {
 
 export function getSiteNameForHub(hub: OgHub = 'move') {
   if (hub === 'lender') return 'Lender Trust Hub';
-  if (hub === 'insurance') return 'Insurance Trust Hub';
+  if (hub === 'insurance') return 'InsuranceTrustHub';
   return SITE_NAME;
 }
 

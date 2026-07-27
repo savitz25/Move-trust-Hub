@@ -120,8 +120,10 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
         </div>
       </div>
       <div className="border-t py-5 space-y-3">
-        {/* Single quiet network note on Move only — never equal footer columns for finance. */}
-        {hub.id === 'move' ? <ConsumerTrustNetworkLinks /> : null}
+        {/* Quiet network note — never primary nav or equal footer columns. */}
+        {hub.id === 'move' || hub.id === 'insurance' ? (
+          <ConsumerTrustNetworkLinks hubId={hub.id} />
+        ) : null}
         <p className="text-center text-[10px] text-muted-foreground/70 tracking-wide">
           Always verify licensing directly with{' '}
           <a

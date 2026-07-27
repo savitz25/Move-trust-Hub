@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getHubConfig } from '@/lib/hub/config';
+import { INSURANCE_SITE_URL, MOVE_SITE_URL } from '@/lib/hub/domains';
 import { hubCanonicalUrl, normalizeHubMetadataPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
@@ -52,7 +53,7 @@ export function buildHubMetadata(
     }),
     // Class D soft-retire: noindex but keep follow so internal links remain useful.
     robots: input.noIndex ? { index: false, follow: true } : undefined,
-    metadataBase: new URL(SITE_URL),
+    metadataBase: new URL(hub === 'insurance' ? INSURANCE_SITE_URL : MOVE_SITE_URL || SITE_URL),
   };
 }
 

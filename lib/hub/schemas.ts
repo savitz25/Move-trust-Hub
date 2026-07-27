@@ -1,10 +1,22 @@
 import { SITE_EMAIL } from '@/lib/contact';
 import { getHubConfig, trustHubLogoUrl } from '@/lib/hub/config';
+import { INSURANCE_SITE_URL, MOVE_SITE_URL } from '@/lib/hub/domains';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 
-const PARENT_ORG = {
+/** Network parent for specialist hubs (insurance, later lender). */
+export const CONSUMER_TRUST_HUB_ORG = {
+  '@type': 'Organization' as const,
+  '@id': `${MOVE_SITE_URL}/#consumer-trust-hub-network`,
+  name: 'ConsumerTrust Hub',
+  url: MOVE_SITE_URL,
+  description:
+    'Network of independent consumer research directories for moving, lending, and insurance. No lead fees, no paid placements.',
+};
+
+/** MoveTrustHub organization — used on move pages and as network anchor. */
+const MOVE_ORG = {
   '@type': 'Organization' as const,
   '@id': `${SITE_URL}/#organization`,
   name: 'Move Trust Hub',
@@ -13,23 +25,25 @@ const PARENT_ORG = {
   email: SITE_EMAIL,
   description:
     'Independent directory for researching FMCSA-licensed interstate and local moving companies in the United States. No lead fees, no paid placements.',
+  parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
 };
 
 export function buildHubOrganizationSchema(hub: HubId) {
   const config = getHubConfig(hub);
   const hubUrl = hubCanonicalUrl(hub, '/');
+  const logoBase = hub === 'insurance' ? INSURANCE_SITE_URL : SITE_URL;
 
   return {
     '@type': 'Organization',
     '@id': `${hubUrl}#organization`,
     name: config.siteName,
     url: hubUrl,
-    logo: `${SITE_URL}${config.logoSrc}`,
-    parentOrganization: { '@id': PARENT_ORG['@id'] },
+    logo: `${logoBase}${config.logoSrc.split('?')[0]}`,
+    parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
     description: config.tagline,
     contactPoint: {
       '@type': 'ContactPoint',
-      email: SITE_EMAIL,
+      email: hub === 'insurance' ? 'hello@insurancetrusthub.com' : SITE_EMAIL,
       contactType: 'customer service',
       areaServed: 'US',
       availableLanguage: 'English',
@@ -58,7 +72,11 @@ export function buildHubWebsiteSchema(
     name: config.siteName,
     url: hubUrl,
     publisher: { '@id': `${hubUrl}#organization` },
-    isPartOf: { '@id': `${SITE_URL}/#website` },
+    ...(hub === 'move'
+      ? {}
+      : {
+          isPartOf: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
+        }),
     inLanguage: 'en-US',
     ...(options?.searchTarget
       ? { potentialAction: buildWebsiteSearchAction(options.searchTarget) }
@@ -67,7 +85,7 @@ export function buildHubWebsiteSchema(
 }
 
 /**
- * Root layout only — parent org + main site.
+ * Root layout only — network parent + Move site.
  * Hub-specific Organization/WebSite live on lender/insurance home graphs
  * (avoids shipping cross-hub JSON-LD on every page).
  */
@@ -75,13 +93,14 @@ export function buildTrustHubNetworkSchema() {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      PARENT_ORG,
+      CONSUMER_TRUST_HUB_ORG,
+      MOVE_ORG,
       {
         '@type': 'WebSite',
         '@id': `${SITE_URL}/#website`,
         name: 'Move Trust Hub',
         url: SITE_URL,
-        publisher: { '@id': PARENT_ORG['@id'] },
+        publisher: { '@id': MOVE_ORG['@id'] },
         inLanguage: 'en-US',
       },
     ],
@@ -98,7 +117,9 @@ export function buildHubHomeSchemaGraph(
   const org = buildHubOrganizationSchema(hub);
   const website = buildHubWebsiteSchema(hub, options);
 
-  const graph: Record<string, unknown>[] = [org, website];
+  // Specialist hubs include the network parent node for parentOrganization resolution.
+  const graph: Record<string, unknown>[] =
+    hub === 'move' ? [org, website] : [CONSUMER_TRUST_HUB_ORG, org, website];
 
   if (hub === 'move') {
     graph.push({

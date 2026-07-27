@@ -8,7 +8,7 @@ export const INSURANCE_SECTION_PRESETS: Record<
   resources: {
     hub: 'insurance',
     section: 'resources',
-    eyebrow: 'Insurance Trust Hub · Guides',
+    eyebrow: 'InsuranceTrustHub · Guides',
     title: 'Insurance resources & comparisons',
     description:
       'Independent guides on Medicare, ACA, auto, and homeowners coverage. Educational content only — verify quotes and licensing with state DOI sources.',
@@ -42,7 +42,7 @@ export const INSURANCE_SECTION_PRESETS: Record<
     ],
     faq: [
       {
-        question: 'Does Insurance Trust Hub sell insurance?',
+        question: 'Does InsuranceTrustHub sell insurance?',
         answer:
           'No. We are an independent directory and education site. Licensed agents and agencies are listed for research — always verify licensing with your state Department of Insurance.',
       },
@@ -51,7 +51,7 @@ export const INSURANCE_SECTION_PRESETS: Record<
   guides: {
     hub: 'insurance',
     section: 'guides',
-    eyebrow: 'Insurance Trust Hub · Education',
+    eyebrow: 'InsuranceTrustHub · Education',
     title: 'Insurance guides by topic',
     description: 'Topic-based explainers to help you compare coverage types before contacting a licensed agent.',
     primaryCta: {
@@ -67,7 +67,7 @@ export const INSURANCE_SECTION_PRESETS: Record<
   calculators: {
     hub: 'insurance',
     section: 'calculators',
-    eyebrow: 'Insurance Trust Hub · Tools',
+    eyebrow: 'InsuranceTrustHub · Tools',
     title: 'Insurance calculators',
     description:
       'Free premium, Medicare gap, and ACA subsidy estimators. Outputs are educational estimates — not binding quotes.',
@@ -88,7 +88,7 @@ export const INSURANCE_SECTION_PRESETS: Record<
   directories: {
     hub: 'insurance',
     section: 'directories',
-    eyebrow: 'Insurance Trust Hub · Directory',
+    eyebrow: 'InsuranceTrustHub · Directory',
     title: 'Licensed insurance agency directory',
     description:
       'Search DOI-screened agencies by state, coverage type, and specialty. Zero paid placements.',
@@ -109,7 +109,7 @@ export const INSURANCE_SECTION_PRESETS: Record<
   compare: {
     hub: 'insurance',
     section: 'compare',
-    eyebrow: 'Insurance Trust Hub · Compare',
+    eyebrow: 'InsuranceTrustHub · Compare',
     title: 'Compare coverage options',
     description: 'Side-by-side educational comparisons — not a quote engine.',
     primaryCta: {
