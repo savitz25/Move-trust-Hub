@@ -59,8 +59,9 @@ const KEY_TOOLS = [
   },
   {
     href: '/tools/medicare-plan-finder',
-    title: 'Medicare Plan Finder',
-    description: 'Compare Medicare Advantage and supplemental coverage paths by need.',
+    title: 'Medicare Research Guide',
+    description:
+      'Situation-based paths to CMS complaint data, county dashboards, provider lookup, and verified agents.',
     icon: HeartPulse,
   },
   {

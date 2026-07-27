@@ -436,7 +436,7 @@ export const ARTICLES: Article[] = [
     relatedLinks: [
       { href: '/resources/medicare-advantage-vs-medigap', label: 'Medicare Advantage vs Medigap' },
       { href: '/hubs/medicare', label: 'Medicare Specialists' },
-      { href: '/tools/medicare-plan-finder', label: 'Medicare Plan Finder' },
+      { href: '/tools/medicare-plan-finder', label: 'Medicare Research Guide' },
     ],
   },
   {

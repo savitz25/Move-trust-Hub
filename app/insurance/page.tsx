@@ -25,7 +25,7 @@ const INSURANCE_HOME_FAQ = [
   {
     question: 'Do you cover health insurance and Medicare?',
     answer:
-      'Yes. Our market health hubs highlight ACA marketplace navigators, Medicare Advantage specialists, and employer-plan advisors in high-enrollment metros — plus free tools like the ACA subsidy calculator and Medicare plan finder.',
+      'Yes. Our market health hubs highlight ACA marketplace navigators, Medicare Advantage specialists, and employer-plan advisors in high-enrollment metros — plus free tools like the ACA subsidy calculator and Medicare research guide.',
   },
   {
     question: 'Is InsuranceTrustHub independent?',

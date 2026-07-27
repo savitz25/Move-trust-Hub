@@ -199,7 +199,7 @@ export const HUBS: Record<HubId, HubConfig> = {
           },
           {
             href: hubPath('insurance', '/tools/medicare-plan-finder'),
-            label: 'Medicare Plan Finder',
+            label: 'Medicare Research Guide',
           },
           {
             href: hubPath('insurance', '/tools/needs-assessment'),
