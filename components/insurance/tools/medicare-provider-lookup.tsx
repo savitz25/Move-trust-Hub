@@ -18,6 +18,7 @@ import { Input } from '@/components/insurance/ui/input';
 import { Label } from '@/components/insurance/ui/label';
 import { Select } from '@/components/insurance/ui/select';
 import { cn } from '@/lib/insurance/utils';
+import { withReturnContext } from '@/lib/insurance/navigation/context-nav';
 
 const STATES = [{ value: 'FL', label: 'Florida' }] as const;
 
@@ -127,6 +128,7 @@ export function MedicareProviderLookupTool({
           </p>
         </div>
 
+        {/* Mode tabs */}
         <div
           role="tablist"
           aria-label="Search method"
@@ -338,13 +340,25 @@ export function MedicareProviderLookupTool({
           </ul>
 
           <div className="flex flex-wrap gap-3 text-sm font-medium">
-            <Link href="/data/counties" className="text-teal-700 hover:underline">
+            <Link
+              href={withReturnContext('/data/counties', '/tools/medicare-provider-lookup')}
+              className="text-teal-700 hover:underline"
+            >
               County Medicare dashboards
             </Link>
-            <Link href="/data/plan-complaint-index" className="text-teal-700 hover:underline">
+            <Link
+              href={withReturnContext(
+                '/data/plan-complaint-index',
+                '/tools/medicare-provider-lookup'
+              )}
+              className="text-teal-700 hover:underline"
+            >
               Plan Complaint Index
             </Link>
-            <Link href="/hubs/south-florida" className="text-teal-700 hover:underline">
+            <Link
+              href={withReturnContext('/hubs/south-florida', '/tools/medicare-provider-lookup')}
+              className="text-teal-700 hover:underline"
+            >
               South Florida agents
             </Link>
           </div>

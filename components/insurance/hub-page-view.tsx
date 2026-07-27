@@ -12,6 +12,7 @@ import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
 import { HowItWorks } from '@/components/insurance/how-it-works';
 import { JsonLd } from '@/lib/insurance/seo/json-ld';
 import { SITE_URL } from '@/lib/insurance/constants';
+import { ContextNav } from '@/components/insurance/context-nav';
 
 interface HubPageViewProps {
   hub: InsuranceHub;
@@ -44,15 +45,17 @@ export function HubPageView({ hub, canonicalPath }: HubPageViewProps) {
     <>
       <JsonLd data={jsonLd} />
 
-      <nav className="container mx-auto px-4 pt-6 text-sm text-muted-foreground">
-        <Link href="/" className="hover:text-foreground">Home</Link>
-        {' / '}
-        <Link href="/hubs" className="hover:text-foreground">Health Insurance Hubs</Link>
-        {' / '}
-        <Link href={`/hubs/${state}`} className="hover:text-foreground">{hub.stateName}</Link>
-        {' / '}
-        <span className="text-foreground">{hub.shortName}</span>
-      </nav>
+      <div className="container mx-auto px-4 pt-6">
+        <ContextNav
+          pathname={path}
+          currentLabel={hub.shortName}
+          backOverride={{
+            href: `/hubs/${state}`,
+            label: `Back to ${hub.stateName}`,
+            shortLabel: hub.stateCode,
+          }}
+        />
+      </div>
 
       <section className="border-b bg-gradient-to-br from-primary to-primary/80 py-14 text-primary-foreground">
         <div className="container mx-auto px-4 text-center">

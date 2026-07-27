@@ -7,6 +7,7 @@ import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
 import { HealthHubDirectoryTemplate } from '@/components/hub/templates';
 import { specialtyTopicToDirectoryData } from '@/lib/hub/templates/adapters';
 import { hubPath } from '@/lib/hub/paths';
+import { ContextNav } from '@/components/insurance/context-nav';
 
 interface SpecialtyTopicPageProps {
   topic: SpecialtyTopic;
@@ -19,6 +20,9 @@ export function SpecialtyTopicPage({ topic }: SpecialtyTopicPageProps) {
 
   return (
     <>
+      <div className="container mx-auto px-4 pt-4">
+        <ContextNav pathname={topic.path.replace(/^\/insurance/, '') || topic.path} currentLabel={topic.title} />
+      </div>
       <HealthHubDirectoryTemplate
         hub="insurance"
         data={specialtyTopicToDirectoryData(topic, featuredHubs)}
