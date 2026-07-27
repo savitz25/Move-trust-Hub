@@ -84,7 +84,7 @@ export function buildMetadata(options: BuildMetadataOptions): Metadata {
       description: options.description,
     }),
     robots: options.noIndex
-      ? { index: false, follow: false }
+      ? { index: false, follow: true }
       : {
           index: true,
           follow: true,

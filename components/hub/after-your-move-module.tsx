@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ConsumerTrustNetworkLinks } from '@/components/hub/consumer-trust-network-links';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import { isAfterYourMoveAllowedPath } from '@/lib/hub/cross-sell-paths';
@@ -11,16 +12,8 @@ type RelatedLink = {
   label: string;
 };
 
-const RELATED_BY_HUB: Record<HubId, { intro: string; links: RelatedLink[] }> = {
-  move: {
-    intro:
-      'Related independent directories for after you settle in — same research-first approach, no paid placements.',
-    links: [
-      { href: hubPath('lender', '/local-lenders'), label: 'Mortgage lenders by county' },
-      { href: hubPath('insurance', '/hubs/browse'), label: 'Health insurance agents' },
-      { href: '/local-movers', label: 'Local movers by state' },
-    ],
-  },
+/** Sister hubs (lender/insurance) only — move hub uses discreet network links only. */
+const RELATED_BY_HUB: Record<Exclude<HubId, 'move'>, { intro: string; links: RelatedLink[] }> = {
   lender: {
     intro:
       'Related independent directories when a home purchase overlaps with a move — same research-first approach.',
@@ -35,22 +28,31 @@ const RELATED_BY_HUB: Record<HubId, { intro: string; links: RelatedLink[] }> = {
       'Related independent directories when coverage changes with a move — same research-first approach.',
     links: [
       { href: hubPath('move', '/companies'), label: 'Find movers' },
-      { href: hubPath('lender', '/local-lenders'), label: 'Mortgage lenders' },
       { href: hubPath('move', '/resources'), label: 'Moving guides' },
     ],
   },
 };
 
 /**
- * Footer module for sister-directory discovery.
- * Hidden on high-intent Move paths (directory, profiles, compare, auto-transport)
- * so mid-funnel evaluation is not diluted by adjacent verticals.
+ * Footer discovery module.
+ * Phase 0: On Move, only a soft network line (not finance CTAs in primary chrome).
+ * On lender/insurance: keep limited sister-directory links (still not top nav).
  */
 export function AfterYourMoveModule({ hubId }: { hubId: HubId }) {
   const pathname = usePathname();
 
-  if (hubId === 'move' && !isAfterYourMoveAllowedPath(pathname)) {
-    return null;
+  if (hubId === 'move') {
+    if (!isAfterYourMoveAllowedPath(pathname)) {
+      return null;
+    }
+    return (
+      <aside
+        className="mb-8 border-t border-border/40 pt-6"
+        aria-label="ConsumerTrust Hub network"
+      >
+        <ConsumerTrustNetworkLinks />
+      </aside>
+    );
   }
 
   const { intro, links } = RELATED_BY_HUB[hubId];
@@ -74,6 +76,9 @@ export function AfterYourMoveModule({ hubId }: { hubId: HubId }) {
           </li>
         ))}
       </ul>
+      <div className="mt-4 pt-3 border-t border-border/50">
+        <ConsumerTrustNetworkLinks />
+      </div>
     </aside>
   );
 }

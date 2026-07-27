@@ -50,7 +50,8 @@ export function buildHubMetadata(
       description: input.description,
       hub,
     }),
-    robots: input.noIndex ? { index: false, follow: false } : undefined,
+    // Class D soft-retire: noindex but keep follow so internal links remain useful.
+    robots: input.noIndex ? { index: false, follow: true } : undefined,
     metadataBase: new URL(SITE_URL),
   };
 }

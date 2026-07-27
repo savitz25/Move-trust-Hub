@@ -8,10 +8,12 @@ import { buildCollectionPageSchema, buildTemplateSchemaGraph } from '@/lib/hub/t
 const TERMS_DESCRIPTION =
   'Terms of service for using Lender Trust Hub directory, calculators, and resources.';
 
+/** Phase 0 Class D: redundant legal — noindex, follow. Prefer /terms-of-service. */
 export const metadata: Metadata = buildHubMetadata('lender', {
   title: 'Terms of Service',
   description: TERMS_DESCRIPTION,
   path: '/terms',
+  noIndex: true,
 });
 
 export default function LenderTermsPage() {
@@ -30,6 +32,13 @@ export default function LenderTermsPage() {
       <SchemaInjector data={schema} />
       <h1 className="text-3xl font-bold tracking-tight">Terms of Service</h1>
       <p className="mt-2 text-sm text-muted-foreground">Effective date: {effectiveDate}</p>
+      <p className="mt-4 text-sm text-muted-foreground">
+        For the network-wide terms, see{' '}
+        <a href="/terms-of-service" className="text-primary underline underline-offset-2">
+          MoveTrustHub Terms of Service
+        </a>
+        .
+      </p>
 
       <div className="mt-10 space-y-8 leading-relaxed text-muted-foreground">
         <section>

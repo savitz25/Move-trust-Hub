@@ -8,10 +8,12 @@ import { buildCollectionPageSchema, buildTemplateSchemaGraph } from '@/lib/hub/t
 const PRIVACY_DESCRIPTION =
   'Privacy policy for Lender Trust Hub — how we collect, use, and protect your information.';
 
+/** Phase 0 Class D: redundant legal — noindex, follow. Prefer /privacy-policy. */
 export const metadata: Metadata = buildHubMetadata('lender', {
   title: 'Privacy Policy',
   description: PRIVACY_DESCRIPTION,
   path: '/privacy',
+  noIndex: true,
 });
 
 export default function LenderPrivacyPage() {
@@ -30,6 +32,13 @@ export default function LenderPrivacyPage() {
       <SchemaInjector data={schema} />
       <h1 className="text-3xl font-bold tracking-tight">Privacy Policy</h1>
       <p className="mt-2 text-sm text-muted-foreground">Effective date: {effectiveDate}</p>
+      <p className="mt-4 text-sm text-muted-foreground">
+        For the network-wide policy, see{' '}
+        <a href="/privacy-policy" className="text-primary underline underline-offset-2">
+          MoveTrustHub Privacy Policy
+        </a>
+        .
+      </p>
 
       <div className="mt-10 space-y-8 leading-relaxed text-muted-foreground">
         <section>

@@ -11,11 +11,16 @@ export type HubIndexDecision = {
   reason: string;
 };
 
+/** Phase 0: empty and near-empty county/cluster pages stay live but noindex,follow. */
 export const MIN_LENDERS_TO_INDEX = 3;
 
 const MIN_PROFILE_DESCRIPTION_LENGTH = 60;
 const MIN_PROFILE_REVIEWS = 25;
 
+/**
+ * Indexability for /lender/local-lenders/{state}/{county|cluster}.
+ * Zero verified lenders (and thin < MIN_LENDERS_TO_INDEX lists) → noindex.
+ */
 export function evaluateLenderClusterIndexability(
   state: string,
   cluster: string

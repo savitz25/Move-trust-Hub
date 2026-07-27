@@ -46,6 +46,7 @@ export async function generateMetadata({
       title: 'Auto Loan Companies',
       description: 'Browse verified auto loan companies by state.',
       path: '/auto-loan-companies',
+      noIndex: true,
     });
   }
 
@@ -58,10 +59,12 @@ export async function generateMetadata({
     stats.avgAprLow
   );
 
+  // Phase 0 Class D: thin auto vertical — noindex, follow
   return buildHubMetadata('lender', {
     title,
     description,
     path: `/auto-loan-companies/${slug}`,
+    noIndex: true,
   });
 }
 

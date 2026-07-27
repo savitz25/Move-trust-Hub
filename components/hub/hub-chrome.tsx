@@ -22,7 +22,8 @@ export async function HubChrome({
 }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <HubFamilyBar activeHub={hubId} />
+      {/* Phase 0: MoveTrustHub primary chrome is moving-only — no Lender/Insurance switcher. */}
+      {hubId !== 'move' ? <HubFamilyBar activeHub={hubId} /> : null}
       <HubNavbar hubId={hubId} />
       <DeferredLegacyWelcomeBanner hubId={hubId} />
       {hubId === 'move' ? (

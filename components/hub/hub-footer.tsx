@@ -3,6 +3,7 @@ import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
 
 import { SITE_EMAIL } from '@/lib/contact';
 import { AfterYourMoveModule } from '@/components/hub/after-your-move-module';
+import { ConsumerTrustNetworkLinks } from '@/components/hub/consumer-trust-network-links';
 import { getHubConfig } from '@/lib/hub/config';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
@@ -118,7 +119,9 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
           </div>
         </div>
       </div>
-      <div className="border-t py-5">
+      <div className="border-t py-5 space-y-3">
+        {/* Soft network line when AfterYourMove is path-gated away (high-intent move pages). */}
+        {hub.id === 'move' ? <ConsumerTrustNetworkLinks /> : null}
         <p className="text-center text-[10px] text-muted-foreground/70 tracking-wide">
           Always verify licensing directly with{' '}
           <a

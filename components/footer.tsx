@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
+import { ConsumerTrustNetworkLinks } from '@/components/hub/consumer-trust-network-links';
 import { SITE_EMAIL } from '@/lib/contact';
 
 /** Single secondary placement of independence / no-lead-fees messaging (site chrome). */
@@ -86,7 +87,8 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t py-5">
+      <div className="border-t py-5 space-y-3">
+        <ConsumerTrustNetworkLinks />
         <p className="text-center text-[10px] text-muted-foreground/70 tracking-wide">
           Always verify licensing directly with{' '}
           <a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">

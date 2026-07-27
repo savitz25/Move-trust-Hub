@@ -31,10 +31,12 @@ const stateGrid = US_STATES.filter((s) => slugSet.has(s.slug)).map((s) => ({
   region: s.region,
 }));
 
+/** Phase 0 Class D: thin side vertical — noindex, follow (content kept live). */
 export const metadata: Metadata = buildHubMetadata('lender', {
   title: buildAutoHubTitle(),
   description: buildAutoHubDescription(autoProviders.length),
   path: '/auto-loan-companies',
+  noIndex: true,
 });
 
 export default function AutoLoanCompaniesHubPage() {

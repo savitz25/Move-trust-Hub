@@ -2,7 +2,6 @@ import type { MetadataRoute } from 'next';
 import { lenders } from '@/lib/lender/mockData';
 import { stateData } from '@/lib/lender/fdic/stateData';
 import { getStateSlugsWithLenders } from '@/lib/lender/mortgage/stateLenders';
-import { getStateSlugsWithAutoProviders } from '@/lib/lender/auto/stateProviders';
 import { getAllClusterParams } from '@/lib/lender/clusters/registry';
 import { shouldIndexLenderCluster } from '@/lib/hub/indexability';
 import { finalizeHubSitemap, hubSitemapEntry } from '@/lib/hub/sitemap-helpers';
@@ -12,17 +11,16 @@ const HUB = 'lender' as const;
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date('2026-07-02');
 
+  // Phase 0: omit Class D URLs (redundant legal, auto-loan thin vertical).
+  // Empty/thin local-lender counties excluded via shouldIndexLenderCluster.
   const staticPaths = [
     '/',
     '/about',
     '/contact',
-    '/privacy',
-    '/terms',
     '/calculators',
     '/compare',
     '/local-lenders',
     '/fdic-insured-banks',
-    '/auto-loan-companies',
     '/resources',
     '/resources/first-time-homebuyer-programs',
     '/resources/how-to-choose-mortgage-lender',
@@ -44,10 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     hubSitemapEntry(HUB, `/local-lenders/${state}`, { lastModified: now, priority: 0.88 })
   );
 
-  const autoStates = getStateSlugsWithAutoProviders().map((state) =>
-    hubSitemapEntry(HUB, `/auto-loan-companies/${state}`, { lastModified: now, priority: 0.8 })
-  );
-
   const clusters = getAllClusterParams()
     .filter(({ state, cluster }) => shouldIndexLenderCluster(state, cluster))
     .map(({ state, cluster }) =>
@@ -66,7 +60,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...fdicStates,
     ...mortgageStates,
-    ...autoStates,
     ...clusters,
     ...profiles,
   ]);

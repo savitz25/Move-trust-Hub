@@ -32,8 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/prescription-drug-list',
     '/about',
     '/contact',
-    '/privacy',
-    '/terms',
+    // Phase 0 Class D: omit /privacy and /terms (noindex; use root /privacy-policy, /terms-of-service)
   ];
 
   const staticRoutes = staticPaths.map((path) =>
