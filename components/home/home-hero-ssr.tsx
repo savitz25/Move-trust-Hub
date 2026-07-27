@@ -9,15 +9,15 @@ export function HomeHeroSsr() {
   return (
     <div className="mx-auto max-w-4xl text-center">
       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0066b8]">
-        Move Trust Hub · Independent directory
+        Move Trust Hub · Independent FMCSA mover directory
       </p>
       {/* Primary LCP element — solid paint, no client island dependency */}
       <h1 className="mt-3 text-balance font-semibold leading-[1.1] tracking-tighter text-[#0A2540] text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem]">
         Where are you moving from and to?
       </h1>
       <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#3d4f63] sm:text-lg">
-        Start a free Move Plan: lock your route, shortlist trusted FMCSA-licensed movers, build a
-        shared inventory, and compare estimates — without lead resellers or paid placements.
+        Plan your interstate or local move: lock your route, shortlist trusted FMCSA-licensed
+        movers, estimate volume, and compare carriers — without lead resellers or paid placements.
       </p>
 
       <ul className="mx-auto mt-5 flex max-w-2xl flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-medium text-[#3d4f63] sm:text-sm">

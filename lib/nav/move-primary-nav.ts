@@ -9,6 +9,7 @@ export const MOVE_PRIMARY_NAV = [
   { href: '/moving-to', label: 'Destinations' },
   ...MOVE_DIRECT_NAV.map((item) => ({ href: item.href, label: item.label })),
   { href: '/resources', label: 'Guides' },
+  { href: '/about/how-we-score-movers', label: 'Trust Center' },
 ] as const;
 
 export type MovePrimaryNavLink = (typeof MOVE_PRIMARY_NAV)[number];

@@ -1,9 +1,12 @@
-/** Canonical header pill shown in nav bars across Move, Lender, and Insurance hubs. */
+/** Generic header pill (finance subpaths). */
 export const HEADER_TRUST_BADGE = 'INDEPENDENT & VERIFIED DIRECTORY';
+
+/** Move hub header — makes moving authority obvious in chrome. */
+export const MOVE_HEADER_TRUST_BADGE = 'INDEPENDENT FMCSA MOVER DIRECTORY';
 
 /** Hero eyebrow — same core message with transparency qualifiers. */
 export const HERO_TRUST_EYEBROW =
-  'INDEPENDENT & VERIFIED DIRECTORY · NO LEAD FEES · NO PAID PLACEMENTS';
+  'INDEPENDENT FMCSA MOVER DIRECTORY · NO LEAD FEES · NO PAID PLACEMENTS';
 
 export const CTA_BROWSE_VERIFIED_MOVERS = 'Browse Verified Movers';
 export const CTA_COMPARE_MOVERS = 'Compare Movers';

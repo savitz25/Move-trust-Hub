@@ -17,7 +17,7 @@ export function Navbar() {
               <TrustHubLogoImage variant="header" priority />
             </span>
           </Link>
-          <HeaderTrustBadge className="hidden xl:flex" />
+          <HeaderTrustBadge moving className="hidden xl:flex" />
         </div>
 
         <MoveDesktopNav />

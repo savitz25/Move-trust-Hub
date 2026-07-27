@@ -101,8 +101,12 @@ export const GUIDES_NAV: NavMegaColumn[] = [
   },
 ];
 
-/** Direct top-bar links (no dropdown). */
+/**
+ * Direct top-bar links (no dropdown).
+ * Order: tools first after Find Movers / Destinations for scannable moving IA.
+ */
 export const MOVE_DIRECT_NAV = [
+  { label: 'Local Movers', href: '/local-movers' },
   { label: 'Calculator', href: '/moving-calculator' },
   { label: 'Verify DOT', href: '/verify-dot' },
 ] as const;

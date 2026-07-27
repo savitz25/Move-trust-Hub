@@ -28,7 +28,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     basePath: '',
     siteName: 'Move Trust Hub',
     shortName: 'Move',
-    tagline: 'Research FMCSA-licensed interstate movers.',
+    tagline: 'Independent FMCSA mover directory — research, compare, verify.',
     logoSrc: TRUST_HUB_LOGO.src,
     headerLogoSrc: TRUST_HUB_LOGO.src,
     logoAlt: TRUST_HUB_LOGO.alt,

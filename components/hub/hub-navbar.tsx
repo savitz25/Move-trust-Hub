@@ -31,7 +31,7 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
             {/* eager but not fetchPriority=high — keep SSR H1 as LCP */}
             <HubLogo hubId={hubId} priority />
           </Link>
-          <HeaderTrustBadge />
+          <HeaderTrustBadge moving={isMoveHub} />
         </div>
 
         {isMoveHub ? (

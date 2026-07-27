@@ -10,10 +10,13 @@ import {
   MOVE_DIRECT_NAV,
 } from '@/lib/nav/move-nav-config';
 
-/** Five-item desktop nav: Find Movers · Destinations · Calculator · Verify DOT · Guides */
+/**
+ * Moving-only desktop nav (no finance hubs).
+ * Find Movers · Destinations · Local Movers · Calculator · Verify DOT · Guides · My Move
+ */
 export function MoveDesktopNav() {
   return (
-    <div className="hidden lg:flex items-center gap-5 text-sm">
+    <div className="hidden lg:flex items-center gap-4 xl:gap-5 text-sm">
       <NavMegaDropdown label="Find Movers" href="/companies" columns={FIND_MOVERS_NAV} panelWidth="sm" />
       <DestinationsMegaMenuLazy />
       {MOVE_DIRECT_NAV.map((link) => (

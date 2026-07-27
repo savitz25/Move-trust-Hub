@@ -114,6 +114,28 @@ export function MoveMobileNav() {
 
             <Link
               prefetch={false}
+              href="/local-movers"
+              className={cn(
+                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-2 mb-1',
+                tapTarget
+              )}
+              onClick={close}
+            >
+              Local Movers by State
+            </Link>
+            <Link
+              prefetch={false}
+              href="/moving-calculator"
+              className={cn(
+                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-2 mb-1',
+                tapTarget
+              )}
+              onClick={close}
+            >
+              Moving Calculator
+            </Link>
+            <Link
+              prefetch={false}
               href="/verify-dot"
               className={cn(
                 'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-3 mb-1',
@@ -122,6 +144,17 @@ export function MoveMobileNav() {
               onClick={close}
             >
               Verify DOT
+            </Link>
+            <Link
+              prefetch={false}
+              href="/about/how-we-score-movers"
+              className={cn(
+                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-3 mb-1',
+                tapTarget
+              )}
+              onClick={close}
+            >
+              Trust Center
             </Link>
 
             <MobileAccordionSection
