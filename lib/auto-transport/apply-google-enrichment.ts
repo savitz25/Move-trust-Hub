@@ -1,18 +1,22 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import type { Company } from '@/types';
-import { computeAutoTransportReputationScore } from '@/data/seed-auto-transport';
+import type { GooglePlacesData } from '@/lib/verification/types';
+import { isDisplayableGooglePlacesRating } from '@/lib/verification/google-places';
 
-type EnrichmentRow = {
+type EnrichmentFileRow = {
   slug: string;
-  overallRating: number | null;
-  reviewCount: number | null;
+  name?: string;
+  /** Legacy mistaken field — industry volume only; never used as Places source of truth */
+  overallRating?: number | null;
+  reviewCount?: number | null;
+  google?: GooglePlacesData | null;
   updatedAt?: string;
 };
 
-let cache: Record<string, EnrichmentRow> | null = null;
+let cache: Record<string, EnrichmentFileRow> | null = null;
 
-function loadEnrichment(): Record<string, EnrichmentRow> {
+function loadEnrichment(): Record<string, EnrichmentFileRow> {
   if (cache) return cache;
   const file = resolve(process.cwd(), 'data/auto-transport-google-enrichment.json');
   if (!existsSync(file)) {
@@ -20,33 +24,46 @@ function loadEnrichment(): Record<string, EnrichmentRow> {
     return cache;
   }
   try {
-    cache = JSON.parse(readFileSync(file, 'utf8')) as Record<string, EnrichmentRow>;
+    cache = JSON.parse(readFileSync(file, 'utf8')) as Record<string, EnrichmentFileRow>;
   } catch {
     cache = {};
   }
   return cache;
 }
 
-/** Merge Google Places ratings onto auto-transport seed companies when present. */
+/**
+ * Attach a committed Google Places snapshot from data/auto-transport-google-enrichment.json
+ * when the company has no displayable Places data yet.
+ *
+ * Policy:
+ *  - NEVER overwrite industry-reported overallRating / reviewCount with Places numbers
+ *  - Places live only on company.googleData
+ *  - Prefer live DB googleData when already displayable
+ */
 export function applyAutoTransportGoogleEnrichment(company: Company): Company {
+  if (isDisplayableGooglePlacesRating(company.googleData)) {
+    return company;
+  }
+
   const row = loadEnrichment()[company.slug];
-  if (!row) return company;
+  const google = row?.google;
+  if (!isDisplayableGooglePlacesRating(google)) {
+    return company;
+  }
 
-  const overallRating =
-    row.overallRating != null && row.overallRating > 0
-      ? row.overallRating
-      : company.overallRating;
-  const reviewCount =
-    row.reviewCount != null && row.reviewCount > 0
-      ? row.reviewCount
-      : company.reviewCount;
-
-  const next: Company = {
+  return {
     ...company,
-    overallRating,
-    reviewCount,
-    lastUpdated: row.updatedAt?.slice(0, 10) ?? company.lastUpdated,
+    googleData: google,
+    // Keep editorial industry fields untouched
+    overallRating: company.overallRating,
+    reviewCount: company.reviewCount,
   };
-  next.reputationScore = computeAutoTransportReputationScore(next);
-  return next;
+}
+
+/** Snapshot for enrich scripts (place_id bootstrap). */
+export function getAutoTransportGoogleFileSnapshot(
+  slug: string
+): GooglePlacesData | null {
+  const row = loadEnrichment()[slug];
+  return isDisplayableGooglePlacesRating(row?.google) ? (row!.google as GooglePlacesData) : null;
 }

@@ -65,7 +65,10 @@ export function isGooglePlacesConfigured(): boolean {
   return Boolean(getGooglePlacesApiKey());
 }
 
-/** True when a snapshot is usable for public profile display. */
+/**
+ * True when a snapshot has enough signal to keep (includes place_id-only rows).
+ * Used for merge/keep-existing so we do not drop a known place_id on a failed re-fetch.
+ */
 export function isUsableGoogleSnapshot(
   data: GooglePlacesData | null | undefined
 ): boolean {
@@ -77,6 +80,23 @@ export function isUsableGoogleSnapshot(
     (data.review_count != null && data.review_count > 0) ||
     (data.review_snippets?.length ?? 0) > 0 ||
     Boolean(data.place_id)
+  );
+}
+
+/**
+ * True when the Google panel should show live stars/count (matches GoogleReviewsSection).
+ * place_id alone is NOT enough — UI would still show “not stored”.
+ * Enrich skip / verify scripts must use this, not place_id-only usable.
+ */
+export function isDisplayableGooglePlacesRating(
+  data: GooglePlacesData | null | undefined
+): boolean {
+  if (!data) return false;
+  const status = data.status ?? 'ok';
+  if (status !== 'ok') return false;
+  return (
+    (data.rating != null && data.rating > 0) ||
+    (data.review_count != null && data.review_count > 0)
   );
 }
 

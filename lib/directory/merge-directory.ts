@@ -19,11 +19,12 @@ function profileRichnessScore(company: Company): number {
 }
 
 function hasVerificationEnrichment(company: Company): boolean {
-  return Boolean(
-    company.googleData?.status === 'ok' ||
-      company.publicScrapeData ||
-      company.googleData?.last_fetched
-  );
+  const g = company.googleData;
+  const displayablePlaces =
+    g?.status === 'ok' &&
+    ((g.rating != null && g.rating > 0) ||
+      (g.review_count != null && g.review_count > 0));
+  return Boolean(displayablePlaces || company.publicScrapeData || g?.last_fetched);
 }
 
 /**

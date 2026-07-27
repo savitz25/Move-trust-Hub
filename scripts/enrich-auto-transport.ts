@@ -3,22 +3,25 @@
  *
  * Phases:
  *  1) Audit classes A/B/C/D → scripts/output/auto-transport-enrichment-audit.json
- *  2) Re-enrich when --confirm (Places + BBB scrape; never invent ratings)
+ *  2) --diagnose → scripts/output/auto-transport-places-diagnosis.json
+ *  3) Re-enrich when --confirm (Places + BBB scrape; never invent ratings)
  *
  * Usage:
- *   npm run enrich:auto-transport
+ *   npm run enrich:auto-transport -- --diagnose
  *   npm run enrich:auto-transport -- --dry-run
- *   npm run enrich:auto-transport -- --confirm --limit=50
- *   npm run enrich:auto-transport -- --slugs=reliable-carriers,sherpa-auto-transport --confirm
- *   npm run enrich:auto-transport -- --include-container --confirm
- *   npm run enrich:auto-transport -- --container-only --confirm
- *   npm run enrich:container -- --confirm
+ *   npm run enrich:auto-transport -- --confirm --force --limit=50
+ *   npm run enrich:auto-transport -- --slugs=sherpa-auto-transport,reliable-carriers --confirm --force
+ *
+ * Production:
+ *   vercel env pull .env.local
+ *   (requires real NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY + GOOGLE_PLACES_API_KEY)
  *
  * Policy:
  *  - Do NOT overwrite industry-reported overall_rating / review_count with Places
  *  - Persist Places in google_data + verification_sources.google
  *  - Prefer website domain match, then name + metro
  *  - Reject wrong-industry matches via Places scoring
+ *  - --force re-fetches even if a stale empty/place_id-only row exists
  */
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { mkdirSync, writeFileSync } from 'fs';
@@ -34,6 +37,7 @@ import {
 } from '../lib/verification/backfill-helpers';
 import {
   fetchGooglePlacesData,
+  isDisplayableGooglePlacesRating,
   isGooglePlacesConfigured,
   isUsableGoogleSnapshot,
   mergeGoogleSnapshots,
@@ -45,11 +49,13 @@ import {
   resolveGoogleDataFromRow,
   resolvePublicScrapeFromRow,
 } from '../lib/verification/resolve-company-row';
+import { getAutoTransportGoogleFileSnapshot } from '../lib/auto-transport/apply-google-enrichment';
 
 loadEnvLocal();
 
 const confirm = process.argv.includes('--confirm');
-const dryRun = process.argv.includes('--dry-run') || !confirm;
+const diagnose = process.argv.includes('--diagnose');
+const dryRun = process.argv.includes('--dry-run') || (!confirm && !diagnose);
 const force = process.argv.includes('--force');
 const containerOnly = process.argv.includes('--container-only');
 const includeContainer =
@@ -79,6 +85,65 @@ const onlySlugs = (() => {
       .filter(Boolean)
   );
 })();
+
+/** Priority order for force re-enrich (Sherpa first). */
+const PRIORITY_SLUGS = [
+  'sherpa-auto-transport',
+  'reliable-carriers',
+  'montway-auto-transport',
+  'intercity-lines',
+  'sgt-auto-transport',
+] as const;
+
+function requireProductionCredentials(mode: 'confirm' | 'diagnose'): {
+  url: string;
+  key: string;
+} {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim() || '';
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() || '';
+  const googleKey = process.env.GOOGLE_PLACES_API_KEY?.trim() || '';
+
+  const urlOk =
+    Boolean(url) &&
+    !url.includes('placeholder') &&
+    !url.includes('<project') &&
+    url.includes('supabase');
+  const keyOk = Boolean(key) && !key.startsWith('<') && key.length > 40;
+  const googleOk =
+    Boolean(googleKey) &&
+    !googleKey.startsWith('<') &&
+    googleKey.length > 20 &&
+    !googleKey.toLowerCase().includes('your-');
+
+  if (mode === 'confirm') {
+    if (!urlOk || !keyOk) {
+      console.error(
+        'FATAL: --confirm requires real NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY.\n' +
+          '  Run: vercel env pull .env.local\n' +
+          '  Placeholders / missing keys cause silent empty production UI.'
+      );
+      process.exit(1);
+    }
+    if (!googleOk) {
+      console.error(
+        'FATAL: --confirm requires real GOOGLE_PLACES_API_KEY.\n' +
+          '  Run: vercel env pull .env.local\n' +
+          '  Without Places API, enrichment cannot write live ratings.'
+      );
+      process.exit(1);
+    }
+  }
+
+  if (mode === 'diagnose' && (!urlOk || !keyOk)) {
+    console.error(
+      'FATAL: --diagnose requires real Supabase credentials to read production rows.\n' +
+        '  Run: vercel env pull .env.local'
+    );
+    process.exit(1);
+  }
+
+  return { url, key };
+}
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
@@ -180,10 +245,10 @@ function companyToInsertRow(c: Company): Record<string, unknown> {
   };
 }
 
-function hasUsableGoogle(row: Partial<DbCompanyRow> | null | undefined): boolean {
+function hasDisplayableGoogle(row: Partial<DbCompanyRow> | null | undefined): boolean {
   if (!row) return false;
   const g = resolveGoogleDataFromRow(row as Record<string, unknown>);
-  return isUsableGoogleSnapshot(g);
+  return isDisplayableGooglePlacesRating(g);
 }
 
 function extractGoogleMeta(row: Partial<DbCompanyRow> | null | undefined): {
@@ -191,9 +256,16 @@ function extractGoogleMeta(row: Partial<DbCompanyRow> | null | undefined): {
   rating: number | null;
   reviewCount: number | null;
   lastFetched: string | null;
+  status: string | null;
 } {
   if (!row) {
-    return { placeId: null, rating: null, reviewCount: null, lastFetched: null };
+    return {
+      placeId: null,
+      rating: null,
+      reviewCount: null,
+      lastFetched: null,
+      status: null,
+    };
   }
   const g = resolveGoogleDataFromRow(row as Record<string, unknown>);
   return {
@@ -201,6 +273,7 @@ function extractGoogleMeta(row: Partial<DbCompanyRow> | null | undefined): {
     rating: g?.status === 'ok' && g.rating != null && g.rating > 0 ? g.rating : null,
     reviewCount: g?.status === 'ok' ? (g.review_count ?? null) : null,
     lastFetched: g?.last_fetched ?? null,
+    status: g?.status ?? null,
   };
 }
 
@@ -236,18 +309,18 @@ function classify(
   seed: Company,
   db: DbCompanyRow | null
 ): { class: ClassCode; reason: string } {
-  const googleOk = hasUsableGoogle(db);
+  const googleOk = hasDisplayableGoogle(db);
   const bbb = extractBbbMeta(db);
   const bbbOk = Boolean(bbb.rating || bbb.url);
-  const industryOk = (seed.overallRating || 0) > 0;
+  const fileSnap = getAutoTransportGoogleFileSnapshot(seed.slug);
 
   if (googleOk && bbbOk) {
-    return { class: 'C', reason: 'complete: Places + BBB present in DB' };
+    return { class: 'C', reason: 'complete: displayable Places + BBB present in DB' };
   }
   if (googleOk && !bbbOk) {
     return { class: 'B', reason: 'Places ok; BBB missing — re-scrape BBB' };
   }
-  // Google missing
+  // Google missing from DB
   if (!db) {
     return {
       class: 'B',
@@ -258,26 +331,44 @@ function classify(
   const vs = parseVerificationSources(db.verification_sources);
   const gCol = parseGoogleData(db.google_data);
   const gSrc = parseGoogleData(vs.google);
+  const gResolved = resolveGoogleDataFromRow(db as Record<string, unknown>);
   const hadFailedAttempt =
     gCol?.status === 'error' ||
     gCol?.status === 'not_found' ||
     gSrc?.status === 'error' ||
     gSrc?.status === 'not_found';
 
-  // Class A: rating columns zeroed but google snapshot exists somewhere malformed
-  const dbRating = Number(db.overall_rating) || 0;
-  if (dbRating <= 0 && industryOk && !googleOk) {
-    // industry is on seed not DB — not A
-  }
-  // If verification_sources has non-ok google but legacy column has ok — hydrate bug
-  if (isUsableGoogleSnapshot(gCol) && !isUsableGoogleSnapshot(gSrc)) {
+  // Class A: displayable Places in DB but UI path would drop it (seed overwrite / mapping)
+  if (isDisplayableGooglePlacesRating(gResolved)) {
     return {
       class: 'A',
-      reason: 'google_data ok but verification_sources.google missing — hydrate/repair',
+      reason: 'DB has displayable Places — if UI empty, read/merge bug',
     };
   }
-  if (isUsableGoogleSnapshot(gSrc) && !isUsableGoogleSnapshot(gCol) && dbRating <= 0) {
-    // mapRow should still resolve via resolveGoogleDataFromRow — not pure A
+
+  // place_id without rating = partial write
+  if (gResolved?.place_id && !isDisplayableGooglePlacesRating(gResolved)) {
+    return {
+      class: 'C',
+      reason: 'partial: place_id present but rating/count null — re-fetch with --force',
+    };
+  }
+
+  // Local JSON has Places but DB does not → prior run never wrote to production
+  if (fileSnap && !googleOk) {
+    return {
+      class: 'B',
+      reason:
+        'file snapshot exists (data/auto-transport-google-enrichment.json) but DB empty — prior write never hit production',
+    };
+  }
+
+  // If verification_sources has non-displayable but column has displayable
+  if (isDisplayableGooglePlacesRating(gCol) && !isDisplayableGooglePlacesRating(gSrc)) {
+    return {
+      class: 'A',
+      reason: 'google_data displayable but verification_sources.google missing — hydrate/repair',
+    };
   }
 
   if (!googleOk && seed.website) {
@@ -320,6 +411,7 @@ function buildAuditRow(
   const b = extractBbbMeta(db);
   const { class: classCode, reason } = classify(seed, db);
   const googleOk = g.rating != null && g.rating > 0;
+  const fileSnap = getAutoTransportGoogleFileSnapshot(seed.slug);
 
   return {
     slug: seed.slug,
@@ -343,9 +435,11 @@ function buildAuditRow(
         : 'places_only'
       : b.rating
         ? 'bbb_only'
-        : 'missing',
+        : fileSnap
+          ? 'file_only_not_in_db'
+          : 'missing',
     lastEnrichedAt: db?.verification_last_synced_at || db?.last_updated || null,
-    lastError: null,
+    lastError: g.status === 'error' || g.status === 'not_found' ? g.status : null,
     profileShowsGoogleNotLoaded: !googleOk,
     class: classCode,
     inSupabase: Boolean(db),
@@ -392,12 +486,20 @@ async function fetchDbBySlugs(
 }
 
 async function main() {
+  if (confirm) {
+    requireProductionCredentials('confirm');
+  }
+  if (diagnose) {
+    requireProductionCredentials('diagnose');
+  }
+
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
   const supabaseOk =
     Boolean(url) &&
     Boolean(key) &&
     !url!.includes('placeholder') &&
+    !url!.includes('<project') &&
     !key!.startsWith('<') &&
     key!.length > 40;
 
@@ -406,12 +508,21 @@ async function main() {
       ? '── Portable container Places + BBB enrichment ──'
       : '── Auto-transport Places + BBB enrichment ──'
   );
-  console.log(`Mode: ${confirm && !dryRun ? 'LIVE WRITE' : 'AUDIT / DRY-RUN (pass --confirm to write)'}`);
+  console.log(
+    `Mode: ${
+      confirm && !dryRun
+        ? 'LIVE WRITE'
+        : diagnose
+          ? 'DIAGNOSE (production DB read)'
+          : 'AUDIT / DRY-RUN (pass --confirm to write)'
+    }`
+  );
   console.log(`Google Places: ${isGooglePlacesConfigured() ? 'configured' : 'MISSING KEY'}`);
   console.log(`Supabase: ${supabaseOk ? 'configured' : 'placeholder/missing (seed-only audit)'}`);
   console.log(
     `Scope: ${containerOnly ? 'container-only' : includeContainer ? 'auto+container' : 'auto-only'}`
   );
+  console.log(`Force: ${force}`);
   console.log(`Limit: ${limit}`);
   if (onlySlugs) console.log(`Slugs filter: ${[...onlySlugs].join(', ')}`);
   console.log('');
@@ -451,10 +562,11 @@ async function main() {
     JSON.stringify(
       {
         generatedAt: new Date().toISOString(),
-        mode: confirm && !dryRun ? 'confirm' : 'dry-run',
+        mode: confirm && !dryRun ? 'confirm' : diagnose ? 'diagnose' : 'dry-run',
         supabaseConfigured: supabaseOk,
         googlePlacesConfigured: isGooglePlacesConfigured(),
         includeContainer,
+        force,
         counts,
         total: auditRows.length,
         rows: auditRows,
@@ -464,13 +576,76 @@ async function main() {
     )
   );
 
+  // Phase 0 diagnosis artifact (always when --diagnose or as side output on audit)
+  const diagnosisPath = resolve(outDir, 'auto-transport-places-diagnosis.json');
+  const diagnosis = {
+    generatedAt: new Date().toISOString(),
+    rootCause: !supabaseOk
+      ? 'Class B / WRITE NEVER HAPPENED: local env has placeholder Supabase + missing GOOGLE_PLACES_API_KEY. Prior enrich runs wrote data/auto-transport-google-enrichment.json for some brands but did not persist to production verification_sources.google. applyAutoTransportGoogleEnrichment previously only overwrote industry ratings and never attached googleData — UI Google panel stayed empty even when file snapshots existed.'
+      : counts.A > 0
+        ? 'Class A: DB has displayable Places for some slugs — investigate merge path.'
+        : counts.B > 0
+          ? 'Class B: DB lacks displayable Places for most auto brands — re-run --confirm --force against production.'
+          : 'See per-slug rows.',
+    env: {
+      supabaseConfigured: supabaseOk,
+      googlePlacesConfigured: isGooglePlacesConfigured(),
+      note: 'Production write requires vercel env pull .env.local before --confirm',
+    },
+    counts,
+    perSlug: auditRows.map((r) => {
+      const file = getAutoTransportGoogleFileSnapshot(r.slug);
+      return {
+        slug: r.slug,
+        class: r.class,
+        classReason: r.classReason,
+        inSupabase: r.inSupabase,
+        db: {
+          google_place_id: r.google_place_id,
+          placesRating: r.placesRating,
+          placesReviewCount: r.placesReviewCount,
+          lastPlacesSyncAt: r.lastPlacesSyncAt,
+          industryRating: r.industryRating,
+          industryReviewVolume: r.industryReviewVolume,
+          bbb_rating: r.bbb_rating,
+          lastEnrichedAt: r.lastEnrichedAt,
+          enrichmentStatus: r.enrichmentStatus,
+        },
+        fileSnapshot: file
+          ? {
+              rating: file.rating,
+              review_count: file.review_count,
+              place_id: file.place_id,
+              last_fetched: file.last_fetched,
+            }
+          : null,
+        uiExpectation: r.placesRating
+          ? 'Google panel should show stars'
+          : file
+            ? 'DB empty but file has Places — hydrate via applyAutoTransportGoogleEnrichment until DB write'
+            : 'Google panel: not stored yet',
+      };
+    }),
+  };
+  writeFileSync(diagnosisPath, JSON.stringify(diagnosis, null, 2));
+
   console.log(`Targets: ${auditRows.length}`);
   console.log(`Class A (DB has data, display/mapping issue): ${counts.A}`);
   console.log(`Class B (needs re-enrich / matchable): ${counts.B}`);
   console.log(`Class C (complete or honest empty): ${counts.C}`);
   console.log(`Class D (likely lost on save / never written): ${counts.D}`);
   console.log(`Audit: ${auditPath}`);
+  console.log(`Diagnosis: ${diagnosisPath}`);
+  console.log(`Root cause: ${diagnosis.rootCause.slice(0, 200)}…`);
   console.log('');
+
+  if (diagnose && !confirm) {
+    console.log('Diagnose complete. Fix root cause, then:');
+    console.log(
+      '  npm run enrich:auto-transport -- --slugs=sherpa-auto-transport,reliable-carriers,montway-auto-transport --confirm --force'
+    );
+    return;
+  }
 
   if (!confirm || dryRun) {
     console.log('Dry-run only. Re-run with --confirm to upsert + write Places/BBB.');
@@ -478,9 +653,17 @@ async function main() {
       'Production:\n' +
         '  1) vercel env pull .env.local\n' +
         '  2) ensure GOOGLE_PLACES_API_KEY + SUPABASE_SERVICE_ROLE_KEY are set\n' +
-        '  3) npm run enrich:auto-transport -- --slugs=reliable-carriers,sherpa-auto-transport --confirm\n' +
-        '  4) npm run enrich:auto-transport -- --confirm --limit=50'
+        '  3) npm run enrich:auto-transport -- --diagnose\n' +
+        '  4) npm run enrich:auto-transport -- --slugs=sherpa-auto-transport,reliable-carriers,montway-auto-transport --confirm --force\n' +
+        '  5) npm run enrich:auto-transport -- --confirm --force --limit=50\n' +
+        '  6) npm run verify:auto-transport-places'
     );
+    if (!supabaseOk || !isGooglePlacesConfigured()) {
+      console.error(
+        '\nWARNING: credentials incomplete — any prior --confirm without real keys was a no-op for production.'
+      );
+      if (confirm) process.exit(1);
+    }
     return;
   }
 
@@ -491,13 +674,25 @@ async function main() {
     process.exit(1);
   }
 
-  // Prioritize priority slugs + class B/D/A
-  const priority = new Set(['reliable-carriers', 'sherpa-auto-transport']);
+  // Priority order: Sherpa → Reliable → Montway → Intercity → rest
+  const priorityRank = new Map(PRIORITY_SLUGS.map((s, i) => [s, i]));
   const enrichQueue = auditRows
-    .filter((r) => force || r.class === 'A' || r.class === 'B' || r.class === 'D' || priority.has(r.slug))
+    .filter(
+      (r) =>
+        force ||
+        r.class === 'A' ||
+        r.class === 'B' ||
+        r.class === 'D' ||
+        priorityRank.has(r.slug as (typeof PRIORITY_SLUGS)[number]) ||
+        !hasDisplayableGoogle(dbMap.get(r.slug) ?? null)
+    )
     .sort((a, b) => {
-      const ap = priority.has(a.slug) ? 0 : 1;
-      const bp = priority.has(b.slug) ? 0 : 1;
+      const ap = priorityRank.has(a.slug as (typeof PRIORITY_SLUGS)[number])
+        ? (priorityRank.get(a.slug) ?? 99)
+        : 100;
+      const bp = priorityRank.has(b.slug as (typeof PRIORITY_SLUGS)[number])
+        ? (priorityRank.get(b.slug) ?? 99)
+        : 100;
       if (ap !== bp) return ap - bp;
       return a.slug.localeCompare(b.slug);
     })
@@ -530,6 +725,8 @@ async function main() {
       : 'none';
     const bbbBefore = audit.bbb_rating || 'none';
 
+    let enrichmentStatus: 'success' | 'no_match' | 'error' | 'kept' | 'partial' =
+      'no_match';
     try {
       // Ensure DB row
       let db = dbMap.get(audit.slug) ?? null;
@@ -580,6 +777,14 @@ async function main() {
           parseGoogleData(sourcesNow.google),
           parseGoogleData(db?.google_data)
         ) ?? null;
+      // Bootstrap from committed file snapshot when DB empty (never invents — prior API fetch only)
+      const fileSnap = getAutoTransportGoogleFileSnapshot(audit.slug);
+      if (!isDisplayableGooglePlacesRating(googleExisting) && fileSnap) {
+        googleExisting = mergeGoogleSnapshots(googleExisting, fileSnap);
+        console.log(
+          `  google: bootstrapped place_id from file snapshot (${fileSnap.place_id})`
+        );
+      }
       let publicScrapeExisting =
         parsePublicScrapeData(sourcesNow.public_scrape) ||
         parsePublicScrapeData(db?.public_scrape_data);
@@ -591,7 +796,7 @@ async function main() {
       const fmcsaLegal = seed.fmcsaLegalName || name;
 
       // Class A: repair sources from existing column
-      if (audit.class === 'A' && isUsableGoogleSnapshot(googleExisting)) {
+      if (audit.class === 'A' && isDisplayableGooglePlacesRating(googleExisting)) {
         const nextSources: VerificationSources = {
           ...sourcesNow,
           google: googleExisting!,
@@ -599,10 +804,11 @@ async function main() {
         };
         patch.verification_sources = nextSources;
         patch.google_data = googleExisting;
+        enrichmentStatus = 'kept';
         console.log('  class A: repaired verification_sources from google_data');
       }
 
-      // Google Places
+      // Google Places — skip only when displayable rating exists (unless --force)
       await sleep(delayMs);
       const businessCategory =
         group === 'auto'
@@ -610,21 +816,48 @@ async function main() {
           : 'portable storage container moving';
 
       let googleIncoming: GooglePlacesData | null = null;
-      if (isGooglePlacesConfigured() && (force || !isUsableGoogleSnapshot(googleExisting))) {
+      const needsPlacesFetch =
+        force || !isDisplayableGooglePlacesRating(googleExisting);
+      if (isGooglePlacesConfigured() && needsPlacesFetch) {
+        console.log(
+          `  google: query name="${name}" legal="${fmcsaLegal}" hq="${headquarters}" website="${website || '—'}" placeId=${googleExisting?.place_id || '—'}`
+        );
         googleIncoming = await fetchGooglePlacesData({
           legalName: fmcsaLegal,
           dbaName: name !== fmcsaLegal ? name : null,
           headquarters,
           phone: db?.phone || null,
-          placeId: googleExisting?.place_id || null,
+          website: website || null,
+          placeId: force ? null : googleExisting?.place_id || null,
+          // When force, still try known place_id first via second pass below if search fails
           businessCategory,
         });
+        // If force cleared placeId and search failed, retry details by known place_id
+        if (
+          force &&
+          !isDisplayableGooglePlacesRating(googleIncoming) &&
+          (googleExisting?.place_id || fileSnap?.place_id)
+        ) {
+          const pid = googleExisting?.place_id || fileSnap?.place_id || null;
+          if (pid) {
+            console.log(`  google: force retry details place_id=${pid}`);
+            googleIncoming = await fetchGooglePlacesData({
+              legalName: fmcsaLegal,
+              dbaName: name !== fmcsaLegal ? name : null,
+              headquarters,
+              placeId: pid,
+              website: website || null,
+              businessCategory,
+            });
+          }
+        }
         const googleMerged = mergeGoogleSnapshots(googleExisting, googleIncoming);
-        if (isUsableGoogleSnapshot(googleIncoming)) {
+        if (isDisplayableGooglePlacesRating(googleIncoming)) {
           console.log(
             `  google: ok rating=${googleIncoming.rating} reviews=${googleIncoming.review_count} place=${googleIncoming.place_id}`
           );
           googleExisting = googleMerged;
+          enrichmentStatus = 'success';
           const nextSources: VerificationSources = {
             ...sourcesNow,
             google: googleMerged!,
@@ -642,18 +875,47 @@ async function main() {
           }
           // NEVER overwrite industry editorial rating/volume
         } else {
+          enrichmentStatus =
+            googleIncoming.status === 'error' ? 'error' : 'no_match';
           console.log(
             `  google: ${googleIncoming.status}${
               googleIncoming.error ? `: ${googleIncoming.error.slice(0, 80)}` : ''
             }`
           );
+          // Persist no_match / error so UI is honest (not silent skip)
+          if (googleIncoming.status === 'not_found' || googleIncoming.status === 'error') {
+            const nextSources: VerificationSources = {
+              ...sourcesNow,
+              google: isDisplayableGooglePlacesRating(googleExisting)
+                ? googleExisting!
+                : googleIncoming,
+              ...(publicScrapeExisting ? { public_scrape: publicScrapeExisting } : {}),
+            };
+            patch.verification_sources = nextSources;
+            if (!isDisplayableGooglePlacesRating(googleExisting)) {
+              patch.google_data = googleIncoming;
+            }
+          }
         }
-      } else if (isUsableGoogleSnapshot(googleExisting)) {
+      } else if (isDisplayableGooglePlacesRating(googleExisting)) {
+        enrichmentStatus = 'kept';
         console.log(
           `  google: keep existing ${googleExisting!.rating}★ / ${googleExisting!.review_count}`
         );
+        // Still write file bootstrap / ensure verification_sources if only file had it
+        if (!hasDisplayableGoogle(db)) {
+          const nextSources: VerificationSources = {
+            ...sourcesNow,
+            google: googleExisting!,
+            ...(publicScrapeExisting ? { public_scrape: publicScrapeExisting } : {}),
+          };
+          patch.verification_sources = nextSources;
+          patch.google_data = googleExisting;
+          console.log('  google: writing file/bootstrap snapshot to DB');
+        }
       } else {
-        console.log('  google: skipped (no API key)');
+        console.error('  google: FATAL skipped (no API key) — should have exited earlier');
+        process.exit(1);
       }
 
       // BBB
@@ -746,11 +1008,30 @@ async function main() {
         }
         updated++;
         console.log(`  saved: ${Object.keys(patch).join(', ')}`);
+
+        // Re-read row and assert displayable Places or honest no_match
+        const reRead = await fetchDbBySlugs(admin, [audit.slug]);
+        const afterRow = reRead.get(audit.slug);
+        const afterMeta = extractGoogleMeta(afterRow);
+        if (isDisplayableGooglePlacesRating(resolveGoogleDataFromRow((afterRow ?? {}) as Record<string, unknown>))) {
+          console.log(
+            `  assert: ok re-read places=${afterMeta.rating}★ / ${afterMeta.reviewCount}`
+          );
+          enrichmentStatus = 'success';
+        } else if (enrichmentStatus === 'success') {
+          throw new Error(
+            `write claimed success but re-read has no displayable Places for ${audit.slug}`
+          );
+        } else {
+          console.log(
+            `  assert: enrichmentStatus=${enrichmentStatus} places still empty after write (honest)`
+          );
+        }
       } else {
         console.log('  no patch');
       }
 
-      const placesAfter = isUsableGoogleSnapshot(googleExisting)
+      const placesAfter = isDisplayableGooglePlacesRating(googleExisting)
         ? `${googleExisting!.rating}★ / ${googleExisting!.review_count ?? 0}`
         : googleIncoming
           ? `${googleIncoming.status}`
@@ -764,7 +1045,7 @@ async function main() {
         placesAfter,
         bbbBefore,
         bbbAfter,
-        status: isUsableGoogleSnapshot(googleExisting) ? 'ok' : 'partial',
+        status: enrichmentStatus,
       });
     } catch (err) {
       errors++;
