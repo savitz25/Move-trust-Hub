@@ -127,17 +127,17 @@ export const LENDER_SECTION_PRESETS: Partial<Record<HubSectionPreset['section'],
   resources: {
     hub: 'lender',
     section: 'resources',
-    eyebrow: 'Lender Trust Hub · Guides',
-    title: 'Mortgage lender resources & guides',
+    eyebrow: 'Lender Trust Hub · Decision Center',
+    title: 'Your Home Financing Decision Center (2026)',
     description:
-      'Independent guides on NMLS verification, lender comparison, and home financing decisions. Educational content only — verify licensing through NMLS Consumer Access.',
+      'Buying a home or refinancing? Free calculators, NMLS verification guidance, and independent lender research — no paid placements, no lead fees.',
     primaryCta: {
       href: hubPath('lender', '/resources'),
-      label: 'Browse all guides',
+      label: 'Open Decision Center',
     },
     secondaryCta: {
-      href: hubPath('lender', '/local-lenders'),
-      label: 'Lender directory',
+      href: hubPath('lender', '/calculators'),
+      label: 'Mortgage calculators',
     },
     links: [
       {
@@ -155,8 +155,8 @@ export const LENDER_SECTION_PRESETS: Partial<Record<HubSectionPreset['section'],
         label: 'Side-by-side lender comparison',
       },
       {
-        href: hubPath('lender', '/about#nmls'),
-        label: 'NMLS verification guide',
+        href: hubPath('lender', '/about'),
+        label: 'NMLS verification & methodology',
       },
     ],
     faq: [
