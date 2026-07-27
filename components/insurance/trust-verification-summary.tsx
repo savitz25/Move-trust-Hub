@@ -7,6 +7,12 @@ import type { EnrichedProvider } from '@/lib/insurance/enrichment/merge';
 import type { PublicScrapeData } from '@/lib/verification/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/insurance/ui/card';
 import { Badge } from '@/components/insurance/ui/badge';
+import { TrustScoreBreakdownPanel } from '@/components/insurance/cms/trust-score-breakdown';
+import { computeProviderTrustScoreBreakdown } from '@/lib/insurance/enrichment/trust-score';
+import {
+  providerIsMedicareSpecialist,
+  resolveGovernmentVerification,
+} from '@/lib/insurance/cms/resolve-government-verification';
 
 function enrichmentToBbbData(provider: EnrichedProvider): PublicScrapeData | null {
   const bbb = provider.enrichment?.enrichment_json.bbb;
@@ -39,6 +45,18 @@ export function TrustVerificationSummary({ provider }: { provider: EnrichedProvi
   const hasGoogle = google?.status === 'ok' && google.rating != null;
   const hasBbb = Boolean(bbbData);
   const hasTrustScore = provider.trust_score != null;
+  const gov = resolveGovernmentVerification(provider);
+  const breakdown = computeProviderTrustScoreBreakdown({
+    googleRating: provider.google_rating ?? google?.rating,
+    googleReviewCount: provider.google_review_count ?? google?.review_count,
+    bbbRating: provider.bbb_rating,
+    bbbAccredited: provider.bbb_accredited,
+    isVerified: provider.is_verified,
+    yearsInBusiness: provider.years_in_business,
+    cmsParticipation: gov.cmsParticipation,
+    hasNpi: Boolean(gov.npi),
+    isMedicareSpecialist: providerIsMedicareSpecialist(provider),
+  });
 
   if (!hasGoogle && !hasBbb && !hasTrustScore) {
     return null;
@@ -68,15 +86,38 @@ export function TrustVerificationSummary({ provider }: { provider: EnrichedProvi
         </CardHeader>
         <CardContent className="space-y-5 text-sm">
           {hasTrustScore && (
-            <div className="rounded-lg border bg-muted/30 p-4">
-              <p className="text-xs text-muted-foreground uppercase tracking-wide">Trust Score</p>
-              <p className="text-2xl font-bold tabular-nums mt-1">
-                {provider.trust_score}
-                <span className="text-base font-normal text-muted-foreground">/100</span>
-              </p>
-              <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                Composite score from Google reviews, BBB standing, license verification, and tenure.
-                Not influenced by paid placement.
+            <div className="rounded-lg border bg-muted/30 p-4 space-y-4">
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide">Trust Score</p>
+                <p className="text-2xl font-bold tabular-nums mt-1">
+                  {provider.trust_score}
+                  <span className="text-base font-normal text-muted-foreground">/100</span>
+                </p>
+                <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                  Composite from Google reviews, BBB standing, license verification, tenure, and
+                  Government Standing (CMS-related signals). Not influenced by paid placement.
+                </p>
+              </div>
+              <TrustScoreBreakdownPanel
+                breakdown={{
+                  ...breakdown,
+                  // Display stored score when present; factors explain methodology
+                  total: provider.trust_score ?? breakdown.total,
+                }}
+              />
+              <p className="text-[11px] text-muted-foreground">
+                Government Standing sub-score:{' '}
+                <span className="font-semibold text-foreground">
+                  {breakdown.governmentStanding}/100
+                </span>
+                . See the{' '}
+                <Link
+                  href="/insurance/data/plan-complaint-index"
+                  className="text-primary hover:underline"
+                >
+                  Plan Complaint Index
+                </Link>{' '}
+                for CMS complaint-rate context.
               </p>
             </div>
           )}

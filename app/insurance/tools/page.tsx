@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Calculator, ClipboardCheck, Pill, ShieldCheck, Wrench } from 'lucide-react';
+import { BarChart3, Calculator, ClipboardCheck, Pill, ShieldCheck, Wrench } from 'lucide-react';
 import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { Card, CardContent } from '@/components/insurance/ui/card';
 
@@ -57,6 +57,13 @@ const TOOLS = [
     title: 'Prescription drug list',
     description:
       'Build a private list of your medications with strength and dosage. Email or print for visits and plan reviews.',
+  },
+  {
+    href: '/insurance/data/plan-complaint-index',
+    icon: BarChart3,
+    title: 'Medicare Plan Complaint Index',
+    description:
+      'Editorial rankings of MA/Part D contracts by CMS complaints per 1,000 enrollees — with transparent methodology.',
   },
 ] as const;
 

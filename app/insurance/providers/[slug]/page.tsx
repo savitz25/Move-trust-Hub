@@ -25,6 +25,8 @@ import { LeadForm } from '@/components/insurance/lead-form';
 import { ReviewForm } from '@/components/insurance/review-form';
 import { StarRating } from '@/components/insurance/star-rating';
 import { TrustVerificationSummary } from '@/components/insurance/trust-verification-summary';
+import { GovernmentVerificationPanel } from '@/components/insurance/cms/government-verification-panel';
+import { resolveGovernmentVerification } from '@/lib/insurance/cms/resolve-government-verification';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
 import { Badge } from '@/components/insurance/ui/badge';
@@ -72,6 +74,7 @@ export default async function ProviderPage({ params }: ProviderPageProps) {
   const breakdown = getRatingBreakdown(reviews);
   const totalBreakdown = Object.values(breakdown).reduce((a, b) => a + b, 0) || 1;
   const licenseUrl = getProviderLicenseUrl(provider);
+  const governmentVerification = resolveGovernmentVerification(provider);
 
   const suitsRelocating =
     provider.specialties.includes('Relocation Experienced') ||
@@ -158,6 +161,8 @@ export default async function ProviderPage({ params }: ProviderPageProps) {
             )}
 
             <TrustVerificationSummary provider={provider} />
+
+            <GovernmentVerificationPanel data={governmentVerification} />
 
             <section>
               <h2 className="text-xl font-semibold mb-4">License information</h2>
