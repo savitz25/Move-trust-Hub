@@ -112,25 +112,25 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
 
   return (
     <div className="min-h-[60vh]">
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-slate-800/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white">
+      {/* Hero — light, high-contrast (avoid heavy dark glory band) */}
+      <section className="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-white via-slate-50 to-teal-50/40">
         <div
-          className="pointer-events-none absolute inset-0 opacity-30"
+          className="pointer-events-none absolute inset-0"
           aria-hidden
           style={{
             backgroundImage:
-              'radial-gradient(circle at 20% 20%, rgba(45,212,191,0.25), transparent 40%), radial-gradient(circle at 80% 0%, rgba(251,113,133,0.18), transparent 35%)',
+              'radial-gradient(ellipse 80% 60% at 15% 0%, rgba(20,184,166,0.12), transparent 55%), radial-gradient(ellipse 60% 50% at 90% 10%, rgba(251,146,60,0.08), transparent 50%), radial-gradient(circle at 50% 100%, rgba(241,245,249,0.9), transparent 45%)',
           }}
         />
         <div className="container relative mx-auto px-4 py-12 md:py-16 lg:py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-teal-300/90">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-teal-700">
               Insurance Trust Hub · {hubs.length} markets · {stateCount} states
             </p>
-            <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+            <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
               Find the Right Insurance Help for Where You Live
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-pretty text-base text-slate-300 md:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-pretty text-base text-slate-600 md:text-lg">
               Tell us where you live and what you&apos;re trying to protect. We&apos;ll show you the
               best path — verified agents, no paid placement.
             </p>
@@ -139,7 +139,7 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
           {/* Sticky search stack */}
           <div className="mx-auto mt-8 max-w-2xl sticky top-16 z-20">
             <form
-              className="rounded-2xl border border-white/10 bg-white/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-md"
+              className="rounded-2xl border border-slate-200/90 bg-white p-2 shadow-lg shadow-slate-200/80 ring-1 ring-slate-100"
               onSubmit={(e) => e.preventDefault()}
               role="search"
             >
@@ -160,7 +160,7 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
                   }}
                   className="h-12 w-full bg-transparent text-base text-slate-900 placeholder:text-slate-400 focus:outline-none"
                 />
-                <span className="mr-1 hidden items-center gap-1.5 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-medium text-white sm:inline-flex">
+                <span className="mr-1 hidden items-center gap-1.5 rounded-xl bg-teal-600 px-4 py-2.5 text-sm font-medium text-white sm:inline-flex">
                   <Search className="h-4 w-4" aria-hidden />
                   Search
                 </span>
@@ -170,7 +170,7 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
 
           {/* Life-event chips */}
           <div className="mx-auto mt-8 max-w-4xl">
-            <p className="mb-3 text-center text-xs font-medium uppercase tracking-wider text-slate-400">
+            <p className="mb-3 text-center text-xs font-medium uppercase tracking-wider text-slate-500">
               What brings you here?
             </p>
             <div
@@ -189,8 +189,8 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
                     className={cn(
                       'inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-sm font-medium transition-all duration-200 motion-reduce:transition-none',
                       active
-                        ? 'border-teal-400 bg-teal-400 text-slate-950 shadow-lg shadow-teal-500/25'
-                        : 'border-white/15 bg-white/5 text-slate-100 hover:border-teal-400/50 hover:bg-white/10'
+                        ? 'border-teal-600 bg-teal-600 text-white shadow-md shadow-teal-600/20'
+                        : 'border-slate-200 bg-white text-slate-700 shadow-sm hover:border-teal-300 hover:bg-teal-50 hover:text-teal-900'
                     )}
                     aria-pressed={active}
                   >
@@ -219,8 +219,8 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
                     className={cn(
                       'rounded-lg px-2.5 py-1 text-xs font-medium transition-colors',
                       active
-                        ? 'bg-rose-400/90 text-slate-950'
-                        : 'bg-white/5 text-slate-300 hover:bg-white/10'
+                        ? 'bg-rose-500 text-white'
+                        : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50 hover:text-slate-900'
                     )}
                     aria-pressed={active}
                   >
@@ -234,14 +234,14 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
           {/* Personalized summary panel */}
           {personalized && (
             <div
-              className="mx-auto mt-8 max-w-2xl animate-in fade-in slide-in-from-bottom-2 rounded-2xl border border-teal-400/30 bg-teal-950/40 p-4 text-left backdrop-blur-sm md:p-5"
+              className="mx-auto mt-8 max-w-2xl animate-in fade-in slide-in-from-bottom-2 rounded-2xl border border-teal-200 bg-white p-4 text-left shadow-sm ring-1 ring-teal-100 md:p-5"
               role="status"
               aria-live="polite"
             >
               <div className="flex items-start gap-3">
-                <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-teal-300" aria-hidden />
+                <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-teal-600" aria-hidden />
                 <div>
-                  <p className="text-sm font-semibold text-teal-50">
+                  <p className="text-sm font-semibold text-slate-900">
                     {filtered.length === 0
                       ? 'No exact market match yet — try a nearby city or browse featured hubs'
                       : locationLabel
@@ -249,13 +249,13 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
                         : `We found ${filtered.length} matching market${filtered.length === 1 ? '' : 's'}`}
                   </p>
                   {topCoverage.length > 0 && filtered.length > 0 && (
-                    <p className="mt-1 text-sm text-teal-100/80">
+                    <p className="mt-1 text-sm text-slate-600">
                       Most relevant:{' '}
-                      <span className="font-medium text-white">{topCoverage.join(' · ')}</span>
+                      <span className="font-medium text-teal-800">{topCoverage.join(' · ')}</span>
                     </p>
                   )}
                   {intent && (
-                    <p className="mt-1 text-xs text-teal-200/70">
+                    <p className="mt-1 text-xs text-slate-500">
                       Path:{' '}
                       {LIFE_INTENTS.find((i) => i.id === intent)?.description ?? intent}
                     </p>
