@@ -113,7 +113,7 @@ export default async function CityDestinationPage({ params }: CityPageProps) {
                   </p>
                 )}
                 <Button asChild variant="outline" size="sm" className="mt-4">
-                  <Link href="/tools/cost-estimator">Use cost estimator</Link>
+                  <Link href="/tools/cost-estimator">Cost &amp; Coverage Planner</Link>
                 </Button>
               </CardContent>
             </Card>
