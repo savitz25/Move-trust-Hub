@@ -42,15 +42,15 @@ export default function PlanComplaintIndexPage() {
             Last synced <strong className="font-semibold text-slate-800">{syncedLabel}</strong>
           </p>
           <p className="mt-4 text-sm text-slate-500">
-            <Link href="/insurance/tools" className="font-medium text-teal-700 hover:underline">
+            <Link href="/tools" className="font-medium text-teal-700 hover:underline">
               Tools
             </Link>
             {' · '}
-            <Link href="/insurance/hubs/medicare" className="font-medium text-teal-700 hover:underline">
+            <Link href="/hubs/medicare" className="font-medium text-teal-700 hover:underline">
               Medicare hubs
             </Link>
             {' · '}
-            <Link href="/insurance/resources" className="font-medium text-teal-700 hover:underline">
+            <Link href="/resources" className="font-medium text-teal-700 hover:underline">
               Guides
             </Link>
           </p>

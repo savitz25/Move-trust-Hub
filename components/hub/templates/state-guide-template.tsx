@@ -26,7 +26,7 @@ export function StateGuideTemplate({ hub, state, children }: StateGuideTemplateP
   });
   const directoryHref =
     hub === 'insurance'
-      ? `/insurance/directory?state=${state.code ?? state.slug}`
+      ? `/directory?state=${state.code ?? state.slug}`
       : `/lender/local-lenders/${state.slug}`;
 
   return (

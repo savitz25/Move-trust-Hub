@@ -210,7 +210,7 @@ export function toHubCardData(hub: InsuranceHub): HubCardData {
     priority: hub.priority,
     tags: deriveMarketTags(hub),
     coverage: coverageRelevance(hub),
-    href: `/insurance/hubs/${hub.stateSlug}/${hub.slug}`,
+    href: `/hubs/${hub.stateSlug}/${hub.slug}`,
     agentBand: densityLabel,
     zipCodes: hub.zipCodes,
     searchBlob:

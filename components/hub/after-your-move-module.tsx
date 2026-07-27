@@ -11,7 +11,7 @@ type RelatedLink = {
 
 /**
  * Sister-directory links for finance subpaths only.
- * MoveTrustHub never shows a mid-footer finance CTA module — network note is footer-bottom only.
+ * InsuranceTrustHub: internal tools only — no MoveTrustHub domain links.
  */
 const RELATED_BY_HUB: Record<Exclude<HubId, 'move'>, { intro: string; links: RelatedLink[] }> = {
   lender: {
@@ -24,10 +24,11 @@ const RELATED_BY_HUB: Record<Exclude<HubId, 'move'>, { intro: string; links: Rel
   },
   insurance: {
     intro:
-      'Related independent research when coverage changes with a move — same no paid placements approach.',
+      'Research tools and guides on InsuranceTrustHub — independent, no paid placements.',
     links: [
-      { href: 'https://www.movetrusthub.com/companies', label: 'Find movers on MoveTrustHub' },
-      { href: 'https://www.movetrusthub.com/resources', label: 'Moving guides' },
+      { href: hubPath('insurance', '/tools'), label: 'Insurance tools' },
+      { href: hubPath('insurance', '/data/plan-complaint-index'), label: 'Plan Complaint Index' },
+      { href: hubPath('insurance', '/about'), label: 'How we verify agents' },
     ],
   },
 };
@@ -46,9 +47,11 @@ export function AfterYourMoveModule({ hubId }: { hubId: HubId }) {
   return (
     <aside
       className="mb-8 rounded-lg border border-border/50 bg-muted/15 px-4 py-4 sm:px-5"
-      aria-label="Related independent directories"
+      aria-label="Related resources"
     >
-      <h2 className="text-sm font-semibold text-foreground">Related independent directories</h2>
+      <h2 className="text-sm font-semibold text-foreground">
+        {hubId === 'insurance' ? 'Research on InsuranceTrustHub' : 'Related independent directories'}
+      </h2>
       <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed max-w-2xl">{intro}</p>
       <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
         {links.map((link) => (

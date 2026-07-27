@@ -50,13 +50,13 @@ export default async function StateDestinationPage({ params }: StatePageProps) {
       <section>
         <div className="mb-6 flex items-end justify-between gap-4">
           <h2 className="text-2xl font-semibold">Cities in {dest.name}</h2>
-          <Link href="/insurance/destinations" className="text-sm text-primary hover:underline">
+          <Link href="/destinations" className="text-sm text-primary hover:underline">
             All destinations
           </Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {dest.cities.map((city) => (
-            <Link key={city.slug} href={`/insurance/destinations/${dest.slug}/${city.slug}`}>
+            <Link key={city.slug} href={`/destinations/${dest.slug}/${city.slug}`}>
               <Card className="h-full transition-shadow hover:shadow-md">
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export default async function StateDestinationPage({ params }: StatePageProps) {
         {providers.length === 0 ? (
           <p className="text-sm text-muted-foreground">
             No agencies listed yet.{' '}
-            <Link href="/insurance/directory" className="text-primary hover:underline">
+            <Link href="/directory" className="text-primary hover:underline">
               Browse the full directory
             </Link>
             .

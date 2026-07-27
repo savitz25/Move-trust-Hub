@@ -203,7 +203,7 @@ export default async function ProviderPage({ params }: ProviderPageProps) {
                       {provider.zip ? ` ${provider.zip}` : ''}
                     </p>
                     <Link
-                      href={`/insurance/directory?state=${provider.state}&city=${encodeURIComponent(provider.city)}`}
+                      href={`/directory?state=${provider.state}&city=${encodeURIComponent(provider.city)}`}
                       className="mt-2 inline-block text-sm text-primary hover:underline"
                     >
                       More agencies in {provider.city} →

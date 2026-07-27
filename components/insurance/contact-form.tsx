@@ -121,7 +121,7 @@ export function ContactForm() {
 
       <p className="text-xs text-muted-foreground leading-relaxed">
         By submitting, you agree to our{' '}
-        <Link href="/insurance/privacy" className="underline underline-offset-2">
+        <Link href="/privacy" className="underline underline-offset-2">
           Privacy Policy
         </Link>
         .

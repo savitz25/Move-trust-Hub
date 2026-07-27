@@ -45,7 +45,7 @@ export default async function AdminDashboardPage() {
           <Link href="/insurance/admin/reviews">Moderate reviews</Link>
         </Button>
         <Button asChild variant="outline">
-          <Link href="/insurance/">View site</Link>
+          <Link href="/">View site</Link>
         </Button>
       </div>
     </div>

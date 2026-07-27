@@ -50,7 +50,7 @@ export function AgentCard({ agent, rank, hubLabel, className }: AgentCardProps) 
           )}
           <div className="min-w-0">
             <h3 className="text-lg font-semibold leading-tight text-foreground">
-              <Link href={`/insurance/providers/${agent.slug}`} className="hover:text-primary transition-colors">
+              <Link href={`/providers/${agent.slug}`} className="hover:text-primary transition-colors">
                 {agent.name}
               </Link>
               {agent.division && (
@@ -135,10 +135,10 @@ export function AgentCard({ agent, rank, hubLabel, className }: AgentCardProps) 
             </Button>
           )}
           <Button size="sm" variant="trust" asChild>
-            <Link href={`/insurance/providers/${agent.slug}#quote`}>Contact Agency</Link>
+            <Link href={`/providers/${agent.slug}#quote`}>Contact Agency</Link>
           </Button>
           <Link
-            href={`/insurance/providers/${agent.slug}`}
+            href={`/providers/${agent.slug}`}
             className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
           >
             View Profile <ExternalLink className="h-3 w-3" aria-hidden="true" />

@@ -10,7 +10,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-y-9">
           <div className="col-span-2 md:col-span-1">
-            <Link prefetch={false} href="/insurance/" className="inline-block">
+            <Link prefetch={false} href="/" className="inline-block">
               <BrandLogoStacked />
             </Link>
             <p className="mt-2.5 text-sm text-muted-foreground max-w-[220px] leading-snug">
@@ -23,10 +23,10 @@ export function Footer() {
               DIRECTORY
             </div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
-              <div><Link prefetch={false} href="/insurance/directory" className="hover:text-foreground transition-colors">All Agents</Link></div>
-              <div><Link prefetch={false} href="/insurance/hubs" className="hover:text-foreground transition-colors">Health Insurance Hubs</Link></div>
-              <div><Link prefetch={false} href="/insurance/hubs/browse" className="hover:text-foreground transition-colors">State &amp; MSA Browser</Link></div>
-              <div><Link prefetch={false} href="/insurance/calculators" className="hover:text-foreground transition-colors">Calculators</Link></div>
+              <div><Link prefetch={false} href="/directory" className="hover:text-foreground transition-colors">All Agents</Link></div>
+              <div><Link prefetch={false} href="/hubs" className="hover:text-foreground transition-colors">Health Insurance Hubs</Link></div>
+              <div><Link prefetch={false} href="/hubs/browse" className="hover:text-foreground transition-colors">State &amp; MSA Browser</Link></div>
+              <div><Link prefetch={false} href="/calculators" className="hover:text-foreground transition-colors">Calculators</Link></div>
             </div>
           </div>
 
@@ -35,11 +35,11 @@ export function Footer() {
               DESTINATIONS
             </div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
-              <div><Link prefetch={false} href="/insurance/destinations" className="hover:text-foreground transition-colors">All States</Link></div>
-              <div><Link prefetch={false} href="/insurance/destinations/florida" className="hover:text-foreground transition-colors">Florida</Link></div>
-              <div><Link prefetch={false} href="/insurance/destinations/texas" className="hover:text-foreground transition-colors">Texas</Link></div>
-              <div><Link prefetch={false} href="/insurance/destinations/california" className="hover:text-foreground transition-colors">California</Link></div>
-              <div><Link prefetch={false} href="/insurance/destinations/new-york" className="hover:text-foreground transition-colors">New York</Link></div>
+              <div><Link prefetch={false} href="/destinations" className="hover:text-foreground transition-colors">All States</Link></div>
+              <div><Link prefetch={false} href="/destinations/florida" className="hover:text-foreground transition-colors">Florida</Link></div>
+              <div><Link prefetch={false} href="/destinations/texas" className="hover:text-foreground transition-colors">Texas</Link></div>
+              <div><Link prefetch={false} href="/destinations/california" className="hover:text-foreground transition-colors">California</Link></div>
+              <div><Link prefetch={false} href="/destinations/new-york" className="hover:text-foreground transition-colors">New York</Link></div>
             </div>
           </div>
 
@@ -48,13 +48,13 @@ export function Footer() {
               RESOURCES
             </div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
-              <div><Link prefetch={false} href="/insurance/resources" className="hover:text-foreground transition-colors">All Guides</Link></div>
-              <div><Link prefetch={false} href="/insurance/resources/how-to-choose-insurance-agent" className="hover:text-foreground transition-colors">Choosing Health Insurance 2026</Link></div>
-              <div><Link prefetch={false} href="/insurance/resources/avoiding-coverage-gaps" className="hover:text-foreground transition-colors">Scam Avoidance</Link></div>
-              <div><Link prefetch={false} href="/insurance/tools/license-verification" className="hover:text-foreground transition-colors">State DOI Links</Link></div>
-              <div><Link prefetch={false} href="/insurance/resources/auto-insurance-costs-by-state" className="hover:text-foreground transition-colors">Auto Insurance Costs</Link></div>
-              <div><Link prefetch={false} href="/insurance/resources/homeowners-insurance-basics" className="hover:text-foreground transition-colors">Homeowners Basics</Link></div>
-              <div><Link prefetch={false} href="/insurance/tools/cost-estimator" className="hover:text-foreground transition-colors">Cost Estimator</Link></div>
+              <div><Link prefetch={false} href="/resources" className="hover:text-foreground transition-colors">All Guides</Link></div>
+              <div><Link prefetch={false} href="/resources/how-to-choose-insurance-agent" className="hover:text-foreground transition-colors">Choosing Health Insurance 2026</Link></div>
+              <div><Link prefetch={false} href="/resources/avoiding-coverage-gaps" className="hover:text-foreground transition-colors">Scam Avoidance</Link></div>
+              <div><Link prefetch={false} href="/tools/license-verification" className="hover:text-foreground transition-colors">State DOI Links</Link></div>
+              <div><Link prefetch={false} href="/resources/auto-insurance-costs-by-state" className="hover:text-foreground transition-colors">Auto Insurance Costs</Link></div>
+              <div><Link prefetch={false} href="/resources/homeowners-insurance-basics" className="hover:text-foreground transition-colors">Homeowners Basics</Link></div>
+              <div><Link prefetch={false} href="/tools/cost-estimator" className="hover:text-foreground transition-colors">Cost Estimator</Link></div>
             </div>
           </div>
 
@@ -63,11 +63,11 @@ export function Footer() {
               COMPANY &amp; LEGAL
             </div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
-              <div><Link prefetch={false} href="/insurance/about" className="hover:text-foreground transition-colors">About Us</Link></div>
-              <div><Link prefetch={false} href="/insurance/contact" className="hover:text-foreground transition-colors">Contact</Link></div>
-              <div><Link prefetch={false} href="/insurance/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></div>
-              <div><Link prefetch={false} href="/insurance/terms" className="hover:text-foreground transition-colors">Terms of Service</Link></div>
-              <div><Link prefetch={false} href="/insurance/about#disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link></div>
+              <div><Link prefetch={false} href="/about" className="hover:text-foreground transition-colors">About Us</Link></div>
+              <div><Link prefetch={false} href="/contact" className="hover:text-foreground transition-colors">Contact</Link></div>
+              <div><Link prefetch={false} href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></div>
+              <div><Link prefetch={false} href="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link></div>
+              <div><Link prefetch={false} href="/about#disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link></div>
             </div>
           </div>
 

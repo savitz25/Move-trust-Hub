@@ -14,12 +14,12 @@ export default function AcaEligibilityCheckerPage() {
   return (
     <div className="container mx-auto px-4 py-10 md:py-14 max-w-2xl">
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href="/insurance/tools">Tools</Link> / ACA eligibility checker
+        <Link href="/tools">Tools</Link> / ACA eligibility checker
       </nav>
       <h1 className="section-heading">ACA eligibility checker</h1>
       <p className="mt-3 text-muted-foreground leading-relaxed">
         Rough subsidy estimate by household income and size. For enrollment help, browse{' '}
-        <Link href="/insurance/hubs/aca" className="text-primary hover:underline">ACA marketplace agents</Link>.
+        <Link href="/hubs/aca" className="text-primary hover:underline">ACA marketplace agents</Link>.
       </p>
       <div className="mt-8">
         <AcaSubsidyCalculator />

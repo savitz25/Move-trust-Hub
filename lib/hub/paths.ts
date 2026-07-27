@@ -6,7 +6,10 @@ export const PATHNAME_HEADER = 'x-pathname';
 export const HUB_COOKIE = 'mth-hub';
 export const PATHNAME_COOKIE = 'mth-pathname';
 
-/** Detect active hub from pathname (works in middleware, server, and client). */
+/**
+ * Detect active hub from pathname (works in middleware, server, and client).
+ * Prefer HUB_HEADER / layout hubId on insurancetrusthub.com (bare paths).
+ */
 export function getHubFromPathname(pathname: string): HubId {
   const normalized = pathname.startsWith('/') ? pathname : `/${pathname}`;
   if (normalized === '/lender' || normalized.startsWith('/lender/')) return 'lender';
@@ -16,13 +19,25 @@ export function getHubFromPathname(pathname: string): HubId {
   return 'move';
 }
 
-/** Build an absolute app path within a hub. Move hub paths have no prefix. */
+/**
+ * Build a public path within a hub.
+ * - Move: bare paths
+ * - Lender: `/lender/...`
+ * - Insurance: bare apex paths on insurancetrusthub.com (no `/insurance` prefix).
+ *   Admin stays under `/insurance/admin` (shared monorepo isolation).
+ */
 export function hubPath(hub: HubId, path: string): string {
   const clean = path.startsWith('/') ? path : `/${path}`;
   if (hub === 'move') return clean === '/' ? '/' : clean;
-  const base = hub === 'lender' ? '/lender' : '/insurance';
-  if (clean === '/') return base;
-  return `${base}${clean}`;
+  if (hub === 'insurance') {
+    if (clean === '/admin' || clean.startsWith('/admin/')) {
+      return `/insurance${clean}`;
+    }
+    return clean === '/' ? '/' : clean;
+  }
+  // lender
+  if (clean === '/') return '/lender';
+  return `/lender${clean}`;
 }
 
 /**
@@ -61,7 +76,15 @@ export function normalizeHubMetadataPath(hub: HubId, path: string): string {
 /** Strip hub prefix from pathname for breadcrumb / active-link matching. */
 export function stripHubPrefix(hub: HubId, pathname: string): string {
   if (hub === 'move') return pathname || '/';
-  const base = hub === 'lender' ? '/lender' : '/insurance';
+  if (hub === 'insurance') {
+    // Public apex paths are already bare
+    if (pathname === '/insurance' || pathname.startsWith('/insurance/')) {
+      if (pathname === '/insurance') return '/';
+      return pathname.slice('/insurance'.length) || '/';
+    }
+    return pathname || '/';
+  }
+  const base = '/lender';
   if (pathname === base) return '/';
   if (pathname.startsWith(`${base}/`)) return pathname.slice(base.length) || '/';
   return pathname;

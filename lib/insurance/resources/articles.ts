@@ -56,9 +56,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/directory', label: 'Browse Insurance Agencies' },
-      { href: '/insurance/resources/independent-vs-captive', label: 'Independent vs. Captive Guide' },
-      { href: '/insurance/contact', label: 'Report a Data Issue' },
+      { href: '/directory', label: 'Browse Insurance Agencies' },
+      { href: '/resources/independent-vs-captive', label: 'Independent vs. Captive Guide' },
+      { href: '/contact', label: 'Report a Data Issue' },
     ],
   },
   {
@@ -93,9 +93,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/tools/cost-estimator', label: 'Premium Cost Estimator' },
-      { href: '/insurance/destinations/texas', label: 'Texas Insurance Guide' },
-      { href: '/insurance/destinations/florida', label: 'Florida Insurance Guide' },
+      { href: '/tools/cost-estimator', label: 'Premium Cost Estimator' },
+      { href: '/destinations/texas', label: 'Texas Insurance Guide' },
+      { href: '/destinations/florida', label: 'Florida Insurance Guide' },
     ],
   },
   {
@@ -132,9 +132,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
-      { href: '/insurance/resources/umbrella-insurance', label: 'Umbrella Insurance' },
-      { href: '/insurance/destinations/california', label: 'California Home Insurance' },
+      { href: '/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
+      { href: '/resources/umbrella-insurance', label: 'Umbrella Insurance' },
+      { href: '/destinations/california', label: 'California Home Insurance' },
     ],
   },
   {
@@ -164,9 +164,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/destinations/florida', label: 'Florida Insurance' },
-      { href: '/insurance/destinations/texas', label: 'Texas Insurance' },
-      { href: '/insurance/tools/cost-estimator', label: 'Cost Estimator' },
+      { href: '/destinations/florida', label: 'Florida Insurance' },
+      { href: '/destinations/texas', label: 'Texas Insurance' },
+      { href: '/tools/cost-estimator', label: 'Cost Estimator' },
     ],
   },
   {
@@ -196,9 +196,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/destinations/new-york', label: 'New York Insurance' },
-      { href: '/insurance/destinations/illinois', label: 'Illinois Insurance' },
-      { href: '/insurance/directory?type=renters', label: 'Find Renters Insurance Agents' },
+      { href: '/destinations/new-york', label: 'New York Insurance' },
+      { href: '/destinations/illinois', label: 'Illinois Insurance' },
+      { href: '/directory?type=renters', label: 'Find Renters Insurance Agents' },
     ],
   },
   {
@@ -234,9 +234,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/homeowners-insurance-basics', label: 'Homeowners Basics' },
-      { href: '/insurance/resources/auto-insurance-costs-by-state', label: 'Auto Insurance Costs' },
-      { href: '/insurance/directory', label: 'Find an Agent' },
+      { href: '/resources/homeowners-insurance-basics', label: 'Homeowners Basics' },
+      { href: '/resources/auto-insurance-costs-by-state', label: 'Auto Insurance Costs' },
+      { href: '/directory', label: 'Find an Agent' },
     ],
   },
   {
@@ -266,9 +266,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/how-to-choose-insurance-agent', label: 'How to Choose an Agent' },
-      { href: '/insurance/directory', label: 'Agency Directory' },
-      { href: '/insurance/about', label: 'About Insurance Trust Hub' },
+      { href: '/resources/how-to-choose-insurance-agent', label: 'How to Choose an Agent' },
+      { href: '/directory', label: 'Agency Directory' },
+      { href: '/about', label: 'About Insurance Trust Hub' },
     ],
   },
   {
@@ -304,9 +304,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/destinations/florida', label: 'Florida Insurance Hub' },
-      { href: '/insurance/destinations/north-carolina', label: 'North Carolina Insurance' },
-      { href: '/insurance/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
+      { href: '/destinations/florida', label: 'Florida Insurance Hub' },
+      { href: '/destinations/north-carolina', label: 'North Carolina Insurance' },
+      { href: '/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
     ],
   },
   {
@@ -349,11 +349,11 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/hubs/health-insurance', label: 'Health Insurance Hubs' },
-      { href: '/insurance/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
-      { href: '/insurance/tools/aca-eligibility-checker', label: 'ACA Eligibility Checker' },
-      { href: '/insurance/resources/health-savings-accounts-hsa-2026', label: 'HSA 2026 Guide' },
-      { href: '/insurance/directory', label: 'Agency Directory' },
+      { href: '/hubs/health-insurance', label: 'Health Insurance Hubs' },
+      { href: '/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
+      { href: '/tools/aca-eligibility-checker', label: 'ACA Eligibility Checker' },
+      { href: '/resources/health-savings-accounts-hsa-2026', label: 'HSA 2026 Guide' },
+      { href: '/directory', label: 'Agency Directory' },
     ],
   },
   {
@@ -398,12 +398,12 @@ export const ARTICLES: Article[] = [
     ],
     relatedLinks: [
       {
-        href: '/insurance/resources/how-to-choose-health-insurance-plan',
+        href: '/resources/how-to-choose-health-insurance-plan',
         label: 'How to Choose a Health Plan',
       },
-      { href: '/insurance/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
-      { href: '/insurance/hubs/aca', label: 'ACA Specialty Hub' },
-      { href: '/insurance/directory', label: 'Agency Directory' },
+      { href: '/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
+      { href: '/hubs/aca', label: 'ACA Specialty Hub' },
+      { href: '/directory', label: 'Agency Directory' },
     ],
   },
   {
@@ -434,9 +434,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/medicare-advantage-vs-medigap', label: 'Medicare Advantage vs Medigap' },
-      { href: '/insurance/hubs/medicare', label: 'Medicare Specialists' },
-      { href: '/insurance/tools/medicare-plan-finder', label: 'Medicare Plan Finder' },
+      { href: '/resources/medicare-advantage-vs-medigap', label: 'Medicare Advantage vs Medigap' },
+      { href: '/hubs/medicare', label: 'Medicare Specialists' },
+      { href: '/tools/medicare-plan-finder', label: 'Medicare Plan Finder' },
     ],
   },
   {
@@ -496,9 +496,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/hubs/medicare', label: 'Medicare Specialists' },
-      { href: '/insurance/calculators/medicare-gap', label: 'Medicare Gap Analyzer' },
-      { href: '/insurance/hubs/south-florida', label: 'South Florida Medicare Agents' },
+      { href: '/hubs/medicare', label: 'Medicare Specialists' },
+      { href: '/calculators/medicare-gap', label: 'Medicare Gap Analyzer' },
+      { href: '/hubs/south-florida', label: 'South Florida Medicare Agents' },
     ],
   },
   {
@@ -523,9 +523,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/hubs/aca', label: 'ACA Marketplace Agents' },
-      { href: '/insurance/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
-      { href: '/insurance/hubs/florida/broward-county', label: 'Broward County Agents' },
+      { href: '/hubs/aca', label: 'ACA Marketplace Agents' },
+      { href: '/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
+      { href: '/hubs/florida/broward-county', label: 'Broward County Agents' },
     ],
   },
   {
@@ -555,9 +555,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/tools/license-verification', label: 'License Verification Tool' },
-      { href: '/insurance/resources/how-to-choose-insurance-agent', label: 'How to Choose an Agent' },
-      { href: '/insurance/resources/avoiding-insurance-scams', label: 'Avoiding Insurance Scams' },
+      { href: '/tools/license-verification', label: 'License Verification Tool' },
+      { href: '/resources/how-to-choose-insurance-agent', label: 'How to Choose an Agent' },
+      { href: '/resources/avoiding-insurance-scams', label: 'Avoiding Insurance Scams' },
     ],
   },
   {
@@ -582,9 +582,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/tools/license-verification', label: 'License Verification' },
-      { href: '/insurance/about', label: 'How We Verify Agents' },
-      { href: '/insurance/contact', label: 'Report Suspicious Listing' },
+      { href: '/tools/license-verification', label: 'License Verification' },
+      { href: '/about', label: 'How We Verify Agents' },
+      { href: '/contact', label: 'Report Suspicious Listing' },
     ],
   },
   {
@@ -668,11 +668,11 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/hubs/aca', label: 'ACA Insurance Hub' },
-      { href: '/insurance/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
-      { href: '/insurance/resources/how-to-choose-health-insurance-plan', label: 'How to Choose a Health Plan' },
-      { href: '/insurance/tools/needs-assessment', label: 'Needs Assessment Tool' },
-      { href: '/insurance/directory', label: 'Browse Verified Agents' },
+      { href: '/hubs/aca', label: 'ACA Insurance Hub' },
+      { href: '/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
+      { href: '/resources/how-to-choose-health-insurance-plan', label: 'How to Choose a Health Plan' },
+      { href: '/tools/needs-assessment', label: 'Needs Assessment Tool' },
+      { href: '/directory', label: 'Browse Verified Agents' },
     ],
   },
 ];

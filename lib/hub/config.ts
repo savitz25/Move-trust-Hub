@@ -138,7 +138,7 @@ export const HUBS: Record<HubId, HubConfig> = {
   },
   insurance: {
     id: 'insurance',
-    basePath: '/insurance',
+    basePath: '',
     siteName: 'InsuranceTrustHub',
     shortName: 'Insurance',
     tagline: 'Independent, verified insurance agent directory — no paid placements.',

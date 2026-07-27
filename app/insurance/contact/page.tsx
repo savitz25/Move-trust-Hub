@@ -24,7 +24,7 @@ export default function ContactPage() {
           <p className="mt-3 text-muted-foreground leading-relaxed max-w-xl">
             Questions about listings, data corrections, or partnerships? Send a message and we&apos;ll
             respond within 2–5 business days. For insurance quotes, use our{' '}
-            <a href="/insurance/directory" className="text-primary hover:underline">agency directory</a>.
+            <a href="/directory" className="text-primary hover:underline">agency directory</a>.
           </p>
           <div className="mt-8">
             <ContactForm />

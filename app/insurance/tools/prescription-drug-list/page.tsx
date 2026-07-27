@@ -32,12 +32,12 @@ export default function PrescriptionDrugListPage() {
             Helpful for doctor visits, insurance reviews, and keeping your records organized.
           </p>
           <p className="mt-4 text-sm text-slate-500">
-            <Link href="/insurance/tools" className="font-medium text-teal-700 hover:underline">
+            <Link href="/tools" className="font-medium text-teal-700 hover:underline">
               ← All insurance tools
             </Link>
             {' · '}
             <Link
-              href="/insurance/hubs/medicare"
+              href="/hubs/medicare"
               className="font-medium text-teal-700 hover:underline"
             >
               Medicare hubs

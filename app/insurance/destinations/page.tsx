@@ -25,12 +25,12 @@ export default function DestinationsPage() {
       description="Moving to a new state? Each destination guide covers local insurance risks, average premiums, and licensed agencies serving the area. Educational content only — always verify rates with licensed agents."
       path="/destinations"
       breadcrumbs={hubSectionBreadcrumbs('insurance', 'Destinations')}
-      primaryCta={{ href: '/insurance/directory', label: 'Agency directory' }}
+      primaryCta={{ href: '/directory', label: 'Agency directory' }}
     >
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-6 md:grid-cols-2">
           {DESTINATION_STATES.map((state) => (
-            <Link key={state.slug} href={`/insurance/destinations/${state.slug}`}>
+            <Link key={state.slug} href={`/destinations/${state.slug}`}>
               <Card className="h-full transition-shadow hover:shadow-md">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
@@ -59,7 +59,7 @@ export default function DestinationsPage() {
 
         <div className="mt-12 text-center">
           <Button asChild variant="outline" className="gap-2">
-            <Link href="/insurance/directory">
+            <Link href="/directory">
               Browse all agencies <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </Button>

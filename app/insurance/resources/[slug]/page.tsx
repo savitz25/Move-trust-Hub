@@ -34,7 +34,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
   const canonical = resolveInsuranceResourceSlug(slug);
   if (canonical !== slug) {
-    permanentRedirect(`/insurance/resources/${canonical}`);
+    permanentRedirect(`/resources/${canonical}`);
   }
   const article = getArticleBySlug(canonical);
   if (!article) notFound();

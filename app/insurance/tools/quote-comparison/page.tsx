@@ -14,13 +14,13 @@ export default function QuoteComparisonPage() {
   return (
     <div className="container mx-auto px-4 py-10 md:py-14 max-w-2xl">
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href="/insurance/tools">Tools</Link> / Quote comparison
+        <Link href="/tools">Tools</Link> / Quote comparison
       </nav>
       <h1 className="section-heading">Insurance quote comparison</h1>
       <p className="mt-3 text-muted-foreground leading-relaxed">
         Compare estimated premium ranges across coverage types. For personalized quotes, connect with
         a{' '}
-        <Link href="/insurance/hubs" className="text-primary hover:underline">verified local agent</Link>.
+        <Link href="/hubs" className="text-primary hover:underline">verified local agent</Link>.
       </p>
       <div className="mt-8">
         <CostEstimatorTool />

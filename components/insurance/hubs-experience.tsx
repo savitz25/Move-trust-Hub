@@ -324,7 +324,7 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
             </p>
           </div>
           <Link
-            href="/insurance/hubs/browse"
+            href="/hubs/browse"
             className="text-sm font-medium text-teal-700 hover:text-teal-800 hover:underline"
           >
             Browse all {hubs.length} hubs →
@@ -447,14 +447,14 @@ export function HubsExperience({ hubs, enrollment, stateCount }: Props) {
           </p>
           <div className="relative mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="/insurance/tools"
+              href="/tools"
               className="inline-flex items-center gap-2 rounded-full bg-teal-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-teal-300"
             >
               Start path finder
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
             <Link
-              href="/insurance/resources/how-to-choose-health-insurance-plan"
+              href="/resources/how-to-choose-health-insurance-plan"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Read the health plan guide

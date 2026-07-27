@@ -25,7 +25,7 @@ export default function AllHubsPage() {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {sorted.map((hub) => (
-          <Link key={`${hub.stateSlug}-${hub.slug}`} href={`/insurance/hubs/${hub.stateSlug}/${hub.slug}`}>
+          <Link key={`${hub.stateSlug}-${hub.slug}`} href={`/hubs/${hub.stateSlug}/${hub.slug}`}>
             <Card className="h-full hover:shadow-trust-lg transition-shadow">
               <CardContent className="pt-5">
                 <div className="flex justify-between items-start gap-2">

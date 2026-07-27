@@ -22,7 +22,7 @@ export default function ProvidersDirectoryPage() {
         <p className="mt-3 text-muted-foreground max-w-2xl">
           {providers.length} verified agencies with state licensing data and attributed reviews.
           For metro-specific health specialists, visit our{' '}
-          <Link href="/insurance/hubs" className="text-primary hover:underline">market hubs</Link>.
+          <Link href="/hubs" className="text-primary hover:underline">market hubs</Link>.
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 gap-5">

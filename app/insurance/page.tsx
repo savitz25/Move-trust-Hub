@@ -28,9 +28,9 @@ const INSURANCE_HOME_FAQ = [
       'Yes. Our market health hubs highlight ACA marketplace navigators, Medicare Advantage specialists, and employer-plan advisors in high-enrollment metros — plus free tools like the ACA subsidy calculator and Medicare plan finder.',
   },
   {
-    question: 'Is InsuranceTrustHub part of MoveTrustHub?',
+    question: 'Is InsuranceTrustHub independent?',
     answer:
-      'InsuranceTrustHub is an independent specialist site in the ConsumerTrust Hub network. Sister directories include MoveTrustHub for movers. MoveTrustHub does not control insurance rankings or accept insurance paid placements on our behalf.',
+      'Yes. InsuranceTrustHub is an independent insurance agent directory. We do not accept paid placements or pay-to-rank fees, and we are not affiliated with listed agencies or carriers.',
   },
 ];
 

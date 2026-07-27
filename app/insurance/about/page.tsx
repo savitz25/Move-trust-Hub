@@ -17,7 +17,7 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-10 md:py-14 max-w-3xl">
       <div className="mb-6">
         <MethodologyBackNav
-          fallbackHref="/insurance"
+          fallbackHref="/"
           fallbackLabel="Back to InsuranceTrustHub"
         />
       </div>

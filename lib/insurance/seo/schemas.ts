@@ -1,6 +1,5 @@
 import { trustHubLogoUrl } from '@/lib/hub/config';
 import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
-import { CONSUMER_TRUST_HUB_ORG } from '@/lib/hub/schemas';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import { SITE_EMAIL, SITE_NAME } from '@/lib/insurance/constants';
 import type { Provider } from '@/types/insurance/provider';
@@ -14,7 +13,6 @@ export const organizationSchema = {
   url: INSURANCE_HUB_URL,
   logo: trustHubLogoUrl(INSURANCE_SITE_URL),
   email: SITE_EMAIL,
-  parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
   contactPoint: {
     '@type': 'ContactPoint',
     email: SITE_EMAIL,

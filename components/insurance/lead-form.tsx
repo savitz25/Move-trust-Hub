@@ -162,7 +162,7 @@ export function LeadForm({
         <Label htmlFor="lead-consent" className="text-sm font-normal cursor-pointer leading-relaxed">
           I agree to be contacted about insurance quotes. Insurance Trust Hub does not sell policies
           directly.{' '}
-          <Link href="/insurance/privacy" className="underline underline-offset-2">
+          <Link href="/privacy" className="underline underline-offset-2">
             Privacy Policy
           </Link>
         </Label>

@@ -28,7 +28,7 @@ import { hubPath } from '@/lib/hub/paths';
 const TITLE = 'HSA 2026: Contribution Limits, Eligibility & Tax Benefits';
 const DESCRIPTION =
   'Learn about Health Savings Accounts in 2026, including HSA eligibility, contribution limits, tax benefits, qualified expenses, investing, and how to maximize your HSA.';
-const PATH = '/insurance/resources/health-savings-accounts-hsa-2026';
+const PATH = '/resources/health-savings-accounts-hsa-2026';
 const META_PATH = '/resources/health-savings-accounts-hsa-2026';
 
 const LINK = 'text-emerald-700 underline underline-offset-2 dark:text-emerald-400';

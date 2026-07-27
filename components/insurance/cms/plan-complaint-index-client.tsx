@@ -201,21 +201,21 @@ export function PlanComplaintIndexClient({ meta }: Props) {
 
       <div className="flex flex-wrap gap-3 text-sm">
         <Link
-          href="/insurance/hubs/medicare"
+          href="/hubs/medicare"
           className="inline-flex items-center gap-1 font-medium text-teal-700 hover:underline"
         >
           Medicare specialist hubs
           <ArrowRight className="h-3.5 w-3.5" aria-hidden />
         </Link>
         <Link
-          href="/insurance/hubs/south-florida"
+          href="/hubs/south-florida"
           className="inline-flex items-center gap-1 font-medium text-teal-700 hover:underline"
         >
           South Florida agents
           <ArrowRight className="h-3.5 w-3.5" aria-hidden />
         </Link>
         <Link
-          href="/insurance/tools/prescription-drug-list"
+          href="/tools/prescription-drug-list"
           className="inline-flex items-center gap-1 font-medium text-teal-700 hover:underline"
         >
           Prescription drug list tool

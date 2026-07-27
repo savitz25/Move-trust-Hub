@@ -112,7 +112,7 @@ export function TrustVerificationSummary({ provider }: { provider: EnrichedProvi
                 </span>
                 . See the{' '}
                 <Link
-                  href="/insurance/data/plan-complaint-index"
+                  href="/data/plan-complaint-index"
                   className="text-primary hover:underline"
                 >
                   Plan Complaint Index

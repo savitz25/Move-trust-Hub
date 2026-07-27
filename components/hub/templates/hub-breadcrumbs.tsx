@@ -11,7 +11,7 @@ type HubBreadcrumbsProps = {
 };
 
 function resolveHref(hub: HubId, href: string): string {
-  if (href.startsWith('http') || href.startsWith('/insurance') || href.startsWith('/lender')) {
+  if (href.startsWith('http') || href.startsWith('/') || href.startsWith('/lender')) {
     return href;
   }
   return hubPath(hub, href);

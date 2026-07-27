@@ -22,7 +22,7 @@ const TITLE =
   'How to Choose the Right Health Insurance Plan in 2026: Key Factors, Networks & Cost Comparison Guide';
 const DESCRIPTION =
   'Learn how to select the best health insurance plan in 2026. Compare metal tiers, networks, deductibles, premiums, and subsidies. Use independent tools on our platform for transparent side-by-side comparisons and personalized guidance.';
-const PATH = '/insurance/resources/how-to-choose-health-insurance-plan';
+const PATH = '/resources/how-to-choose-health-insurance-plan';
 
 const metalTiers = [
   {

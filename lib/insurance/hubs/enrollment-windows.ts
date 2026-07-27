@@ -21,7 +21,7 @@ export const ENROLLMENT_WINDOWS: EnrollmentWindow[] = [
     shortLabel: 'Medicare AEP',
     start: { month: 10, day: 15 },
     end: { month: 12, day: 7 },
-    href: '/insurance/hubs/medicare',
+    href: '/hubs/medicare',
     note: 'Change Advantage, Part D, or switch to Medigap (with underwriting rules).',
   },
   {
@@ -31,7 +31,7 @@ export const ENROLLMENT_WINDOWS: EnrollmentWindow[] = [
     start: { month: 11, day: 1 },
     end: { month: 1, day: 15 },
     crossesYear: true,
-    href: '/insurance/hubs/aca',
+    href: '/hubs/aca',
     note: 'Marketplace plans for most states. Covered California and a few states use state windows.',
   },
 ];

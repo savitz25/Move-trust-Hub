@@ -9,7 +9,7 @@ import type { HealthHubDirectoryData, ResourceArticleData, StateGuideData } from
 
 export function normalizeHubHref(hub: HubId, href: string): string {
   if (href.startsWith('http')) return href;
-  if (hub === 'insurance' && (href.startsWith('/insurance') || href === '/insurance')) {
+  if (hub === 'insurance' && (href.startsWith('/') || href === '/')) {
     return href;
   }
   if (hub === 'lender' && (href.startsWith('/lender') || href === '/lender')) {

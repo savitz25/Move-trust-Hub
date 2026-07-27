@@ -45,11 +45,11 @@ export function HubPageView({ hub, canonicalPath }: HubPageViewProps) {
       <JsonLd data={jsonLd} />
 
       <nav className="container mx-auto px-4 pt-6 text-sm text-muted-foreground">
-        <Link href="/insurance/" className="hover:text-foreground">Home</Link>
+        <Link href="/" className="hover:text-foreground">Home</Link>
         {' / '}
-        <Link href="/insurance/hubs" className="hover:text-foreground">Health Insurance Hubs</Link>
+        <Link href="/hubs" className="hover:text-foreground">Health Insurance Hubs</Link>
         {' / '}
-        <Link href={`/insurance/hubs/${state}`} className="hover:text-foreground">{hub.stateName}</Link>
+        <Link href={`/hubs/${state}`} className="hover:text-foreground">{hub.stateName}</Link>
         {' / '}
         <span className="text-foreground">{hub.shortName}</span>
       </nav>
@@ -183,7 +183,7 @@ export function HubPageView({ hub, canonicalPath }: HubPageViewProps) {
                   (f) => (
                     <Link
                       key={f}
-                      href={`/insurance/directory?state=${hub.stateCode}&q=${encodeURIComponent(f.split('/')[0])}`}
+                      href={`/directory?state=${hub.stateCode}&q=${encodeURIComponent(f.split('/')[0])}`}
                       className="rounded-full border px-2.5 py-1 text-xs hover:bg-primary/5"
                     >
                       {f}

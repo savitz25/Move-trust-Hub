@@ -7,12 +7,12 @@ import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/insurance/ui/button';
 import { HeaderTrustBadge } from '@/components/trust/header-trust-badge';
 const NAV_LINKS = [
-  { href: '/insurance/directory', label: 'DIRECTORIES' },
-  { href: '/insurance/hubs', label: 'HEALTH HUBS' },
-  { href: '/insurance/hubs/browse', label: 'STATE & MSA BROWSER' },
-  { href: '/insurance/calculators', label: 'CALCULATORS' },
-  { href: '/insurance/about', label: 'TRUST & TRANSPARENCY' },
-  { href: '/insurance/about', label: 'ABOUT' },
+  { href: '/directory', label: 'DIRECTORIES' },
+  { href: '/hubs', label: 'HEALTH HUBS' },
+  { href: '/hubs/browse', label: 'STATE & MSA BROWSER' },
+  { href: '/calculators', label: 'CALCULATORS' },
+  { href: '/about', label: 'TRUST & TRANSPARENCY' },
+  { href: '/about', label: 'ABOUT' },
 ] as const;
 
 export function Navbar() {
@@ -39,13 +39,13 @@ export function Navbar() {
             </button>
             {directoriesOpen && (
               <div className="absolute left-0 top-full z-50 mt-2 w-52 rounded-xl border bg-card py-2 shadow-trust-lg">
-                <Link href="/insurance/directory" className="block px-4 py-2 text-sm hover:bg-secondary" onClick={() => setDirectoriesOpen(false)}>
+                <Link href="/directory" className="block px-4 py-2 text-sm hover:bg-secondary" onClick={() => setDirectoriesOpen(false)}>
                   All Agents & Agencies
                 </Link>
-                <Link href="/insurance/hubs" className="block px-4 py-2 text-sm hover:bg-secondary" onClick={() => setDirectoriesOpen(false)}>
+                <Link href="/hubs" className="block px-4 py-2 text-sm hover:bg-secondary" onClick={() => setDirectoriesOpen(false)}>
                   Health Insurance Hubs
                 </Link>
-                <Link href="/insurance/destinations" className="block px-4 py-2 text-sm hover:bg-secondary" onClick={() => setDirectoriesOpen(false)}>
+                <Link href="/destinations" className="block px-4 py-2 text-sm hover:bg-secondary" onClick={() => setDirectoriesOpen(false)}>
                   Relocation Destinations
                 </Link>
               </div>
@@ -62,7 +62,7 @@ export function Navbar() {
             </Link>
           ))}
           <Button size="sm" variant="trust" asChild className="gap-2">
-            <Link href="/insurance/contact">
+            <Link href="/contact">
               <Phone className="h-4 w-4" /> Contact
             </Link>
           </Button>
@@ -80,13 +80,13 @@ export function Navbar() {
 
       {isOpen && (
         <div className="xl:hidden border-t bg-background px-4 py-4 space-y-3">
-          <Link href="/insurance/directory" className="block font-medium" onClick={() => setIsOpen(false)}>Directories</Link>
+          <Link href="/directory" className="block font-medium" onClick={() => setIsOpen(false)}>Directories</Link>
           {NAV_LINKS.map((link) => (
             <Link key={`${link.href}-${link.label}`} href={link.href} className="block font-medium" onClick={() => setIsOpen(false)}>
               {link.label}
             </Link>
           ))}
-          <Link href="/insurance/contact" className="block font-medium" onClick={() => setIsOpen(false)}>Contact</Link>
+          <Link href="/contact" className="block font-medium" onClick={() => setIsOpen(false)}>Contact</Link>
         </div>
       )}
     </nav>

@@ -13,53 +13,53 @@ export const metadata: Metadata = buildMetadata({
 
 const TOOLS = [
   {
-    href: '/insurance/tools/cost-estimator',
+    href: '/tools/cost-estimator',
     icon: Calculator,
     title: 'Premium cost estimator',
     description:
       'Get ballpark annual premium ranges by state and coverage type. Estimates only — not a quote.',
   },
   {
-    href: '/insurance/tools/needs-assessment',
+    href: '/tools/needs-assessment',
     icon: ClipboardCheck,
     title: 'Coverage needs assessment',
     description:
       'Answer a few questions to see which insurance types and agent specialties may fit your situation.',
   },
   {
-    href: '/insurance/tools/license-verification',
+    href: '/tools/license-verification',
     icon: ShieldCheck,
     title: 'License verification',
     description:
       'Links to every state insurance department lookup. Verify agents and agencies before you buy.',
   },
   {
-    href: '/insurance/tools/quote-comparison',
+    href: '/tools/quote-comparison',
     icon: Calculator,
     title: 'Quote comparison',
     description: 'Compare ballpark premium ranges by state and coverage type before contacting an agent.',
   },
   {
-    href: '/insurance/tools/medicare-plan-finder',
+    href: '/tools/medicare-plan-finder',
     icon: ClipboardCheck,
     title: 'Medicare plan finder',
     description: 'Estimate Medicare supplement gaps and compare plan types with educational tools.',
   },
   {
-    href: '/insurance/tools/aca-eligibility-checker',
+    href: '/tools/aca-eligibility-checker',
     icon: ShieldCheck,
     title: 'ACA eligibility checker',
     description: 'Rough marketplace subsidy estimate by income and household size.',
   },
   {
-    href: '/insurance/tools/prescription-drug-list',
+    href: '/tools/prescription-drug-list',
     icon: Pill,
     title: 'Prescription drug list',
     description:
       'Build a private list of your medications with strength and dosage. Email or print for visits and plan reviews.',
   },
   {
-    href: '/insurance/data/plan-complaint-index',
+    href: '/data/plan-complaint-index',
     icon: BarChart3,
     title: 'Medicare Plan Complaint Index',
     description:

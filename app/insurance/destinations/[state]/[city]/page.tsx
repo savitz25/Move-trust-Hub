@@ -59,9 +59,9 @@ export default async function CityDestinationPage({ params }: CityPageProps) {
       <div className="border-b bg-muted/20">
         <div className="container mx-auto px-4 py-10 md:py-14">
           <nav className="text-sm text-muted-foreground mb-4">
-            <Link href="/insurance/destinations" className="hover:text-foreground">Destinations</Link>
+            <Link href="/destinations" className="hover:text-foreground">Destinations</Link>
             {' / '}
-            <Link href={`/insurance/destinations/${state.slug}`} className="hover:text-foreground">
+            <Link href={`/destinations/${state.slug}`} className="hover:text-foreground">
               {state.name}
             </Link>
             {' / '}
@@ -113,7 +113,7 @@ export default async function CityDestinationPage({ params }: CityPageProps) {
                   </p>
                 )}
                 <Button asChild variant="outline" size="sm" className="mt-4">
-                  <Link href="/insurance/tools/cost-estimator">Use cost estimator</Link>
+                  <Link href="/tools/cost-estimator">Use cost estimator</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -124,7 +124,7 @@ export default async function CityDestinationPage({ params }: CityPageProps) {
           <h2 className="text-xl font-semibold mb-3">State context</h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">{state.description}</p>
           <Button asChild variant="link" className="mt-2 px-0">
-            <Link href={`/insurance/destinations/${state.slug}`}>Full {state.name} guide →</Link>
+            <Link href={`/destinations/${state.slug}`}>Full {state.name} guide →</Link>
           </Button>
         </section>
 
@@ -133,7 +133,7 @@ export default async function CityDestinationPage({ params }: CityPageProps) {
             <h2 className="text-2xl font-semibold">Agencies in {city.name}</h2>
             <Button asChild size="sm">
               <Link
-                href={`/insurance/directory?state=${state.code}&q=${encodeURIComponent(city.name)}`}
+                href={`/directory?state=${state.code}&q=${encodeURIComponent(city.name)}`}
               >
                 View all
               </Link>
@@ -142,7 +142,7 @@ export default async function CityDestinationPage({ params }: CityPageProps) {
           {providers.length === 0 ? (
             <p className="text-sm text-muted-foreground">
               No agencies found for this city. Try the{' '}
-              <Link href={`/insurance/directory?state=${state.code}`} className="text-primary hover:underline">
+              <Link href={`/directory?state=${state.code}`} className="text-primary hover:underline">
                 {state.name} directory
               </Link>
               .

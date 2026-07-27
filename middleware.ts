@@ -1,11 +1,12 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { updateSession } from '@/lib/supabase/middleware';
 import {
+  INSURANCE_SITE_URL,
   insuranceApexToAppPath,
   isInsuranceStandaloneHost,
   shouldRewriteInsurancePath,
 } from '@/lib/hub/domains';
-import { PATHNAME_COOKIE, PATHNAME_HEADER } from '@/lib/hub/paths';
+import { HUB_HEADER, PATHNAME_COOKIE, PATHNAME_HEADER } from '@/lib/hub/paths';
 import { needsAuthSession } from '@/lib/middleware/auth-paths';
 import {
   cdnCacheControl,
@@ -43,13 +44,44 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(httpsUrl, 308);
     }
 
-    // insurancetrusthub.com: serve insurance hub at bare paths (no 308 to Move).
+    // Canonical insurance paths are apex (no /insurance prefix) on insurancetrusthub.com.
+    // Keep /insurance/admin on both hosts for monorepo admin isolation.
+    const isInsuranceAdmin =
+      pathname === '/insurance/admin' || pathname.startsWith('/insurance/admin/');
+    const isInsurancePrefixedPublic =
+      !isInsuranceAdmin &&
+      (pathname === '/insurance' || pathname.startsWith('/insurance/'));
+
+    // insurancetrusthub.com: 301 /insurance/* → bare canonical paths
+    if (isInsuranceStandaloneHost(host) && isInsurancePrefixedPublic) {
+      const bare =
+        pathname === '/insurance' || pathname === '/insurance/'
+          ? '/'
+          : pathname.slice('/insurance'.length) || '/';
+      const dest = new URL(bare + request.nextUrl.search, request.url);
+      return NextResponse.redirect(dest, 301);
+    }
+
+    // movetrusthub.com: send public insurance traffic to standalone InsuranceTrustHub
+    if (!isInsuranceStandaloneHost(host) && isInsurancePrefixedPublic) {
+      const bare =
+        pathname === '/insurance' || pathname === '/insurance/'
+          ? '/'
+          : pathname.slice('/insurance'.length) || '/';
+      return NextResponse.redirect(
+        new URL(bare + request.nextUrl.search, INSURANCE_SITE_URL),
+        301
+      );
+    }
+
+    // insurancetrusthub.com: rewrite bare public paths to internal /insurance app routes
     if (isInsuranceStandaloneHost(host) && shouldRewriteInsurancePath(pathname)) {
       const rewriteUrl = request.nextUrl.clone();
       rewriteUrl.pathname = insuranceApexToAppPath(pathname);
       const requestHeaders = new Headers(request.headers);
       // Public path for chrome/analytics; internal path is the rewrite target.
       requestHeaders.set(PATHNAME_HEADER, pathname);
+      requestHeaders.set(HUB_HEADER, 'insurance');
       const response = NextResponse.rewrite(rewriteUrl, {
         request: { headers: requestHeaders },
       });

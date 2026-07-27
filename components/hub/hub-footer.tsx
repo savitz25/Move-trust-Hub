@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
 
-import { SITE_EMAIL } from '@/lib/contact';
+import { SITE_EMAIL as MOVE_SITE_EMAIL } from '@/lib/contact';
+import { SITE_EMAIL as INSURANCE_SITE_EMAIL } from '@/lib/insurance/constants';
 import { AfterYourMoveModule } from '@/components/hub/after-your-move-module';
 import { ConsumerTrustNetworkLinks } from '@/components/hub/consumer-trust-network-links';
 import { getHubConfig } from '@/lib/hub/config';
@@ -12,6 +13,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
   const hub = getHubConfig(hubId ?? 'move');
   const year = new Date().getFullYear();
   const homeHref = hubPath(hub.id, '/');
+  const contactEmail = hub.id === 'insurance' ? INSURANCE_SITE_EMAIL : MOVE_SITE_EMAIL;
 
   return (
     <footer className="border-t bg-muted/20">
@@ -109,8 +111,11 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
               lead fees. No paid placements. Data for research only.
             </p>
             <p className="mt-2.5 text-[13px]">
-              <a href={`mailto:${SITE_EMAIL}`} className="hover:text-foreground transition-colors">
-                {SITE_EMAIL}
+              <a
+                href={`mailto:${contactEmail}`}
+                className="hover:text-foreground transition-colors"
+              >
+                {contactEmail}
               </a>
             </p>
             <div className="mt-3 text-[11px] text-muted-foreground/70">

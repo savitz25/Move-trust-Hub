@@ -19,7 +19,7 @@ const LIFE_EVENT_BUNDLES: Record<HubId, LifeEventBundle> = {
       'Movers are step one — smart relocators also line up insurance and financing for the new address. Same trusted data, zero sales pressure.',
     links: [
       { hub: 'move', label: 'Moving Calculator', href: '/moving-calculator' },
-      { hub: 'insurance', label: 'Insurance in Your Market', href: '/insurance/hubs/browse' },
+      { hub: 'insurance', label: 'Insurance in Your Market', href: '/hubs/browse' },
       { hub: 'lender', label: 'Mortgage Lenders by County', href: '/lender/local-lenders' },
     ],
   },
@@ -30,7 +30,7 @@ const LIFE_EVENT_BUNDLES: Record<HubId, LifeEventBundle> = {
     links: [
       { hub: 'lender', label: 'Mortgage Calculators', href: '/lender/calculators' },
       { hub: 'move', label: 'Compare Interstate Movers', href: '/companies' },
-      { hub: 'insurance', label: 'Home & Health Insurance', href: '/insurance/directory' },
+      { hub: 'insurance', label: 'Home & Health Insurance', href: '/directory' },
     ],
   },
   insurance: {
@@ -38,7 +38,7 @@ const LIFE_EVENT_BUNDLES: Record<HubId, LifeEventBundle> = {
     description:
       'Health and property insurance often change with a move. Explore verified agents alongside movers and lenders.',
     links: [
-      { hub: 'insurance', label: 'Health Insurance Hubs', href: '/insurance/hubs' },
+      { hub: 'insurance', label: 'Health Insurance Hubs', href: '/hubs' },
       { hub: 'move', label: 'Local Movers by State', href: '/local-movers' },
       { hub: 'lender', label: 'County Mortgage Lenders', href: '/lender/local-lenders' },
     ],

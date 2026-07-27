@@ -107,10 +107,10 @@ export const DESTINATION_STATES: DestinationState[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/hubs/south-florida', label: 'South Florida Health Hub' },
-      { href: '/insurance/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
-      { href: '/insurance/resources/hurricane-prep-insurance', label: 'Hurricane Prep & Insurance' },
-      { href: '/insurance/tools/cost-estimator', label: 'Premium Cost Estimator' },
+      { href: '/hubs/south-florida', label: 'South Florida Health Hub' },
+      { href: '/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
+      { href: '/resources/hurricane-prep-insurance', label: 'Hurricane Prep & Insurance' },
+      { href: '/tools/cost-estimator', label: 'Premium Cost Estimator' },
     ],
   },
   {
@@ -169,8 +169,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/texas-auto-insurance', label: 'Texas Auto Insurance Guide' },
-      { href: '/insurance/directory?state=TX', label: 'Texas Insurance Agencies' },
+      { href: '/resources/texas-auto-insurance', label: 'Texas Auto Insurance Guide' },
+      { href: '/directory?state=TX', label: 'Texas Insurance Agencies' },
     ],
   },
   {
@@ -229,8 +229,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/california-home-insurance', label: 'California Home Insurance' },
-      { href: '/insurance/resources/wildfire-insurance', label: 'Wildfire Insurance Guide' },
+      { href: '/resources/california-home-insurance', label: 'California Home Insurance' },
+      { href: '/resources/wildfire-insurance', label: 'Wildfire Insurance Guide' },
     ],
   },
   {
@@ -289,8 +289,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/new-york-auto-insurance', label: 'NY Auto Insurance Guide' },
-      { href: '/insurance/resources/renters-insurance', label: 'Renters Insurance Guide' },
+      { href: '/resources/new-york-auto-insurance', label: 'NY Auto Insurance Guide' },
+      { href: '/resources/renters-insurance', label: 'Renters Insurance Guide' },
     ],
   },
   {
@@ -349,8 +349,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/north-carolina-insurance', label: 'NC Insurance Overview' },
-      { href: '/insurance/directory?state=NC', label: 'NC Insurance Agencies' },
+      { href: '/resources/north-carolina-insurance', label: 'NC Insurance Overview' },
+      { href: '/directory?state=NC', label: 'NC Insurance Agencies' },
     ],
   },
   {
@@ -409,8 +409,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       },
     ],
     relatedLinks: [
-      { href: '/insurance/resources/illinois-auto-insurance', label: 'Illinois Auto Guide' },
-      { href: '/insurance/resources/umbrella-insurance', label: 'Umbrella Insurance Guide' },
+      { href: '/resources/illinois-auto-insurance', label: 'Illinois Auto Guide' },
+      { href: '/resources/umbrella-insurance', label: 'Umbrella Insurance Guide' },
     ],
   },
   {
@@ -442,8 +442,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=VA", label: "VA Insurance Agencies" },
-      { href: "/insurance/hubs/virginia", label: "Virginia Insurance Hubs" },
+      { href: "/directory?state=VA", label: "VA Insurance Agencies" },
+      { href: "/hubs/virginia", label: "Virginia Insurance Hubs" },
     ],
   },
   {
@@ -475,8 +475,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=PA", label: "PA Insurance Agencies" },
-      { href: "/insurance/hubs/pennsylvania", label: "Pennsylvania Insurance Hubs" },
+      { href: "/directory?state=PA", label: "PA Insurance Agencies" },
+      { href: "/hubs/pennsylvania", label: "Pennsylvania Insurance Hubs" },
     ],
   },
   {
@@ -501,8 +501,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=GA", label: "GA Insurance Agencies" },
-      { href: "/insurance/hubs/georgia", label: "Georgia Insurance Hubs" },
+      { href: "/directory?state=GA", label: "GA Insurance Agencies" },
+      { href: "/hubs/georgia", label: "Georgia Insurance Hubs" },
     ],
   },
   {
@@ -534,8 +534,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=AZ", label: "AZ Insurance Agencies" },
-      { href: "/insurance/hubs/arizona", label: "Arizona Insurance Hubs" },
+      { href: "/directory?state=AZ", label: "AZ Insurance Agencies" },
+      { href: "/hubs/arizona", label: "Arizona Insurance Hubs" },
     ],
   },
   {
@@ -560,8 +560,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=MA", label: "MA Insurance Agencies" },
-      { href: "/insurance/hubs/massachusetts", label: "Massachusetts Insurance Hubs" },
+      { href: "/directory?state=MA", label: "MA Insurance Agencies" },
+      { href: "/hubs/massachusetts", label: "Massachusetts Insurance Hubs" },
     ],
   },
   {
@@ -586,8 +586,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=MI", label: "MI Insurance Agencies" },
-      { href: "/insurance/hubs/michigan", label: "Michigan Insurance Hubs" },
+      { href: "/directory?state=MI", label: "MI Insurance Agencies" },
+      { href: "/hubs/michigan", label: "Michigan Insurance Hubs" },
     ],
   },
   {
@@ -612,8 +612,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=WA", label: "WA Insurance Agencies" },
-      { href: "/insurance/hubs/washington", label: "Washington Insurance Hubs" },
+      { href: "/directory?state=WA", label: "WA Insurance Agencies" },
+      { href: "/hubs/washington", label: "Washington Insurance Hubs" },
     ],
   },
   {
@@ -638,8 +638,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=MN", label: "MN Insurance Agencies" },
-      { href: "/insurance/hubs/minnesota", label: "Minnesota Insurance Hubs" },
+      { href: "/directory?state=MN", label: "MN Insurance Agencies" },
+      { href: "/hubs/minnesota", label: "Minnesota Insurance Hubs" },
     ],
   },
   {
@@ -664,8 +664,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=CO", label: "CO Insurance Agencies" },
-      { href: "/insurance/hubs/colorado", label: "Colorado Insurance Hubs" },
+      { href: "/directory?state=CO", label: "CO Insurance Agencies" },
+      { href: "/hubs/colorado", label: "Colorado Insurance Hubs" },
     ],
   },
   {
@@ -690,8 +690,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=MD", label: "MD Insurance Agencies" },
-      { href: "/insurance/hubs/maryland", label: "Maryland Insurance Hubs" },
+      { href: "/directory?state=MD", label: "MD Insurance Agencies" },
+      { href: "/hubs/maryland", label: "Maryland Insurance Hubs" },
     ],
   },
   {
@@ -723,8 +723,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=MO", label: "MO Insurance Agencies" },
-      { href: "/insurance/hubs/missouri", label: "Missouri Insurance Hubs" },
+      { href: "/directory?state=MO", label: "MO Insurance Agencies" },
+      { href: "/hubs/missouri", label: "Missouri Insurance Hubs" },
     ],
   },
   {
@@ -749,8 +749,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=OR", label: "OR Insurance Agencies" },
-      { href: "/insurance/hubs/oregon", label: "Oregon Insurance Hubs" },
+      { href: "/directory?state=OR", label: "OR Insurance Agencies" },
+      { href: "/hubs/oregon", label: "Oregon Insurance Hubs" },
     ],
   },
   {
@@ -775,8 +775,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=NV", label: "NV Insurance Agencies" },
-      { href: "/insurance/hubs/nevada", label: "Nevada Insurance Hubs" },
+      { href: "/directory?state=NV", label: "NV Insurance Agencies" },
+      { href: "/hubs/nevada", label: "Nevada Insurance Hubs" },
     ],
   },
   {
@@ -808,8 +808,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=OH", label: "OH Insurance Agencies" },
-      { href: "/insurance/hubs/ohio", label: "Ohio Insurance Hubs" },
+      { href: "/directory?state=OH", label: "OH Insurance Agencies" },
+      { href: "/hubs/ohio", label: "Ohio Insurance Hubs" },
     ],
   },
   {
@@ -834,8 +834,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=CT", label: "CT Insurance Agencies" },
-      { href: "/insurance/hubs/connecticut", label: "Connecticut Insurance Hubs" },
+      { href: "/directory?state=CT", label: "CT Insurance Agencies" },
+      { href: "/hubs/connecticut", label: "Connecticut Insurance Hubs" },
     ],
   },
   {
@@ -860,8 +860,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=IA", label: "IA Insurance Agencies" },
-      { href: "/insurance/hubs/iowa", label: "Iowa Insurance Hubs" },
+      { href: "/directory?state=IA", label: "IA Insurance Agencies" },
+      { href: "/hubs/iowa", label: "Iowa Insurance Hubs" },
     ],
   },
   {
@@ -907,8 +907,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=TN", label: "TN Insurance Agencies" },
-      { href: "/insurance/hubs/tennessee", label: "Tennessee Insurance Hubs" },
+      { href: "/directory?state=TN", label: "TN Insurance Agencies" },
+      { href: "/hubs/tennessee", label: "Tennessee Insurance Hubs" },
     ],
   },
   {
@@ -933,8 +933,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=IN", label: "IN Insurance Agencies" },
-      { href: "/insurance/hubs/indiana", label: "Indiana Insurance Hubs" },
+      { href: "/directory?state=IN", label: "IN Insurance Agencies" },
+      { href: "/hubs/indiana", label: "Indiana Insurance Hubs" },
     ],
   },
   {
@@ -959,8 +959,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=UT", label: "UT Insurance Agencies" },
-      { href: "/insurance/hubs/utah", label: "Utah Insurance Hubs" },
+      { href: "/directory?state=UT", label: "UT Insurance Agencies" },
+      { href: "/hubs/utah", label: "Utah Insurance Hubs" },
     ],
   },
   {
@@ -985,8 +985,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=WI", label: "WI Insurance Agencies" },
-      { href: "/insurance/hubs/wisconsin", label: "Wisconsin Insurance Hubs" },
+      { href: "/directory?state=WI", label: "WI Insurance Agencies" },
+      { href: "/hubs/wisconsin", label: "Wisconsin Insurance Hubs" },
     ],
   },
   {
@@ -1011,8 +1011,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=OK", label: "OK Insurance Agencies" },
-      { href: "/insurance/hubs/oklahoma", label: "Oklahoma Insurance Hubs" },
+      { href: "/directory?state=OK", label: "OK Insurance Agencies" },
+      { href: "/hubs/oklahoma", label: "Oklahoma Insurance Hubs" },
     ],
   },
   {
@@ -1037,8 +1037,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=KY", label: "KY Insurance Agencies" },
-      { href: "/insurance/hubs/kentucky", label: "Kentucky Insurance Hubs" },
+      { href: "/directory?state=KY", label: "KY Insurance Agencies" },
+      { href: "/hubs/kentucky", label: "Kentucky Insurance Hubs" },
     ],
   },
   {
@@ -1063,8 +1063,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=AL", label: "AL Insurance Agencies" },
-      { href: "/insurance/hubs/alabama", label: "Alabama Insurance Hubs" },
+      { href: "/directory?state=AL", label: "AL Insurance Agencies" },
+      { href: "/hubs/alabama", label: "Alabama Insurance Hubs" },
     ],
   },
   {
@@ -1089,8 +1089,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=RI", label: "RI Insurance Agencies" },
-      { href: "/insurance/hubs/rhode-island", label: "Rhode Island Insurance Hubs" },
+      { href: "/directory?state=RI", label: "RI Insurance Agencies" },
+      { href: "/hubs/rhode-island", label: "Rhode Island Insurance Hubs" },
     ],
   },
   {
@@ -1115,8 +1115,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=LA", label: "LA Insurance Agencies" },
-      { href: "/insurance/hubs/louisiana", label: "Louisiana Insurance Hubs" },
+      { href: "/directory?state=LA", label: "LA Insurance Agencies" },
+      { href: "/hubs/louisiana", label: "Louisiana Insurance Hubs" },
     ],
   },
   {
@@ -1141,8 +1141,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=HI", label: "HI Insurance Agencies" },
-      { href: "/insurance/hubs/hawaii", label: "Hawaii Insurance Hubs" },
+      { href: "/directory?state=HI", label: "HI Insurance Agencies" },
+      { href: "/hubs/hawaii", label: "Hawaii Insurance Hubs" },
     ],
   },
   {
@@ -1167,8 +1167,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=NM", label: "NM Insurance Agencies" },
-      { href: "/insurance/hubs/new-mexico", label: "New Mexico Insurance Hubs" },
+      { href: "/directory?state=NM", label: "NM Insurance Agencies" },
+      { href: "/hubs/new-mexico", label: "New Mexico Insurance Hubs" },
     ],
   },
   {
@@ -1193,8 +1193,8 @@ export const DESTINATION_STATES: DestinationState[] = [
       }
     ],
     relatedLinks: [
-      { href: "/insurance/directory?state=NE", label: "NE Insurance Agencies" },
-      { href: "/insurance/hubs/nebraska", label: "Nebraska Insurance Hubs" },
+      { href: "/directory?state=NE", label: "NE Insurance Agencies" },
+      { href: "/hubs/nebraska", label: "Nebraska Insurance Hubs" },
     ],
   }
 ];

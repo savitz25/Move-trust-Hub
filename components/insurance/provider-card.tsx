@@ -25,7 +25,7 @@ export function ProviderCard({ provider, className }: ProviderCardProps) {
           <div className="min-w-0 flex-1">
             <CardTitle className="text-lg leading-snug">
               <Link
-                href={`/insurance/providers/${provider.slug}`}
+                href={`/providers/${provider.slug}`}
                 className="hover:text-primary transition-colors"
               >
                 {provider.name}
@@ -96,7 +96,7 @@ export function ProviderCard({ provider, className }: ProviderCardProps) {
 
       <CardFooter className="pt-0">
         <Link
-          href={`/insurance/providers/${provider.slug}`}
+          href={`/providers/${provider.slug}`}
           className="text-sm font-medium text-primary hover:underline underline-offset-4"
         >
           View profile →

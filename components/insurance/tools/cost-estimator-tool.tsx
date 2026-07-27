@@ -86,7 +86,7 @@ export function CostEstimatorTool() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{range.notes}</p>
             )}
             <Button asChild className="mt-4" variant="outline">
-              <Link href={`/insurance/directory?state=${state}&type=${type}`}>
+              <Link href={`/directory?state=${state}&type=${type}`}>
                 Find agents in {US_STATES.find((s) => s.code === state)?.name}
               </Link>
             </Button>

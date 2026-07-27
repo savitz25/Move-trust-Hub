@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import type { HubId } from '@/lib/hub/types';
+import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
 
 /**
  * Quiet network note only — never primary nav or equal footer columns.
- * Copy adapts so each specialist site names itself first.
+ * InsuranceTrustHub is fully independent: no MoveTrustHub links in its chrome.
  */
 export function ConsumerTrustNetworkLinks({
   className = '',
@@ -17,16 +18,8 @@ export function ConsumerTrustNetworkLinks({
       <p
         className={`text-center text-[11px] text-muted-foreground/70 leading-relaxed ${className}`}
       >
-        Part of the ConsumerTrust Hub network.{' '}
-        <a
-          href="https://www.movetrusthub.com"
-          className="underline underline-offset-2 hover:text-muted-foreground"
-          rel="noopener noreferrer"
-        >
-          MoveTrustHub
-        </a>
-        {' · '}
-        <span className="text-muted-foreground/50">LenderTrustHub (coming soon)</span>
+        Independent directory operated by InsuranceTrustHub. No paid placements. Not affiliated
+        with listed agencies or carriers.
       </p>
     );
   }
@@ -45,13 +38,13 @@ export function ConsumerTrustNetworkLinks({
           MoveTrustHub
         </Link>
         {' · '}
-        <Link
-          prefetch={false}
-          href="/insurance"
+        <a
+          href={INSURANCE_SITE_URL}
           className="underline underline-offset-2 hover:text-muted-foreground"
+          rel="noopener noreferrer"
         >
           InsuranceTrustHub
-        </Link>
+        </a>
       </p>
     );
   }
@@ -69,13 +62,13 @@ export function ConsumerTrustNetworkLinks({
         Lenders
       </Link>
       {' · '}
-      <Link
-        prefetch={false}
-        href="/insurance"
+      <a
+        href={INSURANCE_SITE_URL}
         className="underline underline-offset-2 hover:text-muted-foreground"
+        rel="noopener noreferrer"
       >
         Insurance
-      </Link>
+      </a>
     </p>
   );
 }

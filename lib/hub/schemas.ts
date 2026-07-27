@@ -39,7 +39,10 @@ export function buildHubOrganizationSchema(hub: HubId) {
     name: config.siteName,
     url: hubUrl,
     logo: `${logoBase}${config.logoSrc.split('?')[0]}`,
-    parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
+    // InsuranceTrustHub is standalone — no MoveTrustHub parent in schema
+    ...(hub === 'insurance'
+      ? {}
+      : { parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] } }),
     description: config.tagline,
     contactPoint: {
       '@type': 'ContactPoint',
@@ -72,11 +75,12 @@ export function buildHubWebsiteSchema(
     name: config.siteName,
     url: hubUrl,
     publisher: { '@id': `${hubUrl}#organization` },
-    ...(hub === 'move'
-      ? {}
-      : {
+    // Lender may reference network parent; insurance stays fully independent
+    ...(hub === 'lender'
+      ? {
           isPartOf: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
-        }),
+        }
+      : {}),
     inLanguage: 'en-US',
     ...(options?.searchTarget
       ? { potentialAction: buildWebsiteSearchAction(options.searchTarget) }
@@ -117,9 +121,9 @@ export function buildHubHomeSchemaGraph(
   const org = buildHubOrganizationSchema(hub);
   const website = buildHubWebsiteSchema(hub, options);
 
-  // Specialist hubs include the network parent node for parentOrganization resolution.
+  // Lender includes network parent; insurance is standalone Organization only.
   const graph: Record<string, unknown>[] =
-    hub === 'move' ? [org, website] : [CONSUMER_TRUST_HUB_ORG, org, website];
+    hub === 'lender' ? [CONSUMER_TRUST_HUB_ORG, org, website] : [org, website];
 
   if (hub === 'move') {
     graph.push({

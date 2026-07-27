@@ -28,7 +28,7 @@ export function HubBrowser() {
             return (
               <Link
                 key={slug}
-                href={`/insurance/hubs/${slug}`}
+                href={`/hubs/${slug}`}
                 className="rounded-full border px-3 py-1 text-xs font-medium hover:bg-primary/5 hover:border-primary/30 transition-colors"
               >
                 {name} ({count})
@@ -40,7 +40,7 @@ export function HubBrowser() {
 
       <div className="grid sm:grid-cols-2 gap-4">
         {INSURANCE_HUBS.slice(0, 24).map((hub) => (
-          <Link key={`${hub.stateSlug}-${hub.slug}`} href={`/insurance/hubs/${hub.stateSlug}/${hub.slug}`}>
+          <Link key={`${hub.stateSlug}-${hub.slug}`} href={`/hubs/${hub.stateSlug}/${hub.slug}`}>
             <Card className="h-full hover:shadow-trust-lg transition-shadow">
               <CardContent className="pt-5">
                 <div className="flex items-start justify-between gap-2">

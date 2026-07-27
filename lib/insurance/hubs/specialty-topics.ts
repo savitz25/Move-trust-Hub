@@ -23,7 +23,7 @@ const SOUTH_FLORIDA_HUB = getHubBySlug('florida', 'miami-fort-lauderdale')!;
 export const SPECIALTY_TOPICS: SpecialtyTopic[] = [
   {
     slug: 'health-insurance',
-    path: '/insurance/hubs/health-insurance',
+    path: '/hubs/health-insurance',
     title: 'Health Insurance Agents',
     metaTitle: 'Health Insurance Agents by Market (2026) | ACA, Medicare & Group Plans',
     metaDescription:
@@ -52,7 +52,7 @@ export const SPECIALTY_TOPICS: SpecialtyTopic[] = [
   },
   {
     slug: 'medicare',
-    path: '/insurance/hubs/medicare',
+    path: '/hubs/medicare',
     title: 'Medicare Insurance Agents',
     metaTitle: 'Medicare Insurance Agents (2026) | Advantage, Supplement & Part D',
     metaDescription:
@@ -81,7 +81,7 @@ export const SPECIALTY_TOPICS: SpecialtyTopic[] = [
   },
   {
     slug: 'aca',
-    path: '/insurance/hubs/aca',
+    path: '/hubs/aca',
     title: 'ACA Marketplace Agents',
     metaTitle: 'ACA / Obamacare Insurance Agents (2026) | Marketplace Enrollment Help',
     metaDescription:

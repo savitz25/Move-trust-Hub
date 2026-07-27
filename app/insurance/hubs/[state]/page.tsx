@@ -43,9 +43,9 @@ export default async function StateHubsPage({
   return (
     <div className="container mx-auto px-4 py-12">
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href="/insurance/" className="hover:text-foreground">Home</Link>
+        <Link href="/" className="hover:text-foreground">Home</Link>
         {' / '}
-        <Link href="/insurance/hubs" className="hover:text-foreground">Hubs</Link>
+        <Link href="/hubs" className="hover:text-foreground">Hubs</Link>
         {' / '}
         <span className="text-foreground">{stateName}</span>
       </nav>
@@ -58,7 +58,7 @@ export default async function StateHubsPage({
 
       <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {hubs.map((hub) => (
-          <Link key={hub.slug} href={`/insurance/hubs/${state}/${hub.slug}`}>
+          <Link key={hub.slug} href={`/hubs/${state}/${hub.slug}`}>
             <Card className="h-full hover:shadow-trust-lg transition-shadow">
               <CardContent className="pt-6">
                 <div className="flex justify-between items-start">

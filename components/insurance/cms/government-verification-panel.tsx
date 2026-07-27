@@ -73,6 +73,38 @@ export function GovernmentVerificationPanel({ data, className }: Props) {
     : 'missing';
   const licenseStatus: RowStatus = data.licenseVerified ? 'verified' : 'pending';
 
+  /** Header badge must match real CMS standing — never overclaim when pending/missing. */
+  const panelBadge = (() => {
+    if (participationStatus === 'verified' && data.npi) {
+      return {
+        label: 'CMS enrollment matched',
+        className: 'border-emerald-200 bg-emerald-50 text-xs font-medium text-emerald-900',
+      };
+    }
+    if (participationStatus === 'pending') {
+      return {
+        label: 'CMS signals pending',
+        className: 'border-amber-200 bg-amber-50 text-xs font-medium text-amber-950',
+      };
+    }
+    if (participationStatus === 'na') {
+      return {
+        label: 'CMS not applicable',
+        className: 'border-slate-200 bg-slate-50 text-xs font-medium text-slate-700',
+      };
+    }
+    if (participationStatus === 'missing') {
+      return {
+        label: 'CMS data limited',
+        className: 'border-slate-200 bg-slate-50 text-xs font-medium text-slate-700',
+      };
+    }
+    return {
+      label: 'Government data',
+      className: 'border-slate-200 bg-white text-xs font-medium text-slate-700',
+    };
+  })();
+
   const rows: {
     key: string;
     label: string;
@@ -126,11 +158,8 @@ export function GovernmentVerificationPanel({ data, className }: Props) {
               </span>
               {title}
             </CardTitle>
-            <Badge
-              variant="outline"
-              className="border-teal-200 bg-white text-xs font-medium text-teal-800"
-            >
-              CMS Data Verified
+            <Badge variant="outline" className={panelBadge.className}>
+              {panelBadge.label}
             </Badge>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-slate-600">
