@@ -15,7 +15,7 @@ import { Card, CardContent } from '@/components/insurance/ui/card';
 export const metadata: Metadata = buildMetadata({
   title: 'Insurance Tools — Calculators & Verification Helpers',
   description:
-    'Free educational tools: premium cost estimator, coverage needs assessment, and state license verification links.',
+    'Free educational tools: Insurance Cost & Coverage Planner, Medicare CMS tools, and verification helpers.',
   path: '/tools',
 });
 
@@ -30,9 +30,9 @@ const TOOLS = [
   {
     href: '/tools/cost-estimator',
     icon: Calculator,
-    title: 'Premium cost estimator',
+    title: 'Insurance Cost & Coverage Planner',
     description:
-      'Get ballpark annual premium ranges by state and coverage type. Estimates only — not a quote.',
+      'ACA-focused total-cost planner: premiums, deductibles, expected out-of-pocket, and subsidy context. No leads.',
   },
   {
     href: '/tools/needs-assessment',

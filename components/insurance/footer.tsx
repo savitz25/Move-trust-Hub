@@ -54,7 +54,7 @@ export function Footer() {
               <div><Link prefetch={false} href="/tools/license-verification" className="hover:text-foreground transition-colors">State DOI Links</Link></div>
               <div><Link prefetch={false} href="/resources/auto-insurance-costs-by-state" className="hover:text-foreground transition-colors">Auto Insurance Costs</Link></div>
               <div><Link prefetch={false} href="/resources/homeowners-insurance-basics" className="hover:text-foreground transition-colors">Homeowners Basics</Link></div>
-              <div><Link prefetch={false} href="/tools/cost-estimator" className="hover:text-foreground transition-colors">Cost Estimator</Link></div>
+              <div><Link prefetch={false} href="/tools/cost-estimator" className="hover:text-foreground transition-colors">Cost &amp; Coverage Planner</Link></div>
             </div>
           </div>
 
