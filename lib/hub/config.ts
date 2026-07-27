@@ -4,15 +4,15 @@ import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Bump when replacing public/logo.png to bust immutable CDN/browser cache. */
-export const TRUST_HUB_LOGO_VERSION = '20260718';
+export const TRUST_HUB_LOGO_VERSION = '20260727';
 export const INSURANCE_LOGO_VERSION = '20260728';
 
 /** Canonical Move Trust Hub logo (header/footer). */
 export const TRUST_HUB_LOGO = {
   src: `/logo.png?v=${TRUST_HUB_LOGO_VERSION}`,
   alt: 'Move Trust Hub',
-  width: 712,
-  height: 192,
+  width: 1200,
+  height: 360,
 } as const;
 
 /** InsuranceTrustHub brand mark — never use Move logo on insurance host. */

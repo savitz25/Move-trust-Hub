@@ -37,14 +37,16 @@ export default function OpenGraphImage() {
               width: 52,
               height: 52,
               borderRadius: 12,
-              background: 'linear-gradient(135deg, #34D058 0%, #0077D4 100%)',
+              background: 'linear-gradient(135deg, #22C55E 0%, #0EA5E9 55%, #2563EB 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: 28,
+              color: '#ffffff',
+              fontSize: 26,
+              fontWeight: 800,
             }}
           >
-            🏠
+            A
           </div>
           Move Trust Hub
         </div>

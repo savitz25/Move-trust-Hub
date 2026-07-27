@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { TRUST_HUB_LOGO } from '@/lib/hub/config';
+import { TRUST_HUB_LOGO, TRUST_HUB_LOGO_VERSION } from '@/lib/hub/config';
 
 export const SITE_URL = 'https://www.movetrusthub.com';
 export const SITE_NAME = 'Move Trust Hub';
@@ -108,8 +108,20 @@ export const rootLayoutMetadata: Metadata = {
   description: DEFAULT_SITE_DESCRIPTION,
   authors: [{ name: SITE_NAME }],
   icons: {
-    icon: TRUST_HUB_LOGO.src,
-    apple: TRUST_HUB_LOGO.src,
+    icon: [
+      { url: `/favicon-16.png?v=${TRUST_HUB_LOGO_VERSION}`, sizes: '16x16', type: 'image/png' },
+      { url: `/favicon-32.png?v=${TRUST_HUB_LOGO_VERSION}`, sizes: '32x32', type: 'image/png' },
+      { url: `/icon-192.png?v=${TRUST_HUB_LOGO_VERSION}`, sizes: '192x192', type: 'image/png' },
+      { url: TRUST_HUB_LOGO.src, type: 'image/png' },
+    ],
+    apple: [
+      {
+        url: `/apple-touch-icon.png?v=${TRUST_HUB_LOGO_VERSION}`,
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+    shortcut: [`/favicon-32.png?v=${TRUST_HUB_LOGO_VERSION}`],
   },
   manifest: '/manifest.webmanifest',
   // Root OG/Twitter omit title so child routes cannot inherit the homepage headline.
