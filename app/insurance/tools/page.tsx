@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Calculator, ClipboardCheck, ShieldCheck, Wrench } from 'lucide-react';
+import { Calculator, ClipboardCheck, Pill, ShieldCheck, Wrench } from 'lucide-react';
 import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { Card, CardContent } from '@/components/insurance/ui/card';
 
@@ -50,6 +50,13 @@ const TOOLS = [
     icon: ShieldCheck,
     title: 'ACA eligibility checker',
     description: 'Rough marketplace subsidy estimate by income and household size.',
+  },
+  {
+    href: '/insurance/tools/prescription-drug-list',
+    icon: Pill,
+    title: 'Prescription drug list',
+    description:
+      'Build a private list of your medications with strength and dosage. Email or print for visits and plan reviews.',
   },
 ] as const;
 
