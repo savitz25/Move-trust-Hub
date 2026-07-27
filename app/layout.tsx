@@ -1,11 +1,15 @@
 import { siteFontVariables } from './fonts';
 import type { Viewport } from 'next';
+import { headers } from 'next/headers';
 import { preload } from 'react-dom';
 import './critical.css';
 import './globals.css';
 import { SchemaInjector } from '@/components/hub/schema-injector';
-
-import { buildTrustHubNetworkSchema } from '@/lib/hub/schemas';
+import {
+  buildInsuranceStandaloneRootSchema,
+  buildTrustHubNetworkSchema,
+} from '@/lib/hub/schemas';
+import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
 import { GoogleAnalyticsRoot } from '@/components/analytics/google-analytics-root';
 import { DeferredUiStyles } from '@/components/performance/deferred-ui-styles';
 import { ThirdPartyOrchestrator } from '@/components/performance/third-party-orchestrator';
@@ -20,7 +24,7 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -31,12 +35,17 @@ export default function RootLayout({
     crossOrigin: 'anonymous',
   });
 
+  const host = (await headers()).get('host');
+  const isInsuranceHost = isInsuranceStandaloneHost(host);
+  const rootSchema = isInsuranceHost
+    ? buildInsuranceStandaloneRootSchema()
+    : buildTrustHubNetworkSchema();
+
   return (
     <html lang="en" className={`light ${siteFontVariables}`}>
       <body className="font-sans antialiased">
-        <SchemaInjector data={buildTrustHubNetworkSchema()} />
+        <SchemaInjector data={rootSchema} />
         {children}
-        {/* GA4 at root — not interaction-gated, survives page-level SEO deploys */}
         <GoogleAnalyticsRoot />
         <DeferredUiStyles />
         <ThirdPartyOrchestrator />

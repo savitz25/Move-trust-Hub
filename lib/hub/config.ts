@@ -5,8 +5,9 @@ import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Bump when replacing public/logo.png to bust immutable CDN/browser cache. */
 export const TRUST_HUB_LOGO_VERSION = '20260718';
+export const INSURANCE_LOGO_VERSION = '20260728';
 
-/** Canonical Move Trust Hub logo (header/footer). Finance subpaths reuse the mark. */
+/** Canonical Move Trust Hub logo (header/footer). */
 export const TRUST_HUB_LOGO = {
   src: `/logo.png?v=${TRUST_HUB_LOGO_VERSION}`,
   alt: 'Move Trust Hub',
@@ -14,9 +15,23 @@ export const TRUST_HUB_LOGO = {
   height: 192,
 } as const;
 
+/** InsuranceTrustHub brand mark — never use Move logo on insurance host. */
+export const INSURANCE_HUB_LOGO = {
+  src: `/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`,
+  headerSrc: `/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`,
+  footerSrc: `/insurance/brand/insurance-trust-hub-logo-stacked.png?v=${INSURANCE_LOGO_VERSION}`,
+  alt: 'InsuranceTrustHub',
+  width: 712,
+  height: 192,
+} as const;
+
 /** Absolute logo URL for emails, JSON-LD, and external embeds. */
 export function trustHubLogoUrl(baseUrl = 'https://www.movetrusthub.com'): string {
   return `${baseUrl}/logo.png?v=${TRUST_HUB_LOGO_VERSION}`;
+}
+
+export function insuranceHubLogoUrl(baseUrl = 'https://www.insurancetrusthub.com'): string {
+  return `${baseUrl}/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`;
 }
 
 /** Five high-intent items — detailed links live in footer and guide pages. */
@@ -142,9 +157,9 @@ export const HUBS: Record<HubId, HubConfig> = {
     siteName: 'InsuranceTrustHub',
     shortName: 'Insurance',
     tagline: 'Independent, verified insurance agent directory — no paid placements.',
-    logoSrc: TRUST_HUB_LOGO.src,
-    headerLogoSrc: TRUST_HUB_LOGO.src,
-    logoAlt: 'InsuranceTrustHub',
+    logoSrc: INSURANCE_HUB_LOGO.footerSrc,
+    headerLogoSrc: INSURANCE_HUB_LOGO.headerSrc,
+    logoAlt: INSURANCE_HUB_LOGO.alt,
     accentClass: 'text-emerald-600',
     homeTitle: 'Licensed Insurance Agents Directory (2026) | InsuranceTrustHub',
     homeDescription:

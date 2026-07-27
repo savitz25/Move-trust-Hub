@@ -1,4 +1,4 @@
-import { trustHubLogoUrl } from '@/lib/hub/config';
+import { insuranceHubLogoUrl } from '@/lib/hub/config';
 import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import { SITE_EMAIL, SITE_NAME } from '@/lib/insurance/constants';
@@ -11,7 +11,7 @@ export const organizationSchema = {
   '@id': `${INSURANCE_HUB_URL}#organization`,
   name: SITE_NAME,
   url: INSURANCE_HUB_URL,
-  logo: trustHubLogoUrl(INSURANCE_SITE_URL),
+  logo: insuranceHubLogoUrl(INSURANCE_SITE_URL),
   email: SITE_EMAIL,
   contactPoint: {
     '@type': 'ContactPoint',
@@ -99,7 +99,7 @@ export function buildLocalBusinessSchema(provider: Provider) {
     '@type': 'LocalBusiness',
     '@id': `${providerUrl}#localbusiness`,
     name: provider.name,
-    image: provider.logo ?? trustHubLogoUrl(),
+    image: provider.logo ?? insuranceHubLogoUrl(INSURANCE_SITE_URL),
     url: provider.website ?? providerUrl,
     telephone: provider.phone ?? undefined,
     address: {
@@ -116,6 +116,6 @@ export function buildLocalBusinessSchema(provider: Provider) {
 export function buildHomepageGraph() {
   return {
     '@context': 'https://schema.org',
-    '@graph': [CONSUMER_TRUST_HUB_ORG, organizationSchema, websiteSchema, homepageServiceSchema],
+    '@graph': [organizationSchema, websiteSchema, homepageServiceSchema],
   };
 }

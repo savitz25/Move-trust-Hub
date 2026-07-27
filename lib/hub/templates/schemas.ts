@@ -87,11 +87,11 @@ export function buildArticleSchema(hub: HubId, article: ResourceArticleData) {
     dateModified: article.updatedAt,
     author: {
       '@type': 'Organization',
-      name: hub === 'insurance' ? 'Insurance Trust Hub' : 'Lender Trust Hub',
+      name: hub === 'insurance' ? 'InsuranceTrustHub' : 'Lender Trust Hub',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Move Trust Hub',
+      name: hub === 'insurance' ? 'InsuranceTrustHub' : 'Move Trust Hub',
     },
     mainEntityOfPage: { '@id': `${url}#webpage` },
     articleSection: article.category,

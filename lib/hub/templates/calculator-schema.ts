@@ -25,7 +25,12 @@ export function buildCalculatorToolSchema(
     },
     provider: {
       '@type': 'Organization',
-      name: 'Move Trust Hub',
+      name:
+        hub === 'insurance'
+          ? 'InsuranceTrustHub'
+          : hub === 'lender'
+            ? 'Lender Trust Hub'
+            : 'Move Trust Hub',
     },
   };
 }

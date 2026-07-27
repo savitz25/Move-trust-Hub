@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
 
-/** Header logo — same Move Trust Hub mark as the main site. */
+/** Header logo — InsuranceTrustHub brand only. */
 export function BrandLogo({
   href = '/',
   priority = false,
@@ -11,7 +11,7 @@ export function BrandLogo({
 }) {
   const image = (
     <span className="hub-logo-slot relative block shrink-0 max-w-[300px]">
-      <TrustHubLogoImage variant="header" priority={priority} />
+      <TrustHubLogoImage variant="header" priority={priority} hubId="insurance" />
     </span>
   );
 
@@ -30,11 +30,11 @@ export function BrandLogo({
   );
 }
 
-/** Footer logo — same Move Trust Hub mark as the main site. */
+/** Footer logo — InsuranceTrustHub brand only. */
 export function BrandLogoStacked({ className = '' }: { className?: string }) {
   return (
     <span className={`relative block h-12 w-[192px] shrink-0 bg-transparent ${className}`}>
-      <TrustHubLogoImage variant="footer" />
+      <TrustHubLogoImage variant="footer" hubId="insurance" />
     </span>
   );
 }

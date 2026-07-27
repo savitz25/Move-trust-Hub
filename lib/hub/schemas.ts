@@ -1,5 +1,5 @@
 import { SITE_EMAIL } from '@/lib/contact';
-import { getHubConfig, trustHubLogoUrl } from '@/lib/hub/config';
+import { getHubConfig, insuranceHubLogoUrl, trustHubLogoUrl } from '@/lib/hub/config';
 import { INSURANCE_SITE_URL, MOVE_SITE_URL } from '@/lib/hub/domains';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
@@ -31,14 +31,17 @@ const MOVE_ORG = {
 export function buildHubOrganizationSchema(hub: HubId) {
   const config = getHubConfig(hub);
   const hubUrl = hubCanonicalUrl(hub, '/');
-  const logoBase = hub === 'insurance' ? INSURANCE_SITE_URL : SITE_URL;
+  const logo =
+    hub === 'insurance'
+      ? insuranceHubLogoUrl(INSURANCE_SITE_URL)
+      : trustHubLogoUrl(SITE_URL);
 
   return {
     '@type': 'Organization',
     '@id': `${hubUrl}#organization`,
     name: config.siteName,
     url: hubUrl,
-    logo: `${logoBase}${config.logoSrc.split('?')[0]}`,
+    logo,
     // InsuranceTrustHub is standalone — no MoveTrustHub parent in schema
     ...(hub === 'insurance'
       ? {}
@@ -51,6 +54,16 @@ export function buildHubOrganizationSchema(hub: HubId) {
       areaServed: 'US',
       availableLanguage: 'English',
     },
+  };
+}
+
+/** Root schema for insurancetrusthub.com only — never include Move network nodes. */
+export function buildInsuranceStandaloneRootSchema() {
+  const org = buildHubOrganizationSchema('insurance');
+  const website = buildHubWebsiteSchema('insurance');
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [org, website],
   };
 }
 

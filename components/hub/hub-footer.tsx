@@ -23,8 +23,8 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-y-9">
           <div className="col-span-2 md:col-span-1">
             <Link prefetch={false} href={homeHref} className="flex items-center gap-2 font-semibold text-base tracking-tight">
-              <span className="relative block h-12 w-[192px] shrink-0 bg-transparent" aria-hidden="true">
-                <TrustHubLogoImage variant="footer" />
+              <span className="relative block h-12 w-[192px] shrink-0 bg-transparent">
+                <TrustHubLogoImage variant="footer" hubId={hub.id} />
               </span>
             </Link>
             <p className="mt-2.5 text-sm text-muted-foreground max-w-[210px] leading-snug">

@@ -1,9 +1,9 @@
 import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
 import type { HubId } from '@/lib/hub/types';
 
-/** Header logo — native transparent PNG (no optimizer matte). */
+/** Header logo — hub-specific brand mark (InsuranceTrustHub vs Move Trust Hub). */
 export function HubLogo({
-  hubId: _hubId,
+  hubId,
   priority = false,
 }: {
   hubId: HubId;
@@ -11,7 +11,7 @@ export function HubLogo({
 }) {
   return (
     <span className="hub-logo-slot relative block shrink-0">
-      <TrustHubLogoImage variant="header" priority={priority} />
+      <TrustHubLogoImage variant="header" priority={priority} hubId={hubId} />
     </span>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { TRUST_HUB_LOGO } from '@/lib/hub/config';
+import { INSURANCE_HUB_LOGO } from '@/lib/hub/config';
 import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
 import { hubCanonicalUrl, normalizeHubMetadataPath } from '@/lib/hub/paths';
 import { SITE_NAME } from '@/lib/insurance/constants';
@@ -14,11 +14,19 @@ export const HOMEPAGE_DESCRIPTION =
 export const DEFAULT_SITE_DESCRIPTION =
   'InsuranceTrustHub is an independent directory of licensed insurance agencies. Research providers, read verified reviews, and request quotes for auto, home, life, and business insurance — no paid placements.';
 
+/** Prefer generated OG image; logo used as fallback only. */
 export const OG_IMAGE = {
-  url: TRUST_HUB_LOGO.src,
-  width: TRUST_HUB_LOGO.width,
-  height: TRUST_HUB_LOGO.height,
-  alt: TRUST_HUB_LOGO.alt,
+  url: '/opengraph-image',
+  width: 1200,
+  height: 630,
+  alt: 'InsuranceTrustHub — independent DOI-verified insurance agent directory',
+} as const;
+
+export const INSURANCE_ICON = {
+  url: INSURANCE_HUB_LOGO.headerSrc,
+  width: INSURANCE_HUB_LOGO.width,
+  height: INSURANCE_HUB_LOGO.height,
+  alt: INSURANCE_HUB_LOGO.alt,
 } as const;
 
 export function buildOpenGraph(
@@ -111,8 +119,8 @@ export const rootLayoutMetadata: Metadata = {
   description: DEFAULT_SITE_DESCRIPTION,
   authors: [{ name: SITE_NAME }],
   icons: {
-    icon: [{ url: TRUST_HUB_LOGO.src, type: 'image/png' }],
-    apple: [{ url: TRUST_HUB_LOGO.src, type: 'image/png' }],
+    icon: [{ url: '/insurance/brand/insurance-trust-hub-favicon-32.png', type: 'image/png' }],
+    apple: [{ url: '/insurance/brand/insurance-trust-hub-icon-192.png', type: 'image/png' }],
   },
   openGraph: buildOpenGraph(),
   twitter: buildTwitter(),
