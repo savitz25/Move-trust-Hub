@@ -1,2 +1,2 @@
-/** @deprecated Use CostCoveragePlanner — kept for import compatibility */
+/** @deprecated Use CostCoveragePlanner â€” kept for import compatibility */
 export { CostCoveragePlanner as CostEstimatorTool } from '@/components/insurance/tools/cost-coverage-planner';
