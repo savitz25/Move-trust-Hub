@@ -7,6 +7,8 @@ import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 export const TRUST_HUB_LOGO_VERSION = '20260727';
 /** Bump when replacing public/insurance/brand/* so CDN/browser cache picks up the new mark. */
 export const INSURANCE_LOGO_VERSION = '20260728r2';
+/** Bump when replacing public/lender/brand/* for /lender section logos. */
+export const LENDER_LOGO_VERSION = '20260727';
 
 /** Canonical Move Trust Hub logo (header/footer). */
 export const TRUST_HUB_LOGO = {
@@ -26,6 +28,17 @@ export const INSURANCE_HUB_LOGO = {
   height: 239,
 } as const;
 
+/** LenderTrustHub brand mark — used on /lender/* (not Move logo). */
+export const LENDER_HUB_LOGO = {
+  src: `/lender/brand/lender-trust-hub-logo.png?v=${LENDER_LOGO_VERSION}`,
+  headerSrc: `/lender/brand/lender-trust-hub-logo-nav.png?v=${LENDER_LOGO_VERSION}`,
+  footerSrc: `/lender/brand/lender-trust-hub-logo-light.png?v=${LENDER_LOGO_VERSION}`,
+  stackedSrc: `/lender/brand/lender-trust-hub-logo-stacked.png?v=${LENDER_LOGO_VERSION}`,
+  alt: 'LenderTrustHub',
+  width: 714,
+  height: 186,
+} as const;
+
 /** Absolute logo URL for emails, JSON-LD, and external embeds. */
 export function trustHubLogoUrl(baseUrl = 'https://www.movetrusthub.com'): string {
   return `${baseUrl}/logo.png?v=${TRUST_HUB_LOGO_VERSION}`;
@@ -33,6 +46,10 @@ export function trustHubLogoUrl(baseUrl = 'https://www.movetrusthub.com'): strin
 
 export function insuranceHubLogoUrl(baseUrl = 'https://www.insurancetrusthub.com'): string {
   return `${baseUrl}/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`;
+}
+
+export function lenderHubLogoUrl(baseUrl = 'https://www.movetrusthub.com'): string {
+  return `${baseUrl}/lender/brand/lender-trust-hub-logo.png?v=${LENDER_LOGO_VERSION}`;
 }
 
 /** Five high-intent items — detailed links live in footer and guide pages. */
@@ -103,9 +120,10 @@ export const HUBS: Record<HubId, HubConfig> = {
     siteName: 'Lender Trust Hub',
     shortName: 'Lender',
     tagline: 'NMLS-verified mortgage lenders and county-level insights.',
-    logoSrc: TRUST_HUB_LOGO.src,
-    headerLogoSrc: TRUST_HUB_LOGO.src,
-    logoAlt: TRUST_HUB_LOGO.alt,
+    // Full-color wordmark for light chrome (HubFooter is bg-muted/20)
+    logoSrc: LENDER_HUB_LOGO.src,
+    headerLogoSrc: LENDER_HUB_LOGO.headerSrc,
+    logoAlt: LENDER_HUB_LOGO.alt,
     accentClass: 'text-[#3B82F6]',
     homeTitle: 'Mortgage Lenders Directory (2026) | LenderTrustHub',
     homeDescription:

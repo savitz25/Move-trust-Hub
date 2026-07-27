@@ -27,14 +27,16 @@ export default function LenderOpenGraphImage() {
               width: 52,
               height: 52,
               borderRadius: 12,
-              background: 'linear-gradient(135deg, #34D058 0%, #3B82F6 100%)',
+              background: 'linear-gradient(135deg, #D4A017 0%, #3B82F6 55%, #1E3A8A 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: 28,
+              color: '#ffffff',
+              fontSize: 26,
+              fontWeight: 800,
             }}
           >
-            🏦
+            A
           </div>
           Lender Trust Hub
         </div>

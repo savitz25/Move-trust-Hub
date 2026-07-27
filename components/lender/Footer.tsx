@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="mb-4">
-              <BrandLogoStacked className="brightness-0 invert opacity-95" />
+              <BrandLogoStacked />
             </div>
             <p className="max-w-md text-sm leading-relaxed">
               Independent, data-obsessed directory of mortgage lenders and brokers.
