@@ -136,6 +136,11 @@ export const LENDER_SECTION_PRESETS: Partial<Record<HubSectionPreset['section'],
     },
     links: [
       {
+        href: hubPath('lender', '/resources/first-time-homebuyer-programs'),
+        label: 'First-time homebuyer programs 2026',
+        description: 'FHA, VA, USDA, conventional & down payment assistance',
+      },
+      {
         href: hubPath('lender', '/resources/how-to-choose-mortgage-lender'),
         label: 'How to choose a mortgage lender',
         description: 'Key factors, red flags & comparison tips for 2026',

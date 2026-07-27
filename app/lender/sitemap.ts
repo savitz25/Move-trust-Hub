@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/fdic-insured-banks',
     '/auto-loan-companies',
     '/resources',
+    '/resources/first-time-homebuyer-programs',
     '/resources/how-to-choose-mortgage-lender',
     '/resources/fixed-vs-adjustable-rate-mortgages',
   ];

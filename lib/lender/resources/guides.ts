@@ -12,6 +12,17 @@ export type LenderGuideEntry = {
 
 export const lenderGuides: LenderGuideEntry[] = [
   {
+    slug: 'first-time-homebuyer-programs',
+    title:
+      'First-Time Homebuyer Mortgage Programs & Down Payment Assistance Options in 2026',
+    excerpt:
+      'FHA, VA, USDA, low-down conventional loans, and state/local down payment assistance—how to qualify, compare total cost, and choose a lender.',
+    category: 'Buying Guide',
+    href: '/lender/resources/first-time-homebuyer-programs',
+    readTime: '20 min read',
+    updatedAt: 'July 2026',
+  },
+  {
     slug: 'how-to-choose-mortgage-lender',
     title:
       'How to Choose the Right Mortgage Lender in 2026: Key Factors, Red Flags & Comparison Tips',

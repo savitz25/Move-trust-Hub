@@ -385,6 +385,11 @@ export default function FixedVsArmPage() {
                   How to choose a lender
                 </Link>
               </Button>
+              <Button asChild variant="outline">
+                <Link href={hubPath('lender', '/resources/first-time-homebuyer-programs')}>
+                  First-time buyer programs
+                </Link>
+              </Button>
             </div>
             <p className="mt-6 text-xs text-muted-foreground">
               LenderTrustHub is an independent informational directory with no paid placements or

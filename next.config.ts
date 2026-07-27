@@ -117,6 +117,12 @@ const nextConfig: NextConfig = {
         destination: '/lender/:path*',
         permanent: true,
       },
+      // SEO-friendly short URL for first-time homebuyer pillar
+      {
+        source: '/lender/first-time-homebuyer-programs',
+        destination: '/lender/resources/first-time-homebuyer-programs',
+        permanent: true,
+      },
       // GSC 404: legacy bare route → Alabama Huntsville destination hub
       {
         source: '/from-georgia-to-huntsville',

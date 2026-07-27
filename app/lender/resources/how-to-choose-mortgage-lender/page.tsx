@@ -366,6 +366,11 @@ export default function HowToChooseMortgageLenderPage() {
               <Button asChild variant="outline" size="sm">
                 <Link href={hubPath('lender', '/calculators')}>Mortgage calculators</Link>
               </Button>
+              <Button asChild variant="outline" size="sm">
+                <Link href={hubPath('lender', '/resources/first-time-homebuyer-programs')}>
+                  First-time buyer programs
+                </Link>
+              </Button>
             </div>
           </section>
 
