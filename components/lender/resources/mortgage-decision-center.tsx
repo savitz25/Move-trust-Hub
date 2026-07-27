@@ -527,26 +527,19 @@ export function MortgageDecisionCenter() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
-      <section className="border-b bg-white py-12 md:py-16" aria-labelledby="faq-heading">
-        <div className="container mx-auto max-w-3xl px-4">
-          <h2
-            id="faq-heading"
-            className="mb-2 text-center text-2xl font-semibold text-[#0A2540] md:text-3xl"
-          >
-            Questions homebuyers actually ask
-          </h2>
-          <p className="mb-8 text-center text-muted-foreground">
-            Straight answers — no sales pitch.
-          </p>
-          <FaqSection
-            title=""
-            items={DECISION_FAQS.map((f) => ({
-              question: f.question,
-              answer: f.answer,
-            }))}
-          />
-        </div>
-      </section>
+      <div className="border-b bg-white">
+        <p className="container mx-auto max-w-3xl px-4 pt-12 text-center text-muted-foreground md:pt-16">
+          Straight answers — no sales pitch.
+        </p>
+        <FaqSection
+          title="Questions homebuyers actually ask"
+          id="faq-heading"
+          items={DECISION_FAQS.map((f) => ({
+            question: f.question,
+            answer: f.answer,
+          }))}
+        />
+      </div>
 
       {/* ── Next steps ───────────────────────────────────────── */}
       <section
