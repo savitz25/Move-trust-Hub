@@ -6,7 +6,7 @@ import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 /** Bump when replacing public/logo.png to bust immutable CDN/browser cache. */
 export const TRUST_HUB_LOGO_VERSION = '20260718';
 
-/** Canonical header/footer logo — shared across Move, Lender, and Insurance hubs. */
+/** Canonical Move Trust Hub logo (header/footer). Finance subpaths reuse the mark. */
 export const TRUST_HUB_LOGO = {
   src: `/logo.png?v=${TRUST_HUB_LOGO_VERSION}`,
   alt: 'Move Trust Hub',
@@ -35,7 +35,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     accentClass: 'text-primary',
     homeTitle: 'Compare FMCSA-Licensed Movers (2026) | Move Trust Hub',
     homeDescription:
-      'Compare 25+ FMCSA-licensed interstate movers by verified reviews, pricing, and safety data.',
+      'Compare FMCSA-licensed interstate movers by reviews, pricing, and safety data. Free calculator, county guides, and independent research — no lead fees.',
     metadataTitleTemplate: '%s | Move Trust Hub',
     applicationName: 'Move Trust Hub',
     category: 'moving services',
@@ -52,15 +52,16 @@ export const HUBS: Record<HubId, HubConfig> = {
         ],
       },
       {
-        title: 'RESOURCES',
+        title: 'TOOLS & TRUST',
         links: [
-          { href: '/resources', label: 'Guides' },
-          { href: '/moving-calculator', label: 'Calculator' },
+          { href: '/moving-calculator', label: 'Moving Calculator' },
           { href: '/verify-dot', label: 'Verify DOT' },
+          { href: '/compare', label: 'Compare Movers' },
+          { href: '/about/how-we-score-movers', label: 'Trust Center' },
+          { href: '/resources', label: 'Guides' },
           { href: '/review', label: 'Leave a Review' },
           { href: '/for-movers', label: 'For Moving Companies' },
           { href: '/about', label: 'About' },
-          { href: '/about/how-we-score-movers', label: 'How We Score' },
           { href: '/contact', label: 'Contact' },
         ],
       },

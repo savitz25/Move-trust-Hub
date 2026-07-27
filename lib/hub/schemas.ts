@@ -12,7 +12,7 @@ const PARENT_ORG = {
   logo: trustHubLogoUrl(SITE_URL),
   email: SITE_EMAIL,
   description:
-    'Independent Trust Hub network for verified movers, mortgage lenders, and insurance agents in the United States.',
+    'Independent directory for researching FMCSA-licensed interstate and local moving companies in the United States. No lead fees, no paid placements.',
 };
 
 export function buildHubOrganizationSchema(hub: HubId) {

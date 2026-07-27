@@ -65,6 +65,7 @@ export function Footer() {
             <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">COMPANY &amp; LEGAL</div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
               <div><Link prefetch={false} href="/about" className="hover:text-foreground transition-colors">About Us</Link></div>
+              <div><Link prefetch={false} href="/about/how-we-score-movers" className="hover:text-foreground transition-colors">Trust Center</Link></div>
               <div><Link prefetch={false} href="/contact" className="hover:text-foreground transition-colors">Contact</Link></div>
               <div><Link prefetch={false} href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link></div>
               <div><Link prefetch={false} href="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link></div>

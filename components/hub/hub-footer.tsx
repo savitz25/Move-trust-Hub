@@ -120,7 +120,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
         </div>
       </div>
       <div className="border-t py-5 space-y-3">
-        {/* Soft network line when AfterYourMove is path-gated away (high-intent move pages). */}
+        {/* Single quiet network note on Move only — never equal footer columns for finance. */}
         {hub.id === 'move' ? <ConsumerTrustNetworkLinks /> : null}
         <p className="text-center text-[10px] text-muted-foreground/70 tracking-wide">
           Always verify licensing directly with{' '}

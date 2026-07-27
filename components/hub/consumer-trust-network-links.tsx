@@ -1,29 +1,29 @@
 import Link from 'next/link';
 
 /**
- * Phase 0 soft cross-hub discovery only — never primary nav.
- * Discreet footer line for existing users of the ConsumerTrust Hub network.
+ * Quiet network note only — never primary nav or equal footer columns.
+ * Optional discovery of temporary /lender and /insurance subpaths on this domain.
  */
 export function ConsumerTrustNetworkLinks({ className = '' }: { className?: string }) {
   return (
     <p
-      className={`text-center text-[11px] text-muted-foreground/80 leading-relaxed ${className}`}
+      className={`text-center text-[11px] text-muted-foreground/70 leading-relaxed ${className}`}
     >
-      Part of the ConsumerTrust Hub network →{' '}
+      Move Trust Hub is part of the ConsumerTrust Hub network.{' '}
       <Link
         prefetch={false}
         href="/lender"
-        className="underline underline-offset-2 hover:text-foreground"
+        className="underline underline-offset-2 hover:text-muted-foreground"
       >
-        LenderTrustHub
+        Lenders
       </Link>
       {' · '}
       <Link
         prefetch={false}
         href="/insurance"
-        className="underline underline-offset-2 hover:text-foreground"
+        className="underline underline-offset-2 hover:text-muted-foreground"
       >
-        InsuranceTrustHub
+        Insurance
       </Link>
     </p>
   );

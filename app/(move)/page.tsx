@@ -17,6 +17,8 @@ import {
 import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
 
 export const dynamic = 'force-static';
+/** Pick up chrome/nav deploy updates without waiting for full CDN max-age. */
+export const revalidate = 300;
 
 /** Trailing-slash policy: no trailing slash (canonical = https://www.movetrusthub.com). */
 const HOMEPAGE_CANONICAL = SITE_URL.replace(/\/$/, '');

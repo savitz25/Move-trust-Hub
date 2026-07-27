@@ -1,31 +1,30 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { ConsumerTrustNetworkLinks } from '@/components/hub/consumer-trust-network-links';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
-import { isAfterYourMoveAllowedPath } from '@/lib/hub/cross-sell-paths';
 
 type RelatedLink = {
   href: string;
   label: string;
 };
 
-/** Sister hubs (lender/insurance) only — move hub uses discreet network links only. */
+/**
+ * Sister-directory links for finance subpaths only.
+ * MoveTrustHub never shows a mid-footer finance CTA module — network note is footer-bottom only.
+ */
 const RELATED_BY_HUB: Record<Exclude<HubId, 'move'>, { intro: string; links: RelatedLink[] }> = {
   lender: {
     intro:
-      'Related independent directories when a home purchase overlaps with a move — same research-first approach.',
+      'Related independent research when a home purchase overlaps with a move — same no paid placements approach.',
     links: [
       { href: hubPath('move', '/companies'), label: 'Find interstate movers' },
-      { href: hubPath('insurance', '/directory'), label: 'Insurance agents' },
       { href: hubPath('move', '/moving-calculator'), label: 'Move calculator' },
     ],
   },
   insurance: {
     intro:
-      'Related independent directories when coverage changes with a move — same research-first approach.',
+      'Related independent research when coverage changes with a move — same no paid placements approach.',
     links: [
       { href: hubPath('move', '/companies'), label: 'Find movers' },
       { href: hubPath('move', '/resources'), label: 'Moving guides' },
@@ -34,32 +33,19 @@ const RELATED_BY_HUB: Record<Exclude<HubId, 'move'>, { intro: string; links: Rel
 };
 
 /**
- * Footer discovery module.
- * Phase 0: On Move, only a soft network line (not finance CTAs in primary chrome).
- * On lender/insurance: keep limited sister-directory links (still not top nav).
+ * Footer discovery module — never primary nav.
+ * Move hub: no module (quiet network line lives at footer bottom only).
  */
 export function AfterYourMoveModule({ hubId }: { hubId: HubId }) {
-  const pathname = usePathname();
-
   if (hubId === 'move') {
-    if (!isAfterYourMoveAllowedPath(pathname)) {
-      return null;
-    }
-    return (
-      <aside
-        className="mb-8 border-t border-border/40 pt-6"
-        aria-label="ConsumerTrust Hub network"
-      >
-        <ConsumerTrustNetworkLinks />
-      </aside>
-    );
+    return null;
   }
 
   const { intro, links } = RELATED_BY_HUB[hubId];
 
   return (
     <aside
-      className="mb-8 rounded-lg border border-border/60 bg-muted/20 px-4 py-4 sm:px-5"
+      className="mb-8 rounded-lg border border-border/50 bg-muted/15 px-4 py-4 sm:px-5"
       aria-label="Related independent directories"
     >
       <h2 className="text-sm font-semibold text-foreground">Related independent directories</h2>
@@ -76,9 +62,6 @@ export function AfterYourMoveModule({ hubId }: { hubId: HubId }) {
           </li>
         ))}
       </ul>
-      <div className="mt-4 pt-3 border-t border-border/50">
-        <ConsumerTrustNetworkLinks />
-      </div>
     </aside>
   );
 }
