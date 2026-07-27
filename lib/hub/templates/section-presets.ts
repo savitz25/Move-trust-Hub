@@ -22,6 +22,11 @@ export const INSURANCE_SECTION_PRESETS: Record<
     },
     links: [
       {
+        href: hubPath('insurance', '/resources/health-savings-accounts-hsa-2026'),
+        label: 'HSA 2026 guide',
+        description: 'Eligibility, contribution limits, tax benefits & HDHP tradeoffs',
+      },
+      {
         href: hubPath('insurance', '/resources/medicare-advantage-vs-medigap'),
         label: 'Medicare Advantage vs Medigap',
         description: 'Side-by-side comparison for seniors',

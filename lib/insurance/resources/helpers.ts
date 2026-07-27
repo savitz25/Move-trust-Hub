@@ -39,6 +39,7 @@ export function getRelatedArticles(article: Article, limit = 3): Article[] {
 
 export function getFeaturedResourceSlugs(): string[] {
   return [
+    'health-savings-accounts-hsa-2026',
     'short-term-health-insurance-vs-aca-marketplace',
     'medicare-advantage-vs-medigap',
     'how-to-choose-health-insurance-plan',

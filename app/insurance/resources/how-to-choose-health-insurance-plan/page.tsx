@@ -125,7 +125,7 @@ const faqs = [
   {
     question: 'Should I choose a high-deductible plan?',
     answer:
-      'It may suit healthy individuals who can pair it with an HSA for tax advantages, but review expected medical needs carefully.',
+      'It may suit healthy individuals who can pair it with an HSA for tax advantages, but review expected medical needs carefully. See our full HSA 2026 guide for contribution limits, eligibility, and total-cost tradeoffs.',
   },
   {
     question: 'What is the difference between a broker and direct enrollment?',
@@ -424,6 +424,11 @@ export default function HowToChooseHealthInsurancePlanPage() {
               </Button>
               <Button asChild variant="outline" size="sm">
                 <Link href={hubPath('insurance', '/calculators')}>All calculators</Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <Link href={hubPath('insurance', '/resources/health-savings-accounts-hsa-2026')}>
+                  HSA 2026 guide
+                </Link>
               </Button>
             </div>
           </section>

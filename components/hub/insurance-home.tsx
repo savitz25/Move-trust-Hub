@@ -36,15 +36,16 @@ const FEATURED_HUBS = [
 
 const FEATURED_ARTICLES = [
   {
+    slug: 'health-savings-accounts-hsa-2026',
+    title: 'HSA 2026: Limits, Eligibility & Tax Benefits',
+    description:
+      'Contribution limits, HDHP rules, triple tax advantages, investing, and when an HSA plan fits.',
+  },
+  {
     slug: 'how-to-choose-health-insurance-plan',
     title: 'How to Choose a Health Insurance Plan',
     description:
       'Compare metal tiers, networks, deductibles, premiums, and subsidies for 2026 coverage.',
-  },
-  {
-    slug: 'understanding-aca-subsidies',
-    title: 'Understanding ACA Subsidies',
-    description: 'Estimate premium tax credits and metal-tier tradeoffs before enrollment.',
   },
   {
     slug: 'medicare-advantage-vs-medigap',

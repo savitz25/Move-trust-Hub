@@ -4,6 +4,10 @@
 export const INSURANCE_RESOURCE_SLUG_ALIASES: Record<string, string> = {
   'how-to-choose-health-insurance': 'how-to-choose-health-insurance-plan',
   'health-insurance-2026-guide': 'how-to-choose-health-insurance-plan',
+  hsa: 'health-savings-accounts-hsa-2026',
+  'hsa-2026': 'health-savings-accounts-hsa-2026',
+  'health-savings-account': 'health-savings-accounts-hsa-2026',
+  'health-savings-accounts': 'health-savings-accounts-hsa-2026',
   'understanding-aca-subsidies': 'aca-obamacare-guide',
   'texas-auto-insurance': 'auto-insurance-costs-by-state',
   'california-home-insurance': 'homeowners-insurance-basics',

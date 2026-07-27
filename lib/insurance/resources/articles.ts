@@ -352,6 +352,57 @@ export const ARTICLES: Article[] = [
       { href: '/insurance/hubs/health-insurance', label: 'Health Insurance Hubs' },
       { href: '/insurance/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
       { href: '/insurance/tools/aca-eligibility-checker', label: 'ACA Eligibility Checker' },
+      { href: '/insurance/resources/health-savings-accounts-hsa-2026', label: 'HSA 2026 Guide' },
+      { href: '/insurance/directory', label: 'Agency Directory' },
+    ],
+  },
+  {
+    slug: 'health-savings-accounts-hsa-2026',
+    title:
+      'Health Savings Accounts (HSAs) in 2026: Eligibility, Contribution Limits, Tax Benefits, and How to Maximize Them',
+    description:
+      'Learn about Health Savings Accounts in 2026, including HSA eligibility, contribution limits, tax benefits, qualified expenses, investing, and how to maximize your HSA.',
+    publishedAt: '2026-07-26',
+    updatedAt: '2026-07-26',
+    readTime: '18 min',
+    category: 'Health Insurance',
+    sections: [
+      {
+        heading: '2026 HSA contribution limits and HDHP thresholds',
+        content:
+          'For 2026, annual HSA contribution limits are $4,400 (self-only) and $8,750 (family), plus a $1,000 catch-up contribution for eligible individuals age 55 or older. HSA-qualified HDHPs must meet IRS minimum deductible and maximum out-of-pocket thresholds that are separate from contribution limits.',
+        bullets: [
+          'Self-only contribution limit: $4,400',
+          'Family contribution limit: $8,750',
+          'Age 55+ catch-up: +$1,000 (generally to that person’s own HSA)',
+          'Minimum deductible (self / family): $1,700 / $3,400',
+          'Maximum out-of-pocket (self / family): $8,500 / $17,000',
+        ],
+      },
+      {
+        heading: 'Triple tax advantages and eligibility',
+        content:
+          'Eligible contributions may be pre-tax or deductible, growth can be tax-free, and qualified medical withdrawals are generally tax-free. To contribute, you generally need HSA-eligible HDHP coverage, no disqualifying other coverage, and typically no Medicare enrollment or dependent status for tax purposes.',
+      },
+      {
+        heading: 'Maximize strategy, ACA tradeoffs, and common mistakes',
+        content:
+          'Compare HSA-compatible HDHPs against traditional and ACA Silver/CSR plans using total cost—not premium alone. Capture employer contributions without overcontributing, keep receipts, maintain a cash reserve, and only invest long-term funds when appropriate. Verify HSA eligibility, watch fees, and coordinate contributions if approaching Medicare.',
+        bullets: [
+          'Not every high-deductible plan is HSA eligible',
+          'Employer contributions count toward the annual limit',
+          'Non-qualified withdrawals may face tax and penalties before age 65',
+          'CSR Silver plans can beat HSA plans for eligible households',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/insurance/resources/how-to-choose-health-insurance-plan',
+        label: 'How to Choose a Health Plan',
+      },
+      { href: '/insurance/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
+      { href: '/insurance/hubs/aca', label: 'ACA Specialty Hub' },
       { href: '/insurance/directory', label: 'Agency Directory' },
     ],
   },
