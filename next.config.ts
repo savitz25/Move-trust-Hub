@@ -107,6 +107,27 @@ const nextConfig: NextConfig = {
         destination: '/insurance/:path*',
         permanent: true,
       },
+      // Insurance tool inventory cleanup (apex rewrites /tools → /insurance/tools)
+      {
+        source: '/tools/aca-eligibility-checker',
+        destination: '/calculators/aca-subsidy',
+        permanent: true,
+      },
+      {
+        source: '/insurance/tools/aca-eligibility-checker',
+        destination: '/insurance/calculators/aca-subsidy',
+        permanent: true,
+      },
+      {
+        source: '/tools/quote-comparison',
+        destination: '/tools/cost-estimator',
+        permanent: true,
+      },
+      {
+        source: '/insurance/tools/quote-comparison',
+        destination: '/insurance/tools/cost-estimator',
+        permanent: true,
+      },
       {
         source: '/lender/lender',
         destination: '/lender',
