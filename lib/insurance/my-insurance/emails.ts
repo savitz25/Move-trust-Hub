@@ -409,6 +409,103 @@ export async function sendSavedCalculatorEmail(params: {
   });
 }
 
+export async function sendComparisonSummaryEmail(params: {
+  to: string;
+  title: string;
+  providers: Array<{ name: string; slug: string }>;
+  comparisonId?: string;
+}): Promise<boolean> {
+  const hq = `${PRODUCTION_SITE_ORIGIN}/my-insurance`;
+  const compareUrl = params.comparisonId
+    ? `${PRODUCTION_SITE_ORIGIN}/my-insurance/compare?id=${encodeURIComponent(params.comparisonId)}`
+    : `${PRODUCTION_SITE_ORIGIN}/my-insurance/compare?${params.providers.map((p) => `add=${encodeURIComponent(p.slug)}`).join('&')}`;
+
+  const listHtml = params.providers
+    .map(
+      (p, i) =>
+        `<tr><td style="padding:8px 0;border-bottom:1px solid ${BRAND.border};font-size:14px;">
+          ${i + 1}. <strong style="color:${BRAND.ink};">${escapeHtml(p.name)}</strong>
+          <br/><a href="${PRODUCTION_SITE_ORIGIN}/providers/${escapeHtml(p.slug)}" style="color:${BRAND.primary};font-size:12px;">View profile</a>
+        </td></tr>`
+    )
+    .join('');
+
+  const html = buildEmailHtml({
+    preheader: `Your agent comparison (${params.providers.length} agencies)`,
+    title: 'Agent comparison saved',
+    bodyHtml: `<p style="margin:0 0 12px;">
+      <strong style="color:${BRAND.ink};">${escapeHtml(params.title)}</strong> is in Insurance HQ.
+    </p>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${listHtml}</table>
+    <p style="margin:16px 0 0;font-size:13px;color:${BRAND.muted};">
+      Independent directory research only — not a recommendation, quote, or official endorsement.
+    </p>`,
+    ctaLabel: 'Open comparison',
+    ctaHref: compareUrl,
+    secondaryHtml: `<a href="${hq}" style="color:${BRAND.primary};font-weight:600;text-decoration:none;">Insurance HQ →</a>`,
+  });
+
+  return sendResend({
+    to: params.to,
+    subject: `Comparison: ${params.title} — My Insurance`,
+    html,
+    text: [
+      'Agent comparison saved',
+      params.title,
+      '',
+      ...params.providers.map((p, i) => `${i + 1}. ${p.name}`),
+      '',
+      `Open: ${compareUrl}`,
+      BRAND.trustLine,
+    ].join('\n'),
+  });
+}
+
+export async function sendReviewSubmittedEmail(params: {
+  to: string;
+  providerName: string;
+  providerSlug: string;
+  rating: number;
+  status: string;
+}): Promise<boolean> {
+  const hq = `${PRODUCTION_SITE_ORIGIN}/my-insurance`;
+  const profile = `${PRODUCTION_SITE_ORIGIN}/providers/${params.providerSlug}`;
+  const pendingNote =
+    params.status === 'published'
+      ? 'Your review is published on the agency profile.'
+      : 'Your review is pending moderation before it appears publicly. You can still see it in Insurance HQ.';
+
+  const html = buildEmailHtml({
+    preheader: `Review submitted for ${params.providerName}`,
+    title: 'Review received',
+    bodyHtml: `<p style="margin:0 0 12px;">
+      Thanks for sharing your experience with
+      <strong style="color:${BRAND.ink};">${escapeHtml(params.providerName)}</strong>
+      (${params.rating} star${params.rating === 1 ? '' : 's'}).
+    </p>
+    <p style="margin:0;color:${BRAND.body};">${escapeHtml(pendingNote)}</p>
+    <p style="margin:16px 0 0;font-size:13px;color:${BRAND.muted};">
+      InsuranceTrustHub is an independent research directory — reviews do not imply DOI/CMS endorsement.
+    </p>`,
+    ctaLabel: 'Open Insurance HQ',
+    ctaHref: hq,
+    secondaryHtml: `<a href="${profile}" style="color:${BRAND.primary};font-weight:600;text-decoration:none;">View agency profile →</a>`,
+  });
+
+  return sendResend({
+    to: params.to,
+    subject: `Review submitted — ${params.providerName}`,
+    html,
+    text: [
+      'Review received',
+      `${params.providerName} · ${params.rating} stars`,
+      pendingNote,
+      `HQ: ${hq}`,
+      BRAND.trustLine,
+    ].join('\n'),
+  });
+}
+
 export async function sendMagicLinkEmail(params: {
   to: string;
   confirmUrl: string;

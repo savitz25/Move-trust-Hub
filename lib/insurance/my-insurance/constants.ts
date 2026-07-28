@@ -18,6 +18,9 @@ export const POST_LOGIN_REDIRECT_KEY = 'ith-my-insurance-post-login-redirect';
 export const DRUG_BASKET_PATH = '/tools/prescription-drug-list';
 export const ACA_SUBSIDY_PATH = '/calculators/aca-subsidy';
 export const COST_ESTIMATOR_PATH = '/tools/cost-estimator';
+export const COMPARE_PATH = '/my-insurance/compare';
+export const COMPARE_TRAY_KEY = 'ith-my-insurance-compare-tray-v1';
+export const MAX_COMPARE_PROVIDERS = 4;
 
 /**
  * Safe post-login paths for InsuranceTrustHub only.

@@ -22,12 +22,13 @@ import { JsonLd } from '@/lib/insurance/seo/json-ld';
 import { buildInsuranceAgencySchema } from '@/lib/insurance/seo/schemas';
 import { INSURANCE_TYPES } from '@/lib/insurance/constants';
 import { LeadForm } from '@/components/insurance/lead-form';
-import { ReviewForm } from '@/components/insurance/review-form';
 import { StarRating } from '@/components/insurance/star-rating';
 import { TrustVerificationSummary } from '@/components/insurance/trust-verification-summary';
 import { GovernmentVerificationPanel } from '@/components/insurance/cms/government-verification-panel';
 import { resolveGovernmentVerification } from '@/lib/insurance/cms/resolve-government-verification';
 import { SaveProviderButton } from '@/components/insurance/my-insurance/save-provider-button';
+import { CompareProviderButton } from '@/components/insurance/my-insurance/compare-provider-button';
+import { WriteReviewForm } from '@/components/insurance/my-insurance/write-review-form';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
 import { Badge } from '@/components/insurance/ui/badge';
@@ -139,6 +140,10 @@ export default async function ProviderPage({ params, searchParams }: ProviderPag
 
             <div className="flex flex-wrap gap-2 shrink-0">
               <SaveProviderButton
+                providerSlug={provider.slug}
+                providerName={provider.name}
+              />
+              <CompareProviderButton
                 providerSlug={provider.slug}
                 providerName={provider.name}
               />
@@ -343,7 +348,7 @@ export default async function ProviderPage({ params, searchParams }: ProviderPag
 
             <section>
               <h2 className="text-xl font-semibold mb-4">Write a review</h2>
-              <ReviewForm providerSlug={provider.slug} providerName={provider.name} />
+              <WriteReviewForm providerSlug={provider.slug} providerName={provider.name} />
             </section>
           </div>
 
