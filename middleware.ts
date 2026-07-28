@@ -4,6 +4,9 @@ import {
   INSURANCE_SITE_URL,
   insuranceApexToAppPath,
   isInsuranceStandaloneHost,
+  isMoveOnlyPath,
+  LENDER_SITE_URL,
+  moveAbsoluteUrl,
   shouldRewriteInsurancePath,
 } from '@/lib/hub/domains';
 import { HUB_HEADER, PATHNAME_COOKIE, PATHNAME_HEADER } from '@/lib/hub/paths';
@@ -45,7 +48,6 @@ export async function middleware(request: NextRequest) {
     }
 
     // SEO critical: insurancetrusthub.com /sitemap.xml must NOT serve MoveTrustHub URLs.
-    // Matcher previously excluded *.xml so this rewrite never ran — fix explicitly.
     if (
       isInsuranceStandaloneHost(host) &&
       (pathname === '/sitemap.xml' || pathname === '/sitemap')
@@ -58,7 +60,6 @@ export async function middleware(request: NextRequest) {
       const response = NextResponse.rewrite(rewriteUrl, {
         request: { headers: requestHeaders },
       });
-      // Short CDN TTL so sitemap corrections propagate quickly after deploys
       response.headers.set('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
       response.headers.set('CDN-Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
       response.headers.set('X-Trust-Hub', 'insurance');
@@ -95,20 +96,34 @@ export async function middleware(request: NextRequest) {
       );
     }
 
-    // insurancetrusthub.com: rewrite bare public paths to internal /insurance app routes
-    if (isInsuranceStandaloneHost(host) && shouldRewriteInsurancePath(pathname)) {
-      const rewriteUrl = request.nextUrl.clone();
-      rewriteUrl.pathname = insuranceApexToAppPath(pathname);
-      const requestHeaders = new Headers(request.headers);
-      // Public path for chrome/analytics; internal path is the rewrite target.
-      requestHeaders.set(PATHNAME_HEADER, pathname);
-      requestHeaders.set(HUB_HEADER, 'insurance');
-      const response = NextResponse.rewrite(rewriteUrl, {
-        request: { headers: requestHeaders },
-      });
-      const baseTtl = DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
-      applyPublicCacheHeaders(response, htmlCacheSecondsForPath(rewriteUrl.pathname, baseTtl));
-      return response;
+    // insurancetrusthub.com: insurance IA only — never render Move/lender verticals.
+    if (isInsuranceStandaloneHost(host)) {
+      // Move-only paths → permanent redirect to Move (or lender) apex.
+      if (isMoveOnlyPath(pathname)) {
+        const target =
+          pathname === '/lender' || pathname.startsWith('/lender/')
+            ? `${LENDER_SITE_URL}${pathname}${request.nextUrl.search}`
+            : moveAbsoluteUrl(pathname, request.nextUrl.search);
+        return NextResponse.redirect(target, 301);
+      }
+
+      if (shouldRewriteInsurancePath(pathname)) {
+        const rewriteUrl = request.nextUrl.clone();
+        rewriteUrl.pathname = insuranceApexToAppPath(pathname);
+        const requestHeaders = new Headers(request.headers);
+        requestHeaders.set(PATHNAME_HEADER, pathname);
+        requestHeaders.set(HUB_HEADER, 'insurance');
+        const response = NextResponse.rewrite(rewriteUrl, {
+          request: { headers: requestHeaders },
+        });
+        const baseTtl = DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
+        applyPublicCacheHeaders(
+          response,
+          htmlCacheSecondsForPath(rewriteUrl.pathname, baseTtl)
+        );
+        response.headers.set('X-Trust-Hub', 'insurance');
+        return response;
+      }
     }
 
     // Permanent cleanup: doubled hub prefixes from bad absolute links.
