@@ -27,6 +27,7 @@ import { StarRating } from '@/components/insurance/star-rating';
 import { TrustVerificationSummary } from '@/components/insurance/trust-verification-summary';
 import { GovernmentVerificationPanel } from '@/components/insurance/cms/government-verification-panel';
 import { resolveGovernmentVerification } from '@/lib/insurance/cms/resolve-government-verification';
+import { SaveProviderButton } from '@/components/insurance/my-insurance/save-provider-button';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
 import { Badge } from '@/components/insurance/ui/badge';
@@ -137,6 +138,10 @@ export default async function ProviderPage({ params, searchParams }: ProviderPag
             </div>
 
             <div className="flex flex-wrap gap-2 shrink-0">
+              <SaveProviderButton
+                providerSlug={provider.slug}
+                providerName={provider.name}
+              />
               {provider.phone && (
                 <Button asChild variant="outline" className="gap-2">
                   <a href={`tel:${provider.phone.replace(/\D/g, '')}`}>

@@ -44,6 +44,7 @@ export const INSURANCE_APEX_ALLOW_PREFIXES = [
   '/data',
   '/resources',
   '/destinations',
+  '/my-insurance',
   '/about',
   '/contact',
   '/privacy',
@@ -83,6 +84,8 @@ export function shouldRewriteInsurancePath(pathname: string): boolean {
   if (pathname.startsWith('/insurance')) return false;
   if (pathname.startsWith('/api')) return false;
   if (pathname.startsWith('/_next')) return false;
+  // Auth routes live at monorepo root app/auth/* (not under /insurance)
+  if (pathname.startsWith('/auth')) return false;
   if (isMoveOnlyPath(pathname)) return false;
   if (pathname === '/privacy-policy' || pathname === '/terms-of-service') return false;
 

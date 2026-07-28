@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { HubSegmentShell } from '@/components/hub/hub-segment-shell';
+import { MyInsuranceShell } from '@/components/insurance/my-insurance/my-insurance-shell';
 import { getHubConfig } from '@/lib/hub/config';
 import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
 import { buildHubLayoutMetadata } from '@/lib/hub/metadata';
@@ -40,5 +41,9 @@ export default function InsuranceHubLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <HubSegmentShell hubId="insurance">{children}</HubSegmentShell>;
+  return (
+    <MyInsuranceShell>
+      <HubSegmentShell hubId="insurance">{children}</HubSegmentShell>
+    </MyInsuranceShell>
+  );
 }
