@@ -4,9 +4,30 @@ import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
 import { pathAfterAuth } from '@/lib/auth/path-after-auth';
+import {
+  AUTH_CALLBACK_PATH,
+  PRODUCTION_SITE_ORIGIN as INSURANCE_ORIGIN,
+} from '@/lib/insurance/my-insurance/constants';
+import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
+  const url = new URL(request.url);
+  const { searchParams } = url;
+  const host =
+    request.headers.get('x-forwarded-host')?.split(',')[0]?.trim() ||
+    request.headers.get('host') ||
+    url.host;
+  const nextRaw = searchParams.get('next') || '';
+
+  // Insurance apex / Insurance post-login next → dedicated ITH callback (never My Move)
+  if (shouldDelegateToInsuranceAuth(host, nextRaw)) {
+    const insuranceCallback = new URL(
+      `${AUTH_CALLBACK_PATH}${url.search}`,
+      INSURANCE_ORIGIN
+    );
+    return NextResponse.redirect(insuranceCallback);
+  }
+
   const code = searchParams.get('code');
   const next = sanitizePostLoginPath(searchParams.get('next'));
   const oauthError = searchParams.get('error');
@@ -47,4 +68,23 @@ export async function GET(request: Request) {
   }
 
   return NextResponse.redirect(productionAuthRedirect(failPath, request));
+}
+
+function shouldDelegateToInsuranceAuth(
+  host: string,
+  nextRaw: string
+): boolean {
+  if (isInsuranceStandaloneHost(host)) return true;
+  const next = nextRaw.trim().toLowerCase();
+  if (!next) return false;
+  return (
+    next === '/my-insurance' ||
+    next.startsWith('/my-insurance/') ||
+    next.startsWith('/providers/') ||
+    next === '/providers' ||
+    next.startsWith('/tools/') ||
+    next === '/tools' ||
+    next.startsWith('/hubs/') ||
+    next === '/hubs'
+  );
 }

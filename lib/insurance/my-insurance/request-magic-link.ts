@@ -8,6 +8,7 @@ import {
 } from '@/lib/supabase/config';
 import {
   AUTH_CALLBACK_URL,
+  AUTH_CONFIRM_PATH,
   PRODUCTION_SITE_ORIGIN,
   sanitizePostLoginPath,
 } from '@/lib/insurance/my-insurance/constants';
@@ -48,7 +49,10 @@ export async function requestMagicLink(
 
       if (!error && data?.properties?.hashed_token) {
         const type = data.properties.verification_type || 'magiclink';
-        const confirmUrl = new URL(`${PRODUCTION_SITE_ORIGIN}/auth/confirm`);
+        // Must use ITH confirm — monorepo /auth/confirm is My Move and forces movetrusthub.com
+        const confirmUrl = new URL(
+          `${PRODUCTION_SITE_ORIGIN}${AUTH_CONFIRM_PATH}`
+        );
         confirmUrl.searchParams.set('token_hash', data.properties.hashed_token);
         confirmUrl.searchParams.set('type', type);
         confirmUrl.searchParams.set('next', nextPath);
