@@ -66,6 +66,33 @@ export async function middleware(request: NextRequest) {
       return response;
     }
 
+    // PWA: ITH-only service worker + manifest (never Move branding)
+    if (isInsuranceStandaloneHost(host)) {
+      if (pathname === '/sw.js') {
+        const rewriteUrl = request.nextUrl.clone();
+        rewriteUrl.pathname = '/insurance/sw.js';
+        const response = NextResponse.rewrite(rewriteUrl);
+        response.headers.set('Content-Type', 'application/javascript; charset=utf-8');
+        response.headers.set('Service-Worker-Allowed', '/');
+        response.headers.set('Cache-Control', 'public, max-age=0, must-revalidate');
+        response.headers.set('X-Trust-Hub', 'insurance');
+        return response;
+      }
+      if (
+        pathname === '/manifest.webmanifest' ||
+        pathname === '/site.webmanifest' ||
+        pathname === '/manifest.json'
+      ) {
+        const rewriteUrl = request.nextUrl.clone();
+        rewriteUrl.pathname = '/insurance/manifest.webmanifest';
+        const response = NextResponse.rewrite(rewriteUrl);
+        response.headers.set('Content-Type', 'application/manifest+json; charset=utf-8');
+        response.headers.set('Cache-Control', 'public, max-age=3600');
+        response.headers.set('X-Trust-Hub', 'insurance');
+        return response;
+      }
+    }
+
     // Canonical insurance paths are apex (no /insurance prefix) on insurancetrusthub.com.
     // Keep /insurance/admin on both hosts for monorepo admin isolation.
     const isInsuranceAdmin =
@@ -213,14 +240,18 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Must run on insurance apex — not covered by the catch-all (which excludes *.xml)
+    // Must run on insurance apex — not covered by the catch-all (which excludes *.xml / webmanifest)
     '/sitemap.xml',
     '/sitemap',
+    '/sw.js',
+    '/manifest.webmanifest',
+    '/site.webmanifest',
+    '/manifest.json',
     {
       // robots.txt stays excluded — app/robots.ts is host-aware.
       // Other *.xml stay excluded; sitemap is listed explicitly above.
       source:
-        '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|sitemap-local|manifest.webmanifest|icon|apple-icon|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2|woff|ttf|otf|xml|txt|webmanifest)$).*)',
+        '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|sitemap-local|sw\\.js|manifest\\.webmanifest|site\\.webmanifest|manifest\\.json|icon|apple-icon|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2|woff|ttf|otf|xml|txt|webmanifest)$).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' },

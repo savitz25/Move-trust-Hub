@@ -1,6 +1,7 @@
 import { HubFamilyBar } from '@/components/hub/hub-family-bar';
 import { HubFooter } from '@/components/hub/hub-footer';
 import { HubNavbar } from '@/components/hub/hub-navbar';
+import { InsurancePwaProvider } from '@/components/insurance/pwa/insurance-pwa-provider';
 import {
   DeferredJourneyTracker,
   DeferredLegacyWelcomeBanner,
@@ -23,12 +24,13 @@ export async function HubChrome({
   children: React.ReactNode;
 }) {
   const isMove = hubId === 'move';
+  const isInsurance = hubId === 'insurance';
   // Lender still lives as a temporary Move subpath — show discreet sister switcher.
   // Insurance is a standalone specialist destination: no peer hub switcher in the header.
   const showSecondaryHubSwitcher = hubId === 'lender';
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col pt-[env(safe-area-inset-top)]">
       {showSecondaryHubSwitcher ? <HubFamilyBar activeHub={hubId} /> : null}
       <HubNavbar hubId={hubId} />
       <DeferredLegacyWelcomeBanner hubId={hubId} />
@@ -41,6 +43,8 @@ export async function HubChrome({
       <main className="flex-1 pb-[env(safe-area-inset-bottom)] sm:pb-0">{children}</main>
       <HubFooter hubId={hubId} />
       {isMove ? <DeferredMoveTipsOptIn /> : null}
+      {/* ITH-only PWA layer — no Move branding, optional install, non-blocking */}
+      {isInsurance ? <InsurancePwaProvider /> : null}
     </div>
   );
 }

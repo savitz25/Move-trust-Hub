@@ -113,6 +113,14 @@ export function shouldRewriteInsurancePath(pathname: string): boolean {
 export function insuranceApexToAppPath(pathname: string): string {
   if (pathname === '/' || pathname === '') return '/insurance';
   if (pathname === '/sitemap.xml' || pathname === '/sitemap') return '/insurance/sitemap.xml';
+  if (pathname === '/sw.js') return '/insurance/sw.js';
+  if (
+    pathname === '/manifest.webmanifest' ||
+    pathname === '/site.webmanifest' ||
+    pathname === '/manifest.json'
+  ) {
+    return '/insurance/manifest.webmanifest';
+  }
   if (pathname === '/opengraph-image' || pathname.startsWith('/opengraph-image/')) {
     return `/insurance${pathname}`;
   }
