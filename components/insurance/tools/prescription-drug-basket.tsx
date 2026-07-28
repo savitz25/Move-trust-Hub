@@ -12,7 +12,6 @@ import {
   Sparkles,
   X,
   Check,
-  Lock,
 } from 'lucide-react';
 import { Button } from '@/components/insurance/ui/button';
 import { Input } from '@/components/insurance/ui/input';
@@ -30,6 +29,7 @@ import {
   type PrescriptionBasketDraft,
   type PrescriptionItem,
 } from '@/lib/insurance/tools/prescription-basket';
+import { SaveDrugBasketButton } from '@/components/insurance/my-insurance/save-drug-basket-button';
 
 export function PrescriptionDrugBasket() {
   const formId = useId();
@@ -485,12 +485,26 @@ export function PrescriptionDrugBasket() {
         {/* Actions */}
         <div className="print:hidden mt-6 sticky bottom-4 z-10 space-y-3 rounded-2xl border border-slate-200 bg-slate-50/95 p-4 shadow-lg backdrop-blur-sm sm:static sm:shadow-none">
           <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+            <SaveDrugBasketButton
+              items={items.map((item, index) => ({
+                name: item.name,
+                strength: item.strength,
+                form: item.form,
+                dosage: item.dosage,
+                quantity: item.quantity,
+                notes: item.notes,
+                sort_order: index,
+              }))}
+              className="h-12 flex-1 sm:flex-none sm:min-w-[200px]"
+              disabled={items.length === 0}
+            />
             <Button
               type="button"
               size="lg"
+              variant="outline"
               disabled={items.length === 0}
               onClick={emailList}
-              className="h-12 flex-1 gap-2 rounded-xl bg-teal-600 text-white hover:bg-teal-700 disabled:opacity-50 sm:flex-none sm:min-w-[160px]"
+              className="h-12 flex-1 gap-2 rounded-xl border-slate-300 bg-white sm:flex-none sm:min-w-[160px]"
             >
               <Mail className="h-4 w-4" aria-hidden />
               Email My List
@@ -506,26 +520,11 @@ export function PrescriptionDrugBasket() {
               <Printer className="h-4 w-4" aria-hidden />
               Print / Download PDF
             </Button>
-            <Button
-              type="button"
-              size="lg"
-              variant="outline"
-              disabled
-              title="Coming soon — save to a free My Health account"
-              className="h-12 flex-1 gap-2 rounded-xl border-dashed border-slate-300 bg-white text-slate-500 sm:flex-none sm:min-w-[160px]"
-            >
-              <Lock className="h-4 w-4" aria-hidden />
-              Save to My Health
-              <span className="rounded-full bg-slate-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
-                Soon
-              </span>
-            </Button>
           </div>
           <p className="flex items-start gap-2 text-xs leading-relaxed text-slate-500">
             <Shield className="mt-0.5 h-3.5 w-3.5 shrink-0 text-teal-600" aria-hidden />
-            Your information stays private on this device. We only use it to help you organize your
-            medications. This tool is educational — not medical advice. Always verify with your
-            pharmacist or doctor.
+            Draft stays on this device until you save. Saving to My Insurance syncs your list across
+            devices — we never sell your data. Educational only — not medical advice.
           </p>
         </div>
       </section>

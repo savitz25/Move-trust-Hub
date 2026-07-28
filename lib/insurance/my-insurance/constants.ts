@@ -14,6 +14,11 @@ export const GUEST_SAVED_PROVIDERS_KEY = 'ith-my-insurance-saved-providers-v1';
 export const PENDING_SAVE_ACTION_KEY = 'ith-my-insurance-pending-action-v1';
 export const POST_LOGIN_REDIRECT_KEY = 'ith-my-insurance-post-login-redirect';
 
+/** Guest draft calculator save (pre-auth) — short-lived in sessionStorage via pending action. */
+export const DRUG_BASKET_PATH = '/tools/prescription-drug-list';
+export const ACA_SUBSIDY_PATH = '/calculators/aca-subsidy';
+export const COST_ESTIMATOR_PATH = '/tools/cost-estimator';
+
 /**
  * Safe post-login paths for InsuranceTrustHub only.
  * Blocks Move/portal destinations and open redirects.
