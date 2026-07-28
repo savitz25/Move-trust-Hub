@@ -6,21 +6,26 @@ import {
   PRODUCTION_SITE_ORIGIN,
   sanitizePostLoginPath,
 } from '@/lib/insurance/my-insurance/constants';
+import {
+  insuranceAuthErrorUrl,
+  insuranceAuthSuccessUrl,
+} from '@/lib/insurance/my-insurance/oauth-redirect';
 import { sendWelcomeEmail } from '@/lib/insurance/my-insurance/emails';
 
+/**
+ * OAuth + code exchange for My Insurance only.
+ * Always finishes on insurancetrusthub.com — never movetrusthub.com /my-move.
+ */
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
   const next = sanitizePostLoginPath(searchParams.get('next'));
   const oauthError = searchParams.get('error');
-
-  const fail = new URL(
-    `${MY_INSURANCE_PATH}?auth=error&next=${encodeURIComponent(next)}`,
-    PRODUCTION_SITE_ORIGIN
-  );
+  const errorDescription = searchParams.get('error_description');
 
   if (oauthError) {
-    return NextResponse.redirect(fail);
+    console.error('[auth/insurance/callback] OAuth error', oauthError, errorDescription);
+    return NextResponse.redirect(insuranceAuthErrorUrl(next));
   }
 
   if (code) {
@@ -40,9 +45,11 @@ export async function GET(request: Request) {
           /* non-fatal */
         }
       }
-      return NextResponse.redirect(new URL(next, PRODUCTION_SITE_ORIGIN));
+      // Absolute ITH URL only
+      return NextResponse.redirect(insuranceAuthSuccessUrl(next));
     }
+    console.error('[auth/insurance/callback] exchangeCodeForSession', error.message);
   }
 
-  return NextResponse.redirect(fail);
+  return NextResponse.redirect(insuranceAuthErrorUrl(next));
 }

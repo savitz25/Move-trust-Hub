@@ -10,6 +10,14 @@ import {
 } from '@/lib/insurance/my-insurance/constants';
 import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
 
+/**
+ * Move + shared-host OAuth/magic-link callback.
+ *
+ * Insurance isolation:
+ * - On insurancetrusthub.com → always hand off to /auth/insurance/callback (no code exchange here).
+ * - On movetrusthub.com with next=/my-insurance (etc.) → same handoff before exchange.
+ * - PKCE failure often means OAuth started on ITH; forward code to ITH without consuming it.
+ */
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const { searchParams } = url;
@@ -18,8 +26,9 @@ export async function GET(request: Request) {
     request.headers.get('host') ||
     url.host;
   const nextRaw = searchParams.get('next') || '';
+  const code = searchParams.get('code');
 
-  // Insurance apex / Insurance post-login next → dedicated ITH callback (never My Move)
+  // Never run My Move exchange for Insurance hosts or Insurance post-login destinations
   if (shouldDelegateToInsuranceAuth(host, nextRaw)) {
     const insuranceCallback = new URL(
       `${AUTH_CALLBACK_PATH}${url.search}`,
@@ -28,7 +37,6 @@ export async function GET(request: Request) {
     return NextResponse.redirect(insuranceCallback);
   }
 
-  const code = searchParams.get('code');
   const next = sanitizePostLoginPath(searchParams.get('next'));
   const oauthError = searchParams.get('error');
   const errorDescription = searchParams.get('error_description');
@@ -60,21 +68,42 @@ export async function GET(request: Request) {
           console.error('[auth/callback] ensureUserProfile failed', profileErr);
         }
       }
-      // Portal: MFA / optional password. My Move: optional password after value-first save.
       const destination = await pathAfterAuth(next);
+      // Extra guard: never send Insurance next to Move production origin
+      if (isInsuranceNextPath(destination)) {
+        return NextResponse.redirect(new URL(destination, INSURANCE_ORIGIN));
+      }
       return NextResponse.redirect(productionAuthRedirect(destination, request));
     }
+
     console.error('[auth/callback] exchangeCodeForSession failed', error.message);
+
+    // OAuth was likely started on ITH (PKCE verifier cookie only lives there).
+    // Forward the unused code to Insurance callback instead of dumping into My Move.
+    if (isPkceCrossHostFailure(error.message)) {
+      const insuranceCallback = new URL(
+        `${AUTH_CALLBACK_PATH}${url.search}`,
+        INSURANCE_ORIGIN
+      );
+      if (!insuranceCallback.searchParams.get('next')) {
+        insuranceCallback.searchParams.set('next', '/my-insurance');
+      }
+      console.warn(
+        '[auth/callback] forwarding OAuth code to Insurance callback (cross-host recovery)'
+      );
+      return NextResponse.redirect(insuranceCallback);
+    }
   }
 
   return NextResponse.redirect(productionAuthRedirect(failPath, request));
 }
 
-function shouldDelegateToInsuranceAuth(
-  host: string,
-  nextRaw: string
-): boolean {
+function shouldDelegateToInsuranceAuth(host: string, nextRaw: string): boolean {
   if (isInsuranceStandaloneHost(host)) return true;
+  return isInsuranceNextPath(nextRaw);
+}
+
+function isInsuranceNextPath(nextRaw: string): boolean {
   const next = nextRaw.trim().toLowerCase();
   if (!next) return false;
   return (
@@ -85,6 +114,21 @@ function shouldDelegateToInsuranceAuth(
     next.startsWith('/tools/') ||
     next === '/tools' ||
     next.startsWith('/hubs/') ||
-    next === '/hubs'
+    next === '/hubs' ||
+    next.startsWith('/calculators/') ||
+    next === '/calculators' ||
+    next.startsWith('/directory')
+  );
+}
+
+function isPkceCrossHostFailure(message: string): boolean {
+  const m = message.toLowerCase();
+  return (
+    m.includes('pkce') ||
+    m.includes('code verifier') ||
+    m.includes('code_verifier') ||
+    m.includes('both auth code and') ||
+    m.includes('invalid flow state') ||
+    m.includes('flow state')
   );
 }
