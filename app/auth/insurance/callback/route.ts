@@ -1,11 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { ensureUserProfile } from '@/lib/insurance/my-insurance/ensure-profile';
-import {
-  MY_INSURANCE_PATH,
-  PRODUCTION_SITE_ORIGIN,
-  sanitizePostLoginPath,
-} from '@/lib/insurance/my-insurance/constants';
+import { sanitizePostLoginPath } from '@/lib/insurance/my-insurance/constants';
 import {
   insuranceAuthErrorUrl,
   insuranceAuthSuccessUrl,
@@ -13,15 +9,27 @@ import {
 import { sendWelcomeEmail } from '@/lib/insurance/my-insurance/emails';
 
 /**
- * OAuth + code exchange for My Insurance only.
- * Always finishes on insurancetrusthub.com — never movetrusthub.com /my-move.
+ * Final OAuth code exchange for My Insurance — always on insurancetrusthub.com
+ * so session cookies belong to Insurance, not Move.
  */
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
+  const url = new URL(request.url);
+  const { searchParams } = url;
   const code = searchParams.get('code');
   const next = sanitizePostLoginPath(searchParams.get('next'));
   const oauthError = searchParams.get('error');
   const errorDescription = searchParams.get('error_description');
+
+  // If this route was hit on the wrong host (Move), bounce to ITH with full query
+  const host =
+    request.headers.get('x-forwarded-host')?.split(',')[0]?.trim() ||
+    request.headers.get('host') ||
+    url.host;
+  const hostNorm = host.toLowerCase().replace(/:\d+$/, '').replace(/^www\./, '');
+  if (hostNorm === 'movetrusthub.com' || hostNorm.endsWith('.movetrusthub.com')) {
+    const ith = new URL(url.pathname + url.search, 'https://www.insurancetrusthub.com');
+    return NextResponse.redirect(ith);
+  }
 
   if (oauthError) {
     console.error('[auth/insurance/callback] OAuth error', oauthError, errorDescription);
@@ -45,8 +53,9 @@ export async function GET(request: Request) {
           /* non-fatal */
         }
       }
-      // Absolute ITH URL only
-      return NextResponse.redirect(insuranceAuthSuccessUrl(next));
+      const dest = insuranceAuthSuccessUrl(next);
+      console.info('[auth/insurance/callback] success', { next, dest });
+      return NextResponse.redirect(dest);
     }
     console.error('[auth/insurance/callback] exchangeCodeForSession', error.message);
   }

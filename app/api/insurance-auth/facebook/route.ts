@@ -5,14 +5,13 @@ import {
   sanitizePostLoginPath,
 } from '@/lib/insurance/my-insurance/constants';
 import {
+  buildInsuranceOAuthRedirectTo,
   ensureInsuranceOAuthUrl,
   insuranceAuthErrorUrl,
 } from '@/lib/insurance/my-insurance/oauth-redirect';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
 
-/**
- * Facebook OAuth for My Insurance only — same host isolation as Google.
- */
+/** Facebook OAuth for My Insurance — same bridge isolation as Google. */
 export async function GET(request: Request) {
   if (!isSupabaseConfigured()) {
     return NextResponse.redirect(new URL('/my-insurance?auth=error', PRODUCTION_SITE_ORIGIN));
@@ -21,7 +20,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const next = sanitizePostLoginPath(searchParams.get('next'));
   const supabase = await createClient();
-  const redirectTo = `${PRODUCTION_SITE_ORIGIN}/auth/insurance/callback?next=${encodeURIComponent(next)}`;
+  const redirectTo = buildInsuranceOAuthRedirectTo(next);
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'facebook',
@@ -33,6 +32,5 @@ export async function GET(request: Request) {
     return NextResponse.redirect(insuranceAuthErrorUrl(next));
   }
 
-  const oauthUrl = ensureInsuranceOAuthUrl(data.url, next);
-  return NextResponse.redirect(oauthUrl);
+  return NextResponse.redirect(ensureInsuranceOAuthUrl(data.url, next));
 }

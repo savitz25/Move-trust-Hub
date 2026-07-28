@@ -9,14 +9,15 @@ import {
   PRODUCTION_SITE_ORIGIN as INSURANCE_ORIGIN,
 } from '@/lib/insurance/my-insurance/constants';
 import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
+import { insuranceCallbackHandoffUrl } from '@/lib/insurance/my-insurance/oauth-redirect';
 
 /**
- * Move + shared-host OAuth/magic-link callback.
+ * Move + shared-host OAuth callback.
  *
- * Insurance isolation:
- * - On insurancetrusthub.com → always hand off to /auth/insurance/callback (no code exchange here).
- * - On movetrusthub.com with next=/my-insurance (etc.) → same handoff before exchange.
- * - PKCE failure often means OAuth started on ITH; forward code to ITH without consuming it.
+ * Insurance OAuth uses hub=insurance + next=/my-insurance (Move bridge).
+ * We MUST hand off to ITH before exchangeCodeForSession so:
+ * - PKCE verifier cookie (set on ITH at kickoff) is available
+ * - Session cookies are written for insurancetrusthub.com, not Move
  */
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -26,15 +27,20 @@ export async function GET(request: Request) {
     request.headers.get('host') ||
     url.host;
   const nextRaw = searchParams.get('next') || '';
+  const hub = (searchParams.get('hub') || '').toLowerCase();
   const code = searchParams.get('code');
 
-  // Never run My Move exchange for Insurance hosts or Insurance post-login destinations
-  if (shouldDelegateToInsuranceAuth(host, nextRaw)) {
-    const insuranceCallback = new URL(
-      `${AUTH_CALLBACK_PATH}${url.search}`,
-      INSURANCE_ORIGIN
-    );
-    return NextResponse.redirect(insuranceCallback);
+  // --- Insurance isolation: never exchange OAuth codes for ITH on Move host ---
+  if (shouldHandoffToInsurance(host, nextRaw, hub, Boolean(code))) {
+    const handoff = insuranceCallbackHandoffUrl(url.search);
+    console.info('[auth/callback] insurance handoff', {
+      host,
+      next: nextRaw,
+      hub,
+      hasCode: Boolean(code),
+      handoff,
+    });
+    return NextResponse.redirect(handoff);
   }
 
   const next = sanitizePostLoginPath(searchParams.get('next'));
@@ -69,7 +75,6 @@ export async function GET(request: Request) {
         }
       }
       const destination = await pathAfterAuth(next);
-      // Extra guard: never send Insurance next to Move production origin
       if (isInsuranceNextPath(destination)) {
         return NextResponse.redirect(new URL(destination, INSURANCE_ORIGIN));
       }
@@ -78,46 +83,54 @@ export async function GET(request: Request) {
 
     console.error('[auth/callback] exchangeCodeForSession failed', error.message);
 
-    // OAuth was likely started on ITH (PKCE verifier cookie only lives there).
-    // Forward the unused code to Insurance callback instead of dumping into My Move.
+    // Last resort: OAuth likely started on ITH — forward unused code
     if (isPkceCrossHostFailure(error.message)) {
-      const insuranceCallback = new URL(
-        `${AUTH_CALLBACK_PATH}${url.search}`,
-        INSURANCE_ORIGIN
-      );
-      if (!insuranceCallback.searchParams.get('next')) {
-        insuranceCallback.searchParams.set('next', '/my-insurance');
-      }
-      console.warn(
-        '[auth/callback] forwarding OAuth code to Insurance callback (cross-host recovery)'
-      );
-      return NextResponse.redirect(insuranceCallback);
+      return NextResponse.redirect(insuranceCallbackHandoffUrl(url.search));
     }
   }
 
   return NextResponse.redirect(productionAuthRedirect(failPath, request));
 }
 
-function shouldDelegateToInsuranceAuth(host: string, nextRaw: string): boolean {
+function shouldHandoffToInsurance(
+  host: string,
+  nextRaw: string,
+  hub: string,
+  hasCode: boolean
+): boolean {
+  // Always hand off when request is already on the Insurance apex
   if (isInsuranceStandaloneHost(host)) return true;
-  return isInsuranceNextPath(nextRaw);
+
+  // Explicit Insurance OAuth bridge marker
+  if (hub === 'insurance') return true;
+
+  // Insurance post-login destination
+  if (isInsuranceNextPath(nextRaw)) return true;
+
+  // OAuth code on Move with no next → almost always Insurance flow that lost query
+  // (Move OAuth always sets next=/my-move or /portal via sanitizePostLoginPath)
+  if (hasCode && !nextRaw.trim()) return true;
+
+  return false;
 }
 
 function isInsuranceNextPath(nextRaw: string): boolean {
   const next = nextRaw.trim().toLowerCase();
   if (!next) return false;
+  // Strip query for path checks
+  const path = next.split('?')[0] || next;
   return (
-    next === '/my-insurance' ||
-    next.startsWith('/my-insurance/') ||
-    next.startsWith('/providers/') ||
-    next === '/providers' ||
-    next.startsWith('/tools/') ||
-    next === '/tools' ||
-    next.startsWith('/hubs/') ||
-    next === '/hubs' ||
-    next.startsWith('/calculators/') ||
-    next === '/calculators' ||
-    next.startsWith('/directory')
+    path === '/my-insurance' ||
+    path.startsWith('/my-insurance/') ||
+    path.startsWith('/providers/') ||
+    path === '/providers' ||
+    path.startsWith('/tools/') ||
+    path === '/tools' ||
+    path.startsWith('/hubs/') ||
+    path === '/hubs' ||
+    path.startsWith('/calculators/') ||
+    path === '/calculators' ||
+    path.startsWith('/directory')
   );
 }
 
