@@ -7,9 +7,12 @@ import { isAdminSession } from '@/lib/admin/auth';
 import { getDirectoryDbStatus } from '@/lib/directory/directory-db-status';
 import { getOrphanedApprovedSuggestions } from '@/lib/suggestions/repair-approved';
 import { getPendingSuggestions } from '@/lib/suggestions/queries';
+import type { PendingSuggestion } from '@/lib/suggestions/suggestion-shared';
+import type { OrphanedApprovedSuggestion } from '@/lib/suggestions/suggestion-shared';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { logger } from '@/lib/logging/logger';
 
 export const metadata = {
   title: 'Company Suggestions',
@@ -18,21 +21,71 @@ export const metadata = {
 
 export const dynamic = 'force-dynamic';
 
+type LoadResult = {
+  queue: PendingSuggestion[];
+  orphans: OrphanedApprovedSuggestion[];
+  loadError: string | null;
+};
+
+async function loadQueues(loggedIn: boolean, adminReady: boolean): Promise<LoadResult> {
+  if (!loggedIn || !adminReady) {
+    return { queue: [], orphans: [], loadError: null };
+  }
+
+  try {
+    const [queue, orphans] = await Promise.all([
+      getPendingSuggestions(),
+      getOrphanedApprovedSuggestions(),
+    ]);
+    return { queue, orphans, loadError: null };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    logger.error('admin.suggestions_page_load_failed', { message });
+    return {
+      queue: [],
+      orphans: [],
+      loadError: `Could not load suggestion queue: ${message}`,
+    };
+  }
+}
+
 export default async function AdminSuggestionsPage() {
   const adminReady = isSupabaseAdminConfigured();
   const loggedIn = await isAdminSession();
-  const dbStatus = await getDirectoryDbStatus();
-  const queue = loggedIn && adminReady ? await getPendingSuggestions() : [];
-  const orphans = loggedIn && adminReady ? await getOrphanedApprovedSuggestions() : [];
+
+  let dbStatus;
+  let dbStatusError: string | null = null;
+  try {
+    dbStatus = await getDirectoryDbStatus();
+  } catch (err) {
+    dbStatusError = err instanceof Error ? err.message : String(err);
+    dbStatus = {
+      supabaseConfigured: adminReady,
+      adminConfigured: adminReady,
+      supabaseProjectHost: null,
+      companiesTableReadable: false,
+      companiesPublishReady: false,
+      publishUsesRpc: false,
+      companiesRowCount: 0,
+      seedFallbackActive: true,
+      suggestionsTableReadable: false,
+      pendingSuggestions: 0,
+      approvedSuggestions: 0,
+      approvedWithoutCompany: 0,
+      message: `Directory status check failed: ${dbStatusError}`,
+    };
+  }
+
+  const { queue, orphans, loadError } = await loadQueues(loggedIn, adminReady);
   const directoryBlocked =
     adminReady &&
     (!dbStatus.companiesTableReadable ||
       !dbStatus.companiesPublishReady ||
       dbStatus.seedFallbackActive);
-  const needsLogin = adminReady && dbStatus.pendingSuggestions > 0 && !loggedIn;
+  const needsLogin = adminReady && !loggedIn;
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="container mx-auto max-w-4xl px-4 py-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Company Suggestions</h1>
@@ -53,10 +106,28 @@ export default async function AdminSuggestionsPage() {
 
       {!adminReady && (
         <Card className="mb-6 border-amber-200 bg-amber-50/80 p-4 text-sm text-amber-900">
-          Add <code className="rounded bg-amber-100 px-1">SUPABASE_SERVICE_ROLE_KEY</code> to
-          load and moderate suggestions.
+          Add <code className="rounded bg-amber-100 px-1">SUPABASE_SERVICE_ROLE_KEY</code> to load
+          and moderate suggestions.
         </Card>
       )}
+
+      {dbStatusError ? (
+        <Card className="mb-6 border-destructive/40 bg-destructive/5 p-4 text-sm text-destructive">
+          <p className="font-medium">Directory status error</p>
+          <p className="mt-1">{dbStatusError}</p>
+        </Card>
+      ) : null}
+
+      {loadError ? (
+        <Card className="mb-6 border-destructive/40 bg-destructive/5 p-4 text-sm text-destructive">
+          <p className="font-medium">Queue load error</p>
+          <p className="mt-1">{loadError}</p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            This is not an empty queue — fix the error above and refresh. Check Supabase{' '}
+            <code>company_suggestions</code> schema and service role key.
+          </p>
+        </Card>
+      ) : null}
 
       {adminReady ? (
         <Card
@@ -75,7 +146,7 @@ export default async function AdminSuggestionsPage() {
             </p>
           ) : null}
           {!dbStatus.companiesPublishReady ? (
-            <ol className="mt-3 list-decimal pl-5 text-xs space-y-1">
+            <ol className="mt-3 list-decimal space-y-1 pl-5 text-xs">
               <li>
                 Supabase → <strong>SQL Editor</strong> → run{' '}
                 <code>supabase/migrations/20260708140000_ensure_companies_directory.sql</code>
@@ -97,17 +168,16 @@ export default async function AdminSuggestionsPage() {
               <code>/companies/vellar-holdings-llc</code> go live only after Approve succeeds.
             </p>
           ) : null}
-          <ul className="mt-2 text-xs space-y-0.5">
+          <ul className="mt-2 space-y-0.5 text-xs">
             <li>Supabase project: {dbStatus.supabaseProjectHost ?? 'not configured'}</li>
             <li>
-              Postgres <code>companies</code> table:{' '}
-              {dbStatus.postgresCompaniesExists == null
-                ? 'unknown (run RPC migration)'
-                : dbStatus.postgresCompaniesExists
-                  ? 'exists'
-                  : 'missing'}
+              <code>companies</code> table readable:{' '}
+              {dbStatus.companiesTableReadable ? 'yes' : 'no'}
             </li>
-            <li>Publish RPC: {dbStatus.publishRpcAvailable ? 'ready' : 'not installed'}</li>
+            <li>
+              Publish ready: {dbStatus.companiesPublishReady ? 'yes' : 'no'}
+              {dbStatus.publishUsesRpc ? ' (RPC path)' : ''}
+            </li>
             <li>Pending suggestions: {dbStatus.pendingSuggestions}</li>
             <li>Approved suggestions: {dbStatus.approvedSuggestions}</li>
             <li>API published rows: {dbStatus.companiesRowCount}</li>
@@ -119,12 +189,19 @@ export default async function AdminSuggestionsPage() {
         <Card className="mb-6 border-primary/30 bg-primary/5 p-5">
           <p className="font-medium">Sign in to approve suggestions</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            There {dbStatus.pendingSuggestions === 1 ? 'is' : 'are'}{' '}
-            <strong>{dbStatus.pendingSuggestions}</strong> pending suggestion
-            {dbStatus.pendingSuggestions === 1 ? '' : 's'} in the database (including Vellar
-            Holdings, Cirta Moving, America First Moving, and others). Submitting a company only
-            queues it — you must sign in and click <strong>Approve</strong> before{' '}
-            <code>/companies/[slug]</code> goes live.
+            {dbStatus.pendingSuggestions > 0 ? (
+              <>
+                There {dbStatus.pendingSuggestions === 1 ? 'is' : 'are'}{' '}
+                <strong>{dbStatus.pendingSuggestions}</strong> pending suggestion
+                {dbStatus.pendingSuggestions === 1 ? '' : 's'} in the database. Submitting a company
+                only queues it — you must sign in and click <strong>Approve</strong> before{' '}
+                <code>/companies/[slug]</code> goes live.
+              </>
+            ) : (
+              <>
+                Admin authentication is required to view and moderate the company suggestion queue.
+              </>
+            )}
           </p>
           <Suspense fallback={<p className="mt-4 text-sm text-muted-foreground">Loading sign-in…</p>}>
             <AdminLoginForm className="mt-4 max-w-sm" redirectTo="/admin/suggestions" />
@@ -134,14 +211,22 @@ export default async function AdminSuggestionsPage() {
 
       <OrphanedApprovedQueue initialOrphans={orphans} />
 
-      <p className="text-sm text-muted-foreground mb-4">
+      <p className="mb-4 text-sm text-muted-foreground">
         {loggedIn
-          ? `${queue.length} pending suggestion${queue.length === 1 ? '' : 's'}`
-          : `Sign in to view the moderation queue (${dbStatus.pendingSuggestions} pending in database)`}
+          ? loadError
+            ? 'Queue unavailable (see error above)'
+            : `${queue.length} pending suggestion${queue.length === 1 ? '' : 's'}`
+          : `Sign in to view the moderation queue${
+              dbStatus.pendingSuggestions > 0
+                ? ` (${dbStatus.pendingSuggestions} pending in database)`
+                : ''
+            }`}
       </p>
 
       {loggedIn ? (
-        <SuggestionsModerationQueue initialQueue={queue} />
+        loadError ? null : (
+          <SuggestionsModerationQueue initialQueue={queue} />
+        )
       ) : (
         <Card className="p-8 text-center text-muted-foreground">
           Admin session required to approve or reject suggestions.

@@ -25,7 +25,12 @@ const NAV = [
   { href: '/admin/my-move-users', label: 'My Move Users', icon: Users },
   { href: '/admin/fmcsa', label: 'FMCSA Batch', icon: RefreshCw },
   { href: '/admin/bbb', label: 'BBB Batch', icon: Shield },
-];
+] as const;
+
+function navActive(pathname: string, href: string, exact?: boolean) {
+  if (exact) return pathname === href;
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -33,8 +38,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-[#f4f8fb]">
       <div className="border-b border-[#0A2540]/10 bg-white">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between px-4 py-3 lg:px-6">
-          <div>
+        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-3 px-4 py-3 lg:px-6">
+          <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-wider text-[#00BFA5]">
               Move Trust Hub
             </p>
@@ -42,27 +47,55 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           </div>
           <Link
             href="/"
-            className="text-sm font-medium text-[#0A2540]/70 hover:text-[#0A2540]"
+            className="shrink-0 text-sm font-medium text-[#0A2540]/70 hover:text-[#0A2540]"
           >
             ← Back to site
           </Link>
         </div>
+
+        {/* Mobile / tablet: always-visible horizontal nav (sidebar is lg+ only). */}
+        <nav
+          className="mx-auto flex max-w-[1600px] gap-1 overflow-x-auto px-4 pb-3 lg:hidden lg:px-6"
+          aria-label="Admin sections"
+        >
+          {NAV.map((item) => {
+            const active = navActive(pathname, item.href, 'exact' in item ? item.exact : false);
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                prefetch
+                className={cn(
+                  'inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-2 text-xs font-semibold transition-colors',
+                  'min-h-10 touch-manipulation',
+                  active
+                    ? 'border-[#0A2540] bg-[#0A2540] text-white'
+                    : 'border-[#0A2540]/15 bg-white text-[#0A2540] hover:border-[#00BFA5] hover:bg-[#00BFA5]/10'
+                )}
+              >
+                <Icon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
       </div>
 
       <div className="mx-auto flex max-w-[1600px] gap-0 lg:gap-6 px-4 py-6 lg:px-6">
         <aside className="hidden w-56 shrink-0 lg:block">
-          <nav className="sticky top-6 space-y-1 rounded-xl border bg-white p-2 shadow-sm">
+          <nav className="sticky top-6 space-y-1 rounded-xl border bg-white p-2 shadow-sm" aria-label="Admin sections">
             {NAV.map((item) => {
-              const active = item.exact
-                ? pathname === item.href
-                : pathname.startsWith(item.href);
+              const active = navActive(pathname, item.href, 'exact' in item ? item.exact : false);
               const Icon = item.icon;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
+                  prefetch
                   className={cn(
-                    'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                    'flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
+                    'min-h-10 touch-manipulation',
                     active
                       ? 'bg-[#0A2540] text-white'
                       : 'text-[#0A2540]/80 hover:bg-[#00BFA5]/10 hover:text-[#0A2540]'

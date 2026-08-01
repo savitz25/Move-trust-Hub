@@ -1,5 +1,5 @@
 import { MultiSourcePreviewCard } from '@/components/verification/multi-source-preview-card';
-import type { PendingSuggestion } from '@/lib/suggestions/queries';
+import type { PendingSuggestion } from '@/lib/suggestions/suggestion-shared';
 import type { EnrichedCompanyPreview } from '@/lib/suggestions/types';
 import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 import { unpackFmcsaPreview } from '@/lib/suggestions/suggestion-enrichment-pack';

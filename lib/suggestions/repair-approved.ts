@@ -16,39 +16,62 @@ import { logger } from '@/lib/logging/logger';
 
 export type { OrphanedApprovedSuggestion } from '@/lib/suggestions/suggestion-shared';
 
+/** Cap N+1 company existence checks so the admin suggestions page never hangs. */
+const ORPHAN_SCAN_LIMIT = 40;
+
 export async function getOrphanedApprovedSuggestions(): Promise<OrphanedApprovedSuggestion[]> {
   if (!isSupabaseAdminConfigured()) return [];
 
-  const admin = createAdminClient();
-  const { data, error } = await admin
-    .from('company_suggestions')
-    .select('*')
-    .eq('status', 'approved')
-    .order('moderated_at', { ascending: false });
+  try {
+    const admin = createAdminClient();
+    const { data, error } = await admin
+      .from('company_suggestions')
+      .select('id, name, usdot, legal_name, company_id, created_at, status, moderated_at')
+      .eq('status', 'approved')
+      .order('moderated_at', { ascending: false })
+      .limit(ORPHAN_SCAN_LIMIT);
 
-  if (error || !data?.length) return [];
+    if (error) {
+      logger.error('suggestions.orphans_load_failed', {
+        code: error.code,
+        message: error.message,
+      });
+      return [];
+    }
+    if (!data?.length) return [];
 
-  const orphans: OrphanedApprovedSuggestion[] = [];
+    const orphans: OrphanedApprovedSuggestion[] = [];
 
-  for (const row of data) {
-    const companyId = row.company_id;
-    if (!companyId) {
-      orphans.push(row as OrphanedApprovedSuggestion);
-      continue;
+    for (const row of data) {
+      const companyId = row.company_id;
+      if (!companyId) {
+        orphans.push(row as OrphanedApprovedSuggestion);
+        continue;
+      }
+
+      const { data: company, error: companyError } = await admin
+        .from('companies')
+        .select('id')
+        .eq('id', companyId)
+        .maybeSingle();
+
+      if (companyError) {
+        // Don't fail the whole page on a single lookup — treat as not orphaned.
+        continue;
+      }
+
+      if (!company) {
+        orphans.push(row as OrphanedApprovedSuggestion);
+      }
     }
 
-    const { data: company } = await admin
-      .from('companies')
-      .select('id')
-      .eq('id', companyId)
-      .maybeSingle();
-
-    if (!company) {
-      orphans.push(row as OrphanedApprovedSuggestion);
-    }
+    return orphans;
+  } catch (err) {
+    logger.error('suggestions.orphans_load_exception', {
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return [];
   }
-
-  return orphans;
 }
 
 export async function publishSuggestionToDirectory(

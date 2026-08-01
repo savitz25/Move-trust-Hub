@@ -11,7 +11,7 @@ import {
   extractPowerUnits,
   formatAuthorityStatus,
 } from '@/lib/fmcsa/carrier-fields';
-import type { PendingSuggestion } from '@/lib/suggestions/queries';
+import type { PendingSuggestion } from '@/lib/suggestions/suggestion-shared';
 
 type Props = {
   suggestion: PendingSuggestion;

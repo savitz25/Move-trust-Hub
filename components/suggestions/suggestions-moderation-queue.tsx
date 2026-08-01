@@ -10,7 +10,7 @@ import {
 } from '@/actions/moderate-suggestions';
 import { AdminCoveragePreview } from '@/components/suggestions/admin-coverage-preview';
 import { AdminEnrichedPreview } from '@/components/verification/admin-enriched-preview';
-import type { PendingSuggestion } from '@/lib/suggestions/queries';
+import type { PendingSuggestion } from '@/lib/suggestions/suggestion-shared';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';

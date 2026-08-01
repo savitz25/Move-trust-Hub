@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
@@ -13,7 +13,6 @@ export function AdminLoginForm({
   className?: string;
   redirectTo?: string;
 }) {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const [secret, setSecret] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,9 +35,13 @@ export function AdminLoginForm({
         return;
       }
 
-      const next = searchParams.get('next') || redirectTo || '/admin';
-      router.push(next);
-      router.refresh();
+      // Prefer hard navigation so the admin cookie is always included on the
+      // next document request (soft router.push can race cookie commit).
+      const nextRaw = searchParams.get('next') || redirectTo || '/admin';
+      const next =
+        nextRaw.startsWith('/admin') && !nextRaw.startsWith('//') ? nextRaw : '/admin';
+      window.location.assign(next);
+      return;
     } catch {
       toast.error('Login failed — try again');
       setLoading(false);

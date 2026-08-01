@@ -11,6 +11,7 @@ import {
   type ColumnDef,
   type SortingState,
 } from '@tanstack/react-table';
+import Link from 'next/link';
 import {
   ArrowDown,
   ArrowUp,
@@ -364,21 +365,59 @@ export function CompaniesDashboard({
 
       {stats ? (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { label: 'Directory companies', value: stats.supabaseDirectory },
-            { label: 'Stale profiles', value: staleCount },
-            { label: 'Pending suggestions', value: stats.pendingSuggestions },
-            { label: 'Local movers (catalog)', value: stats.localMoversDisplayable },
-          ].map((s) => (
-            <Card key={s.label} className="p-4">
+          <Card className="p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Directory companies
+            </p>
+            <p className="mt-1 text-2xl font-bold tabular-nums text-[#0A2540]">
+              {stats.supabaseDirectory}
+            </p>
+          </Card>
+          <Card className="p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Stale profiles
+            </p>
+            <p className="mt-1 text-2xl font-bold tabular-nums text-[#0A2540]">{staleCount}</p>
+          </Card>
+          {/* Was a dead non-link card — primary admin entry into the moderation queue. */}
+          <Link
+            href="/admin/suggestions"
+            prefetch
+            className="block rounded-xl outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <Card className="h-full border-[#00BFA5]/40 bg-[#00BFA5]/5 p-4 transition-colors hover:border-[#00BFA5] hover:bg-[#00BFA5]/10">
               <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {s.label}
+                Pending suggestions
               </p>
-              <p className="mt-1 text-2xl font-bold tabular-nums text-[#0A2540]">{s.value}</p>
+              <p className="mt-1 text-2xl font-bold tabular-nums text-[#0A2540]">
+                {stats.pendingSuggestions}
+              </p>
+              <p className="mt-1 text-xs font-medium text-[#0A2540]/80">Open queue →</p>
             </Card>
-          ))}
+          </Link>
+          <Card className="p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Local movers (catalog)
+            </p>
+            <p className="mt-1 text-2xl font-bold tabular-nums text-[#0A2540]">
+              {stats.localMoversDisplayable}
+            </p>
+          </Card>
         </div>
       ) : null}
+
+      <div className="flex flex-wrap gap-2">
+        <Button variant="default" size="sm" asChild>
+          <Link href="/admin/suggestions" prefetch>
+            Suggestions queue
+          </Link>
+        </Button>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/admin/reviews" prefetch>
+            Reviews
+          </Link>
+        </Button>
+      </div>
 
       <Card className="p-4">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center">

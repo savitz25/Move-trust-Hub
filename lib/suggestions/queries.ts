@@ -3,29 +3,10 @@ import 'server-only';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload';
+import type { PendingSuggestion } from '@/lib/suggestions/suggestion-shared';
 import { logger } from '@/lib/logging/logger';
 
-export type PendingSuggestion = {
-  id: string;
-  name: string;
-  usdot: string | null;
-  mc_number: string | null;
-  details: string | null;
-  suggested_by_name: string | null;
-  suggested_by_email: string | null;
-  legal_name: string | null;
-  headquarters: string | null;
-  phone: string | null;
-  authority_status: string | null;
-  source_page: string | null;
-  fmcsa_preview: Record<string, unknown> | null;
-  fmcsa_raw: Record<string, unknown> | null;
-  google_data: Record<string, unknown> | null;
-  public_scrape_data: Record<string, unknown> | null;
-  service_scope?: string | null;
-  selected_counties?: unknown;
-  created_at: string;
-};
+export type { PendingSuggestion } from '@/lib/suggestions/suggestion-shared';
 
 const PENDING_SUGGESTION_COLUMNS_FULL =
   'id, name, usdot, mc_number, details, suggested_by_name, suggested_by_email, legal_name, headquarters, phone, authority_status, source_page, fmcsa_preview, fmcsa_raw, google_data, public_scrape_data, service_scope, selected_counties, created_at';
@@ -74,6 +55,10 @@ export async function getPendingSuggestions(): Promise<PendingSuggestion[]> {
         code: core.error.code,
         message: core.error.message,
       });
+      // Surface to admin UI — never pretend the queue is clear on query failure.
+      throw new Error(
+        `company_suggestions query failed: ${core.error.message} (${core.error.code ?? 'no-code'})`
+      );
     }
     return [];
   }
@@ -83,6 +68,9 @@ export async function getPendingSuggestions(): Promise<PendingSuggestion[]> {
       code: full.error.code,
       message: full.error.message,
     });
+    throw new Error(
+      `company_suggestions query failed: ${full.error.message} (${full.error.code ?? 'no-code'})`
+    );
   }
 
   return [];

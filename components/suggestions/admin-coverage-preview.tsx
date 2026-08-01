@@ -1,5 +1,5 @@
 import { unpackCoverageFromFmcsaPreview } from '@/lib/suggestions/suggestion-coverage-pack';
-import type { PendingSuggestion } from '@/lib/suggestions/queries';
+import type { PendingSuggestion } from '@/lib/suggestions/suggestion-shared';
 import { Badge } from '@/components/ui/badge';
 
 type Props = {
