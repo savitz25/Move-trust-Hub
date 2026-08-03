@@ -11,9 +11,8 @@ type HubBreadcrumbsProps = {
 };
 
 function resolveHref(hub: HubId, href: string): string {
-  if (href.startsWith('http') || href.startsWith('/') || href.startsWith('/lender')) {
-    return href;
-  }
+  if (href.startsWith('http')) return href;
+  // Relative paths go through hubPath (lender → standalone absolute URL).
   return hubPath(hub, href);
 }
 

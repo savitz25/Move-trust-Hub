@@ -1,5 +1,9 @@
 import type { HubId } from '@/lib/hub/types';
-import { INSURANCE_SITE_URL, MOVE_SITE_URL } from '@/lib/hub/domains';
+import {
+  INSURANCE_SITE_URL,
+  LENDER_SITE_URL,
+  MOVE_SITE_URL,
+} from '@/lib/hub/domains';
 
 export const HUB_HEADER = 'x-trust-hub';
 export const PATHNAME_HEADER = 'x-pathname';
@@ -19,15 +23,35 @@ export function getHubFromPathname(pathname: string): HubId {
   return 'move';
 }
 
+/** Normalize a path for hubPath / hubCanonicalUrl (leading slash, strip accidental hub prefix). */
+function normalizePathForHub(hub: HubId, path: string): string {
+  let clean = path.startsWith('/') ? path : `/${path}`;
+  if (hub === 'lender') {
+    if (clean === '/lender') return '/';
+    if (clean.startsWith('/lender/')) return clean.slice('/lender'.length) || '/';
+  }
+  if (hub === 'insurance') {
+    if (clean === '/insurance') return '/';
+    if (clean.startsWith('/insurance/')) {
+      // Keep monorepo admin isolation under /insurance/admin
+      if (clean === '/insurance/admin' || clean.startsWith('/insurance/admin/')) {
+        return clean.slice('/insurance'.length) || '/';
+      }
+      return clean.slice('/insurance'.length) || '/';
+    }
+  }
+  return clean;
+}
+
 /**
  * Build a public path within a hub.
- * - Move: bare paths
- * - Lender: `/lender/...`
+ * - Move: bare relative paths on movetrusthub.com
+ * - Lender: absolute URLs on https://www.lendertrusthub.com (standalone)
  * - Insurance: bare apex paths on insurancetrusthub.com (no `/insurance` prefix).
  *   Admin stays under `/insurance/admin` (shared monorepo isolation).
  */
 export function hubPath(hub: HubId, path: string): string {
-  const clean = path.startsWith('/') ? path : `/${path}`;
+  const clean = normalizePathForHub(hub, path);
   if (hub === 'move') return clean === '/' ? '/' : clean;
   if (hub === 'insurance') {
     if (clean === '/admin' || clean.startsWith('/admin/')) {
@@ -35,27 +59,32 @@ export function hubPath(hub: HubId, path: string): string {
     }
     return clean === '/' ? '/' : clean;
   }
-  // lender
-  if (clean === '/') return '/lender';
-  return `/lender${clean}`;
+  // lender → standalone apex (absolute). Next.js <Link> supports external https URLs.
+  if (clean === '/') return `${LENDER_SITE_URL}/`;
+  return `${LENDER_SITE_URL}${clean}`;
 }
 
 /**
  * Canonical absolute URL for a hub-relative path.
- * Insurance uses insurancetrusthub.com with bare public paths (no /insurance prefix).
- * Move and lender remain on movetrusthub.com (lender still under /lender).
+ * - Insurance: insurancetrusthub.com (bare public paths)
+ * - Lender: lendertrusthub.com (bare public paths)
+ * - Move: movetrusthub.com
  */
 export function hubCanonicalUrl(hub: HubId, path: string = '/'): string {
-  const clean = path.startsWith('/') ? path : `/${path}`;
+  const clean = normalizePathForHub(hub, path);
 
   if (hub === 'insurance') {
     const relative = clean === '/' ? '' : clean;
     return relative ? `${INSURANCE_SITE_URL}${relative}` : INSURANCE_SITE_URL;
   }
 
-  const site = MOVE_SITE_URL;
-  const appPath = hubPath(hub, clean);
-  return appPath === '/' ? site : `${site}${appPath}`;
+  if (hub === 'lender') {
+    const relative = clean === '/' ? '' : clean;
+    return relative ? `${LENDER_SITE_URL}${relative}` : LENDER_SITE_URL;
+  }
+
+  const appPath = hubPath('move', clean);
+  return appPath === '/' ? MOVE_SITE_URL : `${MOVE_SITE_URL}${appPath}`;
 }
 
 /**
@@ -63,29 +92,26 @@ export function hubCanonicalUrl(hub: HubId, path: string = '/'): string {
  * Strip an accidental `/insurance` or `/lender` prefix when pages pass full app paths.
  */
 export function normalizeHubMetadataPath(hub: HubId, path: string): string {
-  const clean = path.startsWith('/') ? path : `/${path}`;
-  if (hub === 'move') return clean;
-  const prefix = hub === 'lender' ? '/lender' : '/insurance';
-  if (clean === prefix) return '/';
-  if (clean.startsWith(`${prefix}/`)) {
-    return clean.slice(prefix.length) || '/';
-  }
-  return clean;
+  return normalizePathForHub(hub, path);
 }
 
 /** Strip hub prefix from pathname for breadcrumb / active-link matching. */
 export function stripHubPrefix(hub: HubId, pathname: string): string {
   if (hub === 'move') return pathname || '/';
   if (hub === 'insurance') {
-    // Public apex paths are already bare
     if (pathname === '/insurance' || pathname.startsWith('/insurance/')) {
       if (pathname === '/insurance') return '/';
       return pathname.slice('/insurance'.length) || '/';
     }
     return pathname || '/';
   }
-  const base = '/lender';
-  if (pathname === base) return '/';
-  if (pathname.startsWith(`${base}/`)) return pathname.slice(base.length) || '/';
-  return pathname;
+  // lender: monorepo residual /lender/* or already-bare LTH paths
+  if (pathname === '/lender') return '/';
+  if (pathname.startsWith('/lender/')) return pathname.slice('/lender'.length) || '/';
+  return pathname || '/';
+}
+
+/** True when href is an absolute external URL (e.g. standalone LTH). */
+export function isExternalHubHref(href: string): boolean {
+  return /^https?:\/\//i.test(href);
 }

@@ -75,12 +75,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...destinationGuides.map((guide) => `/resources/guides/${guide.slug}`),
   ];
 
-  /** Lender landing only on Move host. Insurance is standalone (insurancetrusthub.com) — never list /insurance/* here. */
-  const hubLandingRoutes = ['/lender'];
-
+  // Lender + Insurance are standalone apexes — never list /lender or /insurance on Move sitemap.
   const coreStaticRoutes = [
     '',
-    ...hubLandingRoutes,
     '/companies',
     '/local-movers',
     '/moving-to',
@@ -113,10 +110,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority:
         route === ''
           ? 1
-          : route === '/lender'
-            ? 0.92
-            : route.startsWith('/lender/')
-              ? 0.88
           : route === '/local-movers'
             ? 0.9
             : route === '/verify-dot' || route === '/review'

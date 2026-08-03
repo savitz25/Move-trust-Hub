@@ -14,7 +14,8 @@ import type { HubId } from '@/lib/hub/types';
  * Server-rendered hub chrome — pass explicit hubId from segment layouts for correct SSG.
  *
  * MoveTrustHub primary chrome is moving-only: no peer Move/Lender/Insurance switcher
- * in the header. Sister directories stay on /lender and /insurance with their own chrome.
+ * in the header. Sister directories use standalone apex domains (lendertrusthub.com,
+ * insurancetrusthub.com) — not residual monorepo path prefixes.
  */
 export async function HubChrome({
   hubId,

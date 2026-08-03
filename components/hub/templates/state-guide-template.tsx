@@ -5,6 +5,7 @@ import { HubBreadcrumbs } from '@/components/hub/templates/hub-breadcrumbs';
 import { Button } from '@/components/ui/button';
 import { stateGuideBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
 import { buildStateGuideSchema, buildTemplateSchemaGraph } from '@/lib/hub/templates/schemas';
+import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import type { StateGuideData } from '@/lib/hub/templates/types';
 
@@ -27,7 +28,7 @@ export function StateGuideTemplate({ hub, state, children }: StateGuideTemplateP
   const directoryHref =
     hub === 'insurance'
       ? `/directory?state=${state.code ?? state.slug}`
-      : `/lender/local-lenders/${state.slug}`;
+      : hubPath(hub, `/local-lenders/${state.slug}`);
 
   return (
     <>

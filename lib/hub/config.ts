@@ -116,6 +116,7 @@ export const HUBS: Record<HubId, HubConfig> = {
   },
   lender: {
     id: 'lender',
+    /** Historical monorepo prefix; public links use LENDER_SITE_URL via hubPath(). */
     basePath: '/lender',
     siteName: 'Lender Trust Hub',
     shortName: 'Lender',

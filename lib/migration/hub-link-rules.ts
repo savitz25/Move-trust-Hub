@@ -115,7 +115,7 @@ function resolveCalculatorPath(path: string): string | null {
   }
 
   const calcId = LENDER_CALCULATOR_SLUG_MAP[slug] ?? slug;
-  return `/lender/calculators?calc=${calcId}`;
+  return `https://www.lendertrusthub.com/calculators?calc=${calcId}`;
 }
 
 function resolveResourcesPath(path: string, context: HubLinkContext): string {
@@ -138,10 +138,10 @@ function resolveAmbiguousHubPath(path: string, context: HubLinkContext): string 
   }
   if (context === 'lender') {
     if (path === '/about' || path === '/contact' || path === '/privacy' || path === '/terms') {
-      return `/lender${path}`;
+      return `https://www.lendertrusthub.com${path}`;
     }
     if (path === '/compare') {
-      return '/lender/compare';
+      return 'https://www.lendertrusthub.com/compare';
     }
   }
   return path;
@@ -165,7 +165,9 @@ export function resolveCanonicalHubPath(path: string, context: HubLinkContext = 
   }
 
   if (path === '/calculators' || path.startsWith('/calculators?')) {
-    return context === 'insurance' ? '/insurance/calculators' : '/lender/calculators';
+    return context === 'insurance'
+      ? '/insurance/calculators'
+      : `https://www.lendertrusthub.com/calculators${path.includes('?') ? path.slice(path.indexOf('?')) : ''}`;
   }
 
   for (const root of MOVE_PRESERVE_ROOTS) {
@@ -181,7 +183,7 @@ export function resolveCanonicalHubPath(path: string, context: HubLinkContext = 
   }
 
   for (const root of LENDER_ROUTE_ROOTS) {
-    if (matchesRoot(path, root)) return `/lender${path}`;
+    if (matchesRoot(path, root)) return `https://www.lendertrusthub.com${path}`;
   }
 
   return resolveAmbiguousHubPath(path, context);

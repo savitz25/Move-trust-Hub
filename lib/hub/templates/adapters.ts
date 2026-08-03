@@ -9,12 +9,7 @@ import type { HealthHubDirectoryData, ResourceArticleData, StateGuideData } from
 
 export function normalizeHubHref(hub: HubId, href: string): string {
   if (href.startsWith('http')) return href;
-  if (hub === 'insurance' && (href.startsWith('/') || href === '/')) {
-    return href;
-  }
-  if (hub === 'lender' && (href.startsWith('/lender') || href === '/lender')) {
-    return href;
-  }
+  // hubPath expands lender → https://www.lendertrusthub.com/... and strips /lender prefixes.
   return hubPath(hub, href);
 }
 

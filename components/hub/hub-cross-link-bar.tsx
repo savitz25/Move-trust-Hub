@@ -20,7 +20,8 @@ const LIFE_EVENT_BUNDLES: Record<HubId, LifeEventBundle> = {
     links: [
       { hub: 'move', label: 'Moving Calculator', href: '/moving-calculator' },
       { hub: 'insurance', label: 'Insurance in Your Market', href: '/hubs/browse' },
-      { hub: 'lender', label: 'Mortgage Lenders by County', href: '/lender/local-lenders' },
+      // Hub-relative path — hubPath('lender') expands to https://www.lendertrusthub.com/...
+      { hub: 'lender', label: 'Mortgage Lenders by County', href: '/local-lenders' },
     ],
   },
   lender: {
@@ -28,7 +29,7 @@ const LIFE_EVENT_BUNDLES: Record<HubId, LifeEventBundle> = {
     description:
       'Pair your lender research with moving logistics and insurance updates for a seamless relocation.',
     links: [
-      { hub: 'lender', label: 'Mortgage Calculators', href: '/lender/calculators' },
+      { hub: 'lender', label: 'Mortgage Calculators', href: '/calculators' },
       { hub: 'move', label: 'Compare Interstate Movers', href: '/companies' },
       { hub: 'insurance', label: 'Home & Health Insurance', href: '/directory' },
     ],
@@ -40,7 +41,7 @@ const LIFE_EVENT_BUNDLES: Record<HubId, LifeEventBundle> = {
     links: [
       { hub: 'insurance', label: 'Health Insurance Hubs', href: '/hubs' },
       { hub: 'move', label: 'Local Movers by State', href: '/local-movers' },
-      { hub: 'lender', label: 'County Mortgage Lenders', href: '/lender/local-lenders' },
+      { hub: 'lender', label: 'County Mortgage Lenders', href: '/local-lenders' },
     ],
   },
 };
