@@ -7,6 +7,7 @@ import {
 
 export const ASK_TRUST_HUB_URL = 'https://www.asktrusthub.com';
 export const ASK_TRUST_HUB_PROMISE_URL = 'https://www.asktrusthub.com/promise';
+export const ASK_TRUST_HUB_REVENUE_URL = 'https://www.asktrusthub.com/how-we-make-money';
 
 /**
  * Quiet network note only — never primary nav or equal footer columns.

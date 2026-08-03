@@ -52,6 +52,22 @@ export function AskNetworkSeal({
         >
           Independence policy
         </a>
+        {' · '}
+        <a
+          href={ASK_TRUST_HUB.revenueUrl}
+          className="underline underline-offset-2 hover:opacity-90"
+          rel="noopener noreferrer"
+        >
+          How we make money
+        </a>
+        {' · '}
+        <a
+          href={ASK_TRUST_HUB.methodologyUrl}
+          className="underline underline-offset-2 hover:opacity-90"
+          rel="noopener noreferrer"
+        >
+          Methodology
+        </a>
       </p>
 
       {showSiblings ? (

@@ -8,6 +8,8 @@ export const ASK_TRUST_HUB = {
   url: 'https://www.asktrusthub.com',
   promiseUrl: 'https://www.asktrusthub.com/promise',
   methodologyUrl: 'https://www.asktrusthub.com/methodology',
+  revenueUrl: 'https://www.asktrusthub.com/how-we-make-money',
+  trustCenterUrl: 'https://www.asktrusthub.com/trust',
   email: 'hello@asktrusthub.com',
   standardsUrl: 'https://www.asktrusthub.com/promise',
 } as const;
