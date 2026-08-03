@@ -14,6 +14,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { MethodologyBackNav } from '@/components/trust/methodology-back-nav';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { hubPath } from '@/lib/hub/paths';
+import { AskStandardBanner } from '@/components/network/ask-standard-banner';
 import {
   BUSINESS_MODEL_ANSWERS,
   COVERAGE_STATS,
@@ -126,6 +127,18 @@ export function HowWeResearchPage() {
               Independent. Data-driven. Built for consumers. No paid rankings. No featured
               placement.
             </p>
+            <p className="mt-3 text-sm text-zinc-600">
+              Canonical vertical methodology:{' '}
+              <Link
+                href={hubPath('lender', '/methodology')}
+                className="font-semibold text-[#3B82F6] underline-offset-2 hover:underline"
+              >
+                /methodology
+              </Link>
+            </p>
+            <div className="mx-auto mt-6 max-w-2xl text-left">
+              <AskStandardBanner verticalLabel="Lender Trust Hub research" />
+            </div>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               {HERO_ACTIONS.map((action) => (
                 <Button

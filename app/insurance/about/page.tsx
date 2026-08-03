@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BadgeCheck, Database, Scale, Shield } from 'lucide-react';
 import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { DISCLAIMER, SITE_NAME } from '@/lib/insurance/constants';
@@ -26,6 +27,21 @@ export default function AboutPage() {
         {SITE_NAME} is an independent informational directory for researching licensed insurance
         agents and agencies. We do not sell insurance policies, accept paid placements, or rank
         listings based on fees or commissions.
+      </p>
+      <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+        Full vertical methodology (sources, verification, limits) lives on{' '}
+        <Link href="/methodology" className="font-semibold text-primary underline-offset-2 hover:underline">
+          /methodology
+        </Link>
+        , under{' '}
+        <a
+          href="https://www.asktrusthub.com/methodology"
+          className="font-semibold text-primary underline-offset-2 hover:underline"
+          rel="noopener noreferrer"
+        >
+          The Ask Trust Hub Standard
+        </a>
+        .
       </p>
 
       <section className="mt-12">

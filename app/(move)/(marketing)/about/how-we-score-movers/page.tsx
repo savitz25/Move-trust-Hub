@@ -41,11 +41,12 @@ import {
   HOW_WE_VET_INTRO,
   MOVER_VETTING_CRITERIA,
 } from '@/lib/trust/vetting-criteria';
+import { AskStandardBanner } from '@/components/network/ask-standard-banner';
 
 export const metadata = buildResourceMetadata(
   METHODOLOGY_PAGE_PATH,
-  'Trust Center — How We Score, Vet & Source Mover Data',
-  'Move Trust Hub Trust Center: reputation score methodology, FMCSA data use, hosted vs third-party review policy, independence (no paid rankings), data sources, and corrections process.'
+  'Methodology — How We Score, Vet & Source Mover Data',
+  'Move Trust Hub methodology under The Ask Trust Hub Standard: reputation score, FMCSA data use, review policy, independence, data sources, limitations, and corrections.'
 );
 
 export default async function HowWeScoreMoversPage() {
@@ -57,10 +58,10 @@ export default async function HowWeScoreMoversPage() {
         data={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Move Trust Hub Trust Center',
+          name: 'Move Trust Hub methodology',
           url: `${SITE_URL}${METHODOLOGY_PAGE_PATH}`,
           description:
-            'Move Trust Hub Trust Center: reputation methodology, review policy, FMCSA data use, independence, and corrections.',
+            'Move Trust Hub methodology under The Ask Trust Hub Standard: reputation, review policy, FMCSA data use, independence, and corrections.',
           isPartOf: { '@type': 'WebSite', name: 'Move Trust Hub', url: SITE_URL },
         }}
       />
@@ -74,16 +75,20 @@ export default async function HowWeScoreMoversPage() {
             />
           </div>
           <Badge variant="secondary" className="mb-4">
-            Trust Center · Methodology
+            Vertical methodology · Moving
           </Badge>
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
-            Move Trust Hub Trust Center
+            Move Trust Hub methodology
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            {DIRECTORY_INDEPENDENCE_TAGLINE} This is the canonical methodology destination for
-            reputation scores, review policy, FMCSA data use, independence, and how we vet listings.
-            County and profile pages link here instead of repeating long boilerplate.
+            {DIRECTORY_INDEPENDENCE_TAGLINE} This is the canonical methodology for reputation
+            scores, review policy, FMCSA data use, independence, and how we vet listings under The
+            Ask Trust Hub Standard. County and profile pages link here instead of repeating long
+            boilerplate.
           </p>
+          <div className="mt-6 max-w-2xl">
+            <AskStandardBanner verticalLabel="Move Trust Hub methodology" />
+          </div>
           <nav
             aria-label="Trust Center sections"
             className="mt-5 flex flex-wrap gap-2 text-xs font-medium"

@@ -8,10 +8,19 @@ export const ASK_TRUST_HUB = {
   url: 'https://www.asktrusthub.com',
   promiseUrl: 'https://www.asktrusthub.com/promise',
   methodologyUrl: 'https://www.asktrusthub.com/methodology',
+  /** Alias used in prose for The Ask Trust Hub Standard */
+  standardUrl: 'https://www.asktrusthub.com/methodology',
   revenueUrl: 'https://www.asktrusthub.com/how-we-make-money',
   trustCenterUrl: 'https://www.asktrusthub.com/trust',
   email: 'hello@asktrusthub.com',
   standardsUrl: 'https://www.asktrusthub.com/promise',
+} as const;
+
+/** Vertical methodology deep-links (canonical per hub). */
+export const HUB_METHODOLOGY_URLS = {
+  move: 'https://www.movetrusthub.com/about/how-we-score-movers',
+  insurance: 'https://www.insurancetrusthub.com/methodology',
+  lender: 'https://www.lendertrusthub.com/methodology',
 } as const;
 
 export const NETWORK_HUBS = [

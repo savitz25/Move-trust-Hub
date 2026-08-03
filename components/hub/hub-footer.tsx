@@ -84,6 +84,19 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
                 </Link>
               </div>
               <div>
+                <Link
+                  prefetch={false}
+                  href={
+                    hub.id === 'move'
+                      ? '/about/how-we-score-movers'
+                      : hubPath(hub.id, '/methodology')
+                  }
+                  className="hover:text-foreground transition-colors"
+                >
+                  Methodology
+                </Link>
+              </div>
+              <div>
                 <Link prefetch={false} href={hubPath(hub.id, '/contact')} className="hover:text-foreground transition-colors">
                   Contact
                 </Link>

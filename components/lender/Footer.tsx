@@ -29,6 +29,7 @@ export default function Footer() {
               <li><a href="https://www.movetrusthub.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MoveTrustHub</a></li>
               <li><Link href="/lender/compare" className="hover:text-white transition-colors">Compare Lenders</Link></li>
               <li><Link href="/lender/about" className="hover:text-white transition-colors">About & Trust</Link></li>
+              <li><Link href="/lender/methodology" className="hover:text-white transition-colors">Methodology</Link></li>
             </ul>
           </div>
 

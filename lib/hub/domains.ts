@@ -46,6 +46,7 @@ export const INSURANCE_APEX_ALLOW_PREFIXES = [
   '/destinations',
   '/my-insurance',
   '/about',
+  '/methodology',
   '/contact',
   '/privacy',
   '/terms',
