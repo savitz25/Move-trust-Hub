@@ -5,17 +5,20 @@ import { hubCanonicalUrl } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 
-/** Network parent for specialist hubs (insurance, later lender). */
+/**
+ * Optional network parent for lender (and historical multi-hub graph).
+ * Description stays finance/moving only — never name InsuranceTrustHub as a Move entity.
+ */
 export const CONSUMER_TRUST_HUB_ORG = {
   '@type': 'Organization' as const,
   '@id': `${MOVE_SITE_URL}/#consumer-trust-hub-network`,
   name: 'ConsumerTrust Hub',
   url: MOVE_SITE_URL,
   description:
-    'Network of independent consumer research directories for moving, lending, and insurance. No lead fees, no paid placements.',
+    'Network of independent consumer research directories. No lead fees, no paid placements.',
 };
 
-/** MoveTrustHub organization — used on move pages and as network anchor. */
+/** MoveTrustHub organization — primary entity on Move pages. */
 const MOVE_ORG = {
   '@type': 'Organization' as const,
   '@id': `${SITE_URL}/#organization`,
@@ -25,7 +28,6 @@ const MOVE_ORG = {
   email: SITE_EMAIL,
   description:
     'Independent directory for researching FMCSA-licensed interstate and local moving companies in the United States. No lead fees, no paid placements.',
-  parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
 };
 
 export function buildHubOrganizationSchema(hub: HubId) {
@@ -42,10 +44,10 @@ export function buildHubOrganizationSchema(hub: HubId) {
     name: config.siteName,
     url: hubUrl,
     logo,
-    // InsuranceTrustHub is standalone — no MoveTrustHub parent in schema
-    ...(hub === 'insurance'
-      ? {}
-      : { parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] } }),
+    // InsuranceTrustHub is standalone. Move org has no parent. Lender may cite network.
+    ...(hub === 'lender'
+      ? { parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] } }
+      : {}),
     description: config.tagline,
     contactPoint: {
       '@type': 'ContactPoint',
@@ -102,15 +104,14 @@ export function buildHubWebsiteSchema(
 }
 
 /**
- * Root layout only — network parent + Move site.
- * Hub-specific Organization/WebSite live on lender/insurance home graphs
- * (avoids shipping cross-hub JSON-LD on every page).
+ * Root layout for Move host — Move Trust Hub Organization + WebSite only.
+ * Do not emit InsuranceTrustHub (or network parent naming insurance) as a primary entity.
+ * Hub-specific graphs live on lender/insurance routes / ITH host.
  */
 export function buildTrustHubNetworkSchema() {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      CONSUMER_TRUST_HUB_ORG,
       MOVE_ORG,
       {
         '@type': 'WebSite',

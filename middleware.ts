@@ -243,13 +243,15 @@ export const config = {
     // Must run on insurance apex — not covered by the catch-all (which excludes *.xml / webmanifest)
     '/sitemap.xml',
     '/sitemap',
+    // Move host: middleware 301s /insurance/* → ITH; without this, *.xml exclusion served ITH URLs under Move.
+    '/insurance/sitemap.xml',
     '/sw.js',
     '/manifest.webmanifest',
     '/site.webmanifest',
     '/manifest.json',
     {
       // robots.txt stays excluded — app/robots.ts is host-aware.
-      // Other *.xml stay excluded; sitemap is listed explicitly above.
+      // Other *.xml stay excluded; sitemap paths listed explicitly above.
       source:
         '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|sitemap-local|sw\\.js|manifest\\.webmanifest|site\\.webmanifest|manifest\\.json|icon|apple-icon|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2|woff|ttf|otf|xml|txt|webmanifest)$).*)',
       missing: [

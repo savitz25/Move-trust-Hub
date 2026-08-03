@@ -37,6 +37,9 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     };
   }
 
+  // Move host only — never advertise InsuranceTrustHub (standalone domain) sitemaps.
+  // /insurance/* 301s to insurancetrusthub.com; do not list /insurance/sitemap.xml here
+  // (that endpoint previously emitted insurancetrusthub.com URLs and confused entity SEO).
   return {
     rules: [
       {
@@ -47,6 +50,8 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
           '/api/',
           '/lender/admin',
           '/insurance/admin',
+          // Residual /insurance/* paths redirect; discourage crawl of the prefix on Move.
+          '/insurance',
           '/_next/',
         ],
       },
@@ -55,7 +60,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       `${MOVE_SITE_URL}/sitemap.xml`,
       `${MOVE_SITE_URL}/sitemap-local/sitemap.xml`,
       `${MOVE_SITE_URL}/lender/sitemap.xml`,
-      `${MOVE_SITE_URL}/insurance/sitemap.xml`,
     ],
     host: MOVE_SITE_URL,
   };

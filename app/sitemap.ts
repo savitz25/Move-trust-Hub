@@ -75,8 +75,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...destinationGuides.map((guide) => `/resources/guides/${guide.slug}`),
   ];
 
-  /** Hub home pages only — detail URLs live in /lender/sitemap.xml and /insurance/sitemap.xml */
-  const hubLandingRoutes = ['/lender', '/insurance'];
+  /** Lender landing only on Move host. Insurance is standalone (insurancetrusthub.com) — never list /insurance/* here. */
+  const hubLandingRoutes = ['/lender'];
 
   const coreStaticRoutes = [
     '',
@@ -113,9 +113,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority:
         route === ''
           ? 1
-          : route === '/lender' || route === '/insurance'
+          : route === '/lender'
             ? 0.92
-            : route.startsWith('/lender/') || route.startsWith('/insurance/')
+            : route.startsWith('/lender/')
               ? 0.88
           : route === '/local-movers'
             ? 0.9

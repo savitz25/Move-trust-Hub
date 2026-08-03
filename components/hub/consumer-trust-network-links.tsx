@@ -5,6 +5,7 @@ import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
 /**
  * Quiet network note only — never primary nav or equal footer columns.
  * InsuranceTrustHub is fully independent: no MoveTrustHub links in its chrome.
+ * Move chrome is mover-first: no InsuranceTrustHub brand/outbound links (SEO isolation).
  */
 export function ConsumerTrustNetworkLinks({
   className = '',
@@ -49,26 +50,13 @@ export function ConsumerTrustNetworkLinks({
     );
   }
 
+  // Move hub: mover-only independence line — no InsuranceTrustHub / ITH domain links.
   return (
     <p
       className={`text-center text-[11px] text-muted-foreground/70 leading-relaxed ${className}`}
     >
-      Move Trust Hub is part of the ConsumerTrust Hub network.{' '}
-      <Link
-        prefetch={false}
-        href="/lender"
-        className="underline underline-offset-2 hover:text-muted-foreground"
-      >
-        Lenders
-      </Link>
-      {' · '}
-      <a
-        href={INSURANCE_SITE_URL}
-        className="underline underline-offset-2 hover:text-muted-foreground"
-        rel="noopener noreferrer"
-      >
-        Insurance
-      </a>
+      Independent mover research directory. No lead fees. No paid placements. Always verify
+      licensing on FMCSA.gov.
     </p>
   );
 }
