@@ -37,8 +37,10 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     };
   }
 
-  // Move host only — never advertise Insurance or Lender standalone sitemaps.
-  // /insurance/* and /lender/* 301 to their own domains; do not list those prefixes here.
+  // Move host only — never advertise Insurance/Lender sitemaps (standalone domains).
+  // CRITICAL: Do NOT Disallow /insurance or /lender — crawlers must hit those paths
+  // so they can process the live 301/308 redirects and transfer equity. Blocking them
+  // freezes old URLs as "Indexed, though blocked by robots.txt".
   return {
     rules: [
       {
@@ -47,10 +49,9 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
         disallow: [
           '/admin',
           '/api/',
+          // Keep monorepo admin isolation only — not the public hub prefixes.
           '/insurance/admin',
-          // Residual hub prefixes redirect off-host; discourage crawl on Move.
-          '/insurance',
-          '/lender',
+          '/lender/admin',
           '/_next/',
         ],
       },

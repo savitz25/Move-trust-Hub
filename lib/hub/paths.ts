@@ -47,17 +47,19 @@ function normalizePathForHub(hub: HubId, path: string): string {
  * Build a public path within a hub.
  * - Move: bare relative paths on movetrusthub.com
  * - Lender: absolute URLs on https://www.lendertrusthub.com (standalone)
- * - Insurance: bare apex paths on insurancetrusthub.com (no `/insurance` prefix).
- *   Admin stays under `/insurance/admin` (shared monorepo isolation).
+ * - Insurance: absolute URLs on https://www.insurancetrusthub.com (standalone)
+ *   Monorepo admin stays under relative `/insurance/admin` (Move project only).
  */
 export function hubPath(hub: HubId, path: string): string {
   const clean = normalizePathForHub(hub, path);
   if (hub === 'move') return clean === '/' ? '/' : clean;
   if (hub === 'insurance') {
+    // Admin remains on the Move monorepo host (not the ITH apex).
     if (clean === '/admin' || clean.startsWith('/admin/')) {
       return `/insurance${clean}`;
     }
-    return clean === '/' ? '/' : clean;
+    if (clean === '/') return `${INSURANCE_SITE_URL}/`;
+    return `${INSURANCE_SITE_URL}${clean}`;
   }
   // lender → standalone apex (absolute). Next.js <Link> supports external https URLs.
   if (clean === '/') return `${LENDER_SITE_URL}/`;
