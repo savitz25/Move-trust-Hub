@@ -26,6 +26,7 @@ import { ArticleSchema } from '@/components/resources/article-schema';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildTemplateMetadata } from '@/lib/hub/templates/metadata';
 import { hubPath } from '@/lib/hub/paths';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 const TITLE = 'First-Time Homebuyer Programs & Down Payment Assistance 2026';
 const DESCRIPTION =
@@ -1188,6 +1189,8 @@ export default function FirstTimeHomebuyerProgramsPage() {
               mortgage that fits your financial future—not simply the lowest advertised down payment.
             </p>
           </section>
+
+          <NetworkHandoff context="lender-closing" variant="card" className="my-2" />
 
           {/* Cluster links */}
           <section>

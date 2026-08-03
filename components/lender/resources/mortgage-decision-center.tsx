@@ -13,6 +13,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { FaqSection } from '@/components/seo/faq-section';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { hubPath } from '@/lib/hub/paths';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 import {
   DECISION_CENTER_META,
   DECISION_FAQS,
@@ -527,6 +528,12 @@ export function MortgageDecisionCenter() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
+      <section className="border-b bg-zinc-50/80 py-10" aria-label="Related network research">
+        <div className="container mx-auto max-w-3xl px-4">
+          <NetworkHandoff context="lender-closing" variant="card" />
+        </div>
+      </section>
+
       <div className="border-b bg-white">
         <p className="container mx-auto max-w-3xl px-4 pt-12 text-center text-muted-foreground md:pt-16">
           Straight answers — no sales pitch.

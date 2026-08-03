@@ -8,6 +8,7 @@ import { buildStateGuideSchema, buildTemplateSchemaGraph } from '@/lib/hub/templ
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import type { StateGuideData } from '@/lib/hub/templates/types';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 export type StateGuideTemplateProps = {
   hub: HubId;
@@ -89,6 +90,18 @@ export function StateGuideTemplate({ hub, state, children }: StateGuideTemplateP
         ) : null}
 
         {children}
+
+        {hub === 'insurance' ? (
+          <NetworkHandoff
+            context="insurance-destination"
+            geography={{
+              state: state.name,
+              stateCode: state.code,
+              stateSlug: state.slug,
+            }}
+            variant="card"
+          />
+        ) : null}
       </div>
     </>
   );

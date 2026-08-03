@@ -17,6 +17,7 @@ import { ArticleSchema } from '@/components/resources/article-schema';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildTemplateMetadata } from '@/lib/hub/templates/metadata';
 import { hubPath } from '@/lib/hub/paths';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 const TITLE =
   'How to Choose the Right Mortgage Lender in 2026: Key Factors, Red Flags & Comparison Tips';
@@ -388,6 +389,8 @@ export default function HowToChooseMortgageLenderPage() {
               ))}
             </div>
           </section>
+
+          <NetworkHandoff context="lender-closing" variant="card" className="mb-8" />
 
           <section className="rounded-2xl border bg-gradient-to-br from-[#3B82F6]/8 via-background to-[#0A2540]/5 p-6 sm:p-8">
             <div className="mb-3 flex items-center gap-2">

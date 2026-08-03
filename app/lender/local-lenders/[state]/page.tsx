@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/lender/directory/Breadcrumbs';
 import { JsonLd } from '@/components/lender/directory/JsonLd';
 import { CrossVerticalNav } from '@/components/lender/directory/CrossVerticalNav';
 import { LeadCaptureForm } from '@/components/lender/directory/LeadCaptureForm';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 import { PersonalizedBanner } from '@/components/lender/directory/PersonalizedBanner';
 import { LenderCard } from '@/components/lender/LenderCard';
 import { SearchBarLoader } from '@/components/lender/search-bar-loader';
@@ -730,6 +731,18 @@ export default async function MortgageStatePage({
               variant="sidebar-minimal"
             />
           </div>
+        </div>
+
+        <div className="mt-10 max-w-3xl">
+          <NetworkHandoff
+            context="lender-directory"
+            geography={{
+              state: stateMeta.fullName,
+              stateCode: stateMeta.code,
+              stateSlug: slug,
+            }}
+            variant="compact"
+          />
         </div>
       </div>
     </>

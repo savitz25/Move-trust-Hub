@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { MyMoveReports } from '@/components/my-move-plan/my-move-reports';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 import { Button } from '@/components/ui/button';
 
 export const metadata = buildResourceMetadata(
@@ -22,7 +23,10 @@ export default function MyMoveReportsPage() {
         <span className="text-foreground">Reports</span>
       </div>
       <MyMoveReports />
-      <div className="mt-10 flex flex-wrap gap-3 border-t pt-6">
+      <div className="mt-10">
+        <NetworkHandoff context="move-plan" variant="inline" />
+      </div>
+      <div className="mt-8 flex flex-wrap gap-3 border-t pt-6">
         <Button variant="outline" asChild>
           <Link href="/my-move">Back to Move HQ</Link>
         </Button>

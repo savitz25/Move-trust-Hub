@@ -27,6 +27,7 @@ import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { EditorialTeamPanel } from '@/components/trust/editorial-team-panel';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
@@ -390,6 +391,22 @@ export async function CityHubTemplate({ market, content }: Props) {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Contextual network handoff — destination intent only (not company profiles) */}
+      <section className="border-b py-10 md:py-12" aria-label="Related network research">
+        <div className="container mx-auto max-w-6xl px-4">
+          <NetworkHandoff
+            context="move-destination"
+            geography={{
+              city: market.displayName,
+              state: market.stateName,
+              stateCode: market.stateCode,
+              stateSlug: market.stateName.toLowerCase().replace(/\s+/g, '-'),
+            }}
+            variant="card"
+          />
         </div>
       </section>
 

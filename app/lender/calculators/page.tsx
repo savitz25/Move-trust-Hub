@@ -6,6 +6,7 @@ import { TrustBar } from '@/components/lender/TrustBar';
 import { calculatorsPageSchema } from '@/lib/lender/seo/calculators';
 import { CALC_DISCLAIMER } from '@/lib/lender/calculators/registry';
 import { Breadcrumbs } from '@/components/lender/directory/Breadcrumbs';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 export const dynamic = 'force-static';
 
@@ -145,6 +146,13 @@ export default function CalculatorsPage() {
           <CalculatorHubLoader />
         </div>
       </div>
+
+      {/* Contextual handoff after calculator work — relocation is a natural next step */}
+      <section className="border-t border-[#E5E7EB] bg-white py-10" aria-label="Related network research">
+        <div className="container mx-auto max-w-3xl px-4">
+          <NetworkHandoff context="lender-calculator" variant="card" />
+        </div>
+      </section>
 
       {/* Educational layer */}
       <section

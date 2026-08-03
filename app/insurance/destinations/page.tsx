@@ -7,6 +7,7 @@ import { buildTemplateMetadata } from '@/lib/hub/templates/metadata';
 import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 export const metadata: Metadata = buildTemplateMetadata({
   hub: 'insurance',
@@ -63,6 +64,10 @@ export default function DestinationsPage() {
               Browse all agencies <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </Button>
+        </div>
+
+        <div className="mt-12 max-w-3xl mx-auto">
+          <NetworkHandoff context="insurance-destination" variant="card" />
         </div>
       </div>
     </HubSectionPage>

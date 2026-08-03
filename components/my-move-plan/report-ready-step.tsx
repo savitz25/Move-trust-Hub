@@ -24,6 +24,7 @@ import type { HomeRouteMover } from '@/lib/home/resolve-route-from-zip';
 import type { ConfirmedPlace } from '@/components/location/location-place-input';
 import { formatItemDisplayName } from '@/lib/moving-calculator/display-names';
 import type { PlanInventoryItem } from '@/lib/my-move-plan/types';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 type TruckRec = {
   truck: string;
@@ -252,6 +253,20 @@ export function ReportReadyStep({
             </p>
           </section>
         ) : null}
+
+        <NetworkHandoff
+          context="move-plan"
+          geography={
+            toPlace
+              ? {
+                  city: toPlace.city,
+                  stateCode: toPlace.stateCode,
+                  stateSlug: toPlace.stateSlug,
+                }
+              : undefined
+          }
+          variant="card"
+        />
       </div>
     );
   }
@@ -670,6 +685,20 @@ export function ReportReadyStep({
           </li>
         </ul>
       </section>
+
+      <NetworkHandoff
+        context="move-plan"
+        geography={
+          toPlace
+            ? {
+                city: toPlace.city,
+                stateCode: toPlace.stateCode,
+                stateSlug: toPlace.stateSlug,
+              }
+            : undefined
+        }
+        variant="card"
+      />
 
       {/* Tertiary footer */}
       <footer className="flex flex-col gap-3 border-t border-dashed pt-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">

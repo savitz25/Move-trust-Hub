@@ -12,6 +12,7 @@ import { ProviderCard } from '@/components/insurance/provider-card';
 import { Card, CardContent } from '@/components/insurance/ui/card';
 import { Button } from '@/components/insurance/ui/button';
 import { ssgParams } from '@/lib/ssg/ssg-params';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 interface CityPageProps {
   params: Promise<{ state: string; city: string }>;
@@ -155,6 +156,17 @@ export default async function CityDestinationPage({ params }: CityPageProps) {
             </div>
           )}
         </section>
+
+        <NetworkHandoff
+          context="insurance-destination"
+          geography={{
+            city: city.name,
+            state: state.name,
+            stateCode: state.code,
+            stateSlug: state.slug,
+          }}
+          variant="card"
+        />
       </div>
     </div>
   );
