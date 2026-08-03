@@ -91,6 +91,7 @@ export default async function LenderProfilePage({
       <div className="mx-auto max-w-3xl">
         <TrustProfileShell
           profile={toLenderTrustProfile(lender)}
+          variant="lender"
           showContact
           className="mb-6"
           actions={<Badge variant="outline">{lender.type}</Badge>}

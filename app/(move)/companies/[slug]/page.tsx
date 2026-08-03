@@ -154,6 +154,7 @@ export default async function CompanyProfilePage({ params }: Props) {
       {/* Shared network Trust Profile shell (Step 5) */}
       <TrustProfileShell
         profile={toMoveTrustProfile(company)}
+        variant="move"
         showContact={false}
         className="mb-6"
         actions={

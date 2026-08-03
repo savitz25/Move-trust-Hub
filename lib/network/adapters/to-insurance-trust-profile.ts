@@ -15,13 +15,14 @@ export function toInsuranceTrustProfile(provider: Provider): TrustProfileShell {
   const sources: TrustSourceRef[] = [];
   const licenseUrl = getProviderLicenseUrl(provider);
 
-  if (provider.is_verified || provider.license_number) {
+  // Prefer hide: only show DOI chip when listing is verified (or has license + verified)
+  if (provider.is_verified) {
     sources.push({
       id: 'doi',
       label: provider.license_number
         ? `DOI / license ${provider.license_number}`
         : 'State DOI pathway',
-      status: provider.is_verified ? 'verified' : 'unverified',
+      status: 'verified',
       url: licenseUrl,
       note: 'Re-confirm Active status on the state DOI site before buying coverage',
       lastChecked: provider.enriched_at ?? provider.updated_at ?? undefined,

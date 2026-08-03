@@ -37,15 +37,8 @@ export function toMoveTrustProfile(company: Company): TrustProfileShell {
             ? 'Safety rating needs attention — re-check SAFER'
             : 'Authority and safety context from public FMCSA records',
     });
-  } else if (company.usdotNumber) {
-    sources.push({
-      id: 'fmcsa',
-      label: 'FMCSA / SAFER',
-      status: 'unverified',
-      url: `https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=${encodeURIComponent(company.usdotNumber)}`,
-      note: 'USDOT on file — re-verify authority on SAFER',
-    });
   }
+  // Prefer hide: do not emit unverified FMCSA chips (re-check SAFER via primary label / extensions)
 
   // BBB only when confirmed public listing (same policy as profile badges)
   if (verification.bbb === 'verified' && verification.bbbRating) {

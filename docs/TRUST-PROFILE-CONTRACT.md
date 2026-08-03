@@ -98,6 +98,23 @@ Does **not** replace full vertical body content (reviews, maps, loan types, etc.
 
 ---
 
+## Entity keys (Step 5.4)
+
+| Hub | Primary public key | Profile URL |
+|-----|--------------------|-------------|
+| Move | `slug` (USDOT in extensions) | `/companies/{slug}` |
+| Insurance | provider `slug` / id | `/providers/{slug}` |
+| Lender | lender `slug` (NMLS in extensions) | `/lenders/{slug}` |
+
+Helper: `lib/network/entity-ref.ts` → `{ hub, entityId, profileUrl }`.  
+Cross-hub unified UUID is **not** required for the shell.
+
+## Smoke test
+
+```bash
+npm run smoke:trust-profile
+```
+
 ## Out of scope (this step)
 
 - Merging Move/Insurance/Lender databases into one warehouse

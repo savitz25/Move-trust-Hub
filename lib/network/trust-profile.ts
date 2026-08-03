@@ -118,11 +118,28 @@ export function defaultStandardUrl(): string {
   return ASK_TRUST_HUB.standardUrl ?? ASK_TRUST_HUB.methodologyUrl;
 }
 
-/** Sources safe to show as chips (hide not_applicable / empty noise). */
+/**
+ * Sources safe to show as chips.
+ * Prefer hide: not_applicable, unverified, and empty labels never render as noise.
+ */
 export function visibleTrustSources(sources: TrustSourceRef[]): TrustSourceRef[] {
   return sources.filter(
-    (s) => s.status === 'verified' || s.status === 'stale' || s.status === 'error'
+    (s) =>
+      Boolean(s.label?.trim()) &&
+      (s.status === 'verified' || s.status === 'stale' || s.status === 'error')
   );
+}
+
+/** Format ISO date for shell freshness (omit if unparseable). */
+export function formatTrustProfileDate(iso?: string | null): string | null {
+  if (!iso?.trim()) return null;
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
 }
 
 /** True when reputation has a real score to display. */

@@ -18,11 +18,12 @@ export function toLenderTrustProfile(lender: LenderLike): TrustProfileShell {
   const sources: TrustSourceRef[] = [];
   const enriched = 'isEnriched' in lender ? lender : null;
 
-  if (lender.nmlsVerified || lender.nmlsId) {
+  // Prefer hide: NMLS chip only when nmlsVerified (id alone is not a verified chip)
+  if (lender.nmlsVerified && lender.nmlsId) {
     sources.push({
       id: 'nmls',
-      label: lender.nmlsId ? `NMLS #${lender.nmlsId}` : 'NMLS',
-      status: lender.nmlsVerified ? 'verified' : 'unverified',
+      label: `NMLS #${lender.nmlsId}`,
+      status: 'verified',
       url: 'https://www.nmlsconsumeraccess.org/',
       note: 'Re-confirm company and individual IDs on NMLS Consumer Access',
       lastChecked: enriched?.enrichedAt,

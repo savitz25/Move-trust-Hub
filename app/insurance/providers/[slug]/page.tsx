@@ -102,6 +102,7 @@ export default async function ProviderPage({ params, searchParams }: ProviderPag
           />
           <TrustProfileShell
             profile={toInsuranceTrustProfile(provider)}
+            variant="insurance"
             showContact={false}
             className="mb-6"
             actions={
