@@ -2,8 +2,18 @@
 
 import { useEffect, useRef } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { GA_MEASUREMENT_ID, isGaConfigured } from '@/lib/analytics/ga-config';
+import type { GaHub } from '@/lib/analytics/ga-config';
+import { isGaConfigured } from '@/lib/analytics/ga-config';
 import { getHubFromPathname } from '@/lib/hub/paths';
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+    __MTH_GA_MEASUREMENT_ID?: string;
+    __MTH_GA_HUB?: string;
+  }
+}
 
 function whenGtagReady(run: () => void, maxAttempts = 80): () => void {
   if (typeof window === 'undefined') return () => undefined;
@@ -34,29 +44,34 @@ function whenGtagReady(run: () => void, maxAttempts = 80): () => void {
   };
 }
 
+type Props = {
+  measurementId: string;
+  hub: GaHub;
+};
+
 /**
  * App Router SPA page views — first hit is covered by gtag config send_page_view.
- * Subsequent client navigations re-config with page_path + hub_page_view.
+ * Subsequent client navigations re-config with page_path.
  */
-export function GaPageViewTracker() {
+export function GaPageViewTracker({ measurementId, hub }: Props) {
   const pathname = usePathname() ?? '/';
   const searchParams = useSearchParams();
   const isFirst = useRef(true);
 
   useEffect(() => {
-    if (!isGaConfigured()) return;
+    if (!isGaConfigured(measurementId)) return;
 
     const query = searchParams?.toString();
     const pagePath = query ? `${pathname}?${query}` : pathname;
     const pageTitle = typeof document !== 'undefined' ? document.title : undefined;
-    const hub = getHubFromPathname(pathname);
+    const pathHub = getHubFromPathname(pathname);
 
-    // Initial HTML load: gtag config already sent page_view — only hub dimension once ready.
+    // Initial HTML load: gtag config already sent page_view.
     if (isFirst.current) {
       isFirst.current = false;
       return whenGtagReady(() => {
         window.gtag?.('event', 'hub_page_view', {
-          hub,
+          hub: hub === 'insurance' ? 'insurance' : pathHub,
           page_path: pagePath,
           page_title: pageTitle,
         });
@@ -64,17 +79,17 @@ export function GaPageViewTracker() {
     }
 
     return whenGtagReady(() => {
-      window.gtag?.('config', GA_MEASUREMENT_ID, {
+      window.gtag?.('config', measurementId, {
         page_path: pagePath,
         page_title: pageTitle,
       });
       window.gtag?.('event', 'hub_page_view', {
-        hub,
+        hub: hub === 'insurance' ? 'insurance' : pathHub,
         page_path: pagePath,
         page_title: pageTitle,
       });
     });
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, measurementId, hub]);
 
   return null;
 }

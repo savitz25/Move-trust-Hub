@@ -2,7 +2,9 @@
 
 export {
   GA_CROSS_DOMAIN_LINKS,
+  GA_CROSS_DOMAIN_LINKS_MOVE,
   GA_MEASUREMENT_ID,
+  GA_MEASUREMENT_ID_MOVE_CANONICAL,
 } from '@/lib/analytics/ga-config';
 
 type GaEventParams = Record<string, string | number | boolean | undefined | null>;
