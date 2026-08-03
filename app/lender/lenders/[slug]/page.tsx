@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Star, ShieldCheck, ChevronRight, Phone, ExternalLink } from 'lucide-react';
+import { Star, ChevronRight, Phone, ExternalLink } from 'lucide-react';
 import { SchemaInjector } from '@/components/hub/schema-injector';
 import { hubPath } from '@/lib/hub/paths';
 import { buildTemplateSchemaGraph } from '@/lib/hub/templates/schemas';
@@ -15,6 +15,8 @@ import { MatchLenderButton } from '@/components/lender/MatchLenderButton';
 import { RelatedDirectoryLinks } from '@/components/lender/directory/RelatedDirectoryLinks';
 import { LenderProfileBack } from '@/components/lender/lender-profile-back';
 import { LenderTrustSignals } from '@/components/lender/lender-trust-signals';
+import { TrustProfileShell } from '@/components/network/trust-profile-shell';
+import { toLenderTrustProfile } from '@/lib/network/adapters/to-lender-trust-profile';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -87,43 +89,34 @@ export default async function LenderProfilePage({
       </nav>
 
       <div className="mx-auto max-w-3xl">
+        <TrustProfileShell
+          profile={toLenderTrustProfile(lender)}
+          showContact
+          className="mb-6"
+          actions={<Badge variant="outline">{lender.type}</Badge>}
+        />
+
         <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm md:p-8">
-          <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <div className="mb-2 flex flex-wrap gap-2">
-                <span className="trust-badge">
-                  <ShieldCheck className="h-3 w-3" aria-hidden="true" />
-                  NMLS Verified
-                </span>
-                {lender.bbbAccredited ? (
-                  <span className="trust-badge">BBB Accredited</span>
-                ) : null}
-                <Badge variant="outline">{lender.type}</Badge>
-              </div>
-              <h1 className="text-3xl font-bold text-[#0A2540]">{lender.name}</h1>
-              <p className="mt-1 text-zinc-500">
-                {lender.city}, {lender.state} · NMLS #{lender.nmlsId}
-              </p>
-            </div>
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1.5 text-lg font-semibold text-amber-700">
               <Star className="h-5 w-5 fill-current" aria-hidden="true" />
               {lender.rating.toFixed(1)}
               <span className="text-sm font-normal text-zinc-500">
-                ({lender.reviewCount.toLocaleString()})
+                ({lender.reviewCount.toLocaleString()} reviews)
               </span>
             </div>
           </div>
 
           <p className="mb-6 text-zinc-600 leading-relaxed">{lender.shortDescription}</p>
 
-          <div className="mb-6 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+          <div className="mb-2 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {[
               { label: 'County Experience', value: `${lender.countyExperienceScore}/100` },
               {
-                label: 'Close estimate*',
+                label: 'Close estimate (editorial)*',
                 value: `~${lender.avgCloseDays} days`,
               },
-              { label: 'On-Time Close*', value: `${lender.onTimeCloseRate}%` },
+              { label: 'On-time close (editorial)*', value: `${lender.onTimeCloseRate}%` },
             ].map((stat) => (
               <div key={stat.label} className="rounded-xl bg-zinc-50 p-4 text-center">
                 <div className="text-xl font-bold text-[#0A2540]">{stat.value}</div>
@@ -131,6 +124,10 @@ export default async function LenderProfilePage({
               </div>
             ))}
           </div>
+          <p className="mb-6 text-xs text-zinc-500">
+            *Close metrics are editorial/seed research estimates — not NMLS or CFPB official fields.
+            Confirm timelines with the lender in writing.
+          </p>
 
           <div className="mb-6">
             <h2 className="mb-2 font-semibold text-[#0A2540]">Loan Types</h2>

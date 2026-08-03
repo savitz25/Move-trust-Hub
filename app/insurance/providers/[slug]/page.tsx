@@ -3,7 +3,6 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { format } from 'date-fns';
 import {
-  BadgeCheck,
   ExternalLink,
   MapPin,
   Phone,
@@ -36,6 +35,8 @@ import { Button } from '@/components/insurance/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/insurance/ui/card';
 import { ContextNav } from '@/components/insurance/context-nav';
 import { cn } from '@/lib/insurance/utils';
+import { TrustProfileShell } from '@/components/network/trust-profile-shell';
+import { toInsuranceTrustProfile } from '@/lib/network/adapters/to-insurance-trust-profile';
 
 interface ProviderPageProps {
   params: Promise<{ slug: string }>;
@@ -99,21 +100,27 @@ export default async function ProviderPage({ params, searchParams }: ProviderPag
             currentLabel={provider.name}
             className="mb-5"
           />
+          <TrustProfileShell
+            profile={toInsuranceTrustProfile(provider)}
+            showContact={false}
+            className="mb-6"
+            actions={
+              <>
+                <SaveProviderButton
+                  providerSlug={provider.slug}
+                  providerName={provider.name}
+                />
+                <CompareProviderButton
+                  providerSlug={provider.slug}
+                  providerName={provider.name}
+                />
+              </>
+            }
+          />
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
             <div className="max-w-3xl">
-              <div className="flex flex-wrap items-center gap-2 mb-3">
-                {provider.is_verified && (
-                  <Badge variant="success" className="gap-1">
-                    <BadgeCheck className="h-3.5 w-3.5" /> Verified listing
-                  </Badge>
-                )}
-                <Badge variant="secondary">
-                  {provider.city}, {provider.state}
-                </Badge>
-              </div>
-              <h1 className="text-3xl md:text-4xl font-bold tracking-tight">{provider.name}</h1>
               {provider.short_description && (
-                <p className="mt-3 text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {provider.short_description}
                 </p>
               )}
@@ -128,25 +135,13 @@ export default async function ProviderPage({ params, searchParams }: ProviderPag
                     }}
                   />
                 )}
-                {provider.bbb_accredited && (
-                  <Badge variant="outline">BBB Accredited</Badge>
-                )}
                 <span className="text-sm text-muted-foreground">
                   {provider.review_count} review{provider.review_count !== 1 ? 's' : ''}
-                  {provider.trust_score != null ? ` · Trust ${provider.trust_score}/100` : ''}
                 </span>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-2 shrink-0">
-              <SaveProviderButton
-                providerSlug={provider.slug}
-                providerName={provider.name}
-              />
-              <CompareProviderButton
-                providerSlug={provider.slug}
-                providerName={provider.name}
-              />
               {provider.phone && (
                 <Button asChild variant="outline" className="gap-2">
                   <a href={`tel:${provider.phone.replace(/\D/g, '')}`}>

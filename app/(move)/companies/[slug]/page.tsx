@@ -44,6 +44,8 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness';
+import { TrustProfileShell } from '@/components/network/trust-profile-shell';
+import { toMoveTrustProfile } from '@/lib/network/adapters/to-move-trust-profile';
 import { ClaimProfileCta } from '@/components/portal/claim-cta';
 import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
 import { FMCSA_PLAIN_ENGLISH } from '@/lib/trust/fmcsa-consumer-copy';
@@ -149,27 +151,44 @@ export default async function CompanyProfilePage({ params }: Props) {
         <CompanyProfileBack />
       </Suspense>
 
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
-        <div>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-            <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
+      {/* Shared network Trust Profile shell (Step 5) */}
+      <TrustProfileShell
+        profile={toMoveTrustProfile(company)}
+        showContact={false}
+        className="mb-6"
+        actions={
+          <>
             <CompanyTypeBadges company={company} size="default" className="shrink-0" />
             <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
-          </div>
+            <UserReviewsCta href={reviewHref} />
+            <SaveMoverButton
+              companySlug={company.slug}
+              companyName={company.name}
+              variant="button"
+            />
+            <Link href={`/compare?add=${company.slug}`}>
+              <Button>Add to Compare</Button>
+            </Link>
+          </>
+        }
+      />
+
+      {/* Vertical detail under shell */}
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
           {company.publicScrapeData ? (
-            <div className="mt-2">
+            <div className="mb-2">
               <PublicScrapeBadges data={company.publicScrapeData} excludeBbb />
             </div>
           ) : null}
           {tenureLine ? (
-            <div className="text-muted-foreground">{tenureLine}</div>
+            <div className="text-sm text-muted-foreground">{tenureLine}</div>
           ) : null}
-          <div className="mt-4 space-y-2">
-            {verification.directoryVerified || verification.fmcsa || verification.bbb ? (
+          <div className="mt-3 space-y-2">
+            {verification.directoryVerified || verification.fmcsa || verification.bbb === 'verified' ? (
               <>
                 <p className="text-xs text-muted-foreground max-w-xl leading-relaxed">
                   <strong className="text-foreground">FMCSA</strong> — {FMCSA_PLAIN_ENGLISH}
@@ -179,20 +198,6 @@ export default async function CompanyProfilePage({ params }: Props) {
             ) : null}
             <VerificationBadgeLegend className="mt-2" />
           </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <a href={company.website} target="_blank" rel="noopener" className="flex items-center gap-1 text-sm text-primary hover:underline">
-            Visit official site <ExternalLink className="h-3.5 w-3.5" />
-          </a>
-          <UserReviewsCta href={reviewHref} />
-          <SaveMoverButton
-            companySlug={company.slug}
-            companyName={company.name}
-            variant="button"
-          />
-          <Link href={`/compare?add=${company.slug}`}>
-            <Button>Add to Compare</Button>
-          </Link>
         </div>
       </div>
 
