@@ -97,7 +97,7 @@ export default async function LicenseVerificationPage({ searchParams }: PageProp
           <section>
             <h2 className="text-xl font-semibold text-slate-900">Before you buy</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">
-              Verify the license, get quotes and plan details in writing, and use independent
+              Verify the license, confirm plan details in writing with the agency, and use independent
               research tools when comparing Medicare or Marketplace options. We do not sell leads
               from this page.
             </p>

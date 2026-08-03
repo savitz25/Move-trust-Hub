@@ -6,17 +6,20 @@ import type { HubId } from '@/lib/hub/types';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 
 /**
- * Optional network parent for lender (and historical multi-hub graph).
- * Description stays finance/moving only — never name InsuranceTrustHub as a Move entity.
+ * Network parent (Ask Trust Hub) — cited by specialist hubs via parentOrganization.
+ * @id kept stable for existing graphs that still reference this node name in code.
  */
 export const CONSUMER_TRUST_HUB_ORG = {
   '@type': 'Organization' as const,
-  '@id': `${MOVE_SITE_URL}/#consumer-trust-hub-network`,
-  name: 'ConsumerTrust Hub',
-  url: MOVE_SITE_URL,
+  '@id': 'https://www.asktrusthub.com/#organization',
+  name: 'Ask Trust Hub',
+  url: 'https://www.asktrusthub.com',
   description:
-    'Network of independent consumer research directories. No lead fees, no paid placements.',
+    'Independent consumer research network and trust infrastructure behind MoveTrustHub, InsuranceTrustHub, and LenderTrustHub. No lead fees, no paid placements.',
 };
+
+/** @deprecated Use CONSUMER_TRUST_HUB_ORG (now Ask Trust Hub) */
+export const ASK_TRUST_HUB_ORG = CONSUMER_TRUST_HUB_ORG;
 
 /** MoveTrustHub organization — primary entity on Move pages. */
 const MOVE_ORG = {

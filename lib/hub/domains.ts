@@ -1,5 +1,5 @@
 /**
- * Multi-domain hosts for the ConsumerTrust Hub monorepo.
+ * Multi-domain hosts for the Ask Trust Hub monorepo.
  * Insurance and Lender are standalone apex destinations (not served under Move).
  */
 

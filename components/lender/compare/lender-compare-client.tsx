@@ -80,8 +80,11 @@ export function LenderCompareClient({ lenders }: { lenders: Lender[] }) {
                   get: (l: Lender) =>
                     `${l.rating} (${l.reviewCount.toLocaleString()} reviews)`,
                 },
-                { label: 'Avg Close', get: (l: Lender) => `${l.avgCloseDays} days` },
-                { label: 'On-Time Close', get: (l: Lender) => `${l.onTimeCloseRate}%` },
+                {
+                  label: 'Close estimate*',
+                  get: (l: Lender) => `~${l.avgCloseDays} days`,
+                },
+                { label: 'On-Time Close*', get: (l: Lender) => `${l.onTimeCloseRate}%` },
                 { label: 'CFPB Complaints', get: (l: Lender) => String(l.cfpbComplaints) },
                 { label: 'BBB', get: (l: Lender) => l.bbbRating },
                 { label: 'Loan Types', get: (l: Lender) => l.loanTypes.join(', ') },

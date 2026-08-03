@@ -21,7 +21,7 @@ export const organizationSchema = {
     availableLanguage: 'English',
   },
   description:
-    'Independent directory of licensed insurance agencies and brokers in the United States. Compare reviews, specialties, and request quotes for personal and commercial coverage. No paid placements.',
+    'Independent directory of licensed insurance agencies and brokers in the United States. Compare reviews and specialties for personal and commercial coverage research. No paid placements. We do not sell policies.',
 };
 
 export const websiteSchema = {

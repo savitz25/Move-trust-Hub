@@ -118,10 +118,12 @@ export default async function LenderProfilePage({
 
           <div className="mb-6 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
             {[
-              { label: 'Trust Score', value: `${lender.trustScore}/100` },
               { label: 'County Experience', value: `${lender.countyExperienceScore}/100` },
-              { label: 'Avg Close Time', value: `${lender.avgCloseDays} days` },
-              { label: 'On-Time Close', value: `${lender.onTimeCloseRate}%` },
+              {
+                label: 'Close estimate*',
+                value: `~${lender.avgCloseDays} days`,
+              },
+              { label: 'On-Time Close*', value: `${lender.onTimeCloseRate}%` },
             ].map((stat) => (
               <div key={stat.label} className="rounded-xl bg-zinc-50 p-4 text-center">
                 <div className="text-xl font-bold text-[#0A2540]">{stat.value}</div>

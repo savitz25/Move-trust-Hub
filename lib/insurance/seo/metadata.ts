@@ -12,7 +12,7 @@ export const HOMEPAGE_DESCRIPTION =
   'Compare independent and captive insurance agencies by reviews, specialties, and state licensing. Research auto, home, life, and business coverage options.';
 
 export const DEFAULT_SITE_DESCRIPTION =
-  'InsuranceTrustHub is an independent directory of licensed insurance agencies. Research providers, read verified reviews, and request quotes for auto, home, life, and business insurance — no paid placements.';
+  'InsuranceTrustHub is an independent directory of licensed insurance agencies. Research providers, read verified reviews, and compare options for auto, home, life, and business coverage — no paid placements. We do not sell policies.';
 
 /** Prefer generated OG image; logo used as fallback only. */
 export const OG_IMAGE = {

@@ -55,7 +55,9 @@ export interface Lender {
 export const TRUST_STATS = {
   verifiedLenders: 12450,
   totalReviews: 2_800_000,
-  countiesCovered: 3142,
+  /** Directory is expanding — do not claim complete national county coverage. */
+  countiesCovered: 0,
+  countiesCoveredLabel: 'Expanding county coverage',
   dataSources: ['NMLS', 'CFPB', 'BBB', 'Google', 'Trustpilot'],
 };
 

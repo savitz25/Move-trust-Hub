@@ -339,8 +339,8 @@ export const COVERAGE_STATS = [
     label: 'Lenders in directory research set',
   },
   {
-    value: TRUST_STATS.countiesCovered.toLocaleString(),
-    label: 'Counties mapped for local experience',
+    value: 'Expanding',
+    label: 'County markets with local experience research',
   },
   {
     value: `${(TRUST_STATS.totalReviews / 1_000_000).toFixed(1)}M+`,
@@ -351,7 +351,7 @@ export const COVERAGE_STATS = [
 export const BUSINESS_MODEL_ANSWERS = [
   {
     q: 'How do you make money?',
-    a: 'Lender Trust Hub is part of the independent Trust Hub network. We focus on directory research tools and education. We do not sell leads or charge for featured rankings. Any future monetization will not include pay-to-rank directory placement.',
+    a: 'Lender Trust Hub is part of the Ask Trust Hub network. We focus on directory research tools and education. We do not sell leads or charge for featured rankings. Any future monetization will not include pay-to-rank directory placement.',
   },
   {
     q: 'Can lenders pay for better placement?',

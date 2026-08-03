@@ -45,10 +45,18 @@ export default function Footer() {
 
         <p className="mt-8 text-xs leading-relaxed text-zinc-500">
           Calculator estimates are for educational purposes only. Actual rates, fees, terms, and approvals vary.
-          Lender Trust Hub is not a lender or broker. Zero paid placements — ever.
+          Lender Trust Hub is not a lender or broker. Zero paid placements — ever. Close-time figures on profiles
+          are model estimates, not regulatory metrics.
         </p>
         <div className="mt-6 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
-          © {new Date().getFullYear()} LenderTrustHub.com — Trusted Local Lenders • Verified County Insights • National Expertise
+          © {new Date().getFullYear()} LenderTrustHub.com — Part of the{' '}
+          <a
+            href="https://www.asktrusthub.com/promise"
+            className="underline underline-offset-2 hover:text-white"
+            rel="noopener noreferrer"
+          >
+            Ask Trust Hub network
+          </a>
         </div>
       </div>
     </footer>

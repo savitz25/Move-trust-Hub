@@ -160,6 +160,23 @@ const nextConfig: NextConfig = {
         destination: 'https://www.lendertrusthub.com/:path*',
         permanent: true,
       },
+      // Monorepo /insurance → standalone Insurance Trust Hub (301)
+      // (middleware also redirects; config covers edge/CDN when middleware is skipped)
+      {
+        source: '/insurance',
+        destination: 'https://www.insurancetrusthub.com/',
+        permanent: true,
+      },
+      {
+        source: '/insurance/',
+        destination: 'https://www.insurancetrusthub.com/',
+        permanent: true,
+      },
+      {
+        source: '/insurance/:path*',
+        destination: 'https://www.insurancetrusthub.com/:path*',
+        permanent: true,
+      },
       // GSC 404: legacy bare route → Alabama Huntsville destination hub
       {
         source: '/from-georgia-to-huntsville',

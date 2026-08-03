@@ -14,8 +14,8 @@ const stats = [
   },
   {
     icon: MapPin,
-    value: TRUST_STATS.countiesCovered.toLocaleString(),
-    label: 'Counties Covered',
+    value: 'Expanding',
+    label: 'County coverage',
   },
   {
     icon: Database,

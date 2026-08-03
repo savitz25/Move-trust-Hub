@@ -116,16 +116,14 @@ export const LenderCard = memo(function LenderCard({
             <dd className="tabular-nums">{lender.nmlsId}</dd>
           </div>
           <div>
-            <dt className="font-medium text-[#0A2540]">Trust Score</dt>
-            <dd className="tabular-nums">{lender.trustScore}/100</dd>
-          </div>
-          <div>
             <dt className="font-medium text-[#0A2540]">County Exp.</dt>
             <dd className="tabular-nums">{lender.countyExperienceScore}/100</dd>
           </div>
           <div>
-            <dt className="font-medium text-[#0A2540]">Avg Close</dt>
-            <dd className="tabular-nums">{lender.avgCloseDays} days</dd>
+            <dt className="font-medium text-[#0A2540]">Close estimate</dt>
+            <dd className="tabular-nums" title="Educational model estimate — not a regulatory metric">
+              ~{lender.avgCloseDays} days*
+            </dd>
           </div>
         </dl>
       </div>
