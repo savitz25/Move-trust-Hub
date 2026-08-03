@@ -29,9 +29,16 @@ function createAnonSupabaseClient() {
   const url = getSupabaseUrl();
   const anonKey = getSupabaseAnonKey();
   if (!url || !anonKey) return null;
-  return createSupabaseClient<Database>(url, anonKey, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
+  try {
+    return createSupabaseClient<Database>(url, anonKey, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
+  } catch (err) {
+    logger.warn('companies.supabase_client_init_failed', {
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return null;
+  }
 }
 
 function parseUsdotFromSlugInput(input: string): string | null {

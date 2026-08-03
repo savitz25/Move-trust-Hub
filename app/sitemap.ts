@@ -60,8 +60,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const extendedRouteSlugs = new Set(getExtendedRouteSlugs());
-  const companies = await getAllCompanies();
-  const autoTransportCompanies = await getAllAutoTransportCompanies();
+  // Never fail the whole sitemap (or CI prerender) on a bad local Supabase URL.
+  let companies: Awaited<ReturnType<typeof getAllCompanies>> = [];
+  let autoTransportCompanies: Awaited<ReturnType<typeof getAllAutoTransportCompanies>> = [];
+  try {
+    companies = await getAllCompanies();
+  } catch {
+    companies = [];
+  }
+  try {
+    autoTransportCompanies = await getAllAutoTransportCompanies();
+  } catch {
+    autoTransportCompanies = [];
+  }
 
   const clusterRoutes = getClusterParentMarkets().map(
     (market) => `/moving-to/${market.slug}`

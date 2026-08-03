@@ -7,8 +7,24 @@ function readEnv(value: string | undefined): string | undefined {
   return trimmed ? trimmed : undefined;
 }
 
+/**
+ * Reject placeholder / non-URL values so createClient never throws during
+ * SSG (e.g. sitemap prerender with a malformed local .env).
+ */
+export function isValidSupabaseHttpUrl(url: string | undefined): boolean {
+  if (!url) return false;
+  if (/placeholder|your-project|example\.supabase/i.test(url)) return false;
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'https:' || parsed.protocol === 'http:';
+  } catch {
+    return false;
+  }
+}
+
 export function getSupabaseUrl(): string | undefined {
-  return readEnv(process.env.NEXT_PUBLIC_SUPABASE_URL);
+  const url = readEnv(process.env.NEXT_PUBLIC_SUPABASE_URL);
+  return isValidSupabaseHttpUrl(url) ? url : undefined;
 }
 
 export function getSupabaseAnonKey(): string | undefined {

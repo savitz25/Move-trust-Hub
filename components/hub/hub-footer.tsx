@@ -6,9 +6,14 @@ import { SITE_EMAIL as INSURANCE_SITE_EMAIL } from '@/lib/insurance/constants';
 import { AfterYourMoveModule } from '@/components/hub/after-your-move-module';
 import { AskNetworkSeal } from '@/components/network/ask-network-seal';
 import { getHubConfig } from '@/lib/hub/config';
-import { hubPath } from '@/lib/hub/paths';
+import { hubPath, isExternalHubHref } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
-import { networkHubById, type NetworkHubId } from '@/lib/network/ask-trust-hub';
+import {
+  ASK_TRUST_HUB,
+  NETWORK_HUBS,
+  networkHubById,
+  type NetworkHubId,
+} from '@/lib/network/ask-trust-hub';
 
 export function HubFooter({ hubId }: { hubId?: HubId }) {
   const hub = getHubConfig(hubId ?? 'move');
@@ -17,6 +22,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
   const networkId = (hub.id === 'move' || hub.id === 'insurance' || hub.id === 'lender'
     ? hub.id
     : 'move') as NetworkHubId;
+  // Move contact is always hello@movetrusthub.com (product requirement).
   const contactEmail =
     hub.id === 'insurance'
       ? INSURANCE_SITE_EMAIL
@@ -29,7 +35,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
       <div className="container mx-auto px-4 py-10">
         <AfterYourMoveModule hubId={hub.id} />
 
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-y-9">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-9 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-7">
           <div className="col-span-2 md:col-span-1">
             <Link prefetch={false} href={homeHref} className="flex items-center gap-2 font-semibold text-base tracking-tight">
               <span className="relative block h-12 w-[192px] shrink-0 bg-transparent">
@@ -49,14 +55,15 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
               <div className="space-y-1.5 text-sm text-muted-foreground">
                 {col.links.map((link) => (
                   <div key={link.href}>
-                    {link.external ? (
+                    {link.external || isExternalHubHref(link.href) ? (
                       <a
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-foreground transition-colors"
                       >
-                        {link.label} ↗
+                        {link.label}
+                        {link.external ? ' ↗' : ''}
                       </a>
                     ) : (
                       <Link
@@ -72,6 +79,54 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
               </div>
             </div>
           ))}
+
+          {/* NETWORK: Ask seal primary; Lender/Insurance as siblings — not instead of Ask */}
+          <div>
+            <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">
+              NETWORK
+            </div>
+            <div className="space-y-1.5 text-sm text-muted-foreground">
+              <div>
+                <a
+                  href={ASK_TRUST_HUB.url}
+                  className="font-medium text-foreground hover:text-foreground/80 transition-colors"
+                  rel="noopener noreferrer"
+                >
+                  Ask Trust Hub
+                </a>
+                <span className="ml-1 text-[11px] opacity-70">(parent)</span>
+              </div>
+              <div>
+                <a
+                  href={ASK_TRUST_HUB.promiseUrl}
+                  className="hover:text-foreground transition-colors"
+                  rel="noopener noreferrer"
+                >
+                  Independence policy
+                </a>
+              </div>
+              <div>
+                <a
+                  href={ASK_TRUST_HUB.methodologyUrl}
+                  className="hover:text-foreground transition-colors"
+                  rel="noopener noreferrer"
+                >
+                  Network methodology
+                </a>
+              </div>
+              {NETWORK_HUBS.filter((h) => h.id !== networkId).map((h) => (
+                <div key={h.id}>
+                  <a
+                    href={h.url}
+                    className="hover:text-foreground transition-colors"
+                    rel="noopener noreferrer"
+                  >
+                    {h.proseName}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
 
           <div>
             <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">
@@ -126,7 +181,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
 
           <div className="col-span-2 md:col-span-1 text-sm text-muted-foreground">
             <div className="font-semibold text-foreground mb-2 text-xs tracking-widest text-muted-foreground/80">
-              TRUST &amp; TRANSPARENCY
+              CONTACT
             </div>
             <p className="leading-snug text-[13px]">
               Independent directory — <strong>not affiliated</strong> with listed providers. No
