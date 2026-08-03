@@ -20,6 +20,7 @@ const LENDER_ROUTE_ROOTS = [
   '/calculators',
   '/lenders',
   '/about',
+  '/methodology',
   '/contact',
   '/compare',
   '/credit-repair',
