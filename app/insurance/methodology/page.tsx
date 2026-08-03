@@ -7,6 +7,7 @@ import {
   Scale,
   Shield,
   AlertTriangle,
+  Calculator,
 } from 'lucide-react';
 import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { DISCLAIMER, SITE_NAME } from '@/lib/insurance/constants';
@@ -14,11 +15,12 @@ import { Card, CardContent } from '@/components/insurance/ui/card';
 import { MethodologyBackNav } from '@/components/trust/methodology-back-nav';
 import { AskStandardBanner } from '@/components/network/ask-standard-banner';
 import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
+import { NETWORK_VOCAB } from '@/lib/network/vocabulary';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Methodology — How Insurance Trust Hub Verifies Agencies',
   description:
-    'Insurance Trust Hub methodology under The Ask Trust Hub Standard: state DOI / NAIC pathways, verification checks, educational tools, update cadence, and limitations. Rankings not for sale.',
+    'Insurance Trust Hub methodology under The Ask Trust Hub Standard: state DOI / NAIC pathways, what verified means, tools vs directory, update cadence, and limitations. Research only — not quotes or enrollment.',
   path: '/methodology',
 });
 
@@ -26,22 +28,22 @@ const PIPELINE = [
   {
     verb: 'SOURCE',
     title: 'Authoritative insurance sources',
-    body: 'We prioritize state Department of Insurance (DOI) public license records, NAIC producer pathways, and other attributable public references. Educational premium ranges are labeled as estimates — never as binding quotes or regulatory status.',
+    body: 'We prioritize state Department of Insurance (DOI) public license records and NAIC producer pathways where used. Public complaint or regulatory-action references appear only when we actually source them. Educational premium ranges are labeled as estimates — never as binding quotes or regulatory status.',
   },
   {
     verb: 'VERIFY',
-    title: 'What “verified” means here',
-    body: 'Where available, we match agent/agency names and license numbers to public DOI records and surface Active status and lines of authority when disclosed. NAIC / NPN identifiers can anchor multi-state identity. Matching can fail or lag; we do not invent Active status.',
+    title: 'What “verified” means for agents & agencies',
+    body: 'Where available, we match agent/agency names and license numbers to public DOI records and surface Active status and lines of authority when disclosed. NAIC / NPN identifiers can anchor multi-state identity. Matching can fail or lag; we do not invent Active status, carrier appointments, or authority we did not check.',
   },
   {
     verb: 'DISCLOSE',
     title: 'Limits and independence',
-    body: 'We are not an insurance agency or carrier. We do not sell policies or paid placements. Calculators are educational. Always re-check licenses on the official state DOI site before purchasing coverage.',
+    body: 'We are not an insurance agency or carrier. We do not sell policies, issue free quotes as a brokerage, or accept paid placements. Calculators and guides are educational. Always re-check licenses on the official state DOI site before purchasing coverage.',
   },
   {
     verb: 'SCORE',
-    title: 'No pay-to-rank composites',
-    body: 'Directory ordering is not sold. Where we surface research signals (ratings, complaints, or editorial indexes), they are research aids — not underwriting decisions or carrier recommendations.',
+    title: 'No decorative universal rankings',
+    body: 'Directory ordering is not sold. We do not assign decorative “99 trust” scores without published inputs. Where we surface research signals (ratings, complaint indexes, or editorial tools), they are research aids — not underwriting decisions or carrier recommendations.',
   },
   {
     verb: 'UPDATE',
@@ -50,8 +52,8 @@ const PIPELINE = [
   },
   {
     verb: 'YOU DECIDE',
-    title: 'Confirm with regulators and agents',
-    body: 'Use this hub to research. Confirm producer licenses, appointment status, and policy terms with the state DOI and the licensed professional before you bind coverage.',
+    title: 'Confirm with regulators and licensed professionals',
+    body: 'Use this hub to research. Confirm producer licenses, appointment status, and policy terms with the state DOI / NAIC pathways and the licensed professional before you bind coverage.',
   },
 ] as const;
 
@@ -64,12 +66,17 @@ const DATA_SOURCES = [
   {
     name: 'NAIC / NPN pathways',
     detail:
-      'Coordinating references for multi-state producer identity — always secondary to the state’s own record.',
+      'Coordinating references for multi-state producer identity where used — always secondary to the state’s own record.',
+  },
+  {
+    name: 'Public complaint / regulatory actions',
+    detail:
+      'Only when we actually incorporate an attributable public source for a tool or page (e.g. CMS complaint index for Medicare plan research). Not invented disciplinary flags.',
   },
   {
     name: 'Agency-submitted profile updates',
     detail:
-      'Voluntary profile information that we still treat as claim until cross-checked against public sources when possible.',
+      'Voluntary profile information treated as a claim until cross-checked against public sources when possible.',
   },
   {
     name: 'Moderated consumer reviews',
@@ -79,16 +86,17 @@ const DATA_SOURCES = [
   {
     name: 'Educational reference ranges',
     detail:
-      'Premium and subsidy tools use public program rules and labeled assumptions. Outputs are not quotes or eligibility determinations.',
+      'Premium, subsidy, and needs tools use public program rules and labeled assumptions. Outputs are not quotes, eligibility determinations, or enrollment.',
   },
 ] as const;
 
 const LIMITATIONS = [
   'State portals differ in completeness, update frequency, and public field availability.',
   'A listing is not a recommendation, endorsement, or guarantee of claims service.',
+  'We do not underwrite, sell policies, bind coverage, or place carrier appointments for you.',
   'Medicare, ACA, and other tools are educational — program rules change and personal eligibility varies.',
-  'We do not underwrite, sell policies, or place coverage.',
   'Modeled cost estimates must never be treated as carrier-bound rates.',
+  'We do not offer “free insurance quotes” as a lead marketplace; research and verification only.',
 ] as const;
 
 export default function InsuranceMethodologyPage() {
@@ -103,15 +111,37 @@ export default function InsuranceMethodologyPage() {
       </p>
       <h1 className="section-heading mt-3">Insurance Trust Hub methodology</h1>
       <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-        How {SITE_NAME} applies The Ask Trust Hub Standard to state-licensed insurance research —
-        sources, verification, disclosure, scores (when used), updates, and your decision.
+        How {SITE_NAME} applies The {NETWORK_VOCAB.standardName} to state-licensed insurance research —
+        sources, verification, tools vs directory, cadence, and limits.{' '}
+        {NETWORK_VOCAB.independentlyOperated}. {NETWORK_VOCAB.noPaidPlacements}.
       </p>
+
+      <nav
+        aria-label="Methodology sections"
+        className="mt-5 flex flex-wrap gap-2 text-xs font-medium"
+      >
+        {[
+          { href: '#pipeline', label: 'Pipeline' },
+          { href: '#verified', label: 'What verified means' },
+          { href: '#tools', label: 'Tools vs directory' },
+          { href: '#sources', label: 'Sources' },
+          { href: '#limitations', label: 'Limitations' },
+        ].map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="rounded-full border bg-background px-3 py-1.5 hover:border-primary/40 hover:text-primary"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
 
       <div className="mt-8">
         <AskStandardBanner verticalLabel="Insurance Trust Hub methodology" />
       </div>
 
-      <section className="mt-12">
+      <section id="pipeline" className="mt-12 scroll-mt-24">
         <h2 className="flex items-center gap-2 text-2xl font-semibold">
           <Scale className="h-5 w-5 text-primary" aria-hidden />
           Pipeline on this hub
@@ -138,10 +168,10 @@ export default function InsuranceMethodologyPage() {
         </ol>
       </section>
 
-      <section className="mt-12">
+      <section id="verified" className="mt-12 scroll-mt-24">
         <h2 className="flex items-center gap-2 text-2xl font-semibold">
           <BadgeCheck className="h-5 w-5 text-trust" aria-hidden />
-          Verification checks (insurance-specific)
+          What “verified” means here
         </h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground leading-relaxed">
           <li>State DOI license number and Active / inactive status when the portal exposes it</li>
@@ -150,9 +180,40 @@ export default function InsuranceMethodologyPage() {
           <li>NPN / NAIC references as secondary identity anchors</li>
           <li>Business contact and location fields from public or agency-provided data</li>
         </ul>
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+          “Verified” does <strong className="text-foreground">not</strong> mean we sell the policy,
+          confirm carrier appointments in real time for every listing, or guarantee claims outcomes.
+        </p>
       </section>
 
-      <section className="mt-12">
+      <section id="tools" className="mt-12 scroll-mt-24">
+        <h2 className="flex items-center gap-2 text-2xl font-semibold">
+          <Calculator className="h-5 w-5 text-primary" aria-hidden />
+          Tools vs directory
+        </h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <Card>
+            <CardContent className="pt-5 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="font-semibold text-foreground">Directory</h3>
+              <p className="mt-2">
+                Research licensed agents and agencies. Ordering is not sold. Identity and license
+                context come from public sources where available.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-5 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="font-semibold text-foreground">Calculators &amp; guides</h3>
+              <p className="mt-2">
+                Educational estimates and explainers (ACA, Medicare, cost tools, etc.). Not plan
+                enrollment, not binding quotes, and not underwriting decisions.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section id="sources" className="mt-12 scroll-mt-24">
         <h2 className="flex items-center gap-2 text-2xl font-semibold">
           <Database className="h-5 w-5 text-primary" aria-hidden />
           Data sources
@@ -180,7 +241,7 @@ export default function InsuranceMethodologyPage() {
         </p>
       </section>
 
-      <section className="mt-12">
+      <section id="limitations" className="mt-12 scroll-mt-24">
         <h2 className="flex items-center gap-2 text-2xl font-semibold">
           <AlertTriangle className="h-5 w-5 text-amber-600" aria-hidden />
           Limitations
@@ -195,22 +256,40 @@ export default function InsuranceMethodologyPage() {
       <section id="disclaimer" className="mt-12 rounded-xl border bg-muted/30 p-6">
         <h2 className="flex items-center gap-2 text-lg font-semibold">
           <Shield className="h-5 w-5" aria-hidden />
-          Disclaimer
+          Your action · {NETWORK_VOCAB.verifyPrimaryRegulator}
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{DISCLAIMER}</p>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          Confirm licenses with the state Department of Insurance and NAIC pathways before you buy
+          coverage. This site does not enroll you in plans or issue carrier quotes.
+        </p>
       </section>
 
       <div className="mt-10 flex flex-wrap gap-3 text-sm">
-        <Link href="/about" className="font-semibold text-primary underline-offset-2 hover:underline">
-          About & independence
-        </Link>
         <a
           href={ASK_TRUST_HUB.methodologyUrl}
           className="font-semibold text-primary underline-offset-2 hover:underline"
           rel="noopener noreferrer"
         >
-          Ask Trust Hub Standard
+          {NETWORK_VOCAB.standardName}
         </a>
+        <a
+          href={ASK_TRUST_HUB.promiseUrl}
+          className="font-medium text-muted-foreground underline-offset-2 hover:underline"
+          rel="noopener noreferrer"
+        >
+          Independence
+        </a>
+        <a
+          href={ASK_TRUST_HUB.revenueUrl}
+          className="font-medium text-muted-foreground underline-offset-2 hover:underline"
+          rel="noopener noreferrer"
+        >
+          How we make money
+        </a>
+        <Link href="/about" className="font-medium text-muted-foreground underline-offset-2 hover:underline">
+          About
+        </Link>
         <Link href="/directory" className="font-medium text-muted-foreground underline-offset-2 hover:underline">
           Agency directory
         </Link>

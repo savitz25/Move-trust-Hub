@@ -27,7 +27,7 @@ export const REPUTATION_SCORE_FACTORS = [
     label: 'BBB accreditation',
     weight: '15%',
     detail:
-      'Accreditation status and letter grade where publicly available.',
+      'Accreditation status and letter grade only when a confirmed public BBB listing exists. We do not invent BBB grades or show accreditation for companies that are not listed.',
   },
   {
     id: 'trend',

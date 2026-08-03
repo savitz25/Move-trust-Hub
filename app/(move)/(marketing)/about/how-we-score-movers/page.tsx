@@ -95,9 +95,12 @@ export default async function HowWeScoreMoversPage() {
           >
             {[
               { href: '#how-we-vet', label: 'How we vet' },
+              { href: '#entity-matching', label: 'Entity matching' },
+              { href: '#interstate-intrastate', label: 'Interstate vs local' },
               { href: '#reputation-score', label: 'Reputation Score' },
               { href: '#review-attribution', label: 'Review policy' },
               { href: '#data-sources', label: 'Data sources' },
+              { href: '#updates', label: 'Updates' },
               { href: '#independence', label: 'Independence' },
               { href: '#limitations', label: 'Limitations' },
               { href: '#corrections', label: 'Corrections' },
@@ -164,15 +167,69 @@ export default async function HowWeScoreMoversPage() {
             This is a curated research directory — not a raw scrape of every company name on the
             internet. You should still re-verify USDOT authority on{' '}
             <a
-              href="https://www.fmcsa.dot.gov/"
+              href="https://safer.fmcsa.dot.gov/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary font-medium hover:underline"
             >
-              FMCSA.gov
+              FMCSA SAFER
             </a>{' '}
-            before booking.
+            (and state authorities for intrastate work) before booking. FMCSA does{' '}
+            <strong className="text-foreground">not</strong> recommend or endorse movers.
           </p>
+        </section>
+
+        {/* Entity matching */}
+        <section id="entity-matching" className="scroll-mt-24">
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">Entity matching</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Public records often list a legal name while consumers search a DBA. At a high level we
+            match listings using:
+          </p>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 leading-relaxed">
+            <li>
+              <strong className="text-foreground">USDOT / MC numbers</strong> as primary identity
+              keys when present and format-valid
+            </li>
+            <li>
+              <strong className="text-foreground">Legal name and DBA</strong> strings against SAFER
+              and related public fields (fuzzy match; rebrands can lag)
+            </li>
+            <li>
+              <strong className="text-foreground">Address / phone cascade</strong> as supporting
+              signals when primary IDs conflict or are incomplete — never as a substitute for active
+              authority
+            </li>
+          </ul>
+          <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+            When we cannot confidently match a record, we do not invent “verified” status. Internal
+            pipeline details stay operational; this page documents the consumer-facing standard only.
+          </p>
+        </section>
+
+        {/* Interstate vs intrastate */}
+        <section id="interstate-intrastate" className="scroll-mt-24">
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">
+            Interstate vs intrastate / local evidence
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border bg-card p-5 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="font-semibold text-foreground mb-2">Interstate household goods</h3>
+              <p>
+                Primary evidence is FMCSA USDOT identity, operating authority, out-of-service and
+                safety context from SAFER / related public FMCSA systems. Authority status is the
+                floor for “FMCSA Verified” style presentation.
+              </p>
+            </div>
+            <div className="rounded-xl border bg-card p-5 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="font-semibold text-foreground mb-2">Intrastate / local movers</h3>
+              <p>
+                Many states regulate local movers separately. County and local paths may rely more on
+                state licensing context where available, plus attributed Google/BBB signals when a
+                confirmed listing exists. Local presence is not the same as interstate authority.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Reputation Score */}
@@ -206,9 +263,19 @@ export default async function HowWeScoreMoversPage() {
 
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
             Scores at or above <strong className="text-foreground">{REPUTATION_SCORE_THRESHOLD}</strong>{' '}
-            generally indicate safer interstate choices. We recalculate when FMCSA data refreshes or
-            new attributable reviews are published. Scores are editorial composites — not star averages.
+            generally indicate safer interstate choices for research prioritization. We recalculate
+            when FMCSA data refreshes or new attributable reviews are published. Scores are editorial
+            composites — not star averages and not an FMCSA endorsement.
           </p>
+          <div className="mt-4 rounded-xl border border-amber-200/80 bg-amber-50/40 p-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="font-semibold text-foreground">Not included in the score</p>
+            <ul className="mt-2 list-disc pl-5 space-y-1">
+              <li>Paid advertising, sponsorship, or lead-fee relationships (none buy rank)</li>
+              <li>Unattributed or fabricated reviews</li>
+              <li>BBB or Google factors when no confirmed public profile is on file</li>
+              <li>Private contract terms, final price, or “best mover” guarantees</li>
+            </ul>
+          </div>
         </section>
 
         {/* Review Attribution */}
@@ -294,20 +361,53 @@ export default async function HowWeScoreMoversPage() {
           </ul>
         </section>
 
+        <section id="updates" className="scroll-mt-24">
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">Update / refresh</h2>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 leading-relaxed">
+            <li>
+              <strong className="text-foreground">FMCSA-derived fields</strong> (authority, safety
+              context, related SAFER signals) refresh through scheduled data pipelines where built
+            </li>
+            <li>
+              <strong className="text-foreground">Directory / county pages</strong> revalidate after
+              publish and enrichment events
+            </li>
+            <li>
+              <strong className="text-foreground">Editorial copy</strong> (cost ranges, guides) is
+              reviewed on a content cadence — not every sentence is live-fed from FMCSA
+            </li>
+            <li>
+              <strong className="text-foreground">Google / BBB snapshots</strong> only appear when a
+              confirmed listing is present; they can lag or mismatch
+            </li>
+          </ul>
+        </section>
+
         <section id="corrections" className="scroll-mt-24 rounded-2xl border bg-muted/20 p-6">
-          <h2 className="text-2xl font-semibold tracking-tight mb-3">Corrections & updates</h2>
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">Corrections &amp; your action</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Found outdated licensing, a wrong DBA, or a listing that should be removed?{' '}
             <Link href="/contact" className="text-primary font-medium underline underline-offset-2">
               Contact editorial
             </Link>{' '}
-            or use company claim/portal flows when available. We refresh FMCSA fields on a scheduled
-            cadence and revalidate county/directory pages after publish events. Named researchers are
-            listed on the{' '}
+            or use company claim/portal flows when available. Named researchers are listed on the{' '}
             <Link href="/about/editorial-team" className="text-primary font-medium underline underline-offset-2">
               editorial team page
             </Link>
             .
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+            <strong className="text-foreground">Before you book:</strong> re-verify the USDOT on{' '}
+            <a
+              href="https://safer.fmcsa.dot.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-medium underline underline-offset-2"
+            >
+              FMCSA SAFER
+            </a>
+            , confirm any state intrastate license with the state agency, and get multiple written
+            estimates. Move Trust Hub is a research tool — not a booking agent.
           </p>
         </section>
 

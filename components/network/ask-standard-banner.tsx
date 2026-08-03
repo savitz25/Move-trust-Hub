@@ -1,4 +1,5 @@
 import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
+import { NETWORK_VOCAB } from '@/lib/network/vocabulary';
 import { cn } from '@/lib/utils';
 
 type AskStandardBannerProps = {
@@ -20,17 +21,18 @@ export function AskStandardBanner({
         'rounded-xl border border-border/70 bg-muted/25 px-4 py-4 text-sm sm:px-5',
         className
       )}
-      aria-label="Ask Trust Hub Standard"
+      aria-label={NETWORK_VOCAB.standardName}
     >
       <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
         Parent standard
       </p>
       <p className="mt-1.5 leading-relaxed text-muted-foreground">
         {verticalLabel} inherits{' '}
-        <strong className="font-semibold text-foreground">The Ask Trust Hub Standard</strong>
+        <strong className="font-semibold text-foreground">The {NETWORK_VOCAB.standardName}</strong>
         {' — '}
         SOURCE → VERIFY → DISCLOSE → SCORE → UPDATE → YOU DECIDE. Framework is shared; data and
-        checks below are industry-specific.
+        checks below are industry-specific. {NETWORK_VOCAB.independentlyOperated}.{' '}
+        {NETWORK_VOCAB.noPaidPlacements}.
       </p>
       <p className="mt-2">
         <a
@@ -38,7 +40,7 @@ export function AskStandardBanner({
           className="font-semibold text-primary underline-offset-2 hover:underline"
           rel="noopener noreferrer"
         >
-          Read the Ask Trust Hub Standard
+          Read the {NETWORK_VOCAB.standardName}
         </a>
         {' · '}
         <a
@@ -56,6 +58,9 @@ export function AskStandardBanner({
         >
           How we make money
         </a>
+      </p>
+      <p className="mt-2 text-xs text-muted-foreground">
+        {NETWORK_VOCAB.verifyPrimaryRegulator} before you hire, borrow, or buy coverage.
       </p>
     </aside>
   );
