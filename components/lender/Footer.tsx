@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BrandLogoStacked } from '@/components/lender/BrandLogo';
+import { AskNetworkSeal } from '@/components/network/ask-network-seal';
 
 export default function Footer() {
   return (
@@ -48,15 +49,15 @@ export default function Footer() {
           Lender Trust Hub is not a lender or broker. Zero paid placements — ever. Close-time figures on profiles
           are model estimates, not regulatory metrics.
         </p>
-        <div className="mt-6 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
-          © {new Date().getFullYear()} LenderTrustHub.com — Part of the{' '}
-          <a
-            href="https://www.asktrusthub.com/promise"
-            className="underline underline-offset-2 hover:text-white"
-            rel="noopener noreferrer"
-          >
-            Ask Trust Hub network
-          </a>
+        <div className="mt-6 border-t border-white/10 pt-6 space-y-4">
+          <AskNetworkSeal currentHub="lender" showSiblings inverted />
+          <p className="text-center text-xs text-zinc-500">
+            Support:{' '}
+            <a href="mailto:hello@lendertrusthub.com" className="underline underline-offset-2 hover:text-white">
+              hello@lendertrusthub.com
+            </a>
+            {' · '}© {new Date().getFullYear()} Lender Trust Hub
+          </p>
         </div>
       </div>
     </footer>

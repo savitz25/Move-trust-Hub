@@ -48,7 +48,7 @@ export function insuranceHubLogoUrl(baseUrl = 'https://www.insurancetrusthub.com
   return `${baseUrl}/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`;
 }
 
-export function lenderHubLogoUrl(baseUrl = 'https://www.movetrusthub.com'): string {
+export function lenderHubLogoUrl(baseUrl = 'https://www.lendertrusthub.com'): string {
   return `${baseUrl}/lender/brand/lender-trust-hub-logo.png?v=${LENDER_LOGO_VERSION}`;
 }
 

@@ -112,27 +112,27 @@ export function InsuranceHomePage() {
         }
         title={
           <h1 className="text-3xl font-semibold leading-[1.1] tracking-tighter sm:text-4xl md:text-5xl lg:text-[3.25rem]">
-            Research Licensed Insurance Agents
+            Cut through coverage confusion
             <br />
-            <span className="text-emerald-600">You Can Verify Yourself</span>
+            <span className="text-emerald-600">with agents you can re-check on DOI records</span>
           </h1>
         }
-        description="InsuranceTrustHub is an independent agent directory — no paid placements, no pay-to-rank. Compare DOI-verified agents, run free tools, and read clear guides for health, Medicare, auto, and home coverage."
+        description="Insurance Trust Hub is an independent research directory of state-licensed agencies and agents. No paid placements. We do not sell policies — confirm Active status and lines of authority before you enroll."
       >
         <div className="flex justify-center lg:justify-start">
           <HubZipSearch hub="insurance" />
         </div>
         <p className="text-sm text-muted-foreground">
-          DOI &amp; NAIC license checks · Free calculators · Guides written for consumers
+          State DOI &amp; NAIC pathways · Educational calculators · Consumer-written guides
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
           <Button size="lg" asChild className="w-full gap-2 sm:w-auto">
             <Link href={hubPath('insurance', '/directory')}>
-              Browse Directory <Search className="h-5 w-5" aria-hidden="true" />
+              Browse agent directory <Search className="h-5 w-5" aria-hidden="true" />
             </Link>
           </Button>
           <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
-            <Link href={hubPath('insurance', '/about')}>How We Verify Agents</Link>
+            <Link href={hubPath('insurance', '/about')}>How we verify agents</Link>
           </Button>
         </div>
       </HubHeroBanner>
@@ -147,22 +147,22 @@ export function InsuranceHomePage() {
       />
 
       <HubHowItWorks
-        heading="How It Works"
+        heading="How Insurance Trust Hub works"
         steps={[
           {
             step: '01',
-            title: 'Search Your Market',
-            desc: 'Enter your ZIP to surface DOI-verified agents and health insurance specialists in your county or MSA.',
+            title: 'Map your coverage market',
+            desc: 'Use ZIP or market hubs to find agencies and producers tied to your state, with health, Medicare, auto, and home specialties where listed.',
           },
           {
             step: '02',
-            title: 'Verify & Compare',
-            desc: 'Confirm licensing, review specialties, and use free tools before you share personal information.',
+            title: 'Re-check DOI / NAIC status',
+            desc: 'Treat every listing as research: confirm Active license status and lines of authority on state DOI or NAIC tools before you share application data.',
           },
           {
             step: '03',
-            title: 'Decide with Confidence',
-            desc: 'Use calculators for premiums and subsidies, then contact agents who match your coverage needs.',
+            title: 'Model costs, then contact on your terms',
+            desc: 'Run educational subsidy and premium tools first, then reach out to agents you select. We are not a carrier and do not sell insurance.',
           },
         ]}
       />

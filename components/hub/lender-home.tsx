@@ -27,25 +27,25 @@ export function LenderHomePage() {
           }
           title={
             <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
-              Discover Honest Lenders
+              Mortgage research for
               <br />
-              <span className="text-[#3B82F6]">in Your County</span>
+              <span className="text-[#3B82F6]">high-stakes financing decisions</span>
             </h1>
           }
-          description="Transparent data, confident choices. Compare verified local mortgage lenders and brokers backed by NMLS licensing, CFPB complaints, BBB ratings, and real reviews."
+          description="Lender Trust Hub helps you research NMLS-licensed mortgage lenders with public complaint and reputation signals — not a loan marketplace. Verify licensing yourself before you apply."
         >
           <LenderHeroSearch className="mx-auto max-w-xl lg:mx-0" />
           <p className="text-sm text-muted-foreground">
-            Trusted Local Lenders • Verified County Insights • National Expertise
+            NMLS Consumer Access · CFPB complaint data · County-level research · No paid placements
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
             <Button size="lg" asChild className="w-full gap-2 sm:w-auto">
               <Link href={hubPath('lender', '/calculators')}>
-                Try Free Calculators <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                Mortgage calculators <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
-              <Link href={hubPath('lender', '/about')}>How We Verify Lenders</Link>
+              <Link href={hubPath('lender', '/about')}>How we verify lenders</Link>
             </Button>
           </div>
         </HubHeroBanner>
@@ -95,23 +95,23 @@ export function LenderHomePage() {
         />
 
         <HubHowItWorks
-          subheading="Your Path to the Right Lender"
-          heading="How It Works"
+          subheading="Mortgage research workflow"
+          heading="How Lender Trust Hub works"
           steps={[
             {
               step: '01',
-              title: 'Search Your County',
-              desc: 'Enter your ZIP code to auto-detect your county and see ranked local lenders with county-specific experience scores.',
+              title: 'Locate licensed lenders',
+              desc: 'Start with your ZIP or county to find NMLS Consumer Access–listed mortgage lenders and brokers active in that market.',
             },
             {
               step: '02',
-              title: 'Compare & Verify',
-              desc: 'Review NMLS licensing, CFPB complaints, BBB ratings, Google/Trustpilot reviews, and local loan performance metrics.',
+              title: 'Cross-check public risk signals',
+              desc: 'Review CFPB complaint patterns, BBB standing where available, and attributed reputation data before you share a full application.',
             },
             {
               step: '03',
-              title: 'Connect with Confidence',
-              desc: 'Use our calculators to understand your numbers, then match with lenders that fit your loan type and credit profile.',
+              title: 'Model payments, then contact carefully',
+              desc: 'Use mortgage calculators for educational payment ranges, then contact lenders you choose — we do not broker loans or sell leads.',
             },
           ]}
         />

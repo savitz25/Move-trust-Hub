@@ -4,16 +4,25 @@ import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
 import { SITE_EMAIL as MOVE_SITE_EMAIL } from '@/lib/contact';
 import { SITE_EMAIL as INSURANCE_SITE_EMAIL } from '@/lib/insurance/constants';
 import { AfterYourMoveModule } from '@/components/hub/after-your-move-module';
-import { ConsumerTrustNetworkLinks } from '@/components/hub/consumer-trust-network-links';
+import { AskNetworkSeal } from '@/components/network/ask-network-seal';
 import { getHubConfig } from '@/lib/hub/config';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
+import { networkHubById, type NetworkHubId } from '@/lib/network/ask-trust-hub';
 
 export function HubFooter({ hubId }: { hubId?: HubId }) {
   const hub = getHubConfig(hubId ?? 'move');
   const year = new Date().getFullYear();
   const homeHref = hubPath(hub.id, '/');
-  const contactEmail = hub.id === 'insurance' ? INSURANCE_SITE_EMAIL : MOVE_SITE_EMAIL;
+  const networkId = (hub.id === 'move' || hub.id === 'insurance' || hub.id === 'lender'
+    ? hub.id
+    : 'move') as NetworkHubId;
+  const contactEmail =
+    hub.id === 'insurance'
+      ? INSURANCE_SITE_EMAIL
+      : hub.id === 'lender'
+        ? networkHubById('lender').email
+        : MOVE_SITE_EMAIL;
 
   return (
     <footer className="border-t bg-muted/20">
@@ -124,11 +133,8 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
           </div>
         </div>
       </div>
-      <div className="border-t py-5 space-y-3">
-        {/* Quiet network note — never primary nav or equal footer columns. */}
-        {hub.id === 'move' || hub.id === 'insurance' ? (
-          <ConsumerTrustNetworkLinks hubId={hub.id} />
-        ) : null}
+      <div className="border-t py-6 space-y-4">
+        <AskNetworkSeal currentHub={networkId} showSiblings />
         <p className="text-center text-[10px] text-muted-foreground/70 tracking-wide">
           Always verify licensing directly with{' '}
           <a

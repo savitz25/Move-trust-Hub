@@ -1,6 +1,11 @@
 import { SITE_EMAIL } from '@/lib/contact';
-import { getHubConfig, insuranceHubLogoUrl, trustHubLogoUrl } from '@/lib/hub/config';
-import { INSURANCE_SITE_URL, MOVE_SITE_URL } from '@/lib/hub/domains';
+import {
+  getHubConfig,
+  insuranceHubLogoUrl,
+  lenderHubLogoUrl,
+  trustHubLogoUrl,
+} from '@/lib/hub/config';
+import { INSURANCE_SITE_URL, LENDER_SITE_URL, MOVE_SITE_URL } from '@/lib/hub/domains';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import { SITE_URL } from '@/lib/seo/site-metadata';
@@ -31,6 +36,18 @@ const MOVE_ORG = {
   email: SITE_EMAIL,
   description:
     'Independent directory for researching FMCSA-licensed interstate and local moving companies in the United States. No lead fees, no paid placements.',
+  parentOrganization: {
+    '@type': 'Organization' as const,
+    name: 'Ask Trust Hub',
+    url: 'https://www.asktrusthub.com',
+  },
+  sameAs: ['https://www.asktrusthub.com'],
+};
+
+const HUB_CONTACT_EMAIL: Record<HubId, string> = {
+  move: SITE_EMAIL,
+  insurance: 'hello@insurancetrusthub.com',
+  lender: 'hello@lendertrusthub.com',
 };
 
 export function buildHubOrganizationSchema(hub: HubId) {
@@ -39,22 +56,33 @@ export function buildHubOrganizationSchema(hub: HubId) {
   const logo =
     hub === 'insurance'
       ? insuranceHubLogoUrl(INSURANCE_SITE_URL)
-      : trustHubLogoUrl(SITE_URL);
+      : hub === 'lender'
+        ? lenderHubLogoUrl(LENDER_SITE_URL)
+        : trustHubLogoUrl(SITE_URL);
+
+  const proseName =
+    hub === 'move'
+      ? 'Move Trust Hub'
+      : hub === 'insurance'
+        ? 'Insurance Trust Hub'
+        : 'Lender Trust Hub';
 
   return {
     '@type': 'Organization',
     '@id': `${hubUrl}#organization`,
-    name: config.siteName,
+    name: proseName,
     url: hubUrl,
     logo,
-    // InsuranceTrustHub is standalone. Move org has no parent. Lender may cite network.
-    ...(hub === 'lender'
-      ? { parentOrganization: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] } }
-      : {}),
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Ask Trust Hub',
+      url: 'https://www.asktrusthub.com',
+    },
+    sameAs: ['https://www.asktrusthub.com'],
     description: config.tagline,
     contactPoint: {
       '@type': 'ContactPoint',
-      email: hub === 'insurance' ? 'hello@insurancetrusthub.com' : SITE_EMAIL,
+      email: HUB_CONTACT_EMAIL[hub],
       contactType: 'customer service',
       areaServed: 'US',
       availableLanguage: 'English',
@@ -62,13 +90,13 @@ export function buildHubOrganizationSchema(hub: HubId) {
   };
 }
 
-/** Root schema for insurancetrusthub.com only — never include Move network nodes. */
+/** Root schema for insurancetrusthub.com — hub org + parent Ask Trust Hub. */
 export function buildInsuranceStandaloneRootSchema() {
   const org = buildHubOrganizationSchema('insurance');
   const website = buildHubWebsiteSchema('insurance');
   return {
     '@context': 'https://schema.org',
-    '@graph': [org, website],
+    '@graph': [CONSUMER_TRUST_HUB_ORG, org, website],
   };
 }
 
@@ -93,12 +121,7 @@ export function buildHubWebsiteSchema(
     name: config.siteName,
     url: hubUrl,
     publisher: { '@id': `${hubUrl}#organization` },
-    // Lender may reference network parent; insurance stays fully independent
-    ...(hub === 'lender'
-      ? {
-          isPartOf: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
-        }
-      : {}),
+    isPartOf: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
     inLanguage: 'en-US',
     ...(options?.searchTarget
       ? { potentialAction: buildWebsiteSearchAction(options.searchTarget) }
@@ -115,6 +138,7 @@ export function buildTrustHubNetworkSchema() {
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      CONSUMER_TRUST_HUB_ORG,
       MOVE_ORG,
       {
         '@type': 'WebSite',
@@ -122,6 +146,7 @@ export function buildTrustHubNetworkSchema() {
         name: 'Move Trust Hub',
         url: SITE_URL,
         publisher: { '@id': MOVE_ORG['@id'] },
+        isPartOf: { '@id': CONSUMER_TRUST_HUB_ORG['@id'] },
         inLanguage: 'en-US',
       },
     ],
@@ -138,9 +163,8 @@ export function buildHubHomeSchemaGraph(
   const org = buildHubOrganizationSchema(hub);
   const website = buildHubWebsiteSchema(hub, options);
 
-  // Lender includes network parent; insurance is standalone Organization only.
-  const graph: Record<string, unknown>[] =
-    hub === 'lender' ? [CONSUMER_TRUST_HUB_ORG, org, website] : [org, website];
+  // All specialist hubs cite Ask Trust Hub as parent.
+  const graph: Record<string, unknown>[] = [CONSUMER_TRUST_HUB_ORG, org, website];
 
   if (hub === 'move') {
     graph.push({
