@@ -130,18 +130,34 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/lender/lender',
-        destination: '/lender',
+        destination: 'https://www.lendertrusthub.com/',
         permanent: true,
       },
       {
         source: '/lender/lender/:path*',
-        destination: '/lender/:path*',
+        destination: 'https://www.lendertrusthub.com/:path*',
         permanent: true,
       },
-      // SEO-friendly short URL for first-time homebuyer pillar
+      // SEO-friendly short URL for first-time homebuyer pillar (standalone LTH)
       {
         source: '/lender/first-time-homebuyer-programs',
-        destination: '/lender/resources/first-time-homebuyer-programs',
+        destination: 'https://www.lendertrusthub.com/resources/first-time-homebuyer-programs',
+        permanent: true,
+      },
+      // Monorepo /lender → standalone Lender Trust Hub (301)
+      {
+        source: '/lender',
+        destination: 'https://www.lendertrusthub.com/',
+        permanent: true,
+      },
+      {
+        source: '/lender/',
+        destination: 'https://www.lendertrusthub.com/',
+        permanent: true,
+      },
+      {
+        source: '/lender/:path*',
+        destination: 'https://www.lendertrusthub.com/:path*',
         permanent: true,
       },
       // GSC 404: legacy bare route → Alabama Huntsville destination hub

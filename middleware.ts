@@ -123,13 +123,31 @@ export async function middleware(request: NextRequest) {
       );
     }
 
+    // movetrusthub.com: send /lender/* to standalone LenderTrustHub (strip prefix)
+    const isLenderPrefixed =
+      pathname === '/lender' || pathname.startsWith('/lender/');
+    if (!isInsuranceStandaloneHost(host) && isLenderPrefixed) {
+      const bare =
+        pathname === '/lender' || pathname === '/lender/'
+          ? '/'
+          : pathname.slice('/lender'.length) || '/';
+      return NextResponse.redirect(
+        new URL(bare + request.nextUrl.search, LENDER_SITE_URL),
+        301
+      );
+    }
+
     // insurancetrusthub.com: insurance IA only — never render Move/lender verticals.
     if (isInsuranceStandaloneHost(host)) {
       // Move-only paths → permanent redirect to Move (or lender) apex.
       if (isMoveOnlyPath(pathname)) {
         const target =
           pathname === '/lender' || pathname.startsWith('/lender/')
-            ? `${LENDER_SITE_URL}${pathname}${request.nextUrl.search}`
+            ? `${LENDER_SITE_URL}${
+                pathname === '/lender' || pathname === '/lender/'
+                  ? '/'
+                  : pathname.slice('/lender'.length) || '/'
+              }${request.nextUrl.search}`
             : moveAbsoluteUrl(pathname, request.nextUrl.search);
         return NextResponse.redirect(target, 301);
       }
@@ -163,8 +181,11 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL(stripped + request.nextUrl.search, request.url), 308);
     }
     if (pathname === '/lender/lender' || pathname.startsWith('/lender/lender/')) {
-      const stripped = pathname.replace(/^\/lender\/lender(?=\/|$)/, '/lender') || '/lender';
-      return NextResponse.redirect(new URL(stripped + request.nextUrl.search, request.url), 308);
+      const stripped = pathname.replace(/^\/lender\/lender(?=\/|$)/, '') || '/';
+      return NextResponse.redirect(
+        new URL(stripped + request.nextUrl.search, LENDER_SITE_URL),
+        301
+      );
     }
     if (
       pathname === '/from-georgia-to-huntsville' ||

@@ -36,19 +36,21 @@ const INSURANCE_CALCULATOR_REDIRECTS: Redirect[] = [
   },
 ];
 
-/** Legacy lender calculator slugs → unified calculator hub with ?calc= id. */
+const LENDER_APEX = 'https://www.lendertrusthub.com';
+
+/** Legacy lender calculator slugs → standalone LTH calculator hub with ?calc= id. */
 export const LENDER_CALCULATOR_SLUG_REDIRECTS: Redirect[] = [
-  { source: '/calculators/mortgage-payment', destination: '/lender/calculators?calc=payment', permanent: true },
-  { source: '/calculators/affordability', destination: '/lender/calculators?calc=affordability', permanent: true },
-  { source: '/calculators/refinance', destination: '/lender/calculators?calc=refinance', permanent: true },
-  { source: '/calculators/amortization', destination: '/lender/calculators?calc=amortization', permanent: true },
-  { source: '/calculators/rent-vs-buy', destination: '/lender/calculators?calc=rent-vs-buy', permanent: true },
-  { source: '/calculators/heloc', destination: '/lender/calculators?calc=heloc', permanent: true },
-  { source: '/calculators/down-payment', destination: '/lender/calculators?calc=down-payment', permanent: true },
-  { source: '/calculators/rental', destination: '/lender/calculators?calc=rental', permanent: true },
-  { source: '/calculators/dti', destination: '/lender/calculators?calc=dti', permanent: true },
-  { source: '/calculators/closing', destination: '/lender/calculators?calc=closing', permanent: true },
-  { source: '/calculators/va', destination: '/lender/calculators?calc=payment', permanent: true },
+  { source: '/calculators/mortgage-payment', destination: `${LENDER_APEX}/calculators?calc=payment`, permanent: true },
+  { source: '/calculators/affordability', destination: `${LENDER_APEX}/calculators?calc=affordability`, permanent: true },
+  { source: '/calculators/refinance', destination: `${LENDER_APEX}/calculators?calc=refinance`, permanent: true },
+  { source: '/calculators/amortization', destination: `${LENDER_APEX}/calculators?calc=amortization`, permanent: true },
+  { source: '/calculators/rent-vs-buy', destination: `${LENDER_APEX}/calculators?calc=rent-vs-buy`, permanent: true },
+  { source: '/calculators/heloc', destination: `${LENDER_APEX}/calculators?calc=heloc`, permanent: true },
+  { source: '/calculators/down-payment', destination: `${LENDER_APEX}/calculators?calc=down-payment`, permanent: true },
+  { source: '/calculators/rental', destination: `${LENDER_APEX}/calculators?calc=rental`, permanent: true },
+  { source: '/calculators/dti', destination: `${LENDER_APEX}/calculators?calc=dti`, permanent: true },
+  { source: '/calculators/closing', destination: `${LENDER_APEX}/calculators?calc=closing`, permanent: true },
+  { source: '/calculators/va', destination: `${LENDER_APEX}/calculators?calc=payment`, permanent: true },
 ];
 
 /** Duplicate specialty hub → canonical MSA page. */
@@ -81,35 +83,46 @@ const INSURANCE_ROOT_REDIRECTS: Redirect[] = [
   { source: '/terms', destination: '/insurance/terms', permanent: true },
 ];
 
-/** Bare root paths from legacy Lender Trust Hub → `/lender/*`. */
+/**
+ * Bare root paths from legacy Lender Trust Hub → standalone apex (no /lender prefix).
+ * /compare stays on Move (mover compare tool).
+ */
 const LENDER_ROOT_REDIRECTS: Redirect[] = [
-  { source: '/local-lenders', destination: '/lender/local-lenders', permanent: true },
-  { source: '/local-lenders/:path*', destination: '/lender/local-lenders/:path*', permanent: true },
-  { source: '/fdic-insured-banks', destination: '/lender/fdic-insured-banks', permanent: true },
-  { source: '/fdic-insured-banks/:path*', destination: '/lender/fdic-insured-banks/:path*', permanent: true },
-  { source: '/auto-loan-companies', destination: '/lender/auto-loan-companies', permanent: true },
-  { source: '/auto-loan-companies/:path*', destination: '/lender/auto-loan-companies/:path*', permanent: true },
-  { source: '/lenders', destination: '/lender/lenders', permanent: true },
-  { source: '/lenders/:path*', destination: '/lender/lenders/:path*', permanent: true },
-  // /compare stays on Move hub at /compare — lender compare is /lender/compare only
+  { source: '/local-lenders', destination: `${LENDER_APEX}/local-lenders`, permanent: true },
+  { source: '/local-lenders/:path*', destination: `${LENDER_APEX}/local-lenders/:path*`, permanent: true },
+  { source: '/fdic-insured-banks', destination: `${LENDER_APEX}/fdic-insured-banks`, permanent: true },
+  { source: '/fdic-insured-banks/:path*', destination: `${LENDER_APEX}/fdic-insured-banks/:path*`, permanent: true },
+  { source: '/auto-loan-companies', destination: `${LENDER_APEX}/auto-loan-companies`, permanent: true },
+  { source: '/auto-loan-companies/:path*', destination: `${LENDER_APEX}/auto-loan-companies/:path*`, permanent: true },
+  { source: '/lenders', destination: `${LENDER_APEX}/lenders`, permanent: true },
+  { source: '/lenders/:path*', destination: `${LENDER_APEX}/lenders/:path*`, permanent: true },
 ];
 
-/** Bare /calculators index → lender hub. */
+/**
+ * Monorepo /lender/* → standalone LenderTrustHub (strip prefix).
+ * /lender → /  and  /lender/foo → /foo
+ */
+const LENDER_PREFIX_REDIRECTS: Redirect[] = [
+  { source: '/lender', destination: `${LENDER_APEX}/`, permanent: true },
+  { source: '/lender/', destination: `${LENDER_APEX}/`, permanent: true },
+  { source: '/lender/:path*', destination: `${LENDER_APEX}/:path*`, permanent: true },
+];
+
+/** Bare /calculators index → standalone LTH calculator hub. */
 const CALCULATOR_INDEX_REDIRECT: Redirect = {
   source: '/calculators',
-  destination: '/lender/calculators',
+  destination: `${LENDER_APEX}/calculators`,
   permanent: true,
 };
 
 /**
  * Unknown legacy calculator slugs (Vercel edge only).
- * Do NOT add `/calculators/:path*` to next.config — Next.js rewrites the
- * destination to `/lender/calculators/:path*`, shadowing specific rules.
- * Middleware + resolveHubMigrationRedirect() handle unknown slugs locally.
+ * Do NOT add `/calculators/:path*` to next.config — Next.js rewrites destinations
+ * in ways that can shadow specific rules. Middleware handles local parity.
  */
 const CALCULATOR_VERCEL_CATCHALL: Redirect = {
   source: '/calculators/:path*',
-  destination: '/lender/calculators',
+  destination: `${LENDER_APEX}/calculators`,
   permanent: true,
 };
 
@@ -132,24 +145,11 @@ function resourceAliasRedirects(): Redirect[] {
 }
 
 /**
- * Legacy apex domains → movetrusthub.com subdirectories (+ ?from= for welcome banner).
- * InsuranceTrustHub is standalone: do NOT 308 insurancetrusthub.com here.
- * Host rewrites live in middleware (see lib/hub/domains.ts).
+ * Host-based domain rules for the Move Vercel project.
+ * LenderTrustHub and InsuranceTrustHub are standalone projects — do NOT 308 their
+ * hosts back into movetrusthub.com (that created loops and blocked LTH apex).
  */
-export const HUB_DOMAIN_REDIRECTS: Redirect[] = [
-  {
-    source: '/:path*',
-    has: [{ type: 'host', value: 'www.lendertrusthub.com' }],
-    destination: 'https://www.movetrusthub.com/lender/:path*?from=lendertrusthub',
-    permanent: true,
-  },
-  {
-    source: '/:path*',
-    has: [{ type: 'host', value: 'lendertrusthub.com' }],
-    destination: 'https://www.movetrusthub.com/lender/:path*?from=lendertrusthub',
-    permanent: true,
-  },
-];
+export const HUB_DOMAIN_REDIRECTS: Redirect[] = [];
 
 /** Path migration rules must not fire on insurancetrusthub.com (standalone apex). */
 const MOVE_HOSTS = ['www.movetrusthub.com', 'movetrusthub.com'] as const;
@@ -172,6 +172,8 @@ export function getVercelHubRedirects(): Redirect[] {
     ...INSURANCE_HUB_ALIAS_REDIRECTS,
     ...INSURANCE_ROOT_REDIRECTS,
     ...LENDER_ROOT_REDIRECTS,
+    // /lender/* after more specific bare-root rules
+    ...LENDER_PREFIX_REDIRECTS,
     CALCULATOR_INDEX_REDIRECT,
     CALCULATOR_VERCEL_CATCHALL,
   ]);
@@ -188,6 +190,7 @@ export function getNextConfigHubRedirects(): Redirect[] {
     ...INSURANCE_HUB_ALIAS_REDIRECTS,
     ...INSURANCE_ROOT_REDIRECTS,
     ...LENDER_ROOT_REDIRECTS,
+    ...LENDER_PREFIX_REDIRECTS,
   ]);
 }
 
@@ -233,18 +236,19 @@ export function resolveHubMigrationRedirect(
 ): string | null {
   if (host) {
     const h = normalizeHost(host);
-    if (h === 'lendertrusthub.com' || h === 'www.lendertrusthub.com') {
-      const path = `/lender${pathname === '/' ? '' : pathname}`;
-      return `${path}?from=lendertrusthub`;
-    }
-    // Insurance apex is standalone — middleware rewrites; never bounce to Move.
-    if (h === 'insurancetrusthub.com' || h === 'www.insurancetrusthub.com') {
+    // Lender + Insurance apexes are standalone — never bounce into Move paths.
+    if (
+      h === 'lendertrusthub.com' ||
+      h === 'www.lendertrusthub.com' ||
+      h === 'insurancetrusthub.com' ||
+      h === 'www.insurancetrusthub.com'
+    ) {
       return null;
     }
   }
 
   if (pathname === '/calculators') {
-    return '/lender/calculators';
+    return `${LENDER_APEX}/calculators`;
   }
 
   if (pathname.startsWith('/calculators/')) {
@@ -254,9 +258,9 @@ export function resolveHubMigrationRedirect(
     }
     const calcId = LENDER_CALCULATOR_SLUG_MAP[slug];
     if (calcId) {
-      return `/lender/calculators?calc=${calcId}`;
+      return `${LENDER_APEX}/calculators?calc=${calcId}`;
     }
-    return '/lender/calculators';
+    return `${LENDER_APEX}/calculators`;
   }
 
   const bareResource = pathname.match(/^\/resources\/([^/]+)$/);
@@ -284,15 +288,25 @@ export function resolveHubMigrationRedirect(
   if (pathname.startsWith('/insurance/insurance')) {
     return pathname.replace(/^\/insurance\/insurance/, '/insurance') || '/insurance';
   }
-  if (pathname.startsWith('/lender/lender')) {
-    return pathname.replace(/^\/lender\/lender/, '/lender') || '/lender';
+  if (pathname === '/lender/lender' || pathname.startsWith('/lender/lender/')) {
+    const stripped = pathname.replace(/^\/lender\/lender(?=\/|$)/, '') || '/';
+    return `${LENDER_APEX}${stripped === '/' ? '/' : stripped}`;
+  }
+
+  // Monorepo /lender/* → standalone LTH (strip prefix)
+  if (pathname === '/lender' || pathname === '/lender/') {
+    return `${LENDER_APEX}/`;
+  }
+  if (pathname.startsWith('/lender/')) {
+    const bare = pathname.slice('/lender'.length) || '/';
+    return `${LENDER_APEX}${bare}`;
   }
 
   if (pathname === '/from-georgia-to-huntsville' || pathname.startsWith('/from-georgia-to-huntsville')) {
     return '/moving-to/alabama/huntsville-al';
   }
 
-  if (pathname.startsWith('/insurance/') || pathname.startsWith('/lender/')) {
+  if (pathname.startsWith('/insurance/')) {
     return null;
   }
 
@@ -304,7 +318,7 @@ export function resolveHubMigrationRedirect(
 
   for (const root of LENDER_BARE_ROOTS) {
     if (pathname === root || pathname.startsWith(`${root}/`)) {
-      return `/lender${pathname}`;
+      return `${LENDER_APEX}${pathname}`;
     }
   }
 

@@ -1,6 +1,6 @@
 /**
  * Multi-domain hosts for the ConsumerTrust Hub monorepo.
- * Insurance is a standalone apex destination; lender still redirects to Move.
+ * Insurance and Lender are standalone apex destinations (not served under Move).
  */
 
 export const MOVE_SITE_URL = 'https://www.movetrusthub.com';
