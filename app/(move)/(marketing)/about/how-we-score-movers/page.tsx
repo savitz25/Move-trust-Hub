@@ -42,6 +42,7 @@ import {
   MOVER_VETTING_CRITERIA,
 } from '@/lib/trust/vetting-criteria';
 import { AskStandardBanner } from '@/components/network/ask-standard-banner';
+import { TrustMark } from '@/components/network/trust-mark';
 
 export const metadata = buildResourceMetadata(
   METHODOLOGY_PAGE_PATH,
@@ -86,7 +87,10 @@ export default async function HowWeScoreMoversPage() {
             Ask Trust Hub Standard. County and profile pages link here instead of repeating long
             boilerplate.
           </p>
-          <div className="mt-6 max-w-2xl">
+          <div className="mt-4">
+            <TrustMark />
+          </div>
+          <div className="mt-4 max-w-2xl">
             <AskStandardBanner verticalLabel="Move Trust Hub methodology" />
           </div>
           <nav

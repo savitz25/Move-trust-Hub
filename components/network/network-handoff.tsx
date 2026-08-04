@@ -5,6 +5,7 @@ import {
   type NetworkHandoffGeography,
   type NetworkHandoffVariant,
 } from '@/lib/network/network-handoff';
+import { TrustMark } from '@/components/network/trust-mark';
 import { cn } from '@/lib/utils';
 
 export type NetworkHandoffProps = {
@@ -15,7 +16,7 @@ export type NetworkHandoffProps = {
 };
 
 /**
- * Contextual hub→hub research handoff (Step 3).
+ * Contextual hub→hub journey module (LifeJourneyNext / NetworkJourneyStrip).
  * One module, 1–2 links max. Not for company profiles or sitewide footers.
  */
 export function NetworkHandoff({
@@ -55,6 +56,9 @@ export function NetworkHandoff({
             </li>
           ))}
         </ul>
+        <div className="mt-2">
+          <TrustMark variant="text" />
+        </div>
       </aside>
     );
   }
@@ -85,6 +89,9 @@ export function NetworkHandoff({
             </a>
           ))}
         </p>
+        <div className="mt-2">
+          <TrustMark variant="text" />
+        </div>
       </aside>
     );
   }
@@ -118,6 +125,9 @@ export function NetworkHandoff({
           </li>
         ))}
       </ul>
+      <div className="mt-3">
+        <TrustMark />
+      </div>
     </aside>
   );
 }

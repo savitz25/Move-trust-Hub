@@ -353,7 +353,7 @@ export function TrustProfileShell({
             className={cn('font-medium underline-offset-2 hover:underline', accent.link)}
             rel="noopener noreferrer"
           >
-            Ask Standard
+            Ask Trust Hub Standard
           </a>
         </p>
       </div>

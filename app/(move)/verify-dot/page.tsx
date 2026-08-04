@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
+import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
 import { DotVerifier } from '@/components/verify-dot/dot-verifier';
 import { FaqSection } from '@/components/seo/faq-section';
 import { JsonLd } from '@/lib/seo/json-ld';
@@ -77,6 +78,7 @@ export default function VerifyDotPage() {
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
             Verify a Moving Company
           </h1>
+          <NetworkBelongingLine align="left" className="mt-2 max-w-2xl" />
           <p className="mt-3 text-base text-muted-foreground leading-relaxed max-w-2xl">
             Search by <strong className="text-foreground">USDOT / MC number</strong> or by{' '}
             <strong className="text-foreground">company name + state</strong>. We show structured

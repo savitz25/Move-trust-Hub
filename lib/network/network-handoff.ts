@@ -82,15 +82,21 @@ export function resolveNetworkHandoff(
   geography?: NetworkHandoffGeography
 ): NetworkHandoffContent {
   const place = placeLabel(geography);
-  const label = 'Related research in the Ask Trust Hub network';
+  /** Journey product language (Priority 1) — not generic cross-sell. */
+  const label = 'Next in your journey';
 
   switch (context) {
     case 'move-destination': {
-      const where = place ? `Moving to ${place}?` : 'Settling into a new area?';
+      const where = place ? `Your move to ${place} is one part of settling in.` : 'Your move is one part of settling in.';
       return {
         label,
-        body: `${where} If you’re buying or refinancing, research NMLS-verified lenders on Lender Trust Hub. For homeowners or renters coverage, compare licensed options on Insurance Trust Hub — research only, no paid placements.`,
+        body: `${where} Next for many households: homeowners or renters coverage research, and financing if you’re buying — independent only, no paid placements.`,
         links: [
+          {
+            href: insuranceDirectoryHref(geography),
+            label: 'Research homeowners or renters coverage',
+            hub: 'insurance',
+          },
           {
             href: lenderStateHref(geography),
             label: place
@@ -98,18 +104,13 @@ export function resolveNetworkHandoff(
               : 'Research NMLS-verified lenders',
             hub: 'lender',
           },
-          {
-            href: insuranceDirectoryHref(geography),
-            label: 'Compare licensed insurance options',
-            hub: 'insurance',
-          },
         ],
       };
     }
     case 'move-plan': {
       return {
         label,
-        body: 'Mover shortlist ready. Next for many families: confirm homeowners or renters coverage and, if buying, financing — independent research only, no paid placements.',
+        body: 'Mover shortlist ready. Settling in often means coverage next — and financing if this move is a purchase. Independent research only.',
         links: [
           {
             href: insuranceDirectoryHref(geography),
@@ -127,7 +128,7 @@ export function resolveNetworkHandoff(
     case 'lender-closing': {
       return {
         label,
-        body: 'Closing on a home? Lenders often require homeowners insurance — research DOI-licensed options on Insurance Trust Hub (independent directory; verify licenses directly).',
+        body: 'Financing is one part of buying. Lenders often require homeowners insurance — research DOI-licensed options independently (verify licenses on the regulator).',
         links: [
           {
             href: insuranceDirectoryHref(geography),
@@ -140,12 +141,17 @@ export function resolveNetworkHandoff(
     case 'lender-calculator': {
       return {
         label,
-        body: 'Estimating a payment is one step. Moving after closing? Research FMCSA-verified movers on Move Trust Hub before you book.',
+        body: 'A payment estimate is one step in buying. If you’re also relocating, research FMCSA-verified movers before you book.',
         links: [
           {
             href: moveVerifyHref(),
             label: 'Research FMCSA-verified movers',
             hub: 'move',
+          },
+          {
+            href: insuranceDirectoryHref(geography),
+            label: 'Research homeowners insurance',
+            hub: 'insurance',
           },
         ],
       };
@@ -153,7 +159,7 @@ export function resolveNetworkHandoff(
     case 'lender-directory': {
       return {
         label,
-        body: 'Home purchase often pairs with coverage and a move. Research homeowners insurance and FMCSA movers independently — rankings are not for sale on any Trust Hub.',
+        body: 'Financing is one part of buying. Next for many buyers: homeowners coverage research, then the move if you’re relocating.',
         links: [
           {
             href: insuranceDirectoryHref(geography),
@@ -172,8 +178,8 @@ export function resolveNetworkHandoff(
       return {
         label,
         body: place
-          ? `Buying or relocating near ${place}? Research NMLS-verified lenders and FMCSA-licensed movers on the specialist Trust Hubs.`
-          : 'Buying the property too? Research NMLS-verified lenders on Lender Trust Hub. Relocating? Research licensed movers on Move Trust Hub.',
+          ? `If you’re relocating or buying near ${place}, financing and the move are related research steps on specialist Trust Hubs.`
+          : 'If you’re relocating or buying, financing and the move are related research steps on specialist Trust Hubs.',
         links: [
           {
             href: lenderStateHref(geography),
@@ -192,8 +198,8 @@ export function resolveNetworkHandoff(
       return {
         label,
         body: place
-          ? `Moving to ${place} or already planning a relocation? Research licensed movers on Move Trust Hub before you sign a lease or book a truck.`
-          : 'Moving to this area or already planning a relocation? Research licensed movers on Move Trust Hub.',
+          ? `If you’re relocating to ${place}, research licensed movers before you sign a lease or book a truck.`
+          : 'If you’re relocating, research licensed movers before you sign a lease or book a truck.',
         links: [
           {
             href: moveVerifyHref(),
@@ -207,8 +213,8 @@ export function resolveNetworkHandoff(
       return {
         label,
         body: place
-          ? `Moving to ${place}? Research FMCSA-licensed movers on Move Trust Hub. If you’re buying, compare NMLS-verified lenders on Lender Trust Hub.`
-          : 'Planning a relocation? Research licensed movers on Move Trust Hub. Buying the home? Research NMLS-verified lenders on Lender Trust Hub.',
+          ? `If you’re relocating to ${place} — or buying there — research movers and, if purchase, lenders on the specialist hubs.`
+          : 'If you’re relocating or buying, research movers and lenders on the specialist hubs.',
         links: [
           {
             href: moveVerifyHref(),

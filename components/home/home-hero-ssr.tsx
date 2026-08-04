@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Calculator, MapPinned, Scale, ShieldCheck } from 'lucide-react';
+import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
 
 /**
  * Server-rendered homepage hero chrome for crawlers and no-JS users.
@@ -11,6 +12,7 @@ export function HomeHeroSsr() {
       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0066b8]">
         Move Trust Hub · Independent FMCSA mover directory
       </p>
+      <NetworkBelongingLine className="mt-2" />
       {/* Primary LCP element — solid paint, no client island dependency */}
       <h1 className="mt-3 text-balance font-semibold leading-[1.1] tracking-tighter text-[#0A2540] text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem]">
         Where are you moving from and to?
