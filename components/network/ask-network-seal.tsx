@@ -1,4 +1,5 @@
 import { ASK_TRUST_HUB, NETWORK_HUBS, type NetworkHubId } from '@/lib/network/ask-trust-hub';
+import { TrustMark } from '@/components/network/trust-mark';
 import { cn } from '@/lib/utils';
 
 type AskNetworkSealProps = {
@@ -60,14 +61,15 @@ export function AskNetworkSeal({
         >
           How we make money
         </a>
-        {' · '}
-        <a
-          href={ASK_TRUST_HUB.methodologyUrl}
-          className="underline underline-offset-2 hover:opacity-90"
-          rel="noopener noreferrer"
-        >
-          Methodology
-        </a>
+      </p>
+      <p className="mt-2 flex flex-wrap items-center justify-center gap-2">
+        <TrustMark
+          className={
+            inverted
+              ? 'border-white/25 bg-white/10 text-white/85 hover:border-white/40 hover:text-white'
+              : undefined
+          }
+        />
       </p>
 
       {showSiblings ? (

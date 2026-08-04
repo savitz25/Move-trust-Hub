@@ -1,34 +1,52 @@
-import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
+import {
+  ASK_NETWORK_STANDARD_LABEL,
+  ASK_NETWORK_STANDARD_LABEL_LONG,
+  ASK_NETWORK_STANDARD_TOOLTIP,
+  ASK_NETWORK_STANDARD_URL,
+} from '@/lib/network/standard-version';
 import { cn } from '@/lib/utils';
 
-type TrustMarkProps = {
+export type TrustMarkProps = {
   className?: string;
-  /** Compact chip vs plain text link */
-  variant?: 'chip' | 'text';
+  /**
+   * chip — primary product signal (“Ask Trust Hub Standard”)
+   * text — long form sentence link
+   * inline — primary label as plain text link (footers / seals)
+   */
+  variant?: 'chip' | 'text' | 'inline';
 };
 
 /**
- * Lightweight network product signal — links to Ask methodology (The Standard).
+ * Canonical Ask Trust Hub Standard mark.
+ * Links always to https://www.asktrusthub.com/methodology.
+ * Not a provider endorsement or paid badge.
  */
 export function TrustMark({ className, variant = 'chip' }: TrustMarkProps) {
-  if (variant === 'text') {
+  const href = ASK_NETWORK_STANDARD_URL;
+  const label =
+    variant === 'text' ? ASK_NETWORK_STANDARD_LABEL_LONG : ASK_NETWORK_STANDARD_LABEL;
+
+  if (variant === 'text' || variant === 'inline') {
     return (
       <a
-        href={ASK_TRUST_HUB.methodologyUrl}
+        href={href}
         className={cn(
-          'text-xs font-medium text-muted-foreground underline-offset-2 hover:underline',
+          'text-xs font-medium underline-offset-2 hover:underline',
+          variant === 'text' ? 'text-muted-foreground' : 'font-semibold text-muted-foreground',
           className
         )}
         rel="noopener noreferrer"
+        title={ASK_NETWORK_STANDARD_TOOLTIP}
+        aria-label={ASK_NETWORK_STANDARD_LABEL}
       >
-        Researched to the Ask Trust Hub Standard
+        {label}
       </a>
     );
   }
 
   return (
     <a
-      href={ASK_TRUST_HUB.methodologyUrl}
+      href={href}
       className={cn(
         'inline-flex items-center rounded-full border border-border/70 bg-muted/40 px-2.5 py-0.5',
         'text-[11px] font-semibold tracking-wide text-muted-foreground',
@@ -36,8 +54,14 @@ export function TrustMark({ className, variant = 'chip' }: TrustMarkProps) {
         className
       )}
       rel="noopener noreferrer"
+      title={ASK_NETWORK_STANDARD_TOOLTIP}
+      aria-label={ASK_NETWORK_STANDARD_LABEL}
     >
-      Ask Trust Hub Standard
+      {ASK_NETWORK_STANDARD_LABEL}
     </a>
   );
 }
+
+/** Alias for shared API name across repos. */
+export const TrustStandardMark = TrustMark;
+export const AskTrustHubStandardChip = TrustMark;

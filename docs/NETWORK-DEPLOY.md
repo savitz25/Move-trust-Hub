@@ -32,6 +32,17 @@ Constant: `lib/network/standard-version.ts` → `ASK_NETWORK_STANDARD_VERSION`
 - **Do not bump for:** unrelated vertical content, local SEO pages, data refreshes
 - Live hosts expose `data-network-standard` on `<body>` for view-source checks
 
+### Trust Mark contract (Priority 3)
+
+| Field | Value |
+|-------|--------|
+| Primary label | `Ask Trust Hub Standard` |
+| Long form | `Researched to the Ask Trust Hub Standard` |
+| URL | `https://www.asktrusthub.com/methodology` |
+| Network bar **Standards** | → Ask `/methodology` (not independence-only) |
+
+Do not invent badges that imply provider endorsement. Component: `TrustMark` / `TrustStandardMark`.
+
 ## Post-deploy smoke
 
 Canonical script lives in **this repo**:

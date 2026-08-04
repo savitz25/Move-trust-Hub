@@ -154,10 +154,12 @@ async function main() {
 
   // Move
   results.push(
-    await checkStatus(
-      'Move methodology',
+    await checkBody(
+      'Move methodology (Standard mark)',
       'https://www.movetrusthub.com/about/how-we-score-movers',
-      200
+      {
+        mustInclude: [/Ask Trust Hub Standard|asktrusthub\.com\/methodology/i],
+      }
     )
   );
   results.push(
@@ -177,7 +179,13 @@ async function main() {
 
   // Insurance
   results.push(
-    await checkStatus('Insurance /methodology', 'https://www.insurancetrusthub.com/methodology', 200)
+    await checkBody(
+      'Insurance /methodology (Standard mark)',
+      'https://www.insurancetrusthub.com/methodology',
+      {
+        mustInclude: [/Ask Trust Hub Standard|asktrusthub\.com\/methodology/i],
+      }
+    )
   );
   results.push(
     await checkBody('Insurance / (no quote CTAs)', 'https://www.insurancetrusthub.com/', {
@@ -187,7 +195,13 @@ async function main() {
 
   // Lender
   results.push(
-    await checkStatus('Lender /methodology', 'https://www.lendertrusthub.com/methodology', 200)
+    await checkBody(
+      'Lender /methodology (Standard mark)',
+      'https://www.lendertrusthub.com/methodology',
+      {
+        mustInclude: [/Ask Trust Hub Standard|asktrusthub\.com\/methodology/i],
+      }
+    )
   );
   results.push(
     await checkBody('Lender / (network + no 3,142 flex)', 'https://www.lendertrusthub.com/', {

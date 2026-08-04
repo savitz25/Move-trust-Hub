@@ -19,6 +19,7 @@ import {
   type TrustSourceRef,
 } from '@/lib/network/trust-profile';
 import { NETWORK_VOCAB } from '@/lib/network/vocabulary';
+import { TrustMark } from '@/components/network/trust-mark';
 import { cn } from '@/lib/utils';
 
 export type TrustProfileShellVariant = 'move' | 'insurance' | 'lender';
@@ -335,7 +336,7 @@ export function TrustProfileShell({
         </div>
       ) : null}
 
-      {/* 5. Trust footer */}
+      {/* 5. Trust footer — research standard, not provider endorsement */}
       <div className="px-4 py-3.5 sm:px-6">
         <p className="text-xs leading-relaxed text-muted-foreground">
           Research only · Part of the Ask Trust Hub network · {NETWORK_VOCAB.noPaidPlacements}
@@ -345,17 +346,12 @@ export function TrustProfileShell({
             className={cn('font-medium underline-offset-2 hover:underline', accent.link)}
             rel="noopener noreferrer"
           >
-            Methodology
-          </a>
-          {' · '}
-          <a
-            href={profile.standardUrl}
-            className={cn('font-medium underline-offset-2 hover:underline', accent.link)}
-            rel="noopener noreferrer"
-          >
-            Ask Trust Hub Standard
+            Hub methodology
           </a>
         </p>
+        <div className="mt-2">
+          <TrustMark />
+        </div>
       </div>
     </section>
   );

@@ -13,7 +13,11 @@ export const ASK_TRUST_HUB = {
   revenueUrl: 'https://www.asktrusthub.com/how-we-make-money',
   trustCenterUrl: 'https://www.asktrusthub.com/trust',
   email: 'hello@asktrusthub.com',
-  standardsUrl: 'https://www.asktrusthub.com/promise',
+  /**
+   * Network bar “Standards” → Ask methodology (The Standard).
+   * Independence policy remains promiseUrl elsewhere.
+   */
+  standardsUrl: 'https://www.asktrusthub.com/methodology',
 } as const;
 
 /** Vertical methodology deep-links (canonical per hub). */
