@@ -1,0 +1,26 @@
+# Weekly production smoke for the four-domain Ask Trust Hub network.
+# Catches Insurance/Lender methodology 404s and quote-language regressions.
+name: Network production smoke
+
+on:
+  schedule:
+    # Mondays 14:00 UTC
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  smoke-network:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Smoke production network URLs
+        run: npm run smoke:network

@@ -14,6 +14,7 @@ import { GoogleAnalyticsRoot } from '@/components/analytics/google-analytics-roo
 import { DeferredUiStyles } from '@/components/performance/deferred-ui-styles';
 import { ThirdPartyOrchestrator } from '@/components/performance/third-party-orchestrator';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
+import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 
 export const metadata = rootLayoutMetadata;
 
@@ -43,7 +44,11 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`light ${siteFontVariables}`}>
-      <body className="font-sans antialiased">
+      <body
+        className="font-sans antialiased"
+        data-network-standard={ASK_NETWORK_STANDARD_VERSION}
+      >
+        {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <SchemaInjector data={rootSchema} />
         {children}
         <GoogleAnalyticsRoot />

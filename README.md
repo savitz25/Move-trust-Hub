@@ -1,5 +1,17 @@
 # Move Trust Hub
 
+**Production domain:** https://www.movetrusthub.com  
+**This repo is the source of truth for that domain** (`Move-trust-Hub` → Vercel Move project).
+
+Sibling network repos: [Conumers-Trust-Hub](https://github.com/savitz25/Conumers-Trust-Hub) (Ask) · [Insurance-trust-hub](https://github.com/savitz25/Insurance-trust-hub) · [Lender-Trust-Hub](https://github.com/savitz25/Lender-Trust-Hub)
+
+**Network / multi-domain:** see [docs/NETWORK-DEPLOY.md](./docs/NETWORK-DEPLOY.md) and [docs/NETWORK-PR-CHECKLIST.md](./docs/NETWORK-PR-CHECKLIST.md).  
+Post-deploy smoke: `npm run smoke:network` (production HTTP checks across all four apex domains).
+
+> Monorepo paths under `app/insurance` or `app/lender` do **not** deploy Insurance or Lender apex sites. Those domains use the standalone repos above.
+
+---
+
 **The most trusted, transparent directory for comparing interstate moving companies in the United States.**
 
 A production-ready, full-stack Next.js 15 website featuring 25+ major movers (Allied, United, North American, JK Moving, etc.), advanced filters, side-by-side comparison, verified reviews, FMCSA licensing data, reputation scoring, interactive coverage maps, educational resources, admin tools, and excellent SEO.
