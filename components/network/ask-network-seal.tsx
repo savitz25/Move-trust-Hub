@@ -1,20 +1,18 @@
 import { ASK_TRUST_HUB, NETWORK_HUBS, type NetworkHubId } from '@/lib/network/ask-trust-hub';
+import { ASK_NETWORK_OWNERSHIP_SHORT } from '@/lib/network/standard-version';
 import { TrustMark } from '@/components/network/trust-mark';
 import { cn } from '@/lib/utils';
 
 type AskNetworkSealProps = {
-  /** Current hub — shown as plain text “You are here” in optional sibling list */
   currentHub?: NetworkHubId;
-  /** Show sibling hub list under the seal */
   showSiblings?: boolean;
   className?: string;
-  /** Dark footer surfaces */
   inverted?: boolean;
 };
 
 /**
- * Identical network seal for Move, Insurance, and Lender footers.
- * Title links to Ask independence policy.
+ * Network seal for Move / Insurance / Lender footers.
+ * Clarifies common ownership + separated research — not unaffiliated operators.
  */
 export function AskNetworkSeal({
   currentHub,
@@ -30,10 +28,15 @@ export function AskNetworkSeal({
         className
       )}
     >
-      <p className={cn('text-sm font-semibold tracking-tight', inverted ? 'text-white' : 'text-foreground')}>
+      <p
+        className={cn(
+          'text-sm font-semibold tracking-tight',
+          inverted ? 'text-white' : 'text-foreground'
+        )}
+      >
         Part of the{' '}
         <a
-          href={ASK_TRUST_HUB.promiseUrl}
+          href={ASK_TRUST_HUB.url}
           className={cn(
             'underline underline-offset-2',
             inverted ? 'text-white hover:text-white/90' : 'text-foreground hover:text-foreground/80'
@@ -43,9 +46,10 @@ export function AskNetworkSeal({
           Ask Trust Hub network
         </a>
       </p>
+      <p className="mt-1.5 text-xs font-medium leading-relaxed">
+        {ASK_NETWORK_OWNERSHIP_SHORT}
+      </p>
       <p className="mt-1 text-xs leading-relaxed">
-        Independently operated · No paid placements
-        {' · '}
         <a
           href={ASK_TRUST_HUB.promiseUrl}
           className="underline underline-offset-2 hover:opacity-90"
@@ -60,6 +64,14 @@ export function AskNetworkSeal({
           rel="noopener noreferrer"
         >
           How we make money
+        </a>
+        {' · '}
+        <a
+          href={ASK_TRUST_HUB.methodologyUrl}
+          className="underline underline-offset-2 hover:opacity-90"
+          rel="noopener noreferrer"
+        >
+          Ask methodology
         </a>
       </p>
       <p className="mt-2 flex flex-wrap items-center justify-center gap-2">

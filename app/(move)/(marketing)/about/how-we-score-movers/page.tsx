@@ -82,10 +82,10 @@ export default async function HowWeScoreMoversPage() {
             Move Trust Hub methodology
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            {DIRECTORY_INDEPENDENCE_TAGLINE} This is the canonical methodology for reputation
-            scores, review policy, FMCSA data use, independence, and how we vet listings under The
-            Ask Trust Hub Standard. County and profile pages link here instead of repeating long
-            boilerplate.
+            {DIRECTORY_INDEPENDENCE_TAGLINE} Part of the Ask Trust Hub network — common ownership,
+            separated research and listing order, no paid placements. This is the canonical
+            methodology for reputation scores, review policy, FMCSA data use, and how we vet
+            listings under The Ask Trust Hub Standard.
           </p>
           <div className="mt-4">
             <TrustMark />
