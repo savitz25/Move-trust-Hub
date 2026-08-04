@@ -14,6 +14,7 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { getLicenseDisplay, LICENSE_PENDING_MESSAGE } from '@/lib/trust/company-display-policy';
 import { SaveComparisonButton } from '@/components/save-my-move/save-comparison-button';
 import { resolveYearsInBusiness } from '@/lib/directory/normalize-company';
+import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 
 interface Props {
   allCompanies: Company[];
@@ -155,6 +156,24 @@ export function CompareClient({ allCompanies }: Props) {
       </div>
 
       <p className="text-xs mt-3 text-muted-foreground">Tip: Add more companies from the <Link href="/companies" className="underline">Directory</Link>. Your selections are saved in your browser.</p>
+
+      <div className="mt-8 max-w-3xl">
+        <BeforeYouReachOut
+          title="Take this comparison with you"
+          summaryLines={selected.flatMap((c) => {
+            const lic = getLicenseDisplay(c);
+            const id =
+              lic.status === 'verified'
+                ? `USDOT ${lic.usdot}${lic.mc ? ` / ${lic.mc}` : ''}`
+                : 'License: verify on FMCSA';
+            return [
+              `${c.name} — ${id}`,
+              `https://www.movetrusthub.com/companies/${c.slug}`,
+            ];
+          })}
+          mailtoSubject="My Move Trust Hub mover comparison"
+        />
+      </div>
     </div>
   );
 }

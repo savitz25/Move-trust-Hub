@@ -15,6 +15,7 @@ import { JsonLd } from '@/lib/seo/json-ld';
 import { buildSaferLookupUrl } from '@/lib/verify-dot/fmcsa';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 import { reviewUrlForMovingCompany } from '@/lib/reviews/review-url';
+import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -121,6 +122,19 @@ export default async function CompanyReviewProfilePage({ params }: Props) {
               </Button>
             ) : null}
           </div>
+        </div>
+
+        <div className="mb-8">
+          <BeforeYouReachOut
+            summaryLines={[
+              company.name,
+              company.dot_number ? `USDOT ${company.dot_number}` : undefined,
+              company.mc_number ? `MC ${company.mc_number}` : undefined,
+              `Profile: https://www.movetrusthub.com/company/${company.slug}`,
+              'Verify on FMCSA SAFER before booking',
+            ].filter(Boolean) as string[]}
+            mailtoSubject={`${company.name} — Move Trust Hub research notes`}
+          />
         </div>
 
         <div className="grid sm:grid-cols-3 gap-3 mb-8">

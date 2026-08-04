@@ -53,6 +53,8 @@ import {
   formatCompanyTenureLine,
   isValidFoundedYear,
 } from '@/lib/directory/normalize-company';
+import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
+import { SITE_URL } from '@/lib/seo/site-metadata';
 
 
 /** Keep aligned with directory ISR + CDN s-maxage (tag revalidation on publish). */
@@ -430,6 +432,19 @@ export default async function CompanyProfilePage({ params }: Props) {
             </Link>
           </div>
         </div>
+      </div>
+
+      <div className="mt-10 max-w-3xl">
+        <BeforeYouReachOut
+          summaryLines={[
+            company.name,
+            company.usdotNumber ? `USDOT ${company.usdotNumber}` : undefined,
+            company.mcNumber ? `MC ${company.mcNumber}` : undefined,
+            `Profile: ${SITE_URL.replace(/\/$/, '')}/companies/${company.slug}`,
+            'Verify on FMCSA SAFER before booking',
+          ].filter(Boolean) as string[]}
+          mailtoSubject={`${company.name} — Move Trust Hub research notes`}
+        />
       </div>
 
       <InternalLinkHub className="mt-12" />

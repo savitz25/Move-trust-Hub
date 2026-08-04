@@ -25,6 +25,7 @@ import type { ConfirmedPlace } from '@/components/location/location-place-input'
 import { formatItemDisplayName } from '@/lib/moving-calculator/display-names';
 import type { PlanInventoryItem } from '@/lib/my-move-plan/types';
 import { NetworkHandoff } from '@/components/network/network-handoff';
+import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 
 type TruckRec = {
   truck: string;
@@ -253,6 +254,24 @@ export function ReportReadyStep({
             </p>
           </section>
         ) : null}
+
+        <BeforeYouReachOut
+          title="Before you contact shortlisted movers"
+          summaryLines={
+            safeShortlist.length
+              ? safeShortlist.map((m) => {
+                  const label = m.name || m.slug;
+                  return `${label} — https://www.movetrusthub.com/companies/${m.slug}`;
+                })
+              : [
+                  'Move plan report — shortlist movers from My Move Plan',
+                  fromPlace && toPlace
+                    ? `Route: ${fromPlace.city || fromPlace.label} → ${toPlace.city || toPlace.label}`
+                    : 'Route: set in My Move Plan',
+                ].filter(Boolean) as string[]
+          }
+          mailtoSubject="My Move Trust Hub plan — questions before I call"
+        />
 
         <NetworkHandoff
           context="move-plan"
@@ -685,6 +704,18 @@ export function ReportReadyStep({
           </li>
         </ul>
       </section>
+
+      <BeforeYouReachOut
+        title="Before you contact shortlisted movers"
+        summaryLines={
+          safeShortlist.length
+            ? safeShortlist.map(
+                (m) => `${m.name} — https://www.movetrusthub.com/companies/${m.slug}`
+              )
+            : ['Move plan report — shortlist movers from My Move Plan']
+        }
+        mailtoSubject="My Move Trust Hub plan — questions before I call"
+      />
 
       <NetworkHandoff
         context="move-plan"
