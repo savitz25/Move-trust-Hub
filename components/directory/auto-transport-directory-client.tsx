@@ -16,6 +16,10 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { resolveYearsInBusiness } from '@/lib/directory/normalize-company';
+import {
+  EmptyCoveragePanel,
+  FMCSA_SAFER_SEARCH_URL,
+} from '@/components/research/empty-coverage-panel';
 
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: 'reputation', label: 'Reputation Score (High → Low)' },
@@ -323,7 +327,25 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
               </Card>
             ))
           ) : (
-            <div className="col-span-full text-center py-12 text-muted-foreground">No companies match your filters.</div>
+            <div className="col-span-full">
+              <EmptyCoveragePanel
+                variant="filtered"
+                title="No auto-transport companies match your filters"
+                description="No listings match these filters. Clear filters or verify a USDOT on FMCSA SAFER — we do not invent results."
+                primarySources={[
+                  { href: '/verify-dot', label: 'Verify a DOT / MC number' },
+                  {
+                    href: FMCSA_SAFER_SEARCH_URL,
+                    label: 'FMCSA SAFER Company Snapshot',
+                    external: true,
+                  },
+                ]}
+                widenLinks={[
+                  { href: '/companies', label: 'Full mover directory' },
+                  { href: '/auto-transport', label: 'Auto transport home' },
+                ]}
+              />
+            </div>
           )}
         </div>
       ) : (

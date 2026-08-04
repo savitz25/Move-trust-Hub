@@ -7,6 +7,10 @@ import { DirectoryCarrierFmcsaPanel } from '@/components/suggestions/directory-c
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
 import { buildVerifyDotHref } from '@/lib/directory/verify-dot-link';
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
+import {
+  EmptyCoveragePanel,
+  FMCSA_SAFER_SEARCH_URL,
+} from '@/components/research/empty-coverage-panel';
 
 type Props = {
   searchTerm: string;
@@ -27,50 +31,55 @@ export function DirectoryEmptyState({
 }: Props) {
   const trimmed = searchTerm.trim();
   const showCarrierPanel = Boolean(parsedCarrier && carrierNotInDirectory);
+  const variant = hasActiveFilters && !trimmed ? 'filtered' : 'filtered';
 
   return (
-    <div className="flex min-h-[420px] flex-col items-center justify-center rounded-xl border border-dashed bg-muted/20 px-4 py-12 text-center">
-      <ShieldCheck className="h-10 w-10 text-primary mb-4" aria-hidden="true" />
-      <h3 className="text-lg font-semibold tracking-tight">
-        No companies found matching your search.
-      </h3>
-
-      {trimmed ? (
-        <p className="mt-2 max-w-md text-sm text-muted-foreground">
-          We couldn&apos;t find <strong className="text-foreground">{trimmed}</strong> in our
-          directory yet.
-        </p>
-      ) : (
-        <p className="mt-2 max-w-md text-sm text-muted-foreground">
-          Try adjusting your filters or search for a different company name.
-        </p>
-      )}
-
-      <div className="mt-6 flex w-full max-w-md flex-col gap-3">
-        <Button asChild size="lg" className="w-full gap-2 min-h-[48px]">
-          <Link href={buildVerifyDotHref(trimmed, parsedCarrier)}>
-            <ShieldCheck className="h-4 w-4" />
-            Verify this company via DOT
-          </Link>
-        </Button>
-
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          Not sure of the company name? Check licensing with a{' '}
-          <strong className="font-medium text-foreground">USDOT</strong> or{' '}
-          <strong className="font-medium text-foreground">MC number</strong> on our free verifier
-          (e.g. DOT 3784776 or MC-15735).
-        </p>
-      </div>
-
+    <EmptyCoveragePanel
+      variant={variant}
+      title={
+        trimmed
+          ? 'No companies found matching your search'
+          : 'No companies match these filters'
+      }
+      description={
+        trimmed
+          ? `We couldn’t find “${trimmed}” in our directory yet — that does not mean the carrier is unlicensed. Verify on FMCSA SAFER, or try a USDOT / MC number.`
+          : 'No movers match your current filters. Clear filters or browse the full directory — we do not invent listings to fill gaps.'
+      }
+      placeLabel={trimmed || undefined}
+      primarySources={[
+        {
+          href: buildVerifyDotHref(trimmed, parsedCarrier),
+          label: 'Verify a DOT / MC number',
+        },
+        {
+          href: FMCSA_SAFER_SEARCH_URL,
+          label: 'FMCSA SAFER Company Snapshot',
+          external: true,
+        },
+      ]}
+      widenLinks={[
+        { href: '/companies', label: 'Full mover directory' },
+        { href: '/local-movers', label: 'Local movers by state' },
+        { href: '/moving-calculator', label: 'Moving calculator' },
+      ]}
+      journeyLink={{
+        href: 'https://www.insurancetrusthub.com/destinations',
+        label: 'Research coverage if you’re relocating',
+        external: true,
+      }}
+    >
       {showCarrierPanel ? (
-        <div className="mt-8 w-full max-w-lg">
+        <div className="mt-6 w-full max-w-lg mx-auto text-left">
           <DirectoryCarrierFmcsaPanel
             carrierQuery={trimmed || parsedCarrier!.display}
             displayNumber={parsedCarrier!.display}
           />
         </div>
-      ) : trimmed ? (
-        <div className="mt-6 w-full max-w-md space-y-2">
+      ) : null}
+
+      {trimmed && !showCarrierPanel ? (
+        <div className="mt-5 w-full max-w-md mx-auto">
           <SuggestCompanyCta
             sourcePage={sourcePage}
             carrierQuery={parsedCarrier ? trimmed : undefined}
@@ -78,7 +87,7 @@ export function DirectoryEmptyState({
             variant="outline"
             size="default"
             className="w-full"
-            label="Add company to directory"
+            label="Suggest this company for the directory"
           />
         </div>
       ) : null}
@@ -87,11 +96,20 @@ export function DirectoryEmptyState({
         <button
           type="button"
           onClick={onClearFilters}
-          className="mt-6 text-sm text-primary underline underline-offset-2 hover:text-primary/80"
+          className="mt-5 text-sm font-semibold text-primary underline underline-offset-2 hover:text-primary/80"
         >
           Clear all filters
         </button>
       ) : null}
-    </div>
+
+      <div className="mt-4 print:hidden">
+        <Button asChild size="lg" className="min-h-11 gap-2">
+          <Link href={buildVerifyDotHref(trimmed, parsedCarrier)}>
+            <ShieldCheck className="h-4 w-4" aria-hidden />
+            Open DOT verifier
+          </Link>
+        </Button>
+      </div>
+    </EmptyCoveragePanel>
   );
 }

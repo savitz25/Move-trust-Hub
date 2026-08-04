@@ -11,6 +11,10 @@ import {
 import type { LocalMover } from '@/lib/local-movers/types';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import {
+  EmptyCoveragePanel,
+  FMCSA_SAFER_SEARCH_URL,
+} from '@/components/research/empty-coverage-panel';
 
 type Props = {
   movers: LocalMover[];
@@ -147,7 +151,34 @@ export function SegmentedCountyMoverLists({
   profileReturnPath,
   listKey = 'all',
 }: SegmentedProps) {
-  if (localInState.length === 0 && national.length === 0) return null;
+  if (localInState.length === 0 && national.length === 0) {
+    return (
+      <EmptyCoveragePanel
+        variant="unmapped"
+        title={`No movers listed for ${countyLabel} yet`}
+        description={`We have not assigned local or regional movers to ${countyLabel}, ${stateName} in this guide. That is a coverage gap — not proof that no licensed movers serve the area.`}
+        placeLabel={`${countyLabel}, ${stateCode}`}
+        primarySources={[
+          { href: '/verify-dot', label: 'Verify a DOT / MC number' },
+          {
+            href: FMCSA_SAFER_SEARCH_URL,
+            label: 'FMCSA SAFER Company Snapshot',
+            external: true,
+          },
+        ]}
+        widenLinks={[
+          { href: `/local-movers/${stateCode.toLowerCase()}`, label: `${stateName} local movers` },
+          { href: '/companies', label: 'Full interstate directory' },
+          { href: '/local-movers', label: 'All states' },
+        ]}
+        journeyLink={{
+          href: 'https://www.insurancetrusthub.com/destinations',
+          label: 'Insurance research if you’re relocating',
+          external: true,
+        }}
+      />
+    );
+  }
 
   return (
     <div className="space-y-10">
@@ -168,7 +199,16 @@ export function SegmentedCountyMoverLists({
             We only label a company local when it is intrastate-scoped or has clear headquarters
             presence near this county — not merely an HQ somewhere else in {stateName}. Regional and
             long-distance carriers below may still serve this market; confirm capability and licensing
-            before booking.
+            before booking. Verify USDOT on{' '}
+            <a
+              href={FMCSA_SAFER_SEARCH_URL}
+              className="font-semibold underline underline-offset-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              FMCSA SAFER
+            </a>
+            .
           </p>
         </div>
       )}
