@@ -32,6 +32,17 @@ Constant: `lib/network/standard-version.ts` → `ASK_NETWORK_STANDARD_VERSION`
 - **Do not bump for:** unrelated vertical content, local SEO pages, data refreshes
 - Live hosts expose `data-network-standard` on `<body>` for view-source checks
 
+### Hero intent (Priority 4 — vertical copy, version optional)
+
+| Hub | Hero intent question |
+|-----|----------------------|
+| Ask | What are you preparing for? |
+| Move | Where are you going? |
+| Lender | What are you trying to accomplish? |
+| Insurance | What are you trying to protect? |
+
+Hero copy is **vertical product intent**, not network chrome. Do **not** bump `ASK_NETWORK_STANDARD_VERSION` for hero-only wording unless the shared belonging line / Trust Mark / bar contract also changes.
+
 ### Trust Mark contract (Priority 3)
 
 | Field | Value |

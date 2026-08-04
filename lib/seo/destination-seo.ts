@@ -11,9 +11,9 @@ export const DESTINATIONS_INDEX_DESCRIPTION =
 
 /** Refined homepage meta — brand suffix applied via formatDocumentTitle / absoluteDocumentTitle */
 export const HOMEPAGE_SEO_TITLE =
-  'Where Are You Moving? ZIP Planner + FMCSA Movers';
+  'Where Are You Going? Route Planner + FMCSA Mover Research';
 export const HOMEPAGE_SEO_DESCRIPTION =
-  'Enter From & To ZIPs to find trusted movers for your route, estimate move size, and browse county guides. Independent FMCSA directory — no lead fees, no paid placements.';
+  'Where are you going? Enter From & To to research FMCSA-licensed movers for your route, estimate volume, and compare carriers. Independent directory — no lead fees, no paid placements.';
 
 export function buildCityHubMetadata(content: CityHubContent): Metadata {
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
