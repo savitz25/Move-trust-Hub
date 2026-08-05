@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { GitCompare, Heart, Package, Settings } from 'lucide-react';
+import { GitCompare, Heart, LogOut, Package, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
@@ -112,21 +112,35 @@ export function MyMoveDashboard({
     return (
       <div className="space-y-6">
         <MyMoveReports compact onPlanCount={setPlanCount} />
+        {/* Logged-out HQ strip — same family as Insurance / Lending */}
+        <div className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-medium text-foreground">Sign in (optional)</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Tools work without an account. Sign in to sync inventories and shortlists across
+              devices — guest plans on this device stay either way.
+            </p>
+          </div>
+          <Button
+            className="gap-2 shrink-0"
+            onClick={() => openSaveModal({ redirectPath: '/my-move', context: 'dashboard' })}
+          >
+            Sign in
+          </Button>
+        </div>
         <div className="rounded-2xl border border-dashed bg-muted/20 p-6 text-center sm:p-8">
           <h2 className="text-lg font-semibold">Sync across devices</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-            Sign in to keep inventories, mover shortlists, and comparisons in the cloud — your plans
-            on this device already appear above.
+            One Ask Trust Hub account across Move, Insurance, and Lending. Magic link by default —
+            or optional password. Also Google and Facebook.
           </p>
           <Button
             className="mt-4"
+            variant="outline"
             onClick={() => openSaveModal({ redirectPath: '/my-move', context: 'dashboard' })}
           >
             Save My Move
           </Button>
-          <p className="mt-3 text-xs text-muted-foreground">
-            Magic link by default — or optional password. Also Google and Facebook.
-          </p>
         </div>
       </div>
     );
@@ -147,6 +161,31 @@ export function MyMoveDashboard({
   const isDemoMode = demo;
   const greetingName = greetingNameFromEmail(data.user.email);
   const volumeTotal = totalInventoryVolume(data.inventories);
+
+  // Signed-in account strip (clear Sign out — Insurance/Lending parity)
+  const accountStrip = (
+    <div className="flex flex-col gap-3 rounded-2xl border border-primary/15 bg-card px-4 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p className="text-sm text-muted-foreground">
+          Signed in as{' '}
+          <span className="font-medium text-foreground">{user.email ?? data.user.email}</span>
+        </p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Research workspace only — guest tools still work without an account. Sign out anytime;
+          local plans on this device stay.
+        </p>
+      </div>
+      <Button
+        variant="outline"
+        size="sm"
+        className="gap-2 shrink-0"
+        onClick={() => void handleSignOut()}
+      >
+        <LogOut className="h-4 w-4" />
+        Sign out
+      </Button>
+    </div>
+  );
 
   const handleExport = async () => {
     setExporting(true);
@@ -323,6 +362,8 @@ export function MyMoveDashboard({
 
   return (
     <div className="space-y-6 pb-24 md:pb-8">
+      {accountStrip}
+
       <div className="flex items-center justify-end gap-2">
         {isDemoMode && (
           <span className="text-xs font-medium text-amber-700 bg-amber-500/10 border border-amber-500/20 rounded-full px-3 py-1">

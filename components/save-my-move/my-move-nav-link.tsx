@@ -1,9 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Heart } from 'lucide-react';
+import { Bookmark } from 'lucide-react';
 import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
-import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
 type MyMoveNavLinkProps = {
@@ -13,33 +12,25 @@ type MyMoveNavLinkProps = {
 };
 
 /**
- * Always visible My Move entry.
- * Badge only when signed in with account-scoped saved movers (never guest local counts).
- * No separate top-nav “Sign in” — HQ / modal handles auth.
+ * My Move header control — visual family matches My Insurance / My Lending
+ * (bookmark outline control). Badge only when signed in + account count > 0.
+ * No separate top-nav Sign in.
  */
 export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkProps) {
   const ctx = useSaveMyMoveOptional();
   const savedCount = ctx?.savedMoverSlugs?.size ?? 0;
-  // Hide badge while session loading so guest local never flashes
-  const showBadge =
-    Boolean(ctx?.user) && !ctx?.loading && savedCount > 0;
+  const showBadge = Boolean(ctx?.user) && !ctx?.loading && savedCount > 0;
 
-  const heartClass = cn(
-    'shrink-0 h-4 w-4',
-    showBadge && 'fill-primary text-primary'
-  );
-
-  const badge = showBadge ? (
-    <Badge
-      variant="default"
+  const badgeEl = showBadge ? (
+    <span
       className={cn(
-        'min-w-[1.25rem] justify-center px-1.5 py-0 text-[10px] leading-none tabular-nums',
-        variant === 'mobile-header' && 'absolute -top-0.5 -right-1 h-4 min-w-4 px-1 text-[9px]'
+        'rounded-full bg-primary px-1.5 py-0.5 text-[10px] font-semibold leading-none text-primary-foreground tabular-nums',
+        variant === 'mobile-header' && 'absolute -right-2 -top-1 px-1 text-[9px]'
       )}
       aria-label={`${savedCount} saved movers`}
     >
       {savedCount > 99 ? '99+' : savedCount}
-    </Badge>
+    </span>
   ) : null;
 
   if (variant === 'mobile-header') {
@@ -56,10 +47,17 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
           className
         )}
         aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
+        title={
+          ctx?.user
+            ? 'My Move — research HQ'
+            : 'My Move — research passport (sign in optional on HQ)'
+        }
       >
-        <Heart className={heartClass} aria-hidden="true" />
+        <span className="relative">
+          <Bookmark className="h-4 w-4" aria-hidden="true" />
+          {badgeEl}
+        </span>
         <span className="text-[10px] font-semibold leading-none tracking-tight">My Move</span>
-        {badge}
       </Link>
     );
   }
@@ -72,15 +70,15 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
           href="/my-move"
           onClick={onNavigate}
           className={cn(
-            'flex items-center gap-2 rounded-lg border border-primary/25 bg-primary/5 px-3 py-3',
-            'font-semibold text-primary hover:bg-primary/10 active:bg-primary/15 transition-colors',
+            'flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-3',
+            'font-semibold text-foreground hover:bg-muted/60 transition-colors',
             'min-h-[48px]',
             className
           )}
         >
-          <Heart className={heartClass} aria-hidden="true" />
+          <Bookmark className="h-4 w-4 text-primary" aria-hidden="true" />
           <span>My Move</span>
-          {badge}
+          {badgeEl}
         </Link>
         <Link
           prefetch={false}
@@ -94,14 +92,16 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
     );
   }
 
+  // Desktop — outline control matching Insurance/Lender “My [Hub]”
   return (
     <Link
       prefetch={false}
       href="/my-move"
       onClick={onNavigate}
       className={cn(
-        'relative inline-flex items-center gap-1.5 rounded-md px-2 py-1 -my-1',
-        'font-semibold text-primary hover:text-primary/90 hover:bg-primary/5 transition-colors whitespace-nowrap',
+        'relative inline-flex h-8 items-center gap-1.5 rounded-lg border border-border bg-background px-3',
+        'text-xs font-semibold text-foreground whitespace-nowrap',
+        'hover:border-primary/40 hover:bg-primary/5 transition-colors',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30',
         className
       )}
@@ -112,9 +112,9 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
           : 'My Move — research passport (sign in optional on HQ)'
       }
     >
-      <Heart className={heartClass} aria-hidden="true" />
+      <Bookmark className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
       <span>My Move</span>
-      {badge}
+      {badgeEl}
     </Link>
   );
 }

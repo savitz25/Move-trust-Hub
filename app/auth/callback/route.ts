@@ -5,19 +5,21 @@ import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
 import { pathAfterAuth } from '@/lib/auth/path-after-auth';
 import {
-  AUTH_CALLBACK_PATH,
-  PRODUCTION_SITE_ORIGIN as INSURANCE_ORIGIN,
-} from '@/lib/insurance/my-insurance/constants';
-import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
-import { insuranceCallbackHandoffUrl } from '@/lib/insurance/my-insurance/oauth-redirect';
+  INSURANCE_SITE_URL,
+  LENDER_SITE_URL,
+  isInsuranceStandaloneHost,
+} from '@/lib/hub/domains';
 
 /**
- * Move + shared-host OAuth callback.
+ * Move + network auth bridge callback.
  *
- * Insurance OAuth uses hub=insurance + next=/my-insurance (Move bridge).
- * We MUST hand off to ITH before exchangeCodeForSession so:
- * - PKCE verifier cookie (set on ITH at kickoff) is available
- * - Session cookies are written for insurancetrusthub.com, not Move
+ * Insurance and Lender OAuth/magic links often set redirect_to to this URL
+ * (Supabase Site URL is Move). We MUST hand off the code to the originating
+ * hub WITHOUT exchangeCodeForSession so session cookies are set on the correct domain.
+ *
+ * Markers:
+ * - hub=insurance | hub=lending
+ * - next=/my-insurance… | next=/my-lending…
  */
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -30,10 +32,11 @@ export async function GET(request: Request) {
   const hub = (searchParams.get('hub') || '').toLowerCase();
   const code = searchParams.get('code');
 
-  // --- Insurance isolation: never exchange OAuth codes for ITH on Move host ---
-  if (shouldHandoffToInsurance(host, nextRaw, hub, Boolean(code))) {
-    const handoff = insuranceCallbackHandoffUrl(url.search);
-    console.info('[auth/callback] insurance handoff', {
+  // --- Network isolation: never exchange OAuth codes for other hubs on Move ---
+  const handoffTarget = resolveNetworkHandoff({ host, nextRaw, hub, hasCode: Boolean(code) });
+  if (handoffTarget) {
+    const handoff = buildHandoffUrl(handoffTarget, url.search);
+    console.info('[auth/callback] network handoff (no exchange on Move)', {
       host,
       next: nextRaw,
       hub,
@@ -75,49 +78,76 @@ export async function GET(request: Request) {
         }
       }
       const destination = await pathAfterAuth(next);
+      // Safety: never keep other-hub paths on Move after exchange
       if (isInsuranceNextPath(destination)) {
-        return NextResponse.redirect(new URL(destination, INSURANCE_ORIGIN));
+        return NextResponse.redirect(new URL(destination, INSURANCE_SITE_URL));
+      }
+      if (isLendingNextPath(destination)) {
+        return NextResponse.redirect(new URL(destination, LENDER_SITE_URL));
       }
       return NextResponse.redirect(productionAuthRedirect(destination, request));
     }
 
     console.error('[auth/callback] exchangeCodeForSession failed', error.message);
 
-    // Last resort: OAuth likely started on ITH — forward unused code
+    // PKCE started on another hub — forward unused code
     if (isPkceCrossHostFailure(error.message)) {
-      return NextResponse.redirect(insuranceCallbackHandoffUrl(url.search));
+      if (isLendingNextPath(nextRaw) || hub === 'lending' || hub === 'lender') {
+        return NextResponse.redirect(buildHandoffUrl(LENDER_SITE_URL, url.search));
+      }
+      return NextResponse.redirect(buildHandoffUrl(INSURANCE_SITE_URL, url.search));
     }
   }
 
   return NextResponse.redirect(productionAuthRedirect(failPath, request));
 }
 
-function shouldHandoffToInsurance(
-  host: string,
-  nextRaw: string,
-  hub: string,
-  hasCode: boolean
-): boolean {
-  // Always hand off when request is already on the Insurance apex
-  if (isInsuranceStandaloneHost(host)) return true;
+function resolveNetworkHandoff(opts: {
+  host: string;
+  nextRaw: string;
+  hub: string;
+  hasCode: boolean;
+}): string | null {
+  const { host, nextRaw, hub, hasCode } = opts;
 
-  // Explicit Insurance OAuth bridge marker
-  if (hub === 'insurance') return true;
+  // Already on Insurance apex (monorepo edge cases)
+  if (isInsuranceStandaloneHost(host)) {
+    return INSURANCE_SITE_URL;
+  }
 
-  // Insurance post-login destination
-  if (isInsuranceNextPath(nextRaw)) return true;
+  const h = hub.trim();
+  if (h === 'insurance' || h === 'ith') return INSURANCE_SITE_URL;
+  if (h === 'lending' || h === 'lender' || h === 'lth') return LENDER_SITE_URL;
 
-  // OAuth code on Move with no next → almost always Insurance flow that lost query
-  // (Move OAuth always sets next=/my-move or /portal via sanitizePostLoginPath)
-  if (hasCode && !nextRaw.trim()) return true;
+  if (isInsuranceNextPath(nextRaw)) return INSURANCE_SITE_URL;
+  if (isLendingNextPath(nextRaw)) return LENDER_SITE_URL;
 
-  return false;
+  // Do NOT assume empty-next codes are Insurance — could be Lender Site URL fallback.
+  // Only hand off empty-next when explicitly marked; otherwise stay on Move.
+  void hasCode;
+  return null;
+}
+
+function buildHandoffUrl(siteOrigin: string, search: string): string {
+  const q = search.startsWith('?') ? search : search ? `?${search}` : '';
+  const dest = new URL(`/auth/callback${q}`, siteOrigin);
+  if (!dest.searchParams.get('next')) {
+    if (siteOrigin.includes('lender')) {
+      dest.searchParams.set('next', '/my-lending');
+      dest.searchParams.set('hub', 'lending');
+    } else if (siteOrigin.includes('insurance')) {
+      dest.searchParams.set('next', '/my-insurance');
+      dest.searchParams.set('hub', 'insurance');
+    } else {
+      dest.searchParams.set('next', '/my-move');
+    }
+  }
+  return dest.toString();
 }
 
 function isInsuranceNextPath(nextRaw: string): boolean {
   const next = nextRaw.trim().toLowerCase();
   if (!next) return false;
-  // Strip query for path checks
   const path = next.split('?')[0] || next;
   return (
     path === '/my-insurance' ||
@@ -131,6 +161,19 @@ function isInsuranceNextPath(nextRaw: string): boolean {
     path.startsWith('/calculators/') ||
     path === '/calculators' ||
     path.startsWith('/directory')
+  );
+}
+
+function isLendingNextPath(nextRaw: string): boolean {
+  const next = nextRaw.trim().toLowerCase();
+  if (!next) return false;
+  const path = next.split('?')[0] || next;
+  return (
+    path === '/my-lending' ||
+    path.startsWith('/my-lending/') ||
+    path.startsWith('/local-lenders') ||
+    path.startsWith('/fdic-insured-banks') ||
+    path.startsWith('/lenders/')
   );
 }
 
