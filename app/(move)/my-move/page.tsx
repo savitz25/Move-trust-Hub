@@ -33,12 +33,23 @@ export default async function MyMovePage({ searchParams }: PageProps) {
     }
     passwordEnabled = pw?.passwordEnabled ?? false;
 
-    // Soft-fail: empty/null is fine — client loads empty HQ without Retry wall
+    // Soft-fail: empty arrays are success; never leave signed-in users without a shell
     try {
       initialData = await getMyMoveDashboardData();
     } catch (err) {
       console.error('[my-move page] getMyMoveDashboardData', err);
       initialData = null;
+    }
+    if (!initialData) {
+      initialData = {
+        user: { id: user.id, email: user.email ?? '' },
+        profile: null,
+        inventories: [],
+        movers: [],
+        comparisons: [],
+        companyNames: {},
+        companySummaries: {},
+      };
     }
   }
 

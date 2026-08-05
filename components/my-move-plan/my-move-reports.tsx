@@ -8,6 +8,7 @@ import {
   Archive,
   ArchiveRestore,
   FileText,
+  LogOut,
   MapPin,
   MoreHorizontal,
   Package,
@@ -22,6 +23,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
+import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import {
   archiveLocalPlan,
   deleteLocalPlan,
@@ -63,6 +65,8 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
   const [menuId, setMenuId] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
   const [hydrated, setHydrated] = useState(false);
+  const [cloudPlansWarning, setCloudPlansWarning] = useState<string | null>(null);
+  const [cloudRetryToken, setCloudRetryToken] = useState(0);
 
   const refresh = useCallback(() => {
     // Capture current wizard session into library if meaningful
@@ -75,20 +79,37 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
     setHydrated(true);
   }, [refresh]);
 
-  // Pull cloud plans when signed in — soft-fail keeps local/guest plans
+  // Pull cloud plans when signed in — soft-fail keeps local/guest plans (empty = success)
   useEffect(() => {
-    if (!user) return;
+    if (!user) {
+      setCloudPlansWarning(null);
+      return;
+    }
     let cancelled = false;
     startTransition(async () => {
       try {
-        const { plans: cloud, error } = await listCloudMovePlansAction({
-          includeArchived: true,
-        });
+        // Post-SSO: one soft retry if session not on server yet
+        let cloud: Awaited<ReturnType<typeof listCloudMovePlansAction>>['plans'] = [];
+        let error: string | undefined;
+        for (let attempt = 0; attempt < 2; attempt++) {
+          const res = await listCloudMovePlansAction({ includeArchived: true });
+          cloud = res.plans;
+          error = res.error;
+          if (!error) break;
+          if (attempt === 0 && /JWT|auth|401|session/i.test(error)) {
+            await new Promise((r) => setTimeout(r, 450));
+            continue;
+          }
+          break;
+        }
         if (cancelled) return;
         if (error) {
           console.warn('[MyMoveReports] cloud list soft-fail', error);
-          // Keep local plans; do not toast as fatal
+          setCloudPlansWarning('Cloud plans unavailable. Local plans on this device still work.');
+        } else {
+          setCloudPlansWarning(null);
         }
+        // Empty cloud array is success — never treat as error
         if (cloud.length) {
           mergeCloudPlansIntoLocal(cloud);
         }
@@ -112,6 +133,7 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
       } catch (err) {
         console.error('[MyMoveReports] cloud sync', err);
         if (!cancelled) {
+          setCloudPlansWarning('Cloud plans unavailable. Local plans on this device still work.');
           setPlans(listLocalPlans({ includeArchived: showArchived }));
         }
       }
@@ -119,7 +141,7 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
     return () => {
       cancelled = true;
     };
-  }, [user, showArchived]);
+  }, [user, showArchived, cloudRetryToken]);
 
   const visible = useMemo(
     () =>
@@ -227,6 +249,23 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
     });
   }
 
+  const cloudBanner =
+    cloudPlansWarning && user ? (
+      <div className="flex flex-col gap-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs text-amber-900">{cloudPlansWarning}</p>
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          className="shrink-0"
+          disabled={pending}
+          onClick={() => setCloudRetryToken((n) => n + 1)}
+        >
+          Retry
+        </Button>
+      </div>
+    ) : null;
+
   if (!hydrated) {
     return (
       <div className="h-32 animate-pulse rounded-2xl border bg-muted/20" aria-busy="true" />
@@ -290,6 +329,8 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
             )}
           </div>
         </div>
+
+        {cloudBanner ? <div className="px-5 pt-3 sm:px-6">{cloudBanner}</div> : null}
 
         {!hasPlans ? (
           <div className="px-5 py-8 text-center sm:px-6 sm:py-10">
@@ -446,8 +487,67 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
     );
   }
 
+  async function handleReportsSignOut() {
+    try {
+      const supabase = createBrowserSupabaseClient();
+      if (supabase) {
+        await supabase.auth.signOut({ scope: 'global' });
+      }
+    } catch {
+      // still navigate
+    }
+    try {
+      for (const key of Object.keys(window.localStorage)) {
+        if (key.startsWith('sb-') && key.includes('auth')) {
+          window.localStorage.removeItem(key);
+        }
+      }
+    } catch {
+      // private mode
+    }
+    window.location.assign('/');
+  }
+
   return (
     <div className="space-y-6">
+      {/* Auth chrome always visible on full reports page */}
+      {user ? (
+        <div className="flex flex-col gap-3 rounded-2xl border border-primary/15 bg-card px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted-foreground">
+            Signed in as{' '}
+            <span className="font-medium text-foreground break-all">
+              {user.email ?? 'Account'}
+            </span>
+          </p>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="gap-2 shrink-0"
+            onClick={() => void handleReportsSignOut()}
+          >
+            <LogOut className="h-4 w-4" />
+            Sign out
+          </Button>
+        </div>
+      ) : (
+        <div className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted-foreground">
+            Sign in to sync plans across devices. Guest plans stay on this device.
+          </p>
+          <Button
+            type="button"
+            size="sm"
+            className="shrink-0"
+            onClick={() =>
+              openSaveModal({ redirectPath: '/my-move/reports', context: 'dashboard' })
+            }
+          >
+            Sign in
+          </Button>
+        </div>
+      )}
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
@@ -459,21 +559,6 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
           <p className="mt-2 max-w-2xl text-muted-foreground leading-relaxed">
             Every plan you build while exploring Move Trust Hub lives here — route, inventory,
             shortlist, and readiness. Open any plan to continue, re-send estimates, or edit.
-            {!user ? (
-              <>
-                {' '}
-                <button
-                  type="button"
-                  className="font-medium text-primary hover:underline"
-                  onClick={() =>
-                    openSaveModal({ redirectPath: '/my-move/reports', context: 'dashboard' })
-                  }
-                >
-                  Sign in
-                </button>{' '}
-                to sync plans across devices.
-              </>
-            ) : null}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -485,6 +570,8 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
           </Button>
         </div>
       </div>
+
+      {cloudBanner}
 
       <div className="flex flex-wrap items-center gap-2">
         <button

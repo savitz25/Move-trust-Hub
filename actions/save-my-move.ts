@@ -432,13 +432,14 @@ export async function getMyMoveDashboardData(): Promise<MyMoveDashboardPayload |
       companyNames,
       companySummaries,
       cloudSyncWarning:
-        warnings.length > 0 ? 'Cloud sync unavailable for some data.' : undefined,
+        warnings.length > 0
+          ? 'Cloud plans unavailable. Tools on this device still work.'
+          : undefined,
     };
   } catch (e) {
     console.error('[getMyMoveDashboardData] fatal', e);
     return emptyDashboardPayload(user, {
-      cloudSyncWarning:
-        'Cloud sync unavailable. You can still use tools on this device.',
+      cloudSyncWarning: 'Cloud plans unavailable. Tools on this device still work.',
     });
   }
 }

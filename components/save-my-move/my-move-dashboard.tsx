@@ -49,6 +49,22 @@ type Props = {
   passwordEnabled?: boolean;
 };
 
+function emptyHqPayload(
+  user: { id: string; email?: string | null },
+  warning?: string
+): MyMoveDashboardPayload {
+  return {
+    user: { id: user.id, email: user.email ?? '' },
+    profile: null,
+    inventories: [],
+    movers: [],
+    comparisons: [],
+    companyNames: {},
+    companySummaries: {},
+    cloudSyncWarning: warning,
+  };
+}
+
 export function MyMoveDashboard({
   initialData,
   demo = false,
@@ -57,7 +73,10 @@ export function MyMoveDashboard({
   const { user, loading, openSaveModal } = useSaveMyMove();
   const [data, setData] = useState(initialData);
   const [dataLoading, setDataLoading] = useState(false);
-  const [cloudWarning, setCloudWarning] = useState<string | null>(null);
+  const [cloudWarning, setCloudWarning] = useState<string | null>(
+    initialData?.cloudSyncWarning ?? null
+  );
+  const [retryToken, setRetryToken] = useState(0);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [deleting, setDeleting] = useState(false);
@@ -66,12 +85,44 @@ export function MyMoveDashboard({
   const [planCount, setPlanCount] = useState(0);
   const plansPrimary = planCount > 0;
 
+  const handleSignOut = async () => {
+    // Always leave a clean page — never leave the user on a crashed client tree.
+    try {
+      setSettingsOpen(false);
+      const supabase = createBrowserSupabaseClient();
+      if (supabase) {
+        await supabase.auth.signOut({ scope: 'global' });
+      }
+    } catch {
+      // Session may already be gone; still navigate away.
+    }
+    try {
+      for (const key of Object.keys(window.localStorage)) {
+        if (key.startsWith('sb-') && key.includes('auth')) {
+          window.localStorage.removeItem(key);
+        }
+      }
+    } catch {
+      // private mode / blocked storage
+    }
+    window.location.assign('/');
+  };
+
+  const retryCloudLoad = () => {
+    setCloudWarning(null);
+    setData(null);
+    setRetryToken((n) => n + 1);
+  };
+
   useEffect(() => {
     if (demo && user) {
       setData(buildMyMoveDemoData(user.email ?? 'you@example.com'));
+      setCloudWarning(null);
       return;
     }
-    if (!user || data) return;
+    if (!user) return;
+    // SSR already gave us a shell — skip client fetch unless Retry was requested
+    if (retryToken === 0 && initialData != null) return;
 
     let cancelled = false;
 
@@ -79,26 +130,26 @@ export function MyMoveDashboard({
       setDataLoading(true);
       setCloudWarning(null);
 
-      // Post-SSO: session may not be on the server action cookie yet — soft retry once
+      // Post-SSO: wait for session; one soft retry on transient null/401
       for (let attempt = 0; attempt < 2 && !cancelled; attempt++) {
         try {
           const next = await getMyMoveDashboardData();
           if (cancelled) return;
           if (next) {
             setData(next);
-            if (next.cloudSyncWarning) setCloudWarning(next.cloudSyncWarning);
+            setCloudWarning(next.cloudSyncWarning ?? null);
             setDataLoading(false);
             return;
           }
-          // null = not authenticated on server yet
+          // null = not authenticated on server yet (or transient 401)
           if (attempt === 0) {
-            await new Promise((r) => setTimeout(r, 400));
+            await new Promise((r) => setTimeout(r, 450));
             continue;
           }
         } catch (err) {
           console.error('[MyMoveDashboard] getMyMoveDashboardData', err);
           if (attempt === 0) {
-            await new Promise((r) => setTimeout(r, 400));
+            await new Promise((r) => setTimeout(r, 450));
             continue;
           }
         }
@@ -106,17 +157,12 @@ export function MyMoveDashboard({
 
       if (cancelled) return;
       // Soft empty HQ — never hard Retry wall for empty / soft cloud failure
-      setData({
-        user: { id: user!.id, email: user!.email ?? '' },
-        profile: null,
-        inventories: [],
-        movers: [],
-        comparisons: [],
-        companyNames: {},
-        companySummaries: {},
-        cloudSyncWarning: 'Cloud sync unavailable. Tools on this device still work.',
-      });
-      setCloudWarning('Cloud sync unavailable. Tools on this device still work.');
+      const soft = emptyHqPayload(
+        user!,
+        'Cloud plans unavailable. Tools on this device still work.'
+      );
+      setData(soft);
+      setCloudWarning(soft.cloudSyncWarning ?? null);
       setDataLoading(false);
     }
 
@@ -124,28 +170,40 @@ export function MyMoveDashboard({
     return () => {
       cancelled = true;
     };
-  }, [user, data, demo]);
+  }, [user, demo, retryToken, initialData]);
+
+  // Signed-in shell: always have payload so HQ renders (empty = success)
+  const viewData =
+    data ??
+    (user
+      ? emptyHqPayload(user)
+      : null);
 
   const readiness = useMemo(() => {
-    if (!data) {
+    if (!viewData) {
       return computeMoveReadiness({ inventoryCount: 0, moverCount: 0, comparisonCount: 0 });
     }
     return computeMoveReadiness({
-      inventoryCount: data.inventories.length,
-      moverCount: data.movers.length,
-      comparisonCount: data.comparisons.length,
+      inventoryCount: viewData.inventories.length,
+      moverCount: viewData.movers.length,
+      comparisonCount: viewData.comparisons.length,
     });
-  }, [data]);
+  }, [viewData]);
 
-  if (loading || (user && !data && dataLoading && !demo)) {
-    return <div className="h-48 rounded-2xl border bg-muted/20 animate-pulse" aria-busy="true" />;
+  // Brief session resolve only (no account yet to show)
+  if (loading && !user) {
+    return (
+      <div className="h-48 rounded-2xl border bg-muted/20 animate-pulse" aria-busy="true">
+        <span className="sr-only">Checking sign-in…</span>
+      </div>
+    );
   }
 
+  // --- Signed out: guest HQ + Sign in ---
   if (!user) {
     return (
       <div className="space-y-6">
         <MyMoveReports compact onPlanCount={setPlanCount} />
-        {/* Logged-out HQ strip — same family as Insurance / Lending */}
         <div className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium text-foreground">Sign in (optional)</p>
@@ -179,34 +237,42 @@ export function MyMoveDashboard({
     );
   }
 
-  if (!data) {
-    return (
-      <div className="h-48 rounded-2xl border bg-muted/20 animate-pulse" aria-busy="true">
-        <span className="sr-only">Loading your Move HQ…</span>
-      </div>
-    );
-  }
-
+  // --- Signed in: ALWAYS account chrome (even while cloud loads / soft-fails) ---
   const isDemoMode = demo;
-  const greetingName = greetingNameFromEmail(data.user.email);
-  const volumeTotal = totalInventoryVolume(data.inventories);
+  const shell = viewData!;
+  const greetingName = greetingNameFromEmail(user.email ?? shell.user.email);
+  const volumeTotal = totalInventoryVolume(shell.inventories);
+  const bannerText = cloudWarning || shell.cloudSyncWarning || null;
 
-  // Signed-in account strip (clear Sign out — Insurance/Lending parity)
   const accountStrip = (
     <div className="flex flex-col gap-3 rounded-2xl border border-primary/15 bg-card px-4 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-      <div>
+      <div className="min-w-0">
         <p className="text-sm text-muted-foreground">
           Signed in as{' '}
-          <span className="font-medium text-foreground">{user.email ?? data.user.email}</span>
+          <span className="font-medium text-foreground break-all">
+            {user.email ?? shell.user.email || 'Account'}
+          </span>
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
           Research workspace only — guest tools still work without an account. Sign out anytime;
           local plans on this device stay.
         </p>
-        {cloudWarning || data.cloudSyncWarning ? (
-          <p className="mt-2 text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-md px-2 py-1.5">
-            {cloudWarning || data.cloudSyncWarning}
-          </p>
+        {bannerText ? (
+          <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center">
+            <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded-md px-2 py-1.5 flex-1">
+              {bannerText}
+            </p>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="shrink-0"
+              onClick={retryCloudLoad}
+              disabled={dataLoading}
+            >
+              Retry
+            </Button>
+          </div>
         ) : null}
       </div>
       <Button
@@ -252,31 +318,6 @@ export function MyMoveDashboard({
     } finally {
       setDeleting(false);
     }
-  };
-
-  const handleSignOut = async () => {
-    // Always leave a clean page — never leave the user on a crashed client tree.
-    // Reload of /my-move used to race DeferredSaveMyMove and throw useSaveMyMove.
-    try {
-      setSettingsOpen(false);
-      const supabase = createBrowserSupabaseClient();
-      if (supabase) {
-        await supabase.auth.signOut({ scope: 'global' });
-      }
-    } catch {
-      // Session may already be gone; still navigate away.
-    }
-    try {
-      // Clear any leftover auth storage keys that can confuse a half-signed-out client.
-      for (const key of Object.keys(window.localStorage)) {
-        if (key.startsWith('sb-') && key.includes('auth')) {
-          window.localStorage.removeItem(key);
-        }
-      }
-    } catch {
-      // private mode / blocked storage
-    }
-    window.location.assign('/');
   };
 
   const handleDownloadPdf = (
@@ -353,7 +394,7 @@ export function MyMoveDashboard({
       toast.message('Demo mode — rename not saved');
       return;
     }
-    const inv = data.inventories.find((i) => i.id === id);
+    const inv = shell.inventories.find((i) => i.id === id);
     if (!inv) return;
     await saveInventoryAction({
       id,
@@ -376,7 +417,7 @@ export function MyMoveDashboard({
       toast.message('Demo mode — duplicate not saved');
       return;
     }
-    const inv = data.inventories.find((i) => i.id === id);
+    const inv = shell.inventories.find((i) => i.id === id);
     if (!inv) return;
     await saveInventoryAction({
       name: `${name} (copy)`,
@@ -397,6 +438,12 @@ export function MyMoveDashboard({
   return (
     <div className="space-y-6 pb-24 md:pb-8">
       {accountStrip}
+
+      {dataLoading && !data ? (
+        <p className="text-xs text-muted-foreground" aria-live="polite">
+          Syncing cloud data…
+        </p>
+      ) : null}
 
       <div className="flex items-center justify-end gap-2">
         {isDemoMode && (
@@ -419,7 +466,7 @@ export function MyMoveDashboard({
       <MoveHqHero
         greetingName={greetingName}
         totalVolume={volumeTotal}
-        inventoryCount={data.inventories.length}
+        inventoryCount={shell.inventories.length}
         readiness={readiness}
       />
 
@@ -438,7 +485,7 @@ export function MyMoveDashboard({
         <section
           className={cn(
             'lg:col-span-7 space-y-4',
-            plansPrimary && data.inventories.length === 0 && 'order-2'
+            plansPrimary && shell.inventories.length === 0 && 'order-2'
           )}
           aria-labelledby="inventories-heading"
         >
@@ -459,7 +506,7 @@ export function MyMoveDashboard({
               </span>
             ) : null}
           </div>
-          {data.inventories.length === 0 ? (
+          {shell.inventories.length === 0 ? (
             <MoveHqEmptyState
               icon={Package}
               title="No inventories yet"
@@ -474,7 +521,7 @@ export function MyMoveDashboard({
             />
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {data.inventories.map((inv) => {
+              {shell.inventories.map((inv) => {
                 const items = parseInventoryJson(inv.inventory);
                 return (
                   <InventoryCard
@@ -517,7 +564,7 @@ export function MyMoveDashboard({
                 </span>
               ) : null}
             </div>
-            {data.movers.length === 0 ? (
+            {shell.movers.length === 0 ? (
               <MoveHqEmptyState
                 icon={Heart}
                 title="No saved movers"
@@ -532,16 +579,16 @@ export function MyMoveDashboard({
               />
             ) : (
               <div className="space-y-3">
-                {data.movers.map((mover) => (
+                {shell.movers.map((mover) => (
                   <MoverCard
                     key={mover.id}
                     id={mover.id}
                     companySlug={mover.company_slug}
                     companyName={
-                      data.companyNames[mover.company_slug] ??
+                      shell.companyNames[mover.company_slug] ??
                       mover.company_slug.replace(/-/g, ' ')
                     }
-                    summary={data.companySummaries[mover.company_slug]}
+                    summary={shell.companySummaries[mover.company_slug]}
                     notes={mover.notes}
                     selected={selectedMovers.includes(mover.company_slug)}
                     onToggleSelect={toggleMoverSelect}
@@ -576,7 +623,7 @@ export function MyMoveDashboard({
                 </span>
               ) : null}
             </div>
-            {data.comparisons.length === 0 ? (
+            {shell.comparisons.length === 0 ? (
               <MoveHqEmptyState
                 icon={GitCompare}
                 title="No comparisons saved"
@@ -591,14 +638,14 @@ export function MyMoveDashboard({
               />
             ) : (
               <div className="space-y-3">
-                {data.comparisons.map((comp) => (
+                {shell.comparisons.map((comp) => (
                   <ComparisonCard
                     key={comp.id}
                     id={comp.id}
                     name={comp.name}
                     slugs={comp.company_slugs ?? []}
-                    companyNames={data.companyNames}
-                    companySummaries={data.companySummaries}
+                    companyNames={shell.companyNames}
+                    companySummaries={shell.companySummaries}
                     onDelete={(id) => refreshAfter(() => deleteComparisonAction(id))}
                     demo={isDemoMode}
                   />
@@ -611,16 +658,16 @@ export function MyMoveDashboard({
 
       <CompareBar
         selectedSlugs={selectedMovers}
-        companyNames={data.companyNames}
+        companyNames={shell.companyNames}
         onClear={() => setSelectedMovers([])}
       />
 
       <SettingsDrawer
         open={settingsOpen}
         onOpenChange={setSettingsOpen}
-        email={data.user.email}
-        marketingOptIn={data.profile?.marketing_opt_in ?? false}
-        moverAlertsOptIn={data.profile?.mover_alerts_opt_in ?? false}
+        email={user.email ?? shell.user.email}
+        marketingOptIn={shell.profile?.marketing_opt_in ?? false}
+        moverAlertsOptIn={shell.profile?.mover_alerts_opt_in ?? false}
         passwordEnabled={passwordEnabled}
         exporting={exporting}
         deleting={deleting}
