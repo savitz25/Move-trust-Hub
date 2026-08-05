@@ -7,46 +7,77 @@ type Props = {
   fallbackTitle?: string;
   /** When set, primary action reloads or re-runs instead of only resetting boundary state. */
   onRetry?: () => void;
+  /** Optional recovery (e.g. clear corrupt localStorage) before retry */
+  onResetStorage?: () => void;
 };
 
-type State = { hasError: boolean };
+type State = { hasError: boolean; message: string | null };
 
 /** Lightweight boundary — no shadcn Button / logger in the happy path bundle. */
 export class ErrorBoundary extends React.Component<Props, State> {
-  state: State = { hasError: false };
+  state: State = { hasError: false, message: null };
 
-  static getDerivedStateFromError(): State {
-    return { hasError: true };
+  static getDerivedStateFromError(error: Error): State {
+    return {
+      hasError: true,
+      message: error?.message ? String(error.message) : 'Unknown error',
+    };
   }
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
     if (typeof console !== 'undefined') {
-      console.error('ui.error_boundary', error.message, info.componentStack);
+      console.error('ui.error_boundary', error?.message, error, info.componentStack);
     }
   }
 
   render() {
     if (this.state.hasError) {
+      const isDev = process.env.NODE_ENV === 'development';
       return (
-        <div className="container mx-auto max-w-lg px-4 py-16 text-center">
+        <div className="mx-auto max-w-lg px-4 py-12 text-center">
           <h2 className="text-xl font-semibold">
             {this.props.fallbackTitle ?? 'Something went wrong'}
           </h2>
           <p className="mt-2 text-sm text-[#3d4f63]">
-            We hit a temporary issue loading this page. Try refreshing, or contact us if
-            the problem persists.
+            We hit a temporary issue loading this section. Try again, or reset local data if the
+            problem persists.
           </p>
-          <button
-            type="button"
-            className="mt-6 inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            onClick={() => {
-              this.setState({ hasError: false }, () => {
-                this.props.onRetry?.();
-              });
-            }}
-          >
-            Try again
-          </button>
+          {isDev && this.state.message ? (
+            <p className="mt-3 rounded-md border border-destructive/30 bg-destructive/5 px-3 py-2 text-left font-mono text-xs text-destructive">
+              {this.state.message}
+            </p>
+          ) : null}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <button
+              type="button"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              onClick={() => {
+                this.setState({ hasError: false, message: null }, () => {
+                  this.props.onRetry?.();
+                });
+              }}
+            >
+              Try again
+            </button>
+            {this.props.onResetStorage ? (
+              <button
+                type="button"
+                className="inline-flex min-h-11 items-center justify-center rounded-md border px-4 text-sm font-medium"
+                onClick={() => {
+                  try {
+                    this.props.onResetStorage?.();
+                  } catch {
+                    // ignore
+                  }
+                  this.setState({ hasError: false, message: null }, () => {
+                    this.props.onRetry?.();
+                  });
+                }}
+              >
+                Reset local data
+              </button>
+            ) : null}
+          </div>
         </div>
       );
     }
