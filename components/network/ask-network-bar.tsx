@@ -7,6 +7,8 @@ import {
   NETWORK_HUBS,
   type NetworkHubId,
 } from '@/lib/network/ask-trust-hub';
+import { networkHubHref, type HubLinkId } from '@/lib/network/handoff-href';
+import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
 import { cn } from '@/lib/utils';
 
 type AskNetworkBarProps = {
@@ -15,20 +17,25 @@ type AskNetworkBarProps = {
 };
 
 /**
- * Slim network bar above primary hub headers (Move / Insurance / Lender).
- * Does not duplicate product mega-nav or sales CTAs.
+ * Slim network bar. Signed-in → silent SSO handoff to other specialist hubs.
  */
 export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
   const [open, setOpen] = useState(false);
+  const ctx = useSaveMyMoveOptional();
+  const signedIn = Boolean(ctx?.user) && !ctx?.loading;
 
   const links = [
-    ...NETWORK_HUBS.map((h) => ({
-      id: h.id as string,
-      label: h.shortLabel,
-      href: h.url,
-      external: true,
-      active: h.id === activeHub,
-    })),
+    ...NETWORK_HUBS.map((h) => {
+      const id = h.id as HubLinkId;
+      const active = h.id === activeHub;
+      return {
+        id: h.id as string,
+        label: h.shortLabel,
+        href: active ? h.url : networkHubHref(id, signedIn),
+        external: !signedIn || active,
+        active,
+      };
+    }),
     {
       id: 'standards',
       label: 'Standards',
@@ -55,7 +62,6 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
           <span className="sm:hidden">Network</span>
         </a>
 
-        {/* Desktop links */}
         <nav
           aria-label="Ask Trust Hub network"
           className="hidden items-center gap-1 sm:flex"
@@ -74,7 +80,7 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
                 key={link.id}
                 href={link.href}
                 className="rounded-md px-2.5 py-1 font-medium hover:bg-background/80 hover:text-foreground"
-                rel="noopener noreferrer"
+                rel={link.external ? 'noopener noreferrer' : undefined}
               >
                 {link.label}
               </a>
@@ -82,7 +88,6 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
           )}
         </nav>
 
-        {/* Mobile disclosure */}
         <div className="relative sm:hidden">
           <button
             type="button"
@@ -113,7 +118,7 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
                     key={link.id}
                     href={link.href}
                     className="block px-3 py-2 hover:bg-muted"
-                    rel="noopener noreferrer"
+                    rel={link.external ? 'noopener noreferrer' : undefined}
                     onClick={() => setOpen(false)}
                   >
                     {link.label}

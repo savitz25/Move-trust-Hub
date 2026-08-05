@@ -1,241 +1,235 @@
-/**
- * Step 3 — Contextual network handoffs (hub → hub research only).
- * Editorial modules for real decision moments — not sitewide cross-sell.
- */
+import 'server-only';
 
-import { hubPath } from '@/lib/hub/paths';
-import { networkHubById, type NetworkHubId } from '@/lib/network/ask-trust-hub';
+import { createHash, randomBytes } from 'crypto';
+import { createAdminClient } from '@/lib/supabase/admin';
+import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 
-export type NetworkHandoffContext =
-  | 'move-destination'
-  | 'move-plan'
-  | 'lender-closing'
-  | 'lender-calculator'
-  | 'lender-directory'
-  | 'insurance-home'
-  | 'insurance-renters'
-  | 'insurance-destination';
+export type NetworkHubId = 'move' | 'insurance' | 'lender' | 'ask';
 
-export type NetworkHandoffGeography = {
-  state?: string;
-  stateCode?: string;
-  stateSlug?: string;
-  county?: string;
-  city?: string;
+export const HANDOFF_TTL_SECONDS = 90;
+export const HANDOFF_RATE_LIMIT_PER_MINUTE = 10;
+
+export const HUB_ORIGINS: Record<NetworkHubId, string> = {
+  move: 'https://www.movetrusthub.com',
+  insurance: 'https://www.insurancetrusthub.com',
+  lender: 'https://www.lendertrusthub.com',
+  ask: 'https://www.asktrusthub.com',
 };
 
-export type NetworkHandoffVariant = 'inline' | 'card' | 'compact';
-
-export type NetworkHandoffLink = {
-  href: string;
-  label: string;
-  hub: NetworkHubId;
+export const HUB_DEFAULT_PATH: Record<NetworkHubId, string> = {
+  move: '/my-move',
+  insurance: '/my-insurance',
+  lender: '/my-lending',
+  ask: '/',
 };
 
-export type NetworkHandoffContent = {
-  label: string;
-  body: string;
-  links: NetworkHandoffLink[];
-};
+export const CURRENT_HUB: NetworkHubId = 'move';
 
-function placeLabel(geo?: NetworkHandoffGeography): string | null {
-  if (!geo) return null;
-  if (geo.city && (geo.stateCode || geo.state)) {
-    return `${geo.city}, ${geo.stateCode || geo.state}`;
-  }
-  if (geo.city) return geo.city;
-  if (geo.state) return geo.state;
-  if (geo.stateCode) return geo.stateCode;
-  return null;
+export function isNetworkHubId(v: string | null | undefined): v is NetworkHubId {
+  return v === 'move' || v === 'insurance' || v === 'lender' || v === 'ask';
 }
 
-/** Lender state pages use full-name slugs (e.g. florida). Only when known. */
-function lenderStateHref(geo?: NetworkHandoffGeography): string {
-  const slug = geo?.stateSlug?.toLowerCase().replace(/\s+/g, '-');
-  if (slug && /^[a-z-]+$/.test(slug) && slug.length > 1) {
-    return hubPath('lender', `/local-lenders/${slug}`);
-  }
-  return hubPath('lender', '/local-lenders');
+export function hashHandoffCode(code: string): string {
+  return createHash('sha256').update(code, 'utf8').digest('hex');
 }
 
-function insuranceDirectoryHref(geo?: NetworkHandoffGeography): string {
-  const code = geo?.stateCode?.toUpperCase();
-  if (code && /^[A-Z]{2}$/.test(code)) {
-    return hubPath('insurance', `/directory?state=${code}`);
-  }
-  return hubPath('insurance', '/directory');
+export function generateHandoffCode(): string {
+  return randomBytes(32).toString('base64url');
 }
 
-function moveVerifyHref(): string {
-  return hubPath('move', '/verify-dot');
-}
-
-function moveHomeHref(): string {
-  return hubPath('move', '/');
-}
-
-/**
- * Resolve editorial body + 1–2 outbound research links for a handoff context.
- */
-export function resolveNetworkHandoff(
-  context: NetworkHandoffContext,
-  geography?: NetworkHandoffGeography
-): NetworkHandoffContent {
-  const place = placeLabel(geography);
-  /** Journey product language (Priority 1) — not generic cross-sell. */
-  const label = 'Next in your journey';
-
-  switch (context) {
-    case 'move-destination': {
-      const where = place ? `Your move to ${place} is one part of settling in.` : 'Your move is one part of settling in.';
-      return {
-        label,
-        body: `${where} Next for many households: homeowners or renters coverage research, and financing if you’re buying — independent only, no paid placements.`,
-        links: [
-          {
-            href: insuranceDirectoryHref(geography),
-            label: 'Research homeowners or renters coverage',
-            hub: 'insurance',
-          },
-          {
-            href: lenderStateHref(geography),
-            label: place
-              ? `Research lenders near ${place}`
-              : 'Research NMLS-verified lenders',
-            hub: 'lender',
-          },
-        ],
-      };
-    }
-    case 'move-plan': {
-      return {
-        label,
-        body: 'Mover shortlist ready. Settling in often means coverage next — and financing if this move is a purchase. Independent research only.',
-        links: [
-          {
-            href: insuranceDirectoryHref(geography),
-            label: 'Research homeowners or renters coverage',
-            hub: 'insurance',
-          },
-          {
-            href: lenderStateHref(geography),
-            label: 'Research NMLS-verified lenders',
-            hub: 'lender',
-          },
-        ],
-      };
-    }
-    case 'lender-closing': {
-      return {
-        label,
-        body: 'Financing is one part of buying. Lenders often require homeowners insurance — research DOI-licensed options independently (verify licenses on the regulator).',
-        links: [
-          {
-            href: insuranceDirectoryHref(geography),
-            label: 'Research DOI-licensed insurance options',
-            hub: 'insurance',
-          },
-        ],
-      };
-    }
-    case 'lender-calculator': {
-      return {
-        label,
-        body: 'A payment estimate is one step in buying. If you’re also relocating, research FMCSA-verified movers before you book.',
-        links: [
-          {
-            href: moveVerifyHref(),
-            label: 'Research FMCSA-verified movers',
-            hub: 'move',
-          },
-          {
-            href: insuranceDirectoryHref(geography),
-            label: 'Research homeowners insurance',
-            hub: 'insurance',
-          },
-        ],
-      };
-    }
-    case 'lender-directory': {
-      return {
-        label,
-        body: 'Financing is one part of buying. Next for many buyers: homeowners coverage research, then the move if you’re relocating.',
-        links: [
-          {
-            href: insuranceDirectoryHref(geography),
-            label: 'Research homeowners insurance options',
-            hub: 'insurance',
-          },
-          {
-            href: moveHomeHref(),
-            label: 'Research interstate movers',
-            hub: 'move',
-          },
-        ],
-      };
-    }
-    case 'insurance-home': {
-      return {
-        label,
-        body: place
-          ? `If you’re relocating or buying near ${place}, financing and the move are related research steps on specialist Trust Hubs.`
-          : 'If you’re relocating or buying, financing and the move are related research steps on specialist Trust Hubs.',
-        links: [
-          {
-            href: lenderStateHref(geography),
-            label: 'Research NMLS-verified lenders',
-            hub: 'lender',
-          },
-          {
-            href: moveVerifyHref(),
-            label: 'Research licensed movers',
-            hub: 'move',
-          },
-        ],
-      };
-    }
-    case 'insurance-renters': {
-      return {
-        label,
-        body: place
-          ? `If you’re relocating to ${place}, research licensed movers before you sign a lease or book a truck.`
-          : 'If you’re relocating, research licensed movers before you sign a lease or book a truck.',
-        links: [
-          {
-            href: moveVerifyHref(),
-            label: 'Research licensed movers',
-            hub: 'move',
-          },
-        ],
-      };
-    }
-    case 'insurance-destination': {
-      return {
-        label,
-        body: place
-          ? `If you’re relocating to ${place} — or buying there — research movers and, if purchase, lenders on the specialist hubs.`
-          : 'If you’re relocating or buying, research movers and lenders on the specialist hubs.',
-        links: [
-          {
-            href: moveVerifyHref(),
-            label: 'Research licensed movers',
-            hub: 'move',
-          },
-          {
-            href: lenderStateHref(geography),
-            label: 'Research NMLS-verified lenders',
-            hub: 'lender',
-          },
-        ],
-      };
-    }
-    default: {
-      const _exhaustive: never = context;
-      return _exhaustive;
-    }
+export function sanitizeHandoffPath(
+  path: string | null | undefined,
+  toHub: NetworkHubId
+): string {
+  const fallback = HUB_DEFAULT_PATH[toHub];
+  if (!path || !path.startsWith('/') || path.startsWith('//')) return fallback;
+  if (path.startsWith('/auth/')) return fallback;
+  if (path.length > 512) return fallback;
+  try {
+    const u = new URL(path, HUB_ORIGINS[toHub]);
+    if (u.origin !== new URL(HUB_ORIGINS[toHub]).origin) return fallback;
+    return `${u.pathname}${u.search}${u.hash}` || fallback;
+  } catch {
+    return fallback;
   }
 }
 
-export function handoffHubName(hub: NetworkHubId): string {
-  return networkHubById(hub).proseName;
+export function handoffCompleteUrl(toHub: NetworkHubId, code: string, next: string): string {
+  const u = new URL('/auth/network-handoff', HUB_ORIGINS[toHub]);
+  u.searchParams.set('code', code);
+  u.searchParams.set('next', next);
+  return u.toString();
+}
+
+function adminDb() {
+  return createAdminClient() as unknown as {
+    from: (t: string) => {
+      select: (
+        c: string,
+        o: { count: 'exact'; head: boolean }
+      ) => {
+        eq: (
+          a: string,
+          b: string
+        ) => {
+          gte: (
+            a: string,
+            b: string
+          ) => Promise<{ count: number | null; error: { message: string } | null }>;
+        };
+      };
+      insert: (row: Record<string, unknown>) => Promise<{ error: { message: string } | null }>;
+    };
+    rpc: (
+      fn: string,
+      args: Record<string, string>
+    ) => Promise<{
+      data: Array<{
+        out_user_id: string;
+        out_from_hub: string;
+        out_destination_path: string | null;
+      }> | null;
+      error: { message: string } | null;
+    }>;
+  };
+}
+
+export async function countRecentHandoffs(userId: string): Promise<number> {
+  if (!isSupabaseAdminConfigured()) return 0;
+  const since = new Date(Date.now() - 60_000).toISOString();
+  const { count, error } = await adminDb()
+    .from('network_auth_handoffs')
+    .select('id', { count: 'exact', head: true })
+    .eq('user_id', userId)
+    .gte('created_at', since);
+  if (error) {
+    console.error('[network-handoff] rate count', error.message);
+    return 0;
+  }
+  return count ?? 0;
+}
+
+export type CreateHandoffResult =
+  | { ok: true; code: string; redirectUrl: string }
+  | { ok: false; status: number; error: string };
+
+export async function createNetworkHandoff(params: {
+  userId: string;
+  fromHub: NetworkHubId;
+  toHub: NetworkHubId;
+  destinationPath?: string | null;
+  ip?: string | null;
+}): Promise<CreateHandoffResult> {
+  if (!isSupabaseAdminConfigured()) {
+    return {
+      ok: false,
+      status: 503,
+      error: 'Cross-hub sign-in is not configured (service role missing).',
+    };
+  }
+  if (params.fromHub === params.toHub) {
+    return { ok: false, status: 400, error: 'Already on target hub.' };
+  }
+
+  const recent = await countRecentHandoffs(params.userId);
+  if (recent >= HANDOFF_RATE_LIMIT_PER_MINUTE) {
+    return {
+      ok: false,
+      status: 429,
+      error: 'Too many cross-hub sign-ins. Wait a minute and try again.',
+    };
+  }
+
+  const code = generateHandoffCode();
+  const codeHash = hashHandoffCode(code);
+  const next = sanitizeHandoffPath(params.destinationPath, params.toHub);
+  const expiresAt = new Date(Date.now() + HANDOFF_TTL_SECONDS * 1000).toISOString();
+
+  const { error } = await adminDb().from('network_auth_handoffs').insert({
+    code_hash: codeHash,
+    user_id: params.userId,
+    from_hub: params.fromHub,
+    to_hub: params.toHub,
+    destination_path: next,
+    expires_at: expiresAt,
+    created_ip: params.ip ?? null,
+  });
+
+  if (error) {
+    console.error('[network-handoff] insert failed', error.message);
+    return { ok: false, status: 500, error: 'Could not start cross-hub sign-in.' };
+  }
+
+  return {
+    ok: true,
+    code,
+    redirectUrl: handoffCompleteUrl(params.toHub, code, next),
+  };
+}
+
+export type ConsumeHandoffResult =
+  | { ok: true; userId: string; destinationPath: string }
+  | { ok: false; status: number; error: string };
+
+export async function consumeNetworkHandoff(
+  code: string,
+  toHub: NetworkHubId
+): Promise<ConsumeHandoffResult> {
+  if (!isSupabaseAdminConfigured()) {
+    return { ok: false, status: 503, error: 'Cross-hub sign-in is not configured.' };
+  }
+  if (!code || code.length < 16 || code.length > 200) {
+    return { ok: false, status: 400, error: 'Invalid handoff.' };
+  }
+
+  const { data, error } = await adminDb().rpc('consume_network_auth_handoff', {
+    p_code_hash: hashHandoffCode(code),
+    p_to_hub: toHub,
+  });
+
+  if (error) {
+    console.error('[network-handoff] consume rpc', error.message);
+    return { ok: false, status: 500, error: 'Could not complete cross-hub sign-in.' };
+  }
+
+  const row = data?.[0];
+  if (!row?.out_user_id) {
+    return { ok: false, status: 400, error: 'Handoff expired or already used.' };
+  }
+
+  return {
+    ok: true,
+    userId: row.out_user_id,
+    destinationPath: sanitizeHandoffPath(row.out_destination_path, toHub),
+  };
+}
+
+export async function mintSessionTokenHashForUser(
+  userId: string
+): Promise<{ ok: true; tokenHash: string; type: string } | { ok: false; error: string }> {
+  if (!isSupabaseAdminConfigured()) {
+    return { ok: false, error: 'Admin not configured' };
+  }
+  const admin = createAdminClient();
+  const { data: userData, error: userErr } = await admin.auth.admin.getUserById(userId);
+  if (userErr || !userData.user?.email) {
+    console.error('[network-handoff] getUserById', userErr?.message);
+    return { ok: false, error: 'User not found' };
+  }
+
+  const { data, error } = await admin.auth.admin.generateLink({
+    type: 'magiclink',
+    email: userData.user.email,
+  });
+
+  if (error || !data?.properties?.hashed_token) {
+    console.error('[network-handoff] generateLink', error?.message);
+    return { ok: false, error: 'Could not create session' };
+  }
+
+  return {
+    ok: true,
+    tokenHash: data.properties.hashed_token,
+    type: data.properties.verification_type || 'magiclink',
+  };
 }
