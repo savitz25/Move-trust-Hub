@@ -5,6 +5,7 @@ import {
   rewriteCrossHubHref,
   type HubLinkId,
 } from '@/lib/network/handoff-href';
+import { NetworkHandoffLink } from '@/components/network/network-handoff-link';
 
 type CrossHubLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & {
   href: string;
@@ -12,6 +13,22 @@ type CrossHubLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & {
   currentHub?: HubLinkId;
 };
 
+function parseHandoffStart(href: string): { to: HubLinkId; next?: string } | null {
+  if (!href.startsWith('/api/auth/network-handoff/start')) return null;
+  try {
+    const u = new URL(href, 'https://www.movetrusthub.com');
+    const to = u.searchParams.get('to') as HubLinkId | null;
+    if (to !== 'move' && to !== 'insurance' && to !== 'lender') return null;
+    return { to, next: u.searchParams.get('next') || undefined };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Anchor that rewrites specialist-hub URLs through SSO handoff start.
+ * Uses NetworkHandoffLink (POST + access_token) when resolved to /start.
+ */
 export function CrossHubLink({
   href,
   children,
@@ -19,18 +36,24 @@ export function CrossHubLink({
   rel,
   ...rest
 }: CrossHubLinkProps) {
-  // Always rewrite other-hub absolute URLs → same-origin /start (guest-safe).
-  // Do not gate on client session — DeferredSaveMyMove races used to skip SSO.
   const resolved = rewriteCrossHubHref(href, true, currentHub);
-  const isHandoff = resolved.startsWith('/api/auth/network-handoff/');
+  const handoff = parseHandoffStart(resolved);
+
+  if (handoff) {
+    return (
+      <NetworkHandoffLink
+        href={resolved}
+        toHub={handoff.to}
+        nextPath={handoff.next}
+        {...rest}
+      >
+        {children}
+      </NetworkHandoffLink>
+    );
+  }
 
   return (
-    <a
-      href={resolved}
-      rel={isHandoff ? undefined : rel ?? 'noopener noreferrer'}
-      data-network-handoff={isHandoff ? 'start' : undefined}
-      {...rest}
-    >
+    <a href={resolved} rel={rel ?? 'noopener noreferrer'} {...rest}>
       {children}
     </a>
   );

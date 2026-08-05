@@ -8,7 +8,14 @@ import {
   type NetworkHubId,
 } from '@/lib/network/ask-trust-hub';
 import { networkHubHref, type HubLinkId } from '@/lib/network/handoff-href';
+import { NetworkHandoffLink } from '@/components/network/network-handoff-link';
 import { cn } from '@/lib/utils';
+
+const HUB_HOME: Record<HubLinkId, string> = {
+  move: '/my-move',
+  insurance: '/my-insurance',
+  lender: '/my-lending',
+};
 
 type AskNetworkBarProps = {
   activeHub: NetworkHubId;
@@ -17,7 +24,7 @@ type AskNetworkBarProps = {
 
 /**
  * Slim network bar. Other specialist hubs always use same-origin SSO /start
- * (guest → plain 307 without code; signed-in → one-time code redirect).
+ * (POST with access_token when signed in; guest GET → plain 307 without code).
  */
 export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
   const [open, setOpen] = useState(false);
@@ -26,12 +33,13 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
     ...NETWORK_HUBS.map((h) => {
       const id = h.id as HubLinkId;
       const active = h.id === activeHub;
+      const nextPath = HUB_HOME[id];
       return {
         id: h.id as string,
         label: h.shortLabel,
-        // Always handoff start for other hubs — never bare cross-origin URL
-        href: active ? h.url : networkHubHref(id),
-        // Same-origin /start must not open as external (keeps cookies on request)
+        href: active ? h.url : networkHubHref(id, true, nextPath),
+        toHub: id,
+        nextPath,
         external: active,
         active,
         sameOriginHandoff: !active,
@@ -41,6 +49,8 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
       id: 'standards',
       label: 'Standards',
       href: ASK_TRUST_HUB.standardsUrl,
+      toHub: null as HubLinkId | null,
+      nextPath: undefined as string | undefined,
       external: true,
       active: false,
       sameOriginHandoff: false,
@@ -77,13 +87,22 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
               >
                 {link.label}
               </span>
+            ) : link.sameOriginHandoff && link.toHub ? (
+              <NetworkHandoffLink
+                key={link.id}
+                href={link.href}
+                toHub={link.toHub}
+                nextPath={link.nextPath}
+                className="rounded-md px-2.5 py-1 font-medium hover:bg-background/80 hover:text-foreground"
+              >
+                {link.label}
+              </NetworkHandoffLink>
             ) : (
               <a
                 key={link.id}
                 href={link.href}
                 className="rounded-md px-2.5 py-1 font-medium hover:bg-background/80 hover:text-foreground"
                 rel={link.external ? 'noopener noreferrer' : undefined}
-                data-network-handoff={link.sameOriginHandoff ? 'start' : undefined}
               >
                 {link.label}
               </a>
@@ -116,13 +135,23 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
                   >
                     {link.label}
                   </div>
+                ) : link.sameOriginHandoff && link.toHub ? (
+                  <NetworkHandoffLink
+                    key={link.id}
+                    href={link.href}
+                    toHub={link.toHub}
+                    nextPath={link.nextPath}
+                    className="block px-3 py-2 hover:bg-muted"
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </NetworkHandoffLink>
                 ) : (
                   <a
                     key={link.id}
                     href={link.href}
                     className="block px-3 py-2 hover:bg-muted"
                     rel={link.external ? 'noopener noreferrer' : undefined}
-                    data-network-handoff={link.sameOriginHandoff ? 'start' : undefined}
                     onClick={() => setOpen(false)}
                   >
                     {link.label}

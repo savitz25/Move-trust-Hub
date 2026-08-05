@@ -117,9 +117,11 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
               {NETWORK_HUBS.filter((h) => h.id !== networkId).map((h) => (
                 <div key={h.id}>
                   <a
-                    href={h.url}
+                    href={`/api/auth/network-handoff/start?to=${encodeURIComponent(h.id)}&next=${encodeURIComponent(
+                      h.id === 'move' ? '/my-move' : h.id === 'insurance' ? '/my-insurance' : '/my-lending'
+                    )}`}
                     className="hover:text-foreground transition-colors"
-                    rel="noopener noreferrer"
+                    data-network-handoff="start"
                   >
                     {h.proseName}
                   </a>

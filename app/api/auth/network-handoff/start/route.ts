@@ -1,17 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
-import {
-  createNetworkHandoff,
-  CURRENT_HUB,
-  HUB_DEFAULT_PATH,
-  HUB_ORIGINS,
-  isNetworkHubId,
-  type NetworkHubId,
-} from '@/lib/network/sso-handoff';
-import {
-  isSupabaseAdminConfigured,
-  isSupabaseConfigured,
-} from '@/lib/supabase/config';
+import { runHandoffStart } from '@/lib/network/handoff-start-core';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -24,103 +12,145 @@ function clientIp(request: Request): string | null {
   );
 }
 
-function hasAuthCookieHeader(request: Request): boolean {
-  const raw = request.headers.get('cookie') || '';
-  return /sb-[^=]+-auth-token/.test(raw);
+function bearerFrom(request: Request): string | null {
+  const h = request.headers.get('authorization') || request.headers.get('Authorization');
+  if (!h) return null;
+  const m = /^Bearer\s+(.+)$/i.exec(h.trim());
+  return m?.[1]?.trim() || null;
 }
 
-function redirectFallback(
-  fallback: string,
-  reason: string,
-  extra?: Record<string, unknown>
+function applyHandoffHeaders(
+  res: NextResponse,
+  result: Awaited<ReturnType<typeof runHandoffStart>>
 ) {
-  console.warn('[network-handoff/start] skip_code', {
-    reason,
-    hasAuthCookie: extra?.hasAuthCookie,
-    toHub: extra?.toHub,
-    error: extra?.error,
-  });
-  const res = NextResponse.redirect(fallback);
-  res.headers.set('x-network-handoff', `skip:${reason}`);
+  if (result.ok) {
+    res.headers.set('x-network-handoff', 'ok');
+    res.headers.set('x-network-handoff-to', result.toHub);
+  } else {
+    res.headers.set('x-network-handoff', `skip:${result.reason}`);
+    res.headers.set('x-network-handoff-cookie', result.hasAuthCookie ? '1' : '0');
+    res.headers.set('x-network-handoff-bearer', result.hasBearer ? '1' : '0');
+  }
   return res;
 }
 
-/** GET /api/auth/network-handoff/start?to=insurance|lender&next=/… */
+/**
+ * GET /api/auth/network-handoff/start?to=insurance|lender&next=/…
+ * Guest → plain 307 without code.
+ * Signed-in (cookies) → 307 to target /auth/network-handoff?code=…
+ *
+ * Optional: ?debug=1 returns JSON instead of redirect (no secrets).
+ */
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const toRaw = (searchParams.get('to') || '').toLowerCase();
+  const toRaw = searchParams.get('to') || '';
   const next = searchParams.get('next');
-  const hasAuthCookie = hasAuthCookieHeader(request);
+  const debug = searchParams.get('debug') === '1';
 
-  if (!isNetworkHubId(toRaw) || toRaw === CURRENT_HUB) {
-    return NextResponse.redirect(HUB_ORIGINS.move);
+  const result = await runHandoffStart({
+    request,
+    toRaw,
+    next,
+    bearerToken: bearerFrom(request),
+    ip: clientIp(request),
+  });
+
+  if (debug) {
+    const body = result.ok
+      ? {
+          ok: true,
+          reason: result.reason,
+          toHub: result.toHub,
+          // code presence only — never return the raw code in debug JSON over GET from tools
+          hasCode: Boolean(result.code),
+          redirectHost: (() => {
+            try {
+              return new URL(result.redirectUrl).host;
+            } catch {
+              return null;
+            }
+          })(),
+          redirectHasCodeParam: result.redirectUrl.includes('code='),
+        }
+      : {
+          ok: false,
+          reason: result.reason,
+          hasAuthCookie: result.hasAuthCookie,
+          hasBearer: result.hasBearer,
+          toHub: result.toHub ?? null,
+          error: result.error ?? null,
+          fallbackUrl: result.fallbackUrl,
+        };
+    const res = NextResponse.json(body);
+    return applyHandoffHeaders(res, result);
   }
-  const toHub = toRaw as NetworkHubId;
-  const fallback = new URL(
-    next?.startsWith('/') ? next : HUB_DEFAULT_PATH[toHub],
-    HUB_ORIGINS[toHub]
-  ).toString();
 
-  if (!isSupabaseConfigured() || !isSupabaseAdminConfigured()) {
-    return redirectFallback(fallback, 'no_service_role', {
-      hasAuthCookie,
-      toHub,
-    });
-  }
-
-  try {
-    const supabase = await createClient();
-    const {
-      data: { user },
-      error: userError,
-    } = await supabase.auth.getUser();
-
-    if (userError) {
-      console.warn('[network-handoff/start] getUser error', {
-        message: userError.message,
-        hasAuthCookie,
-        toHub,
-      });
-    }
-
-    if (!user) {
-      // Expected for guests — plain 307 without code
-      return redirectFallback(fallback, 'no_session', {
-        hasAuthCookie,
-        toHub,
-      });
-    }
-
-    const result = await createNetworkHandoff({
-      userId: user.id,
-      fromHub: CURRENT_HUB,
-      toHub,
-      destinationPath: next,
-      ip: clientIp(request),
-    });
-
-    if (!result.ok) {
-      return redirectFallback(fallback, `create_${result.status}`, {
-        hasAuthCookie,
-        toHub,
-        error: result.error,
-      });
-    }
-
-    console.info('[network-handoff/start] minted', {
-      toHub,
-      userId: user.id,
-      hasCode: Boolean(result.code),
-    });
+  if (result.ok) {
     const res = NextResponse.redirect(result.redirectUrl);
-    res.headers.set('x-network-handoff', 'ok');
-    return res;
-  } catch (err) {
-    console.error('[network-handoff/start] fatal', err);
-    return redirectFallback(fallback, 'exception', {
-      hasAuthCookie,
-      toHub,
-      error: err instanceof Error ? err.message : String(err),
-    });
+    return applyHandoffHeaders(res, result);
   }
+
+  console.warn('[network-handoff/start] skip_code', {
+    reason: result.reason,
+    hasAuthCookie: result.hasAuthCookie,
+    hasBearer: result.hasBearer,
+    toHub: result.toHub,
+    error: result.error,
+  });
+  const res = NextResponse.redirect(result.fallbackUrl);
+  return applyHandoffHeaders(res, result);
+}
+
+/**
+ * POST JSON { to, next?, access_token? }
+ * Preferred for signed-in browser: pass access_token so handoff works even if
+ * session cookies are missing/mis-scoped on the GET navigation.
+ */
+export async function POST(request: Request) {
+  let body: { to?: string; next?: string; access_token?: string } = {};
+  try {
+    body = (await request.json()) as typeof body;
+  } catch {
+    body = {};
+  }
+
+  const bearer = body.access_token?.trim() || bearerFrom(request);
+  const result = await runHandoffStart({
+    request,
+    toRaw: body.to || '',
+    next: body.next ?? null,
+    bearerToken: bearer,
+    ip: clientIp(request),
+  });
+
+  if (result.ok) {
+    const res = NextResponse.json({
+      ok: true,
+      reason: 'minted',
+      redirectUrl: result.redirectUrl,
+      toHub: result.toHub,
+    });
+    return applyHandoffHeaders(res, result);
+  }
+
+  console.warn('[network-handoff/start] POST skip_code', {
+    reason: result.reason,
+    hasAuthCookie: result.hasAuthCookie,
+    hasBearer: result.hasBearer,
+    toHub: result.toHub,
+    error: result.error,
+  });
+
+  const res = NextResponse.json(
+    {
+      ok: false,
+      reason: result.reason,
+      fallbackUrl: result.fallbackUrl,
+      hasAuthCookie: result.hasAuthCookie,
+      hasBearer: result.hasBearer,
+      error: result.error ?? null,
+    },
+    { status: result.reason === 'no_session' || result.reason === 'bearer_invalid' ? 401 : 400 }
+  );
+  return applyHandoffHeaders(res, result);
 }

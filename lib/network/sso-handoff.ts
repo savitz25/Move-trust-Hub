@@ -232,11 +232,20 @@ export async function mintSessionTokenHashForUser(
   const { data, error } = await admin.auth.admin.generateLink({
     type: 'magiclink',
     email: userData.user.email,
+    options: {
+      // Keep link project-scoped; we verify server-side via token_hash
+      redirectTo: HUB_ORIGINS[CURRENT_HUB],
+    },
   });
 
   if (error || !data?.properties?.hashed_token) {
-    console.error('[network-handoff] generateLink', error?.message);
-    return { ok: false, error: 'Could not create session' };
+    console.error('[network-handoff] generateLink', {
+      message: error?.message,
+      name: error?.name,
+      status: (error as { status?: number } | null)?.status,
+      hasProps: Boolean(data?.properties),
+    });
+    return { ok: false, error: error?.message || 'Could not create session' };
   }
 
   return {

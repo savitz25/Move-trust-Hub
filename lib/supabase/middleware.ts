@@ -54,7 +54,15 @@ export async function updateSession(request: NextRequest): Promise<NextResponse>
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          // Next.js 15+: request.cookies is read-only in middleware — only mutate the response.
+          // Supabase SSR template: refresh must update request cookies so
+          // downstream Route Handlers (e.g. handoff /start) see the new JWT.
+          cookiesToSet.forEach(({ name, value }) => {
+            try {
+              request.cookies.set(name, value);
+            } catch {
+              /* ignore if immutable */
+            }
+          });
           supabaseResponse = NextResponse.next({ request });
           cookiesToSet.forEach(({ name, value, options }) => {
             supabaseResponse.cookies.set(name, value, options);
