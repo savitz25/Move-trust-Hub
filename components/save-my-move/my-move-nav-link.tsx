@@ -12,11 +12,17 @@ type MyMoveNavLinkProps = {
   className?: string;
 };
 
-/** Always visible My Move entry — badge only when signed in with saved movers. */
+/**
+ * Always visible My Move entry.
+ * Badge only when signed in with account-scoped saved movers (never guest local counts).
+ * No separate top-nav “Sign in” — HQ / modal handles auth.
+ */
 export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkProps) {
   const ctx = useSaveMyMoveOptional();
   const savedCount = ctx?.savedMoverSlugs?.size ?? 0;
-  const showBadge = Boolean(ctx?.user) && savedCount > 0;
+  // Hide badge while session loading so guest local never flashes
+  const showBadge =
+    Boolean(ctx?.user) && !ctx?.loading && savedCount > 0;
 
   const heartClass = cn(
     'shrink-0 h-4 w-4',
@@ -100,7 +106,11 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
         className
       )}
       aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
-      title="My Move — saved plans and shortlists"
+      title={
+        ctx?.user
+          ? 'My Move — saved plans and shortlists'
+          : 'My Move — research passport (sign in optional on HQ)'
+      }
     >
       <Heart className={heartClass} aria-hidden="true" />
       <span>My Move</span>
