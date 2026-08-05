@@ -11,6 +11,7 @@ import {
   getEnrichedMoversForCaHub,
   getMoversForMarketAsync,
 } from '@/lib/destinations/get-movers-for-market-async';
+import { getMoversForMarket } from '@/lib/destinations/get-movers-for-market';
 import { isCaEnrichedHub } from '@/lib/destinations/ca-hub-mover-enrichment';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCityHubSchemaGraph } from '@/lib/seo/build-city-hub-schema';
@@ -31,46 +32,85 @@ import { NetworkHandoff } from '@/components/network/network-handoff';
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
+import type { Company } from '@/types';
 import { getCompanyBySlugAsync } from '@/lib/data-server';
+import { getCompanyBySlug as getSeedCompanyBySlug } from '@/data/seed-companies';
 
 type Props = {
   market: Market;
   content: CityHubContent;
 };
 
+/** Soft-resolve featured interstate cards — never throw (seed fallback). */
+async function resolveFeaturedCompanies(slugs: string[] | undefined): Promise<Company[]> {
+  const list = Array.isArray(slugs) ? slugs : [];
+  const resolved = await Promise.all(
+    list.map(async (slug) => {
+      try {
+        const live = await getCompanyBySlugAsync(slug);
+        if (live) return live;
+      } catch {
+        // DB/directory timeout or projection error — fall through to seed
+      }
+      return getSeedCompanyBySlug(slug);
+    })
+  );
+  return resolved.filter((c): c is Company => Boolean(c));
+}
+
 export async function CityHubTemplate({ market, content }: Props) {
   const destinationLabel = `${market.displayName}, ${market.stateCode}`;
-  const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
-  // Single market fetch — avoid double county/DB work during SSG of thousands of city hubs.
+  const canonicalPath = content.seo?.canonicalPath || `/moving-to/${market.slug}`;
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  // Single market fetch — never let optional mover/DB enrichment 500 the hub.
   const useCaEnrichment = isCaEnrichedHub(market.slug);
-  const enriched = useCaEnrichment
-    ? await getEnrichedMoversForCaHub(market, content.featuredInterstateSlugs)
-    : null;
-  const marketMovers = enriched
-    ? enriched.movers
-    : await getMoversForMarketAsync(market, 100);
+  const featuredSlugs = content.featuredInterstateSlugs ?? [];
+
+  let marketMovers = getMoversForMarket(market, 100);
+  let totalMovers = marketMovers.length;
+  let featuredCompanies: Company[] = [];
+
+  try {
+    if (useCaEnrichment) {
+      try {
+        const enriched = await getEnrichedMoversForCaHub(market, featuredSlugs);
+        marketMovers = enriched.movers;
+        totalMovers = enriched.totalAvailable;
+      } catch {
+        // keep sync seed movers
+      }
+      featuredCompanies = [];
+    } else {
+      try {
+        marketMovers = await getMoversForMarketAsync(market, 100);
+        totalMovers = marketMovers.length;
+      } catch {
+        marketMovers = getMoversForMarket(market, 100);
+        totalMovers = marketMovers.length;
+      }
+      featuredCompanies = await resolveFeaturedCompanies(featuredSlugs);
+    }
+  } catch {
+    marketMovers = getMoversForMarket(market, 100);
+    totalMovers = marketMovers.length;
+    if (!useCaEnrichment) {
+      featuredCompanies = featuredSlugs
+        .map((slug) => getSeedCompanyBySlug(slug))
+        .filter((c): c is Company => Boolean(c));
+    }
+  }
+
   const localMovers = marketMovers.slice(0, useCaEnrichment ? 9 : 6);
-  const totalMovers = enriched ? enriched.totalAvailable : marketMovers.length;
-  const featuredCompanies = useCaEnrichment
-    ? []
-    : (
-        await Promise.all(
-          content.featuredInterstateSlugs.map((slug) => getCompanyBySlugAsync(slug))
-        )
-      ).filter((company): company is NonNullable<typeof company> => Boolean(company));
 
   const clusterParent = market.clusterParent
     ? getMarketBySlug(market.clusterParent)
     : undefined;
-  const moversDirectoryHref = getMarketMoversDirectoryHref(
-    market,
-    content.seo.canonicalPath
-  );
+  const moversDirectoryHref = getMarketMoversDirectoryHref(market, canonicalPath);
   const countyDirectoryLinks = getMarketCountyDirectoryLinks(market);
-  const routeLinks = mergeHubRouteLinks(content.routeLinks, market, 6);
+  const routeLinks = mergeHubRouteLinks(content.routeLinks ?? [], market, 6);
   const contentUpdatedLabel = CITY_HUBS_CONTENT_UPDATED.toISOString().slice(0, 10);
 
-  const countyLabels = market.primaryCounties.map((key) => {
+  const countyLabels = (market.primaryCounties ?? []).map((key) => {
     const parts = key.split('-');
     const state = parts.pop()?.toUpperCase() ?? '';
     const county = parts
@@ -78,6 +118,14 @@ export async function CityHubTemplate({ market, content }: Props) {
       .join(' ');
     return `${county}, ${state}`;
   });
+
+  const introParagraphs = content.introParagraphs ?? [];
+  const costTableRows = content.costTableRows ?? [];
+  const insightCards = content.insightCards ?? [];
+  const bodySections = content.bodySections ?? [];
+  const resourceLinks = content.resourceLinks ?? [];
+  const testimonials = content.testimonials ?? [];
+  const faqItems = content.faqItems ?? [];
 
   return (
     <>
@@ -116,7 +164,7 @@ export async function CityHubTemplate({ market, content }: Props) {
             {content.heroSubheadline}
           </p>
 
-          {content.introParagraphs.map((paragraph) => (
+          {introParagraphs.map((paragraph) => (
             <p
               key={paragraph.slice(0, 40)}
               className="text-base text-muted-foreground leading-relaxed max-w-3xl mb-4"
@@ -240,7 +288,7 @@ export async function CityHubTemplate({ market, content }: Props) {
                   rank={index + 1}
                   countyLabel={entry.countyLabel}
                   stateCode={entry.stateCode}
-                  profileReturnPath={content.seo.canonicalPath}
+                  profileReturnPath={canonicalPath}
                 />
               ))}
             </div>
@@ -257,7 +305,7 @@ export async function CityHubTemplate({ market, content }: Props) {
                       company={company}
                       rank={index + 1}
                       areaLabel={countyLabels[index] ?? destinationLabel}
-                      profileReturnPath={content.seo.canonicalPath}
+                      profileReturnPath={canonicalPath}
                     />
                   ))}
                 </div>
@@ -279,7 +327,7 @@ export async function CityHubTemplate({ market, content }: Props) {
                         rank={index + 1}
                         countyLabel={entry.countyLabel}
                         stateCode={entry.stateCode}
-                        profileReturnPath={content.seo.canonicalPath}
+                        profileReturnPath={canonicalPath}
                       />
                     ))}
                   </div>
@@ -322,7 +370,7 @@ export async function CityHubTemplate({ market, content }: Props) {
                 </tr>
               </thead>
               <tbody>
-                {content.costTableRows.map((row) => (
+                {costTableRows.map((row) => (
                   <tr key={row.homeSize} className="border-t">
                     <td className="p-3 font-medium">{row.homeSize}</td>
                     <td className="p-3 text-muted-foreground">{row.cubicFt}</td>
@@ -334,12 +382,14 @@ export async function CityHubTemplate({ market, content }: Props) {
             </table>
           </div>
 
-          <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-            {content.costTableNote}
-          </p>
+          {content.costTableNote ? (
+            <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+              {content.costTableNote}
+            </p>
+          ) : null}
 
           <div className="grid md:grid-cols-3 gap-4 mb-10">
-            {content.insightCards.map((card) => (
+            {insightCards.map((card) => (
               <div key={card.title} className="rounded-xl border bg-card p-5">
                 <h3 className="font-semibold mb-2">{card.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{card.body}</p>
@@ -347,10 +397,10 @@ export async function CityHubTemplate({ market, content }: Props) {
             ))}
           </div>
 
-          {content.bodySections.map((section) => (
+          {bodySections.map((section) => (
             <div key={section.heading} className="mb-10 max-w-3xl">
               <h3 className="text-xl font-semibold tracking-tight mb-3">{section.heading}</h3>
-              {section.paragraphs.map((paragraph) => (
+              {(section.paragraphs ?? []).map((paragraph) => (
                 <p
                   key={paragraph.slice(0, 48)}
                   className="text-muted-foreground leading-relaxed mb-4"
@@ -364,8 +414,8 @@ export async function CityHubTemplate({ market, content }: Props) {
           {/* Data-driven visual — never depends on SVG BOM / missing static assets */}
           <DestinationCostVisual
             destinationLabel={destinationLabel}
-            rows={content.costTableRows}
-            ariaLabel={content.seo.ogImageAlt}
+            rows={costTableRows}
+            ariaLabel={content.seo?.ogImageAlt ?? `Moving costs to ${destinationLabel}`}
           />
         </div>
       </section>
@@ -380,7 +430,7 @@ export async function CityHubTemplate({ market, content }: Props) {
             {market.displayName} Moving Guides &amp; Resources
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            {content.resourceLinks.map((resource) => (
+            {resourceLinks.map((resource) => (
               <Link
                 key={resource.href}
                 href={resource.href}
@@ -432,7 +482,7 @@ export async function CityHubTemplate({ market, content }: Props) {
             .
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {content.testimonials.map((testimonial) => (
+            {testimonials.map((testimonial) => (
               <blockquote
                 key={testimonial.name}
                 className="rounded-xl border bg-card p-6"
@@ -502,7 +552,7 @@ export async function CityHubTemplate({ market, content }: Props) {
             Frequently Asked Questions
           </h2>
           <div className="space-y-3">
-            {content.faqItems.map((item) => (
+            {faqItems.map((item) => (
               <details
                 key={item.question}
                 className="group rounded-xl border bg-card px-5 py-4"

@@ -38,19 +38,26 @@ export function DestinationInterstateCard({
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700">
-          <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
-          {company.overallRating.toFixed(1)}
-        </div>
+        {typeof company.overallRating === 'number' && company.overallRating > 0 ? (
+          <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700">
+            <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
+            {company.overallRating.toFixed(1)}
+          </div>
+        ) : (
+          <div className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
+            Verified carrier
+          </div>
+        )}
       </div>
 
       <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">
-        {company.description}
+        {company.description || company.shortDescription || ''}
       </p>
 
       <div className="flex flex-wrap gap-2 mb-4">
         <Badge variant="secondary" className="text-[10px] font-medium">
-          Reputation {company.reputationScore}/100
+          Reputation {typeof company.reputationScore === 'number' ? company.reputationScore : '—'}
+          /100
         </Badge>
         <Badge variant="outline" className="text-[10px] font-medium">
           FMCSA Licensed

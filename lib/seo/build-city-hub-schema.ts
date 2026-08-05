@@ -150,7 +150,7 @@ export function buildCityHubSchemaGraph(
       '@type': 'FAQPage',
       '@id': `${canonical}#faq`,
       name: `FAQ: Moving to ${destinationLabel}`,
-      mainEntity: content.faqItems.map((item) => ({
+      mainEntity: (content.faqItems ?? []).map((item) => ({
         '@type': 'Question',
         name: item.question,
         acceptedAnswer: {

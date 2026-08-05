@@ -1,4 +1,5 @@
 import type { Market } from '@/lib/destinations/types';
+import { resolveCityHubSlug } from '@/lib/destinations/city-hub-slug-aliases';
 
 export const markets: Market[] = [
   {
@@ -12955,7 +12956,13 @@ export const markets: Market[] = [
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
-  return markets.find((market) => market.slug === slug);
+  const direct = markets.find((market) => market.slug === slug);
+  if (direct) return direct;
+  const resolved = resolveCityHubSlug(slug);
+  if (resolved !== slug) {
+    return markets.find((market) => market.slug === resolved);
+  }
+  return undefined;
 }
 
 export function getClusterMarkets(cluster: string): Market[] {

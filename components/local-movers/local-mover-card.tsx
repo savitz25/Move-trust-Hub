@@ -148,12 +148,12 @@ export function LocalMoverCard({
       </p>
 
       <div className="flex flex-wrap gap-1.5 mb-4" aria-label="Services offered">
-        {mover.services.slice(0, 5).map((service) => (
+        {(mover.services ?? []).slice(0, 5).map((service) => (
           <Badge key={service} variant="secondary" className="text-[10px] font-medium">
             {service}
           </Badge>
         ))}
-        {mover.specialties?.slice(0, 2).map((specialty) => (
+        {(mover.specialties ?? []).slice(0, 2).map((specialty) => (
           <Badge key={specialty} variant="outline" className="text-[10px] font-medium">
             {specialty}
           </Badge>

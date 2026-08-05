@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CityHubTemplate } from '@/components/destinations/city-hub-template';
-import { getCityHubContent, getPublishedCityHubSlugs } from '@/lib/destinations/content';
+import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import { getMarketBySlug } from '@/lib/destinations/markets';
-import { buildCityHubMetadata } from '@/lib/seo/destination-seo';
+import {
+  cityHubMetadataForSlug,
+  resolveCityHubForState,
+} from '@/lib/destinations/resolve-city-hub-page';
 import { ssgParams } from '@/lib/ssg/ssg-params';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -13,27 +16,30 @@ export const dynamicParams = true;
 /** ISR: pick up nearby local movers within ~150mi after approval. */
 export const revalidate = 60;
 
+const CLUSTER = 'wisconsin';
+
 export async function generateStaticParams() {
-  return ssgParams(getPublishedCityHubSlugs()
-    .filter((slug) => getMarketBySlug(slug)?.clusterParent === 'wisconsin')
-    .map((slug) => ({ slug })));
+  return ssgParams(
+    getPublishedCityHubSlugs()
+      .filter((slug) => getMarketBySlug(slug)?.clusterParent === CLUSTER)
+      .map((slug) => ({ slug }))
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const content = getCityHubContent(slug);
-  const market = getMarketBySlug(slug);
-  if (!content || !market) return {};
-
-  return buildCityHubMetadata(content);
+  const resolved = resolveCityHubForState(slug, CLUSTER);
+  if (!resolved) {
+    // Avoid root ZIP Planner title on unknown/unpublished slugs
+    return cityHubMetadataForSlug(slug);
+  }
+  return cityHubMetadataForSlug(resolved.resolvedSlug);
 }
 
-export default async function WisconsinCityHubPage({ params }: Props) {
+export default async function CityHubPage({ params }: Props) {
   const { slug } = await params;
-  const market = getMarketBySlug(slug);
-  const content = getCityHubContent(slug);
+  const resolved = resolveCityHubForState(slug, CLUSTER);
+  if (!resolved) notFound();
 
-  if (!market || !content || market.clusterParent !== 'wisconsin') notFound();
-
-  return <CityHubTemplate market={market} content={content} />;
+  return <CityHubTemplate market={resolved.market} content={resolved.content} />;
 }

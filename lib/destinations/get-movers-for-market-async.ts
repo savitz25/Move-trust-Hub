@@ -19,17 +19,25 @@ export async function getMoversForMarketAsync(
   limit = 18
 ): Promise<MarketMoverEntry[]> {
   // Primary hub counties first, then adjacent corridor counties (e.g. Douglas → Eugene).
-  const countyKeys = countyKeysForHubMarket(market.slug, market.primaryCounties);
+  const countyKeys = countyKeysForHubMarket(
+    market.slug,
+    market.primaryCounties ?? []
+  );
 
   const countyResults = await Promise.all(
     countyKeys.map(async (countyKey) => {
-      const parsed = parseCountyKey(countyKey);
-      return {
-        countyKey,
-        result: parsed
-          ? await getMoversForCountyAsync(parsed.stateSlug, parsed.countySlug)
-          : null,
-      };
+      try {
+        const parsed = parseCountyKey(countyKey);
+        return {
+          countyKey,
+          result: parsed
+            ? await getMoversForCountyAsync(parsed.stateSlug, parsed.countySlug)
+            : null,
+        };
+      } catch {
+        // County fetch timeout / Supabase blip must not 500 the destination hub.
+        return { countyKey, result: null };
+      }
     })
   );
 
@@ -47,16 +55,23 @@ export async function getEnrichedMoversForCaHub(
   movers: MarketMoverEntry[];
   totalAvailable: number;
 }> {
-  const countyKeys = countyKeysForHubMarket(market.slug, market.primaryCounties);
+  const countyKeys = countyKeysForHubMarket(
+    market.slug,
+    market.primaryCounties ?? []
+  );
   const countyResults = await Promise.all(
     countyKeys.map(async (countyKey) => {
-      const parsed = parseCountyKey(countyKey);
-      return {
-        countyKey,
-        result: parsed
-          ? await getMoversForCountyAsync(parsed.stateSlug, parsed.countySlug)
-          : null,
-      };
+      try {
+        const parsed = parseCountyKey(countyKey);
+        return {
+          countyKey,
+          result: parsed
+            ? await getMoversForCountyAsync(parsed.stateSlug, parsed.countySlug)
+            : null,
+        };
+      } catch {
+        return { countyKey, result: null };
+      }
     })
   );
 
@@ -65,7 +80,13 @@ export async function getEnrichedMoversForCaHub(
 
   const stateCompanies = (
     await Promise.all(
-      featuredInterstateSlugs.map((slug) => getCompanyBySlugAsync(slug))
+      featuredInterstateSlugs.map(async (slug) => {
+        try {
+          return await getCompanyBySlugAsync(slug);
+        } catch {
+          return undefined;
+        }
+      })
     )
   ).filter((c): c is NonNullable<typeof c> => Boolean(c));
 

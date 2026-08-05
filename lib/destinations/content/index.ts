@@ -1,4 +1,5 @@
 import type { CityHubContent } from '@/lib/destinations/types';
+import { resolveCityHubSlug } from '@/lib/destinations/city-hub-slug-aliases';
 import { getMarketBySlug } from '@/lib/destinations/markets';
 import { myrtleBeachScContent } from '@/lib/destinations/content/myrtle-beach-sc';
 import { northMyrtleBeachScContent } from '@/lib/destinations/content/north-myrtle-beach-sc';
@@ -967,7 +968,11 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
-  return cityHubContentBySlug[slug];
+  const direct = cityHubContentBySlug[slug];
+  if (direct) return direct;
+  const resolved = resolveCityHubSlug(slug);
+  if (resolved !== slug) return cityHubContentBySlug[resolved];
+  return undefined;
 }
 
 export function getPublishedCityHubSlugs(): string[] {
