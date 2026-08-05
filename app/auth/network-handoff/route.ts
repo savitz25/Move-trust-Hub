@@ -14,7 +14,7 @@ import {
   HUB_ORIGINS,
   mintSessionTokenHashForUser,
   sanitizeHandoffPath,
-} from '@/lib/network/network-handoff';
+} from '@/lib/network/sso-handoff';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
