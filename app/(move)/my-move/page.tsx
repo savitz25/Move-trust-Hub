@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { MyMoveDashboard } from '@/components/save-my-move/my-move-dashboard';
 import { AuthErrorToast } from '@/components/save-my-move/auth-error-toast';
+import { HandoffStatusBanner } from '@/components/save-my-move/handoff-status-banner';
 import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
 import { getMyMovePasswordStatus } from '@/lib/save-my-move/password';
 import { getMyMoveDashboardData } from '@/actions/save-my-move';
@@ -41,6 +42,9 @@ export default async function MyMovePage({ searchParams }: PageProps) {
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 max-w-6xl">
+      <Suspense fallback={null}>
+        <HandoffStatusBanner />
+      </Suspense>
       <header className="mb-6 md:mb-8">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">
           Move HQ

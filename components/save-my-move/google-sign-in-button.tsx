@@ -84,12 +84,33 @@ export function GoogleSignInButton({
         await ensureUserProfileAction();
         onSuccess?.();
       } catch (err) {
-        console.error('[GoogleSignIn] signInWithIdToken failed', err);
-        toast.error('Google sign-in failed. Try the email link instead.');
+        const message =
+          err instanceof Error
+            ? err.message
+            : typeof err === 'object' && err && 'message' in err
+              ? String((err as { message: unknown }).message)
+              : 'unknown';
+        console.error('[GoogleSignIn] signInWithIdToken failed', {
+          message,
+          err,
+          hasClientId: Boolean(clientId),
+        });
+        // Prefer OAuth redirect path (server redirectTo = production callback)
+        toast.error(
+          message && message.length < 120
+            ? `Google sign-in failed: ${message}`
+            : 'Google sign-in failed. Trying redirect sign-in…'
+        );
         onError?.();
+        // Hard fallback: server OAuth with correct emailRedirectTo / redirectTo
+        window.setTimeout(() => {
+          window.location.assign(
+            `/api/auth/google?next=${encodeURIComponent('/my-move')}`
+          );
+        }, 600);
       }
     },
-    [onStart, onSuccess, onError]
+    [onStart, onSuccess, onError, clientId]
   );
 
   // Render GSI iframe once per open — never re-render on parent state (e.g. email typing).
@@ -151,7 +172,9 @@ export function GoogleSignInButton({
         disabled={disabled}
         onClick={() => {
           onStart?.();
-          window.location.assign('/api/auth/google');
+          window.location.assign(
+            `/api/auth/google?next=${encodeURIComponent('/my-move')}`
+          );
         }}
       >
         Continue with Google
