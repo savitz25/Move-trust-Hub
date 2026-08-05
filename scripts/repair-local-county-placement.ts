@@ -28,7 +28,8 @@ import { loadEnvLocal } from '../lib/verification/load-env-local';
 loadEnvLocal();
 
 import { createClient } from '@supabase/supabase-js';
-import { revalidateLocalMoverCountyPages } from '../lib/local-movers/revalidate-county-pages';
+// Do not import revalidate-county-pages at top level (server-only). Use stub when running via CLI:
+//   npx tsx --require ./scripts/stub-server-only.cjs scripts/repair-local-county-placement.ts --all
 
 type SelectedCounty = {
   stateSlug: string;
@@ -286,12 +287,21 @@ async function main() {
 
   if (!dryRun && allCounties.length) {
     try {
+      const { revalidateLocalMoverCountyPages } = await import(
+        '../lib/local-movers/revalidate-county-pages'
+      );
       revalidateLocalMoverCountyPages(allCounties, {
         reason: 'repair_local_county_placement',
       });
       console.log('Revalidated county pages for', allCounties.length, 'county refs');
     } catch (e) {
-      console.warn('Revalidate skipped (non-Next runtime):', e instanceof Error ? e.message : e);
+      console.warn(
+        'Revalidate skipped (CLI without Next cache is OK):',
+        e instanceof Error ? e.message : e
+      );
+      console.warn(
+        'Deploy or wait for ISR (~60s). Optionally revalidate paths in Vercel after deploy.'
+      );
     }
   }
 
