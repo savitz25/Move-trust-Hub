@@ -1,5 +1,9 @@
 import { isDistinctUsableDba } from '@/lib/companies/public-display-name';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
+import {
+  isDisplayableGoogleForUi,
+  sanitizeGooglePlacesForDisplay,
+} from '@/lib/verification/display-enrichment';
 import type { Company } from '@/types';
 
 function dedupeKey(company: Company): string {
@@ -19,12 +23,10 @@ function profileRichnessScore(company: Company): number {
 }
 
 function hasVerificationEnrichment(company: Company): boolean {
-  const g = company.googleData;
-  const displayablePlaces =
-    g?.status === 'ok' &&
-    ((g.rating != null && g.rating > 0) ||
-      (g.review_count != null && g.review_count > 0));
-  return Boolean(displayablePlaces || company.publicScrapeData || g?.last_fetched);
+  const g = sanitizeGooglePlacesForDisplay(company.googleData);
+  return Boolean(
+    isDisplayableGoogleForUi(g) || company.publicScrapeData || g?.last_fetched
+  );
 }
 
 /**
@@ -48,12 +50,15 @@ function pickPublicDisplayName(directory: Company, catalog: Company): string {
 /** Overlay Google/scrape enrichment from a sparse DB stub onto the richer catalog profile. */
 export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): Company {
   // Prefer any usable Google snapshot from either side (DB often has it; catalog rarely).
+  const baseG = sanitizeGooglePlacesForDisplay(base.googleData);
+  const enrichG = sanitizeGooglePlacesForDisplay(enrichment.googleData);
   const google =
-    (base.googleData?.status === 'ok' ? base.googleData : null) ??
-    (enrichment.googleData?.status === 'ok' ? enrichment.googleData : null) ??
-    enrichment.googleData ??
-    base.googleData;
-  const useGoogleRating = google?.status === 'ok' && google.rating != null && google.rating > 0;
+    (isDisplayableGoogleForUi(baseG) ? baseG : null) ??
+    (isDisplayableGoogleForUi(enrichG) ? enrichG : null) ??
+    enrichG ??
+    baseG;
+  const useGoogleRating =
+    isDisplayableGoogleForUi(google) && google!.rating != null && google!.rating > 0;
   const baseRating = base.overallRating > 0 ? base.overallRating : 0;
   const enrichRating = enrichment.overallRating > 0 ? enrichment.overallRating : 0;
   // Keep industry-reported editorial ratings separate from the Google Places snapshot.
@@ -66,7 +71,7 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
   );
 
   const googleAddr =
-    google?.status === 'ok' && google.formatted_address?.trim()
+    isDisplayableGoogleForUi(google) && google?.formatted_address?.trim()
       ? google.formatted_address.trim()
       : null;
   const baseAddr = base.physicalAddress?.trim() || '';
@@ -104,13 +109,14 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
       (google?.status === 'ok' ? google.phone : null) ||
       base.phone ||
       enrichment.phone,
+    // Prefer confirmed scrape-backed BBB from either side (mapRow already gates grades).
     bbbRating:
       base.bbbRating && base.bbbRating !== 'NR'
         ? base.bbbRating
         : enrichment.bbbRating && enrichment.bbbRating !== 'NR'
           ? enrichment.bbbRating
-          : base.bbbRating,
-    bbbAccredited: base.bbbAccredited || enrichment.bbbAccredited,
+          : base.bbbRating ?? 'NR',
+    bbbAccredited: Boolean(base.bbbAccredited || enrichment.bbbAccredited),
     lastUpdated: enrichment.lastUpdated || base.lastUpdated,
   });
 }

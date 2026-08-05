@@ -6,12 +6,13 @@ import {
   getBbbDisplaySafe,
   getGoogleDisplayMeta,
 } from '@/lib/verification/company-display-enrichment';
+import { resolveConfirmedPublicScrapeForCompany } from '@/lib/verification/display-enrichment';
 import type { Company } from '@/types';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
-const MAX = 4;
+const MAX = 8;
 
 /**
  * Live company hydration for /compare — same source of truth as profiles
@@ -22,11 +23,15 @@ const MAX = 4;
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const raw = searchParams.get('slugs') || searchParams.get('add') || '';
-  const slugs = raw
-    .split(',')
-    .map((s) => s.trim().toLowerCase())
-    .filter(Boolean)
-    .slice(0, MAX);
+  const slugs = [
+    ...new Set(
+      raw
+        .split(',')
+        .map((s) => s.trim().toLowerCase())
+        .filter(Boolean)
+        .slice(0, MAX)
+    ),
+  ];
 
   if (slugs.length === 0) {
     return NextResponse.json({ companies: [] as Company[] });
@@ -40,12 +45,13 @@ export async function GET(request: Request) {
           const finalized = finalizeCompanyEnrichmentForDisplay(company);
           const google = getGoogleDisplayMeta(finalized);
           const bbb = getBbbDisplaySafe(finalized);
+          const confirmedScrape = resolveConfirmedPublicScrapeForCompany(finalized);
           // Strip huge county arrays from compare payload (profile has full row)
           const { coverageCounties: _c, ...rest } = finalized;
           return {
             ...rest,
             googleData: finalized.googleData ?? null,
-            publicScrapeData: finalized.publicScrapeData ?? null,
+            publicScrapeData: confirmedScrape,
             googleSummary: {
               status: google.available ? 'ok' : google.status ?? null,
               rating: google.rating,

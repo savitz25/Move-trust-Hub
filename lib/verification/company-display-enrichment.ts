@@ -141,13 +141,13 @@ export function getBbbDisplaySafe(company: Company): {
   rating: string | null;
   accredited: boolean;
 } {
+  // Strict: only confirmed bbb.org profile matches (never bare column letter grades).
   const confirmed = hasBbbPublicScrapeData(company.publicScrapeData);
-  const col = company.bbbRating && company.bbbRating !== 'NR' ? company.bbbRating : null;
   return {
-    confirmed: confirmed || Boolean(col),
-    rating: confirmed
-      ? company.publicScrapeData?.bbb_rating ?? col
-      : col,
-    accredited: company.bbbAccredited || Boolean(company.publicScrapeData?.bbb_accredited),
+    confirmed,
+    rating: confirmed ? company.publicScrapeData?.bbb_rating ?? null : null,
+    accredited: confirmed
+      ? Boolean(company.bbbAccredited || company.publicScrapeData?.bbb_accredited)
+      : false,
   };
 }

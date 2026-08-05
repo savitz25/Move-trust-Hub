@@ -79,7 +79,7 @@ async function buildUnifiedDirectory(): Promise<Company[]> {
 /** Cached directory listing for /companies and slug resolution. */
 export const getUnifiedDirectoryCompanies = unstable_cache(
   buildUnifiedDirectory,
-  // v12: strip HHG van lines from Auto Transport tag; keep true car shippers only
-  ['unified-movers-directory-v12-auto-transport-cleanup'],
+  // v13: enrichment display resolver + strict BBB + Places visibility
+  ['unified-movers-directory-v13-display-enrichment'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );

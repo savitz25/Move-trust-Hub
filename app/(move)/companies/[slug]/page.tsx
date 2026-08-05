@@ -55,6 +55,12 @@ import {
 } from '@/lib/directory/normalize-company';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 import { SITE_URL } from '@/lib/seo/site-metadata';
+import {
+  isDisplayableGoogleForUi,
+  resolveConfirmedPublicScrapeForCompany,
+  resolveGooglePlacesForCompany,
+} from '@/lib/verification/display-enrichment';
+import { finalizeCompanyEnrichmentForDisplay } from '@/lib/verification/company-display-enrichment';
 
 
 /** Keep aligned with directory ISR + CDN s-maxage (tag revalidation on publish). */
@@ -120,10 +126,14 @@ export default async function CompanyProfilePage({ params }: Props) {
     slug: company.slug,
   });
 
-  const verification = getCompanyVerificationStatus(company);
-  const verifiedLabel = directoryVerifiedLabel(company);
-  const scrapeBbb = company.publicScrapeData;
-  const showScrapeBbb = verification.bbb === 'verified';
+  const displayCompany = finalizeCompanyEnrichmentForDisplay(company);
+  const verification = getCompanyVerificationStatus(displayCompany);
+  const verifiedLabel = directoryVerifiedLabel(displayCompany);
+  // Single source of truth: Places from googleData / verification_sources; BBB only when confirmed.
+  const googlePlaces =
+    resolveGooglePlacesForCompany(displayCompany) ?? displayCompany.googleData ?? null;
+  const scrapeBbb = resolveConfirmedPublicScrapeForCompany(displayCompany);
+  const showScrapeBbb = Boolean(scrapeBbb) && verification.bbb === 'verified';
   // BBB trust signal only when a confirmed public BBB listing exists — never legacy/unverified.
   const bbbTrustSignal =
     showScrapeBbb && scrapeBbb?.bbb_rating
@@ -163,8 +173,8 @@ export default async function CompanyProfilePage({ params }: Props) {
           <>
             <CompanyTypeBadges company={company} size="default" className="shrink-0" />
             <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
-            {company.googleData?.status === 'ok' ? (
-              <GoogleRatingBadge data={company.googleData} />
+            {isDisplayableGoogleForUi(googlePlaces) && googlePlaces ? (
+              <GoogleRatingBadge data={googlePlaces} />
             ) : null}
             <UserReviewsCta href={reviewHref} />
             <SaveMoverButton
@@ -231,10 +241,10 @@ export default async function CompanyProfilePage({ params }: Props) {
         </div>
       </div>
 
-      <CompanyProfileReviewSources company={company} googleData={company.googleData} />
+      <CompanyProfileReviewSources company={company} googleData={googlePlaces} />
 
       <GoogleReviewsSection
-        data={company.googleData}
+        data={googlePlaces}
         companyName={company.name}
         attributableOnSiteCount={attributableOnSiteCount}
       />

@@ -1,54 +1,29 @@
 /**
- * Production enrichment audit + optional re-enrich for Google Places.
+ * Audit Google Places + confirmed BBB coverage on public.companies.
  *
- * Usage (from move-trust-hub-temp, with .env.local):
- *   npx tsx --require ./scripts/stub-server-only.cjs scripts/audit-company-enrichment.ts
- *   npx tsx --require ./scripts/stub-server-only.cjs scripts/audit-company-enrichment.ts --slug=cirta-moving-llc
- *   npx tsx --require ./scripts/stub-server-only.cjs scripts/audit-company-enrichment.ts --sample=200
- *   npx tsx --require ./scripts/stub-server-only.cjs scripts/audit-company-enrichment.ts --reenrich --slug=cirta-moving-llc --dry-run
- *   npx tsx --require ./scripts/stub-server-only.cjs scripts/audit-company-enrichment.ts --reenrich --slugs=cirta-moving-llc,cass-county-moving,amex-moving-and-storage-llc
+ * Usage:
+ *   npx tsx scripts/audit-company-enrichment.ts
+ *   npx tsx scripts/audit-company-enrichment.ts --limit=50
+ *   npx tsx scripts/audit-company-enrichment.ts --slugs=spyder-moving-kalamazoo,jk-moving-services
  *
- * Does NOT overwrite FMCSA identity fields. Google persist never replaces a usable
- * snapshot with a failed fetch (see persistGoogleSnapshot).
+ * Env:
+ *   NEXT_PUBLIC_SUPABASE_URL
+ *   SUPABASE_SERVICE_ROLE_KEY (or NEXT_PUBLIC_SUPABASE_ANON_KEY)
+ *   GOOGLE_PLACES_API_KEY (reported only; not required for audit)
  */
 import { createClient } from '@supabase/supabase-js';
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
-import {
-  fetchGooglePlacesData,
-  isGooglePlacesConfigured,
-  isUsableGoogleSnapshot,
-} from '../lib/verification/google-places';
 import {
   parseGoogleData,
   parsePublicScrapeData,
   parseVerificationSources,
 } from '../lib/verification/backfill-helpers';
 import { hasBbbPublicScrapeData } from '../lib/verification/bbb-public-display';
-import { persistGoogleSnapshot } from '../lib/verification/persist-google-snapshot';
+import { isDisplayableGooglePlacesRating } from '../lib/verification/google-places';
+import { loadEnvLocal } from '../lib/verification/load-env-local';
 
-function loadEnv() {
-  for (const file of ['.env.local', '.env.production.local', '.env']) {
-    const p = join(process.cwd(), file);
-    if (!existsSync(p)) continue;
-    for (const line of readFileSync(p, 'utf8').split(/\r?\n/)) {
-      if (!line || line.startsWith('#') || !line.includes('=')) continue;
-      const i = line.indexOf('=');
-      let k = line.slice(0, i).trim();
-      let v = line.slice(i + 1).trim();
-      if (
-        (v.startsWith('"') && v.endsWith('"')) ||
-        (v.startsWith("'") && v.endsWith("'"))
-      ) {
-        v = v.slice(1, -1);
-      }
-      if (!process.env[k]) process.env[k] = v;
-    }
-  }
-}
-loadEnv();
+loadEnvLocal();
 
-function arg(name: string): string | undefined {
+function argValue(name: string): string | undefined {
   const pref = `${name}=`;
   const hit = process.argv.find((a) => a.startsWith(pref));
   if (hit) return hit.slice(pref.length);
@@ -59,155 +34,165 @@ function arg(name: string): string | undefined {
   return undefined;
 }
 
-const dryRun = process.argv.includes('--dry-run');
-const doReenrich = process.argv.includes('--reenrich');
-const sampleN = Math.max(10, Number.parseInt(arg('--sample') ?? '200', 10));
-const onlySlug = arg('--slug');
-const slugsArg = arg('--slugs');
+function googleFromRow(row: {
+  verification_sources?: unknown;
+  google_data?: unknown;
+}) {
+  const vs = parseVerificationSources(row.verification_sources);
+  return parseGoogleData(row.google_data) ?? parseGoogleData(vs.google);
+}
+
+function scrapeFromRow(row: {
+  verification_sources?: unknown;
+  public_scrape_data?: unknown;
+}) {
+  const direct = parsePublicScrapeData(row.public_scrape_data);
+  if (direct) return direct;
+  const vs = parseVerificationSources(row.verification_sources);
+  return parsePublicScrapeData(vs.public_scrape);
+}
 
 async function main() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
-  if (!url || !key) {
-    console.error('Need NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY');
-    process.exit(1);
-  }
-  const admin = createClient(url, key, { auth: { persistSession: false } });
-
-  const focusSlugs =
-    slugsArg?.split(',').map((s) => s.trim()).filter(Boolean) ??
-    (onlySlug
-      ? [onlySlug]
-      : ['cirta-moving-llc', 'cass-county-moving', 'amex-moving-and-storage-llc']);
-
-  console.log('\n=== Focus companies ===\n');
-  const { data: focus, error: fe } = await admin
-    .from('companies')
-    .select(
-      'id, slug, name, overall_rating, review_count, reputation_score, bbb_rating, bbb_accredited, fmcsa_safety_rating, usdot_number, verification_sources, google_data, public_scrape_data, fmcsa_raw'
-    )
-    .in('slug', focusSlugs);
-
-  if (fe) {
-    console.error(fe);
-    process.exit(1);
-  }
-
-  for (const r of focus ?? []) {
-    const vs = parseVerificationSources(r.verification_sources);
-    const g = parseGoogleData(vs.google) ?? parseGoogleData(r.google_data);
-    const scrape =
-      parsePublicScrapeData(vs.public_scrape) ?? parsePublicScrapeData(r.public_scrape_data);
-    const raw = r.fmcsa_raw as Record<string, unknown> | null;
-    const safetyRaw =
-      (raw?.safetyRating as string) ||
-      (raw && typeof raw.carrier === 'object'
-        ? ((raw.carrier as Record<string, unknown>).safetyRating as string)
-        : null);
-
-    console.log(
-      JSON.stringify(
-        {
-          slug: r.slug,
-          overall_rating: r.overall_rating,
-          review_count: r.review_count,
-          reputation_score: r.reputation_score,
-          bbb_rating: r.bbb_rating,
-          bbb_accredited: r.bbb_accredited,
-          fmcsa_safety_rating: r.fmcsa_safety_rating,
-          fmcsa_raw_safety: safetyRaw ?? null,
-          usdot: r.usdot_number,
-          google: g
-            ? {
-                status: g.status,
-                rating: g.rating,
-                review_count: g.review_count,
-                place_id: g.place_id ? 'set' : null,
-                last_fetched: g.last_fetched,
-              }
-            : null,
-          bbb_scrape_confirmed: hasBbbPublicScrapeData(scrape),
-          vs_keys: Object.keys(vs),
-        },
-        null,
-        2
-      )
-    );
-  }
-
-  console.log('\n=== Sample stats (active / not OOS) ===\n');
-  const { data: sample } = await admin
-    .from('companies')
-    .select(
-      'slug, overall_rating, review_count, bbb_rating, verification_sources, google_data, public_scrape_data, out_of_service'
-    )
-    .or('out_of_service.is.null,out_of_service.eq.false')
-    .limit(sampleN);
-
-  let googleOk = 0;
-  let googleMissing = 0;
-  let ratingNoGoogle = 0;
-  let bbbCol = 0;
-  let bbbConfirmed = 0;
-  const n = (sample ?? []).length || 1;
-  for (const r of sample ?? []) {
-    const vs = parseVerificationSources(r.verification_sources);
-    const g = parseGoogleData(vs.google) ?? parseGoogleData(r.google_data);
-    if (isUsableGoogleSnapshot(g)) googleOk++;
-    else googleMissing++;
-    if ((Number(r.overall_rating) || 0) > 0 && !isUsableGoogleSnapshot(g)) ratingNoGoogle++;
-    if (r.bbb_rating && r.bbb_rating !== 'NR') bbbCol++;
-    const scrape =
-      parsePublicScrapeData(vs.public_scrape) ?? parsePublicScrapeData(r.public_scrape_data);
-    if (hasBbbPublicScrapeData(scrape)) bbbConfirmed++;
-  }
+  const key =
+    process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
 
   console.log(
     JSON.stringify(
       {
-        sampleSize: (sample ?? []).length,
-        googleOkPct: Math.round((100 * googleOk) / n),
-        googleMissingPct: Math.round((100 * googleMissing) / n),
-        ratingWithoutGoogleSnapshotPct: Math.round((100 * ratingNoGoogle) / n),
-        bbbColumnNonNRPct: Math.round((100 * bbbCol) / n),
-        bbbConfirmedScrapePct: Math.round((100 * bbbConfirmed) / n),
+        hasUrl: Boolean(url),
+        hasKey: Boolean(key),
+        hasPlacesKey: Boolean(process.env.GOOGLE_PLACES_API_KEY?.trim()),
       },
       null,
       2
     )
   );
 
-  if (!doReenrich) {
-    console.log('\n(pass --reenrich to fetch Places for focus slugs; add --dry-run to preview)\n');
-    return;
-  }
-
-  if (!isGooglePlacesConfigured()) {
-    console.error('GOOGLE_PLACES_API_KEY required for --reenrich');
+  if (!url || !key) {
+    console.error('Missing NEXT_PUBLIC_SUPABASE_URL or Supabase key');
     process.exit(1);
   }
 
-  console.log(`\n=== Re-enrich Google (${dryRun ? 'DRY RUN' : 'WRITE'}) ===\n`);
-  for (const r of focus ?? []) {
-    const existing =
-      parseGoogleData(parseVerificationSources(r.verification_sources).google) ??
-      parseGoogleData(r.google_data);
-    if (isUsableGoogleSnapshot(existing) && !process.argv.includes('--force')) {
-      console.log(`skip ${r.slug} — already has usable Google snapshot`);
-      continue;
+  const sb = createClient(url, key, { auth: { persistSession: false } });
+  const limit = Math.max(1, Number.parseInt(argValue('--limit') ?? '200', 10));
+  const slugArg = argValue('--slugs') ?? argValue('--slug');
+  const slugs = slugArg
+    ? slugArg.split(',').map((s) => s.trim()).filter(Boolean)
+    : null;
+
+  const probe = await sb
+    .from('companies')
+    .select('slug, verification_sources, google_data, public_scrape_data')
+    .limit(1);
+
+  let selectCols =
+    'slug, name, overall_rating, review_count, bbb_rating, bbb_accredited, authority_active, verification_sources';
+  let hasLegacyCols = true;
+  if (probe.error) {
+    hasLegacyCols = false;
+    console.log('legacy_columns', {
+      available: false,
+      error: probe.error.message,
+      code: probe.error.code,
+    });
+  } else {
+    selectCols =
+      'slug, name, overall_rating, review_count, bbb_rating, bbb_accredited, authority_active, verification_sources, google_data, public_scrape_data';
+    console.log('legacy_columns', { available: true });
+  }
+
+  let rows: Record<string, unknown>[] = [];
+  if (slugs?.length) {
+    for (const slug of slugs) {
+      const { data, error } = await sb
+        .from('companies')
+        .select(selectCols)
+        .eq('slug', slug)
+        .maybeSingle();
+      if (error) {
+        console.log(JSON.stringify({ slug, error: error.message }));
+        continue;
+      }
+      if (data) rows.push(data as Record<string, unknown>);
+      else console.log(JSON.stringify({ slug, found: false }));
     }
-    const google = await fetchGooglePlacesData({
-      name: r.name,
-      headquarters: (r as { headquarters?: string }).headquarters ?? null,
-      usdotNumber: r.usdot_number,
-    });
-    console.log(r.slug, google.status, google.rating, google.review_count, google.place_id);
-    if (dryRun) continue;
-    const res = await persistGoogleSnapshot(admin as never, r.id, google, {
-      existingRow: r as never,
-    });
-    console.log('  persist', res.ok, res.applied, res.error ?? '');
-    await new Promise((r) => setTimeout(r, 400));
+  } else {
+    const { data, error } = await sb
+      .from('companies')
+      .select(selectCols)
+      .order('reputation_score', { ascending: false })
+      .limit(limit);
+    if (error) {
+      console.error(error.message);
+      process.exit(1);
+    }
+    rows = (data ?? []) as Record<string, unknown>[];
+  }
+
+  let googleOk = 0;
+  let googleMiss = 0;
+  let bbbConfirmed = 0;
+  let bbbColumnOnly = 0;
+  let vsGoogle = 0;
+  let gdCol = 0;
+  const misses: string[] = [];
+
+  for (const row of rows) {
+    const g = googleFromRow(row);
+    const scrape = scrapeFromRow(row);
+    if (row.google_data) gdCol++;
+    if (parseVerificationSources(row.verification_sources).google) vsGoogle++;
+    if (isDisplayableGooglePlacesRating(g)) googleOk++;
+    else {
+      googleMiss++;
+      if (misses.length < 25) misses.push(String(row.slug));
+    }
+    if (hasBbbPublicScrapeData(scrape)) bbbConfirmed++;
+    else if (row.bbb_rating && row.bbb_rating !== 'NR') bbbColumnOnly++;
+  }
+
+  const n = rows.length;
+  console.log(
+    JSON.stringify(
+      {
+        n,
+        google_displayable: googleOk,
+        google_miss: googleMiss,
+        google_pct: n ? Math.round((googleOk / n) * 100) : 0,
+        bbb_confirmed_scrape: bbbConfirmed,
+        bbb_confirmed_pct: n ? Math.round((bbbConfirmed / n) * 100) : 0,
+        bbb_column_grade_without_confirmed_scrape: bbbColumnOnly,
+        has_verification_sources_google: vsGoogle,
+        has_google_data_column_value: gdCol,
+        legacy_columns_in_schema: hasLegacyCols,
+        sample_google_misses: misses,
+      },
+      null,
+      2
+    )
+  );
+
+  if (slugs?.length) {
+    for (const row of rows) {
+      const g = googleFromRow(row);
+      const scrape = scrapeFromRow(row);
+      console.log(
+        JSON.stringify({
+          slug: row.slug,
+          overall_rating: row.overall_rating,
+          review_count: row.review_count,
+          google_displayable: isDisplayableGooglePlacesRating(g),
+          google_status: g?.status ?? null,
+          google_rating: g?.rating ?? null,
+          google_reviews: g?.review_count ?? null,
+          bbb_confirmed: hasBbbPublicScrapeData(scrape),
+          bbb_column: row.bbb_rating ?? null,
+          scrape_bbb: scrape?.bbb_rating ?? null,
+        })
+      );
+    }
   }
 }
 

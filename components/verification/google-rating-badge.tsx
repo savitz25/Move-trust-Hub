@@ -13,7 +13,8 @@ export function GoogleRatingBadge({
   className?: string;
   linkToLegend?: boolean;
 }) {
-  if (data.status !== 'ok' || data.rating == null) return null;
+  // Legacy snapshots may omit status — still show when rating is present.
+  if ((data.status && data.status !== 'ok') || data.rating == null) return null;
 
   const badge = (
     <Badge variant="outline" className={className} title="Google Places business rating — see badge legend">

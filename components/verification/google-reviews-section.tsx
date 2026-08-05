@@ -37,10 +37,13 @@ export function GoogleReviewsSection({
   attributableOnSiteCount = 0,
 }: Props) {
   const profileUrl = data ? googleMapsProfileUrl(data) : null;
+  // Legacy snapshots may omit status; treat missing status as ok when rating/count exist.
+  const statusOk = !data?.status || data.status === 'ok';
   const hasRating =
-    data?.status === 'ok' &&
-    ((data.rating != null && data.rating > 0) ||
-      (data.review_count != null && data.review_count > 0));
+    Boolean(data) &&
+    statusOk &&
+    ((data!.rating != null && data!.rating > 0) ||
+      (data!.review_count != null && data!.review_count > 0));
   const searchUrl = profileUrl ?? buildGoogleAttributionSearchUrl(companyName);
 
   return (

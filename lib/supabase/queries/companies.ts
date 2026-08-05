@@ -16,9 +16,11 @@ import { slugifyCompanyName } from '@/lib/utils/slugify';
 import { normalizeMc, normalizeUsdot } from '@/lib/trust/license-verification';
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
 import {
+  resolveDisplayBbbAccredited,
+  resolveDisplayBbbRating,
   resolveGoogleDataFromRow,
   resolvePublicScrapeFromRow,
-} from '@/lib/verification/resolve-company-row';
+} from '@/lib/verification/display-enrichment';
 import { extractFmcsaFieldsFromRow } from '@/lib/fmcsa/company-from-row';
 import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
 import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
@@ -140,23 +142,70 @@ const COMPANY_LIST_PROJECTIONS = [
 const COMPANY_LIST_CORE_COLUMNS = COMPANY_LIST_PROJECTIONS[0];
 
 /**
- * Optional legacy enrichment columns — only when COMPANY_LIST_ENRICHMENT=1
- * and migrations that add google_data / public_scrape_data have been applied.
+ * Optional legacy enrichment columns.
+ * Production currently packs Places/BBB into verification_sources (google_data
+ * often does not exist). We still try legacy columns once, then cache the result.
+ *
+ * COMPANY_LIST_ENRICHMENT=1 → always try legacy columns first
+ * COMPANY_LIST_ENRICHMENT=0 → never try legacy columns
+ * unset → auto-detect (try once per process)
  */
-export const COMPANY_LIST_COLUMNS =
+type EnrichmentColumnState = 'unknown' | 'available' | 'missing';
+
+let enrichmentColumnState: EnrichmentColumnState =
   process.env.COMPANY_LIST_ENRICHMENT === '1'
+    ? 'available'
+    : process.env.COMPANY_LIST_ENRICHMENT === '0'
+      ? 'missing'
+      : 'unknown';
+
+export function markEnrichmentColumnsMissing(): void {
+  enrichmentColumnState = 'missing';
+}
+
+export function markEnrichmentColumnsAvailable(): void {
+  enrichmentColumnState = 'available';
+}
+
+export const COMPANY_LIST_COLUMNS =
+  enrichmentColumnState === 'available'
     ? [COMPANY_LIST_CORE_COLUMNS, 'google_data', 'public_scrape_data'].join(', ')
     : COMPANY_LIST_CORE_COLUMNS;
 
 /** Try projections until PostgREST accepts the select (handles lagging migrations). */
-export function companyListProjectionCandidates(includeLegacyEnrichment: boolean): string[] {
-  if (includeLegacyEnrichment) {
+export function companyListProjectionCandidates(
+  includeLegacyEnrichment?: boolean
+): string[] {
+  const wantLegacy =
+    includeLegacyEnrichment === true ||
+    (includeLegacyEnrichment !== false && enrichmentColumnState !== 'missing');
+
+  if (wantLegacy) {
     return [
       `${COMPANY_LIST_PROJECTIONS[0]}, google_data, public_scrape_data`,
       ...COMPANY_LIST_PROJECTIONS,
     ];
   }
   return [...COMPANY_LIST_PROJECTIONS];
+}
+
+function noteProjectionOutcome(columns: string, error: { message?: string; code?: string } | null) {
+  const triedLegacy =
+    columns.includes('google_data') || columns.includes('public_scrape_data');
+  if (!error && triedLegacy) {
+    markEnrichmentColumnsAvailable();
+    return;
+  }
+  if (
+    error &&
+    triedLegacy &&
+    (error.code === '42703' ||
+      error.code === 'PGRST204' ||
+      isMissingEnrichmentColumnError(error.message) ||
+      /google_data|public_scrape_data/i.test(error.message ?? ''))
+  ) {
+    markEnrichmentColumnsMissing();
+  }
 }
 
 function mapRow(row: Record<string, unknown>): Company {
@@ -196,13 +245,14 @@ function mapRow(row: Record<string, unknown>): Company {
   const dbRating = Number(row.overall_rating) || 0;
   const dbReviews = Number(row.review_count) || 0;
   let googleOk =
-    googleData?.status === 'ok' &&
-    googleData.rating != null &&
-    googleData.rating > 0;
+    (googleData?.status === 'ok' || googleData?.status == null) &&
+    googleData != null &&
+    ((googleData.rating != null && googleData.rating > 0) ||
+      (googleData.review_count != null && googleData.review_count > 0));
 
   // Columns may hold Places-derived ratings while verification_sources.google was
-  // never written or was wiped. Synthesize a minimal ok snapshot for profile/compare
-  // UI so Google panels are not empty when the denormalized numbers exist.
+  // never written. Synthesize a minimal ok snapshot only when denormalized numbers
+  // exist so profile/compare Google panels are not empty (finalize also labels derived).
   if (!googleOk && dbRating > 0 && dbReviews > 0) {
     googleData = {
       source: 'google_places_api',
@@ -224,22 +274,28 @@ function mapRow(row: Record<string, unknown>): Company {
     googleOk = true;
   }
 
-  const overallRating = dbRating > 0 ? dbRating : googleOk ? googleData!.rating! : 0;
+  const overallRating =
+    dbRating > 0
+      ? dbRating
+      : googleOk && googleData!.rating != null && googleData!.rating > 0
+        ? googleData!.rating
+        : 0;
   const reviewCount =
     dbReviews > 0
       ? dbReviews
       : googleOk && googleData!.review_count != null
         ? googleData!.review_count
         : 0;
-  const bbbFromScrape = publicScrapeData?.bbb_rating;
-  // Strict: column NR is not a real grade — only use scrape when column empty/NR
-  const colBbb = (row.bbb_rating as string | null | undefined)?.trim();
-  const bbbRating =
-    (colBbb && colBbb !== 'NR'
-      ? (colBbb as Company['bbbRating'])
-      : (bbbFromScrape as Company['bbbRating'] | undefined)) || 'NR';
-  const bbbAccredited =
-    Boolean(row.bbb_accredited) || Boolean(publicScrapeData?.bbb_accredited);
+  // Strict BBB: never surface letter grades from companies.bbb_rating alone
+  // when public scrape did not confirm a real bbb.org profile match.
+  const bbbRating = resolveDisplayBbbRating(
+    publicScrapeData,
+    row.bbb_rating as string | null | undefined
+  );
+  const bbbAccredited = resolveDisplayBbbAccredited(
+    publicScrapeData,
+    row.bbb_accredited as boolean | null | undefined
+  );
 
   // FMCSA safety: column first, then fmcsa_raw aliases (QCMobile often nests rating)
   const safetyFromCol = (row.fmcsa_safety_rating as string | null | undefined)?.trim();
@@ -346,13 +402,6 @@ function mapRow(row: Record<string, unknown>): Company {
   return finalizeCompanyEnrichmentForDisplay(mapped);
 }
 
-/**
- * Default select already includes verification_sources (Google snapshots).
- * COMPANY_LIST_ENRICHMENT=1 adds legacy google_data / public_scrape_data only after migrations.
- */
-let companyListSelectMode: 'full' | 'core' =
-  process.env.COMPANY_LIST_ENRICHMENT === '1' ? 'full' : 'core';
-
 const COMPANIES_FETCH_TIMEOUT_MS = 12_000;
 
 async function withTimeout<T>(
@@ -411,9 +460,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     return [...seedCompanies];
   }
 
-  const projections = companyListProjectionCandidates(
-    companyListSelectMode === 'full'
-  );
+  const projections = companyListProjectionCandidates();
 
   let data: unknown[] | null = null;
   let error: { code?: string; message?: string } | null = null;
@@ -430,6 +477,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
       if (i === 0) return [...seedCompanies];
       continue;
     }
+    noteProjectionOutcome(cols, result.error);
     if (result.error && isSchemaColumnError(result.error)) {
       logger.warn('companies.fetch_projection_retry', {
         projection: i,
@@ -445,9 +493,10 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
   }
 
   if (error) {
+    const msg = error.message ?? '';
     const missingTable =
-      error.message.includes('does not exist') ||
-      error.message.includes('schema cache') ||
+      msg.includes('does not exist') ||
+      msg.includes('schema cache') ||
       error.code === '42P01';
     logger.error('companies.fetch_failed', {
       code: error.code,
@@ -457,9 +506,8 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
         ? 'Run supabase/migrations/20260708140000_ensure_companies_directory.sql'
         : undefined,
     });
-    // Remember schema lag so concurrent SSG pages skip the failing full projection.
     if (isSchemaColumnError(error)) {
-      companyListSelectMode = 'core';
+      markEnrichmentColumnsMissing();
     }
     return [...seedCompanies];
   }
@@ -488,8 +536,8 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
-  // v10: include service_scope + coverage_counties when present (Local Mover / geo filters)
-  ['companies-directory-v10-scope-coverage'],
+  // v11: display-enrichment resolver + strict BBB grades + progressive legacy columns
+  ['companies-directory-v11-display-enrichment'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
@@ -527,9 +575,7 @@ async function resolveCompanyBySlugOrUsdotInner(
   input: string
 ): Promise<Company | undefined> {
   // Progressive projection so a missing `email` column never drops `phone`.
-  const projections = companyListProjectionCandidates(
-    companyListSelectMode === 'full'
-  );
+  const projections = companyListProjectionCandidates();
 
   let bySlugOrId: Record<string, unknown> | null = null;
   let slugError: { code?: string; message?: string } | null = null;
@@ -541,6 +587,7 @@ async function resolveCompanyBySlugOrUsdotInner(
       .select(cols)
       .or(`slug.eq.${input},id.eq.${input}`)
       .maybeSingle();
+    noteProjectionOutcome(cols, result.error);
     if (result.error && isSchemaColumnError(result.error)) {
       slugError = result.error;
       logger.warn('companies.profile_projection_retry', {
@@ -574,6 +621,7 @@ async function resolveCompanyBySlugOrUsdotInner(
   ): Promise<Record<string, unknown> | null> {
     for (const cols of projections) {
       const result = await apply(cols);
+      noteProjectionOutcome(cols, result.error);
       if (result.error && isSchemaColumnError(result.error)) continue;
       if (!result.error && result.data) {
         return result.data as Record<string, unknown>;
@@ -598,26 +646,18 @@ async function resolveCompanyBySlugOrUsdotInner(
 
   const predictedSlug = buildCompanySlugBase({ name: nameFromSlug, usdot: null });
   if (predictedSlug && predictedSlug !== input) {
-    const { data: byPredicted, error: predictedError } = await supabase
-      .from('companies')
-      .select(listCols)
-      .eq('slug', predictedSlug)
-      .maybeSingle();
-    if (!predictedError && byPredicted) {
-      return mapRow(byPredicted as Record<string, unknown>);
-    }
+    const byPredicted = await selectOne((cols) =>
+      supabase.from('companies').select(cols).eq('slug', predictedSlug).maybeSingle()
+    );
+    if (byPredicted) return mapRow(byPredicted);
   }
 
   const collapsedSlug = slugifyCompanyName(nameFromSlug);
   if (collapsedSlug && collapsedSlug !== input && collapsedSlug !== predictedSlug) {
-    const { data: byCollapsed, error: collapsedError } = await supabase
-      .from('companies')
-      .select(listCols)
-      .eq('slug', collapsedSlug)
-      .maybeSingle();
-    if (!collapsedError && byCollapsed) {
-      return mapRow(byCollapsed as Record<string, unknown>);
-    }
+    const byCollapsed = await selectOne((cols) =>
+      supabase.from('companies').select(cols).eq('slug', collapsedSlug).maybeSingle()
+    );
+    if (byCollapsed) return mapRow(byCollapsed);
   }
 
   const viaRpc = await getDirectoryCompanyViaRpc(supabase, input);
