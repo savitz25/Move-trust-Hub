@@ -24,6 +24,7 @@ import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-disp
 import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 import type { Company } from '@/types';
 import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload';
+import { finalizeCompanyEnrichmentForDisplay } from '@/lib/verification/company-display-enrichment';
 
 function createAnonSupabaseClient() {
   const url = getSupabaseUrl();
@@ -278,7 +279,7 @@ function mapRow(row: Record<string, unknown>): Company {
     fmcsaAddr ||
     null;
 
-  return normalizeCompanyForDisplay({
+  const mapped = normalizeCompanyForDisplay({
     id: row.id as string,
     slug: row.slug as string,
     // Prefer DBA over legal entity name for all public directory surfaces.
@@ -341,6 +342,8 @@ function mapRow(row: Record<string, unknown>): Company {
     googleData,
     publicScrapeData,
   });
+  // Final pass: attach displayable Google snapshot when columns have ratings
+  return finalizeCompanyEnrichmentForDisplay(mapped);
 }
 
 /**

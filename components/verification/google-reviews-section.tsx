@@ -115,7 +115,9 @@ export function GoogleReviewsSection({
                 ? `We could not refresh a Google Places rating for ${companyName} right now. Confirm on Google Maps before booking.`
                 : data?.status === 'not_found'
                   ? `No matching Google Business Profile was found for ${companyName}. Search Google to confirm public ratings.`
-                  : `A live Google rating is not stored for ${companyName} yet. Confirm directly on Google before booking.`}
+                  : data?.status === 'ok' && (data.rating == null || data.rating <= 0)
+                    ? `Google listing found for ${companyName}, but no star rating is published yet. Confirm on Google Maps before booking.`
+                    : `A live Google rating is not stored for ${companyName} yet. Confirm directly on Google before booking.`}
             </p>
             <Link
               href={searchUrl}

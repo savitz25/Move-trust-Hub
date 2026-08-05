@@ -1,38 +1,17 @@
 import { NextResponse } from 'next/server';
 import { getCompanyBySlugAsync } from '@/lib/data-server';
 import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
-import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
+import {
+  finalizeCompanyEnrichmentForDisplay,
+  getBbbDisplaySafe,
+  getGoogleDisplayMeta,
+} from '@/lib/verification/company-display-enrichment';
 import type { Company } from '@/types';
-import type { GooglePlacesData } from '@/lib/verification/types';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 const MAX = 4;
-
-/** Compact Google summary for compare table (always present key). */
-export type CompareGoogleSummary = {
-  status: string | null;
-  rating: number | null;
-  reviewCount: number | null;
-  placeId: string | null;
-  hasSnapshot: boolean;
-};
-
-function googleSummary(company: Company): CompareGoogleSummary {
-  const g = company.googleData as GooglePlacesData | null | undefined;
-  const ok =
-    g?.status === 'ok' &&
-    ((g.rating != null && g.rating > 0) ||
-      (g.review_count != null && g.review_count > 0));
-  return {
-    status: g?.status ?? null,
-    rating: ok ? g!.rating ?? null : g?.rating ?? null,
-    reviewCount: ok ? g!.review_count ?? null : g?.review_count ?? null,
-    placeId: g?.place_id ?? null,
-    hasSnapshot: Boolean(ok),
-  };
-}
 
 /**
  * Live company hydration for /compare — same source of truth as profiles
@@ -58,14 +37,26 @@ export async function GET(request: Request) {
       try {
         const company = await getCompanyBySlugAsync(slug);
         if (company && isPubliclyDisplayableCompany(company)) {
-          // Ensure enrichment keys are always serialized (even when null)
+          const finalized = finalizeCompanyEnrichmentForDisplay(company);
+          const google = getGoogleDisplayMeta(finalized);
+          const bbb = getBbbDisplaySafe(finalized);
+          // Strip huge county arrays from compare payload (profile has full row)
+          const { coverageCounties: _c, ...rest } = finalized;
           return {
-            ...company,
-            googleData: company.googleData ?? null,
-            publicScrapeData: company.publicScrapeData ?? null,
-            googleSummary: googleSummary(company),
-            bbbConfirmed: hasBbbPublicScrapeData(company.publicScrapeData),
-          };
+            ...rest,
+            googleData: finalized.googleData ?? null,
+            publicScrapeData: finalized.publicScrapeData ?? null,
+            googleSummary: {
+              status: google.available ? 'ok' : google.status ?? null,
+              rating: google.rating,
+              reviewCount: google.reviewCount,
+              placeId: google.placeId,
+              hasSnapshot: google.available,
+              derivedFromColumns: google.derivedFromColumns,
+              mapsUrl: google.mapsUrl,
+            },
+            bbbConfirmed: bbb.confirmed,
+          } as Company & Record<string, unknown>;
         }
         return null;
       } catch (e) {

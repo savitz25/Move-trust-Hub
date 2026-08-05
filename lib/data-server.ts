@@ -19,6 +19,7 @@ import { portableContainerCompanies } from '@/data/portable-container-companies'
 import { mergeEnrichmentOntoProfile } from '@/lib/directory/merge-directory';
 import { applyAutoTransportGoogleEnrichment } from '@/lib/auto-transport/apply-google-enrichment';
 import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
+import { finalizeCompanyEnrichmentForDisplay } from '@/lib/verification/company-display-enrichment';
 import type { Company, Review } from '@/types';
 
 /** Server Component / Route Handler entry point — React cache() dedupes per request. */
@@ -35,16 +36,17 @@ function mergeDbWithSeedCatalog(db: Company, slug: string): Company {
     getAutoTransportBySlug(slug) ||
     portableContainerCompanies.find((c) => c.slug === slug);
   if (!seed) {
-    return applyAutoTransportGoogleEnrichment(db);
+    return finalizeCompanyEnrichmentForDisplay(applyAutoTransportGoogleEnrichment(db));
   }
   // Seed is the editorial base (industry ratings, long description); DB carries Places/BBB.
   const merged = mergeEnrichmentOntoProfile(seed, db);
-  return applyAutoTransportGoogleEnrichment(merged);
+  return finalizeCompanyEnrichmentForDisplay(applyAutoTransportGoogleEnrichment(merged));
 }
 
 /**
  * Profile lookup: prefer single-row DB (or seed) resolution before materializing
  * the full directory — avoids loading every company on cold profile/metadata paths.
+ * Always finalizes Google/BBB display enrichment so profile + compare stay consistent.
  */
 export async function getCompanyBySlugAsync(slug: string): Promise<Company | undefined> {
   const fromDb = await getCompanyBySlugOrUsdotFromDb(slug);
@@ -53,7 +55,8 @@ export async function getCompanyBySlugAsync(slug: string): Promise<Company | und
   }
 
   const companies = await getUnifiedDirectoryCompanies();
-  return resolveCompanyBySlug(slug, companies);
+  const resolved = resolveCompanyBySlug(slug, companies);
+  return resolved ? finalizeCompanyEnrichmentForDisplay(resolved) : undefined;
 }
 
 export const getReviews = cache(async (companyId: string, limit = 12): Promise<Review[]> => {
