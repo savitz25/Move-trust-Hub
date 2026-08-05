@@ -6,6 +6,8 @@ const AUTH_PATH_PREFIXES = [
   '/auth',
   '/my-move',
   '/portal',
+  // SSO handoff start must see a fresh session cookie when signed in
+  '/api/auth/network-handoff',
 ] as const;
 // /my-move/reports is covered by /my-move prefix
 

@@ -8,7 +8,6 @@ import {
   type NetworkHubId,
 } from '@/lib/network/ask-trust-hub';
 import { networkHubHref, type HubLinkId } from '@/lib/network/handoff-href';
-import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
 import { cn } from '@/lib/utils';
 
 type AskNetworkBarProps = {
@@ -17,12 +16,11 @@ type AskNetworkBarProps = {
 };
 
 /**
- * Slim network bar. Signed-in → silent SSO handoff to other specialist hubs.
+ * Slim network bar. Other specialist hubs always use same-origin SSO /start
+ * (guest → plain 307 without code; signed-in → one-time code redirect).
  */
 export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
   const [open, setOpen] = useState(false);
-  const ctx = useSaveMyMoveOptional();
-  const signedIn = Boolean(ctx?.user) && !ctx?.loading;
 
   const links = [
     ...NETWORK_HUBS.map((h) => {
@@ -31,9 +29,12 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
       return {
         id: h.id as string,
         label: h.shortLabel,
-        href: active ? h.url : networkHubHref(id, signedIn),
-        external: !signedIn || active,
+        // Always handoff start for other hubs — never bare cross-origin URL
+        href: active ? h.url : networkHubHref(id),
+        // Same-origin /start must not open as external (keeps cookies on request)
+        external: active,
         active,
+        sameOriginHandoff: !active,
       };
     }),
     {
@@ -42,6 +43,7 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
       href: ASK_TRUST_HUB.standardsUrl,
       external: true,
       active: false,
+      sameOriginHandoff: false,
     },
   ];
 
@@ -81,6 +83,7 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
                 href={link.href}
                 className="rounded-md px-2.5 py-1 font-medium hover:bg-background/80 hover:text-foreground"
                 rel={link.external ? 'noopener noreferrer' : undefined}
+                data-network-handoff={link.sameOriginHandoff ? 'start' : undefined}
               >
                 {link.label}
               </a>
@@ -119,6 +122,7 @@ export function AskNetworkBar({ activeHub, className }: AskNetworkBarProps) {
                     href={link.href}
                     className="block px-3 py-2 hover:bg-muted"
                     rel={link.external ? 'noopener noreferrer' : undefined}
+                    data-network-handoff={link.sameOriginHandoff ? 'start' : undefined}
                     onClick={() => setOpen(false)}
                   >
                     {link.label}

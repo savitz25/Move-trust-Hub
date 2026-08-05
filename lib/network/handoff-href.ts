@@ -27,17 +27,25 @@ export function networkHubPublicUrl(to: HubLinkId): string {
   return HUB_URL[to];
 }
 
-export function networkHubHref(to: HubLinkId, signedIn: boolean, next?: string): string {
-  if (!signedIn) return networkHubPublicUrl(to);
+/**
+ * Cross-hub navigation always goes through same-origin handoff /start.
+ * Start is guest-safe: no session → plain 307 to target HQ without code.
+ * Prefer this over bare public URLs so client auth races cannot skip SSO.
+ */
+export function networkHubHref(to: HubLinkId, _signedIn?: boolean, next?: string): string {
   return networkHandoffStartHref(to, next);
 }
 
+/**
+ * Rewrite absolute specialist-hub URLs to same-origin handoff start.
+ * Always rewrites (not only when signed in) — /start handles guests.
+ */
 export function rewriteCrossHubHref(
   href: string,
-  signedIn: boolean,
+  _signedIn: boolean,
   currentHub: HubLinkId
 ): string {
-  if (!signedIn || !href) return href;
+  if (!href) return href;
   try {
     const base =
       typeof window !== 'undefined' ? window.location.origin : HUB_URL[currentHub];

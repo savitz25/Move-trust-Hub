@@ -270,9 +270,12 @@ export const config = {
     '/manifest.webmanifest',
     '/site.webmanifest',
     '/manifest.json',
+    // SSO: refresh session cookies before handoff start (otherwise /api/* is excluded)
+    '/api/auth/network-handoff/:path*',
     {
       // robots.txt stays excluded — app/robots.ts is host-aware.
       // Other *.xml stay excluded; sitemap paths listed explicitly above.
+      // Note: general /api/* still excluded; handoff start is matched above.
       source:
         '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|sitemap-local|sw\\.js|manifest\\.webmanifest|site\\.webmanifest|manifest\\.json|icon|apple-icon|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2|woff|ttf|otf|xml|txt|webmanifest)$).*)',
       missing: [

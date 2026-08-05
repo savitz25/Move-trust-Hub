@@ -5,7 +5,6 @@ import {
   rewriteCrossHubHref,
   type HubLinkId,
 } from '@/lib/network/handoff-href';
-import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
 
 type CrossHubLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & {
   href: string;
@@ -20,15 +19,16 @@ export function CrossHubLink({
   rel,
   ...rest
 }: CrossHubLinkProps) {
-  const ctx = useSaveMyMoveOptional();
-  const signedIn = Boolean(ctx?.user) && !ctx?.loading;
-  const resolved = rewriteCrossHubHref(href, signedIn, currentHub);
+  // Always rewrite other-hub absolute URLs → same-origin /start (guest-safe).
+  // Do not gate on client session — DeferredSaveMyMove races used to skip SSO.
+  const resolved = rewriteCrossHubHref(href, true, currentHub);
   const isHandoff = resolved.startsWith('/api/auth/network-handoff/');
 
   return (
     <a
       href={resolved}
       rel={isHandoff ? undefined : rel ?? 'noopener noreferrer'}
+      data-network-handoff={isHandoff ? 'start' : undefined}
       {...rest}
     >
       {children}

@@ -156,8 +156,14 @@ export async function createNetworkHandoff(params: {
   });
 
   if (error) {
-    console.error('[network-handoff] insert failed', error.message);
-    return { ok: false, status: 500, error: 'Could not start cross-hub sign-in.' };
+    const e = error as { message?: string; code?: string; details?: string; hint?: string };
+    console.error('[network-handoff] insert failed', {
+      message: e.message,
+      code: e.code,
+      details: e.details,
+      hint: e.hint,
+    });
+    return { ok: false, status: 500, error: e.message || 'Could not start cross-hub sign-in.' };
   }
 
   return {
@@ -188,8 +194,14 @@ export async function consumeNetworkHandoff(
   });
 
   if (error) {
-    console.error('[network-handoff] consume rpc', error.message);
-    return { ok: false, status: 500, error: 'Could not complete cross-hub sign-in.' };
+    const e = error as { message?: string; code?: string; details?: string; hint?: string };
+    console.error('[network-handoff] consume rpc', {
+      message: e.message,
+      code: e.code,
+      details: e.details,
+      hint: e.hint,
+    });
+    return { ok: false, status: 500, error: e.message || 'Could not complete cross-hub sign-in.' };
   }
 
   const row = data?.[0];
