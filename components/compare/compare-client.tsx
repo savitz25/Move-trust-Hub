@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import type { Company } from '@/types';
 import {
   MAX_COMPARE,
+  isThinCompanyMetrics,
   parseAddQueryParams,
   resolveCompareCompanies,
   useCompareStore,
@@ -49,6 +50,7 @@ export function CompareClient({ allCompanies }: Props) {
   const selectedSlugs = useCompareStore((s) => s.selectedSlugs);
   const snapshots = useCompareStore((s) => s.snapshots);
   const addSlugWithOptionalCompany = useCompareStore((s) => s.addSlugWithOptionalCompany);
+  const hydrateCompanies = useCompareStore((s) => s.hydrateCompanies);
   const removeCompany = useCompareStore((s) => s.removeCompany);
   const clearAll = useCompareStore((s) => s.clearAll);
   const isSelected = useCompareStore((s) => s.isSelected);
@@ -56,6 +58,8 @@ export function CompareClient({ allCompanies }: Props) {
   const setHasHydrated = useCompareStore((s) => s.setHasHydrated);
 
   const [appliedQuery, setAppliedQuery] = useState(false);
+  const [liveBySlug, setLiveBySlug] = useState<Record<string, Company>>({});
+  const [liveLoading, setLiveLoading] = useState(false);
 
   // Finish hydration if persist already completed before mount
   useEffect(() => {
@@ -96,7 +100,11 @@ export function CompareClient({ allCompanies }: Props) {
       for (const slug of adds) {
         if (isSelected(slug) || !canAddMore()) continue;
         const found = list.find((c) => c?.slug === slug) ?? null;
-        addSlugWithOptionalCompany(slug, found);
+        // Prefer full static row if rich; otherwise add slug and live-fetch below
+        addSlugWithOptionalCompany(
+          slug,
+          found && !isThinCompanyMetrics(found) ? found : found
+        );
       }
     } catch (e) {
       console.error('[CompareClient] apply ?add= failed', e);
@@ -113,24 +121,78 @@ export function CompareClient({ allCompanies }: Props) {
     canAddMore,
   ]);
 
+  // Live hydrate from same source as profiles (getCompanyBySlugAsync via API).
+  // Static SSG allCompanies is incomplete — deep links would otherwise stay placeholders.
+  useEffect(() => {
+    if (!hasHydrated || !appliedQuery) return;
+    const slugs = selectedSlugs.slice(0, MAX_COMPARE);
+    if (slugs.length === 0) return;
+
+    const preliminary = resolveCompareCompanies(
+      slugs,
+      Array.isArray(allCompanies) ? allCompanies : [],
+      snapshots
+    );
+    const needsBlocking =
+      preliminary.length < slugs.length || preliminary.some((c) => isThinCompanyMetrics(c));
+
+    let cancelled = false;
+    if (needsBlocking) setLiveLoading(true);
+
+    const qs = encodeURIComponent(slugs.join(','));
+    void fetch(`/api/compare/companies?slugs=${qs}`, {
+      headers: { Accept: 'application/json' },
+    })
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`compare hydrate ${res.status}`);
+        return (await res.json()) as { companies?: Company[] };
+      })
+      .then((data) => {
+        if (cancelled) return;
+        const companies = Array.isArray(data.companies) ? data.companies : [];
+        if (companies.length === 0) return;
+        hydrateCompanies(companies);
+        const map: Record<string, Company> = {};
+        for (const c of companies) {
+          if (c?.slug) map[c.slug.toLowerCase()] = c;
+        }
+        setLiveBySlug((prev) => ({ ...prev, ...map }));
+      })
+      .catch((e) => {
+        console.warn('[CompareClient] live hydrate failed', e);
+      })
+      .finally(() => {
+        if (!cancelled) setLiveLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasHydrated, appliedQuery, selectedSlugs.join('|')]);
+
   const selected = useMemo(() => {
     if (!hasHydrated) return [];
     try {
-      return resolveCompareCompanies(
-        selectedSlugs,
-        Array.isArray(allCompanies) ? allCompanies : [],
-        snapshots
-      );
+      // Merge live profile rows into the candidate pool (highest priority)
+      const liveList = Object.values(liveBySlug);
+      const pool = [
+        ...liveList,
+        ...(Array.isArray(allCompanies) ? allCompanies : []),
+      ];
+      return resolveCompareCompanies(selectedSlugs, pool, snapshots);
     } catch (e) {
       console.error('[CompareClient] resolve failed', e);
       return [];
     }
-  }, [hasHydrated, selectedSlugs, allCompanies, snapshots]);
+  }, [hasHydrated, selectedSlugs, allCompanies, snapshots, liveBySlug]);
 
-  if (!hasHydrated) {
+  if (!hasHydrated || (liveLoading && selected.length === 0 && selectedSlugs.length > 0)) {
     return (
       <Card className="p-8 text-center animate-pulse" aria-busy="true">
-        <p className="text-sm text-muted-foreground">Loading your compare list…</p>
+        <p className="text-sm text-muted-foreground">
+          {liveLoading ? 'Loading company metrics…' : 'Loading your compare list…'}
+        </p>
       </Card>
     );
   }

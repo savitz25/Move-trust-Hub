@@ -5,7 +5,9 @@ import { getAllCompanies } from '@/lib/data-server';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
 
-export const dynamic = 'force-static';
+// Dynamic so compare can hydrate the same live catalog as profiles (not a stale SSG snapshot).
+export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 export const metadata: Metadata = buildMovePageMetadata({
   title: 'Compare Movers Side-by-Side',

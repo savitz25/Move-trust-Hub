@@ -139,7 +139,12 @@ export function toSnapshot(company: Company): CompareSnapshot {
       twoStar: 0,
       oneStar: 0,
     },
-  };
+    // Cast extras stored on snapshot for badge/profile parity (optional)
+    ...(company.usdotStatus ? { usdotStatus: company.usdotStatus } : {}),
+    ...(company.authorityActive != null
+      ? { authorityActive: company.authorityActive }
+      : {}),
+  } as CompareSnapshot;
 }
 
 /** Normalize any partial snapshot / company into a render-safe Company */
@@ -177,6 +182,11 @@ export function ensureCompany(input: Partial<Company> & { slug: string }): Compa
     website: safeStr(input.website),
     lastUpdated: safeStr(input.lastUpdated, base.lastUpdated),
     ratingBreakdown: input.ratingBreakdown ?? base.ratingBreakdown,
+    serviceScope: input.serviceScope ?? base.serviceScope,
+    entityType: input.entityType ?? base.entityType ?? null,
+    usdotStatus: input.usdotStatus ?? base.usdotStatus,
+    authorityActive: input.authorityActive ?? base.authorityActive,
+    googleData: input.googleData ?? base.googleData,
   };
 }
 
@@ -206,8 +216,44 @@ export function parseAddQueryParams(searchParams: {
 }
 
 /**
+ * True when this is a stub (placeholder or thin snapshot) and should be
+ * upgraded by live profile lookup when possible.
+ */
+export function isThinCompanyMetrics(c: Partial<Company> | null | undefined): boolean {
+  if (!c) return true;
+  const rep = safeNum(c.reputationScore);
+  const rating = safeNum(c.overallRating);
+  const reviews = safeNum(c.reviewCount);
+  const usdot = safeStr(c.usdotNumber).replace(/\D/g, '');
+  const hasId = usdot.length >= 5;
+  const hasServices = Array.isArray(c.services) && c.services.length > 0;
+  // Real profiles: rep/rating/reviews and/or USDOT
+  if (rep >= 10 || rating >= 1 || reviews >= 1) return false;
+  if (hasId && (rep > 0 || rating > 0 || hasServices)) return false;
+  if (hasId && c.isVerified) return false;
+  // Placeholder ids always thin
+  if (safeStr(c.id).startsWith('placeholder:')) return true;
+  // No license + all zeros → thin
+  return !hasId && rep === 0 && rating === 0 && reviews === 0;
+}
+
+function richnessScore(c: Partial<Company> | null | undefined): number {
+  if (!c) return 0;
+  let s = 0;
+  s += Math.min(safeNum(c.reputationScore), 100);
+  s += safeNum(c.overallRating) * 10;
+  s += Math.min(safeNum(c.reviewCount), 50);
+  if (safeStr(c.usdotNumber).replace(/\D/g, '').length >= 5) s += 20;
+  if (Array.isArray(c.services) && c.services.length) s += 5;
+  if (c.serviceScope === 'interstate') s += 5;
+  if (c.isVerified) s += 5;
+  if (!safeStr(c.id).startsWith('placeholder:')) s += 3;
+  return s;
+}
+
+/**
  * Resolve slugs → companies never returns null entries and never throws.
- * Priority: directory list → snapshot → lightweight placeholder from slug.
+ * Priority among candidates: richest metrics (live list / snapshot), else placeholder.
  */
 export function resolveCompareCompanies(
   slugs: string[],
@@ -217,24 +263,31 @@ export function resolveCompareCompanies(
   const list = Array.isArray(allCompanies) ? allCompanies : [];
   const bySlug = new Map<string, Company>();
   for (const c of list) {
-    if (c?.slug) bySlug.set(c.slug, c);
+    if (c?.slug) bySlug.set(c.slug.toLowerCase(), ensureCompany(c));
   }
 
   const out: Company[] = [];
-  for (const slug of slugs.slice(0, MAX_COMPARE)) {
+  for (const rawSlug of slugs.slice(0, MAX_COMPARE)) {
+    const slug = rawSlug?.trim().toLowerCase();
     if (!slug) continue;
     try {
+      const candidates: Company[] = [];
       const fromList = bySlug.get(slug);
-      if (fromList) {
-        out.push(ensureCompany(fromList));
-        continue;
-      }
-      const snap = snapshots?.[slug];
+      if (fromList) candidates.push(fromList);
+
+      const snap = snapshots?.[slug] ?? snapshots?.[rawSlug];
       if (snap && typeof snap === 'object') {
-        out.push(ensureCompany({ ...snap, slug: snap.slug || slug }));
+        candidates.push(ensureCompany({ ...snap, slug: snap.slug || slug }));
+      }
+
+      if (candidates.length === 0) {
+        out.push(placeholderCompanyFromSlug(slug));
         continue;
       }
-      out.push(placeholderCompanyFromSlug(slug));
+
+      // Prefer fullest metrics (not first match)
+      candidates.sort((a, b) => richnessScore(b) - richnessScore(a));
+      out.push(candidates[0]!);
     } catch (e) {
       console.warn('[resolveCompareCompanies] slug failed, using placeholder', slug, e);
       out.push(placeholderCompanyFromSlug(slug));
@@ -250,6 +303,8 @@ interface CompareState {
 
   toggleCompany: (company: Company) => void;
   addSlugWithOptionalCompany: (slug: string, company?: Company | null) => void;
+  /** Merge live/profile companies into snapshots (upgrade thin placeholders). */
+  hydrateCompanies: (companies: Company[]) => void;
   removeCompany: (slug: string) => void;
   clearAll: () => void;
   isSelected: (slug: string) => boolean;
@@ -297,7 +352,7 @@ export const useCompareStore = create<CompareState>()(
       },
 
       addSlugWithOptionalCompany: (slug, company) => {
-        const s = slug?.trim();
+        const s = slug?.trim().toLowerCase();
         if (!s) return;
         const { selectedSlugs, snapshots } = get();
         if (selectedSlugs.includes(s) || selectedSlugs.length >= MAX_COMPARE) return;
@@ -308,6 +363,29 @@ export const useCompareStore = create<CompareState>()(
           selectedSlugs: [...selectedSlugs, s],
           snapshots: { ...snapshots, [s]: snap },
         });
+      },
+
+      hydrateCompanies: (companies) => {
+        if (!Array.isArray(companies) || companies.length === 0) return;
+        const { snapshots, selectedSlugs } = get();
+        const next = { ...snapshots };
+        let changed = false;
+        for (const raw of companies) {
+          if (!raw?.slug) continue;
+          const slug = raw.slug.toLowerCase();
+          const rich = ensureCompany({ ...raw, slug });
+          if (isThinCompanyMetrics(rich)) continue;
+          const existing = next[slug];
+          if (!existing || richnessScore(rich) > richnessScore(existing)) {
+            next[slug] = toSnapshot(rich);
+            changed = true;
+          }
+          // Ensure slug is selected if we hydrated from deep link list
+          if (!selectedSlugs.includes(slug) && selectedSlugs.length < MAX_COMPARE) {
+            // do not auto-add — only upgrade snapshots for existing selection
+          }
+        }
+        if (changed) set({ snapshots: next });
       },
 
       removeCompany: (slug) => {
