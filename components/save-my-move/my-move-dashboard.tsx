@@ -250,7 +250,7 @@ export function MyMoveDashboard({
         <p className="text-sm text-muted-foreground">
           Signed in as{' '}
           <span className="font-medium text-foreground break-all">
-            {user.email ?? shell.user.email || 'Account'}
+            {user.email ?? shell.user.email ?? 'Account'}
           </span>
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
