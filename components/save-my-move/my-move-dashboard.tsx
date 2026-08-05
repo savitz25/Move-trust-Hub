@@ -40,6 +40,11 @@ import {
 } from '@/lib/save-my-move/dashboard-utils';
 import { buildMyMoveDemoData } from '@/lib/save-my-move/dashboard-demo';
 import type { MyMoveDashboardPayload } from '@/lib/save-my-move/dashboard-types';
+import {
+  listLocalSavedMovers,
+  removeLocalSavedMover,
+} from '@/lib/save-my-move/local-shortlist';
+import { useCompareStore } from '@/store/compare-store';
 import { trackPdfDownloaded } from '@/components/ga-events';
 import { toast } from 'sonner';
 
@@ -83,7 +88,17 @@ export function MyMoveDashboard({
   const [emailingId, setEmailingId] = useState<string | null>(null);
   const [selectedMovers, setSelectedMovers] = useState<string[]>([]);
   const [planCount, setPlanCount] = useState(0);
+  const [localMoversTick, setLocalMoversTick] = useState(0);
+  const compareSlugs = useCompareStore((s) => s.selectedSlugs);
+  const compareSnapshots = useCompareStore((s) => s.snapshots);
+  const compareHydrated = useCompareStore((s) => s.hasHydrated);
   const plansPrimary = planCount > 0;
+
+  // Device shortlist (guest + cloud soft-fallback) — re-read after tick
+  const localMovers = useMemo(() => {
+    void localMoversTick;
+    return listLocalSavedMovers();
+  }, [localMoversTick]);
 
   const handleSignOut = async () => {
     // Always leave a clean page — never leave the user on a crashed client tree.
@@ -179,16 +194,55 @@ export function MyMoveDashboard({
       ? emptyHqPayload(user)
       : null);
 
+  /** Cloud movers + device-only shortlist rows not yet in cloud */
+  const displayMovers = useMemo(() => {
+    const cloud = viewData?.movers ?? [];
+    const cloudSlugs = new Set(cloud.map((m) => m.company_slug));
+    const localOnly = localMovers
+      .filter((m) => !cloudSlugs.has(m.companySlug))
+      .map((m) => ({
+        id: `local:${m.companySlug}`,
+        company_slug: m.companySlug,
+        notes: m.notes ?? null,
+        created_at: m.savedAt,
+        updated_at: m.savedAt,
+        _localName: m.companyName,
+        _local: true as const,
+      }));
+    return [...cloud.map((m) => ({ ...m, _local: false as const, _localName: undefined as string | undefined })), ...localOnly];
+  }, [viewData?.movers, localMovers]);
+
   const readiness = useMemo(() => {
     if (!viewData) {
-      return computeMoveReadiness({ inventoryCount: 0, moverCount: 0, comparisonCount: 0 });
+      return computeMoveReadiness({
+        inventoryCount: 0,
+        moverCount: localMovers.length,
+        comparisonCount: 0,
+      });
     }
+    const moverCount = Math.max(
+      viewData.movers.length,
+      new Set([
+        ...viewData.movers.map((m) => m.company_slug),
+        ...localMovers.map((m) => m.companySlug),
+      ]).size
+    );
     return computeMoveReadiness({
       inventoryCount: viewData.inventories.length,
-      moverCount: viewData.movers.length,
-      comparisonCount: viewData.comparisons.length,
+      moverCount,
+      comparisonCount: viewData.comparisons.length + (compareSlugs.length >= 2 ? 1 : 0),
     });
-  }, [viewData]);
+  }, [viewData, localMovers, compareSlugs.length]);
+
+  // Ensure compare store hydration flag for HQ tray
+  useEffect(() => {
+    if (useCompareStore.persist.hasHydrated()) {
+      useCompareStore.getState().setHasHydrated(true);
+    }
+    return useCompareStore.persist.onFinishHydration(() => {
+      useCompareStore.getState().setHasHydrated(true);
+    });
+  }, []);
 
   // Brief session resolve only (no account yet to show)
   if (loading && !user) {
@@ -564,7 +618,7 @@ export function MyMoveDashboard({
                 </span>
               ) : null}
             </div>
-            {shell.movers.length === 0 ? (
+            {displayMovers.length === 0 ? (
               <MoveHqEmptyState
                 icon={Heart}
                 title="No saved movers"
@@ -579,12 +633,13 @@ export function MyMoveDashboard({
               />
             ) : (
               <div className="space-y-3">
-                {shell.movers.map((mover) => (
+                {displayMovers.map((mover) => (
                   <MoverCard
                     key={mover.id}
                     id={mover.id}
                     companySlug={mover.company_slug}
                     companyName={
+                      mover._localName ??
                       shell.companyNames[mover.company_slug] ??
                       mover.company_slug.replace(/-/g, ' ')
                     }
@@ -593,17 +648,67 @@ export function MyMoveDashboard({
                     selected={selectedMovers.includes(mover.company_slug)}
                     onToggleSelect={toggleMoverSelect}
                     onNotesChange={(id, notes) =>
-                      isDemoMode
-                        ? Promise.resolve(toast.message('Demo mode'))
+                      isDemoMode || String(id).startsWith('local:')
+                        ? Promise.resolve(toast.message('Notes sync when cloud shortlist is available'))
                         : updateMoverNotesAction(id, notes).then(() => toast.success('Notes saved'))
                     }
-                    onRemove={(id) => refreshAfter(() => removeSavedMoverAction(id))}
+                    onRemove={async (id) => {
+                      if (String(id).startsWith('local:')) {
+                        removeLocalSavedMover(mover.company_slug);
+                        setLocalMoversTick((n) => n + 1);
+                        toast.success('Removed from this device');
+                        return;
+                      }
+                      removeLocalSavedMover(mover.company_slug);
+                      setLocalMoversTick((n) => n + 1);
+                      await refreshAfter(() => removeSavedMoverAction(id));
+                    }}
                     demo={isDemoMode}
                   />
                 ))}
               </div>
             )}
           </section>
+
+          {/* Active device compare tray (directory selections) */}
+          {compareHydrated && compareSlugs.length > 0 ? (
+            <section aria-labelledby="active-compare-heading" className="space-y-3">
+              <div className="flex items-center justify-between gap-2">
+                <h2
+                  id="active-compare-heading"
+                  className="text-base font-semibold flex items-center gap-2"
+                >
+                  <GitCompare className="h-5 w-5 text-primary" aria-hidden="true" />
+                  Active compare ({compareSlugs.length}/4)
+                </h2>
+                <Button asChild size="sm" variant="outline">
+                  <Link
+                    href={`/compare?${compareSlugs.map((s) => `add=${encodeURIComponent(s)}`).join('&')}`}
+                  >
+                    Open compare
+                  </Link>
+                </Button>
+              </div>
+              <ul className="rounded-xl border bg-card divide-y text-sm">
+                {compareSlugs.map((slug) => (
+                  <li key={slug} className="px-3 py-2 flex justify-between gap-2">
+                    <Link href={`/companies/${slug}`} className="text-primary hover:underline truncate">
+                      {compareSnapshots[slug]?.name ??
+                        shell.companyNames[slug] ??
+                        slug.replace(/-/g, ' ')}
+                    </Link>
+                    <button
+                      type="button"
+                      className="text-xs text-muted-foreground hover:text-foreground shrink-0"
+                      onClick={() => useCompareStore.getState().removeCompany(slug)}
+                    >
+                      Remove
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
 
           <section aria-labelledby="comparisons-heading" className="space-y-4">
             <div className="flex items-center justify-between gap-2">

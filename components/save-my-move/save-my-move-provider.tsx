@@ -26,6 +26,7 @@ import {
   saveInventoryAction,
   saveMoverAction,
 } from '@/actions/save-my-move';
+import { getLocalSavedMoverSlugs } from '@/lib/save-my-move/local-shortlist';
 import {
   trackSaveMyMoveComparison,
   trackSaveMyMoveInventory,
@@ -113,19 +114,35 @@ export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) 
           break;
         }
         case 'mover': {
-          await saveMoverAction({ companySlug: pending.payload.companySlug });
+          const { addLocalSavedMover } = await import('@/lib/save-my-move/local-shortlist');
+          addLocalSavedMover({
+            companySlug: pending.payload.companySlug,
+            companyName: pending.payload.companyName,
+          });
           markMoverSaved(pending.payload.companySlug);
           trackSaveMyMoveMover({ company_slug: pending.payload.companySlug });
+          const cloud = await saveMoverAction({ companySlug: pending.payload.companySlug });
           if (pending.payload.sendEmail) {
             const emailResult = await emailMoverDetailsClient(pending.payload.companySlug);
             if (emailResult.success) {
               toast.success(`We emailed you details about ${pending.payload.companyName}`);
             } else {
-              toast.success(`${pending.payload.companyName} saved to your shortlist`);
+              toast.success(
+                cloud.ok && cloud.cloud
+                  ? `${pending.payload.companyName} saved to your shortlist`
+                  : `${pending.payload.companyName} saved on this device`
+              );
               toast.error(emailResult.error ?? 'Could not send email');
             }
           } else {
-            toast.success(`${pending.payload.companyName} saved to your shortlist`);
+            toast.success(
+              cloud.ok && cloud.cloud
+                ? `${pending.payload.companyName} saved to your shortlist`
+                : `${pending.payload.companyName} saved on this device`,
+              cloud.ok && cloud.cloud
+                ? undefined
+                : { description: 'Cloud sync unavailable — local shortlist kept.' }
+            );
           }
           break;
         }
@@ -142,18 +159,28 @@ export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) 
   }, [markMoverSaved]);
 
   useEffect(() => {
-    if (!user) {
-      setSavedMoverSlugs(new Set());
-      return;
+    let cancelled = false;
+
+    // Always seed from device local shortlist (guest + cloud soft-fallback)
+    const local = getLocalSavedMoverSlugs();
+    if (local.length) {
+      setSavedMoverSlugs((prev) => new Set([...prev, ...local]));
     }
 
-    let cancelled = false;
+    if (!user) {
+      return () => {
+        cancelled = true;
+      };
+    }
+
     getSavedMoverSlugsAction()
       .then((slugs) => {
-        if (!cancelled) setSavedMoverSlugs(new Set(slugs));
+        if (cancelled) return;
+        const merged = getLocalSavedMoverSlugs();
+        setSavedMoverSlugs(new Set([...slugs, ...merged]));
       })
       .catch(() => {
-        if (!cancelled) setSavedMoverSlugs(new Set());
+        // keep local-only
       });
 
     return () => {

@@ -85,51 +85,149 @@ export async function deleteInventoryAction(id: string) {
   revalidatePath('/my-move');
 }
 
-export async function saveMoverAction(input: { companySlug: string; notes?: string }) {
-  const user = await requireAuthenticatedUser();
-  const supabase = await createClient();
-  const { data, error } = await supabase
-    .from('saved_movers')
-    .upsert(
-      {
-        user_id: user.id,
-        company_slug: input.companySlug,
-        notes: input.notes?.trim() || null,
-      },
-      { onConflict: 'user_id,company_slug' }
-    )
-    .select('id')
-    .single();
-  if (error) throw new Error(error.message);
-  revalidatePath('/my-move');
-  await logMyMoveActivity(user.id, 'save_mover', {
-    companySlug: input.companySlug,
-    savedMoverId: data.id,
-  });
-  return { id: data.id };
+export type SaveMoverResult =
+  | { ok: true; id?: string; cloud: boolean }
+  | {
+      ok: false;
+      error: string;
+      code?: string;
+      /** Client should still keep local shortlist */
+      allowLocal: true;
+    };
+
+/**
+ * Cloud upsert for shortlist. Soft-fails with structured error — client keeps local save.
+ * Empty session is not thrown as hard error (allowLocal).
+ */
+export async function saveMoverAction(input: {
+  companySlug: string;
+  notes?: string;
+}): Promise<SaveMoverResult> {
+  const slug = input.companySlug?.trim();
+  if (!slug) {
+    return { ok: false, error: 'Missing company slug', code: 'BAD_INPUT', allowLocal: true };
+  }
+
+  const user = await getAuthenticatedUser();
+  if (!user) {
+    console.warn('[saveMoverAction] no session on server', { slug });
+    return {
+      ok: false,
+      error: 'Not signed in on server (session cookie missing)',
+      code: 'NO_SESSION',
+      allowLocal: true,
+    };
+  }
+
+  try {
+    const supabase = await createClient();
+    // Ensure profile exists (soft) so FKs / admin views stay happy
+    try {
+      await ensureUserProfile(supabase, user);
+    } catch (e) {
+      console.warn('[saveMoverAction] ensureUserProfile', e);
+    }
+
+    const { data, error } = await supabase
+      .from('saved_movers')
+      .upsert(
+        {
+          user_id: user.id,
+          company_slug: slug,
+          notes: input.notes?.trim() || null,
+        },
+        { onConflict: 'user_id,company_slug' }
+      )
+      .select('id')
+      .single();
+
+    if (error) {
+      console.error('[saveMoverAction] supabase', {
+        code: error.code,
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+        slug,
+        userId: user.id,
+      });
+      return {
+        ok: false,
+        error: error.message,
+        code: error.code,
+        allowLocal: true,
+      };
+    }
+
+    revalidatePath('/my-move');
+    await logMyMoveActivity(user.id, 'save_mover', {
+      companySlug: slug,
+      savedMoverId: data?.id,
+    });
+    return { ok: true, id: data?.id, cloud: true };
+  } catch (e) {
+    console.error('[saveMoverAction] fatal', e);
+    return {
+      ok: false,
+      error: e instanceof Error ? e.message : 'Could not save mover',
+      code: 'EXCEPTION',
+      allowLocal: true,
+    };
+  }
 }
 
+/** Soft: empty array if not signed in or table error (never throws). */
 export async function getSavedMoverSlugsAction(): Promise<string[]> {
-  const user = await requireAuthenticatedUser();
-  const supabase = await createClient();
-  const { data, error } = await supabase
-    .from('saved_movers')
-    .select('company_slug')
-    .eq('user_id', user.id);
-  if (error) throw new Error(error.message);
-  return (data ?? []).map((row) => row.company_slug);
+  const user = await getAuthenticatedUser();
+  if (!user) return [];
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase
+      .from('saved_movers')
+      .select('company_slug')
+      .eq('user_id', user.id);
+    if (error) {
+      console.error('[getSavedMoverSlugsAction]', {
+        code: error.code,
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+      });
+      return [];
+    }
+    return (data ?? []).map((row) => row.company_slug);
+  } catch (e) {
+    console.error('[getSavedMoverSlugsAction] fatal', e);
+    return [];
+  }
 }
 
 export async function removeSavedMoverAction(id: string) {
-  const user = await requireAuthenticatedUser();
+  // Local-only rows use id prefix local: — no-op on server
+  if (id.startsWith('local:')) {
+    revalidatePath('/my-move');
+    return { ok: true as const };
+  }
+  const user = await getAuthenticatedUser();
+  if (!user) {
+    revalidatePath('/my-move');
+    return { ok: false as const, error: 'NO_SESSION' };
+  }
   const supabase = await createClient();
   const { error } = await supabase
     .from('saved_movers')
     .delete()
     .eq('id', id)
     .eq('user_id', user.id);
-  if (error) throw new Error(error.message);
+  if (error) {
+    console.error('[removeSavedMoverAction]', {
+      code: error.code,
+      message: error.message,
+      details: error.details,
+    });
+    return { ok: false as const, error: error.message };
+  }
   revalidatePath('/my-move');
+  return { ok: true as const };
 }
 
 export async function updateMoverNotesAction(id: string, notes: string) {

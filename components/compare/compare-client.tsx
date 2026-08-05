@@ -23,32 +23,56 @@ interface Props {
 export function CompareClient({ allCompanies }: Props) {
   const store = useCompareStore();
   const params = useSearchParams();
+  const hasHydrated = useCompareStore((s) => s.hasHydrated);
+  const selectedSlugs = useCompareStore((s) => s.selectedSlugs);
   const [selected, setSelected] = useState<Company[]>([]);
+
+  // Finish hydration if persist already completed before mount
+  useEffect(() => {
+    if (useCompareStore.persist.hasHydrated()) {
+      store.setHasHydrated(true);
+    }
+    const unsub = useCompareStore.persist.onFinishHydration(() => {
+      store.setHasHydrated(true);
+    });
+    return unsub;
+  }, [store]);
 
   // Support deep linking ?add=slug&add=...
   useEffect(() => {
+    if (!hasHydrated) return;
     const adds = params.getAll('add');
-    if (adds.length > 0) {
-      adds.forEach(slug => {
-        const found = allCompanies.find(c => c.slug === slug);
-        if (found && !store.isSelected(slug) && store.canAddMore()) {
-          store.toggleCompany(found);
-        }
-      });
-    }
-  }, []);
+    if (adds.length === 0) return;
+    adds.forEach((slug) => {
+      const found = allCompanies.find((c) => c.slug === slug);
+      if (found && !store.isSelected(slug) && store.canAddMore()) {
+        store.toggleCompany(found);
+      }
+    });
+  }, [hasHydrated, params, allCompanies, store]);
 
   useEffect(() => {
-    const companies = store.selectedSlugs
-      .map(slug => allCompanies.find(c => c.slug === slug))
-      .filter(Boolean) as Company[];
-    setSelected(companies);
-  }, [store.selectedSlugs, allCompanies]);
+    if (!hasHydrated) return;
+    // Prefer live directory rows; fall back to persisted snapshots
+    setSelected(store.getSelectedCompanies(allCompanies));
+  }, [hasHydrated, selectedSlugs, allCompanies, store]);
+
+  if (!hasHydrated) {
+    return (
+      <Card className="p-8 text-center animate-pulse" aria-busy="true">
+        <p className="text-sm text-muted-foreground">Loading your compare list…</p>
+      </Card>
+    );
+  }
 
   if (selected.length === 0) {
     return (
       <Card className="p-8 text-center">
         <p className="mb-4 text-muted-foreground">No companies selected yet.</p>
+        <p className="mb-4 text-sm text-muted-foreground max-w-md mx-auto">
+          On the directory, tap <strong>Compare</strong> on up to four movers. Your selection is
+          saved on this device and appears here automatically.
+        </p>
         <Link href="/companies">
           <Button>Browse the Directory and Add Companies</Button>
         </Link>

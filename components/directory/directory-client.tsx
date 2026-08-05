@@ -487,7 +487,13 @@ export function DirectoryClient({
             </Button>
           </div>
 
-          <Link href="/compare">
+          <Link
+            href={
+              selectedCount > 0
+                ? `/compare?${compareStore.selectedSlugs.map((s) => `add=${encodeURIComponent(s)}`).join('&')}`
+                : '/compare'
+            }
+          >
             <Button variant="outline" size="sm" className="gap-1.5 whitespace-nowrap" disabled={selectedCount === 0}>
               Compare ({selectedCount}/4)
             </Button>

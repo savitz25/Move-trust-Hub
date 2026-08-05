@@ -5,7 +5,10 @@ import { Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import { saveMoverAction } from '@/actions/save-my-move';
-import { stashPendingSaveAction } from '@/lib/save-my-move/pending-action';
+import {
+  addLocalSavedMover,
+  isLocalMoverSaved,
+} from '@/lib/save-my-move/local-shortlist';
 import { trackSaveMyMoveMover } from '@/components/ga-events';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
@@ -23,29 +26,53 @@ export function SaveMoverButton({
   variant = 'icon',
   className,
 }: SaveMoverButtonProps) {
-  const { requireAuth, user, loading, isMoverSaved, markMoverSaved } = useSaveMyMove();
+  const { user, loading, isMoverSaved, markMoverSaved, openSaveModal } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
-  const saved = user ? isMoverSaved(companySlug) : false;
+  const [localSaved, setLocalSaved] = useState(() =>
+    typeof window !== 'undefined' ? isLocalMoverSaved(companySlug) : false
+  );
+  const saved = isMoverSaved(companySlug) || localSaved;
 
   const handleSave = async () => {
     if (loading || saved) return;
-
-    if (!user) {
-      stashPendingSaveAction({
-        type: 'mover',
-        payload: { companySlug, companyName },
-      });
-    }
-
-    if (!requireAuth({ context: 'mover', redirectPath: `/companies/${companySlug}` })) return;
     setSaving(true);
     try {
-      await saveMoverAction({ companySlug });
+      // Always persist on device first — never leave the user with only a red toast
+      addLocalSavedMover({ companySlug, companyName });
+      setLocalSaved(true);
       markMoverSaved(companySlug);
       trackSaveMyMoveMover({ company_slug: companySlug });
-      toast.success(`${companyName} saved to your shortlist`);
-    } catch {
-      toast.error('Could not save mover');
+
+      if (!user) {
+        toast.success(`${companyName} saved on this device`, {
+          description: 'Sign in anytime to sync your shortlist across devices.',
+          action: {
+            label: 'Sign in',
+            onClick: () => openSaveModal({ context: 'mover', redirectPath: `/companies/${companySlug}` }),
+          },
+        });
+        return;
+      }
+
+      const res = await saveMoverAction({ companySlug });
+      if (res.ok && res.cloud) {
+        toast.success(`${companyName} saved to your shortlist`);
+        return;
+      }
+
+      console.warn('[SaveMoverButton] cloud soft-fail', res);
+      toast.success(`${companyName} saved on this device`, {
+        description:
+          res.ok === false
+            ? 'Cloud sync unavailable — local shortlist kept.'
+            : 'Local shortlist updated.',
+      });
+    } catch (err) {
+      console.error('[SaveMoverButton]', err);
+      // Local already written above; still treat as soft success
+      toast.success(`${companyName} saved on this device`, {
+        description: 'Cloud sync failed — shortlist kept on this device.',
+      });
     } finally {
       setSaving(false);
     }
@@ -56,7 +83,7 @@ export function SaveMoverButton({
       <Button
         variant={saved ? 'secondary' : 'outline'}
         size="sm"
-        onClick={handleSave}
+        onClick={() => void handleSave()}
         disabled={saving || saved || loading}
         className={className}
         aria-pressed={saved}
@@ -70,7 +97,7 @@ export function SaveMoverButton({
   return (
     <button
       type="button"
-      onClick={handleSave}
+      onClick={() => void handleSave()}
       disabled={saving || saved || loading}
       className={cn(
         'inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
