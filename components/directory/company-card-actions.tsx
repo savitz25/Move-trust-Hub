@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { Plus, X } from 'lucide-react';
 import type { Company } from '@/types';
 import { Button } from '@/components/ui/button';
@@ -49,7 +48,12 @@ export function CompanyCardActions({
   const canAdd = compareStore.canAddMore();
 
   return (
-    <div className="border-t px-5 py-3.5 bg-muted/20 space-y-2">
+    <div
+      className="border-t px-5 py-3.5 bg-muted/20 space-y-2"
+      data-card-actions
+      onClick={(e) => e.stopPropagation()}
+      onKeyDown={(e) => e.stopPropagation()}
+    >
       <div className="flex items-center justify-between text-sm gap-3">
         <div className="flex items-center gap-2.5 min-w-0">
           <div className="min-w-0">
@@ -65,21 +69,25 @@ export function CompanyCardActions({
         </div>
         <div className="flex gap-2 shrink-0 items-center">
           <SaveMoverButton companySlug={company.slug} companyName={company.name} />
-          <Link href={reviewHref}>
-            <Button size="sm" variant="ghost" className="h-8 px-2 text-xs">
-              Review
-            </Button>
-          </Link>
-          <CompanyProfileLink slug={company.slug} returnPath={profileReturnPath}>
-            <Button size="sm" variant="ghost" className="h-8 px-3">
+          {/* asChild → single <a>, never <a><button> */}
+          <Button asChild size="sm" variant="ghost" className="h-8 px-2 text-xs">
+            <a href={reviewHref}>Review</a>
+          </Button>
+          <Button asChild size="sm" variant="ghost" className="h-8 px-3">
+            <CompanyProfileLink slug={company.slug} returnPath={profileReturnPath}>
               Details
-            </Button>
-          </CompanyProfileLink>
+            </CompanyProfileLink>
+          </Button>
           <Button
+            type="button"
             size="sm"
             variant={isSelected ? 'default' : 'outline'}
             className="h-8 px-3 gap-1"
-            onClick={() => compareStore.toggleCompany(company)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              compareStore.toggleCompany(company);
+            }}
             disabled={!isSelected && !canAdd}
           >
             {isSelected ? <X className="h-3.5 w-3.5" /> : <Plus className="h-3.5 w-3.5" />}

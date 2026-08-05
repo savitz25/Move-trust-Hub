@@ -1,12 +1,18 @@
 'use client';
 
 import type { Company } from '@/types';
+import { useRouter } from 'next/navigation';
+import type { KeyboardEvent, MouseEvent } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { StarRating } from '@/components/ui/star-rating';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
+import {
+  buildCompanyProfileHref,
+  storeCompanyReturnPath,
+} from '@/lib/directory/profile-back-link';
 import {
   formatCompanyHeadquarters,
   formatFoundedLabel,
@@ -29,8 +35,21 @@ type Props = {
   profileReturnPath?: string;
 };
 
+function isInteractiveTarget(target: EventTarget | null): boolean {
+  if (!(target instanceof Element)) return false;
+  return Boolean(
+    target.closest(
+      'a, button, input, select, textarea, label, [role="button"], [data-card-actions]'
+    )
+  );
+}
+
 export function CompanyCard({ company: rawCompany, compareStore, profileReturnPath }: Props) {
+  const router = useRouter();
   const company = normalizeCompanyForDisplay(rawCompany);
+  const profileHref = buildCompanyProfileHref(company.slug);
+  const canOpenProfile = Boolean(company.slug?.trim()) && profileHref !== '/companies';
+
   const foundedLabel = formatFoundedLabel(company.foundedYear);
   const locationLine = [formatCompanyHeadquarters(company.headquarters), foundedLabel]
     .filter(Boolean)
@@ -45,9 +64,34 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
     slug: company.slug,
   });
 
+  const openProfile = () => {
+    if (!canOpenProfile) return;
+    if (profileReturnPath) storeCompanyReturnPath(profileReturnPath);
+    router.push(profileHref);
+  };
+
+  const onBodyClick = (event: MouseEvent<HTMLDivElement>) => {
+    if (isInteractiveTarget(event.target)) return;
+    openProfile();
+  };
+
+  const onBodyKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    if (isInteractiveTarget(event.target)) return;
+    event.preventDefault();
+    openProfile();
+  };
+
   return (
     <Card className="company-card group overflow-hidden flex flex-col">
-      <div className="p-5 flex-1">
+      <div
+        className="p-5 flex-1 cursor-pointer"
+        onClick={onBodyClick}
+        onKeyDown={onBodyKeyDown}
+        role="link"
+        tabIndex={canOpenProfile ? 0 : undefined}
+        aria-label={canOpenProfile ? `Open profile for ${company.name}` : undefined}
+      >
         <div className="space-y-1.5">
           <CompanyProfileLink
             slug={company.slug}

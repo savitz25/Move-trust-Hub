@@ -339,6 +339,13 @@ export function DirectoryClient({
       const currentQuery = searchParams.toString();
       if (nextQuery === currentQuery) return;
 
+      // Only sync while the user is still on the directory index.
+      // Never replace() after soft-nav to /companies/{slug} has started (would cancel
+      // profile navigation and look like “click returns to top of /companies”).
+      if (typeof window !== 'undefined' && window.location.pathname !== '/companies') {
+        return;
+      }
+
       router.replace(nextQuery ? `/companies?${nextQuery}` : '/companies', { scroll: false });
     }, URL_SYNC_DEBOUNCE_MS);
 
@@ -718,16 +725,25 @@ export function DirectoryClient({
                       </td>
                       <td className="text-center text-xs">{ratio}</td>
                       <td className="text-right pr-4">
-                        <div className="flex justify-end gap-2">
-                          <CompanyProfileLink slug={c.slug} returnPath={sourcePage}>
-                            <Button size="sm" variant="outline">
+                        <div
+                          className="flex justify-end gap-2"
+                          data-card-actions
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Button asChild size="sm" variant="outline">
+                            <CompanyProfileLink slug={c.slug} returnPath={sourcePage}>
                               Profile
-                            </Button>
-                          </CompanyProfileLink>
+                            </CompanyProfileLink>
+                          </Button>
                           <Button
+                            type="button"
                             size="sm"
                             variant={selected ? 'default' : 'outline'}
-                            onClick={() => compareStore.toggleCompany(c)}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              compareStore.toggleCompany(c);
+                            }}
                             disabled={!selected && !compareStore.canAddMore()}
                           >
                             {selected ? 'Remove' : 'Compare'}
