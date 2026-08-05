@@ -30,17 +30,37 @@ export const getAllCompanies = getCompaniesCached;
  * live Google Places / BBB from Supabase on googleData + publicScrapeData.
  * Falls back to committed auto-transport Places JSON when DB has no displayable snapshot.
  */
+/** Pin route/DB identity so seed/catalog never wipe slug (alias redirect safety). */
+function pinCompanyIdentity(company: Company, requestedSlug: string, db?: Company): Company {
+  const requested = (requestedSlug || '').trim();
+  const preferredSlug =
+    (db?.slug || '').trim() ||
+    (company.slug || '').trim() ||
+    requested;
+  return {
+    ...company,
+    id: (db?.id || company.id || preferredSlug).trim(),
+    slug: preferredSlug,
+    usdotNumber: (db?.usdotNumber || company.usdotNumber || '').trim(),
+    mcNumber: (db?.mcNumber || company.mcNumber || '').trim(),
+  };
+}
+
 function mergeDbWithSeedCatalog(db: Company, slug: string): Company {
   const seed =
     getSeedCompanyBySlug(slug) ||
     getAutoTransportBySlug(slug) ||
     portableContainerCompanies.find((c) => c.slug === slug);
   if (!seed) {
-    return finalizeCompanyEnrichmentForDisplay(applyAutoTransportGoogleEnrichment(db));
+    return finalizeCompanyEnrichmentForDisplay(
+      applyAutoTransportGoogleEnrichment(pinCompanyIdentity(db, slug, db))
+    );
   }
   // Seed is the editorial base (industry ratings, long description); DB carries Places/BBB.
   const merged = mergeEnrichmentOntoProfile(seed, db);
-  return finalizeCompanyEnrichmentForDisplay(applyAutoTransportGoogleEnrichment(merged));
+  return finalizeCompanyEnrichmentForDisplay(
+    applyAutoTransportGoogleEnrichment(pinCompanyIdentity(merged, slug, db))
+  );
 }
 
 /**
@@ -49,14 +69,19 @@ function mergeDbWithSeedCatalog(db: Company, slug: string): Company {
  * Always finalizes Google/BBB display enrichment so profile + compare stay consistent.
  */
 export async function getCompanyBySlugAsync(slug: string): Promise<Company | undefined> {
-  const fromDb = await getCompanyBySlugOrUsdotFromDb(slug);
-  if (fromDb && isPubliclyDisplayableCompany(fromDb)) {
-    return mergeDbWithSeedCatalog(fromDb, slug);
+  const requested = (slug || '').trim();
+  if (!requested) return undefined;
+
+  const fromDb = await getCompanyBySlugOrUsdotFromDb(requested);
+  // Profile routes: serve any resolvable published row. Displayability is for directory chrome.
+  if (fromDb) {
+    return mergeDbWithSeedCatalog(fromDb, requested);
   }
 
   const companies = await getUnifiedDirectoryCompanies();
-  const resolved = resolveCompanyBySlug(slug, companies);
-  return resolved ? finalizeCompanyEnrichmentForDisplay(resolved) : undefined;
+  const resolved = await resolveCompanyBySlug(requested, companies);
+  if (!resolved) return undefined;
+  return finalizeCompanyEnrichmentForDisplay(pinCompanyIdentity(resolved, requested));
 }
 
 export const getReviews = cache(async (companyId: string, limit = 12): Promise<Review[]> => {

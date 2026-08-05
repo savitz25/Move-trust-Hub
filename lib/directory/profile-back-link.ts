@@ -37,10 +37,23 @@ export function sanitizeCompanyReturnPath(from: string | null | undefined): stri
 /**
  * Clean, crawlable company profile URL — never appends ?from= or other tracking params.
  * Return navigation is stored client-side via storeCompanyReturnPath / sessionStorage.
+ *
+ * Note: bare `/companies` means “no valid slug” — callers that perform alias redirects
+ * must use `isValidCompanyProfileHref` so they never soft-redirect profiles back to the directory.
  */
 export function buildCompanyProfileHref(slug: string, _returnPath?: string | null): string {
   const clean = (slug || '').trim().replace(/^\/+|\/+$/g, '');
-  return clean ? `/companies/${clean}` : '/companies';
+  // Guard against accidental "companies" segment or empty input
+  if (!clean || clean.toLowerCase() === 'companies') return '/companies';
+  return `/companies/${clean}`;
+}
+
+/** True when href is a real profile path (`/companies/{slug}`), not the directory index. */
+export function isValidCompanyProfileHref(href: string | null | undefined): boolean {
+  if (!href) return false;
+  const path = href.split(/[?#]/)[0] || '';
+  if (path === '/companies' || path === '/companies/') return false;
+  return /^\/companies\/[a-z0-9][a-z0-9-]*$/i.test(path);
 }
 
 /** sessionStorage key for profile “back” navigation (not crawlable). */

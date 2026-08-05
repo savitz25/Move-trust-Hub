@@ -24,7 +24,10 @@ import { InternalLinkHub } from '@/components/seo/internal-link-hub';
 import { getCompanyAssignmentStateSlugs } from '@/lib/map/company-assignment-state-slugs';
 import { ExternalLink } from 'lucide-react';
 import { CompanyProfileBack } from '@/components/directory/company-profile-back-link';
-import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
+import {
+  buildCompanyProfileHref,
+  isValidCompanyProfileHref,
+} from '@/lib/directory/profile-back-link';
 import { MetricLabel } from '@/components/trust/metric-label';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
 
@@ -97,15 +100,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CompanyProfilePage({ params }: Props) {
-  const { slug } = await params;
-  const company = await getCompanyBySlugAsync(slug);
+  const raw = await params;
+  // Normalize dynamic segment (never treat empty / array edge cases as a valid lookup).
+  const slug = decodeURIComponent(String(raw.slug ?? '').trim());
+  if (!slug) notFound();
 
-  if (!company) notFound();
+  const resolved = await getCompanyBySlugAsync(slug);
 
-  // Alias slug → canonical slug (clean URL, never re-attach ?from=).
-  if (company.slug !== slug) {
-    redirect(buildCompanyProfileHref(company.slug));
+  // True unknown movers → 404. Never soft-redirect valid misses to the directory index.
+  if (!resolved) notFound();
+
+  // Alias slug → canonical slug only when we have a *different* non-empty profile path.
+  // Historical bug: buildCompanyProfileHref('') → '/companies', which bounced every
+  // soft-nav profile click back to the directory (NEXT_REDIRECT;replace;/companies;307).
+  const canonical = (resolved.slug || '').trim();
+  if (canonical && canonical.toLowerCase() !== slug.toLowerCase()) {
+    const target = buildCompanyProfileHref(canonical);
+    if (isValidCompanyProfileHref(target)) {
+      redirect(target);
+    }
   }
+
+  // Stable non-empty slug for the rest of the page (prefer DB/canonical, else URL segment).
+  const company = {
+    ...resolved,
+    slug: canonical || slug,
+  };
 
   const reviews = await getReviews(company.id, 8);
   const assignmentStateSlugs = await getCompanyAssignmentStateSlugs(company.slug);

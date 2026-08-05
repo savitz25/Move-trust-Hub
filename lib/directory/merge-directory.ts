@@ -88,6 +88,11 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
 
   return normalizeCompanyForDisplay({
     ...base,
+    // Live directory/DB identity must win over static catalog/seed stubs.
+    id: enrichment.id || base.id,
+    slug: (enrichment.slug || base.slug || '').trim() || base.slug,
+    usdotNumber: enrichment.usdotNumber || base.usdotNumber,
+    mcNumber: enrichment.mcNumber || base.mcNumber,
     googleData: google,
     publicScrapeData: enrichment.publicScrapeData ?? base.publicScrapeData,
     overallRating:
