@@ -33,9 +33,11 @@ export default async function MyMovePage({ searchParams }: PageProps) {
     }
     passwordEnabled = pw?.passwordEnabled ?? false;
 
+    // Soft-fail: empty/null is fine — client loads empty HQ without Retry wall
     try {
       initialData = await getMyMoveDashboardData();
-    } catch {
+    } catch (err) {
+      console.error('[my-move page] getMyMoveDashboardData', err);
       initialData = null;
     }
   }

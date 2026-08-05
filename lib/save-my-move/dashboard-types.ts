@@ -42,4 +42,6 @@ export type MyMoveDashboardPayload = {
   }>;
   companyNames: Record<string, string>;
   companySummaries: Record<string, CompanySummary>;
+  /** Soft cloud issue - banner only */
+  cloudSyncWarning?: string;
 };

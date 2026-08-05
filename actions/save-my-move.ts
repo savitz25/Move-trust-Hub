@@ -2,10 +2,16 @@
 
 import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
-import { requireAuthenticatedUser } from '@/lib/save-my-move/auth';
+import {
+  getAuthenticatedUser,
+  requireAuthenticatedUser,
+} from '@/lib/save-my-move/auth';
 import type { InventoryItem } from '@/store/calculator-store';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
-import type { CompanySummary } from '@/lib/save-my-move/dashboard-types';
+import type {
+  CompanySummary,
+  MyMoveDashboardPayload,
+} from '@/lib/save-my-move/dashboard-types';
 import { logMyMoveActivity } from '@/lib/save-my-move/activity-log';
 import { inventoryToJson, type SavedInventoryPayload } from '@/lib/save-my-move/types';
 
@@ -312,44 +318,127 @@ export async function getCompanyNamesBySlugs(
   return names;
 }
 
-export async function getMyMoveDashboardData() {
-  const user = await requireAuthenticatedUser();
-  const supabase = await createClient();
-  const profile = await ensureUserProfile(supabase, user);
-
-  const [inventoriesRes, moversRes, comparisonsRes] = await Promise.all([
-    supabase
-      .from('saved_inventories')
-      .select('*')
-      .eq('user_id', user.id)
-      .order('updated_at', { ascending: false }),
-    supabase
-      .from('saved_movers')
-      .select('*')
-      .eq('user_id', user.id)
-      .order('updated_at', { ascending: false }),
-    supabase
-      .from('saved_comparisons')
-      .select('*')
-      .eq('user_id', user.id)
-      .order('created_at', { ascending: false }),
-  ]);
-
-  const moverSlugs = (moversRes.data ?? []).map((m) => m.company_slug);
-  const comparisonSlugs = (comparisonsRes.data ?? []).flatMap((c) => c.company_slugs ?? []);
-  const allSlugs = [...moverSlugs, ...comparisonSlugs];
-  const [companyNames, companySummaries] = await Promise.all([
-    getCompanyNamesBySlugs(allSlugs),
-    getCompanySummariesBySlugs(allSlugs),
-  ]);
-
+function emptyDashboardPayload(
+  user: { id: string; email?: string | null },
+  opts?: { cloudSyncWarning?: string }
+): MyMoveDashboardPayload {
   return {
-    user: { id: user.id, email: user.email ?? profile.email ?? '' },
-    profile,
-    inventories: inventoriesRes.data ?? [],
-    movers: moversRes.data ?? [],
-    comparisons: comparisonsRes.data ?? [],
-    companyNames,
-    companySummaries,
+    user: { id: user.id, email: user.email ?? '' },
+    profile: null,
+    inventories: [],
+    movers: [],
+    comparisons: [],
+    companyNames: {},
+    companySummaries: {},
+    cloudSyncWarning: opts?.cloudSyncWarning,
   };
+}
+
+/**
+ * Move HQ cloud payload. Empty account (0 rows) is success, not an error.
+ * Soft-fails on relation/RLS/column issues — never throws for empty data.
+ */
+export async function getMyMoveDashboardData(): Promise<MyMoveDashboardPayload | null> {
+  let user = await getAuthenticatedUser();
+  if (!user) {
+    await new Promise((r) => setTimeout(r, 350));
+    user = await getAuthenticatedUser();
+  }
+  if (!user) return null;
+
+  try {
+    const supabase = await createClient();
+
+    let profile: MyMoveDashboardPayload['profile'] = null;
+    try {
+      const p = await ensureUserProfile(supabase, user);
+      if (p) {
+        profile = {
+          marketing_opt_in: Boolean(
+            (p as { marketing_opt_in?: boolean }).marketing_opt_in
+          ),
+          mover_alerts_opt_in: Boolean(
+            (p as { mover_alerts_opt_in?: boolean }).mover_alerts_opt_in
+          ),
+        };
+      }
+    } catch (e) {
+      console.error('[getMyMoveDashboardData] ensureUserProfile', e);
+    }
+
+    const [inventoriesRes, moversRes, comparisonsRes] = await Promise.all([
+      supabase
+        .from('saved_inventories')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('updated_at', { ascending: false }),
+      supabase
+        .from('saved_movers')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('updated_at', { ascending: false }),
+      supabase
+        .from('saved_comparisons')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false }),
+    ]);
+
+    const warnings: string[] = [];
+    for (const [label, res] of [
+      ['saved_inventories', inventoriesRes],
+      ['saved_movers', moversRes],
+      ['saved_comparisons', comparisonsRes],
+    ] as const) {
+      if (res.error) {
+        console.error(`[getMyMoveDashboardData] ${label}`, {
+          code: res.error.code,
+          message: res.error.message,
+          details: res.error.details,
+          hint: res.error.hint,
+        });
+        warnings.push(`${label}: ${res.error.message}`);
+      }
+    }
+
+    const inventories = inventoriesRes.data ?? [];
+    const movers = moversRes.data ?? [];
+    const comparisons = comparisonsRes.data ?? [];
+
+    const moverSlugs = movers.map((m) => m.company_slug);
+    const comparisonSlugs = comparisons.flatMap((c) => c.company_slugs ?? []);
+    const allSlugs = [...moverSlugs, ...comparisonSlugs];
+
+    let companyNames: Record<string, string> = {};
+    let companySummaries: Record<string, CompanySummary> = {};
+    try {
+      [companyNames, companySummaries] = await Promise.all([
+        getCompanyNamesBySlugs(allSlugs),
+        getCompanySummariesBySlugs(allSlugs),
+      ]);
+    } catch (e) {
+      console.error('[getMyMoveDashboardData] company enrich', e);
+    }
+
+    return {
+      user: {
+        id: user.id,
+        email: user.email ?? '',
+      },
+      profile,
+      inventories,
+      movers,
+      comparisons,
+      companyNames,
+      companySummaries,
+      cloudSyncWarning:
+        warnings.length > 0 ? 'Cloud sync unavailable for some data.' : undefined,
+    };
+  } catch (e) {
+    console.error('[getMyMoveDashboardData] fatal', e);
+    return emptyDashboardPayload(user, {
+      cloudSyncWarning:
+        'Cloud sync unavailable. You can still use tools on this device.',
+    });
+  }
 }

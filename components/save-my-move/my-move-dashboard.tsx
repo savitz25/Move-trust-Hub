@@ -57,7 +57,7 @@ export function MyMoveDashboard({
   const { user, loading, openSaveModal } = useSaveMyMove();
   const [data, setData] = useState(initialData);
   const [dataLoading, setDataLoading] = useState(false);
-  const [dataError, setDataError] = useState(false);
+  const [cloudWarning, setCloudWarning] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [deleting, setDeleting] = useState(false);
@@ -74,20 +74,53 @@ export function MyMoveDashboard({
     if (!user || data) return;
 
     let cancelled = false;
-    setDataLoading(true);
-    setDataError(false);
 
-    getMyMoveDashboardData()
-      .then((next) => {
-        if (!cancelled) setData(next);
-      })
-      .catch(() => {
-        if (!cancelled) setDataError(true);
-      })
-      .finally(() => {
-        if (!cancelled) setDataLoading(false);
+    async function loadDashboard() {
+      setDataLoading(true);
+      setCloudWarning(null);
+
+      // Post-SSO: session may not be on the server action cookie yet — soft retry once
+      for (let attempt = 0; attempt < 2 && !cancelled; attempt++) {
+        try {
+          const next = await getMyMoveDashboardData();
+          if (cancelled) return;
+          if (next) {
+            setData(next);
+            if (next.cloudSyncWarning) setCloudWarning(next.cloudSyncWarning);
+            setDataLoading(false);
+            return;
+          }
+          // null = not authenticated on server yet
+          if (attempt === 0) {
+            await new Promise((r) => setTimeout(r, 400));
+            continue;
+          }
+        } catch (err) {
+          console.error('[MyMoveDashboard] getMyMoveDashboardData', err);
+          if (attempt === 0) {
+            await new Promise((r) => setTimeout(r, 400));
+            continue;
+          }
+        }
+      }
+
+      if (cancelled) return;
+      // Soft empty HQ — never hard Retry wall for empty / soft cloud failure
+      setData({
+        user: { id: user!.id, email: user!.email ?? '' },
+        profile: null,
+        inventories: [],
+        movers: [],
+        comparisons: [],
+        companyNames: {},
+        companySummaries: {},
+        cloudSyncWarning: 'Cloud sync unavailable. Tools on this device still work.',
       });
+      setCloudWarning('Cloud sync unavailable. Tools on this device still work.');
+      setDataLoading(false);
+    }
 
+    void loadDashboard();
     return () => {
       cancelled = true;
     };
@@ -148,12 +181,8 @@ export function MyMoveDashboard({
 
   if (!data) {
     return (
-      <div className="rounded-2xl border bg-card p-10 text-center shadow-sm">
-        <Package className="h-12 w-12 mx-auto text-primary/60 mb-4" aria-hidden="true" />
-        <p className="text-muted-foreground mb-4">
-          {dataError ? 'Could not load your saved data. Please try again.' : 'Loading your Move HQ…'}
-        </p>
-        {dataError && <Button onClick={() => window.location.reload()}>Retry</Button>}
+      <div className="h-48 rounded-2xl border bg-muted/20 animate-pulse" aria-busy="true">
+        <span className="sr-only">Loading your Move HQ…</span>
       </div>
     );
   }
@@ -174,6 +203,11 @@ export function MyMoveDashboard({
           Research workspace only — guest tools still work without an account. Sign out anytime;
           local plans on this device stay.
         </p>
+        {cloudWarning || data.cloudSyncWarning ? (
+          <p className="mt-2 text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-md px-2 py-1.5">
+            {cloudWarning || data.cloudSyncWarning}
+          </p>
+        ) : null}
       </div>
       <Button
         variant="outline"

@@ -75,32 +75,45 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
     setHydrated(true);
   }, [refresh]);
 
-  // Pull cloud plans when signed in
+  // Pull cloud plans when signed in — soft-fail keeps local/guest plans
   useEffect(() => {
     if (!user) return;
     let cancelled = false;
     startTransition(async () => {
-      const { plans: cloud } = await listCloudMovePlansAction({
-        includeArchived: true,
-      });
-      if (cancelled || !cloud.length) return;
-      mergeCloudPlansIntoLocal(cloud);
-      // Push local-only plans up
-      const local = listLocalPlans({ includeArchived: true });
-      for (const p of local) {
-        if (p.cloudId) continue;
-        if (!p.plan.fromPlace && p.plan.inventory.length === 0) continue;
-        const res = await upsertCloudMovePlanAction({
-          name: p.name,
-          plan: p.plan,
-          archived: p.archived,
+      try {
+        const { plans: cloud, error } = await listCloudMovePlansAction({
+          includeArchived: true,
         });
-        if (res.success && res.cloudId) {
-          upsertLocalWithCloudId(p.id, res.cloudId);
+        if (cancelled) return;
+        if (error) {
+          console.warn('[MyMoveReports] cloud list soft-fail', error);
+          // Keep local plans; do not toast as fatal
         }
-      }
-      if (!cancelled) {
-        setPlans(listLocalPlans({ includeArchived: showArchived }));
+        if (cloud.length) {
+          mergeCloudPlansIntoLocal(cloud);
+        }
+        // Push local-only plans up (ignore individual cloud errors)
+        const local = listLocalPlans({ includeArchived: true });
+        for (const p of local) {
+          if (p.cloudId) continue;
+          if (!p.plan.fromPlace && p.plan.inventory.length === 0) continue;
+          const res = await upsertCloudMovePlanAction({
+            name: p.name,
+            plan: p.plan,
+            archived: p.archived,
+          });
+          if (res.success && res.cloudId) {
+            upsertLocalWithCloudId(p.id, res.cloudId);
+          }
+        }
+        if (!cancelled) {
+          setPlans(listLocalPlans({ includeArchived: showArchived }));
+        }
+      } catch (err) {
+        console.error('[MyMoveReports] cloud sync', err);
+        if (!cancelled) {
+          setPlans(listLocalPlans({ includeArchived: showArchived }));
+        }
       }
     });
     return () => {
