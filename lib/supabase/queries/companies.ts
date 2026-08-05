@@ -190,14 +190,39 @@ function mapRow(row: Record<string, unknown>): Company {
 
   // Prefer explicit overall_rating; fall back to Google Places snapshot when
   // onboard wrote google_data / verification_sources.google but left ratings at 0.
-  const googleData = resolveGoogleDataFromRow(row);
+  let googleData = resolveGoogleDataFromRow(row);
   const publicScrapeData = resolvePublicScrapeFromRow(row);
   const dbRating = Number(row.overall_rating) || 0;
   const dbReviews = Number(row.review_count) || 0;
-  const googleOk =
+  let googleOk =
     googleData?.status === 'ok' &&
     googleData.rating != null &&
     googleData.rating > 0;
+
+  // Columns may hold Places-derived ratings while verification_sources.google was
+  // never written or was wiped. Synthesize a minimal ok snapshot for profile/compare
+  // UI so Google panels are not empty when the denormalized numbers exist.
+  if (!googleOk && dbRating > 0 && dbReviews > 0) {
+    googleData = {
+      source: 'google_places_api',
+      place_id: googleData?.place_id ?? null,
+      name: (row.name as string) || null,
+      rating: dbRating,
+      review_count: dbReviews,
+      formatted_address: googleData?.formatted_address ?? null,
+      website_url: googleData?.website_url ?? null,
+      phone: googleData?.phone ?? null,
+      review_snippets: googleData?.review_snippets ?? [],
+      last_fetched:
+        googleData?.last_fetched ??
+        (typeof row.last_updated === 'string' && row.last_updated
+          ? row.last_updated
+          : new Date().toISOString()),
+      status: 'ok',
+    };
+    googleOk = true;
+  }
+
   const overallRating = dbRating > 0 ? dbRating : googleOk ? googleData!.rating! : 0;
   const reviewCount =
     dbReviews > 0
@@ -206,13 +231,40 @@ function mapRow(row: Record<string, unknown>): Company {
         ? googleData!.review_count
         : 0;
   const bbbFromScrape = publicScrapeData?.bbb_rating;
+  // Strict: column NR is not a real grade — only use scrape when column empty/NR
+  const colBbb = (row.bbb_rating as string | null | undefined)?.trim();
   const bbbRating =
-    ((row.bbb_rating as Company['bbbRating']) &&
-    (row.bbb_rating as string) !== 'NR'
-      ? (row.bbb_rating as Company['bbbRating'])
+    (colBbb && colBbb !== 'NR'
+      ? (colBbb as Company['bbbRating'])
       : (bbbFromScrape as Company['bbbRating'] | undefined)) || 'NR';
   const bbbAccredited =
     Boolean(row.bbb_accredited) || Boolean(publicScrapeData?.bbb_accredited);
+
+  // FMCSA safety: column first, then fmcsa_raw aliases (QCMobile often nests rating)
+  const safetyFromCol = (row.fmcsa_safety_rating as string | null | undefined)?.trim();
+  const raw = row.fmcsa_raw && typeof row.fmcsa_raw === 'object'
+    ? (row.fmcsa_raw as Record<string, unknown>)
+    : null;
+  const nestedCarrier =
+    raw && typeof raw.carrier === 'object'
+      ? (raw.carrier as Record<string, unknown>)
+      : raw && typeof (raw as { content?: { carrier?: unknown } }).content === 'object'
+        ? (((raw as { content?: { carrier?: unknown } }).content?.carrier as Record<string, unknown>) ?? null)
+        : null;
+  const safetyFromRaw = (
+    (raw?.safetyRating as string) ||
+    (raw?.safety_rating as string) ||
+    (nestedCarrier?.safetyRating as string) ||
+    (nestedCarrier?.safety_rating as string) ||
+    ''
+  ).trim();
+  const fmcsaSafetyRating = ((): Company['fmcsaSafetyRating'] => {
+    const cand = safetyFromCol && safetyFromCol !== 'Not Rated' ? safetyFromCol : safetyFromRaw || safetyFromCol || 'Not Rated';
+    if (/satisfactory/i.test(cand)) return 'Satisfactory';
+    if (/conditional/i.test(cand)) return 'Conditional';
+    if (/unsatisfactory/i.test(cand)) return 'Unsatisfactory';
+    return 'Not Rated';
+  })();
 
   // Prefer street-level Places address when FMCSA/physical is empty or city-only.
   const fmcsaAddr = (fmcsaFields.physicalAddress || '').trim();
@@ -253,8 +305,7 @@ function mapRow(row: Record<string, unknown>): Company {
     usdotNumber: (row.usdot_number as string) || '',
     mcNumber: (row.mc_number as string) || '',
     fmcsaLegalName: publicNames.legalName,
-    fmcsaSafetyRating:
-      (row.fmcsa_safety_rating as Company['fmcsaSafetyRating']) || 'Not Rated',
+    fmcsaSafetyRating,
     fmcsaComplaints: (row.fmcsa_complaints as number) || 0,
     fmcsaShipments: (row.fmcsa_shipments as number) || 0,
     fmcsaLastChecked: (row.fmcsa_last_checked as string) || null,

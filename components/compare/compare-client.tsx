@@ -215,15 +215,50 @@ export function CompareClient({ allCompanies }: Props) {
   const fields: { label: string; get: (c: Company) => React.ReactNode }[] = [
     {
       label: 'Reputation Score',
-      get: (c) => (
-        <span className="font-semibold text-xl">{safeLocale(c.reputationScore)}</span>
-      ),
+      get: (c) => {
+        const v = Number(c.reputationScore);
+        if (!Number.isFinite(v) || v <= 0) return '—';
+        return <span className="font-semibold text-xl">{v}</span>;
+      },
     },
     {
       label: 'Customer Rating',
-      get: (c) => <StarRating rating={Number(c.overallRating) || 0} />,
+      get: (c) => {
+        const g = c.googleData;
+        const googleOk =
+          g?.status === 'ok' && g.rating != null && g.rating > 0;
+        const rating = googleOk
+          ? Number(g!.rating)
+          : Number(c.overallRating) > 0
+            ? Number(c.overallRating)
+            : 0;
+        if (rating <= 0) return '—';
+        return (
+          <span className="inline-flex flex-col gap-0.5">
+            <StarRating rating={rating} />
+            {googleOk ? (
+              <span className="text-[10px] text-muted-foreground">Google Places</span>
+            ) : null}
+          </span>
+        );
+      },
     },
-    { label: 'Review Count', get: (c) => safeLocale(c.reviewCount) },
+    {
+      label: 'Review Count',
+      get: (c) => {
+        const g = c.googleData;
+        const googleOk =
+          g?.status === 'ok' &&
+          g.review_count != null &&
+          g.review_count > 0;
+        const n = googleOk
+          ? Number(g!.review_count)
+          : Number(c.reviewCount) > 0
+            ? Number(c.reviewCount)
+            : 0;
+        return n > 0 ? n.toLocaleString() : '—';
+      },
+    },
     { label: 'Avg. Price', get: (c) => safeMoney(c.avgPricePerMove) },
     { label: 'Price Tier', get: (c) => c.priceRange || '—' },
     {
@@ -231,18 +266,39 @@ export function CompareClient({ allCompanies }: Props) {
       get: (c) => resolveYearsInBusiness(c.yearsInBusiness, c.foundedYear) ?? '—',
     },
     {
-      label: 'FMCSA Rating',
-      get: (c) => (
-        <Badge variant={c.fmcsaSafetyRating === 'Satisfactory' ? 'success' : 'warning'}>
-          {c.fmcsaSafetyRating || 'Not Rated'}
-        </Badge>
-      ),
+      label: 'FMCSA Safety',
+      get: (c) => {
+        const r = c.fmcsaSafetyRating || 'Not Rated';
+        return (
+          <Badge variant={r === 'Satisfactory' ? 'success' : 'warning'}>{r}</Badge>
+        );
+      },
     },
-    { label: 'Complaints (2yr)', get: (c) => safeLocale(c.fmcsaComplaints) },
-    { label: 'Shipments Reported', get: (c) => safeLocale(c.fmcsaShipments) },
+    {
+      label: 'Complaints (2yr)',
+      get: (c) => {
+        const n = Number(c.fmcsaComplaints);
+        return Number.isFinite(n) ? String(n) : '—';
+      },
+    },
+    {
+      label: 'Shipments Reported',
+      get: (c) => {
+        const n = Number(c.fmcsaShipments);
+        return Number.isFinite(n) && n > 0 ? n.toLocaleString() : '—';
+      },
+    },
     {
       label: 'BBB Rating',
-      get: (c) => `${c.bbbRating || 'NR'}${c.bbbAccredited ? ' (Accredited)' : ''}`,
+      get: (c) => {
+        // Only surface a grade when column has a real value (not NR) —
+        // confirmed scrape grades are merged into bbbRating in mapRow.
+        const grade = c.bbbRating && c.bbbRating !== 'NR' ? c.bbbRating : null;
+        if (!grade) {
+          return <span className="text-muted-foreground text-xs">No confirmed BBB profile</span>;
+        }
+        return `${grade}${c.bbbAccredited ? ' (Accredited)' : ''}`;
+      },
     },
     { label: 'Coverage', get: (c) => String(c.coverage || '—') },
     { label: 'Services', get: (c) => safeJoin(c.services, ', ') },
@@ -262,6 +318,15 @@ export function CompareClient({ allCompanies }: Props) {
           }
           if (display.status === 'marketplace') {
             return <span className="text-xs text-muted-foreground">Marketplace</span>;
+          }
+          // Still show raw digits when present even if policy says pending
+          if (c.usdotNumber?.trim()) {
+            return (
+              <span className="font-mono text-xs">
+                {c.usdotNumber}
+                {c.mcNumber ? ` / ${c.mcNumber}` : ''}
+              </span>
+            );
           }
           return <span className="text-xs text-muted-foreground">{LICENSE_PENDING_MESSAGE}</span>;
         } catch {

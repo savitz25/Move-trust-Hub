@@ -48,6 +48,9 @@ export function normalizeCompanyForDisplay(company: Company): Company {
     isVerified: Boolean(company.isVerified),
     bbbAccredited: Boolean(company.bbbAccredited),
     outOfService: Boolean(company.outOfService),
+    // Explicit pass-through so enrichment is never dropped by partial rebuilds
+    googleData: company.googleData ?? null,
+    publicScrapeData: company.publicScrapeData ?? null,
   };
 }
 
