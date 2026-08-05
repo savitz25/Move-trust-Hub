@@ -44,6 +44,8 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
   const hq = parseHeadquarters(company.headquarters);
   const lastUpdated = company.last_updated || company.updated_at || undefined;
   const usdot = (company.usdot_number || '').replace(/\D/g, '');
+  // Local when: explicit intrastate scope, OR no USDOT and not explicitly interstate
+  // (service_scope column may be missing in prod — treat null as local-eligible when no DOT).
   const isLocalOnly =
     company.service_scope === 'intrastate' ||
     (!usdot && company.service_scope !== 'interstate');

@@ -21,9 +21,10 @@ export async function getMoversForCountyAsync(
   const base = getMoversForCounty(stateSlug, countySlug);
   if (!base) return null;
 
-  // Bulk SSG + live Supabase cannot coexist on Vercel (thousands of concurrent calls).
-  // Seed catalog is enough for build; runtime / on-demand pages merge approved movers.
-  if (isProductionBuildPhase() && process.env.BULK_SSG !== '1') {
+  // Bulk SSG without Supabase: seed catalog only.
+  // Runtime / on-demand / revalidate paths always merge approved (anon or service-role).
+  // CRITICAL: must merge at runtime or funnel-onboarded locals never appear on county pages.
+  if (isProductionBuildPhase() && process.env.BULK_SSG !== '1' && process.env.FORCE_APPROVED_MOVERS !== '1') {
     return base;
   }
 
