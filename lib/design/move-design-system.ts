@@ -122,3 +122,13 @@ export const MOVE_MAP_SECTION = {
   support:
     'Click any state for county guides, mover counts, and FMCSA research tools. Prefer text? Use the directory grid below.',
 } as const;
+
+/** Phase 4 — navy network / trust block */
+export const MOVE_NETWORK_BLOCK = {
+  eyebrow: 'Ask Trust Hub network',
+  headline: 'Part of the Ask Trust Hub network',
+  support:
+    'Common ownership, separated research and listing rules. No paid placements, no lead fees.',
+  micro:
+    'Independent research only — always verify current licensing on FMCSA and state sources.',
+} as const;

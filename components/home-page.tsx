@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { HomeBelowFold } from '@/components/home/home-below-fold';
 import { MoveHero } from '@/components/move/hero';
+import { NetworkTrustBlock } from '@/components/move/network-trust-block';
 
 /**
  * Homepage — SSR H1 in MoveHero is the LCP candidate.
@@ -35,6 +36,9 @@ export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
       </div>
 
       {mapSection}
+
+      {/* Phase 4 — network cohesion + independence (after map, before deeper content / footer) */}
+      <NetworkTrustBlock />
 
       <div className="content-auto">
         <HomeBelowFold />
