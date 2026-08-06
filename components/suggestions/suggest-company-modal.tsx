@@ -21,8 +21,10 @@ import type { EnrichedCompanyPreview } from '@/lib/suggestions/types';
 import type { ServiceScope, SelectedCounty } from '@/lib/suggestions/service-scope';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
 import {
+  activeBrokerInterstateUserMessage,
   authorityRoutingFromSuggestionPreview,
   forceIntrastateUserMessage,
+  isActiveBrokerInterstatePath,
   shouldForceIntrastateFromAuthority,
 } from '@/lib/fmcsa/authority-routing';
 import { preferPublicCompanyName } from '@/lib/companies/public-display-name';
@@ -111,6 +113,11 @@ export function SuggestCompanyModal({
     selectedCounties.length > 0 &&
     Boolean(activePreview?.google || activePreview?.publicScrape);
   const readyToSubmit = isLocal ? readyLocal : readyInterstate;
+  const activeBrokerPreview = (() => {
+    const fmcsa = activePreview?.fmcsa;
+    if (!fmcsa) return false;
+    return isActiveBrokerInterstatePath(authorityRoutingFromSuggestionPreview(fmcsa));
+  })();
 
   useEffect(() => {
     if (!open || !enrichedPreview?.fmcsa) return;
@@ -770,6 +777,18 @@ export function SuggestCompanyModal({
                       ? 'Admin mode — review the preview, then publish to the interstate directory.'
                       : 'Review the multi-source preview. FMCSA is primary for interstate movers.'}
                 </p>
+
+                {!isLocal && activeBrokerPreview ? (
+                  <div
+                    className="rounded-lg border border-sky-200/80 bg-sky-50/80 p-3 text-sm text-sky-950 dark:border-sky-900/50 dark:bg-sky-950/30 dark:text-sky-50"
+                    role="status"
+                  >
+                    <p className="font-semibold">Active FMCSA broker</p>
+                    <p className="mt-1 text-xs leading-relaxed opacity-90">
+                      {activeBrokerInterstateUserMessage()}
+                    </p>
+                  </div>
+                ) : null}
 
                 {activePreview ? <MultiSourcePreviewCard preview={activePreview} /> : null}
 

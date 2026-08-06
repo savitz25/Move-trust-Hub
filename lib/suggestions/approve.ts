@@ -118,6 +118,10 @@ export async function approveSuggestionToCompany(
         suggestion.authority_status ??
         (preview?.authorityStatus as string | undefined) ??
         null,
+      entityType:
+        (preview?.entityType as string | undefined) ??
+        (suggestion as { entity_type?: string | null }).entity_type ??
+        null,
       authorityActive: snapshot?.authorityActive ?? null,
       fmcsaRaw: raw,
     });

@@ -55,7 +55,8 @@ export const CARRIER_BADGE: CompanyTypeBadge = {
 export const BROKER_BADGE: CompanyTypeBadge = {
   id: 'broker',
   label: 'Broker',
-  description: 'FMCSA entity type: Broker',
+  description:
+    'FMCSA-active broker — arranges interstate moves; may not hold common/contract carrier operating authority',
   variant: 'broker',
 };
 

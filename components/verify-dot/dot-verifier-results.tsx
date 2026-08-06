@@ -17,13 +17,18 @@ import { FmcsaStructuredPreview } from '@/components/suggestions/fmcsa-structure
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
 import { DotVerifierNotListedCta } from '@/components/verify-dot/dot-verifier-not-listed-cta';
 import { fmcsaPreviewFromVerifyResult } from '@/lib/suggestions/from-verify';
-import { shouldForceIntrastateFromAuthority } from '@/lib/fmcsa/authority-routing';
+import {
+  activeBrokerInterstateUserMessage,
+  isActiveBrokerInterstatePath,
+  shouldForceIntrastateFromAuthority,
+} from '@/lib/fmcsa/authority-routing';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 import { buildReviewPageUrl } from '@/lib/reviews/review-url';
 import { slugFromCarrier } from '@/lib/reviews/schema';
 
 const ADD_DIRECTORY_LABEL = 'Add This Company to Our Directory';
 const ADD_LOCAL_LABEL = 'Add as Local / In-State Mover';
+const ADD_BROKER_LABEL = 'Add This Broker to Our Directory';
 
 type Props = {
   result: VerifyDotResult;
@@ -64,15 +69,23 @@ export function DotVerifierResults({
     preview?.addressState?.trim().toUpperCase().slice(0, 2) ||
     '';
 
-  /** USDOT active/registered but no interstate Operating Authority → local only */
+  const authorityRouting = {
+    usdotStatus: preview?.usdotStatus ?? null,
+    allowedToOperate: preview?.allowedToOperate ?? null,
+    authorityStatus: preview?.authorityStatus ?? null,
+    entityType: preview?.entityType ?? null,
+  };
+
+  /** ACTIVE pure broker → interstate (ignore OA Not Authorized) */
+  const activeBrokerPath =
+    hasPreview && Boolean(preview) && isActiveBrokerInterstatePath(authorityRouting);
+
+  /** USDOT active carrier without interstate OA → local only (not brokers) */
   const forceLocalFromAuthority =
     hasPreview &&
     Boolean(preview) &&
-    shouldForceIntrastateFromAuthority({
-      usdotStatus: preview?.usdotStatus ?? null,
-      allowedToOperate: preview?.allowedToOperate ?? null,
-      authorityStatus: preview?.authorityStatus ?? null,
-    });
+    !activeBrokerPath &&
+    shouldForceIntrastateFromAuthority(authorityRouting);
 
   const statusBanner = inDirectory ? (
     <div
@@ -129,6 +142,44 @@ export function DotVerifierResults({
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
       {statusBanner}
+
+      {activeBrokerPath ? (
+        <div
+          className="flex items-start gap-3 rounded-lg border border-sky-300/90 bg-sky-50 p-4 dark:border-sky-800/60 dark:bg-sky-950/40"
+          role="status"
+        >
+          <ShieldCheck
+            className="h-5 w-5 shrink-0 text-sky-700 dark:text-sky-400 mt-0.5"
+            aria-hidden="true"
+          />
+          <div className="space-y-1.5 min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-medium text-sky-950 dark:text-sky-50">
+                Active FMCSA broker
+              </p>
+              <Badge
+                variant="outline"
+                className="border-sky-400/80 bg-sky-100/80 text-sky-950 dark:border-sky-700 dark:bg-sky-900/50 dark:text-sky-50"
+              >
+                Interstate directory
+              </Badge>
+            </div>
+            <p className="text-sm text-sky-950/90 dark:text-sky-50/90 leading-relaxed">
+              {activeBrokerInterstateUserMessage()}
+            </p>
+            {preview?.entityType ? (
+              <p className="text-xs font-mono text-sky-900/70 dark:text-sky-100/70">
+                Entity type: {preview.entityType}
+                {preview.authorityStatus ? ` · Authority: ${preview.authorityStatus}` : ''}
+              </p>
+            ) : preview?.authorityStatus ? (
+              <p className="text-xs font-mono text-sky-900/70 dark:text-sky-100/70">
+                Authority: {preview.authorityStatus}
+              </p>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
 
       {forceLocalFromAuthority ? (
         <div
@@ -241,21 +292,33 @@ export function DotVerifierResults({
           }
         >
           <Badge variant="secondary" className="mb-1">
-            {forceLocalFromAuthority ? 'Local / county pages only' : 'Not in directory'}
+            {forceLocalFromAuthority
+              ? 'Local / county pages only'
+              : activeBrokerPath
+                ? 'Active broker · interstate directory'
+                : 'Not in directory'}
           </Badge>
           <p className="text-sm text-muted-foreground">
             {forceLocalFromAuthority
               ? `Add ${preview?.dbaName || preview?.legalName || carrierQuery} as a local/in-state mover. We’ll keep FMCSA name, address, and phone, then finish with Google, website, and county selection — not the main interstate directory.`
-              : hasPreview
-                ? `Add ${preview?.legalName ?? carrierQuery} to Move Trust Hub using verified FMCSA data.`
-                : 'Submit this carrier for review — we will verify it against FMCSA before publishing.'}
+              : activeBrokerPath
+                ? `Add ${preview?.dbaName || preview?.legalName || carrierQuery} as an FMCSA-active broker on the main interstate directory. Carrier operating authority may show Not Authorized — that is expected for brokers.`
+                : hasPreview
+                  ? `Add ${preview?.legalName ?? carrierQuery} to Move Trust Hub using verified FMCSA data.`
+                  : 'Submit this carrier for review — we will verify it against FMCSA before publishing.'}
           </p>
           <SuggestCompanyCta
             sourcePage={sourcePage}
             carrierQuery={carrierQuery}
             dotPreview={dotPreviewForSuggest}
             className="min-h-[48px]"
-            label={forceLocalFromAuthority ? ADD_LOCAL_LABEL : ADD_DIRECTORY_LABEL}
+            label={
+              forceLocalFromAuthority
+                ? ADD_LOCAL_LABEL
+                : activeBrokerPath
+                  ? ADD_BROKER_LABEL
+                  : ADD_DIRECTORY_LABEL
+            }
           />
         </div>
       ) : null}

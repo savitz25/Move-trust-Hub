@@ -532,6 +532,7 @@ export async function submitCompanySuggestion(
           fmcsa?.allowedToOperate ?? fmcsa?.fmcsaPreview?.allowedToOperate ?? null,
         authorityStatus:
           fmcsa?.authorityStatus ?? fmcsa?.fmcsaPreview?.authorityStatus ?? null,
+        entityType: fmcsa?.fmcsaPreview?.entityType ?? null,
         fmcsaRaw: rawForRouting,
       });
       if (forceLocal) {

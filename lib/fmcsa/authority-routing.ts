@@ -1,10 +1,16 @@
 /**
- * Route carriers with USDOT but no interstate operating authority into the
- * Intrastate / Local onboarding funnel.
+ * FMCSA onboarding path classifier (order matters).
  *
- * Common pattern: local movers register a USDOT (often ACTIVE) for legitimacy
- * but never obtain Common/Contract/Broker operating authority.
+ * 1. USDOT not ACTIVE → reject/pending handled elsewhere; do not force local here.
+ * 2. Entity BROKER (broker-equivalent) + USDOT ACTIVE → ALWAYS INTERSTATE
+ *    (ignore Operating Authority "NOT AUTHORIZED" / None for path selection).
+ * 3. Entity CARRIER (not broker) + ACTIVE + no interstate OA → LOCAL / INTRASTATE.
+ * 4. ACTIVE + authorized interstate common/contract/broker OA → INTERSTATE.
+ *
+ * Brokers arrange interstate moves and often lack common/contract carrier authority.
  */
+
+import { extractEntityType } from '@/lib/fmcsa/carrier-fields';
 
 export type AuthorityRoutingInput = {
   /** FMCSA census allowedToOperate (Y/N) */
@@ -17,7 +23,9 @@ export type AuthorityRoutingInput = {
   authorityStatus?: string | null;
   /** Snapshot-level boolean when available */
   authorityActive?: boolean | null;
-  /** Optional raw carrier for supplemental authority rows */
+  /** FMCSA entity type (BROKER, CARRIER, HHG Broker, etc.) */
+  entityType?: string | null;
+  /** Optional raw carrier for supplemental authority rows + entity extract */
   fmcsaRaw?: Record<string, unknown> | null;
 };
 
@@ -28,6 +36,37 @@ function norm(value: string | null | undefined): string {
 function isActiveAuthorityCode(code: string | null | undefined): boolean {
   const c = norm(code);
   return c === 'A' || c === 'ACTIVE';
+}
+
+/**
+ * Pure broker / broker-equivalent entity types for interstate onboarding.
+ * Does NOT include CARRIER or CARRIER/BROKER mixed types (carriers keep OA rules).
+ */
+export function isFmcsaBrokerEntity(
+  entityType?: string | null,
+  fmcsaRaw?: Record<string, unknown> | null
+): boolean {
+  const labels: string[] = [];
+  if (entityType?.trim()) labels.push(entityType);
+  if (fmcsaRaw && typeof fmcsaRaw === 'object') {
+    const fromRaw = extractEntityType(fmcsaRaw);
+    if (fromRaw?.trim()) labels.push(fromRaw);
+    const direct = String(
+      fmcsaRaw.entityType ?? fmcsaRaw.entity_type ?? ''
+    ).trim();
+    if (direct) labels.push(direct);
+  }
+
+  for (const label of labels) {
+    const n = norm(label).replace(/[_/]+/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!n || !n.includes('BROKER')) continue;
+    // Mixed carrier+broker keeps carrier OA rules
+    if (n.includes('CARRIER')) continue;
+    // Broker, HHG Broker, Property Broker, Household Goods Broker, Freight Forwarder/Broker, etc.
+    return true;
+  }
+
+  return false;
 }
 
 /** True when any common/contract/broker authority is active. */
@@ -152,19 +191,29 @@ export function hasNotAuthorizedAuthoritySignal(input: AuthorityRoutingInput): b
 }
 
 /**
- * Business rule: USDOT active (or registered) + no interstate operating authority
- * → force Intrastate / Local onboarding.
- *
- * Local movers often keep an ACTIVE USDOT without Common/Contract/Broker OA.
+ * ACTIVE broker path: interstate directory eligibility regardless of carrier OA.
+ */
+export function isActiveBrokerInterstatePath(input: AuthorityRoutingInput): boolean {
+  return isFmcsaBrokerEntity(input.entityType, input.fmcsaRaw) && isFmcsaUsdotActive(input);
+}
+
+/**
+ * Force Intrastate / Local onboarding when ACTIVE carrier has no interstate OA.
+ * Never forces local for ACTIVE pure brokers (entity type BROKER etc.).
  */
 export function shouldForceIntrastateFromAuthority(
   input: AuthorityRoutingInput
 ): boolean {
+  // Rule 2: ACTIVE broker → main /companies interstate path; ignore OA Not Authorized
+  if (isActiveBrokerInterstatePath(input)) {
+    return false;
+  }
+
   if (hasActiveInterstateOperatingAuthority(input)) {
     return false;
   }
 
-  // Active / allowed-to-operate USDOT without interstate OA → local funnel
+  // Rule 3: Active USDOT carrier (not broker) without interstate OA → local funnel
   if (isFmcsaUsdotActive(input)) {
     return true;
   }
@@ -186,16 +235,28 @@ export function forceIntrastateUserMessage(): string {
   );
 }
 
+/** UI copy for ACTIVE broker → interstate (do not show county-only blocker). */
+export function activeBrokerInterstateUserMessage(): string {
+  return (
+    'This USDOT is an active FMCSA broker. Brokers are onboarded to the interstate directory ' +
+    'even when carrier operating authority is Not Authorized. Brokers arrange interstate moves ' +
+    'and often do not hold common or contract carrier authority. Full FMCSA entity type, ' +
+    'authority, MC, and address are still stored on the profile.'
+  );
+}
+
 /** Build routing input from FmcsaSuggestionPreview-like client objects. */
 export function authorityRoutingFromSuggestionPreview(preview: {
   usdotStatus?: string | null;
   allowedToOperate?: string | null;
   authorityStatus?: string | null;
+  entityType?: string | null;
 }): AuthorityRoutingInput {
   return {
     usdotStatus: preview.usdotStatus ?? null,
     allowedToOperate: preview.allowedToOperate ?? null,
     authorityStatus: preview.authorityStatus ?? null,
+    entityType: preview.entityType ?? null,
   };
 }
 
@@ -204,11 +265,13 @@ export function authorityRoutingFromFmcsaRaw(
   raw: Record<string, unknown> | null | undefined
 ): AuthorityRoutingInput {
   if (!raw) return {};
+  const extracted = extractEntityType(raw);
   return {
     allowedToOperate: String(raw.allowedToOperate ?? raw.allowToOperate ?? ''),
     commonAuthorityStatus: String(raw.commonAuthorityStatus ?? ''),
     contractAuthorityStatus: String(raw.contractAuthorityStatus ?? ''),
     brokerAuthorityStatus: String(raw.brokerAuthorityStatus ?? ''),
+    entityType: extracted ?? (String(raw.entityType ?? raw.entity_type ?? '') || null),
     fmcsaRaw: raw,
   };
 }
