@@ -55,8 +55,8 @@ export function MoveMegaMenu({ item, active = false }: Props) {
     'font-medium whitespace-nowrap rounded-sm transition-colors',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
     active || open
-      ? 'text-primary font-semibold'
-      : 'text-slate-700 hover:text-primary dark:text-slate-200 dark:hover:text-primary'
+      ? 'font-semibold !text-[#FF5A1F]'
+      : '!text-[#1E293B] hover:!text-[#FF5A1F] dark:!text-slate-100 dark:hover:!text-[#FF5A1F]'
   );
 
   return (
@@ -81,7 +81,9 @@ export function MoveMegaMenu({ item, active = false }: Props) {
           className={cn(
             'flex min-h-11 min-w-9 items-center justify-center rounded-sm p-0.5 transition-colors',
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
-            open || active ? 'text-primary' : 'text-slate-600 hover:text-primary'
+            open || active
+              ? '!text-[#FF5A1F]'
+              : '!text-[#1E293B] hover:!text-[#FF5A1F] dark:!text-slate-100 dark:hover:!text-[#FF5A1F]'
           )}
           aria-expanded={open}
           aria-haspopup="true"

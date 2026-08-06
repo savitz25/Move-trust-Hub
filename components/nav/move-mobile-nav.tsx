@@ -38,21 +38,21 @@ function MobileAccordionSection({
             href={href}
             onClick={onNavigate}
             className={cn(
-              'flex-1 font-semibold text-slate-800 hover:text-primary',
+              'flex-1 font-semibold !text-[#1E293B] hover:!text-[#FF5A1F]',
               tapTarget
             )}
           >
             {title}
           </Link>
         ) : (
-          <span className={cn('flex-1 font-semibold text-slate-800', tapTarget)}>
+          <span className={cn('flex-1 font-semibold !text-[#1E293B]', tapTarget)}>
             {title}
           </span>
         )}
         <button
           type="button"
           className={cn(
-            'flex min-h-11 min-w-11 items-center justify-center rounded-md text-slate-600 hover:text-primary',
+            'flex min-h-11 min-w-11 items-center justify-center rounded-md !text-[#1E293B] hover:!text-[#FF5A1F]',
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30'
           )}
           aria-expanded={open}

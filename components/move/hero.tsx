@@ -8,6 +8,9 @@ import {
   MOVE_HERO_SUPPORT,
 } from '@/lib/design/move-design-system';
 
+/** Forced high-contrast body — never use muted/slate utilities here */
+const HERO_BODY_COLOR = '#1E293B';
+
 /**
  * Homepage hero — SSR H1 (LCP) + form-forward Move Plan card.
  * Network belonging is carried by TrustMark + Network block + footer (not triple-repeated).
@@ -28,7 +31,10 @@ export function MoveHero() {
             {MOVE_HERO_HEADLINE}
           </h1>
 
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-700 sm:text-lg lg:mx-0 dark:text-slate-300">
+          <p
+            className="mx-auto mt-4 max-w-xl text-base leading-relaxed sm:text-lg lg:mx-0"
+            style={{ color: HERO_BODY_COLOR }}
+          >
             {MOVE_HERO_SUPPORT}
           </p>
 

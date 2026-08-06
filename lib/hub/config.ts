@@ -4,7 +4,7 @@ import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Bump when replacing Move brand logos to bust immutable CDN/browser cache. */
-export const TRUST_HUB_LOGO_VERSION = '20260806c';
+export const TRUST_HUB_LOGO_VERSION = '20260806e';
 /** Bump when replacing public/insurance/brand/* so CDN/browser cache picks up the new mark. */
 export const INSURANCE_LOGO_VERSION = '20260728r2';
 /** Bump when replacing public/lender/brand/* for /lender section logos. */

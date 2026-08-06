@@ -109,10 +109,13 @@ export const rootLayoutMetadata: Metadata = {
   authors: [{ name: SITE_NAME }],
   icons: {
     icon: [
+      { url: `/favicon.ico?v=${TRUST_HUB_LOGO_VERSION}`, sizes: 'any' },
       { url: `/favicon-16.png?v=${TRUST_HUB_LOGO_VERSION}`, sizes: '16x16', type: 'image/png' },
       { url: `/favicon-32.png?v=${TRUST_HUB_LOGO_VERSION}`, sizes: '32x32', type: 'image/png' },
+      { url: `/favicon-48.png?v=${TRUST_HUB_LOGO_VERSION}`, sizes: '48x48', type: 'image/png' },
       { url: `/icon-192.png?v=${TRUST_HUB_LOGO_VERSION}`, sizes: '192x192', type: 'image/png' },
-      { url: TRUST_HUB_LOGO.src, type: 'image/png' },
+      { url: `/icon-512.png?v=${TRUST_HUB_LOGO_VERSION}`, sizes: '512x512', type: 'image/png' },
+      { url: TRUST_HUB_LOGO.headerSrc, type: 'image/png' },
     ],
     apple: [
       {

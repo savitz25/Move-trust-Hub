@@ -22,7 +22,9 @@ type Props = {
 };
 
 const COUNTY_FILL = '#e2e8f0';
-const COUNTY_HOVER = '#0d9488';
+/** Move Trust Hub orange — active / hover / focus / selected county (never teal/green) */
+const COUNTY_ACTIVE = '#FF5A1F';
+const COUNTY_SOFT = '#FF7A4D';
 const STROKE = '#f8fafc';
 
 type ActiveCounty = {
@@ -271,9 +273,9 @@ export function StateCountyMap({
                     <title>{info.label}</title>
                     <path
                       d={county.path}
-                      fill={isHot ? COUNTY_HOVER : COUNTY_FILL}
-                      stroke={STROKE}
-                      strokeWidth={0.4}
+                      fill={isHot ? COUNTY_ACTIVE : COUNTY_FILL}
+                      stroke={isHot ? COUNTY_SOFT : STROKE}
+                      strokeWidth={isHot ? 0.55 : 0.4}
                       className="transition-colors duration-150 cursor-pointer"
                       style={{ vectorEffect: 'non-scaling-stroke' }}
                     />
@@ -308,7 +310,7 @@ export function StateCountyMap({
               </p>
             )}
             {touchPreviewSlug === active.slug ? (
-              <p className="mt-1 text-[11px] text-teal-300 font-medium">
+              <p className="mt-1 text-[11px] font-medium text-[#FF7A4D]">
                 Tap again to open
               </p>
             ) : null}
