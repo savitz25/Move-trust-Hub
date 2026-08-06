@@ -87,12 +87,31 @@ Remove FREE/uvq keys from Move Production.
 |----------|--------|
 | `company_verification_backfill_runs` | Create (SQL) + copy if still used (~80 on uvq) |
 | `magic_link_rate_limits` / `magic_link_ip_rate_limits` | Optional create + copy |
-| `company_verification_status` / `companies_with_stats` | **Views** — SQL only |
+| `providers` | Create stub table (empty on FREE) |
+| `company_verification_status` | **View** — `DROP VIEW IF EXISTS` then `CREATE VIEW` (never OR REPLACE) |
+| `companies_with_stats` | **Leave alone** if already on are (OR REPLACE causes **42P16**) |
 | `moving_companies` + `company_reviews` | Done when schema present |
-| **lenders\*** | **Skip forever on are** → Lender project |
+| **lenders\*** | **Skip forever on are** → Lender project `hidcrbexurginnuqgjpx` |
+
+### Apply remaining schema (are SQL Editor)
+
+```text
+# 1) Tables only first (no view changes):
+scripts/output/APPLY-ON-ARE-REMAINING-TABLES-ONLY.sql
+
+# 2) Full fixed script (tables + DROP/CREATE company_verification_status):
+scripts/output/APPLY-ON-ARE-REMAINING.sql
+# or: supabase/migrations/20260806190000_are_remaining_ops_tables.sql
+```
+
+Then:
+
+```bash
+npm run migrate:uvq-to-are:remaining -- --confirm
+```
 
 ## Order notes
 
 - `company_reviews` → requires `moving_companies` first (FK). Migrator filters orphans.
-- `my_move_activity_events` only copies rows whose `user_id` exists on **are**.
+- Never `CREATE OR REPLACE VIEW` when column set may change (Postgres **42P16**).
 - Never copies `user_profiles`, `saved_*`, `auth.*`, portal ownership tables, or **lenders**.
