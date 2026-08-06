@@ -5,43 +5,69 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { FIND_MOVERS_NAV } from '@/lib/nav/move-nav-config';
-import { MOVE_HEADER_CTA, MOVE_HEADER_NAV } from '@/lib/design/move-design-system';
+import { MOVE_HEADER_CTA } from '@/lib/design/move-design-system';
+import { MOVE_MEGA_NAV } from '@/lib/nav/move-mega-menu-config';
 import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
 import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
 import { cn } from '@/lib/utils';
 
 const tapTarget =
-  'min-h-[48px] flex items-center rounded-md px-2 -mx-2 transition-colors hover:bg-muted/40 active:bg-muted/60';
+  'min-h-[48px] flex items-center rounded-md px-2 -mx-2 transition-colors hover:bg-primary/[0.04] active:bg-primary/[0.06]';
 
 function MobileAccordionSection({
   title,
   open,
   onToggle,
   children,
+  href,
+  onNavigate,
 }: {
   title: string;
   open: boolean;
   onToggle: () => void;
   children: ReactNode;
+  href?: string;
+  onNavigate?: () => void;
 }) {
   return (
-    <div className="border-b border-border/50 pb-2 mb-1">
-      <button
-        type="button"
-        className={cn(
-          'w-full justify-between font-medium text-muted-foreground hover:text-foreground',
-          tapTarget
+    <div className="mb-1 border-b border-border/60 pb-2">
+      <div className="flex items-stretch gap-1">
+        {href ? (
+          <Link
+            prefetch={false}
+            href={href}
+            onClick={onNavigate}
+            className={cn(
+              'flex-1 font-semibold text-slate-800 hover:text-primary',
+              tapTarget
+            )}
+          >
+            {title}
+          </Link>
+        ) : (
+          <span className={cn('flex-1 font-semibold text-slate-800', tapTarget)}>
+            {title}
+          </span>
         )}
-        aria-expanded={open}
-        onClick={onToggle}
-      >
-        <span>{title}</span>
-        <ChevronDown
-          className={cn('h-4 w-4 transition-transform duration-200', open && 'rotate-180')}
-          aria-hidden="true"
-        />
-      </button>
+        <button
+          type="button"
+          className={cn(
+            'flex min-h-11 min-w-11 items-center justify-center rounded-md text-slate-600 hover:text-primary',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30'
+          )}
+          aria-expanded={open}
+          aria-label={open ? `Collapse ${title}` : `Expand ${title}`}
+          onClick={onToggle}
+        >
+          <ChevronDown
+            className={cn(
+              'h-4 w-4 transition-transform duration-200',
+              open && 'rotate-180'
+            )}
+            aria-hidden
+          />
+        </button>
+      </div>
       <div
         className={cn(
           'grid transition-[grid-template-rows] duration-200 ease-out',
@@ -49,22 +75,29 @@ function MobileAccordionSection({
         )}
       >
         <div className="overflow-hidden">
-          <div className="pl-1 pb-2 pt-1 space-y-1">{children}</div>
+          <div className="space-y-1 pb-2 pl-1 pt-1">{children}</div>
         </div>
       </div>
     </div>
   );
 }
 
-/** Mobile nav mirrors redesign primary items + Find Movers depth. */
+/** Mobile: accordion mega content under each primary nav item. */
 export function MoveMobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [moversOpen, setMoversOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
 
-  const close = () => setIsOpen(false);
+  const close = () => {
+    setIsOpen(false);
+    setOpenSection(null);
+  };
+
+  const toggle = (id: string) => {
+    setOpenSection((current) => (current === id ? null : id));
+  };
 
   return (
-    <div className="flex lg:hidden items-center gap-2">
+    <div className="flex items-center gap-2 lg:hidden">
       <MyMoveNavLink variant="mobile-header" onNavigate={close} />
       <Button size="sm" asChild className="move-cta min-h-[44px] px-3">
         <Link prefetch={false} href={MOVE_HEADER_CTA.href} onClick={close}>
@@ -76,74 +109,73 @@ export function MoveMobileNav() {
         size="icon"
         className="h-11 w-11"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu"
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isOpen}
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
 
       {isOpen ? (
-        <div className="absolute left-0 right-0 top-full z-50 border-t bg-background px-4 py-4 shadow-md max-h-[min(80vh,640px)] overflow-y-auto overscroll-contain">
+        <div className="absolute left-0 right-0 top-full z-50 max-h-[min(80vh,640px)] overflow-y-auto overscroll-contain border-t border-border/80 bg-white px-4 py-4 shadow-[0_12px_32px_-8px_rgb(10_37_64_/_0.15)]">
           <nav aria-label="Mobile navigation" className="flex flex-col gap-1 text-sm">
             <MyMoveNavLink variant="mobile-menu" onNavigate={close} />
 
-            {MOVE_HEADER_NAV.map((link) => (
-              <Link
-                key={link.href}
-                prefetch={false}
-                href={link.href}
-                className={cn(
-                  'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-2 mb-1',
-                  tapTarget
-                )}
-                onClick={close}
+            {MOVE_MEGA_NAV.map((item) => (
+              <MobileAccordionSection
+                key={item.id}
+                title={item.label}
+                href={item.href}
+                open={openSection === item.id}
+                onToggle={() => toggle(item.id)}
+                onNavigate={close}
               >
-                {link.label}
-              </Link>
-            ))}
-
-            <MobileAccordionSection
-              title="More in directory"
-              open={moversOpen}
-              onToggle={() => setMoversOpen((o) => !o)}
-            >
-              {FIND_MOVERS_NAV.flatMap((col) =>
-                col.links.map((link) => (
+                {item.columns.flatMap((col) =>
+                  col.links.map((link) => (
+                    <Link
+                      key={link.href}
+                      prefetch={false}
+                      href={link.href}
+                      className={cn(
+                        'rounded-lg px-2 py-2 font-medium text-slate-700 hover:bg-primary/[0.04] hover:text-primary',
+                        tapTarget
+                      )}
+                      onClick={close}
+                    >
+                      <span className="block">{link.label}</span>
+                      {link.description ? (
+                        <span className="mt-0.5 block text-xs font-normal text-slate-600">
+                          {link.description}
+                        </span>
+                      ) : null}
+                    </Link>
+                  ))
+                )}
+                {item.cta ? (
                   <Link
-                    key={link.href}
                     prefetch={false}
-                    href={link.href}
-                    className={cn('text-muted-foreground hover:text-primary', tapTarget)}
+                    href={item.cta.href}
                     onClick={close}
+                    className="move-cta mt-2 inline-flex min-h-11 items-center justify-center rounded-xl px-4 text-sm font-semibold"
                   >
-                    {link.label}
+                    {item.cta.label}
                   </Link>
-                ))
-              )}
-            </MobileAccordionSection>
-
-            <Link
-              prefetch={false}
-              href="/about/how-we-score-movers"
-              className={cn(
-                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-2 mb-1',
-                tapTarget
-              )}
-              onClick={close}
-            >
-              How we vet movers
-            </Link>
+                ) : null}
+              </MobileAccordionSection>
+            ))}
 
             <a
               href={ASK_TRUST_HUB.url}
-              className={cn('font-medium text-muted-foreground hover:text-foreground', tapTarget)}
+              className={cn(
+                'font-medium text-slate-700 hover:text-primary',
+                tapTarget
+              )}
               rel="noopener noreferrer"
               onClick={close}
             >
               Ask Trust Hub network
             </a>
 
-            <Button className="w-full mt-3 min-h-[48px] move-cta" asChild>
+            <Button className="move-cta mt-3 min-h-[48px] w-full" asChild>
               <Link prefetch={false} href={MOVE_HEADER_CTA.href} onClick={close}>
                 {MOVE_HEADER_CTA.label}
               </Link>
