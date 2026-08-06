@@ -20,8 +20,12 @@ type Props = {
   active?: boolean;
 };
 
+/** Desktop primary nav ink — brand navy (must beat muted header utilities) */
+const NAV_INK = '#0A2540';
+const NAV_ORANGE = '#FF5A1F';
+
 /**
- * Move mega menu — design system: high-contrast slate text, orange accents,
+ * Move mega menu — design system: high-contrast navy text, orange accents,
  * soft elevation, independent-research tone.
  */
 export function MoveMegaMenu({ item, active = false }: Props) {
@@ -51,12 +55,15 @@ export function MoveMegaMenu({ item, active = false }: Props) {
     };
   }, [panelId]);
 
+  const isHot = active || open;
+  const navColor = isHot ? NAV_ORANGE : NAV_INK;
+
   const triggerClass = cn(
     'font-medium whitespace-nowrap rounded-sm transition-colors',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
-    active || open
-      ? 'font-semibold !text-[#FF5A1F]'
-      : '!text-[#1E293B] hover:!text-[#FF5A1F] dark:!text-slate-100 dark:hover:!text-[#FF5A1F]'
+    isHot && 'font-semibold',
+    // Hover/focus orange — !important so utilities cannot leave links washed out
+    'hover:!text-[#FF5A1F] focus-visible:!text-[#FF5A1F]'
   );
 
   return (
@@ -71,6 +78,7 @@ export function MoveMegaMenu({ item, active = false }: Props) {
           prefetch={false}
           href={item.href}
           className={triggerClass}
+          style={{ color: navColor }}
           aria-current={active ? 'page' : undefined}
           onClick={close}
         >
@@ -81,10 +89,9 @@ export function MoveMegaMenu({ item, active = false }: Props) {
           className={cn(
             'flex min-h-11 min-w-9 items-center justify-center rounded-sm p-0.5 transition-colors',
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
-            open || active
-              ? '!text-[#FF5A1F]'
-              : '!text-[#1E293B] hover:!text-[#FF5A1F] dark:!text-slate-100 dark:hover:!text-[#FF5A1F]'
+            'hover:!text-[#FF5A1F] focus-visible:!text-[#FF5A1F]'
           )}
+          style={{ color: navColor }}
           aria-expanded={open}
           aria-haspopup="true"
           aria-controls={panelId}
@@ -96,6 +103,7 @@ export function MoveMegaMenu({ item, active = false }: Props) {
               'h-3.5 w-3.5 transition-transform duration-200',
               open && 'rotate-180'
             )}
+            style={{ color: 'inherit' }}
             aria-hidden
           />
         </button>
