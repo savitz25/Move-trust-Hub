@@ -291,7 +291,7 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
         className={cn(
           'relative overflow-hidden rounded-3xl border shadow-md',
           hasPlans
-            ? 'border-emerald-200/80 bg-gradient-to-br from-emerald-50/90 via-white to-sky-50/60 shadow-emerald-900/5'
+            ? 'border-primary/30 bg-gradient-to-br from-primary/[0.08] via-white to-primary/[0.03] shadow-[#FF5A1F]/5'
             : 'border-border/80 bg-card shadow-sm'
         )}
       >
@@ -301,13 +301,13 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
             <span
               className={cn(
                 'flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white shadow-sm',
-                hasPlans ? 'bg-emerald-600 shadow-emerald-600/25' : 'bg-primary/90'
+                hasPlans ? 'bg-[#FF5A1F] shadow-[#FF5A1F]/25' : 'bg-primary/90'
               )}
             >
               <FileText className="h-6 w-6" aria-hidden />
             </span>
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-800/80">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0A2540]/80">
                 Primary · your work
               </p>
               <h2
@@ -328,7 +328,7 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
               <Link href="/#my-move-plan">Start a plan</Link>
             </Button>
             {hasPlans ? (
-              <Button asChild size="sm" className="bg-emerald-600 hover:bg-emerald-700">
+              <Button asChild size="sm" className="bg-[#FF5A1F] hover:bg-[#E04410]">
                 <Link href="/my-move/reports">View all plans</Link>
               </Button>
             ) : (
@@ -368,12 +368,12 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
                     <div className="min-w-0 flex-1 space-y-3">
                       <div className="flex flex-wrap items-center gap-2">
                         {isPrimary ? (
-                          <Badge className="bg-emerald-600 hover:bg-emerald-600">Latest</Badge>
+                          <Badge className="bg-[#FF5A1F] hover:bg-[#FF5A1F]">Latest</Badge>
                         ) : null}
                         <h3 className="text-lg font-semibold tracking-tight text-foreground">
                           {record.name}
                         </h3>
-                        <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold tabular-nums text-emerald-800">
+                        <span className="inline-flex items-center rounded-full border border-primary/25 bg-primary/5 px-2.5 py-0.5 text-xs font-semibold tabular-nums text-[#0A2540]">
                           Readiness {record.readiness}/100
                         </span>
                       </div>
@@ -450,7 +450,7 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
                     <div className="flex shrink-0 flex-col gap-2 sm:flex-row sm:items-center lg:w-44 lg:flex-col lg:items-stretch">
                       <Button
                         type="button"
-                        className="w-full bg-emerald-600 hover:bg-emerald-700 lg:flex-none"
+                        className="w-full bg-[#FF5A1F] hover:bg-[#E04410] lg:flex-none"
                         onClick={() => openPlan(record.id)}
                       >
                         Open plan
@@ -708,7 +708,7 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
                       </div>
 
                       <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-                        <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 font-semibold text-emerald-800">
+                        <span className="inline-flex items-center gap-1 rounded-full border border-primary/25 bg-primary/5 px-2.5 py-0.5 font-semibold text-[#0A2540]">
                           Readiness {record.readiness}/100
                         </span>
                         <span>

@@ -49,14 +49,14 @@ export function ReturnToPlanBanner() {
   const { returnToPlan } = useReturnToMyMovePlan();
 
   return (
-    <div className="mb-6 overflow-hidden rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 via-white to-sky-50 shadow-sm">
+    <div className="mb-6 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-r from-primary/[0.08] via-white to-primary/[0.03] shadow-sm">
       <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
         <div className="flex gap-3">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-sm">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FF5A1F] text-white shadow-sm">
             <FileCheck2 className="h-5 w-5" aria-hidden />
           </span>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#0A2540]">
               My Move Plan
             </p>
             <h2 className="text-base font-semibold tracking-tight text-foreground sm:text-lg">
@@ -72,7 +72,7 @@ export function ReturnToPlanBanner() {
           <Button
             type="button"
             size="lg"
-            className="h-12 w-full gap-2 rounded-xl bg-emerald-600 font-semibold shadow-md hover:bg-emerald-700"
+            className="h-12 w-full gap-2 rounded-xl bg-[#FF5A1F] font-semibold shadow-md hover:bg-[#E04410]"
             onClick={() => returnToPlan('report')}
           >
             Return to My Move Report
@@ -108,7 +108,7 @@ export function ReturnToPlanPrimaryButton({
       type="button"
       size={size}
       className={cn(
-        'w-full gap-2 rounded-xl bg-emerald-600 font-semibold shadow-md hover:bg-emerald-700',
+        'w-full gap-2 rounded-xl bg-[#FF5A1F] font-semibold shadow-md hover:bg-[#E04410]',
         size === 'lg' && 'h-12',
         className
       )}
@@ -125,9 +125,9 @@ export function ReturnToPlanBottomPanel() {
   const { returnToPlan } = useReturnToMyMovePlan();
 
   return (
-    <section className="mt-8 max-w-3xl rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-background p-6 sm:p-8 max-md:mb-4">
+    <section className="mt-8 max-w-3xl rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.08] via-white to-background p-6 sm:p-8 max-md:mb-4">
       <div className="flex items-start gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FF5A1F] text-white">
           <FileCheck2 className="h-5 w-5" aria-hidden />
         </span>
         <div className="min-w-0 flex-1">
@@ -141,7 +141,7 @@ export function ReturnToPlanBottomPanel() {
           <Button
             type="button"
             size="lg"
-            className="mt-5 h-14 w-full gap-2 rounded-2xl bg-emerald-600 text-base font-semibold shadow-md hover:bg-emerald-700 sm:max-w-md"
+            className="mt-5 h-14 w-full gap-2 rounded-2xl bg-[#FF5A1F] text-base font-semibold shadow-md hover:bg-[#E04410] sm:max-w-md"
             onClick={() => returnToPlan('report')}
           >
             Continue to Move Report

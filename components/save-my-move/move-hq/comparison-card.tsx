@@ -64,7 +64,7 @@ export function ComparisonCard({
                   <p className="font-medium truncate">{label}</p>
                   <div className="mt-1 space-y-0.5 text-muted-foreground tabular-nums">
                     {summary?.avgPricePerMove ? (
-                      <p className={isCheapest ? 'text-emerald-600 font-semibold' : undefined}>
+                      <p className={isCheapest ? 'text-[#FF5A1F] font-semibold' : undefined}>
                         {formatPriceDelta(summary.avgPricePerMove)}
                         {isCheapest && ' · lowest'}
                       </p>
@@ -84,7 +84,7 @@ export function ComparisonCard({
           {(priceDelta > 0 || ratingDelta > 0) && (
             <div className="mt-3 flex flex-wrap gap-3 text-[11px] font-medium">
               {priceDelta > 0 && (
-                <span className="inline-flex items-center gap-1 text-emerald-700">
+                <span className="inline-flex items-center gap-1 text-[#E04410]">
                   <TrendingDown className="h-3 w-3" aria-hidden="true" />
                   Up to {formatPriceDelta(priceDelta)} spread
                 </span>

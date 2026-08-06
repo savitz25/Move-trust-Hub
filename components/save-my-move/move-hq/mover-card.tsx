@@ -61,7 +61,7 @@ export function MoverCard({
         />
 
         <div
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-emerald-500/15 text-sm font-bold text-primary"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/10 text-sm font-bold text-primary"
           aria-hidden="true"
         >
           {companyInitials(companyName)}
@@ -83,7 +83,7 @@ export function MoverCard({
               )}
               <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                 {summary?.isVerified && (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-emerald-700 font-medium">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-primary/50/10 px-2 py-0.5 text-[#E04410] font-medium">
                     <ShieldCheck className="h-3 w-3" aria-hidden="true" />
                     FMCSA
                   </span>

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const COLORS = ['#0077D4', '#00A651', '#22c55e', '#38bdf8', '#f59e0b'];
+const COLORS = ['#FF5A1F', '#FF7A4D', '#E04410', '#FF5A1F', '#FF7A4D'];
 
 type ConfettiBurstProps = {
   active: boolean;

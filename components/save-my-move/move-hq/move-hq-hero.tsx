@@ -33,7 +33,7 @@ export function MoveHqHero({
   }, [readiness.completedCount]);
 
   return (
-    <section className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/8 via-background to-emerald-500/5 p-5 md:p-8 shadow-sm">
+    <section className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/8 via-background to-primary/5 p-5 md:p-8 shadow-sm">
       <ConfettiBurst active={celebrate} onDone={() => setCelebrate(false)} />
 
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
@@ -98,7 +98,7 @@ export function MoveHqHero({
                 <div
                   className={cn(
                     'mx-auto h-2 w-2 rounded-full mb-1 transition-colors',
-                    step.complete ? 'bg-[#22c55e]' : 'bg-muted-foreground/30'
+                    step.complete ? 'bg-[#FF5A1F]' : 'bg-muted-foreground/30'
                   )}
                   aria-hidden="true"
                 />

@@ -150,15 +150,15 @@ export function ReportReadyStep({
     const deliveredTo = emailedTo || userEmail || 'your inbox';
     return (
       <div className="space-y-6 sm:space-y-8">
-        <div className="relative overflow-hidden rounded-3xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50 via-white to-sky-50 px-5 py-8 text-center shadow-sm sm:px-8 sm:py-10">
+        <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] via-white to-primary/[0.03] px-5 py-8 text-center shadow-sm sm:px-8 sm:py-10">
           <div
-            className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-200/30 blur-2xl"
+            className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/20 blur-2xl"
             aria-hidden
           />
-          <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/30">
+          <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#FF5A1F] text-white shadow-lg shadow-[#FF5A1F]/30">
             <CheckCircle2 className="h-9 w-9" aria-hidden />
           </div>
-          <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+          <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#E04410]">
             Report delivered
           </p>
           <h2 className="relative mt-2 text-balance text-2xl font-semibold tracking-tight text-[#0A2540] sm:text-3xl">
@@ -244,7 +244,7 @@ export function ReportReadyStep({
         {n > 0 ? (
           <section className="rounded-2xl border bg-muted/20 px-4 py-4 sm:px-5">
             <div className="flex items-center gap-2 text-sm font-semibold">
-              <ShieldCheck className="h-4 w-4 text-emerald-600" aria-hidden />
+              <ShieldCheck className="h-4 w-4 text-[#FF5A1F]" aria-hidden />
               Fair comparison reminder
             </div>
             <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
@@ -293,9 +293,9 @@ export function ReportReadyStep({
   return (
     <div className="space-y-6 sm:space-y-8">
       {/* Celebratory header */}
-      <div className="relative overflow-hidden rounded-3xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50 via-white to-sky-50 px-5 py-7 text-center shadow-sm sm:px-8 sm:py-9">
+      <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] via-white to-primary/[0.03] px-5 py-7 text-center shadow-sm sm:px-8 sm:py-9">
         <div
-          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-200/30 blur-2xl"
+          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/20 blur-2xl"
           aria-hidden
         />
         <div
@@ -303,11 +303,11 @@ export function ReportReadyStep({
           aria-hidden
         />
 
-        <div className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow-lg shadow-emerald-600/25">
+        <div className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FF5A1F] text-white shadow-lg shadow-[#FF5A1F]/25">
           <PartyPopper className="h-7 w-7" strokeWidth={1.75} aria-hidden />
         </div>
 
-        <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+        <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#E04410]">
           Book · report ready
         </p>
         <h2 className="relative mt-2 text-balance text-2xl font-semibold tracking-tight text-[#0A2540] sm:text-3xl">
@@ -320,20 +320,20 @@ export function ReportReadyStep({
 
         {/* Achievement score */}
         <div
-          className="relative mx-auto mt-6 inline-flex flex-col items-center rounded-2xl border border-emerald-200/80 bg-white/90 px-6 py-4 shadow-sm"
+          className="relative mx-auto mt-6 inline-flex flex-col items-center rounded-2xl border border-primary/30 bg-white/90 px-6 py-4 shadow-sm"
           aria-live="polite"
         >
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-700">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#E04410]">
             Move readiness
           </span>
           <div className="mt-1 flex items-baseline gap-1">
-            <span className="text-4xl font-bold tabular-nums tracking-tight text-emerald-700 sm:text-5xl">
+            <span className="text-4xl font-bold tabular-nums tracking-tight text-[#E04410] sm:text-5xl">
               {safeReadiness}
             </span>
             <span className="text-lg font-medium text-muted-foreground">/100</span>
           </div>
           {safeReadiness >= 100 ? (
-            <span className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-emerald-700">
+            <span className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-[#E04410]">
               <CheckCircle2 className="h-3.5 w-3.5" aria-hidden />
               Plan complete — ready to request quotes
             </span>
@@ -567,7 +567,7 @@ export function ReportReadyStep({
                   className="flex items-center gap-3 px-3 py-2.5 sm:px-4"
                 >
                   <span
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs font-bold text-emerald-800"
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-[#0A2540]"
                     aria-hidden
                   >
                     {idx + 1}
@@ -578,7 +578,7 @@ export function ReportReadyStep({
                       {m.headquarters || 'Shortlisted mover'}
                     </div>
                   </div>
-                  <Check className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
+                  <Check className="h-4 w-4 shrink-0 text-[#FF5A1F]" aria-hidden />
                   <div className="relative shrink-0" ref={open ? menuRef : undefined}>
                     <Button
                       type="button"
@@ -694,7 +694,7 @@ export function ReportReadyStep({
             </span>
           </li>
           <li className="flex gap-2.5">
-            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[11px] font-bold text-emerald-800">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-[11px] font-bold text-[#0A2540]">
               <ShieldCheck className="h-3 w-3" aria-hidden />
             </span>
             <span>

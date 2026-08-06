@@ -196,7 +196,7 @@ export function InventoryCard({
         <span className="text-base leading-none">{roomIcons.join(' ')}</span>
         <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-500 transition-all"
+            className="h-full rounded-full bg-gradient-to-r from-[#FF5A1F] to-[#FF7A4D] transition-all"
             style={{ width: `${sizePct}%` }}
           />
         </div>

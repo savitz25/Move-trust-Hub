@@ -12,7 +12,7 @@ function CalculatorPageFooterInner() {
 
   if (fromPlan) {
     return (
-      <div className="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5 sm:p-6">
+      <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/5 p-5 sm:p-6">
         <p className="text-sm text-muted-foreground mb-3">
           Finished updating your inventory? Continue to your Move Report with this load saved for
           comparable estimates.

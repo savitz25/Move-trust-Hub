@@ -79,8 +79,8 @@ export function MyMovePasswordManager({ passwordEnabled: initialEnabled }: Props
       : strength.score === 2
         ? 'bg-amber-500'
         : strength.score === 3
-          ? 'bg-lime-500'
-          : 'bg-emerald-600';
+          ? 'bg-[#FF7A4D]'
+          : 'bg-[#FF5A1F]';
 
   return (
     <section className="space-y-3 rounded-xl border bg-card p-4">

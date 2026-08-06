@@ -88,8 +88,8 @@ export function MyMoveCreatePasswordForm({ nextPath, email }: Props) {
       : strength.score === 2
         ? 'bg-amber-500'
         : strength.score === 3
-          ? 'bg-lime-500'
-          : 'bg-emerald-600';
+          ? 'bg-[#FF7A4D]'
+          : 'bg-[#FF5A1F]';
 
   const passwordsMatch = confirm.length > 0 && password === confirm;
   const confirmMismatch = confirm.length > 0 && password !== confirm;
@@ -98,7 +98,7 @@ export function MyMoveCreatePasswordForm({ nextPath, email }: Props) {
     <div className="w-full max-w-lg">
       <div className="relative overflow-hidden rounded-2xl border bg-card shadow-lg shadow-black/5">
         <div
-          className="h-1.5 w-full bg-gradient-to-r from-primary via-primary/80 to-emerald-500"
+          className="h-1.5 w-full bg-gradient-to-r from-[#FF5A1F] via-[#FF7A4D] to-[#FF5A1F]"
           aria-hidden
         />
 
@@ -146,7 +146,7 @@ export function MyMoveCreatePasswordForm({ nextPath, email }: Props) {
                 key={title}
                 className="flex gap-3 rounded-xl border bg-muted/25 px-3.5 py-3 transition-colors hover:bg-muted/40"
               >
-                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-400">
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/50/10 text-[#E04410] dark:text-[#FF7A4D]">
                   <Icon className="h-4 w-4" aria-hidden />
                 </span>
                 <div className="min-w-0 space-y-0.5">
@@ -192,7 +192,7 @@ export function MyMoveCreatePasswordForm({ nextPath, email }: Props) {
                       <p
                         className={cn(
                           'text-xs font-medium',
-                          strength.ok ? 'text-emerald-600' : 'text-muted-foreground'
+                          strength.ok ? 'text-[#FF5A1F]' : 'text-muted-foreground'
                         )}
                       >
                         {strength.ok ? 'Looks good' : 'Keep going'}
@@ -219,13 +219,13 @@ export function MyMoveCreatePasswordForm({ nextPath, email }: Props) {
                     className={cn(
                       'h-11 pr-10',
                       confirmMismatch && 'border-destructive focus-visible:ring-destructive/30',
-                      passwordsMatch && 'border-emerald-500/60 focus-visible:ring-emerald-500/20'
+                      passwordsMatch && 'border-primary/60 focus-visible:ring-primary/20'
                     )}
                     aria-invalid={confirmMismatch || undefined}
                   />
                   {passwordsMatch ? (
                     <Check
-                      className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-emerald-600"
+                      className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#FF5A1F]"
                       aria-hidden
                     />
                   ) : null}

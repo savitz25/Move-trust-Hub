@@ -114,9 +114,9 @@ const PHASE_SHELL: Record<
   },
   book: {
     shell:
-      'border-emerald-200/80 bg-gradient-to-b from-emerald-50/70 via-white to-white shadow-emerald-900/5',
-    progress: 'bg-emerald-600',
-    chip: 'border-emerald-200 bg-emerald-50 text-emerald-800',
+      'border-primary/30 bg-gradient-to-b from-primary/[0.07] via-white to-white shadow-[#FF5A1F]/5',
+    progress: 'bg-[#FF5A1F]',
+    chip: 'border-primary/25 bg-primary/5 text-[#0A2540]',
     eyebrow: 'Book · report & estimates',
   },
 };
@@ -908,7 +908,7 @@ export function MyMovePlanWizard({
                       clickable && !active && 'cursor-pointer hover:opacity-90',
                       active && activePhase === 'plan' && 'bg-sky-600 text-white shadow-sm',
                       active && activePhase === 'build' && 'bg-violet-600 text-white shadow-sm',
-                      active && activePhase === 'book' && 'bg-emerald-600 text-white shadow-sm',
+                      active && activePhase === 'book' && 'bg-[#FF5A1F] text-white shadow-sm',
                       done && !active && 'bg-foreground/10 text-foreground',
                       !active && !done && 'bg-muted/80 text-muted-foreground',
                       !clickable && !active && 'cursor-default opacity-70'
@@ -1054,7 +1054,7 @@ export function MyMovePlanWizard({
               <Badge
                 className={cn(
                   'shrink-0 border-violet-200 bg-violet-100 text-violet-900 hover:bg-violet-100',
-                  shortlist.length === 3 && 'border-emerald-200 bg-emerald-100 text-emerald-900'
+                  shortlist.length === 3 && 'border-primary/25 bg-primary/10 text-[#0A2540]'
                 )}
               >
                 {shortlist.length}/3
