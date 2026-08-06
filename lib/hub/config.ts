@@ -3,19 +3,28 @@ import { hubPath } from '@/lib/hub/paths';
 import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
-/** Bump when replacing public/logo.png to bust immutable CDN/browser cache. */
-export const TRUST_HUB_LOGO_VERSION = '20260727';
+/** Bump when replacing Move brand logos to bust immutable CDN/browser cache. */
+export const TRUST_HUB_LOGO_VERSION = '20260806';
 /** Bump when replacing public/insurance/brand/* so CDN/browser cache picks up the new mark. */
 export const INSURANCE_LOGO_VERSION = '20260728r2';
 /** Bump when replacing public/lender/brand/* for /lender section logos. */
 export const LENDER_LOGO_VERSION = '20260727';
 
-/** Canonical Move Trust Hub logo (header/footer). */
+/**
+ * Move Trust Hub logo — orange architecture-sheet lockup (brackets + hub).
+ * SVG for crisp UI; PNG kept at /logo.png for email/OG fallbacks.
+ */
 export const TRUST_HUB_LOGO = {
-  src: `/logo.png?v=${TRUST_HUB_LOGO_VERSION}`,
+  /** Light surfaces (header, light footer contexts) */
+  src: `/brand/move-trust-hub-logo.svg?v=${TRUST_HUB_LOGO_VERSION}`,
+  headerSrc: `/brand/move-trust-hub-logo.svg?v=${TRUST_HUB_LOGO_VERSION}`,
+  /** Navy / dark surfaces (footer) */
+  footerSrc: `/brand/move-trust-hub-logo-on-dark.svg?v=${TRUST_HUB_LOGO_VERSION}`,
+  /** Raster fallback for email + Open Graph */
+  pngSrc: `/logo.png?v=${TRUST_HUB_LOGO_VERSION}`,
   alt: 'Move Trust Hub',
-  width: 1200,
-  height: 360,
+  width: 420,
+  height: 96,
 } as const;
 
 /** InsuranceTrustHub brand mark — never use Move logo on insurance host. */
@@ -39,9 +48,12 @@ export const LENDER_HUB_LOGO = {
   height: 186,
 } as const;
 
-/** Absolute logo URL for emails, JSON-LD, and external embeds. */
+/** Absolute logo URL for emails, JSON-LD, and external embeds (PNG for client support). */
 export function trustHubLogoUrl(baseUrl = 'https://www.movetrusthub.com'): string {
-  return `${baseUrl}/logo.png?v=${TRUST_HUB_LOGO_VERSION}`;
+  const path = TRUST_HUB_LOGO.pngSrc.startsWith('/')
+    ? TRUST_HUB_LOGO.pngSrc
+    : `/${TRUST_HUB_LOGO.pngSrc}`;
+  return `${baseUrl.replace(/\/$/, '')}${path}`;
 }
 
 export function insuranceHubLogoUrl(baseUrl = 'https://www.insurancetrusthub.com'): string {
@@ -62,8 +74,8 @@ export const HUBS: Record<HubId, HubConfig> = {
     siteName: 'Move Trust Hub',
     shortName: 'Move',
     tagline: 'Independent FMCSA mover directory — research, compare, verify.',
-    logoSrc: TRUST_HUB_LOGO.src,
-    headerLogoSrc: TRUST_HUB_LOGO.src,
+    logoSrc: TRUST_HUB_LOGO.footerSrc,
+    headerLogoSrc: TRUST_HUB_LOGO.headerSrc,
     logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-primary',
     homeTitle: 'Compare FMCSA-Licensed Movers (2026) | Move Trust Hub',

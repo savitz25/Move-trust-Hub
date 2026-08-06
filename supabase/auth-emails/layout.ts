@@ -8,10 +8,10 @@ export const BRAND = {
   supportName: 'MoveTrustHub Support',
   siteUrl: 'https://www.movetrusthub.com',
   // Keep in sync with TRUST_HUB_LOGO_VERSION in lib/hub/config.ts
-  logoUrl: 'https://www.movetrusthub.com/logo.png?v=20260727',
+  logoUrl: 'https://www.movetrusthub.com/logo.png?v=20260806',
   supportEmail: 'info@movetrusthub.com',
   primary: '#0A2540',
-  accent: '#00BFA5',
+  accent: '#FF5A1F',
   muted: '#64748b',
   border: '#e2e8f0',
   bg: '#f4f8fb',

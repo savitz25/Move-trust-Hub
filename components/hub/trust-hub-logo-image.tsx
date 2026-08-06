@@ -28,6 +28,7 @@ export function TrustHubLogoImage({
   const hub = getHubConfig(hubId);
   const src = isHeader ? hub.headerLogoSrc : hub.logoSrc;
   const alt = hub.logoAlt || TRUST_HUB_LOGO.alt;
+  const isSvg = /\.svg(\?|$)/i.test(src);
 
   return (
     <img
@@ -41,7 +42,8 @@ export function TrustHubLogoImage({
       decoding="async"
       className={cn(
         'object-contain object-left bg-transparent',
-        isHeader ? 'h-full w-full' : 'h-12 w-[192px]',
+        isHeader ? 'h-10 w-auto max-h-11 sm:h-11 md:h-12' : 'h-11 w-[200px] sm:h-12 sm:w-[220px]',
+        isSvg && 'w-auto',
         className
       )}
     />
