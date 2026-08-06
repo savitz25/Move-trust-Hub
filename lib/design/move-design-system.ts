@@ -114,3 +114,11 @@ export const MOVE_HERO_FORM = {
 
 export const MOVE_INDEPENDENCE_LINE =
   'Independent research directory — common ownership with Ask Trust Hub, separated research and listing rules. No paid placements. No lead fees.';
+
+/** Phase 3 — local coverage map */
+export const MOVE_MAP_SECTION = {
+  eyebrow: 'Local mover coverage map',
+  headline: 'Browse local movers by state & county',
+  support:
+    'Click any state for county guides, mover counts, and FMCSA research tools. Prefer text? Use the directory grid below.',
+} as const;

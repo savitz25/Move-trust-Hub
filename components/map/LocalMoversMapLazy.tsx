@@ -9,6 +9,22 @@ const InteractiveUSMap = dynamic(
   { ssr: false, loading: () => <MapSkeleton /> }
 );
 
-export function LocalMoversMapLazy({ statesMeta }: { statesMeta: MapStateMeta[] }) {
-  return <InteractiveUSMap statesMeta={statesMeta} />;
+type Props = {
+  statesMeta: MapStateMeta[];
+  viewMode?: 'all' | 'curated';
+  onViewModeChange?: (mode: 'all' | 'curated') => void;
+};
+
+export function LocalMoversMapLazy({
+  statesMeta,
+  viewMode,
+  onViewModeChange,
+}: Props) {
+  return (
+    <InteractiveUSMap
+      statesMeta={statesMeta}
+      viewMode={viewMode}
+      onViewModeChange={onViewModeChange}
+    />
+  );
 }

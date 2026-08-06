@@ -7,22 +7,32 @@ import type {
   MapStateMeta,
   MapStatesFile,
 } from '@/lib/map/types';
+import { cn } from '@/lib/utils';
 
 type Props = {
   statesMeta: MapStateMeta[];
+  /** Controlled filter from parent (optional). */
+  viewMode?: 'all' | 'curated';
+  onViewModeChange?: (mode: 'all' | 'curated') => void;
 };
 
-const CURATED_FILL = '#0d9488';
-const CURATED_HOVER = '#14b8a6';
-const DEFAULT_FILL = '#cbd5e1';
-const DEFAULT_HOVER = '#94a3b8';
-const STROKE = '#f8fafc';
+/** Move redesign: soft orange for curated coverage */
+const CURATED_FILL = '#FF7A4D';
+const CURATED_HOVER = '#FF5A1F';
+const DEFAULT_FILL = '#E2E8F0';
+const DEFAULT_HOVER = '#CBD5E1';
+const DIM_FILL = '#F1F5F9';
+const STROKE = '#FFFFFF';
 
 /**
  * National US map for discovery. State selection navigates to
  * /local-movers/{state-slug} — no in-place zoom/filter.
  */
-export function InteractiveUSMap({ statesMeta }: Props) {
+export function InteractiveUSMap({
+  statesMeta,
+  viewMode: controlledMode,
+  onViewModeChange,
+}: Props) {
   const searchId = useId();
   const listboxId = useId();
   const liveRegionId = useId();
@@ -31,6 +41,13 @@ export function InteractiveUSMap({ statesMeta }: Props) {
   const [isVisible, setIsVisible] = useState(false);
   const [statesGeo, setStatesGeo] = useState<MapStatesFile | null>(null);
   const [loadingGeo, setLoadingGeo] = useState(false);
+
+  const [internalMode, setInternalMode] = useState<'all' | 'curated'>('all');
+  const viewMode = controlledMode ?? internalMode;
+  const setViewMode = (mode: 'all' | 'curated') => {
+    onViewModeChange?.(mode);
+    if (controlledMode === undefined) setInternalMode(mode);
+  };
 
   const [query, setQuery] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
@@ -59,13 +76,17 @@ export function InteractiveUSMap({ statesMeta }: Props) {
     const q = query.trim().toLowerCase();
     if (q.length < 2 || !searchIndex) return [];
     return searchIndex
-      .filter(
-        (item) =>
+      .filter((item) => {
+        if (viewMode === 'curated' && item.stateSlug) {
+          if (!curatedBySlug.get(item.stateSlug)) return false;
+        }
+        return (
           item.label.toLowerCase().includes(q) ||
           item.sublabel?.toLowerCase().includes(q)
-      )
+        );
+      })
       .slice(0, 12);
-  }, [query, searchIndex]);
+  }, [query, searchIndex, viewMode, curatedBySlug]);
 
   useEffect(() => {
     setHighlightIndex(0);
@@ -109,16 +130,27 @@ export function InteractiveUSMap({ statesMeta }: Props) {
     };
   }, [isVisible, statesGeo]);
 
-  /** Real navigation — state landers or county pages. */
   const handleSearchSelect = useCallback((result: MapSearchResult) => {
     setQuery('');
     setSearchOpen(false);
     window.location.href = result.href;
   }, []);
 
+  const fillFor = (curated: boolean) => {
+    if (viewMode === 'curated') {
+      return curated ? CURATED_FILL : DIM_FILL;
+    }
+    return curated ? CURATED_FILL : DEFAULT_FILL;
+  };
+
+  const hoverFor = (curated: boolean) => {
+    if (viewMode === 'curated' && !curated) return DIM_FILL;
+    return curated ? CURATED_HOVER : DEFAULT_HOVER;
+  };
+
   return (
     <div ref={containerRef} className="space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
         <div className="relative flex-1">
           <label htmlFor={searchId} className="sr-only">
             Search by state or county
@@ -163,7 +195,7 @@ export function InteractiveUSMap({ statesMeta }: Props) {
                 setSearchOpen(false);
               }
             }}
-            className="w-full rounded-xl border bg-background pl-10 pr-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/20"
+            className="w-full rounded-xl border border-border/80 bg-background pl-10 pr-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/40"
           />
 
           {searchOpen && searchResults.length > 0 && (
@@ -180,8 +212,8 @@ export function InteractiveUSMap({ statesMeta }: Props) {
                 >
                   <a
                     href={result.href}
-                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-muted/60 ${
-                      index === highlightIndex ? 'bg-muted/60' : ''
+                    className={`block w-full text-left px-3 py-2 text-sm hover:bg-primary/5 ${
+                      index === highlightIndex ? 'bg-primary/10' : ''
                     }`}
                     onMouseDown={(e) => e.preventDefault()}
                     onClick={() => {
@@ -206,6 +238,40 @@ export function InteractiveUSMap({ statesMeta }: Props) {
             </ul>
           )}
         </div>
+
+        {/* Toggle: Fully curated / All states */}
+        <div
+          className="inline-flex shrink-0 rounded-xl border border-border/80 bg-muted/40 p-1"
+          role="group"
+          aria-label="Map coverage filter"
+        >
+          <button
+            type="button"
+            onClick={() => setViewMode('curated')}
+            className={cn(
+              'rounded-lg px-3 py-2 text-xs font-semibold transition-colors sm:text-sm',
+              viewMode === 'curated'
+                ? 'bg-primary text-primary-foreground shadow-sm'
+                : 'text-muted-foreground hover:text-foreground'
+            )}
+            aria-pressed={viewMode === 'curated'}
+          >
+            Fully curated guides
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode('all')}
+            className={cn(
+              'rounded-lg px-3 py-2 text-xs font-semibold transition-colors sm:text-sm',
+              viewMode === 'all'
+                ? 'bg-primary text-primary-foreground shadow-sm'
+                : 'text-muted-foreground hover:text-foreground'
+            )}
+            aria-pressed={viewMode === 'all'}
+          >
+            All states
+          </button>
+        </div>
       </div>
 
       <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
@@ -215,7 +281,7 @@ export function InteractiveUSMap({ statesMeta }: Props) {
             style={{ backgroundColor: CURATED_FILL }}
             aria-hidden="true"
           />
-          Fully curated guides
+          Curated county guides
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span
@@ -223,22 +289,23 @@ export function InteractiveUSMap({ statesMeta }: Props) {
             style={{ backgroundColor: DEFAULT_FILL }}
             aria-hidden="true"
           />
-          All states
+          All states (landing pages)
         </span>
-        <span className="inline-flex items-center gap-1.5 text-muted-foreground/90">
-          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
-          Click a state to open its full county guide
+        <span className="inline-flex items-center gap-1.5">
+          <CheckCircle2 className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+          Click a state for county guides
         </span>
       </div>
 
       <div
-        className="relative w-full rounded-2xl border bg-gradient-to-b from-slate-50 to-white overflow-hidden"
+        className="relative w-full overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-b from-orange-50/40 via-white to-slate-50/80"
         role="region"
         aria-label="Interactive map of United States states"
       >
         <p id={liveRegionId} className="sr-only" aria-live="polite">
-          Showing all U.S. states. Activate a state to open its local movers landing
-          page with county guides.
+          {viewMode === 'curated'
+            ? 'Showing curated states highlighted. Activate a state to open its local movers landing page.'
+            : 'Showing all U.S. states. Activate a state to open its local movers landing page with county guides.'}
         </p>
 
         {loadingGeo && (
@@ -264,17 +331,17 @@ export function InteractiveUSMap({ statesMeta }: Props) {
             <title>United States map for browsing local movers by state</title>
             <desc>
               Click any state to open its dedicated local movers page with county
-              guides. Fully curated states are highlighted in teal.
+              guides. Fully curated states are highlighted in soft orange.
             </desc>
 
             {statesGeo && (
               <g key="states">
                 {statesGeo.states.map((state) => {
                   const curated = curatedBySlug.get(state.slug) ?? state.curated;
-                  // Prefer meta href (canonical /local-movers/{slug}) over geo file
                   const href =
                     statesMeta.find((s) => s.slug === state.slug)?.href ??
                     state.href;
+                  const dimmed = viewMode === 'curated' && !curated;
                   return (
                     <a
                       key={state.slug}
@@ -283,24 +350,27 @@ export function InteractiveUSMap({ statesMeta }: Props) {
                         curated ? ', fully curated local mover guides' : ''
                       }. Open ${state.name} local movers page.`}
                       className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1"
+                      tabIndex={dimmed ? -1 : 0}
+                      style={dimmed ? { pointerEvents: 'none', opacity: 0.55 } : undefined}
                     >
                       <path
                         d={state.path}
-                        fill={curated ? CURATED_FILL : DEFAULT_FILL}
+                        fill={fillFor(curated)}
                         stroke={STROKE}
                         strokeWidth={0.75}
                         className="transition-colors duration-150 cursor-pointer"
                         style={{ vectorEffect: 'non-scaling-stroke' }}
                         onMouseEnter={(e) => {
+                          if (dimmed) return;
                           (e.target as SVGPathElement).setAttribute(
                             'fill',
-                            curated ? CURATED_HOVER : DEFAULT_HOVER
+                            hoverFor(curated)
                           );
                         }}
                         onMouseLeave={(e) => {
                           (e.target as SVGPathElement).setAttribute(
                             'fill',
-                            curated ? CURATED_FILL : DEFAULT_FILL
+                            fillFor(curated)
                           );
                         }}
                       />
