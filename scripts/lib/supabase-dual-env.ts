@@ -45,7 +45,13 @@ function projectRef(url: string): string {
 }
 
 function isValidServiceKey(key: string): boolean {
-  return Boolean(key) && key.length > 40 && !key.startsWith('<') && key.includes('.');
+  if (!key || key.startsWith('<') || key.includes('your-') || key.includes('placeholder')) {
+    return false;
+  }
+  // Classic JWT service_role (eyJ...) or newer Supabase secret format (sb_secret_...)
+  if (key.startsWith('sb_secret_') && key.length >= 30) return true;
+  if (key.includes('.') && key.length > 80) return true;
+  return false;
 }
 
 function isValidUrl(url: string): boolean {
@@ -64,6 +70,7 @@ function isValidUrl(url: string): boolean {
 export function resolveDualSupabaseConfig(): DualSupabaseConfig {
   loadEnvLocalFiles();
 
+  // Prefer explicit SOURCE_*; default FREE project URL.
   const sourceUrl = (
     process.env.SOURCE_SUPABASE_URL ||
     process.env.FREE_SUPABASE_URL ||
@@ -78,7 +85,8 @@ export function resolveDualSupabaseConfig(): DualSupabaseConfig {
     ''
   ).trim();
 
-  const targetUrl = (
+  // Prefer explicit TARGET_*; then PRO are defaults (do not blindly use NEXT_PUBLIC if it points at uvq).
+  let targetUrl = (
     process.env.TARGET_SUPABASE_URL ||
     process.env.PRO_SUPABASE_URL ||
     process.env.ARE_SUPABASE_URL ||
@@ -86,13 +94,32 @@ export function resolveDualSupabaseConfig(): DualSupabaseConfig {
     'https://arepfylnilkjmyduhwbz.supabase.co'
   ).trim();
 
-  const targetKey = (
+  let targetKey = (
     process.env.TARGET_SUPABASE_SERVICE_ROLE_KEY ||
     process.env.PRO_SUPABASE_SERVICE_ROLE_KEY ||
     process.env.ARE_SUPABASE_SERVICE_ROLE_KEY ||
     process.env.SUPABASE_SERVICE_ROLE_KEY ||
     ''
   ).trim();
+
+  // If app env still points at FREE (uvq), force TARGET to PRO are defaults when possible.
+  const srcRefGuess = projectRef(sourceUrl);
+  if (projectRef(targetUrl) === srcRefGuess || projectRef(targetUrl) === 'uvqkyupfnpswdozmuzih') {
+    targetUrl = (
+      process.env.TARGET_SUPABASE_URL ||
+      process.env.PRO_SUPABASE_URL ||
+      process.env.ARE_SUPABASE_URL ||
+      'https://arepfylnilkjmyduhwbz.supabase.co'
+    ).trim();
+    if (
+      !process.env.TARGET_SUPABASE_SERVICE_ROLE_KEY &&
+      !process.env.PRO_SUPABASE_SERVICE_ROLE_KEY &&
+      !process.env.ARE_SUPABASE_SERVICE_ROLE_KEY
+    ) {
+      // Keep SUPABASE_SERVICE_ROLE_KEY only if it was set for are (JWT from first env block).
+      // Caller must ensure TARGET key is the are service_role.
+    }
+  }
 
   if (!isValidUrl(sourceUrl) || !isValidServiceKey(sourceKey)) {
     throw new Error(

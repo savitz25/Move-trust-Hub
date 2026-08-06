@@ -116,42 +116,123 @@ async function fetchAllRows(
   return { rows };
 }
 
+/** Discover target columns via PostgREST OpenAPI (handles empty tables). */
+async function fetchTargetColumns(
+  baseUrl: string,
+  serviceKey: string,
+  table: string
+): Promise<Set<string> | null> {
+  try {
+    const res = await fetch(`${baseUrl.replace(/\/$/, '')}/rest/v1/`, {
+      headers: {
+        apikey: serviceKey,
+        Authorization: `Bearer ${serviceKey}`,
+        Accept: 'application/openapi+json',
+      },
+    });
+    if (!res.ok) return null;
+    const spec = (await res.json()) as {
+      definitions?: Record<string, { properties?: Record<string, unknown> }>;
+      components?: { schemas?: Record<string, { properties?: Record<string, unknown> }> };
+    };
+    const props =
+      spec.definitions?.[table]?.properties ||
+      spec.components?.schemas?.[table]?.properties ||
+      // PostgREST sometimes nests under paths
+      null;
+    if (props && typeof props === 'object') {
+      return new Set(Object.keys(props));
+    }
+    // Fallback: scan definitions for table name variants
+    const defs = spec.definitions || spec.components?.schemas || {};
+    for (const [name, def] of Object.entries(defs)) {
+      if (name === table || name.endsWith(`.${table}`) || name === `${table}s`) {
+        if (def.properties) return new Set(Object.keys(def.properties));
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+  return null;
+}
+
+function projectRows(
+  rows: Record<string, unknown>[],
+  allowed: Set<string> | null
+): Record<string, unknown>[] {
+  return rows.map((r) => {
+    const o: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(r)) {
+      if (v === undefined) continue;
+      if (allowed && !allowed.has(k)) continue;
+      o[k] = v;
+    }
+    return o;
+  });
+}
+
+function missingColumnFromError(message: string): string | null {
+  // Could not find the 'entity_type' column of 'companies'
+  const m = message.match(/Could not find the '([^']+)' column/i);
+  return m?.[1] ?? null;
+}
+
 async function upsertBatches(
   sb: SupabaseClient,
   table: string,
   rows: Record<string, unknown>[],
-  onConflict: string
-): Promise<{ written: number; errors: string[] }> {
+  onConflict: string,
+  allowedColumns: Set<string> | null
+): Promise<{ written: number; errors: string[]; allowed: Set<string> | null }> {
   let written = 0;
   const errors: string[] = [];
+  let allowed = allowedColumns ? new Set(allowedColumns) : null;
+
   for (let i = 0; i < rows.length; i += PAGE) {
-    const batch = rows.slice(i, i + PAGE);
-    // Strip undefined
-    const clean = batch.map((r) => {
-      const o: Record<string, unknown> = {};
-      for (const [k, v] of Object.entries(r)) {
-        if (v !== undefined) o[k] = v;
+    let batch = projectRows(rows.slice(i, i + PAGE), allowed);
+    // eslint-disable-next-line no-constant-condition
+    for (let attempt = 0; attempt < 12; attempt++) {
+      const { error, count } = await sb
+        .from(table)
+        .upsert(batch as never, { onConflict, ignoreDuplicates: false, count: 'exact' });
+      if (!error) {
+        written += count ?? batch.length;
+        break;
       }
-      return o;
-    });
-    const { error, count } = await sb
-      .from(table)
-      .upsert(clean as never, { onConflict, ignoreDuplicates: false, count: 'exact' });
-    if (error) {
-      // Retry row-by-row on batch failure
-      for (const row of clean) {
-        const one = await sb.from(table).upsert(row as never, { onConflict });
-        if (one.error) {
+      const missing = missingColumnFromError(error.message);
+      if (missing) {
+        if (!allowed) {
+          // Start from keys present in this batch, drop missing
+          allowed = new Set(batch.flatMap((r) => Object.keys(r)));
+        }
+        allowed.delete(missing);
+        batch = projectRows(rows.slice(i, i + PAGE), allowed);
+        console.log(`  strip missing column: ${table}.${missing}`);
+        continue;
+      }
+      // Retry row-by-row
+      for (const row of batch) {
+        let r = { ...row };
+        for (let ra = 0; ra < 8; ra++) {
+          const one = await sb.from(table).upsert(r as never, { onConflict });
+          if (!one.error) {
+            written += 1;
+            break;
+          }
+          const col = missingColumnFromError(one.error.message);
+          if (col) {
+            delete r[col];
+            if (allowed) allowed.delete(col);
+            continue;
+          }
           errors.push(`${table}/${String(row.id ?? row.slug ?? '?')}: ${one.error.message}`);
-        } else {
-          written += 1;
+          break;
         }
       }
-    } else {
-      written += count ?? clean.length;
+      break;
     }
   }
-  return { written, errors };
+  return { written, errors, allowed };
 }
 
 async function main() {
@@ -300,7 +381,23 @@ async function main() {
       continue;
     }
 
-    const { written, errors } = await upsertBatches(target, t.name, rows, t.onConflict);
+    let allowed = await fetchTargetColumns(cfg.targetUrl, cfg.targetKey, t.name);
+    if (allowed) {
+      console.log(`  target columns: ${allowed.size} (from OpenAPI)`);
+    } else if (probe.targetSampleKeys?.length) {
+      allowed = new Set(probe.targetSampleKeys);
+      console.log(`  target columns: ${allowed.size} (from sample row)`);
+    } else {
+      console.log('  target columns: unknown — will strip on error');
+    }
+
+    const { written, errors } = await upsertBatches(
+      target,
+      t.name,
+      rows,
+      t.onConflict,
+      allowed
+    );
     reports.push({
       name: t.name,
       read: rows.length,
