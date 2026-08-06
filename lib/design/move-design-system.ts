@@ -87,13 +87,30 @@ export const MOVE_FOOTER_COLUMNS = [
   },
 ] as const;
 
-/** Hero feature chips (homepage next section) */
+/** Hero feature chips (exact redesign set) */
 export const MOVE_HERO_CHIPS = [
   'FMCSA licenses confirmed',
   'County-level mover data',
   'Free volume calculator',
   'Side-by-side comparisons',
 ] as const;
+
+export const MOVE_HERO_EYEBROW = 'MOVE TRUST HUB  ·  INDEPENDENT FMCSA MOVER RESEARCH';
+
+export const MOVE_HERO_HEADLINE = 'Where are you going?';
+
+export const MOVE_HERO_SUPPORT =
+  "Tell us where you're moving from and to. We'll shortlist FMCSA-licensed movers for that corridor, estimate volume, and compare carriers side by side — independent research, not a lead marketplace or paid ranking board.";
+
+export const MOVE_HERO_FORM = {
+  stepLabel: 'STEP 1 — ROUTE',
+  title: 'Start your free Move Plan',
+  cta: 'Start free Move Plan →',
+  micro: 'No lead fees · Independent directory · Works with city or ZIP',
+  fromLabel: 'FROM',
+  toLabel: 'TO',
+  fieldPlaceholder: 'City or ZIP',
+} as const;
 
 export const MOVE_INDEPENDENCE_LINE =
   'Independent research directory — common ownership with Ask Trust Hub, separated research and listing rules. No paid placements. No lead fees.';
