@@ -28,7 +28,7 @@ export function MoveHero() {
             {MOVE_HERO_HEADLINE}
           </h1>
 
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#3d4f63] sm:text-lg lg:mx-0 dark:text-slate-300">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-700 sm:text-lg lg:mx-0 dark:text-slate-300">
             {MOVE_HERO_SUPPORT}
           </p>
 
