@@ -4,27 +4,30 @@ import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Bump when replacing Move brand logos to bust immutable CDN/browser cache. */
-export const TRUST_HUB_LOGO_VERSION = '20260806';
+export const TRUST_HUB_LOGO_VERSION = '20260806b';
 /** Bump when replacing public/insurance/brand/* so CDN/browser cache picks up the new mark. */
 export const INSURANCE_LOGO_VERSION = '20260728r2';
 /** Bump when replacing public/lender/brand/* for /lender section logos. */
 export const LENDER_LOGO_VERSION = '20260727';
 
 /**
- * Move Trust Hub logo — orange architecture-sheet lockup (brackets + hub).
- * SVG for crisp UI; PNG kept at /logo.png for email/OG fallbacks.
+ * Move Trust Hub logo — extracted from official neon brand sheet
+ * (ChatGPT Image Aug 6, 2026: brackets + hub + MOVE / TRUST HUB).
+ * Transparent PNG for UI; on-dark variant for navy footer.
  */
 export const TRUST_HUB_LOGO = {
-  /** Light surfaces (header, light footer contexts) */
-  src: `/brand/move-trust-hub-logo.svg?v=${TRUST_HUB_LOGO_VERSION}`,
-  headerSrc: `/brand/move-trust-hub-logo.svg?v=${TRUST_HUB_LOGO_VERSION}`,
-  /** Navy / dark surfaces (footer) */
-  footerSrc: `/brand/move-trust-hub-logo-on-dark.svg?v=${TRUST_HUB_LOGO_VERSION}`,
-  /** Raster fallback for email + Open Graph */
+  /** Light surfaces (header) */
+  src: `/brand/move-trust-hub-logo-header.png?v=${TRUST_HUB_LOGO_VERSION}`,
+  headerSrc: `/brand/move-trust-hub-logo-header.png?v=${TRUST_HUB_LOGO_VERSION}`,
+  /** Navy / dark surfaces (footer) — TRUST HUB text lightened for contrast */
+  footerSrc: `/brand/move-trust-hub-logo-on-dark.png?v=${TRUST_HUB_LOGO_VERSION}`,
+  /** Raster for email + Open Graph (same as header) */
   pngSrc: `/logo.png?v=${TRUST_HUB_LOGO_VERSION}`,
+  /** Vector fallback (architecture approximation) */
+  svgSrc: `/brand/move-trust-hub-logo.svg?v=${TRUST_HUB_LOGO_VERSION}`,
   alt: 'Move Trust Hub',
-  width: 420,
-  height: 96,
+  width: 520,
+  height: 209,
 } as const;
 
 /** InsuranceTrustHub brand mark — never use Move logo on insurance host. */

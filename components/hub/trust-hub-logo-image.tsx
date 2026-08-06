@@ -23,8 +23,9 @@ export function TrustHubLogoImage({
   hubId = 'move',
 }: TrustHubLogoImageProps) {
   const isHeader = variant === 'header';
-  const displayW = isHeader ? 240 : 192;
-  const displayH = isHeader ? 65 : 52;
+  // Move sheet lockup is wider (icon + MOVE / TRUST HUB); keep height for nav
+  const displayW = isHeader ? 260 : 220;
+  const displayH = isHeader ? 72 : 56;
   const hub = getHubConfig(hubId);
   const src = isHeader ? hub.headerLogoSrc : hub.logoSrc;
   const alt = hub.logoAlt || TRUST_HUB_LOGO.alt;
