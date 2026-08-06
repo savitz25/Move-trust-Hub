@@ -97,3 +97,15 @@ See also: [NETWORK-PR-CHECKLIST.md](./NETWORK-PR-CHECKLIST.md)
 ## Future option (out of scope)
 
 Merging Insurance/Lender into this monorepo with multi-project deploy is optional process work — not required if standalones stay correctly connected.
+
+## Domain ownership cheat-sheet (2026)
+
+| Domain | Owns deploy | Do not assume |
+|--------|-------------|----------------|
+| `movetrusthub.com` | This monorepo (`Move-trust-Hub`) Vercel project | — |
+| `insurancetrusthub.com` | **`Insurance-trust-hub`** standalone Vercel project | `app/insurance` on Move does not update ITH |
+| `lendertrusthub.com` | **`Lender-Trust-Hub`** standalone Vercel project | `app/lender` on Move does not update LTH |
+
+**Example:** Commit `9a273f76` (Insurance always-visible primary nav) on Move monorepo only updated Move’s deployment. Live `insurancetrusthub.com` header required a matching change on **`Insurance-trust-hub` `main`**.
+
+See also: Insurance repo `docs/VERCEL-DOMAIN-OWNERSHIP.md`.
