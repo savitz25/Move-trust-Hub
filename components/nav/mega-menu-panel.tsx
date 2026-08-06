@@ -54,6 +54,8 @@ export function MegaMenuPanel({
       id={panelId}
       role="navigation"
       aria-label={ariaLabel}
+      /* Portaled outside HubChrome — restore Move tokens for primary/CTA colors */
+      data-hub="move"
       className={cn('mega-menu-panel', className)}
       style={{
         position: 'fixed',

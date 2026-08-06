@@ -186,9 +186,10 @@ export function MoveMegaMenu({ item, active = false }: Props) {
                   href={item.cta.href}
                   onClick={close}
                   className={cn(
-                    'move-cta inline-flex min-h-10 items-center justify-center rounded-xl px-4',
-                    'text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2'
+                    'move-cta inline-flex min-h-10 w-full items-center justify-center rounded-xl px-4',
+                    'text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] focus-visible:ring-offset-2'
                   )}
+                  style={{ backgroundColor: '#FF5A1F', color: '#FFFFFF' }}
                 >
                   {item.cta.label}
                 </Link>

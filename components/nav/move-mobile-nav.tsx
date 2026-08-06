@@ -155,7 +155,8 @@ export function MoveMobileNav() {
                     prefetch={false}
                     href={item.cta.href}
                     onClick={close}
-                    className="move-cta mt-2 inline-flex min-h-11 items-center justify-center rounded-xl px-4 text-sm font-semibold"
+                    className="move-cta mt-2 inline-flex min-h-11 items-center justify-center rounded-xl px-4 text-sm font-semibold text-white"
+                    style={{ backgroundColor: '#FF5A1F', color: '#FFFFFF' }}
                   >
                     {item.cta.label}
                   </Link>

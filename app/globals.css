@@ -195,13 +195,26 @@
     }
   }
 
-  /* Move redesign utilities */
+  /*
+   * Move redesign CTAs — hard-coded Move orange (not bg-primary).
+   * Mega menus portal to document.body outside [data-hub=move], so CSS
+   * variables would fall back to root blue (#0077D4). Keep orange explicit.
+   * !important beats Button/utility bg-primary when both classes apply.
+   */
   .move-cta {
-    @apply bg-primary text-primary-foreground font-semibold shadow-sm;
+    @apply font-semibold shadow-sm;
+    background-color: #ff5a1f !important;
+    color: #ffffff !important;
     box-shadow: 0 6px 20px -6px rgb(255 90 31 / 0.4);
   }
   .move-cta:hover {
-    filter: brightness(1.04);
+    background-color: #ff7a4d !important;
+    color: #ffffff !important;
+    filter: none;
+  }
+  .move-cta:focus-visible {
+    outline: 2px solid #ff5a1f;
+    outline-offset: 2px;
   }
   /** Shared elevated surface — form, state grid, network cards */
   .move-surface-card {
