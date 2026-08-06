@@ -125,9 +125,27 @@ type WizardProps = {
   fallbackMovers?: HomeRouteMover[];
   /** Notify parent (homepage hero) when the wizard step changes. */
   onStepChange?: (step: MyMovePlanStep) => void;
+  /**
+   * When true, wizard is mounted on /my-move/plans/[id] (dashboard workspace),
+   * not the homepage hero.
+   */
+  workspaceMode?: boolean;
+  /**
+   * Return path for company profile deep-links and post-auth redirects.
+   * Defaults to homepage hash on marketing site; plan workspace overrides.
+   */
+  planReturnPath?: string;
+  /** After hydrate, once, trigger email-me-report (dashboard Send report CTA). */
+  autoSendReport?: boolean;
 };
 
-export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardProps) {
+export function MyMovePlanWizard({
+  fallbackMovers = [],
+  onStepChange,
+  workspaceMode = false,
+  planReturnPath = MY_MOVE_PLAN_RETURN_PATH,
+  autoSendReport = false,
+}: WizardProps) {
   const fromId = useId();
   const toId = useId();
   const saveMyMove = useSaveMyMove();
@@ -153,6 +171,8 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
   const outreachHandledRef = useRef(false);
   const emailReportHandledRef = useRef(false);
   const pendingEmailModalOpenedRef = useRef(false);
+  const autoSendHandledRef = useRef(false);
+  const returnPath = planReturnPath || MY_MOVE_PLAN_RETURN_PATH;
 
   const applySavedPlan = useCallback((saved: ReturnType<typeof loadMyMovePlan>) => {
     if (!saved) return;
@@ -414,9 +434,9 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
       inventory,
       updatedAt: new Date().toISOString(),
     });
-    storeCompanyReturnPath(MY_MOVE_PLAN_RETURN_PATH);
+    storeCompanyReturnPath(returnPath);
     return buildCompanyProfileHref(slug);
-  }, [step, fromPlace, toPlace, drivingMiles, shortlist, preset, inventory]);
+  }, [step, fromPlace, toPlace, drivingMiles, shortlist, preset, inventory, returnPath]);
 
   const openEstimateMailto = useCallback(
     (mover: HomeRouteMover, planOverride?: MyMovePlanState | null) => {
@@ -495,7 +515,7 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
         });
         setEmailPendingSlug(mover.slug);
         saveMyMove.openSaveModal({
-          redirectPath: MY_MOVE_PLAN_RETURN_PATH,
+          redirectPath: returnPath,
           context: 'mover',
         });
         toast.message('Sign in to send estimate requests', {
@@ -507,7 +527,7 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
       setEmailPendingSlug(null);
       openEstimateMailto(mover);
     },
-    [persistPlan, saveMyMove, openEstimateMailto]
+    [persistPlan, saveMyMove, openEstimateMailto, returnPath]
   );
 
   const sendMoveReportEmail = useCallback(async (): Promise<boolean> => {
@@ -653,7 +673,7 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
       if (!saveMyMove.user) {
         stashPendingEmailMoveReport();
         saveMyMove.openSaveModal({
-          redirectPath: MY_MOVE_PLAN_RETURN_PATH,
+          redirectPath: returnPath,
           context: 'dashboard',
         });
         toast.message('Sign in to email your report', {
@@ -669,7 +689,7 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
         description: 'Please try again. Your plan is still on this device.',
       });
     }
-  }, [persistPlan, inventory, saveMyMove, sendMoveReportEmail]);
+  }, [persistPlan, inventory, saveMyMove, sendMoveReportEmail, returnPath]);
 
   // Allow a new post-auth flow after sign-out
   useEffect(() => {
@@ -706,6 +726,39 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
     applySavedPlan,
   ]);
 
+  // Dashboard "Send report" → /my-move/plans/[id]?step=report&send=1
+  useEffect(() => {
+    if (!autoSendReport || !hydrated || autoSendHandledRef.current) return;
+    if (saveMyMove.loading) return;
+
+    autoSendHandledRef.current = true;
+    setStep('report');
+
+    if (!saveMyMove.user) {
+      stashPendingEmailMoveReport();
+      saveMyMove.openSaveModal({
+        redirectPath: returnPath,
+        context: 'dashboard',
+      });
+      toast.message('Sign in to email your report', {
+        description: 'After you sign in, we’ll send the move report to your email.',
+      });
+      return;
+    }
+
+    window.setTimeout(() => {
+      void sendMoveReportEmail();
+    }, 400);
+  }, [
+    autoSendReport,
+    hydrated,
+    saveMyMove.loading,
+    saveMyMove.user,
+    saveMyMove,
+    returnPath,
+    sendMoveReportEmail,
+  ]);
+
   // If the user clicked email while auth was still loading, open the sign-in
   // modal once the provider is ready (and they are still signed out).
   useEffect(() => {
@@ -714,7 +767,7 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
     if (!peekPendingEmailMoveReport()) return;
     pendingEmailModalOpenedRef.current = true;
     saveMyMove.openSaveModal({
-      redirectPath: MY_MOVE_PLAN_RETURN_PATH,
+      redirectPath: returnPath,
       context: 'dashboard',
     });
   }, [hydrated, saveMyMove.loading, saveMyMove.user, saveMyMove]);

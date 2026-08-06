@@ -37,7 +37,7 @@ import {
   type MovePlanRecord,
 } from '@/lib/my-move-plan/plan-library';
 import { saveMyMovePlan } from '@/lib/my-move-plan/storage';
-import { MY_MOVE_PLAN_RETURN_PATH } from '@/lib/my-move-plan/return-path';
+import { planWorkspaceHref } from '@/lib/my-move-plan/return-path';
 import {
   archiveCloudMovePlanAction,
   deleteCloudMovePlanAction,
@@ -154,19 +154,28 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
     onPlanCount?.(visible.length);
   }, [hydrated, visible.length, onPlanCount]);
 
-  function openPlan(id: string, stepOverride?: 'report' | 'inventory' | 'shortlist') {
+  /**
+   * Primary CTAs stay on Move HQ workspace (/my-move/plans/[id]).
+   * Homepage wizard is only via explicit secondary link on that page.
+   */
+  function openPlan(
+    id: string,
+    opts?: { step?: 'report' | 'inventory' | 'shortlist'; send?: boolean }
+  ) {
     const record = openPlanInSession(id);
     if (!record) {
       toast.error('Plan not found');
       return;
     }
-    if (stepOverride) {
-      saveMyMovePlan({ ...record.plan, step: stepOverride });
+    if (opts?.step) {
+      saveMyMovePlan({ ...record.plan, step: opts.step });
     }
-    toast.success('Plan loaded', {
-      description: 'Continue from your My Move Plan on the homepage.',
-    });
-    router.push(MY_MOVE_PLAN_RETURN_PATH);
+    router.push(
+      planWorkspaceHref(id, {
+        step: opts?.step,
+        send: opts?.send,
+      })
+    );
   }
 
   function handleDelete(id: string, cloudId?: string | null) {
@@ -450,7 +459,9 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
                         type="button"
                         variant="outline"
                         className="w-full gap-1.5"
-                        onClick={() => openPlan(record.id, 'report')}
+                        onClick={() =>
+                          openPlan(record.id, { step: 'report', send: true })
+                        }
                       >
                         <Send className="h-3.5 w-3.5" />
                         Send report
@@ -460,7 +471,7 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
                         variant="ghost"
                         size="sm"
                         className="w-full gap-1.5 text-muted-foreground"
-                        onClick={() => openPlan(record.id, 'inventory')}
+                        onClick={() => openPlan(record.id, { step: 'inventory' })}
                       >
                         <Pencil className="h-3.5 w-3.5" />
                         Edit
@@ -723,7 +734,9 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
                         type="button"
                         variant="outline"
                         className="w-full gap-1"
-                        onClick={() => openPlan(record.id, 'report')}
+                        onClick={() =>
+                          openPlan(record.id, { step: 'report', send: true })
+                        }
                       >
                         <Send className="h-3.5 w-3.5" />
                         Send report
@@ -744,7 +757,7 @@ export function MyMoveReports({ compact = false, onPlanCount }: Props) {
                             <button
                               type="button"
                               className="flex w-full items-center gap-2 px-3 py-2 hover:bg-muted"
-                              onClick={() => openPlan(record.id, 'inventory')}
+                              onClick={() => openPlan(record.id, { step: 'inventory' })}
                             >
                               <Pencil className="h-3.5 w-3.5" />
                               Edit plan
