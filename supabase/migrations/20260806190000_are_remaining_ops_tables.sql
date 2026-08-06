@@ -1,6 +1,7 @@
 -- =====================================================
--- ARE remaining ops tables for FREE(uvq) → PRO(are) parity
+-- ARE remaining MOVE-ONLY ops tables (FREE uvq → PRO are)
 -- Idempotent. Does NOT touch auth.users or Save My Move user data.
+-- Does NOT create lenders* — Lender product uses project hidcrbexurginnuqgjpx.
 -- Run in Supabase SQL Editor on arepfylnilkjmyduhwbz if tables missing.
 -- =====================================================
 
@@ -188,7 +189,6 @@ drop policy if exists "Service role manages moving_companies" on public.moving_c
 create policy "Service role manages moving_companies"
   on public.moving_companies for all to service_role using (true) with check (true);
 
--- company_reviews already may exist with FK to moving_companies
 create table if not exists public.company_reviews (
   id uuid primary key default uuid_generate_v4(),
   company_id uuid not null references public.moving_companies(id) on delete cascade,
@@ -222,7 +222,6 @@ create table if not exists public.company_reviews (
   updated_at timestamptz not null default now()
 );
 
--- Add optional portal columns if table already existed without them
 alter table public.company_reviews
   add column if not exists verification_tier text,
   add column if not exists owner_response text,
@@ -238,83 +237,7 @@ alter table public.company_reviews
 
 alter table public.company_reviews enable row level security;
 
--- ---------- lenders ----------
-create table if not exists public.lenders (
-  id uuid primary key default gen_random_uuid(),
-  slug text not null unique,
-  name text not null,
-  nmls_id text not null,
-  lender_type text not null default 'Lender',
-  city text,
-  state text not null,
-  state_slug text not null,
-  county text not null,
-  county_slug text not null,
-  zip_codes jsonb not null default '[]'::jsonb,
-  rating numeric(3, 2),
-  review_count integer not null default 0,
-  trust_score integer not null default 0,
-  county_experience_score integer not null default 0,
-  loan_types jsonb not null default '[]'::jsonb,
-  specialties jsonb not null default '[]'::jsonb,
-  credit_tiers jsonb not null default '[]'::jsonb,
-  nmls_verified boolean not null default true,
-  cfpb_complaints integer not null default 0,
-  bbb_rating text,
-  google_rating numeric(3, 2),
-  trustpilot_rating numeric(3, 2),
-  short_description text,
-  website text,
-  phone text,
-  is_featured boolean not null default false,
-  zero_paid_placement boolean not null default true,
-  nmls_preview jsonb,
-  google_data jsonb,
-  public_scrape_data jsonb,
-  cfpb_complaints_data jsonb,
-  verification_sources jsonb,
-  transparency_note text,
-  published_from_onboarding boolean,
-  data_freshness_note text,
-  created_at timestamptz not null default now(),
-  updated_at timestamptz not null default now(),
-  google_place_id text,
-  google_review_count integer,
-  bbb_accredited boolean,
-  bbb_complaint_count integer,
-  bbb_score text,
-  cfpb_complaints_count integer,
-  enriched_at timestamptz,
-  enrichment_json jsonb
-);
-
-create index if not exists lenders_slug_idx on public.lenders (slug);
-create index if not exists lenders_state_county_idx on public.lenders (state_slug, county_slug);
-
-alter table public.lenders enable row level security;
-drop policy if exists "Public can read lenders" on public.lenders;
-create policy "Public can read lenders" on public.lenders for select using (true);
-drop policy if exists "Service role manages lenders" on public.lenders;
-create policy "Service role manages lenders"
-  on public.lenders for all to service_role using (true) with check (true);
-
-create table if not exists public.lender_onboarding_submissions (
-  id uuid primary key default gen_random_uuid(),
-  created_at timestamptz default now(),
-  payload jsonb default '{}'::jsonb
-);
-
-create table if not exists public.lender_onboarding_rate_limits (
-  id uuid primary key default gen_random_uuid(),
-  ip_hash text,
-  window_start timestamptz default now(),
-  request_count integer default 1
-);
-
-alter table public.lender_onboarding_submissions enable row level security;
-alter table public.lender_onboarding_rate_limits enable row level security;
-
--- ---------- magic link rate limits ----------
+-- ---------- magic link rate limits (optional Move auth hygiene) ----------
 create table if not exists public.magic_link_rate_limits (
   email_hash text primary key,
   request_count integer not null default 1,
@@ -353,7 +276,7 @@ drop policy if exists "Service role manages my move activity" on public.my_move_
 create policy "Service role manages my move activity"
   on public.my_move_activity_events for all to service_role using (true) with check (true);
 
--- ---------- quote_requests (create if missing; migrator only fills when empty) ----------
+-- ---------- quote_requests ----------
 create table if not exists public.quote_requests (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz default now(),
@@ -395,5 +318,8 @@ create table if not exists public.providers (
   created_at timestamptz default now()
 );
 alter table public.providers enable row level security;
+
+-- NOTE: public.lenders / lender_onboarding_* are intentionally NOT created here.
+-- Lender-Trust-Hub uses Supabase project hidcrbexurginnuqgjpx.
 
 notify pgrst, 'reload schema';

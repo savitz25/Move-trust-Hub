@@ -36,6 +36,10 @@ type TableSpec = {
   isView?: boolean;
 };
 
+/**
+ * Move-Trust-Hub only. NEVER include lenders / lender_onboarding_* —
+ * those belong on Lender-Trust-Hub (hidcrbexurginnuqgjpx), not are.
+ */
 const TABLES: TableSpec[] = [
   { name: 'moving_companies', onConflict: 'id' },
   {
@@ -45,10 +49,7 @@ const TABLES: TableSpec[] = [
     skipOrphans: true,
   },
   { name: 'company_verification_backfill_runs', onConflict: 'id' },
-  // company_verification_status is a VIEW — handled separately
-  { name: 'lenders', onConflict: 'id' },
-  { name: 'lender_onboarding_submissions', onConflict: 'id' },
-  { name: 'lender_onboarding_rate_limits', onConflict: 'id' },
+  // company_verification_status is a VIEW — SQL only
   { name: 'bbb_refresh_runs', onConflict: 'id' },
   { name: 'bbb_change_log', onConflict: 'id' },
   { name: 'fmcsa_refresh_runs', onConflict: 'id' },
@@ -66,6 +67,13 @@ const TABLES: TableSpec[] = [
   { name: 'portal_claim_rate_limits', onConflict: 'id' },
   { name: 'providers', onConflict: 'id' },
 ];
+
+/** Explicit never-migrate list (documented + logged). */
+const NEVER_ON_ARE = [
+  'lenders',
+  'lender_onboarding_submissions',
+  'lender_onboarding_rate_limits',
+] as const;
 
 type Report = {
   name: string;
@@ -227,11 +235,14 @@ async function main() {
   const outDir = resolve(process.cwd(), 'scripts/output');
   mkdirSync(outDir, { recursive: true });
 
-  console.log('── Remaining migrate FREE → PRO ──');
+  console.log('── Remaining migrate FREE → PRO (Move-only) ──');
   console.log(`Mode: ${dryRun ? 'DRY-RUN' : 'LIVE CONFIRM'}`);
   console.log(`SOURCE: ${redactUrl(cfg.sourceUrl)}`);
   console.log(`TARGET: ${redactUrl(cfg.targetUrl)}`);
   console.log(`include-quotes: ${includeQuotes}`);
+  console.log(
+    `NEVER on are (Lender-Trust-Hub project): ${NEVER_ON_ARE.join(', ')}`
+  );
 
   const source = client(cfg.sourceUrl, cfg.sourceKey);
   const target = client(cfg.targetUrl, cfg.targetKey);
@@ -457,7 +468,11 @@ async function main() {
           'company_claims',
           'company_owners',
           'company_portal_profiles',
+          // Lender product — separate Supabase project hidcrbexurginnuqgjpx
+          ...NEVER_ON_ARE,
         ],
+        lenderNote:
+          'uvq.lenders (647 rows) were legacy multi-product data. Do not copy to Move are. Future home: Lender-Trust-Hub (hidcrbexurginnuqgjpx).',
       },
       null,
       2
