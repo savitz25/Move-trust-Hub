@@ -4,30 +4,28 @@ import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Bump when replacing Move brand logos to bust immutable CDN/browser cache. */
-export const TRUST_HUB_LOGO_VERSION = '20260806b';
+export const TRUST_HUB_LOGO_VERSION = '20260806c';
 /** Bump when replacing public/insurance/brand/* so CDN/browser cache picks up the new mark. */
 export const INSURANCE_LOGO_VERSION = '20260728r2';
 /** Bump when replacing public/lender/brand/* for /lender section logos. */
 export const LENDER_LOGO_VERSION = '20260727';
 
 /**
- * Move Trust Hub logo — extracted from official neon brand sheet
- * (ChatGPT Image Aug 6, 2026: brackets + hub + MOVE / TRUST HUB).
- * Transparent PNG for UI; on-dark variant for navy footer.
+ * Move Trust Hub logo — designer export
+ * “MTH updated transparent logo.png” (brackets + hub + MOVE / TRUST HUB).
+ * Transparent PNG for light UI; on-dark variant for navy footer.
  */
 export const TRUST_HUB_LOGO = {
   /** Light surfaces (header) */
   src: `/brand/move-trust-hub-logo-header.png?v=${TRUST_HUB_LOGO_VERSION}`,
   headerSrc: `/brand/move-trust-hub-logo-header.png?v=${TRUST_HUB_LOGO_VERSION}`,
-  /** Navy / dark surfaces (footer) — TRUST HUB text lightened for contrast */
+  /** Navy / dark surfaces (footer) — navy text lightened for contrast */
   footerSrc: `/brand/move-trust-hub-logo-on-dark.png?v=${TRUST_HUB_LOGO_VERSION}`,
-  /** Raster for email + Open Graph (same as header) */
+  /** Raster for email + Open Graph */
   pngSrc: `/logo.png?v=${TRUST_HUB_LOGO_VERSION}`,
-  /** Vector fallback (architecture approximation) */
-  svgSrc: `/brand/move-trust-hub-logo.svg?v=${TRUST_HUB_LOGO_VERSION}`,
   alt: 'Move Trust Hub',
-  width: 520,
-  height: 209,
+  width: 640,
+  height: 160,
 } as const;
 
 /** InsuranceTrustHub brand mark — never use Move logo on insurance host. */
