@@ -152,6 +152,7 @@
     "fix:route-links": "tsx scripts/fix-destination-route-links.ts",
     "migrate:key": "tsx scripts/run-key-migrations.ts",
     "migrate:uvq-to-are": "tsx --require ./scripts/stub-server-only.cjs scripts/migrate-supabase-uvq-to-are.ts",
+    "migrate:uvq-to-are:remaining": "tsx --require ./scripts/stub-server-only.cjs scripts/migrate-supabase-uvq-to-are-remaining.ts",
     "backfill:local-mover-counties": "tsx --require ./scripts/stub-server-only.cjs scripts/backfill-local-mover-counties.ts",
     "refresh:fmcsa": "tsx scripts/run-fmcsa-refresh.ts",
     "refresh:fmcsa:batch": "tsx --require ./scripts/stub-server-only.cjs scripts/refresh-fmcsa-batch.ts",

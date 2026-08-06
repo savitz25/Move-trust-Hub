@@ -74,3 +74,27 @@ Remove FREE/uvq keys from Production env so onboard/admin cannot dual-brain.
 2. Broward audit `supabaseEligible` > 0 when locals exist  
 3. Google / magic-link login still works on production  
 4. Sample `/companies/{slug}` from former FREE data resolves  
+
+## Remaining ops tables (after main company migrate)
+
+```bash
+# 1) Inventory
+node scripts/tmp-inventory-tables.mjs
+# → scripts/output/supabase-table-parity-uvq-are.json
+
+# 2) Apply missing schema on are (SQL Editor):
+#    scripts/output/APPLY-ON-ARE-REMAINING.sql
+#    or supabase/migrations/20260806190000_are_remaining_ops_tables.sql
+
+# 3) Data copy
+npm run migrate:uvq-to-are:remaining -- --dry-run
+npm run migrate:uvq-to-are:remaining -- --confirm
+npm run migrate:uvq-to-are:remaining -- --confirm --include-quotes
+```
+
+**Order notes**
+
+- `company_reviews` → requires `moving_companies` first (FK). Migrator filters orphans.
+- `company_verification_status` / `companies_with_stats` are **views** (SQL only).
+- `my_move_activity_events` only copies rows whose `user_id` exists on **are** (`user_profiles` / auth).
+- Never copies `user_profiles`, `saved_*`, `auth.*`, portal ownership tables.
