@@ -140,7 +140,7 @@ export function MoveMobileNav() {
               rel="noopener noreferrer"
               onClick={close}
             >
-              Part of Ask Trust Hub
+              Ask Trust Hub network
             </a>
 
             <Button className="w-full mt-3 min-h-[48px] move-cta" asChild>

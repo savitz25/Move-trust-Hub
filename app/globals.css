@@ -198,26 +198,48 @@
   /* Move redesign utilities */
   .move-cta {
     @apply bg-primary text-primary-foreground font-semibold shadow-sm;
-    box-shadow: var(--move-glow, 0 8px 28px -6px rgb(255 90 31 / 0.35));
+    box-shadow: 0 6px 20px -6px rgb(255 90 31 / 0.4);
   }
   .move-cta:hover {
-    filter: brightness(1.05);
+    filter: brightness(1.04);
+  }
+  /** Shared elevated surface — form, state grid, network cards */
+  .move-surface-card {
+    @apply rounded-2xl border border-border/80 bg-card;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.04), 0 4px 12px -4px rgb(10 37 64 / 0.08);
+    transition:
+      box-shadow 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+  @media (hover: hover) {
+    .move-surface-card:hover {
+      border-color: rgb(255 90 31 / 0.35);
+      box-shadow: 0 8px 24px -8px rgb(255 90 31 / 0.22), 0 2px 8px -2px rgb(10 37 64 / 0.06);
+    }
   }
   .move-card-glow {
     @apply transition-shadow duration-200;
   }
   @media (hover: hover) {
     .move-card-glow:hover {
-      box-shadow: var(--shadow-move-glow, 0 8px 28px -6px rgb(255 90 31 / 0.28));
+      box-shadow: 0 8px 24px -8px rgb(255 90 31 / 0.22), 0 2px 8px -2px rgb(10 37 64 / 0.06);
     }
   }
   .move-hub-pulse {
-    animation: move-hub-pulse 2.8s ease-in-out infinite;
+    animation: move-hub-pulse 3.2s ease-in-out infinite;
   }
   @media (prefers-reduced-motion: reduce) {
     .move-hub-pulse {
       animation: none;
     }
+  }
+  /** Shared content width rhythm for homepage sections */
+  .move-section {
+    @apply py-12 md:py-16;
+  }
+  .move-section-inner {
+    @apply container mx-auto max-w-6xl px-4;
   }
 
   .celebrate-pulse {

@@ -24,7 +24,7 @@ const MyMovePlanWizard = dynamic(
 function WizardLoadingSlot() {
   return (
     <div
-      className="min-h-[22rem] rounded-2xl border border-border/80 bg-white p-6 shadow-move-glow sm:min-h-[24rem]"
+      className="move-surface-card min-h-[22rem] p-6 sm:min-h-[24rem]"
       aria-busy="true"
       aria-label="Loading move plan"
     >
@@ -40,20 +40,13 @@ function WizardLoadingSlot() {
 
 function RouteFormGate({ onStart }: { onStart: () => void }) {
   return (
-    <div
-      className={cn(
-        'relative overflow-hidden rounded-2xl border border-border/80 bg-white/95',
-        'p-5 shadow-trust-lg sm:p-6 md:p-7',
-        'ring-1 ring-primary/10'
-      )}
-    >
-      {/* Soft orange edge accent */}
+    <div className="move-surface-card relative overflow-hidden p-5 sm:p-6 md:p-7">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-move-soft to-primary"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl"
+        className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/[0.08] blur-2xl"
         aria-hidden
       />
 
@@ -69,7 +62,7 @@ function RouteFormGate({ onStart }: { onStart: () => void }) {
           <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-primary">
             {MOVE_HERO_FORM.fromLabel}
           </span>
-          <span className="flex min-h-14 items-center gap-2 rounded-2xl border-2 border-border/80 bg-white px-3 shadow-sm transition-colors focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/20">
+          <span className="flex min-h-12 items-center gap-2 rounded-xl border border-border/80 bg-white px-3 transition-colors focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/20 sm:min-h-14">
             <MapPin className="h-5 w-5 shrink-0 text-primary/80" aria-hidden />
             <input
               type="text"
@@ -87,7 +80,7 @@ function RouteFormGate({ onStart }: { onStart: () => void }) {
           <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-primary">
             {MOVE_HERO_FORM.toLabel}
           </span>
-          <span className="flex min-h-14 items-center gap-2 rounded-2xl border-2 border-border/80 bg-white px-3 shadow-sm transition-colors focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/20">
+          <span className="flex min-h-12 items-center gap-2 rounded-xl border border-border/80 bg-white px-3 transition-colors focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/20 sm:min-h-14">
             <MapPin className="h-5 w-5 shrink-0 text-primary/80" aria-hidden />
             <input
               type="text"
@@ -108,7 +101,7 @@ function RouteFormGate({ onStart }: { onStart: () => void }) {
         onClick={onStart}
         className={cn(
           'move-cta mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-xl px-6',
-          'text-sm font-semibold transition-[filter,transform] hover:brightness-105',
+          'text-sm font-semibold transition-[filter] hover:brightness-[1.04]',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
           'sm:w-auto sm:min-w-[14rem]'
         )}

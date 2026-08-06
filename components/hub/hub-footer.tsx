@@ -41,7 +41,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
     <footer
       className={cn(
         'border-t',
-        isMove ? 'bg-[var(--move-navy,#0A2540)] text-slate-200' : 'bg-muted/20'
+        isMove ? 'bg-[#0A2540] text-slate-200' : 'bg-muted/20'
       )}
     >
       <div className="container mx-auto px-4 py-10">

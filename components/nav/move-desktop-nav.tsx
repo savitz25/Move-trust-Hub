@@ -55,11 +55,11 @@ export function MoveDesktopNav() {
 
       <a
         href={ASK_TRUST_HUB.url}
-        className="hidden xl:inline text-[10px] font-medium tracking-wide text-muted-foreground hover:text-foreground max-w-[7.5rem] leading-tight text-right"
+        className="hidden xl:inline text-[10px] font-medium tracking-wide text-muted-foreground/80 hover:text-muted-foreground max-w-[5.5rem] leading-tight text-right"
         rel="noopener noreferrer"
-        title="Part of the Ask Trust Hub network"
+        title="Part of the Ask Trust Hub network — Switch hub above"
       >
-        Part of Ask Trust Hub
+        Ask network
       </a>
     </div>
   );

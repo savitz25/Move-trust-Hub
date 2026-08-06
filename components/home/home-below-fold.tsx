@@ -17,17 +17,18 @@ const ReviewHighlights = dynamic(
 export function HomeBelowFold() {
   return (
     <>
-      <section className="container mx-auto px-4 py-14 content-auto">
-        <div className="text-center mb-10 max-w-2xl mx-auto">
+      <section className="move-section content-auto">
+        <div className="move-section-inner">
+        <div className="text-center mb-9 max-w-2xl mx-auto">
           <div className="text-primary font-semibold tracking-widest text-xs mb-2">
             YOUR MOVE PLAYBOOK
           </div>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            Three fun steps from ZIP to shortlist
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#0A2540] dark:text-white">
+            Three steps from ZIP to shortlist
           </h2>
           <p className="mt-3 text-muted-foreground">
             Start with From → To above, then size your move, browse local guides, and compare —
-            without lead forms or paid placements.
+            independent research, no lead forms or paid placements.
           </p>
         </div>
 
@@ -93,6 +94,7 @@ export function HomeBelowFold() {
               <p className="text-muted-foreground leading-relaxed text-sm">{item.desc}</p>
             </div>
           ))}
+        </div>
         </div>
       </section>
 

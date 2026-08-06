@@ -1,4 +1,3 @@
-import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
 import { TrustMark } from '@/components/network/trust-mark';
 import { HeroFeatureChips } from '@/components/move/hero-feature-chips';
 import { HeroIllustration } from '@/components/move/hero-illustration';
@@ -11,23 +10,21 @@ import {
 
 /**
  * Homepage hero — SSR H1 (LCP) + form-forward Move Plan card.
- * Controlled orange energy; independent research tone (not marketplace).
+ * Network belonging is carried by TrustMark + Network block + footer (not triple-repeated).
  */
 export function MoveHero() {
   return (
     <div className="relative">
-      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 xl:gap-16">
-        {/* Copy column */}
+      <div className="grid items-start gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 xl:gap-14">
         <div className="text-center lg:text-left">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
             {MOVE_HERO_EYEBROW}
           </p>
-          <NetworkBelongingLine className="mt-2 lg:text-left" />
-          <div className="mt-2 flex justify-center lg:justify-start">
+          <div className="mt-2.5 flex justify-center lg:justify-start">
             <TrustMark />
           </div>
 
-          <h1 className="mt-4 text-balance font-semibold leading-[1.08] tracking-tighter text-[#0A2540] text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] dark:text-white">
+          <h1 className="mt-4 text-balance font-semibold leading-[1.08] tracking-tighter text-[#0A2540] text-3xl sm:text-4xl md:text-5xl lg:text-[3.15rem] dark:text-white">
             {MOVE_HERO_HEADLINE}
           </h1>
 
@@ -35,22 +32,21 @@ export function MoveHero() {
             {MOVE_HERO_SUPPORT}
           </p>
 
-          <HeroFeatureChips className="mt-6 lg:justify-start" />
+          <HeroFeatureChips className="mt-5 sm:mt-6 lg:justify-start" />
 
-          {/* Form under copy on mobile; right column on lg */}
-          <div className="mt-8 lg:hidden">
+          <div className="mt-7 sm:mt-8 lg:hidden">
             <HeroRouteForm />
           </div>
         </div>
 
-        {/* Form + soft illustration (desktop) */}
         <div className="relative hidden lg:block">
           <div
-            className="pointer-events-none absolute -right-8 -top-10 h-56 w-56 rounded-full bg-primary/15 blur-3xl"
+            className="pointer-events-none absolute -right-6 -top-8 h-48 w-48 rounded-full bg-primary/10 blur-3xl"
             aria-hidden
           />
-          <HeroIllustration className="pointer-events-none absolute -right-4 -top-6 w-[min(100%,280px)] opacity-90" />
-          <div className="relative pt-16">
+          {/* Soft mark only — form stays primary */}
+          <HeroIllustration className="pointer-events-none absolute -right-2 -top-4 w-[min(100%,240px)] opacity-50" />
+          <div className="relative pt-12 xl:pt-14">
             <HeroRouteForm />
           </div>
         </div>
@@ -59,5 +55,5 @@ export function MoveHero() {
   );
 }
 
-/** @deprecated Use MoveHero — kept for import stability during redesign. */
+/** @deprecated Use MoveHero */
 export { MoveHero as HomeHeroSsr };
