@@ -24,17 +24,23 @@ export function HeaderTrustBadge({
     : insurance
       ? INSURANCE_HEADER_TRUST_BADGE
       : HEADER_TRUST_BADGE;
+  // Insurance: show Independent pill from md so desktop chrome matches product nav density.
+  // Move/Lender: long badge can wait until xl when mega-nav owns the bar.
+  const showFrom = insurance ? 'hidden md:flex' : 'hidden xl:flex';
+
   return (
     <div
       className={cn(
-        'hidden xl:flex items-center rounded-full border border-border/60 bg-muted/80 px-2.5 py-1',
+        showFrom,
+        'items-center rounded-full border border-border/60 bg-muted/80 px-2.5 py-1',
         'text-[10px] font-semibold leading-snug tracking-wide text-[#3d4f63]',
-        'max-w-[280px] text-center min-h-8',
+        insurance ? 'max-w-[200px] tracking-[0.08em] uppercase' : 'max-w-[280px]',
+        'text-center min-h-8',
         className
       )}
       title={label}
     >
-      {label}
+      {insurance ? 'Independent' : label}
     </div>
   );
 }

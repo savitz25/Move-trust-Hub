@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { HubLogo } from '@/components/hub/hub-logo';
 import { HubMobileNavLoader } from '@/components/hub/hub-mobile-nav-loader';
+import { InsuranceDesktopNavLoader } from '@/components/nav/insurance-desktop-nav-loader';
+import { InsuranceMobileNavLoader } from '@/components/nav/insurance-mobile-nav-loader';
 import { MoveDesktopNavLoader } from '@/components/nav/move-desktop-nav-loader';
 import { MoveMobileNavLoader } from '@/components/nav/move-mobile-nav-loader';
 import { Button } from '@/components/ui/button';
@@ -14,6 +16,7 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
   const homeHref = hubPath(hubId, '/');
   const navLinks = hub.navLinks;
   const isMoveHub = hubId === 'move';
+  const isInsuranceHub = hubId === 'insurance';
 
   return (
     <nav
@@ -31,11 +34,13 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
             {/* eager but not fetchPriority=high — keep SSR H1 as LCP */}
             <HubLogo hubId={hubId} priority />
           </Link>
-          <HeaderTrustBadge moving={isMoveHub} insurance={hubId === 'insurance'} />
+          <HeaderTrustBadge moving={isMoveHub} insurance={isInsuranceHub} />
         </div>
 
         {isMoveHub ? (
           <MoveDesktopNavLoader />
+        ) : isInsuranceHub ? (
+          <InsuranceDesktopNavLoader />
         ) : (
           <div className="hidden lg:flex items-center gap-6 text-sm">
             {navLinks.map((link) => (
@@ -60,6 +65,8 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
 
         {isMoveHub ? (
           <MoveMobileNavLoader />
+        ) : isInsuranceHub ? (
+          <InsuranceMobileNavLoader />
         ) : (
           <HubMobileNavLoader
             ctaHref={hub.ctaHref}

@@ -187,14 +187,15 @@ export const HUBS: Record<HubId, HubConfig> = {
     metadataTitleTemplate: '%s | InsuranceTrustHub',
     applicationName: 'InsuranceTrustHub',
     category: 'insurance services',
+    // Primary header links live in lib/nav/insurance-nav-config.ts (always-visible lg+).
+    // These feed footer / legacy HubMobileNav fallbacks — apex-relative via hubPath.
     navLinks: [
-      { href: hubPath('insurance', '/directory'), label: 'Find Agents' },
-      { href: hubPath('insurance', '/tools'), label: 'Tools' },
+      { href: hubPath('insurance', '/directory'), label: 'Directory' },
       { href: hubPath('insurance', '/calculators'), label: 'Calculators' },
       { href: hubPath('insurance', '/resources'), label: 'Guides' },
-      { href: hubPath('insurance', '/hubs'), label: 'Health Hubs' },
       { href: hubPath('insurance', '/methodology'), label: 'Methodology' },
-      { href: hubPath('insurance', '/about'), label: 'About' },
+      { href: hubPath('insurance', '/about'), label: 'Trust & Transparency' },
+      { href: hubPath('insurance', '/my-insurance'), label: 'My Insurance' },
       { href: hubPath('insurance', '/contact'), label: 'Contact' },
     ],
     footerColumns: [
@@ -254,7 +255,7 @@ export const HUBS: Record<HubId, HubConfig> = {
         ],
       },
     ],
-    ctaLabel: 'Find Agents',
+    ctaLabel: 'Compare agencies',
     ctaHref: hubPath('insurance', '/directory'),
     legalLinks: {
       privacy: hubPath('insurance', '/privacy'),
