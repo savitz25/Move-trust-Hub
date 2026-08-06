@@ -45,9 +45,16 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
+  /* Move Trust Hub brand (also set as CSS vars on [data-hub="move"]) */
+  --color-move-orange: #ff5a1f;
+  --color-move-orange-soft: #ff7a4d;
+  --color-move-navy: #0a2540;
+  --color-move-glow: rgb(255 90 31 / 0.35);
+
   /* Sharper, cleaner shadows (subtle lift, modern) */
   --shadow-trust: 0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px -1px rgb(0 0 0 / 0.06);
   --shadow-trust-lg: 0 8px 16px -4px rgb(0 0 0 / 0.08), 0 2px 6px -2px rgb(0 0 0 / 0.05);
+  --shadow-move-glow: 0 8px 28px -6px rgb(255 90 31 / 0.35), 0 2px 8px -2px rgb(255 90 31 / 0.18);
 
   /* Border radius tokens */
   --radius-lg: var(--radius);
@@ -91,6 +98,46 @@
     --star: 45 93% 47%;
   }
 
+  /*
+   * Move Trust Hub redesign tokens (scoped — does not recolor Insurance/Lender).
+   * Light: clean research directory + controlled orange energy (#FF5A1F).
+   * Dark: navy canvas + neon orange accents (logo sheet treatment).
+   */
+  [data-hub='move'] {
+    --primary: 16 100% 56%; /* #FF5A1F */
+    --primary-foreground: 0 0% 100%;
+    --ring: 16 100% 56%;
+    --accent: 16 100% 96%;
+    --accent-foreground: 16 90% 30%;
+    --info: 16 100% 56%;
+    --move-orange: #ff5a1f;
+    --move-orange-soft: #ff7a4d;
+    --move-navy: #0a2540;
+    --move-glow: 0 12px 40px -8px rgb(255 90 31 / 0.28);
+  }
+
+  [data-hub='move'].dark,
+  .dark[data-hub='move'],
+  html.dark [data-hub='move'] {
+    --background: 215 50% 8%; /* near #0A2540 family */
+    --foreground: 210 40% 98%;
+    --card: 215 45% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 45% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 16 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 35% 16%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 215 30% 14%;
+    --muted-foreground: 215 15% 70%;
+    --accent: 16 80% 18%;
+    --accent-foreground: 16 100% 80%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 16 100% 60%;
+    --move-glow: 0 0 48px rgb(255 90 31 / 0.45), 0 0 12px rgb(255 90 31 / 0.35);
+  }
 }
 
 @layer base {
@@ -145,6 +192,31 @@
   @media (hover: hover) {
     .hover-lift:hover {
       transform: translateY(-2px);
+    }
+  }
+
+  /* Move redesign utilities */
+  .move-cta {
+    @apply bg-primary text-primary-foreground font-semibold shadow-sm;
+    box-shadow: var(--move-glow, 0 8px 28px -6px rgb(255 90 31 / 0.35));
+  }
+  .move-cta:hover {
+    filter: brightness(1.05);
+  }
+  .move-card-glow {
+    @apply transition-shadow duration-200;
+  }
+  @media (hover: hover) {
+    .move-card-glow:hover {
+      box-shadow: var(--shadow-move-glow, 0 8px 28px -6px rgb(255 90 31 / 0.28));
+    }
+  }
+  .move-hub-pulse {
+    animation: move-hub-pulse 2.8s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .move-hub-pulse {
+      animation: none;
     }
   }
 
@@ -212,6 +284,16 @@
   }
   40% {
     box-shadow: 0 0 0 6px hsl(var(--primary) / 0.12);
+  }
+}
+
+@keyframes move-hub-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgb(255 90 31 / 0.45));
   }
 }
 

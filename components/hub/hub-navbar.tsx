@@ -32,7 +32,9 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
             aria-label={`${hub.siteName} home`}
           >
             {/* eager but not fetchPriority=high — keep SSR H1 as LCP */}
-            <HubLogo hubId={hubId} priority />
+            <span className={isMoveHub ? 'move-hub-pulse inline-block' : undefined}>
+              <HubLogo hubId={hubId} priority />
+            </span>
           </Link>
           <HeaderTrustBadge moving={isMoveHub} insurance={isInsuranceHub} />
         </div>

@@ -28,7 +28,10 @@ export async function HubChrome({
   const networkHubId = hubId === 'move' || hubId === 'insurance' || hubId === 'lender' ? hubId : 'move';
 
   return (
-    <div className="flex min-h-screen flex-col pt-[env(safe-area-inset-top)]">
+    <div
+      data-hub={hubId}
+      className="flex min-h-screen flex-col pt-[env(safe-area-inset-top)]"
+    >
       <AskNetworkBar activeHub={networkHubId} />
       <HubNavbar hubId={hubId} />
       <DeferredLegacyWelcomeBanner hubId={hubId} />

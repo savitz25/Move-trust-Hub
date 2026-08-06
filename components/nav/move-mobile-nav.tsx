@@ -5,13 +5,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { DestinationsMobileNav } from '@/components/navbar/destinations-mobile-nav';
-import {
-  FIND_MOVERS_NAV,
-  GUIDES_NAV,
-  MOVE_DIRECT_NAV,
-} from '@/lib/nav/move-nav-config';
+import { FIND_MOVERS_NAV } from '@/lib/nav/move-nav-config';
+import { MOVE_HEADER_CTA, MOVE_HEADER_NAV } from '@/lib/design/move-design-system';
 import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
+import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
 import { cn } from '@/lib/utils';
 
 const tapTarget =
@@ -32,7 +29,10 @@ function MobileAccordionSection({
     <div className="border-b border-border/50 pb-2 mb-1">
       <button
         type="button"
-        className={cn('w-full justify-between font-medium text-muted-foreground hover:text-foreground', tapTarget)}
+        className={cn(
+          'w-full justify-between font-medium text-muted-foreground hover:text-foreground',
+          tapTarget
+        )}
         aria-expanded={open}
         onClick={onToggle}
       >
@@ -56,23 +56,19 @@ function MobileAccordionSection({
   );
 }
 
-/** Mobile accordion nav — mirrors five-item desktop structure. */
+/** Mobile nav mirrors redesign primary items + Find Movers depth. */
 export function MoveMobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [openSection, setOpenSection] = useState<'movers' | 'guides' | null>(null);
+  const [moversOpen, setMoversOpen] = useState(false);
 
   const close = () => setIsOpen(false);
-
-  const toggle = (section: 'movers' | 'guides') => {
-    setOpenSection((current) => (current === section ? null : section));
-  };
 
   return (
     <div className="flex lg:hidden items-center gap-2">
       <MyMoveNavLink variant="mobile-header" onNavigate={close} />
-      <Button size="sm" asChild className="min-h-[44px] px-3">
-        <Link prefetch={false} href="/moving-calculator" onClick={close}>
-          Calculator
+      <Button size="sm" asChild className="move-cta min-h-[44px] px-3">
+        <Link prefetch={false} href={MOVE_HEADER_CTA.href} onClick={close}>
+          {MOVE_HEADER_CTA.label}
         </Link>
       </Button>
       <Button
@@ -90,10 +86,26 @@ export function MoveMobileNav() {
         <div className="absolute left-0 right-0 top-full z-50 border-t bg-background px-4 py-4 shadow-md max-h-[min(80vh,640px)] overflow-y-auto overscroll-contain">
           <nav aria-label="Mobile navigation" className="flex flex-col gap-1 text-sm">
             <MyMoveNavLink variant="mobile-menu" onNavigate={close} />
+
+            {MOVE_HEADER_NAV.map((link) => (
+              <Link
+                key={link.href}
+                prefetch={false}
+                href={link.href}
+                className={cn(
+                  'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-2 mb-1',
+                  tapTarget
+                )}
+                onClick={close}
+              >
+                {link.label}
+              </Link>
+            ))}
+
             <MobileAccordionSection
-              title="Find Movers"
-              open={openSection === 'movers'}
-              onToggle={() => toggle('movers')}
+              title="More in directory"
+              open={moversOpen}
+              onToggle={() => setMoversOpen((o) => !o)}
             >
               {FIND_MOVERS_NAV.flatMap((col) =>
                 col.links.map((link) => (
@@ -110,72 +122,32 @@ export function MoveMobileNav() {
               )}
             </MobileAccordionSection>
 
-            <DestinationsMobileNav onClose={close} />
-
-            <Link
-              prefetch={false}
-              href="/local-movers"
-              className={cn(
-                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-2 mb-1',
-                tapTarget
-              )}
-              onClick={close}
-            >
-              Local Movers by State
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-calculator"
-              className={cn(
-                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-2 mb-1',
-                tapTarget
-              )}
-              onClick={close}
-            >
-              Moving Calculator
-            </Link>
-            <Link
-              prefetch={false}
-              href="/verify-dot"
-              className={cn(
-                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-3 mb-1',
-                tapTarget
-              )}
-              onClick={close}
-            >
-              Verify DOT
-            </Link>
             <Link
               prefetch={false}
               href="/about/how-we-score-movers"
               className={cn(
-                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-3 mb-1',
+                'font-medium text-muted-foreground hover:text-foreground border-b border-border/50 pb-2 mb-1',
                 tapTarget
               )}
               onClick={close}
             >
-              Trust Center
+              How we vet movers
             </Link>
 
-            <MobileAccordionSection
-              title="Guides"
-              open={openSection === 'guides'}
-              onToggle={() => toggle('guides')}
+            <a
+              href={ASK_TRUST_HUB.url}
+              className={cn('font-medium text-muted-foreground hover:text-foreground', tapTarget)}
+              rel="noopener noreferrer"
+              onClick={close}
             >
-              {GUIDES_NAV.flatMap((col) =>
-                col.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    prefetch={false}
-                    href={link.href}
-                    className={cn('text-muted-foreground hover:text-primary', tapTarget)}
-                    onClick={close}
-                  >
-                    {link.label}
-                  </Link>
-                ))
-              )}
-            </MobileAccordionSection>
+              Part of Ask Trust Hub
+            </a>
+
+            <Button className="w-full mt-3 min-h-[48px] move-cta" asChild>
+              <Link prefetch={false} href={MOVE_HEADER_CTA.href} onClick={close}>
+                {MOVE_HEADER_CTA.label}
+              </Link>
+            </Button>
           </nav>
         </div>
       ) : null}

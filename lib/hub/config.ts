@@ -73,6 +73,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     applicationName: 'Move Trust Hub',
     category: 'moving services',
     navLinks: [...MOVE_NAV],
+    // Four-column redesign: Directory | Tools & Trust | Destinations | Network & Legal (legal in footer chrome)
     footerColumns: [
       {
         title: 'DIRECTORY',
@@ -80,7 +81,7 @@ export const HUBS: Record<HubId, HubConfig> = {
           { href: '/companies', label: 'Find Movers' },
           { href: '/local-movers', label: 'Local Movers by State' },
           { href: '/auto-transport', label: 'Auto Transport' },
-          { href: '/compare', label: 'Compare Tool' },
+          { href: '/compare', label: 'Compare Movers' },
           { href: '/my-move', label: 'My Move' },
         ],
       },
@@ -89,13 +90,10 @@ export const HUBS: Record<HubId, HubConfig> = {
         links: [
           { href: '/moving-calculator', label: 'Moving Calculator' },
           { href: '/verify-dot', label: 'Verify DOT' },
-          { href: '/compare', label: 'Compare Movers' },
-          { href: '/about/how-we-score-movers', label: 'Trust Center' },
+          { href: '/about/how-we-score-movers', label: 'How We Vet Movers' },
           { href: '/resources', label: 'Guides' },
           { href: '/review', label: 'Leave a Review' },
           { href: '/for-movers', label: 'For Moving Companies' },
-          { href: '/about', label: 'About' },
-          { href: '/contact', label: 'Contact' },
         ],
       },
       {
@@ -104,9 +102,8 @@ export const HUBS: Record<HubId, HubConfig> = {
           { href: '/moving-to', label: 'All Destinations' },
           { href: '/resources/routes', label: 'Route Guides' },
           { href: '/moving-to/florida', label: 'Florida' },
-          { href: '/moving-to/south-carolina', label: 'South Carolina' },
-          { href: '/moving-to/north-carolina', label: 'North Carolina' },
           { href: '/moving-to/texas', label: 'Texas' },
+          { href: '/moving-to/south-carolina', label: 'South Carolina' },
         ],
       },
     ],

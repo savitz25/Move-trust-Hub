@@ -51,13 +51,23 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Custom brand - aligned to new sharp logo (bright blues + deep navy)
+        // Custom brand - logo blues (legacy) + Move redesign orange
         brand: {
           blue: '#0077D4',
           'blue-light': '#1E9FFF',
           'blue-deep': '#003366',
           cyan: '#00C6FF',
           'cyan-light': '#00A3E0',
+          orange: '#FF5A1F',
+          'orange-soft': '#FF7A4D',
+          'orange-deep': '#E04410',
+          navy: '#0A2540',
+        },
+        move: {
+          orange: '#FF5A1F',
+          soft: '#FF7A4D',
+          deep: '#E04410',
+          navy: '#0A2540',
         },
       },
       borderRadius: {
@@ -72,6 +82,8 @@ const config: Config = {
       boxShadow: {
         'trust': '0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px -1px rgb(0 0 0 / 0.06)',
         'trust-lg': '0 8px 16px -4px rgb(0 0 0 / 0.08), 0 2px 6px -2px rgb(0 0 0 / 0.05)',
+        'move-glow': '0 8px 28px -6px rgb(255 90 31 / 0.35), 0 2px 8px -2px rgb(255 90 31 / 0.18)',
+        'move-glow-lg': '0 12px 40px -8px rgb(255 90 31 / 0.4), 0 0 24px rgb(255 90 31 / 0.2)',
       },
       keyframes: {
         'accordion-down': {
