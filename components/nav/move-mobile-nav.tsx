@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { MOVE_HEADER_CTA } from '@/lib/design/move-design-system';
 import { MOVE_MEGA_NAV } from '@/lib/nav/move-mega-menu-config';
 import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
-import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
+import { SwitchHubMenu } from '@/components/switch-hub-menu';
 import { cn } from '@/lib/utils';
 
 const tapTarget =
@@ -164,23 +164,18 @@ export function MoveMobileNav() {
               </MobileAccordionSection>
             ))}
 
-            <a
-              href={ASK_TRUST_HUB.url}
-              className={cn(
-                'font-medium text-slate-700 hover:text-primary',
-                tapTarget
-              )}
-              rel="noopener noreferrer"
-              onClick={close}
-            >
-              Ask Trust Hub network
-            </a>
-
             <Button className="move-cta mt-3 min-h-[48px] w-full" asChild>
               <Link prefetch={false} href={MOVE_HEADER_CTA.href} onClick={close}>
                 {MOVE_HEADER_CTA.label}
               </Link>
             </Button>
+
+            <div className="mt-3 border-t border-border/60 pt-3">
+              <p className="mb-2 px-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#FF5A1F]">
+                Switch Hub
+              </p>
+              <SwitchHubMenu className="w-full [&>button]:w-full [&>button]:justify-center" />
+            </div>
           </nav>
         </div>
       ) : null}

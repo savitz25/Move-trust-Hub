@@ -5,13 +5,12 @@ import { usePathname } from 'next/navigation';
 import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
 import { Button } from '@/components/ui/button';
 import { MoveMegaMenu } from '@/components/nav/move-mega-menu';
+import { SwitchHubMenu } from '@/components/switch-hub-menu';
 import { MOVE_HEADER_CTA } from '@/lib/design/move-design-system';
 import { MOVE_MEGA_NAV } from '@/lib/nav/move-mega-menu-config';
-import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
 
 /**
- * Move product header — mega menus for primary items + My Move + Calculator CTA.
- * Switch Hub lives in AskNetworkBar above this bar.
+ * Move product header — mega menus + My Move + Calculator CTA + Switch Hub.
  */
 export function MoveDesktopNav() {
   const pathname = usePathname() || '/';
@@ -39,14 +38,7 @@ export function MoveDesktopNav() {
         </Link>
       </Button>
 
-      <a
-        href={ASK_TRUST_HUB.url}
-        className="hidden xl:inline max-w-[5.5rem] text-right text-[10px] font-medium leading-tight tracking-wide text-slate-500 hover:text-slate-700"
-        rel="noopener noreferrer"
-        title="Part of the Ask Trust Hub network — Switch hub above"
-      >
-        Ask network
-      </a>
+      <SwitchHubMenu />
     </div>
   );
 }

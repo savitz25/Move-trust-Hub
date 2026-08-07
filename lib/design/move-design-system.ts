@@ -52,6 +52,31 @@ export const MOVE_HEADER_CTA = {
   href: '/moving-calculator',
 } as const;
 
+/** Switch Hub — sibling destinations (current hub is Move) */
+export const MOVE_NETWORK_LINKS = [
+  {
+    id: 'ask' as const,
+    label: 'Ask Trust Hub',
+    shortLabel: 'Ask',
+    href: 'https://www.asktrusthub.com',
+    blurb: 'Parent knowledge & concierge layer',
+  },
+  {
+    id: 'lender' as const,
+    label: 'Lender Trust Hub',
+    shortLabel: 'Lender',
+    href: 'https://www.lendertrusthub.com',
+    blurb: 'NMLS lenders & financing tools',
+  },
+  {
+    id: 'insurance' as const,
+    label: 'Insurance Trust Hub',
+    shortLabel: 'Insurance',
+    href: 'https://www.insurancetrusthub.com',
+    blurb: 'Licensed agencies & coverage research',
+  },
+] as const;
+
 /** Four footer columns (redesign PDF) */
 export const MOVE_FOOTER_COLUMNS = [
   {
