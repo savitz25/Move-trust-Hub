@@ -74,15 +74,17 @@ export async function buildStateHubCountyRows(
         county.slug
       );
       const isTier1 = tierMeta.tier === 'tier1';
+      const isTier2 = tierMeta.tier === 'tier2';
       const isDeepGuide = hasDeepCountyResearch(stateSlug, county.slug);
 
-      // Strict count only — never force Deep guide for ≤30 movers.
+      // Directory card badge remains count-driven (Deep guide / Limited).
+      // Phase 3 quality tier drives sort order (Premium → Standard → Development).
       const guideBadge = resolveStateHubDirectoryBadge(moverCount);
 
       let sortIndex = 0;
-      if (guideBadge === 'Deep guide' && isTier1) sortIndex = 3;
-      else if (guideBadge === 'Deep guide') sortIndex = 2;
-      else if (isTier1) sortIndex = 1;
+      if (isTier1 && (isDeepGuide || guideBadge === 'Deep guide')) sortIndex = 3;
+      else if (isTier1) sortIndex = 2;
+      else if (isTier2) sortIndex = 1;
 
       return {
         county,

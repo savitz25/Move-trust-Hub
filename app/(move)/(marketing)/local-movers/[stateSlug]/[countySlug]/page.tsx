@@ -554,7 +554,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           )}
           {indexDecision.tier === 'noindex' && (
             <p className="mt-3 text-xs text-muted-foreground rounded-lg border border-amber-200/80 bg-amber-50/50 px-3 py-2">
-              This is a limited-coverage county guide. For broader options, browse{' '}
+              Development-tier county guide (not prioritized for search yet). Listings and tools
+              remain available. For stronger coverage, browse{' '}
               <Link href={getStatePath(state.slug)} className="text-primary hover:underline">
                 all {state.name} county guides
               </Link>{' '}
@@ -628,6 +629,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                 stateName={state.name}
                 county={county}
                 profileReturnPath={path}
+                developmentTier={indexDecision.tier === 'noindex'}
               />
             )
           ) : (

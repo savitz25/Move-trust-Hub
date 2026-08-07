@@ -54,6 +54,7 @@ import {
   TEXAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
+import { sitemapPriorityForCountyTier } from '@/lib/local-movers/county-quality-score';
 import { getMoversForCounty } from '@/lib/local-movers/index';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
@@ -773,76 +774,42 @@ export default async function sitemap({
     {
       url: `${SITE_URL}/local-movers/${id}`,
       lastModified,
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
-    ...indexableCounties.map((county) => ({
-      url: `${SITE_URL}/local-movers/${id}/${county.slug}`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority:
+    ...indexableCounties.map((county) => {
+      const result = getMoversForCounty(id, county.slug);
+      const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
+      const seoTier = decision.seoTier ?? 2;
+      const highTraffic =
         county.slug === 'miami-dade' ||
         county.slug === 'broward' ||
         county.slug === 'bergen' ||
-        county.slug === 'hudson' ||
-        county.slug === 'essex' ||
-        county.slug === 'middlesex' ||
-        county.slug === 'monmouth' ||
-        county.slug === 'ocean' ||
-        county.slug === 'union' ||
-        county.slug === 'passaic' ||
         (id === 'california' && CA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'new-york' && NY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'texas' && TX_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'georgia' && GA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'south-carolina' && SC_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'north-carolina' && NC_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'tennessee' && TN_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'alabama' && AL_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'mississippi' && MS_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'louisiana' && LA_HIGH_TRAFFIC_PARISHES.has(county.slug)) ||
-        (id === 'oklahoma' && OK_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'arkansas' && AR_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'kansas' && KS_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'missouri' && MO_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'florida' &&
+          (county.slug === 'miami-dade' ||
+            county.slug === 'broward' ||
+            county.slug === 'orange' ||
+            county.slug === 'hillsborough')) ||
         (id === 'illinois' && IL_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'michigan' && MI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'indiana' && IN_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'ohio' && OH_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'kentucky' && KY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'west-virginia' && WV_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'virginia' && VA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        id === 'district-of-columbia' ||
-        (id === 'delaware' && DE_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'maryland' && MD_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'pennsylvania' && PA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'connecticut' && CT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'massachusetts' && MA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'rhode-island' && RI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'vermont' && VT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'new-hampshire' && NH_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'maine' && ME_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'hawaii' && HI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'alaska' && AK_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'washington' && WA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'oregon' && OR_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'nevada' && NV_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'pennsylvania' && PA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'ohio' && OH_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'arizona' && AZ_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'new-mexico' && NM_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'utah' && UT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'colorado' && CO_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'idaho' && ID_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'montana' && MT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'wyoming' && WY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'north-dakota' && ND_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'south-dakota' && SD_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'nebraska' && NE_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'iowa' && IA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'minnesota' && MN_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'wisconsin' && WI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        isPremiumMetroCounty(id, county.slug)
-          ? 0.88
-          : 0.8,
-    })),
+        isPremiumMetroCounty(id, county.slug);
+
+      return {
+        url: `${SITE_URL}/local-movers/${id}/${county.slug}`,
+        // Meaningful editorial lastmod — state content wave dates, not deploy time
+        lastModified,
+        changeFrequency: 'weekly' as const,
+        // Tier 3 never appears here (filtered by indexable). Priority reflects Premium vs Standard.
+        priority: sitemapPriorityForCountyTier(seoTier === 3 ? 2 : seoTier, highTraffic),
+      };
+    }),
   ];
 }

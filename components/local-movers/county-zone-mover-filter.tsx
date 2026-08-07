@@ -112,6 +112,7 @@ export function CountyZoneMoverFilter({
         county={county}
         profileReturnPath={profileReturnPath}
         listKey={zoneId}
+        developmentTier={false}
       />
     </div>
   );

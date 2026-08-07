@@ -32,6 +32,11 @@ type Props = {
   headingHint?: string;
   /** Starting rank offset when multiple segments appear on a page */
   rankOffset?: number;
+  /**
+   * Development-tier pages: shorter lists, less national boilerplate expansion.
+   * Prefer concise factual rows over long repeated descriptions.
+   */
+  developmentTier?: boolean;
 };
 
 /**
@@ -49,19 +54,21 @@ export function ProgressiveCountyMoverList({
   heading,
   headingHint,
   rankOffset = 0,
+  developmentTier = false,
 }: Props) {
-  const initialVisible = Math.min(pageSize, movers.length);
+  const effectivePageSize = developmentTier ? Math.min(pageSize, 6) : pageSize;
+  const initialVisible = Math.min(effectivePageSize, movers.length);
   const [visibleCount, setVisibleCount] = useState(initialVisible);
 
   useEffect(() => {
-    setVisibleCount(Math.min(pageSize, movers.length));
-  }, [listKey, movers.length, pageSize]);
+    setVisibleCount(Math.min(effectivePageSize, movers.length));
+  }, [listKey, movers.length, effectivePageSize]);
 
   const hasMore = visibleCount < movers.length;
   const remaining = movers.length - visibleCount;
   const nextLabel = useMemo(
-    () => revealButtonLabel(visibleCount, movers.length, pageSize),
-    [visibleCount, movers.length, pageSize]
+    () => revealButtonLabel(visibleCount, movers.length, effectivePageSize),
+    [visibleCount, movers.length, effectivePageSize]
   );
 
   if (movers.length === 0) return null;
@@ -111,7 +118,9 @@ export function ProgressiveCountyMoverList({
             size="lg"
             className="h-12 min-w-[min(100%,20rem)] px-8 text-base font-semibold shadow-sm"
             onClick={() =>
-              setVisibleCount((prev) => nextRevealCount(prev, movers.length, pageSize))
+              setVisibleCount((prev) =>
+                nextRevealCount(prev, movers.length, effectivePageSize)
+              )
             }
           >
             {nextLabel}
@@ -145,6 +154,7 @@ type SegmentedProps = {
   profileReturnPath: string;
   county: LocalCounty;
   listKey?: string;
+  developmentTier?: boolean;
 };
 
 /** Local/in-state first, then national carriers — clear labels, progressive each group. */
@@ -157,6 +167,7 @@ export function SegmentedCountyMoverLists({
   profileReturnPath,
   county,
   listKey = 'all',
+  developmentTier = false,
 }: SegmentedProps) {
   if (localInState.length === 0 && national.length === 0) {
     return (
@@ -197,6 +208,7 @@ export function SegmentedCountyMoverLists({
           county={county}
           profileReturnPath={profileReturnPath}
           listKey={`${listKey}-local`}
+          developmentTier={developmentTier}
           heading={`Local movers near ${countyLabel} (${localInState.length})`}
           headingHint={`HQ within ~${LOCALITY_POLICY.localMaxMiles} miles of ${countyLabel}, seat/name match, or true intrastate specialists. Distant same-state HQs are labeled Regional — never Local.`}
         />
@@ -229,12 +241,17 @@ export function SegmentedCountyMoverLists({
           profileReturnPath={profileReturnPath}
           listKey={`${listKey}-national`}
           rankOffset={localInState.length}
+          developmentTier={developmentTier}
           heading={
             localInState.length === 0
               ? `Regional & out-of-area companies serving ${countyLabel} (${national.length})`
               : `Regional & out-of-area companies serving ${countyLabel} (${national.length})`
           }
-          headingHint="Regional (same-state but not local HQ) or out-of-state companies. Entity badges show Interstate Carrier vs Broker separately — brokers arrange transportation; they do not haul as the motor carrier unless they also hold carrier authority. We do not re-label them as local movers."
+          headingHint={
+            developmentTier
+              ? 'Concise regional/out-of-area listings — confirm licensing before booking. Not labeled as local movers.'
+              : 'Regional (same-state but not local HQ) or out-of-state companies. Entity badges show Interstate Carrier vs Broker separately — brokers arrange transportation; they do not haul as the motor carrier unless they also hold carrier authority. We do not re-label them as local movers.'
+          }
         />
       ) : null}
     </div>

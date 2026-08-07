@@ -1,91 +1,104 @@
 /**
- * Programmatic county quality tiers (Phase 3 SEO architecture).
+ * Phase 3 SEO architecture — quality score → product tiers.
  *
- * Maps onto existing indexability + research depth without mass-publishing new pages.
+ * | Tier | Index? | Criteria |
+ * |------|--------|----------|
+ * | **1 Premium** | yes | score ≥ 70 + flagship signals (deep / intelligence / premium metro) |
+ * | **2 Standard** | yes | score ≥ 48 + hard integrity gates |
+ * | **3 Development** | noindex,follow | below bar or hard integrity failure |
  *
- * | Tier | Index? | Criteria (summary) |
- * |------|--------|--------------------|
- * | **A** | yes (`index`) | Explicit movers ≥3, cited research, deep/premium content, not batch template |
- * | **B** | yes (`index`) | Meets index bar with enriched research but not full deep pack |
- * | **C** | no (`noindex, follow`) | Thin/regional fallback/template/uncited — keep URL for nav, do not force indexation |
- *
- * Index rules live in `county-indexability.ts`. Guide badges live in `county-tier.ts`.
+ * Scoring: `county-quality-score.ts`. Index robots: `county-indexability.ts`.
  */
 
 import type { CountyIndexDecision } from '@/lib/local-movers/county-indexability';
-import { hasDeepCountyResearch } from '@/data/deep-county-research';
-import { isBatchTemplateCountyResearch } from '@/lib/local-movers/county-content-quality';
-import { getCountyResearch } from '@/lib/local-movers/county-research';
+import {
+  scoreCountyQuality,
+  type CountyQualityAssessment,
+  type CountySeoTier,
+  COUNTY_TIER_MOVEMENT_POLICY,
+  COUNTY_QUALITY_THRESHOLDS,
+} from '@/lib/local-movers/county-quality-score';
+import { getMoversForCounty } from '@/lib/local-movers/index';
+import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
+export type { CountySeoTier, CountyQualityAssessment };
+export { COUNTY_TIER_MOVEMENT_POLICY, COUNTY_QUALITY_THRESHOLDS };
+
+/** Legacy A/B/C labels mapped from SEO tiers. */
 export type CountyQualityTier = 'A' | 'B' | 'C';
 
-export type CountyQualityAssessment = {
-  tier: CountyQualityTier;
-  /** Short label for internal docs / optional UI */
-  label: string;
-  /** Whether robots should index the county URL */
-  indexable: boolean;
-  reason: string;
-};
+export function seoTierToLegacyLetter(tier: CountySeoTier): CountyQualityTier {
+  if (tier === 1) return 'A';
+  if (tier === 2) return 'B';
+  return 'C';
+}
+
+export function assessCountyQuality(
+  stateSlug: string,
+  countySlug: string,
+  opts?: {
+    county?: LocalCounty | null;
+    movers?: LocalMover[];
+    isRegionalFallback?: boolean;
+  }
+): CountyQualityAssessment {
+  const result =
+    opts?.movers && opts?.county
+      ? {
+          county: opts.county,
+          movers: opts.movers,
+          isRegionalFallback: opts.isRegionalFallback ?? false,
+        }
+      : getMoversForCounty(stateSlug, countySlug);
+
+  return scoreCountyQuality({
+    stateSlug,
+    countySlug,
+    county: result?.county ?? opts?.county ?? null,
+    movers: result?.movers ?? opts?.movers ?? [],
+    isRegionalFallback: result?.isRegionalFallback ?? opts?.isRegionalFallback ?? false,
+  });
+}
 
 /**
- * Classify a county into Tier A / B / C for editorial and SEO operations.
- * Does not change runtime index decisions — those stay in evaluateCountyIndexability.
+ * Classify using index decision when already computed.
  */
 export function assessCountyQualityTier(
   stateSlug: string,
   countySlug: string,
   indexDecision: CountyIndexDecision
-): CountyQualityAssessment {
-  if (indexDecision.tier === 'noindex') {
-    return {
-      tier: 'C',
-      label: 'Limited / thin coverage',
-      indexable: false,
-      reason: indexDecision.reason,
-    };
-  }
-
-  const deep = hasDeepCountyResearch(stateSlug, countySlug);
-  const research = getCountyResearch(stateSlug, countySlug);
-  const enriched =
-    Boolean(research) && !isBatchTemplateCountyResearch(stateSlug, countySlug);
-
-  if (deep) {
-    return {
-      tier: 'A',
-      label: 'Deep researched flagship guide',
-      indexable: true,
-      reason: 'deep_county_research',
-    };
-  }
-
-  if (enriched) {
-    return {
-      tier: 'B',
-      label: 'Enriched indexable guide',
-      indexable: true,
-      reason: 'enriched_cited_research',
-    };
-  }
-
+): {
+  tier: CountyQualityTier;
+  label: string;
+  indexable: boolean;
+  reason: string;
+  seoTier: CountySeoTier;
+  score: number;
+} {
+  const full = assessCountyQuality(stateSlug, countySlug);
   return {
-    tier: 'B',
-    label: 'Indexable full guide',
-    indexable: true,
-    reason: indexDecision.reason,
+    tier: seoTierToLegacyLetter(indexDecision.seoTier ?? full.tier),
+    label:
+      full.tier === 1
+        ? 'Premium flagship guide'
+        : full.tier === 2
+          ? 'Standard indexable guide'
+          : 'Development — limited coverage',
+    indexable: full.indexable,
+    reason: indexDecision.reason || full.reason,
+    seoTier: full.tier,
+    score: full.score,
   };
 }
 
-/** Editorial guidance for template density — keep boilerplate short on all tiers. */
+/** Editorial guidance for template density. */
 export const COUNTY_PAGE_METHODOLOGY_GUIDANCE = {
-  /** Max methodology panel density on county pages */
   preferCompactHowWeScore: true as const,
-  /** Canonical Trust Center (do not re-paste full factor lists on every county) */
   trustCenterPath: '/about/how-we-score-movers',
   notes: [
-    'Tier A: unique intelligence packs, strong internal links, full local/regional segmentation.',
-    'Tier B: solid research + listings; still compact methodology summary + Trust Center link.',
-    'Tier C: noindex,follow — navigation and tools only; do not force SERP competition.',
+    'Tier 1 Premium: unique intelligence packs, strong local/regional separation, full tool paths.',
+    'Tier 2 Standard: solid research + listings; compact methodology + Trust Center link.',
+    'Tier 3 Development: noindex,follow — navigation and tools only; concise carrier rows.',
+    ...COUNTY_TIER_MOVEMENT_POLICY.notes,
   ],
 } as const;

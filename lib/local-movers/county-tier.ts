@@ -1,22 +1,32 @@
-import { hasDeepCountyResearch } from '@/data/deep-county-research';
 import type { CountyIndexDecision } from '@/lib/local-movers/county-indexability';
-import { isBatchTemplateCountyResearch } from '@/lib/local-movers/county-content-quality';
-import { getCountyResearch } from '@/lib/local-movers/county-research';
+import {
+  assessCountyQuality,
+  type CountySeoTier,
+} from '@/lib/local-movers/county-quality-tiers';
+import { hasDeepCountyResearch } from '@/data/deep-county-research';
 
-/** Tier 1 = indexable county guides. Tier 2 = noindex limited coverage. */
-export type CountyGuideTier = 'tier1' | 'tier2';
+/**
+ * Product guide tiers for state-hub badges and UI.
+ * Maps Phase 3 SEO tiers: Premium / Standard / Development.
+ */
+export type CountyGuideTier = 'tier1' | 'tier2' | 'tier3';
 
 export type CountyGuideTierMeta = {
   tier: CountyGuideTier;
+  seoTier: CountySeoTier;
   label: string;
-  /** Short badge for state hub grids */
   badge: string;
+  score: number;
 };
 
 export function classifyCountyGuideTier(
   indexDecision: CountyIndexDecision
 ): CountyGuideTier {
-  return indexDecision.tier === 'index' ? 'tier1' : 'tier2';
+  const seo = indexDecision.seoTier;
+  if (seo === 1) return 'tier1';
+  if (seo === 2) return 'tier2';
+  if (indexDecision.tier === 'index') return 'tier2';
+  return 'tier3';
 }
 
 export function getCountyGuideTierMeta(
@@ -24,22 +34,33 @@ export function getCountyGuideTierMeta(
   stateSlug: string,
   countySlug: string
 ): CountyGuideTierMeta {
-  const tier = classifyCountyGuideTier(indexDecision);
-  if (tier === 'tier1') {
-    const enriched = Boolean(
-      getCountyResearch(stateSlug, countySlug) &&
-        !isBatchTemplateCountyResearch(stateSlug, countySlug)
-    );
-    const deep = hasDeepCountyResearch(stateSlug, countySlug);
+  const quality = assessCountyQuality(stateSlug, countySlug);
+  const seoTier = quality.tier;
+  const deep = hasDeepCountyResearch(stateSlug, countySlug);
+
+  if (seoTier === 1) {
     return {
-      tier,
-      label: deep ? 'Deep researched county guide' : 'Full county guide',
-      badge: deep ? 'Deep guide' : enriched ? 'Enriched' : 'Full guide',
+      tier: 'tier1',
+      seoTier,
+      label: deep ? 'Premium deep county guide' : 'Premium county guide',
+      badge: deep ? 'Deep guide' : 'Premium',
+      score: quality.score,
+    };
+  }
+  if (seoTier === 2) {
+    return {
+      tier: 'tier2',
+      seoTier,
+      label: 'Standard county guide',
+      badge: 'Standard',
+      score: quality.score,
     };
   }
   return {
-    tier,
-    label: 'Limited coverage — movers and editorial content still expanding',
+    tier: 'tier3',
+    seoTier: 3,
+    label: 'Development — limited coverage',
     badge: 'Limited',
+    score: quality.score,
   };
 }
