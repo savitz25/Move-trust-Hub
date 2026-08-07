@@ -3,6 +3,14 @@ import { trustHubLogoUrl } from '@/lib/hub/config';
 
 const SITE_URL = 'https://www.movetrusthub.com';
 
+/** Parent knowledge layer — reciprocal with Ask Trust Hub Organization graph. */
+export const ASK_PARENT_ORGANIZATION = {
+  '@type': 'Organization' as const,
+  '@id': 'https://www.asktrusthub.com/#organization',
+  name: 'Ask Trust Hub',
+  url: 'https://www.asktrusthub.com',
+};
+
 export const organizationSchema = {
   '@type': 'Organization',
   '@id': `${SITE_URL}/#organization`,
@@ -18,7 +26,8 @@ export const organizationSchema = {
     availableLanguage: 'English',
   },
   description:
-    'Independent directory for researching FMCSA-licensed interstate and long-distance moving companies in the United States. No lead fees, no paid placements.',
+    'Specialist research directory for FMCSA-licensed interstate and long-distance moving companies in the United States. Part of the Ask Trust Hub network under common ownership with separated research and listing order. No lead fees, no paid placements.',
+  parentOrganization: ASK_PARENT_ORGANIZATION,
 };
 
 export const websiteSchema = {
