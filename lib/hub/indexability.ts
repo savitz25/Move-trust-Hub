@@ -1,5 +1,9 @@
 import { tryGetClusterContent } from '@/lib/lender/clusters/content';
-import { getLendersByCounty } from '@/lib/lender/lenders';
+import {
+  getLendersByCounty,
+  isCanonicalLenderProfile,
+  lenders as lenderCatalog,
+} from '@/lib/lender/lenders';
 import type { EnrichedLender } from '@/lib/lender/enrichment/merge';
 import { isCuratedHub } from '@/lib/insurance/hubs/data/curated-hubs';
 import type { InsuranceHub } from '@/types/insurance/agent';
@@ -59,6 +63,16 @@ export function shouldIndexInsuranceHub(hub: InsuranceHub): boolean {
 }
 
 export function evaluateLenderProfileIndexability(lender: EnrichedLender): HubIndexDecision {
+  // Phase 0: hard verified badge requires numeric NMLS; incomplete IDs stay noindex
+  if (!lender.nmlsVerified || !lender.nmlsId?.trim()) {
+    return { tier: 'noindex', reason: 'incomplete_or_unverified_nmls' };
+  }
+
+  // Non-canonical geo variants of the same NMLS entity stay noindex
+  if (!isCanonicalLenderProfile(lender, lenderCatalog)) {
+    return { tier: 'noindex', reason: 'duplicate_nmls_geo_variant' };
+  }
+
   if (lender.isEnriched) {
     return { tier: 'index', reason: 'enriched_profile' };
   }

@@ -1,6 +1,7 @@
 import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/lender/ui/badge';
 import type { AutoLoanProvider } from '@/lib/lender/auto/types';
+import { cleanDisplayPhone } from '@/lib/lender/verification';
 
 export function AutoProviderCard({
   provider,
@@ -67,14 +68,18 @@ export function AutoProviderCard({
             Get Rates <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
         )}
-        {provider.phone && (
-          <a
-            href={`tel:${provider.phone.replace(/\D/g, '')}`}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-zinc-200 px-4 py-2 text-sm font-semibold text-[#0A2540] hover:bg-zinc-50"
-          >
-            {provider.phone}
-          </a>
-        )}
+        {(() => {
+          const phone = cleanDisplayPhone(provider.phone);
+          if (!phone) return null;
+          return (
+            <a
+              href={`tel:${phone.replace(/\D/g, '')}`}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-zinc-200 px-4 py-2 text-sm font-semibold text-[#0A2540] hover:bg-zinc-50"
+            >
+              {phone}
+            </a>
+          );
+        })()}
       </div>
     </article>
   );

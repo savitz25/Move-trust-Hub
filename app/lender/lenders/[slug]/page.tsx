@@ -17,6 +17,11 @@ import { LenderProfileBack } from '@/components/lender/lender-profile-back';
 import { LenderTrustSignals } from '@/components/lender/lender-trust-signals';
 import { TrustProfileShell } from '@/components/network/trust-profile-shell';
 import { toLenderTrustProfile } from '@/lib/network/adapters/to-lender-trust-profile';
+import {
+  cleanNmlsId,
+  NO_CLOSING_PERFORMANCE_LABEL,
+  resolveClosingPerformance,
+} from '@/lib/lender/verification';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -31,8 +36,9 @@ export async function generateMetadata({
   const lender = getEnrichedLenderBySlug(slug);
   if (!lender) return { title: 'Lender Not Found' };
   const indexDecision = evaluateLenderProfileIndexability(lender);
+  const nmls = cleanNmlsId(lender.nmlsId);
   return buildHubMetadata('lender', {
-    title: `${lender.name} — NMLS #${lender.nmlsId}`,
+    title: nmls ? `${lender.name} — NMLS #${nmls}` : lender.name,
     description: lender.shortDescription,
     path: `/lenders/${slug}`,
     noIndex: indexDecision.tier === 'noindex',
@@ -110,24 +116,44 @@ export default async function LenderProfilePage({
 
           <p className="mb-6 text-zinc-600 leading-relaxed">{lender.shortDescription}</p>
 
-          <div className="mb-2 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {[
-              { label: 'County Experience', value: `${lender.countyExperienceScore}/100` },
-              {
-                label: 'Close estimate (editorial)*',
-                value: `~${lender.avgCloseDays} days`,
-              },
-              { label: 'On-time close (editorial)*', value: `${lender.onTimeCloseRate}%` },
-            ].map((stat) => (
-              <div key={stat.label} className="rounded-xl bg-zinc-50 p-4 text-center">
-                <div className="text-xl font-bold text-[#0A2540]">{stat.value}</div>
-                <div className="text-xs text-zinc-500">{stat.label}</div>
+          <div className="mb-2 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-zinc-50 p-4 text-center">
+              <div className="text-xl font-bold text-[#0A2540]">
+                {lender.countyExperienceScore}/100
               </div>
-            ))}
+              <div className="text-xs text-zinc-500">County Experience</div>
+            </div>
+            <div className="rounded-xl bg-zinc-50 p-4 text-center">
+              {(() => {
+                const close = resolveClosingPerformance({
+                  avgCloseDays: lender.avgCloseDays,
+                  onTimeCloseRate: lender.onTimeCloseRate,
+                  provenance: null,
+                });
+                if (close.displayable && close.avgCloseDays != null) {
+                  return (
+                    <>
+                      <div className="text-xl font-bold text-[#0A2540]">
+                        ~{close.avgCloseDays} days
+                      </div>
+                      <div className="text-xs text-zinc-500">Avg close (observed)</div>
+                    </>
+                  );
+                }
+                return (
+                  <>
+                    <div className="text-sm font-medium leading-snug text-zinc-600">
+                      {NO_CLOSING_PERFORMANCE_LABEL}
+                    </div>
+                    <div className="mt-1 text-xs text-zinc-500">Closing performance</div>
+                  </>
+                );
+              })()}
+            </div>
           </div>
           <p className="mb-6 text-xs text-zinc-500">
-            *Close metrics are editorial/seed research estimates — not NMLS or CFPB official fields.
-            Confirm timelines with the lender in writing.
+            Closing timelines are only shown when backed by a documented observed dataset (source,
+            sample size, window). Seed or editorial estimates are not displayed.
           </p>
 
           <div className="mb-6">

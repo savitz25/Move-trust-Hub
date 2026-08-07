@@ -15,6 +15,8 @@ import { PENNSYLVANIA_LENDERS } from '@/lib/lender/mortgage/pennsylvaniaLenders'
 import { ILLINOIS_LENDERS } from '@/lib/lender/mortgage/illinoisLenders';
 import { MICHIGAN_LENDERS } from '@/lib/lender/mortgage/michiganLenders';
 import { NEW_JERSEY_LENDERS } from '@/lib/lender/mortgage/newJerseyLenders';
+import { countLenderCatalog } from '@/lib/lender/verification/counts';
+import { finalizeLenderCatalog } from '@/lib/lender/verification/sanitize-lender';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -24,6 +26,7 @@ export interface Lender {
   id: string;
   slug: string;
   name: string;
+  /** Numeric NMLS ID when known; empty after sanitize when invalid/placeholder */
   nmlsId: string;
   type: LenderType;
   city: string;
@@ -40,25 +43,34 @@ export interface Lender {
   loanTypes: LoanType[];
   specialties: string[];
   creditTiers: CreditTier[];
+  /** Hard true only with numeric NMLS ID (enforced at catalog sanitize) */
   nmlsVerified: boolean;
   cfpbComplaints: number;
   bbbRating: 'A+' | 'A' | 'A-' | 'B+' | 'B';
   googleRating: number;
   trustpilotRating: number;
-  avgCloseDays: number;
-  onTimeCloseRate: number;
+  /**
+   * Closing performance — seed values are stripped at sanitize unless
+   * independently observed provenance is supplied later.
+   */
+  avgCloseDays?: number | null;
+  onTimeCloseRate?: number | null;
   shortDescription: string;
   website?: string;
+  /** Omitted when placeholder / unverified (555 patterns, etc.) */
   phone?: string;
 }
 
-export const TRUST_STATS = {
-  verifiedLenders: 12450,
-  totalReviews: 2_800_000,
-  /** Directory is expanding — do not claim complete national county coverage. */
-  countiesCovered: 0,
-  countiesCoveredLabel: 'Expanding county coverage',
-  dataSources: ['NMLS', 'CFPB', 'BBB', 'Google', 'Trustpilot'],
+/** Honest catalog stats — filled after `lenders` is finalized (see bottom of file). */
+export type TrustStats = {
+  verifiedLenders: number;
+  distinctEntities: number;
+  branchListings: number;
+  totalReviews: number;
+  countiesCovered: number;
+  countiesCoveredLabel: string;
+  dataSources: string[];
+  headlineLabel: string;
 };
 
 export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; county: string; countySlug: string }> = {
@@ -443,4 +455,40 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS, ...TEXAS_LENDERS, ...WASHINGTON_LENDERS, ...DISTRICT_OF_COLUMBIA_LENDERS, ...MASSACHUSETTS_LENDERS, ...NEW_YORK_LENDERS, ...PENNSYLVANIA_LENDERS, ...ILLINOIS_LENDERS, ...MICHIGAN_LENDERS, ...NEW_JERSEY_LENDERS];
+const RAW_LENDERS: Lender[] = [
+  ...NATIONAL_LENDERS,
+  ...FLORIDA_LENDERS,
+  ...GEORGIA_LENDERS,
+  ...SOUTH_CAROLINA_LENDERS,
+  ...NORTH_CAROLINA_LENDERS,
+  ...TENNESSEE_LENDERS,
+  ...ARIZONA_LENDERS,
+  ...CALIFORNIA_LENDERS,
+  ...COLORADO_LENDERS,
+  ...TEXAS_LENDERS,
+  ...WASHINGTON_LENDERS,
+  ...DISTRICT_OF_COLUMBIA_LENDERS,
+  ...MASSACHUSETTS_LENDERS,
+  ...NEW_YORK_LENDERS,
+  ...PENNSYLVANIA_LENDERS,
+  ...ILLINOIS_LENDERS,
+  ...MICHIGAN_LENDERS,
+  ...NEW_JERSEY_LENDERS,
+];
+
+/** Public catalog: placeholders stripped, entity trust scores aligned by NMLS. */
+export const lenders: Lender[] = finalizeLenderCatalog(RAW_LENDERS);
+
+const _catalogCounts = countLenderCatalog(lenders);
+
+export const TRUST_STATS: TrustStats = {
+  verifiedLenders: _catalogCounts.verifiedEntities,
+  distinctEntities: _catalogCounts.distinctEntities,
+  branchListings: _catalogCounts.branchListings,
+  /** Do not invent national review totals — sum only when observed data exists. */
+  totalReviews: 0,
+  countiesCovered: 0,
+  countiesCoveredLabel: 'Expanding county coverage',
+  dataSources: ['NMLS', 'CFPB', 'BBB', 'Google'],
+  headlineLabel: _catalogCounts.headlineLabel,
+};

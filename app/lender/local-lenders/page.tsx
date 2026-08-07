@@ -9,7 +9,7 @@ import { PersonalizedLenderBannerBoundary } from '@/components/lender/Personaliz
 import { LenderDirectoryLoader } from '@/components/lender/directory/LenderDirectoryLoader';
 import { buildHubMetadata } from '@/lib/hub/metadata';
 import { MORTGAGE_CATEGORY } from '@/lib/lender/directory/categories';
-import { lenders, type LoanType } from '@/lib/lender/mockData';
+import { lenders as rawCatalog, TRUST_STATS, type LoanType } from '@/lib/lender/mockData';
 import { US_STATES } from '@/lib/lender/fdic/states';
 import {
   getStateSlugsWithLenders,
@@ -21,8 +21,12 @@ import {
   buildMortgageHubTitle,
 } from '@/lib/lender/mortgage/seo';
 import type { LenderSortOption } from '@/lib/lender/directory/filter-lenders';
+import { catalogDistinctEntities } from '@/lib/lender/verification';
 
 export const revalidate = 86400;
+
+/** National directory: one row per NMLS entity (no geo-variant inflation). */
+const lenders = catalogDistinctEntities(rawCatalog);
 
 const slugsWithLenders = getStateSlugsWithLenders();
 const slugSet = new Set(slugsWithLenders);
@@ -36,7 +40,7 @@ const stateGrid = US_STATES.filter((s) => slugSet.has(s.slug)).map((s) => ({
 
 export const metadata: Metadata = buildHubMetadata('lender', {
   title: buildMortgageHubTitle(),
-  description: buildMortgageHubDescription(lenders.length),
+  description: buildMortgageHubDescription(TRUST_STATS.distinctEntities),
   path: '/local-lenders',
 });
 
@@ -91,9 +95,9 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
                 Compare Verified Mortgage Lenders
               </h2>
               <p className="mt-2 max-w-2xl text-zinc-600">
-                {lenders.length.toLocaleString()}+ NMLS-verified lenders and brokers. Sorted by trust
-                score with county experience, loan types, and verification badges. Independent
-                directory — no lead fees for ranking.
+                Research directory of mortgage lenders and brokers (distinct NMLS entities). Sorted by
+                trust score with county experience, loan types, and verification badges. Hard NMLS ID
+                verified requires a numeric ID — independent directory, no lead fees for ranking.
               </p>
             </div>
 

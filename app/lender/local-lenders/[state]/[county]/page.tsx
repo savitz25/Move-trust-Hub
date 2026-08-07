@@ -560,8 +560,10 @@ export default async function CountyLendersPage({
           Mortgage Lenders in {countyLabel}
         </h1>
         <p className="mt-3 max-w-2xl text-zinc-600">
-          {lenders.length} verified lender{lenders.length !== 1 ? 's' : ''} ranked by
-          county experience score and trust score. {zip ? `Showing results for ZIP ${zip}.` : ''}
+          {lenders.length} distinct lender{lenders.length !== 1 ? 's' : ''} (by NMLS entity) ranked
+          by county experience and trust score.
+          {zip ? ` Showing results for ZIP ${zip}.` : ''} Research only — confirm licensing on NMLS
+          Consumer Access before applying.
         </p>
         <SearchBarLoader className="mt-6 max-w-xl" />
       </div>

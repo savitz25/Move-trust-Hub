@@ -99,7 +99,7 @@ const LIMITATIONS = [
   'County Experience Score is relative market orientation — not proof of best local execution.',
   'NMLS status can change after we display a snapshot.',
   'Complaint volume is incomplete and easy to misread without context.',
-  'Average close days / on-time close rates on profiles are editorial or seed research estimates when shown — not official NMLS or CFPB fields.',
+  'Closing-performance metrics (avg close days, on-time close %) are not shown unless backed by a documented observed dataset — seed/editorial estimates are suppressed.',
   'Directory coverage is expanding; we do not claim complete coverage of every U.S. county.',
   'We do not originate loans, set rates, or sell lead placement in rankings.',
 ] as const;
@@ -308,13 +308,17 @@ export default function LenderMethodologyPage() {
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-600">
             Fields such as <strong className="text-[#0A2540]">average close days</strong> or{' '}
-            <strong className="text-[#0A2540]">on-time close rate</strong> may appear on profiles as
-            editorial or seed research estimates for orientation. They are{' '}
-            <strong className="text-[#0A2540]">not</strong> official NMLS Consumer Access fields and{' '}
-            <strong className="text-[#0A2540]">not</strong> CFPB-published performance statistics for
-            that lender. If we cannot support a metric with attributable public data, treat it as
-            non-authoritative or prefer tools that omit it. Always ask the lender for current
-            timelines in writing.
+            <strong className="text-[#0A2540]">on-time close rate</strong> are{' '}
+            <strong className="text-[#0A2540]">not displayed</strong> unless we have a defensible
+            observed dataset with source, sample size, observation window, and methodology note. Seed
+            or editorial estimates are suppressed (Phase 0). They are never official NMLS or CFPB
+            performance statistics. Always ask the lender for current timelines in writing.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+            <strong className="text-[#0A2540]">NMLS ID verified</strong> requires a numeric NMLS ID
+            plus a directory verification flag — placeholder tokens (SEE-NMLS, TBD, N/A) never unlock
+            a hard verified badge. Company identity and trust scores are keyed by NMLS entity, not by
+            geo-variant listing rows.
           </p>
         </section>
 

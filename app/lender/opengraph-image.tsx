@@ -52,7 +52,7 @@ export default function LenderOpenGraphImage() {
         </div>
 
         <div style={{ display: 'flex', gap: 16, fontSize: 22, fontWeight: 600, color: 'rgba(255,255,255,0.88)' }}>
-          {['NMLS Verified', 'County Insights', 'Free Calculators'].map((label) => (
+          {['NMLS Research', 'County Insights', 'Free Calculators'].map((label) => (
             <span
               key={label}
               style={{

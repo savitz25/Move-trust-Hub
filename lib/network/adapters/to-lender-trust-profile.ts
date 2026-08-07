@@ -2,6 +2,11 @@ import type { EnrichedLender } from '@/lib/lender/enrichment/merge';
 import type { Lender } from '@/lib/lender/mockData';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import {
+  cleanDisplayPhone,
+  cleanNmlsId,
+  resolveNmlsVerification,
+} from '@/lib/lender/verification';
+import {
   defaultMethodologyUrl,
   defaultStandardUrl,
   type TrustProfileShell,
@@ -12,25 +17,28 @@ type LenderLike = Lender | EnrichedLender;
 
 /**
  * Map a Lender Trust Hub lender into the shared Trust Profile shell.
- * Close-time metrics stay in extensions as estimates only — not in core reputation.
+ * Phase 0: no invented NMLS badges, placeholder phones, or seed close metrics.
  */
 export function toLenderTrustProfile(lender: LenderLike): TrustProfileShell {
   const sources: TrustSourceRef[] = [];
   const enriched = 'isEnriched' in lender ? lender : null;
+  const nmls = resolveNmlsVerification({
+    nmlsId: lender.nmlsId,
+    nmlsVerified: lender.nmlsVerified,
+  });
 
-  // Prefer hide: NMLS chip only when nmlsVerified (id alone is not a verified chip)
-  if (lender.nmlsVerified && lender.nmlsId) {
+  if (nmls.nmlsId) {
     sources.push({
       id: 'nmls',
-      label: `NMLS #${lender.nmlsId}`,
-      status: 'verified',
+      label: `NMLS #${nmls.nmlsId}`,
+      status: nmls.showNmlsVerifiedBadge ? 'verified' : 'unverified',
       url: 'https://www.nmlsconsumeraccess.org/',
-      note: 'Re-confirm company and individual IDs on NMLS Consumer Access',
+      note: nmls.summary,
       lastChecked: enriched?.enrichedAt,
     });
   }
 
-  if (typeof lender.cfpbComplaints === 'number') {
+  if (typeof lender.cfpbComplaints === 'number' && enriched?.isEnriched) {
     sources.push({
       id: 'cfpb',
       label: 'CFPB complaints',
@@ -43,7 +51,7 @@ export function toLenderTrustProfile(lender: LenderLike): TrustProfileShell {
   const bbbAccredited =
     enriched?.bbbAccredited ||
     (lender.bbbRating && lender.bbbRating.startsWith('A'));
-  if (bbbAccredited && lender.bbbRating) {
+  if (enriched?.isEnriched && bbbAccredited && lender.bbbRating) {
     sources.push({
       id: 'bbb',
       label: `BBB ${lender.bbbRating}`,
@@ -52,7 +60,7 @@ export function toLenderTrustProfile(lender: LenderLike): TrustProfileShell {
     });
   }
 
-  if (lender.googleRating != null && lender.googleRating > 0) {
+  if (enriched?.isEnriched && lender.googleRating != null && lender.googleRating > 0) {
     sources.push({
       id: 'google',
       label: 'Google rating',
@@ -67,18 +75,21 @@ export function toLenderTrustProfile(lender: LenderLike): TrustProfileShell {
       : undefined;
 
   const address = [lender.city, lender.state].filter(Boolean).join(', ') || undefined;
+  const phone = cleanDisplayPhone(lender.phone);
 
   return {
     hub: 'lender',
-    entityId: lender.slug || lender.id,
+    entityId: cleanNmlsId(lender.nmlsId) || lender.slug || lender.id,
     displayName: lender.name?.trim() || 'Unnamed lender',
     profileUrl: hubCanonicalUrl('lender', `/lenders/${lender.slug}`),
     serviceScope: 'unknown',
     verification: {
-      primaryLabel: lender.nmlsVerified
-        ? 'NMLS licensing context checked'
-        : 'Verify on NMLS Consumer Access',
-      isVerified: Boolean(lender.nmlsVerified),
+      primaryLabel: nmls.showNmlsVerifiedBadge
+        ? 'NMLS ID verified'
+        : nmls.nmlsId
+          ? 'NMLS ID on file — recheck required'
+          : 'NMLS incomplete — recheck required',
+      isVerified: nmls.showNmlsVerifiedBadge,
       sources,
     },
     reputation: score
@@ -91,7 +102,7 @@ export function toLenderTrustProfile(lender: LenderLike): TrustProfileShell {
         }
       : undefined,
     contact: {
-      phone: lender.phone?.trim() || undefined,
+      phone: phone || undefined,
       website: lender.website?.trim() || undefined,
       address,
     },
@@ -100,12 +111,11 @@ export function toLenderTrustProfile(lender: LenderLike): TrustProfileShell {
     standardUrl: defaultStandardUrl(),
     extensions: {
       lender: {
-        nmlsId: lender.nmlsId,
+        nmlsId: nmls.nmlsId ?? '',
         companyType: lender.type,
         state: lender.state,
         county: lender.county,
-        avgCloseDaysEstimate: lender.avgCloseDays,
-        onTimeCloseRateEstimate: lender.onTimeCloseRate,
+        // Closing performance omitted until observed provenance exists
       },
     },
   };

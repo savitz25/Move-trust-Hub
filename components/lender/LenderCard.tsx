@@ -1,12 +1,14 @@
 import { memo } from 'react';
 import Link from 'next/link';
-import { Star, ShieldCheck, ExternalLink, MapPin } from 'lucide-react';
+import { Star, ExternalLink, MapPin } from 'lucide-react';
 import { Badge } from '@/components/lender/ui/badge';
 import { Button } from '@/components/lender/ui/button';
 import { Card } from '@/components/lender/ui/card';
 import type { Lender } from '@/lib/lender/mockData';
 import { mergeLenderWithEnrichment, type EnrichedLender } from '@/lib/lender/enrichment/merge';
 import { buildLenderProfileHref } from '@/lib/lender/lender-profile-links';
+import { NmlsVerificationBadge } from '@/components/lender/nmls-verification-badge';
+import { cleanNmlsId } from '@/lib/lender/verification';
 
 function toEnrichedLender(lender: Lender | EnrichedLender): EnrichedLender {
   return 'isEnriched' in lender ? lender : mergeLenderWithEnrichment(lender);
@@ -70,12 +72,10 @@ export const LenderCard = memo(function LenderCard({
             <Badge variant="outline" className="text-xs">
               {lender.type}
             </Badge>
-            {lender.nmlsVerified ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
-                <ShieldCheck className="h-3 w-3" aria-hidden="true" />
-                NMLS Verified
-              </span>
-            ) : null}
+            <NmlsVerificationBadge
+              nmlsId={lender.nmlsId}
+              nmlsVerified={lender.nmlsVerified}
+            />
             {lender.bbbRating ? (
               <span className="rounded-full bg-zinc-50 px-2 py-0.5 text-xs font-medium text-zinc-600">
                 BBB {lender.bbbRating}
@@ -113,17 +113,13 @@ export const LenderCard = memo(function LenderCard({
         <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-zinc-500">
           <div>
             <dt className="font-medium text-[#0A2540]">NMLS</dt>
-            <dd className="tabular-nums">{lender.nmlsId}</dd>
+            <dd className="tabular-nums">
+              {cleanNmlsId(lender.nmlsId) ? `#${cleanNmlsId(lender.nmlsId)}` : 'Not on file'}
+            </dd>
           </div>
           <div>
             <dt className="font-medium text-[#0A2540]">County Exp.</dt>
             <dd className="tabular-nums">{lender.countyExperienceScore}/100</dd>
-          </div>
-          <div>
-            <dt className="font-medium text-[#0A2540]">Close estimate</dt>
-            <dd className="tabular-nums" title="Educational model estimate — not a regulatory metric">
-              ~{lender.avgCloseDays} days*
-            </dd>
           </div>
         </dl>
       </div>

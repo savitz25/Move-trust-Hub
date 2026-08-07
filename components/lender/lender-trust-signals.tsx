@@ -141,7 +141,16 @@ export function LenderTrustSignals({ lender, className = '' }: Props) {
         <p className="font-semibold text-[#0A2540]">Verification summary</p>
         <ul className="mt-2 space-y-1 text-xs">
           <li>
-            <strong>NMLS #{lender.nmlsId}</strong> — verify at{' '}
+            {lender.nmlsId ? (
+              <>
+                <strong>NMLS #{lender.nmlsId}</strong>
+                {lender.nmlsVerified ? ' — ID verified in directory' : ' — on file'} · re-check at{' '}
+              </>
+            ) : (
+              <>
+                <strong>NMLS ID incomplete</strong> — recheck required · lookup at{' '}
+              </>
+            )}
             <a
               href="https://www.nmlsconsumeraccess.org/"
               target="_blank"
@@ -151,14 +160,17 @@ export function LenderTrustSignals({ lender, className = '' }: Props) {
               NMLS Consumer Access
             </a>
           </li>
-          {yearsInBusiness != null ? (
+          {yearsInBusiness != null && lender.isEnriched ? (
             <li>
               <strong>Years in business (BBB):</strong> ~{yearsInBusiness}+ years
             </li>
           ) : null}
           <li>
-            <strong>Trust score:</strong> {lender.trustScore}/100 (weighted from ratings, BBB, CFPB,
-            and county experience)
+            <strong>Trust score:</strong> {lender.trustScore}/100 (research composite — not a rate
+            quote or approval)
+          </li>
+          <li>
+            <strong>Closing performance:</strong> No independently verified data available
           </li>
         </ul>
       </div>

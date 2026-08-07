@@ -149,7 +149,11 @@ function smokeLender() {
   assert(lender, 'lender fixture from mock data');
   const shell = toLenderTrustProfile(lender);
   assert(shell.hub === 'lender', 'lender hub');
-  assert(shell.entityId === lender.slug, 'lender entityId');
+  // Phase 0: entityId prefers numeric NMLS when available
+  assert(
+    shell.entityId === (lender.nmlsId || lender.slug || lender.id),
+    'lender entityId (NMLS or slug)'
+  );
   assert(shell.profileUrl.includes('/lenders/'), 'lender profileUrl');
   assert(shell.methodologyUrl.includes('lendertrusthub.com/methodology'), 'lender methodology');
   if (lender.nmlsVerified && lender.nmlsId) {
@@ -158,14 +162,11 @@ function smokeLender() {
       'lender nmls chip when verified'
     );
   }
-  // Close estimates only in extensions, not as official score fields
-  if (shell.extensions?.lender?.avgCloseDaysEstimate != null) {
-    assert(
-      shell.reputation?.summary?.toLowerCase().includes('research') ||
-        shell.reputation?.summary != null,
-      'lender score limitation copy'
-    );
-  }
+  // Phase 0: seed close metrics must not appear on the shell
+  assert(
+    shell.extensions?.lender?.avgCloseDaysEstimate == null,
+    'lender close days suppressed without provenance'
+  );
   assert(
     !JSON.stringify(shell.reputation).includes('NMLS field'),
     'lender reputation is not claiming NMLS close fields'
@@ -175,7 +176,7 @@ function smokeLender() {
     entityId: shell.entityId,
     nmls: shell.extensions?.lender?.nmlsId,
     score: shell.reputation?.score,
-    emptyByDesign: ['close days not in core reputation'],
+    emptyByDesign: ['close days not displayed without observed provenance'],
   });
 }
 

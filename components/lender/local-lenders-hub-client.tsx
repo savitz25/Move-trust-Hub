@@ -11,7 +11,7 @@ function LocalLendersSearchHero() {
     <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
       <div className="container mx-auto px-4 text-center">
         <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-          NMLS Verified • County-Level Data • No Paid Placements
+          NMLS research directory • County-Level Data • No Paid Placements
         </p>
         <h1 className="text-3xl font-bold md:text-5xl">Find Verified Mortgage Lenders</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">

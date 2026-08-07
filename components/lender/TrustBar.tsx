@@ -1,16 +1,22 @@
-import { Shield, Star, MapPin, Database } from 'lucide-react';
+import { Shield, Building2, MapPin, Database } from 'lucide-react';
 import { TRUST_STATS } from '@/lib/lender/mockData';
 
 const stats = [
   {
     icon: Shield,
-    value: `${TRUST_STATS.verifiedLenders.toLocaleString()}+`,
-    label: 'Verified Lenders',
+    value: TRUST_STATS.verifiedLenders.toLocaleString(),
+    label: 'NMLS ID verified entities',
   },
   {
-    icon: Star,
-    value: `${(TRUST_STATS.totalReviews / 1_000_000).toFixed(1)}M`,
-    label: 'Reviews Analyzed',
+    icon: Building2,
+    value:
+      TRUST_STATS.branchListings > TRUST_STATS.distinctEntities
+        ? `${TRUST_STATS.distinctEntities} / ${TRUST_STATS.branchListings}`
+        : TRUST_STATS.distinctEntities.toLocaleString(),
+    label:
+      TRUST_STATS.branchListings > TRUST_STATS.distinctEntities
+        ? 'Lenders / branch listings'
+        : 'Distinct lenders in directory',
   },
   {
     icon: MapPin,
