@@ -30,32 +30,45 @@ function CalculatorPageFooterInner() {
     <div className="mt-8 space-y-4">
       <div className="rounded-xl border bg-card p-5 text-sm text-muted-foreground leading-relaxed">
         <p className="font-medium text-foreground mb-2">Next research steps</p>
+        <p className="text-xs mb-3">
+          You have a volume estimate — use it to compare written offers fairly. No lead fees, no paid
+          placements.
+        </p>
         <ul className="list-disc pl-5 space-y-1.5">
           <li>
             <Link href="/companies" className="text-primary font-medium hover:underline">
               Browse the FMCSA mover directory
             </Link>{' '}
-            — independent listings, no lead fees
-          </li>
-          <li>
-            <Link href="/local-movers" className="text-primary font-medium hover:underline">
-              Local movers by state and county
-            </Link>
+            — independent listings for long-distance research
           </li>
           <li>
             <Link href="/compare" className="text-primary font-medium hover:underline">
               Compare up to four movers side-by-side
-            </Link>
+            </Link>{' '}
+            — licensing and reputation signals in one table
           </li>
           <li>
             <Link href="/verify-dot" className="text-primary font-medium hover:underline">
               Verify a USDOT / MC number
-            </Link>
+            </Link>{' '}
+            — before any deposit
+          </li>
+          <li>
+            <Link href="/local-movers" className="text-primary font-medium hover:underline">
+              Local movers by state and county
+            </Link>{' '}
+            — Local vs Regional honesty rules
           </li>
           <li>
             <Link href="/resources/routes" className="text-primary font-medium hover:underline">
               Interstate route cost &amp; planning guides
             </Link>
+          </li>
+          <li>
+            <Link href="/my-move" className="text-primary font-medium hover:underline">
+              Save this inventory in My Move
+            </Link>{' '}
+            — optional workspace for shortlists and plans
           </li>
           <li>
             <Link

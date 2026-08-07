@@ -249,13 +249,28 @@ export function DotVerifierResults({
       <div className="flex flex-col sm:flex-row gap-3">
         {inDirectory || hasPreview ? (
           <>
+            {result.directorySlug ? (
+              <Button asChild size="lg" className="gap-2 min-h-[48px] flex-1">
+                <Link href={`/companies/${result.directorySlug}`}>
+                  Open research profile
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            ) : null}
             <Button
               asChild
               size="lg"
+              variant={result.directorySlug ? 'outline' : 'default'}
               className="gap-2 min-h-[48px] flex-1"
             >
-              <Link href={result.directorySlug ? `/companies/${result.directorySlug}` : '/companies'}>
-                Compare Trusted Movers
+              <Link
+                href={
+                  result.directorySlug
+                    ? `/compare?add=${encodeURIComponent(result.directorySlug)}`
+                    : '/compare'
+                }
+              >
+                Compare movers
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -267,7 +282,7 @@ export function DotVerifierResults({
                 className="gap-2 min-h-[48px]"
               >
                 <a href={saferUrl} target="_blank" rel="noopener noreferrer">
-                  View Official FMCSA Record
+                  Official FMCSA SAFER record
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </Button>
@@ -281,6 +296,35 @@ export function DotVerifierResults({
             </a>
           </Button>
         ) : null}
+      </div>
+
+      <div className="rounded-lg border bg-muted/20 p-4 text-sm">
+        <p className="font-medium text-foreground mb-2">Continue research</p>
+        <ul className="space-y-1.5 text-muted-foreground list-disc pl-5">
+          <li>
+            <Link href="/moving-calculator" className="text-primary font-medium underline-offset-2 hover:underline">
+              Estimate move volume
+            </Link>{' '}
+            for fairer written estimates
+          </li>
+          <li>
+            <Link href="/local-movers" className="text-primary font-medium underline-offset-2 hover:underline">
+              County local mover guides
+            </Link>{' '}
+            with Local vs Regional labels
+          </li>
+          <li>
+            <Link href="/my-move" className="text-primary font-medium underline-offset-2 hover:underline">
+              Save this carrier in My Move
+            </Link>{' '}
+            (optional workspace)
+          </li>
+          <li>
+            <Link href="/about/how-we-score-movers" className="text-primary font-medium underline-offset-2 hover:underline">
+              Trust Center methodology
+            </Link>
+          </li>
+        </ul>
       </div>
 
       {showAddToDirectory ? (

@@ -7,6 +7,43 @@ import { HandoffStatusBanner } from '@/components/save-my-move/handoff-status-ba
 import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
 import { getMyMovePasswordStatus } from '@/lib/save-my-move/password';
 import { getMyMoveDashboardData } from '@/actions/save-my-move';
+import {
+  ResearchNextSteps,
+  type ResearchNextLink,
+} from '@/components/research/research-next-steps';
+
+const MY_MOVE_RESEARCH: ResearchNextLink[] = [
+  {
+    href: '/moving-calculator',
+    label: 'Update inventory in the Moving Calculator',
+    description: 'Refresh cubic feet and weight for comparable estimates.',
+    icon: 'calculator',
+  },
+  {
+    href: '/companies',
+    label: 'Research more movers',
+    description: 'Independent FMCSA-oriented directory — no lead fees.',
+    icon: 'directory',
+  },
+  {
+    href: '/verify-dot',
+    label: 'Verify USDOT numbers on your shortlist',
+    description: 'Authority context before deposits.',
+    icon: 'verify',
+  },
+  {
+    href: '/compare',
+    label: 'Open the Compare tool',
+    description: 'Side-by-side reputation and licensing signals.',
+    icon: 'compare',
+  },
+  {
+    href: '/local-movers',
+    label: 'County local mover guides',
+    description: 'Local vs Regional honesty rules by market.',
+    icon: 'local',
+  },
+];
 
 export const metadata = buildResourceMetadata(
   '/my-move',
@@ -75,6 +112,12 @@ export default async function MyMovePage({ searchParams }: PageProps) {
         initialData={initialData}
         demo={demo}
         passwordEnabled={passwordEnabled}
+      />
+      <ResearchNextSteps
+        className="mt-10"
+        title="Continue research from My Move"
+        subtitle="Your workspace stays connected to independent tools — no paid placements."
+        links={MY_MOVE_RESEARCH}
       />
     </div>
   );

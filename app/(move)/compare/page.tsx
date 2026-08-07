@@ -1,9 +1,40 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CompareLoader } from '@/components/compare/compare-loader';
+import {
+  ResearchNextSteps,
+  type ResearchNextLink,
+} from '@/components/research/research-next-steps';
 import { getAllCompanies } from '@/lib/data-server';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
+
+const COMPARE_NEXT: ResearchNextLink[] = [
+  {
+    href: '/verify-dot',
+    label: 'Verify USDOT numbers from your shortlist',
+    description: 'Confirm authority and jump to official FMCSA SAFER records.',
+    icon: 'verify',
+  },
+  {
+    href: '/companies',
+    label: 'Open full mover profiles',
+    description: 'Inspect licensing, coverage, and review source separation.',
+    icon: 'directory',
+  },
+  {
+    href: '/my-move',
+    label: 'Save comparisons in My Move',
+    description: 'Keep shortlists and notes in your research workspace.',
+    icon: 'my-move',
+  },
+  {
+    href: '/moving-calculator',
+    label: 'Estimate volume for fair quotes',
+    description: 'Share the same inventory with every carrier you contact.',
+    icon: 'calculator',
+  },
+];
 
 // Dynamic so compare can hydrate the same live catalog as profiles (not a stale SSG snapshot).
 export const dynamic = 'force-dynamic';
@@ -85,6 +116,13 @@ export default async function ComparePage() {
       ) : null}
 
       <CompareLoader allCompanies={companies} />
+
+      <ResearchNextSteps
+        className="mt-10"
+        title="After you compare"
+        subtitle="Next independent research steps — not a lead form. No paid placements."
+        links={COMPARE_NEXT}
+      />
     </div>
   );
 }

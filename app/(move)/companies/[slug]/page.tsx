@@ -12,6 +12,12 @@ import Link from 'next/link';
 import { AttributedReviewsPanel } from '@/components/reviews/attributed-reviews-panel';
 import { CompanyProfileStats, FmcsaSafetyMetric } from '@/components/company/company-profile-stats';
 import { CompanyProfileReviewSources } from '@/components/company/company-profile-review-sources';
+import { CompanyProfileIdentity } from '@/components/company/company-profile-identity';
+import {
+  ResearchNextSteps,
+  profileResearchLinks,
+} from '@/components/research/research-next-steps';
+import { assessProfileQuality } from '@/lib/directory/profile-quality';
 import { getCompanyAttributableReviewCount } from '@/lib/trust/review-display-policy';
 import { countAttributedReviewsForCompany } from '@/lib/trust/attributed-review-count';
 import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
@@ -90,12 +96,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     editorialReviewCount: company.reviewCount,
     editorialRating: company.overallRating,
   });
+  const profileQuality = assessProfileQuality(company);
   // Absolute self-canonical to clean /companies/{slug} (no query params).
-  // index, follow via buildMovePageMetadata (unless noIndex).
+  // Thin stubs: noindex,follow — still usable if someone lands with a direct URL.
   return buildMovePageMetadata({
     title: `${company.name} — FMCSA Profile, Ratings & Pricing`,
     description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Independent directory — verify FMCSA licensing yourself.`,
     path: `/companies/${company.slug}`,
+    noIndex: !profileQuality.indexable,
   });
 }
 
@@ -236,9 +244,12 @@ export default async function CompanyProfilePage({ params }: Props) {
 
       <ProfileDataFreshness
         fmcsaLastChecked={company.fmcsaLastChecked}
+        bbbLastChecked={company.bbbLastChecked}
         lastUpdated={company.lastUpdated}
         className="mb-6"
       />
+
+      <CompanyProfileIdentity company={displayCompany} />
 
       <ClaimProfileCta
         companySlug={company.slug}
@@ -261,7 +272,12 @@ export default async function CompanyProfilePage({ params }: Props) {
         </div>
       </div>
 
-      <CompanyProfileReviewSources company={company} googleData={googlePlaces} />
+      <CompanyProfileReviewSources
+        company={company}
+        googleData={googlePlaces}
+        reputationScore={company.reputationScore}
+        fmcsaSafetyRating={company.fmcsaSafetyRating}
+      />
 
       <GoogleReviewsSection
         data={googlePlaces}
@@ -282,7 +298,11 @@ export default async function CompanyProfilePage({ params }: Props) {
                 {trustSignals.map((t, i) => (
                   <Badge key={i} variant="success" className="text-xs">{t}</Badge>
                 ))}
-                {company.specialties.map(s => <Badge key={s} variant="outline">{s}</Badge>)}
+                {(company.specialties ?? []).map((s) => (
+                  <Badge key={s} variant="outline">
+                    {s}
+                  </Badge>
+                ))}
               </div>
             </CardContent>
           </Card>
@@ -382,13 +402,25 @@ export default async function CompanyProfilePage({ params }: Props) {
                 <div>
                   <div className="font-medium mb-1">Services Offered</div>
                   <ul className="list-disc pl-5 space-y-0.5 text-muted-foreground">
-                    {company.services.map(s => <li key={s}>{s}</li>)}
+                    {(company.services ?? []).length > 0 ? (
+                      (company.services ?? []).map((s) => <li key={s}>{s}</li>)
+                    ) : (
+                      <li>Not listed on this profile</li>
+                    )}
                   </ul>
                 </div>
                 <div>
                   <div className="font-medium mb-1">Specialties</div>
                   <div className="flex flex-wrap gap-2">
-                    {company.specialties.map(s => <Badge key={s} variant="secondary">{s}</Badge>)}
+                    {(company.specialties ?? []).length > 0 ? (
+                      (company.specialties ?? []).map((s) => (
+                        <Badge key={s} variant="secondary">
+                          {s}
+                        </Badge>
+                      ))
+                    ) : (
+                      <span className="text-muted-foreground text-sm">Not listed</span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -407,6 +439,12 @@ export default async function CompanyProfilePage({ params }: Props) {
             companyId={company.id}
             companyName={company.name}
             initialReviews={reviews}
+          />
+
+          <ResearchNextSteps
+            title="Next research steps for this mover"
+            subtitle="Independent tools — no lead fees, no paid placements."
+            links={profileResearchLinks(company.slug)}
           />
         </div>
 

@@ -1,5 +1,14 @@
 import Link from 'next/link';
-import { ArrowRight, Calculator, Truck, BookOpen, MapPin, Compass } from 'lucide-react';
+import {
+  ArrowRight,
+  Calculator,
+  Truck,
+  BookOpen,
+  MapPin,
+  Compass,
+  ShieldCheck,
+  Scale,
+} from 'lucide-react';
 import { getCountyPath, getStatePath } from '@/lib/local-movers/index';
 import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 import { getDestinationHubLinkForCounty } from '@/lib/destinations/county-destination-links';
@@ -32,9 +41,21 @@ export function CountyInternalLinks({
       icon: Calculator,
     },
     {
+      href: '/verify-dot',
+      label: 'Verify a DOT Number',
+      description: 'Look up USDOT/MC and official FMCSA SAFER status',
+      icon: ShieldCheck,
+    },
+    {
+      href: '/compare',
+      label: 'Compare Movers',
+      description: 'Side-by-side licensing and reputation signals',
+      icon: Scale,
+    },
+    {
       href: '/companies',
       label: 'Interstate Directory',
-      description: 'Browse FMCSA-licensed long-distance carriers',
+      description: 'Browse FMCSA-oriented long-distance research profiles',
       icon: Truck,
     },
     {
@@ -46,14 +67,14 @@ export function CountyInternalLinks({
   ];
 
   const guides = [
-    { href: '/verify-dot', label: 'Verify a DOT Number' },
-    { href: '/compare', label: 'Compare Movers Side-by-Side' },
+    { href: '/my-move', label: 'My Move research workspace' },
     { href: '/about/how-we-score-movers', label: 'Trust Center — How We Score' },
     { href: '/review', label: 'Leave a Moderated Review' },
     { href: '/resources/fmcsa', label: 'FMCSA Licensing Guide' },
     { href: '/resources/scams', label: 'Avoid Moving Scams' },
     { href: '/resources/checklist', label: 'Moving Checklist' },
     { href: '/resources/routes', label: 'Interstate Route Guides' },
+    { href: '/resources/how-to-choose', label: 'How to Choose a Mover' },
   ];
 
   return (
@@ -61,7 +82,7 @@ export function CountyInternalLinks({
       <h2 className="text-xl font-semibold tracking-tight mb-4">
         Plan your move{countyLabel ? ` in ${countyLabel}` : ''}
       </h2>
-      <div className="grid sm:grid-cols-3 gap-3 mb-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
         {tools.map((tool) => (
           <Link
             key={tool.href}
