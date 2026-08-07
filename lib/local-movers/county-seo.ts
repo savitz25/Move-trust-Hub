@@ -55,6 +55,8 @@ import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
 import { buildAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
+import { topRatedMoversForCopy } from '@/lib/local-movers/segment-county-movers';
+import { LOCALITY_POLICY } from '@/lib/local-movers/locality-rules';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
 export { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
@@ -370,10 +372,8 @@ export function buildCountyFaqItems(
   const countyLabel = buildCountyLabel(county);
   const location = county.seat ?? countyLabel;
   const costs = buildCountyCostGuide(county, stateName);
-  const eligibleTop = movers.filter(
-    (m) => (m.rating ?? 0) >= 4.0 && (m.reviewCount ?? 0) >= 5
-  );
-  const topMovers = eligibleTop.slice(0, 3);
+  // Phase 1: “best local” only from true-local + hard safety exclusions (not raw stars alone).
+  const topMovers = topRatedMoversForCopy(movers, county, 3);
   const topMoverList = topMovers
     .map((m) => `${m.name} (${m.rating}★, ${m.reviewCount.toLocaleString()} reviews)`)
     .join(', ');
@@ -381,10 +381,10 @@ export function buildCountyFaqItems(
 
   const bestMoversAnswer =
     topMovers.length > 1
-      ? `Among verified listings with real review volume serving ${location}, higher-rated options include ${topMoverList}. We prioritize true local/in-state signals when available, then ratings, licensing completeness, and review volume — never zero-review shells as “top-rated.”`
+      ? `Among true local-HQ listings with real review volume near ${location}, stronger research options include ${topMoverList}. We use reputation composite signals (not star rating alone), exclude out-of-service / severe BBB F grades when known, and never label distant same-state HQs as local. Re-verify licensing before booking.`
       : topMovers.length === 1
-        ? `Among verified listings with real review volume serving ${location}, ${topMovers[0]!.name} currently shows ${topMovers[0]!.rating}★ from ${topMovers[0]!.reviewCount.toLocaleString()} industry-reported reviews. Compare full listings on this page and verify licensing before booking.`
-        : `We do not label zero-review or unrated shells as top-rated. Compare verified movers on this page by licensing, local/in-state fit, and review basis — then confirm credentials on FMCSA.gov (and ${stateCredPhrase}).`;
+        ? `Among true local-HQ listings with real review volume near ${location}, ${topMovers[0]!.name} currently shows ${topMovers[0]!.rating}★ from ${topMovers[0]!.reviewCount.toLocaleString()} industry-reported reviews. Compare full listings on this page, re-check authority status, and verify licensing before booking.`
+        : `${LOCALITY_POLICY.emptyLocalCopy} We do not invent “best local” winners from distant same-state or unsafe listings. Compare regional carriers on this page by licensing and review basis — then confirm credentials on FMCSA.gov (and ${stateCredPhrase}).`;
 
   const licensingAnswer =
     county.stateSlug === 'new-jersey'
@@ -510,7 +510,7 @@ export function buildCountyFaqItems(
     },
     {
       question: `What is the difference between local and interstate movers in ${countyLabel}?`,
-      answer: `Local and in-state movers handle in-county and short-distance relocations, often priced hourly or by crew size. National/long-distance carriers transport goods under FMCSA regulation when the move crosses state lines. Listings on this page separate local/in-state companies from national carriers serving ${countyLabel} so you can choose the right fit.`,
+      answer: `On Move Trust Hub, Local / Intrastate means HQ or service scope truly near ${countyLabel} (about ${LOCALITY_POLICY.localMaxMiles} miles, seat/name match, or explicit intrastate scope) — not merely the same state. Regional means same-state but distant; National / Long-distance means out-of-state HQ or interstate-focused carriers. Local jobs are often priced hourly; interstate work needs FMCSA authority when state lines are crossed.`,
     },
     {
       question: `How do I avoid moving scams in ${countyLabel}?`,

@@ -109,6 +109,7 @@ export function CountyZoneMoverFilter({
         countyLabel={countyLabel}
         stateCode={stateCode}
         stateName={stateName}
+        county={county}
         profileReturnPath={profileReturnPath}
         listKey={zoneId}
       />

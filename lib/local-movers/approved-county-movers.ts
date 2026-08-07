@@ -21,10 +21,10 @@ import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-m
 export { APPROVED_COUNTY_MOVERS_TAG };
 
 const COMPANY_MOVER_SELECT_FULL =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, usdot_status';
 
 const COMPANY_MOVER_SELECT_CORE =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, usdot_status';
 
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
@@ -68,6 +68,9 @@ type CompanyMoverRow = {
   last_updated?: string | null;
   fmcsa_legal_name?: string | null;
   fmcsa_raw?: unknown;
+  out_of_service?: boolean | null;
+  authority_active?: boolean | null;
+  usdot_status?: string | null;
 };
 
 /** Prefer service-role when available; otherwise public anon (assignments are public-readable). */
@@ -411,8 +414,10 @@ async function loadAllApprovedMoversByCounty(
         }
 
         const mover = companyToLocalMover(company);
-        // Force local badge when assignment/coverage path marks them local.
-        if (isIntrastate && !mover.isLocalOnly) {
+        // Phase 1: assignment controls presence on the page, not the Local badge.
+        // Local vs Regional is decided by locality-rules (distance / seat match).
+        // Only honor explicit intrastate service_scope from the company row.
+        if (isIntrastate && company.service_scope === 'intrastate' && !mover.isLocalOnly) {
           mover.isLocalOnly = true;
         }
         movers.push(mover);

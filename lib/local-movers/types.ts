@@ -29,6 +29,12 @@ export type LocalMover = {
   lastUpdated?: string;
   /** Highlight newly published local movers on county pages. */
   recentlyAdded?: boolean;
+  /** FMCSA out-of-service flag when known from directory sync. */
+  outOfService?: boolean;
+  /** Active operating authority when known from directory sync. */
+  authorityActive?: boolean | null;
+  /** Raw USDOT status string when known (ACTIVE, OUT OF SERVICE, …). */
+  usdotStatus?: string | null;
 };
 
 export type LocalCounty = {

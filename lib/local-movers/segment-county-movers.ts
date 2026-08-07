@@ -1,46 +1,43 @@
 import {
   localRelevanceScore,
   moverQualityScore,
-  rankCountyMovers,
 } from '@/lib/local-movers/rank-county-movers';
+import {
+  classifyMoverLocality,
+  isTrueLocalMover,
+} from '@/lib/local-movers/locality-rules';
+import {
+  isRecommendationEligible,
+  selectRecommendedMovers,
+} from '@/lib/local-movers/recommendation-safety';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
 export type CountyMoverSegment = 'local_in_state' | 'national';
 
 export type SegmentedCountyMovers = {
+  /** True local HQ / intrastate in-market only (Phase 1 distance rule). */
   localInState: LocalMover[];
+  /** Regional same-state + national / long-distance — never labeled Local. */
   national: LocalMover[];
-  /** Full list: local first, then national — each segment quality-ranked. */
+  /** Full list: local first, then regional/national — each segment quality-ranked. */
   ordered: LocalMover[];
 };
 
 /**
- * Honest local / in-state classification.
+ * Honest local classification — Phase 1.
  *
- * Rules (distance / HQ / service-radius proxy without inventing geo coords):
- * - Explicit intrastate / local-only scope → local
- * - Out-of-state headquarters → never local
- * - Same-state HQ alone is NOT enough (LA carrier is not a “local mover” in Eureka)
- * - Require strong in-market signals: HQ city ≈ county seat/name, or local-only scope
- *   (localRelevanceScore ≥ 50 requires city/seat match or isLocalOnly)
+ * Same-state HQ alone is NOT local. Requires:
+ * - explicit local/intrastate scope (in-state, not distant when measurable), or
+ * - HQ city ≈ county seat/name, or
+ * - HQ within ~50 miles of county centroid when coordinates resolve.
  *
- * Distant same-state HQs and pure national carriers fall into the regional/national segment.
+ * Distant same-state operators are Regional (returned in `national` segment for UI).
  */
 export function isLocalOrInStateMover(
   mover: LocalMover,
   county: LocalCounty
 ): boolean {
-  if (mover.isLocalOnly) return true;
-
-  const hq = (mover.headquartersState ?? '').toUpperCase();
-  const pageState = (county.stateCode ?? '').toUpperCase();
-
-  // Out-of-state HQ never qualifies as local/in-state (even if city names collide).
-  if (hq && pageState && hq !== pageState) return false;
-
-  // Require strong local relevance — not merely “somewhere in this state.”
-  // Score ≥ 50 ≈ city/seat match (or isLocalOnly, already handled above).
-  return localRelevanceScore(mover, county) >= 50;
+  return isTrueLocalMover(mover, county);
 }
 
 export function segmentCountyMovers(
@@ -51,7 +48,8 @@ export function segmentCountyMovers(
   const national: LocalMover[] = [];
 
   for (const mover of movers) {
-    if (isLocalOrInStateMover(mover, county)) localInState.push(mover);
+    const verdict = classifyMoverLocality(mover, county);
+    if (verdict.class === 'local') localInState.push(mover);
     else national.push(mover);
   }
 
@@ -75,16 +73,37 @@ export function segmentCountyMovers(
   };
 }
 
-/** Minimum rating + review basis for any “top-rated” / “best movers” copy. */
+/** @deprecated Use isRecommendationEligible from recommendation-safety */
 export function isTopRatedEligible(mover: LocalMover): boolean {
-  return (mover.rating ?? 0) >= 4.0 && (mover.reviewCount ?? 0) >= 5;
+  return isRecommendationEligible(mover);
 }
 
+/**
+ * “Best” / top movers for FAQ and copy — reputation composite + hard exclusions.
+ * Prefer true locals when available; never force distant carriers into “best local”.
+ */
 export function topRatedMoversForCopy(
   movers: LocalMover[],
   county: LocalCounty,
   limit = 3
 ): LocalMover[] {
-  const ranked = rankCountyMovers(movers, county);
-  return ranked.filter(isTopRatedEligible).slice(0, limit);
+  const localOnly = selectRecommendedMovers(movers, county, {
+    limit,
+    requireLocal: true,
+  });
+  if (localOnly.length > 0) return localOnly;
+  // No true locals: do not invent “best local” from regional — return empty.
+  // Callers should render honest scarcity copy.
+  return [];
+}
+
+/** Safer non-local recommendations (never under “best local” phrasing). */
+export function topRatedRegionalForCopy(
+  movers: LocalMover[],
+  county: LocalCounty,
+  limit = 3
+): LocalMover[] {
+  return selectRecommendedMovers(movers, county, { limit, requireLocal: false }).filter(
+    (m) => !isTrueLocalMover(m, county)
+  );
 }

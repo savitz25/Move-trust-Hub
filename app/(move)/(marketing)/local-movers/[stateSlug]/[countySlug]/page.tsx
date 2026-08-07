@@ -626,6 +626,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                 countyLabel={countyLabel}
                 stateCode={county.stateCode}
                 stateName={state.name}
+                county={county}
                 profileReturnPath={path}
               />
             )

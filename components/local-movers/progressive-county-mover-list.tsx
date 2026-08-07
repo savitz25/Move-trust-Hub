@@ -8,7 +8,8 @@ import {
   nextRevealCount,
   revealButtonLabel,
 } from '@/lib/local-movers/rank-county-movers';
-import type { LocalMover } from '@/lib/local-movers/types';
+import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
+import { LOCALITY_POLICY } from '@/lib/local-movers/locality-rules';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
@@ -21,6 +22,8 @@ type Props = {
   countyLabel: string;
   stateCode: string;
   profileReturnPath: string;
+  /** County context for Phase 1 locality badges */
+  county?: LocalCounty;
   listKey?: string;
   pageSize?: number;
   className?: string;
@@ -39,6 +42,7 @@ export function ProgressiveCountyMoverList({
   countyLabel,
   stateCode,
   profileReturnPath,
+  county,
   listKey = 'all',
   pageSize = COUNTY_MOVER_PAGE_SIZE,
   className,
@@ -88,6 +92,7 @@ export function ProgressiveCountyMoverList({
                 rank={rankOffset + index + 1}
                 countyLabel={countyLabel}
                 stateCode={stateCode}
+                county={county}
                 profileReturnPath={profileReturnPath}
               />
             </li>
@@ -138,6 +143,7 @@ type SegmentedProps = {
   stateCode: string;
   stateName: string;
   profileReturnPath: string;
+  county: LocalCounty;
   listKey?: string;
 };
 
@@ -149,6 +155,7 @@ export function SegmentedCountyMoverLists({
   stateCode,
   stateName,
   profileReturnPath,
+  county,
   listKey = 'all',
 }: SegmentedProps) {
   if (localInState.length === 0 && national.length === 0) {
@@ -187,19 +194,19 @@ export function SegmentedCountyMoverLists({
           movers={localInState}
           countyLabel={countyLabel}
           stateCode={stateCode}
+          county={county}
           profileReturnPath={profileReturnPath}
           listKey={`${listKey}-local`}
           heading={`Local movers near ${countyLabel} (${localInState.length})`}
-          headingHint={`Intrastate specialists or companies with headquarters in/near ${countyLabel} (${stateName}). Distant same-state HQs are not labeled local.`}
+          headingHint={`HQ within ~${LOCALITY_POLICY.localMaxMiles} miles of ${countyLabel}, seat/name match, or true intrastate specialists. Distant same-state HQs are labeled Regional — never Local.`}
         />
       ) : (
         <div className="rounded-xl border border-amber-200/80 bg-amber-50/40 px-4 py-3 text-sm text-amber-950 dark:border-amber-900/40 dark:bg-amber-950/20 dark:text-amber-100">
-          <p className="font-medium">No true local movers listed for {countyLabel} yet.</p>
+          <p className="font-medium">{LOCALITY_POLICY.emptyLocalCopy}</p>
           <p className="mt-1 text-sm leading-relaxed opacity-90">
-            We only label a company local when it is intrastate-scoped or has clear headquarters
-            presence near this county — not merely an HQ somewhere else in {stateName}. Regional and
-            long-distance carriers below may still serve this market; confirm capability and licensing
-            before booking. Verify USDOT on{' '}
+            Same-state headquarters alone is not enough for a Local label. We require seat/name match
+            or HQ within about {LOCALITY_POLICY.localMaxMiles} miles of the county when we can
+            measure distance. Confirm licensing before booking. Verify USDOT on{' '}
             <a
               href={FMCSA_SAFER_SEARCH_URL}
               className="font-semibold underline underline-offset-2"
@@ -218,6 +225,7 @@ export function SegmentedCountyMoverLists({
           movers={national}
           countyLabel={countyLabel}
           stateCode={stateCode}
+          county={county}
           profileReturnPath={profileReturnPath}
           listKey={`${listKey}-national`}
           rankOffset={localInState.length}
@@ -226,7 +234,7 @@ export function SegmentedCountyMoverLists({
               ? `Regional carriers serving ${countyLabel} (${national.length})`
               : `Regional & long-distance carriers serving ${countyLabel} (${national.length})`
           }
-          headingHint="Companies that can serve this county but do not meet our local HQ / service-radius rules. HQ may be out of county or out of state — we do not re-label them as local movers."
+          headingHint="Regional (same-state but not local HQ) or national carriers that may serve this county. We do not re-label them as local movers."
         />
       ) : null}
     </div>

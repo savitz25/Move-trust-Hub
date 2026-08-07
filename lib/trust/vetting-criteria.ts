@@ -34,7 +34,13 @@ export const MOVER_VETTING_CRITERIA: readonly VettingCriterion[] = [
     id: 'out-of-service',
     title: 'No active federal out-of-service order',
     detail:
-      'Carriers flagged out of service or with critical authority alerts are not presented as “FMCSA Verified.” Serious SAFER flags are highlighted when we detect them.',
+      'Carriers flagged out of service or with critical authority alerts are not presented as “FMCSA Verified.” Serious SAFER flags are highlighted when we detect them. Out-of-service carriers are also excluded from “best” / “top” recommendation copy when status is known.',
+  },
+  {
+    id: 'locality',
+    title: 'Honest Local vs Regional labels',
+    detail:
+      '“Local Mover” requires HQ near the county (about 50 miles when measurable), seat/name match, or true in-state intrastate scope — not merely same-state headquarters. Distant same-state operators are labeled Regional.',
   },
   {
     id: 'curated-not-scraped',

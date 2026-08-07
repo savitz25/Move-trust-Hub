@@ -37,7 +37,7 @@ export function localRelevanceScore(mover: LocalMover, county: LocalCounty): num
     }
   }
 
-  // Honest local-market language in description (not used alone as proof).
+  // Honest local-market language in description (weak; never enough alone for Local).
   if (
     stateAllowsLocalNameMatch &&
     countyName.length >= 3 &&
@@ -48,9 +48,10 @@ export function localRelevanceScore(mover: LocalMover, county: LocalCounty): num
     score += 12;
   }
 
-  // Explicit in-state HQ is a strong local signal even without seat match.
+  // Phase 1: same-state HQ alone is NOT a local signal (distant same-state = regional).
+  // Tiny soft boost only for ranking among regionals — does not pass the Local gate.
   if (hqState && pageState && hqState === pageState) {
-    score += 40;
+    score += 5;
   }
 
   return score;
@@ -68,7 +69,13 @@ export function moverQualityScore(mover: LocalMover): number {
   if (mover.mcNumber) score += 5;
   if (mover.fmcsaSafetyRating === 'Satisfactory') score += 12;
   else if (mover.fmcsaSafetyRating === 'Conditional') score += 2;
-  if (mover.bbbRating) score += 4;
+  if (mover.bbbRating) {
+    const g = mover.bbbRating.trim().toUpperCase();
+    if (g === 'F' || g === 'F+' || g === 'F-') score -= 40;
+    else score += 4;
+  }
+  if (mover.outOfService) score -= 80;
+  if (mover.authorityActive === false) score -= 50;
   if (mover.listingSource === 'directory') score += 6;
   if (mover.recentlyAdded) score += 3;
   return score;

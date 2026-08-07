@@ -10,12 +10,15 @@ import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
 import { assessLicense } from '@/lib/trust/license-verification';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { sanitizeMoverDescription } from '@/lib/local-movers/sanitize-mover-description';
+import { classifyMoverLocality } from '@/lib/local-movers/locality-rules';
+import type { LocalCounty } from '@/lib/local-movers/types';
 
 export function LocalMoverCard({
   mover,
   rank,
   countyLabel,
   stateCode,
+  county,
   profileReturnPath,
 }: {
   mover: LocalMover;
@@ -23,6 +26,8 @@ export function LocalMoverCard({
   countyLabel?: string;
   /** Page county state — used only for "Serves …" context, never as HQ state. */
   stateCode?: string;
+  /** When provided, locality badges use Phase 1 distance/adjacency rules. */
+  county?: Pick<LocalCounty, 'slug' | 'name' | 'stateCode' | 'stateSlug' | 'seat'>;
   /** When set, profile links return to this page (e.g. county directory). */
   profileReturnPath?: string;
 }) {
@@ -86,16 +91,52 @@ export function LocalMoverCard({
                   Recently added
                 </Badge>
               ) : null}
-              {mover.isLocalOnly ||
-              (hqState && stateCode && hqState === stateCode.toUpperCase()) ? (
-                <Badge variant="outline" className="text-[10px] font-semibold border-emerald-300 text-emerald-800">
-                  {mover.isLocalOnly ? 'Local / intrastate' : 'Local HQ nearby'}
-                </Badge>
-              ) : hqState ? (
-                <Badge variant="outline" className="text-[10px] font-medium">
-                  National / long-distance
-                </Badge>
-              ) : null}
+              {(() => {
+                if (county) {
+                  const locality = classifyMoverLocality(mover, county as LocalCounty);
+                  if (locality.class === 'local') {
+                    return (
+                      <Badge
+                        variant="outline"
+                        className="text-[10px] font-semibold border-emerald-300 text-emerald-800"
+                      >
+                        {locality.label}
+                      </Badge>
+                    );
+                  }
+                  if (locality.class === 'regional') {
+                    return (
+                      <Badge variant="outline" className="text-[10px] font-medium border-amber-300 text-amber-900">
+                        {locality.label}
+                      </Badge>
+                    );
+                  }
+                  return (
+                    <Badge variant="outline" className="text-[10px] font-medium">
+                      {locality.label}
+                    </Badge>
+                  );
+                }
+                // Fallback without county context: never invent “local” from same-state alone
+                if (mover.isLocalOnly) {
+                  return (
+                    <Badge
+                      variant="outline"
+                      className="text-[10px] font-semibold border-emerald-300 text-emerald-800"
+                    >
+                      Local / Intrastate
+                    </Badge>
+                  );
+                }
+                if (hqState) {
+                  return (
+                    <Badge variant="outline" className="text-[10px] font-medium">
+                      National / Long-distance
+                    </Badge>
+                  );
+                }
+                return null;
+              })()}
               <CompanyTypeBadges
                 size="compact"
                 input={{

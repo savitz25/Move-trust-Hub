@@ -18,6 +18,9 @@ type CompanyMoverSource = {
   entity_type?: string | null;
   last_updated?: string | null;
   updated_at?: string | null;
+  out_of_service?: boolean | null;
+  authority_active?: boolean | null;
+  usdot_status?: string | null;
 };
 
 const RECENT_MS = 1000 * 60 * 60 * 24 * 30; // 30 days
@@ -70,5 +73,9 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
     entityType: company.entity_type ?? null,
     lastUpdated: lastUpdated || undefined,
     recentlyAdded: isRecentlyAdded(lastUpdated),
+    outOfService: Boolean(company.out_of_service),
+    authorityActive:
+      company.authority_active === undefined ? null : company.authority_active,
+    usdotStatus: company.usdot_status ?? null,
   };
 }
