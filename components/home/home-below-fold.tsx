@@ -4,21 +4,13 @@ import { ArrowRight, Shield, Truck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { FaqSection } from '@/components/seo/faq-section';
+import { HomeBelowFoldReviews } from '@/components/home/home-below-fold-reviews';
 import { homepageFaqItems } from '@/lib/seo/schemas';
 
-/** Below-fold link hub — keep out of initial homepage JS graph */
+/** Below-fold link hub — keep out of initial homepage JS graph (SSR OK for static links) */
 const InternalLinkHub = dynamic(
   () => import('@/components/seo/internal-link-hub').then((m) => m.InternalLinkHub),
   { loading: () => <div className="min-h-[8rem]" aria-hidden="true" /> }
-);
-
-const ReviewHighlights = dynamic(
-  () =>
-    import('@/components/trust/review-highlights').then((m) => m.ReviewHighlights),
-  {
-    ssr: false,
-    loading: () => <div className="min-h-[280px] border-t" aria-hidden="true" />,
-  }
 );
 
 export function HomeBelowFold() {
@@ -171,7 +163,7 @@ export function HomeBelowFold() {
         </div>
       </section>
 
-      <ReviewHighlights
+      <HomeBelowFoldReviews
         className="py-14 border-t"
         compact
         title="Featured review highlights"
