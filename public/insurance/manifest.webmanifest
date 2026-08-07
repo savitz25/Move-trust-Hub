@@ -14,25 +14,31 @@
   "categories": ["finance", "lifestyle", "utilities"],
   "icons": [
     {
-      "src": "/insurance/brand/insurance-trust-hub-icon-192.png?v=20260728r2",
+      "src": "/insurance/brand/insurance-trust-hub-icon-192.png?v=20260807final",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/insurance/brand/insurance-trust-hub-icon.png?v=20260728r2",
+      "src": "/insurance/brand/insurance-trust-hub-icon.png?v=20260807final",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/insurance/brand/insurance-trust-hub-icon-192.png?v=20260728r2",
+      "src": "/insurance/brand/apple-touch-icon.png?v=20260807final",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/insurance/brand/insurance-trust-hub-icon-192.png?v=20260807final",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/insurance/brand/insurance-trust-hub-icon.png?v=20260728r2",
+      "src": "/insurance/brand/insurance-trust-hub-icon.png?v=20260807final",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

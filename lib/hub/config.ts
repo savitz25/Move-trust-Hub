@@ -6,7 +6,7 @@ import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 /** Bump when replacing Move brand logos to bust immutable CDN/browser cache. */
 export const TRUST_HUB_LOGO_VERSION = '20260806e';
 /** Bump when replacing public/insurance/brand/* so CDN/browser cache picks up the new mark. */
-export const INSURANCE_LOGO_VERSION = '20260728r2';
+export const INSURANCE_LOGO_VERSION = '20260807final';
 /** Bump when replacing public/lender/brand/* for /lender section logos. */
 export const LENDER_LOGO_VERSION = '20260727';
 
@@ -28,14 +28,18 @@ export const TRUST_HUB_LOGO = {
   height: 160,
 } as const;
 
-/** InsuranceTrustHub brand mark — never use Move logo on insurance host. */
+/**
+ * Insurance Trust Hub final lockup (ITH final transport logo).
+ * Transparent PNG only — no plate. Header + footer use same art (glow reads on navy).
+ */
 export const INSURANCE_HUB_LOGO = {
   src: `/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`,
   headerSrc: `/insurance/brand/insurance-trust-hub-logo-header.png?v=${INSURANCE_LOGO_VERSION}`,
-  footerSrc: `/insurance/brand/insurance-trust-hub-logo-stacked-sm.png?v=${INSURANCE_LOGO_VERSION}`,
-  alt: 'InsuranceTrustHub',
-  width: 759,
-  height: 239,
+  footerSrc: `/insurance/brand/insurance-trust-hub-logo-footer.png?v=${INSURANCE_LOGO_VERSION}`,
+  stackedSrc: `/insurance/brand/insurance-trust-hub-logo-stacked-sm.png?v=${INSURANCE_LOGO_VERSION}`,
+  alt: 'Insurance Trust Hub',
+  width: 1067,
+  height: 293,
 } as const;
 
 /** LenderTrustHub brand mark — used on /lender/* (not Move logo). */
@@ -58,7 +62,12 @@ export function trustHubLogoUrl(baseUrl = 'https://www.movetrusthub.com'): strin
 }
 
 export function insuranceHubLogoUrl(baseUrl = 'https://www.insurancetrusthub.com'): string {
-  return `${baseUrl}/insurance/brand/insurance-trust-hub-logo.png?v=${INSURANCE_LOGO_VERSION}`;
+  return `${baseUrl.replace(/\/$/, '')}/insurance/brand/insurance-trust-hub-logo-header.png?v=${INSURANCE_LOGO_VERSION}`;
+}
+
+/** Absolute OG/share card with final lockup on Shield navy. */
+export function insuranceHubOgImageUrl(baseUrl = 'https://www.insurancetrusthub.com'): string {
+  return `${baseUrl.replace(/\/$/, '')}/insurance/brand/insurance-trust-hub-og.png?v=${INSURANCE_LOGO_VERSION}`;
 }
 
 export function lenderHubLogoUrl(baseUrl = 'https://www.lendertrusthub.com'): string {
@@ -190,7 +199,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     logoSrc: INSURANCE_HUB_LOGO.footerSrc,
     headerLogoSrc: INSURANCE_HUB_LOGO.headerSrc,
     logoAlt: INSURANCE_HUB_LOGO.alt,
-    accentClass: 'text-emerald-600',
+    accentClass: 'text-[#0077D4]',
     homeTitle: 'Licensed Insurance Agents Directory (2026) | Insurance Trust Hub',
     homeDescription:
       'Independent research directory of state-licensed insurance agencies and agents. Re-check DOI / NAIC records. Educational ACA and Medicare tools. No paid placements. We do not sell policies.',

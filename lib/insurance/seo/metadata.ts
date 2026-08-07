@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
-import { INSURANCE_HUB_LOGO } from '@/lib/hub/config';
+import {
+  INSURANCE_HUB_LOGO,
+  INSURANCE_LOGO_VERSION,
+  insuranceHubOgImageUrl,
+} from '@/lib/hub/config';
 import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
 import { hubCanonicalUrl, normalizeHubMetadataPath } from '@/lib/hub/paths';
 import { SITE_NAME } from '@/lib/insurance/constants';
@@ -7,19 +11,20 @@ import { SITE_NAME } from '@/lib/insurance/constants';
 export const SITE_URL = hubCanonicalUrl('insurance', '/');
 
 export const HOMEPAGE_TITLE =
-  'Find Trusted Insurance Agents (2026) | Compare Licensed Agencies by State';
+  'Research Licensed Insurance Agencies (2026) | Independent Directory';
 export const HOMEPAGE_DESCRIPTION =
-  'Compare independent and captive insurance agencies by reviews, specialties, and state licensing. Research auto, home, life, and business coverage options.';
+  'Independent research directory of state-licensed insurance agencies and agents. Compare listing signals and re-check licenses on official DOI tools — no free quotes, no paid placements, no policy sales.';
 
 export const DEFAULT_SITE_DESCRIPTION =
-  'InsuranceTrustHub is an independent directory of licensed insurance agencies. Research providers, read verified reviews, and compare options for auto, home, life, and business coverage — no paid placements. We do not sell policies.';
+  'InsuranceTrustHub is an independent research directory of state-licensed insurance agencies. Research listings, educational calculators, and license re-check pathways for auto, home, life, health, and business coverage — no paid placements. We do not sell policies or run a quote marketplace.';
 
-/** Prefer generated OG image; logo used as fallback only. */
+/** Final lockup on Shield navy — static asset for reliable social previews. */
 export const OG_IMAGE = {
-  url: '/opengraph-image',
+  url: `/insurance/brand/insurance-trust-hub-og.png?v=${INSURANCE_LOGO_VERSION}`,
   width: 1200,
   height: 630,
-  alt: 'InsuranceTrustHub — independent DOI-verified insurance agent directory',
+  alt: 'Insurance Trust Hub — independent DOI-verified insurance research',
+  absoluteUrl: insuranceHubOgImageUrl(INSURANCE_SITE_URL),
 } as const;
 
 export const INSURANCE_ICON = {
@@ -121,14 +126,34 @@ export const rootLayoutMetadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/insurance/brand/insurance-trust-hub-favicon-32.png?v=20260728r2',
+        url: `/insurance/brand/insurance-trust-hub-favicon-16.png?v=${INSURANCE_LOGO_VERSION}`,
+        sizes: '16x16',
+        type: 'image/png',
+      },
+      {
+        url: `/insurance/brand/insurance-trust-hub-favicon-32.png?v=${INSURANCE_LOGO_VERSION}`,
         sizes: '32x32',
         type: 'image/png',
+      },
+      {
+        url: `/insurance/brand/insurance-trust-hub-favicon-48.png?v=${INSURANCE_LOGO_VERSION}`,
+        sizes: '48x48',
+        type: 'image/png',
+      },
+      {
+        url: `/insurance/brand/favicon.ico?v=${INSURANCE_LOGO_VERSION}`,
+        sizes: 'any',
+        type: 'image/x-icon',
       },
     ],
     apple: [
       {
-        url: '/insurance/brand/insurance-trust-hub-icon-192.png?v=20260728r2',
+        url: `/insurance/brand/apple-touch-icon.png?v=${INSURANCE_LOGO_VERSION}`,
+        sizes: '180x180',
+        type: 'image/png',
+      },
+      {
+        url: `/insurance/brand/insurance-trust-hub-icon-192.png?v=${INSURANCE_LOGO_VERSION}`,
         sizes: '192x192',
         type: 'image/png',
       },
