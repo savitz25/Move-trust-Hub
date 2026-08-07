@@ -19,9 +19,10 @@
   --foreground: 215 28% 17%;
   --primary: 205 100% 42%;
   --muted: 210 40% 96.5%;
-  /* Match globals — readable on white for a11y */
-  --muted-foreground: 215 18% 36%;
+  /* Match globals — readable on white for a11y (avoid light orange on white for small text) */
+  --muted-foreground: 215 20% 32%;
   --border: 214 32% 90%;
+  --primary-ink: 205 100% 28%;
 }
 
 html {

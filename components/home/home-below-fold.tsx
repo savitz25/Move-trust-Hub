@@ -4,14 +4,21 @@ import { ArrowRight, Shield, Truck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { FaqSection } from '@/components/seo/faq-section';
-import { InternalLinkHub } from '@/components/seo/internal-link-hub';
 import { homepageFaqItems } from '@/lib/seo/schemas';
 
+/** Below-fold link hub — keep out of initial homepage JS graph */
+const InternalLinkHub = dynamic(
+  () => import('@/components/seo/internal-link-hub').then((m) => m.InternalLinkHub),
+  { loading: () => <div className="min-h-[8rem]" aria-hidden="true" /> }
+);
 
 const ReviewHighlights = dynamic(
   () =>
     import('@/components/trust/review-highlights').then((m) => m.ReviewHighlights),
-  { loading: () => <div className="min-h-[280px] border-t" aria-hidden="true" /> }
+  {
+    ssr: false,
+    loading: () => <div className="min-h-[280px] border-t" aria-hidden="true" />,
+  }
 );
 
 export function HomeBelowFold() {

@@ -239,12 +239,15 @@
       box-shadow: 0 8px 24px -8px rgb(255 90 31 / 0.22), 0 2px 8px -2px rgb(10 37 64 / 0.06);
     }
   }
+  /** Composited-friendly pulse (transform/opacity only — avoid filter for main-thread cost) */
   .move-hub-pulse {
     animation: move-hub-pulse 3.2s ease-in-out infinite;
+    will-change: transform, opacity;
   }
   @media (prefers-reduced-motion: reduce) {
     .move-hub-pulse {
       animation: none;
+      will-change: auto;
     }
   }
   /** Shared content width rhythm for homepage sections */
@@ -325,10 +328,12 @@
 @keyframes move-hub-pulse {
   0%,
   100% {
-    filter: drop-shadow(0 0 0 transparent);
+    opacity: 1;
+    transform: scale(1);
   }
   50% {
-    filter: drop-shadow(0 0 6px rgb(255 90 31 / 0.45));
+    opacity: 0.92;
+    transform: scale(1.015);
   }
 }
 

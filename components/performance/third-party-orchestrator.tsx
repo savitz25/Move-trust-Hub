@@ -7,9 +7,9 @@ import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 
 /**
- * Non-GA third parties (Vercel Analytics, chatbot) may stay deferred for PSI.
- * GA4 lives permanently in app/layout.tsx via GoogleAnalyticsRoot — do not
- * re-mount DeferredGtag here (avoids double-loading and interaction gates).
+ * Non-GA third parties (Vercel Analytics, chatbot) stay deferred for PSI.
+ * GA4 loads once via GoogleAnalyticsRoot (idle/lazyOnload) — never re-mount
+ * DeferredGtag here (avoids double-loading).
  */
 export function ThirdPartyOrchestrator({
   flags: initialFlags,

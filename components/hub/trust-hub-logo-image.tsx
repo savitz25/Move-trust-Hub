@@ -23,9 +23,9 @@ export function TrustHubLogoImage({
   hubId = 'move',
 }: TrustHubLogoImageProps) {
   const isHeader = variant === 'header';
-  // Move sheet lockup is wider (icon + MOVE / TRUST HUB); keep height for nav
-  const displayW = isHeader ? 260 : 220;
-  const displayH = isHeader ? 72 : 56;
+  // Match CSS .hub-logo-slot display box to avoid oversized raster decode
+  const displayW = isHeader ? 248 : 220;
+  const displayH = isHeader ? 52 : 56;
   const hub = getHubConfig(hubId);
   const src = isHeader ? hub.headerLogoSrc : hub.logoSrc;
   const alt = hub.logoAlt || TRUST_HUB_LOGO.alt;
@@ -38,12 +38,13 @@ export function TrustHubLogoImage({
       width={displayW}
       height={displayH}
       sizes={isHeader ? IMAGE_SIZES.headerLogo : IMAGE_SIZES.footerLogo}
+      // Never high — H1 text is the LCP candidate
       fetchPriority="auto"
       loading={priority ? 'eager' : 'lazy'}
       decoding="async"
       className={cn(
         'object-contain object-left bg-transparent',
-        isHeader ? 'h-10 w-auto max-h-11 sm:h-11 md:h-12' : 'h-11 w-[200px] sm:h-12 sm:w-[220px]',
+        isHeader ? 'h-full w-full max-h-full' : 'h-11 w-[200px] sm:h-12 sm:w-[220px]',
         isSvg && 'w-auto',
         className
       )}

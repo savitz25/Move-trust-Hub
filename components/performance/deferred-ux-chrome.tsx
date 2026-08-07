@@ -5,10 +5,10 @@ import { Suspense } from 'react';
 import { useDeferredLoad } from '@/lib/hooks/use-deferred-load';
 import type { HubId } from '@/lib/hub/types';
 
-/** Interaction-first on mobile PSI — avoids layout shifts before LCP settles. */
+/** Defer non-critical UX chrome until after first paint / LCP window. */
 const UX_DEFER = {
-  idleTimeout: 4000,
-  maxWait: 12000,
+  idleTimeout: 5500,
+  maxWait: 14_000,
   includeScroll: false,
   interactionOnly: false,
 } as const;

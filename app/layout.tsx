@@ -43,14 +43,21 @@ export default async function RootLayout({
     : buildTrustHubNetworkSchema();
 
   return (
-    <html lang="en" className={`light ${siteFontVariables}`}>
+    <html
+      lang="en"
+      className={`light ${siteFontVariables}`}
+      // Extensions often mutate <html>; suppress noise that becomes React #418
+      suppressHydrationWarning
+    >
       <body
         className="font-sans antialiased"
         data-network-standard={ASK_NETWORK_STANDARD_VERSION}
+        suppressHydrationWarning
       >
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <SchemaInjector data={rootSchema} />
         {children}
+        {/* GA deferred (idle) — must not compete with hero LCP */}
         <GoogleAnalyticsRoot />
         <DeferredUiStyles />
         <ThirdPartyOrchestrator />
