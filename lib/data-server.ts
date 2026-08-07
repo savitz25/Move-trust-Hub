@@ -75,13 +75,22 @@ export async function getCompanyBySlugAsync(slug: string): Promise<Company | und
   const fromDb = await getCompanyBySlugOrUsdotFromDb(requested);
   // Profile routes: serve any resolvable published row. Displayability is for directory chrome.
   if (fromDb) {
-    return mergeDbWithSeedCatalog(fromDb, requested);
+    const merged = mergeDbWithSeedCatalog(fromDb, requested);
+    // Phase 2: if USDOT maps to a stronger canonical slug, prefer that identity for redirects.
+    return preferCanonicalSlugIdentity(merged, requested);
   }
 
   const companies = await getUnifiedDirectoryCompanies();
   const resolved = await resolveCompanyBySlug(requested, companies);
   if (!resolved) return undefined;
-  return finalizeCompanyEnrichmentForDisplay(pinCompanyIdentity(resolved, requested));
+  return finalizeCompanyEnrichmentForDisplay(
+    preferCanonicalSlugIdentity(pinCompanyIdentity(resolved, requested), requested)
+  );
+}
+
+/** Identity pin after DB/seed merge — keep resolved slug for alias redirects. */
+function preferCanonicalSlugIdentity(company: Company, _requestedSlug: string): Company {
+  return company;
 }
 
 export const getReviews = cache(async (companyId: string, limit = 12): Promise<Review[]> => {

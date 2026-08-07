@@ -1,3 +1,5 @@
+import { sanitizeCityLocality } from '@/lib/data-quality/location';
+
 const US_STATE_ABBREVS = new Set([
   'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA',
   'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
@@ -70,6 +72,12 @@ function tokenToState(token: string): string | null {
   return STATE_NAME_TO_CODE[token.toLowerCase()] ?? null;
 }
 
+function cleanCity(city: string | null | undefined): string | null {
+  if (!city?.trim()) return null;
+  const cleaned = sanitizeCityLocality(city);
+  return cleaned.city || null;
+}
+
 /** Parse city/state from "City, ST" or full street addresses like "123 Main St, Honolulu, HI, 96819". */
 export function parseHeadquarters(headquarters: string | null | undefined): ParsedHeadquarters {
   if (!headquarters?.trim()) return { city: null, state: null };
@@ -82,7 +90,7 @@ export function parseHeadquarters(headquarters: string | null | undefined): Pars
   if (parts.length < 2) {
     const maybeState = tokenToState(parts[0] ?? '');
     if (maybeState) return { city: null, state: maybeState };
-    return { city: parts[0] ?? null, state: null };
+    return { city: cleanCity(parts[0]), state: null };
   }
 
   for (let i = parts.length - 1; i >= 0; i--) {
@@ -95,7 +103,7 @@ export function parseHeadquarters(headquarters: string | null | undefined): Pars
       if (!state) continue;
       const cityPart = i > 0 ? parts[i - 1]! : parts[0] ?? null;
       const city = cityPart?.replace(/\s+\d{5}(-\d{4})?$/, '').trim() || null;
-      return { city, state };
+      return { city: cleanCity(city), state };
     }
 
     const stateZipMatch = zipStripped.match(/^([A-Za-z]{2})$/);
@@ -104,7 +112,7 @@ export function parseHeadquarters(headquarters: string | null | undefined): Pars
       if (state) {
         const cityPart = i > 0 ? parts[i - 1]! : parts[0] ?? null;
         const city = cityPart?.replace(/\s+\d{5}(-\d{4})?$/, '').trim() || null;
-        return { city, state };
+        return { city: cleanCity(city), state };
       }
     }
 
@@ -112,7 +120,7 @@ export function parseHeadquarters(headquarters: string | null | undefined): Pars
     if (wholeSegmentState) {
       const cityPart = i > 0 ? parts[i - 1]! : parts[0] ?? null;
       const city = cityPart?.replace(/\s+\d{5}(-\d{4})?$/, '').trim() || null;
-      return { city, state: wholeSegmentState };
+      return { city: cleanCity(city), state: wholeSegmentState };
     }
   }
 
@@ -122,7 +130,7 @@ export function parseHeadquarters(headquarters: string | null | undefined): Pars
   const city = parts[parts.length - 2] ?? parts[0] ?? null;
 
   return {
-    city: city || null,
+    city: cleanCity(city),
     state,
   };
 }

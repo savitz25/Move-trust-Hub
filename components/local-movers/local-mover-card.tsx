@@ -11,6 +11,10 @@ import { assessLicense } from '@/lib/trust/license-verification';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { sanitizeMoverDescription } from '@/lib/local-movers/sanitize-mover-description';
 import { classifyMoverLocality } from '@/lib/local-movers/locality-rules';
+import {
+  normalizeServiceTags,
+  normalizeSpecialtyTags,
+} from '@/lib/data-quality/display-normalize';
 import type { LocalCounty } from '@/lib/local-movers/types';
 
 export function LocalMoverCard({
@@ -195,12 +199,12 @@ export function LocalMoverCard({
       </p>
 
       <div className="flex flex-wrap gap-1.5 mb-4" aria-label="Services offered">
-        {(mover.services ?? []).slice(0, 5).map((service) => (
+        {normalizeServiceTags(mover.services).slice(0, 5).map((service) => (
           <Badge key={service} variant="secondary" className="text-[10px] font-medium">
             {service}
           </Badge>
         ))}
-        {(mover.specialties ?? []).slice(0, 2).map((specialty) => (
+        {normalizeSpecialtyTags(mover.specialties).slice(0, 2).map((specialty) => (
           <Badge key={specialty} variant="outline" className="text-[10px] font-medium">
             {specialty}
           </Badge>

@@ -603,7 +603,9 @@ async function resolveCompanyBySlugOrUsdotInner(
   }
 
   if (!slugError && bySlugOrId) {
-    return mapRow(bySlugOrId as Record<string, unknown>);
+    const mapped = mapRow(bySlugOrId as Record<string, unknown>);
+    // Phase 2: collision suffixes (-2) → prefer canonical USDOT peer without numeric suffix
+    return (await preferCanonicalUsdotPeer(supabase, mapped, projections)) ?? mapped;
   }
 
   if (slugError && isCompaniesTableUnavailableError(slugError.message, slugError.code)) {
@@ -665,6 +667,40 @@ async function resolveCompanyBySlugOrUsdotInner(
     return mapRow(viaRpc);
   }
 
+  return undefined;
+}
+
+/**
+ * Phase 2: if this row has a USDOT and a sibling slug without -N suffix exists,
+ * return the sibling so profile routes 301 to the canonical URL.
+ */
+async function preferCanonicalUsdotPeer(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  company: Company,
+  projections: string[]
+): Promise<Company | undefined> {
+  const usdot = normalizeCompanyUsdot(company.usdotNumber);
+  if (!usdot) return undefined;
+  if (!/-\d+$/.test(company.slug || '')) return undefined;
+
+  for (const cols of projections) {
+    const { data, error } = await supabase
+      .from('companies')
+      .select(cols)
+      .eq('usdot_number', usdot)
+      .limit(20);
+    if (error && isSchemaColumnError(error)) continue;
+    if (error || !data?.length) return undefined;
+
+    const peers = (data as Record<string, unknown>[]).map((row) => mapRow(row));
+    const preferred =
+      peers.find((p) => p.slug && !/-\d+$/.test(p.slug)) ??
+      peers.sort((a, b) => a.slug.length - b.slug.length)[0];
+    if (preferred && preferred.slug && preferred.slug !== company.slug) {
+      return preferred;
+    }
+    return undefined;
+  }
   return undefined;
 }
 

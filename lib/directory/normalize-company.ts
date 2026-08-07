@@ -1,5 +1,11 @@
 import type { Company } from '@/types';
 import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
+import {
+  normalizeServiceTags,
+  normalizeSpecialtyTags,
+} from '@/lib/data-quality/display-normalize';
+import { dedupeEntitiesByIdentity } from '@/lib/data-quality/entity-dedup';
+import { allowVerifiedPresentation } from '@/lib/data-quality/consistency-alarms';
 
 const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
   fiveStar: 0,
@@ -12,8 +18,15 @@ const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
 /** Normalize company records for safe directory rendering (handles suggestion-approved rows). */
 export function normalizeCompanyForDisplay(company: Company): Company {
   const slug = (company.slug || company.id || '').trim() || 'unknown-company';
-  const services = Array.isArray(company.services) ? company.services : [];
-  const specialties = Array.isArray(company.specialties) ? company.specialties : [];
+  const services = normalizeServiceTags(
+    Array.isArray(company.services) ? (company.services as string[]) : []
+  ) as Company['services'];
+  const specialties = normalizeSpecialtyTags(
+    Array.isArray(company.specialties) ? company.specialties : []
+  );
+
+  const isVerified =
+    Boolean(company.isVerified) && allowVerifiedPresentation(company);
 
   return {
     ...company,
@@ -45,7 +58,7 @@ export function normalizeCompanyForDisplay(company: Company): Company {
     specialties,
     ratingBreakdown: company.ratingBreakdown ?? EMPTY_RATING_BREAKDOWN,
     lastUpdated: company.lastUpdated || '',
-    isVerified: Boolean(company.isVerified),
+    isVerified,
     bbbAccredited: Boolean(company.bbbAccredited),
     outOfService: Boolean(company.outOfService),
     // Explicit pass-through so enrichment is never dropped by partial rebuilds
@@ -57,7 +70,7 @@ export function normalizeCompanyForDisplay(company: Company): Company {
 export function normalizeCompaniesForDisplay(companies: Company[]): Company[] {
   if (!Array.isArray(companies)) return [];
 
-  return companies
+  const mapped = companies
     .map((company) => {
       try {
         return normalizeCompanyForDisplay(company);
@@ -66,6 +79,9 @@ export function normalizeCompaniesForDisplay(companies: Company[]): Company[] {
       }
     })
     .filter((row): row is Company => row !== null);
+
+  // Phase 2: collapse USDOT / name+place duplicates in public lists
+  return dedupeEntitiesByIdentity(mapped).unique;
 }
 
 export function formatCompanyHeadquarters(headquarters: string | null | undefined): string {

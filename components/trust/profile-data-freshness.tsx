@@ -1,30 +1,37 @@
 import { Database } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-function formatSyncDate(iso: string): string {
-  return new Date(iso).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  });
-}
+import {
+  buildCompanyDateStamps,
+  formatRecordDate,
+  primaryRegulatoryDate,
+} from '@/lib/data-quality/record-dates';
 
 type ProfileDataFreshnessProps = {
   fmcsaLastChecked?: string | null;
+  bbbLastChecked?: string | null;
   lastUpdated?: string | null;
+  googleSyncedAt?: string | null;
   className?: string;
 };
 
 /**
- * Prominent, dated freshness note for company profiles.
- * Builds trust by showing when FMCSA licensing data was last synced.
+ * Honest data freshness — only real sync/update events, never deploy-time stamps.
+ * Separates regulatory refresh from profile record updates.
  */
 export function ProfileDataFreshness({
   fmcsaLastChecked,
+  bbbLastChecked,
   lastUpdated,
+  googleSyncedAt,
   className,
 }: ProfileDataFreshnessProps) {
-  const syncDate = fmcsaLastChecked ?? lastUpdated;
+  const regulatory = primaryRegulatoryDate({ fmcsaLastChecked, lastUpdated });
+  const stamps = buildCompanyDateStamps({
+    fmcsaLastChecked,
+    bbbLastChecked,
+    lastUpdated,
+    googleSyncedAt,
+  });
 
   return (
     <aside
@@ -38,10 +45,9 @@ export function ProfileDataFreshness({
       <p className="flex items-start gap-2 leading-relaxed">
         <Database className="h-4 w-4 shrink-0 mt-0.5 text-emerald-700" aria-hidden="true" />
         <span>
-          {syncDate ? (
+          {regulatory ? (
             <>
-              <strong className="font-semibold">Licensing and compliance data</strong> last synced
-              from{' '}
+              <strong className="font-semibold">Regulatory data</strong> last refreshed from{' '}
               <a
                 href="https://safer.fmcsa.dot.gov/"
                 target="_blank"
@@ -50,18 +56,12 @@ export function ProfileDataFreshness({
               >
                 FMCSA SAFER
               </a>{' '}
-              on <time dateTime={syncDate}>{formatSyncDate(syncDate)}</time>.
-              {lastUpdated && fmcsaLastChecked && lastUpdated !== fmcsaLastChecked ? (
-                <span className="block text-xs text-emerald-800/80 mt-1">
-                  Profile editorial content last updated{' '}
-                  <time dateTime={lastUpdated}>{formatSyncDate(lastUpdated)}</time>.
-                </span>
-              ) : null}
+              on <time dateTime={regulatory}>{formatRecordDate(regulatory)}</time>.
             </>
           ) : (
             <>
-              <strong className="font-semibold">FMCSA licensing data</strong> sync pending — verify
-              current authority on{' '}
+              <strong className="font-semibold">FMCSA licensing data</strong> has no recorded refresh
+              timestamp on this profile — verify current authority on{' '}
               <a
                 href="https://safer.fmcsa.dot.gov/"
                 target="_blank"
@@ -73,6 +73,14 @@ export function ProfileDataFreshness({
               before booking.
             </>
           )}
+          {stamps
+            .filter((s) => s.kind !== 'regulatory_refreshed' || s.iso !== regulatory)
+            .map((s) => (
+              <span key={`${s.kind}-${s.iso}`} className="block text-xs text-emerald-800/80 mt-1">
+                {s.label}:{' '}
+                <time dateTime={s.iso}>{formatRecordDate(s.iso)}</time>
+              </span>
+            ))}
         </span>
       </p>
     </aside>

@@ -438,7 +438,17 @@ export default async function CompanyProfilePage({ params }: Props) {
                   <EditorialReviewVolume count={company.reviewCount} showNote />
                 </span>
               </div>
-              <div className="pt-2 border-t text-xs text-muted-foreground">Last data refresh: {company.lastUpdated}</div>
+              {company.fmcsaLastChecked ? (
+                <div className="pt-2 border-t text-xs text-muted-foreground">
+                  Regulatory data refreshed:{' '}
+                  <time dateTime={company.fmcsaLastChecked}>{company.fmcsaLastChecked}</time>
+                </div>
+              ) : company.lastUpdated ? (
+                <div className="pt-2 border-t text-xs text-muted-foreground">
+                  Profile record updated:{' '}
+                  <time dateTime={company.lastUpdated}>{company.lastUpdated}</time>
+                </div>
+              ) : null}
             </CardContent>
           </Card>
 
