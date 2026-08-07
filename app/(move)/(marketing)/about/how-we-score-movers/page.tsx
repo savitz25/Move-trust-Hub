@@ -392,11 +392,11 @@ export default async function HowWeScoreMoversPage() {
           <p className="text-sm text-muted-foreground leading-relaxed">
             Found outdated licensing, a wrong DBA, or a listing that should be removed?{' '}
             <Link href="/contact" className="text-primary font-medium underline underline-offset-2">
-              Contact editorial
+              Contact Move Trust Hub Research
             </Link>{' '}
-            or use company claim/portal flows when available. Named researchers are listed on the{' '}
+            or use company claim/portal flows when available. How we attribute research is on the{' '}
             <Link href="/about/editorial-team" className="text-primary font-medium underline underline-offset-2">
-              editorial team page
+              research accountability page
             </Link>
             .
           </p>

@@ -338,7 +338,7 @@
   "redirects": [
     {
       "source": "/calculators/premium-estimator",
-      "destination": "/insurance/calculators/premium-estimator",
+      "destination": "https://www.insurancetrusthub.com/calculators/premium-estimator",
       "permanent": true,
       "has": [
         {
@@ -349,7 +349,7 @@
     },
     {
       "source": "/calculators/premium-estimator",
-      "destination": "/insurance/calculators/premium-estimator",
+      "destination": "https://www.insurancetrusthub.com/calculators/premium-estimator",
       "permanent": true,
       "has": [
         {
@@ -360,7 +360,7 @@
     },
     {
       "source": "/calculators/medicare-gap",
-      "destination": "/insurance/calculators/medicare-gap",
+      "destination": "https://www.insurancetrusthub.com/calculators/medicare-gap",
       "permanent": true,
       "has": [
         {
@@ -371,7 +371,7 @@
     },
     {
       "source": "/calculators/medicare-gap",
-      "destination": "/insurance/calculators/medicare-gap",
+      "destination": "https://www.insurancetrusthub.com/calculators/medicare-gap",
       "permanent": true,
       "has": [
         {
@@ -382,7 +382,7 @@
     },
     {
       "source": "/calculators/aca-subsidy",
-      "destination": "/insurance/calculators/aca-subsidy",
+      "destination": "https://www.insurancetrusthub.com/calculators/aca-subsidy",
       "permanent": true,
       "has": [
         {
@@ -393,7 +393,7 @@
     },
     {
       "source": "/calculators/aca-subsidy",
-      "destination": "/insurance/calculators/aca-subsidy",
+      "destination": "https://www.insurancetrusthub.com/calculators/aca-subsidy",
       "permanent": true,
       "has": [
         {
@@ -646,7 +646,7 @@
     },
     {
       "source": "/resources/how-to-choose-health-insurance",
-      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "destination": "https://www.insurancetrusthub.com/resources/how-to-choose-health-insurance-plan",
       "permanent": true,
       "has": [
         {
@@ -657,7 +657,7 @@
     },
     {
       "source": "/resources/how-to-choose-health-insurance",
-      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "destination": "https://www.insurancetrusthub.com/resources/how-to-choose-health-insurance-plan",
       "permanent": true,
       "has": [
         {
@@ -668,7 +668,7 @@
     },
     {
       "source": "/insurance/resources/how-to-choose-health-insurance",
-      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "destination": "https://www.insurancetrusthub.com/resources/how-to-choose-health-insurance-plan",
       "permanent": true,
       "has": [
         {
@@ -679,7 +679,7 @@
     },
     {
       "source": "/insurance/resources/how-to-choose-health-insurance",
-      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "destination": "https://www.insurancetrusthub.com/resources/how-to-choose-health-insurance-plan",
       "permanent": true,
       "has": [
         {
@@ -690,7 +690,7 @@
     },
     {
       "source": "/resources/health-insurance-2026-guide",
-      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "destination": "https://www.insurancetrusthub.com/resources/how-to-choose-health-insurance-plan",
       "permanent": true,
       "has": [
         {
@@ -701,7 +701,7 @@
     },
     {
       "source": "/resources/health-insurance-2026-guide",
-      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "destination": "https://www.insurancetrusthub.com/resources/how-to-choose-health-insurance-plan",
       "permanent": true,
       "has": [
         {
@@ -712,7 +712,7 @@
     },
     {
       "source": "/insurance/resources/health-insurance-2026-guide",
-      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "destination": "https://www.insurancetrusthub.com/resources/how-to-choose-health-insurance-plan",
       "permanent": true,
       "has": [
         {
@@ -723,7 +723,7 @@
     },
     {
       "source": "/insurance/resources/health-insurance-2026-guide",
-      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "destination": "https://www.insurancetrusthub.com/resources/how-to-choose-health-insurance-plan",
       "permanent": true,
       "has": [
         {
@@ -734,7 +734,7 @@
     },
     {
       "source": "/resources/hsa",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -745,7 +745,7 @@
     },
     {
       "source": "/resources/hsa",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -756,7 +756,7 @@
     },
     {
       "source": "/insurance/resources/hsa",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -767,7 +767,7 @@
     },
     {
       "source": "/insurance/resources/hsa",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -778,7 +778,7 @@
     },
     {
       "source": "/resources/hsa-2026",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -789,7 +789,7 @@
     },
     {
       "source": "/resources/hsa-2026",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -800,7 +800,7 @@
     },
     {
       "source": "/insurance/resources/hsa-2026",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -811,7 +811,7 @@
     },
     {
       "source": "/insurance/resources/hsa-2026",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -822,7 +822,7 @@
     },
     {
       "source": "/resources/health-savings-account",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -833,7 +833,7 @@
     },
     {
       "source": "/resources/health-savings-account",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -844,7 +844,7 @@
     },
     {
       "source": "/insurance/resources/health-savings-account",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -855,7 +855,7 @@
     },
     {
       "source": "/insurance/resources/health-savings-account",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -866,7 +866,7 @@
     },
     {
       "source": "/resources/health-savings-accounts",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -877,7 +877,7 @@
     },
     {
       "source": "/resources/health-savings-accounts",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -888,7 +888,7 @@
     },
     {
       "source": "/insurance/resources/health-savings-accounts",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -899,7 +899,7 @@
     },
     {
       "source": "/insurance/resources/health-savings-accounts",
-      "destination": "/insurance/resources/health-savings-accounts-hsa-2026",
+      "destination": "https://www.insurancetrusthub.com/resources/health-savings-accounts-hsa-2026",
       "permanent": true,
       "has": [
         {
@@ -910,7 +910,7 @@
     },
     {
       "source": "/resources/understanding-aca-subsidies",
-      "destination": "/insurance/resources/aca-obamacare-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/aca-obamacare-guide",
       "permanent": true,
       "has": [
         {
@@ -921,7 +921,7 @@
     },
     {
       "source": "/resources/understanding-aca-subsidies",
-      "destination": "/insurance/resources/aca-obamacare-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/aca-obamacare-guide",
       "permanent": true,
       "has": [
         {
@@ -932,7 +932,7 @@
     },
     {
       "source": "/insurance/resources/understanding-aca-subsidies",
-      "destination": "/insurance/resources/aca-obamacare-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/aca-obamacare-guide",
       "permanent": true,
       "has": [
         {
@@ -943,7 +943,7 @@
     },
     {
       "source": "/insurance/resources/understanding-aca-subsidies",
-      "destination": "/insurance/resources/aca-obamacare-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/aca-obamacare-guide",
       "permanent": true,
       "has": [
         {
@@ -954,7 +954,7 @@
     },
     {
       "source": "/resources/texas-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -965,7 +965,7 @@
     },
     {
       "source": "/resources/texas-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -976,7 +976,7 @@
     },
     {
       "source": "/insurance/resources/texas-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -987,7 +987,7 @@
     },
     {
       "source": "/insurance/resources/texas-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -998,7 +998,7 @@
     },
     {
       "source": "/resources/california-home-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1009,7 +1009,7 @@
     },
     {
       "source": "/resources/california-home-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1020,7 +1020,7 @@
     },
     {
       "source": "/insurance/resources/california-home-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1031,7 +1031,7 @@
     },
     {
       "source": "/insurance/resources/california-home-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1042,7 +1042,7 @@
     },
     {
       "source": "/resources/wildfire-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1053,7 +1053,7 @@
     },
     {
       "source": "/resources/wildfire-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1064,7 +1064,7 @@
     },
     {
       "source": "/insurance/resources/wildfire-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1075,7 +1075,7 @@
     },
     {
       "source": "/insurance/resources/wildfire-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1086,7 +1086,7 @@
     },
     {
       "source": "/resources/new-york-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -1097,7 +1097,7 @@
     },
     {
       "source": "/resources/new-york-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -1108,7 +1108,7 @@
     },
     {
       "source": "/insurance/resources/new-york-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -1119,7 +1119,7 @@
     },
     {
       "source": "/insurance/resources/new-york-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -1130,7 +1130,7 @@
     },
     {
       "source": "/resources/north-carolina-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1141,7 +1141,7 @@
     },
     {
       "source": "/resources/north-carolina-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1152,7 +1152,7 @@
     },
     {
       "source": "/insurance/resources/north-carolina-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1163,7 +1163,7 @@
     },
     {
       "source": "/insurance/resources/north-carolina-insurance",
-      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "destination": "https://www.insurancetrusthub.com/resources/homeowners-insurance-basics",
       "permanent": true,
       "has": [
         {
@@ -1174,7 +1174,7 @@
     },
     {
       "source": "/resources/illinois-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -1185,7 +1185,7 @@
     },
     {
       "source": "/resources/illinois-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -1196,7 +1196,7 @@
     },
     {
       "source": "/insurance/resources/illinois-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -1207,7 +1207,7 @@
     },
     {
       "source": "/insurance/resources/illinois-auto-insurance",
-      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "destination": "https://www.insurancetrusthub.com/resources/auto-insurance-costs-by-state",
       "permanent": true,
       "has": [
         {
@@ -1218,7 +1218,7 @@
     },
     {
       "source": "/resources/obamacare-guide",
-      "destination": "/insurance/resources/aca-obamacare-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/aca-obamacare-guide",
       "permanent": true,
       "has": [
         {
@@ -1229,7 +1229,7 @@
     },
     {
       "source": "/resources/obamacare-guide",
-      "destination": "/insurance/resources/aca-obamacare-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/aca-obamacare-guide",
       "permanent": true,
       "has": [
         {
@@ -1240,7 +1240,7 @@
     },
     {
       "source": "/insurance/resources/obamacare-guide",
-      "destination": "/insurance/resources/aca-obamacare-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/aca-obamacare-guide",
       "permanent": true,
       "has": [
         {
@@ -1251,7 +1251,7 @@
     },
     {
       "source": "/insurance/resources/obamacare-guide",
-      "destination": "/insurance/resources/aca-obamacare-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/aca-obamacare-guide",
       "permanent": true,
       "has": [
         {
@@ -1262,7 +1262,7 @@
     },
     {
       "source": "/resources/medigap-guide",
-      "destination": "/insurance/resources/medicare-advantage-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/medicare-advantage-guide",
       "permanent": true,
       "has": [
         {
@@ -1273,7 +1273,7 @@
     },
     {
       "source": "/resources/medigap-guide",
-      "destination": "/insurance/resources/medicare-advantage-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/medicare-advantage-guide",
       "permanent": true,
       "has": [
         {
@@ -1284,7 +1284,7 @@
     },
     {
       "source": "/insurance/resources/medigap-guide",
-      "destination": "/insurance/resources/medicare-advantage-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/medicare-advantage-guide",
       "permanent": true,
       "has": [
         {
@@ -1295,7 +1295,7 @@
     },
     {
       "source": "/insurance/resources/medigap-guide",
-      "destination": "/insurance/resources/medicare-advantage-guide",
+      "destination": "https://www.insurancetrusthub.com/resources/medicare-advantage-guide",
       "permanent": true,
       "has": [
         {
@@ -1306,7 +1306,7 @@
     },
     {
       "source": "/insurance/hubs/south-florida",
-      "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
+      "destination": "https://www.insurancetrusthub.com/hubs/florida/miami-fort-lauderdale",
       "permanent": true,
       "has": [
         {
@@ -1317,7 +1317,7 @@
     },
     {
       "source": "/insurance/hubs/south-florida",
-      "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
+      "destination": "https://www.insurancetrusthub.com/hubs/florida/miami-fort-lauderdale",
       "permanent": true,
       "has": [
         {
@@ -1328,7 +1328,7 @@
     },
     {
       "source": "/hubs/south-florida",
-      "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
+      "destination": "https://www.insurancetrusthub.com/hubs/florida/miami-fort-lauderdale",
       "permanent": true,
       "has": [
         {
@@ -1339,7 +1339,7 @@
     },
     {
       "source": "/hubs/south-florida",
-      "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
+      "destination": "https://www.insurancetrusthub.com/hubs/florida/miami-fort-lauderdale",
       "permanent": true,
       "has": [
         {
@@ -1350,7 +1350,7 @@
     },
     {
       "source": "/directory",
-      "destination": "/insurance/directory",
+      "destination": "https://www.insurancetrusthub.com/directory",
       "permanent": true,
       "has": [
         {
@@ -1361,7 +1361,7 @@
     },
     {
       "source": "/directory",
-      "destination": "/insurance/directory",
+      "destination": "https://www.insurancetrusthub.com/directory",
       "permanent": true,
       "has": [
         {
@@ -1372,7 +1372,7 @@
     },
     {
       "source": "/directory/:path*",
-      "destination": "/insurance/directory/:path*",
+      "destination": "https://www.insurancetrusthub.com/directory/:path*",
       "permanent": true,
       "has": [
         {
@@ -1383,7 +1383,7 @@
     },
     {
       "source": "/directory/:path*",
-      "destination": "/insurance/directory/:path*",
+      "destination": "https://www.insurancetrusthub.com/directory/:path*",
       "permanent": true,
       "has": [
         {
@@ -1394,7 +1394,7 @@
     },
     {
       "source": "/hubs",
-      "destination": "/insurance/hubs",
+      "destination": "https://www.insurancetrusthub.com/hubs",
       "permanent": true,
       "has": [
         {
@@ -1405,7 +1405,7 @@
     },
     {
       "source": "/hubs",
-      "destination": "/insurance/hubs",
+      "destination": "https://www.insurancetrusthub.com/hubs",
       "permanent": true,
       "has": [
         {
@@ -1416,7 +1416,7 @@
     },
     {
       "source": "/hubs/:path*",
-      "destination": "/insurance/hubs/:path*",
+      "destination": "https://www.insurancetrusthub.com/hubs/:path*",
       "permanent": true,
       "has": [
         {
@@ -1427,7 +1427,7 @@
     },
     {
       "source": "/hubs/:path*",
-      "destination": "/insurance/hubs/:path*",
+      "destination": "https://www.insurancetrusthub.com/hubs/:path*",
       "permanent": true,
       "has": [
         {
@@ -1438,7 +1438,7 @@
     },
     {
       "source": "/destinations",
-      "destination": "/insurance/destinations",
+      "destination": "https://www.insurancetrusthub.com/destinations",
       "permanent": true,
       "has": [
         {
@@ -1449,7 +1449,7 @@
     },
     {
       "source": "/destinations",
-      "destination": "/insurance/destinations",
+      "destination": "https://www.insurancetrusthub.com/destinations",
       "permanent": true,
       "has": [
         {
@@ -1460,7 +1460,7 @@
     },
     {
       "source": "/destinations/:path*",
-      "destination": "/insurance/destinations/:path*",
+      "destination": "https://www.insurancetrusthub.com/destinations/:path*",
       "permanent": true,
       "has": [
         {
@@ -1471,7 +1471,7 @@
     },
     {
       "source": "/destinations/:path*",
-      "destination": "/insurance/destinations/:path*",
+      "destination": "https://www.insurancetrusthub.com/destinations/:path*",
       "permanent": true,
       "has": [
         {
@@ -1482,7 +1482,7 @@
     },
     {
       "source": "/providers",
-      "destination": "/insurance/providers",
+      "destination": "https://www.insurancetrusthub.com/providers",
       "permanent": true,
       "has": [
         {
@@ -1493,7 +1493,7 @@
     },
     {
       "source": "/providers",
-      "destination": "/insurance/providers",
+      "destination": "https://www.insurancetrusthub.com/providers",
       "permanent": true,
       "has": [
         {
@@ -1504,7 +1504,7 @@
     },
     {
       "source": "/providers/:path*",
-      "destination": "/insurance/providers/:path*",
+      "destination": "https://www.insurancetrusthub.com/providers/:path*",
       "permanent": true,
       "has": [
         {
@@ -1515,7 +1515,7 @@
     },
     {
       "source": "/providers/:path*",
-      "destination": "/insurance/providers/:path*",
+      "destination": "https://www.insurancetrusthub.com/providers/:path*",
       "permanent": true,
       "has": [
         {
@@ -1526,7 +1526,7 @@
     },
     {
       "source": "/tools",
-      "destination": "/insurance/tools",
+      "destination": "https://www.insurancetrusthub.com/tools",
       "permanent": true,
       "has": [
         {
@@ -1537,7 +1537,7 @@
     },
     {
       "source": "/tools",
-      "destination": "/insurance/tools",
+      "destination": "https://www.insurancetrusthub.com/tools",
       "permanent": true,
       "has": [
         {
@@ -1548,7 +1548,7 @@
     },
     {
       "source": "/tools/:path*",
-      "destination": "/insurance/tools/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/:path*",
       "permanent": true,
       "has": [
         {
@@ -1559,7 +1559,7 @@
     },
     {
       "source": "/tools/:path*",
-      "destination": "/insurance/tools/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/:path*",
       "permanent": true,
       "has": [
         {
@@ -1570,7 +1570,7 @@
     },
     {
       "source": "/privacy",
-      "destination": "/insurance/privacy",
+      "destination": "https://www.insurancetrusthub.com/privacy",
       "permanent": true,
       "has": [
         {
@@ -1581,7 +1581,7 @@
     },
     {
       "source": "/privacy",
-      "destination": "/insurance/privacy",
+      "destination": "https://www.insurancetrusthub.com/privacy",
       "permanent": true,
       "has": [
         {
@@ -1592,7 +1592,7 @@
     },
     {
       "source": "/terms",
-      "destination": "/insurance/terms",
+      "destination": "https://www.insurancetrusthub.com/terms",
       "permanent": true,
       "has": [
         {
@@ -1603,7 +1603,7 @@
     },
     {
       "source": "/terms",
-      "destination": "/insurance/terms",
+      "destination": "https://www.insurancetrusthub.com/terms",
       "permanent": true,
       "has": [
         {
@@ -1846,6 +1846,72 @@
     {
       "source": "/lender/:path*",
       "destination": "https://www.lendertrusthub.com/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance",
+      "destination": "https://www.insurancetrusthub.com/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance",
+      "destination": "https://www.insurancetrusthub.com/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/",
+      "destination": "https://www.insurancetrusthub.com/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/",
+      "destination": "https://www.insurancetrusthub.com/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/:path((?!admin(?:/|$)).*)",
+      "destination": "https://www.insurancetrusthub.com/:path",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/insurance/:path((?!admin(?:/|$)).*)",
+      "destination": "https://www.insurancetrusthub.com/:path",
       "permanent": true,
       "has": [
         {

@@ -478,12 +478,11 @@ export function buildCountySchemaGraph({
       datePublished: CONTENT_PUBLISHED,
       dateModified: contentModified,
       author: {
-        '@type': 'Person',
-        '@id': `${SITE_URL}/about/editorial-team#editor-elena-vargas`,
-        name: 'Elena Vargas',
-        jobTitle: 'Local Markets Research Lead',
-        url: `${SITE_URL}/about/editorial-team#editor-elena-vargas`,
-        worksFor: { '@id': ORG_ID },
+        '@type': 'Organization',
+        '@id': `${SITE_URL}/about/editorial-team#move-research`,
+        name: 'Move Trust Hub Research',
+        url: `${SITE_URL}/about/editorial-team`,
+        parentOrganization: { '@id': ORG_ID },
       },
       publisher: { '@id': ORG_ID },
       isPartOf: {

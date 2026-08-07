@@ -17,26 +17,27 @@ import {
  * IMPORTANT: Do NOT blanket-redirect `/resources` — Move marketing guides live at /resources/*.
  */
 
-/** Insurance calculators must win over lender `/calculators/:path*` catch-all. */
+const LENDER_APEX = 'https://www.lendertrusthub.com';
+const INSURANCE_APEX = 'https://www.insurancetrusthub.com';
+
+/** Insurance calculators → standalone ITH (never stay on Move host). */
 const INSURANCE_CALCULATOR_REDIRECTS: Redirect[] = [
   {
     source: '/calculators/premium-estimator',
-    destination: '/insurance/calculators/premium-estimator',
+    destination: `${INSURANCE_APEX}/calculators/premium-estimator`,
     permanent: true,
   },
   {
     source: '/calculators/medicare-gap',
-    destination: '/insurance/calculators/medicare-gap',
+    destination: `${INSURANCE_APEX}/calculators/medicare-gap`,
     permanent: true,
   },
   {
     source: '/calculators/aca-subsidy',
-    destination: '/insurance/calculators/aca-subsidy',
+    destination: `${INSURANCE_APEX}/calculators/aca-subsidy`,
     permanent: true,
   },
 ];
-
-const LENDER_APEX = 'https://www.lendertrusthub.com';
 
 /** Legacy lender calculator slugs → standalone LTH calculator hub with ?calc= id. */
 export const LENDER_CALCULATOR_SLUG_REDIRECTS: Redirect[] = [
@@ -53,34 +54,56 @@ export const LENDER_CALCULATOR_SLUG_REDIRECTS: Redirect[] = [
   { source: '/calculators/va', destination: `${LENDER_APEX}/calculators?calc=payment`, permanent: true },
 ];
 
-/** Duplicate specialty hub → canonical MSA page. */
+/** Duplicate specialty hub → canonical MSA page on ITH. */
 const INSURANCE_HUB_ALIAS_REDIRECTS: Redirect[] = [
   {
     source: '/insurance/hubs/south-florida',
-    destination: '/insurance/hubs/florida/miami-fort-lauderdale',
+    destination: `${INSURANCE_APEX}/hubs/florida/miami-fort-lauderdale`,
     permanent: true,
   },
   {
     source: '/hubs/south-florida',
-    destination: '/insurance/hubs/florida/miami-fort-lauderdale',
+    destination: `${INSURANCE_APEX}/hubs/florida/miami-fort-lauderdale`,
     permanent: true,
   },
 ];
 
-/** Bare root paths from legacy Insurance Trust Hub → `/insurance/*`. */
+/**
+ * Bare root paths from legacy Insurance Trust Hub → standalone ITH apex.
+ * Never park equity on movetrusthub.com/insurance/* intermediate URLs.
+ */
 const INSURANCE_ROOT_REDIRECTS: Redirect[] = [
-  { source: '/directory', destination: '/insurance/directory', permanent: true },
-  { source: '/directory/:path*', destination: '/insurance/directory/:path*', permanent: true },
-  { source: '/hubs', destination: '/insurance/hubs', permanent: true },
-  { source: '/hubs/:path*', destination: '/insurance/hubs/:path*', permanent: true },
-  { source: '/destinations', destination: '/insurance/destinations', permanent: true },
-  { source: '/destinations/:path*', destination: '/insurance/destinations/:path*', permanent: true },
-  { source: '/providers', destination: '/insurance/providers', permanent: true },
-  { source: '/providers/:path*', destination: '/insurance/providers/:path*', permanent: true },
-  { source: '/tools', destination: '/insurance/tools', permanent: true },
-  { source: '/tools/:path*', destination: '/insurance/tools/:path*', permanent: true },
-  { source: '/privacy', destination: '/insurance/privacy', permanent: true },
-  { source: '/terms', destination: '/insurance/terms', permanent: true },
+  { source: '/directory', destination: `${INSURANCE_APEX}/directory`, permanent: true },
+  { source: '/directory/:path*', destination: `${INSURANCE_APEX}/directory/:path*`, permanent: true },
+  { source: '/hubs', destination: `${INSURANCE_APEX}/hubs`, permanent: true },
+  { source: '/hubs/:path*', destination: `${INSURANCE_APEX}/hubs/:path*`, permanent: true },
+  { source: '/destinations', destination: `${INSURANCE_APEX}/destinations`, permanent: true },
+  {
+    source: '/destinations/:path*',
+    destination: `${INSURANCE_APEX}/destinations/:path*`,
+    permanent: true,
+  },
+  { source: '/providers', destination: `${INSURANCE_APEX}/providers`, permanent: true },
+  { source: '/providers/:path*', destination: `${INSURANCE_APEX}/providers/:path*`, permanent: true },
+  { source: '/tools', destination: `${INSURANCE_APEX}/tools`, permanent: true },
+  { source: '/tools/:path*', destination: `${INSURANCE_APEX}/tools/:path*`, permanent: true },
+  { source: '/privacy', destination: `${INSURANCE_APEX}/privacy`, permanent: true },
+  { source: '/terms', destination: `${INSURANCE_APEX}/terms`, permanent: true },
+];
+
+/**
+ * Monorepo /insurance/* → standalone InsuranceTrustHub (strip prefix).
+ * Excludes /insurance/admin (monorepo isolation for ITH admin on Move host).
+ */
+const INSURANCE_PREFIX_REDIRECTS: Redirect[] = [
+  { source: '/insurance', destination: `${INSURANCE_APEX}/`, permanent: true },
+  { source: '/insurance/', destination: `${INSURANCE_APEX}/`, permanent: true },
+  // path-to-regexp: match any path that is not admin / admin/*
+  {
+    source: '/insurance/:path((?!admin(?:/|$)).*)',
+    destination: `${INSURANCE_APEX}/:path`,
+    permanent: true,
+  },
 ];
 
 /**
@@ -130,14 +153,17 @@ function resourceAliasRedirects(): Redirect[] {
   const rules: Redirect[] = [];
   for (const [alias, canonical] of Object.entries(INSURANCE_RESOURCE_SLUG_ALIASES)) {
     if (alias === canonical) continue;
-    rules.push({
-      source: `/resources/${alias}`,
-      destination: `/insurance/resources/${canonical}`,
-      permanent: true,
-    });
+    // Only redirect insurance resource aliases that are not Move marketing slugs.
+    if (!MOVE_RESOURCE_SLUGS.has(alias)) {
+      rules.push({
+        source: `/resources/${alias}`,
+        destination: `${INSURANCE_APEX}/resources/${canonical}`,
+        permanent: true,
+      });
+    }
     rules.push({
       source: `/insurance/resources/${alias}`,
-      destination: `/insurance/resources/${canonical}`,
+      destination: `${INSURANCE_APEX}/resources/${canonical}`,
       permanent: true,
     });
   }
@@ -172,8 +198,9 @@ export function getVercelHubRedirects(): Redirect[] {
     ...INSURANCE_HUB_ALIAS_REDIRECTS,
     ...INSURANCE_ROOT_REDIRECTS,
     ...LENDER_ROOT_REDIRECTS,
-    // /lender/* after more specific bare-root rules
+    // Prefixed monorepo paths after more specific bare-root rules
     ...LENDER_PREFIX_REDIRECTS,
+    ...INSURANCE_PREFIX_REDIRECTS,
     CALCULATOR_INDEX_REDIRECT,
     CALCULATOR_VERCEL_CATCHALL,
   ]);
@@ -191,6 +218,7 @@ export function getNextConfigHubRedirects(): Redirect[] {
     ...INSURANCE_ROOT_REDIRECTS,
     ...LENDER_ROOT_REDIRECTS,
     ...LENDER_PREFIX_REDIRECTS,
+    ...INSURANCE_PREFIX_REDIRECTS,
   ]);
 }
 
@@ -254,7 +282,7 @@ export function resolveHubMigrationRedirect(
   if (pathname.startsWith('/calculators/')) {
     const slug = pathname.slice('/calculators/'.length).split('/')[0];
     if (INSURANCE_CALCULATOR_SLUGS.has(slug)) {
-      return `/insurance/calculators/${slug}`;
+      return `${INSURANCE_APEX}/calculators/${slug}`;
     }
     const calcId = LENDER_CALCULATOR_SLUG_MAP[slug];
     if (calcId) {
@@ -268,25 +296,17 @@ export function resolveHubMigrationRedirect(
     const slug = bareResource[1];
     if (MOVE_RESOURCE_SLUGS.has(slug)) return null;
     const canonical = INSURANCE_RESOURCE_SLUG_ALIASES[slug];
-    if (canonical && canonical !== slug) {
-      return `/insurance/resources/${canonical}`;
-    }
-    return null;
-  }
-
-  const prefixedResource = pathname.match(/^\/insurance\/resources\/([^/]+)$/);
-  if (prefixedResource) {
-    const slug = prefixedResource[1];
-    const canonical = INSURANCE_RESOURCE_SLUG_ALIASES[slug];
-    if (canonical && canonical !== slug) {
-      return `/insurance/resources/${canonical}`;
+    if (canonical) {
+      return `${INSURANCE_APEX}/resources/${canonical}`;
     }
     return null;
   }
 
   // Doubled hub prefixes from bad absolute links (GSC 404 / soft-404)
   if (pathname.startsWith('/insurance/insurance')) {
-    return pathname.replace(/^\/insurance\/insurance/, '/insurance') || '/insurance';
+    const stripped =
+      pathname.replace(/^\/insurance\/insurance(?=\/|$)/, '') || '/';
+    return `${INSURANCE_APEX}${stripped === '/' ? '/' : stripped}`;
   }
   if (pathname === '/lender/lender' || pathname.startsWith('/lender/lender/')) {
     const stripped = pathname.replace(/^\/lender\/lender(?=\/|$)/, '') || '/';
@@ -302,17 +322,25 @@ export function resolveHubMigrationRedirect(
     return `${LENDER_APEX}${bare}`;
   }
 
+  // Monorepo /insurance/* → standalone ITH (strip prefix). Keep /insurance/admin on Move.
+  if (pathname === '/insurance' || pathname === '/insurance/') {
+    return `${INSURANCE_APEX}/`;
+  }
+  if (pathname.startsWith('/insurance/')) {
+    if (pathname === '/insurance/admin' || pathname.startsWith('/insurance/admin/')) {
+      return null;
+    }
+    const bare = pathname.slice('/insurance'.length) || '/';
+    return `${INSURANCE_APEX}${bare}`;
+  }
+
   if (pathname === '/from-georgia-to-huntsville' || pathname.startsWith('/from-georgia-to-huntsville')) {
     return '/moving-to/alabama/huntsville-al';
   }
 
-  if (pathname.startsWith('/insurance/')) {
-    return null;
-  }
-
   for (const root of INSURANCE_BARE_ROOTS) {
     if (pathname === root || pathname.startsWith(`${root}/`)) {
-      return `/insurance${pathname}`;
+      return `${INSURANCE_APEX}${pathname}`;
     }
   }
 

@@ -79,7 +79,12 @@ export const homepageFaqItems = [
   {
     question: 'Is Move Trust Hub affiliated with the moving companies listed?',
     answer:
-      'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. Company names and data are used for identification and research purposes only.',
+      'No. Move Trust Hub is an independent informational moving research directory. We are not affiliated with, endorsed by, or a partner of the companies listed. Company names and data are used for identification and research purposes only. Lending and insurance research live on separate specialist sites in the Ask Trust Hub network — not on movetrusthub.com.',
+  },
+  {
+    question: 'Is Move Trust Hub only about moving?',
+    answer:
+      'Yes. Move Trust Hub is moving research and verification only — FMCSA-oriented mover directories, tools like Verify DOT, destination and corridor guides, and related education. It is part of the Ask Trust Hub network under common ownership with separated research and listing order, but it is not a multi-vertical directory.',
   },
 ];
 

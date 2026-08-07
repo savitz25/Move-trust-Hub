@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     default: lenderConfig.homeTitle,
     template: lenderConfig.metadataTitleTemplate,
   },
+  // Phase 0: residual monorepo tree must never be indexed on Move host.
+  // Public traffic is 301'd to lendertrusthub.com (middleware + next.config).
+  robots: { index: false, follow: false },
 };
 
 export default function LenderHubLayout({

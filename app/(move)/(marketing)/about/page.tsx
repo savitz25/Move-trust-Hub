@@ -159,7 +159,7 @@ export default function AboutPage() {
             </Link>
             {' · '}
             <Link href="/about/editorial-team" className="text-primary hover:underline">
-              Editorial team
+              Research accountability
             </Link>
           </p>
         </section>

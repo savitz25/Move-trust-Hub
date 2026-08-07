@@ -94,38 +94,36 @@ const nextConfig: NextConfig = {
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
   async redirects() {
     return [
-      // GSC 404 cleanup: doubled hub prefixes from bad absolute links.
-      // Segment paths (`:path*`) only match after a trailing slash, so they do not
-      // collide with real routes like `/lender/lenders/:slug`.
+      // Phase 0: permanent domain separation — never keep lender/insurance equity on Move.
+      // Doubled hub prefixes (GSC cleanup) → specialist apexes directly.
       {
         source: '/insurance/insurance',
-        destination: '/insurance',
+        destination: 'https://www.insurancetrusthub.com/',
         permanent: true,
       },
       {
         source: '/insurance/insurance/:path*',
-        destination: '/insurance/:path*',
+        destination: 'https://www.insurancetrusthub.com/:path*',
         permanent: true,
       },
-      // Insurance tool inventory cleanup (apex rewrites /tools → /insurance/tools)
       {
         source: '/tools/aca-eligibility-checker',
-        destination: '/calculators/aca-subsidy',
+        destination: 'https://www.insurancetrusthub.com/calculators/aca-subsidy',
         permanent: true,
       },
       {
         source: '/insurance/tools/aca-eligibility-checker',
-        destination: '/insurance/calculators/aca-subsidy',
+        destination: 'https://www.insurancetrusthub.com/calculators/aca-subsidy',
         permanent: true,
       },
       {
         source: '/tools/quote-comparison',
-        destination: '/tools/cost-estimator',
+        destination: 'https://www.insurancetrusthub.com/tools/cost-estimator',
         permanent: true,
       },
       {
         source: '/insurance/tools/quote-comparison',
-        destination: '/insurance/tools/cost-estimator',
+        destination: 'https://www.insurancetrusthub.com/tools/cost-estimator',
         permanent: true,
       },
       {
@@ -138,7 +136,6 @@ const nextConfig: NextConfig = {
         destination: 'https://www.lendertrusthub.com/:path*',
         permanent: true,
       },
-      // SEO-friendly short URL for first-time homebuyer pillar (standalone LTH)
       {
         source: '/lender/first-time-homebuyer-programs',
         destination: 'https://www.lendertrusthub.com/resources/first-time-homebuyer-programs',
@@ -161,7 +158,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Monorepo /insurance → standalone Insurance Trust Hub (301)
-      // (middleware also redirects; config covers edge/CDN when middleware is skipped)
+      // Keep /insurance/admin on Move host for monorepo admin isolation.
       {
         source: '/insurance',
         destination: 'https://www.insurancetrusthub.com/',
@@ -173,8 +170,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/insurance/:path*',
-        destination: 'https://www.insurancetrusthub.com/:path*',
+        source: '/insurance/:path((?!admin(?:/|$)).*)',
+        destination: 'https://www.insurancetrusthub.com/:path',
         permanent: true,
       },
       // GSC 404: legacy bare route → Alabama Huntsville destination hub
