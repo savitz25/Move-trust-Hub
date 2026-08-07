@@ -11,9 +11,9 @@ const PRECACHE_URLS = [
   '/tools',
   '/directory',
   '/manifest.webmanifest',
-  '/insurance/brand/insurance-trust-hub-icon-192.png?v=20260807final',
-  '/insurance/brand/insurance-trust-hub-icon.png?v=20260807final',
-  '/insurance/brand/apple-touch-icon.png?v=20260807final',
+  '/insurance/brand/insurance-trust-hub-icon-192.png?v=20260807transport',
+  '/insurance/brand/insurance-trust-hub-icon.png?v=20260807transport',
+  '/insurance/brand/apple-touch-icon.png?v=20260807transport',
 ];
 
 /** Paths that must never be stored (auth / account / APIs). */

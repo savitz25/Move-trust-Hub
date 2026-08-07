@@ -6,7 +6,7 @@ import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 /** Bump when replacing Move brand logos to bust immutable CDN/browser cache. */
 export const TRUST_HUB_LOGO_VERSION = '20260806e';
 /** Bump when replacing public/insurance/brand/* so CDN/browser cache picks up the new mark. */
-export const INSURANCE_LOGO_VERSION = '20260807final';
+export const INSURANCE_LOGO_VERSION = '20260807transport';
 /** Bump when replacing public/lender/brand/* for /lender section logos. */
 export const LENDER_LOGO_VERSION = '20260727';
 
