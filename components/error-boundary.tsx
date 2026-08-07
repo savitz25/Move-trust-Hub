@@ -28,6 +28,21 @@ export class ErrorBoundary extends React.Component<Props, State> {
     if (typeof console !== 'undefined') {
       console.error('ui.error_boundary', error?.message, error, info.componentStack);
     }
+    try {
+      // Dynamic import keeps happy-path bundle free of report path cycles
+      void import('@/lib/reliability/report-client-error').then(({ reportClientError, buildClientErrorPayload }) => {
+        reportClientError(
+          buildClientErrorPayload({
+            kind: 'react_boundary',
+            message: error?.message ? String(error.message) : 'ui.error_boundary',
+            stack: error?.stack,
+            source: info.componentStack?.slice(0, 400) || 'ErrorBoundary',
+          })
+        );
+      });
+    } catch {
+      // ignore
+    }
   }
 
   render() {

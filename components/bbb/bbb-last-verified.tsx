@@ -1,13 +1,13 @@
 import { Clock } from 'lucide-react';
 
-function formatRelative(iso: string): string {
-  const diffMs = Date.now() - new Date(iso).getTime();
-  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-  if (days < 1) return 'today';
-  if (days === 1) return '1 day ago';
-  if (days < 30) return `${days} days ago`;
-  const months = Math.floor(days / 30);
-  return months === 1 ? '1 month ago' : `${months} months ago`;
+/** Absolute UTC calendar date — hydration-safe (no Date.now() relative text). */
+function formatCheckedAt(iso: string): string {
+  return new Date(iso).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
 }
 
 export function BbbLastVerified({
@@ -25,16 +25,12 @@ export function BbbLastVerified({
     );
   }
 
-  const formatted = new Date(checkedAt).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
+  const formatted = formatCheckedAt(checkedAt);
 
   return (
     <p className={`text-xs text-muted-foreground flex items-center gap-1 ${className ?? ''}`}>
       <Clock className="h-3.5 w-3.5" aria-hidden="true" />
-      BBB last verified {formatted} ({formatRelative(checkedAt)})
+      BBB last verified {formatted} (UTC)
     </p>
   );
 }

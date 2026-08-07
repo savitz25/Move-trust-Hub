@@ -59,11 +59,14 @@ export function BbbPublicDetail({ data }: { data: PublicScrapeData }) {
       ) : null}
       {bbb.lastScrapedAt ? (
         <p className="text-[11px] text-muted-foreground">
-          Scraped {new Date(bbb.lastScrapedAt).toLocaleDateString('en-US', {
+          Scraped{' '}
+          {new Date(bbb.lastScrapedAt).toLocaleDateString('en-US', {
             month: 'short',
             day: 'numeric',
             year: 'numeric',
-          })}
+            timeZone: 'UTC',
+          })}{' '}
+          (UTC)
         </p>
       ) : null}
     </div>

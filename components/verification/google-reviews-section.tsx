@@ -103,7 +103,7 @@ export function GoogleReviewsSection({
             </div>
             <p className="text-[11px] text-muted-foreground border-t pt-3 leading-relaxed">
               {data.last_fetched
-                ? `Google Places rating snapshot last updated ${new Date(data.last_fetched).toLocaleDateString()}. `
+                ? `Google Places rating snapshot last updated ${new Date(data.last_fetched).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })} (UTC). `
                 : ''}
               External rating only — not mixed into moderated Move Trust Hub review schema.
               {attributableOnSiteCount > 0

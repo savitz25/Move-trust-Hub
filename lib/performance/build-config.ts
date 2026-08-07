@@ -3,10 +3,15 @@
  * Imported by next.config.ts only — keep this file Node-safe (no React).
  */
 
-/** Client router cache (seconds) — longer static TTL reduces RSC refetch on back/forward. */
+/**
+ * Client router cache (seconds).
+ * Cap static stale so soft-nav after deploys is less likely to request
+ * expired chunk hashes (ChunkLoadError → error shell). Recovery still
+ * hard-reloads once via ClientRuntimeGuard.
+ */
 export const ROUTER_STALE_TIMES = {
   dynamic: 30,
-  static: 1800,
+  static: 300,
 } as const;
 
 /** Trim serverless trace blobs that pages never import at runtime. */

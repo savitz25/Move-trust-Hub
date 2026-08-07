@@ -19,7 +19,14 @@ export function GooglePlacesPanel({ data }: { data: GooglePlacesData }) {
       </p>
       {data.last_fetched ? (
         <p className="text-xs text-muted-foreground">
-          Last fetched {new Date(data.last_fetched).toLocaleDateString()}
+          Last fetched{' '}
+          {new Date(data.last_fetched).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            timeZone: 'UTC',
+          })}{' '}
+          (UTC)
         </p>
       ) : null}
     </div>

@@ -13,6 +13,7 @@ import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
 import { GoogleAnalyticsRoot } from '@/components/analytics/google-analytics-root';
 import { DeferredUiStyles } from '@/components/performance/deferred-ui-styles';
 import { ThirdPartyOrchestrator } from '@/components/performance/third-party-orchestrator';
+import { ClientRuntimeGuard } from '@/components/reliability/client-runtime-guard';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 
@@ -42,10 +43,17 @@ export default async function RootLayout({
     ? buildInsuranceStandaloneRootSchema()
     : buildTrustHubNetworkSchema();
 
+  const buildId =
+    process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ||
+    process.env.VERCEL_GIT_COMMIT_SHA ||
+    process.env.NEXT_PUBLIC_BUILD_ID ||
+    'local';
+
   return (
     <html
       lang="en"
       className={`light ${siteFontVariables}`}
+      data-build-id={buildId}
       // Extensions often mutate <html>; suppress noise that becomes React #418
       suppressHydrationWarning
     >
@@ -56,6 +64,8 @@ export default async function RootLayout({
       >
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <SchemaInjector data={rootSchema} />
+        {/* ChunkLoadError recovery + client error reporting (ops visibility) */}
+        <ClientRuntimeGuard />
         {children}
         {/* GA deferred (idle) — must not compete with hero LCP */}
         <GoogleAnalyticsRoot />
