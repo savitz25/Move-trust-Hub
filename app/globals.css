@@ -242,12 +242,10 @@
   /** Composited-friendly pulse (transform/opacity only — avoid filter for main-thread cost) */
   .move-hub-pulse {
     animation: move-hub-pulse 3.2s ease-in-out infinite;
-    will-change: transform, opacity;
   }
   @media (prefers-reduced-motion: reduce) {
     .move-hub-pulse {
       animation: none;
-      will-change: auto;
     }
   }
   /** Shared content width rhythm for homepage sections */

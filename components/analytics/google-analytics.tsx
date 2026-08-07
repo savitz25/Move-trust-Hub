@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Script from 'next/script';
 import {
   GA_CROSS_DOMAIN_LINKS_MOVE,
   type GaHub,
@@ -18,21 +17,87 @@ import {
   INSURANCE_MEASUREMENT_BASELINE_DATE,
   INSURANCE_MEASUREMENT_BASELINE_LABEL,
 } from '@/lib/analytics/insurance-measurement-baseline';
+import {
+  GTAG_LOAD_OPTIONS,
+  GTAG_SCRIPT_ORIGIN,
+} from '@/lib/performance/external-scripts';
 
 type Props = {
   measurementId: string;
   hub: GaHub;
 };
 
+declare global {
+  interface Window {
+    __MTH_GA_INIT?: boolean;
+    __MTH_GA_MEASUREMENT_ID?: string;
+    __MTH_GA_HUB?: string;
+    __MTH_MEASUREMENT_BASELINE?: string;
+    __MTH_MEASUREMENT_BASELINE_LABEL?: string;
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+/**
+ * Inject GA4 after idle — no next/script (avoids early preload of gtag).
+ * Single init via window.__MTH_GA_INIT; trackers mount only after ready.
+ */
+function injectGa4(measurementId: string, hub: GaHub) {
+  if (typeof window === 'undefined' || window.__MTH_GA_INIT) return;
+  window.__MTH_GA_INIT = true;
+
+  const baselineDate =
+    hub === 'insurance' ? INSURANCE_MEASUREMENT_BASELINE_DATE : MEASUREMENT_BASELINE_DATE;
+  const baselineLabel =
+    hub === 'insurance' ? INSURANCE_MEASUREMENT_BASELINE_LABEL : MEASUREMENT_BASELINE_LABEL;
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(...args: unknown[]) {
+    window.dataLayer?.push(args);
+  }
+  window.gtag = gtag;
+  window.__MTH_GA_MEASUREMENT_ID = measurementId;
+  window.__MTH_GA_HUB = hub;
+  window.__MTH_MEASUREMENT_BASELINE = baselineDate;
+  window.__MTH_MEASUREMENT_BASELINE_LABEL = baselineLabel;
+
+  gtag('js', new Date());
+  const config: Record<string, unknown> = {
+    send_page_view: true,
+    anonymize_ip: true,
+    cookie_flags: 'SameSite=None;Secure',
+  };
+  if (hub === 'move') {
+    config.linker = { domains: [...GA_CROSS_DOMAIN_LINKS_MOVE] };
+  }
+  gtag('config', measurementId, config);
+
+  const existing = document.querySelector(
+    `script[data-mth-ga="gtag-js"][data-ga-id="${measurementId}"]`
+  );
+  if (existing) return;
+
+  const script = document.createElement('script');
+  script.async = GTAG_LOAD_OPTIONS.async;
+  script.defer = GTAG_LOAD_OPTIONS.defer;
+  script.fetchPriority = GTAG_LOAD_OPTIONS.fetchPriority;
+  script.crossOrigin = GTAG_LOAD_OPTIONS.crossOrigin;
+  script.dataset.mthGa = 'gtag-js';
+  script.dataset.gaId = measurementId;
+  script.src = `${GTAG_SCRIPT_ORIGIN}/gtag/js?id=${measurementId}`;
+  document.head.appendChild(script);
+}
+
 /**
  * Client GA4 loader — deferred so it does not compete with hero LCP / first interaction.
- * - Idle / timeout gate before injecting gtag (lazyOnload + max wait)
+ * - Idle / timeout gate before injecting gtag (DOM inject, no early preload)
  * - Single init (no DeferredGtag double-load)
  * - Research click tracker mounts after GA ready
  */
 export function GoogleAnalytics({ measurementId, hub }: Props) {
   warnIfGaMisconfigured(measurementId, hub);
-  const [allowLoad, setAllowLoad] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (!isGaConfigured(measurementId)) return;
@@ -41,16 +106,16 @@ export function GoogleAnalytics({ measurementId, hub }: Props) {
     let maxId: ReturnType<typeof setTimeout> | undefined;
 
     const enable = () => {
-      if (!cancelled) setAllowLoad(true);
+      if (cancelled) return;
+      injectGa4(measurementId, hub);
+      setReady(true);
     };
 
-    // Prefer idle; never wait forever (max ~4s after mount for measurement)
     if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
       idleId = window.requestIdleCallback(() => enable(), { timeout: 3500 });
     } else {
       maxId = setTimeout(enable, 2500);
     }
-    // Hard cap so GA still loads on busy threads
     const hardCap = setTimeout(enable, 4500);
 
     return () => {
@@ -61,49 +126,14 @@ export function GoogleAnalytics({ measurementId, hub }: Props) {
       if (maxId) clearTimeout(maxId);
       clearTimeout(hardCap);
     };
-  }, [measurementId]);
+  }, [measurementId, hub]);
 
-  if (!isGaConfigured(measurementId) || !allowLoad) {
+  if (!isGaConfigured(measurementId) || !ready) {
     return null;
   }
 
-  const linkerDomains =
-    hub === 'move'
-      ? JSON.stringify([...GA_CROSS_DOMAIN_LINKS_MOVE])
-      : JSON.stringify([]);
-
-  const baselineDate =
-    hub === 'insurance' ? INSURANCE_MEASUREMENT_BASELINE_DATE : MEASUREMENT_BASELINE_DATE;
-  const baselineLabel =
-    hub === 'insurance' ? INSURANCE_MEASUREMENT_BASELINE_LABEL : MEASUREMENT_BASELINE_LABEL;
-
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        strategy="lazyOnload"
-      />
-      <Script id={`ga4-init-${hub}`} strategy="lazyOnload">
-        {`
-          if (!window.__MTH_GA_INIT) {
-            window.__MTH_GA_INIT = true;
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            window.__MTH_GA_MEASUREMENT_ID = ${JSON.stringify(measurementId)};
-            window.__MTH_GA_HUB = ${JSON.stringify(hub)};
-            window.__MTH_MEASUREMENT_BASELINE = ${JSON.stringify(baselineDate)};
-            window.__MTH_MEASUREMENT_BASELINE_LABEL = ${JSON.stringify(baselineLabel)};
-            gtag('js', new Date());
-            gtag('config', ${JSON.stringify(measurementId)}, {
-              send_page_view: true,
-              anonymize_ip: true,
-              cookie_flags: 'SameSite=None;Secure',
-              ${hub === 'move' ? `linker: { domains: ${linkerDomains} },` : ''}
-            });
-          }
-        `}
-      </Script>
       <GaPageViewTracker measurementId={measurementId} hub={hub} />
       {hub === 'move' || hub === 'insurance' ? (
         <ResearchClickTracker hub={hub === 'insurance' ? 'insurance' : 'move'} />

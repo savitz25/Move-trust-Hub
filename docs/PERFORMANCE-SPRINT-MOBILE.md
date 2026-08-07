@@ -14,12 +14,13 @@
 - Map loader: later idle + tighter rootMargin; `content-visibility` shell
 - Below-fold: `InternalLinkHub` + `ReviewHighlights` dynamic / `ssr: false` for reviews
 - Hero remains SSR H1 + static chips; route form stays intent-gated client island
+- `NetworkTrustBlock` is RSC (handoff links remain client islands)
 - Deferred UX chrome (coach/journey/tips) idle window extended slightly
 
 ### 3. Analytics deferral
-- GA4: **idle gate (~2.5–4.5s)** then `lazyOnload` scripts
+- GA4: **idle gate (~2.5–4.5s)** then **DOM inject** (no `next/script` preload of gtag)
 - Single init guard `window.__MTH_GA_INIT`
-- ResearchClickTracker mounts only after GA allowed
+- ResearchClickTracker mounts only after GA ready
 - Vercel Analytics remains interaction/idle deferred via ThirdPartyOrchestrator
 
 ### 4. CSS / font / logo

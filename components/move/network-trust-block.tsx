@@ -1,5 +1,3 @@
-'use client';
-
 import { ArrowUpRight, Building2, Landmark, Scale } from 'lucide-react';
 import { NetworkHandoffLink } from '@/components/network/network-handoff-link';
 import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
@@ -23,18 +21,20 @@ const ACTIONS = [
   },
 ] as const;
 
+const CARD_CLASS = cn(
+  'group flex h-full min-h-[7.5rem] flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5',
+  'transition-[background-color,border-color,box-shadow] duration-200',
+  'hover:border-primary/45 hover:bg-white/[0.09]',
+  'hover:shadow-[0_8px_24px_-10px_rgb(255_90_31_/_0.28)]',
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A2540]'
+);
+
 /**
- * Phase 4 — dark navy network / trust block.
- * Family cohesion + independence; equal-weight actions.
+ * Phase 4 — dark navy network / trust block (RSC).
+ * Copy/layout SSR; only NetworkHandoffLink is a client island for SSO handoff.
  */
 export function NetworkTrustBlock() {
-  const cardClass = cn(
-    'group flex h-full min-h-[7.5rem] flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5',
-    'transition-[background-color,border-color,box-shadow] duration-200',
-    'hover:border-primary/45 hover:bg-white/[0.09]',
-    'hover:shadow-[0_8px_24px_-10px_rgb(255_90_31_/_0.28)]',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A2540]'
-  );
+  const cardClass = CARD_CLASS;
 
   return (
     <section
