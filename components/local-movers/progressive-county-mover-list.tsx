@@ -231,10 +231,10 @@ export function SegmentedCountyMoverLists({
           rankOffset={localInState.length}
           heading={
             localInState.length === 0
-              ? `Regional carriers serving ${countyLabel} (${national.length})`
-              : `Regional & long-distance carriers serving ${countyLabel} (${national.length})`
+              ? `Regional & out-of-area companies serving ${countyLabel} (${national.length})`
+              : `Regional & out-of-area companies serving ${countyLabel} (${national.length})`
           }
-          headingHint="Regional (same-state but not local HQ) or national carriers that may serve this county. We do not re-label them as local movers."
+          headingHint="Regional (same-state but not local HQ) or out-of-state companies. Entity badges show Interstate Carrier vs Broker separately — brokers arrange transportation; they do not haul as the motor carrier unless they also hold carrier authority. We do not re-label them as local movers."
         />
       ) : null}
     </div>

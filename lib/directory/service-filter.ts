@@ -1,7 +1,7 @@
 /**
  * Services Offered filter chips ↔ company type badges (shown under the name).
  *
- * Type chips (Carrier, Broker, Local Mover, Carrier/Broker) match the same
+ * Type chips (Interstate Carrier, Broker, Local / Intrastate, Carrier + Broker) match the same
  * resolution used by CompanyTypeBadges — not the optional service tags at the
  * bottom of cards (Full Service, Storage, etc.).
  */

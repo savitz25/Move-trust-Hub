@@ -140,12 +140,18 @@ export function LocalMoverCard({
               <CompanyTypeBadges
                 size="compact"
                 input={{
-                  isLocalOnly: Boolean(mover.isLocalOnly),
-                  serviceScope: mover.isLocalOnly
-                    ? 'intrastate'
-                    : mover.usdotNumber
+                  // Geography badge (Local / Regional) is separate above.
+                  // Type badges = entity role only — never blur carrier vs broker.
+                  isLocalOnly: county ? false : Boolean(mover.isLocalOnly),
+                  serviceScope: county
+                    ? mover.usdotNumber
                       ? 'interstate'
-                      : undefined,
+                      : undefined
+                    : mover.isLocalOnly
+                      ? 'intrastate'
+                      : mover.usdotNumber
+                        ? 'interstate'
+                        : undefined,
                   entityType: mover.entityType,
                   usdotNumber: mover.usdotNumber,
                   mcNumber: mover.mcNumber,

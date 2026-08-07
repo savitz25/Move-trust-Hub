@@ -1,12 +1,19 @@
 /**
  * Centralized company type badges for directory / profile / county UI.
  *
+ * Geography (Local / Regional) is decided separately on county pages.
+ * These badges describe FMCSA-style entity role:
+ * - Local / Intrastate
+ * - Interstate Carrier (operates trucks under motor carrier authority)
+ * - Broker (arranges transportation; does not itself act as the hauling carrier)
+ * - Carrier + Broker (both authorities — never imply broker alone hauls)
+ *
  * Priority:
- * 1. service_scope = intrastate (or isLocalOnly) → Local Mover
+ * 1. service_scope = intrastate (or isLocalOnly) → Local / Intrastate
  * 2. Infer local when no USDOT and no carrier/broker signals
- * 3. entity_type / fmcsa_raw / services → Carrier | Broker | Carrier/Broker
- * 4. USDOT present → default Carrier
- * 5. Last resort → Local Mover if no USDOT, else Carrier
+ * 3. entity_type / fmcsa_raw / services → Interstate Carrier | Broker | both
+ * 4. USDOT present → default Interstate Carrier
+ * 5. Last resort → Local / Intrastate if no USDOT, else Interstate Carrier
  */
 
 import {
@@ -40,15 +47,17 @@ export type CompanyTypeBadge = {
 
 export const LOCAL_MOVER_BADGE: CompanyTypeBadge = {
   id: 'local-mover',
-  label: 'Local Mover',
-  description: 'Intrastate / local mover — listed on selected county pages only',
+  label: 'Local / Intrastate',
+  description:
+    'Primarily local or in-state household goods service — not an FMCSA interstate motor carrier listing by itself',
   variant: 'local',
 };
 
 export const CARRIER_BADGE: CompanyTypeBadge = {
   id: 'carrier',
-  label: 'Carrier',
-  description: 'FMCSA entity type: Carrier (interstate operating authority)',
+  label: 'Interstate Carrier',
+  description:
+    'Motor carrier — authorized to operate commercial trucks and transport household goods under its own operating authority (verify on FMCSA SAFER)',
   variant: 'carrier',
 };
 
@@ -56,14 +65,15 @@ export const BROKER_BADGE: CompanyTypeBadge = {
   id: 'broker',
   label: 'Broker',
   description:
-    'FMCSA-active broker — arranges interstate moves; may not hold common/contract carrier operating authority',
+    'Household goods broker — arranges transportation with carriers; does not itself operate as the motor carrier hauling your goods. Confirm who holds the USDOT/MC on your estimate and who will physically transport the shipment.',
   variant: 'broker',
 };
 
 export const CARRIER_BROKER_BADGE: CompanyTypeBadge = {
   id: 'carrier-broker',
-  label: 'Carrier/Broker',
-  description: 'FMCSA entity type: Carrier and Broker authority',
+  label: 'Carrier + Broker',
+  description:
+    'Holds both motor carrier and broker authority. Still confirm in writing whether the company you hired will haul the load itself or arrange a third-party carrier.',
   variant: 'mixed',
 };
 

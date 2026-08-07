@@ -40,7 +40,7 @@ export const MOVER_VETTING_CRITERIA: readonly VettingCriterion[] = [
     id: 'locality',
     title: 'Honest Local vs Regional labels',
     detail:
-      '“Local Mover” requires HQ near the county (about 50 miles when measurable), seat/name match, or true in-state intrastate scope — not merely same-state headquarters. Distant same-state operators are labeled Regional.',
+      '“Local / Intrastate” requires HQ near the county (about 50 miles when measurable), seat/name match, or true in-state intrastate scope — not merely same-state headquarters. Distant same-state operators are labeled Regional. Entity role is separate: Interstate Carrier vs Broker (brokers arrange transportation; they do not haul as the motor carrier unless they also hold carrier authority).',
   },
   {
     id: 'curated-not-scraped',

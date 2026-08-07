@@ -25,12 +25,14 @@ export const LOCALITY_POLICY = {
    */
   sameStateAloneIsLocal: false as const,
   labels: {
+    /** Geography / market proximity — not FMCSA entity type */
     local: 'Local / Intrastate',
     regional: 'Regional',
-    national: 'National / Long-distance',
+    /** Out-of-state or long-distance market role (entity type is separate: Carrier vs Broker) */
+    national: 'Out-of-state / Interstate market',
   },
   emptyLocalCopy:
-    'No local-HQ movers identified in this county. Carriers below serve it regionally.',
+    'No local-HQ movers identified in this county. Carriers and brokers below serve it regionally or arrange service into the area.',
 } as const;
 
 export type LocalityClass = 'local' | 'regional' | 'national';
