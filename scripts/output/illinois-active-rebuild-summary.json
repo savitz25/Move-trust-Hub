@@ -1,37 +1,51 @@
 {
   "stateSlug": "illinois",
-  "activeCompanies": 129,
-  "displayable": 129,
+  "activeCompanies": 457,
+  "displayable": 448,
   "stateWideCompanies": [
     "colonial-van-lines",
-    "safebound-logistics-llc",
+    "safebound-moving-storage",
     "allied-van-lines",
+    "montway-auto-transport",
     "national-van-lines",
     "stanford-van-lines-inc"
   ],
   "nationalCompanies": [
+    "1-800-pack-rat",
+    "aero-mayflower-transit-company",
     "allied-van-lines",
+    "america-first-moving-services-inc",
     "american-van-lines",
-    "american-van-lines-of-sf-llc",
+    "amerifreight-auto-transport",
     "amerisafe-van-lines",
     "amex-moving-and-storage-llc",
     "arpin-van-lines",
     "atlas-van-lines",
     "cirta-moving-llc",
     "colonial-van-lines",
+    "easy-auto-ship",
     "gentle-giant-moving",
     "graebel-van-lines",
     "home-and-office-movers-llc",
+    "intercity-lines",
     "jk-moving-services",
-    "jr-brown-inc",
-    "mayflower-transit",
+    "jr-brown-moving",
+    "macho-movers",
+    "montway-auto-transport",
     "national-van-lines",
-    "north-american-van-lines",
+    "north-american-moving-storage",
+    "northern-michigan-moving-2",
     "ocean-moving-storage-corp",
-    "royal-hawaiian-movers-inc",
+    "pods",
+    "reliable-carriers",
+    "royal-hawaiian-trucking-warehousing",
+    "sgt-auto-transport",
+    "sherpa-auto-transport",
+    "ship-a-car-direct",
     "stanford-van-lines-inc",
     "stevens-worldwide",
     "two-men-and-a-truck",
+    "u-pack",
     "we-move-u",
     "wheaton-world-wide"
   ],
@@ -39,864 +53,864 @@
     {
       "county": "adams",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "alexander",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "bond",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "boone",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "brown",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "bureau",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "calhoun",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "carroll",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "cass",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "champaign",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "christian",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "clark",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "clay",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "clinton",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "coles",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "cook",
       "local": 2,
-      "state": 3,
-      "national": 20,
-      "total": 25
+      "state": 4,
+      "national": 32,
+      "total": 14
     },
     {
       "county": "crawford",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "cumberland",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "de-witt",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "dekalb",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "douglas",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "dupage",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "edgar",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "edwards",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "effingham",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "fayette",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "ford",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "franklin",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "fulton",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "gallatin",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "greene",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "grundy",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "hamilton",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "hancock",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "hardin",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "henderson",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "henry",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "iroquois",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "jackson",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "jasper",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "jefferson",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "jersey",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "jo-daviess",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "johnson",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "kane",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "kankakee",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "kendall",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "knox",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "lake",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "lasalle",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "lawrence",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "lee",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "livingston",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "logan",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "macon",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "macoupin",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "madison",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "marion",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "marshall",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "mason",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "massac",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "mcdonough",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "mchenry",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "mclean",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "menard",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "mercer",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "monroe",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "montgomery",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "morgan",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "moultrie",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "ogle",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "peoria",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "perry",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "piatt",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "pike",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "pope",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "pulaski",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "putnam",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "randolph",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "richland",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "rock-island",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "saline",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "sangamon",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "schuyler",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "scott",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "shelby",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "st-clair",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "stark",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "stephenson",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "tazewell",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "union",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "vermilion",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "wabash",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "warren",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "washington",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "wayne",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "white",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "whiteside",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "will",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "williamson",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "winnebago",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     {
       "county": "woodford",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     }
   ],
   "counts": {
-    "adams": 25,
-    "alexander": 25,
-    "bond": 25,
-    "boone": 25,
-    "brown": 25,
-    "bureau": 25,
-    "calhoun": 25,
-    "carroll": 25,
-    "cass": 25,
-    "champaign": 25,
-    "christian": 25,
-    "clark": 25,
-    "clay": 25,
-    "clinton": 25,
-    "coles": 25,
-    "cook": 25,
-    "crawford": 25,
-    "cumberland": 25,
-    "de-witt": 25,
-    "dekalb": 25,
-    "douglas": 25,
-    "dupage": 25,
-    "edgar": 25,
-    "edwards": 25,
-    "effingham": 25,
-    "fayette": 25,
-    "ford": 25,
-    "franklin": 25,
-    "fulton": 25,
-    "gallatin": 25,
-    "greene": 25,
-    "grundy": 25,
-    "hamilton": 25,
-    "hancock": 25,
-    "hardin": 25,
-    "henderson": 25,
-    "henry": 25,
-    "iroquois": 25,
-    "jackson": 25,
-    "jasper": 25,
-    "jefferson": 25,
-    "jersey": 25,
-    "jo-daviess": 25,
-    "johnson": 25,
-    "kane": 25,
-    "kankakee": 25,
-    "kendall": 25,
-    "knox": 25,
-    "lake": 25,
-    "lasalle": 25,
-    "lawrence": 25,
-    "lee": 25,
-    "livingston": 25,
-    "logan": 25,
-    "macon": 25,
-    "macoupin": 25,
-    "madison": 25,
-    "marion": 25,
-    "marshall": 25,
-    "mason": 25,
-    "massac": 25,
-    "mcdonough": 25,
-    "mchenry": 25,
-    "mclean": 25,
-    "menard": 25,
-    "mercer": 25,
-    "monroe": 25,
-    "montgomery": 25,
-    "morgan": 25,
-    "moultrie": 25,
-    "ogle": 25,
-    "peoria": 25,
-    "perry": 25,
-    "piatt": 25,
-    "pike": 25,
-    "pope": 25,
-    "pulaski": 25,
-    "putnam": 25,
-    "randolph": 25,
-    "richland": 25,
-    "rock-island": 25,
-    "saline": 25,
-    "sangamon": 25,
-    "schuyler": 25,
-    "scott": 25,
-    "shelby": 25,
-    "st-clair": 25,
-    "stark": 25,
-    "stephenson": 25,
-    "tazewell": 25,
-    "union": 25,
-    "vermilion": 25,
-    "wabash": 25,
-    "warren": 25,
-    "washington": 25,
-    "wayne": 25,
-    "white": 25,
-    "whiteside": 25,
-    "will": 25,
-    "williamson": 25,
-    "winnebago": 25,
-    "woodford": 25
+    "adams": 12,
+    "alexander": 12,
+    "bond": 12,
+    "boone": 12,
+    "brown": 12,
+    "bureau": 12,
+    "calhoun": 12,
+    "carroll": 12,
+    "cass": 12,
+    "champaign": 12,
+    "christian": 12,
+    "clark": 12,
+    "clay": 12,
+    "clinton": 12,
+    "coles": 12,
+    "cook": 14,
+    "crawford": 12,
+    "cumberland": 12,
+    "de-witt": 12,
+    "dekalb": 12,
+    "douglas": 12,
+    "dupage": 12,
+    "edgar": 12,
+    "edwards": 12,
+    "effingham": 12,
+    "fayette": 12,
+    "ford": 12,
+    "franklin": 12,
+    "fulton": 12,
+    "gallatin": 12,
+    "greene": 12,
+    "grundy": 12,
+    "hamilton": 12,
+    "hancock": 12,
+    "hardin": 12,
+    "henderson": 12,
+    "henry": 12,
+    "iroquois": 12,
+    "jackson": 12,
+    "jasper": 12,
+    "jefferson": 12,
+    "jersey": 12,
+    "jo-daviess": 12,
+    "johnson": 12,
+    "kane": 12,
+    "kankakee": 12,
+    "kendall": 12,
+    "knox": 12,
+    "lake": 12,
+    "lasalle": 12,
+    "lawrence": 12,
+    "lee": 12,
+    "livingston": 12,
+    "logan": 12,
+    "macon": 12,
+    "macoupin": 12,
+    "madison": 12,
+    "marion": 12,
+    "marshall": 12,
+    "mason": 12,
+    "massac": 12,
+    "mcdonough": 12,
+    "mchenry": 12,
+    "mclean": 12,
+    "menard": 12,
+    "mercer": 12,
+    "monroe": 12,
+    "montgomery": 12,
+    "morgan": 12,
+    "moultrie": 12,
+    "ogle": 12,
+    "peoria": 12,
+    "perry": 12,
+    "piatt": 12,
+    "pike": 12,
+    "pope": 12,
+    "pulaski": 12,
+    "putnam": 12,
+    "randolph": 12,
+    "richland": 12,
+    "rock-island": 12,
+    "saline": 12,
+    "sangamon": 12,
+    "schuyler": 12,
+    "scott": 12,
+    "shelby": 12,
+    "st-clair": 12,
+    "stark": 12,
+    "stephenson": 12,
+    "tazewell": 12,
+    "union": 12,
+    "vermilion": 12,
+    "wabash": 12,
+    "warren": 12,
+    "washington": 12,
+    "wayne": 12,
+    "white": 12,
+    "whiteside": 12,
+    "will": 12,
+    "williamson": 12,
+    "winnebago": 12,
+    "woodford": 12
   },
   "major": {
     "cook": {
       "county": "cook",
       "local": 2,
-      "state": 3,
-      "national": 20,
-      "total": 25
+      "state": 4,
+      "national": 32,
+      "total": 14
     },
     "dupage": {
       "county": "dupage",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     "lake": {
       "county": "lake",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     "will": {
       "county": "will",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     "kane": {
       "county": "kane",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     },
     "mchenry": {
       "county": "mchenry",
       "local": 0,
-      "state": 5,
-      "national": 20,
-      "total": 25
+      "state": 6,
+      "national": 32,
+      "total": 12
     }
   }
 }

@@ -2,6 +2,11 @@
  * Shared Supabase environment configuration.
  * Never import service-role keys in client components.
  */
+import {
+  assertCanonicalSupabaseUrl,
+  isForbiddenSupabaseUrl,
+} from '@/lib/supabase/canonical-project';
+
 function readEnv(value: string | undefined): string | undefined {
   const trimmed = value?.trim();
   return trimmed ? trimmed : undefined;
@@ -14,6 +19,8 @@ function readEnv(value: string | undefined): string | undefined {
 export function isValidSupabaseHttpUrl(url: string | undefined): boolean {
   if (!url) return false;
   if (/placeholder|your-project|example\.supabase/i.test(url)) return false;
+  // Legacy free project must never be treated as configured in any environment.
+  if (isForbiddenSupabaseUrl(url)) return false;
   try {
     const parsed = new URL(url);
     return parsed.protocol === 'https:' || parsed.protocol === 'http:';
@@ -24,7 +31,21 @@ export function isValidSupabaseHttpUrl(url: string | undefined): boolean {
 
 export function getSupabaseUrl(): string | undefined {
   const url = readEnv(process.env.NEXT_PUBLIC_SUPABASE_URL);
-  return isValidSupabaseHttpUrl(url) ? url : undefined;
+  if (!isValidSupabaseHttpUrl(url)) return undefined;
+  // Soft assert in production (throws only when ENFORCE/CI/prod and wrong host).
+  try {
+    assertCanonicalSupabaseUrl(url);
+  } catch (err) {
+    if (
+      process.env.NODE_ENV === 'production' ||
+      process.env.VERCEL_ENV === 'production' ||
+      process.env.CI === 'true' ||
+      process.env.ENFORCE_CANONICAL_SUPABASE === '1'
+    ) {
+      throw err;
+    }
+  }
+  return url;
 }
 
 export function getSupabaseAnonKey(): string | undefined {

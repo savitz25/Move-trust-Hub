@@ -161,6 +161,7 @@ import {
 } from '@/components/local-movers/county-seo-sections';
 import { CountyMarketInsightsPanel } from '@/components/local-movers/county-market-insights';
 import { CountyCompactStats } from '@/components/local-movers/county-compact-stats';
+import { DirectoryDegradedBanner } from '@/components/local-movers/directory-degraded-banner';
 import { CountyMovingSnapshotCard } from '@/components/local-movers/county-moving-snapshot';
 import { buildCountyMovingSnapshot } from '@/lib/local-movers/county-moving-snapshot';
 import { CountyJumpToMovers } from '@/components/local-movers/county-jump-to-movers';
@@ -280,6 +281,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
     description,
     path,
     indexDecision,
+    sourceMode,
   } = seo;
   const countyLabel = buildCountyLabel(county);
   const intelligence = getCountyIntelligencePack(stateSlug, countySlug);
@@ -536,6 +538,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               {marketNotes}
             </p>
           ) : null}
+          <DirectoryDegradedBanner show={sourceMode === 'degraded'} />
           {isRegionalFallback && (
             <p className="mt-3 text-xs text-muted-foreground rounded-lg border bg-muted/30 px-3 py-2">
               Movers listed serve the greater {county.metro?.replace(/-/g, ' ')} region

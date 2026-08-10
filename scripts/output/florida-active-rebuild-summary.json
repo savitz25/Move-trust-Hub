@@ -1,623 +1,703 @@
 {
   "stateSlug": "florida",
-  "activeCompanies": 129,
-  "displayable": 129,
+  "activeCompanies": 457,
+  "displayable": 448,
   "stateWideCompanies": [
     "american-van-lines",
-    "safebound-logistics-llc",
     "amerisafe-van-lines",
-    "vellar-holdings-llc",
-    "american-van-lines-of-sf-llc",
+    "whatamove",
+    "flex-moving-storage",
+    "apollos-moving-logistics-llc",
+    "boca-moving-company",
+    "ohana-moving-company-llc",
+    "black-swan-moving-llc",
+    "patriot-moving-and-storage",
+    "legacy-moving-services-daytona-beach-fl",
+    "top-tier-moving-llc",
+    "established-moving-storage",
+    "flex-moving",
+    "all-things-moving-storage-llc",
+    "angel-movers-llc",
+    "quality-moving-more-llc",
+    "florida-pro-movers-home-solutions",
+    "joe-bonnie-son-moving-storage",
+    "keystone-movers-llc",
+    "safe-hands-relocation-llc",
+    "america-s-family-moving-and-storage-llc",
+    "good-greek-moving-storage-of-tampa",
+    "frank-and-sons-moving-and-storage-inc",
+    "red-rover-moving-storage",
+    "eagle-moving-co",
+    "two-chicks-moving-llc",
+    "safebound-moving-storage",
+    "safe-ship-moving-services",
+    "premium-q-moving-and-storage",
+    "i-75-moving-and-storage",
+    "premier-movers-4-less-llc",
+    "brothers-ez-moving-of-tampa",
+    "the-moving-brothers-swfl-mover",
+    "act-of-class-moving-llc",
+    "busy-bee-movers-llc",
+    "sunshine-movers",
+    "einstein-moving-company",
+    "alpha-transports-movers",
+    "rodi-moving-storage-orlando",
+    "razorback-moving-tampa",
+    "all-about-moving-tampa-bay",
+    "solomon-sons-relocation-services",
+    "a-mother-s-touch-movers",
+    "taylor-sons-moving",
+    "college-hunks-hauling-junk",
+    "clever-carriers-llc",
+    "beast-mode-movers",
+    "tropic-moving",
+    "a-better-budget-moving-labor-inc",
+    "just-good-movers",
+    "shamrock-moving-deliveries",
+    "pink-zebra-moving-of-tampa",
+    "tampa-bay-moving-and-storage",
+    "bull-moving",
+    "razorback-moving-tampa-2",
+    "move-for-less",
+    "best-miami-movers",
+    "pro-movers-2",
+    "forward-van-lines-and-brooks-moving-and-hauling",
+    "lj-moving-llc",
+    "meehan-s-family-moving",
+    "blue-line-moving-and-storage",
+    "lee-s-moving-company",
+    "helping-hands-moving-labor-of-south-florida",
+    "browning-moving-storage-inc",
+    "mike-s-moving-storage",
+    "hall-s-local-movers-llc",
+    "do-it-now-moving-services-llc",
+    "master-movers-of-tallahassee",
+    "movesafe-relocation",
+    "america-first-moving-services-inc",
     "colonial-van-lines",
-    "ocean-moving-storage-corp"
+    "ocean-moving-storage-corp",
+    "pods"
   ],
   "nationalCompanies": [
+    "1-800-pack-rat",
+    "aero-mayflower-transit-company",
     "allied-van-lines",
+    "america-first-moving-services-inc",
     "american-van-lines",
-    "american-van-lines-of-sf-llc",
+    "amerifreight-auto-transport",
     "amerisafe-van-lines",
     "amex-moving-and-storage-llc",
     "arpin-van-lines",
     "atlas-van-lines",
     "cirta-moving-llc",
     "colonial-van-lines",
+    "easy-auto-ship",
     "gentle-giant-moving",
     "graebel-van-lines",
     "home-and-office-movers-llc",
+    "intercity-lines",
     "jk-moving-services",
-    "jr-brown-inc",
-    "mayflower-transit",
+    "jr-brown-moving",
+    "macho-movers",
+    "montway-auto-transport",
     "national-van-lines",
-    "north-american-van-lines",
+    "north-american-moving-storage",
+    "northern-michigan-moving-2",
     "ocean-moving-storage-corp",
-    "royal-hawaiian-movers-inc",
+    "pods",
+    "reliable-carriers",
+    "royal-hawaiian-trucking-warehousing",
+    "sgt-auto-transport",
+    "sherpa-auto-transport",
+    "ship-a-car-direct",
     "stanford-van-lines-inc",
     "stevens-worldwide",
     "two-men-and-a-truck",
+    "u-pack",
     "we-move-u",
     "wheaton-world-wide"
   ],
   "counties": [
     {
       "county": "alachua",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "baker",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "bay",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "bradford",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "brevard",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 11,
+      "state": 63,
+      "national": 31,
+      "total": 31
     },
     {
       "county": "broward",
-      "local": 2,
-      "state": 5,
-      "national": 19,
-      "total": 26
+      "local": 19,
+      "state": 55,
+      "national": 31,
+      "total": 39
     },
     {
       "county": "calhoun",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "charlotte",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 4,
+      "state": 70,
+      "national": 31,
+      "total": 24
     },
     {
       "county": "citrus",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "clay",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "collier",
-      "local": 0,
-      "state": 7,
-      "national": 19,
+      "local": 6,
+      "state": 68,
+      "national": 31,
       "total": 26
     },
     {
       "county": "columbia",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "desoto",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "dixie",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "duval",
-      "local": 0,
-      "state": 7,
-      "national": 19,
+      "local": 6,
+      "state": 68,
+      "national": 31,
       "total": 26
     },
     {
       "county": "escambia",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 3,
+      "state": 71,
+      "national": 31,
+      "total": 23
     },
     {
       "county": "flagler",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 3,
+      "state": 71,
+      "national": 31,
+      "total": 23
     },
     {
       "county": "franklin",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "gadsden",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "gilchrist",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "glades",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "gulf",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "hamilton",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "hardee",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "hendry",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "hernando",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 5,
+      "state": 69,
+      "national": 31,
+      "total": 25
     },
     {
       "county": "highlands",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "hillsborough",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 18,
+      "state": 56,
+      "national": 31,
+      "total": 38
     },
     {
       "county": "holmes",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "indian-river",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 3,
+      "state": 71,
+      "national": 31,
+      "total": 23
     },
     {
       "county": "jackson",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "jefferson",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "lafayette",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "lake",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 5,
+      "state": 69,
+      "national": 31,
+      "total": 25
     },
     {
       "county": "lee",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 9,
+      "state": 65,
+      "national": 31,
+      "total": 29
     },
     {
       "county": "leon",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 5,
+      "state": 69,
+      "national": 31,
+      "total": 25
     },
     {
       "county": "levy",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "liberty",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "madison",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "manatee",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 4,
+      "state": 70,
+      "national": 31,
+      "total": 24
     },
     {
       "county": "marion",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "martin",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 4,
+      "state": 70,
+      "national": 31,
+      "total": 24
     },
     {
       "county": "miami-dade",
-      "local": 1,
-      "state": 6,
-      "national": 19,
-      "total": 26
+      "local": 14,
+      "state": 60,
+      "national": 31,
+      "total": 34
     },
     {
       "county": "monroe",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "nassau",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "okaloosa",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "okeechobee",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 3,
+      "state": 71,
+      "national": 31,
+      "total": 23
     },
     {
       "county": "orange",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 10,
+      "state": 64,
+      "national": 31,
+      "total": 30
     },
     {
       "county": "osceola",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 3,
+      "state": 71,
+      "national": 31,
+      "total": 23
     },
     {
       "county": "palm-beach",
-      "local": 3,
-      "state": 4,
-      "national": 19,
-      "total": 26
+      "local": 21,
+      "state": 53,
+      "national": 31,
+      "total": 41
     },
     {
       "county": "pasco",
-      "local": 0,
-      "state": 7,
-      "national": 19,
+      "local": 6,
+      "state": 68,
+      "national": 31,
       "total": 26
     },
     {
       "county": "pinellas",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 13,
+      "state": 61,
+      "national": 31,
+      "total": 33
     },
     {
       "county": "polk",
-      "local": 0,
-      "state": 7,
-      "national": 19,
+      "local": 6,
+      "state": 68,
+      "national": 31,
       "total": 26
     },
     {
       "county": "putnam",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "santa-rosa",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "sarasota",
-      "local": 0,
-      "state": 7,
-      "national": 19,
+      "local": 6,
+      "state": 68,
+      "national": 31,
       "total": 26
     },
     {
       "county": "seminole",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 3,
+      "state": 71,
+      "national": 31,
+      "total": 23
     },
     {
       "county": "st-johns",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 3,
+      "state": 71,
+      "national": 31,
+      "total": 23
     },
     {
       "county": "st-lucie",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 3,
+      "state": 71,
+      "national": 31,
+      "total": 23
     },
     {
       "county": "sumter",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "suwannee",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "taylor",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "union",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "volusia",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 14,
+      "state": 60,
+      "national": 31,
+      "total": 34
     },
     {
       "county": "wakulla",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "walton",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     },
     {
       "county": "washington",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 2,
+      "state": 72,
+      "national": 31,
+      "total": 22
     }
   ],
   "counts": {
-    "alachua": 26,
-    "baker": 26,
-    "bay": 26,
-    "bradford": 26,
-    "brevard": 26,
-    "broward": 26,
-    "calhoun": 26,
-    "charlotte": 26,
-    "citrus": 26,
-    "clay": 26,
+    "alachua": 22,
+    "baker": 22,
+    "bay": 22,
+    "bradford": 22,
+    "brevard": 31,
+    "broward": 39,
+    "calhoun": 22,
+    "charlotte": 24,
+    "citrus": 22,
+    "clay": 22,
     "collier": 26,
-    "columbia": 26,
-    "desoto": 26,
-    "dixie": 26,
+    "columbia": 22,
+    "desoto": 22,
+    "dixie": 22,
     "duval": 26,
-    "escambia": 26,
-    "flagler": 26,
-    "franklin": 26,
-    "gadsden": 26,
-    "gilchrist": 26,
-    "glades": 26,
-    "gulf": 26,
-    "hamilton": 26,
-    "hardee": 26,
-    "hendry": 26,
-    "hernando": 26,
-    "highlands": 26,
-    "hillsborough": 26,
-    "holmes": 26,
-    "indian-river": 26,
-    "jackson": 26,
-    "jefferson": 26,
-    "lafayette": 26,
-    "lake": 26,
-    "lee": 26,
-    "leon": 26,
-    "levy": 26,
-    "liberty": 26,
-    "madison": 26,
-    "manatee": 26,
-    "marion": 26,
-    "martin": 26,
-    "miami-dade": 26,
-    "monroe": 26,
-    "nassau": 26,
-    "okaloosa": 26,
-    "okeechobee": 26,
-    "orange": 26,
-    "osceola": 26,
-    "palm-beach": 26,
+    "escambia": 23,
+    "flagler": 23,
+    "franklin": 22,
+    "gadsden": 22,
+    "gilchrist": 22,
+    "glades": 22,
+    "gulf": 22,
+    "hamilton": 22,
+    "hardee": 22,
+    "hendry": 22,
+    "hernando": 25,
+    "highlands": 22,
+    "hillsborough": 38,
+    "holmes": 22,
+    "indian-river": 23,
+    "jackson": 22,
+    "jefferson": 22,
+    "lafayette": 22,
+    "lake": 25,
+    "lee": 29,
+    "leon": 25,
+    "levy": 22,
+    "liberty": 22,
+    "madison": 22,
+    "manatee": 24,
+    "marion": 22,
+    "martin": 24,
+    "miami-dade": 34,
+    "monroe": 22,
+    "nassau": 22,
+    "okaloosa": 22,
+    "okeechobee": 23,
+    "orange": 30,
+    "osceola": 23,
+    "palm-beach": 41,
     "pasco": 26,
-    "pinellas": 26,
+    "pinellas": 33,
     "polk": 26,
-    "putnam": 26,
-    "santa-rosa": 26,
+    "putnam": 22,
+    "santa-rosa": 22,
     "sarasota": 26,
-    "seminole": 26,
-    "st-johns": 26,
-    "st-lucie": 26,
-    "sumter": 26,
-    "suwannee": 26,
-    "taylor": 26,
-    "union": 26,
-    "volusia": 26,
-    "wakulla": 26,
-    "walton": 26,
-    "washington": 26
+    "seminole": 23,
+    "st-johns": 23,
+    "st-lucie": 23,
+    "sumter": 22,
+    "suwannee": 22,
+    "taylor": 22,
+    "union": 22,
+    "volusia": 34,
+    "wakulla": 22,
+    "walton": 22,
+    "washington": 22
   },
   "major": {
     "miami-dade": {
       "county": "miami-dade",
-      "local": 1,
-      "state": 6,
-      "national": 19,
-      "total": 26
+      "local": 14,
+      "state": 60,
+      "national": 31,
+      "total": 34
     },
     "broward": {
       "county": "broward",
-      "local": 2,
-      "state": 5,
-      "national": 19,
-      "total": 26
+      "local": 19,
+      "state": 55,
+      "national": 31,
+      "total": 39
     },
     "palm-beach": {
       "county": "palm-beach",
-      "local": 3,
-      "state": 4,
-      "national": 19,
-      "total": 26
+      "local": 21,
+      "state": 53,
+      "national": 31,
+      "total": 41
     },
     "orange": {
       "county": "orange",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 10,
+      "state": 64,
+      "national": 31,
+      "total": 30
     },
     "hillsborough": {
       "county": "hillsborough",
-      "local": 0,
-      "state": 7,
-      "national": 19,
-      "total": 26
+      "local": 18,
+      "state": 56,
+      "national": 31,
+      "total": 38
     },
     "duval": {
       "county": "duval",
-      "local": 0,
-      "state": 7,
-      "national": 19,
+      "local": 6,
+      "state": 68,
+      "national": 31,
       "total": 26
     }
   }

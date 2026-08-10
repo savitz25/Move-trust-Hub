@@ -115,18 +115,20 @@ Set `deleted_at = now()` instead of hard-deleting quote rows. Analytics exclude 
 
 Tables: `user_profiles`, `saved_inventories`, `saved_movers`, `magic_link_rate_limits` (+ existing `saved_comparisons`).
 
-**Production project ref:** `uvqkyupfnpswdozmuzih` (must match `NEXT_PUBLIC_SUPABASE_URL` on Vercel).
+**Production project ref:** `arepfylnilkjmyduhwbz` (must match `NEXT_PUBLIC_SUPABASE_URL` on Vercel).  
+**Forbidden legacy free project:** `uvqkyupfnpswdozmuzih` — never use in production (build guard fails if present).  
+See also: `docs/LOCAL-MOVERS-DATA-SOURCE.md`.
 
 **Verify OAuth providers on the live project** (not a different Supabase project):
 
 ```bash
-curl -s "https://uvqkyupfnpswdozmuzih.supabase.co/auth/v1/settings" \
+curl -s "https://arepfylnilkjmyduhwbz.supabase.co/auth/v1/settings" \
   -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" | jq '.external | {google, facebook}'
 ```
 
 Both should return `true` when enabled. **Note:** `/auth/v1/settings` can report `facebook: false` even when Facebook OAuth works. `/api/auth/facebook` has **zero settings preflight** — it always tries `signInWithOAuth` (SSR → plain client) then manual authorize URL. Full settings JSON is logged server-side for diagnostics only.
 
-**Supabase Auth setup (Dashboard → project `uvqkyupfnpswdozmuzih`):**
+**Supabase Auth setup (Dashboard → project `arepfylnilkjmyduhwbz`):**
 1. **Authentication → URL Configuration:**
    - **Site URL:** `https://www.movetrusthub.com` (NOT `http://localhost:3000` — if Site URL is localhost, OAuth sends users to localhost after sign-in)
    - **Redirect URLs:** add `https://www.movetrusthub.com/auth/callback`
@@ -150,7 +152,7 @@ Both should return `true` when enabled. **Note:** `/auth/v1/settings` can report
 2. Add product **Facebook Login** → **Settings** → **Web**.
 3. **Valid OAuth Redirect URIs** — add exactly:
    ```
-   https://uvqkyupfnpswdozmuzih.supabase.co/auth/v1/callback
+   https://arepfylnilkjmyduhwbz.supabase.co/auth/v1/callback
    ```
 4. **App Domains:** `movetrusthub.com`, `www.movetrusthub.com`
 5. **Settings → Basic:** copy **App ID** and **App Secret**.

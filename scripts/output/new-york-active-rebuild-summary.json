@@ -1,585 +1,618 @@
 {
   "stateSlug": "new-york",
-  "activeCompanies": 129,
-  "displayable": 129,
+  "activeCompanies": 457,
+  "displayable": 448,
   "stateWideCompanies": [
-    "safebound-logistics-llc"
+    "divine-moving-storage-ltd",
+    "am-pm-super-movers-inc",
+    "blue-moving-llc",
+    "5-star-movers-llc-bronx-moving-company",
+    "don-s-moving-storage-inc",
+    "grandson-s-moving-packing-company",
+    "clark-moving-storage-of-albany-2",
+    "protocol-van-lines-inc",
+    "safebound-moving-storage",
+    "schaap-moving-systems-inc",
+    "expo-movers-and-storage",
+    "big-g-movers-inc-2",
+    "the-golden-truck-moving-company",
+    "samba-moving",
+    "shleppers-moving-storage",
+    "roadway-moving",
+    "serenity-movers-inc",
+    "lamanna-moving-storage-llc",
+    "busy-bee-movers-llc-2",
+    "clark-moving-storage-of-albany",
+    "mabey-s-moving-and-storage-inc"
   ],
   "nationalCompanies": [
+    "1-800-pack-rat",
+    "aero-mayflower-transit-company",
     "allied-van-lines",
+    "america-first-moving-services-inc",
     "american-van-lines",
-    "american-van-lines-of-sf-llc",
+    "amerifreight-auto-transport",
     "amerisafe-van-lines",
     "amex-moving-and-storage-llc",
     "arpin-van-lines",
     "atlas-van-lines",
     "cirta-moving-llc",
     "colonial-van-lines",
+    "easy-auto-ship",
     "gentle-giant-moving",
     "graebel-van-lines",
     "home-and-office-movers-llc",
+    "intercity-lines",
     "jk-moving-services",
-    "jr-brown-inc",
-    "mayflower-transit",
+    "jr-brown-moving",
+    "macho-movers",
+    "montway-auto-transport",
     "national-van-lines",
-    "north-american-van-lines",
+    "north-american-moving-storage",
+    "northern-michigan-moving-2",
     "ocean-moving-storage-corp",
-    "royal-hawaiian-movers-inc",
+    "pods",
+    "reliable-carriers",
+    "royal-hawaiian-trucking-warehousing",
+    "sgt-auto-transport",
+    "sherpa-auto-transport",
+    "ship-a-car-direct",
     "stanford-van-lines-inc",
     "stevens-worldwide",
     "two-men-and-a-truck",
+    "u-pack",
     "we-move-u",
     "wheaton-world-wide"
   ],
   "counties": [
     {
       "county": "albany",
-      "local": 1,
-      "state": 0,
-      "national": 24,
-      "total": 25
+      "local": 10,
+      "state": 11,
+      "national": 37,
+      "total": 29
     },
     {
       "county": "allegany",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "bronx",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 11,
+      "state": 10,
+      "national": 37,
+      "total": 29
     },
     {
       "county": "broome",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "cattaraugus",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "cayuga",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "chautauqua",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "chemung",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "chenango",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "clinton",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "columbia",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "cortland",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "delaware",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "dutchess",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "erie",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "essex",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "franklin",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "fulton",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "genesee",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "greene",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "hamilton",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "herkimer",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "jefferson",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "kings",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 2,
+      "state": 19,
+      "national": 37,
+      "total": 22
     },
     {
       "county": "lewis",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "livingston",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "madison",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "monroe",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "montgomery",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "nassau",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 2,
+      "state": 19,
+      "national": 37,
+      "total": 22
     },
     {
       "county": "new-york",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 10,
+      "state": 11,
+      "national": 37,
+      "total": 29
     },
     {
       "county": "niagara",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "oneida",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "onondaga",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "ontario",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "orange",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 4,
+      "state": 17,
+      "national": 37,
+      "total": 24
     },
     {
       "county": "orleans",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "oswego",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "otsego",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "putnam",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "queens",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 8,
+      "state": 13,
+      "national": 37,
+      "total": 28
     },
     {
       "county": "rensselaer",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "richmond",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 7,
+      "state": 14,
+      "national": 37,
+      "total": 27
     },
     {
       "county": "rockland",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "saratoga",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "schenectady",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 3,
+      "state": 18,
+      "national": 37,
+      "total": 23
     },
     {
       "county": "schoharie",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "schuyler",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "seneca",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "st-lawrence",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "steuben",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "suffolk",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     {
       "county": "sullivan",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "tioga",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "tompkins",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "ulster",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "warren",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "washington",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "wayne",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "westchester",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 4,
+      "state": 17,
+      "national": 37,
+      "total": 24
     },
     {
       "county": "wyoming",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     },
     {
       "county": "yates",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     }
   ],
   "counts": {
-    "albany": 25,
-    "allegany": 25,
-    "bronx": 25,
-    "broome": 25,
-    "cattaraugus": 25,
-    "cayuga": 25,
-    "chautauqua": 25,
-    "chemung": 25,
-    "chenango": 25,
-    "clinton": 25,
-    "columbia": 25,
-    "cortland": 25,
-    "delaware": 25,
-    "dutchess": 25,
-    "erie": 25,
-    "essex": 25,
-    "franklin": 25,
-    "fulton": 25,
-    "genesee": 25,
-    "greene": 25,
-    "hamilton": 25,
-    "herkimer": 25,
-    "jefferson": 25,
-    "kings": 25,
-    "lewis": 25,
-    "livingston": 25,
-    "madison": 25,
-    "monroe": 25,
-    "montgomery": 25,
-    "nassau": 25,
-    "new-york": 25,
-    "niagara": 25,
-    "oneida": 25,
-    "onondaga": 25,
-    "ontario": 25,
-    "orange": 25,
-    "orleans": 25,
-    "oswego": 25,
-    "otsego": 25,
-    "putnam": 25,
-    "queens": 25,
-    "rensselaer": 25,
-    "richmond": 25,
-    "rockland": 25,
-    "saratoga": 25,
-    "schenectady": 25,
-    "schoharie": 25,
-    "schuyler": 25,
-    "seneca": 25,
-    "st-lawrence": 25,
-    "steuben": 25,
-    "suffolk": 25,
-    "sullivan": 25,
-    "tioga": 25,
-    "tompkins": 25,
-    "ulster": 25,
-    "warren": 25,
-    "washington": 25,
-    "wayne": 25,
-    "westchester": 25,
-    "wyoming": 25,
-    "yates": 25
+    "albany": 29,
+    "allegany": 14,
+    "bronx": 29,
+    "broome": 14,
+    "cattaraugus": 14,
+    "cayuga": 14,
+    "chautauqua": 14,
+    "chemung": 14,
+    "chenango": 14,
+    "clinton": 14,
+    "columbia": 21,
+    "cortland": 14,
+    "delaware": 14,
+    "dutchess": 14,
+    "erie": 14,
+    "essex": 14,
+    "franklin": 14,
+    "fulton": 21,
+    "genesee": 14,
+    "greene": 14,
+    "hamilton": 21,
+    "herkimer": 21,
+    "jefferson": 14,
+    "kings": 22,
+    "lewis": 14,
+    "livingston": 14,
+    "madison": 14,
+    "monroe": 21,
+    "montgomery": 21,
+    "nassau": 22,
+    "new-york": 29,
+    "niagara": 14,
+    "oneida": 14,
+    "onondaga": 21,
+    "ontario": 14,
+    "orange": 24,
+    "orleans": 14,
+    "oswego": 14,
+    "otsego": 14,
+    "putnam": 14,
+    "queens": 28,
+    "rensselaer": 14,
+    "richmond": 27,
+    "rockland": 21,
+    "saratoga": 21,
+    "schenectady": 23,
+    "schoharie": 14,
+    "schuyler": 14,
+    "seneca": 14,
+    "st-lawrence": 14,
+    "steuben": 14,
+    "suffolk": 21,
+    "sullivan": 14,
+    "tioga": 14,
+    "tompkins": 14,
+    "ulster": 14,
+    "warren": 14,
+    "washington": 14,
+    "wayne": 14,
+    "westchester": 24,
+    "wyoming": 14,
+    "yates": 14
   },
   "major": {
     "new-york": {
       "county": "new-york",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 10,
+      "state": 11,
+      "national": 37,
+      "total": 29
     },
     "kings": {
       "county": "kings",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 2,
+      "state": 19,
+      "national": 37,
+      "total": 22
     },
     "queens": {
       "county": "queens",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 8,
+      "state": 13,
+      "national": 37,
+      "total": 28
     },
     "bronx": {
       "county": "bronx",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 11,
+      "state": 10,
+      "national": 37,
+      "total": 29
     },
     "nassau": {
       "county": "nassau",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 2,
+      "state": 19,
+      "national": 37,
+      "total": 22
     },
     "suffolk": {
       "county": "suffolk",
-      "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "local": 1,
+      "state": 20,
+      "national": 37,
+      "total": 21
     },
     "erie": {
       "county": "erie",
       "local": 0,
-      "state": 1,
-      "national": 24,
-      "total": 25
+      "state": 21,
+      "national": 37,
+      "total": 14
     }
   }
 }

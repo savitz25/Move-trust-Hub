@@ -359,37 +359,77 @@ async function rebuildState(
   }
 
   const displayable: CompanyRow[] = [];
+  let keptVerifiedNoUsdot = 0;
   for (const c of active) {
     const license = assessLicense(c.usdot_number || '', c.mc_number || '');
-    if (!license.isDisplayable) continue;
-    displayable.push(c);
+    if (license.isDisplayable) {
+      displayable.push(c);
+      continue;
+    }
+    // Verified locals / labor-only often have no USDOT. Dropping them made every
+    // county share the same national pad (e.g. FL all “26 movers”). Keep verified
+    // companies without a USDOT; still exclude suspicious/placeholder USDOTs.
+    const hasUsdot = Boolean((c.usdot_number || '').replace(/\D/g, ''));
+    if (c.is_verified && !hasUsdot) {
+      displayable.push(c);
+      keptVerifiedNoUsdot++;
+      continue;
+    }
   }
-  console.log(`Displayable USDOT: ${displayable.length}`);
+  console.log(
+    `Displayable: ${displayable.length} (verified no-USDOT kept: ${keptVerifiedNoUsdot})`
+  );
 
   const displayableBySlug = new Map(displayable.map((c) => [c.slug, c]));
   const displayableMoverIds = new Set(
     displayable.map((c) => moverIdForSlug(c.slug))
   );
 
-  const { data: destRows, error: destErr } = await sb
-    .from('company_destination_assignments')
-    .select('company_slug, county_slug')
-    .eq('state_slug', stateSlug);
-  if (destErr) throw destErr;
+  // Paginate — PostgREST defaults to max ~1000 rows; TX alone can exceed that.
+  const destRows: Array<{
+    company_id: string;
+    company_slug: string;
+    county_slug: string;
+    source?: string | null;
+  }> = [];
+  {
+    const PAGE = 1000;
+    for (let from = 0; ; from += PAGE) {
+      const { data, error: destErr } = await sb
+        .from('company_destination_assignments')
+        .select('company_id, company_slug, county_slug, source')
+        .eq('state_slug', stateSlug)
+        .range(from, from + PAGE - 1);
+      if (destErr) throw destErr;
+      if (!data?.length) break;
+      destRows.push(...data);
+      if (data.length < PAGE) break;
+    }
+  }
+
+  const displayableByIdOrSlug = new Map<string, CompanyRow>();
+  for (const c of displayable) {
+    displayableByIdOrSlug.set(c.slug, c);
+    displayableByIdOrSlug.set(c.id, c);
+  }
 
   const localByCounty = new Map<string, Set<string>>();
   const stateWideSlugs = new Set<string>();
   let destDropped = 0;
   for (const row of destRows ?? []) {
-    if (!displayableBySlug.has(row.company_slug)) {
+    const company =
+      displayableByIdOrSlug.get(row.company_slug) ||
+      displayableByIdOrSlug.get(row.company_id);
+    if (!company) {
       destDropped++;
       continue;
     }
-    stateWideSlugs.add(row.company_slug);
+    const slug = company.slug;
+    stateWideSlugs.add(slug);
     if (!localByCounty.has(row.county_slug)) {
       localByCounty.set(row.county_slug, new Set());
     }
-    localByCounty.get(row.county_slug)!.add(row.company_slug);
+    localByCounty.get(row.county_slug)!.add(slug);
   }
   console.log(
     `Dest rows: ${(destRows ?? []).length}; dropped non-active: ${destDropped}; dest companies: ${stateWideSlugs.size}`
@@ -477,6 +517,10 @@ ${displayable.map((c) => `  '${moverIdForSlug(c.slug)}',`).join('\n')}
       .map(moverIdForSlug)
       .filter((id) => displayableMoverIds.has(id));
 
+    // Cap fill so thin counties stay distinct from major metros (no identical statewide pack).
+    const MAX_STATE_FILL = localIds.length > 0 ? 12 : 8;
+    const MAX_NATIONAL_FILL = localIds.length > 0 ? 8 : 6;
+
     const nationalIds = [...nationalSlugs]
       .filter((slug) => !localSlugs.includes(slug) && !stateWideSlugs.has(slug))
       .map(moverIdForSlug)
@@ -484,7 +528,11 @@ ${displayable.map((c) => `  '${moverIdForSlug(c.slug)}',`).join('\n')}
 
     const ordered: string[] = [];
     const seen = new Set<string>();
-    for (const id of [...localIds, ...stateIds, ...nationalIds]) {
+    for (const id of [
+      ...localIds,
+      ...stateIds.slice(0, MAX_STATE_FILL),
+      ...nationalIds.slice(0, MAX_NATIONAL_FILL),
+    ]) {
       if (seen.has(id) || !displayableMoverIds.has(id)) continue;
       seen.add(id);
       ordered.push(id);

@@ -28,8 +28,10 @@ const COMPANY_MOVER_SELECT_CORE =
 
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
-/** Hard cap so a stuck Supabase call cannot blow the 60s static page timeout. */
-const FETCH_TIMEOUT_MS = 18_000;
+/** Bulk all-county load (state hubs / warm path). */
+const BULK_FETCH_TIMEOUT_MS = 45_000;
+/** Per-county path — must stay well under page generation budget. */
+const COUNTY_FETCH_TIMEOUT_MS = 12_000;
 
 /** Assignment sources that mark a company as true local for the county. */
 const LOCAL_ASSIGNMENT_SOURCES = new Set([
@@ -146,23 +148,9 @@ async function withTimeout<T>(promise: Promise<T>, ms: number, label: string): P
 }
 
 /**
- * One batched load of all county → approved mover mappings.
- * Avoids N×2 Supabase round-trips during SSG of ~5k destination/county pages.
+ * Load companies by id OR slug. Assignment rows often store slug in company_id.
+ * Always dual-query — a successful empty `.in('id', slugs)` must not skip slug lookup.
  */
-async function fetchAllApprovedMoversByCounty(): Promise<Record<string, LocalMover[]>> {
-  const client = createPublicOrAdminClient();
-  if (!client) {
-    logger.warn('approved_movers.no_supabase_client', {
-      admin: isSupabaseAdminConfigured(),
-      anon: isSupabaseConfigured(),
-    });
-    return {};
-  }
-
-  const loaded = await withTimeout(loadAllApprovedMoversByCounty(client), FETCH_TIMEOUT_MS, 'all');
-  return loaded ?? {};
-}
-
 async function loadCompaniesByIds(
   client: SupabaseClient<Database>,
   companyIds: string[]
@@ -170,80 +158,261 @@ async function loadCompaniesByIds(
   const companiesById = new Map<string, CompanyMoverRow>();
   if (!companyIds.length) return companiesById;
 
+  function indexCompany(company: CompanyMoverRow) {
+    const named = withPublicDisplayName(company);
+    companiesById.set(named.id, named);
+    if (named.slug) companiesById.set(named.slug, named);
+  }
+
   for (let i = 0; i < companyIds.length; i += IN_CHUNK) {
     const chunk = companyIds.slice(i, i + IN_CHUNK);
 
-    // Progressive select: full scope columns → core (prod may lack service_scope).
-    let companies: CompanyMoverRow[] | null = null;
-
-    const withScope = await client
-      .from('companies')
-      .select(COMPANY_MOVER_SELECT_FULL)
-      .in('id', chunk);
-
-    if (!withScope.error) {
-      companies = (withScope.data ?? []) as CompanyMoverRow[];
-    } else {
-      // Also try matching by slug when assignment company_id stores slug (common in this DB).
-      const bySlug = await client
-        .from('companies')
-        .select(COMPANY_MOVER_SELECT_CORE)
-        .in('slug', chunk);
-
-      const byId = await client
-        .from('companies')
-        .select(COMPANY_MOVER_SELECT_CORE)
-        .in('id', chunk);
-
-      if (byId.error && bySlug.error) {
-        logger.error('approved_movers.companies_failed', {
-          code: withScope.error.code,
-          message: withScope.error.message,
-          byId: byId.error?.message,
-          bySlug: bySlug.error?.message,
-        });
-        continue;
-      }
-
-      const map = new Map<string, CompanyMoverRow>();
-      for (const row of (byId.data ?? []) as CompanyMoverRow[]) {
-        map.set(row.id, row);
-        if (row.slug) map.set(row.slug, row);
-      }
-      for (const row of (bySlug.data ?? []) as CompanyMoverRow[]) {
-        map.set(row.id, row);
-        if (row.slug) map.set(row.slug, row);
-      }
-      companies = [...new Map([...map.values()].map((c) => [c.id, c])).values()];
+    // Prefer full columns (service_scope / coverage). Fall back to core if schema lags.
+    let select = COMPANY_MOVER_SELECT_FULL;
+    let byId = await client.from('companies').select(select).in('id', chunk);
+    if (
+      byId.error &&
+      (byId.error.code === 'PGRST204' ||
+        byId.error.code === '42703' ||
+        /service_scope|coverage_counties|does not exist/i.test(byId.error.message))
+    ) {
+      select = COMPANY_MOVER_SELECT_CORE;
+      byId = await client.from('companies').select(select).in('id', chunk);
     }
 
-    // Ensure slug-keyed lookups work when assignment.company_id is a slug.
-    for (const company of companies ?? []) {
-      const named = withPublicDisplayName(company);
-      companiesById.set(named.id, named);
-      if (named.slug && named.slug !== named.id) {
-        companiesById.set(named.slug, named);
-      }
+    const bySlug = await client.from('companies').select(select).in('slug', chunk);
+
+    if (byId.error && bySlug.error) {
+      logger.error('approved_movers.companies_failed', {
+        byId: byId.error?.message,
+        bySlug: bySlug.error?.message,
+      });
+      continue;
     }
 
-    // Fill any ids still missing via per-id or per-slug lookup (handles mixed keys).
+    for (const row of (byId.data ?? []) as CompanyMoverRow[]) indexCompany(row);
+    for (const row of (bySlug.data ?? []) as CompanyMoverRow[]) indexCompany(row);
+
     for (const key of chunk) {
       if (companiesById.has(key)) continue;
       const { data } = await client
         .from('companies')
-        .select(COMPANY_MOVER_SELECT_CORE)
+        .select(select)
         .or(`id.eq.${key},slug.eq.${key}`)
         .maybeSingle();
-      if (data) {
-        const named = withPublicDisplayName(data as CompanyMoverRow);
-        companiesById.set(named.id, named);
-        companiesById.set(key, named);
-        if (named.slug) companiesById.set(named.slug, named);
-      }
+      if (data) indexCompany(data as CompanyMoverRow);
     }
   }
 
   return companiesById;
+}
+
+function moversFromAssignments(
+  assignments: AssignmentRow[],
+  companiesById: Map<string, CompanyMoverRow>,
+  extraLocalKeys?: Set<string>
+): LocalMover[] {
+  const localKeys = new Set<string>(extraLocalKeys);
+  for (const row of assignments) {
+    if (isLocalAssignmentSource(row.source)) {
+      if (row.company_id) localKeys.add(row.company_id);
+      if (row.company_slug) localKeys.add(row.company_slug);
+    }
+  }
+
+  const seen = new Set<string>();
+  const movers: LocalMover[] = [];
+  for (const row of assignments) {
+    const key = row.company_id || row.company_slug;
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    const company =
+      companiesById.get(row.company_id) ||
+      companiesById.get(row.company_slug) ||
+      companiesById.get(key);
+    if (!company) continue;
+
+    const isIntrastate =
+      company.service_scope === 'intrastate' ||
+      localKeys.has(company.id) ||
+      localKeys.has(company.slug) ||
+      localKeys.has(key);
+    if (!isIntrastate && company.is_verified === false) continue;
+
+    const mover = companyToLocalMover(company);
+    if (isIntrastate && !mover.isLocalOnly) mover.isLocalOnly = true;
+    movers.push(mover);
+  }
+  return sortMoversForCounty(movers);
+}
+
+/**
+ * Fast path: one county's assignments + company rows.
+ * Used for live county pages so a bulk timeout cannot blank the whole directory.
+ */
+async function loadApprovedMoversForSingleCounty(
+  client: SupabaseClient<Database>,
+  stateSlug: string,
+  countySlug: string
+): Promise<LocalMover[]> {
+  const { data, error } = await client
+    .from('company_destination_assignments')
+    .select('company_id, company_slug, state_slug, county_slug, source')
+    .eq('state_slug', stateSlug)
+    .eq('county_slug', countySlug);
+
+  let assignments: AssignmentRow[] = [];
+  if (error) {
+    if (/source|does not exist|PGRST204|42703/i.test(error.message + (error.code || ''))) {
+      const bare = await client
+        .from('company_destination_assignments')
+        .select('company_id, company_slug, state_slug, county_slug')
+        .eq('state_slug', stateSlug)
+        .eq('county_slug', countySlug);
+      if (bare.error) {
+        logger.error('approved_movers.county_assignments_failed', {
+          stateSlug,
+          countySlug,
+          message: bare.error.message,
+        });
+        throw new Error(`approved_movers_county_assignments:${bare.error.message}`);
+      }
+      assignments = (bare.data ?? []) as AssignmentRow[];
+    } else {
+      logger.error('approved_movers.county_assignments_failed', {
+        stateSlug,
+        countySlug,
+        message: error.message,
+      });
+      throw new Error(`approved_movers_county_assignments:${error.message}`);
+    }
+  } else {
+    assignments = (data ?? []) as AssignmentRow[];
+  }
+
+  // Coverage-counties path for verified intrastate companies that list this county.
+  const coverageLinks = await loadIntrastateCoverageForCounty(client, stateSlug, countySlug);
+  for (const link of coverageLinks) {
+    assignments.push({
+      company_id: link.company.id,
+      company_slug: link.company.slug,
+      state_slug: stateSlug,
+      county_slug: countySlug,
+      source: 'local_intrastate',
+    });
+  }
+
+  if (!assignments.length) return [];
+
+  const companyIds = [
+    ...new Set(
+      assignments.flatMap((row) =>
+        [row.company_id, row.company_slug].filter(Boolean) as string[]
+      )
+    ),
+  ];
+  const companiesById = await loadCompaniesByIds(client, companyIds);
+  for (const link of coverageLinks) {
+    companiesById.set(link.company.id, link.company);
+    if (link.company.slug) companiesById.set(link.company.slug, link.company);
+  }
+
+  const movers = moversFromAssignments(assignments, companiesById);
+  logger.info('approved_movers.county_loaded', {
+    stateSlug,
+    countySlug,
+    assignments: assignments.length,
+    movers: movers.length,
+  });
+  return movers;
+}
+
+async function loadIntrastateCoverageForCounty(
+  client: SupabaseClient<Database>,
+  stateSlug: string,
+  countySlug: string
+): Promise<Array<{ company: CompanyMoverRow }>> {
+  const out: Array<{ company: CompanyMoverRow }> = [];
+  const withScope = await client
+    .from('companies')
+    .select(COMPANY_MOVER_SELECT_FULL)
+    .eq('service_scope', 'intrastate')
+    .limit(500);
+
+  if (withScope.error) {
+    if (
+      withScope.error.code === 'PGRST204' ||
+      withScope.error.code === '42703' ||
+      /service_scope|coverage_counties|does not exist/i.test(withScope.error.message)
+    ) {
+      return out;
+    }
+    logger.warn('approved_movers.intrastate_county_scan_failed', {
+      message: withScope.error.message,
+    });
+    return out;
+  }
+
+  for (const company of (withScope.data ?? []) as CompanyMoverRow[]) {
+    const named = withPublicDisplayName(company);
+    const counties = normalizeSelectedCounties(named.coverage_counties);
+    if (counties.some((c) => c.stateSlug === stateSlug && c.countySlug === countySlug)) {
+      out.push({ company: named });
+    }
+  }
+  return out;
+}
+
+/**
+ * One batched load of all county → approved mover mappings.
+ * Prefer per-county path for pages; bulk is for warm/debug.
+ */
+async function fetchAllApprovedMoversByCounty(): Promise<Record<string, LocalMover[]>> {
+  const client = createPublicOrAdminClient();
+  if (!client) {
+    logger.error('approved_movers.no_supabase_client', {
+      admin: isSupabaseAdminConfigured(),
+      anon: isSupabaseConfigured(),
+    });
+    // Throw so unstable_cache does NOT cache an empty map as success.
+    throw new Error('approved_movers_no_supabase_client');
+  }
+
+  const loaded = await withTimeout(
+    loadAllApprovedMoversByCounty(client),
+    BULK_FETCH_TIMEOUT_MS,
+    'all'
+  );
+  if (loaded == null) {
+    throw new Error('approved_movers_bulk_timeout');
+  }
+  return loaded;
+}
+
+async function fetchApprovedMoversForCountyUncached(
+  stateSlug: string,
+  countySlug: string
+): Promise<LocalMover[]> {
+  const client = createPublicOrAdminClient();
+  if (!client) {
+    logger.error('approved_movers.no_supabase_client', {
+      stateSlug,
+      countySlug,
+      admin: isSupabaseAdminConfigured(),
+      anon: isSupabaseConfigured(),
+    });
+    throw new Error('approved_movers_no_supabase_client');
+  }
+
+  const loaded = await withTimeout(
+    loadApprovedMoversForSingleCounty(client, stateSlug, countySlug),
+    COUNTY_FETCH_TIMEOUT_MS,
+    `${stateSlug}/${countySlug}`
+  );
+  if (loaded == null) {
+    throw new Error(`approved_movers_county_timeout:${stateSlug}/${countySlug}`);
+  }
+  return loaded;
 }
 
 /**
@@ -445,15 +614,84 @@ async function loadAllApprovedMoversByCounty(
 
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  // v6: anon fallback + assignment-source local flags + no service_scope column required
-  ['approved-county-movers-all-v6-anon-local-source'],
+  // v7: dual id/slug company resolve + throw on timeout (do not cache empty failure)
+  ['approved-county-movers-all-v7-dual-slug'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
 
+/**
+ * Per-county cache — primary path for county pages and state hub badges.
+ * Isolated so one bulk timeout cannot zero-out every county for 60s.
+ */
+function getApprovedMoversForCountyCached(stateSlug: string, countySlug: string) {
+  return unstable_cache(
+    () => fetchApprovedMoversForCountyUncached(stateSlug, countySlug),
+    // v7 per-county
+    ['approved-county-movers-one-v7', stateSlug, countySlug],
+    { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
+  )();
+}
+
+/**
+ * Approved / onboarded movers for a county from Supabase (are).
+ * Never silently returns empty on infra failure — throws so callers can degrade visibly.
+ * Empty array only means “DB has no assignments for this county”.
+ */
 export async function getApprovedMoversForCounty(
   stateSlug: string,
   countySlug: string
 ): Promise<LocalMover[]> {
-  const all = await getAllApprovedMoversByCountyCached();
-  return all[countyKey(stateSlug, countySlug)] ?? [];
+  try {
+    return await getApprovedMoversForCountyCached(stateSlug, countySlug);
+  } catch (err) {
+    logger.warn('approved_movers.county_cache_failed_try_bulk', {
+      stateSlug,
+      countySlug,
+      message: err instanceof Error ? err.message : String(err),
+    });
+    try {
+      const all = await getAllApprovedMoversByCountyCached();
+      return all[countyKey(stateSlug, countySlug)] ?? [];
+    } catch (bulkErr) {
+      logger.error('approved_movers.county_and_bulk_failed', {
+        stateSlug,
+        countySlug,
+        county: err instanceof Error ? err.message : String(err),
+        bulk: bulkErr instanceof Error ? bulkErr.message : String(bulkErr),
+      });
+      // Propagate so getMoversForCountyAsync can set sourceMode=degraded.
+      throw bulkErr instanceof Error
+        ? bulkErr
+        : new Error(String(bulkErr ?? err));
+    }
+  }
+}
+
+/** Debug / health: force a fresh bulk load (bypasses per-county). */
+export async function getAllApprovedMoversByCountyForHealth(): Promise<{
+  countyCount: number;
+  sample: Record<string, number>;
+  error?: string;
+}> {
+  try {
+    const all = await fetchAllApprovedMoversByCounty();
+    const sample: Record<string, number> = {};
+    for (const key of [
+      'florida::broward',
+      'florida::miami-dade',
+      'texas::harris',
+      'california::los-angeles',
+      'illinois::cook',
+      'new-york::kings',
+    ]) {
+      sample[key] = all[key]?.length ?? 0;
+    }
+    return { countyCount: Object.keys(all).length, sample };
+  } catch (err) {
+    return {
+      countyCount: 0,
+      sample: {},
+      error: err instanceof Error ? err.message : String(err),
+    };
+  }
 }

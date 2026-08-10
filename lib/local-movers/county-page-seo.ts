@@ -23,6 +23,8 @@ export type CountyPageSeoContext = {
   metadata: Metadata;
   title: string;
   description: string;
+  sourceMode: 'db' | 'seed' | 'hybrid' | 'degraded';
+  approvedCount: number;
 };
 
 /** Single canonical SEO resolver — used by generateMetadata and county page body. */
@@ -63,5 +65,7 @@ export async function resolveCountyPageSeo(
     metadata,
     title,
     description,
+    sourceMode: result.sourceMode,
+    approvedCount: result.approvedCount,
   };
 }
