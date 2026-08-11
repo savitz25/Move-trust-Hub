@@ -108,6 +108,7 @@ export const GUIDES_NAV: NavMegaColumn[] = [
 export const MOVE_DIRECT_NAV = [
   { label: 'Local Movers', href: '/local-movers' },
   { label: 'Calculator', href: '/moving-calculator' },
+  { label: 'Quote Check', href: '/tools/move-quote-check' },
   { label: 'Verify DOT', href: '/verify-dot' },
 ] as const;
 
@@ -121,6 +122,7 @@ export const MOVE_NAV_AUDIT_PATHS = [
   '/my-move/reports',
   '/moving-to',
   '/moving-calculator',
+  '/tools/move-quote-check',
   '/verify-dot',
   '/resources',
 ] as const;

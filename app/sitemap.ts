@@ -95,6 +95,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...clusterRoutes,
     '/auto-transport',
     '/moving-calculator',
+    '/tools/move-quote-check',
     '/verify-dot',
     '/review',
     '/compare',

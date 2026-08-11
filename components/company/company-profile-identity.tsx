@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Building2, MapPin } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
@@ -44,17 +45,17 @@ export function CompanyProfileIdentity({ company }: { company: Company }) {
 
   return (
     <Card className="mb-6 border-primary/15">
-      <CardHeader className="pb-2">
+      <CardHeader className="pb-2 px-4 sm:px-6">
         <CardTitle className="text-base flex items-center gap-2">
           <Building2 className="h-4 w-4 text-primary" aria-hidden />
           Company identity
         </CardTitle>
-        <p className="text-xs text-muted-foreground leading-relaxed">
+        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
           Public research identity from directory records and FMCSA-oriented fields. Confirm every
           license number on official sources before you book.
         </p>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-4 px-4 sm:px-6">
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs font-medium text-muted-foreground">Entity type:</span>
           <CompanyTypeBadges company={company} size="default" />
@@ -63,12 +64,12 @@ export function CompanyProfileIdentity({ company }: { company: Company }) {
           {rows.map((row) => (
             <div
               key={row.label}
-              className="rounded-lg border bg-muted/20 px-3 py-2 flex flex-col gap-0.5"
+              className="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"
             >
               <dt className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
                 {row.label}
               </dt>
-              <dd className="font-medium text-foreground break-words">{row.value}</dd>
+              <dd className="font-medium text-foreground break-words leading-snug">{row.value}</dd>
             </div>
           ))}
         </dl>
@@ -85,6 +86,16 @@ export function CompanyProfileIdentity({ company }: { company: Company }) {
             fragments are not shown as city).
           </p>
         ) : null}
+        <p className="text-xs sm:text-sm rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 leading-relaxed">
+          Already have a quote from this company?{' '}
+          <Link
+            href="/tools/move-quote-check"
+            className="font-semibold text-primary underline-offset-2 hover:underline"
+          >
+            Run Move Quote Check
+          </Link>{' '}
+          before you sign or pay a deposit — research only, no lead form.
+        </p>
       </CardContent>
     </Card>
   );

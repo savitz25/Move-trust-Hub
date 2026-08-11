@@ -108,7 +108,13 @@ function classifyMovePath(
   if (from.startsWith('/companies/') && (to === '/compare' || to.startsWith('/compare?'))) {
     return 'profile_to_compare';
   }
-  const toolPaths = ['/moving-calculator', '/verify-dot', '/compare', '/my-move'];
+  const toolPaths = [
+    '/moving-calculator',
+    '/verify-dot',
+    '/compare',
+    '/my-move',
+    '/tools/move-quote-check',
+  ];
   if (toolPaths.some((p) => from === p || from.startsWith(`${p}/`)) && to.startsWith('/companies')) {
     return 'tool_to_directory';
   }

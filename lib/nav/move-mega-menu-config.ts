@@ -61,6 +61,11 @@ export const MOVE_MEGA_NAV: MoveMegaNavItem[] = [
         title: 'Research tools',
         links: [
           {
+            label: 'Move Quote Check',
+            href: '/tools/move-quote-check',
+            description: 'Review estimate terms before you sign',
+          },
+          {
             label: 'How we vet movers',
             href: '/about/how-we-score-movers',
             description: 'Scores, sources, and review policy',

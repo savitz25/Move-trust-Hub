@@ -14,6 +14,12 @@ import {
 
 const MY_MOVE_RESEARCH: ResearchNextLink[] = [
   {
+    href: '/tools/move-quote-check',
+    label: 'Move Quote Check',
+    description: 'Review estimate terms before you sign or pay a deposit.',
+    icon: 'verify',
+  },
+  {
     href: '/moving-calculator',
     label: 'Update inventory in the Moving Calculator',
     description: 'Refresh cubic feet and weight for comparable estimates.',
