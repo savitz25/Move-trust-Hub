@@ -1,12 +1,16 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import {
   buildMoveJourneyCards,
   type JourneyIntent,
   type MoveJourneyGeo,
 } from '@/lib/network/journey-context';
+import {
+  loadResearchSession,
+  writeMoveResearchSession,
+} from '@/lib/network/research-session';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -19,6 +23,7 @@ type Props = {
 
 /**
  * Stage A′ dual-card journey handoff for Move destination / state surfaces.
+ * Stage B.1 also writes a non-PII origin-local research session for return visits.
  * Crawlable absolute URLs only — no auth handoff, no quote funnels.
  */
 export function ContinueTrustJourney({
@@ -29,6 +34,23 @@ export function ContinueTrustJourney({
 }: Props) {
   const [intent, setIntent] = useState<JourneyIntent>(defaultIntent);
   const cards = useMemo(() => buildMoveJourneyCards(geo, intent), [geo, intent]);
+
+  // Restore last intent from session when page default is unknown
+  useEffect(() => {
+    const session = loadResearchSession();
+    if (!session) return;
+    if (
+      defaultIntent === 'unknown' &&
+      (session.intent === 'buy' || session.intent === 'rent')
+    ) {
+      setIntent(session.intent);
+    }
+  }, [defaultIntent]);
+
+  // Write destination + intent on land and whenever intent changes
+  useEffect(() => {
+    writeMoveResearchSession(geo, intent);
+  }, [geo, intent]);
 
   return (
     <aside
