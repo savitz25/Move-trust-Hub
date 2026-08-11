@@ -74,3 +74,45 @@ export function trackQuoteCheckInventoryReviewClick() {
     page_path: PAGE,
   });
 }
+
+export function trackQuoteCheckUploadStarted(params: {
+  type: string;
+  size_kb: number;
+}) {
+  trackGaEvent('move_quote_check_upload_started', {
+    page_path: PAGE,
+    file_type: params.type,
+    size_kb: params.size_kb,
+  });
+}
+
+export function trackQuoteCheckUploadSuccess(params: {
+  method: string;
+  quality: string;
+  suggestion_count: number;
+}) {
+  trackGaEvent('move_quote_check_upload_success', {
+    page_path: PAGE,
+    method: params.method,
+    quality: params.quality,
+    suggestion_count: params.suggestion_count,
+  });
+}
+
+export function trackQuoteCheckUploadLowConfidence(params: {
+  method: string;
+  quality: string;
+}) {
+  trackGaEvent('move_quote_check_upload_low_confidence_fallback', {
+    page_path: PAGE,
+    method: params.method,
+    quality: params.quality,
+  });
+}
+
+export function trackQuoteCheckPrefillFromUpload(params: { field_count: number }) {
+  trackGaEvent('move_quote_check_prefill_from_upload_applied', {
+    page_path: PAGE,
+    field_count: params.field_count,
+  });
+}

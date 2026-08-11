@@ -21,6 +21,7 @@ import {
 import {
   applyPasteSuggestions,
   parseEstimatePasteText,
+  type PasteSuggestion,
 } from '@/lib/move-quote-check/paste-parse';
 import { loadUserInventoryTotals } from '@/lib/move-quote-check/inventory-compare';
 import {
@@ -39,6 +40,7 @@ import {
   matchQuoteCheckDirectory,
   type QuoteCheckDirectoryMatch,
 } from '@/actions/move-quote-check-match';
+import { EstimateUploadAssist } from '@/components/move-quote-check/estimate-upload-assist';
 import {
   trackQuoteCheckPasteUsed,
   trackQuoteCheckPrefillApplied,
@@ -81,15 +83,28 @@ export function CompareTwoEstimatesClient() {
     setAnswersB((a) => ({ ...a, ...p }));
   }, []);
 
+  function applySuggestionsToSide(side: 'A' | 'B', suggestions: PasteSuggestion[]) {
+    const base = side === 'A' ? answersA : answersB;
+    const { next, applied } = applyPasteSuggestions(base, suggestions);
+    if (side === 'A') setAnswersA(next);
+    else setAnswersB(next);
+    trackQuoteCheckPrefillApplied({ field_count: applied.length });
+  }
+
   function applyPaste(side: 'A' | 'B') {
     trackQuoteCheckPasteUsed();
     const text = side === 'A' ? pasteA : pasteB;
     const parsed = parseEstimatePasteText(text);
-    const base = side === 'A' ? answersA : answersB;
-    const { next, applied } = applyPasteSuggestions(base, parsed.suggestions);
-    if (side === 'A') setAnswersA(next);
-    else setAnswersB(next);
-    trackQuoteCheckPrefillApplied({ field_count: applied.length });
+    applySuggestionsToSide(side, parsed.suggestions);
+  }
+
+  function onUploadSide(
+    side: 'A' | 'B',
+    result: { text: string; suggestions: PasteSuggestion[] }
+  ) {
+    if (side === 'A') setPasteA(result.text.slice(0, 50_000));
+    else setPasteB(result.text.slice(0, 50_000));
+    applySuggestionsToSide(side, result.suggestions);
   }
 
   async function generate() {
@@ -186,6 +201,7 @@ export function CompareTwoEstimatesClient() {
           pasteText={pasteA}
           setPasteText={setPasteA}
           onApplyPaste={() => applyPaste('A')}
+          onUpload={(r) => onUploadSide('A', r)}
           footer={
             <div className="mt-6 flex flex-wrap gap-3">
               <Button type="button" asChild variant="outline">
@@ -212,6 +228,7 @@ export function CompareTwoEstimatesClient() {
           pasteText={pasteB}
           setPasteText={setPasteB}
           onApplyPaste={() => applyPaste('B')}
+          onUpload={(r) => onUploadSide('B', r)}
           footer={
             <div className="mt-6 space-y-3">
               {loadUserInventoryTotals() || useInventory ? (
@@ -522,6 +539,7 @@ function EstimateEditor({
   pasteText,
   setPasteText,
   onApplyPaste,
+  onUpload,
   footer,
 }: {
   title: string;
@@ -531,6 +549,7 @@ function EstimateEditor({
   pasteText: string;
   setPasteText: (v: string) => void;
   onApplyPaste: () => void;
+  onUpload: (r: { text: string; suggestions: PasteSuggestion[] }) => void;
   footer: React.ReactNode;
 }) {
   return (
@@ -540,8 +559,14 @@ function EstimateEditor({
         <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
       </div>
 
+      <EstimateUploadAssist
+        onExtracted={(r) =>
+          onUpload({ text: r.text, suggestions: r.suggestions })
+        }
+      />
+
       <div>
-        <p className="text-sm font-medium">Paste estimate text (optional)</p>
+        <p className="text-sm font-medium">Or paste estimate text</p>
         <textarea
           className="mt-1.5 min-h-[100px] w-full rounded-xl border px-3 py-2 text-sm"
           value={pasteText}
@@ -559,7 +584,7 @@ function EstimateEditor({
           Scan &amp; suggest
         </Button>
         <p className="mt-1 text-[11px] text-muted-foreground">
-          Scanned in-browser only. Not sold. Not sent to movers.
+          Upload/paste assist only. Not sold. Not sent to movers. Not stored by default.
         </p>
       </div>
 

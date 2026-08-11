@@ -25,6 +25,7 @@ import { evaluateQuoteCheck } from '@/lib/move-quote-check/rules';
 import {
   applyPasteSuggestions,
   parseEstimatePasteText,
+  type PasteSuggestion,
 } from '@/lib/move-quote-check/paste-parse';
 import { saveQuoteCheckSummary } from '@/lib/move-quote-check/local-report-store';
 import {
@@ -36,6 +37,7 @@ import {
   matchQuoteCheckDirectory,
   type QuoteCheckDirectoryMatch,
 } from '@/actions/move-quote-check-match';
+import { EstimateUploadAssist } from '@/components/move-quote-check/estimate-upload-assist';
 import {
   trackQuoteCheckCopyQuestions,
   trackQuoteCheckInventoryCompareShown,
@@ -138,6 +140,7 @@ export function MoveQuoteCheckClient() {
   const [saveMsg, setSaveMsg] = useState<string | null>(null);
   const [userInventory, setUserInventory] = useState<UserInventoryTotals | null>(null);
   const [useUserInventory, setUseUserInventory] = useState(true);
+  const [uploadSourceLabel, setUploadSourceLabel] = useState<string | null>(null);
 
   useEffect(() => {
     trackQuoteCheckStart();
@@ -159,20 +162,50 @@ export function MoveQuoteCheckClient() {
 
   const stepIndex = STEPS.findIndex((s) => s.id === step);
 
-  function applyPaste() {
-    trackQuoteCheckPasteUsed();
-    const parsed = parseEstimatePasteText(pasteText);
-    setPasteNotices(parsed.notices);
-    if (parsed.suggestions.length === 0) {
+  function applySuggestions(
+    suggestions: PasteSuggestion[],
+    notices: string[],
+    sourceKind: 'paste' | 'upload'
+  ) {
+    setPasteNotices(notices);
+    if (suggestions.length === 0) {
       setPasteNotices((n) =>
         n.length ? n : ['No high-confidence terms detected — continue with the questionnaire.']
       );
       return;
     }
-    const { next, applied, sources } = applyPasteSuggestions(answers, parsed.suggestions);
+    const { next, applied, sources } = applyPasteSuggestions(answers, suggestions);
+    const labeled: typeof sources = {};
+    for (const [k, note] of Object.entries(sources) as [keyof QuoteCheckAnswers, string][]) {
+      labeled[k] =
+        sourceKind === 'upload'
+          ? note.replace(/^Found /, 'From upload: ').replace(/^Possible /, 'From upload: ')
+          : note;
+      if (sourceKind === 'upload' && !labeled[k]!.toLowerCase().includes('upload')) {
+        labeled[k] = `From upload — ${note}`;
+      }
+    }
     setAnswers(next);
-    setFieldSources((prev) => ({ ...prev, ...sources }));
+    setFieldSources((prev) => ({ ...prev, ...labeled }));
     trackQuoteCheckPrefillApplied({ field_count: applied.length });
+  }
+
+  function applyPaste() {
+    trackQuoteCheckPasteUsed();
+    const parsed = parseEstimatePasteText(pasteText);
+    applySuggestions(parsed.suggestions, parsed.notices, 'paste');
+  }
+
+  function onUploadExtracted(result: {
+    text: string;
+    suggestions: PasteSuggestion[];
+    notices: string[];
+    fileName: string;
+    quality: string;
+  }) {
+    setPasteText(result.text.slice(0, 50_000));
+    setUploadSourceLabel(result.fileName);
+    applySuggestions(result.suggestions, result.notices, 'upload');
   }
 
   async function goReport() {
@@ -340,12 +373,12 @@ export function MoveQuoteCheckClient() {
             </li>
             <li className="flex gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-              Optional paste-text assist + Verify DOT / profile match
+              Optional upload/paste assist + Verify DOT / profile match
             </li>
           </ul>
           <div className="flex flex-wrap gap-3">
             <Button type="button" size="lg" onClick={() => setStep('paste')}>
-              Paste estimate text
+              Upload or paste estimate
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
             </Button>
             <Button
@@ -359,19 +392,29 @@ export function MoveQuoteCheckClient() {
           </div>
           <p className="text-xs leading-relaxed text-muted-foreground">
             We do not store your estimate contents by default. Do not enter Social Security numbers
-            or payment card details. Pasted text is scanned in your browser for review assistance —
-            not sold, not sent to movers.
+            or payment card details. Upload/paste is scanned for review assistance only — not sold,
+            not sent to movers.
           </p>
         </section>
       ) : null}
 
       {step === 'paste' ? (
         <Section
-          title="Paste estimate text (optional)"
-          help="Paste email or PDF text only. We scan for likely terms and suggest questionnaire answers — you confirm every field."
+          title="Upload or paste estimate (optional)"
+          help="Accelerate the questionnaire with suggested fields. Extraction is not a legal review — you confirm every answer. Weak reads fall back to guided questions."
         >
+          <EstimateUploadAssist
+            onExtracted={onUploadExtracted}
+            onClear={() => {
+              setUploadSourceLabel(null);
+              setPasteNotices([]);
+            }}
+          />
+          <div className="relative py-2 text-center text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+            or paste text
+          </div>
           <textarea
-            className="min-h-[180px] w-full rounded-xl border border-border bg-background px-3 py-2 text-sm leading-relaxed"
+            className="min-h-[140px] w-full rounded-xl border border-border bg-background px-3 py-2 text-sm leading-relaxed"
             value={pasteText}
             onChange={(e) => setPasteText(e.target.value)}
             placeholder="Paste estimate text here…"
@@ -379,9 +422,14 @@ export function MoveQuoteCheckClient() {
             autoComplete="off"
           />
           <p className="text-xs leading-relaxed text-muted-foreground">
-            Privacy: processed in-browser for review assistance. Not sold. Not sent to movers. Not
-            complete document understanding — suggestions can be wrong.
+            Privacy: processed for review assistance. Not sold. Not shared with movers. Not stored by
+            default after processing. Educational tool, not legal advice. Suggestions can be wrong.
           </p>
+          {uploadSourceLabel ? (
+            <p className="text-xs text-primary font-medium">
+              Last upload assist: {uploadSourceLabel}
+            </p>
+          ) : null}
           {pasteNotices.length > 0 ? (
             <ul className="rounded-lg border bg-muted/40 px-3 py-2 text-xs space-y-1">
               {pasteNotices.map((n) => (
@@ -391,7 +439,7 @@ export function MoveQuoteCheckClient() {
           ) : null}
           <div className="flex flex-wrap gap-3">
             <Button type="button" onClick={applyPaste} disabled={pasteText.trim().length < 20}>
-              Scan &amp; suggest answers
+              Scan pasted text
             </Button>
             <Button type="button" variant="outline" onClick={() => setStep('estimate')}>
               Continue to questionnaire
@@ -722,7 +770,9 @@ export function MoveQuoteCheckClient() {
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{report.summaryBody}</p>
             {Object.keys(fieldSources).length > 0 ? (
               <p className="mt-2 text-xs text-muted-foreground">
-                Some answers were suggested from pasted text — you confirmed them in the questionnaire.
+                Some answers were suggested from your{' '}
+                {uploadSourceLabel ? 'upload' : 'paste'} and confirmed by you — this is not a full
+                legal review of the document.
               </p>
             ) : null}
             <dl className="mt-4 grid gap-2 sm:grid-cols-3 text-sm">
@@ -1119,7 +1169,7 @@ function FieldHint({ source }: { source?: string }) {
   if (!source) return null;
   return (
     <span className="mt-0.5 block text-[11px] font-normal text-primary/90">
-      Suggested from pasted text: {source}
+      Suggested from upload/paste: {source}
     </span>
   );
 }
