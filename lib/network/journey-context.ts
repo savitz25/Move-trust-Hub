@@ -86,6 +86,19 @@ export function buildLenderJourneyUrl(
   return `${LENDER_SITE_URL}${path}?${q}`;
 }
 
+/**
+ * Insurance destination guides published on InsuranceTrustHub (keep in sync).
+ * States without a guide soft-land via /destinations?state=XX → directory.
+ */
+const INSURANCE_DESTINATION_SLUGS = new Set([
+  'florida',
+  'texas',
+  'california',
+  'illinois',
+  'new-york',
+  'north-carolina',
+]);
+
 /** Absolute crawlable Insurance destination URL. */
 export function buildInsuranceJourneyUrl(
   geo: MoveJourneyGeo,
@@ -98,8 +111,13 @@ export function buildInsuranceJourneyUrl(
   if (geo.countySlug) p.set('county', geo.countySlug);
   if (intent === 'rent') p.set('intent', 'rent');
   else if (intent === 'buy') p.set('intent', 'buy');
-  // Prefer destination guide; soft-fail to directory if slug unknown is handled by Insurance
-  return `${INSURANCE_SITE_URL}/destinations/${geo.stateSlug}?${p.toString()}`;
+  const qs = p.toString();
+  // Prefer published destination guides; never deep-link a 404 slug
+  if (INSURANCE_DESTINATION_SLUGS.has(geo.stateSlug)) {
+    return `${INSURANCE_SITE_URL}/destinations/${geo.stateSlug}?${qs}`;
+  }
+  // Hub entry with params — Insurance soft-lands to directory when no guide exists
+  return `${INSURANCE_SITE_URL}/destinations?${qs}`;
 }
 
 export type JourneyCard = {
