@@ -63,6 +63,10 @@ export type QuoteCheckAnswers = {
   estimateCubicFeet: string;
   /** Optional mover estimate weight in pounds */
   estimateWeightLbs: string;
+  /** Phase 4 — services clarity */
+  packingIncluded: YesNoUnsure;
+  shuttleMentioned: YesNoUnsure;
+  storageMentioned: YesNoUnsure;
   signedCustomer: YesNoUnsure;
   signedCompany: YesNoUnsure;
   datesPresent: YesNoUnsure;
@@ -153,6 +157,9 @@ export const DEFAULT_ANSWERS: QuoteCheckAnswers = {
   valuation: 'unclear',
   estimateCubicFeet: '',
   estimateWeightLbs: '',
+  packingIncluded: 'not_sure',
+  shuttleMentioned: 'not_sure',
+  storageMentioned: 'not_sure',
   signedCustomer: 'not_sure',
   signedCompany: 'not_sure',
   datesPresent: 'not_sure',

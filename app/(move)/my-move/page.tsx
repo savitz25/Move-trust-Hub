@@ -20,6 +20,12 @@ const MY_MOVE_RESEARCH: ResearchNextLink[] = [
     icon: 'verify',
   },
   {
+    href: '/tools/move-quote-check/compare',
+    label: 'Compare two estimates',
+    description: 'Normalize volume, type, packing, and deposits — not just sticker price.',
+    icon: 'compare',
+  },
+  {
     href: '/moving-calculator',
     label: 'Update inventory in the Moving Calculator',
     description: 'Refresh cubic feet and weight for comparable estimates.',

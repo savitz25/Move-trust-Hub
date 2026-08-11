@@ -66,6 +66,11 @@ export const MOVE_MEGA_NAV: MoveMegaNavItem[] = [
             description: 'Review estimate terms before you sign',
           },
           {
+            label: 'Compare two estimates',
+            href: '/tools/move-quote-check/compare',
+            description: 'Normalize assumptions, not just price',
+          },
+          {
             label: 'How we vet movers',
             href: '/about/how-we-score-movers',
             description: 'Scores, sources, and review policy',

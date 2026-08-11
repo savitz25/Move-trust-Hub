@@ -203,6 +203,39 @@ export function parseEstimatePasteText(raw: string): PasteParseResult {
     });
   }
 
+  // Packing / shuttle / storage
+  if (/\bpacking\s+included\b|\bfull\s+packing\b|\bwe\s+pack\b/i.test(text)) {
+    suggestions.push({
+      field: 'packingIncluded',
+      value: 'yes',
+      note: 'Packing-included language found',
+      confidence: 'medium',
+    });
+  } else if (/\bcustomer\s+pack\b|\bself[-\s]?pack\b|\bpacking\s+not\s+included\b/i.test(text)) {
+    suggestions.push({
+      field: 'packingIncluded',
+      value: 'no',
+      note: 'Self-pack / packing not included language found',
+      confidence: 'medium',
+    });
+  }
+  if (/\bshuttle\b/i.test(text)) {
+    suggestions.push({
+      field: 'shuttleMentioned',
+      value: 'yes',
+      note: 'Shuttle wording found',
+      confidence: 'medium',
+    });
+  }
+  if (/\bstorage\b|\bSIT\b|\bstorage[-\s]?in[-\s]?transit\b/i.test(text)) {
+    suggestions.push({
+      field: 'storageMentioned',
+      value: 'yes',
+      note: 'Storage wording found',
+      confidence: 'medium',
+    });
+  }
+
   // Cubic feet
   const cuFtMatch = text.match(
     /(\d{2,5}(?:\.\d+)?)\s*(?:cu\.?\s*ft\.?|cubic\s*feet|cf\b)/i

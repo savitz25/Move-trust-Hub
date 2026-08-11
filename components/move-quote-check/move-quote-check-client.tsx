@@ -31,6 +31,7 @@ import {
   loadUserInventoryTotals,
   type UserInventoryTotals,
 } from '@/lib/move-quote-check/inventory-compare';
+import { saveCompareHandoffA } from '@/lib/move-quote-check/compare-engine';
 import {
   matchQuoteCheckDirectory,
   type QuoteCheckDirectoryMatch,
@@ -1010,6 +1011,15 @@ export function MoveQuoteCheckClient() {
               <li>
                 <Link href="/moving-calculator" className="font-semibold text-primary hover:underline">
                   Review inventory
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/move-quote-check/compare"
+                  className="font-semibold text-primary hover:underline"
+                  onClick={() => saveCompareHandoffA(answers)}
+                >
+                  Compare with another estimate
                 </Link>
               </li>
               <li>
