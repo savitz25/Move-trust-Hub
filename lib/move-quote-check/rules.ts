@@ -8,6 +8,11 @@ import type {
   QuoteCheckFinding,
   QuoteCheckReport,
 } from '@/lib/move-quote-check/types';
+import {
+  compareInventoryToEstimate,
+  inventoryComparisonFindings,
+  type UserInventoryTotals,
+} from '@/lib/move-quote-check/inventory-compare';
 
 function parseMoney(raw: string): number | null {
   const n = Number(String(raw).replace(/[,$]/g, '').trim());
@@ -36,14 +41,31 @@ function finding(f: QuoteCheckFinding): QuoteCheckFinding {
   return f;
 }
 
+export type EvaluateQuoteCheckOptions = {
+  userInventory?: UserInventoryTotals | null;
+  useUserInventory?: boolean;
+};
+
 /**
  * Evaluate questionnaire answers → structured findings + educational math.
  */
-export function evaluateQuoteCheck(answers: QuoteCheckAnswers): QuoteCheckReport {
+export function evaluateQuoteCheck(
+  answers: QuoteCheckAnswers,
+  options?: EvaluateQuoteCheckOptions
+): QuoteCheckReport {
   const findings: QuoteCheckFinding[] = [];
   const total = parseMoney(answers.estimatedTotal);
   const deposit = parseMoney(answers.depositAmount);
   const usdot = digitsOnly(answers.usdot);
+
+  // —— Phase 3 inventory comparison (before summary counts) ——
+  const inventoryComparison = compareInventoryToEstimate({
+    estimateCubicFeet: answers.estimateCubicFeet,
+    estimateWeightLbs: answers.estimateWeightLbs,
+    userInventory: options?.userInventory ?? null,
+    useUserInventory: options?.useUserInventory !== false,
+  });
+  findings.push(...inventoryComparisonFindings(inventoryComparison));
 
   // —— A. Estimate type / exposure ——
   if (answers.estimateType === 'non_binding') {
@@ -554,7 +576,7 @@ export function evaluateQuoteCheck(answers: QuoteCheckAnswers): QuoteCheckReport
       'Your answers suggest fewer structural gaps — still verify USDOT authority, read valuation and accessorials, and keep copies. Completeness is not an endorsement.';
   }
 
-  const questions = buildQuestions(answers, findings, usdot);
+  const questions = buildQuestions(answers, findings, usdot, inventoryComparison.status);
   const verifyDotHref = usdot.length >= 5 ? `/verify-dot?q=${encodeURIComponent(usdot)}` : null;
 
   return {
@@ -566,6 +588,7 @@ export function evaluateQuoteCheck(answers: QuoteCheckAnswers): QuoteCheckReport
     infoCount,
     findings,
     exposureNote,
+    inventoryComparison,
     questions,
     verifyDotHref,
   };
@@ -574,10 +597,22 @@ export function evaluateQuoteCheck(answers: QuoteCheckAnswers): QuoteCheckReport
 function buildQuestions(
   answers: QuoteCheckAnswers,
   findings: QuoteCheckFinding[],
-  usdot: string
+  usdot: string,
+  inventoryStatus?: string
 ): string[] {
   const qs: string[] = [];
   const ids = new Set(findings.map((f) => f.id));
+
+  if (
+    inventoryStatus === 'material_mismatch' ||
+    inventoryStatus === 'moderate_mismatch' ||
+    ids.has('inventory_material_mismatch') ||
+    ids.has('inventory_moderate_mismatch')
+  ) {
+    qs.push(
+      'Please confirm the cubic feet (or weight) basis for this estimate and share the inventory list used so I can compare it to my own item list.'
+    );
+  }
 
   if (ids.has('est-unclear') || ids.has('est-non-binding')) {
     qs.push(

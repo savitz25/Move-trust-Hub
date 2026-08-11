@@ -203,6 +203,40 @@ export function parseEstimatePasteText(raw: string): PasteParseResult {
     });
   }
 
+  // Cubic feet
+  const cuFtMatch = text.match(
+    /(\d{2,5}(?:\.\d+)?)\s*(?:cu\.?\s*ft\.?|cubic\s*feet|cf\b)/i
+  );
+  if (cuFtMatch) {
+    const n = Number(cuFtMatch[1]);
+    if (Number.isFinite(n) && n >= 50 && n <= 50_000) {
+      suggestions.push({
+        field: 'estimateCubicFeet',
+        value: String(n),
+        note: `Found ~${n} cubic feet wording`,
+        confidence: 'high',
+      });
+      notices.push(`Possible volume ${n} cu. ft.`);
+    }
+  }
+
+  // Weight (lbs)
+  const weightMatch = text.match(
+    /(\d{3,6}(?:,\d{3})?)\s*(?:lbs?\.?|pounds)\b/i
+  );
+  if (weightMatch) {
+    const n = Number(weightMatch[1].replace(/,/g, ''));
+    if (Number.isFinite(n) && n >= 200 && n <= 100_000) {
+      suggestions.push({
+        field: 'estimateWeightLbs',
+        value: String(n),
+        note: `Found ~${n.toLocaleString('en-US')} lbs wording`,
+        confidence: 'medium',
+      });
+      notices.push(`Possible weight ${n.toLocaleString('en-US')} lbs`);
+    }
+  }
+
   // Deposit
   const depositLine = text.match(
     /deposit(?:\s+amount)?\s*(?:of|:)?\s*\$?\s*(\d{1,3}(?:,\d{3})*(?:\.\d{2})?|\d+)/i

@@ -28,11 +28,18 @@ import {
 } from '@/lib/move-quote-check/paste-parse';
 import { saveQuoteCheckSummary } from '@/lib/move-quote-check/local-report-store';
 import {
+  loadUserInventoryTotals,
+  type UserInventoryTotals,
+} from '@/lib/move-quote-check/inventory-compare';
+import {
   matchQuoteCheckDirectory,
   type QuoteCheckDirectoryMatch,
 } from '@/actions/move-quote-check-match';
 import {
   trackQuoteCheckCopyQuestions,
+  trackQuoteCheckInventoryCompareShown,
+  trackQuoteCheckInventoryMismatchMaterial,
+  trackQuoteCheckInventoryReviewClick,
   trackQuoteCheckPasteUsed,
   trackQuoteCheckPrefillApplied,
   trackQuoteCheckProfileMatchClick,
@@ -128,9 +135,14 @@ export function MoveQuoteCheckClient() {
   );
   const [matchLoading, setMatchLoading] = useState(false);
   const [saveMsg, setSaveMsg] = useState<string | null>(null);
+  const [userInventory, setUserInventory] = useState<UserInventoryTotals | null>(null);
+  const [useUserInventory, setUseUserInventory] = useState(true);
 
   useEffect(() => {
     trackQuoteCheckStart();
+    const inv = loadUserInventoryTotals();
+    setUserInventory(inv);
+    setUseUserInventory(Boolean(inv));
   }, []);
 
   const patch = useCallback((partial: Partial<QuoteCheckAnswers>) => {
@@ -163,7 +175,13 @@ export function MoveQuoteCheckClient() {
   }
 
   async function goReport() {
-    const r = evaluateQuoteCheck(answers);
+    // Refresh inventory at report time (user may have updated calculator)
+    const inv = loadUserInventoryTotals();
+    setUserInventory(inv);
+    const r = evaluateQuoteCheck(answers, {
+      userInventory: inv,
+      useUserInventory: useUserInventory && Boolean(inv),
+    });
     setReport(r);
     setStep('report');
     setSaveMsg(null);
@@ -173,6 +191,15 @@ export function MoveQuoteCheckClient() {
       has_usdot: Boolean(r.verifyDotHref),
       estimate_type: answers.estimateType,
     });
+    if (r.inventoryComparison) {
+      trackQuoteCheckInventoryCompareShown({
+        status: r.inventoryComparison.status,
+        basis: r.inventoryComparison.basis,
+      });
+      if (r.inventoryComparison.status === 'material_mismatch') {
+        trackQuoteCheckInventoryMismatchMaterial();
+      }
+    }
     setMatchLoading(true);
     setDirectoryMatch(null);
     try {
@@ -472,7 +499,7 @@ export function MoveQuoteCheckClient() {
               { value: 'not_sure', label: 'Not sure' },
             ]}
           />
-          <p className="mt-5 text-sm font-medium">Inventory detail</p>
+          <p className="mt-5 text-sm font-medium">Inventory detail on the estimate</p>
           <div className="mt-2">
             <RadioGroup
               name="inventory"
@@ -486,6 +513,60 @@ export function MoveQuoteCheckClient() {
               ]}
             />
           </div>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <label className="block text-sm font-medium">
+              Estimate cubic feet (optional)
+              <FieldHint source={fieldSources.estimateCubicFeet} />
+              <Input
+                className="mt-1.5"
+                value={answers.estimateCubicFeet}
+                onChange={(e) => patch({ estimateCubicFeet: e.target.value })}
+                inputMode="decimal"
+                placeholder="e.g. 650"
+              />
+            </label>
+            <label className="block text-sm font-medium">
+              Estimate weight, lbs (optional)
+              <FieldHint source={fieldSources.estimateWeightLbs} />
+              <Input
+                className="mt-1.5"
+                value={answers.estimateWeightLbs}
+                onChange={(e) => patch({ estimateWeightLbs: e.target.value })}
+                inputMode="decimal"
+                placeholder="e.g. 4500"
+              />
+            </label>
+          </div>
+          {userInventory ? (
+            <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 px-3 py-3 text-sm">
+              <label className="flex items-start gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="mt-1"
+                  checked={useUserInventory}
+                  onChange={(e) => setUseUserInventory(e.target.checked)}
+                />
+                <span>
+                  <span className="font-semibold text-foreground">
+                    Use my MoveTrustHub inventory for comparison
+                  </span>
+                  <span className="mt-0.5 block text-xs text-muted-foreground leading-relaxed">
+                    Found on this device: ~{Math.round(userInventory.cubicFeet).toLocaleString('en-US')}{' '}
+                    cu. ft. · ~{userInventory.weightLbs.toLocaleString('en-US')} lbs ·{' '}
+                    {userInventory.itemCount} items (Moving Calculator). No account required.
+                  </span>
+                </span>
+              </label>
+            </div>
+          ) : (
+            <p className="mt-4 text-xs text-muted-foreground leading-relaxed">
+              No inventory on this device yet.{' '}
+              <Link href="/moving-calculator" className="font-semibold text-primary hover:underline">
+                Build one in the Moving Calculator
+              </Link>{' '}
+              to enable volume mismatch comparison.
+            </p>
+          )}
           <NavButtons onBack={back} onNext={next} />
         </Section>
       ) : null}
@@ -727,6 +808,112 @@ export function MoveQuoteCheckClient() {
               <p className="mt-2 text-xs leading-relaxed text-sky-900/80">
                 {report.exposureNote.explanation}
               </p>
+            </div>
+          ) : null}
+
+          {/* Phase 3 inventory comparison */}
+          {report.inventoryComparison ? (
+            <div
+              className={cn(
+                'rounded-2xl border p-5 shadow-sm',
+                report.inventoryComparison.status === 'material_mismatch'
+                  ? 'border-amber-300 bg-amber-50/90'
+                  : report.inventoryComparison.status === 'moderate_mismatch'
+                    ? 'border-sky-200 bg-sky-50/80'
+                    : report.inventoryComparison.status === 'aligned'
+                      ? 'border-emerald-200 bg-emerald-50/70'
+                      : 'border-border bg-card'
+              )}
+              data-inventory-compare={report.inventoryComparison.status}
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider opacity-80">
+                Inventory comparison
+              </p>
+              <h3 className="mt-1 text-base font-semibold tracking-tight">
+                {report.inventoryComparison.headline}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed opacity-95">
+                {report.inventoryComparison.body}
+              </p>
+              {(report.inventoryComparison.moverCuFt != null ||
+                report.inventoryComparison.userCuFt != null) && (
+                <dl className="mt-3 grid gap-2 sm:grid-cols-3 text-sm">
+                  <div className="rounded-lg border border-black/5 bg-white/70 px-3 py-2">
+                    <dt className="text-[11px] text-muted-foreground">Mover estimate</dt>
+                    <dd className="font-semibold tabular-nums">
+                      {report.inventoryComparison.moverCuFt != null
+                        ? `~${Math.round(report.inventoryComparison.moverCuFt).toLocaleString('en-US')} cu. ft.`
+                        : report.inventoryComparison.moverWeightLbs != null
+                          ? `~${report.inventoryComparison.moverWeightLbs.toLocaleString('en-US')} lbs`
+                          : '—'}
+                    </dd>
+                  </div>
+                  <div className="rounded-lg border border-black/5 bg-white/70 px-3 py-2">
+                    <dt className="text-[11px] text-muted-foreground">Your inventory</dt>
+                    <dd className="font-semibold tabular-nums">
+                      {report.inventoryComparison.userCuFt != null
+                        ? `~${Math.round(report.inventoryComparison.userCuFt).toLocaleString('en-US')} cu. ft.`
+                        : '—'}
+                      {report.inventoryComparison.userWeightLbs != null
+                        ? ` · ~${report.inventoryComparison.userWeightLbs.toLocaleString('en-US')} lbs`
+                        : ''}
+                    </dd>
+                  </div>
+                  <div className="rounded-lg border border-black/5 bg-white/70 px-3 py-2">
+                    <dt className="text-[11px] text-muted-foreground">Difference</dt>
+                    <dd className="font-semibold tabular-nums">
+                      {report.inventoryComparison.absDiffCuFt != null
+                        ? `~${Math.round(report.inventoryComparison.absDiffCuFt).toLocaleString('en-US')} cu. ft.`
+                        : report.inventoryComparison.absDiffLbs != null
+                          ? `~${report.inventoryComparison.absDiffLbs.toLocaleString('en-US')} lbs`
+                          : '—'}
+                      {report.inventoryComparison.pctDiffCuFt != null
+                        ? ` · ~${report.inventoryComparison.pctDiffCuFt}%`
+                        : report.inventoryComparison.pctDiffLbs != null
+                          ? ` · ~${report.inventoryComparison.pctDiffLbs}%`
+                          : ''}
+                    </dd>
+                  </div>
+                </dl>
+              )}
+              <p className="mt-2 text-[11px] font-medium uppercase tracking-wide opacity-80">
+                Status:{' '}
+                {report.inventoryComparison.status === 'aligned'
+                  ? 'Aligned'
+                  : report.inventoryComparison.status === 'moderate_mismatch'
+                    ? 'Review recommended'
+                    : report.inventoryComparison.status === 'material_mismatch'
+                      ? 'Material difference'
+                      : 'Comparison unavailable'}
+              </p>
+              <ul className="mt-3 space-y-1.5 text-sm">
+                <li>
+                  <Link
+                    href="/moving-calculator"
+                    className="font-semibold text-primary hover:underline"
+                    onClick={() => trackQuoteCheckInventoryReviewClick()}
+                  >
+                    Review / update inventory
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className="font-semibold text-primary hover:underline"
+                    onClick={() => setStep('survey')}
+                  >
+                    Edit estimate volume/weight and re-run
+                  </button>
+                </li>
+                <li className="text-xs text-muted-foreground leading-relaxed">
+                  Ask the mover to confirm the inventory basis in writing before you sign.
+                </li>
+              </ul>
+              {report.inventoryComparison.prompt ? (
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                  {report.inventoryComparison.prompt}
+                </p>
+              ) : null}
             </div>
           ) : null}
 

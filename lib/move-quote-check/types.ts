@@ -1,5 +1,5 @@
 /**
- * Move Quote Check Phase 1 — questionnaire + report contracts.
+ * Move Quote Check Phase 1–3 — questionnaire + report contracts.
  * Research only; no PII storage by default.
  */
 
@@ -59,6 +59,10 @@ export type QuoteCheckAnswers = {
   depositTiming: DepositTiming;
   paymentMethod: PaymentMethod;
   valuation: ValuationType;
+  /** Optional mover estimate cubic feet (from paper / paste) */
+  estimateCubicFeet: string;
+  /** Optional mover estimate weight in pounds */
+  estimateWeightLbs: string;
   signedCustomer: YesNoUnsure;
   signedCompany: YesNoUnsure;
   datesPresent: YesNoUnsure;
@@ -79,7 +83,15 @@ export type QuoteCheckFinding = {
   explanation: string;
   action: string;
   citation: string;
-  family: 'estimate_type' | 'identity' | 'survey' | 'inventory' | 'deposit' | 'valuation' | 'completeness';
+  family:
+    | 'estimate_type'
+    | 'identity'
+    | 'survey'
+    | 'inventory'
+    | 'inventory_compare'
+    | 'deposit'
+    | 'valuation'
+    | 'completeness';
 };
 
 export type QuoteCheckReport = {
@@ -96,8 +108,34 @@ export type QuoteCheckReport = {
     educationalMaxAtDelivery: number;
     explanation: string;
   } | null;
+  /** Phase 3 — inventory vs estimate volume/weight */
+  inventoryComparison: InventoryComparisonResult | null;
   questions: string[];
   verifyDotHref: string | null;
+};
+
+/** Phase 3 comparison payload (also defined behaviorally in inventory-compare.ts) */
+export type InventoryComparisonStatus =
+  | 'aligned'
+  | 'moderate_mismatch'
+  | 'material_mismatch'
+  | 'unavailable';
+
+export type InventoryComparisonResult = {
+  status: InventoryComparisonStatus;
+  basis: 'volume' | 'weight' | 'none';
+  moverCuFt: number | null;
+  moverWeightLbs: number | null;
+  userCuFt: number | null;
+  userWeightLbs: number | null;
+  userItemCount: number | null;
+  absDiffCuFt: number | null;
+  pctDiffCuFt: number | null;
+  absDiffLbs: number | null;
+  pctDiffLbs: number | null;
+  headline: string;
+  body: string;
+  prompt?: string;
 };
 
 export const DEFAULT_ANSWERS: QuoteCheckAnswers = {
@@ -113,6 +151,8 @@ export const DEFAULT_ANSWERS: QuoteCheckAnswers = {
   depositTiming: 'not_sure',
   paymentMethod: 'not_sure',
   valuation: 'unclear',
+  estimateCubicFeet: '',
+  estimateWeightLbs: '',
   signedCustomer: 'not_sure',
   signedCompany: 'not_sure',
   datesPresent: 'not_sure',

@@ -51,3 +51,26 @@ export function trackQuoteCheckProfileMatchClick() {
 export function trackQuoteCheckSaveToMyMove() {
   trackGaEvent('move_quote_check_save_to_my_move', { page_path: PAGE });
 }
+
+export function trackQuoteCheckInventoryCompareShown(params: {
+  status: string;
+  basis: string;
+}) {
+  trackGaEvent('move_quote_check_inventory_compare_shown', {
+    page_path: PAGE,
+    status: params.status,
+    basis: params.basis,
+  });
+}
+
+export function trackQuoteCheckInventoryMismatchMaterial() {
+  trackGaEvent('move_quote_check_inventory_mismatch_material', {
+    page_path: PAGE,
+  });
+}
+
+export function trackQuoteCheckInventoryReviewClick() {
+  trackGaEvent('move_quote_check_inventory_review_click', {
+    page_path: PAGE,
+  });
+}
