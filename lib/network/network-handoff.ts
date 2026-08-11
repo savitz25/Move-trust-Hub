@@ -5,6 +5,12 @@
 
 import { hubPath } from '@/lib/hub/paths';
 import { networkHubById, type NetworkHubId } from '@/lib/network/ask-trust-hub';
+import {
+  buildInsuranceJourneyUrl,
+  buildLenderJourneyUrl,
+  journeyGeoFromState,
+  stateSlugFromName,
+} from '@/lib/network/journey-context';
 
 export type NetworkHandoffContext =
   | 'move-destination'
@@ -49,19 +55,39 @@ function placeLabel(geo?: NetworkHandoffGeography): string | null {
   return null;
 }
 
-/** Lender state pages use full-name slugs (e.g. florida). Only when known. */
+/** Lender state/county with Stage A′ journey params (crawlable absolute URL). */
 function lenderStateHref(geo?: NetworkHandoffGeography): string {
-  const slug = geo?.stateSlug?.toLowerCase().replace(/\s+/g, '-');
-  if (slug && /^[a-z-]+$/.test(slug) && slug.length > 1) {
-    return hubPath('lender', `/local-lenders/${slug}`);
+  const code = geo?.stateCode?.toUpperCase();
+  const slug =
+    geo?.stateSlug?.toLowerCase().replace(/\s+/g, '-') ||
+    (geo?.state ? stateSlugFromName(geo.state) : undefined);
+  if (code && slug) {
+    return buildLenderJourneyUrl(
+      journeyGeoFromState({
+        stateCode: code,
+        stateSlug: slug,
+        stateName: geo?.state || slug,
+      }),
+      'buy'
+    );
   }
   return hubPath('lender', '/local-lenders');
 }
 
 function insuranceDirectoryHref(geo?: NetworkHandoffGeography): string {
   const code = geo?.stateCode?.toUpperCase();
-  if (code && /^[A-Z]{2}$/.test(code)) {
-    return hubPath('insurance', `/directory?state=${code}`);
+  const slug =
+    geo?.stateSlug?.toLowerCase().replace(/\s+/g, '-') ||
+    (geo?.state ? stateSlugFromName(geo.state) : undefined);
+  if (code && slug) {
+    return buildInsuranceJourneyUrl(
+      journeyGeoFromState({
+        stateCode: code,
+        stateSlug: slug,
+        stateName: geo?.state || slug,
+      }),
+      'unknown'
+    );
   }
   return hubPath('insurance', '/directory');
 }
@@ -87,21 +113,23 @@ export function resolveNetworkHandoff(
 
   switch (context) {
     case 'move-destination': {
-      const where = place ? `Your move to ${place} is one part of settling in.` : 'Your move is one part of settling in.';
+      const where = place
+        ? `Your move to ${place} is one part of settling in.`
+        : 'Your move is one part of settling in.';
       return {
         label,
-        body: `${where} Next for many households: homeowners or renters coverage research, and financing if you’re buying — independent only, no paid placements.`,
+        body: `${where} Next: coverage research for your destination, and local lenders if you’re buying — research only, context preserved in the URL.`,
         links: [
           {
             href: insuranceDirectoryHref(geography),
-            label: 'Research homeowners or renters coverage',
+            label: 'Research coverage for your destination',
             hub: 'insurance',
           },
           {
             href: lenderStateHref(geography),
             label: place
               ? `Research lenders near ${place}`
-              : 'Research NMLS-verified lenders',
+              : 'Research local lenders',
             hub: 'lender',
           },
         ],

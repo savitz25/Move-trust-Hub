@@ -23,6 +23,8 @@ import {
   type StateResourceHubPack,
 } from '@/lib/local-movers/state-resource-hub/types';
 import { cn } from '@/lib/utils';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
+import { journeyGeoFromState } from '@/lib/network/journey-context';
 
 type Props = {
   pack: StateResourceHubPack;
@@ -937,6 +939,26 @@ export function StateResourceHub({
           ))}
         </div>
         <NextStepCtas pack={pack} compact />
+      </section>
+
+      {/* Stage A′ — contextual handoff to Lender / Insurance */}
+      <section
+        className="mb-10 scroll-mt-28"
+        id="hub-trust-journey"
+        aria-labelledby="hub-trust-journey-heading"
+      >
+        <h2 id="hub-trust-journey-heading" className="sr-only">
+          Continue your Trust journey
+        </h2>
+        <ContinueTrustJourney
+          geo={journeyGeoFromState({
+            stateCode: pack.stateCode,
+            stateSlug: pack.stateSlug,
+            stateName,
+          })}
+          defaultIntent="unknown"
+          title={`Settling in ${stateName}? Continue research on specialist hubs`}
+        />
       </section>
     </div>
   );

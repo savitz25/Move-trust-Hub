@@ -28,7 +28,8 @@ import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { EditorialTeamPanel } from '@/components/trust/editorial-team-panel';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
-import { NetworkHandoff } from '@/components/network/network-handoff';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
+import { journeyGeoFromMarket } from '@/lib/network/journey-context';
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
@@ -109,6 +110,7 @@ export async function CityHubTemplate({ market, content }: Props) {
   const countyDirectoryLinks = getMarketCountyDirectoryLinks(market);
   const routeLinks = mergeHubRouteLinks(content.routeLinks ?? [], market, 6);
   const contentUpdatedLabel = CITY_HUBS_CONTENT_UPDATED.toISOString().slice(0, 10);
+  const journeyGeo = journeyGeoFromMarket(market);
 
   const countyLabels = (market.primaryCounties ?? []).map((key) => {
     const parts = key.split('-');
@@ -447,15 +449,10 @@ export async function CityHubTemplate({ market, content }: Props) {
       {/* Contextual network handoff — destination intent only (not company profiles) */}
       <section className="border-b py-10 md:py-12" aria-label="Related network research">
         <div className="container mx-auto max-w-6xl px-4">
-          <NetworkHandoff
-            context="move-destination"
-            geography={{
-              city: market.displayName,
-              state: market.stateName,
-              stateCode: market.stateCode,
-              stateSlug: market.stateName.toLowerCase().replace(/\s+/g, '-'),
-            }}
-            variant="card"
+          <ContinueTrustJourney
+            geo={journeyGeo}
+            defaultIntent="unknown"
+            title="Continue your Trust journey after this move"
           />
         </div>
       </section>
