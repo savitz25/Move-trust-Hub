@@ -54,7 +54,10 @@ export const LENDER_CALCULATOR_SLUG_REDIRECTS: Redirect[] = [
   { source: '/calculators/va', destination: `${LENDER_APEX}/calculators?calc=payment`, permanent: true },
 ];
 
-/** Duplicate specialty hub → canonical MSA page on ITH. */
+/**
+ * Phase 2 — precise one-to-one ITH taxonomy redirects (before catch-all /hubs/:path*).
+ * Also covers bare Move-host paths that strip to apex.
+ */
 const INSURANCE_HUB_ALIAS_REDIRECTS: Redirect[] = [
   {
     source: '/insurance/hubs/south-florida',
@@ -64,6 +67,62 @@ const INSURANCE_HUB_ALIAS_REDIRECTS: Redirect[] = [
   {
     source: '/hubs/south-florida',
     destination: `${INSURANCE_APEX}/hubs/florida/miami-fort-lauderdale`,
+    permanent: true,
+  },
+  {
+    source: '/hubs/florida/fort-lauderdale',
+    destination: `${INSURANCE_APEX}/hubs/florida/broward-county`,
+    permanent: true,
+  },
+  {
+    source: '/insurance/hubs/florida/fort-lauderdale',
+    destination: `${INSURANCE_APEX}/hubs/florida/broward-county`,
+    permanent: true,
+  },
+  {
+    source: '/hubs/browse/:state',
+    destination: `${INSURANCE_APEX}/hubs/:state`,
+    permanent: true,
+  },
+  {
+    source: '/insurance/hubs/browse/:state',
+    destination: `${INSURANCE_APEX}/hubs/:state`,
+    permanent: true,
+  },
+  // Destination cities → county / market hubs
+  {
+    source: '/destinations/florida/miami',
+    destination: `${INSURANCE_APEX}/hubs/florida/miami-dade`,
+    permanent: true,
+  },
+  {
+    source: '/destinations/florida/fort-lauderdale',
+    destination: `${INSURANCE_APEX}/hubs/florida/broward-county`,
+    permanent: true,
+  },
+  {
+    source: '/destinations/florida/west-palm-beach',
+    destination: `${INSURANCE_APEX}/hubs/florida/palm-beach-county`,
+    permanent: true,
+  },
+  {
+    source: '/destinations/florida/boca-raton',
+    destination: `${INSURANCE_APEX}/hubs/florida/palm-beach-county`,
+    permanent: true,
+  },
+  {
+    source: '/destinations/florida/tampa',
+    destination: `${INSURANCE_APEX}/hubs/florida/tampa`,
+    permanent: true,
+  },
+  {
+    source: '/destinations/florida/orlando',
+    destination: `${INSURANCE_APEX}/hubs/florida/orlando`,
+    permanent: true,
+  },
+  {
+    source: '/destinations/florida/jacksonville',
+    destination: `${INSURANCE_APEX}/hubs/florida/jacksonville`,
     permanent: true,
   },
 ];
@@ -85,11 +144,43 @@ const INSURANCE_ROOT_REDIRECTS: Redirect[] = [
   },
   { source: '/providers', destination: `${INSURANCE_APEX}/providers`, permanent: true },
   { source: '/providers/:path*', destination: `${INSURANCE_APEX}/providers/:path*`, permanent: true },
-  { source: '/tools', destination: `${INSURANCE_APEX}/tools`, permanent: true },
-  { source: '/tools/:path*', destination: `${INSURANCE_APEX}/tools/:path*`, permanent: true },
+  // Intentionally NO catch-all `/tools` → Insurance.
+  // Move owns `/tools/move-quote-check` (+ compare) and related Move tools.
+  // Insurance-only legacy tool slugs: INSURANCE_LEGACY_TOOL_REDIRECTS.
   { source: '/privacy', destination: `${INSURANCE_APEX}/privacy`, permanent: true },
   { source: '/terms', destination: `${INSURANCE_APEX}/terms`, permanent: true },
 ];
+
+/**
+ * Insurance tool pages that used to live under /tools/* in the monorepo.
+ * Redirect only these slugs from Move hosts — never a catch-all that would
+ * exile Move-owned tools (move-quote-check, etc.) to InsuranceTrustHub 404s.
+ */
+const INSURANCE_LEGACY_TOOL_SLUGS = [
+  'cost-estimator',
+  'needs-assessment',
+  'license-verification',
+  'medicare-plan-finder',
+  'prescription-drug-list',
+  'quote-comparison',
+  'aca-eligibility-checker',
+  'medicare-provider-lookup',
+] as const;
+
+const INSURANCE_LEGACY_TOOL_REDIRECTS: Redirect[] = INSURANCE_LEGACY_TOOL_SLUGS.flatMap(
+  (slug) => [
+    {
+      source: `/tools/${slug}`,
+      destination: `${INSURANCE_APEX}/tools/${slug}`,
+      permanent: true,
+    },
+    {
+      source: `/tools/${slug}/:path*`,
+      destination: `${INSURANCE_APEX}/tools/${slug}/:path*`,
+      permanent: true,
+    },
+  ]
+);
 
 /**
  * Monorepo /insurance/* → standalone InsuranceTrustHub (strip prefix).
@@ -196,6 +287,8 @@ export function getVercelHubRedirects(): Redirect[] {
     ...LENDER_CALCULATOR_SLUG_REDIRECTS,
     ...resourceAliasRedirects(),
     ...INSURANCE_HUB_ALIAS_REDIRECTS,
+    // Specific insurance tool slugs BEFORE any broader rules (no /tools catch-all)
+    ...INSURANCE_LEGACY_TOOL_REDIRECTS,
     ...INSURANCE_ROOT_REDIRECTS,
     ...LENDER_ROOT_REDIRECTS,
     // Prefixed monorepo paths after more specific bare-root rules
@@ -215,6 +308,7 @@ export function getVercelHubRedirects(): Redirect[] {
 export function getNextConfigHubRedirects(): Redirect[] {
   return scopeToMoveHosts([
     ...INSURANCE_HUB_ALIAS_REDIRECTS,
+    ...INSURANCE_LEGACY_TOOL_REDIRECTS,
     ...INSURANCE_ROOT_REDIRECTS,
     ...LENDER_ROOT_REDIRECTS,
     ...LENDER_PREFIX_REDIRECTS,
@@ -237,9 +331,15 @@ const INSURANCE_BARE_ROOTS = [
   '/hubs',
   '/destinations',
   '/providers',
-  '/tools',
+  // Do NOT include `/tools` — Move owns move-quote-check and other Move tools under /tools/*
   '/privacy',
   '/terms',
+] as const;
+
+/** Move-owned tool path prefixes that must never redirect off MoveTrustHub. */
+const MOVE_OWNED_TOOL_PREFIXES = [
+  '/tools/move-quote-check',
+  '/tools/move-calculator',
 ] as const;
 
 const LENDER_BARE_ROOTS = [
@@ -336,6 +436,21 @@ export function resolveHubMigrationRedirect(
 
   if (pathname === '/from-georgia-to-huntsville' || pathname.startsWith('/from-georgia-to-huntsville')) {
     return '/moving-to/alabama/huntsville-al';
+  }
+
+  // Move-owned tools stay on this host (hard-stop before any legacy tool rules)
+  for (const prefix of MOVE_OWNED_TOOL_PREFIXES) {
+    if (pathname === prefix || pathname.startsWith(`${prefix}/`)) {
+      return null;
+    }
+  }
+
+  // Insurance legacy tools only (explicit slugs — never /tools/* catch-all)
+  for (const slug of INSURANCE_LEGACY_TOOL_SLUGS) {
+    const base = `/tools/${slug}`;
+    if (pathname === base || pathname.startsWith(`${base}/`)) {
+      return `${INSURANCE_APEX}${pathname}`;
+    }
   }
 
   for (const root of INSURANCE_BARE_ROOTS) {

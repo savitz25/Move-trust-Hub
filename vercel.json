@@ -1525,8 +1525,8 @@
       ]
     },
     {
-      "source": "/tools",
-      "destination": "https://www.insurancetrusthub.com/tools",
+      "source": "/tools/cost-estimator",
+      "destination": "https://www.insurancetrusthub.com/tools/cost-estimator",
       "permanent": true,
       "has": [
         {
@@ -1536,8 +1536,19 @@
       ]
     },
     {
-      "source": "/tools",
-      "destination": "https://www.insurancetrusthub.com/tools",
+      "source": "/tools/cost-estimator/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/cost-estimator/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/cost-estimator",
+      "destination": "https://www.insurancetrusthub.com/tools/cost-estimator",
       "permanent": true,
       "has": [
         {
@@ -1547,8 +1558,19 @@
       ]
     },
     {
-      "source": "/tools/:path*",
-      "destination": "https://www.insurancetrusthub.com/tools/:path*",
+      "source": "/tools/cost-estimator/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/cost-estimator/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/needs-assessment",
+      "destination": "https://www.insurancetrusthub.com/tools/needs-assessment",
       "permanent": true,
       "has": [
         {
@@ -1558,8 +1580,294 @@
       ]
     },
     {
-      "source": "/tools/:path*",
-      "destination": "https://www.insurancetrusthub.com/tools/:path*",
+      "source": "/tools/needs-assessment/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/needs-assessment/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/needs-assessment",
+      "destination": "https://www.insurancetrusthub.com/tools/needs-assessment",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/needs-assessment/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/needs-assessment/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/license-verification",
+      "destination": "https://www.insurancetrusthub.com/tools/license-verification",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/license-verification/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/license-verification/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/license-verification",
+      "destination": "https://www.insurancetrusthub.com/tools/license-verification",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/license-verification/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/license-verification/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/medicare-plan-finder",
+      "destination": "https://www.insurancetrusthub.com/tools/medicare-plan-finder",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/medicare-plan-finder/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/medicare-plan-finder/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/medicare-plan-finder",
+      "destination": "https://www.insurancetrusthub.com/tools/medicare-plan-finder",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/medicare-plan-finder/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/medicare-plan-finder/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/prescription-drug-list",
+      "destination": "https://www.insurancetrusthub.com/tools/prescription-drug-list",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/prescription-drug-list/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/prescription-drug-list/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/prescription-drug-list",
+      "destination": "https://www.insurancetrusthub.com/tools/prescription-drug-list",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/prescription-drug-list/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/prescription-drug-list/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/quote-comparison",
+      "destination": "https://www.insurancetrusthub.com/tools/quote-comparison",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/quote-comparison/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/quote-comparison/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/quote-comparison",
+      "destination": "https://www.insurancetrusthub.com/tools/quote-comparison",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/quote-comparison/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/quote-comparison/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/aca-eligibility-checker",
+      "destination": "https://www.insurancetrusthub.com/tools/aca-eligibility-checker",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/aca-eligibility-checker/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/aca-eligibility-checker/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/aca-eligibility-checker",
+      "destination": "https://www.insurancetrusthub.com/tools/aca-eligibility-checker",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/aca-eligibility-checker/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/aca-eligibility-checker/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/medicare-provider-lookup",
+      "destination": "https://www.insurancetrusthub.com/tools/medicare-provider-lookup",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/medicare-provider-lookup/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/medicare-provider-lookup/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/medicare-provider-lookup",
+      "destination": "https://www.insurancetrusthub.com/tools/medicare-provider-lookup",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/tools/medicare-provider-lookup/:path*",
+      "destination": "https://www.insurancetrusthub.com/tools/medicare-provider-lookup/:path*",
       "permanent": true,
       "has": [
         {
