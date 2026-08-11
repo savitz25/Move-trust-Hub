@@ -32,3 +32,22 @@ export function trackQuoteCheckVerifyDotClick() {
 export function trackQuoteCheckCopyQuestions() {
   trackGaEvent('move_quote_check_copy_questions', { page_path: PAGE });
 }
+
+export function trackQuoteCheckPasteUsed() {
+  trackGaEvent('move_quote_check_paste_used', { page_path: PAGE });
+}
+
+export function trackQuoteCheckPrefillApplied(params: { field_count: number }) {
+  trackGaEvent('move_quote_check_prefill_applied', {
+    page_path: PAGE,
+    field_count: params.field_count,
+  });
+}
+
+export function trackQuoteCheckProfileMatchClick() {
+  trackGaEvent('move_quote_check_profile_match_click', { page_path: PAGE });
+}
+
+export function trackQuoteCheckSaveToMyMove() {
+  trackGaEvent('move_quote_check_save_to_my_move', { page_path: PAGE });
+}

@@ -33,6 +33,11 @@ Research-only estimate / contract-terms reader. Not a price-fairness oracle and 
 
 ## Deferred (not Phase 1)
 
+Phase 2 adds paste assist, directory match, and device summary save — see
+`docs/MOVE-QUOTE-CHECK-PHASE-2.md`.
+
+Still deferred:
+
 - PDF/OCR upload  
 - AI verdicts  
 - Fair market price conclusions  
@@ -41,6 +46,8 @@ Research-only estimate / contract-terms reader. Not a price-fairness oracle and 
 - Multi-quote compare  
 - Local-only specialist mode  
 - Auto/container quotes  
+- Inventory mismatch engine (Phase 3)  
+
 
 ## Analytics
 

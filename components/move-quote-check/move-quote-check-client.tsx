@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   ArrowLeft,
   ArrowRight,
+  BookmarkPlus,
   CheckCircle2,
   ClipboardCopy,
   ExternalLink,
@@ -22,14 +23,28 @@ import {
 } from '@/lib/move-quote-check/types';
 import { evaluateQuoteCheck } from '@/lib/move-quote-check/rules';
 import {
+  applyPasteSuggestions,
+  parseEstimatePasteText,
+} from '@/lib/move-quote-check/paste-parse';
+import { saveQuoteCheckSummary } from '@/lib/move-quote-check/local-report-store';
+import {
+  matchQuoteCheckDirectory,
+  type QuoteCheckDirectoryMatch,
+} from '@/actions/move-quote-check-match';
+import {
   trackQuoteCheckCopyQuestions,
+  trackQuoteCheckPasteUsed,
+  trackQuoteCheckPrefillApplied,
+  trackQuoteCheckProfileMatchClick,
   trackQuoteCheckReportGenerated,
+  trackQuoteCheckSaveToMyMove,
   trackQuoteCheckStart,
   trackQuoteCheckVerifyDotClick,
 } from '@/lib/move-quote-check/analytics';
 
 const STEPS = [
   { id: 'start', label: 'Start' },
+  { id: 'paste', label: 'Paste' },
   { id: 'estimate', label: 'Estimate' },
   { id: 'company', label: 'Company' },
   { id: 'survey', label: 'Survey' },
@@ -96,13 +111,23 @@ function statusLabel(s: QuoteCheckFinding['status']) {
 }
 
 /**
- * Move Quote Check Phase 1 — guided questionnaire + deterministic report.
+ * Move Quote Check — Phase 1 + Phase 2 (paste assist, directory match, save summary).
  */
 export function MoveQuoteCheckClient() {
   const [step, setStep] = useState<StepId>('start');
   const [answers, setAnswers] = useState<QuoteCheckAnswers>(DEFAULT_ANSWERS);
   const [report, setReport] = useState<QuoteCheckReport | null>(null);
   const [copied, setCopied] = useState(false);
+  const [pasteText, setPasteText] = useState('');
+  const [pasteNotices, setPasteNotices] = useState<string[]>([]);
+  const [fieldSources, setFieldSources] = useState<
+    Partial<Record<keyof QuoteCheckAnswers, string>>
+  >({});
+  const [directoryMatch, setDirectoryMatch] = useState<QuoteCheckDirectoryMatch | null>(
+    null
+  );
+  const [matchLoading, setMatchLoading] = useState(false);
+  const [saveMsg, setSaveMsg] = useState<string | null>(null);
 
   useEffect(() => {
     trackQuoteCheckStart();
@@ -110,29 +135,88 @@ export function MoveQuoteCheckClient() {
 
   const patch = useCallback((partial: Partial<QuoteCheckAnswers>) => {
     setAnswers((a) => ({ ...a, ...partial }));
+    setFieldSources((src) => {
+      const next = { ...src };
+      for (const k of Object.keys(partial) as (keyof QuoteCheckAnswers)[]) {
+        delete next[k];
+      }
+      return next;
+    });
   }, []);
 
   const stepIndex = STEPS.findIndex((s) => s.id === step);
 
-  function goReport() {
+  function applyPaste() {
+    trackQuoteCheckPasteUsed();
+    const parsed = parseEstimatePasteText(pasteText);
+    setPasteNotices(parsed.notices);
+    if (parsed.suggestions.length === 0) {
+      setPasteNotices((n) =>
+        n.length ? n : ['No high-confidence terms detected — continue with the questionnaire.']
+      );
+      return;
+    }
+    const { next, applied, sources } = applyPasteSuggestions(answers, parsed.suggestions);
+    setAnswers(next);
+    setFieldSources((prev) => ({ ...prev, ...sources }));
+    trackQuoteCheckPrefillApplied({ field_count: applied.length });
+  }
+
+  async function goReport() {
     const r = evaluateQuoteCheck(answers);
     setReport(r);
     setStep('report');
+    setSaveMsg(null);
     trackQuoteCheckReportGenerated({
       high_count: r.highCount,
       review_count: r.reviewCount,
       has_usdot: Boolean(r.verifyDotHref),
       estimate_type: answers.estimateType,
     });
+    setMatchLoading(true);
+    setDirectoryMatch(null);
+    try {
+      const match = await matchQuoteCheckDirectory({
+        usdot: answers.usdot,
+        companyName: answers.companyName,
+      });
+      setDirectoryMatch(match);
+    } catch {
+      setDirectoryMatch({
+        matched: false,
+        note: 'Directory lookup unavailable right now. You can still use Verify DOT.',
+        verifyDotHref: r.verifyDotHref ?? undefined,
+      });
+    } finally {
+      setMatchLoading(false);
+    }
   }
 
   function next() {
     if (step === 'docs') {
-      goReport();
+      void goReport();
       return;
     }
     const i = stepIndex;
     if (i >= 0 && i < STEPS.length - 1) setStep(STEPS[i + 1].id);
+  }
+
+  function saveSummary() {
+    if (!report) return;
+    saveQuoteCheckSummary({
+      estimateType: answers.estimateType,
+      estimateTypeLabel: report.estimateTypeLabel,
+      summaryHeadline: report.summaryHeadline,
+      findingIds: report.findings.map((f) => f.id),
+      findingTitles: report.findings.map((f) => f.title).slice(0, 20),
+      usdot: answers.usdot.replace(/\D/g, '') || undefined,
+      companyName: answers.companyName.trim() || undefined,
+      estimatedTotal: answers.estimatedTotal.trim() || undefined,
+      depositAmount: answers.depositAmount.trim() || undefined,
+      matchedProfileSlug: directoryMatch?.slug,
+    });
+    trackQuoteCheckSaveToMyMove();
+    setSaveMsg('Summary saved on this device (My Move guest storage). Raw estimate text was not saved.');
   }
 
   function back() {
@@ -228,18 +312,66 @@ export function MoveQuoteCheckClient() {
             </li>
             <li className="flex gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-              Deep-link to Verify DOT when a USDOT is on the paper
+              Optional paste-text assist + Verify DOT / profile match
             </li>
           </ul>
-          <Button type="button" size="lg" className="w-full sm:w-auto" onClick={() => setStep('estimate')}>
-            Start review
-            <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
-          </Button>
+          <div className="flex flex-wrap gap-3">
+            <Button type="button" size="lg" onClick={() => setStep('paste')}>
+              Paste estimate text
+              <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+            </Button>
+            <Button
+              type="button"
+              size="lg"
+              variant="outline"
+              onClick={() => setStep('estimate')}
+            >
+              Start questionnaire
+            </Button>
+          </div>
           <p className="text-xs leading-relaxed text-muted-foreground">
             We do not store your estimate contents by default. Do not enter Social Security numbers
-            or payment card details.
+            or payment card details. Pasted text is scanned in your browser for review assistance —
+            not sold, not sent to movers.
           </p>
         </section>
+      ) : null}
+
+      {step === 'paste' ? (
+        <Section
+          title="Paste estimate text (optional)"
+          help="Paste email or PDF text only. We scan for likely terms and suggest questionnaire answers — you confirm every field."
+        >
+          <textarea
+            className="min-h-[180px] w-full rounded-xl border border-border bg-background px-3 py-2 text-sm leading-relaxed"
+            value={pasteText}
+            onChange={(e) => setPasteText(e.target.value)}
+            placeholder="Paste estimate text here…"
+            spellCheck={false}
+            autoComplete="off"
+          />
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            Privacy: processed in-browser for review assistance. Not sold. Not sent to movers. Not
+            complete document understanding — suggestions can be wrong.
+          </p>
+          {pasteNotices.length > 0 ? (
+            <ul className="rounded-lg border bg-muted/40 px-3 py-2 text-xs space-y-1">
+              {pasteNotices.map((n) => (
+                <li key={n}>· {n}</li>
+              ))}
+            </ul>
+          ) : null}
+          <div className="flex flex-wrap gap-3">
+            <Button type="button" onClick={applyPaste} disabled={pasteText.trim().length < 20}>
+              Scan &amp; suggest answers
+            </Button>
+            <Button type="button" variant="outline" onClick={() => setStep('estimate')}>
+              Continue to questionnaire
+              <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+            </Button>
+          </div>
+          <NavButtons onBack={() => setStep('start')} onNext={() => setStep('estimate')} />
+        </Section>
       ) : null}
 
       {step === 'estimate' ? (
@@ -247,6 +379,7 @@ export function MoveQuoteCheckClient() {
           title="Estimate type"
           help="Look for words like binding, non-binding, or not-to-exceed on the document."
         >
+          <FieldHint source={fieldSources.estimateType} />
           <RadioGroup
             name="estimateType"
             value={answers.estimateType}
@@ -273,6 +406,7 @@ export function MoveQuoteCheckClient() {
         >
           <label className="block text-sm font-medium">
             Company name on estimate
+            <FieldHint source={fieldSources.companyName} />
             <Input
               className="mt-1.5"
               value={answers.companyName}
@@ -284,6 +418,7 @@ export function MoveQuoteCheckClient() {
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <label className="block text-sm font-medium">
               USDOT number
+              <FieldHint source={fieldSources.usdot} />
               <Input
                 className="mt-1.5"
                 value={answers.usdot}
@@ -295,6 +430,7 @@ export function MoveQuoteCheckClient() {
             </label>
             <label className="block text-sm font-medium">
               MC number (optional)
+              <FieldHint source={fieldSources.mcNumber} />
               <Input
                 className="mt-1.5"
                 value={answers.mcNumber}
@@ -305,6 +441,7 @@ export function MoveQuoteCheckClient() {
             </label>
           </div>
           <p className="mt-4 text-sm font-medium">Does this look like a mover/carrier or a broker?</p>
+          <FieldHint source={fieldSources.companyRole} />
           <div className="mt-2">
             <RadioGroup
               name="companyRole"
@@ -358,6 +495,7 @@ export function MoveQuoteCheckClient() {
           <div className="grid gap-3 sm:grid-cols-2">
             <label className="block text-sm font-medium">
               Estimated total ($)
+              <FieldHint source={fieldSources.estimatedTotal} />
               <Input
                 className="mt-1.5"
                 value={answers.estimatedTotal}
@@ -368,6 +506,7 @@ export function MoveQuoteCheckClient() {
             </label>
             <label className="block text-sm font-medium">
               Deposit amount ($)
+              <FieldHint source={fieldSources.depositAmount} />
               <Input
                 className="mt-1.5"
                 value={answers.depositAmount}
@@ -393,6 +532,7 @@ export function MoveQuoteCheckClient() {
             />
           </div>
           <p className="mt-4 text-sm font-medium">Payment method requested (if known)</p>
+          <FieldHint source={fieldSources.paymentMethod} />
           <div className="mt-2">
             <RadioGroup
               name="payment"
@@ -410,6 +550,7 @@ export function MoveQuoteCheckClient() {
             />
           </div>
           <p className="mt-4 text-sm font-medium">Valuation / liability option</p>
+          <FieldHint source={fieldSources.valuation} />
           <div className="mt-2">
             <RadioGroup
               name="valuation"
@@ -481,7 +622,7 @@ export function MoveQuoteCheckClient() {
               <ArrowLeft className="mr-2 h-4 w-4" aria-hidden />
               Back
             </Button>
-            <Button type="button" onClick={goReport}>
+            <Button type="button" onClick={() => void goReport()}>
               <FileSearch className="mr-2 h-4 w-4" aria-hidden />
               Generate report
             </Button>
@@ -497,6 +638,11 @@ export function MoveQuoteCheckClient() {
               {report.summaryHeadline}
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{report.summaryBody}</p>
+            {Object.keys(fieldSources).length > 0 ? (
+              <p className="mt-2 text-xs text-muted-foreground">
+                Some answers were suggested from pasted text — you confirmed them in the questionnaire.
+              </p>
+            ) : null}
             <dl className="mt-4 grid gap-2 sm:grid-cols-3 text-sm">
               <div className="rounded-lg border bg-muted/30 px-3 py-2">
                 <dt className="text-xs text-muted-foreground">Estimate type</dt>
@@ -520,6 +666,50 @@ export function MoveQuoteCheckClient() {
               Never labeled SAFE, UNSAFE, SCAM, or APPROVED — research checklist only. Not legal
               advice.
             </p>
+          </div>
+
+          {/* Directory / USDOT match panel */}
+          <div className="rounded-2xl border bg-card p-5 shadow-sm">
+            <h3 className="text-sm font-semibold">Company research match</h3>
+            {matchLoading ? (
+              <p className="mt-2 text-sm text-muted-foreground">Checking Move Trust Hub directory…</p>
+            ) : directoryMatch ? (
+              <div className="mt-2 space-y-2 text-sm">
+                <p className="text-muted-foreground leading-relaxed">{directoryMatch.note}</p>
+                {directoryMatch.matched && directoryMatch.profileHref ? (
+                  <p>
+                    <Link
+                      href={directoryMatch.profileHref}
+                      className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+                      onClick={() => trackQuoteCheckProfileMatchClick()}
+                    >
+                      Open matched profile
+                      {directoryMatch.name ? ` — ${directoryMatch.name}` : ''}
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                    </Link>
+                  </p>
+                ) : null}
+                {(directoryMatch.verifyDotHref || report.verifyDotHref) && (
+                  <p>
+                    <Link
+                      href={directoryMatch.verifyDotHref || report.verifyDotHref || '/verify-dot'}
+                      className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+                      onClick={() => trackQuoteCheckVerifyDotClick()}
+                    >
+                      Verify DOT
+                      {directoryMatch.usdot || answers.usdot
+                        ? ` · USDOT ${directoryMatch.usdot || answers.usdot.replace(/\D/g, '')}`
+                        : ''}
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                    </Link>
+                  </p>
+                )}
+              </div>
+            ) : (
+              <p className="mt-2 text-sm text-muted-foreground">
+                Add a USDOT on the company step for directory matching.
+              </p>
+            )}
           </div>
 
           {report.exposureNote ? (
@@ -593,51 +783,70 @@ export function MoveQuoteCheckClient() {
             </ol>
           </div>
 
-          {/* Next steps */}
-          <div className="rounded-2xl border bg-card p-5 shadow-sm">
-            <h3 className="text-sm font-semibold">Next research steps</h3>
-            <ul className="mt-3 space-y-2 text-sm">
-              {report.verifyDotHref ? (
+          {/* Save + next steps */}
+          <div className="rounded-2xl border bg-card p-5 shadow-sm space-y-3">
+            <h3 className="text-sm font-semibold">Save &amp; next research steps</h3>
+            <Button type="button" variant="outline" size="sm" onClick={saveSummary}>
+              <BookmarkPlus className="mr-1.5 h-3.5 w-3.5" aria-hidden />
+              Save summary to My Move (this device)
+            </Button>
+            {saveMsg ? <p className="text-xs text-muted-foreground">{saveMsg}</p> : null}
+            <p className="text-[11px] text-muted-foreground leading-relaxed">
+              Saves a compact summary only (estimate type, findings, USDOT/price if entered). Does
+              not save raw pasted estimate text. No account required.
+            </p>
+            <ul className="space-y-2 text-sm">
+              {directoryMatch?.profileHref ? (
                 <li>
                   <Link
-                    href={report.verifyDotHref}
-                    className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
-                    onClick={() => trackQuoteCheckVerifyDotClick()}
+                    href={directoryMatch.profileHref}
+                    className="font-semibold text-primary hover:underline"
+                    onClick={() => trackQuoteCheckProfileMatchClick()}
                   >
-                    Verify DOT with this USDOT
-                    <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                    Open matched mover profile
                   </Link>
                 </li>
-              ) : (
-                <li>
-                  <Link
-                    href="/verify-dot"
-                    className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
-                    onClick={() => trackQuoteCheckVerifyDotClick()}
-                  >
-                    Verify a USDOT on FMCSA-oriented tools
-                    <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-                  </Link>
-                </li>
-              )}
+              ) : null}
               <li>
-                <Link href="/companies" className="font-semibold text-primary hover:underline">
-                  Research movers in the directory
+                <Link
+                  href={
+                    directoryMatch?.verifyDotHref ||
+                    report.verifyDotHref ||
+                    '/verify-dot'
+                  }
+                  className="font-semibold text-primary hover:underline"
+                  onClick={() => trackQuoteCheckVerifyDotClick()}
+                >
+                  Verify DOT
                 </Link>
               </li>
               <li>
                 <Link href="/moving-calculator" className="font-semibold text-primary hover:underline">
-                  Build or review inventory
+                  Review inventory
                 </Link>
               </li>
               <li>
-                <Link href="/compare" className="font-semibold text-primary hover:underline">
-                  Compare movers side by side
-                </Link>
+                <button
+                  type="button"
+                  className="font-semibold text-primary hover:underline"
+                  onClick={() => {
+                    setReport(null);
+                    setDirectoryMatch(null);
+                    setSaveMsg(null);
+                    setStep('paste');
+                  }}
+                >
+                  Analyze another estimate
+                </button>
               </li>
               <li>
                 <Link href="/my-move" className="font-semibold text-primary hover:underline">
                   Open My Move
+                </Link>
+              </li>
+              <li>
+                <Link href="/companies" className="font-semibold text-primary hover:underline">
+                  Browse mover directory
                 </Link>
               </li>
             </ul>
@@ -653,6 +862,11 @@ export function MoveQuoteCheckClient() {
               onClick={() => {
                 setAnswers(DEFAULT_ANSWERS);
                 setReport(null);
+                setFieldSources({});
+                setPasteText('');
+                setPasteNotices([]);
+                setDirectoryMatch(null);
+                setSaveMsg(null);
                 setStep('start');
               }}
             >
@@ -701,5 +915,14 @@ function NavButtons({ onBack, onNext }: { onBack: () => void; onNext: () => void
         <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
       </Button>
     </div>
+  );
+}
+
+function FieldHint({ source }: { source?: string }) {
+  if (!source) return null;
+  return (
+    <span className="mt-0.5 block text-[11px] font-normal text-primary/90">
+      Suggested from pasted text: {source}
+    </span>
   );
 }
