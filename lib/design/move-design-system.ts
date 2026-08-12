@@ -75,6 +75,13 @@ export const MOVE_NETWORK_LINKS = [
     href: 'https://www.insurancetrusthub.com',
     blurb: 'Licensed agencies & coverage research',
   },
+  {
+    id: 'contractor' as const,
+    label: 'Contractor Trust Hub',
+    shortLabel: 'Contractor',
+    href: 'https://www.contractortrusthub.com',
+    blurb: 'Florida contractor license verification & project planning',
+  },
 ] as const;
 
 /** Four footer columns (redesign PDF) */

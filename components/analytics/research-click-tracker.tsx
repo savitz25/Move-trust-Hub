@@ -73,7 +73,7 @@ function isInsurancePrimarySourceHost(host: string): boolean {
 function specialistHubKind(
   host: string,
   currentHub: GaHub
-): 'lender' | 'insurance' | 'ask' | 'move' | null {
+): 'lender' | 'insurance' | 'ask' | 'move' | 'contractor' | null {
   if (host === 'www.lendertrusthub.com' || host === 'lendertrusthub.com') {
     return 'lender';
   }
@@ -85,6 +85,9 @@ function specialistHubKind(
   }
   if (host === 'www.movetrusthub.com' || host === 'movetrusthub.com') {
     return currentHub === 'move' ? null : 'move';
+  }
+  if (host === 'www.contractortrusthub.com' || host === 'contractortrusthub.com') {
+    return 'contractor';
   }
   return null;
 }

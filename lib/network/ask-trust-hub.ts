@@ -1,5 +1,5 @@
 /**
- * Ask Trust Hub network constants — shared by Move, Insurance, and Lender chrome.
+ * Ask Trust Hub network constants — shared specialist hub chrome.
  */
 
 export const ASK_TRUST_HUB = {
@@ -25,6 +25,7 @@ export const HUB_METHODOLOGY_URLS = {
   move: 'https://www.movetrusthub.com/about/how-we-score-movers',
   insurance: 'https://www.insurancetrusthub.com/methodology',
   lender: 'https://www.lendertrusthub.com/methodology',
+  contractor: 'https://www.contractortrusthub.com/methodology',
 } as const;
 
 export const NETWORK_HUBS = [
@@ -51,6 +52,14 @@ export const NETWORK_HUBS = [
     shortLabel: 'Lending',
     url: 'https://www.lendertrusthub.com',
     email: 'hello@lendertrusthub.com',
+  },
+  {
+    id: 'contractor' as const,
+    proseName: 'Contractor Trust Hub',
+    compactName: 'ContractorTrustHub',
+    shortLabel: 'Contractor',
+    url: 'https://www.contractortrusthub.com',
+    email: 'hello@contractortrusthub.com',
   },
 ] as const;
 
