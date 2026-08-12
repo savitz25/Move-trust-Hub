@@ -216,6 +216,243 @@ export function trackQuoteFormSubmit(params: {
   });
 }
 
+// ── Phase 5 priority research events ────────────────────────────────────────
+
+/** Verify DOT lookup finished (match, no-match, or multi-candidate picker). */
+export function trackVerifyDotLookupComplete(params: {
+  mode: 'license' | 'name';
+  outcome: 'match' | 'no_match' | 'multi_candidate' | 'error';
+  source_page?: string;
+  has_directory_slug?: boolean;
+}) {
+  trackGaEvent('verify_dot_lookup_complete', {
+    search_mode: params.mode,
+    outcome: params.outcome,
+    source_page: params.source_page,
+    has_directory_slug: params.has_directory_slug ?? false,
+    page_path: '/verify-dot',
+  });
+}
+
+/**
+ * Compare session reached 2+ movers (once per browser session).
+ * Mirrors the product moment: side-by-side research started.
+ */
+export function trackCompareSessionMulti(params: {
+  mover_count: number;
+  page_path?: string;
+}) {
+  if (typeof window !== 'undefined') {
+    try {
+      const key = 'mth_compare_session_multi';
+      if (sessionStorage.getItem(key) === '1') return;
+      sessionStorage.setItem(key, '1');
+    } catch {
+      /* private mode — still fire once per call site */
+    }
+  }
+  trackGaEvent('compare_session_multi', {
+    mover_count: params.mover_count,
+    page_path: params.page_path ?? '/compare',
+  });
+}
+
+/** Authenticated or returning visitor opens My Move workspace. */
+export function trackSaveMyMoveReturn(params: {
+  authenticated: boolean;
+  page_path?: string;
+}) {
+  if (typeof window !== 'undefined') {
+    try {
+      const key = 'mth_my_move_return';
+      if (sessionStorage.getItem(key) === '1') return;
+      sessionStorage.setItem(key, '1');
+    } catch {
+      /* ignore */
+    }
+  }
+  trackGaEvent('save_my_move_return', {
+    authenticated: params.authenticated,
+    page_path: params.page_path ?? '/my-move',
+  });
+}
+
+/** Outbound click to FMCSA SAFER or other primary government sources. */
+export function trackOutboundPrimarySource(params: {
+  destination_host: string;
+  link_label?: string;
+  page_path?: string;
+}) {
+  trackGaEvent('outbound_primary_source', {
+    destination_host: params.destination_host,
+    link_label: params.link_label,
+    page_path: params.page_path,
+  });
+}
+
+/** Outbound click to Ask / Lender / Insurance / Move specialist hubs. */
+export function trackOutboundSpecialistHub(params: {
+  hub: 'ask' | 'lender' | 'insurance' | 'move' | 'contractor';
+  destination_host: string;
+  page_path?: string;
+}) {
+  trackGaEvent('outbound_specialist_hub', {
+    specialist_hub: params.hub,
+    destination_host: params.destination_host,
+    page_path: params.page_path,
+  });
+}
+
+/**
+ * Internal research path: county→profile, profile→compare, tool→directory, etc.
+ */
+export function trackResearchPathClick(params: {
+  path_kind: string;
+  from_path: string;
+  to_path: string;
+}) {
+  trackGaEvent('research_path_click', {
+    path_kind: params.path_kind,
+    from_path: params.from_path,
+    to_path: params.to_path,
+  });
+}
+
+// ── Insurance Trust Hub Phase 5 priority events ─────────────────────────────
+
+/** User initiated official state DOI / regulator lookup (consent confirmed). */
+export function trackLicenseVerificationLookup(params: {
+  state_code: string;
+  destination_host?: string;
+  has_name_hint?: boolean;
+}) {
+  trackGaEvent('license_verification_lookup', {
+    state_code: params.state_code,
+    destination_host: params.destination_host,
+    has_name_hint: params.has_name_hint ?? false,
+    page_path: '/tools/license-verification',
+  });
+}
+
+/** Explicit outbound to regulator lookup (also covered by click tracker). */
+export function trackOutboundRegulatorLookup(params: {
+  state_code?: string;
+  destination_host: string;
+  page_path?: string;
+}) {
+  trackGaEvent('outbound_regulator_lookup', {
+    state_code: params.state_code,
+    destination_host: params.destination_host,
+    page_path: params.page_path,
+  });
+}
+
+/** Insurance educational calculator finished a result (once per session per tool). */
+export function trackInsuranceCalculatorComplete(params: {
+  calculator_name: string;
+  page_path: string;
+}) {
+  if (typeof window !== 'undefined') {
+    try {
+      const key = `ith_calc_complete_${params.calculator_name}`;
+      if (sessionStorage.getItem(key) === '1') return;
+      sessionStorage.setItem(key, '1');
+    } catch {
+      /* ignore */
+    }
+  }
+  trackGaEvent('insurance_calculator_complete', {
+    calculator_name: params.calculator_name,
+    page_path: params.page_path,
+  });
+}
+
+/** Medicare silo dashboard engagement (once per session per path). */
+export function trackMedicareDashboardView(params: {
+  state_slug?: string;
+  county_slug?: string;
+  page_path: string;
+}) {
+  if (typeof window !== 'undefined') {
+    try {
+      const key = `ith_medicare_view_${params.page_path}`;
+      if (sessionStorage.getItem(key) === '1') return;
+      sessionStorage.setItem(key, '1');
+    } catch {
+      /* ignore */
+    }
+  }
+  trackGaEvent('medicare_dashboard_view', {
+    state_slug: params.state_slug,
+    county_slug: params.county_slug,
+    page_path: params.page_path,
+  });
+}
+
+/** Agency profile research view (once per session per slug). */
+export function trackAgencyProfileView(params: {
+  provider_slug: string;
+  page_path?: string;
+}) {
+  if (typeof window !== 'undefined') {
+    try {
+      const key = `ith_profile_view_${params.provider_slug}`;
+      if (sessionStorage.getItem(key) === '1') return;
+      sessionStorage.setItem(key, '1');
+    } catch {
+      /* ignore */
+    }
+  }
+  trackGaEvent('agency_profile_view', {
+    provider_slug: params.provider_slug,
+    page_path: params.page_path ?? `/providers/${params.provider_slug}`,
+  });
+}
+
+/** Compare tray add / multi-agency compare session. */
+export function trackInsuranceCompareAction(params: {
+  action: 'add' | 'remove' | 'open_compare';
+  provider_count?: number;
+  provider_slug?: string;
+}) {
+  trackGaEvent('insurance_compare_action', {
+    compare_action: params.action,
+    provider_count: params.provider_count,
+    provider_slug: params.provider_slug,
+  });
+}
+
+/** My Insurance save (provider, calculator, etc.). */
+export function trackMyInsuranceSave(params: {
+  save_type: 'provider' | 'calculator' | 'drug_basket' | 'guest_provider';
+  provider_slug?: string;
+}) {
+  trackGaEvent('my_insurance_save', {
+    save_type: params.save_type,
+    provider_slug: params.provider_slug,
+  });
+}
+
+/** Visitor opens My Insurance workspace (once / session). */
+export function trackMyInsuranceReturn(params: {
+  authenticated: boolean;
+  page_path?: string;
+}) {
+  if (typeof window !== 'undefined') {
+    try {
+      const key = 'ith_my_insurance_return';
+      if (sessionStorage.getItem(key) === '1') return;
+      sessionStorage.setItem(key, '1');
+    } catch {
+      /* ignore */
+    }
+  }
+  trackGaEvent('my_insurance_return', {
+    authenticated: params.authenticated,
+    page_path: params.page_path ?? '/my-insurance',
+  });
+}
+
 /** Reserved for optional global GA helpers; tracking runs via exported functions. */
 export function GaEvents() {
   return null;

@@ -11,6 +11,7 @@ const HUB_HOME: Record<HubLinkId, string> = {
   move: '/my-move',
   insurance: '/my-insurance',
   lender: '/my-lending',
+  contractor: '/',
 };
 
 /**
