@@ -13,6 +13,9 @@ const migrations = [
   ['20260816240000', 'move_v2_auto_transport_roles'],
   ['20260816250000', 'move_v2_all_service_roles_view'],
   ['20260816260000', 'move_v2_auto_official_contacts'],
+  ['20260816300000', 'move_v2_business_identity_enrichment'],
+  ['20260816310000', 'move_v2_google_place_review_identity'],
+  ['20260816320000', 'move_v2_enrichment_idempotency'],
 ] as const;
 
 async function main() {
