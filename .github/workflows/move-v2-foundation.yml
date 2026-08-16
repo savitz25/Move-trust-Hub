@@ -1,0 +1,41 @@
+name: Move V2 foundation
+
+on:
+  pull_request:
+    paths:
+      - 'app/(move)/experience-lab/**'
+      - 'lib/move-v2/**'
+      - 'tests/move-v2-domain.test.ts'
+      - 'supabase/migrations/20260816120000_move_v2_provider_identity_foundation.sql'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.move-v2.json'
+      - '.github/workflows/move-v2-foundation.yml'
+  push:
+    branches: [move-2.0]
+
+permissions:
+  contents: read
+
+jobs:
+  domain-foundation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint:move-v2
+      - run: npm run typecheck:move-v2
+      - run: npm run test:move-v2
+      - name: Production and real-data gates default off
+        run: |
+          grep -q '^MOVE_ENABLE_V2=false$' .env.example
+          grep -q '^MOVE_ENABLE_REAL_PROVIDER_DATA=false$' .env.example
+          grep -q '^MOVE_ENABLE_GOOGLE_ENRICHMENT=false$' .env.example
+          grep -q '^MOVE_ENABLE_WEBSITE_ENRICHMENT=false$' .env.example
+      - name: Critical production dependency audit
+        run: npm audit --omit=dev --audit-level=critical
