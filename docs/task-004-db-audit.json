@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-08-16T23:42:03.693Z",
+  "universes": [
+    {
+      "state": "FL",
+      "total": 9005,
+      "fleet_1_2": 6186,
+      "fleet_3_5": 715,
+      "fleet_6_10": 229,
+      "fleet_11_20": 95,
+      "fleet_21_50": 44,
+      "fleet_51_plus": 55,
+      "dba": 1931,
+      "phone": 8960
+    },
+    {
+      "state": "NJ",
+      "total": 2873,
+      "fleet_1_2": 1952,
+      "fleet_3_5": 295,
+      "fleet_6_10": 95,
+      "fleet_11_20": 49,
+      "fleet_21_50": 23,
+      "fleet_51_plus": 18,
+      "dba": 517,
+      "phone": 2865
+    }
+  ],
+  "releases": [
+    {
+      "state": "FL",
+      "source_name": "FDACS Intrastate Mover pilot",
+      "source_url": "https://csapp.fdacs.gov/CSPublicApp/BusinessSearch/BusinessSearch.aspx?program=IM",
+      "retrieved_at": "2026-08-16T23:34:18.380Z",
+      "record_count": 60,
+      "sha256": "bc97ad3cb5cbaa68df953631376077c58f971de234550c7eac91e73fba93a774",
+      "adapter_version": "FL_FDACS_2026_08_V1",
+      "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
+      "ingestion_status": "PUBLISHED"
+    },
+    {
+      "state": "FL",
+      "source_name": "FDACS Moving Broker pilot",
+      "source_url": "https://csapp.fdacs.gov/CSPublicApp/BusinessSearch/BusinessSearch.aspx?program=MB",
+      "retrieved_at": "2026-08-16T23:34:22.247Z",
+      "record_count": 53,
+      "sha256": "8a1ef7fb73d372596607e8aa1ecc6a5271994c46c49b81ea81fb82575325ff72",
+      "adapter_version": "FL_FDACS_2026_08_V1",
+      "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
+      "ingestion_status": "PUBLISHED"
+    },
+    {
+      "state": "NJ",
+      "source_name": "Public Movers and Warehousemen public portal",
+      "source_url": "https://rgbportal.dca.njoag.gov/public-view/",
+      "retrieved_at": "2026-08-16T00:00:00.000Z",
+      "record_count": null,
+      "sha256": null,
+      "adapter_version": "NJ_RGB_2026_08_V1",
+      "retrieval_method": "BOUNDED_PORTAL_CONTRACT",
+      "ingestion_status": "BOUNDED_PILOT"
+    }
+  ],
+  "sourceRecords": [
+    {
+      "state": "FL",
+      "authority_type": "FL_IM",
+      "status": "REGISTERED",
+      "count": 31
+    },
+    {
+      "state": "FL",
+      "authority_type": "FL_IM",
+      "status": "UNKNOWN",
+      "count": 29
+    },
+    {
+      "state": "FL",
+      "authority_type": "FL_MB",
+      "status": "REGISTERED",
+      "count": 25
+    },
+    {
+      "state": "FL",
+      "authority_type": "FL_MB",
+      "status": "UNKNOWN",
+      "count": 28
+    }
+  ],
+  "eligibility": [
+    {
+      "state": "FL",
+      "eligibility": "STATE_AUTHORITY_REVIEW",
+      "count": 15
+    },
+    {
+      "state": "FL",
+      "eligibility": "STATE_VERIFIED_LOCAL_MOVER",
+      "count": 19
+    },
+    {
+      "state": "FL",
+      "eligibility": "STATE_VERIFIED_MOVING_BROKER",
+      "count": 11
+    }
+  ],
+  "enrichment": [
+    {
+      "state": "FL",
+      "google_attempted": 37,
+      "google_accepted": 0,
+      "websites": 0
+    },
+    {
+      "state": "NJ",
+      "google_attempted": 38,
+      "google_accepted": 1,
+      "websites": 1
+    }
+  ],
+  "geography": [
+    {
+      "status": "NOT_EVALUATED",
+      "count": 45,
+      "derived_required": 0
+    }
+  ],
+  "v1": [
+    {
+      "companies": 468,
+      "reviews": 15
+    }
+  ]
+}

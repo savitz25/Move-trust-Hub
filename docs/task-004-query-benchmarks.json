@@ -1,0 +1,272 @@
+{
+  "stateVerified": {
+    "Plan": {
+      "Node Type": "Limit",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 0,
+      "Total Cost": 4.9,
+      "Plan Rows": 25,
+      "Plan Width": 16,
+      "Actual Startup Time": 0.018,
+      "Actual Total Time": 0.037,
+      "Actual Rows": 19,
+      "Actual Loops": 1,
+      "Plans": [
+        {
+          "Node Type": "Seq Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "provider_local_eligibility",
+          "Alias": "provider_local_eligibility",
+          "Startup Cost": 0,
+          "Total Cost": 4.9,
+          "Plan Rows": 25,
+          "Plan Width": 16,
+          "Actual Startup Time": 0.017,
+          "Actual Total Time": 0.034,
+          "Actual Rows": 19,
+          "Actual Loops": 1,
+          "Filter": "((superseded_at IS NULL) AND (state = 'FL'::text) AND (eligibility = 'STATE_VERIFIED_LOCAL_MOVER'::text))",
+          "Rows Removed by Filter": 26
+        }
+      ]
+    },
+    "Planning Time": 0.114,
+    "Triggers": [],
+    "Execution Time": 0.754
+  },
+  "providerAuthority": {
+    "Plan": {
+      "Node Type": "Seq Scan",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Relation Name": "provider_state_authority",
+      "Alias": "provider_state_authority",
+      "Startup Cost": 0.08,
+      "Total Cost": 13.45,
+      "Plan Rows": 1,
+      "Plan Width": 272,
+      "Actual Startup Time": 0.025,
+      "Actual Total Time": 0.03,
+      "Actual Rows": 1,
+      "Actual Loops": 1,
+      "Filter": "(provider_id = (InitPlan 1).col1)",
+      "Rows Removed by Filter": 43,
+      "Plans": [
+        {
+          "Node Type": "Limit",
+          "Parent Relationship": "InitPlan",
+          "Subplan Name": "InitPlan 1",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 0,
+          "Total Cost": 0.08,
+          "Plan Rows": 1,
+          "Plan Width": 16,
+          "Actual Startup Time": 0.009,
+          "Actual Total Time": 0.01,
+          "Actual Rows": 1,
+          "Actual Loops": 1,
+          "Plans": [
+            {
+              "Node Type": "Seq Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "provider_local_eligibility",
+              "Alias": "provider_local_eligibility",
+              "Startup Cost": 0,
+              "Total Cost": 4.6,
+              "Plan Rows": 60,
+              "Plan Width": 16,
+              "Actual Startup Time": 0.008,
+              "Actual Total Time": 0.009,
+              "Actual Rows": 1,
+              "Actual Loops": 1
+            }
+          ]
+        }
+      ]
+    },
+    "Planning Time": 1.552,
+    "Triggers": [],
+    "Execution Time": 0.062
+  },
+  "licenseProvider": {
+    "Plan": {
+      "Node Type": "Nested Loop",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Join Type": "Inner",
+      "Startup Cost": 4.89,
+      "Total Cost": 9.27,
+      "Plan Rows": 3,
+      "Plan Width": 16,
+      "Actual Startup Time": 0.035,
+      "Actual Total Time": 0.036,
+      "Actual Rows": 0,
+      "Actual Loops": 1,
+      "Inner Unique": false,
+      "Plans": [
+        {
+          "Node Type": "Index Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Scan Direction": "Forward",
+          "Index Name": "state_authority_license_idx",
+          "Relation Name": "state_authority_source_record",
+          "Alias": "s",
+          "Startup Cost": 0.14,
+          "Total Cost": 2.36,
+          "Plan Rows": 1,
+          "Plan Width": 16,
+          "Actual Startup Time": 0.018,
+          "Actual Total Time": 0.019,
+          "Actual Rows": 1,
+          "Actual Loops": 1,
+          "Index Cond": "((state = 'FL'::text) AND (license_registration_number = 'IM2736'::text))",
+          "Rows Removed by Index Recheck": 0
+        },
+        {
+          "Node Type": "Bitmap Heap Scan",
+          "Parent Relationship": "Inner",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "provider_state_authority_match",
+          "Alias": "m",
+          "Startup Cost": 4.75,
+          "Total Cost": 6.88,
+          "Plan Rows": 2,
+          "Plan Width": 32,
+          "Actual Startup Time": 0.014,
+          "Actual Total Time": 0.014,
+          "Actual Rows": 0,
+          "Actual Loops": 1,
+          "Recheck Cond": "(s.state_authority_source_record_id = state_authority_source_record_id)",
+          "Rows Removed by Index Recheck": 0,
+          "Exact Heap Blocks": 0,
+          "Lossy Heap Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Bitmap Index Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Index Name": "provider_state_authority_matc_provider_id_state_state_autho_key",
+              "Startup Cost": 0,
+              "Total Cost": 4.75,
+              "Plan Rows": 2,
+              "Plan Width": 0,
+              "Actual Startup Time": 0.01,
+              "Actual Total Time": 0.01,
+              "Actual Rows": 0,
+              "Actual Loops": 1,
+              "Index Cond": "(state_authority_source_record_id = s.state_authority_source_record_id)"
+            }
+          ]
+        }
+      ]
+    },
+    "Planning Time": 0.187,
+    "Triggers": [],
+    "Execution Time": 0.071
+  },
+  "explicitGeography": {
+    "Plan": {
+      "Node Type": "Seq Scan",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Relation Name": "provider_service_area",
+      "Alias": "provider_service_area",
+      "Startup Cost": 0.08,
+      "Total Cost": 1.17,
+      "Plan Rows": 1,
+      "Plan Width": 400,
+      "Actual Startup Time": 1.113,
+      "Actual Total Time": 1.114,
+      "Actual Rows": 0,
+      "Actual Loops": 1,
+      "Filter": "((provider_id = (InitPlan 1).col1) AND (authority_scope = 'PROVIDER_PUBLISHED_SERVICE_AREA'::text))",
+      "Rows Removed by Filter": 6,
+      "Plans": [
+        {
+          "Node Type": "Limit",
+          "Parent Relationship": "InitPlan",
+          "Subplan Name": "InitPlan 1",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 0,
+          "Total Cost": 0.08,
+          "Plan Rows": 1,
+          "Plan Width": 16,
+          "Actual Startup Time": 0.013,
+          "Actual Total Time": 0.013,
+          "Actual Rows": 1,
+          "Actual Loops": 1,
+          "Plans": [
+            {
+              "Node Type": "Seq Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "provider_local_eligibility",
+              "Alias": "provider_local_eligibility",
+              "Startup Cost": 0,
+              "Total Cost": 4.6,
+              "Plan Rows": 60,
+              "Plan Width": 16,
+              "Actual Startup Time": 0.012,
+              "Actual Total Time": 0.012,
+              "Actual Rows": 1,
+              "Actual Loops": 1
+            }
+          ]
+        }
+      ]
+    },
+    "Planning Time": 6.699,
+    "Triggers": [],
+    "Execution Time": 1.151
+  },
+  "derivedRequired": {
+    "Plan": {
+      "Node Type": "Limit",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 0,
+      "Total Cost": 2.49,
+      "Plan Rows": 50,
+      "Plan Width": 16,
+      "Actual Startup Time": 0.012,
+      "Actual Total Time": 0.016,
+      "Actual Rows": 14,
+      "Actual Loops": 1,
+      "Plans": [
+        {
+          "Node Type": "Seq Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "provider_geography_evidence",
+          "Alias": "provider_geography_evidence",
+          "Startup Cost": 0,
+          "Total Cost": 16.7,
+          "Plan Rows": 335,
+          "Plan Width": 16,
+          "Actual Startup Time": 0.011,
+          "Actual Total Time": 0.014,
+          "Actual Rows": 14,
+          "Actual Loops": 1,
+          "Filter": "derived_service_area_required",
+          "Rows Removed by Filter": 1
+        }
+      ]
+    },
+    "Planning Time": 0.059,
+    "Triggers": [],
+    "Execution Time": 0.036
+  }
+}
