@@ -116,8 +116,8 @@ Task 003 adds all 15 required matching, reuse, source-separation, commercial-fir
 ## 31–35. Delivery state
 
 - Commits: `f6ffe98b` (pipeline/schema/tests), `e32a8c53` (Preview evidence QA), plus this final documentation commit
-- CI: recorded after pushed checks complete
-- Preview URL: recorded after Vercel verification
+- CI: **PASS** — push run `31978027247` and PR run `31978028928`
+- Preview URL: `https://move-trust-hub-git-move-20-savitz25-s-projects.vercel.app` — target `preview`, Ready
 - PR #1: **DRAFT; not merged**
 - Production changes: **NONE**
 - Google enrichment in Production: **OFF**
