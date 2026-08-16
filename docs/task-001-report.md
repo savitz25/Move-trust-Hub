@@ -37,9 +37,9 @@ Date: 2026-08-16. Scope stops before Task 002.
 33. **Security** — no secret committed; Preview env is gitignored; server-only feature/enrichment keys; commercial grant isolation; crawler SSRF contract; no crawl/PII/real-provider feed. Dependency audit reduced immediately fixable findings; three high advisories remain in Next 15 transitive PostCSS/Sharp and require a separately scoped breaking Next 16 upgrade.
 34. **Migrations** — one additive, unapplied migration creates `move_v2` and `move_v2_commercial`; no V1 table changed. RLS enabled; public commercial grants revoked.
 35. **Tests** — V2 tests 15/15; scoped V2 TypeScript PASS; scoped lint PASS after warnings fixed; `git diff --check` PASS. Repository-wide TypeScript remains red on extensive pre-existing V1/data/script errors. Full local build exceeded 10 minutes on the existing large SSG surface without emitting a failure before the execution timeout.
-36. **Commits** — recorded in branch Git history after implementation.
-37. **CI run** — `Move V2 foundation` workflow added for push/PR; final run recorded after push.
-38. **Preview URL** — recorded after Vercel Preview deployment.
+36. **Commits** — `acb20367` foundation/docs; `d7c70c35` identity/classification; `6c1add48` enrichment/lab.
+37. **CI run** — `Move V2 foundation` pull-request run `31963677756` passed every step in 36 seconds. Vercel Preview is a separate required status.
+38. **Preview URL** — Vercel status is attached to draft PR #1; the final handoff records its public Preview URL after deployment completes. Branch-scoped Preview configuration enables `MOVE_ENABLE_V2`; Production has no V2 flag change.
 39. **Production changes** — **NONE**.
 40. **Blocking issues** — no Task 001 domain blocker. Baseline repository-wide type debt and a future breaking Next security upgrade are follow-ups; migration remains deliberately unapplied until a future authorized database rollout.
 41. **Ready for Task 002 — FMCSA data spine?** — **YES**, contingent on Task 002 explicitly authorizing its ingestion scope and migration application. Do not begin automatically.
