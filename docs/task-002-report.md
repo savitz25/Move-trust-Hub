@@ -62,12 +62,12 @@ Power-unit coverage is 277,078 (99.74%); driver coverage is 260,832 (93.89%). DB
 
 39. **Tests:** focused lint, typecheck, 34 domain/schema tests, migration application, publication/republication, full Next build, and `git diff --check` passed. Existing Next dependency advisories remain separately scoped.
 40. **Commits:** see final Git section below.
-41. **Final CI:** focused GitHub Move V2 workflow and Vercel Preview required green before closure.
-42. **Preview:** `https://move-trust-337irko4z-savitz25-s-projects.vercel.app/experience-lab/v2/real`; bounded static QA only, noindex, branch flags only, Production hard-404.
+41. **Final CI:** **PASS**—GitHub Actions runs `31971044204` and `31971045834`; Vercel Preview passed.
+42. **Preview:** `https://move-trust-ht3eov37g-savitz25-s-projects.vercel.app/experience-lab/v2/real`; bounded static QA only, noindex, branch flags only, Production hard-404. The deployment is protected by Vercel authentication.
 43. **PR #1:** remains **DRAFT**, targeting `main`.
 44. **Production changes:** **NONE**.
 45. **Database publication:** **PASS**.
-46. **Task 002:** **PASS**, subject only to final pushed CI recorded below.
+46. **Task 002:** **PASS**.
 47. **Blocking issues:** none.
 48. **Ready for Task 003:** **YES** after final CI is green. Task 003 was not started.
 
