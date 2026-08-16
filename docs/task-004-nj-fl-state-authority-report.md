@@ -87,8 +87,8 @@ Added 15 Task 004 regressions. Total focused Move V2 tests: 74 passing. The Expe
 
 ## 32–36. Delivery status
 
-- Commits: recorded after final validation
-- CI: recorded after push
+- Commits: `26732eaa` (state adapters/schema/tests/Preview), `4062e689` (audit ledgers/report), plus the final report-status commit
+- CI: pending final pushed-head verification
 - Preview: `https://move-trust-hub-git-move-20-savitz25-s-projects.vercel.app`
 - PR #1: **DRAFT; must remain draft**
 - Production changes: **NONE**
