@@ -5,8 +5,9 @@ on:
     paths:
       - 'app/(move)/experience-lab/**'
       - 'lib/move-v2/**'
-      - 'tests/move-v2-domain.test.ts'
-      - 'supabase/migrations/20260816120000_move_v2_provider_identity_foundation.sql'
+      - 'scripts/move-v2/**'
+      - 'tests/move-v2*.test.ts'
+      - 'supabase/migrations/*move_v2*.sql'
       - 'package.json'
       - 'package-lock.json'
       - 'tsconfig.move-v2.json'
