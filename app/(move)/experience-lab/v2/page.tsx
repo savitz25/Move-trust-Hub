@@ -31,6 +31,8 @@ export default function MoveV2ExperienceLab() {
               <div className="mt-5 border-t border-slate-100 pt-4"><p className="text-sm font-semibold">Evidence</p>{provider.evidence.map((item) => <p key={item} className="mt-2 flex gap-2 text-sm text-slate-600"><ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-teal-700"/>{item}</p>)}</div>
               {provider.contacts.length > 0 && <div className="mt-4 flex flex-wrap gap-2">{provider.contacts.map((contact) => <span key={contact} className="inline-flex items-center gap-1 rounded-lg bg-blue-50 px-2.5 py-1.5 text-xs text-blue-900"><Phone className="h-3 w-3"/>{contact}</span>)}</div>}
               {provider.enrichment && <p className="mt-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-950">Google match: {provider.enrichment}</p>}
+              {provider.stateAuthority && <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-950"><span className="font-semibold">State authority:</span> {provider.stateAuthority}</div>}
+              {provider.geography && <div className="mt-3 rounded-xl border border-blue-200 bg-blue-50 p-3 text-sm text-blue-950"><span className="font-semibold">Geography:</span> {provider.geography}</div>}
               <p className="mt-5 text-xs text-slate-400">Provider ID: {provider.providerId}</p>
             </article>
           ))}
