@@ -32,7 +32,9 @@ Automated rules: all Task 001 tests plus Task 002 A–O pass (32/32 total). This
 
 A six-class real-data QA surface exists at `/experience-lab/v2/real`, separate from the synthetic lab. It is bounded, noindex, Preview-only, and requires both V2 and real-provider flags. The national release itself is never served as a bulk endpoint.
 
-The requested 115+ manual entity review and bounded SAFER comparison are not marked complete; automated source-trace sampling is not a substitute for that manual semantic review. The Preview real-data flag also remains off until database publication is available.
+The requested 115+ manual entity review and bounded SAFER comparison are not marked complete; automated source-trace sampling is not a substitute for that manual semantic review. The bounded sample flag is enabled only for the `move-2.0` Preview branch; it does not imply database publication.
+
+CI: both GitHub `domain-foundation` runs passed (Actions run IDs 31966434067 and 31966435323), as did Vercel. Verified Preview QA URL: `https://move-trust-337irko4z-savitz25-s-projects.vercel.app/experience-lab/v2/real` (HTTP 200). PR #1 remains open and draft.
 
 ## Status
 
