@@ -10,6 +10,9 @@ const migrations = [
   ['20260816210000', 'move_v2_fmcsa_publication_gate'],
   ['20260816220000', 'move_v2_fmcsa_census_dockets'],
   ['20260816230000', 'move_v2_fmcsa_query_indexes'],
+  ['20260816240000', 'move_v2_auto_transport_roles'],
+  ['20260816250000', 'move_v2_all_service_roles_view'],
+  ['20260816260000', 'move_v2_auto_official_contacts'],
 ] as const;
 
 async function main() {
