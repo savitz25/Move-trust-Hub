@@ -1,5 +1,9 @@
 # Provider identity and classification
 
+## Task 002 national spine
+
+Authoritative FMCSA linkage uses exact USDOT only. A USDOT receives one durable internal provider UUID; MC, MX, FF, and every authority row remain many-valued evidence and never become provider keys. The 2026 classifier is implemented in `lib/move-v2/fmcsa` with typed reason/conflict codes and immutable source-record keys. HHG freight forwarders remain a distinct product-review class. Current Motus evidence takes precedence over historical L&I only for current state; both remain visible in chronology.
+
 ## Stable identity
 
 `move_v2.provider.provider_id` is a generated UUID and the only provider primary identity. `organization_id` is nullable for future provider-console ownership. Locations, contacts, source records, identifiers, external identities, and classifications have their own stable IDs.

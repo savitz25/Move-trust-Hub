@@ -1,0 +1,116 @@
+[
+  {
+    "providerId": "6c09ec59-062c-5aab-9a28-a27efc05d3bf",
+    "usdot": "163001",
+    "displayName": "SOFAS OF MEXICO",
+    "legalName": "CARL T WALL",
+    "dbaName": "SOFAS OF MEXICO",
+    "classification": "INACTIVE_ENTITY",
+    "state": "CA",
+    "city": "SAN FRANCISCO",
+    "powerUnits": null,
+    "drivers": null,
+    "reasonCodes": [
+      "HHG_CARGO_REPORTED",
+      "INACTIVE_USDOT"
+    ],
+    "conflicts": [],
+    "sourceRelease": "2026-08-16"
+  },
+  {
+    "providerId": "99a756a2-a093-5167-a44b-3c35320f1cba",
+    "usdot": "163212",
+    "displayName": "OLYMPIC MOVING AND STORAGE III",
+    "legalName": "NOWADNICK AND SONS INC",
+    "dbaName": "OLYMPIC MOVING AND STORAGE III",
+    "classification": "LOCAL_INTRASTATE_CARRIER_CANDIDATE",
+    "state": "WA",
+    "city": "LAKEWOOD",
+    "powerUnits": 6,
+    "drivers": 3,
+    "reasonCodes": [
+      "HHG_CARGO_REPORTED",
+      "ACTIVE_USDOT",
+      "NO_INTERSTATE_HHG_AUTHORITY",
+      "STATE_AUTHORITY_PENDING"
+    ],
+    "conflicts": [],
+    "sourceRelease": "2026-08-16"
+  },
+  {
+    "providerId": "31ef7697-70fa-5c38-891d-20bdef4bab44",
+    "usdot": "163326",
+    "displayName": "WINTERS TRUCKING INC",
+    "legalName": "WINTERS TRUCKING INC",
+    "dbaName": null,
+    "classification": "NEEDS_REGULATORY_REVIEW",
+    "state": "NJ",
+    "city": "AVENEL",
+    "powerUnits": 1,
+    "drivers": 1,
+    "reasonCodes": [
+      "ACTIVE_USDOT"
+    ],
+    "conflicts": [],
+    "sourceRelease": "2026-08-16"
+  },
+  {
+    "providerId": "9ce3b0a2-751c-5218-9696-4eed4b0c9776",
+    "usdot": "185771",
+    "displayName": "BUDD VAN LINES INC",
+    "legalName": "BUDD VAN LINES INC",
+    "dbaName": null,
+    "classification": "INTERSTATE_CARRIER",
+    "state": "NJ",
+    "city": "SOMERSET",
+    "powerUnits": 124,
+    "drivers": 102,
+    "reasonCodes": [
+      "HHG_CARGO_REPORTED",
+      "ACTIVE_USDOT",
+      "ACTIVE_INTERSTATE_HHG_AUTHORITY"
+    ],
+    "conflicts": [],
+    "sourceRelease": "2026-08-16"
+  },
+  {
+    "providerId": "b042006e-6cf8-5484-828d-0bb766629b28",
+    "usdot": "220940",
+    "displayName": "TEXAS MOVING CO INC",
+    "legalName": "TEXAS MOVING CO INC",
+    "dbaName": null,
+    "classification": "DUAL_ROLE_CARRIER_BROKER",
+    "state": "TX",
+    "city": "THE COLONY",
+    "powerUnits": 19,
+    "drivers": 6,
+    "reasonCodes": [
+      "ACTIVE_USDOT",
+      "ACTIVE_INTERSTATE_HHG_AUTHORITY",
+      "ACTIVE_BROKER_AUTHORITY",
+      "BROKER_BOND_REPORTED"
+    ],
+    "conflicts": [],
+    "sourceRelease": "2026-08-16"
+  },
+  {
+    "providerId": "9ba9d671-a2f8-5f44-afef-1452bac49d04",
+    "usdot": "561172",
+    "displayName": "ALASKA USA VAN LINES LLC",
+    "legalName": "ALASKA USA VAN LINES LLC",
+    "dbaName": null,
+    "classification": "AUTHORIZED_BROKER",
+    "state": "IN",
+    "city": "FORT WAYNE",
+    "powerUnits": 1,
+    "drivers": 1,
+    "reasonCodes": [
+      "HHG_CARGO_REPORTED",
+      "ACTIVE_USDOT",
+      "ACTIVE_BROKER_AUTHORITY",
+      "BROKER_BOND_REPORTED"
+    ],
+    "conflicts": [],
+    "sourceRelease": "2026-08-16"
+  }
+]

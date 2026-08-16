@@ -1,5 +1,9 @@
 # MoveTrustHub 2.0 architecture
 
+## National FMCSA spine (Task 002)
+
+V2 now has a projected, release-aware national data path: official artifacts → streaming normalization → moving-relevance selection → provider/evidence rows → versioned classification → bounded Preview QA. Release artifacts and national CSV outputs are deliberately gitignored. The additive `move_v2` migration defines release, census fact, authority, event, insurance, BOC-3 and classification tables with RLS and no anonymous/authenticated grants. Production feature flags remain off.
+
 ## Mission and boundary
 
 MoveTrustHub is the Move vertical in Ask Trust Hub. Its position is “Research your move without being sold a mover.” Its trust principle is “We cite. You decide.” V2 is an evidence-first decision platform, not a lead marketplace.
