@@ -51,14 +51,14 @@ The bounded official FMCSA/QCMobile spot check covered 16 exact USDOTs: legal na
 
 ## 23–31. Delivery and gates
 
-23. **Tests:** 43/43 Task 001/002/002A domain regressions pass, including required auto A–I; focused lint and typecheck pass. Full build and final diff checks are recorded below after delivery validation.
-24. **Commits:** recorded after final validation in this report’s delivery commit history.
-25. **CI:** recorded after the final pushed commits; focused Move V2 workflow is required green.
+23. **Tests:** **PASS**—43/43 Task 001/002/002A domain regressions, including required auto A–I; focused lint; focused typecheck; full Next production build; migration application; publication/republication; database QA; and `git diff --check`.
+24. **Commits:** `f09279f8` (`feat: add auto transport regulatory spine`) and `dc2668ab` (`docs: record Task 002A auto transport validation`), followed by the final report metadata commit in branch history.
+25. **CI:** **PASS**—focused GitHub Actions runs `31974345468` and `31974347463`; Vercel Preview passed at `https://move-trust-91bc7y2tz-savitz25-s-projects.vercel.app`.
 26. **PR #1:** remains **DRAFT** and targets `main`.
 27. **Production changes:** **NONE**. V2 remains branch/Preview-only; no Production route, flag, query, or deployment changed.
 28. **Google enrichment:** **NOT RUN**. `MOVE_ENABLE_GOOGLE_ENRICHMENT=false` remains the required state.
 29. **Website enrichment:** **NOT RUN**. `MOVE_ENABLE_WEBSITE_ENRICHMENT=false` remains the required state.
-30. **Task 002A:** **PASS**, subject only to the final pushed CI/build confirmation below.
-31. **Ready for Task 003 — combined HHG + auto Google Places / website enrichment:** **YES** once final CI is green. Task 003 was not started.
+30. **Task 002A:** **PASS**.
+31. **Ready for Task 003 — combined HHG + auto Google Places / website enrichment:** **YES**. Task 003 was not started.
 
 Future provider-published attributes—open, enclosed, expedited, motorcycle, classic/exotic, inoperable-vehicle, dealer/auction transport, service area, email, additional phone, and website—are contract-only and unpopulated. They can never modify regulatory authority.
