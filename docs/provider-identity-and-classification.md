@@ -46,3 +46,9 @@ Classification, eligibility, and public ranking accept no billing input.
 ## Contacts and service areas
 
 Contacts are append/merge observations keyed by type, normalized value, source, and source record. Originals and multiple legitimate phones/emails/sites are retained. Missing emails stay missing. Service areas explicitly distinguish regulatory allowed area, provider-published area, and TrustHub-derived search area.
+
+## Multi-service identity and auto transport
+
+Provider identity is orthogonal to service classification. One stable `provider_id` may have an HHG classification and one current `AUTO_TRANSPORT` role. `provider_all_service_roles` composes those records without copying the provider or changing the established HHG result.
+
+Auto roles are `AUTO_TRANSPORT_CARRIER`, `AUTO_TRANSPORT_BROKER`, `AUTO_TRANSPORT_DUAL_ROLE`, `AUTO_TRANSPORT_INACTIVE`, and `AUTO_TRANSPORT_REVIEW`. The versioned classifier requires official `CRGO_MOTOVEH` evidence before evaluating Motus property authority, financial responsibility, and chronology. Names cannot create relevance.

@@ -50,3 +50,7 @@ Unknown inputs stay unknown. Provider marketing claims never alter regulatory el
 ## SEO migration policy
 
 Keep a URL when user intent remains the same. Use a 301/308 only when a resource genuinely moves. Preserve indexed V1 pages until route-by-route parity, evidence validation, monitoring, and a separately authorized production migration. Code architecture is not a reason to churn URLs.
+
+## Auto-transport service spine
+
+Auto transport is a service vertical attached to the existing provider graph, not a parallel directory. `provider_service_role` stores release-aware auto relevance and roles while `fmcsa_auto_provider_fact` provides an official bounded read fact. Existing HHG classifications remain unchanged. Future provider-published transport attributes—open, enclosed, expedited, motorcycle, classic/exotic, inoperable-vehicle, and dealer/auction service—are enrichment data and cannot modify regulatory authority.

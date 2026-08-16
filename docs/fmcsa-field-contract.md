@@ -11,3 +11,9 @@ The contract is derived from the official Company Census and Motus dictionaries,
 - BOC-3: retained as process-agent evidence, never the center of eligibility.
 
 Policy references are evidence-layer fields and are not exposed by the bounded QA read model. Source record keys are SHA-256 hashes of the projected official row and point back to the immutable release artifact.
+
+## Task 002A auto-transport extension
+
+The official Company Census dictionary defines `CRGO_MOTOVEH` (API `crgo_motoveh`) as cargo category **D. Motor Vehicles**. An `X` is the sole strong Census auto-relevance signal. Business-name words such as “auto,” “car,” “vehicle,” “shipping,” and “transport” are excluded from regulatory relevance decisions.
+
+Current-role evidence reuses the registered Motus contracts: `Motor Carrier of Property (Except Household Goods)` and `Broker of Property (Except Household Goods)`, their current status, BIPD/bond fields, forms 84/85, history, and revoke/suspend dates. HHG authority is never substituted for property authority. General freight forwarders are not silently treated as auto brokers. Missing or contradictory evidence produces review.
