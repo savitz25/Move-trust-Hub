@@ -1,0 +1,146 @@
+{
+  "providerGoogle": {
+    "executionMs": 0.139,
+    "plan": [
+      "Index Scan using google_place_match_pkey on google_place_match  (cost=0.19..2.41 rows=1 width=242) (actual time=0.028..0.029 rows=1 loops=1)",
+      "  Index Cond: (provider_id = (InitPlan 1).col1)",
+      "  Buffers: shared hit=4",
+      "  InitPlan 1",
+      "    ->  Limit  (cost=0.00..0.05 rows=1 width=16) (actual time=0.017..0.018 rows=1 loops=1)",
+      "          Buffers: shared hit=2",
+      "          ->  Seq Scan on google_place_match google_place_match_1  (cost=0.00..12.51 rows=251 width=16) (actual time=0.016..0.016 rows=1 loops=1)",
+      "                Buffers: shared hit=2",
+      "Planning:",
+      "  Buffers: shared hit=162 dirtied=1",
+      "Planning Time: 6.488 ms",
+      "Execution Time: 0.139 ms"
+    ]
+  },
+  "placeProvider": {
+    "executionMs": 0.112,
+    "plan": [
+      "Seq Scan on google_place_match  (cost=0.05..13.19 rows=1 width=16) (actual time=0.021..0.086 rows=1 loops=1)",
+      "  Filter: (place_id = (InitPlan 1).col1)",
+      "  Rows Removed by Filter: 242",
+      "  Buffers: shared hit=12",
+      "  InitPlan 1",
+      "    ->  Limit  (cost=0.00..0.05 rows=1 width=29) (actual time=0.007..0.007 rows=1 loops=1)",
+      "          Buffers: shared hit=2",
+      "          ->  Seq Scan on google_place_match google_place_match_1  (cost=0.00..12.51 rows=251 width=29) (actual time=0.006..0.006 rows=1 loops=1)",
+      "                Filter: (place_id IS NOT NULL)",
+      "                Buffers: shared hit=2",
+      "Planning:",
+      "  Buffers: shared hit=8",
+      "Planning Time: 0.157 ms",
+      "Execution Time: 0.112 ms"
+    ]
+  },
+  "providerWebsite": {
+    "executionMs": 0.048,
+    "plan": [
+      "Index Scan using provider_website_identity_pkey on provider_website_identity  (cost=0.20..2.41 rows=1 width=280) (actual time=0.022..0.023 rows=1 loops=1)",
+      "  Index Cond: (provider_id = (InitPlan 1).col1)",
+      "  Buffers: shared hit=3",
+      "  InitPlan 1",
+      "    ->  Limit  (cost=0.00..0.05 rows=1 width=16) (actual time=0.015..0.015 rows=1 loops=1)",
+      "          Buffers: shared hit=1",
+      "          ->  Seq Scan on provider_website_identity provider_website_identity_1  (cost=0.00..12.60 rows=260 width=16) (actual time=0.014..0.014 rows=1 loops=1)",
+      "                Buffers: shared hit=1",
+      "Planning:",
+      "  Buffers: shared hit=55",
+      "Planning Time: 0.228 ms",
+      "Execution Time: 0.048 ms"
+    ]
+  },
+  "providerContacts": {
+    "executionMs": 0.047,
+    "plan": [
+      "Index Scan using provider_contact_provider_id_contact_type_normalized_value__key on provider_contact  (cost=0.19..2.41 rows=1 width=377) (actual time=0.020..0.021 rows=0 loops=1)",
+      "  Index Cond: (provider_id = (InitPlan 1).col1)",
+      "  Buffers: shared hit=3",
+      "  InitPlan 1",
+      "    ->  Limit  (cost=0.00..0.05 rows=1 width=16) (actual time=0.011..0.011 rows=1 loops=1)",
+      "          Buffers: shared hit=2",
+      "          ->  Seq Scan on google_place_match  (cost=0.00..12.51 rows=251 width=16) (actual time=0.010..0.010 rows=1 loops=1)",
+      "                Buffers: shared hit=2",
+      "Planning:",
+      "  Buffers: shared hit=76",
+      "Planning Time: 0.260 ms",
+      "Execution Time: 0.047 ms"
+    ]
+  },
+  "providerServices": {
+    "executionMs": 0.062,
+    "plan": [
+      "Bitmap Heap Scan on provider_published_observation  (cost=1.31..3.44 rows=2 width=232) (actual time=0.029..0.035 rows=9 loops=1)",
+      "  Recheck Cond: (provider_id = (InitPlan 1).col1)",
+      "  Heap Blocks: exact=2",
+      "  Buffers: shared hit=5",
+      "  InitPlan 1",
+      "    ->  Limit  (cost=0.00..0.04 rows=1 width=16) (actual time=0.010..0.011 rows=1 loops=1)",
+      "          Buffers: shared hit=2",
+      "          ->  Seq Scan on provider_published_observation provider_published_observation_1  (cost=0.00..13.10 rows=310 width=16) (actual time=0.010..0.010 rows=1 loops=1)",
+      "                Buffers: shared hit=2",
+      "  ->  Bitmap Index Scan on provider_published_observation_provider_idx  (cost=0.00..1.26 rows=2 width=0) (actual time=0.023..0.023 rows=9 loops=1)",
+      "        Index Cond: (provider_id = (InitPlan 1).col1)",
+      "        Buffers: shared hit=3",
+      "Planning:",
+      "  Buffers: shared hit=74",
+      "Planning Time: 0.285 ms",
+      "Execution Time: 0.062 ms"
+    ]
+  },
+  "providerLocations": {
+    "executionMs": 0.042,
+    "plan": [
+      "Index Scan using provider_business_location_provider_idx on provider_business_location  (cost=0.19..2.41 rows=1 width=328) (actual time=0.016..0.016 rows=0 loops=1)",
+      "  Index Cond: (provider_id = (InitPlan 1).col1)",
+      "  Buffers: shared hit=4",
+      "  InitPlan 1",
+      "    ->  Limit  (cost=0.00..0.05 rows=1 width=16) (actual time=0.011..0.011 rows=1 loops=1)",
+      "          Buffers: shared hit=2",
+      "          ->  Seq Scan on google_place_match  (cost=0.00..12.51 rows=251 width=16) (actual time=0.010..0.010 rows=1 loops=1)",
+      "                Buffers: shared hit=2",
+      "Planning:",
+      "  Buffers: shared hit=74",
+      "Planning Time: 0.259 ms",
+      "Execution Time: 0.042 ms"
+    ]
+  },
+  "providerServiceAreas": {
+    "executionMs": 0.09,
+    "plan": [
+      "Index Scan using provider_published_observation_provider_idx on provider_published_observation  (cost=3.67..5.89 rows=1 width=232) (actual time=0.063..0.064 rows=1 loops=1)",
+      "  Index Cond: ((provider_id = (InitPlan 1).col1) AND (observation_type = 'SERVICE_AREA'::text))",
+      "  Buffers: shared hit=4",
+      "  InitPlan 1",
+      "    ->  Limit  (cost=0.15..3.52 rows=1 width=16) (actual time=0.041..0.042 rows=1 loops=1)",
+      "          Buffers: shared hit=2",
+      "          ->  Index Only Scan using provider_published_observation_provider_idx on provider_published_observation provider_published_observation_1  (cost=0.15..6.89 rows=2 width=16) (actual time=0.040..0.041 rows=1 loops=1)",
+      "                Index Cond: (observation_type = 'SERVICE_AREA'::text)",
+      "                Heap Fetches: 1",
+      "                Buffers: shared hit=2",
+      "Planning Time: 0.117 ms",
+      "Execution Time: 0.090 ms"
+    ]
+  },
+  "reviewQueue": {
+    "executionMs": 0.24,
+    "plan": [
+      "Limit  (cost=20.68..20.80 rows=50 width=137) (actual time=0.174..0.182 rows=50 loops=1)",
+      "  Buffers: shared hit=13",
+      "  ->  Sort  (cost=20.68..21.25 rows=227 width=137) (actual time=0.173..0.176 rows=50 loops=1)",
+      "        Sort Key: score DESC",
+      "        Sort Method: top-N heapsort  Memory: 44kB",
+      "        Buffers: shared hit=13",
+      "        ->  Seq Scan on google_place_match  (cost=0.00..13.14 rows=227 width=137) (actual time=0.013..0.092 rows=205 loops=1)",
+      "              Filter: (match_status = ANY ('{GOOGLE_MATCH_REVIEW,GOOGLE_MULTIPLE_PLAUSIBLE_MATCHES}'::text[]))",
+      "              Rows Removed by Filter: 38",
+      "              Buffers: shared hit=10",
+      "Planning:",
+      "  Buffers: shared hit=66",
+      "Planning Time: 0.229 ms",
+      "Execution Time: 0.240 ms"
+    ]
+  }
+}

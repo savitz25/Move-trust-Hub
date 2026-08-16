@@ -1,0 +1,138 @@
+{
+  "queue": [
+    {
+      "status": "COMPLETED",
+      "count": 38
+    },
+    {
+      "status": "REVIEW",
+      "count": 205
+    }
+  ],
+  "matches": [
+    {
+      "match_status": "GOOGLE_MATCH_HIGH_CONFIDENCE",
+      "acquisition_method": "NEW_GOOGLE_LOOKUP",
+      "count": 14
+    },
+    {
+      "match_status": "GOOGLE_MATCH_REVIEW",
+      "acquisition_method": "REUSED_EXISTING_GOOGLE_IDENTITY",
+      "count": 1
+    },
+    {
+      "match_status": "GOOGLE_MULTIPLE_PLAUSIBLE_MATCHES",
+      "acquisition_method": "NEW_GOOGLE_LOOKUP",
+      "count": 9
+    },
+    {
+      "match_status": "GOOGLE_CLOSED_BUSINESS",
+      "acquisition_method": "NEW_GOOGLE_LOOKUP",
+      "count": 6
+    },
+    {
+      "match_status": "GOOGLE_MATCH_REVIEW",
+      "acquisition_method": "NEW_GOOGLE_LOOKUP",
+      "count": 195
+    },
+    {
+      "match_status": "GOOGLE_EXISTING_MATCH_REUSED",
+      "acquisition_method": "REUSED_EXISTING_GOOGLE_IDENTITY",
+      "count": 1
+    },
+    {
+      "match_status": "GOOGLE_NO_MATCH",
+      "acquisition_method": "NEW_GOOGLE_LOOKUP",
+      "count": 17
+    }
+  ],
+  "requests": [
+    {
+      "request_type": "SEARCH_TEXT",
+      "response_status": "OK",
+      "calls": 241,
+      "rows": 241
+    },
+    {
+      "request_type": "SEARCH_TEXT",
+      "response_status": "CONFIG_ERROR_REPAIRED",
+      "calls": 0,
+      "rows": 241
+    }
+  ],
+  "websites": [
+    {
+      "match_status": "WEBSITE_REVIEW",
+      "count": 7
+    },
+    {
+      "match_status": "WEBSITE_HIGH_CONFIDENCE",
+      "count": 2
+    },
+    {
+      "match_status": "WEBSITE_REJECTED",
+      "count": 4
+    }
+  ],
+  "observations": [
+    {
+      "observation_type": "EMAIL",
+      "count": 3
+    },
+    {
+      "observation_type": "SERVICE",
+      "count": 3
+    },
+    {
+      "observation_type": "PHONE",
+      "count": 6
+    },
+    {
+      "observation_type": "SERVICE_AREA",
+      "count": 1
+    }
+  ],
+  "geography": [
+    {
+      "evidence_status": "SERVICE_AREA_NOT_FOUND",
+      "derived_service_area_required": true,
+      "count": 14
+    },
+    {
+      "evidence_status": "SERVICE_AREA_PARTIAL",
+      "derived_service_area_required": false,
+      "count": 1
+    }
+  ],
+  "waveA": 5267,
+  "v1": {
+    "companies": 468,
+    "reviews": 15
+  },
+  "uniqueDiscoveries": [
+    {
+      "observation_type": "EMAIL",
+      "count": 1
+    },
+    {
+      "observation_type": "PHONE",
+      "count": 2
+    },
+    {
+      "observation_type": "SERVICE",
+      "count": 1
+    },
+    {
+      "observation_type": "SERVICE_AREA",
+      "count": 1
+    }
+  ],
+  "services": [
+    {
+      "normalized_value": "storage",
+      "count": 3
+    }
+  ],
+  "identityConflicts": 161,
+  "branches": 0
+}

@@ -1,0 +1,247 @@
+{
+  "wave_a_unique_providers": 5267,
+  "company_columns": [
+    {
+      "column_name": "id",
+      "data_type": "text"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "text"
+    },
+    {
+      "column_name": "name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "logo",
+      "data_type": "text"
+    },
+    {
+      "column_name": "short_description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "column_name": "founded_year",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "headquarters",
+      "data_type": "text"
+    },
+    {
+      "column_name": "website",
+      "data_type": "text"
+    },
+    {
+      "column_name": "usdot_number",
+      "data_type": "text"
+    },
+    {
+      "column_name": "mc_number",
+      "data_type": "text"
+    },
+    {
+      "column_name": "fmcsa_safety_rating",
+      "data_type": "text"
+    },
+    {
+      "column_name": "fmcsa_complaints",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "fmcsa_shipments",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bbb_rating",
+      "data_type": "text"
+    },
+    {
+      "column_name": "bbb_accredited",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "overall_rating",
+      "data_type": "numeric"
+    },
+    {
+      "column_name": "review_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "reputation_score",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "years_in_business",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "avg_price_per_move",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "price_range",
+      "data_type": "text"
+    },
+    {
+      "column_name": "coverage",
+      "data_type": "text"
+    },
+    {
+      "column_name": "services",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "specialties",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "rating_breakdown",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "is_verified",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "last_updated",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "fmcsa_last_checked",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "authority_active",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "out_of_service",
+      "data_type": "boolean"
+    },
+    {
+      "column_name": "complaints_last_12m",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "revocation_date",
+      "data_type": "date"
+    },
+    {
+      "column_name": "data_hash",
+      "data_type": "text"
+    },
+    {
+      "column_name": "fmcsa_legal_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "fmcsa_raw",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "bbb_last_checked",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "complaints_last_36m",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bbb_customer_reviews",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bbb_data_hash",
+      "data_type": "text"
+    },
+    {
+      "column_name": "bbb_business_id",
+      "data_type": "text"
+    },
+    {
+      "column_name": "bbb_alert_count",
+      "data_type": "integer"
+    },
+    {
+      "column_name": "bbb_raw",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "google_data",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "public_scrape_data",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "service_scope",
+      "data_type": "text"
+    },
+    {
+      "column_name": "coverage_counties",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "email",
+      "data_type": "text"
+    },
+    {
+      "column_name": "entity_type",
+      "data_type": "text"
+    },
+    {
+      "column_name": "physical_address",
+      "data_type": "text"
+    },
+    {
+      "column_name": "phone",
+      "data_type": "text"
+    },
+    {
+      "column_name": "verification_sources",
+      "data_type": "jsonb"
+    },
+    {
+      "column_name": "verification_last_synced_at",
+      "data_type": "timestamp with time zone"
+    }
+  ],
+  "candidate_v1_columns": [
+    "website",
+    "usdot_number",
+    "mc_number",
+    "fmcsa_safety_rating",
+    "fmcsa_complaints",
+    "fmcsa_shipments",
+    "fmcsa_last_checked",
+    "fmcsa_legal_name",
+    "fmcsa_raw",
+    "google_data",
+    "phone",
+    "verification_sources",
+    "verification_last_synced_at"
+  ],
+  "v1_candidate_summary": {
+    "total": 468,
+    "with_usdot": 152,
+    "with_phone": 452,
+    "with_website": 461,
+    "with_place_id": 0
+  }
+}

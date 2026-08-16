@@ -34,3 +34,11 @@ Current name-query logic already uses normalized company input and candidate sco
 | Attribution | Preserve existing Google review UI attribution requirements |
 
 Google Maps Platform terms can change. Before expanding persistence or display, revalidate allowed caching, retention, attribution, and refresh behavior against the then-current contract. Task 001 does not broaden national fetching.
+
+## Task 003 terms and cost audit (2026-08-16)
+
+Google's current official policy permits durable Place ID storage but generally prohibits permanent caching of other Places content. V2 therefore stores the accepted Place ID separately and treats name, address, phone, website, coordinates, status, type, and rating/count as an expiring 30-day cache. Review text is not requested by the Task 003 discovery mask. Any later display must retain Google Maps attribution and comply with the then-current display requirements.
+
+The Task 003 pilot uses the existing Places API (New) `places:searchText` client and credential. It performs at most one Text Search per queued provider, returns at most five candidates, and requests a narrow explicit mask. The persistent request ledger and provider queue prevent restart lookups. Existing Place IDs are evaluated before discovery. Place Details is unnecessary when the discovery response already contains the permitted matching/display fields.
+
+Official references: https://developers.google.com/maps/documentation/places/web-service/policies, https://developers.google.com/maps/documentation/places/web-service/place-id, and https://developers.google.com/maps/documentation/places/web-service/data-fields.
