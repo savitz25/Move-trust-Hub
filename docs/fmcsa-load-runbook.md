@@ -4,14 +4,13 @@ Prerequisites: Node/npm, service-role credentials in local environment, PostgreS
 
 ```powershell
 npm ci
-npm run fmcsa:download -- --release 2026-08-16
-npm run fmcsa:verify -- --release 2026-08-16
 npm run fmcsa:build-spine -- --release 2026-08-16
-npm run fmcsa:load -- --release 2026-08-16
-npm run fmcsa:validate -- --release 2026-08-16
-npm run fmcsa:publish -- --release 2026-08-16
+npm run fmcsa:migrate
+npm run fmcsa:publish
+npm run fmcsa:publish-dockets
+npm run fmcsa:qa-db
 ```
 
-Download uses one official bulk request per dataset, streams to a temporary filename, verifies header/count/hash, then renames into the release directory. Build writes a new normalized directory. Load uses parameterized/bulk COPY into release-scoped rows. Publication runs in one transaction: validate counts and relationships, supersede the prior current classifications, mark the new release published, commit. On failure, roll back the transaction and mark the attempted release `FAILED`; do not delete the previous release. Loading the same dataset SHA is a no-op because registry and evidence uniqueness constraints reject duplicates.
+Download is a separate release-acquisition step: use one official bulk request per dataset, stream to a temporary filename, verify header/count/hash, then rename into the dated release directory. The committed loader assumes these verified artifacts already exist. It uses the direct PostgreSQL endpoint derived internally from `DATABASE_URL`, isolated unlogged staging, parameterized batches, release-scoped evidence, reconciliation, and a short transaction for the final visibility flip. The read model filters out every release not marked `PUBLISHED`. Loading the same six dataset hashes is a no-op because registry and evidence uniqueness constraints reject duplicates.
 
 Validation: `npm run lint:move-v2`, `npm run typecheck:move-v2`, `npm run test:move-v2`, schema tests, two identical build runs and output-hash comparison, then representative indexed `EXPLAIN (ANALYZE, BUFFERS)` queries.

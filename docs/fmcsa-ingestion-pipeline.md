@@ -9,7 +9,7 @@ The pipeline is release-aware and streaming:
 5. select HHG relevance using official HHG cargo/authority or an exact V1 USDOT QA match;
 6. normalize provider, authority, history, insurance, suspension and BOC-3 evidence;
 7. classify with `MOVE_CLASSIFICATION_RULESET_2026_08_V1`;
-8. validate and publish the release atomically, leaving the prior published release intact on failure.
+8. validate and atomically flip the completed release from staged to published, leaving the prior published release visible on failure.
 
 Stable provider IDs are deterministic UUIDs from the exact USDOT namespace. No fuzzy authoritative merges occur. Output is CSV for PostgreSQL bulk loading, not millions of JSON blobs. Re-running the same release produces the same provider IDs and source record keys; database uniqueness is `(source_release_id, source_record_key)`.
 

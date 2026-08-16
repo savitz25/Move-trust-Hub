@@ -7,3 +7,5 @@ Coverage among selected providers: DBA 65,875 (23.71%); phone 274,331 (98.75%); 
 Current classifications: 715 interstate carriers; 96,460 local/intrastate candidates; 68 authorized brokers; 82 dual-role; 28 HHG freight forwarders; 88,135 inactive; 92,325 regulatory review. Review volume is intentionally conservative: official HHG relevance alone does not manufacture current federal eligibility.
 
 V1 coverage QA found all 145 V1 records with USDOT in current Census. V1 labels never override official evidence.
+
+PostgreSQL publication reconciled all 277,813 providers and all classification counts exactly. Distinct provider docket coverage is 189,365. Evidence tables deduplicate only byte-identical projected rows within the same release; raw registry counts and immutable files remain authoritative for official release row counts.

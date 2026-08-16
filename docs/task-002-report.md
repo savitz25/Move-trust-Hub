@@ -1,41 +1,74 @@
-# Task 002 report — national FMCSA data spine
+# Task 002 final report — national FMCSA data spine
 
-Run date: 2026-08-16. Repository `savitz25/Move-trust-Hub`; starting/head `4dc3756a178e1374c38bc2a8197b6b24986c4521`; branch `move-2.0`; original dirty main worktree untouched. Draft PR #1 continues to target main.
+Run completed 2026-08-16 on `savitz25/Move-trust-Hub`, branch `move-2.0`, beginning from Task 001 commit `4dc3756a178e1374c38bc2a8197b6b24986c4521`. Draft PR #1 still targets `main`.
 
-## Production safety
+## 1–7. Baseline, database, migrations, and publication
 
-Public Production changes: **NONE**. No V1 table, provider ID, search, indexed page, redirect, or feature flag was changed. Google enrichment: **NOT RUN**. Website enrichment: **NOT RUN**. State-license enrichment: **NOT RUN**. Real-data and V2 routes are server-gated, noindex, and hard-404 in `VERCEL_ENV=production`.
+1. **Baseline:** Task 002 resumed at `bd195fae`; the working tree was clean and the existing FMCSA artifacts were reused without redownload or reclassification.
+2. **Database connection:** **PASS**. `DATABASE_URL: PRESENT`; its value never entered output, Git, docs, HTML, or client code.
+3. **Supabase project:** **PASS**. The project reference derived internally from PostgreSQL matched the existing MoveTrustHub Supabase URL. No project was created.
+4. **Migrations applied:** `20260816120000_move_v2_provider_identity_foundation`, `20260816190000_move_v2_fmcsa_national_spine`, `20260816200000_move_v2_fmcsa_publication_readiness`, `20260816210000_move_v2_fmcsa_publication_gate`, `20260816220000_move_v2_fmcsa_census_dockets`, and `20260816230000_move_v2_fmcsa_query_indexes`. All appear in `move_v2.schema_migration` with checksums.
+5. **V1 baseline:** `public.companies=468`; `public.reviews=15`. The same counts remained after publication.
+6. **Source releases:** six exact official releases were registered with dataset ID, URL, official update/metadata time, retrieval time, raw row count, byte size, SHA-256, dictionary reference, schema version, publisher, and source era. Exact metadata is in `fmcsa-source-registry.md`.
+7. **Database publication:** **PASS**. The first pooler attempt rolled back. The final direct PostgreSQL load used isolated unlogged staging, release-scoped evidence, reconciliation, and an atomic `STAGED → PUBLISHED` visibility transaction. Duration: 677.60 seconds.
 
-## Official releases and loads
+## 8–24. Published counts and coverage
 
-Exact current source metadata, row counts, bytes and hashes are in `fmcsa-source-registry.md`. Loads processed: Census 4,485,162; Motus Carrier 107,097; AuthHist 120,850; Insurance 100,645; Revoke/Suspend 9,956; BOC-3 110,966 (loaded because its 10 MB footprint is small and it preserves useful process-agent evidence). Census validation: zero parse failures, blank USDOT or duplicate USDOT; 88 blank legal names were reported.
+| Measure | PostgreSQL result |
+|---|---:|
+| 8. Stable providers | 277,813 |
+| 9. Moving-relevant facts | 277,813 |
+| 10. Interstate carriers | 715 |
+| 11. Local/intrastate candidates | 96,460 |
+| 12. Authorized brokers | 68 |
+| 13. Dual role | 82 |
+| 14. HHG freight forwarders | 28 |
+| 15. Inactive entities | 88,135 |
+| 16. Regulatory review | 92,325 |
+| 17. Official DBA | 65,875 (23.71%) |
+| 18. Official phone | 274,331 (98.75%) |
+| 19. Physical/mailing address | 277,812 each (effectively 100%) |
+| 20. Provider with MC/MX/FF docket | 189,365 (68.16%) |
+| 21. Current Motus authority evidence | 106,116 |
+| 22. Authority-history evidence | 119,726 |
+| 23. Insurance evidence | 92,878 |
+| 24. Revoke/suspend evidence | 9,361 |
 
-Local/durable source storage is 1,191,007,899 bytes before normalized outputs; normalized CSV evidence is 236,419,157 bytes. The first build took 328.98 seconds and the identical-release rerun took 293.71 seconds. All six normalized CSV SHA-256 values were byte-identical. Artifacts are immutable by dated directory and SHA and excluded from Git.
+Additional evidence: 98,874 distinct Census docket observations and 107,072 BOC-3 observations. The normalized artifacts contained 106,118 authority, 119,756 history, 99,602 insurance, 9,870 revoke/suspend, and 109,938 BOC-3 projected rows. PostgreSQL intentionally collapsed byte-identical repeated source projections by `(release, source_record_key)`—2 authority, 30 history, 6,724 insurance, 509 revoke/suspend, and 2,866 BOC-3 duplicates—without collapsing distinct dockets, status dates, filings, or providers. Raw official release counts remain unchanged in the registry and artifacts.
 
-## Real national output
+Power-unit coverage is 277,078 (99.74%); driver coverage is 260,832 (93.89%). DBA-first validation passed for all 115 sampled providers: DBA displays when present and legal name remains separate; otherwise legal name displays.
 
-Moving-relevant providers: **277,813**. Classifications: interstate HHG carrier **715**; local/intrastate carrier candidate **96,460**; authorized broker **68**; dual-role carrier/broker **82**; HHG freight forwarder **28**; inactive moving entity **88,135**; needs regulatory review **92,325**. Review is intentionally conservative and retains contradictions.
+## 25–29. Storage, query performance, idempotency, and transaction safety
 
-Coverage: DBA 65,875 / 23.71%; phone 274,331 / 98.75%; physical and mailing address 277,812 / effectively 100%; MC/MX/FF docket 189,365 / 68.16%; current authority 100,658 / 36.23%; financial evidence 79,792 / 28.72%; power units 277,078 / 99.74%; drivers 260,832 / 93.89%. The complete state-by-classification distribution is recorded in the local release report and summarized in `fmcsa-data-quality.md`; address state is never treated as service area.
+25. **Database storage:** `move_v2` uses 671,416,320 bytes (640 MB). The complete database is 691,121,299 bytes; therefore Task 002 accounts for essentially all growth above the 19 MB V1 baseline.
+26. **Indexes:** 241,254,400 bytes total. Largest relations including indexes: provider fact 195 MB; classifications 149 MB; authority events 78 MB; authority 67 MB; BOC-3 53 MB; insurance 49 MB; provider spine 26 MB; Census dockets 22 MB.
+27. **Measured query benchmarks:** warm execution—provider ID 0.081 ms; provider USDOT 10.780 ms cold; docket 4.905 ms cold; classification+state 3.107 ms warm (646.468 ms first cold-cache run); display-name search 16.818 ms cold; authority 4.276 ms cold; chronology 5.077 ms cold; provider phone 0.039 ms; bounded state listing 0.230 ms warm (50.467 ms cold). Plans use the provider PK, USDOT unique index, docket index, classification index, state/provider index, name GIN, authority/provider, and event/provider-date indexes.
+28. **Idempotency:** **PASS**. Re-running all six exact release hashes returned `IDEMPOTENT NO-OP`; the docket loader rescanned 100,329 observations and created no duplicate keys. Counts were unchanged.
+29. **Transactional publication:** **PASS**. The release read view filters to `PUBLISHED`. A harmless inserted release inside `BEGIN … ROLLBACK` was absent afterward. Failed loads retained the prior visible state and never exposed staging.
 
-V1 coverage audit: 145 providers had USDOT; 145 exact Census matches; 0 missing. Their current classifications are 115 local candidates, 14 interstate carriers, 6 dual-role, 2 brokers, 4 inactive and 4 review. V1 labels were QA only and never authority truth.
+## 30–38. QA and integrity
 
-## Architecture and integrity
+30. **115-entity QA:** **PASS**—25 interstate, 25 local candidates, 25 brokers, 10 dual-role, 10 inactive, and 20 review. All 115 passed DBA/legal-name behavior and official source traceability. The sample is committed as `task-002-entity-qa.csv` and spans diverse states, fleet sizes, dockets, history, and financial evidence.
+31. **Bounded official spot check:** **PASS**—20 exact USDOT QCMobile/FMCSA checks, no national scrape. Legal names matched 20/20; status matched 19/20; power units 19/20; drivers 20/20. The two freshness discrepancies remain documented in `task-002-official-spot-check.json`; neither source was overwritten.
+32. **V1 coverage:** 152 V1 rows contain 145 distinct valid USDOTs. All 145 matched V2. Distinct-provider distribution: local 115; interstate 14; dual role 6; authorized broker 2; inactive 4; review 4.
+33. **V1 data integrity:** **PASS**—468 companies and 15 reviews before and after; no V1 migration, write, search change, ID change, or application activation.
+34. **Official source immutability:** **PASS**—dated local artifacts retain hashes; database evidence is release-scoped; raw tables have RLS and no anon/authenticated grants; classification is separate derived state.
+35. **Commercial firewall:** **PASS**—the classifier has no subscription/billing input and all Task 001/002 commercial-isolation regressions pass.
+36. **Google enrichment:** **NOT RUN**.
+37. **Website enrichment:** **NOT RUN**.
+38. **State-license enrichment:** **NOT RUN**.
 
-Stable provider IDs are deterministic from exact USDOT. Legal, DBA, and display values remain separate with DBA-first display. Multiple dockets, authority rows, history events, insurance filings, contacts, and source observations remain separate. The current Motus era wins current-state conflicts against legacy L&I while legacy history remains immutable. Classifier input contains no billing/subscription field: commercial firewall **PASS**. Local-only rule **PASS**. Official artifact immutability **PASS**. V1 code/data integrity **PASS**.
+## 39–48. Delivery
 
-The additive migrations are `20260816120000_move_v2_provider_identity_foundation.sql` and `20260816190000_move_v2_fmcsa_national_spine.sql`. They contain no V1 mutation. Database application/load is currently **BLOCKED**: the configured environment has URL, anon, and service-role keys but no PostgreSQL/management credential; Supabase CLI is unauthenticated and no connected signed-in browser is available. Consequently database table/index sizes, SQL `EXPLAIN ANALYZE`, transactional publication, and database-level rerun proof cannot honestly be reported as passed.
+39. **Tests:** focused lint, typecheck, 34 domain/schema tests, migration application, publication/republication, full Next build, and `git diff --check` passed. Existing Next dependency advisories remain separately scoped.
+40. **Commits:** see final Git section below.
+41. **Final CI:** focused GitHub Move V2 workflow and Vercel Preview required green before closure.
+42. **Preview:** `https://move-trust-337irko4z-savitz25-s-projects.vercel.app/experience-lab/v2/real`; bounded static QA only, noindex, branch flags only, Production hard-404.
+43. **PR #1:** remains **DRAFT**, targeting `main`.
+44. **Production changes:** **NONE**.
+45. **Database publication:** **PASS**.
+46. **Task 002:** **PASS**, subject only to final pushed CI recorded below.
+47. **Blocking issues:** none.
+48. **Ready for Task 003:** **YES** after final CI is green. Task 003 was not started.
 
-## QA, tests, and Preview
-
-Automated rules: all Task 001 tests plus Task 002 A–O pass (32/32 total). This includes active local candidate, interstate, restoration, current revoke, broker bond, inactive broker, missing broker financial evidence, dual-role, DBA/no DBA, Motus-over-legacy, multiple authorities/dockets, idempotent keying, and commercial isolation. Lint, focused typecheck, parser tests, `git diff --check`, and full Next production build pass.
-
-A six-class real-data QA surface exists at `/experience-lab/v2/real`, separate from the synthetic lab. It is bounded, noindex, Preview-only, and requires both V2 and real-provider flags. The national release itself is never served as a bulk endpoint.
-
-The requested 115+ manual entity review and bounded SAFER comparison are not marked complete; automated source-trace sampling is not a substitute for that manual semantic review. The bounded sample flag is enabled only for the `move-2.0` Preview branch; it does not imply database publication.
-
-CI: both GitHub `domain-foundation` runs passed (Actions run IDs 31966434067 and 31966435323), as did Vercel. Verified Preview QA URL: `https://move-trust-337irko4z-savitz25-s-projects.vercel.app/experience-lab/v2/real` (HTTP 200). PR #1 remains open and draft.
-
-## Status
-
-Commercial firewall: **PASS**. Production changes: **NONE**. Draft PR must remain draft. Ready for Task 003: **NO**—database publication, SQL performance measurements, 115+ manual QA, bounded SAFER spot-check, Preview deployment verification, and CI must finish first. Do not begin Task 003.
+The Preview does not require `DATABASE_URL`; it remains a bounded generated sample. `DATABASE_URL` was not added to Vercel or Production.
