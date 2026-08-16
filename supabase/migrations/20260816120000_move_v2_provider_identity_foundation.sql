@@ -2,6 +2,13 @@
 create schema if not exists move_v2;
 create schema if not exists move_v2_commercial;
 
+create table if not exists move_v2.schema_migration (
+  version text primary key,
+  name text not null,
+  sha256 text not null,
+  applied_at timestamptz not null default now()
+);
+
 create table if not exists move_v2.provider (
   provider_id uuid primary key default gen_random_uuid(),
   organization_id uuid,
@@ -36,7 +43,7 @@ create table if not exists move_v2.provider_source_record (
 create table if not exists move_v2.provider_identifier (
   provider_identifier_id uuid primary key default gen_random_uuid(),
   provider_id uuid not null references move_v2.provider(provider_id),
-  identifier_type text not null check (identifier_type in ('USDOT','MC','MX','STATE_LICENSE')),
+  identifier_type text not null check (identifier_type in ('USDOT','MC','MX','FF','STATE_LICENSE')),
   identifier_value text not null,
   issuing_jurisdiction text,
   provider_source_record_id uuid references move_v2.provider_source_record(provider_source_record_id),
