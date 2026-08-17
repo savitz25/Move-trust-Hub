@@ -1,0 +1,194 @@
+{
+  "capturedAt": "2026-08-17T19:23:10.719Z",
+  "baseUrl": "https://www.movetrusthub.com",
+  "goldenSources": 28,
+  "uniqueInternalLinks": 300,
+  "checked": 300,
+  "broken": [
+    {
+      "path": "/suggest",
+      "status": 404,
+      "location": null
+    }
+  ],
+  "redirects": [
+    {
+      "path": "/api/auth/network-handoff/start?to=insurance&amp;next=%2Fmy-insurance",
+      "status": 307,
+      "location": "https://www.insurancetrusthub.com/my-insurance"
+    },
+    {
+      "path": "/api/auth/network-handoff/start?to=lender&amp;next=%2Fmy-lending",
+      "status": 307,
+      "location": "https://www.lendertrusthub.com/my-lending"
+    },
+    {
+      "path": "/api/auth/network-handoff/start?to=contractor&amp;next=%2F",
+      "status": 307,
+      "location": "https://www.contractortrusthub.com/"
+    },
+    {
+      "path": "/api/auth/network-handoff/start?to=contractor&amp;next=%2Fmy-lending",
+      "status": 307,
+      "location": "https://www.contractortrusthub.com/"
+    },
+    {
+      "path": "/api/auth/network-handoff/start?to=insurance&amp;next=%2F",
+      "status": 307,
+      "location": "https://www.insurancetrusthub.com/my-insurance"
+    },
+    {
+      "path": "/api/auth/network-handoff/start?to=lender&amp;next=%2F",
+      "status": 307,
+      "location": "https://www.lendertrusthub.com/my-lending"
+    },
+    {
+      "path": "/insurance/resources/guides/moving-to-myrtle-beach-2026",
+      "status": 308,
+      "location": "https://www.insurancetrusthub.com/resources/guides/moving-to-myrtle-beach-2026"
+    }
+  ],
+  "forbidden": [],
+  "sourceResults": [
+    {
+      "path": "/",
+      "status": 200,
+      "links": 29
+    },
+    {
+      "path": "/companies/allied-van-lines",
+      "status": 200,
+      "links": 34
+    },
+    {
+      "path": "/companies/united-van-lines",
+      "status": 200,
+      "links": 38
+    },
+    {
+      "path": "/companies/north-american-van-lines",
+      "status": 200,
+      "links": 62
+    },
+    {
+      "path": "/companies/mayflower-transit",
+      "status": 200,
+      "links": 65
+    },
+    {
+      "path": "/companies/jk-moving-services",
+      "status": 200,
+      "links": 70
+    },
+    {
+      "path": "/local-movers/alabama",
+      "status": 200,
+      "links": 131
+    },
+    {
+      "path": "/local-movers/alaska",
+      "status": 200,
+      "links": 162
+    },
+    {
+      "path": "/local-movers/arizona",
+      "status": 200,
+      "links": 183
+    },
+    {
+      "path": "/local-movers/alabama/baldwin",
+      "status": 200,
+      "links": 223
+    },
+    {
+      "path": "/local-movers/alabama/bibb",
+      "status": 200,
+      "links": 223
+    },
+    {
+      "path": "/local-movers/alabama/bullock",
+      "status": 200,
+      "links": 223
+    },
+    {
+      "path": "/local-movers/alabama/choctaw",
+      "status": 200,
+      "links": 223
+    },
+    {
+      "path": "/local-movers/alabama/clarke",
+      "status": 200,
+      "links": 223
+    },
+    {
+      "path": "/moving-to/south-carolina/myrtle-beach-sc",
+      "status": 200,
+      "links": 251
+    },
+    {
+      "path": "/moving-to/south-carolina/north-myrtle-beach",
+      "status": 200,
+      "links": 254
+    },
+    {
+      "path": "/moving-to/south-carolina/surfside-beach",
+      "status": 200,
+      "links": 255
+    },
+    {
+      "path": "/resources/guides/moving-to-myrtle-beach-2026",
+      "status": 200,
+      "links": 256
+    },
+    {
+      "path": "/resources/guides/moving-to-coeur-dalene-2026",
+      "status": 200,
+      "links": 259
+    },
+    {
+      "path": "/resources/guides/moving-to-idaho-falls-2026",
+      "status": 200,
+      "links": 261
+    },
+    {
+      "path": "/moving-calculator",
+      "status": 200,
+      "links": 262
+    },
+    {
+      "path": "/my-move",
+      "status": 200,
+      "links": 263
+    },
+    {
+      "path": "/compare",
+      "status": 200,
+      "links": 271
+    },
+    {
+      "path": "/verify-dot",
+      "status": 200,
+      "links": 272
+    },
+    {
+      "path": "/auto-transport",
+      "status": 200,
+      "links": 296
+    },
+    {
+      "path": "/companies/pods",
+      "status": 200,
+      "links": 300
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "links": 300
+    },
+    {
+      "path": "/about/how-we-score-movers",
+      "status": 200,
+      "links": 300
+    }
+  ]
+}
