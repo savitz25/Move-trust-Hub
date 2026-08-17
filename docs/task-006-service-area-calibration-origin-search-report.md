@@ -118,8 +118,8 @@ Known false-positive precise geographic claims: **0**. The tentative contact-ZIP
 
 - Tests: **PASS** — lint, focused typecheck, **119 tests**, production build, and `git diff --check`
 - Commits: `379d6e0b` service-geography calibration; `53c12ac2` county/ZIP origin read model; `71bd1293` tests, Preview lab, and report
-- GitHub CI: pending
-- Vercel Preview: pending
+- GitHub CI: **PASS** — runs `32034909597` (PR) and `32034905328` (push)
+- Vercel Preview: **PASS** — `https://move-trust-hub-git-move-20-savitz25-s-projects.vercel.app`
 - PR #1: **DRAFT**
 - Production changes: **NONE**
 - Task 006: **PARTIAL** — origin read model passed; the requested calibration cohort could not be obtained honestly and the fallback model remains unvalidated
