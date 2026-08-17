@@ -99,7 +99,7 @@ Plans and buffers are retained in `docs/task-005-derived-placement-audit.json`. 
 
 ## 37–43. Delivery
 
-- Commits: pending final delivery update
+- Commits: `a2fee9b1` Washington authority adapter; `941fbb7e` derived county pilot; `a47ddf8c` report/tests/Preview examples
 - GitHub CI: pending final delivery update
 - Vercel Preview: pending final delivery update
 - PR #1: **DRAFT** (must remain draft)
