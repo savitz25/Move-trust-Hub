@@ -45,13 +45,13 @@ Starting head: `6bd20ea106d0e7a42a577289c9c81276b2cc2a75`
 39. **Experimental-derived isolation:** PASS. No derived model was created/activated; public output and operational release both declare it excluded. NJ and Illinois remain excluded.
 40. **Tests:** PASS — 203/203 Move V2 domain/regression tests, lint, typecheck, build, and diff check.
 41. **Playwright:** PASS — consumer desktop/mobile and reviewer-console desktop, including real operational read/fallback-safe behavior and synthetic non-persistent browser actions.
-42. **Commits:** Pending final delivery commit(s) at report-writing time.
-43. **CI:** Pending final pushed-head result at report-writing time.
-44. **Vercel Preview:** Pending final pushed-head result at report-writing time.
-45. **PR #1 DRAFT status:** To be reconfirmed after push; PR will remain open/draft and unmerged.
+42. **Commits:** `81e616f0` (authenticated operational lifecycle), followed by the report-close commit.
+43. **CI:** PASS — push run `32057522628` and PR run `32057527441` succeeded on `81e616f0`, including lint, typecheck, 203 tests, build, both browser suites, artifacts, default-off gates, and critical dependency audit.
+44. **Vercel Preview:** PASS / Ready — Vercel status succeeded on `81e616f0`.
+45. **PR #1 DRAFT status:** Confirmed OPEN + DRAFT on `81e616f0`; description updated for Tasks 001–011; not merged.
 46. **Production changes:** **NONE**.
-47. **Task 011:** **PASS**, contingent on final delivery CI/Preview confirmation.
-48. **Ready for Task 012?** **YES**, after final delivery checks pass.
+47. **Task 011:** **PASS**.
+48. **Ready for Task 012?** **YES**.
 49. **Exact Task 012 recommendation:** Build a narrowly authenticated reviewer deployment using organization SSO/RBAC and CSRF-protected server actions, then run a supervised weekly FL/WA operational cadence with alerting, source-SLA measurement, and release-approval separation. Keep state scope fixed and derived geography disabled until independent activation evidence exists.
 
 Supporting machine-readable records:
