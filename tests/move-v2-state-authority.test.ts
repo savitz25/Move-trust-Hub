@@ -6,6 +6,8 @@ import { normalizeNewJerseyRecord } from "../lib/move-v2/state-authority/new-jer
 import type { StateAuthorityRecord } from "../lib/move-v2/state-authority/types";
 import { parseFloridaBusinessSearchHtml } from "../lib/move-v2/state-authority/florida";
 import { decideGoogleMatch } from "../lib/move-v2/enrichment/google-match";
+import { branchRadiusWithoutAllocation, canPublishDerived, countyRelationship, radiusForPowerUnits, shouldSupersedeDerived } from "../lib/move-v2/geography/derived-placement";
+import { enrichWashingtonDetail, parseWashingtonList } from "../lib/move-v2/state-authority/washington";
 
 const nj = (licenseType: "PM" | "PW" | "PC", status = "ACTIVE") => normalizeNewJerseyRecord({
   licenseType, licenseNumber: `${licenseType}123`, status, legalName: "ACME MOVING LLC",
@@ -47,3 +49,19 @@ test("state-corroborated identity can support Google without forcing it", () => 
   const decision=decideGoogleMatch({providerId:"p",legalName:"ACME MOVING LLC",dbaName:null,phone:"3055550100",street:"1 MAIN ST",city:"MIAMI",state:"FL",postalCode:"33101",classification:"LOCAL_INTRASTATE_CARRIER_CANDIDATE"},{placeId:"x",displayName:"Acme Moving",formattedAddress:"1 Main St, Miami, FL 33101",phone:"305-555-0100",websiteUri:null,businessStatus:"OPERATIONAL"});
   assert.equal(decision.status,"GOOGLE_MATCH_HIGH_CONFIDENCE");
 });
+const waRow=`<table><tr><td><a href="/company/42">Company Detail</a></td><td class="views-field-field-company-utc-id">100</td><td class="views-field-field-company-name"><strong>WA MOVER LLC</strong></td><td class="views-field-field-company-dba-names">DBA: <strong>Rain Mover</strong></td><td class="views-field-field-company-ubi">123456789</td><td class="views-field-field-usdot">7654321</td><td class="views-field-field-industry-name">Household Goods Carriers</td><td class="views-field-field-company-regulatory-status">[Active]</td></tr></table>`;
+test("WA active HHG record parses with stable identifiers",()=>{const r=parseWashingtonList(waRow)[0];assert.equal(r.status,"ACTIVE");assert.equal(r.usdot,"7654321");assert.equal(r.ubi,"123456789")});
+test("WA inactive does not become verified active",()=>assert.equal(deriveStateEligibility({...parseWashingtonList(waRow)[0],status:"INACTIVE"},"STATE_MATCH_HIGH_CONFIDENCE"),"STATE_INACTIVE_LOCAL_MOVER"));
+test("WA detail preserves exact relationship term",()=>{const r=enrichWashingtonDetail(parseWashingtonList(waRow)[0],`Company Contacts Name Title Phone Email Primary Jane Doe Owner 206-555-0100 jane@test.invalid Company Address Address Type Address Physical Address 1 Main St, Seattle, WA 98101`);assert.ok(r.relationshipObservations?.every(x=>x.term!=="PRIMARY"))});
+test("broker cannot receive derived local carrier area",()=>assert.equal(canPublishDerived({state:"WA",stateVerified:true,isMover:false,identityResolved:true,onboardingAttempted:true,websiteAttempted:true,geographyStatus:"SERVICE_AREA_NOT_FOUND"}),false));
+test("explicit geography beats derived",()=>assert.equal(canPublishDerived({state:"WA",stateVerified:true,isMover:true,identityResolved:true,onboardingAttempted:true,websiteAttempted:true,geographyStatus:"SERVICE_AREA_EXPLICIT"}),false));
+test("partial geography is not expanded",()=>assert.equal(canPublishDerived({state:"WA",stateVerified:true,isMover:true,identityResolved:true,onboardingAttempted:true,websiteAttempted:true,geographyStatus:"SERVICE_AREA_PARTIAL"}),false));
+test("unresolved identity receives no derived area",()=>assert.equal(canPublishDerived({state:"WA",stateVerified:true,isMover:true,identityResolved:false,onboardingAttempted:true,websiteAttempted:true,geographyStatus:"SERVICE_AREA_NOT_FOUND"}),false));
+test("state authority is required",()=>assert.equal(canPublishDerived({state:"WA",stateVerified:false,isMover:true,identityResolved:true,onboardingAttempted:true,websiteAttempted:true,geographyStatus:"SERVICE_AREA_NOT_FOUND"}),false));
+test("state boundary excludes NJ and unknown states",()=>assert.equal(canPublishDerived({state:"NJ",stateVerified:true,isMover:true,identityResolved:true,onboardingAttempted:true,websiteAttempted:true,geographyStatus:"SERVICE_AREA_NOT_FOUND"}),false));
+test("fleet changes radius but never legal eligibility",()=>{const legal=canPublishDerived({state:"FL",stateVerified:true,isMover:true,identityResolved:true,onboardingAttempted:true,websiteAttempted:true,geographyStatus:"SERVICE_AREA_NOT_FOUND"});assert.equal(legal,true);assert.ok(radiusForPowerUnits(20)>radiusForPowerUnits(1))});
+test("paid status has no effect on placement",()=>{const x={state:"WA",stateVerified:true,isMover:true,identityResolved:true,onboardingAttempted:true,websiteAttempted:true,geographyStatus:"SERVICE_AREA_NOT_FOUND"};assert.equal(canPublishDerived(x),canPublishDerived({...x,subscriptionState:"PAID"}))});
+test("branch without fleet allocation is conservative",()=>assert.ok(branchRadiusWithoutAllocation(150)<=50));
+test("later explicit geography supersedes derived",()=>assert.equal(shouldSupersedeDerived(1),true));
+test("county tiny edge is not whole-county service",()=>{const g={type:"Polygon",coordinates:[[[0,0],[10,0],[10,10],[0,10],[0,0]]]};const r=countyRelationship([-0.1,5],10,g);assert.notEqual(r.placementType,"DERIVED_MEANINGFUL_COVERAGE")});
+test("derived radius is deterministic and bounded",()=>{assert.equal(radiusForPowerUnits(5),radiusForPowerUnits(5));assert.ok(radiusForPowerUnits(10000)<=185)});
