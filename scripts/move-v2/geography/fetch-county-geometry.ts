@@ -1,0 +1,5 @@
+import{createHash}from"node:crypto";import{mkdirSync,writeFileSync}from"node:fs";
+const endpoint="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer/82/query";
+async function get(state:string){const p=new URLSearchParams({where:`STATE='${state}'`,outFields:"STATE,COUNTY,GEOID,BASENAME,NAME,AREALAND,AREAWATER,CENTLAT,CENTLON",returnGeometry:"true",outSR:"4326",geometryPrecision:"5",maxAllowableOffset:"0.001",f:"geojson"});const r=await fetch(`${endpoint}?${p}`,{signal:AbortSignal.timeout(120_000)});if(!r.ok)throw new Error(`TIGERweb ${r.status}`);return r.text()}
+async function main(){mkdirSync("artifacts/move-v2/geography",{recursive:true});for(const [abbr,fips] of [["FL","12"],["WA","53"]] as const){const text=await get(fips);const parsed=JSON.parse(text);const path=`artifacts/move-v2/geography/tigerweb-2025-counties-${abbr}.geojson`;writeFileSync(path,text);console.log(JSON.stringify({state:abbr,features:parsed.features.length,bytes:Buffer.byteLength(text),sha256:createHash("sha256").update(text).digest("hex")}))}}
+void main();

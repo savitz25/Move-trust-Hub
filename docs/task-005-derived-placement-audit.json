@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-08-17T05:19:29.264Z",
+  "summary": {
+    "active_areas": 8,
+    "active_placements": 123,
+    "fl_areas": 4,
+    "wa_areas": 4,
+    "nj_areas": 0,
+    "calibration_count": 3
+  },
+  "distributions": [
+    {
+      "state": "FL",
+      "placement_type": "DERIVED_EDGE_INTERSECTION",
+      "rows": 10
+    },
+    {
+      "state": "FL",
+      "placement_type": "DERIVED_MEANINGFUL_COVERAGE",
+      "rows": 50
+    },
+    {
+      "state": "FL",
+      "placement_type": "HOME_COUNTY",
+      "rows": 4
+    },
+    {
+      "state": "WA",
+      "placement_type": "DERIVED_EDGE_INTERSECTION",
+      "rows": 12
+    },
+    {
+      "state": "WA",
+      "placement_type": "DERIVED_MEANINGFUL_COVERAGE",
+      "rows": 43
+    },
+    {
+      "state": "WA",
+      "placement_type": "HOME_COUNTY",
+      "rows": 4
+    }
+  ],
+  "areas": [
+    {
+      "provider_id": "0a6a9d1f-c27c-556f-83e9-d00632b84a3f",
+      "display_name": null,
+      "state": "FL",
+      "radius_miles": "106",
+      "reason_code": "NO_USEFUL_EXPLICIT_SERVICE_AREA",
+      "county_rows": 32
+    },
+    {
+      "provider_id": "a321f9a5-1d57-5644-a2e7-ab8c147658a7",
+      "display_name": null,
+      "state": "FL",
+      "radius_miles": "45",
+      "reason_code": "NO_USEFUL_EXPLICIT_SERVICE_AREA",
+      "county_rows": 9
+    },
+    {
+      "provider_id": "e56db740-a266-5fb7-8556-c2cc39b4e222",
+      "display_name": null,
+      "state": "FL",
+      "radius_miles": "60.2",
+      "reason_code": "NO_USEFUL_EXPLICIT_SERVICE_AREA",
+      "county_rows": 7
+    },
+    {
+      "provider_id": "e8395ea9-7a66-565c-8e56-833214b5b910",
+      "display_name": null,
+      "state": "FL",
+      "radius_miles": "80.4",
+      "reason_code": "NO_USEFUL_EXPLICIT_SERVICE_AREA",
+      "county_rows": 16
+    },
+    {
+      "provider_id": "6161d0bc-08a1-575c-b231-23a07a70ab05",
+      "display_name": null,
+      "state": "WA",
+      "radius_miles": "45",
+      "reason_code": "NO_USEFUL_EXPLICIT_SERVICE_AREA",
+      "county_rows": 10
+    },
+    {
+      "provider_id": "75c52e7b-d083-5cb0-8c31-83d8021c0369",
+      "display_name": null,
+      "state": "WA",
+      "radius_miles": "69.2",
+      "reason_code": "NO_USEFUL_EXPLICIT_SERVICE_AREA",
+      "county_rows": 17
+    },
+    {
+      "provider_id": "7c9de215-4fb6-53a7-bdfa-4f8eff4564da",
+      "display_name": null,
+      "state": "WA",
+      "radius_miles": "75.5",
+      "reason_code": "NO_USEFUL_EXPLICIT_SERVICE_AREA",
+      "county_rows": 16
+    },
+    {
+      "provider_id": "8dba68b7-3a2a-5702-9d91-b59f2aea40d8",
+      "display_name": null,
+      "state": "WA",
+      "radius_miles": "69.2",
+      "reason_code": "NO_USEFUL_EXPLICIT_SERVICE_AREA",
+      "county_rows": 16
+    }
+  ],
+  "benchmarks": {
+    "countyToMovers": {
+      "executionMs": 0.251,
+      "plan": [
+        "Limit  (cost=5.01..8.42 rows=1 width=42) (actual time=0.193..0.216 rows=4 loops=1)",
+        "  Buffers: shared hit=25",
+        "  ->  Hash Join  (cost=5.01..8.42 rows=1 width=42) (actual time=0.192..0.214 rows=4 loops=1)",
+        "        Hash Cond: (e.provider_id = p.provider_id)",
+        "        Buffers: shared hit=25",
+        "        ->  Index Only Scan using local_eligibility_state_idx on provider_local_eligibility e  (cost=0.14..3.34 rows=41 width=16) (actual time=0.061..0.151 rows=86 loops=1)",
+        "              Index Cond: (eligibility = 'STATE_VERIFIED_LOCAL_MOVER'::text)",
+        "              Heap Fetches: 57",
+        "              Buffers: shared hit=22",
+        "        ->  Hash  (cost=4.84..4.84 rows=2 width=42) (actual time=0.041..0.041 rows=4 loops=1)",
+        "              Buckets: 1024  Batches: 1  Memory Usage: 9kB",
+        "              Buffers: shared hit=3",
+        "              ->  Seq Scan on provider_county_placement p  (cost=0.00..4.84 rows=2 width=42) (actual time=0.028..0.038 rows=4 loops=1)",
+        "                    Filter: (active AND (state = 'WA'::text) AND (county_geoid = '53033'::text))",
+        "                    Rows Removed by Filter: 119",
+        "                    Buffers: shared hit=3",
+        "Planning:",
+        "  Buffers: shared hit=74",
+        "Planning Time: 0.600 ms",
+        "Execution Time: 0.251 ms"
+      ]
+    },
+    "providerToCounties": {
+      "executionMs": 0.063,
+      "plan": [
+        "Seq Scan on provider_county_placement  (cost=0.03..4.57 rows=15 width=40) (actual time=0.017..0.038 rows=32 loops=1)",
+        "  Filter: (active AND (provider_id = (InitPlan 1).col1))",
+        "  Rows Removed by Filter: 91",
+        "  Buffers: shared hit=5",
+        "  InitPlan 1",
+        "    ->  Limit  (cost=0.00..0.03 rows=1 width=16) (actual time=0.004..0.004 rows=1 loops=1)",
+        "          Buffers: shared hit=2",
+        "          ->  Seq Scan on provider_county_placement provider_county_placement_1  (cost=0.00..4.23 rows=123 width=16) (actual time=0.003..0.003 rows=1 loops=1)",
+        "                Buffers: shared hit=2",
+        "Planning Time: 0.138 ms",
+        "Execution Time: 0.063 ms"
+      ]
+    },
+    "providerToReason": {
+      "executionMs": 0.046,
+      "plan": [
+        "Index Scan using provider_active_derived_area_idx on provider_derived_area  (cost=0.19..2.41 rows=1 width=96) (actual time=0.020..0.021 rows=1 loops=1)",
+        "  Index Cond: (provider_id = (InitPlan 1).col1)",
+        "  Buffers: shared hit=3",
+        "  InitPlan 1",
+        "    ->  Limit  (cost=0.00..0.05 rows=1 width=16) (actual time=0.011..0.011 rows=1 loops=1)",
+        "          Buffers: shared hit=1",
+        "          ->  Seq Scan on provider_derived_area provider_derived_area_1  (cost=0.00..12.70 rows=270 width=16) (actual time=0.010..0.010 rows=1 loops=1)",
+        "                Buffers: shared hit=1",
+        "Planning Time: 0.108 ms",
+        "Execution Time: 0.046 ms"
+      ]
+    }
+  }
+}
