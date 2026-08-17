@@ -35,6 +35,8 @@ jobs:
       - run: npm run build
         env:
           MOVE_ENABLE_V2: 'true'
+          NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser:move-v2
       - uses: actions/upload-artifact@v4
