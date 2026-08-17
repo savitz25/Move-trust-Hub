@@ -125,6 +125,8 @@ const PRIORITY_BOOST: Record<string, number> = {
   'lubbock|tx': 110,
   'scottsdale|az': 100,
   'reno|nv': 95,
+  'sparks|nv': 92,
+  'north las vegas|nv': 76,
   'buffalo|ny': 90,
   'gilbert|az': 85,
   'glendale|az': 80,

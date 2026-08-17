@@ -11,6 +11,8 @@ import {
   EmptyCoveragePanel,
   FMCSA_SAFER_SEARCH_URL,
 } from '@/components/research/empty-coverage-panel';
+import { PlaceCoverageBanner } from '@/components/directory/place-coverage-banner';
+import type { DirectoryPlaceMatch } from '@/lib/directory/resolve-place-query';
 
 type Props = {
   searchTerm: string;
@@ -19,6 +21,7 @@ type Props = {
   carrierNotInDirectory: boolean;
   sourcePage?: string;
   onClearFilters: () => void;
+  placeMatch?: DirectoryPlaceMatch | null;
 };
 
 export function DirectoryEmptyState({
@@ -28,25 +31,28 @@ export function DirectoryEmptyState({
   carrierNotInDirectory,
   sourcePage = '/companies',
   onClearFilters,
+  placeMatch = null,
 }: Props) {
   const trimmed = searchTerm.trim();
   const showCarrierPanel = Boolean(parsedCarrier && carrierNotInDirectory);
   const variant = hasActiveFilters && !trimmed ? 'filtered' : 'filtered';
+  const placeTitle = placeMatch
+    ? `${placeMatch.headline} — not a missing interstate carrier`
+    : trimmed
+      ? 'No interstate companies matched this search'
+      : 'No companies match these filters';
+  const placeDescription = placeMatch
+    ? placeMatch.detail
+    : trimmed
+      ? `No interstate directory profile matched “${trimmed}”. That does not mean a carrier is unlicensed. Verify on FMCSA SAFER, browse local movers by state, or try a USDOT / MC number.`
+      : 'No movers match your current filters. Clear filters or browse the full directory — we do not invent listings to fill gaps.';
 
   return (
     <EmptyCoveragePanel
       variant={variant}
-      title={
-        trimmed
-          ? 'No companies found matching your search'
-          : 'No companies match these filters'
-      }
-      description={
-        trimmed
-          ? `We couldn’t find “${trimmed}” in our directory yet — that does not mean the carrier is unlicensed. Verify on FMCSA SAFER, or try a USDOT / MC number.`
-          : 'No movers match your current filters. Clear filters or browse the full directory — we do not invent listings to fill gaps.'
-      }
-      placeLabel={trimmed || undefined}
+      title={placeTitle}
+      description={placeDescription}
+      placeLabel={placeMatch ? placeMatch.placeLabel : trimmed || undefined}
       primarySources={[
         {
           href: buildVerifyDotHref(trimmed, parsedCarrier),
@@ -58,17 +64,30 @@ export function DirectoryEmptyState({
           external: true,
         },
       ]}
-      widenLinks={[
-        { href: '/companies', label: 'Full mover directory' },
-        { href: '/local-movers', label: 'Local movers by state' },
-        { href: '/moving-calculator', label: 'Moving calculator' },
-      ]}
+      widenLinks={
+        placeMatch
+          ? [
+              ...(placeMatch.countyHref
+                ? [{ href: placeMatch.countyHref, label: `${placeMatch.countyName || 'County'} local movers` }]
+                : []),
+              { href: placeMatch.stateHref, label: `${placeMatch.stateName} local movers` },
+              { href: '/companies', label: 'Full interstate directory' },
+              { href: '/moving-calculator', label: 'Moving calculator' },
+            ]
+          : [
+              { href: '/companies', label: 'Full mover directory' },
+              { href: '/local-movers', label: 'Local movers by state' },
+              { href: '/moving-calculator', label: 'Moving calculator' },
+            ]
+      }
       journeyLink={{
         href: 'https://www.insurancetrusthub.com/destinations',
         label: 'Research coverage if you’re relocating',
         external: true,
       }}
     >
+      {placeMatch ? <PlaceCoverageBanner place={placeMatch} /> : null}
+
       {showCarrierPanel ? (
         <div className="mt-6 w-full max-w-lg mx-auto text-left">
           <DirectoryCarrierFmcsaPanel

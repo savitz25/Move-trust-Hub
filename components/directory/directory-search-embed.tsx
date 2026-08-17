@@ -6,6 +6,8 @@ import { Loader2, Search, ShieldCheck } from 'lucide-react';
 import { searchMoversDirectory } from '@/actions/search-movers-directory';
 import { CompanyCard } from '@/components/directory/company-card';
 import { DirectoryEmptyState } from '@/components/directory/directory-empty-state';
+import { PlaceCoverageBanner } from '@/components/directory/place-coverage-banner';
+import { resolveDirectoryPlaceQuery } from '@/lib/directory/resolve-place-query';
 import { buildCompaniesSearchHref } from '@/lib/directory/verify-dot-link';
 import type { DirectorySearchScope } from '@/lib/directory/search-scope';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
@@ -73,6 +75,7 @@ export function DirectorySearchEmbed({
 
   const parsedCarrier = debouncedQuery ? parseCarrierNumber(debouncedQuery) : null;
   const showEmpty = Boolean(debouncedQuery && !pending && results.length === 0);
+  const placeMatch = debouncedQuery ? resolveDirectoryPlaceQuery(debouncedQuery) : null;
 
   return (
     <section className="rounded-2xl border bg-card p-5 sm:p-6 shadow-sm" aria-label="Mover directory search">
@@ -121,6 +124,8 @@ export function DirectorySearchEmbed({
         </p>
       ) : null}
 
+      {placeMatch && !showEmpty ? <PlaceCoverageBanner place={placeMatch} compact /> : null}
+
       {showEmpty ? (
         <DirectoryEmptyState
           searchTerm={debouncedQuery}
@@ -132,6 +137,7 @@ export function DirectorySearchEmbed({
             setRestrictToScope(false);
             setQuery('');
           }}
+          placeMatch={placeMatch}
         />
       ) : results.length > 0 ? (
         <div className="space-y-4">

@@ -28,6 +28,8 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { DirectoryCoverageFilterControl } from '@/components/directory/directory-coverage-filter';
 import { DirectoryEmptyState } from '@/components/directory/directory-empty-state';
+import { PlaceCoverageBanner } from '@/components/directory/place-coverage-banner';
+import { resolveDirectoryPlaceQuery } from '@/lib/directory/resolve-place-query';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 import {
   formatAvgPricePerMove,
@@ -421,6 +423,10 @@ export function DirectoryClient({
 
   const hasActiveFilters = activeFilterCount > 0;
   const showEmptyState = companies.length === 0 && !loadingFilter;
+  const placeMatch = useMemo(
+    () => (debouncedSearch.trim() ? resolveDirectoryPlaceQuery(debouncedSearch) : null),
+    [debouncedSearch]
+  );
   const showingFrom = totalMatches === 0 || companies.length === 0 ? 0 : 1;
   const showingTo = companies.length;
   const isBusy = loadingFilter || isSearchPending;
@@ -621,7 +627,11 @@ export function DirectoryClient({
               Updating results…
             </span>
           ) : totalMatches === 0 ? (
-            <span>No companies match your criteria</span>
+            <span>
+              {placeMatch
+                ? `No interstate name match — see local movers in ${placeMatch.placeLabel}`
+                : 'No companies match your criteria'}
+            </span>
           ) : (
             <>
               Showing{' '}
@@ -639,6 +649,8 @@ export function DirectoryClient({
         </div>
       </div>
 
+      {placeMatch && !showEmptyState ? <PlaceCoverageBanner place={placeMatch} compact /> : null}
+
       <div className={`relative ${RESULTS_MIN_HEIGHT}`} aria-busy={isBusy}>
         {loadingFilter && companies.length === 0 ? (
           <div
@@ -653,6 +665,7 @@ export function DirectoryClient({
             carrierNotInDirectory={carrierNotInDirectory}
             sourcePage={sourcePage}
             onClearFilters={clearAllFilters}
+            placeMatch={placeMatch}
           />
         ) : view === 'grid' ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
