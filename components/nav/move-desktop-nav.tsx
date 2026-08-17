@@ -16,8 +16,8 @@ export function MoveDesktopNav() {
   const pathname = usePathname() || '/';
 
   return (
-    <div className="hidden lg:flex items-center gap-2 xl:gap-3 text-sm">
-      <nav aria-label="Move product" className="flex items-center gap-1 xl:gap-2">
+    <div className="hidden shrink-0 items-center gap-2 text-sm lg:flex xl:gap-3">
+      <nav aria-label="Move product" className="flex shrink-0 items-center gap-1 xl:gap-2">
         {MOVE_MEGA_NAV.map((item) => {
           const active =
             pathname === item.href ||

@@ -23,8 +23,8 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
       className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
       aria-label="Primary"
     >
-      <div className="container mx-auto relative flex h-16 sm:h-[4.5rem] items-center justify-between px-4 overflow-visible">
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+      <div className="container mx-auto relative flex h-16 sm:h-[4.5rem] items-center justify-between gap-3 px-4 overflow-visible">
+        <div className="flex min-w-0 items-center gap-2 overflow-hidden sm:gap-3">
           <Link
             prefetch={false}
             href={homeHref}

@@ -14,14 +14,14 @@ export function Navbar() {
       className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative"
       aria-label="Primary"
     >
-      <div className="container mx-auto flex h-16 sm:h-[4.5rem] items-center justify-between px-4 relative overflow-visible">
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Link prefetch={false} href="/" className="group">
+      <div className="container mx-auto relative flex h-16 sm:h-[4.5rem] items-center justify-between gap-3 px-4 overflow-visible">
+        <div className="flex min-w-0 items-center gap-2 overflow-hidden sm:gap-3">
+          <Link prefetch={false} href="/" className="group shrink-0">
             <span className="hub-logo-slot relative block shrink-0 max-w-[300px] move-hub-pulse">
               <TrustHubLogoImage variant="header" priority />
             </span>
           </Link>
-          <HeaderTrustBadge moving className="hidden xl:flex" />
+          <HeaderTrustBadge moving />
         </div>
 
         <MoveDesktopNav />
