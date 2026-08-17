@@ -32,7 +32,12 @@ jobs:
       - run: npm run lint:move-v2
       - run: npm run typecheck:move-v2
       - run: npm run test:move-v2
-      - run: npm run build
+      - name: Production build (bounded retry for next/font network fetch)
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 8
+          max_attempts: 2
+          command: npm run build
         env:
           MOVE_ENABLE_V2: 'true'
           NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
