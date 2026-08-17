@@ -7,6 +7,7 @@ on:
       - 'lib/move-v2/**'
       - 'scripts/move-v2/**'
       - 'tests/move-v2*.test.ts'
+      - 'tests/browser/move-v2*.spec.ts'
       - 'supabase/migrations/*move_v2*.sql'
       - 'package.json'
       - 'package-lock.json'
@@ -47,12 +48,16 @@ jobs:
         env:
           NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
           NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
+      - run: npm run test:browser:move-v2-review
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: move-v2-browser-qa
           path: |
-            test-results/task-009
+            test-results/task-010
             playwright-report
           retention-days: 14
       - name: Production and real-data gates default off
@@ -61,5 +66,6 @@ jobs:
           grep -q '^MOVE_ENABLE_REAL_PROVIDER_DATA=false$' .env.example
           grep -q '^MOVE_ENABLE_GOOGLE_ENRICHMENT=false$' .env.example
           grep -q '^MOVE_ENABLE_WEBSITE_ENRICHMENT=false$' .env.example
+          grep -q '^MOVE_ENABLE_INTERNAL_REVIEW=false$' .env.example
       - name: Critical production dependency audit
         run: npm audit --omit=dev --audit-level=critical
