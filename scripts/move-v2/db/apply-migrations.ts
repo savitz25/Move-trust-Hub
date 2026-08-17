@@ -17,6 +17,7 @@ const migrations = [
   ['20260816310000', 'move_v2_google_place_review_identity'],
   ['20260816320000', 'move_v2_enrichment_idempotency'],
   ['20260816400000', 'move_v2_state_authority_pilot'],
+  ['20260816410000', 'move_v2_state_observations'],
 ] as const;
 
 async function main() {

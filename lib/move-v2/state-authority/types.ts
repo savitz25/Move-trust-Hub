@@ -28,6 +28,9 @@ export interface StateAuthorityRecord {
   postalCode?: string;
   county?: string;
   phone?: string;
+  email?: string;
+  website?: string;
+  relationshipObservations?: Array<{ term: string; name: string }>;
   effectiveDate?: string;
   expirationDate?: string;
   sourceRecordReference: string;

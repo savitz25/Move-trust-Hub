@@ -10,6 +10,7 @@ import {
 } from "../../../lib/move-v2/enrichment/website";
 import type { RegulatoryIdentity } from "../../../lib/move-v2/enrichment/types";
 const paths = ["/", "/contact", "/about", "/services", "/service-area"];
+const wave = process.env.MOVE_WEBSITE_WAVE || "PILOT";
 const norm = (v: string) => v.trim().toLowerCase().replace(/\s+/g, " ");
 const digits = (v: string) => (v ?? "").replace(/\D/g, "").slice(-10);
 const hash = (v: string) => createHash("sha256").update(v).digest("hex");
@@ -30,7 +31,7 @@ async function main() {
   };
   try {
     const rows = await c.query(
-      `select m.provider_id,g.website_uri,g.place_id,coalesce(h.usdot,a.usdot) usdot,coalesce(h.legal_name,a.legal_name) legal_name,coalesce(h.dba_name,a.dba_name) dba_name,coalesce(h.phone,a.phone) phone,coalesce(h.physical_address->>'city',a.city) city,coalesce(h.physical_address->>'state',a.state) state,coalesce(hc.classification,ar.classification) classification from move_v2.google_place_match m join move_v2.google_place_cache g on g.provider_id=m.provider_id left join move_v2.fmcsa_provider_fact h on h.provider_id=m.provider_id left join move_v2.fmcsa_classification_result hc on hc.provider_id=m.provider_id and hc.superseded_at is null left join move_v2.fmcsa_auto_provider_fact a on a.provider_id=m.provider_id left join move_v2.provider_service_role ar on ar.provider_id=m.provider_id and ar.vertical='AUTO_TRANSPORT' and ar.superseded_at is null where m.match_status in ('GOOGLE_MATCH_HIGH_CONFIDENCE','GOOGLE_EXISTING_MATCH_REUSED') and g.website_uri is not null and not exists(select 1 from move_v2.provider_website_identity w where w.provider_id=m.provider_id)`,
+      `select m.provider_id,g.website_uri,g.place_id,coalesce(h.usdot,a.usdot) usdot,coalesce(h.legal_name,a.legal_name) legal_name,coalesce(h.dba_name,a.dba_name) dba_name,coalesce(h.phone,a.phone) phone,coalesce(h.physical_address->>'city',a.city) city,coalesce(h.physical_address->>'state',a.state) state,coalesce(hc.classification,ar.classification) classification from move_v2.google_place_match m join move_v2.google_place_cache g on g.provider_id=m.provider_id left join move_v2.fmcsa_provider_fact h on h.provider_id=m.provider_id left join move_v2.fmcsa_classification_result hc on hc.provider_id=m.provider_id and hc.superseded_at is null left join move_v2.fmcsa_auto_provider_fact a on a.provider_id=m.provider_id left join move_v2.provider_service_role ar on ar.provider_id=m.provider_id and ar.vertical='AUTO_TRANSPORT' and ar.superseded_at is null where m.match_status in ('GOOGLE_MATCH_HIGH_CONFIDENCE','GOOGLE_EXISTING_MATCH_REUSED') and g.website_uri is not null and exists(select 1 from move_v2.enrichment_queue q where q.provider_id=m.provider_id and q.wave=$1) and not exists(select 1 from move_v2.provider_website_identity w where w.provider_id=m.provider_id)`, [wave]
     );
     for (const row of rows.rows) {
       stats.attempted++;

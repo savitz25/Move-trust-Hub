@@ -41,11 +41,12 @@ async function main() {
       for (const record of records) {
         const hash = createHash("sha256").update(JSON.stringify(record)).digest("hex");
         const source = await client.query(`insert into move_v2.state_authority_source_record
-          (state_source_release_id,state,authority_type,license_registration_number,status,effective_date,expiration_date,legal_name,dba_name,address,phone,source_record_reference,source_record_hash,raw_record)
-          values($1,'FL',$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)
+          (state_source_release_id,state,authority_type,license_registration_number,status,effective_date,expiration_date,legal_name,dba_name,address,phone,email,website,relationship_observations,source_record_reference,source_record_hash,raw_record)
+          values($1,'FL',$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)
           on conflict(state_source_release_id,source_record_reference) do update set source_record_hash=excluded.source_record_hash returning state_authority_source_record_id`,
           [releaseId,record.authorityType,record.licenseNumber,record.status,isoDate(record.effectiveDate),isoDate(record.expirationDate),record.legalName,record.dbaName ?? null,
-            JSON.stringify({address:record.address,city:record.city,state:"FL",postalCode:record.postalCode}),record.phone ?? null,record.sourceRecordReference,hash,JSON.stringify(record)]);
+            JSON.stringify({address:record.address,city:record.city,state:"FL",postalCode:record.postalCode}),record.phone ?? null,record.email ?? null,record.website ?? null,
+            JSON.stringify(record.relationshipObservations ?? []),record.sourceRecordReference,hash,JSON.stringify(record)]);
         recordsPublished++;
         const candidates = await client.query(`select f.provider_id,f.legal_name,f.dba_name,f.phone,
           f.physical_address->>'address_line_1' address,f.physical_address->>'city' city,f.physical_address->>'zip' postal_code
@@ -60,7 +61,11 @@ async function main() {
           highConfidence++;
           await client.query(`insert into move_v2.provider_state_authority_match
             (provider_id,state_authority_source_record_id,state,match_status,match_score,reason_codes,match_rule_version,matched_at)
-            values($1,$2,'FL',$3,$4,$5,$6,now()) on conflict do nothing`, [provider.provider_id,source.rows[0].state_authority_source_record_id,match.status,match.score,match.reasonCodes,match.ruleVersion]);
+            select $1,$2,'FL',$3,$4,$5,$6,now() where not exists(
+              select 1 from move_v2.provider_state_authority_match old join move_v2.state_authority_source_record os
+              on os.state_authority_source_record_id=old.state_authority_source_record_id
+              where old.provider_id=$1 and old.state='FL' and os.license_registration_number=$7
+            ) on conflict do nothing`, [provider.provider_id,source.rows[0].state_authority_source_record_id,match.status,match.score,match.reasonCodes,match.ruleVersion,record.licenseNumber]);
           const eligibility = deriveStateEligibility(record, match.status);
           await client.query(`insert into move_v2.provider_state_authority
             (provider_id,state,license_or_registration_number,authority_type,status,effective_date,expiration_date,source,source_url,source_record_id,last_checked_at)
@@ -71,6 +76,17 @@ async function main() {
             values($1,'FL',$2,$3,$4,$5,now()) on conflict(provider_id,state) where superseded_at is null do update
             set eligibility=excluded.eligibility,reason_codes=excluded.reason_codes,state_authority_source_record_ids=excluded.state_authority_source_record_ids,evaluated_at=excluded.evaluated_at`,
             [provider.provider_id,eligibility,STATE_ELIGIBILITY_RULE_VERSION,[...match.reasonCodes,record.authorityType], [source.rows[0].state_authority_source_record_id]]);
+          for (const contact of [
+            record.phone ? { type:"PHONE", value:record.phone, normalized:record.phone.replace(/\D/g,"") } : null,
+            record.email ? { type:"EMAIL", value:record.email, normalized:record.email.toLowerCase() } : null,
+            record.website ? { type:"WEBSITE", value:record.website, normalized:record.website.toLowerCase() } : null,
+            record.address ? { type:"ADDRESS", value:record.address, normalized:record.address.toUpperCase().replace(/\s+/g," ") } : null,
+          ].filter(Boolean)) {
+            await client.query(`insert into move_v2.state_authority_contact_observation
+              (provider_id,state_authority_source_record_id,contact_type,value,normalized_value,source_term,observed_at)
+              values($1,$2,$3,$4,$5,$6,now()) on conflict do nothing`,
+              [provider.provider_id,source.rows[0].state_authority_source_record_id,contact!.type,contact!.value,contact!.normalized,`FDACS ${contact!.type}`]);
+          }
         }
       }
     }

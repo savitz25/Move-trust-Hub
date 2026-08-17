@@ -4,6 +4,8 @@ import { deriveStateEligibility, mayRequireDerivedPlacement } from "../lib/move-
 import { matchStateAuthority } from "../lib/move-v2/state-authority/matcher";
 import { normalizeNewJerseyRecord } from "../lib/move-v2/state-authority/new-jersey";
 import type { StateAuthorityRecord } from "../lib/move-v2/state-authority/types";
+import { parseFloridaBusinessSearchHtml } from "../lib/move-v2/state-authority/florida";
+import { decideGoogleMatch } from "../lib/move-v2/enrichment/google-match";
 
 const nj = (licenseType: "PM" | "PW" | "PC", status = "ACTIVE") => normalizeNewJerseyRecord({
   licenseType, licenseNumber: `${licenseType}123`, status, legalName: "ACME MOVING LLC",
@@ -32,3 +34,16 @@ test("paid state cannot affect matching", () => {
   assert.deepEqual(a,b);
 });
 test("deterministic match key supports idempotent reruns", () => assert.deepEqual(matchStateAuthority({legalName:"ACME MOVING LLC",address:"1 MAIN ST"},nj("PM")),matchStateAuthority({legalName:"ACME MOVING LLC",address:"1 MAIN ST"},nj("PM"))));
+test("FL pagination repeats collapse by official license number", () => {
+  const row = `<div id="cpMainContent_MasterGv_maindiv_0"><table id="cpMainContent_MasterGv_dataTab_0"><tr><td><strong>ACME MOVING LLC</strong></td></tr><tr><td>1 MAIN ST, MIAMI, FL 33101<br/><b>Phone:</b> 305-555-0100 <b>Email:</b>hello@acme.test</td></tr></table> Intrastate Mover IM123 01/01/24 01/01/26 Registered`;
+  const parsed = parseFloridaBusinessSearchHtml(row + row.replaceAll("_0", "_1"), "IM");
+  assert.equal(parsed.length, 1); assert.equal(parsed[0].email, "hello@acme.test");
+});
+test("state relationship terms remain exact", () => {
+  const record: StateAuthorityRecord={...fl("FL_IM"),relationshipObservations:[{term:"QUALIFYING INDIVIDUAL",name:"JANE DOE"}]};
+  assert.deepEqual(record.relationshipObservations,[{term:"QUALIFYING INDIVIDUAL",name:"JANE DOE"}]);
+});
+test("state-corroborated identity can support Google without forcing it", () => {
+  const decision=decideGoogleMatch({providerId:"p",legalName:"ACME MOVING LLC",dbaName:null,phone:"3055550100",street:"1 MAIN ST",city:"MIAMI",state:"FL",postalCode:"33101",classification:"LOCAL_INTRASTATE_CARRIER_CANDIDATE"},{placeId:"x",displayName:"Acme Moving",formattedAddress:"1 Main St, Miami, FL 33101",phone:"305-555-0100",websiteUri:null,businessStatus:"OPERATIONAL"});
+  assert.equal(decision.status,"GOOGLE_MATCH_HIGH_CONFIDENCE");
+});

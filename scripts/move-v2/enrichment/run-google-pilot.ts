@@ -10,7 +10,8 @@ import {
   type GooglePlacesSearchCandidate,
 } from "../../../lib/verification/google-places";
 import { loadEnvLocal } from "../../../lib/verification/load-env-local";
-const runId = "TASK003_PILOT_2026_08_16_V2";
+const runId = process.env.MOVE_ENRICHMENT_RUN_ID || "TASK003_PILOT_2026_08_16_V2";
+const wave = process.env.MOVE_ENRICHMENT_WAVE || "PILOT";
 const cap = Number(process.env.MOVE_GOOGLE_DAILY_CAP || 250);
 type Row = Record<string, unknown>;
 const s = (v: unknown) => (typeof v === "string" ? v : null);
@@ -92,7 +93,17 @@ async function main() {
       `update move_v2.enrichment_queue q set status='COMPLETED',completed_at=coalesce(completed_at,now()) where exists(select 1 from move_v2.google_place_match m where m.provider_id=q.provider_id and m.match_status in ('GOOGLE_NO_MATCH','GOOGLE_MATCH_HIGH_CONFIDENCE','GOOGLE_EXISTING_MATCH_REUSED','GOOGLE_CLOSED_BUSINESS'))`,
     );
     const rows = await c.query(
-      `select q.*,coalesce(h.usdot,a.usdot) usdot,coalesce(h.legal_name,a.legal_name) legal_name,coalesce(h.dba_name,a.dba_name) dba_name,coalesce(h.display_name,a.display_name) display_name,coalesce(h.phone,a.phone) phone,coalesce(h.physical_address,a.physical_address) physical_address,coalesce(h.physical_address->>'city',a.city) city,coalesce(h.physical_address->>'state',a.state) state,coalesce(hc.classification,ar.classification) classification from move_v2.enrichment_queue q left join move_v2.fmcsa_provider_fact h on h.provider_id=q.provider_id left join move_v2.fmcsa_classification_result hc on hc.provider_id=q.provider_id and hc.superseded_at is null left join move_v2.fmcsa_auto_provider_fact a on a.provider_id=q.provider_id left join move_v2.provider_service_role ar on ar.provider_id=q.provider_id and ar.vertical='AUTO_TRANSPORT' and ar.superseded_at is null where q.wave='PILOT' and q.status in ('PENDING','RETRY') order by q.priority,q.provider_id`,
+      `select q.*,coalesce(s.legal_name,h.legal_name,a.legal_name) legal_name,coalesce(s.dba_name,h.dba_name,a.dba_name) dba_name,
+       coalesce(s.phone,h.phone,a.phone) phone,coalesce(s.address,h.physical_address,a.physical_address) physical_address,
+       coalesce(s.address->>'city',h.physical_address->>'city',a.city) city,coalesce(s.state,h.physical_address->>'state',a.state) state,
+       coalesce(h.usdot,a.usdot) usdot,coalesce(hc.classification,ar.classification) classification
+       from move_v2.enrichment_queue q
+       left join move_v2.provider_local_eligibility le on le.provider_id=q.provider_id and le.superseded_at is null
+       left join lateral (select sr.* from move_v2.provider_state_authority_match sm join move_v2.state_authority_source_record sr using(state_authority_source_record_id)
+         where sm.provider_id=q.provider_id and sm.match_status='STATE_MATCH_HIGH_CONFIDENCE' order by sr.created_at desc limit 1) s on true
+       left join move_v2.fmcsa_provider_fact h on h.provider_id=q.provider_id left join move_v2.fmcsa_classification_result hc on hc.provider_id=q.provider_id and hc.superseded_at is null
+       left join move_v2.fmcsa_auto_provider_fact a on a.provider_id=q.provider_id left join move_v2.provider_service_role ar on ar.provider_id=q.provider_id and ar.vertical='AUTO_TRANSPORT' and ar.superseded_at is null
+       where q.wave=$1 and q.status in ('PENDING','RETRY') order by q.priority,q.provider_id`, [wave]
     );
     for (const row of rows.rows as Row[]) {
       stats.attempted++;
