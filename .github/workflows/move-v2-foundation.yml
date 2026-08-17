@@ -57,7 +57,13 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
       - run: npm run validate:seo:move-v2
       - run: npm run test:browser:move-v2-migration
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
       - run: npm run test:browser:move-v2-launch
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
       - run: npm run test:browser:move-v2-rollback
         env:
           NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
