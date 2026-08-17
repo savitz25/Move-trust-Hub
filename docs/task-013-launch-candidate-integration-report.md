@@ -54,7 +54,7 @@ Production writes/deployments: **NONE**
 48. **P2 deferred:** bounded directory projection/build-memory optimization; reviewer SSO/RBAC; broader performance/accessibility work; Move Plan/auto/portable redesigns; unresolved provider identity research.
 49. **Tests:** 229/229 unit/contract tests PASS; lint, Move V2 typecheck, SEO validation, build, diff check and dependency audit PASS.
 50. **Playwright:** Consumer desktop/mobile 2/2, reviewer 1/1, migration 3/3, launch candidate 2/2 and rollback 2/2 PASS.
-51. **Commits:** Pending delivery commit record.
+51. **Commits:** `ed963662` — Build Task 013 launch candidate. Final gate-status commit records remote results only.
 52. **CI:** Pending pushed-head result.
 53. **Vercel Preview:** Pending pushed-head result.
 54. **PR status:** Must remain OPEN + DRAFT.
