@@ -18,6 +18,7 @@ const migrations = [
   ['20260816320000', 'move_v2_enrichment_idempotency'],
   ['20260816400000', 'move_v2_state_authority_pilot'],
   ['20260816410000', 'move_v2_state_observations'],
+  ['20260816420000', 'move_v2_derived_local_placement'],
 ] as const;
 
 async function main() {

@@ -17,8 +17,8 @@ export type StateEligibility =
 export type StateAuthorityType = "NJ_PM" | "NJ_PW" | "NJ_PC" | "FL_IM" | "FL_MB";
 
 export interface StateAuthorityRecord {
-  state: "NJ" | "FL";
-  authorityType: StateAuthorityType;
+  state: "NJ" | "FL" | "WA";
+  authorityType: StateAuthorityType | "WA_UTC_HHG";
   licenseNumber: string;
   status: string;
   legalName: string;
