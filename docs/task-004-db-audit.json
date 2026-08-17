@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T23:42:03.693Z",
+  "generatedAt": "2026-08-17T00:03:28.219Z",
   "universes": [
     {
       "state": "FL",
@@ -40,11 +40,33 @@
     },
     {
       "state": "FL",
+      "source_name": "FDACS Intrastate Mover pilot",
+      "source_url": "https://csapp.fdacs.gov/CSPublicApp/BusinessSearch/BusinessSearch.aspx?program=IM",
+      "retrieved_at": "2026-08-16T23:59:56.541Z",
+      "record_count": 160,
+      "sha256": "4e271306149eaa2474b105da2edbc60e51522ef31847778da70a633bc7c19ce0",
+      "adapter_version": "FL_FDACS_2026_08_V1",
+      "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
+      "ingestion_status": "PUBLISHED"
+    },
+    {
+      "state": "FL",
       "source_name": "FDACS Moving Broker pilot",
       "source_url": "https://csapp.fdacs.gov/CSPublicApp/BusinessSearch/BusinessSearch.aspx?program=MB",
       "retrieved_at": "2026-08-16T23:34:22.247Z",
       "record_count": 53,
       "sha256": "8a1ef7fb73d372596607e8aa1ecc6a5271994c46c49b81ea81fb82575325ff72",
+      "adapter_version": "FL_FDACS_2026_08_V1",
+      "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
+      "ingestion_status": "PUBLISHED"
+    },
+    {
+      "state": "FL",
+      "source_name": "FDACS Moving Broker pilot",
+      "source_url": "https://csapp.fdacs.gov/CSPublicApp/BusinessSearch/BusinessSearch.aspx?program=MB",
+      "retrieved_at": "2026-08-17T00:00:01.023Z",
+      "record_count": 53,
+      "sha256": "95d3e85e5161041351cb3cc0b570d6549990229fc9a2d3719e2f6f5fc070fad9",
       "adapter_version": "FL_FDACS_2026_08_V1",
       "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
       "ingestion_status": "PUBLISHED"
@@ -66,37 +88,37 @@
       "state": "FL",
       "authority_type": "FL_IM",
       "status": "REGISTERED",
-      "count": 31
+      "count": 116
     },
     {
       "state": "FL",
       "authority_type": "FL_IM",
       "status": "UNKNOWN",
-      "count": 29
+      "count": 104
     },
     {
       "state": "FL",
       "authority_type": "FL_MB",
       "status": "REGISTERED",
-      "count": 25
+      "count": 50
     },
     {
       "state": "FL",
       "authority_type": "FL_MB",
       "status": "UNKNOWN",
-      "count": 28
+      "count": 56
     }
   ],
   "eligibility": [
     {
       "state": "FL",
       "eligibility": "STATE_AUTHORITY_REVIEW",
-      "count": 15
+      "count": 26
     },
     {
       "state": "FL",
       "eligibility": "STATE_VERIFIED_LOCAL_MOVER",
-      "count": 19
+      "count": 41
     },
     {
       "state": "FL",
@@ -121,7 +143,7 @@
   "geography": [
     {
       "status": "NOT_EVALUATED",
-      "count": 45,
+      "count": 78,
       "derived_required": 0
     }
   ],
