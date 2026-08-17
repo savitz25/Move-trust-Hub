@@ -34,17 +34,17 @@ Status date: 2026-08-17. Branch: `move-2.0`. Production changes: **NONE**.
 30. Mobile screenshots generated: the same core journey plus a deterministic final mobile results capture. Files are CI artifacts, not committed binaries.
 31. Visual defects found/fixed: Preview chip controls were 28px high; Task 009 Preview controls now have a 32px minimum. The suite confirms no horizontal overflow, clipped route controls, derived-model copy, ratings-first ordering, or winner language.
 32. Accessibility smoke results: PASS for labeled ZIP fields, named buttons, dialog role/name/modal semantics, close control, disclosure keyboard semantics, and minimum 32px Task 009 controls. This is not a WCAG certification.
-33. Hosted Preview smoke result: pending final Vercel deployment at initial report commit; local production-build browser gate PASS. Deployment protection will be documented if it prevents anonymous smoke.
+33. Hosted Preview smoke result: Vercel deployment completed successfully for commit `157d8a55`; the Preview is Ready. Local production-build browser QA remains the reproducible interaction gate.
 34. Experimental-derived isolation: PASS. V2 freshness explicitly records `experimentalDerivedIncluded: false`; consumer APIs expose no enable argument and reject the query parameter; V1 records were not changed.
 35. Commercial firewall: PASS. Subscription, rating, review count, advertising, annual moves, and fleet size do not affect eligibility/tier/order.
 36. Known false identity/location/service claims: wrong-state Google coordinates, multiple-name/DBA collisions, closed/old locations, name-only locations, email-domain-only sites, unrelated redirects, blog/example locations, and named regions are blocked from exact publication.
 37. Idempotency: **PASS** — stable canonical fingerprint and same-input no-op.
 38. V1 integrity: **PASS** — historical V1 snapshot/model records unchanged.
 39. Tests: 180 Node regression tests PASS; Playwright 2/2 viewport journeys PASS; lint, Move V2 typecheck, build, and `git diff --check` PASS at delivery validation.
-40. Commits: recorded after delivery commit below.
-41. CI: pending initial push; GitHub Actions PASS is required before final handoff.
-42. Vercel Preview: pending initial push; Ready is required before final handoff.
+40. Commits: `34ca52c0` (Task 009 implementation), `f4dea9c1`, `e256b187`, `ac2897ec`, `21875960`, and `157d8a55` (CI/browser hardening), plus this delivery-report finalization commit.
+41. CI: **PASS** — both push and draft-PR `domain-foundation` jobs passed at `157d8a55`, including build, 180 regressions, Playwright, and artifact upload.
+42. Vercel Preview: **PASS / Ready** at `157d8a55`.
 43. Production changes: **NONE**.
-44. Task 009: **PASS**, subject only to final hosted delivery checks.
+44. Task 009: **PASS**.
 45. Ready for Task 010? **YES**, after CI and Preview are Ready.
 46. Exact Task 010 recommendation: expand the evidence-first pilot through scheduled regulator/website freshness jobs and reviewer tooling for the remaining 34 location conflicts; add exact provider ZIP claims when actually published; improve branch-aware location evidence; retain FL/WA eligibility, Preview-only release gating, and experimental-derived isolation. Do not activate NJ/Illinois or a derived radius model without their separate official-evidence gates.
