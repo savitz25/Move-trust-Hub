@@ -41,10 +41,10 @@ Starting head: `19d9d6654dbf135edba43003a8fc8fc88cec5d73`
 35. **Experimental-derived isolation:** PASS — ordinary reads contain no experimental-derived geography; no V2 derived model created.
 36. **Public/internal separation:** PASS — route/flag/RLS controls and public-response regression verified.
 37. **Tests:** PASS — lint, Move V2 typecheck, 191/191 unit/domain tests, production build, 2/2 consumer browser tests, 1/1 reviewer browser test, and `git diff --check` (final delivery check).
-38. **Commits:** Pending final delivery commit at report-writing time.
-39. **CI:** Pending final pushed-head GitHub Actions result at report-writing time.
-40. **Vercel Preview:** Pending final pushed-head deployment result at report-writing time.
+38. **Commits:** `c00f93fa` (evidence operations implementation) and `b74e8adf` (CI streaming-state browser stabilization), followed by the report-close commit.
+39. **CI:** PASS — push run `32053133383` and PR run `32053136220` both succeeded on `b74e8adf`, including lint, typecheck, 191 tests, build, both browser suites, artifact upload, default-off gates, and critical dependency audit.
+40. **Vercel Preview:** PASS / Ready — Vercel status and Preview Comments both succeeded for `b74e8adf`.
 41. **Production changes:** **NONE**.
-42. **Task 010:** **PASS**, contingent only on final delivery CI and Preview confirming the already-passing local gates.
-43. **Ready for Task 011?** **YES**, after final CI and Preview are green.
+42. **Task 010:** **PASS**.
+43. **Ready for Task 011?** **YES**.
 44. **Exact Task 011 recommendation:** Run a bounded authenticated-operations pilot: connect the private ledger/jobs to the Preview database with service-role-only commands, execute supervised FL/WA refresh samples, resolve a small evidence-cited case set, measure queue throughput and source reliability, and validate release rebuild/rollback end to end without expanding states or enabling derived geography.
