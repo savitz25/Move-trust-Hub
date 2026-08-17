@@ -23,6 +23,16 @@ export default function MoveV2ExperienceLab() {
             return <div key={label as string} className="rounded-2xl border border-slate-200 bg-white p-5"><BadgeIcon className="mb-3 h-5 w-5 text-teal-700"/><p className="font-semibold">{label as string}</p></div>;
           })}
         </div>
+        <section className="mb-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <p className="text-xs font-bold uppercase tracking-wider text-teal-700">Synthetic origin-search QA · noindex</p>
+          <h2 className="mt-2 text-2xl font-semibold">Why is this mover here?</h2>
+          <p className="mt-2 max-w-3xl text-sm text-slate-600">A typed ZIP resolves to a Census ZCTA and county before the read model checks current state authority. ZCTAs approximate ZIP geography; they are not USPS delivery boundaries.</p>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl bg-emerald-50 p-4 text-sm text-emerald-950"><p className="font-semibold">Explicit · Palm Beach County</p><p className="mt-2">This mover states that it serves Palm Beach County.</p></div>
+            <div className="rounded-2xl bg-blue-50 p-4 text-sm text-blue-950"><p className="font-semibold">TrustHub estimate · King County</p><p className="mt-2">Estimated pickup relevance from a verified location and reported operating capacity. State-clipped; not a company claim.</p></div>
+            <div className="rounded-2xl bg-amber-50 p-4 text-sm text-amber-950"><p className="font-semibold">Unresolved · New Jersey</p><p className="mt-2">No result. State authority is unresolved, so geography cannot create eligibility.</p></div>
+          </div>
+        </section>
         <div className="grid gap-5 lg:grid-cols-2">
           {SYNTHETIC_PROVIDERS.map((provider) => (
             <article key={provider.providerId} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
