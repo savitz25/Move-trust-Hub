@@ -1,0 +1,529 @@
+{
+  "checkpoint": {
+    "at": "2026-08-17T18:44:21.742Z",
+    "databaseProjectRef": "arepfylnilkjmyduhwbz",
+    "databaseName": "postgres",
+    "providerCount": 599326,
+    "reviewCount": 3,
+    "v1Guard": "forbidden project uvqkyupfnpswdozmuzih not targeted"
+  },
+  "pilot": [
+    {
+      "providerId": "72ce5037-b67d-5e2e-9c69-79b15685ecea",
+      "state": "FL",
+      "name": "1776 MOVING AND STORAGE INC",
+      "locationStatus": "VERIFIED",
+      "website": true,
+      "explicitClaims": 9
+    },
+    {
+      "providerId": "52692620-1382-5ab6-bbf7-b97443278e19",
+      "state": "FL",
+      "name": "904 MOVERS LLC",
+      "locationStatus": "VERIFIED",
+      "website": true,
+      "explicitClaims": 23
+    },
+    {
+      "providerId": "8d07756f-d8cb-5249-87a0-aae21d883a4c",
+      "state": "FL",
+      "name": "1TRUCK 2MOVERS LLC",
+      "locationStatus": "LOCATION_REVIEW",
+      "website": false,
+      "explicitClaims": 0
+    },
+    {
+      "providerId": "8121ce9c-dde1-5ddb-ab3d-1e4c2060ea8e",
+      "state": "FL",
+      "name": "A & A TRANSFER & STORAGE INC",
+      "locationStatus": "LOCATION_REVIEW",
+      "website": false,
+      "explicitClaims": 0
+    },
+    {
+      "providerId": "ffe23473-d4f7-5d7e-9ecb-3b7ec2e1812e",
+      "state": "WA",
+      "name": "AFFORDABLE MOVERS",
+      "locationStatus": "VERIFIED",
+      "website": true,
+      "explicitClaims": 5
+    },
+    {
+      "providerId": "7c9de215-4fb6-53a7-bdfa-4f8eff4564da",
+      "state": "WA",
+      "name": "A PERFECT MOVER LLC",
+      "locationStatus": "VERIFIED",
+      "website": false,
+      "explicitClaims": 0
+    },
+    {
+      "providerId": "6b894502-b9be-5c7c-8c04-8db4e4528e2a",
+      "state": "WA",
+      "name": "A2B MOVING & STORAGE LLC",
+      "locationStatus": "LOCATION_REVIEW",
+      "website": false,
+      "explicitClaims": 0
+    },
+    {
+      "providerId": "2d727c1e-87a5-5da9-b240-bc2ccc5c18e5",
+      "state": "WA",
+      "name": "AIR VAN",
+      "locationStatus": "VERIFIED",
+      "website": false,
+      "explicitClaims": 0
+    }
+  ],
+  "refreshResults": [
+    {
+      "providerId": "72ce5037-b67d-5e2e-9c69-79b15685ecea",
+      "state": "FL",
+      "name": "1776 MOVING AND STORAGE INC",
+      "stored": [
+        {
+          "source": "FL_STATE_AUTHORITY",
+          "id": "9b4c4891-0e0b-4848-bac5-c75d5c194f85",
+          "fingerprint": "2307223e1e503f731ebf188a4a7a607427bbfcc8b8e730b06577292d22d0b344",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 33125,
+            "title": "Business Search",
+            "status": "SUCCESS",
+            "bodyHash": "772410dff5d8ecf7c3d027d3e6d70a89f0e7560e8b98896d0a11dcedd0cfeb9f",
+            "elapsedMs": 918
+          }
+        },
+        {
+          "source": "FMCSA",
+          "id": "20909d4f-9b52-4501-8cf6-16dcf60c0546",
+          "fingerprint": "f2789be0a174403b2d0a1174cc6222d5da8b29f740e813628049a033303a4d3e",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "usdot": "2303737",
+            "status": "SUCCESS",
+            "dbaName": null,
+            "drivers": 7,
+            "elapsedMs": 299,
+            "legalName": "1776 MOVING AND STORAGE INC",
+            "powerUnits": 7,
+            "allowedToOperate": "Y"
+          }
+        },
+        {
+          "source": "WEBSITE_SERVICE_GEOGRAPHY",
+          "id": "8410b3b8-7b02-442b-a2ce-506632c89359",
+          "fingerprint": "394443039dd26dd39890bddfaa9702d58eeb4ddc70724f7c8e61a09e5feed22f",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 143337,
+            "title": "Movers in Orlando, FL | 1776 Moving and Storage, Inc",
+            "status": "SUCCESS",
+            "bodyHash": "0bff85edf159415c78e98d4ab86d90bf5673639b3737a430a9a634ff64ad842f",
+            "elapsedMs": 360,
+            "priorClaims": 9
+          }
+        },
+        {
+          "source": "WEBSITE_VALIDATION",
+          "id": "731aae15-21c1-4976-a529-90eaa741ccd9",
+          "fingerprint": "7e8bf58d77edcbdcbbda565ec63d89ad8906873f226ff6fcf0eff95a1619b9a1",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 143337,
+            "title": "Movers in Orlando, FL | 1776 Moving and Storage, Inc",
+            "status": "SUCCESS",
+            "bodyHash": "0bff85edf159415c78e98d4ab86d90bf5673639b3737a430a9a634ff64ad842f",
+            "elapsedMs": 360
+          }
+        }
+      ]
+    },
+    {
+      "providerId": "52692620-1382-5ab6-bbf7-b97443278e19",
+      "state": "FL",
+      "name": "904 MOVERS LLC",
+      "stored": [
+        {
+          "source": "FL_STATE_AUTHORITY",
+          "id": "4a894ac2-a367-40f6-8d51-ac6a73092629",
+          "fingerprint": "1a7f89fafc32cf77003e5b477c0484372a06c3af5910120aa80e8fb9bbd6598f",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 33125,
+            "title": "Business Search",
+            "status": "SUCCESS",
+            "bodyHash": "772410dff5d8ecf7c3d027d3e6d70a89f0e7560e8b98896d0a11dcedd0cfeb9f",
+            "elapsedMs": 455
+          }
+        },
+        {
+          "source": "FMCSA",
+          "id": "9ae8b98f-843b-47bd-a179-034dea82517f",
+          "fingerprint": "aad42c71e2b15b8bed63966cf5cf6d7aea179e2bc72d843e197b9bb1b705d9da",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "usdot": "4354126",
+            "status": "SUCCESS",
+            "dbaName": null,
+            "drivers": 2,
+            "elapsedMs": 180,
+            "legalName": "904 MOVERS LLC",
+            "powerUnits": 2,
+            "allowedToOperate": "Y"
+          }
+        },
+        {
+          "source": "WEBSITE_SERVICE_GEOGRAPHY",
+          "id": "fba0c4c2-7f4c-4b8a-8a89-c54cd5f0fd55",
+          "fingerprint": "3c0c07ceeabaeebe2008c17c245da63eb4cc37fee46cc40d9526f97df1a2c6d3",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 353860,
+            "title": "904 Movers In Jacksonville FL",
+            "status": "SUCCESS",
+            "bodyHash": "82ac0b069b9e47bb903564c7e992c597fbf5dcbc14bf6f9ee37a937dff0caca2",
+            "elapsedMs": 472,
+            "priorClaims": 23
+          }
+        },
+        {
+          "source": "WEBSITE_VALIDATION",
+          "id": "4f139777-3029-45ad-b958-aaa433cd1a7a",
+          "fingerprint": "de279e0f378e96f55e399e3ba9b1b2b627a7d255fb2ab98c0c36652522b7f7a2",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 353860,
+            "title": "904 Movers In Jacksonville FL",
+            "status": "SUCCESS",
+            "bodyHash": "82ac0b069b9e47bb903564c7e992c597fbf5dcbc14bf6f9ee37a937dff0caca2",
+            "elapsedMs": 472
+          }
+        }
+      ]
+    },
+    {
+      "providerId": "8d07756f-d8cb-5249-87a0-aae21d883a4c",
+      "state": "FL",
+      "name": "1TRUCK 2MOVERS LLC",
+      "stored": [
+        {
+          "source": "FL_STATE_AUTHORITY",
+          "id": "594696b0-192e-4846-a078-05064b86d90d",
+          "fingerprint": "27ec8487b0275219f0f3fa6845365c4bbdf4aa600d46639319009c7bb6e3ef8c",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 33125,
+            "title": "Business Search",
+            "status": "SUCCESS",
+            "bodyHash": "772410dff5d8ecf7c3d027d3e6d70a89f0e7560e8b98896d0a11dcedd0cfeb9f",
+            "elapsedMs": 453
+          }
+        },
+        {
+          "source": "FMCSA",
+          "id": "b2dde98d-c0a8-4df8-be2b-4354bc31dc51",
+          "fingerprint": "e56888c6d6ec4babb9e6b381d750d99e836a4753577f61ba5d3581dffcec622f",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "usdot": "4534724",
+            "status": "SUCCESS",
+            "dbaName": null,
+            "drivers": 1,
+            "elapsedMs": 59,
+            "legalName": "1TRUCK 2MOVERS LLC",
+            "powerUnits": 0,
+            "allowedToOperate": "Y"
+          }
+        }
+      ]
+    },
+    {
+      "providerId": "8121ce9c-dde1-5ddb-ab3d-1e4c2060ea8e",
+      "state": "FL",
+      "name": "A & A TRANSFER & STORAGE INC",
+      "stored": [
+        {
+          "source": "FL_STATE_AUTHORITY",
+          "id": "a2a1c3ac-f4fc-47bf-aa6e-12a1c5054579",
+          "fingerprint": "8f542e1dcc0c6751bdf81aa9dd466e37ad31931e1390a5ce9414e9ed87769a96",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 33125,
+            "title": "Business Search",
+            "status": "SUCCESS",
+            "bodyHash": "772410dff5d8ecf7c3d027d3e6d70a89f0e7560e8b98896d0a11dcedd0cfeb9f",
+            "elapsedMs": 460
+          }
+        },
+        {
+          "source": "FMCSA",
+          "id": "1231731d-f7f9-4e6f-88df-0366990a2600",
+          "fingerprint": "bbc317d8b32dd9344554108171f3838b04eec674edccb6c93a969e1d7e3a7e16",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "usdot": "89741",
+            "status": "SUCCESS",
+            "dbaName": null,
+            "drivers": 13,
+            "elapsedMs": 81,
+            "legalName": "A & A TRANSFER & STORAGE INC",
+            "powerUnits": 17,
+            "allowedToOperate": "Y"
+          }
+        }
+      ]
+    },
+    {
+      "providerId": "ffe23473-d4f7-5d7e-9ecb-3b7ec2e1812e",
+      "state": "WA",
+      "name": "AFFORDABLE MOVERS",
+      "stored": [
+        {
+          "source": "FMCSA",
+          "id": "d4e9dc4d-01b4-4f88-9017-f4124839a490",
+          "fingerprint": "9842632475db314d4895ea1ed3b9b683c22a8605a906a36726002d0c24fc3818",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "usdot": "4204695",
+            "status": "SUCCESS",
+            "dbaName": "AFFORDABLE MOVERS",
+            "drivers": 5,
+            "elapsedMs": 65,
+            "legalName": "AFFORDABLE MOVERS LLC",
+            "powerUnits": 5,
+            "allowedToOperate": "Y"
+          }
+        },
+        {
+          "source": "WA_STATE_AUTHORITY",
+          "id": "6d3aa995-4c20-4a12-9fd1-9835435062f5",
+          "fingerprint": "ce4f7431c5c1852906c68a647475c93f6ec2628ae7118703d138cae43cff9c69",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 191510,
+            "title": "UTC Company Detail Page | UTC",
+            "status": "SUCCESS",
+            "bodyHash": "1432b421f93be494949f2595ed52dc6b74dcee9b691dd3bfd1d4089d65706ec5",
+            "elapsedMs": 1695
+          }
+        },
+        {
+          "source": "WEBSITE_SERVICE_GEOGRAPHY",
+          "id": "7d23070b-958e-44ca-be9f-22306cafd5a5",
+          "fingerprint": "252a81f7266804a3be87e6cf361f5bf2d5330abf14fadabc21a6c12db0fe616d",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 403489,
+            "title": "Affordable Movers LLC | Your Trusted Everett Moving Company",
+            "status": "SUCCESS",
+            "bodyHash": "24de050c9d15004d67096c9d6663e6b77b704307be25fac5d53cded7de6d88ad",
+            "elapsedMs": 209,
+            "priorClaims": 5
+          }
+        },
+        {
+          "source": "WEBSITE_VALIDATION",
+          "id": "bac6160b-c9a0-459c-a824-043664c6789b",
+          "fingerprint": "0f7a30c173f97116d2666039302256ca657b9450c0465498a02c19ff76223044",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 403489,
+            "title": "Affordable Movers LLC | Your Trusted Everett Moving Company",
+            "status": "SUCCESS",
+            "bodyHash": "24de050c9d15004d67096c9d6663e6b77b704307be25fac5d53cded7de6d88ad",
+            "elapsedMs": 209
+          }
+        }
+      ]
+    },
+    {
+      "providerId": "7c9de215-4fb6-53a7-bdfa-4f8eff4564da",
+      "state": "WA",
+      "name": "A PERFECT MOVER LLC",
+      "stored": [
+        {
+          "source": "FMCSA",
+          "id": "d7df9432-7da6-4664-b46b-8416af80138b",
+          "fingerprint": "51e34bbe3c8abbb810141b583e58da06ee4f0feee240de24199279436db153b1",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "usdot": "3264337",
+            "status": "SUCCESS",
+            "dbaName": null,
+            "drivers": 6,
+            "elapsedMs": 73,
+            "legalName": "A PERFECT MOVER LLC",
+            "powerUnits": 4,
+            "allowedToOperate": "Y"
+          }
+        },
+        {
+          "source": "WA_STATE_AUTHORITY",
+          "id": "7d5430ad-79e8-49fc-941c-3aad121e39c1",
+          "fingerprint": "d1606a023fa2e95046eacb57606252363d95d32ddf0dcd44ad196a41a8573c35",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 191517,
+            "title": "UTC Company Detail Page | UTC",
+            "status": "SUCCESS",
+            "bodyHash": "832312c961d63d67926385bedbf109ffd715a906a73be8e2a45ad091f00f5319",
+            "elapsedMs": 1012
+          }
+        }
+      ]
+    },
+    {
+      "providerId": "6b894502-b9be-5c7c-8c04-8db4e4528e2a",
+      "state": "WA",
+      "name": "A2B MOVING & STORAGE LLC",
+      "stored": [
+        {
+          "source": "FMCSA",
+          "id": "83301d1c-c51b-447c-b674-2fe0c9c53836",
+          "fingerprint": "a88dc24da3a24e85494ecb923c8fc0c641382d41f7ad804906a144675fcafcc9",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "usdot": "1941425",
+            "status": "SUCCESS",
+            "dbaName": null,
+            "drivers": 2,
+            "elapsedMs": 62,
+            "legalName": "A2B MOVING & STORAGE LLC",
+            "powerUnits": 4,
+            "allowedToOperate": "Y"
+          }
+        },
+        {
+          "source": "WA_STATE_AUTHORITY",
+          "id": "50876666-2458-458b-82eb-5017d787b2ec",
+          "fingerprint": "e2a95d719fbac0ed2f271f5ee8d24822665b121397395da6b7479cab64162555",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 191506,
+            "title": "UTC Company Detail Page | UTC",
+            "status": "SUCCESS",
+            "bodyHash": "a2ceb6e97a3fec957e1bc41ae5a6b086ac0cac7cb28c23c28fade81f679f0d7f",
+            "elapsedMs": 810
+          }
+        }
+      ]
+    },
+    {
+      "providerId": "2d727c1e-87a5-5da9-b240-bc2ccc5c18e5",
+      "state": "WA",
+      "name": "AIR VAN",
+      "stored": [
+        {
+          "source": "FMCSA",
+          "id": "49269006-51f5-4a0a-a783-fce16149fff7",
+          "fingerprint": "fb170be477ea1c7582e2f0cabf550aa0074d1ce7fc683981bea8dd28c7e9cf64",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "usdot": "1215456",
+            "status": "SUCCESS",
+            "dbaName": "AIR VAN",
+            "drivers": 9,
+            "elapsedMs": 69,
+            "legalName": "AIR VAN MOVING AND STORAGE INC",
+            "powerUnits": 7,
+            "allowedToOperate": "Y"
+          }
+        },
+        {
+          "source": "WA_STATE_AUTHORITY",
+          "id": "2b84adbb-a7e0-4998-9724-f4e707f8d78e",
+          "fingerprint": "ac1696670f7b01da7819ab6134d406d5861c11967373c9cea5649b1912e7eabd",
+          "inserted": false,
+          "status": "SUCCESS",
+          "observation": {
+            "http": 200,
+            "bytes": 191838,
+            "title": "UTC Company Detail Page | UTC",
+            "status": "SUCCESS",
+            "bodyHash": "d2de60b4845046c6714831a8d12fb39298d5df9baf1b8698c158cb9c8a657006",
+            "elapsedMs": 773
+          }
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "caseId": "faf0956f-94ef-570c-ab24-4572d2b5a9be",
+      "providerId": "8d07756f-d8cb-5249-87a0-aae21d883a4c",
+      "decisionId": "987c66eb-c220-4b81-9c82-c95dd3ed432c",
+      "evidenceFingerprint": "e0e75e26051cfd92f0fa836bd9dbb3fb75dda6c8f7475c9c45d8f6141de41533",
+      "citations": 2,
+      "outcome": "RESOLVED_NO_DECISION"
+    },
+    {
+      "caseId": "71589d1b-f4a6-54f3-a53e-2c7fd7fa55ef",
+      "providerId": "8121ce9c-dde1-5ddb-ab3d-1e4c2060ea8e",
+      "decisionId": "cf8a9a8d-aeaa-4da1-81a6-8ddeb081bff0",
+      "evidenceFingerprint": "039ad756c0bf0ad21b866ca97a2ceb5c66bf295344b96bcb76724fb84671835d",
+      "citations": 2,
+      "outcome": "RESOLVED_NO_DECISION"
+    },
+    {
+      "caseId": "78d423a2-4c26-5ac1-afcc-162919f30f1c",
+      "providerId": "6b894502-b9be-5c7c-8c04-8db4e4528e2a",
+      "decisionId": "87c5f7da-f010-4ba0-93a4-d9b2c9496a5b",
+      "evidenceFingerprint": "417ec31c1dc3983d7aa40a58d01e69ec6225d2516737a5951f678f8efb3e04be",
+      "citations": 2,
+      "outcome": "RESOLVED_NO_DECISION"
+    }
+  ],
+  "job": {
+    "id": "b67a605a-5b1f-47ad-bb1e-4808f420ec37",
+    "fingerprint": "d75014ff49fef92b86261fd74828c2e5a7e94f94f886c993c2bd9537c46ae783",
+    "cursor": 8,
+    "status": "COMPLETE"
+  },
+  "release": {
+    "action": "NO_OP",
+    "baselineId": "ca908400-db3d-483f-a5b6-f453314d607a",
+    "baselineFingerprint": "14e0615f6b3da901b6ac4426df70898b07c33e6175ab2929ce5b2b834becc0c1",
+    "currentId": "96799caf-9c87-4645-89eb-1bbd94eb1f57",
+    "currentFingerprint": "0df751e59e03ec3e04a9e175b62030fe76e19f8e3c79ee8cb6f40aae777ba8e7",
+    "historicalPreserved": true,
+    "candidates": 8
+  },
+  "cost": {
+    "googleCalls": 0,
+    "paidApiRequests": 0,
+    "incrementalUsd": 0
+  }
+}

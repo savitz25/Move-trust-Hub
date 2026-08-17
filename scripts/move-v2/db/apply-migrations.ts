@@ -20,6 +20,11 @@ const migrations = [
   ['20260816410000', 'move_v2_state_observations'],
   ['20260816420000', 'move_v2_derived_local_placement'],
   ['20260816430000', 'move_v2_origin_search_calibration'],
+  ['20260817150000', 'move_v2_task007_illinois_claim_semantics'],
+  ['20260817190000', 'move_v2_consumer_discovery'],
+  ['20260817210000', 'move_v2_consumer_discovery_v2'],
+  ['20260818010000', 'move_v2_evidence_operations'],
+  ['20260818020000', 'move_v2_authenticated_operations_pilot'],
 ] as const;
 
 async function main() {

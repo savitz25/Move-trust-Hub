@@ -19,7 +19,7 @@
     "lint": "cross-env ESLINT_USE_FLAT_CONFIG=false eslint . --max-warnings=0",
     "lint:fix": "cross-env ESLINT_USE_FLAT_CONFIG=false eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "test:move-v2": "tsx --test tests/move-v2-domain.test.ts tests/move-v2-fmcsa-classifier.test.ts tests/move-v2-fmcsa-parser.test.ts tests/move-v2-fmcsa-schema.test.ts tests/move-v2-auto-transport.test.ts tests/move-v2-enrichment.test.ts tests/move-v2-state-authority.test.ts tests/move-v2-origin-search.test.ts tests/move-v2-consumer-discovery.test.ts tests/move-v2-task-009.test.ts tests/move-v2-task-010.test.ts",
+    "test:move-v2": "tsx --test tests/move-v2-domain.test.ts tests/move-v2-fmcsa-classifier.test.ts tests/move-v2-fmcsa-parser.test.ts tests/move-v2-fmcsa-schema.test.ts tests/move-v2-auto-transport.test.ts tests/move-v2-enrichment.test.ts tests/move-v2-state-authority.test.ts tests/move-v2-origin-search.test.ts tests/move-v2-consumer-discovery.test.ts tests/move-v2-task-009.test.ts tests/move-v2-task-010.test.ts tests/move-v2-task-011.test.ts",
     "test:browser:move-v2": "playwright test tests/browser/move-v2-consumer.spec.ts",
     "test:browser:move-v2-review": "playwright test tests/browser/move-v2-review-console.spec.ts --project=desktop",
     "start:move-v2:qa": "cross-env MOVE_ENABLE_V2=true MOVE_ENABLE_INTERNAL_REVIEW=true MOVE_BROWSER_QA=true next start -p 3110",

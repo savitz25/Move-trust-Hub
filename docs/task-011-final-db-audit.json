@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-08-17T18:49:11.618Z",
+  "databaseProjectRef": "arepfylnilkjmyduhwbz",
+  "pointer": {
+    "current_release_id": "96799caf-9c87-4645-89eb-1bbd94eb1f57",
+    "prior_release_id": "ca908400-db3d-483f-a5b6-f453314d607a",
+    "version": "MOVE_CONSUMER_DISCOVERY_2026_08_V3_OPERATIONAL_PILOT",
+    "input_fingerprint": "0df751e59e03ec3e04a9e175b62030fe76e19f8e3c79ee8cb6f40aae777ba8e7",
+    "created_at": "2026-08-17T18:44:13.254Z"
+  },
+  "health": {
+    "eligible": 8,
+    "verified_locations": 5,
+    "location_review": 3,
+    "explicit_providers": 3,
+    "website_marked": 0
+  },
+  "reviews": {
+    "cases": 4,
+    "unresolved_retained": 3,
+    "resolved_control": 1
+  },
+  "decisions": {
+    "decisions": 5,
+    "supersessions": 1
+  },
+  "sources": [
+    {
+      "source": "FL_STATE_AUTHORITY",
+      "source_status": "SUCCESS",
+      "attempts": 4
+    },
+    {
+      "source": "FMCSA",
+      "source_status": "SUCCESS",
+      "attempts": 8
+    },
+    {
+      "source": "WA_STATE_AUTHORITY",
+      "source_status": "SUCCESS",
+      "attempts": 4
+    },
+    {
+      "source": "WEBSITE_SERVICE_GEOGRAPHY",
+      "source_status": "SUCCESS",
+      "attempts": 3
+    },
+    {
+      "source": "WEBSITE_VALIDATION",
+      "source_status": "SUCCESS",
+      "attempts": 3
+    }
+  ],
+  "integrity": {
+    "provider_spine": 599326,
+    "immutable_releases": 2,
+    "current_candidates": 8,
+    "audit_actions": 6,
+    "refresh_observations": 22
+  },
+  "security": [
+    {
+      "relname": "discovery_release_pointer",
+      "relrowsecurity": true
+    },
+    {
+      "relname": "move_v2_refresh_job",
+      "relrowsecurity": true
+    },
+    {
+      "relname": "move_v2_review_case",
+      "relrowsecurity": true
+    },
+    {
+      "relname": "move_v2_review_decision",
+      "relrowsecurity": true
+    },
+    {
+      "relname": "operational_action_log",
+      "relrowsecurity": true
+    },
+    {
+      "relname": "refresh_observation",
+      "relrowsecurity": true
+    }
+  ],
+  "v1Integrity": true,
+  "experimentalDerivedIncluded": false,
+  "productionWrites": "NONE"
+}
