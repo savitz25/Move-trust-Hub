@@ -32,14 +32,18 @@ function auditCounty(stateSlug: string, countySlug: string, label: string) {
   );
 
   const errors: string[] = [];
-  const title = typeof metadata.title === 'string' ? metadata.title : '';
+  const title = typeof metadata.title === 'string'
+    ? metadata.title
+    : metadata.title && typeof metadata.title === 'object' && 'absolute' in metadata.title
+      ? String(metadata.title.absolute)
+      : '';
   const description = metadata.description ?? '';
 
   if ('keywords' in metadata && metadata.keywords !== undefined) {
     errors.push('metadata_contains_keywords');
   }
-  if (!title.includes('Movers Serving')) {
-    errors.push('title_missing_movers_serving');
+  if (!/(Movers Serving|Moving in)/.test(title)) {
+    errors.push('title_missing_local_moving_intent');
   }
   if (/\bloup river sherman\b/i.test(description)) {
     errors.push('description_artifact');
