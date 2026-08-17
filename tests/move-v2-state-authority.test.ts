@@ -8,6 +8,7 @@ import { parseFloridaBusinessSearchHtml } from "../lib/move-v2/state-authority/f
 import { decideGoogleMatch } from "../lib/move-v2/enrichment/google-match";
 import { branchRadiusWithoutAllocation, canPublishDerived, countyRelationship, radiusForPowerUnits, shouldSupersedeDerived } from "../lib/move-v2/geography/derived-placement";
 import { enrichWashingtonDetail, parseWashingtonList } from "../lib/move-v2/state-authority/washington";
+import { exactUsdotIdentity, parseIllinoisEntityProfile } from "../lib/move-v2/state-authority/illinois";
 
 const nj = (licenseType: "PM" | "PW" | "PC", status = "ACTIVE") => normalizeNewJerseyRecord({
   licenseType, licenseNumber: `${licenseType}123`, status, legalName: "ACME MOVING LLC",
@@ -65,3 +66,11 @@ test("branch without fleet allocation is conservative",()=>assert.ok(branchRadiu
 test("later explicit geography supersedes derived",()=>assert.equal(shouldSupersedeDerived(1),true));
 test("county tiny edge is not whole-county service",()=>{const g={type:"Polygon",coordinates:[[[0,0],[10,0],[10,10],[0,10],[0,0]]]};const r=countyRelationship([-0.1,5],10,g);assert.notEqual(r.placementType,"DERIVED_MEANINGFUL_COVERAGE")});
 test("derived radius is deterministic and bounded",()=>{assert.equal(radiusForPowerUnits(5),radiusForPowerUnits(5));assert.ok(radiusForPowerUnits(10000)<=185)});
+const ilHtml=`<h1>H2H Movers, Inc.</h1> ILCC: 184599 US DOT: 2428328 <h4>Household Goods Movers</h4> Status Active March 1, 2012 Number of Complaints from 2023 to 2026 Total 0 Reported Number of Moves Annual Report Year Reported Number of Moves 2024 1,250 2023 1,100 <h4>Public Carrier Certificate</h4> Cargo Insurance X Y Liability Insurance X Y <h4>Warehousing</h4> Active`;
+test("Illinois public profile preserves ILCC and annual move history",()=>{const x=parseIllinoisEntityProfile(ilHtml,"https://www.icc.illinois.gov/emdb/mcis/entity/184599");assert.equal(x.licenseNumber,"184599");assert.deepEqual(x.annualMoves.map(r=>r.year),[2024,2023])});
+test("Illinois exact USDOT creates high confidence identity",()=>assert.equal(exactUsdotIdentity(parseIllinoisEntityProfile(ilHtml,"https://www.icc.illinois.gov/emdb/mcis/entity/184599"),{usdot:"2428328"}).status,"STATE_MATCH_HIGH_CONFIDENCE"));
+test("Illinois name-only identity remains review",()=>assert.equal(exactUsdotIdentity({...parseIllinoisEntityProfile(ilHtml,"https://www.icc.illinois.gov/emdb/mcis/entity/184599"),usdot:undefined},{usdot:null}).status,"STATE_MATCH_REVIEW"));
+test("Illinois active HHG authority is eligible",()=>assert.equal(deriveStateEligibility(parseIllinoisEntityProfile(ilHtml,"https://www.icc.illinois.gov/emdb/mcis/entity/184599"),"STATE_MATCH_HIGH_CONFIDENCE"),"STATE_VERIFIED_LOCAL_MOVER"));
+test("Illinois revoked HHG mover is excluded",()=>assert.equal(deriveStateEligibility({...parseIllinoisEntityProfile(ilHtml,"https://www.icc.illinois.gov/emdb/mcis/entity/184599"),status:"Revoked Jun 22, 2026"},"STATE_MATCH_HIGH_CONFIDENCE"),"STATE_INACTIVE_LOCAL_MOVER"));
+test("insurance on file is evidence not endorsement",()=>assert.ok(parseIllinoisEntityProfile(ilHtml,"https://www.icc.illinois.gov/emdb/mcis/entity/184599").insurance.every(x=>!("safety" in x))));
+test("annual move volume has no eligibility or ranking input",()=>assert.equal(Object.hasOwn(deriveStateEligibility(parseIllinoisEntityProfile(ilHtml,"https://www.icc.illinois.gov/emdb/mcis/entity/184599"),"STATE_MATCH_HIGH_CONFIDENCE") as object,"reportedMoveCount"),false));

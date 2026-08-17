@@ -157,14 +157,16 @@ async function main() {
           )) {
             observations.push(o);
             await c.query(
-              `insert into move_v2.provider_service_geography_observation(provider_id,raw_claim,geography_type,normalized_label,normalized_geoid,normalization_reason,is_exclusion,source_url,source_observed_at,confidence,rule_version) values($1,$2,$3,$4,$5,$6,$7,$8,now(),$9,$10) on conflict do nothing`,
+              `insert into move_v2.provider_service_geography_observation(provider_id,raw_claim,claim_type,geography_type,normalized_label,normalized_geoid,normalization_reason,is_exhaustive,is_exclusion,source_url,source_observed_at,confidence,rule_version,normalization_rule_version) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,now(),$11,$12,$12) on conflict do nothing`,
               [
                 row.provider_id,
                 o.rawClaim,
+                o.claimType,
                 o.geographyType,
                 o.normalizedLabel,
                 o.normalizedGeoid,
                 o.normalizationReason,
+                o.isExhaustive,
                 o.isExclusion,
                 page.url,
                 o.confidence,

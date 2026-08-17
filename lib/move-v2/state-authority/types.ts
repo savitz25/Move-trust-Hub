@@ -14,10 +14,10 @@ export type StateEligibility =
   | "STATE_AUTHORITY_NOT_FOUND"
   | "STATE_AUTHORITY_REVIEW";
 
-export type StateAuthorityType = "NJ_PM" | "NJ_PW" | "NJ_PC" | "FL_IM" | "FL_MB";
+export type StateAuthorityType = "NJ_PM" | "NJ_PW" | "NJ_PC" | "FL_IM" | "FL_MB" | "IL_ILCC_HHG";
 
 export interface StateAuthorityRecord {
-  state: "NJ" | "FL" | "WA";
+  state: "NJ" | "FL" | "WA" | "IL";
   authorityType: StateAuthorityType | "WA_UTC_HHG";
   licenseNumber: string;
   status: string;
@@ -34,6 +34,7 @@ export interface StateAuthorityRecord {
   effectiveDate?: string;
   expirationDate?: string;
   sourceRecordReference: string;
+  usdot?: string;
 }
 
 export interface ProviderIdentityInput {

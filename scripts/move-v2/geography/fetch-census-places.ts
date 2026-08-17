@@ -1,0 +1,6 @@
+import{createHash}from"node:crypto";import{mkdirSync,writeFileSync}from"node:fs";
+const service="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer";
+const states=[["FL","12"],["WA","53"],["IL","17"]] as const;
+async function layer(id:number,stateFips:string){const p=new URLSearchParams({where:`STATE='${stateFips}'`,outFields:"STATE,PLACE,GEOID,BASENAME,NAME,LSADC,CENTLAT,CENTLON",returnGeometry:"true",outSR:"4326",geometryPrecision:"5",maxAllowableOffset:"0.001",f:"geojson"});const r=await fetch(`${service}/${id}/query?${p}`,{signal:AbortSignal.timeout(180_000)});if(!r.ok)throw new Error(`TIGERweb place ${id}: ${r.status}`);return r.json() as Promise<{features:unknown[]}>}
+async function main(){mkdirSync("artifacts/move-v2/geography",{recursive:true});for(const[state,fips]of states){const [incorporated,cdp]=await Promise.all([layer(28,fips),layer(30,fips)]);const body=JSON.stringify({type:"FeatureCollection",features:[...incorporated.features,...cdp.features]});const path=`artifacts/move-v2/geography/tigerweb-2025-places-${state}.geojson`;writeFileSync(path,body);console.log(JSON.stringify({state,features:incorporated.features.length+cdp.features.length,bytes:Buffer.byteLength(body),sha256:createHash("sha256").update(body).digest("hex")}))}}
+void main();

@@ -1,7 +1,7 @@
 import type { StateAuthorityRecord, StateEligibility, StateMatchStatus } from "./types";
 
-const active = (status: string) => ["ACTIVE", "REGISTERED", "CURRENT"].includes(status.trim().toUpperCase());
-const inactive = (status: string) => ["INACTIVE", "EXPIRED", "REVOKED", "SUSPENDED", "CLOSED"].includes(status.trim().toUpperCase());
+const active = (status: string) => /^(ACTIVE|REGISTERED|CURRENT)(?:\b|$)/.test(status.trim().toUpperCase());
+const inactive = (status: string) => /^(INACTIVE|EXPIRED|REVOKED|SUSPENDED|CLOSED)(?:\b|$)/.test(status.trim().toUpperCase());
 
 export function deriveStateEligibility(record: StateAuthorityRecord | undefined, matchStatus: StateMatchStatus): StateEligibility {
   if (!record || matchStatus === "STATE_NOT_FOUND") return "STATE_AUTHORITY_NOT_FOUND";
