@@ -1,0 +1,5 @@
+import { createHash } from "node:crypto";import{mkdirSync,writeFileSync}from"node:fs";
+const endpoint="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer/84/query";
+async function get(where:string){const p=new URLSearchParams({where,outFields:"GEOID,ZCTA5,AREALAND,CENTLAT,CENTLON",returnGeometry:"true",outSR:"4326",geometryPrecision:"5",maxAllowableOffset:"0.002",f:"geojson"});const r=await fetch(`${endpoint}?${p}`,{signal:AbortSignal.timeout(180_000)});if(!r.ok)throw new Error(`TIGERweb ZCTA ${r.status}`);return r.text()}
+async function main(){mkdirSync("artifacts/move-v2/geography",{recursive:true});for(const [state,where]of [["FL","GEOID >= '32000' AND GEOID <= '34999'"],["WA","GEOID >= '98000' AND GEOID <= '99499'"]]as const){const body=await get(where),json=JSON.parse(body),path=`artifacts/move-v2/geography/tigerweb-2020-zcta-${state}.geojson`;writeFileSync(path,body);console.log(JSON.stringify({state,features:json.features.length,bytes:Buffer.byteLength(body),sha256:createHash("sha256").update(body).digest("hex")}))}}
+void main();
