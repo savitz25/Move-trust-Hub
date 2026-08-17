@@ -92,8 +92,8 @@ New regressions cover FDACS pagination deduplication, official state email prese
 
 ## 35–38. Delivery
 
-- Commits: recorded after validation
-- CI: recorded after push
+- Commits: `a056314a` (state observations/qualified onboarding), `f1505d93` (audit ledgers/report), plus final delivery-status commit
+- CI: pending final pushed-head verification
 - Preview: `https://move-trust-hub-git-move-20-savitz25-s-projects.vercel.app`
 - PR #1: **DRAFT; not merged**
 - Production changes: **NONE**
