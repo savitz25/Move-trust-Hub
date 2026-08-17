@@ -105,9 +105,9 @@ Known false precise service claim: “Best in Clark County” remains rejected a
 
 ## 26–32. Delivery and decision
 
-- commits: recorded in final Git history
-- GitHub CI: recorded after final push
-- Vercel Preview: recorded after final push
+- commits: implementation `12efc5be`; final delivery-metadata commit follows in Git history
+- GitHub CI: **PASS** — PR run `32044229247`; push run `32044227390`
+- Vercel Preview: **PASS / Ready** — `https://move-trust-ogq3luffj-savitz25-s-projects.vercel.app` (deployment-protected); branch alias `https://move-trust-hub-git-move-20-savitz25-s-projects.vercel.app`
 - PR #1 remains **DRAFT**
 - Production changes: **NONE**
 - Task 008: **PASS**, subject to the disclosed local browser-backend limitation; automated contract/build and hosted Preview gates are authoritative
