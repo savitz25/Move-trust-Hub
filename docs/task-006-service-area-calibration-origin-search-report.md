@@ -116,8 +116,8 @@ Known false-positive precise geographic claims: **0**. The tentative contact-ZIP
 
 ## 43–50. Delivery
 
-- Tests: pending final quality-gate update
-- Commits: pending final delivery update
+- Tests: **PASS** — lint, focused typecheck, **119 tests**, production build, and `git diff --check`
+- Commits: `379d6e0b` service-geography calibration; `53c12ac2` county/ZIP origin read model; `71bd1293` tests, Preview lab, and report
 - GitHub CI: pending
 - Vercel Preview: pending
 - PR #1: **DRAFT**
