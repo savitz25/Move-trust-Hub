@@ -55,8 +55,8 @@ Starting head: `54f040a60cae5321e72685e871e9d629ea06fb73`
 49. **Experimental-derived isolation:** PASS — excluded from golden set, sitemaps, APIs, and launch flags; NJ/Illinois remain excluded from verified local eligibility.
 50. **Tests:** PASS locally: lint, typecheck, 215/215 tests, 28/28 SEO golden validation, production build (8 GB Node heap required for 1,880 static pages), consumer Playwright 2/2, reviewer Playwright 1/1, migration Playwright 3/3, and diff check.
 51. **Commits:** `13152687` — Define V1 to V2 cutover contract. A final report-status commit records remote gates without changing the contract.
-52. **CI:** Pending pushed-head result.
-53. **Vercel Preview:** Pending pushed-head result.
+52. **CI:** PASS — GitHub `Move V2 foundation` push run `32061686146` and PR run `32061691426` completed successfully, including build, unit, consumer/reviewer/migration Playwright, SEO validation, artifacts, and dependency audit.
+53. **Vercel Preview:** PASS / Ready — deployment `3EmgnDrTZF3KJZJ5vMCwaXiudCXy` completed successfully; no Production deployment was requested or performed.
 54. **Production changes:** **NONE**.
 55. **Task 012:** **PASS** as a migration contract/rehearsal; launch itself remains correctly blocked on P1 closures.
 56. **Ready for Task 013?** **YES**.
