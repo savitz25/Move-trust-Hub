@@ -100,11 +100,11 @@ Plans and buffers are retained in `docs/task-005-derived-placement-audit.json`. 
 ## 37–43. Delivery
 
 - Commits: `a2fee9b1` Washington authority adapter; `941fbb7e` derived county pilot; `a47ddf8c` report/tests/Preview examples
-- GitHub CI: pending final delivery update
-- Vercel Preview: pending final delivery update
+- GitHub CI: **PASS** — runs `31997971784` (PR) and `31997968324` (push)
+- Vercel Preview: **PASS** — `https://move-trust-hub-git-move-20-savitz25-s-projects.vercel.app`
 - PR #1: **DRAFT** (must remain draft)
 - Production changes: **NONE**
-- Task 005: **PASS**, subject to final CI and Preview confirmation
-- Ready for Task 006: **YES**, after final CI/Preview confirmation
+- Task 005: **PASS**
+- Ready for Task 006: **YES**
 
 Recommended Task 006 scope: enlarge the explicit-area calibration cohort using Florida plus another state with accessible official authority; measure explicit-vs-shadow county agreement and urban/rural error; refine or retain the versioned fallback from evidence; then build a bounded local-origin county/ZIP read model. Keep NJ excluded until a regulator roster is received, preserve explicit-area precedence, and do not introduce quality ranking or paid influence.
