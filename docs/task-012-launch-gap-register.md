@@ -4,6 +4,10 @@
 
 None identified. The launch must not proceed until every P1 gate below is closed, but the additive hybrid architecture provides a safe rollback path and no destructive prerequisite was found.
 
+## Task 013 closure
+
+Task 013 closes all ten P1 groups through the approved immutable 86-provider V2 release, V1 compatibility adapter, server-flagged same-URL composition, hardened reads, exact-only provider routing, privacy-safe analytics, permanent 308 contract, release-aware sitemap selection, and cutover/rollback rehearsal. The table below is retained as the immutable starting register; it must not be read as an open queue after Task 013.
+
 ## P1 — required before launch
 
 | Gap | Required closure |

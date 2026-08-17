@@ -41,6 +41,9 @@ jobs:
           command: npm run build
         env:
           MOVE_ENABLE_V2: 'true'
+          MOVE_ENABLE_REAL_PROVIDER_DATA: 'true'
+          MOVE_ENABLE_PUBLIC_READS: 'true'
+          MOVE_ENABLE_SAME_URL_COMPOSITION: 'true'
           NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
           NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
       - run: npx playwright install --with-deps chromium
@@ -54,6 +57,8 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
       - run: npm run validate:seo:move-v2
       - run: npm run test:browser:move-v2-migration
+      - run: npm run test:browser:move-v2-launch
+      - run: npm run test:browser:move-v2-rollback
         env:
           NEXT_PUBLIC_SUPABASE_URL: 'https://arepfylnilkjmyduhwbz.supabase.co'
           NEXT_PUBLIC_SUPABASE_ANON_KEY: 'ci-build-placeholder-not-used-by-move-v2'
@@ -62,7 +67,7 @@ jobs:
         with:
           name: move-v2-browser-qa
           path: |
-            test-results/task-012
+            test-results/task-013
             playwright-report
           retention-days: 14
       - name: Production and real-data gates default off

@@ -1,11 +1,9 @@
 import 'server-only';
 
 import { cache } from 'react';
-import { unstable_cache } from 'next/cache';
 import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { getSupabaseAnonKey, getSupabaseUrl, isSupabaseConfigured } from '@/lib/supabase/config';
 import type { Database } from '@/types/supabase';
-import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
 import { logger } from '@/lib/logging/logger';
 import { seedCompanies } from '@/data/seed-companies';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
@@ -534,12 +532,9 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     .filter((company): company is Company => company !== null);
 }
 
-const getCompaniesDataCached = unstable_cache(
-  fetchCompaniesFromDatabase,
-  // v11: display-enrichment resolver + strict BBB grades + progressive legacy columns
-  ['companies-directory-v11-display-enrichment'],
-  { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
-);
+// The enriched directory exceeds Next's 2 MB Data Cache item limit. React cache
+// still deduplicates each request and route/CDN caches remain authoritative.
+const getCompaniesDataCached = fetchCompaniesFromDatabase;
 
 /** Cached server-side company fetch — use in Server Components and generateMetadata. */
 export const getCompaniesCached = cache(async (): Promise<Company[]> => {

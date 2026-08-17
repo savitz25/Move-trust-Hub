@@ -77,8 +77,13 @@ async function fetchAssignmentCountiesByCompanyKey(): Promise<
   return byKey;
 }
 
-export const getAssignmentCountiesByCompanyKey = unstable_cache(
-  fetchAssignmentCountiesByCompanyKey,
+const getAssignmentCountyEntries = unstable_cache(
+  async () => [...(await fetchAssignmentCountiesByCompanyKey()).entries()],
   ['directory-assignment-counties-v1'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 120 }
 );
+
+/** Rehydrate Map after Next Data Cache JSON serialization. */
+export async function getAssignmentCountiesByCompanyKey() {
+  return new Map<string, AssignmentCounty[]>(await getAssignmentCountyEntries());
+}

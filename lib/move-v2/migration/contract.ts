@@ -13,7 +13,7 @@ export type MigrationDecision = (typeof MIGRATION_DECISIONS)[number];
 export type RedirectRule = {
   oldPath: string;
   newPath: string;
-  status: 301;
+  status: 308;
   queryHandling: "PRESERVE" | "DROP_TRACKING_ONLY";
   fragmentHandling: "BROWSER_PRESERVES";
   canonicalTarget: string;

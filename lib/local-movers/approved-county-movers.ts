@@ -26,6 +26,11 @@ const COMPANY_MOVER_SELECT_FULL =
 const COMPANY_MOVER_SELECT_CORE =
   'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, usdot_status';
 
+// Old V1 databases predate usdot_status. Keep the final adapter select deliberately
+// narrow and derive the presentation status from immutable authority fields.
+const COMPANY_MOVER_SELECT_V1_COMPAT =
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active';
+
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
 /** Bulk all-county load (state hubs / warm path). */
@@ -177,6 +182,11 @@ async function loadCompaniesByIds(
         /service_scope|coverage_counties|does not exist/i.test(byId.error.message))
     ) {
       select = COMPANY_MOVER_SELECT_CORE;
+      byId = await client.from('companies').select(select).in('id', chunk);
+    }
+
+    if (byId.error && /usdot_status|does not exist/i.test(byId.error.message)) {
+      select = COMPANY_MOVER_SELECT_V1_COMPAT;
       byId = await client.from('companies').select(select).in('id', chunk);
     }
 
