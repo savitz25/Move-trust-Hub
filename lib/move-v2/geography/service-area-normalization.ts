@@ -10,7 +10,7 @@ export function classifyServiceClaim(raw:string):ServiceClaimType{
   if(/\b(?:do not|don't|does not|excluding|except|limited to|only within|city limits only)\b/i.test(raw))return "EXPLICIT_EXCLUSION";
   if(/\b(?:for example|e\.g\.|such as|moving from .+ to|our [A-Z][a-z]+ movers|testimonial|customer stor)/i.test(raw))return "EXAMPLE_LOCATION_MENTION";
   if(/(?:\b(?:serve only|service area consists of|following counties|service limited to)\b|\bareas we serve\s*:)/i.test(raw))return "EXHAUSTIVE_EXPLICIT_AREA";
-  if(/\b(?:surrounding (?:areas|communities)|and beyond|throughout the region|greater .+ area)\b/i.test(raw))return "VAGUE_REGION";
+  if(/\b(?:and beyond|throughout the region|greater .+ area)\b/i.test(raw))return "VAGUE_REGION";
   if(/\b(?:serve|serves|serving|service area|moving services? (?:in|throughout)|local moves? (?:in|within))\b/i.test(raw))return "POSITIVE_EXPLICIT_AREA";
   return "SERVICE_AREA_REVIEW";
 }
