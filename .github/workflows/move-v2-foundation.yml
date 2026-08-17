@@ -32,6 +32,19 @@ jobs:
       - run: npm run lint:move-v2
       - run: npm run typecheck:move-v2
       - run: npm run test:move-v2
+      - run: npm run build
+        env:
+          MOVE_ENABLE_V2: 'true'
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser:move-v2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: move-v2-browser-qa
+          path: |
+            test-results/task-009
+            playwright-report
+          retention-days: 14
       - name: Production and real-data gates default off
         run: |
           grep -q '^MOVE_ENABLE_V2=false$' .env.example

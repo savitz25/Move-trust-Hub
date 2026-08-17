@@ -1,0 +1,2 @@
+import{NextResponse}from"next/server";import{getProviderTrustReport}from"@/lib/move-v2/consumer-discovery/server-read";
+export async function GET(_:Request,{params}:{params:Promise<{providerId:string}>}){if(process.env.VERCEL_ENV==="production")return new NextResponse(null,{status:404});const{providerId}=await params;const report=getProviderTrustReport(providerId);return report?NextResponse.json(report):NextResponse.json({error:"Provider not found"},{status:404})}

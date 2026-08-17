@@ -1,0 +1,2 @@
+import{NextResponse}from"next/server";import{compareProviderReports}from"@/lib/move-v2/consumer-discovery/server-read";
+export function GET(request:Request){if(process.env.VERCEL_ENV==="production")return new NextResponse(null,{status:404});const ids=(new URL(request.url).searchParams.get("providerIds")??"").split(",").filter(Boolean);if(ids.length<2||ids.length>4)return NextResponse.json({error:"Choose 2 to 4 providers"},{status:400});return NextResponse.json(compareProviderReports(ids))}

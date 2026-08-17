@@ -1,3 +1,3 @@
-import{notFound}from"next/navigation";import{moveV2Flags}from"@/lib/move-v2/flags";import preview from"@/lib/move-v2/consumer-discovery/preview-data.json";import{LocalSearchClient,type ConsumerDiscoveryPreviewData}from"./local-search-client";
+import{notFound}from"next/navigation";import{moveV2Flags}from"@/lib/move-v2/flags";import preview from"@/lib/move-v2/consumer-discovery/release-v2.json";import{LocalSearchClient,type ConsumerDiscoveryPreviewData}from"./local-search-client";
 export const dynamic="force-dynamic";export const metadata={title:"Research local movers | MoveTrustHub Preview",description:"Evidence-first local mover research Preview.",robots:{index:false,follow:false}};
-export default function MoveV2ExperienceLab(){const flags=moveV2Flags();if(process.env.VERCEL_ENV==="production"||!flags.enabled)notFound();return <LocalSearchClient data={preview as ConsumerDiscoveryPreviewData}/>}
+export default function MoveV2ExperienceLab(){const flags=moveV2Flags();if(process.env.VERCEL_ENV==="production"||!flags.enabled)notFound();return <div className="move-v2-discovery"><LocalSearchClient data={preview as ConsumerDiscoveryPreviewData}/></div>}
