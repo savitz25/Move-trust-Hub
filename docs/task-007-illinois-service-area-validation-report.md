@@ -102,10 +102,10 @@ Manual QA covered all **5** providers entering the positive-known reclassificati
 
 ## 54–61. Validation, delivery, and decision
 
-- tests: lint **PASS**; Move V2 typecheck **PASS**; **139/139 tests PASS**; build and final diff check recorded in delivery commit
-- commits: recorded in Git history for this task
-- GitHub CI: recorded after push
-- Vercel Preview: recorded after push
+- tests: lint **PASS**; Move V2 typecheck **PASS**; **139/139 tests PASS**; production build **PASS**; `git diff --check` **PASS**
+- commits: implementation `455b0ef8`; final report metadata commit follows in Git history
+- GitHub CI: **PASS** — PR run `32040593695` and push run `32040591562`
+- Vercel Preview: **PASS / Ready** — `https://move-trust-hub-git-move-20-savitz25-s-projects.vercel.app`
 - PR #1: must remain **DRAFT**
 - Production changes: **NONE**
 - Task 007: **PARTIAL** — code/evidence contracts and derived freeze pass; official Illinois cohort and calibration thresholds do not
