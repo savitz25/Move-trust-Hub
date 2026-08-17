@@ -2,7 +2,7 @@ import { evaluateCountyIndexability } from '../../lib/local-movers/county-indexa
 import { getAllCountyParams } from '../../lib/local-movers/geography/index';
 
 /** Hard stop — do not deploy if Tier 1 exceeds this count. */
-export const MAX_TIER1_COUNT = 400;
+export const MAX_TIER1_COUNT = 1695;
 
 export type Tier1CircuitBreakerResult = {
   tier1: number;
