@@ -54,7 +54,7 @@ Starting head: `54f040a60cae5321e72685e871e9d629ea06fb73`
 48. **Commercial firewall:** PASS — paid/subscription/rating/review inputs have no route, canonical, sitemap, provider identity, or search effect.
 49. **Experimental-derived isolation:** PASS — excluded from golden set, sitemaps, APIs, and launch flags; NJ/Illinois remain excluded from verified local eligibility.
 50. **Tests:** PASS locally: lint, typecheck, 215/215 tests, 28/28 SEO golden validation, production build (8 GB Node heap required for 1,880 static pages), consumer Playwright 2/2, reviewer Playwright 1/1, migration Playwright 3/3, and diff check.
-51. **Commits:** Pending delivery commit(s) at report-writing time.
+51. **Commits:** `13152687` — Define V1 to V2 cutover contract. A final report-status commit records remote gates without changing the contract.
 52. **CI:** Pending pushed-head result.
 53. **Vercel Preview:** Pending pushed-head result.
 54. **Production changes:** **NONE**.
