@@ -201,8 +201,8 @@ export default async function CompanyProfilePage({ params }: Props) {
         className="mb-6"
         actions={
           <>
-            <CompanyTypeBadges company={company} size="default" className="shrink-0" />
-            <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
+            <CompanyTypeBadges company={company} size="default" />
+            <CompanyVerificationBadges company={company} size="profile" className="justify-start" />
             {isDisplayableGoogleForUi(googlePlaces) && googlePlaces ? (
               <GoogleRatingBadge data={googlePlaces} />
             ) : null}

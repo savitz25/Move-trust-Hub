@@ -91,6 +91,16 @@ const nextConfig: NextConfig = {
       '@hookform/resolvers',
     ],
   },
+  async rewrites() {
+    return [
+      // Keep the public index URL while avoiding a lambda collision with the
+      // generated sitemap metadata route at /sitemap-local/sitemap.xml.
+      {
+        source: '/sitemap-local/sitemap.xml',
+        destination: '/sitemap-local/index.xml',
+      },
+    ];
+  },
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
   async redirects() {
     return [

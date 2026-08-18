@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 test('same URL launch composition and hardened reads', async ({ page, request }) => {
-  await page.goto('/'); await expect(page).toHaveTitle(/Move/); await expect(page.locator('form:visible').filter({hasText:'Evidence-first mover research'}).first()).toBeVisible();
+  await page.goto('/'); await expect(page).toHaveTitle(/Move/); await expect(page.getByRole('form',{name:'Mover discovery'})).toBeVisible({timeout:15000}); await expect(page.getByLabel('Origin ZIP')).toBeEditable();
   await page.goto('/local-movers'); await expect(page.getByRole('heading',{name:/Find local movers worth researching/i})).toBeVisible();
   const good=await request.get('/api/move-v2/discovery/search?originZip=33401'); expect(good.status()).toBe(200); const body=await good.text(); expect(body).not.toMatch(/decisionVersion|reviewer|experimental_derived/i);
   expect((await request.get('/api/move-v2/discovery/search?originZip=bad')).status()).toBe(400);

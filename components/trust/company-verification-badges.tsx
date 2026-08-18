@@ -38,7 +38,7 @@ export function CompanyVerificationBadges({
   }
 
   return (
-    <div className={cn('flex flex-wrap items-center gap-1', className)}>
+    <div className={cn('flex min-w-0 max-w-full flex-wrap items-center gap-1', className)}>
       {showDirectory ? (
         <DirectoryVerifiedBadge size={resolvedSize} linkToLegend={linkToLegend} />
       ) : null}
