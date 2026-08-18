@@ -16,13 +16,17 @@ const HUB_HOME: Record<HubLinkId, string> = {
   insurance: '/my-insurance',
   lender: '/my-lending',
   contractor: '/',
+  senior: '/',
+  investor: '/',
 };
 
 const HUB_BLURB: Record<HubLinkId, string> = {
   move: 'Moving directory · FMCSA research',
   insurance: 'Insurance research · plans & agents',
   lender: 'Lending research · NMLS lenders',
-  contractor: 'Contractor research · Florida licenses',
+  contractor: 'Contractor research · state licensing boards',
+  senior: 'Senior care research · CMS / supported states',
+  investor: 'Investment firm research · SEC/IARD',
 };
 
 /**

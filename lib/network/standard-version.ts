@@ -2,7 +2,7 @@
  * Ask Trust Hub network contract version.
  * Bump when network chrome / journey / Trust Mark / ownership seal / methodology cross-links change.
  */
-export const ASK_NETWORK_STANDARD_VERSION = '2026.08.06';
+export const ASK_NETWORK_STANDARD_VERSION = '2026.08.18-network-v2';
 export const ASK_NETWORK_STANDARD_URL = 'https://www.asktrusthub.com/methodology';
 
 export const ASK_NETWORK_STANDARD_LABEL = 'Ask Trust Hub Standard';
@@ -19,4 +19,4 @@ export const ASK_NETWORK_OWNERSHIP_SHORT =
   'Common ownership · Separated research & listing order · No paid placements';
 
 export const ASK_NETWORK_OWNERSHIP_LINE =
-  'Move, Insurance, Lender, and Contractor Trust Hub are part of the Ask Trust Hub network — common ownership, separated research and ordering, no paid placements.';
+  'Move, Lender, Insurance, Contractor, Senior, and Investor Trust Hub are part of the Ask Trust Hub network under common ownership, with separated research and listing order and no paid placements.';

@@ -1,10 +1,25 @@
-export type HubLinkId = 'move' | 'insurance' | 'lender' | 'contractor';
+export type HubLinkId =
+  | 'move'
+  | 'insurance'
+  | 'lender'
+  | 'contractor'
+  | 'senior'
+  | 'investor';
+
+export const SSO_HANDOFF_HUBS = new Set<HubLinkId>([
+  'move',
+  'insurance',
+  'lender',
+  'contractor',
+]);
 
 const HUB_URL: Record<HubLinkId, string> = {
   move: 'https://www.movetrusthub.com',
   insurance: 'https://www.insurancetrusthub.com',
   lender: 'https://www.lendertrusthub.com',
   contractor: 'https://www.contractortrusthub.com',
+  senior: 'https://www.seniortrusthub.com',
+  investor: 'https://www.investortrusthub.com',
 };
 
 const HUB_HOME: Record<HubLinkId, string> = {
@@ -12,6 +27,8 @@ const HUB_HOME: Record<HubLinkId, string> = {
   insurance: '/my-insurance',
   lender: '/my-lending',
   contractor: '/',
+  senior: '/',
+  investor: '/',
 };
 
 const HOST_TO_HUB: Array<{ fragment: string; id: HubLinkId }> = [
@@ -19,6 +36,8 @@ const HOST_TO_HUB: Array<{ fragment: string; id: HubLinkId }> = [
   { fragment: 'insurancetrusthub.com', id: 'insurance' },
   { fragment: 'lendertrusthub.com', id: 'lender' },
   { fragment: 'contractortrusthub.com', id: 'contractor' },
+  { fragment: 'seniortrusthub.com', id: 'senior' },
+  { fragment: 'investortrusthub.com', id: 'investor' },
 ];
 
 export function networkHandoffStartHref(to: HubLinkId, next?: string): string {
@@ -36,6 +55,7 @@ export function networkHubPublicUrl(to: HubLinkId): string {
  * Prefer this over bare public URLs so client auth races cannot skip SSO.
  */
 export function networkHubHref(to: HubLinkId, _signedIn?: boolean, next?: string): string {
+  if (!SSO_HANDOFF_HUBS.has(to)) return HUB_URL[to];
   return networkHandoffStartHref(to, next);
 }
 
@@ -59,6 +79,7 @@ export function rewriteCrossHubHref(
         if (id === currentHub) {
           return `${u.pathname}${u.search}${u.hash}` || '/';
         }
+        if (!SSO_HANDOFF_HUBS.has(id)) return href;
         const next = `${u.pathname}${u.search}` || HUB_HOME[id];
         return networkHandoffStartHref(id, next);
       }

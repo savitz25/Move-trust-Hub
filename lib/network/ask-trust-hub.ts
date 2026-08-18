@@ -61,6 +61,22 @@ export const NETWORK_HUBS = [
     url: 'https://www.contractortrusthub.com',
     email: 'hello@contractortrusthub.com',
   },
+  {
+    id: 'senior' as const,
+    proseName: 'SeniorTrustHub',
+    compactName: 'SeniorTrustHub',
+    shortLabel: 'Senior',
+    url: 'https://www.seniortrusthub.com',
+    email: 'hello@seniortrusthub.com',
+  },
+  {
+    id: 'investor' as const,
+    proseName: 'InvestorTrustHub',
+    compactName: 'InvestorTrustHub',
+    shortLabel: 'Investor',
+    url: 'https://www.investortrusthub.com',
+    email: 'hello@investortrusthub.com',
+  },
 ] as const;
 
 export type NetworkHubId = (typeof NETWORK_HUBS)[number]['id'];

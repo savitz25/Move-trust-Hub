@@ -80,9 +80,10 @@ export function SwitchHubMenu({ className, compact = false }: Props) {
               <li key={hub.id}>
                 <a
                   role="menuitem"
-                  href={resolveSwitchHubHref(hub.id, hub.href)}
+                  href={hub.id === 'move' ? '/' : resolveSwitchHubHref(hub.id, hub.href)}
+                  aria-current={hub.id === 'move' ? 'page' : undefined}
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 rounded-xl px-2.5 py-2.5 transition-colors hover:bg-[#FFF4F0]"
+                  className="flex min-h-11 items-start gap-2 rounded-xl px-2.5 py-2.5 transition-colors hover:bg-[#FFF4F0]"
                   onClick={() => setOpen(false)}
                 >
                   <span className="min-w-0 flex-1">

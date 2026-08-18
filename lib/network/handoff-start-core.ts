@@ -148,6 +148,19 @@ export async function runHandoffStart(opts: {
   }
 
   const toHub = toRaw as NetworkHubId;
+  if (toHub === 'senior' || toHub === 'investor' || toHub === 'ask') {
+    const direct = new URL(
+      opts.next?.startsWith('/') ? opts.next : HUB_DEFAULT_PATH[toHub],
+      HUB_ORIGINS[toHub]
+    ).toString();
+    return {
+      ok: false,
+      fallbackUrl: direct,
+      reason: 'direct_navigation',
+      hasAuthCookie,
+      hasBearer,
+    };
+  }
   const fallbackUrl = new URL(
     opts.next?.startsWith('/') ? opts.next : HUB_DEFAULT_PATH[toHub],
     HUB_ORIGINS[toHub]

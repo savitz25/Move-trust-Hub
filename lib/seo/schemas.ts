@@ -28,6 +28,14 @@ export const organizationSchema = {
   description:
     'Specialist research directory for FMCSA-licensed interstate and long-distance moving companies in the United States. Part of the Ask Trust Hub network under common ownership with separated research and listing order. No lead fees, no paid placements.',
   parentOrganization: ASK_PARENT_ORGANIZATION,
+  sameAs: [
+    'https://www.asktrusthub.com',
+    'https://www.lendertrusthub.com',
+    'https://www.insurancetrusthub.com',
+    'https://www.contractortrusthub.com',
+    'https://www.seniortrusthub.com',
+    'https://www.investortrusthub.com',
+  ],
 };
 
 export const websiteSchema = {

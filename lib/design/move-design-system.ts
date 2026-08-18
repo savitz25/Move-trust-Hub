@@ -59,7 +59,14 @@ export const MOVE_NETWORK_LINKS = [
     label: 'Ask Trust Hub',
     shortLabel: 'Ask',
     href: 'https://www.asktrusthub.com',
-    blurb: 'Parent knowledge & concierge layer',
+    blurb: 'Parent research & standards layer',
+  },
+  {
+    id: 'move' as const,
+    label: 'Move Trust Hub',
+    shortLabel: 'Move',
+    href: 'https://www.movetrusthub.com',
+    blurb: 'FMCSA / SAFER mover research',
   },
   {
     id: 'lender' as const,
@@ -80,7 +87,21 @@ export const MOVE_NETWORK_LINKS = [
     label: 'Contractor Trust Hub',
     shortLabel: 'Contractor',
     href: 'https://www.contractortrusthub.com',
-    blurb: 'Florida contractor license verification & project planning',
+    blurb: 'State licensing-board contractor research',
+  },
+  {
+    id: 'senior' as const,
+    label: 'SeniorTrustHub',
+    shortLabel: 'Senior',
+    href: 'https://www.seniortrusthub.com',
+    blurb: 'CMS / supported state senior-care research',
+  },
+  {
+    id: 'investor' as const,
+    label: 'InvestorTrustHub',
+    shortLabel: 'Investor',
+    href: 'https://www.investortrusthub.com',
+    blurb: 'SEC / IARD investment-firm research',
   },
 ] as const;
 

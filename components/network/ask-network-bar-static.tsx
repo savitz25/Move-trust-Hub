@@ -4,15 +4,8 @@ import {
   NETWORK_HUBS,
   type NetworkHubId,
 } from '@/lib/network/ask-trust-hub';
-import { networkHubHref, type HubLinkId } from '@/lib/network/handoff-href';
+import { SwitchHubMenu } from '@/components/switch-hub-menu';
 import { cn } from '@/lib/utils';
-
-const HUB_HOME: Record<HubLinkId, string> = {
-  move: '/my-move',
-  insurance: '/my-insurance',
-  lender: '/my-lending',
-  contractor: '/',
-};
 
 /**
  * Server-rendered network bar chrome (desktop pills + brand link).
@@ -45,35 +38,14 @@ export function AskNetworkBarStatic({
           <span className="sm:hidden">Ask Trust Hub</span>
         </a>
 
-        <nav
-          aria-label="Ask Trust Hub network"
-          className="hidden items-center gap-1 sm:flex"
-        >
-          {NETWORK_HUBS.map((h) => {
-            const id = h.id as HubLinkId;
-            const active = h.id === activeHub;
-            if (active) {
-              return (
-                <span
-                  key={h.id}
-                  className="rounded-md bg-background px-2.5 py-1.5 font-semibold text-[#0A2540] shadow-sm ring-1 ring-border/60"
-                  aria-current="page"
-                >
-                  {h.shortLabel}
-                </span>
-              );
-            }
-            const href = networkHubHref(id, true, HUB_HOME[id]);
-            return (
-              <a
-                key={h.id}
-                href={href}
-                className="rounded-md px-2.5 py-1.5 font-medium text-[#3d4f63] hover:bg-background/80 hover:text-[#0A2540]"
-              >
-                {h.shortLabel}
-              </a>
-            );
-          })}
+        <div className="hidden items-center gap-2 sm:flex">
+          <span
+            className="rounded-md bg-background px-2.5 py-1.5 font-semibold text-[#0A2540] shadow-sm ring-1 ring-border/60"
+            aria-current="page"
+          >
+            {NETWORK_HUBS.find((h) => h.id === activeHub)?.shortLabel ?? 'Move'}
+          </span>
+          <SwitchHubMenu compact />
           <a
             href={ASK_TRUST_HUB.standardsUrl}
             className="rounded-md px-2.5 py-1.5 font-medium text-[#3d4f63] hover:bg-background/80 hover:text-[#0A2540]"
@@ -81,7 +53,7 @@ export function AskNetworkBarStatic({
           >
             Standards
           </a>
-        </nav>
+        </div>
 
         <div className="sm:hidden">{mobileSlot}</div>
       </div>
