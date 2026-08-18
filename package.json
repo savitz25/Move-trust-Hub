@@ -23,7 +23,7 @@
     "test:browser:move-v2": "playwright test tests/browser/move-v2-consumer.spec.ts",
     "test:browser:move-v2-review": "playwright test tests/browser/move-v2-review-console.spec.ts --project=desktop",
     "test:browser:move-v2-migration": "playwright test tests/browser/move-v2-migration.spec.ts --project=desktop",
-    "test:browser:move-v2-launch": "playwright test tests/browser/move-v2-launch-candidate.spec.ts --project=desktop",
+    "test:browser:move-v2-launch": "playwright test tests/browser/move-v2-launch-candidate.spec.ts tests/browser/move-v2-mobile-launch-repair.spec.ts --project=desktop",
     "test:browser:move-v2-rollback": "playwright test tests/browser/move-v2-rollback.spec.ts --project=desktop",
     "validate:seo:move-v2": "tsx scripts/move-v2/migration/validate-task-012-seo.ts",
     "start:move-v2:qa": "cross-env MOVE_ENABLE_V2=true MOVE_ENABLE_REAL_PROVIDER_DATA=true MOVE_ENABLE_PUBLIC_READS=true MOVE_ENABLE_SAME_URL_COMPOSITION=true MOVE_ENABLE_INTERNAL_REVIEW=true MOVE_BROWSER_QA=true next start -p 3110",
