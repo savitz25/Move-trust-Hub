@@ -34,7 +34,7 @@ export const virginiaCountyOverrides: Partial<
   'newport-news': { seat: 'Newport News', metro: 'newport-news-metro-va' },
   stafford: { seat: 'Stafford', metro: 'stafford-metro-va' },
   alexandria: { seat: 'Alexandria', metro: 'alexandria-metro-va' },
-  spotsylvania: { seat: 'Spotsylvania', metro: 'spotsylvania-metro-va' },
+  spotsylvania: { seat: 'Spotsylvania Courthouse', metro: 'spotsylvania-metro-va' },
   hampton: { seat: 'Hampton', metro: 'hampton-metro-va' },
   albemarle: { seat: 'Charlottesville', metro: 'albemarle-metro-va' },
   hanover: { seat: 'Hanover', metro: 'hanover-metro-va' },
@@ -191,11 +191,15 @@ export function applyVirginiaCountyOverrides(county: LocalCounty): LocalCounty {
   const cityDisambiguation = duplicateMap?.[county.metro ?? ''];
 
   if (cityDisambiguation) {
-    return {
+    const disambiguated = {
       ...county,
       slug: cityDisambiguation.slug,
       name: cityDisambiguation.name,
     };
+    const disambiguatedOverride = virginiaCountyOverrides[disambiguated.slug];
+    return disambiguatedOverride
+      ? { ...disambiguated, ...disambiguatedOverride }
+      : disambiguated;
   }
 
   const override = virginiaCountyOverrides[county.slug];

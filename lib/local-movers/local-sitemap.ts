@@ -648,15 +648,7 @@ const NY_HIGH_TRAFFIC_COUNTIES = new Set([
   'westchester',
 ]);
 
-export async function generateSitemaps() {
-  return localStates.map((state) => ({ id: state.slug }));
-}
-
-export default async function sitemap({
-  id,
-}: {
-  id: string;
-}): Promise<MetadataRoute.Sitemap> {
+export async function buildLocalStateSitemap(id: string): Promise<MetadataRoute.Sitemap> {
   // Sync seed catalog only — do not hit Supabase while generating ~50 state sitemaps at build.
   const counties = getCountiesForState(id);
   const indexableCounties = counties.filter((county) => {
