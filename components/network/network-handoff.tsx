@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowUpRight } from 'lucide-react';
 import {
   resolveNetworkHandoff,
@@ -7,7 +9,30 @@ import {
 } from '@/lib/network/network-handoff';
 import { TrustMark } from '@/components/network/trust-mark';
 import { CrossHubLink } from '@/components/network/cross-hub-link';
+import { trackJourneyHandoff } from '@/lib/network/journey-events';
 import { cn } from '@/lib/utils';
+
+function surfaceFor(context: NetworkHandoffContext): 'move_destination' | 'move_plan_completion' {
+  return context === 'move-plan' ? 'move_plan_completion' : 'move_destination';
+}
+
+function onHandoffClick(
+  context: NetworkHandoffContext,
+  geography: NetworkHandoffGeography | undefined,
+  hub: NetworkHandoffLink['hub']
+) {
+  if (hub !== 'insurance' && hub !== 'lender' && hub !== 'move') return;
+  const dest = hub === 'insurance' ? 'insurance' : hub === 'lender' ? 'lender' : 'move';
+  const buying = geography?.intent === 'buy' || geography?.journey === 'purchase';
+  trackJourneyHandoff({
+    destination_hub: dest,
+    surface: surfaceFor(context),
+    journey_id: buying ? 'purchase' : 'relocate',
+    context_type: buying ? 'home_buy' : 'relocate',
+    intent: geography?.intent === 'buy' || geography?.intent === 'rent' ? geography.intent : undefined,
+    state: geography?.stateCode,
+  });
+}
 
 export type NetworkHandoffProps = {
   context: NetworkHandoffContext;
@@ -51,6 +76,7 @@ export function NetworkHandoff({
                 href={link.href}
                 currentHub="move"
                 className="font-medium text-primary underline-offset-2 hover:underline"
+                onClick={() => onHandoffClick(context, geography, link.hub)}
               >
                 {link.label}
               </CrossHubLink>
@@ -84,6 +110,7 @@ export function NetworkHandoff({
               href={link.href}
               currentHub="move"
               className="inline-flex items-center gap-1 font-semibold text-foreground underline-offset-2 hover:underline"
+              onClick={() => onHandoffClick(context, geography, link.hub)}
             >
               {link.label}
               <ArrowUpRight className="h-3.5 w-3.5 shrink-0 opacity-70" aria-hidden />
@@ -119,6 +146,7 @@ export function NetworkHandoff({
               href={link.href}
               currentHub="move"
               className="inline-flex min-h-10 w-full items-center justify-center gap-1.5 rounded-lg border border-border/80 bg-background px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary/30 hover:bg-muted/40 sm:w-auto"
+              onClick={() => onHandoffClick(context, geography, link.hub)}
             >
               {link.label}
               <ArrowUpRight className="h-3.5 w-3.5 shrink-0 opacity-70" aria-hidden />

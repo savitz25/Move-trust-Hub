@@ -19,6 +19,16 @@ function assert(cond, msg) {
 assert(src.includes("intent === 'buy'"), 'lender gated on buy intent');
 assert(src.includes("Research insurance"), 'insurance CTA');
 assert(src.includes('Mortgage research is not assumed'), 'renters not pushed to mortgage');
+const events = readFileSync(
+  join(dirname(fileURLToPath(import.meta.url)), '../lib/network/journey-events.ts'),
+  'utf8'
+);
+const dest = readFileSync(
+  join(dirname(fileURLToPath(import.meta.url)), '../components/network/continue-trust-journey.tsx'),
+  'utf8'
+);
+assert(events.includes('journey_handoff_click'), 'Move uses journey_handoff_click');
+assert(dest.includes('trackJourneyHandoff'), 'Move destination cards instrumented');
 if (failed) {
   console.error(`${failed} failed`);
   process.exit(1);

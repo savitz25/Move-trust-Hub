@@ -12,6 +12,7 @@ import {
   writeMoveResearchSession,
 } from '@/lib/network/research-session';
 import { cn } from '@/lib/utils';
+import { trackJourneyHandoff } from '@/lib/network/journey-events';
 
 type Props = {
   geo: MoveJourneyGeo;
@@ -126,6 +127,16 @@ export function ContinueTrustJourney({
               data-journey-hub={card.hub}
               data-journey-priority={card.priority}
               data-journey-intent={intent}
+              onClick={() =>
+                trackJourneyHandoff({
+                  destination_hub: card.hub === 'lender' ? 'lender' : 'insurance',
+                  surface: 'move_destination',
+                  journey_id: intent === 'buy' ? 'purchase' : 'relocate',
+                  context_type: intent === 'rent' ? 'move_rent' : intent === 'buy' ? 'home_buy' : 'relocate',
+                  intent: intent === 'unknown' ? undefined : intent,
+                  state: geo.stateCode,
+                })
+              }
             >
               <span className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                 {card.priority === 'primary' ? 'Next step' : 'Also useful'}
