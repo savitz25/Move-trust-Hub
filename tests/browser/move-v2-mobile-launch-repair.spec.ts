@@ -36,7 +36,7 @@ async function expectPageContained(page: import('@playwright/test').Page, route:
   expect(dimensions.scroll, `${route} overflowed at ${dimensions.client}px`).toBeLessThanOrEqual(dimensions.client + 1);
 }
 
-test('homepage discovery reveals reliably and remains usable at launch viewports', async ({ page }) => {
+test('homepage discovery reveals reliably and remains usable at launch viewports', async ({ page }, testInfo) => {
   for (const viewport of [...viewports, { name: 'tablet', width: 768, height: 1024 }, { name: 'desktop', width: 1280, height: 800 }]) {
     await page.setViewportSize(viewport);
     for (let attempt = 0; attempt < 3; attempt += 1) {
@@ -49,11 +49,17 @@ test('homepage discovery reveals reliably and remains usable at launch viewports
       await origin.fill('33401');
       await expect(form.getByRole('button', { name: 'Research movers' })).toBeEnabled();
       await expectPageContained(page, `home ${viewport.name} attempt ${attempt + 1}`);
+      if (attempt === 2) {
+        await testInfo.attach(`homepage-${viewport.name}`, {
+          body: await page.screenshot({ fullPage: true }),
+          contentType: 'image/png',
+        });
+      }
     }
   }
 });
 
-test('provider templates stay viewport-contained across representative data shapes', async ({ page }) => {
+test('provider templates stay viewport-contained across representative data shapes', async ({ page }, testInfo) => {
   for (const viewport of viewports) {
     await page.setViewportSize(viewport);
     for (const route of providers) {
@@ -61,6 +67,12 @@ test('provider templates stay viewport-contained across representative data shap
       expect(response?.status(), `${route} at ${viewport.name}`).toBe(200);
       await expect(page.getByRole('main')).toBeVisible();
       await expectPageContained(page, `${route} at ${viewport.name}`);
+      if (route === '/companies/allied-van-lines') {
+        await testInfo.attach(`allied-${viewport.name}`, {
+          body: await page.screenshot({ fullPage: true }),
+          contentType: 'image/png',
+        });
+      }
     }
   }
 });
