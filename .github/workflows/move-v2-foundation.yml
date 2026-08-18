@@ -22,7 +22,9 @@ permissions:
 jobs:
   domain-foundation:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # The production build plus pinned Chromium installation routinely exceeds
+    # 15 minutes on a cold hosted runner. Keep every gate; allow them to finish.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

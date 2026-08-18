@@ -271,3 +271,55 @@ No Production flag was changed. The first four are intentionally dark now but mu
 - CI on starting SHA: PASS. New-branch CI must be observed after push.
 - Remaining blocker: a successful Vercel production-equivalent route-package proof for the static `/moving-to/*` family.
 - Verdict: **BLOCKED — NOT READY FOR TASK 014C**. Reproduce the static-route packaging failure in Vercel's remote non-production build environment or align the local build adapter with the project-supported Vercel runtime; do not deploy or alter Production.
+
+## Task 014B.2
+
+### Starting point and route contract
+
+- Starting SHA: `1f9848aaa14ebee56d4d892cf113ec115f71c7e5`.
+- Final SHA: the immutable `task-014-launch` HEAD containing this section; the exact value is recorded in the Task 014B.2 handoff and PR #2 checks.
+- Production, its aliases/domain/DNS, Production environment, and Production database were unchanged.
+- `/moving-to` and the explicit state landing pages are static per application release.
+- `/moving-to/[slug]` and `/moving-to/{state}/[slug]` city pages are intentionally **ISR**: `dynamic = 'force-static'`, `dynamicParams = true`, `revalidate = 60`, and canonical release-backed `generateStaticParams()`. The 60-second regeneration exists to pick up approved nearby mover changes; unknown/unpublished slugs resolve through the established resolver and `notFound()` contract.
+- Destination content, market definitions, and published-slug inputs are repository release data. The page render has no cookies, headers, request-specific search parameters, no-store fetch, or request-time database access.
+
+### Next.js and Vercel classification
+
+`next build --debug` with Production-equivalent configuration passed and generated 1,829 pages. Next classifies state landing pages as static prerenders with no revalidation (`initialRevalidateSeconds: false`). City routes have prerendered release entries plus dynamic ISR route manifests and runtime fallback because `dynamicParams` is true; their revalidation interval is 60 seconds.
+
+The Windows-local Vercel adapter failed after the valid Next build while converting `.next` output into Build Output API v3. Across clean attempts, CLI 59.1.4 under Node 24 and Node 22 and CLI 48.11.1 requested a nonexistent lambda for a different static state page (`/moving-to/alabama`, then `/moving-to/alaska`, then `/moving-to/arkansas`). The named routes are static prerender entries, not the intentional ISR fallback functions. The changing route and incomplete `.vercel/output` show the failure is in local Windows packaging/tracing, not Next route generation.
+
+Authoritative hosted Linux/Vercel evidence: draft PR #2 produced Preview deployment `dpl_8GYWm1THis5U8Db6edWcaRphsSE2`, target `preview`, status **Ready**, with the expected functions and 843 additional output items. No promotion or Production alias occurred. Therefore the application contract is correct and the prior launch gate was wrong to require a Windows-local `vercel build` as authoritative when the hosted non-production package succeeds.
+
+### GitHub Actions trigger diagnosis and correction
+
+No run existed for `1f9848a...` because `Move V2 foundation` accepts pushes only to `move-2.0`, County SEO accepts pushes only to `main` or `phase-1-1-*`, and both accept qualifying pull requests. The repair branch had no PR and neither workflow exposes `workflow_dispatch`.
+
+Draft PR #2 (`task-014-launch` into `move-2.0`) is the supported non-production trigger. Its first run passed checkout, install, Move lint, Move typecheck, all Move tests, and the production build, then the job-level 15-minute limit canceled pinned Chromium installation before browser tests. No test failed. The workflow time budget was raised to 30 minutes while retaining every build, browser, SEO, flag, and audit gate. Final CI result for the final SHA: **PENDING until the post-documentation PR #2 rerun completes**.
+
+### MOVE_ENABLE launch matrix
+
+| Flag | Current Production | Feature controlled | User experience when false | User experience when true | Experimental? | Data dependency | Core launch? | Recommendation | Reason |
+|---|---:|---|---|---|---:|---|---:|---|---|
+| `MOVE_ENABLE_V2` | false | V2 orchestration | V1 remains authoritative | V2 server orchestration available | no | approved V2 code/release | yes | ENABLE FOR LAUNCH | master V2 gate; phase 6 only |
+| `MOVE_ENABLE_REAL_PROVIDER_DATA` | false | immutable provider release reads | synthetic/dark behavior only | approved 86-provider release may be read | no | approved release pointer/fingerprint | yes | ENABLE FOR LAUNCH | required for FL/WA evidence results; phase 6 |
+| `MOVE_ENABLE_PUBLIC_READS` | false | public discovery read APIs | endpoints return 404; consumers remain V1 | validated read-only search/report/compare APIs available | no | V2 + approved provider release | yes | ENABLE FOR LAUNCH | phase 7 after internal read validation |
+| `MOVE_ENABLE_SAME_URL_COMPOSITION` | false | V2 composition on historical URLs | homepage/local routes remain V1 | V2 search and evidence UI compose into preserved URLs | no | V2 + real data + public reads | yes | ENABLE FOR LAUNCH | phase 8 only after public-read smoke passes |
+| `MOVE_ENABLE_GOOGLE_ENRICHMENT` | false | Google enrichment jobs | no Google enrichment | enrichment processing can run | yes for launch | Google Places key and bounded job controls | no | KEEP FALSE | mass/request-time enrichment is excluded |
+| `MOVE_ENABLE_WEBSITE_ENRICHMENT` | false | bounded website crawler | no website crawling | website evidence enrichment can run | yes for launch | crawler controls and review workflow | no | KEEP FALSE | mass/request-time crawling is excluded |
+| `MOVE_ENABLE_INTERNAL_REVIEW` | false | reviewer console | internal review UI unavailable | internal synthetic/preview console may be available outside Production | internal-only | reviewer authorization and operations schema | no | KEEP FALSE | reviewer/operations UI is excluded from Production launch |
+
+The first four flags must remain false for the dark code deployment and then be enabled sequentially at Tasks 014 phases 6, 7, and 8. This is not an all-at-once configuration change. The three excluded/internal flags remain false. No Production value was changed in Task 014B.2.
+
+### Regression status and verdict
+
+- Production-equivalent Next build/debug: PASS.
+- Hosted Vercel Preview package: PASS / Ready.
+- Move V2 tests: PASS, including an explicit ISR-contract regression.
+- SEO golden: 28/28 PASS.
+- County SEO: PASS, zero mismatches.
+- Desktop and mobile Playwright: PASS from Task 014B.1; the unchanged application routes remain covered by the final CI browser suite.
+- Legacy lender/insurance audit: PASS.
+- Database read-only configuration: READY. Analytics: READY. CRON secret: READY.
+- Remaining blocker at documentation commit: final CI must complete successfully for the final SHA.
+- Verdict at documentation commit: **PENDING FINAL CI**. If PR #2 checks pass on the final SHA, Task 014B.2 is READY FOR TASK 014C; otherwise it remains blocked.
