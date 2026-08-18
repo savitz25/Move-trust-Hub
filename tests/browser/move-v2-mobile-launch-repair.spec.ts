@@ -9,16 +9,16 @@ const viewports = [
 const providers = [
   '/companies/allied-van-lines',
   '/companies/international-van-lines',
-  '/companies/georgia-home-movers-llc',
-  '/companies/colonial-van-lines',
-  '/companies/usa-family-moving-of-atlanta-llc',
-  '/companies/american-van-lines',
-  '/companies/amerisafe-van-lines',
-  '/companies/morse-moving-storage-inc',
+  '/companies/united-van-lines',
+  '/companies/north-american-van-lines',
+  '/companies/mayflower-transit',
   '/companies/jk-moving-services',
+  '/companies/safeway-moving',
+  '/companies/colonial-van-lines',
+  '/companies/american-van-lines',
+  '/companies/bekins-van-lines',
+  '/companies/atlas-van-lines',
   '/companies/two-men-and-a-truck',
-  '/companies/royal-hawaiian-trucking-warehousing',
-  '/companies/carson-valley-movers',
 ];
 
 const criticalPages = [
