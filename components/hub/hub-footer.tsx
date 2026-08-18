@@ -14,6 +14,7 @@ import {
   networkHubById,
   type NetworkHubId,
 } from '@/lib/network/ask-trust-hub';
+import { networkHubHref, type HubLinkId } from '@/lib/network/handoff-href';
 import { cn } from '@/lib/utils';
 
 export function HubFooter({ hubId }: { hubId?: HubId }) {
@@ -166,19 +167,22 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
                   Network methodology
                 </a>
               </div>
-              {NETWORK_HUBS.filter((h) => h.id !== networkId).map((h) => (
-                <div key={h.id}>
-                  <a
-                    href={`/api/auth/network-handoff/start?to=${encodeURIComponent(h.id)}&next=${encodeURIComponent(
-                      h.id === 'move' ? '/my-move' : h.id === 'insurance' ? '/my-insurance' : '/my-lending'
-                    )}`}
-                    className={cn('transition-colors', isMove ? 'hover:text-white' : 'hover:text-foreground')}
-                    data-network-handoff="start"
-                  >
-                    {h.proseName}
-                  </a>
-                </div>
-              ))}
+              {NETWORK_HUBS.filter((h) => h.id !== networkId).map((h) => {
+                const href = networkHubHref(h.id as HubLinkId);
+                const sso = href.includes('/api/auth/network-handoff/start');
+                return (
+                  <div key={h.id}>
+                    <a
+                      href={href}
+                      className={cn('transition-colors', isMove ? 'hover:text-white' : 'hover:text-foreground')}
+                      rel="noopener noreferrer"
+                      data-network-handoff={sso ? 'start' : undefined}
+                    >
+                      {h.proseName}
+                    </a>
+                  </div>
+                );
+              })}
               {isMove ? (
                 <>
                   <div className="pt-2">
