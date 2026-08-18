@@ -88,7 +88,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
           <div className="flex flex-wrap items-center gap-2">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
             <CompanyTypeBadges company={company} size="default" className="shrink-0" />
-            <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
+            <CompanyVerificationBadges company={company} size="profile" className="justify-start" />
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
