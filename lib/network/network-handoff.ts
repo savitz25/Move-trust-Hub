@@ -28,6 +28,9 @@ export type NetworkHandoffGeography = {
   stateSlug?: string;
   county?: string;
   city?: string;
+  /** buy | rent — Lender only when buying. */
+  intent?: 'buy' | 'rent' | 'refi' | 'unknown';
+  journey?: 'relocate' | 'purchase' | 'coverage' | 'refi' | 'unknown';
 };
 
 export type NetworkHandoffVariant = 'inline' | 'card' | 'compact';
@@ -113,44 +116,54 @@ export function resolveNetworkHandoff(
 
   switch (context) {
     case 'move-destination': {
+      const buying = geography?.intent === 'buy' || geography?.journey === 'purchase';
       const where = place
-        ? `Your move to ${place} is one part of settling in.`
-        : 'Your move is one part of settling in.';
+        ? `Moving changes more than your address in ${place}.`
+        : 'Moving changes more than your address.';
+      const links: NetworkHandoffLink[] = [
+        {
+          href: insuranceDirectoryHref(geography),
+          label: 'Research insurance',
+          hub: 'insurance',
+        },
+      ];
+      if (buying) {
+        links.push({
+          href: lenderStateHref(geography),
+          label: 'Research lenders',
+          hub: 'lender',
+        });
+      }
       return {
         label,
-        body: `${where} Next: coverage research for your destination, and local lenders if you’re buying — research only, context preserved in the URL.`,
-        links: [
-          {
-            href: insuranceDirectoryHref(geography),
-            label: 'Research coverage for your destination',
-            hub: 'insurance',
-          },
-          {
-            href: lenderStateHref(geography),
-            label: place
-              ? `Research lenders near ${place}`
-              : 'Research local lenders',
-            hub: 'lender',
-          },
-        ],
+        body: buying
+          ? `${where} Review homeowners, renters, auto, or other relevant coverage for the new location. Buying at your destination? Research lenders before you commit.`
+          : `${where} Review homeowners, renters, auto, or other relevant coverage for the new location. Mortgage research is not assumed.`,
+        links,
       };
     }
     case 'move-plan': {
+      const buying = geography?.intent === 'buy' || geography?.journey === 'purchase';
+      const links: NetworkHandoffLink[] = [
+        {
+          href: insuranceDirectoryHref(geography),
+          label: 'Research insurance',
+          hub: 'insurance',
+        },
+      ];
+      if (buying) {
+        links.push({
+          href: lenderStateHref(geography),
+          label: 'Research lenders',
+          hub: 'lender',
+        });
+      }
       return {
         label,
-        body: 'Mover shortlist ready. Settling in often means coverage next — and financing if this move is a purchase. Independent research only.',
-        links: [
-          {
-            href: insuranceDirectoryHref(geography),
-            label: 'Research homeowners or renters coverage',
-            hub: 'insurance',
-          },
-          {
-            href: lenderStateHref(geography),
-            label: 'Research NMLS-verified lenders',
-            hub: 'lender',
-          },
-        ],
+        body: buying
+          ? 'Buying at your destination? Research lenders and financing before you commit, and review coverage for the new location.'
+          : 'Review homeowners, renters, auto, or other relevant coverage for the new location. Financing is only offered when this move is a purchase.',
+        links,
       };
     }
     case 'lender-closing': {
