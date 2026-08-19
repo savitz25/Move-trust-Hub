@@ -1,0 +1,429 @@
+[
+  {
+    "path": "/",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "homepage",
+    "expectedStructuredDataTypes": [
+      "FAQPage",
+      "Organization",
+      "Service",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/"
+  },
+  {
+    "path": "/companies/allied-van-lines",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/companies/allied-van-lines",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "provider",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/companies/allied-van-lines"
+  },
+  {
+    "path": "/companies/united-van-lines",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/companies/united-van-lines",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "provider",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/companies/united-van-lines"
+  },
+  {
+    "path": "/companies/north-american-van-lines",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/companies/north-american-van-lines",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "provider",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/companies/north-american-van-lines"
+  },
+  {
+    "path": "/companies/mayflower-transit",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/companies/mayflower-transit",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "provider",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/companies/mayflower-transit"
+  },
+  {
+    "path": "/companies/jk-moving-services",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/companies/jk-moving-services",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "provider",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/companies/jk-moving-services"
+  },
+  {
+    "path": "/local-movers/alabama",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/local-movers/alabama",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "state_movers",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "CollectionPage",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/local-movers/alabama"
+  },
+  {
+    "path": "/local-movers/alaska",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/local-movers/alaska",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "state_movers",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "CollectionPage",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/local-movers/alaska"
+  },
+  {
+    "path": "/local-movers/arizona",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/local-movers/arizona",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "state_movers",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "CollectionPage",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/local-movers/arizona"
+  },
+  {
+    "path": "/local-movers/alabama/baldwin",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/local-movers/alabama/baldwin",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "county_local_movers",
+    "expectedStructuredDataTypes": [
+      "AdministrativeArea",
+      "BreadcrumbList",
+      "FAQPage",
+      "ItemList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/local-movers/alabama/baldwin"
+  },
+  {
+    "path": "/local-movers/alabama/bibb",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/local-movers/alabama/bibb",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "county_local_movers",
+    "expectedStructuredDataTypes": [
+      "AdministrativeArea",
+      "BreadcrumbList",
+      "FAQPage",
+      "ItemList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/local-movers/alabama/bibb"
+  },
+  {
+    "path": "/local-movers/alabama/bullock",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/local-movers/alabama/bullock",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "county_local_movers",
+    "expectedStructuredDataTypes": [
+      "AdministrativeArea",
+      "BreadcrumbList",
+      "FAQPage",
+      "ItemList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/local-movers/alabama/bullock"
+  },
+  {
+    "path": "/local-movers/alabama/choctaw",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/local-movers/alabama/choctaw",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "county_local_movers",
+    "expectedStructuredDataTypes": [
+      "AdministrativeArea",
+      "BreadcrumbList",
+      "FAQPage",
+      "ItemList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/local-movers/alabama/choctaw"
+  },
+  {
+    "path": "/local-movers/alabama/clarke",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/local-movers/alabama/clarke",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "county_local_movers",
+    "expectedStructuredDataTypes": [
+      "AdministrativeArea",
+      "BreadcrumbList",
+      "FAQPage",
+      "ItemList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/local-movers/alabama/clarke"
+  },
+  {
+    "path": "/moving-to/south-carolina/myrtle-beach-sc",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/moving-to/south-carolina/myrtle-beach-sc",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "moving_to",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "City",
+      "FAQPage",
+      "HowTo",
+      "ItemList",
+      "LocalBusiness",
+      "Organization",
+      "Service",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/moving-to/south-carolina/myrtle-beach-sc"
+  },
+  {
+    "path": "/moving-to/south-carolina/north-myrtle-beach",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/moving-to/south-carolina/north-myrtle-beach",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "moving_to",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "City",
+      "FAQPage",
+      "HowTo",
+      "ItemList",
+      "LocalBusiness",
+      "Organization",
+      "Service",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/moving-to/south-carolina/north-myrtle-beach"
+  },
+  {
+    "path": "/moving-to/south-carolina/surfside-beach",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/moving-to/south-carolina/surfside-beach",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "moving_to",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "City",
+      "FAQPage",
+      "HowTo",
+      "ItemList",
+      "LocalBusiness",
+      "Organization",
+      "Service",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/moving-to/south-carolina/surfside-beach"
+  },
+  {
+    "path": "/resources/guides/moving-to-myrtle-beach-2026",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/resources/guides/moving-to-myrtle-beach-2026",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "guide",
+    "expectedStructuredDataTypes": [
+      "Article",
+      "BreadcrumbList",
+      "Organization",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/resources/guides/moving-to-myrtle-beach-2026"
+  },
+  {
+    "path": "/resources/guides/moving-to-coeur-dalene-2026",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/resources/guides/moving-to-coeur-dalene-2026",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "guide",
+    "expectedStructuredDataTypes": [
+      "Article",
+      "BreadcrumbList",
+      "Organization",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/resources/guides/moving-to-coeur-dalene-2026"
+  },
+  {
+    "path": "/resources/guides/moving-to-idaho-falls-2026",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/resources/guides/moving-to-idaho-falls-2026",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "guide",
+    "expectedStructuredDataTypes": [
+      "Article",
+      "BreadcrumbList",
+      "Organization",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/resources/guides/moving-to-idaho-falls-2026"
+  },
+  {
+    "path": "/moving-calculator",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/moving-calculator",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "inventory_calculator",
+    "expectedStructuredDataTypes": [
+      "FAQPage",
+      "Organization",
+      "Service",
+      "WebApplication",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/moving-calculator"
+  },
+  {
+    "path": "/my-move",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/my-move",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "move_plan",
+    "expectedStructuredDataTypes": [
+      "Organization",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/my-move"
+  },
+  {
+    "path": "/compare",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/compare",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "compare",
+    "expectedStructuredDataTypes": [
+      "Organization",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/compare"
+  },
+  {
+    "path": "/verify-dot",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/verify-dot",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "dot_verification",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "FAQPage",
+      "HowTo",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/verify-dot"
+  },
+  {
+    "path": "/auto-transport",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/auto-transport",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "auto_transport",
+    "expectedStructuredDataTypes": [
+      "FAQPage",
+      "Organization",
+      "Service",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/auto-transport"
+  },
+  {
+    "path": "/companies/pods",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/companies/pods",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "provider",
+    "expectedStructuredDataTypes": [
+      "BreadcrumbList",
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/companies/pods"
+  },
+  {
+    "path": "/about",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/about",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "about_methodology",
+    "expectedStructuredDataTypes": [
+      "AboutPage",
+      "BreadcrumbList",
+      "Organization",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/about"
+  },
+  {
+    "path": "/about/how-we-score-movers",
+    "expectedStatus": 200,
+    "expectedCanonical": "https://www.movetrusthub.com/about/how-we-score-movers",
+    "expectedIndexable": true,
+    "expectedRouteFamily": "about_methodology",
+    "expectedStructuredDataTypes": [
+      "Organization",
+      "WebPage",
+      "WebSite"
+    ],
+    "expectedMigrationTarget": "/about/how-we-score-movers"
+  }
+]

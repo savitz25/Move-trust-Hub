@@ -8,7 +8,7 @@ import { NetworkTrustBlock } from '@/components/move/network-trust-block';
  * Homepage — SSR H1 in MoveHero is the LCP candidate.
  * Rhythm: Hero → tools → Map → Network → Playbook/FAQ → Footer.
  */
-export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
+export async function HomePage({ mapSection, launchEntry }: { mapSection?: ReactNode; launchEntry?: ReactNode }) {
   return (
     <div className="flex flex-col">
       <section className="relative overflow-hidden border-b border-border/60">
@@ -29,6 +29,8 @@ export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
           <MoveHero />
         </div>
       </section>
+
+      {launchEntry ? <div className="border-b bg-muted/20 py-6">{launchEntry}</div> : null}
 
       {/* Quick tools — tight bridge between hero and map */}
       <div className="border-b border-border/50 bg-background">

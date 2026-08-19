@@ -1,0 +1,15 @@
+export const DERIVED_MODEL_VERSION="MOVE_LOCAL_DERIVED_2026_08_V1" as const;
+export function radiusForPowerUnits(powerUnits:number|null|undefined){const units=Math.max(1,powerUnits??1);return Math.round(Math.min(185,Math.max(45,45+22*Math.log(units)))*10)/10}
+export const milesBetween=(a:[number,number],b:[number,number])=>{const r=3958.7613,toRad=(x:number)=>x*Math.PI/180;const dLat=toRad(b[1]-a[1]),dLon=toRad(b[0]-a[0]);const v=Math.sin(dLat/2)**2+Math.cos(toRad(a[1]))*Math.cos(toRad(b[1]))*Math.sin(dLon/2)**2;return 2*r*Math.asin(Math.sqrt(v))};
+const inRing=(p:[number,number],ring:number[][])=>{let inside=false;for(let i=0,j=ring.length-1;i<ring.length;j=i++){const [xi,yi]=ring[i],[xj,yj]=ring[j];if((yi>p[1])!==(yj>p[1])&&p[0]<(xj-xi)*(p[1]-yi)/(yj-yi)+xi)inside=!inside}return inside};
+interface CountyGeometry { type:"Polygon"|"MultiPolygon"; coordinates:number[][][]|number[][][][] }
+const polygonsOf=(g:CountyGeometry):number[][][][]=>g.type==="Polygon"?[g.coordinates as number[][][]]:g.coordinates as number[][][][];
+export function pointInGeometry(p:[number,number],g:CountyGeometry):boolean{return polygonsOf(g).some((poly)=>inRing(p,poly[0])&&!poly.slice(1).some(r=>inRing(p,r)))}
+export function countyRelationship(center:[number,number],radius:number,geometry:CountyGeometry){const polygons=polygonsOf(geometry);const points:number[][]=polygons.flatMap((p)=>p[0]);const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);let county=0,both=0;const steps=24;for(let x=0;x<=steps;x++)for(let y=0;y<=steps;y++){const p:[number,number]=[minX+(maxX-minX)*x/steps,minY+(maxY-minY)*y/steps];if(pointInGeometry(p,geometry)){county++;if(milesBetween(center,p)<=radius)both++}}
+ const home=pointInGeometry(center,geometry);const vertexHit=points.some(p=>milesBetween(center,[p[0],p[1]])<=radius);const bearings=[0,45,90,135,180,225,270,315].map(d=>{const rad=d*Math.PI/180,lat=center[1]+radius/69*Math.cos(rad),lon=center[0]+radius/(69*Math.cos(center[1]*Math.PI/180))*Math.sin(rad);return [lon,lat] as [number,number]}).some(p=>pointInGeometry(p,geometry));
+ const overlap=county?both/county:0;const intersects=home||vertexHit||bearings||both>0;return{home,intersects,overlap,placementType:home?"HOME_COUNTY":overlap>=0.15?"DERIVED_MEANINGFUL_COVERAGE":"DERIVED_EDGE_INTERSECTION" as const}}
+export function branchRadiusWithoutAllocation(companyRadius:number){return Math.min(50,Math.round(companyRadius*0.35*10)/10)}
+export function canPublishDerived(input:{state:string;stateVerified:boolean;isMover:boolean;identityResolved:boolean;onboardingAttempted:boolean;websiteAttempted:boolean;geographyStatus:string;subscriptionState?:string}){
+ return ["FL","WA"].includes(input.state)&&input.stateVerified&&input.isMover&&input.identityResolved&&input.onboardingAttempted&&input.websiteAttempted&&input.geographyStatus==="SERVICE_AREA_NOT_FOUND";
+}
+export const shouldSupersedeDerived=(explicitAreaCount:number)=>explicitAreaCount>0;

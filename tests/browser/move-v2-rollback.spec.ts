@@ -1,0 +1,3 @@
+import { test, expect } from '@playwright/test'; import golden from '../../lib/move-v2/migration/seo-golden-set.json';
+test('rollback contract keeps all 28 historical URLs valid',async({request})=>{for(const batch of Array.from({length:7},(_,i)=>(golden as any[]).slice(i*4,i*4+4))){const results=await Promise.all(batch.map(row=>request.get(row.path,{maxRedirects:0})));results.forEach((response,index)=>expect(response.status(),batch[index].path).toBe(200));}});
+test('failure routes do not expose internal operations',async({request})=>{expect((await request.get('/experience-lab/v2/internal/review')).status()).toBe(200);expect((await request.post('/api/move-v2/operations/rebuild')).status()).toBe(404);});

@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';import test from 'node:test';
+import { classifyAutoTransport,serviceRoleKey } from '../lib/move-v2/auto-transport/classifier';
+const base={providerId:'p1',usdot:'1',legalName:'PLAIN COMPANY',motorVehiclesCargoReported:true,censusStatus:'A',insuranceForms:[],currentSuspensionOrRevocation:false,authorities:[]};
+const carrier={sourceRecordKey:'c',type:'Motor Carrier of Property (Except Household Goods)',status:'Active',bipdRequired:750000,bipdOnFile:1000000};
+const broker={sourceRecordKey:'b',type:'Broker of Property (Except Household Goods)',status:'Active',bondOnFile:true};
+test('A official auto relevance and carrier evidence',()=>assert.equal(classifyAutoTransport({...base,authorities:[carrier]}).classification,'AUTO_TRANSPORT_CARRIER'));
+test('B official auto relevance and broker evidence',()=>assert.equal(classifyAutoTransport({...base,authorities:[broker],insuranceForms:['84']}).classification,'AUTO_TRANSPORT_BROKER'));
+test('C independent carrier and broker evidence is dual role',()=>assert.equal(classifyAutoTransport({...base,authorities:[carrier,broker],insuranceForms:['85']}).classification,'AUTO_TRANSPORT_DUAL_ROLE'));
+test('D name keywords cannot create auto relevance',()=>assert.equal(classifyAutoTransport({...base,legalName:'AUTO TRANSPORT LLC',motorVehiclesCargoReported:false}).relevance,'NOT_AUTO_RELEVANT'));
+test('E HHG and auto roles share one provider id',()=>{const auto=classifyAutoTransport({...base,authorities:[carrier]});const hhg={providerId:'p1',vertical:'HHG',classification:'INTERSTATE_CARRIER'};assert.equal(auto.providerId,hhg.providerId);assert.notEqual(auto.vertical,hhg.vertical)});
+test('F inactive historical auto entity',()=>assert.equal(classifyAutoTransport({...base,censusStatus:'I',authorities:[{...carrier,status:'Inactive'}]}).classification,'AUTO_TRANSPORT_INACTIVE'));
+test('G current conflict goes to review',()=>assert.equal(classifyAutoTransport({...base,authorities:[carrier],currentSuspensionOrRevocation:true}).classification,'AUTO_TRANSPORT_REVIEW'));
+test('H paid state cannot affect classifier',()=>assert.deepEqual(classifyAutoTransport({...base,authorities:[carrier]}),classifyAutoTransport({...base,authorities:[carrier],subscription:'paid'} as typeof base)));
+test('I same release role key is stable',()=>assert.equal(serviceRoleKey('p1','AUTO_TRANSPORT','v1'),serviceRoleKey('p1','AUTO_TRANSPORT','v1')));

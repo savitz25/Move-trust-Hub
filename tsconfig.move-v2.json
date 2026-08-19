@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "noEmit": true },
+  "include": [
+    "next-env.d.ts",
+    "lib/move-v2/**/*.ts",
+    "app/(move)/experience-lab/v2/page.tsx",
+    "tests/move-v2-domain.test.ts"
+    ,"scripts/move-v2/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

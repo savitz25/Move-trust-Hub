@@ -1,0 +1,5 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "ignorePatterns": [".next/", "node_modules/", "coverage/", "public/", "types/supabase.ts"],
+  "overrides": [{"files": ["scripts/move-v2/consumer-discovery/build-v2-release.ts"], "rules": {"@typescript-eslint/no-explicit-any": "off"}}]
+}

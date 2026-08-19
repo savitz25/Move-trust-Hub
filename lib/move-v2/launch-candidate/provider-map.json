@@ -1,0 +1,352 @@
+﻿[
+    {
+        "slug":  "allied-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "92879fad-36b3-5771-ac0b-9e3704e7b48d",
+        "observedUsdot":  "125563|20125563",
+        "v2DisplayName":  "AERO MAYFLOWER TRANSIT COMPANY"
+    },
+    {
+        "slug":  "united-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "dd2d40be-e377-5cfe-820a-b9a5db659d73",
+        "observedUsdot":  "077949|77949|20077949",
+        "v2DisplayName":  "UNITED VAN LINES"
+    },
+    {
+        "slug":  "north-american-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "53dc5074-71f9-50a6-8a80-33588b2f5422",
+        "observedUsdot":  "070851|70851|20070851",
+        "v2DisplayName":  "NORTH AMERICAN MOVING \u0026 STORAGE"
+    },
+    {
+        "slug":  "mayflower-transit",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "92879fad-36b3-5771-ac0b-9e3704e7b48d",
+        "observedUsdot":  "125563|20125563",
+        "v2DisplayName":  "AERO MAYFLOWER TRANSIT COMPANY"
+    },
+    {
+        "slug":  "jk-moving-services",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "e9ace64e-66cb-55e4-9ac9-49df836e629c",
+        "observedUsdot":  "1065394|20106539",
+        "v2DisplayName":  "JK MOVING SERVICES"
+    },
+    {
+        "slug":  "international-van-lines",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "1865578|20186557",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "safeway-moving",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "2041756|20204175",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "american-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "fa6c1792-27ad-53f2-8c5f-c7e94918976c",
+        "observedUsdot":  "614506|20614506",
+        "v2DisplayName":  "AMERICAN VAN LINES INC"
+    },
+    {
+        "slug":  "colonial-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "bf027c83-6066-51f7-a138-fc8c3aa5e1af",
+        "observedUsdot":  "143437|20143437",
+        "v2DisplayName":  "SPECIAL SERVICE CO INC"
+    },
+    {
+        "slug":  "bekins-van-lines",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "atlas-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "92879fad-36b3-5771-ac0b-9e3704e7b48d",
+        "observedUsdot":  "125563|20125563",
+        "v2DisplayName":  "AERO MAYFLOWER TRANSIT COMPANY"
+    },
+    {
+        "slug":  "two-men-and-a-truck",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "016afabd-0fc4-54c1-a11f-d208ac658f6d",
+        "observedUsdot":  "2256609|20225660",
+        "v2DisplayName":  "BEKINS VAN LINES INC"
+    },
+    {
+        "slug":  "pensey-moving",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "2108844|20210884",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "stevens-worldwide",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "67f864af-7c9f-53db-9737-4c5c775e8223",
+        "observedUsdot":  "72029|2072029",
+        "v2DisplayName":  "STEVENS MOVING \u0026 STORAGE INC"
+    },
+    {
+        "slug":  "wheaton-world-wide",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "92879fad-36b3-5771-ac0b-9e3704e7b48d",
+        "observedUsdot":  "125563|20125563",
+        "v2DisplayName":  "AERO MAYFLOWER TRANSIT COMPANY"
+    },
+    {
+        "slug":  "graebel-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "92879fad-36b3-5771-ac0b-9e3704e7b48d",
+        "observedUsdot":  "125563|20125563",
+        "v2DisplayName":  "AERO MAYFLOWER TRANSIT COMPANY"
+    },
+    {
+        "slug":  "arpin-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "92879fad-36b3-5771-ac0b-9e3704e7b48d",
+        "observedUsdot":  "125563|20125563",
+        "v2DisplayName":  "AERO MAYFLOWER TRANSIT COMPANY"
+    },
+    {
+        "slug":  "national-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "53dc5074-71f9-50a6-8a80-33588b2f5422",
+        "observedUsdot":  "70851|2070851",
+        "v2DisplayName":  "NORTH AMERICAN MOVING \u0026 STORAGE"
+    },
+    {
+        "slug":  "royal-moving",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "2401924|20240192",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "gentle-giant-moving",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "3d38f8a6-b1e1-58d7-9012-1a63158ea9b2",
+        "observedUsdot":  "373544|20373544",
+        "v2DisplayName":  "GENTLE GIANT MOVING COMPANY GENTLE GIANT MOVING AND STORAGE"
+    },
+    {
+        "slug":  "bellhop",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "2518206|20251820",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "moving-apt",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "1877726|20187772",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "we-move-u",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "3cd7cd56-bbdc-55af-9cf0-3edffb9d0a8a",
+        "observedUsdot":  "1778016|20177801",
+        "v2DisplayName":  "JACOBO\u0027S TRUCKING"
+    },
+    {
+        "slug":  "amerisafe-van-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "0779bf9c-e5d1-5d35-8062-10194964c00e",
+        "observedUsdot":  "3341650|20334165",
+        "v2DisplayName":  "AMERISAFE VANLINES"
+    },
+    {
+        "slug":  "pods",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "e5a21833-3eb7-5a36-83a1-2ee29f673cec",
+        "observedUsdot":  "1397252|20139725",
+        "v2DisplayName":  "PODS"
+    },
+    {
+        "slug":  "u-pack",
+        "status":  "IDENTITY_REVIEW",
+        "providerId":  null,
+        "observedUsdot":  "2632086|82866|20263208",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "u-haul-u-box",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "1-800-pack-rat",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "d60399b7-943e-51c1-97d1-37741aa145fd",
+        "observedUsdot":  "1534531|20153453",
+        "v2DisplayName":  "1-800-PACK-RAT LLC"
+    },
+    {
+        "slug":  "zippy-shell",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "units-moving-portable-storage",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "go-minis",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "smartbox",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "montway-auto-transport",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "becea08e-3dca-58d9-8f44-f7092da7f261",
+        "observedUsdot":  "2239816|20223981",
+        "v2DisplayName":  "MONTWAY AUTO TRANSPORT"
+    },
+    {
+        "slug":  "amerifreight-auto-transport",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "84ffbb77-70fd-5614-aba0-01c79030a4c7",
+        "observedUsdot":  "2238770|20223877",
+        "v2DisplayName":  "AMERIFREIGHT INC"
+    },
+    {
+        "slug":  "sherpa-auto-transport",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "88d1d790-b1f9-59d7-8535-3a10af9f75fd",
+        "observedUsdot":  "4085166|20408516",
+        "v2DisplayName":  "SHERPA AUTO TRANSPORT LLC"
+    },
+    {
+        "slug":  "sgt-auto-transport",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "c8a41963-bd14-527a-85ae-e8bcaec38abe",
+        "observedUsdot":  "2521690|20252169",
+        "v2DisplayName":  "SGT AUTO TRANSPORT"
+    },
+    {
+        "slug":  "easy-auto-ship",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "d9dd992b-f370-5c85-87d2-52be9e08a9b1",
+        "observedUsdot":  "3149259|20314925",
+        "v2DisplayName":  "EASY AUTO SHIP LLC"
+    },
+    {
+        "slug":  "ship-a-car-direct",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "d0daa7da-0dbe-5d66-823c-23beea8745c3",
+        "observedUsdot":  "2241272|20224127",
+        "v2DisplayName":  "SHIP A CAR DIRECT INC"
+    },
+    {
+        "slug":  "roadrunner-auto-transport",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "uship",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "nexus-auto-transport",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "mercury-auto-transport",
+        "status":  "UNMATCHED",
+        "providerId":  null,
+        "observedUsdot":  "",
+        "v2DisplayName":  null
+    },
+    {
+        "slug":  "reliable-carriers",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "259191a3-44a1-5779-9339-649cce626abc",
+        "observedUsdot":  "242599|20242599",
+        "v2DisplayName":  "RELIABLE CARRIERS INC"
+    },
+    {
+        "slug":  "intercity-lines",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "1fa9c71b-ae96-57b3-8929-1ca0afc3588c",
+        "observedUsdot":  "223672|20223672",
+        "v2DisplayName":  "INTERCITY LINES INC"
+    },
+    {
+        "slug":  "/company/dot-614506",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "fa6c1792-27ad-53f2-8c5f-c7e94918976c",
+        "observedUsdot":  "614506|20614506",
+        "v2DisplayName":  "AMERICAN VAN LINES INC"
+    },
+    {
+        "slug":  "/company/dot-227698",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "1a91c3ba-5c9f-5073-b59c-af7fa1a9fa42",
+        "observedUsdot":  "227698|20227698",
+        "v2DisplayName":  "ROYAL HAWAIIAN TRUCKING \u0026 WAREHOUSING"
+    },
+    {
+        "slug":  "/company/dot-3101918",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "5227c6e3-ce42-5641-97a0-d32a83155f98",
+        "observedUsdot":  "3101918|20310191",
+        "v2DisplayName":  "AMEX MOVING AND STORAGE LLC"
+    },
+    {
+        "slug":  "/company/dot-3374772",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "47e28ae6-2444-58fc-9f23-2cefa60b4768",
+        "observedUsdot":  "3374772|20337477",
+        "v2DisplayName":  "OUR FAMILY MOVING AND STORAGE LLC"
+    },
+    {
+        "slug":  "/company/dot-713589",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "c8950883-d4b5-502a-9a6f-cdc210bf42be",
+        "observedUsdot":  "713589|20713589",
+        "v2DisplayName":  "THOMPSON DELIVERY SERVICES COLWRIGHT"
+    },
+    {
+        "slug":  "/company/dot-3337911",
+        "status":  "EXACT_USDOT_MATCH",
+        "providerId":  "09f2c021-f5dd-5163-8148-9188c0cf96cb",
+        "observedUsdot":  "3337911|20333791",
+        "v2DisplayName":  "LATER GATOR MOVING LLC"
+    }
+]

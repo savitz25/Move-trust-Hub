@@ -33,6 +33,29 @@ export function trackGaEvent(eventName: string, params: GaEventParams = {}) {
   gtag('event', eventName, sanitizeParams(params));
 }
 
+export type MoveLaunchEventName =
+  | 'move_search' | 'move_path_selected' | 'trust_report_open' | 'source_open'
+  | 'compare_add' | 'compare_view' | 'shortlist_add' | 'shortlist_remove'
+  | 'calculator_start' | 'calculator_complete' | 'move_plan_start'
+  | 'provider_website_click' | 'provider_phone_click';
+
+const MOVE_EVENT_FIELDS = new Set([
+  'state', 'move_path', 'evidence_tier', 'provider_id', 'source_type',
+  'count', 'page_path', 'calculator_type',
+]);
+
+/** Privacy-bounded launch analytics. ZIPs, contact data, dates and free text are rejected. */
+export function trackMoveLaunchEvent(name: MoveLaunchEventName, params: GaEventParams = {}, onceKey?: string) {
+  for (const key of Object.keys(params)) {
+    if (!MOVE_EVENT_FIELDS.has(key)) throw new Error(`Move analytics field not approved: ${key}`);
+  }
+  if (onceKey && typeof window !== 'undefined') {
+    const key = `mth_move_event:${name}:${onceKey}`;
+    try { if (sessionStorage.getItem(key) === '1') return; sessionStorage.setItem(key, '1'); } catch { /* analytics remains non-critical */ }
+  }
+  trackGaEvent(name, params);
+}
+
 export function trackCalculatorStart(params: {
   interaction: string;
   mode?: string;

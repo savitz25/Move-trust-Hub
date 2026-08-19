@@ -19,7 +19,11 @@ const SEARCH_FIELD_MASK = [
   'places.rating',
   'places.userRatingCount',
   'places.nationalPhoneNumber',
-  'places.reviews',
+  'places.internationalPhoneNumber',
+  'places.location',
+  'places.businessStatus',
+  'places.primaryType',
+  'places.pureServiceAreaBusiness',
 ].join(',');
 
 const DETAILS_FIELD_MASK = [
@@ -48,12 +52,24 @@ type PlacePayload = {
   userRatingCount?: number;
   nationalPhoneNumber?: string;
   internationalPhoneNumber?: string;
+  location?: { latitude?: number; longitude?: number };
+  businessStatus?: string;
+  primaryType?: string;
+  pureServiceAreaBusiness?: boolean;
   reviews?: Array<{
     text?: { text?: string };
     rating?: number;
     relativePublishTimeDescription?: string;
     authorAttribution?: { displayName?: string };
   }>;
+};
+
+export type GooglePlacesSearchCandidate = {
+  placeId: string; displayName: string; formattedAddress: string | null;
+  websiteUri: string | null; nationalPhoneNumber: string | null;
+  internationalPhoneNumber: string | null; latitude: number | null; longitude: number | null;
+  businessStatus: string | null; rating: number | null; ratingCount: number | null;
+  primaryType: string | null; pureServiceAreaBusiness: boolean | null;
 };
 
 /** Server-side Places API (New) key — set as GOOGLE_PLACES_API_KEY on Vercel. */
@@ -339,6 +355,13 @@ async function searchTextPlaces(
     });
     return { places: [], error: message };
   }
+}
+
+/** Task 003 cost-bounded discovery: exactly one existing Places API (New) search call. */
+export async function searchGooglePlacesOnce(textQuery: string): Promise<{ candidates: GooglePlacesSearchCandidate[]; error?: string }> {
+  const key=getGooglePlacesApiKey();if(!key)return{candidates:[],error:'Google Places API key not configured'};
+  const result=await searchTextPlaces(key,textQuery);
+  return{error:result.error,candidates:result.places.filter(p=>p.id&&p.displayName?.text).map(p=>({placeId:p.id!,displayName:p.displayName!.text!,formattedAddress:p.formattedAddress??null,websiteUri:p.websiteUri??null,nationalPhoneNumber:p.nationalPhoneNumber??null,internationalPhoneNumber:p.internationalPhoneNumber??null,latitude:p.location?.latitude??null,longitude:p.location?.longitude??null,businessStatus:p.businessStatus??null,rating:p.rating??null,ratingCount:p.userRatingCount??null,primaryType:p.primaryType??null,pureServiceAreaBusiness:p.pureServiceAreaBusiness??null}))};
 }
 
 /**

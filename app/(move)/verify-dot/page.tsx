@@ -107,9 +107,9 @@ export default function VerifyDotPage() {
           </p>
           <p className="text-sm text-muted-foreground not-prose">
             This tool focuses on <strong className="text-foreground">interstate</strong> carriers
-            (USDOT required). Local / in-state movers that never cross state lines can be added via{' '}
-            <Link href="/suggest" className="text-primary underline underline-offset-2">
-              Add Company
+            (USDOT required). For a local / in-state mover that never crosses state lines,{' '}
+            <Link href="/contact" className="text-primary underline underline-offset-2">
+              contact our research team
             </Link>
             .
           </p>

@@ -28,7 +28,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Circuit breaker (Tier 1 <= 400)
+      - name: Circuit breaker (Tier 1 <= audited 1695 baseline)
         run: npx tsx scripts/lib/tier1-circuit-breaker.ts
 
       - name: Guard content-tier exemptions

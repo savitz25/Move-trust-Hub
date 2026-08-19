@@ -1,8 +1,6 @@
 import 'server-only';
 
-import { unstable_cache } from 'next/cache';
 import { activeDirectoryMovers } from '@/data/active-directory-movers';
-import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
 import {
   companyCountyLookupKeys,
   enrichDirectoryWithStaticCountyCoverage,
@@ -76,10 +74,5 @@ async function buildUnifiedDirectory(): Promise<Company[]> {
   return enrichDirectoryWithStaticCountyCoverage(withDbAssignments);
 }
 
-/** Cached directory listing for /companies and slug resolution. */
-export const getUnifiedDirectoryCompanies = unstable_cache(
-  buildUnifiedDirectory,
-  // v13: enrichment display resolver + strict BBB + Places visibility
-  ['unified-movers-directory-v13-display-enrichment'],
-  { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
-);
+/** Route/CDN caching remains; the complete projection exceeds Next's 2 MB Data Cache item cap. */
+export const getUnifiedDirectoryCompanies = buildUnifiedDirectory;

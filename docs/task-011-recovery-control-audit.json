@@ -1,0 +1,29 @@
+{
+  "classification": "SYNTHETIC CONTROL TEST",
+  "caseId": "53a0e78c-87a8-50a6-a6ed-b3693282bb4d",
+  "firstDecisionId": "64d196d0-c0df-4e00-8dd3-742bd2519c0f",
+  "correctedDecisionId": "c5024ac4-5ed4-451a-8301-b82964613dac",
+  "supersedesCorrect": true,
+  "history": [
+    {
+      "id": "64d196d0-c0df-4e00-8dd3-742bd2519c0f",
+      "decision_type": "SYNTHETIC_BAD_SELECTION",
+      "supersedes_decision_id": null
+    },
+    {
+      "id": "c5024ac4-5ed4-451a-8301-b82964613dac",
+      "decision_type": "SYNTHETIC_CORRECTED_SELECTION",
+      "supersedes_decision_id": "64d196d0-c0df-4e00-8dd3-742bd2519c0f"
+    }
+  ],
+  "officialObservationCountBefore": 4,
+  "officialObservationCountAfter": 4,
+  "officialEvidenceUnchanged": true,
+  "rollbackPointer": "ca908400-db3d-483f-a5b6-f453314d607a",
+  "correctedPointer": "96799caf-9c87-4645-89eb-1bbd94eb1f57",
+  "finalPointer": {
+    "current_release_id": "96799caf-9c87-4645-89eb-1bbd94eb1f57",
+    "prior_release_id": "ca908400-db3d-483f-a5b6-f453314d607a"
+  },
+  "auditHistoryIntact": true
+}

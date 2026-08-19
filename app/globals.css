@@ -367,3 +367,5 @@
     display: none !important;
   }
 }
+/* Preview evidence-research controls retain a usable minimum touch dimension. */
+.move-v2-discovery button { min-height: 32px; }

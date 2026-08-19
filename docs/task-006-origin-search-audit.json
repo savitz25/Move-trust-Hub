@@ -1,0 +1,297 @@
+{
+  "generatedAt": "2026-08-17T13:17:04.583Z",
+  "counts": {
+    "zcta": [
+      {
+        "state": "FL",
+        "zctas": 1013
+      },
+      {
+        "state": "WA",
+        "zctas": 605
+      }
+    ],
+    "crossCounty": [
+      {
+        "state": "FL",
+        "zctas": 160
+      },
+      {
+        "state": "WA",
+        "zctas": 103
+      }
+    ],
+    "placements": [
+      {
+        "placement_reason": "PROVIDER_EXPLICIT_COUNTY",
+        "rows": 72,
+        "providers": 2
+      },
+      {
+        "placement_reason": "TRUSTHUB_DERIVED_HOME_COUNTY",
+        "rows": 436,
+        "providers": 8
+      },
+      {
+        "placement_reason": "TRUSTHUB_DERIVED_MEANINGFUL_COVERAGE",
+        "rows": 1968,
+        "providers": 8
+      }
+    ],
+    "rows": [
+      {
+        "county_rows": 103,
+        "zip_rows": 2373,
+        "providers": 10
+      }
+    ],
+    "explicit": [
+      {
+        "geography_type": "COUNTY",
+        "observations": 3,
+        "providers": 2
+      },
+      {
+        "geography_type": "NAMED_SERVICE_AREA",
+        "observations": 66,
+        "providers": 6
+      },
+      {
+        "geography_type": "REGION",
+        "observations": 4,
+        "providers": 1
+      }
+    ],
+    "decisions": [
+      {
+        "decision_status": "GOOGLE_CLOSED_BUSINESS",
+        "decisions": 2,
+        "providers": 2
+      },
+      {
+        "decision_status": "GOOGLE_MATCH_REVIEW",
+        "decisions": 127,
+        "providers": 50
+      }
+    ]
+  },
+  "benchmarks": {
+    "zipResolution": {
+      "coldishWallMs": 105.19,
+      "warmMs": 0.422,
+      "plan": [
+        "Index Scan using postal_zip_resolution_pkey on postal_zip_resolution  (cost=0.28..2.50 rows=1 width=149) (actual time=0.392..0.393 rows=1 loops=1)",
+        "  Index Cond: (postal_zip = '98101'::text)",
+        "  Buffers: shared hit=3",
+        "Planning Time: 0.086 ms",
+        "Execution Time: 0.422 ms"
+      ]
+    },
+    "zipMovers": {
+      "coldishWallMs": 112.571,
+      "warmMs": 0.048,
+      "plan": [
+        "Limit  (cost=0.28..5.85 rows=4 width=55) (actual time=0.019..0.026 rows=4 loops=1)",
+        "  Buffers: shared hit=6",
+        "  ->  Index Scan using origin_zip_active_idx on origin_search_placement o  (cost=0.28..5.85 rows=4 width=55) (actual time=0.018..0.024 rows=4 loops=1)",
+        "        Index Cond: (zcta = '98101'::text)",
+        "        Buffers: shared hit=6",
+        "Planning Time: 0.171 ms",
+        "Execution Time: 0.048 ms"
+      ]
+    },
+    "countyMovers": {
+      "coldishWallMs": 103.417,
+      "warmMs": 0.09,
+      "plan": [
+        "Limit  (cost=72.96..72.98 rows=7 width=55) (actual time=0.061..0.062 rows=4 loops=1)",
+        "  Buffers: shared hit=7",
+        "  ->  Sort  (cost=72.96..72.98 rows=7 width=55) (actual time=0.060..0.060 rows=4 loops=1)",
+        "        Sort Key: evidence_tier",
+        "        Sort Method: quicksort  Memory: 25kB",
+        "        Buffers: shared hit=7",
+        "        ->  Bitmap Heap Scan on origin_search_placement o  (cost=2.15..72.86 rows=7 width=55) (actual time=0.038..0.053 rows=4 loops=1)",
+        "              Recheck Cond: ((zcta IS NULL) AND active AND (invalidated_at IS NULL))",
+        "              Filter: ((state = 'WA'::text) AND (county_geoid = '53033'::text))",
+        "              Rows Removed by Filter: 99",
+        "              Heap Blocks: exact=4",
+        "              Buffers: shared hit=7",
+        "              ->  Bitmap Index Scan on origin_zip_active_idx  (cost=0.00..2.15 rows=103 width=0) (actual time=0.014..0.014 rows=103 loops=1)",
+        "                    Index Cond: (zcta IS NULL)",
+        "                    Buffers: shared hit=3",
+        "Planning Time: 0.174 ms",
+        "Execution Time: 0.090 ms"
+      ]
+    },
+    "providerPlacements": {
+      "coldishWallMs": 205.769,
+      "warmMs": 0.475,
+      "plan": [
+        "Seq Scan on origin_search_placement  (cost=0.05..130.00 rows=248 width=311) (actual time=0.018..0.446 rows=50 loops=1)",
+        "  Filter: (active AND (provider_id = (InitPlan 1).col1))",
+        "  Rows Removed by Filter: 2426",
+        "  Buffers: shared hit=101",
+        "  InitPlan 1",
+        "    ->  Limit  (cost=0.00..0.05 rows=1 width=16) (actual time=0.004..0.005 rows=1 loops=1)",
+        "          Buffers: shared hit=2",
+        "          ->  Seq Scan on origin_search_placement origin_search_placement_1  (cost=0.00..123.76 rows=2476 width=16) (actual time=0.003..0.003 rows=1 loops=1)",
+        "                Filter: active",
+        "                Buffers: shared hit=2",
+        "Planning Time: 0.160 ms",
+        "Execution Time: 0.475 ms"
+      ]
+    },
+    "providerEvidence": {
+      "coldishWallMs": 108.038,
+      "warmMs": 0.466,
+      "plan": [
+        "Seq Scan on origin_search_placement  (cost=0.05..130.00 rows=248 width=195) (actual time=0.019..0.439 rows=50 loops=1)",
+        "  Filter: (active AND (provider_id = (InitPlan 1).col1))",
+        "  Rows Removed by Filter: 2426",
+        "  Buffers: shared hit=101",
+        "  InitPlan 1",
+        "    ->  Limit  (cost=0.00..0.05 rows=1 width=16) (actual time=0.005..0.005 rows=1 loops=1)",
+        "          Buffers: shared hit=2",
+        "          ->  Seq Scan on origin_search_placement origin_search_placement_1  (cost=0.00..123.76 rows=2476 width=16) (actual time=0.004..0.004 rows=1 loops=1)",
+        "                Filter: active",
+        "                Buffers: shared hit=2",
+        "Planning Time: 0.152 ms",
+        "Execution Time: 0.466 ms"
+      ]
+    }
+  },
+  "zipCases": [
+    {
+      "zip": "98101",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "WA",
+      "county": "53033",
+      "providers": 4,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "98004",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "WA",
+      "county": "53033",
+      "providers": 4,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "98402",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "WA",
+      "county": "53053",
+      "providers": 4,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "98201",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "WA",
+      "county": "53061",
+      "providers": 4,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "99201",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "WA",
+      "county": "53063",
+      "providers": 0,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "33101",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "FL",
+      "county": "12086",
+      "providers": 1,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "33139",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "FL",
+      "county": "12086",
+      "providers": 1,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "33401",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "FL",
+      "county": "12099",
+      "providers": 1,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "33602",
+      "status": "GEOGRAPHIC_ZCTA",
+      "state": "FL",
+      "county": "12057",
+      "providers": 3,
+      "reason": "Typed ZIP matched a 2020 Census ZCTA; ZCTA is not a USPS delivery boundary."
+    },
+    {
+      "zip": "99999",
+      "status": "UNSUPPORTED_NON_GEOGRAPHIC",
+      "state": null,
+      "county": null,
+      "providers": 0,
+      "reason": "No geographic 2020 Census ZCTA is available for this typed ZIP; no area was inferred."
+    }
+  ],
+  "countyCases": [
+    {
+      "state": "WA",
+      "county": "53033",
+      "providers": 4
+    },
+    {
+      "state": "WA",
+      "county": "53053",
+      "providers": 4
+    },
+    {
+      "state": "WA",
+      "county": "53061",
+      "providers": 4
+    },
+    {
+      "state": "WA",
+      "county": "53063",
+      "providers": 0
+    },
+    {
+      "state": "WA",
+      "county": "53051",
+      "providers": 0
+    },
+    {
+      "state": "FL",
+      "county": "12086",
+      "providers": 1
+    },
+    {
+      "state": "FL",
+      "county": "12011",
+      "providers": 1
+    },
+    {
+      "state": "FL",
+      "county": "12099",
+      "providers": 1
+    },
+    {
+      "state": "FL",
+      "county": "12095",
+      "providers": 2
+    },
+    {
+      "state": "FL",
+      "county": "12057",
+      "providers": 3
+    }
+  ]
+}

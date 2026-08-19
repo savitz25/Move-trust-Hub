@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-08-17T00:12:39.912Z",
+  "stateReleases": [
+    {
+      "state": "NJ",
+      "source_name": "Public Movers and Warehousemen public portal",
+      "retrieved_at": "2026-08-16T00:00:00.000Z",
+      "record_count": null,
+      "sha256": null,
+      "retrieval_method": "BOUNDED_PORTAL_CONTRACT",
+      "ingestion_status": "BOUNDED_PILOT"
+    },
+    {
+      "state": "FL",
+      "source_name": "FDACS Intrastate Mover pilot",
+      "retrieved_at": "2026-08-16T23:34:18.380Z",
+      "record_count": 60,
+      "sha256": "bc97ad3cb5cbaa68df953631376077c58f971de234550c7eac91e73fba93a774",
+      "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
+      "ingestion_status": "PUBLISHED"
+    },
+    {
+      "state": "FL",
+      "source_name": "FDACS Moving Broker pilot",
+      "retrieved_at": "2026-08-16T23:34:22.247Z",
+      "record_count": 53,
+      "sha256": "8a1ef7fb73d372596607e8aa1ecc6a5271994c46c49b81ea81fb82575325ff72",
+      "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
+      "ingestion_status": "PUBLISHED"
+    },
+    {
+      "state": "FL",
+      "source_name": "FDACS Intrastate Mover pilot",
+      "retrieved_at": "2026-08-16T23:59:56.541Z",
+      "record_count": 160,
+      "sha256": "4e271306149eaa2474b105da2edbc60e51522ef31847778da70a633bc7c19ce0",
+      "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
+      "ingestion_status": "PUBLISHED"
+    },
+    {
+      "state": "FL",
+      "source_name": "FDACS Moving Broker pilot",
+      "retrieved_at": "2026-08-17T00:00:01.023Z",
+      "record_count": 53,
+      "sha256": "95d3e85e5161041351cb3cc0b570d6549990229fc9a2d3719e2f6f5fc070fad9",
+      "retrieval_method": "BOUNDED_WEBFORMS_PILOT",
+      "ingestion_status": "PUBLISHED"
+    }
+  ],
+  "distinctStateRecords": [
+    {
+      "state": "FL",
+      "authority_type": "FL_IM",
+      "licenses": 160,
+      "release_rows": 220
+    },
+    {
+      "state": "FL",
+      "authority_type": "FL_MB",
+      "licenses": 53,
+      "release_rows": 106
+    }
+  ],
+  "matches": [
+    {
+      "state": "FL",
+      "match_status": "STATE_MATCH_HIGH_CONFIDENCE",
+      "providers": 78
+    }
+  ],
+  "eligibility": [
+    {
+      "state": "FL",
+      "eligibility": "STATE_AUTHORITY_REVIEW",
+      "providers": 26
+    },
+    {
+      "state": "FL",
+      "eligibility": "STATE_VERIFIED_LOCAL_MOVER",
+      "providers": 41
+    },
+    {
+      "state": "FL",
+      "eligibility": "STATE_VERIFIED_MOVING_BROKER",
+      "providers": 11
+    }
+  ],
+  "stateObservations": [
+    {
+      "contact_type": "ADDRESS",
+      "observations": 76,
+      "providers": 76
+    },
+    {
+      "contact_type": "EMAIL",
+      "observations": 72,
+      "providers": 72
+    },
+    {
+      "contact_type": "PHONE",
+      "observations": 75,
+      "providers": 75
+    }
+  ],
+  "sourceFields": [
+    {
+      "dba": 0,
+      "phone": 322,
+      "email": 189,
+      "website": 0,
+      "relationships": 0
+    }
+  ],
+  "google": [
+    {
+      "match_status": "GOOGLE_CLOSED_BUSINESS",
+      "providers": 1
+    },
+    {
+      "match_status": "GOOGLE_MATCH_HIGH_CONFIDENCE",
+      "providers": 13
+    },
+    {
+      "match_status": "GOOGLE_MATCH_REVIEW",
+      "providers": 27
+    },
+    {
+      "match_status": "GOOGLE_MULTIPLE_PLAUSIBLE_MATCHES",
+      "providers": 5
+    },
+    {
+      "match_status": "GOOGLE_NO_MATCH",
+      "providers": 6
+    }
+  ],
+  "googleRequests": [
+    {
+      "request_type": "SEARCH_TEXT",
+      "response_status": "OK",
+      "requests": 52,
+      "billable": 52
+    }
+  ],
+  "websites": [
+    {
+      "status": "NO_WEBSITE_URI",
+      "providers": 1
+    },
+    {
+      "status": "WEBSITE_HIGH_CONFIDENCE",
+      "providers": 2
+    },
+    {
+      "status": "WEBSITE_REJECTED",
+      "providers": 4
+    },
+    {
+      "status": "WEBSITE_REVIEW",
+      "providers": 6
+    }
+  ],
+  "websiteObservations": [
+    {
+      "observation_type": "EMAIL",
+      "observations": 3
+    },
+    {
+      "observation_type": "PHONE",
+      "observations": 16
+    },
+    {
+      "observation_type": "SERVICE",
+      "observations": 35
+    },
+    {
+      "observation_type": "SERVICE_AREA",
+      "observations": 15
+    }
+  ],
+  "geography": [
+    {
+      "evidence_status": "SERVICE_AREA_EXPLICIT",
+      "providers": 1,
+      "derived_required": 0
+    },
+    {
+      "evidence_status": "SERVICE_AREA_NOT_FOUND",
+      "providers": 4,
+      "derived_required": 4
+    },
+    {
+      "evidence_status": "SERVICE_AREA_REVIEW",
+      "providers": 6,
+      "derived_required": 0
+    }
+  ],
+  "v1": [
+    {
+      "companies": 468,
+      "reviews": 15
+    }
+  ]
+}

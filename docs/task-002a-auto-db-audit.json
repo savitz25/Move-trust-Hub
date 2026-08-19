@@ -1,0 +1,1896 @@
+{
+  "classifications": [
+    {
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 128
+    },
+    {
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 4187
+    },
+    {
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 142
+    },
+    {
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 190762
+    },
+    {
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 155487
+    }
+  ],
+  "coverage": {
+    "providers": 350706,
+    "dba": 107795,
+    "phone": 347774,
+    "email": 263585,
+    "physical_address": 350706,
+    "mailing_address": 350699,
+    "docket": 185239
+  },
+  "overlap": [
+    {
+      "hhg_classification": "INACTIVE_ENTITY",
+      "auto_classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 13093
+    },
+    {
+      "hhg_classification": "LOCAL_INTRASTATE_CARRIER_CANDIDATE",
+      "auto_classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 10191
+    },
+    {
+      "hhg_classification": "NEEDS_REGULATORY_REVIEW",
+      "auto_classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 3916
+    },
+    {
+      "hhg_classification": "NEEDS_REGULATORY_REVIEW",
+      "auto_classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1431
+    },
+    {
+      "hhg_classification": "LOCAL_INTRASTATE_CARRIER_CANDIDATE",
+      "auto_classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 243
+    },
+    {
+      "hhg_classification": "NEEDS_REGULATORY_REVIEW",
+      "auto_classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 113
+    },
+    {
+      "hhg_classification": "NEEDS_REGULATORY_REVIEW",
+      "auto_classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 95
+    },
+    {
+      "hhg_classification": "INTERSTATE_CARRIER",
+      "auto_classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 27
+    },
+    {
+      "hhg_classification": "LOCAL_INTRASTATE_CARRIER_CANDIDATE",
+      "auto_classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 25
+    },
+    {
+      "hhg_classification": "DUAL_ROLE_CARRIER_BROKER",
+      "auto_classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 16
+    },
+    {
+      "hhg_classification": "INTERSTATE_CARRIER",
+      "auto_classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 10
+    },
+    {
+      "hhg_classification": "LOCAL_INTRASTATE_CARRIER_CANDIDATE",
+      "auto_classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 9
+    },
+    {
+      "hhg_classification": "NEEDS_REGULATORY_REVIEW",
+      "auto_classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 8
+    },
+    {
+      "hhg_classification": "AUTHORIZED_BROKER",
+      "auto_classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 5
+    },
+    {
+      "hhg_classification": "DUAL_ROLE_CARRIER_BROKER",
+      "auto_classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 3
+    },
+    {
+      "hhg_classification": "AUTHORIZED_BROKER",
+      "auto_classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2
+    },
+    {
+      "hhg_classification": "AUTHORIZED_BROKER",
+      "auto_classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "hhg_classification": "INTERSTATE_CARRIER",
+      "auto_classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "hhg_classification": "DUAL_ROLE_CARRIER_BROKER",
+      "auto_classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 1
+    },
+    {
+      "hhg_classification": "HHG_FREIGHT_FORWARDER",
+      "auto_classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1
+    },
+    {
+      "hhg_classification": "HHG_FREIGHT_FORWARDER",
+      "auto_classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    }
+  ],
+  "overlap_total": 29193,
+  "state_distribution": [
+    {
+      "state": "AB",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 14
+    },
+    {
+      "state": "AB",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "state": "AB",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 503
+    },
+    {
+      "state": "AB",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 143
+    },
+    {
+      "state": "AG",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2
+    },
+    {
+      "state": "AK",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 5
+    },
+    {
+      "state": "AK",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 344
+    },
+    {
+      "state": "AK",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 689
+    },
+    {
+      "state": "AL",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 65
+    },
+    {
+      "state": "AL",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "AL",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 4757
+    },
+    {
+      "state": "AL",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 3288
+    },
+    {
+      "state": "AR",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 22
+    },
+    {
+      "state": "AR",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "AR",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2203
+    },
+    {
+      "state": "AR",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 691
+    },
+    {
+      "state": "AS",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1
+    },
+    {
+      "state": "AS",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1
+    },
+    {
+      "state": "AZ",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 5
+    },
+    {
+      "state": "AZ",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 84
+    },
+    {
+      "state": "AZ",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "AZ",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 3248
+    },
+    {
+      "state": "AZ",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2827
+    },
+    {
+      "state": "BC",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "BC",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 5
+    },
+    {
+      "state": "BC",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 341
+    },
+    {
+      "state": "BC",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 142
+    },
+    {
+      "state": "BN",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 82
+    },
+    {
+      "state": "BN",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 4
+    },
+    {
+      "state": "BS",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2
+    },
+    {
+      "state": "BZ",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2
+    },
+    {
+      "state": "CA",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 13
+    },
+    {
+      "state": "CA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 220
+    },
+    {
+      "state": "CA",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 6
+    },
+    {
+      "state": "CA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 8043
+    },
+    {
+      "state": "CA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 9074
+    },
+    {
+      "state": "CH",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 6
+    },
+    {
+      "state": "CH",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1
+    },
+    {
+      "state": "CI",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 68
+    },
+    {
+      "state": "CI",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 9
+    },
+    {
+      "state": "CO",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 6
+    },
+    {
+      "state": "CO",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 73
+    },
+    {
+      "state": "CO",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 5
+    },
+    {
+      "state": "CO",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 3029
+    },
+    {
+      "state": "CO",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 3988
+    },
+    {
+      "state": "CR",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 20
+    },
+    {
+      "state": "CS",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 4
+    },
+    {
+      "state": "CT",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "CT",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 30
+    },
+    {
+      "state": "CT",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2105
+    },
+    {
+      "state": "CT",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1569
+    },
+    {
+      "state": "DC",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 1
+    },
+    {
+      "state": "DC",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 190
+    },
+    {
+      "state": "DC",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 92
+    },
+    {
+      "state": "DE",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 2
+    },
+    {
+      "state": "DE",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 8
+    },
+    {
+      "state": "DE",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1025
+    },
+    {
+      "state": "DE",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 494
+    },
+    {
+      "state": "DF",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 3
+    },
+    {
+      "state": "DG",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 6
+    },
+    {
+      "state": "DO",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1
+    },
+    {
+      "state": "FL",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 16
+    },
+    {
+      "state": "FL",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 380
+    },
+    {
+      "state": "FL",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 6
+    },
+    {
+      "state": "FL",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 14994
+    },
+    {
+      "state": "FL",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 15718
+    },
+    {
+      "state": "FR",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1
+    },
+    {
+      "state": "GA",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 3
+    },
+    {
+      "state": "GA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 132
+    },
+    {
+      "state": "GA",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 5
+    },
+    {
+      "state": "GA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 10688
+    },
+    {
+      "state": "GA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 10622
+    },
+    {
+      "state": "GJ",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1
+    },
+    {
+      "state": "GT",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 183
+    },
+    {
+      "state": "GT",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 8
+    },
+    {
+      "state": "GU",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 7
+    },
+    {
+      "state": "GU",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 49
+    },
+    {
+      "state": "HD",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1
+    },
+    {
+      "state": "HD",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1
+    },
+    {
+      "state": "HI",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 3
+    },
+    {
+      "state": "HI",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "HI",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 54
+    },
+    {
+      "state": "HI",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 368
+    },
+    {
+      "state": "HN",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 6
+    },
+    {
+      "state": "HN",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 21
+    },
+    {
+      "state": "IA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 27
+    },
+    {
+      "state": "IA",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "state": "IA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2138
+    },
+    {
+      "state": "IA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1986
+    },
+    {
+      "state": "ID",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "ID",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 37
+    },
+    {
+      "state": "ID",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "state": "ID",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1388
+    },
+    {
+      "state": "ID",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 819
+    },
+    {
+      "state": "IL",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 7
+    },
+    {
+      "state": "IL",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 294
+    },
+    {
+      "state": "IL",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 3
+    },
+    {
+      "state": "IL",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 5349
+    },
+    {
+      "state": "IL",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 3505
+    },
+    {
+      "state": "IN",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "IN",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 104
+    },
+    {
+      "state": "IN",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 13
+    },
+    {
+      "state": "IN",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 5234
+    },
+    {
+      "state": "IN",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 3363
+    },
+    {
+      "state": "JA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 4
+    },
+    {
+      "state": "KS",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 4
+    },
+    {
+      "state": "KS",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 44
+    },
+    {
+      "state": "KS",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "state": "KS",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2050
+    },
+    {
+      "state": "KS",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1269
+    },
+    {
+      "state": "KW",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2
+    },
+    {
+      "state": "KY",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 66
+    },
+    {
+      "state": "KY",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "KY",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 4107
+    },
+    {
+      "state": "KY",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 3793
+    },
+    {
+      "state": "LA",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "LA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 19
+    },
+    {
+      "state": "LA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2128
+    },
+    {
+      "state": "LA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 728
+    },
+    {
+      "state": "MA",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "MA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 90
+    },
+    {
+      "state": "MA",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "MA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 4210
+    },
+    {
+      "state": "MA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2635
+    },
+    {
+      "state": "MB",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 11
+    },
+    {
+      "state": "MB",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 5
+    },
+    {
+      "state": "MB",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 182
+    },
+    {
+      "state": "MB",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 79
+    },
+    {
+      "state": "MC",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 3
+    },
+    {
+      "state": "MD",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 5
+    },
+    {
+      "state": "MD",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 93
+    },
+    {
+      "state": "MD",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 6271
+    },
+    {
+      "state": "MD",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 4375
+    },
+    {
+      "state": "ME",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 13
+    },
+    {
+      "state": "ME",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "state": "ME",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1017
+    },
+    {
+      "state": "ME",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 877
+    },
+    {
+      "state": "MI",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 3
+    },
+    {
+      "state": "MI",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 83
+    },
+    {
+      "state": "MI",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 4
+    },
+    {
+      "state": "MI",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 4288
+    },
+    {
+      "state": "MI",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 6319
+    },
+    {
+      "state": "MN",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "MN",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 63
+    },
+    {
+      "state": "MN",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "state": "MN",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2922
+    },
+    {
+      "state": "MN",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 4429
+    },
+    {
+      "state": "MO",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "MO",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 89
+    },
+    {
+      "state": "MO",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 6
+    },
+    {
+      "state": "MO",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 3993
+    },
+    {
+      "state": "MO",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1975
+    },
+    {
+      "state": "MP",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 5
+    },
+    {
+      "state": "MS",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 43
+    },
+    {
+      "state": "MS",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "MS",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2973
+    },
+    {
+      "state": "MS",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 948
+    },
+    {
+      "state": "MT",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 17
+    },
+    {
+      "state": "MT",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 3
+    },
+    {
+      "state": "MT",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1108
+    },
+    {
+      "state": "MT",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 747
+    },
+    {
+      "state": "MX",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 6
+    },
+    {
+      "state": "NA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1
+    },
+    {
+      "state": "NB",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 2
+    },
+    {
+      "state": "NB",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "NB",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 85
+    },
+    {
+      "state": "NB",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 22
+    },
+    {
+      "state": "NC",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "NC",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 150
+    },
+    {
+      "state": "NC",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 3
+    },
+    {
+      "state": "NC",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 7612
+    },
+    {
+      "state": "NC",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 4032
+    },
+    {
+      "state": "ND",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 19
+    },
+    {
+      "state": "ND",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "ND",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 644
+    },
+    {
+      "state": "ND",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 404
+    },
+    {
+      "state": "NE",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "NE",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 27
+    },
+    {
+      "state": "NE",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "state": "NE",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1599
+    },
+    {
+      "state": "NE",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1948
+    },
+    {
+      "state": "NH",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 13
+    },
+    {
+      "state": "NH",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1505
+    },
+    {
+      "state": "NH",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 555
+    },
+    {
+      "state": "NI",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 13
+    },
+    {
+      "state": "NJ",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 3
+    },
+    {
+      "state": "NJ",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 73
+    },
+    {
+      "state": "NJ",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 4
+    },
+    {
+      "state": "NJ",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 5355
+    },
+    {
+      "state": "NJ",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2808
+    },
+    {
+      "state": "NL",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 39
+    },
+    {
+      "state": "NL",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 11
+    },
+    {
+      "state": "NM",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 20
+    },
+    {
+      "state": "NM",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1148
+    },
+    {
+      "state": "NM",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 688
+    },
+    {
+      "state": "NS",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 1
+    },
+    {
+      "state": "NS",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "NS",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 72
+    },
+    {
+      "state": "NS",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 22
+    },
+    {
+      "state": "NT",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2
+    },
+    {
+      "state": "NV",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 2
+    },
+    {
+      "state": "NV",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 39
+    },
+    {
+      "state": "NV",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1584
+    },
+    {
+      "state": "NV",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 742
+    },
+    {
+      "state": "NY",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 6
+    },
+    {
+      "state": "NY",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 103
+    },
+    {
+      "state": "NY",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "NY",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 5926
+    },
+    {
+      "state": "NY",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 9090
+    },
+    {
+      "state": "OH",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 3
+    },
+    {
+      "state": "OH",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 210
+    },
+    {
+      "state": "OH",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 3
+    },
+    {
+      "state": "OH",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 6010
+    },
+    {
+      "state": "OH",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 4673
+    },
+    {
+      "state": "OK",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "OK",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 69
+    },
+    {
+      "state": "OK",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "OK",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2614
+    },
+    {
+      "state": "OK",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1492
+    },
+    {
+      "state": "ON",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "ON",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 31
+    },
+    {
+      "state": "ON",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 4
+    },
+    {
+      "state": "ON",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 913
+    },
+    {
+      "state": "ON",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 268
+    },
+    {
+      "state": "OR",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "OR",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 55
+    },
+    {
+      "state": "OR",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 3
+    },
+    {
+      "state": "OR",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2025
+    },
+    {
+      "state": "OR",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1436
+    },
+    {
+      "state": "PA",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 6
+    },
+    {
+      "state": "PA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 249
+    },
+    {
+      "state": "PA",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 9
+    },
+    {
+      "state": "PA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 8205
+    },
+    {
+      "state": "PA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 7765
+    },
+    {
+      "state": "PE",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 24
+    },
+    {
+      "state": "PE",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 5
+    },
+    {
+      "state": "PR",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 108
+    },
+    {
+      "state": "PR",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 193
+    },
+    {
+      "state": "PU",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1
+    },
+    {
+      "state": "QC",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 28
+    },
+    {
+      "state": "QC",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 6
+    },
+    {
+      "state": "QC",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 609
+    },
+    {
+      "state": "QC",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 167
+    },
+    {
+      "state": "QE",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2
+    },
+    {
+      "state": "RI",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "RI",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 10
+    },
+    {
+      "state": "RI",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 867
+    },
+    {
+      "state": "RI",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 310
+    },
+    {
+      "state": "SC",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 2
+    },
+    {
+      "state": "SC",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 93
+    },
+    {
+      "state": "SC",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "SC",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 4759
+    },
+    {
+      "state": "SC",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2639
+    },
+    {
+      "state": "SD",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 26
+    },
+    {
+      "state": "SD",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 753
+    },
+    {
+      "state": "SD",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 361
+    },
+    {
+      "state": "SI",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1
+    },
+    {
+      "state": "SK",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 4
+    },
+    {
+      "state": "SK",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 175
+    },
+    {
+      "state": "SK",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 37
+    },
+    {
+      "state": "SO",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 1
+    },
+    {
+      "state": "SO",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 43
+    },
+    {
+      "state": "SO",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 3
+    },
+    {
+      "state": "SV",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 7
+    },
+    {
+      "state": "SV",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 9
+    },
+    {
+      "state": "TA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 2
+    },
+    {
+      "state": "TA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 54
+    },
+    {
+      "state": "TA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 13
+    },
+    {
+      "state": "TN",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 3
+    },
+    {
+      "state": "TN",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 91
+    },
+    {
+      "state": "TN",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 4
+    },
+    {
+      "state": "TN",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 5251
+    },
+    {
+      "state": "TN",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2935
+    },
+    {
+      "state": "TX",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 14
+    },
+    {
+      "state": "TX",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 362
+    },
+    {
+      "state": "TX",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 9
+    },
+    {
+      "state": "TX",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 14994
+    },
+    {
+      "state": "TX",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 10379
+    },
+    {
+      "state": "UT",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 48
+    },
+    {
+      "state": "UT",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 2
+    },
+    {
+      "state": "UT",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1940
+    },
+    {
+      "state": "UT",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 1971
+    },
+    {
+      "state": "VA",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "VA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 92
+    },
+    {
+      "state": "VA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 4677
+    },
+    {
+      "state": "VA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2503
+    },
+    {
+      "state": "VC",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2
+    },
+    {
+      "state": "VI",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 6
+    },
+    {
+      "state": "VI",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 8
+    },
+    {
+      "state": "VT",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 4
+    },
+    {
+      "state": "VT",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 787
+    },
+    {
+      "state": "VT",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 264
+    },
+    {
+      "state": "WA",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 4
+    },
+    {
+      "state": "WA",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 115
+    },
+    {
+      "state": "WA",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 4
+    },
+    {
+      "state": "WA",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 2841
+    },
+    {
+      "state": "WA",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 3667
+    },
+    {
+      "state": "WI",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 5
+    },
+    {
+      "state": "WI",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 66
+    },
+    {
+      "state": "WI",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 7
+    },
+    {
+      "state": "WI",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 3373
+    },
+    {
+      "state": "WI",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 4749
+    },
+    {
+      "state": "WV",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 19
+    },
+    {
+      "state": "WV",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 1858
+    },
+    {
+      "state": "WV",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 991
+    },
+    {
+      "state": "WY",
+      "classification": "AUTO_TRANSPORT_BROKER",
+      "providers": 1
+    },
+    {
+      "state": "WY",
+      "classification": "AUTO_TRANSPORT_CARRIER",
+      "providers": 30
+    },
+    {
+      "state": "WY",
+      "classification": "AUTO_TRANSPORT_DUAL_ROLE",
+      "providers": 1
+    },
+    {
+      "state": "WY",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 967
+    },
+    {
+      "state": "WY",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 670
+    },
+    {
+      "state": "YT",
+      "classification": "AUTO_TRANSPORT_INACTIVE",
+      "providers": 22
+    },
+    {
+      "state": "YT",
+      "classification": "AUTO_TRANSPORT_REVIEW",
+      "providers": 2
+    }
+  ],
+  "storage": {
+    "totals": {
+      "total_bytes": "1164926976",
+      "index_bytes": "431644672"
+    },
+    "relations": [
+      {
+        "relation": "provider_service_role",
+        "total_bytes": "218415104",
+        "table_bytes": "112508928",
+        "index_bytes": "105840640"
+      },
+      {
+        "relation": "fmcsa_provider_fact",
+        "total_bytes": "204554240",
+        "table_bytes": "131547136",
+        "index_bytes": "72941568"
+      },
+      {
+        "relation": "fmcsa_auto_provider_fact",
+        "total_bytes": "200327168",
+        "table_bytes": "153165824",
+        "index_bytes": "47087616"
+      },
+      {
+        "relation": "fmcsa_classification_result",
+        "total_bytes": "156549120",
+        "table_bytes": "117637120",
+        "index_bytes": "38846464"
+      },
+      {
+        "relation": "fmcsa_authority_event",
+        "total_bytes": "82214912",
+        "table_bytes": "49537024",
+        "index_bytes": "32628736"
+      },
+      {
+        "relation": "fmcsa_authority",
+        "total_bytes": "70664192",
+        "table_bytes": "39518208",
+        "index_bytes": "31096832"
+      },
+      {
+        "relation": "fmcsa_docket_identifier",
+        "total_bytes": "65290240",
+        "table_bytes": "27058176",
+        "index_bytes": "38191104"
+      },
+      {
+        "relation": "provider",
+        "total_bytes": "59678720",
+        "table_bytes": "36192256",
+        "index_bytes": "23445504"
+      },
+      {
+        "relation": "fmcsa_boc3",
+        "total_bytes": "55705600",
+        "table_bytes": "33693696",
+        "index_bytes": "21962752"
+      },
+      {
+        "relation": "fmcsa_insurance_filing",
+        "total_bytes": "51159040",
+        "table_bytes": "31744000",
+        "index_bytes": "19374080"
+      },
+      {
+        "relation": "fmcsa_source_release",
+        "total_bytes": "49152",
+        "table_bytes": "8192",
+        "index_bytes": "32768"
+      },
+      {
+        "relation": "provider_identifier",
+        "total_bytes": "32768",
+        "table_bytes": "0",
+        "index_bytes": "24576"
+      },
+      {
+        "relation": "schema_migration",
+        "total_bytes": "32768",
+        "table_bytes": "8192",
+        "index_bytes": "16384"
+      },
+      {
+        "relation": "provider_classification",
+        "total_bytes": "24576",
+        "table_bytes": "0",
+        "index_bytes": "16384"
+      },
+      {
+        "relation": "provider_external_identity",
+        "total_bytes": "24576",
+        "table_bytes": "0",
+        "index_bytes": "16384"
+      },
+      {
+        "relation": "provider_source_record",
+        "total_bytes": "24576",
+        "table_bytes": "0",
+        "index_bytes": "16384"
+      },
+      {
+        "relation": "source_snapshot",
+        "total_bytes": "24576",
+        "table_bytes": "0",
+        "index_bytes": "16384"
+      },
+      {
+        "relation": "provider_contact",
+        "total_bytes": "24576",
+        "table_bytes": "0",
+        "index_bytes": "16384"
+      },
+      {
+        "relation": "provider_state_authority",
+        "total_bytes": "24576",
+        "table_bytes": "0",
+        "index_bytes": "16384"
+      },
+      {
+        "relation": "pipeline_run",
+        "total_bytes": "24576",
+        "table_bytes": "0",
+        "index_bytes": "16384"
+      },
+      {
+        "relation": "provider_location",
+        "total_bytes": "16384",
+        "table_bytes": "0",
+        "index_bytes": "8192"
+      },
+      {
+        "relation": "provider_service_area",
+        "total_bytes": "16384",
+        "table_bytes": "0",
+        "index_bytes": "8192"
+      },
+      {
+        "relation": "identity_review",
+        "total_bytes": "16384",
+        "table_bytes": "0",
+        "index_bytes": "8192"
+      },
+      {
+        "relation": "provider_name",
+        "total_bytes": "16384",
+        "table_bytes": "0",
+        "index_bytes": "8192"
+      },
+      {
+        "relation": "provider_address",
+        "total_bytes": "16384",
+        "table_bytes": "0",
+        "index_bytes": "8192"
+      }
+    ]
+  },
+  "releases": [
+    {
+      "source_name": "Company Census Auto-Positive Projection",
+      "dataset_id": "az4n-8mr2:auto-positive",
+      "source_data_updated_at": "2026-08-15T10:52:32.000Z",
+      "retrieved_at": "2026-08-16T20:56:48.732Z",
+      "record_count": "350706",
+      "file_size": "90528883",
+      "sha256": "bf988cf42c788c3d9490ff15471e564c1664c77cc54092b3af498e480470f909",
+      "schema_version": "AUTO_POSITIVE_2026_08_V1",
+      "source_era": "MCMIS_CENSUS_CURRENT",
+      "ingestion_status": "PUBLISHED"
+    }
+  ],
+  "v1": {
+    "companies": 468,
+    "reviews": 15
+  },
+  "migrations": [
+    {
+      "version": "20260816240000",
+      "name": "move_v2_auto_transport_roles",
+      "applied_at": "2026-08-16T20:56:38.729Z"
+    },
+    {
+      "version": "20260816250000",
+      "name": "move_v2_all_service_roles_view",
+      "applied_at": "2026-08-16T20:59:45.790Z"
+    },
+    {
+      "version": "20260816260000",
+      "name": "move_v2_auto_official_contacts",
+      "applied_at": "2026-08-16T21:05:52.293Z"
+    }
+  ]
+}

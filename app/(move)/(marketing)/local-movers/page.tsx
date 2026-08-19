@@ -12,6 +12,9 @@ import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geogra
 import { buildHubPageMetadata } from '@/lib/local-movers/index';
 import { getCountyPath } from '@/lib/local-movers/paths';
 import { LocalMoversPlaceSearch } from '@/components/local-movers/local-movers-place-search';
+import preview from '@/lib/move-v2/consumer-discovery/release-v2.json';
+import { LocalSearchClient, type ConsumerDiscoveryPreviewData } from '../../experience-lab/v2/local-search-client';
+import { moveV2Flags } from '@/lib/move-v2/flags';
 
 export const dynamic = 'force-static';
 
@@ -27,6 +30,9 @@ const featuredCounties = [
 ];
 
 export default function LocalMoversHubPage() {
+  if (moveV2Flags().sameUrlComposition) {
+    return <div className="move-v2-discovery"><LocalSearchClient data={preview as ConsumerDiscoveryPreviewData} /></div>;
+  }
   const statesForSelector = localStates.map((state) => {
     const hasCounties = stateHasCounties(state.slug);
     return {

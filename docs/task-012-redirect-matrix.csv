@@ -1,0 +1,10 @@
+﻿old_url,new_url,status,reason,query_handling,fragment_handling,canonical_target,tested
+/about/methodology,/about/how-we-score-movers,308,Single methodology canonical,preserve,browser_preserves,https://www.movetrusthub.com/about/how-we-score-movers,YES
+/methodology,/about/how-we-score-movers,308,Single methodology canonical,preserve,browser_preserves,https://www.movetrusthub.com/about/how-we-score-movers,YES
+/about/trust-center,/about/how-we-score-movers,308,Consolidated trust methodology,preserve,browser_preserves,https://www.movetrusthub.com/about/how-we-score-movers,YES
+/about/trust,/about/how-we-score-movers,308,Consolidated trust methodology,preserve,browser_preserves,https://www.movetrusthub.com/about/how-we-score-movers,YES
+/moving-to/myrtle-beach-sc,/moving-to/south-carolina/myrtle-beach-sc,308,Canonical state nesting,preserve,browser_preserves,https://www.movetrusthub.com/moving-to/south-carolina/myrtle-beach-sc,YES
+/from-georgia-to-huntsville,/moving-to/alabama/huntsville-al,308,Legacy destination alias,preserve,browser_preserves,https://www.movetrusthub.com/moving-to/alabama/huntsville-al,YES
+/from-georgia-to-huntsville-al,/moving-to/alabama/huntsville-al,308,Legacy destination alias,preserve,browser_preserves,https://www.movetrusthub.com/moving-to/alabama/huntsville-al,YES
+/insurance/*,https://www.insurancetrusthub.com/*,308,Separated specialist hub,preserve,browser_preserves,https://www.insurancetrusthub.com/,YES
+/lender/*,https://www.lendertrusthub.com/*,308,Separated specialist hub,preserve,browser_preserves,https://www.lendertrusthub.com/,YES

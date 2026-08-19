@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-08-17T13:09:39.938Z",
+  "modelVersion": "MOVE_LOCAL_DERIVED_2026_08_V1",
+  "totals": {
+    "providers": 2,
+    "truePositive": 2,
+    "derivedOnly": 30,
+    "explicitOnly": 0,
+    "precision": 0.0625,
+    "recall": 1,
+    "jaccard": 0.0625,
+    "overcoverageRate": 0.9375,
+    "undercoverageRate": 0,
+    "modelDecision": "MODEL_NOT_SUFFICIENTLY_VALIDATED",
+    "minimumTarget": 25
+  },
+  "providers": [
+    {
+      "providerId": "72ce5037-b67d-5e2e-9c69-79b15685ecea",
+      "state": "FL",
+      "explicitCounties": [
+        "12095"
+      ],
+      "shadowCounties": [
+        "12105",
+        "12097",
+        "12061",
+        "12127",
+        "12069",
+        "12101",
+        "12119",
+        "12117",
+        "12049",
+        "12107",
+        "12035",
+        "12053",
+        "12103",
+        "12109",
+        "12083",
+        "12081",
+        "12057",
+        "12009",
+        "12095",
+        "12027",
+        "12055",
+        "12017",
+        "12093"
+      ],
+      "truePositive": [
+        "12095"
+      ],
+      "derivedOnly": [
+        "12105",
+        "12097",
+        "12061",
+        "12127",
+        "12069",
+        "12101",
+        "12119",
+        "12117",
+        "12049",
+        "12107",
+        "12035",
+        "12053",
+        "12103",
+        "12109",
+        "12083",
+        "12081",
+        "12057",
+        "12009",
+        "12027",
+        "12055",
+        "12017",
+        "12093"
+      ],
+      "explicitOnly": [],
+      "precision": 0.043478260869565216,
+      "recall": 1,
+      "jaccard": 0.043478260869565216,
+      "radiusMiles": 87.8,
+      "powerUnits": 7,
+      "edgeCountiesExcluded": true
+    },
+    {
+      "providerId": "e9e4c31c-46e2-5a4d-97c7-de32efe58c6f",
+      "state": "WA",
+      "explicitCounties": [
+        "53011"
+      ],
+      "shadowCounties": [
+        "53015",
+        "53011",
+        "53049",
+        "53039",
+        "53059",
+        "53069",
+        "53041",
+        "53053",
+        "53067"
+      ],
+      "truePositive": [
+        "53011"
+      ],
+      "derivedOnly": [
+        "53015",
+        "53049",
+        "53039",
+        "53059",
+        "53069",
+        "53041",
+        "53053",
+        "53067"
+      ],
+      "explicitOnly": [],
+      "precision": 0.1111111111111111,
+      "recall": 1,
+      "jaccard": 0.1111111111111111,
+      "radiusMiles": 84.4,
+      "powerUnits": 6,
+      "edgeCountiesExcluded": true
+    }
+  ]
+}

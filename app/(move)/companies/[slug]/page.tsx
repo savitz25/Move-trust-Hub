@@ -36,6 +36,7 @@ import {
 } from '@/lib/directory/profile-back-link';
 import { MetricLabel } from '@/components/trust/metric-label';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
+import { ProviderEvidenceSummary } from '@/components/move-v2/provider-evidence-summary';
 
 import { directoryVerifiedLabel } from '@/lib/trust/company-display-policy';
 import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
@@ -184,6 +185,7 @@ export default async function CompanyProfilePage({ params }: Props) {
     <>
       <JsonLd data={buildCompanyDirectorySchemaGraph(company)} />
     <div className="container mx-auto px-4 py-8 max-w-5xl">
+      <ProviderEvidenceSummary slug={company.slug} />
       <AdminRefreshVerificationShell companyId={company.id} />
       <Suspense fallback={
         <div className="mb-4 h-5 w-40 animate-pulse rounded bg-muted" aria-hidden />

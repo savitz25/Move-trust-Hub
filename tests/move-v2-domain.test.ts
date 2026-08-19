@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { classifyProvider } from '../lib/move-v2/classification';
+import { buildPublicDecision } from '../lib/move-v2/commercial-firewall';
+import { applyPublishedClaimsToClassification, evaluateGooglePlaceMatch, mergeObservedContacts, providerPublishedServiceArea, selectDisplayName } from '../lib/move-v2/identity';
+import type { ProviderContact, RegulatoryFacts } from '../lib/move-v2/domain';
+
+const facts = (patch: Partial<RegulatoryFacts>): RegulatoryFacts => ({ sourceEvidenceIds: ['evidence-1'], registrationStatus: 'ACTIVE', entityRoles: ['CARRIER'], interstateHhgAuthority: 'UNKNOWN', brokerAuthority: 'UNKNOWN', ...patch });
+test('1 active carrier without interstate authority is a local candidate, never invalid', () => assert.equal(classifyProvider(facts({ interstateHhgAuthority: 'NOT_AUTHORIZED' })).classification, 'LOCAL_INTRASTATE_CARRIER_CANDIDATE'));
+test('2 active carrier with interstate HHG authority', () => assert.equal(classifyProvider(facts({ interstateHhgAuthority: 'VALID' })).classification, 'INTERSTATE_CARRIER'));
+test('3 inactive carrier', () => assert.equal(classifyProvider(facts({ registrationStatus: 'INACTIVE' })).classification, 'INACTIVE_ENTITY'));
+test('4 valid broker-specific authority', () => assert.equal(classifyProvider(facts({ entityRoles: ['BROKER'], brokerAuthority: 'VALID' })).classification, 'AUTHORIZED_BROKER'));
+test('5 inactive broker authority is not an active broker', () => assert.equal(classifyProvider(facts({ entityRoles: ['BROKER'], brokerAuthority: 'INACTIVE' })).classification, 'INACTIVE_ENTITY'));
+test('6 valid carrier and broker roles', () => assert.equal(classifyProvider(facts({ entityRoles: ['CARRIER', 'BROKER'], interstateHhgAuthority: 'VALID', brokerAuthority: 'VALID' })).classification, 'DUAL_ROLE_CARRIER_BROKER'));
+test('7 DBA is displayed and legal name remains available', () => { const legal = 'XYZ TRANSPORTATION SERVICES LLC'; assert.equal(selectDisplayName(legal, 'AMERICAN FAMILY MOVERS'), 'AMERICAN FAMILY MOVERS'); assert.equal(legal, 'XYZ TRANSPORTATION SERVICES LLC'); });
+test('8 legal name displays when DBA is absent', () => assert.equal(selectDisplayName('LEGAL MOVING LLC'), 'LEGAL MOVING LLC'));
+test('9 name-only Google match with conflicts goes to review', () => assert.equal(evaluateGooglePlaceMatch({ name: 1, address: 0, phone: 0, domain: 0 }).status, 'IDENTITY_REVIEW'));
+test('10 corroborated Google match auto-accepts', () => assert.equal(evaluateGooglePlaceMatch({ name: 1, address: 1, phone: 1, domain: 1 }).status, 'AUTO_ACCEPTED'));
+test('11 website service area is provider-published', () => assert.equal(providerPublishedServiceArea({ providerId: 'p1', areaType: 'COUNTY', label: 'Bergen County', provenance: { sourceType: 'OFFICIAL_WEBSITE', retrievedAt: '2026-08-16' } }).authorityScope, 'PROVIDER_PUBLISHED_SERVICE_AREA'));
+test('12 website interstate claim cannot change regulatory classification', () => assert.equal(applyPublishedClaimsToClassification('LOCAL_INTRASTATE_CARRIER_CANDIDATE', { interstate: true }), 'LOCAL_INTRASTATE_CARRIER_CANDIDATE'));
+const contact = (id: string, type: 'PHONE' | 'EMAIL', value: string): ProviderContact => ({ contactId: id, providerId: 'p1', contactType: type, value, normalizedValue: value.toLowerCase(), provenance: { sourceType: 'OFFICIAL_WEBSITE', retrievedAt: '2026-08-16' }, firstSeenAt: '2026-08-16', lastSeenAt: '2026-08-16', isPrimary: false, status: 'ACTIVE' });
+test('13 multiple public phones and emails are preserved', () => assert.equal(mergeObservedContacts([], [contact('1', 'PHONE', '+15550101'), contact('2', 'PHONE', '+15550102'), contact('3', 'EMAIL', 'hello@example.test'), contact('4', 'EMAIL', 'claims@example.test')]).length, 4));
+test('14 missing email remains missing', () => assert.equal(mergeObservedContacts([], [contact('1', 'PHONE', '+15550101')]).some((item) => item.contactType === 'EMAIL'), false));
+test('15 paid state has zero effect on public decision', () => { const input = { providerId: 'p1', classification: 'INTERSTATE_CARRIER' as const, evidenceStrength: 0.9, moveEligible: true }; assert.deepEqual(buildPublicDecision(input), buildPublicDecision(input)); assert.equal('subscriptionStatus' in buildPublicDecision(input), false); });

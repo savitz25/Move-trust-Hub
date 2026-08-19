@@ -15,6 +15,8 @@ import {
   SITE_URL,
 } from '@/lib/seo/site-metadata';
 import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
+import { LaunchSearchEntry } from '@/components/move-v2/launch-search-entry';
+import { moveV2Flags } from '@/lib/move-v2/flags';
 
 export const dynamic = 'force-static';
 /** Pick up chrome/nav deploy updates without waiting for full CDN max-age. */
@@ -43,10 +45,11 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const flags = moveV2Flags();
   return (
     <>
       <JsonLd data={buildHomepageSchemaGraph()} />
-      <HomePage mapSection={<LocalMoversMapLoader />} />
+      <HomePage mapSection={<LocalMoversMapLoader />} launchEntry={flags.sameUrlComposition ? <LaunchSearchEntry /> : undefined} />
     </>
   );
 }

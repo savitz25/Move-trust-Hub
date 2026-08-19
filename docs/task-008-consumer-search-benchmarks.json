@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-08-17T15:56:52.258Z",
+  "version": "MOVE_CONSUMER_DISCOVERY_2026_08_V1",
+  "method": "in-memory versioned Preview snapshot; no request-time GIS",
+  "milliseconds": {
+    "zipResolution": 0.0002,
+    "eligibleCandidateSet": 0.0021,
+    "explicitMatches": 0.051,
+    "proximityOrder": 0.0314,
+    "providerTrustReport": 0.0002,
+    "compareFour": 0.0267
+  }
+}
