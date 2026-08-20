@@ -22,7 +22,7 @@ export type CanonicalMatch = {
   reason: string;
 };
 
-function nameTokens(value: string): string[] {
+export function nameTokens(value: string): string[] {
   return value
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
