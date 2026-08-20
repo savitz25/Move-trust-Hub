@@ -23,6 +23,7 @@ import {
 } from '@/lib/seo/sitemap-priority';
 import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
 import { generateInsuranceSitemap } from '@/lib/insurance/seo/generate-insurance-sitemap';
+import { isSeoIndexableCompany } from '@/lib/provider/publication';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -147,7 +148,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const companyPages = companies.map((company) => ({
+  const companyPages = companies
+    .filter((company) => isSeoIndexableCompany(company))
+    .map((company) => ({
     url: `${SITE}/companies/${company.slug}`,
     lastModified: new Date(company.lastUpdated),
     changeFrequency: 'monthly' as const,
@@ -164,7 +167,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: getCityHubSitemapPriority(market.priority, market.slug),
     }));
 
-  const autoTransportPages = autoTransportCompanies.map((company) => ({
+  const autoTransportPages = autoTransportCompanies
+    .filter((company) => isSeoIndexableCompany(company))
+    .map((company) => ({
     url: `${SITE}/auto-transport/${company.slug}`,
     lastModified: new Date(company.lastUpdated),
     changeFrequency: 'monthly' as const,

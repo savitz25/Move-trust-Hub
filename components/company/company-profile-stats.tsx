@@ -14,6 +14,7 @@ import {
   shouldShowReputationScore,
 } from '@/lib/data-quality/metrics';
 import { normalizeServiceTags } from '@/lib/data-quality/display-normalize';
+import { shouldShowHouseholdMovePrice } from '@/lib/provider/copy';
 import { MethodologyLink } from '@/components/trust/methodology-link';
 import { ShieldCheck } from 'lucide-react';
 
@@ -30,7 +31,10 @@ export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfil
     reviewCount: company.reviewCount,
     overallRating: company.overallRating,
   });
-  const showPrice = shouldShowAvgPrice(company.avgPricePerMove);
+  const showPrice =
+    variant === 'auto-transport'
+      ? false
+      : shouldShowAvgPrice(company.avgPricePerMove) && shouldShowHouseholdMovePrice(company);
   const showComplaints = shouldShowComplaintRatio({
     complaints: company.fmcsaComplaints,
     shipments: company.fmcsaShipments,

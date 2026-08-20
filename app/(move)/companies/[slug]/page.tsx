@@ -57,7 +57,8 @@ import { TrustProfileShell } from '@/components/network/trust-profile-shell';
 import { toMoveTrustProfile } from '@/lib/network/adapters/to-move-trust-profile';
 import { ClaimProfileCta } from '@/components/portal/claim-cta';
 import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
-import { FMCSA_PLAIN_ENGLISH } from '@/lib/trust/fmcsa-consumer-copy';
+import { regulatoryCopyForProvider } from '@/lib/provider/copy';
+import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import {
   formatCompanyTenureLine,
   isValidFoundedYear,
@@ -103,7 +104,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${company.name} — FMCSA Profile, Ratings & Pricing`,
     description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Independent directory — verify FMCSA licensing yourself.`,
     path: `/companies/${company.slug}`,
-    noIndex: !profileQuality.indexable,
+    noIndex: !profileQuality.indexable || !isSeoIndexableCompany(company),
   });
 }
 
@@ -179,6 +180,7 @@ export default async function CompanyProfilePage({ params }: Props) {
     foundedYear: company.foundedYear,
     yearsInBusiness: company.yearsInBusiness,
   });
+  const regulatoryCopy = regulatoryCopyForProvider(company);
 
   return (
     <>
@@ -229,13 +231,12 @@ export default async function CompanyProfilePage({ params }: Props) {
             <div className="text-sm text-muted-foreground">{tenureLine}</div>
           ) : null}
           <div className="mt-3 space-y-2">
+            <p className="text-xs text-muted-foreground max-w-xl leading-relaxed">
+              <strong className="text-foreground">{regulatoryCopy.headline}</strong>{' '}
+              — {regulatoryCopy.detail}
+            </p>
             {verification.directoryVerified || verification.fmcsa || verification.bbb === 'verified' ? (
-              <>
-                <p className="text-xs text-muted-foreground max-w-xl leading-relaxed">
-                  <strong className="text-foreground">FMCSA</strong> — {FMCSA_PLAIN_ENGLISH}
-                </p>
-                <SeeHowWeVetLink className="text-xs" />
-              </>
+              <SeeHowWeVetLink className="text-xs" />
             ) : null}
             <VerificationBadgeLegend className="mt-2" />
           </div>

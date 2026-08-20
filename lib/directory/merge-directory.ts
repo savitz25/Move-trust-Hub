@@ -123,6 +123,13 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
           : base.bbbRating ?? 'NR',
     bbbAccredited: Boolean(base.bbbAccredited || enrichment.bbbAccredited),
     lastUpdated: enrichment.lastUpdated || base.lastUpdated,
+    publicationState: enrichment.publicationState ?? base.publicationState,
+    indexable: enrichment.indexable ?? base.indexable,
+    serviceScope: enrichment.serviceScope ?? base.serviceScope,
+    entityType: enrichment.entityType ?? base.entityType,
+    services: (enrichment.services && enrichment.services.length > 0)
+      ? enrichment.services
+      : base.services,
   });
 }
 
@@ -152,6 +159,9 @@ function pickMergedProfile(directory: Company, catalog: Company): Company {
     // Keep live scope/type from DB when catalog snapshot is the richer base.
     serviceScope: directory.serviceScope ?? catalog.serviceScope ?? merged.serviceScope,
     entityType: directory.entityType ?? catalog.entityType ?? merged.entityType,
+    publicationState:
+      directory.publicationState ?? catalog.publicationState ?? merged.publicationState,
+    indexable: directory.indexable ?? catalog.indexable ?? merged.indexable,
   });
 }
 

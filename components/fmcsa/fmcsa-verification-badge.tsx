@@ -5,7 +5,8 @@ import { AlertTriangle, ShieldCheck, ShieldX } from 'lucide-react';
 import type { Company } from '@/types';
 import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
 import { badgeLegendHref, methodologyHref } from '@/lib/trust/methodology-paths';
-import { FMCSA_PLAIN_ENGLISH, FMCSA_VERIFIED_TOOLTIP } from '@/lib/trust/fmcsa-consumer-copy';
+import { FMCSA_VERIFIED_TOOLTIP } from '@/lib/trust/fmcsa-consumer-copy';
+import { regulatoryCopyForProvider } from '@/lib/provider/copy';
 import {
   verificationBadgeClasses,
   verificationBadgeIconClass,
@@ -41,6 +42,13 @@ const LABELS: Record<FmcsaBadgeStatus, string> = {
   critical: 'Authority Alert',
   unknown: 'FMCSA Unverified',
 };
+
+function verifiedLabel(company: Parameters<typeof deriveFmcsaBadgeStatus>[0]): string {
+  if (company.outOfService || company.usdotStatus === 'INACTIVE' || company.authorityActive === false) {
+    return LABELS.critical;
+  }
+  return regulatoryCopyForProvider(company).badgeLabel;
+}
 
 const LEGEND_IDS: Record<FmcsaBadgeStatus, string> = {
   verified: 'fmcsa',
@@ -97,14 +105,16 @@ export function FmcsaVerificationBadge({
   // Never render “FMCSA Unverified” on public surfaces
   if (!rawStatus || rawStatus === 'unknown') return null;
   const status = rawStatus;
+  const verifiedText = status === 'verified' ? verifiedLabel(company) : LABELS[status];
+  const roleCopy = regulatoryCopyForProvider(company);
 
-  const tooltip = TOOLTIPS[status];
+  const tooltip = status === 'verified' ? roleCopy.detail : TOOLTIPS[status];
   const legendId = LEGEND_IDS[status];
   const tone = TONE[status];
   const iconClass = verificationBadgeIconClass(size);
   const accessibleTitle =
     status === 'verified'
-      ? `${LABELS.verified}. ${FMCSA_PLAIN_ENGLISH} ${tooltip}`
+      ? `${verifiedText}. ${roleCopy.detail}`
       : `${LABELS[status]}. ${tooltip}`;
 
   let badge: ReactNode;
@@ -117,7 +127,7 @@ export function FmcsaVerificationBadge({
         title={accessibleTitle}
       >
         <ShieldCheck className={iconClass} />
-        {LABELS.verified}
+        {verifiedText}
       </Badge>
     );
   } else if (status === 'warning') {
@@ -155,7 +165,7 @@ export function FmcsaVerificationBadge({
       href={href}
       className={cn(verificationBadgeLinkClass(), 'hover:ring-1 hover:ring-primary/20 transition-shadow')}
       title={`${accessibleTitle} — see how we vet movers`}
-      aria-label={`${LABELS[status]}: ${FMCSA_PLAIN_ENGLISH} ${tooltip}. See how we vet movers.`}
+      aria-label={`${status === 'verified' ? verifiedText : LABELS[status]}: ${tooltip}. See how we vet movers.`}
     >
       {badge}
     </Link>

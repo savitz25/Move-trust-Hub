@@ -23,6 +23,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { formatCompanyTenureLine } from '@/lib/directory/normalize-company';
+import { regulatoryCopyForProvider } from '@/lib/provider/copy';
+import { isSeoIndexableCompany } from '@/lib/provider/publication';
 
 
 interface Props {
@@ -40,9 +42,11 @@ export async function generateMetadata({ params }: Props) {
     editorialRating: company.overallRating,
   });
 
+  const indexable = isSeoIndexableCompany(company);
   return {
     title: `${company.name} — Reviews, Pricing & Auto Transport Info`,
     description: `${company.name} auto transport profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Open & enclosed vehicle shipping.`,
+    robots: indexable ? undefined : { index: false, follow: true },
   };
 }
 
@@ -75,6 +79,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
     foundedYear: company.foundedYear,
     yearsInBusiness: company.yearsInBusiness,
   });
+  const regulatoryCopy = regulatoryCopyForProvider(company);
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
@@ -120,6 +125,8 @@ export default async function AutoTransportProfilePage({ params }: Props) {
               <CardTitle>About {company.name}</CardTitle>
             </CardHeader>
             <CardContent>
+              <p className="text-sm font-medium mb-2">{regulatoryCopy.headline}</p>
+              <p className="text-sm text-muted-foreground mb-4">{regulatoryCopy.detail}</p>
               <p className="text-muted-foreground">{company.description}</p>
               
               <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
