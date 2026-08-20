@@ -34,19 +34,24 @@ export function selectWaveCandidates(
       buckets.set(state, [...(buckets.get(state) ?? []), row]);
     }
     const states = [...buckets.keys()].sort();
+    if (!states.length) return;
     let i = 0;
     let added = 0;
-    while (added < max && selected.length < options.limit && states.length) {
+    let idle = 0;
+    while (added < max && selected.length < options.limit && idle < states.length) {
       const state = states[i % states.length]!;
+      i += 1;
       const bucket = buckets.get(state) ?? [];
       const next = bucket.shift();
-      i += 1;
-      if (!next) continue;
-      if ((perState.get(state) ?? 0) >= options.perStateCap) continue;
+      if (!next || (perState.get(state) ?? 0) >= options.perStateCap) {
+        idle += 1;
+        continue;
+      }
       used.add(next.usdot);
       perState.set(state, (perState.get(state) ?? 0) + 1);
       selected.push(next);
       added += 1;
+      idle = 0;
     }
   };
 

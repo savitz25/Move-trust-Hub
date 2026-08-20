@@ -115,7 +115,8 @@ export default async function ComparePage() {
         </section>
       ) : null}
 
-      <CompareLoader allCompanies={companies} />
+      {/* Featured subset only — compare hydrates selected slugs via /api/compare/companies. */}
+      <CompareLoader allCompanies={featured} />
 
       <ResearchNextSteps
         className="mt-10"

@@ -153,6 +153,8 @@ async function main() {
     SELECT usdot, mc, legal_name, dba_name, phy_city, phy_state, phone,
            classification, disposition, hhg_carrier_verified, hhg_broker_verified, retrieved_at
       FROM public.federal_hhg_staging
+     WHERE disposition = 'NEW_CANONICAL_CANDIDATE'
+       AND classification IN ('HHG_CARRIER','HHG_BROKER','HHG_CARRIER_BROKER')
   `);
   const rows = staged.rows as StagedPublicationRow[];
   const gateCounts: Record<string, number> = {};
@@ -172,10 +174,22 @@ async function main() {
   );
   const existingIds = new Set((existing.rows as Array<{ id: string }>).map((row) => row.id));
 
-  const publishable = eligible.filter((row) => !existingDots.has(normalizeUsdot(row.usdot)));
+  const alreadyWave = await client.query(
+    `SELECT usdot FROM public.federal_hhg_wave_publication
+      WHERE wave_id = $1 AND status <> 'unpublished'`,
+    [WAVE_ID]
+  );
+  const alreadyUsdots = new Set(
+    (alreadyWave.rows as Array<{ usdot: string }>).map((row) => normalizeUsdot(row.usdot))
+  );
+  const remaining = Math.max(0, limit - alreadyUsdots.size);
+  const publishable = eligible.filter((row) => {
+    const usdot = normalizeUsdot(row.usdot);
+    return !existingDots.has(usdot) && !alreadyUsdots.has(usdot);
+  });
   const perStateCap = limit <= 250 ? 8 : 22;
   const selected = selectWaveCandidates(publishable, {
-    limit,
+    limit: remaining,
     perStateCap,
     maxBrokers: limit <= 250 ? 40 : 200,
     maxDuals: limit <= 250 ? 25 : 80,
@@ -226,37 +240,73 @@ async function main() {
     return;
   }
 
-  let inserted = 0;
+  const prepared = [];
   let skipped = 0;
+  for (const row of selected) {
+    const usdot = normalizeUsdot(row.usdot);
+    const id = waveCompanyId(usdot);
+    if (existingIds.has(id) || existingDots.has(usdot)) {
+      skipped += 1;
+      continue;
+    }
+    const name = publicDisplayName(row);
+    const slug = waveSlug(name, usdot, takenSlugs);
+    takenSlugs.add(slug);
+    existingIds.add(id);
+    existingDots.add(usdot);
+    const hq = [row.phy_city?.trim(), (row.phy_state ?? '').trim().toUpperCase()]
+      .filter(Boolean)
+      .join(', ');
+    const roleLabel =
+      row.classification === 'HHG_BROKER'
+        ? 'household-goods broker'
+        : row.classification === 'HHG_CARRIER_BROKER'
+          ? 'household-goods carrier and broker'
+          : 'household-goods motor carrier';
+    prepared.push({
+      id,
+      slug,
+      name,
+      usdot,
+      row,
+      hq,
+      short: `Federally authorized interstate ${roleLabel} (USDOT ${usdot}). Confirm the current FMCSA SAFER record before booking.`,
+      description: `${name} is listed from FMCSA Licensing & Insurance evidence as an interstate ${roleLabel}. Legal name: ${row.legal_name}. Headquarters on the federal record: ${hq}. ${row.mc ? `MC-${row.mc}. ` : ''}This profile does not claim nationwide local coverage, auto-transport authority, or consumer ratings that are not yet on file.`,
+      entity: entityTypeForClassification(row.classification),
+      services: servicesForClassification(row.classification),
+      retrieved: row.retrieved_at ?? new Date().toISOString(),
+    });
+  }
+
   await client.query('BEGIN');
   try {
-    for (const row of selected) {
-      const usdot = normalizeUsdot(row.usdot);
-      const id = waveCompanyId(usdot);
-      if (existingIds.has(id) || existingDots.has(usdot)) {
-        skipped += 1;
-        continue;
+    const chunk = 100;
+    for (let i = 0; i < prepared.length; i += chunk) {
+      const slice = prepared.slice(i, i + chunk);
+      const values: unknown[] = [];
+      const placeholders: string[] = [];
+      let p = 1;
+      for (const item of slice) {
+        placeholders.push(
+          `($${p++},$${p++},$${p++},$${p++},$${p++},$${p++},$${p++},$${p++},$${p++},$${p++},'Not Rated',0,0,true,false,$${p++},$${p++},'interstate',$${p++},$${p++}::jsonb,'[]'::jsonb,0,0,0,0,0,NULL,true,now(),'PUBLISHABLE',false,false)`
+        );
+        values.push(
+          item.id,
+          item.slug,
+          item.name,
+          item.short,
+          item.description,
+          item.hq,
+          item.row.phone,
+          item.usdot,
+          item.row.mc,
+          item.row.legal_name,
+          item.retrieved,
+          item.entity,
+          COVERAGE,
+          JSON.stringify(item.services)
+        );
       }
-      const name = publicDisplayName(row);
-      const slug = waveSlug(name, usdot, takenSlugs);
-      takenSlugs.add(slug);
-      existingIds.add(id);
-      existingDots.add(usdot);
-      const entity = entityTypeForClassification(row.classification);
-      const services = servicesForClassification(row.classification);
-      const retrieved = row.retrieved_at ?? new Date().toISOString();
-      const hq = [row.phy_city?.trim(), (row.phy_state ?? '').trim().toUpperCase()]
-        .filter(Boolean)
-        .join(', ');
-      const roleLabel =
-        row.classification === 'HHG_BROKER'
-          ? 'household-goods broker'
-          : row.classification === 'HHG_CARRIER_BROKER'
-            ? 'household-goods carrier and broker'
-            : 'household-goods motor carrier';
-      const short = `Federally authorized interstate ${roleLabel} (USDOT ${usdot}). Confirm the current FMCSA SAFER record before booking.`;
-      const description = `${name} is listed from FMCSA Licensing & Insurance evidence as an interstate ${roleLabel}. Legal name: ${row.legal_name}. Headquarters on the federal record: ${hq}. ${row.mc ? `MC-${row.mc}. ` : ''}This profile does not claim nationwide local coverage, auto-transport authority, or consumer ratings that are not yet on file.`;
-
       await client.query(
         `INSERT INTO public.companies (
            id, slug, name, short_description, description, headquarters, phone,
@@ -266,87 +316,80 @@ async function main() {
            specialties, overall_rating, review_count, reputation_score,
            years_in_business, avg_price_per_move, price_range, is_verified,
            last_updated, publication_state, indexable, legacy_directory_row
-         ) VALUES (
-           $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,'Not Rated',0,0,true,false,
-           $11,$12,'interstate',$13,$14::jsonb,'[]'::jsonb,0,0,0,0,0,NULL,true,
-           now(),'PUBLISHABLE',false,false
-         )
+         ) VALUES ${placeholders.join(',')}
          ON CONFLICT (id) DO NOTHING`,
-        [
-          id,
-          slug,
-          name,
-          short,
-          description,
-          hq,
-          row.phone,
-          usdot,
-          row.mc,
-          row.legal_name,
-          retrieved,
-          entity,
-          COVERAGE,
-          JSON.stringify(services),
-        ]
+        values
       );
-      const wrote = await client.query(`SELECT 1 FROM public.companies WHERE id = $1`, [id]);
-      if (!wrote.rowCount) {
-        skipped += 1;
-        continue;
+    }
+
+    const capValues: unknown[] = [];
+    const capPh: string[] = [];
+    let cp = 1;
+    const authValues: unknown[] = [];
+    const authPh: string[] = [];
+    let ap = 1;
+    const waveValues: unknown[] = [];
+    const wavePh: string[] = [];
+    let wp = 1;
+    for (const item of prepared) {
+      for (const capability of capabilitiesForClassification(item.row.classification)) {
+        capPh.push(`($${cp++},$${cp++},$${cp++},'VERIFIED',$${cp++}::timestamptz)`);
+        capValues.push(item.id, capability, SOURCE, item.retrieved);
       }
-      inserted += 1;
-      for (const capability of capabilitiesForClassification(row.classification)) {
-        await client.query(
-          `INSERT INTO public.provider_capability (
-             company_id, capability, evidence_source, evidence_state, evidence_at
-           ) VALUES ($1,$2,$3,'VERIFIED',$4::timestamptz)
-           ON CONFLICT (company_id, capability) DO UPDATE
-             SET evidence_state = 'VERIFIED',
-                 evidence_source = EXCLUDED.evidence_source,
-                 evidence_at = EXCLUDED.evidence_at`,
-          [id, capability, SOURCE, retrieved]
+      authPh.push(
+        `($${ap++},'federal','usdot_registration',$${ap++},'FMCSA','active',$${ap++},$${ap++}::timestamptz)`
+      );
+      authValues.push(item.id, item.usdot, SOURCE, item.retrieved);
+      if (item.row.mc) {
+        authPh.push(
+          `($${ap++},'federal','mc_docket',$${ap++},'FMCSA','active',$${ap++},$${ap++}::timestamptz)`
         );
+        authValues.push(item.id, item.row.mc, SOURCE, item.retrieved);
+        if (item.row.hhg_carrier_verified) {
+          authPh.push(
+            `($${ap++},'federal','hhg_carrier',$${ap++},'FMCSA','active',$${ap++},$${ap++}::timestamptz)`
+          );
+          authValues.push(item.id, item.row.mc, SOURCE, item.retrieved);
+        }
+        if (item.row.hhg_broker_verified) {
+          authPh.push(
+            `($${ap++},'federal','hhg_broker',$${ap++},'FMCSA','active',$${ap++},$${ap++}::timestamptz)`
+          );
+          authValues.push(item.id, item.row.mc, SOURCE, item.retrieved);
+        }
       }
+      wavePh.push(
+        `($${wp++},$${wp++},$${wp++},$${wp++},$${wp++},now(),'published',$${wp++})`
+      );
+      waveValues.push(WAVE_ID, item.usdot, item.id, item.slug, item.row.classification, SOURCE);
+    }
+    if (capValues.length) {
+      await client.query(
+        `INSERT INTO public.provider_capability (company_id, capability, evidence_source, evidence_state, evidence_at)
+         VALUES ${capPh.join(',')}
+         ON CONFLICT (company_id, capability) DO UPDATE
+           SET evidence_state = 'VERIFIED',
+               evidence_source = EXCLUDED.evidence_source,
+               evidence_at = EXCLUDED.evidence_at`,
+        capValues
+      );
+    }
+    if (authValues.length) {
       await client.query(
         `INSERT INTO public.provider_authority (
            company_id, jurisdiction, authority_type, authority_number, issuing_agency, status, source, retrieved_at
-         ) VALUES ($1,'federal','usdot_registration',$2,'FMCSA','active',$3,$4::timestamptz)
+         ) VALUES ${authPh.join(',')}
          ON CONFLICT DO NOTHING`,
-        [id, usdot, SOURCE, retrieved]
+        authValues
       );
-      if (row.mc) {
-        await client.query(
-          `INSERT INTO public.provider_authority (
-             company_id, jurisdiction, authority_type, authority_number, issuing_agency, status, source, retrieved_at
-           ) VALUES ($1,'federal','mc_docket',$2,'FMCSA','active',$3,$4::timestamptz)
-           ON CONFLICT DO NOTHING`,
-          [id, row.mc, SOURCE, retrieved]
-        );
-        if (row.hhg_carrier_verified) {
-          await client.query(
-            `INSERT INTO public.provider_authority (
-               company_id, jurisdiction, authority_type, authority_number, issuing_agency, status, source, retrieved_at
-             ) VALUES ($1,'federal','hhg_carrier',$2,'FMCSA','active',$3,$4::timestamptz)
-             ON CONFLICT DO NOTHING`,
-            [id, row.mc, SOURCE, retrieved]
-          );
-        }
-        if (row.hhg_broker_verified) {
-          await client.query(
-            `INSERT INTO public.provider_authority (
-               company_id, jurisdiction, authority_type, authority_number, issuing_agency, status, source, retrieved_at
-             ) VALUES ($1,'federal','hhg_broker',$2,'FMCSA','active',$3,$4::timestamptz)
-             ON CONFLICT DO NOTHING`,
-            [id, row.mc, SOURCE, retrieved]
-          );
-        }
-      }
+    }
+    if (waveValues.length) {
       await client.query(
         `INSERT INTO public.federal_hhg_wave_publication (
            wave_id, usdot, company_id, slug, classification, published_at, status, source
-         ) VALUES ($1,$2,$3,$4,$5,now(),'published',$6)
+         ) VALUES ${wavePh.join(',')}
          ON CONFLICT (wave_id, usdot) DO NOTHING`,
-        [WAVE_ID, usdot, id, slug, row.classification, SOURCE]
+        waveValues
       );
     }
     await client.query('COMMIT');
@@ -354,6 +397,7 @@ async function main() {
     await client.query('ROLLBACK');
     throw error;
   }
+  const inserted = prepared.length;
 
   const after = await client.query(`
     SELECT count(*)::int AS companies,

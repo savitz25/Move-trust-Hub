@@ -52,8 +52,10 @@ export function normalizeCompanyForDisplay(company: Company): Company {
     reputationScore: Number(company.reputationScore) || 0,
     yearsInBusiness: Number(company.yearsInBusiness) || 0,
     avgPricePerMove: Number(company.avgPricePerMove) || 0,
-    priceRange: company.priceRange || '$$',
-    coverage: company.coverage || 'Continental US',
+    priceRange:
+      company.priceRange?.trim() ||
+      ((Number(company.avgPricePerMove) || 0) > 0 ? '$$' : ''),
+    coverage: company.coverage?.trim() || '',
     services,
     specialties,
     ratingBreakdown: company.ratingBreakdown ?? EMPTY_RATING_BREAKDOWN,

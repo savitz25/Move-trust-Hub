@@ -278,6 +278,8 @@ export function CompareClient({ allCompanies }: Props) {
       label: 'Complaints (2yr)',
       get: (c) => {
         const n = Number(c.fmcsaComplaints);
+        const shipments = Number(c.fmcsaShipments);
+        if (!Number.isFinite(shipments) || shipments <= 0) return '—';
         return Number.isFinite(n) ? String(n) : '—';
       },
     },
