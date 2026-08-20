@@ -2,34 +2,36 @@
   "google_places_requests": 0,
   "dry": false,
   "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
-  "limit": 250,
-  "inserted": 250,
+  "limit": 1274,
+  "inserted": 1024,
   "skipped": 0,
-  "excluded": {},
+  "excluded": {
+    "canonical_usdot_collision": 250
+  },
   "before": {
-    "companies": 1468,
-    "indexable": 1432
+    "companies": 1718,
+    "indexable": 1682
   },
   "after": {
-    "companies": 1718,
-    "indexable": 1432
+    "companies": 2742,
+    "indexable": 1682
   },
   "wave": [
     {
-      "classification": "HHG_BROKER",
-      "n": 50
+      "classification": "HHG_CARRIER",
+      "n": 1202
     },
     {
-      "classification": "HHG_CARRIER",
-      "n": 200
+      "classification": "HHG_BROKER",
+      "n": 72
     }
   ],
   "selected": {
-    "total": 250,
-    "carrier": 200,
-    "broker": 50,
+    "total": 1024,
+    "carrier": 1002,
+    "broker": 22,
     "dual": 0,
-    "states": 43
+    "states": 40
   },
   "wave1": {
     "n": 1000

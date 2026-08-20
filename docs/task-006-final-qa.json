@@ -1,0 +1,294 @@
+{
+  "google_places_requests": 0,
+  "unsafe": {
+    "review_published": 0,
+    "false_caps": 0,
+    "wave1": 1000,
+    "wave2": 1274,
+    "companies": 2742
+  },
+  "sampled": 40,
+  "failed": 0,
+  "results": [
+    {
+      "slug": "u-s-a-van-lines-llc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "volunteer-van-lines-l-l-c",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "byco-moving-or-tough-guy-moving",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "murrieta-moving",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "movers-dispatch-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "avi-trucking-company",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "air-1-moving-storage-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "a-1-allstate-services-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "waters-moving-storage-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "pro-piano-movers",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "moving-depot",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "right-way-movers-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "the-moving-company-llc-usdot-1194579",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "progressive-moving-company-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "two-men-and-a-truck-usdot-1199826",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "moving-zone-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "liedkie-moving-storage-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "j-m-moving-and-storage-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "we-move-anything",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "mcck-transportation-group-inc",
+      "classification": "HHG_CARRIER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "sdc-international-shipping",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "starving-students-inc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "goshare",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "pilo-services-llc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "brs-international",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "ship2tw-sky-fox-moving",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "tplogix-inc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "tbg-cargo",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "zermodal-llc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "jt-brokerage",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "allegiance-van-lines-llc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "native-van-lines-corp",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "trivium-united-llc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "greenleaf-van-lines-inc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "onroute-logistics",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "move-hub",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "united-moving-management-llc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "cardo-transport-inc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "americas-moving-and-storage-llc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "map-franklin-enterprises-llc",
+      "classification": "HHG_BROKER",
+      "status": 200,
+      "ok": true,
+      "failures": []
+    }
+  ]
+}
