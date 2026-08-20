@@ -1,0 +1,2340 @@
+{
+  "generated_at": "2026-08-20T03:21:56.879Z",
+  "google_places_requests": 0,
+  "source": "FMCSA QC Mobile API",
+  "companies": [
+    {
+      "id": "allied",
+      "slug": "allied-van-lines",
+      "name": "Allied Van Lines",
+      "usdot_number": "125563",
+      "mc_number": "15735",
+      "fmcsa_legal_name": "MAYFLOWER TRANSIT LLC",
+      "entity_type": "Carrier",
+      "service_scope": "interstate",
+      "headquarters": "Oakbrook Terrace, IL",
+      "website": "https://www.allied.com/local/Franklin-Park-Moving-Company?utm_source=local&utm_medium=organic&utm_campaign=gmb",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": true
+    },
+    {
+      "id": "arpin",
+      "slug": "arpin-van-lines",
+      "name": "Arpin Van Lines",
+      "usdot_number": "125563",
+      "mc_number": "621",
+      "fmcsa_legal_name": "MAYFLOWER TRANSIT LLC",
+      "entity_type": "Carrier",
+      "service_scope": "interstate",
+      "headquarters": "West Warwick, RI",
+      "website": "https://www.arpinintl.com",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": true
+    },
+    {
+      "id": "atlas",
+      "slug": "atlas-van-lines",
+      "name": "Atlas Van Lines",
+      "usdot_number": "125563",
+      "mc_number": "79658",
+      "fmcsa_legal_name": "MAYFLOWER TRANSIT LLC",
+      "entity_type": "Carrier",
+      "service_scope": "interstate",
+      "headquarters": "Evansville, IN",
+      "website": "https://www.atlasvanlines.com/?y_source=1_ODIxNzUwLTcxNS1sb2NhdGlvbi53ZWJzaXRl",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": true
+    },
+    {
+      "id": "graebel",
+      "slug": "graebel-van-lines",
+      "name": "Graebel Van Lines",
+      "usdot_number": "125563",
+      "mc_number": "125563",
+      "fmcsa_legal_name": "MAYFLOWER TRANSIT LLC",
+      "entity_type": "Carrier",
+      "service_scope": "interstate",
+      "headquarters": "Aurora, CO",
+      "website": "https://www.graebel.com",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": true
+    },
+    {
+      "id": "mayflower",
+      "slug": "aero-mayflower-transit-company",
+      "name": "Aero Mayflower Transit Company",
+      "usdot_number": "125563",
+      "mc_number": "2934",
+      "fmcsa_legal_name": "MAYFLOWER TRANSIT LLC",
+      "entity_type": "Carrier",
+      "service_scope": "interstate",
+      "headquarters": "Indianapolis, IN",
+      "website": "https://hoganmoving.com",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": true
+    },
+    {
+      "id": "national",
+      "slug": "national-van-lines",
+      "name": "National Van Lines",
+      "usdot_number": "70851",
+      "mc_number": "42866",
+      "fmcsa_legal_name": "NORTH AMERICAN VAN LINES INC",
+      "entity_type": "Carrier",
+      "service_scope": "intrastate",
+      "headquarters": "Broadview, IL",
+      "website": "https://www.nationalvanlines.com/?utm_source=gbp&utm_medium=organic&utm_campaign=gbp-listing",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": true
+    },
+    {
+      "id": "north-american",
+      "slug": "north-american-moving-storage",
+      "name": "North American Moving & Storage",
+      "usdot_number": "70851",
+      "mc_number": "107012",
+      "fmcsa_legal_name": "NORTH AMERICAN VAN LINES INC",
+      "entity_type": "Carrier",
+      "service_scope": "intrastate",
+      "headquarters": "Fort Wayne, IN",
+      "website": "https://www.northamerican.com/local/ft-wayne-moving-company?utm_source=local&utm_medium=organic&utm_campaign=gmb",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": true
+    },
+    {
+      "id": "northern-michigan-moving",
+      "slug": "northern-michigan-moving",
+      "name": "Northern Michigan Moving",
+      "usdot_number": "1398726",
+      "mc_number": "884143",
+      "fmcsa_legal_name": "NORTHERN MICHIGAN MOVING & STORAGE INC",
+      "entity_type": "Carrier",
+      "service_scope": "interstate",
+      "headquarters": "Traverse City",
+      "website": "https://twomenandatruck.com/movers/mi/northern-michigan?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": false
+    },
+    {
+      "id": "northern-michigan-moving-2",
+      "slug": "northern-michigan-moving-2",
+      "name": "Northern Michigan Moving",
+      "usdot_number": "1398726",
+      "mc_number": null,
+      "fmcsa_legal_name": "NORTHERN MICHIGAN MOVING & STORAGE INC",
+      "entity_type": "Carrier",
+      "service_scope": "interstate",
+      "headquarters": "1348 S West Silver Lake Rd, Traverse City, MI 49685, USA",
+      "website": "https://twomenandatruck.com/movers/mi/northern-michigan?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": false
+    },
+    {
+      "id": "wheaton",
+      "slug": "wheaton-world-wide",
+      "name": "Wheaton World Wide Moving",
+      "usdot_number": "125563",
+      "mc_number": "87113",
+      "fmcsa_legal_name": "MAYFLOWER TRANSIT LLC",
+      "entity_type": "Carrier",
+      "service_scope": "interstate",
+      "headquarters": "Indianapolis, IN",
+      "website": "https://www.wheatonworldwide.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "authority_active": true,
+      "out_of_service": false,
+      "is_verified": true
+    }
+  ],
+  "collision_dots": {
+    "70851": {
+      "carrier": {
+        "dotNumber": 70851,
+        "legalName": "NORTH AMERICAN VAN LINES INC",
+        "dbaName": "NORTH AMERICAN MOVING & STORAGE",
+        "phyCity": "FORT WAYNE",
+        "phyState": "IN",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "125563": {
+      "carrier": {
+        "dotNumber": 125563,
+        "legalName": "MAYFLOWER TRANSIT LLC",
+        "dbaName": "AERO MAYFLOWER TRANSIT COMPANY",
+        "phyCity": "FENTON",
+        "phyState": "MO",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "1398726": {
+      "carrier": {
+        "dotNumber": 1398726,
+        "legalName": "NORTHERN MICHIGAN MOVING AND STORAGE INC",
+        "dbaName": "CENTRAL MICHIGAN MOVERS",
+        "phyCity": "ORION",
+        "phyState": "MI",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    }
+  },
+  "name_searches": [
+    {
+      "query": "Allied Van Lines",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 1743617,
+          "legalName": "ELITE TRANSPORT INC",
+          "dbaName": "ALLIED VAN LINES",
+          "phyCity": "ELIZABETH",
+          "phyState": "NJ",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 641468,
+          "legalName": "BERGER TRANSFER INC",
+          "dbaName": "ALLIED VAN LINES",
+          "phyCity": "ST PAUL",
+          "phyState": "MN",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 261168,
+          "legalName": "ASSOCIATED MOVING & STORAGE CO INC",
+          "dbaName": "ALLIED VAN LINES",
+          "phyCity": "THEODORE",
+          "phyState": "AL",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "I",
+          "contractAuthorityStatus": "I",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 307996,
+          "legalName": "LEON B RICKS",
+          "dbaName": "ALLIED VAN LINES",
+          "phyCity": "NORTH SALT LAKE",
+          "phyState": "UT",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 1512210,
+          "legalName": "BRETT REMALY",
+          "dbaName": "ALLIED VAN LINES",
+          "phyCity": "EMMAUS",
+          "phyState": "PA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 1743616,
+          "legalName": "ELITE TRANSPORT INC",
+          "dbaName": "ALLIED VAN LINES",
+          "phyCity": "ELIZABETH",
+          "phyState": "NJ",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 864601,
+          "legalName": "SPAETH TRANSFER INC",
+          "dbaName": "ALLIED VAN LINES INC",
+          "phyCity": "BREMERTON",
+          "phyState": "WA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 999700,
+          "legalName": "SOUTHWEST TRANSFER & STORAGE CO INC",
+          "dbaName": "ALLIED VAN LINES INC",
+          "phyCity": "WICHITA",
+          "phyState": "KS",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        }
+      ]
+    },
+    {
+      "query": "Mayflower Transit",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 125563,
+          "legalName": "MAYFLOWER TRANSIT LLC",
+          "dbaName": "AERO MAYFLOWER TRANSIT COMPANY",
+          "phyCity": "FENTON",
+          "phyState": "MO",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "A",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 73351,
+          "legalName": "DODGE MOVING AND STORAGE COMPANY INC",
+          "dbaName": "AERO MAYFLOWER TRANSIT COMPANY",
+          "phyCity": "EARTH CITY",
+          "phyState": "MO",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 1891449,
+          "legalName": "MODERN MOVING AND STORAGE COMPANY INCORPORATED",
+          "dbaName": "MAYFLOWER TRANSIT",
+          "phyCity": "GULFPORT",
+          "phyState": "MS",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 117369,
+          "legalName": "MAYFLOWER TRANSIT LINES INC",
+          "dbaName": null,
+          "phyCity": "MAHOPAC",
+          "phyState": "NY",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "I",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        }
+      ]
+    },
+    {
+      "query": "Aero Mayflower",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 125563,
+          "legalName": "MAYFLOWER TRANSIT LLC",
+          "dbaName": "AERO MAYFLOWER TRANSIT COMPANY",
+          "phyCity": "FENTON",
+          "phyState": "MO",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "A",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 73351,
+          "legalName": "DODGE MOVING AND STORAGE COMPANY INC",
+          "dbaName": "AERO MAYFLOWER TRANSIT COMPANY",
+          "phyCity": "EARTH CITY",
+          "phyState": "MO",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 307280,
+          "legalName": "AERO MAYFLOWER CHIPMAN VAN & STORAGE",
+          "dbaName": null,
+          "phyCity": "VALLEJO",
+          "phyState": "CA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        }
+      ]
+    },
+    {
+      "query": "Atlas Van Lines",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 2613511,
+          "legalName": "MACY MOVERS INC",
+          "dbaName": "AGENT FOR ATLAS VAN LINES",
+          "phyCity": "HAYWARD",
+          "phyState": "CA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 836933,
+          "legalName": "THREE WAY MID-AMERICA L C",
+          "dbaName": "ATLAS VAN LINES",
+          "phyCity": "OKLAHOMA CITY",
+          "phyState": "OK",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 4107907,
+          "legalName": "ATLAS VAN LINES",
+          "dbaName": null,
+          "phyCity": "NEWTON",
+          "phyState": "NC",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "N",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 2211773,
+          "legalName": "ATLAS VAN LINES INC",
+          "dbaName": null,
+          "phyCity": "EVANSVILLE",
+          "phyState": "IN",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 2596708,
+          "legalName": "ATLAS VAN LINES INTERNATIONAL CORP",
+          "dbaName": null,
+          "phyCity": "EVANSVILLE",
+          "phyState": "IN",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "N",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "A",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 125550,
+          "legalName": "ATLAS VAN LINES INC",
+          "dbaName": null,
+          "phyCity": "EVANSVILLE",
+          "phyState": "IN",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "A",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 310150,
+          "legalName": "ATLAS VAN LINES INC",
+          "dbaName": null,
+          "phyCity": "TORLOCK",
+          "phyState": "CA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 4106588,
+          "legalName": "ATLAS VAN LINES",
+          "dbaName": null,
+          "phyCity": "GAINESVILLE",
+          "phyState": "GA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "I",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        }
+      ]
+    },
+    {
+      "query": "Wheaton World Wide",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 70719,
+          "legalName": "WHEATON VAN LINES INC",
+          "dbaName": "WHEATON WORLD WIDE MOVING",
+          "phyCity": "INDIANAPOLIS",
+          "phyState": "IN",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        }
+      ]
+    },
+    {
+      "query": "Wheaton Van Lines",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 70719,
+          "legalName": "WHEATON VAN LINES INC",
+          "dbaName": "WHEATON WORLD WIDE MOVING",
+          "phyCity": "INDIANAPOLIS",
+          "phyState": "IN",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        }
+      ]
+    },
+    {
+      "query": "Graebel Van Lines",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 220843,
+          "legalName": "GRAEBEL VAN LINES LLC",
+          "dbaName": "GRAEBEL MOVING SERVICES",
+          "phyCity": "DALLAS",
+          "phyState": "TX",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "I",
+          "contractAuthorityStatus": "I",
+          "brokerAuthorityStatus": "I",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 1015222,
+          "legalName": "PHILIP MAY",
+          "dbaName": "GRAEBEL VAN LINES",
+          "phyCity": "SAYLORSBURG",
+          "phyState": "PA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 1840205,
+          "legalName": "GRAEBEL VAN LINES",
+          "dbaName": null,
+          "phyCity": "FAIRFIELD",
+          "phyState": "OH",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        }
+      ]
+    },
+    {
+      "query": "Graebel Movers",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 2211896,
+          "legalName": "GRAEBEL MOVERS INC",
+          "dbaName": null,
+          "phyCity": "AURORA",
+          "phyState": "CO",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "N",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "I",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 2972664,
+          "legalName": "GRAEBEL MOVERS INTERNATIONAL INC",
+          "dbaName": null,
+          "phyCity": "AURORA",
+          "phyState": "CO",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "N",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "A",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        }
+      ]
+    },
+    {
+      "query": "Arpin Van Lines",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 477085,
+          "legalName": "GLEN COONAN",
+          "dbaName": "PAUL ARPIN VAN LINES",
+          "phyCity": "PALM SPRINGS",
+          "phyState": "CA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        }
+      ]
+    },
+    {
+      "query": "National Van Lines",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 1255655,
+          "legalName": "SWIFT MOVERS VAN LINES INC",
+          "dbaName": "ALL NATIONAL VAN LINES",
+          "phyCity": "LINDEN",
+          "phyState": "NJ",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "I",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": "C",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 2233920,
+          "legalName": "CARTWRIGHT INTERNATIONAL VAN LINES INC",
+          "dbaName": "CARTWRIGHT AIR EXPRESS",
+          "phyCity": "GRANDVIEW",
+          "phyState": "MO",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "N",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "I",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 3795167,
+          "legalName": "YELLOW EAGLE RELOCATIONS LLC",
+          "dbaName": "INTERNATIONAL VAN LINES",
+          "phyCity": "POMPANO BEACH",
+          "phyState": "FL",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 2247789,
+          "legalName": "OCEAN STAR INTERNATIONAL INC",
+          "dbaName": "INTERNATIONAL VAN LINES",
+          "phyCity": "CORAL SPRINGS",
+          "phyState": "FL",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "N",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "A",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 3135836,
+          "legalName": "WAYFLOWERS VAN LINES LLC",
+          "dbaName": "INTERNATIONAL VAN LINES",
+          "phyCity": "MONROE",
+          "phyState": "NC",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 3149430,
+          "legalName": "Y & O MOVING CONSULTING SERVICES LLC",
+          "dbaName": "INTERNATIONAL VAN LINES",
+          "phyCity": "N MIAMI BEACH",
+          "phyState": "FL",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "I",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 1369156,
+          "legalName": "GLOBAL SYSTEMS LOGISTICS LLC",
+          "dbaName": "INTERNATIONAL VAN LINES VISTA MOVING & STORAGE HORIZON MOVIN",
+          "phyCity": "YUMA",
+          "phyState": "AZ",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "I",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 2241124,
+          "legalName": "TRANS NATIONAL VAN LINES LLC",
+          "dbaName": "TRANS NATIONAL BROKERAGE",
+          "phyCity": "LEWES",
+          "phyState": "DE",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "N",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "I",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        }
+      ]
+    },
+    {
+      "query": "North American Van Lines",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 37552,
+          "legalName": "BACHMAN TRANSFER & STORAGE INC",
+          "dbaName": "CUMBERLAND NORTH AMERICAN VAN LINES",
+          "phyCity": "CUMBERLAND",
+          "phyState": "MD",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "I",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 70851,
+          "legalName": "NORTH AMERICAN VAN LINES INC",
+          "dbaName": "NORTH AMERICAN MOVING & STORAGE",
+          "phyCity": "FORT WAYNE",
+          "phyState": "IN",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "A",
+          "brokerAuthorityStatus": "A",
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        },
+        {
+          "dotNumber": 1223357,
+          "legalName": "MOVING SOLUTIONS INC",
+          "dbaName": "NORTH AMERICAN VAN LINES",
+          "phyCity": "MENTOR",
+          "phyState": "OH",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": "S",
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 1545212,
+          "legalName": "CLIFFORD C PEREZ JR",
+          "dbaName": "NORTH AMERICAN VAN LINES",
+          "phyCity": "KELSA",
+          "phyState": "WA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 1812967,
+          "legalName": "AARON CECIL MARSH",
+          "dbaName": "NORTH AMERICAN VAN LINES INC",
+          "phyCity": "COLORADO SPRINGS",
+          "phyState": "CO",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 313328,
+          "legalName": "NORTH AMERICAN VAN LINES",
+          "dbaName": null,
+          "phyCity": "MINOT",
+          "phyState": "ND",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 4106077,
+          "legalName": "NORTH AMERICAN VAN LINES",
+          "dbaName": null,
+          "phyCity": "MOULTRIE",
+          "phyState": "GA",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "N",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        },
+        {
+          "dotNumber": 26682,
+          "legalName": "NORTH AMERICAN VAN LINES",
+          "dbaName": null,
+          "phyCity": "GREAT FALLS",
+          "phyState": "MT",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": null,
+          "contractAuthorityStatus": null,
+          "brokerAuthorityStatus": null,
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": null
+        }
+      ]
+    },
+    {
+      "query": "Northern Michigan Moving",
+      "httpStatus": 200,
+      "matches": [
+        {
+          "dotNumber": 1398726,
+          "legalName": "NORTHERN MICHIGAN MOVING AND STORAGE INC",
+          "dbaName": "CENTRAL MICHIGAN MOVERS",
+          "phyCity": "ORION",
+          "phyState": "MI",
+          "allowedToOperate": "Y",
+          "commonAuthorityStatus": "A",
+          "contractAuthorityStatus": "N",
+          "brokerAuthorityStatus": "N",
+          "safetyRating": null,
+          "oosDate": null,
+          "docketNumber": null,
+          "censusType": "CARRIER"
+        }
+      ]
+    }
+  ],
+  "candidate_dots": {
+    "49922": {
+      "carrier": {
+        "dotNumber": 49922,
+        "legalName": "ARPIN MOVING INC",
+        "dbaName": null,
+        "phyCity": "WEST WARWICK",
+        "phyState": "RI",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "70719": {
+      "carrier": {
+        "dotNumber": 70719,
+        "legalName": "WHEATON VAN LINES INC",
+        "dbaName": "WHEATON WORLD WIDE MOVING",
+        "phyCity": "INDIANAPOLIS",
+        "phyState": "IN",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "73351": {
+      "carrier": {
+        "dotNumber": 73351,
+        "legalName": "DODGE MOVING AND STORAGE COMPANY INC",
+        "dbaName": "AERO MAYFLOWER TRANSIT COMPANY",
+        "phyCity": "EARTH CITY",
+        "phyState": "MO",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "76235": {
+      "carrier": {
+        "dotNumber": 76235,
+        "legalName": "ALLIED VAN LINES INC",
+        "dbaName": null,
+        "phyCity": "FORT WAYNE",
+        "phyState": "IN",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "76628": {
+      "carrier": {
+        "dotNumber": 76628,
+        "legalName": "NATIONAL VAN LINES INC",
+        "dbaName": null,
+        "phyCity": "BROADVIEW",
+        "phyState": "IL",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "117369": {
+      "carrier": {
+        "dotNumber": 117369,
+        "legalName": "MAYFLOWER TRANSIT LINES INC",
+        "dbaName": null,
+        "phyCity": "MAHOPAC",
+        "phyState": "NY",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "I",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "125550": {
+      "carrier": {
+        "dotNumber": 125550,
+        "legalName": "ATLAS VAN LINES INC",
+        "dbaName": null,
+        "phyCity": "EVANSVILLE",
+        "phyState": "IN",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "220843": {
+      "carrier": {
+        "dotNumber": 220843,
+        "legalName": "GRAEBEL VAN LINES LLC",
+        "dbaName": "GRAEBEL MOVING SERVICES",
+        "phyCity": "DALLAS",
+        "phyState": "TX",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "I",
+        "contractAuthorityStatus": "I",
+        "brokerAuthorityStatus": "I",
+        "safetyRating": "S",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "261168": {
+      "carrier": {
+        "dotNumber": 261168,
+        "legalName": "ASSOCIATED MOVING & STORAGE CO INC",
+        "dbaName": "ALLIED VAN LINES",
+        "phyCity": "THEODORE",
+        "phyState": "AL",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "I",
+        "contractAuthorityStatus": "I",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "307280": {
+      "carrier": {
+        "dotNumber": 307280,
+        "legalName": "AERO MAYFLOWER CHIPMAN VAN & STORAGE",
+        "dbaName": null,
+        "phyCity": "VALLEJO",
+        "phyState": "CA",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "307996": {
+      "carrier": {
+        "dotNumber": 307996,
+        "legalName": "LEON B RICKS",
+        "dbaName": "ALLIED VAN LINES",
+        "phyCity": "NORTH SALT LAKE",
+        "phyState": "UT",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "310150": {
+      "carrier": {
+        "dotNumber": 310150,
+        "legalName": "ATLAS VAN LINES INC",
+        "dbaName": null,
+        "phyCity": "TORLOCK",
+        "phyState": "CA",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "477085": {
+      "carrier": {
+        "dotNumber": 477085,
+        "legalName": "GLEN COONAN",
+        "dbaName": "PAUL ARPIN VAN LINES",
+        "phyCity": "PALM SPRINGS",
+        "phyState": "CA",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "641468": {
+      "carrier": {
+        "dotNumber": 641468,
+        "legalName": "BERGER TRANSFER INC",
+        "dbaName": "ALLIED VAN LINES",
+        "phyCity": "ST PAUL",
+        "phyState": "MN",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "836933": {
+      "carrier": {
+        "dotNumber": 836933,
+        "legalName": "THREE WAY MID-AMERICA L C",
+        "dbaName": "ATLAS VAN LINES",
+        "phyCity": "OKLAHOMA CITY",
+        "phyState": "OK",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "864601": {
+      "carrier": {
+        "dotNumber": 864601,
+        "legalName": "SPAETH TRANSFER INC",
+        "dbaName": "ALLIED VAN LINES INC",
+        "phyCity": "BREMERTON",
+        "phyState": "WA",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "999700": {
+      "carrier": {
+        "dotNumber": 999700,
+        "legalName": "SOUTHWEST TRANSFER & STORAGE CO INC",
+        "dbaName": "ALLIED VAN LINES INC",
+        "phyCity": "WICHITA",
+        "phyState": "KS",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "1015222": {
+      "carrier": {
+        "dotNumber": 1015222,
+        "legalName": "PHILIP MAY",
+        "dbaName": "GRAEBEL VAN LINES",
+        "phyCity": "SAYLORSBURG",
+        "phyState": "PA",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "1255655": {
+      "carrier": {
+        "dotNumber": 1255655,
+        "legalName": "SWIFT MOVERS VAN LINES INC",
+        "dbaName": "ALL NATIONAL VAN LINES",
+        "phyCity": "LINDEN",
+        "phyState": "NJ",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "I",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": "C",
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "1369156": {
+      "carrier": {
+        "dotNumber": 1369156,
+        "legalName": "GLOBAL SYSTEMS LOGISTICS LLC",
+        "dbaName": "INTERNATIONAL VAN LINES VISTA MOVING & STORAGE HORIZON MOVIN",
+        "phyCity": "YUMA",
+        "phyState": "AZ",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "I",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "1512210": {
+      "carrier": {
+        "dotNumber": 1512210,
+        "legalName": "BRETT REMALY",
+        "dbaName": "ALLIED VAN LINES",
+        "phyCity": "EMMAUS",
+        "phyState": "PA",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "1743616": {
+      "carrier": {
+        "dotNumber": 1743616,
+        "legalName": "ELITE TRANSPORT INC",
+        "dbaName": "ALLIED VAN LINES",
+        "phyCity": "ELIZABETH",
+        "phyState": "NJ",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "1743617": {
+      "carrier": {
+        "dotNumber": 1743617,
+        "legalName": "ELITE TRANSPORT INC",
+        "dbaName": "ALLIED VAN LINES",
+        "phyCity": "ELIZABETH",
+        "phyState": "NJ",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "1840205": {
+      "carrier": {
+        "dotNumber": 1840205,
+        "legalName": "GRAEBEL VAN LINES",
+        "dbaName": null,
+        "phyCity": "FAIRFIELD",
+        "phyState": "OH",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "1891449": {
+      "carrier": {
+        "dotNumber": 1891449,
+        "legalName": "MODERN MOVING AND STORAGE COMPANY INCORPORATED",
+        "dbaName": "MAYFLOWER TRANSIT",
+        "phyCity": "GULFPORT",
+        "phyState": "MS",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "2211773": {
+      "carrier": {
+        "dotNumber": 2211773,
+        "legalName": "ATLAS VAN LINES INC",
+        "dbaName": null,
+        "phyCity": "EVANSVILLE",
+        "phyState": "IN",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "2211896": {
+      "carrier": {
+        "dotNumber": 2211896,
+        "legalName": "GRAEBEL MOVERS INC",
+        "dbaName": null,
+        "phyCity": "AURORA",
+        "phyState": "CO",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "N",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "I",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "2233920": {
+      "carrier": {
+        "dotNumber": 2233920,
+        "legalName": "CARTWRIGHT INTERNATIONAL VAN LINES INC",
+        "dbaName": "CARTWRIGHT AIR EXPRESS",
+        "phyCity": "GRANDVIEW",
+        "phyState": "MO",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "N",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "I",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "2241124": {
+      "carrier": {
+        "dotNumber": 2241124,
+        "legalName": "TRANS NATIONAL VAN LINES LLC",
+        "dbaName": "TRANS NATIONAL BROKERAGE",
+        "phyCity": "LEWES",
+        "phyState": "DE",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "N",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "I",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "2247789": {
+      "carrier": {
+        "dotNumber": 2247789,
+        "legalName": "OCEAN STAR INTERNATIONAL INC",
+        "dbaName": "INTERNATIONAL VAN LINES",
+        "phyCity": "CORAL SPRINGS",
+        "phyState": "FL",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "N",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "2596708": {
+      "carrier": {
+        "dotNumber": 2596708,
+        "legalName": "ATLAS VAN LINES INTERNATIONAL CORP",
+        "dbaName": null,
+        "phyCity": "EVANSVILLE",
+        "phyState": "IN",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "N",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "2613511": {
+      "carrier": {
+        "dotNumber": 2613511,
+        "legalName": "MACY MOVERS INC",
+        "dbaName": "AGENT FOR ATLAS VAN LINES",
+        "phyCity": "HAYWARD",
+        "phyState": "CA",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": null,
+        "contractAuthorityStatus": null,
+        "brokerAuthorityStatus": null,
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "2972664": {
+      "carrier": {
+        "dotNumber": 2972664,
+        "legalName": "GRAEBEL MOVERS INTERNATIONAL INC",
+        "dbaName": null,
+        "phyCity": "AURORA",
+        "phyState": "CO",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "N",
+        "contractAuthorityStatus": "A",
+        "brokerAuthorityStatus": "A",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "3135836": {
+      "carrier": {
+        "dotNumber": 3135836,
+        "legalName": "WAYFLOWERS VAN LINES LLC",
+        "dbaName": "INTERNATIONAL VAN LINES",
+        "phyCity": "MONROE",
+        "phyState": "NC",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "3149430": {
+      "carrier": {
+        "dotNumber": 3149430,
+        "legalName": "Y & O MOVING CONSULTING SERVICES LLC",
+        "dbaName": "INTERNATIONAL VAN LINES",
+        "phyCity": "N MIAMI BEACH",
+        "phyState": "FL",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "I",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "3795167": {
+      "carrier": {
+        "dotNumber": 3795167,
+        "legalName": "YELLOW EAGLE RELOCATIONS LLC",
+        "dbaName": "INTERNATIONAL VAN LINES",
+        "phyCity": "POMPANO BEACH",
+        "phyState": "FL",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "A",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": "CARRIER"
+      }
+    },
+    "4106588": {
+      "carrier": {
+        "dotNumber": 4106588,
+        "legalName": "ATLAS VAN LINES",
+        "dbaName": null,
+        "phyCity": "GAINESVILLE",
+        "phyState": "GA",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "I",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    },
+    "4107907": {
+      "carrier": {
+        "dotNumber": 4107907,
+        "legalName": "ATLAS VAN LINES",
+        "dbaName": null,
+        "phyCity": "NEWTON",
+        "phyState": "NC",
+        "allowedToOperate": "Y",
+        "commonAuthorityStatus": "N",
+        "contractAuthorityStatus": "N",
+        "brokerAuthorityStatus": "N",
+        "safetyRating": null,
+        "oosDate": null,
+        "docketNumber": null,
+        "censusType": null
+      }
+    }
+  },
+  "cargo_authority": {
+    "49922": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:49.600+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/49922/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 1221,
+              "authority": "N",
+              "authorizedForBroker": "Y",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "Y",
+              "brokerAuthorityStatus": "A",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "A",
+              "docketNumber": 621,
+              "dotNumber": 49922,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/49922/authority/1221"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:49.611+0000"
+      }
+    },
+    "70719": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:49.927+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/70719/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 3760,
+              "authority": "N",
+              "authorizedForBroker": "N",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "Y",
+              "brokerAuthorityStatus": "N",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "A",
+              "docketNumber": 87113,
+              "dotNumber": 70719,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/70719/authority/3760"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:49.929+0000"
+      }
+    },
+    "70851": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:48.893+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/70851/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 99573,
+              "authority": "N",
+              "authorizedForBroker": "Y",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "Y",
+              "brokerAuthorityStatus": "A",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "A",
+              "docketNumber": 107012,
+              "dotNumber": 70851,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/70851/authority/99573"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:48.895+0000"
+      }
+    },
+    "73351": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:50.258+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/73351/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 1778,
+              "authority": "N",
+              "authorizedForBroker": "N",
+              "authorizedForHouseholdGoods": "N",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "Y",
+              "brokerAuthorityStatus": "N",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "A",
+              "docketNumber": 15232,
+              "dotNumber": 73351,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/73351/authority/1778"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:50.262+0000"
+      }
+    },
+    "76235": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:50.567+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/76235/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 1790,
+              "authority": "N",
+              "authorizedForBroker": "Y",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "Y",
+              "brokerAuthorityStatus": "A",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "A",
+              "docketNumber": 15735,
+              "dotNumber": 76235,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/76235/authority/1790"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:50.571+0000"
+      }
+    },
+    "76628": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:50.894+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/76628/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 2538,
+              "authority": "N",
+              "authorizedForBroker": "Y",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "Y",
+              "brokerAuthorityStatus": "A",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "A",
+              "docketNumber": 42866,
+              "dotNumber": 76628,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/76628/authority/2538"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:50.898+0000"
+      }
+    },
+    "117369": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:51.207+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/117369/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:51.209+0000"
+      }
+    },
+    "125550": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:51.518+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/125550/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 7752,
+              "authority": "N",
+              "authorizedForBroker": "Y",
+              "authorizedForHouseholdGoods": "N",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "N",
+              "brokerAuthorityStatus": "A",
+              "commonAuthorityStatus": "N",
+              "contractAuthorityStatus": "N",
+              "docketNumber": 130921,
+              "dotNumber": 125550,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/125550/authority/7752"
+              }
+            }
+          },
+          {
+            "carrierAuthority": {
+              "applicantID": 3614,
+              "authority": "N",
+              "authorizedForBroker": "Y",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "Y",
+              "brokerAuthorityStatus": "A",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "A",
+              "docketNumber": 79658,
+              "dotNumber": 125550,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/125550/authority/3614"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:51.522+0000"
+      }
+    },
+    "125563": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:48.391+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/125563/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 1407,
+              "authority": "N",
+              "authorizedForBroker": "Y",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "Y",
+              "brokerAuthorityStatus": "A",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "A",
+              "docketNumber": 2934,
+              "dotNumber": 125563,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/125563/authority/1407"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:48.536+0000"
+      }
+    },
+    "220843": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:51.845+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/220843/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:51.845+0000"
+      }
+    },
+    "261168": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:52.205+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/261168/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:52.207+0000"
+      }
+    },
+    "307280": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:52.552+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/307280/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:52.552+0000"
+      }
+    },
+    "307996": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:52.870+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/307996/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:52.867+0000"
+      }
+    },
+    "310150": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:53.176+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/310150/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:53.181+0000"
+      }
+    },
+    "477085": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:53.490+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/477085/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:53.495+0000"
+      }
+    },
+    "641468": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:53.813+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/641468/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:53.819+0000"
+      }
+    },
+    "836933": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:54.132+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/836933/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:54.129+0000"
+      }
+    },
+    "864601": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:54.448+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/864601/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 9263,
+              "authority": "N",
+              "authorizedForBroker": "N",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "N",
+              "brokerAuthorityStatus": "N",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "N",
+              "docketNumber": 139361,
+              "dotNumber": 864601,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/864601/authority/9263"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:54.448+0000"
+      }
+    },
+    "999700": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:54.772+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/999700/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:54.773+0000"
+      }
+    },
+    "1015222": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:55.083+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/1015222/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:55.082+0000"
+      }
+    },
+    "1255655": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:55.398+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/1255655/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:55.401+0000"
+      }
+    },
+    "1369156": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:55.768+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/1369156/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:55.773+0000"
+      }
+    },
+    "1398726": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:49.213+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/1398726/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [
+          {
+            "carrierAuthority": {
+              "applicantID": 445156,
+              "authority": "N",
+              "authorizedForBroker": "N",
+              "authorizedForHouseholdGoods": "Y",
+              "authorizedForPassenger": "N",
+              "authorizedForProperty": "N",
+              "brokerAuthorityStatus": "N",
+              "commonAuthorityStatus": "A",
+              "contractAuthorityStatus": "N",
+              "docketNumber": 531300,
+              "dotNumber": 1398726,
+              "prefix": "MC"
+            },
+            "_links": {
+              "self": {
+                "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/1398726/authority/445156"
+              }
+            }
+          }
+        ],
+        "retrievalDate": "2026-08-20T03:21:49.214+0000"
+      }
+    },
+    "1512210": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:56.079+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/1512210/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:56.083+0000"
+      }
+    },
+    "1743616": {
+      "cargoStatus": 200,
+      "authorityStatus": 200,
+      "cargo": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:56.400+0000",
+        "_links": {
+          "self": {
+            "href": "https://mobile.fmcsa.dot.gov/qc/services/carriers/1743616/cargo-carried"
+          }
+        }
+      },
+      "authority": {
+        "content": [],
+        "retrievalDate": "2026-08-20T03:21:56.402+0000"
+      }
+    }
+  }
+}

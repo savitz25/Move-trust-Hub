@@ -43,11 +43,14 @@ const LABELS: Record<FmcsaBadgeStatus, string> = {
   unknown: 'FMCSA Unverified',
 };
 
-function verifiedLabel(company: Parameters<typeof deriveFmcsaBadgeStatus>[0]): string {
+function verifiedLabel(
+  company: Parameters<typeof deriveFmcsaBadgeStatus>[0],
+  evidenceState: 'INFERRED' | 'VERIFIED' | 'REVIEW_REQUIRED' = 'INFERRED'
+): string {
   if (company.outOfService || company.usdotStatus === 'INACTIVE' || company.authorityActive === false) {
     return LABELS.critical;
   }
-  return regulatoryCopyForProvider(company).badgeLabel;
+  return regulatoryCopyForProvider(company, { evidenceState }).badgeLabel;
 }
 
 const LEGEND_IDS: Record<FmcsaBadgeStatus, string> = {
@@ -95,6 +98,7 @@ export function FmcsaVerificationBadge({
     | 'fmcsaSafetyRating'
     | 'fmcsaLastChecked'
     | 'usdotStatus'
+    | 'capabilityEvidenceState'
   >;
   className?: string;
   status?: FmcsaBadgeStatus;
@@ -105,8 +109,9 @@ export function FmcsaVerificationBadge({
   // Never render “FMCSA Unverified” on public surfaces
   if (!rawStatus || rawStatus === 'unknown') return null;
   const status = rawStatus;
-  const verifiedText = status === 'verified' ? verifiedLabel(company) : LABELS[status];
-  const roleCopy = regulatoryCopyForProvider(company);
+  const evidenceState = company.capabilityEvidenceState ?? 'INFERRED';
+  const verifiedText = status === 'verified' ? verifiedLabel(company, evidenceState) : LABELS[status];
+  const roleCopy = regulatoryCopyForProvider(company, { evidenceState });
 
   const tooltip = status === 'verified' ? roleCopy.detail : TOOLTIPS[status];
   const legendId = LEGEND_IDS[status];

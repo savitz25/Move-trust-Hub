@@ -16,7 +16,11 @@ function authorityBadge(
 
 export function regulatoryCopyForProvider(
   input: CapabilityInput,
-  options?: { evidenceState?: CapabilityEvidenceState }
+  options?: {
+    evidenceState?: CapabilityEvidenceState;
+    networkKind?: 'van_line';
+    historicalAuthority?: boolean;
+  }
 ): {
   headline: string;
   badgeLabel: string;
@@ -26,6 +30,13 @@ export function regulatoryCopyForProvider(
   const eligibility = resolveProviderEligibility(input);
   const roles = new Set(classified.roles);
   const evidenceState = options?.evidenceState ?? 'INFERRED';
+  const vanLineNote =
+    options?.networkKind === 'van_line'
+      ? ' This listing is a van-line / network brand. Interstate household-goods moves are typically performed by independently authorized agents; do not treat one agent USDOT as the network’s universal authority.'
+      : '';
+  const historicalNote = options?.historicalAuthority
+    ? ' Current FMCSA operating authority for this van-line registrant is inactive; this is historical identity, not an active-authority claim.'
+    : '';
 
   if (roles.has('local_mover') && !eligibility.interstateHhgCarrier) {
     return {
@@ -58,7 +69,7 @@ export function regulatoryCopyForProvider(
         evidenceState
       ),
       detail:
-        'This company holds both household-goods carrier and broker authority. Confirm in writing whether it will haul the load itself or arrange a third-party carrier.',
+        `This company holds both household-goods carrier and broker authority. Confirm in writing whether it will haul the load itself or arrange a third-party carrier.${vanLineNote}${historicalNote}`,
     };
   }
 
@@ -71,7 +82,7 @@ export function regulatoryCopyForProvider(
         evidenceState
       ),
       detail:
-        'Licensed by the U.S. Department of Transportation for interstate household-goods carriage. Confirm the current SAFER record before booking.',
+        `Licensed by the U.S. Department of Transportation for interstate household-goods carriage. Confirm the current SAFER record before booking.${vanLineNote}${historicalNote}`,
     };
   }
 
