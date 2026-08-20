@@ -1,0 +1,126 @@
+{
+  "google_places_requests": 0,
+  "dry": false,
+  "retrieved_at": "2026-08-20T13:52:59.596Z",
+  "source": "FMCSA L&I carrier file (data.transportation.gov/6eyk-hxee)",
+  "source_updated": "2026-08-18",
+  "counts": {
+    "total_li_records": 65386,
+    "unique_usdot": 52563,
+    "HHG_CARRIER": 8202,
+    "HHG_BROKER": 661,
+    "HHG_CARRIER_BROKER": 239,
+    "INACTIVE": 43461,
+    "REVIEW_REQUIRED": 0,
+    "NOT_HHG": 0
+  },
+  "overlap": {
+    "matched_existing": 114,
+    "matched_carrier": 95,
+    "matched_broker": 5,
+    "matched_both": 14,
+    "identity_conflicts": 24498
+  },
+  "new_candidates": {
+    "carrier": 4190,
+    "broker": 283,
+    "both": 88,
+    "review": 4427,
+    "inactive": 43461
+  },
+  "capabilities": {
+    "production_verified_before": 128,
+    "production_verified_after": 128,
+    "production_inferred_after": 699,
+    "production_review_after": 0,
+    "promoted_carrier_writes": 0,
+    "promoted_broker_writes": 0,
+    "staged_verified_carrier": 8441,
+    "staged_verified_broker": 900
+  },
+  "publication": {
+    "companies_before": 468,
+    "companies_after": 468,
+    "new_public_profiles": 0,
+    "new_indexable_staged": 0,
+    "new_sitemap_from_staging": 0
+  },
+  "duplicates": {
+    "duplicate_usdot_groups": 0,
+    "duplicate_mc_groups": 0,
+    "automatic_fuzzy_merges": 0
+  },
+  "precision": {
+    "carrier": {
+      "size": 30,
+      "correct": 30,
+      "misses": []
+    },
+    "broker": {
+      "size": 30,
+      "correct": 30,
+      "misses": []
+    },
+    "both": {
+      "size": 30,
+      "correct": 30,
+      "misses": []
+    },
+    "inactive": {
+      "size": 10,
+      "correct": 10,
+      "misses": []
+    }
+  },
+  "protected": [
+    {
+      "id": "allied",
+      "usdot_number": "76235"
+    },
+    {
+      "id": "arpin",
+      "usdot_number": "49922"
+    },
+    {
+      "id": "atlas",
+      "usdot_number": "125550"
+    },
+    {
+      "id": "graebel",
+      "usdot_number": null
+    },
+    {
+      "id": "mayflower",
+      "usdot_number": "125563"
+    },
+    {
+      "id": "national",
+      "usdot_number": "76628"
+    },
+    {
+      "id": "north-american",
+      "usdot_number": "70851"
+    },
+    {
+      "id": "northern-michigan-moving",
+      "usdot_number": "1398726"
+    },
+    {
+      "id": "northern-michigan-moving-2",
+      "usdot_number": "1398726"
+    },
+    {
+      "id": "wheaton",
+      "usdot_number": "70719"
+    }
+  ],
+  "protectedViolations": [],
+  "assertions": {
+    "no_null_classification": true,
+    "verified_has_evidence": true,
+    "dual_has_both": true,
+    "no_fuzzy_merges": true,
+    "protected_ok": true,
+    "companies_unchanged": true
+  }
+}
