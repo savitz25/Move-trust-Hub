@@ -68,6 +68,16 @@ export function resolveCompanyCoverageDisplay(input: {
 }): CompanyCoverageDisplay {
   const coverageRaw = (input.coverage ?? '').trim();
 
+  // Federal Wave 1 profiles store authority language, not a service-area list.
+  // Do not paint headquarters or the continental US as served.
+  if (/interstate household-goods authority/i.test(coverageRaw)) {
+    return {
+      coveredStateSlugs: new Set(),
+      description: coverageRaw,
+      isNational: false,
+    };
+  }
+
   if (KNOWN_REGIONS.has(coverageRaw)) {
     const region = coverageRaw as Region;
     const slugs = getCoveredStateSlugs({ coverage: region });

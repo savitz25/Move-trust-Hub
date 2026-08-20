@@ -38,6 +38,11 @@ import {
   resolveYearsInBusiness,
 } from '@/lib/directory/normalize-company';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
+import {
+  shouldShowAvgPrice,
+  shouldShowComplaintRatio,
+  shouldShowReputationScore,
+} from '@/lib/data-quality/metrics';
 
 const SEARCH_DEBOUNCE_MS = 350;
 const URL_SYNC_DEBOUNCE_MS = 450;
@@ -695,11 +700,24 @@ export function DirectoryClient({
               </thead>
               <tbody>
                 {companies.map((c) => {
+                  const showComplaints = shouldShowComplaintRatio({
+                    complaints: Number(c.fmcsaComplaints) || 0,
+                    shipments: Number(c.fmcsaShipments) || 0,
+                  });
                   const shipments = Math.max(Number(c.fmcsaShipments) || 0, 1);
-                  const ratio = (
-                    ((Number(c.fmcsaComplaints) || 0) / shipments) *
-                    1000
-                  ).toFixed(1);
+                  const ratio = showComplaints
+                    ? (
+                        ((Number(c.fmcsaComplaints) || 0) / shipments) *
+                        1000
+                      ).toFixed(1)
+                    : null;
+                  const showReputation = shouldShowReputationScore({
+                    reputationScore: Number(c.reputationScore) || 0,
+                    reviewCount: Number(c.reviewCount) || 0,
+                    overallRating: Number(c.overallRating) || 0,
+                  });
+                  const showRating =
+                    (Number(c.overallRating) || 0) > 0 && (Number(c.reviewCount) || 0) > 0;
                   const selected = compareStore.isSelected(c.slug);
                   return (
                     <tr key={c.id || c.slug} className="hover:bg-muted/40 border-b last:border-0">
@@ -723,20 +741,32 @@ export function DirectoryClient({
                           />
                         </div>
                       </td>
-                      <td className="font-semibold text-center">{c.reputationScore ?? 0}</td>
+                      <td className="font-semibold text-center">
+                        {showReputation ? c.reputationScore : '—'}
+                      </td>
                       <td>
-                        <StarRating rating={Number(c.overallRating) || 0} size="sm" showNumber />
+                        {showRating ? (
+                          <StarRating rating={Number(c.overallRating) || 0} size="sm" showNumber />
+                        ) : (
+                          <span className="text-muted-foreground">—</span>
+                        )}
                       </td>
                       <td className="text-center tabular-nums text-xs">
-                        <EditorialReviewVolume count={Number(c.reviewCount) || 0} />
+                        {showRating ? (
+                          <EditorialReviewVolume count={Number(c.reviewCount) || 0} />
+                        ) : (
+                          '—'
+                        )}
                       </td>
                       <td className="text-center tabular-nums">
-                        {formatAvgPricePerMove(c.avgPricePerMove)}
+                        {shouldShowAvgPrice(c.avgPricePerMove)
+                          ? formatAvgPricePerMove(c.avgPricePerMove)
+                          : '—'}
                       </td>
                       <td className="text-center">
                         {resolveYearsInBusiness(c.yearsInBusiness, c.foundedYear) ?? '—'}
                       </td>
-                      <td className="text-center text-xs">{ratio}</td>
+                      <td className="text-center text-xs">{ratio ?? '—'}</td>
                       <td className="text-right pr-4">
                         <div
                           className="flex justify-end gap-2"

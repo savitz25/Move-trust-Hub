@@ -64,15 +64,20 @@ export function CoverageAreaCard({
         </div>
 
         <p className="sr-only">
-          {companyName} serves {description}.
           {coveredStateNames.length > 0
-            ? ` States highlighted on the map: ${coveredStateNames.join(', ')}.`
-            : ''}
+            ? `${companyName} serves ${description}. States highlighted on the map: ${coveredStateNames.join(', ')}.`
+            : `${companyName} coverage: ${description}.`}
         </p>
 
         <div className="mt-3 text-sm">
-          <span className="font-medium">{companyName}</span> serves{' '}
-          <span className="font-semibold">{description}</span>.
+          {coveredStateNames.length > 0 ? (
+            <>
+              <span className="font-medium">{companyName}</span> serves{' '}
+              <span className="font-semibold">{description}</span>.
+            </>
+          ) : (
+            <span className="font-semibold leading-relaxed">{description}</span>
+          )}
           {isNational ? (
             <span className="block text-xs text-muted-foreground mt-1 leading-relaxed">
               Interstate routes across the continental United States

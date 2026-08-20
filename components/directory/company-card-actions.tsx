@@ -6,6 +6,7 @@ import type { Company } from '@/types';
 import { Button } from '@/components/ui/button';
 import { MethodologyLink } from '@/components/trust/methodology-link';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
+import { shouldShowReputationScore } from '@/lib/data-quality/metrics';
 
 const SaveMoverButton = dynamic(
   () =>
@@ -46,6 +47,11 @@ export function CompanyCardActions({
 }: Props) {
   const isSelected = compareStore.isSelected(company.slug);
   const canAdd = compareStore.canAddMore();
+  const showReputation = shouldShowReputationScore({
+    reputationScore: company.reputationScore,
+    reviewCount: company.reviewCount,
+    overallRating: company.overallRating,
+  });
 
   return (
     <div
@@ -57,13 +63,19 @@ export function CompanyCardActions({
       <div className="flex items-center justify-between text-sm gap-3">
         <div className="flex items-center gap-2.5 min-w-0">
           <div className="min-w-0">
-            <MethodologyLink
-              anchor="reputationScore"
-              className="font-semibold tabular-nums no-underline"
-            >
-              {company.reputationScore}
-            </MethodologyLink>
-            <span className="text-muted-foreground"> rep</span>
+            {showReputation ? (
+              <>
+                <MethodologyLink
+                  anchor="reputationScore"
+                  className="font-semibold tabular-nums no-underline"
+                >
+                  {company.reputationScore}
+                </MethodologyLink>
+                <span className="text-muted-foreground"> rep</span>
+              </>
+            ) : (
+              <span className="text-muted-foreground">Score not available</span>
+            )}
           </div>
           <MoverEmailButton companySlug={company.slug} companyName={company.name} />
         </div>

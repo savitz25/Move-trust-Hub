@@ -19,6 +19,24 @@ export type DirectoryFilterInput = Partial<DirectoryFilters> & {
   counties?: string[] | null;
 };
 
+function hasObservedPrice(company: Company): boolean {
+  return (company.avgPricePerMove ?? 0) > 0;
+}
+
+function hasObservedShipmentVolume(company: Company): boolean {
+  return (company.fmcsaShipments ?? 0) > 0;
+}
+
+function compareObserved(
+  aHas: boolean,
+  bHas: boolean,
+  whenBoth: () => number
+): number {
+  if (aHas !== bHas) return aHas ? -1 : 1;
+  if (!aHas) return 0;
+  return whenBoth();
+}
+
 function compareBySort(
   a: Company,
   b: Company,
@@ -33,16 +51,25 @@ function compareBySort(
     case 'reviews':
       return b.reviewCount - a.reviewCount;
     case 'price-low':
-      return a.avgPricePerMove - b.avgPricePerMove;
+      return compareObserved(hasObservedPrice(a), hasObservedPrice(b), () => {
+        return a.avgPricePerMove - b.avgPricePerMove;
+      });
     case 'price-high':
-      return b.avgPricePerMove - a.avgPricePerMove;
+      return compareObserved(hasObservedPrice(a), hasObservedPrice(b), () => {
+        return b.avgPricePerMove - a.avgPricePerMove;
+      });
     case 'years':
       return b.yearsInBusiness - a.yearsInBusiness;
-    case 'complaints': {
-      const ratioA = a.fmcsaComplaints / Math.max(a.fmcsaShipments, 1);
-      const ratioB = b.fmcsaComplaints / Math.max(b.fmcsaShipments, 1);
-      return ratioA - ratioB;
-    }
+    case 'complaints':
+      return compareObserved(
+        hasObservedShipmentVolume(a),
+        hasObservedShipmentVolume(b),
+        () => {
+          const ratioA = a.fmcsaComplaints / a.fmcsaShipments;
+          const ratioB = b.fmcsaComplaints / b.fmcsaShipments;
+          return ratioA - ratioB;
+        }
+      );
     default:
       return b.reputationScore - a.reputationScore;
   }
@@ -73,7 +100,9 @@ export function filterCompanies(
   }
 
   if (filters.maxPrice && filters.maxPrice < 12000) {
-    result = result.filter((c) => c.avgPricePerMove <= filters.maxPrice!);
+    result = result.filter(
+      (c) => hasObservedPrice(c) && c.avgPricePerMove <= filters.maxPrice!
+    );
   }
 
   if (filters.services && filters.services.length > 0) {

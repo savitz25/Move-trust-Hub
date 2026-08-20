@@ -134,3 +134,18 @@ test('incomplete geography is excluded', () => {
   assert.equal(isWave1Eligible(row({ phy_state: 'PR' })).eligible, false);
   assert.equal(isWave1Eligible(row({ phy_city: '' })).eligible, false);
 });
+
+test('selection exits when every state hits perStateCap', () => {
+  const pool: StagedPublicationRow[] = [];
+  for (let i = 0; i < 40; i += 1) {
+    pool.push(
+      row({
+        usdot: String(4000000 + i),
+        phy_state: i < 20 ? 'ID' : 'ME',
+        legal_name: `CAP FIRM ${i} LLC`,
+      })
+    );
+  }
+  const selected = selectWaveCandidates(pool, { limit: 30, perStateCap: 2 });
+  assert.equal(selected.length, 4);
+});

@@ -1,40 +1,39 @@
 {
   "google_places_requests": 0,
   "dry": false,
-  "limit": 250,
-  "inserted": 250,
+  "limit": 1000,
+  "inserted": 750,
   "skipped": 0,
   "before": {
-    "companies": 468,
-    "indexable": 432
+    "companies": 718,
+    "indexable": 682
   },
   "after": {
-    "companies": 718,
-    "indexable": 432
+    "companies": 1468,
+    "indexable": 682
   },
   "wave": [
     {
-      "classification": "HHG_BROKER",
-      "n": 40
+      "classification": "HHG_CARRIER",
+      "n": 711
     },
     {
-      "classification": "HHG_CARRIER",
-      "n": 185
+      "classification": "HHG_BROKER",
+      "n": 203
     },
     {
       "classification": "HHG_CARRIER_BROKER",
-      "n": 25
+      "n": 86
     }
   ],
   "selected": {
-    "total": 250,
-    "carrier": 185,
-    "broker": 40,
-    "dual": 25,
-    "states": 51
+    "total": 750,
+    "carrier": 526,
+    "broker": 163,
+    "dual": 61,
+    "states": 50
   },
   "gateCounts": {
-    "disposition_not_new_canonical": 48002,
     "ok": 4476,
     "geography_not_us_or_dc": 85
   },

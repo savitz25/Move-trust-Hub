@@ -13,6 +13,7 @@ import {
   mergeCoverageWithAssignments,
 } from '@/lib/directory/load-assignment-counties';
 import { mergeDirectoryCompanies } from '@/lib/directory/merge-directory';
+import { isConsumerVisibleCompany } from '@/lib/provider/publication';
 import { getCompaniesCached } from '@/lib/supabase/queries/companies';
 import type { Company } from '@/types';
 
@@ -73,13 +74,15 @@ async function buildUnifiedDirectory(): Promise<Company[]> {
     };
   });
 
-  return enrichDirectoryWithStaticCountyCoverage(withDbAssignments);
+  return enrichDirectoryWithStaticCountyCoverage(withDbAssignments).filter(
+    isConsumerVisibleCompany
+  );
 }
 
 /** Cached directory listing for /companies and slug resolution. */
 export const getUnifiedDirectoryCompanies = unstable_cache(
   buildUnifiedDirectory,
   // v13: enrichment display resolver + strict BBB + Places visibility
-  ['unified-movers-directory-v16-wave1'],
+  ['unified-movers-directory-v17-wave1'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
