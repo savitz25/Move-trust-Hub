@@ -19,6 +19,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",
+    "test:provider-foundation": "tsx --test lib/provider/classification.test.ts",
+    "audit:provider-universe": "tsx --require ./scripts/stub-server-only.cjs scripts/audit-provider-universe.ts",
     "smoke:trust-profile": "tsx scripts/smoke-trust-profile-adapters.ts",
     "smoke:network": "tsx scripts/smoke-network-production.ts",
     "check:journey-v21": "node scripts/check-journey-v21.mjs",

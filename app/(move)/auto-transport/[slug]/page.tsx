@@ -23,6 +23,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { formatCompanyTenureLine } from '@/lib/directory/normalize-company';
+import { regulatoryCopyForProvider } from '@/lib/provider/copy';
 
 
 interface Props {
@@ -75,6 +76,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
     foundedYear: company.foundedYear,
     yearsInBusiness: company.yearsInBusiness,
   });
+  const regulatoryCopy = regulatoryCopyForProvider(company);
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
@@ -120,6 +122,8 @@ export default async function AutoTransportProfilePage({ params }: Props) {
               <CardTitle>About {company.name}</CardTitle>
             </CardHeader>
             <CardContent>
+              <p className="text-sm font-medium mb-2">{regulatoryCopy.headline}</p>
+              <p className="text-sm text-muted-foreground mb-4">{regulatoryCopy.detail}</p>
               <p className="text-muted-foreground">{company.description}</p>
               
               <div className="mt-6 grid grid-cols-2 gap-4 text-sm">

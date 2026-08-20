@@ -12,8 +12,8 @@
  * 1. service_scope = intrastate (or isLocalOnly) → Local / Intrastate
  * 2. Infer local when no USDOT and no carrier/broker signals
  * 3. entity_type / fmcsa_raw / services → Interstate Carrier | Broker | both
- * 4. USDOT present → default Interstate Carrier
- * 5. Last resort → Local / Intrastate if no USDOT, else Interstate Carrier
+ * 4. USDOT is registration only — never treat it as HHG carrier if broker-only
+ * 5. Multiple markets (HHG + auto) emit multiple badges on one canonical company
  */
 
 import {
@@ -21,7 +21,7 @@ import {
   isLocalMover,
   type LocalMoverInput,
 } from '@/lib/companies/is-local-mover';
-import { extractEntityType } from '@/lib/fmcsa/carrier-fields';
+import { classifyProvider } from '@/lib/provider/classification';
 import { mergeServicesWithEntityType } from '@/lib/fmcsa/derive-directory-services';
 import {
   formatEntityTypeLabel,
@@ -36,7 +36,10 @@ export type CompanyTypeBadgeId =
   | 'local-mover'
   | 'carrier'
   | 'broker'
-  | 'carrier-broker';
+  | 'carrier-broker'
+  | 'auto-carrier'
+  | 'auto-broker'
+  | 'auto-carrier-broker';
 
 export type CompanyTypeBadge = {
   id: CompanyTypeBadgeId;
@@ -74,6 +77,28 @@ export const CARRIER_BROKER_BADGE: CompanyTypeBadge = {
   label: 'Carrier + Broker',
   description:
     'Holds both motor carrier and broker authority. Still confirm in writing whether the company you hired will haul the load itself or arrange a third-party carrier.',
+  variant: 'mixed',
+};
+
+export const AUTO_CARRIER_BADGE: CompanyTypeBadge = {
+  id: 'auto-carrier',
+  label: 'Auto Carrier',
+  description: 'Auto-transport carrier — physically hauls vehicles under published carrier authority.',
+  variant: 'carrier',
+};
+
+export const AUTO_BROKER_BADGE: CompanyTypeBadge = {
+  id: 'auto-broker',
+  label: 'Auto Broker',
+  description:
+    'Auto-transport broker — arranges vehicle shipping; does not itself act as the hauling carrier unless a separate carrier authority is on file.',
+  variant: 'broker',
+};
+
+export const AUTO_CARRIER_BROKER_BADGE: CompanyTypeBadge = {
+  id: 'auto-carrier-broker',
+  label: 'Auto Carrier + Broker',
+  description: 'Holds both auto-carrier and auto-broker roles. Confirm who will transport the vehicle.',
   variant: 'mixed',
 };
 
@@ -179,8 +204,12 @@ function resolveInterstateTypeBadge(input: TypeBadgeInput): CompanyTypeBadge {
   if (servicesSuggestBroker(services)) return BROKER_BADGE;
   if (services.some((s) => /^carrier$/i.test(s.trim()))) return CARRIER_BADGE;
 
-  // 4) Default for interstate / USDOT companies
-  if (hasUsdot(input)) return CARRIER_BADGE;
+  // 4) USDOT is registration, not HHG carrier authority. Only default to
+  // Carrier when there is no broker signal.
+  if (hasUsdot(input) && servicesSuggestBroker(services) && !servicesSuggestCarrier(services)) {
+    return BROKER_BADGE;
+  }
+  if (hasUsdot(input) && !servicesSuggestBroker(services)) return CARRIER_BADGE;
 
   // 5) Directory listing with no signals — still show Carrier (main directory = interstate)
   return CARRIER_BADGE;
@@ -188,11 +217,22 @@ function resolveInterstateTypeBadge(input: TypeBadgeInput): CompanyTypeBadge {
 
 /**
  * Resolve type badges for a company (always returns at least one badge when possible).
+ * Carrier + Broker is derived from independent capabilities, not a single stored type.
  */
 export function resolveCompanyTypeBadges(input: TypeBadgeInput): CompanyTypeBadge[] {
-  if (isLocalMover(input)) {
-    return [LOCAL_MOVER_BADGE];
+  const classified = classifyProvider(input);
+  const badges: CompanyTypeBadge[] = [];
+  for (const role of classified.roles) {
+    if (role === 'local_mover') badges.push(LOCAL_MOVER_BADGE);
+    if (role === 'hhg_carrier') badges.push(CARRIER_BADGE);
+    if (role === 'hhg_broker') badges.push(BROKER_BADGE);
+    if (role === 'hhg_carrier_broker') badges.push(CARRIER_BROKER_BADGE);
+    if (role === 'auto_carrier') badges.push(AUTO_CARRIER_BADGE);
+    if (role === 'auto_broker') badges.push(AUTO_BROKER_BADGE);
+    if (role === 'auto_carrier_broker') badges.push(AUTO_CARRIER_BROKER_BADGE);
   }
+  if (badges.length) return badges;
+  if (isLocalMover(input)) return [LOCAL_MOVER_BADGE];
   return [resolveInterstateTypeBadge(input)];
 }
 

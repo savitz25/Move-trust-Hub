@@ -51,6 +51,16 @@ export const TYPE_BADGE_LEGEND = [
     label: 'Carrier/Broker',
     description: 'Holds both carrier and broker authority.',
   },
+  {
+    id: 'auto-carrier',
+    label: 'Auto Carrier',
+    description: 'Auto-transport carrier that physically hauls vehicles.',
+  },
+  {
+    id: 'auto-broker',
+    label: 'Auto Broker',
+    description: 'Arranges vehicle shipping; does not itself haul the vehicle unless a separate carrier authority is on file.',
+  },
 ] as const;
 
 export const VERIFICATION_BADGE_LEGEND = [

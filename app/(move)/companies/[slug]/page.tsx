@@ -57,7 +57,7 @@ import { TrustProfileShell } from '@/components/network/trust-profile-shell';
 import { toMoveTrustProfile } from '@/lib/network/adapters/to-move-trust-profile';
 import { ClaimProfileCta } from '@/components/portal/claim-cta';
 import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
-import { FMCSA_PLAIN_ENGLISH } from '@/lib/trust/fmcsa-consumer-copy';
+import { regulatoryCopyForProvider } from '@/lib/provider/copy';
 import {
   formatCompanyTenureLine,
   isValidFoundedYear,
@@ -179,6 +179,7 @@ export default async function CompanyProfilePage({ params }: Props) {
     foundedYear: company.foundedYear,
     yearsInBusiness: company.yearsInBusiness,
   });
+  const regulatoryCopy = regulatoryCopyForProvider(company);
 
   return (
     <>
@@ -232,7 +233,8 @@ export default async function CompanyProfilePage({ params }: Props) {
             {verification.directoryVerified || verification.fmcsa || verification.bbb === 'verified' ? (
               <>
                 <p className="text-xs text-muted-foreground max-w-xl leading-relaxed">
-                  <strong className="text-foreground">FMCSA</strong> — {FMCSA_PLAIN_ENGLISH}
+                  <strong className="text-foreground">{regulatoryCopy.headline}</strong>{' '}
+                  — {regulatoryCopy.detail}
                 </p>
                 <SeeHowWeVetLink className="text-xs" />
               </>
