@@ -83,6 +83,6 @@ async function buildUnifiedDirectory(): Promise<Company[]> {
 export const getUnifiedDirectoryCompanies = unstable_cache(
   buildUnifiedDirectory,
   // v13: enrichment display resolver + strict BBB + Places visibility
-  ['unified-movers-directory-v24-scale'],
+  ['unified-movers-directory-v25-wave3'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );

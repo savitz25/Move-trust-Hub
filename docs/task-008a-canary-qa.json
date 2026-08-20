@@ -1,0 +1,217 @@
+{
+  "google_places_requests": 0,
+  "sampled": 30,
+  "failed": 0,
+  "results": [
+    {
+      "slug": "naples-movers-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "j-t-j-enterprises-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "two-men-and-a-truck-seminole-county",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "amerimoving-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "ontime-moving-system-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "fortress-transportation-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "approved-moving-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "vidal-moving-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "hercules-delivery-service",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "priority-express",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "nobel-van-lines",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "two-men-and-a-truck-hollywood-ft-lauderdale",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "s-d-transport-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "performance-van-lines-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "all-american-moving",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "designers-delivery",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "senior-moving-company-corporation",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "russell-s-moving-and-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "hilford-moving-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "two-men-and-a-truck-usdot-1655425",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "alfonso-trucking",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "ideal-moving-and-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "uju-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "monterey-peninsula-movers",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "safeway-moving-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "budget-movers-usdot-1692045",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "best-moving-service-american-pride-moving-service",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "e-m-delivery",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "nice-moves",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "yeager-transport-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    }
+  ]
+}

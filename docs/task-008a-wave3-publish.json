@@ -1,0 +1,75 @@
+{
+  "google_places_requests": 0,
+  "dry": false,
+  "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+  "limit": 250,
+  "inserted": 250,
+  "skipped": 0,
+  "excluded": {},
+  "before": {
+    "companies": 2742,
+    "indexable": 2706
+  },
+  "after": {
+    "companies": 2992,
+    "indexable": 2706
+  },
+  "wave": [
+    {
+      "classification": "HHG_CARRIER",
+      "n": 250
+    }
+  ],
+  "selected": {
+    "total": 250,
+    "carrier": 250,
+    "broker": 0,
+    "dual": 0,
+    "states": 23
+  },
+  "wave1": {
+    "n": 1000
+  },
+  "protected": [
+    {
+      "id": "allied",
+      "usdot_number": "76235"
+    },
+    {
+      "id": "arpin",
+      "usdot_number": "49922"
+    },
+    {
+      "id": "atlas",
+      "usdot_number": "125550"
+    },
+    {
+      "id": "graebel",
+      "usdot_number": null
+    },
+    {
+      "id": "mayflower",
+      "usdot_number": "125563"
+    },
+    {
+      "id": "national",
+      "usdot_number": "76628"
+    },
+    {
+      "id": "north-american",
+      "usdot_number": "70851"
+    },
+    {
+      "id": "northern-michigan-moving",
+      "usdot_number": "1398726"
+    },
+    {
+      "id": "northern-michigan-moving-2",
+      "usdot_number": "1398726"
+    },
+    {
+      "id": "wheaton",
+      "usdot_number": "70719"
+    }
+  ]
+}
