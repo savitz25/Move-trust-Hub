@@ -22,7 +22,10 @@ import {
   resolvePublicScrapeFromRow,
 } from '@/lib/verification/display-enrichment';
 import { extractFmcsaFieldsFromRow } from '@/lib/fmcsa/company-from-row';
-import { resolvePublicCompanyNameFromSources } from '@/lib/companies/public-display-name';
+import {
+  fmcsaRawBelongsToCanonicalUsdot,
+  resolvePublicCompanyNameFromSources,
+} from '@/lib/companies/public-display-name';
 import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 import type { Company } from '@/types';
 import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload';
@@ -213,12 +216,17 @@ function noteProjectionOutcome(columns: string, error: { message?: string; code?
 
 function mapRow(row: Record<string, unknown>): Company {
   const baseServices = (row.services as Company['services']) || [];
-  const fmcsaFields = extractFmcsaFieldsFromRow(row, baseServices);
+  const rawMatchesCanonical = fmcsaRawBelongsToCanonicalUsdot(
+    row.fmcsa_raw,
+    row.usdot_number as string | null | undefined
+  );
+  const rowForFmcsa = rawMatchesCanonical ? row : { ...row, fmcsa_raw: null };
+  const fmcsaFields = extractFmcsaFieldsFromRow(rowForFmcsa, baseServices);
   // Prefer FMCSA DBA over legal entity name for all public list/profile surfaces.
   const publicNames = resolvePublicCompanyNameFromSources({
     storedName: row.name as string,
     fmcsaLegalName: row.fmcsa_legal_name as string | null | undefined,
-    fmcsaRaw: row.fmcsa_raw,
+    fmcsaRaw: rawMatchesCanonical ? row.fmcsa_raw : undefined,
     canonicalUsdot: row.usdot_number as string | null | undefined,
   });
 
@@ -568,7 +576,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
   // v11: display-enrichment resolver + strict BBB grades + progressive legacy columns
-  ['companies-directory-v17-wave1'],
+  ['companies-directory-v18-wave1'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 

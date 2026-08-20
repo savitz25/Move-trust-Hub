@@ -121,6 +121,18 @@ test('mismatched FMCSA raw census cannot rename a canonical company', async () =
   assert.equal(resolved.publicName, 'Allied Van Lines');
 });
 
+test('county lookup aliases bind Mayflower county IDs to the canonical company', async () => {
+  const { companyCountyLookupKeys } = await import(
+    '@/lib/directory/enrich-static-county-coverage'
+  );
+  const keys = companyCountyLookupKeys({
+    id: 'mayflower',
+    slug: 'aero-mayflower-transit-company',
+  });
+  assert.ok(keys.includes('directory-mayflower-transit'));
+  assert.ok(keys.includes('mayflower-transit'));
+});
+
 test('catalog snapshot does not reuse forbidden van-line USDOTs', async () => {
   const { activeDirectoryMovers } = await import('@/data/active-directory-movers');
   assert.equal(activeDirectoryMovers['directory-allied-van-lines']?.usdotNumber, '76235');

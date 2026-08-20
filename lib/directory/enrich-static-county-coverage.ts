@@ -8,6 +8,24 @@ import { getStaticMoverCountyIndex } from '@/lib/local-movers/static-mover-count
 import { isCuratedMover } from '@/lib/trust/curated-listing-policy';
 import type { Company } from '@/types';
 
+/**
+ * County assignment IDs that refer to the same canonical van-line company.
+ * Without these aliases, county injection creates a second public directory row.
+ */
+const CANONICAL_COUNTY_ALIASES: Record<string, readonly string[]> = {
+  mayflower: ['directory-mayflower-transit', 'mayflower-transit', 'aero-mayflower-transit-company'],
+  allied: ['directory-allied-van-lines', 'allied-van-lines'],
+  atlas: ['directory-atlas-van-lines', 'atlas-van-lines'],
+  wheaton: ['directory-wheaton-world-wide', 'wheaton-world-wide'],
+  arpin: ['directory-arpin-van-lines', 'arpin-van-lines'],
+  national: ['directory-national-van-lines', 'national-van-lines'],
+  'north-american': [
+    'directory-north-american-moving-storage',
+    'north-american-moving-storage',
+  ],
+  graebel: ['directory-graebel-van-lines', 'graebel-van-lines'],
+};
+
 /** Keys used to join directory companies ↔ county catalog assignment ids. */
 export function companyCountyLookupKeys(company: Pick<Company, 'id' | 'slug'>): string[] {
   const keys = new Set<string>();
@@ -19,6 +37,20 @@ export function companyCountyLookupKeys(company: Pick<Company, 'id' | 'slug'>): 
     keys.add(bare);
     if (!k.startsWith('directory-') && bare) keys.add(`directory-${bare}`);
   }
+
+  const id = (company.id || '').trim().toLowerCase();
+  const slug = (company.slug || '').trim().toLowerCase();
+  for (const [canonical, aliases] of Object.entries(CANONICAL_COUNTY_ALIASES)) {
+    const hits =
+      id === canonical ||
+      slug === canonical ||
+      aliases.includes(id) ||
+      aliases.includes(slug);
+    if (!hits) continue;
+    keys.add(canonical);
+    for (const alias of aliases) keys.add(alias);
+  }
+
   return [...keys];
 }
 
