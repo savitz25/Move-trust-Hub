@@ -1,0 +1,238 @@
+{
+  "applied": true,
+  "google_places_requests": 0,
+  "before": {
+    "totals": {
+      "companies": 468,
+      "review_required": 25,
+      "publishable": 432,
+      "indexable": 432,
+      "verified_capabilities": 13
+    },
+    "cohort": [
+      {
+        "id": "a-c-white-transfer-storage",
+        "slug": "a-c-white-transfer-storage",
+        "usdot_number": "125550",
+        "mc_number": null,
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "allied",
+        "slug": "allied-van-lines",
+        "usdot_number": "76235",
+        "mc_number": "15735",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "arpin",
+        "slug": "arpin-van-lines",
+        "usdot_number": "49922",
+        "mc_number": "621",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "atlas",
+        "slug": "atlas-van-lines",
+        "usdot_number": "125550",
+        "mc_number": "79658",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "graebel",
+        "slug": "graebel-van-lines",
+        "usdot_number": null,
+        "mc_number": null,
+        "publication_state": "REVIEW_REQUIRED",
+        "indexable": false
+      },
+      {
+        "id": "mayflower",
+        "slug": "aero-mayflower-transit-company",
+        "usdot_number": "125563",
+        "mc_number": "2934",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "national",
+        "slug": "national-van-lines",
+        "usdot_number": "76628",
+        "mc_number": "42866",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "north-american",
+        "slug": "north-american-moving-storage",
+        "usdot_number": "70851",
+        "mc_number": "107012",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "northern-michigan-moving",
+        "slug": "northern-michigan-moving",
+        "usdot_number": "1398726",
+        "mc_number": "884143",
+        "publication_state": "REVIEW_REQUIRED",
+        "indexable": false
+      },
+      {
+        "id": "northern-michigan-moving-2",
+        "slug": "northern-michigan-moving-2",
+        "usdot_number": "1398726",
+        "mc_number": null,
+        "publication_state": "REVIEW_REQUIRED",
+        "indexable": false
+      },
+      {
+        "id": "secure-moving-storage",
+        "slug": "secure-moving-storage",
+        "usdot_number": "70719",
+        "mc_number": null,
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "wheaton",
+        "slug": "wheaton-world-wide",
+        "usdot_number": "70719",
+        "mc_number": "87113",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      }
+    ],
+    "duplicate_usdot": [
+      {
+        "usdot": "125550",
+        "n": 2
+      },
+      {
+        "usdot": "1398726",
+        "n": 2
+      },
+      {
+        "usdot": "70719",
+        "n": 2
+      }
+    ]
+  },
+  "after": {
+    "totals": {
+      "companies": 468,
+      "review_required": 25,
+      "publishable": 432,
+      "indexable": 432,
+      "verified_capabilities": 14
+    },
+    "cohort": [
+      {
+        "id": "a-c-white-transfer-storage",
+        "slug": "a-c-white-transfer-storage",
+        "usdot_number": "92851",
+        "mc_number": "120606",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "allied",
+        "slug": "allied-van-lines",
+        "usdot_number": "76235",
+        "mc_number": "15735",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "arpin",
+        "slug": "arpin-van-lines",
+        "usdot_number": "49922",
+        "mc_number": "621",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "atlas",
+        "slug": "atlas-van-lines",
+        "usdot_number": "125550",
+        "mc_number": "79658",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "graebel",
+        "slug": "graebel-van-lines",
+        "usdot_number": null,
+        "mc_number": null,
+        "publication_state": "REVIEW_REQUIRED",
+        "indexable": false
+      },
+      {
+        "id": "mayflower",
+        "slug": "aero-mayflower-transit-company",
+        "usdot_number": "125563",
+        "mc_number": "2934",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "national",
+        "slug": "national-van-lines",
+        "usdot_number": "76628",
+        "mc_number": "42866",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "north-american",
+        "slug": "north-american-moving-storage",
+        "usdot_number": "70851",
+        "mc_number": "107012",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "northern-michigan-moving",
+        "slug": "northern-michigan-moving",
+        "usdot_number": "1398726",
+        "mc_number": "884143",
+        "publication_state": "REVIEW_REQUIRED",
+        "indexable": false
+      },
+      {
+        "id": "northern-michigan-moving-2",
+        "slug": "northern-michigan-moving-2",
+        "usdot_number": "1398726",
+        "mc_number": null,
+        "publication_state": "REVIEW_REQUIRED",
+        "indexable": false
+      },
+      {
+        "id": "secure-moving-storage",
+        "slug": "secure-moving-storage",
+        "usdot_number": "804775",
+        "mc_number": "358359",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "id": "wheaton",
+        "slug": "wheaton-world-wide",
+        "usdot_number": "70719",
+        "mc_number": "87113",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      }
+    ],
+    "duplicate_usdot": [
+      {
+        "usdot": "1398726",
+        "n": 2
+      }
+    ]
+  }
+}

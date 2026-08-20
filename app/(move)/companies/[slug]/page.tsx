@@ -60,6 +60,10 @@ import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
 import { regulatoryCopyForProvider } from '@/lib/provider/copy';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import {
+  isVanLineNetworkCompany,
+  loadCapabilityEvidenceState,
+} from '@/lib/provider/capability-evidence';
+import {
   formatCompanyTenureLine,
   isValidFoundedYear,
 } from '@/lib/directory/normalize-company';
@@ -180,7 +184,16 @@ export default async function CompanyProfilePage({ params }: Props) {
     foundedYear: company.foundedYear,
     yearsInBusiness: company.yearsInBusiness,
   });
-  const regulatoryCopy = regulatoryCopyForProvider(company);
+  const evidenceState = await loadCapabilityEvidenceState(company.id);
+  const displayCompanyForTrust = {
+    ...company,
+    capabilityEvidenceState: evidenceState,
+  };
+  const regulatoryCopy = regulatoryCopyForProvider(company, {
+    evidenceState,
+    networkKind: isVanLineNetworkCompany(company.id) ? 'van_line' : undefined,
+    historicalAuthority: company.id === 'graebel',
+  });
 
   return (
     <>
@@ -202,7 +215,7 @@ export default async function CompanyProfilePage({ params }: Props) {
         actions={
           <>
             <CompanyTypeBadges company={company} size="default" className="shrink-0" />
-            <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
+            <CompanyVerificationBadges company={displayCompanyForTrust} size="profile" className="justify-start shrink-0" />
             {isDisplayableGoogleForUi(googlePlaces) && googlePlaces ? (
               <GoogleRatingBadge data={googlePlaces} />
             ) : null}

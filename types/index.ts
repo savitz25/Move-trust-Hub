@@ -124,6 +124,8 @@ export interface Company {
   publicationState?: import('@/lib/provider/types').PublicationState | null;
   /** Sitemap eligibility. undefined means legacy/unmigrated (treat as indexable). */
   indexable?: boolean | null;
+  /** Capability evidence for authority-verified badges. Defaults to INFERRED. */
+  capabilityEvidenceState?: import('@/lib/provider/types').CapabilityEvidenceState | null;
 
   /** Google Places API enrichment */
   googleData?: import('@/lib/verification/types').GooglePlacesData | null;
