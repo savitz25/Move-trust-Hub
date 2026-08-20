@@ -1,0 +1,56 @@
+{
+  "google_places_requests": 0,
+  "db": {
+    "companies": 4021,
+    "indexable": 3985,
+    "wave1": 1000,
+    "wave2": 1274,
+    "wave3": 1279,
+    "overlay": 200,
+    "staging_overwritten": 0,
+    "pilot_public": 0,
+    "false_caps": 0
+  },
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "path": "/companies",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "path": "/compare",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "path": "/local-movers",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "path": "/auto-transport",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "path": "/companies/allied-van-lines",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "path": "/companies/gomuverz-llc",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "sitemap_company_urls": 3985,
+  "new_public_profiles": 0,
+  "new_indexable_profiles": 0,
+  "new_sitemap_urls": 0,
+  "automatic_fuzzy_merges": 0
+}
