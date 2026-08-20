@@ -410,7 +410,39 @@ function mapRow(row: Record<string, unknown>): Company {
   return finalizeCompanyEnrichmentForDisplay(mapped);
 }
 
-const COMPANIES_FETCH_TIMEOUT_MS = 12_000;
+const COMPANIES_FETCH_TIMEOUT_MS = 20_000;
+const COMPANIES_LIST_PAGE_SIZE = 1000;
+
+async function selectCompanyList(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  columns: string
+) {
+  const rows: unknown[] = [];
+  let from = 0;
+  while (from < 20_000) {
+    const to = from + COMPANIES_LIST_PAGE_SIZE - 1;
+    const page = await supabase
+      .from('companies')
+      .select(columns)
+      .order('reputation_score', { ascending: false })
+      .order('id', { ascending: true })
+      .range(from, to);
+    if (page.error) return page;
+    const data = page.data ?? [];
+    rows.push(...data);
+    if (data.length < COMPANIES_LIST_PAGE_SIZE) {
+      return { ...page, data: rows };
+    }
+    from += COMPANIES_LIST_PAGE_SIZE;
+  }
+  return {
+    data: rows,
+    error: null,
+    count: null,
+    status: 200,
+    statusText: 'OK',
+  };
+}
 
 async function withTimeout<T>(
   promise: Promise<T>,
@@ -440,16 +472,6 @@ function isSchemaColumnError(error: { code?: string; message?: string } | null):
     error.code === 'PGRST204' ||
     isMissingEnrichmentColumnError(error.message)
   );
-}
-
-async function selectCompanyList(
-  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
-  columns: string
-) {
-  return supabase
-    .from('companies')
-    .select(columns)
-    .order('reputation_score', { ascending: false });
 }
 
 async function fetchCompaniesFromDatabase(): Promise<Company[]> {
@@ -545,7 +567,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
   // v11: display-enrichment resolver + strict BBB grades + progressive legacy columns
-  ['companies-directory-v15-wave1'],
+  ['companies-directory-v16-wave1'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
