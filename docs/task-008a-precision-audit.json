@@ -1,0 +1,428 @@
+{
+  "google_places_requests": 0,
+  "requested": 60,
+  "audited": 60,
+  "failures": [],
+  "sample": [
+    {
+      "usdot": "253161",
+      "legal": "METROPOLITAN CHICAGO, INC.",
+      "dba": null,
+      "mc": "205310",
+      "hq": "CHICAGO, IL"
+    },
+    {
+      "usdot": "326335",
+      "legal": "TERMINAL CONSOLIDATION COMPANY",
+      "dba": null,
+      "mc": "151065",
+      "hq": "KANSAS CITY, MO"
+    },
+    {
+      "usdot": "482141",
+      "legal": "COLLEGIAN MOVERS, INC.",
+      "dba": null,
+      "mc": "252992",
+      "hq": "MILFORD, CT"
+    },
+    {
+      "usdot": "490243",
+      "legal": "SIMON GAGNON MOVING & STORAGE INC",
+      "dba": null,
+      "mc": "90749",
+      "hq": "SOUTHINGTON, CT"
+    },
+    {
+      "usdot": "516094",
+      "legal": "MOVING SERVICES, INC.",
+      "dba": null,
+      "mc": "246630",
+      "hq": "TUCSON, AZ"
+    },
+    {
+      "usdot": "819815",
+      "legal": "EPLEY'S MOVERS, INC.",
+      "dba": null,
+      "mc": "390046",
+      "hq": "MT JULIET, TN"
+    },
+    {
+      "usdot": "849413",
+      "legal": "SUMMITT PIANOS LLC",
+      "dba": "PIANO MOVERS PLUS",
+      "mc": "393793",
+      "hq": "CHATTANOOGA, TN"
+    },
+    {
+      "usdot": "919682",
+      "legal": "LIGHTNER & LIGHTNER, INC.",
+      "dba": "TWO MEN AND A TRUCK",
+      "mc": "397609",
+      "hq": "MADISON, WI"
+    },
+    {
+      "usdot": "1160157",
+      "legal": "NAPLES MOVERS LLC",
+      "dba": null,
+      "mc": "467019",
+      "hq": "NAPLES, FL"
+    },
+    {
+      "usdot": "1161596",
+      "legal": "J T J ENTERPRISES, INC.",
+      "dba": null,
+      "mc": "467075",
+      "hq": "PORT SAINT LUCIE, FL"
+    },
+    {
+      "usdot": "1170208",
+      "legal": "LEHMAN  MOVING &  STORAGE, INC",
+      "dba": "TWO MEN AND A TRUCK / SEMINOLE COUNTY",
+      "mc": "471560",
+      "hq": "CASSELBERRY, FL"
+    },
+    {
+      "usdot": "1606111",
+      "legal": "S & D TRANSPORT INC",
+      "dba": null,
+      "mc": "593945",
+      "hq": "FORT WORTH, TX"
+    },
+    {
+      "usdot": "1607091",
+      "legal": "PERFORMANCE VAN LINES INC",
+      "dba": null,
+      "mc": "594289",
+      "hq": "SAN ANTONIO, TX"
+    },
+    {
+      "usdot": "1633060",
+      "legal": "RUSSELL'S MOVING AND STORAGE, INC",
+      "dba": null,
+      "mc": "602177",
+      "hq": "SAN FERNANDO, CA"
+    },
+    {
+      "usdot": "1650994",
+      "legal": "HILFORD MOVING & STORAGE INC",
+      "dba": null,
+      "mc": "725182",
+      "hq": "VENTURA, CA"
+    },
+    {
+      "usdot": "1664649",
+      "legal": "JOSE ALFONSO",
+      "dba": "ALFONSO TRUCKING",
+      "mc": "660785",
+      "hq": "ADELANTO, CA"
+    },
+    {
+      "usdot": "1918644",
+      "legal": "SHU CLEAN INC",
+      "dba": null,
+      "mc": "887282",
+      "hq": "QUEENS, NY"
+    },
+    {
+      "usdot": "1943964",
+      "legal": "A MOVEABLE FEAT INC",
+      "dba": null,
+      "mc": "692261",
+      "hq": "BROOKLYN, NY"
+    },
+    {
+      "usdot": "2451167",
+      "legal": "NAVY SEALS MOVING LLC",
+      "dba": null,
+      "mc": "846153",
+      "hq": "HACKENSACK, NJ"
+    },
+    {
+      "usdot": "2459153",
+      "legal": "DEPENDABLE ENTERPRISES INC",
+      "dba": null,
+      "mc": "849487",
+      "hq": "BAYONNE, NJ"
+    },
+    {
+      "usdot": "2491702",
+      "legal": "EXPEDITE MOVING INC",
+      "dba": null,
+      "mc": "862984",
+      "hq": "RAHWAY, NJ"
+    },
+    {
+      "usdot": "2561451",
+      "legal": "WIZZARD WAY INC",
+      "dba": null,
+      "mc": "893778",
+      "hq": "ROMEOVILLE, IL"
+    },
+    {
+      "usdot": "2570768",
+      "legal": "LEXEL MOVING LLC",
+      "dba": null,
+      "mc": "898332",
+      "hq": "WALTHAM, MA"
+    },
+    {
+      "usdot": "2583086",
+      "legal": "MOZART MOVING INC",
+      "dba": null,
+      "mc": "904729",
+      "hq": "WEST ROXBURY, MA"
+    },
+    {
+      "usdot": "2588687",
+      "legal": "EXELA MOVERS LLC",
+      "dba": "EXELA MOVERS",
+      "mc": "907693",
+      "hq": "BOSTON, MA"
+    },
+    {
+      "usdot": "2628513",
+      "legal": "ILLINOIS MOVERS INC",
+      "dba": null,
+      "mc": "914433",
+      "hq": "WOOD DALE, IL"
+    },
+    {
+      "usdot": "2782086",
+      "legal": "AGURCIA TRANSPORTATION INC.",
+      "dba": "HONEST HANDS MOVING & STORAGE",
+      "mc": "926563",
+      "hq": "SILVER SPRING, MD"
+    },
+    {
+      "usdot": "2839268",
+      "legal": "SNT FOOD AND BEVERAGE, INC.",
+      "dba": "COLLEGE HUNKS HAULING JUNK",
+      "mc": "993063",
+      "hq": "WINCHESTER, VA"
+    },
+    {
+      "usdot": "2845439",
+      "legal": "ALLY MOVING LLC",
+      "dba": null,
+      "mc": "953903",
+      "hq": "BELTSVILLE, MD"
+    },
+    {
+      "usdot": "2855849",
+      "legal": "STREET CONSTRUCTION GROUP, LLC",
+      "dba": "INFINITY FREIGHT",
+      "mc": "956245",
+      "hq": "CLINTON, MD"
+    },
+    {
+      "usdot": "2900581",
+      "legal": "PRINCE MOVERS INC",
+      "dba": null,
+      "mc": "975824",
+      "hq": "ASHBURN, VA"
+    },
+    {
+      "usdot": "2922241",
+      "legal": "MOVERAMA LLC",
+      "dba": null,
+      "mc": "985701",
+      "hq": "PHILADELPHIA, PA"
+    },
+    {
+      "usdot": "2934378",
+      "legal": "BALDWIN FINE ART & RESIDENTIAL LLC",
+      "dba": "BALDWIN FA&R",
+      "mc": "991279",
+      "hq": "GLENSIDE, PA"
+    },
+    {
+      "usdot": "3236584",
+      "legal": "AMAZING MOVERS 360 LLC",
+      "dba": null,
+      "mc": "1113801",
+      "hq": "PORT ANGELES, WA"
+    },
+    {
+      "usdot": "3236736",
+      "legal": "COMFORTABLE MOVING LLC",
+      "dba": null,
+      "mc": "1015844",
+      "hq": "VANCOUVER, WA"
+    },
+    {
+      "usdot": "3295868",
+      "legal": "MD TRANSPORTATION GROUP LLC",
+      "dba": "WORLD CLASS MOVING & STORAGE",
+      "mc": "1044476",
+      "hq": "ST LOUIS, MO"
+    },
+    {
+      "usdot": "3337765",
+      "legal": "WJM TRANSPORTATION LLC",
+      "dba": null,
+      "mc": "1064778",
+      "hq": "CLEVELAND, OH"
+    },
+    {
+      "usdot": "3357053",
+      "legal": "4 QUICK SERVICES LLC",
+      "dba": null,
+      "mc": "1074348",
+      "hq": "RALEIGH, NC"
+    },
+    {
+      "usdot": "3359825",
+      "legal": "FRIENDLY FREIGHT LLC",
+      "dba": "FRIENDLY FREIGHT",
+      "mc": "1213671",
+      "hq": "WINSTON SALEM, NC"
+    },
+    {
+      "usdot": "3363104",
+      "legal": "DIAMONDBACK DUMPSTERS LLC",
+      "dba": "DIAMONDBACK DISPOSAL",
+      "mc": "1206234",
+      "hq": "EAST LIVERPOOL, OH"
+    },
+    {
+      "usdot": "3406771",
+      "legal": "POINT BLANK MOVING LLC",
+      "dba": null,
+      "mc": "1097514",
+      "hq": "KANSAS CITY, MO"
+    },
+    {
+      "usdot": "3418033",
+      "legal": "JOSEY FREIGHT COMPANY LLC",
+      "dba": "JOSEY FREIGHT CO",
+      "mc": "1104103",
+      "hq": "GREENSBORO, NC"
+    },
+    {
+      "usdot": "3548730",
+      "legal": "SBC STORAGE LLC",
+      "dba": "ATLANTA FLAT RATE MOVERS",
+      "mc": "1187666",
+      "hq": "MARIETTA, GA"
+    },
+    {
+      "usdot": "3562604",
+      "legal": "CK AND KC ENTERPRISE LLC",
+      "dba": null,
+      "mc": "1197097",
+      "hq": "MCDONOUGH, GA"
+    },
+    {
+      "usdot": "3624776",
+      "legal": "FORMULA MOVING CO LLC",
+      "dba": null,
+      "mc": "1239490",
+      "hq": "ROCKMART, GA"
+    },
+    {
+      "usdot": "3748569",
+      "legal": "JORDANS MOVERS LLC",
+      "dba": "MOVERS FOR LESS",
+      "mc": "1329780",
+      "hq": "NOBLESVILLE, IN"
+    },
+    {
+      "usdot": "3775400",
+      "legal": "BLAIZ LLC",
+      "dba": null,
+      "mc": "1349462",
+      "hq": "SHELBYVILLE, IN"
+    },
+    {
+      "usdot": "3784131",
+      "legal": "BULLDOGS MOVING CO LLC",
+      "dba": null,
+      "mc": "1472268",
+      "hq": "LAPEL, IN"
+    },
+    {
+      "usdot": "4146017",
+      "legal": "OKEMOSMOVINGBROS LLC",
+      "dba": "THE MOVING BROS",
+      "mc": "1590623",
+      "hq": "LANSING, MI"
+    },
+    {
+      "usdot": "4178079",
+      "legal": "HOEKSTRA MOVING COMPANY LLC.",
+      "dba": null,
+      "mc": "1608145",
+      "hq": "COOPERSVILLE, MI"
+    },
+    {
+      "usdot": "4196095",
+      "legal": "NOL LLC",
+      "dba": null,
+      "mc": "1617887",
+      "hq": "MACOMB, MI"
+    },
+    {
+      "usdot": "4258474",
+      "legal": "JTS RENTALS LIMITED",
+      "dba": null,
+      "mc": "1651814",
+      "hq": "WESTMINSTER, CO"
+    },
+    {
+      "usdot": "4281705",
+      "legal": "TMT GRAND JUNCTION LLC",
+      "dba": "TWO MEN AND A TRUCK",
+      "mc": "1664544",
+      "hq": "GRAND JUNCTION, CO"
+    },
+    {
+      "usdot": "4319967",
+      "legal": "INNOVATIVE GROWTH CORP",
+      "dba": null,
+      "mc": "1685330",
+      "hq": "LOVELAND, CO"
+    },
+    {
+      "usdot": "4415361",
+      "legal": "AXS WAY LLC",
+      "dba": null,
+      "mc": "1735121",
+      "hq": "SAVAGE, MN"
+    },
+    {
+      "usdot": "4450031",
+      "legal": "JUANITAS TRANSPORTATION LLC",
+      "dba": null,
+      "mc": "1753478",
+      "hq": "SAINT PAUL, MN"
+    },
+    {
+      "usdot": "4467758",
+      "legal": "UNCLE SAMS MOVING CREW LLC",
+      "dba": null,
+      "mc": "1762889",
+      "hq": "BEMIDJI, MN"
+    },
+    {
+      "usdot": "4522493",
+      "legal": "CAMAJ TRANSPORT 1 LLC",
+      "dba": null,
+      "mc": "1793145",
+      "hq": "OLD GREENWICH, CT"
+    },
+    {
+      "usdot": "4525347",
+      "legal": "GOMUVERZ LLC",
+      "dba": null,
+      "mc": "1793595",
+      "hq": "CASA GRANDE, AZ"
+    },
+    {
+      "usdot": "4525727",
+      "legal": "TROJAN UNLIMITED LLC",
+      "dba": "TROJAN TRUCKING",
+      "mc": "1793799",
+      "hq": "MARICOPA, AZ"
+    }
+  ]
+}

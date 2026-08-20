@@ -578,7 +578,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
   // v11: display-enrichment resolver + strict BBB grades + progressive legacy columns
-  ['companies-directory-v19-wave2'],
+  ['companies-directory-v20-wave3'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
@@ -642,7 +642,7 @@ async function fetchIndexableCompanySitemapEntries(): Promise<CompanySitemapEntr
 
 export const getIndexableCompanySitemapEntries = unstable_cache(
   fetchIndexableCompanySitemapEntries,
-  ['company-sitemap-entries-v1-wave2'],
+  ['company-sitemap-entries-v2-wave3'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 

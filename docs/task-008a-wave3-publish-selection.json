@@ -1,0 +1,15 @@
+{
+  "google_places_requests": 0,
+  "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+  "excluded": {
+    "canonical_usdot_collision": 250
+  },
+  "selected": {
+    "total": 0,
+    "carrier": 0,
+    "broker": 0,
+    "dual": 0,
+    "states": 0
+  },
+  "usdots": []
+}

@@ -4,6 +4,7 @@ export const WAVE_ID = 'FEDERAL_HHG_2026_08_WAVE_1';
 export const WAVE_2_ID = 'FEDERAL_HHG_2026_08_WAVE_2_CANDIDATE';
 export const WAVE_2_PUBLICATION_ID = 'FEDERAL_HHG_2026_08_WAVE_2';
 export const WAVE_3_ID = 'FEDERAL_HHG_2026_08_WAVE_3_CANDIDATE';
+export const WAVE_3_PUBLICATION_ID = 'FEDERAL_HHG_2026_08_WAVE_3';
 
 export const US_STATES_AND_DC = new Set([
   'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL',

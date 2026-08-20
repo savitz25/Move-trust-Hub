@@ -75,3 +75,24 @@ export function revalidateWave2Candidate(
   }
   return { ok: true, reason: 'ok' };
 }
+
+export function revalidateWave3Candidate(
+  staged: StagedPublicationRow,
+  manifest: ReadonlySet<string>,
+  existingDots: ReadonlySet<string>
+): { ok: boolean; reason: string } {
+  const usdot = normalizeUsdot(staged.usdot);
+  if (!isWave2ManifestMember(usdot, manifest)) {
+    return { ok: false, reason: 'not_in_manifest' };
+  }
+  if (existingDots.has(usdot)) return { ok: false, reason: 'canonical_usdot_collision' };
+  const gate = isWave1Eligible(staged);
+  if (!gate.eligible) return { ok: false, reason: gate.reason };
+  if (staged.classification !== 'HHG_CARRIER') {
+    return { ok: false, reason: 'wave3_carriers_only' };
+  }
+  if (!staged.hhg_carrier_verified) {
+    return { ok: false, reason: 'carrier_not_verified' };
+  }
+  return { ok: true, reason: 'ok' };
+}
