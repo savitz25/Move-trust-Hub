@@ -22,6 +22,7 @@ import {
   resolvePublicScrapeFromRow,
 } from '@/lib/verification/display-enrichment';
 import { extractFmcsaFieldsFromRow } from '@/lib/fmcsa/company-from-row';
+import { COMPANIES_LIST_PAGE_SIZE } from '@/lib/supabase/company-list-paging';
 import {
   fmcsaRawBelongsToCanonicalUsdot,
   resolvePublicCompanyNameFromSources,
@@ -420,7 +421,6 @@ function mapRow(row: Record<string, unknown>): Company {
 }
 
 const COMPANIES_FETCH_TIMEOUT_MS = 20_000;
-const COMPANIES_LIST_PAGE_SIZE = 1000;
 
 async function selectCompanyList(
   supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,

@@ -1,0 +1,327 @@
+{
+  "google_places_requests": 0,
+  "sampled": 40,
+  "failed": 0,
+  "results": [
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "hindman-isaacs-moving-storage-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "aavon-moving-storage-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "valtran-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "grand-strand-moving-storage-llc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "two-men-and-a-truck-kalamazoo",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "legends-moving",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "family-movers",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "kargo-transportation-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "arrivas-moving-services-llc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "two-men-and-a-truck-usdot-1011878",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "united-moving-storage",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "2-fellas-a-big-vehicle-moving-company-usdot-1017321",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "veg-land-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "daley-wanzer-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "elite-movers",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "mcgraw-moving-limited-liability-company",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "garttmeyer-moving-storage-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "s-r-i-fine-art-services",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "service-master",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "ariel-moving-co",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "catch-up-logistics",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "ust-logistical-systems",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "fry-wagner-moving-storage-co",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "nfl-freightway-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "georgetown-moving-and-storage-company",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "am-trans-expedite-llc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "willie-s-transfer-storage",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "ajax-transportation",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "freeway-dispatch",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "c-h-robinson-worldwide",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "landstar-ligon-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "island-movers-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "kol-global-logistics",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "mccracken-motor-freight-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "security-storage-van-co-of-norfolk-va-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "hollander-international-storage-and-moving-company-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "nacal-llc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "platinum-services-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "fedex-custom-critical-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "slug": "vip-transport-inc",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    }
+  ]
+}

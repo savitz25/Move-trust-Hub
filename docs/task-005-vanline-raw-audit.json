@@ -1,0 +1,159 @@
+{
+  "google_places_requests": 0,
+  "companies": {
+    "n": 1468,
+    "indexable": 1432
+  },
+  "wave": {
+    "n": 1000,
+    "live": 1000,
+    "indexable": 1000
+  },
+  "waveRoles": [
+    {
+      "classification": "HHG_BROKER",
+      "n": 203
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "n": 711
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "n": 86
+    }
+  ],
+  "rawClassification": {
+    "MATCH": 147,
+    "RAW_USDOT_MISSING": 0,
+    "MISMATCH": 0,
+    "CANONICAL_USDOT_MISSING": 1,
+    "UNPARSABLE": 0
+  },
+  "vanLines": [
+    {
+      "id": "allied",
+      "slug": "allied-van-lines",
+      "name": "Allied Van Lines",
+      "fmcsa_legal_name": "ALLIED VAN LINES INC",
+      "usdot_number": "76235",
+      "mc_number": "15735",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "has_raw": false
+    },
+    {
+      "id": "arpin",
+      "slug": "arpin-van-lines",
+      "name": "Arpin Van Lines",
+      "fmcsa_legal_name": "ARPIN MOVING INC",
+      "usdot_number": "49922",
+      "mc_number": "621",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "has_raw": false
+    },
+    {
+      "id": "atlas",
+      "slug": "atlas-van-lines",
+      "name": "Atlas Van Lines",
+      "fmcsa_legal_name": "ATLAS VAN LINES INC",
+      "usdot_number": "125550",
+      "mc_number": "79658",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "has_raw": false
+    },
+    {
+      "id": "graebel",
+      "slug": "graebel-van-lines",
+      "name": "Graebel Van Lines",
+      "fmcsa_legal_name": "GRAEBEL VAN LINES LLC",
+      "usdot_number": null,
+      "mc_number": null,
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "has_raw": true
+    },
+    {
+      "id": "mayflower",
+      "slug": "aero-mayflower-transit-company",
+      "name": "Aero Mayflower Transit Company",
+      "fmcsa_legal_name": "MAYFLOWER TRANSIT LLC",
+      "usdot_number": "125563",
+      "mc_number": "2934",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "has_raw": true
+    },
+    {
+      "id": "national",
+      "slug": "national-van-lines",
+      "name": "National Van Lines",
+      "fmcsa_legal_name": "NATIONAL VAN LINES INC",
+      "usdot_number": "76628",
+      "mc_number": "42866",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "has_raw": true
+    },
+    {
+      "id": "north-american",
+      "slug": "north-american-moving-storage",
+      "name": "North American Moving & Storage",
+      "fmcsa_legal_name": "NORTH AMERICAN VAN LINES INC",
+      "usdot_number": "70851",
+      "mc_number": "107012",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "has_raw": true
+    },
+    {
+      "id": "northern-michigan-moving",
+      "slug": "northern-michigan-moving",
+      "name": "Northern Michigan Moving",
+      "fmcsa_legal_name": "NORTHERN MICHIGAN MOVING AND STORAGE INC",
+      "usdot_number": "1398726",
+      "mc_number": "884143",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "has_raw": true
+    },
+    {
+      "id": "northern-michigan-moving-2",
+      "slug": "northern-michigan-moving-2",
+      "name": "Northern Michigan Moving",
+      "fmcsa_legal_name": "NORTHERN MICHIGAN MOVING AND STORAGE INC",
+      "usdot_number": "1398726",
+      "mc_number": null,
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false,
+      "has_raw": true
+    },
+    {
+      "id": "wheaton",
+      "slug": "wheaton-world-wide",
+      "name": "Wheaton World Wide Moving",
+      "fmcsa_legal_name": "WHEATON VAN LINES INC",
+      "usdot_number": "70719",
+      "mc_number": "87113",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "has_raw": true
+    }
+  ],
+  "remainingUnpublished": [
+    {
+      "classification": "HHG_BROKER",
+      "n": 80
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "n": 3479
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "n": 2
+    }
+  ]
+}

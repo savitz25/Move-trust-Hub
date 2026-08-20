@@ -2,7 +2,7 @@
  * Task 005 — select (do not publish) Federal HHG Wave 2 candidates.
  * Fail-closed: NEW_CANONICAL_CANDIDATE only, US+DC, never REVIEW_REQUIRED/INACTIVE.
  *
- * npm run select:federal-hhg-wave2:dry -- --limit 500
+ * npm run select:federal-hhg-wave2:dry -- --limit 1500
  */
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
@@ -39,7 +39,7 @@ function argNum(flag: string, fallback: number): number {
 
 async function main() {
   loadEnv();
-  const limit = argNum('--limit', 500);
+  const limit = argNum('--limit', 1500);
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error('BLOCKED — DATABASE ACCESS');
   const client = new pg.Client({ connectionString: url, ssl: { rejectUnauthorized: false } });
@@ -70,15 +70,35 @@ async function main() {
     return usdot && !taken.has(usdot) && isWave1Eligible(row).eligible;
   });
 
+  const remainingBrokers = remaining.filter((row) => row.classification === 'HHG_BROKER');
+  const remainingDuals = remaining.filter((row) => row.classification === 'HHG_CARRIER_BROKER');
+
   const selected = selectWaveCandidates(remaining, {
     limit,
-    perStateCap: 16,
-    maxBrokers: 80,
-    maxDuals: Math.max(
-      remaining.filter((row) => row.classification === 'HHG_CARRIER_BROKER').length,
-      0
-    ),
+    perStateCap: 40,
+    maxBrokers: remainingBrokers.length,
+    maxDuals: remainingDuals.length,
   });
+
+  const candidates = selected.map((row, index) => ({
+    wave_id: WAVE_2_ID,
+    status: 'candidate',
+    selection_rank: index + 1,
+    selection_reason: 'deterministic_usdot_round_robin_state_eligible_new_canonical',
+    usdot: normalizeUsdot(row.usdot),
+    mc: row.mc,
+    classification: row.classification,
+    legal_name: row.legal_name,
+    dba_name: row.dba_name,
+    city: row.phy_city,
+    state: (row.phy_state ?? '').trim().toUpperCase(),
+    phone: row.phone,
+    source: 'FMCSA L&I carrier file (data.transportation.gov/6eyk-hxee)',
+    retrieved_at: row.retrieved_at ?? null,
+  }));
+
+  const unsafe = candidates.filter((row) => taken.has(row.usdot));
+  if (unsafe.length) throw new Error('Wave 2 selection collided with existing USDOT');
 
   const report = {
     google_places_requests: 0,
@@ -86,8 +106,13 @@ async function main() {
     proposed_wave: WAVE_2_ID,
     publish: false,
     remaining_eligible: remaining.length,
+    remaining_by_role: {
+      carrier: remaining.filter((row) => row.classification === 'HHG_CARRIER').length,
+      broker: remainingBrokers.length,
+      dual: remainingDuals.length,
+    },
     selected: waveSelectionStats(selected),
-    usdots: selected.map((row) => row.usdot),
+    candidates,
   };
 
   writeFileSync(
@@ -97,8 +122,12 @@ async function main() {
   console.log(
     JSON.stringify(
       {
-        ...report,
-        usdots: `${selected.length} USDOTs written to docs/task-005-wave2-selection.json`,
+        google_places_requests: 0,
+        publish: false,
+        remaining_eligible: remaining.length,
+        remaining_by_role: report.remaining_by_role,
+        selected: report.selected,
+        candidate_file: 'docs/task-005-wave2-selection.json',
       },
       null,
       2
