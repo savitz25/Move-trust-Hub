@@ -1,0 +1,287 @@
+{
+  "google_places_requests": 0,
+  "sampled": 35,
+  "failed": 0,
+  "results": [
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "u-s-a-van-lines-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "volunteer-van-lines-l-l-c",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "byco-moving-or-tough-guy-moving",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "murrieta-moving",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "movers-dispatch-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "avi-trucking-company",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "air-1-moving-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "waters-moving-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "pro-piano-movers",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "moving-depot",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "progressive-moving-company-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "two-men-and-a-truck-usdot-1199826",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "moving-zone-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "liedkie-moving-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "active-moving-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "samonas-prime-moving-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "sti-moving-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "heritage-moving-and-storage-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "reebie-storage-moving-company-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "slug": "ferris-moving-and-storage-co",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "sdc-international-shipping",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "starving-students-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "goshare",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "pilo-services-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "brs-international",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "ship2tw-sky-fox-moving",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "tplogix-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "tbg-cargo",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "zermodal-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "jt-brokerage",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "allegiance-van-lines-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "native-van-lines-corp",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "trivium-united-llc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "greenleaf-van-lines-inc",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "classification": "HHG_BROKER",
+      "slug": "onroute-logistics",
+      "status": 200,
+      "robots": "noindex, follow",
+      "ok": true,
+      "failures": []
+    }
+  ]
+}

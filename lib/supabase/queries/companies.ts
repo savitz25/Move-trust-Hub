@@ -576,7 +576,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
   // v11: display-enrichment resolver + strict BBB grades + progressive legacy columns
-  ['companies-directory-v18-wave1'],
+  ['companies-directory-v19-wave2'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 

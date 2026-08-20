@@ -1,0 +1,501 @@
+{
+  "google_places_requests": 0,
+  "audited": 250,
+  "carriers": 200,
+  "brokers": 50,
+  "failures": [],
+  "sampleCarrier": [
+    {
+      "usdot": "15127",
+      "legal": "R.C. MASON MOVERS, INC.",
+      "dba": null,
+      "mc": "100537",
+      "hq": "PEABODY, MA"
+    },
+    {
+      "usdot": "23809",
+      "legal": "DEROSIER STORAGE COMPANY, THE",
+      "dba": null,
+      "mc": "73502",
+      "hq": "STRATFORD, CT"
+    },
+    {
+      "usdot": "23845",
+      "legal": "DALEY MOVING & STORAGE, INC OF TORRINGTON",
+      "dba": null,
+      "mc": "127052",
+      "hq": "TORRINGTON, CT"
+    },
+    {
+      "usdot": "26804",
+      "legal": "T P FREIGHT LINES, INC.",
+      "dba": null,
+      "mc": "37563",
+      "hq": "TILLAMOOK, OR"
+    },
+    {
+      "usdot": "26826",
+      "legal": "PEOPLES WAREHOUSE, INC.",
+      "dba": null,
+      "mc": "32168",
+      "hq": "KLAMATH FALLS, OR"
+    },
+    {
+      "usdot": "36779",
+      "legal": "THOMPSON MOVING & STORAGE, INC.",
+      "dba": null,
+      "mc": "129283",
+      "hq": "CLARKSVILLE, TN"
+    },
+    {
+      "usdot": "62963",
+      "legal": "KONA TRANSPORTATION CO. INC.",
+      "dba": null,
+      "mc": "512939",
+      "hq": "KAILUA KONA, HI"
+    },
+    {
+      "usdot": "95879",
+      "legal": "APACA VAN LINES, INC.",
+      "dba": null,
+      "mc": "171662",
+      "hq": "ALBUQUERQUE, NM"
+    },
+    {
+      "usdot": "95923",
+      "legal": "ABC BONDED WAREHOUSES, INC.",
+      "dba": null,
+      "mc": "129596",
+      "hq": "ALBUQUERQUE, NM"
+    },
+    {
+      "usdot": "95947",
+      "legal": "ALBUQUERQUE MOVING AND STORAGE COMPANY, INC.",
+      "dba": null,
+      "mc": "121026",
+      "hq": "NE ALBUQUERQUE, NM"
+    },
+    {
+      "usdot": "135120",
+      "legal": "FERRIS MOVING AND STORAGE CO.",
+      "dba": null,
+      "mc": "8664",
+      "hq": "GALESBURG, IL"
+    },
+    {
+      "usdot": "169359",
+      "legal": "PATTERSON STORAGE WAREHOUSE COMPANY, INC.",
+      "dba": null,
+      "mc": "99696",
+      "hq": "FAYETTEVILLE, NC"
+    },
+    {
+      "usdot": "214717",
+      "legal": "TOWNE VAN LINES, INC.",
+      "dba": null,
+      "mc": "33500",
+      "hq": "INDIANAPOLIS, IN"
+    },
+    {
+      "usdot": "286311",
+      "legal": "PIEPHO MOVING & STORAGE, INC.",
+      "dba": null,
+      "mc": "133951",
+      "hq": "ROCHESTER, MN"
+    },
+    {
+      "usdot": "294028",
+      "legal": "BEHRENS MOVING CO.",
+      "dba": null,
+      "mc": "198623",
+      "hq": "OAK CREEK, WI"
+    },
+    {
+      "usdot": "295049",
+      "legal": "LEEMAN M. MOYERS",
+      "dba": "MOYERS TRANSFER",
+      "mc": "154853",
+      "hq": "MIDDLESBORO, KY"
+    },
+    {
+      "usdot": "363252",
+      "legal": "MCLAUGHLIN MOVING CO., INC.",
+      "dba": null,
+      "mc": "74451",
+      "hq": "PORTSMOUTH, NH"
+    },
+    {
+      "usdot": "513176",
+      "legal": "THE APARTMENT MOVERS 2, LLC",
+      "dba": "THE APARTMENT MOVERS",
+      "mc": "351874",
+      "hq": "WEST FARGO, ND"
+    },
+    {
+      "usdot": "522818",
+      "legal": "JIM'S TOWING, INC.",
+      "dba": null,
+      "mc": "247177",
+      "hq": "ARGUSVILLE, ND"
+    },
+    {
+      "usdot": "645362",
+      "legal": "CHESTER WILLIAMS",
+      "dba": "CHESTER WILLIAMS TRUCKING CO",
+      "mc": "665807",
+      "hq": "NESBIT, MS"
+    },
+    {
+      "usdot": "687802",
+      "legal": "FREDERICK E. GEE",
+      "dba": "PROFESSIONAL MOVERS",
+      "mc": "305376",
+      "hq": "JACKSON, MS"
+    },
+    {
+      "usdot": "698927",
+      "legal": "MISSISSIPPI VAN LINES, INC.",
+      "dba": null,
+      "mc": "323595",
+      "hq": "JACKSON, MS"
+    },
+    {
+      "usdot": "700264",
+      "legal": "MORGAN MOVING & STORAGE, INC.",
+      "dba": null,
+      "mc": "324551",
+      "hq": "BOONEVILLE, MS"
+    },
+    {
+      "usdot": "729519",
+      "legal": "APACA MOVING & STORAGE, INC.",
+      "dba": null,
+      "mc": "333895",
+      "hq": "ALBUQUERQUE, NM"
+    },
+    {
+      "usdot": "768930",
+      "legal": "WESTPAC INTERNATIONAL INC.",
+      "dba": null,
+      "mc": "343553",
+      "hq": "HONOLULU, HI"
+    },
+    {
+      "usdot": "986609",
+      "legal": "POMAIKA'I TRANSPORT SVCS., INC.",
+      "dba": "P.T.S.I..",
+      "mc": "467247",
+      "hq": "AIEA, HI"
+    },
+    {
+      "usdot": "1031202",
+      "legal": "U.S.A. VAN LINES, LLC",
+      "dba": null,
+      "mc": "251576",
+      "hq": "JACKSONVILLE, TX"
+    },
+    {
+      "usdot": "1031213",
+      "legal": "VOLUNTEER  VAN  LINES,  L.  L.  C.",
+      "dba": null,
+      "mc": "251552",
+      "hq": "AUSTIN, TX"
+    },
+    {
+      "usdot": "1069251",
+      "legal": "ADAMS BUSINESS SERVICES, INC.",
+      "dba": "BYCO MOVING OR TOUGH GUY MOVING",
+      "mc": "442323",
+      "hq": "LUBBOCK, TX"
+    },
+    {
+      "usdot": "1076656",
+      "legal": "MURRIETA MOVING INC",
+      "dba": "MURRIETA MOVING",
+      "mc": "138098",
+      "hq": "SAN BERNARDINO, CA"
+    },
+    {
+      "usdot": "1078281",
+      "legal": "MOVERS DISPATCH, INC.",
+      "dba": null,
+      "mc": "414286",
+      "hq": "JACKSONVILLE, FL"
+    },
+    {
+      "usdot": "1083782",
+      "legal": "AVI GONEN",
+      "dba": "AVI TRUCKING COMPANY",
+      "mc": "460466",
+      "hq": "ROUND ROCK, TX"
+    },
+    {
+      "usdot": "1095485",
+      "legal": "AIR 1 MOVING & STORAGE INC",
+      "dba": null,
+      "mc": "1698263",
+      "hq": "CHATSWORTH, CA"
+    },
+    {
+      "usdot": "1125579",
+      "legal": "WATERS MOVING & STORAGE, INC.",
+      "dba": null,
+      "mc": "481361",
+      "hq": "MARTINEZ, CA"
+    },
+    {
+      "usdot": "1128780",
+      "legal": "MARVIN HENSON",
+      "dba": "PRO PIANO MOVERS",
+      "mc": "487101",
+      "hq": "SANTA ANA, CA"
+    },
+    {
+      "usdot": "1154469",
+      "legal": "L&N MOVERS, INC",
+      "dba": "MOVING DEPOT",
+      "mc": "465523",
+      "hq": "ONTARIO, CA"
+    },
+    {
+      "usdot": "1199256",
+      "legal": "PROGRESSIVE MOVING COMPANY INC",
+      "dba": null,
+      "mc": "478113",
+      "hq": "SEAFORD, NY"
+    },
+    {
+      "usdot": "1199826",
+      "legal": "SAB MOVING, LLC",
+      "dba": "TWO MEN AND A TRUCK",
+      "mc": "464742",
+      "hq": "GURNEE, IL"
+    },
+    {
+      "usdot": "1201265",
+      "legal": "MOVING ZONE, INC.",
+      "dba": null,
+      "mc": "481519",
+      "hq": "BROOKLYN, NY"
+    },
+    {
+      "usdot": "1207788",
+      "legal": "LIEDKIE MOVING & STORAGE INC.",
+      "dba": null,
+      "mc": "479558",
+      "hq": "SCHENECTADY, NY"
+    }
+  ],
+  "sampleBroker": [
+    {
+      "usdot": "318223",
+      "legal": "STARVING STUDENTS, INC.",
+      "dba": null,
+      "mc": "166404",
+      "hq": "LOS ANGELES, CA"
+    },
+    {
+      "usdot": "985934",
+      "legal": "MBROTHERS FREIGHT LLC",
+      "dba": "JEEP FREIGHT",
+      "mc": "419195",
+      "hq": "JOLIET, IL"
+    },
+    {
+      "usdot": "3127735",
+      "legal": "SDC INTERNATIONAL INC",
+      "dba": "SDC INTERNATIONAL SHIPPING",
+      "mc": "91430",
+      "hq": "SHERMAN OAKS, CA"
+    },
+    {
+      "usdot": "3222813",
+      "legal": "GOSHARE INC",
+      "dba": "GOSHARE",
+      "mc": "1008948",
+      "hq": "SAN DIEGO, CA"
+    },
+    {
+      "usdot": "3289829",
+      "legal": "PILO SERVICES LLC",
+      "dba": null,
+      "mc": "1041596",
+      "hq": "LAREDO, TX"
+    },
+    {
+      "usdot": "3304602",
+      "legal": "BRS INTERNATIONAL LLC",
+      "dba": "BRS INTERNATIONAL",
+      "mc": "1048647",
+      "hq": "SAN ANTONIO, TX"
+    },
+    {
+      "usdot": "3348878",
+      "legal": "SKY FOX LLC",
+      "dba": "SHIP2TW|SKY FOX MOVING",
+      "mc": "1070277",
+      "hq": "NORWALK, CA"
+    },
+    {
+      "usdot": "3352372",
+      "legal": "TPLOGIX INC",
+      "dba": null,
+      "mc": "1071991",
+      "hq": "OAKLAND, CA"
+    },
+    {
+      "usdot": "3386278",
+      "legal": "TRANS-BORDER GROUP INC",
+      "dba": "TBG CARGO",
+      "mc": "1727147",
+      "hq": "LAREDO, TX"
+    },
+    {
+      "usdot": "3414596",
+      "legal": "ZERMODAL LLC",
+      "dba": null,
+      "mc": "1101963",
+      "hq": "DALLAS, TX"
+    },
+    {
+      "usdot": "3482726",
+      "legal": "TAMMY L JOHNSON",
+      "dba": "JT BROKERAGE",
+      "mc": "1143607",
+      "hq": "HOUSTON, TX"
+    },
+    {
+      "usdot": "3507074",
+      "legal": "ALLEGIANCE VAN LINES LLC",
+      "dba": null,
+      "mc": "1253953",
+      "hq": "POMPANO BEACH, FL"
+    },
+    {
+      "usdot": "3586586",
+      "legal": "NATIVE VAN LINES CORP",
+      "dba": null,
+      "mc": "1213334",
+      "hq": "MIAMI BEACH, FL"
+    },
+    {
+      "usdot": "3600228",
+      "legal": "TRIVIUM UNITED LLC",
+      "dba": null,
+      "mc": "1222605",
+      "hq": "MIAMI, FL"
+    },
+    {
+      "usdot": "3632175",
+      "legal": "GREENLEAF VAN LINES INC",
+      "dba": null,
+      "mc": "1245619",
+      "hq": "MIAMI, FL"
+    },
+    {
+      "usdot": "3641017",
+      "legal": "NEHA BEHAL",
+      "dba": "ONROUTE LOGISTICS",
+      "mc": "1251142",
+      "hq": "ELK GROVE, CA"
+    },
+    {
+      "usdot": "3704875",
+      "legal": "DA MOVING LLC",
+      "dba": "MOVE HUB",
+      "mc": "1297852",
+      "hq": "WEST PALM BEACH, FL"
+    },
+    {
+      "usdot": "3750174",
+      "legal": "UNITED MOVING MANAGEMENT LLC",
+      "dba": null,
+      "mc": "1330968",
+      "hq": "BOCA RATON, FL"
+    },
+    {
+      "usdot": "3771357",
+      "legal": "CARDO TRANSPORT INC",
+      "dba": null,
+      "mc": "1346359",
+      "hq": "MESQUITE, TX"
+    },
+    {
+      "usdot": "3813986",
+      "legal": "AMERICAS MOVING AND STORAGE LLC",
+      "dba": null,
+      "mc": "1377515",
+      "hq": "CORAL SPRINGS, FL"
+    },
+    {
+      "usdot": "3915084",
+      "legal": "MAP FRANKLIN ENTERPRISES LLC",
+      "dba": null,
+      "mc": "1446417",
+      "hq": "INGLEWOOD, CA"
+    },
+    {
+      "usdot": "3939219",
+      "legal": "CELTIC CONSULTING & MANAGEMENT LLC",
+      "dba": "UNITED ONE VAN LINES",
+      "mc": "1462456",
+      "hq": "HIALEAH, FL"
+    },
+    {
+      "usdot": "3982285",
+      "legal": "MBN TRANSPORTATION INC",
+      "dba": null,
+      "mc": "1481772",
+      "hq": "SAN LEANDRO, CA"
+    },
+    {
+      "usdot": "3985366",
+      "legal": "ITO EL PASO INTERNATIONAL TRANSPORT ORGANIZATION INC",
+      "dba": null,
+      "mc": "1493483",
+      "hq": "EL PASO, TX"
+    },
+    {
+      "usdot": "3993039",
+      "legal": "REGAL VAN LINES LLC",
+      "dba": null,
+      "mc": "1498517",
+      "hq": "FORT LAUDERDALE, FL"
+    },
+    {
+      "usdot": "4002964",
+      "legal": "SHIPSLINE LLC",
+      "dba": "HAWAII LOGISTICS AND PINK VAN LINES",
+      "mc": "1504995",
+      "hq": "W HOLLYWOOD, CA"
+    },
+    {
+      "usdot": "4014864",
+      "legal": "DEPENDABLE MOVERS LLC",
+      "dba": null,
+      "mc": "1512730",
+      "hq": "PORT ST LUCIE, FL"
+    },
+    {
+      "usdot": "4016566",
+      "legal": "INFINITY MOVING GROUP LLC",
+      "dba": "UNITED EXPRESS MOVING AND STORAGE",
+      "mc": "1513834",
+      "hq": "WEST PALM BEACH, FL"
+    },
+    {
+      "usdot": "4022781",
+      "legal": "HOMESAFE ALLIANCE LLC",
+      "dba": null,
+      "mc": "1517763",
+      "hq": "HOUSTON, TX"
+    },
+    {
+      "usdot": "4046181",
+      "legal": "ZENITH MOVING GROUP LLC",
+      "dba": null,
+      "mc": "1532221",
+      "hq": "DELRAY BEACH, FL"
+    }
+  ]
+}
