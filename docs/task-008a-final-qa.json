@@ -1,0 +1,440 @@
+{
+  "google_places_requests": 0,
+  "unsafe": {
+    "wave1": 1000,
+    "wave2": 1274,
+    "wave3": 1279,
+    "wave3_indexable_rows": 1279,
+    "companies": 4021,
+    "indexable": 3985,
+    "false_caps": 0,
+    "carrier_caps": 1279,
+    "authority_rows": 3775,
+    "review_pub": 0,
+    "non_carrier_pub": 0,
+    "wave3_states": 23
+  },
+  "remaining": {
+    "remaining_us_dc": 923
+  },
+  "protected": [
+    {
+      "id": "atlas",
+      "slug": "atlas-van-lines",
+      "usdot_number": "125550",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "mayflower",
+      "slug": "aero-mayflower-transit-company",
+      "usdot_number": "125563",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "northern-michigan-moving",
+      "slug": "northern-michigan-moving",
+      "usdot_number": "1398726",
+      "publication_state": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "northern-michigan-moving-2",
+      "slug": "northern-michigan-moving-2",
+      "usdot_number": "1398726",
+      "publication_state": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "arpin",
+      "slug": "arpin-van-lines",
+      "usdot_number": "49922",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "wheaton",
+      "slug": "wheaton-world-wide",
+      "usdot_number": "70719",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "north-american",
+      "slug": "north-american-moving-storage",
+      "usdot_number": "70851",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "allied",
+      "slug": "allied-van-lines",
+      "usdot_number": "76235",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "national",
+      "slug": "national-van-lines",
+      "usdot_number": "76628",
+      "publication_state": "PUBLISHABLE"
+    }
+  ],
+  "sampled": 40,
+  "failed": 0,
+  "results": [
+    {
+      "slug": "naples-movers-llc",
+      "usdot": "1160157",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "j-t-j-enterprises-inc",
+      "usdot": "1161596",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "two-men-and-a-truck-seminole-county",
+      "usdot": "1170208",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "amerimoving-llc",
+      "usdot": "1210554",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "ontime-moving-system-inc",
+      "usdot": "1233813",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "fortress-transportation-llc",
+      "usdot": "1246913",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "approved-moving-storage-inc",
+      "usdot": "1260913",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "vidal-moving-storage-inc",
+      "usdot": "1293198",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "hercules-delivery-service",
+      "usdot": "1300906",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "priority-express",
+      "usdot": "1315349",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "nobel-van-lines",
+      "usdot": "1329594",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "two-men-and-a-truck-hollywood-ft-lauderdale",
+      "usdot": "1336508",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "exclusive-enterprises-inc",
+      "usdot": "1355105",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "amwat-moving-warehousing",
+      "usdot": "1377633",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "wlw-transportation-company",
+      "usdot": "1410565",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "discovery-moving-group-inc",
+      "usdot": "1424728",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "two-men-and-a-truck-volusia-county",
+      "usdot": "1453634",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "royal-moving-storage-apple-moving-storage",
+      "usdot": "1472849",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "first-choice-movers",
+      "usdot": "1473292",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "flat-rate-moving-and-storage-llc",
+      "usdot": "1475638",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "freedom-movers-inc",
+      "usdot": "1491888",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "trans-van-lines-llc",
+      "usdot": "1496961",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "rice-s-moving-transport-inc",
+      "usdot": "1509419",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "intermove-van-lines-inc",
+      "usdot": "1511839",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "force-tech-incorporated",
+      "usdot": "1526492",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "chosen-one-movers-llc",
+      "usdot": "1526680",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "gm-van-lines-inc",
+      "usdot": "1568346",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "united-transportation-svc-1",
+      "usdot": "1604912",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "s-d-transport-inc",
+      "usdot": "1606111",
+      "state": "TX",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "performance-van-lines-inc",
+      "usdot": "1607091",
+      "state": "TX",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "all-american-moving",
+      "usdot": "1613248",
+      "state": "TX",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "designers-delivery",
+      "usdot": "1616980",
+      "state": "TX",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "a-g-a-transportation-inc",
+      "usdot": "1618084",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "triple-z-moving-transportation-inc",
+      "usdot": "1618108",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "harold-haycook-moving-storage-corp",
+      "usdot": "162012",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "senior-moving-company-corporation",
+      "usdot": "1630504",
+      "state": "TX",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "russell-s-moving-and-storage-inc",
+      "usdot": "1633060",
+      "state": "CA",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "destin-moving-and-storage-llc",
+      "usdot": "1646579",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "hilford-moving-storage-inc",
+      "usdot": "1650994",
+      "state": "CA",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "slug": "galley-transportation-inc",
+      "usdot": "1651467",
+      "state": "FL",
+      "status": 200,
+      "robots": "index, follow",
+      "ok": true,
+      "failures": []
+    }
+  ]
+}
