@@ -41,6 +41,8 @@ type Row = {
   is_verified: boolean | null;
   out_of_service: boolean | null;
   authority_active: boolean | null;
+  publication_state?: string | null;
+  indexable?: boolean | null;
 };
 
 function bump(counts: Record<string, number>, key: string) {
@@ -62,7 +64,7 @@ async function loadCompanies(): Promise<Row[]> {
     const { data, error } = await supabase
       .from('companies')
       .select(
-        'id,slug,name,usdot_number,mc_number,entity_type,service_scope,services,headquarters,is_verified,out_of_service,authority_active'
+        'id,slug,name,usdot_number,mc_number,entity_type,service_scope,services,headquarters,is_verified,out_of_service,authority_active,publication_state,indexable'
       )
       .range(from, from + page - 1);
     if (error) {
@@ -127,12 +129,14 @@ async function main() {
     unknown_unclassified: 0,
     inactive: 0,
     review_required: 0,
+    publishable: 0,
+    indexable: 0,
   };
 
   let hhgAndAuto = 0;
   for (const row of source) {
     const classified = classifyRow(row);
-    if (row.out_of_service) bump(counts, 'inactive');
+    if (row.out_of_service || row.authority_active === false) bump(counts, 'inactive');
     if (classified.roles.includes('hhg_carrier')) bump(counts, 'interstate_hhg_carrier');
     if (classified.roles.includes('hhg_broker')) bump(counts, 'hhg_broker');
     if (classified.roles.includes('hhg_carrier_broker')) bump(counts, 'hhg_carrier_broker');
@@ -145,6 +149,11 @@ async function main() {
       hhgAndAuto += 1;
     }
     if (classified.capabilities.length === 0) bump(counts, 'unknown_unclassified');
+    if (row.publication_state === 'REVIEW_REQUIRED') bump(counts, 'review_required');
+    if (row.publication_state === 'PUBLISHABLE' || row.publication_state === 'INDEXABLE') {
+      bump(counts, 'publishable');
+    }
+    if (row.indexable === true) bump(counts, 'indexable');
   }
 
   const collisions = detectIdentityCollisions(

@@ -32,9 +32,38 @@ export function resolvePublicationState(input: PublicationInput): {
     return { publicationState: 'PUBLISHABLE', indexable: true };
   }
 
-  return { publicationState: 'CLASSIFIED', indexable: false };
+  return { publicationState: 'INGESTED', indexable: false };
 }
 
 export function isIndexablePublication(state: PublicationState): boolean {
-  return state === 'PUBLISHABLE' || state === 'INDEXABLE' || state === 'VERIFIED';
+  return state === 'PUBLISHABLE' || state === 'INDEXABLE';
+}
+
+/**
+ * Sitemap / robots eligibility. Missing publication columns (pre-migration)
+ * stay visible. Explicit fail-closed states are never indexable.
+ */
+export function isSeoIndexableCompany(company: {
+  indexable?: boolean | null;
+  publicationState?: PublicationState | null;
+}): boolean {
+  if (company.indexable === false) return false;
+  const state = company.publicationState;
+  if (
+    state === 'REVIEW_REQUIRED' ||
+    state === 'INACTIVE' ||
+    state === 'INGESTED' ||
+    state === 'CLASSIFIED'
+  ) {
+    return false;
+  }
+  return true;
+}
+
+export function assertIndexableInvariant(input: {
+  publicationState: PublicationState;
+  indexable: boolean;
+}): boolean {
+  if (!input.indexable) return true;
+  return isIndexablePublication(input.publicationState);
 }

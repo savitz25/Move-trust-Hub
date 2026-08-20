@@ -64,6 +64,8 @@ export function normalizeCompanyForDisplay(company: Company): Company {
     // Explicit pass-through so enrichment is never dropped by partial rebuilds
     googleData: company.googleData ?? null,
     publicScrapeData: company.publicScrapeData ?? null,
+    publicationState: company.publicationState ?? null,
+    indexable: company.indexable ?? null,
   };
 }
 

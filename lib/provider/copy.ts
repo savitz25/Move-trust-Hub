@@ -1,11 +1,23 @@
 import type { CapabilityInput } from '@/lib/provider/infer-capabilities';
 import { classifyProvider } from '@/lib/provider/classification';
 import { resolveProviderEligibility } from '@/lib/provider/eligibility';
+import type { CapabilityEvidenceState } from '@/lib/provider/types';
 
 export const FMCSA_AGENCY_EXPANDED =
   'FMCSA is the Federal Motor Carrier Safety Administration — the U.S. agency that licenses interstate motor carriers and brokers.';
 
-export function regulatoryCopyForProvider(input: CapabilityInput): {
+function authorityBadge(
+  verifiedLabel: string,
+  inferredLabel: string,
+  evidenceState: CapabilityEvidenceState
+): string {
+  return evidenceState === 'VERIFIED' ? verifiedLabel : inferredLabel;
+}
+
+export function regulatoryCopyForProvider(
+  input: CapabilityInput,
+  options?: { evidenceState?: CapabilityEvidenceState }
+): {
   headline: string;
   badgeLabel: string;
   detail: string;
@@ -13,11 +25,12 @@ export function regulatoryCopyForProvider(input: CapabilityInput): {
   const classified = classifyProvider(input);
   const eligibility = resolveProviderEligibility(input);
   const roles = new Set(classified.roles);
+  const evidenceState = options?.evidenceState ?? 'INFERRED';
 
   if (roles.has('local_mover') && !eligibility.interstateHhgCarrier) {
     return {
       headline: 'Local / in-state mover',
-      badgeLabel: 'Business Identity Verified',
+      badgeLabel: 'Local Mover',
       detail:
         'This listing is a local or in-state household-goods mover. A USDOT number, if present, is a federal registration identifier — it does not by itself mean the company is authorized to perform interstate household-goods moves.',
     };
@@ -26,7 +39,11 @@ export function regulatoryCopyForProvider(input: CapabilityInput): {
   if (roles.has('hhg_broker') && !roles.has('hhg_carrier') && !roles.has('hhg_carrier_broker')) {
     return {
       headline: 'Household-goods broker',
-      badgeLabel: 'Federal HHG Broker Authority Verified',
+      badgeLabel: authorityBadge(
+        'Federal HHG Broker Authority Verified',
+        'Household-goods broker',
+        evidenceState
+      ),
       detail:
         'This company arranges household-goods transportation. It is not itself the motor carrier that physically hauls the shipment unless a separate carrier authority is also on file.',
     };
@@ -35,7 +52,11 @@ export function regulatoryCopyForProvider(input: CapabilityInput): {
   if (roles.has('hhg_carrier_broker')) {
     return {
       headline: 'Carrier + Broker',
-      badgeLabel: 'Federal HHG Carrier and Broker Authority Verified',
+      badgeLabel: authorityBadge(
+        'Federal HHG Carrier and Broker Authority Verified',
+        'Carrier + Broker',
+        evidenceState
+      ),
       detail:
         'This company holds both household-goods carrier and broker authority. Confirm in writing whether it will haul the load itself or arrange a third-party carrier.',
     };
@@ -44,7 +65,11 @@ export function regulatoryCopyForProvider(input: CapabilityInput): {
   if (roles.has('hhg_carrier')) {
     return {
       headline: 'Interstate household-goods carrier',
-      badgeLabel: 'Federal HHG Carrier Authority Verified',
+      badgeLabel: authorityBadge(
+        'Federal HHG Carrier Authority Verified',
+        'Interstate household-goods carrier',
+        evidenceState
+      ),
       detail:
         'Licensed by the U.S. Department of Transportation for interstate household-goods carriage. Confirm the current SAFER record before booking.',
     };
@@ -53,7 +78,11 @@ export function regulatoryCopyForProvider(input: CapabilityInput): {
   if (roles.has('auto_broker') && !roles.has('auto_carrier') && !roles.has('auto_carrier_broker')) {
     return {
       headline: 'Auto transport broker',
-      badgeLabel: 'Auto Broker Authority Verified',
+      badgeLabel: authorityBadge(
+        'Auto Broker Authority Verified',
+        'Auto transport broker',
+        evidenceState
+      ),
       detail:
         'This company arranges vehicle shipping with independent carriers. It is not itself the trucking carrier unless a separate auto-carrier authority is also on file.',
     };
@@ -62,7 +91,11 @@ export function regulatoryCopyForProvider(input: CapabilityInput): {
   if (roles.has('auto_carrier_broker')) {
     return {
       headline: 'Auto Carrier + Broker',
-      badgeLabel: 'Auto Carrier and Broker Authority Verified',
+      badgeLabel: authorityBadge(
+        'Auto Carrier and Broker Authority Verified',
+        'Auto Carrier + Broker',
+        evidenceState
+      ),
       detail:
         'This company holds both auto-carrier and auto-broker roles. Confirm who will physically transport the vehicle.',
     };
@@ -71,9 +104,13 @@ export function regulatoryCopyForProvider(input: CapabilityInput): {
   if (roles.has('auto_carrier')) {
     return {
       headline: 'Auto transport carrier',
-      badgeLabel: 'Auto Carrier Authority Verified',
+      badgeLabel: authorityBadge(
+        'Auto Carrier Authority Verified',
+        'Auto transport carrier',
+        evidenceState
+      ),
       detail:
-        'This company is classified as an auto-transport carrier from published authority and service evidence.',
+        'This company is classified as an auto-transport carrier from published authority and service evidence. A USDOT registration or generic property authority alone does not verify auto-carrier authority.',
     };
   }
 

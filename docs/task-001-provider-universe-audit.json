@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T01:28:00.010Z",
+  "generated_at": "2026-08-20T02:18:49.790Z",
   "source": "supabase.companies",
   "google_places_requests": 0,
   "counts": {
@@ -14,7 +14,9 @@
     "multi_service_hhg_auto": 6,
     "unknown_unclassified": 7,
     "inactive": 0,
-    "review_required": 0,
+    "review_required": 32,
+    "publishable": 425,
+    "indexable": 425,
     "companies_in_both_hhg_and_auto": 6,
     "duplicate_usdot_groups": 3,
     "duplicate_mc_groups": 0,
@@ -25,21 +27,12 @@
       "kind": "usdot",
       "key": "125563",
       "companyIds": [
-        "arpin",
-        "graebel",
         "allied",
-        "wheaton",
+        "arpin",
         "atlas",
-        "mayflower"
-      ],
-      "resolution": "REVIEW_REQUIRED"
-    },
-    {
-      "kind": "usdot",
-      "key": "1398726",
-      "companyIds": [
-        "northern-michigan-moving-2",
-        "northern-michigan-moving"
+        "graebel",
+        "mayflower",
+        "wheaton"
       ],
       "resolution": "REVIEW_REQUIRED"
     },
@@ -53,39 +46,29 @@
       "resolution": "REVIEW_REQUIRED"
     },
     {
+      "kind": "usdot",
+      "key": "1398726",
+      "companyIds": [
+        "northern-michigan-moving",
+        "northern-michigan-moving-2"
+      ],
+      "resolution": "REVIEW_REQUIRED"
+    },
+    {
+      "kind": "legal_name_address",
+      "key": "express moving|21221 oxnard st",
+      "companyIds": [
+        "express-moving",
+        "express-moving-2"
+      ],
+      "resolution": "REVIEW_REQUIRED"
+    },
+    {
       "kind": "legal_name_address",
       "key": "clark moving storage of albany|198 morris rd",
       "companyIds": [
         "clark-moving-storage-of-albany",
         "clark-moving-storage-of-albany-2"
-      ],
-      "resolution": "REVIEW_REQUIRED"
-    },
-    {
-      "kind": "legal_name_address",
-      "key": "family affair moving|1335 n santiago st unit c",
-      "companyIds": [
-        "family-affair-moving-inc",
-        "family-affair-moving-inc-2"
-      ],
-      "resolution": "REVIEW_REQUIRED"
-    },
-    {
-      "kind": "legal_name_address",
-      "key": "big g movers|26 oliver st ste 001",
-      "companyIds": [
-        "big-g-movers-inc",
-        "big-g-movers-inc-2"
-      ],
-      "resolution": "REVIEW_REQUIRED"
-    },
-    {
-      "kind": "legal_name_address",
-      "key": "firefighting s finest moving storage|22026 mossy oaks rd",
-      "companyIds": [
-        "firefighting-s-finest-moving-storage-2",
-        "firefighting-s-finest-moving-storage",
-        "firefighting-s-finest-moving-storage-inc"
       ],
       "resolution": "REVIEW_REQUIRED"
     },
@@ -101,10 +84,38 @@
     },
     {
       "kind": "legal_name_address",
-      "key": "express moving|21221 oxnard st",
+      "key": "big g movers|26 oliver st ste 001",
       "companyIds": [
-        "express-moving-2",
-        "express-moving"
+        "big-g-movers-inc",
+        "big-g-movers-inc-2"
+      ],
+      "resolution": "REVIEW_REQUIRED"
+    },
+    {
+      "kind": "legal_name_address",
+      "key": "family affair moving|1335 n santiago st unit c",
+      "companyIds": [
+        "family-affair-moving-inc",
+        "family-affair-moving-inc-2"
+      ],
+      "resolution": "REVIEW_REQUIRED"
+    },
+    {
+      "kind": "legal_name_address",
+      "key": "firefighting s finest moving storage|22026 mossy oaks rd",
+      "companyIds": [
+        "firefighting-s-finest-moving-storage",
+        "firefighting-s-finest-moving-storage-2",
+        "firefighting-s-finest-moving-storage-inc"
+      ],
+      "resolution": "REVIEW_REQUIRED"
+    },
+    {
+      "kind": "legal_name_address",
+      "key": "h town movers houston|3133 buffalo speedway",
+      "companyIds": [
+        "h-town-movers-houston",
+        "h-town-movers-houston-2"
       ],
       "resolution": "REVIEW_REQUIRED"
     },
@@ -132,15 +143,6 @@
       "companyIds": [
         "unicorn-moving-storage-austin-movers",
         "unicorn-moving-storage-austin-movers-2"
-      ],
-      "resolution": "REVIEW_REQUIRED"
-    },
-    {
-      "kind": "legal_name_address",
-      "key": "h town movers houston|3133 buffalo speedway",
-      "companyIds": [
-        "h-town-movers-houston",
-        "h-town-movers-houston-2"
       ],
       "resolution": "REVIEW_REQUIRED"
     }

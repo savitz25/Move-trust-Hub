@@ -42,6 +42,15 @@ export const PUBLICATION_STATES = [
 
 export type PublicationState = (typeof PUBLICATION_STATES)[number];
 
+export const CAPABILITY_EVIDENCE_STATES = ['INFERRED', 'VERIFIED', 'REVIEW_REQUIRED'] as const;
+export type CapabilityEvidenceState = (typeof CAPABILITY_EVIDENCE_STATES)[number];
+
+/** Indexable only when publication_state is PUBLISHABLE or INDEXABLE. */
+export const INDEXABLE_PUBLICATION_STATES: readonly PublicationState[] = [
+  'PUBLISHABLE',
+  'INDEXABLE',
+];
+
 export const AUTHORITY_JURISDICTIONS = ['federal', 'state'] as const;
 export type AuthorityJurisdiction = (typeof AUTHORITY_JURISDICTIONS)[number];
 

@@ -120,6 +120,10 @@ export interface Company {
   // Trust signals
   isVerified: boolean; // we mark as verified if we have direct data sources
   lastUpdated: string; // ISO date
+  /** Fail-closed publication lifecycle. Absent on seed rows. */
+  publicationState?: import('@/lib/provider/types').PublicationState | null;
+  /** Sitemap eligibility. undefined means legacy/unmigrated (treat as indexable). */
+  indexable?: boolean | null;
 
   /** Google Places API enrichment */
   googleData?: import('@/lib/verification/types').GooglePlacesData | null;

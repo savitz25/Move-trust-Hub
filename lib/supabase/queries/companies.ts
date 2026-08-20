@@ -127,7 +127,10 @@ const COMPANY_SCOPE_COLUMNS = 'service_scope, coverage_counties';
  * Progressive projections. Missing optional columns must NOT drop the whole list.
  * Order: richest (scope + contacts) → scope only → contacts only → base.
  */
+const COMPANY_PUBLICATION_COLUMNS = 'publication_state, indexable, legacy_directory_row';
+
 const COMPANY_LIST_PROJECTIONS = [
+  `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_SCOPE_COLUMNS}, phone, email, physical_address, ${COMPANY_PUBLICATION_COLUMNS}`,
   `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_SCOPE_COLUMNS}, phone, email, physical_address`,
   `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_SCOPE_COLUMNS}, phone, physical_address`,
   `${COMPANY_LIST_BASE_COLUMNS}, ${COMPANY_SCOPE_COLUMNS}, phone`,
@@ -395,6 +398,11 @@ function mapRow(row: Record<string, unknown>): Company {
       (row.rating_breakdown as Company['ratingBreakdown']) ?? EMPTY_RATING_BREAKDOWN,
     isVerified: Boolean(row.is_verified),
     lastUpdated: (row.last_updated as string)?.slice?.(0, 10) || '',
+    publicationState:
+      typeof row.publication_state === 'string'
+        ? (row.publication_state as Company['publicationState'])
+        : null,
+    indexable: typeof row.indexable === 'boolean' ? row.indexable : null,
     googleData,
     publicScrapeData,
   });

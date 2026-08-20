@@ -3,7 +3,11 @@ import { test } from 'node:test';
 import { classifyProvider } from '@/lib/provider/classification';
 import { resolveProviderEligibility } from '@/lib/provider/eligibility';
 import { detectIdentityCollisions, shouldCreateCanonicalProfile } from '@/lib/provider/identity';
-import { resolvePublicationState } from '@/lib/provider/publication';
+import {
+  assertIndexableInvariant,
+  isSeoIndexableCompany,
+  resolvePublicationState,
+} from '@/lib/provider/publication';
 import { regulatoryCopyForProvider, shouldShowHouseholdMovePrice } from '@/lib/provider/copy';
 
 test('broker-only is not presented as the physical HHG carrier', () => {
@@ -133,6 +137,60 @@ test('duplicate USDOT cannot generate a second canonical identity', () => {
     }),
     'same_identity'
   );
+});
+
+test('unverified new providers fail closed and are not indexable', () => {
+  const pub = resolvePublicationState({
+    serviceScope: 'interstate',
+    entityType: 'CARRIER',
+    services: ['Carrier'],
+  });
+  assert.equal(pub.publicationState, 'INGESTED');
+  assert.equal(pub.indexable, false);
+});
+
+test('fail-closed publication states cannot be indexable', () => {
+  assert.equal(
+    assertIndexableInvariant({ publicationState: 'REVIEW_REQUIRED', indexable: true }),
+    false
+  );
+  assert.equal(
+    assertIndexableInvariant({ publicationState: 'INACTIVE', indexable: true }),
+    false
+  );
+  assert.equal(
+    assertIndexableInvariant({ publicationState: 'INGESTED', indexable: true }),
+    false
+  );
+  assert.equal(
+    assertIndexableInvariant({ publicationState: 'PUBLISHABLE', indexable: true }),
+    true
+  );
+  assert.equal(
+    isSeoIndexableCompany({ publicationState: null, indexable: null }),
+    true
+  );
+  assert.equal(
+    isSeoIndexableCompany({ publicationState: 'REVIEW_REQUIRED', indexable: false }),
+    false
+  );
+});
+
+test('USDOT registration alone is not interstate HHG carrier capability', () => {
+  const classified = classifyProvider({
+    usdotNumber: '125563',
+  });
+  assert.equal(classified.capabilities.includes('hhg_interstate_carrier'), false);
+});
+
+test('inferred broker copy does not claim verified authority', () => {
+  const copy = regulatoryCopyForProvider({
+    serviceScope: 'interstate',
+    entityType: 'BROKER',
+    services: ['Broker'],
+    usdotNumber: '2239816',
+  });
+  assert.doesNotMatch(copy.badgeLabel, /authority verified/i);
 });
 
 test('service area is not inferred as regulatory authority', () => {

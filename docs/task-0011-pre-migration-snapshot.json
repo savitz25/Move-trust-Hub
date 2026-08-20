@@ -1,0 +1,158 @@
+{
+  "dry": true,
+  "google_places_requests": 0,
+  "timestamp": "2026-08-20T02:16:19.231Z",
+  "schema_before": {
+    "id_type": "text",
+    "identity_fingerprint": "992018a3a892558fc5a0287848fc8bbb",
+    "total": 468,
+    "provider_tables": [],
+    "publication_columns": [],
+    "constraints": []
+  },
+  "classification_before": {
+    "total": 468,
+    "interstate_hhg_carrier": 112,
+    "hhg_broker": 3,
+    "hhg_carrier_broker": 4,
+    "local_intrastate_mover": 330,
+    "auto_carrier": 8,
+    "auto_broker": 10,
+    "auto_carrier_broker": 0,
+    "multi_service_hhg_auto": 6,
+    "unknown_unclassified": 7,
+    "inactive": 11,
+    "review_required": 0,
+    "publishable": 0,
+    "indexable": 0,
+    "duplicate_usdot_groups": 3,
+    "duplicate_mc_groups": 0,
+    "duplicate_name_address_groups": 10,
+    "collisions": [
+      {
+        "kind": "usdot",
+        "key": "125563",
+        "companyIds": [
+          "allied",
+          "arpin",
+          "atlas",
+          "graebel",
+          "mayflower",
+          "wheaton"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "usdot",
+        "key": "70851",
+        "companyIds": [
+          "national",
+          "north-american"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "usdot",
+        "key": "1398726",
+        "companyIds": [
+          "northern-michigan-moving",
+          "northern-michigan-moving-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "1st moving|1743 us 9",
+        "companyIds": [
+          "1st-moving-corp",
+          "1st-moving-corp-2",
+          "1st-moving-corp-3"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "big g movers|26 oliver st ste 001",
+        "companyIds": [
+          "big-g-movers-inc",
+          "big-g-movers-inc-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "clark moving storage of albany|198 morris rd",
+        "companyIds": [
+          "clark-moving-storage-of-albany",
+          "clark-moving-storage-of-albany-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "express moving|21221 oxnard st",
+        "companyIds": [
+          "express-moving",
+          "express-moving-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "family affair moving|1335 n santiago st unit c",
+        "companyIds": [
+          "family-affair-moving-inc",
+          "family-affair-moving-inc-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "firefighting s finest moving storage|22026 mossy oaks rd",
+        "companyIds": [
+          "firefighting-s-finest-moving-storage",
+          "firefighting-s-finest-moving-storage-2",
+          "firefighting-s-finest-moving-storage-inc"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "h town movers houston|3133 buffalo speedway",
+        "companyIds": [
+          "h-town-movers-houston",
+          "h-town-movers-houston-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "orange county moving services|7545 irvine center dr ste 200",
+        "companyIds": [
+          "orange-county-moving-services",
+          "orange-county-moving-services-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "razorback moving tampa|4402 w crest ave ste f",
+        "companyIds": [
+          "razorback-moving-tampa",
+          "razorback-moving-tampa-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "legal_name_address",
+        "key": "unicorn moving storage austin movers|102 victor st",
+        "companyIds": [
+          "unicorn-moving-storage-austin-movers",
+          "unicorn-moving-storage-austin-movers-2"
+        ],
+        "resolution": "REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "applied": false
+}

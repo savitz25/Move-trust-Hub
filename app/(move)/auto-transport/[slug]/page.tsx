@@ -24,6 +24,7 @@ import Link from 'next/link';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { formatCompanyTenureLine } from '@/lib/directory/normalize-company';
 import { regulatoryCopyForProvider } from '@/lib/provider/copy';
+import { isSeoIndexableCompany } from '@/lib/provider/publication';
 
 
 interface Props {
@@ -41,9 +42,11 @@ export async function generateMetadata({ params }: Props) {
     editorialRating: company.overallRating,
   });
 
+  const indexable = isSeoIndexableCompany(company);
   return {
     title: `${company.name} — Reviews, Pricing & Auto Transport Info`,
     description: `${company.name} auto transport profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Open & enclosed vehicle shipping.`,
+    robots: indexable ? undefined : { index: false, follow: true },
   };
 }
 
