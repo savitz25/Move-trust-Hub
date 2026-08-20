@@ -31,6 +31,8 @@ import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website
 import type { Company } from '@/types';
 import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload';
 import { finalizeCompanyEnrichmentForDisplay } from '@/lib/verification/company-display-enrichment';
+import { isSeoIndexableCompany } from '@/lib/provider/publication';
+import type { PublicationState } from '@/lib/provider/types';
 
 function createAnonSupabaseClient() {
   const url = getSupabaseUrl();
@@ -584,6 +586,65 @@ const getCompaniesDataCached = unstable_cache(
 export const getCompaniesCached = cache(async (): Promise<Company[]> => {
   return getCompaniesDataCached();
 });
+
+export type CompanySitemapEntry = {
+  slug: string;
+  lastUpdated: string;
+};
+
+async function fetchIndexableCompanySitemapEntries(): Promise<CompanySitemapEntry[]> {
+  if (!isSupabaseConfigured()) {
+    return seedCompanies
+      .filter((company) => isSeoIndexableCompany(company))
+      .map((company) => ({ slug: company.slug, lastUpdated: company.lastUpdated }));
+  }
+  const supabase = createAnonSupabaseClient();
+  if (!supabase) {
+    return seedCompanies
+      .filter((company) => isSeoIndexableCompany(company))
+      .map((company) => ({ slug: company.slug, lastUpdated: company.lastUpdated }));
+  }
+  const entries: CompanySitemapEntry[] = [];
+  let from = 0;
+  while (from < 20_000) {
+    const to = from + COMPANIES_LIST_PAGE_SIZE - 1;
+    const page = await supabase
+      .from('companies')
+      .select('slug, last_updated, publication_state, indexable')
+      .order('id', { ascending: true })
+      .range(from, to);
+    if (page.error || !page.data) break;
+    for (const row of page.data as Array<{
+      slug: string;
+      last_updated: string | null;
+      publication_state: string | null;
+      indexable: boolean | null;
+    }>) {
+      if (
+        !isSeoIndexableCompany({
+          indexable: row.indexable,
+          publicationState: row.publication_state as PublicationState | null,
+        })
+      ) {
+        continue;
+      }
+      if (!row.slug?.trim()) continue;
+      entries.push({
+        slug: row.slug,
+        lastUpdated: row.last_updated?.slice?.(0, 10) || new Date().toISOString().slice(0, 10),
+      });
+    }
+    if (page.data.length < COMPANIES_LIST_PAGE_SIZE) break;
+    from += COMPANIES_LIST_PAGE_SIZE;
+  }
+  return entries;
+}
+
+export const getIndexableCompanySitemapEntries = unstable_cache(
+  fetchIndexableCompanySitemapEntries,
+  ['company-sitemap-entries-v1-wave2'],
+  { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
+);
 
 /**
  * Direct DB lookup for a company profile — bypasses directory list cache.

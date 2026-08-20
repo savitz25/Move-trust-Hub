@@ -3,9 +3,14 @@ import type { Company } from '@/types';
 
 /**
  * ItemList + CollectionPage schema for the movers directory.
- * Surfaces top listings to search engines without fabricating ratings.
+ * Surfaces a bounded top-N list. Never serialize the full provider universe.
  */
-export function buildCompaniesDirectorySchemaGraph(companies: Company[], limit = 24) {
+export function buildCompaniesDirectorySchemaGraph(
+  companies: Company[],
+  options: { limit?: number; total?: number } = {}
+) {
+  const limit = options.limit ?? 24;
+  const total = options.total ?? companies.length;
   const pageUrl = `${SITE_URL}/companies`;
   const top = [...companies]
     .sort((a, b) => (b.reputationScore ?? 0) - (a.reputationScore ?? 0))
@@ -23,7 +28,7 @@ export function buildCompaniesDirectorySchemaGraph(companies: Company[], limit =
         url: pageUrl,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@type': 'Thing', name: 'Interstate moving companies' },
-        numberOfItems: companies.length,
+        numberOfItems: total,
       },
       {
         '@type': 'ItemList',

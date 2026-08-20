@@ -9,7 +9,6 @@ import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { directoryFiltersFromSearchParams } from '@/lib/directory/build-directory-api-query';
 import { DIRECTORY_PAGE_SIZE } from '@/lib/directory/page-size';
 import { queryDirectoryPage } from '@/lib/directory/query-directory-page';
-import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { buildCompaniesDirectorySchemaGraph } from '@/lib/seo/build-directory-list-schema';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
@@ -58,17 +57,16 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
   const params = await searchParams;
   const filters = directoryFiltersFromSearchParams(params);
 
-  const [allCompanies, firstPage] = await Promise.all([
-    // Full list for JSON-LD only (top N + total count).
-    getUnifiedDirectoryCompanies(),
-    queryDirectoryPage({
-      offset: 0,
-      limit: DIRECTORY_PAGE_SIZE,
-      filters,
-    }),
-  ]);
+  const firstPage = await queryDirectoryPage({
+    offset: 0,
+    limit: DIRECTORY_PAGE_SIZE,
+    filters,
+  });
 
-  const directorySchema = buildCompaniesDirectorySchemaGraph(allCompanies);
+  const directorySchema = buildCompaniesDirectorySchemaGraph(firstPage.companies, {
+    limit: 24,
+    total: firstPage.total,
+  });
 
   return (
     <>

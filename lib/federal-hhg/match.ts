@@ -50,7 +50,7 @@ function nameTokens(value: string): string[] {
     );
 }
 
-function namesLookSimilar(a: string, b: string): boolean {
+export function namesLookSimilar(a: string, b: string): boolean {
   const ta = new Set(nameTokens(a));
   const tb = new Set(nameTokens(b));
   if (!ta.size || !tb.size) return false;

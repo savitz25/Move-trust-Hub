@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { headers } from 'next/headers';
-import { getAllCompanies, getAllAutoTransportCompanies } from '@/lib/data-server';
+import { getAllAutoTransportCompanies, getIndexableCompanySitemapEntries } from '@/lib/data-server';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import {
   getClusterParentMarkets,
@@ -62,12 +62,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const extendedRouteSlugs = new Set(getExtendedRouteSlugs());
   // Never fail the whole sitemap (or CI prerender) on a bad local Supabase URL.
-  let companies: Awaited<ReturnType<typeof getAllCompanies>> = [];
+  let companySitemap: Awaited<ReturnType<typeof getIndexableCompanySitemapEntries>> = [];
   let autoTransportCompanies: Awaited<ReturnType<typeof getAllAutoTransportCompanies>> = [];
   try {
-    companies = await getAllCompanies();
+    companySitemap = await getIndexableCompanySitemapEntries();
   } catch {
-    companies = [];
+    companySitemap = [];
   }
   try {
     autoTransportCompanies = await getAllAutoTransportCompanies();
@@ -148,9 +148,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const companyPages = companies
-    .filter((company) => isSeoIndexableCompany(company))
-    .map((company) => ({
+  const companyPages = companySitemap.map((company) => ({
     url: `${SITE}/companies/${company.slug}`,
     lastModified: new Date(company.lastUpdated),
     changeFrequency: 'monthly' as const,
