@@ -104,6 +104,23 @@ test('Task 002 protected identities remain mapped', () => {
   assert.equal(TASK_002_PROTECTED_IDENTITIES.national, '76628');
 });
 
+test('catalog snapshot does not reuse forbidden van-line USDOTs', async () => {
+  const { activeDirectoryMovers } = await import('@/data/active-directory-movers');
+  assert.equal(activeDirectoryMovers['directory-allied-van-lines']?.usdotNumber, '76235');
+  assert.equal(
+    activeDirectoryMovers['directory-aero-mayflower-transit-company']?.usdotNumber,
+    '125563'
+  );
+  assert.equal(activeDirectoryMovers['directory-atlas-van-lines']?.usdotNumber, '125550');
+  assert.equal(activeDirectoryMovers['directory-wheaton-world-wide']?.usdotNumber, '70719');
+  assert.equal(activeDirectoryMovers['directory-arpin-van-lines']?.usdotNumber, '49922');
+  assert.equal(activeDirectoryMovers['directory-national-van-lines']?.usdotNumber, '76628');
+  assert.equal(
+    activeDirectoryMovers['directory-graebel-van-lines']?.usdotNumber,
+    ''
+  );
+});
+
 test('wave selection is geographically mixed and deterministic', () => {
   const pool: StagedPublicationRow[] = [];
   const states = ['ID', 'ME', 'NM', 'OR', 'VT', 'WY', 'FL', 'CA'];
