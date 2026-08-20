@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/server';
 import {
   getCompaniesCached,
   getCompanyBySlugOrUsdotFromDb,
+  getIndexableCompanySitemapEntries,
 } from '@/lib/supabase/queries/companies';
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
@@ -24,6 +25,7 @@ import type { Company, Review } from '@/types';
 
 /** Server Component / Route Handler entry point — React cache() dedupes per request. */
 export const getAllCompanies = getCompaniesCached;
+export { getIndexableCompanySitemapEntries };
 
 /**
  * Prefer richer seed/catalog copy when DB is a thin enrichment stub, while keeping

@@ -40,10 +40,6 @@ export function isIndexablePublication(state: PublicationState): boolean {
 }
 
 /**
- * Sitemap / robots eligibility. Missing publication columns (pre-migration)
- * stay visible. Explicit fail-closed states are never indexable.
- */
-/**
  * Consumer directory visibility. Legacy rows without publication_state stay
  * visible. Explicit fail-closed states never appear in /companies search.
  */
