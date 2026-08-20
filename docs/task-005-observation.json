@@ -1,0 +1,26 @@
+{
+  "google_places_requests": 0,
+  "observed_at": "2026-08-20T18:00:00Z",
+  "production_sha": "3e0c4a92c0f9f2fd3586785ebe8a9aae25aa8050",
+  "companies": 1468,
+  "indexable": 1432,
+  "wave_1_live": 1000,
+  "directory_total_interstate": 1133,
+  "directory_ttfb_ms": 516,
+  "sitemap_company_urls": 1432,
+  "sitemap_ttfb_ms": 511,
+  "wave_1_profile_sample": {
+    "slug": "hindman-isaacs-moving-storage-inc",
+    "status": 200,
+    "robots": "index, follow"
+  },
+  "identity": {
+    "allied_search": "Allied Van Lines | allied-van-lines | 76235",
+    "mayflower_duplicate_before_alias_fix": [
+      "Mayflower Transit | mayflower-transit | directory-mayflower-transit | 125563",
+      "Aero Mayflower Transit Company | aero-mayflower-transit-company | mayflower | 125563"
+    ]
+  },
+  "mismatched_fmcsa_raw_cleared": 4,
+  "wave_2_published": false
+}
