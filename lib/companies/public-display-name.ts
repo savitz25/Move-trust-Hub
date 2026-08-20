@@ -143,6 +143,39 @@ export function extractDbaFromFmcsaRaw(raw: unknown): string | null {
   );
 }
 
+function digitsOnly(value: string | null | undefined): string {
+  return (value ?? '').replace(/\D/g, '').replace(/^0+/, '');
+}
+
+/** USDOT inside an FMCSA census/raw payload, if present. */
+export function extractUsdotFromFmcsaRaw(raw: unknown): string | null {
+  const carrier = raw && typeof raw === 'object' ? (raw as Record<string, unknown>) : null;
+  if (!carrier) return null;
+  const nested =
+    carrier.carrier && typeof carrier.carrier === 'object'
+      ? (carrier.carrier as Record<string, unknown>)
+      : null;
+  const value =
+    stringOrNull(carrier.dotNumber) ??
+    stringOrNull(carrier.dot_number) ??
+    stringOrNull(carrier.usdot) ??
+    stringOrNull(nested?.dotNumber) ??
+    stringOrNull(nested?.dot_number);
+  const digits = digitsOnly(value);
+  return digits || null;
+}
+
+/** Ignore raw census identity when it belongs to a different USDOT. */
+export function fmcsaRawBelongsToCanonicalUsdot(
+  raw: unknown,
+  canonicalUsdot: string | null | undefined
+): boolean {
+  const rawDot = extractUsdotFromFmcsaRaw(raw);
+  const canonical = digitsOnly(canonicalUsdot);
+  if (!rawDot || !canonical) return true;
+  return rawDot === canonical;
+}
+
 export function extractLegalFromFmcsaRaw(raw: unknown): string | null {
   const carrier = raw && typeof raw === 'object' ? (raw as Record<string, unknown>) : null;
   if (!carrier) return null;
@@ -300,6 +333,7 @@ export function resolvePublicCompanyNameFromSources(input: {
   legalName?: string | null;
   dbaName?: string | null;
   fmcsaRaw?: unknown;
+  canonicalUsdot?: string | null;
   fmcsaPreview?: unknown;
   /**
    * When true (default for new onboarding), always use DBA/legal preference and
@@ -308,15 +342,22 @@ export function resolvePublicCompanyNameFromSources(input: {
    */
   forceFmcsaPreference?: boolean;
 }): ResolvedPublicCompanyNames {
+  const rawForIdentity = fmcsaRawBelongsToCanonicalUsdot(
+    input.fmcsaRaw,
+    input.canonicalUsdot
+  )
+    ? input.fmcsaRaw
+    : undefined;
+
   const legalNameRaw =
     stringOrNull(input.legalName) ??
     stringOrNull(input.fmcsaLegalName) ??
-    extractLegalFromFmcsaRaw(input.fmcsaRaw) ??
+    extractLegalFromFmcsaRaw(rawForIdentity) ??
     extractLegalFromPreview(input.fmcsaPreview);
 
   const dbaNameRaw =
     stringOrNull(input.dbaName) ??
-    extractDbaFromFmcsaRaw(input.fmcsaRaw) ??
+    extractDbaFromFmcsaRaw(rawForIdentity) ??
     extractDbaFromPreview(input.fmcsaPreview);
 
   const stored = stringOrNull(input.storedName);

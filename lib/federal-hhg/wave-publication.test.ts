@@ -104,6 +104,23 @@ test('Task 002 protected identities remain mapped', () => {
   assert.equal(TASK_002_PROTECTED_IDENTITIES.national, '76628');
 });
 
+test('mismatched FMCSA raw census cannot rename a canonical company', async () => {
+  const { resolvePublicCompanyNameFromSources } = await import(
+    '@/lib/companies/public-display-name'
+  );
+  const resolved = resolvePublicCompanyNameFromSources({
+    storedName: 'Allied Van Lines',
+    fmcsaLegalName: 'ALLIED VAN LINES INC',
+    canonicalUsdot: '76235',
+    fmcsaRaw: {
+      legalName: 'MAYFLOWER TRANSIT LLC',
+      dbaName: 'AERO MAYFLOWER TRANSIT COMPANY',
+      dotNumber: '125563',
+    },
+  });
+  assert.equal(resolved.publicName, 'Allied Van Lines');
+});
+
 test('catalog snapshot does not reuse forbidden van-line USDOTs', async () => {
   const { activeDirectoryMovers } = await import('@/data/active-directory-movers');
   assert.equal(activeDirectoryMovers['directory-allied-van-lines']?.usdotNumber, '76235');

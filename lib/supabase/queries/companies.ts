@@ -219,6 +219,7 @@ function mapRow(row: Record<string, unknown>): Company {
     storedName: row.name as string,
     fmcsaLegalName: row.fmcsa_legal_name as string | null | undefined,
     fmcsaRaw: row.fmcsa_raw,
+    canonicalUsdot: row.usdot_number as string | null | undefined,
   });
 
   const vs =
@@ -567,7 +568,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
   // v11: display-enrichment resolver + strict BBB grades + progressive legacy columns
-  ['companies-directory-v16-wave1'],
+  ['companies-directory-v17-wave1'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
