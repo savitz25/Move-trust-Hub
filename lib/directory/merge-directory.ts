@@ -153,7 +153,13 @@ function pickMergedProfile(directory: Company, catalog: Company): Company {
 
   return normalizeCompanyForDisplay({
     ...merged,
-    name: pickPublicDisplayName(directory, catalog),
+    // Live DB identity always wins. Catalog snapshots may still carry Task 002-era
+    // copied USDOTs or names; never let those overwrite a canonical company.
+    id: directory.id || merged.id,
+    slug: (directory.slug || merged.slug || '').trim() || merged.slug,
+    usdotNumber: directory.usdotNumber || merged.usdotNumber,
+    mcNumber: directory.mcNumber || merged.mcNumber,
+    name: directory.name?.trim() || pickPublicDisplayName(directory, catalog),
     fmcsaLegalName:
       directory.fmcsaLegalName ?? catalog.fmcsaLegalName ?? merged.fmcsaLegalName,
     // Keep live scope/type from DB when catalog snapshot is the richer base.
