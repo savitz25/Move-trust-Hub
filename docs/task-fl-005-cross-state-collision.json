@@ -1,0 +1,5 @@
+{
+  "google_places_requests": 0,
+  "multi_state_entity_candidates": [],
+  "note": "Exact legal-name + email/phone only. No fuzzy merge. Suddath holds are the known brand-email collision."
+}

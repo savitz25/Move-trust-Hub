@@ -58,7 +58,10 @@ import { toMoveTrustProfile } from '@/lib/network/adapters/to-move-trust-profile
 import { ClaimProfileCta } from '@/components/portal/claim-cta';
 import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
 import { regulatoryCopyForProvider } from '@/lib/provider/copy';
-import { isSeoIndexableCompany } from '@/lib/provider/publication';
+import {
+  isAnonymousPublicProfileAllowed,
+  isSeoIndexableCompany,
+} from '@/lib/provider/publication';
 import {
   isVanLineNetworkCompany,
   loadCapabilityEvidenceState,
@@ -87,7 +90,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const company = await getCompanyBySlugAsync(slug);
-  if (!company) {
+  if (!company || !isAnonymousPublicProfileAllowed(company)) {
     return buildMovePageMetadata({
       title: 'Company Not Found',
       description: 'This mover profile could not be found in the Move Trust Hub directory.',
@@ -123,7 +126,8 @@ export default async function CompanyProfilePage({ params }: Props) {
   const resolved = await getCompanyBySlugAsync(slug);
 
   // True unknown movers → 404. Never soft-redirect valid misses to the directory index.
-  if (!resolved) notFound();
+  // INGESTED / other internal publication states are not anonymously reachable (FL-005).
+  if (!resolved || !isAnonymousPublicProfileAllowed(resolved)) notFound();
 
   // Alias slug → canonical slug only when we have a *different* non-empty profile path.
   // Historical bug: buildCompanyProfileHref('') → '/companies', which bounced every

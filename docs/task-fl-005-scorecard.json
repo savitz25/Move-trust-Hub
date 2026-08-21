@@ -1,0 +1,561 @@
+{
+  "google_places_requests": 0,
+  "freeze": {
+    "companies": 5907,
+    "indexable": 4905,
+    "fl_im_all": 816,
+    "fl_im_ingested": 766,
+    "fl_im_publishable": 50
+  },
+  "canary": {
+    "fl": 50,
+    "wa": 30,
+    "total": 80,
+    "manifest": {
+      "fl": 50,
+      "wa": 30
+    },
+    "keep_80_noindex": true
+  },
+  "scorecard_summary": {
+    "pass": 37,
+    "review_required": 0,
+    "fail": 0,
+    "total": 37
+  },
+  "scorecard": [
+    {
+      "company_id": "fl-im-1025",
+      "slug": "gentletouch-moving-company",
+      "regulatory_id": "FL-FDACS-IM-1025",
+      "legal_name": "CHARLES L CARTER",
+      "county": "Pinellas",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-1103",
+      "slug": "clover-systems-llc",
+      "regulatory_id": "FL-FDACS-IM-1103",
+      "legal_name": "CLOVER SYSTEMS, LLC",
+      "county": "Miami-Dade",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-1296",
+      "slug": "nippon-express-u-s-a-inc",
+      "regulatory_id": "FL-FDACS-IM-1296",
+      "legal_name": "NIPPON EXPRESS U.S.A., INC.",
+      "county": "Miami-Dade",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-1948",
+      "slug": "top-class-moving-inc",
+      "regulatory_id": "FL-FDACS-IM-1948",
+      "legal_name": "TOP CLASS MOVING INC.",
+      "county": "Lee",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-22",
+      "slug": "fuentes-moving-corp",
+      "regulatory_id": "FL-FDACS-IM-22",
+      "legal_name": "FUENTES MOVING CORP.",
+      "county": "Miami-Dade",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-2420",
+      "slug": "act-of-class-moving-storage-llc",
+      "regulatory_id": "FL-FDACS-IM-2420",
+      "legal_name": "ACT OF CLASS MOVING & STORAGE LLC",
+      "county": "Lee",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-2532",
+      "slug": "helping-hand-movers-naples-llc",
+      "regulatory_id": "FL-FDACS-IM-2532",
+      "legal_name": "HELPING HAND MOVERS NAPLES, LLC",
+      "county": "Collier",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-2679",
+      "slug": "ringling-moving-llc",
+      "regulatory_id": "FL-FDACS-IM-2679",
+      "legal_name": "RINGLING MOVING LLC",
+      "county": "Sarasota",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-27",
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "regulatory_id": "FL-FDACS-IM-27",
+      "legal_name": "WITHERS TRANSFER AND STORAGE OF CORAL GABLES, INC.",
+      "county": "Miami-Dade",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-2726",
+      "slug": "big-man-s-moving-company-llc",
+      "regulatory_id": "FL-FDACS-IM-2726",
+      "legal_name": "BIG MAN'S MOVING COMPANY LLC",
+      "county": "Pinellas",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-2739",
+      "slug": "m-m-pickup-and-delivery-llc",
+      "regulatory_id": "FL-FDACS-IM-2739",
+      "legal_name": "M&M PICKUP AND DELIVERY, LLC",
+      "county": "Nassau",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3030",
+      "slug": "andersen-moving-and-storage-llc",
+      "regulatory_id": "FL-FDACS-IM-3030",
+      "legal_name": "ANDERSEN MOVING AND STORAGE LLC",
+      "county": "Martin",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3063",
+      "slug": "design-furniture-consignment-moving-inc",
+      "regulatory_id": "FL-FDACS-IM-3063",
+      "legal_name": "DESIGN FURNITURE CONSIGNMENT & MOVING INC",
+      "county": "Polk",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3064",
+      "slug": "local-n-long-distance-movers",
+      "regulatory_id": "FL-FDACS-IM-3064",
+      "legal_name": "LOCAL AND LONG DISTANCE MOVERS FLORIDA, INC.",
+      "county": "Miami-Dade",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3075",
+      "slug": "adios-moving-llc",
+      "regulatory_id": "FL-FDACS-IM-3075",
+      "legal_name": "ADIOS MOVING LLC",
+      "county": "Broward",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3138",
+      "slug": "acceleration-moving-solutions-llc",
+      "regulatory_id": "FL-FDACS-IM-3138",
+      "legal_name": "ACCELERATION MOVING SOLUTIONS LLC.",
+      "county": "Manatee",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-333",
+      "slug": "genesis-moving-storage-inc",
+      "regulatory_id": "FL-FDACS-IM-333",
+      "legal_name": "GENESIS MOVING & STORAGE, INC.",
+      "county": "Miami-Dade",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-334",
+      "slug": "hilldrup-companies-inc",
+      "regulatory_id": "FL-FDACS-IM-334",
+      "legal_name": "HILLDRUP COMPANIES, INC.",
+      "county": "Orange",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3433",
+      "slug": "parris-moving-llc",
+      "regulatory_id": "FL-FDACS-IM-3433",
+      "legal_name": "PARRIS MOVING LLC",
+      "county": "Pinellas",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3485",
+      "slug": "chris-brown-vanlines",
+      "regulatory_id": "FL-FDACS-IM-3485",
+      "legal_name": "CHRIS BROWN ON DEMAND SERVICES, LLC",
+      "county": "Broward",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3538",
+      "slug": "easy-peasy-moving-llc",
+      "regulatory_id": "FL-FDACS-IM-3538",
+      "legal_name": "EASY PEASY MOVING LLC",
+      "county": "Seminole",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-366",
+      "slug": "homestead-transfer-storage-co",
+      "regulatory_id": "FL-FDACS-IM-366",
+      "legal_name": "HOMESTEAD TRANSFER & STORAGE CO.",
+      "county": "Miami-Dade",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3684",
+      "slug": "honest-true-moving-crew",
+      "regulatory_id": "FL-FDACS-IM-3684",
+      "legal_name": "FINE CARGO LLC",
+      "county": "Lee",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3782",
+      "slug": "k-k-transfer",
+      "regulatory_id": "FL-FDACS-IM-3782",
+      "legal_name": "KATZ & KATZ TRANSPORTATION LLC",
+      "county": "Broward",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3834",
+      "slug": "treasure-coast-safe-sales-moving",
+      "regulatory_id": "FL-FDACS-IM-3834",
+      "legal_name": "STUART SAFE SALES & MOVING INC",
+      "county": "Martin",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3848",
+      "slug": "matt-s-mindful-movers-llc",
+      "regulatory_id": "FL-FDACS-IM-3848",
+      "legal_name": "MATT'S MINDFUL MOVERS LLC",
+      "county": "Sarasota",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3941",
+      "slug": "miss-peach-iv-true-movers-inc",
+      "regulatory_id": "FL-FDACS-IM-3941",
+      "legal_name": "MISS PEACH IV TRUE MOVERS INC",
+      "county": "Hillsborough",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3959",
+      "slug": "advance-sorensen-movers-of-south-florida-llc",
+      "regulatory_id": "FL-FDACS-IM-3959",
+      "legal_name": "ADVANCE SORENSEN MOVERS OF SOUTH FLORIDA LLC",
+      "county": "Broward",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3973",
+      "slug": "wellen-moving-services-llc",
+      "regulatory_id": "FL-FDACS-IM-3973",
+      "legal_name": "WELLEN MOVING SERVICES LLC",
+      "county": "Sarasota",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-3983",
+      "slug": "phoenix-moving-solutions-llc",
+      "regulatory_id": "FL-FDACS-IM-3983",
+      "legal_name": "PHOENIX MOVING SOLUTIONS LLC",
+      "county": "Hillsborough",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-4005",
+      "slug": "movepro-home-services-llc",
+      "regulatory_id": "FL-FDACS-IM-4005",
+      "legal_name": "MOVEPRO HOME SERVICES LLC",
+      "county": "Hillsborough",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-4024",
+      "slug": "epaa-llc",
+      "regulatory_id": "FL-FDACS-IM-4024",
+      "legal_name": "EPAA LLC",
+      "county": "Broward",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-4049",
+      "slug": "keys-movers",
+      "regulatory_id": "FL-FDACS-IM-4049",
+      "legal_name": "KEYS RESOURCES LLC",
+      "county": "Monroe",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-410",
+      "slug": "doug-s-hourly-muscle-movers-packers-inc",
+      "regulatory_id": "FL-FDACS-IM-410",
+      "legal_name": "DOUG'S HOURLY MUSCLE MOVERS & PACKERS, INC.",
+      "county": "Manatee",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-4100",
+      "slug": "cheney-bro-worldwide-moving-inc",
+      "regulatory_id": "FL-FDACS-IM-4100",
+      "legal_name": "CHENEY BRO WORLDWIDE MOVING INC",
+      "county": "Broward",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-4102",
+      "slug": "fontain-transport-llc",
+      "regulatory_id": "FL-FDACS-IM-4102",
+      "legal_name": "FONTAIN TRANSPORT LLC",
+      "county": "Hillsborough",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    },
+    {
+      "company_id": "fl-im-4144",
+      "slug": "sunny-day-moving-llc",
+      "regulatory_id": "FL-FDACS-IM-4144",
+      "legal_name": "SUNNY DAY MOVING LLC",
+      "county": "Orange",
+      "score": "PASS",
+      "issues": [],
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "anonymous_profile_allowed": false
+    }
+  ],
+  "suddath": {
+    "held_regulatory_ids": [
+      "FL-FDACS-IM-3813",
+      "FL-FDACS-IM-4099"
+    ],
+    "fl_staging": [
+      {
+        "regulatory_id": "FL-FDACS-IM-3813",
+        "authority_number": "IM3813",
+        "legal_name_raw": "SUDDATH MOVING & STORAGE, LLC",
+        "dba_raw": "Suddath Workplace Solutions",
+        "email_norm": "legal@suddath.com",
+        "phone_norm": "9043907100",
+        "physical_address_raw": "2001 SUDDATH PARK STREET",
+        "city_norm": "TAMPA",
+        "postal_code_norm": "33619",
+        "status_normalized": "active",
+        "disposition": "NEW_PROVIDER_CANDIDATE"
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-4099",
+        "authority_number": "IM4099",
+        "legal_name_raw": "SUDDATH RELOCATION SYSTEMS OF ST. PETERSBURG, INC.",
+        "dba_raw": "Suddath Moving & Storage",
+        "email_norm": "legal@suddath.com",
+        "phone_norm": "7275730000",
+        "physical_address_raw": "2001 SUDDATH PARK ST",
+        "city_norm": "TAMPA",
+        "postal_code_norm": "33619",
+        "status_normalized": "active",
+        "disposition": "NEW_PROVIDER_CANDIDATE"
+      }
+    ],
+    "wa_company": {
+      "id": "wa-hg-064493",
+      "slug": "suddath-workplace-solutions",
+      "name": "Suddath Workplace Solutions",
+      "fmcsa_legal_name": "Suddath Moving & Storage, LLC",
+      "phone": "2537773190",
+      "email": "legal@suddath.com",
+      "physical_address": "1201 South 140th St, Burien, WA 98168, Burien, WA, 98168",
+      "headquarters": "Burien, WA",
+      "usdot_number": "3527089",
+      "publication_state": "INGESTED",
+      "indexable": false
+    },
+    "wa_authorities": [
+      {
+        "authority_number": "HG064493",
+        "status": "active",
+        "legal_name": "Suddath Moving & Storage, LLC",
+        "dba_name": "Suddath Workplace Solutions",
+        "verification_state": "VERIFIED"
+      }
+    ],
+    "determination": {
+      "FL-FDACS-IM-3813": {
+        "candidate": "wa-hg-064493",
+        "classification": "UNRESOLVED",
+        "reason": "Florida legal entity SUDDATH MOVING & STORAGE, LLC at Tampa vs WA canonical wa-hg-064493. Shared legal@suddath.com is brand/enterprise email, not unique branch identity. Fail closed: keep held. Distinct Florida entity likely, but not auto-created in FL-005.",
+        "action": "HOLD"
+      },
+      "FL-FDACS-IM-4099": {
+        "candidate": "wa-hg-064493",
+        "classification": "UNRESOLVED",
+        "reason": "Florida legal entity SUDDATH RELOCATION SYSTEMS OF ST. PETERSBURG, INC. is a different corporate name than the WA company. Same enterprise brand, legally distinct registrant. Do not attach to wa-hg-064493. Keep held pending a dedicated multi-entity model.",
+        "action": "HOLD"
+      }
+    }
+  },
+  "cross_state": {
+    "multi_state_entity_candidates": [],
+    "note": "Exact legal-name + email/phone only. No fuzzy merge. Suddath holds are the known brand-email collision."
+  },
+  "universe": {
+    "companies": 5907,
+    "indexable": 4905,
+    "florida_all": 816,
+    "florida_indexable": 0,
+    "fl_im_all": 816,
+    "fl_im_ingested": 766,
+    "fl_im_publishable": 50,
+    "fdacs_linked": 911,
+    "active_fdacs_im": 1088,
+    "active_fdacs_mb": 26,
+    "fl003_review_required": 115,
+    "fl004_new_ingested": 37,
+    "suddath_held": 2
+  }
+}

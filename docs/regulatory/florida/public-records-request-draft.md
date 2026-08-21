@@ -1,6 +1,8 @@
 # Draft Florida public-records request — Chapter 507 household moving services
 
-**DO NOT SUBMIT in Task FL-001.**
+**DO NOT SUBMIT.** Reviewed in FL-005 (still a draft). FL-001 through FL-005 used the public license-lookup snapshots only.
+
+**FL-005 review:** Keep the request focused on **business-level** Chapter 507 extracts. Add explicit numbered asks for owners/officers and registered agents (previously only listed under fields). Do not request consumer PII. Do not send until a later authorized task.
 
 **To:** Custodian of Public Records  
 Florida Department of Agriculture and Consumer Services  
@@ -29,6 +31,10 @@ Please provide **CSV, XLSX, JSON, or another machine-readable extract** rather t
 5. **Chapter 507 consumer complaint records and dispositions at the business level** (complaint/case number, received date, category, status, disposition, closed date, whether enforcement resulted). **Do not include consumer names, personal emails, home addresses, or personal telephone numbers.**
 
 6. **Insurance / bond / certificate-of-deposit compliance records** for Chapter 507 registrants if maintained separately from the public license lookup (coverage type, status, effective/expiration/cancellation dates, and any suspension resulting from lapse). Do not include non-public policy documents beyond what is releasable.
+
+7. **Owners, officers, and directors** of Chapter 507 IM and MB registrants, as maintained for the registration file (name, title/role, and any business-file identifier). Do not include personal home addresses or personal telephone numbers.
+
+8. **Registered / resident agents** for Chapter 507 IM and MB registrants (name, business address).
 
 ## Requested fields for registration extracts (where maintained and releasable)
 
