@@ -17,7 +17,7 @@ Ruleset: `FL_HHG_PUBLICATION_V1`
 
 FL-003 evaluated every normalized FDACS registration against a fail-closed publication ruleset. It does **not** publish companies, expose FDACS on public pages, or promote contact observations onto `companies.*`.
 
-After 011D.2A, many previously “state-only” IM rows already exist as internal `fl-im-*` companies (`publication_state=INGESTED`, `indexable=false`). Those are existing-provider link candidates, not new public profiles.
+After 011D.2A, many previously “state-only” IM rows already exist as internal `fl-im-*` companies. 011D.3 later moved an exact 50 Florida manifest companies to `PUBLISHABLE` / `indexable=false` / noindex. Those remain existing companies, not new public profiles, and FL-003 does not republish, reindex, or duplicate them.
 
 | Result | Count |
 |--------|------:|
@@ -40,9 +40,11 @@ After 011D.2A, many previously “state-only” IM rows already exist as interna
 
 ## 2. Git / worktree
 
-Isolated worktree `C:\\Users\\makei\\move-trust-hub-fl001`, branch `task-fl-003-florida-state-only-qualification`, starting from merged FL-002 main.
+Isolated worktree `C:\\Users\\makei\\move-trust-hub-fl001`, branch `task-fl-003-florida-state-only-qualification`, rebased onto current `main` (011D.2B/011D.3 canary + SHARE-003 preserved).
 
 Official source: https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx. No new Google requests. Census geocode cache was **read only**.
+
+011D.3 interaction: FL canary is 50 `fl-im-*` rows at `PUBLISHABLE` + `indexable=false`. They stay `DUPLICATE_OR_OVERLAP` / already-linked. FL-003 does not write `publication_state`, `indexable`, canary manifests, county pages, or sitemap rows. Zero overlap between the 37 `PUBLICATION_READY` rows and the 50-member FL canary manifest.
 
 ---
 
@@ -65,7 +67,7 @@ Recalculated; not copied from FL-002.
 | Active MB | 26 |
 | Dual IM+MB entity groups | 3 |
 | Current companies / indexable | 5870 / 4905 |
-| Florida companies (all / indexable / fl-im INGESTED) | 1178 / 395 / 779 |
+| Florida companies (all / indexable / fl-im all / INGESTED / PUBLISHABLE canary) | 1178 / 395 / 779 / 729 / 50 |
 
 FL-002 class counts: {"ACTIVE_STATE_ONLY_CANDIDATE":1026,"EXPIRED_STATE_RECORD":114,"MATCHED_EXISTING":88,"UNKNOWN_STATE_RECORD":104}
 
@@ -270,7 +272,9 @@ Do **not** use `399 + 1,001`. 011D.2A already created internal Florida companies
 | Current Florida MoveTrustHub companies (public + internal) | 1178 |
 | Current Florida indexable | 395 |
 | Existing providers with FDACS PSA linkage | 868 |
-| Internal `fl-im-*` INGESTED | 779 |
+| Internal `fl-im-*` (all) | 779 |
+| Internal `fl-im-*` INGESTED | 729 |
+| Internal `fl-im-*` PUBLISHABLE (011D.3 canary, still noindex) | 50 |
 | Newly qualified state-only movers | 37 |
 | Newly discovered overlap (link candidates) | 3 |
 | **Estimated future unique Florida companies** | **1215** |

@@ -69,7 +69,9 @@
     "indexable": 4905,
     "florida_all": 1178,
     "florida_indexable": 395,
-    "fl_im_ingested": 779
+    "fl_im_all": 779,
+    "fl_im_ingested": 729,
+    "fl_im_publishable": 50
   },
   "zip_index": {
     "uniqueZips": 452,
@@ -1356,11 +1358,13 @@
     "current_florida_companies": 1178,
     "current_florida_indexable": 395,
     "existing_providers_with_fdacs_link": 868,
-    "fl_im_ingested_internal": 779,
+    "fl_im_all": 779,
+    "fl_im_ingested_internal": 729,
+    "fl_im_publishable_canary": 50,
     "newly_qualified_state_only": 37,
     "newly_discovered_overlap": 3,
     "estimated_future_unique_florida_companies": 1215
   },
   "note": "task-fl-003-florida-state-only-qualification",
-  "qualified_at": "2026-08-21T16:05:57.168Z"
+  "qualified_at": "2026-08-21T16:31:20.880Z"
 }

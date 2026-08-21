@@ -239,9 +239,9 @@ async function main() {
   }>;
   const companyById = new Map(companyRows.map((r) => [r.id, r]));
   const floridaCompanies = companyRows.filter((r) => isFloridaCompany(r));
-  const flImIngested = companyRows.filter(
-    (r) => r.id.toLowerCase().startsWith('fl-im-') && r.publication_state === 'INGESTED'
-  );
+  const flImAll = companyRows.filter((r) => r.id.toLowerCase().startsWith('fl-im-'));
+  const flImIngested = flImAll.filter((r) => r.publication_state === 'INGESTED');
+  const flImPublishable = flImAll.filter((r) => r.publication_state === 'PUBLISHABLE');
   const publicFlorida = floridaCompanies.filter((r) => r.indexable);
   const psaByAuth = new Map<string, { companyId: string | null; verificationState: string | null }>();
   for (const row of prior.rows as Array<{
@@ -683,7 +683,9 @@ async function main() {
       indexable: freezeBeforeRow.indexable,
       florida_all: existingAllFl,
       florida_indexable: existingPublicFl,
+      fl_im_all: flImAll.length,
       fl_im_ingested: flImIngested.length,
+      fl_im_publishable: flImPublishable.length,
     },
     zip_index: {
       uniqueZips: zipIndex.uniqueZips,
@@ -753,7 +755,9 @@ async function main() {
       current_florida_companies: existingAllFl,
       current_florida_indexable: existingPublicFl,
       existing_providers_with_fdacs_link: existingVerified,
+      fl_im_all: flImAll.length,
       fl_im_ingested_internal: flImIngested.length,
+      fl_im_publishable_canary: flImPublishable.length,
       newly_qualified_state_only: newlyQualified,
       newly_discovered_overlap: overlapNewLinks,
       estimated_future_unique_florida_companies: futureUniverse,
@@ -831,7 +835,7 @@ Ruleset: \`${audit.ruleset_version}\`
 
 FL-003 evaluated every normalized FDACS registration against a fail-closed publication ruleset. It does **not** publish companies, expose FDACS on public pages, or promote contact observations onto \`companies.*\`.
 
-After 011D.2A, many previously “state-only” IM rows already exist as internal \`fl-im-*\` companies (\`publication_state=INGESTED\`, \`indexable=false\`). Those are existing-provider link candidates, not new public profiles.
+After 011D.2A, many previously “state-only” IM rows already exist as internal \`fl-im-*\` companies. 011D.3 later moved an exact 50 Florida manifest companies to \`PUBLISHABLE\` / \`indexable=false\` / noindex. Those remain existing companies, not new public profiles, and FL-003 does not republish, reindex, or duplicate them.
 
 | Result | Count |
 |--------|------:|
@@ -854,9 +858,11 @@ After 011D.2A, many previously “state-only” IM rows already exist as interna
 
 ## 2. Git / worktree
 
-Isolated worktree \`C:\\\\Users\\\\makei\\\\move-trust-hub-fl001\`, branch \`task-fl-003-florida-state-only-qualification\`, starting from merged FL-002 main.
+Isolated worktree \`C:\\\\Users\\\\makei\\\\move-trust-hub-fl001\`, branch \`task-fl-003-florida-state-only-qualification\`, rebased onto current \`main\` (011D.2B/011D.3 canary + SHARE-003 preserved).
 
 Official source: ${sourceUrl ?? 'FDACS legacy Business License Lookup'}. No new Google requests. Census geocode cache was **read only**.
+
+011D.3 interaction: FL canary is 50 \`fl-im-*\` rows at \`PUBLISHABLE\` + \`indexable=false\`. They stay \`DUPLICATE_OR_OVERLAP\` / already-linked. FL-003 does not write \`publication_state\`, \`indexable\`, canary manifests, county pages, or sitemap rows. Zero overlap between the PUBLICATION_READY cohort and the FL canary manifest.
 
 ---
 
@@ -879,7 +885,7 @@ Recalculated; not copied from FL-002.
 | Active MB | ${b.active_mb} |
 | Dual IM+MB entity groups | ${b.dual_im_mb_groups} |
 | Current companies / indexable | ${audit.companies.total} / ${audit.companies.indexable} |
-| Florida companies (all / indexable / fl-im INGESTED) | ${audit.companies.florida_all} / ${audit.companies.florida_indexable} / ${audit.companies.fl_im_ingested} |
+| Florida companies (all / indexable / fl-im all / INGESTED / PUBLISHABLE canary) | ${audit.companies.florida_all} / ${audit.companies.florida_indexable} / ${audit.companies.fl_im_all} / ${audit.companies.fl_im_ingested} / ${audit.companies.fl_im_publishable} |
 
 FL-002 class counts: ${JSON.stringify(b.fl002_candidate_class)}
 
@@ -1058,7 +1064,9 @@ Do **not** use \`399 + 1,001\`. 011D.2A already created internal Florida compani
 | Current Florida MoveTrustHub companies (public + internal) | ${p.current_florida_companies} |
 | Current Florida indexable | ${p.current_florida_indexable} |
 | Existing providers with FDACS PSA linkage | ${p.existing_providers_with_fdacs_link} |
+| Internal \`fl-im-*\` (all) | ${p.fl_im_all} |
 | Internal \`fl-im-*\` INGESTED | ${p.fl_im_ingested_internal} |
+| Internal \`fl-im-*\` PUBLISHABLE (011D.3 canary, still noindex) | ${p.fl_im_publishable_canary} |
 | Newly qualified state-only movers | ${p.newly_qualified_state_only} |
 | Newly discovered overlap (link candidates) | ${p.newly_discovered_overlap} |
 | **Estimated future unique Florida companies** | **${p.estimated_future_unique_florida_companies}** |
