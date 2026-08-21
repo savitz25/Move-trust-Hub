@@ -108,3 +108,43 @@ test('Wave 4 canary is geographic carriers only', () => {
 test('Wave 4 publishes carrier capability only', () => {
   assert.deepEqual(capabilitiesForClassification('HHG_CARRIER'), ['hhg_interstate_carrier']);
 });
+
+test('Wave 4 capabilities never invent broker/local/auto', () => {
+  const caps = capabilitiesForClassification('HHG_CARRIER');
+  assert.ok(!caps.includes('hhg_broker' as never));
+  assert.equal(caps.length, 1);
+  assert.equal(caps[0], 'hhg_interstate_carrier');
+});
+
+test('US/DC gate rejects non-US geography via eligibility', async () => {
+  const { isWave1Eligible } = await import('@/lib/federal-hhg/wave-eligibility');
+  const gate = isWave1Eligible(
+    staged({ phy_state: 'ON', phy_city: 'Toronto' })
+  );
+  assert.equal(gate.eligible, false);
+  assert.equal(gate.reason, 'geography_not_us_or_dc');
+});
+
+test('already-public / existing USDOT blocked by collision check', () => {
+  const check = revalidateWave4Candidate(
+    staged({ usdot: '76235' }),
+    new Set(['76235']),
+    new Set(['76235'])
+  );
+  assert.equal(check.ok, false);
+  assert.equal(check.reason, 'canonical_usdot_collision');
+});
+
+test('rollback wave id targets Task 010 only', () => {
+  assert.match(WAVE_4_PUBLICATION_ID, /WAVE_4_FINAL_CLEAN/);
+  assert.notEqual(WAVE_4_PUBLICATION_ID, WAVE_ID);
+  assert.notEqual(WAVE_4_PUBLICATION_ID, WAVE_2_PUBLICATION_ID);
+  assert.notEqual(WAVE_4_PUBLICATION_ID, WAVE_3_PUBLICATION_ID);
+});
+
+test('slug collision helper appends usdot suffix', async () => {
+  const { waveSlug } = await import('@/lib/federal-hhg/wave-eligibility');
+  const taken = new Set(['wizard-moving-and-storage']);
+  const slug = waveSlug('Wizard Moving And Storage', '2895107', taken);
+  assert.ok(slug.includes('usdot-2895107') || slug === 'wizard-moving-and-storage-usdot-2895107');
+});

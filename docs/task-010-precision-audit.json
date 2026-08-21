@@ -1,30 +1,46 @@
 {
-  "task": "010",
   "google_places_requests": 0,
-  "publication_wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
-  "source": "FMCSA L&I carrier file (data.transportation.gov/6eyk-hxee)",
-  "freshness": {
-    "rows_updated_at": "2026-08-20T13:51:49.000Z",
-    "view_last_modified": "2026-08-20T13:11:07.000Z",
-    "decision": "USE_CURRENT_OFFICIAL_LI with per-USDOT Socrata revalidation"
+  "task": "010",
+  "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+  "cohort_size": 920,
+  "sample_size": 100,
+  "stratified": {
+    "states_in_sample": [
+      "CA",
+      "FL",
+      "IL",
+      "MA",
+      "MD",
+      "NC",
+      "NJ",
+      "NY",
+      "OH",
+      "PA",
+      "TX",
+      "VA"
+    ],
+    "with_dba": 44,
+    "with_mc": 100,
+    "older_half": 93,
+    "newer_half": 7
   },
-  "cohort": {
-    "historical_expected_approx": 923,
-    "staging_remaining_clean_carriers": 923,
-    "li_inspected": 923,
-    "li_usdots_with_rows": 923,
-    "eligible_after_li": 920,
-    "excluded_hhg_authority_lost": 3,
-    "identity_review_included": 0,
-    "brokers_included": 0,
-    "duals_included": 0,
-    "local_auto_included": 0
+  "correct": 100,
+  "failures": 0,
+  "precision": 1,
+  "failure_details": [],
+  "state_breakdown_full_cohort": {
+    "FL": 172,
+    "CA": 176,
+    "TX": 157,
+    "NY": 83,
+    "IL": 83,
+    "NJ": 82,
+    "MA": 42,
+    "VA": 39,
+    "PA": 47,
+    "MD": 22,
+    "NC": 12,
+    "OH": 5
   },
-  "gates": {
-    "carriers_only": true,
-    "us_dc_only": true,
-    "new_canonical_only": true,
-    "not_in_waves_1_2_3": true,
-    "fail_closed_role_changes": true
-  }
+  "pass": true
 }
