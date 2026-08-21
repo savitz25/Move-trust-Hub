@@ -1,0 +1,420 @@
+{
+  "google_places_requests": 0,
+  "ruleset": "MULTI_STATE_REGULATED_ENTITY_V1",
+  "dry_run": false,
+  "freeze_before": {
+    "companies": 5907,
+    "indexable": 4905,
+    "fl_im": 816,
+    "wa_hg": 88,
+    "psa_total": 1636,
+    "fl_psa": 1359,
+    "wa_psa": 277,
+    "psa_attached": 1122,
+    "companies_with_gt1_psa": 2,
+    "companies_multi_state": 0,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80
+  },
+  "freeze_after": {
+    "companies": 5908,
+    "indexable": 4905,
+    "fl_im": 817,
+    "wa_hg": 88,
+    "psa_total": 1636,
+    "fl_psa": 1359,
+    "wa_psa": 277,
+    "psa_attached": 1124,
+    "companies_with_gt1_psa": 3,
+    "companies_multi_state": 1,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80
+  },
+  "im3813": {
+    "rulesetVersion": "MULTI_STATE_REGULATED_ENTITY_V1",
+    "state": "SAME_CANONICAL_ENTITY",
+    "reasons": [
+      "strong_same_legal_entity_evidence"
+    ],
+    "strongEvidence": [
+      "official_filing_or_regulator_tie"
+    ],
+    "corroboratingEvidence": [
+      "exact_dba"
+    ],
+    "weakEvidence": [
+      "generic_enterprise_email"
+    ],
+    "googlePlacesRequests": 0,
+    "action": "ATTACH_TO_EXISTING",
+    "attach_to": "wa-hg-064493",
+    "evidence": {
+      "fdacs": {
+        "regulatory_id": "FL-FDACS-IM-3813",
+        "authority_number": "IM3813",
+        "legal_name_raw": "SUDDATH MOVING & STORAGE, LLC",
+        "dba_raw": "Suddath Workplace Solutions",
+        "email_raw": "legal@suddath.com",
+        "email_norm": "legal@suddath.com",
+        "phone_raw": "904-390-7100",
+        "phone_norm": "9043907100",
+        "physical_address_raw": "2001 SUDDATH PARK STREET",
+        "city_norm": "TAMPA",
+        "postal_code_norm": "33619",
+        "status_normalized": "active",
+        "raw_source_key": "FDACS:INTRASTATE_MOVER:IM3813",
+        "staging_id": "6ef4458f-0c1b-4976-85b8-5417dacf51d0",
+        "source": "fdacs_legacy_xls",
+        "source_url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx"
+      },
+      "wa_company": {
+        "id": "wa-hg-064493",
+        "slug": "suddath-workplace-solutions",
+        "name": "Suddath Workplace Solutions",
+        "fmcsa_legal_name": "Suddath Moving & Storage, LLC",
+        "phone": "2537773190",
+        "email": "legal@suddath.com",
+        "physical_address": "1201 South 140th St, Burien, WA 98168, Burien, WA, 98168",
+        "headquarters": "Burien, WA",
+        "usdot_number": "3527089",
+        "publication_state": "INGESTED",
+        "indexable": false
+      },
+      "official": [
+        "https://suddath.com/legal/ lists Suddath Moving & Storage, LLC + Fla. Mover Reg. No. IM3813 + USDOT 3527089",
+        "https://www.utc.wa.gov/company/50169 lists same LLC, USDOT 3527089, HG064493, mailing 815 South Main St Jacksonville FL",
+        "FMCSA USDOT 3527089 legal name SUDDATH MOVING & STORAGE LLC, phone (904) 390-7100 matches FDACS IM3813",
+        "Sunbiz SUDDATH MOVING & STORAGE, LLC document L20000294285 Active"
+      ]
+    }
+  },
+  "im4099": {
+    "vs_wa": {
+      "rulesetVersion": "MULTI_STATE_REGULATED_ENTITY_V1",
+      "state": "DISTINCT_LEGAL_ENTITIES",
+      "reasons": [
+        "different_legal_name_and_different_usdot"
+      ],
+      "strongEvidence": [],
+      "corroboratingEvidence": [
+        "exact_dba"
+      ],
+      "weakEvidence": [
+        "generic_enterprise_email",
+        "brand_or_mailbox_without_legal_name_match"
+      ],
+      "googlePlacesRequests": 0
+    },
+    "action": "CREATE_DISTINCT_COMPANY",
+    "existing_federal_candidates": [],
+    "attach_or_create_id": "fl-im-4099",
+    "evidence": {
+      "fdacs": {
+        "regulatory_id": "FL-FDACS-IM-4099",
+        "authority_number": "IM4099",
+        "legal_name_raw": "SUDDATH RELOCATION SYSTEMS OF ST. PETERSBURG, INC.",
+        "dba_raw": "Suddath Moving & Storage",
+        "email_raw": "legal@suddath.com",
+        "email_norm": "legal@suddath.com",
+        "phone_raw": "727-573-0000",
+        "phone_norm": "7275730000",
+        "physical_address_raw": "2001 SUDDATH PARK ST",
+        "city_norm": "TAMPA",
+        "postal_code_norm": "33619",
+        "status_normalized": "active",
+        "raw_source_key": "FDACS:INTRASTATE_MOVER:IM4099",
+        "staging_id": "19fde693-0a13-4e69-94fa-40d640a16720",
+        "source": "fdacs_legacy_xls",
+        "source_url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx"
+      },
+      "official": [
+        "Sunbiz SUDDATH RELOCATION SYSTEMS OF ST. PETERSBURG, INC. P01000026099 Active EIN 59-3705638",
+        "FMCSA USDOT 1018395 / MC-425403 for that corporation (distinct from 3527089)",
+        "Shared legal@suddath.com is generic enterprise mailbox — insufficient to merge"
+      ]
+    }
+  },
+  "stats": {
+    "psa_attached": 2,
+    "companies_created": 1,
+    "observations_attached": 3
+  },
+  "cross_state_sample": {
+    "fl_multi_registration_name_groups": [
+      {
+        "legal_name_norm": "CITY TRANSFER AND STORAGE",
+        "n": 3,
+        "auths": [
+          "IM1581",
+          "IM691",
+          "WM24811"
+        ]
+      },
+      {
+        "legal_name_norm": "ACE RELOCATION SYSTEMS",
+        "n": 2,
+        "auths": [
+          "IM350",
+          "WM6333"
+        ]
+      },
+      {
+        "legal_name_norm": "ADVANCE SORENSEN MOVERS",
+        "n": 2,
+        "auths": [
+          "IM3962",
+          "WM28624"
+        ]
+      },
+      {
+        "legal_name_norm": "AMERICAN VAN LINES CALIFORNIA",
+        "n": 2,
+        "auths": [
+          "IM870",
+          "TC3855"
+        ]
+      },
+      {
+        "legal_name_norm": "AMIGOS ON MOVE",
+        "n": 2,
+        "auths": [
+          "IM3952",
+          "IM3953"
+        ]
+      },
+      {
+        "legal_name_norm": "AMS MOVING",
+        "n": 2,
+        "auths": [
+          "IM4093",
+          "MB137"
+        ]
+      },
+      {
+        "legal_name_norm": "ARBOR PROPERTY MAINTENANCE OF SWFL",
+        "n": 2,
+        "auths": [
+          "IM3363",
+          "MV81218"
+        ]
+      },
+      {
+        "legal_name_norm": "BIRDSEYE TRANSPORT AND LOGISTICS",
+        "n": 2,
+        "auths": [
+          "IM3920"
+        ]
+      },
+      {
+        "legal_name_norm": "BROWNING MOVING AND STORAGE",
+        "n": 2,
+        "auths": [
+          "IM415",
+          "WM8551"
+        ]
+      },
+      {
+        "legal_name_norm": "CALCANO",
+        "n": 2,
+        "auths": [
+          "IM1232"
+        ]
+      },
+      {
+        "legal_name_norm": "CALLAHAN BROTHERS",
+        "n": 2,
+        "auths": [
+          "IM2790",
+          "WM28796"
+        ]
+      },
+      {
+        "legal_name_norm": "CITY WIDE SELF STORAGE",
+        "n": 2,
+        "auths": [
+          "IM3414",
+          "LX41397"
+        ]
+      },
+      {
+        "legal_name_norm": "COASTAL VAN LINES",
+        "n": 2,
+        "auths": [
+          "IM31"
+        ]
+      },
+      {
+        "legal_name_norm": "COLONIAL VAN LINES",
+        "n": 2,
+        "auths": [
+          "IM2198",
+          "TC5765"
+        ]
+      },
+      {
+        "legal_name_norm": "CONSER MOVING AND STORAGE OF JACKSONVILLE",
+        "n": 2,
+        "auths": [
+          "IM2148",
+          "WM7738"
+        ]
+      },
+      {
+        "legal_name_norm": "DRN MOVING",
+        "n": 2,
+        "auths": [
+          "IM26"
+        ]
+      },
+      {
+        "legal_name_norm": "EEM",
+        "n": 2,
+        "auths": [
+          "IM3000"
+        ]
+      },
+      {
+        "legal_name_norm": "ESEA VAN LINES",
+        "n": 2,
+        "auths": [
+          "IM3912"
+        ]
+      },
+      {
+        "legal_name_norm": "GATOR MOVING AND STORAGE",
+        "n": 2,
+        "auths": [
+          "IM19",
+          "TC1104"
+        ]
+      },
+      {
+        "legal_name_norm": "GULF COAST VAN LINES",
+        "n": 2,
+        "auths": [
+          "IM2181"
+        ]
+      },
+      {
+        "legal_name_norm": "HAUL OF FAME MOVING",
+        "n": 2,
+        "auths": [
+          "IM3299"
+        ]
+      },
+      {
+        "legal_name_norm": "J AND D PROFESSIONAL SERVICES OF FLORIDA",
+        "n": 2,
+        "auths": [
+          "IM2985",
+          "MB114"
+        ]
+      },
+      {
+        "legal_name_norm": "MCCORQUODALE TRANSFER",
+        "n": 2,
+        "auths": [
+          "IM1888",
+          "IM3924"
+        ]
+      },
+      {
+        "legal_name_norm": "MERRITT TRANSFER AND STORAGE",
+        "n": 2,
+        "auths": [
+          "IM114"
+        ]
+      },
+      {
+        "legal_name_norm": "NICHOLAS S CALLAN",
+        "n": 2,
+        "auths": [
+          "IM3150",
+          "IM3772"
+        ]
+      }
+    ],
+    "fl_wa_shared_legal_name_groups": [
+      {
+        "legal_name_norm": "ACE RELOCATION SYSTEMS",
+        "fl_auths": [
+          "IM350",
+          "WM6333"
+        ],
+        "wa_auths": [
+          "CC000917"
+        ]
+      },
+      {
+        "legal_name_norm": "CENTRAL MOVING AND STORAGE",
+        "fl_auths": [
+          "IM210"
+        ],
+        "wa_auths": [
+          "CC021969"
+        ]
+      },
+      {
+        "legal_name_norm": "CLUTTER",
+        "fl_auths": [
+          "IM3682"
+        ],
+        "wa_auths": [
+          "HG067494"
+        ]
+      },
+      {
+        "legal_name_norm": "FLEX STORAGE",
+        "fl_auths": [
+          "IM3819"
+        ],
+        "wa_auths": [
+          "THG071875"
+        ]
+      },
+      {
+        "legal_name_norm": "SMOOTH MOVES",
+        "fl_auths": [
+          "IM1860"
+        ],
+        "wa_auths": [
+          "HG064212"
+        ]
+      },
+      {
+        "legal_name_norm": "STEVENS MOVING AND STORAGE",
+        "fl_auths": [
+          "IM320"
+        ],
+        "wa_auths": [
+          "HG010341"
+        ]
+      },
+      {
+        "legal_name_norm": "SUDDATH MOVING AND STORAGE",
+        "fl_auths": [
+          "IM3813"
+        ],
+        "wa_auths": [
+          "HG064493"
+        ]
+      }
+    ]
+  },
+  "canary": {
+    "before": {
+      "fl": 50,
+      "wa": 30,
+      "total": 80
+    },
+    "after": {
+      "fl": 50,
+      "wa": 30,
+      "total": 80
+    },
+    "manifest_unchanged": true
+  },
+  "ingested_404_preserved": true
+}
