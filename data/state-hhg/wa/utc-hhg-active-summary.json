@@ -1,0 +1,108 @@
+{
+  "retrievedAt": "2026-08-21T03:08:24.989Z",
+  "googlePlacesRequests": 0,
+  "activeListTotalClaimed": 285,
+  "activeListRawRows": 285,
+  "activeListUniqueNodes": 277,
+  "activeDetailRecords": 277,
+  "uniqueActiveNodeIds": 277,
+  "note": "UTC list Displaying total can exceed unique /company/{nodeId} rows when the same node appears with alternate USDOT values.",
+  "allListTotalClaimed": null,
+  "allListRawRows": 0,
+  "allListUniqueNodes": 0,
+  "fieldCoverage": {
+    "legalName": {
+      "present": 277,
+      "pct": 100
+    },
+    "usdot": {
+      "present": 274,
+      "pct": 98.9
+    },
+    "physicalAddress": {
+      "present": 258,
+      "pct": 93.1
+    },
+    "phone": {
+      "present": 276,
+      "pct": 99.6
+    },
+    "email": {
+      "present": 268,
+      "pct": 96.8
+    },
+    "dba": {
+      "present": 129,
+      "pct": 46.6
+    },
+    "ubi": {
+      "present": 277,
+      "pct": 100
+    },
+    "permitNumber": {
+      "present": 277,
+      "pct": 100
+    },
+    "status": {
+      "present": 277,
+      "pct": 100
+    },
+    "city": {
+      "present": 276,
+      "pct": 99.6
+    },
+    "postalCode": {
+      "present": 276,
+      "pct": 99.6
+    }
+  },
+  "parseWarningCounts": {
+    "physical_address_missing": 19,
+    "usdot_missing": 3,
+    "phone_missing": 1
+  },
+  "sampleMissing": {
+    "noUsdot": [
+      {
+        "companyNodeId": "44824",
+        "legalName": "Dolly, Inc."
+      },
+      {
+        "companyNodeId": "32116",
+        "legalName": "PENINSULA TRUCK LINES INC"
+      },
+      {
+        "companyNodeId": "50125",
+        "legalName": "Radford, Neil Raymond"
+      }
+    ],
+    "noPhone": [
+      {
+        "companyNodeId": "47539",
+        "legalName": "Stevens Moving & Storage, Inc."
+      }
+    ],
+    "noAddress": [
+      {
+        "companyNodeId": "29587",
+        "legalName": "Alaska Coast Transport, Inc."
+      },
+      {
+        "companyNodeId": "30304",
+        "legalName": "AUSMUS TRUCKING INC"
+      },
+      {
+        "companyNodeId": "43980",
+        "legalName": "Cherish Moving LLC"
+      },
+      {
+        "companyNodeId": "42430",
+        "legalName": "Continental Van Lines, Inc."
+      },
+      {
+        "companyNodeId": "44431",
+        "legalName": "Eric's Small Moves & Delivery LLC"
+      }
+    ]
+  }
+}

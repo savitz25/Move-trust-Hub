@@ -1,0 +1,64 @@
+{
+  "google_places_requests": 0,
+  "task": "011B",
+  "matched_precision": {
+    "FL": {
+      "population": 91,
+      "sample": {
+        "audited": 91,
+        "falseMatches": 0,
+        "issues": []
+      },
+      "full": {
+        "audited": 91,
+        "falseMatches": 0,
+        "issues": []
+      },
+      "precision_pct": 100
+    },
+    "WA": {
+      "population": 69,
+      "sample": {
+        "audited": 69,
+        "falseMatches": 0,
+        "issues": []
+      },
+      "full": {
+        "audited": 69,
+        "falseMatches": 0,
+        "issues": []
+      },
+      "precision_pct": 100
+    }
+  },
+  "new_provider_candidate_audit": {
+    "FL": {
+      "population": 974,
+      "audited": 50,
+      "likelyGenuinelyNew": 50,
+      "suspicious": 0,
+      "notes": []
+    },
+    "WA": {
+      "population": 196,
+      "audited": 50,
+      "likelyGenuinelyNew": 50,
+      "suspicious": 0,
+      "notes": []
+    }
+  },
+  "contact_yield": {
+    "FL": {
+      "phone_pct": 97.4,
+      "email_pct": 93.2
+    },
+    "WA": {
+      "phone_pct": 98.9
+    }
+  },
+  "checks": {
+    "fl_matched_precision_100": true,
+    "wa_matched_precision_100": true,
+    "no_google": true
+  }
+}

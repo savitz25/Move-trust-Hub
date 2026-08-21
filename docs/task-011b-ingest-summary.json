@@ -1,0 +1,125 @@
+{
+  "google_places_requests": 0,
+  "task": "011B",
+  "dryRun": false,
+  "freeze_before": {
+    "companies": 4941,
+    "indexable": 4905
+  },
+  "states": {
+    "FL": {
+      "meta": {
+        "stateCode": "FL",
+        "regulator": "Florida Department of Agriculture and Consumer Services (FDACS)",
+        "sourceName": "FDACS legacy Business License Lookup HTML-XLS export (IM + MB); supplemental new portal CSV",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T03:29:40.443Z",
+        "accessTier": "A",
+        "googlePlacesRequests": 0
+      },
+      "stats": {
+        "records_read": 1359,
+        "inserted": 43,
+        "updated": 1316,
+        "matched_existing": 91,
+        "new_provider_candidate": 974,
+        "review_required": 178,
+        "historical": 116,
+        "out_of_scope": 0,
+        "verified_authority": 90,
+        "movers": 1330,
+        "brokers": 29,
+        "with_usdot": 0,
+        "with_phone": 1324,
+        "with_email": 1267,
+        "with_physical_address": 1359
+      },
+      "cohortPath": "C:\\Users\\makei\\move-trust-hub-task004\\docs\\task-011b-fl-verified-authority-cohort.json",
+      "verified": 90
+    },
+    "WA": {
+      "meta": {
+        "stateCode": "WA",
+        "regulator": "Washington Utilities and Transportation Commission (UTC)",
+        "sourceName": "UTC Household Goods Carriers company registry (HTML)",
+        "sourceUrl": "https://www.utc.wa.gov/companies?combine=&usdot=&exposed_select_industry=568&regulatory_status=1",
+        "retrievedAt": "2026-08-21T03:29:40.446Z",
+        "accessTier": "A",
+        "googlePlacesRequests": 0
+      },
+      "stats": {
+        "records_read": 277,
+        "inserted": 277,
+        "updated": 0,
+        "matched_existing": 69,
+        "new_provider_candidate": 196,
+        "review_required": 12,
+        "historical": 0,
+        "out_of_scope": 0,
+        "verified_authority": 64,
+        "movers": 277,
+        "brokers": 0,
+        "with_usdot": 270,
+        "with_phone": 274,
+        "with_email": 258,
+        "with_physical_address": 258
+      },
+      "cohortPath": "C:\\Users\\makei\\move-trust-hub-task004\\docs\\task-011b-wa-verified-authority-cohort.json",
+      "verified": 64
+    }
+  },
+  "freeze_after": {
+    "indexable": 4905,
+    "companies": 4941,
+    "interstate": 4612
+  },
+  "capabilities": [
+    {
+      "capability": "auto_broker",
+      "evidence_state": "INFERRED",
+      "n": 9
+    },
+    {
+      "capability": "auto_carrier",
+      "evidence_state": "INFERRED",
+      "n": 8
+    },
+    {
+      "capability": "hhg_intrastate",
+      "evidence_state": "INFERRED",
+      "n": 331
+    },
+    {
+      "capability": "hhg_local",
+      "evidence_state": "INFERRED",
+      "n": 331
+    }
+  ],
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "publication_safety": {
+    "new_public_companies": 0,
+    "new_indexable": 0,
+    "new_local_capabilities": 0,
+    "new_intrastate_capabilities": 0,
+    "new_auto_capabilities": 0,
+    "county_assignments": 0,
+    "google_places_requests": 0
+  }
+}

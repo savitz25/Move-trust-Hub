@@ -1,0 +1,136 @@
+{
+  "google_places_requests": 0,
+  "task": "011B",
+  "totals": {
+    "companies": 4941,
+    "indexable": 4905,
+    "interstate": 4612
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "local_auto_caps": [
+    {
+      "capability": "auto_broker",
+      "evidence_state": "INFERRED",
+      "n": 9
+    },
+    {
+      "capability": "auto_carrier",
+      "evidence_state": "INFERRED",
+      "n": 8
+    },
+    {
+      "capability": "hhg_intrastate",
+      "evidence_state": "INFERRED",
+      "n": 331
+    },
+    {
+      "capability": "hhg_local",
+      "evidence_state": "INFERRED",
+      "n": 331
+    }
+  ],
+  "staging": [
+    {
+      "state_code": "FL",
+      "disposition": "HISTORICAL",
+      "n": 116
+    },
+    {
+      "state_code": "FL",
+      "disposition": "MATCHED_EXISTING",
+      "n": 91
+    },
+    {
+      "state_code": "FL",
+      "disposition": "NEW_PROVIDER_CANDIDATE",
+      "n": 974
+    },
+    {
+      "state_code": "FL",
+      "disposition": "REVIEW_REQUIRED",
+      "n": 178
+    },
+    {
+      "state_code": "WA",
+      "disposition": "MATCHED_EXISTING",
+      "n": 69
+    },
+    {
+      "state_code": "WA",
+      "disposition": "NEW_PROVIDER_CANDIDATE",
+      "n": 196
+    },
+    {
+      "state_code": "WA",
+      "disposition": "REVIEW_REQUIRED",
+      "n": 12
+    }
+  ],
+  "authority": [
+    {
+      "state_code": "FL",
+      "verification_state": "HISTORICAL",
+      "n": 116
+    },
+    {
+      "state_code": "FL",
+      "verification_state": "REVIEW_REQUIRED",
+      "n": 179
+    },
+    {
+      "state_code": "FL",
+      "verification_state": "UNRESOLVED",
+      "n": 974
+    },
+    {
+      "state_code": "FL",
+      "verification_state": "VERIFIED",
+      "n": 90
+    },
+    {
+      "state_code": "WA",
+      "verification_state": "REVIEW_REQUIRED",
+      "n": 17
+    },
+    {
+      "state_code": "WA",
+      "verification_state": "UNRESOLVED",
+      "n": 196
+    },
+    {
+      "state_code": "WA",
+      "verification_state": "VERIFIED",
+      "n": 64
+    }
+  ],
+  "provider_county_coverage_table_exists": false,
+  "checks": {
+    "companies": true,
+    "indexable": true,
+    "interstate": true,
+    "wave1": true,
+    "wave2": true,
+    "wave3": true,
+    "wave4": true,
+    "no_new_publication": true,
+    "no_county_table": true,
+    "caps_unchanged": true
+  }
+}

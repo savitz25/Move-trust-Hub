@@ -57,6 +57,92 @@ describe('Task 011A state HHG eligibility', () => {
     assert.match(result.reason, /Interstate/);
   });
 
+  it('rejects FL broker-only authority for hauling eligibility', () => {
+    const result = isProviderEligibleForIntrastateMove(
+      {
+        providerId: 'p1',
+        originState: 'FL',
+        destinationState: 'FL',
+        stateAuthorities: [
+          auth({
+            authorityType: 'intrastate_hhg_broker',
+            authorityNumber: 'MB113',
+          }),
+        ],
+      },
+      { stateCode: 'FL', intrastateHhgAuthorityRequired: 'YES' }
+    );
+    assert.equal(result.eligible, false);
+  });
+
+  it('rejects expired FL mover authority', () => {
+    const result = isProviderEligibleForIntrastateMove(
+      {
+        providerId: 'p1',
+        originState: 'FL',
+        destinationState: 'FL',
+        stateAuthorities: [auth({ status: 'expired', verificationState: 'HISTORICAL' })],
+      },
+      { stateCode: 'FL', intrastateHhgAuthorityRequired: 'YES' }
+    );
+    assert.equal(result.eligible, false);
+  });
+
+  it('accepts verified active WA HHG carrier for WA→WA', () => {
+    const result = isProviderEligibleForIntrastateMove(
+      {
+        providerId: 'p-wa',
+        originState: 'WA',
+        destinationState: 'WA',
+        stateAuthorities: [
+          auth({
+            providerId: 'p-wa',
+            stateCode: 'WA',
+            authorityType: 'intrastate_hhg_carrier',
+            authorityNumber: 'HG070844',
+            regulator: 'WA UTC',
+          }),
+        ],
+      },
+      { stateCode: 'WA', intrastateHhgAuthorityRequired: 'YES' }
+    );
+    assert.equal(result.eligible, true);
+  });
+
+  it('rejects inactive WA permit', () => {
+    const result = isProviderEligibleForIntrastateMove(
+      {
+        providerId: 'p-wa',
+        originState: 'WA',
+        destinationState: 'WA',
+        stateAuthorities: [
+          auth({
+            stateCode: 'WA',
+            authorityType: 'intrastate_hhg_carrier',
+            status: 'inactive',
+            verificationState: 'HISTORICAL',
+          }),
+        ],
+      },
+      { stateCode: 'WA', intrastateHhgAuthorityRequired: 'YES' }
+    );
+    assert.equal(result.eligible, false);
+  });
+
+  it('rejects federal-only carrier where state authority is required', () => {
+    const result = isProviderEligibleForIntrastateMove(
+      {
+        providerId: 'p1',
+        originState: 'FL',
+        destinationState: 'FL',
+        stateAuthorities: [],
+        hasFederalHhgCarrier: true,
+      },
+      { stateCode: 'FL', intrastateHhgAuthorityRequired: 'YES' }
+    );
+    assert.equal(result.eligible, false);
+  });
+
   it('requires verified active Florida authority for FL→FL', () => {
     const ok = isProviderEligibleForIntrastateMove(
       {
