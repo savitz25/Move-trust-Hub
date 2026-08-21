@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getCompanyBySlugAsync } from '@/lib/data-server';
 import { isAnonymousPublicProfileAllowed } from '@/lib/provider/publication';
+import { isAnonymousCompanyNotFound } from '@/lib/provider/anonymous-company-route';
 import { renderMoveFallbackImage, renderMoveShareImage } from '@/lib/og/move-share-card';
 import { moveEntityShareModel, moverProfileLabel } from '@/lib/seo/share-card-model';
 import { canShowLicenseNumbers } from '@/lib/trust/company-display-policy';
@@ -15,7 +16,7 @@ export async function GET(
   try {
     const { slug } = await context.params;
     const company = await getCompanyBySlugAsync(decodeURIComponent(String(slug ?? '').trim()));
-    if (!company?.name?.trim() || !isAnonymousPublicProfileAllowed(company)) {
+    if (!company?.name?.trim() || isAnonymousCompanyNotFound(company) || !isAnonymousPublicProfileAllowed(company)) {
       return renderMoveFallbackImage();
     }
     const showUsdot = canShowLicenseNumbers(company.usdotNumber, company.mcNumber);

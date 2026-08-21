@@ -1,0 +1,23 @@
+{
+  "google_places_requests": 0,
+  "simulation_only": true,
+  "db_mutated": false,
+  "when_publishable_indexable_false": {
+    "http": 200,
+    "profile": true,
+    "robots": "noindex, follow",
+    "sitemap": false,
+    "directory_search": true,
+    "compare": true,
+    "og": "company-specific share card permitted; no endorsement",
+    "keep80_county_discovery": false,
+    "chrome": "Florida Intrastate Mover + FDACS evidence block"
+  },
+  "while_ingested": {
+    "http": 404,
+    "profile": false,
+    "og": "generic fallback only",
+    "compare": false,
+    "sitemap": false
+  }
+}

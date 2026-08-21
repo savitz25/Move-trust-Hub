@@ -1,0 +1,19 @@
+{
+  "google_places_requests": 0,
+  "apply_executed": false,
+  "conditions": [
+    "manifest_hash_mismatch",
+    "readiness_count_changed",
+    "stale_fdacs_status",
+    "ingested_http_not_404",
+    "sitemap_leakage",
+    "indexable_delta_nonzero",
+    "incorrect_federal_copy",
+    "keep80_canary_regression",
+    "company_duplication",
+    "public_api_leak",
+    "unexpected_county_publication",
+    "failing_production_build",
+    "failing_browser_qa"
+  ]
+}

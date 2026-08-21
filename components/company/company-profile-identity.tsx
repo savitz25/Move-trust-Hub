@@ -9,7 +9,14 @@ import type { Company } from '@/types';
  * Phase 4 — clear identity block for research profiles.
  * Does not invent missing regulatory fields.
  */
-export function CompanyProfileIdentity({ company }: { company: Company }) {
+export function CompanyProfileIdentity({
+  company,
+  presentation = 'default',
+}: {
+  company: Company;
+  presentation?: 'default' | 'florida-state-wave';
+}) {
+  const stateOnly = presentation === 'florida-state-wave';
   const hq = parseHeadquarters(company.headquarters);
   const legal =
     company.fmcsaLegalName?.trim() &&
@@ -18,7 +25,7 @@ export function CompanyProfileIdentity({ company }: { company: Company }) {
       : null;
 
   const rows: Array<{ label: string; value: string }> = [];
-  if (legal) rows.push({ label: 'Legal name (FMCSA)', value: legal });
+  if (legal) rows.push({ label: stateOnly ? 'Legal name' : 'Legal name (FMCSA)', value: legal });
   rows.push({ label: 'Display name', value: company.name });
   if (company.usdotNumber?.trim()) {
     rows.push({ label: 'USDOT', value: company.usdotNumber.trim() });
@@ -51,8 +58,9 @@ export function CompanyProfileIdentity({ company }: { company: Company }) {
           Company identity
         </CardTitle>
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-          Public research identity from directory records and FMCSA-oriented fields. Confirm every
-          license number on official sources before you book.
+          {stateOnly
+            ? 'Public research identity from Florida FDACS registration records. Confirm the current registration with FDACS before you book.'
+            : 'Public research identity from directory records and FMCSA-oriented fields. Confirm every license number on official sources before you book.'}
         </p>
       </CardHeader>
       <CardContent className="space-y-4 px-4 sm:px-6">
@@ -73,7 +81,7 @@ export function CompanyProfileIdentity({ company }: { company: Company }) {
             </div>
           ))}
         </dl>
-        {!company.usdotNumber?.trim() && company.serviceScope !== 'intrastate' ? (
+        {!stateOnly && !company.usdotNumber?.trim() && company.serviceScope !== 'intrastate' ? (
           <p className="text-xs text-amber-900 dark:text-amber-100 rounded-md border border-amber-200/80 bg-amber-50/60 px-3 py-2">
             No USDOT on this profile yet — treat licensing as incomplete and re-check FMCSA SAFER
             before deposits.
