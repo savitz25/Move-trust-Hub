@@ -1,0 +1,43 @@
+{
+  "google_places_requests": 0,
+  "base": "https://www.movetrusthub.com",
+  "ingested_wave1": {
+    "path": "/companies/gentletouch-moving-company",
+    "status": 200,
+    "noindex": true,
+    "title": "<title>Company Not Found | Move Trust Hub",
+    "leaksFdacs": false
+  },
+  "unknown_slug": {
+    "path": "/companies/this-slug-should-not-exist-fl009-xyz",
+    "status": 200,
+    "noindex": true,
+    "title": "<title>Company Not Found | Move Trust Hub",
+    "leaksFdacs": false
+  },
+  "publishable_canary": {
+    "path": "/companies/i-95-relocation-inc",
+    "status": 200,
+    "noindex": true,
+    "title": "<title>I 95 Relocation Inc. — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
+    "leaksFdacs": false
+  },
+  "indexable_federal": {
+    "path": "/companies/allied-van-lines",
+    "status": 200,
+    "noindex": false,
+    "title": "<title>Allied Van Lines — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
+    "leaksFdacs": false
+  },
+  "ingested_is_404": false,
+  "unknown_is_404": false,
+  "canary_is_200": true,
+  "indexable_is_200": true,
+  "notes": {
+    "production_still_fl008_until_this_pr_deploys": true,
+    "payload_leak_on_ingested": false,
+    "local_contract_http_server_404": true,
+    "generateMetadata_calls_notFound": true,
+    "fl010_abort_if_still_200_after_fl009_deploy": true
+  }
+}

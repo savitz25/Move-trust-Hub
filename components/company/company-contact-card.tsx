@@ -14,6 +14,10 @@ type Props = {
     'name' | 'physicalAddress' | 'headquarters' | 'phone' | 'email' | 'website'
   >;
   className?: string;
+  sourceNote?: string;
+  phoneSourceLabel?: string;
+  emailSourceLabel?: string;
+  addressSourceLabel?: string;
 };
 
 function formatPhoneDisplay(phone: string): string {
@@ -44,7 +48,14 @@ function websiteLabel(website: string): string {
  * Primary contact block on company profiles — name, address, phone, email, website.
  * Omits empty fields; never shows broken empty rows.
  */
-export function CompanyContactCard({ company, className }: Props) {
+export function CompanyContactCard({
+  company,
+  className,
+  sourceNote,
+  phoneSourceLabel,
+  emailSourceLabel,
+  addressSourceLabel,
+}: Props) {
   const address =
     company.physicalAddress?.trim() || company.headquarters?.trim() || null;
   const phone = company.phone?.trim() || null;
@@ -112,7 +123,8 @@ export function CompanyContactCard({ company, className }: Props) {
       <CardHeader className="pb-2">
         <CardTitle className="text-lg">Company contact</CardTitle>
         <p className="text-xs text-muted-foreground font-normal">
-          Best available public contact details from FMCSA, Google Places, and the company website.
+          {sourceNote ||
+            'Best available public contact details from FMCSA, Google Places, and the company website.'}
         </p>
       </CardHeader>
       <CardContent>
@@ -141,6 +153,13 @@ export function CompanyContactCard({ company, className }: Props) {
             </li>
           ))}
         </ul>
+        {phoneSourceLabel || emailSourceLabel || addressSourceLabel ? (
+          <ul className="mt-3 space-y-1 text-xs text-muted-foreground">
+            {phone && phoneSourceLabel ? <li>{phoneSourceLabel}</li> : null}
+            {email && emailSourceLabel ? <li>{emailSourceLabel}</li> : null}
+            {address && addressSourceLabel ? <li>{addressSourceLabel}</li> : null}
+          </ul>
+        ) : null}
         {!phone && !email && !website ? (
           <p className="mt-3 text-xs text-muted-foreground">
             Limited contact details on file — verify on the company&apos;s official site before

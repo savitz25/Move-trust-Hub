@@ -1,0 +1,19 @@
+{
+  "google_places_requests": 0,
+  "canary_presentation_changed": false,
+  "wave_chrome_gate": "member AND PUBLISHABLE",
+  "fixtures": "docs/task-fl-009-presentation-fixtures.html",
+  "mobile": {
+    "narrow": "long names wrap; IM number uses monospace and overflow-wrap",
+    "source_labels": "wrap as text, not chips that imply endorsement"
+  },
+  "desktop": {
+    "hierarchy": "FDACS block above identity; federal licensing card omitted for Wave 1 chrome"
+  },
+  "accessibility": {
+    "status_not_color_only": true,
+    "headings": "Florida Intrastate Mover is the section title",
+    "endorsement_badge": false
+  },
+  "dual_authority_fixture": "fl-im-4099 not in Wave 1; presentation model only"
+}
