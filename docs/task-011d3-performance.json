@@ -1,0 +1,39 @@
+{
+  "task": "011D.3",
+  "google_places_requests": 0,
+  "note": "Bounded SQL materialization proof from live discovery QA; wall-clock medians for production pages should be re-checked in 011D.4 observation.",
+  "local_discovery": {
+    "path": "sql_canary_wave / local_canary_movers_for_county",
+    "requested_limit": 24,
+    "FL_samples": [
+      { "countyFips": "12099", "totalMatching": 1, "materializedIntoNode": 1 },
+      { "countyFips": "12011", "totalMatching": 3, "materializedIntoNode": 3 },
+      { "countyFips": "12057", "totalMatching": 1, "materializedIntoNode": 1 },
+      { "countyFips": "12095", "totalMatching": 1, "materializedIntoNode": 1 },
+      { "countyFips": "12031", "totalMatching": 1, "materializedIntoNode": 1 },
+      { "countyFips": "12103", "totalMatching": 2, "materializedIntoNode": 2 },
+      { "countyFips": "12127", "totalMatching": 2, "materializedIntoNode": 2 }
+    ],
+    "WA_samples": [
+      { "countyFips": "53033", "totalMatching": 3, "materializedIntoNode": 3 },
+      { "countyFips": "53053", "totalMatching": 1, "materializedIntoNode": 1 },
+      { "countyFips": "53061", "totalMatching": 3, "materializedIntoNode": 3 },
+      { "countyFips": "53063", "totalMatching": 1, "materializedIntoNode": 1 },
+      { "countyFips": "53011", "totalMatching": 3, "materializedIntoNode": 3 },
+      { "countyFips": "53067", "totalMatching": 3, "materializedIntoNode": 3 },
+      { "countyFips": "53035", "totalMatching": 1, "materializedIntoNode": 1 }
+    ],
+    "proof": "materializedIntoNode <= requested_limit for all samples; no full 5870 or 929 hydration"
+  },
+  "interstate_directory": {
+    "visible_interstate_count_unchanged": 4605,
+    "delta": 0,
+    "excludeLocal_default": true
+  },
+  "targets": {
+    "companies_cold_median_s": 3,
+    "directory_api_median_s": 1,
+    "local_county_query_median_s": 1,
+    "profile_median_s": 1.5
+  }
+}

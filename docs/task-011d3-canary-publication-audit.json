@@ -1,10 +1,10 @@
 {
   "task": "011D.3",
-  "retrievedAt": "2026-08-21T16:13:23.960Z",
+  "retrievedAt": "2026-08-21T16:14:10.559Z",
   "waveId": "LOCAL_HHG_FL_WA_2026_08_CANARY_1",
   "google_places_requests": 0,
-  "mode": "dry-run",
-  "decision": "DRY_RUN",
+  "mode": "publish",
+  "decision": "KEEP_CANARY_NOINDEX",
   "manifest": {
     "fl": 50,
     "wa": 30,
@@ -18,11 +18,11 @@
   },
   "publishResult": {
     "attempted": 80,
-    "published": 0,
+    "published": 80,
     "alreadyPublishable": 0,
     "rejectedNonManifest": [],
     "excluded": [],
-    "dryRun": true,
+    "dryRun": false,
     "rejectProbe": {
       "attempted": 81,
       "published": 0,
@@ -32,6 +32,10 @@
       ],
       "excluded": [],
       "dryRun": true
+    },
+    "idempotency": {
+      "publishedSecondPass": 0,
+      "excludedSecond": 0
     }
   },
   "rollbackResult": null,
@@ -46,15 +50,15 @@
     "after": {
       "companies": 5870,
       "indexable": 4905,
-      "publicish": 4905,
-      "ingested": 929,
-      "canary_publishable": 0
+      "publicish": 4985,
+      "ingested": 849,
+      "canary_publishable": 80
     },
     "interstateBefore": 4605,
     "interstateAfter": 4605,
     "interstateDelta": 0,
-    "consumerEligibleHomeCounty": 0,
-    "wavePublished": 0,
+    "consumerEligibleHomeCounty": 80,
+    "wavePublished": 80,
     "nonManifest": {
       "n": 849,
       "bad_pub": 0,

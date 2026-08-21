@@ -1,7 +1,146 @@
 {
   "task": "011D.3",
-  "retrievedAt": "2026-08-21T16:13:23.960Z",
   "google_places_requests": 0,
-  "FL": [],
-  "WA": []
+  "FL": [
+    {
+      "fips": "12099",
+      "totalMatching": 1,
+      "materialized": 1,
+      "limit": 24,
+      "ids": [
+        "fl-im-1058"
+      ]
+    },
+    {
+      "fips": "12011",
+      "totalMatching": 3,
+      "materialized": 3,
+      "limit": 24,
+      "ids": [
+        "fl-im-100002",
+        "fl-im-1399",
+        "fl-im-2064"
+      ]
+    },
+    {
+      "fips": "12057",
+      "totalMatching": 1,
+      "materialized": 1,
+      "limit": 24,
+      "ids": [
+        "fl-im-1226"
+      ]
+    },
+    {
+      "fips": "12095",
+      "totalMatching": 1,
+      "materialized": 1,
+      "limit": 24,
+      "ids": [
+        "fl-im-1181"
+      ]
+    },
+    {
+      "fips": "12031",
+      "totalMatching": 1,
+      "materialized": 1,
+      "limit": 24,
+      "ids": [
+        "fl-im-1426"
+      ]
+    },
+    {
+      "fips": "12103",
+      "totalMatching": 2,
+      "materialized": 2,
+      "limit": 24,
+      "ids": [
+        "fl-im-1270",
+        "fl-im-150001"
+      ]
+    },
+    {
+      "fips": "12127",
+      "totalMatching": 2,
+      "materialized": 2,
+      "limit": 24,
+      "ids": [
+        "fl-im-4170",
+        "fl-im-1925"
+      ]
+    }
+  ],
+  "WA": [
+    {
+      "fips": "53033",
+      "totalMatching": 3,
+      "materialized": 3,
+      "limit": 24,
+      "ids": [
+        "wa-thg071794",
+        "wa-hg-067049",
+        "wa-cc000208"
+      ]
+    },
+    {
+      "fips": "53053",
+      "totalMatching": 1,
+      "materialized": 1,
+      "limit": 24,
+      "ids": [
+        "wa-cc000562"
+      ]
+    },
+    {
+      "fips": "53061",
+      "totalMatching": 3,
+      "materialized": 3,
+      "limit": 24,
+      "ids": [
+        "wa-cc003737",
+        "wa-hg-068318",
+        "wa-thg072051"
+      ]
+    },
+    {
+      "fips": "53063",
+      "totalMatching": 1,
+      "materialized": 1,
+      "limit": 24,
+      "ids": [
+        "wa-cc004401"
+      ]
+    },
+    {
+      "fips": "53011",
+      "totalMatching": 3,
+      "materialized": 3,
+      "limit": 24,
+      "ids": [
+        "wa-hg-061724",
+        "wa-hg-061841",
+        "wa-thg071741"
+      ]
+    },
+    {
+      "fips": "53067",
+      "totalMatching": 3,
+      "materialized": 3,
+      "limit": 24,
+      "ids": [
+        "wa-hg-062546",
+        "wa-cc023990",
+        "wa-hg-066184"
+      ]
+    },
+    {
+      "fips": "53035",
+      "totalMatching": 1,
+      "materialized": 1,
+      "limit": 24,
+      "ids": [
+        "wa-cc000220"
+      ]
+    }
+  ]
 }
