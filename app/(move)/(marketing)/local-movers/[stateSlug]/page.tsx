@@ -37,6 +37,7 @@ import {
   buildOpenGraph,
   buildTwitter,
 } from '@/lib/seo/site-metadata';
+import { shareRouteOgImage } from '@/lib/seo/share-hub';
 
 
 type Props = { params: Promise<{ stateSlug: string }> };
@@ -61,6 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (hubPack) {
     const documentTitle = formatDocumentTitle(hubPack.metaTitle);
+    const images = [shareRouteOgImage(path, `${state.name} moving research on MoveTrustHub`)];
     return {
       title: absoluteDocumentTitle(hubPack.metaTitle),
       description: hubPack.metaDescription,
@@ -69,12 +71,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: documentTitle,
         description: hubPack.metaDescription,
         url: `${SITE_URL}${path}`,
-        omitDefaultImage: true,
+        images,
       }),
       twitter: buildTwitter({
         title: documentTitle,
         description: hubPack.metaDescription,
-        omitDefaultImage: true,
+        images,
       }),
       robots: { index: true, follow: true },
       category: 'Local Moving Services',

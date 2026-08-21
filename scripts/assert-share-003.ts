@@ -64,9 +64,9 @@ assert(moverProfileLabel({ serviceScope: 'interstate' }) === 'Interstate mover p
 assert(moveFallbackShareModel().kind === 'fallback', 'fallback model');
 
 const files = [
-  'app/(move)/companies/[slug]/opengraph-image.tsx',
-  'app/(move)/(marketing)/local-movers/[stateSlug]/opengraph-image.tsx',
-  'app/(move)/(marketing)/local-movers/[stateSlug]/[countySlug]/opengraph-image.tsx',
+  'app/(move)/companies/[slug]/share-og/route.tsx',
+  'app/(move)/(marketing)/local-movers/[stateSlug]/share-og/route.tsx',
+  'app/(move)/(marketing)/local-movers/[stateSlug]/[countySlug]/share-og/route.tsx',
 ];
 for (const rel of files) {
   assert(existsSync(join(root, rel)), `${rel} exists`);
@@ -80,7 +80,7 @@ const companyPage = read('app/(move)/companies/[slug]/page.tsx');
 assert(companyPage.includes('contextualImage: true'), 'company metadata uses contextual image');
 assert(companyPage.includes('movetrusthub.com') || companyPage.includes("path: `/companies/"), 'company canonical stays on company path');
 
-const companyOg = read('app/(move)/companies/[slug]/opengraph-image.tsx');
+const companyOg = read('app/(move)/companies/[slug]/share-og/route.tsx');
 assert(companyOg.includes('canShowLicenseNumbers'), 'USDOT only when publication-safe');
 assert(!companyOg.includes('overallRating'), 'no review average on the card');
 assert(!companyOg.includes('phone'), 'no phone on OG renderer');
