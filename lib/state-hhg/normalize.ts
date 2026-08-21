@@ -20,6 +20,7 @@ const FRANCHISE_BRAND_PATTERNS: readonly RegExp[] = [
   /\bnational\s+van\s+lines\b/i,
   /\ball\s+my\s+sons\b/i,
   /\bbellhop\b/i,
+  /\bgood\s+greek\b/i,
 ];
 
 export function normalizeUsdot(value: string | null | undefined): string | null {
