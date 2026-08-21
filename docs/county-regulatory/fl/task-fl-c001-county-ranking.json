@@ -161,32 +161,6 @@
     },
     {
       "rank": 6,
-      "county": "Orange",
-      "fips": "12095",
-      "tier": "C",
-      "authority_class": "GENERAL_CONSUMER_PROTECTION",
-      "scores": {
-        "mover_specific_regulation": 0,
-        "complaint_intelligence": 3,
-        "complaint_disposition": 2,
-        "enforcement": 1,
-        "identity_enrichment": 1,
-        "owner_officer": 0,
-        "contact_enrichment": 1,
-        "vehicle_fleet": 0,
-        "insurance_bond": 0,
-        "historical_depth": 1,
-        "business_tax_value": 2,
-        "court_legal_accessibility": 2
-      },
-      "county_value_score": 1.4,
-      "accessibility_score": 2,
-      "engineering_cost_score": 4,
-      "value_to_effort": 0.35,
-      "summary": "Consumer Protection mediation/education; no mover-specific county license discovered."
-    },
-    {
-      "rank": 7,
       "county": "Duval",
       "fips": "12031",
       "tier": "C",
@@ -210,6 +184,32 @@
       "engineering_cost_score": 4,
       "value_to_effort": 0.38,
       "summary": "COJ Consumer Affairs mediates complaints under municipal codes; no mover-specific permit program located."
+    },
+    {
+      "rank": 7,
+      "county": "Orange",
+      "fips": "12095",
+      "tier": "C",
+      "authority_class": "GENERAL_CONSUMER_PROTECTION",
+      "scores": {
+        "mover_specific_regulation": 0,
+        "complaint_intelligence": 3,
+        "complaint_disposition": 2,
+        "enforcement": 1,
+        "identity_enrichment": 1,
+        "owner_officer": 0,
+        "contact_enrichment": 1,
+        "vehicle_fleet": 0,
+        "insurance_bond": 0,
+        "historical_depth": 1,
+        "business_tax_value": 2,
+        "court_legal_accessibility": 2
+      },
+      "county_value_score": 1.4,
+      "accessibility_score": 2,
+      "engineering_cost_score": 4,
+      "value_to_effort": 0.35,
+      "summary": "Consumer Protection mediation/education; no mover-specific county license discovered."
     },
     {
       "rank": 8,
@@ -343,32 +343,6 @@
     },
     {
       "rank": 13,
-      "county": "Sarasota",
-      "fips": "12115",
-      "tier": "D",
-      "authority_class": "LIMITED_OR_NO_VALUE",
-      "scores": {
-        "mover_specific_regulation": 0,
-        "complaint_intelligence": 1,
-        "complaint_disposition": 0,
-        "enforcement": 0,
-        "identity_enrichment": 1,
-        "owner_officer": 0,
-        "contact_enrichment": 1,
-        "vehicle_fleet": 0,
-        "insurance_bond": 0,
-        "historical_depth": 1,
-        "business_tax_value": 1,
-        "court_legal_accessibility": 2
-      },
-      "county_value_score": 0.5,
-      "accessibility_score": 2,
-      "engineering_cost_score": 4,
-      "value_to_effort": 0.13,
-      "summary": "County business tax repealed (2024); municipal BTRs remain fragmented. No mover-specific regulator found."
-    },
-    {
-      "rank": 14,
       "county": "Pasco",
       "fips": "12101",
       "tier": "D",
@@ -394,7 +368,7 @@
       "summary": "Mentioned only as Pinellas ordinance geography endpoint; no independent Pasco mover program found."
     },
     {
-      "rank": 15,
+      "rank": 14,
       "county": "Manatee",
       "fips": "12081",
       "tier": "D",
@@ -418,6 +392,32 @@
       "engineering_cost_score": 4,
       "value_to_effort": 0.15,
       "summary": "Tax collector BTR services; no mover-specific county regulation located."
+    },
+    {
+      "rank": 15,
+      "county": "Sarasota",
+      "fips": "12115",
+      "tier": "D",
+      "authority_class": "LIMITED_OR_NO_VALUE",
+      "scores": {
+        "mover_specific_regulation": 0,
+        "complaint_intelligence": 1,
+        "complaint_disposition": 0,
+        "enforcement": 0,
+        "identity_enrichment": 1,
+        "owner_officer": 0,
+        "contact_enrichment": 1,
+        "vehicle_fleet": 0,
+        "insurance_bond": 0,
+        "historical_depth": 1,
+        "business_tax_value": 1,
+        "court_legal_accessibility": 2
+      },
+      "county_value_score": 0.5,
+      "accessibility_score": 2,
+      "engineering_cost_score": 4,
+      "value_to_effort": 0.13,
+      "summary": "County business tax repealed (2024); municipal BTRs remain fragmented. No mover-specific regulator found."
     }
   ],
   "recommended_fl_c002": {

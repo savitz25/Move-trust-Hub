@@ -43,8 +43,8 @@ This explains why **Miami-Dade, Broward, Palm Beach, and Pinellas** continue mov
 | 3 | Miami-Dade | **A** | 4.3 | 4 | 3 | 1.43 |
 | 4 | Pinellas | **A** | 3.4 | 2 | 4 | 0.85 |
 | 5 | Hillsborough | **B** | 2.2 | 4 | 3 | 0.73 |
-| 6–11 | Orange, Duval, Lee, Collier, Brevard, Polk | **C** | ~1.0–1.5 | 2–3 | 3–4 | low |
-| 12–15 | Volusia, Sarasota, Pasco, Manatee | **D** | ≤0.6 | 2 | 4 | very low |
+| 6–11 | Duval, Orange, Lee, Collier, Brevard, Polk | **C** | ~1.0–1.5 | 2–3 | 3–4 | low |
+| 12–15 | Volusia, Pasco, Manatee, Sarasota | **D** | ≤0.6 | 2 | 4 | very low |
 
 Full scores: `docs/county-regulatory/fl/task-fl-c001-county-ranking.json`  
 Source catalog: `data/regulatory-source-catalog/fl/county-sources.json`
