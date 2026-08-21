@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { getApprovedMoversForCounty } from '@/lib/local-movers/approved-county-movers';
+import { getCanaryMoversForCounty } from '@/lib/local-movers/canary-county-movers';
 import {
   getMoversForCounty,
   hasExplicitCountyAssignment,
@@ -74,7 +75,22 @@ export async function getMoversForCountyAsync(
     });
   }
 
-  if (!approved.length) {
+  // Task 011D.3: exact local canary (PUBLISHABLE + home-county evidence), FL/WA only.
+  let canary: LocalMover[] = [];
+  try {
+    canary = await getCanaryMoversForCounty(stateSlug, countySlug);
+  } catch (err) {
+    logger.warn('county_movers.canary_fetch_failed', {
+      stateSlug,
+      countySlug,
+      message: err instanceof Error ? err.message : String(err),
+    });
+  }
+
+  // Canary first (exact home-county evidence), then other approved directory locals.
+  const directoryLocals = mergeApprovedMovers(approved, canary, 80);
+
+  if (!directoryLocals.length) {
     const sourceMode: MoverSourceMode = approvedFetchFailed
       ? 'degraded'
       : base.movers.length
@@ -92,27 +108,28 @@ export async function getMoversForCountyAsync(
   // Always room for every approved local + a healthy catalog fill for large markets.
   const displayLimit = Math.max(
     hasExplicitAssignment ? LARGE_MARKET_MAX_MOVERS : MAX_MOVERS_PER_COUNTY,
-    base.movers.length + approved.length,
-    approved.length + 10,
+    base.movers.length + directoryLocals.length,
+    directoryLocals.length + 10,
     40
   );
 
-  const merged = mergeApprovedMovers(base.movers, approved, displayLimit);
+  const merged = mergeApprovedMovers(base.movers, directoryLocals, displayLimit);
   const enriched = enrichMoversLocations(merged);
+  const directoryCount = directoryLocals.length;
   const onlyApproved =
-    approved.length > 0 && merged.every((m) => m.listingSource === 'directory');
+    directoryCount > 0 && merged.every((m) => m.listingSource === 'directory');
   const sourceMode: MoverSourceMode = onlyApproved
     ? 'db'
-    : approved.length > 0
+    : directoryCount > 0
       ? 'hybrid'
       : 'seed';
 
   return {
     ...base,
-    isRegionalFallback: base.isRegionalFallback && approved.length === 0,
+    isRegionalFallback: base.isRegionalFallback && directoryCount === 0,
     movers: segmentCountyMovers(enriched, base.county).ordered,
     sourceMode,
-    approvedCount: approved.length,
+    approvedCount: directoryCount,
     catalogCount: base.movers.length,
   };
 }

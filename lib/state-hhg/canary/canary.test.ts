@@ -16,8 +16,13 @@ import {
   sameStateRoutes,
   FL_ORIGIN_COUNTIES,
 } from '@/lib/state-hhg/canary/simulate';
+import {
+  assertManifestOnlyIds,
+  loadExactCanaryManifests,
+} from '@/lib/state-hhg/canary/manifest';
 import { RETIRED_RADIUS_MODELS } from '@/lib/state-hhg/discovery/types';
 import { isFranchiseOrNetworkBrandName } from '@/lib/state-hhg/normalize';
+import { isSeoIndexableCompany } from '@/lib/provider/publication';
 
 function fakeProvider(
   overrides: Partial<PublicationReadyProvider> & {
@@ -195,5 +200,31 @@ describe('011D.2B local canary preparation', () => {
     const selected = selectCanaryManifest(pool, { FL: 1, WA: 0 });
     assert.equal(selected.FL[0].explicitServiceCounties.length, 0);
     // Semantic: absence ≠ negative
+  });
+
+  it('loads exact 011D.2B manifests and rejects non-manifest IDs', () => {
+    const m = loadExactCanaryManifests();
+    assert.equal(m.FL.length, 50);
+    assert.equal(m.WA.length, 30);
+    assert.equal(m.flSha, 'c1cad11d');
+    assert.equal(m.waSha, 'e2967186');
+    assert.equal(m.waveId, LOCAL_CANARY_WAVE_ID);
+    const ok = assertManifestOnlyIds(m.companyIds.slice(0, 3), m.companyIds);
+    assert.equal(ok.ok, true);
+    const bad = assertManifestOnlyIds(
+      [...m.companyIds.slice(0, 2), 'usdot-999'],
+      m.companyIds
+    );
+    assert.equal(bad.ok, false);
+  });
+
+  it('PUBLISHABLE + indexable=false stays noindex / sitemap-excluded', () => {
+    assert.equal(
+      isSeoIndexableCompany({
+        publicationState: 'PUBLISHABLE',
+        indexable: false,
+      }),
+      false
+    );
   });
 });
