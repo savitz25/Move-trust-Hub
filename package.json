@@ -75,6 +75,7 @@
     "publish:task-011d3": "tsx scripts/run-task-011d3-publish-canary.ts --publish --idempotency-check",
     "rollback:task-011d3": "tsx scripts/run-task-011d3-publish-canary.ts --rollback",
     "qa:task-011d3-live": "tsx scripts/qa-task-011d3-live.ts",
+    "observe:task-011d4": "tsx scripts/run-task-011d4-canary-observation.ts",
     "test:state-hhg-discovery": "tsx --test lib/state-hhg/discovery/discovery.test.ts",
     "test:state-hhg-canonicalization": "tsx --test lib/state-hhg/canonicalization/canonicalization.test.ts",
     "test:state-hhg-canary": "tsx --test lib/state-hhg/canary/canary.test.ts",
