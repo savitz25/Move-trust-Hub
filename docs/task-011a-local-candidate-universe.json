@@ -1,0 +1,142 @@
+{
+  "google_places_requests": 0,
+  "task": "011A",
+  "label": "LOCAL_INTRASTATE_CANDIDATE",
+  "note": "Candidate status does NOT equal state-authorized publishability. Federal USDOT/NOT_HHG is not state HHG authority.",
+  "freeze_baseline": {
+    "companies": 4941,
+    "indexable": 4905,
+    "intrastate_scope": 329,
+    "interstate_scope": 4612,
+    "scope_null": 0
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "existing_capabilities_snapshot": [
+    {
+      "capability": "auto_broker",
+      "evidence_state": "INFERRED",
+      "n": 9
+    },
+    {
+      "capability": "auto_carrier",
+      "evidence_state": "INFERRED",
+      "n": 8
+    },
+    {
+      "capability": "hhg_intrastate",
+      "evidence_state": "INFERRED",
+      "n": 331
+    },
+    {
+      "capability": "hhg_local",
+      "evidence_state": "INFERRED",
+      "n": 331
+    }
+  ],
+  "staging_breakdown": [
+    {
+      "classification": "HHG_BROKER",
+      "disposition": "IDENTITY_REVIEW_REQUIRED",
+      "n": 373
+    },
+    {
+      "classification": "HHG_BROKER",
+      "disposition": "MATCHED_EXISTING",
+      "n": 5
+    },
+    {
+      "classification": "HHG_BROKER",
+      "disposition": "NEW_CANONICAL_CANDIDATE",
+      "n": 283
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "disposition": "IDENTITY_REVIEW_REQUIRED",
+      "n": 3917
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "disposition": "MATCHED_EXISTING",
+      "n": 95
+    },
+    {
+      "classification": "HHG_CARRIER",
+      "disposition": "NEW_CANONICAL_CANDIDATE",
+      "n": 4190
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "disposition": "IDENTITY_REVIEW_REQUIRED",
+      "n": 137
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "disposition": "MATCHED_EXISTING",
+      "n": 14
+    },
+    {
+      "classification": "HHG_CARRIER_BROKER",
+      "disposition": "NEW_CANONICAL_CANDIDATE",
+      "n": 88
+    },
+    {
+      "classification": "INACTIVE",
+      "disposition": "INACTIVE",
+      "n": 43461
+    }
+  ],
+  "staging_totals": {
+    "n": 52563,
+    "unique_usdots": 52563,
+    "us_dc_hq": 52037
+  },
+  "pools": {
+    "A_existing_intrastate_companies": {
+      "n": 329,
+      "unique_usdots": 23
+    },
+    "B_staging_not_hhg_us_dc": {
+      "n": 0,
+      "unique_usdots": 0
+    },
+    "C_identity_review_staging": {
+      "n": 4427,
+      "unique_usdots": 4427
+    },
+    "identity_resolution_overlay_rows": 200,
+    "already_public_unique_usdots": {
+      "n": 4611
+    },
+    "federal_wave_published_unique_usdots": {
+      "n": 4473
+    },
+    "auto_service_companies": {
+      "n": 18
+    }
+  },
+  "candidate_universe_summary": {
+    "existing_intrastate_public_rows": 329,
+    "staging_not_hhg_us_dc_unique_usdots": 0,
+    "staging_not_hhg_us_dc_rows": 0,
+    "identity_review_unique_usdots": 4427,
+    "interpretation": "Primary research pool for future local adapters is B (NOT_HHG US/DC staging) plus A (already-marked intrastate). Do not publish either without state authority verification."
+  },
+  "historical_96k_note": "Do not use historical ~96k as a hard count. Recompute from current sources each task."
+}
