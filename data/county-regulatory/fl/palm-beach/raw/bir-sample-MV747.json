@@ -1,0 +1,113 @@
+﻿{
+    "business_seq":  400125,
+    "license_number":  "MV747",
+    "business_name":  "Designers Logistics Support, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV747",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Designers Logistics Support, LLC",
+                               "Established_Yr":  "2005",
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  400125,
+                               "Does_Business_As":  "Designers Logistics Support, LLC",
+                               "Address":  "3616 Prospect",
+                               "City":  "Riviera Beach",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33404",
+                               "MailingAddress":  "3616 Prospect",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Riviera Beach",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33404",
+                               "PhoneNumber":  "5618409441",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "terryleach.dls@gmail.com",
+                               "WebsiteURL":  null,
+                               "Fax":  "5618409508",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Designers Logistics Support, LLC",
+                                         "Established_Yr":  "2005",
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  400125,
+                                         "Does_Business_As":  "Designers Logistics Support, LLC",
+                                         "Address":  "3616 Prospect",
+                                         "City":  "Riviera Beach",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33404",
+                                         "MailingAddress":  "3616 Prospect",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Riviera Beach",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33404",
+                                         "PhoneNumber":  "5618409441",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "terryleach.dls@gmail.com",
+                                         "WebsiteURL":  null,
+                                         "Fax":  "5618409508",
+                                         "License_Required":  "Y"
+                                     }
+}

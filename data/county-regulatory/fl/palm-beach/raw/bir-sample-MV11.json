@@ -1,0 +1,113 @@
+﻿{
+    "business_seq":  9500149,
+    "license_number":  "MV11",
+    "business_name":  "Freighthaulers Inc ",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV11",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Freighthaulers Inc ",
+                               "Established_Yr":  "1972",
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  9500149,
+                               "Does_Business_As":  "A-1 Moving \u0026 Storage",
+                               "Address":  "15070 Corporate",
+                               "City":  "Jupiter",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33478",
+                               "MailingAddress":  "15070 Corporate",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Jupiter",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33478",
+                               "PhoneNumber":  "5616250600",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "emklause@a1moving.com",
+                               "WebsiteURL":  "www.a1moving.com",
+                               "Fax":  "5612834791",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Freighthaulers Inc ",
+                                         "Established_Yr":  "1972",
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  9500149,
+                                         "Does_Business_As":  "A-1 Moving \u0026 Storage",
+                                         "Address":  "15070 Corporate",
+                                         "City":  "Jupiter",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33478",
+                                         "MailingAddress":  "15070 Corporate",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Jupiter",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33478",
+                                         "PhoneNumber":  "5616250600",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "emklause@a1moving.com",
+                                         "WebsiteURL":  "www.a1moving.com",
+                                         "Fax":  "5612834791",
+                                         "License_Required":  "Y"
+                                     }
+}

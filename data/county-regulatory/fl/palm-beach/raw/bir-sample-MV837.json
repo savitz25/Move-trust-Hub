@@ -1,0 +1,230 @@
+﻿{
+    "business_seq":  801831,
+    "license_number":  "MV837",
+    "business_name":  "Monster Moving, Inc.",
+    "license_list":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  280283,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  801831,
+                                                "KeyField":  null,
+                                                "Field2":  "2013-04-26 06:45:06.0000000",
+                                                "Field3":  "MOV05-07 Sec 3(F) All ads placed by movers shall include bus address, phone # \u0026 PBC permit #",
+                                                "Field4":  "N/A",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  586174,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  801831,
+                                                "KeyField":  null,
+                                                "Field2":  "2023-12-21T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Section 17 -303: Deceptive and Unfair Trade Practices",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "3",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  586175,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  801831,
+                                                "KeyField":  null,
+                                                "Field2":  "2023-12-21T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "4",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  586176,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  801831,
+                                                "KeyField":  null,
+                                                "Field2":  "2023-12-21T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 5(A)1 Failed to maintain required cargo liability insurance",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "5",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  586177,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  801831,
+                                                "KeyField":  null,
+                                                "Field2":  "2023-12-21T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 5(A)2 Failed to maintain required bodily injury \u0026 property damage liability insurance",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            }
+                                        ],
+                              "Count":  5
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Monster Moving, Inc.",
+                               "Established_Yr":  "2008",
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  801831,
+                               "Does_Business_As":  "5 Star Moving Inc.",
+                               "Address":  "712 Park",
+                               "City":  "West Palm Beach",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33401",
+                               "MailingAddress":  "712 Park",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "West Palm Beach",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33401",
+                               "PhoneNumber":  "5615781099",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "info@monstermovinginc.com",
+                               "WebsiteURL":  "www.monstermovinginc.com",
+                               "Fax":  "",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  801831,
+                                           "LastName":  "Aloneftis",
+                                           "FirstName":  "Justin",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "5615781099"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Monster Moving, Inc.",
+                                         "Established_Yr":  "2008",
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  801831,
+                                         "Does_Business_As":  "5 Star Moving Inc.",
+                                         "Address":  "712 Park",
+                                         "City":  "West Palm Beach",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33401",
+                                         "MailingAddress":  "712 Park",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "West Palm Beach",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33401",
+                                         "PhoneNumber":  "5615781099",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "info@monstermovinginc.com",
+                                         "WebsiteURL":  "www.monstermovinginc.com",
+                                         "Fax":  "",
+                                         "License_Required":  "Y"
+                                     }
+}

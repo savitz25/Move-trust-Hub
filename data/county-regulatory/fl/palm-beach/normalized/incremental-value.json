@@ -1,0 +1,38 @@
+{
+  "task": "FL-C002",
+  "data_scope_notes": {
+    "roster": "NEAR_FULL_ACTIVE_LICENSED_ROSTER (n=142)",
+    "bir_complaints_enforcement": "SAMPLE (n=22 BIR reports)"
+  },
+  "deterministic_fdacs_matches": 59,
+  "review_required": 17,
+  "not_found_in_fdacs": 66,
+  "insufficient_evidence": 0,
+  "roster_adds": {
+    "owner_president_manager_contact": 142,
+    "website": 83,
+    "phone": 142,
+    "fleet_size": 137,
+    "established_year": 51,
+    "county_permit_identity": 142
+  },
+  "sample_bir_adds": {
+    "reports": 22,
+    "with_email": 22,
+    "with_mailing_address": 22,
+    "with_complaint_history": 4,
+    "complaint_observations": 20,
+    "with_disposition": 17,
+    "without_disposition": 3,
+    "with_enforcement": 12,
+    "enforcement_observations": 54
+  },
+  "fdacs_typically_lacks_vs_county": [
+    "county Moving Business Permit number (MV####)",
+    "county permit issue/expiry under Ord. 2005-007",
+    "owner/president/manager/dispute-contact name+title",
+    "fleet size (vehicle total)",
+    "Business Information Report 3-year dispute history with dispositions",
+    "administrative actions / citations / notices of violation"
+  ]
+}

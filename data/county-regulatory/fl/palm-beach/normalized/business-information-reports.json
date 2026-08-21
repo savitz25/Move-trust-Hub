@@ -1,0 +1,917 @@
+{
+  "task": "FL-C002",
+  "county": "Palm Beach",
+  "data_scope": "SAMPLE",
+  "reports_analyzed": 22,
+  "retrieved_at": "2026-08-21T17:36:35.678Z",
+  "records": [
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1200818",
+      "business_seq": 1200818,
+      "business_regulatory_id": "MV1017",
+      "business_name": "Move For You, Inc",
+      "dba": "Move For You, Inc",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "18863 Schooner, Boca Raton, FL, 33496",
+      "mailing_address": "5363 Buckhead, Boca Raton, FL, 33486",
+      "phone": "5617773100",
+      "email": "moveforyouinc@gmail.com",
+      "website": "www.moveforyouinc.com",
+      "fax": "5618943606",
+      "license_required": "Y",
+      "license_list": [],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 1,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1300123",
+      "business_seq": 1300123,
+      "business_regulatory_id": "MV1039",
+      "business_name": "Meehan's Family Moving, Inc.",
+      "dba": "Meehan's Family Moving, Inc.",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "1320 53rd, Mangonia Park, FL, 33407",
+      "mailing_address": "1320 53rd, Mangonia Park, FL, 33407",
+      "phone": "5619046000",
+      "email": "meehansfamilymoving@gmail.com",
+      "website": "www.meehansfamilymoving.com",
+      "fax": "5613703655",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV1039",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [
+        {
+          "first_name": "Sheila",
+          "last_name": "Meehan",
+          "title": "Dispute Contact",
+          "phone": "5619046000"
+        }
+      ],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1500212",
+      "business_seq": 1500212,
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "dba": "Greek Moving and Storage/Good Greek Moving & Storage",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "1333 Jog , West Palm Beach, FL, 33413",
+      "mailing_address": "1333 Jog , West Palm Beach, FL, 33413",
+      "phone": "5616831313",
+      "email": "don@goodgreek.com",
+      "website": "www.goodgreek.com",
+      "fax": "5613187799",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV1097",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 8,
+      "case_summary": [
+        {
+          "resolution_code": "A02",
+          "resolution_short_desc": "Referred to another agency",
+          "total_case": 4,
+          "status": "closed"
+        },
+        {
+          "resolution_code": "A03",
+          "resolution_short_desc": "No jurisdiction",
+          "total_case": 1,
+          "status": "closed"
+        },
+        {
+          "resolution_code": "A10",
+          "resolution_short_desc": "No compromise",
+          "total_case": 2,
+          "status": "closed"
+        },
+        {
+          "resolution_code": "A12",
+          "resolution_short_desc": "No compromise by business",
+          "total_case": 1,
+          "status": "closed"
+        }
+      ],
+      "complaint_count_in_report": 8,
+      "admin_action_count": 5,
+      "citation_count": 1,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-9500149",
+      "business_seq": 9500149,
+      "business_regulatory_id": "MV11",
+      "business_name": "Freighthaulers Inc ",
+      "dba": "A-1 Moving & Storage",
+      "established_year": "1972",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "15070 Corporate, Jupiter, FL, 33478",
+      "mailing_address": "15070 Corporate, Jupiter, FL, 33478",
+      "phone": "5616250600",
+      "email": "emklause@a1moving.com",
+      "website": "www.a1moving.com",
+      "fax": "5612834791",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV11",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1501285",
+      "business_seq": 1501285,
+      "business_regulatory_id": "MV1121",
+      "business_name": "Andigo Movers LLC",
+      "dba": "Andigo Movers LLC",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "5867 Cayman, West Palm Beach, FL, 33407",
+      "mailing_address": "5867 Cayman, West Palm Beach, FL, 33407",
+      "phone": "5618394385",
+      "email": "INFO@ANDIGOMOVERS.COM",
+      "website": "www.andigomovers.com",
+      "fax": null,
+      "license_required": "Y",
+      "license_list": [],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 8,
+      "citation_count": 1,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1600578",
+      "business_seq": 1600578,
+      "business_regulatory_id": "MV1132",
+      "business_name": "E & C Moving & Delivery Service LLC",
+      "dba": "E & C Moving & Delivery Service LLC",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "1705 Donna, West Palm Beach, FL, 33409",
+      "mailing_address": "617 50th, West Palm Beach, FL, 33407",
+      "phone": "5612296180",
+      "email": "everaldvincent@gmail.com",
+      "website": null,
+      "fax": null,
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV1132",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 9,
+      "citation_count": 6,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1700732",
+      "business_seq": 1700732,
+      "business_regulatory_id": "MV1145",
+      "business_name": "All My Sons Of The Palm Beaches, LLC",
+      "dba": "All My Sons of The Palm Beaches, LLC",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "838 13th, Riviera Beach, FL, 33404",
+      "mailing_address": "2400 Old Mill , Carrollton, TX, 75007",
+      "phone": "5614753493",
+      "email": "compliance@allmysons.com",
+      "website": "www.allmysons.com",
+      "fax": "8884865298",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV1145",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [
+        {
+          "first_name": "Geoff",
+          "last_name": "Burgess",
+          "title": "Dispute Contact",
+          "phone": "4694615000"
+        }
+      ],
+      "case_summary_total": 4,
+      "case_summary": [
+        {
+          "resolution_code": null,
+          "resolution_short_desc": null,
+          "total_case": 1,
+          "status": "closed"
+        },
+        {
+          "resolution_code": "A10",
+          "resolution_short_desc": "No compromise",
+          "total_case": 1,
+          "status": "closed"
+        },
+        {
+          "resolution_code": "A11",
+          "resolution_short_desc": "No compromise by consumer",
+          "total_case": 1,
+          "status": "closed"
+        },
+        {
+          "resolution_code": "A12",
+          "resolution_short_desc": "No compromise by business",
+          "total_case": 1,
+          "status": "closed"
+        }
+      ],
+      "complaint_count_in_report": 4,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1901637",
+      "business_seq": 1901637,
+      "business_regulatory_id": "MV1191",
+      "business_name": "Patriot Moving & Storage, LLC",
+      "dba": "Patriot Moving & Storage, LLC",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "217 3rd, Lantana, FL, 33462",
+      "mailing_address": "217 3rd, Lantana, FL, 33462",
+      "phone": "5613454977",
+      "email": "info@patriotmoving.net",
+      "website": null,
+      "fax": null,
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV1191",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1902255",
+      "business_seq": 1902255,
+      "business_regulatory_id": "MV1193",
+      "business_name": "Safebound Logistics, LLC",
+      "dba": "Safebound Moving & Storage",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "6051 Southern, West Palm Beach, FL, 33413",
+      "mailing_address": "6051 Southern, West Palm Beach, FL, 33413",
+      "phone": "5615107191",
+      "email": "jamie@safebound.com",
+      "website": "safeboundmoving.com",
+      "fax": null,
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV1193",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [
+        {
+          "first_name": "Rebecca",
+          "last_name": "Timmins",
+          "title": "Dispute Contact",
+          "phone": "9087701400"
+        }
+      ],
+      "case_summary_total": 7,
+      "case_summary": [
+        {
+          "resolution_code": null,
+          "resolution_short_desc": null,
+          "total_case": 2,
+          "status": "closed"
+        },
+        {
+          "resolution_code": "A02",
+          "resolution_short_desc": "Referred to another agency",
+          "total_case": 4,
+          "status": "closed"
+        },
+        {
+          "resolution_code": "A10",
+          "resolution_short_desc": "No compromise",
+          "total_case": 1,
+          "status": "closed"
+        }
+      ],
+      "complaint_count_in_report": 7,
+      "admin_action_count": 2,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1907804",
+      "business_seq": 1907804,
+      "business_regulatory_id": "MV1210",
+      "business_name": "Silver Lining Moving & Delivery, LLC",
+      "dba": "Silver Lining Moving & Delivery, LLC",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "868 Ryanwood, West Palm Beach, FL, 33413",
+      "mailing_address": "320 Arlington, West Palm Beach, FL, 33405",
+      "phone": "5613012450",
+      "email": "jerrypryor135@comcast.net",
+      "website": null,
+      "fax": null,
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV1210",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 1,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1000",
+      "business_seq": 1000,
+      "business_regulatory_id": "MV42",
+      "business_name": "A Man With A Van, Inc. ",
+      "dba": "A Man With A Van, Inc.",
+      "established_year": "1997",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "3132 Fortune, Wellington, FL, 33414",
+      "mailing_address": "3132 Fortune, Wellington, FL, 33414",
+      "phone": "5617849772",
+      "email": "Johnpiacovetti@aol.com",
+      "website": "www.amanwithavaninc.com",
+      "fax": "5617849772",
+      "license_required": "Y",
+      "license_list": [],
+      "dispute_contacts": [
+        {
+          "first_name": "Jade",
+          "last_name": "Iacovetti",
+          "title": "Dispute Contact",
+          "phone": "5617849772"
+        }
+      ],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-2617",
+      "business_seq": 2617,
+      "business_regulatory_id": "MV509",
+      "business_name": "All My Sons Moving & Storage Of West Palm Beach Inc.",
+      "dba": "True Van Lines, All My Sons Moving & Storage, Quick N Easy Moving",
+      "established_year": "2000",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "15827 Guild, Jupiter, FL, 33478",
+      "mailing_address": "2400 Old Mill, Carrollton, TX, 75007",
+      "phone": "5612337900",
+      "email": "privera@allmysons.com",
+      "website": "www.allmysons.com",
+      "fax": "5616274003",
+      "license_required": "Y",
+      "license_list": [],
+      "dispute_contacts": [
+        {
+          "first_name": "Ashley",
+          "last_name": "Hudnall",
+          "title": "Dispute Contact",
+          "phone": "4694615000"
+        }
+      ],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 3,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-201651",
+      "business_seq": 201651,
+      "business_regulatory_id": "MV624",
+      "business_name": "Supreme Relocation, Inc.",
+      "dba": "Supreme Relocation, Inc.",
+      "established_year": "2002",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "1130  Delray Lakes, Delray Beach, FL, 33444",
+      "mailing_address": "1130  Delray Lakes, Delray Beach, FL, 33444",
+      "phone": "5614414205",
+      "email": "info@supremerelocation.com",
+      "website": "www.supremerelocation.com",
+      "fax": "5612763856",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV624",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-400125",
+      "business_seq": 400125,
+      "business_regulatory_id": "MV747",
+      "business_name": "Designers Logistics Support, LLC",
+      "dba": "Designers Logistics Support, LLC",
+      "established_year": "2005",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "3616 Prospect, Riviera Beach, FL, 33404",
+      "mailing_address": "3616 Prospect, Riviera Beach, FL, 33404",
+      "phone": "5618409441",
+      "email": "terryleach.dls@gmail.com",
+      "website": null,
+      "fax": "5618409508",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV747",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-502005",
+      "business_seq": 502005,
+      "business_regulatory_id": "MV772",
+      "business_name": "Atlantic Coast Muscles, LLC",
+      "dba": "Two Men And A Truck",
+      "established_year": "2005",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "355 Hiatt, Palm Beach Gardens, FL, 33418",
+      "mailing_address": "1091 Reading, Mason, OH, 45040",
+      "phone": "5132055851",
+      "email": "michael.lally@twomen.com",
+      "website": "www.twomen.com",
+      "fax": "5137700907",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV772",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [
+        {
+          "first_name": "Kyle",
+          "last_name": "Pasqualone",
+          "title": "Dispute Contact",
+          "phone": "6143528216"
+        }
+      ],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-700502",
+      "business_seq": 700502,
+      "business_regulatory_id": "MV802",
+      "business_name": "Pack On The Go, Inc.",
+      "dba": "Pack On The Go, Inc.",
+      "established_year": "2005",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "730 Military, Deerfield Beach, FL, 33442",
+      "mailing_address": "730 Military, Deerfield Beach, FL, 33442",
+      "phone": "5614987801",
+      "email": "info@packonthego.com",
+      "website": "www.packonthego.com",
+      "fax": "5614987805",
+      "license_required": "Y",
+      "license_list": [],
+      "dispute_contacts": [
+        {
+          "first_name": "Nicholas J.",
+          "last_name": "Ford",
+          "title": "Dispute Contact",
+          "phone": "5614987801"
+        }
+      ],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 2,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-801831",
+      "business_seq": 801831,
+      "business_regulatory_id": "MV837",
+      "business_name": "Monster Moving, Inc.",
+      "dba": "5 Star Moving Inc.",
+      "established_year": "2008",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "712 Park, West Palm Beach, FL, 33401",
+      "mailing_address": "712 Park, West Palm Beach, FL, 33401",
+      "phone": "5615781099",
+      "email": "info@monstermovinginc.com",
+      "website": "www.monstermovinginc.com",
+      "fax": null,
+      "license_required": "Y",
+      "license_list": [],
+      "dispute_contacts": [
+        {
+          "first_name": "Justin",
+          "last_name": "Aloneftis",
+          "title": "Dispute Contact",
+          "phone": "5615781099"
+        }
+      ],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 5,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1184",
+      "business_seq": 1184,
+      "business_regulatory_id": "MV86",
+      "business_name": "Dependable Pro Movers, Inc.",
+      "dba": "Dependable Pro Movers, Inc.",
+      "established_year": "1995",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "371 Las Palmas, Royal Palm Beach, FL, 33411",
+      "mailing_address": "371 Las Palmas, Royal Palm Beach, FL, 33411",
+      "phone": "5617982241",
+      "email": "krcaa@aol.com",
+      "website": null,
+      "fax": "5617986412",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV86",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [
+        {
+          "first_name": "Kris",
+          "last_name": "Cerdas",
+          "title": "Dispute Contact",
+          "phone": "5617982241"
+        }
+      ],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-900568",
+      "business_seq": 900568,
+      "business_regulatory_id": "MV867",
+      "business_name": "RSVP Global, Inc.",
+      "dba": "RSVP PALM BEACH",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "350 Hiatt, Palm Beach Gardens, FL, 33418",
+      "mailing_address": "350 Hiatt, Palm Beach Gardens, FL, 33418",
+      "phone": "5616599077",
+      "email": "support@rsvpglb.com",
+      "website": null,
+      "fax": "5616599776",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV867",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 0,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1001724",
+      "business_seq": 1001724,
+      "business_regulatory_id": "MV956",
+      "business_name": "McCorquodale Transfer LLC",
+      "dba": "McCorquodale Transfer LLC",
+      "established_year": "2004",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "1715 Meathe, West Palm Beach, FL, 33411",
+      "mailing_address": "1715 Meathe, West Palm Beach, FL, 33411",
+      "phone": "5618423663",
+      "email": "bnye@mccorquodale.biz",
+      "website": "www.mtmoves.com",
+      "fax": null,
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV956",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 1,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1100270",
+      "business_seq": 1100270,
+      "business_regulatory_id": "MV964",
+      "business_name": "JCAL Holdings, LLC",
+      "dba": "College Hunks Hauling Junk and Moving ",
+      "established_year": "0",
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "1802 4th, Lake Worth, FL, 33461",
+      "mailing_address": "1802 4th, Lake Worth, FL, 33461",
+      "phone": "5616025009",
+      "email": "barry.reiss@chhj.com",
+      "website": "www.collegehunks.com",
+      "fax": "5612290190",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV964",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [
+        {
+          "first_name": "Barry",
+          "last_name": "Reiss",
+          "title": "Dispute Contact",
+          "phone": "5616025009"
+        }
+      ],
+      "case_summary_total": 1,
+      "case_summary": [
+        {
+          "resolution_code": "A06",
+          "resolution_short_desc": "Resolved prior to Consumer Affairs intervention",
+          "total_case": 1,
+          "status": "closed"
+        }
+      ],
+      "complaint_count_in_report": 1,
+      "admin_action_count": 4,
+      "citation_count": 1,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    },
+    {
+      "county": "Palm Beach",
+      "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "source_record_id": "pbc-bir-1100392",
+      "business_seq": 1100392,
+      "business_regulatory_id": "MV969",
+      "business_name": "AA Condo Movers, LLC",
+      "dba": "AA Condo Movers, LLC",
+      "established_year": null,
+      "business_type_desc": "Moving & Storage",
+      "physical_address": "5701 2nd, Boca Raton, FL, 33487",
+      "mailing_address": "5701 2nd, Boca Raton, FL, 33487",
+      "phone": "5612471491",
+      "email": "aacondomovers@gmail.com",
+      "website": "www.aacondomovers.com",
+      "fax": "5615167600",
+      "license_required": "Y",
+      "license_list": [
+        {
+          "license_number": "MV969",
+          "license_expiry_date": "2027-05-31 04:00:00.0000000"
+        }
+      ],
+      "dispute_contacts": [],
+      "case_summary_total": 0,
+      "case_summary": [],
+      "complaint_count_in_report": 0,
+      "admin_action_count": 4,
+      "citation_count": 0,
+      "reporting_window_note": "Official Consumer Affairs Business Information Report — approximately three-year consumer dispute history per county guidance",
+      "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "pii_removed": true,
+      "consumer_pii": false,
+      "notes": "Normalized BIR excludes free-form consumer narratives. Complaint observations retain business-level case IDs, allegation categories, statuses, and dispositions only."
+    }
+  ]
+}

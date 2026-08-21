@@ -1,0 +1,113 @@
+﻿{
+    "business_seq":  1901637,
+    "license_number":  "MV1191",
+    "business_name":  "Patriot Moving \u0026 Storage, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV1191",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Patriot Moving \u0026 Storage, LLC",
+                               "Established_Yr":  null,
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1901637,
+                               "Does_Business_As":  "Patriot Moving \u0026 Storage, LLC",
+                               "Address":  "217 3rd",
+                               "City":  "Lantana",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33462",
+                               "MailingAddress":  "217 3rd",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Lantana",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33462",
+                               "PhoneNumber":  "5613454977",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "info@patriotmoving.net",
+                               "WebsiteURL":  null,
+                               "Fax":  "",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Patriot Moving \u0026 Storage, LLC",
+                                         "Established_Yr":  null,
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1901637,
+                                         "Does_Business_As":  "Patriot Moving \u0026 Storage, LLC",
+                                         "Address":  "217 3rd",
+                                         "City":  "Lantana",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33462",
+                                         "MailingAddress":  "217 3rd",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Lantana",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33462",
+                                         "PhoneNumber":  "5613454977",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "info@patriotmoving.net",
+                                         "WebsiteURL":  null,
+                                         "Fax":  "",
+                                         "License_Required":  "Y"
+                                     }
+}

@@ -1,0 +1,63 @@
+﻿{
+    "$id":  "1",
+    "ListBusinessTypes":  null,
+    "ListBusinessNames":  null,
+    "ListBusTypeProducts":  [
+                                {
+                                    "$id":  "2",
+                                    "ProductSeq":  -1,
+                                    "BusinessTypeSeq":  -1,
+                                    "ProductDesc":  ""
+                                },
+                                {
+                                    "$id":  "3",
+                                    "ProductSeq":  318,
+                                    "BusinessTypeSeq":  58,
+                                    "ProductDesc":  "Interstate Moves"
+                                },
+                                {
+                                    "$id":  "4",
+                                    "ProductSeq":  319,
+                                    "BusinessTypeSeq":  58,
+                                    "ProductDesc":  "Intrastate Moves"
+                                },
+                                {
+                                    "$id":  "5",
+                                    "ProductSeq":  320,
+                                    "BusinessTypeSeq":  58,
+                                    "ProductDesc":  "Local"
+                                },
+                                {
+                                    "$id":  "6",
+                                    "ProductSeq":  360,
+                                    "BusinessTypeSeq":  58,
+                                    "ProductDesc":  "Move began or ended in Broward County"
+                                },
+                                {
+                                    "$id":  "7",
+                                    "ProductSeq":  361,
+                                    "BusinessTypeSeq":  58,
+                                    "ProductDesc":  "Move began or ended in Martin County"
+                                },
+                                {
+                                    "$id":  "8",
+                                    "ProductSeq":  359,
+                                    "BusinessTypeSeq":  58,
+                                    "ProductDesc":  "Move began or ended in Miami-Dade County"
+                                },
+                                {
+                                    "$id":  "9",
+                                    "ProductSeq":  7,
+                                    "BusinessTypeSeq":  58,
+                                    "ProductDesc":  "Other"
+                                },
+                                {
+                                    "$id":  "10",
+                                    "ProductSeq":  347,
+                                    "BusinessTypeSeq":  58,
+                                    "ProductDesc":  "Self-Storage"
+                                }
+                            ],
+    "ListBIRBusNameByProduct":  null,
+    "ComplaintBusInfo":  null
+}

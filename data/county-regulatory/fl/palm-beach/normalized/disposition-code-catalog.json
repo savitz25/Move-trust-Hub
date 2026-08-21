@@ -1,0 +1,317 @@
+{
+  "county": "Palm Beach",
+  "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+  "observation_type": "OFFICIAL_CODE_TABLE",
+  "retrieved_at": "2026-08-21T17:36:35.678Z",
+  "count": 44,
+  "values": [
+    {
+      "resolution_code": "A07",
+      "resolution_short_desc": "Mediation resulted in an adjustment, refund, or repair",
+      "resolution_long_desc": "a) The business or consumer agreed to make an adjustment in services/demands and/or provided additional information/documentation in an effort to resolve the case, b) the business agreed to provide a refund of money or services to the consumer, or c) the business agreed to make repairs and/or provide the service(s) in question.",
+      "resolution_seq": 3,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A06",
+      "resolution_short_desc": "Resolved prior to Consumer Affairs intervention",
+      "resolution_long_desc": "After submitting a written dispute to Consumer Affairs, the consumer or business resolved the dispute before any or significant intervention by Consumer Affairs.",
+      "resolution_seq": 4,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "D02",
+      "resolution_short_desc": "Specific Business inquiry",
+      "resolution_long_desc": "Consumer Affairs received correspondence requesting specific information about a business (i.e., Business Information Report, records request, etc.).",
+      "resolution_seq": 5,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "C01",
+      "resolution_short_desc": "Case unsubstantiated",
+      "resolution_long_desc": "Consumer Affairs attempted to investigate a dispute and determined that the alleged dispute should be withdrawn as the consumer was unable or unwilling to substantiate the claim/allegation.",
+      "resolution_seq": 7,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A10",
+      "resolution_short_desc": "No compromise",
+      "resolution_long_desc": "One or both parties would not agree to a settlement in order to resolve the dispute.",
+      "resolution_seq": 8,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "C02",
+      "resolution_short_desc": "Case withdrawn by consumer",
+      "resolution_long_desc": "After submitting a written dispute to Consumer Affairs concerning a business, the consumer requests that the dispute be withdrawn.  If correspondence has been exchanged with the involved business, unless an exception is approved by the director, the request to have a case withdrawn must be submitted in writing or in person by the consumer.",
+      "resolution_seq": 9,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A02",
+      "resolution_short_desc": "Referred to another agency",
+      "resolution_long_desc": "The case was forwarded to another regulatory/ enforcement agency for possible action.",
+      "resolution_seq": 10,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A13",
+      "resolution_short_desc": "No response from business",
+      "resolution_long_desc": "No response was received from the business despite written correspondence and/or phone calls by Consumer Affairs.    ",
+      "resolution_seq": 11,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A15",
+      "resolution_short_desc": "Appears to be out of business",
+      "resolution_long_desc": "Consumer Affairs received information indicating that the company is no longer in business. ",
+      "resolution_seq": 13,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "D01",
+      "resolution_short_desc": "Corporate, partnership, sole proprietor, etc. documentation",
+      "resolution_long_desc": "Consumer Affairs receives factual information/updates/correspondence concerning a business.",
+      "resolution_seq": 14,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A09",
+      "resolution_short_desc": "After mediation, reasonable offer/explanation made by business",
+      "resolution_long_desc": "The business made a sensible/rational/good faith offer which was supported by documentation to resolve a dispute with the consumer and/or provided a sensible/rational explanation.",
+      "resolution_seq": 15,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A17",
+      "resolution_short_desc": "Business corrects practice",
+      "resolution_long_desc": "The business/landlord corrected/changed its practice/procedures after intervention by Consumer Affairs, prior to any legal action being initiated.",
+      "resolution_seq": 16,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A01",
+      "resolution_short_desc": "Administrative action taken",
+      "resolution_long_desc": "Consumer Affairs initiated some type of administrative action against the business, such as a cease and desist order, assurance of voluntary compliance, notice of violation (written warning) and/or civil citation (with a fine).",
+      "resolution_seq": 17,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A16",
+      "resolution_short_desc": "For the record only",
+      "resolution_long_desc": "The consumer did not request mediation by Consumer Affairs, but requested the case information to be retained for public record.",
+      "resolution_seq": 18,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "D04",
+      "resolution_short_desc": "General request for information",
+      "resolution_long_desc": "A consumer has written to Consumer Affairs and is requesting general information or guidance about a company, agency or issue. ",
+      "resolution_seq": 19,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": null,
+      "resolution_short_desc": "None",
+      "resolution_long_desc": null,
+      "resolution_seq": 20,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A03",
+      "resolution_short_desc": "No jurisdiction",
+      "resolution_long_desc": "The case was beyond the authority or scope of the Consumer Affairs ordinance.",
+      "resolution_seq": 22,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A04",
+      "resolution_short_desc": "No jurisdiction - Business vs. Business ",
+      "resolution_long_desc": "After an investigation by Consumer Affairs it was determined that the complainant was actually a business.  Unless otherwise approved by the Director, Consumer Affairs only investigates disputes between individual consumers and businesses.",
+      "resolution_seq": 23,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A08",
+      "resolution_short_desc": "Mediation resulted in an adjustment, refund or repair after intervention by an entity other than the business",
+      "resolution_long_desc": "Consumer Affairs was successful in securing the intervention of an entity other than the business which resulted in: a) an adjustment in services or demands, b) a refund of money or services to the consumer or c) repairs or services to the item(s) in question.",
+      "resolution_seq": 25,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A11",
+      "resolution_short_desc": "No compromise by consumer",
+      "resolution_long_desc": "The business was willing to make a compromise in order to settle the case, but the consumer could not or would not agree to compromise from the original demands. ",
+      "resolution_seq": 27,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "D03",
+      "resolution_short_desc": "Complimentary correspondence",
+      "resolution_long_desc": "Consumer Affairs received complimentary correspondence from a consumer about a specific business",
+      "resolution_seq": 28,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A05",
+      "resolution_short_desc": "Business filed bankruptcy",
+      "resolution_long_desc": "Consumer Affairs obtained information that the business has filed for bankruptcy.  Only the courts will have authority in deciding consumer claims against the business.",
+      "resolution_seq": 30,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A14",
+      "resolution_short_desc": "Business not found/located",
+      "resolution_long_desc": "The reasonable efforts by Consumer Affairs and/or the consumer to find/locate the business were unsuccessful.",
+      "resolution_seq": 31,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B01",
+      "resolution_short_desc": "Civil citation issued",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county/state law and was issued a civil citation requiring the business/violator to pay a fine or to request a court or administrative hearing.",
+      "resolution_seq": 32,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B02",
+      "resolution_short_desc": "Civil citation issued but mediation resulted in adjustment, refund or repair",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county/state law and was issued a civil citation requiring the business/violator to pay a fine or to request a court or administrative hearing.  Additionally, a) The business or consumer agreed to make an adjustment in services/demands and/or provided additional information/documentation in an effort to resolve the case, b) the business agreed to provide a refund of money or services to the consumer, or c) the business agreed to make repairs and/or provide the service(s) in question.",
+      "resolution_seq": 33,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B03",
+      "resolution_short_desc": "Civil citation issued but business made a reasonable offer or explanation to resolve specific consumer dispute",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county/state law and was issued a civil citation requiring the business/violator to pay a fine or to request a court or administrative hearing.  In addition, the business made a sensible/rational/good faith offer which was supported by documentation to resolve a dispute with the consumer and/or provided a sensible/rational explanation.",
+      "resolution_seq": 34,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B04",
+      "resolution_short_desc": "Civil citation issued and one or both parties would not compromise to resolve case",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county/state law and was issued a civil citation requiring the business/violator to pay a fine or to request a court or administrative hearing. In addition, one or both parties would not agree to a settlement in order to resolve the dispute.",
+      "resolution_seq": 35,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B07",
+      "resolution_short_desc": "Notice of Violation/Warning issued to correct offense",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county ordinance and was issued a Notice of Violation/written warning.  While there is no fine associated with a Notice of Violation there is an expectation that the company will resolve or remedy the offense in a specific period of time.",
+      "resolution_seq": 36,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B08",
+      "resolution_short_desc": "Notice of Violation/Warning issued to correct offense but mediation resulted in adjustment, refund or repair",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county ordinance and was issued a Notice of Violation/written warning.  While there is no fine associated with a Notice of Violation there is an expectation that the company will resolve or remedy the offense in a specific period of time.  Additionally, a) The business or consumer agreed to make an adjustment in services/demands and/or provided additional information/documentation in an effort to resolve the case, b) the business agreed to provide a refund of money or services to the consumer, or c) the business agreed to make repairs and/or provide the service(s) in question.",
+      "resolution_seq": 37,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B09",
+      "resolution_short_desc": "Notice of Violation/Warning issued to correct offense but business made a reasonable offer or explanation to resolve specific consumer dispute",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county ordinance and was issued a Notice of Violation or written warning.  While there is no fine associated with a Notice of Violation there is an expectation that the company will resolve or remedy the offense in a specific period of time.  In addition, the business made a sensible/rational/good faith offer which was supported by documentation to resolve a dispute with the consumer and/or provided a sensible/rational explanation.",
+      "resolution_seq": 38,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B10",
+      "resolution_short_desc": "Notice of Violation/Warning issued to correct offense and one or both parties would not compromise to resolve case",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county ordinance and was issued a Notice of Violation or written warning.  While there is no fine associated with a Notice of Violation there is an expectation that the company will resolve or remedy the offense in a specific period of time.  In addition, one or both parties would not agree to a settlement in order to resolve the dispute.",
+      "resolution_seq": 39,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B13",
+      "resolution_short_desc": "No violation of law",
+      "resolution_long_desc": "This normally relates to an industry regulated by Consumer Affairs through a county ordinance.  After an investigation, no violations of the ordinance were found.",
+      "resolution_seq": 40,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B14",
+      "resolution_short_desc": "No violation of law but mediation resulted in adjustment, refund or repair",
+      "resolution_long_desc": "This normally relates to an industry regulated by Consumer Affairs through a county ordinance.  After an investigation, no violations of the ordinance were found, however, a) The business or consumer agreed to make an adjustment in services/demands and/or provided additional information/documentation in an effort to resolve the case, b) the business agreed to provide a refund of money or services to the consumer, or c) the business agreed to make repairs and/or provide the service(s) in question.",
+      "resolution_seq": 41,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B15",
+      "resolution_short_desc": "No violation of law and business made a reasonable offer or explanation to resolve specific consumer dispute",
+      "resolution_long_desc": "This normally relates to an industry regulated by Consumer Affairs through a county ordinance.  After an investigation, no violations of the ordinance were found; however, the business made a sensible/rational/good faith offer which was supported by documentation to resolve the dispute with the consumer and/or provided a sensible/rational explanation. ",
+      "resolution_seq": 42,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B16",
+      "resolution_short_desc": "No violation of law and one or both parties would not compromise to resolve case",
+      "resolution_long_desc": "This normally relates to an industry regulated by Consumer Affairs through a county ordinance.  After an investigation, no violations of the ordinance were found and further one or both of the parties would not agree to a settlement of the dispute.",
+      "resolution_seq": 43,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B19",
+      "resolution_short_desc": "No violation of county moving ordinance concerning damage or loss to consumer's goods or property",
+      "resolution_long_desc": "After Consumer Affairs investigated, it was determined that the moving company followed the requirements of the ordinance.  The moving company offered or paid the consumer the required minimum of .60 cents per pound (established by the Federal government) for each lost/damaged item OR agreed to repair/replace damaged items.",
+      "resolution_seq": 44,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "E01",
+      "resolution_short_desc": "Case File Not Located",
+      "resolution_long_desc": "The written documents associated with a particular case cannot be located at Consumer Affairs.  The records may have been misfiled, misplaced, accidentally discarded or illegally removed from Consumer Affairs.  Since there are no written files/records to support an allegation or consumer dispute, the information is removed from the Business Information Report.  The computer records associated with the case and/or some files may be available for personal review at Consumer Affairs",
+      "resolution_seq": 45,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "A12",
+      "resolution_short_desc": "No compromise by business",
+      "resolution_long_desc": "The business was unwilling or unable to make any compromise offer to settle the dispute. ",
+      "resolution_seq": 47,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B06",
+      "resolution_short_desc": "Civil citation issued and there was no compromise by business to resolve case",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county/state law and was issued a civil citation requiring the business/violator to pay a fine or to request a court or administrative hearing.  The business was unwilling or unable to make a compromise offer to settle the dispute.",
+      "resolution_seq": 48,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B11",
+      "resolution_short_desc": "Notice of Violation/Warning issued to correct offense and there was no compromise by consumer to resolve case",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county ordinance and was issued a Notice of Violation or written warning.  While there is no fine associated with a Notice of Violation there is an expectation that the company will resolve or remedy the offense in a specific period of time.  The business was willing to make a compromise in order to settle the case, but the consumer could not or would not agree to a compromise from the original demands.",
+      "resolution_seq": 49,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B12",
+      "resolution_short_desc": "Notice of Violation/Warning issued to correct offense and there was no compromise by business to resolve case",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county ordinance and was issued a Notice of Violation or written warning.  While there is no fine associated with a Notice of Violation there is an expectation that the company will resolve or remedy the offense in a specific period of time.  The business was unwilling or unable to make a compromise offer to settle the dispute.",
+      "resolution_seq": 50,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B17",
+      "resolution_short_desc": "No violation of law and there was no compromise by the consumer to resolve case",
+      "resolution_long_desc": "This normally relates to an industry regulated by Consumer Affairs through a county ordinance.  After an investigation, no violations of the ordinance were found.  The business was willing to make a compromise in order to settle the case, but the consumer could not or would not agree to any compromise from the original demands.",
+      "resolution_seq": 51,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B18",
+      "resolution_short_desc": "No violation of law but there was no compromise by business to resolve case",
+      "resolution_long_desc": "This normally relates to an industry regulated by Consumer Affairs through a county ordinance.  After an investigation, no violations of the ordinance were found but the business was unwilling or unable to make a compromise offer to settle the dispute. ",
+      "resolution_seq": 52,
+      "source": "api/Complaint/GetResolutions"
+    },
+    {
+      "resolution_code": "B05",
+      "resolution_short_desc": "Civil citation issued and there was no compromise by consumer to resolve case",
+      "resolution_long_desc": "Consumer Affairs determined that a regulated business violated the applicable county/state law and was issued a civil citation requiring the business/violator to pay a fine or to request a court or administrative hearing.  The business was willing to make a compromise in order to settle the case, but the consumer could not or would not agree to any compromise from the original demands.",
+      "resolution_seq": 53,
+      "source": "api/Complaint/GetResolutions"
+    }
+  ]
+}

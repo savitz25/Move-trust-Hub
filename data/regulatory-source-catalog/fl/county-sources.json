@@ -15,27 +15,37 @@
       "official_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Moving.aspx",
       "dataset_name": "Licensed Moving Companies Lookup + Moving Ordinance administration",
       "dataset_type": "MOVER_SPECIFIC_REGULATOR",
-      "access_method": "SEARCHABLE_PUBLIC",
+      "access_method": "SEARCHABLE_PUBLIC_API",
       "bulk_available": false,
       "historical_available": "UNKNOWN",
       "update_frequency": "UNKNOWN",
       "related_urls": [
         "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Moving_App.aspx",
+        "https://secure.pbc.gov/ConsumerAffairs/Home/Moving",
+        "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
         "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/default.aspx"
       ],
       "fields_available": {
         "business_name": true,
-        "permit_number": "LIKELY",
-        "status": "LIKELY",
-        "phone": "LIKELY",
-        "physical_address": "LIKELY"
+        "dba": true,
+        "permit_number": true,
+        "status": true,
+        "issue_date": true,
+        "expiration_date": true,
+        "phone": true,
+        "website": true,
+        "physical_address": true,
+        "owner_or_officer_contact": true,
+        "fleet_size": true,
+        "established_year": "PARTIAL",
+        "email": "VIA_BIR"
       },
       "complaints_available": true,
       "complaint_disposition_available": true,
       "enforcement_available": true,
       "owners_available": true,
       "contacts_available": true,
-      "vehicles_available": "UNKNOWN",
+      "vehicles_available": "FLEET_COUNT_ONLY",
       "insurance_available": "UNKNOWN",
       "court_data_available": false,
       "consumer_pii_risk": "MEDIUM",
@@ -50,11 +60,18 @@
       "unique_data_value_score": 5,
       "engineering_cost_score": 3,
       "value_to_effort": 1.67,
-      "recommended_action": "FL-C002 primary — PRA for bulk licensed movers + complaint disposition extract",
-      "raw_data_status": "NOT_DOWNLOADED",
-      "acquisition_status": "DISCOVERED",
+      "recommended_action": "FL-C003 Palm Beach deterministic FDACS reconciliation OR keep PRA pending and acquire Broward in parallel",
+      "raw_data_status": "DOWNLOADED_STAGED",
+      "acquisition_status": "SAMPLE_AND_NEAR_FULL_ACTIVE_ROSTER_ACQUIRED",
       "adapter_status": "NONE",
-      "notes": "Grandfathered pre-2011 local mover ordinance. Online licensed mover lookup. Business Information Reports summarize allegations + dispositions over 3 years; detailed files at office."
+      "notes": "Credential: Moving Business Permit (License_Type_Seq 8; Ord. 2005-007). Public GetCompanies BusinessType=58 returns active LICENSED roster fields including owner/contact title, fleet total, website. Historical/inactive require PRA. Network reuse: same Consumer Affairs platform covers towing, VFH, immobilization, caregiver — relevant to Contractor/Senior/Insurance hubs without ingesting those categories in FL-C002.",
+      "network_reuse": {
+        "ContractorTrustHub": "MEDIUM-HIGH (general Consumer Affairs BIR/dispositions; towing/home services adjacency)",
+        "SeniorTrustHub": "HIGH (caregiver program on same platform; general consumer dispute dispositions)",
+        "InsuranceTrustHub": "MEDIUM (cargo/liability insurance enforcement language in NOV/citations)",
+        "other_verticals": "GENERAL_CONSUMER_PROTECTION_BIR",
+        "ingested_non_mover_categories": false
+      }
     },
     {
       "source_id": "FL-PBC-CA-BIR",
@@ -71,12 +88,17 @@
       "update_frequency": "UNKNOWN",
       "fields_available": {
         "business_name": true,
+        "dba": true,
         "physical_address": true,
+        "mailing_address": true,
         "phone": true,
+        "email": true,
         "website": true,
-        "owner": true,
+        "owner_or_dispute_contact": true,
         "complaint": true,
-        "complaint_disposition": true
+        "complaint_disposition": true,
+        "administrative_action": true,
+        "citation": true
       },
       "complaints_available": true,
       "complaint_disposition_available": true,
@@ -99,10 +121,16 @@
       "engineering_cost_score": 3,
       "value_to_effort": 1.67,
       "recommended_action": "PRA for structured multi-year disposition export without consumer PII",
-      "raw_data_status": "NOT_DOWNLOADED",
-      "acquisition_status": "DISCOVERED",
+      "raw_data_status": "DOWNLOADED_STAGED_SAMPLE",
+      "acquisition_status": "REPRESENTATIVE_SAMPLE_ACQUIRED",
       "adapter_status": "NONE",
-      "notes": "Explicitly states reports include allegation summaries AND subsequent case dispositions for ~3 years. High cross-vertical reuse."
+      "notes": "BIR APIs return business-level complaint case IDs, allegation categories, statuses, disposition codes, admin actions (Citation/NOV), and dispute-contact officers. ~3-year window. No consumer PII in complaint detail endpoint used for staging. High cross-vertical reuse; FL-C002 did not ingest non-mover categories.",
+      "network_reuse": {
+        "ContractorTrustHub": "HIGH",
+        "SeniorTrustHub": "HIGH",
+        "InsuranceTrustHub": "MEDIUM",
+        "ingested_non_mover_categories": false
+      }
     },
     {
       "source_id": "FL-BRW-CPD-MOVER",
@@ -251,7 +279,7 @@
       "accessibility_score": 5,
       "unique_data_value_score": 3,
       "engineering_cost_score": 1,
-      "value_to_effort": 3.0,
+      "value_to_effort": 3,
       "recommended_action": "Safe sample download in FL-C002+ for identity enrichment; not a substitute for mover license data",
       "raw_data_status": "NOT_DOWNLOADED",
       "acquisition_status": "DISCOVERED",
@@ -298,7 +326,7 @@
       "accessibility_score": 2,
       "unique_data_value_score": 4,
       "engineering_cost_score": 4,
-      "value_to_effort": 1.0,
+      "value_to_effort": 1,
       "recommended_action": "PRA for licensed/registered mover list if maintained; ordinance applies to moves beginning/ending in Pinellas from Pinellas/Pasco/Hillsborough",
       "raw_data_status": "NOT_DOWNLOADED",
       "acquisition_status": "DISCOVERED",
@@ -345,7 +373,7 @@
       "accessibility_score": 4,
       "unique_data_value_score": 3,
       "engineering_cost_score": 3,
-      "value_to_effort": 1.0,
+      "value_to_effort": 1,
       "recommended_action": "Sample search + PRA for disposition-capable extract; NOT mover-specific regulator",
       "raw_data_status": "NOT_DOWNLOADED",
       "acquisition_status": "DISCOVERED",
@@ -436,5 +464,22 @@
       "adapter_status": "NONE",
       "notes": "No Duval mover-specific permit program located. Mediation + unfair/deceptive trade ordinance enforcement."
     }
-  ]
+  ],
+  "task_updates": [
+    {
+      "task": "FL-C002",
+      "retrievedAt": "2026-08-21",
+      "note": "Palm Beach acquisition/staging; catalog fields refreshed from official API evidence"
+    }
+  ],
+  "fl_c002": {
+    "task": "FL-C002",
+    "county": "Palm Beach",
+    "google_places_api_requests": 0,
+    "production_writes": false,
+    "publicly_acquired_active_permits": 142,
+    "bir_sample_reports": 22,
+    "pra_required_for_complete_bulk_data": true,
+    "pra_submitted": false
+  }
 }

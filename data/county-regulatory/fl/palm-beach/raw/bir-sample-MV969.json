@@ -1,0 +1,204 @@
+﻿{
+    "business_seq":  1100392,
+    "license_number":  "MV969",
+    "business_name":  "AA Condo Movers, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV969",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  232991,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1100392,
+                                                "KeyField":  null,
+                                                "Field2":  "2011-01-21 00:00:00.0000000",
+                                                "Field3":  "MOV05-07 Sec 3(F) All ads placed by movers shall include bus address, phone # \u0026 PBC permit #",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "01/21/2011",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  317164,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1100392,
+                                                "KeyField":  null,
+                                                "Field2":  "2014-11-07 00:00:00.0000000",
+                                                "Field3":  "MOV05-07 Sec 8(A) Failed to provide shipper w/written contract prior to move",
+                                                "Field4":  "N/A",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "11/07/2014",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "3",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  317165,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1100392,
+                                                "KeyField":  null,
+                                                "Field2":  "2014-11-07 00:00:00.0000000",
+                                                "Field3":  "MOV05-07 Sec 9 Failed to provide shipper w/req. household mov. co. disclosures \u0026/or sign req form  ",
+                                                "Field4":  "N/A",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "11/07/2014",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "4",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  343251,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1100392,
+                                                "KeyField":  null,
+                                                "Field2":  "2015-11-19 08:59:02.0000000",
+                                                "Field3":  "MOV05-07 Sec 8(A) Failed to provide shipper w/written contract prior to move",
+                                                "Field4":  "N/A",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "11/19/2015",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            }
+                                        ],
+                              "Count":  4
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "AA Condo Movers, LLC",
+                               "Established_Yr":  null,
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1100392,
+                               "Does_Business_As":  "AA Condo Movers, LLC",
+                               "Address":  "5701 2nd",
+                               "City":  "Boca Raton",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33487",
+                               "MailingAddress":  "5701 2nd",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Boca Raton",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33487",
+                               "PhoneNumber":  "5612471491",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "aacondomovers@gmail.com",
+                               "WebsiteURL":  "www.aacondomovers.com",
+                               "Fax":  "5615167600",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "AA Condo Movers, LLC",
+                                         "Established_Yr":  null,
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1100392,
+                                         "Does_Business_As":  "AA Condo Movers, LLC",
+                                         "Address":  "5701 2nd",
+                                         "City":  "Boca Raton",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33487",
+                                         "MailingAddress":  "5701 2nd",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Boca Raton",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33487",
+                                         "PhoneNumber":  "5612471491",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "aacondomovers@gmail.com",
+                                         "WebsiteURL":  "www.aacondomovers.com",
+                                         "Fax":  "5615167600",
+                                         "License_Required":  "Y"
+                                     }
+}
