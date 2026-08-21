@@ -1,0 +1,49 @@
+{
+  "google_places_requests": 0,
+  "live": false,
+  "state_only_copy": "Registered with Florida FDACS as an intrastate household-goods mover for moves within Florida.",
+  "scope": "This Florida registration applies to household-goods moves within Florida. Interstate operating authority is regulated separately at the federal level.",
+  "no_federal_id": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+  "fdacs_block": {
+    "regulator": "Florida Department of Agriculture and Consumer Services",
+    "registrationNumber": "IM1025",
+    "registrationType": "Intrastate Mover",
+    "status": "Registered / Active",
+    "source": "Florida FDACS",
+    "freshness": "2026-08-21T17:11:52.759Z",
+    "headline": "Florida Intrastate Mover",
+    "detail": "Registered with Florida FDACS as an intrastate household-goods mover for moves within Florida.",
+    "scope": "This Florida registration applies to household-goods moves within Florida. Interstate operating authority is regulated separately at the federal level.",
+    "verificationWording": "Registration verified from Florida FDACS records",
+    "endorsement": false,
+    "federalIdClaim": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA"
+  },
+  "federal_plus_state": {
+    "federal": {
+      "usdot": "1018395",
+      "mcNumber": "425403",
+      "label": "Federal interstate authority (FMCSA / USDOT) is recorded separately from Florida FDACS registration."
+    },
+    "florida": {
+      "regulator": "Florida Department of Agriculture and Consumer Services",
+      "registrationNumber": "IM4099",
+      "registrationType": "Intrastate Mover",
+      "status": "Registered / Active",
+      "source": "Florida FDACS",
+      "freshness": null,
+      "headline": "Florida Intrastate Mover",
+      "detail": "Registered with Florida FDACS as an intrastate household-goods mover for moves within Florida.",
+      "scope": "This Florida registration applies to household-goods moves within Florida. Interstate operating authority is regulated separately at the federal level.",
+      "verificationWording": "Registration verified from Florida FDACS records",
+      "endorsement": false,
+      "federalIdClaim": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA"
+    },
+    "floridaImpliesFederal": false,
+    "federalImpliesFlorida": false
+  },
+  "contact_labels": {
+    "phone": "Phone reported in Florida FDACS registration",
+    "email": "Email reported in Florida FDACS registration",
+    "address": "Business address reported in Florida FDACS registration"
+  }
+}

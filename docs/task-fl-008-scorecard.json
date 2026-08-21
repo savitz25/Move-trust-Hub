@@ -1,0 +1,1393 @@
+{
+  "google_places_requests": 0,
+  "freeze_before": {
+    "companies": 5908,
+    "indexable": 4905,
+    "fl_im": 817,
+    "wa_hg": 88,
+    "ingested": 887,
+    "publishable": 4985,
+    "fl_psa": 1359,
+    "wa_psa": 277,
+    "psa_attached": 1124,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80
+  },
+  "freeze_after": {
+    "companies": 5908,
+    "indexable": 4905,
+    "fl_im": 817,
+    "wa_hg": 88,
+    "ingested": 887,
+    "publishable": 4985,
+    "fl_psa": 1359,
+    "wa_psa": 277,
+    "psa_attached": 1124,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80
+  },
+  "freeze_unchanged": true,
+  "counts": {
+    "READY_FOR_PUBLISHABLE_CANARY": 37,
+    "HOLD_PROFILE_THIN": 0,
+    "REVIEW_REQUIRED": 0,
+    "NOT_ELIGIBLE": 0,
+    "DEFERRED": 1
+  },
+  "refresh_required": 0,
+  "by_county": {
+    "Broward": {
+      "ready": 6,
+      "other": 0
+    },
+    "Collier": {
+      "ready": 1,
+      "other": 0
+    },
+    "Hillsborough": {
+      "ready": 4,
+      "other": 1
+    },
+    "Lee": {
+      "ready": 3,
+      "other": 0
+    },
+    "Manatee": {
+      "ready": 2,
+      "other": 0
+    },
+    "Martin": {
+      "ready": 2,
+      "other": 0
+    },
+    "Miami-Dade": {
+      "ready": 7,
+      "other": 0
+    },
+    "Monroe": {
+      "ready": 1,
+      "other": 0
+    },
+    "Nassau": {
+      "ready": 1,
+      "other": 0
+    },
+    "Orange": {
+      "ready": 2,
+      "other": 0
+    },
+    "Pinellas": {
+      "ready": 3,
+      "other": 0
+    },
+    "Polk": {
+      "ready": 1,
+      "other": 0
+    },
+    "Sarasota": {
+      "ready": 3,
+      "other": 0
+    },
+    "Seminole": {
+      "ready": 1,
+      "other": 0
+    }
+  },
+  "scorecard": [
+    {
+      "company_id": "fl-im-1025",
+      "slug": "gentletouch-moving-company",
+      "fdacs_id": "FL-FDACS-IM-1025",
+      "fdacs_im": "IM1025",
+      "county": "Pinellas",
+      "county_fips": "12103",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2028-04-06",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-1103",
+      "slug": "clover-systems-llc",
+      "fdacs_id": "FL-FDACS-IM-1103",
+      "fdacs_im": "IM1103",
+      "county": "Miami-Dade",
+      "county_fips": "12086",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": false,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-10-25",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-1296",
+      "slug": "nippon-express-u-s-a-inc",
+      "fdacs_id": "FL-FDACS-IM-1296",
+      "fdacs_im": "IM1296",
+      "county": "Miami-Dade",
+      "county_fips": "12086",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2028-02-03",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-1948",
+      "slug": "top-class-moving-inc",
+      "fdacs_id": "FL-FDACS-IM-1948",
+      "fdacs_im": "IM1948",
+      "county": "Lee",
+      "county_fips": "12071",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2028-03-14",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-22",
+      "slug": "fuentes-moving-corp",
+      "fdacs_id": "FL-FDACS-IM-22",
+      "fdacs_im": "IM22",
+      "county": "Miami-Dade",
+      "county_fips": "12086",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-07-06",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-2420",
+      "slug": "act-of-class-moving-storage-llc",
+      "fdacs_id": "FL-FDACS-IM-2420",
+      "fdacs_im": "IM2420",
+      "county": "Lee",
+      "county_fips": "12071",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-02-12",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-2532",
+      "slug": "helping-hand-movers-naples-llc",
+      "fdacs_id": "FL-FDACS-IM-2532",
+      "fdacs_im": "IM2532",
+      "county": "Collier",
+      "county_fips": "12021",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-10-06",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-2679",
+      "slug": "ringling-moving-llc",
+      "fdacs_id": "FL-FDACS-IM-2679",
+      "fdacs_im": "IM2679",
+      "county": "Sarasota",
+      "county_fips": "12115",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-08-31",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-27",
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "fdacs_id": "FL-FDACS-IM-27",
+      "fdacs_im": "IM27",
+      "county": "Miami-Dade",
+      "county_fips": "12086",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2028-07-29",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-2726",
+      "slug": "big-man-s-moving-company-llc",
+      "fdacs_id": "FL-FDACS-IM-2726",
+      "fdacs_im": "IM2726",
+      "county": "Pinellas",
+      "county_fips": "12103",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-12-19",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-2739",
+      "slug": "m-m-pickup-and-delivery-llc",
+      "fdacs_id": "FL-FDACS-IM-2739",
+      "fdacs_im": "IM2739",
+      "county": "Nassau",
+      "county_fips": "12089",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-01-26",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3030",
+      "slug": "andersen-moving-and-storage-llc",
+      "fdacs_id": "FL-FDACS-IM-3030",
+      "fdacs_im": "IM3030",
+      "county": "Martin",
+      "county_fips": "12085",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-09-06",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3063",
+      "slug": "design-furniture-consignment-moving-inc",
+      "fdacs_id": "FL-FDACS-IM-3063",
+      "fdacs_im": "IM3063",
+      "county": "Polk",
+      "county_fips": "12105",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-11-08",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3064",
+      "slug": "local-n-long-distance-movers",
+      "fdacs_id": "FL-FDACS-IM-3064",
+      "fdacs_im": "IM3064",
+      "county": "Miami-Dade",
+      "county_fips": "12086",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-11-09",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3075",
+      "slug": "adios-moving-llc",
+      "fdacs_id": "FL-FDACS-IM-3075",
+      "fdacs_im": "IM3075",
+      "county": "Broward",
+      "county_fips": "12011",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-12-04",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3138",
+      "slug": "acceleration-moving-solutions-llc",
+      "fdacs_id": "FL-FDACS-IM-3138",
+      "fdacs_im": "IM3138",
+      "county": "Manatee",
+      "county_fips": "12081",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-05-08",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-333",
+      "slug": "genesis-moving-storage-inc",
+      "fdacs_id": "FL-FDACS-IM-333",
+      "fdacs_im": "IM333",
+      "county": "Miami-Dade",
+      "county_fips": "12086",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-12-04",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-334",
+      "slug": "hilldrup-companies-inc",
+      "fdacs_id": "FL-FDACS-IM-334",
+      "fdacs_im": "IM334",
+      "county": "Orange",
+      "county_fips": "12095",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-12-04",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3433",
+      "slug": "parris-moving-llc",
+      "fdacs_id": "FL-FDACS-IM-3433",
+      "fdacs_im": "IM3433",
+      "county": "Pinellas",
+      "county_fips": "12103",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-03-25",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3485",
+      "slug": "chris-brown-vanlines",
+      "fdacs_id": "FL-FDACS-IM-3485",
+      "fdacs_im": "IM3485",
+      "county": "Broward",
+      "county_fips": "12011",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-07-01",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3538",
+      "slug": "easy-peasy-moving-llc",
+      "fdacs_id": "FL-FDACS-IM-3538",
+      "fdacs_im": "IM3538",
+      "county": "Seminole",
+      "county_fips": "12117",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-11-17",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-366",
+      "slug": "homestead-transfer-storage-co",
+      "fdacs_id": "FL-FDACS-IM-366",
+      "fdacs_im": "IM366",
+      "county": "Miami-Dade",
+      "county_fips": "12086",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2028-03-09",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3684",
+      "slug": "honest-true-moving-crew",
+      "fdacs_id": "FL-FDACS-IM-3684",
+      "fdacs_im": "IM3684",
+      "county": "Lee",
+      "county_fips": "12071",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-11-15",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3782",
+      "slug": "k-k-transfer",
+      "fdacs_id": "FL-FDACS-IM-3782",
+      "fdacs_im": "IM3782",
+      "county": "Broward",
+      "county_fips": "12011",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-07-24",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3834",
+      "slug": "treasure-coast-safe-sales-moving",
+      "fdacs_id": "FL-FDACS-IM-3834",
+      "fdacs_im": "IM3834",
+      "county": "Martin",
+      "county_fips": "12085",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-12-08",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3848",
+      "slug": "matt-s-mindful-movers-llc",
+      "fdacs_id": "FL-FDACS-IM-3848",
+      "fdacs_im": "IM3848",
+      "county": "Sarasota",
+      "county_fips": "12115",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2028-01-18",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3941",
+      "slug": "miss-peach-iv-true-movers-inc",
+      "fdacs_id": "FL-FDACS-IM-3941",
+      "fdacs_im": "IM3941",
+      "county": "Hillsborough",
+      "county_fips": "12057",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-08-27",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3959",
+      "slug": "advance-sorensen-movers-of-south-florida-llc",
+      "fdacs_id": "FL-FDACS-IM-3959",
+      "fdacs_im": "IM3959",
+      "county": "Broward",
+      "county_fips": "12011",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2028-10-18",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3973",
+      "slug": "wellen-moving-services-llc",
+      "fdacs_id": "FL-FDACS-IM-3973",
+      "fdacs_im": "IM3973",
+      "county": "Sarasota",
+      "county_fips": "12115",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-12-04",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-3983",
+      "slug": "phoenix-moving-solutions-llc",
+      "fdacs_id": "FL-FDACS-IM-3983",
+      "fdacs_im": "IM3983",
+      "county": "Hillsborough",
+      "county_fips": "12057",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-01-08",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-4005",
+      "slug": "movepro-home-services-llc",
+      "fdacs_id": "FL-FDACS-IM-4005",
+      "fdacs_im": "IM4005",
+      "county": "Hillsborough",
+      "county_fips": "12057",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-03-13",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-4024",
+      "slug": "epaa-llc",
+      "fdacs_id": "FL-FDACS-IM-4024",
+      "fdacs_im": "IM4024",
+      "county": "Broward",
+      "county_fips": "12011",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-05-02",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-4049",
+      "slug": "keys-movers",
+      "fdacs_id": "FL-FDACS-IM-4049",
+      "fdacs_im": "IM4049",
+      "county": "Monroe",
+      "county_fips": "12087",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-06-27",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-4099",
+      "slug": "suddath-moving-storage",
+      "fdacs_id": "FL-FDACS-IM-4099",
+      "fdacs_im": "IM4099",
+      "county": "Hillsborough",
+      "county_fips": "12057",
+      "readiness_state": "DEFERRED",
+      "readiness_reasons": [
+        "Technically sound identity, deferred from the first wave (corporate family / dual-credential presentation)."
+      ],
+      "missing_requirements": [
+        "first_wave_corporate_family"
+      ],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-09-29",
+      "federal_identity": "FEDERAL_ID_VERIFIED",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-006",
+      "recommended_future_action": "HOLD_FOR_LATER_WAVE",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-410",
+      "slug": "doug-s-hourly-muscle-movers-packers-inc",
+      "fdacs_id": "FL-FDACS-IM-410",
+      "fdacs_im": "IM410",
+      "county": "Manatee",
+      "county_fips": "12081",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2026-11-26",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-4100",
+      "slug": "cheney-bro-worldwide-moving-inc",
+      "fdacs_id": "FL-FDACS-IM-4100",
+      "fdacs_im": "IM4100",
+      "county": "Broward",
+      "county_fips": "12011",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-10-03",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-4102",
+      "slug": "fontain-transport-llc",
+      "fdacs_id": "FL-FDACS-IM-4102",
+      "fdacs_im": "IM4102",
+      "county": "Hillsborough",
+      "county_fips": "12057",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2027-10-10",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    },
+    {
+      "company_id": "fl-im-4144",
+      "slug": "sunny-day-moving-llc",
+      "fdacs_id": "FL-FDACS-IM-4144",
+      "fdacs_im": "IM4144",
+      "county": "Orange",
+      "county_fips": "12095",
+      "readiness_state": "READY_FOR_PUBLISHABLE_CANARY",
+      "readiness_reasons": [
+        "Active Florida IM intrastate mover registration with verified identity, COUNTY_VERIFIED geography, and usable FDACS contact evidence.",
+        "PUBLISHABLE readiness does not authorize INDEXABLE / sitemap / SEO expansion.",
+        "No federal mover identifier is currently linked in MoveTrustHub's data."
+      ],
+      "missing_requirements": [],
+      "contact_coverage": {
+        "phone_observation": true,
+        "email_observation": true,
+        "address_observation": true,
+        "website_required": false
+      },
+      "freshness": "STATUS_FRESH",
+      "expiration": "2028-01-06",
+      "federal_identity": "NO_FEDERAL_ID_IN_CURRENT_MTH_DATA",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "ingested_gate": {
+        "anonymous_profile_allowed": false,
+        "consumer_visible": false,
+        "seo_indexable": false
+      },
+      "cohort_origin": "FL-004",
+      "recommended_future_action": "INCLUDE_IN_FL_STATE_WAVE_1",
+      "google_places_requests": 0
+    }
+  ],
+  "ingested_anonymous_allowed": 0
+}

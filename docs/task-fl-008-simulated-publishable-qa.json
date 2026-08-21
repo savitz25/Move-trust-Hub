@@ -1,0 +1,994 @@
+{
+  "google_places_requests": 0,
+  "simulation_only": true,
+  "db_mutated": false,
+  "publishable_surface": {
+    "anonymousProfileRenders": true,
+    "robots": "noindex, follow",
+    "sitemapIncluded": false,
+    "seoIndexable": false,
+    "directorySearchIncluded": true,
+    "authorizedDiscoveryOnly": true,
+    "indexableFlag": false
+  },
+  "structured_data": {
+    "ok": true,
+    "hasAggregateRating": false,
+    "hasUsdot": false,
+    "hasAreaServed": false,
+    "hasFdacsRegistration": true,
+    "bannedClaims": [],
+    "graph": {
+      "@type": [
+        "LocalBusiness",
+        "MovingCompany"
+      ],
+      "name": "Gentletouch Moving Company",
+      "url": "/companies/gentletouch-moving-company",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Florida FDACS registration",
+          "value": "IM1025"
+        }
+      ]
+    }
+  },
+  "live_ingested_routes": [
+    {
+      "slug": "gentletouch-moving-company",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "clover-systems-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "nippon-express-u-s-a-inc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "top-class-moving-inc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "fuentes-moving-corp",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "act-of-class-moving-storage-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "helping-hand-movers-naples-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "ringling-moving-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "big-man-s-moving-company-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "m-m-pickup-and-delivery-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "andersen-moving-and-storage-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "design-furniture-consignment-moving-inc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "local-n-long-distance-movers",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "adios-moving-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "acceleration-moving-solutions-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "genesis-moving-storage-inc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "hilldrup-companies-inc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "parris-moving-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "chris-brown-vanlines",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "easy-peasy-moving-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "homestead-transfer-storage-co",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "honest-true-moving-crew",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "k-k-transfer",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "treasure-coast-safe-sales-moving",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "matt-s-mindful-movers-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "miss-peach-iv-true-movers-inc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "advance-sorensen-movers-of-south-florida-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "wellen-moving-services-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "phoenix-moving-solutions-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "movepro-home-services-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "epaa-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "keys-movers",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "suddath-moving-storage",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "doug-s-hourly-muscle-movers-packers-inc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "cheney-bro-worldwide-moving-inc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "fontain-transport-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    },
+    {
+      "slug": "sunny-day-moving-llc",
+      "profile_status": 200,
+      "profile_not_found_shell": true,
+      "profile_title": "Company Not Found | Move Trust Hub",
+      "profile_noindex": true,
+      "profile_leaks_company_id": false,
+      "og_status": 200,
+      "compare_status": 200,
+      "compare_includes_company": false
+    }
+  ],
+  "canary_probe": {
+    "slug": "i-95-relocation-inc",
+    "status": 200,
+    "noindex": true
+  },
+  "canary_live_rows": [
+    {
+      "id": "fl-im-100002",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1058",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-106",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1085",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1097",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-115",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1181",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1200",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1226",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1263",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1269",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-127",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1270",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-13",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1315",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1399",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1426",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1439",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1487",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-150001",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-154",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1581",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1644",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1651",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1658",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1683",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1786",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1852",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1910",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1925",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-1953",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2041",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2064",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2119",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2141",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2221",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2299",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2352",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2428",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2460",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2473",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-251",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-2748",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-3246",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-3491",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-3743",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-4042",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-4098",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-4170",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "fl-im-607",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc000173",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc000208",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc000220",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc000562",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc001496",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc001973",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc003737",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc004118",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc004401",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc005594",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc010217",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc023990",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-cc030411",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-000135",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-005742",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-011850",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-011855",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-016890",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-022583",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-032768",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-061724",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-061841",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-062546",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-065485",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-066184",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-067049",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-hg-068318",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-thg071741",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-thg071794",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    },
+    {
+      "id": "wa-thg072051",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "seo": false
+    }
+  ],
+  "presentation_samples": [
+    {
+      "overflowRisk": false,
+      "confusingLabels": false,
+      "duplicatedCredentials": false,
+      "inaccessibleStatus": false
+    },
+    {
+      "overflowRisk": false,
+      "confusingLabels": false,
+      "duplicatedCredentials": false,
+      "inaccessibleStatus": false
+    },
+    {
+      "overflowRisk": false,
+      "confusingLabels": false,
+      "duplicatedCredentials": false,
+      "inaccessibleStatus": false
+    },
+    {
+      "overflowRisk": false,
+      "confusingLabels": false,
+      "duplicatedCredentials": false,
+      "inaccessibleStatus": false
+    },
+    {
+      "overflowRisk": false,
+      "confusingLabels": false,
+      "duplicatedCredentials": false,
+      "inaccessibleStatus": false
+    },
+    {
+      "overflowRisk": true,
+      "confusingLabels": false,
+      "duplicatedCredentials": false,
+      "inaccessibleStatus": false
+    },
+    {
+      "overflowRisk": false,
+      "confusingLabels": false,
+      "duplicatedCredentials": false,
+      "inaccessibleStatus": false
+    },
+    {
+      "overflowRisk": false,
+      "confusingLabels": false,
+      "duplicatedCredentials": false,
+      "inaccessibleStatus": false
+    }
+  ]
+}
