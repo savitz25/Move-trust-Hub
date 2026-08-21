@@ -7,6 +7,7 @@
 import {
   isFranchiseOrNetworkBrandName,
   normalizeAddressLine,
+  normalizeEmail,
   normalizeLegalName,
   normalizePhone,
   normalizeUsdot,
@@ -26,6 +27,7 @@ export const STATE_MATCH_METHODS = [
   'exact_prior_state_authority',
   'exact_legal_name_and_address',
   'exact_legal_name_and_phone',
+  'exact_legal_name_and_email',
   'exact_dba_and_corroboration',
   'none',
 ] as const;
@@ -38,6 +40,7 @@ export type CanonicalProviderIdentity = {
   publicName: string | null;
   usdot: string | null;
   phone: string | null;
+  email?: string | null;
   address: string | null;
   city: string | null;
   state: string | null;
@@ -51,6 +54,7 @@ export type StateIdentitySubject = {
   dba: string | null;
   usdot: string | null;
   phone: string | null;
+  email?: string | null;
   physicalAddress: string | null;
   city: string | null;
   postalCode: string | null;
@@ -86,6 +90,12 @@ function addressExact(a: string | null, b: string | null): boolean {
 function phoneExact(a: string | null, b: string | null): boolean {
   const na = normalizePhone(a);
   const nb = normalizePhone(b);
+  return Boolean(na && nb && na === nb);
+}
+
+function emailExact(a: string | null | undefined, b: string | null | undefined): boolean {
+  const na = normalizeEmail(a);
+  const nb = normalizeEmail(b);
   return Boolean(na && nb && na === nb);
 }
 
@@ -265,6 +275,39 @@ export function matchStateRegistryIdentity(
     };
   }
 
+  // 4b. Exact legal name + exact business email
+  const legalEmailHits = candidates.filter(
+    (c) =>
+      providerNames(c).some((n) => nameExact(n, subject.legalName)) &&
+      emailExact(c.email, subject.email)
+  );
+  if (legalEmailHits.length === 1) {
+    return {
+      disposition: 'MATCHED_EXISTING',
+      matchedCompanyId: legalEmailHits[0].companyId,
+      matchMethod: 'exact_legal_name_and_email',
+      matchConfidence: 0.93,
+      reviewReason: null,
+      evidence: {
+        legalName: subject.legalName,
+        email: normalizeEmail(subject.email),
+        companyId: legalEmailHits[0].companyId,
+      },
+      franchiseSafetyHold: false,
+    };
+  }
+  if (legalEmailHits.length > 1) {
+    return {
+      disposition: 'REVIEW_REQUIRED',
+      matchedCompanyId: null,
+      matchMethod: 'none',
+      matchConfidence: 0,
+      reviewReason: 'legal_name_email_collision',
+      evidence: { companyIds: legalEmailHits.map((c) => c.companyId) },
+      franchiseSafetyHold: false,
+    };
+  }
+
   // 5. Exact DBA + strong independent corroboration (phone OR address)
   if (subject.dba) {
     const dbaHits = candidates.filter((c) =>
@@ -273,7 +316,8 @@ export function matchStateRegistryIdentity(
     const corroborated = dbaHits.filter(
       (c) =>
         addressExact(c.address, subject.physicalAddress) ||
-        phoneExact(c.phone, subject.phone)
+        phoneExact(c.phone, subject.phone) ||
+        emailExact(c.email, subject.email)
     );
     if (corroborated.length === 1) {
       return {
@@ -367,6 +411,7 @@ export function resolveVerificationState(input: {
         input.matchMethod === 'exact_prior_state_authority' ||
         input.matchMethod === 'exact_legal_name_and_address' ||
         input.matchMethod === 'exact_legal_name_and_phone' ||
+        input.matchMethod === 'exact_legal_name_and_email' ||
         input.matchMethod === 'exact_dba_and_corroboration')
     ) {
       return 'VERIFIED';

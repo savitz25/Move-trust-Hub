@@ -1,0 +1,394 @@
+{
+  "google_places_requests": 0,
+  "dry": false,
+  "published": false,
+  "canonical_overwritten": false,
+  "freeze_before": {
+    "companies": 4941,
+    "indexable": 4905
+  },
+  "freeze_after": {
+    "companies": 4941,
+    "indexable": 4905
+  },
+  "snapshots": {
+    "legacy_im": 1286,
+    "legacy_mb": 31,
+    "new_portal_movers": 45,
+    "new_portal_brokers": 2,
+    "combined_raw": 1359
+  },
+  "registry": {
+    "normalized": 1332,
+    "duplicate_source_rows": 11,
+    "missing_registration_ids": 0,
+    "malformed": 16,
+    "IM": 1303,
+    "MB": 29,
+    "dual_license_entities": 3,
+    "statuses": {
+      "active": 1114,
+      "expired": 114,
+      "unknown": 104
+    }
+  },
+  "unique_business": {
+    "registrations": 1332,
+    "estimated_unique_businesses": 1328,
+    "multi_registration_groups": 4,
+    "dual_im_mb_groups": 3
+  },
+  "match": {
+    "VERIFIED": 88,
+    "REVIEW_REQUIRED": 170,
+    "NOT_FOUND": 960,
+    "NOT_APPLICABLE": 114,
+    "pct": {
+      "VERIFIED": "6.6%",
+      "REVIEW_REQUIRED": "12.8%",
+      "NOT_FOUND": "72.1%",
+      "NOT_APPLICABLE": "8.6%"
+    },
+    "methods": {
+      "none": 1244,
+      "exact_prior_state_authority": 88
+    },
+    "matched_existing_providers": 88
+  },
+  "candidate_class": {
+    "ACTIVE_STATE_ONLY_CANDIDATE": 1026,
+    "EXPIRED_STATE_RECORD": 114,
+    "MATCHED_EXISTING": 88,
+    "UNKNOWN_STATE_RECORD": 104
+  },
+  "state_only": {
+    "active_movers": 1001,
+    "active_brokers": 25,
+    "expired": 114,
+    "revoked": 0,
+    "unknown": 104
+  },
+  "contacts": {
+    "email": {
+      "raw": 1243,
+      "unique_normalized": 1209,
+      "usable": 1240,
+      "classes": {
+        "generic": 206,
+        "named": 897,
+        "role": 137,
+        "empty": 89,
+        "malformed": 3
+      },
+      "malformed": 3,
+      "shared_values": 23
+    },
+    "phone": {
+      "total": 1300,
+      "unique": 1279,
+      "malformed": 0,
+      "shared_values": 16,
+      "canonical_agree": 88,
+      "canonical_conflict": 0
+    },
+    "address": {
+      "total": 1332,
+      "complete_street": 1331,
+      "po_box": 6,
+      "shared_values": 28,
+      "canonical_agree": 0,
+      "canonical_conflict": 1
+    },
+    "observations_written": {
+      "n": 3875,
+      "emails": 1243,
+      "phones": 1300,
+      "addresses": 1332
+    },
+    "enrichment": {
+      "email_observations": 1243,
+      "phone_observations": 1300,
+      "address_observations": 1332,
+      "email_agree": 0,
+      "email_conflict": 0
+    }
+  },
+  "note": "task-fl-002-florida-registry-contact-enrichment",
+  "sample_rows": [
+    {
+      "regulatoryId": "FL-FDACS-IM-2099",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "1776 MOVING AND STORAGE, INC",
+      "matchedCompanyId": "usdot-2303737",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-3355",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "24/7 LOGISTIC SERVICES, LLC",
+      "matchedCompanyId": "usdot-3005919",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-426",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "A & R MOVING, INC.",
+      "matchedCompanyId": "usdot-1472849",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-2518",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "A1A MOVING & TRANSPORT LLC",
+      "matchedCompanyId": "usdot-3161573",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-2431",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "AGILITY VAN LINES INC.",
+      "matchedCompanyId": "usdot-2564711",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-2621",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "ALL ABOUT MOVING TAMPA BAY INC",
+      "matchedCompanyId": "all-about-moving-tampa-bay",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-3680",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "ALLEGIANCE VAN LINES, LLC.",
+      "matchedCompanyId": "usdot-3507074",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-2089",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "AMERICA'S FAMILY MOVING & STORAGE, LLC",
+      "matchedCompanyId": "america-s-family-moving-and-storage-llc",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-3038",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "AMERICAS MOVERS INC.",
+      "matchedCompanyId": "usdot-3168341",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-3755",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "ANGEL MOVERS, LLC",
+      "matchedCompanyId": "angel-movers-llc",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-3995",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "APOLLOS MOVING & LOGISTICS LLC",
+      "matchedCompanyId": "apollos-moving-logistics-llc",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-469",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "BAYMEADOWS MOVING AND STORAGE INC",
+      "matchedCompanyId": "usdot-1040023",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-2583",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "BAYSIDE MOVING LLC",
+      "matchedCompanyId": "usdot-2823665",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-300",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "BEACHES MOVING & STORAGE, INC.",
+      "matchedCompanyId": "usdot-459518",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-3260",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "BLACK SWAN MOVING LLC",
+      "matchedCompanyId": "black-swan-moving-llc",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-184",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "BONDED TRANSPORTATION, INC.",
+      "matchedCompanyId": "usdot-89774",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-4211",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "BUDD VAN LINES, LLC",
+      "matchedCompanyId": "usdot-185771",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-2838",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "BULL MOVING LLC",
+      "matchedCompanyId": "bull-moving",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-457",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "C & F MOVERS INC.",
+      "matchedCompanyId": "usdot-700628",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-401",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "CAMPBELL MOVING & STORAGE, INC.",
+      "matchedCompanyId": "usdot-1991298",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-1626",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "CHOSEN ONE MOVERS LLC.",
+      "matchedCompanyId": "usdot-1526680",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-2754",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "CHRISTOPHER KEMMETT",
+      "matchedCompanyId": "usdot-3146919",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-2247",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "CHRISTTOWN MINISTRIES, INC.",
+      "matchedCompanyId": "usdot-4431751",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-3143",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "CIAO MOVING & STORAGE LLC",
+      "matchedCompanyId": "usdot-3252722",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    },
+    {
+      "regulatoryId": "FL-FDACS-IM-3701",
+      "kind": "IM",
+      "status": "active",
+      "legalName": "CLEVER CARRIERS, LLC",
+      "matchedCompanyId": "clever-carriers-llc",
+      "matchMethod": "exact_prior_state_authority",
+      "linkStatus": "VERIFIED",
+      "candidateClass": "MATCHED_EXISTING",
+      "reviewReason": null
+    }
+  ]
+}
