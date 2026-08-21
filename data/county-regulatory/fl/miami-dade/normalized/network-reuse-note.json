@@ -1,0 +1,13 @@
+{
+  "task": "FL-C005",
+  "architecture_implemented": false,
+  "note": "Miami-Dade RER Consumer and Neighborhood Protection / EnerGov tenant may regulate additional business license types beyond movers — potential later reuse for other TrustHubs. Catalog only; no non-mover ingestion in FL-C005.",
+  "potential_later_reuse": [
+    "ContractorTrustHub",
+    "SeniorTrustHub",
+    "InsuranceTrustHub",
+    "other Move counties"
+  ],
+  "energov_pattern_reusable": true,
+  "lbt_opendata_pattern_reusable": true
+}

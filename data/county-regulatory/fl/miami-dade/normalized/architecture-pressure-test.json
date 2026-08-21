@@ -1,0 +1,31 @@
+{
+  "task": "FL-C005",
+  "patterns_status": "PATTERNS_CONVERGING",
+  "architecture_finalized": false,
+  "production_schema_created": false,
+  "another_pilot_required": "Pinellas",
+  "note": "Palm Beach (public API+BIR), Broward (docs/PRA-gated), Miami-Dade (EnerGov NEAR_FULL roster + LBT) show converging county-regulatory concepts (credential, identity, vehicle schema, complaint/enforcement layers) but divergent public accessibility. ANOTHER_PILOT_REQUIRED (Pinellas) before generalized architecture lock.",
+  "shared_concepts_observed": [
+    "county regulatory credential",
+    "identity observation",
+    "owner/officer (application)",
+    "vehicle/fleet schema",
+    "branch schema (MDC application)",
+    "complaint intake",
+    "disposition (when public)",
+    "enforcement / citation authority",
+    "FDACS IM crosswalk (offline)",
+    "local business tax corroboration (MDC open data)"
+  ],
+  "miami_dade_specific_concepts": [
+    "EnerGov MR-##### Moving Business Registration as primary public credential id",
+    "multi-status historical roster on public search",
+    "LBT FeatureServer mover-category open data",
+    "insurance minima by GVW band on application"
+  ],
+  "do_not_lock_yet": [
+    "production county evidence schema",
+    "generalized multi-county Trust Score wiring",
+    "assumption that every FL county exposes EnerGov-like rosters"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "task": "FL-C005",
+  "note": "CROSS_SOURCE_REVIEW_REQUIRED until investigated. No conclusion that county or FDACS is wrong.",
+  "count": 21,
+  "records": [
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-00231",
+      "county_business_name": "Rene Chinique Moving & Delivery",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-00496",
+      "county_business_name": "Nippon Express USA, Inc",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-00512",
+      "county_status": "Issued",
+      "fdacs_license_no": "IM1320",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-00515",
+      "county_business_name": "William Moving Service, Inc.",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-01125",
+      "county_business_name": "La Barata Oves Moving",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-01280",
+      "county_business_name": "Atelier 4, LLC",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-01320",
+      "county_business_name": "305 + Movers LLC",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-092619",
+      "county_status": "Issued",
+      "fdacs_license_no": "IM16",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-093105",
+      "county_business_name": "U.S.A. On the Move L.L.C.",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-093387",
+      "county_business_name": "JLG Services Inc.",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-093876",
+      "county_business_name": "Murillo's Mudanza and Delivery Inc",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-094070",
+      "county_business_name": "A&D Moving Florida Corp",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-094106",
+      "county_business_name": "Navarro Worldwide LLC",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-094141",
+      "county_status": "Issued",
+      "fdacs_license_no": "IM3619",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-094170",
+      "county_business_name": "Heat Mover Inc",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-094438",
+      "county_status": "Issued",
+      "fdacs_license_no": "IM3934",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-096460",
+      "county_business_name": "DY Moving and Delivery Services, Inc.",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ISSUED_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_license": "MR-096905",
+      "county_business_name": "Benjamin Moving and Delivery Service Inc",
+      "note": "Issued Miami-Dade MR not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "NO_PUBLIC_PHONE_EMAIL_ON_COUNTY_ROSTER",
+      "classification": "ARCHITECTURE_SIGNAL",
+      "note": "Unlike Palm Beach, Miami-Dade public EnerGov roster lacks phone/email — FDACS matchability relies on name+address only."
+    },
+    {
+      "type": "NO_IM_NUMBER_ON_PUBLIC_ENERGOV",
+      "classification": "ARCHITECTURE_SIGNAL",
+      "note": "No FDACS IM number observed on public EnerGov fields — no direct IM join until PRA or application enrichment."
+    },
+    {
+      "type": "LBT_IS_NOT_MR_ROSTER",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "note": "LBT MOV-* categories are tax accounts, not Moving Business Registration credentials; treat as corroboration only."
+    }
+  ]
+}

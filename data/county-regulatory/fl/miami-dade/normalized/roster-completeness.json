@@ -1,0 +1,40 @@
+{
+  "task": "FL-C005",
+  "completeness_classification": "NEAR_FULL_ACTIVE_ROSTER",
+  "public_roster_found": true,
+  "records": 409,
+  "issued_active_ish": 117,
+  "status_distribution": {
+    "Issued": 117,
+    "Out of Business": 136,
+    "Abandoned": 51,
+    "Expired": 21,
+    "In Review": 7,
+    "On Hold": 2,
+    "Void": 1,
+    "Submitted - Online": 1,
+    "Archived": 73
+  },
+  "status_distribution_raw_meta": {
+    "Issued": 117,
+    "Out of Business": 136,
+    "Abandoned": 51,
+    "Expired": 21,
+    "In Review": 7,
+    "On Hold": 2,
+    "Void": 1,
+    "Submitted - Online": 1,
+    "Archived": 73
+  },
+  "inactive_expired_visibility": "PUBLIC_HISTORICAL_INCLUDED",
+  "credential_coverage": "Moving / MR license type universe after CaseType=Moving filter",
+  "unique_business_count": 378,
+  "unique_license_numbers": 409,
+  "notes": [
+    "Public EnerGov License search yields full Moving type universe after filtering CaseType=Moving.",
+    "Raw meta: moving_count=409; pollution_count=7.",
+    "117 Issued (active-ish); remaining statuses are historical/process (Out of Business, Abandoned, Expired, Archived, etc.).",
+    "Phones/emails/vehicles/owners not on public roster or public detail samples."
+  ],
+  "retrieved_at": "2026-08-21T20:41:01.552Z"
+}

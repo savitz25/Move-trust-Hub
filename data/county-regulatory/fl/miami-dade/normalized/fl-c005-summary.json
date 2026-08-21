@@ -1,0 +1,59 @@
+{
+  "task": "FL-C005",
+  "status": "COMPLETE",
+  "origin_main_observed": "a381203beb61cb5a2a12f80ed007a672a204be31",
+  "stacked_on_c004": "f085c923b48230f97cd073de30b77b603f047ee3",
+  "publicly_acquired": [
+    "program verification",
+    "EnerGov Moving/MR roster (409)",
+    "EnerGov detail samples (8 Issued)",
+    "application schema",
+    "LBT mover-category open data (188)",
+    "complaint intake characterization",
+    "enforcement/citation authority characterization"
+  ],
+  "pra_required_for_complete_bulk_data": true,
+  "roster_completeness": "NEAR_FULL_ACTIVE_ROSTER",
+  "mover_license_rows": 409,
+  "issued_mover_license_rows": 117,
+  "lbt_rows": 188,
+  "branch_rows": 0,
+  "vehicle_rows": 0,
+  "complaint_rows": 0,
+  "citation_rows": 0,
+  "enforcement_rows": 0,
+  "fdacs_matchability_issued": {
+    "DETERMINISTIC_MATCH": 75,
+    "REVIEW_REQUIRED": 28,
+    "NOT_FOUND": 14,
+    "INSUFFICIENT_EVIDENCE": 0
+  },
+  "fdacs_matchability_full_roster": {
+    "DETERMINISTIC_MATCH": 113,
+    "REVIEW_REQUIRED": 91,
+    "NOT_FOUND": 205,
+    "INSUFFICIENT_EVIDENCE": 0
+  },
+  "lbt_crosswalk_stats": {
+    "issued_mr_total": 117,
+    "DETERMINISTIC_NAME_ADDRESS": 44,
+    "NAME_ONLY_REVIEW": 11,
+    "NOT_FOUND": 62,
+    "MULTIPLE_CANDIDATES_REVIEW": 0
+  },
+  "canonical_matchability_issued": {
+    "CANONICAL_LINKED": 60,
+    "STATE_RECORD_ONLY": 15,
+    "COUNTY_ONLY": 14,
+    "REVIEW_REQUIRED": 28
+  },
+  "google_places_api_requests": 0,
+  "production_writes": false,
+  "production_db_migrations": 0,
+  "consumer_pii_committed": 0,
+  "architecture_finalized": false,
+  "another_pilot_required": "Pinellas",
+  "recommended_fl_c006": "FL-C006 — Miami-Dade Deterministic FDACS Reconciliation & County Evidence Qualification",
+  "recommended_fl_c006_rationale": "Public EnerGov roster is NEAR_FULL (unlike Broward PRA_REQUIRED); rich enough for deterministic FDACS reconciliation and county evidence qualification next. Pinellas remains useful as Pilot #4 before generalized architecture lock — but choose MDC qualification as the single next county-track task per Phase 35 rich-data branch.",
+  "package_hash": "a562e5a28fb9425d"
+}

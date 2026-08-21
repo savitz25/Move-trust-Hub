@@ -1,0 +1,7 @@
+{
+  "task": "FL-C005",
+  "discovery_class": "LEGAL_OBSERVATION",
+  "status": "FUTURE",
+  "note": "Court bulk / clerk civil case extracts involving movers may eventually complement county mediation/citation histories. Not acquired in FL-C005. Treat as future LEGAL_OBSERVATION track only — no case rows invented.",
+  "rows_acquired": 0
+}
