@@ -47,7 +47,7 @@ export function resolveShareOrigin(): string {
 export function shareRouteOgImage(routePath: string, alt: string) {
   const path = (routePath.startsWith('/') ? routePath : `/${routePath}`).replace(/\/$/, '');
   return {
-    url: `${SHARE_HUB.origin}${path}/opengraph-image`,
+    url: `${SHARE_HUB.origin}${path}/share-og`,
     width: SHARE_HUB.ogWidth,
     height: SHARE_HUB.ogHeight,
     alt,
