@@ -1,0 +1,124 @@
+{
+  "google_places_requests": 0,
+  "wave4": {
+    "n": 920,
+    "published": 0,
+    "indexable_rows": 920
+  },
+  "sample": [
+    {
+      "slug": "dependable-moving-company-inc",
+      "usdot_number": "2549424",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "moving-wise-inc",
+      "usdot_number": "2559880",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "good-greek-moving-and-storage",
+      "usdot_number": "2562486",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "agility-van-lines",
+      "usdot_number": "2564711",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "suitable-movers-llc",
+      "usdot_number": "2813031",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "a1a-movers-llc",
+      "usdot_number": "2821065",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "bayside-moving-llc",
+      "usdot_number": "2823665",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "federal-moving-storage-llc",
+      "usdot_number": "2841171",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "security-storage-company-of-washington-llc",
+      "usdot_number": "2841225",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    },
+    {
+      "slug": "lighthouse-movers-inc",
+      "usdot_number": "2845173",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "service_scope": "interstate",
+      "entity_type": "Carrier"
+    }
+  ],
+  "capabilities": [
+    {
+      "capability": "hhg_interstate_carrier",
+      "n": 920
+    }
+  ],
+  "totals": {
+    "companies": 4941,
+    "indexable": 4905
+  },
+  "prior_waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "checks": {
+    "canary_not_indexable": false,
+    "interstate_only": true,
+    "carrier_capability_only": true,
+    "no_local_auto_caps": true
+  }
+}

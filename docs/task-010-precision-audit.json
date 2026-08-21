@@ -1,0 +1,30 @@
+{
+  "task": "010",
+  "google_places_requests": 0,
+  "publication_wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+  "source": "FMCSA L&I carrier file (data.transportation.gov/6eyk-hxee)",
+  "freshness": {
+    "rows_updated_at": "2026-08-20T13:51:49.000Z",
+    "view_last_modified": "2026-08-20T13:11:07.000Z",
+    "decision": "USE_CURRENT_OFFICIAL_LI with per-USDOT Socrata revalidation"
+  },
+  "cohort": {
+    "historical_expected_approx": 923,
+    "staging_remaining_clean_carriers": 923,
+    "li_inspected": 923,
+    "li_usdots_with_rows": 923,
+    "eligible_after_li": 920,
+    "excluded_hhg_authority_lost": 3,
+    "identity_review_included": 0,
+    "brokers_included": 0,
+    "duals_included": 0,
+    "local_auto_included": 0
+  },
+  "gates": {
+    "carriers_only": true,
+    "us_dc_only": true,
+    "new_canonical_only": true,
+    "not_in_waves_1_2_3": true,
+    "fail_closed_role_changes": true
+  }
+}
