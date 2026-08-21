@@ -10,22 +10,31 @@
 - API host (public read used in FL-C002 research): https://secure.pbc.gov/ConsumerAffairs/  
 - Business Information Reports: https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx  
 
-**Purpose:** MoveTrustHub FL-C002 research follow-on. Business-level regulatory intelligence only.  
+**Purpose:** MoveTrustHub FL-C002 / FL-C003 research follow-on. Business-level regulatory intelligence only.  
 **Submitted:** NO (draft only)
 
-## FL-C002 findings informing this request
+## FL-C002 / FL-C003 findings informing this request
 
 Palm Beach County already exposes a rich **public searchable** licensed-mover API (`Companies/GetCompanies`, BusinessType `58` Moving & Storage). FL-C002 acquired a near-complete **active LICENSED** roster (142 Moving Business Permit records) plus a 22-business BIR sample with complaint dispositions and administrative actions.
 
+FL-C003 qualification confirmed:
+
+- 64 deterministic PBC↔FDACS VERIFIED associations (100% precision QA)  
+- Public roster fields are already rich (owner/officer, fleet, website)  
+- Complaint/enforcement remain **SAMPLE_ONLY** until a bulk export exists  
+- No official FDACS IM crosswalk field observed on the public Moving Business Permit roster  
+
 This PRA is therefore focused on what public search does **not** practically provide as a complete bulk export:
 
-1. Historical / inactive / expired / suspended / revoked permit universe  
-2. Complete multi-year complaint extract for all movers (not one-business-at-a-time BIR)  
-3. Complete enforcement/citation extract with final dispositions  
-4. Any FDACS IM crosswalk field if maintained internally  
-5. Vehicle-level / decal detail beyond fleet totals  
+1. Complete historical permit roster (all statuses)  
+2. Inactive / expired / suspended / revoked / denied permits  
+3. Complete complaint / disposition export (business-level, all movers, not one-BIR-at-a-time)  
+4. Complete enforcement export with final dispositions where maintained  
+5. Historical business identity (prior names/DBAs/ownership)  
+6. Official state-license (FDACS IM) crosswalk if maintained internally  
+7. Vehicle-level / decal detail beyond fleet totals  
 
-Preferred label for residual gap: `PRA_REQUIRED_FOR_COMPLETE_BULK_DATA` (not a blocker for FL-C002 completion).
+Preferred label for residual gap: `PRA_REQUIRED_FOR_COMPLETE_BULK_DATA` (not a blocker for FL-C002/C003 completion).
 
 ## Requested records (electronic / machine-readable preferred)
 

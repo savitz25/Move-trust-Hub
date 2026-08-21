@@ -80,9 +80,20 @@ Live identity reference: Supabase REST snapshot — 1,359 FL PSA rows; 817 `fl-i
 
 Palm Beach evidence model is strong enough for an internal county pilot before Builder 2 moves to Broward acquisition. Consumer publication remains unauthorized.
 
-## Package location
+## Package locations
 
-`data/county-regulatory/fl/palm-beach/evidence/c003/`
+- Evidence working set: `data/county-regulatory/fl/palm-beach/evidence/c003/`
+- **Versioned qualified outputs:** `data/county-regulatory/fl/palm-beach/qualified/`
+  - `pbc-fdacs-crosswalk-v1.json` (64 VERIFIED)
+  - `pbc-fdacs-unresolved-review-v1.json` (78)
+  - `complaint-evidence-v1.json` (20, SAMPLE_ONLY)
+  - `enforcement-evidence-v1.json` (49 unique events, SAMPLE_ONLY)
+
+## Recommended next task
+
+**FL-C004 — Broward County Mover Regulatory Acquisition & Staging**
+
+Do not integrate Palm Beach into production yet. Collect several real county systems (Palm Beach → Broward → Miami-Dade → Pinellas) before generalized county architecture.
 
 ## Validation
 
@@ -90,4 +101,5 @@ Palm Beach evidence model is strong enough for an internal county pilot before B
 node scripts/validate-fl-c001-catalog.mjs
 node scripts/validate-fl-c002-palm-beach.mjs
 node scripts/validate-fl-c003-palm-beach-evidence.mjs
+node scripts/validate-fl-c003-palm-beach-qualification.mjs
 ```

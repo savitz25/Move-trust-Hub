@@ -1,0 +1,474 @@
+{
+  "task": "FL-C003",
+  "file": "complaint-evidence-v1.json",
+  "version": "v1",
+  "immutable": true,
+  "data_scope": "SAMPLE_ONLY",
+  "sample_bir_businesses": 22,
+  "retrieved_at": "2026-08-21T19:51:45.682Z",
+  "production_writes": false,
+  "db_linkage": false,
+  "consumer_pii_committed": 0,
+  "misconduct_inference": "FORBIDDEN",
+  "row_count": 20,
+  "records": [
+    {
+      "complaint_case_id": "1907070",
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "allegation": "Alleged damage to consumer's goods or property ",
+      "status": "CASE CLOSED",
+      "official_disposition_code": "A12",
+      "official_disposition_description": "No compromise by business",
+      "filing_or_case_date": null,
+      "close_date": "7/28/2026",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": "usdot-2562486",
+      "offline_canonical_attachment_note": "Deterministic PBC↔FDACS VERIFIED crosswalk only; no DB write",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1907037",
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "allegation": "Alleged violation of the Palm Beach County Moving Ordinance",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A02",
+      "official_disposition_description": "Referred to another agency",
+      "filing_or_case_date": null,
+      "close_date": "3/24/2026",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": "usdot-2562486",
+      "offline_canonical_attachment_note": "Deterministic PBC↔FDACS VERIFIED crosswalk only; no DB write",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1906804",
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "allegation": "Alleged billing dispute",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A02",
+      "official_disposition_description": "Referred to another agency",
+      "filing_or_case_date": null,
+      "close_date": "12/5/2025",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": "usdot-2562486",
+      "offline_canonical_attachment_note": "Deterministic PBC↔FDACS VERIFIED crosswalk only; no DB write",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1906618",
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "allegation": "Alleged faulty services or repairs",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A02",
+      "official_disposition_description": "Referred to another agency",
+      "filing_or_case_date": null,
+      "close_date": "9/12/2025",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": "usdot-2562486",
+      "offline_canonical_attachment_note": "Deterministic PBC↔FDACS VERIFIED crosswalk only; no DB write",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1906082",
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "allegation": "Alleged overcharge or excessive price on a bill, receipt, or invoice",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A03",
+      "official_disposition_description": "No jurisdiction",
+      "filing_or_case_date": null,
+      "close_date": "1/6/2025",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": "usdot-2562486",
+      "offline_canonical_attachment_note": "Deterministic PBC↔FDACS VERIFIED crosswalk only; no DB write",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905854",
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "allegation": "Alleged exceeded the estimate or contract",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A02",
+      "official_disposition_description": "Referred to another agency",
+      "filing_or_case_date": null,
+      "close_date": "12/16/2024",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": "usdot-2562486",
+      "offline_canonical_attachment_note": "Deterministic PBC↔FDACS VERIFIED crosswalk only; no DB write",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905443",
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "allegation": null,
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A10",
+      "official_disposition_description": "No compromise",
+      "filing_or_case_date": null,
+      "close_date": "3/5/2024",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "PARTIAL",
+      "offline_canonical_company_id": "usdot-2562486",
+      "offline_canonical_attachment_note": "Deterministic PBC↔FDACS VERIFIED crosswalk only; no DB write",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905018",
+      "business_regulatory_id": "MV1097",
+      "business_name": "Sfakia, LLC",
+      "allegation": "Alleged billing dispute",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A10",
+      "official_disposition_description": "No compromise",
+      "filing_or_case_date": null,
+      "close_date": "11/13/2023",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": "usdot-2562486",
+      "offline_canonical_attachment_note": "Deterministic PBC↔FDACS VERIFIED crosswalk only; no DB write",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1907116",
+      "business_regulatory_id": "MV1145",
+      "business_name": "All My Sons Of The Palm Beaches, LLC",
+      "allegation": "Alleged damage to consumer's goods or property ",
+      "status": "CASE CLOSED",
+      "official_disposition_code": "A12",
+      "official_disposition_description": "No compromise by business",
+      "filing_or_case_date": null,
+      "close_date": "7/24/2026",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905864",
+      "business_regulatory_id": "MV1145",
+      "business_name": "All My Sons Of The Palm Beaches, LLC",
+      "allegation": "Alleged billing dispute",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A11",
+      "official_disposition_description": "No compromise by consumer",
+      "filing_or_case_date": null,
+      "close_date": "2/18/2025",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905098",
+      "business_regulatory_id": "MV1145",
+      "business_name": "All My Sons Of The Palm Beaches, LLC",
+      "allegation": "Alleged unfair business practice",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A10",
+      "official_disposition_description": "No compromise",
+      "filing_or_case_date": null,
+      "close_date": "10/10/2023",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1907090",
+      "business_regulatory_id": "MV1145",
+      "business_name": "All My Sons Of The Palm Beaches, LLC",
+      "allegation": "Alleged violation of the Palm Beach County Moving Ordinance",
+      "status": "OPEN/PENDING",
+      "official_disposition_code": null,
+      "official_disposition_description": null,
+      "filing_or_case_date": null,
+      "close_date": null,
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1907062",
+      "business_regulatory_id": "MV1193",
+      "business_name": "Safebound Logistics, LLC",
+      "allegation": "Alleged damage to consumer's goods or property ",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A02",
+      "official_disposition_description": "Referred to another agency",
+      "filing_or_case_date": null,
+      "close_date": "5/15/2026",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1907109",
+      "business_regulatory_id": "MV1193",
+      "business_name": "Safebound Logistics, LLC",
+      "allegation": "Alleged billing dispute",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A02",
+      "official_disposition_description": "Referred to another agency",
+      "filing_or_case_date": null,
+      "close_date": "4/20/2026",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905509",
+      "business_regulatory_id": "MV1193",
+      "business_name": "Safebound Logistics, LLC",
+      "allegation": "Alleged unfair business practice",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A02",
+      "official_disposition_description": "Referred to another agency",
+      "filing_or_case_date": null,
+      "close_date": "2/29/2024",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905253",
+      "business_regulatory_id": "MV1193",
+      "business_name": "Safebound Logistics, LLC",
+      "allegation": "Alleged unfair business practice",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A10",
+      "official_disposition_description": "No compromise",
+      "filing_or_case_date": null,
+      "close_date": "2/7/2024",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905223",
+      "business_regulatory_id": "MV1193",
+      "business_name": "Safebound Logistics, LLC",
+      "allegation": "Alleged misrepresentation",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A02",
+      "official_disposition_description": "Referred to another agency",
+      "filing_or_case_date": null,
+      "close_date": "11/29/2023",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1907160",
+      "business_regulatory_id": "MV1193",
+      "business_name": "Safebound Logistics, LLC",
+      "allegation": "Alleged billing dispute",
+      "status": "OPEN/PENDING",
+      "official_disposition_code": null,
+      "official_disposition_description": null,
+      "filing_or_case_date": null,
+      "close_date": null,
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1907189",
+      "business_regulatory_id": "MV1193",
+      "business_name": "Safebound Logistics, LLC",
+      "allegation": "Alleged failure to cancel contract, subscription, membership, etc.",
+      "status": "OPEN/PENDING",
+      "official_disposition_code": null,
+      "official_disposition_description": null,
+      "filing_or_case_date": null,
+      "close_date": null,
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    },
+    {
+      "complaint_case_id": "1905029",
+      "business_regulatory_id": "MV964",
+      "business_name": "JCAL Holdings, LLC",
+      "allegation": "Alleged damage to consumer's goods or property ",
+      "status": "CLOSED/REVIEWED",
+      "official_disposition_code": "A06",
+      "official_disposition_description": "Resolved prior to Consumer Affairs intervention",
+      "filing_or_case_date": null,
+      "close_date": "9/26/2023",
+      "evidence_classes": [
+        "COMPLAINT_OBSERVATION",
+        "COMPLAINT_DISPOSITION_VERIFIED"
+      ],
+      "qualification": "QUALIFIED_OBSERVATION",
+      "offline_canonical_company_id": null,
+      "offline_canonical_attachment_note": "No deterministic crosswalk — company id omitted",
+      "consumer_pii": false,
+      "provenance": {
+        "source_url": "https://discover.pbc.gov/publicsafety/consumeraffairs/Pages/Lookup.aspx",
+        "retrieved_at": "2026-08-21T17:36:35.678Z"
+      }
+    }
+  ],
+  "content_hash": "3fd8308bf7f55d73"
+}
