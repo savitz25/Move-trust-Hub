@@ -97,7 +97,13 @@ function needsHybridCoverage(filters: DirectoryFilterInput): boolean {
     state: filters.state,
     counties: filters.counties,
   });
-  return coverage.mode === 'state' && (Boolean(coverage.stateCode) || (coverage.countySlugs?.length ?? 0) > 0);
+  // County filters need assignment/static evidence — keep bounded hybrid.
+  // Plain state filters use SQL p_state pagination (national + HQ + counties JSON).
+  return (
+    coverage.mode === 'state' &&
+    Boolean(coverage.stateCode) &&
+    (coverage.countySlugs?.length ?? 0) > 0
+  );
 }
 
 async function fetchCompaniesByIds(
@@ -511,14 +517,22 @@ export async function queryDbDirectoryPage(options: {
   const excludeLocal = !wantsLocalOrCounty(filters);
   const hybrid = needsHybridCoverage(filters);
 
-  // Hybrid local/county: bounded DB candidates + client coverage filter.
-  // Still must NOT hydrate the full ~4k universe.
+  // Hybrid county: bounded DB candidates + client coverage/static filter.
+  // Must NOT hydrate the full ~4k universe. Plain state uses SQL pagination below.
   if (hybrid) {
+    const candidateCap = Math.min(800, DIRECTORY_MAX_PAGE_LIMIT);
     const t0 = Date.now();
+    // Do not push p_state into SQL here — county match needs coverage_counties /
+    // assignments after map. Fetch a bounded interstate+local pool by reputation.
     const rpc = await queryViaRpc({
       offset: 0,
-      limit: Math.min(500, DIRECTORY_MAX_PAGE_LIMIT),
-      filters: { ...filters, search: search || undefined },
+      limit: candidateCap,
+      filters: {
+        ...filters,
+        state: undefined,
+        counties: undefined,
+        search: search || undefined,
+      },
       excludeLocal: false,
       usdot,
       mc,
@@ -527,8 +541,13 @@ export async function queryDbDirectoryPage(options: {
       rpc ??
       (await queryViaPostgrest({
         offset: 0,
-        limit: Math.min(500, DIRECTORY_MAX_PAGE_LIMIT),
-        filters: { ...filters, search: search || undefined },
+        limit: candidateCap,
+        filters: {
+          ...filters,
+          state: undefined,
+          counties: undefined,
+          search: search || undefined,
+        },
         excludeLocal: false,
         usdot,
         mc,
@@ -541,7 +560,6 @@ export async function queryDbDirectoryPage(options: {
     const mapped = await fetchCompaniesByIds(post.ids);
     const mapMs = Date.now() - tMap;
     const prepared = prepareCompaniesForDirectoryClient(mapped);
-    // Use existing filterCompanies for coverage/county/role parity on the bounded set only.
     const filtered = filterCompanies(prepared, filters);
     const page = filtered.slice(offset, offset + limit);
     lastDiagnostics = {

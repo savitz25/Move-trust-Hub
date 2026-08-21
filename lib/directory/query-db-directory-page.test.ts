@@ -91,12 +91,12 @@ function company(partial: Partial<Company> & Pick<Company, 'id' | 'slug' | 'name
 }
 
 describe('Task 009A.1 directory contracts (pure)', () => {
-  it('production default remains legacy (no cutover)', () => {
+  it('production default is db after 009A.2 cutover', () => {
     const prev = process.env.DIRECTORY_QUERY_ENGINE;
     delete process.env.DIRECTORY_QUERY_ENGINE;
     process.env.VERCEL_ENV = 'production';
     (process.env as { NODE_ENV?: string }).NODE_ENV = 'production';
-    assert.equal(resolveDirectoryQueryEngine(), 'legacy');
+    assert.equal(resolveDirectoryQueryEngine(), 'db');
     if (prev !== undefined) process.env.DIRECTORY_QUERY_ENGINE = prev;
   });
 

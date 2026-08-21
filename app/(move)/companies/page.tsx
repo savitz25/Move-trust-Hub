@@ -56,7 +56,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 export default async function CompaniesDirectoryPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const filters = directoryFiltersFromSearchParams(params);
-  // Task 009A.1: engine=db is Preview/local opt-in only (ignored on production).
+  // Task 009A.2: DB is default. engine=legacy only when hint allowed (rollback/debug).
   const engineRaw = params.engine;
   const engine = Array.isArray(engineRaw) ? engineRaw[0] : engineRaw;
 
