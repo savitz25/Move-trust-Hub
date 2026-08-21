@@ -1,0 +1,43 @@
+{
+  "task": "FL-C006",
+  "live_page_changed": false,
+  "metrics": {
+    "miami_dade_mover_license_universe": {
+      "value": 409,
+      "label": "FULL"
+    },
+    "current_issued_movers": {
+      "value": 117,
+      "label": "FULL"
+    },
+    "deterministic_fdacs_matches": {
+      "value": 86,
+      "label": "FULL"
+    },
+    "canonical_linked": {
+      "value": 70,
+      "label": "FULL"
+    },
+    "verified_lbt_crosswalk": {
+      "value": 54,
+      "label": "FULL"
+    },
+    "public_complaint_cases": {
+      "value": 0,
+      "label": "FULL_ZERO_NOT_SPECULATIVE"
+    },
+    "public_citations": {
+      "value": 0,
+      "label": "FULL_ZERO_NOT_SPECULATIVE"
+    },
+    "public_final_enforcement_actions": {
+      "value": 0,
+      "label": "FULL_ZERO_NOT_SPECULATIVE"
+    },
+    "public_vehicles": {
+      "value": 0,
+      "label": "FULL_ZERO_NOT_SPECULATIVE"
+    }
+  },
+  "extrapolation_forbidden": true
+}

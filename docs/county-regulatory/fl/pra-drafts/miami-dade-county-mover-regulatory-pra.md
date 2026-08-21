@@ -8,14 +8,16 @@
 **Program:** Moving Business Registration / Moving Business License (MR-#####) under Article XVI, Chapter 8A (Moving Ordinance), Miami-Dade County Code  
 **Portal (public search already used):** https://energov.miamidade.gov/EnerGov_Prod/SelfService (tenant MiamiDadeProd)
 
-**Purpose:** MoveTrustHub FL-C005 research. Business-level regulatory intelligence only.  
+**Purpose:** MoveTrustHub FL-C005/FL-C006 research. Business-level regulatory intelligence only.  
 **Submitted:** NO (draft only)
 
-## FL-C005 findings informing this request
+## FL-C005 / FL-C006 findings informing this request
 
-Public EnerGov License search already yields a **NEAR_FULL** Moving-type roster (≈409 MR records including historical statuses; ≈117 Issued). Public detail responses expose identity, status, and dates but **do not** expose phones, emails, owners/officers, branch lists, vehicle/VIN inventories, insurance certificates, or complaint/citation histories.
+Public EnerGov License search already yields a **NEAR_FULL** Moving-type roster (409 MR records including historical statuses; 117 Issued). FL-C006 qualified Issued↔FDACS reconciliation under fail-closed rules (VERIFIED with ≥98% precision QA) using name+address only.
 
-Local Business Tax (LBT) open data separately provides mover-category accounts (MOV-MNS / MOV-MWS) without being the Moving Business Registration roster.
+Public detail responses expose identity, status, and dates but **do not** expose phones, emails, owners/officers, branch lists, vehicle/VIN inventories, insurance certificates, or complaint/citation histories — and **do not** expose an official FDACS IM crosswalk field.
+
+Local Business Tax (LBT) open data separately provides mover-category accounts (MOV-MNS / MOV-MWS) as **secondary** tax evidence (not a substitute MR credential).
 
 This PRA therefore targets **structured fields and histories not available via the public SelfService search/detail APIs**, not a re-request of the public MR number/name/address/status list already acquired.
 

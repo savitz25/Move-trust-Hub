@@ -1,0 +1,241 @@
+{
+  "task": "FL-C006",
+  "count": 14,
+  "checked_all": true,
+  "records": [
+    {
+      "mr_license": "MR-00231",
+      "legal_name": "Rene Chinique Moving & Delivery",
+      "dba": "",
+      "address": "13195 SW 10 TER Miami FL 33184",
+      "issue_date": "2025-11-03T00:00:00",
+      "expire_date": "2027-11-03T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-00496",
+      "legal_name": "Nippon Express USA, Inc",
+      "dba": "",
+      "address": "2100 NW 129 AVE Unit: #106-108 SweetWater FL 33182",
+      "issue_date": "2025-10-13T00:00:00",
+      "expire_date": "2027-10-13T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-00515",
+      "legal_name": "William Moving Service, Inc.",
+      "dba": "",
+      "address": "1250 Naples Ave Clewiston FL 33440",
+      "issue_date": "2025-02-13T00:00:00",
+      "expire_date": "2027-02-13T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-01125",
+      "legal_name": "La Barata Oves Moving",
+      "dba": "",
+      "address": "4721 NW 4 ST Miami FL 33126",
+      "issue_date": "2026-06-02T00:00:00",
+      "expire_date": "2027-06-02T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-01280",
+      "legal_name": "Atelier 4, LLC",
+      "dba": "",
+      "address": "2170 NW 87 AVE Doral FL 33172",
+      "issue_date": "2025-03-24T00:00:00",
+      "expire_date": "2027-03-24T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-01320",
+      "legal_name": "305 + Movers LLC",
+      "dba": "",
+      "address": "3715 SW 29 ST Miami FL 33134",
+      "issue_date": "2025-05-10T00:00:00",
+      "expire_date": "2027-05-10T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-093105",
+      "legal_name": "U.S.A. On the Move L.L.C.",
+      "dba": "",
+      "address": "14323 SW 142 ST Miami FL 33186",
+      "issue_date": "2026-07-06T00:00:00",
+      "expire_date": "2027-07-06T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-093387",
+      "legal_name": "JLG Services Inc.",
+      "dba": "",
+      "address": "9654 SW 138 AVE Miami FL 33186",
+      "issue_date": "2024-09-07T00:00:00",
+      "expire_date": "2026-09-07T00:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-093876",
+      "legal_name": "Murillo's Mudanza and Delivery Inc",
+      "dba": "",
+      "address": "9065 NW 32 CT RD Miami FL 33147",
+      "issue_date": "2025-12-19T00:00:00",
+      "expire_date": "2026-12-19T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-094070",
+      "legal_name": "A&D Moving Florida Corp",
+      "dba": "",
+      "address": "2160 SW 16 AVE Unit: #312 Miami FL 33145",
+      "issue_date": "2026-01-05T00:00:00",
+      "expire_date": "2027-01-05T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-094106",
+      "legal_name": "Navarro Worldwide LLC",
+      "dba": "",
+      "address": "21914 SW 97 PL Cutler Bay FL 33190",
+      "issue_date": "2025-02-12T00:00:00",
+      "expire_date": "2027-02-12T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-094170",
+      "legal_name": "Heat Mover Inc",
+      "dba": "",
+      "address": "16263 SW 103 ST Miami FL 33196",
+      "issue_date": "2026-02-27T00:00:00",
+      "expire_date": "2027-02-27T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-096460",
+      "legal_name": "DY Moving and Delivery Services, Inc.",
+      "dba": "",
+      "address": "5342 NW 190 LN Miami Gardens FL 33055",
+      "issue_date": "2025-10-11T00:00:00",
+      "expire_date": "2026-10-11T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    },
+    {
+      "mr_license": "MR-096905",
+      "legal_name": "Benjamin Moving and Delivery Service Inc",
+      "dba": "",
+      "address": "57 NW 17 PL Unit: #3 Miami FL 33150",
+      "issue_date": "2026-01-29T00:00:00",
+      "expire_date": "2027-01-29T00:00:00",
+      "likely_explanations": [
+        "county record possibly newer than FDACS snapshot",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "address mismatch or branch location possible",
+        "NOT_FOUND does not mean unregistered or illegal"
+      ],
+      "qa_status": "BOUNDED_OFFICIAL_SOURCE_QA",
+      "qa_conclusion": "REMAINS_NOT_FOUND",
+      "qa_note": "Fail-closed under MDC_FDACS_RECONCILIATION_V1. Rules not loosened to eliminate NOT_FOUND. County MR credential remains a county regulatory fact."
+    }
+  ]
+}

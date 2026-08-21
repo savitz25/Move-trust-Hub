@@ -1,0 +1,96 @@
+{
+  "task": "FL-C006",
+  "version": "v1",
+  "dimensions": [
+    {
+      "dimension": "qualification_state",
+      "palm_beach": "QUALIFIED (C003) — public roster + BIR sample evidence",
+      "broward": "ACQUIRED schema only (C004) — roster PRA_REQUIRED; not yet qualified",
+      "miami_dade": "QUALIFIED (C006) — public EnerGov roster + LBT; complaints/vehicles PRA/schema"
+    },
+    {
+      "dimension": "current_roster",
+      "palm_beach": "NEAR_FULL active permits (~142 LICENSED)",
+      "broward": "PRA_REQUIRED",
+      "miami_dade": "NEAR_FULL (117 Issued / 409 total)"
+    },
+    {
+      "dimension": "historical_roster",
+      "palm_beach": "Limited publicly; PRA for inactive",
+      "broward": "PRA",
+      "miami_dade": "Public multi-status history (OOB/Abandoned/Expired/Archived)"
+    },
+    {
+      "dimension": "identity_phone_email",
+      "palm_beach": "Strong public phone; email via BIR sample",
+      "broward": "Application only",
+      "miami_dade": "Address/DBA public; phone/email not on public EnerGov"
+    },
+    {
+      "dimension": "owners",
+      "palm_beach": "Public contact/title on roster",
+      "broward": "Application",
+      "miami_dade": "Application (DOB not committed)"
+    },
+    {
+      "dimension": "LBT",
+      "palm_beach": "Packet requirement",
+      "broward": "Packet requirement",
+      "miami_dade": "Open-data FeatureServer + qualified MR↔LBT crosswalk"
+    },
+    {
+      "dimension": "branches",
+      "palm_beach": "Not first-class public",
+      "broward": "Not public",
+      "miami_dade": "BRANCH_SCHEMA_SUPPORTED; BRANCH_RECORD_OBSERVED=0"
+    },
+    {
+      "dimension": "fleet_vehicle",
+      "palm_beach": "Fleet count public",
+      "broward": "VIN/tag/GVW schema; inventory PRA",
+      "miami_dade": "VIN/tag/GVW schema; CURRENT_VEHICLE_RECORDS_OBSERVED=0"
+    },
+    {
+      "dimension": "insurance",
+      "palm_beach": "Not primary public evidence",
+      "broward": "Application requirements",
+      "miami_dade": "REQUIREMENT_DOCUMENTED; CURRENT_POLICY_OBSERVED=false"
+    },
+    {
+      "dimension": "complaint_history",
+      "palm_beach": "BIR sampleable with dispositions",
+      "broward": "Intake; history PRA",
+      "miami_dade": "INTAKE_ONLY; PUBLIC_COMPLAINT_RECORDS=0"
+    },
+    {
+      "dimension": "dispositions",
+      "palm_beach": "44-code official catalog",
+      "broward": "None public",
+      "miami_dade": "None public"
+    },
+    {
+      "dimension": "citation_enforcement",
+      "palm_beach": "BIR sampleable",
+      "broward": "Process docs; cases PRA",
+      "miami_dade": "Authority docs; company events=0"
+    },
+    {
+      "dimension": "source_accessibility",
+      "palm_beach": "High (API + BIR)",
+      "broward": "Low for data / high for docs",
+      "miami_dade": "High for roster+LBT; low for enrichment"
+    },
+    {
+      "dimension": "engineering_cost",
+      "palm_beach": "Medium",
+      "broward": "High (PRA unlock)",
+      "miami_dade": "Medium"
+    },
+    {
+      "dimension": "pra_dependency",
+      "palm_beach": "Partial",
+      "broward": "High",
+      "miami_dade": "Medium (contacts/vehicles/complaints/citations)"
+    }
+  ]
+}

@@ -1,0 +1,650 @@
+{
+  "task": "FL-C006",
+  "unique_businesses_approx": 378,
+  "total_licenses": 409,
+  "businesses_with_multiple_licenses": 25,
+  "records": [
+    {
+      "business_key": "F2C2DF72-BD98-42FA-840D-95D03FE65748",
+      "business_id": "F2C2DF72-BD98-42FA-840D-95D03FE65748",
+      "company_name": "Robert Williams Moving & Storage, Inc.",
+      "license_count": 5,
+      "licenses": [
+        {
+          "license_number": "MR-00060",
+          "status": "Expired",
+          "issue_date": "2025-04-03T00:00:00",
+          "expire_date": "2026-04-03T00:00:00",
+          "address": "615 NW 129 ST North Miami FL 33168"
+        },
+        {
+          "license_number": "MR-092366",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "615 N.W. 129 Street North Miami FL 33168"
+        },
+        {
+          "license_number": "MR-092367",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "615 NW 129th St North Miami FL 33168-2737"
+        },
+        {
+          "license_number": "MR-092368",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        },
+        {
+          "license_number": "MR-092380",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "1615 NW 129 ST North Miami FL 33167-2243"
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "86D29358-7219-4BCE-BB6A-2113AA324412",
+      "business_id": "86D29358-7219-4BCE-BB6A-2113AA324412",
+      "company_name": "South Florida Van Line, Inc.",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-00278",
+          "status": "Issued",
+          "issue_date": "2026-01-17T00:00:00",
+          "expire_date": "2027-01-17T00:00:00",
+          "address": "2670 W 84 ST Hialeah FL 33016"
+        },
+        {
+          "license_number": "MR-090892",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": null,
+          "address": null
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "41BF3450-36A4-48ED-9A88-9B0A36830949",
+      "business_id": "41BF3450-36A4-48ED-9A88-9B0A36830949",
+      "company_name": "A-1 Southeast Moving, Inc.",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-00332",
+          "status": "Issued",
+          "issue_date": "2026-02-09T00:00:00",
+          "expire_date": "2027-02-09T00:00:00",
+          "address": "3323 SW 154 CT Miami FL 33185"
+        },
+        {
+          "license_number": "MR-095556",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "59CC5197-07D6-42CF-A943-D8CD766B54D5",
+      "business_id": "59CC5197-07D6-42CF-A943-D8CD766B54D5",
+      "company_name": "Jesus Moving, LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-00378",
+          "status": "Issued",
+          "issue_date": "2025-12-07T00:00:00",
+          "expire_date": "2027-12-07T00:00:00",
+          "address": "11 Flagami Blvd Miami FL 33144"
+        },
+        {
+          "license_number": "MR-090573",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": null,
+          "address": null
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "3D845BC9-46EF-4296-AF7B-FCA5FA159023",
+      "business_id": "3D845BC9-46EF-4296-AF7B-FCA5FA159023",
+      "company_name": "Castle Services Inc.",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-00487",
+          "status": "Abandoned",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "957 NW 3 AVE Unit: #1 Florida City FL 33034"
+        },
+        {
+          "license_number": "MR-096638",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "957 NW 3 AVE Unit: #1 Florida City FL 33034"
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "D766C4D3-64C4-4A7F-9E5A-3ABEBBA749E2",
+      "business_id": "D766C4D3-64C4-4A7F-9E5A-3ABEBBA749E2",
+      "company_name": "Gama Delivery LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-00518",
+          "status": "Abandoned",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "10302 NW South River Dr. Unit: #14 Medley FL 33178"
+        },
+        {
+          "license_number": "MR-093187",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "8C0E3995-661B-4E93-8CC9-D3361B596E6E",
+      "business_id": "8C0E3995-661B-4E93-8CC9-D3361B596E6E",
+      "company_name": "Alex Moving and Delivery, Inc.",
+      "license_count": 3,
+      "licenses": [
+        {
+          "license_number": "MR-00531",
+          "status": "Abandoned",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "11760 SW 15 ST Miami FL 33184"
+        },
+        {
+          "license_number": "MR-094587",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        },
+        {
+          "license_number": "MR-095883",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "A8FB9081-88F7-4E0F-84D9-F5F44540EF9C",
+      "business_id": "A8FB9081-88F7-4E0F-84D9-F5F44540EF9C",
+      "company_name": "CMR Transport, Inc.",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01016",
+          "status": "Issued",
+          "issue_date": "2024-11-11T00:00:00",
+          "expire_date": "2026-11-11T00:00:00",
+          "address": "10049 NW 89 AVE Unit: #5 Medley FL 33178"
+        },
+        {
+          "license_number": "MR-092168",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "10049 NW 89th AVE Unit: 5 Medley FL 33178"
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "7DD1AE94-3CBC-4C9F-9E4F-3A62DDEABC65",
+      "business_id": "7DD1AE94-3CBC-4C9F-9E4F-3A62DDEABC65",
+      "company_name": "Inter-American Movers and Forwarders,LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01054",
+          "status": "Issued",
+          "issue_date": "2025-08-04T00:00:00",
+          "expire_date": "2027-08-04T00:00:00",
+          "address": "6332 NW 97 AVE Doral FL 33178"
+        },
+        {
+          "license_number": "MR-093998",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "26BD433D-E211-43BD-AE74-F5575C152AAD",
+      "business_id": "26BD433D-E211-43BD-AE74-F5575C152AAD",
+      "company_name": "Ruben's Moving & Storage, LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01085",
+          "status": "Abandoned",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "3150 SW 19 ST Miami FL 33145"
+        },
+        {
+          "license_number": "MR-090342",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": null,
+          "address": "3150 SW 19 ST Miami FL 33145-1928"
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "F94B339A-ED18-4E42-AB66-8838474DC32D",
+      "business_id": "F94B339A-ED18-4E42-AB66-8838474DC32D",
+      "company_name": "SF Local Moving Inc",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01139",
+          "status": "Issued",
+          "issue_date": "2026-05-05T00:00:00",
+          "expire_date": "2027-05-05T00:00:00",
+          "address": "420 NE 152 ST Miami FL 33162"
+        },
+        {
+          "license_number": "MR-091419",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": null,
+          "address": null
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "279E9300-10F0-4CE4-9FA4-09BEED0D2175",
+      "business_id": "279E9300-10F0-4CE4-9FA4-09BEED0D2175",
+      "company_name": "Mudanzas & Deliveries, Inc.",
+      "license_count": 3,
+      "licenses": [
+        {
+          "license_number": "MR-01142",
+          "status": "Abandoned",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "14920 SW 82 LN Unit: #102 Miami FL 33193"
+        },
+        {
+          "license_number": "MR-093356",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        },
+        {
+          "license_number": "MR-093357",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "ECB381C5-E47A-4C75-BCA2-D978FC72A6B7",
+      "business_id": "ECB381C5-E47A-4C75-BCA2-D978FC72A6B7",
+      "company_name": "Mancav Furniture Delivery LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01192",
+          "status": "Issued",
+          "issue_date": "2025-06-16T00:00:00",
+          "expire_date": "2027-06-16T00:00:00",
+          "address": "11112 SW 161 ST Miami FL 33157"
+        },
+        {
+          "license_number": "MR-095972",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "11112 SW 161 ST Miami FL 33157"
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "66ADC893-EC14-445E-8687-7C9B9BF3B9FA",
+      "business_id": "66ADC893-EC14-445E-8687-7C9B9BF3B9FA",
+      "company_name": "Quintero Delivery & Moving, Inc.",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01216",
+          "status": "Issued",
+          "issue_date": "2026-06-14T08:43:19",
+          "expire_date": "2027-06-14T08:43:19",
+          "address": "1721 NW 79 AVE Doral FL 33126"
+        },
+        {
+          "license_number": "MR-094481",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "1721 NW 79th Ave. Doral FL 33126"
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "1D3DA254-CEB3-4C40-98F2-C94E723579D0",
+      "business_id": "1D3DA254-CEB3-4C40-98F2-C94E723579D0",
+      "company_name": "Metayer Moving Corp",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01244",
+          "status": "Issued",
+          "issue_date": "2023-01-24T00:00:00",
+          "expire_date": "2027-01-23T00:00:00",
+          "address": "11519 SW 124 PL Miami FL 33186"
+        },
+        {
+          "license_number": "MR-096341",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "03CDDCF4-0697-4ED3-ABE1-34D2E4EF5010",
+      "business_id": "03CDDCF4-0697-4ED3-ABE1-34D2E4EF5010",
+      "company_name": "Going Places Moving & Storage, LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01266",
+          "status": "Out of Business",
+          "issue_date": "2018-11-21T00:00:00",
+          "expire_date": "2019-11-21T00:00:00",
+          "address": "7306 JACARANDA LN Hialeah FL 33014"
+        },
+        {
+          "license_number": "MR-01271",
+          "status": "Out of Business",
+          "issue_date": "2019-02-20T00:00:00",
+          "expire_date": "2020-02-20T00:00:00",
+          "address": "7306 JACARANDA LN Hialeah FL 33014"
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "D7BE1706-9360-4C3E-8817-C0B92725277D",
+      "business_id": "D7BE1706-9360-4C3E-8817-C0B92725277D",
+      "company_name": "Nation Moving Company",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01272",
+          "status": "Expired",
+          "issue_date": "2024-02-25T00:00:00",
+          "expire_date": "2026-02-25T00:00:00",
+          "address": "755 NW 67 ST Unit: #309 Miami FL 33150"
+        },
+        {
+          "license_number": "MR-094163",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "3D5BF65A-2188-49B6-BDB1-6B6972752D37",
+      "business_id": "3D5BF65A-2188-49B6-BDB1-6B6972752D37",
+      "company_name": "Gander & White Shipping Inc.",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01277",
+          "status": "Abandoned",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "11400 NW 34 ST Doral FL 33178"
+        },
+        {
+          "license_number": "MR-097061",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "11400 NW 34 ST Doral FL 33178-0000"
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "43E1D095-733B-4EED-A947-A618A6C0D2A8",
+      "business_id": "43E1D095-733B-4EED-A947-A618A6C0D2A8",
+      "company_name": "Prestige Moving System, Inc",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01282",
+          "status": "Issued",
+          "issue_date": "2025-04-03T00:00:00",
+          "expire_date": "2027-04-03T00:00:00",
+          "address": "600 NE 185 ST Miami FL 33179"
+        },
+        {
+          "license_number": "MR-095467",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": null
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "223FFEB7-03BC-4022-BEBF-2E85C9C52056",
+      "business_id": "223FFEB7-03BC-4022-BEBF-2E85C9C52056",
+      "company_name": "Fargo Partners LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01283",
+          "status": "Issued",
+          "issue_date": "2026-04-30T00:00:00",
+          "expire_date": "2028-04-29T00:00:00",
+          "address": "3353 NW 74 AVE Miami FL 33122"
+        },
+        {
+          "license_number": "MR-01284",
+          "status": "Out of Business",
+          "issue_date": "2019-05-01T00:00:00",
+          "expire_date": "2020-05-01T00:00:00",
+          "address": "3353 NW 74TH AVE Miami FL 33122"
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "3A6A8D8F-53FB-4614-8961-ADCC32E69980",
+      "business_id": "3A6A8D8F-53FB-4614-8961-ADCC32E69980",
+      "company_name": "Lu's Delivery LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-01297",
+          "status": "Issued",
+          "issue_date": "2025-03-09T00:00:00",
+          "expire_date": "2027-03-09T00:00:00",
+          "address": "900 SW 8 ST Unit: #1207 Miami FL 33130"
+        },
+        {
+          "license_number": "MR-095515",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "900 SW 8th St Unit: 1207 Miami FL 33130"
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "C11CA414-A94A-4DBD-8E60-39292E64F970",
+      "business_id": "C11CA414-A94A-4DBD-8E60-39292E64F970",
+      "company_name": "305 + Movers LLC",
+      "license_count": 3,
+      "licenses": [
+        {
+          "license_number": "MR-01320",
+          "status": "Issued",
+          "issue_date": "2025-05-10T00:00:00",
+          "expire_date": "2027-05-10T00:00:00",
+          "address": "3715 SW 29 ST Miami FL 33134"
+        },
+        {
+          "license_number": "MR-091144",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": null,
+          "address": null
+        },
+        {
+          "license_number": "MR-091145",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": null,
+          "address": null
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "5c1dcee8-6af3-496b-9465-30112a0e44e0",
+      "business_id": "5c1dcee8-6af3-496b-9465-30112a0e44e0",
+      "company_name": "Sanford 7 Enterprise LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-094141",
+          "status": "Issued",
+          "issue_date": "2025-02-20T00:00:00",
+          "expire_date": "2027-02-20T00:00:00",
+          "address": "1200 N Federal Hwy Hollywood FL 33020"
+        },
+        {
+          "license_number": "MR-094147",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "5837 DAWSON ST HOLLYWOOD FL 33023"
+        }
+      ],
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "ee446192-2049-4549-9878-fdcc041bf7be",
+      "business_id": "ee446192-2049-4549-9878-fdcc041bf7be",
+      "company_name": "The Regime Mgmt LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-094264",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "2225 NW 76 TER Hollywood FL 33024"
+        },
+        {
+          "license_number": "MR-095552",
+          "status": "Abandoned",
+          "issue_date": "2025-02-06T00:00:00",
+          "expire_date": "2026-02-06T00:00:00",
+          "address": "2225 NW 76 TER Hollywood FL 33024"
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    },
+    {
+      "business_key": "53852851-681c-4355-84cb-736ed06b35de",
+      "business_id": "53852851-681c-4355-84cb-736ed06b35de",
+      "company_name": "Alex Buitrago LLC",
+      "license_count": 2,
+      "licenses": [
+        {
+          "license_number": "MR-094432",
+          "status": "Archived",
+          "issue_date": null,
+          "expire_date": "2999-01-01T00:00:00",
+          "address": "21451 San Simeon Way Unit: #110 Miami FL 33179"
+        },
+        {
+          "license_number": "MR-094445",
+          "status": "Expired",
+          "issue_date": "2024-05-09T00:00:00",
+          "expire_date": "2025-05-09T00:00:00",
+          "address": "21451 San Simeon Way Unit: #110 Miami FL 33179"
+        }
+      ],
+      "relationship_class": "HISTORICAL_LICENSE_VERSIONS",
+      "note": "Do not collapse source license IDs. Research-level relationship only."
+    }
+  ]
+}

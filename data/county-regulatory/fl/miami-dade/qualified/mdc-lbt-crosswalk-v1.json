@@ -1,0 +1,1838 @@
+{
+  "task": "FL-C006",
+  "version": "v1",
+  "role": "SECONDARY_BUSINESS_TAX_EVIDENCE_NOT_MOVER_CREDENTIAL",
+  "counts": {
+    "VERIFIED_LBT_LINK": 54,
+    "REVIEW_REQUIRED": 13,
+    "NOT_FOUND": 50
+  },
+  "results": [
+    {
+      "mr_license": "MR-00002",
+      "company_name": "Withers Transfer and Storage of Coral Gables, Inc.",
+      "dba": "Withers Worldwide",
+      "address": "11431 NW 107 ST Unit: #1 Miami FL 33178",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7223142",
+      "lbt_business_name": "WITHERS WORLDWIDE",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "11431 NW 107TH ST STE 1 , MIAMI, 33178-4632",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00015",
+      "company_name": "Raul's Moving, Inc.",
+      "dba": null,
+      "address": "9105 NW 105 CIR Medley FL 33178",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "address_only_insufficient"
+      ],
+      "lbt_account_no": "1201151",
+      "lbt_business_name": "GEORGE LIMA MOVING INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "9105 NW 105TH CIR , MEDLEY, 33178-1306",
+      "candidate_count": 2,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00018",
+      "company_name": "Gomez Moving Co., Inc.",
+      "dba": null,
+      "address": "9881 SW 4 ST Miami FL 33174",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "684788",
+      "lbt_business_name": "GOMEZ MOVING CO INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "9881 SW 4TH ST , MIAMI, 33174-1974",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00032",
+      "company_name": "George Lima Moving, Inc.",
+      "dba": null,
+      "address": "9105 NW 105 CIR Medley FL 33178",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "1201151",
+      "lbt_business_name": "GEORGE LIMA MOVING INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "9105 NW 105TH CIR , MEDLEY, 33178-1306",
+      "candidate_count": 2,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00049",
+      "company_name": "Homestead Transfer & Storage Co.",
+      "dba": null,
+      "address": "32100 SW 187 AVE Homestead FL 33030",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "3159761",
+      "lbt_business_name": "HOMESTEAD TRANSFER & STORAGE CO",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "32100 SW 187TH AVE , HOMESTEAD, 33030-6801",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00067",
+      "company_name": "Small Time Movers, Inc.",
+      "dba": null,
+      "address": "9124 SW 148 Ct Miami FL 33196",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "3307832",
+      "lbt_business_name": "SMALL TIME MOVERS INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "9124 SW 148TH CT , MIAMI, 33196-4121",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00068",
+      "company_name": "Mudanzas Diaz Inc.",
+      "dba": null,
+      "address": "7540 W 34 CT Hialeah FL 33018",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "2882117",
+      "lbt_business_name": "MUDANZAS DIAZ",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "7540 W 34TH CT , HIALEAH, 33018-6700",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00094",
+      "company_name": "The Fortress-Miami Corporation",
+      "dba": "Fortress",
+      "address": "1629 NE 1 AVE Miami FL 33132",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "1617738",
+      "lbt_business_name": "FORTRESS MIAMI CORP THE",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "1629 NE 1ST AVE , MIAMI, 33132-1201",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00106",
+      "company_name": "La Rosa Del Monte Express (Miami), LLC",
+      "dba": null,
+      "address": "7600 NW 68 ST Miami FL 33166",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "1089374",
+      "lbt_business_name": "LA ROSA DEL MONTE",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "7600 NW 68TH ST , MIAMI, 33166-2812",
+      "candidate_count": 2,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00113",
+      "company_name": "Genesis Moving and Storage, Inc.",
+      "dba": null,
+      "address": "1688 NE 205 TER North Miami Beach FL 33179",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "3248531",
+      "lbt_business_name": "GENESIS MOVING & STORAGE INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "1688 NE 205TH TER , MIAMI, 33179-2117",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00207",
+      "company_name": "Millennium Relocation Services, Inc.",
+      "dba": null,
+      "address": "9220 NW 102 ST Medley FL 33178",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "3846269",
+      "lbt_business_name": "MILLENNIUM RELOCATION SERVICES INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "9220 NW 102ND ST , MEDLEY, 33178-1315",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00231",
+      "company_name": "Rene Chinique Moving & Delivery",
+      "dba": null,
+      "address": "13195 SW 10 TER Miami FL 33184",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00278",
+      "company_name": "South Florida Van Line, Inc.",
+      "dba": null,
+      "address": "2670 W 84 ST Hialeah FL 33016",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6682737",
+      "lbt_business_name": "SOUTH FLORIDA VAN LINE INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "2670 W 84TH ST, HIALEAH, 33016-5703",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00310",
+      "company_name": "Sergio's Moving, Corp.",
+      "dba": "South Express Moving",
+      "address": "9200 SW 154 PL Miami FL 33196",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00313",
+      "company_name": "American Connection Moving, LLC",
+      "dba": null,
+      "address": "1708 NE 205 TER Miami FL 33179",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "4402707",
+      "lbt_business_name": "AMERICAN CONNECTION MOVING LLC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "1708 NE 205TH TER , MIAMI, 33179-2112",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00317",
+      "company_name": "Fuentes Moving Corp.",
+      "dba": null,
+      "address": "9730 NW 10 ST Miami FL 33172",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7183647",
+      "lbt_business_name": "FUENTES MOVING CORP",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "9730 NW 10TH ST , MIAMI, 33172-3322",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00332",
+      "company_name": "A-1 Southeast Moving, Inc.",
+      "dba": null,
+      "address": "3323 SW 154 CT Miami FL 33185",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "4567930",
+      "lbt_business_name": "A 1 SOUTHEAST MOVING INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "3323 SW 154TH CT , MIAMI, 33185-4734",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00338",
+      "company_name": "Johnny Moving & Delivery, Inc.",
+      "dba": null,
+      "address": "5871 W 20 LN Hialeah FL 33016",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "4536273",
+      "lbt_business_name": "JOHNNY MOVING & DELIVERY INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "5871 W 20TH LN , HIALEAH, 33016-2663",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00359",
+      "company_name": "OnTime Moving System, Inc.",
+      "dba": "ArtPort",
+      "address": "11455 NW 122 ST Miami FL 33178",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5856712",
+      "lbt_business_name": "ONTIME MOVING SYSTEM INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "11455 NW 122ND ST , MEDLEY, 33178-3182",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00366",
+      "company_name": "Brickell Moving and Packing Inc.",
+      "dba": null,
+      "address": "1014 E 29 ST Hialeah FL 33013",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "4645504",
+      "lbt_business_name": "BRICKELL MOVING & PACKING INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "1014 E 29TH ST , HIALEAH, 33013-3518",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00378",
+      "company_name": "Jesus Moving, LLC",
+      "dba": null,
+      "address": "11 Flagami Blvd Miami FL 33144",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "4955515",
+      "lbt_business_name": "JESUS MOVING LLC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "11 FLAGAMI BLVD , MIAMI, 33144-2661",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00385",
+      "company_name": "Vidal Moving & Storage, Inc.",
+      "dba": null,
+      "address": "270 NE 70 ST Miami FL 33138",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "address_only_insufficient"
+      ],
+      "lbt_account_no": "4310363",
+      "lbt_business_name": "VIDAL MOVING STORAGE INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "270 NE 70TH ST , MIAMI, 33138-5524",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00416",
+      "company_name": "Luis & Son Moving, Inc.",
+      "dba": null,
+      "address": "17201 SW 119 CT Miami FL 33177",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5065412",
+      "lbt_business_name": "LUIS & SON MOVING",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "17201 SW 119TH CT , MIAMI, 33177-2215",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00444",
+      "company_name": "ABA Moving, Inc.",
+      "dba": "Movers Pompano Beach,Fort Lauderdale Movers,The Miami Movers,Mudanzas Miami,SouthFloridaPianoMoving",
+      "address": "12429 W Dixie Hwy North Miami FL 33161",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "address_only_insufficient"
+      ],
+      "lbt_account_no": "5302716",
+      "lbt_business_name": "A B A MOVING INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "12429 W DIXIE HWY , NORTH MIAMI, 33161-5440",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00447",
+      "company_name": "Clover Systems, LLC",
+      "dba": null,
+      "address": "3505 NW 107 AVE Unit: #C Miami FL 33178",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "name_only_insufficient"
+      ],
+      "lbt_account_no": "1445576",
+      "lbt_business_name": "CLOVER SYSTEMS LLC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "14350 NW 56TH CT STE 120 , OPA LOCKA, 33054-2354",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00449",
+      "company_name": "A.B.C. Moving, Inc.",
+      "dba": null,
+      "address": "18235 NE 4 CT Miami FL 33162",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00450",
+      "company_name": "Powerloaders Corporation",
+      "dba": "Powerloaders",
+      "address": "2007 NW 79 AVE Doral FL 33122",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5347893",
+      "lbt_business_name": "POWERLOADERS CORP",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "2007 NW 79TH AVE , DORAL, 33122-1612",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00458",
+      "company_name": "American Moving & Packaging Inc",
+      "dba": null,
+      "address": "16121 NW 79 CT Miami FL 33016",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00476",
+      "company_name": "Nobel Van Lines Inc.",
+      "dba": "Nobel Relocation",
+      "address": "17901 NW Miami Ct. Miami FL 33169",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5501839",
+      "lbt_business_name": "NOBEL VAN LINES INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "17901 NW MIAMI CT , MIAMI GARDENS, 33169-5018",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00496",
+      "company_name": "Nippon Express USA, Inc",
+      "dba": null,
+      "address": "2100 NW 129 AVE Unit: #106-108 SweetWater FL 33182",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "3867125",
+      "lbt_business_name": "NIPPON EXPRESS USA INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "2100 NW 129TH AVE STE 108 & 106, SWEETWATER, 33182-2516",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00512",
+      "company_name": "Flat Rate Moving & Storage, LLC",
+      "dba": null,
+      "address": "16501 NW 8 AVE Miami FL 33169",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5739975",
+      "lbt_business_name": "FLAT RATE MOVING & STORAGE LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "16501 NW 8TH AVE , MIAMI GARDENS, 33169-5813",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00515",
+      "company_name": "William Moving Service, Inc.",
+      "dba": null,
+      "address": "1250 Naples Ave Clewiston FL 33440",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00564",
+      "company_name": "Miami Movers For Less, Inc.",
+      "dba": "Move For Less",
+      "address": "17854 STATE RD. 9 Miami FL 33162",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6081905",
+      "lbt_business_name": "MOVE FOR LESS",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "17854 STATE ROAD 9 , MIAMI, 33162-1008",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-00570",
+      "company_name": "Torito's Moving Corp",
+      "dba": null,
+      "address": "19061 NW 90 CT Miami FL 33018",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "name_only_insufficient"
+      ],
+      "lbt_account_no": "6127401",
+      "lbt_business_name": "TORITO'S MOVING CORP",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "9981 NW 80TH AVE , HIALEAH GARDENS, 33016-2302",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01006",
+      "company_name": "Sainz Moving & Delivery",
+      "dba": null,
+      "address": "1246 NW 6 ST Unit: #6 Miami FL 33125",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01016",
+      "company_name": "CMR Transport, Inc.",
+      "dba": "Blason International Movers",
+      "address": "10049 NW 89 AVE Unit: #5 Medley FL 33178",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "name_only_insufficient"
+      ],
+      "lbt_account_no": "7232672",
+      "lbt_business_name": "CMR TRANSPORT INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "9999 NW 89TH AVE UNIT 5 , MEDLEY, 33178-1459",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01020",
+      "company_name": "Varela Moving Pickup & Delivery LLC",
+      "dba": null,
+      "address": "321 E 6 ST Unit: #226 Hialeah FL 33010",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6320824",
+      "lbt_business_name": "VARELA MOVING, PICKUP & DELIVERY",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "321 E 6TH ST APT 226 , HIALEAH, 33010-6810",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01029",
+      "company_name": "Orellana AV Moving, Corp.",
+      "dba": null,
+      "address": "15383 SW 23 ST Miami FL 33185",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01045",
+      "company_name": "Laprom Moving Inc.",
+      "dba": "24 Moving / Skyroad Moving / Pink Truck Moving",
+      "address": "10812 NW 6 CT Miami FL 33168",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6412316",
+      "lbt_business_name": "24 MOVING",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "10812 NW 6TH CT , MIAMI, 33168-3259",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01049",
+      "company_name": "Tacha's Movi, Corp.",
+      "dba": null,
+      "address": "9631 Fontainebleau Blvd Unit: #202 Miami FL 33172",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "address_only_insufficient"
+      ],
+      "lbt_account_no": "6520515",
+      "lbt_business_name": "TACHAS MOVI CORP",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "9631 FONTAINEBLEAU BLVD APT 202 , MIAMI, 33172-6859",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01054",
+      "company_name": "Inter-American Movers and Forwarders,LLC",
+      "dba": null,
+      "address": "6332 NW 97 AVE Doral FL 33178",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "address_only_insufficient"
+      ],
+      "lbt_account_no": "6507082",
+      "lbt_business_name": "INTERAMERICAN MOVERS & FORWARDERS LLC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "6332 NW 97TH AVE , DORAL, 33178-1645",
+      "candidate_count": 2,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01063",
+      "company_name": "Valle Moving & Deliveries, Inc.",
+      "dba": null,
+      "address": "934 SW 149 CT Miami FL 33194",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6629993",
+      "lbt_business_name": "VALLE MOVING & DELIVERIES INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "934 SW 149TH CT , MIAMI, 33194-2938",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01074",
+      "company_name": "Ojeda Moving and Delivery Inc",
+      "dba": null,
+      "address": "2606 W 9 LN Hialeah FL 33010",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6669684",
+      "lbt_business_name": "OJEDA MOVING AND DELIVERY INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "2606 W 9TH LN , HIALEAH, 33010-1228",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01076",
+      "company_name": "Hypermovers Max '' LLC''",
+      "dba": null,
+      "address": "6741 SW 15 ST Miami FL 33144",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01079",
+      "company_name": "Martinez Delivery Corp",
+      "dba": "Martinez Moving",
+      "address": "13006 SW 151 LN Miami FL 33186",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5667820",
+      "lbt_business_name": "MARTINEZ MOVING",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "13006 SW 151ST LN , MIAMI, 33186-7621",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01109",
+      "company_name": "Same Day Moving & Storage, Inc.",
+      "dba": null,
+      "address": "8871 SW 208 TER Miami FL 33189",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6903737",
+      "lbt_business_name": "SAME DAY MOVING & STORAGE INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "8871 SW 208TH TER , CUTLER BAY, 33189-3882",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01113",
+      "company_name": "First Class Movers, LLC",
+      "dba": null,
+      "address": "7905 NW 60 ST Miami FL 33166",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6933593",
+      "lbt_business_name": "FIRST CLASS MOVERS LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "7905 NW 60TH ST , MIAMI, 33166-3410",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01125",
+      "company_name": "La Barata Oves Moving",
+      "dba": null,
+      "address": "4721 NW 4 ST Miami FL 33126",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5429287",
+      "lbt_business_name": "LA BARATA OVES MOVING",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "4721 NW 4TH ST , MIAMI, 33126-2113",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01137",
+      "company_name": "Shark Junior, L.L.C.",
+      "dba": null,
+      "address": "13760 NW 19 AVE Unit: #8 Opa Locka FL 33054",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "address_only_insufficient"
+      ],
+      "lbt_account_no": "7157852",
+      "lbt_business_name": "SHARK JUNIOR LLC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "13760 NW 19TH AVE UNIT 8 , OPA LOCKA, 33054-4233",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01139",
+      "company_name": "SF Local Moving Inc",
+      "dba": null,
+      "address": "420 NE 152 ST Miami FL 33162",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01140",
+      "company_name": "Cuba Moving, Inc.",
+      "dba": null,
+      "address": "8446 NW 103 ST Unit: #101-D Hialeah Gardens FL 33016",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01141",
+      "company_name": "Chiquis Moving,Inc",
+      "dba": null,
+      "address": "1321 SW 142 AVE Miami FL 33184",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01147",
+      "company_name": "Bermen Moving & Delivery LLC",
+      "dba": null,
+      "address": "1132 W 39 TER Hialeah FL 33012",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5855615",
+      "lbt_business_name": "BERMEN MOVING & DELIVERY LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "1132 W 39TH TER , HIALEAH, 33012-7787",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01164",
+      "company_name": "Nina International Transport Inc.",
+      "dba": null,
+      "address": "4450 NW 74 AVE Miami FL 33166",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7171115",
+      "lbt_business_name": "NINA INTERNATIONAL TRANSPORT INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "4450 NW 74TH AVE , MIAMI, 33166-6443",
+      "candidate_count": 2,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01192",
+      "company_name": "Mancav Furniture Delivery LLC",
+      "dba": "Mancav Movers",
+      "address": "11112 SW 161 ST Miami FL 33157",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7167884",
+      "lbt_business_name": "MANCAV FURNITURE DELIVERY LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "11112 SW 161ST ST , MIAMI, 33157-2839",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01203",
+      "company_name": "Black Wolf Moving Miami, LLC",
+      "dba": "Two Men and A Truck",
+      "address": "1521 NW 82 AVE Doral FL 33126",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7191925",
+      "lbt_business_name": "TWO MEN AND A TRUCK",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "1521 NW 82ND AVE , DORAL, 33126-1019",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01208",
+      "company_name": "Wilfredo's Moving",
+      "dba": null,
+      "address": "17974 NW 74 CT Hialeah FL 33015",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7197312",
+      "lbt_business_name": "WILFREDO'S MOVING",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "17974 NW 74TH CT , HIALEAH, 33015-8443",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01209",
+      "company_name": "Dixie Movers LLC",
+      "dba": null,
+      "address": "2221 NE 164 ST Unit: #273 North Miami Beach FL 33160",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01216",
+      "company_name": "Quintero Delivery & Moving, Inc.",
+      "dba": null,
+      "address": "1721 NW 79 AVE Doral FL 33126",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7161251",
+      "lbt_business_name": "QUINTERO DELIVERY & MOVING INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "1721 NW 79TH AVE, DORAL, 33126-1112",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01221",
+      "company_name": "Pro Movers Miami, Inc.",
+      "dba": "Pro Movers",
+      "address": "475 Brickell Ave Miami FL 33131",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01237",
+      "company_name": "Related Moving & Service, LLC",
+      "dba": null,
+      "address": "7950 NW 53 ST Unit: #337 Doral FL 33166",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7228329",
+      "lbt_business_name": "RELATED MOVING & SERVICE LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "7950 NW 53RD ST STE 337, DORAL, 33166-4791",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01244",
+      "company_name": "Metayer Moving Corp",
+      "dba": null,
+      "address": "11519 SW 124 PL Miami FL 33186",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01249",
+      "company_name": "AN Mudanzas & Delivery LLC",
+      "dba": null,
+      "address": "16222 NW 38 PL Opa-locka FL 33054",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01253",
+      "company_name": "J.V. Express Deliveries, Inc.",
+      "dba": null,
+      "address": "13005 SW 50 LN Miami FL 33175",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "5720058",
+      "lbt_business_name": "J V EXPRESS DELIVERIES INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "13005 SW 50TH LN , MIAMI, 33175-5353",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01267",
+      "company_name": "Xpress Relocations, LLC",
+      "dba": null,
+      "address": "6158 NW 74 AVE Miami FL 33166",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01269",
+      "company_name": "Shield Moving and Storage Logistics, Inc",
+      "dba": null,
+      "address": "2420 NW 116 ST Unit: #100 Miami FL 33167",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7274723",
+      "lbt_business_name": "SHIELD MOVING AND STORAGE LOGISTICS INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "2420 NW 116TH ST STE 100 PMB 4, MIAMI, 33167-0018",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01280",
+      "company_name": "Atelier 4, LLC",
+      "dba": null,
+      "address": "2170 NW 87 AVE Doral FL 33172",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01282",
+      "company_name": "Prestige Moving System, Inc",
+      "dba": "Jacob and Sons Moving & Storage",
+      "address": "600 NE 185 ST Miami FL 33179",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7276613",
+      "lbt_business_name": "JACOB AND SONS MOVING & STORAGE",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "600 NE 185TH ST , MIAMI, 33179-4514",
+      "candidate_count": 3,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01283",
+      "company_name": "Fargo Partners LLC",
+      "dba": "American Fargo",
+      "address": "3353 NW 74 AVE Miami FL 33122",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7283768",
+      "lbt_business_name": "AMERICAN FARGO",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "3353 NW 74TH AVE , MIAMI, 33122-1229",
+      "candidate_count": 3,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01287",
+      "company_name": "Ciao Moving & Storage LLC.",
+      "dba": null,
+      "address": "35 NE 179 ST Miami FL 33162",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "name_only_insufficient"
+      ],
+      "lbt_account_no": "7284422",
+      "lbt_business_name": "CIAO MOVING & STORAGE LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "3022 NW 73RD ST STE 1 , MIAMI, 33147-5919",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01295",
+      "company_name": "Your Stuff In The Truck, LLC",
+      "dba": null,
+      "address": "2075 SW 122 AVE Unit: #413 Miami FL 33175",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01296",
+      "company_name": "Online Movers Corp",
+      "dba": null,
+      "address": "6451 NW 102 AVE Unit: #11 Doral FL 33178",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7294515",
+      "lbt_business_name": "ONLINE MOVERS CORP",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "6451 NW 102ND AVE UNIT 11 , DORAL, 33178-4745",
+      "candidate_count": 2,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01297",
+      "company_name": "Lu's Delivery LLC",
+      "dba": "Lux Moving Service",
+      "address": "900 SW 8 ST Unit: #1207 Miami FL 33130",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01306",
+      "company_name": "Lazy Bear Solutions. Inc",
+      "dba": "The Lazy Bear",
+      "address": "4115 NW 132 ST Unit: #D Opa Locka FL 33054",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7306258",
+      "lbt_business_name": "THE LAZY BEAR",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "4115 NW 132ND ST , OPA LOCKA, 33054-4539",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01314",
+      "company_name": "On Point Moving Corp",
+      "dba": null,
+      "address": "16931 SW 111 CT Miami FL 33157",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-01320",
+      "company_name": "305 + Movers LLC",
+      "dba": null,
+      "address": "3715 SW 29 ST Miami FL 33134",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7318823",
+      "lbt_business_name": "305 + MOVERS LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "3715 SW 29TH ST, MIAMI, 33134-7335",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-090497",
+      "company_name": "ScoreUnion, LLC",
+      "dba": "Rushmore Movers",
+      "address": "2140 S Dixie Hwy Unit: #301C Miami FL 33133",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-091229",
+      "company_name": "UOVO Art LLC",
+      "dba": "UOVO",
+      "address": "346 NW 29 ST Miami 33127",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6364038",
+      "lbt_business_name": "UOVO",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "346 NW 29TH ST, MIAMI, 33127-3914",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-092140",
+      "company_name": "P&P Moving and Delivery Inc",
+      "dba": null,
+      "address": "12020 SW 31 ST Miami FL 33175",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7303430",
+      "lbt_business_name": "P&P MOVING AND DELIVERY INC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "12020 SW 31ST ST , MIAMI, 33175-2328",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-092238",
+      "company_name": "Flex Storage Inc.",
+      "dba": null,
+      "address": "1060 SW 8 ST Unit: PBM 5012 Miami FL 33130",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-092297",
+      "company_name": "Total Moving Corporation",
+      "dba": null,
+      "address": "20005 NE 6 CT CIR North Miami FL 33179",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-092523",
+      "company_name": "JJ Brothers Groups LLC",
+      "dba": "Global Movers Relocators",
+      "address": "10900 NW 146 ST Unit: #105 Hialeah Gardens FL 33018",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "address_only_insufficient"
+      ],
+      "lbt_account_no": "7313481",
+      "lbt_business_name": "JJ BROTHERS GROUP LLC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "10900 NW 146TH ST STE 105, HIALEAH GARDENS, 33018",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-092532",
+      "company_name": "Mitjans Moving and Delivery Inc",
+      "dba": null,
+      "address": "25364 SW 116 AVE Homestead FL 33032",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-092562",
+      "company_name": "Confianca Moving & Storage LLC",
+      "dba": "ConfiMove",
+      "address": "7831 NW 72 AVE Medley FL 33166",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7353760",
+      "lbt_business_name": "CONFIANCA MOVING & STORAGE LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "7831 NW 72ND AVE, MEDLEY, 33166-2215",
+      "candidate_count": 2,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-092619",
+      "company_name": "Joe's Moving and Storage, Inc.",
+      "dba": null,
+      "address": "2201 SW 145 AVE Unit: #207 Miramar FL 33027",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "address_only_insufficient"
+      ],
+      "lbt_account_no": "885906",
+      "lbt_business_name": "JOES MOVING AND STORAGE INC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "2201 SW 145TH AVE STE 207, MIRAMAR, 33027-6600",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-092997",
+      "company_name": "Latin Moving, Corp",
+      "dba": null,
+      "address": "11317 NW 50 TER Doral FL 33178",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-093002",
+      "company_name": "Happy Moving Happy Life LLC",
+      "dba": null,
+      "address": "8175 NW 107 AVE Unit: #813 Doral FL 33178",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-093105",
+      "company_name": "U.S.A. On the Move L.L.C.",
+      "dba": null,
+      "address": "14323 SW 142 ST Miami FL 33186",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-093387",
+      "company_name": "JLG Services Inc.",
+      "dba": null,
+      "address": "9654 SW 138 AVE Miami FL 33186",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-093500",
+      "company_name": "Benny and the Moving, Corp",
+      "dba": null,
+      "address": "225 NE 23 ST Unit: #1203 Miami FL 33137",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-093876",
+      "company_name": "Murillo's Mudanza and Delivery Inc",
+      "dba": null,
+      "address": "9065 NW 32 CT RD Miami FL 33147",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-094070",
+      "company_name": "A&D Moving Florida Corp",
+      "dba": null,
+      "address": "2160 SW 16 AVE Unit: #312 Miami FL 33145",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-094106",
+      "company_name": "Navarro Worldwide LLC",
+      "dba": null,
+      "address": "21914 SW 97 PL Cutler Bay FL 33190",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-094141",
+      "company_name": "Sanford 7 Enterprise LLC",
+      "dba": "College Hunks NMB",
+      "address": "1200 N Federal Hwy Hollywood FL 33020",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-094170",
+      "company_name": "Heat Mover Inc",
+      "dba": null,
+      "address": "16263 SW 103 ST Miami FL 33196",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-094205",
+      "company_name": "Powerhouse Moving and Delivery Co.",
+      "dba": null,
+      "address": "2984 W 84 ST Unit: #142 Hialeah FL 33018",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7204751",
+      "lbt_business_name": "POWERHOUSE MOVING & DELIVERY CO",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "2984 W 84TH ST UNIT 142, HIALEAH, 33018",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-094336",
+      "company_name": "W Moving Corp",
+      "dba": null,
+      "address": "1818 SW 1 AVE Unit: #1211 Miami FL 33129",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-094438",
+      "company_name": "Romanos Delivery and Moving, Corp",
+      "dba": null,
+      "address": "18841 NW 42 AVE Miami Gardens FL 33055",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7386041",
+      "lbt_business_name": "ROMANOS DELIVERY AND MOVING CORP",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "18841 NW 42ND AVE, MIAMI GARDENS, 33055-2733",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-094574",
+      "company_name": "Anthony's B Delivery LLC",
+      "dba": null,
+      "address": "13882 SW 63 ST Miami FL 33183",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095117",
+      "company_name": "Octoplus Moving LLC",
+      "dba": null,
+      "address": "1939 SW 23 TER Miami FL 33145",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095152",
+      "company_name": "JP Moving & Delivery Service Corp",
+      "dba": null,
+      "address": "21943 SW 88 PATH Cutler Bay FL 33190",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095236",
+      "company_name": "Mivamove LLC",
+      "dba": "MovaMove",
+      "address": "785 NW 126 ST Miami FL 33168",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095241",
+      "company_name": "305 Pro Movers Corp",
+      "dba": "305 Pro Movers Miami",
+      "address": "10030 NW 9 ST CIR Unit: #203 Miami FL 33172",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095332",
+      "company_name": "QBA Multiservices Inc",
+      "dba": null,
+      "address": "2315 W Okeechobee Rd Unit: #209 Hialeah FL 33010",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095349",
+      "company_name": "Brautigam Delivery Corp.",
+      "dba": null,
+      "address": "12673 SW 146 TER Miami FL 33186",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "6602248",
+      "lbt_business_name": "BRAUTIGAM DELIVERY CORP",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "12673 SW 146TH TER , MIAMI, 33186-5992",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095401",
+      "company_name": "Roy & Ois Moving LLC",
+      "dba": null,
+      "address": "501 NW 57 AVE Miami FL 33126",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095487",
+      "company_name": "Expremoving LLC",
+      "dba": null,
+      "address": "689 NE 206 TER Miami FL 33179",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095542",
+      "company_name": "Nikki Moving LLC",
+      "dba": null,
+      "address": "9071 NW 13 ST Plantation FL 33322",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-095935",
+      "company_name": "Johnson Storage & Moving Co. - Miami, L.L.C.",
+      "dba": null,
+      "address": "6451 NW 102 AVE Unit: #2 Doral FL 33178",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7383449",
+      "lbt_business_name": "JOHNSON STORAGE & MOVING CO MIAMI LLC",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "6451 NW 102ND AVE UNIT 2, DORAL, 33178-4745",
+      "candidate_count": 2,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-096207",
+      "company_name": "AYCS Delivery Service LLC",
+      "dba": null,
+      "address": "1011 NW 53 ST Miami FL 33127",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-096460",
+      "company_name": "DY Moving and Delivery Services, Inc.",
+      "dba": null,
+      "address": "5342 NW 190 LN Miami Gardens FL 33055",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-096496",
+      "company_name": "RapidGolden Transport LLC",
+      "dba": null,
+      "address": "1250 SW 6 ST Unit: #113E Miami FL 33135",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "name_only_insufficient"
+      ],
+      "lbt_account_no": "7414078",
+      "lbt_business_name": "RAPIDGOLDEN TRANSPORT LLC",
+      "lbt_category_code": "MOV-MNS",
+      "lbt_address": "542 SW 7TH ST APT 301 , MIAMI, 33130-4602",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-096653",
+      "company_name": "Adelit LLC",
+      "dba": null,
+      "address": "629 SW 2 ST Miami FL 33130",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-096763",
+      "company_name": "B&H Moving Services LLC",
+      "dba": "Best & Honest Moving & Storage",
+      "address": "14040 NW 22 AVE Opa Locka FL 33054",
+      "classification": "VERIFIED_LBT_LINK",
+      "signals": [
+        "exact_name",
+        "exact_address"
+      ],
+      "lbt_account_no": "7416123",
+      "lbt_business_name": "BEST & HONEST MOVING & STORAGE",
+      "lbt_category_code": "MOV-MWS",
+      "lbt_address": "14040 NW 22ND AVE, OPA LOCKA, 33054",
+      "candidate_count": 1,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-096782",
+      "company_name": "Do It Now Moving Services LLC",
+      "dba": null,
+      "address": "2220 NE 2 AVE Unit: #504 Miami FL 33137",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-096905",
+      "company_name": "Benjamin Moving and Delivery Service Inc",
+      "dba": null,
+      "address": "57 NW 17 PL Unit: #3 Miami FL 33150",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    },
+    {
+      "mr_license": "MR-097254",
+      "company_name": "Palacio Holdings LLC",
+      "dba": "Miami Moving Company",
+      "address": "3161 SW 2 ST Miami FL 33135",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "lbt_account_no": null,
+      "lbt_business_name": null,
+      "lbt_category_code": null,
+      "lbt_address": null,
+      "candidate_count": 0,
+      "note": "LBT is secondary business-tax evidence — NOT the Moving Business Registration credential."
+    }
+  ]
+}

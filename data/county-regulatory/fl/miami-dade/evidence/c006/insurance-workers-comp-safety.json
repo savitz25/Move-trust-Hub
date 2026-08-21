@@ -1,0 +1,14 @@
+{
+  "task": "FL-C006",
+  "REQUIREMENT_DOCUMENTED": true,
+  "CURRENT_POLICY_OBSERVED": false,
+  "COMPLIANCE_VERIFIED": false,
+  "requirements": {
+    "general_liability": "any amount (certificate required on application)",
+    "automobile_liability": "minimum $50,000 for trucks GVW < 35,000 lbs; minimum $100,000 for GVW > 35,000 lbs",
+    "cargo_liability": "$10,000",
+    "workers_compensation": "Certificate, State exemption, or affirmation letter"
+  },
+  "public_policy_rows": 0,
+  "note": "Revalidated from C005 application schema. Do not describe movers as insured merely because certificates are required on application."
+}

@@ -1,0 +1,1208 @@
+{
+  "task": "FL-C006",
+  "count": 152,
+  "records": [
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00002",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "11431 NW 107 ST Unit: #1 Miami FL 33178",
+      "fdacs_address": "11431 NW 107TH ST STE 1, MIAMI, FL 33178-4632",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00015",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "9105 NW 105 CIR Medley FL 33178",
+      "fdacs_address": "9105 NW 105TH CIR, MIAMI, FL 33178-1306",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00018",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "9881 SW 4 ST Miami FL 33174",
+      "fdacs_address": "9881 SW 4TH ST, MIAMI, FL 33174-1974",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00049",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "32100 SW 187 AVE Homestead FL 33030",
+      "fdacs_address": "32100 SW 187TH AVE, HOMESTEAD, FL 33030-6801",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00067",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "9124 SW 148 Ct Miami FL 33196",
+      "fdacs_address": "9124 SW 148TH CT, MIAMI, FL 33196-4121",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00068",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "7540 W 34 CT Hialeah FL 33018",
+      "fdacs_address": "7540 W 34TH CT, HIALEAH, FL 33018-6700",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00106",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "7600 NW 68 ST Miami FL 33166",
+      "fdacs_address": "7600 NW 68TH ST, MIAMI, FL 33166-2812",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00113",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1688 NE 205 TER North Miami Beach FL 33179",
+      "fdacs_address": "1688 NE 205TH TER, MIAMI, FL 33179-2117",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00207",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "9220 NW 102 ST Medley FL 33178",
+      "fdacs_address": "9220 NW 102ND ST, MEDLEY, FL 33178-1315",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00278",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "2670 W 84 ST Hialeah FL 33016",
+      "fdacs_address": "2670 W 84TH ST, HIALEAH, FL 33016-5703",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00310",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "9200 SW 154 PL Miami FL 33196",
+      "fdacs_address": "9200 SW 154TH PL, MIAMI, FL 33196-1126",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00313",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1708 NE 205 TER Miami FL 33179",
+      "fdacs_address": "1708 NE 205TH TER, MIAMI, FL 33179-2112",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00317",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "9730 NW 10 ST Miami FL 33172",
+      "fdacs_address": "9730 NW 10TH ST, MIAMI, FL 33172-3322",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00332",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "3323 SW 154 CT Miami FL 33185",
+      "fdacs_address": "3323 SW 154TH CT, MIAMI, FL 33185-4734",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00338",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "5871 W 20 LN Hialeah FL 33016",
+      "fdacs_address": "5871 W 20TH LN, HIALEAH, FL 33016-2663",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00359",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "11455 NW 122 ST Miami FL 33178",
+      "fdacs_address": "11455 NW 122ND ST, MEDLEY, FL 33178",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00366",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1014 E 29 ST Hialeah FL 33013",
+      "fdacs_address": "1014 E 29TH ST, HIALEAH, FL 33013-3518",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00378",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "11 Flagami Blvd Miami FL 33144",
+      "fdacs_address": "11 FLAGAMI BLVD, MIAMI, FL 33144-2661",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00385",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "270 NE 70 ST Miami FL 33138",
+      "fdacs_address": "270 NE 70TH ST, MIAMI, FL 33138-5524",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00416",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "17201 SW 119 CT Miami FL 33177",
+      "fdacs_address": "17201 SW 119TH CT, MIAMI, FL 33177-2215",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "TEMPORAL_DIFFERENCE",
+      "mr_license": "MR-00444",
+      "type": "TEMPORAL_DIFFERENCE_OR_FORMAT",
+      "county_address": "12429 W Dixie Hwy North Miami FL 33161",
+      "fdacs_address": "12429 W DIXIE HWY, NORTH MIAMI, FL 33161-5440",
+      "note": "Street core matches; formatting/unit/municipality label may differ across sources."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00449",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "18235 NE 4 CT Miami FL 33162",
+      "fdacs_address": "18235 NE 4TH CT, MIAMI, FL 33162-1011",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00450",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "2007 NW 79 AVE Doral FL 33122",
+      "fdacs_address": "2007 NW 79TH AVE, DORAL, FL 33122-1612",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00458",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "16121 NW 79 CT Miami FL 33016",
+      "fdacs_address": "16121 NW 79TH CT, MIAMI LAKES, FL 33016-6646",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "TEMPORAL_DIFFERENCE",
+      "mr_license": "MR-00476",
+      "type": "TEMPORAL_DIFFERENCE_OR_FORMAT",
+      "county_address": "17901 NW Miami Ct. Miami FL 33169",
+      "fdacs_address": "17901 NW MIAMI CT, MIAMI, FL 33169-5018",
+      "note": "Street core matches; formatting/unit/municipality label may differ across sources."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00512",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "16501 NW 8 AVE Miami FL 33169",
+      "fdacs_address": "16501 NW 8TH AVE, MIAMI, FL 33169-5813",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-00570",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "19061 NW 90 CT Miami FL 33018",
+      "fdacs_address": "19061 NW 90TH CT, HIALEAH, FL 33018-8425",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01006",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1246 NW 6 ST Unit: #6 Miami FL 33125",
+      "fdacs_address": "1246 NW 6TH ST APT 6, MIAMI, FL 33125-4749",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01016",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "10049 NW 89 AVE Unit: #5 Medley FL 33178",
+      "fdacs_address": "10049 NW 89TH AVE UNIT 5, MEDLEY, FL 33178-1442",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01020",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "321 E 6 ST Unit: #226 Hialeah FL 33010",
+      "fdacs_address": "321 E 6TH ST APT 226, HIALEAH, FL 33010-6810",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01029",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "15383 SW 23 ST Miami FL 33185",
+      "fdacs_address": "15383 SW 23RD ST, MIAMI, FL 33185-5734",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01045",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "10812 NW 6 CT Miami FL 33168",
+      "fdacs_address": "10812 NW 6TH CT, MIAMI, FL 33168-3259",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01049",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "9631 Fontainebleau Blvd Unit: #202 Miami FL 33172",
+      "fdacs_address": "9631 FONTAINEBLEAU BLVD APT 202, MIAMI, FL 33172-6859",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01054",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "6332 NW 97 AVE Doral FL 33178",
+      "fdacs_address": "6332 NW 97TH AVE, DORAL, FL 33178-1645",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01063",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "934 SW 149 CT Miami FL 33194",
+      "fdacs_address": "934 SW 149TH CT, MIAMI, FL 33194-2938",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01074",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "2606 W 9 LN Hialeah FL 33010",
+      "fdacs_address": "2606 W 9TH LN, HIALEAH, FL 33010-1228",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01079",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "13006 SW 151 LN Miami FL 33186",
+      "fdacs_address": "13006 SW 151ST LN, MIAMI, FL 33186-7621",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01109",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "8871 SW 208 TER Miami FL 33189",
+      "fdacs_address": "8871 SW 208TH TER, CUTLER BAY, FL 33189-3882",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01137",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "13760 NW 19 AVE Unit: #8 Opa Locka FL 33054",
+      "fdacs_address": "13760 NW 19TH AVE UNIT 8, OPA LOCKA, FL 33054-4233",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01139",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "420 NE 152 ST Miami FL 33162",
+      "fdacs_address": "420 NE 152ND ST, MIAMI, FL 33162-5020",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01140",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "8446 NW 103 ST Unit: #101-D Hialeah Gardens FL 33016",
+      "fdacs_address": "8446 NW 103RD ST APT 101D, HIALEAH GARDENS, FL 33016-4693",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01141",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1321 SW 142 AVE Miami FL 33184",
+      "fdacs_address": "1321 SW 142ND AVE, MIAMI, FL 33184-3212",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01147",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1132 W 39 TER Hialeah FL 33012",
+      "fdacs_address": "1132 W 39TH TER, HIALEAH, FL 33012-7787",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01164",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "4450 NW 74 AVE Miami FL 33166",
+      "fdacs_address": "4450 NW 74TH AVE, MIAMI, FL 33166-6443",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01192",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "11112 SW 161 ST Miami FL 33157",
+      "fdacs_address": "11112 SW 161ST ST, MIAMI, FL 33157-2839",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01203",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1521 NW 82 AVE Doral FL 33126",
+      "fdacs_address": "1521 NW 82ND AVE, DORAL, FL 33126-1019",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01208",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "17974 NW 74 CT Hialeah FL 33015",
+      "fdacs_address": "17974 NW 74TH CT, HIALEAH, FL 33015-8443",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01209",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "2221 NE 164 ST Unit: #273 North Miami Beach FL 33160",
+      "fdacs_address": "2221 NE 164TH ST # 273, NORTH MIAMI BEACH, FL 33160-3703",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01216",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1721 NW 79 AVE Doral FL 33126",
+      "fdacs_address": "1721 NW 79TH AVE, DORAL, FL 33126-1112",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01221",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "475 Brickell Ave Miami FL 33131",
+      "fdacs_address": "475 BRICKELL AVE, MIAMI, FL 33131-2500",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01237",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "7950 NW 53 ST Unit: #337 Doral FL 33166",
+      "fdacs_address": "7950 NW 53RD ST STE 337, MIAMI, FL 33166-4791",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01244",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "11519 SW 124 PL Miami FL 33186",
+      "fdacs_address": "11519 SW 124TH PL, MIAMI, FL 33186-4917",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01249",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "16222 NW 38 PL Opa-locka FL 33054",
+      "fdacs_address": "16222 NW 38TH PL, MIAMI GARDENS, FL 33054-6237",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01253",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "13005 SW 50 LN Miami FL 33175",
+      "fdacs_address": "13005 SW 50TH LN, MIAMI, FL 33175-5353",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01267",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "6158 NW 74 AVE Miami FL 33166",
+      "fdacs_address": "6158 NW 74TH AVE, MIAMI, FL 33166-3710",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01269",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "2420 NW 116 ST Unit: #100 Miami FL 33167",
+      "fdacs_address": "2420 NW 116TH ST BLDG 4 STE 100, MIAMI, FL 33167-0018",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01282",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "600 NE 185 ST Miami FL 33179",
+      "fdacs_address": "600 NE 185TH ST, MIAMI, FL 33179-4514",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01283",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "3353 NW 74 AVE Miami FL 33122",
+      "fdacs_address": "3353 NW 74TH AVE, MIAMI, FL 33122-1229",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01295",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "2075 SW 122 AVE Unit: #413 Miami FL 33175",
+      "fdacs_address": "2075 SW 122ND AVE APT 413, MIAMI, FL 33175-7338",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01296",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "6451 NW 102 AVE Unit: #11 Doral FL 33178",
+      "fdacs_address": "6451 NW 102ND AVE UNIT 11, DORAL, FL 33178-4745",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-01314",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "16931 SW 111 CT Miami FL 33157",
+      "fdacs_address": "16931 SW 111TH CT, MIAMI, FL 33157-0300",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "TEMPORAL_DIFFERENCE",
+      "mr_license": "MR-090497",
+      "type": "TEMPORAL_DIFFERENCE_OR_FORMAT",
+      "county_address": "2140 S Dixie Hwy Unit: #301C Miami FL 33133",
+      "fdacs_address": "2140 S DIXIE HWY STE 301C, MIAMI, FL 33133-2464",
+      "note": "Street core matches; formatting/unit/municipality label may differ across sources."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-091229",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "346 NW 29 ST Miami 33127",
+      "fdacs_address": "346 NW 29TH ST, MIAMI, FL 33127-3914",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-092140",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "12020 SW 31 ST Miami FL 33175",
+      "fdacs_address": "12020 SW 31ST ST, MIAMI, FL 33175-2328",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-092297",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "20005 NE 6 CT CIR North Miami FL 33179",
+      "fdacs_address": "20005 NE 6TH COURT CIR, MIAMI, FL 33179-2408",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "TEMPORAL_DIFFERENCE",
+      "mr_license": "MR-092523",
+      "type": "TEMPORAL_DIFFERENCE_OR_FORMAT",
+      "county_address": "10900 NW 146 ST Unit: #105 Hialeah Gardens FL 33018",
+      "fdacs_address": "10900 NW 146 ST STE 5, HIALEAH GARDENS, FL 33018",
+      "note": "Street core matches; formatting/unit/municipality label may differ across sources."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-092562",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "7831 NW 72 AVE Medley FL 33166",
+      "fdacs_address": "7831 NW 72ND AVE, MEDLEY, FL 33166-2215",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-092619",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "2201 SW 145 AVE Unit: #207 Miramar FL 33027",
+      "fdacs_address": "2201 SW 145TH AVE STE 207, MIRAMAR, FL 33027-6600",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-093002",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "8175 NW 107 AVE Unit: #813 Doral FL 33178",
+      "fdacs_address": "8175 NW 107TH AVE APT 813, DORAL, FL 33178-5061",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-093500",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "225 NE 23 ST Unit: #1203 Miami FL 33137",
+      "fdacs_address": "225 NE 23RD ST APT 1203, MIAMI, FL 33137-4037",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "TEMPORAL_DIFFERENCE",
+      "mr_license": "MR-094141",
+      "type": "TEMPORAL_DIFFERENCE_OR_FORMAT",
+      "county_address": "1200 N Federal Hwy Hollywood FL 33020",
+      "fdacs_address": "1200 N FEDERAL HWY, HOLLYWOOD, FL 33020-3630",
+      "note": "Street core matches; formatting/unit/municipality label may differ across sources."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-094336",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1818 SW 1 AVE Unit: #1211 Miami FL 33129",
+      "fdacs_address": "1818 SW 1ST AVE APT 1211, MIAMI, FL 33129-1187",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-094438",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "18841 NW 42 AVE Miami Gardens FL 33055",
+      "fdacs_address": "18841 NW 42ND AVE, MIAMI GARDENS, FL 33055-2733",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-094574",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "13882 SW 63 ST Miami FL 33183",
+      "fdacs_address": "13882 SW 63RD ST, MIAMI, FL 33183-1173",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-095117",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1939 SW 23 TER Miami FL 33145",
+      "fdacs_address": "1939 SW 23RD TER, MIAMI, FL 33145-3716",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-095236",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "785 NW 126 ST Miami FL 33168",
+      "fdacs_address": "785 NW 126TH ST, NORTH MIAMI, FL 33168-2627",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "TEMPORAL_DIFFERENCE",
+      "mr_license": "MR-095332",
+      "type": "TEMPORAL_DIFFERENCE_OR_FORMAT",
+      "county_address": "2315 W Okeechobee Rd Unit: #209 Hialeah FL 33010",
+      "fdacs_address": "2315 W OKEECHOBEE RD APT 209, HIALEAH, FL 33010-1822",
+      "note": "Street core matches; formatting/unit/municipality label may differ across sources."
+    },
+    {
+      "classification": "TEMPORAL_DIFFERENCE",
+      "mr_license": "MR-095349",
+      "type": "TEMPORAL_DIFFERENCE_OR_FORMAT",
+      "county_address": "12673 SW 146 TER Miami FL 33186",
+      "fdacs_address": "12673 SW 146 TERRACE, MIAMI, FL 33186",
+      "note": "Street core matches; formatting/unit/municipality label may differ across sources."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-095401",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "501 NW 57 AVE Miami FL 33126",
+      "fdacs_address": "501 NW 57TH AVE APT 33, MIAMI, FL 33126-4835",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-095487",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "689 NE 206 TER Miami FL 33179",
+      "fdacs_address": "689 NE 206TH TER, MIAMI, FL 33179-2431",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-095542",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "9071 NW 13 ST Plantation FL 33322",
+      "fdacs_address": "9071 NW 13TH ST, PLANTATION, FL 33322-4915",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-095935",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "6451 NW 102 AVE Unit: #2 Doral FL 33178",
+      "fdacs_address": "6451 NW 102ND AVE UNIT 2, DORAL, FL 33178-4745",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-096207",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "1011 NW 53 ST Miami FL 33127",
+      "fdacs_address": "1011 NW 53RD ST, MIAMI, FL 33127-1835",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-096653",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "629 SW 2 ST Miami FL 33130",
+      "fdacs_address": "629 SW 2ND ST APT 202, MIAMI, FL 33130-2382",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-096763",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "14040 NW 22 AVE Opa Locka FL 33054",
+      "fdacs_address": "14040 NW 22ND AVE, OPA LOCKA, FL 33054-4169",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "IDENTITY_REVIEW",
+      "mr_license": "MR-097254",
+      "type": "IDENTITY_REVIEW",
+      "county_address": "3161 SW 2 ST Miami FL 33135",
+      "fdacs_address": "3161 SW 2ND ST, MIAMI, FL 33135-2754",
+      "note": "Name matched with address corroboration via core; residual string difference retained for review."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00002",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "11431 NW 107 ST Unit: #1 Miami FL 33178",
+      "lbt_address": "11431 NW 107TH ST STE 1 , MIAMI, 33178-4632",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00018",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "9881 SW 4 ST Miami FL 33174",
+      "lbt_address": "9881 SW 4TH ST , MIAMI, 33174-1974",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00032",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "9105 NW 105 CIR Medley FL 33178",
+      "lbt_address": "9105 NW 105TH CIR , MEDLEY, 33178-1306",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00049",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "32100 SW 187 AVE Homestead FL 33030",
+      "lbt_address": "32100 SW 187TH AVE , HOMESTEAD, 33030-6801",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00067",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "9124 SW 148 Ct Miami FL 33196",
+      "lbt_address": "9124 SW 148TH CT , MIAMI, 33196-4121",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00068",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "7540 W 34 CT Hialeah FL 33018",
+      "lbt_address": "7540 W 34TH CT , HIALEAH, 33018-6700",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00094",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "1629 NE 1 AVE Miami FL 33132",
+      "lbt_address": "1629 NE 1ST AVE , MIAMI, 33132-1201",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00106",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "7600 NW 68 ST Miami FL 33166",
+      "lbt_address": "7600 NW 68TH ST , MIAMI, 33166-2812",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00113",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "1688 NE 205 TER North Miami Beach FL 33179",
+      "lbt_address": "1688 NE 205TH TER , MIAMI, 33179-2117",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00207",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "9220 NW 102 ST Medley FL 33178",
+      "lbt_address": "9220 NW 102ND ST , MEDLEY, 33178-1315",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00278",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "2670 W 84 ST Hialeah FL 33016",
+      "lbt_address": "2670 W 84TH ST, HIALEAH, 33016-5703",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00313",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "1708 NE 205 TER Miami FL 33179",
+      "lbt_address": "1708 NE 205TH TER , MIAMI, 33179-2112",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00317",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "9730 NW 10 ST Miami FL 33172",
+      "lbt_address": "9730 NW 10TH ST , MIAMI, 33172-3322",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00332",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "3323 SW 154 CT Miami FL 33185",
+      "lbt_address": "3323 SW 154TH CT , MIAMI, 33185-4734",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00338",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "5871 W 20 LN Hialeah FL 33016",
+      "lbt_address": "5871 W 20TH LN , HIALEAH, 33016-2663",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00359",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "11455 NW 122 ST Miami FL 33178",
+      "lbt_address": "11455 NW 122ND ST , MEDLEY, 33178-3182",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00366",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "1014 E 29 ST Hialeah FL 33013",
+      "lbt_address": "1014 E 29TH ST , HIALEAH, 33013-3518",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00378",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "11 Flagami Blvd Miami FL 33144",
+      "lbt_address": "11 FLAGAMI BLVD , MIAMI, 33144-2661",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00416",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "17201 SW 119 CT Miami FL 33177",
+      "lbt_address": "17201 SW 119TH CT , MIAMI, 33177-2215",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00450",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "2007 NW 79 AVE Doral FL 33122",
+      "lbt_address": "2007 NW 79TH AVE , DORAL, 33122-1612",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00496",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "2100 NW 129 AVE Unit: #106-108 SweetWater FL 33182",
+      "lbt_address": "2100 NW 129TH AVE STE 108 & 106, SWEETWATER, 33182-2516",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-00512",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "16501 NW 8 AVE Miami FL 33169",
+      "lbt_address": "16501 NW 8TH AVE , MIAMI GARDENS, 33169-5813",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01020",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "321 E 6 ST Unit: #226 Hialeah FL 33010",
+      "lbt_address": "321 E 6TH ST APT 226 , HIALEAH, 33010-6810",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01045",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "10812 NW 6 CT Miami FL 33168",
+      "lbt_address": "10812 NW 6TH CT , MIAMI, 33168-3259",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01063",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "934 SW 149 CT Miami FL 33194",
+      "lbt_address": "934 SW 149TH CT , MIAMI, 33194-2938",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01074",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "2606 W 9 LN Hialeah FL 33010",
+      "lbt_address": "2606 W 9TH LN , HIALEAH, 33010-1228",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01079",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "13006 SW 151 LN Miami FL 33186",
+      "lbt_address": "13006 SW 151ST LN , MIAMI, 33186-7621",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01109",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "8871 SW 208 TER Miami FL 33189",
+      "lbt_address": "8871 SW 208TH TER , CUTLER BAY, 33189-3882",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01113",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "7905 NW 60 ST Miami FL 33166",
+      "lbt_address": "7905 NW 60TH ST , MIAMI, 33166-3410",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01125",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "4721 NW 4 ST Miami FL 33126",
+      "lbt_address": "4721 NW 4TH ST , MIAMI, 33126-2113",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01147",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "1132 W 39 TER Hialeah FL 33012",
+      "lbt_address": "1132 W 39TH TER , HIALEAH, 33012-7787",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01164",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "4450 NW 74 AVE Miami FL 33166",
+      "lbt_address": "4450 NW 74TH AVE , MIAMI, 33166-6443",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01192",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "11112 SW 161 ST Miami FL 33157",
+      "lbt_address": "11112 SW 161ST ST , MIAMI, 33157-2839",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01203",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "1521 NW 82 AVE Doral FL 33126",
+      "lbt_address": "1521 NW 82ND AVE , DORAL, 33126-1019",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01208",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "17974 NW 74 CT Hialeah FL 33015",
+      "lbt_address": "17974 NW 74TH CT , HIALEAH, 33015-8443",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01216",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "1721 NW 79 AVE Doral FL 33126",
+      "lbt_address": "1721 NW 79TH AVE, DORAL, 33126-1112",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01237",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "7950 NW 53 ST Unit: #337 Doral FL 33166",
+      "lbt_address": "7950 NW 53RD ST STE 337, DORAL, 33166-4791",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01253",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "13005 SW 50 LN Miami FL 33175",
+      "lbt_address": "13005 SW 50TH LN , MIAMI, 33175-5353",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01269",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "2420 NW 116 ST Unit: #100 Miami FL 33167",
+      "lbt_address": "2420 NW 116TH ST STE 100 PMB 4, MIAMI, 33167-0018",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01282",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "600 NE 185 ST Miami FL 33179",
+      "lbt_address": "600 NE 185TH ST , MIAMI, 33179-4514",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01283",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "3353 NW 74 AVE Miami FL 33122",
+      "lbt_address": "3353 NW 74TH AVE , MIAMI, 33122-1229",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01296",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "6451 NW 102 AVE Unit: #11 Doral FL 33178",
+      "lbt_address": "6451 NW 102ND AVE UNIT 11 , DORAL, 33178-4745",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01306",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "4115 NW 132 ST Unit: #D Opa Locka FL 33054",
+      "lbt_address": "4115 NW 132ND ST , OPA LOCKA, 33054-4539",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-01320",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "3715 SW 29 ST Miami FL 33134",
+      "lbt_address": "3715 SW 29TH ST, MIAMI, 33134-7335",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-091229",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "346 NW 29 ST Miami 33127",
+      "lbt_address": "346 NW 29TH ST, MIAMI, 33127-3914",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-092140",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "12020 SW 31 ST Miami FL 33175",
+      "lbt_address": "12020 SW 31ST ST , MIAMI, 33175-2328",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-092562",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "7831 NW 72 AVE Medley FL 33166",
+      "lbt_address": "7831 NW 72ND AVE, MEDLEY, 33166-2215",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-094205",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "2984 W 84 ST Unit: #142 Hialeah FL 33018",
+      "lbt_address": "2984 W 84TH ST UNIT 142, HIALEAH, 33018",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-094438",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "18841 NW 42 AVE Miami Gardens FL 33055",
+      "lbt_address": "18841 NW 42ND AVE, MIAMI GARDENS, 33055-2733",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-095349",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "12673 SW 146 TER Miami FL 33186",
+      "lbt_address": "12673 SW 146TH TER , MIAMI, 33186-5992",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-095935",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "6451 NW 102 AVE Unit: #2 Doral FL 33178",
+      "lbt_address": "6451 NW 102ND AVE UNIT 2, DORAL, 33178-4745",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "BRANCH_CANDIDATE",
+      "mr_license": "MR-096763",
+      "type": "MR_VS_LBT_ADDRESS",
+      "county_address": "14040 NW 22 AVE Opa Locka FL 33054",
+      "lbt_address": "14040 NW 22ND AVE, OPA LOCKA, 33054",
+      "note": "MR and LBT addresses differ beyond formatting — possible branch/mailing/tax situs difference. Not mutated into canonical location."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-00231",
+      "legal_name": "Rene Chinique Moving & Delivery",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-00496",
+      "legal_name": "Nippon Express USA, Inc",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-00515",
+      "legal_name": "William Moving Service, Inc.",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-01125",
+      "legal_name": "La Barata Oves Moving",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-01280",
+      "legal_name": "Atelier 4, LLC",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-01320",
+      "legal_name": "305 + Movers LLC",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-093105",
+      "legal_name": "U.S.A. On the Move L.L.C.",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-093387",
+      "legal_name": "JLG Services Inc.",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-093876",
+      "legal_name": "Murillo's Mudanza and Delivery Inc",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-094070",
+      "legal_name": "A&D Moving Florida Corp",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-094106",
+      "legal_name": "Navarro Worldwide LLC",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-094170",
+      "legal_name": "Heat Mover Inc",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-096460",
+      "legal_name": "DY Moving and Delivery Services, Inc.",
+      "note": "Not asserting either source wrong."
+    },
+    {
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "type": "ISSUED_MR_NOT_FOUND_IN_FDACS",
+      "mr_license": "MR-096905",
+      "legal_name": "Benjamin Moving and Delivery Service Inc",
+      "note": "Not asserting either source wrong."
+    }
+  ]
+}

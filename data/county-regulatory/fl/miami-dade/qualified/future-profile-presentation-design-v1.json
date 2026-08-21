@@ -1,0 +1,41 @@
+{
+  "task": "FL-C006",
+  "published": false,
+  "trust_score_connection": false,
+  "blocks": [
+    {
+      "id": "mdc_moving_registration",
+      "title": "Miami-Dade Moving Business Registration",
+      "fields": [
+        "MR credential",
+        "county status",
+        "dates",
+        "regulator",
+        "source"
+      ]
+    },
+    {
+      "id": "mdc_lbt_secondary",
+      "title": "Local Business Tax record (secondary)",
+      "fields": [
+        "account",
+        "category",
+        "address",
+        "status"
+      ],
+      "warning": "Do not visually imply LBT equals mover authority."
+    },
+    {
+      "id": "future_enrichment_when_source_exists",
+      "title": "Future enrichment (only with actual records)",
+      "fields": [
+        "branches",
+        "vehicles",
+        "insurance/WC observations",
+        "complaints",
+        "citations",
+        "enforcement"
+      ]
+    }
+  ]
+}
