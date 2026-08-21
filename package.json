@@ -54,6 +54,8 @@
     "qa:task-011b-freeze": "tsx scripts/qa-task-011b-freeze.ts",
     "calibrate:task-011c1": "tsx scripts/run-task-011c1-calibration.ts",
     "qa:task-011c1-freeze": "tsx scripts/qa-task-011c1-freeze.ts",
+    "remediate:task-011c1a": "tsx scripts/run-task-011c1a-remediation.ts",
+    "test:state-hhg-calibration": "tsx --test lib/state-hhg/calibration/models.test.ts lib/state-hhg/calibration/cohort.test.ts lib/state-hhg/calibration/reference-expand.test.ts",
     "matrix:task-011a": "tsx scripts/generate-task-011a-state-matrix.ts",
     "audit:task-011a-candidates": "tsx scripts/audit-task-011a-local-candidate-universe.ts",
     "qa:task-011a-freeze": "tsx scripts/qa-task-011a-freeze.ts",

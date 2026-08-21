@@ -1,0 +1,788 @@
+{
+  "google_places_requests": 0,
+  "task": "011C.1A",
+  "freeze": {
+    "companies": 4941,
+    "indexable": 4905
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "cohort": {
+    "fl": 89,
+    "wa": 64,
+    "total": 153
+  },
+  "operatingLocations": {
+    "total": 153,
+    "valid": 134,
+    "unresolved": 19,
+    "geocodeSource": "census_geocoder_onelineaddress"
+  },
+  "fleet": {
+    "providers": 153,
+    "withUsdot": 133,
+    "usablePowerUnits": 131,
+    "fresh": 131,
+    "stale": 0,
+    "zero": 2,
+    "unknown": 0,
+    "missingUsdot": 20
+  },
+  "reference": {
+    "flHighConfidence": 86,
+    "waHighConfidence": 51,
+    "flBefore": 20,
+    "waBefore": 0,
+    "positiveCountyObservations": 221,
+    "negativeCountyObservations": 0,
+    "completeness": {
+      "REGION_EXPLICIT": 11,
+      "PARTIAL": 126,
+      "UNKNOWN_COMPLETENESS": 1
+    },
+    "scorableForPrecision": 0,
+    "quality": {
+      "HIGH": 138,
+      "MEDIUM": 0,
+      "LOW": 0
+    }
+  },
+  "fleetCorrelation": {
+    "byBand": [
+      {
+        "band": "1-2",
+        "n": 43,
+        "medianPositiveCounties": 1,
+        "medianMaxDistanceMiles": 17.29802901152468
+      },
+      {
+        "band": "3-5",
+        "n": 34,
+        "medianPositiveCounties": 1,
+        "medianMaxDistanceMiles": 19.307845330008867
+      },
+      {
+        "band": "6-15",
+        "n": 25,
+        "medianPositiveCounties": 1,
+        "medianMaxDistanceMiles": 20.415164626600156
+      },
+      {
+        "band": "16-50",
+        "n": 11,
+        "medianPositiveCounties": 1,
+        "medianMaxDistanceMiles": 22.043130993205228
+      },
+      {
+        "band": "51+",
+        "n": 3,
+        "medianPositiveCounties": 1,
+        "medianMaxDistanceMiles": 19.991805185582844
+      }
+    ],
+    "interpretation": "WEAK — observed positive county counts do not clearly increase with fleet band on this reference corpus (many PARTIAL home-county-only labels)."
+  },
+  "split": {
+    "highConfidenceProviders": 137,
+    "calibration": 96,
+    "holdout": 41
+  },
+  "models": {
+    "POWER_A": {
+      "bands": [
+        {
+          "id": "very_small",
+          "powerUnitsMax": 2,
+          "radiusMiles": 25
+        },
+        {
+          "id": "small",
+          "powerUnitsMax": 5,
+          "radiusMiles": 40
+        },
+        {
+          "id": "medium",
+          "powerUnitsMax": 15,
+          "radiusMiles": 75
+        },
+        {
+          "id": "large",
+          "powerUnitsMax": 50,
+          "radiusMiles": 125
+        },
+        {
+          "id": "very_large",
+          "powerUnitsMax": null,
+          "radiusMiles": 200
+        }
+      ],
+      "fixedRadiusMiles": null,
+      "calibration": {
+        "combined": {
+          "population": 96,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 96,
+          "truePositives": 86,
+          "falsePositives": 0,
+          "falseNegatives": 56,
+          "precision": null,
+          "recall": 0.6056338028169014,
+          "f1": 0.6056338028169014,
+          "positiveSupportHits": 86,
+          "positiveSupportTotal": 142,
+          "homeCountyHitRate": 0.8829787234042553
+        },
+        "FL": {
+          "population": 60,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 60,
+          "truePositives": 52,
+          "falsePositives": 0,
+          "falseNegatives": 52,
+          "precision": null,
+          "recall": 0.5,
+          "f1": 0.5,
+          "positiveSupportHits": 52,
+          "positiveSupportTotal": 104,
+          "homeCountyHitRate": 0.8620689655172413
+        },
+        "WA": {
+          "population": 36,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 36,
+          "truePositives": 34,
+          "falsePositives": 0,
+          "falseNegatives": 4,
+          "precision": null,
+          "recall": 0.8947368421052632,
+          "f1": 0.8947368421052632,
+          "positiveSupportHits": 34,
+          "positiveSupportTotal": 38,
+          "homeCountyHitRate": 0.9166666666666666
+        }
+      },
+      "holdout": {
+        "combined": {
+          "population": 41,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 41,
+          "truePositives": 41,
+          "falsePositives": 0,
+          "falseNegatives": 38,
+          "precision": null,
+          "recall": 0.5189873417721519,
+          "f1": 0.5189873417721519,
+          "positiveSupportHits": 41,
+          "positiveSupportTotal": 79,
+          "homeCountyHitRate": 0.925
+        },
+        "FL": {
+          "population": 26,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 26,
+          "truePositives": 27,
+          "falsePositives": 0,
+          "falseNegatives": 37,
+          "precision": null,
+          "recall": 0.421875,
+          "f1": 0.421875,
+          "positiveSupportHits": 27,
+          "positiveSupportTotal": 64,
+          "homeCountyHitRate": 0.92
+        },
+        "WA": {
+          "population": 15,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 15,
+          "truePositives": 14,
+          "falsePositives": 0,
+          "falseNegatives": 1,
+          "precision": null,
+          "recall": 0.9333333333333333,
+          "f1": 0.9333333333333333,
+          "positiveSupportHits": 14,
+          "positiveSupportTotal": 15,
+          "homeCountyHitRate": 0.9333333333333333
+        }
+      },
+      "determinism": {
+        "runA": "69c9bb609aec39dd62833f275ea3f438781ae11494788a7e5d36632f41dd2176",
+        "runB": "69c9bb609aec39dd62833f275ea3f438781ae11494788a7e5d36632f41dd2176",
+        "match": true
+      }
+    },
+    "POWER_B": {
+      "bands": [
+        {
+          "id": "very_small",
+          "powerUnitsMax": 2,
+          "radiusMiles": 20
+        },
+        {
+          "id": "small",
+          "powerUnitsMax": 5,
+          "radiusMiles": 30
+        },
+        {
+          "id": "medium",
+          "powerUnitsMax": 15,
+          "radiusMiles": 55
+        },
+        {
+          "id": "large",
+          "powerUnitsMax": 50,
+          "radiusMiles": 95
+        },
+        {
+          "id": "very_large",
+          "powerUnitsMax": null,
+          "radiusMiles": 150
+        }
+      ],
+      "fixedRadiusMiles": null,
+      "calibration": {
+        "combined": {
+          "population": 96,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 96,
+          "truePositives": 78,
+          "falsePositives": 0,
+          "falseNegatives": 64,
+          "precision": null,
+          "recall": 0.5492957746478874,
+          "f1": 0.5492957746478874,
+          "positiveSupportHits": 78,
+          "positiveSupportTotal": 142,
+          "homeCountyHitRate": 0.7978723404255319
+        },
+        "FL": {
+          "population": 60,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 60,
+          "truePositives": 44,
+          "falsePositives": 0,
+          "falseNegatives": 60,
+          "precision": null,
+          "recall": 0.4230769230769231,
+          "f1": 0.4230769230769231,
+          "positiveSupportHits": 44,
+          "positiveSupportTotal": 104,
+          "homeCountyHitRate": 0.7241379310344828
+        },
+        "WA": {
+          "population": 36,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 36,
+          "truePositives": 34,
+          "falsePositives": 0,
+          "falseNegatives": 4,
+          "precision": null,
+          "recall": 0.8947368421052632,
+          "f1": 0.8947368421052632,
+          "positiveSupportHits": 34,
+          "positiveSupportTotal": 38,
+          "homeCountyHitRate": 0.9166666666666666
+        }
+      },
+      "holdout": {
+        "combined": {
+          "population": 41,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 41,
+          "truePositives": 38,
+          "falsePositives": 0,
+          "falseNegatives": 41,
+          "precision": null,
+          "recall": 0.4810126582278481,
+          "f1": 0.4810126582278481,
+          "positiveSupportHits": 38,
+          "positiveSupportTotal": 79,
+          "homeCountyHitRate": 0.85
+        },
+        "FL": {
+          "population": 26,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 26,
+          "truePositives": 25,
+          "falsePositives": 0,
+          "falseNegatives": 39,
+          "precision": null,
+          "recall": 0.390625,
+          "f1": 0.390625,
+          "positiveSupportHits": 25,
+          "positiveSupportTotal": 64,
+          "homeCountyHitRate": 0.84
+        },
+        "WA": {
+          "population": 15,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 15,
+          "truePositives": 13,
+          "falsePositives": 0,
+          "falseNegatives": 2,
+          "precision": null,
+          "recall": 0.8666666666666667,
+          "f1": 0.8666666666666667,
+          "positiveSupportHits": 13,
+          "positiveSupportTotal": 15,
+          "homeCountyHitRate": 0.8666666666666667
+        }
+      },
+      "determinism": {
+        "runA": "9a67c805ea908e72bd9439adb3969b01f3f2ec9d21655dc82da400b41530c738",
+        "runB": "9a67c805ea908e72bd9439adb3969b01f3f2ec9d21655dc82da400b41530c738",
+        "match": true
+      }
+    },
+    "POWER_C": {
+      "bands": [
+        {
+          "id": "very_small",
+          "powerUnitsMax": 2,
+          "radiusMiles": 22
+        },
+        {
+          "id": "small",
+          "powerUnitsMax": 5,
+          "radiusMiles": 35
+        },
+        {
+          "id": "medium",
+          "powerUnitsMax": 15,
+          "radiusMiles": 65
+        },
+        {
+          "id": "large",
+          "powerUnitsMax": 50,
+          "radiusMiles": 110
+        },
+        {
+          "id": "very_large",
+          "powerUnitsMax": null,
+          "radiusMiles": 175
+        }
+      ],
+      "fixedRadiusMiles": null,
+      "calibration": {
+        "combined": {
+          "population": 96,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 96,
+          "truePositives": 83,
+          "falsePositives": 0,
+          "falseNegatives": 59,
+          "precision": null,
+          "recall": 0.5845070422535211,
+          "f1": 0.5845070422535211,
+          "positiveSupportHits": 83,
+          "positiveSupportTotal": 142,
+          "homeCountyHitRate": 0.851063829787234
+        },
+        "FL": {
+          "population": 60,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 60,
+          "truePositives": 49,
+          "falsePositives": 0,
+          "falseNegatives": 55,
+          "precision": null,
+          "recall": 0.47115384615384615,
+          "f1": 0.47115384615384615,
+          "positiveSupportHits": 49,
+          "positiveSupportTotal": 104,
+          "homeCountyHitRate": 0.8103448275862069
+        },
+        "WA": {
+          "population": 36,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 36,
+          "truePositives": 34,
+          "falsePositives": 0,
+          "falseNegatives": 4,
+          "precision": null,
+          "recall": 0.8947368421052632,
+          "f1": 0.8947368421052632,
+          "positiveSupportHits": 34,
+          "positiveSupportTotal": 38,
+          "homeCountyHitRate": 0.9166666666666666
+        }
+      },
+      "holdout": {
+        "combined": {
+          "population": 41,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 41,
+          "truePositives": 39,
+          "falsePositives": 0,
+          "falseNegatives": 40,
+          "precision": null,
+          "recall": 0.4936708860759494,
+          "f1": 0.4936708860759494,
+          "positiveSupportHits": 39,
+          "positiveSupportTotal": 79,
+          "homeCountyHitRate": 0.875
+        },
+        "FL": {
+          "population": 26,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 26,
+          "truePositives": 25,
+          "falsePositives": 0,
+          "falseNegatives": 39,
+          "precision": null,
+          "recall": 0.390625,
+          "f1": 0.390625,
+          "positiveSupportHits": 25,
+          "positiveSupportTotal": 64,
+          "homeCountyHitRate": 0.84
+        },
+        "WA": {
+          "population": 15,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 15,
+          "truePositives": 14,
+          "falsePositives": 0,
+          "falseNegatives": 1,
+          "precision": null,
+          "recall": 0.9333333333333333,
+          "f1": 0.9333333333333333,
+          "positiveSupportHits": 14,
+          "positiveSupportTotal": 15,
+          "homeCountyHitRate": 0.9333333333333333
+        }
+      },
+      "determinism": {
+        "runA": "b3300f37794ae82279895fd7824f794819d44a20f5b1f168656cdefe805e7778",
+        "runB": "b3300f37794ae82279895fd7824f794819d44a20f5b1f168656cdefe805e7778",
+        "match": true
+      }
+    },
+    "FIXED_25": {
+      "bands": null,
+      "fixedRadiusMiles": 25,
+      "calibration": {
+        "combined": {
+          "population": 96,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 96,
+          "truePositives": 79,
+          "falsePositives": 0,
+          "falseNegatives": 63,
+          "precision": null,
+          "recall": 0.5563380281690141,
+          "f1": 0.5563380281690141,
+          "positiveSupportHits": 79,
+          "positiveSupportTotal": 142,
+          "homeCountyHitRate": 0.8191489361702128
+        },
+        "FL": {
+          "population": 60,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 60,
+          "truePositives": 49,
+          "falsePositives": 0,
+          "falseNegatives": 55,
+          "precision": null,
+          "recall": 0.47115384615384615,
+          "f1": 0.47115384615384615,
+          "positiveSupportHits": 49,
+          "positiveSupportTotal": 104,
+          "homeCountyHitRate": 0.8103448275862069
+        },
+        "WA": {
+          "population": 36,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 36,
+          "truePositives": 30,
+          "falsePositives": 0,
+          "falseNegatives": 8,
+          "precision": null,
+          "recall": 0.7894736842105263,
+          "f1": 0.7894736842105263,
+          "positiveSupportHits": 30,
+          "positiveSupportTotal": 38,
+          "homeCountyHitRate": 0.8333333333333334
+        }
+      },
+      "holdout": {
+        "combined": {
+          "population": 41,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 41,
+          "truePositives": 35,
+          "falsePositives": 0,
+          "falseNegatives": 44,
+          "precision": null,
+          "recall": 0.4430379746835443,
+          "f1": 0.4430379746835443,
+          "positiveSupportHits": 35,
+          "positiveSupportTotal": 79,
+          "homeCountyHitRate": 0.775
+        },
+        "FL": {
+          "population": 26,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 26,
+          "truePositives": 27,
+          "falsePositives": 0,
+          "falseNegatives": 37,
+          "precision": null,
+          "recall": 0.421875,
+          "f1": 0.421875,
+          "positiveSupportHits": 27,
+          "positiveSupportTotal": 64,
+          "homeCountyHitRate": 0.92
+        },
+        "WA": {
+          "population": 15,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 15,
+          "truePositives": 8,
+          "falsePositives": 0,
+          "falseNegatives": 7,
+          "precision": null,
+          "recall": 0.5333333333333333,
+          "f1": 0.5333333333333333,
+          "positiveSupportHits": 8,
+          "positiveSupportTotal": 15,
+          "homeCountyHitRate": 0.5333333333333333
+        }
+      },
+      "determinism": {
+        "runA": "5ad75e5992bb387ce1906f863ac0fd6b020620b45bfa5b7c8335a73755cf7acd",
+        "runB": "5ad75e5992bb387ce1906f863ac0fd6b020620b45bfa5b7c8335a73755cf7acd",
+        "match": true
+      }
+    },
+    "FIXED_40": {
+      "bands": null,
+      "fixedRadiusMiles": 40,
+      "calibration": {
+        "combined": {
+          "population": 96,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 96,
+          "truePositives": 101,
+          "falsePositives": 0,
+          "falseNegatives": 41,
+          "precision": null,
+          "recall": 0.7112676056338029,
+          "f1": 0.7112676056338029,
+          "positiveSupportHits": 101,
+          "positiveSupportTotal": 142,
+          "homeCountyHitRate": 0.9787234042553191
+        },
+        "FL": {
+          "population": 60,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 60,
+          "truePositives": 66,
+          "falsePositives": 0,
+          "falseNegatives": 38,
+          "precision": null,
+          "recall": 0.6346153846153846,
+          "f1": 0.6346153846153846,
+          "positiveSupportHits": 66,
+          "positiveSupportTotal": 104,
+          "homeCountyHitRate": 0.9827586206896551
+        },
+        "WA": {
+          "population": 36,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 36,
+          "truePositives": 35,
+          "falsePositives": 0,
+          "falseNegatives": 3,
+          "precision": null,
+          "recall": 0.9210526315789473,
+          "f1": 0.9210526315789473,
+          "positiveSupportHits": 35,
+          "positiveSupportTotal": 38,
+          "homeCountyHitRate": 0.9722222222222222
+        }
+      },
+      "holdout": {
+        "combined": {
+          "population": 41,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 41,
+          "truePositives": 48,
+          "falsePositives": 0,
+          "falseNegatives": 31,
+          "precision": null,
+          "recall": 0.6075949367088608,
+          "f1": 0.6075949367088608,
+          "positiveSupportHits": 48,
+          "positiveSupportTotal": 79,
+          "homeCountyHitRate": 1
+        },
+        "FL": {
+          "population": 26,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 26,
+          "truePositives": 33,
+          "falsePositives": 0,
+          "falseNegatives": 31,
+          "precision": null,
+          "recall": 0.515625,
+          "f1": 0.515625,
+          "positiveSupportHits": 33,
+          "positiveSupportTotal": 64,
+          "homeCountyHitRate": 1
+        },
+        "WA": {
+          "population": 15,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 15,
+          "truePositives": 15,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "precision": null,
+          "recall": 1,
+          "f1": 1,
+          "positiveSupportHits": 15,
+          "positiveSupportTotal": 15,
+          "homeCountyHitRate": 1
+        }
+      },
+      "determinism": {
+        "runA": "f53ba1728a0b601b637ac6ae47545ae8de7b2752bb5588c9d9dad2bdc82b7f3f",
+        "runB": "f53ba1728a0b601b637ac6ae47545ae8de7b2752bb5588c9d9dad2bdc82b7f3f",
+        "match": true
+      }
+    },
+    "FIXED_50": {
+      "bands": null,
+      "fixedRadiusMiles": 50,
+      "calibration": {
+        "combined": {
+          "population": 96,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 96,
+          "truePositives": 106,
+          "falsePositives": 0,
+          "falseNegatives": 36,
+          "precision": null,
+          "recall": 0.7464788732394366,
+          "f1": 0.7464788732394366,
+          "positiveSupportHits": 106,
+          "positiveSupportTotal": 142,
+          "homeCountyHitRate": 0.9893617021276596
+        },
+        "FL": {
+          "population": 60,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 60,
+          "truePositives": 70,
+          "falsePositives": 0,
+          "falseNegatives": 34,
+          "precision": null,
+          "recall": 0.6730769230769231,
+          "f1": 0.6730769230769231,
+          "positiveSupportHits": 70,
+          "positiveSupportTotal": 104,
+          "homeCountyHitRate": 0.9827586206896551
+        },
+        "WA": {
+          "population": 36,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 36,
+          "truePositives": 36,
+          "falsePositives": 0,
+          "falseNegatives": 2,
+          "precision": null,
+          "recall": 0.9473684210526315,
+          "f1": 0.9473684210526315,
+          "positiveSupportHits": 36,
+          "positiveSupportTotal": 38,
+          "homeCountyHitRate": 1
+        }
+      },
+      "holdout": {
+        "combined": {
+          "population": 41,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 41,
+          "truePositives": 52,
+          "falsePositives": 0,
+          "falseNegatives": 27,
+          "precision": null,
+          "recall": 0.6582278481012658,
+          "f1": 0.6582278481012658,
+          "positiveSupportHits": 52,
+          "positiveSupportTotal": 79,
+          "homeCountyHitRate": 1
+        },
+        "FL": {
+          "population": 26,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 26,
+          "truePositives": 37,
+          "falsePositives": 0,
+          "falseNegatives": 27,
+          "precision": null,
+          "recall": 0.578125,
+          "f1": 0.578125,
+          "positiveSupportHits": 37,
+          "positiveSupportTotal": 64,
+          "homeCountyHitRate": 1
+        },
+        "WA": {
+          "population": 15,
+          "exhaustivePopulation": 0,
+          "partialPopulation": 15,
+          "truePositives": 15,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "precision": null,
+          "recall": 1,
+          "f1": 1,
+          "positiveSupportHits": 15,
+          "positiveSupportTotal": 15,
+          "homeCountyHitRate": 1
+        }
+      },
+      "determinism": {
+        "runA": "459283bed556b4e949fc164619355f9296edb8c69227f56097871f688c6a70a9",
+        "runB": "459283bed556b4e949fc164619355f9296edb8c69227f56097871f688c6a70a9",
+        "match": true
+      }
+    }
+  },
+  "selected": {
+    "status": "NOT_APPROVED",
+    "modelId": null,
+    "version": null,
+    "parameters": null,
+    "reasons": [
+      "No model met holdout precision>=0.90 (exhaustive/scorable) and recall>=0.65",
+      "Too few EXHAUSTIVE/RADIUS_EXPLICIT providers to score precision safely — prefer HYBRID explicit+conservative fallback after more exhaustive labels"
+    ]
+  },
+  "semantics": {
+    "radiusControls": "ORIGIN_PICKUP_DISCOVERY",
+    "stateAuthorityControls": "LEGAL_INTRASTATE_DESTINATION_AUTHORITY",
+    "partialUnmentionedCounties": "UNKNOWN_NOT_NEGATIVE"
+  },
+  "publication_safety": {
+    "new_public_companies": 0,
+    "new_indexable": 0,
+    "county_edges_created": 0
+  }
+}
