@@ -1,0 +1,158 @@
+{
+  "google_places_requests": 0,
+  "generatedAt": "2026-08-21T02:30:05.034Z",
+  "base": "https://www.movetrusthub.com",
+  "db_totals": {
+    "companies": 4941,
+    "indexable": 4905
+  },
+  "directory_api": {
+    "status": 200,
+    "total": 4605,
+    "returned": 24
+  },
+  "profiles": {
+    "sampled": 40,
+    "ok": 40,
+    "failures": []
+  },
+  "protected_searches": [
+    {
+      "q": "76235",
+      "status": 200,
+      "first": "Allied Van Lines",
+      "firstUsdot": "76235",
+      "ok": true
+    },
+    {
+      "q": "125563",
+      "status": 200,
+      "first": "Aero Mayflower Transit Company",
+      "firstUsdot": "125563",
+      "ok": true
+    },
+    {
+      "q": "125550",
+      "status": 200,
+      "first": "Atlas Van Lines",
+      "firstUsdot": "125550",
+      "ok": true
+    },
+    {
+      "q": "Allied Van Lines",
+      "status": 200,
+      "first": "Allied Van Lines",
+      "firstUsdot": "76235",
+      "ok": true
+    },
+    {
+      "q": "Mayflower",
+      "status": 200,
+      "first": "Aero Mayflower Transit Company",
+      "firstUsdot": "125563",
+      "ok": true
+    }
+  ],
+  "new_usdot_searches": {
+    "tested": 20,
+    "ok": 20,
+    "failures": []
+  },
+  "new_name_searches": {
+    "tested": 20,
+    "ok": 19,
+    "failures": [
+      {
+        "name": "TWO MEN AND A TRUCK",
+        "usdot": "3304680",
+        "ok": false
+      }
+    ]
+  },
+  "performance": {
+    "companies": {
+      "url": "https://www.movetrusthub.com/companies",
+      "samples": 5,
+      "times": [
+        1031,
+        618,
+        616,
+        614,
+        577
+      ],
+      "medianMs": 616,
+      "status": 200
+    },
+    "apiDefault": {
+      "url": "https://www.movetrusthub.com/api/directory/companies?offset=0&limit=24",
+      "samples": 5,
+      "times": [
+        485,
+        475,
+        490,
+        489,
+        533
+      ],
+      "medianMs": 489,
+      "status": 200
+    },
+    "usdot": {
+      "url": "https://www.movetrusthub.com/api/directory/companies?search=76235&limit=5",
+      "samples": 3,
+      "times": [
+        303,
+        329,
+        378
+      ],
+      "medianMs": 329,
+      "status": 200
+    },
+    "deep": {
+      "url": "https://www.movetrusthub.com/api/directory/companies?offset=1000&limit=24",
+      "samples": 3,
+      "times": [
+        329,
+        513,
+        328
+      ],
+      "medianMs": 329,
+      "status": 200
+    },
+    "compare": {
+      "url": "https://www.movetrusthub.com/compare",
+      "samples": 2,
+      "times": [
+        177,
+        378
+      ],
+      "medianMs": 277.5,
+      "status": 200
+    },
+    "sitemap": {
+      "url": "https://www.movetrusthub.com/sitemap.xml",
+      "samples": 2,
+      "times": [
+        2201,
+        610
+      ],
+      "medianMs": 1405.5,
+      "status": 200
+    }
+  },
+  "sitemap": {
+    "status": 200,
+    "company_url_mentions": 4905,
+    "unique_company_urls_in_index_doc": 4905,
+    "note": "Root sitemap.xml may be an index; unique path mentions are approximate."
+  },
+  "checks": {
+    "profiles_all_ok": true,
+    "protected_ok": true,
+    "new_usdot_ok": true,
+    "directory_total_ge_4600": true,
+    "companies_cold_median_le_3000": true,
+    "api_median_le_1000": true,
+    "usdot_median_le_1000": true,
+    "deep_median_le_2000": true
+  }
+}
