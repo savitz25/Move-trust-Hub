@@ -17,6 +17,7 @@ import {
   buildOpenGraph,
   buildTwitter,
 } from '@/lib/seo/site-metadata';
+import { shareRouteOgImage } from '@/lib/seo/share-hub';
 import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
 
 export function buildCountyPageMetadata(
@@ -38,6 +39,12 @@ export function buildCountyPageMetadata(
   const resolvedIndexDecision =
     indexDecision ?? evaluateCountyIndexability(county.stateSlug, county.slug);
   const shouldIndex = resolvedIndexDecision.tier === 'index';
+  const images = [
+    shareRouteOgImage(
+      path,
+      `${county.name}, ${stateName} moving research on MoveTrustHub`,
+    ),
+  ];
 
   return {
     title: absoluteDocumentTitle(title),
@@ -47,8 +54,9 @@ export function buildCountyPageMetadata(
       title: documentTitle,
       description: descriptionFinal,
       url,
+      images,
     }),
-    twitter: buildTwitter({ title: documentTitle, description: descriptionFinal }),
+    twitter: buildTwitter({ title: documentTitle, description: descriptionFinal, images }),
     robots: shouldIndex
       ? { index: true, follow: true }
       : { index: false, follow: true },
@@ -66,13 +74,16 @@ export function buildStatePageMetadata(
   const description = buildStateDescription(stateName, countyCount);
   const url = `${SITE_URL}${path}`;
   const documentTitle = formatDocumentTitle(title);
+  const images = [
+    shareRouteOgImage(path, `${stateName} moving research on MoveTrustHub`),
+  ];
 
   return {
     title: absoluteDocumentTitle(title),
     description,
     alternates: { canonical: url },
-    openGraph: buildOpenGraph({ title: documentTitle, description, url }),
-    twitter: buildTwitter({ title: documentTitle, description }),
+    openGraph: buildOpenGraph({ title: documentTitle, description, url, images }),
+    twitter: buildTwitter({ title: documentTitle, description, images }),
     robots: { index: true, follow: true },
     category: 'Local Moving Services',
   };

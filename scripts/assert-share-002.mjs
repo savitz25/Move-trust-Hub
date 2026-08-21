@@ -17,7 +17,8 @@ function assert(cond, msg) {
 const shareHub = read('lib/seo/share-hub.ts');
 const metadata = read('lib/seo/site-metadata.ts');
 const moveMeta = read('lib/seo/move-metadata.ts');
-const og = read('app/opengraph-image.tsx');
+const og = read('lib/og/move-share-card.tsx');
+const ogRoute = read('app/opengraph-image.tsx');
 const calculator = read('app/(move)/moving-calculator/layout.tsx');
 const company = read('app/(move)/companies/[slug]/page.tsx');
 const layout = read('app/layout.tsx');
@@ -51,6 +52,7 @@ assert(moveMeta.includes("hub: 'move'"), 'move page metadata uses hub move');
 assert(!moveMeta.includes("hub: 'lender'"), 'move-metadata is not Lender');
 assert(!moveMeta.includes("hub: 'insurance'"), 'move-metadata is not Insurance');
 
+assert(ogRoute.includes('renderMoveFallbackImage'), 'root OG uses SHARE-002 fallback renderer');
 assert(og.includes('#FF5A1F'), 'OG card uses Move orange');
 assert(og.includes('ASK TRUST HUB NETWORK'), 'OG card has network signature');
 assert(og.includes('movetrusthub.com'), 'OG card has Move domain');
