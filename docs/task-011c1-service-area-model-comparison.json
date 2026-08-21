@@ -1,0 +1,325 @@
+{
+  "google_places_requests": 0,
+  "task": "011C.1",
+  "freeze": {
+    "companies": 4941,
+    "indexable": 4905
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "cohort": {
+    "fl": 89,
+    "wa": 64,
+    "total": 153
+  },
+  "operatingLocations": {
+    "total": 153,
+    "valid": 134,
+    "unresolved": 19,
+    "geocodeSource": "census_geocoder_onelineaddress"
+  },
+  "fleet": {
+    "providers": 153,
+    "withUsdot": 133,
+    "usablePowerUnits": 131,
+    "fresh": 131,
+    "stale": 0,
+    "zero": 2,
+    "unknown": 0,
+    "missingUsdot": 20
+  },
+  "reference": {
+    "flProviders": 20,
+    "waProviders": 0,
+    "countyObservations": 37,
+    "evidenceTypeDistribution": {
+      "CURATED_INTERNAL": 37
+    },
+    "flCountyObs": 37,
+    "waCountyObs": 0
+  },
+  "split": {
+    "calibrationProviders": 14,
+    "holdoutProviders": 6,
+    "calibration": [
+      "all-about-moving-tampa-bay",
+      "america-s-family-moving-and-storage-llc",
+      "apollos-moving-logistics-llc",
+      "black-swan-moving-llc",
+      "clever-carriers-llc",
+      "eagle-moving-co",
+      "just-good-movers",
+      "master-movers-of-tallahassee",
+      "ohana-moving-company-llc",
+      "patriot-moving-and-storage",
+      "premium-q-moving-and-storage",
+      "pro-movers-2",
+      "tropic-moving",
+      "whatamove"
+    ],
+    "holdout": [
+      "angel-movers-llc",
+      "bull-moving",
+      "florida-pro-movers-home-solutions",
+      "move-for-less",
+      "premier-movers-4-less-llc",
+      "sunshine-movers"
+    ]
+  },
+  "models": {
+    "POWER_UNIT_RADIUS_BASELINE_011A": {
+      "label": "MODEL A — baseline 011A",
+      "bands": [
+        {
+          "id": "very_small",
+          "powerUnitsMax": 2,
+          "radiusMiles": 25
+        },
+        {
+          "id": "small",
+          "powerUnitsMax": 5,
+          "radiusMiles": 40
+        },
+        {
+          "id": "medium",
+          "powerUnitsMax": 15,
+          "radiusMiles": 75
+        },
+        {
+          "id": "large",
+          "powerUnitsMax": 50,
+          "radiusMiles": 125
+        },
+        {
+          "id": "very_large",
+          "powerUnitsMax": null,
+          "radiusMiles": 200
+        }
+      ],
+      "calibration": {
+        "truePositives": 8,
+        "falsePositives": 5,
+        "falseNegatives": 12,
+        "precision": 0.6153846153846154,
+        "recall": 0.4,
+        "f1": 0.4848484848484849,
+        "meanJaccard": 0.3095238095238095,
+        "avgCountiesPerProvider": 0.9285714285714286,
+        "medianCountiesPerProvider": 1,
+        "p90CountiesPerProvider": 2,
+        "maxCountiesPerProvider": 3,
+        "providersEvaluated": 14
+      },
+      "holdout": {
+        "truePositives": 9,
+        "falsePositives": 1,
+        "falseNegatives": 8,
+        "precision": 0.9,
+        "recall": 0.5294117647058824,
+        "f1": 0.6666666666666667,
+        "meanJaccard": 0.5055555555555556,
+        "avgCountiesPerProvider": 1.6666666666666667,
+        "medianCountiesPerProvider": 1.5,
+        "p90CountiesPerProvider": 3,
+        "maxCountiesPerProvider": 3,
+        "providersEvaluated": 6
+      },
+      "catastrophicFailures": {
+        "calibration": [],
+        "holdout": []
+      },
+      "determinism": {
+        "runA": "54ca718d3e55d65e158926ab26fdc9b90bbef51eab2eec4d649650498bab544a",
+        "runB": "54ca718d3e55d65e158926ab26fdc9b90bbef51eab2eec4d649650498bab544a",
+        "match": true
+      }
+    },
+    "POWER_UNIT_RADIUS_CONSERVATIVE_B": {
+      "label": "MODEL B — ~20–25% more conservative",
+      "bands": [
+        {
+          "id": "very_small",
+          "powerUnitsMax": 2,
+          "radiusMiles": 20
+        },
+        {
+          "id": "small",
+          "powerUnitsMax": 5,
+          "radiusMiles": 30
+        },
+        {
+          "id": "medium",
+          "powerUnitsMax": 15,
+          "radiusMiles": 55
+        },
+        {
+          "id": "large",
+          "powerUnitsMax": 50,
+          "radiusMiles": 95
+        },
+        {
+          "id": "very_large",
+          "powerUnitsMax": null,
+          "radiusMiles": 150
+        }
+      ],
+      "calibration": {
+        "truePositives": 8,
+        "falsePositives": 5,
+        "falseNegatives": 12,
+        "precision": 0.6153846153846154,
+        "recall": 0.4,
+        "f1": 0.4848484848484849,
+        "meanJaccard": 0.3095238095238095,
+        "avgCountiesPerProvider": 0.9285714285714286,
+        "medianCountiesPerProvider": 1,
+        "p90CountiesPerProvider": 2,
+        "maxCountiesPerProvider": 3,
+        "providersEvaluated": 14
+      },
+      "holdout": {
+        "truePositives": 9,
+        "falsePositives": 1,
+        "falseNegatives": 8,
+        "precision": 0.9,
+        "recall": 0.5294117647058824,
+        "f1": 0.6666666666666667,
+        "meanJaccard": 0.5055555555555556,
+        "avgCountiesPerProvider": 1.6666666666666667,
+        "medianCountiesPerProvider": 1.5,
+        "p90CountiesPerProvider": 3,
+        "maxCountiesPerProvider": 3,
+        "providersEvaluated": 6
+      },
+      "catastrophicFailures": {
+        "calibration": [],
+        "holdout": []
+      },
+      "determinism": {
+        "runA": "54ca718d3e55d65e158926ab26fdc9b90bbef51eab2eec4d649650498bab544a",
+        "runB": "54ca718d3e55d65e158926ab26fdc9b90bbef51eab2eec4d649650498bab544a",
+        "match": true
+      }
+    },
+    "POWER_UNIT_RADIUS_INTERMEDIATE_C": {
+      "label": "MODEL C — intermediate",
+      "bands": [
+        {
+          "id": "very_small",
+          "powerUnitsMax": 2,
+          "radiusMiles": 22
+        },
+        {
+          "id": "small",
+          "powerUnitsMax": 5,
+          "radiusMiles": 35
+        },
+        {
+          "id": "medium",
+          "powerUnitsMax": 15,
+          "radiusMiles": 65
+        },
+        {
+          "id": "large",
+          "powerUnitsMax": 50,
+          "radiusMiles": 110
+        },
+        {
+          "id": "very_large",
+          "powerUnitsMax": null,
+          "radiusMiles": 175
+        }
+      ],
+      "calibration": {
+        "truePositives": 8,
+        "falsePositives": 5,
+        "falseNegatives": 12,
+        "precision": 0.6153846153846154,
+        "recall": 0.4,
+        "f1": 0.4848484848484849,
+        "meanJaccard": 0.3095238095238095,
+        "avgCountiesPerProvider": 0.9285714285714286,
+        "medianCountiesPerProvider": 1,
+        "p90CountiesPerProvider": 2,
+        "maxCountiesPerProvider": 3,
+        "providersEvaluated": 14
+      },
+      "holdout": {
+        "truePositives": 9,
+        "falsePositives": 1,
+        "falseNegatives": 8,
+        "precision": 0.9,
+        "recall": 0.5294117647058824,
+        "f1": 0.6666666666666667,
+        "meanJaccard": 0.5055555555555556,
+        "avgCountiesPerProvider": 1.6666666666666667,
+        "medianCountiesPerProvider": 1.5,
+        "p90CountiesPerProvider": 3,
+        "maxCountiesPerProvider": 3,
+        "providersEvaluated": 6
+      },
+      "catastrophicFailures": {
+        "calibration": [],
+        "holdout": []
+      },
+      "determinism": {
+        "runA": "54ca718d3e55d65e158926ab26fdc9b90bbef51eab2eec4d649650498bab544a",
+        "runB": "54ca718d3e55d65e158926ab26fdc9b90bbef51eab2eec4d649650498bab544a",
+        "match": true
+      }
+    }
+  },
+  "selected": {
+    "status": "NOT_APPROVED",
+    "modelId": null,
+    "version": null,
+    "reasons": [
+      "Reference evidence below floor (FL=20, WA=0; need >=20 each)"
+    ]
+  },
+  "manualQa": {
+    "fl": {
+      "reviewed": 40,
+      "reasonable": 37,
+      "questionable": 0,
+      "incorrect": 3
+    },
+    "wa": {
+      "reviewed": 40,
+      "reasonable": 30,
+      "questionable": 0,
+      "incorrect": 10
+    }
+  },
+  "semantics": {
+    "radiusControls": "ORIGIN_PICKUP_DISCOVERY",
+    "stateAuthorityControls": "LEGAL_INTRASTATE_DESTINATION_AUTHORITY",
+    "note": "Destination county need not lie inside HQ-derived origin radius when statewide intrastate authority exists."
+  },
+  "publication_safety": {
+    "new_public_companies": 0,
+    "new_indexable": 0,
+    "county_edges_created": 0,
+    "consumer_visible_service_areas": 0
+  },
+  "new_provider_freeze": {
+    "fl_new_provider_candidates_remain_non_public": true,
+    "wa_new_provider_candidates_remain_non_public": true
+  }
+}

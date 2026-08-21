@@ -1,0 +1,17 @@
+{
+  "google_places_requests": 0,
+  "reference": {
+    "flProviders": 20,
+    "waProviders": 0,
+    "countyObservations": 37,
+    "evidenceTypeDistribution": {
+      "CURATED_INTERNAL": 37
+    },
+    "flCountyObs": 37,
+    "waCountyObs": 0
+  },
+  "split": {
+    "calibrationProviders": 14,
+    "holdoutProviders": 6
+  }
+}
