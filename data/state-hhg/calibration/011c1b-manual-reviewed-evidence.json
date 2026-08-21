@@ -1,0 +1,96 @@
+{
+  "google_places_requests": 0,
+  "note": "Human/deterministic second-check reviewed excerpts from provider-owned pages matched to canonical cohort IDs. Ground truth is NOT from POWER_*/FIXED_* models.",
+  "records": [
+    {
+      "providerId": "all-about-moving-tampa-bay",
+      "stateCode": "FL",
+      "sourceUrl": "https://www.allaboutmovingtampabay.com/",
+      "sourceType": "provider_service_area_page",
+      "quotedStatement": "Based in Largo, FL — we serve every city in Pinellas County and throughout Hillsborough County.",
+      "completenessClass": "EXHAUSTIVE_LIST",
+      "explicitRadiusMiles": null,
+      "positiveCounties": ["Pinellas", "Hillsborough"],
+      "negativeRule": "same_state_outside_listed",
+      "identityEvidence": ["canonical website field", "legal/DBA alignment All About Moving Tampa Bay", "Largo operating address"],
+      "identityConfidence": "HIGH",
+      "secondCheckPass": true,
+      "reviewNotes": [
+        "Page structures entire SERVICE AREA around Pinellas + Hillsborough city lists",
+        "No other FL counties presented as service destinations on that section",
+        "Interpreted as exhaustive origin service territory for those two counties"
+      ],
+      "franchiseSafetyHold": false
+    },
+    {
+      "providerId": "patriot-moving-and-storage",
+      "stateCode": "FL",
+      "sourceUrl": "https://www.patriotmoving.net/service-areas/",
+      "sourceType": "provider_service_area_page",
+      "quotedStatement": "Service Areas — Palm Beach County Moving Services; Broward County (service-areas section).",
+      "completenessClass": "EXHAUSTIVE_LIST",
+      "explicitRadiusMiles": null,
+      "positiveCounties": ["Palm Beach", "Broward"],
+      "negativeRule": "same_state_outside_listed",
+      "identityEvidence": ["canonical website", "Palm Beach & Broward branding", "provider name match"],
+      "identityConfidence": "HIGH",
+      "secondCheckPass": true,
+      "reviewNotes": [
+        "Dedicated service-areas IA presents Palm Beach and Broward as the service geography",
+        "Treated as exhaustive listed counties for origin discovery"
+      ],
+      "franchiseSafetyHold": false
+    },
+    {
+      "providerId": "ohana-moving-company-llc",
+      "stateCode": "FL",
+      "sourceUrl": "https://movewithohana.com/",
+      "sourceType": "provider_website",
+      "quotedStatement": "including Flagler, Volusia, Brevard, Seminole, Orange, Osceola and Lake counties.",
+      "completenessClass": "PARTIAL",
+      "explicitRadiusMiles": null,
+      "positiveCounties": ["Flagler", "Volusia", "Brevard", "Seminole", "Orange", "Osceola", "Lake"],
+      "negativeRule": null,
+      "identityEvidence": ["canonical website", "Central Florida / Deltona-Orlando language"],
+      "identityConfidence": "HIGH",
+      "secondCheckPass": false,
+      "reviewNotes": [
+        "County list is positive evidence but lacks exclusive/exhaustive wording — remains PARTIAL",
+        "Unmentioned counties UNKNOWN"
+      ],
+      "franchiseSafetyHold": false
+    },
+    {
+      "providerId": "apollos-moving-logistics-llc",
+      "stateCode": "FL",
+      "sourceUrl": "https://www.apollosmoving.com/",
+      "sourceType": "provider_website",
+      "quotedStatement": "Throughout Volusia County",
+      "completenessClass": "PARTIAL",
+      "explicitRadiusMiles": null,
+      "positiveCounties": ["Volusia"],
+      "negativeRule": null,
+      "identityEvidence": ["canonical website"],
+      "identityConfidence": "HIGH",
+      "secondCheckPass": false,
+      "reviewNotes": ["Partial county mention only"],
+      "franchiseSafetyHold": false
+    },
+    {
+      "providerId": "just-good-movers",
+      "stateCode": "FL",
+      "sourceUrl": "http://www.justgoodmovers.com/",
+      "sourceType": "provider_website",
+      "quotedStatement": "Brevard County service language on provider site",
+      "completenessClass": "PARTIAL",
+      "explicitRadiusMiles": null,
+      "positiveCounties": ["Brevard"],
+      "negativeRule": null,
+      "identityEvidence": ["canonical website"],
+      "identityConfidence": "HIGH",
+      "secondCheckPass": false,
+      "reviewNotes": ["Partial"],
+      "franchiseSafetyHold": false
+    }
+  ]
+}
