@@ -217,7 +217,8 @@ function noteProjectionOutcome(columns: string, error: { message?: string; code?
   }
 }
 
-function mapRow(row: Record<string, unknown>): Company {
+/** Map a public.companies row → Company display model. Shared by list + DB directory engine. */
+export function mapCompanyRow(row: Record<string, unknown>): Company {
   const baseServices = (row.services as Company['services']) || [];
   const rawMatchesCanonical = fmcsaRawBelongsToCanonicalUsdot(
     row.fmcsa_raw,
@@ -563,7 +564,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
   return data
     .map((row) => {
       try {
-        return mapRow(row as Record<string, unknown>);
+        return mapCompanyRow(row as Record<string, unknown>);
       } catch (err) {
         logger.warn('companies.map_row_failed', {
           id: (row as Record<string, unknown>).id,
@@ -703,7 +704,7 @@ async function resolveCompanyBySlugOrUsdotInner(
   }
 
   if (!slugError && bySlugOrId) {
-    const mapped = mapRow(bySlugOrId as Record<string, unknown>);
+    const mapped = mapCompanyRow(bySlugOrId as Record<string, unknown>);
     // Phase 2: collision suffixes (-2) → prefer canonical USDOT peer without numeric suffix
     return (await preferCanonicalUsdotPeer(supabase, mapped, projections)) ?? mapped;
   }
@@ -711,7 +712,7 @@ async function resolveCompanyBySlugOrUsdotInner(
   if (slugError && isCompaniesTableUnavailableError(slugError.message, slugError.code)) {
     const viaRpc = await getDirectoryCompanyViaRpc(supabase, input);
     if (viaRpc) {
-      return mapRow(viaRpc);
+      return mapCompanyRow(viaRpc);
     }
   }
 
@@ -737,21 +738,21 @@ async function resolveCompanyBySlugOrUsdotInner(
     const byUsdot = await selectOne((cols) =>
       supabase.from('companies').select(cols).eq('usdot_number', usdot).maybeSingle()
     );
-    if (byUsdot) return mapRow(byUsdot);
+    if (byUsdot) return mapCompanyRow(byUsdot);
   }
 
   const nameFromSlug = input.includes('-') ? input.replace(/-/g, ' ') : input;
   const byName = await selectOne((cols) =>
     supabase.from('companies').select(cols).ilike('name', nameFromSlug).limit(1).maybeSingle()
   );
-  if (byName) return mapRow(byName);
+  if (byName) return mapCompanyRow(byName);
 
   const predictedSlug = buildCompanySlugBase({ name: nameFromSlug, usdot: null });
   if (predictedSlug && predictedSlug !== input) {
     const byPredicted = await selectOne((cols) =>
       supabase.from('companies').select(cols).eq('slug', predictedSlug).maybeSingle()
     );
-    if (byPredicted) return mapRow(byPredicted);
+    if (byPredicted) return mapCompanyRow(byPredicted);
   }
 
   const collapsedSlug = slugifyCompanyName(nameFromSlug);
@@ -759,12 +760,12 @@ async function resolveCompanyBySlugOrUsdotInner(
     const byCollapsed = await selectOne((cols) =>
       supabase.from('companies').select(cols).eq('slug', collapsedSlug).maybeSingle()
     );
-    if (byCollapsed) return mapRow(byCollapsed);
+    if (byCollapsed) return mapCompanyRow(byCollapsed);
   }
 
   const viaRpc = await getDirectoryCompanyViaRpc(supabase, input);
   if (viaRpc) {
-    return mapRow(viaRpc);
+    return mapCompanyRow(viaRpc);
   }
 
   return undefined;
@@ -792,7 +793,7 @@ async function preferCanonicalUsdotPeer(
     if (error && isSchemaColumnError(error)) continue;
     if (error || !data?.length) return undefined;
 
-    const peers = (data as Record<string, unknown>[]).map((row) => mapRow(row));
+    const peers = (data as Record<string, unknown>[]).map((row) => mapCompanyRow(row));
     const preferred =
       peers.find((p) => p.slug && !/-\d+$/.test(p.slug)) ??
       peers.sort((a, b) => a.slug.length - b.slug.length)[0];
@@ -844,7 +845,7 @@ async function queryCompanyByColumnVariants(
       .maybeSingle();
 
     if (!error && data) {
-      return mapRow(data as Record<string, unknown>);
+      return mapCompanyRow(data as Record<string, unknown>);
     }
   }
   return undefined;
@@ -909,13 +910,13 @@ export async function getCompanyByCarrierFromDb(
       const exactName = nameRows.find(
         (row) => String(row.name ?? '').trim().toLowerCase() === hint.toLowerCase()
       );
-      if (exactName) return mapRow(exactName);
+      if (exactName) return mapCompanyRow(exactName);
 
       const fuzzy = nameRows.find((row) => {
-        const company = mapRow(row);
+        const company = mapCompanyRow(row);
         return companyMatchesCarrier(parsed, company);
       });
-      if (fuzzy) return mapRow(fuzzy);
+      if (fuzzy) return mapCompanyRow(fuzzy);
     }
   }
 

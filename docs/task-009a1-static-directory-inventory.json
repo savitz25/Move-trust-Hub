@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-08-21T01:13:13.996Z",
+  "task": "009A.1",
+  "google_places_requests": 0,
+  "notes": "Inventory only. No production query defaults changed; no providers published; no Google Places calls.",
+  "db": {
+    "total": 4021,
+    "by_publication_state": {
+      "PUBLISHABLE": 3985,
+      "REVIEW_REQUIRED": 25,
+      "INACTIVE": 11
+    },
+    "consumer_visible": 3985,
+    "consumer_visible_definition": "publication_state IS NULL OR publication_state IN ('PUBLISHABLE','INDEXABLE','VERIFIED')",
+    "indexable": 3985,
+    "by_service_scope": {
+      "interstate": 3692,
+      "intrastate": 329
+    }
+  },
+  "static_catalog": {
+    "source": "data/active-directory-movers.ts",
+    "object_keys_count": 445,
+    "with_usdot": 137,
+    "without_usdot": 308
+  },
+  "db_static_overlap_estimate": {
+    "usdot_overlap": 137,
+    "slug_overlap": 445,
+    "either_usdot_or_slug_overlap": 445,
+    "static_only_estimate": 0,
+    "sample_overlapped_usdots": [
+      "1534531",
+      "2787568",
+      "125550",
+      "1774499",
+      "754250",
+      "125563",
+      "1605569",
+      "2087637",
+      "2117516",
+      "825563",
+      "902281",
+      "76235",
+      "3709259",
+      "2007351",
+      "2238770",
+      "3101918",
+      "1270079",
+      "1170867",
+      "1925341",
+      "1463768",
+      "49922",
+      "2844367",
+      "3020455",
+      "3205320",
+      "125550"
+    ],
+    "sample_overlapped_slugs": [
+      "1-800-pack-rat",
+      "1st-choice-movers-llc",
+      "1st-moving-corp-3",
+      "1st-moving-corp-2",
+      "1st-moving-corp",
+      "2-austin-movers",
+      "2-college-brothers-moving-and-storage",
+      "2-fellas-a-big-vehicle-moving-company",
+      "3-men-movers-ltd",
+      "5-star-movers-llc-bronx-moving-company",
+      "680-movers",
+      "6th-man-movers",
+      "a-better-budget-moving-labor-inc",
+      "a-mother-s-touch-movers",
+      "a-1-steedle",
+      "a-c-white-transfer-storage",
+      "a-1-movers",
+      "a2b-movers-llc",
+      "absolute-moving-storage",
+      "ace-monterey-moving",
+      "ace-moving-co-2",
+      "act-of-class-moving-llc",
+      "adsi-moving-systems",
+      "aero-mayflower-transit-company",
+      "affordable-movers-usa"
+    ]
+  }
+}

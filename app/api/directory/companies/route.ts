@@ -34,9 +34,11 @@ export async function GET(request: Request) {
   });
 
   const filters = directoryFiltersFromSearchParams(record);
+  // Task 009A.1: engine=db is Preview/local opt-in only (ignored on production).
+  const engine = searchParams.get('engine');
 
   const [page, flags] = await Promise.all([
-    queryDirectoryPage({ offset, limit, filters }),
+    queryDirectoryPage({ offset, limit, filters, engine }),
     getPerformanceFlags(),
   ]);
 

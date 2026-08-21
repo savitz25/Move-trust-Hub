@@ -56,11 +56,15 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 export default async function CompaniesDirectoryPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const filters = directoryFiltersFromSearchParams(params);
+  // Task 009A.1: engine=db is Preview/local opt-in only (ignored on production).
+  const engineRaw = params.engine;
+  const engine = Array.isArray(engineRaw) ? engineRaw[0] : engineRaw;
 
   const firstPage = await queryDirectoryPage({
     offset: 0,
     limit: DIRECTORY_PAGE_SIZE,
     filters,
+    engine,
   });
 
   const directorySchema = buildCompaniesDirectorySchemaGraph(firstPage.companies, {
