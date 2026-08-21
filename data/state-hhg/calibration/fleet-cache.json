@@ -1,0 +1,1042 @@
+{
+  "11997": {
+    "powerUnits": 26,
+    "drivers": 23,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:57.806Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "12103": {
+    "powerUnits": 7,
+    "drivers": 15,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:59.647Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "89774": {
+    "powerUnits": 6,
+    "drivers": 10,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:52.959Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "153161": {
+    "powerUnits": 31,
+    "drivers": 20,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:01.136Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "162012": {
+    "powerUnits": 2,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:09.782Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "185771": {
+    "powerUnits": 124,
+    "drivers": 102,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:11.336Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "260219": {
+    "powerUnits": 24,
+    "drivers": 67,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:17.109Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "295017": {
+    "powerUnits": 18,
+    "drivers": 24,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:20.126Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "312895": {
+    "powerUnits": 26,
+    "drivers": 24,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:21.641Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "368177": {
+    "powerUnits": 12,
+    "drivers": 10,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:29.213Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "381994": {
+    "powerUnits": 7,
+    "drivers": 7,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:38.582Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "430203": {
+    "powerUnits": 32,
+    "drivers": 27,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:36.105Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "459518": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:48.374Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "482319": {
+    "powerUnits": 12,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:38.360Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "534666": {
+    "powerUnits": 34,
+    "drivers": 28,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:39.110Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "586615": {
+    "powerUnits": 21,
+    "drivers": 18,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:39.872Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "653203": {
+    "powerUnits": 4,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:49.141Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "700628": {
+    "powerUnits": 5,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:49.903Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "709590": {
+    "powerUnits": 8,
+    "drivers": 9,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:50.665Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "742572": {
+    "powerUnits": 4,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:40.623Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "767421": {
+    "powerUnits": 6,
+    "drivers": 8,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:51.431Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "781293": {
+    "powerUnits": 5,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:41.372Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "811031": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:52.196Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "901418": {
+    "powerUnits": 24,
+    "drivers": 25,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:42.118Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "966624": {
+    "powerUnits": 4,
+    "drivers": 6,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:53.721Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "976593": {
+    "powerUnits": 5,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:54.468Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1006044": {
+    "powerUnits": 12,
+    "drivers": 15,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:55.215Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1040023": {
+    "powerUnits": 7,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:03.720Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1085688": {
+    "powerUnits": 14,
+    "drivers": 8,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:55.962Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1127257": {
+    "powerUnits": 6,
+    "drivers": 11,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:56.796Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1160157": {
+    "powerUnits": 1,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:04.484Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1207187": {
+    "powerUnits": 10,
+    "drivers": 11,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Intrastate Non-Hazmat",
+    "retrievedAt": "2026-08-21T13:31:58.836Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1277174": {
+    "powerUnits": 9,
+    "drivers": 6,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:00.405Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1329594": {
+    "powerUnits": 4,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:05.236Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1377633": {
+    "powerUnits": 6,
+    "drivers": 8,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:05.996Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1424728": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:06.745Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1472849": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:07.504Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1526680": {
+    "powerUnits": 3,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:08.268Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1568346": {
+    "powerUnits": 3,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:09.029Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1699274": {
+    "powerUnits": 3,
+    "drivers": 10,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:01.914Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1731101": {
+    "powerUnits": 3,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:02.689Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1750795": {
+    "powerUnits": 3,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:03.469Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1825294": {
+    "powerUnits": 3,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:04.217Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1847236": {
+    "powerUnits": 2,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:10.545Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1863079": {
+    "powerUnits": 100,
+    "drivers": 140,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:04.983Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1885649": {
+    "powerUnits": 11,
+    "drivers": 9,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:05.726Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1909844": {
+    "powerUnits": 8,
+    "drivers": 8,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:06.488Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1917905": {
+    "powerUnits": 4,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:12.100Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1934023": {
+    "powerUnits": 2,
+    "drivers": 6,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:07.252Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1943394": {
+    "powerUnits": 4,
+    "drivers": 12,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:12.843Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1951425": {
+    "powerUnits": 3,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:13.585Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1961790": {
+    "powerUnits": 5,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:14.350Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1972158": {
+    "powerUnits": 5,
+    "drivers": 7,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:08.011Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1981385": {
+    "powerUnits": 3,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Intrastate Non-Hazmat",
+    "retrievedAt": "2026-08-21T13:32:08.774Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "1991298": {
+    "powerUnits": 3,
+    "drivers": 12,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:15.098Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2059049": {
+    "powerUnits": 4,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:15.845Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2114900": {
+    "powerUnits": 6,
+    "drivers": 8,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:09.522Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2119975": {
+    "powerUnits": 3,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:16.591Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2153459": {
+    "powerUnits": 1,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Intrastate Non-Hazmat",
+    "retrievedAt": "2026-08-21T13:32:10.286Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2192602": {
+    "powerUnits": 6,
+    "drivers": 6,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:17.355Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2270761": {
+    "powerUnits": 6,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:18.108Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2273603": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:11.046Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2303737": {
+    "powerUnits": 7,
+    "drivers": 7,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:18.883Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2353055": {
+    "powerUnits": 10,
+    "drivers": 66,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:11.792Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2368777": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:19.640Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2385545": {
+    "powerUnits": 17,
+    "drivers": 13,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:12.542Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2388358": {
+    "powerUnits": 9,
+    "drivers": 9,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:13.287Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2402239": {
+    "powerUnits": 3,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:20.387Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2416564": {
+    "powerUnits": 17,
+    "drivers": 9,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:14.054Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2440980": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:14.818Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2443347": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:21.145Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2459380": {
+    "powerUnits": 5,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:15.552Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2491702": {
+    "powerUnits": 1,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:21.898Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2547762": {
+    "powerUnits": 7,
+    "drivers": 8,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:16.317Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2562486": {
+    "powerUnits": 83,
+    "drivers": 70,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:22.646Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2564711": {
+    "powerUnits": 9,
+    "drivers": 15,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:23.407Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2719785": {
+    "powerUnits": 191,
+    "drivers": 382,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:17.870Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2823665": {
+    "powerUnits": 2,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:24.156Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2833135": {
+    "powerUnits": 20,
+    "drivers": 20,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:24.905Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2877082": {
+    "powerUnits": 3,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:18.615Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2944590": {
+    "powerUnits": 6,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:19.364Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "2968831": {
+    "powerUnits": 2,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:25.664Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3005919": {
+    "powerUnits": 10,
+    "drivers": 10,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:26.428Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3021838": {
+    "powerUnits": 1,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:27.193Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3034432": {
+    "powerUnits": 3,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:27.955Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3080327": {
+    "powerUnits": 2,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:28.718Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3092893": {
+    "powerUnits": 17,
+    "drivers": 21,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:29.486Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3110677": {
+    "powerUnits": 5,
+    "drivers": 6,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:20.880Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3146919": {
+    "powerUnits": 0,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:30.245Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3161573": {
+    "powerUnits": 1,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:30.991Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3166061": {
+    "powerUnits": 5,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:22.391Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3168341": {
+    "powerUnits": 5,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:31.754Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3170358": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:23.163Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3199979": {
+    "powerUnits": 5,
+    "drivers": 6,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:32.514Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3227005": {
+    "powerUnits": 30,
+    "drivers": 35,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:23.927Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3236736": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:24.678Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3252722": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:33.259Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3286720": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:34.008Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3288640": {
+    "powerUnits": 4,
+    "drivers": 8,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:25.420Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3299710": {
+    "powerUnits": 3,
+    "drivers": 6,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:26.200Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3301146": {
+    "powerUnits": 5,
+    "drivers": 3,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Intrastate Non-Hazmat",
+    "retrievedAt": "2026-08-21T13:31:34.786Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3306190": {
+    "powerUnits": 1,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:26.954Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3338540": {
+    "powerUnits": 7,
+    "drivers": 12,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:35.532Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3433024": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:27.701Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3507074": {
+    "powerUnits": 0,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Intrastate Non-Hazmat",
+    "retrievedAt": "2026-08-21T13:31:36.292Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3530991": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:28.466Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3784138": {
+    "powerUnits": 2,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Intrastate Non-Hazmat",
+    "retrievedAt": "2026-08-21T13:31:37.073Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3794613": {
+    "powerUnits": 5,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:37.834Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "3998447": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:39.345Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4001518": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:40.089Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4018257": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:40.865Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4022357": {
+    "powerUnits": 3,
+    "drivers": 6,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:41.612Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4063852": {
+    "powerUnits": 5,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:42.359Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4069586": {
+    "powerUnits": 5,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:29.977Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4071591": {
+    "powerUnits": 1,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:43.109Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4079187": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:30.761Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4112516": {
+    "powerUnits": 2,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:31.543Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4119742": {
+    "powerUnits": 2,
+    "drivers": 8,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:32.308Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4181394": {
+    "powerUnits": 3,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:33.076Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4184342": {
+    "powerUnits": 1,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:33.827Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4200845": {
+    "powerUnits": 2,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Intrastate Non-Hazmat",
+    "retrievedAt": "2026-08-21T13:32:34.574Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4271830": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Intrastate Non-Hazmat",
+    "retrievedAt": "2026-08-21T13:32:35.337Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4431751": {
+    "powerUnits": 2,
+    "drivers": 4,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:43.858Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4438821": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:44.604Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4476646": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:36.851Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4478542": {
+    "powerUnits": 1,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:32:37.613Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4482118": {
+    "powerUnits": 1,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:45.366Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4520643": {
+    "powerUnits": 2,
+    "drivers": 5,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:46.113Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4528522": {
+    "powerUnits": 2,
+    "drivers": 2,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:46.861Z",
+    "source": "fmcsa_qc_mobile"
+  },
+  "4544882": {
+    "powerUnits": 2,
+    "drivers": 1,
+    "mcs150Outdated": "N",
+    "carrierOperation": "Interstate",
+    "retrievedAt": "2026-08-21T13:31:47.624Z",
+    "source": "fmcsa_qc_mobile"
+  }
+}
