@@ -1,0 +1,502 @@
+{
+  "task": "011D.2B",
+  "retrievedAt": "2026-08-21T15:58:50.535Z",
+  "google_places_requests": 0,
+  "repo": "savitz25/Move-trust-Hub",
+  "project": "MoveTrustHub (movetrusthub.com)",
+  "freeze": {
+    "companies": 5870,
+    "indexable": 4905,
+    "ingested": 929
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "publicationReadyPool": {
+    "FL": 781,
+    "WA": 148,
+    "total": 929,
+    "excluded": {
+      "franchise": 0,
+      "review": 0,
+      "inactive": 0,
+      "broker": 0,
+      "missingFields": 0,
+      "wrongStateCounty": 0
+    }
+  },
+  "canary": {
+    "FL": 50,
+    "WA": 30,
+    "total": 80
+  },
+  "geography": {
+    "FL": {
+      "countiesRepresented": 44,
+      "byCounty": {
+        "Broward (12011)": 3,
+        "Palm Beach (12099)": 1,
+        "Miami-Dade (12086)": 2,
+        "Collier (12021)": 1,
+        "Lee (12071)": 1,
+        "Alachua (12001)": 1,
+        "Orange (12095)": 1,
+        "Pasco (12101)": 1,
+        "Hillsborough (12057)": 1,
+        "Charlotte (12015)": 1,
+        "Polk (12105)": 1,
+        "Putnam (12107)": 1,
+        "Pinellas (12103)": 2,
+        "Brevard (12009)": 1,
+        "Nassau (12089)": 1,
+        "Duval (12031)": 1,
+        "Leon (12073)": 1,
+        "St. Johns (12109)": 1,
+        "Marion (12083)": 1,
+        "Escambia (12033)": 1,
+        "Manatee (12081)": 1,
+        "Sarasota (12115)": 1,
+        "Lake (12069)": 1,
+        "St. Lucie (12111)": 1,
+        "Okaloosa (12091)": 1,
+        "Indian River (12061)": 1,
+        "Seminole (12117)": 1,
+        "Volusia (12127)": 2,
+        "Highlands (12055)": 1,
+        "Hernando (12053)": 2,
+        "Walton (12131)": 1,
+        "Monroe (12087)": 1,
+        "Martin (12085)": 1,
+        "Clay (12019)": 1,
+        "Osceola (12097)": 1,
+        "DeSoto (12027)": 1,
+        "Hendry (12051)": 1,
+        "Sumter (12119)": 1,
+        "Bay (12005)": 1,
+        "Flagler (12035)": 1,
+        "Taylor (12123)": 1,
+        "Columbia (12023)": 1,
+        "Citrus (12017)": 1,
+        "Santa Rosa (12113)": 1
+      }
+    },
+    "WA": {
+      "countiesRepresented": 22,
+      "byCounty": {
+        "Benton (53005)": 1,
+        "King (53033)": 3,
+        "Kitsap (53035)": 1,
+        "Pierce (53053)": 1,
+        "Chelan (53007)": 1,
+        "Skagit (53057)": 1,
+        "Snohomish (53061)": 3,
+        "Cowlitz (53015)": 1,
+        "Spokane (53063)": 1,
+        "Whitman (53075)": 1,
+        "Kittitas (53037)": 1,
+        "Thurston (53067)": 3,
+        "Yakima (53077)": 1,
+        "Klickitat (53039)": 1,
+        "Douglas (53017)": 1,
+        "Whatcom (53073)": 1,
+        "Franklin (53021)": 1,
+        "San Juan (53055)": 1,
+        "Grant (53025)": 1,
+        "Island (53029)": 1,
+        "Clark (53011)": 3,
+        "Clallam (53009)": 1
+      }
+    }
+  },
+  "authorityFreshness": {
+    "reingestRequired": false,
+    "reason": "FDACS/WA UTC authority retrieved_at clustered on 2026-08-21 ingest; VERIFIED+active filters applied. No material staleness requiring full re-ingest for canary preparation.",
+    "authorityFreshness": [
+      {
+        "state_code": "FL",
+        "oldest": "2026-08-21T03:29:40.443Z",
+        "newest": "2026-08-21T03:29:40.443Z",
+        "n": 782
+      },
+      {
+        "state_code": "WA",
+        "oldest": "2026-08-21T03:29:40.446Z",
+        "newest": "2026-08-21T03:29:40.446Z",
+        "n": 148
+      }
+    ]
+  },
+  "precisionAudit": {
+    "audited": 80,
+    "issues": [],
+    "falseMatches": 0,
+    "precision": 100
+  },
+  "profileQa": {
+    "FL": 50,
+    "WA": 30,
+    "issues": []
+  },
+  "discoverySimulation": {
+    "FL": [
+      {
+        "county": "Palm Beach",
+        "state": "FL",
+        "originCountyFips": "12099",
+        "candidateCount": 1,
+        "providerIds": [
+          "fl-im-1058"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY"
+        ]
+      },
+      {
+        "county": "Broward",
+        "state": "FL",
+        "originCountyFips": "12011",
+        "candidateCount": 3,
+        "providerIds": [
+          "fl-im-100002",
+          "fl-im-1399",
+          "fl-im-2064"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY",
+          "VERIFIED_HOME_COUNTY",
+          "VERIFIED_HOME_COUNTY"
+        ]
+      },
+      {
+        "county": "Hillsborough",
+        "state": "FL",
+        "originCountyFips": "12057",
+        "candidateCount": 1,
+        "providerIds": [
+          "fl-im-1226"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY"
+        ]
+      },
+      {
+        "county": "Orange",
+        "state": "FL",
+        "originCountyFips": "12095",
+        "candidateCount": 1,
+        "providerIds": [
+          "fl-im-1181"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY"
+        ]
+      },
+      {
+        "county": "Duval",
+        "state": "FL",
+        "originCountyFips": "12031",
+        "candidateCount": 1,
+        "providerIds": [
+          "fl-im-1426"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY"
+        ]
+      }
+    ],
+    "WA": [
+      {
+        "county": "King",
+        "state": "WA",
+        "originCountyFips": "53033",
+        "candidateCount": 3,
+        "providerIds": [
+          "wa-cc000208",
+          "wa-hg-067049",
+          "wa-thg071794"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY",
+          "VERIFIED_HOME_COUNTY",
+          "VERIFIED_HOME_COUNTY"
+        ]
+      },
+      {
+        "county": "Pierce",
+        "state": "WA",
+        "originCountyFips": "53053",
+        "candidateCount": 1,
+        "providerIds": [
+          "wa-cc000562"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY"
+        ]
+      },
+      {
+        "county": "Snohomish",
+        "state": "WA",
+        "originCountyFips": "53061",
+        "candidateCount": 3,
+        "providerIds": [
+          "wa-cc003737",
+          "wa-hg-068318",
+          "wa-thg072051"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY",
+          "VERIFIED_HOME_COUNTY",
+          "VERIFIED_HOME_COUNTY"
+        ]
+      },
+      {
+        "county": "Spokane",
+        "state": "WA",
+        "originCountyFips": "53063",
+        "candidateCount": 1,
+        "providerIds": [
+          "wa-cc004401"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY"
+        ]
+      },
+      {
+        "county": "Clark",
+        "state": "WA",
+        "originCountyFips": "53011",
+        "candidateCount": 3,
+        "providerIds": [
+          "wa-hg-061724",
+          "wa-hg-061841",
+          "wa-thg071741"
+        ],
+        "bases": [
+          "VERIFIED_HOME_COUNTY",
+          "VERIFIED_HOME_COUNTY",
+          "VERIFIED_HOME_COUNTY"
+        ]
+      }
+    ],
+    "basis": {
+      "verifiedHomeCountyOnly": 80,
+      "withExplicit": 0,
+      "both": 0,
+      "radius": 0
+    }
+  },
+  "routeQa": {
+    "sameState": [
+      {
+        "route": "Palm Beach → Orange",
+        "originCandidates": 1,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "Broward → Miami-Dade",
+        "originCandidates": 3,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "Hillsborough → Pinellas",
+        "originCandidates": 1,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "Orange → Duval",
+        "originCandidates": 1,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "Lee → Collier",
+        "originCandidates": 1,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "King → Pierce",
+        "originCandidates": 3,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "Snohomish → King",
+        "originCandidates": 3,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "Spokane → King",
+        "originCandidates": 1,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "Pierce → Clark",
+        "originCandidates": 1,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      },
+      {
+        "route": "Clark → Spokane",
+        "originCandidates": 3,
+        "destinationRequiresHomeCountyMatch": false,
+        "stateAuthorityControlsDestination": true,
+        "failures": [],
+        "pass": true
+      }
+    ],
+    "interstate": [
+      {
+        "label": "FL → GA",
+        "stateOnlyInManifest": 50,
+        "qualifiesViaStateAuthorityAlone": false,
+        "pass": true,
+        "note": "State-only movers excluded from interstate discovery; federal engine required for FL→GA etc."
+      },
+      {
+        "label": "FL → NJ",
+        "stateOnlyInManifest": 50,
+        "qualifiesViaStateAuthorityAlone": false,
+        "pass": true,
+        "note": "State-only movers excluded from interstate discovery; federal engine required for FL→GA etc."
+      },
+      {
+        "label": "WA → OR",
+        "stateOnlyInManifest": 30,
+        "qualifiesViaStateAuthorityAlone": false,
+        "pass": true,
+        "note": "State-only movers excluded from interstate discovery; federal engine required for FL→GA etc."
+      },
+      {
+        "label": "WA → ID",
+        "stateOnlyInManifest": 30,
+        "qualifiesViaStateAuthorityAlone": false,
+        "pass": true,
+        "note": "State-only movers excluded from interstate discovery; federal engine required for FL→GA etc."
+      }
+    ]
+  },
+  "determinism": {
+    "runA": {
+      "FL": "c1cad11d",
+      "WA": "e2967186"
+    },
+    "runB": {
+      "FL": "c1cad11d",
+      "WA": "e2967186"
+    },
+    "match": true
+  },
+  "nonManifest": {
+    "n": 849,
+    "indexable_bad": 0,
+    "pub_bad": 0
+  },
+  "consumerEligibleEdges": 0,
+  "publicStateOnly": 0,
+  "radius": {
+    "POWER_UNIT_RADIUS": "NOT_APPROVED",
+    "FIXED_25": "NOT_APPROVED",
+    "FIXED_40": "NOT_APPROVED",
+    "FIXED_50": "NOT_APPROVED",
+    "consumerEnabled": false
+  },
+  "futureCopy": {
+    "homeCounty": {
+      "locationLine": "Based in {countyName}",
+      "authorityFl": "Registration verified with the Florida Department of Agriculture and Consumer Services.",
+      "authorityWa": "Household-goods carrier authority verified with the Washington Utilities and Transportation Commission.",
+      "roleFl": "Florida intrastate mover",
+      "roleWa": "Washington household-goods mover",
+      "cta": "Confirm pickup availability for your exact address."
+    },
+    "explicitService": {
+      "line": "Provider identifies {countyName} as a service area."
+    },
+    "federalAbsent": "Federal interstate household-goods authority is not shown for this profile unless independently verified.",
+    "forbidden": [
+      "Guaranteed service",
+      "Covers entire county",
+      "Serves nearby counties",
+      "40-mile service radius",
+      "Available statewide",
+      "NOT AUTHORIZED"
+    ]
+  },
+  "gatingPlan": {
+    "waveId": "LOCAL_HHG_FL_WA_2026_08_CANARY_1",
+    "publishExactManifestOnly": true,
+    "nonManifestRemainIngested": true,
+    "consumerEligibleFlipOnlyOnManifestIn011D3": true
+  },
+  "performancePlan": {
+    "benchmarksFor011D3": [
+      "local county origin query (manifest-gated)",
+      "local directory page",
+      "canary profile render",
+      "default interstate directory",
+      "sitemap generation"
+    ],
+    "expectedBoundedBehavior": "SQL filters publication_state + wave/manifest membership; never hydrate all 5870 or all 929 for a 24-row page."
+  },
+  "seoPlan": {
+    "initialIndexable": false,
+    "robots": "noindex, follow",
+    "sitemapExcluded": true
+  },
+  "checks": {
+    "google_zero": true,
+    "publish_false": true,
+    "fl_50": true,
+    "wa_30": true,
+    "deterministic": true,
+    "precision_100": true,
+    "profile_ok": true,
+    "routes_ok": true,
+    "interstate_ok": true,
+    "no_public_state_only": true,
+    "no_consumer_eligible": true,
+    "indexable_4905": true,
+    "radius_disabled": true,
+    "fl_counties_ge_12": true,
+    "wa_counties_ge_8": true
+  }
+}
