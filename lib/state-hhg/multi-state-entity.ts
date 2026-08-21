@@ -15,7 +15,8 @@ import {
   normalizeUsdot,
 } from '@/lib/state-hhg/normalize';
 
-export const MULTI_STATE_RULESET_VERSION = 'MULTI_STATE_REGULATED_ENTITY_V1';
+/** V1_1: Inc vs LLC/Corp form conflict is DISTINCT even when normalized names match. */
+export const MULTI_STATE_RULESET_VERSION = 'MULTI_STATE_REGULATED_ENTITY_V1_1';
 export const MULTI_STATE_GOOGLE_PLACES_REQUESTS = 0 as const;
 
 export const MULTI_STATE_RESOLUTION_STATES = [
@@ -81,6 +82,14 @@ function legalExact(a: string | null | undefined, b: string | null | undefined):
   return Boolean(na && nb && na === nb);
 }
 
+export function corporateForm(name: string | null | undefined): 'INC' | 'LLC' | 'CORP' | null {
+  const u = String(name ?? '').toUpperCase();
+  if (/\bL\.?\s*L\.?\s*C\.?\b/.test(u) || /\bLIMITED LIABILITY\b/.test(u)) return 'LLC';
+  if (/\bINC(ORPORATED)?\.?\b/.test(u)) return 'INC';
+  if (/\bCORP(ORATION)?\.?\b/.test(u)) return 'CORP';
+  return null;
+}
+
 export function classifyMultiStateEntity(input: MultiStateClassifyInput): MultiStateClassifyResult {
   const { subject, candidate } = input;
   const reasons: string[] = [];
@@ -118,6 +127,13 @@ export function classifyMultiStateEntity(input: MultiStateClassifyInput): MultiS
   if (emailMatch && genericEmail) weak.push('generic_enterprise_email');
   if (dbaMatch) corroborating.push('exact_dba');
   if (!legalMatch && (emailMatch || dbaMatch)) weak.push('brand_or_mailbox_without_legal_name_match');
+
+  const formS = corporateForm(subject.legalName);
+  const formC = corporateForm(candidate.legalName);
+  if (formS && formC && formS !== formC) {
+    reasons.push(`corporate_form_conflict_${formS}_vs_${formC}`);
+    return finish('DISTINCT_LEGAL_ENTITIES', reasons, strong, corroborating, weak);
+  }
 
   if (franchise && !sameUsdot && !input.officialSameEntityTie) {
     reasons.push('franchise_or_network_brand_without_federal_id');

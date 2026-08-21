@@ -1,0 +1,19 @@
+{
+  "google_places_requests": 0,
+  "from_version": "MULTI_STATE_REGULATED_ENTITY_V1",
+  "to_version": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+  "revision_required": true,
+  "justification": "Name normalization strips INC/LLC, so Inc vs LLC pairs were generated as exact-name overlaps. V1_1 classifies corporate-form conflict as DISTINCT_LEGAL_ENTITIES. This does not increase SAME_CANONICAL_ENTITY attachments.",
+  "successes": [
+    "Suddath LLC same-entity (FL-006) still SAME under V1_1",
+    "Central Inc vs LLC DISTINCT",
+    "Smooth Moves Inc vs LLC DISTINCT"
+  ],
+  "safe_holds": ["ACE RELOCATION SYSTEMS", "CLUTTER", "FLEX STORAGE", "STEVENS MOVING AND STORAGE"],
+  "false_positive_patterns": [
+    "suffix-stripped exact legal name",
+    "shared corporate email domain",
+    "generic info@ mailbox",
+    "national/network mover brands"
+  ]
+}
