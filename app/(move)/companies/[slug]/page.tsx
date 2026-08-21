@@ -109,6 +109,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Independent directory — verify FMCSA licensing yourself.`,
     path: `/companies/${company.slug}`,
     noIndex: !profileQuality.indexable || !isSeoIndexableCompany(company),
+    contextualImage: true,
+    imageAlt: `${company.name} — moving company research on MoveTrustHub`,
   });
 }
 

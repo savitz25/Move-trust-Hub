@@ -43,3 +43,13 @@ export function isForbiddenShareHost(hostname: string): boolean {
 export function resolveShareOrigin(): string {
   return SHARE_HUB.origin;
 }
+
+export function shareRouteOgImage(routePath: string, alt: string) {
+  const path = (routePath.startsWith('/') ? routePath : `/${routePath}`).replace(/\/$/, '');
+  return {
+    url: `${SHARE_HUB.origin}${path}/opengraph-image`,
+    width: SHARE_HUB.ogWidth,
+    height: SHARE_HUB.ogHeight,
+    alt,
+  };
+}

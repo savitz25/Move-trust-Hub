@@ -4,6 +4,7 @@ import {
   buildOpenGraph,
   buildTwitter,
 } from '@/lib/seo/site-metadata';
+import { shareRouteOgImage } from '@/lib/seo/share-hub';
 import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
 
 export type MovePageMetadataInput = {
@@ -13,6 +14,9 @@ export type MovePageMetadataInput = {
   path: string;
   type?: 'website' | 'article';
   noIndex?: boolean;
+  /** When set, OG/Twitter images point at this route's opengraph-image. */
+  contextualImage?: boolean;
+  imageAlt?: string;
 };
 
 /** Canonical + OG/Twitter metadata for Move hub pages at the site root. */
@@ -20,6 +24,9 @@ export function buildMovePageMetadata(input: MovePageMetadataInput): Metadata {
   const path = input.path.startsWith('/') ? input.path : `/${input.path}`;
   const url = path === '/' ? SITE_URL : `${SITE_URL}${path}`.replace(/\/$/, '');
   const documentTitle = formatDocumentTitle(input.title);
+  const images = input.contextualImage
+    ? [shareRouteOgImage(path, input.imageAlt ?? documentTitle)]
+    : undefined;
 
   return {
     // absolute — never rely on layout template (prevents "| Move Trust Hub | Move Trust Hub")
@@ -33,11 +40,13 @@ export function buildMovePageMetadata(input: MovePageMetadataInput): Metadata {
       url,
       type: input.type ?? 'website',
       hub: 'move',
+      images,
     }),
     twitter: buildTwitter({
       title: documentTitle,
       description: input.description,
       hub: 'move',
+      images,
     }),
     robots: input.noIndex
       ? // Faceted/filtered views: stay crawlable for links, keep out of the index.

@@ -43,10 +43,11 @@ export function buildOpenGraph(
     url?: string;
     type?: 'website' | 'article';
     hub?: OgHub;
+    images?: Array<{ url: string; width: number; height: number; alt: string }>;
   } = {}
 ): NonNullable<Metadata['openGraph']> {
   const hub = overrides.hub ?? 'move';
-  const ogImage = getOgImageForHub(hub);
+  const ogImage = overrides.images?.[0] ?? getOgImageForHub(hub);
   // Prefer explicit overrides. Do not fall back to homepage title — that leaked onto
   // company profiles and other deep pages when they only set `metadata.title`.
   return {
@@ -65,15 +66,16 @@ export function buildTwitter(
     title?: string;
     description?: string;
     hub?: OgHub;
+    images?: Array<{ url: string; width: number; height: number; alt: string }>;
   } = {}
 ): NonNullable<Metadata['twitter']> {
   const hub = overrides.hub ?? 'move';
-  const ogImage = getOgImageForHub(hub);
+  const ogImage = overrides.images?.[0] ?? getOgImageForHub(hub);
   return {
     card: SHARE_HUB.twitterCard,
     ...(overrides.title ? { title: overrides.title } : {}),
     ...(overrides.description ? { description: overrides.description } : {}),
-    images: [{ url: ogImage.url, alt: SHARE_HUB.ogAlt }],
+    images: [{ url: ogImage.url, alt: ogImage.alt || SHARE_HUB.ogAlt }],
   };
 }
 
