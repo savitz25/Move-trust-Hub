@@ -143,13 +143,17 @@ BEGIN
            )
        AND (
              v_state IS NULL
-          OR upper(COALESCE(c.headquarters, '')) LIKE '%,' || ' ' || v_state
-          OR upper(COALESCE(c.headquarters, '')) LIKE '% ' || v_state
-          OR upper(COALESCE(c.coverage, '')) LIKE '%' || v_state || '%'
           OR COALESCE(c.coverage, '') ILIKE '%national%'
           OR COALESCE(c.coverage, '') ILIKE '%nationwide%'
           OR COALESCE(c.coverage, '') ILIKE '%continental%'
           OR COALESCE(c.coverage, '') ILIKE '%all 50%'
+          OR COALESCE(c.coverage, '') ILIKE '%united states%'
+          OR c.coverage IS NULL
+          OR btrim(c.coverage) = ''
+          OR upper(COALESCE(c.headquarters, '')) LIKE '%,' || ' ' || v_state
+          OR upper(COALESCE(c.headquarters, '')) LIKE '% ' || v_state || '%'
+          OR upper(COALESCE(c.coverage, '')) LIKE '%' || v_state || '%'
+          OR COALESCE(c.coverage_counties::text, '') ILIKE '%' || lower(v_state) || '%'
            )
        AND (
              v_role IS NULL

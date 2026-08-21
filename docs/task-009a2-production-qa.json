@@ -1,0 +1,164 @@
+{
+  "generatedAt": "2026-08-21T01:53:14.711Z",
+  "task": "009A.2",
+  "googlePlacesRequests": 0,
+  "defaultEngine": "db",
+  "checks": [
+    {
+      "name": "default_engine",
+      "engine": "db",
+      "ok": true
+    },
+    {
+      "name": "default_page",
+      "total": 3685,
+      "returned": 24,
+      "materialized": 24,
+      "path": "rpc",
+      "ok": true
+    },
+    {
+      "name": "protected-76235",
+      "hit": true,
+      "ok": true
+    },
+    {
+      "name": "protected-125563",
+      "hit": true,
+      "ok": true
+    },
+    {
+      "name": "protected-125550",
+      "hit": true,
+      "ok": true
+    },
+    {
+      "name": "protected-70719",
+      "hit": true,
+      "ok": true
+    },
+    {
+      "name": "protected-49922",
+      "hit": true,
+      "ok": true
+    },
+    {
+      "name": "protected-76628",
+      "hit": true,
+      "ok": true
+    },
+    {
+      "name": "protected-70851",
+      "hit": true,
+      "ok": true
+    },
+    {
+      "name": "search-Allied Van Lines",
+      "total": 1,
+      "first": "Allied Van Lines",
+      "firstUsdot": "76235",
+      "ok": true
+    },
+    {
+      "name": "search-Mayflower",
+      "total": 1,
+      "first": "Aero Mayflower Transit Company",
+      "firstUsdot": "125563",
+      "ok": true
+    },
+    {
+      "name": "search-Gomuverz",
+      "total": 1,
+      "first": "Gomuverz LLC",
+      "firstUsdot": "4525347",
+      "ok": true
+    },
+    {
+      "name": "search-Atlas",
+      "total": 1,
+      "first": "Atlas Van Lines",
+      "firstUsdot": "125550",
+      "ok": true
+    },
+    {
+      "name": "role-Carrier",
+      "total": 3290,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "role-Broker",
+      "total": 279,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "role-Carrier / Broker",
+      "total": 98,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "role-Local Mover",
+      "total": 302,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "sort-reputation",
+      "total": 3685,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "sort-rating",
+      "total": 3685,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "sort-reviews",
+      "total": 3685,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "sort-price-low",
+      "total": 3685,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "sort-price-high",
+      "total": 3685,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "sort-years",
+      "total": 3685,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "sort-complaints",
+      "total": 3685,
+      "returned": 24,
+      "ok": true
+    },
+    {
+      "name": "pagination",
+      "page2": 24,
+      "deep": 24,
+      "overlap": 0,
+      "ok": true
+    },
+    {
+      "name": "fail_closed_publication",
+      "bad": 0,
+      "ok": true
+    }
+  ],
+  "failed": 0,
+  "passed": true
+}

@@ -34,7 +34,7 @@ export async function GET(request: Request) {
   });
 
   const filters = directoryFiltersFromSearchParams(record);
-  // Task 009A.1: engine=db is Preview/local opt-in only (ignored on production).
+  // Task 009A.2: DB is default. engine=legacy only when hint allowed (rollback/debug).
   const engine = searchParams.get('engine');
 
   const [page, flags] = await Promise.all([
