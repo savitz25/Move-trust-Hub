@@ -326,12 +326,26 @@ export default async function CompanyProfilePage({ params }: Props) {
               <CardHeader>
                 <CardTitle>Local / in-state mover</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground leading-relaxed">
-                This company is listed as an <strong className="text-foreground">intrastate (local)</strong>{' '}
-                mover — it operates within a state and may not require FMCSA interstate authority on
-                this profile. Default directory browse stays interstate-focused; local movers still
-                appear when you search by name or filter by Local Mover / state coverage, and on
-                the county guides they serve.
+              <CardContent className="text-sm text-muted-foreground leading-relaxed space-y-2">
+                <p>
+                  This company is listed as an{' '}
+                  <strong className="text-foreground">intrastate (local)</strong> household-goods
+                  mover. Same-state moves are governed by{' '}
+                  <strong className="text-foreground">state mover authority</strong>, which is
+                  separate from FMCSA interstate household-goods authority.
+                </p>
+                <p>
+                  Default interstate directory browse stays federal/interstate-focused. Local movers
+                  appear on matching county guides and when you explicitly filter for Local Mover /
+                  in-state coverage. Confirm pickup availability for your exact address.
+                </p>
+                {!company.usdotNumber ? (
+                  <p className="text-xs">
+                    No federal USDOT is shown on this profile. That does not by itself mean the
+                    company is unauthorized for legitimate same-state moves — verify current state
+                    registration with the state regulator before booking.
+                  </p>
+                ) : null}
               </CardContent>
             </Card>
           ) : null}

@@ -1,0 +1,94 @@
+{
+  "task": "011D.3",
+  "retrievedAt": "2026-08-21T16:13:23.960Z",
+  "waveId": "LOCAL_HHG_FL_WA_2026_08_CANARY_1",
+  "google_places_requests": 0,
+  "mode": "dry-run",
+  "decision": "DRY_RUN",
+  "manifest": {
+    "fl": 50,
+    "wa": 30,
+    "flSha": "c1cad11d",
+    "waSha": "e2967186",
+    "companyIds": 80
+  },
+  "prePublish": {
+    "valid": 80,
+    "excluded": []
+  },
+  "publishResult": {
+    "attempted": 80,
+    "published": 0,
+    "alreadyPublishable": 0,
+    "rejectedNonManifest": [],
+    "excluded": [],
+    "dryRun": true,
+    "rejectProbe": {
+      "attempted": 81,
+      "published": 0,
+      "alreadyPublishable": 0,
+      "rejectedNonManifest": [
+        "usdot-9999999"
+      ],
+      "excluded": [],
+      "dryRun": true
+    }
+  },
+  "rollbackResult": null,
+  "counts": {
+    "before": {
+      "companies": 5870,
+      "indexable": 4905,
+      "publicish": 4905,
+      "ingested": 929,
+      "canary_publishable": 0
+    },
+    "after": {
+      "companies": 5870,
+      "indexable": 4905,
+      "publicish": 4905,
+      "ingested": 929,
+      "canary_publishable": 0
+    },
+    "interstateBefore": 4605,
+    "interstateAfter": 4605,
+    "interstateDelta": 0,
+    "consumerEligibleHomeCounty": 0,
+    "wavePublished": 0,
+    "nonManifest": {
+      "n": 849,
+      "bad_pub": 0,
+      "bad_idx": 0
+    }
+  },
+  "seo": {
+    "noindexOk": 80,
+    "indexableBad": 0,
+    "profileCount": 80
+  },
+  "radius": {
+    "POWER_UNIT_RADIUS": "NOT_APPROVED",
+    "FIXED_25": "NOT_APPROVED",
+    "FIXED_40": "NOT_APPROVED",
+    "FIXED_50": "NOT_APPROVED",
+    "consumerEnabled": false
+  },
+  "federalWaves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ]
+}
