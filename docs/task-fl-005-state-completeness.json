@@ -1,0 +1,23 @@
+{
+  "google_places_requests": 0,
+  "acquired": [
+    "FDACS IM registrations",
+    "FDACS MB registrations",
+    "status / issue / expiration from snapshots",
+    "business phone",
+    "business email",
+    "physical address",
+    "FL-003 publication qualification",
+    "FL-004 internal canonical companies + PSA + observations"
+  ],
+  "deferred_pra": [
+    "broker contracted-mover relationships (s. 507.03(11))",
+    "complaint dispositions (business-level, no consumer PII)",
+    "enforcement / final orders",
+    "owners / officers as structured extract",
+    "registered agents",
+    "insurance / bond lapse and cancellation history",
+    "historical applications beyond current license lookup snapshots"
+  ],
+  "not_submitted": true
+}

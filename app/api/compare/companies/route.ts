@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getCompanyBySlugAsync } from '@/lib/data-server';
+import { isAnonymousPublicProfileAllowed } from '@/lib/provider/publication';
 import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
 import {
   finalizeCompanyEnrichmentForDisplay,
@@ -41,7 +42,11 @@ export async function GET(request: Request) {
     slugs.map(async (slug) => {
       try {
         const company = await getCompanyBySlugAsync(slug);
-        if (company && isPubliclyDisplayableCompany(company)) {
+        if (
+          company &&
+          isAnonymousPublicProfileAllowed(company) &&
+          isPubliclyDisplayableCompany(company)
+        ) {
           const finalized = finalizeCompanyEnrichmentForDisplay(company);
           const google = getGoogleDisplayMeta(finalized);
           const bbb = getBbbDisplaySafe(finalized);

@@ -1,0 +1,71 @@
+{
+  "google_places_requests": 0,
+  "held_regulatory_ids": [
+    "FL-FDACS-IM-3813",
+    "FL-FDACS-IM-4099"
+  ],
+  "fl_staging": [
+    {
+      "regulatory_id": "FL-FDACS-IM-3813",
+      "authority_number": "IM3813",
+      "legal_name_raw": "SUDDATH MOVING & STORAGE, LLC",
+      "dba_raw": "Suddath Workplace Solutions",
+      "email_norm": "legal@suddath.com",
+      "phone_norm": "9043907100",
+      "physical_address_raw": "2001 SUDDATH PARK STREET",
+      "city_norm": "TAMPA",
+      "postal_code_norm": "33619",
+      "status_normalized": "active",
+      "disposition": "NEW_PROVIDER_CANDIDATE"
+    },
+    {
+      "regulatory_id": "FL-FDACS-IM-4099",
+      "authority_number": "IM4099",
+      "legal_name_raw": "SUDDATH RELOCATION SYSTEMS OF ST. PETERSBURG, INC.",
+      "dba_raw": "Suddath Moving & Storage",
+      "email_norm": "legal@suddath.com",
+      "phone_norm": "7275730000",
+      "physical_address_raw": "2001 SUDDATH PARK ST",
+      "city_norm": "TAMPA",
+      "postal_code_norm": "33619",
+      "status_normalized": "active",
+      "disposition": "NEW_PROVIDER_CANDIDATE"
+    }
+  ],
+  "wa_company": {
+    "id": "wa-hg-064493",
+    "slug": "suddath-workplace-solutions",
+    "name": "Suddath Workplace Solutions",
+    "fmcsa_legal_name": "Suddath Moving & Storage, LLC",
+    "phone": "2537773190",
+    "email": "legal@suddath.com",
+    "physical_address": "1201 South 140th St, Burien, WA 98168, Burien, WA, 98168",
+    "headquarters": "Burien, WA",
+    "usdot_number": "3527089",
+    "publication_state": "INGESTED",
+    "indexable": false
+  },
+  "wa_authorities": [
+    {
+      "authority_number": "HG064493",
+      "status": "active",
+      "legal_name": "Suddath Moving & Storage, LLC",
+      "dba_name": "Suddath Workplace Solutions",
+      "verification_state": "VERIFIED"
+    }
+  ],
+  "determination": {
+    "FL-FDACS-IM-3813": {
+      "candidate": "wa-hg-064493",
+      "classification": "UNRESOLVED",
+      "reason": "Florida legal entity SUDDATH MOVING & STORAGE, LLC at Tampa vs WA canonical wa-hg-064493. Shared legal@suddath.com is brand/enterprise email, not unique branch identity. Fail closed: keep held. Distinct Florida entity likely, but not auto-created in FL-005.",
+      "action": "HOLD"
+    },
+    "FL-FDACS-IM-4099": {
+      "candidate": "wa-hg-064493",
+      "classification": "UNRESOLVED",
+      "reason": "Florida legal entity SUDDATH RELOCATION SYSTEMS OF ST. PETERSBURG, INC. is a different corporate name than the WA company. Same enterprise brand, legally distinct registrant. Do not attach to wa-hg-064493. Keep held pending a dedicated multi-entity model.",
+      "action": "HOLD"
+    }
+  }
+}

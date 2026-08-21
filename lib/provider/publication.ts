@@ -39,6 +39,13 @@ export function isIndexablePublication(state: PublicationState): boolean {
   return state === 'PUBLISHABLE' || state === 'INDEXABLE';
 }
 
+const INTERNAL_PUBLICATION_STATES: readonly PublicationState[] = [
+  'REVIEW_REQUIRED',
+  'INACTIVE',
+  'INGESTED',
+  'CLASSIFIED',
+];
+
 /**
  * Consumer directory visibility. Legacy rows without publication_state stay
  * visible. Explicit fail-closed states never appear in /companies search.
@@ -47,15 +54,25 @@ export function isConsumerVisibleCompany(company: {
   publicationState?: PublicationState | null;
 }): boolean {
   const state = company.publicationState;
-  if (
-    state === 'REVIEW_REQUIRED' ||
-    state === 'INACTIVE' ||
-    state === 'INGESTED' ||
-    state === 'CLASSIFIED'
-  ) {
+  if (state && (INTERNAL_PUBLICATION_STATES as readonly string[]).includes(state)) {
     return false;
   }
   return true;
+}
+
+/**
+ * Anonymous public /companies/{slug} contract (FL-005).
+ *
+ * INGESTED / CLASSIFIED / REVIEW_REQUIRED / INACTIVE → not found.
+ * PUBLISHABLE (canary, noindex) → allowed to render.
+ * INDEXABLE / VERIFIED / null (legacy federal) → allowed.
+ *
+ * Does not hide live federal rows whose publication_state is null.
+ */
+export function isAnonymousPublicProfileAllowed(company: {
+  publicationState?: PublicationState | null;
+}): boolean {
+  return isConsumerVisibleCompany(company);
 }
 
 export function isSeoIndexableCompany(company: {
