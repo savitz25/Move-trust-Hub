@@ -1,0 +1,37 @@
+{
+  "google_places_requests": 0,
+  "task": "011C.1B",
+  "totals": {
+    "companies": 4941,
+    "indexable": 4905
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "provider_county_coverage_exists": false,
+  "checks": {
+    "companies": true,
+    "indexable": true,
+    "wave1": true,
+    "wave2": true,
+    "wave3": true,
+    "wave4": true,
+    "no_county_edges": true,
+    "google_zero": true
+  }
+}
