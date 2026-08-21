@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T01:53:59.179Z",
+  "generatedAt": "2026-08-21T02:08:48.931Z",
   "task": "009A.2",
   "googlePlacesRequests": 0,
   "pathCounts": {
@@ -19,19 +19,19 @@
       "label": "default",
       "samples": 3,
       "times": [
-        707,
-        479,
-        565
+        815,
+        450,
+        459
       ],
-      "medianMs": 565,
+      "medianMs": 459,
       "last": {
         "total": 3685,
         "returned": 24,
         "diag": {
           "engine": "db",
           "path": "rpc",
-          "dbMs": 137,
-          "mapMs": 426,
+          "dbMs": 148,
+          "mapMs": 310,
           "rowsFetched": 24,
           "total": 3685,
           "materializedIntoNode": 24
@@ -42,19 +42,19 @@
       "label": "USDOT-76235",
       "samples": 3,
       "times": [
-        278,
-        306,
-        303
+        340,
+        300,
+        292
       ],
-      "medianMs": 303,
+      "medianMs": 300,
       "last": {
         "total": 1,
         "returned": 1,
         "diag": {
           "engine": "db",
           "path": "rpc",
-          "dbMs": 150,
-          "mapMs": 152,
+          "dbMs": 131,
+          "mapMs": 160,
           "rowsFetched": 1,
           "total": 1,
           "materializedIntoNode": 1
@@ -65,19 +65,19 @@
       "label": "exact-name-Allied",
       "samples": 3,
       "times": [
-        374,
-        274,
-        355
+        494,
+        333,
+        325
       ],
-      "medianMs": 355,
+      "medianMs": 333,
       "last": {
         "total": 1,
         "returned": 1,
         "diag": {
           "engine": "db",
           "path": "search-rerank",
-          "dbMs": 187,
-          "mapMs": 167,
+          "dbMs": 173,
+          "mapMs": 151,
           "rowsFetched": 1,
           "total": 1,
           "materializedIntoNode": 1
@@ -88,19 +88,19 @@
       "label": "common-moving",
       "samples": 3,
       "times": [
-        1075,
-        1055,
-        920
+        1007,
+        1224,
+        1066
       ],
-      "medianMs": 1055,
+      "medianMs": 1066,
       "last": {
         "total": 250,
         "returned": 24,
         "diag": {
           "engine": "db",
           "path": "search-rerank",
-          "dbMs": 171,
-          "mapMs": 740,
+          "dbMs": 199,
+          "mapMs": 859,
           "rowsFetched": 250,
           "total": 250,
           "materializedIntoNode": 250
@@ -111,19 +111,19 @@
       "label": "Carrier",
       "samples": 3,
       "times": [
-        461,
-        482,
-        608
+        512,
+        508,
+        657
       ],
-      "medianMs": 482,
+      "medianMs": 512,
       "last": {
         "total": 3290,
         "returned": 24,
         "diag": {
           "engine": "db",
           "path": "rpc",
-          "dbMs": 169,
-          "mapMs": 435,
+          "dbMs": 312,
+          "mapMs": 344,
           "rowsFetched": 24,
           "total": 3290,
           "materializedIntoNode": 24
@@ -134,19 +134,19 @@
       "label": "Broker",
       "samples": 3,
       "times": [
-        309,
-        362,
-        370
+        340,
+        317,
+        334
       ],
-      "medianMs": 362,
+      "medianMs": 334,
       "last": {
         "total": 279,
         "returned": 24,
         "diag": {
           "engine": "db",
           "path": "rpc",
-          "dbMs": 133,
-          "mapMs": 226,
+          "dbMs": 141,
+          "mapMs": 192,
           "rowsFetched": 24,
           "total": 279,
           "materializedIntoNode": 24
@@ -157,19 +157,19 @@
       "label": "deep-1000",
       "samples": 3,
       "times": [
-        315,
-        294,
-        319
+        314,
+        330,
+        333
       ],
-      "medianMs": 315,
+      "medianMs": 330,
       "last": {
         "total": 3685,
         "returned": 24,
         "diag": {
           "engine": "db",
           "path": "rpc",
-          "dbMs": 151,
-          "mapMs": 167,
+          "dbMs": 156,
+          "mapMs": 176,
           "rowsFetched": 24,
           "total": 3685,
           "materializedIntoNode": 24
@@ -180,19 +180,19 @@
       "label": "state-FL",
       "samples": 3,
       "times": [
-        513,
-        556,
-        587
+        616,
+        484,
+        466
       ],
-      "medianMs": 556,
+      "medianMs": 484,
       "last": {
         "total": 365,
         "returned": 24,
         "diag": {
           "engine": "db",
           "path": "rpc",
-          "dbMs": 180,
-          "mapMs": 404,
+          "dbMs": 173,
+          "mapMs": 292,
           "rowsFetched": 24,
           "total": 365,
           "materializedIntoNode": 24
@@ -206,78 +206,78 @@
       "url": "https://www.movetrusthub.com/companies",
       "samples": 3,
       "times": [
-        4117,
-        107,
-        90
+        268,
+        103,
+        102
       ],
-      "medianMs": 107,
+      "medianMs": 103,
       "status": 200,
-      "bytes": 317019
+      "bytes": 273105
     },
     {
       "label": "prod-api-default",
       "url": "https://www.movetrusthub.com/api/directory/companies?offset=0&limit=24",
       "samples": 5,
       "times": [
-        5837,
+        68,
         56,
-        84,
-        71,
-        158
+        51,
+        51,
+        42
       ],
-      "medianMs": 84,
+      "medianMs": 51,
       "status": 200,
-      "bytes": 80202
+      "bytes": 42770
     },
     {
       "label": "prod-api-usdot",
       "url": "https://www.movetrusthub.com/api/directory/companies?search=76235&limit=24",
       "samples": 3,
       "times": [
-        2874,
-        71,
-        75
+        424,
+        70,
+        49
       ],
-      "medianMs": 75,
+      "medianMs": 70,
       "status": 200,
-      "bytes": 11883
+      "bytes": 2018
     },
     {
       "label": "prod-api-allied",
       "url": "https://www.movetrusthub.com/api/directory/companies?search=Allied%20Van%20Lines&limit=24",
       "samples": 3,
       "times": [
-        2866,
-        85,
-        74
+        382,
+        41,
+        44
       ],
-      "medianMs": 85,
+      "medianMs": 44,
       "status": 200,
-      "bytes": 11883
+      "bytes": 2018
     },
     {
       "label": "prod-api-moving",
       "url": "https://www.movetrusthub.com/api/directory/companies?search=moving&limit=24",
       "samples": 3,
       "times": [
-        3011,
-        52,
-        60
+        55,
+        44,
+        70
       ],
-      "medianMs": 60,
+      "medianMs": 55,
       "status": 200,
-      "bytes": 25674
+      "bytes": 42674
     },
     {
       "label": "prod-api-deep",
       "url": "https://www.movetrusthub.com/api/directory/companies?offset=1000&limit=24",
       "samples": 3,
       "times": [
-        5530,
-        82,
-        57
+        46,
+        50,
+        54
       ],
-      "medianMs": 82,
+      "medianMs": 50,
       "status": 200,
       "bytes": 25360
     },
@@ -286,10 +286,10 @@
       "url": "https://www.movetrusthub.com/compare",
       "samples": 2,
       "times": [
-        170,
-        76
+        89,
+        81
       ],
-      "medianMs": 123,
+      "medianMs": 85,
       "status": 200,
       "bytes": 119814
     },
@@ -298,10 +298,10 @@
       "url": "https://www.movetrusthub.com/sitemap.xml",
       "samples": 2,
       "times": [
-        2245,
-        112
+        107,
+        88
       ],
-      "medianMs": 1178.5,
+      "medianMs": 97.5,
       "status": 200,
       "bytes": 869101
     }
