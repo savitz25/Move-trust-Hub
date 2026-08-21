@@ -1,0 +1,1370 @@
+{
+  "google_places_requests": 0,
+  "live_publication": false,
+  "canonical_contacts_changed": false,
+  "trust_score_changed": false,
+  "ruleset_version": "FL_HHG_PUBLICATION_V1",
+  "safety": {
+    "googlePlacesRequests": 0,
+    "livePublication": false,
+    "canonicalContactsMutated": false,
+    "trustScoreChanged": false,
+    "floridaAuthorityPubliclyExposed": false,
+    "rulesetVersion": "FL_HHG_PUBLICATION_V1"
+  },
+  "freeze_before": {
+    "companies": 5870,
+    "indexable": 4905
+  },
+  "freeze_after": {
+    "companies": 5870,
+    "indexable": 4905
+  },
+  "snapshots": {
+    "legacy_im": 1286,
+    "legacy_mb": 31,
+    "new_portal_movers": 45,
+    "new_portal_brokers": 2,
+    "combined_raw": 1359,
+    "duplicate_source_rows": 11,
+    "malformed": 16,
+    "normalized": 1332
+  },
+  "baseline": {
+    "fdacs_registrations": 1332,
+    "IM": 1303,
+    "MB": 29,
+    "statuses": {
+      "active": 1114,
+      "expired": 114,
+      "unknown": 104
+    },
+    "fl002_candidate_class": {
+      "ACTIVE_STATE_ONLY_CANDIDATE": 1026,
+      "EXPIRED_STATE_RECORD": 114,
+      "MATCHED_EXISTING": 88,
+      "UNKNOWN_STATE_RECORD": 104
+    },
+    "existing_verified_fdacs_links": 868,
+    "already_linked_via_psa": 870,
+    "rematch": {
+      "VERIFIED": 872,
+      "REVIEW_REQUIRED": 176,
+      "NOT_FOUND": 170,
+      "NOT_APPLICABLE": 114,
+      "methods": {
+        "exact_prior_state_authority": 868,
+        "none": 458,
+        "exact_legal_name_and_phone": 3,
+        "exact_legal_name_and_email": 2,
+        "exact_dba_and_corroboration": 1
+      }
+    },
+    "active_state_only_im_fl002_class": 1001,
+    "active_mb": 26,
+    "dual_im_mb_groups": 3
+  },
+  "companies": {
+    "total": 5870,
+    "indexable": 4905,
+    "florida_all": 1178,
+    "florida_indexable": 395,
+    "fl_im_all": 779,
+    "fl_im_ingested": 729,
+    "fl_im_publishable": 50
+  },
+  "zip_index": {
+    "uniqueZips": 452,
+    "uniqueCountyZips": 449,
+    "multiCountyZips": 3,
+    "addressHits": 954
+  },
+  "geography": {
+    "street_resolved": 1331,
+    "city_resolved": 1332,
+    "zip_resolved": 1331,
+    "florida_valid": 1297,
+    "COUNTY_VERIFIED": 1226,
+    "COUNTY_REVIEW_REQUIRED": 1,
+    "COUNTY_UNRESOLVED": 105
+  },
+  "contacts": {
+    "email_available": 1240,
+    "phone_available": 1297,
+    "address_available": 1332,
+    "no_email": 92,
+    "no_website": 1332
+  },
+  "duplicates": {
+    "definite": 2,
+    "probable": 31,
+    "groups": [
+      {
+        "id": "dup-1",
+        "kind": "definite",
+        "evidence": "legal_name_and_phone",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3952",
+          "FL-FDACS-IM-3953"
+        ],
+        "survivorRegulatoryId": "FL-FDACS-IM-3952"
+      },
+      {
+        "id": "dup-2",
+        "kind": "definite",
+        "evidence": "legal_name_and_email",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3150",
+          "FL-FDACS-IM-3772"
+        ],
+        "survivorRegulatoryId": "FL-FDACS-IM-3150"
+      },
+      {
+        "id": "dup-3",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-4149",
+          "FL-FDACS-IM-4177"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-4",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3977",
+          "FL-FDACS-IM-401"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-5",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-113",
+          "FL-FDACS-IM-1751",
+          "FL-FDACS-IM-3409",
+          "FL-FDACS-IM-3413",
+          "FL-FDACS-IM-3554"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-6",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-145",
+          "FL-FDACS-IM-4209"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-7",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-2942",
+          "FL-FDACS-IM-4018"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-8",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-4163",
+          "FL-FDACS-IM-496"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-9",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3561",
+          "FL-FDACS-IM-4047"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-10",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1517",
+          "FL-FDACS-IM-2352"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-11",
+        "kind": "probable",
+        "evidence": "shared_phone_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1411",
+          "FL-FDACS-IM-3813"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-12",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-113",
+          "FL-FDACS-IM-1457",
+          "FL-FDACS-IM-2301",
+          "FL-FDACS-IM-2513",
+          "FL-FDACS-IM-3409",
+          "FL-FDACS-IM-3413",
+          "FL-FDACS-IM-3554"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-13",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-105",
+          "FL-FDACS-IM-482"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-14",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1823",
+          "FL-FDACS-IM-498"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-15",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1517",
+          "FL-FDACS-IM-2352",
+          "FL-FDACS-IM-3078"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-16",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-4104",
+          "FL-FDACS-IM-4211"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-17",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1531",
+          "FL-FDACS-IM-2723"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-18",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3518",
+          "FL-FDACS-IM-4173"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-19",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-460",
+          "FL-FDACS-IM-561"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-20",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-4036",
+          "FL-FDACS-IM-4057"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-21",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3458",
+          "FL-FDACS-IM-3956"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-22",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-285",
+          "FL-FDACS-IM-296"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-23",
+        "kind": "probable",
+        "evidence": "shared_email_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1411",
+          "FL-FDACS-IM-3813",
+          "FL-FDACS-IM-4099"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-24",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1226",
+          "FL-FDACS-IM-3870"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-25",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1890",
+          "FL-FDACS-IM-319"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-26",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3961",
+          "FL-FDACS-IM-3980",
+          "FL-FDACS-IM-4211"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-27",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3409",
+          "FL-FDACS-IM-3554"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-28",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-2822",
+          "FL-FDACS-IM-3963"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-29",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3784",
+          "FL-FDACS-IM-4170"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-30",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-1531",
+          "FL-FDACS-IM-3530"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-31",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-3117",
+          "FL-FDACS-IM-3406"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-32",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-109",
+          "FL-FDACS-IM-2137"
+        ],
+        "survivorRegulatoryId": null
+      },
+      {
+        "id": "dup-33",
+        "kind": "probable",
+        "evidence": "shared_address_different_legal_name",
+        "regulatoryIds": [
+          "FL-FDACS-IM-2738",
+          "FL-FDACS-IM-4143"
+        ],
+        "survivorRegulatoryId": null
+      }
+    ]
+  },
+  "franchise_groups": {
+    "College Hunks": 15,
+    "Two Men and a Truck": 20,
+    "Mayflower": 1
+  },
+  "collision": {
+    "new_exact_links": 3,
+    "already_linked": 870,
+    "already_linked_public_indexable": 90,
+    "already_linked_fl_im_ingested": 780,
+    "fl002_verified_existing": 88
+  },
+  "cohorts": {
+    "PUBLICATION_READY": 37,
+    "REVIEW_REQUIRED": 115,
+    "DUPLICATE_OR_OVERLAP": 865,
+    "INSUFFICIENT_IDENTITY": 41,
+    "INSUFFICIENT_GEOGRAPHY": 27,
+    "STATUS_BLOCKED": 103,
+    "BROKER_ONLY": 29,
+    "HISTORICAL": 112,
+    "OUT_OF_SCOPE": 0,
+    "EXISTING_PROVIDER_LINK_CANDIDATE": 3
+  },
+  "review_buckets": {
+    "name_collision": 72,
+    "other": 29,
+    "state_source_duplicate": 13,
+    "geography_conflict": 1
+  },
+  "fl002_review_required": 173,
+  "fl002_review_reasons": {
+    "name_similarity_insufficient_without_corroboration": 94,
+    "franchise_or_network_brand_fail_closed": 41,
+    "dba_without_unique_corroboration": 37,
+    "legal_name_phone_collision": 1
+  },
+  "publication_ready": 37,
+  "county_coverage": [
+    {
+      "county": "Alachua",
+      "publication_ready": 0,
+      "review_required": 2,
+      "existing_public": 0
+    },
+    {
+      "county": "Baker",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Bay",
+      "publication_ready": 0,
+      "review_required": 2,
+      "existing_public": 2
+    },
+    {
+      "county": "Bradford",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Brevard",
+      "publication_ready": 0,
+      "review_required": 3,
+      "existing_public": 0
+    },
+    {
+      "county": "Broward",
+      "publication_ready": 6,
+      "review_required": 22,
+      "existing_public": 0
+    },
+    {
+      "county": "Calhoun",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Charlotte",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Citrus",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Clay",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Collier",
+      "publication_ready": 1,
+      "review_required": 4,
+      "existing_public": 0
+    },
+    {
+      "county": "Columbia",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "DeSoto",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Dixie",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 1
+    },
+    {
+      "county": "Duval",
+      "publication_ready": 0,
+      "review_required": 8,
+      "existing_public": 0
+    },
+    {
+      "county": "Escambia",
+      "publication_ready": 0,
+      "review_required": 1,
+      "existing_public": 0
+    },
+    {
+      "county": "Flagler",
+      "publication_ready": 0,
+      "review_required": 1,
+      "existing_public": 0
+    },
+    {
+      "county": "Franklin",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Gadsden",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Gilchrist",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Glades",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 1
+    },
+    {
+      "county": "Gulf",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 1
+    },
+    {
+      "county": "Hamilton",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Hardee",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Hendry",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Hernando",
+      "publication_ready": 0,
+      "review_required": 1,
+      "existing_public": 0
+    },
+    {
+      "county": "Highlands",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Hillsborough",
+      "publication_ready": 4,
+      "review_required": 4,
+      "existing_public": 0
+    },
+    {
+      "county": "Holmes",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Indian River",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Jackson",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 48
+    },
+    {
+      "county": "Jefferson",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Lafayette",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Lake",
+      "publication_ready": 0,
+      "review_required": 1,
+      "existing_public": 8
+    },
+    {
+      "county": "Lee",
+      "publication_ready": 3,
+      "review_required": 2,
+      "existing_public": 1
+    },
+    {
+      "county": "Leon",
+      "publication_ready": 0,
+      "review_required": 3,
+      "existing_public": 0
+    },
+    {
+      "county": "Levy",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Liberty",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Madison",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Manatee",
+      "publication_ready": 2,
+      "review_required": 2,
+      "existing_public": 0
+    },
+    {
+      "county": "Marion",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Martin",
+      "publication_ready": 2,
+      "review_required": 1,
+      "existing_public": 0
+    },
+    {
+      "county": "Miami-Dade",
+      "publication_ready": 7,
+      "review_required": 10,
+      "existing_public": 0
+    },
+    {
+      "county": "Monroe",
+      "publication_ready": 1,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Nassau",
+      "publication_ready": 1,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Okaloosa",
+      "publication_ready": 0,
+      "review_required": 2,
+      "existing_public": 0
+    },
+    {
+      "county": "Okeechobee",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Orange",
+      "publication_ready": 2,
+      "review_required": 4,
+      "existing_public": 7
+    },
+    {
+      "county": "Osceola",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Palm Beach",
+      "publication_ready": 0,
+      "review_required": 8,
+      "existing_public": 14
+    },
+    {
+      "county": "Pasco",
+      "publication_ready": 0,
+      "review_required": 1,
+      "existing_public": 0
+    },
+    {
+      "county": "Pinellas",
+      "publication_ready": 3,
+      "review_required": 2,
+      "existing_public": 0
+    },
+    {
+      "county": "Polk",
+      "publication_ready": 1,
+      "review_required": 1,
+      "existing_public": 0
+    },
+    {
+      "county": "Putnam",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Santa Rosa",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 2
+    },
+    {
+      "county": "Sarasota",
+      "publication_ready": 3,
+      "review_required": 5,
+      "existing_public": 5
+    },
+    {
+      "county": "Seminole",
+      "publication_ready": 1,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "St. Johns",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "St. Lucie",
+      "publication_ready": 0,
+      "review_required": 1,
+      "existing_public": 0
+    },
+    {
+      "county": "Sumter",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Suwannee",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Taylor",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Union",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Volusia",
+      "publication_ready": 0,
+      "review_required": 1,
+      "existing_public": 0
+    },
+    {
+      "county": "Wakulla",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    },
+    {
+      "county": "Walton",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 4
+    },
+    {
+      "county": "Washington",
+      "publication_ready": 0,
+      "review_required": 0,
+      "existing_public": 0
+    }
+  ],
+  "counties_with_zero_publication_ready": [
+    "Alachua",
+    "Baker",
+    "Bay",
+    "Bradford",
+    "Brevard",
+    "Calhoun",
+    "Charlotte",
+    "Citrus",
+    "Clay",
+    "Columbia",
+    "DeSoto",
+    "Dixie",
+    "Duval",
+    "Escambia",
+    "Flagler",
+    "Franklin",
+    "Gadsden",
+    "Gilchrist",
+    "Glades",
+    "Gulf",
+    "Hamilton",
+    "Hardee",
+    "Hendry",
+    "Hernando",
+    "Highlands",
+    "Holmes",
+    "Indian River",
+    "Jackson",
+    "Jefferson",
+    "Lafayette",
+    "Lake",
+    "Leon",
+    "Levy",
+    "Liberty",
+    "Madison",
+    "Marion",
+    "Okaloosa",
+    "Okeechobee",
+    "Osceola",
+    "Palm Beach",
+    "Pasco",
+    "Putnam",
+    "Santa Rosa",
+    "St. Johns",
+    "St. Lucie",
+    "Sumter",
+    "Suwannee",
+    "Taylor",
+    "Union",
+    "Volusia",
+    "Wakulla",
+    "Walton",
+    "Washington"
+  ],
+  "sample_qa": {
+    "size": 37,
+    "pass": 37,
+    "precision": 1,
+    "fail_closed": false,
+    "rows": [
+      {
+        "regulatory_id": "FL-FDACS-IM-1025",
+        "legal_name": "CHARLES L CARTER",
+        "official_status": "Registered",
+        "official_city": "CLEARWATER",
+        "county": "Pinellas",
+        "email": "deb2chuck@msn.com",
+        "phone": "727-446-0712",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-1103",
+        "legal_name": "CLOVER SYSTEMS, LLC",
+        "official_status": "Registered",
+        "official_city": "OPA LOCKA",
+        "county": "Miami-Dade",
+        "email": null,
+        "phone": "305-592-4300",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-1296",
+        "legal_name": "NIPPON EXPRESS U.S.A., INC.",
+        "official_status": "Registered",
+        "official_city": "MIAMI",
+        "county": "Miami-Dade",
+        "email": "patricia.salazar@nipponexpress.com",
+        "phone": "305-592-6109 Ext. 532",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-1948",
+        "legal_name": "TOP CLASS MOVING INC.",
+        "official_status": "Registered",
+        "official_city": "FORT MYERS",
+        "county": "Lee",
+        "email": "merike05@yahoo.com",
+        "phone": "239-989-7895",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-22",
+        "legal_name": "FUENTES MOVING CORP.",
+        "official_status": "Registered",
+        "official_city": "MIAMI",
+        "county": "Miami-Dade",
+        "email": "pfmoving@gmail.com",
+        "phone": "305-231-0980",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-2420",
+        "legal_name": "ACT OF CLASS MOVING & STORAGE LLC",
+        "official_status": "Registered",
+        "official_city": "FORT MYERS",
+        "county": "Lee",
+        "email": "actofclassmoving@gmail.com",
+        "phone": "239-249-3232",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-2532",
+        "legal_name": "HELPING HAND MOVERS NAPLES, LLC",
+        "official_status": "Registered",
+        "official_city": "NAPLES",
+        "county": "Collier",
+        "email": "hhmnaples@yahoo.com",
+        "phone": "239-250-1544",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-2679",
+        "legal_name": "RINGLING MOVING LLC",
+        "official_status": "Registered",
+        "official_city": "SARASOTA",
+        "county": "Sarasota",
+        "email": "rraymondrodriguez@gmail.com",
+        "phone": "941-328-2900",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-27",
+        "legal_name": "WITHERS TRANSFER AND STORAGE OF CORAL GABLES, INC.",
+        "official_status": "Registered",
+        "official_city": "MIAMI",
+        "county": "Miami-Dade",
+        "email": "Ian.excell@witherstrans.com",
+        "phone": "305-702-7467",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-2726",
+        "legal_name": "BIG MAN'S MOVING COMPANY LLC",
+        "official_status": "Registered",
+        "official_city": "CLEARWATER",
+        "county": "Pinellas",
+        "email": "bigmansmovingcompany@gmail.com",
+        "phone": "727-772-3458",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-2739",
+        "legal_name": "M&M PICKUP AND DELIVERY, LLC",
+        "official_status": "Registered",
+        "official_city": "YULEE",
+        "county": "Nassau",
+        "email": "mmdeliveryllc@gmail.com",
+        "phone": "904-859-1633",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3030",
+        "legal_name": "ANDERSEN MOVING AND STORAGE LLC",
+        "official_status": "Registered",
+        "official_city": "STUART",
+        "county": "Martin",
+        "email": "ryan@mytreasurecoastmoving.com",
+        "phone": "772-777-6364",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3063",
+        "legal_name": "DESIGN FURNITURE CONSIGNMENT & MOVING INC",
+        "official_status": "Registered",
+        "official_city": "LAKELAND",
+        "county": "Polk",
+        "email": "lakelanddfc@gmail.com",
+        "phone": "863-644-5858",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3064",
+        "legal_name": "LOCAL AND LONG DISTANCE MOVERS FLORIDA, INC.",
+        "official_status": "Registered",
+        "official_city": "MIAMI",
+        "county": "Miami-Dade",
+        "email": "lnlmoversfortlauderdale@gmail.com",
+        "phone": "833-228-1822",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3075",
+        "legal_name": "ADIOS MOVING LLC",
+        "official_status": "Registered",
+        "official_city": "POMPANO BEACH",
+        "county": "Broward",
+        "email": "smcghs@gmail.com",
+        "phone": "954-312-8888",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3138",
+        "legal_name": "ACCELERATION MOVING SOLUTIONS LLC.",
+        "official_status": "Registered",
+        "official_city": "BRADENTON",
+        "county": "Manatee",
+        "email": "joewolfson5@gmail.com",
+        "phone": "941-504-6152",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-333",
+        "legal_name": "GENESIS MOVING & STORAGE, INC.",
+        "official_status": "Registered",
+        "official_city": "MIAMI",
+        "county": "Miami-Dade",
+        "email": "genesismoving@att.net",
+        "phone": "305-652-3200",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-334",
+        "legal_name": "HILLDRUP COMPANIES, INC.",
+        "official_status": "Registered",
+        "official_city": "ORLANDO",
+        "county": "Orange",
+        "email": "ed.fitzgerald@hilldrup.com",
+        "phone": "407-851-3040",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3433",
+        "legal_name": "PARRIS MOVING LLC",
+        "official_status": "Registered",
+        "official_city": "LARGO",
+        "county": "Pinellas",
+        "email": "PARRISMOVING@YAHOO.COM",
+        "phone": "727-657-8415",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3485",
+        "legal_name": "CHRIS BROWN ON DEMAND SERVICES, LLC",
+        "official_status": "Registered",
+        "official_city": "LAUDERDALE LAKES",
+        "county": "Broward",
+        "email": "yaardman2015@gmail.com",
+        "phone": "954-864-8685",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3538",
+        "legal_name": "EASY PEASY MOVING LLC",
+        "official_status": "Registered",
+        "official_city": "ALTAMONTE SPRINGS",
+        "county": "Seminole",
+        "email": "easypeasymovingfl@gmail.com",
+        "phone": "407-968-8660",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-366",
+        "legal_name": "HOMESTEAD TRANSFER & STORAGE CO.",
+        "official_status": "Registered",
+        "official_city": "HOMESTEAD",
+        "county": "Miami-Dade",
+        "email": "grif1@bellsouth.net",
+        "phone": "305-247-5012",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3684",
+        "legal_name": "FINE CARGO LLC",
+        "official_status": "Registered",
+        "official_city": "FORT MYERS",
+        "county": "Lee",
+        "email": "josephpelletier273@gmail.com",
+        "phone": "239-244-5409",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3782",
+        "legal_name": "KATZ & KATZ TRANSPORTATION LLC",
+        "official_status": "Registered",
+        "official_city": "DAVIE",
+        "county": "Broward",
+        "email": "benjaminw675@gmail.com",
+        "phone": "646-588-9936",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3834",
+        "legal_name": "STUART SAFE SALES & MOVING INC",
+        "official_status": "Registered",
+        "official_city": "STUART",
+        "county": "Martin",
+        "email": "mariecb@rothsbookkeeping.com",
+        "phone": "772-332-2357",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3848",
+        "legal_name": "MATT'S MINDFUL MOVERS LLC",
+        "official_status": "Registered",
+        "official_city": "SARASOTA",
+        "county": "Sarasota",
+        "email": "mhoerl15@gmail.com",
+        "phone": "941-599-1497",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3941",
+        "legal_name": "MISS PEACH IV TRUE MOVERS INC",
+        "official_status": "Registered",
+        "official_city": "TAMPA",
+        "county": "Hillsborough",
+        "email": "ahhchoomovers@mail.com",
+        "phone": "754-364-5305",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3959",
+        "legal_name": "ADVANCE SORENSEN MOVERS OF SOUTH FLORIDA LLC",
+        "official_status": "Registered",
+        "official_city": "FORT LAUDERDALE",
+        "county": "Broward",
+        "email": "lzanette@theadvancegrp.com",
+        "phone": "754-316-7000",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3973",
+        "legal_name": "WELLEN MOVING SERVICES LLC",
+        "official_status": "Registered",
+        "official_city": "VENICE",
+        "county": "Sarasota",
+        "email": "sosagabriel797@gmail.com",
+        "phone": "941-473-6188",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-3983",
+        "legal_name": "PHOENIX MOVING SOLUTIONS LLC",
+        "official_status": "Registered",
+        "official_city": "TAMPA",
+        "county": "Hillsborough",
+        "email": "phoenixmovingsolutionsllc@gmail.com",
+        "phone": "904-955-9187",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-4005",
+        "legal_name": "MOVEPRO HOME SERVICES LLC",
+        "official_status": "Registered",
+        "official_city": "TAMPA",
+        "county": "Hillsborough",
+        "email": "moveprohs@gmail.com",
+        "phone": "407-497-0445",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-4024",
+        "legal_name": "EPAA LLC",
+        "official_status": "Registered",
+        "official_city": "HOLLYWOOD",
+        "county": "Broward",
+        "email": "epaallcfl@gmail.com",
+        "phone": "786-864-9078",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-4049",
+        "legal_name": "KEYS RESOURCES LLC",
+        "official_status": "Registered",
+        "official_city": "KEY WEST",
+        "county": "Monroe",
+        "email": "keysmovers1@aol.com",
+        "phone": "305-896-8281",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-410",
+        "legal_name": "DOUG'S HOURLY MUSCLE MOVERS & PACKERS, INC.",
+        "official_status": "Registered",
+        "official_city": "PALMETTO",
+        "county": "Manatee",
+        "email": "jackie@dougshourlymuscle.com",
+        "phone": "941-722-8315",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-4100",
+        "legal_name": "CHENEY BRO WORLDWIDE MOVING INC",
+        "official_status": "Registered",
+        "official_city": "FORT LAUDERDALE",
+        "county": "Broward",
+        "email": "info@cbwmoving.com",
+        "phone": "888-344-8895",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-4102",
+        "legal_name": "FONTAIN TRANSPORT LLC",
+        "official_status": "Registered",
+        "official_city": "WIMAUMA",
+        "county": "Hillsborough",
+        "email": "fontaintransport@gmail.com",
+        "phone": "813-786-8274",
+        "issues": [],
+        "pass": true
+      },
+      {
+        "regulatory_id": "FL-FDACS-IM-4144",
+        "legal_name": "SUNNY DAY MOVING LLC",
+        "official_status": "Registered",
+        "official_city": "ORLANDO",
+        "county": "Orange",
+        "email": "roberturiarte@sunnydaymoving.com",
+        "phone": "407-385-0468",
+        "issues": [],
+        "pass": true
+      }
+    ]
+  },
+  "projected_universe": {
+    "current_florida_companies": 1178,
+    "current_florida_indexable": 395,
+    "existing_providers_with_fdacs_link": 868,
+    "fl_im_all": 779,
+    "fl_im_ingested_internal": 729,
+    "fl_im_publishable_canary": 50,
+    "newly_qualified_state_only": 37,
+    "newly_discovered_overlap": 3,
+    "estimated_future_unique_florida_companies": 1215
+  },
+  "note": "task-fl-003-florida-state-only-qualification",
+  "qualified_at": "2026-08-21T16:31:20.880Z"
+}
