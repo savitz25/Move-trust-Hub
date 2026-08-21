@@ -44,10 +44,11 @@ export function buildOpenGraph(
     type?: 'website' | 'article';
     hub?: OgHub;
     images?: Array<{ url: string; width: number; height: number; alt: string }>;
+    omitDefaultImage?: boolean;
   } = {}
 ): NonNullable<Metadata['openGraph']> {
   const hub = overrides.hub ?? 'move';
-  const ogImage = overrides.images?.[0] ?? getOgImageForHub(hub);
+  const ogImage = overrides.images?.[0] ?? (overrides.omitDefaultImage ? undefined : getOgImageForHub(hub));
   // Prefer explicit overrides. Do not fall back to homepage title — that leaked onto
   // company profiles and other deep pages when they only set `metadata.title`.
   return {
@@ -57,7 +58,7 @@ export function buildOpenGraph(
     siteName: getSiteNameForHub(hub),
     type: overrides.type ?? 'website',
     locale: 'en_US',
-    images: [ogImage],
+    ...(ogImage ? { images: [ogImage] } : {}),
   };
 }
 
@@ -67,15 +68,16 @@ export function buildTwitter(
     description?: string;
     hub?: OgHub;
     images?: Array<{ url: string; width: number; height: number; alt: string }>;
+    omitDefaultImage?: boolean;
   } = {}
 ): NonNullable<Metadata['twitter']> {
   const hub = overrides.hub ?? 'move';
-  const ogImage = overrides.images?.[0] ?? getOgImageForHub(hub);
+  const ogImage = overrides.images?.[0] ?? (overrides.omitDefaultImage ? undefined : getOgImageForHub(hub));
   return {
     card: SHARE_HUB.twitterCard,
     ...(overrides.title ? { title: overrides.title } : {}),
     ...(overrides.description ? { description: overrides.description } : {}),
-    images: [{ url: ogImage.url, alt: ogImage.alt || SHARE_HUB.ogAlt }],
+    ...(ogImage ? { images: [{ url: ogImage.url, alt: ogImage.alt || SHARE_HUB.ogAlt }] } : {}),
   };
 }
 
