@@ -1,0 +1,257 @@
+{
+  "task": "011D.3",
+  "waveId": "LOCAL_HHG_FL_WA_2026_08_CANARY_1",
+  "google_places_requests": 0,
+  "totals": {
+    "companies": 5870,
+    "indexable": 4905,
+    "ingested": 849,
+    "canary_live": 80
+  },
+  "interstateVisible": 4605,
+  "profileQa": {
+    "automated": 80,
+    "noindex": 80,
+    "consumerVisible": 80,
+    "unexpectedInterstateScope": 0,
+    "sample": [
+      {
+        "id": "fl-im-100002",
+        "slug": "i-95-relocation-inc",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "id": "fl-im-1058",
+        "slug": "supreme-relocation-inc",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "id": "fl-im-106",
+        "slug": "raul-s-moving-inc",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "id": "fl-im-1085",
+        "slug": "marvin-s-moving-delivery",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "id": "fl-im-1097",
+        "slug": "delivery-by-design-inc",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "id": "fl-im-115",
+        "slug": "a-turner-moving-storage-inc",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "id": "fl-im-1181",
+        "slug": "pan-american-latino-express-inc",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "id": "fl-im-1200",
+        "slug": "land-o-lakes-moving",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      }
+    ]
+  },
+  "discovery": {
+    "FL": [
+      {
+        "fips": "12099",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "ids": [
+          "fl-im-1058"
+        ]
+      },
+      {
+        "fips": "12011",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "ids": [
+          "fl-im-100002",
+          "fl-im-1399",
+          "fl-im-2064"
+        ]
+      },
+      {
+        "fips": "12057",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "ids": [
+          "fl-im-1226"
+        ]
+      },
+      {
+        "fips": "12095",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "ids": [
+          "fl-im-1181"
+        ]
+      },
+      {
+        "fips": "12031",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "ids": [
+          "fl-im-1426"
+        ]
+      },
+      {
+        "fips": "12103",
+        "totalMatching": 2,
+        "materialized": 2,
+        "limit": 24,
+        "ids": [
+          "fl-im-1270",
+          "fl-im-150001"
+        ]
+      },
+      {
+        "fips": "12127",
+        "totalMatching": 2,
+        "materialized": 2,
+        "limit": 24,
+        "ids": [
+          "fl-im-4170",
+          "fl-im-1925"
+        ]
+      }
+    ],
+    "WA": [
+      {
+        "fips": "53033",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "ids": [
+          "wa-thg071794",
+          "wa-hg-067049",
+          "wa-cc000208"
+        ]
+      },
+      {
+        "fips": "53053",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "ids": [
+          "wa-cc000562"
+        ]
+      },
+      {
+        "fips": "53061",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "ids": [
+          "wa-cc003737",
+          "wa-hg-068318",
+          "wa-thg072051"
+        ]
+      },
+      {
+        "fips": "53063",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "ids": [
+          "wa-cc004401"
+        ]
+      },
+      {
+        "fips": "53011",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "ids": [
+          "wa-hg-061724",
+          "wa-hg-061841",
+          "wa-thg071741"
+        ]
+      },
+      {
+        "fips": "53067",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "ids": [
+          "wa-hg-062546",
+          "wa-cc023990",
+          "wa-hg-066184"
+        ]
+      },
+      {
+        "fips": "53035",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "ids": [
+          "wa-cc000220"
+        ]
+      }
+    ]
+  },
+  "consumerEligibleTotal": 80,
+  "consumerEligibleNonManifest": 0,
+  "nonManifest": {
+    "n": 849,
+    "bad_pub": 0,
+    "bad_idx": 0
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "radius": {
+    "POWER_UNIT_RADIUS": "NOT_APPROVED",
+    "FIXED_25": "NOT_APPROVED",
+    "FIXED_40": "NOT_APPROVED",
+    "FIXED_50": "NOT_APPROVED",
+    "consumerEnabled": false
+  },
+  "checks": {
+    "canary_live_80": true,
+    "indexable_4905": true,
+    "noindex_80": true,
+    "indexable_canary_0": true,
+    "consumer_visible_80": true,
+    "interstate_scope_0": true,
+    "non_manifest_clean": true,
+    "no_non_manifest_eligible": true,
+    "google_zero": true,
+    "radius_disabled": true,
+    "discovery_materialization_bounded": true
+  }
+}
