@@ -1,0 +1,520 @@
+{
+  "google_places_requests": 0,
+  "ruleset": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+  "dry_run": true,
+  "manifest_hash": "7b5293d7e87d0e10",
+  "universe": {
+    "exact_name_fl_wa_groups": 7,
+    "resolved_before": [
+      "SUDDATH MOVING AND STORAGE"
+    ],
+    "unresolved": [
+      "ACE RELOCATION SYSTEMS",
+      "CENTRAL MOVING AND STORAGE",
+      "CLUTTER",
+      "FLEX STORAGE",
+      "SMOOTH MOVES",
+      "STEVENS MOVING AND STORAGE"
+    ]
+  },
+  "freeze_before": {
+    "companies": 5908,
+    "indexable": 4905,
+    "fl_im": 817,
+    "wa_hg": 88,
+    "fl_psa": 1359,
+    "wa_psa": 277,
+    "psa_attached": 1124,
+    "companies_multi_state": 1,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80
+  },
+  "freeze_after": {
+    "companies": 5908,
+    "indexable": 4905,
+    "fl_im": 817,
+    "wa_hg": 88,
+    "fl_psa": 1359,
+    "wa_psa": 277,
+    "psa_attached": 1124,
+    "companies_multi_state": 1,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80
+  },
+  "summary": {
+    "SAME_CANONICAL_ENTITY": 0,
+    "DISTINCT_LEGAL_ENTITIES": 2,
+    "CORPORATE_FAMILY_RELATED": 0,
+    "BRANCH_OR_LOCATION_REVIEW": 0,
+    "REVIEW_REQUIRED": 4,
+    "REJECTED_MATCH": 0,
+    "attach": 0,
+    "keep_hold": 6
+  },
+  "stats": {
+    "psa_attached": 0,
+    "observations": 0,
+    "companies_created": 0
+  },
+  "canary": {
+    "before": {
+      "fl": 50,
+      "wa": 30,
+      "total": 80
+    },
+    "after": {
+      "fl": 50,
+      "wa": 30,
+      "total": 80
+    },
+    "manifest_unchanged": true
+  },
+  "groups": [
+    {
+      "legal_name_norm": "ACE RELOCATION SYSTEMS",
+      "fl_auths": [
+        "IM350",
+        "WM6333"
+      ],
+      "wa_auths": [
+        "CC000917"
+      ],
+      "florida": [
+        {
+          "regulatory_id": "FL-FDACS-IM-350",
+          "authority_number": "IM350",
+          "legal_name_raw": "ACE RELOCATION SYSTEMS, INC.",
+          "dba": null,
+          "usdot": null,
+          "phone": "4072552990",
+          "email": "dnoffs@acerelocation.com",
+          "address": "8695 TRANSPORT DR # 100",
+          "city": "ORLANDO",
+          "zip": "32832",
+          "status": "active",
+          "company_id": "fl-im-350",
+          "disposition": "MATCHED_EXISTING"
+        },
+        {
+          "regulatory_id": null,
+          "authority_number": "WM6333",
+          "legal_name_raw": "ACE RELOCATION SYSTEMS, INC.",
+          "dba": null,
+          "usdot": null,
+          "phone": "4072552990",
+          "email": "dnoffs@acerelocation.com",
+          "address": "8695 TRANSPORT DR # 100",
+          "city": "ORLANDO",
+          "zip": "32832",
+          "status": "unknown",
+          "company_id": null,
+          "disposition": "NEW_PROVIDER_CANDIDATE"
+        }
+      ],
+      "washington": [
+        {
+          "regulatory_id": null,
+          "authority_number": "CC000917",
+          "legal_name_raw": "ACE Relocation Systems, Inc.",
+          "dba": null,
+          "usdot": "1052359",
+          "phone": "2538726292",
+          "email": "seattleoperations@acerelocation.com",
+          "address": "1701 Pike St NW, Ste 100, Auburn, WA 98001",
+          "city": "Auburn",
+          "zip": "98001",
+          "status": "active",
+          "company_id": null,
+          "disposition": "REVIEW_REQUIRED"
+        }
+      ],
+      "fl_company": {
+        "id": "fl-im-350",
+        "name": "ACE RELOCATION SYSTEMS, INC.",
+        "fmcsa_legal_name": "ACE RELOCATION SYSTEMS, INC.",
+        "usdot_number": null,
+        "phone": "4072552990",
+        "email": "dnoffs@acerelocation.com",
+        "physical_address": "8695 TRANSPORT DR # 100, ORLANDO, FL, 32832",
+        "publication_state": "INGESTED",
+        "indexable": false
+      },
+      "wa_company": null,
+      "classification": {
+        "rulesetVersion": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+        "state": "REVIEW_REQUIRED",
+        "reasons": [
+          "insufficient_deterministic_evidence"
+        ],
+        "strongEvidence": [],
+        "corroboratingEvidence": [],
+        "weakEvidence": [],
+        "googlePlacesRequests": 0
+      },
+      "action": "KEEP_HOLD",
+      "attach_to": null,
+      "missing_evidence": [
+        "no_shared_verified_usdot_on_both_state_records",
+        "name_equality_insufficient"
+      ]
+    },
+    {
+      "legal_name_norm": "CENTRAL MOVING AND STORAGE",
+      "fl_auths": [
+        "IM210"
+      ],
+      "wa_auths": [
+        "CC021969"
+      ],
+      "florida": [
+        {
+          "regulatory_id": "FL-FDACS-IM-210",
+          "authority_number": "IM210",
+          "legal_name_raw": "CENTRAL MOVING & STORAGE, INC.",
+          "dba": null,
+          "usdot": null,
+          "phone": "4074381553",
+          "email": "jason@cms-orlando.com",
+          "address": "2002 DIRECTORS ROW",
+          "city": "ORLANDO",
+          "zip": "32809",
+          "status": "active",
+          "company_id": "fl-im-210",
+          "disposition": "MATCHED_EXISTING"
+        }
+      ],
+      "washington": [
+        {
+          "regulatory_id": null,
+          "authority_number": "CC021969",
+          "legal_name_raw": "Central Moving & Storage LLC",
+          "dba": null,
+          "usdot": "1181454",
+          "phone": "3604247714",
+          "email": "central@isomedia.com",
+          "address": "211 ANDERSON RD, Mount Vernon, WA 98273",
+          "city": "Mount Vernon",
+          "zip": "98273",
+          "status": "active",
+          "company_id": null,
+          "disposition": "REVIEW_REQUIRED"
+        }
+      ],
+      "fl_company": {
+        "id": "fl-im-210",
+        "name": "CENTRAL MOVING & STORAGE, INC.",
+        "fmcsa_legal_name": "CENTRAL MOVING & STORAGE, INC.",
+        "usdot_number": null,
+        "phone": "4074381553",
+        "email": "jason@cms-orlando.com",
+        "physical_address": "2002 DIRECTORS ROW, ORLANDO, FL, 32809",
+        "publication_state": "INGESTED",
+        "indexable": false
+      },
+      "wa_company": null,
+      "classification": {
+        "rulesetVersion": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+        "state": "DISTINCT_LEGAL_ENTITIES",
+        "reasons": [
+          "corporate_form_conflict_INC_vs_LLC"
+        ],
+        "strongEvidence": [],
+        "corroboratingEvidence": [],
+        "weakEvidence": [],
+        "googlePlacesRequests": 0
+      },
+      "action": "KEEP_HOLD",
+      "attach_to": null,
+      "missing_evidence": []
+    },
+    {
+      "legal_name_norm": "CLUTTER",
+      "fl_auths": [
+        "IM3682"
+      ],
+      "wa_auths": [
+        "HG067494"
+      ],
+      "florida": [
+        {
+          "regulatory_id": "FL-FDACS-IM-3682",
+          "authority_number": "IM3682",
+          "legal_name_raw": "CLUTTER, INC.",
+          "dba": null,
+          "usdot": null,
+          "phone": "8008054023",
+          "email": "amanda.gonzalez@ironmountain.com",
+          "address": "8605 SANTA MONICA BLVD",
+          "city": "WEST HOLLYWOOD",
+          "zip": "90069",
+          "status": "active",
+          "company_id": null,
+          "disposition": "REVIEW_REQUIRED"
+        }
+      ],
+      "washington": [
+        {
+          "regulatory_id": null,
+          "authority_number": "HG067494",
+          "legal_name_raw": "Clutter Inc.",
+          "dba": "Clutter LLC",
+          "usdot": "2719785",
+          "phone": "8552261916",
+          "email": "amanda.gonzalez@ironmountain.com",
+          "address": "8605 Santa Monica Blvd PMB 66171, West Hollywood, CA 90069-4109",
+          "city": "West Hollywood",
+          "zip": "90069",
+          "status": "active",
+          "company_id": "usdot-2719785",
+          "disposition": "MATCHED_EXISTING"
+        }
+      ],
+      "fl_company": null,
+      "wa_company": {
+        "id": "usdot-2719785",
+        "name": "CLUTTER INC.",
+        "fmcsa_legal_name": "CLUTTER INC.",
+        "usdot_number": "2719785",
+        "phone": "8776261887",
+        "email": null,
+        "physical_address": null,
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      "classification": {
+        "rulesetVersion": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+        "state": "REVIEW_REQUIRED",
+        "reasons": [
+          "insufficient_deterministic_evidence"
+        ],
+        "strongEvidence": [],
+        "corroboratingEvidence": [
+          "exact_named_email"
+        ],
+        "weakEvidence": [],
+        "googlePlacesRequests": 0
+      },
+      "action": "KEEP_HOLD",
+      "attach_to": null,
+      "missing_evidence": [
+        "no_shared_verified_usdot_on_both_state_records",
+        "name_equality_insufficient"
+      ]
+    },
+    {
+      "legal_name_norm": "FLEX STORAGE",
+      "fl_auths": [
+        "IM3819"
+      ],
+      "wa_auths": [
+        "THG071875"
+      ],
+      "florida": [
+        {
+          "regulatory_id": "FL-FDACS-IM-3819",
+          "authority_number": "IM3819",
+          "legal_name_raw": "FLEX STORAGE INC",
+          "dba": null,
+          "usdot": null,
+          "phone": "8889903539",
+          "email": "info@flex.storage",
+          "address": "1065 SW 8TH ST",
+          "city": "MIAMI",
+          "zip": "33130",
+          "status": "active",
+          "company_id": "fl-im-3819",
+          "disposition": "MATCHED_EXISTING"
+        }
+      ],
+      "washington": [
+        {
+          "regulatory_id": null,
+          "authority_number": "THG071875",
+          "legal_name_raw": "Flex Storage Inc",
+          "dba": null,
+          "usdot": "4148650",
+          "phone": "6264633114",
+          "email": null,
+          "address": "1065 SW 8th St, PMB 5012, Miami, FL 33130",
+          "city": "Miami",
+          "zip": "33130",
+          "status": "active",
+          "company_id": null,
+          "disposition": "NEW_PROVIDER_CANDIDATE"
+        }
+      ],
+      "fl_company": {
+        "id": "fl-im-3819",
+        "name": "FLEX STORAGE INC",
+        "fmcsa_legal_name": "FLEX STORAGE INC",
+        "usdot_number": null,
+        "phone": "8889903539",
+        "email": "info@flex.storage",
+        "physical_address": "1065 SW 8TH ST, MIAMI, FL, 33130",
+        "publication_state": "INGESTED",
+        "indexable": false
+      },
+      "wa_company": null,
+      "classification": {
+        "rulesetVersion": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+        "state": "REVIEW_REQUIRED",
+        "reasons": [
+          "insufficient_deterministic_evidence"
+        ],
+        "strongEvidence": [],
+        "corroboratingEvidence": [],
+        "weakEvidence": [],
+        "googlePlacesRequests": 0
+      },
+      "action": "KEEP_HOLD",
+      "attach_to": null,
+      "missing_evidence": [
+        "no_shared_verified_usdot_on_both_state_records",
+        "name_equality_insufficient"
+      ]
+    },
+    {
+      "legal_name_norm": "SMOOTH MOVES",
+      "fl_auths": [
+        "IM1860"
+      ],
+      "wa_auths": [
+        "HG064212"
+      ],
+      "florida": [
+        {
+          "regulatory_id": "FL-FDACS-IM-1860",
+          "authority_number": "IM1860",
+          "legal_name_raw": "SMOOTH MOVES INC.",
+          "dba": null,
+          "usdot": null,
+          "phone": "9046261206",
+          "email": "joe@smoothmovesfl.com",
+          "address": "907 6TH AVE S",
+          "city": "JACKSONVILLE BEACH",
+          "zip": "32250",
+          "status": "expired",
+          "company_id": null,
+          "disposition": "HISTORICAL"
+        }
+      ],
+      "washington": [
+        {
+          "regulatory_id": null,
+          "authority_number": "HG064212",
+          "legal_name_raw": "Smooth Moves LLC",
+          "dba": null,
+          "usdot": "2013092",
+          "phone": "5094608158",
+          "email": "smoothmoves03@gmail.com",
+          "address": "516 E 1st Ave. Ste 1C, Kennewick, WA 99376",
+          "city": "Kennewick",
+          "zip": "99376",
+          "status": "active",
+          "company_id": "wa-hg-064212",
+          "disposition": "MATCHED_EXISTING"
+        }
+      ],
+      "fl_company": null,
+      "wa_company": {
+        "id": "wa-hg-064212",
+        "name": "Smooth Moves LLC",
+        "fmcsa_legal_name": "Smooth Moves LLC",
+        "usdot_number": "2013092",
+        "phone": "5094608158",
+        "email": "smoothmoves03@gmail.com",
+        "physical_address": "516 E 1st Ave. Ste 1C, Kennewick, WA 99376, Kennewick, WA, 99376",
+        "publication_state": "INGESTED",
+        "indexable": false
+      },
+      "classification": {
+        "rulesetVersion": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+        "state": "DISTINCT_LEGAL_ENTITIES",
+        "reasons": [
+          "corporate_form_conflict_INC_vs_LLC"
+        ],
+        "strongEvidence": [],
+        "corroboratingEvidence": [],
+        "weakEvidence": [],
+        "googlePlacesRequests": 0
+      },
+      "action": "KEEP_HOLD",
+      "attach_to": null,
+      "missing_evidence": []
+    },
+    {
+      "legal_name_norm": "STEVENS MOVING AND STORAGE",
+      "fl_auths": [
+        "IM320"
+      ],
+      "wa_auths": [
+        "HG010341"
+      ],
+      "florida": [
+        {
+          "regulatory_id": "FL-FDACS-IM-320",
+          "authority_number": "IM320",
+          "legal_name_raw": "STEVENS MOVING & STORAGE, INC",
+          "dba": null,
+          "usdot": null,
+          "phone": "5734503866",
+          "email": "admin@botgmoves.com",
+          "address": "15 SAINT MARK ST",
+          "city": "AUBURN",
+          "zip": "01501",
+          "status": "active",
+          "company_id": null,
+          "disposition": "REVIEW_REQUIRED"
+        }
+      ],
+      "washington": [
+        {
+          "regulatory_id": null,
+          "authority_number": "HG010341",
+          "legal_name_raw": "Stevens Moving & Storage, Inc.",
+          "dba": null,
+          "usdot": "72029",
+          "phone": null,
+          "email": "lindsays@movewithstevens.com",
+          "address": "15 ST Mark ST, Auburn, MA 01501",
+          "city": "Auburn",
+          "zip": "01501",
+          "status": "active",
+          "company_id": "stevens",
+          "disposition": "MATCHED_EXISTING"
+        }
+      ],
+      "fl_company": null,
+      "wa_company": {
+        "id": "stevens",
+        "name": "Stevens Worldwide Van Lines",
+        "fmcsa_legal_name": "STEVENS MOVING & STORAGE INC",
+        "usdot_number": "72029",
+        "phone": "(703) 497-2700",
+        "email": null,
+        "physical_address": "15 SAINT MARK ST, AUBURN, MA, 01501",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      "classification": {
+        "rulesetVersion": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+        "state": "REVIEW_REQUIRED",
+        "reasons": [
+          "insufficient_deterministic_evidence"
+        ],
+        "strongEvidence": [],
+        "corroboratingEvidence": [],
+        "weakEvidence": [],
+        "googlePlacesRequests": 0
+      },
+      "action": "KEEP_HOLD",
+      "attach_to": null,
+      "missing_evidence": [
+        "no_shared_verified_usdot_on_both_state_records",
+        "name_equality_insufficient"
+      ]
+    }
+  ]
+}

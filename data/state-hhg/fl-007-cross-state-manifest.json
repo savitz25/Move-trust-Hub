@@ -1,0 +1,80 @@
+{
+  "google_places_requests": 0,
+  "ruleset": "MULTI_STATE_REGULATED_ENTITY_V1_1",
+  "hash": "7b5293d7e87d0e10",
+  "groups": [
+    {
+      "legal_name_norm": "ACE RELOCATION SYSTEMS",
+      "fl_auths": [
+        "IM350",
+        "WM6333"
+      ],
+      "wa_auths": [
+        "CC000917"
+      ],
+      "classification": "REVIEW_REQUIRED",
+      "action": "KEEP_HOLD",
+      "attach_to": null
+    },
+    {
+      "legal_name_norm": "CENTRAL MOVING AND STORAGE",
+      "fl_auths": [
+        "IM210"
+      ],
+      "wa_auths": [
+        "CC021969"
+      ],
+      "classification": "DISTINCT_LEGAL_ENTITIES",
+      "action": "KEEP_HOLD",
+      "attach_to": null
+    },
+    {
+      "legal_name_norm": "CLUTTER",
+      "fl_auths": [
+        "IM3682"
+      ],
+      "wa_auths": [
+        "HG067494"
+      ],
+      "classification": "REVIEW_REQUIRED",
+      "action": "KEEP_HOLD",
+      "attach_to": null
+    },
+    {
+      "legal_name_norm": "FLEX STORAGE",
+      "fl_auths": [
+        "IM3819"
+      ],
+      "wa_auths": [
+        "THG071875"
+      ],
+      "classification": "REVIEW_REQUIRED",
+      "action": "KEEP_HOLD",
+      "attach_to": null
+    },
+    {
+      "legal_name_norm": "SMOOTH MOVES",
+      "fl_auths": [
+        "IM1860"
+      ],
+      "wa_auths": [
+        "HG064212"
+      ],
+      "classification": "DISTINCT_LEGAL_ENTITIES",
+      "action": "KEEP_HOLD",
+      "attach_to": null
+    },
+    {
+      "legal_name_norm": "STEVENS MOVING AND STORAGE",
+      "fl_auths": [
+        "IM320"
+      ],
+      "wa_auths": [
+        "HG010341"
+      ],
+      "classification": "REVIEW_REQUIRED",
+      "action": "KEEP_HOLD",
+      "attach_to": null
+    }
+  ]
+}

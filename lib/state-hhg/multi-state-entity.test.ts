@@ -7,13 +7,32 @@ import {
   MULTI_STATE_RULESET_VERSION,
   actionForResolution,
   classifyMultiStateEntity,
+  corporateForm,
   isGenericEnterpriseEmail,
 } from '@/lib/state-hhg/multi-state-entity';
 import { isFranchiseOrNetworkBrandName } from '@/lib/state-hhg/normalize';
 
 test('ruleset version and Google constant', () => {
-  assert.equal(MULTI_STATE_RULESET_VERSION, 'MULTI_STATE_REGULATED_ENTITY_V1');
+  assert.equal(MULTI_STATE_RULESET_VERSION, 'MULTI_STATE_REGULATED_ENTITY_V1_1');
   assert.equal(MULTI_STATE_GOOGLE_PLACES_REQUESTS, 0);
+});
+
+test('exact legal name alone is not SAME_CANONICAL_ENTITY', () => {
+  const r = classifyMultiStateEntity({
+    subject: { legalName: 'Ace Relocation Systems, Inc.', phone: '4072552990' },
+    candidate: { legalName: 'ACE RELOCATION SYSTEMS, INC.', phone: '2538726292' },
+  });
+  assert.notEqual(r.state, 'SAME_CANONICAL_ENTITY');
+});
+
+test('Inc vs LLC with the same normalized name is DISTINCT', () => {
+  assert.equal(corporateForm('CENTRAL MOVING & STORAGE, INC.'), 'INC');
+  assert.equal(corporateForm('Central Moving & Storage LLC'), 'LLC');
+  const r = classifyMultiStateEntity({
+    subject: { legalName: 'CENTRAL MOVING & STORAGE, INC.', email: 'jason@cms-orlando.com' },
+    candidate: { legalName: 'Central Moving & Storage LLC', usdot: '1181454', email: 'central@isomedia.com' },
+  });
+  assert.equal(r.state, 'DISTINCT_LEGAL_ENTITIES');
 });
 
 test('official regulator/filing tie plus exact legal name is SAME_CANONICAL_ENTITY', () => {
