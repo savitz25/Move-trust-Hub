@@ -1,0 +1,74 @@
+{
+  "google_places_requests": 0,
+  "task": "FL-004",
+  "retrieved_at": "2026-08-21T17:08:00.000Z",
+  "dry_run": false,
+  "apply": true,
+  "idempotency_check": false,
+  "manifest_hash": "c632adcfa174afdb",
+  "freeze_before": {
+    "companies": 5870,
+    "indexable": 4905,
+    "fl_im_all": 779,
+    "fl_im_ingested": 729,
+    "fl_im_publishable": 50,
+    "publishable_noindex": 80,
+    "florida_all": 1111,
+    "florida_indexable": 330,
+    "fl_psa": 1359,
+    "fdacs_observations": 3875,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80
+  },
+  "freeze_after": {
+    "companies": 5907,
+    "indexable": 4905,
+    "fl_im_all": 816,
+    "fl_im_ingested": 766,
+    "fl_im_publishable": 50,
+    "publishable_noindex": 80,
+    "florida_all": 1148,
+    "florida_indexable": 330,
+    "fl_psa": 1359,
+    "fdacs_observations": 3875,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80
+  },
+  "intended": {
+    "insert": 37,
+    "link": 1,
+    "hold": 2,
+    "indexable_delta": 0,
+    "company_delta": 37
+  },
+  "applied": {
+    "companies_inserted": 37,
+    "psa_upserted": 37,
+    "observations_attached": 110,
+    "links_written": 1,
+    "skipped_existing": 0
+  },
+  "link_rows": [
+    {
+      "regulatory_id": "FL-FDACS-IM-3772",
+      "existing_company_id": "fl-im-3150",
+      "match_method": "exact_legal_name_and_email"
+    }
+  ],
+  "hold_rows": [
+    {
+      "regulatory_id": "FL-FDACS-IM-3813",
+      "existing_company_id": "wa-hg-064493",
+      "hold_reason": "florida_im_matched_out_of_state_company_ambiguous",
+      "match_method": "exact_legal_name_and_email"
+    },
+    {
+      "regulatory_id": "FL-FDACS-IM-4099",
+      "existing_company_id": "wa-hg-064493",
+      "hold_reason": "florida_im_matched_out_of_state_company_ambiguous",
+      "match_method": "exact_dba_and_corroboration"
+    }
+  ]
+}
