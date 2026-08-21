@@ -1,0 +1,128 @@
+{
+  "task": "011D.2A",
+  "retrievedAt": "2026-08-21T15:28:05.621Z",
+  "freezeBefore": {
+    "companies": 4941,
+    "indexable": 4905,
+    "ingested": 0
+  },
+  "freezeAfter": {
+    "companies": 5870,
+    "indexable": 4905,
+    "ingested": 929
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "ready": {
+    "FL": {
+      "READY_FOR_CANONICALIZATION": 786,
+      "REVIEW_REQUIRED": 18,
+      "INACTIVE_HOLD": 98,
+      "ADDRESS_UNRESOLVED": 69
+    },
+    "WA": {
+      "READY_FOR_CANONICALIZATION": 152,
+      "REVIEW_REQUIRED": 0,
+      "INACTIVE_HOLD": 0,
+      "ADDRESS_UNRESOLVED": 44
+    },
+    "FL_READY": 786,
+    "WA_READY": 152,
+    "totalReady": 938
+  },
+  "outcomes": {
+    "FL": {
+      "CREATED": 781,
+      "ALREADY_CANONICALIZED": 1,
+      "MOVED_TO_REVIEW": 3,
+      "MATCHED_DURING_CANONICALIZATION": 1
+    },
+    "WA": {
+      "CREATED": 148,
+      "MOVED_TO_REVIEW": 4
+    },
+    "all": {
+      "CREATED": 929,
+      "ALREADY_CANONICALIZED": 1,
+      "MOVED_TO_REVIEW": 7,
+      "MATCHED_DURING_CANONICALIZATION": 1
+    }
+  },
+  "precisionAudit": {
+    "flSampleSize": 100,
+    "waSampleSize": 100,
+    "issues": [],
+    "falseMatches": 0,
+    "precision": 100
+  },
+  "safety": {
+    "duplicateAuthority": 0,
+    "duplicateUsdot": 0,
+    "newPublic": 0,
+    "newIndexable": 0,
+    "quarantineLeak": 0,
+    "consumerLeakSample": [],
+    "homeCountyCount": {
+      "FL": 781,
+      "WA": 148
+    },
+    "verifiedAuthority": {
+      "FL": 783,
+      "WA": 148
+    },
+    "capabilitiesCreated": 1734
+  },
+  "idempotency": {
+    "companyInserts": 0,
+    "authorityInserts": 0,
+    "homeCountyInserts": 0
+  },
+  "radius": {
+    "POWER_UNIT_RADIUS": "NOT_APPROVED",
+    "FIXED_25": "NOT_APPROVED",
+    "FIXED_40": "NOT_APPROVED",
+    "FIXED_50": "NOT_APPROVED",
+    "consumerEnabled": false
+  },
+  "quarantine": {
+    "FL": {
+      "READY_FOR_CANONICALIZATION": 786,
+      "REVIEW_REQUIRED": 18,
+      "INACTIVE_HOLD": 98,
+      "ADDRESS_UNRESOLVED": 69
+    },
+    "WA": {
+      "READY_FOR_CANONICALIZATION": 152,
+      "REVIEW_REQUIRED": 0,
+      "INACTIVE_HOLD": 0,
+      "ADDRESS_UNRESOLVED": 44
+    }
+  },
+  "checks": {
+    "google_zero": true,
+    "no_new_public": true,
+    "no_new_indexable": true,
+    "no_authority_dup": true,
+    "no_usdot_dup_new": true,
+    "no_quarantine_leak": true,
+    "no_consumer_leak": true,
+    "precision_100": true,
+    "radius_disabled": true
+  }
+}

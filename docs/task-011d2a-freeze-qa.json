@@ -1,0 +1,52 @@
+{
+  "task": "011D.2A",
+  "google_places_requests": 0,
+  "totals": {
+    "companies": 5870,
+    "indexable": 4905,
+    "ingested": 929,
+    "state_only_new": 929
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "new_public_or_indexable_state_only": 0,
+  "consumer_eligible_discovery_edges": 0,
+  "provider_county_coverage_exists": false,
+  "discovery_table_exists": true,
+  "radius": {
+    "POWER_UNIT_RADIUS": "NOT_APPROVED",
+    "FIXED_25": "NOT_APPROVED",
+    "FIXED_40": "NOT_APPROVED",
+    "FIXED_50": "NOT_APPROVED",
+    "consumerEnabled": false
+  },
+  "checks": {
+    "indexable_unchanged_4905": true,
+    "wave1": true,
+    "wave2": true,
+    "wave3": true,
+    "wave4": true,
+    "no_county_coverage_table": true,
+    "no_new_public_state_only": true,
+    "no_consumer_eligible_edges": true,
+    "no_consumer_leaks_in_sample": true,
+    "google_zero": true,
+    "radius_disabled": true
+  }
+}

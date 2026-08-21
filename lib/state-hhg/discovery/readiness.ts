@@ -80,11 +80,19 @@ export function classifyNewProviderReadiness(
     readiness = 'ADDRESS_UNRESOLVED';
     notes.push(`address_quality_${quality}`);
     if (!geocodeOk) notes.push('geocode_unresolved_or_out_of_state');
+  } else if (!input.phone || !String(input.phone).trim()) {
+    // 011D.1/011D.2A canonicalization rule: phone required
+    readiness = 'ADDRESS_UNRESOLVED';
+    notes.push('phone_required_missing');
+  } else if (!input.authorityNumber || !input.legalName) {
+    readiness = 'REVIEW_REQUIRED';
+    notes.push('missing_authority_or_legal_name');
   } else {
     readiness = 'READY_FOR_CANONICALIZATION';
     notes.push('active_authority');
     notes.push('physical_operating_or_business_address');
     notes.push('home_county_resolvable');
+    notes.push('phone_present');
     notes.push('mover_role');
     notes.push('not_franchise_hold');
   }
