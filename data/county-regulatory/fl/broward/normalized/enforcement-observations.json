@@ -1,0 +1,7 @@
+{
+  "task": "FL-C004",
+  "access_class": "DOCUMENT_PUBLIC_PROCESS_ONLY",
+  "row_count": 0,
+  "records": [],
+  "deduplication_note": "No case rows acquired; event-key design deferred until structured data exist."
+}

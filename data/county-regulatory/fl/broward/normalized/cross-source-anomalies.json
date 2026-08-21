@@ -1,0 +1,15 @@
+{
+  "task": "FL-C004",
+  "records": [
+    {
+      "type": "NO_PUBLIC_ROSTER",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "note": "Unlike Palm Beach, Broward does not expose a public Companies API/roster. County-only enrichment cannot be measured at scale until PRA."
+    },
+    {
+      "type": "APPLICATION_REQUIRES_FDACS_IM",
+      "classification": "ARCHITECTURE_SIGNAL",
+      "note": "County registration packet requires FDACS IM — deterministic state crosswalk should be strong once roster is obtained."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "task": "FL-C004",
+  "completeness_classification": "PRA_REQUIRED",
+  "row_count": 0,
+  "records": [],
+  "schema_example_from_application": {
+    "source_record_id_pattern": "FL-BROWARD-MOVER-{registration_or_permit_id}",
+    "fields": [
+      "business_name",
+      "owners_partners_directors_officers[]",
+      "fdacs_im_license_copy_required",
+      "vehicles[].vin",
+      "vehicles[].tag",
+      "vehicles[].gvw",
+      "vehicles[].permit_number_last6",
+      "vehicles[].decal_current",
+      "registration_fee",
+      "decal_fees",
+      "expiration_date_september_30"
+    ]
+  },
+  "retrieved_at": "2026-08-21T20:07:08.505Z"
+}

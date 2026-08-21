@@ -141,31 +141,33 @@
       "official_url": "https://www.broward.org/Consumer/ConsumerProtection/Movers/Pages/default.aspx",
       "dataset_name": "Mover registration / permit (decal) program",
       "dataset_type": "MOVER_SPECIFIC_REGULATOR",
-      "access_method": "SEARCHABLE_PUBLIC",
+      "access_method": "DOCUMENT_PUBLIC_PLUS_PRA",
       "bulk_available": false,
       "historical_available": "UNKNOWN",
       "update_frequency": "UNKNOWN",
       "related_urls": [
         "https://www.broward.org/consumer",
-        "https://www.broward.org/Consumer/Forms/Documents/MoverRegistrationApplication.pdf",
-        "https://www.broward.org/epermits"
+        "https://www.broward.org/consumer/Forms",
+        "https://www.broward.org/epermits",
+        "https://www.broward.org/opengovernment/PRR"
       ],
       "fields_available": {
-        "business_name": true,
-        "legal_name": true,
-        "permit_number": true,
-        "status": "LIKELY",
-        "physical_address": true,
-        "phone": "LIKELY",
-        "insurance": "LIKELY",
-        "vehicle": "LIKELY"
+        "business_name": "APPLICATION",
+        "permit_number": "APPLICATION_ISSUED",
+        "status": "CALL_TO_VERIFY",
+        "physical_address": "APPLICATION",
+        "phone": "APPLICATION",
+        "owner": "APPLICATION",
+        "vehicle_decal": "APPLICATION",
+        "vin_tag_gvw": "APPLICATION",
+        "fdacs_im_required": true
       },
       "complaints_available": true,
-      "complaint_disposition_available": "UNKNOWN",
+      "complaint_disposition_available": false,
       "enforcement_available": true,
       "owners_available": "LIKELY",
       "contacts_available": true,
-      "vehicles_available": true,
+      "vehicles_available": "APPLICATION_SCHEMA_YES_PUBLIC_ROSTER_NO",
       "insurance_available": true,
       "court_data_available": false,
       "consumer_pii_risk": "MEDIUM",
@@ -180,11 +182,17 @@
       "unique_data_value_score": 5,
       "engineering_cost_score": 3,
       "value_to_effort": 1.67,
-      "recommended_action": "PRA for current/historical mover registrations + enforcement/citation extract",
-      "raw_data_status": "NOT_DOWNLOADED",
-      "acquisition_status": "DISCOVERED",
+      "recommended_action": "PRA for roster+vehicles+complaints+enforcement; FL-C005 recommend Miami-Dade public acquisition next",
+      "raw_data_status": "DOCS_AND_FORMS_DOWNLOADED",
+      "acquisition_status": "PROGRAM_VERIFIED_ROSTER_PRA_REQUIRED",
       "adapter_status": "NONE",
-      "notes": "Grandfathered pre-2011 ordinance. Registration fee + per-vehicle permit/decal. Civil penalties, license suspension/revocation. Forms portal + ePermits. Enforcement/citations desk and hearings exist."
+      "notes": "Credential: Mover Registration + Mover Permit (decal); Ch.20-176.90. Public docs strong; no public roster/API found (unlike Palm Beach). ePermits A-Z lacks Mover Registration. Consumers may call for status. PRA required for bulk registrations/vehicles/complaints/enforcement. Network reuse: CPD also regulates repair/towing/VFH/chauffeur/medical transport.",
+      "network_reuse": {
+        "ContractorTrustHub": "MEDIUM (motor vehicle repair adjacency)",
+        "SeniorTrustHub": "MEDIUM (medical transport adjacency)",
+        "InsuranceTrustHub": "MEDIUM (insurance certificate requirements; citations)",
+        "ingested_non_mover_categories": false
+      }
     },
     {
       "source_id": "FL-MDC-CP-MOVER",
@@ -481,5 +489,14 @@
     "bir_sample_reports": 22,
     "pra_required_for_complete_bulk_data": true,
     "pra_submitted": false
+  },
+  "fl_c004": {
+    "task": "FL-C004",
+    "county": "Broward",
+    "google_places_api_requests": 0,
+    "production_writes": false,
+    "roster_completeness": "PRA_REQUIRED",
+    "pra_submitted": false,
+    "retrievedAt": "2026-08-21"
   }
 }

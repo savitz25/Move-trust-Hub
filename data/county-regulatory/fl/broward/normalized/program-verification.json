@@ -1,0 +1,39 @@
+{
+  "task": "FL-C004",
+  "county": "Broward",
+  "agency": "Broward County Consumer Protection Division (Consumer Affairs Section)",
+  "agency_address": "1 N. University Drive, Suite 203, Plantation, FL 33324",
+  "agency_phone": "954-765-1700 / 954-519-1260 (Consumer Affairs forms)",
+  "agency_email": "consumer@broward.org",
+  "hearings_email": "ECP@broward.org",
+  "hearings_phone": "954-765-1210",
+  "citations_desk": "Enforcement (Citations) 954-765-1700",
+  "credential_primary_name": "Mover's Registration / Mover Registration",
+  "credential_vehicle_name": "Mover Permit (decal)",
+  "terminology_note": "Official forms use 'Mover Registration Application' and 'Mover Permit (decal)'. Narrative Consumer Affairs materials also say businesses must 'register annually for a license'. Prefer Registration + Permit (decal) as exact credential terms; do not casually collapse to a single 'license' label.",
+  "ordinance": "Chapter 20-176.90 of the Broward County Code of Ordinances (Broward County Moving Ordinance)",
+  "geographic_scope": "Local moves beginning and ending in the South Florida tri-county area: Broward, Miami-Dade, or Palm Beach counties (for movers located in Broward County)",
+  "current_status": "OPERATING",
+  "renewal_cycle": "Annual; registrations and decals expire September 30",
+  "fees_observed": {
+    "annual_mover_registration_usd": 400,
+    "late_fee_usd": 30,
+    "mover_permit_decal_per_vehicle_usd": 75
+  },
+  "requires_fdacs_im": "Application checklist / program materials require FDACS Intrastate Moving License (IM) / Movers License issued by Florida Department of Agriculture & Consumer Services",
+  "enforcement_powers_documented": [
+    "civil penalties",
+    "revocation or suspension of license/registration",
+    "citations",
+    "hearings (Government Center West Hearing Room)",
+    "Warning Notice / Citation / Notice of Violation / Notice of Intent to File Suit (regulated enforcement toolkit)"
+  ],
+  "grandfathered_local_authority": "Consistent with Fla. Stat. §507.13 grandfathering of pre-2011 local mover ordinances (documented in FL-C001); Broward continues a local Moving Ordinance program as of 2026 official Consumer Affairs materials.",
+  "official_sources": [
+    "https://www.broward.org/consumer",
+    "https://www.broward.org/consumer/Forms",
+    "https://www.browardcdn.org/api/public/content/ab1e699647fd4880b2c8441f1b7100ac?v=fec53c74",
+    "https://www.browardcdn.org/api/public/content/de63c57b52674de8a38bf5d48636932a?v=29a96617"
+  ],
+  "retrieved_at": "2026-08-21T20:07:08.505Z"
+}
