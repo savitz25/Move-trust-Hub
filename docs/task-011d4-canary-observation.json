@@ -1,0 +1,763 @@
+{
+  "task": "011D.4",
+  "retrievedAt": "2026-08-21T16:33:32.698Z",
+  "google_places_requests": 0,
+  "repo": "savitz25/Move-trust-Hub",
+  "project": "MoveTrustHub (movetrusthub.com)",
+  "waveId": "LOCAL_HHG_FL_WA_2026_08_CANARY_1",
+  "live": {
+    "fl": 50,
+    "wa": 30,
+    "total": 80,
+    "indexable": 0,
+    "publishable": 80
+  },
+  "waveRows": [
+    {
+      "state_code": "FL",
+      "status": "published",
+      "n": 50
+    },
+    {
+      "state_code": "WA",
+      "status": "published",
+      "n": 30
+    }
+  ],
+  "consumerEligible": {
+    "n": 80,
+    "canary": 80,
+    "non_canary": 0
+  },
+  "freeze": {
+    "companies": 5870,
+    "indexable": 4905,
+    "ingested": 849
+  },
+  "interstateVisible": 4605,
+  "federalWaves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "authority": {
+    "valid": 80,
+    "invalid": 0,
+    "excluded": [],
+    "freshness": [
+      {
+        "state_code": "WA",
+        "oldest": "2026-08-21T03:29:40.446Z",
+        "newest": "2026-08-21T03:29:40.446Z",
+        "n": 30
+      },
+      {
+        "state_code": "FL",
+        "oldest": "2026-08-21T03:29:40.443Z",
+        "newest": "2026-08-21T03:29:40.443Z",
+        "n": 50
+      }
+    ],
+    "decision": "Authority retrieved_at remains 2026-08-21 cohort ingest; all 80 still VERIFIED+active. No full re-ingest required for observation gate."
+  },
+  "identity": {
+    "audited": 80,
+    "homeCountyOk": 80,
+    "franchiseHits": 0,
+    "issues": [],
+    "precision": 100
+  },
+  "copy": {
+    "issues": [],
+    "safeExamples": {
+      "homeCounty": {
+        "locationLine": "Based in {countyName}",
+        "authorityFl": "Registration verified with the Florida Department of Agriculture and Consumer Services.",
+        "authorityWa": "Household-goods carrier authority verified with the Washington Utilities and Transportation Commission.",
+        "roleFl": "Florida intrastate mover",
+        "roleWa": "Washington household-goods mover",
+        "cta": "Confirm pickup availability for your exact address."
+      },
+      "explicitService": {
+        "line": "Provider identifies {countyName} as a service area."
+      },
+      "federalAbsent": "Federal interstate household-goods authority is not shown for this profile unless independently verified.",
+      "forbidden": [
+        "Guaranteed service",
+        "Covers entire county",
+        "Serves nearby counties",
+        "40-mile service radius",
+        "Available statewide",
+        "NOT AUTHORIZED"
+      ]
+    }
+  },
+  "discovery": {
+    "FL": [
+      {
+        "county": "Palm Beach",
+        "fips": "12099",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "fl-im-1058"
+        ],
+        "msHint": 207
+      },
+      {
+        "county": "Broward",
+        "fips": "12011",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "fl-im-100002",
+          "fl-im-1399",
+          "fl-im-2064"
+        ],
+        "msHint": 204
+      },
+      {
+        "county": "Hillsborough",
+        "fips": "12057",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "fl-im-1226"
+        ],
+        "msHint": 208
+      },
+      {
+        "county": "Orange",
+        "fips": "12095",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "fl-im-1181"
+        ],
+        "msHint": 204
+      },
+      {
+        "county": "Duval",
+        "fips": "12031",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "fl-im-1426"
+        ],
+        "msHint": 208
+      },
+      {
+        "county": "Pinellas",
+        "fips": "12103",
+        "totalMatching": 2,
+        "materialized": 2,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "fl-im-1270",
+          "fl-im-150001"
+        ],
+        "msHint": 204
+      },
+      {
+        "county": "Volusia",
+        "fips": "12127",
+        "totalMatching": 2,
+        "materialized": 2,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "fl-im-4170",
+          "fl-im-1925"
+        ],
+        "msHint": 216
+      }
+    ],
+    "WA": [
+      {
+        "county": "King",
+        "fips": "53033",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "wa-thg071794",
+          "wa-hg-067049",
+          "wa-cc000208"
+        ],
+        "ms": 206
+      },
+      {
+        "county": "Pierce",
+        "fips": "53053",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "wa-cc000562"
+        ],
+        "ms": 215
+      },
+      {
+        "county": "Snohomish",
+        "fips": "53061",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "wa-cc003737",
+          "wa-hg-068318",
+          "wa-thg072051"
+        ],
+        "ms": 220
+      },
+      {
+        "county": "Spokane",
+        "fips": "53063",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "wa-cc004401"
+        ],
+        "ms": 203
+      },
+      {
+        "county": "Clark",
+        "fips": "53011",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "wa-hg-061724",
+          "wa-hg-061841",
+          "wa-thg071741"
+        ],
+        "ms": 204
+      },
+      {
+        "county": "Thurston",
+        "fips": "53067",
+        "totalMatching": 3,
+        "materialized": 3,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "wa-hg-062546",
+          "wa-cc023990",
+          "wa-hg-066184"
+        ],
+        "ms": 213
+      },
+      {
+        "county": "Kitsap",
+        "fips": "53035",
+        "totalMatching": 1,
+        "materialized": 1,
+        "limit": 24,
+        "falseCountyMatches": 0,
+        "ids": [
+          "wa-cc000220"
+        ],
+        "ms": 208
+      }
+    ],
+    "emptyCountyExample": {
+      "fips": "12013",
+      "totalMatching": 0,
+      "note": "Empty result allowed; do not fabricate nearby coverage"
+    },
+    "lowSupplyExample": {
+      "county": "Palm Beach",
+      "fips": "12099",
+      "totalMatching": 1,
+      "materialized": 1,
+      "limit": 24,
+      "falseCountyMatches": 0,
+      "ids": [
+        "fl-im-1058"
+      ],
+      "msHint": 207
+    }
+  },
+  "routeSemantics": {
+    "sameState": "origin=VERIFIED_HOME_COUNTY evidence; destination=active VERIFIED state authority; dest≠home OK",
+    "interstateExclusion": "state-only canary must not qualify FL→GA/NJ or WA→OR/ID via state authority alone",
+    "failures": 0
+  },
+  "seo": {
+    "noindexDb": 80,
+    "indexableLive": 0,
+    "sitemapCanaryHits": 0,
+    "consumerVisible": 80
+  },
+  "httpSample": {
+    "fl": 15,
+    "wa": 10,
+    "results": [
+      {
+        "slug": "i-95-relocation-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 358,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "supreme-relocation-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 132,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "raul-s-moving-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 116,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "marvin-s-moving-delivery",
+        "state": "FL",
+        "status": 200,
+        "ms": 139,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "delivery-by-design-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 198,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "a-turner-moving-storage-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 147,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "pan-american-latino-express-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 137,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "land-o-lakes-moving",
+        "state": "FL",
+        "status": 200,
+        "ms": 120,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "big-boys-moving-company",
+        "state": "FL",
+        "status": 200,
+        "ms": 203,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "hank-s-moving-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 216,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "anytime-moving-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 211,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "mathews-moving-storage-inc",
+        "state": "FL",
+        "status": 200,
+        "ms": 122,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "paul-hauls-moving-storage",
+        "state": "FL",
+        "status": 200,
+        "ms": 113,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "ward-moving-and-storage-company",
+        "state": "FL",
+        "status": 200,
+        "ms": 512,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "pro-move",
+        "state": "FL",
+        "status": 200,
+        "ms": 187,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "larsen-transfer-co",
+        "state": "WA",
+        "status": 200,
+        "ms": 145,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "vashon-trucking-inc",
+        "state": "WA",
+        "status": 200,
+        "ms": 116,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "olympic-move-group-move-northwest-lile-moving-storage",
+        "state": "WA",
+        "status": 200,
+        "ms": 107,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "boush-moving-storage-inc",
+        "state": "WA",
+        "status": 200,
+        "ms": 117,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "pom-arleau-transfer-and-storage-corp",
+        "state": "WA",
+        "status": 200,
+        "ms": 118,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "evergreen-moving-systems-inc",
+        "state": "WA",
+        "status": 200,
+        "ms": 116,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "cement-distributors-inc",
+        "state": "WA",
+        "status": 200,
+        "ms": 168,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "ridgefield-woodwaste-co",
+        "state": "WA",
+        "status": 200,
+        "ms": 109,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "devries-moving-packing-storage",
+        "state": "WA",
+        "status": 200,
+        "ms": 106,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      },
+      {
+        "slug": "town-campus-pickup-delivery-svc",
+        "state": "WA",
+        "status": 200,
+        "ms": 251,
+        "ok": true,
+        "hasNoindex": false,
+        "hasForbiddenCopy": false,
+        "hasName": false
+      }
+    ],
+    "http200": 25,
+    "directory": {
+      "ok": true,
+      "status": 200,
+      "ms": 120,
+      "bodySnippet": "<!DOCTYPE html><html lang=\"en\" class=\"light __variable_65ae79 __variable_7a2077\" data-build-id=\"14b891f29a5efbe114e65e3ccfee09110918d406\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"/><link rel=\"stylesheet\" href=\"/_next/static/css/22e1bdac9c98654c.css?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/a48addb0b009da54.css?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/webpack-fb6f3b2c8e2c6c2a.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\"/><script src=\"/_next/static/chunks/4bd1b696-bad92808725a934a.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/31255-82039cd3529eee1b.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/main-app-b71e398b5ff146b5.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/44530001-2a0f497be15023fb.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/52619-c48a18d6f62d2371.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/24909-df097e18a31fee27.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/21613-4a9b23c2c62bda23.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/18720-556e3d1a85c19a06.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/9924-5eee8caba0cdf742.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/13142-b911e8ee1e52323e.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/74767-8dae27ed06e094db.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/91108-13356205d6ad86dd.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/12309-9a8b4e4eb1f9414f.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/app/(move)/layout-6c91139f394c595f.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/app/global-error-1bac2e17915eb813.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/app/(move)/companies/page-e5a0e8b7b198df3a.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/app/(move)/error-859525a22569236d.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/app/layout-5e6534924e0a2d05.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><script src=\"/_next/static/chunks/app/error-4b2733cc1eb20c77.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" async=\"\"></script><meta name=\"next-size-adjust\" content=\"\"/><meta name=\"theme-color\" content=\"#ffffff\"/><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" noModule=\"\"></script></head><body class=\"font-sans antialiased\" data-network-standard=\"2026.08.18-network-v2\"><div hidden=\"\"><!--$?--><template id=\"B:0\"></template><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.asktrusthub.com/#organization\",\"name\":\"Ask Trust Hub\",\"url\":\"https://www.asktrusthub.com\",\"description\":\"Independent consumer research network and trust infrastructure behind MoveTrustHub, InsuranceTrustHub, and LenderTrustHub. No lead fees, no paid placements.\"},{\"@type\":\"Organization\",\"@id\":\"https://www.movetrusthub.com/#organization\",\"name\":\"Move Trust Hub\",\"url\":\"https://www.movetrusthub.com\",\"logo\":\"https://www.movetrusthub.com/logo.png?v=20260806e\",\"email\":\"hello@movetrusthub.com\",\"description\":\"Independent directory for researching FMCSA-licensed interstate and local moving companies in the United States. No lead fees, no paid placements.\",\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Ask Trust Hub\",\"url\":\"https://www.asktrusthub.com\"},\"sameAs\":[\"https://www.asktrusthub.com\"]},{\"@type\":\"WebSite\",\"@id\":\"https://www.movetrusthub.com/#website\",\"name\":\"Move Trust Hub\",\"url\":\"https://www.movetrusthub.com\",\"publisher\":{\"@id\":\"https://www.movetrusthub.com/#organization\"},\"isPartOf\":{\"@id\":\"https://www.asktrusthub.com/#organization\"},\"inLanguage\":\"en-US\"}]}</script><!--$?--><template id=\"B:1\"></template><div class=\"container mx-auto px-4 py-16\"><div class=\"max-w-4xl mx-auto space-y-4\"><div class=\"h-10 w-2/3 skeleton\"></div><div class=\"h-5 w-1/2 skeleton\"></div><div class=\"grid grid-cols-1 md:grid-cols-3 gap-4 pt-6\"><div class=\"h-52 rounded-xl border skeleton\"></div><div class=\"h-52 rounded-xl border skeleton\"></div><div class=\"h-52 rounded-xl border skeleton\"></div><div class=\"h-52 rounded-xl border skeleton\"></div><div class=\"h-52 rounded-xl border skeleton\"></div><div class=\"h-52 rounded-xl border skeleton\"></div></div></div></div><!--/$--><!--$--><!--/$--><script>requestAnimationFrame(function(){$RT=performance.now()});</script><script src=\"/_next/static/chunks/webpack-fb6f3b2c8e2c6c2a.js?dpl=dpl_Fr3BgH13KEe43gQB6Hgi7Hc8e2hK\" id=\"_R_\" async=\"\"></script><div hidden id=\"S:1\"><!--$--><!--/$--><div data-hub=\"move\" class=\"flex min-h-screen flex-col pt-[env(safe-area-inset-top)]\"><div class=\"relative z-[60] border-b border-border/70 bg-muted/40 text-[12px] text-[#3d4f63]\"><div class=\"container mx-auto flex min-h-10 items-center justify-between gap-2 px-4 py-1.5 sm:min-h-10\"><a href=\"https://www.asktrusthub.com\" class=\"inline-flex min-h-11 shrink-0 items-center font-semibold tracking-tight text-[#0A2540]/85 hover:text-[#0A2540]\" rel=\"noopener noreferrer\"><span class=\"hidden sm:inline\">Ask Trust Hub network</span><span class=\"sm:hidden\">Ask Trust Hub</span></a><div class=\"hidden items-center gap-2 sm:flex\"><span class=\"rounded-md bg-background px-2.5 py-1.5 font-semibold text-[#0A2540] shadow-sm ring-1 ring-border/60\" aria-current=\"page\">Move</span><div class=\"relative\"><button type=\"button\" class=\"inline-flex min-h-9 items-center gap-1.5 rounded-xl border bg-white px-3 py-1.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] focus-visible:ring-offset-2 hover:border-[#FF5A1F]/40 hover:bg-[#FFF4F0]\" style=\"border-color:#E2E8F0;color:#0A2540\" aria-expanded=\"false\" aria-haspopup=\"menu\" aria-controls=\"_R_k6knnb_\">Hubs<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down h-3.5 w-3.5 transition-transform\" style=\"color:#FF5A1F\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></div><a href=\"https://www.asktrusthub.com/methodology\" class=\"rounded-md px-2.5 py-1.5 font-medium text-[#3d4f63] hover:bg-background/80 hover:text-[#0A2540]\" rel=\"noopener noreferrer\">Standards</a></div><div class=\"sm:hidden\"><button type=\"button\" class=\"inline-flex min-h-11 min-w-[7.5rem] items-center justify-center gap-1.5 rounded-md border border-border/80 bg-background px-3 py-2 text-sm font-semibold text-[#0A2540] shadow-sm\" aria-expanded=\"false\" aria-controls=\"_R_66knnb_\" aria-haspopup=\"dialog\">Switch hub<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></div></div></div><nav class=\"sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60\" aria-label=\"Primary\"><div class=\"container mx-auto relative flex h-16 sm:h-[4.5rem] items-center justify-between gap-3 px-4 overflow-visible\"><div class=\"flex min-w-0 items-center gap-2 overflow-hidden sm:gap-3\"><a class=\"group shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2\" aria-label=\"Move Trust Hub home\" href=\"/\"><span class=\"move-hub-pulse inline-block\"><span class=\"hub-logo-slot relative block shrink-0\"><img src=\"/brand/move-trust-hub-logo-header.png?v=20260806e\" alt=\"Move Trust Hub\" width=\"248\" height=\"52\" sizes=\"(max-width: 640px) 160px, (max-width: 1024px) 200px, 240px\" fetchPriority=\"auto\" loading=\"eager\" decoding=\"async\" class=\"object-contain object-left bg-transparent h-full w-full max-h-full\"/></span></span></a><div class=\"hidden 2xl:flex min-w-0 items-center overflow-hidden rounded-full border border-border/60 bg-muted/80 px-2.5 py-1 text-[10px] font-semibold leading-snug tracking-wide text-[#3d4f63] max-w-[min(16rem,22vw)] truncate text-center min-h-8\" title=\"INDEPENDENT FMCSA MOVER DIRECTORY\">INDEPENDENT FMCSA MOVER DIRECTORY</div></div><div class=\"hidden shrink-0 items-center gap-2 text-sm lg:flex xl:gap-3\"><nav aria-label=\"Move product\" class=\"flex shrink-0 items-center gap-1 xl:gap-2\"><div class=\"relative\"><div class=\"inline-flex items-center gap-0.5\"><a class=\"whitespace-nowrap rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 font-semibold hover:!text-[#FF5A1F] focus-visible:!text-[#FF5A1F]\" style=\"color:#FF5A1F\" aria-current=\"page\" href=\"/companies\">Find Movers</a><button type=\"button\" class=\"flex min-h-11 min-w-9 items-center justify-center rounded-sm p-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:!text-[#FF5A1F] focus-visible:!text-[#FF5A1F]\" style=\"color:#FF5A1F\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-controls=\"_R_2caknnb_\" aria-label=\"Open Find Movers menu\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down h-3.5 w-3.5 transition-transform duration-200\" style=\"color:inherit\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></div></div><div class=\"relative\"><div class=\"inline-flex items-center gap-0.5\"><a class=\"font-medium whitespace-nowrap rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:!text-[#FF5A1F] focus-visible:!text-[#FF5A1F]\" style=\"color:#0A2540\" href=\"/local-movers\">By State</a><button type=\"button\" class=\"flex min-h-11 min-w-9 items-center justify-center rounded-sm p-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:!text-[#FF5A1F] focus-visible:!text-[#FF5A1F]\" style=\"color:#0A2540\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-controls=\"_R_4caknnb_\" aria-label=\"Open By State menu\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down h-3.5 w-3.5 transition-transform duration-200\" style=\"color:inherit\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></div></div><div class=\"relative\"><div class=\"inline-flex items-center gap-0.5\"><a class=\"font-medium whitespace-nowrap rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:!text-[#FF5A1F] focus-visible:!text-[#FF5A1F]\" style=\"color:#0A2540\" href=\"/compare\">Compare Movers</a><button type=\"button\" class=\"flex min-h-11 min-w-9 items-center justify-center rounded-sm p-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:!text-[#FF5A1F] focus-visi"
+    }
+  },
+  "remainingPool": {
+    "ingestedStateOnly": 849,
+    "publicationReady": {
+      "publicationReadyTotal": 849,
+      "FL": 731,
+      "WA": 118,
+      "excluded": {
+        "franchise": 0,
+        "review": 0,
+        "inactive": 0,
+        "broker": 0,
+        "missingFields": 0,
+        "wrongStateCounty": 0
+      },
+      "countyDistFl": {
+        "Miami-Dade": 124,
+        "Broward": 107,
+        "Palm Beach": 53,
+        "Pinellas": 52,
+        "Orange": 46,
+        "Lee": 40,
+        "Hillsborough": 36,
+        "Sarasota": 31,
+        "Duval": 30,
+        "Collier": 22,
+        "Seminole": 18,
+        "Brevard": 17,
+        "Manatee": 16,
+        "Marion": 13,
+        "Volusia": 12,
+        "St. Lucie": 11,
+        "Charlotte": 10,
+        "St. Johns": 10,
+        "Martin": 9,
+        "Lake": 8,
+        "Pasco": 8,
+        "Escambia": 7,
+        "Polk": 6,
+        "Alachua": 6,
+        "Osceola": 6,
+        "Okaloosa": 5,
+        "Clay": 4,
+        "Flagler": 4,
+        "Hernando": 4,
+        "Bay": 4,
+        "Nassau": 2,
+        "Leon": 2,
+        "Walton": 2,
+        "Highlands": 2,
+        "Indian River": 1,
+        "Monroe": 1,
+        "Columbia": 1,
+        "Sumter": 1
+      },
+      "countyDistWa": {
+        "King": 47,
+        "Snohomish": 18,
+        "Pierce": 16,
+        "Spokane": 7,
+        "Thurston": 5,
+        "Benton": 5,
+        "Kitsap": 4,
+        "Clark": 3,
+        "Chelan": 2,
+        "Cowlitz": 2,
+        "Grant": 2,
+        "Whatcom": 2,
+        "Kittitas": 1,
+        "Yakima": 1,
+        "Douglas": 1,
+        "San Juan": 1,
+        "Skagit": 1
+      }
+    },
+    "stagingHolds": [
+      {
+        "state_code": "FL",
+        "disposition": "NEW_PROVIDER_CANDIDATE",
+        "status_normalized": "active",
+        "role_class": "broker",
+        "n": 18
+      },
+      {
+        "state_code": "FL",
+        "disposition": "NEW_PROVIDER_CANDIDATE",
+        "status_normalized": "active",
+        "role_class": "mover",
+        "n": 70
+      },
+      {
+        "state_code": "FL",
+        "disposition": "NEW_PROVIDER_CANDIDATE",
+        "status_normalized": "unknown",
+        "role_class": "broker",
+        "n": 1
+      },
+      {
+        "state_code": "FL",
+        "disposition": "NEW_PROVIDER_CANDIDATE",
+        "status_normalized": "unknown",
+        "role_class": "mover",
+        "n": 97
+      },
+      {
+        "state_code": "FL",
+        "disposition": "REVIEW_REQUIRED",
+        "status_normalized": "active",
+        "role_class": "broker",
+        "n": 7
+      },
+      {
+        "state_code": "FL",
+        "disposition": "REVIEW_REQUIRED",
+        "status_normalized": "active",
+        "role_class": "mover",
+        "n": 157
+      },
+      {
+        "state_code": "FL",
+        "disposition": "REVIEW_REQUIRED",
+        "status_normalized": "unknown",
+        "role_class": "mover",
+        "n": 14
+      },
+      {
+        "state_code": "WA",
+        "disposition": "NEW_PROVIDER_CANDIDATE",
+        "status_normalized": "active",
+        "role_class": "mover",
+        "n": 44
+      },
+      {
+        "state_code": "WA",
+        "disposition": "REVIEW_REQUIRED",
+        "status_normalized": "active",
+        "role_class": "mover",
+        "n": 16
+      }
+    ]
+  },
+  "analytics": {
+    "status": "INSUFFICIENT OBSERVATION VOLUME",
+    "note": "No canary-specific analytics segment available without new tracking. Do not fabricate traffic."
+  },
+  "radius": {
+    "POWER_UNIT_RADIUS": "NOT_APPROVED",
+    "FIXED_25": "NOT_APPROVED",
+    "FIXED_40": "NOT_APPROVED",
+    "FIXED_50": "NOT_APPROVED",
+    "consumerEnabled": false
+  },
+  "checks": {
+    "live_80": true,
+    "fl_50": true,
+    "wa_30": true,
+    "indexable_0": true,
+    "authority_100": true,
+    "identity_clean": true,
+    "copy_clean": true,
+    "discovery_false_0": true,
+    "elig_canary_only": true,
+    "sitemap_0": true,
+    "http_all_200": true,
+    "google_zero": true,
+    "radius_disabled": true,
+    "no_state_change": true
+  },
+  "finalDecision": "KEEP_80_NOINDEX",
+  "indexReady": "NOT YET",
+  "scaleReady": "YES",
+  "recommendedWave2": {
+    "option": "Option 1",
+    "flAdd": 100,
+    "waAdd": 50,
+    "totalAdd": 150,
+    "rationale": "Canary technical health is strong and interstate isolation holds. Prefer a modest geographically stratified Wave 2 (+100 FL / +50 WA) over jumping toward all ~849. Keep Wave 2 noindex initially unless 011D.5 indexing readiness clears."
+  },
+  "thinProfileConcern": "Canary pages are sparse by design (identity + state authority + home county + contact). Technically correct for discovery, but often thin for aggressive SEO indexing without additional unique regulatory/consumer-guidance content."
+}

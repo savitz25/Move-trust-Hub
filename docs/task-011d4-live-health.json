@@ -1,0 +1,229 @@
+{
+  "task": "011D.4",
+  "retrievedAt": "2026-08-21T16:33:32.698Z",
+  "google_places_requests": 0,
+  "scorecard": {
+    "authority_valid_pct": 100,
+    "identity_correct_pct": 100,
+    "home_county_valid_pct": 100,
+    "http_200_pct": 100,
+    "noindex_pct": 100,
+    "sitemap_exclusion": true,
+    "local_discovery_false_matches": 0,
+    "interstate_exclusion_failures": 0,
+    "unsupported_copy_errors": 0,
+    "structured_data_errors": 0,
+    "critical_regulatory_identity_errors": 0
+  },
+  "performance": {
+    "fl_local_ms": [
+      {
+        "fips": "12099",
+        "ms": 207
+      },
+      {
+        "fips": "12011",
+        "ms": 204
+      },
+      {
+        "fips": "12057",
+        "ms": 208
+      },
+      {
+        "fips": "12095",
+        "ms": 204
+      },
+      {
+        "fips": "12031",
+        "ms": 208
+      },
+      {
+        "fips": "12103",
+        "ms": 204
+      },
+      {
+        "fips": "12127",
+        "ms": 216
+      }
+    ],
+    "wa_local_ms": [
+      {
+        "fips": "53033",
+        "ms": 206
+      },
+      {
+        "fips": "53053",
+        "ms": 215
+      },
+      {
+        "fips": "53061",
+        "ms": 220
+      },
+      {
+        "fips": "53063",
+        "ms": 203
+      },
+      {
+        "fips": "53011",
+        "ms": 204
+      },
+      {
+        "fips": "53067",
+        "ms": 213
+      },
+      {
+        "fips": "53035",
+        "ms": 208
+      }
+    ],
+    "profile_sample_ms": [
+      {
+        "slug": "i-95-relocation-inc",
+        "ms": 358,
+        "status": 200
+      },
+      {
+        "slug": "supreme-relocation-inc",
+        "ms": 132,
+        "status": 200
+      },
+      {
+        "slug": "raul-s-moving-inc",
+        "ms": 116,
+        "status": 200
+      },
+      {
+        "slug": "marvin-s-moving-delivery",
+        "ms": 139,
+        "status": 200
+      },
+      {
+        "slug": "delivery-by-design-inc",
+        "ms": 198,
+        "status": 200
+      },
+      {
+        "slug": "a-turner-moving-storage-inc",
+        "ms": 147,
+        "status": 200
+      },
+      {
+        "slug": "pan-american-latino-express-inc",
+        "ms": 137,
+        "status": 200
+      },
+      {
+        "slug": "land-o-lakes-moving",
+        "ms": 120,
+        "status": 200
+      },
+      {
+        "slug": "big-boys-moving-company",
+        "ms": 203,
+        "status": 200
+      },
+      {
+        "slug": "hank-s-moving-inc",
+        "ms": 216,
+        "status": 200
+      },
+      {
+        "slug": "anytime-moving-inc",
+        "ms": 211,
+        "status": 200
+      },
+      {
+        "slug": "mathews-moving-storage-inc",
+        "ms": 122,
+        "status": 200
+      },
+      {
+        "slug": "paul-hauls-moving-storage",
+        "ms": 113,
+        "status": 200
+      },
+      {
+        "slug": "ward-moving-and-storage-company",
+        "ms": 512,
+        "status": 200
+      },
+      {
+        "slug": "pro-move",
+        "ms": 187,
+        "status": 200
+      },
+      {
+        "slug": "larsen-transfer-co",
+        "ms": 145,
+        "status": 200
+      },
+      {
+        "slug": "vashon-trucking-inc",
+        "ms": 116,
+        "status": 200
+      },
+      {
+        "slug": "olympic-move-group-move-northwest-lile-moving-storage",
+        "ms": 107,
+        "status": 200
+      },
+      {
+        "slug": "boush-moving-storage-inc",
+        "ms": 117,
+        "status": 200
+      },
+      {
+        "slug": "pom-arleau-transfer-and-storage-corp",
+        "ms": 118,
+        "status": 200
+      },
+      {
+        "slug": "evergreen-moving-systems-inc",
+        "ms": 116,
+        "status": 200
+      },
+      {
+        "slug": "cement-distributors-inc",
+        "ms": 168,
+        "status": 200
+      },
+      {
+        "slug": "ridgefield-woodwaste-co",
+        "ms": 109,
+        "status": 200
+      },
+      {
+        "slug": "devries-moving-packing-storage",
+        "ms": 106,
+        "status": 200
+      },
+      {
+        "slug": "town-campus-pickup-delivery-svc",
+        "ms": 251,
+        "status": 200
+      }
+    ],
+    "directory_ms": 120,
+    "bounded_materialization": true
+  },
+  "runtime": {
+    "canary_attributable_5xx": 0,
+    "note": "HTTP sample all 200; no canary-attributable DB timeout in observation queries"
+  },
+  "checks": {
+    "live_80": true,
+    "fl_50": true,
+    "wa_30": true,
+    "indexable_0": true,
+    "authority_100": true,
+    "identity_clean": true,
+    "copy_clean": true,
+    "discovery_false_0": true,
+    "elig_canary_only": true,
+    "sitemap_0": true,
+    "http_all_200": true,
+    "google_zero": true,
+    "radius_disabled": true,
+    "no_state_change": true
+  }
+}
