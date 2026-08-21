@@ -1,0 +1,62 @@
+{
+  "task": "FL-C007",
+  "retrieved_at": "2026-08-21T22:28:47.942Z",
+  "interfaces": [
+    {
+      "source": "Office of Consumer Protection home",
+      "endpoint": "https://pinellas.gov/department/consumer-protection/",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "HTML",
+      "notes": "Moving listed under Monitoring (not Licensing). Contact phone/email/address. Human Services parent department."
+    },
+    {
+      "source": "Moving Ordinance landing page",
+      "endpoint": "https://pinellas.gov/moving-ordinance/",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "HTML",
+      "notes": "Consumer tips: written estimate required; move must begin or end in Pinellas from Pinellas/Pasco/Hillsborough. Links Municode Article VIII."
+    },
+    {
+      "source": "Municode — Ch.42 Art.VIII Moving",
+      "endpoint": "https://library.municode.com/fl/pinellas_county/codes/code_of_ordinances?nodeId=PTIIPICOCO_CH42COPR_ARTVIIIMO",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "HTML / code text",
+      "notes": "Sections 42-356–42-368: estimates, contracts, disclosures, inventory, liability, civil/criminal enforcement. NO license/registration/permit/roster section."
+    },
+    {
+      "source": "Find a Business Complaint History (county landing)",
+      "endpoint": "https://pinellas.gov/services/find-a-business-complaint-history/",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "HTML",
+      "notes": "States 5-year business complaint history searchable via Accela report link."
+    },
+    {
+      "source": "Accela Civic Platform — ConsumerProt complaint history report",
+      "endpoint": "https://aca-prod.accela.com/PINELLAS/Report/ReportParameter.aspx?module=ConsumerProt&reportID=31870&reportType=LINK_REPORT_LIST",
+      "access_type": "SEARCHABLE_PUBLIC_FORM",
+      "format": "Browser form → PDF report",
+      "notes": "Public form requires Business Name; returns PDF. CapHome: enter name or partial name; results include complaints filed within last five years. SAMPLE_ONLY bounded searches in this package."
+    },
+    {
+      "source": "Consumer Protection FAQ",
+      "endpoint": "pinellas.gov Consumer Protection FAQ (raw/page-consumer-protection-faq.html)",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "HTML",
+      "notes": "FAQ: Office will tell if complaints received and disposition; closed complaints maintained five years and may be reviewed upon request/phone. Public Accela PDF does NOT include disposition column — disposition = PRA/phone-assisted."
+    },
+    {
+      "source": "FDACS Pinellas geography sample universe (offline seed)",
+      "endpoint": "raw/fdacs-pinellas-geography-sample-universe.json",
+      "access_type": "OFFLINE_SEED_NOT_COUNTY_ROSTER",
+      "format": "JSON",
+      "notes": "FDACS IM movers filtered to Pinellas municipalities (n=69). Used ONLY as Accela search seeds because county publishes no mover roster. NOT Pinellas county identity observations."
+    },
+    {
+      "source": "Public Records Request (draft only)",
+      "endpoint": "docs/county-regulatory/fl/pra-drafts/pinellas-county-mover-regulatory-pra.md",
+      "access_type": "PRA_DRAFT_NOT_SUBMITTED",
+      "format": "Markdown",
+      "notes": "Draft refined in FL-C007; Submitted: NO."
+    }
+  ]
+}

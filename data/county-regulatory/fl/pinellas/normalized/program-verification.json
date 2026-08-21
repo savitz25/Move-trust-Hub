@@ -1,0 +1,33 @@
+{
+  "task": "FL-C007",
+  "county": "Pinellas",
+  "agency": "Pinellas County Office of Consumer Protection (Human Services Department)",
+  "agency_address": "14250 49th St N Suite 1000 Rm 2, Clearwater, FL 33762",
+  "agency_phone": "727-464-6200",
+  "agency_email": "consumer@pinellas.gov",
+  "agency_org_note": "Office of Consumer Protection is within Human Services. Ordinance text historically references Department of Justice and Consumer Services.",
+  "credential_model": "ORDINANCE_REGULATION_WITHOUT_SEPARATE_PUBLIC_CREDENTIAL",
+  "credential_primary_name": "NONE — no separate public mover license/registration/permit",
+  "credential_vehicle_name": "NONE_OBSERVED",
+  "terminology_note": "Official Consumer Protection page lists Moving under Monitoring, not Licensing. Licensing covers bingo, adult use, and high-prescribing clinics. CapHome 'Apply for or Renew a License' ConsumerProt types are bingo/adult use etc — NOT movers.",
+  "ordinance": "Pinellas County Code Chapter 42 Article VIII \"Pinellas County Moving Ordinance\" (Ord. 98-18; amended 02-84), sections 42-356–42-368 (42-369 Reserved)",
+  "geographic_scope": "HHG moves originating in Pinellas terminating in Hillsborough/Pasco/Pinellas OR originating in Hillsborough/Pasco terminating in Pinellas",
+  "current_status": "OPERATING",
+  "renewal_cycle": "NOT_APPLICABLE_NO_CREDENTIAL",
+  "fees_observed": null,
+  "requires_fdacs_im": "NOT_OBSERVED_AS_COUNTY_CREDENTIAL_PREREQUISITE — county does not issue a separate mover credential; FDACS IM remains state-level. FDACS movers with Pinellas cities used ONLY as Accela complaint-search seeds because no county mover roster exists.",
+  "enforcement_powers_documented": [
+    "civil enforcement authority (42-368)",
+    "criminal enforcement authority (42-368)",
+    "complaint mediation / Consumer Protection investigation (agency FAQ)"
+  ],
+  "grandfathered_local_authority": "Consistent with Fla. Stat. §507.13 grandfathering of pre-2011 local mover ordinances (FL-C001). Pinellas continues behavioral Moving Ordinance regulation without a separate public credential/roster as of 2026 official materials.",
+  "official_sources": [
+    "https://pinellas.gov/department/consumer-protection/",
+    "https://pinellas.gov/moving-ordinance/",
+    "https://pinellas.gov/services/find-a-business-complaint-history/",
+    "https://library.municode.com/fl/pinellas_county/codes/code_of_ordinances?nodeId=PTIIPICOCO_CH42COPR_ARTVIIIMO",
+    "https://aca-prod.accela.com/PINELLAS/Report/ReportParameter.aspx?module=ConsumerProt&reportID=31870&reportType=LINK_REPORT_LIST"
+  ],
+  "retrieved_at": "2026-08-21T22:28:47.942Z"
+}

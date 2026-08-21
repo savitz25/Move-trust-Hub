@@ -1,0 +1,17 @@
+{
+  "task": "FL-C007",
+  "ordinance_authority": "42-368 civil and criminal enforcement",
+  "nov_citations": "AUTHORITY_EXISTS — case-level public bulk not observed",
+  "hearings": "NOT_DETAILED_ON_PUBLIC_MOVER_PAGES",
+  "fines": "Civil penalties via ordinance; schedule not extracted as mover-specific public table in this package",
+  "suspension_revocation": "NOT_APPLICABLE_NO_CREDENTIAL_TO_SUSPEND",
+  "criminal_referrals": "Boundary only — do not scrape criminal data. REFERRAL_RECORDED only if explicit in source. Not observed in SAMPLE_ONLY Accela PDFs.",
+  "final_action": "PRA_REQUIRED for structured final orders / outcomes extract",
+  "access": "DOCUMENT_PUBLIC for ordinance authority; PRA_REQUIRED for case-level enforcement/final actions",
+  "observations_acquired": 0,
+  "caphome_license_note": "CapHome 'Apply for or Renew a License' under ConsumerProt covers bingo/adult use/etc — NOT movers.",
+  "notes": [
+    "Public company-level enforcement event rows acquired: 0.",
+    "Complaint RECORD STATUS is COMPLAINT_OBSERVATION layer unless explicit final-order language appears."
+  ]
+}

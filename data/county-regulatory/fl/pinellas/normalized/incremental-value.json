@@ -1,0 +1,22 @@
+{
+  "task": "FL-C007",
+  "data_scope_notes": {
+    "credential_roster": "NO_SEPARATE_ROSTER_IDENTIFIED / row_count 0",
+    "ordinance_behavioral_regulation": "PUBLIC — Art. VIII estimate/contract/disclosure/inventory/liability/enforcement",
+    "complaints": "SAMPLE_ONLY Accela name/partial-name→PDF (5yr); RECORD STATUS = disposition-like values",
+    "enforcement": "Authority documented (42-368); 0 public event rows"
+  },
+  "value_beyond_fdacs": [
+    "Confirms Monitoring (not Licensing) local mover regulation pattern",
+    "Documents Accela Civic Platform 5-year public complaint-history interface",
+    "Documents FAQ vs public-PDF disposition gap (PRA/phone for dispositions)",
+    "Zero-result semantics for name-search complaint reports",
+    "Four-county comparison input for architecture discovery"
+  ],
+  "not_value": [
+    "No county credential inventory to enrich profiles at scale",
+    "No deterministic FDACS↔county credential crosswalk possible from public Pinellas sources",
+    "SAMPLE_ONLY complaint searches must not be extrapolated to market rates"
+  ],
+  "engineering_cost_signal": "Pinellas does not earn county-credential enrichment cost. Its primary incremental value is ordinance+complaint-history pattern discovery for FL-C008 architecture — not Pinellas qualification."
+}

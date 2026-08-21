@@ -1,0 +1,14 @@
+{
+  "task": "FL-C007",
+  "mode": "NOT_APPLICABLE_NO_PUBLIC_ROSTER",
+  "deterministic_county_fdacs_with_canonical_company": 0,
+  "deterministic_county_fdacs_without_canonical_company": 0,
+  "counts": {
+    "CANONICAL_LINKED": 0,
+    "STATE_RECORD_ONLY": 0,
+    "COUNTY_ONLY": 0,
+    "REVIEW_REQUIRED": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "note": "N/A — no county credential rows to link. Secondary metric deferred."
+}

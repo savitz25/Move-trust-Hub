@@ -1,0 +1,9 @@
+{
+  "task": "FL-C007",
+  "completeness_classification": "NO_SEPARATE_ROSTER_IDENTIFIED",
+  "credential_model": "ORDINANCE_REGULATION_WITHOUT_SEPARATE_PUBLIC_CREDENTIAL",
+  "row_count": 0,
+  "records": [],
+  "schema_note": "No county-issued mover credential rows exist to stage. Ordinance regulates estimates/contracts/disclosures/inventory/liability/enforcement without a separate public credential.",
+  "retrieved_at": "2026-08-21T22:28:47.942Z"
+}

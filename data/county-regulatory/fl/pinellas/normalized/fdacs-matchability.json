@@ -1,0 +1,15 @@
+{
+  "task": "FL-C007",
+  "mode": "NOT_APPLICABLE_NO_PUBLIC_ROSTER",
+  "production_writes": false,
+  "google_places_api_requests": 0,
+  "county_records_available": 0,
+  "counts": {
+    "DETERMINISTIC_MATCH": 0,
+    "REVIEW_REQUIRED": 0,
+    "NOT_FOUND": 0,
+    "INSUFFICIENT_EVIDENCE": 0
+  },
+  "classification": "NOT_APPLICABLE_NO_PUBLIC_ROSTER",
+  "note": "No Pinellas county mover credential roster to match against FDACS. FDACS geography filter was used only to seed Accela complaint searches."
+}
