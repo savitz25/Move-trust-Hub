@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-08-21T01:14:13.996Z",
+  "task": "009A.1",
+  "google_places_requests": 0,
+  "default_limit": 24,
+  "sql_consumer_visible_count": 3985,
+  "timings": [
+    {
+      "name": "sql_consumer_visible_count",
+      "ok": true,
+      "ms": 2325,
+      "result_count": 3985
+    },
+    {
+      "name": "getCompaniesCached",
+      "ok": false,
+      "error": "Invariant: incrementalCache missing in unstable_cache (tsx outside Next.js runtime)"
+    },
+    {
+      "name": "getUnifiedDirectoryCompanies",
+      "ok": false,
+      "error": "Invariant: incrementalCache missing in unstable_cache (tsx outside Next.js runtime)"
+    },
+    {
+      "name": "queryDirectoryPage_default_limit_24",
+      "ok": false,
+      "limit": 24,
+      "filters": {},
+      "error": "Invariant: incrementalCache missing in unstable_cache (tsx outside Next.js runtime)"
+    },
+    {
+      "name": "queryDirectoryPage_onlyVerified",
+      "ok": false,
+      "limit": 24,
+      "filters": {
+        "onlyVerified": true
+      },
+      "error": "Invariant: incrementalCache missing in unstable_cache (tsx outside Next.js runtime)"
+    },
+    {
+      "name": "queryDirectoryPage_local_mover",
+      "ok": false,
+      "limit": 24,
+      "filters": {
+        "services": [
+          "Local Mover"
+        ]
+      },
+      "error": "Invariant: incrementalCache missing in unstable_cache (tsx outside Next.js runtime)"
+    },
+    {
+      "name": "queryDirectoryPage_state_TX",
+      "ok": false,
+      "limit": 24,
+      "filters": {
+        "state": "TX"
+      },
+      "error": "Invariant: incrementalCache missing in unstable_cache (tsx outside Next.js runtime)"
+    },
+    {
+      "name": "queryDirectoryPage_minRating_4",
+      "ok": false,
+      "limit": 24,
+      "filters": {
+        "minRating": 4
+      },
+      "error": "Invariant: incrementalCache missing in unstable_cache (tsx outside Next.js runtime)"
+    }
+  ],
+  "notes": [
+    "Baseline only. google_places_requests must stay 0.",
+    "Default directory page size is 24 (DIRECTORY_PAGE_SIZE); not changed.",
+    "Cached loaders use next/cache unstable_cache and require a Next.js request runtime; under tsx they import but cannot execute.",
+    "getCompaniesCached failed under tsx/stub-server-only (see timings).",
+    "getUnifiedDirectoryCompanies failed under tsx/stub-server-only (see timings)."
+  ]
+}

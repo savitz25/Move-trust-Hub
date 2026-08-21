@@ -1,0 +1,622 @@
+{
+  "generatedAt": "2026-08-21T01:34:14.465Z",
+  "cases": 31,
+  "exactPageMatches": 7,
+  "protectedChecks": [
+    {
+      "usdot": "76235",
+      "legacyHit": true,
+      "dbHit": true
+    },
+    {
+      "usdot": "125563",
+      "legacyHit": true,
+      "dbHit": true
+    },
+    {
+      "usdot": "125550",
+      "legacyHit": true,
+      "dbHit": true
+    },
+    {
+      "usdot": "70719",
+      "legacyHit": true,
+      "dbHit": true
+    },
+    {
+      "usdot": "49922",
+      "legacyHit": true,
+      "dbHit": true
+    },
+    {
+      "usdot": "76628",
+      "legacyHit": true,
+      "dbHit": true
+    },
+    {
+      "usdot": "70851",
+      "legacyHit": true,
+      "dbHit": true
+    }
+  ],
+  "knownDifferences": [
+    {
+      "name": "default-page-1",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 9,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "default-page-2",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 10,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "search-moving",
+      "legacyTotal": 1598,
+      "dbTotal": 250,
+      "overlap": 2,
+      "orderMatch": 2,
+      "notes": [
+        "total delta 1598 vs 250"
+      ]
+    },
+    {
+      "name": "search-van-lines",
+      "legacyTotal": 160,
+      "dbTotal": 164,
+      "overlap": 23,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "search-transport",
+      "legacyTotal": 393,
+      "dbTotal": 250,
+      "overlap": 20,
+      "orderMatch": 0,
+      "notes": [
+        "total delta 393 vs 250"
+      ]
+    },
+    {
+      "name": "role-Carrier",
+      "legacyTotal": 3298,
+      "dbTotal": 3290,
+      "overlap": 13,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "role-Broker",
+      "legacyTotal": 278,
+      "dbTotal": 279,
+      "overlap": 23,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "role-Carrier-Broker",
+      "legacyTotal": 97,
+      "dbTotal": 98,
+      "overlap": 21,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "role-Local-Mover",
+      "legacyTotal": 300,
+      "dbTotal": 302,
+      "overlap": 8,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "state-FL",
+      "legacyTotal": 348,
+      "dbTotal": 95,
+      "overlap": 5,
+      "orderMatch": 3,
+      "notes": [
+        "total delta 348 vs 95"
+      ]
+    },
+    {
+      "name": "state-TX",
+      "legacyTotal": 318,
+      "dbTotal": 92,
+      "overlap": 1,
+      "orderMatch": 1,
+      "notes": [
+        "total delta 318 vs 92"
+      ]
+    },
+    {
+      "name": "state-CA",
+      "legacyTotal": 349,
+      "dbTotal": 85,
+      "overlap": 7,
+      "orderMatch": 0,
+      "notes": [
+        "total delta 349 vs 85"
+      ]
+    },
+    {
+      "name": "sort-reputation",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 9,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "sort-rating",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 21,
+      "orderMatch": 1,
+      "notes": []
+    },
+    {
+      "name": "sort-reviews",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 23,
+      "orderMatch": 7,
+      "notes": []
+    },
+    {
+      "name": "sort-price-low",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 12,
+      "orderMatch": 3,
+      "notes": []
+    },
+    {
+      "name": "sort-price-high",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 9,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "sort-years",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 11,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "sort-complaints",
+      "legacyTotal": 3685,
+      "dbTotal": 3685,
+      "overlap": 15,
+      "orderMatch": 2,
+      "notes": []
+    },
+    {
+      "name": "verified",
+      "legacyTotal": 3641,
+      "dbTotal": 3675,
+      "overlap": 9,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "full-service",
+      "legacyTotal": 20,
+      "dbTotal": 20,
+      "overlap": 19,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "min-rating-4",
+      "legacyTotal": 127,
+      "dbTotal": 127,
+      "overlap": 9,
+      "orderMatch": 0,
+      "notes": []
+    },
+    {
+      "name": "max-price-5000",
+      "legacyTotal": 9,
+      "dbTotal": 21,
+      "overlap": 9,
+      "orderMatch": 0,
+      "notes": [
+        "total delta 9 vs 21"
+      ]
+    },
+    {
+      "name": "bbb-A",
+      "legacyTotal": 81,
+      "dbTotal": 78,
+      "overlap": 7,
+      "orderMatch": 0,
+      "notes": []
+    }
+  ],
+  "diagnostics": [
+    {
+      "case": "default-page-1",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 174,
+        "mapMs": 429,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "default-page-2",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 164,
+        "mapMs": 348,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "deep-page-240",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 170,
+        "mapMs": 148,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "search-Allied",
+      "diag": {
+        "engine": "db",
+        "path": "search-rerank",
+        "dbMs": 162,
+        "mapMs": 169,
+        "rowsFetched": 1,
+        "total": 1,
+        "materializedIntoNode": 1
+      }
+    },
+    {
+      "case": "search-76235",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 158,
+        "mapMs": 153,
+        "rowsFetched": 1,
+        "total": 1,
+        "materializedIntoNode": 1
+      }
+    },
+    {
+      "case": "search-Mayflower",
+      "diag": {
+        "engine": "db",
+        "path": "search-rerank",
+        "dbMs": 169,
+        "mapMs": 147,
+        "rowsFetched": 1,
+        "total": 1,
+        "materializedIntoNode": 1
+      }
+    },
+    {
+      "case": "search-125563",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 138,
+        "mapMs": 167,
+        "rowsFetched": 1,
+        "total": 1,
+        "materializedIntoNode": 1
+      }
+    },
+    {
+      "case": "search-Gomuverz",
+      "diag": {
+        "engine": "db",
+        "path": "search-rerank",
+        "dbMs": 185,
+        "mapMs": 134,
+        "rowsFetched": 1,
+        "total": 1,
+        "materializedIntoNode": 1
+      }
+    },
+    {
+      "case": "search-4525347",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 131,
+        "mapMs": 155,
+        "rowsFetched": 1,
+        "total": 1,
+        "materializedIntoNode": 1
+      }
+    },
+    {
+      "case": "search-moving",
+      "diag": {
+        "engine": "db",
+        "path": "search-rerank",
+        "dbMs": 165,
+        "mapMs": 812,
+        "rowsFetched": 250,
+        "total": 250,
+        "materializedIntoNode": 250
+      }
+    },
+    {
+      "case": "search-van-lines",
+      "diag": {
+        "engine": "db",
+        "path": "search-rerank",
+        "dbMs": 151,
+        "mapMs": 465,
+        "rowsFetched": 164,
+        "total": 164,
+        "materializedIntoNode": 164
+      }
+    },
+    {
+      "case": "search-transport",
+      "diag": {
+        "engine": "db",
+        "path": "search-rerank",
+        "dbMs": 184,
+        "mapMs": 408,
+        "rowsFetched": 250,
+        "total": 250,
+        "materializedIntoNode": 250
+      }
+    },
+    {
+      "case": "role-Carrier",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 142,
+        "mapMs": 336,
+        "rowsFetched": 24,
+        "total": 3290,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "role-Broker",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 152,
+        "mapMs": 149,
+        "rowsFetched": 24,
+        "total": 279,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "role-Carrier-Broker",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 134,
+        "mapMs": 300,
+        "rowsFetched": 24,
+        "total": 98,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "role-Local-Mover",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 167,
+        "mapMs": 335,
+        "rowsFetched": 24,
+        "total": 302,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "state-FL",
+      "diag": {
+        "engine": "db",
+        "path": "hybrid-local",
+        "dbMs": 177,
+        "mapMs": 482,
+        "rowsFetched": 100,
+        "total": 95,
+        "materializedIntoNode": 100
+      }
+    },
+    {
+      "case": "state-TX",
+      "diag": {
+        "engine": "db",
+        "path": "hybrid-local",
+        "dbMs": 171,
+        "mapMs": 561,
+        "rowsFetched": 100,
+        "total": 92,
+        "materializedIntoNode": 100
+      }
+    },
+    {
+      "case": "state-CA",
+      "diag": {
+        "engine": "db",
+        "path": "hybrid-local",
+        "dbMs": 236,
+        "mapMs": 850,
+        "rowsFetched": 100,
+        "total": 85,
+        "materializedIntoNode": 100
+      }
+    },
+    {
+      "case": "sort-reputation",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 196,
+        "mapMs": 418,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "sort-rating",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 293,
+        "mapMs": 1580,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "sort-reviews",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 472,
+        "mapMs": 525,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "sort-price-low",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 242,
+        "mapMs": 381,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "sort-price-high",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 333,
+        "mapMs": 394,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "sort-years",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 138,
+        "mapMs": 424,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "sort-complaints",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 149,
+        "mapMs": 436,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "verified",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 149,
+        "mapMs": 354,
+        "rowsFetched": 24,
+        "total": 3675,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "full-service",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 158,
+        "mapMs": 419,
+        "rowsFetched": 20,
+        "total": 20,
+        "materializedIntoNode": 20
+      }
+    },
+    {
+      "case": "min-rating-4",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 127,
+        "mapMs": 423,
+        "rowsFetched": 24,
+        "total": 127,
+        "materializedIntoNode": 24
+      }
+    },
+    {
+      "case": "max-price-5000",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 174,
+        "mapMs": 307,
+        "rowsFetched": 21,
+        "total": 21,
+        "materializedIntoNode": 21
+      }
+    },
+    {
+      "case": "bbb-A",
+      "diag": {
+        "engine": "db",
+        "path": "rpc",
+        "dbMs": 170,
+        "mapMs": 357,
+        "rowsFetched": 24,
+        "total": 78,
+        "materializedIntoNode": 24
+      }
+    }
+  ]
+}

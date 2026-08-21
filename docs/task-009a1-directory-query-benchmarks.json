@@ -1,0 +1,226 @@
+{
+  "generatedAt": "2026-08-21T01:35:21.924Z",
+  "task": "009A.1",
+  "googlePlacesRequests": 0,
+  "mandatoryProof": {
+    "requestedLimit": 24,
+    "dbRowsMaterializedIntoNode": 24,
+    "totalMatchingCompanies": 3685,
+    "mustNotMaterializeFullUniverse": true,
+    "passed": true
+  },
+  "engineRuns": [
+    {
+      "name": "default",
+      "wallMs": 1612,
+      "total": 3685,
+      "returned": 24,
+      "diag": {
+        "engine": "db",
+        "path": "pg",
+        "dbMs": 965,
+        "mapMs": 640,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      },
+      "proofBounded": true
+    },
+    {
+      "name": "USDOT-76235",
+      "wallMs": 1037,
+      "total": 1,
+      "returned": 1,
+      "diag": {
+        "engine": "db",
+        "path": "pg",
+        "dbMs": 823,
+        "mapMs": 214,
+        "rowsFetched": 1,
+        "total": 1,
+        "materializedIntoNode": 1
+      },
+      "proofBounded": true
+    },
+    {
+      "name": "exact-name-Allied",
+      "wallMs": 1007,
+      "total": 1,
+      "returned": 1,
+      "diag": {
+        "engine": "db",
+        "path": "search-rerank",
+        "dbMs": 841,
+        "mapMs": 162,
+        "rowsFetched": 1,
+        "total": 1,
+        "materializedIntoNode": 1
+      },
+      "proofBounded": true
+    },
+    {
+      "name": "common-search-moving",
+      "wallMs": 1758,
+      "total": 250,
+      "returned": 24,
+      "diag": {
+        "engine": "db",
+        "path": "search-rerank",
+        "dbMs": 812,
+        "mapMs": 884,
+        "rowsFetched": 250,
+        "total": 250,
+        "materializedIntoNode": 250
+      },
+      "proofBounded": true
+    },
+    {
+      "name": "Carrier",
+      "wallMs": 1303,
+      "total": 3290,
+      "returned": 24,
+      "diag": {
+        "engine": "db",
+        "path": "pg",
+        "dbMs": 896,
+        "mapMs": 404,
+        "rowsFetched": 24,
+        "total": 3290,
+        "materializedIntoNode": 24
+      },
+      "proofBounded": true
+    },
+    {
+      "name": "Broker",
+      "wallMs": 1052,
+      "total": 279,
+      "returned": 24,
+      "diag": {
+        "engine": "db",
+        "path": "pg",
+        "dbMs": 871,
+        "mapMs": 179,
+        "rowsFetched": 24,
+        "total": 279,
+        "materializedIntoNode": 24
+      },
+      "proofBounded": true
+    },
+    {
+      "name": "deep-page",
+      "wallMs": 1044,
+      "total": 3685,
+      "returned": 24,
+      "diag": {
+        "engine": "db",
+        "path": "pg",
+        "dbMs": 872,
+        "mapMs": 171,
+        "rowsFetched": 24,
+        "total": 3685,
+        "materializedIntoNode": 24
+      },
+      "proofBounded": true
+    }
+  ],
+  "queryPlans": [
+    {
+      "label": "default",
+      "wallMs": 119,
+      "planningTime": 0.05,
+      "executionTime": 13.938,
+      "planSummary": {
+        "nodeType": "Function Scan",
+        "actualRows": 24,
+        "actualTotalTime": 13.907,
+        "sharedHitBlocks": 625,
+        "sharedReadBlocks": 0
+      }
+    },
+    {
+      "label": "USDOT",
+      "wallMs": 113,
+      "planningTime": 0.034,
+      "executionTime": 5.598,
+      "planSummary": {
+        "nodeType": "Function Scan",
+        "actualRows": 1,
+        "actualTotalTime": 5.573,
+        "sharedHitBlocks": 625,
+        "sharedReadBlocks": 0
+      }
+    },
+    {
+      "label": "exact-name",
+      "wallMs": 124,
+      "planningTime": 0.045,
+      "executionTime": 28.738,
+      "planSummary": {
+        "nodeType": "Function Scan",
+        "actualRows": 1,
+        "actualTotalTime": 28.713,
+        "sharedHitBlocks": 625,
+        "sharedReadBlocks": 0
+      }
+    },
+    {
+      "label": "common-search",
+      "wallMs": 129,
+      "planningTime": 0.046,
+      "executionTime": 30.83,
+      "planSummary": {
+        "nodeType": "Function Scan",
+        "actualRows": 250,
+        "actualTotalTime": 30.79,
+        "sharedHitBlocks": 625,
+        "sharedReadBlocks": 0
+      }
+    },
+    {
+      "label": "Carrier",
+      "wallMs": 116,
+      "planningTime": 0.032,
+      "executionTime": 15.282,
+      "planSummary": {
+        "nodeType": "Function Scan",
+        "actualRows": 24,
+        "actualTotalTime": 15.255,
+        "sharedHitBlocks": 737,
+        "sharedReadBlocks": 0
+      }
+    },
+    {
+      "label": "Broker",
+      "wallMs": 100,
+      "planningTime": 0.042,
+      "executionTime": 7.506,
+      "planSummary": {
+        "nodeType": "Function Scan",
+        "actualRows": 24,
+        "actualTotalTime": 7.477,
+        "sharedHitBlocks": 737,
+        "sharedReadBlocks": 0
+      }
+    },
+    {
+      "label": "deep-page",
+      "wallMs": 112,
+      "planningTime": 0.045,
+      "executionTime": 13.202,
+      "planSummary": {
+        "nodeType": "Function Scan",
+        "actualRows": 24,
+        "actualTotalTime": 13.172,
+        "sharedHitBlocks": 625,
+        "sharedReadBlocks": 0
+      }
+    }
+  ],
+  "futureScale": {
+    "5000": "First-page cost remains O(limit) with index-backed sort — bounded YES",
+    "10000": "Same; COUNT may grow slightly but page fetch stays LIMIT 24 — bounded YES",
+    "25000": "May need covering indexes / materialized visibility flag — still bounded YES with current design",
+    "50000": "Same architecture; monitor COUNT cost; consider approx count for UI later — first-page DB cost bounded YES",
+    "firstPageDbCostBounded": "YES"
+  }
+}
