@@ -16,6 +16,7 @@
     "guard:supabase-project": "tsx scripts/guard-supabase-project.ts",
     "guard:local-movers-diversity": "tsx scripts/guard-local-movers-diversity.ts",
     "start": "next start",
+    "test": "node scripts/assert-share-002.mjs",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",

@@ -2,10 +2,13 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 export const alt =
-  'Move Trust Hub — independent directory to browse and compare FMCSA-licensed interstate movers';
+  'MoveTrustHub — independent moving company research and moving tools';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
+/**
+ * Default OG / Twitter card — Move orange + navy, with a quiet Ask network mark.
+ */
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
@@ -16,8 +19,8 @@ export default function OpenGraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          padding: '72px 80px',
-          background: 'linear-gradient(145deg, #071525 0%, #0B3D6B 42%, #0077D4 100%)',
+          padding: '56px 64px',
+          background: 'linear-gradient(145deg, #071525 0%, #0A2540 48%, #1a3a55 100%)',
           color: '#ffffff',
           fontFamily: 'system-ui, -apple-system, Segoe UI, sans-serif',
         }}
@@ -25,98 +28,151 @@ export default function OpenGraphImage() {
         <div
           style={{
             display: 'flex',
-            alignItems: 'center',
-            gap: 16,
-            fontSize: 28,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
           }}
         >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
+            <div
+              style={{
+                width: 72,
+                height: 72,
+                borderRadius: 16,
+                background: 'rgba(255,90,31,0.12)',
+                border: '2px solid #FF5A1F',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  width: 10,
+                  height: 10,
+                  borderRadius: 10,
+                  background: '#FF5A1F',
+                  top: 12,
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  width: 10,
+                  height: 10,
+                  borderRadius: 10,
+                  background: '#38BDF8',
+                  left: 12,
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  width: 10,
+                  height: 10,
+                  borderRadius: 10,
+                  background: '#0D9488',
+                  right: 12,
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  width: 10,
+                  height: 10,
+                  borderRadius: 10,
+                  background: '#A855F7',
+                  bottom: 12,
+                }}
+              />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <div
+                style={{
+                  fontSize: 36,
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  color: '#FF5A1F',
+                }}
+              >
+                MOVE
+              </div>
+              <div
+                style={{
+                  fontSize: 18,
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  color: 'rgba(255,255,255,0.92)',
+                }}
+              >
+                TRUST HUB
+              </div>
+            </div>
+          </div>
           <div
             style={{
-              width: 52,
-              height: 52,
-              borderRadius: 12,
-              background: 'linear-gradient(135deg, #22C55E 0%, #0EA5E9 55%, #2563EB 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff',
-              fontSize: 26,
-              fontWeight: 800,
+              fontSize: 18,
+              fontWeight: 700,
+              letterSpacing: '0.12em',
+              color: 'rgba(255,255,255,0.72)',
             }}
           >
-            A
+            ASK TRUST HUB NETWORK
           </div>
-          Move Trust Hub
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 980 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, maxWidth: 980 }}>
           <div
             style={{
-              fontSize: 64,
+              fontSize: 54,
               fontWeight: 700,
               lineHeight: 1.08,
               letterSpacing: '-0.03em',
             }}
           >
-            Browse &amp; Compare Verified Movers
+            Plan your move with better information
           </div>
           <div
             style={{
-              fontSize: 30,
+              fontSize: 26,
               lineHeight: 1.35,
-              color: 'rgba(255,255,255,0.92)',
-              maxWidth: 920,
+              color: 'rgba(255,255,255,0.9)',
+              maxWidth: 900,
             }}
           >
-            Independent directory for FMCSA-licensed interstate movers — attributable reviews,
-            pricing context, and safety data. No lead fees. No quote matching.
+            Mover research · licensing · calculators · comparisons
           </div>
         </div>
 
         <div
           style={{
             display: 'flex',
-            gap: 16,
-            fontSize: 22,
-            fontWeight: 600,
-            color: 'rgba(255,255,255,0.88)',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
-          <span
+          <div
             style={{
-              padding: '10px 18px',
-              borderRadius: 999,
-              background: 'rgba(255,255,255,0.12)',
-              border: '1px solid rgba(255,255,255,0.18)',
+              fontSize: 20,
+              fontWeight: 600,
+              color: 'rgba(255,255,255,0.82)',
             }}
           >
-            FMCSA Screened
-          </span>
-          <span
+            Independent consumer research
+          </div>
+          <div
             style={{
-              padding: '10px 18px',
-              borderRadius: 999,
-              background: 'rgba(255,255,255,0.12)',
-              border: '1px solid rgba(255,255,255,0.18)',
+              fontSize: 22,
+              fontWeight: 700,
+              color: '#FF5A1F',
             }}
           >
-            No Lead Fees
-          </span>
-          <span
-            style={{
-              padding: '10px 18px',
-              borderRadius: 999,
-              background: 'rgba(255,255,255,0.12)',
-              border: '1px solid rgba(255,255,255,0.18)',
-            }}
-          >
-            Transparent Scoring
-          </span>
+            movetrusthub.com
+          </div>
         </div>
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }
