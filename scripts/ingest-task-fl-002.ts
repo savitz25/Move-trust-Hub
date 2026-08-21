@@ -28,27 +28,43 @@ import {
   normalizePhone,
   parseCityStateZipFromLocation,
 } from '../lib/state-hhg/normalize';
-
+import { CONTACT_OBSERVATION_UPSERT_SQL } from '../lib/state-hhg/contact-observation';
 
 const GOOGLE_PLACES_REQUESTS = 0 as const;
 const RUN_NOTE = 'task-fl-002-florida-registry-contact-enrichment';
 
-function loadEnv() {
-  for (const file of [
-    resolve(process.cwd(), '.env.local'),
-    resolve('C:/Users/makei/move-trust-hub-task004/.env.local'),
-    resolve(process.cwd(), '.env.production.local'),
-  ]) {
-    if (!existsSync(file)) continue;
-    for (const raw of readFileSync(file, 'utf8').split('\n')) {
-      const match = raw.trim().match(/^([^#=]+)=(.*)$/);
+function loadEnvFiles() {
+  for (const file of ['.env.local', '.env.production.local']) {
+    const path = resolve(process.cwd(), file);
+    if (!existsSync(path)) continue;
+    for (const raw of readFileSync(path, 'utf8').split('\n')) {
+      const line = raw.trim();
+      if (!line || line.startsWith('#')) continue;
+      const match = line.match(/^([^#=]+)=(.*)$/);
       if (!match) continue;
       const key = match[1].trim();
       const value = match[2].trim().replace(/^["']|["']$/g, '');
       if (!process.env[key]) process.env[key] = value;
-      if (!process.env.DATABASE_URL && /^postgres/.test(value)) process.env.DATABASE_URL = value;
+      if (!process.env.DATABASE_URL && /^postgres(ql)?:\/\//i.test(value)) {
+        process.env.DATABASE_URL = value;
+      }
     }
   }
+}
+
+function resolveDatabaseUrl(): string {
+  const direct =
+    process.env.SUPABASE_DB_URL?.trim() ||
+    process.env.DATABASE_URL?.trim() ||
+    process.env.POSTGRES_URL?.trim();
+  if (direct) return direct;
+  const password = process.env.SUPABASE_DB_PASSWORD?.trim();
+  const publicUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  const ref = publicUrl?.match(/https:\/\/([^.]+)\.supabase\.co/)?.[1];
+  if (!password || !ref) {
+    throw new Error('BLOCKED — DATABASE ACCESS');
+  }
+  return `postgresql://postgres.${ref}:${encodeURIComponent(password)}@aws-1-us-west-2.pooler.supabase.com:5432/postgres`;
 }
 
 async function ensureSchema(client: pg.Client) {
@@ -86,10 +102,9 @@ async function ensureSchema(client: pg.Client) {
 }
 
 async function main() {
-  loadEnv();
+  loadEnvFiles();
   const dry = process.argv.includes('--dry-run');
-  const url = process.env.DATABASE_URL;
-  if (!url) throw new Error('BLOCKED — DATABASE ACCESS');
+  const url = resolveDatabaseUrl();
 
   console.log(JSON.stringify({ google_places_requests: 0, phase: 'start', dry }));
   const adapter = new FloridaStateMoverAdapter({ retrievedAt: new Date().toISOString() });
@@ -388,20 +403,7 @@ async function main() {
       normalized: string | null,
       quality: string | null
     ) => {
-      await write!.query(
-        `INSERT INTO public.provider_contact_observation (
-           company_id, state_code, regulator, regulatory_id, observation_type,
-           raw_value, normalized_value, source, source_record_id, source_url,
-           retrieved_at, verification_state, match_status, match_evidence, quality_class
-         ) VALUES ($1,'FL','FDACS',$2,$3,$4,$5,$6,$7,$8,now(),$9,$10,$11::jsonb,$12)
-         ON CONFLICT (regulatory_id, observation_type)
-         DO UPDATE SET
-           company_id = EXCLUDED.company_id,
-           verification_state = EXCLUDED.verification_state,
-           match_status = EXCLUDED.match_status,
-           match_evidence = EXCLUDED.match_evidence,
-           quality_class = EXCLUDED.quality_class`,
-        [
+      await write!.query(CONTACT_OBSERVATION_UPSERT_SQL, [
           match.matchedCompanyId,
           item.regulatoryId,
           type,
@@ -410,6 +412,7 @@ async function main() {
           String(rec.raw._sourceKind ?? 'fdacs'),
           rec.authorityNumber,
           'https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx',
+          new Date().toISOString(),
           obsVerification,
           linkStatus,
           JSON.stringify({
@@ -418,8 +421,7 @@ async function main() {
             google_places_requests: 0,
           }),
           quality,
-        ]
-      );
+        ]);
     };
     if (rec.email) {
       await insertObs('business_email', rec.email, emailParts.normalized, emailParts.class);

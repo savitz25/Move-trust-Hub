@@ -48,7 +48,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS provider_contact_observation_unique_idx
   ON public.provider_contact_observation (regulatory_id, observation_type);
 
 COMMENT ON TABLE public.provider_contact_observation IS
-  'FL-002: official source contact observations. Never blindly overwrite companies.phone/email/physical_address.';
+  'Current official source observation (one row per regulatory_id + observation_type). Refresh in place when FDACS changes. Never overwrite companies.email/phone/physical_address.';
 
 REVOKE ALL ON public.provider_contact_observation FROM anon, authenticated;
 

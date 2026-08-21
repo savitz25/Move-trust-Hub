@@ -8,6 +8,8 @@
 **Trust Score changed: NO.**  
 **Companies / indexable freeze: 4,941 / 4,905 unchanged.**
 
+`provider_contact_observation` is the **current official source observation** table: one FDACS value per `(regulatory_id, observation_type)`. A later official email/phone/address replaces the same row (`raw_value`, `normalized_value`, `retrieved_at`, and match metadata). Historical versions are not stored here. Refreshing an observation never writes `companies.email`, `companies.phone`, or `companies.physical_address`.
+
 ---
 
 ## 1. Executive summary
