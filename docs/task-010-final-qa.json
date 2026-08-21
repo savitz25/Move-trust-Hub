@@ -1,0 +1,111 @@
+{
+  "google_places_requests": 0,
+  "totals": {
+    "companies": 4941,
+    "indexable": 4905,
+    "consumer_visible": 4905,
+    "interstate_visible": 4605
+  },
+  "waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000,
+      "indexable_status": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274,
+      "indexable_status": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279,
+      "indexable_status": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920,
+      "indexable_status": 920
+    }
+  ],
+  "wave4_capabilities": [
+    {
+      "capability": "hhg_interstate_carrier",
+      "n": 920
+    }
+  ],
+  "protected": [
+    {
+      "id": "allied",
+      "usdot_number": "76235",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true
+    },
+    {
+      "id": "arpin",
+      "usdot_number": "49922",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true
+    },
+    {
+      "id": "atlas",
+      "usdot_number": "125550",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true
+    },
+    {
+      "id": "graebel",
+      "usdot_number": null,
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false
+    },
+    {
+      "id": "mayflower",
+      "usdot_number": "125563",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true
+    },
+    {
+      "id": "national",
+      "usdot_number": "76628",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true
+    },
+    {
+      "id": "north-american",
+      "usdot_number": "70851",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true
+    },
+    {
+      "id": "northern-michigan-moving",
+      "usdot_number": "1398726",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false
+    },
+    {
+      "id": "northern-michigan-moving-2",
+      "usdot_number": "1398726",
+      "publication_state": "REVIEW_REQUIRED",
+      "indexable": false
+    },
+    {
+      "id": "wheaton",
+      "usdot_number": "70719",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true
+    }
+  ],
+  "overlay_resolved_distinct_public_indexable": 0,
+  "checks": {
+    "wave1": true,
+    "wave2": true,
+    "wave3": true,
+    "wave4": true,
+    "wave4_indexable": true,
+    "companies": true,
+    "indexable": true,
+    "carrier_cap_only": true,
+    "no_008b_public": true
+  }
+}

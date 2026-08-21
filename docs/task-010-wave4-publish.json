@@ -1,0 +1,92 @@
+{
+  "google_places_requests": 0,
+  "dry": false,
+  "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+  "limit": 920,
+  "inserted": 270,
+  "skipped": 0,
+  "excluded": {
+    "canonical_usdot_collision": 650
+  },
+  "before": {
+    "companies": 4671,
+    "indexable": 3985
+  },
+  "after": {
+    "companies": 4941,
+    "indexable": 3985
+  },
+  "wave": [
+    {
+      "classification": "HHG_CARRIER",
+      "n": 920
+    }
+  ],
+  "selected": {
+    "total": 270,
+    "carrier": 270,
+    "broker": 0,
+    "dual": 0,
+    "states": 6
+  },
+  "prior_waves": [
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_1",
+      "n": 1000
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_2",
+      "n": 1274
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_3",
+      "n": 1279
+    },
+    {
+      "wave_id": "FEDERAL_HHG_2026_08_WAVE_4_FINAL_CLEAN",
+      "n": 920
+    }
+  ],
+  "protected": [
+    {
+      "id": "allied",
+      "usdot_number": "76235"
+    },
+    {
+      "id": "arpin",
+      "usdot_number": "49922"
+    },
+    {
+      "id": "atlas",
+      "usdot_number": "125550"
+    },
+    {
+      "id": "graebel",
+      "usdot_number": null
+    },
+    {
+      "id": "mayflower",
+      "usdot_number": "125563"
+    },
+    {
+      "id": "national",
+      "usdot_number": "76628"
+    },
+    {
+      "id": "north-american",
+      "usdot_number": "70851"
+    },
+    {
+      "id": "northern-michigan-moving",
+      "usdot_number": "1398726"
+    },
+    {
+      "id": "northern-michigan-moving-2",
+      "usdot_number": "1398726"
+    },
+    {
+      "id": "wheaton",
+      "usdot_number": "70719"
+    }
+  ]
+}
