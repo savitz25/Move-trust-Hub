@@ -1,0 +1,15 @@
+{
+  "task": "FL-C003",
+  "county_stack_preserved": true,
+  "rebase_performed": false,
+  "origin_main_at_task_start": "d486e5a8eadef9639f70561ecac31ba2b226e7b4",
+  "c002_head": "a92d194b566e34966b73ae19a955c5fe1b0f7696",
+  "identity_reference": "Live Supabase Florida companies (fl-*) + provider_state_authority (FL) snapshot via read-only REST",
+  "material_differences_noted": [
+    "County stack is based on C001/C002 and is behind origin/main (includes FL-005 publication contract).",
+    "Live DB already reflects FL-004 canonicalization (fl-im-* companies; PSA VERIFIED links).",
+    "No county-branch identity code was required to differ for this analysis; current DB state used as authority.",
+    "FL-006 multi-state work exists on Builder1 worktree but C003 did not rebase onto it; live DB snapshot captures current linked identities."
+  ],
+  "analysis_technically_valid_without_rebase": true
+}

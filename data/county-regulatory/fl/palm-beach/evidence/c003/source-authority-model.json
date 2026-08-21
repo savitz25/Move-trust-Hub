@@ -1,0 +1,35 @@
+{
+  "task": "FL-C003",
+  "authorities": {
+    "FDACS": {
+      "authoritative_for": [
+        "Florida Chapter 507 state mover registration"
+      ],
+      "status_examples": [
+        "Registered",
+        "active"
+      ]
+    },
+    "Palm_Beach_County_Consumer_Affairs": {
+      "authoritative_for": [
+        "Palm Beach Moving Business Permit",
+        "Palm Beach Consumer Affairs cases",
+        "Palm Beach dispositions",
+        "Palm Beach county enforcement"
+      ],
+      "status_examples": [
+        "LICENSED",
+        "EXPIRED",
+        "SUSPEND",
+        "REVOKED"
+      ]
+    }
+  },
+  "rule": "Do not allow one jurisdiction status to overwrite another. FDACS ACTIVE and Palm Beach LICENSED are distinct facts.",
+  "conflict_types": {
+    "JURISDICTIONAL_DIFFERENCE": "Both facts can be correct (different regulators).",
+    "TEMPORAL_DIFFERENCE": "Retrieval/effective dates differ.",
+    "IDENTITY_CONFLICT": "Evidence supports incompatible business identities.",
+    "CROSS_SOURCE_REVIEW_REQUIRED": "Needs human review before attachment."
+  }
+}

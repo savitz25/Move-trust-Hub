@@ -1,0 +1,12 @@
+{
+  "task": "FL-C003",
+  "note": "Read-only classification against live Florida companies/PSA snapshot. No company or PSA rows modified.",
+  "summary": {
+    "CANONICAL_LINKED": 46,
+    "CANONICAL_CANDIDATE": 0,
+    "STATE_RECORD_ONLY": 18,
+    "COUNTY_ONLY_REVIEW": 78
+  },
+  "verified_linked": 46,
+  "verified_state_only": 18
+}

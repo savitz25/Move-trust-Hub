@@ -1,0 +1,22 @@
+{
+  "task": "FL-C003",
+  "recomputed_from": [
+    "mover-permits.json",
+    "business-information-reports.json",
+    "complaint-observations.json",
+    "enforcement-observations.json",
+    "fdacs-matchability.json"
+  ],
+  "active_licensed_permits": 142,
+  "bir_businesses_sampled": 22,
+  "complaint_observations": 20,
+  "dispositions_with_code_or_desc": 17,
+  "enforcement_observations": 54,
+  "c002_matchability_counts": {
+    "DETERMINISTIC_MATCH": 59,
+    "REVIEW_REQUIRED": 17,
+    "NOT_FOUND": 66,
+    "INSUFFICIENT_EVIDENCE": 0
+  },
+  "note": "These are recomputed from staged files; not forced to historical report numbers."
+}

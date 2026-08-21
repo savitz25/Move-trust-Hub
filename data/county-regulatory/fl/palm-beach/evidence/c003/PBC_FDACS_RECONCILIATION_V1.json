@@ -1,0 +1,33 @@
+{
+  "ruleset_id": "PBC_FDACS_RECONCILIATION_V1",
+  "fail_closed": true,
+  "outcomes": [
+    "VERIFIED",
+    "REVIEW_REQUIRED",
+    "NOT_FOUND",
+    "CONFLICT",
+    "NOT_APPLICABLE"
+  ],
+  "verify_requires_one_of": [
+    "exact_legal_name + exact_phone",
+    "exact_legal_name + exact_physical_address",
+    "exact_dba + exact_phone",
+    "exact_dba + exact_physical_address",
+    "exact_legal_name + exact_business_email",
+    "explicit shared FDACS identifier (not observed on PBC public roster)"
+  ],
+  "never_verify_from_only": [
+    "name",
+    "DBA",
+    "city",
+    "ZIP",
+    "website",
+    "domain",
+    "franchise/network identity",
+    "fuzzy similarity",
+    "shared address alone where common",
+    "shared phone alone where ambiguous"
+  ],
+  "conflict_when": "Two or more strong FDACS candidates with incompatible identity evidence, or strong corroboration for mutually exclusive entities.",
+  "not_applicable_when": "Record is not a Moving Business Permit / outside county mover program (not expected in this roster)."
+}
