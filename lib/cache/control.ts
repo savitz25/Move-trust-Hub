@@ -20,3 +20,15 @@ export const IMMUTABLE_ASSET = 'public, max-age=31536000, immutable';
 export function cdnCacheControl(sMaxAge: number): string {
   return `max-age=${sMaxAge}`;
 }
+
+/**
+ * Company profile HTML must not get a middleware CDN TTL.
+ * A 300s CDN cache was storing streamed HTTP 200 "not found" shells (FL-010R).
+ * `/companies` index and `/share-og` keep their existing TTLs.
+ */
+export function shouldApplyMiddlewareHtmlCache(pathname: string): boolean {
+  if (pathname.includes('/share-og')) return true;
+  if (pathname === '/companies') return true;
+  if (pathname.startsWith('/companies/')) return false;
+  return true;
+}

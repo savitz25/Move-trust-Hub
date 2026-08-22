@@ -70,7 +70,9 @@ function mergeDbWithSeedCatalog(db: Company, slug: string): Company {
  * the full directory — avoids loading every company on cold profile/metadata paths.
  * Always finalizes Google/BBB display enrichment so profile + compare stay consistent.
  */
-export async function getCompanyBySlugAsync(slug: string): Promise<Company | undefined> {
+export const getCompanyBySlugAsync = cache(async function getCompanyBySlugAsync(
+  slug: string
+): Promise<Company | undefined> {
   const requested = (slug || '').trim();
   if (!requested) return undefined;
 
@@ -88,7 +90,7 @@ export async function getCompanyBySlugAsync(slug: string): Promise<Company | und
   return finalizeCompanyEnrichmentForDisplay(
     preferCanonicalSlugIdentity(pinCompanyIdentity(resolved, requested), requested)
   );
-}
+});
 
 /** Identity pin after DB/seed merge — keep resolved slug for alias redirects. */
 function preferCanonicalSlugIdentity(company: Company, _requestedSlug: string): Company {

@@ -1,0 +1,25 @@
+{
+  "google_places_requests": 0,
+  "base": "https://move-trust-4duwyeta7-savitz25-s-projects.vercel.app",
+  "method": "vercel curl (SSO-protected preview)",
+  "ingested_404": 5,
+  "ingested_tested": 5,
+  "unknown_404": 5,
+  "unknown_tested": 5,
+  "publishable_canary": 200,
+  "indexable": 200,
+  "rows": [
+    { "path": "/companies/gentletouch-moving-company", "status": 404 },
+    { "path": "/companies/clover-systems-llc", "status": 404 },
+    { "path": "/companies/nippon-express-u-s-a-inc", "status": 404 },
+    { "path": "/companies/top-class-moving-inc", "status": 404 },
+    { "path": "/companies/fuentes-moving-corp", "status": 404 },
+    { "path": "/companies/fl010r-unknown-preview-1", "status": 404 },
+    { "path": "/companies/fl010r-unknown-preview-2", "status": 404 },
+    { "path": "/companies/fl010r-unknown-preview-3", "status": 404 },
+    { "path": "/companies/fl010r-unknown-preview-4", "status": 404 },
+    { "path": "/companies/fl010r-unknown-preview-5", "status": 404 },
+    { "path": "/companies/i-95-relocation-inc", "status": 200 },
+    { "path": "/companies/allied-van-lines", "status": 200 }
+  ]
+}
