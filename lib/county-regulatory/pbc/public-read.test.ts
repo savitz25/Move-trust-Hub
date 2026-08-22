@@ -8,7 +8,9 @@ import { isAnonymousPublicProfileAllowed } from '@/lib/provider/publication';
 import {
   PBC_REGULATOR,
   PBC_SOURCE_KEY,
+  palmBeachPermitBlockHeading,
   selectPublishedPalmBeachPermits,
+  statusPublicLabel,
   type PalmBeachCredentialRow,
 } from '@/lib/county-regulatory/pbc/public-read-core';
 
@@ -134,5 +136,42 @@ describe('PBC-PROD-003 publication gate fixtures', () => {
     for (const term of forbidden) {
       assert.equal(new RegExp(`\\b${term}\\b`, 'i').test(copy), false);
     }
+  });
+
+  it('status semantics: LICENSED → permit label, not endorsement', () => {
+    assert.equal(
+      statusPublicLabel('LICENSED'),
+      'Active county moving-business permit'
+    );
+    assert.match(statusPublicLabel('SUSPEND'), /Permit status reported by Palm Beach County/);
+  });
+
+  it('plural heading for multi-MV DTO; singular for one', () => {
+    const two = selectPublishedPalmBeachPermits({
+      companyId: COMPANY,
+      publicationState: 'PUBLISHABLE',
+      rows: [
+        row({ credential_number: 'MV50' }),
+        row({ credential_number: 'MV868' }),
+      ],
+    });
+    assert.equal(two.length, 2);
+    assert.equal(
+      palmBeachPermitBlockHeading(two),
+      'Palm Beach County Moving Permits'
+    );
+    assert.equal(
+      palmBeachPermitBlockHeading(two.slice(0, 1)),
+      'Palm Beach County Moving Permit'
+    );
+  });
+
+  it('wrong-company rows rejected even if PUBLISHED', () => {
+    const out = selectPublishedPalmBeachPermits({
+      companyId: COMPANY,
+      publicationState: 'PUBLISHABLE',
+      rows: [row({ company_id: 'other-company', credential_number: 'MV50' })],
+    });
+    assert.equal(out.length, 0);
   });
 });

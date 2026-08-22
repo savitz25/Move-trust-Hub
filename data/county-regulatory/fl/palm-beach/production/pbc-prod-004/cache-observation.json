@@ -1,0 +1,21 @@
+{
+  "task": "PBC-PROD-004",
+  "intended_cdn_ttl_seconds": 300,
+  "sample_cdn_header": "max-age=300",
+  "cold": {
+    "age": "11",
+    "xvc": "HIT",
+    "cdn": "max-age=300",
+    "mv": true
+  },
+  "warm": {
+    "age": "12",
+    "xvc": "HIT",
+    "cdn": "max-age=300",
+    "mv": true
+  },
+  "cross_contamination": false,
+  "no_24h_cdn": true,
+  "note": "CDN hotfix from PBC-PROD-003 (#75) expected max-age=300 on /companies/:path*",
+  "pass": true
+}

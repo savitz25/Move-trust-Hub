@@ -29,6 +29,7 @@ export {
   PBC_REGULATOR,
   selectPublishedPalmBeachPermits,
   statusPublicLabel,
+  palmBeachPermitBlockHeading,
   type PalmBeachPublishedPermit,
   type PalmBeachCredentialRow,
 } from '@/lib/county-regulatory/pbc/public-read-core';

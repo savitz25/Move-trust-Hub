@@ -46,6 +46,19 @@ export function statusPublicLabel(status: string): string {
 }
 
 /**
+ * Singular vs plural card heading for one or more published permits.
+ * Spec: one MV → "Palm Beach County Moving Permit";
+ * multiple current MVs → "Palm Beach County Moving Permits".
+ */
+export function palmBeachPermitBlockHeading(
+  permits: ReadonlyArray<{ credentialNumber: string }>
+): string {
+  return permits.length > 1
+    ? 'Palm Beach County Moving Permits'
+    : 'Palm Beach County Moving Permit';
+}
+
+/**
  * Filter + map credential rows for public presentation.
  * REAL PUBLISHED gate — INTERNAL_ONLY / WITHHELD / wrong program never pass.
  */

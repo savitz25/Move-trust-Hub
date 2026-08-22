@@ -2,6 +2,7 @@ import { Landmark } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   PBC_SOURCE_LOOKUP_URL,
+  palmBeachPermitBlockHeading,
   type PalmBeachPublishedPermit,
 } from '@/lib/county-regulatory/pbc/public-read';
 import { cn } from '@/lib/utils';
@@ -12,8 +13,9 @@ export type PalmBeachCountyPermitBlockProps = {
 };
 
 /**
- * Palm Beach County Moving Permit evidence. Not an endorsement.
+ * Palm Beach County Moving Permit(s) evidence. Not an endorsement.
  * Only mount when fail-closed public-read returns PUBLISHED rows for a public company.
+ * Plural heading when multiple current permits are present.
  */
 export function PalmBeachCountyPermitBlock({
   permits,
@@ -21,12 +23,14 @@ export function PalmBeachCountyPermitBlock({
 }: PalmBeachCountyPermitBlockProps) {
   if (!permits.length) return null;
 
+  const heading = palmBeachPermitBlockHeading(permits);
+
   return (
     <Card className={cn('mb-6 border-primary/20', className)}>
       <CardHeader className="pb-2 px-4 sm:px-6">
         <CardTitle className="text-base flex items-center gap-2">
           <Landmark className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-          <span>Palm Beach County Moving Permit</span>
+          <span>{heading}</span>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 px-4 sm:px-6 text-sm break-words">
