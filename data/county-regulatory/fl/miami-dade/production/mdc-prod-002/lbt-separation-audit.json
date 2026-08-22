@@ -1,0 +1,8 @@
+{
+  "task": "MDC-PROD-002",
+  "lbt_is_mover_authority": false,
+  "future_label_if_shown": "Local Business Tax record",
+  "never_label_as": "Moving License",
+  "wave_a_lbt_rows": 0,
+  "architecture_keeps_mr_separate": true
+}

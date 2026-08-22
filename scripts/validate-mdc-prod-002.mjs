@@ -25,6 +25,18 @@ for (const f of [
   'public-copy-contract.json',
   'palm-beach-architecture-reuse-audit.json',
   'future-public-read-contract.json',
+  'public-dto-contract.json',
+  'public-read-contract.json',
+  'consumer-copy-contract.json',
+  'simulated-publication-delta.json',
+  'public-leakage-audit.json',
+  'palm-beach-freeze.json',
+  'state-freeze.json',
+  'mdc-impact-delta.json',
+  'direct-table-security.json',
+  'identity-manual-audit.json',
+  'profile-presentation-contract.json',
+  'structured-data-hold.json',
 ]) {
   assert.ok(existsSync(resolve(OUT, f)), `missing ${f}`);
 }
@@ -93,6 +105,26 @@ const read = JSON.parse(
 );
 assert.equal(read.implement_in_002, false);
 assert.equal(read.production_db_writes, 0);
+
+const dto = JSON.parse(readFileSync(resolve(OUT, 'public-dto-contract.json'), 'utf8'));
+assert.ok(dto.safe_fields.includes('credentialNumber'));
+assert.ok(dto.never_expose.includes('manifestHash'));
+
+const leak = JSON.parse(readFileSync(resolve(OUT, 'public-leakage-audit.json'), 'utf8'));
+assert.equal(leak.pass, true);
+assert.equal(leak.profile, 0);
+assert.equal(leak.anon_table, 'DENIED');
+
+const sim = JSON.parse(
+  readFileSync(resolve(OUT, 'simulated-publication-delta.json'), 'utf8')
+);
+assert.equal(sim.apply, false);
+assert.equal(sim.companies, 0);
+assert.equal(sim.trust_score, 0);
+assert.equal(sim.palm_beach, 0);
+
+const pbc = JSON.parse(readFileSync(resolve(OUT, 'palm-beach-freeze.json'), 'utf8'));
+assert.equal(pbc.pass, true);
 
 const script = readFileSync(
   'scripts/run-mdc-prod-002-publication-readiness.mjs',

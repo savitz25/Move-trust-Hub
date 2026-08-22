@@ -1,0 +1,8 @@
+{
+  "task": "MDC-PROD-002",
+  "origin_main_sha": "37cc0fd3b9f9d0341f67e4b6a0a903683031b8a3",
+  "production_sha": "37cc0fd3b9f9d0341f67e4b6a0a903683031b8a3",
+  "match": true,
+  "latest_builder1_open_pr": 83,
+  "latest_builder2_merged": 82
+}

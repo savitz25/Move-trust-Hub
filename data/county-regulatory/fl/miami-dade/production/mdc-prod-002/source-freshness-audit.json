@@ -1,0 +1,430 @@
+{
+  "task": "MDC-PROD-002",
+  "counts": {
+    "CURRENT": 70
+  },
+  "canary_eligible": 70,
+  "pass": true,
+  "rows": [
+    {
+      "mr": "MR-00002",
+      "company_id": "fl-im-27",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00015",
+      "company_id": "fl-im-106",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00018",
+      "company_id": "fl-im-125",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00049",
+      "company_id": "fl-im-366",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00067",
+      "company_id": "fl-im-160",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00068",
+      "company_id": "fl-im-1573",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00113",
+      "company_id": "fl-im-333",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00207",
+      "company_id": "fl-im-260",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00278",
+      "company_id": "fl-im-607",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00310",
+      "company_id": "fl-im-512",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00317",
+      "company_id": "fl-im-22",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00332",
+      "company_id": "fl-im-810",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00338",
+      "company_id": "fl-im-668",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00366",
+      "company_id": "fl-im-500",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00378",
+      "company_id": "fl-im-2724",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00416",
+      "company_id": "fl-im-1503",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00444",
+      "company_id": "fl-im-1100",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00449",
+      "company_id": "fl-im-1079",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00450",
+      "company_id": "fl-im-1214",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00458",
+      "company_id": "fl-im-1319",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00476",
+      "company_id": "usdot-1329594",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-00570",
+      "company_id": "fl-im-2476",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01006",
+      "company_id": "fl-im-2442",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01016",
+      "company_id": "fl-im-1689",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01020",
+      "company_id": "fl-im-2474",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01029",
+      "company_id": "fl-im-1624",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01045",
+      "company_id": "fl-im-1723",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01049",
+      "company_id": "fl-im-2549",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01054",
+      "company_id": "fl-im-2983",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01074",
+      "company_id": "fl-im-2551",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01079",
+      "company_id": "fl-im-2446",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01109",
+      "company_id": "fl-im-2051",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01137",
+      "company_id": "fl-im-2478",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01139",
+      "company_id": "fl-im-2239",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01140",
+      "company_id": "fl-im-2467",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01141",
+      "company_id": "fl-im-2438",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01147",
+      "company_id": "fl-im-3470",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01164",
+      "company_id": "fl-im-2284",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01192",
+      "company_id": "fl-im-2781",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01208",
+      "company_id": "fl-im-2606",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01209",
+      "company_id": "usdot-3080327",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01216",
+      "company_id": "fl-im-2463",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01221",
+      "company_id": "pro-movers-2",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01237",
+      "company_id": "fl-im-3034",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01244",
+      "company_id": "fl-im-2830",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01249",
+      "company_id": "fl-im-4103",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01253",
+      "company_id": "fl-im-2986",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01267",
+      "company_id": "fl-im-2521",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01283",
+      "company_id": "fl-im-3135",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01295",
+      "company_id": "fl-im-3245",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01296",
+      "company_id": "fl-im-3250",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-01314",
+      "company_id": "fl-im-3395",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-092140",
+      "company_id": "fl-im-3382",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-092297",
+      "company_id": "fl-im-3711",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-092523",
+      "company_id": "fl-im-3385",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-092562",
+      "company_id": "fl-im-3718",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-093002",
+      "company_id": "fl-im-4075",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-093500",
+      "company_id": "fl-im-3812",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-094574",
+      "company_id": "fl-im-4203",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-095117",
+      "company_id": "fl-im-4019",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-095236",
+      "company_id": "fl-im-3869",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-095332",
+      "company_id": "fl-im-3978",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-095349",
+      "company_id": "fl-im-2293",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-095401",
+      "company_id": "fl-im-4089",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-095487",
+      "company_id": "fl-im-4154",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-095542",
+      "company_id": "fl-im-4044",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-095935",
+      "company_id": "fl-im-4006",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-096207",
+      "company_id": "fl-im-4084",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-096653",
+      "company_id": "fl-im-4120",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    },
+    {
+      "mr": "MR-097254",
+      "company_id": "fl-im-4179",
+      "freshness": "CURRENT",
+      "canary_eligible": true
+    }
+  ]
+}

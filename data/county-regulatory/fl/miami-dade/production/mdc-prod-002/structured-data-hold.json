@@ -1,0 +1,6 @@
+{
+  "task": "MDC-PROD-002",
+  "recommendation": "HOLD_FROM_STRUCTURED_DATA_V1",
+  "mr_in_jsonld_initial_canary": false,
+  "mdc_prod_002_runtime_change": false
+}

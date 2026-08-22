@@ -1,0 +1,62 @@
+{
+  "task": "MDC-PROD-002",
+  "profile": 0,
+  "search": 0,
+  "directory": 0,
+  "compare": 0,
+  "api": 0,
+  "json_ld": 0,
+  "og_share": 0,
+  "county_page": 0,
+  "anon_table": "DENIED",
+  "anon_privilege": false,
+  "auth_privilege": false,
+  "samples": [
+    {
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "raul-s-moving-inc",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "homestead-transfer-storage-co",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "genesis-moving-storage-inc",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "south-florida-van-line-inc",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "fuentes-moving-corp",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "nobel-van-lines",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "dixie-movers",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "pro-movers-2",
+      "status": 200,
+      "mdc_block": false
+    }
+  ],
+  "pass": true
+}

@@ -69,6 +69,23 @@ LBT remains separately labeled and is **not** mover authority.
 
 Future read rule: anonymously public company **AND** `PUBLISHED` **AND** MDC program — fail closed. Implement in MDC-PROD-003.
 
+## Public surface contracts (§§24–30)
+
+- Direct table: anon/auth SELECT **DENIED** (no broad `WHERE PUBLISHED` anon policy)
+- DTO: only jurisdiction/regulator/type/MR/status/source/retrieval/disclaimer
+- Profile-only enrichment under Federal → State → County
+- JSON-LD: `HOLD_FROM_STRUCTURED_DATA_V1`
+- Search/directory/compare/Trust Score/sitemap/indexable deltas: **0**
+
+## Canary draft
+
+`MDC_MR_PUBLICATION_CANARY_V1_DRAFT` · **9/9** · hash `b50ba162…` · `apply=false`  
+Ready pool = canary (all ready rows ≤11). Simulated deltas all **0**.
+
+## Leakage / freezes
+
+Current MR public exposure **0**; anon DENIED. PBC **46/11/35**. State/PSA/contacts/LBT/complaints freezes **0**.
+
 ## Next
 
-**MDC-PROD-003 — Miami-Dade MR credential publication canary** (do not start automatically)
+**MDC-PROD-003 — Miami-Dade MR Controlled Public Presentation Canary** (do not start automatically)

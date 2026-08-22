@@ -1,0 +1,12 @@
+{
+  "status": "READY_FOR_MDC_MR_PUBLICATION_CANARY",
+  "production_db_writes": 0,
+  "ready_companies": 9,
+  "ready_credentials": 9,
+  "canary_companies": 9,
+  "canary_credentials": 9,
+  "draft_hash": "b50ba162bc3630b24bf8f9fff93c8f60f3beeebb06f1aca6ee9ae56f2bfdd1ac",
+  "leakage_pass": true,
+  "palm_beach_pass": true,
+  "mdc_still_internal_only": true
+}
