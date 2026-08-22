@@ -1,0 +1,18 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "credential_roster_refresh": "in_place_upsert_bump_retrieved_at",
+  "append_only_history_table": "FUTURE_OPTIONAL",
+  "retain_on_credential": [
+    "ruleset_version",
+    "match_method",
+    "linked_at",
+    "ingest_run_id",
+    "evidence_hash"
+  ],
+  "re_freeze_before_pbc_prod_001": true,
+  "notes": [
+    "Live identity/publication may drift under Builder 1; cohort freeze must be revalidated before INTERNAL ingest",
+    "Do not invent history rows in Wave A"
+  ]
+}

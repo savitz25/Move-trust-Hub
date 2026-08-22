@@ -1,0 +1,35 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "risks": [
+    {
+      "id": "PSA_COUNTY_OVERLOAD",
+      "mitigation": "psa_overload_forbidden; county credentials in provider_county_credential only"
+    },
+    {
+      "id": "CONTACT_OBSERVATION_FDACS_CLOBBER",
+      "mitigation": "Extend uniqueness to include regulator; county regulator distinct from FDACS"
+    },
+    {
+      "id": "COMPANY_ID_RETARGET",
+      "mitigation": "Fail closed; do not silently retarget on REVIEW/CONFLICT"
+    },
+    {
+      "id": "ENFORCEMENT_EVENT_DEDUP",
+      "mitigation": "Unique (program_id, event_key); follow C003 unique event key discipline"
+    },
+    {
+      "id": "STATE_PUBLICATION_COLLISION",
+      "mitigation": "SAFE_TO_INTEGRATE=NO; transplant wait; county evidence must not mutate indexable/publication_state"
+    },
+    {
+      "id": "DUPLICATE_CREDENTIAL_INGEST",
+      "mitigation": "Natural key (program_id, credential_number, source); idempotent upsert"
+    }
+  ],
+  "canonical_delta_at_c009": {
+    "gained": 0,
+    "lost": 0,
+    "current_canonical_linked": 46
+  }
+}

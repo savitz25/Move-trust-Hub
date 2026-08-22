@@ -1,0 +1,44 @@
+{
+  "task": "FL-C009",
+  "wave": "A",
+  "name": "Credential",
+  "design_only": true,
+  "scope": [
+    "Moving Business Permit number",
+    "county status",
+    "issue/expiration dates when present",
+    "regulator",
+    "source provenance",
+    "fail-closed company_id for PRODUCTION_LINK_READY",
+    "on-row cross-source link fields"
+  ],
+  "excluded": [
+    "owner_officer_productization",
+    "contact_overwrite_companies",
+    "complaints",
+    "dispositions",
+    "enforcement",
+    "fleet_vin_inventory",
+    "public_profile_ui",
+    "trust_score",
+    "indexable_mutation",
+    "publish"
+  ],
+  "eligibility": {
+    "ingest_integration_class": "PRODUCTION_LINK_READY",
+    "ingest_count": 46,
+    "evidence_publication_state": "INTERNAL_ONLY",
+    "public_display": "ONLY_WHEN_COMPANY_PUBLIC_AND_EVIDENCE_PUBLICATION_ELIGIBLE"
+  },
+  "company_publication_among_link_ready": {
+    "INGESTED": 33,
+    "NULL": 11,
+    "PUBLISHABLE": 2,
+    "indexable_mostly": false,
+    "implication": "Wave A future ingest = INTERNAL_ONLY for all 46; almost none public-ready"
+  },
+  "trust_score": "UNCHANGED",
+  "psa_overload": false,
+  "google_places_api_requests": 0,
+  "production_db_migrations": 0
+}

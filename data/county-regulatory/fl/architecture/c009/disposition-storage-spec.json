@@ -1,0 +1,22 @@
+{
+  "task": "FL-C009",
+  "table": "county_disposition_observation",
+  "reference_table": "regulatory_disposition_code",
+  "wave": "C",
+  "design_only": true,
+  "production_db_migrations": 0,
+  "design_input_counts": {
+    "dispositions_with_code_or_desc": 17,
+    "disposition_code_catalog": 44
+  },
+  "separate_from_complaint": true,
+  "catalog": {
+    "jurisdiction": "FL_PBC",
+    "code_count": 44,
+    "role": "REGULATORY_DISPOSITION_CODE reference data for PBC",
+    "source_artifact": "data/county-regulatory/fl/palm-beach/evidence/c003/disposition-catalog-with-groups.json"
+  },
+  "default_evidence_publication_state": "INTERNAL_ONLY",
+  "consumer_pii_committed": 0,
+  "trust_score_input": false
+}

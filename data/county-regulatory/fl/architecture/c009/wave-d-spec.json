@@ -1,0 +1,20 @@
+{
+  "task": "FL-C009",
+  "wave": "D",
+  "name": "Enforcement",
+  "depends_on": ["A", "B"],
+  "design_only": true,
+  "scope": [
+    "administrative actions / citations SAMPLE",
+    "explicit finality only when present",
+    "enforcement event != final outcome conceptually"
+  ],
+  "design_input_counts": {
+    "raw_enforcement_observations": 54,
+    "unique_event_keys": 49
+  },
+  "finality_on_event": true,
+  "separate_final_outcome_table_required_v1": false,
+  "default_evidence_publication_state": "INTERNAL_ONLY",
+  "trust_score": "UNCHANGED"
+}

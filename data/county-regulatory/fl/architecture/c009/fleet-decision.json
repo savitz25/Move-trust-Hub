@@ -1,0 +1,18 @@
+{
+  "task": "FL-C009",
+  "concept": "fleet",
+  "vin_inventory": "FUTURE",
+  "county_reported_fleet_total": {
+    "decision": "OPTIONAL_WAVE_B",
+    "label": "county-reported fleet total",
+    "verified_vehicles": false,
+    "source": "PBC moving business permit roster fleet_size field",
+    "consumer_copy_must_not_imply": [
+      "inspected fleet",
+      "verified VIN inventory",
+      "FMCSA power-unit equivalence without separate evidence"
+    ]
+  },
+  "wave_a": "EXCLUDED",
+  "design_only": true
+}

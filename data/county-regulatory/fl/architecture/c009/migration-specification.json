@@ -1,0 +1,26 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "production_db_migrations": 0,
+  "files_under_supabase_migrations": 0,
+  "executable_sql_in_this_task": false,
+  "sketch_location": "docs/county-regulatory/architecture/palm-beach-v1/storage-and-schema-spec.md",
+  "future_gated_migration_contents": [
+    "county_regulatory_program",
+    "provider_county_credential",
+    "optional county_cross_source_link",
+    "regulatory_disposition_code",
+    "county_complaint_observation",
+    "county_disposition_observation",
+    "county_enforcement_event",
+    "provider_contact_observation uniqueness extension for county regulator"
+  ],
+  "migration_prerequisites": [
+    "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW=YES",
+    "selective transplant merged",
+    "dedicated gated migration PR (not design task)",
+    "PBC-PROD-001 approval"
+  ],
+  "psa_changes": false,
+  "trust_score_schema_changes": false
+}

@@ -1,0 +1,31 @@
+{
+  "task": "FL-C009",
+  "recommended_fl_c010": "FL-C010 — County Stack Integration Gate — WAIT_FOR_STATE_TRACK_STABILITY",
+  "execute_transplant_in_c010": false,
+  "rationale": [
+    "origin/main observed ab93c841 includes FL-010r hard-404 remediation; state/publication still active",
+    "Builder 1 still changing publication/404 behavior",
+    "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW remains NO",
+    "Selective transplant and PBC-PROD must wait for stability gate, not start in C010"
+  ],
+  "explicitly_excluded_from_c010": [
+    "merge county stack to main",
+    "rebase onto main",
+    "selective transplant execution",
+    "production publish",
+    "Trust Score changes",
+    "Google Places APIs",
+    "production DB migrations",
+    "PBC-PROD-001 execution"
+  ],
+  "alternatives_considered": [
+    {
+      "title": "FL-C010 — Execute Strategy 3 selective transplant now",
+      "why_not_preferred": "State/publication path not stable; collision risk with Builder 1"
+    },
+    {
+      "title": "FL-C010 — PBC-PROD-001 foundation migration",
+      "why_not_preferred": "Stack transplant must happen BEFORE any PBC-PROD implementation"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "design_package_rollback": "Revert git commits for docs/data/scripts only",
+  "future_ddl_rollback": [
+    "Drop or disable new county tables",
+    "Do not touch PSA rows",
+    "Do not touch companies publication columns"
+  ],
+  "future_internal_ingest_rollback": [
+    "Delete county credential rows by program_id and/or ingest_run_id",
+    "Leave companies untouched"
+  ],
+  "future_accidental_publish_rollback": [
+    "Set evidence_publication_state to WITHHELD or INTERNAL_ONLY",
+    "Never fix by mutating Trust Score"
+  ],
+  "stack_transplant_rollback": "Revert integration PR; research stack branch remains source of truth"
+}

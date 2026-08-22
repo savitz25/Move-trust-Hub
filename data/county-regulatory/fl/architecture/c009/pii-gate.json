@@ -1,0 +1,14 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "consumer_pii_committed": 0,
+  "policy": [
+    "Business-level regulatory fields only",
+    "Strip/redact complainant identity before commit",
+    "No DOB / consumer home identity productization",
+    "Owner/officer optional and must remain non-consumer-PII if used",
+    "Reject ingest rows marked consumer_pii=true"
+  ],
+  "applies_to_waves": ["A", "B", "C", "D"],
+  "abort_on_pii_in_staging": true
+}

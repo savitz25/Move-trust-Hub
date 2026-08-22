@@ -1,0 +1,28 @@
+{
+  "task": "FL-C009",
+  "table": "county_enforcement_event",
+  "wave": "D",
+  "design_only": true,
+  "production_db_migrations": 0,
+  "design_input_counts": {
+    "raw_enforcement_observations": 54,
+    "unique_event_keys": 49,
+    "coverage_class": "SAMPLE"
+  },
+  "finality": {
+    "separate_final_outcome_table_required_v1": false,
+    "finality_on_event": true,
+    "finality_states": [
+      "UNKNOWN",
+      "NON_FINAL",
+      "FINAL_EXPLICIT",
+      "VACATED_EXPLICIT"
+    ],
+    "infer_finality": false
+  },
+  "natural_key": ["program_id", "event_key"],
+  "default_evidence_publication_state": "INTERNAL_ONLY",
+  "enforcement_event_equals_final_outcome": false,
+  "trust_score_input": false,
+  "consumer_pii_committed": 0
+}

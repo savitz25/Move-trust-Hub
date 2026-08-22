@@ -1,0 +1,57 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "recommended_fl_c010": "FL-C010 — County Stack Integration Gate — WAIT_FOR_STATE_TRACK_STABILITY",
+  "order": [
+    {
+      "id": "FL-C010",
+      "name": "County Stack Integration Gate — WAIT_FOR_STATE_TRACK_STABILITY",
+      "execute_transplant": false
+    },
+    {
+      "id": "TRANSPLANT",
+      "name": "Selective transplant onto clean main",
+      "depends_on": ["SAFE_TO_INTEGRATE_YES"],
+      "before_pbc_prod": true
+    },
+    {
+      "id": "PBC-PROD-001",
+      "name": "Foundation + Wave A INTERNAL ingest",
+      "publish": false,
+      "evidence_publication_state": "INTERNAL_ONLY",
+      "cohort_count": 46
+    },
+    {
+      "id": "PBC-PROD-002",
+      "name": "Wave A internal read path"
+    },
+    {
+      "id": "PBC-PROD-003",
+      "name": "Wave B contact observation extend"
+    },
+    {
+      "id": "PBC-PROD-004",
+      "name": "Wave C complaint/disposition + 44-code catalog"
+    },
+    {
+      "id": "PBC-PROD-005",
+      "name": "Wave D enforcement events"
+    },
+    {
+      "id": "PBC-PROD-006",
+      "name": "Controlled publication eligibility pass"
+    },
+    {
+      "id": "PBC-PROD-007",
+      "name": "Profile/county-page presentation"
+    }
+  ],
+  "invariants": [
+    "stack transplant before PBC-PROD",
+    "PSA not overloaded",
+    "Wave A first ingest INTERNAL",
+    "county evidence never flips indexable/Trust Score",
+    "consumer_pii_committed=0"
+  ]
+}

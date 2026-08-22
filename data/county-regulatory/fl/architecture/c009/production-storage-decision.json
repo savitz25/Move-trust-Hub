@@ -1,0 +1,82 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "production_db_migrations": 0,
+  "storage_recommendation": "OPTION_D_HYBRID",
+  "summary": "Reuse companies + provider_state_authority (STATE only); NEW county_regulatory_program + provider_county_credential; EXTEND/REUSE provider_contact_observation for Wave B; separate complaint and disposition tables; enforcement event with finality enum; optional separate cross_source_link table.",
+  "psa_overload_forbidden": true,
+  "psa_remains": "STATE_ONLY",
+  "new_county_credential_concept": true,
+  "decisions": [
+    {
+      "concept": "provider_state_authority",
+      "decision": "REUSE_EXISTING",
+      "notes": "State HHG only. County MV credentials must not overload PSA."
+    },
+    {
+      "concept": "companies",
+      "decision": "REUSE_EXISTING",
+      "notes": "Fail-closed company_id attachment target."
+    },
+    {
+      "concept": "county_regulatory_program",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "classification": "V1_REQUIRED"
+    },
+    {
+      "concept": "provider_county_credential",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "classification": "V1_REQUIRED"
+    },
+    {
+      "concept": "provider_contact_observation",
+      "decision": "EXTEND_REUSE",
+      "classification": "V1_REQUIRED_WAVE_B",
+      "notes": "County source provenance; never overwrite companies.*"
+    },
+    {
+      "concept": "regulatory_disposition_code",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "classification": "V1_REQUIRED_WAVE_C",
+      "notes": "PBC 44-code catalog as reference data."
+    },
+    {
+      "concept": "county_complaint_observation",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "classification": "V1_REQUIRED_WAVE_C"
+    },
+    {
+      "concept": "county_disposition_observation",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "classification": "V1_REQUIRED_WAVE_C"
+    },
+    {
+      "concept": "county_enforcement_event",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "classification": "V1_REQUIRED_WAVE_D",
+      "notes": "Finality field/state on event; separate final-outcome table not required for V1."
+    },
+    {
+      "concept": "county_cross_source_link",
+      "decision": "OPTIONAL_V1",
+      "notes": "Prefer verified link fields on county credential row."
+    },
+    {
+      "concept": "owner_officer_observation",
+      "decision": "V1_OPTIONAL",
+      "notes": "Not Wave A."
+    },
+    {
+      "concept": "fleet_vin_inventory",
+      "decision": "FUTURE",
+      "notes": "Optional Wave B county-reported fleet total label only."
+    },
+    {
+      "concept": "trust_score",
+      "decision": "UNCHANGED",
+      "notes": "County evidence must not write Trust Score."
+    }
+  ],
+  "sketches_path": "docs/county-regulatory/architecture/palm-beach-v1/storage-and-schema-spec.md",
+  "sketches_under_supabase_migrations": false
+}

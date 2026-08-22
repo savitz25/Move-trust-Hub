@@ -1,0 +1,15 @@
+{
+  "task": "FL-C009",
+  "county_stack_preserved": true,
+  "rebase_performed": false,
+  "merge_performed": false,
+  "origin_main_observed": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140",
+  "origin_main_note": "FL-010r hard-404 remediation merged \u2014 state/publication still active",
+  "c008_head": "13f409cc17e6c18e27388773848fc995c518cd27",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "selective_transplant_executed": false,
+  "production_db_migrations": 0,
+  "analysis_technically_valid_without_rebase": true,
+  "note": "FL-C009 design-only Palm Beach production evidence integration spec. Builder 1 still changing publication/404 behavior. Do not transplant or run PBC-PROD yet. Recommended FL-C010 wait gate.",
+  "origin_main_at_task_start": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140"
+}

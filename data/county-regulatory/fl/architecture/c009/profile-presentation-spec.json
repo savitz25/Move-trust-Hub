@@ -1,0 +1,27 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "implementation_in_c009": false,
+  "hierarchy": [
+    "State HHG authority (FDACS / provider_state_authority)",
+    "County Moving Business Permit (provider_county_credential) when eligible"
+  ],
+  "omit_county_block_when": [
+    "evidence_publication_state is INTERNAL_ONLY",
+    "evidence_publication_state is QUALIFIED",
+    "evidence_publication_state is WITHHELD",
+    "company not publicly reachable"
+  ],
+  "allowed_copy_patterns": [
+    "Palm Beach County lists Moving Business Permit {MV####} with status {status} as of {retrieved_at_date}.",
+    "County permit status is separate from Florida FDACS household goods authority."
+  ],
+  "forbidden_copy": [
+    "Fully licensed in all jurisdictions without per-jurisdiction facts",
+    "Trust Score improved because of county permit",
+    "complaint-free",
+    "verified fleet VIN inventory from roster fleet_size"
+  ],
+  "trust_score_badge_from_county": false,
+  "seo_indexable_from_county": false
+}

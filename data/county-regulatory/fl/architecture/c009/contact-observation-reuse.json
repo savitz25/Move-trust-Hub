@@ -1,0 +1,33 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "table": "provider_contact_observation",
+  "decision": "EXTEND_REUSE",
+  "wave": "B",
+  "never_overwrite_companies": true,
+  "companies_fields_protected": [
+    "email",
+    "phone",
+    "physical_address",
+    "website"
+  ],
+  "extension_required": {
+    "problem": "Existing unique index is (regulatory_id, observation_type) oriented to FDACS regulatory_id",
+    "preferred_fix": "Broaden uniqueness to (regulator, regulatory_id, observation_type) and allow county regulator values",
+    "alternative_fix": "Add jurisdiction_scope/source_system to uniqueness",
+    "apply_in_fl_c009": false,
+    "apply_under_supabase_migrations_in_this_task": false
+  },
+  "county_regulator_example": "PBC_CONSUMER_AFFAIRS",
+  "county_regulatory_id_example": "MV####",
+  "observation_types": [
+    "business_email",
+    "business_phone",
+    "physical_address"
+  ],
+  "notes": [
+    "Preserve FDACS rows",
+    "County observations are additional provenance",
+    "INTERNAL_ONLY until explicit eligibility"
+  ]
+}

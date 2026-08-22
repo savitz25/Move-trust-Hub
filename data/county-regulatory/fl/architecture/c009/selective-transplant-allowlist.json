@@ -1,0 +1,24 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "execute_now": false,
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "allowlist": [
+    "docs/county-regulatory/**",
+    "data/county-regulatory/**",
+    "data/regulatory-source-catalog/fl/**",
+    "scripts/fl-c00*.mjs",
+    "scripts/validate-fl-c00*.mjs"
+  ],
+  "denylist": [
+    "supabase/migrations/**",
+    "Trust Score / ranking libs",
+    "Builder 1 state publication scripts",
+    "Profile/county page product code on research stack",
+    "Google Places integration for county matching",
+    "Unrelated hub/app drift"
+  ],
+  "stack_transplant_before_pbc_prod": true,
+  "recommended_gate_task": "FL-C010 — County Stack Integration Gate — WAIT_FOR_STATE_TRACK_STABILITY"
+}
