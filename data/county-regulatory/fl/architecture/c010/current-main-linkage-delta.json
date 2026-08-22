@@ -1,18 +1,21 @@
 {
   "task": "FL-C010",
-  "retrieved_at": "2026-08-22T15:35:04.265Z",
-  "method": "OFFLINE_READONLY — no live DATABASE_URL in county worktree. Compared frozen qualified VERIFIED rows against C009 florida-im-company-crosswalk-current.json snapshot. Did not rewrite qualified historical artifacts.",
+  "retrieved_at": "2026-08-22T15:44:28.344Z",
+  "method": "OFFLINE_READONLY — no live DATABASE_URL in county worktree. Compared frozen qualified VERIFIED rows (fdacs_id) against C009 florida-im-company-crosswalk-current.json. Did not rewrite qualified historical artifacts.",
   "live_db_available": false,
   "palm_beach": {
+    "label": "palm_beach",
     "historical_verified_fdacs": 64,
-    "snapshot_im_map_keys": 1303,
-    "verified_rows_with_im_in_snapshot_map": 0,
-    "verified_rows_without_im_in_snapshot_map": 64
+    "verified_with_im_in_c009_snapshot_map": 64,
+    "historical_canonical_company_id_present": 46,
+    "historical_canonical_class_CANONICAL_LINKED": 46
   },
   "miami_dade": {
+    "label": "miami_dade",
     "historical_verified_fdacs": 86,
-    "verified_rows_with_im_in_snapshot_map": 0,
-    "verified_rows_without_im_in_snapshot_map": 86
+    "verified_with_im_in_c009_snapshot_map": 86,
+    "historical_canonical_company_id_present": 70,
+    "historical_canonical_class_CANONICAL_LINKED": 70
   },
-  "note": "Canonical drift vs live production cannot be fully recomputed without DB. Snapshot-based delta preserved for audit; live recompute belongs in FL-C011 preflight if env available."
+  "note": "Live production canonical drift cannot be fully recomputed without DB. Snapshot-based applicability preserved; live recompute belongs in FL-C011 preflight if env available. Historical qualified artifacts unchanged."
 }
