@@ -1,0 +1,148 @@
+{
+  "google_places_requests": 0,
+  "base": "https://www.movetrusthub.com",
+  "ingested_404": 0,
+  "ingested_tested": 0,
+  "unknown_404": 10,
+  "unknown_tested": 10,
+  "canary_200": 80,
+  "canary_tested": 80,
+  "indexable_status": 200,
+  "publishable_status": 200,
+  "publishable_noindex": true,
+  "ingested": [],
+  "unknown": [
+    {
+      "path": "/companies/fl010r-unknown-0-xxoagcc8",
+      "status": 404,
+      "ms": 10170,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-1-exnd7cqu",
+      "status": 404,
+      "ms": 8214,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-2-iqgaw27m",
+      "status": 404,
+      "ms": 8355,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-3-on8fjn77",
+      "status": 404,
+      "ms": 8153,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-4-kaxhkemy",
+      "status": 404,
+      "ms": 7993,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-5-tvfuzhob",
+      "status": 404,
+      "ms": 8388,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-6-yg7m6v5w",
+      "status": 404,
+      "ms": 7306,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-7-6nhiod4n",
+      "status": 404,
+      "ms": 7039,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-8-iypy0woy",
+      "status": 404,
+      "ms": 6822,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    },
+    {
+      "path": "/companies/fl010r-unknown-9-5m5l7gru",
+      "status": 404,
+      "ms": 7149,
+      "title": "Page Not Found | Move Trust Hub",
+      "noindex": true,
+      "leakName": false,
+      "robots": "noindex",
+      "matched": "/companies/[slug]",
+      "cdnCache": "max-age=86400"
+    }
+  ],
+  "indexable": {
+    "path": "/companies/allied-van-lines",
+    "status": 200,
+    "ms": 114,
+    "title": "Allied Van Lines — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
+    "noindex": false,
+    "leakName": false,
+    "robots": "index, follow",
+    "matched": "/companies/[slug]",
+    "cdnCache": "max-age=86400"
+  },
+  "publishableSample": {
+    "path": "/companies/i-95-relocation-inc",
+    "status": 200,
+    "ms": 117,
+    "title": "I 95 Relocation Inc. — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
+    "noindex": true,
+    "leakName": false,
+    "robots": "noindex, follow",
+    "matched": "/companies/[slug]",
+    "cdnCache": "max-age=86400"
+  }
+}
