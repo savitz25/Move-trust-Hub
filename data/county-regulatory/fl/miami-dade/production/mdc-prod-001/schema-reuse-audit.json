@@ -1,0 +1,18 @@
+{
+  "decision": {
+    "county_regulatory_program": "REUSE",
+    "provider_county_credential": "REUSE",
+    "provider_state_authority": "DO_NOT_USE_FOR_COUNTY_MR",
+    "provider_contact_observation": "OUT_OF_SCOPE_WAVE_A"
+  },
+  "tables": [
+    "county_regulatory_program",
+    "provider_county_credential"
+  ],
+  "rls": {
+    "county_regulatory_program": true,
+    "provider_county_credential": true
+  },
+  "anon_auth_grants": [],
+  "ok": true
+}

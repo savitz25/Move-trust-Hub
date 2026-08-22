@@ -1,0 +1,20 @@
+{
+  "task": "MDC-PROD-001",
+  "mdc": {
+    "total": 70,
+    "internal_only": 70,
+    "published": 0,
+    "eligible": 0,
+    "companies": 70
+  },
+  "palm_beach": {
+    "total": 46,
+    "published": 11,
+    "internal_only": 35
+  },
+  "anon_direct_select": "DENIED",
+  "anon_error": "permission denied for table provider_county_credential",
+  "authenticated_privilege_select": false,
+  "anon_privilege_select": false,
+  "pass": true
+}
