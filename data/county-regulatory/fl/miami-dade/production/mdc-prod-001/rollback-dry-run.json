@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "mode": "rollback-dry-run",
+  "would_delete": 70,
+  "would_delete_program_if_orphaned": true,
+  "never_delete": [
+    "canonical companies",
+    "FDACS PSA",
+    "Palm Beach data",
+    "Builder 1 state data",
+    "research files"
+  ],
+  "manifest_hash": "56cfc4c3cec43781e4188f50704ebd7740dd3d04b7af6f818629cbaaa5a1a8eb"
+}

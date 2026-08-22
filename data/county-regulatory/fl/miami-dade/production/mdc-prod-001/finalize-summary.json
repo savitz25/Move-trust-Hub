@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "status": "MIAMI-DADE MR WAVE A INGESTED — INTERNAL ONLY",
+  "freeze_hash": "5f54438533ed036de3088633302d71d128936cf385fda558aa769f5dddb24d7c",
+  "manifest_hash": "56cfc4c3cec43781e4188f50704ebd7740dd3d04b7af6f818629cbaaa5a1a8eb",
+  "credentials": 70,
+  "companies": 70,
+  "published": 0,
+  "dry_runs_match": true,
+  "rollback_would_delete": 70
+}

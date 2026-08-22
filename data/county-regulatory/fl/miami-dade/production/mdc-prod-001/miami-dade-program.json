@@ -1,0 +1,12 @@
+{
+  "task": "MDC-PROD-001",
+  "source_key": "mdc-moving-business-registration",
+  "agency_name": "Miami-Dade Department of Regulatory and Economic Resources (RER) — Consumer and Neighborhood Protection Division",
+  "program_name": "Moving Business Registration / License",
+  "county_fips": "12086",
+  "credential_type": "moving_business_registration",
+  "identifier_format": "MR-#####",
+  "source_url": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+  "program_id": "0d4fc3af-a1bb-4c98-96a8-909bf30d9657",
+  "research_package_hash": "bac8ce4f15908a4a"
+}
