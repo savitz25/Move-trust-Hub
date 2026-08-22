@@ -1,0 +1,11 @@
+﻿{
+  "task": "MDC-PROD-003",
+  "shared_gate": "lib/county-regulatory/shared/public-read-gate.ts",
+  "shared_server_reader": "lib/county-regulatory/shared/fetch-published-county-credentials.ts",
+  "miami_adapter": "lib/county-regulatory/mdc/public-read.ts",
+  "miami_core": "lib/county-regulatory/mdc/public-read-core.ts",
+  "ui": "components/company/miami-dade-registration-block.tsx",
+  "pbc_refactored_to_shared": true,
+  "second_engine": false,
+  "google_places_api_requests": 0
+}

@@ -1,0 +1,18 @@
+{
+  "mode": "rollback-dry-run",
+  "credential_transitions": {
+    "from": "PUBLISHED",
+    "to": "INTERNAL_ONLY",
+    "count": 0
+  },
+  "would_revert": 0,
+  "companies": 0,
+  "company_publication": 0,
+  "credential_delete": 0,
+  "program_delete": 0,
+  "state": 0,
+  "pbc": 0,
+  "lbt": 0,
+  "schema_drop": 0,
+  "unrelated_county_credentials": 0
+}

@@ -1,0 +1,6 @@
+﻿{
+  "dry_run_1": {"would_publish": 9, "already_published": 0, "companies": 0, "company_publication": 0, "indexable": 0, "psa": 0, "contacts": 0, "lbt": 0, "complaints": 0, "enforcement": 0, "trust_score": 0, "pbc": 0, "state": 0, "unexpected": 0},
+  "dry_run_2": {"would_publish": 9, "already_published": 0, "companies": 0, "company_publication": 0, "indexable": 0, "psa": 0, "contacts": 0, "lbt": 0, "complaints": 0, "enforcement": 0, "trust_score": 0, "pbc": 0, "state": 0, "unexpected": 0},
+  "identical": true,
+  "db_writes": 0
+}

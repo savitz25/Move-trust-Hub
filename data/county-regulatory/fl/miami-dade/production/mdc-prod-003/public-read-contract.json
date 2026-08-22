@@ -1,0 +1,31 @@
+{
+  "task": "MDC-PROD-002",
+  "rule": {
+    "and": [
+      "company independently anonymously public",
+      "credential evidence_publication_state === 'PUBLISHED'",
+      "program/source === 'mdc-moving-business-registration'"
+    ]
+  },
+  "fail_closed_examples": [
+    {
+      "case": "PUBLISHABLE company + INTERNAL_ONLY MR",
+      "result": "hidden"
+    },
+    {
+      "case": "INGESTED company + PUBLISHED MR",
+      "result": "anonymous profile/evidence unavailable"
+    },
+    {
+      "case": "wrong program",
+      "result": "hidden"
+    },
+    {
+      "case": "DB error",
+      "result": "omit county evidence safely"
+    }
+  ],
+  "implement_in": "MDC-PROD-003",
+  "implement_in_002": false,
+  "production_db_writes": 0
+}
