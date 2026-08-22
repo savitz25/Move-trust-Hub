@@ -1,0 +1,245 @@
+{
+  "google_places_requests": 0,
+  "sunbiz_bulk_scrape": 0,
+  "fdacs_snapshot": "2026-08-21T17:11:52.759Z",
+  "fdacs_lookup_url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+  "usdot_slug_inference": 0,
+  "accepted_link_evidence": [
+    "exact_legal_name_and_phone",
+    "exact_legal_name_and_email"
+  ],
+  "rows": [
+    {
+      "mb": "MB1",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB101",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "REMAINS_IDENTITY_REVIEW"
+    },
+    {
+      "mb": "MB105",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "STATUS_BLOCKED"
+    },
+    {
+      "mb": "MB106",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB110",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB111",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB113",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB114",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "EXPIRED_NO_STAGING"
+    },
+    {
+      "mb": "MB12",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB136",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB137",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "REMAINS_IDENTITY_REVIEW"
+    },
+    {
+      "mb": "MB144",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB149",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB151",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "REMAINS_IDENTITY_REVIEW"
+    },
+    {
+      "mb": "MB152",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "REMAINS_IDENTITY_REVIEW"
+    },
+    {
+      "mb": "MB154",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "REMAINS_IDENTITY_REVIEW"
+    },
+    {
+      "mb": "MB157",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB159",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "exact_legal_name_and_phone",
+      "terminal": "EXISTING_CANONICAL_LINK_READY"
+    },
+    {
+      "mb": "MB161",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB165",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "EXPIRED_NO_STAGING"
+    },
+    {
+      "mb": "MB166",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB169",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB170",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB171",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "exact_prior_state_authority",
+      "terminal": "EXISTING_CANONICAL_ALREADY_MODELED"
+    },
+    {
+      "mb": "MB172",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB173",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB174",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "NEW_BROKER_CANONICAL_READY"
+    },
+    {
+      "mb": "MB175",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "REMAINS_IDENTITY_REVIEW"
+    },
+    {
+      "mb": "MB98",
+      "sources": [
+        "FDACS_APPROVED_SNAPSHOT"
+      ],
+      "matchMethod": "none",
+      "terminal": "REMAINS_IDENTITY_REVIEW"
+    }
+  ]
+}

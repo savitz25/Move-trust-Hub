@@ -1,0 +1,163 @@
+{
+  "google_places_requests": 0,
+  "historical": 17,
+  "recomputed": 17,
+  "tally": {
+    "NEW_BROKER_CANONICAL_READY": 17
+  },
+  "rows": [
+    {
+      "mb": "MB1",
+      "legalName": "LEXICON RELOCATION, L.L.C.",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB106",
+      "legalName": "ELDER MOVE HELPER INC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB110",
+      "legalName": "MOVE MASTERS, LLC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB111",
+      "legalName": "Nelan Relocation Services, Inc.",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB113",
+      "legalName": "ALL AROUND MOVING SERVICES COMPANY, INC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB12",
+      "legalName": "SUDDATH CONTAINER SERVICES, INC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB136",
+      "legalName": "EAGLE MOVING GROUP INC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB144",
+      "legalName": "BRONZE STAR MOVING AND STORAGE INCORPORATED",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB149",
+      "legalName": "BIG BURNS MOVING, LLC.",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB157",
+      "legalName": "COASTAL MOVING SERVICES LLC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB161",
+      "legalName": "SWIFT SHIFT VAN LINES LLC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB166",
+      "legalName": "AMERICA'S CHOICE VAN LINES INC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB169",
+      "legalName": "NORTHERN RELOCATION LLC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB170",
+      "legalName": "MBA RELOCATION SOLUTIONS LLC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB172",
+      "legalName": "AMERICA'S FINEST MOVING & STORAGE LLC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB173",
+      "legalName": "HAUL OPERATOR LOGISTICS LLC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB174",
+      "legalName": "EASY DAY MOVING LLC",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "reasons": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "google_places_requests": 0
+    }
+  ]
+}

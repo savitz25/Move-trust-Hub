@@ -1,0 +1,16 @@
+{
+  "google_places_requests": 0,
+  "origin_main": "e7a3cd00b36e20c763599ea94606ca6fa7f634f8",
+  "production_sha": "e7a3cd00b36e20c763599ea94606ca6fa7f634f8",
+  "sha_match": "YES",
+  "latest_builder1_pr": 86,
+  "latest_builder2_pr": 87,
+  "companies": {
+    "companies": 5940,
+    "indexable": 4905,
+    "fl_im": 849,
+    "fl_im_ingested": 762,
+    "publishable": 5022
+  },
+  "retrieved_at": "2026-08-22T23:39:32.397Z"
+}

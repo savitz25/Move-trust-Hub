@@ -1,0 +1,625 @@
+{
+  "id": "FL_FDACS_MB_UNIVERSE_V1",
+  "google_places_requests": 0,
+  "total": 29,
+  "status_tally": {
+    "active": 26,
+    "unknown": 1,
+    "expired": 2
+  },
+  "rows": [
+    {
+      "mb": "MB1",
+      "legalName": "LEXICON RELOCATION, L.L.C.",
+      "dba": "Sterling Lexicon",
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "904-858-1255",
+      "email": "danielle.morgan@lexiconrelocation.com",
+      "address": "815 S MAIN ST STE 300",
+      "city": "JACKSONVILLE",
+      "postalCode": "32207",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB101",
+      "legalName": "CARTUS CORPORATION",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "203-205-3400",
+      "email": "stephanie.dempsey@cartus.com",
+      "address": "100 RESERVE RD",
+      "city": "DANBURY",
+      "postalCode": "06810",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB105",
+      "legalName": "RELOCATE US LLC",
+      "dba": null,
+      "sourceStatusRaw": "Law NA -No Intrastate Moves",
+      "statusNormalized": "unknown",
+      "phone": "401-486-2203",
+      "email": "relocateUStoday@gmail.com",
+      "address": "454 S YONGE ST",
+      "city": "ORMOND BEACH",
+      "postalCode": "32174",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB106",
+      "legalName": "ELDER MOVE HELPER INC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "407-455-4855",
+      "email": "brent@eldermovehelper.com",
+      "address": "5264 GREENHEART AVE",
+      "city": "MOUNT DORA",
+      "postalCode": "32757",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB110",
+      "legalName": "MOVE MASTERS, LLC",
+      "dba": "Move Masters Of Florida, Llc",
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "866-739-7856",
+      "email": "njones@movemasters.com",
+      "address": "8445 WESTERN WAY",
+      "city": "JACKSONVILLE",
+      "postalCode": "32256",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB111",
+      "legalName": "Nelan Relocation Services, Inc.",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "(352) 483-3000",
+      "email": "nelanrelocation@yahoo.com",
+      "address": "19114 Bates Avenue",
+      "city": "Eustis",
+      "postalCode": "32736",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_new_portal_csv",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB113",
+      "legalName": "ALL AROUND MOVING SERVICES COMPANY, INC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "305-974-5324",
+      "email": "info@allaroundmoving.com",
+      "address": "2775 NE 187TH ST APT 711",
+      "city": "MIAMI",
+      "postalCode": "33180",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB114",
+      "legalName": "J & D PROFESSIONAL SERVICES OF FLORIDA, INC.",
+      "dba": null,
+      "sourceStatusRaw": "Expired",
+      "statusNormalized": "expired",
+      "phone": "941-378-5898",
+      "email": "jdprofessional@verizon.net",
+      "address": "720 CEDARCREST CT",
+      "city": "SARASOTA",
+      "postalCode": "34232",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB12",
+      "legalName": "SUDDATH CONTAINER SERVICES, INC",
+      "dba": "Wildcat Container Services",
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "904-390-7100",
+      "email": "legal@suddath.com",
+      "address": "815 S MAIN ST 6TH FL",
+      "city": "JACKSONVILLE",
+      "postalCode": "32207",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB136",
+      "legalName": "EAGLE MOVING GROUP INC",
+      "dba": "New Start Relocation",
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "877-540-2992",
+      "email": "frank@nwmoving.com",
+      "address": "1325 S CONGRESS AVE STE 110",
+      "city": "BOYNTON BEACH",
+      "postalCode": "33426",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB137",
+      "legalName": "AMS MOVING INC",
+      "dba": "Amerisafe Vanlines",
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "501-257-3470",
+      "email": "frankd410@gmail.com",
+      "address": "2500 QUANTUM LAKES DR STE 105",
+      "city": "BOYNTON BEACH",
+      "postalCode": "33426",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB144",
+      "legalName": "BRONZE STAR MOVING AND STORAGE INCORPORATED",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "561-600-1564",
+      "email": "info@bronzestarmoving.com",
+      "address": "1499 FOREST HILL BLVD STE 113",
+      "city": "WEST PALM BEACH",
+      "postalCode": "33406",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB149",
+      "legalName": "BIG BURNS MOVING, LLC.",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "727-900-8788",
+      "email": "bigburnsmoving@gmail.com",
+      "address": "3140 JACKSON DR",
+      "city": "HOLIDAY",
+      "postalCode": "34691",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB151",
+      "legalName": "EVERSAFE MOVING AND STORAGE LLC",
+      "dba": "Movesafe Relocation",
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "904-258-3682",
+      "email": "matthewricci@gmaol.com",
+      "address": "1331 S FEDERAL HWY UNIT 236",
+      "city": "BOYNTON BEACH",
+      "postalCode": "33435",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB152",
+      "legalName": "MOVING APT., INC.",
+      "dba": "Moving Services",
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "786-528-6086",
+      "email": "info@movingapt.com",
+      "address": "175 SW 7TH ST STE 1811",
+      "city": "MIAMI",
+      "postalCode": "33130",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB154",
+      "legalName": "DORM ROOM MOVERS LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "888-769-3676",
+      "email": "registrations@dormroommovers.com",
+      "address": "7901 4TH ST N STE 300",
+      "city": "SAINT PETERSBURG",
+      "postalCode": "33702",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB157",
+      "legalName": "COASTAL MOVING SERVICES LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "561-210-5051",
+      "email": "admin@coastalmovingservices.com",
+      "address": "5455 N FEDERAL HWY STE P",
+      "city": "BOCA RATON",
+      "postalCode": "33487",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB159",
+      "legalName": "REAL TIME RELOCATION LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "904-364-0077",
+      "email": "realtimerelo@gmail.com",
+      "address": "933 BEVILLE RD BLDG 101A-UNITS H & K",
+      "city": "SOUTH DAYTONA",
+      "postalCode": "32119",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [
+        "fl-im-3405"
+      ],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB161",
+      "legalName": "SWIFT SHIFT VAN LINES LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "888-453-5501",
+      "email": "gabby@swiftshiftvanlines.com",
+      "address": "1825 NW CORPORATE BLVD",
+      "city": "BOCA RATON",
+      "postalCode": "33431",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB165",
+      "legalName": "ARCA INTERNATIONAL, INC.",
+      "dba": "Expat Relocation Solutions",
+      "sourceStatusRaw": "Expired",
+      "statusNormalized": "expired",
+      "phone": "877-664-2004",
+      "email": "DMARTIN@ACERELOCATION.COM",
+      "address": "8695 TRANSPORT DR STE 110",
+      "city": "ORLANDO",
+      "postalCode": "32832",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB166",
+      "legalName": "AMERICA'S CHOICE VAN LINES INC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "800-515-3013",
+      "email": null,
+      "address": "3400 NW 27TH AVE UNIT C7",
+      "city": "POMPANO BEACH",
+      "postalCode": "33069",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB169",
+      "legalName": "NORTHERN RELOCATION LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "888-404-1778",
+      "email": "josh@northernrelo.com",
+      "address": "5601 CORPORATE WAY STE 320",
+      "city": "WEST PALM BEACH",
+      "postalCode": "33407",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB170",
+      "legalName": "MBA RELOCATION SOLUTIONS LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "786-228-1184",
+      "email": "denise@mbarelocationsolutions.com",
+      "address": "3301 N UNIVERSITY DR STE 100",
+      "city": "CORAL SPRINGS",
+      "postalCode": "33065",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB171",
+      "legalName": "PINNACLE VAN LINES LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "888-581-6895",
+      "email": "james@pinnaclevanlinesllc.com",
+      "address": "10 FAIRWAY DR STE 100",
+      "city": "DEERFIELD BEACH",
+      "postalCode": "33441",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [
+        "usdot-3197443"
+      ],
+      "federalIdentifiers": {
+        "usdot": "3197443",
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB172",
+      "legalName": "AMERICA'S FINEST MOVING & STORAGE LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "833-855-3055",
+      "email": "americasfinestmoving@gmail.com",
+      "address": "1926 HOLLYWOOD BLVD STE 207",
+      "city": "HOLLYWOOD",
+      "postalCode": "33020",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB173",
+      "legalName": "HAUL OPERATOR LOGISTICS LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "407-777-7558",
+      "email": "info@hauloperator.com",
+      "address": "2125 TYBEE RD",
+      "city": "SAINT CLOUD",
+      "postalCode": "34769",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB174",
+      "legalName": "EASY DAY MOVING LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "407-600-9871",
+      "email": "rudzitis78@gmail.com",
+      "address": "409 ALPINE ST",
+      "city": "ALTAMONTE SPRINGS",
+      "postalCode": "32701",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB175",
+      "legalName": "SAFESHIELD MOVING SERVICES LLC",
+      "dba": null,
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "561-400-8919",
+      "email": "info@safeshieldmoving.com",
+      "address": "2240 W WOOLBRIGHT RD STE 346",
+      "city": "BOYNTON BEACH",
+      "postalCode": "33426",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB98",
+      "legalName": "GLOBAL VAN LINES, LLC",
+      "dba": "Imove",
+      "sourceStatusRaw": "Registered",
+      "statusNormalized": "active",
+      "phone": "260-429-2130",
+      "email": "katrina.lea@sirva.com",
+      "address": "101 E WASHINGTON BLVD STE 1100",
+      "city": "FORT WAYNE",
+      "postalCode": "46802",
+      "sourceRetrievedAt": "2026-08-21T17:11:52.759Z",
+      "sourceProvenance": "fdacs_legacy_xls",
+      "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "currentCanonicalCandidates": [],
+      "federalIdentifiers": {
+        "usdot": null,
+        "inferredFromUsdotSlug": false
+      },
+      "google_places_requests": 0
+    }
+  ]
+}

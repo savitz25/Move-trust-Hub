@@ -1,0 +1,32 @@
+{
+  "google_places_requests": 0,
+  "historical_exact": 2,
+  "recomputed": 2,
+  "pass": 2,
+  "rows": [
+    {
+      "mb": "MB159",
+      "legalName": "REAL TIME RELOCATION LLC",
+      "matchedCompanyId": "fl-im-3405",
+      "terminal": "EXISTING_CANONICAL_LINK_READY",
+      "matchMethod": "exact_legal_name_and_phone",
+      "verdict": "PASS",
+      "reasons": [
+        "exact_legal_identity_and_corroboration"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB171",
+      "legalName": "PINNACLE VAN LINES LLC",
+      "matchedCompanyId": "usdot-3197443",
+      "terminal": "EXISTING_CANONICAL_ALREADY_MODELED",
+      "matchMethod": "exact_prior_state_authority",
+      "verdict": "PASS",
+      "reasons": [
+        "exact_legal_identity_and_corroboration"
+      ],
+      "google_places_requests": 0
+    }
+  ]
+}

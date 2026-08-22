@@ -1,0 +1,871 @@
+{
+  "id": "FL_FDACS_MB_INTERNAL_STAGING_V1_DRAFT",
+  "apply": false,
+  "hash": "e1e78a4d18cf2c0c",
+  "google_places_requests": 0,
+  "operations": [
+    {
+      "operation": "INSERT",
+      "mb": "MB1",
+      "sourceLegalName": "LEXICON RELOCATION, L.L.C.",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-1",
+      "proposedSlug": "lexicon-relocation-l-l-c",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB106",
+      "sourceLegalName": "ELDER MOVE HELPER INC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-106",
+      "proposedSlug": "elder-move-helper-inc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB110",
+      "sourceLegalName": "MOVE MASTERS, LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-110",
+      "proposedSlug": "move-masters-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB111",
+      "sourceLegalName": "Nelan Relocation Services, Inc.",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-111",
+      "proposedSlug": "nelan-relocation-services-inc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_new_portal_csv",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB113",
+      "sourceLegalName": "ALL AROUND MOVING SERVICES COMPANY, INC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-113",
+      "proposedSlug": "all-around-moving-services-company-inc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB12",
+      "sourceLegalName": "SUDDATH CONTAINER SERVICES, INC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-12",
+      "proposedSlug": "suddath-container-services-inc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB136",
+      "sourceLegalName": "EAGLE MOVING GROUP INC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-136",
+      "proposedSlug": "eagle-moving-group-inc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB144",
+      "sourceLegalName": "BRONZE STAR MOVING AND STORAGE INCORPORATED",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-144",
+      "proposedSlug": "bronze-star-moving-and-storage-incorporated",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB149",
+      "sourceLegalName": "BIG BURNS MOVING, LLC.",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-149",
+      "proposedSlug": "big-burns-moving-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB157",
+      "sourceLegalName": "COASTAL MOVING SERVICES LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-157",
+      "proposedSlug": "coastal-moving-services-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "LINK",
+      "mb": "MB159",
+      "sourceLegalName": "REAL TIME RELOCATION LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": "fl-im-3405",
+      "proposedCompanyId": null,
+      "proposedSlug": null,
+      "existingSlug": "real-time-relocation-llc",
+      "imIdentifier": "IM3405",
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "strong_deterministic_link"
+      ],
+      "matchMethod": "fl011h:exact_legal_name_and_phone",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "MOVER_AND_BROKER",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": "INGESTED",
+      "currentIndexable": false,
+      "rollbackOperation": "DETACH_FL011H_MB_PSA",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB161",
+      "sourceLegalName": "SWIFT SHIFT VAN LINES LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-161",
+      "proposedSlug": "swift-shift-van-lines-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB166",
+      "sourceLegalName": "AMERICA'S CHOICE VAN LINES INC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-166",
+      "proposedSlug": "america-s-choice-van-lines-inc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "ABSENT"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB169",
+      "sourceLegalName": "NORTHERN RELOCATION LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-169",
+      "proposedSlug": "northern-relocation-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB170",
+      "sourceLegalName": "MBA RELOCATION SOLUTIONS LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-170",
+      "proposedSlug": "mba-relocation-solutions-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB172",
+      "sourceLegalName": "AMERICA'S FINEST MOVING & STORAGE LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-172",
+      "proposedSlug": "america-s-finest-moving-storage-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB173",
+      "sourceLegalName": "HAUL OPERATOR LOGISTICS LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-173",
+      "proposedSlug": "haul-operator-logistics-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    },
+    {
+      "operation": "INSERT",
+      "mb": "MB174",
+      "sourceLegalName": "EASY DAY MOVING LLC",
+      "sourceStatus": "active",
+      "sourceFreshness": "ACTIVE_FRESH",
+      "brokerRole": "MOVING_BROKER",
+      "targetCompanyId": null,
+      "proposedCompanyId": "fl-mb-174",
+      "proposedSlug": "easy-day-moving-llc",
+      "existingSlug": null,
+      "imIdentifier": null,
+      "federalIdentifier": null,
+      "officialIdentityEvidence": [
+        "no_existing_canonical_match_sufficient_official_identity"
+      ],
+      "matchMethod": "fl011h:new_official_fdacs_mb",
+      "provenance": {
+        "regulator": "FDACS",
+        "source": "fdacs_legacy_xls",
+        "sourceUrl": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+        "retrievedAt": "2026-08-21T17:11:52.759Z"
+      },
+      "overlap": "BROKER_ONLY",
+      "contactObservationDisposition": [
+        {
+          "kind": "business_phone",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "business_email",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        },
+        {
+          "kind": "physical_address",
+          "disposition": "FUTURE_ATTACH_ELIGIBLE",
+          "source": "SOURCE_OBSERVED"
+        }
+      ],
+      "intendedPublicationState": "INGESTED",
+      "intendedIndexable": false,
+      "currentPublicationState": null,
+      "currentIndexable": null,
+      "rollbackOperation": "DELETE_INGESTED_FL_MB_COMPANY",
+      "simulatedAnonymousHttp": 404
+    }
+  ]
+}

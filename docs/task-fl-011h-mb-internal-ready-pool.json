@@ -1,0 +1,117 @@
+{
+  "google_places_requests": 0,
+  "id": "FL_FDACS_MB_INTERNAL_READY_POOL_V1",
+  "link": 1,
+  "insert": 17,
+  "total": 18,
+  "members": [
+    {
+      "mb": "MB1",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-1"
+    },
+    {
+      "mb": "MB106",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-106"
+    },
+    {
+      "mb": "MB110",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-110"
+    },
+    {
+      "mb": "MB111",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-111"
+    },
+    {
+      "mb": "MB113",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-113"
+    },
+    {
+      "mb": "MB12",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-12"
+    },
+    {
+      "mb": "MB136",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-136"
+    },
+    {
+      "mb": "MB144",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-144"
+    },
+    {
+      "mb": "MB149",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-149"
+    },
+    {
+      "mb": "MB157",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-157"
+    },
+    {
+      "mb": "MB159",
+      "terminal": "EXISTING_CANONICAL_LINK_READY",
+      "companyId": "fl-im-3405",
+      "proposedCompanyId": "fl-mb-159"
+    },
+    {
+      "mb": "MB161",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-161"
+    },
+    {
+      "mb": "MB166",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-166"
+    },
+    {
+      "mb": "MB169",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-169"
+    },
+    {
+      "mb": "MB170",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-170"
+    },
+    {
+      "mb": "MB172",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-172"
+    },
+    {
+      "mb": "MB173",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-173"
+    },
+    {
+      "mb": "MB174",
+      "terminal": "NEW_BROKER_CANONICAL_READY",
+      "companyId": null,
+      "proposedCompanyId": "fl-mb-174"
+    }
+  ]
+}

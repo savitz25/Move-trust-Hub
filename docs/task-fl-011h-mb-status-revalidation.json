@@ -1,0 +1,180 @@
+{
+  "google_places_requests": 0,
+  "live_fdacs_per_record_status_available": false,
+  "rows": [
+    {
+      "mb": "MB1",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB101",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB105",
+      "snapshotStatus": "unknown",
+      "liveStatus": null,
+      "class": "STATUS_REFRESH_REQUIRED"
+    },
+    {
+      "mb": "MB106",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB110",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB111",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB113",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB114",
+      "snapshotStatus": "expired",
+      "liveStatus": null,
+      "class": "STATUS_REFRESH_REQUIRED"
+    },
+    {
+      "mb": "MB12",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB136",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB137",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB144",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB149",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB151",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB152",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB154",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB157",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB159",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB161",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB165",
+      "snapshotStatus": "expired",
+      "liveStatus": null,
+      "class": "STATUS_REFRESH_REQUIRED"
+    },
+    {
+      "mb": "MB166",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB169",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB170",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB171",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB172",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB173",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB174",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB175",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    },
+    {
+      "mb": "MB98",
+      "snapshotStatus": "active",
+      "liveStatus": null,
+      "class": "ACTIVE_FRESH"
+    }
+  ]
+}

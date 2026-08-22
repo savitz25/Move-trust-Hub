@@ -1,0 +1,22 @@
+{
+  "google_places_requests": 0,
+  "verdict": "REUSE_AS_IS",
+  "second_table_created": false,
+  "fields": {
+    "jurisdiction": "state_code",
+    "regulator": "regulator",
+    "authority_credential_type": "authority_type (intrastate_hhg_broker vs intrastate_mover_registration)",
+    "regulatory_identifier": "authority_number",
+    "role_classification": "authority_type + staging role_class",
+    "status": "status",
+    "source": "source",
+    "freshness": "retrieved_at / expiration_date",
+    "provenance": "source_url / evidence_hash / raw_source_key",
+    "publication_state": "companies.publication_state (not on PSA)",
+    "canonical_company_relationship": "company_id"
+  },
+  "unique_index_allows_im_and_mb_on_same_company": true,
+  "eligibility_excludes_broker_from_mover_hauling": true,
+  "wave_chrome_gated_to_wave1_im_membership": true,
+  "collision": false
+}

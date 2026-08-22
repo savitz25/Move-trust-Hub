@@ -1,0 +1,15 @@
+{
+  "google_places_requests": 0,
+  "county_regulatory_program": 2,
+  "provider_county_credential": 116,
+  "palm_beach": {
+    "total": 46,
+    "PUBLISHED": 11,
+    "INTERNAL_ONLY": 35
+  },
+  "miami_dade": {
+    "total": 70,
+    "INTERNAL_ONLY": 70
+  },
+  "county_writes": 0
+}

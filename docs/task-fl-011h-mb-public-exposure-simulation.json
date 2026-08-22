@@ -1,0 +1,20 @@
+{
+  "google_places_requests": 0,
+  "new_public_companies": 0,
+  "broker_public_chrome": 0,
+  "search": 0,
+  "directory": 0,
+  "compare": 0,
+  "sitemap": 0,
+  "indexability": 0,
+  "trust_score": 0,
+  "insert_intended": {
+    "publication_state": "INGESTED",
+    "indexable": false,
+    "anonymous_http": 404
+  },
+  "link_intended": "existing publication/indexability unchanged",
+  "publication_gate_remediation_required": false,
+  "chrome_risk_rows": [],
+  "simulated_seo_indexable_delta": 0
+}
