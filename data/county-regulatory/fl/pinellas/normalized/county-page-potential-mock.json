@@ -1,0 +1,38 @@
+{
+  "task": "FL-C007",
+  "live_page_changed": false,
+  "title": "Pinellas County moving market — INTERNAL DATA DESIGN MOCK",
+  "metrics": {
+    "pinellas_county_mover_credentials": {
+      "value": 0,
+      "label": "NO_SEPARATE_ROSTER_IDENTIFIED"
+    },
+    "active_credentials": {
+      "value": null,
+      "label": "NOT_APPLICABLE — ordinance regulation without credential"
+    },
+    "deterministic_fdacs_associations": {
+      "value": 0,
+      "label": "NOT_APPLICABLE_NO_PUBLIC_ROSTER"
+    },
+    "complaint_history_interface": {
+      "value": "Accela 5yr name→PDF",
+      "label": "PUBLIC_SAMPLE_ONLY"
+    }
+  },
+  "sample_only": {
+    "complaint_searches_with_pdf": {
+      "value": 3,
+      "label": "SAMPLE_ONLY"
+    },
+    "complaint_case_rows": {
+      "value": 24,
+      "label": "SAMPLE_ONLY from partial-name Moving search"
+    },
+    "enforcement_observations": {
+      "value": 0,
+      "label": "none public"
+    }
+  },
+  "extrapolation_forbidden": true
+}

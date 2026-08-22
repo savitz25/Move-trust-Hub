@@ -1,0 +1,41 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "required_provenance_fields": [
+    "source",
+    "source_url",
+    "source_record_id",
+    "retrieved_at",
+    "ruleset_version"
+  ],
+  "optional_provenance_fields": [
+    "raw_source_key",
+    "evidence_hash",
+    "ingest_run_id",
+    "last_verified_at"
+  ],
+  "palm_beach_sources": [
+    {
+      "id": "PBC_MOVING_BUSINESS_PERMIT_ROSTER",
+      "used_for": ["credentials", "identity_fields", "fleet_size_optional"]
+    },
+    {
+      "id": "PBC_BIR_COMPLAINT_SAMPLE",
+      "used_for": ["complaints", "dispositions"]
+    },
+    {
+      "id": "PBC_ENFORCEMENT_SAMPLE",
+      "used_for": ["enforcement_events"]
+    },
+    {
+      "id": "PBC_DISPOSITION_CODE_CATALOG",
+      "used_for": ["regulatory_disposition_code"],
+      "code_count": 44
+    }
+  ],
+  "rulesets": [
+    "PBC_FDACS_RECONCILIATION_V1",
+    "PBC_COUNTY_EVIDENCE_V1"
+  ],
+  "immutability": "Prefer immutable evidence packages for crosswalk; credential roster rows may refresh in place with retrieved_at bump"
+}

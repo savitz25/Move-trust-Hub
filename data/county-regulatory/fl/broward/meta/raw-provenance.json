@@ -1,0 +1,164 @@
+{
+  "task": "FL-C004",
+  "county": "Broward",
+  "agency": "Broward County Consumer Protection Division",
+  "retrieved_at": "2026-08-21T20:04:52.181567Z",
+  "google_places_api_requests": 0,
+  "production_writes": false,
+  "consumer_pii_committed": 0,
+  "files": [
+    {
+      "original_filename": "MoverRegistrationApplication.pdf",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\MoverRegistrationApplication.pdf",
+      "file_size": 721042,
+      "sha256": "dcd364c45225bee2cfdfd25eb59757cc2c1805e40c0572bda151a47d51c9611b",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.024639Z",
+      "modified": false
+    },
+    {
+      "original_filename": "MoverRegistrationApplication.txt",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\MoverRegistrationApplication.txt",
+      "file_size": 6795,
+      "sha256": "885091c7d2bfb6bc40cc2465c1f55e26ced577340e2dfbf0dafae932076bc2aa",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.058209Z",
+      "modified": false
+    },
+    {
+      "original_filename": "TriCountyMovingDisclosureForm.pdf",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\TriCountyMovingDisclosureForm.pdf",
+      "file_size": 232687,
+      "sha256": "d5dc6bb0be65f3dbe05637597854161931a24a00c724a6d6ffcb81c20a7109ad",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.058209Z",
+      "modified": false
+    },
+    {
+      "original_filename": "TriCountyMovingDisclosureForm.txt",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\TriCountyMovingDisclosureForm.txt",
+      "file_size": 8227,
+      "sha256": "f2d059ce9dda38474dddce7c16b2fa91bc6f48f190aaeae469e25f53bcf8891b",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.076067Z",
+      "modified": false
+    },
+    {
+      "original_filename": "cdn-consumer-affairs.pdf",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\cdn-consumer-affairs.pdf",
+      "file_size": 722047,
+      "sha256": "b8f6529700f39251b8960987747952adb6081d9aa47373eae3ea20a2bf7ad28d",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.076067Z",
+      "modified": false
+    },
+    {
+      "original_filename": "cdn-consumer-affairs.txt",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\cdn-consumer-affairs.txt",
+      "file_size": 22909,
+      "sha256": "ca44dc75fc8d4b5cd185e388f79c49a3c3c1493dfb498b4718baf402e207c5f9",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.101249Z",
+      "modified": false
+    },
+    {
+      "original_filename": "cdn-consumer-complaints.pdf",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\cdn-consumer-complaints.pdf",
+      "file_size": 322580,
+      "sha256": "588c7412d27a3741c5e9743aaeb8d468f2920c74b7d49c658fef3d8e67311abd",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.102794Z",
+      "modified": false
+    },
+    {
+      "original_filename": "cdn-consumer-complaints.txt",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\cdn-consumer-complaints.txt",
+      "file_size": 5506,
+      "sha256": "2a2690832ee5b0ffa21c998590678c76680855e65c5d6a053e6a8722aed63a1d",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.116276Z",
+      "modified": false
+    },
+    {
+      "original_filename": "cdn-faq.pdf",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\cdn-faq.pdf",
+      "file_size": 501418,
+      "sha256": "784951348c0ba062a0ff4abea2be9e73e27319a67aa96531d1cc2f9c598bc527",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.116276Z",
+      "modified": false
+    },
+    {
+      "original_filename": "cdn-faq.txt",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\cdn-faq.txt",
+      "file_size": 24353,
+      "sha256": "e31740c4f8bbed251b22cb8b82bdae68a4a7c0c73a4c2627e4cc92b570361ad6",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.127963Z",
+      "modified": false
+    },
+    {
+      "original_filename": "cdn-regulated-enforcement.pdf",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\cdn-regulated-enforcement.pdf",
+      "file_size": 395768,
+      "sha256": "d5cb2e244939a6a1d67d1be84625f031513ea45bba8b084cce860c3aff352bd3",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.127963Z",
+      "modified": false
+    },
+    {
+      "original_filename": "cdn-regulated-enforcement.txt",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\cdn-regulated-enforcement.txt",
+      "file_size": 9683,
+      "sha256": "856b7a0dc0aee7db664d862d6642e213bbd0c7dbdaccfdbb669f4f93b7daa97a",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.147359Z",
+      "modified": false
+    },
+    {
+      "original_filename": "epermits-a-z-cards.pdf",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\epermits-a-z-cards.pdf",
+      "file_size": 982024,
+      "sha256": "9f7e136f17f0456b072d069d0788f444e324373b9039c54e0decd339073a0e66",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.147359Z",
+      "modified": false
+    },
+    {
+      "original_filename": "epermits-a-z-cards.txt",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\epermits-a-z-cards.txt",
+      "file_size": 83972,
+      "sha256": "96221cd96ecbf29e15670084d343c36d4ba9a051a93fa8d177841115a386c17f",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.161343Z",
+      "modified": false
+    },
+    {
+      "original_filename": "excerpt-movers-registration-program.txt",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\excerpt-movers-registration-program.txt",
+      "file_size": 7868,
+      "sha256": "27d453faca86c5339cc527f61bc78721fd9aa075a13424f367d293db4845db9e",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.180799Z",
+      "modified": false
+    },
+    {
+      "original_filename": "page-broward-consumer-home.html",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\page-broward-consumer-home.html",
+      "file_size": 239810,
+      "sha256": "14ceb61bb306b5428fb97c0e152651a27103551cd25db2dc75bf406dc81de988",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.181567Z",
+      "modified": false
+    },
+    {
+      "original_filename": "page-municode-ch20-movers.html",
+      "relative_path": "data/county-regulatory/fl/broward/raw\\page-municode-ch20-movers.html",
+      "file_size": 6100,
+      "sha256": "dd21473c395524a7d57b0c710aca2257097b1320c7e1a4834ece1553afcfd1f7",
+      "source_agency": "Broward County Consumer Protection Division",
+      "retrieval_timestamp": "2026-08-21T20:04:52.181567Z",
+      "modified": false
+    }
+  ]
+}

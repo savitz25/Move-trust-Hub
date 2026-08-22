@@ -1,0 +1,333 @@
+﻿{
+    "business_seq":  1500212,
+    "license_number":  "MV1097",
+    "business_name":  "Sfakia, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV1097",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ActType":  "Citation",
+                                                "ItemSeq":  507174,
+                                                "ItemTypeSeq":  51,
+                                                "intBusinessSeq":  1500212,
+                                                "KeyField":  null,
+                                                "Field2":  "2021-07-07T04:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                "Field4":  "$500.00",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  476299,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1500212,
+                                                "KeyField":  null,
+                                                "Field2":  "2020-02-21T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "2020-02-21T05:00:00.000Z",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "3",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  476300,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1500212,
+                                                "KeyField":  null,
+                                                "Field2":  "2020-02-21T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 12 Failed to provide the shipper with a written inventory",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "2020-02-21T05:00:00.000Z",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "4",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  476302,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1500212,
+                                                "KeyField":  null,
+                                                "Field2":  "2020-02-21T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "2020-02-21T05:00:00.000Z",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "5",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  509742,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1500212,
+                                                "KeyField":  null,
+                                                "Field2":  "2021-08-16T04:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "2021-08-16T04:00:00.000Z",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            }
+                                        ],
+                              "Count":  5
+                          },
+    "company_action_details":  {
+                                   "value":  [
+                                                 {
+                                                     "$id":  "1",
+                                                     "Citation_Number":  "007569",
+                                                     "Business_Seq":  null,
+                                                     "License_Seq":  0,
+                                                     "Date_Issued":  "2021-07-07T04:00:00.000Z",
+                                                     "Ord_Section":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                     "Final_Disposition":  null
+                                                 }
+                                             ],
+                                   "Count":  1
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Sfakia, LLC",
+                               "Established_Yr":  null,
+                               "Comments":  "jack@goodgreek.com, david@goodgreek.com",
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1500212,
+                               "Does_Business_As":  "Greek Moving and Storage/Good Greek Moving \u0026 Storage",
+                               "Address":  "1333 Jog ",
+                               "City":  "West Palm Beach",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33413",
+                               "MailingAddress":  "1333 Jog ",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "West Palm Beach",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33413",
+                               "PhoneNumber":  "5616831313",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "don@goodgreek.com",
+                               "WebsiteURL":  "www.goodgreek.com",
+                               "Fax":  "5613187799",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ComplaintSeq":  "1907070",
+                                                "ResolutionShortDesc":  "No compromise by business",
+                                                "AllegedViolation":  "Alleged damage to consumer\u0027s goods or property ",
+                                                "Status":  "CASE CLOSED",
+                                                "ResolutionCode":  "A12",
+                                                "DateClosed":  "7/28/2026"
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ComplaintSeq":  "1907037",
+                                                "ResolutionShortDesc":  "Referred to another agency",
+                                                "AllegedViolation":  "Alleged violation of the Palm Beach County Moving Ordinance",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A02",
+                                                "DateClosed":  "3/24/2026"
+                                            },
+                                            {
+                                                "$id":  "3",
+                                                "ComplaintSeq":  "1906804",
+                                                "ResolutionShortDesc":  "Referred to another agency",
+                                                "AllegedViolation":  "Alleged billing dispute",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A02",
+                                                "DateClosed":  "12/5/2025"
+                                            },
+                                            {
+                                                "$id":  "4",
+                                                "ComplaintSeq":  "1906618",
+                                                "ResolutionShortDesc":  "Referred to another agency",
+                                                "AllegedViolation":  "Alleged faulty services or repairs",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A02",
+                                                "DateClosed":  "9/12/2025"
+                                            },
+                                            {
+                                                "$id":  "5",
+                                                "ComplaintSeq":  "1906082",
+                                                "ResolutionShortDesc":  "No jurisdiction",
+                                                "AllegedViolation":  "Alleged overcharge or excessive price on a bill, receipt, or invoice",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A03",
+                                                "DateClosed":  "1/6/2025"
+                                            },
+                                            {
+                                                "$id":  "6",
+                                                "ComplaintSeq":  "1905854",
+                                                "ResolutionShortDesc":  "Referred to another agency",
+                                                "AllegedViolation":  "Alleged exceeded the estimate or contract",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A02",
+                                                "DateClosed":  "12/16/2024"
+                                            },
+                                            {
+                                                "$id":  "7",
+                                                "ComplaintSeq":  "1905443",
+                                                "ResolutionShortDesc":  "No compromise",
+                                                "AllegedViolation":  null,
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A10",
+                                                "DateClosed":  "3/5/2024"
+                                            },
+                                            {
+                                                "$id":  "8",
+                                                "ComplaintSeq":  "1905018",
+                                                "ResolutionShortDesc":  "No compromise",
+                                                "AllegedViolation":  "Alleged billing dispute",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A10",
+                                                "DateClosed":  "11/13/2023"
+                                            }
+                                        ],
+                              "Count":  8
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  8,
+                         "caseSummary":  [
+                                             {
+                                                 "$id":  "2",
+                                                 "ResolutionCode":  "A02",
+                                                 "ResoultionShortDesc":  "Referred to another agency",
+                                                 "TotalCase":  4,
+                                                 "Status":  "closed"
+                                             },
+                                             {
+                                                 "$id":  "3",
+                                                 "ResolutionCode":  "A03",
+                                                 "ResoultionShortDesc":  "No jurisdiction",
+                                                 "TotalCase":  1,
+                                                 "Status":  "closed"
+                                             },
+                                             {
+                                                 "$id":  "4",
+                                                 "ResolutionCode":  "A10",
+                                                 "ResoultionShortDesc":  "No compromise",
+                                                 "TotalCase":  2,
+                                                 "Status":  "closed"
+                                             },
+                                             {
+                                                 "$id":  "5",
+                                                 "ResolutionCode":  "A12",
+                                                 "ResoultionShortDesc":  "No compromise by business",
+                                                 "TotalCase":  1,
+                                                 "Status":  "closed"
+                                             }
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Sfakia, LLC",
+                                         "Established_Yr":  null,
+                                         "Comments":  "jack@goodgreek.com, david@goodgreek.com",
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1500212,
+                                         "Does_Business_As":  "Greek Moving and Storage/Good Greek Moving \u0026 Storage",
+                                         "Address":  "1333 Jog ",
+                                         "City":  "West Palm Beach",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33413",
+                                         "MailingAddress":  "1333 Jog ",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "West Palm Beach",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33413",
+                                         "PhoneNumber":  "5616831313",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "don@goodgreek.com",
+                                         "WebsiteURL":  "www.goodgreek.com",
+                                         "Fax":  "5613187799",
+                                         "License_Required":  "Y"
+                                     }
+}

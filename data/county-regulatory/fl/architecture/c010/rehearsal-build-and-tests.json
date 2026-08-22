@@ -1,0 +1,34 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T15:42:04.193Z",
+  "build": {
+    "command": "npm run build",
+    "exit": 0,
+    "ok": true,
+    "note": "Passed on rehearsal with local gitignored .env.local copied from sibling checkout"
+  },
+  "tests": [
+    {
+      "name": "test:state-hhg",
+      "exit": 0,
+      "ok": true,
+      "summary": "144 pass"
+    },
+    {
+      "name": "test:directory-engine",
+      "exit": 0,
+      "ok": true,
+      "summary": "29 pass"
+    },
+    {
+      "name": "test:state-hhg-canary",
+      "exit": 0,
+      "ok": true,
+      "summary": "10 pass"
+    }
+  ],
+  "state_wave_regression_notes": [
+    "INGESTED 404 contract and canary preservation constants remain (state-hhg suite)",
+    "No rehearsal edits to lib/state-hhg, publication helpers, KEEP_80, or Wave membership"
+  ]
+}

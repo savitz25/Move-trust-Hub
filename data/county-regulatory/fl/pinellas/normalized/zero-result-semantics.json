@@ -1,0 +1,11 @@
+{
+  "task": "FL-C007",
+  "rule": "NO_COMPLAINT_RECORD_RETURNED_FOR_SEARCH_WINDOW",
+  "forbidden_label": "COMPLAINT_FREE",
+  "history_window_years": 5,
+  "explanation": "An Accela PDF with headers but no complaint data rows means no complaint records were returned for that business-name search within the public five-year window. It does NOT prove the business is complaint-free historically, under other name spellings, or outside the window.",
+  "applied_to_artifacts": [
+    "complaint-pdf-MoversWithMuscle.pdf",
+    "complaint-pdf-TwoMenAndATruck.pdf"
+  ]
+}

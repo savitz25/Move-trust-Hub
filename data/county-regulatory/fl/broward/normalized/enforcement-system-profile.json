@@ -1,0 +1,14 @@
+{
+  "task": "FL-C004",
+  "nov_citations": "DOCUMENTED_PROCESS — Warning Notice; Citation; Notice of Violation; Notice of Intent to File Suit",
+  "hearings": "DOCUMENTED — Government Center West Hearing Room; clerk 954-765-1210; ECP@broward.org",
+  "fines": "Civil penalties referenced; schedule may appear in Code Enforcement Ch. 8½ (Municode search hit)",
+  "suspension_revocation": "DOCUMENTED for Moving Ordinance violators",
+  "final_action": "PRA_REQUIRED for structured final orders / outcomes extract",
+  "access": "DOCUMENT_PUBLIC for process; PRA_REQUIRED for case-level history",
+  "observations_acquired": 0,
+  "notes": [
+    "ALLEGATION / NOTICE / CITATION / HEARING / FINAL_ACTION layers exist conceptually in county materials.",
+    "No public case-level enforcement dataset acquired; do not invent FINAL_ENFORCEMENT_ACTION rows."
+  ]
+}

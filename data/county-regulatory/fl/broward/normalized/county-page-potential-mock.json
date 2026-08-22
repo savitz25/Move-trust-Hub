@@ -1,0 +1,33 @@
+{
+  "task": "FL-C004",
+  "live_page_changed": false,
+  "metrics": {
+    "broward_regulated_movers": {
+      "value": null,
+      "label": "UNKNOWN_PUBLICLY — PRA_REQUIRED"
+    },
+    "active_credentials": {
+      "value": null,
+      "label": "UNKNOWN_PUBLICLY — PRA_REQUIRED"
+    },
+    "deterministic_fdacs_associations": {
+      "value": 0,
+      "label": "INSUFFICIENT_PUBLIC_ROSTER"
+    },
+    "fleet_vehicle_coverage": {
+      "value": null,
+      "label": "PRA_REQUIRED for vehicle inventory"
+    }
+  },
+  "sample_only": {
+    "complaint_observations": {
+      "value": 0,
+      "label": "SAMPLE_ONLY / none public"
+    },
+    "enforcement_observations": {
+      "value": 0,
+      "label": "SAMPLE_ONLY / none public"
+    }
+  },
+  "extrapolation_forbidden": true
+}

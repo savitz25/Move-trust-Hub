@@ -1,0 +1,19 @@
+{
+  "task": "FL-C009",
+  "concept": "owner_officer_observation",
+  "recommendation": "V1_OPTIONAL",
+  "wave_a": "EXCLUDED",
+  "wave_placement": "Wave B+ or FUTURE",
+  "rationale": [
+    "Public roster contact_officer strings are noisy and often include dispute-contact titles",
+    "Not required for Wave A credential INTERNAL ingest",
+    "PII boundary risk if personal identifiers leak",
+    "Does not improve fail-closed PRODUCTION_LINK_READY linking for the frozen 46"
+  ],
+  "if_implemented_later": {
+    "storage": "observation row or payload subclass",
+    "consumer_pii": 0,
+    "forbidden": ["DOB", "home address as consumer PII", "Trust Score input"]
+  },
+  "design_only": true
+}

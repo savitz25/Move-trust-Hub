@@ -1,0 +1,17 @@
+{
+  "task": "FL-C004",
+  "availability": "APPLICATION_REQUIRED_FIELDS_DOCUMENTED",
+  "access": "PRA_OR_AUTHENTICATED_INTERNAL — not observed as public bulk/search",
+  "sample_full_pra": "PRA_REQUIRED",
+  "fields_documented": [
+    "Mover Permit (decal) fee per vehicle",
+    "Current Decal",
+    "Vehicle Vin #",
+    "License Tag #",
+    "Vehicle Gross Weight",
+    "Permit # (Last 6 digits)",
+    "vehicle registration copy requirement"
+  ],
+  "relationship": "One Mover Registration may have multiple vehicle decals; each vehicle requires $75 permit/decal; expire September 30 with registration.",
+  "pii_note": "VIN/tag are business-operated vehicle identifiers; do not collect unnecessary personal vehicle data. No vehicle rows acquired publicly in FL-C004."
+}

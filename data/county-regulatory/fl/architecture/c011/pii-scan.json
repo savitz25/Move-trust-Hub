@@ -1,0 +1,7 @@
+{
+  "task": "FL-C011",
+  "consumer_pii_files_included": 0,
+  "consumer_pii_rows_included": 0,
+  "heuristic_hits": [],
+  "note": "No consumer-PII field patterns detected"
+}

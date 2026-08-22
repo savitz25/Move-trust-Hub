@@ -1,0 +1,2202 @@
+﻿ï»¿<!DOCTYPE HTML>
+<!-- leave this tag open or the map would not pan in Firefox and Chrome -->
+<html lang="en-us">
+<head>
+    <title>Miami-Dade Business Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=10" /> -->
+    <!-- for mobile-->
+    <!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!--Dojo stylesheet section-->
+    <!-- <link href="http://js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css" rel="stylesheet" type="text/css" > -->
+    <link href="https://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css" rel="stylesheet" type="text/css">
+
+    <!--ArcGIS JavaScript API stylesheet-->
+    <!-- <link rel="stylesheet" href="http://js.arcgis.com/3.7/js/esri/css/esri.css"> -->
+    <link rel="stylesheet" href="https://js.arcgis.com/3.10/js/esri/css/esri.css">
+
+    <!--The application stylesheet-->
+    <link rel="Stylesheet" type="text/css" href="styles/startup.css" />
+
+    <!--Dojo API configurations-->
+    <script type="text/javascript">
+        var dojoConfig = {
+            parseOnLoad: false, //I am using parser.parse(); instead
+            async: true,
+            packages: [{ name: "js", location: location.pathname.replace(/\/[^/]+$/, "") + "/js" }] //,
+            //paths: {extras: location.pathname.replace(/\/[^/]+$/, "") + "/extras"}
+        };
+
+
+
+    </script>
+
+    <!--JQuery file-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+    <!--ArcGIS JavaScript API-->
+    <script src="https://js.arcgis.com/3.7/"></script>
+
+
+    <!--Import other .js files-->
+    <!--<script type="text/javascript" src="js/config.js"></script>-->
+
+
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/locator.js"></script>
+
+    <script type="text/javascript" src="js/baseMapGallery.js"></script>
+    <script type="text/javascript" src="js/applicationLinks.js"></script>
+    <script type="text/javascript" src="js/charts.js"></script>
+
+    <script type="text/javascript" src="js/toc.js"></script>
+
+    <script type="text/javascript" src="js/results.js"></script>
+    <script type="text/javascript" src="js/help.js"></script>
+    <script type="text/javascript" src="js/loadingMessage.js"></script>
+
+    <script type="text/javascript" src="js/print.js"></script>
+    <script type="text/javascript" src="js/alerts.js"></script>
+    <script type="text/javascript" src="js/splashScreen.js"></script>
+
+    <script type="text/javascript" src="js/toolsBar.js"></script>
+
+    <script type="text/javascript" src="js/Buffer.js"></script>
+    <script type="text/javascript" src="js/contactUs.js"></script>
+
+    <script type="text/javascript" src="js/identifyByArea.js"></script>
+
+    <script type="text/javascript" src="js/more.js"></script>
+
+    <script type="text/javascript" src="js/touchscroll.js"></script>
+
+
+    <script type="text/javascript">
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+        //GLOBAL DECLARATIONS
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+
+        //------------------------------
+        //variables for reading config
+        //------------------------------
+
+        var winStoreAppDomainIdentity;
+        //var winStoreAppPackageFamilyName;
+        var winStoreAppFindItUrl;
+
+        var applicationName;
+        var applicationDescription;
+        var applicationIcon;
+
+        var splashScreenMessage;
+
+        var helpURL; //Variable for storing Help page URL
+
+        var contactUsURL; //Variable for storing Contact Us page URL
+
+        var taxCollectorWebsiteLink; //Tax Collector Website Link
+        var applicationLinks; //Aplication Links collection
+
+        var geometryService; //Geometry Service used for Buffering
+
+        var resportsServicePageUrl; //general printing web service
+        var businessTrackPrintServicePageUrl; //businessTracker printing web service
+
+        var baseMapLayerCollection; //variable to store basemap collection
+
+        var defaultExtent; //default map extent
+
+        var operationalMapLayersCollection; //variable to store operational map layers collection
+
+        var newBusinessLayerURL;
+
+        var closedBusinessLayerURL;
+
+        var legendLayersCollection; //variable to store Legend layers collection
+
+        var tableLocalBusinessTax; //Variable for storing configurable field names and table name for LBT table
+        var tableLBTClasses; //Variable for storing configurable, url, field names and table name for LBT Classes lookup table
+        var commissionDistrictTable; //Variable for storing configurable, url, field names and table name for Commission Districts data
+
+        var infoPopupFieldsCollection; //Variable for storing configurable Info Popup fields
+
+        var locatorDefaultAddress; //Default Address
+
+        var locatorMarkerSymbolPath; //variable for dispalying the push pin image when you locate
+
+        var searchSrvcUrl; //Search services url
+        var searchSrvcQueriesXMLFileName; //Search service XML file for search service parameter
+
+        var tableInfoString; //search report string with markup
+
+        //Default Address Buffer Settings
+        var bufferTimeRangeMin;
+        var bufferTimeRangeMax;
+        var bufferDistanceMin;
+        var bufferDistanceMax;
+        var bufferDefaultTimeRange;
+        var bufferDefaultDistance;
+        var bufferDefaultSortOrder;
+        var bufferDefaultSelectedBussClasses;
+
+
+
+
+        //-------------------------------------
+        //variables for application operation
+        //-------------------------------------
+
+        var appType = "";
+        var messageEventHandler;
+        var winStoreLayoutState = "";
+
+        var isMac = false; //flag set for Mac
+
+        var map; //ESRI map object
+
+        var initialMapExtent; //Initial Map Extend
+        var currentMapExtend; //Current Map Extend
+
+        var gLayerTempBuffer; //Buffer graphic layer
+
+        var propertySearchUrl; //Property search url for sending folio of clicked result
+        var folioPropertyGlb; //Folio of last searched property
+
+        var intervalIDs = []; //used for the GlowRipple flashing effect
+
+        var totalMatchingRec = 0;
+        var totalNewBusinesses = 0;
+        var totalClosedBusinesses = 0;
+
+        var newBusinessFeatures = [];
+        var closedBusinessFeatures = [];
+
+        var district;
+        var locationX;
+        var locationY;
+        var isGPS;
+
+        var searchByExtent;
+        var extentCoords;
+
+        var locatorAddress;
+        var timeRangeForBuffer;
+        var distanceForBuffer;
+        var sortOrderForBuffer;
+        var selectedBussClasses = [];
+        var bufferSettingsUpdate; //store select buffer setting
+
+        var BusinessClassCheckboxitems = []; //all items to be stored in data store
+
+        var findByAreaExtentGeometry;
+
+        var drawToolbar;
+        var drawToolbar_FindByArea_onDrawEndHandler;
+        //var currentTool = "";
+
+        var hideBufferSettingBoxIfSearchSucceeds = true;
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+        //END GLOBAL DECLARATIONS
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        require([
+            "js/config",
+
+            "dojo/parser",
+            "dojo/ready",
+
+            "dojo/_base/window",
+            "dojo/_base/Color",
+
+            "dojo/on",
+
+            "dijit/registry",
+            "dojo/dom-geometry",
+            "dojo/dom",
+            "dojo/dom-style",
+            "dojo/dom-construct",
+
+            "dojo/query",
+            "dojo/io-query",
+
+            "esri/config",
+            "esri/map",
+            "esri/SpatialReference",
+
+            "esri/tasks/GeometryService",
+
+            "esri/geometry/Extent",
+            "esri/geometry/Point",
+
+            "esri/dijit/Legend",
+            "esri/dijit/InfoWindow",
+
+            "esri/toolbars/draw",
+
+            "dijit/Dialog",
+            "dijit/form/ToggleButton",
+            "dijit/form/Button",
+            "dijit/form/NumberSpinner",
+            "dijit/form/Select",
+            "dijit/form/CheckBox",
+
+            "dojo/keys",
+            "dojo/json",
+            "dojo/number",
+            "dojo/fx",
+
+            //"extras/ClusterLayer",
+
+            //"dojox/mobile",
+
+            "dijit/layout/BorderContainer",
+            "dijit/layout/TabContainer",
+            "dijit/layout/ContentPane",
+            "dijit/layout/AccordionContainer",
+            "dojo/domReady!"
+        ], function (
+            AppConfig,
+
+            parser,
+            ready,
+
+            win,
+            Color,
+
+            on,
+
+            registry,
+            domGeom,
+            dom,
+            domStyle,
+            domConstruct,
+
+            query,
+            ioQuery,
+
+            esriConfig,
+            Map,
+            SpatialReference,
+
+            GeometryService,
+
+            Extent,
+            Point,
+
+            Legend,
+            InfoWindow,
+
+            Draw,
+
+            Dialog,
+            ToggleButton,
+            Button,
+            NumberSpinner,
+            Select,
+            CheckBox,
+
+            keys,
+            JSON,
+            number,
+            coreFx
+        ) {
+
+            ready(function () {
+
+                //parse DOM
+                parser.parse(); //I am using parseOnLoad: true; instead
+                //mobile.hideAddressBar();
+
+                //--------------------------------------------------------------------------------------------------------------------
+                //console.log(ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))));
+                appType = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).appType;
+                //--------------------------------------------------------------------------------------------------------------------
+
+                //--------------------------------------------------------------------------------------------------------------------------------------------
+                //PROXY Settings
+                //--------------------------------------------------------------------------------------------------------------------------------------------
+                esriConfig.defaults.io.proxyUrl = "proxy.ashx";        //Setting to use proxy file
+                esriConfig.defaults.io.alwaysUseProxy = true;
+                esriConfig.defaults.io.timeout = 1800000;    //ersi request timeout value
+
+                //--------------------------------------------------------------------------------------------------------------------------------------------
+                //LOAD CONFIGURATIONS
+                //--------------------------------------------------------------------------------------------------------------------------------------------
+                var responseObject = new AppConfig();
+
+                winStoreAppDomainIdentity = responseObject.WinStoreAppDomainIdentity;
+                //winStoreAppPackageFamilyName = responseObject.WinStoreAppPackageFamilyName;
+                winStoreAppFindItUrl = responseObject.WinStoreAppFindItUrl;
+
+                applicationName = responseObject.ApplicationName;
+                applicationDescription = responseObject.ApplicationDescription;
+                applicationIcon = responseObject.ApplicationIcon;
+
+                splashScreenMessage = responseObject.SplashScreenMessage;
+
+                helpURL = responseObject.HelpURL;
+
+                contactUsURL = responseObject.ContactUsURL;
+
+                taxCollectorWebsiteLink = responseObject.TaxCollectorWebsiteLink; //Tax Collector Website Link
+                applicationLinks = responseObject.ApplicationLinks; //Array of application links
+
+                geometryService = responseObject.GeometryService; //Geometry Service
+
+                resportsServicePageUrl = responseObject.ResportsServicePageUrl;
+                businessTrackPrintServicePageUrl = responseObject.BusinessTrackPrintServicePageUrl;
+
+                baseMapLayerCollection = responseObject.BaseMapLayers; //variable to store basemap collection
+
+                defaultExtent = responseObject.DefaultExtent;
+
+                operationalMapLayersCollection = responseObject.OperationalMapLayers; //Array of operational feature layers to add to map
+
+                for (i = 0; i < operationalMapLayersCollection.length; i++) {
+                    if (operationalMapLayersCollection[i].Key == "newBusinessLayer") {
+
+                        newBusinessLayerURL = operationalMapLayersCollection[i].MapURL;
+
+                    }
+
+                    if (operationalMapLayersCollection[i].Key == "closedBusinessLayer") {
+
+                        closedBusinessLayerURL = operationalMapLayersCollection[i].MapURL;
+
+                    }
+                }
+
+                legendLayersCollection = responseObject.LegendLayers; //Array of Legend layers
+
+                tableLocalBusinessTax = responseObject.LocalBusinessTaxTable;
+                tableLBTClasses = responseObject.LBTClassesTable;
+                commissionDistrictTable = responseObject.CommissionDistrictTable;
+
+                infoPopupFieldsCollection = responseObject.InfoPopupFieldsCollection; //Array of fields for info window
+
+                locatorDefaultAddress = responseObject.LocatorDefaultAddress;
+
+                locatorMarkerSymbolPath = responseObject.LocatorMarkerSymbolPath; //variable for dispalying the push pin image when you locate
+
+                searchSrvcUrl = responseObject.SearchSrvc.url;
+                searchSrvcQueriesXMLFileName = responseObject.SearchSrvc.queriesXMLFileName;
+
+                tableInfoString = responseObject.tableInfoString;
+
+                //Default Buffer Settings
+                bufferTimeRangeMin = responseObject.BufferTimeRangeMin;
+                bufferTimeRangeMax = responseObject.BufferTimeRangeMax;
+                bufferDistanceMin = responseObject.BufferDistanceMin;
+                bufferDistanceMax = responseObject.BufferDistanceMax;
+                bufferDefaultTimeRange = responseObject.BufferDefaultTimeRange;
+                bufferDefaultDistance = responseObject.BufferDefaultDistance;
+                bufferDefaultSortOrder = responseObject.BufferDefaultSortOrder;
+                bufferDefaultSelectedBussClasses = responseObject.BufferDefaultSelectedBussClasses;
+
+                //--------------------------------------------------------------------------------------------------------------------------------------------
+                //END LOAD CONFIGURATIONS
+                //--------------------------------------------------------------------------------------------------------------------------------------------
+                /*
+                 if (dojo.isIE < 9) {
+                    registry.byId("btnShowPieCharts").domNode.style.display = "none";
+                    registry.byId("btnShowPieCharts").domNode.style.visibility = "hidden";
+                }
+                */
+
+                dojo.query('.dijitOffScreen').forEach(function(node) {
+                    node.setAttribute("aria-label", "buttonMenu");
+                }); 
+
+                // ******
+               // dojo.query('.dijitOffScreen').setAttribute("aria-label", "buttonMenu");
+
+                if (appType !== undefined) {
+
+                    if (appType === "winStore") {
+
+                        document.getElementById("tdHelp").className = "win8StoreAppHidden";
+                        //document.getElementById("tdMoreGIS").className = "win8StoreAppHidden";
+                        document.getElementById("tdContactUs").className = "win8StoreAppHidden";
+                        document.getElementById("tdMore").className = "win8StoreAppHidden";
+                        document.getElementById("divToggleDetail").className = "win8StoreAppHidden";
+
+                        //registry.byId("divWindowStoreIcon").domNode.style.display = "none"; 2026
+                        //registry.byId("divWindowStoreIcon").domNode.style.visibility = "hidden";
+
+
+                        registry.byId("btnExportExcel").domNode.style.display = "none";
+                        registry.byId("btnExportExcel").domNode.style.visibility = "hidden";
+                        registry.byId("btnExportPDF").domNode.style.display = "none";
+                        registry.byId("btnExportPDF").domNode.style.visibility = "hidden";
+
+
+                        dom.byId("headerContainer").style.width = "380px";
+                        dom.byId("headerContainer").style.right = "auto";
+                        dom.byId("headerToolbarContainer").style.width = "380px";
+                        dom.byId("headerToolbarContainer").style.right = "auto";
+
+                        registry.byId("headerToolbarContainer").resize();
+
+                        //Handle message form our opening window
+                        messageEventHandler = function (event) {
+
+                            // check that the origin is one we want.
+                            if (event.origin == winStoreAppDomainIdentity) {
+
+                                var messageData = event.data;
+
+                                var node;
+
+                                if (messageData === "snapped") {
+                                    winStoreLayoutState = messageData;
+
+                                    dom.byId("headerContainer").style.width = "auto";
+                                    dom.byId("headerContainer").style.right = "2px";
+                                    dom.byId("headerToolbarContainer").style.width = "auto";
+                                    dom.byId("headerToolbarContainer").style.right = "2px";
+
+                                    registry.byId("headerToolbarContainer").resize();
+
+                                    node = dom.byId('divLeftPanelBackground');
+
+                                    var iW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+                                    if (domGeom.position(node).x == 0) {
+
+                                        node.style.left = "0px"
+                                        node.style.width = iW + "px";
+
+                                    } else {
+
+                                        node.style.left = "-" + iW + "px"
+                                        node.style.width = iW + "px";
+
+                                    }
+
+                                    registry.byId("detailsAccordionContainer").resize();
+
+                                } else if (messageData === "fullScreenLandscape" || messageData === "fullScreenPortrait" || messageData === "filled") {
+                                    winStoreLayoutState = messageData;
+
+                                    dom.byId("headerContainer").style.width = "380px";
+                                    dom.byId("headerContainer").style.right = "auto";
+                                    dom.byId("headerToolbarContainer").style.width = "380px";
+                                    dom.byId("headerToolbarContainer").style.right = "auto";
+
+                                    registry.byId("headerToolbarContainer").resize();
+
+                                    node = dom.byId('divLeftPanelBackground');
+
+                                    if (domGeom.position(node).x == 0) {
+
+                                        node.style.left = "0px"
+                                        node.style.width = "362px";
+
+                                    } else {
+
+                                        node.style.left = "-362px"
+
+                                        node.style.width = "362px";
+
+                                    }
+
+                                    registry.byId("detailsAccordionContainer").resize();
+
+                                } else if (messageData["message"] === "btnGPSLocation") {
+
+                                    var GPSLocation = messageData.location;
+                                    //ShowDialog("GPSLocation", GPSLocation.lat + " " + GPSLocation.lng + " " + GPSLocation.accuracy + " " + GPSLocation.locStatus);
+
+                                    if (GPSLocation.locStatus === "Location is available.") {
+
+                                        registry.byId('tglBtnFindByArea').set("checked", false);
+
+                                        var inSR = new SpatialReference({ wkid: 4326 });
+
+                                        var lat = GPSLocation.lat;
+                                        var lng = GPSLocation.lng
+
+                                        var locPoint = new Point(lng, lat, inSR);
+
+
+                                        geometryService.project([locPoint], map.spatialReference, function (projectedPoints) {
+
+                                            var projectedPoint = projectedPoints[0];
+                                            //showDialog("ProjectedLocation:", projectedPoint.x + " " + projectedPoint.y);
+
+                                            bufferSettingsUpdate['isGPS'] = true;
+
+                                            locateFromPoint(projectedPoint);
+
+
+                                        });
+
+                                    }
+
+
+                                } else if (messageData === "btnMap") {
+
+                                    var node = dom.byId('divLeftPanelBackground');
+
+                                    if (domGeom.position(node).x == 0) {
+
+                                        /*
+                                        if(appType === "winStore" && winStoreLayoutState === "snapped") {
+                                            Win8StoreAppSnappedAnimateDetailsView();
+                                        }else{
+                                            AnimateDetailsView();
+                                        }
+                                        */
+
+                                        if (winStoreLayoutState === "snapped") {
+
+                                            if (appType === "winStore") {
+                                                Win8StoreAppSnappedAnimateDetailsView();
+                                            } else {
+                                                AllSnappedAnimateDetailsView();
+                                            }
+
+                                        } else {
+                                            AnimateDetailsView();
+                                        }
+
+                                    }
+
+                                } else if (messageData === "btnResults") {
+
+                                    openSearchResultPane();
+
+
+                                } else if (messageData === "btnLegend") {
+
+                                    ShowHideTOCComponent();
+
+                                } else if (messageData["message"] === "btnBuffer") {
+
+                                    /*
+                                    var bufSetUpdate = messageData.bufferSettingsUpdate;
+
+                                    lx = bufSetUpdate.locationX;
+                                    ly = bufSetUpdate.locationY;
+                                    isGPS = bufSetUpdate.isGPS
+                                    isGPS = bufSetUpdate.searchByExtent;
+                                    isGPS = bufSetUpdate.extentCoords;
+                                    var la = bufSetUpdate.locatorAddress;
+                                    var tr = bufSetUpdate.timeRangeForBuffer;
+                                    var db = bufSetUpdate.distanceForBuffer;
+                                    var so = bufSetUpdate.sortOrderForBuffer;
+                                    var selBussC = bufSetUpdate.selectedBussClasses;
+
+                                    bufferSettingsUpdate["locationX"] = lx;
+                                    bufferSettingsUpdate["locationY"] = ly;
+                                    bufferSettingsUpdate["isGPS"] = isGPS;
+                                    bufferSettingsUpdate["locatorAddress"] = la;
+                                    bufferSettingsUpdate["timeRangeForBuffer"] = tr;
+                                    bufferSettingsUpdate["distanceForBuffer"] = db;
+                                    bufferSettingsUpdate["sortOrderForBuffer"] = so;
+                                    bufferSettingsUpdate["selectedBussClasses"] = selBussC;
+                                    */
+
+                                    registry.byId('tglBtnBuffer').set("checked", messageData.toggleChecked);
+
+                                } else if (messageData["message"] === "btnFindByArea") {
+
+                                    registry.byId('tglBtnFindByArea').set("checked", messageData.toggleChecked);
+
+                                } else if (messageData === "btnHelp") {
+
+                                    ShowHelp();
+
+                                } else if (messageData === "btnMoreGISServices") {
+
+                                    toogleOtherApplicationLinksContainer();
+
+                                } else if (messageData === "btnContactUs") {
+
+                                    GISContactUS();
+
+                                }
+
+
+                            }
+                            /*else{
+
+                                throw new Error('Origin domain is not allowed.');
+                            }*/
+
+                        }
+
+                        // listen for the message event from our opening window
+                        window.addEventListener('message', messageEventHandler, false);
+
+                        // when this document has loaded, send a message to our parent.
+                        window.addEventListener('load', function (e) {
+                            //console.log("opener:", e.currentTarget);
+                            e.currentTarget.parent.postMessage('ready', winStoreAppDomainIdentity);
+                        }, false);
+
+                        // when we have closed the window, tell the parent that it is closed.
+                        window.addEventListener('unload', function (e) {
+                            e.currentTarget.parent.postMessage('closed', winStoreAppDomainIdentity);
+                        }, false);
+
+                    }
+
+
+                } else {
+
+                    var iW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+                    var node;
+
+                    if (iW <= 480) {
+
+
+                        document.getElementById("tdHelp").className = "win8StoreAppHidden";
+                        document.getElementById("tdMoreGIS").className = "win8StoreAppHidden";
+                        document.getElementById("tdContactUs").className = "win8StoreAppHidden";
+                        document.getElementById("tdMore").className = "visibleElement";
+                        //document.getElementById("divToggleDetail").className= "win8StoreAppHidden";
+
+                        //registry.byId("divWindowStoreIcon").domNode.style.display = "none";2026
+                        //registry.byId("divWindowStoreIcon").domNode.style.visibility = "hidden";
+
+                        winStoreLayoutState = "snapped";
+
+                        dom.byId("headerContainer").style.width = "auto";
+                        dom.byId("headerContainer").style.right = "2px";
+                        dom.byId("headerToolbarContainer").style.width = "auto";
+                        dom.byId("headerToolbarContainer").style.right = "2px";
+
+                        registry.byId("headerToolbarContainer").resize();
+
+                        node = dom.byId('divLeftPanelBackground');
+
+                        if (domGeom.position(node).x == 0) {
+
+                            node.style.left = "0px"
+                            node.style.width = iW + "px";
+
+                        } else {
+
+                            node.style.left = "-" + iW + "px"
+                            node.style.width = iW + "px";
+
+                        }
+
+                        registry.byId("detailsAccordionContainer").resize();
+
+                    }
+
+                }
+
+                if (navigator.appVersion.indexOf("Mac") >= 0) {
+                    isMac = true;
+                }
+
+
+                on(window, "resize", function () {
+
+                    if (map) {
+
+                        currentMapExtend = map.extent;
+
+                        map.resize();
+                        //map.reposition();
+
+
+                    }
+                });
+
+
+                //Show Leading Message and Loading Indicator
+                ShowLoadingMessage('Loading...');
+
+
+                //Show Disclaimer Splash Screen Container
+                dom.byId('divDisclaimerContent').innerHTML = splashScreenMessage;
+
+                //Add application name and logo icons to header
+                dom.byId('imgApp').src = applicationIcon;
+                dom.byId('lblAppName').innerHTML = applicationName;
+                dom.byId('lblAppDescription').innerHTML = applicationDescription;
+
+                //Create ApplicationLinks Container
+                CreateApplicationLinks();
+
+                //console.log(ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))));
+                district = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).district;
+                locationX = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).x;
+                locationY = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).y;
+                isGPS = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).isGPS;
+                searchByExtent = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).searchByExtent;
+                extentCoords = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).extentCoords;
+                locatorAddress = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).singleLineInput;
+                timeRangeForBuffer = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).timeRangeForBuffer;
+                distanceForBuffer = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).distanceForBuffer;
+                sortOrderForBuffer = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).sortOrderForBuffer;
+                selectedBussClasses = ioQuery.queryToObject(win.doc.location.search.substr((win.doc.location.search[0] === "?" ? 1 : 0))).selectedBussClasses;
+
+
+                if (locationX === undefined) {
+                    locationX = 0;
+                } else {
+                    locationX = number.parse(locationX)
+                }
+
+                if (locationY === undefined) {
+                    locationY = 0;
+                } else {
+                    locationY = number.parse(locationY)
+                }
+
+
+                if (isGPS === undefined) {
+                    isGPS = false;
+                } else if (isGPS === 'true') {
+                    isGPS = true;
+                } else if (isGPS === 'false') {
+                    isGPS = false;
+                }
+
+                if (searchByExtent === undefined) {
+                    searchByExtent = false;
+                } else if (searchByExtent === 'true') {
+                    searchByExtent = true;
+                } else if (searchByExtent === 'false') {
+                    searchByExtent = false;
+                }
+
+
+
+                if (extentCoords === undefined) {
+                    extentCoords = "";
+                }
+
+                if (locatorAddress === undefined) {
+                    locatorAddress = locatorDefaultAddress;
+                }
+
+                if (timeRangeForBuffer === undefined) {
+                    timeRangeForBuffer = bufferDefaultTimeRange;
+
+                }
+
+                if (distanceForBuffer === undefined) {
+                    distanceForBuffer = bufferDefaultDistance;
+                }
+
+                if (sortOrderForBuffer === undefined) {
+                    sortOrderForBuffer = bufferDefaultSortOrder;
+                }
+
+
+                if (selectedBussClasses === undefined) {
+                    selectedBussClasses = bufferDefaultSelectedBussClasses;
+                } else {
+                    selectedBussClasses = JSON.parse(selectedBussClasses); //convert string to array
+                }
+
+
+                dom.byId('txtAddress').value = locatorAddress;
+
+                if (dom.byId('txtAddress').value.trim() !== "") {
+                    registry.byId('txtAddress').set("placeHolder", "")
+                }
+
+
+                //ShowDialog("init", locatorAddress + " ---- " + timeRangeForBuffer.toString() + " ---- " + distanceForBuffer.toString() + " ---- " + sortOrderForBuffer  + " ---- " +  JSON.stringify(selectedBussClasses));
+                bufferSettingsUpdate = {
+                    'message': "updatedBufferSettings",
+                    'locationX': locationX,
+                    'locationY': locationY,
+                    'isGPS': isGPS,
+                    'searchByExtent': searchByExtent,
+                    'extentCoords': extentCoords,
+                    'locatorAddress': locatorAddress,
+                    'timeRangeForBuffer': timeRangeForBuffer,
+                    'distanceForBuffer': distanceForBuffer,
+                    'sortOrderForBuffer': sortOrderForBuffer,
+                    'selectedBussClasses': selectedBussClasses
+                };
+
+                //fire when user click ENTER key on search text box
+                //on(dom.byId("txtAddress"), 'keydown', function (evt) {
+                on(dom.byId("txtAddress"), 'keypress', function (evt) {
+                    key = evt.charCode || evt.keyCode;
+                    if (key === keys.ENTER) {
+
+                        doSearch();
+
+                    }
+                });
+
+
+                /////////////////////////////////////////////////////////////////////////////// 2026
+                dom.byId("bufferTimeRangeOnResultsWin").value = timeRangeForBuffer;
+
+                document.getElementById("bufferTimeRangeOnResultsWin").setAttribute("aria-label", "Time Range");
+
+                //dom.byId("bufferTimeRange").value = timeRangeForBuffer;
+
+
+                on(registry.byId("bufferTimeRangeOnResultsWin"), "change", function () {
+
+                    dom.byId("bufferTimeRange").value = this.value;
+                    timeRangeForBuffer = this.value;
+
+                });
+
+
+                on(registry.byId("bufferTimeRange"), "change", function () {
+
+                    dom.byId("bufferTimeRangeOnResultsWin").value = this.value;
+                    timeRangeForBuffer = this.value;
+
+                });
+                ///////////////////////////////////////////////////////////////////////////////
+
+                //Create GeometryService object
+                geometryService = new GeometryService(geometryService);
+                esriConfig.defaults.geometryService = geometryService;
+
+                var infoWindow = new InfoWindow({}, domConstruct.create("div"));
+                infoWindow.startup();
+
+                //Create map object
+                map = new Map("map", { slider: true, logo: false, sliderStyle: "small", showAttribution: false, infoWindow: infoWindow });
+                map.disableKeyboardNavigation();
+
+                on(map, "load", function () {
+
+                    if (isMac) {
+                        document.oncontextmenu = function (evt) {
+                            return false;
+                        }
+                    }
+
+
+                    var zoomExtent = defaultExtent.split(",");
+
+                    initialMapExtent = new Extent(parseFloat(zoomExtent[0]), parseFloat(zoomExtent[1]), parseFloat(zoomExtent[2]), parseFloat(zoomExtent[3]), map.spatialReference);
+
+                    currentMapExtend = initialMapExtent;
+
+                    map.setExtent(initialMapExtent);
+
+                    //------------------------------------
+                    //------------------------------------
+
+                    touchScroll('divEmptyResultsContent');
+
+                    MapInitFunction();
+
+                    initBuffer();
+
+                    initFindByArea();
+
+                    //////////////////////////////////////////////
+
+                    //Create Legend Control
+                    CreateMapLegendComponent();
+
+                    CreateCharts(null);
+
+                    ShowSplashScreenMessage();
+
+                    HideLoadingMessage();
+                    ////////////////////////////////////////////
+
+                    //Hook up jQuery
+                    //$(document).ready(jQueryReady);
+                    addAltToMapTiles();
+                    setTimeout(addAltToMapTiles, 2000); // Run again after 2 seconds
+                });
+
+                //Create Base map control
+                CreateBaseMapComponent();
+                document.getElementById("map").ariaLabel = "Main Map";    //2026 ADA
+
+                //ADA 2026
+                //dijit.byId('detailsAccordionContainer').getChildren().forEach(function (pane) {
+                //    // 1. The header button must be a 'tab'
+                //    //if (pane._buttonWidget && pane._buttonWidget.domNode) {
+                //    pane._buttonWidget.domNode.setAttribute("role", "presentation");
+                //    pane._buttonWidget.domNode.setAttribute("aria-hidden", "true");
+                //    //}
+
+                //    // 2. The content pane must be a 'tabpanel'
+                //    pane.domNode.setAttribute("role", "presentation");
+                //    pane.domNode.setAttribute("aria-hidden", "true");
+
+                //    // 3. Link them for accessibility
+                //    if (pane._buttonWidget) {
+                //        // pane.domNode.setAttribute("aria-labelledby", pane._buttonWidget.id);
+                //        // pane._buttonWidget.domNode.setAttribute("aria-controls", pane.id);
+                //    }
+                //});
+
+              
+                // ******
+
+            });
+
+        });
+
+        //Function for Map Initialisation and adding layers
+        function MapInitFunction() {
+            require(["dijit/registry", "dojo/dom-geometry", "dojo/dom", "dojo/dom-style", "dojo/query", "dojo/dom-construct", "dojo/on", "esri/layers/GraphicsLayer", "esri/InfoTemplate", "dijit/layout/ContentPane"], function (registry, domGeom, dom, domStyle, query, domConstruct, on, GraphicsLayer, InfoTemplate, ContentPane) {
+
+                domConstruct.create("div", {
+                    className: "esriSimpleSliderHomeButton",
+                    onclick: function () {
+                        map.setExtent(initialMapExtent);
+                    }
+                }, query(".esriSimpleSliderIncrementButton")[0], "after");
+
+                //Event for resizing the map
+                map.on('resize', function () {
+
+                    var resizeTimer;
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(function () {
+
+                        map.centerAt(currentMapExtend.getCenter());
+
+                        //needed to get innerWidth and innerHeight in IE8 too
+                        var iW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                        var iH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+                        //recenter on window
+                        var winWidth = iW / 2 - domStyle.get(dom.byId('divBufferContainer'), "width") / 2;
+                        var winHeight = iH / 2 - domStyle.get(dom.byId('divBufferContainer'), "height") / 2;
+                        //alert(winWidth.toString());
+                        domStyle.set("divBufferContainer", { left: winWidth.toString() + "px" });
+                        domStyle.set("divBufferContainer", { top: winHeight.toString() + "px" });
+
+                        //recenter on window
+                        winWidth = iW / 2 - domStyle.get(dom.byId('divApplicationLinksContainer'), "width") / 2;
+                        winHeight = iH / 2 - domStyle.get(dom.byId('divApplicationLinksContainer'), "height") / 2;
+                        domStyle.set("divApplicationLinksContainer", { left: winWidth.toString() + "px" });
+                        domStyle.set("divApplicationLinksContainer", { top: winHeight.toString() + "px" });
+
+
+                        //recenter on window
+                        winWidth = iW / 2 - domStyle.get(dom.byId('divChartsContainer'), "width") / 2;
+                        winHeight = iH / 2 - domStyle.get(dom.byId('divChartsContainer'), "height") / 2;
+                        domStyle.set("divChartsContainer", { left: winWidth.toString() + "px" });
+                        domStyle.set("divChartsContainer", { top: winHeight.toString() + "px" });
+
+
+                        var heightSRC = domStyle.get(dom.byId('divSearchResultContainer'), "height");
+                        var heightERCBT = domStyle.get(dom.byId('divBufferTimeOnResultsContent'), "height");
+                        var heightMR = domStyle.get(dom.byId('divMoreResult'), "height");
+                        var heightEB = domStyle.get(dom.byId('divExportButtons'), "height");
+
+                        var heightSRCtnt = heightSRC - heightERCBT - heightMR - heightEB - 10;
+
+                        domStyle.set('divSearchResultContent', { height: heightSRCtnt.toString() + "px" });
+
+
+
+
+
+                        var node;
+                        var winWith;
+                        if (appType !== "winStore") {
+
+                            if (iW <= 480) {
+
+                                document.getElementById("tdHelp").className = "win8StoreAppHidden";
+                                document.getElementById("tdMoreGIS").className = "win8StoreAppHidden";
+                                document.getElementById("tdContactUs").className = "win8StoreAppHidden";
+                                document.getElementById("tdMore").className = "visibleElement";
+                                //document.getElementById("divToggleDetail").className= "win8StoreAppHidden";
+
+
+
+                                //registry.byId("divWindowStoreIcon").domNode.style.display = "none";2026
+                                //registry.byId("divWindowStoreIcon").domNode.style.visibility = "hidden";
+
+                                winStoreLayoutState = "snapped";
+
+                                dom.byId("headerContainer").style.width = "auto";
+                                dom.byId("headerContainer").style.right = "2px";
+                                dom.byId("headerToolbarContainer").style.width = "auto";
+                                dom.byId("headerToolbarContainer").style.right = "2px";
+
+                                registry.byId("headerToolbarContainer").resize();
+
+                                node = dom.byId('divLeftPanelBackground');
+                                winWith = iW - 28;
+                                if (domGeom.position(node).x == 0) {
+
+                                    node.style.left = "0px"
+                                    node.style.width = iW + "px";
+
+                                    document.getElementById("divToggleDetail").className = "divToggleDetailSnappedExpand";
+                                    dom.byId("divToggleDetail").style.left = winWith + "px";
+
+
+                                } else {
+
+                                    node.style.left = "-" + iW + "px"
+                                    node.style.width = iW + "px";
+
+                                    document.getElementById("divToggleDetail").className = "divToggleDetailSnappedCollapse";
+                                    dom.byId("divToggleDetail").style.right = winWith + "px";
+
+
+
+                                }
+
+                                registry.byId("detailsAccordionContainer").resize();
+
+                            } else {
+
+                                document.getElementById("tdHelp").className = "visibleElement";
+                                document.getElementById("tdMoreGIS").className = "visibleElement";
+                                document.getElementById("tdContactUs").className = "visibleElement";
+                                document.getElementById("tdMore").className = "win8StoreAppHidden";
+                                //document.getElementById("divToggleDetail").className= "visibleElement";
+
+                                HideMoreComponent();
+
+
+                                winStoreLayoutState = "";
+
+                                dom.byId("headerContainer").style.width = "510px";
+                                dom.byId("headerContainer").style.right = "auto";
+                                dom.byId("headerToolbarContainer").style.width = "510px";
+                                dom.byId("headerToolbarContainer").style.right = "auto";
+
+                                registry.byId("headerToolbarContainer").resize();
+
+                                //registry.byId("divWindowStoreIcon").domNode.style.display = "block";2026
+                                //registry.byId("divWindowStoreIcon").domNode.style.visibility = "visible";
+
+
+                                node = dom.byId('divLeftPanelBackground');
+                                if (domGeom.position(node).x == 0) {
+
+                                    node.style.left = "0px"
+                                    node.style.width = "362px";
+
+                                    document.getElementById("divToggleDetail").className = "divToggleDetailExpand";
+                                    dom.byId("divToggleDetail").style.left = 362 + "px";
+
+                                } else {
+
+                                    node.style.left = "-362px"
+                                    node.style.width = "362px";
+
+                                    document.getElementById("divToggleDetail").className = "divToggleDetailCollapse";
+
+                                }
+
+                                registry.byId("detailsAccordionContainer").resize();
+
+                            }
+
+                        }
+
+
+                    }, 1500);
+
+                });
+
+
+                gLayerTempBuffer = new GraphicsLayer();
+                gLayerTempBuffer.id = "tempBufferLayer";
+                map.addLayer(gLayerTempBuffer);
+
+
+                gLayerNewBusinessLayer = new GraphicsLayer();
+                gLayerNewBusinessLayer.id = "newBusinessLayer";
+                //gLayerNewBusinessLayer.setInfoTemplate(new InfoTemplate("${tableLocalBusinessTax.BusinessNameFieldName}","${*}"));
+                gLayerNewBusinessLayer.setInfoTemplate(new InfoTemplate("Business", infoWindowNewBusinessTemplateContent));
+                map.addLayer(gLayerNewBusinessLayer);
+
+
+                gLayerClosedBusinessLayer = new GraphicsLayer();
+                gLayerClosedBusinessLayer.id = "closedBusinessLayer";
+                //gLayerClosedBusinessLayer.setInfoTemplate(new InfoTemplate("${tableLocalBusinessTax.BusinessNameFieldName}","${*}"));
+                gLayerClosedBusinessLayer.setInfoTemplate(new InfoTemplate("Business", infoWindowClosedBusinessTemplateContent));
+                map.addLayer(gLayerClosedBusinessLayer);
+
+
+                //added for Glow graphics layer
+                gGlowGraphicLayer = new GraphicsLayer();
+                gGlowGraphicLayer.id = "glowGraphicLayer";
+                map.addLayer(gGlowGraphicLayer);
+
+                HideLoadingMessage();
+
+                //2026 ADA
+                addAltToMapTiles();
+                setTimeout(addAltToMapTiles, 2000); // Run again after 2 seconds
+
+
+                // ******
+
+            });
+        }
+
+
+
+        function infoWindowNewBusinessTemplateContent(graphic) {
+
+            var infoWinContentPane;
+
+            require(["dijit/layout/ContentPane"], function (ContentPane) {
+
+                //console.log(graphic);
+
+                var featureInfoDiv
+                var photoDiv;
+
+                var strStartDate;
+                var strCloseDate;
+                var strClassName;
+
+                var infoWinContent = "";
+
+                var featureValue = graphic;
+
+                for (var key = 0; key < infoPopupFieldsCollection.length; key++) {
+
+                    //console.log(featureValue.attributes[infoPopupFieldsCollection[key].FieldName]);
+
+                    if (infoPopupFieldsCollection[key].FieldName === tableLocalBusinessTax.BusinessStartDateFieldName) {
+
+                        //business start date
+                        strStartDate = new Date(featureValue.attributes[infoPopupFieldsCollection[key].FieldName]);
+                        if (featureValue.attributes[infoPopupFieldsCollection[key].FieldName] == null || featureValue.attributes[infoPopupFieldsCollection[key].FieldName] == "N/A") {
+
+                            strStartDate = "N/A";
+
+                        } else {
+
+                            strStartDate = strStartDate.getUTCMonth() + 1 + "/" + strStartDate.getUTCDate() + "/" + strStartDate.getUTCFullYear();
+
+                        }
+
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + strStartDate + "<br/>"
+
+                    } else if (infoPopupFieldsCollection[key].FieldName === tableLocalBusinessTax.BusinessClosedDateFieldName) {
+
+                        //business close date
+                        strCloseDate = new Date(featureValue.attributes[infoPopupFieldsCollection[key].FieldName]);
+                        if (featureValue.attributes[infoPopupFieldsCollection[key].FieldName] == null || featureValue.attributes[infoPopupFieldsCollection[key].FieldName] == "N/A") {
+
+                            strCloseDate = "N/A";
+
+                        } else {
+
+                            strCloseDate = strCloseDate.getUTCMonth() + 1 + "/" + strCloseDate.getUTCDate() + "/" + strCloseDate.getUTCFullYear();
+
+                        }
+
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + strCloseDate + "<br/>"
+
+                    } else if (infoPopupFieldsCollection[key].FieldName === tableLocalBusinessTax.AccountNoFieldName) {
+
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + "<a class='appLinks' href=" + taxCollectorWebsiteLink + featureValue.attributes[infoPopupFieldsCollection[key].FieldName] + " target='blank' title='Get more information from the Miami-Dade County Tax Collector website.' >" + featureValue.attributes[infoPopupFieldsCollection[key].FieldName] + "</a>" + "<br/>"
+
+                    } else if (infoPopupFieldsCollection[key].FieldName === tableLocalBusinessTax.ClassNameFieldName) {
+                        strClassName = featureValue.attributes[tableLocalBusinessTax.ClassNameFieldName];
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + "<a class='appLinks' href='#' onClick='SearchBusinessesInSpecifiedClass(" + featureValue.attributes[tableLocalBusinessTax.ClassCodeFieldName] + ")' title='Click to search for businesses only within this classification.' >" + strClassName + "</a>" + "<br/>";
+
+                    } else {
+
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + featureValue.attributes[infoPopupFieldsCollection[key].FieldName] + "<br/>"
+
+                    }
+
+                    //featureInfoDiv = "<div style=\"padding-left: 30px;padding-bottom: 5px;\">" + featureInfo + "</div>";
+                    featureInfoDiv = "<div class='infoWinFeatureInfoDiv'>" + infoWinContent + "</div>";
+                    photoDiv = "<div class='infoWinPhotoDiv photoDivNewBusiness'></div>";
+
+                    infoWinContentPane = new ContentPane({ content: photoDiv + featureInfoDiv })
+
+                }
+
+                map.infoWindow.resize(250, 310);
+
+            });
+
+            return infoWinContentPane.domNode;
+
+        }
+
+
+        function infoWindowClosedBusinessTemplateContent(graphic) {
+
+            var infoWinContentPane;
+
+            require(["dijit/layout/ContentPane"], function (ContentPane) {
+
+                var featureInfoDiv
+                var photoDiv;
+
+                var strStartDate;
+                var strCloseDate;
+                var strClassName;
+
+                var infoWinContent = "";
+
+                var featureValue = graphic;
+
+                for (var key = 0; key < infoPopupFieldsCollection.length; key++) {
+
+                    if (infoPopupFieldsCollection[key].FieldName === tableLocalBusinessTax.BusinessStartDateFieldName) {
+
+                        //business start date
+                        strStartDate = new Date(featureValue.attributes[infoPopupFieldsCollection[key].FieldName]);
+                        if (featureValue.attributes[infoPopupFieldsCollection[key].FieldName] == null || featureValue.attributes[infoPopupFieldsCollection[key].FieldName] == "N/A") {
+
+                            strStartDate = "N/A";
+
+                        } else {
+
+                            strStartDate = strStartDate.getUTCMonth() + 1 + "/" + strStartDate.getUTCDate() + "/" + strStartDate.getUTCFullYear();
+
+                        }
+
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + strStartDate + "<br/>"
+
+                    } else if (infoPopupFieldsCollection[key].FieldName === tableLocalBusinessTax.BusinessClosedDateFieldName) {
+
+                        //business close date
+                        strCloseDate = new Date(featureValue.attributes[infoPopupFieldsCollection[key].FieldName]);
+                        if (featureValue.attributes[infoPopupFieldsCollection[key].FieldName] == null || featureValue.attributes[infoPopupFieldsCollection[key].FieldName] == "N/A") {
+
+                            strCloseDate = "N/A";
+
+                        } else {
+
+                            strCloseDate = strCloseDate.getUTCMonth() + 1 + "/" + strCloseDate.getUTCDate() + "/" + strCloseDate.getUTCFullYear();
+
+                        }
+
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + strCloseDate + "<br/>"
+
+                    } else if (infoPopupFieldsCollection[key].FieldName === tableLocalBusinessTax.AccountNoFieldName) {
+
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + "<a class='appLinks' href=" + taxCollectorWebsiteLink + featureValue.attributes[infoPopupFieldsCollection[key].FieldName] + " target='blank' title='Get more information from the Miami-Dade County Tax Collector website.' >" + featureValue.attributes[infoPopupFieldsCollection[key].FieldName] + "</a>" + "<br/>"
+
+                    } else if (infoPopupFieldsCollection[key].FieldName === tableLocalBusinessTax.ClassNameFieldName) {
+                        strClassName = featureValue.attributes[tableLocalBusinessTax.ClassNameFieldName];
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + "<a class='appLinks' href='#' onClick='SearchBusinessesInSpecifiedClass(" + featureValue.attributes[tableLocalBusinessTax.ClassCodeFieldName] + ")' title='Click to search for businesses only within this classification.' >" + strClassName + "</a>" + "<br/>";
+
+                    } else {
+
+                        infoWinContent = infoWinContent + "<b>" + infoPopupFieldsCollection[key].DisplayText + ":</b> " + featureValue.attributes[infoPopupFieldsCollection[key].FieldName] + "<br/>"
+
+                    }
+
+                    //featureInfoDiv = "<div style=\"padding-left: 30px;padding-bottom: 5px;\">" + featureInfo + "</div>";
+                    featureInfoDiv = "<div class='infoWinFeatureInfoDiv'>" + infoWinContent + "</div>";
+                    photoDiv = "<div class='infoWinPhotoDiv photoDivClosedBusiness'></div>";
+
+                    infoWinContentPane = new ContentPane({ content: photoDiv + featureInfoDiv })
+
+                }
+
+                map.infoWindow.resize(250, 310);
+
+            });
+
+            return infoWinContentPane.domNode;
+
+
+        }
+
+
+        //Creates Legend Control
+        function CreateMapLegendComponent() {
+            require(["dojo/_base/array", "dojo/dom"], function (array, dom) {
+
+                var table = document.createElement("table");
+                var tBody = document.createElement("tbody");
+                table.appendChild(tBody);
+                table.cellSpacing = 5;
+                table.cellPadding = 5;
+                array.forEach(legendLayersCollection, function (layer) {
+                    var layerName = layer.Name;
+                    var tr = document.createElement("tr");
+                    tBody.appendChild(tr);
+                    var td1 = document.createElement("td");
+                    td1.innerHTML = "<img src=" + layer.ImageURL + " width='20' height='20' />";
+
+                    var td2 = document.createElement("td");
+                    td2.innerHTML = layerName;
+                    td2.className = 'tdLegend';
+
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    dom.byId('TOCDiv').appendChild(table);
+                });
+            });
+        }
+
+        //function for adding feature layer
+        function AddFeatureLayerMapComponent() {
+            for (var i = 0; i < operationalMapLayersCollection.length; i++) {
+                map.addLayer(CreateFeatureLayer(operationalMapLayersCollection[i].MapURL, operationalMapLayersCollection[i].Key, operationalMapLayersCollection[i].DefinitionExpression, operationalMapLayersCollection[i].RendererPictureMarkerIcon, true)).show;
+            }
+        }
+
+        //function for creating feature layer
+        function CreateFeatureLayer(layerURL, key, defExp, icon, isVisible) {
+            require(["esri/layers/FeatureLayer", "esri/symbols/PictureMarkerSymbol", "esri/renderer/SimpleRenderer"], function (FeatureLayer, PictureMarkerSymbol, SimpleRenderer) {
+
+                var rend;
+
+                var layer = new FeatureLayer(layerURL, {
+                    mode: FeatureLayer.MODE_SNAPSHOT,
+                    outFields: ["*"]
+                });
+
+
+                if (key == "newBusinessLayer") {
+                    layer.id = key;
+                    layer.setDefinitionExpression(defExp);
+                    layer.setRenderer(new SimpleRenderer(new PictureMarkerSymbol(icon, 13, 13)));
+                }
+                else if (key == "closedBusinessLayer") {
+                    layer.id = key;
+                    layer.setDefinitionExpression(defExp);
+                    layer.setRenderer(new SimpleRenderer(new PictureMarkerSymbol(icon, 13, 13)));
+                }
+                else {
+                    layer.id = key;
+                }
+
+                return layer;
+
+            });
+        }
+
+
+        function WindowsStoreIcon_OnClick() {
+
+            window.open(winStoreAppFindItUrl, '_blank');
+
+            /*
+            var OSName="Unknown OS";
+            if (navigator.appVersion.indexOf("Windows NT 6.2")!=-1){
+              OSName="Windows 8";
+              //window.open('ms-windows-store:PDP?PFN=' + winStoreAppPackageFamilyName, '_blank');
+              window.open('http://apps.microsoft.com/windows/app/business-tracker/8c17057c-ce29-431a-83b6-a28bd8b12272', '_blank');
+            }else{
+              //ShowDialog("Message:", "You need to be running Windows 8 to download the Windows Store version of this applicaton.");
+              window.open('http://apps.microsoft.com/windows/app/business-tracker/8c17057c-ce29-431a-83b6-a28bd8b12272', '_blank');
+            }
+            */
+
+
+        }
+
+
+        function addAltToMapTiles() {
+            // Use Dojo query to find all images in the map
+            //var mapImages = dojo.query("#map img");
+            
+            var mapImages = dojo.query(".layerTile");
+
+            mapImages.forEach(function (img) {
+                if (!img.getAttribute("alt") || img.getAttribute("alt") === "") {
+                    // Determine appropriate alt text based on image characteristics
+                    var altText = "Map tile";
+
+                    if (img.src) {
+                        if (img.src.indexOf("home") > -1) {
+                            altText = "Zoom to home extent";
+                        } else if (img.src.indexOf("plus") > -1 || img.src.indexOf("zoom_in") > -1) {
+                            altText = "Zoom in";
+                        } else if (img.src.indexOf("minus") > -1 || img.src.indexOf("zoom_out") > -1) {
+                            altText = "Zoom out";
+                        } else if (img.src.indexOf("logo") > -1) {
+                            altText = "ESRI logo";
+                        }
+                    }
+
+                    img.setAttribute("alt", altText);
+                }
+            });
+        }
+
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-21966502-49', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<script>NS_CSM_td=2130193124;NS_CSM_pd=275116665;NS_CSM_u="/clm10";NS_CSM_col="AAAAAAVGzgtAntJCLNOxZA7riDocC7ojEgTvLPzH4o69MYO3fJiQwLJJW5uU8kNqPsztbOZClOItL60pdqzAY7ns6y2e";</script><script type="text/javascript">function sendTimingInfoInit(){setTimeout(sendTimingInfo,0)}function sendTimingInfo(){var wp=window.performance;if(wp){var c1,c2,t;c1=wp.timing;if(c1){var cm={};cm.ns=c1.navigationStart;if((t=c1.unloadEventStart)>0)cm.us=t;if((t=c1.unloadEventEnd)>0)cm.ue=t;if((t=c1.redirectStart)>0)cm.rs=t;if((t=c1.redirectEnd)>0)cm.re=t;cm.fs=c1.fetchStart;cm.dls=c1.domainLookupStart;cm.dle=c1.domainLookupEnd;cm.cs=c1.connectStart;cm.ce=c1.connectEnd;if((t=c1.secureConnectionStart)>0)cm.scs=t;cm.rqs=c1.requestStart;cm.rss=c1.responseStart;cm.rse=c1.responseEnd;cm.dl=c1.domLoading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEventEnd;cm.dc=c1.domComplete;if((t=c1.loadEventStart)>0)cm.ls=t;if((t=c1.loadEventEnd)>0)cm.le=t;cm.tid=NS_CSM_td;cm.pid=NS_CSM_pd;cm.ac=NS_CSM_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="object"||ob===null){if(t=="string")ob='"'+ob+'"';return String(ob);}else{var n,v,json=[],arr=(ob&&ob.constructor==Array);for(n in ob){v=ob[n];t=typeof(v);if(t=="string")v='"'+v+'"';else if(t=="object"&&v!==null)v=JSON.stringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+String(json)+(arr?"]":"}");}};xhttp.open("POST",NS_CSM_u,true);xhttp.send(JSON.stringify(cm));}}}}if(window.addEventListener)window.addEventListener("load",sendTimingInfoInit,false);else if(window.attachEvent)window.attachEvent("onload",sendTimingInfoInit);else window.onload=sendTimingInfoInit;</script></head>
+<body class="claro">
+
+    <!-- MAIN CONTAINER -->
+    <div id="divMainContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters: false" style="width: 100%; height:100%">
+
+
+        <!------------------MAP--------------------------->
+        <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" style="border: double silver; overflow:hidden; padding: 0; margin: 0; border: 0">
+
+        </div>
+
+
+    </div> <!-- end of MAIN CONTAINER -->
+    <!------------------HEADER--------------------------->
+    <div id="headerContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false">
+
+        <div id="divHeaderIcon" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', layoutPriority: 1">
+            <img id="imgApp" alt="Miami-Dade County logo" onclick="window.open('https://miamidade.gov/wps/portal','_blank')" />
+        </div>
+
+        <div id="divAppNameAndDesc" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', layoutPriority: 2">
+
+            <div id="borderLine">
+            </div>
+
+            <table id="tblAppNameAndDesc">
+                <tr>
+                    <td id="lblAppName"></td>
+                </tr>
+                <tr>
+                    <td id="lblAppDescription"></td>
+                </tr>
+            </table>
+
+        </div>
+
+
+        <!--<div id="divWindowStoreIcon" style="width: 138px; height:31px; background-color: transparent;" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'right', layoutPriority: 2">
+            <img id="imgWindowStore" src="images/windowStore.jpg" style="position: absolute; top: 8px; left: 5px; width: 127px; height:41px; border: none; background-color: transparent; cursor:pointer;" alt="App is available on the Window Store" onclick="WindowsStoreIcon_OnClick();" />
+        </div>-->
+
+    </div> <!--end of HEADER-->
+    <!------------------HEADER TOOLBAR CONTAINER--------------------------->
+    <div id="headerToolbarContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline', gutters: false">
+
+        <div id="headerToolbarContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+            <table style="height: 100%; width:100%; vertical-align: middle">
+                <tr>
+                    <td style="text-align: left; vertical-align: middle">
+
+                        <table cellspacing="0px" style="height: 100%; width:100%; vertical-align: middle">
+                            <tr>
+                                <td id="tdSearchText" style="height: 100%; width:100%; text-align: left; vertical-align: middle">
+                                    <input id="txtAddress" class="searchBox" aria-label="Search Address" data-dojo-type="dijit/form/TextBox" data-dojo-props="placeHolder: 'Address, Intersection, or Landmark'" />
+                                </td>
+
+                                <td>
+
+                                    <button id="btn" style="width: 73px !important" data-dojo-type="dijit/form/Button" onClick="doSearch();" 
+                                          value="Search"  title="Search" data-dojo-props="baseClass: 'searchButton'" style="cursor: pointer">Search</button>
+
+                                </td>
+
+                            </tr>
+                        </table>
+
+                    </td>
+
+                    <td id="tdMore" class="win8StoreAppHidden" style="width: 50px; text-align: center; vertical-align: middle" aria-label="More">
+                        <button id="tglBtnMore" data-dojo-type="dijit/form/ToggleButton" title="More" onclick="toggleMoreComponent();" value="More">
+                            <img class="toogleButtonImage" src="images/more_clear.png" alt="More" />
+                        </button>
+                    </td>
+                    <td id="tdHelp" style="width: 50px; text-align: center; vertical-align: middle" aria-label="Help">
+                        <button id="tglBtnHelp" data-dojo-type="dijit/form/ToggleButton" title="Help" onclick="ShowHelp();" aria-label="Help" value="Help">
+                            <img class="toogleButtonImage" src="images/help_clear.png" alt="Help" />
+                        </button>
+                    </td>
+                    <td id="tdMoreGIS" style="width: 50px; text-align: center; vertical-align: middle">
+                        <button id="tglBtnMoreGIS" data-dojo-type="dijit/form/ToggleButton" title="More GIS Services" value="More GIS Services" onclick="MoreGISServices();" aria-label="More GIS Services">
+                            <img class="toogleButtonImage" src="images/MoreGIS.png" alt="More GIS Services" />
+                        </button>
+                    </td>
+                    <td id="tdContactUs" style="width: 50px; text-align: center; vertical-align: middle">
+                        <button id="tglBtnContactUs" data-dojo-type="dijit/form/ToggleButton" title="Contact Us" value="Contact Us" onclick="GISContactUS();">
+                            <img class="toogleButtonImage" src="images/mail_clear.png" alt="Contact Us" />
+                        </button>
+                    </td>
+
+                </tr>
+               
+
+            </table>
+        </div>
+
+    </div>
+
+    <!--end of HEADER TOOLBAR CONTAINER-->
+    <!-- HEADER OPTIONS TABS -->
+
+    <div class="baseMapMenu" onclick="ShowHideBaseMapComponent();">
+        Base Maps
+        <img id="imgBaseMapMenuArrow" alt="Base Maps" src="images/arrow_down.png" style="cursor: pointer" />
+    </div>
+
+    <div class="toolBarMenu" onclick="toggleToolBarComponent();">
+        Map Tools
+        <img id="imgToolBarMenuArrow" alt="Map Tools" src="images/arrow_down.png" style="cursor: pointer" />
+    </div>
+    <div class="adatext" >
+        <a href="https://gisweb.miamidade.gov/ada/index.html?menuOption=|NewBusiness|CLosedBusiness|&map=off&title=BusinessTracker&header=on" class="tdAddressLink">Text Version Only</a>
+    </div>
+    <!--end of HEADER OPTIONS TABS-->
+    <!------------------FOOTER--------------------------->
+
+    <div style="position: absolute; bottom: 10px; right: 20px; color: #0A3662">
+        Enabled by Miami-Dade County GIS
+        <script type="text/javascript">
+            var currentYear = new Date()
+            document.write(currentYear.getFullYear())
+        </script>
+    </div>
+
+    <!--end of FOOTER-->
+    <!-- Basemap Layer Picker Container -->
+    <div id="divBaseMapPickerContainer" class="divBaseMapPickerContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="visibility: hidden;">
+
+        <div id="divBaseMapPickerContent" class="divBaseMapPickerContent" data-dojo-props="region:'center'" data-dojo-type="dijit/layout/ContentPane">
+        </div>
+
+    </div> <!-- end of Basemap Layer Picker Container -->
+    <!--Loading Indicator -->
+    <div id="divLoadingIndicator">
+        <table style="width: 100%; height: 100%;">
+            <tr>
+                <td align="center">
+                    <table>
+                        <tr>
+                            <td align="center">
+                                <img src="images/loading.gif" />
+                            </td>
+                            <td id="loadingMessage" style="font-weight: bold; font-size: 11px; color: White;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div> <!--end of Loading Indicator -->
+    <!--Alert Dialog -->
+    <div id="dialogAlertMessage" data-dojo-type="dijit/Dialog" style="width: 300px; display:none;">
+        <table style="width: 100%; height: 100%;">
+            <tr>
+                <td align="center">
+                    <div id="divMessage" style="text-align: left">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td align="center">
+
+                    <button data-dojo-id="tglBtnAlertMessageOK" id="tglBtnAlertMessageOK" data-dojo-type="dijit/form/Button" style="margin-top: 10px; margin-bottom: 5px" title="OK" onClick="CloseDialog();">
+                        <span style="padding-left: 20px; padding-right: 20px">OK</span>
+                    </button>
+
+                    <!--
+                    <div style="width: 75px; height: 25px; margin-top: 10px" class="customButton" onclick="CloseDialog();">
+                        <div class="customButtonInner">
+                            <table style="width: 100%; height: 100%;">
+                                <tr>
+                                    <td align="center" valign="middle" style="color: White; font-size: 12px; font-weight: bold;
+                                        padding: 5px;">
+                                        OK
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    -->
+                </td>
+            </tr>
+        </table>
+    </div> <!--end of Alert Dialog -->
+    <!--Alert Dialog -->
+    <div id="dialogAlertMessageWithBufferSettingButton" data-dojo-type="dijit/Dialog" style="width: 300px; display:none;">
+        <table style="width: 100%; height: 100%;">
+            <tr>
+                <td align="center">
+                    <div id="divMessageWithBufferSettingButton" style="text-align: left">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <button data-dojo-id="tglBtnAlertMessageWithBufferSettingButtonOK" id="tglBtnAlertMessageWithBufferSettingButtonOK" data-dojo-type="dijit/form/Button" style="margin-top: 10px; margin-bottom: 5px" title="OK" onClick="CloseDialogWithBufferSettingsButton();">
+                        <span style="padding-left: 20px; padding-right: 20px">OK</span>
+                    </button>
+
+                    <button data-dojo-id="tglBtnAlertMessageWithBufferSettingButtonBufferSettings" id="tglBtnAlertMessageWithBufferSettingButtonBufferSettings" data-dojo-type="dijit/form/Button" style="margin-top: 10px; margin-bottom: 5px" title="Modify Search Settings" onClick="SelectBufferSettingsTool();">
+                        <span>Modify Search</span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div> <!--end of Alert Dialog -->
+    <!--Disclaimer Spash Screen Container -->
+    <div id="divSplashScreenContainer" class="divSplashScreenContainer" style="display: none;">
+        <table style="width: 100%; height: 100%;">
+            <tr align="center" valign="middle" style="height: 100%; width: 100%">
+                <td>
+                    <div id="divSplashScreenContent" class="divSplashScreenContent">
+                        <table style="width: 100%; height: 100px;">
+                            <tr style="height: 30px;">
+                                <td>
+                                    <table id="Table3" class="titleWindowHeader" style="width: 100%; height: 100%; padding: 1px" cellpadding="0"
+                                           cellspacing="0">
+                                        <tr style="height: 100%;" align="center" valign="top">
+                                            <td align="left" id="td5" valign="middle" style="padding-left: 7px; width: 98%">
+                                                <span id="Span3" class="titleWindowHeaderTitle">Miami-Dade County Business Tracker</span>
+                                            </td>
+                                            <td id="td6">
+                                                <table cellpadding="0" cellspacing="0" align="right">
+                                                    <tr>
+                                                        <td align="right">
+                                                            <!--<img src="images/close.png" class="titleWindowHeaderOptionTool" title="Close" style="cursor: pointer;"
+                                                                onclick="HideSplashScreenMessage();" />-->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div id="divDisclaimerContainer" class="divDisclaimerContainer">
+                                        <div id="divDisclaimerContent" class="divDisclaimerContent">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td align="center">
+                                    <button  data-dojo-id="tglBtnSplashScreenMessageOK" id="tglBtnSplashScreenMessageOK" 
+                                            data-dojo-type="dijit/form/Button" style="margin-top: 10px; margin-bottom: 5px" 
+                                            title="OK" onClick="HideSplashScreenMessage();" aria-label="OK button" value="OK">
+                                        <span style="padding-left: 20px; padding-right: 20px">OK</span>
+                                    </button>
+                                    <!--
+                                    <div style="width: 75px; margin: 10px;" class="customButton" onclick="HideSplashScreenMessage();">
+                                        <div class="customButtonInner">
+                                            <table style="width: 100%; height: 100%;">
+                                                <tr>
+                                                    <td align="center" valign="middle" style="color:White;font-weight:bold;font-size:small">
+                                                        OK
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    -->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div> <!--end of Disclaimer Spash Screen Container -->
+    <!--Other Applications Links Container -->
+    <div id="divApplicationLinksContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="visibility: hidden;">
+
+        <div id="divHeaderApplicationLinks" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'" style="height: 30px;">
+
+            <table style="width: 100%; height: 100%;" style="position: relative">
+                <tr height="100%">
+                    <td>
+                        <table class="titleWindowHeader" style="width: 100%; height: 100%; padding: 1px;" cellpadding="0"
+                               cellspacing="0">
+                            <tr style="height: 100%;" align="center" valign="top">
+                                <td align="left" id="td7" valign="middle" style="padding-left: 7px; width: 98%">
+                                    <span class="titleWindowHeaderTitle">Other Online Services</span>
+                                </td>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" align="right">
+                                        <tr>
+                                            <td align="right">
+                                                <img src="images/close.png" class="titleWindowHeaderOptionTool" title="Close" style="cursor: pointer;"
+                                                     onclick="toogleOtherApplicationLinksContainer();" />
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="divApplicationLinksContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="overflow: auto;">
+
+            <div id="divLinksContainer">
+            </div>
+
+        </div>
+
+    </div> <!--end of Other Applications Links Container -->
+    <!--Charts Container -->
+    <div id="divChartsContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="visibility: hidden;">
+
+        <div id="divHeaderCharts" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'" style="height: 30px;">
+
+            <table style="width: 100%; height: 100%;" style="position: relative">
+                <tr height="100%">
+                    <td>
+                        <table class="titleWindowHeader" style="width: 100%; height: 100%; padding: 1px;" cellpadding="0"
+                               cellspacing="0">
+                            <tr style="height: 100%;" align="center" valign="top">
+                                <td align="left" id="td7" valign="middle" style="padding-left: 7px; width: 98%">
+                                    <span class="titleWindowHeaderTitle">Classifications PIE Charts</span>
+                                </td>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" align="right">
+                                        <tr>
+                                            <td align="right">
+                                                <img src="images/close.png" class="titleWindowHeaderOptionTool" title="Close" style="cursor: pointer;"
+                                                     onclick="HideChartsContainer();" />
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="divChartsContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+            <div id="divCharts">
+                <div id="divChartsTabContainer" data-dojo-type="dijit/layout/TabContainer" style="width: 100%; height: 100%;">
+
+                    <div id="divNewBusContent" data-dojo-type="dijit/layout/ContentPane" title="New Businesses" data-dojo-props="selected:true">
+                        <div id="newBusChartTotal" style="margin-top: 10px;"></div>
+                        <div id="newBusChart"></div>
+                        <div id="newBusChartLegend"></div>
+
+                    </div>
+
+                    <div id="divClosedBusContent" data-dojo-type="dijit/layout/ContentPane" title="Closed Businesses">
+                        <div id="closedBusChartTotal" style="margin-top: 10px;"></div>
+                        <div id="closedBusChart"></div>
+                        <div id="closedBusChartLegend"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!--end of Charts Container -->
+    <!--ToolBar Container-->
+    <div id="moreContainer" class="moreContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="visibility: hidden;">
+
+        <div id="moreContent" class="moreContent" data-dojo-props="region:'center'" data-dojo-type="dijit/layout/ContentPane">
+
+            <button id="tglBtnHelpSnapped" data-dojo-type="dijit/form/ToggleButton" title="Help" value="Help" data-dojo-props="showLabel:true, checked: false" onclick="ShowHelp(); toggleMoreComponent();">
+                <img class="toogleButtonImage" width="25px" height="25px" src="images/help_clear.png" alt="Help" />
+                <span class="toogleButtonlabel">Help</span>
+            </button>
+
+            <button id="tglBtnMoreGISSnapped" data-dojo-type="dijit/form/ToggleButton" title="More GIS Services" value ="More GIS Services" data-dojo-props="showLabel:true, checked: false" onclick="toogleOtherApplicationLinksContainer()">
+                <img class="toogleButtonImage" width="25px" height="25px" src="images/MoreGIS.png" alt="More GIS Services" />
+                <span class="toogleButtonlabel">More GIS</span>
+            </button>
+
+            <button id="tglBtnContactUsSnapped" data-dojo-type="dijit/form/ToggleButton" title="Contact Us" value="Contact Us" data-dojo-props="showLabel:true, checked: false" onclick="GISContactUS(); toggleMoreComponent();">
+                <img class="toogleButtonImage" width="25px" height="25px" src="images/mail_clear.png" alt="Contact Us" />
+                <span class="toogleButtonlabel">Contact Us</span>
+            </button>
+
+        </div>
+
+    </div> <!--end of ToolBar Container-->
+    <!--ToolBar Container-->
+    <div id="toolBarContainer" class="toolBarContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="visibility: hidden;">
+
+        <div id="toolBarContent" class="toolBarContent" data-dojo-props="region:'center'" data-dojo-type="dijit/layout/ContentPane">
+
+
+            <button data-dojo-type="dijit.form.ToggleButton" id="tglBtnFindByArea" role="button" aria-label="Find by Area" title="Find businesses within area." data-dojo-props="showLabel:true, checked: false" onclick="toggleToolBarComponent();">
+                <img src="images/select_area.png" class="toogleButtonImage" width="25px" height="25px" />
+                <span class="toogleButtonlabel">Find by Area</span>
+            </button>
+
+            <button data-dojo-type="dijit/form/ToggleButton" id="tglBtnBuffer" role="button" aria-label="Modify Search" title="Modify Search Settings" data-dojo-props="showLabel:true, checked: false" onclick="toggleToolBarComponent();">
+                <img src="images/buffer.png" class="toogleButtonImage" width="25px" height="25px" />
+                <span class="toogleButtonlabel">Modify Search</span>
+            </button>
+
+            <button data-dojo-type="dijit/form/ToggleButton" data-dojo-props="showLabel:true, checked: false" id="tglBtnLegend"  title="Layer View List" onclick="ShowHideTOCComponent(); toggleToolBarComponent();">
+                <img src="images/layers.png" class="toogleButtonImage" width="25px" height="25px" />
+                <span class="toogleButtonlabel">Layer View List</span>
+                <!--<span style="font-size: 10px; width: 100%">Overview<br />Map</span>-->
+            </button>
+
+        </div>
+
+    </div> <!--end of ToolBar Container-->
+    <!-- Buffer Component Container -->
+    <div id="divBufferContainer" class="divBufferContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="visibility: hidden;">
+
+
+        <div id="divHeaderBuffer" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top', refreshOnShow: true, layoutPriority: 1" style="height: 30px;">
+
+            <table style="width: 100%; height: 100%;" style="position: relative">
+                <tr height="100%">
+                    <td>
+                        <table class="titleWindowHeader" style="width: 100%; height: 100%; padding: 1px;" cellpadding="0"
+                               cellspacing="0">
+                            <tr style="height: 100%;" align="center" valign="top">
+                                <td align="left" id="td7" valign="middle" style="padding-left: 7px; width: 98%">
+                                    <span class="titleWindowHeaderTitle">Search Settings</span>
+                                </td>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" align="right">
+                                        <tr>
+
+                                            <td align="right">
+                                                <!--
+                                                <img id="imgBufferContainerMinimize" src="images/minimize.png" class="titleWindowHeaderOptionTool" title="Minimize" style="cursor: pointer;"
+                                                    onclick="ShowHideBufferComponentContent();" />
+                                                -->
+                                                <img id="imgBufferContainerMaximize" src="images/maximize.png" class="titleWindowHeaderOptionTool" title="Maximize" style="cursor: pointer; display: none;"
+                                                     onclick="ShowHideBufferComponentContent();" />
+                                            </td>
+
+                                            <td align="right">
+                                                <img src="images/close.png" class="titleWindowHeaderOptionTool" title="Close" style="cursor: pointer;" onclick="HideBufferContainer();" />
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="changeExtentSettingsMessageContainer" style="height: 52px; width: 100%; margin-top: 10px; margin-left: 10px; margin-right: 10px; margin-bottom: 5px" data-dojo-props="region:'top', refreshOnShow: true, layoutPriority: 1" data-dojo-type="dijit/layout/ContentPane">
+            <div id="changeExtentSettingsMessage" style="vertical-align: baseline; color: #FFFFFF">Use the settings below to specify your search timeframe and area extents, and to filter the businesses searched by their corresponding classifications.</div>
+        </div>
+
+        <div id="divBufferContent" class="divBufferContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center', refreshOnShow: true, layoutPriority: 1">
+
+            <!--
+            <div id="changeExtentSettingsMessageContainer" style="height: 52px; width: 100%;" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center', refreshOnShow: true, layoutPriority: 1" >
+                    <div id="changeExtentSettingsMessage" style="vertical-align: baseline; color: #FFFFFF">Use the settings below to specify your search timeframe and area extents, and to filter the businesses searched by their clasification.</div>
+            </div>
+            -->
+
+            <div id="bufferToolBarContent">
+
+                <table cellspacing="0px">
+                    <!--<tr>-->
+                    <tr style="height: 6px">
+                        <td align="right" style="width: 55px" bordercolor="#000000">
+                            Month(s):
+                        </td>
+                        <td>
+                            <input id="bufferTimeRange" name="bufferTimeRange" aria-label="Time Range"  data-dojo-type="dijit/form/NumberSpinner" data-dojo-props="required: true, smallDelta:1, constraints:{min:1,max:12,places:0}, intermediateChanges: true" style="width: 50px; color: #000000" />
+                        </td>
+
+                        <td align="right" style="width: 55px">
+                            Sort:
+                        </td>
+
+                        <td>
+                            <div id="bufferSort" name="bufferSort" data-dojo-type="dijit/form/Select" data-dojo-props="required: true, maxHeight: 350, sortByLabel: false" style="width: 100px; color: #000000">
+                                <span value="cf">Closed First</span>
+                                <span type="separator"></span>
+                                <span value="nf">New First</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr style="height: 6px">
+                        <td colspan="4"> </td>
+                    </tr>
+
+                    <tr style="height: 6px">
+                        <td id="distanceLabel" align="right" style="width: 55px">
+                            Miles(s):
+                        </td>
+                        <td>
+                            <input id="bufferDistance" name="bufferDistance" data-dojo-type="dijit/form/NumberSpinner" data-dojo-props="required: true, smallDelta:1, constraints:{min:1,max:10,places:0}" style="width: 50px; color: #000000" />
+                        </td>
+                        <td colspan="2" align="left" style="vertical-align: middle; color: #FF0000">
+                            <span id="distanceInfoMessageLabel" style="display: none;">
+                                Not used with "Find by Area" <br />
+                                map tool.
+                            </span>
+                        </td>
+                    </tr>
+
+                    <!--
+                    <tr>
+                        <td colspan="3" style="height: 6px"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right" style="width: 55px">
+                            Sort:
+                        </td>
+                        <td colspan="2">
+                            <div id="bufferSort" name="bufferSort" data-dojo-type="dijit/form/Select" data-dojo-props="required: true, maxHeight: 350, sortByLabel: false" style="width: 100px, color: #000000">
+                                <span value="cf">Closed First</span>
+                                <span type="separator"></span>
+                                <span value="nf">New First</span>
+                            </div>
+                        </td>
+                    </tr>
+                    -->
+
+                    <tr>
+                        <td colspan="4" style="height: 10px"> </td>
+                    </tr>
+
+
+                </table>
+                <div>
+                    <div style="vertical-align: baseline">Business Classifications:</div>
+
+                    <button data-dojo-id="tglBtnSelectAllClasses" id="tglBtnSelectAllClasses" data-dojo-type="dijit/form/Button" style="vertical-align: middle; margin-top: 5px; margin-bottom: 5px" title="Select All Classifications" onClick="CheckAllClasses();">
+                        <span>Select All</span>
+                    </button>
+                    <button data-dojo-id="tglBtnClearAllClasses" id="tglBtnClearAllClasses" data-dojo-type="dijit/form/Button" style="vertical-align: middle; margin-top: 5px; margin-bottom: 5px" title="Clear All Classifications" onClick='UncheckAllClasses();'>
+                        <span>Clear All</span>
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div id="divChkBox_CategoryNames" data-dojo-props="region:'center', refreshOnShow: true, layoutPriority: 3" data-dojo-type="dijit/layout/ContentPane">
+            </div>
+
+            <div id="divBufferButtons" data-dojo-props="region:'bottom', refreshOnShow: true, layoutPriority: 1" data-dojo-type="dijit/layout/ContentPane">
+                <button data-dojo-id="tglBtnDoBuffer" style="margin-top: 10px; margin-bottom: 10px" data-dojo-type="dijit/form/Button" title="Search" id="tglBtnDoBuffer" onClick="updateBuffer();">Search</button>
+            </div>
+
+        </div>
+
+
+
+    </div> <!-- end of Buffer Component Container -->
+    <!-- Left Panel Background -->
+    <div id="divLeftPanelBackground">
+
+        <div id="detailsAccordionContainer" data-dojo-type="dijit/layout/AccordionContainer">
+
+            <div id="divTOCContent" data-dojo-type="dijit/layout/ContentPane"   title="Layer View List >>">
+
+                <div id="TOCDiv"></div>
+
+            </div> <!-- end TOC Content -->
+
+            <div id="divSearchResultAccordionContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="refreshOnShow: true, selected: true" title="Results >>">
+
+                <!--Results Container -->
+                <div id="divSearchResultContainer" class="divSearchResultContainer" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters: false, refreshOnShow: true">
+
+                    <div id="divBufferTimeOnResultsContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top', refreshOnShow: true">
+
+                        <!--<div id="divBufferTimeOnResultsContent">-->
+                        <table cellspacing="0px" style="margin: 5px">
+                            <tr style="height: 6px">
+                                <td align="right" style="width: 70px" bordercolor="#000000">
+                                    Month(s):
+                                </td>
+                                <td>
+                                    <input id="bufferTimeRangeOnResultsWin" name="bufferTimeRangeOnResultsWin" data-dojo-type="dijit/form/NumberSpinner"   data-dojo-props="required: true, smallDelta:1, constraints:{min:1,max:12,places:0}, intermediateChanges: true" style="width: 50px; color: #000000" />
+                                </td>
+                                <td>
+                                    <button data-dojo-id="tglBtnMoreSearchSettings" style="margin-top: 10px; margin-bottom: 10px" data-dojo-type="dijit/form/Button" value="Advanced Search" aria-label="Advanced Search" title="Advanced Search" id="tglBtnMoreSearchSettings" onClick="SelectBufferSettingsTool();">Advanced Search</button>
+                                </td>
+
+                            </tr>
+                        </table>
+                        <!--</div>-->
+
+                    </div>
+
+                    <div id="divMoreResult" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top', refreshOnShow: true" style="visibility: hidden; display: none; margin: 5px;">
+
+                        <div style="margin-top: 2px; margin-bottom: 2px; font-weight: bold">
+                            Click on results below to get more information.
+                        </div>
+                        <div id="featureCount" style="margin-top: 2px; margin-bottom: 2px; font-size: 11px; border-top: 2px solid white; border-bottom: 2px solid white;">
+
+                        </div>
+
+                    </div>
+
+                    <div id="divExportButtons" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top', refreshOnShow: true" style="visibility: hidden; display: none; margin-top: 0px; margin-bottom: 2px; margin-left: 5px; margin-right: 20px; text-align: right">
+
+
+                        <button id="btnShowPieCharts" data-dojo-type="dijit/form/ToggleButton" title="Show PIE Charts" value="Show PIE Charts" onclick="ShowChartsContainer();">
+                            <img class="toogleButtonImage" src="images/pie_chart.png" alt="Show PIE Charts" />
+                        </button>
+                        <button id="btnExportExcel" data-dojo-type="dijit/form/ToggleButton" title="Export to Excel" value="Export to Excel" onclick="exportJSONtoExcel();">
+                            <img class="toogleButtonImage" src="images/i_report_excel.png" alt="Export to Excel" />
+                        </button>
+                        <button id="btnExportPDF" data-dojo-type="dijit/form/ToggleButton" title="Export to PDF" value="Export to PDF" onclick="exportJSONtoPDF();">
+                            <img class="toogleButtonImage" src="images/i_report_pdf.png" alt="Export to PDF" />
+                        </button>
+                        <button id="btnExportHtml" data-dojo-type="dijit/form/ToggleButton" title="HTML Report" value="HTML Report" onclick="exportHtml();">
+                            <img class="toogleButtonImage" src="images/i_report_html.png" alt="HTML Report" />
+                        </button>
+                        <button id="btnExportCSV" data-dojo-type="dijit/form/ToggleButton" title="Export to CSV" value="Export to CSV"  onclick="exportCSV();">
+                            <img class="toogleButtonImage" src="images/i_report_csv.png" alt="Export to CSV" />
+                        </button>
+
+                        <!--
+                        <img id="btnExportExcel" class="toogleButtonImage" src="images/i_report_excel.png" style='height: 30px; vertical-align: middle; cursor: pointer; margin-right: 5px' alt="Export to Excel" onclick='exportJSONtoExcel()' />
+                        <img id="btnExportPDF" src="images/i_report_pdf.png" style='height: 30px; vertical-align: middle; cursor: pointer; margin-right: 5px' alt="Export to PDF" onclick='exportJSONtoPDF()' />
+                        <img id="btnExportHtml" src="images/i_report_html.png" style='height: 30px; vertical-align: middle; cursor: pointer; margin-right: 5px' alt="HTML Report" onclick='exportHtml()' />
+                        <img id="btnExportCSV" src="images/i_report_csv.png" style='height: 30px; vertical-align: middle; cursor: pointer; margin-right: 5px' alt="Export to CSV" onclick='exportCSV()' />
+                        -->
+                        <!--
+                        <button id="btnExportExcel" data-dojo-type="dijit/form/Button" style='height: 30px; vertical-align: middle' onclick='exportJSONtoExcel()'>
+                            <span>Excel</span>
+                        </button>
+                        <button id="btnExportPDF" data-dojo-type="dijit/form/Button" style='height: 30px; vertical-align: middle' onclick='exportJSONtoPDF()'>
+                            <span>PDF</span>
+                        </button>
+                        <button id="btnExportHtml" data-dojo-type="dijit/form/Button" style='height: 30px; vertical-align: middle' onclick="exportHtml()">
+                            <span>Export to Html</span>
+                        </button>
+                        <button id="btnExportCSV" data-dojo-type="dijit/form/Button" style='height: 30px; vertical-align: middle' onclick='exportCSV()'>
+                            <span>CSV</span>
+                        </button>
+                        -->
+                        <!--
+                        <button id="btnExportText" data-dojo-type="dijit/form/Button" style='height: 30px; vertical-align: middle' onclick='exportText()'>
+                            <span>CSV Text</span>
+                        </button>
+                        -->
+                    </div>
+
+                    <div id="divSearchResultContent" class="divSearchResultContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top', refreshOnShow: true" style="visibility: hidden; display: none;">
+
+                        <!--
+                        <div data-dojo-type="dijit/layout/ContentPane"  data-dojo-props="region:'top', layoutPriority: 5" style="overflow-x: visible !important; overflow-y: visible !important; background-color: transparent">
+
+                        </div>
+                        -->
+
+                    </div> <!-- end of Search Result Content -->
+
+                    <div id="divEmptyResultsContent" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center', refreshOnShow: true" style="visibility: visible; display: block">
+
+                        <div id="divEmptyResultsContentMessage">
+                            <h3 style="text-align: center">Quick Start Instructions</h3>
+
+                            <ul style="margin-left:10px; padding-left:10px;" role="list">
+                                <li role="listitem">Enter an Address, Intersection, or Landmark in the search box above to use with the default "Search Settings", and click "Search" to find New/Closed Business Tax Receipts. </li>
+                                <li role="listitem">Optionally, use the "Find By Area" tool in the "Map Tools" menu above to draw an area on the map to search for New/Closed Business Tax Receipts.</li>
+                                <li role="listitem">Modify your search criteria as desired using the "Search Settings" form. You can modify the time range, distance from location, results order, and business classifications filter for the search.</li>
+                                <li role="listitem">The "Search Settings" form can be opened by clicking the "Advanced Search" button above, or the "Modify Search" button in the "Map Tools" menu above.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div> <!--end of Search Result Container -->
+
+
+            </div> <!-- end Results Accordion Content -->
+
+        </div> <!-- end Details Accordion -->
+    </div> <!-- end of Left Panel Background -->
+
+    <div id="divToggleDetail" class="divToggleDetailCollapse" onclick="toogleAnimateDetailsView();">
+    </div>
+
+    <!-- Begin Google Analytics code -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-21966502-18', 'miamidade.gov');
+        ga('require', 'linkid', 'linkid.js');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!--<script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        var pluginUrl =
+            '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+        _gaq.push(['_setAccount', 'UA-21966502-19']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-21966502-49', 'auto');
+        ga('send', 'pageview');
+
+    </script>-->
+
+    <!-- End Google Analytics code -->
+
+</body>
+
+</html>

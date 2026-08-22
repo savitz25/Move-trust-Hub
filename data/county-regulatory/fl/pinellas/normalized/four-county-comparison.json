@@ -1,0 +1,102 @@
+{
+  "task": "FL-C007",
+  "counties": [
+    "Palm Beach",
+    "Broward",
+    "Miami-Dade",
+    "Pinellas"
+  ],
+  "dimensions": [
+    {
+      "dimension": "mover_credential",
+      "palm_beach": "Moving Business Permit (MV####)",
+      "broward": "Mover's Registration + Mover Permit (decal)",
+      "miami_dade": "Moving Business Registration / License (MR-#####)",
+      "pinellas": "NONE — ORDINANCE_REGULATION_WITHOUT_SEPARATE_PUBLIC_CREDENTIAL"
+    },
+    {
+      "dimension": "roster_accessibility",
+      "palm_beach": "SEARCHABLE_PUBLIC API (NEAR_FULL active)",
+      "broward": "PRA_REQUIRED (no public roster found)",
+      "miami_dade": "PUBLIC EnerGov search (NEAR_FULL_ACTIVE_ROSTER)",
+      "pinellas": "NO_SEPARATE_ROSTER_IDENTIFIED"
+    },
+    {
+      "dimension": "status",
+      "palm_beach": "Public LICENSED statuses",
+      "broward": "Call-to-verify; no self-serve roster",
+      "miami_dade": "Public multi-status (Issued, Expired, OOB, …)",
+      "pinellas": "N/A — no county credential status"
+    },
+    {
+      "dimension": "phone_email",
+      "palm_beach": "Phone 100%; email via BIR",
+      "broward": "Application-collected; not public roster",
+      "miami_dade": "Application-collected; not on public EnerGov roster",
+      "pinellas": "Agency contact public; no mover roster contact fields"
+    },
+    {
+      "dimension": "owner_officer",
+      "palm_beach": "Public contact name/title on roster",
+      "broward": "Application-collected; not public",
+      "miami_dade": "Application-collected; not public",
+      "pinellas": "Not applicable — no credential application/roster"
+    },
+    {
+      "dimension": "vehicle_level_detail",
+      "palm_beach": "Fleet count only publicly",
+      "broward": "VIN/tag/GVW/decal on application — PRA",
+      "miami_dade": "VIN/tag/GVW/YMM on application — not public",
+      "pinellas": "Not observed / not applicable"
+    },
+    {
+      "dimension": "complaints",
+      "palm_beach": "BIR searchable (~3yr) with case IDs",
+      "broward": "Intake/mediation; history PRA",
+      "miami_dade": "Consumer Mediation Center INTAKE_ONLY; history PRA",
+      "pinellas": "Accela public name/partial→PDF (5yr) SAMPLE_ONLY; RECORD STATUS disposition-like"
+    },
+    {
+      "dimension": "dispositions",
+      "palm_beach": "44-code official catalog + BIR coverage",
+      "broward": "No public disposition code table found",
+      "miami_dade": "No public disposition catalog found",
+      "pinellas": "FAQ/phone/PRA; NOT on public Accela PDF columns"
+    },
+    {
+      "dimension": "enforcement_citations",
+      "palm_beach": "BIR admin actions/citations sampleable",
+      "broward": "Citations/hearings process public; case data PRA",
+      "miami_dade": "Citation authority documented; no public bulk roster",
+      "pinellas": "42-368 civil/criminal authority; 0 public event rows"
+    },
+    {
+      "dimension": "fdacs_match_signals_public",
+      "palm_beach": "Name + phone (+ address) strong",
+      "broward": "INSUFFICIENT_PUBLIC_ROSTER",
+      "miami_dade": "Name + address only (no public phone/IM)",
+      "pinellas": "NOT_APPLICABLE_NO_PUBLIC_ROSTER"
+    },
+    {
+      "dimension": "bulk_accessibility",
+      "palm_beach": "API bounded search near-full",
+      "broward": "Low — documents strong, data weak",
+      "miami_dade": "High for roster identity; low for contact/fleet/complaints",
+      "pinellas": "Low for credentials (none); medium for complaint name-search PDFs"
+    },
+    {
+      "dimension": "engineering_complexity",
+      "palm_beach": "Medium (API + BIR)",
+      "broward": "High for public path; PRA unlocks value",
+      "miami_dade": "Medium — EnerGov + LBT open data; enrichment PRA",
+      "pinellas": "Low credential engineering (N/A); complaint pattern reusable via Accela"
+    },
+    {
+      "dimension": "primary_pilot_value",
+      "palm_beach": "Rich public credential + BIR complaint/enforcement",
+      "broward": "Application/vehicle schema + PRA-gated roster",
+      "miami_dade": "EnerGov NEAR_FULL roster + LBT crosswalk",
+      "pinellas": "Ordinance-without-credential + Accela 5yr complaint-history pattern"
+    }
+  ]
+}

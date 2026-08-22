@@ -1,0 +1,56 @@
+{
+  "task": "FL-C008",
+  "version": "V1",
+  "stages": [
+    {
+      "id": "DISCOVERED",
+      "description": "Official program/source identified; no durable staging yet."
+    },
+    {
+      "id": "ACQUIRED",
+      "description": "Raw artifacts captured with provenance; consumer PII stripped."
+    },
+    {
+      "id": "NORMALIZED",
+      "description": "Structured staging records with coverage classes and source interfaces."
+    },
+    {
+      "id": "QUALIFIED",
+      "description": "Ruleset-versioned evidence; precision gates applied where roster exists."
+    },
+    {
+      "id": "LINKED",
+      "description": "Fail-closed cross-source / canonical attachment (VERIFIED / CANONICAL_LINKED)."
+    },
+    {
+      "id": "PUBLICATION_ELIGIBLE",
+      "description": "Passed eligibility gates; awaiting controlled publish task. Not auto-published."
+    },
+    {
+      "id": "PUBLISHED",
+      "description": "Consumer-visible under approved copy. Out of scope for FL-C008/C009 design-only."
+    }
+  ],
+  "adjacent_states": [
+    {
+      "id": "INTERNAL_ONLY",
+      "description": "Usable internally; not consumer-visible."
+    },
+    {
+      "id": "WITHHELD",
+      "description": "Deliberately held for PII, conflict, precision, or legal reasons."
+    }
+  ],
+  "pilot_stage_map": {
+    "Palm Beach": "QUALIFIED + LINKED (READY_FOR_COUNTY_PILOT_1_INTERNAL)",
+    "Broward": "ACQUIRED / SCHEMA_ONLY / PRA_REQUIRED",
+    "Miami-Dade": "QUALIFIED + LINKED (Issued cohort)",
+    "Pinellas": "ACQUIRED / RESEARCH_ONLY (no roster to qualify)"
+  },
+  "rules": [
+    "Advancement requires explicit ruleset/version criteria",
+    "QUALIFIED skipped when no roster (ordinance-only pattern discovery)",
+    "PUBLICATION_ELIGIBLE does not imply PUBLISHED",
+    "County evidence does not change Trust Score at any stage in V1"
+  ]
+}

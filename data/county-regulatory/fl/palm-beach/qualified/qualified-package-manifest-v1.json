@@ -1,0 +1,61 @@
+{
+  "task": "FL-C003",
+  "package": "palm-beach-qualified-v1",
+  "retrieved_at": "2026-08-21T19:51:45.682Z",
+  "google_places_api_requests": 0,
+  "production_writes": false,
+  "consumer_pii_committed": 0,
+  "precision_gate": {
+    "checked": 64,
+    "correct": 64,
+    "incorrect": 0,
+    "precision": 100
+  },
+  "reconciliation_counts": {
+    "VERIFIED": 64,
+    "REVIEW_REQUIRED": 12,
+    "NOT_FOUND": 66,
+    "CONFLICT": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "files": [
+    {
+      "path": "qualified/pbc-fdacs-crosswalk-v1.json",
+      "rows": 64
+    },
+    {
+      "path": "qualified/pbc-fdacs-unresolved-review-v1.json",
+      "rows": 78
+    },
+    {
+      "path": "qualified/complaint-evidence-v1.json",
+      "rows": 20,
+      "scope": "SAMPLE_ONLY"
+    },
+    {
+      "path": "qualified/enforcement-evidence-v1.json",
+      "rows": 49,
+      "scope": "SAMPLE_ONLY"
+    },
+    {
+      "path": "qualified/incremental-value-after-qualification-v1.json",
+      "rows": null
+    },
+    {
+      "path": "qualified/future-profile-presentation-design-v1.json",
+      "rows": null
+    },
+    {
+      "path": "qualified/county-page-metrics-mock-v1.json",
+      "rows": null
+    },
+    {
+      "path": "qualified/network-reuse-note-v1.json",
+      "rows": null
+    },
+    {
+      "path": "qualified/source-authority-conflict-model-v1.json",
+      "rows": null
+    }
+  ]
+}

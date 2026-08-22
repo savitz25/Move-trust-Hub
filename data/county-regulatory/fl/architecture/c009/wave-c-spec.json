@@ -1,0 +1,25 @@
+{
+  "task": "FL-C009",
+  "wave": "C",
+  "name": "Complaints_Dispositions",
+  "depends_on": ["A", "B"],
+  "design_only": true,
+  "scope": [
+    "BIR complaint observations with explicit window",
+    "official disposition codes (44-code catalog)",
+    "allegation vs disposition separation"
+  ],
+  "design_input_counts": {
+    "complaint_observations": 20,
+    "dispositions_with_code_or_desc": 17,
+    "disposition_code_catalog": 44
+  },
+  "consumer_rules": [
+    "complaint existence is not misconduct",
+    "no complaint-free claims",
+    "zero-result never complaint-free"
+  ],
+  "separate_tables": true,
+  "default_evidence_publication_state": "INTERNAL_ONLY",
+  "trust_score": "UNCHANGED"
+}

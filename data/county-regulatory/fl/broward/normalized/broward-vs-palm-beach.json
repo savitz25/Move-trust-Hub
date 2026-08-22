@@ -1,0 +1,80 @@
+{
+  "task": "FL-C004",
+  "dimensions": [
+    {
+      "dimension": "mover_credential",
+      "palm_beach": "Moving Business Permit (MV####)",
+      "broward": "Mover's Registration + Mover Permit (decal)"
+    },
+    {
+      "dimension": "roster_accessibility",
+      "palm_beach": "SEARCHABLE_PUBLIC API (NEAR_FULL active)",
+      "broward": "PRA_REQUIRED (no public roster found)"
+    },
+    {
+      "dimension": "status",
+      "palm_beach": "Public LICENSED statuses",
+      "broward": "Call-to-verify status documented; no self-serve roster"
+    },
+    {
+      "dimension": "owner_officer",
+      "palm_beach": "Public contact name/title on roster",
+      "broward": "Collected on application; not publicly listed"
+    },
+    {
+      "dimension": "phone_email",
+      "palm_beach": "Phone 100%; email via BIR",
+      "broward": "Collected on application; not publicly listed"
+    },
+    {
+      "dimension": "website",
+      "palm_beach": "58.5% on roster",
+      "broward": "Not observed as required application field"
+    },
+    {
+      "dimension": "fleet",
+      "palm_beach": "Fleet total on roster",
+      "broward": "Vehicle-level decals (richer if acquired)"
+    },
+    {
+      "dimension": "vehicle_level_detail",
+      "palm_beach": "Fleet count only publicly",
+      "broward": "VIN/tag/GVW/decal on application — PRA for inventory"
+    },
+    {
+      "dimension": "complaints",
+      "palm_beach": "BIR searchable (~3yr) with case IDs",
+      "broward": "Intake/mediation documented; history PRA"
+    },
+    {
+      "dimension": "dispositions",
+      "palm_beach": "44-code official catalog + BIR coverage",
+      "broward": "No public disposition code table found"
+    },
+    {
+      "dimension": "enforcement",
+      "palm_beach": "BIR admin actions/citations sampleable",
+      "broward": "Citations/hearings process public; case data PRA"
+    },
+    {
+      "dimension": "final_actions",
+      "palm_beach": "Rarely explicit in sample",
+      "broward": "Hearing/final order path exists; not bulk public"
+    },
+    {
+      "dimension": "historical_depth",
+      "palm_beach": "BIR ~3 years; historical permits PRA",
+      "broward": "Unknown publicly; PRA target"
+    },
+    {
+      "dimension": "bulk_accessibility",
+      "palm_beach": "API bounded search near-full",
+      "broward": "Low — documents strong, data weak"
+    },
+    {
+      "dimension": "engineering_complexity",
+      "palm_beach": "Medium (API + BIR)",
+      "broward": "High for public path; PRA unlocks value"
+    }
+  ]
+}

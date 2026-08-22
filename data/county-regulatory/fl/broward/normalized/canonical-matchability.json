@@ -1,0 +1,6 @@
+{
+  "task": "FL-C004",
+  "deterministic_county_fdacs_with_canonical_company": 0,
+  "deterministic_county_fdacs_without_canonical_company": 0,
+  "note": "Secondary metric only; no Broward evidence attached. Requires public/PRA roster first."
+}

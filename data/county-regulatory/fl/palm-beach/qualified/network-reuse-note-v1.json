@@ -1,0 +1,19 @@
+{
+  "task": "FL-C003",
+  "architecture_implemented": false,
+  "reusable_patterns": [
+    "state credential + county credential can coexist",
+    "credential jurisdiction must remain explicit",
+    "complaint observation ≠ disposition",
+    "enforcement observation ≠ final action",
+    "source identity observations ≠ canonical company fields",
+    "deterministic crosswalks should be versioned evidence objects"
+  ],
+  "potential_later_reuse": [
+    "ContractorTrustHub",
+    "SeniorTrustHub",
+    "InsuranceTrustHub",
+    "other Move counties/states (Broward, Miami-Dade, Pinellas first)"
+  ],
+  "palm_beach_general_platform_note": "PBC Consumer Affairs is general-purpose (moving, towing, VFH, caregiver, BIR). Document reuse potential; do not ingest non-mover categories in county mover track."
+}

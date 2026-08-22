@@ -1,0 +1,42 @@
+{
+  "task": "FL-C005",
+  "data_scope_notes": {
+    "roster": "NEAR_FULL_ACTIVE_ROSTER (n=409; Issued=117)",
+    "lbt": "OPEN_DATA mover categories (n=188)",
+    "complaints_enforcement": "INTAKE_ONLY / PRA_REQUIRED — 0 public rows"
+  },
+  "deterministic_fdacs_matches_issued": 75,
+  "review_required_issued": 28,
+  "not_found_in_fdacs_issued": 14,
+  "insufficient_evidence_issued": 0,
+  "roster_adds_vs_fdacs": {
+    "county_mr_credential": 409,
+    "public_status_including_historical": true,
+    "public_address": 377,
+    "public_dba": 158,
+    "public_phone": 0,
+    "public_email": 0,
+    "public_vehicle_inventory": 0,
+    "public_complaint_history": 0
+  },
+  "lbt_crosswalk_stats": {
+    "issued_mr_total": 117,
+    "DETERMINISTIC_NAME_ADDRESS": 44,
+    "NAME_ONLY_REVIEW": 11,
+    "NOT_FOUND": 62,
+    "MULTIPLE_CANDIDATES_REVIEW": 0
+  },
+  "fdacs_typically_lacks_vs_county": [
+    "county Moving Business Registration number (MR-#####)",
+    "county license status under Article XVI Ch.8A (Issued/Expired/Out of Business/etc.)",
+    "county issue/expire dates from EnerGov",
+    "LBT category linkage (when crosswalkable)"
+  ],
+  "county_publicly_lacks_vs_palm_beach": [
+    "phone on public roster",
+    "email on public roster / BIR",
+    "owner/officer contact on public roster",
+    "fleet size on public roster",
+    "BIR-style complaint disposition history"
+  ]
+}

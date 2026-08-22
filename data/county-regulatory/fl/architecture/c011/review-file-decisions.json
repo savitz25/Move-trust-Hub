@@ -1,0 +1,34 @@
+{
+  "task": "FL-C011",
+  "unresolved_review": 0,
+  "include": [
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/florida-im-company-crosswalk.json",
+      "decision": "INCLUDE",
+      "reason": "Required for validator and/or qualification script reproducibility"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+      "decision": "INCLUDE",
+      "reason": "Required for validator and/or qualification script reproducibility"
+    }
+  ],
+  "exclude": [
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-business-20tax-page-5Bsi.json",
+      "reason": "Large GIS open-data discovery dump; not validator-critical; archive on research stack"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-local-20business-20tax-f.json",
+      "reason": "Large GIS open-data discovery dump; not validator-critical; archive on research stack"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/instructions-self-service-portal.pdf",
+      "reason": "Large instructional PDF; not validator-critical; archive on research stack"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/MovingCo_Application.pdf",
+      "reason": "Large application PDF; provenance metadata retained; binary archive on research stack"
+    }
+  ]
+}

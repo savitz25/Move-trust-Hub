@@ -1,0 +1,15 @@
+{
+  "task": "FL-C004",
+  "mode": "OFFLINE_READ_ONLY",
+  "production_writes": false,
+  "google_places_api_requests": 0,
+  "county_records_available": 0,
+  "counts": {
+    "DETERMINISTIC_MATCH": 0,
+    "REVIEW_REQUIRED": 0,
+    "NOT_FOUND": 0,
+    "INSUFFICIENT_EVIDENCE": 0
+  },
+  "note": "No public Broward mover roster rows available to match. Matchability is INSUFFICIENT_PUBLIC_ROSTER — not a statement that Broward movers are unregistered with FDACS. Application explicitly requires FDACS IM license, so future PRA roster should be highly matchable via IM number.",
+  "expected_strong_signal_if_pra_delivered": "explicit FDACS IM number on county registration"
+}

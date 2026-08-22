@@ -1,0 +1,25 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "wave_a_vs_full_package": {
+    "wave_a_credential_rows": 46,
+    "full_roster_permits": 142,
+    "not_in_wave_a_default": {
+      "FDACS_LINKED_NO_CANONICAL": 18,
+      "REVIEW_REQUIRED": 12,
+      "COUNTY_ONLY": 66
+    }
+  },
+  "later_waves_volumes_from_c003": {
+    "complaint_observations": 20,
+    "dispositions_with_code_or_desc": 17,
+    "disposition_code_catalog": 44,
+    "enforcement_raw": 54,
+    "enforcement_unique_events": 49
+  },
+  "notes": [
+    "Wave A intentionally subsets to PRODUCTION_LINK_READY only",
+    "Full package volumes remain design inputs for Waves C–D",
+    "Unmatched credentials may be INTERNAL later; not Wave A default"
+  ]
+}

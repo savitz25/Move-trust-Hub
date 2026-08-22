@@ -1,0 +1,89 @@
+{
+  "task": "FL-C005",
+  "dimensions": [
+    {
+      "dimension": "mover_credential",
+      "palm_beach": "Moving Business Permit (MV####)",
+      "broward": "Mover's Registration + Mover Permit (decal)",
+      "miami_dade": "Moving Business Registration / License (MR-#####)"
+    },
+    {
+      "dimension": "roster_accessibility",
+      "palm_beach": "SEARCHABLE_PUBLIC API (NEAR_FULL active)",
+      "broward": "PRA_REQUIRED (no public roster found)",
+      "miami_dade": "PUBLIC EnerGov search (NEAR_FULL_ACTIVE_ROSTER; 409 / Issued 117)"
+    },
+    {
+      "dimension": "status",
+      "palm_beach": "Public LICENSED statuses",
+      "broward": "Call-to-verify status; no self-serve roster",
+      "miami_dade": "Public multi-status (Issued, Expired, OOB, Abandoned, Archived, …)"
+    },
+    {
+      "dimension": "phone_email",
+      "palm_beach": "Phone 100%; email via BIR",
+      "broward": "Collected on application; not publicly listed",
+      "miami_dade": "Collected on application; NOT on public EnerGov roster/detail"
+    },
+    {
+      "dimension": "owner_officer",
+      "palm_beach": "Public contact name/title on roster",
+      "broward": "Collected on application; not publicly listed",
+      "miami_dade": "Collected on application (incl. DOB — not committed); not public"
+    },
+    {
+      "dimension": "vehicle_level_detail",
+      "palm_beach": "Fleet count only publicly",
+      "broward": "VIN/tag/GVW/decal on application — PRA for inventory",
+      "miami_dade": "VIN/tag/GVW/YMM on application — not public"
+    },
+    {
+      "dimension": "branches",
+      "palm_beach": "Not first-class public",
+      "broward": "Not observed as public",
+      "miami_dade": "Application branch section; public roster row_count 0"
+    },
+    {
+      "dimension": "local_business_tax",
+      "palm_beach": "BTR required in packet (not open roster join)",
+      "broward": "BTR required in packet",
+      "miami_dade": "LBT open data FeatureServer (MOV-*) available for offline crosswalk"
+    },
+    {
+      "dimension": "complaints",
+      "palm_beach": "BIR searchable (~3yr) with case IDs",
+      "broward": "Intake/mediation documented; history PRA",
+      "miami_dade": "Consumer Mediation Center INTAKE_ONLY; history PRA"
+    },
+    {
+      "dimension": "dispositions",
+      "palm_beach": "44-code official catalog + BIR coverage",
+      "broward": "No public disposition code table found",
+      "miami_dade": "No public disposition catalog found"
+    },
+    {
+      "dimension": "enforcement_citations",
+      "palm_beach": "BIR admin actions/citations sampleable",
+      "broward": "Citations/hearings process public; case data PRA",
+      "miami_dade": "Citation authority documented; no public bulk roster"
+    },
+    {
+      "dimension": "fdacs_match_signals_public",
+      "palm_beach": "Name + phone (+ address) strong",
+      "broward": "INSUFFICIENT_PUBLIC_ROSTER",
+      "miami_dade": "Name + address only (no public phone/IM)"
+    },
+    {
+      "dimension": "bulk_accessibility",
+      "palm_beach": "API bounded search near-full",
+      "broward": "Low — documents strong, data weak",
+      "miami_dade": "High for roster identity; low for contact/fleet/complaints"
+    },
+    {
+      "dimension": "engineering_complexity",
+      "palm_beach": "Medium (API + BIR)",
+      "broward": "High for public path; PRA unlocks value",
+      "miami_dade": "Medium — EnerGov + LBT open data; enrichment PRA"
+    }
+  ]
+}

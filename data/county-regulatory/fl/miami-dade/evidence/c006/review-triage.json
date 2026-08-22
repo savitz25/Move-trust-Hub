@@ -1,0 +1,452 @@
+{
+  "task": "FL-C006",
+  "count": 17,
+  "records": [
+    {
+      "mr_license": "MR-00032",
+      "legal_name": "George Lima Moving, Inc.",
+      "dba": "",
+      "candidate_fdacs_id": "IM58",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "9105 NW 105 CIR Medley FL 33178",
+          "fdacs": "9105 Northwest 105th Circle, Medley, FL 33178  "
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-00094",
+      "legal_name": "The Fortress-Miami Corporation",
+      "dba": "Fortress",
+      "candidate_fdacs_id": "IM162",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "1629 NE 1 AVE Miami FL 33132",
+          "fdacs": "1629 Northeast 1st Avenue, Miami, FL 33132  "
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-00447",
+      "legal_name": "Clover Systems, LLC",
+      "dba": "",
+      "candidate_fdacs_id": "IM1103",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "3505 NW 107 AVE Unit: #C Miami FL 33178",
+          "fdacs": "14350 NW 56TH CT STE 120, OPA LOCKA, FL 33054-2354"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-00564",
+      "legal_name": "Miami Movers For Less, Inc.",
+      "dba": "Move For Less",
+      "candidate_fdacs_id": "IM1543",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "17854 STATE RD. 9 Miami FL 33162",
+          "fdacs": "17854 NE 5TH AVE, MIAMI, FL 33162-1022"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-01076",
+      "legal_name": "Hypermovers Max '' LLC''",
+      "dba": "",
+      "candidate_fdacs_id": "IM2712",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "6741 SW 15 ST Miami FL 33144",
+          "fdacs": "2530 SE 15TH CT, HOMESTEAD, FL 33035-2112"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-01113",
+      "legal_name": "First Class Movers, LLC",
+      "dba": "",
+      "candidate_fdacs_id": "IM2122",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "7905 NW 60 ST Miami FL 33166",
+          "fdacs": "7905 Northwest 60th Street, Miami, FL 33166  "
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-01287",
+      "legal_name": "Ciao Moving & Storage LLC.",
+      "dba": "",
+      "candidate_fdacs_id": "IM3143",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "35 NE 179 ST Miami FL 33162",
+          "fdacs": "3022 NW 73RD ST STE 1, MIAMI, FL 33147-5919"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-01297",
+      "legal_name": "Lu's Delivery LLC",
+      "dba": "Lux Moving Service",
+      "candidate_fdacs_id": "IM3267",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "900 SW 8 ST Unit: #1207 Miami FL 33130",
+          "fdacs": "3925 Northwest 4th Street, Miami, FL 33126  "
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-01306",
+      "legal_name": "Lazy Bear Solutions. Inc",
+      "dba": "The Lazy Bear",
+      "candidate_fdacs_id": "IM3366",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "4115 NW 132 ST Unit: #D Opa Locka FL 33054",
+          "fdacs": "8724 SW 72ND ST, MIAMI, FL 33173-3512"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-092238",
+      "legal_name": "Flex Storage Inc.",
+      "dba": "",
+      "candidate_fdacs_id": "IM3819",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "1060 SW 8 ST Unit: PBM 5012 Miami FL 33130",
+          "fdacs": "1065 SW 8TH ST, MIAMI, FL 33130-3601"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-092532",
+      "legal_name": "Mitjans Moving and Delivery Inc",
+      "dba": "",
+      "candidate_fdacs_id": "IM3794",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "25364 SW 116 AVE Homestead FL 33032",
+          "fdacs": "100 NE 6TH AVE LOT 801, HOMESTEAD, FL 33030-6270"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-092997",
+      "legal_name": "Latin Moving, Corp",
+      "dba": "",
+      "candidate_fdacs_id": "IM3926",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "11317 NW 50 TER Doral FL 33178",
+          "fdacs": "11317 Northwest 50th Terrace, Doral, FL 33178  "
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-094205",
+      "legal_name": "Powerhouse Moving and Delivery Co.",
+      "dba": "",
+      "candidate_fdacs_id": "IM2675",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "2984 W 84 ST Unit: #142 Hialeah FL 33018",
+          "fdacs": "8004 NW 154TH ST #248, MIAMI LAKES, FL 33016"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-095152",
+      "legal_name": "JP Moving & Delivery Service Corp",
+      "dba": "",
+      "candidate_fdacs_id": "IM4080",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "21943 SW 88 PATH Cutler Bay FL 33190",
+          "fdacs": "12571 SW 76TH ST, MIAMI, FL 33183-3503"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-095241",
+      "legal_name": "305 Pro Movers Corp",
+      "dba": "305 Pro Movers Miami",
+      "candidate_fdacs_id": "IM3744",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "10030 NW 9 ST CIR Unit: #203 Miami FL 33172",
+          "fdacs": "601 BRICKELL KEY DR STE 700, MIAMI, FL 33131-2649"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-096496",
+      "legal_name": "RapidGolden Transport LLC",
+      "dba": "",
+      "candidate_fdacs_id": "IM4119",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "1250 SW 6 ST Unit: #113E Miami FL 33135",
+          "fdacs": "542 SW 7TH ST APT 301, MIAMI, FL 33130-4602"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    },
+    {
+      "mr_license": "MR-096782",
+      "legal_name": "Do It Now Moving Services LLC",
+      "dba": "",
+      "candidate_fdacs_id": "IM4127",
+      "categories": [
+        "legal-name-only candidate",
+        "address mismatch / historical address",
+        "address mismatch / suite-unit formatting / historical address",
+        "Miami-Dade public roster lacks phone/email",
+        "corporate filing / LBT corroboration may help but is not alone sufficient"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "address_conflict_or_historical",
+          "county": "2220 NE 2 AVE Unit: #504 Miami FL 33137",
+          "fdacs": "13146 SW 233RD ST, HOMESTEAD, FL 33032-9238"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "Fail-closed: not elevated to VERIFIED without deterministic name+address (or phone/email/IM)."
+    }
+  ]
+}

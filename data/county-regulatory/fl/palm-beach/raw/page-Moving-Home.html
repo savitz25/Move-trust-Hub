@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="App" data-ng-cloak="" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+    
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Moving Driver - Consumer Affairs</title>
+
+    <script type="text/javascript" src="/ConsumerAffairs/ruxitagentjs_ICANVfgqru_10343260715123811.js" data-dtconfig="rid=RID_2132137485|rpid=-1691270873|domain=pbc.gov|reportUrl=/ConsumerAffairs/rb_0332e8ee-1187-496e-b7fe-0cbc483a6808|app=4132f50f4ca6b50b|cuc=f2zqo9q9|owasp=1|mel=100000|featureHash=ICANVfgqru|dpvc=1|lastModification=1787289347152|tp=500,50,0|rdnt=1|uxrgce=1|srbbv=2|agentUri=/ConsumerAffairs/ruxitagentjs_ICANVfgqru_10343260715123811.js"></script><script>
+        window.isPublic = 'false';
+        window.DomainUrl = 'webdev11';
+    </script>
+
+    
+    
+    
+    
+    
+
+    
+    <!-- css files -->
+
+    <link href="/ConsumerAffairs/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/ConsumerAffairs/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/ConsumerAffairs/Content/Style.css" rel="stylesheet" />
+    
+    <link href="/ConsumerAffairs/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="/ConsumerAffairs/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/ConsumerAffairs/Content/animate.min.css" rel="stylesheet" />
+    <link href="/ConsumerAffairs/Content/ng-grid.min.css" rel="stylesheet" />
+    <link href="/ConsumerAffairs/Content/trNgGrid.css" rel="stylesheet" />
+
+    
+
+    <link href="/ConsumerAffairs/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+    <script src="/ConsumerAffairs/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/ConsumerAffairs/Scripts/moment.min.js"></script>
+
+    <!-- Js Files -->
+    <script src="/ConsumerAffairs/Scripts/angular.min.js"></script>
+
+    
+
+    <script src="/ConsumerAffairs/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="/ConsumerAffairs/Scripts/bootstrap.min.js"></script>
+    <script src="/ConsumerAffairs/Scripts/bootstrap-datetimepicker.js"></script>
+
+    <script src="/ConsumerAffairs/Scripts/spin.js"></script>
+    <script src="/ConsumerAffairs/Scripts/angular-sanitize.min.js"></script>
+
+    <!-- Third party scripts -->
+    <script src="/ConsumerAffairs/Scripts/ng-grid.min.js"></script>
+    <script src="/ConsumerAffairs/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="/ConsumerAffairs/Scripts/trNgGrid.js"></script>
+    <script src="/ConsumerAffairs/Scripts/ui-utils.js"></script>
+    <script src="/ConsumerAffairs/Scripts/html5shiv.js"></script>
+    <script src="/ConsumerAffairs/JS/application.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/Security/iss.common.logging.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/Security/iss.security.enterprise-connect.js"></script>
+    <script src="/ConsumerAffairs/Scripts/FileSaver.min.js"></script>
+    <script src="/ConsumerAffairs/JS/redirect.js"></script>
+
+    <!-- Services -->
+    
+
+    <script src="/ConsumerAffairs/JS/Services/userService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/angular-spinner.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/CSVExportService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/ExportService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/addressService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/jquery-ui.custom.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/jquery.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/gridOptions.js"></script>
+    <script src="/ConsumerAffairs/JS/Date.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/DashBoardDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/CodeTableDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/LicenseCodesDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/ReportDataService.js"></script>
+
+    <script src="/ConsumerAffairs/JS/Services/PortalDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/BusinessDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/ConsumerDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/ComplaintDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/CommonMethods.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/optionsList.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/MailLogDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/CommonResetDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/LicenseDataService.js"></script>
+    <script src="/ConsumerAffairs/JS/Services/AttachmentDataService.js"></script>
+
+    <!-- Direcrtives-->
+    <script src="/ConsumerAffairs/JS/Directives/Common.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/autofocus.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/textarea-autosize.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/maxlength.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/validNumber.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/ngAutoExpand.js"></script>
+    <script src="/ConsumerAffairs/Scripts/elastic.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/autogrow.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/addEditorAria.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/menuHighlighter.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/address.js"></script>
+    <script src="/ConsumerAffairs/JS/layout.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/editText.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/capitializeFirst.js"></script>
+    
+    <script src="/ConsumerAffairs/JS/Directives/userActionActivity.js"></script>
+    
+    
+    
+    
+    <script src="/ConsumerAffairs/JS/Directives/readAttachment.js"></script>
+
+    <!-- Filters -->
+    <script src="/ConsumerAffairs/JS/Filters/Filter.js"></script>
+    <script src="/ConsumerAffairs/JS/Filters/customFilter.js"></script>
+    <script src="/ConsumerAffairs/JS/Directives/dirtyPageValidation.js"></script>
+    <script>
+        angular.module("App").controller('MainCtrl', function ($scope) {
+            $scope.bodyStyle = { background: "url(../Images/LoginBg.png) no-repeat center center fixed" };
+        });
+    </script>
+</head>
+
+
+
+
+     <h1><span style="display:none" aria-hidden="true"></span></h1>
+ <h2><span style="display:none" aria-hidden="true"></span></h2>
+ <h3><span style="display:none" aria-hidden="true"></span></h3>
+  <h4><span style="display:none" aria-hidden="true"></span></h4>
+    <div data-ng-controller="navbarController">
+        
+
+        <div class="navbar navbar-inverse set-radius-zero" style="text-align: right;" data-ng-show="checkFrame">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.pbc.gov" style="padding-bottom:60px">
+                        <span class="header-image-large">
+                            <img src="/ConsumerAffairs/content/Images/Header.png" alt="Header Big" />
+                        </span>
+                        <span class="header-image-small">
+                            <img src="/ConsumerAffairs/content/Images/HeaderSmall.png" alt="Header Small" />
+                        </span>
+                    </a>
+                </div>
+                <div class="left-div" style="text-align: right;">
+                    <div class="user-settings-wrapper">
+                        <!-- Top Menu Items -->
+                        <ul class="nav navbar-right top-nav" data-ng-show="isPrivate">
+                            <li data-ng-show="isNewAllow">
+                                <a data-ng-show="isPrivate" role="button" tabindex="0" data-ng-click="showPhoneLog()" style="cursor: pointer"><span class="glyphicon glyphicon-phone"></span>&nbsp;Phone/Activity Log</a>
+                            </li>
+                            <li data-ng-show="isNewAllow">
+                                <a data-ng-show="isPrivate" role="button" tabindex="0" data-ng-click="showMessageList()" style="cursor: pointer"><span class="fa fa-list" aria-hidden="true"></span>&nbsp;Message List <span class="sr-only">{{messageCount}}</span></a>
+                            </li>
+                            <li data-ng-show="isNewAllow">
+                                <a data-ng-show="isPrivate" role="button" tabindex="0" data-ng-click="showMailLog()" style="cursor: pointer"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Mail Log </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false"><span class="fa fa-user"></span>&nbsp;{{userProfile.FirstName | capitalize}} {{userProfile.LastName |capitalize}} <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a data-ng-show="isPrivate" role="button" tabindex="0" data-ng-click="logout()"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LOGO HEADER END-->
+        <section class="menu-section1" data-ng-show="isPrivate">
+            <div class="container" data-ng-cloak="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="navbar-collapse collapse">
+                            <ul id="menu-top" class="nav navbar-nav navbar-right">
+                                <li data-ng-repeat="link in siteMenu | filter:{ParentLinkSeq : ''}" data-ng-if="link.ParentLinkSeq == ''" class="{{link.Field1}}">
+
+                                    <a data-ng-show="link.Title == ''" data-ng-href="{{link.MenuURL}}" class="{{link.Field1 && 'dropdown-toggle' || ' menu-top-active'}}" data-toggle="{{link.Field1 && 'dropdown' || ''}}">
+                                        {{link.Title}}
+                                        <b data-ng-show="link.Field1.length > 0" class="caret"></b>
+                                    </a>
+                                    <a data-ng-hide="link.Title == ''" href="{{link.MenuURL}}" class="{{link.Field1 && 'dropdown-toggle' || ''}} " data-toggle="{{link.Field1 && 'dropdown' || ''}} ">
+                                        {{link.Title}}
+                                        <b data-ng-show="link.Field1.length > 0" class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu" data-ng-show="link.Field1.length > 0 " style="background-color: #4b6c9e;">
+                                        <li data-ng-repeat="subItem in siteMenu | filter:{ParentLinkSeq : link.SecurityMenuSeq}">
+                                            <a data-ng-if="subItem.ParentLinkSeq == link.SecurityMenuSeq" data-ng-href="{{subItem.MenuURL}}">
+                                                <span class="{{subItem.Field2}}" style="padding-right:20px"></span>
+                                                &nbsp;&nbsp;{{subItem.Title}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MENU SECTION END-->
+        <footer>
+            <div class="container-fluid" data-ng-show="isPrivate">
+                <div class="row">
+                    <div class="col-md-12">
+                        2026 Palm Beach County, All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <section class="content-wrapper main-content clear-fix">
+        
+
+<script src="/ConsumerAffairs/JS/Controllers/Admin/moving.js"></script>
+<script>
+    window.Host = 'webdev11';
+    window.DomainUrl = 'webdev11';
+    window.BusinessType = '58';
+    window.CompanyTitle = 'Moving Companies';
+</script>
+
+<style type="text/css">
+    .loading {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin: 40px 5px;
+        width: 80px;
+    }
+</style>
+<script>
+</script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1LGTWK9ERQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1LGTWK9ERQ');
+</script>
+
+
+
+
+
+<div data-ng-app="App" data-ng-controller="movingController">
+
+    <script>
+        function printPartO(elementId) {
+            var printContent = document.getElementById(elementId);
+            var windowUrl = 'about:blank';
+            var uniqueName = new Date();
+            var windowName = 'Print' + uniqueName.getTime();
+            var printWindow = window.open(windowUrl, windowName, 'left=50000,top=50000,width=0,height=0');
+
+            printWindow.document.write("<link href='../Content/Site.css' rel='stylesheet' media='print' />");
+            printWindow.document.write(printContent.innerHTML);
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
+        }
+    </script>
+    <div class="col-md-12 titleCener">Licensed {{companyTitle }}</div>
+    <br />
+    <br />
+    <form name="myForm" class="form-inline" novalidate data-ng-submit="search()">
+        <div class="form-group form-group-sm group">
+
+            <div class="col-sm-1 text-right" style="width: 13rem">
+                <label for="searchby">Search By:</label>
+            </div>
+            <div class="col-sm-2" style="width: 16rem">
+                <select id="searchby" class="form-control" data-ng-model="mySearch" data-ng-change="update()"
+                        data-ng-options="type.name for type in SearchBy"></select>
+            </div>
+
+            <div class="col-sm-1 text-right" style="width: 13rem">
+                <label for="searchtext">{{searchLabel}}: </label>
+            </div>
+            <div class="col-sm-3 text-right" style="width: 18rem">
+
+
+                <div data-ng-if="mySearch.value == 'License Number'">
+                    <input type="text"
+                           data-ng-show="isTextBoxShow"
+                           data-my-enter="search()"
+                           class="form-control"
+                           data-ng-model="$parent.searchtext"
+                           placeholder="Enter text"
+                           aria-label="Enter License Number to Search Moving License">
+                </div>
+
+
+
+
+                <div data-ng-if="mySearch.value == 'Zip Code'">
+                    <input type="text"
+                           data-ui-mask="?99999"
+                           data-valid-number=""
+                           data-my-enter="search()"
+                           class="form-control"
+                           data-ng-show="isTextBoxShow"
+                           data-ng-model="$parent.searchtext"
+                           aria-label="Enter ZipCode to Search Moving License">
+                </div>
+
+                <div data-ng-if="mySearch.value == 'Company Name'">
+                    <input type="text"
+                           data-ng-show="isTextBoxShow"
+                           data-my-enter="search()"
+                           class="form-control"
+                           data-ng-model="$parent.searchtext"
+                           placeholder="Enter text"
+                           aria-label="Enter Company Name to Search Moving License">
+                </div>
+
+                <div data-ng-show="mySearch.value == 'City Name'">
+                    <select id="city"
+                            class="form-control"
+                            data-ng-show="isCityShow"
+                            data-my-enter="search()"
+                            data-ng-model="myCity"
+                            data-ng-options="type.City_name for type in City"
+                            aria-label="Select City Name to Search Moving License"></select>
+                </div>
+            </div>
+            <div class="col-sm-2 text-right" style="width: 13rem">
+                
+                
+
+
+
+                <button id="btnSearchMovingData"
+                        type="button"
+                        data-ng-click="search()"
+                        class="btn btn-primary ada-buttons"                        
+                        aria-describedby="searchMovingDataHelp">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    Search
+                </button>
+                <span id="searchMovingDataHelp" class="sr-only">
+                    Search Moving data by company name or by city.
+                </span>
+
+
+            </div>
+            <br />
+
+            <div data-ng-if="resultItem.length == 0">
+                <div class="panel-body verbiageText">
+                    <div class="text-left"><span style="padding-left:110px">If you select from the Search By list, enter the following:</span></div>
+                    <div class="text-left"><strong><span style="padding-left:110px">Name - enter</span> part or all the company name </strong></div>
+                    <div class="text-left"><strong><span style="padding-left:110px">License Number - enter</span> part or all the License Number </strong></div>
+                    <div class="text-left"><strong><span style="padding-left:110px">City Name - select</span> from list box </strong></div>
+                    <div class="text-left"><strong><span style="padding-left:110px">Zip Code - enter</span> the Zip Code </strong></div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="alert alert-danger" data-ng-show="isError" role="alert">{{ error }}</div>
+
+        <div style="padding-left: 300px;">
+            <img data-ng-show="loading" src="/ConsumerAffairs/images/Loading.gif" />
+
+        </div>
+
+
+        <div class="well-lg row" style="text-align: center" data-ng-show="resultItem.length > 0">
+            
+            <table id="tblMoving" class="table table-condensed table-striped"
+                   style="padding-left: 10px; padding-right: 10px"
+                   data-items="resultItem"
+                   selection-mode="SingleRow"
+                   data-page-items="10"
+                   data-filter-by="myFilter"
+                   data-filtered-items="myFilteredItems"
+                   data-title="Licensed Companies"
+                   data-tr-ng-grid=""
+                   role="presentation">
+                <thead>
+                    <tr>
+                        <th data-enable-filtering="false" field-name="Business_Name" data-display-name="Company Name" data-display-align="left" data-enable-sorting="true" data-display-format="movingbusname:gridItem:searchtext:mySearch"></th>
+                        <th data-enable-filtering="false" data-display-name="Address" field-name="Format_Street" data-display-align="center" data-enable-sorting="true" data-display-format="fulladdressFromCtrl:gridItem"></th>
+                        <th data-enable-filtering="false" data-display-name="Current Status" field-name="Exipred_License_Status_Code" data-display-align="center" data-enable-sorting="true"></th>
+                        <th data-enable-filtering="false" data-display-name="Expiration Date" field-name="License_Expiry_Date" data-display-align="center" data-enable-sorting="true" data-display-format="dateformat:gridItem"></th>
+                        <th data-enable-filtering="false" data-display-name="Details" data-display-align="center" data-enable-sorting="false">Details</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="column-width: auto" field-name="Business_Name"></td>
+                        <td field-name="Format_Street"></td>
+                        <td field-name="Exipred_License_Status_Code"></td>
+                        <td field-name="License_Expiry_Date"></td>
+                        <td>
+                            <a class="btn btn-primary view-report-btn"
+                               href=""
+                               ng-click="updateSelectedRow(gridItem); $event.preventDefault();"
+                               aria-label="View details">
+                                <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+                                <span>View</span>
+                            </a>
+                        </td>
+                        
+
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <div class="tr-ng-grid-global-filter" data-tr-ng-grid-global-filter=""></div>
+                            <div class="tr-ng-grid-pager" data-tr-ng-grid-pager=""></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>        
+        </div>    
+    </form>
+</div>
+
+    </section>
+    <!-- /#wrapper -->
+    <script src="/ConsumerAffairs/JS/navbar.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/Security/login.js"></script>
+    <script src="/ConsumerAffairs/JS/FeedBackDetails.js"></script>
+    <script src="/ConsumerAffairs/JS/Address.js"></script>
+    <script src="/ConsumerAffairs/JS/Activity.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/Complaints/Complaint.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/License/LicenseTracking.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/CodeTables/CountyAndCity.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/PhoneLog/PhoneLog.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/MessageLog/MessageList.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/MessageLog/MailLog.js"></script>
+    <script src="/ConsumerAffairs/JS/Controllers/Admin/ErrorLog.js"></script>
+</body>
+</html>
+

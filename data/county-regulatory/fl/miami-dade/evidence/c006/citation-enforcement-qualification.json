@@ -1,0 +1,13 @@
+{
+  "task": "FL-C006",
+  "citation_authority_documented": true,
+  "enforcement_authority_documented": true,
+  "PUBLIC_COMPANY_LEVEL_CITATION_EVENTS": 0,
+  "PUBLIC_FINAL_ENFORCEMENT_ACTIONS": 0,
+  "PRA_REQUIRED": true,
+  "evidence_classes_system_only": [
+    "CITATION_AUTHORITY_OBSERVATION",
+    "ENFORCEMENT_AUTHORITY_OBSERVATION"
+  ],
+  "note": "Do not create FINAL_ENFORCEMENT_ACTION without explicit official case disposition."
+}

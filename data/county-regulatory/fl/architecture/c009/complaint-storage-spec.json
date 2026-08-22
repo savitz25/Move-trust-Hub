@@ -1,0 +1,22 @@
+{
+  "task": "FL-C009",
+  "table": "county_complaint_observation",
+  "wave": "C",
+  "design_only": true,
+  "production_db_migrations": 0,
+  "design_input_counts": {
+    "complaint_observations": 20,
+    "coverage_class": "SAMPLE"
+  },
+  "separate_from_disposition": true,
+  "misconduct_inference_forbidden": true,
+  "default_evidence_publication_state": "INTERNAL_ONLY",
+  "consumer_pii_committed": 0,
+  "zero_result": {
+    "allowed_storage": "RESEARCH_ONLY_OR_INTERNAL",
+    "forbidden_consumer_label": "COMPLAINT_FREE",
+    "never_complaint_free": true
+  },
+  "required_window_fields": ["window_start", "window_end", "retrieved_at"],
+  "trust_score_input": false
+}

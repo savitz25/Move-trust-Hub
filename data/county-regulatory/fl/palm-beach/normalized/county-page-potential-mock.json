@@ -1,0 +1,40 @@
+{
+  "task": "FL-C002",
+  "live_page_changed": false,
+  "title": "Palm Beach County moving market — INTERNAL DATA DESIGN MOCK",
+  "metrics": {
+    "county_regulated_movers_public_active_roster": {
+      "value": 142,
+      "label": "NEAR_FULL_ACTIVE_LICENSED_ROSTER"
+    },
+    "active_permits_licensed_status": {
+      "value": 142,
+      "label": "PUBLICLY_ACQUIRED"
+    },
+    "fdacs_plus_county_deterministic_matches": {
+      "value": 59,
+      "label": "OFFLINE_MATCHABILITY"
+    },
+    "companies_with_complaint_history": {
+      "value": 4,
+      "label": "SAMPLE_ONLY",
+      "sample_size": 22
+    },
+    "complaint_observations_in_sample": {
+      "value": 20,
+      "label": "SAMPLE_ONLY"
+    },
+    "disposed_complaints_in_sample": {
+      "value": 17,
+      "label": "SAMPLE_ONLY"
+    },
+    "administrative_actions_in_sample": {
+      "value": 45,
+      "label": "SAMPLE_ONLY"
+    },
+    "citations_in_sample": {
+      "value": 9,
+      "label": "SAMPLE_ONLY"
+    }
+  }
+}

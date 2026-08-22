@@ -1,0 +1,42 @@
+{
+  "task": "FL-C005",
+  "live_page_changed": false,
+  "title": "Miami-Dade County moving market — INTERNAL DATA DESIGN MOCK",
+  "metrics": {
+    "county_regulated_movers_public_roster": {
+      "value": 409,
+      "label": "NEAR_FULL_ACTIVE_ROSTER (historical+current)"
+    },
+    "issued_credentials": {
+      "value": 117,
+      "label": "PUBLICLY_ACQUIRED Issued"
+    },
+    "fdacs_deterministic_matches_issued": {
+      "value": 75,
+      "label": "OFFLINE_MATCHABILITY_ISSUED"
+    },
+    "lbt_deterministic_name_address": {
+      "value": 44,
+      "label": "OFFLINE_LBT_CROSSWALK_ISSUED"
+    },
+    "canonical_linked_issued": {
+      "value": 60,
+      "label": "OFFLINE_CANONICAL_READ_ONLY"
+    }
+  },
+  "sample_only": {
+    "complaint_observations": {
+      "value": 0,
+      "label": "INTAKE_ONLY / none public"
+    },
+    "enforcement_observations": {
+      "value": 0,
+      "label": "none public"
+    },
+    "vehicle_observations": {
+      "value": 0,
+      "label": "APPLICATION_SCHEMA only"
+    }
+  },
+  "extrapolation_forbidden": true
+}

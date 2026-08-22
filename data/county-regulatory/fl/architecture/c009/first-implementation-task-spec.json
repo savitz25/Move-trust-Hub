@@ -1,0 +1,36 @@
+{
+  "task": "FL-C009",
+  "first_implementation_task_id": "PBC-PROD-001",
+  "title": "Foundation + Wave A INTERNAL ingest — publish nothing",
+  "design_only_in_c009": true,
+  "depends_on": [
+    "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW=YES",
+    "selective transplant merged",
+    "DDL gate approved"
+  ],
+  "includes": [
+    "Gated migration for county_regulatory_program + provider_county_credential",
+    "Seed Palm Beach CREDENTIAL_BASED Moving Business Permit program",
+    "Upsert 46 PRODUCTION_LINK_READY credentials",
+    "Force evidence_publication_state=INTERNAL_ONLY",
+    "Record ingest_run_id, ruleset_version, match_method, linked_at",
+    "Validate row count 46; PSA county inserts 0; companies publication untouched; Trust Score untouched; PII 0; Places 0"
+  ],
+  "excludes": [
+    "Publishing any credential",
+    "Profile/county page UI",
+    "Waves B–D data loads",
+    "Trust Score / indexable changes",
+    "Google Places"
+  ],
+  "cohort_count": 46,
+  "publish_count": 0,
+  "trust_score_connection": false,
+  "production_db_migrations_in_c009": 0,
+  "abort_if": [
+    "state track unstable",
+    "unexplained canonical link delta",
+    "PII found",
+    "any publish flag set true"
+  ]
+}

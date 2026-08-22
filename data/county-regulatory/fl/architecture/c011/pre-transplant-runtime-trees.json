@@ -1,0 +1,9 @@
+﻿{
+    "lib":  "69abffb515a445232c3c06e71f0434c848b2438c",
+    "app":  "e22130e5aaebc35cc9c705e929b4e15bbaad95df",
+    "middleware.ts":  "a89189d05cbcfafd91b82a5c08a9b3785c32457c",
+    "package.json":  "0771407f20ef8063efb447700a9a8a5c84e99e00",
+    "components":  "162beb4e898931e2be12d99d67bce6d25f0ff13f",
+    "package-lock.json":  "0abb4ffa370a6f90096fad0804eab917bc192517",
+    "supabase":  "fd5d984409bdb7787b2d52d280c1de4170cb81e1"
+}

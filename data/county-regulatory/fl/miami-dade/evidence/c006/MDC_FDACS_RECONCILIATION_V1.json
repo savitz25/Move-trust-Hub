@@ -1,0 +1,34 @@
+{
+  "ruleset_id": "MDC_FDACS_RECONCILIATION_V1",
+  "fail_closed": true,
+  "outcomes": [
+    "VERIFIED",
+    "REVIEW_REQUIRED",
+    "NOT_FOUND",
+    "CONFLICT",
+    "NOT_APPLICABLE"
+  ],
+  "verify_requires_one_of": [
+    "exact_legal_name + exact_physical_address",
+    "exact_dba + exact_physical_address",
+    "exact_legal_name + exact_phone (when public)",
+    "exact_dba + exact_phone (when public)",
+    "exact_legal_name + exact_business_email (when public)",
+    "explicit shared FDACS IM identifier on county source (not observed on public EnerGov roster)"
+  ],
+  "never_verify_from_only": [
+    "legal name",
+    "DBA",
+    "city",
+    "ZIP",
+    "LBT name",
+    "website",
+    "brand",
+    "fuzzy similarity",
+    "mailing address alone",
+    "category code"
+  ],
+  "miami_dade_note": "Public EnerGov roster lacks phone/email/IM for matching; name+address precision must be especially strict and QA every VERIFIED association.",
+  "conflict_when": "Two or more strong FDACS candidates with incompatible identity evidence, or strong corroboration for mutually exclusive entities.",
+  "not_applicable_when": "Record is not a Moving Business Registration / License (not expected in this Moving/MR roster)."
+}

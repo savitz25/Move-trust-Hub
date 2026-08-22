@@ -1,0 +1,247 @@
+﻿{
+    "business_seq":  1902255,
+    "license_number":  "MV1193",
+    "business_name":  "Safebound Logistics, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV1193",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  504340,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1902255,
+                                                "KeyField":  null,
+                                                "Field2":  "2021-06-17T04:00:00.000Z",
+                                                "Field3":  "MOV00-10 Sec 4 Company operating without county permit",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  504341,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1902255,
+                                                "KeyField":  null,
+                                                "Field2":  "2021-06-17T04:00:00.000Z",
+                                                "Field3":  "MOV00-10 Sec 5 Failed to carry cargo liability insurance",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "NO",
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            }
+                                        ],
+                              "Count":  2
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Safebound Logistics, LLC",
+                               "Established_Yr":  null,
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1902255,
+                               "Does_Business_As":  "Safebound Moving \u0026 Storage",
+                               "Address":  "6051 Southern",
+                               "City":  "West Palm Beach",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33413",
+                               "MailingAddress":  "6051 Southern",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "West Palm Beach",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33413",
+                               "PhoneNumber":  "5615107191",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "jamie@safebound.com",
+                               "WebsiteURL":  "safeboundmoving.com",
+                               "Fax":  "",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ComplaintSeq":  "1907062",
+                                                "ResolutionShortDesc":  "Referred to another agency",
+                                                "AllegedViolation":  "Alleged damage to consumer\u0027s goods or property ",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A02",
+                                                "DateClosed":  "5/15/2026"
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ComplaintSeq":  "1907109",
+                                                "ResolutionShortDesc":  "Referred to another agency",
+                                                "AllegedViolation":  "Alleged billing dispute",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A02",
+                                                "DateClosed":  "4/20/2026"
+                                            },
+                                            {
+                                                "$id":  "3",
+                                                "ComplaintSeq":  "1905509",
+                                                "ResolutionShortDesc":  "Referred to another agency",
+                                                "AllegedViolation":  "Alleged unfair business practice",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A02",
+                                                "DateClosed":  "2/29/2024"
+                                            },
+                                            {
+                                                "$id":  "4",
+                                                "ComplaintSeq":  "1905253",
+                                                "ResolutionShortDesc":  "No compromise",
+                                                "AllegedViolation":  "Alleged unfair business practice",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A10",
+                                                "DateClosed":  "2/7/2024"
+                                            },
+                                            {
+                                                "$id":  "5",
+                                                "ComplaintSeq":  "1905223",
+                                                "ResolutionShortDesc":  "Referred to another agency",
+                                                "AllegedViolation":  "Alleged misrepresentation",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A02",
+                                                "DateClosed":  "11/29/2023"
+                                            },
+                                            {
+                                                "$id":  "6",
+                                                "ComplaintSeq":  "1907160",
+                                                "ResolutionShortDesc":  null,
+                                                "AllegedViolation":  "Alleged billing dispute",
+                                                "Status":  "OPEN/PENDING",
+                                                "ResolutionCode":  null,
+                                                "DateClosed":  ""
+                                            },
+                                            {
+                                                "$id":  "7",
+                                                "ComplaintSeq":  "1907189",
+                                                "ResolutionShortDesc":  null,
+                                                "AllegedViolation":  "Alleged failure to cancel contract, subscription, membership, etc.",
+                                                "Status":  "OPEN/PENDING",
+                                                "ResolutionCode":  null,
+                                                "DateClosed":  ""
+                                            }
+                                        ],
+                              "Count":  7
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  7,
+                         "caseSummary":  [
+                                             {
+                                                 "$id":  "2",
+                                                 "ResolutionCode":  null,
+                                                 "ResoultionShortDesc":  null,
+                                                 "TotalCase":  2,
+                                                 "Status":  "closed"
+                                             },
+                                             {
+                                                 "$id":  "3",
+                                                 "ResolutionCode":  "A02",
+                                                 "ResoultionShortDesc":  "Referred to another agency",
+                                                 "TotalCase":  4,
+                                                 "Status":  "closed"
+                                             },
+                                             {
+                                                 "$id":  "4",
+                                                 "ResolutionCode":  "A10",
+                                                 "ResoultionShortDesc":  "No compromise",
+                                                 "TotalCase":  1,
+                                                 "Status":  "closed"
+                                             }
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  1902255,
+                                           "LastName":  "Timmins",
+                                           "FirstName":  "Rebecca",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "9087701400"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Safebound Logistics, LLC",
+                                         "Established_Yr":  null,
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1902255,
+                                         "Does_Business_As":  "Safebound Moving \u0026 Storage",
+                                         "Address":  "6051 Southern",
+                                         "City":  "West Palm Beach",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33413",
+                                         "MailingAddress":  "6051 Southern",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "West Palm Beach",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33413",
+                                         "PhoneNumber":  "5615107191",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "jamie@safebound.com",
+                                         "WebsiteURL":  "safeboundmoving.com",
+                                         "Fax":  "",
+                                         "License_Required":  "Y"
+                                     }
+}

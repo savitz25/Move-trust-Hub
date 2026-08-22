@@ -1,0 +1,2608 @@
+{
+  "task": "FL-C006",
+  "file": "mdc-fdacs-crosswalk-v1.json",
+  "version": "v1",
+  "immutable": true,
+  "ruleset": "MDC_FDACS_RECONCILIATION_V1",
+  "evidence_ruleset": "MDC_COUNTY_EVIDENCE_V1",
+  "retrieved_at": "2026-08-21T22:01:02.420Z",
+  "production_writes": false,
+  "google_places_api_requests": 0,
+  "consumer_pii_committed": 0,
+  "row_count": 86,
+  "records": [
+    {
+      "miami_dade_mr": "MR-00002",
+      "miami_dade_legal_name": "Withers Transfer and Storage of Coral Gables, Inc.",
+      "miami_dade_dba": "Withers Worldwide",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "11431 NW 107 ST Unit: #1 Miami FL 33178",
+      "business_id": "5FF26D21-5AF2-477F-982F-ECCE05AE70A9",
+      "fdacs_id": "IM27",
+      "fdacs_name": "WITHERS TRANSFER AND STORAGE OF CORAL GABLES, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "11431 NW 107TH ST STE 1, MIAMI, FL 33178-4632",
+      "canonical_company_id": "fl-im-27",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00015",
+      "miami_dade_legal_name": "Raul's Moving, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "9105 NW 105 CIR Medley FL 33178",
+      "business_id": "8C2B9669-410E-4590-AF27-18E35CE72DF7",
+      "fdacs_id": "IM106",
+      "fdacs_name": "RAUL'S MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "9105 NW 105TH CIR, MIAMI, FL 33178-1306",
+      "canonical_company_id": "fl-im-106",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00018",
+      "miami_dade_legal_name": "Gomez Moving Co., Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "9881 SW 4 ST Miami FL 33174",
+      "business_id": "CAF02AB2-E145-410B-8C7C-E2C706267E8C",
+      "fdacs_id": "IM125",
+      "fdacs_name": "GOMEZ MOVING CO., INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "9881 SW 4TH ST, MIAMI, FL 33174-1974",
+      "canonical_company_id": "fl-im-125",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00049",
+      "miami_dade_legal_name": "Homestead Transfer & Storage Co.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "32100 SW 187 AVE Homestead FL 33030",
+      "business_id": "B8CB1557-49B9-4FF8-BA41-0B975522D4AE",
+      "fdacs_id": "IM366",
+      "fdacs_name": "HOMESTEAD TRANSFER & STORAGE CO.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "32100 SW 187TH AVE, HOMESTEAD, FL 33030-6801",
+      "canonical_company_id": "fl-im-366",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00067",
+      "miami_dade_legal_name": "Small Time Movers, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "9124 SW 148 Ct Miami FL 33196",
+      "business_id": "EA434A7F-C9DF-44FD-B898-7D1CD6F3D2DD",
+      "fdacs_id": "IM160",
+      "fdacs_name": "SMALL TIME MOVERS, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "9124 SW 148TH CT, MIAMI, FL 33196-4121",
+      "canonical_company_id": "fl-im-160",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00068",
+      "miami_dade_legal_name": "Mudanzas Diaz Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "7540 W 34 CT Hialeah FL 33018",
+      "business_id": "88739270-0F84-44E5-B2A2-0459E60997AC",
+      "fdacs_id": "IM1573",
+      "fdacs_name": "MUDANZAS DIAZ, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "7540 W 34TH CT, HIALEAH, FL 33018-6700",
+      "canonical_company_id": "fl-im-1573",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00106",
+      "miami_dade_legal_name": "La Rosa Del Monte Express (Miami), LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "7600 NW 68 ST Miami FL 33166",
+      "business_id": "F02E12B5-139A-48BD-B29C-C7851C5D1915",
+      "fdacs_id": "IM385",
+      "fdacs_name": "LA ROSA DEL MONTE EXPRESS (MIAMI), LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "7600 NW 68TH ST, MIAMI, FL 33166-2812",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00113",
+      "miami_dade_legal_name": "Genesis Moving and Storage, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1688 NE 205 TER North Miami Beach FL 33179",
+      "business_id": "F0EFA455-8762-4029-88A0-B9DCCC0997FF",
+      "fdacs_id": "IM333",
+      "fdacs_name": "GENESIS MOVING & STORAGE, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1688 NE 205TH TER, MIAMI, FL 33179-2117",
+      "canonical_company_id": "fl-im-333",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00207",
+      "miami_dade_legal_name": "Millennium Relocation Services, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "9220 NW 102 ST Medley FL 33178",
+      "business_id": "EEC6F76B-2CF1-4383-9535-F13A3B85E93E",
+      "fdacs_id": "IM260",
+      "fdacs_name": "MILLENNIUM RELOCATION SERVICES, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "9220 NW 102ND ST, MEDLEY, FL 33178-1315",
+      "canonical_company_id": "fl-im-260",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00278",
+      "miami_dade_legal_name": "South Florida Van Line, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2670 W 84 ST Hialeah FL 33016",
+      "business_id": "86D29358-7219-4BCE-BB6A-2113AA324412",
+      "fdacs_id": "IM607",
+      "fdacs_name": "SOUTH FLORIDA VAN LINE, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "2670 W 84TH ST, HIALEAH, FL 33016-5703",
+      "canonical_company_id": "fl-im-607",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00310",
+      "miami_dade_legal_name": "Sergio's Moving, Corp.",
+      "miami_dade_dba": "South Express Moving",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "9200 SW 154 PL Miami FL 33196",
+      "business_id": "6AA45811-8A94-43BD-BF30-AB23BD8F798F",
+      "fdacs_id": "IM512",
+      "fdacs_name": "SERGIO'S MOVING CORP.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "9200 SW 154TH PL, MIAMI, FL 33196-1126",
+      "canonical_company_id": "fl-im-512",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00313",
+      "miami_dade_legal_name": "American Connection Moving, LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1708 NE 205 TER Miami FL 33179",
+      "business_id": "C8A0D64E-46DD-4A80-AB67-DE7DF72A833D",
+      "fdacs_id": "IM755",
+      "fdacs_name": "AMERICAN CONNECTION MOVING, LLC",
+      "fdacs_status": "Expired",
+      "fdacs_address": "1708 NE 205TH TER, MIAMI, FL 33179-2112",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00317",
+      "miami_dade_legal_name": "Fuentes Moving Corp.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "9730 NW 10 ST Miami FL 33172",
+      "business_id": "2787C75D-D6B6-435F-A770-533BF60C31F5",
+      "fdacs_id": "IM22",
+      "fdacs_name": "FUENTES MOVING CORP.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "9730 NW 10TH ST, MIAMI, FL 33172-3322",
+      "canonical_company_id": "fl-im-22",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00332",
+      "miami_dade_legal_name": "A-1 Southeast Moving, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "3323 SW 154 CT Miami FL 33185",
+      "business_id": "41BF3450-36A4-48ED-9A88-9B0A36830949",
+      "fdacs_id": "IM810",
+      "fdacs_name": "A 1 SOUTHEAST MOVING, INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "3323 SW 154TH CT, MIAMI, FL 33185-4734",
+      "canonical_company_id": "fl-im-810",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00338",
+      "miami_dade_legal_name": "Johnny Moving & Delivery, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "5871 W 20 LN Hialeah FL 33016",
+      "business_id": "FAF81558-1D95-414B-A85A-C0BF41B786D1",
+      "fdacs_id": "IM668",
+      "fdacs_name": "JOHNNY MOVING AND DELIVERY, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "5871 W 20TH LN, HIALEAH, FL 33016-2663",
+      "canonical_company_id": "fl-im-668",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00359",
+      "miami_dade_legal_name": "OnTime Moving System, Inc.",
+      "miami_dade_dba": "ArtPort",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "11455 NW 122 ST Miami FL 33178",
+      "business_id": "C9F336D5-F959-405D-98C6-6EBA06E0CCD5",
+      "fdacs_id": "IM161",
+      "fdacs_name": "ONTIME MOVING SYSTEM, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "11455 NW 122ND ST, MEDLEY, FL 33178",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00366",
+      "miami_dade_legal_name": "Brickell Moving and Packing Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1014 E 29 ST Hialeah FL 33013",
+      "business_id": "34274E5E-8605-4B51-92C4-DE266632179D",
+      "fdacs_id": "IM500",
+      "fdacs_name": "BRICKELL MOVING AND PACKING INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1014 E 29TH ST, HIALEAH, FL 33013-3518",
+      "canonical_company_id": "fl-im-500",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00378",
+      "miami_dade_legal_name": "Jesus Moving, LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "11 Flagami Blvd Miami FL 33144",
+      "business_id": "59CC5197-07D6-42CF-A943-D8CD766B54D5",
+      "fdacs_id": "IM2724",
+      "fdacs_name": "JESUS MOVING, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "11 FLAGAMI BLVD, MIAMI, FL 33144-2661",
+      "canonical_company_id": "fl-im-2724",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00385",
+      "miami_dade_legal_name": "Vidal Moving & Storage, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "270 NE 70 ST Miami FL 33138",
+      "business_id": "9F7B9806-A19C-400E-A2F4-5870E3C8B3C0",
+      "fdacs_id": "IM1541",
+      "fdacs_name": "VIDAL MOVING & STORAGE INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "270 NE 70TH ST, MIAMI, FL 33138-5524",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00416",
+      "miami_dade_legal_name": "Luis & Son Moving, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "17201 SW 119 CT Miami FL 33177",
+      "business_id": "66871958-8F45-4AA9-A30F-821899C335BB",
+      "fdacs_id": "IM1503",
+      "fdacs_name": "LUIS AND SON MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "17201 SW 119TH CT, MIAMI, FL 33177-2215",
+      "canonical_company_id": "fl-im-1503",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00444",
+      "miami_dade_legal_name": "ABA Moving, Inc.",
+      "miami_dade_dba": "Movers Pompano Beach,Fort Lauderdale Movers,The Miami Movers,Mudanzas Miami,SouthFloridaPianoMoving",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "12429 W Dixie Hwy North Miami FL 33161",
+      "business_id": "9AACF08D-E5E8-4ACB-9DDF-293AFA81BD31",
+      "fdacs_id": "IM1100",
+      "fdacs_name": "ABA MOVING INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "12429 W DIXIE HWY, NORTH MIAMI, FL 33161-5440",
+      "canonical_company_id": "fl-im-1100",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00449",
+      "miami_dade_legal_name": "A.B.C. Moving, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "18235 NE 4 CT Miami FL 33162",
+      "business_id": "447DF8DD-D2D7-40C8-BC1C-4C353CCFD8DC",
+      "fdacs_id": "IM1079",
+      "fdacs_name": "A.B.C. MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "18235 NE 4TH CT, MIAMI, FL 33162-1011",
+      "canonical_company_id": "fl-im-1079",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00450",
+      "miami_dade_legal_name": "Powerloaders Corporation",
+      "miami_dade_dba": "Powerloaders",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2007 NW 79 AVE Doral FL 33122",
+      "business_id": "00C70A7B-5293-496C-8616-C8B2E1E3A8FB",
+      "fdacs_id": "IM1214",
+      "fdacs_name": "POWERLOADERS CORPORATION",
+      "fdacs_status": "Registered",
+      "fdacs_address": "2007 NW 79TH AVE, DORAL, FL 33122-1612",
+      "canonical_company_id": "fl-im-1214",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00458",
+      "miami_dade_legal_name": "American Moving & Packaging Inc",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "16121 NW 79 CT Miami FL 33016",
+      "business_id": "E2B9D38A-3121-48BD-AC6B-A520E16449F2",
+      "fdacs_id": "IM1319",
+      "fdacs_name": "AMERICAN MOVING & PACKAGING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "16121 NW 79TH CT, MIAMI LAKES, FL 33016-6646",
+      "canonical_company_id": "fl-im-1319",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00476",
+      "miami_dade_legal_name": "Nobel Van Lines Inc.",
+      "miami_dade_dba": "Nobel Relocation",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "17901 NW Miami Ct. Miami FL 33169",
+      "business_id": "8DB22CBB-10B2-430B-8702-CA49EC115431",
+      "fdacs_id": "IM1204",
+      "fdacs_name": "NOBEL VAN LINES INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "17901 NW MIAMI CT, MIAMI, FL 33169-5018",
+      "canonical_company_id": "usdot-1329594",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00512",
+      "miami_dade_legal_name": "Flat Rate Moving & Storage, LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "16501 NW 8 AVE Miami FL 33169",
+      "business_id": "C8F9F33E-5B70-432D-99B2-94C1271406AA",
+      "fdacs_id": "IM1320",
+      "fdacs_name": "FLAT RATE MOVING & STORAGE, LLC",
+      "fdacs_status": "Expired",
+      "fdacs_address": "16501 NW 8TH AVE, MIAMI, FL 33169-5813",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-00570",
+      "miami_dade_legal_name": "Torito's Moving Corp",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "19061 NW 90 CT Miami FL 33018",
+      "business_id": "798EA03B-04E4-4E79-B50F-2CA6384F0AE1",
+      "fdacs_id": "IM2476",
+      "fdacs_name": "TORITO'S MOVING CORP",
+      "fdacs_status": "Registered",
+      "fdacs_address": "19061 NW 90TH CT, HIALEAH, FL 33018-8425",
+      "canonical_company_id": "fl-im-2476",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01006",
+      "miami_dade_legal_name": "Sainz Moving & Delivery",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1246 NW 6 ST Unit: #6 Miami FL 33125",
+      "business_id": "D1FC4C4E-12A1-4FEE-AB7D-01089AFC04B7",
+      "fdacs_id": "IM2442",
+      "fdacs_name": "DANILO SAINZ",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1246 NW 6TH ST APT 6, MIAMI, FL 33125-4749",
+      "canonical_company_id": "fl-im-2442",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01016",
+      "miami_dade_legal_name": "CMR Transport, Inc.",
+      "miami_dade_dba": "Blason International Movers",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "10049 NW 89 AVE Unit: #5 Medley FL 33178",
+      "business_id": "A8FB9081-88F7-4E0F-84D9-F5F44540EF9C",
+      "fdacs_id": "IM1689",
+      "fdacs_name": "CMR TRANSPORT, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "10049 NW 89TH AVE UNIT 5, MEDLEY, FL 33178-1442",
+      "canonical_company_id": "fl-im-1689",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01020",
+      "miami_dade_legal_name": "Varela Moving Pickup & Delivery LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "321 E 6 ST Unit: #226 Hialeah FL 33010",
+      "business_id": "5771DD83-3388-4FE0-BA50-C71B229FD6AD",
+      "fdacs_id": "IM2474",
+      "fdacs_name": "VARELA MOVING, PICKUP & DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "321 E 6TH ST APT 226, HIALEAH, FL 33010-6810",
+      "canonical_company_id": "fl-im-2474",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01029",
+      "miami_dade_legal_name": "Orellana AV Moving, Corp.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "15383 SW 23 ST Miami FL 33185",
+      "business_id": "D10E2E9B-BDEF-47E1-9B44-5E8E639156D2",
+      "fdacs_id": "IM1624",
+      "fdacs_name": "ORELLANA AV MOVING, CORP.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "15383 SW 23RD ST, MIAMI, FL 33185-5734",
+      "canonical_company_id": "fl-im-1624",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01045",
+      "miami_dade_legal_name": "Laprom Moving Inc.",
+      "miami_dade_dba": "24 Moving / Skyroad Moving / Pink Truck Moving",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "10812 NW 6 CT Miami FL 33168",
+      "business_id": "240D8E07-664C-45EE-9BA8-CF2FB55B75E3",
+      "fdacs_id": "IM1723",
+      "fdacs_name": "LAPROM MOVING INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "10812 NW 6TH CT, MIAMI, FL 33168-3259",
+      "canonical_company_id": "fl-im-1723",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01049",
+      "miami_dade_legal_name": "Tacha's Movi, Corp.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "9631 Fontainebleau Blvd Unit: #202 Miami FL 33172",
+      "business_id": "DA4EED9A-7E89-484C-888B-C67AD5A9E6E1",
+      "fdacs_id": "IM2549",
+      "fdacs_name": "TACHA'S MOVI, CORP",
+      "fdacs_status": "Registered",
+      "fdacs_address": "9631 FONTAINEBLEAU BLVD APT 202, MIAMI, FL 33172-6859",
+      "canonical_company_id": "fl-im-2549",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01054",
+      "miami_dade_legal_name": "Inter-American Movers and Forwarders,LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "6332 NW 97 AVE Doral FL 33178",
+      "business_id": "7DD1AE94-3CBC-4C9F-9E4F-3A62DDEABC65",
+      "fdacs_id": "IM2983",
+      "fdacs_name": "INTER-AMERICAN MOVERS AND FORWARDERS,LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "6332 NW 97TH AVE, DORAL, FL 33178-1645",
+      "canonical_company_id": "fl-im-2983",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01063",
+      "miami_dade_legal_name": "Valle Moving & Deliveries, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "934 SW 149 CT Miami FL 33194",
+      "business_id": "7ACB8463-24DB-4053-B039-513484C794B5",
+      "fdacs_id": "IM2456",
+      "fdacs_name": "VALLE MOVING & DELIVERIES, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "934 SW 149TH CT, MIAMI, FL 33194-2938",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01074",
+      "miami_dade_legal_name": "Ojeda Moving and Delivery Inc",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2606 W 9 LN Hialeah FL 33010",
+      "business_id": "424CB34A-CA32-469B-9EB8-40BC0A3D10DB",
+      "fdacs_id": "IM2551",
+      "fdacs_name": "OJEDA MOVING AND DELIVERY INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "2606 W 9TH LN, HIALEAH, FL 33010-1228",
+      "canonical_company_id": "fl-im-2551",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01079",
+      "miami_dade_legal_name": "Martinez Delivery Corp",
+      "miami_dade_dba": "Martinez Moving",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "13006 SW 151 LN Miami FL 33186",
+      "business_id": "91921F3A-534F-43BA-8129-E6AE2FE9FC9D",
+      "fdacs_id": "IM2446",
+      "fdacs_name": "MARTINEZ DELIVERY CORP",
+      "fdacs_status": "Registered",
+      "fdacs_address": "13006 SW 151ST LN, MIAMI, FL 33186-7621",
+      "canonical_company_id": "fl-im-2446",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01109",
+      "miami_dade_legal_name": "Same Day Moving & Storage, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "8871 SW 208 TER Miami FL 33189",
+      "business_id": "594417E9-789A-416C-A16F-41BE2B7D080E",
+      "fdacs_id": "IM2051",
+      "fdacs_name": "SAME DAY MOVING & STORAGE, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "8871 SW 208TH TER, CUTLER BAY, FL 33189-3882",
+      "canonical_company_id": "fl-im-2051",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01137",
+      "miami_dade_legal_name": "Shark Junior, L.L.C.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "13760 NW 19 AVE Unit: #8 Opa Locka FL 33054",
+      "business_id": "DAC1FF92-188B-4745-B31E-C47653A4F1FC",
+      "fdacs_id": "IM2478",
+      "fdacs_name": "SHARK JUNIOR, L.L.C.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "13760 NW 19TH AVE UNIT 8, OPA LOCKA, FL 33054-4233",
+      "canonical_company_id": "fl-im-2478",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01139",
+      "miami_dade_legal_name": "SF Local Moving Inc",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "420 NE 152 ST Miami FL 33162",
+      "business_id": "F94B339A-ED18-4E42-AB66-8838474DC32D",
+      "fdacs_id": "IM2239",
+      "fdacs_name": "SF LOCAL MOVING INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "420 NE 152ND ST, MIAMI, FL 33162-5020",
+      "canonical_company_id": "fl-im-2239",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01140",
+      "miami_dade_legal_name": "Cuba Moving, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "8446 NW 103 ST Unit: #101-D Hialeah Gardens FL 33016",
+      "business_id": "91294E34-1AA3-475B-9977-04BB84D037FC",
+      "fdacs_id": "IM2467",
+      "fdacs_name": "CUBA MOVING INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "8446 NW 103RD ST APT 101D, HIALEAH GARDENS, FL 33016-4693",
+      "canonical_company_id": "fl-im-2467",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01141",
+      "miami_dade_legal_name": "Chiquis Moving,Inc",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1321 SW 142 AVE Miami FL 33184",
+      "business_id": "45836F20-7CCD-416B-B61C-820AC164AE56",
+      "fdacs_id": "IM2438",
+      "fdacs_name": "CHIQUIS MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1321 SW 142ND AVE, MIAMI, FL 33184-3212",
+      "canonical_company_id": "fl-im-2438",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01147",
+      "miami_dade_legal_name": "Bermen Moving & Delivery LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1132 W 39 TER Hialeah FL 33012",
+      "business_id": "3AA64221-587D-4594-99DF-8BCC696B822B",
+      "fdacs_id": "IM3470",
+      "fdacs_name": "BERMEN MOVING & DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1132 W 39TH TER, HIALEAH, FL 33012-7787",
+      "canonical_company_id": "fl-im-3470",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01164",
+      "miami_dade_legal_name": "Nina International Transport Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "4450 NW 74 AVE Miami FL 33166",
+      "business_id": "40CA0284-9A96-422B-941D-B9E63A6933B5",
+      "fdacs_id": "IM2284",
+      "fdacs_name": "NINA INTERNATIONAL TRANSPORT INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "4450 NW 74TH AVE, MIAMI, FL 33166-6443",
+      "canonical_company_id": "fl-im-2284",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01192",
+      "miami_dade_legal_name": "Mancav Furniture Delivery LLC",
+      "miami_dade_dba": "Mancav Movers",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "11112 SW 161 ST Miami FL 33157",
+      "business_id": "ECB381C5-E47A-4C75-BCA2-D978FC72A6B7",
+      "fdacs_id": "IM2781",
+      "fdacs_name": "MANCAV FURNITURE DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "11112 SW 161ST ST, MIAMI, FL 33157-2839",
+      "canonical_company_id": "fl-im-2781",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01203",
+      "miami_dade_legal_name": "Black Wolf Moving Miami, LLC",
+      "miami_dade_dba": "Two Men and A Truck",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1521 NW 82 AVE Doral FL 33126",
+      "business_id": "87E2379D-8AAF-44DB-8924-14433B1951C7",
+      "fdacs_id": "IM2535",
+      "fdacs_name": "BLACK WOLF MOVING MIAMI, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1521 NW 82ND AVE, DORAL, FL 33126-1019",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01208",
+      "miami_dade_legal_name": "Wilfredo's Moving",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "17974 NW 74 CT Hialeah FL 33015",
+      "business_id": "57C95B0F-C16B-4E64-A4F9-583AF41CDBAB",
+      "fdacs_id": "IM2606",
+      "fdacs_name": "WILFREDO HERNANDEZ",
+      "fdacs_status": "Registered",
+      "fdacs_address": "17974 NW 74TH CT, HIALEAH, FL 33015-8443",
+      "canonical_company_id": "fl-im-2606",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01209",
+      "miami_dade_legal_name": "Dixie Movers LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2221 NE 164 ST Unit: #273 North Miami Beach FL 33160",
+      "business_id": "643332F6-5420-47D1-8CB1-B807E1467C8D",
+      "fdacs_id": "IM2609",
+      "fdacs_name": "DIXIE MOVERS LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "2221 NE 164TH ST # 273, NORTH MIAMI BEACH, FL 33160-3703",
+      "canonical_company_id": "usdot-3080327",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01216",
+      "miami_dade_legal_name": "Quintero Delivery & Moving, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1721 NW 79 AVE Doral FL 33126",
+      "business_id": "66ADC893-EC14-445E-8687-7C9B9BF3B9FA",
+      "fdacs_id": "IM2463",
+      "fdacs_name": "QUINTERO DELIVERY & MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1721 NW 79TH AVE, DORAL, FL 33126-1112",
+      "canonical_company_id": "fl-im-2463",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01221",
+      "miami_dade_legal_name": "Pro Movers Miami, Inc.",
+      "miami_dade_dba": "Pro Movers",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "475 Brickell Ave Miami FL 33131",
+      "business_id": "243C8E57-BE60-44BC-9436-A3DD42AA5858",
+      "fdacs_id": "IM2721",
+      "fdacs_name": "PRO MOVERS MIAMI, INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "475 BRICKELL AVE, MIAMI, FL 33131-2500",
+      "canonical_company_id": "pro-movers-2",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01237",
+      "miami_dade_legal_name": "Related Moving & Service, LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "7950 NW 53 ST Unit: #337 Doral FL 33166",
+      "business_id": "E6348777-8487-4BBD-A18B-BB82D5F83BFA",
+      "fdacs_id": "IM3034",
+      "fdacs_name": "RELATED MOVING & SERVICE, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "7950 NW 53RD ST STE 337, MIAMI, FL 33166-4791",
+      "canonical_company_id": "fl-im-3034",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01244",
+      "miami_dade_legal_name": "Metayer Moving Corp",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "11519 SW 124 PL Miami FL 33186",
+      "business_id": "1D3DA254-CEB3-4C40-98F2-C94E723579D0",
+      "fdacs_id": "IM2830",
+      "fdacs_name": "METAYER MOVING CORP",
+      "fdacs_status": "Registered",
+      "fdacs_address": "11519 SW 124TH PL, MIAMI, FL 33186-4917",
+      "canonical_company_id": "fl-im-2830",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01249",
+      "miami_dade_legal_name": "AN Mudanzas & Delivery LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "16222 NW 38 PL Opa-locka FL 33054",
+      "business_id": "7A44F434-713E-46CE-A24C-540C43DF7C12",
+      "fdacs_id": "IM4103",
+      "fdacs_name": "AN MUDANZAS & DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "16222 NW 38TH PL, MIAMI GARDENS, FL 33054-6237",
+      "canonical_company_id": "fl-im-4103",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01253",
+      "miami_dade_legal_name": "J.V. Express Deliveries, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "13005 SW 50 LN Miami FL 33175",
+      "business_id": "A7132790-32D1-42B6-B069-BB5CE0280FB1",
+      "fdacs_id": "IM2986",
+      "fdacs_name": "J.V. EXPRESS DELIVERIES, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "13005 SW 50TH LN, MIAMI, FL 33175-5353",
+      "canonical_company_id": "fl-im-2986",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01267",
+      "miami_dade_legal_name": "Xpress Relocations, LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "6158 NW 74 AVE Miami FL 33166",
+      "business_id": "11849CE1-6071-4960-A8DE-F399D2AFD86C",
+      "fdacs_id": "IM2521",
+      "fdacs_name": "XPRESS RELOCATIONS LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "6158 NW 74TH AVE, MIAMI, FL 33166-3710",
+      "canonical_company_id": "fl-im-2521",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01269",
+      "miami_dade_legal_name": "Shield Moving and Storage Logistics, Inc",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2420 NW 116 ST Unit: #100 Miami FL 33167",
+      "business_id": "FA706149-FC73-40B2-975C-422FA0726A8C",
+      "fdacs_id": "IM3111",
+      "fdacs_name": "SHIELD MOVING AND STORAGE LOGISTICS, INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "2420 NW 116TH ST BLDG 4 STE 100, MIAMI, FL 33167-0018",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01282",
+      "miami_dade_legal_name": "Prestige Moving System, Inc",
+      "miami_dade_dba": "Jacob and Sons Moving & Storage",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "600 NE 185 ST Miami FL 33179",
+      "business_id": "43E1D095-733B-4EED-A947-A618A6C0D2A8",
+      "fdacs_id": "IM3117",
+      "fdacs_name": "PRESTIGE MOVING SYSTEM, INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "600 NE 185TH ST, MIAMI, FL 33179-4514",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01283",
+      "miami_dade_legal_name": "Fargo Partners LLC",
+      "miami_dade_dba": "American Fargo",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "3353 NW 74 AVE Miami FL 33122",
+      "business_id": "223FFEB7-03BC-4022-BEBF-2E85C9C52056",
+      "fdacs_id": "IM3135",
+      "fdacs_name": "FARGO PARTNERS, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "3353 NW 74TH AVE, MIAMI, FL 33122-1229",
+      "canonical_company_id": "fl-im-3135",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01295",
+      "miami_dade_legal_name": "Your Stuff In The Truck, LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2075 SW 122 AVE Unit: #413 Miami FL 33175",
+      "business_id": "B174E510-D334-4634-BB03-D9D85D14032C",
+      "fdacs_id": "IM3245",
+      "fdacs_name": "YOUR STUFF IN THE TRUCK, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "2075 SW 122ND AVE APT 413, MIAMI, FL 33175-7338",
+      "canonical_company_id": "fl-im-3245",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01296",
+      "miami_dade_legal_name": "Online Movers Corp",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "6451 NW 102 AVE Unit: #11 Doral FL 33178",
+      "business_id": "072DDBF7-0F23-4014-A6D9-BB3E95F5F74D",
+      "fdacs_id": "IM3250",
+      "fdacs_name": "ONLINE MOVERS CORP",
+      "fdacs_status": "Registered",
+      "fdacs_address": "6451 NW 102ND AVE UNIT 11, DORAL, FL 33178-4745",
+      "canonical_company_id": "fl-im-3250",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-01314",
+      "miami_dade_legal_name": "On Point Moving Corp",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "16931 SW 111 CT Miami FL 33157",
+      "business_id": "67ED2C32-817B-42EA-832D-A20516310E92",
+      "fdacs_id": "IM3395",
+      "fdacs_name": "ON POINT MOVING CORP.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "16931 SW 111TH CT, MIAMI, FL 33157-0300",
+      "canonical_company_id": "fl-im-3395",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-090497",
+      "miami_dade_legal_name": "ScoreUnion, LLC",
+      "miami_dade_dba": "Rushmore Movers",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2140 S Dixie Hwy Unit: #301C Miami FL 33133",
+      "business_id": "7375d17f-2321-4b85-b652-73d2e81db155",
+      "fdacs_id": "IM3192",
+      "fdacs_name": "SCOREUNION LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "2140 S DIXIE HWY STE 301C, MIAMI, FL 33133-2464",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-091229",
+      "miami_dade_legal_name": "UOVO Art LLC",
+      "miami_dade_dba": "UOVO",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "346 NW 29 ST Miami 33127",
+      "business_id": "50716d9a-9eea-4589-bac2-8b591f5ea1f6",
+      "fdacs_id": "IM3775",
+      "fdacs_name": "UOVO ART LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "346 NW 29TH ST, MIAMI, FL 33127-3914",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-092140",
+      "miami_dade_legal_name": "P&P Moving and Delivery Inc",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "12020 SW 31 ST Miami FL 33175",
+      "business_id": "52896723-45bd-4886-961c-ac1aca2dd7e1",
+      "fdacs_id": "IM3382",
+      "fdacs_name": "P & P MOVING AND DELIVERY INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "12020 SW 31ST ST, MIAMI, FL 33175-2328",
+      "canonical_company_id": "fl-im-3382",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-092297",
+      "miami_dade_legal_name": "Total Moving Corporation",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "20005 NE 6 CT CIR North Miami FL 33179",
+      "business_id": "61c07c7e-2188-402f-8100-a9573297557d",
+      "fdacs_id": "IM3711",
+      "fdacs_name": "TOTAL MOVING CORPORATION",
+      "fdacs_status": "Registered",
+      "fdacs_address": "20005 NE 6TH COURT CIR, MIAMI, FL 33179-2408",
+      "canonical_company_id": "fl-im-3711",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-092523",
+      "miami_dade_legal_name": "JJ Brothers Groups LLC",
+      "miami_dade_dba": "Global Movers Relocators",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "10900 NW 146 ST Unit: #105 Hialeah Gardens FL 33018",
+      "business_id": "61db470f-44a0-4b21-9302-aa9b371644c2",
+      "fdacs_id": "IM3385",
+      "fdacs_name": "JJ BROTHERS GROUP LLC.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "10900 NW 146 ST STE 5, HIALEAH GARDENS, FL 33018",
+      "canonical_company_id": "fl-im-3385",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-092562",
+      "miami_dade_legal_name": "Confianca Moving & Storage LLC",
+      "miami_dade_dba": "ConfiMove",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "7831 NW 72 AVE Medley FL 33166",
+      "business_id": "f753bedd-8cbe-4241-ab43-1c7fd9895dae",
+      "fdacs_id": "IM3718",
+      "fdacs_name": "CONFIANCA MOVING & STORAGE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "7831 NW 72ND AVE, MEDLEY, FL 33166-2215",
+      "canonical_company_id": "fl-im-3718",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-092619",
+      "miami_dade_legal_name": "Joe's Moving and Storage, Inc.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2201 SW 145 AVE Unit: #207 Miramar FL 33027",
+      "business_id": "66cbe9b4-724f-434a-a690-f6171696f157",
+      "fdacs_id": "IM16",
+      "fdacs_name": "JOE'S MOVING AND STORAGE, INC",
+      "fdacs_status": "Expired",
+      "fdacs_address": "2201 SW 145TH AVE STE 207, MIRAMAR, FL 33027-6600",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-093002",
+      "miami_dade_legal_name": "Happy Moving Happy Life LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "8175 NW 107 AVE Unit: #813 Doral FL 33178",
+      "business_id": "3448f4cc-db1f-40b6-9223-b45c1de5f297",
+      "fdacs_id": "IM4075",
+      "fdacs_name": "HAPPY MOVING HAPPY LIFE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "8175 NW 107TH AVE APT 813, DORAL, FL 33178-5061",
+      "canonical_company_id": "fl-im-4075",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-093500",
+      "miami_dade_legal_name": "Benny and the Moving, Corp",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "225 NE 23 ST Unit: #1203 Miami FL 33137",
+      "business_id": "4fdec98d-7d5e-41ce-b440-78315cf5a9db",
+      "fdacs_id": "IM3812",
+      "fdacs_name": "BENNY AND THE MOVING CORP",
+      "fdacs_status": "Registered",
+      "fdacs_address": "225 NE 23RD ST APT 1203, MIAMI, FL 33137-4037",
+      "canonical_company_id": "fl-im-3812",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-094141",
+      "miami_dade_legal_name": "Sanford 7 Enterprise LLC",
+      "miami_dade_dba": "College Hunks NMB",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1200 N Federal Hwy Hollywood FL 33020",
+      "business_id": "5c1dcee8-6af3-496b-9465-30112a0e44e0",
+      "fdacs_id": "IM3619",
+      "fdacs_name": "SANFORD 7 ENTERPRISE LLC",
+      "fdacs_status": "Expired",
+      "fdacs_address": "1200 N FEDERAL HWY, HOLLYWOOD, FL 33020-3630",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-094336",
+      "miami_dade_legal_name": "W Moving Corp",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1818 SW 1 AVE Unit: #1211 Miami FL 33129",
+      "business_id": "9a951738-67df-443a-9e54-55a0c65ef22d",
+      "fdacs_id": "IM3891",
+      "fdacs_name": "W MOVING CORP",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1818 SW 1ST AVE APT 1211, MIAMI, FL 33129-1187",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-094438",
+      "miami_dade_legal_name": "Romanos Delivery and Moving, Corp",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "18841 NW 42 AVE Miami Gardens FL 33055",
+      "business_id": "25e2e698-84c4-4e66-bf86-1be625d9a3f4",
+      "fdacs_id": "IM3934",
+      "fdacs_name": "ROMANOS DELIVERY AND MOVING ,CORP",
+      "fdacs_status": "Expired",
+      "fdacs_address": "18841 NW 42ND AVE, MIAMI GARDENS, FL 33055-2733",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-094574",
+      "miami_dade_legal_name": "Anthony's B Delivery LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "13882 SW 63 ST Miami FL 33183",
+      "business_id": "761c59ee-8e16-4408-b136-bae780b0b066",
+      "fdacs_id": "IM4203",
+      "fdacs_name": "ANTHONY'S B DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "13882 SW 63RD ST, MIAMI, FL 33183-1173",
+      "canonical_company_id": "fl-im-4203",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-095117",
+      "miami_dade_legal_name": "Octoplus Moving LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1939 SW 23 TER Miami FL 33145",
+      "business_id": "d2e916dd-a68f-4d68-9b81-08a859e7de19",
+      "fdacs_id": "IM4019",
+      "fdacs_name": "OCTOPLUS MOVING LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1939 SW 23RD TER, MIAMI, FL 33145-3716",
+      "canonical_company_id": "fl-im-4019",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-095236",
+      "miami_dade_legal_name": "Mivamove LLC",
+      "miami_dade_dba": "MovaMove",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "785 NW 126 ST Miami FL 33168",
+      "business_id": "2ee7ab1c-1aed-40a8-84da-09b8729e6232",
+      "fdacs_id": "IM3869",
+      "fdacs_name": "MIVAMOVE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "785 NW 126TH ST, NORTH MIAMI, FL 33168-2627",
+      "canonical_company_id": "fl-im-3869",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-095332",
+      "miami_dade_legal_name": "QBA Multiservices Inc",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "2315 W Okeechobee Rd Unit: #209 Hialeah FL 33010",
+      "business_id": "6ba9617b-b618-492d-9f64-89ddc89833a7",
+      "fdacs_id": "IM3978",
+      "fdacs_name": "QBA MULTISERVICES INC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "2315 W OKEECHOBEE RD APT 209, HIALEAH, FL 33010-1822",
+      "canonical_company_id": "fl-im-3978",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-095349",
+      "miami_dade_legal_name": "Brautigam Delivery Corp.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "12673 SW 146 TER Miami FL 33186",
+      "business_id": "93bc7814-2b0b-4ab9-a313-a01c7efd11f1",
+      "fdacs_id": "IM2293",
+      "fdacs_name": "BRAUTIGAM DELIVERY CORP",
+      "fdacs_status": "Registered",
+      "fdacs_address": "12673 SW 146 TERRACE, MIAMI, FL 33186",
+      "canonical_company_id": "fl-im-2293",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-095401",
+      "miami_dade_legal_name": "Roy & Ois Moving LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "501 NW 57 AVE Miami FL 33126",
+      "business_id": "d4bbc11d-6afb-431f-b718-32d0987b27c2",
+      "fdacs_id": "IM4089",
+      "fdacs_name": "ROY & OIS MOVING LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "501 NW 57TH AVE APT 33, MIAMI, FL 33126-4835",
+      "canonical_company_id": "fl-im-4089",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-095487",
+      "miami_dade_legal_name": "Expremoving LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "689 NE 206 TER Miami FL 33179",
+      "business_id": "19d3f09a-c588-474b-9ffa-0dd0942250af",
+      "fdacs_id": "IM4154",
+      "fdacs_name": "EXPREMOVING LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "689 NE 206TH TER, MIAMI, FL 33179-2431",
+      "canonical_company_id": "fl-im-4154",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-095542",
+      "miami_dade_legal_name": "Nikki Moving LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "9071 NW 13 ST Plantation FL 33322",
+      "business_id": "213c1b9e-9f01-44dd-ab56-8f11975d8994",
+      "fdacs_id": "IM4044",
+      "fdacs_name": "NIKKI MOVING LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "9071 NW 13TH ST, PLANTATION, FL 33322-4915",
+      "canonical_company_id": "fl-im-4044",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-095935",
+      "miami_dade_legal_name": "Johnson Storage & Moving Co. - Miami, L.L.C.",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "6451 NW 102 AVE Unit: #2 Doral FL 33178",
+      "business_id": "a9d3a4aa-e09b-4dc1-bc88-8b8b26e94d96",
+      "fdacs_id": "IM4006",
+      "fdacs_name": "JOHNSON STORAGE & MOVING CO. - MIAMI, L.L.C.",
+      "fdacs_status": "Registered",
+      "fdacs_address": "6451 NW 102ND AVE UNIT 2, DORAL, FL 33178-4745",
+      "canonical_company_id": "fl-im-4006",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-096207",
+      "miami_dade_legal_name": "AYCS Delivery Service LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "1011 NW 53 ST Miami FL 33127",
+      "business_id": "fa268479-2ad1-4dab-9c5f-19e0f217d199",
+      "fdacs_id": "IM4084",
+      "fdacs_name": "AYCS DELIVERY SERVICE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "1011 NW 53RD ST, MIAMI, FL 33127-1835",
+      "canonical_company_id": "fl-im-4084",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-096653",
+      "miami_dade_legal_name": "Adelit LLC",
+      "miami_dade_dba": "",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "629 SW 2 ST Miami FL 33130",
+      "business_id": "725d9d90-5fa1-4891-99fa-4452e9710810",
+      "fdacs_id": "IM4120",
+      "fdacs_name": "ADELIT LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "629 SW 2ND ST APT 202, MIAMI, FL 33130-2382",
+      "canonical_company_id": "fl-im-4120",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-096763",
+      "miami_dade_legal_name": "B&H Moving Services LLC",
+      "miami_dade_dba": "Best & Honest Moving & Storage",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "14040 NW 22 AVE Opa Locka FL 33054",
+      "business_id": "11a542bd-9c04-4fd9-a5ff-d82f9c3301d8",
+      "fdacs_id": "IM3265",
+      "fdacs_name": "B&H MOVING SERVICES LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "14040 NW 22ND AVE, OPA LOCKA, FL 33054-4169",
+      "canonical_company_id": null,
+      "canonical_class": "STATE_RECORD_ONLY",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "miami_dade_mr": "MR-097254",
+      "miami_dade_legal_name": "Palacio Holdings LLC",
+      "miami_dade_dba": "Miami Moving Company",
+      "miami_dade_status": "Issued",
+      "miami_dade_address": "3161 SW 2 ST Miami FL 33135",
+      "business_id": "76dc291b-95be-4f0c-990b-8a06f77c06b6",
+      "fdacs_id": "IM4179",
+      "fdacs_name": "PALACIO HOLDINGS LLC",
+      "fdacs_status": "Registered",
+      "fdacs_address": "3161 SW 2ND ST, MIAMI, FL 33135-2754",
+      "canonical_company_id": "fl-im-4179",
+      "canonical_class": "CANONICAL_LINKED",
+      "match_result": "VERIFIED",
+      "deterministic_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "exact_physical_address"
+      ],
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "source_provenance": {
+        "county_source": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+        "county_retrieved_at": "2026-08-21T20:28:27.536Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "MDC_FDACS_RECONCILIATION_V1"
+      }
+    }
+  ],
+  "content_hash": "5cfb69934a81610f"
+}

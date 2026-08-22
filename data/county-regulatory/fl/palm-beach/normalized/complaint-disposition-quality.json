@@ -1,0 +1,28 @@
+{
+  "data_scope": "SAMPLE",
+  "bir_reports": 22,
+  "businesses_with_complaint_history": 4,
+  "complaint_observations": 20,
+  "with_disposition": 17,
+  "without_disposition": 3,
+  "pct_with_disposition": 85,
+  "date_span": {
+    "earliest_closed": "2023-09-26",
+    "latest_closed": "2026-07-28"
+  },
+  "observed_disposition_codes_in_sample": [
+    "A02",
+    "A03",
+    "A06",
+    "A10",
+    "A11",
+    "A12"
+  ],
+  "observed_statuses_in_sample": [
+    "CASE CLOSED",
+    "CLOSED/REVIEWED",
+    "OPEN/PENDING"
+  ],
+  "official_disposition_catalog_size": 44,
+  "note": "Official disposition values inventoried from GetResolutions code table; sample uses only values actually returned on BIR complaint details."
+}

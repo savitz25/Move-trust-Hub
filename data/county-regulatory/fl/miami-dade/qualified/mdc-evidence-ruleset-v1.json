@@ -1,0 +1,65 @@
+{
+  "task": "FL-C006",
+  "version": "v1",
+  "reconciliation": {
+    "ruleset_id": "MDC_FDACS_RECONCILIATION_V1",
+    "fail_closed": true,
+    "outcomes": [
+      "VERIFIED",
+      "REVIEW_REQUIRED",
+      "NOT_FOUND",
+      "CONFLICT",
+      "NOT_APPLICABLE"
+    ],
+    "verify_requires_one_of": [
+      "exact_legal_name + exact_physical_address",
+      "exact_dba + exact_physical_address",
+      "exact_legal_name + exact_phone (when public)",
+      "exact_dba + exact_phone (when public)",
+      "exact_legal_name + exact_business_email (when public)",
+      "explicit shared FDACS IM identifier on county source (not observed on public EnerGov roster)"
+    ],
+    "never_verify_from_only": [
+      "legal name",
+      "DBA",
+      "city",
+      "ZIP",
+      "LBT name",
+      "website",
+      "brand",
+      "fuzzy similarity",
+      "mailing address alone",
+      "category code"
+    ],
+    "miami_dade_note": "Public EnerGov roster lacks phone/email/IM for matching; name+address precision must be especially strict and QA every VERIFIED association.",
+    "conflict_when": "Two or more strong FDACS candidates with incompatible identity evidence, or strong corroboration for mutually exclusive entities.",
+    "not_applicable_when": "Record is not a Moving Business Registration / License (not expected in this Moving/MR roster)."
+  },
+  "evidence": {
+    "ruleset_id": "MDC_COUNTY_EVIDENCE_V1",
+    "evidence_classes": [
+      "MDC_MOVING_CREDENTIAL_VERIFIED",
+      "MDC_IDENTITY_OBSERVATION",
+      "MDC_BUSINESS_TAX_OBSERVATION",
+      "MDC_BRANCH_SCHEMA_OBSERVATION",
+      "MDC_VEHICLE_SCHEMA_OBSERVATION",
+      "MDC_INSURANCE_REQUIREMENT_OBSERVATION",
+      "MDC_WORKERS_COMP_REQUIREMENT_OBSERVATION",
+      "COMPLAINT_SYSTEM_OBSERVATION",
+      "CITATION_AUTHORITY_OBSERVATION",
+      "ENFORCEMENT_AUTHORITY_OBSERVATION"
+    ],
+    "principles": [
+      "Allegation is never final action.",
+      "Complaint intake is not complaint history.",
+      "Program authority is not a company-level event.",
+      "LBT is secondary tax evidence — never a substitute for Moving Business Registration.",
+      "BRANCH_SCHEMA_SUPPORTED ≠ BRANCH_RECORD_OBSERVED.",
+      "Vehicle/insurance APPLICATION requirements ≠ observed company fleet/policy compliance.",
+      "Unresolved county identity must not be attached to a canonical company.",
+      "A valid county credential can remain a real county regulatory fact without FDACS reconciliation.",
+      "FDACS and Miami-Dade statuses are distinct jurisdictional facts."
+    ]
+  },
+  "retrieved_at": "2026-08-21T22:01:02.420Z"
+}

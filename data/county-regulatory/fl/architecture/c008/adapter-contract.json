@@ -1,0 +1,70 @@
+{
+  "task": "FL-C008",
+  "version": "V1",
+  "contract_name": "COUNTY_REGULATORY_ADAPTER_V1",
+  "required_declarations": [
+    "jurisdiction",
+    "posture",
+    "credential_schema",
+    "source_interfaces",
+    "coverage_classes",
+    "pii_policy",
+    "publication_default"
+  ],
+  "required_operations": [
+    {
+      "name": "normalize",
+      "description": "Map raw sources to staging records with provenance and coverage classes."
+    },
+    {
+      "name": "qualify",
+      "description": "Optional when roster exists; emit versioned evidence + precision QA.",
+      "optional_when": "ORDINANCE_ONLY or NO_SEPARATE_ROSTER_IDENTIFIED"
+    },
+    {
+      "name": "link",
+      "description": "Fail-closed crosswalk to state registry and/or canonical companies."
+    }
+  ],
+  "posture_enum": ["CREDENTIAL_BASED", "ORDINANCE_ONLY"],
+  "publication_default": "INTERNAL_ONLY",
+  "forbidden": [
+    "production_db_writes_in_discovery_or_qualification_tasks",
+    "google_places_apis_for_matching",
+    "infer_dispositions_or_finality",
+    "infer_compliance_from_requirements_alone",
+    "treat_lbt_as_mover_credential",
+    "overload_provider_state_authority",
+    "consumer_complaint_free_claims_from_zero_result",
+    "trust_score_mutation",
+    "consumer_pii_commit"
+  ],
+  "safety_counters_required_on_summaries": [
+    "google_places_api_requests",
+    "production_writes",
+    "production_db_migrations",
+    "consumer_pii_committed"
+  ],
+  "exemplar_adapters": [
+    {
+      "county": "Palm Beach",
+      "posture": "CREDENTIAL_BASED",
+      "interfaces": ["PBC public API", "BIR", "license code catalogs"]
+    },
+    {
+      "county": "Broward",
+      "posture": "CREDENTIAL_BASED",
+      "interfaces": ["program PDFs/forms", "PRA for roster/history"]
+    },
+    {
+      "county": "Miami-Dade",
+      "posture": "CREDENTIAL_BASED",
+      "interfaces": ["EnerGov", "LBT open data", "application PDFs"]
+    },
+    {
+      "county": "Pinellas",
+      "posture": "ORDINANCE_ONLY",
+      "interfaces": ["Municode ordinance", "Accela complaint-history PDF search"]
+    }
+  ]
+}

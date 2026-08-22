@@ -1,0 +1,60 @@
+{
+  "task": "FL-C008",
+  "stack_name": "fl-county-regulatory",
+  "origin_main_observed": "4711355486f3787e5c154cadeb0ff6d11dbb0118",
+  "c007_head": "05e018e2236cd1f865ef3808874aa388065720df",
+  "entries": [
+    {
+      "task_id": "FL-C001",
+      "title": "Florida High-Value County Regulatory Intelligence Discovery & Acquisition Audit",
+      "pr": 45,
+      "status": "COMPLETE_UNMERGED"
+    },
+    {
+      "task_id": "FL-C002",
+      "title": "Palm Beach County Mover Regulatory Dataset Acquisition",
+      "pr": 48,
+      "status": "COMPLETE_UNMERGED"
+    },
+    {
+      "task_id": "FL-C003",
+      "title": "Palm Beach Deterministic FDACS Reconciliation & County Evidence Qualification",
+      "pr": 51,
+      "status": "COMPLETE_UNMERGED"
+    },
+    {
+      "task_id": "FL-C004",
+      "title": "Broward County Mover Regulatory Acquisition & Staging",
+      "pr": 52,
+      "status": "COMPLETE_UNMERGED"
+    },
+    {
+      "task_id": "FL-C005",
+      "title": "Miami-Dade County Mover Regulatory Acquisition & Staging",
+      "pr": 54,
+      "status": "COMPLETE_UNMERGED"
+    },
+    {
+      "task_id": "FL-C006",
+      "title": "Miami-Dade Deterministic FDACS Reconciliation & County Evidence Qualification",
+      "pr": 56,
+      "status": "COMPLETE_UNMERGED"
+    },
+    {
+      "task_id": "FL-C007",
+      "title": "Pinellas County Mover Regulatory Acquisition & Staging",
+      "pr": 58,
+      "status": "COMPLETE_UNMERGED",
+      "head": "05e018e2236cd1f865ef3808874aa388065720df"
+    },
+    {
+      "task_id": "FL-C008",
+      "title": "Florida County Regulatory Architecture Discovery V1 & Stack Integration Plan",
+      "pr": "TBD",
+      "status": "IN_PROGRESS_DESIGN_ONLY"
+    }
+  ],
+  "rebase_onto_main": false,
+  "merge_to_main": false,
+  "note": "County stack remains isolated; PRs historically stacked/unmerged relative to main while Builder 1 advances state track."
+}

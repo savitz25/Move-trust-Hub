@@ -1,0 +1,12 @@
+{
+  "task": "FL-C006",
+  "note": "Read-only classification against current Florida companies/PSA snapshot. No company or PSA rows modified.",
+  "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+  "origin_main_observed": "2959930c0a149eb961fa3d2b6306f23c7cba820d",
+  "summary": {
+    "CANONICAL_LINKED": 70,
+    "CANONICAL_CANDIDATE": 0,
+    "STATE_RECORD_ONLY": 16,
+    "COUNTY_ONLY_REVIEW": 31
+  }
+}

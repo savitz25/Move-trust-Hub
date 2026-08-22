@@ -1,0 +1,8 @@
+{
+  "task": "FL-C011",
+  "new_google_places_api_requests_made": 0,
+  "hits": [
+    "scripts/fl-c010-complete-remaining-audits.mjs"
+  ],
+  "note": "Heuristic hit is audit script regex source only (fl-c010-complete-remaining-audits.mjs); no Places client or API calls."
+}

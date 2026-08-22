@@ -1,0 +1,966 @@
+{
+  "task": "FL-C002",
+  "note": "CROSS_SOURCE_REVIEW_REQUIRED until investigated. No conclusion that county or FDACS is wrong.",
+  "count": 136,
+  "records": [
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1039",
+      "county_contact": "Michael Meehan Jr. President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV837",
+      "county_business_name": "Monster Moving, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1121",
+      "county_business_name": "Andigo Movers LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1145",
+      "county_contact": "Chris  Generale President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV747",
+      "county_contact": "Terry H. Leach General Partner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1081",
+      "county_business_name": "W & W Moving Solutions , LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1132",
+      "county_contact": "Everald V. Campbell Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV624",
+      "county_contact": "Jamie Fitz President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV42",
+      "county_business_name": "A Man With A Van, Inc. ",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1097",
+      "county_contact": "Spero Georgedakis Limited Partner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV2",
+      "county_status": "LICENSED",
+      "fdacs_license_no": "IM32",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV2",
+      "county_contact": "Dawn Phillips President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1163",
+      "county_business_name": "Iron Tree Relocations, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1133",
+      "county_business_name": "Drop A Truck LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV86",
+      "county_contact": "Kris  Cerdas President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1210",
+      "county_contact": "Jerry Pryor Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV984",
+      "county_business_name": "White Lion Moving Systems of South Florida, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1191",
+      "county_contact": "Michael Hudson President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1017",
+      "county_business_name": "Move For You, Inc",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1193",
+      "county_contact": "Felipe Costa-Carvalho President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV809",
+      "county_contact": "Edward  Toolsie Manager",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1013",
+      "county_business_name": "Elite Handling, LLC ",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV969",
+      "county_contact": "Dustin Kleinguenther Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV890",
+      "county_contact": "Paul F. Caruso Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV75",
+      "county_contact": "Sharon Dixon  President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV867",
+      "county_contact": "Richard Kelly President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV59",
+      "county_business_name": "A-1 Sun Movers, Inc. ",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1123",
+      "county_contact": "Gareth Larkin Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1269",
+      "county_business_name": "Select Residential Moving",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1079",
+      "county_status": "LICENSED",
+      "fdacs_license_no": "IM2306",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "PHONE_DIFFERENCE",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1079",
+      "county_phone": "5612013988",
+      "fdacs_phone": "561-201-1196"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1079",
+      "county_contact": "William J. Natale President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1029",
+      "county_contact": "Raul Rojas Dispute Contact/Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1174",
+      "county_contact": "James Nazzaro Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV367",
+      "county_contact": "Shlomi Lugassy President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV772",
+      "county_contact": "Kyle Pasqualone Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV904",
+      "county_business_name": "All-Dixie Moving Services, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1244",
+      "county_contact": "Ever Cruz Rios Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV789",
+      "county_business_name": "All Family Moving,  Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1175",
+      "county_contact": "Everton C Bailey President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1093",
+      "county_business_name": "Good Job Moving, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV29",
+      "county_business_name": "Walton P. Davis Moving & Storage Co. Inc,",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1282",
+      "county_business_name": "Lee East Coast Moving LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1180",
+      "county_business_name": "Moving Kings Van Lines Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1055",
+      "county_business_name": "South West Movers, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV708",
+      "county_business_name": "M.J. Moving, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV20",
+      "county_business_name": "Bohren's Moving & Storage Inc",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1172",
+      "county_business_name": "Auction Auto Outlet, Inc",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV47",
+      "county_contact": "Lindsey Graci President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1231",
+      "county_contact": "Juan Carlos Orozco Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV964",
+      "county_contact": "Barry Reiss Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV545",
+      "county_business_name": "Mr. Jimmy's Local Moving and Delivery Service, Inc",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1062",
+      "county_contact": "Lisa Barbanera Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV18",
+      "county_contact": "Carlos D. Perez President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV17",
+      "county_status": "LICENSED",
+      "fdacs_license_no": "IM93",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV17",
+      "county_contact": "Joseph R.  Bonnie, Sr. President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1260",
+      "county_business_name": "Eldorado Transporting And Moving LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1118",
+      "county_business_name": "A King Moving Services, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1144",
+      "county_business_name": "Safe and Easy Moving,LLC ",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1135",
+      "county_business_name": "Move Pro Moving And Storage ",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1147",
+      "county_contact": "Petr Jelinek Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1198",
+      "county_business_name": "City Movers LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV729",
+      "county_business_name": "Lord's  Moving,Co  LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1275",
+      "county_business_name": "Royalty Mover Inc",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV50",
+      "county_contact": "Carlos Contreras President/Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1130",
+      "county_contact": "James  Nazzaro  President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV344",
+      "county_contact": "Peter Kauffman President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV736",
+      "county_business_name": "A Special Packing Service, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1245",
+      "county_business_name": "Hawthorne And Sons Trucking, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1041",
+      "county_status": "LICENSED",
+      "fdacs_license_no": "IM2005",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1041",
+      "county_contact": "Juan C. Reyes President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV513",
+      "county_contact": "Herbert F. Fleck, Jr. President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1184",
+      "county_contact": "Jose Rodriguez-Brito Dispute Contact/Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1080",
+      "county_business_name": "M&D Professional Moving,Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1188",
+      "county_business_name": "Three Friends Moving, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1267",
+      "county_business_name": "King Moving And Storage II, Inc",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1020",
+      "county_business_name": "IMove South Florida, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1046",
+      "county_business_name": "A Smooth Move Moving & Storage, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1076",
+      "county_business_name": "365 Home Maintenance, Inc",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV688",
+      "county_business_name": "Move Me Joe, Inc. ",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1086",
+      "county_business_name": "Florida Licensed Moving Corporation",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1001",
+      "county_business_name": "Five O Movers, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV680",
+      "county_business_name": "MVP Movers, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1205",
+      "county_business_name": "Moving Heroes, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1226",
+      "county_contact": "Sarria Orlando President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV996",
+      "county_status": "LICENSED",
+      "fdacs_license_no": "IM1982",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV996",
+      "county_contact": "Dennis R. Cavagnaro President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1128",
+      "county_contact": "Robin Albert Dispute Contact/Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1323",
+      "county_contact": "Hagai Maman President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV95",
+      "county_business_name": "Father & Son Storage Warehouse, Inc. ",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1060",
+      "county_business_name": "Strawn's Moving LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV22",
+      "county_business_name": "Crystal Coast Moving & Storage, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV669",
+      "county_business_name": "McGovern Moving & Storage, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV509",
+      "county_business_name": "All My Sons Moving & Storage Of West Palm Beach Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV13",
+      "county_contact": "Jerry L. Spencer Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1214",
+      "county_business_name": "Camille's Professional Flat Rate Moving Services, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1316",
+      "county_contact": "Julian Sarria President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1238",
+      "county_contact": "James Michael (Mike) Penn President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV883",
+      "county_business_name": "H. Martone, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV3",
+      "county_contact": "Kathy J.  Long  President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "PHONE_DIFFERENCE",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1108",
+      "county_phone": "8006615999",
+      "fdacs_phone": "954-588-2582"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1108",
+      "county_contact": "Oded Gur Owner/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV880",
+      "county_business_name": "I & S Delivery",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1224",
+      "county_contact": "Laura Hoehne Customer Service Supervisor",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV7",
+      "county_business_name": "Fazio's Moving, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1137",
+      "county_business_name": "Lambert's Moving & Storage, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1022",
+      "county_business_name": "A1 Priority Moving, LLC.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1095",
+      "county_business_name": "Icon Moving",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1091",
+      "county_business_name": "Emergency Delivery, LLC.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1056",
+      "county_business_name": "Rainbow Movers of Florida, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1229",
+      "county_contact": "John Rourke Managing Member",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1019",
+      "county_business_name": "North Pole Moving, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1084",
+      "county_status": "LICENSED",
+      "fdacs_license_no": "IM2325",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1084",
+      "county_contact": "Jaime E. Viloria President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1120",
+      "county_business_name": "Move 4 You, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV962",
+      "county_business_name": "Ross Parker, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1141",
+      "county_business_name": "Thompson & Sons Moving and Storage Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "PHONE_DIFFERENCE",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1204",
+      "county_phone": "5617972329",
+      "fdacs_phone": "561-398-0154"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1204",
+      "county_contact": "Graciela Knutsson President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1197",
+      "county_business_name": "Cross Moving & Storage Co.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1169",
+      "county_business_name": "Iurkenty Corp",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "PHONE_DIFFERENCE",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV956",
+      "county_phone": "5618423663",
+      "fdacs_phone": "561-296-6222"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV956",
+      "county_contact": "Rebecca Nye Registered Agent",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1176",
+      "county_business_name": "Lifetime Moving And Junk Removal, Inc",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV631",
+      "county_business_name": "Big Star Services Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV23",
+      "county_contact": "Eric Ford President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "STATUS_CONFLICT",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV1183",
+      "county_status": "LICENSED",
+      "fdacs_license_no": "IM73",
+      "fdacs_status": "Expired"
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1183",
+      "county_contact": "David Patrick Dispute Contact/Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1325",
+      "county_contact": "Geniza Madden Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV794",
+      "county_business_name": "Move America, Inc.",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1241",
+      "county_contact": "Jason Crossen President/Dispute Contact",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV868",
+      "county_contact": "Leo Ramsay General Manager",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1328",
+      "county_contact": "Joseph Byrne Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV11",
+      "county_contact": "Eric Klause  President",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    },
+    {
+      "type": "COUNTY_ACTIVE_NOT_FOUND_IN_FDACS",
+      "classification": "CROSS_SOURCE_REVIEW_REQUIRED",
+      "county_permit": "MV937",
+      "county_business_name": "Patmar, LLC",
+      "note": "Active Palm Beach Moving Business Permit not deterministically found in current FDACS IM extracts. Not asserting either source wrong."
+    },
+    {
+      "type": "COUNTY_OWNER_OFFICER_NOT_IN_FDACS_EXTRACT",
+      "classification": "INCREMENTAL_VALUE",
+      "county_permit": "MV1315",
+      "county_contact": "Paula Carmona Owner",
+      "note": "FDACS IM extract used here does not include owner/officer fields; county provides contact/title."
+    }
+  ]
+}

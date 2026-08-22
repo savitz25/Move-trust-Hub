@@ -1,0 +1,50 @@
+{
+  "task": "FL-C010",
+  "manifest_id": "FL_COUNTY_SELECTIVE_TRANSPLANT_MANIFEST_V1",
+  "strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "status": "READY_WHEN_GATE_CLEARS",
+  "do_not_execute_in_c010": true,
+  "frozen_source": {
+    "freeze_id": "FL_COUNTY_RESEARCH_V1_FREEZE",
+    "frozen_head_sha": "1256170855439413242acadf68e659e53f4aabc3",
+    "note": "Use C009 head as research package source; C010 gate artifacts ride on C010 branch atop that lineage"
+  },
+  "include_count": 379,
+  "review_count": 6,
+  "exclude_count": 0,
+  "allowlist_artifact": "data/county-regulatory/fl/architecture/c010/transplant-allowlist.json",
+  "path_classes_include": [
+    "data/county-regulatory/** (durable)",
+    "docs/county-regulatory/**",
+    "data/regulatory-source-catalog/**",
+    "scripts/fl-c00*.mjs",
+    "scripts/validate-fl-c00*.mjs"
+  ],
+  "path_classes_exclude": [
+    ".env*",
+    "secrets/credentials",
+    "node_modules",
+    ".next",
+    "supabase/migrations/**",
+    "lib/state-hhg/** publication helpers",
+    "Trust Score",
+    "company publication mutation scripts",
+    "consumer PII"
+  ],
+  "review_before_include": [
+    "data/county-regulatory/fl/miami-dade/evidence/florida-im-company-crosswalk.json",
+    "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+    "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-business-20tax-page-5Bsi.json",
+    "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-local-20business-20tax-f.json",
+    "data/county-regulatory/fl/miami-dade/raw/instructions-self-service-portal.pdf",
+    "data/county-regulatory/fl/palm-beach/raw/MovingCo_Application.pdf"
+  ],
+  "execution_owner_task": "FL-C011",
+  "preconditions": [
+    "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW = YES recorded by authorized follow-on",
+    "STATE_TRACK_ACTIVE = NO or explicitly waived for docs/data-only transplant",
+    "Fresh origin/main SHA recorded",
+    "Validators C001–C010 green on rehearsal against that main",
+    "consumer_pii_included_in_transplant_allowlist = 0"
+  ]
+}

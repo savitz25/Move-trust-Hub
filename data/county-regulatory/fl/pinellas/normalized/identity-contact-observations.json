@@ -1,0 +1,11 @@
+{
+  "task": "FL-C007",
+  "data_scope": "EMPTY_COUNTY_IDENTITY — no Pinellas public mover identity roster",
+  "row_count": 0,
+  "records": [],
+  "note": "County does not publish a mover identity/credential roster. FDACS Pinellas-municipality seeds (n=69) and complaint-search-sample-businesses (n=25) are documented in raw/ as SAMPLE search universe only — not staged here as Pinellas county identity-contact observations.",
+  "sample_search_universe_paths": [
+    "data/county-regulatory/fl/pinellas/raw/fdacs-pinellas-geography-sample-universe.json",
+    "data/county-regulatory/fl/pinellas/raw/complaint-search-sample-businesses.json"
+  ]
+}

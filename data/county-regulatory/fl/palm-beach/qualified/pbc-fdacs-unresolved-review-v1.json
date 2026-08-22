@@ -1,0 +1,1793 @@
+{
+  "task": "FL-C003",
+  "file": "pbc-fdacs-unresolved-review-v1.json",
+  "version": "v1",
+  "retrieved_at": "2026-08-21T19:51:45.682Z",
+  "note": "Unresolved / non-VERIFIED records. Must not attach to canonical companies.",
+  "counts": {
+    "REVIEW_REQUIRED": 12,
+    "NOT_FOUND": 66,
+    "CONFLICT": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "records": [
+    {
+      "palm_beach_permit": "MV837",
+      "legal_name": "Monster Moving, Inc.",
+      "dba": "5 Star Moving Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1121",
+      "legal_name": "Andigo Movers LLC",
+      "dba": "Andigo Movers LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1081",
+      "legal_name": "W & W Moving Solutions , LLC",
+      "dba": "Two Men and a Truck of Boynton Delray ",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV42",
+      "legal_name": "A Man With A Van, Inc. ",
+      "dba": "A Man With A Van, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1163",
+      "legal_name": "Iron Tree Relocations, LLC",
+      "dba": "Iron Tree Movers",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1133",
+      "legal_name": "Drop A Truck LLC",
+      "dba": "Drop A Truck LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV984",
+      "legal_name": "White Lion Moving Systems of South Florida, Inc.",
+      "dba": "White Lion Moving Systems of South Florida, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1017",
+      "legal_name": "Move For You, Inc",
+      "dba": "Move For You, Inc",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1013",
+      "legal_name": "Elite Handling, LLC ",
+      "dba": "Elite Handling, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV59",
+      "legal_name": "A-1 Sun Movers, Inc. ",
+      "dba": "A-1 Sun Movers, Inc. ",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1269",
+      "legal_name": "Select Residential Moving",
+      "dba": "Select Residential Moving",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV904",
+      "legal_name": "All-Dixie Moving Services, LLC",
+      "dba": "All-Dixie Moving Services, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV789",
+      "legal_name": "All Family Moving,  Inc.",
+      "dba": "All Family Moving, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV894",
+      "legal_name": "Devries Moving And Storage Solutions, Inc.",
+      "dba": "Devries Moving and Storage Solutions, Inc.",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM1683",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5617444659",
+          "fdacs": "772-878-7088"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "2581   Jupiter Park Dr  Ste F4, Jupiter, FL, 33458",
+          "fdacs": "440 NW MARKET PL, PORT SAINT LUCIE, FL 34986-2219"
+        }
+      ],
+      "review_reasons": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1093",
+      "legal_name": "Good Job Moving, Inc.",
+      "dba": "Good Job Moving, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV29",
+      "legal_name": "Walton P. Davis Moving & Storage Co. Inc,",
+      "dba": "Walton P. Davis Moving & Storage Co. Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1282",
+      "legal_name": "Lee East Coast Moving LLC",
+      "dba": "Lee East Coast Moving LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1180",
+      "legal_name": "Moving Kings Van Lines Inc.",
+      "dba": "Moving Kings Van Lines Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1055",
+      "legal_name": "South West Movers, LLC",
+      "dba": "South West Movers, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV708",
+      "legal_name": "M.J. Moving, Inc.",
+      "dba": "M. J. Moving, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV20",
+      "legal_name": "Bohren's Moving & Storage Inc",
+      "dba": "Bohren's Moving & Storage Inc. ",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1172",
+      "legal_name": "Auction Auto Outlet, Inc",
+      "dba": "Palm Beach Movers",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV545",
+      "legal_name": "Mr. Jimmy's Local Moving and Delivery Service, Inc",
+      "dba": "Mr. Jimmy's Local Moving and Delivery Service, Inc",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1260",
+      "legal_name": "Eldorado Transporting And Moving LLC",
+      "dba": "Eldorado Transporting And Moving LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1118",
+      "legal_name": "A King Moving Services, LLC",
+      "dba": "A King Moving Services, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1144",
+      "legal_name": "Safe and Easy Moving,LLC ",
+      "dba": "Safe and Easy Moving,LLC ",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1135",
+      "legal_name": "Move Pro Moving And Storage ",
+      "dba": "Move Pro Moving and Storage ",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1198",
+      "legal_name": "City Movers LLC",
+      "dba": "City Movers LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV729",
+      "legal_name": "Lord's  Moving,Co  LLC",
+      "dba": "Lord's  Moving,Co  LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1275",
+      "legal_name": "Royalty Mover Inc",
+      "dba": "Royalty Mover Inc",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV736",
+      "legal_name": "A Special Packing Service, Inc.",
+      "dba": "A Special Packing Service, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1245",
+      "legal_name": "Hawthorne And Sons Trucking, LLC",
+      "dba": "Here to Home Moving Services",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1080",
+      "legal_name": "M&D Professional Moving,Inc.",
+      "dba": "M&D Professional Moving Inc",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1188",
+      "legal_name": "Three Friends Moving, LLC",
+      "dba": "Three Friends Moving, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1267",
+      "legal_name": "King Moving And Storage II, Inc",
+      "dba": "King Moving And Storage",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1020",
+      "legal_name": "IMove South Florida, LLC",
+      "dba": "IMove South Florida, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1046",
+      "legal_name": "A Smooth Move Moving & Storage, LLC",
+      "dba": "A Smooth Move Moving & Storage, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1076",
+      "legal_name": "365 Home Maintenance, Inc",
+      "dba": "365 Home Maintenance, Inc",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV688",
+      "legal_name": "Move Me Joe, Inc. ",
+      "dba": "Move Me Joe, Inc. ",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1086",
+      "legal_name": "Florida Licensed Moving Corporation",
+      "dba": "Duck Movers",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1001",
+      "legal_name": "Five O Movers, LLC",
+      "dba": "Five O Movers, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV680",
+      "legal_name": "MVP Movers, Inc.",
+      "dba": "MVP Movers, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1205",
+      "legal_name": "Moving Heroes, LLC",
+      "dba": "Moving Heroes",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV8",
+      "legal_name": "Hall's Local Movers LLC",
+      "dba": "Hall's Local Movers LLC",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM357",
+      "supporting_evidence": [
+        "exact_phone",
+        "exact_physical_address"
+      ],
+      "conflicting_evidence": [],
+      "review_reasons": [
+        "plausible relationship, insufficient deterministic evidence"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV95",
+      "legal_name": "Father & Son Storage Warehouse, Inc. ",
+      "dba": "Father & Son Storage Warehouse, Inc. ",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1060",
+      "legal_name": "Strawn's Moving LLC",
+      "dba": "Strawn's Moving LLC.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV22",
+      "legal_name": "Crystal Coast Moving & Storage, Inc.",
+      "dba": "Crystal Coast Moving & Storage, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV53",
+      "legal_name": "A.A.A. Ada Moving & Storage, Inc.",
+      "dba": "A.A.A. Ada Moving & Storage, Inc.",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM214",
+      "supporting_evidence": [
+        "exact_phone",
+        "exact_physical_address"
+      ],
+      "conflicting_evidence": [],
+      "review_reasons": [
+        "plausible relationship, insufficient deterministic evidence"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV669",
+      "legal_name": "McGovern Moving & Storage, Inc.",
+      "dba": "McGovern Moving & Storage, Inc. ",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV509",
+      "legal_name": "All My Sons Moving & Storage Of West Palm Beach Inc.",
+      "dba": "True Van Lines, All My Sons Moving & Storage, Quick N Easy Moving",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1214",
+      "legal_name": "Camille's Professional Flat Rate Moving Services, LLC",
+      "dba": "Camille's Professional Flat Rate Moving Services, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1138",
+      "legal_name": "Brooks Moving & Hauling LLC",
+      "dba": "Brooks Moving & Hauling LLC",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM4020",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5618910456",
+          "fdacs": "954-678-4747"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "16762   131st  Street Way N, Jupiter, FL, 33478",
+          "fdacs": "1300 N FLORIDA MANGO RD STE 4, WEST PALM BEACH, FL 33409-5255"
+        }
+      ],
+      "review_reasons": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1277",
+      "legal_name": "Mighty Men Moving, Inc",
+      "dba": "Mighty Men Moving, Inc",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM3201",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5613585266",
+          "fdacs": "703-560-3358"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "2000   PGA Blvd  Unit 4000, Palm Beach Gardens, FL, 33408",
+          "fdacs": "2724 DORR AVE STE 58G, FAIRFAX, VA 22031-4900"
+        }
+      ],
+      "review_reasons": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV883",
+      "legal_name": "H. Martone, Inc.",
+      "dba": "Antique Restoration Sales and Services",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV880",
+      "legal_name": "I & S Delivery",
+      "dba": "I & S Delivery",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV7",
+      "legal_name": "Fazio's Moving, Inc.",
+      "dba": "Fazio's Moving, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1137",
+      "legal_name": "Lambert's Moving & Storage, LLC",
+      "dba": "Lambert's Moving & Storage, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1083",
+      "legal_name": "Lanier Services, Inc.",
+      "dba": "Two Men and A Truck",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM49",
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5614048807",
+          "fdacs": "954-616-6683"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "1500   Gateway Blvd  Ste 200, Boynton Beach, FL, 33426",
+          "fdacs": "5850 ORANGE DR BLDG A, DAVIE, FL 33314-3618"
+        }
+      ],
+      "review_reasons": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address",
+        "multiple FDACS candidates"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1022",
+      "legal_name": "A1 Priority Moving, LLC.",
+      "dba": "A1 Priority Moving, LLC.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1095",
+      "legal_name": "Icon Moving",
+      "dba": "Icon Moving",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1091",
+      "legal_name": "Emergency Delivery, LLC.",
+      "dba": "Emergency Delivery, LLC.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1056",
+      "legal_name": "Rainbow Movers of Florida, Inc.",
+      "dba": "Rainbow Movers of Florida, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1019",
+      "legal_name": "North Pole Moving, Inc.",
+      "dba": "North Pole Moving, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1120",
+      "legal_name": "Move 4 You, LLC",
+      "dba": "Move 4 You, LLC",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV962",
+      "legal_name": "Ross Parker, LLC",
+      "dba": "Home Town Moving Company",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1141",
+      "legal_name": "Thompson & Sons Moving and Storage Inc.",
+      "dba": "Thompson & Sons Moving and Storage Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1197",
+      "legal_name": "Cross Moving & Storage Co.",
+      "dba": "Cross Moving & Storage Co.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV914",
+      "legal_name": "Your Move, Inc.",
+      "dba": "Move On Demand",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM1733",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5617379490",
+          "fdacs": "561-212-7570"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "9937  SW Coral Tree Cir, Port St. Lucie, FL, 34987",
+          "fdacs": "129 NW 13TH ST STE 22, BOCA RATON, FL 33432-1635"
+        }
+      ],
+      "review_reasons": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1169",
+      "legal_name": "Iurkenty Corp",
+      "dba": "I & A Moving and Storage",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1302",
+      "legal_name": "Bekins A-1 Movers Inc",
+      "dba": "BMS Moving & Storage",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM950",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5618787768",
+          "fdacs": "941-259-4447"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "1660   Silver Beach Rd  Ste 300, Lake Park, FL, 33403",
+          "fdacs": "7810 25TH CT E UNIT 102, SARASOTA, FL 34243-2841"
+        }
+      ],
+      "review_reasons": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1176",
+      "legal_name": "Lifetime Moving And Junk Removal, Inc",
+      "dba": "Demo Boyzz",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV631",
+      "legal_name": "Big Star Services Inc.",
+      "dba": "Big Star Moving",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV118",
+      "legal_name": "Stress Free Moving & Storage, Inc.",
+      "dba": "Stress Free Moving & Storage, Inc.",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM534",
+      "supporting_evidence": [
+        "exact_phone",
+        "phone_only_insufficient"
+      ],
+      "conflicting_evidence": [],
+      "review_reasons": [
+        "phone conflict or phone-only"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV794",
+      "legal_name": "Move America, Inc.",
+      "dba": "Move America, Inc.",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV937",
+      "legal_name": "Patmar, LLC",
+      "dba": "Delivery Done Now",
+      "match_result": "NOT_FOUND",
+      "candidate_fdacs_id": null,
+      "supporting_evidence": [],
+      "conflicting_evidence": [],
+      "review_reasons": [],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1321",
+      "legal_name": "Parker's Moving USA LP",
+      "dba": "Parker's Moving USA",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM4000",
+      "supporting_evidence": [
+        "exact_phone",
+        "phone_only_insufficient"
+      ],
+      "conflicting_evidence": [],
+      "review_reasons": [
+        "phone conflict or phone-only"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV5",
+      "legal_name": "Ace Moving Company Of Palm Beach Co. Inc. ",
+      "dba": "Ace Moving Company",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM813",
+      "supporting_evidence": [
+        "exact_dba",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [],
+      "review_reasons": [
+        "legal-name ambiguity / name-only match"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    },
+    {
+      "palm_beach_permit": "MV1254",
+      "legal_name": "South Florida Moving And Hauling, LLC",
+      "dba": "Brooks Moving & Hauling",
+      "match_result": "REVIEW_REQUIRED",
+      "candidate_fdacs_id": "IM4020",
+      "supporting_evidence": [
+        "exact_dba",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [],
+      "review_reasons": [
+        "legal-name ambiguity / name-only match"
+      ],
+      "canonical_attachment_allowed": false,
+      "provenance": {
+        "county_source": "https://secure.pbc.gov/ConsumerAffairs/api/Companies/GetCompanies",
+        "county_retrieved_at": "2026-08-21T17:36:35.678Z",
+        "fdacs_sources": [
+          "data/state-hhg/fl/fdacs-legacy-im-active.json",
+          "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+        ],
+        "identity_snapshot_retrieved_at": "2026-08-21T18:27:11.838Z",
+        "ruleset": "PBC_FDACS_RECONCILIATION_V1"
+      }
+    }
+  ]
+}

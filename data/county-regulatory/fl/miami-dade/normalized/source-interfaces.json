@@ -1,0 +1,48 @@
+{
+  "task": "FL-C005",
+  "retrieved_at": "2026-08-21T20:41:01.552Z",
+  "interfaces": [
+    {
+      "source": "EnerGov CSS SelfService — License search",
+      "endpoint": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+      "access_type": "PUBLIC_SEARCH_API",
+      "format": "JSON (EnerGov SelfService)",
+      "notes": "Public License search filtered to Moving/MR yields full Moving-type universe (409 after excluding non-Moving pollution rows). Tenant MiamiDadeProd."
+    },
+    {
+      "source": "EnerGov business license detail",
+      "endpoint": "https://energov.miamidade.gov/energov_prod/selfservice/api/energov/licenses/business/{case_id}",
+      "access_type": "PUBLIC_UNAUTHENTICATED_GET",
+      "format": "JSON",
+      "notes": "Identity/status/dates only. Phones, emails, owners, vehicles, insurance certificates NOT exposed publicly (8 Issued samples confirmed)."
+    },
+    {
+      "source": "Application for Moving Business Registration",
+      "endpoint": "official PDF (movers-moving-registration.pdf)",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "PDF",
+      "notes": "Primary APPLICATION_SCHEMA_PUBLIC for branches, vehicles, insurance, WC, owners."
+    },
+    {
+      "source": "Local Business Tax FeatureServer",
+      "endpoint": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Local_Business_Tax_Feature_Layer_View/FeatureServer/0",
+      "access_type": "OPEN_DATA",
+      "format": "ArcGIS FeatureServer JSON",
+      "notes": "MOV-MNS / MOV-MWS mover-category accounts; NOT the MR license roster."
+    },
+    {
+      "source": "Consumer Mediation Center / Consumer Protection",
+      "endpoint": "https://www.miamidade.gov (consumer protection pages)",
+      "access_type": "INTAKE_ONLY",
+      "format": "HTML",
+      "notes": "Complaint intake documented; no public structured business complaint history found."
+    },
+    {
+      "source": "Public Records Request (draft)",
+      "endpoint": "docs/county-regulatory/fl/pra-drafts/miami-dade-county-mover-regulatory-pra.md",
+      "access_type": "PRA",
+      "format": "Markdown draft (NOT SENT)",
+      "notes": "Targets phones/emails/owners/vehicles/insurance/complaint/citation histories not on public APIs."
+    }
+  ]
+}

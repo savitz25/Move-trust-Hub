@@ -1,0 +1,11 @@
+{
+  "task": "FL-C004",
+  "architecture_implemented": false,
+  "note": "Broward Consumer Protection regulates chauffeurs, VFH, medical transport, motor vehicle repair/body, movers, towing/immobilization — potential later reuse for Contractor/Senior/Insurance TrustHubs. Catalog only; no non-mover ingestion.",
+  "potential_later_reuse": [
+    "ContractorTrustHub",
+    "SeniorTrustHub",
+    "InsuranceTrustHub",
+    "other Move counties"
+  ]
+}

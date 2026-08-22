@@ -1,0 +1,56 @@
+{
+  "task": "FL-C010",
+  "freeze_id": "FL_COUNTY_RESEARCH_V1_FREEZE",
+  "frozen_head_sha": "1256170855439413242acadf68e659e53f4aabc3",
+  "origin_main_observed": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "STATE_TRACK_ACTIVE": "YES",
+  "critical_remediation_active": "NO",
+  "TECHNICALLY_READY_FOR_SELECTIVE_TRANSPLANT": "YES",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "YES",
+  "success_state": "READY_FOR_SELECTIVE_TRANSPLANT — STATE GATE CLEAR",
+  "safety_conditions": [
+    {
+      "id": 1,
+      "condition": "no active critical company-routing remediation underway",
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "condition": "no active state publication mutation in progress",
+      "status": "PASS",
+      "note": "Wave apply already merged; no concurrent mutation PR observed — observation-only"
+    },
+    {
+      "id": 3,
+      "condition": "FL_STATE_WAVE_1 immediate regression checks healthy",
+      "status": "PASS",
+      "note": "state-hhg + canary suites green on rehearsal; INGESTED 404 contract asserted"
+    },
+    {
+      "id": 4,
+      "condition": "no unresolved current-main profile/publication conflict for county data paths",
+      "status": "PASS"
+    },
+    {
+      "id": 5,
+      "condition": "current main is deploy/build green",
+      "status": "PASS",
+      "note": "npm run build exit 0 on rehearsal tree"
+    },
+    {
+      "id": 6,
+      "condition": "county selective transplant does not modify state publication behavior",
+      "status": "PASS"
+    },
+    {
+      "id": 7,
+      "condition": "all county validators pass on current-main rehearsal",
+      "status": "PASS",
+      "note": "11/11 including C010"
+    }
+  ],
+  "merge_now": false,
+  "transplant_now": false,
+  "recommended_next_task": "FL-C011 — County Research Stack Selective-Transplant Integration & Validation"
+}

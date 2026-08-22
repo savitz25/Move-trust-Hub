@@ -1,0 +1,90 @@
+{
+  "task": "FL-C004",
+  "retrieved_at": "2026-08-21T20:07:08.505Z",
+  "interfaces": [
+    {
+      "source": "Consumer Protection Division website",
+      "endpoint": "https://www.broward.org/consumer",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "HTML (Sitecore/Next.js)",
+      "notes": "Program overview; regulated industries include movers; links to Forms, ePermits, complaints, enforcement PDFs."
+    },
+    {
+      "source": "Consumer Protection Forms — Movers accordion",
+      "endpoint": "https://www.broward.org/consumer/Forms#accordion-movers",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "HTML + PDF downloads",
+      "notes": "Mover Registration Application; Tri-County Moving Disclosure Form. Updated Aug 13, 2026."
+    },
+    {
+      "source": "Mover Registration Application (official PDF)",
+      "endpoint": "https://www.browardcdn.org/api/public/content/de63c57b52674de8a38bf5d48636932a?v=29a96617",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "PDF",
+      "notes": "Primary schema source for registration + vehicle/decal fields."
+    },
+    {
+      "source": "Consumer Affairs program guide PDF",
+      "endpoint": "https://www.browardcdn.org/api/public/content/ab1e699647fd4880b2c8441f1b7100ac?v=fec53c74",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "PDF",
+      "notes": "Pages 28–30 document Movers program, Ch. 20-176.90, fees, application requirements."
+    },
+    {
+      "source": "Regulated Enforcement PDF",
+      "endpoint": "https://www.browardcdn.org/api/public/content/5c8b7809323c44d9990f5cb55a543e9d?v=76df4d1c",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "PDF",
+      "notes": "Hearings, citations, NOV toolkit; Movers listed among regulated industries."
+    },
+    {
+      "source": "Consumer Complaints PDF",
+      "endpoint": "https://www.browardcdn.org/api/public/content/620c5664bf5741028a074d2e4e98e7e2?v=dd5ffdf8",
+      "access_type": "INTAKE_ONLY",
+      "format": "PDF",
+      "notes": "Describes filing complaints online / 311; mediation/investigation; citations against movers. No public historical disposition database documented."
+    },
+    {
+      "source": "ePermits OneStop",
+      "endpoint": "https://www.broward.org/epermits",
+      "access_type": "AUTHENTICATED_PORTAL",
+      "format": "Web portal (dpepp.broward.org / access.broward.org)",
+      "notes": "Primarily building/environmental permits. ePermits A-Z Cards list Chauffeur Registration but NOT Mover Registration. Mover applications appear offline/appointment-based per Consumer Affairs guide."
+    },
+    {
+      "source": "ePermits A-Z Cards",
+      "endpoint": "https://www.browardcdn.org/api/public/content/468d512cdb5347c4a079cc1f68491b39?v=222d4080",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "PDF",
+      "notes": "No Mover Registration card found among online ePermit types."
+    },
+    {
+      "source": "Report A Complaint",
+      "endpoint": "https://www.broward.org/ReportAComplaint",
+      "access_type": "INTAKE_ONLY",
+      "format": "HTML",
+      "notes": "Complaint intake gateway; not a public history lookup."
+    },
+    {
+      "source": "Public Records Request",
+      "endpoint": "https://www.broward.org/opengovernment/PRR",
+      "access_type": "PRA",
+      "format": "Web request system",
+      "notes": "Preferred path for bulk registration/complaint/enforcement extracts."
+    },
+    {
+      "source": "Citizen Data Portal (ArcGIS Experience)",
+      "endpoint": "https://experience.arcgis.com/experience/6cddf1062ab14cf3a11425e6d02c006a",
+      "access_type": "OPEN_DATA_GENERAL",
+      "format": "ArcGIS Experience",
+      "notes": "County-wide data portal; not observed as a mover-registration roster source in FL-C004."
+    },
+    {
+      "source": "Municode — Broward Code Ch.20 (Moving Ordinance cite)",
+      "endpoint": "https://library.municode.com/fl/broward_county/codes/code_of_ordinances",
+      "access_type": "DOCUMENT_PUBLIC",
+      "format": "HTML",
+      "notes": "Official cite Chapter 20-176.90 from Consumer Affairs materials; Municode hosts Broward code."
+    }
+  ]
+}

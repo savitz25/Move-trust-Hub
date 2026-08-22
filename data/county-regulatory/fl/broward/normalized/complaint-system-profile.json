@@ -1,0 +1,15 @@
+{
+  "task": "FL-C004",
+  "availability": "INTAKE_ONLY_PUBLIC",
+  "access_class": "INTAKE_ONLY",
+  "records_public": 0,
+  "sample_or_full": "PRA_REQUIRED for history",
+  "case_status_public": false,
+  "disposition_public": false,
+  "pii": "Consumer complaints filed online/311; normalized staging contains no complaint rows; Consumer PII committed: 0",
+  "notes": [
+    "Official materials: investigate/mediate unfair/deceptive practices and ordinance violations; may issue citations against movers.",
+    "No Broward equivalent of Palm Beach Business Information Report (3-year allegation+disposition) was found publicly.",
+    "Disposition taxonomy not publicly published as a structured code table (unlike PBC GetResolutions)."
+  ]
+}

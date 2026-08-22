@@ -1,0 +1,16 @@
+{
+  "task": "FL-C011",
+  "live_db_available": false,
+  "note": "Live DB recompute deferred to PBC-PROD-001 preflight if env unavailable in this worktree.",
+  "palm_beach_c010_snapshot": {
+    "verified_fdacs": 64,
+    "canonical_linked": 46,
+    "production_link_ready": 46
+  },
+  "miami_dade_c010_snapshot": {
+    "verified_fdacs": 86,
+    "canonical_linked": 70
+  },
+  "newly_linkable_after_c009": 0,
+  "frozen_cohort_changed": false
+}

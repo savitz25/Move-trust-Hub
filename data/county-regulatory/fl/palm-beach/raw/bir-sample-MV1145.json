@@ -1,0 +1,182 @@
+﻿{
+    "business_seq":  1700732,
+    "license_number":  "MV1145",
+    "business_name":  "All My Sons Of The Palm Beaches, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV1145",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "All My Sons Of The Palm Beaches, LLC",
+                               "Established_Yr":  null,
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1700732,
+                               "Does_Business_As":  "All My Sons of The Palm Beaches, LLC",
+                               "Address":  "838 13th",
+                               "City":  "Riviera Beach",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33404",
+                               "MailingAddress":  "2400 Old Mill ",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Carrollton",
+                               "MailingState":  "TX",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "75007",
+                               "PhoneNumber":  "5614753493",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "compliance@allmysons.com",
+                               "WebsiteURL":  "www.allmysons.com",
+                               "Fax":  "8884865298",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ComplaintSeq":  "1907116",
+                                                "ResolutionShortDesc":  "No compromise by business",
+                                                "AllegedViolation":  "Alleged damage to consumer\u0027s goods or property ",
+                                                "Status":  "CASE CLOSED",
+                                                "ResolutionCode":  "A12",
+                                                "DateClosed":  "7/24/2026"
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ComplaintSeq":  "1905864",
+                                                "ResolutionShortDesc":  "No compromise by consumer",
+                                                "AllegedViolation":  "Alleged billing dispute",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A11",
+                                                "DateClosed":  "2/18/2025"
+                                            },
+                                            {
+                                                "$id":  "3",
+                                                "ComplaintSeq":  "1905098",
+                                                "ResolutionShortDesc":  "No compromise",
+                                                "AllegedViolation":  "Alleged unfair business practice",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A10",
+                                                "DateClosed":  "10/10/2023"
+                                            },
+                                            {
+                                                "$id":  "4",
+                                                "ComplaintSeq":  "1907090",
+                                                "ResolutionShortDesc":  null,
+                                                "AllegedViolation":  "Alleged violation of the Palm Beach County Moving Ordinance",
+                                                "Status":  "OPEN/PENDING",
+                                                "ResolutionCode":  null,
+                                                "DateClosed":  ""
+                                            }
+                                        ],
+                              "Count":  4
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  4,
+                         "caseSummary":  [
+                                             {
+                                                 "$id":  "2",
+                                                 "ResolutionCode":  null,
+                                                 "ResoultionShortDesc":  null,
+                                                 "TotalCase":  1,
+                                                 "Status":  "closed"
+                                             },
+                                             {
+                                                 "$id":  "3",
+                                                 "ResolutionCode":  "A10",
+                                                 "ResoultionShortDesc":  "No compromise",
+                                                 "TotalCase":  1,
+                                                 "Status":  "closed"
+                                             },
+                                             {
+                                                 "$id":  "4",
+                                                 "ResolutionCode":  "A11",
+                                                 "ResoultionShortDesc":  "No compromise by consumer",
+                                                 "TotalCase":  1,
+                                                 "Status":  "closed"
+                                             },
+                                             {
+                                                 "$id":  "5",
+                                                 "ResolutionCode":  "A12",
+                                                 "ResoultionShortDesc":  "No compromise by business",
+                                                 "TotalCase":  1,
+                                                 "Status":  "closed"
+                                             }
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  1700732,
+                                           "LastName":  "Burgess",
+                                           "FirstName":  "Geoff",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "4694615000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "All My Sons Of The Palm Beaches, LLC",
+                                         "Established_Yr":  null,
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1700732,
+                                         "Does_Business_As":  "All My Sons of The Palm Beaches, LLC",
+                                         "Address":  "838 13th",
+                                         "City":  "Riviera Beach",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33404",
+                                         "MailingAddress":  "2400 Old Mill ",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Carrollton",
+                                         "MailingState":  "TX",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "75007",
+                                         "PhoneNumber":  "5614753493",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "compliance@allmysons.com",
+                                         "WebsiteURL":  "www.allmysons.com",
+                                         "Fax":  "8884865298",
+                                         "License_Required":  "Y"
+                                     }
+}

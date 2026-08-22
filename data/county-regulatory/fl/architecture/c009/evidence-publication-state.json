@@ -1,0 +1,40 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "states": [
+    {
+      "id": "INTERNAL_ONLY",
+      "consumer_visible": false,
+      "notes": "Default for Wave A ingest of all 46 PRODUCTION_LINK_READY credentials"
+    },
+    {
+      "id": "QUALIFIED",
+      "consumer_visible": false,
+      "notes": "Passed ruleset/precision gates; still not consumer-visible"
+    },
+    {
+      "id": "PUBLICATION_ELIGIBLE",
+      "consumer_visible": false,
+      "notes": "Passed evidence gates; awaiting controlled publish; public display also requires company publicly reachable"
+    },
+    {
+      "id": "PUBLISHED",
+      "consumer_visible": true,
+      "notes": "Visible under approved copy"
+    },
+    {
+      "id": "WITHHELD",
+      "consumer_visible": false,
+      "notes": "Deliberately held despite prior eligibility"
+    }
+  ],
+  "wave_a_default": "INTERNAL_ONLY",
+  "wave_a_applies_to_all_production_link_ready": true,
+  "public_display_requires": [
+    "company_publicly_reachable",
+    "evidence_publication_state in PUBLICATION_ELIGIBLE|PUBLISHED",
+    "not WITHHELD"
+  ],
+  "never_flips_indexable": true,
+  "never_writes_trust_score": true
+}

@@ -1,0 +1,47 @@
+{
+  "task": "FL-C007",
+  "status": "COMPLETE",
+  "origin_main_observed": "52afb48b6e7976f16651f8b19fc89886caec56d6",
+  "stacked_on_c006": "1aa496b0b36b1f7ffadd9db6285d90db8b14f8ef",
+  "credential_model": "ORDINANCE_REGULATION_WITHOUT_SEPARATE_PUBLIC_CREDENTIAL",
+  "roster_completeness": "NO_SEPARATE_ROSTER_IDENTIFIED",
+  "publicly_acquired": [
+    "program verification (Monitoring vs Licensing)",
+    "Municode Art. VIII ordinance schema (estimate/contract/disclosure/inventory/liability/enforcement)",
+    "Accela Civic Platform complaint-history interface characterization (5-year)",
+    "SAMPLE_ONLY complaint PDF search artifact(s)",
+    "zero-result semantics",
+    "four-county comparison + architecture pressure test"
+  ],
+  "pra_required_for": [
+    "internal regulated-business lists if any",
+    "bulk machine-readable complaint history export (business-level only)",
+    "complete disposition catalog / full 5-year universe",
+    "enforcement/final actions beyond RECORD STATUS sample"
+  ],
+  "pra_submitted": false,
+  "mover_regulatory_record_rows": 0,
+  "complaint_searches_with_pdf": 3,
+  "complaint_nonzero_searches": 1,
+  "complaint_case_rows": 24,
+  "complaint_disposition_rows": 24,
+  "official_record_status_values": [
+    "No Compromise",
+    "Resolved",
+    "Judicial System",
+    "Referred",
+    "Closed: Resolved-Adjusted",
+    "Closed-Criminal"
+  ],
+  "enforcement_rows": 0,
+  "fdacs_matchability": "NOT_APPLICABLE_NO_PUBLIC_ROSTER",
+  "PATTERNS_CONVERGING": "YES",
+  "FOUR_PILOTS_SUFFICIENT_FOR_ARCHITECTURE_DISCOVERY": "YES",
+  "google_places_api_requests": 0,
+  "production_writes": false,
+  "production_db_migrations": 0,
+  "consumer_pii_committed": 0,
+  "recommended_fl_c008": "FL-C008 — Florida County Regulatory Architecture Discovery V1 & Stack Integration Plan",
+  "recommended_fl_c008_rationale": "Four pilots complete. Pinellas has no public roster to qualify; its value is ordinance+complaint-history pattern discovery. Next task is architecture discovery V1 & stack integration plan — not Pinellas qualification.",
+  "package_hash": "66ad626deb8cf6b0"
+}

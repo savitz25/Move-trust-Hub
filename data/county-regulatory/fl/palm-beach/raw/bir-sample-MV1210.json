@@ -1,0 +1,135 @@
+﻿{
+    "business_seq":  1907804,
+    "license_number":  "MV1210",
+    "business_name":  "Silver Lining Moving \u0026 Delivery, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV1210",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  474839,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1907804,
+                                                "KeyField":  null,
+                                                "Field2":  "2020-02-11T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            }
+                                        ],
+                              "Count":  1
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Silver Lining Moving \u0026 Delivery, LLC",
+                               "Established_Yr":  null,
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1907804,
+                               "Does_Business_As":  "Silver Lining Moving \u0026 Delivery, LLC",
+                               "Address":  "868 Ryanwood",
+                               "City":  "West Palm Beach",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33413",
+                               "MailingAddress":  "320 Arlington",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "West Palm Beach",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33405",
+                               "PhoneNumber":  "5613012450",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "jerrypryor135@comcast.net",
+                               "WebsiteURL":  null,
+                               "Fax":  "",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Silver Lining Moving \u0026 Delivery, LLC",
+                                         "Established_Yr":  null,
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1907804,
+                                         "Does_Business_As":  "Silver Lining Moving \u0026 Delivery, LLC",
+                                         "Address":  "868 Ryanwood",
+                                         "City":  "West Palm Beach",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33413",
+                                         "MailingAddress":  "320 Arlington",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "West Palm Beach",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33405",
+                                         "PhoneNumber":  "5613012450",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "jerrypryor135@comcast.net",
+                                         "WebsiteURL":  null,
+                                         "Fax":  "",
+                                         "License_Required":  "Y"
+                                     }
+}

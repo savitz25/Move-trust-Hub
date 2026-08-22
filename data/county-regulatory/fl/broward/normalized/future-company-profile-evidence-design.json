@@ -1,0 +1,55 @@
+{
+  "task": "FL-C004",
+  "published": false,
+  "trust_score_connection": false,
+  "sections": [
+    {
+      "id": "broward_credential",
+      "title": "Broward County mover credential",
+      "fields": [
+        "Mover's Registration",
+        "status",
+        "expiration (Sep 30)",
+        "regulator",
+        "source"
+      ]
+    },
+    {
+      "id": "broward_owner_contact",
+      "title": "County-reported owner/contact",
+      "fields": [
+        "owners/officers (if public/PRA)",
+        "phone",
+        "address"
+      ]
+    },
+    {
+      "id": "broward_vehicle",
+      "title": "Vehicle/fleet information",
+      "fields": [
+        "decal/permit",
+        "VIN/tag where public",
+        "GVW",
+        "fleet count"
+      ]
+    },
+    {
+      "id": "broward_disputes",
+      "title": "Consumer dispute history",
+      "fields": [
+        "explicit window",
+        "allegation vs disposition"
+      ]
+    },
+    {
+      "id": "broward_enforcement",
+      "title": "County enforcement history",
+      "fields": [
+        "citation",
+        "hearing",
+        "suspension/revocation",
+        "final order"
+      ]
+    }
+  ]
+}

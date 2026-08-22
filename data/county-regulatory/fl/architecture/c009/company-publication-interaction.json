@@ -1,0 +1,27 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "rule": "County evidence display is gated by BOTH company public reachability AND evidence publication eligibility",
+  "public_credential_visible_iff": [
+    "company_is_publicly_reachable",
+    "evidence_publication_state in ['PUBLICATION_ELIGIBLE','PUBLISHED']",
+    "evidence not WITHHELD"
+  ],
+  "county_evidence_must_not": [
+    "flip companies.indexable",
+    "mutate Trust Score",
+    "force company publication_state transitions",
+    "bypass hard-404 / publication remediation paths"
+  ],
+  "production_link_ready_snapshot": {
+    "count": 46,
+    "company_publication_state_counts": {
+      "INGESTED": 33,
+      "NULL": 11,
+      "PUBLISHABLE": 2
+    },
+    "indexable_mostly": false,
+    "implication": "Almost none are public-ready; Wave A INTERNAL_ONLY for all 46"
+  },
+  "wave_a_publish": false
+}

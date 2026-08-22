@@ -1,0 +1,19 @@
+{
+  "task": "FL-C008",
+  "recommended_fl_c009": "FL-C009 — Palm Beach County Production Evidence Integration Spec V1 (design-only; no merge/no publish)",
+  "rationale": "Next step prepares production wiring for Pilot #1 (Palm Beach) without integrating the whole county stack and without publishing. Keeps SAFE_TO_INTEGRATE_COUNTY_STACK_NOW=NO intact while producing an implementable design for Waves A–D.",
+  "explicitly_excluded": [
+    "merge county stack to main",
+    "rebase onto main",
+    "production publish",
+    "Trust Score changes",
+    "Google Places APIs",
+    "production DB migrations"
+  ],
+  "alternatives_considered": [
+    {
+      "title": "FL-C009 — County Stack Integration Dry-Run Spec against frozen main",
+      "why_not_preferred": "Useful later; Palm Beach production evidence wiring is the higher-value immediate design given READY_FOR_COUNTY_PILOT_1_INTERNAL."
+    }
+  ]
+}

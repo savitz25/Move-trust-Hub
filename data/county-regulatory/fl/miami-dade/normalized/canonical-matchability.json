@@ -1,0 +1,1308 @@
+{
+  "task": "FL-C005",
+  "mode": "OFFLINE_READ_ONLY",
+  "production_writes": false,
+  "crosswalk_source": "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+  "crosswalk_modified": false,
+  "scope": "ISSUED_DETERMINISTIC_FDACS_PRIMARY",
+  "counts": {
+    "CANONICAL_LINKED": 60,
+    "STATE_RECORD_ONLY": 15,
+    "COUNTY_ONLY": 14,
+    "REVIEW_REQUIRED": 28
+  },
+  "deterministic_county_fdacs_with_canonical_company": 60,
+  "deterministic_county_fdacs_without_canonical_company": 15,
+  "results": [
+    {
+      "county_license": "MR-00002",
+      "county_business_name": "Withers Transfer and Storage of Coral Gables, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM27",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-27",
+      "company_ids": [
+        "fl-im-27"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00015",
+      "county_business_name": "Raul's Moving, Inc.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM106",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-00018",
+      "county_business_name": "Gomez Moving Co., Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM125",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-125",
+      "company_ids": [
+        "fl-im-125"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00032",
+      "county_business_name": "George Lima Moving, Inc.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM58",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-00049",
+      "county_business_name": "Homestead Transfer & Storage Co.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM366",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-366",
+      "company_ids": [
+        "fl-im-366"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00067",
+      "county_business_name": "Small Time Movers, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM160",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-160",
+      "company_ids": [
+        "fl-im-160"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00068",
+      "county_business_name": "Mudanzas Diaz Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1573",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1573",
+      "company_ids": [
+        "fl-im-1573"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00094",
+      "county_business_name": "The Fortress-Miami Corporation",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM162",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-00106",
+      "county_business_name": "La Rosa Del Monte Express (Miami), LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM385",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-00113",
+      "county_business_name": "Genesis Moving and Storage, Inc.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM333",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-00207",
+      "county_business_name": "Millennium Relocation Services, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM260",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-260",
+      "company_ids": [
+        "fl-im-260"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00231",
+      "county_business_name": "Rene Chinique Moving & Delivery",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-00278",
+      "county_business_name": "South Florida Van Line, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM607",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-607",
+      "company_ids": [
+        "fl-im-607"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00310",
+      "county_business_name": "Sergio's Moving, Corp.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM512",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-00313",
+      "county_business_name": "American Connection Moving, LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM755",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-00317",
+      "county_business_name": "Fuentes Moving Corp.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM22",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-22",
+      "company_ids": [
+        "fl-im-22"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00332",
+      "county_business_name": "A-1 Southeast Moving, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM810",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-810",
+      "company_ids": [
+        "fl-im-810"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00338",
+      "county_business_name": "Johnny Moving & Delivery, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM668",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-668",
+      "company_ids": [
+        "fl-im-668"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00359",
+      "county_business_name": "OnTime Moving System, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM161",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-00366",
+      "county_business_name": "Brickell Moving and Packing Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM500",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-500",
+      "company_ids": [
+        "fl-im-500"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00378",
+      "county_business_name": "Jesus Moving, LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2724",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2724",
+      "company_ids": [
+        "fl-im-2724"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00385",
+      "county_business_name": "Vidal Moving & Storage, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1541",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-00416",
+      "county_business_name": "Luis & Son Moving, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1503",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1503",
+      "company_ids": [
+        "fl-im-1503"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00444",
+      "county_business_name": "ABA Moving, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1100",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1100",
+      "company_ids": [
+        "fl-im-1100"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00447",
+      "county_business_name": "Clover Systems, LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM1103",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-00449",
+      "county_business_name": "A.B.C. Moving, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1079",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1079",
+      "company_ids": [
+        "fl-im-1079"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00450",
+      "county_business_name": "Powerloaders Corporation",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1214",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1214",
+      "company_ids": [
+        "fl-im-1214"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00458",
+      "county_business_name": "American Moving & Packaging Inc",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1319",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1319",
+      "company_ids": [
+        "fl-im-1319"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00476",
+      "county_business_name": "Nobel Van Lines Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1204",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "usdot-1329594",
+      "company_ids": [
+        "usdot-1329594"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-00496",
+      "county_business_name": "Nippon Express USA, Inc",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-00512",
+      "county_business_name": "Flat Rate Moving & Storage, LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1320",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-00515",
+      "county_business_name": "William Moving Service, Inc.",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-00564",
+      "county_business_name": "Miami Movers For Less, Inc.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM1543",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-00570",
+      "county_business_name": "Torito's Moving Corp",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2476",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2476",
+      "company_ids": [
+        "fl-im-2476"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01006",
+      "county_business_name": "Sainz Moving & Delivery",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2442",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2442",
+      "company_ids": [
+        "fl-im-2442"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01016",
+      "county_business_name": "CMR Transport, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1689",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1689",
+      "company_ids": [
+        "fl-im-1689"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01020",
+      "county_business_name": "Varela Moving Pickup & Delivery LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2474",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2474",
+      "company_ids": [
+        "fl-im-2474"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01029",
+      "county_business_name": "Orellana AV Moving, Corp.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1624",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1624",
+      "company_ids": [
+        "fl-im-1624"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01045",
+      "county_business_name": "Laprom Moving Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM1723",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-1723",
+      "company_ids": [
+        "fl-im-1723"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01049",
+      "county_business_name": "Tacha's Movi, Corp.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2549",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2549",
+      "company_ids": [
+        "fl-im-2549"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01054",
+      "county_business_name": "Inter-American Movers and Forwarders,LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2983",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2983",
+      "company_ids": [
+        "fl-im-2983"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01063",
+      "county_business_name": "Valle Moving & Deliveries, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2456",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-01074",
+      "county_business_name": "Ojeda Moving and Delivery Inc",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2551",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2551",
+      "company_ids": [
+        "fl-im-2551"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01076",
+      "county_business_name": "Hypermovers Max '' LLC''",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM2712",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01079",
+      "county_business_name": "Martinez Delivery Corp",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2446",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2446",
+      "company_ids": [
+        "fl-im-2446"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01109",
+      "county_business_name": "Same Day Moving & Storage, Inc.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM2051",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01113",
+      "county_business_name": "First Class Movers, LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM2122",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01125",
+      "county_business_name": "La Barata Oves Moving",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-01137",
+      "county_business_name": "Shark Junior, L.L.C.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2478",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2478",
+      "company_ids": [
+        "fl-im-2478"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01139",
+      "county_business_name": "SF Local Moving Inc",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2239",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2239",
+      "company_ids": [
+        "fl-im-2239"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01140",
+      "county_business_name": "Cuba Moving, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2467",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2467",
+      "company_ids": [
+        "fl-im-2467"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01141",
+      "county_business_name": "Chiquis Moving,Inc",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2438",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2438",
+      "company_ids": [
+        "fl-im-2438"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01147",
+      "county_business_name": "Bermen Moving & Delivery LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3470",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01164",
+      "county_business_name": "Nina International Transport Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2284",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2284",
+      "company_ids": [
+        "fl-im-2284"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01192",
+      "county_business_name": "Mancav Furniture Delivery LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2781",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2781",
+      "company_ids": [
+        "fl-im-2781"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01203",
+      "county_business_name": "Black Wolf Moving Miami, LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2535",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-01208",
+      "county_business_name": "Wilfredo's Moving",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2606",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2606",
+      "company_ids": [
+        "fl-im-2606"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01209",
+      "county_business_name": "Dixie Movers LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2609",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "usdot-3080327",
+      "company_ids": [
+        "usdot-3080327"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01216",
+      "county_business_name": "Quintero Delivery & Moving, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2463",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2463",
+      "company_ids": [
+        "fl-im-2463"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01221",
+      "county_business_name": "Pro Movers Miami, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2721",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "pro-movers-2",
+      "company_ids": [
+        "pro-movers-2"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01237",
+      "county_business_name": "Related Moving & Service, LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3034",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3034",
+      "company_ids": [
+        "fl-im-3034"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01244",
+      "county_business_name": "Metayer Moving Corp",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM2830",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01249",
+      "county_business_name": "AN Mudanzas & Delivery LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM4103",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01253",
+      "county_business_name": "J.V. Express Deliveries, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2986",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2986",
+      "company_ids": [
+        "fl-im-2986"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01267",
+      "county_business_name": "Xpress Relocations, LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2521",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2521",
+      "company_ids": [
+        "fl-im-2521"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01269",
+      "county_business_name": "Shield Moving and Storage Logistics, Inc",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3111",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-01280",
+      "county_business_name": "Atelier 4, LLC",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-01282",
+      "county_business_name": "Prestige Moving System, Inc",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3117",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-01283",
+      "county_business_name": "Fargo Partners LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3135",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3135",
+      "company_ids": [
+        "fl-im-3135"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01287",
+      "county_business_name": "Ciao Moving & Storage LLC.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3143",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01295",
+      "county_business_name": "Your Stuff In The Truck, LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3245",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3245",
+      "company_ids": [
+        "fl-im-3245"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01296",
+      "county_business_name": "Online Movers Corp",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3250",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3250",
+      "company_ids": [
+        "fl-im-3250"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01297",
+      "county_business_name": "Lu's Delivery LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3267",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01306",
+      "county_business_name": "Lazy Bear Solutions. Inc",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3366",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-01314",
+      "county_business_name": "On Point Moving Corp",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3395",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3395",
+      "company_ids": [
+        "fl-im-3395"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-01320",
+      "county_business_name": "305 + Movers LLC",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-090497",
+      "county_business_name": "ScoreUnion, LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3192",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-091229",
+      "county_business_name": "UOVO Art LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3775",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-092140",
+      "county_business_name": "P&P Moving and Delivery Inc",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3382",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3382",
+      "company_ids": [
+        "fl-im-3382"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-092238",
+      "county_business_name": "Flex Storage Inc.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3819",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-092297",
+      "county_business_name": "Total Moving Corporation",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3711",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-092523",
+      "county_business_name": "JJ Brothers Groups LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3385",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3385",
+      "company_ids": [
+        "fl-im-3385"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-092532",
+      "county_business_name": "Mitjans Moving and Delivery Inc",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3794",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-092562",
+      "county_business_name": "Confianca Moving & Storage LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3718",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3718",
+      "company_ids": [
+        "fl-im-3718"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-092619",
+      "county_business_name": "Joe's Moving and Storage, Inc.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM16",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-092997",
+      "county_business_name": "Latin Moving, Corp",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3926",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-093002",
+      "county_business_name": "Happy Moving Happy Life LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM4075",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-4075",
+      "company_ids": [
+        "fl-im-4075"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-093105",
+      "county_business_name": "U.S.A. On the Move L.L.C.",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-093387",
+      "county_business_name": "JLG Services Inc.",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-093500",
+      "county_business_name": "Benny and the Moving, Corp",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3812",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3812",
+      "company_ids": [
+        "fl-im-3812"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-093876",
+      "county_business_name": "Murillo's Mudanza and Delivery Inc",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-094070",
+      "county_business_name": "A&D Moving Florida Corp",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-094106",
+      "county_business_name": "Navarro Worldwide LLC",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-094141",
+      "county_business_name": "Sanford 7 Enterprise LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3619",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-094170",
+      "county_business_name": "Heat Mover Inc",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-094205",
+      "county_business_name": "Powerhouse Moving and Delivery Co.",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM2675",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-094336",
+      "county_business_name": "W Moving Corp",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3891",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-094438",
+      "county_business_name": "Romanos Delivery and Moving, Corp",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3934",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-094574",
+      "county_business_name": "Anthony's B Delivery LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM4203",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-4203",
+      "company_ids": [
+        "fl-im-4203"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-095117",
+      "county_business_name": "Octoplus Moving LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM4019",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-095152",
+      "county_business_name": "JP Moving & Delivery Service Corp",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM4080",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-095236",
+      "county_business_name": "Mivamove LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3869",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3869",
+      "company_ids": [
+        "fl-im-3869"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-095241",
+      "county_business_name": "305 Pro Movers Corp",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM3744",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-095332",
+      "county_business_name": "QBA Multiservices Inc",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3978",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-3978",
+      "company_ids": [
+        "fl-im-3978"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-095349",
+      "county_business_name": "Brautigam Delivery Corp.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM2293",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-2293",
+      "company_ids": [
+        "fl-im-2293"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-095401",
+      "county_business_name": "Roy & Ois Moving LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM4089",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-4089",
+      "company_ids": [
+        "fl-im-4089"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-095487",
+      "county_business_name": "Expremoving LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM4154",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-095542",
+      "county_business_name": "Nikki Moving LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM4044",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-4044",
+      "company_ids": [
+        "fl-im-4044"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-095935",
+      "county_business_name": "Johnson Storage & Moving Co. - Miami, L.L.C.",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM4006",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-4006",
+      "company_ids": [
+        "fl-im-4006"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-096207",
+      "county_business_name": "AYCS Delivery Service LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM4084",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-4084",
+      "company_ids": [
+        "fl-im-4084"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-096460",
+      "county_business_name": "DY Moving and Delivery Services, Inc.",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-096496",
+      "county_business_name": "RapidGolden Transport LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM4119",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-096653",
+      "county_business_name": "Adelit LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM4120",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-4120",
+      "company_ids": [
+        "fl-im-4120"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    },
+    {
+      "county_license": "MR-096763",
+      "county_business_name": "B&H Moving Services LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM3265",
+      "canonical_class": "STATE_RECORD_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_deterministic_no_canonical_company"
+    },
+    {
+      "county_license": "MR-096782",
+      "county_business_name": "Do It Now Moving Services LLC",
+      "fdacs_match_classification": "REVIEW_REQUIRED",
+      "fdacs_license_no": "IM4127",
+      "canonical_class": "REVIEW_REQUIRED",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "fdacs_review_required"
+    },
+    {
+      "county_license": "MR-096905",
+      "county_business_name": "Benjamin Moving and Delivery Service Inc",
+      "fdacs_match_classification": "NOT_FOUND",
+      "fdacs_license_no": null,
+      "canonical_class": "COUNTY_ONLY",
+      "primary_company_id": null,
+      "company_ids": [],
+      "link_path": "no_fdacs_deterministic_match"
+    },
+    {
+      "county_license": "MR-097254",
+      "county_business_name": "Palacio Holdings LLC",
+      "fdacs_match_classification": "DETERMINISTIC_MATCH",
+      "fdacs_license_no": "IM4179",
+      "canonical_class": "CANONICAL_LINKED",
+      "primary_company_id": "fl-im-4179",
+      "company_ids": [
+        "fl-im-4179"
+      ],
+      "link_path": "fdacs_im_to_company_ids"
+    }
+  ]
+}

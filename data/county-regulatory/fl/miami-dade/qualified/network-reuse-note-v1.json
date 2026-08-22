@@ -1,0 +1,20 @@
+{
+  "task": "FL-C006",
+  "architecture_implemented": false,
+  "reusable_patterns": [
+    "EnerGov licensing SelfService search/detail",
+    "ArcGIS LBT/business-tax FeatureServer",
+    "multi-status license history",
+    "branch schema vs observed branch separation",
+    "vehicle schema vs observed inventory separation",
+    "regulator/license ↔ tax crosswalk"
+  ],
+  "potential_later_reuse": [
+    "ContractorTrustHub",
+    "SeniorTrustHub",
+    "InsuranceTrustHub",
+    "LenderTrustHub",
+    "InvestorTrustHub"
+  ],
+  "note": "Catalog only; no cross-vertical ingestion in FL-C006."
+}

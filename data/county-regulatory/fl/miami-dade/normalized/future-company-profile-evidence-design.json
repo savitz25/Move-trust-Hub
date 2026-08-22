@@ -1,0 +1,68 @@
+{
+  "task": "FL-C005",
+  "published": false,
+  "trust_score_connection": false,
+  "sections": [
+    {
+      "id": "mdc_credential",
+      "title": "Miami-Dade Moving Business Registration",
+      "fields": [
+        "MR-#####",
+        "status",
+        "issue/expire",
+        "regulator",
+        "source"
+      ],
+      "language": "Neutral regulatory credential observation"
+    },
+    {
+      "id": "mdc_identity",
+      "title": "County-reported identity",
+      "fields": [
+        "legal name",
+        "DBA",
+        "address",
+        "phone/email if/when public or PRA"
+      ],
+      "language": "County-reported identity/contact enrichment"
+    },
+    {
+      "id": "mdc_lbt",
+      "title": "Local Business Tax corroboration",
+      "fields": [
+        "LBT account",
+        "category MOV-MNS/MOV-MWS",
+        "status"
+      ],
+      "language": "Tax-category corroboration — not a substitute MR credential"
+    },
+    {
+      "id": "mdc_vehicles",
+      "title": "Vehicle / fleet information",
+      "fields": [
+        "VIN/tag/GVW/YMM when public or PRA"
+      ],
+      "language": "Application-schema documented; public rows 0 in FL-C005"
+    },
+    {
+      "id": "mdc_disputes",
+      "title": "Consumer dispute / mediation history",
+      "fields": [
+        "explicit window",
+        "allegation vs disposition"
+      ],
+      "language": "Complaints are OBSERVATIONS — never label unsafe merely because a complaint exists"
+    },
+    {
+      "id": "mdc_enforcement",
+      "title": "County enforcement / citations",
+      "fields": [
+        "citation",
+        "hearing",
+        "suspension/revocation",
+        "final order"
+      ],
+      "language": "Separate allegation / citation / final action layers; do not invent dispositions"
+    }
+  ]
+}

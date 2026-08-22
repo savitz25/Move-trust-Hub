@@ -1,0 +1,17 @@
+{
+  "task": "FL-C005",
+  "inventory_basis": "APPLICATION_SCHEMA",
+  "access_class": "APPLICATION_SCHEMA_PUBLIC_ONLY",
+  "row_count": 0,
+  "records": [],
+  "note": "Application collects additional branch office addresses/phones. Public EnerGov roster/detail does not expose branch rows. Multi-license businesses may imply multiple locations but are not asserted as branch observations.",
+  "schema_example_from_application": {
+    "fields": [
+      "branch_address",
+      "city_state_zip",
+      "primary_phone",
+      "secondary_phone",
+      "parent_mr_license"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "task": "FL-C006",
+  "version": "v1",
+  "sources": {
+    "FDACS": "Authoritative for Florida Chapter 507 state mover registration.",
+    "MIAMI_DADE_MOVING": "Authoritative for Miami-Dade Moving Business Registration / License (MR-#####).",
+    "MIAMI_DADE_LBT": "Authoritative for county Local Business Tax observations — NOT mover authority.",
+    "FMCSA": "Authoritative for federal/interstate regulatory identity where applicable."
+  },
+  "conflict_types": {
+    "JURISDICTIONAL_DIFFERENCE": "Both facts can be correct (different regulators / jurisdictions). Preserve both with provenance.",
+    "TEMPORAL_DIFFERENCE": "Retrieval or effective dates differ; both observations may be historically correct.",
+    "BRANCH_CANDIDATE": "Possible additional location / branch — not proven without explicit branch record.",
+    "IDENTITY_REVIEW": "Potentially different businesses. Plausible overlap without deterministic same-entity proof.",
+    "TRUE_DATA_CONFLICT": "Same fact / same jurisdiction / same time window genuinely conflicts. Preserve both; do not silently overwrite.",
+    "CROSS_SOURCE_REVIEW_REQUIRED": "Needs human review before any canonical attachment."
+  },
+  "provenance_rule": "Every retained observation must keep source agency, source URL/record id, and retrieval timestamp.",
+  "retrieved_at": "2026-08-21T22:01:02.420Z"
+}

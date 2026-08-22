@@ -1,0 +1,30 @@
+{
+  "task": "FL-C010",
+  "STATE_TRACK_ACTIVE": "YES",
+  "critical_remediation_active": "NO",
+  "wave_observation_status": "ACTIVE_HEALTHY_OBSERVATION",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "YES",
+  "TECHNICALLY_READY_FOR_SELECTIVE_TRANSPLANT": "YES",
+  "success_state": "READY_FOR_SELECTIVE_TRANSPLANT — STATE GATE CLEAR",
+  "origin_main_observed": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "origin_main_subject": "ceeaa987 Merge pull request #61 from savitz25/task-fl-010a-florida-state-wave1-apply",
+  "rationale": [
+    "FL-010A Wave 1 apply is merged; observation is active but no open critical state/profile remediation PR was observed",
+    "Per AE: healthy observation alone does not permanently block docs/data/research transplant",
+    "County path collisions: 0 manual-review conflicts; package.json OMIT; migrations 0",
+    "Rehearsal validators 11/11 pass; npm run build pass; test:state-hhg / directory-engine / state-hhg-canary pass",
+    "Expected runtime behavior delta remains 0"
+  ],
+  "stability_trigger_checklist": {
+    "strict_404_healthy": true,
+    "wave1_launched_immediate_qa_pass": true,
+    "visual_profile_regression_settled_enough_for_docs_data": true,
+    "no_active_critical_state_profile_fix_pr": true,
+    "main_build_green_on_rehearsal": true,
+    "no_conflicting_worktree_on_county_paths": true
+  },
+  "merge_now": false,
+  "transplant_now": false,
+  "note": "Gate CLEAR authorizes starting FL-C011 when user authorizes — C010 itself still does not transplant to main.",
+  "recommended_next": "FL-C011 — County Research Stack Selective-Transplant Integration & Validation"
+}

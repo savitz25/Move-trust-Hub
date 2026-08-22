@@ -1,0 +1,80 @@
+{
+  "task": "FL-C007",
+  "inventory_basis": "ORDINANCE_REQUIRED_TRANSACTION_FIELDS",
+  "completeness_classification": "NO_SEPARATE_ROSTER_IDENTIFIED",
+  "note": "No county mover application/credential schema exists publicly. Fields below are behavioral/transactional requirements from Pinellas Moving Ordinance §§42-362–42-367 (estimate/contract/disclosure/inventory/liability). Coverage % against a live roster cannot be computed — no roster.",
+  "fields": [
+    {
+      "field": "written_estimate",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-362 Estimates of moving costs"
+    },
+    {
+      "field": "cargo_liability_insurance_disclosure",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-362"
+    },
+    {
+      "field": "consumer_services_contact_on_estimate",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-362 (contact Consumer Services)"
+    },
+    {
+      "field": "contract_for_service",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-363 Contract for service and disclosure statement required"
+    },
+    {
+      "field": "disclosure_statement",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-363"
+    },
+    {
+      "field": "charges_limited_to_written_estimate_rules",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-364"
+    },
+    {
+      "field": "inventory",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-365"
+    },
+    {
+      "field": "reasonable_dispatch",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-366"
+    },
+    {
+      "field": "movers_liability_disclosure",
+      "present_in_ordinance": "YES",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "42-367"
+    },
+    {
+      "field": "county_mover_license_number",
+      "present_in_ordinance": "NO",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "No credential section in Art. VIII"
+    },
+    {
+      "field": "county_registration_or_permit",
+      "present_in_ordinance": "NO",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "No credential section in Art. VIII"
+    },
+    {
+      "field": "vehicle_decal",
+      "present_in_ordinance": "NO",
+      "present_in_public_lookup": "NO_ROSTER",
+      "source": "Not observed"
+    }
+  ]
+}

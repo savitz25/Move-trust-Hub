@@ -1,0 +1,60 @@
+{
+  "task": "FL-C008",
+  "pilots": [
+    {
+      "county": "Palm Beach",
+      "posture": "CREDENTIAL_BASED",
+      "credential": "Moving Business Permit MV####",
+      "roster": "NEAR_FULL (~142 active)",
+      "qualification": {
+        "task": "FL-C003",
+        "VERIFIED": 64,
+        "precision_pct": 100,
+        "CANONICAL_LINKED": 46
+      },
+      "complaints_dispositions": "BIR sample; 44-code catalog",
+      "enforcement": "SAMPLE observations",
+      "pilot_recommendation": "READY_FOR_COUNTY_PILOT_1_INTERNAL",
+      "production_pilot_rank": 1
+    },
+    {
+      "county": "Broward",
+      "posture": "CREDENTIAL_BASED",
+      "credential": "Mover Registration + vehicle decal",
+      "roster": "PRA_REQUIRED (0 public rows)",
+      "qualification": null,
+      "application_schema": "Rich VIN/tag/GVW; hearing process documented",
+      "pra_heavy": true,
+      "production_pilot_rank": null
+    },
+    {
+      "county": "Miami-Dade",
+      "posture": "CREDENTIAL_BASED",
+      "credential": "MR-#####",
+      "roster": "NEAR_FULL (409 total / Issued 117)",
+      "qualification": {
+        "task": "FL-C006",
+        "VERIFIED": 86,
+        "precision_pct": 100,
+        "CANONICAL_LINKED": 70,
+        "LBT_VERIFIED_LINKS": 54
+      },
+      "complaints_enforcement": "Intake/PRA; not public bulk",
+      "insurance": "REQUIREMENT_DOCUMENTED only",
+      "production_pilot_rank": 2
+    },
+    {
+      "county": "Pinellas",
+      "posture": "ORDINANCE_ONLY",
+      "credential": null,
+      "roster": "NO_SEPARATE_ROSTER_IDENTIFIED",
+      "qualification": null,
+      "notes": "Monitoring not Licensing; Accela 5yr complaint SAMPLE 24 cases; RECORD STATUS disposition-like; zero-result = NO_COMPLAINT_RECORD_RETURNED_FOR_SEARCH_WINDOW",
+      "production_pilot_rank": null,
+      "architecture_value": "Ordinance-without-credential + Accela complaint-history pattern"
+    }
+  ],
+  "FOUR_PILOTS_SUFFICIENT_FOR_ARCHITECTURE_DISCOVERY": "YES",
+  "PATTERNS_CONVERGING": "YES",
+  "first_production_pilot": "Palm Beach"
+}

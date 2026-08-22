@@ -1,0 +1,120 @@
+﻿{
+    "business_seq":  502005,
+    "license_number":  "MV772",
+    "business_name":  "Atlantic Coast Muscles, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV772",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Atlantic Coast Muscles, LLC",
+                               "Established_Yr":  "2005",
+                               "Comments":  "Federal Tax ID: 99-0507421",
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  502005,
+                               "Does_Business_As":  "Two Men And A Truck",
+                               "Address":  "355 Hiatt",
+                               "City":  "Palm Beach Gardens",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33418",
+                               "MailingAddress":  "1091 Reading",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Mason",
+                               "MailingState":  "OH",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "45040",
+                               "PhoneNumber":  "5132055851",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "michael.lally@twomen.com",
+                               "WebsiteURL":  "www.twomen.com",
+                               "Fax":  "5137700907",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  502005,
+                                           "LastName":  "Pasqualone",
+                                           "FirstName":  "Kyle",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "6143528216"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Atlantic Coast Muscles, LLC",
+                                         "Established_Yr":  "2005",
+                                         "Comments":  "Federal Tax ID: 99-0507421",
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  502005,
+                                         "Does_Business_As":  "Two Men And A Truck",
+                                         "Address":  "355 Hiatt",
+                                         "City":  "Palm Beach Gardens",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33418",
+                                         "MailingAddress":  "1091 Reading",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Mason",
+                                         "MailingState":  "OH",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "45040",
+                                         "PhoneNumber":  "5132055851",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "michael.lally@twomen.com",
+                                         "WebsiteURL":  "www.twomen.com",
+                                         "Fax":  "5137700907",
+                                         "License_Required":  "Y"
+                                     }
+}

@@ -1,0 +1,285 @@
+{
+  "task": "FL-C003",
+  "count": 12,
+  "records": [
+    {
+      "mv_permit": "MV894",
+      "legal_name": "Devries Moving And Storage Solutions, Inc.",
+      "candidate_fdacs_id": "IM1683",
+      "categories": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address",
+        "county identity richer than FDACS",
+        "likely historical address"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5617444659",
+          "fdacs": "772-878-7088"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "2581   Jupiter Park Dr  Ste F4, Jupiter, FL, 33458",
+          "fdacs": "440 NW MARKET PL, PORT SAINT LUCIE, FL 34986-2219"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV8",
+      "legal_name": "Hall's Local Movers LLC",
+      "candidate_fdacs_id": "IM357",
+      "categories": [
+        "plausible relationship, insufficient deterministic evidence",
+        "county identity richer than FDACS"
+      ],
+      "supporting_evidence": [
+        "exact_phone",
+        "exact_physical_address"
+      ],
+      "conflicting_evidence": [],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV53",
+      "legal_name": "A.A.A. Ada Moving & Storage, Inc.",
+      "candidate_fdacs_id": "IM214",
+      "categories": [
+        "plausible relationship, insufficient deterministic evidence",
+        "county identity richer than FDACS"
+      ],
+      "supporting_evidence": [
+        "exact_phone",
+        "exact_physical_address"
+      ],
+      "conflicting_evidence": [],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV1138",
+      "legal_name": "Brooks Moving & Hauling LLC",
+      "candidate_fdacs_id": "IM4020",
+      "categories": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address",
+        "county identity richer than FDACS",
+        "likely historical address"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5618910456",
+          "fdacs": "954-678-4747"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "16762   131st  Street Way N, Jupiter, FL, 33478",
+          "fdacs": "1300 N FLORIDA MANGO RD STE 4, WEST PALM BEACH, FL 33409-5255"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV1277",
+      "legal_name": "Mighty Men Moving, Inc",
+      "candidate_fdacs_id": "IM3201",
+      "categories": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address",
+        "county identity richer than FDACS",
+        "likely historical address"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5613585266",
+          "fdacs": "703-560-3358"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "2000   PGA Blvd  Unit 4000, Palm Beach Gardens, FL, 33408",
+          "fdacs": "2724 DORR AVE STE 58G, FAIRFAX, VA 22031-4900"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV1083",
+      "legal_name": "Lanier Services, Inc.",
+      "candidate_fdacs_id": "IM49",
+      "categories": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address",
+        "multiple FDACS candidates",
+        "franchise/network ambiguity",
+        "county identity richer than FDACS",
+        "likely historical address"
+      ],
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5614048807",
+          "fdacs": "954-616-6683"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "1500   Gateway Blvd  Ste 200, Boynton Beach, FL, 33426",
+          "fdacs": "5850 ORANGE DR BLDG A, DAVIE, FL 33314-3618"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV914",
+      "legal_name": "Your Move, Inc.",
+      "candidate_fdacs_id": "IM1733",
+      "categories": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address",
+        "county identity richer than FDACS",
+        "likely historical address"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5617379490",
+          "fdacs": "561-212-7570"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "9937  SW Coral Tree Cir, Port St. Lucie, FL, 34987",
+          "fdacs": "129 NW 13TH ST STE 22, BOCA RATON, FL 33432-1635"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV1302",
+      "legal_name": "Bekins A-1 Movers Inc",
+      "candidate_fdacs_id": "IM950",
+      "categories": [
+        "legal-name ambiguity / name-only match",
+        "phone conflict",
+        "address conflict / likely historical address",
+        "county identity richer than FDACS",
+        "likely historical address"
+      ],
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [
+        {
+          "type": "phone_conflict",
+          "county": "5618787768",
+          "fdacs": "941-259-4447"
+        },
+        {
+          "type": "address_conflict_or_historical",
+          "county": "1660   Silver Beach Rd  Ste 300, Lake Park, FL, 33403",
+          "fdacs": "7810 25TH CT E UNIT 102, SARASOTA, FL 34243-2841"
+        }
+      ],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV118",
+      "legal_name": "Stress Free Moving & Storage, Inc.",
+      "candidate_fdacs_id": "IM534",
+      "categories": [
+        "phone conflict or phone-only",
+        "county identity richer than FDACS"
+      ],
+      "supporting_evidence": [
+        "exact_phone",
+        "phone_only_insufficient"
+      ],
+      "conflicting_evidence": [],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV1321",
+      "legal_name": "Parker's Moving USA LP",
+      "candidate_fdacs_id": "IM4000",
+      "categories": [
+        "phone conflict or phone-only",
+        "county identity richer than FDACS"
+      ],
+      "supporting_evidence": [
+        "exact_phone",
+        "phone_only_insufficient"
+      ],
+      "conflicting_evidence": [],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV5",
+      "legal_name": "Ace Moving Company Of Palm Beach Co. Inc. ",
+      "candidate_fdacs_id": "IM813",
+      "categories": [
+        "legal-name ambiguity / name-only match",
+        "county identity richer than FDACS"
+      ],
+      "supporting_evidence": [
+        "exact_dba",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    },
+    {
+      "mv_permit": "MV1254",
+      "legal_name": "South Florida Moving And Hauling, LLC",
+      "candidate_fdacs_id": "IM4020",
+      "categories": [
+        "legal-name ambiguity / name-only match",
+        "county identity richer than FDACS"
+      ],
+      "supporting_evidence": [
+        "exact_dba",
+        "name_only_insufficient"
+      ],
+      "conflicting_evidence": [],
+      "resolution": "REMAINS_REVIEW_REQUIRED",
+      "note": "No additional official evidence elevated this to VERIFIED under fail-closed rules."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "task": "FL-C010",
+  "consumer_pii_included_in_transplant_allowlist": 0,
+  "heuristic_hits": [],
+  "note": "No consumer-PII field patterns detected in text allowlist/review candidates under heuristic scan."
+}

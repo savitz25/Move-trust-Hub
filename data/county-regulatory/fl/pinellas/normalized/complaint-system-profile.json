@@ -1,0 +1,46 @@
+{
+  "task": "FL-C007",
+  "vendor": "Accela Civic Platform (Pinellas County Access Portal / CapHome)",
+  "availability": "SEARCHABLE_PUBLIC_NAME_FORM_PDF",
+  "access_class": "SAMPLE_ONLY_PUBLIC_HISTORY",
+  "public_report_url": "https://aca-prod.accela.com/PINELLAS/Report/ReportParameter.aspx?module=ConsumerProt&reportID=31870&reportType=LINK_REPORT_LIST",
+  "county_landing": "https://pinellas.gov/services/find-a-business-complaint-history/",
+  "history_window_years": 5,
+  "history_window_evidence": [
+    "County landing: search the 5-year business complaint history",
+    "FAQ: Closed complaints are maintained for five years and may be reviewed upon request",
+    "CapHome: Database results include complaints filed within the last five years"
+  ],
+  "access_mechanics": "Public browser form requiring Business Name (or partial name); returns PDF report",
+  "public_pdf_columns": [
+    "RECORD ID",
+    "DATE OPENED",
+    "DATE CLOSED",
+    "BUSINESS NAME",
+    "ASSOCIATED NAMES",
+    "RECORD STATUS"
+  ],
+  "disposition_on_public_pdf": "RECORD_STATUS_FIELD_CARRIES_DISPOSITION_LIKE_VALUES — not a separate Disposition column",
+  "disposition_access": "PUBLIC_VIA_RECORD_STATUS_ON_ACCELA_PDF for observed official values; FAQ also offers phone/request path. Bulk export of full 5-year universe still PRA_REQUIRED.",
+  "case_status_public": true,
+  "disposition_public_bulk": false,
+  "disposition_public_sample": true,
+  "sample_or_full": "SAMPLE_ONLY",
+  "records_public_in_package": 24,
+  "official_record_status_values_observed": [
+    "No Compromise",
+    "Resolved",
+    "Judicial System",
+    "Referred",
+    "Closed: Resolved-Adjusted",
+    "Closed-Criminal"
+  ],
+  "search_seeds_note": "Sample universe = FDACS movers with Pinellas municipality cities (n=69); bounded sample businesses prepared (n=25). Used ONLY as search seeds because no county mover roster exists. Partial-name Moving search additionally returned a mover-related complaint cohort.",
+  "pii": "Consumer PII committed: 0. Public PDF is business-level; ASSOCIATED NAMES retained only as official business-associated identity fields, never as complainant PII.",
+  "notes": [
+    "Zero-result Accela PDFs classify as NO_COMPLAINT_RECORD_RETURNED_FOR_SEARCH_WINDOW — never COMPLAINT_FREE.",
+    "RECORD STATUS on PDF carries disposition-like official values (Resolved, No Compromise, Referred, Judicial System, Closed-Criminal, Closed: Resolved-Adjusted).",
+    "Complaint existence / RECORD STATUS is never proof of misconduct.",
+    "Closed-Criminal / CP-CRM prefix is a criminal-boundary observation only — no criminal scraping."
+  ]
+}

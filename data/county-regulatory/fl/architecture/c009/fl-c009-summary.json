@@ -1,0 +1,81 @@
+{
+  "task": "FL-C009",
+  "status": "COMPLETE",
+  "title": "Palm Beach County Production Evidence Integration Spec V1 (design-only)",
+  "design_only": true,
+  "origin_main_observed": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140",
+  "c008_head": "13f409cc17e6c18e27388773848fc995c518cd27",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "first_production_pilot": "Palm Beach",
+  "production_link_ready": 46,
+  "baseline_permits": 142,
+  "reconciliation_counts": {
+    "VERIFIED": 64,
+    "REVIEW_REQUIRED": 12,
+    "NOT_FOUND": 66
+  },
+  "canonical_linked": 46,
+  "canonical_delta": {
+    "gained": 0,
+    "lost": 0
+  },
+  "company_publication_among_link_ready": {
+    "INGESTED": 33,
+    "NULL": 11,
+    "PUBLISHABLE": 2
+  },
+  "storage_recommendation": "OPTION_D_HYBRID",
+  "psa_overload_forbidden": true,
+  "psa_remains": "STATE_ONLY",
+  "wave_a_evidence_publication_state": "INTERNAL_ONLY",
+  "wave_a_publish": false,
+  "trust_score_connection": false,
+  "google_places_api_requests": 0,
+  "production_writes": false,
+  "production_db_migrations": 0,
+  "production_schema_created": false,
+  "consumer_pii_committed": 0,
+  "owner_officer": "V1_OPTIONAL_NOT_WAVE_A",
+  "fleet": "FUTURE_OR_OPTIONAL_WAVE_B_COUNTY_REPORTED_TOTAL",
+  "cross_source_link": "ON_CREDENTIAL_FIELDS_PREFERRED_SEPARATE_TABLE_OPTIONAL_V1",
+  "feature_waves": [
+    "A_credential",
+    "B_identity_contact",
+    "C_complaints_dispositions",
+    "D_enforcement"
+  ],
+  "recommended_fl_c010": "FL-C010 — County Stack Integration Gate — WAIT_FOR_STATE_TRACK_STABILITY",
+  "stack_transplant_before_pbc_prod": true,
+  "first_implementation_task": "PBC-PROD-001 foundation + Wave A INTERNAL ingest — publish nothing",
+  "key_decisions": [
+    "PSA remains STATE-only; new county credential concept",
+    "provider_contact_observation EXTEND/REUSE for Wave B; never overwrite companies.*",
+    "Owner/officer V1_OPTIONAL / not Wave A",
+    "Fleet FUTURE or optional Wave B county-reported fleet total",
+    "Complaints/dispositions separate; 44-code catalog reference data",
+    "Enforcement finality on event; separate final-outcome table not required V1",
+    "Evidence states INTERNAL_ONLY, QUALIFIED, PUBLICATION_ELIGIBLE, PUBLISHED, WITHHELD",
+    "Wave A credentials only INTERNAL_ONLY first; public only when company public + evidence eligible",
+    "Zero-result never complaint-free",
+    "County evidence never flips indexable / Trust Score",
+    "Stack transplant before any PBC-PROD",
+    "FL-C010 = WAIT_FOR_STATE_TRACK_STABILITY"
+  ],
+  "docs": [
+    "docs/county-regulatory/architecture/palm-beach-v1/PALM_BEACH_COUNTY_REGULATORY_PILOT_V1.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/storage-and-schema-spec.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/wave-a-credential-spec.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/wave-b-identity-contact-spec.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/wave-c-complaint-disposition-spec.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/wave-d-enforcement-spec.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/read-api-and-ingestion-contracts.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/selective-transplant-allowlist.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/implementation-sequence.md",
+    "docs/county-regulatory/architecture/palm-beach-v1/current-main-compatibility.md"
+  ],
+  "package_hash": "49ba57e84f32e7d8",
+  "emitted_at": "2026-08-22T14:54:52.067Z",
+  "json_files_count": 35,
+  "doc_files_count": 10,
+  "cohort_sha256": "66c32a4e81e8475b125d88a70268f541313a1607325e1e60b4b2807657e71063"
+}

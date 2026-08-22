@@ -1,0 +1,31 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "portable_from_palm_beach_pilot": [
+    "CREDENTIAL_BASED program + provider_county_credential pattern",
+    "PSA remains STATE-only",
+    "Evidence publication states INTERNAL_ONLY→PUBLISHED/WITHHELD",
+    "Company reachability ∩ evidence eligibility display gate",
+    "Contact observation EXTEND_REUSE with regulator-scoped uniqueness",
+    "Complaint ≠ disposition; enforcement finality-on-event",
+    "Wave A INTERNAL-first sequencing",
+    "Zero-result never complaint-free",
+    "Trust Score boundary"
+  ],
+  "florida_specific_now": [
+    "PBC MV#### credential schema",
+    "PBC_FDACS_RECONCILIATION_V1 ruleset",
+    "PBC 44-code disposition catalog",
+    "FDACS IM crosswalk"
+  ],
+  "next_county_candidates_after_pilot_patterns_prove": [
+    "Miami-Dade (CREDENTIAL_BASED; Issued cohort)",
+    "Broward (PRA-gated)",
+    "Pinellas (ORDINANCE_ONLY; no credential wave)"
+  ],
+  "network_hubs_later": [
+    "ContractorTrustHub",
+    "SeniorTrustHub",
+    "other Move counties/states"
+  ]
+}

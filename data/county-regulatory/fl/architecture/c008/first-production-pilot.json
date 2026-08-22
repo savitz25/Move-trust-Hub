@@ -1,0 +1,24 @@
+{
+  "task": "FL-C008",
+  "first_production_county": "Palm Beach",
+  "posture": "CREDENTIAL_BASED",
+  "credential": "Moving Business Permit MV####",
+  "readiness": "READY_FOR_COUNTY_PILOT_1_INTERNAL",
+  "supporting_evidence": {
+    "roster": "NEAR_FULL public (~142)",
+    "c003_verified": 64,
+    "c003_precision_pct": 100,
+    "c003_canonical_linked": 46,
+    "complaints_dispositions": "BIR sample + 44-code catalog",
+    "enforcement": "SAMPLE"
+  },
+  "why_not_others_first": {
+    "Broward": "PRA_REQUIRED roster; 0 public credential rows",
+    "Miami-Dade": "Strong second candidate (qualified Issued cohort) but weaker public complaint/disposition path than Palm Beach",
+    "Pinellas": "ORDINANCE_ONLY — no credential roster to publish as Pilot #1 credential wave"
+  },
+  "publication_posture_for_pilot_1": "INTERNAL_ONLY until a later controlled publish task",
+  "trust_score_connection": false,
+  "google_places_api_requests": 0,
+  "production_db_migrations": 0
+}

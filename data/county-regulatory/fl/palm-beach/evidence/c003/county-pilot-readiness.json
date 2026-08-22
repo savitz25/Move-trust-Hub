@@ -1,0 +1,42 @@
+{
+  "task": "FL-C003",
+  "candidate": "Palm Beach County — County Pilot #1",
+  "precision_gate": {
+    "verified_checked": 64,
+    "correct": 64,
+    "incorrect": 0,
+    "precision": 100,
+    "required_target_pct": 98,
+    "gate": "PASS"
+  },
+  "reconciliation_counts": {
+    "VERIFIED": 64,
+    "REVIEW_REQUIRED": 12,
+    "NOT_FOUND": 66,
+    "CONFLICT": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "canonical_summary": {
+    "CANONICAL_LINKED": 46,
+    "CANONICAL_CANDIDATE": 0,
+    "STATE_RECORD_ONLY": 18,
+    "COUNTY_ONLY_REVIEW": 78
+  },
+  "evidence_strength": {
+    "permits_qualified": 142,
+    "complaint_observations_qualified": 19,
+    "dispositions_verified": 17,
+    "enforcement_unique_events": 49,
+    "official_disposition_catalog_size": 44
+  },
+  "recommendation": "READY_FOR_COUNTY_PILOT_1_INTERNAL",
+  "rationale": [
+    "Public Palm Beach Moving Business Permit roster is structured and source-backed.",
+    "Official 44-code disposition catalog preserved.",
+    "Complaint/enforcement observations qualified without misconduct inference.",
+    "Deterministic FDACS reconciliation fail-closed with precision QA.",
+    "Unresolved county records remain county facts but are blocked from canonical attachment."
+  ],
+  "next_builder2_move": "Optional: remain on Palm Beach for internal evidence packaging design OR proceed to Broward acquisition after pilot readiness accepted.",
+  "broward_gate": "Builder 2 may move to Broward acquisition after Palm Beach pilot readiness is accepted; PRA remains unsent completeness track."
+}

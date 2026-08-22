@@ -1,0 +1,82 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T16:05:00.000Z",
+  "rehearsal_worktree": "C:\\Users\\makei\\move-trust-hub-c010-rehearsal",
+  "rehearsal_base": "origin/main",
+  "rehearsal_base_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "rehearsal_base_subject": "ceeaa987 Merge pull request #61 from savitz25/task-fl-010a-florida-state-wave1-apply",
+  "prior_rehearsal_base_sha": "3c7d205b8ff98a3a2beb3c104c077006b24a54e3",
+  "prior_note": "Initial rehearsal on VISUAL-006 (#63); refreshed onto FL-010A Wave 1 apply merge. Untracked county allowlist copies retained across checkout.",
+  "source_county_head": "1256170855439413242acadf68e659e53f4aabc3",
+  "strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "include_copied": 379,
+  "review_copied_for_validator_deps": 6,
+  "review_note": "REVIEW items copied into disposable rehearsal only so validators that read evidence crosswalks/raw dumps still pass; final main transplant may still exclude or archive them per allowlist.",
+  "persistent_changes_to_main": false,
+  "merge_executed": false,
+  "transplant_executed_to_main": false,
+  "validators": [
+    {
+      "name": "validate-fl-c001-catalog.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c002-palm-beach.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c003-palm-beach-evidence.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c003-palm-beach-qualification.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c004-broward-acquisition.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c005-miami-dade-acquisition.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c006-miami-dade-qualification.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c007-pinellas-acquisition.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c008-county-architecture-discovery.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c009-palm-beach-production-spec.mjs",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "name": "validate-fl-c010-integration-gate.mjs",
+      "ok": true,
+      "exit": 0
+    }
+  ],
+  "validators_passed": 11,
+  "validators_failed": 0,
+  "TECHNICALLY_READY_FOR_SELECTIVE_TRANSPLANT": "YES",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "YES",
+  "success_state": "READY_FOR_SELECTIVE_TRANSPLANT — STATE GATE CLEAR",
+  "rehearsal_branch": "rehearsal/fl-county-v1-transplant",
+  "pushed": false
+}

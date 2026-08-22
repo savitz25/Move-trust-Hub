@@ -1,0 +1,125 @@
+{
+  "data_scope": "PUBLICLY_ACQUIRED_ACTIVE_LICENSED_ROSTER",
+  "n": 142,
+  "fields": {
+    "business_name": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "dba": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "permit_number": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "permit_status": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "issue_date": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "expiration_date": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "owner_president_manager_contact": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies Contact_*",
+      "confidence": "HIGH",
+      "note": "Contact title often President/Owner/Dispute Contact/Managing Member"
+    },
+    "physical_address": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "phone": {
+      "present": "YES",
+      "count": 142,
+      "pct": 100,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "email": {
+      "present": "NO",
+      "count": 0,
+      "pct": 0,
+      "source": "GetCompanies roster",
+      "confidence": "HIGH",
+      "note": "Email present on BIR complaint_bus_info for sampled businesses"
+    },
+    "website": {
+      "present": "YES",
+      "count": 83,
+      "pct": 58.5,
+      "source": "GetCompanies",
+      "confidence": "HIGH"
+    },
+    "fleet_size": {
+      "present": "YES",
+      "count": 137,
+      "pct": 96.5,
+      "source": "GetCompanies totalVehicleCount",
+      "confidence": "HIGH"
+    },
+    "established_year": {
+      "present": "YES",
+      "count": 51,
+      "pct": 35.9,
+      "source": "GetCompanies",
+      "confidence": "MEDIUM"
+    },
+    "mailing_address": {
+      "present": "PARTIAL",
+      "count": 22,
+      "pct": 100,
+      "source": "BIR sample only",
+      "confidence": "HIGH"
+    },
+    "local_business_tax_id": {
+      "present": "NO",
+      "count": 0,
+      "pct": 0,
+      "source": "not observed in mover APIs",
+      "confidence": "HIGH"
+    },
+    "vehicle_detail_beyond_fleet_count": {
+      "present": "NO",
+      "count": 0,
+      "pct": 0,
+      "source": "fleet count only on public roster",
+      "confidence": "HIGH"
+    }
+  },
+  "bir_sample_email_coverage": {
+    "present": "YES",
+    "count": 22,
+    "pct": 100
+  }
+}

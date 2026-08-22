@@ -1,0 +1,57 @@
+{
+  "task": "FL-C003",
+  "status": "COMPLETE",
+  "rulesets": [
+    "PBC_FDACS_RECONCILIATION_V1",
+    "PBC_COUNTY_EVIDENCE_V1"
+  ],
+  "baseline": {
+    "task": "FL-C003",
+    "recomputed_from": [
+      "mover-permits.json",
+      "business-information-reports.json",
+      "complaint-observations.json",
+      "enforcement-observations.json",
+      "fdacs-matchability.json"
+    ],
+    "active_licensed_permits": 142,
+    "bir_businesses_sampled": 22,
+    "complaint_observations": 20,
+    "dispositions_with_code_or_desc": 17,
+    "enforcement_observations": 54,
+    "c002_matchability_counts": {
+      "DETERMINISTIC_MATCH": 59,
+      "REVIEW_REQUIRED": 17,
+      "NOT_FOUND": 66,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "note": "These are recomputed from staged files; not forced to historical report numbers."
+  },
+  "reconciliation_counts": {
+    "VERIFIED": 64,
+    "REVIEW_REQUIRED": 12,
+    "NOT_FOUND": 66,
+    "CONFLICT": 0,
+    "NOT_APPLICABLE": 0
+  },
+  "canonical_summary": {
+    "CANONICAL_LINKED": 46,
+    "CANONICAL_CANDIDATE": 0,
+    "STATE_RECORD_ONLY": 18,
+    "COUNTY_ONLY_REVIEW": 78
+  },
+  "precision_gate": {
+    "verified_checked": 64,
+    "correct": 64,
+    "incorrect": 0,
+    "precision": 100,
+    "required_target_pct": 98,
+    "gate": "PASS"
+  },
+  "pilot_recommendation": "READY_FOR_COUNTY_PILOT_1_INTERNAL",
+  "google_places_api_requests": 0,
+  "production_writes": false,
+  "production_db_migrations": 0,
+  "consumer_pii_committed": 0,
+  "package_hash": "d0d75495a727d650d0819898cb35679a9e27e106327b0c851ce1a9a0d0ad8139"
+}
