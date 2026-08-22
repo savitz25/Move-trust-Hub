@@ -1,0 +1,35 @@
+{
+  "task": "PBC-PROD-001",
+  "concepts": [
+    {
+      "concept": "companies",
+      "decision": "REUSE_EXISTING",
+      "notes": "Fail-closed FK target for company_id"
+    },
+    {
+      "concept": "provider_state_authority",
+      "decision": "REUSE_EXISTING",
+      "notes": "STATE HHG only — county MV must not overload PSA"
+    },
+    {
+      "concept": "provider_contact_observation",
+      "decision": "REUSE_EXISTING",
+      "notes": "Not used in Wave A"
+    },
+    {
+      "concept": "county_regulatory_program",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Minimum program/source registry for Palm Beach"
+    },
+    {
+      "concept": "provider_county_credential",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Wave A INTERNAL_ONLY credentials"
+    },
+    {
+      "concept": "complaints_enforcement",
+      "decision": "DEFERRED",
+      "notes": "Future waves only"
+    }
+  ]
+}
