@@ -40,10 +40,7 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
         href="/my-move"
         onClick={onNavigate}
         className={cn(
-          'relative inline-flex flex-col items-center justify-center gap-0.5',
-          'min-h-11 min-w-[3.25rem] px-1.5 rounded-md text-primary',
-          'hover:bg-primary/10 active:bg-primary/15 transition-colors',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30',
+          'th-btn-icon relative text-primary',
           className
         )}
         aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
@@ -54,10 +51,9 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
         }
       >
         <span className="relative">
-          <Bookmark className="h-4 w-4" aria-hidden="true" />
+          <Bookmark className="h-5 w-5" aria-hidden="true" />
           {badgeEl}
         </span>
-        <span className="text-[10px] font-semibold leading-none tracking-tight">My Move</span>
       </Link>
     );
   }

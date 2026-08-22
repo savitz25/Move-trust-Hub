@@ -1,6 +1,6 @@
 /**
  * Task 011C.1B — exhaustive / radius-explicit evidence types.
- * Ground truth must never be derived from POWER_*/FIXED_* model outputs.
+ * Ground truth must never be derived from POWER_* / FIXED_* model outputs.
  */
 
 export const EXHAUSTIVE_COMPLETENESS_CLASSES = [

@@ -1,0 +1,57 @@
+{
+  "origin": "https://www.movetrusthub.com",
+  "report": {
+    "desktop1440": {
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "overflowX": false,
+      "header": {
+        "x": 0,
+        "y": 57,
+        "w": 1440,
+        "h": 73
+      },
+      "networkBar": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 57
+      },
+      "logo": {
+        "x": 36,
+        "y": 64,
+        "w": 248,
+        "h": 59
+      },
+      "stackedChrome": 130
+    },
+    "mobile390": {
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "overflowX": false,
+      "header": {
+        "x": 0,
+        "y": 57,
+        "w": 390,
+        "h": 65
+      },
+      "networkBar": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 57
+      },
+      "logo": {
+        "x": 16,
+        "y": 64,
+        "w": 184,
+        "h": 51
+      },
+      "stackedChrome": 122
+    }
+  }
+}

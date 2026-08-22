@@ -113,6 +113,24 @@ nav.sticky.top-0 {
   }
 }
 
+/* VISUAL-006 Move global header — reserve chassis height before globals.css */
+.th-header {
+  box-sizing: border-box;
+  height: 57px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .th-header {
+    height: 65px;
+  }
+}
+@media (min-width: 1024px) {
+  .th-header {
+    height: 69px;
+  }
+}
+
 /* Header logo slot — orange MOVE lockup (wider wordmark) */
 .hub-logo-slot {
   display: block;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>VISUAL-006 — Old Move vs New Move</title>
+  <style>
+    :root { font-family: Inter, system-ui, sans-serif; color: #0A2540; background: #F8FAFC; }
+    body { margin: 24px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    figure { margin: 0; background: #fff; border: 1px solid #E2E8F0; border-radius: 16px; overflow: hidden; }
+    figcaption { padding: 10px 12px; font-size: 13px; font-weight: 600; border-top: 1px solid #E2E8F0; }
+    img { display: block; width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>OLD MOVE vs NEW MOVE</h1>
+  <p>Ask network strip removed. Global header 130px stacked → 69px. Logo x 36 → 144. Coach and Journey remain below the product header.</p>
+  <h2>Desktop 1440 header</h2>
+  <div class="grid">
+    <figure>
+      <img src="before/header-desktop.png" alt="Old Move stacked chrome" />
+      <figcaption>OLD — 57px network bar + 73px product header, logo x=36</figcaption>
+    </figure>
+    <figure>
+      <img src="after/header-desktop.png" alt="New Move header" />
+      <figcaption>NEW — 69px, mark 36 @ x=144, Switch Hub 44 @ x=1167</figcaption>
+    </figure>
+  </div>
+  <h2>Desktop homepage</h2>
+  <div class="grid">
+    <figure><img src="before/desktop-1440.jpg" alt="Old homepage" /><figcaption>OLD MOVE · 1440</figcaption></figure>
+    <figure><img src="after/desktop-1440.jpg" alt="New homepage" /><figcaption>NEW MOVE · 1440</figcaption></figure>
+  </div>
+  <h2>Network Navigator</h2>
+  <figure>
+    <img src="after/desktop-switch.jpg" alt="Switch Hub open" />
+    <figcaption>ASK TRUST HUB NETWORK · Move Current</figcaption>
+  </figure>
+  <h2>Mobile</h2>
+  <div class="grid">
+    <figure><img src="before/mobile-390.jpg" alt="Old mobile" /><figcaption>OLD 122px stacked</figcaption></figure>
+    <figure><img src="after/mobile-390.jpg" alt="New mobile" /><figcaption>NEW 57px / 30px mark</figcaption></figure>
+  </div>
+  <div class="grid">
+    <figure><img src="after/mobile-drawer.jpg" alt="Drawer" /><figcaption>Drawer</figcaption></figure>
+    <figure><img src="after/mobile-network.jpg" alt="Network section" /><figcaption>Network section</figcaption></figure>
+  </div>
+  <h2>Calculator (Coach/Journey context)</h2>
+  <figure>
+    <img src="after/contextual-calculator.jpg" alt="Moving calculator with shell" />
+    <figcaption>Moving calculator — global header 69px; journey/coach remain separate surfaces</figcaption>
+  </figure>
+</body>
+</html>
