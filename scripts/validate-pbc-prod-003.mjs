@@ -16,13 +16,26 @@ assert.doesNotMatch(page, /searchParams[\s\S]{0,80}Internal/i);
 assert.doesNotMatch(page, /\?show/i);
 
 const core = readFileSync('lib/county-regulatory/pbc/public-read-core.ts', 'utf8');
-assert.match(core, /evidence_publication_state === 'PUBLISHED'/);
-assert.doesNotMatch(core, /ALLOW_INTERNAL_ONLY|RENDER_INTERNAL|featureFlag/i);
+assert.match(core, /filterPublishedCountyCredentialRows/);
 assert.match(core, /selectPublishedPalmBeachPermits/);
+assert.doesNotMatch(core, /ALLOW_INTERNAL_ONLY|RENDER_INTERNAL|featureFlag/i);
+
+const sharedGate = readFileSync(
+  'lib/county-regulatory/shared/public-read-gate.ts',
+  'utf8'
+);
+assert.match(sharedGate, /evidence_publication_state === 'PUBLISHED'/);
+
+const sharedFetch = readFileSync(
+  'lib/county-regulatory/shared/fetch-published-county-credentials.ts',
+  'utf8'
+);
+assert.match(sharedFetch, /server-only/);
+assert.match(sharedFetch, /evidence_publication_state', 'PUBLISHED'/);
 
 const read = readFileSync('lib/county-regulatory/pbc/public-read.ts', 'utf8');
 assert.match(read, /server-only/);
-assert.match(read, /evidence_publication_state', 'PUBLISHED'/);
+assert.match(read, /fetchPublishedCountyCredentialsForPublicProfile/);
 assert.doesNotMatch(read, /\?show/i);
 assert.doesNotMatch(read, /searchParams/);
 

@@ -49,7 +49,12 @@ assert.ok(existsSync('lib/county-regulatory/pbc/public-read.test.ts'));
 const core = readFileSync('lib/county-regulatory/pbc/public-read-core.ts', 'utf8');
 assert.match(core, /palmBeachPermitBlockHeading/);
 assert.match(core, /Palm Beach County Moving Permits/);
-assert.match(core, /evidence_publication_state === 'PUBLISHED'/);
+assert.match(core, /filterPublishedCountyCredentialRows/);
+const sharedGate = readFileSync(
+  'lib/county-regulatory/shared/public-read-gate.ts',
+  'utf8'
+);
+assert.match(sharedGate, /evidence_publication_state === 'PUBLISHED'/);
 
 const ui = readFileSync(
   'components/company/palm-beach-county-permit-block.tsx',

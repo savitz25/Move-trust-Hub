@@ -62,7 +62,9 @@ import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import { isAnonymousCompanyNotFound } from '@/lib/provider/anonymous-company-route';
 import { FloridaFdacsEvidenceBlock } from '@/components/company/florida-fdacs-evidence-block';
 import { PalmBeachCountyPermitBlock } from '@/components/company/palm-beach-county-permit-block';
+import { MiamiDadeRegistrationBlock } from '@/components/company/miami-dade-registration-block';
 import { getPublishedPalmBeachCountyPermitsForPublicProfile } from '@/lib/county-regulatory/pbc/public-read';
+import { getPublishedMiamiDadeRegistrationsForPublicProfile } from '@/lib/county-regulatory/mdc/public-read';
 import {
   FL_FDACS_ADDRESS_SOURCE_LABEL,
   FL_FDACS_EMAIL_SOURCE_LABEL,
@@ -259,11 +261,16 @@ export default async function CompanyProfilePage({ params }: Props) {
     : buildCompanyDirectorySchemaGraph(company);
 
   // Fail-closed: only PUBLISHED county credentials for anonymously public companies.
-  // Not included in JSON-LD (HOLD_FROM_STRUCTURED_DATA_V1).
+  // Not included in JSON-LD / OG (HOLD_FROM_STRUCTURED_DATA_V1).
   const palmBeachPermits = await getPublishedPalmBeachCountyPermitsForPublicProfile({
     companyId: company.id,
     publicationState: company.publicationState,
   });
+  const miamiDadeRegistrations =
+    await getPublishedMiamiDadeRegistrationsForPublicProfile({
+      companyId: company.id,
+      publicationState: company.publicationState,
+    });
 
   return (
     <>
@@ -348,6 +355,10 @@ export default async function CompanyProfilePage({ params }: Props) {
 
       {palmBeachPermits.length > 0 ? (
         <PalmBeachCountyPermitBlock permits={palmBeachPermits} />
+      ) : null}
+
+      {miamiDadeRegistrations.length > 0 ? (
+        <MiamiDadeRegistrationBlock registrations={miamiDadeRegistrations} />
       ) : null}
 
       <CompanyProfileIdentity

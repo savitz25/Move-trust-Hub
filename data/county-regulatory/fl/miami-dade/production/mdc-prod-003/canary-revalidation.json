@@ -1,0 +1,101 @@
+{
+  "checked": 9,
+  "pass": 9,
+  "fail": 0,
+  "identity_exact": "9/9",
+  "wrong_company": 0,
+  "rows": [
+    {
+      "miami_dade_mr": "MR-00002",
+      "company_id": "fl-im-27",
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    },
+    {
+      "miami_dade_mr": "MR-00015",
+      "company_id": "fl-im-106",
+      "slug": "raul-s-moving-inc",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    },
+    {
+      "miami_dade_mr": "MR-00049",
+      "company_id": "fl-im-366",
+      "slug": "homestead-transfer-storage-co",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    },
+    {
+      "miami_dade_mr": "MR-00113",
+      "company_id": "fl-im-333",
+      "slug": "genesis-moving-storage-inc",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    },
+    {
+      "miami_dade_mr": "MR-00278",
+      "company_id": "fl-im-607",
+      "slug": "south-florida-van-line-inc",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    },
+    {
+      "miami_dade_mr": "MR-00317",
+      "company_id": "fl-im-22",
+      "slug": "fuentes-moving-corp",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    },
+    {
+      "miami_dade_mr": "MR-00476",
+      "company_id": "usdot-1329594",
+      "slug": "nobel-van-lines",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    },
+    {
+      "miami_dade_mr": "MR-01209",
+      "company_id": "usdot-3080327",
+      "slug": "dixie-movers",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    },
+    {
+      "miami_dade_mr": "MR-01221",
+      "company_id": "pro-movers-2",
+      "slug": "pro-movers-2",
+      "pass": true,
+      "issues": [],
+      "evidence_state": "INTERNAL_ONLY",
+      "raw_status": "Issued",
+      "normalized_status": "ISSUED"
+    }
+  ],
+  "gate": "PASS",
+  "not_internal": 0
+}

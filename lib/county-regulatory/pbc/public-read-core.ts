@@ -3,9 +3,13 @@
  * No feature flags. No INTERNAL_ONLY render path. PUBLISHED gate is real.
  *
  * Testable with fixtures without production DB or bypass switches.
+ * Uses shared county public-read gate (generalized in MDC-PROD-003).
  */
-import { isAnonymousPublicProfileAllowed } from '@/lib/provider/publication';
 import type { PublicationState } from '@/lib/provider/types';
+import {
+  filterPublishedCountyCredentialRows,
+  type CountyCredentialRow,
+} from '@/lib/county-regulatory/shared/public-read-gate';
 
 export const PBC_PUBLIC_READ_GOOGLE_PLACES_REQUESTS = 0 as const;
 export const PBC_SOURCE_KEY = 'pbc-consumer-affairs-moving-business-permit' as const;
@@ -26,17 +30,7 @@ export type PalmBeachPublishedPermit = {
 };
 
 /** Raw row shape used by fixture DB / service-role query results. */
-export type PalmBeachCredentialRow = {
-  company_id: string;
-  credential_number: string;
-  normalized_status?: string | null;
-  source_status?: string | null;
-  regulator?: string | null;
-  source?: string | null;
-  retrieved_at?: string | null;
-  fdacs_im?: string | null;
-  evidence_publication_state?: string | null;
-};
+export type PalmBeachCredentialRow = CountyCredentialRow;
 
 export function statusPublicLabel(status: string): string {
   if (/^LICENSED$/i.test(status) || /^ACTIVE$/i.test(status)) {
@@ -69,28 +63,23 @@ export function selectPublishedPalmBeachPermits(input: {
   /** Simulated fetch failure — omit evidence, do not throw. */
   fetchError?: boolean;
 }): PalmBeachPublishedPermit[] {
-  if (input.fetchError) return [];
-  if (!isAnonymousPublicProfileAllowed(input)) return [];
-  const rows = input.rows ?? [];
-  return rows
-    .filter(
-      (row) =>
-        row.company_id === input.companyId &&
-        row.source === PBC_SOURCE_KEY &&
-        row.evidence_publication_state === 'PUBLISHED' &&
-        Boolean(row.credential_number)
-    )
-    .map((row) => {
-      const status = String(row.normalized_status || row.source_status || 'UNKNOWN');
-      return {
-        credentialNumber: String(row.credential_number),
-        status,
-        statusPublicLabel: statusPublicLabel(status),
-        regulator: String(row.regulator || PBC_REGULATOR),
-        sourceKey: PBC_SOURCE_KEY,
-        retrievedAt: row.retrieved_at ? String(row.retrieved_at) : null,
-        fdacsIm: row.fdacs_im ? String(row.fdacs_im) : null,
-      };
-    })
-    .sort((a, b) => a.credentialNumber.localeCompare(b.credentialNumber));
+  const filtered = filterPublishedCountyCredentialRows({
+    companyId: input.companyId,
+    publicationState: input.publicationState,
+    sourceKey: PBC_SOURCE_KEY,
+    rows: input.rows,
+    fetchError: input.fetchError,
+  });
+  return filtered.map((row) => {
+    const status = String(row.normalized_status || row.source_status || 'UNKNOWN');
+    return {
+      credentialNumber: String(row.credential_number),
+      status,
+      statusPublicLabel: statusPublicLabel(status),
+      regulator: String(row.regulator || PBC_REGULATOR),
+      sourceKey: PBC_SOURCE_KEY,
+      retrievedAt: row.retrieved_at ? String(row.retrieved_at) : null,
+      fdacsIm: row.fdacs_im ? String(row.fdacs_im) : null,
+    };
+  });
 }

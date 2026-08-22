@@ -1,0 +1,29 @@
+{
+  "task": "MDC-PROD-002",
+  "heading": "Miami-Dade Moving Business Registration",
+  "fields": {
+    "credential_number": "MR-#####",
+    "status": "Issued",
+    "regulator": "Miami-Dade Department of Regulatory and Economic Resources (RER) — Consumer and Neighborhood Protection Division",
+    "source": "Miami-Dade County official records"
+  },
+  "verification_copy": "Credential information verified against Miami-Dade County records.",
+  "disclaimer": "Regulatory record verification is not a MoveTrustHub endorsement.",
+  "jurisdiction_order": [
+    "FEDERAL FMCSA/USDOT",
+    "STATE FDACS",
+    "COUNTY Miami-Dade MR"
+  ],
+  "prohibited": [
+    "MoveTrustHub Approved",
+    "MoveTrustHub Certified",
+    "Approved mover",
+    "Safe mover",
+    "Recommended mover",
+    "Fully compliant",
+    "Government approved",
+    "Verified safe",
+    "Licensed by MoveTrustHub"
+  ],
+  "do_not_obscure_as": "generic Licenses bucket"
+}

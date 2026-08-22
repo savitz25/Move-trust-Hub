@@ -1,0 +1,11 @@
+{
+  "mode": "rollback-dry-run",
+  "would_revert": 0,
+  "companies": 0,
+  "company_publication": 0,
+  "credential_delete": 0,
+  "program_delete": 0,
+  "state": 0,
+  "pbc": 0,
+  "lbt": 0
+}
