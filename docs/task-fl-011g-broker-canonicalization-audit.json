@@ -1,0 +1,302 @@
+{
+  "google_places_requests": 0,
+  "tally": {
+    "BROKER_EXISTING_CANONICAL_EXACT": 2,
+    "BROKER_STATE_RECORD_ONLY": 17,
+    "BROKER_IDENTITY_REVIEW": 7,
+    "BROKER_STATUS_BLOCKED": 3,
+    "BROKER_DUPLICATE_CONFLICT": 0
+  },
+  "rows": [
+    {
+      "mb": "MB137",
+      "legalName": "AMS MOVING INC",
+      "status": "active",
+      "identity": "BROKER_IDENTITY_REVIEW",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB159",
+      "legalName": "REAL TIME RELOCATION LLC",
+      "status": "active",
+      "identity": "BROKER_EXISTING_CANONICAL_EXACT",
+      "publication": "BROKER_MODEL_REMEDIATION_REQUIRED",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": "fl-im-3405",
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB113",
+      "legalName": "ALL AROUND MOVING SERVICES COMPANY, INC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB166",
+      "legalName": "AMERICA'S CHOICE VAN LINES INC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB172",
+      "legalName": "AMERICA'S FINEST MOVING & STORAGE LLC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB165",
+      "legalName": "ARCA INTERNATIONAL, INC.",
+      "status": "expired",
+      "identity": "BROKER_STATUS_BLOCKED",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB149",
+      "legalName": "BIG BURNS MOVING, LLC.",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB144",
+      "legalName": "BRONZE STAR MOVING AND STORAGE INCORPORATED",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB101",
+      "legalName": "CARTUS CORPORATION",
+      "status": "active",
+      "identity": "BROKER_IDENTITY_REVIEW",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB157",
+      "legalName": "COASTAL MOVING SERVICES LLC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB154",
+      "legalName": "DORM ROOM MOVERS LLC",
+      "status": "active",
+      "identity": "BROKER_IDENTITY_REVIEW",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB136",
+      "legalName": "EAGLE MOVING GROUP INC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB174",
+      "legalName": "EASY DAY MOVING LLC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB106",
+      "legalName": "ELDER MOVE HELPER INC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB151",
+      "legalName": "EVERSAFE MOVING AND STORAGE LLC",
+      "status": "active",
+      "identity": "BROKER_IDENTITY_REVIEW",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB98",
+      "legalName": "GLOBAL VAN LINES, LLC",
+      "status": "active",
+      "identity": "BROKER_IDENTITY_REVIEW",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB173",
+      "legalName": "HAUL OPERATOR LOGISTICS LLC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB114",
+      "legalName": "J & D PROFESSIONAL SERVICES OF FLORIDA, INC.",
+      "status": "expired",
+      "identity": "BROKER_STATUS_BLOCKED",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": "fl-im-2985",
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB1",
+      "legalName": "LEXICON RELOCATION, L.L.C.",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB170",
+      "legalName": "MBA RELOCATION SOLUTIONS LLC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB110",
+      "legalName": "MOVE MASTERS, LLC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB152",
+      "legalName": "MOVING APT., INC.",
+      "status": "active",
+      "identity": "BROKER_IDENTITY_REVIEW",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB169",
+      "legalName": "NORTHERN RELOCATION LLC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB171",
+      "legalName": "PINNACLE VAN LINES LLC",
+      "status": "active",
+      "identity": "BROKER_EXISTING_CANONICAL_EXACT",
+      "publication": "BROKER_MODEL_REMEDIATION_REQUIRED",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": "usdot-3197443",
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB105",
+      "legalName": "RELOCATE US LLC",
+      "status": "unknown",
+      "identity": "BROKER_STATUS_BLOCKED",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB175",
+      "legalName": "SAFESHIELD MOVING SERVICES LLC",
+      "status": "active",
+      "identity": "BROKER_IDENTITY_REVIEW",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB12",
+      "legalName": "SUDDATH CONTAINER SERVICES, INC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB161",
+      "legalName": "SWIFT SHIFT VAN LINES LLC",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB111",
+      "legalName": "Nelan Relocation Services, Inc.",
+      "status": "active",
+      "identity": "BROKER_STATE_RECORD_ONLY",
+      "publication": "BROKER_IDENTITY_NOT_READY",
+      "role": "MOVING_BROKER",
+      "exactCompanyId": null,
+      "google_places_requests": 0
+    }
+  ]
+}

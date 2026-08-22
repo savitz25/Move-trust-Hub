@@ -1,0 +1,17 @@
+{
+  "google_places_requests": 0,
+  "id": "FL_STATE_PRE_FL012_IMPACT_CHECKPOINT_V1",
+  "new_companies_canonicalized": 32,
+  "existing_companies_regulatorily_enriched": 81,
+  "active_im_represented": 930,
+  "active_im_unresolved": 168,
+  "coverage": 84.7,
+  "authority_attachments": 32,
+  "contact_observation_attachments": 104,
+  "canonical_contact_promotions": 0,
+  "new_public_from_canonicalization": 0,
+  "wave1_public_state_evidence": 37,
+  "broker_total_mb": 29,
+  "broker_active": 26,
+  "fl011f_research_not_counted_as_realized": true
+}

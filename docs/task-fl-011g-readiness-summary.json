@@ -1,0 +1,64 @@
+{
+  "google_places_requests": 0,
+  "production_db_writes": 0,
+  "task": "FL-011G",
+  "production_sha": "df34d38263318fc89563e142738b047503373efe",
+  "coverage": {
+    "active": 1098,
+    "represented": 930,
+    "unresolved": 168,
+    "percentage": 84.7,
+    "partition_ok": true
+  },
+  "fl011f_ready": {
+    "google_places_requests": 0,
+    "pool": "FL_STATE_UNRESOLVED_RESOLUTION_READY_POOL_V1",
+    "link": 0,
+    "insert": 0,
+    "total": 0,
+    "apply": false
+  },
+  "wave2": {
+    "stillReady": 50,
+    "drifted": 0,
+    "hash": "a5d15f3dca32a59a",
+    "apply": false
+  },
+  "brokers": {
+    "total": 29,
+    "active": 26,
+    "tally": {
+      "BROKER_EXISTING_CANONICAL_EXACT": 2,
+      "BROKER_STATE_RECORD_ONLY": 17,
+      "BROKER_IDENTITY_REVIEW": 7,
+      "BROKER_STATUS_BLOCKED": 3,
+      "BROKER_DUPLICATE_CONFLICT": 0
+    }
+  },
+  "broker_disposition": "BROKER_SCOPE_REQUIRES_BOUNDED_FOLLOWUP",
+  "fl012_may_execute": false,
+  "observation_elapsed_hours": 8.4,
+  "indexable": [
+    {
+      "path": "/companies/allied-van-lines",
+      "status": 200,
+      "robots": "index, follow",
+      "waveFdacs": false,
+      "verifyUsdot": false
+    },
+    {
+      "path": "/companies/united-van-lines",
+      "status": 200,
+      "robots": "index, follow",
+      "waveFdacs": false,
+      "verifyUsdot": false
+    },
+    {
+      "path": "/companies/mayflower-transit",
+      "status": 200,
+      "robots": "index, follow",
+      "waveFdacs": false,
+      "verifyUsdot": false
+    }
+  ]
+}

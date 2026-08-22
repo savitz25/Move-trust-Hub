@@ -1,0 +1,17 @@
+{
+  "google_places_requests": 0,
+  "critical": [],
+  "material": [
+    {
+      "id": "FL-011A",
+      "occurred": true,
+      "currently_unhealthy": false,
+      "summary": "VISUAL-006 Trust Profile shell showed Verify USDOT on Wave 1; remediating adapter gated FDACS chrome.",
+      "resolved": true
+    }
+  ],
+  "minor": [],
+  "resolved": [
+    "FL-011A"
+  ]
+}

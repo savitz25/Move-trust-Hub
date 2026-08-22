@@ -1,0 +1,15 @@
+{
+  "google_places_requests": 0,
+  "id": "FL_STATE_COMPLETION_CRITERIA_V1",
+  "criteria": [
+    "active IM deterministic coverage frozen",
+    "unresolved IM records explicitly held",
+    "broker/MB lane explicitly dispositioned",
+    "Wave 1 KEEP/ROLLBACK after maturity",
+    "controlled Wave 2 publication or explicit deferral",
+    "fail-closed publication semantics",
+    "no unwanted indexation/ranking",
+    "state impact ledger final",
+    "county work remains independent"
+  ]
+}

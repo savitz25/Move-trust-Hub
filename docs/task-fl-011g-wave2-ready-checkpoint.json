@@ -1,0 +1,6 @@
+{
+  "google_places_requests": 0,
+  "historical_ready_pool": 720,
+  "frozen_not_mutated": true,
+  "note": "Ready pool artifact remains FL-011E/011B freeze at 720; this checkpoint does not rewrite it."
+}

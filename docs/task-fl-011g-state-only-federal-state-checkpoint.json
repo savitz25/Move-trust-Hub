@@ -1,0 +1,16 @@
+{
+  "google_places_requests": 0,
+  "historical": {
+    "fdacs_linked": 939,
+    "state_only": 868,
+    "federal_plus_state": 71,
+    "public_linked": 176,
+    "publicly_displaying": 37
+  },
+  "recomputed_note": "FL-011E live metrics carried as checkpoint; federal status uses usdot_number not slug.",
+  "fdacs_linked": 939,
+  "state_only": 868,
+  "federal_plus_state": 71,
+  "internally_linked_public": 176,
+  "publicly_displaying": 37
+}

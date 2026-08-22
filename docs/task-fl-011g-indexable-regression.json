@@ -1,0 +1,27 @@
+{
+  "google_places_requests": 0,
+  "rows": [
+    {
+      "path": "/companies/allied-van-lines",
+      "status": 200,
+      "robots": "index, follow",
+      "waveFdacs": false,
+      "verifyUsdot": false
+    },
+    {
+      "path": "/companies/united-van-lines",
+      "status": 200,
+      "robots": "index, follow",
+      "waveFdacs": false,
+      "verifyUsdot": false
+    },
+    {
+      "path": "/companies/mayflower-transit",
+      "status": 200,
+      "robots": "index, follow",
+      "waveFdacs": false,
+      "verifyUsdot": false
+    }
+  ],
+  "unauthorized_wave_fdacs": 0
+}

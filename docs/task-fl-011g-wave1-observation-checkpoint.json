@@ -1,0 +1,17 @@
+{
+  "google_places_requests": 0,
+  "status": "OBSERVATION HEALTHY — CONTINUE",
+  "launch": "2026-08-22T14:45:00.000Z",
+  "maturity": "2026-09-05T14:45:00.000Z",
+  "retrieved_at": "2026-08-22T23:09:28.454Z",
+  "elapsed_hours": 8.4,
+  "clock_reset": "NO",
+  "members": 37,
+  "http200": "37/37",
+  "noindex": "37/37",
+  "indexable_true": 0,
+  "sitemap": 0,
+  "fdacs_exact": "37/37",
+  "verify_usdot_empty_state": 0,
+  "keep80": "80/80"
+}
