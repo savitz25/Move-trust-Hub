@@ -1,0 +1,57 @@
+﻿[
+    {
+        "path":  "/companies/doug-s-hourly-muscle-movers-packers-inc",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/clover-systems-llc",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/adios-moving-llc",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/supreme-relocation-inc",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/i-95-relocation-inc",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/raul-s-moving-inc",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/larsen-transfer-co",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/vashon-trucking-inc",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/boush-moving-storage-inc",
+        "status":  "200",
+        "robots":  "noindex, follow"
+    },
+    {
+        "path":  "/companies/allied-van-lines",
+        "status":  "200",
+        "robots":  "index, follow"
+    },
+    {
+        "path":  "/companies/united-van-lines",
+        "status":  "200",
+        "robots":  "index, follow"
+    }
+]
