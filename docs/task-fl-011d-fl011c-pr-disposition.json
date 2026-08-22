@@ -1,0 +1,17 @@
+{
+  "google_places_requests": 0,
+  "number": 73,
+  "title": "FL-011C: Florida active IM canonicalization readiness",
+  "starting_state": "OPEN",
+  "final_head": "89dcf3c75103220b6090115ac3a23e03fc8d58b4",
+  "base": "43938435b63d35f53a2f0258bed673ab2f56ea4a",
+  "vercel": "SUCCESS",
+  "mergeable": true,
+  "rebase": "already on current main at merge time",
+  "merged": true,
+  "merge_sha": "2a631232bf2600bb5f579e15d06d35b384aa4e5e",
+  "merged_at": "2026-08-22T19:27:45Z",
+  "files": 16,
+  "draft_hash": "491de1629fa00c44",
+  "apply": false
+}

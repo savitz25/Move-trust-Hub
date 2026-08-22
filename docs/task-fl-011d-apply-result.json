@@ -1,0 +1,643 @@
+{
+  "google_places_requests": 0,
+  "apply": false,
+  "hash": "85a137ecd1a86d6f",
+  "blocked": false,
+  "stats": {
+    "companies_inserted": 0,
+    "psa_inserted": 0,
+    "psa_attached": 0,
+    "contacts_inserted": 0,
+    "contacts_attached": 0
+  },
+  "dry": {
+    "google_places_requests": 0,
+    "apply": false,
+    "blocked": false,
+    "target_operations": 113,
+    "link": 81,
+    "insert": 32,
+    "identity_failures": 0,
+    "companies": 32,
+    "existing_companies_modified": 0,
+    "provider_state_authority_inserts": 0,
+    "provider_state_authority_attach": 32,
+    "provider_state_authority_noop": 81,
+    "contact_observation_inserts": 0,
+    "contact_observation_attach": 104,
+    "contact_observation_noop": 233,
+    "publication_state_changes_existing": 0,
+    "new_company_publication": "32 INGESTED",
+    "indexable_true_additions": 0,
+    "trust_score": 0,
+    "wave1": 0,
+    "wave2": 0,
+    "sitemap": 0,
+    "county_tables": 0,
+    "unexpected_mutation": 0
+  },
+  "freeze": {
+    "before": {
+      "companies": 5908,
+      "indexable": 4905,
+      "fl_im": 817,
+      "fl_im_ingested": 730,
+      "publishable": 5022,
+      "fl_psa": 1359,
+      "fdacs_observations": 3875,
+      "county_regulatory_program": 1,
+      "provider_county_credential": 46
+    },
+    "after": {
+      "companies": 5908,
+      "indexable": 4905,
+      "fl_im": 817,
+      "fl_im_ingested": 730,
+      "publishable": 5022,
+      "fl_psa": 1359,
+      "fdacs_observations": 3875,
+      "county_regulatory_program": 1,
+      "provider_county_credential": 46
+    }
+  },
+  "idempotent_would_be": {
+    "ok": false
+  },
+  "authority_groups": [
+    {
+      "im": "IM4165",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3375",
+      "company_id": "usdot-4001518",
+      "n": 1
+    },
+    {
+      "im": "IM4132",
+      "company_id": "usdot-4438821",
+      "n": 1
+    },
+    {
+      "im": "IM3879",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM308",
+      "company_id": "usdot-767421",
+      "n": 1
+    },
+    {
+      "im": "IM1232",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3444",
+      "company_id": "usdot-2491702",
+      "n": 1
+    },
+    {
+      "im": "IM31",
+      "company_id": null,
+      "n": 2
+    },
+    {
+      "im": "IM3192",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM2175",
+      "company_id": "usdot-2368777",
+      "n": 1
+    },
+    {
+      "im": "IM2851",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3594",
+      "company_id": "usdot-1160157",
+      "n": 1
+    },
+    {
+      "im": "IM117",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3968",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM4014",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3755",
+      "company_id": "angel-movers-llc",
+      "n": 1
+    },
+    {
+      "im": "IM2160",
+      "company_id": "usdot-1847236",
+      "n": 1
+    },
+    {
+      "im": "IM1204",
+      "company_id": "usdot-1329594",
+      "n": 1
+    },
+    {
+      "im": "IM145",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM1799",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3176",
+      "company_id": "usdot-3301146",
+      "n": 1
+    },
+    {
+      "im": "IM3856",
+      "company_id": "whatamove",
+      "n": 1
+    },
+    {
+      "im": "IM2140",
+      "company_id": "usdot-2402239",
+      "n": 1
+    },
+    {
+      "im": "IM1881",
+      "company_id": "usdot-3199979",
+      "n": 1
+    },
+    {
+      "im": "IM3148",
+      "company_id": "usdot-3286720",
+      "n": 1
+    },
+    {
+      "im": "IM1931",
+      "company_id": "usdot-2119975",
+      "n": 1
+    },
+    {
+      "im": "IM3772",
+      "company_id": "fl-im-3150",
+      "n": 1
+    },
+    {
+      "im": "IM457",
+      "company_id": "usdot-700628",
+      "n": 1
+    },
+    {
+      "im": "IM3344",
+      "company_id": "premier-movers-4-less-llc",
+      "n": 1
+    },
+    {
+      "im": "IM3124",
+      "company_id": "usdot-3338540",
+      "n": 1
+    },
+    {
+      "im": "IM3766",
+      "company_id": "usdot-4063852",
+      "n": 1
+    },
+    {
+      "im": "IM2089",
+      "company_id": "america-s-family-moving-and-storage-llc",
+      "n": 1
+    },
+    {
+      "im": "IM3680",
+      "company_id": "usdot-3507074",
+      "n": 1
+    },
+    {
+      "im": "IM2621",
+      "company_id": "all-about-moving-tampa-bay",
+      "n": 1
+    },
+    {
+      "im": "IM469",
+      "company_id": "usdot-1040023",
+      "n": 1
+    },
+    {
+      "im": "IM3523",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3134",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3511",
+      "company_id": "usdot-2833135",
+      "n": 1
+    },
+    {
+      "im": "IM2583",
+      "company_id": "usdot-2823665",
+      "n": 1
+    },
+    {
+      "im": "IM3212",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM471",
+      "company_id": "sunshine-movers",
+      "n": 1
+    },
+    {
+      "im": "IM201",
+      "company_id": "usdot-1943394",
+      "n": 1
+    },
+    {
+      "im": "IM426",
+      "company_id": "usdot-1472849",
+      "n": 1
+    },
+    {
+      "im": "IM4051",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM2763",
+      "company_id": "ohana-moving-company-llc",
+      "n": 1
+    },
+    {
+      "im": "IM4082",
+      "company_id": "usdot-4520643",
+      "n": 1
+    },
+    {
+      "im": "IM2456",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM1954",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM2754",
+      "company_id": "usdot-3146919",
+      "n": 1
+    },
+    {
+      "im": "IM1026",
+      "company_id": "usdot-1377633",
+      "n": 1
+    },
+    {
+      "im": "IM3729",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM1794",
+      "company_id": "usdot-976593",
+      "n": 1
+    },
+    {
+      "im": "IM213",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM26",
+      "company_id": "usdot-966624",
+      "n": 1
+    },
+    {
+      "im": "IM1419",
+      "company_id": "usdot-1424728",
+      "n": 1
+    },
+    {
+      "im": "IM2381",
+      "company_id": "eagle-moving-co",
+      "n": 1
+    },
+    {
+      "im": "IM212",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3143",
+      "company_id": "usdot-3252722",
+      "n": 1
+    },
+    {
+      "im": "IM2384",
+      "company_id": "usdot-2562486",
+      "n": 1
+    },
+    {
+      "im": "IM2033",
+      "company_id": "usdot-2192602",
+      "n": 1
+    },
+    {
+      "im": "IM3111",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM482",
+      "company_id": "usdot-2443347",
+      "n": 1
+    },
+    {
+      "im": "IM1626",
+      "company_id": "usdot-1526680",
+      "n": 1
+    },
+    {
+      "im": "IM2181",
+      "company_id": null,
+      "n": 2
+    },
+    {
+      "im": "IM3103",
+      "company_id": "patriot-moving-and-storage",
+      "n": 1
+    },
+    {
+      "im": "IM1335",
+      "company_id": "master-movers-of-tallahassee",
+      "n": 1
+    },
+    {
+      "im": "IM4142",
+      "company_id": "usdot-3998447",
+      "n": 1
+    },
+    {
+      "im": "IM3701",
+      "company_id": "clever-carriers-llc",
+      "n": 1
+    },
+    {
+      "im": "IM3779",
+      "company_id": "premium-q-moving-and-storage",
+      "n": 1
+    },
+    {
+      "im": "IM3920",
+      "company_id": null,
+      "n": 2
+    },
+    {
+      "im": "IM2099",
+      "company_id": "usdot-2303737",
+      "n": 1
+    },
+    {
+      "im": "IM684",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM4145",
+      "company_id": "usdot-4482118",
+      "n": 1
+    },
+    {
+      "im": "IM107",
+      "company_id": "usdot-4071591",
+      "n": 1
+    },
+    {
+      "im": "IM549",
+      "company_id": "sunbelt-moving-delivery-inc",
+      "n": 1
+    },
+    {
+      "im": "IM3355",
+      "company_id": "usdot-3005919",
+      "n": 1
+    },
+    {
+      "im": "IM4134",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3559",
+      "company_id": "usdot-3092893",
+      "n": 1
+    },
+    {
+      "im": "IM4178",
+      "company_id": "usdot-4544882",
+      "n": 1
+    },
+    {
+      "im": "IM1447",
+      "company_id": "usdot-1568346",
+      "n": 1
+    },
+    {
+      "im": "IM3723",
+      "company_id": "usdot-4018257",
+      "n": 1
+    },
+    {
+      "im": "IM184",
+      "company_id": "usdot-89774",
+      "n": 1
+    },
+    {
+      "im": "IM3995",
+      "company_id": "apollos-moving-logistics-llc",
+      "n": 1
+    },
+    {
+      "im": "IM3201",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3553",
+      "company_id": "usdot-3784138",
+      "n": 1
+    },
+    {
+      "im": "IM401",
+      "company_id": "usdot-1991298",
+      "n": 1
+    },
+    {
+      "im": "IM1232",
+      "company_id": "usdot-381994",
+      "n": 1
+    },
+    {
+      "im": "IM3038",
+      "company_id": "usdot-3168341",
+      "n": 1
+    },
+    {
+      "im": "IM2518",
+      "company_id": "usdot-3161573",
+      "n": 1
+    },
+    {
+      "im": "IM3260",
+      "company_id": "black-swan-moving-llc",
+      "n": 1
+    },
+    {
+      "im": "IM2838",
+      "company_id": "bull-moving",
+      "n": 1
+    },
+    {
+      "im": "IM300",
+      "company_id": "usdot-459518",
+      "n": 1
+    },
+    {
+      "im": "IM3953",
+      "company_id": "fl-im-3952",
+      "n": 1
+    },
+    {
+      "im": "IM290",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM1210",
+      "company_id": "usdot-162012",
+      "n": 1
+    },
+    {
+      "im": "IM2431",
+      "company_id": "usdot-2564711",
+      "n": 1
+    },
+    {
+      "im": "IM4169",
+      "company_id": "usdot-4528522",
+      "n": 1
+    },
+    {
+      "im": "IM1823",
+      "company_id": "usdot-2059049",
+      "n": 1
+    },
+    {
+      "im": "IM3947",
+      "company_id": "usdot-4022357",
+      "n": 1
+    },
+    {
+      "im": "IM4167",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM1795",
+      "company_id": "usdot-1951425",
+      "n": 1
+    },
+    {
+      "im": "IM3621",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM259",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM4146",
+      "company_id": "usdot-3794613",
+      "n": 1
+    },
+    {
+      "im": "IM2753",
+      "company_id": "usdot-2968831",
+      "n": 1
+    },
+    {
+      "im": "IM3778",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM1178",
+      "company_id": "usdot-2270761",
+      "n": 1
+    },
+    {
+      "im": "IM4104",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM2822",
+      "company_id": "usdot-3034432",
+      "n": 1
+    },
+    {
+      "im": "IM26",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM146",
+      "company_id": "usdot-811031",
+      "n": 1
+    },
+    {
+      "im": "IM119",
+      "company_id": null,
+      "n": 1
+    },
+    {
+      "im": "IM3974",
+      "company_id": "florida-pro-movers-home-solutions",
+      "n": 1
+    },
+    {
+      "im": "IM2247",
+      "company_id": "usdot-4431751",
+      "n": 1
+    },
+    {
+      "im": "IM2609",
+      "company_id": "usdot-3080327",
+      "n": 1
+    }
+  ]
+}

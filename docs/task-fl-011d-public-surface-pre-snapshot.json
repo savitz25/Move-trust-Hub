@@ -1,0 +1,23 @@
+{
+  "google_places_requests": 0,
+  "code_gate_unauthorized_fdacs_chrome": 0,
+  "public_existing_companies": 79,
+  "public_http_tested": 79,
+  "public_fdacs_wave_chrome": 0,
+  "new_company_contract": {
+    "consumerVisible": false,
+    "seoIndexable": false,
+    "anonymousHttp": 404
+  },
+  "new_slugs_tested": 32,
+  "new_slugs_404": 32,
+  "slug_disambiguation": {
+    "fdacsIm": "IM1954",
+    "rejected_slug": "a-1-freeman-moving-storage-llc",
+    "rejected_status": 307,
+    "rejected_location": "/companies/a-1-freeman-moving-storage-l-l-c",
+    "existing_company_id": "usdot-896791",
+    "allocated_slug": "a-1-freeman-moving-storage-llc-im1954",
+    "allocated_status": 404
+  }
+}

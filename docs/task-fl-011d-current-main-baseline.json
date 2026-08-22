@@ -1,0 +1,8 @@
+{
+  "google_places_requests": 0,
+  "origin_main": "2a631232bf2600bb5f579e15d06d35b384aa4e5e",
+  "branch": "task-fl-011d-state-canonicalization-internal-apply",
+  "worktree": "C:/Users/makei/move-trust-hub-fl011d",
+  "pr73_merge": "2a631232bf2600bb5f579e15d06d35b384aa4e5e",
+  "note": "Production SHA recorded at apply time after this implementation PR deploys."
+}

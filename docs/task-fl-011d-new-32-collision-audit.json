@@ -1,0 +1,231 @@
+{
+  "google_places_requests": 0,
+  "n": 32,
+  "id_collisions": 0,
+  "rows": [
+    {
+      "fdacsIm": "IM1954",
+      "proposedCompanyId": "fl-im-1954",
+      "slug": "a-1-freeman-moving-storage-llc-im1954",
+      "slugCollisionDisambiguated": true,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM4167",
+      "proposedCompanyId": "fl-im-4167",
+      "slug": "blubox-movers",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM684",
+      "proposedCompanyId": "fl-im-684",
+      "slug": "american-international-movers-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM1799",
+      "proposedCompanyId": "fl-im-1799",
+      "slug": "berger-transfer-storage-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3879",
+      "proposedCompanyId": "fl-im-3879",
+      "slug": "big-ant-moving-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3968",
+      "proposedCompanyId": "fl-im-3968",
+      "slug": "boxrunners-moving-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM117",
+      "proposedCompanyId": "fl-im-117",
+      "slug": "coastal-moving-storage-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM212",
+      "proposedCompanyId": "fl-im-212",
+      "slug": "coleman-american-moving-services-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3212",
+      "proposedCompanyId": "fl-im-3212",
+      "slug": "commercial-relocation-group-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM213",
+      "proposedCompanyId": "fl-im-213",
+      "slug": "covan-worldwide-moving-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3621",
+      "proposedCompanyId": "fl-im-3621",
+      "slug": "einstein-moving-company-fl-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM4104",
+      "proposedCompanyId": "fl-im-4104",
+      "slug": "flv-logistics-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM259",
+      "proposedCompanyId": "fl-im-259",
+      "slug": "1-castine-movers-2-castine-moving-storage",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM2851",
+      "proposedCompanyId": "fl-im-2851",
+      "slug": "hammock-transfer-storage-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3778",
+      "proposedCompanyId": "fl-im-3778",
+      "slug": "hometeam-moving-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM119",
+      "proposedCompanyId": "fl-im-119",
+      "slug": "1-allways-moving-and-storage-2-spradlin-relocation",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3134",
+      "proposedCompanyId": "fl-im-3134",
+      "slug": "mid-state-moving-storage-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3201",
+      "proposedCompanyId": "fl-im-3201",
+      "slug": "mighty-men-moving-incorporated",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3523",
+      "proposedCompanyId": "fl-im-3523",
+      "slug": "moyer-and-sons-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM4134",
+      "proposedCompanyId": "fl-im-4134",
+      "slug": "ts-van-lines",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM290",
+      "proposedCompanyId": "fl-im-290",
+      "slug": "new-world-van-lines-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM4165",
+      "proposedCompanyId": "fl-im-4165",
+      "slug": "old-florida-moving-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM4014",
+      "proposedCompanyId": "fl-im-4014",
+      "slug": "on-site-specialty-cleaning-and-restoration-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM145",
+      "proposedCompanyId": "fl-im-145",
+      "slug": "rock-s-moving-company",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3192",
+      "proposedCompanyId": "fl-im-3192",
+      "slug": "rushmore-movers",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3111",
+      "proposedCompanyId": "fl-im-3111",
+      "slug": "shield-moving-and-storage-logistics-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3729",
+      "proposedCompanyId": "fl-im-3729",
+      "slug": "craine-n-sons-moving-service",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM2456",
+      "proposedCompanyId": "fl-im-2456",
+      "slug": "valle-moving-deliveries-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM4051",
+      "proposedCompanyId": "fl-im-4051",
+      "slug": "moving-pals",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM3920",
+      "proposedCompanyId": "fl-im-3920",
+      "slug": "birdseye-transport-logistics-llc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM2181",
+      "proposedCompanyId": "fl-im-2181",
+      "slug": "florida-state-movers",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    },
+    {
+      "fdacsIm": "IM31",
+      "proposedCompanyId": "fl-im-31",
+      "slug": "coastal-van-lines-inc",
+      "slugCollisionDisambiguated": false,
+      "idTaken": false
+    }
+  ]
+}
