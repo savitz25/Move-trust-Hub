@@ -7,7 +7,7 @@
 
 **Schema:** `ask-network-discovery-v1` (unchanged)  
 **Hub:** `move`  
-**Amendment:** `ASK-SEARCH-006A.1`
+**Amendment:** `ASK-SEARCH-006A.2` (closeout of 006A.1; schema unchanged)
 
 ---
 
@@ -74,11 +74,12 @@ Never uses company display name as identity.
 
 ### Continuity vs v1
 
-Compared on the **full eligible set** (not truncated pilot).
+Compared on the **full eligible set** (not truncated pilot). Identity is never name-based.
 
 - Exact ID matches preserved for overlapping slugs with correct USDOT.
 - **Authoritative corrections** when v1 incorrectly shared Mayflower USDOT `125563` (and similar) across brands via `--slug` collisions. Catalog/seed restore brand-correct unique USDOTs.
 - **Graebel:** seed intentionally leaves USDOT empty (agent network — must not stamp Mayflower authority) → `move:co-graebel-van-lines`.
+- Unexplained identity drift target: **0**. Dropped/new rows are eligibility or catalog-membership changes, not ID remaps.
 
 ---
 
@@ -99,18 +100,79 @@ Rebuild stores Carrier/Full Service as `"Long Distance"` — publisher remaps th
 
 ## Geography / service area
 
-**Physical location** (`city` / `state` / `zip` on the entity): seed HQ when parseable; else non-street city + headquartersState; else parseable city field. Never invented from county coverage.
+**Physical location** (`city` / `state` / `zip` on the entity): structured provider geography first; then seed HQ when parseable; else non-street city + headquartersState; else parseable city field. Never invented from county coverage. No geocoding, Places, or new enrichment.
 
-**Service areas:** structured `coverageCounties` / county assignments → `{ kind: 'county', county: 'Monmouth County', state: 'NJ' }` plus derived state areas. Optional HQ city kind is a locality hint, not verified county coverage.
+**Service areas:** structured `coverageCounties` / county assignments → `{ kind: 'county', county: 'Monmouth County', state: 'NJ' }` plus derived state areas. Optional HQ city kind is a locality hint, not verified county coverage. Physical headquarters is **not** equivalent to service territory.
 
 **ZIP rule:** physical ZIP ≠ service ZIP. Move has no ZIP-level service coverage in this offline graph.
 
-### Keansburg / Monmouth / 07734 product rule (for Ask later)
+**County coverage:** populated only from source-backed `coverageCounties` / static county assignments. State + county labels are normalized consistently. County coverage is not inferred from proximity.
 
-- Exact city `Keansburg`: **not** in source → 0 exact matches.
-- ZIP `07734`: **not** present as physical or service ZIP.
-- **Monmouth County, NJ** assignments **are** present and exported.
-- Ask ranking may treat **county service-area match as sufficient** for city-in-county queries (Keansburg ∈ Monmouth). This publisher does **not** fabricate a Keansburg city service area.
+### Locked geography precision (ASK-SEARCH-006A.2)
+
+Ordered highest → lowest. Use existing source fields only. Do not fabricate precision.
+
+1. exact explicit service ZIP (`explicit_service_zip`) — **unavailable** in this catalog (no ZIP-level service graph)
+2. exact explicit service city (`explicit_service_city`) — **unavailable** (no destination-city assignments distinct from HQ; optional `kind:city` rows are HQ locality hints)
+3. physical/locality match (`exact_physical_city` / `exact_physical_zip`)
+4. structured county service-area (`county_service_area`)
+5. structured state service-area (`state_service_area`)
+6. physical state only (`physical_state`)
+
+Ask ranking (not implemented here) should treat:
+
+```text
+exact/precise local coverage
+  >
+county coverage
+  >
+broad state / national coverage
+```
+
+Source-backed broad van-line county assignments remain discovery-eligible. They must not be deleted merely because they are broad. `kind:nationwide` / `kind:interstate` / large county sets are lower-precision signals for Ask.
+
+### Match-reason contract
+
+Publisher query-readiness distinguishes:
+
+| Token | Meaning in this catalog |
+|-------|-------------------------|
+| `exact_physical_city` | entity `city`+`state` |
+| `exact_physical_zip` | entity `zip` (HQ). **Not** service ZIP |
+| `explicit_service_city` | `service_areas` `kind:city` **other than** HQ hint — currently 0 |
+| `explicit_service_zip` | `service_areas` `kind:zip` — currently 0 |
+| `county_service_area` | source-backed `coverageCounties` |
+| `state_service_area` | derived from county coverage |
+| `entity_type_match` | entity_type (e.g. `moving_broker`) |
+| `category_match` | category (e.g. `carrier_broker`) |
+| `county_service_area_match` | city query satisfied by county coverage |
+| `county_service_area_via_zip_resolution` | ZIP query resolved to county coverage |
+
+### County → city rule (locked)
+
+A provider with source-backed county service coverage **MAY** participate in a search for a city known to be inside that county.
+
+Example: Keansburg, NJ ∈ Monmouth County, NJ.
+
+- Match class: `county_service_area_match`
+- **Not** `exact_city_match` / `exact_physical_city` / `explicit_service_city`
+- Publisher does **not** emit fabricated Keansburg city service rows
+
+### ZIP → county fallback (locked)
+
+Ask may later resolve `07734` → Keansburg → Monmouth County, NJ and use source-backed Monmouth coverage.
+
+- Match class: `county_service_area_via_zip_resolution`
+- **Not** `explicit_service_zip`
+- Publisher does **not** publish a fake 07734 service ZIP
+- HQ ZIP is never treated as service ZIP
+
+### Keansburg / Monmouth / 07734 (current pilot)
+
+- Exact city `Keansburg`: **0**
+- Explicit Keansburg service city: **0**
+- Monmouth County service-area: **17** (`county_service_area_match`)
+- ZIP `07734` HQ: **0**; explicit service ZIP: **0**; same 17 via `county_service_area_via_zip_resolution`
 
 ---
 
@@ -151,7 +213,15 @@ Identity, uniqueness, Hub=move, entity type allowlist, HTTPS host/path, USPS sta
 | Ineligible (insufficient_geography) | 212 |
 | Pilot selected | **200** |
 | Service-area county rows | 189 / 200 |
+| Physical headquarters ZIP on selected entities | **0** |
+| Keansburg NJ exact-city matches | **0** (17 via Monmouth County service-area) |
+| 07734 physical-HQ ZIP matches | **0** |
+| 07734 explicit service-ZIP matches | **0** (same 17 via Monmouth County) |
+| Miami-located pure `moving_broker` | **0** |
+| Pure `moving_broker` in cohort | **1** (U-Pack / UniGroup, USDOT 2632086 — not Miami) |
 | Fingerprint | see `content_fingerprint` in v1.1 JSON |
+
+`coverageCounties` is source-backed county coverage. Headquarters is not treated as service territory. ZIP-level service coverage is not present in this catalog. HQ ZIP is never treated as service ZIP. County service-area MAY later satisfy a city-in-county query (Keansburg ∈ Monmouth); this publisher does not emit a fabricated Keansburg city/ZIP area.
 
 ### Entity-type breakdown (pilot)
 
@@ -164,7 +234,7 @@ Identity, uniqueness, Hub=move, entity type allowlist, HTTPS host/path, USPS sta
 | moving_broker | 1 |
 | carrier_broker (category) | 5 |
 
-Pure HHG brokers remain scarce in the offline catalog (many “Broker” tags are auto-transport). Not forced.
+These are real supported counts. Pure HHG brokers remain scarce in the offline catalog (many “Broker” tags are auto-transport). Diversity is not forced; records are not reclassified to inflate counts.
 
 ---
 
@@ -181,3 +251,5 @@ Pure HHG brokers remain scarce in the offline catalog (many “Broker” tags ar
 ## Next integration contract (006B)
 
 Ask imports `move-discovery-pilot.v1.1.json` into the ASK-SEARCH-005 local discovery index shape, validates schema, and runs real Move-backed search pilots — without changing Move publication policy.
+
+Move-side geography semantics are locked in ASK-SEARCH-006A.2 (`geography_precision` on the export). Do not begin 006B from this repository.

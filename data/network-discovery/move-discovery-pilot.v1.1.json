@@ -1,12 +1,12 @@
 {
   "schema_version": "ask-network-discovery-v1",
   "hub": "move",
-  "generated_at": "2026-08-22T16:50:20.765Z",
+  "generated_at": "2026-08-22T17:37:55.680Z",
   "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
   "source_path": "data/active-directory-movers.ts",
   "pilot_label": "PILOT / NOT YET CONSUMED BY ASK PRODUCTION",
   "pilot_artifact": "move-discovery-pilot.v1.1.json",
-  "amendment": "ASK-SEARCH-006A.1",
+  "amendment": "ASK-SEARCH-006A.2",
   "entity_count": 200,
   "content_fingerprint": "0006223ddfb82ef3fbf0c1ad62472a0c53824e2c7e44dec940a0a0a3e9300a0d",
   "eligibility": {
@@ -49,37 +49,1325 @@
     "with_zip": 0,
     "with_county": 0,
     "with_service_area_county": 189,
-    "with_service_area_state": 200
+    "with_service_area_state": 200,
+    "service_states": {
+      "CA": 68,
+      "TX": 38,
+      "NY": 23,
+      "FL": 68,
+      "CT": 18,
+      "TN": 18,
+      "CO": 17,
+      "AL": 17,
+      "AK": 17,
+      "AZ": 18,
+      "AR": 18,
+      "DE": 17,
+      "DC": 17,
+      "GA": 20,
+      "HI": 17,
+      "ID": 17,
+      "IN": 17,
+      "IA": 17,
+      "KS": 17,
+      "KY": 17,
+      "LA": 17,
+      "ME": 17,
+      "MD": 17,
+      "MA": 18,
+      "MI": 18,
+      "MN": 17,
+      "MS": 18,
+      "MO": 17,
+      "MT": 17,
+      "NE": 17,
+      "NV": 17,
+      "NH": 17,
+      "NJ": 17,
+      "NM": 19,
+      "NC": 20,
+      "ND": 17,
+      "OH": 18,
+      "OK": 17,
+      "OR": 17,
+      "PA": 17,
+      "RI": 17,
+      "SC": 17,
+      "SD": 18,
+      "UT": 17,
+      "VT": 17,
+      "VA": 17,
+      "WA": 17,
+      "WV": 17,
+      "WI": 17,
+      "WY": 17,
+      "IL": 11
+    }
   },
   "query_readiness": {
     "movers in Keansburg NJ": {
       "exact_city_match": 0,
+      "exact_physical_city": 0,
+      "explicit_service_city": 0,
+      "county_service_area_match": 17,
       "county_match_monmouth_nj": 17,
-      "state_match_nj": 17,
-      "note": "Keansburg city string not in source. Monmouth County service-area match is the grounded signal for later Ask ranking (product rule: county may satisfy city-in-county queries)."
+      "matches": [
+        {
+          "network_entity_id": "move:co-graebel-van-lines",
+          "display_name": "Graebel Van Lines",
+          "entity_type": "mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-1065394",
+          "display_name": "JK Moving Services",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-125550",
+          "display_name": "Atlas Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-125563",
+          "display_name": "Aero Mayflower Transit Company",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-1778016",
+          "display_name": "We Move U",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-1780669",
+          "display_name": "Ocean Moving & Storage CORP",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-2256609",
+          "display_name": "Two Men and a Truck",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-3101918",
+          "display_name": "Amex Moving And Storage LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-3415437",
+          "display_name": "Home And Office Movers LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-373544",
+          "display_name": "Gentle Giant Moving Company",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-3978928",
+          "display_name": "Stanford Van Lines INC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-4074980",
+          "display_name": "Cirta Moving LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-49922",
+          "display_name": "Arpin Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-70719",
+          "display_name": "Wheaton World Wide Moving",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-72029",
+          "display_name": "Stevens Worldwide Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-76235",
+          "display_name": "Allied Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        },
+        {
+          "network_entity_id": "move:usdot-76628",
+          "display_name": "National Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_match"
+        }
+      ],
+      "note": "Locked rule: Monmouth County coverage MAY satisfy \"movers in Keansburg NJ\" as county_service_area_match. Not exact_city_match. No fabricated Keansburg city service row."
     },
     "licensed movers around 07734": {
+      "exact_physical_zip": 0,
+      "explicit_service_zip": 0,
       "physical_zip_match": 0,
       "explicit_service_zip_match": 0,
+      "county_service_area_via_zip_resolution": 17,
       "county_match_monmouth_nj": 17,
-      "note": "No ZIP-level service coverage in Move structured data. HQ ZIP ≠ service ZIP. 07734 (Keansburg) sits in Monmouth County — county match only."
+      "matches": [
+        {
+          "network_entity_id": "move:co-graebel-van-lines",
+          "display_name": "Graebel Van Lines",
+          "entity_type": "mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-1065394",
+          "display_name": "JK Moving Services",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-125550",
+          "display_name": "Atlas Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-125563",
+          "display_name": "Aero Mayflower Transit Company",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-1778016",
+          "display_name": "We Move U",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-1780669",
+          "display_name": "Ocean Moving & Storage CORP",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-2256609",
+          "display_name": "Two Men and a Truck",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-3101918",
+          "display_name": "Amex Moving And Storage LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-3415437",
+          "display_name": "Home And Office Movers LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-373544",
+          "display_name": "Gentle Giant Moving Company",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-3978928",
+          "display_name": "Stanford Van Lines INC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-4074980",
+          "display_name": "Cirta Moving LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-49922",
+          "display_name": "Arpin Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-70719",
+          "display_name": "Wheaton World Wide Moving",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-72029",
+          "display_name": "Stevens Worldwide Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-76235",
+          "display_name": "Allied Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        },
+        {
+          "network_entity_id": "move:usdot-76628",
+          "display_name": "National Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area"
+          ],
+          "match_class": "county_service_area_via_zip_resolution"
+        }
+      ],
+      "note": "Locked rule: Ask may resolve 07734 → Keansburg → Monmouth County and use county coverage as county_service_area_via_zip_resolution. Not explicit_service_zip. No fake 07734 service ZIP is published."
     },
     "moving broker in Miami": {
       "pure_moving_broker": 1,
-      "miami_city_match": 11,
+      "miami_city_match": 0,
       "miami_moving_broker": 0,
+      "miami_or_florida_moving_broker": 0,
       "carrier_broker_total": 5,
       "florida_state_match": 68,
-      "note": "moving_broker ≠ mover. Carrier-broker is not counted as pure moving_broker."
+      "matches": [],
+      "pure_broker_audit": [
+        {
+          "network_entity_id": "move:usdot-2632086",
+          "display_name": "U-Pack",
+          "entity_type": "moving_broker",
+          "reasons": [
+            "entity_type_match"
+          ],
+          "match_class": "entity_type_match"
+        }
+      ],
+      "carrier_broker_audit": [
+        {
+          "network_entity_id": "move:usdot-1397252",
+          "display_name": "PODS",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "category_match"
+          ],
+          "match_class": "category_match"
+        },
+        {
+          "network_entity_id": "move:usdot-1534531",
+          "display_name": "1-800-PACK-RAT",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "category_match"
+          ],
+          "match_class": "category_match"
+        },
+        {
+          "network_entity_id": "move:usdot-3475743",
+          "display_name": "Safe Ship Moving Services",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "category_match"
+          ],
+          "match_class": "category_match"
+        },
+        {
+          "network_entity_id": "move:usdot-3709259",
+          "display_name": "America First Moving Services INC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "category_match"
+          ],
+          "match_class": "category_match"
+        },
+        {
+          "network_entity_id": "move:usdot-4021844",
+          "display_name": "Movesafe Relocation",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "category_match"
+          ],
+          "match_class": "category_match"
+        }
+      ],
+      "note": "moving_broker ≠ mover. U-Pack is a pure broker (entity_type_match) but not a Miami match. Carrier-broker uses category_match. Zero Miami-located pure moving brokers in this pilot."
     },
     "movers in Florida": {
       "state_match_fl": 68,
-      "physical_hq_fl": 2
+      "physical_hq_fl": 2,
+      "matches": [
+        {
+          "network_entity_id": "move:co-a-better-budget-moving-labor-inc",
+          "display_name": "A Better Budget Moving & Labor Inc",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-a-mother-s-touch-movers",
+          "display_name": "A Mother's Touch Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-act-of-class-moving-llc",
+          "display_name": "Act Of Class Moving",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-all-about-moving-tampa-bay",
+          "display_name": "All About Moving Tampa Bay",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-all-things-moving-storage-llc",
+          "display_name": "All Things Moving Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-alpha-transports-movers",
+          "display_name": "Alpha Transports Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-america-s-family-moving-and-storage-llc",
+          "display_name": "America's Family Moving And Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-angel-movers-llc",
+          "display_name": "Angel Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-apollos-moving-logistics-llc",
+          "display_name": "Apollos Moving & Logistics",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-beast-mode-movers",
+          "display_name": "Beast Mode Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-best-miami-movers",
+          "display_name": "Best Miami Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-black-swan-moving-llc",
+          "display_name": "Black Swan Moving",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-blue-line-moving-and-storage",
+          "display_name": "blue line moving and storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-boca-moving-company",
+          "display_name": "Boca Moving Company",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-brothers-ez-moving-of-tampa",
+          "display_name": "Brothers EZ Moving of Tampa",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-browning-moving-storage-inc",
+          "display_name": "Browning Moving & Storage INC",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-bull-moving",
+          "display_name": "Bull Moving",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-busy-bee-movers-llc",
+          "display_name": "Busy Bee Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-clever-carriers-llc",
+          "display_name": "Clever Carriers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-college-hunks-hauling-junk",
+          "display_name": "College Hunks Hauling Junk",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-do-it-now-moving-services-llc",
+          "display_name": "Do It Now Moving Services LLC",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-eagle-moving-co",
+          "display_name": "Eagle Moving CO",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-einstein-moving-company",
+          "display_name": "Einstein Moving Company",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-established-moving-storage",
+          "display_name": "Established Moving & Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-flex-moving",
+          "display_name": "Flex Moving",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-flex-moving-storage",
+          "display_name": "Flex Moving & Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-florida-pro-movers-home-solutions",
+          "display_name": "Florida Pro Movers & Home Solutions",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-forward-van-lines-and-brooks-moving-and-hauling",
+          "display_name": "Forward Van Lines And Brooks Moving And Hauling",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-frank-and-sons-moving-and-storage-inc",
+          "display_name": "Frank And Sons Moving And Storage INC",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-good-greek-moving-storage-of-tampa",
+          "display_name": "Good Greek Moving & Storage Of Tampa",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-hall-s-local-movers-llc",
+          "display_name": "Hall's Local Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-helping-hands-moving-labor-of-south-florida",
+          "display_name": "Helping Hands Moving & Labor Of South Florida",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-i-75-moving-and-storage",
+          "display_name": "I-75 Moving And Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-joe-bonnie-son-moving-storage",
+          "display_name": "Joe Bonnie & Son Moving & Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-just-good-movers",
+          "display_name": "Just Good Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-keystone-movers-llc",
+          "display_name": "Keystone Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-lee-s-moving-company",
+          "display_name": "Lee's Moving Company",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-legacy-moving-services-daytona-beach-fl",
+          "display_name": "Legacy Moving Services Daytona Beach, FL",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-lj-moving-llc",
+          "display_name": "LJ Moving LLC",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-master-movers-of-tallahassee",
+          "display_name": "Master Movers of Tallahassee",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-meehan-s-family-moving",
+          "display_name": "Meehan's Family Moving",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-mercury-auto-transport",
+          "display_name": "Mercury Auto Transport",
+          "entity_type": "auto_transporter",
+          "reasons": [
+            "exact_physical_city",
+            "state_service_area"
+          ],
+          "match_class": "exact_physical_city"
+        },
+        {
+          "network_entity_id": "move:co-mike-s-moving-storage",
+          "display_name": "Mike’s Moving & Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-move-for-less",
+          "display_name": "Move For Less",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-ohana-moving-company-llc",
+          "display_name": "Ohana Moving Company",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-patriot-moving-and-storage",
+          "display_name": "Patriot Moving and Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-pink-zebra-moving-of-tampa",
+          "display_name": "Pink Zebra Moving Of Tampa",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-premier-movers-4-less-llc",
+          "display_name": "Premier Movers 4 Less",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-premium-q-moving-and-storage",
+          "display_name": "Premium Q Moving and Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-pro-movers-2",
+          "display_name": "Pro Movers",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-quality-moving-more-llc",
+          "display_name": "Quality Moving & More",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-razorback-moving-tampa",
+          "display_name": "Razorback Moving Tampa",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-razorback-moving-tampa-2",
+          "display_name": "Razorback Moving Tampa",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-red-rover-moving-storage",
+          "display_name": "Red Rover Moving & Storage",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-rodi-moving-storage-orlando",
+          "display_name": "Rodi Moving & Storage Orlando",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:co-safe-hands-relocation-llc",
+          "display_name": "Safe Hands Relocation",
+          "entity_type": "intrastate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-125550",
+          "display_name": "Atlas Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-125563",
+          "display_name": "Aero Mayflower Transit Company",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-1397252",
+          "display_name": "PODS",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "exact_physical_city",
+            "state_service_area"
+          ],
+          "match_class": "exact_physical_city"
+        },
+        {
+          "network_entity_id": "move:usdot-1534531",
+          "display_name": "1-800-PACK-RAT",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-2238770",
+          "display_name": "AmeriFreight Auto Transport",
+          "entity_type": "auto_transporter",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-2900155",
+          "display_name": "Safebound Moving Storage",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-3101918",
+          "display_name": "Amex Moving And Storage LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-3475743",
+          "display_name": "Safe Ship Moving Services",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-4021844",
+          "display_name": "Movesafe Relocation",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-4074980",
+          "display_name": "Cirta Moving LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-49922",
+          "display_name": "Arpin Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-76235",
+          "display_name": "Allied Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        }
+      ]
     },
     "interstate movers in New Jersey": {
       "interstate_total": 29,
       "nj_state_match": 17,
-      "interstate_with_nj_signal": 16
+      "interstate_with_nj_signal": 16,
+      "matches": [
+        {
+          "network_entity_id": "move:usdot-1065394",
+          "display_name": "JK Moving Services",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-125550",
+          "display_name": "Atlas Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-125563",
+          "display_name": "Aero Mayflower Transit Company",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-1778016",
+          "display_name": "We Move U",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-1780669",
+          "display_name": "Ocean Moving & Storage CORP",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-2256609",
+          "display_name": "Two Men and a Truck",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-3101918",
+          "display_name": "Amex Moving And Storage LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-3415437",
+          "display_name": "Home And Office Movers LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-373544",
+          "display_name": "Gentle Giant Moving Company",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-3978928",
+          "display_name": "Stanford Van Lines INC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-4074980",
+          "display_name": "Cirta Moving LLC",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-49922",
+          "display_name": "Arpin Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-70719",
+          "display_name": "Wheaton World Wide Moving",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-72029",
+          "display_name": "Stevens Worldwide Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-76235",
+          "display_name": "Allied Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        },
+        {
+          "network_entity_id": "move:usdot-76628",
+          "display_name": "National Van Lines",
+          "entity_type": "interstate_mover",
+          "reasons": [
+            "entity_type_match",
+            "county_service_area",
+            "state_service_area"
+          ],
+          "match_class": "county_service_area"
+        }
+      ]
     },
     "type_totals": {
       "interstate_mover": 29,
@@ -87,6 +1375,72 @@
       "moving_broker": 1,
       "auto_transporter": 10,
       "carrier_broker_category": 5
+    }
+  },
+  "geography_precision": {
+    "ordered_levels": [
+      {
+        "rank": 1,
+        "id": "explicit_service_zip",
+        "available_in_pilot": false
+      },
+      {
+        "rank": 2,
+        "id": "explicit_service_city",
+        "available_in_pilot": false
+      },
+      {
+        "rank": 3,
+        "id": "physical_locality",
+        "available_in_pilot": true
+      },
+      {
+        "rank": 4,
+        "id": "county_service_area",
+        "available_in_pilot": true
+      },
+      {
+        "rank": 5,
+        "id": "state_service_area",
+        "available_in_pilot": true
+      },
+      {
+        "rank": 6,
+        "id": "physical_state",
+        "available_in_pilot": true
+      }
+    ],
+    "match_reasons": [
+      "exact_physical_city",
+      "exact_physical_zip",
+      "explicit_service_city",
+      "explicit_service_zip",
+      "county_service_area",
+      "state_service_area",
+      "physical_state",
+      "entity_type_match",
+      "category_match",
+      "county_service_area_match",
+      "county_service_area_via_zip_resolution"
+    ],
+    "ranking_hint": "Ask should rank exact/precise local coverage above county coverage above broad state/national coverage. Source-backed broad van-line county assignments remain discovery-eligible.",
+    "county_to_city_rule": "A provider with source-backed county service coverage MAY participate in a search for a city known to be inside that county. Classify as county_service_area_match, never exact_city_match. Do not emit fabricated city service rows.",
+    "zip_to_county_rule": "Ask may resolve a ZIP to city/county (e.g. 07734 → Keansburg → Monmouth County, NJ) and use source-backed county coverage. Classify as county_service_area_via_zip_resolution. Do not publish a fake service ZIP.",
+    "broad_coverage_rule": "Nationwide / interstate / multi-state county assignments stay eligible. Downstream Ask ranking must treat them as lower precision than exact local or single-county evidence.",
+    "available_counts": {
+      "explicit_service_zip": 0,
+      "explicit_service_city": 0,
+      "exact_physical_city": 26,
+      "exact_physical_zip": 0,
+      "county_service_area": 189,
+      "state_service_area": 200,
+      "physical_state": 26,
+      "nationwide": 23,
+      "interstate": 29
+    },
+    "unavailable": {
+      "explicit_service_zip": "Move offline catalog has no ZIP-level service graph. HQ ZIP is never copied to service ZIP.",
+      "explicit_service_city": "No structured destination/service-city assignments distinct from physical HQ. Optional kind=city rows are HQ locality hints, not verified service-city coverage."
     }
   },
   "identity_continuity": {
@@ -97,34 +1451,103 @@
       {
         "slug": "allied-van-lines",
         "old_id": "move:usdot-125563--allied-van-lines",
-        "new_id": "move:usdot-76235"
+        "new_id": "move:usdot-76235",
+        "kind": "authoritative_unique_usdot_from_catalog"
       },
       {
         "slug": "arpin-van-lines",
         "old_id": "move:usdot-125563--arpin-van-lines",
-        "new_id": "move:usdot-49922"
+        "new_id": "move:usdot-49922",
+        "kind": "authoritative_unique_usdot_from_catalog"
       },
       {
         "slug": "atlas-van-lines",
         "old_id": "move:usdot-125563--atlas-van-lines",
-        "new_id": "move:usdot-125550"
+        "new_id": "move:usdot-125550",
+        "kind": "authoritative_unique_usdot_from_catalog"
       },
       {
         "slug": "graebel-van-lines",
         "old_id": "move:usdot-125563--graebel-van-lines",
-        "new_id": "move:co-graebel-van-lines"
+        "new_id": "move:co-graebel-van-lines",
+        "kind": "authoritative_graebel_no_mayflower_usdot"
       },
       {
         "slug": "wheaton-world-wide",
         "old_id": "move:usdot-125563--wheaton-world-wide",
-        "new_id": "move:usdot-70719"
+        "new_id": "move:usdot-70719",
+        "kind": "authoritative_unique_usdot_from_catalog"
       },
       {
         "slug": "national-van-lines",
         "old_id": "move:usdot-70851--national-van-lines",
-        "new_id": "move:usdot-76628"
+        "new_id": "move:usdot-76628",
+        "kind": "authoritative_unique_usdot_from_catalog"
       }
-    ]
+    ],
+    "dropped_from_baseline": [
+      {
+        "slug": "mayflower-transit",
+        "old_id": "move:usdot-125563--mayflower-transit",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "colonial-van-lines",
+        "old_id": "move:usdot-143437",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "two-men-and-a-truck-gainesville",
+        "old_id": "move:usdot-1669783",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "royal-hawaiian-movers-inc",
+        "old_id": "move:usdot-227698",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "safebound-logistics-llc",
+        "old_id": "move:usdot-2900155",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "jr-brown-inc",
+        "old_id": "move:usdot-3046622",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "amerisafe-van-lines",
+        "old_id": "move:usdot-3341650",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "vellar-holdings-llc",
+        "old_id": "move:usdot-3475743",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "american-van-lines-of-sf-llc",
+        "old_id": "move:usdot-3709259",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "barry-elwood-jones",
+        "old_id": "move:usdot-384361",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "american-van-lines",
+        "old_id": "move:usdot-614506",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      },
+      {
+        "slug": "north-american-van-lines",
+        "old_id": "move:usdot-70851--north-american-van-lines",
+        "reason": "not in richer-source eligible set (insufficient structured geography or catalog absence)"
+      }
+    ],
+    "newly_discoverable": 215
   },
   "entities": [
     {
@@ -161,7 +1584,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-2-austin-movers",
@@ -1476,7 +2899,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-3-men-movers-ltd",
@@ -1530,7 +2953,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-5-star-movers-llc-bronx-moving-company",
@@ -1911,7 +3334,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-680-movers",
@@ -1947,7 +3370,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-a-1-movers",
@@ -1996,7 +3419,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-a-better-budget-moving-labor-inc",
@@ -2033,7 +3456,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-a-mother-s-touch-movers",
@@ -2070,7 +3493,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-a2b-movers-llc",
@@ -2118,7 +3541,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-ace-monterey-moving",
@@ -2160,7 +3583,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-act-of-class-moving-llc",
@@ -2197,7 +3620,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-alder-moving-services",
@@ -2288,7 +3711,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-all-about-moving-tampa-bay",
@@ -2324,7 +3747,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-all-my-sons-moving-storage-of-dallas-north-llc",
@@ -3665,7 +5088,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-all-things-moving-storage-llc",
@@ -3744,7 +5167,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-alpha-transports-movers",
@@ -3780,7 +5203,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-am-moving-company-dallas",
@@ -3840,7 +5263,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-am-pm-super-movers-inc",
@@ -4221,7 +5644,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-amco-of-tn-moving-junk-removal",
@@ -4261,7 +5684,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-america-s-family-moving-and-storage-llc",
@@ -4304,7 +5727,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-american-knights-moving-and-storage",
@@ -4346,7 +5769,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-anderson-bros-movers",
@@ -4383,7 +5806,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-angel-movers-llc",
@@ -4456,7 +5879,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-apollos-moving-logistics-llc",
@@ -4862,7 +6285,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-atx-movers-llc",
@@ -6203,7 +7626,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-austin-moving-company",
@@ -7543,7 +8966,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-beast-mode-movers",
@@ -7579,7 +9002,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-bellhop-moving-dallas",
@@ -7670,7 +9093,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-best-california-movers",
@@ -7760,7 +9183,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-best-fit-movers-orange-county",
@@ -7802,7 +9225,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-best-miami-movers",
@@ -7838,7 +9261,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-big-family-movers",
@@ -7880,7 +9303,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-big-g-movers-inc-2",
@@ -8031,7 +9454,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-big-win-moving",
@@ -8073,7 +9496,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-black-swan-moving-llc",
@@ -8479,7 +9902,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-blue-line-moving-and-storage",
@@ -8527,7 +9950,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-blue-moving-llc",
@@ -8908,7 +10331,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-boca-moving-company",
@@ -9313,7 +10736,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-brewer-moving-llc",
@@ -9674,7 +11097,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-brothers-ez-moving-of-tampa",
@@ -9752,7 +11175,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-browning-moving-storage-inc",
@@ -9807,7 +11230,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-bull-moving",
@@ -9867,7 +11290,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-busy-bee-movers-llc",
@@ -9904,7 +11327,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-busy-bee-movers-llc-2",
@@ -9971,7 +11394,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-central-transportation-systems-inc",
@@ -10521,7 +11944,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-cheap-movers",
@@ -10560,7 +11983,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-clark-moving-storage-of-albany",
@@ -10621,7 +12044,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-clark-moving-storage-of-albany-2",
@@ -11002,7 +12425,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-clever-carriers-llc",
@@ -11039,7 +12462,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-college-hunks-hauling-junk",
@@ -11087,7 +12510,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-college-hunks-hauling-junk-2",
@@ -11184,7 +12607,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-college-hunks-hauling-junk-and-moving-fresno",
@@ -11262,7 +12685,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-costa-mesa-moving-co-inc",
@@ -11298,7 +12721,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-courtesy-moving-storage",
@@ -11347,7 +12770,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-discount-movers",
@@ -11389,7 +12812,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-divine-moving-storage-ltd",
@@ -11770,7 +13193,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-do-it-now-moving-services-llc",
@@ -11806,7 +13229,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-dominant-moving-company",
@@ -11848,7 +13271,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-don-s-moving-storage-inc",
@@ -12229,7 +13652,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-double-move-llc",
@@ -12271,7 +13694,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-eagle-moving-co",
@@ -12313,7 +13736,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-economy-movers",
@@ -12349,7 +13772,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-einstein-moving-company",
@@ -12385,7 +13808,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-einstein-moving-company-llc",
@@ -12439,7 +13862,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-elite-movers-packing-services-llc",
@@ -12800,7 +14223,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-established-moving-storage",
@@ -13206,7 +14629,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-evolution-moving-company",
@@ -13242,7 +14665,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-expo-movers-and-storage",
@@ -13392,7 +14815,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-express-moving",
@@ -13752,7 +15175,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-express-moving-2",
@@ -13795,7 +15218,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-fair-price-movers",
@@ -13831,7 +15254,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-fairprice-movers-sacramento",
@@ -13867,7 +15290,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-family-affair-moving-inc",
@@ -14224,7 +15647,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-family-affair-moving-inc-2",
@@ -14267,7 +15690,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-father-and-son-movers",
@@ -14333,7 +15756,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-firefighting-s-finest-moving-storage-2",
@@ -15649,7 +17072,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-flex-moving",
@@ -15739,7 +17162,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-flex-moving-storage",
@@ -16145,7 +17568,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-flex-moving-storage-2",
@@ -16601,7 +18024,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-flores-moving-company",
@@ -16643,7 +18066,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-florida-pro-movers-home-solutions",
@@ -16698,7 +18121,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-forward-van-lines-and-brooks-moving-and-hauling",
@@ -16758,7 +18181,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-frank-and-sons-moving-and-storage-inc",
@@ -16812,7 +18235,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-fuller-moving-services",
@@ -16860,7 +18283,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-golden-sun-movers-riverside",
@@ -16908,7 +18331,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-good-greek-moving-storage-of-tampa",
@@ -16993,7 +18416,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-grace-moving-company-llc",
@@ -17354,7 +18777,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-graebel-van-lines",
@@ -30609,7 +32032,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-grandson-s-moving-packing-company",
@@ -30990,7 +32413,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-h-town-movers-houston",
@@ -31033,7 +32456,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-h-town-movers-houston-2",
@@ -31076,7 +32499,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-hall-s-local-movers-llc",
@@ -31113,7 +32536,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-hart-moving-storage",
@@ -31168,7 +32591,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-helping-hands-moving-labor-of-south-florida",
@@ -31211,7 +32634,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-hulk-movers-llc",
@@ -31253,7 +32676,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-i-75-moving-and-storage",
@@ -31290,7 +32713,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-jay-small-moves",
@@ -31332,7 +32755,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-joe-bonnie-son-moving-storage",
@@ -31381,7 +32804,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-john-ferguson-moving-storage-llc",
@@ -31418,7 +32841,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-joy-mover",
@@ -31460,7 +32883,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-just-good-movers",
@@ -31496,7 +32919,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-keystone-movers-llc",
@@ -31545,7 +32968,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-lamanna-moving-storage-llc",
@@ -31606,7 +33029,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-lee-s-moving-company",
@@ -31649,7 +33072,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-legacy-moving-services-daytona-beach-fl",
@@ -32055,7 +33478,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-little-guys-movers-inc",
@@ -32133,7 +33556,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-lj-moving-llc",
@@ -32169,7 +33592,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-mabey-s-moving-and-storage-inc",
@@ -32224,7 +33647,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-macho-movers",
@@ -32260,7 +33683,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-man-with-a-truck-houston-movers-and-packers",
@@ -33575,7 +34998,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-master-movers-of-tallahassee",
@@ -33611,7 +35034,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-max-pro-moving",
@@ -33971,7 +35394,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-meehan-s-family-moving",
@@ -34008,7 +35431,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-mentors-moving-storage",
@@ -34369,7 +35792,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-mercury-auto-transport",
@@ -34412,7 +35835,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-mid-cal-moving-storage-company",
@@ -34773,7 +36196,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-mike-s-moving-storage",
@@ -34810,7 +36233,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-monarca-movers-dallas",
@@ -34846,7 +36269,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-mountain-movers",
@@ -36161,7 +37584,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-move-for-less",
@@ -36203,7 +37626,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-movegreen-inc",
@@ -36563,7 +37986,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-movers-of-dallas-mustang-moving",
@@ -36624,7 +38047,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-movers-of-sacramento",
@@ -36660,7 +38083,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-moving-movers-riverside",
@@ -36708,7 +38131,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-nexus-auto-transport",
@@ -36751,7 +38174,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-nor-cal-moving-services",
@@ -36830,7 +38253,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-northstar-moving-company",
@@ -36878,7 +38301,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-not-a-hobby-moving-company",
@@ -38218,7 +39641,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-ohana-moving-company-llc",
@@ -38624,7 +40047,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pacific-moving-services-llc",
@@ -38660,7 +40083,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pack-and-go-movers",
@@ -38696,7 +40119,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pack-it-up-movers",
@@ -38786,7 +40209,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-patriot-moving-and-storage",
@@ -39191,7 +40614,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pete-s-moving-services-llc",
@@ -39552,7 +40975,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-phoenix-express-specialty-moving-delivery-llc",
@@ -39589,7 +41012,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pink-zebra-moving-of-tampa",
@@ -39631,7 +41054,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pinpoint-movers-houston",
@@ -39715,7 +41138,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-premier-movers-4-less-llc",
@@ -39776,7 +41199,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-premium-q-moving-and-storage",
@@ -39812,7 +41235,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pro-movers",
@@ -39872,7 +41295,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pro-movers-2",
@@ -39909,7 +41332,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-professional-sacramento-movers",
@@ -39945,7 +41368,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-protocol-van-lines-inc",
@@ -40325,7 +41748,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pure-moving-company",
@@ -40370,7 +41793,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-pyramid-movers",
@@ -40424,7 +41847,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-quality-moving-more-llc",
@@ -40485,7 +41908,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-quantum-moving-llc",
@@ -40521,7 +41944,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-rapid-moving-and-trucking-llc",
@@ -40557,7 +41980,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-razorback-moving-tampa",
@@ -40593,7 +42016,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-razorback-moving-tampa-2",
@@ -40999,7 +42422,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-red-rover-moving-storage",
@@ -41102,7 +42525,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-redlands-moving-storage",
@@ -41139,7 +42562,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-riverside-pro-movers",
@@ -41175,7 +42598,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-roadrunner-auto-transport",
@@ -41218,7 +42641,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-roadway-moving",
@@ -41290,7 +42713,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-rodi-moving-storage-orlando",
@@ -41339,7 +42762,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-route-66-moving",
@@ -41381,7 +42804,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-safe-hands-relocation-llc",
@@ -41430,7 +42853,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-samba-moving",
@@ -41508,7 +42931,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-sinatra-movers",
@@ -41541,7 +42964,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-sparrow-moving-service",
@@ -41580,7 +43003,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-trek-movers",
@@ -41673,7 +43096,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-uship",
@@ -41714,7 +43137,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:co-zoom-movers",
@@ -41747,7 +43170,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-1065394",
@@ -55011,7 +56434,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-122025",
@@ -55882,7 +57305,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-125550",
@@ -69485,7 +70908,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-125563",
@@ -85471,7 +86894,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-1397252",
@@ -85522,7 +86945,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-1534531",
@@ -88349,7 +89772,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-1778016",
@@ -101613,7 +103036,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-1780669",
@@ -114865,7 +116288,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-223672",
@@ -114908,7 +116331,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-2238770",
@@ -117726,7 +119149,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-2239816",
@@ -118319,7 +119742,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-2256609",
@@ -131583,7 +133006,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-242599",
@@ -131626,7 +133049,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-2632086",
@@ -131668,7 +133091,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-2900155",
@@ -133945,7 +135368,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-304797",
@@ -134521,7 +135944,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3065202",
@@ -135897,7 +137320,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3101918",
@@ -151143,7 +152566,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3149259",
@@ -151186,7 +152609,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3415437",
@@ -164437,7 +165860,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3447326",
@@ -165308,7 +166731,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3475743",
@@ -165352,7 +166775,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3542515",
@@ -165587,7 +167010,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3585744",
@@ -165821,7 +167244,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3709259",
@@ -168291,7 +169714,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-373544",
@@ -181552,7 +182975,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-3978928",
@@ -195317,7 +196740,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-4021844",
@@ -195361,7 +196784,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-4074980",
@@ -208951,7 +210374,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-4085166",
@@ -208994,7 +210417,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-4086767",
@@ -210108,7 +211531,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-49922",
@@ -223720,7 +225143,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-70719",
@@ -236985,7 +238408,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-72029",
@@ -250250,7 +251673,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-76235",
@@ -266249,7 +267672,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     },
     {
       "network_entity_id": "move:usdot-76628",
@@ -280027,7 +281450,7 @@
       ],
       "discovery_status": "active",
       "source_version": "active-directory-movers.ts#n=445+auto_overlay=4",
-      "updated_at": "2026-08-22T16:50:20.765Z"
+      "updated_at": "2026-08-22T17:37:55.680Z"
     }
   ]
 }

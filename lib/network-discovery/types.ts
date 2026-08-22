@@ -1,5 +1,5 @@
 /**
- * ASK-SEARCH-006A / 006A.1 — Move → NetworkDiscoveryEntity projection types.
+ * ASK-SEARCH-006A / 006A.1 / 006A.2 — Move → NetworkDiscoveryEntity projection types.
  * Aligns with Ask ASK-SEARCH-005 contract (snake_case field names).
  */
 
@@ -102,7 +102,7 @@ export type PilotExportManifest = {
   source_path: string;
   pilot_label: 'PILOT / NOT YET CONSUMED BY ASK PRODUCTION';
   pilot_artifact: string;
-  amendment: 'ASK-SEARCH-006A.1';
+  amendment: 'ASK-SEARCH-006A.1' | 'ASK-SEARCH-006A.2';
   entity_count: number;
   content_fingerprint: string;
   eligibility: {
@@ -120,13 +120,17 @@ export type PilotExportManifest = {
     with_county: number;
     with_service_area_county: number;
     with_service_area_state: number;
+    service_states?: Record<string, number>;
   };
   query_readiness?: Record<string, unknown>;
+  geography_precision?: unknown;
   identity_continuity?: {
     baseline_path: string;
     overlapping: number;
     id_matches: number;
-    id_mismatches: { slug: string; old_id: string; new_id: string }[];
+    id_mismatches: { slug: string; old_id: string; new_id: string; kind: string }[];
+    dropped_from_baseline: { slug: string; old_id: string; reason: string }[];
+    newly_discoverable: number;
   };
   entities: NetworkDiscoveryEntity[];
 };

@@ -1,5 +1,6 @@
 export * from './types';
 export * from './geography';
+export * from './precision';
 export * from './map-company';
 export * from './eligibility';
 export * from './validate';

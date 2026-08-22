@@ -1,5 +1,5 @@
 /**
- * ASK-SEARCH-006A.1 — emit Move discovery pilot JSON (read-only catalog).
+ * ASK-SEARCH-006A.1 / 006A.2 — emit Move discovery pilot JSON (read-only catalog).
  *
  * Usage: npx tsx scripts/publish-move-discovery-pilot.mts
  */
@@ -30,6 +30,7 @@ console.log(
       entity_type_breakdown: result.manifest.entity_type_breakdown,
       geography: result.manifest.geography,
       query_readiness: result.manifest.query_readiness,
+      geography_precision: result.manifest.geography_precision,
       identity_continuity: result.manifest.identity_continuity,
       catalog_stats: result.catalog_stats,
       timings_ms: result.timings_ms,
