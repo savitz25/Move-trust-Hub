@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "mode": "apply",
+  "inserted": 46,
+  "audit": {
+    "n": 46,
+    "internal_only": 46,
+    "publicish": 0
+  },
+  "before": {
+    "companies": 5908,
+    "psa": 1636,
+    "contacts": 3875
+  },
+  "after": {
+    "companies": 5908,
+    "psa": 1636,
+    "contacts": 3875
+  },
+  "manifest_hash": "39c66453d512203e3cf0fb5d2942dc9d7581ee2a7f63052092a1a70d75e5d871",
+  "wave_id": "PBC_COUNTY_CREDENTIAL_WAVE_A_INTERNAL_V1",
+  "status": "INTERNAL WAVE A INGESTED — NOT PUBLIC"
+}

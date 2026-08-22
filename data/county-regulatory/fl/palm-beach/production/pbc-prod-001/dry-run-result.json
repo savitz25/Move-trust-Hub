@@ -1,0 +1,24 @@
+{
+  "mode": "dry-run",
+  "manifest_hash": "39c66453d512203e3cf0fb5d2942dc9d7581ee2a7f63052092a1a70d75e5d871",
+  "wave_id": "PBC_COUNTY_CREDENTIAL_WAVE_A_INTERNAL_V1",
+  "companies": 0,
+  "provider_state_authority": 0,
+  "provider_contact_observation": 0,
+  "trust_score": 0,
+  "publication_state": 0,
+  "indexable": 0,
+  "county_source_rows": 0,
+  "county_credential_rows": 0,
+  "skip_existing": 46,
+  "collisions": [],
+  "complaint_rows": 0,
+  "enforcement_rows": 0,
+  "before": {
+    "companies": 5908,
+    "psa": 1636,
+    "contacts": 3875
+  },
+  "google_places_api_requests": 0,
+  "consumer_pii": 0
+}

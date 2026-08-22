@@ -1,0 +1,23 @@
+{
+  "task": "PBC-PROD-001",
+  "host": "https://www.movetrusthub.com",
+  "production_sha": "0c862817",
+  "county_leak_visible": false,
+  "wave1": {
+    "tested": 5,
+    "status_200": 5,
+    "noindex": 5
+  },
+  "keep80": {
+    "tested": 6,
+    "status_200": 6,
+    "noindex": 6
+  },
+  "indexable": {
+    "tested": 2,
+    "status_200": 2,
+    "index": 2
+  },
+  "api_compare_clean": true,
+  "note": "Some PBC link-ready INGESTED profiles correctly hard-404; no county credential leakage on any probed page."
+}
