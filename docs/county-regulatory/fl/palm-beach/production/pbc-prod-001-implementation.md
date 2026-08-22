@@ -1,6 +1,6 @@
 # PBC-PROD-001 — Palm Beach County Credential Production Foundation
 
-**Status:** implementation in progress → `INTERNAL WAVE A INGESTED — NOT PUBLIC` when apply completes  
+**Status:** **Status:** `INTERNAL WAVE A INGESTED � NOT PUBLIC`
 **Wave:** `PBC_COUNTY_CREDENTIAL_WAVE_A_INTERNAL_V1` (exactly **46**)  
 **Evidence state:** `INTERNAL_ONLY` (not public)
 
