@@ -1,0 +1,23 @@
+{
+  "google_places_requests": 0,
+  "discovered_from_fl011c": {
+    "target_active_im": 281,
+    "withheld": 168
+  },
+  "realized": {
+    "new_companies_canonicalized": 0,
+    "existing_companies_regulatorily_enriched": 0,
+    "fdacs_authorities_added": 0,
+    "fdacs_authorities_noop": 81,
+    "email_observations_stored": 0,
+    "phone_observations_stored": 0,
+    "address_observations_stored": 0,
+    "canonical_emails_promoted": 0,
+    "canonical_phones_promoted": 0,
+    "canonical_addresses_promoted": 0,
+    "publicly_published_new_companies": 0,
+    "new_public_state_profiles": 0,
+    "withheld_unresolved": 168
+  },
+  "production_writes": 0
+}

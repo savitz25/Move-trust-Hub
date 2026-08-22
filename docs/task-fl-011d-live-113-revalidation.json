@@ -1,0 +1,800 @@
+{
+  "google_places_requests": 0,
+  "n": 113,
+  "passed": 113,
+  "failed": 0,
+  "failures": [],
+  "rows": [
+    {
+      "fdacsIm": "IM2099",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3355",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM426",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1954",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2518",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4167",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2431",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2621",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3680",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM684",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2089",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3038",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3953",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3755",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3995",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM469",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2583",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM300",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1799",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3879",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3260",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM184",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3968",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2838",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM457",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM401",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1626",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2754",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2247",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3143",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3701",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM117",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM212",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3212",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM213",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM107",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4082",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM308",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1419",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2609",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2381",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3621",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4142",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3444",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2753",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3974",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4104",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM259",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM1447",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2851",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM1210",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2822",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3124",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4146",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2033",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3778",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2175",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4145",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM119",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2160",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1178",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3723",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3947",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1335",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3553",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3176",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1881",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3134",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3201",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4132",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM482",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM146",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3523",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4178",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3148",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3594",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1794",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4134",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM290",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3772",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_email"
+    },
+    {
+      "fdacsIm": "IM1204",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2763",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4165",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4014",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3103",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1823",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3344",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3779",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2140",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1026",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM145",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3192",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3375",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2384",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3111",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3766",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM201",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3729",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM549",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM471",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3511",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3559",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1795",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1931",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2456",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4051",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3856",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4169",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3920",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM1232",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM26",
+      "op": "LINK_EXISTING_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2181",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM31",
+      "op": "INSERT_NEW_CANONICAL",
+      "pass": true,
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    }
+  ]
+}

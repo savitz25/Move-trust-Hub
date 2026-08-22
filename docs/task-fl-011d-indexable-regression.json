@@ -1,0 +1,5 @@
+{
+  "google_places_requests": 0,
+  "phase": "pre-apply",
+  "note": "Full INDEXABLE HTTP regression is recorded after production apply. Code gate: FDACS chrome is Wave-1-only."
+}

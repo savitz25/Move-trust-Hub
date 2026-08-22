@@ -1,0 +1,1063 @@
+{
+  "google_places_requests": 0,
+  "n": 81,
+  "legal_plus_phone": 80,
+  "legal_plus_email": 1,
+  "rejected": 0,
+  "public_companies": 79,
+  "rows": [
+    {
+      "fdacsIm": "IM2099",
+      "companyId": "usdot-2303737",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3355",
+      "companyId": "usdot-3005919",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM426",
+      "companyId": "usdot-1472849",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2518",
+      "companyId": "usdot-3161573",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2431",
+      "companyId": "usdot-2564711",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2621",
+      "companyId": "all-about-moving-tampa-bay",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3680",
+      "companyId": "usdot-3507074",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2089",
+      "companyId": "america-s-family-moving-and-storage-llc",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3038",
+      "companyId": "usdot-3168341",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3953",
+      "companyId": "fl-im-3952",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "INGESTED",
+      "indexable": false,
+      "consumerVisible": false
+    },
+    {
+      "fdacsIm": "IM3755",
+      "companyId": "angel-movers-llc",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3995",
+      "companyId": "apollos-moving-logistics-llc",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM469",
+      "companyId": "usdot-1040023",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2583",
+      "companyId": "usdot-2823665",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM300",
+      "companyId": "usdot-459518",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3260",
+      "companyId": "black-swan-moving-llc",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM184",
+      "companyId": "usdot-89774",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2838",
+      "companyId": "bull-moving",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM457",
+      "companyId": "usdot-700628",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM401",
+      "companyId": "usdot-1991298",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1626",
+      "companyId": "usdot-1526680",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2754",
+      "companyId": "usdot-3146919",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2247",
+      "companyId": "usdot-4431751",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3143",
+      "companyId": "usdot-3252722",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3701",
+      "companyId": "clever-carriers-llc",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM107",
+      "companyId": "usdot-4071591",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM4082",
+      "companyId": "usdot-4520643",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM308",
+      "companyId": "usdot-767421",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1419",
+      "companyId": "usdot-1424728",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2609",
+      "companyId": "usdot-3080327",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2381",
+      "companyId": "eagle-moving-co",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM4142",
+      "companyId": "usdot-3998447",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3444",
+      "companyId": "usdot-2491702",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2753",
+      "companyId": "usdot-2968831",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3974",
+      "companyId": "florida-pro-movers-home-solutions",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1447",
+      "companyId": "usdot-1568346",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1210",
+      "companyId": "usdot-162012",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2822",
+      "companyId": "usdot-3034432",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3124",
+      "companyId": "usdot-3338540",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM4146",
+      "companyId": "usdot-3794613",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2033",
+      "companyId": "usdot-2192602",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2175",
+      "companyId": "usdot-2368777",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM4145",
+      "companyId": "usdot-4482118",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2160",
+      "companyId": "usdot-1847236",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1178",
+      "companyId": "usdot-2270761",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3723",
+      "companyId": "usdot-4018257",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3947",
+      "companyId": "usdot-4022357",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1335",
+      "companyId": "master-movers-of-tallahassee",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3553",
+      "companyId": "usdot-3784138",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3176",
+      "companyId": "usdot-3301146",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1881",
+      "companyId": "usdot-3199979",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM4132",
+      "companyId": "usdot-4438821",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM482",
+      "companyId": "usdot-2443347",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM146",
+      "companyId": "usdot-811031",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM4178",
+      "companyId": "usdot-4544882",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3148",
+      "companyId": "usdot-3286720",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3594",
+      "companyId": "usdot-1160157",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1794",
+      "companyId": "usdot-976593",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3772",
+      "companyId": "fl-im-3150",
+      "evidence": "exact_legal_name_and_email",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "INGESTED",
+      "indexable": false,
+      "consumerVisible": false
+    },
+    {
+      "fdacsIm": "IM1204",
+      "companyId": "usdot-1329594",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2763",
+      "companyId": "ohana-moving-company-llc",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3103",
+      "companyId": "patriot-moving-and-storage",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1823",
+      "companyId": "usdot-2059049",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3344",
+      "companyId": "premier-movers-4-less-llc",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3779",
+      "companyId": "premium-q-moving-and-storage",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2140",
+      "companyId": "usdot-2402239",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1026",
+      "companyId": "usdot-1377633",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3375",
+      "companyId": "usdot-4001518",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM2384",
+      "companyId": "usdot-2562486",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3766",
+      "companyId": "usdot-4063852",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM201",
+      "companyId": "usdot-1943394",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM549",
+      "companyId": "sunbelt-moving-delivery-inc",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM471",
+      "companyId": "sunshine-movers",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3511",
+      "companyId": "usdot-2833135",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3559",
+      "companyId": "usdot-3092893",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1795",
+      "companyId": "usdot-1951425",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1931",
+      "companyId": "usdot-2119975",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM3856",
+      "companyId": "whatamove",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM4169",
+      "companyId": "usdot-4528522",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM1232",
+      "companyId": "usdot-381994",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    },
+    {
+      "fdacsIm": "IM26",
+      "companyId": "usdot-966624",
+      "evidence": "exact_legal_name_and_phone",
+      "accepted": true,
+      "publicExposure": {
+        "pass": true,
+        "reason": "fdacs_chrome_gated_to_wave1_publishable_only"
+      },
+      "publicationState": "PUBLISHABLE",
+      "indexable": true,
+      "consumerVisible": true
+    }
+  ]
+}
