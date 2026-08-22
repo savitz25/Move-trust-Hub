@@ -1,0 +1,196 @@
+{
+  "google_places_requests": 0,
+  "keep80_tested": 80,
+  "keep80_200": 80,
+  "keep80_noindex": 80,
+  "keep80_fl": 50,
+  "keep80_wa": 30,
+  "keep80_failures": [],
+  "indexable": [
+    {
+      "path": "/companies/allied-van-lines",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": false,
+      "title": "Allied Van Lines — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
+      "florida": false,
+      "fmcsaTitle": true,
+      "approved": false
+    },
+    {
+      "path": "/companies/united-van-lines",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": false,
+      "title": "United Van Lines — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
+      "florida": false,
+      "fmcsaTitle": true,
+      "approved": false
+    }
+  ],
+  "representatives": [
+    {
+      "slug": "doug-s-hourly-muscle-movers-packers-inc",
+      "county": "Manatee",
+      "path": "/companies/doug-s-hourly-muscle-movers-packers-inc",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": true,
+      "title": "Doug&#x27;s Hourly Muscle Movers &amp; Packers, INC. — Florida Intrastate Mover | Move Trust Hub",
+      "florida": true,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "clover-systems-llc",
+      "county": "Miami-Dade",
+      "path": "/companies/clover-systems-llc",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": true,
+      "title": "Clover Systems, LLC — Florida Intrastate Mover | Move Trust Hub",
+      "florida": true,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "adios-moving-llc",
+      "county": "Broward",
+      "path": "/companies/adios-moving-llc",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": true,
+      "title": "Adios Moving LLC — Florida Intrastate Mover | Move Trust Hub",
+      "florida": true,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "miss-peach-iv-true-movers-inc",
+      "county": "Hillsborough",
+      "path": "/companies/miss-peach-iv-true-movers-inc",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": true,
+      "title": "Miss Peach Iv True Movers INC — Florida Intrastate Mover | Move Trust Hub",
+      "florida": true,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "advance-sorensen-movers-of-south-florida-llc",
+      "county": "Broward",
+      "path": "/companies/advance-sorensen-movers-of-south-florida-llc",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": true,
+      "title": "Advance Sorensen Movers Of South Florida LLC — Florida Intrastate Mover | Move Trust Hub",
+      "florida": true,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "epaa-llc",
+      "county": "Broward",
+      "path": "/companies/epaa-llc",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": true,
+      "title": "Epaa LLC — Florida Intrastate Mover | Move Trust Hub",
+      "florida": true,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "keys-movers",
+      "county": "Monroe",
+      "path": "/companies/keys-movers",
+      "status": 200,
+      "ct": "text/html; charset=utf-8",
+      "noindex": true,
+      "title": "Keys Movers — Florida Intrastate Mover | Move Trust Hub",
+      "florida": true,
+      "fmcsaTitle": false,
+      "approved": false
+    }
+  ],
+  "og": [
+    {
+      "slug": "doug-s-hourly-muscle-movers-packers-inc",
+      "path": "/companies/doug-s-hourly-muscle-movers-packers-inc/share-og",
+      "status": 200,
+      "ct": "image/png",
+      "noindex": false,
+      "title": "",
+      "florida": false,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "clover-systems-llc",
+      "path": "/companies/clover-systems-llc/share-og",
+      "status": 200,
+      "ct": "image/png",
+      "noindex": false,
+      "title": "",
+      "florida": false,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "adios-moving-llc",
+      "path": "/companies/adios-moving-llc/share-og",
+      "status": 200,
+      "ct": "image/png",
+      "noindex": false,
+      "title": "",
+      "florida": false,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "miss-peach-iv-true-movers-inc",
+      "path": "/companies/miss-peach-iv-true-movers-inc/share-og",
+      "status": 200,
+      "ct": "image/png",
+      "noindex": false,
+      "title": "",
+      "florida": false,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "advance-sorensen-movers-of-south-florida-llc",
+      "path": "/companies/advance-sorensen-movers-of-south-florida-llc/share-og",
+      "status": 200,
+      "ct": "image/png",
+      "noindex": false,
+      "title": "",
+      "florida": false,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "epaa-llc",
+      "path": "/companies/epaa-llc/share-og",
+      "status": 200,
+      "ct": "image/png",
+      "noindex": false,
+      "title": "",
+      "florida": false,
+      "fmcsaTitle": false,
+      "approved": false
+    },
+    {
+      "slug": "keys-movers",
+      "path": "/companies/keys-movers/share-og",
+      "status": 200,
+      "ct": "image/png",
+      "noindex": false,
+      "title": "",
+      "florida": false,
+      "fmcsaTitle": false,
+      "approved": false
+    }
+  ]
+}
