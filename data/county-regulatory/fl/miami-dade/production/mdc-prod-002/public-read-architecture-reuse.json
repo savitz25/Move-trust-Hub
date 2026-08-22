@@ -1,0 +1,22 @@
+{
+  "task": "MDC-PROD-002",
+  "palm_beach_pattern": {
+    "server_only": true,
+    "published_gate": true,
+    "company_anonymous_public_gate": true,
+    "sanitized_dto": true,
+    "profile_only": true,
+    "not_in_directory_compare_search_jsonld_og": true,
+    "rls_closed": true
+  },
+  "miami_dade_recommendation": {
+    "reuse_server_only_path": true,
+    "generalize_or_parallel_module": "parallel county module under lib/county-regulatory/mdc/",
+    "evidence_gate": "PUBLISHED only",
+    "heading_singular": "Miami-Dade Moving Business Registration",
+    "heading_plural": "Miami-Dade Moving Business Registrations",
+    "future_task": "MDC-PROD-003 publication canary (after readiness)"
+  },
+  "implement_in_002": false,
+  "production_db_writes": 0
+}

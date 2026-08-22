@@ -1,0 +1,12 @@
+{
+  "task": "MDC-PROD-002",
+  "future_publish_rollback": {
+    "from": "PUBLISHED",
+    "to": "INTERNAL_ONLY",
+    "exact_manifest_members_only": true,
+    "companies": 0,
+    "schema_drop": 0,
+    "palm_beach": 0,
+    "state": 0
+  }
+}

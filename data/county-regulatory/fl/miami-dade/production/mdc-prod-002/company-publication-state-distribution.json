@@ -1,0 +1,10 @@
+{
+  "task": "MDC-PROD-002",
+  "companies": 70,
+  "distribution": {
+    "PUBLISHABLE": 9,
+    "INGESTED": 61
+  },
+  "anonymously_public": 9,
+  "ingested": 61
+}

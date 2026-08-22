@@ -1,0 +1,16 @@
+{
+  "task": "MDC-PROD-002",
+  "production_db_writes": 0,
+  "mr_publicly_published_delta": 0,
+  "realized_unchanged": {
+    "mdc_internal": 70,
+    "mdc_public": 0,
+    "pbc_internal": 46,
+    "pbc_public": 11
+  },
+  "ready_for_future_canary": {
+    "companies": 9,
+    "credentials": 9,
+    "counted_as_published": false
+  }
+}
