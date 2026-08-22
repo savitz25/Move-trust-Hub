@@ -1,0 +1,65 @@
+{
+  "task": "PBC-PROD-001",
+  "retrieved_at": "2026-08-22T17:11:04.331Z",
+  "wave_id": "PBC_COUNTY_CREDENTIAL_WAVE_A_INTERNAL_V1",
+  "manifest_hash": "39c66453d512203e3cf0fb5d2942dc9d7581ee2a7f63052092a1a70d75e5d871",
+  "database": {
+    "total": 46,
+    "internal_only": 46,
+    "publication_eligible": 0,
+    "published": 0,
+    "distinct_companies": 43,
+    "orphans": 0
+  },
+  "duplicate_mv": [],
+  "reconciliation": {
+    "checked": 46,
+    "mismatches": 0,
+    "mismatch_rows": []
+  },
+  "freezes": {
+    "companies": 5908,
+    "psa": 1636,
+    "contacts": 3875
+  },
+  "anon": {
+    "provider_county_credential": {
+      "error": "permission denied for table provider_county_credential",
+      "rows": 0,
+      "denied": true
+    },
+    "county_regulatory_program": {
+      "error": "permission denied for table county_regulatory_program",
+      "rows": 0,
+      "denied": true
+    }
+  },
+  "service_role": {
+    "rows": 46,
+    "error": null,
+    "sample": [
+      {
+        "id": "452eb6d2-c1ff-4d67-9ecc-6571e9f530a4",
+        "company_id": "america-s-family-moving-and-storage-llc",
+        "credential_number": "MV1029",
+        "fdacs_im": "IM2089",
+        "evidence_publication_state": "INTERNAL_ONLY"
+      },
+      {
+        "id": "b26c9856-ca24-4555-8b13-2bb3d8e3bd9b",
+        "company_id": "fl-im-3378",
+        "credential_number": "MV1062",
+        "fdacs_im": "IM3378",
+        "evidence_publication_state": "INTERNAL_ONLY"
+      },
+      {
+        "id": "864c7b41-eb92-458b-b2aa-ebe1b6dee125",
+        "company_id": "usdot-2562486",
+        "credential_number": "MV1097",
+        "fdacs_im": "IM2384",
+        "evidence_publication_state": "INTERNAL_ONLY"
+      }
+    ]
+  },
+  "ok": true
+}
