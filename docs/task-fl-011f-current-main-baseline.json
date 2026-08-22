@@ -1,0 +1,14 @@
+{
+  "google_places_requests": 0,
+  "origin_main": "0dfe69e8f166df9dd9d1764633d52ca3972eb101",
+  "production_sha": "0dfe69e8f166df9dd9d1764633d52ca3972eb101",
+  "sha_match": "YES",
+  "latest_builder1_pr": 80,
+  "latest_builder2_pr": 81,
+  "freeze": {
+    "companies": 5940,
+    "indexable": 4905,
+    "fl_im": 849
+  },
+  "retrieved_at": "2026-08-22T22:49:17.478Z"
+}

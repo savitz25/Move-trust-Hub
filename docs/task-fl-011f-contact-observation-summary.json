@@ -1,0 +1,14 @@
+{
+  "google_places_requests": 0,
+  "SOURCE_OBSERVED": {
+    "phone": 0,
+    "email": 0,
+    "address": 0
+  },
+  "FUTURE_ATTACH_ELIGIBLE": {
+    "phone": 0,
+    "email": 0,
+    "address": 0
+  },
+  "CANONICAL_PROMOTION": 0
+}

@@ -1,0 +1,25 @@
+{
+  "google_places_requests": 0,
+  "new_public_fdacs_chrome": 0,
+  "publication_gate_remediation_required": 0,
+  "indexable_sample": [
+    {
+      "path": "/companies/allied-van-lines",
+      "status": 200,
+      "waveFdacs": false,
+      "robots": "index, follow"
+    },
+    {
+      "path": "/companies/united-van-lines",
+      "status": 200,
+      "waveFdacs": false,
+      "robots": "index, follow"
+    },
+    {
+      "path": "/companies/mayflower-transit",
+      "status": 200,
+      "waveFdacs": false,
+      "robots": "index, follow"
+    }
+  ]
+}

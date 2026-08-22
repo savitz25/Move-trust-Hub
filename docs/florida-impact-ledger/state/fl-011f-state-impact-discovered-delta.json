@@ -1,0 +1,17 @@
+{
+  "google_places_requests": 0,
+  "layer": "DISCOVERED / READY_FOR_INTERNAL_APPLY",
+  "not_realized": true,
+  "current_active": 1098,
+  "current_represented": 930,
+  "current_unresolved": 168,
+  "new_safe_link_candidates": 0,
+  "new_safe_insert_candidates": 0,
+  "newly_inactive": 0,
+  "remaining_unresolved": 168,
+  "emails_observed_among_safe": 0,
+  "phones_observed_among_safe": 0,
+  "addresses_observed_among_safe": 0,
+  "production_changes": 0,
+  "public_changes": 0
+}
