@@ -1,0 +1,16 @@
+{
+  "google_places_requests": 0,
+  "retrieved_at": "2026-08-22T15:34:24.195Z",
+  "canonical_host": "https://www.movetrusthub.com",
+  "current_main_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "deployed_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "proof": "HTML data-build-id on Allied and Wave profiles",
+  "deployment_id": "dpl_42oGUigdefhcWBtHkUabvLMiw1VL",
+  "deployment_url": "https://move-trust-luufmktdg-savitz25-s-projects.vercel.app",
+  "deployment_timestamp": "2026-08-22T15:27:45.912Z",
+  "aliases": ["https://www.movetrusthub.com", "https://movetrusthub.com"],
+  "main_match": "YES",
+  "launch_sha": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140",
+  "launch_match": "NO",
+  "note": "Later main than launch is acceptable while Wave contracts hold."
+}

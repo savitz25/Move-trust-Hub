@@ -53,6 +53,8 @@
     "qa:fl-010r-http": "tsx scripts/qa-task-fl-010r-http.ts",
     "qa:fl-010r-ua": "tsx scripts/qa-task-fl-010r-ua-matrix.ts",
     "qa:fl-010:live": "tsx scripts/qa-task-fl-010-live-sweep.ts",
+    "qa:fl-wave1-observation": "tsx scripts/qa-task-fl-011-wave1-observation.ts",
+    "qa:fl-011-browser": "tsx scripts/qa-task-fl-011-browser.ts",
     "publish:fl-state-wave-1:apply": "tsx scripts/run-task-fl-010-wave1-apply.ts --apply",
     "publish:fl-state-wave-1:dry": "tsx scripts/run-task-fl-010-wave1-apply.ts",
     "qa:fl-009-http": "tsx scripts/qa-task-fl-009-http.ts",
