@@ -1,19 +1,56 @@
 /**
- * Deterministic pilot cohort selection (ASK-SEARCH-006A).
+ * Deterministic pilot cohort selection (ASK-SEARCH-006A.1).
  * Stable sort by network_entity_id — no payment/popularity bias.
+ *
+ * When eligible >> preferred size, use stratified round-robin across
+ * entity_type so USDOT/interstate rows are not starved by lexical
+ * `move:co-*` < `move:usdot-*` ordering.
  */
 
 import type { NetworkDiscoveryEntity } from './types';
 
-/** Target band 100–250; take all eligible when below band (documented). */
+/** Spec band 100–250; prefer ~150–200 when source safely supports it. */
 export const PILOT_TARGET_MIN = 100;
+export const PILOT_TARGET_PREFERRED = 200;
 export const PILOT_TARGET_MAX = 250;
 
 export function selectPilotCohort(eligible: NetworkDiscoveryEntity[]): NetworkDiscoveryEntity[] {
-  const sorted = [...eligible].sort((a, b) =>
-    a.network_entity_id.localeCompare(b.network_entity_id)
-  );
-  if (sorted.length <= PILOT_TARGET_MAX) return sorted;
-  // Deterministic truncation: first N by stable ID order
-  return sorted.slice(0, PILOT_TARGET_MAX);
+  if (eligible.length <= PILOT_TARGET_PREFERRED) {
+    return [...eligible].sort((a, b) => a.network_entity_id.localeCompare(b.network_entity_id));
+  }
+
+  const byType = new Map<string, NetworkDiscoveryEntity[]>();
+  for (const e of eligible) {
+    const list = byType.get(e.entity_type) ?? [];
+    list.push(e);
+    byType.set(e.entity_type, list);
+  }
+  for (const list of byType.values()) {
+    list.sort((a, b) => a.network_entity_id.localeCompare(b.network_entity_id));
+  }
+
+  // Deterministic type order
+  const types = [...byType.keys()].sort((a, b) => a.localeCompare(b));
+  const indices = Object.fromEntries(types.map((t) => [t, 0]));
+  const selected: NetworkDiscoveryEntity[] = [];
+  const seen = new Set<string>();
+
+  while (selected.length < PILOT_TARGET_PREFERRED) {
+    let progressed = false;
+    for (const t of types) {
+      if (selected.length >= PILOT_TARGET_PREFERRED) break;
+      const list = byType.get(t)!;
+      const i = indices[t];
+      if (i >= list.length) continue;
+      const ent = list[i]!;
+      indices[t] = i + 1;
+      if (seen.has(ent.network_entity_id)) continue;
+      seen.add(ent.network_entity_id);
+      selected.push(ent);
+      progressed = true;
+    }
+    if (!progressed) break;
+  }
+
+  return selected.sort((a, b) => a.network_entity_id.localeCompare(b.network_entity_id));
 }

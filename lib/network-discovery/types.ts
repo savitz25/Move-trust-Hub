@@ -1,5 +1,5 @@
 /**
- * ASK-SEARCH-006A — Move → NetworkDiscoveryEntity projection types.
+ * ASK-SEARCH-006A / 006A.1 — Move → NetworkDiscoveryEntity projection types.
  * Aligns with Ask ASK-SEARCH-005 contract (snake_case field names).
  */
 
@@ -27,6 +27,7 @@ export type NetworkDiscoveryEntity = {
   entity_type: MoveDiscoveryEntityType;
   display_name: string;
   legal_name?: string;
+  /** Physical HQ locality (not inferred from service coverage). */
   city?: string;
   county?: string;
   state?: string;
@@ -43,8 +44,17 @@ export type NetworkDiscoveryEntity = {
   updated_at?: string;
 };
 
-/** Offline snapshot row shape (scripts/output/active-verified-companies.json). */
-export type MoveCompanySnapshotRow = {
+export type CoverageCountyRef = {
+  stateSlug: string;
+  countySlug: string;
+  name?: string;
+};
+
+/**
+ * Normalized provider row used by eligibility + mapping.
+ * Compatible with legacy snapshot fields plus structured coverage.
+ */
+export type MoveProviderRecord = {
   id: string;
   slug: string;
   name: string;
@@ -59,11 +69,24 @@ export type MoveCompanySnapshotRow = {
   specialties: string[] | null;
   overall_rating: number | null;
   review_count: number | null;
+  entity_type_raw?: string | null;
+  service_scope?: 'interstate' | 'intrastate' | null;
+  is_local_only?: boolean;
+  short_description?: string | null;
+  physical_city?: string;
+  physical_state?: string;
+  physical_zip?: string;
+  coverage_counties?: CoverageCountyRef[];
+  source_kind?: 'active_directory' | 'seed_auto_overlay' | 'legacy_snapshot';
 };
+
+/** @deprecated Prefer MoveProviderRecord — kept for assert fixtures. */
+export type MoveCompanySnapshotRow = MoveProviderRecord;
 
 export type EligibilityFailureReason =
   | 'missing_slug'
   | 'missing_display_name'
+  | 'missing_identity'
   | 'missing_usdot'
   | 'out_of_service'
   | 'authority_inactive'
@@ -78,6 +101,8 @@ export type PilotExportManifest = {
   source_version: string;
   source_path: string;
   pilot_label: 'PILOT / NOT YET CONSUMED BY ASK PRODUCTION';
+  pilot_artifact: string;
+  amendment: 'ASK-SEARCH-006A.1';
   entity_count: number;
   content_fingerprint: string;
   eligibility: {
@@ -93,6 +118,15 @@ export type PilotExportManifest = {
     with_city: number;
     with_zip: number;
     with_county: number;
+    with_service_area_county: number;
+    with_service_area_state: number;
+  };
+  query_readiness?: Record<string, unknown>;
+  identity_continuity?: {
+    baseline_path: string;
+    overlapping: number;
+    id_matches: number;
+    id_mismatches: { slug: string; old_id: string; new_id: string }[];
   };
   entities: NetworkDiscoveryEntity[];
 };
