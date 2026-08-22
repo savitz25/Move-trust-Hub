@@ -1,0 +1,214 @@
+{
+  "task": "FL-C010",
+  "threshold_bytes": 250000,
+  "count": 23,
+  "artifacts": [
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/instructions-self-service-portal.pdf",
+      "size": 5885075,
+      "sha256": "a64a4378a20d29da24ddb20c5d166cb345d103276033b013cea357c8b6d8d089",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "EXCLUDE_FROM_MAIN_TRANSPLANT_BUT_ARCHIVE_LATER"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-local-20business-20tax-f.json",
+      "size": 1910079,
+      "sha256": "e42ac21527cebd73d99107a3fcb34af9c5034844550d7b93a0dbed5f807ac362",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "EXCLUDE_FROM_MAIN_TRANSPLANT_BUT_ARCHIVE_LATER"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/MovingCo_Application.pdf",
+      "size": 1548433,
+      "sha256": "b27f71743e9eac43640ba2a6f27e987459b5a13363345203f52e4c22f98d07df",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "REVIEW"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-business-20tax-page-5Bsi.json",
+      "size": 1321046,
+      "sha256": "80cd43a8178dc3538bf6de96e40d6f79f74ca055ec137819a4a2a4409af3502a",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "EXCLUDE_FROM_MAIN_TRANSPLANT_BUT_ARCHIVE_LATER"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.pdf",
+      "size": 982024,
+      "sha256": "9f7e136f17f0456b072d069d0788f444e324373b9039c54e0decd339073a0e66",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "REVIEW"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.pdf",
+      "size": 722047,
+      "sha256": "b8f6529700f39251b8960987747952adb6081d9aa47373eae3ea20a2bf7ad28d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.pdf",
+      "size": 721042,
+      "sha256": "dcd364c45225bee2cfdfd25eb59757cc2c1805e40c0572bda151a47d51c9611b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/mover-licenses.json",
+      "size": 599404,
+      "sha256": "0095698e3ce1bf4e31aa844ad3a90169ea5ad4e7f8ee85b4826803d8a7be157a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-faq.pdf",
+      "size": 501418,
+      "sha256": "784951348c0ba062a0ff4abea2be9e73e27319a67aa96531d1cc2f9c598bc527",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "REVIEW"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-moving-roster.json",
+      "size": 498884,
+      "sha256": "a69fcb9a7add06a1080c8f4e77e17f7ed06ae3cc19880983986f4e84977c6b52",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/florida-im-company-crosswalk-current.json",
+      "size": 436650,
+      "sha256": "44510e55b687da11bece62ad2d860a3cc1566a17756a3971be61f07c2ab9a80f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/florida-im-company-crosswalk.json",
+      "size": 436650,
+      "sha256": "f4b36a35733ae50816dd852236a19192504dc593324b8f0f2fbb52d1cbe5677f",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+      "size": 436650,
+      "sha256": "fae823e26231327a2ef117071048087ac8a2c01e845727baaa456d43709f2808",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.pdf",
+      "size": 395768,
+      "sha256": "d5cb2e244939a6a1d67d1be84625f031513ea45bba8b084cce860c3aff352bd3",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.pdf",
+      "size": 322580,
+      "sha256": "588c7412d27a3741c5e9743aaeb8d468f2920c74b7d49c658fef3d8e67311abd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-home.html",
+      "size": 273893,
+      "sha256": "8de65169949cde3613c97aeea7689070a18b20eeb37a80b991cea49ef65438aa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-faq.html",
+      "size": 270192,
+      "sha256": "0f09610fa9c7d45093a8a0cc61c8e6fc59299b8f013292418e8efda19682836d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/permit-fdacs-reconciliation.json",
+      "size": 265976,
+      "sha256": "e2bdeb02b47d2511aa98a4a27046f8858e2e89809f3e4c91197f053d45f9025c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/identity-contact-observations.json",
+      "size": 255302,
+      "sha256": "e8dfa3c18ec805ba94622347f91283429f7cf12e898473cbb5c1ff962004fcca",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.pdf",
+      "size": 252180,
+      "sha256": "d7831aad670d694f6e99a5d3486205ccac1a2856a1c2396b9abea7578049ebae",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-complaint-history-service.html",
+      "size": 252015,
+      "sha256": "8e1a3bd4e90ff212a85139ce8a6e8d86391262752498513bbcff682ef60b3180",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/issued-fdacs-reconciliation.json",
+      "size": 251956,
+      "sha256": "9776c5c02a988283f66eda0d62d2047bc510475a4d1bccc133faa0530047baf2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": true,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-moving-ordinance.html",
+      "size": 251211,
+      "sha256": "b1ab281806e2c056e60e283b20f03456e28cfdc88ad8f99f5c8af6a3514ad608",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "referenced_by_validator_heuristic": false,
+      "needed_for_reproducibility": true,
+      "recommended_action": "KEEP_IN_GIT"
+    }
+  ]
+}

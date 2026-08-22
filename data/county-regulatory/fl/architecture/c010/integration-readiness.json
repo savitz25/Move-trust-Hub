@@ -1,0 +1,58 @@
+{
+  "task": "FL-C010",
+  "freeze_id": "FL_COUNTY_RESEARCH_V1_FREEZE",
+  "frozen_head_sha": "1256170855439413242acadf68e659e53f4aabc3",
+  "origin_main_observed": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "STATE_TRACK_ACTIVE": "YES",
+  "TECHNICALLY_READY_FOR_SELECTIVE_TRANSPLANT": "YES",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "safety_conditions": [
+    {
+      "id": 1,
+      "condition": "no active critical company-routing remediation underway",
+      "status": "PASS",
+      "note": "FL-010r hard-404 landed earlier; no evidence of active routing remediation in current main tip"
+    },
+    {
+      "id": 2,
+      "condition": "no active state publication mutation in progress",
+      "status": "FAIL",
+      "note": "FL-010A Wave 1 apply merged to main (PR #61); 37 PUBLISHABLE / observation active"
+    },
+    {
+      "id": 3,
+      "condition": "FL_STATE_WAVE_1 immediate regression checks healthy",
+      "status": "UNKNOWN_HOLD",
+      "note": "Post-apply docs claim KEEP_80 80/80; observation period still active — do not treat as fully stable"
+    },
+    {
+      "id": 4,
+      "condition": "no unresolved current-main profile/publication conflict",
+      "status": "PASS_FOR_COUNTY_DATA",
+      "note": "County allowlist avoids app profile routes and state publication helpers"
+    },
+    {
+      "id": 5,
+      "condition": "current main is deploy/build green",
+      "status": "ASSUMED_PASS",
+      "note": "Main tip is merged Wave 1 + VISUAL-006; C010 did not re-run full app CI"
+    },
+    {
+      "id": 6,
+      "condition": "county selective transplant does not modify state publication behavior",
+      "status": "PASS",
+      "note": "Allowlist excludes state-hhg publication helpers, Trust Score, migrations, company mutation scripts"
+    },
+    {
+      "id": 7,
+      "condition": "all county validators pass on current-main rehearsal",
+      "status": "PASS",
+      "note": "10/10 validators exit 0 on disposable worktree at ceeaa987 + selective allowlist copy"
+    }
+  ],
+  "decision_rationale": "Technical transplant rehearsal succeeded, but SAFE_TO_INTEGRATE remains NO because state-track Wave 1 publication/observation is active on current main. Wave launched ≠ state track stable.",
+  "merge_now": false,
+  "transplant_now": false,
+  "recommended_next_task": "FL-C011 — County Research Stack Selective-Transplant Integration (execute only when SAFE_TO_INTEGRATE=YES)"
+}

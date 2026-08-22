@@ -1,0 +1,56 @@
+{
+  "task": "FL-C010",
+  "since_sha": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140",
+  "current_origin_main": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "commits_since": [
+    "ceeaa987 Merge pull request #61 from savitz25/task-fl-010a-florida-state-wave1-apply",
+    "84ca36dd docs(florida): FL-010A post-apply KEEP_80 80/80, OG, representative profile QA",
+    "b37c56fe docs(florida): FL-010A Wave 1 apply audit — 37 PUBLISHABLE, observation active",
+    "3c7d205b feat(visual): VISUAL-006 MoveTrustHub network shell (#63)",
+    "326ac11e feat(visual): VISUAL-006 MoveTrustHub network shell"
+  ],
+  "materially_touched_paths_sample": [
+    "app/critical.css",
+    "app/fonts.ts",
+    "app/globals.css",
+    "app/layout.tsx",
+    "components/hub/hub-chrome.tsx",
+    "components/hub/hub-navbar.tsx",
+    "components/move-brand-lockup.tsx",
+    "components/move-network-header.tsx",
+    "components/move-network-mark.tsx",
+    "components/network/ask-network-bar-static.tsx",
+    "components/save-my-move/my-move-nav-link.tsx",
+    "components/switch-hub-menu.tsx",
+    "lib/design/trusthub-mark-geometry.ts",
+    "lib/design/trusthub-visual-standard.ts",
+    "lib/network/registry.ts",
+    "lib/state-hhg/calibration/exhaustive-types.ts",
+    "scripts/assert-visual-006.mjs",
+    "scripts/qa-task-fl-010a-postapply-surfaces.ts"
+  ],
+  "overlap_risk_assessment": [
+    {
+      "area": "company profile / layout / network shell",
+      "risk": "LOW_FOR_COUNTY_DATA_TRANSPLANT",
+      "note": "VISUAL-006 touches app/layout and hub chrome; county transplant should avoid app/components unless intentionally coordinating"
+    },
+    {
+      "area": "state-HHG / publication",
+      "risk": "AVOID",
+      "note": "County allowlist must exclude state publication helpers and FL_STATE_WAVE paths"
+    },
+    {
+      "area": "supabase/migrations",
+      "risk": "EXCLUDE",
+      "note": "No county research migrations should land via transplant"
+    }
+  ],
+  "transplant_must_not_modify": [
+    "lib/state-hhg/** publication helpers",
+    "FL_STATE_WAVE_1 / KEEP_80 controls",
+    "company publication_state/indexable mutation scripts",
+    "Trust Score",
+    "app profile routes unless explicitly coordinated later"
+  ]
+}

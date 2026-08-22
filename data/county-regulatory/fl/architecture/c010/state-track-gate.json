@@ -1,0 +1,19 @@
+{
+  "task": "FL-C010",
+  "STATE_TRACK_ACTIVE": "YES",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "TECHNICALLY_READY_FOR_SELECTIVE_TRANSPLANT": "YES",
+  "origin_main_observed": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "origin_main_subject": "ceeaa987 Merge pull request #61 from savitz25/task-fl-010a-florida-state-wave1-apply",
+  "reasons_not_safe_now": [
+    "FL-010A Wave 1 apply merged to main (PR #61); 37 PUBLISHABLE companies; observation period active",
+    "Do not equate Wave launched with state track stable",
+    "Rehearsal proved technical transplant feasibility without clearing the organizational gate"
+  ],
+  "technical_rehearsal_required": true,
+  "technical_rehearsal_completed": true,
+  "rehearsal_validators_passed": 10,
+  "merge_now": false,
+  "transplant_now": false,
+  "recommended_next": "Hold for state-track stability; when gate clears, execute Strategy 3 selective transplant using C010 allowlist/runbook (FL-C011)"
+}

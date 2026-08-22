@@ -1,0 +1,3092 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T15:31:24.219Z",
+  "counts": {
+    "INCLUDE_IN_TRANSPLANT": 379,
+    "REVIEW_BEFORE_TRANSPLANT": 6,
+    "EXCLUDE_FROM_TRANSPLANT": 0
+  },
+  "total": 385,
+  "files": [
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/adapter-contract.json",
+      "size": 2079,
+      "sha256": "270de311fdea0f12480858e74ac92fe4fb9f7bdc892b43a93e4021101bd289b3",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/capability-matrix.json",
+      "size": 3317,
+      "sha256": "976409a6853c51ba1543f445b3e9600e3e91fbb6b3ed9a40da4186bf8d563bef",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/concept-catalog.json",
+      "size": 4982,
+      "sha256": "897717bc19ba25c4f25c97184fe626a771126d12e0ded427220d28b103c1f586",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/county-regulatory-posture-model.json",
+      "size": 1268,
+      "sha256": "7b170ede36198da6626cf4cc52a1887c12d6d329e3015d150298828605358f72",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/evidence-lifecycle.json",
+      "size": 1823,
+      "sha256": "9c826fcabe9d4dc1282035aad38d51b9b5cffd482420fbffd8f67e281fd8db86",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/first-production-feature-sequence.json",
+      "size": 1480,
+      "sha256": "f97f43a8710247b979426e76f1fd2bd3ed47cc47d4ec55218558ff558141df99",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/first-production-pilot.json",
+      "size": 975,
+      "sha256": "98b778f03ac8b025d5ca061b49721dbe57a117bf0da1171981280dd1190f28ab",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/fl-c008-summary.json",
+      "size": 2227,
+      "sha256": "c27b7307b3026bcac8fdf7f3384a3f573c621bafc7b847860ec36a40fd78da80",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/four-pilot-summary.json",
+      "size": 2035,
+      "sha256": "db81137c7b701f3bdec2e64591a6f7af5100d5ad8bf9ce9aa54d499a1e43671a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/national-portability.json",
+      "size": 1043,
+      "sha256": "144fabe4b96447a12462fea0a3fedee6a74a66fd9cd6c0c62194009450f5fc8e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/network-reuse.json",
+      "size": 904,
+      "sha256": "017276a7f1482c7f64a51da716045a8cac1ba71d9ad684241bd1905cb1d61d9e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/production-schema-reuse-audit.json",
+      "size": 3945,
+      "sha256": "5d9ffddf63079a48a4149d97ab09d2bb504aa87193455bf735f0b431cb498a52",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/recommended-fl-c009.json",
+      "size": 908,
+      "sha256": "1fb1d526528e80590a290662d0a19e269457e6079f9e4f1eb42031b115f64615",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/stack-integration-options.json",
+      "size": 2150,
+      "sha256": "f9c338db0f258ad93f83e741091e96ced4d1b6b0ff6d495feb2ec82b901cc813",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/stack-manifest.json",
+      "size": 1889,
+      "sha256": "b201dc55861c6de82d545398479ddd004e0b4c757fa98a99474a74c68e7d6338",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c008/state-track-coordination.json",
+      "size": 891,
+      "sha256": "ee09635d587132803676dc17c68ae5c9a255e7fdb12941ed2ee3afc7e3a09818",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/cohort/pbc-production-integration-cohort-v1.json",
+      "size": 119741,
+      "sha256": "66c32a4e81e8475b125d88a70268f541313a1607325e1e60b4b2807657e71063",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/cohort/pbc-production-link-ready-v1.json",
+      "size": 19493,
+      "sha256": "d2eed80bcebc1253d8f96f2ef12be0e413fe3f8d7c951a302f6a4b6aa5a1f063",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/company-publication-interaction.json",
+      "size": 860,
+      "sha256": "4cbc124f718c141e0b08503404b5813caf9863696bfe746bb076e3c0cac05a6f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/complaint-storage-spec.json",
+      "size": 667,
+      "sha256": "be3c74ea6e7e918ffb9f13730fa39fcd250b87361c30b3b72929f0fb975036e5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/contact-observation-reuse.json",
+      "size": 1046,
+      "sha256": "ef521d420ff22bc1eced596e3283061cf83d304416026c42c85512b67cef6f69",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/county-page-presentation-spec.json",
+      "size": 843,
+      "sha256": "8af4403e91fb6eb0ca1571f9861bf7701dda84fec4df91bb16fd870861449e78",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/credential-storage-spec.json",
+      "size": 1130,
+      "sha256": "962a559c5a08cd229ff6ed70ff11f7d79ead9d36c01dc2b7ef9d0aec7634bbe0",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/cross-source-link-decision.json",
+      "size": 728,
+      "sha256": "d36fd66be984236c3e8a923a1df3c15ce77aa52567fd22d0a4a4b6a40247b7d3",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/disposition-storage-spec.json",
+      "size": 705,
+      "sha256": "bb34d5755609da3d9d6137b5d3f92411a8a0747a52a51446dd8ff04f29143e98",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/duplicate-collision-safety.json",
+      "size": 1075,
+      "sha256": "668cb1f068c467a647dad0db3485a8927c1fd323d4c4b0296dc8862b8e80d054",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/enforcement-storage-spec.json",
+      "size": 733,
+      "sha256": "bb07cc9bc08f17c95961011306da86d96d507a28fe01e9afc708c66362e65258",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/evidence-publication-state.json",
+      "size": 1145,
+      "sha256": "97af5ba94da980d186f867e62726c5d66451467455f08cb4af685477f6ecb081",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/first-implementation-task-spec.json",
+      "size": 1206,
+      "sha256": "0e7973716543c513ea4f65db4f183e6da929cb44eb145b9c5a4c7828262820b4",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/fl-c009-summary.json",
+      "size": 3640,
+      "sha256": "461ddc56d44c5acc329d59822fbf54810bd04513557e9f33ef6c466517af5dc2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/fleet-decision.json",
+      "size": 505,
+      "sha256": "bb28bfdb8da2602bdf29345b650981a5146c0f50d802b2c20c536e8367abd57d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/florida-identity-snapshot-meta.json",
+      "size": 752,
+      "sha256": "28fcbe647b8bb7d99e22b8295be5a7e65ade4669649d8d791ec86901248a9cf9",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/florida-im-company-crosswalk-current.json",
+      "size": 436650,
+      "sha256": "44510e55b687da11bece62ad2d860a3cc1566a17756a3971be61f07c2ab9a80f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/freshness-history-spec.json",
+      "size": 518,
+      "sha256": "733c4c491d51cfd8e1d169545e6b5fb5ad707a8e09fe230c6150a2093aa36faa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/future-data-delta.json",
+      "size": 713,
+      "sha256": "ccbd54c74e0c56d8aa2390c8c5892671f175b58b1e32257da33c94c35481e118",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/implementation-sequence.json",
+      "size": 1494,
+      "sha256": "26fef8e7fd6cb00e794bdf3bf8d2efd3aa96e5ded1d0be2ed5d54c58ce2b65ff",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/ingestion-upsert-contract.json",
+      "size": 1002,
+      "sha256": "14c171ef91259e02a8fb5ebe9d8b3627f9c4244b6402aa0436c02e0580672052",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/meta/raw-provenance.json",
+      "size": 2247,
+      "sha256": "665bf9855938fdb8ba431875ec871bad91faf26afc58053c98c3d268f63ca7c7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/meta/stack-vs-main-note.json",
+      "size": 808,
+      "sha256": "0569f4f47eb4da308b48f2d186b4b5f1d216043d8d85f44df55cc02953ee903b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/migration-specification.json",
+      "size": 893,
+      "sha256": "4b38701865ac51172afb2808ba1aff0a3aeaaea242e1344c77ff1906e8d4ee86",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/network-portability.json",
+      "size": 1050,
+      "sha256": "ac8b9505d7a4cfae11014b9785b57f02433fd7989630430ea1bede9bb513af20",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/owner-officer-decision.json",
+      "size": 690,
+      "sha256": "54989c62cb8761ee921fdaf8ced7ab337df00a93334caa41fd398b84a85018ff",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/pii-gate.json",
+      "size": 451,
+      "sha256": "99ef7a7fd96a468d60a604460e14f492d7e135faac621c4c0e206f651a532028",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/production-storage-decision.json",
+      "size": 2836,
+      "sha256": "84799ffc775d886be626407b5c54774044a97a40373dd8c0a0c19c519601363c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/profile-presentation-spec.json",
+      "size": 1005,
+      "sha256": "4a58222b3de50bbeeb9544c5490831ac730ba27a9ad452476daf733eacdbb520",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/read-api-contract.json",
+      "size": 890,
+      "sha256": "f428827a08caf2e20f2402d9e441b2c4b2fb9a18e9238ac3f4d628b8215c29c3",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/recommended-fl-c010.json",
+      "size": 1159,
+      "sha256": "b2310f365559f85320fe54b17560ea641e783892d60d5fdb3e29e2773a9b8a97",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/rollback-spec.json",
+      "size": 681,
+      "sha256": "d6793563ec17915aa3a88ba7eefb3b7ae50151c1d52a7541998fa144fbde8a83",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/selective-transplant-allowlist.json",
+      "size": 780,
+      "sha256": "f8ba9ea64b7e5658646016cee22bbd700a0af5aa430b24816d3ee98a20c054e4",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/source-provenance-spec.json",
+      "size": 1026,
+      "sha256": "b0da0b9481f6a3038c8429cd943b86987fe160393e6ef97063c22dcf5afcf69e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/state-track-coordination.json",
+      "size": 1279,
+      "sha256": "5412b79ac0cef7479867b1aa324b5dc6bd68df447eeb2925e5c5e3aa6d80d418",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/wave-a-spec.json",
+      "size": 1196,
+      "sha256": "eab4b71eaa6af976d3abd060eff18ebf0118ffa3ffac60b1113c1b91d8437af8",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/wave-b-spec.json",
+      "size": 588,
+      "sha256": "b850f669c498d2bbca158a681c213f8470ae3d405ecdf5b8e08a266818a4e247",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/wave-c-spec.json",
+      "size": 695,
+      "sha256": "996d196243dbaee10069746ad738ecd14f29918c9a7450b09e3b05c7f5212a48",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c009/wave-d-spec.json",
+      "size": 548,
+      "sha256": "d3afc19cca3e61568bbf19263f2fa51bbc254d56fb3830422dcdb6d8d3d7f983",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/conflict-report.json",
+      "size": 2609,
+      "sha256": "d4301de69c8a80d4d94fcf12547d1f9053560c1b3d9438369b796577c4d28704",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/file-inventory.json",
+      "size": 129322,
+      "sha256": "97e7bc1abc08e7c4ad5893dc45bc792535128f5ba2dfb3a9895c1fa6fe1daa15",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/fl-c010-summary.json",
+      "size": 1281,
+      "sha256": "72f915a43b617795921ce45f8a1f943ed6b6a0ef67a2e2f679c5d6d0b2626d1f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/fl-county-research-v1-freeze.json",
+      "size": 3747,
+      "sha256": "e0fefc7bf706ac0d9b6544c7597d20c1314983c04820b8a885ee1b8c30209d94",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/future-integration-manifest.json",
+      "size": 2102,
+      "sha256": "f20f179face49a200895316de88d59dc8ed2021d81810dff7e603bdc032ee9ef",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/integration-readiness.json",
+      "size": 2466,
+      "sha256": "5bf601fbdfd6b0f490e0e7cc1fc89960135a9b6a11ebf17b5d54fdbacc3ef4ad",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/large-artifact-audit.json",
+      "size": 9278,
+      "sha256": "077177dc0aec3f9a6a1f1cb7fb1eb614e3c27bb2c3d4b7522b917b625bcc0978",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/main-compatibility-audit.json",
+      "size": 2377,
+      "sha256": "d45bbfd1e8aa80d503a2bfdad6b11e48ee6d112508e76740d4be6dbc6a96352d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/pii-audit.json",
+      "size": 212,
+      "sha256": "640d46f891871cfbd916b1ab8ec9f665c62c595b3771a37b00041019db05efbd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/rehearsal-copy-report.json",
+      "size": 614,
+      "sha256": "dd677177b5f37395e47dac83f03bc0182fb235ed1dd6954a6d8b6d52cc68bdff",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/rehearsal-results.json",
+      "size": 2112,
+      "sha256": "7f3eb280f5a31288ee867928106548bace8c9a8cb7c922eb6c4189e3d736a385",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/state-track-gate.json",
+      "size": 954,
+      "sha256": "dde4512013b953b1ff4ad3dbab05334e8c916d11eb1523c80b99352039539f1f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/c010/transplant-allowlist.json",
+      "size": 30276,
+      "sha256": "75581682d878474bfe1f4930ce92ba768de8902fbf80f572e8af08dc1e917eeb",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/meta/raw-provenance.json",
+      "size": 976,
+      "sha256": "35e3a080fc832f858a217f75d8734bc21cc895a3b1be81603cfc3a77599e40be",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/architecture/meta/stack-vs-main-note.json",
+      "size": 459,
+      "sha256": "fdbedc9864c0b30e4847f11c774153e95a3417db52ec852329c0e20465c39572",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/meta/raw-provenance.json",
+      "size": 7702,
+      "sha256": "2e9d949159bf77f3f445a45894b4be092c85ca9220e903fb2f6512f498f83faa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/meta/stack-vs-main-note.json",
+      "size": 273,
+      "sha256": "ae208d890d51b6d24e52bd6aa8b642faa370377dd7a9428e767f619f9e6f3069",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/architecture-observations.json",
+      "size": 578,
+      "sha256": "63858708bfb3878c774ad1391865b0a2329b5d8fff038155fe26c3023a984dc6",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/broward-vs-palm-beach.json",
+      "size": 2517,
+      "sha256": "941c794148d1923fc6e20765affe51a960a8f0fabd33c73908452cf5d519dab7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/canonical-matchability.json",
+      "size": 242,
+      "sha256": "ee3e9ab51ea80bba1bf76f0c057e891fc7df9a0eb1816edc6f11daecc2abb650",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/complaint-observations.json",
+      "size": 122,
+      "sha256": "2898668c7a28c8edfe482490697f50bc6e2638655a078dc970c7b924e938e24e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/complaint-system-profile.json",
+      "size": 735,
+      "sha256": "804ce82d0c0e93ec9147bb2c9f07de503fb97949134c57dc3610c9b73edbcb42",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/county-page-potential-mock.json",
+      "size": 775,
+      "sha256": "9bc80d04fa0ea4d31dc1ded64fdf496062c20b732176b462b8e6496b8c54b0a5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/cross-source-anomalies.json",
+      "size": 541,
+      "sha256": "8dc13865e31c9dd61cb5d81d6d876640d09f01d54c474c7fd9ff1f6d8e576948",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/enforcement-observations.json",
+      "size": 213,
+      "sha256": "f10761f8fca92fb9bf7d40982c4bc17dc21e911732a3b65455b660315e7e106c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/enforcement-system-profile.json",
+      "size": 855,
+      "sha256": "86ea688402f0800641255cb6775fb0c202402309b150d04dbf46c1f8a82a4a1f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/fdacs-matchability.json",
+      "size": 668,
+      "sha256": "2fca09e587c668fd8c9f32bd6dd889a47206defe69423ea44c053bfde280fe38",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/field-inventory.json",
+      "size": 4893,
+      "sha256": "d0e649678f4fae664113e6473b846285a16a04b7a131291ef7d1fc5a14f028c6",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/fl-c004-summary.json",
+      "size": 1292,
+      "sha256": "e51558e435605319296827e2db9a2924d731e458cf7ca891a7dc40bbcae6e7d7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/future-company-profile-evidence-design.json",
+      "size": 1141,
+      "sha256": "1497f8793e3c477452b1f3ace516eaf676f2cdba2bfa34417fc03f04dd09ec08",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/identity-contact-observations.json",
+      "size": 414,
+      "sha256": "ac2b2b1cabbd5041ed63774f7cebf7bb57931f0f8b9292ffe9e6ab561ac0eb2c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/mover-registrations.json",
+      "size": 637,
+      "sha256": "5723257ac45e41d15be956a292be19374c650e8b9c469fafb6d7c1fa332f8883",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/network-reuse-note.json",
+      "size": 444,
+      "sha256": "ef7123e44066f5c1338d99444b1c465cd1b4a1036323921c68f462fb7a40de37",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/program-verification.json",
+      "size": 2549,
+      "sha256": "f61a94ad851efe773a9cfe0a6a9c3c019d851dced8aa22d5936341895f390e28",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/roster-completeness.json",
+      "size": 1009,
+      "sha256": "296e68d8096527a37ecf5c53e4737f25666b5a2028ef3cc25efff06ed52fe571",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/source-interfaces.json",
+      "size": 4117,
+      "sha256": "947f8149016c077cca1efbe22c1421df680097fe6ca2513d193284d3bb216353",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/vehicle-decal-profile.json",
+      "size": 766,
+      "sha256": "07d1939222530a04673b6cd16830d122fa410c1df2521e2be6bc89abda48d0af",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/normalized/vehicle-permits.json",
+      "size": 381,
+      "sha256": "10e049fdb79b3f2722b117f16a61bb274e38602ddc215589116452310074b28d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.pdf",
+      "size": 722047,
+      "sha256": "b8f6529700f39251b8960987747952adb6081d9aa47373eae3ea20a2bf7ad28d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.txt",
+      "size": 22909,
+      "sha256": "ca44dc75fc8d4b5cd185e388f79c49a3c3c1493dfb498b4718baf402e207c5f9",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.pdf",
+      "size": 322580,
+      "sha256": "588c7412d27a3741c5e9743aaeb8d468f2920c74b7d49c658fef3d8e67311abd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.txt",
+      "size": 5506,
+      "sha256": "2a2690832ee5b0ffa21c998590678c76680855e65c5d6a053e6a8722aed63a1d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-faq.pdf",
+      "size": 501418,
+      "sha256": "784951348c0ba062a0ff4abea2be9e73e27319a67aa96531d1cc2f9c598bc527",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-faq.txt",
+      "size": 24353,
+      "sha256": "e31740c4f8bbed251b22cb8b82bdae68a4a7c0c73a4c2627e4cc92b570361ad6",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.pdf",
+      "size": 395768,
+      "sha256": "d5cb2e244939a6a1d67d1be84625f031513ea45bba8b084cce860c3aff352bd3",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.txt",
+      "size": 9683,
+      "sha256": "856b7a0dc0aee7db664d862d6642e213bbd0c7dbdaccfdbb669f4f93b7daa97a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.pdf",
+      "size": 982024,
+      "sha256": "9f7e136f17f0456b072d069d0788f444e324373b9039c54e0decd339073a0e66",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.txt",
+      "size": 83972,
+      "sha256": "96221cd96ecbf29e15670084d343c36d4ba9a051a93fa8d177841115a386c17f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/excerpt-movers-registration-program.txt",
+      "size": 7868,
+      "sha256": "27d453faca86c5339cc527f61bc78721fd9aa075a13424f367d293db4845db9e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.pdf",
+      "size": 721042,
+      "sha256": "dcd364c45225bee2cfdfd25eb59757cc2c1805e40c0572bda151a47d51c9611b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.txt",
+      "size": 6795,
+      "sha256": "885091c7d2bfb6bc40cc2465c1f55e26ced577340e2dfbf0dafae932076bc2aa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/page-broward-consumer-home.html",
+      "size": 239810,
+      "sha256": "14ceb61bb306b5428fb97c0e152651a27103551cd25db2dc75bf406dc81de988",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/page-municode-ch20-movers.html",
+      "size": 6100,
+      "sha256": "dd21473c395524a7d57b0c710aca2257097b1320c7e1a4834ece1553afcfd1f7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/TriCountyMovingDisclosureForm.pdf",
+      "size": 232687,
+      "sha256": "d5dc6bb0be65f3dbe05637597854161931a24a00c724a6d6ffcb81c20a7109ad",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/TriCountyMovingDisclosureForm.txt",
+      "size": 8227,
+      "sha256": "f2d059ce9dda38474dddce7c16b2fa91bc6f48f190aaeae469e25f53bcf8891b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/address-branch-analysis.json",
+      "size": 52226,
+      "sha256": "2130bd8804d2bda97fc12b77b031673d82ee11a38cdc584366c2e7b969cf0067",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/c005-baseline-recomputed.json",
+      "size": 814,
+      "sha256": "22a6438f22c20440c6e46a4397c84226c522c79b179d5171ea28fe74a89aee1c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/canonical-crosswalk-summary.json",
+      "size": 412,
+      "sha256": "4343b1ddb75c35c8f5f1a352ac4647c92426dadede65c169310927b185f62552",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/citation-enforcement-qualification.json",
+      "size": 433,
+      "sha256": "a0e2e08a860b9da2f38fac33d39d3c8c9031d1f0ed82c0127aff04a2975b3e7a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/complaint-mediation-qualification.json",
+      "size": 331,
+      "sha256": "07ed0c7b1ff6ad0f731384653a1a3c65b0c29ce584f543b80cef58c623315dcd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/cross-source-conflicts.json",
+      "size": 55459,
+      "sha256": "ed5b24576965e719f1a7cf677caf17de3f94fe24e3483b6b448d8972c552edf9",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/fl-c006-summary.json",
+      "size": 1636,
+      "sha256": "0b49d720b469e49aa929f0d38f5d37126ddc52c6c3e1f6416c4b05eebedecf35",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/historical-status-model.json",
+      "size": 133790,
+      "sha256": "229fc0559ff12c91a5329ada9a83d0f29cc328ffeb1d066fe7c85c516ea9b7a7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/insurance-workers-comp-safety.json",
+      "size": 630,
+      "sha256": "8697275057bcd462d83cae7de54bead4271ad3a8f033421beabe0220aac8f495",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/issued-fdacs-reconciliation.json",
+      "size": 251956,
+      "sha256": "9776c5c02a988283f66eda0d62d2047bc510475a4d1bccc133faa0530047baf2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/lbt-crosswalk-qualification.json",
+      "size": 66110,
+      "sha256": "d333b0fcdfd6cfc54562b9191de9919c1b518e714f6f7a7a2bcb3a34d4851f8a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/MDC_COUNTY_EVIDENCE_V1.json",
+      "size": 1133,
+      "sha256": "82676534bce4547021af93206dc6f1dcf6de24247d394ad999c4fc1189f5de50",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/MDC_FDACS_RECONCILIATION_V1.json",
+      "size": 1214,
+      "sha256": "472cd5c2508b80cad8fef810d3ebfdc3887e9e22572ee8b4bdc2ee8d1afd04bb",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/moving-credential-evidence.json",
+      "size": 196283,
+      "sha256": "a5f5fd659b6a6809ad98a69ee18d62916a8d9ff326817c5b2092908554ab69b5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/multi-license-relationships.json",
+      "size": 22475,
+      "sha256": "1c347e18a0ef82d2d88f8eb6390561abc5fb73995b9897b9220fb89957ec4bb2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/not-found-analysis.json",
+      "size": 10994,
+      "sha256": "19f4f53be8d0b33d81d0e4e1b333fb50277d8a74396a5b852147016ca4169c2b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/review-triage.json",
+      "size": 16745,
+      "sha256": "972e2b4aa3fad543b6ffea635bd5ed0bce658b12879ce04fb2c47868523c4dd7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/source-authority-model.json",
+      "size": 1352,
+      "sha256": "f49f0462ecb527f8625800b70df5421f9aa0bcc9bcd5f004d4bc79af199c56e7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/stack-vs-main-note.json",
+      "size": 268,
+      "sha256": "af7cd842b7e4558b5e353681a44e0df53f305f8c0786065f5e7d9b6b0e3bc638",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/vehicle-findings.json",
+      "size": 367,
+      "sha256": "63dfd6203a08767efaf88986c5d1bafd6a5fff18027f1c32546e0cb9b7a7984a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/c006/verified-precision-qa.json",
+      "size": 63588,
+      "sha256": "2b3e61014fd9e20338c727982ca19e90e90d111e0b518578fbddf4668ca9c031",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/florida-identity-snapshot-meta.json",
+      "size": 752,
+      "sha256": "28fcbe647b8bb7d99e22b8295be5a7e65ade4669649d8d791ec86901248a9cf9",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/florida-im-company-crosswalk.json",
+      "size": 436650,
+      "sha256": "f4b36a35733ae50816dd852236a19192504dc593324b8f0f2fbb52d1cbe5677f",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "reason": "duplicate IM crosswalk snapshot — prefer architecture/c009 current snapshot",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/meta/raw-provenance.json",
+      "size": 11329,
+      "sha256": "644edee6150efeefdda039a0bca4eaed669660be44ca0f5778dc4d9e95a63f05",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/meta/stack-vs-main-note.json",
+      "size": 488,
+      "sha256": "b85473269a384abfb8f0b449136d85e5ea8b93eccbeb9c2dc8e779aa56ddaee6",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/architecture-pressure-test.json",
+      "size": 1371,
+      "sha256": "37d935193957fc346448226c8d3e0d421fece26c293bee86d7e5d0f9300d45b8",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/branch-model.json",
+      "size": 384,
+      "sha256": "ac5573c93c9206829d8a51f27893fcc989acf972d841696b90493d3c64dca01b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/branch-observations.json",
+      "size": 575,
+      "sha256": "8c17f9617a2a3d645c19906add7eb12acc4cf7c7f209bf415409dc57145374aa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/business-tax-observations.json",
+      "size": 152209,
+      "sha256": "b2def1447e0ce510c6e028164e5c526a087aa5d4a8dd91841cc60ac4fd046135",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/canonical-matchability.json",
+      "size": 43723,
+      "sha256": "e598340970f161b634ad0ed8863a02b93f54f98f3e1cbd7a017f6a844eda9ae5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/citation-observations.json",
+      "size": 216,
+      "sha256": "f15af193b0c2ca0f81067e24a9ad5f8af56a10deeafeecff6820d9464cf211cd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/complaint-dispositions.json",
+      "size": 174,
+      "sha256": "05fd99d87c0f5b091eeca6b8cad92f3c2d916339936708b2b2811ce180a56dd0",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/complaint-observations.json",
+      "size": 235,
+      "sha256": "5ccd12079dafb59ada3421f66ea0c47c68ea6e42cbf4de392cf07616c1976b0b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/complaint-system-profile.json",
+      "size": 550,
+      "sha256": "2db3808ea1561e875cace0ecfa74c089e144b572bd87798af62d0064dab21796",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/county-page-potential-mock.json",
+      "size": 1054,
+      "sha256": "342c29366fcb7d4c168259859d33ba40279b1cd0e0f7eb2c65542dbef4a796a8",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/court-bulk-discovery-note.json",
+      "size": 1666,
+      "sha256": "633f3fea5a466fa1c59a57220b83daefed1dee9af57890593bd68487c7561b5d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/cross-source-anomalies.json",
+      "size": 6666,
+      "sha256": "cfddc9a253ad4e4dbd225f1966ea41f650e1d2cd0d2c150e5366d20e7d4640ba",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/enforcement-observations.json",
+      "size": 219,
+      "sha256": "b48fd0324fbf6a1b8a0417a8304688267bcfd0980344723e9c9e7e34daa6feb2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/enforcement-system-profile.json",
+      "size": 648,
+      "sha256": "2b8b8340164cb2fa2d53bc0b5aba446006715064ea12631b61d0b60051b5f934",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/fdacs-matchability.json",
+      "size": 74527,
+      "sha256": "92a83ee3bcd598b9d19da8a309b9db5f3c7438261572927b58e3c4412179b422",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/field-inventory.json",
+      "size": 3084,
+      "sha256": "3b58f9f5e196a2c32e4f00e4c049973826b2f1636d713e0c231b518b3901be6f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/fl-c005-summary.json",
+      "size": 2139,
+      "sha256": "da79a9e36c35d0a303831d07cb348e524e21ef9faa1cab3c22a6f46219be0bfe",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/future-company-profile-evidence-design.json",
+      "size": 1778,
+      "sha256": "1e46449c75836920953c07f89f4324d43c73eed3670cfeddd1d01e3170e66b50",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/identity-contact-observations.json",
+      "size": 186284,
+      "sha256": "bf236f350b88d1400607428e3bf4ca8725b7d13637d88932e9126ff8ede6da7d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/incremental-value.json",
+      "size": 1380,
+      "sha256": "a2d8c55962cf3334c18dc87da4fb28e876a37286d2e356772d556ee5e6d749a1",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/insurance-workers-comp-observations.json",
+      "size": 669,
+      "sha256": "b751e7adf814a11137baf9eddf72e75dccca591ac2b5cc7528f8621a037ddea1",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/lbt-crosswalk.json",
+      "size": 60231,
+      "sha256": "70d31ce8514035542c7b42749c339640efef18117b52b6d1f25e822093abd5b0",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/mover-licenses.json",
+      "size": 599404,
+      "sha256": "0095698e3ce1bf4e31aa844ad3a90169ea5ad4e7f8ee85b4826803d8a7be157a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/network-reuse-note.json",
+      "size": 509,
+      "sha256": "8998f2e93ba4ca4fb1fa0aaae672bd51014e4d189710193a7d8ccbb67f6f6d3c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/program-verification.json",
+      "size": 2145,
+      "sha256": "90f21c14272a9f2c3ea1692fa949608d977d3b41c3c98ad244dcbb97a4ff40e1",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/roster-completeness.json",
+      "size": 1261,
+      "sha256": "220cec66d3f11b88079eae859f74fe678039cda4eba4997688eb7785f5c3d5aa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/source-interfaces.json",
+      "size": 2246,
+      "sha256": "d6a5938c248be342a7f13dd71307906e6fe32b458f265fff2e42153a3f7b5c65",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/three-county-comparison.json",
+      "size": 3454,
+      "sha256": "651300560251fd5e205af3bfdda20ba64d1b6821302f7c98b9fd755c71367056",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/vehicle-observations.json",
+      "size": 505,
+      "sha256": "1c823b68fcc86de01653e01e2abd8b9c7988893d32c5e4d32d257f137851614f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/normalized/vehicle-profile.json",
+      "size": 587,
+      "sha256": "926c051e5d985d9e564a3ce0226fd426ed00c59e4242f019a2afb61c1ddfd66a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/architecture-pressure-test-v1.json",
+      "size": 579,
+      "sha256": "ca0d5a50226625ee80ebedfbf7195f6e5943839e91812d9de48693f0b073df05",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/county-page-metrics-mock-v1.json",
+      "size": 915,
+      "sha256": "9cd8d6ad43e4b5f8a6ff240a6f2d11e9ac52100e7f1e44aee4442e6df803f43f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/fl-c006-summary.json",
+      "size": 1636,
+      "sha256": "0b49d720b469e49aa929f0d38f5d37126ddc52c6c3e1f6416c4b05eebedecf35",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/future-profile-presentation-design-v1.json",
+      "size": 908,
+      "sha256": "a6cdaffc513721378097ec0dd90592377b811a8a889302e67b24763635e63ddb",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/incremental-value-after-qualification-v1.json",
+      "size": 1037,
+      "sha256": "fc592f823acf0c63981af34b6860e69e84cfbd513477156fc1223fdbf103d497",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-business-tax-evidence-v1.json",
+      "size": 74075,
+      "sha256": "2eecab1e94e99dc6af5cc7589481284fccf0213fdcfc577dfa1970bb94569ac2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-cross-source-conflicts-v1.json",
+      "size": 55478,
+      "sha256": "7065fafc773fa6267bfd1a4e865b3280d27d456fec35952ee199c21dcfa01132",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-evidence-ruleset-v1.json",
+      "size": 2589,
+      "sha256": "7fd5846aa678e0c281cd1884aa8a760bb1e8b8f3ba2cab7da0ca7d8ba1021fdb",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-fdacs-crosswalk-v1.json",
+      "size": 106924,
+      "sha256": "958a15af9b2479e8220d890f542f6ff4e88216bcf97c98940b1f4477a2a34db8",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-fdacs-unresolved-v1.json",
+      "size": 13919,
+      "sha256": "ffccc16224db2fb447a80e4a90870b3f7689ed2e369762a3bfd45c168d49c9a1",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-historical-license-evidence-v1.json",
+      "size": 125568,
+      "sha256": "c74fbc362996140b1fb5d389f963b54eb3b7ff1b422be76548299bf9821b7e3b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-lbt-crosswalk-v1.json",
+      "size": 66103,
+      "sha256": "7a3308e330dc07da21bbd6977feefaffbf462f55d32bf418add26949d3bcea28",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-moving-credential-evidence-v1.json",
+      "size": 70914,
+      "sha256": "3db4eddd1f54b6cf600f5f188f96cd971f8770d1d138fd3c861c6d6f8e80c90b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/mdc-source-authority-model-v1.json",
+      "size": 1352,
+      "sha256": "f49f0462ecb527f8625800b70df5421f9aa0bcc9bcd5f004d4bc79af199c56e7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/network-reuse-note-v1.json",
+      "size": 589,
+      "sha256": "ab80b83dbc7a229620f2ebcaf260d8715687ca3f402cb564b4fc4573984e9c2e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/qualified-package-manifest-v1.json",
+      "size": 4822,
+      "sha256": "881cac736bacd004f484b97b52feebadc53adf137ef25ebadcd7cf62042dbfb2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/qualified/three-county-qualified-comparison-v1.json",
+      "size": 3158,
+      "sha256": "c4d36f28952a9d5e1743c0f43a15ed87beb0370c4ce8d4962e433dcf87ec0dfa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-detail-samples.json",
+      "size": 2771,
+      "sha256": "3f6fc5f57bf87ceccbd5e817656dadafc0c9a643eaf7eeea25944e05b92143ba",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-moving-roster.json",
+      "size": 498884,
+      "sha256": "a69fcb9a7add06a1080c8f4e77e17f7ed06ae3cc19880983986f4e84977c6b52",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-business-20tax-page-5Bsi.json",
+      "size": 1321046,
+      "sha256": "80cd43a8178dc3538bf6de96e40d6f79f74ca055ec137819a4a2a4409af3502a",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "reason": "large open-data catalog dump; reproducibility optional",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-local-20business-20tax-f.json",
+      "size": 1910079,
+      "sha256": "e42ac21527cebd73d99107a3fcb34af9c5034844550d7b93a0dbed5f807ac362",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "reason": "large open-data catalog dump; reproducibility optional",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/instructions-self-service-portal.pdf",
+      "size": 5885075,
+      "sha256": "a64a4378a20d29da24ddb20c5d166cb345d103276033b013cea357c8b6d8d089",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "reason": "large instructional PDF; not validator-critical",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/lbt-mover-related-extract.json",
+      "size": 245730,
+      "sha256": "5b333746fb13130d81b9bf23286d16bdb72692358d8c8c4bcdffa200d7bde27a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/lbt-moving-category-extract.json",
+      "size": 183552,
+      "sha256": "01c484270a00781473f9a2fd1674130146b1d64b5f3cea7deda19504235af06d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/movers-consumer-disclosure.pdf",
+      "size": 164921,
+      "sha256": "222c0cd32c55f04202148758389c79b42b414463c043003802891538655d8279",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.pdf",
+      "size": 252180,
+      "sha256": "d7831aad670d694f6e99a5d3486205ccac1a2856a1c2396b9abea7578049ebae",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.txt",
+      "size": 8729,
+      "sha256": "408181babc750a024103dd61041b85d9ec07bb93deb5225841247878a8f16cfb",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-business-tracker.html",
+      "size": 110777,
+      "sha256": "5b3139273cbe1b2ce55b1ae1c4b71b0a14c7afbc0f4a87e301a0aeb7205cf35e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-consumer-protection-home.html",
+      "size": 96767,
+      "sha256": "3582be7a4e45681420b1c5623d25149026dc26114a3811a519064231084ff335",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-lbt-opendata-maps.html",
+      "size": 126949,
+      "sha256": "dee61eabfd0f62f666ab38cf84a47cdb3e67624ca5fe032b3a5d3686beaed895",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-lbt-opendata.html",
+      "size": 126961,
+      "sha256": "38f036387b75cd80ff95b2047fa39f6e1b84ef73146a75d73fe408b48cc11cfc",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-moving-business-license.html",
+      "size": 71740,
+      "sha256": "f996af452ddd0a2bb09d81e2b3992b428839a6b5a3eafa1e9a902a29380cc946",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-moving-companies.html",
+      "size": 74467,
+      "sha256": "a3fda6ff29b84b05fc6c4775c0a673d52c15c679e8193ed0a70638004dc0a2e5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/c002-baseline-recomputed.json",
+      "size": 633,
+      "sha256": "4ba5c3be52019b5f6c3ca0f572df4645a45ebba14046bdb5ef6d90a3f1039400",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/canonical-crosswalk-summary.json",
+      "size": 329,
+      "sha256": "32502e29cb95528cd106693f832aab68e1fa8e9e327209b585f63678bbe39764",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/complaint-evidence-qualification.json",
+      "size": 17885,
+      "sha256": "27404a920ab77be348f44fc75f890bedd47d1bc54a7cb4af954f9d91db22648e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/county-pilot-readiness.json",
+      "size": 1537,
+      "sha256": "adf616d49de5a21c22e715abe1c7b8c137b62eac058959259f707b44c4d59608",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/disposition-catalog-with-groups.json",
+      "size": 21176,
+      "sha256": "7fbe6a9a4653c7e875c2322dfc027cea916fd002557150e46e984b4382244cfc",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/enforcement-evidence-qualification.json",
+      "size": 53887,
+      "sha256": "7283a1bd4410899635d964be39e12d7f28cec692db38c08f5b3fffadd8f9f5d5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/fl-c003-summary.json",
+      "size": 1558,
+      "sha256": "4c4605926853374caeb80f1c58c6fa39d9ca8301c7ce64736d8adbffd2df1eb0",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/identity-observation-qualification.json",
+      "size": 84539,
+      "sha256": "d659e4ff4223e56190b52e1dd72e10c8130a36fe7fbba20d02cff6ec8042c757",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/jurisdictional-status-pairs.json",
+      "size": 17401,
+      "sha256": "c9da7882698d53f0e18f73478737f4311df42a0f004c06c757c992c23d808c36",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/not-found-analysis.json",
+      "size": 52432,
+      "sha256": "b1f857a0b382b9adbf1ded297dfb697dc4c017d99e081e690abeb597c8cc5b12",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/PBC_COUNTY_EVIDENCE_V1.json",
+      "size": 642,
+      "sha256": "a27ee88d1291d89cbd18bde0d9a22fc451f4447bf78b1324a34094a8bbea51ea",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/PBC_FDACS_RECONCILIATION_V1.json",
+      "size": 1034,
+      "sha256": "ac71804faf902b4353788e21e1c5b4f793e68ffbe97ae780dbde390d9c6edbb3",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/permit-evidence-qualification.json",
+      "size": 101686,
+      "sha256": "2cc0ddb9a92490c8aa24fbd097b9d00341d8bdc4fddef09fb5a6339ddbf16fde",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/permit-fdacs-reconciliation.json",
+      "size": 265976,
+      "sha256": "e2bdeb02b47d2511aa98a4a27046f8858e2e89809f3e4c91197f053d45f9025c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/review-required-triage.json",
+      "size": 9404,
+      "sha256": "c0b877a78133902145c7d5c74312e6d147b925ec8674eb9f0cfd489b45707c63",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/source-authority-model.json",
+      "size": 1735,
+      "sha256": "8d6bcaac0c565166fc68036dd3d362df7d2452cdfcdc9da897b10aa50a068776",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/stack-vs-main-identity-note.json",
+      "size": 903,
+      "sha256": "6a62cb209dc057fc35319dadcbc73b8eb3511775c7cc1ee41bf22bdb9f3ead72",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/c003/verified-precision-qa.json",
+      "size": 31409,
+      "sha256": "07d98e80afe067ba4d59fb9aad96a5478d00f9ddaeb203a0f51d2dd709de40df",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/florida-identity-snapshot-meta.json",
+      "size": 752,
+      "sha256": "28fcbe647b8bb7d99e22b8295be5a7e65ade4669649d8d791ec86901248a9cf9",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+      "size": 436650,
+      "sha256": "fae823e26231327a2ef117071048087ac8a2c01e845727baaa456d43709f2808",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "reason": "duplicate IM crosswalk snapshot — prefer architecture/c009 current snapshot",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/ref-fl-004-canonicalization-manifest.json",
+      "size": 41850,
+      "sha256": "cfe97f850da361ee8a121a826c012741db9e80e79c3610cd6cc4b6e98e40b324",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/meta/raw-provenance.json",
+      "size": 35280,
+      "sha256": "2c682d0992e6dd4a3b87bf4e4c16def4618a2b7aa1ff62bc7e7a689d69f266e5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/alleged-violation-code-catalog.json",
+      "size": 17786,
+      "sha256": "87046f5004b3f88da59d42700f0f144603d36087e95b49c92ec746365a7ba4f6",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/business-information-reports.json",
+      "size": 38206,
+      "sha256": "34f1ecbcfdc16a0d27772633e6ee25859552ce356cbf368bac4f0b7c04dc02f4",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/complaint-disposition-quality.json",
+      "size": 711,
+      "sha256": "2f84ed86741658514f7d38fde9a883596ab8a7fd8c040fc4d262f765aa7254cd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/complaint-observations.json",
+      "size": 23481,
+      "sha256": "fa783c2aa192dcf19e51d432cacf8da172ba95b4669b7a3187314ff8c65eeccd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/county-page-potential-mock.json",
+      "size": 986,
+      "sha256": "d81d90733927ca0980162656c6d28cc0d4a532ab12fedb623ffe8578a5dd5d18",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/cross-source-anomalies.json",
+      "size": 45603,
+      "sha256": "2d6e8d01133d07ac64272c035e1035738869f5b24b38b6557dd1a914797fb78a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/disposition-code-catalog.json",
+      "size": 22275,
+      "sha256": "b82af0740aecafd58fa2d4f5a93a47a7f9653f8da8e1bd6736c17b8e98a0de94",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/enforcement-observations.json",
+      "size": 62542,
+      "sha256": "3ec3fcbe5bd8feb4d640136a688483168a67cb2e0f1a39ff24b35466d218151e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/fdacs-matchability.json",
+      "size": 87951,
+      "sha256": "19a8219f7fcceecc240460a6533d20a9806e81e88b68c3927456e4b66da6408c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/field-coverage.json",
+      "size": 2847,
+      "sha256": "6b8b212073c52d794aa9f927405bacc80761a443becef79af6310b82d4270de7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/fl-c002-summary.json",
+      "size": 864,
+      "sha256": "2f6c76007c4fa0a7a1871451c9c01350664619536b6d03f9fa0858610150bffd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/future-company-profile-evidence-design.json",
+      "size": 1413,
+      "sha256": "d84a6d64a263b1d95d1e3088d7529aa644ad23323ff383e0e329dc50aa385fe4",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/identity-contact-observations.json",
+      "size": 255302,
+      "sha256": "e8dfa3c18ec805ba94622347f91283429f7cf12e898473cbb5c1ff962004fcca",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/incremental-value.json",
+      "size": 1154,
+      "sha256": "3f04200b0de5483ed199a182641ca983dc670292b976076e71f5b7a5a07d5c33",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/normalized/mover-permits.json",
+      "size": 235987,
+      "sha256": "b1c85ac4488494263bccd127bcec8920225a253277495d591bd571609292e20b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/complaint-evidence-v1.json",
+      "size": 18815,
+      "sha256": "d5692f1a7bdfcb252bef184c09e259833729cc0aa5761d1c798e5c0a1f3dea66",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/county-page-metrics-mock-v1.json",
+      "size": 1236,
+      "sha256": "cd0ec66f74c6362016e6ebab4925ade11fec6cd5ed82d5e68cd5d2ca90536d90",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/enforcement-evidence-v1.json",
+      "size": 52929,
+      "sha256": "d2b925239612a3df26e038dd617fb685a64808f7688959386498f999505fc0ce",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/future-profile-presentation-design-v1.json",
+      "size": 1158,
+      "sha256": "b73b0be226e32152d809767e0f73b190c9d2d7dd936a553cfdb52fde14b42a51",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/incremental-value-after-qualification-v1.json",
+      "size": 859,
+      "sha256": "f085701008bdb943a102ee133488ee594c94eb866b26becfe9fcf1ff9a7d694b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/network-reuse-note-v1.json",
+      "size": 806,
+      "sha256": "651eadc8858c1b4a42e823f507fef6909083a484e56c9b5eacf6bee52252312c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/pbc-fdacs-crosswalk-v1.json",
+      "size": 102053,
+      "sha256": "231e1dcdbfbe8760cea98b89699edf483d6ec5e70cdfeda8d8f4b18c95aa922e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/pbc-fdacs-unresolved-review-v1.json",
+      "size": 68072,
+      "sha256": "f99e2e53739c4b03934d309211086b86b595bfd4971849819b78a5a54728ad5d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/qualified-package-manifest-v1.json",
+      "size": 1365,
+      "sha256": "88597ab253aa482d326df80e42a7bbc6324058d64b1820984f4c15b39daf0455",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/qualified/source-authority-conflict-model-v1.json",
+      "size": 1735,
+      "sha256": "8d6bcaac0c565166fc68036dd3d362df7d2452cdfcdc9da897b10aa50a068776",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-BIR-GetListOfProducts-58.json",
+      "size": 3045,
+      "sha256": "2ba151941a2414cf1eb983ec1720bcc8e58b2c5989ae237b802a17e792356847",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetAllegedViolation.json",
+      "size": 26013,
+      "sha256": "428fc5754c3c6bfa0b35313212bff926a375f6a65ac93393b353036d0b7aac3d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetBusinessTypes.json",
+      "size": 2433,
+      "sha256": "2ea5c93f837729a8d645d3a95965cd75effef5705d86e3b2463d7a16d7eea3a5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCities-Moving.json",
+      "size": 11814,
+      "sha256": "fb399106d032db60b491fef006ce03167b5254db64fd83b1015c61122df9b6ba",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-sample-merged.json",
+      "size": 182780,
+      "sha256": "b5dc703c68c058ce65beebc74f11778e74d612d055ac9616fe9ecc5703706075",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-a.json",
+      "size": 151010,
+      "sha256": "1e891ac684bc06f9384ce40e8450916432e6cee1de074f4908079afd20b5881f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-college.json",
+      "size": 1167,
+      "sha256": "f3c4f38813b482393fa1f780dfce5d305e3f4a5637ff874d31d5daf49c41ecb1",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-e.json",
+      "size": 166222,
+      "sha256": "8285b9e700a8fa87ad79f476afbf8ba6aede7b407c98575000303b70e3394587",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-express.json",
+      "size": 1155,
+      "sha256": "275ca70e92685b4ae37e9b67f7591eeb80864578503e33f3d9d99b4fa39acbc2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-i.json",
+      "size": 171352,
+      "sha256": "f8b36a8b6978e85fa85d22f8142c49fb19ccd987de3e74413a764d804e564708",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-movers.json",
+      "size": 21547,
+      "sha256": "34527526ad77b1cb964045f76bec8b80cef5eec678df31d81061bad36cc84ff9",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-moving.json",
+      "size": 112630,
+      "sha256": "3831eaa03101f06e38c3d6c26462be9cda56e516ab3b6bd7825ea457e6273bfa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-o.json",
+      "size": 171333,
+      "sha256": "7580f688c8935f52d4455bd07cc746d68b1b555b9655c9beb42a1359eae8558c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-storage.json",
+      "size": 43102,
+      "sha256": "c86ff81944d472c6fbd0db32ef5b12be7888a8b0895565d70e3657ffbbcd5c94",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-two-men.json",
+      "size": 3919,
+      "sha256": "abdc1a97f217c4064c7e5d37da473fe939a4b242e10ac9990aafa889f1b97b77",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-u.json",
+      "size": 56766,
+      "sha256": "f3353f4a9db17f77529ef2b7ce40cbd3872a7b3868d59002e7615e6cbe552688",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-van.json",
+      "size": 6436,
+      "sha256": "f80674275000d74a8ff5b0ee6e56f346da3d511393c9e7792fce191997b84414",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseStatus.json",
+      "size": 3782,
+      "sha256": "5bc728a394e1628e36b966c175edd7b55a170ac47f039386c70a5e3eaceb455d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseType.json",
+      "size": 3356,
+      "sha256": "7d48ceb2538c2eda59ceab4a3c378ae9d4f4db83b052586df650a268dc5d3659",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseTypeNotExpired.json",
+      "size": 2007,
+      "sha256": "7dbb60463375ed61b9f12da139e0e942a099577766594c1fd5a8febb278b2416",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetResolutions.json",
+      "size": 30136,
+      "sha256": "22a19d9d2b034f0a009d25fb52106c63a8bec641f84c0871dd6c56aea20181da",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1017.json",
+      "size": 6913,
+      "sha256": "acd4cd994f0f0208b18c1dfbeddaf813a46462160d0b9abbcdfb8e165dd048b1",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1039.json",
+      "size": 6162,
+      "sha256": "7c2ef30faebfcecf35ec5c6f643e1b405edb5fb701eefc7bc17006519900c287",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1097.json",
+      "size": 21951,
+      "sha256": "5f583ce135375d863fa041096f267231be82a57e9ec3c901eab85912d743b570",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV11.json",
+      "size": 5576,
+      "sha256": "6aae01b7e9e1ca438d80b7344ad0765ebaf7d0e454a6d6e11032490352e4a7c9",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1121.json",
+      "size": 19124,
+      "sha256": "cedbc4c7c0f401ec8c4e68193e21dccd64d12311e4dafc1ac6d7d6f74bfa246c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1132.json",
+      "size": 24857,
+      "sha256": "3c2461030a3cc468a431a831b744527c31d5762d1742d2d844786aaeca00882f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1145.json",
+      "size": 10686,
+      "sha256": "9af68f051fc5b05a6dd0b43208e6278fff9aa9502d749f1af82528b7b831ad33",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1191.json",
+      "size": 5561,
+      "sha256": "159be9884e6c36af1e8894face3227ae26a3efb0d524ecf93a1c330ecfc55deb",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1193.json",
+      "size": 15356,
+      "sha256": "ea3baecd7074a3aa06aa7fd8d73594d49aca27dd1917df81380aac23252c5a52",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1210.json",
+      "size": 7290,
+      "sha256": "7707ba12651aa0436feac26badb753b983e7aa95c853b06e410c5e2697e6cbc8",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV42.json",
+      "size": 5769,
+      "sha256": "a14226adcc639a80b8aa5eb24809f995b7d56cd4de5556a40c2aad6aa4431e64",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV509.json",
+      "size": 10891,
+      "sha256": "de9f256c92ed3f50d97737dc0efa816b45e5eb098da26d05d4c9a6ab0d7b4266",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV624.json",
+      "size": 5648,
+      "sha256": "6842ac8028020652a9f9e94f3b95b136f4676e68e788cd7dca0c7bd94b1994c6",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV747.json",
+      "size": 5622,
+      "sha256": "bfc2200f78b93f94d366e293019dcb4dd54b609754f480a2614a0521a0834c0f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV772.json",
+      "size": 6128,
+      "sha256": "ed6ff562db4224bff380dc3f432a02c8e3ad677d2ec27a52466d636e44770194",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV802.json",
+      "size": 9023,
+      "sha256": "5d297eff00c40b6bb25b4070a982b830c83b577ad7526ac26334aa596bcecd23",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV837.json",
+      "size": 13938,
+      "sha256": "33fdfe649cdbab72639630d3f427ac5d028b6e7544c464dea945e7de3c757cce",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV86.json",
+      "size": 6068,
+      "sha256": "18048566ba2b2dd2eafa017459729c3499f9df9698552c8ac4356c48c4229d55",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV867.json",
+      "size": 5529,
+      "sha256": "6a8218dd3ae7b795fb8ad0530a218e5a54e4e0aa55efd5eca968021c3b860174",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV956.json",
+      "size": 7251,
+      "sha256": "06080fcf75014b4bc3ece5b155756f5255ec150443f40721700559ec30c887a4",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV964.json",
+      "size": 14566,
+      "sha256": "c9475e27e3496d94a31663358c55f339004d91a5b9c2fc9496aae4a99269ec2f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV969.json",
+      "size": 12182,
+      "sha256": "1eabf883fe38dedd2e36dd54962bf7d1ad94534ec0efdb05523239ebcf70b37d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-samples-merged.json",
+      "size": 241191,
+      "sha256": "6c9c885f0a102c932772639959b48a46239037dc4c990a935f82a35111781199",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/DisclosureFormPBCMoving2018.pdf",
+      "size": 137873,
+      "sha256": "4c0e066a79956acfa8c8b2268c04bf8a2ede62bd078bcfb5bf2d283aacfce307",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-BusinessDataService.js",
+      "size": 10201,
+      "sha256": "dd91017b7a32f87987dfece8e543726fe3d8495af16d04576d1d3bb8c57f3594",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "js"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-ComplaintDataService.js",
+      "size": 15204,
+      "sha256": "7c7782ab80972ab7a39e0603e002ac81ef39eb493cb36f4657d28f6258b625db",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "js"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseCodesDataService.js",
+      "size": 1643,
+      "sha256": "57d3de4896bf73f3a2b6e8e0573250c9f643450932559935f0de7db6a2159c29",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "js"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseDataService.js",
+      "size": 2611,
+      "sha256": "af6b011d58b5482d6219928ddcfba065174bb64c33e4048783860901db86c361",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "js"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseTracking.js",
+      "size": 29066,
+      "sha256": "d910a86854b4046c14908cd7e6cb863fc0e3d59d541e0929dc21c65887b50a58",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "js"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-moving.js",
+      "size": 7402,
+      "sha256": "29683ae6d92d81274f2529c7096688020019b6fe582cd469f1c7333efa1f03b4",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "js"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-PortalDataService.js",
+      "size": 9953,
+      "sha256": "dd5768e2ddab4b4a7246c2aa3f3d08456697a2fd56fec65f286adc5a61fa47e5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "js"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-ReportDataService.js",
+      "size": 4205,
+      "sha256": "1f0d1bc5780c38ef876639f834408449593a7448fe93ef4e0aa66d001740c1c7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "js"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/MovingCo_Application.pdf",
+      "size": 1548433,
+      "sha256": "b27f71743e9eac43640ba2a6f27e987459b5a13363345203f52e4c22f98d07df",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "reason": "large binary/html (1548433 bytes); keep for reproducibility if referenced",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/page-BIR-Lookup.html",
+      "size": 13996,
+      "sha256": "e7affbaeb392a865163c689faf23cfe771412203bc4b6576471e4f81edaf5163",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/page-Moving-Home.html",
+      "size": 23533,
+      "sha256": "16bd4b48f2065a75bb4f8a6230199172594b6d2523b211173fb61f2e6430b01e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/TriCountyMovingDisclrForm2019.pdf",
+      "size": 230075,
+      "sha256": "1ea024d2445a2ee5af467b2ba04acf489ca522135c65dcb411640ea22c3a2419",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/meta/raw-provenance.json",
+      "size": 9047,
+      "sha256": "b042474a8a5e87a0f44ce4117484577892f732323f8a97e60da6af0762abc6ac",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/meta/stack-vs-main-note.json",
+      "size": 411,
+      "sha256": "de5b0c53338d1365fba96e2662906848c6593cea20e4adf16349a8c157e783ac",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/architecture-pressure-test.json",
+      "size": 1931,
+      "sha256": "50bf6ebb8951fe1ed403242cf3e7ab2e8420caa4536fa1b25f82cedc875f34b0",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/canonical-matchability.json",
+      "size": 417,
+      "sha256": "43d49c79ec922178dbe1a68b2af3f30367ef3731848648265f1c351f4a61e01c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/complaint-business-matchability.json",
+      "size": 560,
+      "sha256": "1f8e6d56d2b4715c97629b145d365b249f85e5389522929c5e0782839f0272fd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/complaint-dispositions.json",
+      "size": 11624,
+      "sha256": "b2ff349b6263fd74e9940189d24e9e6849f56f861bfb11667cf5972590839d0c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/complaint-history-observations.json",
+      "size": 22603,
+      "sha256": "b8ddd9a66eeebdd1a24e021fc9faea123540f6633408011bb099a96f457b3e15",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/complaint-system-profile.json",
+      "size": 2624,
+      "sha256": "5f47829c3836a7d75ff51ddec8f09feaf4b1697d459122c2c19a65f6b8b55383",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/county-page-potential-mock.json",
+      "size": 983,
+      "sha256": "6fbb0dee101778e163feb00a1fb9690b9d20ca2f654a2f8bf7c84de293f50532",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/enforcement-observations.json",
+      "size": 205,
+      "sha256": "13b34d0bcc4c12c9537acb36c7f9a5baa6083ddf39bb2e00904e3e6d1a3c2725",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/enforcement-system-profile.json",
+      "size": 1107,
+      "sha256": "cac503ab7f08aa30b54d678b5de49bd4f1bcfc9a84a6fc699bdf6b0abfe61103",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/fdacs-matchability.json",
+      "size": 500,
+      "sha256": "62eee35b79b18e3b0d95f8d206e9e6dba595522f74c306bfabbf8f6791f679c3",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/field-inventory.json",
+      "size": 2625,
+      "sha256": "dc004dfb2ad39a7598016cb6db340e9c615f4366e1c302f10a49f8ed04333f5e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/fl-c007-summary.json",
+      "size": 2098,
+      "sha256": "7f98f3acd054722d76ae22c5d181a6beffaf6c07992f29f4e28c5e90a4b84763",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/four-county-comparison.json",
+      "size": 4166,
+      "sha256": "4ed95524ec02808853c96e9c0b074111e041cb3ef7a1a81d3abc4def1c4d3538",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/future-company-profile-evidence-design.json",
+      "size": 1542,
+      "sha256": "1ff7b87de756b2ccfca0f973a748b6149858a051d9b3320bb82682c2ed796a70",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/identity-contact-observations.json",
+      "size": 647,
+      "sha256": "763d71887bb571ccf74a55b9005793a168672f7273bb9fe48dc59d6fa6270611",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/incremental-value.json",
+      "size": 1313,
+      "sha256": "3878948a4a5154047c164227f18873334087dd972a408d2c65d7a83fddb4c3b5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/mover-regulatory-records.json",
+      "size": 449,
+      "sha256": "722b1e8be9ebc8ee6adcf458221883cb53564cb5b58381cd5d935f3ef120df3e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/network-reuse-note.json",
+      "size": 574,
+      "sha256": "48f142856ba748fd9c41d7f66e95d5b18f6138aea42cad780b09df307fbd5721",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/program-verification.json",
+      "size": 2642,
+      "sha256": "23ea2a52cd2b69a990c32c5126cf7b3bb52e073f884523fbd90284f01ee8b8ec",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/roster-completeness.json",
+      "size": 798,
+      "sha256": "c5408912d7b60b34eca0a59dae8da81b226f0257af1cce10ee87d9be3187d3c9",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/source-interfaces.json",
+      "size": 3290,
+      "sha256": "b17cbda11e94ddedd468495780e0fd92164d21492b7b25e57afc03de250a0c22",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/normalized/zero-result-semantics.json",
+      "size": 562,
+      "sha256": "53473e76b9c8ca85eb5cc1df6418f5e1eaa2f8cac3c9ef588b46c0af3faf006d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-MoversWithMuscle.pdf",
+      "size": 30715,
+      "sha256": "f06e9957b41481d8d6632be8b2cd0b2310c0d4512cffc205c802340f67d0dda6",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-partial-Moving.pdf",
+      "size": 52925,
+      "sha256": "9e3c2f85533b415b087e861dec69ce14c7c9e6b0beda6ae3dbaf7ef491fdb47f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-partial-Moving.txt",
+      "size": 4104,
+      "sha256": "7f0595ed152dc0746a34589984604324dc8425831e58bc0b83ec6c106ce81496",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-TwoMenAndATruck.pdf",
+      "size": 30715,
+      "sha256": "957e77269f36e95ea6814a6f74287b0063836fc00e35c99e7ba375a2ffcc12a5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "pdf"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-TwoMenAndATruck.txt",
+      "size": 167,
+      "sha256": "6981105df54100d142c27278f4f7506822c30bd6897b84b5463a7e41cadb6e1e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-sample-moving-partial-parsed.json",
+      "size": 22980,
+      "sha256": "c4c69ab6a43b8377fb1467a3f0c68da0cbf7b3b4e18265ac0157ab44b51f0b8c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-search-sample-businesses.json",
+      "size": 6706,
+      "sha256": "3b5a2798a9f66868529ca600dfa767fbce377d8a0547482e661807dc681beb91",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/fdacs-pinellas-geography-sample-universe.json",
+      "size": 18333,
+      "sha256": "6c840262cf2fd334b799f9b0abd133c31fe772fe7140a415a23d47790f4f906a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/municode-art-viii-moving.txt",
+      "size": 1552,
+      "sha256": "d0c6e1a870dceb7804fdc1410f953eaa624612c6655d07c88f9f845aba861d33",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "txt"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-complaint-history-service.html",
+      "size": 252015,
+      "sha256": "8e1a3bd4e90ff212a85139ce8a6e8d86391262752498513bbcff682ef60b3180",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-faq.html",
+      "size": 270192,
+      "sha256": "0f09610fa9c7d45093a8a0cc61c8e6fc59299b8f013292418e8efda19682836d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-home.html",
+      "size": 273893,
+      "sha256": "8de65169949cde3613c97aeea7689070a18b20eeb37a80b991cea49ef65438aa",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-moving-ordinance.html",
+      "size": 251211,
+      "sha256": "b1ab281806e2c056e60e283b20f03456e28cfdc88ad8f99f5c8af6a3514ad608",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "html"
+    },
+    {
+      "path": "data/regulatory-source-catalog/fl/county-sources.json",
+      "size": 22230,
+      "sha256": "170c620ca77767c6187e973c0a18e5da32fda1e3e4e739da9fdbdc4d290e1bf7",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "regulatory source catalog",
+      "ext": "json"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/COUNTY_REGULATORY_ARCHITECTURE_V1.md",
+      "size": 16133,
+      "sha256": "984258215ba88caeafd0be23a8490417a2efc9e72e336711bcc8ae66cc558743",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/future-county-onboarding-playbook.md",
+      "size": 4387,
+      "sha256": "6c71af98c8d17d0b626ff0fab4b51eeaf87258be5b20c5661a42b357a7e7596d",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/integration/FL_C010_INTEGRATION_GATE.md",
+      "size": 1622,
+      "sha256": "0e4b6ad79f0f96cff159078e02aa379454d73b46c656d9e828b9e87efb7e9cd2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/integration/FL_COUNTY_STACK_INTEGRATION_RUNBOOK_V1.md",
+      "size": 5040,
+      "sha256": "5546214e178bc64e958305a61eda10a34b1a90d2c881290d386d4be8cd31f08b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/current-main-compatibility.md",
+      "size": 2575,
+      "sha256": "b9b1e86733de8cc7b4dd58bc8dc619569c95809f90a2a652275ee3573d194a5e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/implementation-sequence.md",
+      "size": 3476,
+      "sha256": "ff346e6bbf6f95d7ceeb2704ac5c4ecd4b3412fbacd3ed24f9db2bd6431f1b29",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/PALM_BEACH_COUNTY_REGULATORY_PILOT_V1.md",
+      "size": 9010,
+      "sha256": "229ab7062ea1f15d5b3dcb70f0de66873e2152f78cb9621889635a9e69460bfc",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/read-api-and-ingestion-contracts.md",
+      "size": 3764,
+      "sha256": "8e77898f0e9fb96cbecf4cc49f0accf0b7eb1958ba59c877ad9e253d8f950f04",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/selective-transplant-allowlist.md",
+      "size": 2350,
+      "sha256": "a52124126e57a583643a198fd4749be3ab9ea04bd269cb0b51a658d5b83220e2",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/storage-and-schema-spec.md",
+      "size": 11173,
+      "sha256": "ca8df7f9650c66c1e4591380aa3dd17930fd95afc929b66f2587dfd7b6ecfdbe",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/wave-a-credential-spec.md",
+      "size": 4126,
+      "sha256": "ad3e21d0f6d053c9cd3073cc5b06a7d6d3b3dc6f92ef3db20342adf98f787252",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/wave-b-identity-contact-spec.md",
+      "size": 2978,
+      "sha256": "1ffa140d1f10d9429f2426110b4d10200904b8df4552e0d7bf22bf1397866886",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/wave-c-complaint-disposition-spec.md",
+      "size": 2655,
+      "sha256": "4a2724df380998764cba5e66f08ef82f09b0b14844c86bf2dd72896c3a0636e6",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/palm-beach-v1/wave-d-enforcement-spec.md",
+      "size": 2051,
+      "sha256": "3a373d9e83b460cadb602c4338b09db05237f5d83bfdf380d6a2d0a017e0f287",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/schema-sketch.md",
+      "size": 6703,
+      "sha256": "c474c544c14066676491264b88c537a9af2d6fad9982b4afb76a7e5c9b11988e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/architecture/stack-integration-runbook.md",
+      "size": 4367,
+      "sha256": "50c26e79c21a35470ee4b7f4c7b294a31f0c1903cf85ec9bc2f481b4d9153f37",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/fl/pra-drafts/broward-county-mover-regulatory-pra.md",
+      "size": 3308,
+      "sha256": "48f650fd5e4d0bf2a17abc1ca27b995c560bf1371a22a67f96fa70c81a4eda1e",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/fl/pra-drafts/miami-dade-county-mover-regulatory-pra.md",
+      "size": 4937,
+      "sha256": "6c90b65313790c1dc5b45424753cd71ce26c3d3ad746a43bafc0cb2cc859613a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/fl/pra-drafts/palm-beach-county-mover-regulatory-pra.md",
+      "size": 6387,
+      "sha256": "cfc1fb31e4bce0e17a21b124d6a374ea2711de4c42ea81132e94f264857f1937",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/fl/pra-drafts/pinellas-county-mover-regulatory-pra.md",
+      "size": 3498,
+      "sha256": "757ac779e9b4fb65ef4538ef431a3d417e6a46fde0fde67af8f165c7ab09977a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/fl/task-fl-c001-county-ranking.json",
+      "size": 14032,
+      "sha256": "637dd7301d8c8a43058f65661340d3cfa930e53db1a4a01568810a0d09b094bd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "json"
+    },
+    {
+      "path": "docs/county-regulatory/fl/task-fl-c001-florida-county-regulatory-discovery.md",
+      "size": 7237,
+      "sha256": "a8432df7bdcff91f470d574a9ed88f213cffdb4962d5bdc455e8d336b927cc2b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/fl/task-fl-c002-palm-beach-regulatory-acquisition.md",
+      "size": 3885,
+      "sha256": "2264864d4bfac9d62be63211219583e8bcfe52a627c95b9f46ba6058680859ba",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/fl/task-fl-c003-palm-beach-evidence-qualification.md",
+      "size": 3604,
+      "sha256": "6c9dff9f8aa0a43e3721f66040e405f5f838c7110eeac4dd22c7ee95e385212a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "docs/county-regulatory/fl/task-fl-c004-broward-regulatory-acquisition.md",
+      "size": 1922,
+      "sha256": "2151ee0f68e5d01c4e3f43e3e531b0e4403e23870357fc12a64a0e364830cba3",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "md"
+    },
+    {
+      "path": "scripts/fl-c002-palm-beach-normalize.mjs",
+      "size": 37512,
+      "sha256": "4649f56f0be67c742c206dccba68e0b4d72e259647a5744167ea90f0df4c6f78",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c003-emit-qualified-package.mjs",
+      "size": 16667,
+      "sha256": "6eb60e617cfceccad3fa554b9bc60a38eb76b736883f5851c9b39aa6604e1e21",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c003-palm-beach-evidence-qualification.mjs",
+      "size": 41779,
+      "sha256": "5110c0c5ad33b5d1da76df0a392caac9814ad4085783ca6b4f6c7755c56245c1",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c003-read-florida-identity-snapshot.mjs",
+      "size": 6047,
+      "sha256": "8c09342177d7d2729e8e7e0ae3fc1d66bb354d52d6e70b21117e9032ded9cddd",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c004-broward-normalize.mjs",
+      "size": 26177,
+      "sha256": "1476b575931aacc6fd5270c0c011f823f8ea45239e8bdfadeb1d12b743785850",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c005-miami-dade-normalize.mjs",
+      "size": 52675,
+      "sha256": "7469b92815ff8aeab1657cc6b92376c89290049cec2a15a76fad97784589606a",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c006-miami-dade-evidence-qualification.mjs",
+      "size": 56796,
+      "sha256": "376d52e66d1e7d0976a936124930027d49f2fc0b74dae1ebfd7f0aea8397e63b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c007-pinellas-normalize.mjs",
+      "size": 42339,
+      "sha256": "a60d88f1608f9db2735466ba01364120d69604f88531969a6db80b180ee538c8",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c008-emit-architecture-package.mjs",
+      "size": 2692,
+      "sha256": "08114cc794e3e8c701684fcad36f7f3bfd9d3a46cfed45469b49ce58f18038ab",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/fl-c009-emit-palm-beach-production-spec.mjs",
+      "size": 4051,
+      "sha256": "6f9f6d447f55466499f47f2f9c20c2c8f6283ca4a14bb3dd9b9792d0d31e67df",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c001-catalog.mjs",
+      "size": 1758,
+      "sha256": "ee7f6d2795a18f65ee637dd9e7b375e5c48405c693efaa2252e3d32f8ea3d6ad",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c002-palm-beach.mjs",
+      "size": 5164,
+      "sha256": "22522ccf0634ce07049763cbbf72073f83f998ebc1822a2307c7f8d87421278c",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c003-palm-beach-evidence.mjs",
+      "size": 4602,
+      "sha256": "212037cec5858a43cd96912c39761b62983b751b79ca2076b185a2f7a68d2127",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c003-palm-beach-qualification.mjs",
+      "size": 8457,
+      "sha256": "bad6574b4289217fbefc328a8503814cde9da570ccb6a8424d8393cfbc8022ee",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c004-broward-acquisition.mjs",
+      "size": 4527,
+      "sha256": "dd068a5a23089a475e61b7045df82385fb313416537701cb3128f169e59ec321",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c005-miami-dade-acquisition.mjs",
+      "size": 8710,
+      "sha256": "b21c8ebf0f8a3de3c597935b0b64ceed4b7a0fc3c12072c770c7d562fd9db9a5",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c006-miami-dade-qualification.mjs",
+      "size": 6948,
+      "sha256": "7f13af770612d3ad271ceffc5a83706e494825cd66de46485403d3e95e92d4da",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c007-pinellas-acquisition.mjs",
+      "size": 9555,
+      "sha256": "f5ef4c76d490df02bbf7eb03c5f52fe3a22efb1813ea3c9c0620372c03334ace",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c008-county-architecture-discovery.mjs",
+      "size": 8454,
+      "sha256": "e623502be1b0762b613eef6854d1226f1a54784de8fa7fdf34ae4c6490a0110b",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    },
+    {
+      "path": "scripts/validate-fl-c009-palm-beach-production-spec.mjs",
+      "size": 7235,
+      "sha256": "1dc1fa4098a9d279348aaeaf726db96a5dd9e280f1e0baa3916b9af9930a142f",
+      "classification": "INCLUDE_IN_TRANSPLANT",
+      "reason": "durable county research/architecture artifact",
+      "ext": "mjs"
+    }
+  ]
+}

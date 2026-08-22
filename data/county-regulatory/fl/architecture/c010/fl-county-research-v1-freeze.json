@@ -1,0 +1,102 @@
+{
+  "freeze_id": "FL_COUNTY_RESEARCH_V1_FREEZE",
+  "created_at": "2026-08-22T15:31:24.219Z",
+  "frozen_head_sha": "1256170855439413242acadf68e659e53f4aabc3",
+  "note": "Freeze points at C009 research package head; C010 adds integration-gate artifacts on top of this lineage.",
+  "origin_main_observed": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "origin_main_subject": "ceeaa987 Merge pull request #61 from savitz25/task-fl-010a-florida-state-wave1-apply",
+  "stack": [
+    {
+      "task": "FL-C001",
+      "pr": 45,
+      "branch": "task-fl-c001-county-regulatory-discovery",
+      "base": "main",
+      "head": "91863908249c4230c5247f4055c3a25394b33645"
+    },
+    {
+      "task": "FL-C002",
+      "pr": 48,
+      "branch": "task-fl-c002-palm-beach-regulatory-acquisition",
+      "base": "task-fl-c001-county-regulatory-discovery",
+      "head": "a92d194b566e34966b73ae19a955c5fe1b0f7696"
+    },
+    {
+      "task": "FL-C003",
+      "pr": 51,
+      "branch": "task-fl-c003-palm-beach-evidence-qualification",
+      "base": "task-fl-c002-palm-beach-regulatory-acquisition",
+      "head": "0af416b8d8d43f3b46703af38f039c438834eb04"
+    },
+    {
+      "task": "FL-C004",
+      "pr": 52,
+      "branch": "task-fl-c004-broward-regulatory-acquisition",
+      "base": "task-fl-c003-palm-beach-evidence-qualification",
+      "head": "f085c923b48230f97cd073de30b77b603f047ee3"
+    },
+    {
+      "task": "FL-C005",
+      "pr": 54,
+      "branch": "task-fl-c005-miami-dade-regulatory-acquisition",
+      "base": "task-fl-c004-broward-regulatory-acquisition",
+      "head": "2dd88cb5371891ec3af916fbedbe52d48dcf6d22"
+    },
+    {
+      "task": "FL-C006",
+      "pr": 56,
+      "branch": "task-fl-c006-miami-dade-evidence-qualification",
+      "base": "task-fl-c005-miami-dade-regulatory-acquisition",
+      "head": "1aa496b0b36b1f7ffadd9db6285d90db8b14f8ef"
+    },
+    {
+      "task": "FL-C007",
+      "pr": 58,
+      "branch": "task-fl-c007-pinellas-regulatory-acquisition",
+      "base": "task-fl-c006-miami-dade-evidence-qualification",
+      "head": "05e018e2236cd1f865ef3808874aa388065720df"
+    },
+    {
+      "task": "FL-C008",
+      "pr": 60,
+      "branch": "task-fl-c008-county-regulatory-architecture-discovery",
+      "base": "task-fl-c007-pinellas-regulatory-acquisition",
+      "head": "13f409cc17e6c18e27388773848fc995c518cd27"
+    },
+    {
+      "task": "FL-C009",
+      "pr": 62,
+      "branch": "task-fl-c009-palm-beach-production-integration-spec",
+      "base": "task-fl-c008-county-regulatory-architecture-discovery",
+      "head": "1256170855439413242acadf68e659e53f4aabc3"
+    },
+    {
+      "task": "FL-C010",
+      "pr": null,
+      "branch": "task-fl-c010-county-stack-integration-gate",
+      "base": "task-fl-c009-palm-beach-production-integration-spec",
+      "head": "1256170855439413242acadf68e659e53f4aabc3"
+    }
+  ],
+  "artifact_counts": {
+    "inventory_total": 385,
+    "INCLUDE_IN_TRANSPLANT": 379,
+    "REVIEW_BEFORE_TRANSPLANT": 6,
+    "EXCLUDE_FROM_TRANSPLANT": 0,
+    "large_artifacts_ge_250kb": 23
+  },
+  "validators": [
+    "validate-fl-c001-catalog.mjs",
+    "validate-fl-c002-palm-beach.mjs",
+    "validate-fl-c003-palm-beach-evidence.mjs",
+    "validate-fl-c003-palm-beach-qualification.mjs",
+    "validate-fl-c004-broward-acquisition.mjs",
+    "validate-fl-c005-miami-dade-acquisition.mjs",
+    "validate-fl-c006-miami-dade-qualification.mjs",
+    "validate-fl-c007-pinellas-acquisition.mjs",
+    "validate-fl-c008-county-architecture-discovery.mjs",
+    "validate-fl-c009-palm-beach-production-spec.mjs",
+    "validate-fl-c010-integration-gate.mjs"
+  ],
+  "package_hash": "14c0827d724a1aad",
+  "updated_at_c010_close": "2026-08-22T16:15:00.000Z"
+}
