@@ -1,0 +1,30 @@
+{
+  "google_places_requests": 0,
+  "categories": {
+    "INSUFFICIENT_OFFICIAL_EVIDENCE": {
+      "count": 78,
+      "next": "Florida Sunbiz / Division of Corporations exact entity number + FDACS legal name",
+      "likelihood": "MEDIUM"
+    },
+    "FRANCHISE_OR_NETWORK_BRAND": {
+      "count": 46,
+      "next": "Official franchisee entity filings, not brand pages",
+      "likelihood": "LOW"
+    },
+    "LEGAL_FORM_CONFLICT": {
+      "count": 5,
+      "next": "Sunbiz articles showing conversion vs separate entities",
+      "likelihood": "LOW"
+    },
+    "STALE_STATUS": {
+      "count": 3,
+      "next": "Official FDACS live license lookup (not a new paid bulk extract)",
+      "likelihood": "HIGH"
+    },
+    "MULTIPLE_CANONICAL_CANDIDATES": {
+      "count": 36,
+      "next": "Exact legal name + official phone/address corroboration",
+      "likelihood": "MEDIUM"
+    }
+  }
+}

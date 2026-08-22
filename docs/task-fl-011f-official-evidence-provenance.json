@@ -1,0 +1,125 @@
+{
+  "google_places_requests": 0,
+  "n": 168,
+  "sources_used": [
+    "FDACS_COMMITTED_SNAPSHOT",
+    "MTH_CANONICAL_COMPANY_READ",
+    "FMCSA_USDOT_ON_COMPANY_ROW_IF_PRESENT"
+  ],
+  "sunbiz_bulk_html_not_scraped": true,
+  "note": "Sunbiz was not bulk-scraped; fail-closed identity uses FDACS + live canonical rows + legal-form rules. Corporation-ID linkage is accepted in unit tests but not invented without a retrieved filing number.",
+  "rows": [
+    {
+      "fdacsIm": "IM3962",
+      "source_agency": "FDACS",
+      "source_type": "legacy_business_license_lookup_snapshot",
+      "url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "retrieved_at": "2026-08-21T17:11:52.759Z",
+      "identifier_searched": "IM3962",
+      "observed": {
+        "legalName": "ADVANCE SORENSEN MOVERS LLC",
+        "status": "active",
+        "usdot": null
+      },
+      "inferred": false
+    },
+    {
+      "fdacsIm": "IM3897",
+      "source_agency": "FDACS",
+      "source_type": "legacy_business_license_lookup_snapshot",
+      "url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "retrieved_at": "2026-08-21T17:11:52.759Z",
+      "identifier_searched": "IM3897",
+      "observed": {
+        "legalName": "ALEX BUITRAGO LLC",
+        "status": "active",
+        "usdot": null
+      },
+      "inferred": false
+    },
+    {
+      "fdacsIm": "IM3789",
+      "source_agency": "FDACS",
+      "source_type": "legacy_business_license_lookup_snapshot",
+      "url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "retrieved_at": "2026-08-21T17:11:52.759Z",
+      "identifier_searched": "IM3789",
+      "observed": {
+        "legalName": "ALMA MOVING INC",
+        "status": "active",
+        "usdot": null
+      },
+      "inferred": false
+    },
+    {
+      "fdacsIm": "IM105",
+      "source_agency": "FDACS",
+      "source_type": "legacy_business_license_lookup_snapshot",
+      "url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "retrieved_at": "2026-08-21T17:11:52.759Z",
+      "identifier_searched": "IM105",
+      "observed": {
+        "legalName": "AMERICAN VAN LINES, INC.",
+        "status": "active",
+        "usdot": null
+      },
+      "inferred": false
+    },
+    {
+      "fdacsIm": "IM4093",
+      "source_agency": "FDACS",
+      "source_type": "legacy_business_license_lookup_snapshot",
+      "url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "retrieved_at": "2026-08-21T17:11:52.759Z",
+      "identifier_searched": "IM4093",
+      "observed": {
+        "legalName": "AMS MOVING INC",
+        "status": "active",
+        "usdot": null
+      },
+      "inferred": false
+    },
+    {
+      "fdacsIm": "IM2401",
+      "source_agency": "FDACS",
+      "source_type": "legacy_business_license_lookup_snapshot",
+      "url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "retrieved_at": "2026-08-21T17:11:52.759Z",
+      "identifier_searched": "IM2401",
+      "observed": {
+        "legalName": "APCOM ENTERPRISE, LLC",
+        "status": "active",
+        "usdot": null
+      },
+      "inferred": false
+    },
+    {
+      "fdacsIm": "IM1107",
+      "source_agency": "FDACS",
+      "source_type": "legacy_business_license_lookup_snapshot",
+      "url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "retrieved_at": "2026-08-21T17:11:52.759Z",
+      "identifier_searched": "IM1107",
+      "observed": {
+        "legalName": "APPROVED MOVING & STORAGE, INC.",
+        "status": "active",
+        "usdot": null
+      },
+      "inferred": false
+    },
+    {
+      "fdacsIm": "IM4027",
+      "source_agency": "FDACS",
+      "source_type": "legacy_business_license_lookup_snapshot",
+      "url": "https://csapp.fdacs.gov/cspublicapp/businesssearch/businesssearch.aspx",
+      "retrieved_at": "2026-08-21T17:11:52.759Z",
+      "identifier_searched": "IM4027",
+      "observed": {
+        "legalName": "ARROW SERVICES US INC",
+        "status": "active",
+        "usdot": null
+      },
+      "inferred": false
+    }
+  ]
+}

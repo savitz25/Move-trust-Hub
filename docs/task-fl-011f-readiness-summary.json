@@ -1,0 +1,33 @@
+{
+  "google_places_requests": 0,
+  "production_db_writes": 0,
+  "task": "FL-011F",
+  "starting": 168,
+  "tally": {
+    "EXISTING_CANONICAL_LINK_READY": 0,
+    "NEW_CANONICAL_COMPANY_READY": 0,
+    "DISTINCT_ENTITY_ALREADY_REPRESENTED": 0,
+    "NO_LONGER_ACTIVE": 0,
+    "REMAINS_POSSIBLE_DUPLICATE": 114,
+    "REMAINS_CORPORATE_FAMILY_REVIEW": 46,
+    "CONFLICT_REMAINS": 5,
+    "SOURCE_STATUS_BLOCKED": 3,
+    "OTHER_REVIEW_REQUIRED": 0
+  },
+  "ready": {
+    "link": 0,
+    "insert": 0,
+    "total": 0,
+    "hash": "e3b0c44298fc1c14",
+    "apply": false
+  },
+  "simulated": {
+    "currentCoverage": 84.7,
+    "simulatedActive": 1098,
+    "simulatedRepresented": 930,
+    "simulatedUnresolved": 168,
+    "simulatedCoverage": 84.7,
+    "netGain": 0
+  },
+  "production_sha": "0dfe69e8f166df9dd9d1764633d52ca3972eb101"
+}
