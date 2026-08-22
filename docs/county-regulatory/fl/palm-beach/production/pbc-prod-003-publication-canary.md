@@ -76,3 +76,49 @@ company publication/indexable: 0
 Google Places: 0
 Consumer PII: 0
 ```
+
+## Observation
+
+| Field | Value |
+|---|---|
+| ID | `PBC_CREDENTIAL_CANARY_OBSERVATION_V1` |
+| Launch | `2026-08-22T19:56:00.000Z` |
+| Window | **7 days** → `2026-08-29T19:56:00.000Z` |
+| Does not block Builder 1 | **YES** |
+| Expand during observation | **NO** |
+
+Rollback triggers: wrong-company / wrong MV / INTERNAL_ONLY leakage / table exposure / non-canary evidence / material security or render failure. Minor copy/layout alone is not a rollback trigger.
+
+## Structured artifacts
+
+Under `data/county-regulatory/fl/palm-beach/production/pbc-prod-003/`:
+
+- `current-main-baseline.json`
+- `final-canary-manifest.json`
+- `live-preapply-revalidation.json`
+- `public-read-contract.json`
+- `runtime-security-audit.json`
+- `preapply-zero-exposure.json`
+- `apply-dry-run.json`
+- `rollback-dry-run.json`
+- `apply-result.json`
+- `post-apply-db-audit.json`
+- `canary-profile-sweep.json`
+- `non-canary-control-sweep.json`
+- `anon-security-check.json`
+- `search-directory-compare-regression.json`
+- `seo-structured-og-regression.json`
+- `state-regression.json`
+- `pbc-impact-delta.json`
+- `observation-baseline.json`
+
+Impact ledger: `docs/florida-impact-ledger/county/pbc-prod-003-impact-delta.json`
+
+## Post-apply closeout
+
+```bash
+node scripts/pbc-prod-003-post-apply-closeout.mjs
+npm run qa:fl-wave1-observation
+```
+
+Next (do not start automatically): **PBC-PROD-004 — Palm Beach Credential Canary Observation & Expanded Credential Publication Gate**

@@ -1,0 +1,133 @@
+{
+  "task": "PBC-PROD-003",
+  "canary_server_published_reads": 11,
+  "canary_expected": 11,
+  "internal_only_public_read_published_rows": 0,
+  "ingested_public_evidence_rows": 0,
+  "pass": true,
+  "details": {
+    "canary": [
+      {
+        "company_id": "america-s-family-moving-and-storage-llc",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV1029"
+        ]
+      },
+      {
+        "company_id": "usdot-2562486",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV1097"
+        ]
+      },
+      {
+        "company_id": "usdot-1568346",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV1108"
+        ]
+      },
+      {
+        "company_id": "patriot-moving-and-storage",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV1191"
+        ]
+      },
+      {
+        "company_id": "whatamove",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV1315"
+        ]
+      },
+      {
+        "company_id": "usdot-709590",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV1323"
+        ]
+      },
+      {
+        "company_id": "usdot-1917905",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV3"
+        ]
+      },
+      {
+        "company_id": "fl-im-1058",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV624"
+        ]
+      },
+      {
+        "company_id": "usdot-381994",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV773"
+        ]
+      },
+      {
+        "company_id": "fl-im-1399",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV802"
+        ]
+      },
+      {
+        "company_id": "usdot-3199979",
+        "error": null,
+        "published_rows": 1,
+        "mv": [
+          "MV954"
+        ]
+      }
+    ],
+    "internal_only": [
+      {
+        "company_id": "usdot-3034432",
+        "published_rows": 0
+      }
+    ],
+    "ingested": [
+      {
+        "company_id": "fl-im-3320",
+        "published_rows": 0,
+        "note": "company INGESTED — profile 404 regardless"
+      },
+      {
+        "company_id": "fl-im-1913",
+        "published_rows": 0,
+        "note": "company INGESTED — profile 404 regardless"
+      },
+      {
+        "company_id": "fl-im-3417",
+        "published_rows": 0,
+        "note": "company INGESTED — profile 404 regardless"
+      },
+      {
+        "company_id": "fl-im-2731",
+        "published_rows": 0,
+        "note": "company INGESTED — profile 404 regardless"
+      },
+      {
+        "company_id": "fl-im-3408",
+        "published_rows": 0,
+        "note": "company INGESTED — profile 404 regardless"
+      }
+    ]
+  }
+}

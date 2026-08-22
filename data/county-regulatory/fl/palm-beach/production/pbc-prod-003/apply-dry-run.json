@@ -1,0 +1,10 @@
+{
+  "mode": "dry-run",
+  "credential_transitions": {
+    "from": "INTERNAL_ONLY",
+    "to": "PUBLISHED",
+    "count": 11
+  },
+  "companies": 0,
+  "recorded_at_pre_apply": true
+}
