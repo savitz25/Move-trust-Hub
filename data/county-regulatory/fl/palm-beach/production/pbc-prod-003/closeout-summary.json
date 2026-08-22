@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "status": "PBC CREDENTIAL CANARY PUBLISHED — OBSERVATION ACTIVE",
+  "canary_sweep": true,
+  "non_canary": true,
+  "anon_security": true,
+  "public_read": true,
+  "search_dir_compare": true,
+  "seo": true,
+  "post_db": true
+}

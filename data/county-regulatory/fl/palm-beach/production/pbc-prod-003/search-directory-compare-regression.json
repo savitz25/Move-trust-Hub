@@ -1,0 +1,8 @@
+{
+  "task": "PBC-PROD-003",
+  "county_in_directory": false,
+  "county_in_compare": false,
+  "county_in_search_payload": false,
+  "ranking_delta": 0,
+  "pass": true
+}

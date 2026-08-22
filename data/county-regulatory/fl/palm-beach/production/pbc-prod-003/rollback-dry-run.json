@@ -1,0 +1,10 @@
+{
+  "mode": "rollback-dry-run",
+  "credential_transitions": {
+    "from": "PUBLISHED",
+    "to": "INTERNAL_ONLY",
+    "count": 11
+  },
+  "companies": 0,
+  "schema_drop": 0
+}

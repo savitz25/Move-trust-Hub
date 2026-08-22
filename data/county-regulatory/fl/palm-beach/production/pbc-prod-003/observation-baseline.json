@@ -1,0 +1,52 @@
+{
+  "observation_id": "PBC_CREDENTIAL_CANARY_OBSERVATION_V1",
+  "task": "PBC-PROD-003",
+  "status": "ACTIVE",
+  "launch_timestamp": "2026-08-22T19:56:00.000Z",
+  "target_days": 7,
+  "target_end": "2026-08-29T19:56:00.000Z",
+  "production_sha_at_launch": "2fc416c216c8b06de74f3ed42466e1728f9e7d85",
+  "production_sha_after_cdn_hotfix": "c3ea773a0c1f52d189559568a88c0e03161d0c99",
+  "manifest_id": "PBC_COUNTY_CREDENTIAL_PUBLICATION_CANARY_V1",
+  "manifest_hash": "f9d56097fa4b2d1c6dfb729e208a6d13c7b75d5ecac13b674a77b3240a167b3f",
+  "draft_hash": "031ab4bca2b422842e9a05936204e10e560643970bac78394bbf630a7a40a3f9",
+  "company_ids": [
+    "america-s-family-moving-and-storage-llc",
+    "usdot-2562486",
+    "usdot-1568346",
+    "patriot-moving-and-storage",
+    "whatamove",
+    "usdot-709590",
+    "usdot-1917905",
+    "fl-im-1058",
+    "usdot-381994",
+    "fl-im-1399",
+    "usdot-3199979"
+  ],
+  "credential_ids": [
+    "MV1029",
+    "MV1097",
+    "MV1108",
+    "MV1191",
+    "MV1315",
+    "MV1323",
+    "MV3",
+    "MV624",
+    "MV773",
+    "MV802",
+    "MV954"
+  ],
+  "baseline_http_200": "11/11",
+  "baseline_render_blocks": "11/11",
+  "baseline_correct_mv": "11/11",
+  "error_baseline": {
+    "profile_5xx": 0,
+    "wrong_company": 0,
+    "duplicate_ui_block": 0,
+    "internal_only_leakage": 0,
+    "anon_table_open": false
+  },
+  "does_not_block_builder_1_state_work": true,
+  "expand_canary_during_observation": false,
+  "rollback_command": "node scripts/publish-pbc-prod-003-canary.mjs --rollback --manifest-hash f9d56097fa4b2d1c6dfb729e208a6d13c7b75d5ecac13b674a77b3240a167b3f"
+}

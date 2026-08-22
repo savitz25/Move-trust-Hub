@@ -1,0 +1,21 @@
+{
+  "task": "PBC-PROD-003",
+  "anon_postgrest_error": "permission denied for table provider_county_credential",
+  "anon_rows": 0,
+  "anon_direct_select": "DENIED",
+  "authenticated_table_privilege_select": false,
+  "anon_table_privilege_select": false,
+  "authenticated_direct_select": "DENIED",
+  "published_rows_do_not_open_table": true,
+  "pass": true,
+  "service_role_client_bundle": "server-only import on public-read.ts",
+  "public_dto_fields": [
+    "credentialNumber",
+    "status",
+    "statusPublicLabel",
+    "regulator",
+    "sourceKey",
+    "retrievedAt",
+    "fdacsIm"
+  ]
+}

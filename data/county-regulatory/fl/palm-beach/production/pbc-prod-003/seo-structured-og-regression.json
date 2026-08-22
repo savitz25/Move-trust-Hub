@@ -1,0 +1,11 @@
+{
+  "task": "PBC-PROD-003",
+  "company_indexable_delta": 0,
+  "sitemap_additions_from_pbc": 0,
+  "palm_beach_mv_in_jsonld": 0,
+  "palm_beach_mv_in_og": 0,
+  "noindex_unchanged_note": "Canary companies remain PUBLISHABLE; indexable flag not mutated by PBC-PROD-003",
+  "pass": true,
+  "sitemap_status": 200,
+  "sitemap_mentions_canary_slug": 9
+}

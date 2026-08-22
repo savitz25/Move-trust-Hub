@@ -1,0 +1,218 @@
+{
+  "task": "PBC-PROD-003",
+  "published_outside_manifest": 0,
+  "ingested_companies": 31,
+  "ingested_strict_404": "31/31",
+  "ingested_county_evidence_public": 0,
+  "public_withheld_companies": 1,
+  "public_withheld_remain_public": "1/1",
+  "public_withheld_county_evidence": 0,
+  "multi_credential_withheld_sampled": 1,
+  "multi_credential_county_evidence": 0,
+  "pass": true,
+  "ingested_results": [
+    {
+      "slug": "1-ashley-furniture-homestore-2-kc-cafe-wine-bar-3-kevin-charles-cafe",
+      "company_id": "fl-im-3320",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "aa-condo-movers-llc",
+      "company_id": "fl-im-1913",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "allexcellent-llc",
+      "company_id": "fl-im-3417",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "bald-eagle-moving-llc",
+      "company_id": "fl-im-2731",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "bernard-s-reliable-moving-service-llc",
+      "company_id": "fl-im-3408",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "blue-line-moving-llc",
+      "company_id": "fl-im-3378",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "brandon-transfer-storage-co-inc",
+      "company_id": "fl-im-182",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "champions-moving-and-storage-llc",
+      "company_id": "fl-im-4097",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "csv-moving-and-delivery-llc",
+      "company_id": "fl-im-3903",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "dependable-pro-movers-inc",
+      "company_id": "fl-im-88",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "designers-logistics-support-llc",
+      "company_id": "fl-im-408",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "dixon-moving",
+      "company_id": "fl-im-756",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "e-and-c-removal-and-delivery-services-llc",
+      "company_id": "fl-im-3304",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "e-c-moving-delivery-service-llc",
+      "company_id": "fl-im-3223",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "established-moving-of-south-florida-inc",
+      "company_id": "fl-im-2932",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "express-moving-usa-llc",
+      "company_id": "fl-im-3185",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "gator-relocators-moving-storage-inc",
+      "company_id": "fl-im-4147",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "jay-c-moving-company-hauling-cargo-delivery-and-more",
+      "company_id": "fl-im-3048",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "juan-got-you-moving-inc",
+      "company_id": "fl-im-3418",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "larkins-moving-delivery-inc",
+      "company_id": "fl-im-2520",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "merritt-transfer-and-storage-co-inc",
+      "company_id": "fl-im-114",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "moving-with-sebastian-llc",
+      "company_id": "fl-im-3867",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "perez-brothers-moving-inc",
+      "company_id": "fl-im-2589",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "quicksilver-services-corp",
+      "company_id": "fl-im-893",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "qwik-moving-and-storage",
+      "company_id": "fl-im-2565",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "silver-lining-moving-delivery-llc",
+      "company_id": "fl-im-2788",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "smooth-movers-inc",
+      "company_id": "fl-im-688",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "stable-solutions-fla-llc",
+      "company_id": "fl-im-2770",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "tk-fine-arts-services",
+      "company_id": "fl-im-2182",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "u-me-moving-storage",
+      "company_id": "fl-im-400",
+      "status": 404,
+      "county_evidence": false
+    },
+    {
+      "slug": "village-moving-services-llc",
+      "company_id": "fl-im-3437",
+      "status": 404,
+      "county_evidence": false
+    }
+  ],
+  "withheld_results": [
+    {
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "company_id": "usdot-3034432",
+      "status": 200,
+      "county_evidence": false
+    }
+  ],
+  "multi_results": [
+    {
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "company_id": "usdot-3034432",
+      "internal_creds": 2,
+      "status": 200,
+      "county_evidence": false
+    }
+  ]
+}
