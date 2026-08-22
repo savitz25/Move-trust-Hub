@@ -1,0 +1,12 @@
+{
+  "task": "PBC-PROD-004",
+  "wave_id": "PBC_COUNTY_CREDENTIAL_PUBLICATION_CANARY_V1",
+  "expected_hash": "f9d56097fa4b2d1c6dfb729e208a6d13c7b75d5ecac13b674a77b3240a167b3f",
+  "actual_hash": "f9d56097fa4b2d1c6dfb729e208a6d13c7b75d5ecac13b674a77b3240a167b3f",
+  "companies": 11,
+  "credentials": 11,
+  "membership_exact": true,
+  "substitution": false,
+  "expansion": false,
+  "pass": true
+}

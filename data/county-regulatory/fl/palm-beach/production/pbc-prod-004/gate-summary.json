@@ -1,0 +1,24 @@
+{
+  "task": "PBC-PROD-004",
+  "status": "WAITING — PBC CANARY OBSERVATION NOT MATURE",
+  "apply": false,
+  "expanded_publication_apply": false,
+  "production_credential_writes": 0,
+  "before_maturity": true,
+  "hours_remaining": 166.49,
+  "baseline_pass": true,
+  "manifest_pass": true,
+  "identity_pass": true,
+  "profile_sweep_pass": true,
+  "cache_pass": true,
+  "security_pass": true,
+  "remaining_pass": true,
+  "ready_pool": {
+    "companies": 1,
+    "credentials": 1
+  },
+  "draft_hash": "9ead4ae76aaa6af2d926a51ccdb0a4972fe9970ed6906d025075b2d3abfb3a5e",
+  "degraded": false,
+  "next_task_if_waiting": "Re-run PBC-PROD-004 after 2026-08-29T19:56:00.000Z for READY decision",
+  "next_task_if_ready": "PBC-PROD-005 — Expanded Palm Beach credential publication apply (exact draft only)"
+}

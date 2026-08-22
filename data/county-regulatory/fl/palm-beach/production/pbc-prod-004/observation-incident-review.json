@@ -1,0 +1,17 @@
+{
+  "task": "PBC-PROD-004",
+  "window": {
+    "launch": "2026-08-22T19:56:00.000Z",
+    "now": "2026-08-22T21:26:49.849Z",
+    "maturity": "2026-08-29T19:56:00.000Z"
+  },
+  "critical": [],
+  "material": [],
+  "minor": [],
+  "none": true,
+  "wrong_company_incidents": 0,
+  "internal_only_exposure_incidents": 0,
+  "ingested_bypass": 0,
+  "anon_table_access_incidents": 0,
+  "classification": "NONE"
+}

@@ -1,0 +1,11 @@
+{
+  "task": "PBC-PROD-004",
+  "anon_direct_select": "DENIED",
+  "anon_error": "permission denied for table provider_county_credential",
+  "anon_rows": 0,
+  "authenticated_direct_select": "DENIED",
+  "anon_privilege": false,
+  "auth_privilege": false,
+  "service_key_client_exposure": "NONE",
+  "pass": true
+}

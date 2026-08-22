@@ -1,0 +1,29 @@
+{
+  "wave_id": "PBC_COUNTY_CREDENTIAL_EXPANDED_READY_POOL_V1",
+  "task": "PBC-PROD-004",
+  "apply": false,
+  "company_count": 1,
+  "credential_count": 1,
+  "members": [
+    {
+      "credential_number": "MV50",
+      "company_id": "usdot-3034432",
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "fdacs_im": "IM2822",
+      "evidence_publication_state": "INTERNAL_ONLY",
+      "raw_source_status": "LICENSED",
+      "normalized_status": "LICENSED",
+      "consumer_status_label": "Active county moving-business permit",
+      "freshness": "CURRENT",
+      "identity": "EXACT",
+      "company_gate": "MULTI_CREDENTIAL_REVIEW",
+      "multi_credential": true,
+      "sibling_mvs": [
+        "MV50",
+        "MV868"
+      ]
+    }
+  ]
+}

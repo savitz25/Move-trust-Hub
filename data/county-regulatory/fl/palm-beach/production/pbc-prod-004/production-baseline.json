@@ -1,0 +1,12 @@
+{
+  "task": "PBC-PROD-004",
+  "total": 46,
+  "published": 11,
+  "internal_only": 35,
+  "companies": 43,
+  "duplicates": 0,
+  "orphans": 0,
+  "unexpected_published": 0,
+  "canary_distinct_companies": 11,
+  "pass": true
+}

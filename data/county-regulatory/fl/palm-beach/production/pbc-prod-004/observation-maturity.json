@@ -1,0 +1,10 @@
+{
+  "task": "PBC-PROD-004",
+  "now_utc": "2026-08-22T21:26:49.849Z",
+  "launch": "2026-08-22T19:56:00.000Z",
+  "maturity": "2026-08-29T19:56:00.000Z",
+  "before_maturity": true,
+  "hours_remaining": 166.49,
+  "final_expanded_decision_allowed": false,
+  "note": "Observation not mature — WAITING status required; draft prep allowed"
+}

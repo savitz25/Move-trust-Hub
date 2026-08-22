@@ -1,0 +1,16 @@
+{
+  "task": "PBC-PROD-004",
+  "requires": [
+    "company anonymously public",
+    "credential PUBLISHED",
+    "correct county program source key"
+  ],
+  "failures": {
+    "public+INTERNAL_ONLY": "hidden",
+    "INGESTED+PUBLISHED": "no anonymous evidence",
+    "wrong_program": "hidden",
+    "db_error": "county evidence omitted"
+  },
+  "bypass": false,
+  "google_places": 0
+}

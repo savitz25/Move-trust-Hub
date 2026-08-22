@@ -1,0 +1,37 @@
+{
+  "wave_id": "PBC_COUNTY_CREDENTIAL_EXPANDED_PUBLICATION_V1_DRAFT",
+  "task": "PBC-PROD-004",
+  "apply": false,
+  "created_at": "2026-08-22T21:26:49.849Z",
+  "company_count": 1,
+  "credential_count": 1,
+  "manifest_hash": "9ead4ae76aaa6af2d926a51ccdb0a4972fe9970ed6906d025075b2d3abfb3a5e",
+  "source_program_key": "pbc-consumer-affairs-moving-business-permit",
+  "multi_credential_ui_contract": null,
+  "multi_credential_note": "Draft is singular (MV50 only). Sibling MV868 held STALE — do not use plural heading until both CURRENT. Plural contract documented in multi-credential-audit.json for when both qualify.",
+
+  "members": [
+    {
+      "company_id": "usdot-3034432",
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "company_publication_state": "PUBLISHABLE",
+      "credential_ids": [
+        "MV50"
+      ],
+      "palm_beach_mv": "MV50",
+      "fdacs_im": "IM2822",
+      "regulator": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "raw_status": "LICENSED",
+      "normalized_status": "LICENSED",
+      "consumer_status_label": "Active county moving-business permit",
+      "freshness": "CURRENT",
+      "identity_result": "EXACT",
+      "multi_credential_classification": "VALID_CONCURRENT_MULTI_CREDENTIAL",
+      "current_evidence_state": "INTERNAL_ONLY",
+      "intended_future_state": "PUBLISHED",
+      "rollback_state": "INTERNAL_ONLY"
+    }
+  ],
+  "google_places_api_requests": 0,
+  "production_credential_writes": 0
+}

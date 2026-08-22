@@ -1,0 +1,22 @@
+{
+  "task": "PBC-PROD-004",
+  "mode": "simulate-only",
+  "apply": false,
+  "credential_transitions": {
+    "from": "INTERNAL_ONLY",
+    "to": "PUBLISHED",
+    "count": 1
+  },
+  "companies": 0,
+  "company_publication": 0,
+  "indexable": 0,
+  "psa": 0,
+  "contacts": 0,
+  "complaints": 0,
+  "enforcement": 0,
+  "trust_score": 0,
+  "sitemap": 0,
+  "ranking": 0,
+  "json_ld": 0,
+  "og": 0
+}
