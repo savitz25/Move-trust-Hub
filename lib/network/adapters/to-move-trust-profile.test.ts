@@ -57,12 +57,35 @@ test('Wave 1 PUBLISHABLE shell uses FDACS primary label, not Verify USDOT empty-
   );
   assert.equal(shell.verification.primaryLabel, FL_FDACS_VERIFICATION_WORDING);
   assert.equal(shell.verification.isVerified, true);
-  assert.ok(shell.verification.sources.some((s) => s.id === 'fdacs'));
+  const fdacs = shell.verification.sources.find((s) => s.id === 'fdacs');
+  assert.ok(fdacs);
+  assert.equal(fdacs?.label, 'Florida FDACS');
+  assert.equal(fdacs?.status, 'verified');
+  assert.match(String(fdacs?.note), /not an FMCSA endorsement/i);
   assert.ok(!shell.verification.sources.some((s) => s.id === 'fmcsa'));
   assert.doesNotMatch(shell.verification.primaryLabel, /Verify USDOT on FMCSA SAFER/i);
+  assert.doesNotMatch(
+    shell.verification.primaryLabel,
+    /TrustHub Verified|Verified mover|Approved mover|Certified|Recommended mover|Safe mover/i
+  );
   assert.equal(shell.extensions?.move?.usdot, undefined);
   assert.equal(shell.extensions?.move?.mcNumber, undefined);
   assert.equal(FL_NO_FEDERAL_ID_IN_MTH_DATA.includes('federal mover identifier'), true);
+});
+
+test('Wave 1 INGESTED does not receive FDACS shell chrome', () => {
+  const shell = toMoveTrustProfile(
+    company({
+      id: 'fl-im-1025',
+      slug: 'gentletouch-moving-company',
+      name: 'Gentletouch Moving Company',
+      publicationState: 'INGESTED',
+      usdotNumber: '',
+      mcNumber: '',
+    })
+  );
+  assert.notEqual(shell.verification.primaryLabel, FL_FDACS_VERIFICATION_WORDING);
+  assert.ok(!shell.verification.sources.some((s) => s.id === 'fdacs'));
 });
 
 test('KEEP_80 / non-wave companies still get FMCSA-framed empty-state when no DOT', () => {
@@ -78,4 +101,5 @@ test('KEEP_80 / non-wave companies still get FMCSA-framed empty-state when no DO
   );
   assert.equal(shell.verification.primaryLabel, 'Verify USDOT on FMCSA SAFER');
   assert.ok(!shell.verification.sources.some((s) => s.id === 'fdacs'));
+  assert.equal(shell.verification.isVerified, false);
 });

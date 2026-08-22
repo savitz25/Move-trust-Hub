@@ -118,6 +118,9 @@ export function toMoveTrustProfile(company: Company): TrustProfileShell {
     serviceScope: scope,
     verification: {
       primaryLabel,
+      // Wave chrome: styles the FDACS registration-evidence chip (same visual
+      // language as "FMCSA authority checked"). Visible/SR text is
+      // FL_FDACS_VERIFICATION_WORDING — not "TrustHub Verified" / "Approved".
       isVerified: waveChrome ? true : Boolean(verification.directoryVerified || fmcsaOk),
       sources,
     },
