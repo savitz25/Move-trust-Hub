@@ -5,7 +5,7 @@ import {
   MDC_VERIFICATION_COPY,
   miamiDadeRegistrationBlockHeading,
   type MiamiDadePublishedRegistration,
-} from '@/lib/county-regulatory/mdc/public-read';
+} from '@/lib/county-regulatory/mdc/public-read-core';
 import { cn } from '@/lib/utils';
 
 export type MiamiDadeRegistrationBlockProps = {
