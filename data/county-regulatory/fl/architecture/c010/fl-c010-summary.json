@@ -27,5 +27,7 @@
   "consumer_pii_committed": 0,
   "merge_executed": false,
   "transplant_executed_to_main": false,
-  "recommended_fl_c011": "FL-C011 — County Research Stack Selective-Transplant Integration (execute only when SAFE_TO_INTEGRATE=YES)"
+  "recommended_fl_c011": "FL-C011 — County Research Stack Selective-Transplant Integration (execute only when SAFE_TO_INTEGRATE=YES)",
+  "c010_pr": 64,
+  "c010_head_sha": "cb2c333b786b6e0ef07401a8dc403e03446a50ae"
 }
