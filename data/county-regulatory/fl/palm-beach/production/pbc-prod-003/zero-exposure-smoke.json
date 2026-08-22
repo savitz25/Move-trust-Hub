@@ -1,0 +1,88 @@
+{
+  "ok": true,
+  "mode": "zero-exposure",
+  "base": "https://www.movetrusthub.com",
+  "http_200": "11/11",
+  "palm_beach_blocks_visible": "0/11",
+  "mv_exposed": "0/11",
+  "gate": "PASS — ZERO EXPOSURE",
+  "results": [
+    {
+      "slug": "america-s-family-moving-and-storage-llc",
+      "mv": "MV1029",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "good-greek-moving-and-storage",
+      "mv": "MV1097",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "gm-van-lines-inc",
+      "mv": "MV1108",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "patriot-moving-and-storage",
+      "mv": "MV1191",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "whatamove",
+      "mv": "MV1315",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "forward-van-lines",
+      "mv": "MV1323",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "willie-s-transfer-storage",
+      "mv": "MV3",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "supreme-relocation-inc",
+      "mv": "MV624",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "joseph-barton",
+      "mv": "MV773",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "pack-on-the-go-inc",
+      "mv": "MV802",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    },
+    {
+      "slug": "father-son-moving-storage",
+      "mv": "MV954",
+      "status": 200,
+      "block": false,
+      "mv_exposed": false
+    }
+  ]
+}

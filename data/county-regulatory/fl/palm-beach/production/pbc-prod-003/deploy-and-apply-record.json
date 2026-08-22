@@ -1,0 +1,106 @@
+{
+  "task": "PBC-PROD-003",
+  "status": "PBC CREDENTIAL CANARY PUBLISHED — OBSERVATION ACTIVE",
+  "pr": {
+    "implementation": {
+      "number": 74,
+      "url": "https://github.com/savitz25/Move-trust-Hub/pull/74",
+      "merge_sha": "2fc416c216c8b06de74f3ed42466e1728f9e7d85",
+      "merged_at": "2026-08-22T19:50:55Z"
+    },
+    "cache_hotfix": {
+      "number": 75,
+      "url": "https://github.com/savitz25/Move-trust-Hub/pull/75",
+      "merge_sha": "c3ea773a0c1f52d189559568a88c0e03161d0c99",
+      "merged_at": "2026-08-22T20:09:27Z",
+      "note": "Excluded /companies from 86400 CDN catch-all; CDN-Cache-Control max-age=300 on company profiles"
+    }
+  },
+  "production": {
+    "expected_sha_code_path": "2fc416c216c8b06de74f3ed42466e1728f9e7d85",
+    "production_sha_at_apply": "2fc416c216c8b06de74f3ed42466e1728f9e7d85",
+    "match_at_apply": true,
+    "deployment_id_at_apply": 6040624691,
+    "dpl_at_apply": "dpl_2nXUXDFXMojkUg5AMxukUHMWZ4d4",
+    "production_sha_current": "c3ea773a0c1f52d189559568a88c0e03161d0c99",
+    "deployment_id_current": 6040784467,
+    "dpl_current": "dpl_9ydMyaCLxA1YDA9iw3w93Jnp7Wqx",
+    "canonical_host": "https://www.movetrusthub.com"
+  },
+  "zero_exposure_gate": {
+    "http_200": "11/11",
+    "palm_beach_blocks_visible": "0/11",
+    "mv_exposed": "0/11",
+    "anon_table_access": "DENIED",
+    "pass": true,
+    "when": "after code deploy, before DB apply"
+  },
+  "manifest": {
+    "wave_id": "PBC_COUNTY_CREDENTIAL_PUBLICATION_CANARY_V1",
+    "manifest_hash": "f9d56097fa4b2d1c6dfb729e208a6d13c7b75d5ecac13b674a77b3240a167b3f",
+    "companies": 11,
+    "credentials": 11
+  },
+  "apply": {
+    "mode": "apply",
+    "published_now": 11,
+    "published_total_canary": 11,
+    "non_canary_published": 0,
+    "transaction": "single"
+  },
+  "post_apply_db": {
+    "total_county_credential_rows": 46,
+    "published": 11,
+    "internal_only": 35,
+    "unexpected_published": 0,
+    "duplicates": 0,
+    "orphans": 0,
+    "distinct_canary_companies": 11
+  },
+  "post_apply_smoke": {
+    "http_200": "11/11",
+    "palm_beach_blocks_visible": "11/11",
+    "mv_exposed": "11/11",
+    "internal_only_sample_hidden": true,
+    "directory_payload_county": false,
+    "compare_payload_county": false,
+    "pass": true
+  },
+  "cache_action": {
+    "mechanism": "ISR revalidate=300 + CDN-Cache-Control max-age=300 on /companies/:path*",
+    "broad_mutation": false,
+    "hotfix_required": true,
+    "hotfix_reason": "catch-all CDN-Cache-Control max-age=86400 was applying to company profiles",
+    "recorded_cdn_header_after_hotfix": "max-age=300"
+  },
+  "rollback_ready": {
+    "dry_run_would_revert": 11,
+    "command": "node scripts/publish-pbc-prod-003-canary.mjs --rollback --manifest-hash f9d56097fa4b2d1c6dfb729e208a6d13c7b75d5ecac13b674a77b3240a167b3f"
+  },
+  "unchanged": {
+    "trust_score": 0,
+    "sitemap": 0,
+    "ranking": 0,
+    "company_publication": 0,
+    "indexable": 0,
+    "psa": 0,
+    "contacts": 0,
+    "complaints": 0,
+    "enforcement": 0,
+    "google_places": 0,
+    "state_observation_clock_reset": false
+  },
+  "ui_a11y_html_contract": {
+    "pass": true,
+    "browser_mcp": "unavailable (chrome profile lock); HTML contract + production smoke used",
+    "checks": [
+      "heading",
+      "MV as text",
+      "status text not color-only",
+      "source link label",
+      "disclaimer",
+      "sr-only permit/status",
+      "no endorsement badge"
+    ]
+  }
+}
