@@ -1,8 +1,11 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import { parseAskSearchHandoff } from '@/lib/search-handoff/parse';
+import { useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { trackGaEvent } from '@/components/ga-events';
+import { parseAskSearchHandoff, serializeAskSearchHandoff } from '@/lib/search-handoff/parse';
 import { resolveAskSearchHandoff } from '@/lib/search-handoff/resolve';
+import { persistAskHandoffContext, analyticsFromAskHandoff } from '@/lib/search-handoff/session';
 
 /**
  * Consumer-facing Ask handoff chrome. Reads allowlisted query params only.
@@ -10,7 +13,25 @@ import { resolveAskSearchHandoff } from '@/lib/search-handoff/resolve';
  */
 export function AskSearchContextBanner() {
   const params = useSearchParams();
+  const pathname = usePathname();
   const ctx = parseAskSearchHandoff(params);
+  const ctxKey = ctx ? serializeAskSearchHandoff(ctx) : '';
+
+  useEffect(() => {
+    if (!ctx) return;
+    persistAskHandoffContext(ctx);
+    const dest = resolveAskSearchHandoff(ctx);
+    const handoff_type =
+      pathname.startsWith('/companies/') && pathname.split('/').length > 2 ? 'entity' : 'view_more';
+    trackGaEvent(
+      'ask_search_handoff',
+      analyticsFromAskHandoff(ctx, {
+        handoff_type,
+        match_precision: dest.matchClass,
+      })
+    );
+  }, [ctx, ctxKey, pathname]);
+
   if (!ctx) return null;
 
   const dest = resolveAskSearchHandoff(ctx);

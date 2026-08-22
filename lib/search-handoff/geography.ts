@@ -112,6 +112,10 @@ export function stateSlugFromCode(code: string): string | undefined {
   return STATE_SLUGS[code.toUpperCase()];
 }
 
+export function isUspsStateCode(code: string): boolean {
+  return Boolean(STATE_SLUGS[code.trim().toUpperCase()]);
+}
+
 export function countyDisplayName(countySlug: string, stateSlug?: string): string {
   const base = countySlug
     .split('-')

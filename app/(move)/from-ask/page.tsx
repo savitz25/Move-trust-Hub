@@ -1,6 +1,11 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { parseAskSearchHandoff } from '@/lib/search-handoff/parse';
 import { resolveAskSearchHandoff } from '@/lib/search-handoff/resolve';
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 type Props = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;

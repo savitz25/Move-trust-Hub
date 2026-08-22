@@ -31,6 +31,24 @@ function placeLabel(geo?: ResolvedGeography, ctx?: MoveAskSearchContext): string
 }
 
 function moverBackLabel(geo: ResolvedGeography | undefined, ctx: MoveAskSearchContext): string {
+  if (ctx.entityType === 'interstate_mover' && ctx.state && !ctx.city && !ctx.county && !ctx.zip) {
+    const stateName = geo?.stateSlug
+      ? geo.stateSlug
+          .split('-')
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(' ')
+      : ctx.state;
+    return `Back to interstate movers in ${stateName}`;
+  }
+  if (ctx.entityType !== 'interstate_mover' && ctx.state && !ctx.city && !ctx.county && !ctx.zip) {
+    const stateName = geo?.stateSlug
+      ? geo.stateSlug
+          .split('-')
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(' ')
+      : ctx.state;
+    return `Back to ${stateName} movers`;
+  }
   return `Back to movers serving ${placeLabel(geo, ctx)}`;
 }
 
@@ -56,7 +74,7 @@ function bannerForMovers(geo: ResolvedGeography, ctx: MoveAskSearchContext): { t
   }
   return {
     title: `Movers in ${geo.stateCode}`,
-    body: 'Browse existing MoveTrustHub listings for this state. No extra search is required.',
+    body: 'This state directory uses existing county service assignments. Headquarters in another state does not disqualify a mover that already has source-backed coverage here.',
   };
 }
 
@@ -111,6 +129,27 @@ export function resolveAskSearchHandoff(ctx: MoveAskSearchContext): AskHandoffRe
     };
   }
 
+  const stateOnly = !geo.countySlug && !ctx.city && !ctx.zip;
+  if (entity === 'interstate_mover' && stateOnly) {
+    const path = '/companies';
+    const href = withAskHandoffParams(
+      `/companies?coverage=state&state=${encodeURIComponent(geo.stateCode)}`,
+      ctx
+    );
+    return {
+      status: 'ok',
+      path,
+      href,
+      entityType: entity,
+      geography: geo,
+      matchClass: 'state_service_area',
+      backLabel: moverBackLabel(geo, ctx),
+      bannerTitle: `Interstate movers with ${geo.stateCode} relevance`,
+      bannerBody:
+        'These interstate directory listings use existing coverage filters. Headquarters in this state, county service coverage, and broader national listings remain distinct signals — not equivalent to an exact local match.',
+    };
+  }
+
   const path = geo.countySlug
     ? `/local-movers/${geo.stateSlug}/${geo.countySlug}`
     : `/local-movers/${geo.stateSlug}`;
@@ -150,6 +189,7 @@ export function isResolvedAskPath(pathname: string, resolution: AskHandoffResolu
   if (current === target) return true;
   if (current.startsWith('/companies/')) return true;
   if (current.startsWith('/auto-transport/')) return true;
+  if (target === '/companies' && current === '/companies') return true;
   return false;
 }
 

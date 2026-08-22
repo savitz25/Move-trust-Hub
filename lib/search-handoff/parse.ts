@@ -10,6 +10,7 @@ import {
   type MoveAskSearchContext,
   type MoveHandoffEntityType,
 } from './allowlist';
+import { isUspsStateCode } from './geography';
 
 const ALLOW = new Set<string>(ASK_HANDOFF_KEYS);
 const FORBIDDEN = new Set<string>(ASK_HANDOFF_FORBIDDEN_KEYS);
@@ -29,10 +30,14 @@ function slugish(value: string, max = 64): string {
   return value.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '').slice(0, max);
 }
 
-function titleCity(value: string): string {
-  return value
-    .trim()
+function titleCity(value: string): string | undefined {
+  const cleaned = value
+    .replace(/[^a-zA-Z0-9\s-]/g, ' ')
     .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!cleaned) return undefined;
+  return cleaned
     .split(/\s+/)
     .filter(Boolean)
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
@@ -42,7 +47,7 @@ function titleCity(value: string): string {
 
 function normalizeState(raw: string): string | undefined {
   const v = raw.trim().toUpperCase();
-  if (/^[A-Z]{2}$/.test(v)) return v;
+  if (/^[A-Z]{2}$/.test(v) && isUspsStateCode(v)) return v;
   return undefined;
 }
 
@@ -81,7 +86,8 @@ export function parseAskSearchHandoff(
     const raw = firstString(params, key);
     if (raw == null) continue;
     const v = String(raw).trim();
-    if (!v || v.toLowerCase() === 'unknown') continue;
+    if (!v) continue;
+    if (v.toLowerCase() === 'unknown' && key !== 'entity') continue;
     if (typeof v !== 'string') continue;
 
     if (key === 'zip') {
@@ -89,8 +95,8 @@ export function parseAskSearchHandoff(
       continue;
     }
     if (key === 'state') {
-      const st = normalizeState(v) || (v.length <= 32 ? v.slice(0, 32) : undefined);
-      if (st && /^[A-Z]{2}$/.test(st)) ctx.state = st;
+      const st = normalizeState(v);
+      if (st) ctx.state = st;
       continue;
     }
     if (key === 'county') {
@@ -99,7 +105,8 @@ export function parseAskSearchHandoff(
       continue;
     }
     if (key === 'city') {
-      ctx.city = titleCity(v);
+      const city = titleCity(v);
+      if (city) ctx.city = city;
       continue;
     }
     if (key === 'entity') {

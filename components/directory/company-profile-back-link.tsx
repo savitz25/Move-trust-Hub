@@ -12,6 +12,7 @@ import {
 } from '@/lib/directory/profile-back-link';
 import { parseAskSearchHandoff } from '@/lib/search-handoff/parse';
 import { resolveAskSearchHandoff } from '@/lib/search-handoff/resolve';
+import { readAskHandoffContext } from '@/lib/search-handoff/session';
 
 /**
  * Back navigation without polluting crawlable URLs.
@@ -23,8 +24,15 @@ export function CompanyProfileBack() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [returnPath, setReturnPath] = useState<string | null>(null);
-  const askCtx = parseAskSearchHandoff(searchParams);
-  const askDest = askCtx ? resolveAskSearchHandoff(askCtx) : null;
+  const [askDest, setAskDest] = useState<ReturnType<typeof resolveAskSearchHandoff> | null>(null);
+
+  useEffect(() => {
+    const fromUrl = parseAskSearchHandoff(searchParams);
+    const fromSession = fromUrl ? null : readAskHandoffContext();
+    const ctx = fromUrl || fromSession;
+    setAskDest(ctx ? resolveAskSearchHandoff(ctx) : null);
+  }, [searchParams]);
+
   const askHref = askDest?.href ?? null;
 
   useEffect(() => {

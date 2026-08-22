@@ -24,6 +24,7 @@ export function LocalMoverCard({
   stateCode,
   county,
   profileReturnPath,
+  matchPrecision,
 }: {
   mover: LocalMover;
   rank: number;
@@ -34,6 +35,8 @@ export function LocalMoverCard({
   county?: Pick<LocalCounty, 'slug' | 'name' | 'stateCode' | 'stateSlug' | 'seat'>;
   /** When set, profile links return to this page (e.g. county directory). */
   profileReturnPath?: string;
+  /** Internal Ask ranking signal — not shown as consumer copy. */
+  matchPrecision?: { best: string; reasons: string[] };
 }) {
   const hasDirectoryProfile =
     Boolean(mover.profileSlug) ||
@@ -66,6 +69,8 @@ export function LocalMoverCard({
       id={`mover-${mover.id}`}
       aria-label={`#${rank} ${mover.name}${countyLabel ? ` serving ${countyLabel}` : ''}`}
       className="rounded-2xl border bg-card p-5 sm:p-6 shadow-sm hover:border-primary/30 transition-colors"
+      data-match-precision={matchPrecision?.best}
+      data-match-reasons={matchPrecision?.reasons.join(' ')}
     >
       <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
         <div className="flex items-start gap-3 min-w-0">

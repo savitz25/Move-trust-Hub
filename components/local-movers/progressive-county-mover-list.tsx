@@ -3,6 +3,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
+import { parseAskSearchHandoff } from '@/lib/search-handoff/parse';
+import { resolveAskSearchHandoff } from '@/lib/search-handoff/resolve';
+import { classifyListingAgainstHandoff } from '@/lib/search-handoff/precision';
+import type { MoveAskSearchContext } from '@/lib/search-handoff/allowlist';
+import type { ResolvedGeography } from '@/lib/search-handoff/geography';
 import {
   COUNTY_MOVER_PAGE_SIZE,
   nextRevealCount,
@@ -59,6 +64,14 @@ export function ProgressiveCountyMoverList({
   const effectivePageSize = developmentTier ? Math.min(pageSize, 6) : pageSize;
   const initialVisible = Math.min(effectivePageSize, movers.length);
   const [visibleCount, setVisibleCount] = useState(initialVisible);
+  const [askCtx, setAskCtx] = useState<MoveAskSearchContext | null>(null);
+  const [askGeo, setAskGeo] = useState<ResolvedGeography | undefined>(undefined);
+
+  useEffect(() => {
+    const ctx = parseAskSearchHandoff(window.location.search);
+    setAskCtx(ctx);
+    setAskGeo(ctx ? resolveAskSearchHandoff(ctx).geography : undefined);
+  }, []);
 
   useEffect(() => {
     setVisibleCount(Math.min(effectivePageSize, movers.length));
@@ -101,6 +114,11 @@ export function ProgressiveCountyMoverList({
                 stateCode={stateCode}
                 county={county}
                 profileReturnPath={profileReturnPath}
+                matchPrecision={
+                  askCtx
+                    ? classifyListingAgainstHandoff(mover, askCtx, askGeo)
+                    : undefined
+                }
               />
             </li>
           );

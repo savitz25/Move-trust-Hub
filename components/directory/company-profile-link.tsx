@@ -7,6 +7,8 @@ import {
   buildCompanyProfileHref,
   storeCompanyReturnPath,
 } from '@/lib/directory/profile-back-link';
+import { parseAskSearchHandoff } from '@/lib/search-handoff/parse';
+import { persistAskHandoffContext } from '@/lib/search-handoff/session';
 
 type Props = Omit<ComponentProps<typeof Link>, 'href'> & {
   slug: string;
@@ -53,6 +55,10 @@ export function CompanyProfileLink({
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (returnPath) storeCompanyReturnPath(returnPath);
+    if (typeof window !== 'undefined') {
+      const askCtx = parseAskSearchHandoff(window.location.search);
+      if (askCtx) persistAskHandoffContext(askCtx);
+    }
     onClick?.(event);
     if (event.defaultPrevented) return;
     if (isModifiedClick(event)) return;
