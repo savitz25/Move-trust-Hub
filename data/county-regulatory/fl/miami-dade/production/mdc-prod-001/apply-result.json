@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "mode": "apply",
+  "inserted": 70,
+  "program_id": "0d4fc3af-a1bb-4c98-96a8-909bf30d9657",
+  "program_inserted": 1,
+  "n": 70,
+  "internal_only": 70,
+  "published": 0,
+  "publication_eligible": 0,
+  "palm_beach": {
+    "total": 46,
+    "published": 11,
+    "internal_only": 35,
+    "pass": true
+  },
+  "companies": 0,
+  "psa": 0,
+  "contacts": 0,
+  "lbt_mutations": 0,
+  "status": "MIAMI-DADE MR WAVE A INGESTED — INTERNAL ONLY"
+}

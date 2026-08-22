@@ -1,0 +1,188 @@
+{
+  "task": "MDC-PROD-001",
+  "historical_multi_license_businesses": 25,
+  "wave_a_companies_with_multiple_mrs": 0,
+  "wave_a_multi_rows": [],
+  "historical_intersect": [
+    {
+      "business_id": "86D29358-7219-4BCE-BB6A-2113AA324412",
+      "company_name": "South Florida Van Line, Inc.",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-00278"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-00278",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-090892",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "41BF3450-36A4-48ED-9A88-9B0A36830949",
+      "company_name": "A-1 Southeast Moving, Inc.",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-00332"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-00332",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-095556",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "59CC5197-07D6-42CF-A943-D8CD766B54D5",
+      "company_name": "Jesus Moving, LLC",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-00378"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-00378",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-090573",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "A8FB9081-88F7-4E0F-84D9-F5F44540EF9C",
+      "company_name": "CMR Transport, Inc.",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-01016"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-01016",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-092168",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "7DD1AE94-3CBC-4C9F-9E4F-3A62DDEABC65",
+      "company_name": "Inter-American Movers and Forwarders,LLC",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-01054"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-01054",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-093998",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "F94B339A-ED18-4E42-AB66-8838474DC32D",
+      "company_name": "SF Local Moving Inc",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-01139"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-01139",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-091419",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "ECB381C5-E47A-4C75-BCA2-D978FC72A6B7",
+      "company_name": "Mancav Furniture Delivery LLC",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-01192"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-01192",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-095972",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "66ADC893-EC14-445E-8687-7C9B9BF3B9FA",
+      "company_name": "Quintero Delivery & Moving, Inc.",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-01216"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-01216",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-094481",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "1D3DA254-CEB3-4C40-98F2-C94E723579D0",
+      "company_name": "Metayer Moving Corp",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-01244"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-01244",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-096341",
+          "status": "Archived"
+        }
+      ]
+    },
+    {
+      "business_id": "223FFEB7-03BC-4022-BEBF-2E85C9C52056",
+      "company_name": "Fargo Partners LLC",
+      "relationship_class": "CURRENT_PLUS_HISTORICAL_VERSIONS",
+      "wave_a_mrs": [
+        "MR-01283"
+      ],
+      "all_licenses": [
+        {
+          "mr": "MR-01283",
+          "status": "Issued"
+        },
+        {
+          "mr": "MR-01284",
+          "status": "Out of Business"
+        }
+      ]
+    }
+  ]
+}

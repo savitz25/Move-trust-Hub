@@ -1,0 +1,23 @@
+{
+  "mode": "dry-run",
+  "manifest_hash": "56cfc4c3cec43781e4188f50704ebd7740dd3d04b7af6f818629cbaaa5a1a8eb",
+  "wave_id": "MDC_MR_WAVE_A_INTERNAL_V1",
+  "program_insert": 1,
+  "credential_insert": 70,
+  "skip_existing": 0,
+  "collisions": [],
+  "companies": 0,
+  "company_publication": 0,
+  "indexable": 0,
+  "psa": 0,
+  "contacts": 0,
+  "complaints": 0,
+  "enforcement": 0,
+  "lbt_mutations": 0,
+  "trust_score": 0,
+  "published": 0,
+  "publication_eligible": 0,
+  "palm_beach_delta": 0,
+  "google_places_api_requests": 0,
+  "consumer_pii": 0
+}
