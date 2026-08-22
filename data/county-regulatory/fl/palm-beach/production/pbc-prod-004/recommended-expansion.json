@@ -1,0 +1,32 @@
+{
+  "task": "PBC-PROD-004",
+  "company_count": 1,
+  "credential_count": 1,
+  "historical_expectation": {
+    "companies": 1,
+    "credentials": 2,
+    "company": "lee-s-moving-company-usdot-3034432",
+    "mvs": ["MV50", "MV868"]
+  },
+  "matches_historical_two_cred": false,
+  "live_reason": "MV50 CURRENT + EXACT + PUBLISHABLE; sibling MV868 identity EXACT but freshness STALE (expiration/source window) — held from draft until CURRENT",
+  "members": [
+    {
+      "company_id": "usdot-3034432",
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "mv": "MV50",
+      "fdacs_im": "IM2822",
+      "freshness": "CURRENT"
+    }
+  ],
+  "held_siblings": [
+    {
+      "company_id": "usdot-3034432",
+      "mv": "MV868",
+      "freshness": "STALE",
+      "gate": "STATUS_REVIEW"
+    }
+  ],
+  "ui_if_both_current": "Palm Beach County Moving Permits (plural)",
+  "ui_if_single_current": "Palm Beach County Moving Permit (singular)"
+}

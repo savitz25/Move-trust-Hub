@@ -1,0 +1,10 @@
+{
+  "task": "PBC-PROD-004",
+  "origin_main_sha": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
+  "production_sha": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
+  "match": true,
+  "production_deployment_id": 6040939202,
+  "latest_county_pr": 78,
+  "latest_state_pr_on_main_at_branch": 76,
+  "note": "Includes PBC-PROD-001..003, CDN hotfix, observation closeout; Builder 1 state work present and untouched"
+}

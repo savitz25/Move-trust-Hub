@@ -1,0 +1,15 @@
+{
+  "task": "PBC-PROD-004",
+  "official_source_code_LICENSED": {
+    "from": "api-GetLicenseStatus.json",
+    "License_Status_Code": "LICENSED",
+    "Status_Description": "License issued",
+    "note": "Official Palm Beach County status vocabulary includes LICENSED"
+  },
+  "credential_type_noun": "Moving Business Permit",
+  "raw_source_status": "LICENSED",
+  "normalized_internal_status": "LICENSED",
+  "consumer_facing_label": "Active county moving-business permit",
+  "strengthening_risk": "Avoid implying MoveTrustHub license endorsement; keep county permit framing",
+  "canary_all_licensed": true
+}

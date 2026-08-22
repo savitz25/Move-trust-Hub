@@ -2,18 +2,18 @@
   "google_places_requests": 0,
   "task": "FL-011",
   "status": "OBSERVATION HEALTHY — CONTINUE",
-  "retrieved_at": "2026-08-22T20:18:51.339Z",
+  "retrieved_at": "2026-08-22T21:28:05.913Z",
   "observation": {
     "started_at": "2026-08-22T14:45:00.000Z",
     "target_days": 14,
     "target_end": "2026-09-05T14:45:00.000Z",
-    "elapsed_hours": 5.6,
-    "remaining_hours": 330.4,
+    "elapsed_hours": 6.7,
+    "remaining_hours": 329.3,
     "period_elapsed": false
   },
   "production": {
     "host": "https://www.movetrusthub.com",
-    "deployed_sha": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+    "deployed_sha": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
     "launch_sha": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140",
     "current_main_expected_docs_merge": "ceeaa987982b2871662fbb41fee858b52f1a0651",
     "sha_match_launch": "NO"
@@ -26,9 +26,9 @@
   },
   "database": {
     "freeze": {
-      "companies": 5908,
+      "companies": 5940,
       "indexable": 4905,
-      "ingested": 850,
+      "ingested": 882,
       "publishable": 5022
     },
     "membership": 37,
@@ -98,7 +98,7 @@
       "kind": "major-federal-carrier",
       "path": "/companies/allied-van-lines",
       "status": 200,
-      "ms": 1203,
+      "ms": 1526,
       "title": "Allied Van Lines — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
       "robots": "index, follow",
       "noindex": false,
@@ -120,7 +120,7 @@
       "jsonLdFdacs": false,
       "jsonLdAggregateRating": true,
       "jsonLdAreaServed": true,
-      "buildId": "0fe5f3d226f8203956b1761b29482cf7feaeaee8",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -128,7 +128,7 @@
       "kind": "federal-mover",
       "path": "/companies/united-van-lines",
       "status": 200,
-      "ms": 1069,
+      "ms": 1217,
       "title": "United Van Lines — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
       "robots": "index, follow",
       "noindex": false,
@@ -150,7 +150,7 @@
       "jsonLdFdacs": false,
       "jsonLdAggregateRating": true,
       "jsonLdAreaServed": true,
-      "buildId": "0fe5f3d226f8203956b1761b29482cf7feaeaee8",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -158,7 +158,7 @@
       "kind": "federal-carrier",
       "path": "/companies/mayflower-transit",
       "status": 200,
-      "ms": 8447,
+      "ms": 8280,
       "title": "Mayflower Transit — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub",
       "robots": "index, follow",
       "noindex": false,
@@ -180,7 +180,7 @@
       "jsonLdFdacs": false,
       "jsonLdAggregateRating": true,
       "jsonLdAreaServed": true,
-      "buildId": "0fe5f3d226f8203956b1761b29482cf7feaeaee8",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     }
   ],
@@ -341,10 +341,10 @@
   "performance": {
     "label": "CURRENT_SHELL_BASELINE",
     "n": 37,
-    "ttfb_ms_min": 768,
-    "ttfb_ms_p50": 917,
-    "ttfb_ms_p95": 1332,
-    "ttfb_ms_max": 1354,
+    "ttfb_ms_min": 817,
+    "ttfb_ms_p50": 912,
+    "ttfb_ms_p95": 1575,
+    "ttfb_ms_max": 1729,
     "server_5xx": 0
   },
   "launch_baseline": {
@@ -376,7 +376,7 @@
       "county": "Pinellas",
       "path": "/companies/gentletouch-moving-company",
       "status": 200,
-      "ms": 1153,
+      "ms": 1729,
       "title": "Gentletouch Moving Company — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -398,7 +398,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -430,7 +430,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -440,7 +440,7 @@
       "county": "Miami-Dade",
       "path": "/companies/nippon-express-u-s-a-inc",
       "status": 200,
-      "ms": 1120,
+      "ms": 1229,
       "title": "Nippon Express U.S.A., INC. — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -462,7 +462,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -472,7 +472,7 @@
       "county": "Lee",
       "path": "/companies/top-class-moving-inc",
       "status": 200,
-      "ms": 1110,
+      "ms": 1448,
       "title": "Top Class Moving INC. — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -494,7 +494,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -504,7 +504,7 @@
       "county": "Miami-Dade",
       "path": "/companies/fuentes-moving-corp",
       "status": 200,
-      "ms": 1013,
+      "ms": 1133,
       "title": "Fuentes Moving CORP. — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -526,7 +526,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -536,7 +536,7 @@
       "county": "Lee",
       "path": "/companies/act-of-class-moving-storage-llc",
       "status": 200,
-      "ms": 1332,
+      "ms": 891,
       "title": "Act Of Class Moving &amp; Storage LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -558,7 +558,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -568,7 +568,7 @@
       "county": "Collier",
       "path": "/companies/helping-hand-movers-naples-llc",
       "status": 200,
-      "ms": 950,
+      "ms": 1102,
       "title": "Helping Hand Movers Naples, LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -590,7 +590,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -600,7 +600,7 @@
       "county": "Sarasota",
       "path": "/companies/ringling-moving-llc",
       "status": 200,
-      "ms": 983,
+      "ms": 839,
       "title": "Ringling Moving LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -622,7 +622,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -632,7 +632,7 @@
       "county": "Miami-Dade",
       "path": "/companies/1-withers-transportation-systems-2-withers-worldwide",
       "status": 200,
-      "ms": 908,
+      "ms": 1510,
       "title": "1. Withers Transportation Systems; 2. Withers Worldwide — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -654,7 +654,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -664,7 +664,7 @@
       "county": "Pinellas",
       "path": "/companies/big-man-s-moving-company-llc",
       "status": 200,
-      "ms": 911,
+      "ms": 912,
       "title": "Big Man&#x27;s Moving Company LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -686,7 +686,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -696,7 +696,7 @@
       "county": "Nassau",
       "path": "/companies/m-m-pickup-and-delivery-llc",
       "status": 200,
-      "ms": 884,
+      "ms": 904,
       "title": "M&amp;M Pickup And Delivery, LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -718,7 +718,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -728,7 +728,7 @@
       "county": "Martin",
       "path": "/companies/andersen-moving-and-storage-llc",
       "status": 200,
-      "ms": 1054,
+      "ms": 1056,
       "title": "Andersen Moving And Storage LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -750,7 +750,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -760,7 +760,7 @@
       "county": "Polk",
       "path": "/companies/design-furniture-consignment-moving-inc",
       "status": 200,
-      "ms": 851,
+      "ms": 1575,
       "title": "Design Furniture Consignment &amp; Moving INC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -782,7 +782,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -792,7 +792,7 @@
       "county": "Miami-Dade",
       "path": "/companies/local-n-long-distance-movers",
       "status": 200,
-      "ms": 1354,
+      "ms": 1025,
       "title": "Local N Long Distance Movers — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -814,7 +814,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -824,7 +824,7 @@
       "county": "Broward",
       "path": "/companies/adios-moving-llc",
       "status": 200,
-      "ms": 917,
+      "ms": 892,
       "title": "Adios Moving LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -846,7 +846,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -856,7 +856,7 @@
       "county": "Manatee",
       "path": "/companies/acceleration-moving-solutions-llc",
       "status": 200,
-      "ms": 1045,
+      "ms": 858,
       "title": "Acceleration Moving Solutions LLC. — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -878,7 +878,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -888,7 +888,7 @@
       "county": "Miami-Dade",
       "path": "/companies/genesis-moving-storage-inc",
       "status": 200,
-      "ms": 1023,
+      "ms": 842,
       "title": "Genesis Moving &amp; Storage, INC. — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -910,7 +910,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -920,7 +920,7 @@
       "county": "Orange",
       "path": "/companies/hilldrup-companies-inc",
       "status": 200,
-      "ms": 1119,
+      "ms": 957,
       "title": "Hilldrup Companies, INC. — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -942,7 +942,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -952,7 +952,7 @@
       "county": "Pinellas",
       "path": "/companies/parris-moving-llc",
       "status": 200,
-      "ms": 912,
+      "ms": 1041,
       "title": "Parris Moving LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -974,7 +974,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -984,7 +984,7 @@
       "county": "Broward",
       "path": "/companies/chris-brown-vanlines",
       "status": 200,
-      "ms": 906,
+      "ms": 1022,
       "title": "Chris Brown Vanlines — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1006,7 +1006,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1016,7 +1016,7 @@
       "county": "Seminole",
       "path": "/companies/easy-peasy-moving-llc",
       "status": 200,
-      "ms": 1130,
+      "ms": 840,
       "title": "Easy Peasy Moving LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1038,7 +1038,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1048,7 +1048,7 @@
       "county": "Miami-Dade",
       "path": "/companies/homestead-transfer-storage-co",
       "status": 200,
-      "ms": 914,
+      "ms": 1007,
       "title": "Homestead Transfer &amp; Storage CO. — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1070,7 +1070,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1080,7 +1080,7 @@
       "county": "Lee",
       "path": "/companies/honest-true-moving-crew",
       "status": 200,
-      "ms": 911,
+      "ms": 899,
       "title": "Honest &amp; True Moving Crew — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1102,7 +1102,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1112,7 +1112,7 @@
       "county": "Broward",
       "path": "/companies/k-k-transfer",
       "status": 200,
-      "ms": 844,
+      "ms": 936,
       "title": "K&amp;K Transfer — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1134,7 +1134,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1144,7 +1144,7 @@
       "county": "Martin",
       "path": "/companies/treasure-coast-safe-sales-moving",
       "status": 200,
-      "ms": 880,
+      "ms": 859,
       "title": "Treasure Coast Safe Sales &amp; Moving — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1166,7 +1166,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1176,7 +1176,7 @@
       "county": "Sarasota",
       "path": "/companies/matt-s-mindful-movers-llc",
       "status": 200,
-      "ms": 910,
+      "ms": 824,
       "title": "Matt&#x27;s Mindful Movers LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1198,7 +1198,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1208,7 +1208,7 @@
       "county": "Hillsborough",
       "path": "/companies/miss-peach-iv-true-movers-inc",
       "status": 200,
-      "ms": 898,
+      "ms": 839,
       "title": "Miss Peach Iv True Movers INC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1230,7 +1230,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1240,7 +1240,7 @@
       "county": "Broward",
       "path": "/companies/advance-sorensen-movers-of-south-florida-llc",
       "status": 200,
-      "ms": 1243,
+      "ms": 1129,
       "title": "Advance Sorensen Movers Of South Florida LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1262,7 +1262,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1272,7 +1272,7 @@
       "county": "Sarasota",
       "path": "/companies/wellen-moving-services-llc",
       "status": 200,
-      "ms": 1181,
+      "ms": 921,
       "title": "Wellen Moving Services LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1294,7 +1294,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1304,7 +1304,7 @@
       "county": "Hillsborough",
       "path": "/companies/phoenix-moving-solutions-llc",
       "status": 200,
-      "ms": 768,
+      "ms": 817,
       "title": "Phoenix Moving Solutions LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1326,7 +1326,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1336,7 +1336,7 @@
       "county": "Hillsborough",
       "path": "/companies/movepro-home-services-llc",
       "status": 200,
-      "ms": 807,
+      "ms": 824,
       "title": "Movepro Home Services LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1358,7 +1358,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1368,7 +1368,7 @@
       "county": "Broward",
       "path": "/companies/epaa-llc",
       "status": 200,
-      "ms": 793,
+      "ms": 818,
       "title": "Epaa LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1390,7 +1390,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1400,7 +1400,7 @@
       "county": "Monroe",
       "path": "/companies/keys-movers",
       "status": 200,
-      "ms": 936,
+      "ms": 884,
       "title": "Keys Movers — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1422,7 +1422,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1432,7 +1432,7 @@
       "county": "Manatee",
       "path": "/companies/doug-s-hourly-muscle-movers-packers-inc",
       "status": 200,
-      "ms": 789,
+      "ms": 862,
       "title": "Doug&#x27;s Hourly Muscle Movers &amp; Packers, INC. — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1454,7 +1454,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1464,7 +1464,7 @@
       "county": "Broward",
       "path": "/companies/cheney-bro-worldwide-moving-inc",
       "status": 200,
-      "ms": 941,
+      "ms": 1238,
       "title": "Cheney Bro Worldwide Moving INC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1486,7 +1486,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1496,7 +1496,7 @@
       "county": "Hillsborough",
       "path": "/companies/fontain-transport-llc",
       "status": 200,
-      "ms": 817,
+      "ms": 875,
       "title": "Fontain Transport LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1518,7 +1518,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     },
     {
@@ -1528,7 +1528,7 @@
       "county": "Orange",
       "path": "/companies/sunny-day-moving-llc",
       "status": 200,
-      "ms": 797,
+      "ms": 885,
       "title": "Sunny Day Moving LLC — Florida Intrastate Mover | Move Trust Hub",
       "robots": "noindex, follow",
       "noindex": true,
@@ -1550,7 +1550,7 @@
       "jsonLdFdacs": true,
       "jsonLdAggregateRating": false,
       "jsonLdAreaServed": false,
-      "buildId": "3458be51cbefab4155f0edb51fbb9df2840af4ed",
+      "buildId": "46bd63a84525db9f7c54d04b4310b41d0beaa4f2",
       "errors": []
     }
   ]
