@@ -1,0 +1,42 @@
+{
+  "google_places_requests": 0,
+  "wave_id": "FL_STATE_WAVE_1",
+  "manifest_hash": "a9165ec652ad7a27",
+  "observation_start": "2026-08-22T14:45:00.000Z",
+  "observation_days": 14,
+  "observation_end": "2026-09-05T14:45:00.000Z",
+  "observation_complete": false,
+  "events": [
+    {
+      "at": "2026-08-22T14:45:00.000Z",
+      "kind": "LAUNCH",
+      "production_sha": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140",
+      "note": "FL-010A apply: 37 PUBLISHABLE, indexable=false"
+    },
+    {
+      "at": "2026-08-22T15:12:57.000Z",
+      "kind": "PRODUCTION_SHA_TRANSITION",
+      "production_sha": "3c7d205b8ff98a3a2beb3c104c077006b24a54e3",
+      "note": "VISUAL-006 MoveTrustHub network shell (PR #63) reached canonical production"
+    },
+    {
+      "at": "2026-08-22T15:27:43.000Z",
+      "kind": "MAIN_MERGE",
+      "production_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+      "note": "PR #61 FL-010A launch audit merged (docs/QA only)"
+    },
+    {
+      "at": "2026-08-22T15:27:45.912Z",
+      "kind": "PRODUCTION_SHA_TRANSITION",
+      "production_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+      "deployment_id": "dpl_42oGUigdefhcWBtHkUabvLMiw1VL",
+      "note": "Canonical www.movetrusthub.com serving PR #61 merge SHA"
+    },
+    {
+      "at": "2026-08-22T15:34:24.195Z",
+      "kind": "FL011_SNAPSHOT",
+      "production_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+      "note": "Wave contracts hold; Trust Profile shell empty-state Verify USDOT on FMCSA SAFER on 37/37"
+    }
+  ]
+}

@@ -47,17 +47,21 @@ Rebased onto `3c7d205b` (VISUAL-006) first. Files remained launch audit / docs /
 
 ## Shell regression (VISUAL-006)
 
-`TrustProfileShell` / `toMoveTrustProfile` emits `Verify USDOT on FMCSA SAFER` when no FMCSA record exists. That restores federal-centric empty-state copy on Wave 1 even though the FDACS block still has the approved sentence.
+`TrustProfileShell` / `toMoveTrustProfile` emits `Verify USDOT on FMCSA SAFER` when no FMCSA record exists. The FDACS evidence block still shows Florida Intrastate Mover, exact IM, and the approved missing-federal sentence. This is **not** a Wave rollback condition (cosmetic/shell, not wrong credential / indexation / 404).
 
-This PR remediates the adapter for `shouldRenderFloridaStateWaveChrome` companies:
+FL-011 itself stays **docs / QA / observation tooling only**.
 
-* primary label → `Registration verified from Florida FDACS records`
-* FDACS source chip
-* no FMCSA chip / no `Verify USDOT` prompt when no federal ID
+Bounded remediation (separate branch, do not mix into this audit PR):
 
-KEEP_80 / INDEXABLE adapters unchanged.
+`FL-011A — Wave 1 Trust Profile shell empty-state uses FDACS, not Verify USDOT`
 
-Until this branch is production, live Wave profiles still show the empty-state chip. **Do not roll back the Wave.** **Do not set `indexable=true`.**
+Do not roll back the Wave. Do not set `indexable=true`.
+
+## Observation timeline
+
+See `docs/observation/fl-state-wave1/timeline.json`.
+
+Record each production SHA transition. Do not continuously rebase this tooling unless merge conflicts require it.
 
 ## Observation window
 
