@@ -1,0 +1,256 @@
+{
+  "google_places_requests": 0,
+  "apply_executed": true,
+  "hash": "a9165ec652ad7a27",
+  "rows_transitioned": 37,
+  "wave_membership_rows": 37,
+  "freeze_before": {
+    "companies": 5908,
+    "indexable": 4905,
+    "ingested": 887,
+    "publishable": 4985,
+    "fl_psa": 1359,
+    "psa_attached": 1124,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80,
+    "wave1_membership": 0
+  },
+  "freeze_after": {
+    "companies": 5908,
+    "indexable": 4905,
+    "ingested": 850,
+    "publishable": 5022,
+    "fl_psa": 1359,
+    "psa_attached": 1124,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80,
+    "wave1_membership": 37
+  },
+  "members": [
+    {
+      "id": "fl-im-1025",
+      "slug": "gentletouch-moving-company",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-1103",
+      "slug": "clover-systems-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-1296",
+      "slug": "nippon-express-u-s-a-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-1948",
+      "slug": "top-class-moving-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-22",
+      "slug": "fuentes-moving-corp",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-2420",
+      "slug": "act-of-class-moving-storage-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-2532",
+      "slug": "helping-hand-movers-naples-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-2679",
+      "slug": "ringling-moving-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-27",
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-2726",
+      "slug": "big-man-s-moving-company-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-2739",
+      "slug": "m-m-pickup-and-delivery-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3030",
+      "slug": "andersen-moving-and-storage-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3063",
+      "slug": "design-furniture-consignment-moving-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3064",
+      "slug": "local-n-long-distance-movers",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3075",
+      "slug": "adios-moving-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3138",
+      "slug": "acceleration-moving-solutions-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-333",
+      "slug": "genesis-moving-storage-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-334",
+      "slug": "hilldrup-companies-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3433",
+      "slug": "parris-moving-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3485",
+      "slug": "chris-brown-vanlines",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3538",
+      "slug": "easy-peasy-moving-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-366",
+      "slug": "homestead-transfer-storage-co",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3684",
+      "slug": "honest-true-moving-crew",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3782",
+      "slug": "k-k-transfer",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3834",
+      "slug": "treasure-coast-safe-sales-moving",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3848",
+      "slug": "matt-s-mindful-movers-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3941",
+      "slug": "miss-peach-iv-true-movers-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3959",
+      "slug": "advance-sorensen-movers-of-south-florida-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3973",
+      "slug": "wellen-moving-services-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-3983",
+      "slug": "phoenix-moving-solutions-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-4005",
+      "slug": "movepro-home-services-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-4024",
+      "slug": "epaa-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-4049",
+      "slug": "keys-movers",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-410",
+      "slug": "doug-s-hourly-muscle-movers-packers-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-4100",
+      "slug": "cheney-bro-worldwide-moving-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-4102",
+      "slug": "fontain-transport-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    },
+    {
+      "id": "fl-im-4144",
+      "slug": "sunny-day-moving-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false
+    }
+  ],
+  "transaction": "COMMIT"
+}
