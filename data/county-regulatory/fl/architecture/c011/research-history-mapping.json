@@ -10,8 +10,8 @@
       "branch": "task-fl-c001-county-regulatory-discovery",
       "original_head_sha": "91863908249c4230c5247f4055c3a25394b33645",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C002",
@@ -19,8 +19,8 @@
       "branch": "task-fl-c002-palm-beach-regulatory-acquisition",
       "original_head_sha": "a92d194b566e34966b73ae19a955c5fe1b0f7696",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C003",
@@ -28,8 +28,8 @@
       "branch": "task-fl-c003-palm-beach-evidence-qualification",
       "original_head_sha": "0af416b8d8d43f3b46703af38f039c438834eb04",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C004",
@@ -37,8 +37,8 @@
       "branch": "task-fl-c004-broward-regulatory-acquisition",
       "original_head_sha": "f085c923b48230f97cd073de30b77b603f047ee3",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C005",
@@ -46,8 +46,8 @@
       "branch": "task-fl-c005-miami-dade-regulatory-acquisition",
       "original_head_sha": "2dd88cb5371891ec3af916fbedbe52d48dcf6d22",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C006",
@@ -55,8 +55,8 @@
       "branch": "task-fl-c006-miami-dade-evidence-qualification",
       "original_head_sha": "1aa496b0b36b1f7ffadd9db6285d90db8b14f8ef",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C007",
@@ -64,8 +64,8 @@
       "branch": "task-fl-c007-pinellas-regulatory-acquisition",
       "original_head_sha": "05e018e2236cd1f865ef3808874aa388065720df",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C008",
@@ -73,8 +73,8 @@
       "branch": "task-fl-c008-county-regulatory-architecture-discovery",
       "original_head_sha": "13f409cc17e6c18e27388773848fc995c518cd27",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C009",
@@ -82,8 +82,8 @@
       "branch": "task-fl-c009-palm-beach-production-integration-spec",
       "original_head_sha": "1256170855439413242acadf68e659e53f4aabc3",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     },
     {
       "task": "FL-C010",
@@ -91,8 +91,10 @@
       "branch": "task-fl-c010-county-stack-integration-gate",
       "original_head_sha": "027382d75990f13e39093ef3a0cb479165be49f1",
       "disposition": "CONTENT_SELECTIVELY_TRANSPLANTED_VIA_C011",
-      "final_integration_commit": null,
-      "validator_result": null
+      "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+      "validator_result": "PASS_ON_INTEGRATION_BRANCH"
     }
-  ]
+  ],
+  "final_integration_commit": "b8b799607f6ca80190ebb8b70b6af3353b659817",
+  "c011_pr": 67
 }
