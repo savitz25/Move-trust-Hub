@@ -194,6 +194,28 @@ export async function middleware(request: NextRequest) {
         301
       );
     }
+    // ASK-SEARCH-006C: preload existing Move directory from structured Ask context.
+    // 307 (not 308) — handoff destinations depend on query, not a permanent alias.
+    if ((request.nextUrl.searchParams.get('src') || '').toLowerCase() === 'ask') {
+      const { parseAskSearchHandoff } = await import('@/lib/search-handoff/parse');
+      const {
+        isResolvedAskPath,
+        resolveAskSearchHandoff,
+        shouldRedirectAskEntry,
+      } = await import('@/lib/search-handoff/resolve');
+      const ctx = parseAskSearchHandoff(request.nextUrl.searchParams);
+      if (ctx) {
+        const dest = resolveAskSearchHandoff(ctx);
+        if (shouldRedirectAskEntry(pathname) && !isResolvedAskPath(pathname, dest)) {
+          const destUrl = request.nextUrl.clone();
+          const qIndex = dest.href.indexOf('?');
+          destUrl.pathname = qIndex === -1 ? dest.href : dest.href.slice(0, qIndex);
+          destUrl.search = qIndex === -1 ? '' : dest.href.slice(qIndex);
+          return NextResponse.redirect(destUrl, 307);
+        }
+      }
+    }
+
     if (
       pathname === '/from-georgia-to-huntsville' ||
       pathname.startsWith('/from-georgia-to-huntsville/') ||

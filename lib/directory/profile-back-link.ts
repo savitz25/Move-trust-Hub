@@ -23,7 +23,11 @@ export function sanitizeCompanyReturnPath(from: string | null | undefined): stri
       pathOnly === '/moving-to' ||
       pathOnly.startsWith('/moving-to/') ||
       pathOnly === '/verify-dot' ||
-      pathOnly.startsWith('/verify-dot/')
+      pathOnly.startsWith('/verify-dot/') ||
+      pathOnly === '/auto-transport' ||
+      pathOnly.startsWith('/auto-transport/') ||
+      pathOnly === '/from-ask' ||
+      pathOnly.startsWith('/from-ask/')
     ) {
       return decoded;
     }
