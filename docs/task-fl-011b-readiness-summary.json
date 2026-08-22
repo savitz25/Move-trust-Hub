@@ -1,0 +1,170 @@
+{
+  "google_places_requests": 0,
+  "as_of": "2026-08-22",
+  "production_db_writes": 0,
+  "wave1_unchanged": true,
+  "freeze": {
+    "companies": 5908,
+    "indexable": 4905,
+    "ingested": 850,
+    "publishable": 5022,
+    "fl_im": 817
+  },
+  "wave2_counts": {
+    "READY_FOR_WAVE_2": 720,
+    "HOLD_PROFILE_THIN": 0,
+    "REVIEW_REQUIRED": 2,
+    "NOT_ELIGIBLE": 4,
+    "DEFERRED": 0,
+    "EXCLUDED_WAVE_1": 37,
+    "EXCLUDED_KEEP_80": 50,
+    "EXCLUDED_HOLD": 4,
+    "STATE_RECORD_ONLY": 281
+  },
+  "ready_pool": 720,
+  "recommended": 50,
+  "recommended_reason": "Ready pool is 720; cap recommended Wave 2 at 50 with county round-robin so QA burden stays bounded and geography is not one-metro.",
+  "recommended_counties": {
+    "Alachua": 2,
+    "Bay": 2,
+    "Brevard": 2,
+    "Broward": 2,
+    "Charlotte": 2,
+    "Clay": 2,
+    "Collier": 2,
+    "Duval": 2,
+    "Escambia": 2,
+    "Flagler": 2,
+    "Hernando": 2,
+    "Highlands": 2,
+    "Columbia": 1,
+    "Hillsborough": 1,
+    "Indian River": 1,
+    "Lake": 1,
+    "Lee": 1,
+    "Leon": 1,
+    "Manatee": 1,
+    "Marion": 1,
+    "Martin": 1,
+    "Miami-Dade": 1,
+    "Monroe": 1,
+    "Nassau": 1,
+    "Okaloosa": 1,
+    "Orange": 1,
+    "Osceola": 1,
+    "Palm Beach": 1,
+    "Pasco": 1,
+    "Pinellas": 1,
+    "Polk": 1,
+    "Sarasota": 1,
+    "Seminole": 1,
+    "St. Johns": 1,
+    "St. Lucie": 1,
+    "Sumter": 1,
+    "Volusia": 1,
+    "Walton": 1
+  },
+  "ready_counties": {
+    "Miami-Dade": 122,
+    "Broward": 105,
+    "Palm Beach": 53,
+    "Pinellas": 52,
+    "Orange": 44,
+    "Lee": 38,
+    "Hillsborough": 36,
+    "Sarasota": 31,
+    "Duval": 30,
+    "Collier": 21,
+    "Seminole": 18,
+    "Brevard": 17,
+    "Manatee": 15,
+    "Marion": 13,
+    "Volusia": 12,
+    "St. Lucie": 11,
+    "St. Johns": 10,
+    "Charlotte": 9,
+    "Martin": 9,
+    "Lake": 8,
+    "Pasco": 8,
+    "Escambia": 7,
+    "Alachua": 6,
+    "Osceola": 6,
+    "Polk": 6,
+    "Okaloosa": 5,
+    "Bay": 4,
+    "Clay": 4,
+    "Flagler": 4,
+    "Hernando": 4,
+    "Highlands": 2,
+    "Leon": 2,
+    "Nassau": 2,
+    "Walton": 2,
+    "Columbia": 1,
+    "Indian River": 1,
+    "Monroe": 1,
+    "Sumter": 1
+  },
+  "contact_ready_pool": {
+    "phone": 720,
+    "email": 714,
+    "n": 720
+  },
+  "contact_recommended": {
+    "phone": 50,
+    "email": 49,
+    "n": 50
+  },
+  "draft_hash": "a5d15f3dca32a59a",
+  "apply": false,
+  "http404_sample": [
+    {
+      "slug": "a-b-c-moving-inc",
+      "path": "/companies/a-b-c-moving-inc",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "merritt-transfer-and-storage-co-inc",
+      "path": "/companies/merritt-transfer-and-storage-co-inc",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "steve-s-services",
+      "path": "/companies/steve-s-services",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "first-choice-moving-and-storage",
+      "path": "/companies/first-choice-moving-and-storage",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "peluso-movers-inc",
+      "path": "/companies/peluso-movers-inc",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "mccollisters-transportation-systems-inc",
+      "path": "/companies/mccollisters-transportation-systems-inc",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "tc-discount-mover",
+      "path": "/companies/tc-discount-mover",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "tc-2-services-corp",
+      "path": "/companies/tc-2-services-corp",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    }
+  ],
+  "wave1_still_200": 200
+}

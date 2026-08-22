@@ -1,0 +1,2916 @@
+{
+  "google_places_requests": 0,
+  "n": 291,
+  "holds": [
+    {
+      "company_id": "fl-im-1857",
+      "fdacs_im": "IM1857",
+      "classification": "NOT_ELIGIBLE",
+      "missing_evidence": [
+        "fdacs_status_expired"
+      ],
+      "conflict_reason": "FDACS expiration is in the past; cannot claim Registered / Active without a refresh.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-2094",
+      "fdacs_im": "IM2094",
+      "classification": "NOT_ELIGIBLE",
+      "missing_evidence": [
+        "fdacs_status_expired"
+      ],
+      "conflict_reason": "FDACS expiration is in the past; cannot claim Registered / Active without a refresh.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-210",
+      "fdacs_im": "IM210",
+      "classification": "EXCLUDED_HOLD",
+      "missing_evidence": [
+        "excluded_hold"
+      ],
+      "conflict_reason": "Unresolved FL-007 / dual-credential hold — not auto-included.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-2293",
+      "fdacs_im": "IM2293",
+      "classification": "NOT_ELIGIBLE",
+      "missing_evidence": [
+        "fdacs_status_expired"
+      ],
+      "conflict_reason": "FDACS expiration is in the past; cannot claim Registered / Active without a refresh.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-3101",
+      "fdacs_im": "IM3101",
+      "classification": "REVIEW_REQUIRED",
+      "missing_evidence": [
+        "geography"
+      ],
+      "conflict_reason": "Physical Florida street, city, state, and ZIP are required.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-3150",
+      "fdacs_im": "IM3150",
+      "classification": "REVIEW_REQUIRED",
+      "missing_evidence": [
+        "unresolved_duplicate"
+      ],
+      "conflict_reason": "Unresolved identity collision; fail closed.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-3401",
+      "fdacs_im": "IM3401",
+      "classification": "NOT_ELIGIBLE",
+      "missing_evidence": [
+        "fdacs_status_expired"
+      ],
+      "conflict_reason": "FDACS expiration is in the past; cannot claim Registered / Active without a refresh.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-350",
+      "fdacs_im": "IM350",
+      "classification": "EXCLUDED_HOLD",
+      "missing_evidence": [
+        "excluded_hold"
+      ],
+      "conflict_reason": "Unresolved FL-007 / dual-credential hold — not auto-included.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-3819",
+      "fdacs_im": "IM3819",
+      "classification": "EXCLUDED_HOLD",
+      "missing_evidence": [
+        "excluded_hold"
+      ],
+      "conflict_reason": "Unresolved FL-007 / dual-credential hold — not auto-included.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": "fl-im-4099",
+      "fdacs_im": "IM4099",
+      "classification": "EXCLUDED_HOLD",
+      "missing_evidence": [
+        "excluded_hold"
+      ],
+      "conflict_reason": "Unresolved FL-007 / dual-credential hold — not auto-included.",
+      "next_resolution_source": "Official FDACS IM record + fail-closed identity (no name-only)"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2099",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3355",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM426",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1954",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2518",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3270",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3962",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4167",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2431",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3590",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3897",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2621",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1451",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1751",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2301",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM113",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1457",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3413",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3554",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3409",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2513",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3680",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3789",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM684",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM105",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2089",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3038",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3953",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4093",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3755",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2401",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3995",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1107",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4027",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3877",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3236",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3265",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2942",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM469",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3528",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2583",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM300",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM950",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM158",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1799",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3879",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3260",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1809",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2535",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3078",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3561",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3252",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4193",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM184",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM885",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3968",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM415",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4211",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2838",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3820",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM457",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM401",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3548",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3732",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1626",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2754",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2247",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3143",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3701",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3682",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM117",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM212",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2198",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3212",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1663",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2148",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM213",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM107",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2964",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1591",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1400",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4082",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1475",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM308",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1419",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2609",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4127",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM563",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3981",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2381",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4030",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3991",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM116",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3621",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4038",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1930",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4142",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2749",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3444",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2753",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3951",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3240",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM236",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4137",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3974",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM299",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4104",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2994",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3989",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4020",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM259",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM139",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4009",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3710",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1447",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM61",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1531",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2851",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1210",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2822",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3497",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3124",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4146",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4017",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2033",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3778",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2972",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM278",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3406",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2098",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2799",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2933",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1517",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2175",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1323",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1909",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3960",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1865",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4145",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM119",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM385",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2160",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM49",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1178",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2631",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3723",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2998",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4140",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3947",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2351",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2323",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1335",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3553",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM561",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3176",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1881",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1888",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2137",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3758",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1543",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4152",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3134",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3201",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3153",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4132",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM219",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3083",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3706",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3612",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4018",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4010",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2895",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM482",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2421",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM146",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3523",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4178",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4057",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3148",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4053",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3845",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4204",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3594",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1794",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4134",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM290",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM386",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4095",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3772",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "EXISTING_PROVIDER_LINK_CANDIDATE",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1204",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1551",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2763",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM891",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4165",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3832",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4014",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM161",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3253",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3530",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3103",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1823",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM940",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3344",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3779",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2140",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3117",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3334",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3736",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2721",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1026",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3737",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM145",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4189",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2415",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4008",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2839",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3818",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM396",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2333",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3192",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM809",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM109",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3375",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4150",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2861",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2384",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3214",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3111",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3766",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2329",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3045",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM201",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3685",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3729",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4162",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM320",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3813",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "EXISTING_PROVIDER_LINK_CANDIDATE",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1411",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2511",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1820",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM549",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM471",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3511",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4036",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3451",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2611",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2723",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4115",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3559",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3447",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1795",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM460",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1931",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3775",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2456",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3149",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1541",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4051",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_GEOGRAPHY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3891",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3872",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3856",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4169",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM4161",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3855",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2492",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM785",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3000",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "HISTORICAL",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2068",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3636",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "INSUFFICIENT_IDENTITY",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3912",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "HISTORICAL",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1355",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3932",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "HISTORICAL",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3920",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "HISTORICAL",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1232",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "HISTORICAL",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM26",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM150010",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM3003",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM2181",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "HISTORICAL",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM7",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "DUPLICATE_OR_OVERLAP",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM31",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "HISTORICAL",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    },
+    {
+      "company_id": null,
+      "fdacs_im": "IM1582",
+      "classification": "STATE_RECORD_ONLY",
+      "missing_evidence": [
+        "canonical_company"
+      ],
+      "conflict_reason": "REVIEW_REQUIRED",
+      "next_resolution_source": "FL-004-style canonicalization against current companies; no name-only match"
+    }
+  ]
+}

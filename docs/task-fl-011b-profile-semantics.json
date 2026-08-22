@@ -1,0 +1,181 @@
+{
+  "google_places_requests": 0,
+  "samples": [
+    {
+      "companyId": "fl-im-1079",
+      "slug": "a-b-c-moving-inc",
+      "fdacsIm": "IM1079",
+      "headline": "Florida Intrastate Mover",
+      "federalCopy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "endorsement": false,
+      "unsafe_endorsement": false,
+      "unsafe_federal_absence": false,
+      "fdacs_verification_wording": "Registration verified from Florida FDACS records",
+      "no_federal_copy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "structured_ok": true,
+      "future_surface": {
+        "anonymousProfileRenders": true,
+        "robots": "noindex, follow",
+        "sitemapIncluded": false,
+        "seoIndexable": false,
+        "directorySearchIncluded": true,
+        "authorizedDiscoveryOnly": true,
+        "indexableFlag": false
+      }
+    },
+    {
+      "companyId": "fl-im-114",
+      "slug": "merritt-transfer-and-storage-co-inc",
+      "fdacsIm": "IM114",
+      "headline": "Florida Intrastate Mover",
+      "federalCopy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "endorsement": false,
+      "unsafe_endorsement": false,
+      "unsafe_federal_absence": false,
+      "fdacs_verification_wording": "Registration verified from Florida FDACS records",
+      "no_federal_copy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "structured_ok": true,
+      "future_surface": {
+        "anonymousProfileRenders": true,
+        "robots": "noindex, follow",
+        "sitemapIncluded": false,
+        "seoIndexable": false,
+        "directorySearchIncluded": true,
+        "authorizedDiscoveryOnly": true,
+        "indexableFlag": false
+      }
+    },
+    {
+      "companyId": "fl-im-1163",
+      "slug": "steve-s-services",
+      "fdacsIm": "IM1163",
+      "headline": "Florida Intrastate Mover",
+      "federalCopy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "endorsement": false,
+      "unsafe_endorsement": false,
+      "unsafe_federal_absence": false,
+      "fdacs_verification_wording": "Registration verified from Florida FDACS records",
+      "no_federal_copy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "structured_ok": true,
+      "future_surface": {
+        "anonymousProfileRenders": true,
+        "robots": "noindex, follow",
+        "sitemapIncluded": false,
+        "seoIndexable": false,
+        "directorySearchIncluded": true,
+        "authorizedDiscoveryOnly": true,
+        "indexableFlag": false
+      }
+    },
+    {
+      "companyId": "fl-im-1237",
+      "slug": "first-choice-moving-and-storage",
+      "fdacsIm": "IM1237",
+      "headline": "Florida Intrastate Mover",
+      "federalCopy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "endorsement": false,
+      "unsafe_endorsement": false,
+      "unsafe_federal_absence": false,
+      "fdacs_verification_wording": "Registration verified from Florida FDACS records",
+      "no_federal_copy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "structured_ok": true,
+      "future_surface": {
+        "anonymousProfileRenders": true,
+        "robots": "noindex, follow",
+        "sitemapIncluded": false,
+        "seoIndexable": false,
+        "directorySearchIncluded": true,
+        "authorizedDiscoveryOnly": true,
+        "indexableFlag": false
+      }
+    },
+    {
+      "companyId": "fl-im-140",
+      "slug": "peluso-movers-inc",
+      "fdacsIm": "IM140",
+      "headline": "Florida Intrastate Mover",
+      "federalCopy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "endorsement": false,
+      "unsafe_endorsement": false,
+      "unsafe_federal_absence": false,
+      "fdacs_verification_wording": "Registration verified from Florida FDACS records",
+      "no_federal_copy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "structured_ok": true,
+      "future_surface": {
+        "anonymousProfileRenders": true,
+        "robots": "noindex, follow",
+        "sitemapIncluded": false,
+        "seoIndexable": false,
+        "directorySearchIncluded": true,
+        "authorizedDiscoveryOnly": true,
+        "indexableFlag": false
+      }
+    },
+    {
+      "companyId": "fl-im-1424",
+      "slug": "mccollisters-transportation-systems-inc",
+      "fdacsIm": "IM1424",
+      "headline": "Florida Intrastate Mover",
+      "federalCopy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "endorsement": false,
+      "unsafe_endorsement": false,
+      "unsafe_federal_absence": false,
+      "fdacs_verification_wording": "Registration verified from Florida FDACS records",
+      "no_federal_copy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "structured_ok": true,
+      "future_surface": {
+        "anonymousProfileRenders": true,
+        "robots": "noindex, follow",
+        "sitemapIncluded": false,
+        "seoIndexable": false,
+        "directorySearchIncluded": true,
+        "authorizedDiscoveryOnly": true,
+        "indexableFlag": false
+      }
+    },
+    {
+      "companyId": "fl-im-1437",
+      "slug": "tc-discount-mover",
+      "fdacsIm": "IM1437",
+      "headline": "Florida Intrastate Mover",
+      "federalCopy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "endorsement": false,
+      "unsafe_endorsement": false,
+      "unsafe_federal_absence": false,
+      "fdacs_verification_wording": "Registration verified from Florida FDACS records",
+      "no_federal_copy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "structured_ok": true,
+      "future_surface": {
+        "anonymousProfileRenders": true,
+        "robots": "noindex, follow",
+        "sitemapIncluded": false,
+        "seoIndexable": false,
+        "directorySearchIncluded": true,
+        "authorizedDiscoveryOnly": true,
+        "indexableFlag": false
+      }
+    },
+    {
+      "companyId": "fl-im-150004",
+      "slug": "tc-2-services-corp",
+      "fdacsIm": "IM150004",
+      "headline": "Florida Intrastate Mover",
+      "federalCopy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "endorsement": false,
+      "unsafe_endorsement": false,
+      "unsafe_federal_absence": false,
+      "fdacs_verification_wording": "Registration verified from Florida FDACS records",
+      "no_federal_copy": "No federal mover identifier is currently linked in MoveTrustHub's data.",
+      "structured_ok": true,
+      "future_surface": {
+        "anonymousProfileRenders": true,
+        "robots": "noindex, follow",
+        "sitemapIncluded": false,
+        "seoIndexable": false,
+        "directorySearchIncluded": true,
+        "authorizedDiscoveryOnly": true,
+        "indexableFlag": false
+      }
+    }
+  ]
+}
