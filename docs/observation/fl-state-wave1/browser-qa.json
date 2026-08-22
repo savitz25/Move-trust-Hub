@@ -1,0 +1,47 @@
+{
+  "google_places_requests": 0,
+  "retrieved_at": "2026-08-22T15:45:00.000Z",
+  "tooling": "chrome-devtools-mcp (lock resolved) + live production",
+  "production_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "overflow_failures": [],
+  "header_overlap": [],
+  "results": [
+    {
+      "slug": "doug-s-hourly-muscle-movers-packers-inc",
+      "viewport": "pixel-412x915",
+      "overflowX": 0,
+      "h1Wraps": true,
+      "florida": true,
+      "imVisible": true,
+      "fdacsIm": "IM410",
+      "noFederal": true,
+      "verifyUsdot": true,
+      "licensingCard": false,
+      "headerOverlap": false,
+      "mobileNav": "Open menu → dialog Move Trust Hub menu (Find Movers, By State, Compare, Verify DOT)"
+    },
+    {
+      "slug": "doug-s-hourly-muscle-movers-packers-inc",
+      "viewport": "desktop-1440x900",
+      "overflowX": 0,
+      "florida": true,
+      "imVisible": true,
+      "headerOverlap": false,
+      "lcp_ms": 287,
+      "cls": 0.06,
+      "js_console_errors": 0
+    },
+    {
+      "slug": "clover-systems-llc",
+      "viewport": "iphone-390x844",
+      "overflowX": 0,
+      "florida": true,
+      "imVisible": true,
+      "fdacsIm": "IM1103",
+      "phoneOnly": true,
+      "noFederal": true,
+      "verifyUsdot": true,
+      "headerOverlap": false
+    }
+  ]
+}
