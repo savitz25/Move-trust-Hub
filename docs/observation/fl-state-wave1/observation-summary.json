@@ -1,13 +1,9 @@
 {
   "google_places_requests": 0,
   "task": "FL-011",
-  "status": "OBSERVATION DEGRADED — REMEDIATION REQUIRED",
-  "retrieved_at": "2026-08-22T15:34:24.195Z",
-  "production_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
-  "deployment_id": "dpl_42oGUigdefhcWBtHkUabvLMiw1VL",
-  "deployment_timestamp": "2026-08-22T15:27:45.912Z",
-  "sha_match_main": "YES",
-  "sha_match_launch": "NO",
+  "status": "OBSERVATION HEALTHY — CONTINUE",
+  "retrieved_at": "2026-08-22T16:25:46.216Z",
+  "production_sha": "cf42ae005ab2e616f10342b19a40692132410601",
   "manifest_hash": "a9165ec652ad7a27",
   "membership": 37,
   "publishable": 37,
@@ -17,16 +13,16 @@
   "noindex": "37/37",
   "fdacs_exact": "37/37",
   "sitemap_inclusions": 0,
-  "verify_usdot_empty_state": 37,
+  "verify_usdot_empty_state": 0,
   "keep80": "80/80",
   "directory_cache": "CONSISTENT",
   "observation": {
     "started_at": "2026-08-22T14:45:00.000Z",
     "target_days": 14,
     "target_end": "2026-09-05T14:45:00.000Z",
-    "elapsed_hours": 0.8,
-    "remaining_hours": 335.2,
+    "elapsed_hours": 1.7,
+    "remaining_hours": 334.3,
     "period_elapsed": false
   },
-  "snapshot": "docs/observation/fl-state-wave1/snapshot-2026-08-22.json"
+  "snapshot": "docs/observation/fl-state-wave1/snapshot-2026-08-22-fl011a-recovery.json"
 }
