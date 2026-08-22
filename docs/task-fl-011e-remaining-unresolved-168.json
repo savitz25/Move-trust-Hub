@@ -1,0 +1,16 @@
+{
+  "google_places_requests": 0,
+  "n": 168,
+  "by_class": {
+    "CORPORATE_FAMILY_REVIEW": 46,
+    "POSSIBLE_DUPLICATE": 114,
+    "CONFLICT": 5,
+    "SOURCE_STATUS_BLOCKED": 3
+  },
+  "historical": {
+    "CORPORATE_FAMILY_REVIEW": 46,
+    "POSSIBLE_DUPLICATE": 114,
+    "CONFLICT": 5,
+    "SOURCE_STATUS_BLOCKED": 3
+  }
+}

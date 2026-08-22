@@ -100,6 +100,30 @@ test('resolved 113 wave2 classes do not treat public links as Wave 2', () => {
   );
 });
 
+test('coverage partition JSON sums to unique active universe with no double-count', () => {
+  const part = JSON.parse(
+    readFileSync(resolve(process.cwd(), 'docs/task-fl-011e-coverage-partition.json'), 'utf8')
+  ) as { active: number; partition_sum: number; partition: Record<string, number>; represented: number; unresolved: number };
+  const sum = Object.values(part.partition).reduce((a, b) => a + b, 0);
+  assert.equal(sum, part.active);
+  assert.equal(part.partition_sum, part.active);
+  assert.equal(part.represented + part.unresolved, part.active);
+  assert.equal(46 + 114 + 5 + 3, 168);
+  const contact = JSON.parse(
+    readFileSync(resolve(process.cwd(), 'docs/task-fl-011e-contact-audit.json'), 'utf8')
+  ) as { PHONE_OBSERVATIONS_ATTACHED: number; EMAIL_OBSERVATIONS_ATTACHED: number; ADDRESS_OBSERVATIONS_ATTACHED: number };
+  assert.equal(
+    contact.PHONE_OBSERVATIONS_ATTACHED +
+      contact.EMAIL_OBSERVATIONS_ATTACHED +
+      contact.ADDRESS_OBSERVATIONS_ATTACHED,
+    104
+  );
+  const b2 = JSON.parse(
+    readFileSync(resolve(process.cwd(), 'docs/task-fl-011e-builder2-freeze.json'), 'utf8')
+  ) as { writes: number };
+  assert.equal(b2.writes, 0);
+});
+
 test('new FL-011D companies remain INGESTED / 404; Wave 1 chrome stays gated', () => {
   const c = newCompanyInternalContract({ publicationState: 'INGESTED', indexable: false });
   assert.equal(c.ingested, true);

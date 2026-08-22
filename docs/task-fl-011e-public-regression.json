@@ -1,0 +1,48 @@
+{
+  "google_places_requests": 0,
+  "fl011d_32_http404": "32/32",
+  "wave1": "37/37 healthy",
+  "keep80": "80/80 healthy",
+  "indexable_representatives": [
+    {
+      "slug": "allied-van-lines",
+      "status": 200,
+      "robots": "index, follow",
+      "unauthorized_wave_fdacs": false
+    },
+    {
+      "slug": "united-van-lines",
+      "status": 200,
+      "robots": "index, follow",
+      "unauthorized_wave_fdacs": false
+    },
+    {
+      "slug": "mayflower-transit",
+      "status": 200,
+      "robots": "index, follow",
+      "unauthorized_wave_fdacs": false
+    }
+  ],
+  "existing_81_sample": [
+    {
+      "slug": "1776-moving-and-storage-inc",
+      "status": 200,
+      "unauthorized_wave_fdacs": false
+    },
+    {
+      "slug": "24-7-logistic-services",
+      "status": 200,
+      "unauthorized_wave_fdacs": false
+    },
+    {
+      "slug": "a1a-moving-transport-llc",
+      "status": 200,
+      "unauthorized_wave_fdacs": false
+    }
+  ],
+  "unauthorized_wave1_fdacs_chrome": 0,
+  "new_indexable_from_fl011e": 0,
+  "new_sitemap_urls": 0,
+  "robots_changes": 0,
+  "url_submissions": 0
+}

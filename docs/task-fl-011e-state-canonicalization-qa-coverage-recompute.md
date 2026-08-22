@@ -82,6 +82,14 @@ FDACS-linked companies: 939. State-only (no USDOT/MC on the company row): 868. F
 
 OBSERVATION HEALTHY — CONTINUE. Clock not reset. 37/37 200/noindex. KEEP_80 80/80.
 
+## Public regression
+
+32/32 HTTP 404. Wave 1 37/37. KEEP_80 80/80. Allied / United / Mayflower: HTTP 200, index,follow, no Wave 1 FDACS chrome. Sample of existing 81 links: no unauthorized Wave chrome.
+
+## Cumulative ledger / scorecard
+
+See `docs/florida-impact-ledger/state/fl-011e-cumulative-state-impact.json` and `docs/task-fl-011e-coverage-before-after.json`.
+
 ## Next highest-value state task (do not start FL-012)
 
-The unresolved 168 is unchanged in composition (114 possible duplicates, 46 corporate family, 5 conflict, 3 status). Highest-value follow-on while observation continues: a **fail-closed possible-duplicate / corporate-family evidence pack** (no publication). Wave 2 draft stays frozen at 50.
+The unresolved 168 is unchanged in composition (114 possible duplicates, 46 corporate family, 5 conflict, 3 status). Highest-value follow-on while observation continues: **FL-011F — Florida State Unresolved Active IM Resolution Wave** (read-only, fail-closed). Wave 2 draft stays frozen at 50.

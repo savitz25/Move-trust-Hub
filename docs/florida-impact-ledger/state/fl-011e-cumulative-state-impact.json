@@ -1,0 +1,81 @@
+{
+  "google_places_requests": 0,
+  "production_db_writes": 0,
+  "layers": {
+    "BASELINE": {
+      "note": "Pre-FL-011D unique-active IM universe on the approved FDACS snapshot",
+      "active_fdacs_im_universe": 1098,
+      "active_ims_safely_canonical_represented": 817,
+      "active_ims_unresolved": 281,
+      "state_coverage_percentage": 74.4,
+      "florida_im_canonical_companies": 817,
+      "companies_total": 5908,
+      "indexable": 4905,
+      "publishable": 5022
+    },
+    "DISCOVERED": {
+      "source": "FL-011C",
+      "not_realized": true,
+      "existing_canonical_link_ready": 81,
+      "new_canonical_company_ready": 32,
+      "withheld": 168,
+      "source_emails_observed_in_281": 278,
+      "source_phones_observed_in_281": 281,
+      "source_addresses_observed_in_281": 281
+    },
+    "REALIZED_INTERNAL": {
+      "source": "FL-011D apply",
+      "new_companies_created": 32,
+      "existing_companies_linked": 81,
+      "fdacs_authority_rows_inserted": 0,
+      "fdacs_authority_attachments": 32,
+      "fdacs_authority_noop": 81,
+      "contact_observations_attached_total": 104,
+      "phone_attached": 35,
+      "email_attached": 34,
+      "address_attached": 35,
+      "companies_gaining_attached_phone": 35,
+      "companies_gaining_attached_email": 34,
+      "companies_gaining_attached_address": 35,
+      "canonical_contacts_promoted": 0
+    },
+    "REALIZED_PUBLIC": {
+      "new_public_companies_from_fl011d": 0,
+      "new_state_profiles": 0,
+      "new_public_fdacs_chrome": 0,
+      "wave1_public_companies": 37,
+      "internally_fdacs_linked_public_companies": 176,
+      "publicly_displaying_fdacs_evidence": 37
+    },
+    "WITHHELD": {
+      "total": 168,
+      "corporate_family_review": 46,
+      "possible_duplicate": 114,
+      "conflict": 5,
+      "status_blocked": 3
+    }
+  },
+  "current": {
+    "active_fdacs_im_universe": 1098,
+    "active_ims_safely_canonical_represented": 930,
+    "active_ims_unresolved": 168,
+    "state_coverage_percentage": 84.7,
+    "new_companies_created_from_state_enrichment": 32,
+    "existing_companies_linked_enriched": 81,
+    "active_state_only_companies": 868,
+    "federal_plus_state_companies": 71,
+    "fdacs_authorities_represented_113": 113,
+    "fdacs_authority_attachments": 32,
+    "contact_observations_attached_by_type": {
+      "phone": 35,
+      "email": 34,
+      "address": 35
+    },
+    "canonical_contacts_promoted": 0,
+    "wave1_public_companies": 37,
+    "wave2_ready_pool": 720,
+    "wave2_frozen_draft": 50,
+    "new_public_companies_from_fl011d": 0,
+    "wrong_company_links": 0
+  }
+}
