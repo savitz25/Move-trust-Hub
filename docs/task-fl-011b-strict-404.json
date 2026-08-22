@@ -1,0 +1,58 @@
+{
+  "google_places_requests": 0,
+  "candidates": [
+    {
+      "slug": "a-b-c-moving-inc",
+      "path": "/companies/a-b-c-moving-inc",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "merritt-transfer-and-storage-co-inc",
+      "path": "/companies/merritt-transfer-and-storage-co-inc",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "steve-s-services",
+      "path": "/companies/steve-s-services",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "first-choice-moving-and-storage",
+      "path": "/companies/first-choice-moving-and-storage",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "peluso-movers-inc",
+      "path": "/companies/peluso-movers-inc",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "mccollisters-transportation-systems-inc",
+      "path": "/companies/mccollisters-transportation-systems-inc",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "tc-discount-mover",
+      "path": "/companies/tc-discount-mover",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    },
+    {
+      "slug": "tc-2-services-corp",
+      "path": "/companies/tc-2-services-corp",
+      "status": 404,
+      "title": "Page Not Found | Move Trust Hub"
+    }
+  ],
+  "wave1_sample": {
+    "path": "/companies/gentletouch-moving-company",
+    "status": 200,
+    "title": "Gentletouch Moving Company — Florida Intrastate Mover | Move Trust Hub"
+  }
+}

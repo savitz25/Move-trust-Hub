@@ -1,0 +1,40 @@
+{
+  "google_places_requests": 0,
+  "source_im_records": 1330,
+  "source_mb_records": 29,
+  "source_im_status": {
+    "active": 1104,
+    "expired": 113,
+    "unknown": 112,
+    "revoked": 1
+  },
+  "eligibility_rows": 1332,
+  "eligibility_by_status": {
+    "DUPLICATE_OR_OVERLAP": 865,
+    "HISTORICAL": 112,
+    "STATUS_BLOCKED": 103,
+    "INSUFFICIENT_GEOGRAPHY": 27,
+    "PUBLICATION_READY": 37,
+    "INSUFFICIENT_IDENTITY": 41,
+    "REVIEW_REQUIRED": 115,
+    "BROKER_ONLY": 29,
+    "EXISTING_PROVIDER_LINK_CANDIDATE": 3
+  },
+  "fl004_rows": 40,
+  "db_fl_im_companies": 817,
+  "db_freeze": {
+    "companies": 5908,
+    "indexable": 4905,
+    "ingested": 850,
+    "publishable": 5022,
+    "fl_im": 817
+  },
+  "wave1_live": 37,
+  "keep80_live": {
+    "FL": 50,
+    "WA": 30,
+    "total": 80
+  },
+  "active_im_source": 1104,
+  "source_only_active_im": 281
+}
