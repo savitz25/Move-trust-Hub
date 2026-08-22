@@ -74,7 +74,7 @@
       "pr": null,
       "branch": "task-fl-c010-county-stack-integration-gate",
       "base": "task-fl-c009-palm-beach-production-integration-spec",
-      "head": "1256170855439413242acadf68e659e53f4aabc3"
+      "head": "c9e6147475bf0dade637ee00db8ea03e88fecfbe"
     }
   ],
   "artifact_counts": {
@@ -98,5 +98,6 @@
     "validate-fl-c010-integration-gate.mjs"
   ],
   "package_hash": "14c0827d724a1aad",
-  "updated_at_c010_close": "2026-08-22T16:15:00.000Z"
+  "updated_at_c010_close": "2026-08-22T16:15:00.000Z",
+  "c010_head_sha": "c9e6147475bf0dade637ee00db8ea03e88fecfbe"
 }
