@@ -16,6 +16,15 @@ for (const f of [
   'consumer-semantics.json',
   'public-read-architecture-reuse.json',
   'readiness-summary.json',
+  'source-freshness.json',
+  'date-semantics.json',
+  'company-level-readiness.json',
+  'credential-level-readiness.json',
+  'multi-license-audit.json',
+  'lbt-separation.json',
+  'public-copy-contract.json',
+  'palm-beach-architecture-reuse-audit.json',
+  'future-public-read-contract.json',
 ]) {
   assert.ok(existsSync(resolve(OUT, f)), `missing ${f}`);
 }
@@ -66,6 +75,24 @@ const sem = JSON.parse(readFileSync(resolve(OUT, 'consumer-semantics.json'), 'ut
 assert.match(sem.public_credential_type, /Moving Business Registration/);
 assert.equal(sem.raw_source_status, 'Issued');
 assert.doesNotMatch(sem.consumer_status_label, /Licensed and active/i);
+
+const fresh = JSON.parse(readFileSync(resolve(OUT, 'source-freshness.json'), 'utf8'));
+assert.equal(fresh.pass, true);
+assert.equal(fresh.counts.CURRENT, 70);
+
+const multi = JSON.parse(readFileSync(resolve(OUT, 'multi-license-audit.json'), 'utf8'));
+assert.equal(multi.wave_a_companies_with_multiple_concurrent_issued_mrs, 0);
+
+const arch = JSON.parse(
+  readFileSync(resolve(OUT, 'palm-beach-architecture-reuse-audit.json'), 'utf8')
+);
+assert.equal(arch.do_not_build_second_system, true);
+
+const read = JSON.parse(
+  readFileSync(resolve(OUT, 'future-public-read-contract.json'), 'utf8')
+);
+assert.equal(read.implement_in_002, false);
+assert.equal(read.production_db_writes, 0);
 
 const script = readFileSync(
   'scripts/run-mdc-prod-002-publication-readiness.mjs',

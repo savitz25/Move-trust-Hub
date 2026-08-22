@@ -1,0 +1,710 @@
+{
+  "task": "MDC-PROD-002",
+  "counts": {
+    "READY_FOR_MDC_CANARY": 9,
+    "COMPANY_NOT_PUBLIC": 61
+  },
+  "ready": 9,
+  "rows": [
+    {
+      "company_id": "fl-im-27",
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00002"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-106",
+      "slug": "raul-s-moving-inc",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00015"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-125",
+      "slug": "gomez-moving-co-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00018"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-366",
+      "slug": "homestead-transfer-storage-co",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00049"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-160",
+      "slug": "small-time-movers-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00067"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1573",
+      "slug": "mudanzas-diaz-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00068"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-333",
+      "slug": "genesis-moving-storage-inc",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00113"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-260",
+      "slug": "millennium-relocation-services-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00207"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-607",
+      "slug": "south-florida-van-line-inc",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00278"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-512",
+      "slug": "south-express-moving",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00310"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-22",
+      "slug": "fuentes-moving-corp",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00317"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-810",
+      "slug": "a-1-southeast-moving-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00332"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-668",
+      "slug": "johnny-moving-and-delivery-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00338"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-500",
+      "slug": "brickell-moving-and-packing-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00366"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2724",
+      "slug": "jesus-moving-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00378"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1503",
+      "slug": "luis-and-son-moving-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00416"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1100",
+      "slug": "1-best-miami-movers-2-boynton-beach-movers-3-deerfield-beach-moving-stor",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00444"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1079",
+      "slug": "a-b-c-moving-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00449"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1214",
+      "slug": "powerloaders",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00450"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1319",
+      "slug": "american-moving-packaging-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00458"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "usdot-1329594",
+      "slug": "nobel-van-lines",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00476"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-2476",
+      "slug": "torito-s-moving-corp",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-00570"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2442",
+      "slug": "sainz-moving-delivery",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01006"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1689",
+      "slug": "blason-int-l-movers",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01016"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2474",
+      "slug": "varela-moving-pickup-delivery-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01020"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1624",
+      "slug": "orellana-av-moving-corp",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01029"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-1723",
+      "slug": "1-24-moving-2-pink-truck-moving-3-skyroad-moving",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01045"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2549",
+      "slug": "tacha-s-movi-corp",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01049"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2983",
+      "slug": "inter-american-movers-and-forwarders-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01054"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2551",
+      "slug": "ojeda-moving-and-delivery-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01074"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2446",
+      "slug": "martinez-moving",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01079"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2051",
+      "slug": "same-day-moving-storage-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01109"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2478",
+      "slug": "shark-junior-l-l-c",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01137"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2239",
+      "slug": "sf-local-moving-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01139"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2467",
+      "slug": "cuba-moving-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01140"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2438",
+      "slug": "chiquis-moving-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01141"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3470",
+      "slug": "bermen-moving-delivery-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01147"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2284",
+      "slug": "nina-international-transport-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01164"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2781",
+      "slug": "mancav-movers",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01192"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2606",
+      "slug": "wilfredo-s-moving",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01208"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "usdot-3080327",
+      "slug": "dixie-movers",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01209"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-2463",
+      "slug": "quintero-delivery-moving-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01216"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "pro-movers-2",
+      "slug": "pro-movers-2",
+      "publication_state": "PUBLISHABLE",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01221"
+      ],
+      "company_gate": "READY_FOR_MDC_CANARY"
+    },
+    {
+      "company_id": "fl-im-3034",
+      "slug": "related-moving-service-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01237"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2830",
+      "slug": "metayer-moving-corp",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01244"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4103",
+      "slug": "an-mudanzas-delivery-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01249"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2986",
+      "slug": "j-v-express-deliveries-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01253"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2521",
+      "slug": "xpress-relocations-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01267"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3135",
+      "slug": "1-a1-fargo-van-and-storage-2-american-fargo",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01283"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3245",
+      "slug": "your-stuff-in-the-truck-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01295"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3250",
+      "slug": "online-movers-corp",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01296"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3395",
+      "slug": "on-point-moving-corp",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-01314"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3382",
+      "slug": "p-p-moving-and-delivery-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-092140"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3711",
+      "slug": "total-moving-corporation",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-092297"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3385",
+      "slug": "global-movers-relocators",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-092523"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3718",
+      "slug": "confimove",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-092562"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4075",
+      "slug": "happy-moving-happy-life-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-093002"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3812",
+      "slug": "benny-and-the-moving-corp",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-093500"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4203",
+      "slug": "anthony-s-b-delivery-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-094574"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4019",
+      "slug": "octoplus-moving-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-095117"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3869",
+      "slug": "movamove",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-095236"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-3978",
+      "slug": "qba-multiservices-inc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-095332"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-2293",
+      "slug": "brautigam-delivery-corp",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-095349"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4089",
+      "slug": "roy-ois-moving-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-095401"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4154",
+      "slug": "expremoving-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-095487"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4044",
+      "slug": "nikki-moving-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-095542"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4006",
+      "slug": "johnson-storage-moving-co-miami-l-l-c",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-095935"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4084",
+      "slug": "aycs-delivery-service-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-096207"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4120",
+      "slug": "adelit-llc",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-096653"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    },
+    {
+      "company_id": "fl-im-4179",
+      "slug": "miami-moving-company",
+      "publication_state": "INGESTED",
+      "mr_count": 1,
+      "mrs": [
+        "MR-097254"
+      ],
+      "company_gate": "COMPANY_NOT_PUBLIC"
+    }
+  ]
+}
