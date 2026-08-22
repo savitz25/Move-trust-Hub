@@ -1,0 +1,1110 @@
+{
+  "google_places_requests": 0,
+  "n": 46,
+  "rows": [
+    {
+      "fdacsIm": "IM3270",
+      "legalName": "ACKMAN BROTHERS LLC",
+      "dba": "College Hunks Hauling Junk & Moving",
+      "county": null,
+      "city": "PORT ST LUCIE",
+      "zip": "34952",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3270",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ACKMAN BROTHERS LLC",
+        "dba": "College Hunks Hauling Junk & Moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3590",
+      "legalName": "AGIOS RAFAEL HOLDINGS LLC",
+      "dba": "Good Greek Moving & Storage",
+      "county": null,
+      "city": "PLANT CITY",
+      "zip": "33566",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3590",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "AGIOS RAFAEL HOLDINGS LLC",
+        "dba": "Good Greek Moving & Storage"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1451",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF FT. LAUDERDALE, LLC",
+      "dba": null,
+      "county": null,
+      "city": "POMPANO BEACH",
+      "zip": "33064",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1451",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS MOVING & STORAGE OF FT. LAUDERDALE, LLC",
+        "dba": null
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1751",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF JACKSONVILLE, LLC",
+      "dba": null,
+      "county": null,
+      "city": "JACKSONVILLE",
+      "zip": "32254",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1751",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS MOVING & STORAGE OF JACKSONVILLE, LLC",
+        "dba": null
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2301",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF MIAMI, LLC",
+      "dba": null,
+      "county": null,
+      "city": "HIALEAH",
+      "zip": "33010",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2301",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS MOVING & STORAGE OF MIAMI, LLC",
+        "dba": null
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM113",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF ORLANDO, LLC",
+      "dba": null,
+      "county": null,
+      "city": "ORLANDO",
+      "zip": "32801",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-113",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS MOVING & STORAGE OF ORLANDO, LLC",
+        "dba": null
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1457",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF PENSACOLA, LLC",
+      "dba": null,
+      "county": null,
+      "city": "PENSACOLA",
+      "zip": "32504",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1457",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS MOVING & STORAGE OF PENSACOLA, LLC",
+        "dba": null
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3413",
+      "legalName": "ALL MY SONS OF NAPLES, LLC",
+      "dba": "All My Sons Of Ft Myers",
+      "county": null,
+      "city": "FORT MYERS",
+      "zip": "33913",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3413",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS OF NAPLES, LLC",
+        "dba": "All My Sons Of Ft Myers"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3554",
+      "legalName": "ALL MY SONS OF TAMPA II LLC",
+      "dba": "All My Sons Of Tampa North",
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33614",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3554",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS OF TAMPA II LLC",
+        "dba": "All My Sons Of Tampa North"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3409",
+      "legalName": "ALL MY SONS OF TAMPA, LLC",
+      "dba": "All My Sons Of Sarasota",
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33614",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3409",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS OF TAMPA, LLC",
+        "dba": "All My Sons Of Sarasota"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2513",
+      "legalName": "ALL MY SONS OF THE PALM BEACHES, LLC",
+      "dba": null,
+      "county": null,
+      "city": "RIVIERA BEACH",
+      "zip": "33404",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2513",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ALL MY SONS OF THE PALM BEACHES, LLC",
+        "dba": null
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3877",
+      "legalName": "ATLANTIC COAST MUSCLES LLC",
+      "dba": "Two Men And A Truck West Palm Beach",
+      "county": null,
+      "city": "PALM BEACH GARDENS",
+      "zip": "33418",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3877",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ATLANTIC COAST MUSCLES LLC",
+        "dba": "Two Men And A Truck West Palm Beach"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM950",
+      "legalName": "BEKINS A-1 MOVERS INC.",
+      "dba": "1. Bms Commercial Services; 2. Bms Moving & Storage",
+      "county": null,
+      "city": "SARASOTA",
+      "zip": "34243",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-950",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "BEKINS A-1 MOVERS INC.",
+        "dba": "1. Bms Commercial Services; 2. Bms Moving & Storage"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1809",
+      "legalName": "BLACK WOLF MOVING FLORIDA, LLC",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "OLDSMAR",
+      "zip": "34677",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1809",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "BLACK WOLF MOVING FLORIDA, LLC",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2535",
+      "legalName": "BLACK WOLF MOVING MIAMI, LLC",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "DORAL",
+      "zip": "33126",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2535",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "BLACK WOLF MOVING MIAMI, LLC",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3078",
+      "legalName": "BLACKFISH ENTERPRISES LLC",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "ORLANDO",
+      "zip": "32824",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3078",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "BLACKFISH ENTERPRISES LLC",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3548",
+      "legalName": "CHHJ 305 LLC",
+      "dba": "College Hunks Hauling Junk & Moving",
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33614",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3548",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "CHHJ 305 LLC",
+        "dba": "College Hunks Hauling Junk & Moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2198",
+      "legalName": "COLONIAL VAN LINES, INC.",
+      "dba": null,
+      "county": null,
+      "city": "POMPANO BEACH",
+      "zip": "33069",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2198",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "COLONIAL VAN LINES, INC.",
+        "dba": null
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1475",
+      "legalName": "DESTINY SERVICES, INC.",
+      "dba": "Two Men And A Truck / Panama City",
+      "county": null,
+      "city": "PANAMA CITY",
+      "zip": "32401",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1475",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "DESTINY SERVICES, INC.",
+        "dba": "Two Men And A Truck / Panama City"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4009",
+      "legalName": "FUNKY FREIGHT LLC",
+      "dba": "College Hunks Hauling Junk & Moving",
+      "county": null,
+      "city": "LEESBURG",
+      "zip": "34748",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-4009",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "FUNKY FREIGHT LLC",
+        "dba": "College Hunks Hauling Junk & Moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM61",
+      "legalName": "GOBUCKS, INC",
+      "dba": "Coral Springs Moving & Storage",
+      "county": null,
+      "city": "CORAL SPRINGS",
+      "zip": "33065",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_dba_and_corroboration",
+      "matchedCompanyId": "usdot-653203",
+      "proposedCompanyId": "fl-im-61",
+      "reasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "evidence": {
+        "dba": "Coral Springs Moving & Storage",
+        "companyId": "usdot-653203"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1531",
+      "legalName": "GOLDEN MOVING SYSTEMS, INC.",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "GAINESVILLE",
+      "zip": "32609",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1531",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "GOLDEN MOVING SYSTEMS, INC.",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1517",
+      "legalName": "J & J FAMILY MOVING & STORAGE, LLC",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "LAKELAND",
+      "zip": "33803",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1517",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "J & J FAMILY MOVING & STORAGE, LLC",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1323",
+      "legalName": "JASMOV, INC.",
+      "dba": "Bekins Of South Florida",
+      "county": null,
+      "city": "FORT LAUDERDALE",
+      "zip": "33309",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1323",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "JASMOV, INC.",
+        "dba": "Bekins Of South Florida"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1909",
+      "legalName": "JCAL HOLDINGS LLC",
+      "dba": "College Hunks Hauling Junk And Moving",
+      "county": null,
+      "city": "LAKE WORTH",
+      "zip": "33461",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-1909",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "JCAL HOLDINGS LLC",
+        "dba": "College Hunks Hauling Junk And Moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3960",
+      "legalName": "JESSUP & CLARK ENTERPRISES, INC.",
+      "dba": "College Hunks Hauling Junk & Moving - Brevard",
+      "county": null,
+      "city": "MELBOURNE",
+      "zip": "32934",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3960",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "JESSUP & CLARK ENTERPRISES, INC.",
+        "dba": "College Hunks Hauling Junk & Moving - Brevard"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM49",
+      "legalName": "LANIER SERVICES, INC.",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "DAVIE",
+      "zip": "33314",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-49",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "LANIER SERVICES, INC.",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2631",
+      "legalName": "LET'S MOVE FLORIDA, LLC",
+      "dba": "College Hunks Hauling Junk And Moving",
+      "county": null,
+      "city": "ORLANDO",
+      "zip": "32809",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2631",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "LET'S MOVE FLORIDA, LLC",
+        "dba": "College Hunks Hauling Junk And Moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2351",
+      "legalName": "MANSARI, LLC",
+      "dba": "College Hunks Hauling Junk - Tampa",
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33614",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2351",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "MANSARI, LLC",
+        "dba": "College Hunks Hauling Junk - Tampa"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM561",
+      "legalName": "MAYFLOWER TRANSIT LLC",
+      "dba": "Aero Mayflower Transit Company",
+      "county": null,
+      "city": "FENTON",
+      "zip": "63026",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-561",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "MAYFLOWER TRANSIT LLC",
+        "dba": "Aero Mayflower Transit Company"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1543",
+      "legalName": "MIAMI MOVERS FOR LESS, INC",
+      "dba": "Move For Less",
+      "county": null,
+      "city": "MIAMI",
+      "zip": "33162",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_dba_and_corroboration",
+      "matchedCompanyId": "move-for-less",
+      "proposedCompanyId": "fl-im-1543",
+      "reasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "evidence": {
+        "dba": "Move For Less",
+        "companyId": "move-for-less"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4152",
+      "legalName": "MIDLINE FLORIDA ENTERPRISES, INC",
+      "dba": "1. College Hunks Hauling Junk; 2. College Hunks Moving",
+      "county": null,
+      "city": "SUMMERFIELD",
+      "zip": "34491",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-4152",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "MIDLINE FLORIDA ENTERPRISES, INC",
+        "dba": "1. College Hunks Hauling Junk; 2. College Hunks Moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2721",
+      "legalName": "PRO MOVERS MIAMI, INC",
+      "dba": "Pro Movers",
+      "county": null,
+      "city": "MIAMI",
+      "zip": "33131",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_dba_and_corroboration",
+      "matchedCompanyId": "pro-movers-2",
+      "proposedCompanyId": "fl-im-2721",
+      "reasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "evidence": {
+        "dba": "Pro Movers",
+        "companyId": "pro-movers-2"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2333",
+      "legalName": "SAVIVECO, INC.",
+      "dba": "Two Men And A Truck/Ocala",
+      "county": null,
+      "city": "OCALA",
+      "zip": "34480",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2333",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "SAVIVECO, INC.",
+        "dba": "Two Men And A Truck/Ocala"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM109",
+      "legalName": "S'EILLIW, INC.",
+      "dba": "Willie'S Transfer And Storage",
+      "county": null,
+      "city": "WEST PALM BEACH",
+      "zip": "33407",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_dba_and_corroboration",
+      "matchedCompanyId": "usdot-1917905",
+      "proposedCompanyId": "fl-im-109",
+      "reasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "evidence": {
+        "dba": "Willie'S Transfer And Storage",
+        "companyId": "usdot-1917905"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2861",
+      "legalName": "SERINO SOLUTIONS LLC",
+      "dba": "Tropic Moving",
+      "county": null,
+      "city": "MELBOURNE",
+      "zip": "32934",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_dba_and_corroboration",
+      "matchedCompanyId": "tropic-moving",
+      "proposedCompanyId": "fl-im-2861",
+      "reasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "evidence": {
+        "dba": "Tropic Moving",
+        "companyId": "tropic-moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3451",
+      "legalName": "TMT BREVARD, INC.",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "MELBOURNE",
+      "zip": "32934",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3451",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "TMT BREVARD, INC.",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2611",
+      "legalName": "TMT JAX, LLC",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "JACKSONVILLE",
+      "zip": "32256",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2611",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "TMT JAX, LLC",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2723",
+      "legalName": "TMT NAPLES LLC",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "FORT MYERS",
+      "zip": "33967",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2723",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "TMT NAPLES LLC",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4115",
+      "legalName": "TMT NAPLES LLC",
+      "dba": "Two Men And A Truck",
+      "county": null,
+      "city": "SARASOTA",
+      "zip": "34243",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-4115",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "TMT NAPLES LLC",
+        "dba": "Two Men And A Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM460",
+      "legalName": "UNITED VAN LINES, LLC",
+      "dba": null,
+      "county": null,
+      "city": "PLANTATION",
+      "zip": "33324",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-460",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "UNITED VAN LINES, LLC",
+        "dba": null
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3872",
+      "legalName": "WE MAKE MOVING EASY, LLC",
+      "dba": "College Hunks Moving",
+      "county": null,
+      "city": "TALLAHASSEE",
+      "zip": "32303",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3872",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "WE MAKE MOVING EASY, LLC",
+        "dba": "College Hunks Moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4161",
+      "legalName": "WRWS LLC",
+      "dba": "College Hunks Hauling Junk & Moving Of Daytona",
+      "county": null,
+      "city": "MELBOURNE BEACH",
+      "zip": "32951",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-4161",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "WRWS LLC",
+        "dba": "College Hunks Hauling Junk & Moving Of Daytona"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2492",
+      "legalName": "ZINDAGI ENTERPRISE, LLC.",
+      "dba": "College Hunks Hauling Junk And Moving Of Naples",
+      "county": null,
+      "city": "NAPLES",
+      "zip": "34120",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2492",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "ZINDAGI ENTERPRISE, LLC.",
+        "dba": "College Hunks Hauling Junk And Moving Of Naples"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2068",
+      "legalName": "NBF Moving, LLC",
+      "dba": "Two Men and a Truck",
+      "county": null,
+      "city": "Tallahassee",
+      "zip": "32305",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-2068",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "NBF Moving, LLC",
+        "dba": "Two Men and a Truck"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3636",
+      "legalName": "Jacksonville Moving Inc.",
+      "dba": "College Hunks Hauling Junk and Moving",
+      "county": null,
+      "city": "Jacksonville",
+      "zip": "32246",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "CORPORATE_FAMILY_REVIEW",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "none",
+      "matchedCompanyId": null,
+      "proposedCompanyId": "fl-im-3636",
+      "reasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "evidence": {
+        "legalName": "Jacksonville Moving Inc.",
+        "dba": "College Hunks Hauling Junk and Moving"
+      },
+      "googlePlacesRequests": 0
+    }
+  ]
+}

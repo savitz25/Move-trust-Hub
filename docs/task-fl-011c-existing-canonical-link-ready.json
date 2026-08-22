@@ -1,0 +1,2031 @@
+{
+  "google_places_requests": 0,
+  "n": 81,
+  "rows": [
+    {
+      "fdacsIm": "IM2099",
+      "legalName": "1776 MOVING AND STORAGE, INC",
+      "dba": null,
+      "county": null,
+      "city": "ORLANDO",
+      "zip": "32811",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2303737",
+      "proposedCompanyId": "fl-im-2099",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "1776 MOVING AND STORAGE, INC",
+        "phone": "4072514770",
+        "companyId": "usdot-2303737"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3355",
+      "legalName": "24/7 LOGISTIC SERVICES, LLC",
+      "dba": null,
+      "county": null,
+      "city": "HOLLYWOOD",
+      "zip": "33020",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3005919",
+      "proposedCompanyId": "fl-im-3355",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "24/7 LOGISTIC SERVICES, LLC",
+        "phone": "8003099430",
+        "companyId": "usdot-3005919"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM426",
+      "legalName": "A & R MOVING, INC.",
+      "dba": "Royal Moving And Storage Of Jacksonville",
+      "county": null,
+      "city": "JACKSONVILLE",
+      "zip": "32211",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1472849",
+      "proposedCompanyId": "fl-im-426",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "A & R MOVING, INC.",
+        "phone": "9047246683",
+        "companyId": "usdot-1472849"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2518",
+      "legalName": "A1A MOVING & TRANSPORT LLC",
+      "dba": null,
+      "county": null,
+      "city": "JACKSONVILLE",
+      "zip": "32257",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3161573",
+      "proposedCompanyId": "fl-im-2518",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "A1A MOVING & TRANSPORT LLC",
+        "phone": "9047183370",
+        "companyId": "usdot-3161573"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2431",
+      "legalName": "AGILITY VAN LINES INC.",
+      "dba": null,
+      "county": null,
+      "city": "FORT LAUDERDALE",
+      "zip": "33309",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2564711",
+      "proposedCompanyId": "fl-im-2431",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "AGILITY VAN LINES INC.",
+        "phone": "9545333197",
+        "companyId": "usdot-2564711"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2621",
+      "legalName": "ALL ABOUT MOVING TAMPA BAY INC",
+      "dba": null,
+      "county": null,
+      "city": "LARGO",
+      "zip": "33773",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "all-about-moving-tampa-bay",
+      "proposedCompanyId": "fl-im-2621",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "ALL ABOUT MOVING TAMPA BAY INC",
+        "phone": "7276574077",
+        "companyId": "all-about-moving-tampa-bay"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3680",
+      "legalName": "ALLEGIANCE VAN LINES, LLC.",
+      "dba": null,
+      "county": null,
+      "city": "POMPANO BEACH",
+      "zip": "33069",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3507074",
+      "proposedCompanyId": "fl-im-3680",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "ALLEGIANCE VAN LINES, LLC.",
+        "phone": "5612105120",
+        "companyId": "usdot-3507074"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2089",
+      "legalName": "AMERICA'S FAMILY MOVING & STORAGE, LLC",
+      "dba": null,
+      "county": null,
+      "city": "BOCA RATON",
+      "zip": "33431",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "america-s-family-moving-and-storage-llc",
+      "proposedCompanyId": "fl-im-2089",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "AMERICA'S FAMILY MOVING & STORAGE, LLC",
+        "phone": "5619550999",
+        "companyId": "america-s-family-moving-and-storage-llc"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3038",
+      "legalName": "AMERICAS MOVERS INC.",
+      "dba": null,
+      "county": null,
+      "city": "MEDLEY",
+      "zip": "33178",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3168341",
+      "proposedCompanyId": "fl-im-3038",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "AMERICAS MOVERS INC.",
+        "phone": "8885700918",
+        "companyId": "usdot-3168341"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3953",
+      "legalName": "AMIGOS ON THE MOVE LLC",
+      "dba": null,
+      "county": null,
+      "city": "GAINESVILLE",
+      "zip": "32607",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "fl-im-3952",
+      "proposedCompanyId": "fl-im-3953",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "AMIGOS ON THE MOVE LLC",
+        "phone": "3526420664",
+        "companyId": "fl-im-3952"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3755",
+      "legalName": "ANGEL MOVERS, LLC",
+      "dba": "Angel Movers, Llc",
+      "county": null,
+      "city": "DELTONA",
+      "zip": "32738",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "angel-movers-llc",
+      "proposedCompanyId": "fl-im-3755",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "ANGEL MOVERS, LLC",
+        "phone": "4074637834",
+        "companyId": "angel-movers-llc"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3995",
+      "legalName": "APOLLOS MOVING & LOGISTICS LLC",
+      "dba": null,
+      "county": null,
+      "city": "DAYTONA BEACH",
+      "zip": "32117",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "apollos-moving-logistics-llc",
+      "proposedCompanyId": "fl-im-3995",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "APOLLOS MOVING & LOGISTICS LLC",
+        "phone": "3865889424",
+        "companyId": "apollos-moving-logistics-llc"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM469",
+      "legalName": "BAYMEADOWS MOVING AND STORAGE INC",
+      "dba": null,
+      "county": null,
+      "city": "JACKSONVILLE",
+      "zip": "32216",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1040023",
+      "proposedCompanyId": "fl-im-469",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "BAYMEADOWS MOVING AND STORAGE INC",
+        "phone": "9047373530",
+        "companyId": "usdot-1040023"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2583",
+      "legalName": "BAYSIDE MOVING LLC",
+      "dba": null,
+      "county": null,
+      "city": "GULF BREEZE",
+      "zip": "32563",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2823665",
+      "proposedCompanyId": "fl-im-2583",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "BAYSIDE MOVING LLC",
+        "phone": "8504509617",
+        "companyId": "usdot-2823665"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM300",
+      "legalName": "BEACHES MOVING & STORAGE, INC.",
+      "dba": "Florida & Southern Van Lines",
+      "county": null,
+      "city": "ATLANTIC BEACH",
+      "zip": "32233",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-459518",
+      "proposedCompanyId": "fl-im-300",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "BEACHES MOVING & STORAGE, INC.",
+        "phone": "9042412921",
+        "companyId": "usdot-459518"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3260",
+      "legalName": "BLACK SWAN MOVING LLC",
+      "dba": null,
+      "county": null,
+      "city": "DEBARY",
+      "zip": "32713",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "black-swan-moving-llc",
+      "proposedCompanyId": "fl-im-3260",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "BLACK SWAN MOVING LLC",
+        "phone": "4076035366",
+        "companyId": "black-swan-moving-llc"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM184",
+      "legalName": "BONDED TRANSPORTATION, INC.",
+      "dba": null,
+      "county": null,
+      "city": "PENSACOLA",
+      "zip": "32505",
+      "phone": true,
+      "email": false,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-89774",
+      "proposedCompanyId": "fl-im-184",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "BONDED TRANSPORTATION, INC.",
+        "phone": "8504384694",
+        "companyId": "usdot-89774"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2838",
+      "legalName": "BULL MOVING LLC",
+      "dba": null,
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33612",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "bull-moving",
+      "proposedCompanyId": "fl-im-2838",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "BULL MOVING LLC",
+        "phone": "8139436043",
+        "companyId": "bull-moving"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM457",
+      "legalName": "C & F MOVERS INC.",
+      "dba": null,
+      "county": null,
+      "city": "ARCADIA",
+      "zip": "34269",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-700628",
+      "proposedCompanyId": "fl-im-457",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "C & F MOVERS INC.",
+        "phone": "9417661617",
+        "companyId": "usdot-700628"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM401",
+      "legalName": "CAMPBELL MOVING & STORAGE, INC.",
+      "dba": "1. A-1 Moving & Storage; 2. Apple Moving",
+      "county": null,
+      "city": "FORT WALTON BEACH",
+      "zip": "32548",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1991298",
+      "proposedCompanyId": "fl-im-401",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "CAMPBELL MOVING & STORAGE, INC.",
+        "phone": "8502436125",
+        "companyId": "usdot-1991298"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1626",
+      "legalName": "CHOSEN ONE MOVERS LLC.",
+      "dba": null,
+      "county": null,
+      "city": "PENSACOLA",
+      "zip": "32503",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1526680",
+      "proposedCompanyId": "fl-im-1626",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "CHOSEN ONE MOVERS LLC.",
+        "phone": "8503686209",
+        "companyId": "usdot-1526680"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2754",
+      "legalName": "CHRISTOPHER KEMMETT",
+      "dba": "Moving America",
+      "county": null,
+      "city": "LAKE CITY",
+      "zip": "32025",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3146919",
+      "proposedCompanyId": "fl-im-2754",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "CHRISTOPHER KEMMETT",
+        "phone": "3863447931",
+        "companyId": "usdot-3146919"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2247",
+      "legalName": "CHRISTTOWN MINISTRIES, INC.",
+      "dba": null,
+      "county": null,
+      "city": "QUINCY",
+      "zip": "32351",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4431751",
+      "proposedCompanyId": "fl-im-2247",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "CHRISTTOWN MINISTRIES, INC.",
+        "phone": "8505092222",
+        "companyId": "usdot-4431751"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3143",
+      "legalName": "CIAO MOVING & STORAGE LLC",
+      "dba": null,
+      "county": null,
+      "city": "MIAMI",
+      "zip": "33147",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3252722",
+      "proposedCompanyId": "fl-im-3143",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "CIAO MOVING & STORAGE LLC",
+        "phone": "3055314222",
+        "companyId": "usdot-3252722"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3701",
+      "legalName": "CLEVER CARRIERS, LLC",
+      "dba": null,
+      "county": null,
+      "city": "BOCA RATON",
+      "zip": "33432",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "clever-carriers-llc",
+      "proposedCompanyId": "fl-im-3701",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "CLEVER CARRIERS, LLC",
+        "phone": "6179130715",
+        "companyId": "clever-carriers-llc"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM107",
+      "legalName": "CURRY MOVING & STORAGE, INC.",
+      "dba": null,
+      "county": null,
+      "city": "PORT CHARLOTTE",
+      "zip": "33980",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4071591",
+      "proposedCompanyId": "fl-im-107",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "CURRY MOVING & STORAGE, INC.",
+        "phone": "9416254191",
+        "companyId": "usdot-4071591"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4082",
+      "legalName": "DESTINATION MOVING & FURNISHINGS LLC",
+      "dba": null,
+      "county": null,
+      "city": "SANTA ROSA BEACH",
+      "zip": "32459",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4520643",
+      "proposedCompanyId": "fl-im-4082",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "DESTINATION MOVING & FURNISHINGS LLC",
+        "phone": "8502258870",
+        "companyId": "usdot-4520643"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM308",
+      "legalName": "DICK'S MOVING, INC.",
+      "dba": null,
+      "county": null,
+      "city": "HOMOSASSA",
+      "zip": "34448",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-767421",
+      "proposedCompanyId": "fl-im-308",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "DICK'S MOVING, INC.",
+        "phone": "3526211220",
+        "companyId": "usdot-767421"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1419",
+      "legalName": "DISCOVERY MOVING GROUP, INC.",
+      "dba": null,
+      "county": null,
+      "city": "PALM BAY",
+      "zip": "32907",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1424728",
+      "proposedCompanyId": "fl-im-1419",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "DISCOVERY MOVING GROUP, INC.",
+        "phone": "3053897766",
+        "companyId": "usdot-1424728"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2609",
+      "legalName": "DIXIE MOVERS LLC",
+      "dba": null,
+      "county": null,
+      "city": "NORTH MIAMI BEACH",
+      "zip": "33160",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3080327",
+      "proposedCompanyId": "fl-im-2609",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "DIXIE MOVERS LLC",
+        "phone": "3056976252",
+        "companyId": "usdot-3080327"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2381",
+      "legalName": "EAGLE MOVING LLC",
+      "dba": null,
+      "county": null,
+      "city": "FORT MYERS",
+      "zip": "33912",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "eagle-moving-co",
+      "proposedCompanyId": "fl-im-2381",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "EAGLE MOVING LLC",
+        "phone": "2392856894",
+        "companyId": "eagle-moving-co"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4142",
+      "legalName": "E-LOGIC, INCORPORATED",
+      "dba": null,
+      "county": null,
+      "city": "MIAMI",
+      "zip": "33166",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3998447",
+      "proposedCompanyId": "fl-im-4142",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "E-LOGIC, INCORPORATED",
+        "phone": "2024997837",
+        "companyId": "usdot-3998447"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3444",
+      "legalName": "EXPEDITE MOVING INCORPORATED",
+      "dba": null,
+      "county": null,
+      "city": "EDGEWATER",
+      "zip": "32132",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2491702",
+      "proposedCompanyId": "fl-im-3444",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "EXPEDITE MOVING INCORPORATED",
+        "phone": "8888774425",
+        "companyId": "usdot-2491702"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2753",
+      "legalName": "EZ MOVING SERVICES LLC",
+      "dba": null,
+      "county": null,
+      "city": "ORLANDO",
+      "zip": "32808",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2968831",
+      "proposedCompanyId": "fl-im-2753",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "EZ MOVING SERVICES LLC",
+        "phone": "4079304100",
+        "companyId": "usdot-2968831"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3974",
+      "legalName": "FLORIDA PRO MOVERS & HOME SOLUTIONS LLC",
+      "dba": null,
+      "county": null,
+      "city": "SOUTH DAYTONA",
+      "zip": "32119",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "florida-pro-movers-home-solutions",
+      "proposedCompanyId": "fl-im-3974",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "FLORIDA PRO MOVERS & HOME SOLUTIONS LLC",
+        "phone": "3863181076",
+        "companyId": "florida-pro-movers-home-solutions"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1447",
+      "legalName": "GM VAN LINES, INC.",
+      "dba": null,
+      "county": null,
+      "city": "POMPANO BEACH",
+      "zip": "33073",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1568346",
+      "proposedCompanyId": "fl-im-1447",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "GM VAN LINES, INC.",
+        "phone": "9545882582",
+        "companyId": "usdot-1568346"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1210",
+      "legalName": "HAROLD HAYCOOK MOVING & STORAGE CORP.",
+      "dba": null,
+      "county": null,
+      "city": "NEW SMYRNA BEACH",
+      "zip": "32169",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-162012",
+      "proposedCompanyId": "fl-im-1210",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "HAROLD HAYCOOK MOVING & STORAGE CORP.",
+        "phone": "3864274670",
+        "companyId": "usdot-162012"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2822",
+      "legalName": "HARVEST INVESTMENT CAPITAL, INC",
+      "dba": "Lee'S Moving Company",
+      "county": null,
+      "city": "LANTANA",
+      "zip": "33462",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3034432",
+      "proposedCompanyId": "fl-im-2822",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "HARVEST INVESTMENT CAPITAL, INC",
+        "phone": "5615889401",
+        "companyId": "usdot-3034432"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3124",
+      "legalName": "HELLO MOVERS LLC",
+      "dba": null,
+      "county": null,
+      "city": "LUTZ",
+      "zip": "33558",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3338540",
+      "proposedCompanyId": "fl-im-3124",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "HELLO MOVERS LLC",
+        "phone": "8135678010",
+        "companyId": "usdot-3338540"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4146",
+      "legalName": "HERE TO THERE MOVING, LLC",
+      "dba": null,
+      "county": null,
+      "city": "LEESBURG",
+      "zip": "34748",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3794613",
+      "proposedCompanyId": "fl-im-4146",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "HERE TO THERE MOVING, LLC",
+        "phone": "3524595315",
+        "companyId": "usdot-3794613"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2033",
+      "legalName": "HILTON MOVING AND STORAGE LLC",
+      "dba": null,
+      "county": null,
+      "city": "NAPLES",
+      "zip": "34117",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2192602",
+      "proposedCompanyId": "fl-im-2033",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "HILTON MOVING AND STORAGE LLC",
+        "phone": "2392317050",
+        "companyId": "usdot-2192602"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2175",
+      "legalName": "JAMES M. KEENEY",
+      "dba": "Joe'S Speedy Delivery And Moving Services",
+      "county": null,
+      "city": "JACKSONVILLE",
+      "zip": "32257",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2368777",
+      "proposedCompanyId": "fl-im-2175",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "JAMES M. KEENEY",
+        "phone": "9048686507",
+        "companyId": "usdot-2368777"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4145",
+      "legalName": "JVM MOVING & TRANSPORT, LLC",
+      "dba": null,
+      "county": null,
+      "city": "YULEE",
+      "zip": "32097",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4482118",
+      "proposedCompanyId": "fl-im-4145",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "JVM MOVING & TRANSPORT, LLC",
+        "phone": "9046120236",
+        "companyId": "usdot-4482118"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2160",
+      "legalName": "LAN CO LEASING, INC.",
+      "dba": "1. Flagler Moving And Storage; 2. Florida Moving & Storage; 3. Ocala Moving And Storage; 4. Ormond Moving And Storage; 5. Palm Coast Moving & Storage",
+      "county": null,
+      "city": "ORMOND BEACH",
+      "zip": "32174",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1847236",
+      "proposedCompanyId": "fl-im-2160",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "LAN CO LEASING, INC.",
+        "phone": "3864460014",
+        "companyId": "usdot-1847236"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1178",
+      "legalName": "LET'S GET MOVING, INC",
+      "dba": null,
+      "county": null,
+      "city": "SAINT PETERSBURG",
+      "zip": "33702",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2270761",
+      "proposedCompanyId": "fl-im-1178",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "LET'S GET MOVING, INC",
+        "phone": "7275329080",
+        "companyId": "usdot-2270761"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3723",
+      "legalName": "LEVEL UP MOVING LLC",
+      "dba": null,
+      "county": null,
+      "city": "HOLLYWOOD",
+      "zip": "33020",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4018257",
+      "proposedCompanyId": "fl-im-3723",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "LEVEL UP MOVING LLC",
+        "phone": "9173733040",
+        "companyId": "usdot-4018257"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3947",
+      "legalName": "MAESTRO MOVING & STORAGE LLC",
+      "dba": "First Southern Van Lines",
+      "county": null,
+      "city": "OAKLAND PARK",
+      "zip": "33334",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4022357",
+      "proposedCompanyId": "fl-im-3947",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MAESTRO MOVING & STORAGE LLC",
+        "phone": "9546325353",
+        "companyId": "usdot-4022357"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1335",
+      "legalName": "MASTER MOVERS OF TALLAHASSEE, INC",
+      "dba": null,
+      "county": null,
+      "city": "TALLAHASSEE",
+      "zip": "32310",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "master-movers-of-tallahassee",
+      "proposedCompanyId": "fl-im-1335",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MASTER MOVERS OF TALLAHASSEE, INC",
+        "phone": "8503215806",
+        "companyId": "master-movers-of-tallahassee"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3553",
+      "legalName": "MATTHEWS MOVING LLC",
+      "dba": null,
+      "county": null,
+      "city": "PUNTA GORDA",
+      "zip": "33983",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3784138",
+      "proposedCompanyId": "fl-im-3553",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MATTHEWS MOVING LLC",
+        "phone": "5182213935",
+        "companyId": "usdot-3784138"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3176",
+      "legalName": "MBM ENTERPRISES OF BREVARD, LLC.",
+      "dba": null,
+      "county": null,
+      "city": "MELBOURNE",
+      "zip": "32904",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3301146",
+      "proposedCompanyId": "fl-im-3176",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MBM ENTERPRISES OF BREVARD, LLC.",
+        "phone": "3219140194",
+        "companyId": "usdot-3301146"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1881",
+      "legalName": "MCAULIFFE'S MOVING COMPANY INC.",
+      "dba": "Father And Son Moving And Storage",
+      "county": null,
+      "city": "POMPANO BEACH",
+      "zip": "33069",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3199979",
+      "proposedCompanyId": "fl-im-1881",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MCAULIFFE'S MOVING COMPANY INC.",
+        "phone": "5612515457",
+        "companyId": "usdot-3199979"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4132",
+      "legalName": "MINKYRYLO LLC",
+      "dba": null,
+      "county": null,
+      "city": "DANIA",
+      "zip": "33004",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4438821",
+      "proposedCompanyId": "fl-im-4132",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MINKYRYLO LLC",
+        "phone": "3102913089",
+        "companyId": "usdot-4438821"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM482",
+      "legalName": "MOVING BUDDIES INC.",
+      "dba": null,
+      "county": null,
+      "city": "POMPANO BEACH",
+      "zip": "33069",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2443347",
+      "proposedCompanyId": "fl-im-482",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MOVING BUDDIES INC.",
+        "phone": "9549577750",
+        "companyId": "usdot-2443347"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM146",
+      "legalName": "MOVING ON UP, INC.",
+      "dba": null,
+      "county": null,
+      "city": "HOLLYWOOD",
+      "zip": "33020",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-811031",
+      "proposedCompanyId": "fl-im-146",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MOVING ON UP, INC.",
+        "phone": "9549241522",
+        "companyId": "usdot-811031"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4178",
+      "legalName": "MSRE GROUP LLC",
+      "dba": "Pink Zebra Moving Of Tampa",
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33624",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4544882",
+      "proposedCompanyId": "fl-im-4178",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MSRE GROUP LLC",
+        "phone": "6109843442",
+        "companyId": "usdot-4544882"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3148",
+      "legalName": "MUSCLE 4 HIRE MOVING LLC",
+      "dba": null,
+      "county": null,
+      "city": "HUDSON",
+      "zip": "34667",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3286720",
+      "proposedCompanyId": "fl-im-3148",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "MUSCLE 4 HIRE MOVING LLC",
+        "phone": "8138635091",
+        "companyId": "usdot-3286720"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3594",
+      "legalName": "NAPLES MOVERS LLC",
+      "dba": "Naples Moving & Storage",
+      "county": null,
+      "city": "NAPLES",
+      "zip": "34112",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1160157",
+      "proposedCompanyId": "fl-im-3594",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "NAPLES MOVERS LLC",
+        "phone": "2394345229",
+        "companyId": "usdot-1160157"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1794",
+      "legalName": "NATIONWIDE VAN LINES, INC",
+      "dba": null,
+      "county": null,
+      "city": "TAMARAC",
+      "zip": "33321",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-976593",
+      "proposedCompanyId": "fl-im-1794",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "NATIONWIDE VAN LINES, INC",
+        "phone": "9545853945",
+        "companyId": "usdot-976593"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3772",
+      "legalName": "NICHOLAS S CALLAN",
+      "dba": "Dynamite Moving",
+      "county": null,
+      "city": "PUNTA GORDA",
+      "zip": "33982",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_email",
+      "matchedCompanyId": "fl-im-3150",
+      "proposedCompanyId": "fl-im-3772",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "NICHOLAS S CALLAN",
+        "email": "callan778@aol.com",
+        "companyId": "fl-im-3150"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1204",
+      "legalName": "NOBEL VAN LINES INC.",
+      "dba": "Nobel Relocation",
+      "county": null,
+      "city": "MIAMI",
+      "zip": "33169",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1329594",
+      "proposedCompanyId": "fl-im-1204",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "NOBEL VAN LINES INC.",
+        "phone": "3056202002",
+        "companyId": "usdot-1329594"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2763",
+      "legalName": "OHANA MOVING COMPANY, LLC",
+      "dba": null,
+      "county": null,
+      "city": "DELTONA",
+      "zip": "32738",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "ohana-moving-company-llc",
+      "proposedCompanyId": "fl-im-2763",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "OHANA MOVING COMPANY, LLC",
+        "phone": "3862154927",
+        "companyId": "ohana-moving-company-llc"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3103",
+      "legalName": "PATRIOT MOVING AND STORAGE LLC",
+      "dba": null,
+      "county": null,
+      "city": "LANTANA",
+      "zip": "33462",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "patriot-moving-and-storage",
+      "proposedCompanyId": "fl-im-3103",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "PATRIOT MOVING AND STORAGE LLC",
+        "phone": "5613454977",
+        "companyId": "patriot-moving-and-storage"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1823",
+      "legalName": "PENSACOLA MOVING & STORAGE, LLC",
+      "dba": null,
+      "county": null,
+      "city": "PENSACOLA",
+      "zip": "32505",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2059049",
+      "proposedCompanyId": "fl-im-1823",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "PENSACOLA MOVING & STORAGE, LLC",
+        "phone": "8504569913",
+        "companyId": "usdot-2059049"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3344",
+      "legalName": "PREMIER MOVERS 4 LESS, LLC",
+      "dba": null,
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33617",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "premier-movers-4-less-llc",
+      "proposedCompanyId": "fl-im-3344",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "PREMIER MOVERS 4 LESS, LLC",
+        "phone": "8134447716",
+        "companyId": "premier-movers-4-less-llc"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3779",
+      "legalName": "PREMIUM Q MOVING AND STORAGE LLC",
+      "dba": null,
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33619",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "premium-q-moving-and-storage",
+      "proposedCompanyId": "fl-im-3779",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "PREMIUM Q MOVING AND STORAGE LLC",
+        "phone": "8137334481",
+        "companyId": "premium-q-moving-and-storage"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2140",
+      "legalName": "PRESTIGE MOVING & STORAGE LLC",
+      "dba": "Prestige Moving & Storage",
+      "county": null,
+      "city": "NAPLES",
+      "zip": "34120",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2402239",
+      "proposedCompanyId": "fl-im-2140",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "PRESTIGE MOVING & STORAGE LLC",
+        "phone": "2392500339",
+        "companyId": "usdot-2402239"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1026",
+      "legalName": "RESIDENTIAL & COMMERCIAL TRANSPORT COMPANY, LLC",
+      "dba": "Amwat Moving Warehousing & Storage",
+      "county": null,
+      "city": "TALLAHASSEE",
+      "zip": "32305",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1377633",
+      "proposedCompanyId": "fl-im-1026",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "RESIDENTIAL & COMMERCIAL TRANSPORT COMPANY, LLC",
+        "phone": "8508777131",
+        "companyId": "usdot-1377633"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3375",
+      "legalName": "SENIOR MOVING SPECIALISTS LLC",
+      "dba": null,
+      "county": null,
+      "city": "DELTONA",
+      "zip": "32738",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4001518",
+      "proposedCompanyId": "fl-im-3375",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "SENIOR MOVING SPECIALISTS LLC",
+        "phone": "3863441607",
+        "companyId": "usdot-4001518"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM2384",
+      "legalName": "SFAKIA, LLC",
+      "dba": "Greek Moving And Storage",
+      "county": null,
+      "city": "WEST PALM BEACH",
+      "zip": "33413",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2562486",
+      "proposedCompanyId": "fl-im-2384",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "SFAKIA, LLC",
+        "phone": "5616831313",
+        "companyId": "usdot-2562486"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3766",
+      "legalName": "SHIRLEY FRANCHISES, LLC",
+      "dba": "2 College Brothers Moving Of Gainesville",
+      "county": null,
+      "city": "GAINESVILLE",
+      "zip": "32601",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4063852",
+      "proposedCompanyId": "fl-im-3766",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "SHIRLEY FRANCHISES, LLC",
+        "phone": "8556683276",
+        "companyId": "usdot-4063852"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM201",
+      "legalName": "SIMMONS MOVING & STORAGE, INC.",
+      "dba": "Amerimove Moving & Storage Inc",
+      "county": null,
+      "city": "TALLAHASSEE",
+      "zip": "32305",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1943394",
+      "proposedCompanyId": "fl-im-201",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "SIMMONS MOVING & STORAGE, INC.",
+        "phone": "8506567100",
+        "companyId": "usdot-1943394"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM549",
+      "legalName": "SUNBELT MOVING & DELIVERY, INC.",
+      "dba": null,
+      "county": null,
+      "city": "GAINESVILLE",
+      "zip": "32608",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "sunbelt-moving-delivery-inc",
+      "proposedCompanyId": "fl-im-549",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "SUNBELT MOVING & DELIVERY, INC.",
+        "phone": "3523756683",
+        "companyId": "sunbelt-moving-delivery-inc"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM471",
+      "legalName": "SUNSHINE MOVERS, INC.",
+      "dba": null,
+      "county": null,
+      "city": "CLEARWATER",
+      "zip": "33764",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "sunshine-movers",
+      "proposedCompanyId": "fl-im-471",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "SUNSHINE MOVERS, INC.",
+        "phone": "7279342020",
+        "companyId": "sunshine-movers"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3511",
+      "legalName": "THE MOVING SPECIALISTS, INC.",
+      "dba": "Coffey Bros. Moving",
+      "county": null,
+      "city": "KISSIMMEE",
+      "zip": "34741",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2833135",
+      "proposedCompanyId": "fl-im-3511",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "THE MOVING SPECIALISTS, INC.",
+        "phone": "7736287798",
+        "companyId": "usdot-2833135"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3559",
+      "legalName": "TREND MOVING LLC",
+      "dba": "Trend Moving & Storage",
+      "county": null,
+      "city": "FORT MYERS",
+      "zip": "33912",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-3092893",
+      "proposedCompanyId": "fl-im-3559",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "TREND MOVING LLC",
+        "phone": "8555096683",
+        "companyId": "usdot-3092893"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1795",
+      "legalName": "UNIQUE VAN LINES, INC.",
+      "dba": null,
+      "county": null,
+      "city": "MIAMI",
+      "zip": "33179",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-1951425",
+      "proposedCompanyId": "fl-im-1795",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "UNIQUE VAN LINES, INC.",
+        "phone": "7202618985",
+        "companyId": "usdot-1951425"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1931",
+      "legalName": "UNLIMITED MOVING LLC",
+      "dba": null,
+      "county": null,
+      "city": "TAMPA",
+      "zip": "33619",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-2119975",
+      "proposedCompanyId": "fl-im-1931",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "UNLIMITED MOVING LLC",
+        "phone": "8134468389",
+        "companyId": "usdot-2119975"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM3856",
+      "legalName": "WHATAMOVE LLC",
+      "dba": null,
+      "county": null,
+      "city": "LAKE WORTH",
+      "zip": "33463",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "whatamove",
+      "proposedCompanyId": "fl-im-3856",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "WHATAMOVE LLC",
+        "phone": "5618192042",
+        "companyId": "whatamove"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM4169",
+      "legalName": "WOODIE-FELLS GROUP LLC",
+      "dba": "Square Cow Moovers",
+      "county": null,
+      "city": "JACKSONVILLE",
+      "zip": "32216",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-4528522",
+      "proposedCompanyId": "fl-im-4169",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "WOODIE-FELLS GROUP LLC",
+        "phone": "7733682475",
+        "companyId": "usdot-4528522"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM1232",
+      "legalName": "Calcano, Inc.",
+      "dba": "JOSEPH BARTON",
+      "county": null,
+      "city": "Delray Beach",
+      "zip": "33444",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-381994",
+      "proposedCompanyId": "fl-im-1232",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "Calcano, Inc.",
+        "phone": "6312932113",
+        "companyId": "usdot-381994"
+      },
+      "googlePlacesRequests": 0
+    },
+    {
+      "fdacsIm": "IM26",
+      "legalName": "DRN Moving, Inc.",
+      "dba": null,
+      "county": null,
+      "city": "Key West",
+      "zip": "33040",
+      "phone": true,
+      "email": true,
+      "address": true,
+      "classification": "EXISTING_CANONICAL_LINK_READY",
+      "statusFreshness": "ACTIVE_FRESH",
+      "matchMethod": "exact_legal_name_and_phone",
+      "matchedCompanyId": "usdot-966624",
+      "proposedCompanyId": "fl-im-26",
+      "reasons": [
+        "strong_deterministic_link"
+      ],
+      "evidence": {
+        "legalName": "DRN Moving, Inc.",
+        "phone": "3052956683",
+        "companyId": "usdot-966624"
+      },
+      "googlePlacesRequests": 0
+    }
+  ]
+}
