@@ -1,0 +1,31 @@
+{
+  "google_places_requests": 0,
+  "ua_matrix": "all six user agents returned HTTP 200 Page Not Found before the fix (including Googlebot)",
+  "experiments_performed": [
+    {
+      "id": "A",
+      "name": "ISR-only",
+      "result": "Not sufficient as sole cause. Build already emits ƒ /companies/[slug] (dynamic). revalidate=300 kept for public profiles."
+    },
+    {
+      "id": "CDN",
+      "name": "middleware CDN TTL on /companies/*",
+      "result": "Evidenced: cdn-cache-control max-age=300 on 200 not-found. Fix: skip middleware HTML cache for profile slugs."
+    },
+    {
+      "id": "D",
+      "name": "relocate root loading.tsx",
+      "result": "Root loading streamed a 200 skeleton before notFound(). Moved to (marketing) only."
+    },
+    {
+      "id": "E",
+      "name": "early eligibility layout gate",
+      "result": "companies/[slug]/layout.tsx calls notFound() before profile UI."
+    }
+  ],
+  "not_chosen": [
+    "force-dynamic on all profiles (unneeded once loading/CDN fixed)",
+    "middleware DB lookup 404 (extra latency on every profile)",
+    "redirect to /companies"
+  ]
+}

@@ -15,6 +15,7 @@ import {
   cdnCacheControl,
   htmlCacheControl,
   PRIVATE_NO_STORE,
+  shouldApplyMiddlewareHtmlCache,
 } from '@/lib/cache/control';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
 
@@ -236,10 +237,12 @@ export async function middleware(request: NextRequest) {
 
     const baseTtl =
       DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
-    applyPublicCacheHeaders(
-      response,
-      htmlCacheSecondsForPath(pathname, baseTtl)
-    );
+    if (shouldApplyMiddlewareHtmlCache(pathname)) {
+      applyPublicCacheHeaders(
+        response,
+        htmlCacheSecondsForPath(pathname, baseTtl)
+      );
+    }
     return response;
   } catch (err) {
     console.error('[middleware] MIDDLEWARE_INVOCATION_FAILED', {

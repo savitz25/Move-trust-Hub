@@ -1,0 +1,105 @@
+{
+  "google_places_requests": 0,
+  "base": "http://127.0.0.1:3021",
+  "ingested_404": 0,
+  "ingested_tested": 3,
+  "unknown_404": 0,
+  "unknown_tested": 3,
+  "canary_200": 0,
+  "canary_tested": 3,
+  "indexable_status": 308,
+  "publishable_status": 308,
+  "publishable_noindex": false,
+  "ingested": [
+    {
+      "path": "/companies/gentletouch-moving-company",
+      "status": 308,
+      "ms": 108,
+      "title": "",
+      "noindex": false,
+      "leakName": false,
+      "robots": "",
+      "matched": null,
+      "cdnCache": null
+    },
+    {
+      "path": "/companies/clover-systems-llc",
+      "status": 308,
+      "ms": 6,
+      "title": "",
+      "noindex": false,
+      "leakName": false,
+      "robots": "",
+      "matched": null,
+      "cdnCache": null
+    },
+    {
+      "path": "/companies/nippon-express-u-s-a-inc",
+      "status": 308,
+      "ms": 5,
+      "title": "",
+      "noindex": false,
+      "leakName": false,
+      "robots": "",
+      "matched": null,
+      "cdnCache": null
+    }
+  ],
+  "unknown": [
+    {
+      "path": "/companies/fl010r-unknown-0-xi7am9g4",
+      "status": 308,
+      "ms": 4,
+      "title": "",
+      "noindex": false,
+      "leakName": false,
+      "robots": "",
+      "matched": null,
+      "cdnCache": null
+    },
+    {
+      "path": "/companies/fl010r-unknown-1-hbxp2sj1",
+      "status": 308,
+      "ms": 4,
+      "title": "",
+      "noindex": false,
+      "leakName": false,
+      "robots": "",
+      "matched": null,
+      "cdnCache": null
+    },
+    {
+      "path": "/companies/fl010r-unknown-2-lockvcpo",
+      "status": 308,
+      "ms": 4,
+      "title": "",
+      "noindex": false,
+      "leakName": false,
+      "robots": "",
+      "matched": null,
+      "cdnCache": null
+    }
+  ],
+  "indexable": {
+    "path": "/companies/allied-van-lines",
+    "status": 308,
+    "ms": 5,
+    "title": "",
+    "noindex": false,
+    "leakName": false,
+    "robots": "",
+    "matched": null,
+    "cdnCache": null
+  },
+  "publishableSample": {
+    "path": "/companies/i-95-relocation-inc",
+    "status": 308,
+    "ms": 2,
+    "title": "",
+    "noindex": false,
+    "leakName": false,
+    "robots": "",
+    "matched": null,
+    "cdnCache": null
+  }
+}

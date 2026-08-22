@@ -49,6 +49,8 @@
     "qa:fl-008": "tsx scripts/qa-task-fl-008-publication-readiness.ts",
     "qa:fl-009": "tsx scripts/run-task-fl-009-wave1-prepare.ts --dry-run",
     "qa:fl-010:preapply": "tsx scripts/qa-task-fl-010-preapply-http.ts",
+    "qa:fl-010r-http": "tsx scripts/qa-task-fl-010r-http.ts",
+    "qa:fl-010r-ua": "tsx scripts/qa-task-fl-010r-ua-matrix.ts",
     "qa:fl-010:live": "tsx scripts/qa-task-fl-010-live-sweep.ts",
     "publish:fl-state-wave-1:apply": "tsx scripts/run-task-fl-010-wave1-apply.ts --apply",
     "publish:fl-state-wave-1:dry": "tsx scripts/run-task-fl-010-wave1-apply.ts",
