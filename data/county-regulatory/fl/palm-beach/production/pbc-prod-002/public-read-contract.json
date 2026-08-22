@@ -1,0 +1,14 @@
+{
+  "task": "PBC-PROD-002",
+  "fail_closed": true,
+  "rules": [
+    "If company is not anonymously public-eligible → return no county evidence",
+    "If credential evidence_publication_state != PUBLISHED → return no county evidence",
+    "INTERNAL_ONLY must never serialize to public profile/API/JSON-LD/OG",
+    "Do not weaken table RLS; prefer server-side controlled read path"
+  ],
+  "anon_direct_table_read": "DENIED",
+  "trust_score_effect": 0,
+  "search_directory_ranking_effect": 0,
+  "sitemap_effect": 0
+}

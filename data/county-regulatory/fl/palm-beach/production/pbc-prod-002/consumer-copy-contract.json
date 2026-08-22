@@ -1,0 +1,32 @@
+{
+  "task": "PBC-PROD-002",
+  "regulator": "Palm Beach County Public Safety — Consumer Affairs Division",
+  "section_title": "Palm Beach County Moving Permit",
+  "field_order": [
+    "permit_number",
+    "status",
+    "source",
+    "as_of",
+    "disclaimer"
+  ],
+  "copy_template": {
+    "heading": "Palm Beach County Moving Permit",
+    "permit_line": "MV-####",
+    "status_line": "Status: [source-supported status]",
+    "source_line": "Source: Palm Beach County Public Safety — Consumer Affairs Division",
+    "verification_line": "Permit information verified against Palm Beach County records.",
+    "disclaimer": "Regulatory record verification is not a MoveTrustHub endorsement.",
+    "hierarchy_note": "County permit status is separate from Florida FDACS household goods authority and federal FMCSA/USDOT authority."
+  },
+  "forbidden_terms": [
+    "licensed by MoveTrustHub",
+    "approved",
+    "certified",
+    "safe",
+    "recommended",
+    "fully compliant",
+    "legitimate mover"
+  ],
+  "placement": "Regulatory / Credential section beneath state evidence — not hero/Trust Score/rating badge",
+  "structured_data": "HOLD_FROM_STRUCTURED_DATA_V1"
+}

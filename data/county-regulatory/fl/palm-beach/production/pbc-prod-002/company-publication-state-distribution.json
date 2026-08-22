@@ -1,0 +1,8 @@
+{
+  "task": "PBC-PROD-002",
+  "companies": 43,
+  "distribution": {
+    "PUBLISHABLE": 12,
+    "INGESTED": 31
+  }
+}

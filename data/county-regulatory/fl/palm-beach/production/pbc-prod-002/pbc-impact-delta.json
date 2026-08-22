@@ -1,0 +1,21 @@
+{
+  "task": "PBC-PROD-002",
+  "pbc_prod_001_realized": {
+    "palm_beach_credentials_internally_added": 46,
+    "distinct_companies_internally_enriched": 43,
+    "companies_newly_created": 0,
+    "company_publication_changes": 0,
+    "county_credentials_publicly_published": 0,
+    "emails_added_or_promoted": 0,
+    "phones_added_or_promoted": 0,
+    "addresses_added_or_promoted": 0,
+    "complaints_added": 0,
+    "enforcement_added": 0,
+    "wrong_company_links": 0,
+    "consumer_pii": 0
+  },
+  "pbc_prod_002": {
+    "production_db_writes": 0,
+    "county_credentials_publicly_published": 0
+  }
+}

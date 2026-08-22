@@ -1,0 +1,19 @@
+{
+  "task": "PBC-PROD-002",
+  "simulates": "PBC-PROD-003",
+  "apply": false,
+  "companies_created": 0,
+  "company_publication_changes": 0,
+  "company_indexable_changes": 0,
+  "psa_changes": 0,
+  "contacts": 0,
+  "credential_evidence_state": {
+    "from": "INTERNAL_ONLY",
+    "to": "PUBLISHED",
+    "rows": 11
+  },
+  "trust_score": 0,
+  "sitemap": 0,
+  "directory_search_ranking": 0,
+  "county_page_discovery": 0
+}

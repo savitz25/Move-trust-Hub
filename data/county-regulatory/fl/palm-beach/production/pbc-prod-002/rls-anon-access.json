@@ -1,0 +1,7 @@
+{
+  "task": "PBC-PROD-002",
+  "anon_direct_table_read": "DENIED",
+  "anon_error": "permission denied for table provider_county_credential",
+  "anon_rows": 0,
+  "ok": true
+}
