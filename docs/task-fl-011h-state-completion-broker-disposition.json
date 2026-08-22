@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "id": "FL_STATE_COMPLETION_CRITERIA_V1",
+  "BROKER_SCOPE_MODEL_DEFINED": "YES",
+  "BROKER_IDENTITY_COHORT_FROZEN": "YES",
+  "BROKER_INTERNAL_READY_POOL_FROZEN": "YES",
+  "BROKER_PUBLICATION_MODEL_DEFINED": "YES",
+  "success": "READY_FOR_FL_BROKER_INTERNAL_STAGING",
+  "fl012_still_prohibited_until": "2026-09-05T14:45:00.000Z",
+  "fl012_may_execute_now": false
+}

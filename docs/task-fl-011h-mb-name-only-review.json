@@ -1,0 +1,74 @@
+{
+  "google_places_requests": 0,
+  "historical": 7,
+  "recomputed": 7,
+  "name_only_auto_link": 0,
+  "tally": {
+    "REMAINS_IDENTITY_REVIEW": 7
+  },
+  "rows": [
+    {
+      "mb": "MB101",
+      "legalName": "CARTUS CORPORATION",
+      "terminal": "REMAINS_IDENTITY_REVIEW",
+      "matchMethod": "none",
+      "reasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ]
+    },
+    {
+      "mb": "MB137",
+      "legalName": "AMS MOVING INC",
+      "terminal": "REMAINS_IDENTITY_REVIEW",
+      "matchMethod": "none",
+      "reasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ]
+    },
+    {
+      "mb": "MB151",
+      "legalName": "EVERSAFE MOVING AND STORAGE LLC",
+      "terminal": "REMAINS_IDENTITY_REVIEW",
+      "matchMethod": "none",
+      "reasons": [
+        "dba_without_unique_corroboration"
+      ]
+    },
+    {
+      "mb": "MB152",
+      "legalName": "MOVING APT., INC.",
+      "terminal": "REMAINS_IDENTITY_REVIEW",
+      "matchMethod": "none",
+      "reasons": [
+        "dba_without_unique_corroboration"
+      ]
+    },
+    {
+      "mb": "MB154",
+      "legalName": "DORM ROOM MOVERS LLC",
+      "terminal": "REMAINS_IDENTITY_REVIEW",
+      "matchMethod": "none",
+      "reasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ]
+    },
+    {
+      "mb": "MB175",
+      "legalName": "SAFESHIELD MOVING SERVICES LLC",
+      "terminal": "REMAINS_IDENTITY_REVIEW",
+      "matchMethod": "none",
+      "reasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ]
+    },
+    {
+      "mb": "MB98",
+      "legalName": "GLOBAL VAN LINES, LLC",
+      "terminal": "REMAINS_IDENTITY_REVIEW",
+      "matchMethod": "none",
+      "reasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ]
+    }
+  ]
+}

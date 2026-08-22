@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "id": "FL_FDACS_MB_UNIVERSE_V1",
+  "total": 29,
+  "active": 26,
+  "expired": 2,
+  "unknown": 1,
+  "duplicate_mb": 0,
+  "im_active_excluded": 1098,
+  "note": "MB broker registrations are excluded from the 1098 IM coverage denominator."
+}

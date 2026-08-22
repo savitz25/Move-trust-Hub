@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "tally": {
+    "BROKER_ONLY": 27,
+    "MOVER_AND_BROKER": 1,
+    "FEDERAL_AND_BROKER": 1,
+    "MOVER_FEDERAL_AND_BROKER": 0,
+    "OTHER": 0
+  },
+  "note": "Federal overlap uses companies.usdot_number only. usdot-* slugs are not federal evidence."
+}

@@ -1,0 +1,135 @@
+{
+  "google_places_requests": 0,
+  "production_db_writes": 0,
+  "consumer_pii": 0,
+  "task": "FL-011H",
+  "success": "READY_FOR_FL_BROKER_INTERNAL_STAGING",
+  "origin_main": "e7a3cd00b36e20c763599ea94606ca6fa7f634f8",
+  "production_sha": "e7a3cd00b36e20c763599ea94606ca6fa7f634f8",
+  "im": {
+    "active": 1098,
+    "represented": 930,
+    "unresolved": 168,
+    "coverage": 84.7,
+    "delta": {
+      "active": 0,
+      "represented": 0,
+      "unresolved": 0,
+      "coverage": 0
+    }
+  },
+  "mb": {
+    "total": 29,
+    "active": 26,
+    "expired": 2,
+    "unknown": 1,
+    "duplicate": 0
+  },
+  "terminal": {
+    "EXISTING_CANONICAL_LINK_READY": 1,
+    "NEW_BROKER_CANONICAL_READY": 17,
+    "EXISTING_CANONICAL_ALREADY_MODELED": 1,
+    "EXPIRED_NO_STAGING": 2,
+    "STATUS_BLOCKED": 1,
+    "REMAINS_IDENTITY_REVIEW": 7,
+    "CONFLICT": 0,
+    "OTHER_WITHHOLD": 0
+  },
+  "existing2": [
+    {
+      "mb": "MB159",
+      "legalName": "REAL TIME RELOCATION LLC",
+      "matchedCompanyId": "fl-im-3405",
+      "terminal": "EXISTING_CANONICAL_LINK_READY",
+      "matchMethod": "exact_legal_name_and_phone",
+      "verdict": "PASS",
+      "reasons": [
+        "exact_legal_identity_and_corroboration"
+      ],
+      "google_places_requests": 0
+    },
+    {
+      "mb": "MB171",
+      "legalName": "PINNACLE VAN LINES LLC",
+      "matchedCompanyId": "usdot-3197443",
+      "terminal": "EXISTING_CANONICAL_ALREADY_MODELED",
+      "matchMethod": "exact_prior_state_authority",
+      "verdict": "PASS",
+      "reasons": [
+        "exact_legal_identity_and_corroboration"
+      ],
+      "google_places_requests": 0
+    }
+  ],
+  "sro17": 17,
+  "name7": 7,
+  "blocked3": [
+    {
+      "mb": "MB105",
+      "legalName": "RELOCATE US LLC",
+      "snapshotStatus": "unknown",
+      "terminal": "STATUS_BLOCKED",
+      "statusClass": "STATUS_REFRESH_REQUIRED"
+    },
+    {
+      "mb": "MB114",
+      "legalName": "J & D PROFESSIONAL SERVICES OF FLORIDA, INC.",
+      "snapshotStatus": "expired",
+      "terminal": "EXPIRED_NO_STAGING",
+      "statusClass": "STATUS_REFRESH_REQUIRED"
+    },
+    {
+      "mb": "MB165",
+      "legalName": "ARCA INTERNATIONAL, INC.",
+      "snapshotStatus": "expired",
+      "terminal": "EXPIRED_NO_STAGING",
+      "statusClass": "STATUS_REFRESH_REQUIRED"
+    }
+  ],
+  "name_only_auto_link": 0,
+  "model": "REUSE_AS_IS",
+  "draft": {
+    "id": "FL_FDACS_MB_INTERNAL_STAGING_V1_DRAFT",
+    "apply": false,
+    "hash": "e1e78a4d18cf2c0c",
+    "link": 1,
+    "insert": 17,
+    "total": 18
+  },
+  "coverage": {
+    "active": 26,
+    "represented_now": 1,
+    "current_pct": 3.8,
+    "simulated_represented": 19,
+    "simulated_pct": 73.1
+  },
+  "overlap": {
+    "BROKER_ONLY": 27,
+    "MOVER_AND_BROKER": 1,
+    "FEDERAL_AND_BROKER": 1,
+    "MOVER_FEDERAL_AND_BROKER": 0,
+    "OTHER": 0
+  },
+  "contacts": {
+    "phones": 18,
+    "emails": 17,
+    "addresses": 18,
+    "future_attach_eligible": 53,
+    "promotions": 0
+  },
+  "wave1": {
+    "n": 37,
+    "clock_reset": false
+  },
+  "wave2": {
+    "ready_pool": 720,
+    "count": 50,
+    "hash": "a5d15f3dca32a59a",
+    "apply": false
+  },
+  "county": {
+    "n": 116,
+    "writes": 0
+  },
+  "fl012_may_execute": false
+}

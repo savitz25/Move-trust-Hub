@@ -1,0 +1,30 @@
+{
+  "google_places_requests": 0,
+  "published_in_fl011h": false,
+  "role": "MOVING_BROKER",
+  "not": "INTRASTATE_MOVER",
+  "block": {
+    "regulator": "Florida Department of Agriculture and Consumer Services",
+    "registrationNumber": "MB-####",
+    "registrationType": "Moving Broker",
+    "role": "MOVING_BROKER",
+    "status": "Registered / Active",
+    "headline": "Florida Moving Broker Registration",
+    "detail": "Registration information verified against Florida FDACS records. This record reflects a Florida moving-broker registration.",
+    "roleClarification": "This record reflects a Florida moving-broker registration and is distinct from registration as an intrastate household-goods mover.",
+    "verificationWording": "Registration information verified against Florida FDACS records.",
+    "endorsement": false
+  },
+  "dual_role_example": {
+    "heading": "Florida State Regulatory Records",
+    "mover": {
+      "label": "Intrastate Mover Registration",
+      "id": "IM-####"
+    },
+    "broker": {
+      "label": "Moving Broker Registration",
+      "id": "MB-####"
+    },
+    "merged": false
+  }
+}

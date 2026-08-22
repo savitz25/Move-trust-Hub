@@ -1,0 +1,16 @@
+{
+  "google_places_requests": 0,
+  "active": 26,
+  "represented_now": 1,
+  "unrepresented_now": 25,
+  "current_pct": 3.8,
+  "simulated_represented": 19,
+  "simulated_pct": 73.1,
+  "not_im_coverage": 84.7,
+  "im_denominator_delta": {
+    "active": 0,
+    "represented": 0,
+    "unresolved": 0,
+    "coverage": 0
+  }
+}
