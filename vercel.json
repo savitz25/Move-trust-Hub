@@ -62,6 +62,10 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=3600"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=300"
         }
       ]
     },
@@ -108,7 +112,7 @@
       ]
     },
     {
-      "source": "/:path((?!insurance|lender|admin|api|_next|local-movers).+)",
+      "source": "/:path((?!insurance|lender|admin|api|_next|local-movers|companies).+)",
       "headers": [
         {
           "key": "X-Trust-Hub",
