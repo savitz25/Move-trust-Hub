@@ -65,10 +65,18 @@
       "name": "validate-fl-c009-palm-beach-production-spec.mjs",
       "ok": true,
       "exit": 0
+    },
+    {
+      "name": "validate-fl-c010-integration-gate.mjs",
+      "ok": true,
+      "exit": 0
     }
   ],
-  "validators_passed": 10,
+  "validators_passed": 11,
   "validators_failed": 0,
   "TECHNICALLY_READY_FOR_SELECTIVE_TRANSPLANT": "YES",
-  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO"
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "YES",
+  "success_state": "READY_FOR_SELECTIVE_TRANSPLANT — STATE GATE CLEAR",
+  "rehearsal_branch": "rehearsal/fl-county-v1-transplant",
+  "pushed": false
 }

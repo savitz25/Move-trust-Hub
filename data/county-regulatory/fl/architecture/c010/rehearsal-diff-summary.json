@@ -1,0 +1,20 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T17:30:00.000Z",
+  "rehearsal_branch": "rehearsal/fl-county-v1-transplant",
+  "rehearsal_worktree": "C:\\Users\\makei\\move-trust-hub-c010-rehearsal",
+  "target_main_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "rehearsal_head_sha": "9ded8cb0",
+  "files_added": 399,
+  "files_modified": 0,
+  "files_deleted": 0,
+  "lines_added": 256546,
+  "lines_removed": 0,
+  "shortstat": "399 files changed, 256546 insertions(+)",
+  "runtime_or_package_files_changed": [],
+  "runtime_files_changed_count": 0,
+  "supabase_migrations_changed": 0,
+  "package_json_changed": false,
+  "pushed": false,
+  "note": "Mostly added county research artifacts; zero production application modifications."
+}

@@ -1,0 +1,17 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T15:35:04.265Z",
+  "origin_main": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "counts": {
+    "NEW_PATH_NO_CONFLICT": 385,
+    "EXISTING_PATH_IDENTICAL": 0,
+    "EXISTING_PATH_SAFE_EXTENSION": 0,
+    "PATH_CONFLICT_REQUIRES_MANUAL_REVIEW": 0,
+    "OBSOLETE_DUE_TO_CURRENT_MAIN": 0
+  },
+  "PATH_CONFLICT_REQUIRES_MANUAL_REVIEW": [],
+  "EXISTING_PATH_SAFE_EXTENSION": [],
+  "EXISTING_PATH_IDENTICAL_sample": [],
+  "OBSOLETE_DUE_TO_CURRENT_MAIN": [],
+  "note": "Most county paths are NEW_PATH_NO_CONFLICT. Selective transplant avoids app/runtime paths."
+}

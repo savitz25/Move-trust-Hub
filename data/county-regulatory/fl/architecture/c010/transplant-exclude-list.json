@@ -1,0 +1,15 @@
+{
+  "task": "FL-C010",
+  "count": 0,
+  "paths": [],
+  "principles": [
+    "secrets",
+    ".env*",
+    "credentials files",
+    "node_modules",
+    "build output",
+    "consumer PII",
+    "supabase/migrations",
+    "unrelated Builder 1 files"
+  ]
+}

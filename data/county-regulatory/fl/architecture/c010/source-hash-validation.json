@@ -1,0 +1,836 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T15:36:01.739Z",
+  "method": "Compare live file bytes to freeze inventory sha256 (byte-identical transplant requirement)",
+  "total_raw_artifacts": 103,
+  "hash_pass": 103,
+  "hash_mismatch": 0,
+  "missing_files": 0,
+  "note": "All raw allowlist artifacts match freeze inventory hashes.",
+  "artifacts": [
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.pdf",
+      "size": 722047,
+      "inventory_sha256": "b8f6529700f39251b8960987747952adb6081d9aa47373eae3ea20a2bf7ad28d",
+      "current_sha256": "b8f6529700f39251b8960987747952adb6081d9aa47373eae3ea20a2bf7ad28d",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.txt",
+      "size": 22909,
+      "inventory_sha256": "ca44dc75fc8d4b5cd185e388f79c49a3c3c1493dfb498b4718baf402e207c5f9",
+      "current_sha256": "ca44dc75fc8d4b5cd185e388f79c49a3c3c1493dfb498b4718baf402e207c5f9",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.pdf",
+      "size": 322580,
+      "inventory_sha256": "588c7412d27a3741c5e9743aaeb8d468f2920c74b7d49c658fef3d8e67311abd",
+      "current_sha256": "588c7412d27a3741c5e9743aaeb8d468f2920c74b7d49c658fef3d8e67311abd",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.txt",
+      "size": 5506,
+      "inventory_sha256": "2a2690832ee5b0ffa21c998590678c76680855e65c5d6a053e6a8722aed63a1d",
+      "current_sha256": "2a2690832ee5b0ffa21c998590678c76680855e65c5d6a053e6a8722aed63a1d",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-faq.pdf",
+      "size": 501418,
+      "inventory_sha256": "784951348c0ba062a0ff4abea2be9e73e27319a67aa96531d1cc2f9c598bc527",
+      "current_sha256": "784951348c0ba062a0ff4abea2be9e73e27319a67aa96531d1cc2f9c598bc527",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-faq.txt",
+      "size": 24353,
+      "inventory_sha256": "e31740c4f8bbed251b22cb8b82bdae68a4a7c0c73a4c2627e4cc92b570361ad6",
+      "current_sha256": "e31740c4f8bbed251b22cb8b82bdae68a4a7c0c73a4c2627e4cc92b570361ad6",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.pdf",
+      "size": 395768,
+      "inventory_sha256": "d5cb2e244939a6a1d67d1be84625f031513ea45bba8b084cce860c3aff352bd3",
+      "current_sha256": "d5cb2e244939a6a1d67d1be84625f031513ea45bba8b084cce860c3aff352bd3",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.txt",
+      "size": 9683,
+      "inventory_sha256": "856b7a0dc0aee7db664d862d6642e213bbd0c7dbdaccfdbb669f4f93b7daa97a",
+      "current_sha256": "856b7a0dc0aee7db664d862d6642e213bbd0c7dbdaccfdbb669f4f93b7daa97a",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.pdf",
+      "size": 982024,
+      "inventory_sha256": "9f7e136f17f0456b072d069d0788f444e324373b9039c54e0decd339073a0e66",
+      "current_sha256": "9f7e136f17f0456b072d069d0788f444e324373b9039c54e0decd339073a0e66",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.txt",
+      "size": 83972,
+      "inventory_sha256": "96221cd96ecbf29e15670084d343c36d4ba9a051a93fa8d177841115a386c17f",
+      "current_sha256": "96221cd96ecbf29e15670084d343c36d4ba9a051a93fa8d177841115a386c17f",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/excerpt-movers-registration-program.txt",
+      "size": 7868,
+      "inventory_sha256": "27d453faca86c5339cc527f61bc78721fd9aa075a13424f367d293db4845db9e",
+      "current_sha256": "27d453faca86c5339cc527f61bc78721fd9aa075a13424f367d293db4845db9e",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.pdf",
+      "size": 721042,
+      "inventory_sha256": "dcd364c45225bee2cfdfd25eb59757cc2c1805e40c0572bda151a47d51c9611b",
+      "current_sha256": "dcd364c45225bee2cfdfd25eb59757cc2c1805e40c0572bda151a47d51c9611b",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.txt",
+      "size": 6795,
+      "inventory_sha256": "885091c7d2bfb6bc40cc2465c1f55e26ced577340e2dfbf0dafae932076bc2aa",
+      "current_sha256": "885091c7d2bfb6bc40cc2465c1f55e26ced577340e2dfbf0dafae932076bc2aa",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/page-broward-consumer-home.html",
+      "size": 239810,
+      "inventory_sha256": "14ceb61bb306b5428fb97c0e152651a27103551cd25db2dc75bf406dc81de988",
+      "current_sha256": "14ceb61bb306b5428fb97c0e152651a27103551cd25db2dc75bf406dc81de988",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/page-municode-ch20-movers.html",
+      "size": 6100,
+      "inventory_sha256": "dd21473c395524a7d57b0c710aca2257097b1320c7e1a4834ece1553afcfd1f7",
+      "current_sha256": "dd21473c395524a7d57b0c710aca2257097b1320c7e1a4834ece1553afcfd1f7",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/TriCountyMovingDisclosureForm.pdf",
+      "size": 232687,
+      "inventory_sha256": "d5dc6bb0be65f3dbe05637597854161931a24a00c724a6d6ffcb81c20a7109ad",
+      "current_sha256": "d5dc6bb0be65f3dbe05637597854161931a24a00c724a6d6ffcb81c20a7109ad",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/broward/raw/TriCountyMovingDisclosureForm.txt",
+      "size": 8227,
+      "inventory_sha256": "f2d059ce9dda38474dddce7c16b2fa91bc6f48f190aaeae469e25f53bcf8891b",
+      "current_sha256": "f2d059ce9dda38474dddce7c16b2fa91bc6f48f190aaeae469e25f53bcf8891b",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-detail-samples.json",
+      "size": 2771,
+      "inventory_sha256": "3f6fc5f57bf87ceccbd5e817656dadafc0c9a643eaf7eeea25944e05b92143ba",
+      "current_sha256": "3f6fc5f57bf87ceccbd5e817656dadafc0c9a643eaf7eeea25944e05b92143ba",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-moving-roster.json",
+      "size": 498884,
+      "inventory_sha256": "a69fcb9a7add06a1080c8f4e77e17f7ed06ae3cc19880983986f4e84977c6b52",
+      "current_sha256": "a69fcb9a7add06a1080c8f4e77e17f7ed06ae3cc19880983986f4e84977c6b52",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-business-20tax-page-5Bsi.json",
+      "size": 1321046,
+      "inventory_sha256": "80cd43a8178dc3538bf6de96e40d6f79f74ca055ec137819a4a2a4409af3502a",
+      "current_sha256": "80cd43a8178dc3538bf6de96e40d6f79f74ca055ec137819a4a2a4409af3502a",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-local-20business-20tax-f.json",
+      "size": 1910079,
+      "inventory_sha256": "e42ac21527cebd73d99107a3fcb34af9c5034844550d7b93a0dbed5f807ac362",
+      "current_sha256": "e42ac21527cebd73d99107a3fcb34af9c5034844550d7b93a0dbed5f807ac362",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/instructions-self-service-portal.pdf",
+      "size": 5885075,
+      "inventory_sha256": "a64a4378a20d29da24ddb20c5d166cb345d103276033b013cea357c8b6d8d089",
+      "current_sha256": "a64a4378a20d29da24ddb20c5d166cb345d103276033b013cea357c8b6d8d089",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/lbt-mover-related-extract.json",
+      "size": 245730,
+      "inventory_sha256": "5b333746fb13130d81b9bf23286d16bdb72692358d8c8c4bcdffa200d7bde27a",
+      "current_sha256": "5b333746fb13130d81b9bf23286d16bdb72692358d8c8c4bcdffa200d7bde27a",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/lbt-moving-category-extract.json",
+      "size": 183552,
+      "inventory_sha256": "01c484270a00781473f9a2fd1674130146b1d64b5f3cea7deda19504235af06d",
+      "current_sha256": "01c484270a00781473f9a2fd1674130146b1d64b5f3cea7deda19504235af06d",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/movers-consumer-disclosure.pdf",
+      "size": 164921,
+      "inventory_sha256": "222c0cd32c55f04202148758389c79b42b414463c043003802891538655d8279",
+      "current_sha256": "222c0cd32c55f04202148758389c79b42b414463c043003802891538655d8279",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.pdf",
+      "size": 252180,
+      "inventory_sha256": "d7831aad670d694f6e99a5d3486205ccac1a2856a1c2396b9abea7578049ebae",
+      "current_sha256": "d7831aad670d694f6e99a5d3486205ccac1a2856a1c2396b9abea7578049ebae",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.txt",
+      "size": 8729,
+      "inventory_sha256": "408181babc750a024103dd61041b85d9ec07bb93deb5225841247878a8f16cfb",
+      "current_sha256": "408181babc750a024103dd61041b85d9ec07bb93deb5225841247878a8f16cfb",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-business-tracker.html",
+      "size": 110777,
+      "inventory_sha256": "5b3139273cbe1b2ce55b1ae1c4b71b0a14c7afbc0f4a87e301a0aeb7205cf35e",
+      "current_sha256": "5b3139273cbe1b2ce55b1ae1c4b71b0a14c7afbc0f4a87e301a0aeb7205cf35e",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-consumer-protection-home.html",
+      "size": 96767,
+      "inventory_sha256": "3582be7a4e45681420b1c5623d25149026dc26114a3811a519064231084ff335",
+      "current_sha256": "3582be7a4e45681420b1c5623d25149026dc26114a3811a519064231084ff335",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-lbt-opendata-maps.html",
+      "size": 126949,
+      "inventory_sha256": "dee61eabfd0f62f666ab38cf84a47cdb3e67624ca5fe032b3a5d3686beaed895",
+      "current_sha256": "dee61eabfd0f62f666ab38cf84a47cdb3e67624ca5fe032b3a5d3686beaed895",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-lbt-opendata.html",
+      "size": 126961,
+      "inventory_sha256": "38f036387b75cd80ff95b2047fa39f6e1b84ef73146a75d73fe408b48cc11cfc",
+      "current_sha256": "38f036387b75cd80ff95b2047fa39f6e1b84ef73146a75d73fe408b48cc11cfc",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-moving-business-license.html",
+      "size": 71740,
+      "inventory_sha256": "f996af452ddd0a2bb09d81e2b3992b428839a6b5a3eafa1e9a902a29380cc946",
+      "current_sha256": "f996af452ddd0a2bb09d81e2b3992b428839a6b5a3eafa1e9a902a29380cc946",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/page-moving-companies.html",
+      "size": 74467,
+      "inventory_sha256": "a3fda6ff29b84b05fc6c4775c0a673d52c15c679e8193ed0a70638004dc0a2e5",
+      "current_sha256": "a3fda6ff29b84b05fc6c4775c0a673d52c15c679e8193ed0a70638004dc0a2e5",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-BIR-GetListOfProducts-58.json",
+      "size": 3045,
+      "inventory_sha256": "2ba151941a2414cf1eb983ec1720bcc8e58b2c5989ae237b802a17e792356847",
+      "current_sha256": "2ba151941a2414cf1eb983ec1720bcc8e58b2c5989ae237b802a17e792356847",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetAllegedViolation.json",
+      "size": 26013,
+      "inventory_sha256": "428fc5754c3c6bfa0b35313212bff926a375f6a65ac93393b353036d0b7aac3d",
+      "current_sha256": "428fc5754c3c6bfa0b35313212bff926a375f6a65ac93393b353036d0b7aac3d",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetBusinessTypes.json",
+      "size": 2433,
+      "inventory_sha256": "2ea5c93f837729a8d645d3a95965cd75effef5705d86e3b2463d7a16d7eea3a5",
+      "current_sha256": "2ea5c93f837729a8d645d3a95965cd75effef5705d86e3b2463d7a16d7eea3a5",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCities-Moving.json",
+      "size": 11814,
+      "inventory_sha256": "fb399106d032db60b491fef006ce03167b5254db64fd83b1015c61122df9b6ba",
+      "current_sha256": "fb399106d032db60b491fef006ce03167b5254db64fd83b1015c61122df9b6ba",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-sample-merged.json",
+      "size": 182780,
+      "inventory_sha256": "b5dc703c68c058ce65beebc74f11778e74d612d055ac9616fe9ecc5703706075",
+      "current_sha256": "b5dc703c68c058ce65beebc74f11778e74d612d055ac9616fe9ecc5703706075",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-a.json",
+      "size": 151010,
+      "inventory_sha256": "1e891ac684bc06f9384ce40e8450916432e6cee1de074f4908079afd20b5881f",
+      "current_sha256": "1e891ac684bc06f9384ce40e8450916432e6cee1de074f4908079afd20b5881f",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-college.json",
+      "size": 1167,
+      "inventory_sha256": "f3c4f38813b482393fa1f780dfce5d305e3f4a5637ff874d31d5daf49c41ecb1",
+      "current_sha256": "f3c4f38813b482393fa1f780dfce5d305e3f4a5637ff874d31d5daf49c41ecb1",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-e.json",
+      "size": 166222,
+      "inventory_sha256": "8285b9e700a8fa87ad79f476afbf8ba6aede7b407c98575000303b70e3394587",
+      "current_sha256": "8285b9e700a8fa87ad79f476afbf8ba6aede7b407c98575000303b70e3394587",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-express.json",
+      "size": 1155,
+      "inventory_sha256": "275ca70e92685b4ae37e9b67f7591eeb80864578503e33f3d9d99b4fa39acbc2",
+      "current_sha256": "275ca70e92685b4ae37e9b67f7591eeb80864578503e33f3d9d99b4fa39acbc2",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-i.json",
+      "size": 171352,
+      "inventory_sha256": "f8b36a8b6978e85fa85d22f8142c49fb19ccd987de3e74413a764d804e564708",
+      "current_sha256": "f8b36a8b6978e85fa85d22f8142c49fb19ccd987de3e74413a764d804e564708",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-movers.json",
+      "size": 21547,
+      "inventory_sha256": "34527526ad77b1cb964045f76bec8b80cef5eec678df31d81061bad36cc84ff9",
+      "current_sha256": "34527526ad77b1cb964045f76bec8b80cef5eec678df31d81061bad36cc84ff9",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-moving.json",
+      "size": 112630,
+      "inventory_sha256": "3831eaa03101f06e38c3d6c26462be9cda56e516ab3b6bd7825ea457e6273bfa",
+      "current_sha256": "3831eaa03101f06e38c3d6c26462be9cda56e516ab3b6bd7825ea457e6273bfa",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-o.json",
+      "size": 171333,
+      "inventory_sha256": "7580f688c8935f52d4455bd07cc746d68b1b555b9655c9beb42a1359eae8558c",
+      "current_sha256": "7580f688c8935f52d4455bd07cc746d68b1b555b9655c9beb42a1359eae8558c",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-storage.json",
+      "size": 43102,
+      "inventory_sha256": "c86ff81944d472c6fbd0db32ef5b12be7888a8b0895565d70e3657ffbbcd5c94",
+      "current_sha256": "c86ff81944d472c6fbd0db32ef5b12be7888a8b0895565d70e3657ffbbcd5c94",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-two-men.json",
+      "size": 3919,
+      "inventory_sha256": "abdc1a97f217c4064c7e5d37da473fe939a4b242e10ac9990aafa889f1b97b77",
+      "current_sha256": "abdc1a97f217c4064c7e5d37da473fe939a4b242e10ac9990aafa889f1b97b77",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-u.json",
+      "size": 56766,
+      "inventory_sha256": "f3353f4a9db17f77529ef2b7ce40cbd3872a7b3868d59002e7615e6cbe552688",
+      "current_sha256": "f3353f4a9db17f77529ef2b7ce40cbd3872a7b3868d59002e7615e6cbe552688",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-van.json",
+      "size": 6436,
+      "inventory_sha256": "f80674275000d74a8ff5b0ee6e56f346da3d511393c9e7792fce191997b84414",
+      "current_sha256": "f80674275000d74a8ff5b0ee6e56f346da3d511393c9e7792fce191997b84414",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseStatus.json",
+      "size": 3782,
+      "inventory_sha256": "5bc728a394e1628e36b966c175edd7b55a170ac47f039386c70a5e3eaceb455d",
+      "current_sha256": "5bc728a394e1628e36b966c175edd7b55a170ac47f039386c70a5e3eaceb455d",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseType.json",
+      "size": 3356,
+      "inventory_sha256": "7d48ceb2538c2eda59ceab4a3c378ae9d4f4db83b052586df650a268dc5d3659",
+      "current_sha256": "7d48ceb2538c2eda59ceab4a3c378ae9d4f4db83b052586df650a268dc5d3659",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseTypeNotExpired.json",
+      "size": 2007,
+      "inventory_sha256": "7dbb60463375ed61b9f12da139e0e942a099577766594c1fd5a8febb278b2416",
+      "current_sha256": "7dbb60463375ed61b9f12da139e0e942a099577766594c1fd5a8febb278b2416",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/api-GetResolutions.json",
+      "size": 30136,
+      "inventory_sha256": "22a19d9d2b034f0a009d25fb52106c63a8bec641f84c0871dd6c56aea20181da",
+      "current_sha256": "22a19d9d2b034f0a009d25fb52106c63a8bec641f84c0871dd6c56aea20181da",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1017.json",
+      "size": 6913,
+      "inventory_sha256": "acd4cd994f0f0208b18c1dfbeddaf813a46462160d0b9abbcdfb8e165dd048b1",
+      "current_sha256": "acd4cd994f0f0208b18c1dfbeddaf813a46462160d0b9abbcdfb8e165dd048b1",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1039.json",
+      "size": 6162,
+      "inventory_sha256": "7c2ef30faebfcecf35ec5c6f643e1b405edb5fb701eefc7bc17006519900c287",
+      "current_sha256": "7c2ef30faebfcecf35ec5c6f643e1b405edb5fb701eefc7bc17006519900c287",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1097.json",
+      "size": 21951,
+      "inventory_sha256": "5f583ce135375d863fa041096f267231be82a57e9ec3c901eab85912d743b570",
+      "current_sha256": "5f583ce135375d863fa041096f267231be82a57e9ec3c901eab85912d743b570",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV11.json",
+      "size": 5576,
+      "inventory_sha256": "6aae01b7e9e1ca438d80b7344ad0765ebaf7d0e454a6d6e11032490352e4a7c9",
+      "current_sha256": "6aae01b7e9e1ca438d80b7344ad0765ebaf7d0e454a6d6e11032490352e4a7c9",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1121.json",
+      "size": 19124,
+      "inventory_sha256": "cedbc4c7c0f401ec8c4e68193e21dccd64d12311e4dafc1ac6d7d6f74bfa246c",
+      "current_sha256": "cedbc4c7c0f401ec8c4e68193e21dccd64d12311e4dafc1ac6d7d6f74bfa246c",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1132.json",
+      "size": 24857,
+      "inventory_sha256": "3c2461030a3cc468a431a831b744527c31d5762d1742d2d844786aaeca00882f",
+      "current_sha256": "3c2461030a3cc468a431a831b744527c31d5762d1742d2d844786aaeca00882f",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1145.json",
+      "size": 10686,
+      "inventory_sha256": "9af68f051fc5b05a6dd0b43208e6278fff9aa9502d749f1af82528b7b831ad33",
+      "current_sha256": "9af68f051fc5b05a6dd0b43208e6278fff9aa9502d749f1af82528b7b831ad33",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1191.json",
+      "size": 5561,
+      "inventory_sha256": "159be9884e6c36af1e8894face3227ae26a3efb0d524ecf93a1c330ecfc55deb",
+      "current_sha256": "159be9884e6c36af1e8894face3227ae26a3efb0d524ecf93a1c330ecfc55deb",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1193.json",
+      "size": 15356,
+      "inventory_sha256": "ea3baecd7074a3aa06aa7fd8d73594d49aca27dd1917df81380aac23252c5a52",
+      "current_sha256": "ea3baecd7074a3aa06aa7fd8d73594d49aca27dd1917df81380aac23252c5a52",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1210.json",
+      "size": 7290,
+      "inventory_sha256": "7707ba12651aa0436feac26badb753b983e7aa95c853b06e410c5e2697e6cbc8",
+      "current_sha256": "7707ba12651aa0436feac26badb753b983e7aa95c853b06e410c5e2697e6cbc8",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV42.json",
+      "size": 5769,
+      "inventory_sha256": "a14226adcc639a80b8aa5eb24809f995b7d56cd4de5556a40c2aad6aa4431e64",
+      "current_sha256": "a14226adcc639a80b8aa5eb24809f995b7d56cd4de5556a40c2aad6aa4431e64",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV509.json",
+      "size": 10891,
+      "inventory_sha256": "de9f256c92ed3f50d97737dc0efa816b45e5eb098da26d05d4c9a6ab0d7b4266",
+      "current_sha256": "de9f256c92ed3f50d97737dc0efa816b45e5eb098da26d05d4c9a6ab0d7b4266",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV624.json",
+      "size": 5648,
+      "inventory_sha256": "6842ac8028020652a9f9e94f3b95b136f4676e68e788cd7dca0c7bd94b1994c6",
+      "current_sha256": "6842ac8028020652a9f9e94f3b95b136f4676e68e788cd7dca0c7bd94b1994c6",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV747.json",
+      "size": 5622,
+      "inventory_sha256": "bfc2200f78b93f94d366e293019dcb4dd54b609754f480a2614a0521a0834c0f",
+      "current_sha256": "bfc2200f78b93f94d366e293019dcb4dd54b609754f480a2614a0521a0834c0f",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV772.json",
+      "size": 6128,
+      "inventory_sha256": "ed6ff562db4224bff380dc3f432a02c8e3ad677d2ec27a52466d636e44770194",
+      "current_sha256": "ed6ff562db4224bff380dc3f432a02c8e3ad677d2ec27a52466d636e44770194",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV802.json",
+      "size": 9023,
+      "inventory_sha256": "5d297eff00c40b6bb25b4070a982b830c83b577ad7526ac26334aa596bcecd23",
+      "current_sha256": "5d297eff00c40b6bb25b4070a982b830c83b577ad7526ac26334aa596bcecd23",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV837.json",
+      "size": 13938,
+      "inventory_sha256": "33fdfe649cdbab72639630d3f427ac5d028b6e7544c464dea945e7de3c757cce",
+      "current_sha256": "33fdfe649cdbab72639630d3f427ac5d028b6e7544c464dea945e7de3c757cce",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV86.json",
+      "size": 6068,
+      "inventory_sha256": "18048566ba2b2dd2eafa017459729c3499f9df9698552c8ac4356c48c4229d55",
+      "current_sha256": "18048566ba2b2dd2eafa017459729c3499f9df9698552c8ac4356c48c4229d55",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV867.json",
+      "size": 5529,
+      "inventory_sha256": "6a8218dd3ae7b795fb8ad0530a218e5a54e4e0aa55efd5eca968021c3b860174",
+      "current_sha256": "6a8218dd3ae7b795fb8ad0530a218e5a54e4e0aa55efd5eca968021c3b860174",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV956.json",
+      "size": 7251,
+      "inventory_sha256": "06080fcf75014b4bc3ece5b155756f5255ec150443f40721700559ec30c887a4",
+      "current_sha256": "06080fcf75014b4bc3ece5b155756f5255ec150443f40721700559ec30c887a4",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV964.json",
+      "size": 14566,
+      "inventory_sha256": "c9475e27e3496d94a31663358c55f339004d91a5b9c2fc9496aae4a99269ec2f",
+      "current_sha256": "c9475e27e3496d94a31663358c55f339004d91a5b9c2fc9496aae4a99269ec2f",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV969.json",
+      "size": 12182,
+      "inventory_sha256": "1eabf883fe38dedd2e36dd54962bf7d1ad94534ec0efdb05523239ebcf70b37d",
+      "current_sha256": "1eabf883fe38dedd2e36dd54962bf7d1ad94534ec0efdb05523239ebcf70b37d",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/bir-samples-merged.json",
+      "size": 241191,
+      "inventory_sha256": "6c9c885f0a102c932772639959b48a46239037dc4c990a935f82a35111781199",
+      "current_sha256": "6c9c885f0a102c932772639959b48a46239037dc4c990a935f82a35111781199",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/DisclosureFormPBCMoving2018.pdf",
+      "size": 137873,
+      "inventory_sha256": "4c0e066a79956acfa8c8b2268c04bf8a2ede62bd078bcfb5bf2d283aacfce307",
+      "current_sha256": "4c0e066a79956acfa8c8b2268c04bf8a2ede62bd078bcfb5bf2d283aacfce307",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-BusinessDataService.js",
+      "size": 10201,
+      "inventory_sha256": "dd91017b7a32f87987dfece8e543726fe3d8495af16d04576d1d3bb8c57f3594",
+      "current_sha256": "dd91017b7a32f87987dfece8e543726fe3d8495af16d04576d1d3bb8c57f3594",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-ComplaintDataService.js",
+      "size": 15204,
+      "inventory_sha256": "7c7782ab80972ab7a39e0603e002ac81ef39eb493cb36f4657d28f6258b625db",
+      "current_sha256": "7c7782ab80972ab7a39e0603e002ac81ef39eb493cb36f4657d28f6258b625db",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseCodesDataService.js",
+      "size": 1643,
+      "inventory_sha256": "57d3de4896bf73f3a2b6e8e0573250c9f643450932559935f0de7db6a2159c29",
+      "current_sha256": "57d3de4896bf73f3a2b6e8e0573250c9f643450932559935f0de7db6a2159c29",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseDataService.js",
+      "size": 2611,
+      "inventory_sha256": "af6b011d58b5482d6219928ddcfba065174bb64c33e4048783860901db86c361",
+      "current_sha256": "af6b011d58b5482d6219928ddcfba065174bb64c33e4048783860901db86c361",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseTracking.js",
+      "size": 29066,
+      "inventory_sha256": "d910a86854b4046c14908cd7e6cb863fc0e3d59d541e0929dc21c65887b50a58",
+      "current_sha256": "d910a86854b4046c14908cd7e6cb863fc0e3d59d541e0929dc21c65887b50a58",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-moving.js",
+      "size": 7402,
+      "inventory_sha256": "29683ae6d92d81274f2529c7096688020019b6fe582cd469f1c7333efa1f03b4",
+      "current_sha256": "29683ae6d92d81274f2529c7096688020019b6fe582cd469f1c7333efa1f03b4",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-PortalDataService.js",
+      "size": 9953,
+      "inventory_sha256": "dd5768e2ddab4b4a7246c2aa3f3d08456697a2fd56fec65f286adc5a61fa47e5",
+      "current_sha256": "dd5768e2ddab4b4a7246c2aa3f3d08456697a2fd56fec65f286adc5a61fa47e5",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/js-ReportDataService.js",
+      "size": 4205,
+      "inventory_sha256": "1f0d1bc5780c38ef876639f834408449593a7448fe93ef4e0aa66d001740c1c7",
+      "current_sha256": "1f0d1bc5780c38ef876639f834408449593a7448fe93ef4e0aa66d001740c1c7",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/MovingCo_Application.pdf",
+      "size": 1548433,
+      "inventory_sha256": "b27f71743e9eac43640ba2a6f27e987459b5a13363345203f52e4c22f98d07df",
+      "current_sha256": "b27f71743e9eac43640ba2a6f27e987459b5a13363345203f52e4c22f98d07df",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/page-BIR-Lookup.html",
+      "size": 13996,
+      "inventory_sha256": "e7affbaeb392a865163c689faf23cfe771412203bc4b6576471e4f81edaf5163",
+      "current_sha256": "e7affbaeb392a865163c689faf23cfe771412203bc4b6576471e4f81edaf5163",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/page-Moving-Home.html",
+      "size": 23533,
+      "inventory_sha256": "16bd4b48f2065a75bb4f8a6230199172594b6d2523b211173fb61f2e6430b01e",
+      "current_sha256": "16bd4b48f2065a75bb4f8a6230199172594b6d2523b211173fb61f2e6430b01e",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/TriCountyMovingDisclrForm2019.pdf",
+      "size": 230075,
+      "inventory_sha256": "1ea024d2445a2ee5af467b2ba04acf489ca522135c65dcb411640ea22c3a2419",
+      "current_sha256": "1ea024d2445a2ee5af467b2ba04acf489ca522135c65dcb411640ea22c3a2419",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-MoversWithMuscle.pdf",
+      "size": 30715,
+      "inventory_sha256": "f06e9957b41481d8d6632be8b2cd0b2310c0d4512cffc205c802340f67d0dda6",
+      "current_sha256": "f06e9957b41481d8d6632be8b2cd0b2310c0d4512cffc205c802340f67d0dda6",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-partial-Moving.pdf",
+      "size": 52925,
+      "inventory_sha256": "9e3c2f85533b415b087e861dec69ce14c7c9e6b0beda6ae3dbaf7ef491fdb47f",
+      "current_sha256": "9e3c2f85533b415b087e861dec69ce14c7c9e6b0beda6ae3dbaf7ef491fdb47f",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-partial-Moving.txt",
+      "size": 4104,
+      "inventory_sha256": "7f0595ed152dc0746a34589984604324dc8425831e58bc0b83ec6c106ce81496",
+      "current_sha256": "7f0595ed152dc0746a34589984604324dc8425831e58bc0b83ec6c106ce81496",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-TwoMenAndATruck.pdf",
+      "size": 30715,
+      "inventory_sha256": "957e77269f36e95ea6814a6f74287b0063836fc00e35c99e7ba375a2ffcc12a5",
+      "current_sha256": "957e77269f36e95ea6814a6f74287b0063836fc00e35c99e7ba375a2ffcc12a5",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-TwoMenAndATruck.txt",
+      "size": 167,
+      "inventory_sha256": "6981105df54100d142c27278f4f7506822c30bd6897b84b5463a7e41cadb6e1e",
+      "current_sha256": "6981105df54100d142c27278f4f7506822c30bd6897b84b5463a7e41cadb6e1e",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-sample-moving-partial-parsed.json",
+      "size": 22980,
+      "inventory_sha256": "c4c69ab6a43b8377fb1467a3f0c68da0cbf7b3b4e18265ac0157ab44b51f0b8c",
+      "current_sha256": "c4c69ab6a43b8377fb1467a3f0c68da0cbf7b3b4e18265ac0157ab44b51f0b8c",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/complaint-search-sample-businesses.json",
+      "size": 6706,
+      "inventory_sha256": "3b5a2798a9f66868529ca600dfa767fbce377d8a0547482e661807dc681beb91",
+      "current_sha256": "3b5a2798a9f66868529ca600dfa767fbce377d8a0547482e661807dc681beb91",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/fdacs-pinellas-geography-sample-universe.json",
+      "size": 18333,
+      "inventory_sha256": "6c840262cf2fd334b799f9b0abd133c31fe772fe7140a415a23d47790f4f906a",
+      "current_sha256": "6c840262cf2fd334b799f9b0abd133c31fe772fe7140a415a23d47790f4f906a",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/municode-art-viii-moving.txt",
+      "size": 1552,
+      "inventory_sha256": "d0c6e1a870dceb7804fdc1410f953eaa624612c6655d07c88f9f845aba861d33",
+      "current_sha256": "d0c6e1a870dceb7804fdc1410f953eaa624612c6655d07c88f9f845aba861d33",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-complaint-history-service.html",
+      "size": 252015,
+      "inventory_sha256": "8e1a3bd4e90ff212a85139ce8a6e8d86391262752498513bbcff682ef60b3180",
+      "current_sha256": "8e1a3bd4e90ff212a85139ce8a6e8d86391262752498513bbcff682ef60b3180",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-faq.html",
+      "size": 270192,
+      "inventory_sha256": "0f09610fa9c7d45093a8a0cc61c8e6fc59299b8f013292418e8efda19682836d",
+      "current_sha256": "0f09610fa9c7d45093a8a0cc61c8e6fc59299b8f013292418e8efda19682836d",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-home.html",
+      "size": 273893,
+      "inventory_sha256": "8de65169949cde3613c97aeea7689070a18b20eeb37a80b991cea49ef65438aa",
+      "current_sha256": "8de65169949cde3613c97aeea7689070a18b20eeb37a80b991cea49ef65438aa",
+      "pass": true,
+      "needed_for_reproducibility": true
+    },
+    {
+      "path": "data/county-regulatory/fl/pinellas/raw/page-moving-ordinance.html",
+      "size": 251211,
+      "inventory_sha256": "b1ab281806e2c056e60e283b20f03456e28cfdc88ad8f99f5c8af6a3514ad608",
+      "current_sha256": "b1ab281806e2c056e60e283b20f03456e28cfdc88ad8f99f5c8af6a3514ad608",
+      "pass": true,
+      "needed_for_reproducibility": true
+    }
+  ]
+}
