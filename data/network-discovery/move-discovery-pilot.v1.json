@@ -1,0 +1,1674 @@
+{
+  "schema_version": "ask-network-discovery-v1",
+  "hub": "move",
+  "generated_at": "2026-08-22T16:34:59.812Z",
+  "source_version": "active-verified-companies.json#n=129",
+  "source_path": "scripts/output/active-verified-companies.json",
+  "pilot_label": "PILOT / NOT YET CONSUMED BY ASK PRODUCTION",
+  "entity_count": 34,
+  "content_fingerprint": "d321b3613811645811ce7309e85cc9516e7fe40fded7dac1cc7deec42be9b2c0",
+  "eligibility": {
+    "considered": 129,
+    "eligible": 34,
+    "ineligible": 95,
+    "ineligible_reasons": {
+      "insufficient_geography": 92,
+      "authority_inactive": 3
+    },
+    "pilot_selected": 34
+  },
+  "entity_type_breakdown": {
+    "interstate_mover": 34
+  },
+  "geography": {
+    "states": {
+      "VA": 1,
+      "GA": 2,
+      "IL": 3,
+      "RI": 1,
+      "IN": 5,
+      "CO": 1,
+      "FL": 8,
+      "MI": 2,
+      "HI": 1,
+      "AR": 1,
+      "NC": 1,
+      "NJ": 2,
+      "MD": 1,
+      "NM": 2,
+      "MA": 1,
+      "NV": 1,
+      "CA": 1
+    },
+    "with_city": 34,
+    "with_zip": 15,
+    "with_county": 0
+  },
+  "entities": [
+    {
+      "network_entity_id": "move:usdot-1065394",
+      "hub": "move",
+      "source_entity_id": "usdot-1065394",
+      "entity_type": "interstate_mover",
+      "display_name": "JK Moving Services",
+      "city": "Sterling",
+      "state": "VA",
+      "categories": [
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "VA"
+        },
+        {
+          "kind": "city",
+          "city": "Sterling",
+          "state": "VA"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/jk-moving-services",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/virginia",
+      "search_terms": [
+        "jk moving services",
+        "interstate mover",
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier",
+        "sterling",
+        "va"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-122025",
+      "hub": "move",
+      "source_entity_id": "usdot-122025",
+      "entity_type": "interstate_mover",
+      "display_name": "Nilson Van and Storage",
+      "city": "Savannah",
+      "state": "GA",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "GA"
+        },
+        {
+          "kind": "city",
+          "city": "Savannah",
+          "state": "GA"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/nilson-van-and-storage",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/georgia",
+      "search_terms": [
+        "nilson van and storage",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "savannah",
+        "ga"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-125563--allied-van-lines",
+      "hub": "move",
+      "source_entity_id": "usdot-125563--allied-van-lines",
+      "entity_type": "interstate_mover",
+      "display_name": "Allied Van Lines",
+      "city": "Oakbrook Terrace",
+      "state": "IL",
+      "categories": [
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "IL"
+        },
+        {
+          "kind": "city",
+          "city": "Oakbrook Terrace",
+          "state": "IL"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/allied-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/illinois",
+      "search_terms": [
+        "allied van lines",
+        "interstate mover",
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier",
+        "oakbrook terrace",
+        "il"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-125563--arpin-van-lines",
+      "hub": "move",
+      "source_entity_id": "usdot-125563--arpin-van-lines",
+      "entity_type": "interstate_mover",
+      "display_name": "Arpin Van Lines",
+      "city": "West Warwick",
+      "state": "RI",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "RI"
+        },
+        {
+          "kind": "city",
+          "city": "West Warwick",
+          "state": "RI"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/arpin-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/rhode-island",
+      "search_terms": [
+        "arpin van lines",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "west warwick",
+        "ri"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-125563--atlas-van-lines",
+      "hub": "move",
+      "source_entity_id": "usdot-125563--atlas-van-lines",
+      "entity_type": "interstate_mover",
+      "display_name": "Atlas Van Lines",
+      "city": "Evansville",
+      "state": "IN",
+      "categories": [
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "IN"
+        },
+        {
+          "kind": "city",
+          "city": "Evansville",
+          "state": "IN"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/atlas-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/indiana",
+      "search_terms": [
+        "atlas van lines",
+        "interstate mover",
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier",
+        "evansville",
+        "in"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-125563--graebel-van-lines",
+      "hub": "move",
+      "source_entity_id": "usdot-125563--graebel-van-lines",
+      "entity_type": "interstate_mover",
+      "display_name": "Graebel Van Lines",
+      "city": "Aurora",
+      "state": "CO",
+      "categories": [
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "CO"
+        },
+        {
+          "kind": "city",
+          "city": "Aurora",
+          "state": "CO"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/graebel-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/colorado",
+      "search_terms": [
+        "graebel van lines",
+        "interstate mover",
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier",
+        "aurora",
+        "co"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-125563--mayflower-transit",
+      "hub": "move",
+      "source_entity_id": "usdot-125563--mayflower-transit",
+      "entity_type": "interstate_mover",
+      "display_name": "Mayflower Transit",
+      "city": "Indianapolis",
+      "state": "IN",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "IN"
+        },
+        {
+          "kind": "city",
+          "city": "Indianapolis",
+          "state": "IN"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/mayflower-transit",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/indiana",
+      "search_terms": [
+        "mayflower transit",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "indianapolis",
+        "in"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-125563--wheaton-world-wide",
+      "hub": "move",
+      "source_entity_id": "usdot-125563--wheaton-world-wide",
+      "entity_type": "interstate_mover",
+      "display_name": "Wheaton World Wide Moving",
+      "city": "Indianapolis",
+      "state": "IN",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "IN"
+        },
+        {
+          "kind": "city",
+          "city": "Indianapolis",
+          "state": "IN"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/wheaton-world-wide",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/indiana",
+      "search_terms": [
+        "wheaton world wide moving",
+        "wheaton world wide",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "indianapolis",
+        "in"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-143437",
+      "hub": "move",
+      "source_entity_id": "usdot-143437",
+      "entity_type": "interstate_mover",
+      "display_name": "Colonial Van Lines",
+      "city": "Pompano Beach",
+      "state": "FL",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "FL"
+        },
+        {
+          "kind": "city",
+          "city": "Pompano Beach",
+          "state": "FL"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/colonial-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/florida",
+      "search_terms": [
+        "colonial van lines",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "pompano beach",
+        "fl"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-1669783",
+      "hub": "move",
+      "source_entity_id": "usdot-1669783",
+      "entity_type": "interstate_mover",
+      "display_name": "Two Men and a Truck Gainesville",
+      "city": "Gainesville",
+      "state": "FL",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "FL"
+        },
+        {
+          "kind": "city",
+          "city": "Gainesville",
+          "state": "FL"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/two-men-and-a-truck-gainesville",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/florida",
+      "search_terms": [
+        "two men and a truck gainesville",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "gainesville",
+        "fl"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-1778016",
+      "hub": "move",
+      "source_entity_id": "usdot-1778016",
+      "entity_type": "interstate_mover",
+      "display_name": "We Move U",
+      "city": "Indianapolis",
+      "state": "IN",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "IN"
+        },
+        {
+          "kind": "city",
+          "city": "Indianapolis",
+          "state": "IN"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/we-move-u",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/indiana",
+      "search_terms": [
+        "we move u",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "indianapolis",
+        "in"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-1780669",
+      "hub": "move",
+      "source_entity_id": "usdot-1780669",
+      "entity_type": "interstate_mover",
+      "display_name": "OCEAN MOVING & STORAGE CORP",
+      "city": "AVENTURA",
+      "state": "FL",
+      "zip": "33180",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "FL"
+        },
+        {
+          "kind": "city",
+          "city": "AVENTURA",
+          "state": "FL"
+        },
+        {
+          "kind": "zip",
+          "zip": "33180"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/ocean-moving-storage-corp",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/florida",
+      "search_terms": [
+        "ocean moving & storage corp",
+        "ocean moving storage corp",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "aventura",
+        "fl"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-2256609",
+      "hub": "move",
+      "source_entity_id": "usdot-2256609",
+      "entity_type": "interstate_mover",
+      "display_name": "Two Men and a Truck",
+      "city": "Lansing",
+      "state": "MI",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "MI"
+        },
+        {
+          "kind": "city",
+          "city": "Lansing",
+          "state": "MI"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/two-men-and-a-truck",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/michigan",
+      "search_terms": [
+        "two men and a truck",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "lansing",
+        "mi"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-227698",
+      "hub": "move",
+      "source_entity_id": "usdot-227698",
+      "entity_type": "interstate_mover",
+      "display_name": "ROYAL HAWAIIAN MOVERS INC",
+      "city": "HONOLULU",
+      "state": "HI",
+      "zip": "96819",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "HI"
+        },
+        {
+          "kind": "city",
+          "city": "HONOLULU",
+          "state": "HI"
+        },
+        {
+          "kind": "zip",
+          "zip": "96819"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/royal-hawaiian-movers-inc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/hawaii",
+      "search_terms": [
+        "royal hawaiian movers inc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "honolulu",
+        "hi"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-2900155",
+      "hub": "move",
+      "source_entity_id": "usdot-2900155",
+      "entity_type": "interstate_mover",
+      "display_name": "SAFEBOUND LOGISTICS LLC",
+      "city": "WEST PALM BEACH",
+      "state": "FL",
+      "zip": "33413",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "FL"
+        },
+        {
+          "kind": "city",
+          "city": "WEST PALM BEACH",
+          "state": "FL"
+        },
+        {
+          "kind": "zip",
+          "zip": "33413"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/safebound-logistics-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/florida",
+      "search_terms": [
+        "safebound logistics llc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "west palm beach",
+        "fl"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3046622",
+      "hub": "move",
+      "source_entity_id": "usdot-3046622",
+      "entity_type": "interstate_mover",
+      "display_name": "JR BROWN INC",
+      "city": "WHITE HALL",
+      "state": "AR",
+      "zip": "71602",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "AR"
+        },
+        {
+          "kind": "city",
+          "city": "WHITE HALL",
+          "state": "AR"
+        },
+        {
+          "kind": "zip",
+          "zip": "71602"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/jr-brown-inc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/arkansas",
+      "search_terms": [
+        "jr brown inc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "white hall",
+        "ar"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-304797",
+      "hub": "move",
+      "source_entity_id": "usdot-304797",
+      "entity_type": "interstate_mover",
+      "display_name": "Horne Moving Systems",
+      "city": "Goldsboro",
+      "state": "NC",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "NC"
+        },
+        {
+          "kind": "city",
+          "city": "Goldsboro",
+          "state": "NC"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/horne-moving-systems",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/north-carolina",
+      "search_terms": [
+        "horne moving systems",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "goldsboro",
+        "nc"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3101918",
+      "hub": "move",
+      "source_entity_id": "usdot-3101918",
+      "entity_type": "interstate_mover",
+      "display_name": "AMEX MOVING AND STORAGE LLC",
+      "city": "FAIR LAWN",
+      "state": "NJ",
+      "zip": "07410",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "NJ"
+        },
+        {
+          "kind": "city",
+          "city": "FAIR LAWN",
+          "state": "NJ"
+        },
+        {
+          "kind": "zip",
+          "zip": "07410"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/amex-moving-and-storage-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/new-jersey",
+      "search_terms": [
+        "amex moving and storage llc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "fair lawn",
+        "nj"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3341650",
+      "hub": "move",
+      "source_entity_id": "usdot-3341650",
+      "entity_type": "interstate_mover",
+      "display_name": "Amerisafe Van Lines",
+      "city": "Boynton Beach",
+      "state": "FL",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "FL"
+        },
+        {
+          "kind": "city",
+          "city": "Boynton Beach",
+          "state": "FL"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/amerisafe-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/florida",
+      "search_terms": [
+        "amerisafe van lines",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "boynton beach",
+        "fl"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3415437",
+      "hub": "move",
+      "source_entity_id": "usdot-3415437",
+      "entity_type": "interstate_mover",
+      "display_name": "HOME AND OFFICE MOVERS LLC",
+      "city": "ELDERSBURG",
+      "state": "MD",
+      "zip": "21784",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "MD"
+        },
+        {
+          "kind": "city",
+          "city": "ELDERSBURG",
+          "state": "MD"
+        },
+        {
+          "kind": "zip",
+          "zip": "21784"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/home-and-office-movers-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/maryland",
+      "search_terms": [
+        "home and office movers llc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "eldersburg",
+        "md"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3447326",
+      "hub": "move",
+      "source_entity_id": "usdot-3447326",
+      "entity_type": "interstate_mover",
+      "display_name": "USA FAMILY MOVING OF ATLANTA LLC",
+      "city": "ALPHARETTA",
+      "state": "GA",
+      "zip": "30005",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "GA"
+        },
+        {
+          "kind": "city",
+          "city": "ALPHARETTA",
+          "state": "GA"
+        },
+        {
+          "kind": "zip",
+          "zip": "30005"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/usa-family-moving-of-atlanta-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/georgia",
+      "search_terms": [
+        "usa family moving of atlanta llc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "alpharetta",
+        "ga"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3475743",
+      "hub": "move",
+      "source_entity_id": "usdot-3475743",
+      "entity_type": "interstate_mover",
+      "display_name": "VELLAR HOLDINGS LLC",
+      "city": "BOCA RATON",
+      "state": "FL",
+      "zip": "33487",
+      "categories": [
+        "mover",
+        "carrier_broker",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "FL"
+        },
+        {
+          "kind": "city",
+          "city": "BOCA RATON",
+          "state": "FL"
+        },
+        {
+          "kind": "zip",
+          "zip": "33487"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/vellar-holdings-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/florida",
+      "search_terms": [
+        "vellar holdings llc",
+        "interstate mover",
+        "mover",
+        "carrier_broker",
+        "interstate",
+        "carrier",
+        "boca raton",
+        "fl"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3542515",
+      "hub": "move",
+      "source_entity_id": "usdot-3542515",
+      "entity_type": "interstate_mover",
+      "display_name": "FAITH MOVING LLC",
+      "city": "RIO RANCHO",
+      "state": "NM",
+      "zip": "87124",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "NM"
+        },
+        {
+          "kind": "city",
+          "city": "RIO RANCHO",
+          "state": "NM"
+        },
+        {
+          "kind": "zip",
+          "zip": "87124"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/faith-moving-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/new-mexico",
+      "search_terms": [
+        "faith moving llc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "rio rancho",
+        "nm"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3585744",
+      "hub": "move",
+      "source_entity_id": "usdot-3585744",
+      "entity_type": "interstate_mover",
+      "display_name": "JP MOVING LLC",
+      "city": "RIO RANCHO",
+      "state": "NM",
+      "zip": "87124",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "NM"
+        },
+        {
+          "kind": "city",
+          "city": "RIO RANCHO",
+          "state": "NM"
+        },
+        {
+          "kind": "zip",
+          "zip": "87124"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/jp-moving-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/new-mexico",
+      "search_terms": [
+        "jp moving llc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "rio rancho",
+        "nm"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3709259",
+      "hub": "move",
+      "source_entity_id": "usdot-3709259",
+      "entity_type": "interstate_mover",
+      "display_name": "AMERICAN VAN LINES OF SF LLC",
+      "city": "DEERFIELD BCH",
+      "state": "FL",
+      "zip": "33442",
+      "categories": [
+        "mover",
+        "carrier_broker",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "FL"
+        },
+        {
+          "kind": "city",
+          "city": "DEERFIELD BCH",
+          "state": "FL"
+        },
+        {
+          "kind": "zip",
+          "zip": "33442"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/american-van-lines-of-sf-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/florida",
+      "search_terms": [
+        "american van lines of sf llc",
+        "interstate mover",
+        "mover",
+        "carrier_broker",
+        "interstate",
+        "carrier",
+        "deerfield bch",
+        "fl"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-373544",
+      "hub": "move",
+      "source_entity_id": "usdot-373544",
+      "entity_type": "interstate_mover",
+      "display_name": "Gentle Giant Moving Company",
+      "city": "Somerville",
+      "state": "MA",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "MA"
+        },
+        {
+          "kind": "city",
+          "city": "Somerville",
+          "state": "MA"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/gentle-giant-moving",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/massachusetts",
+      "search_terms": [
+        "gentle giant moving company",
+        "gentle giant moving",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "somerville",
+        "ma"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-384361",
+      "hub": "move",
+      "source_entity_id": "usdot-384361",
+      "entity_type": "interstate_mover",
+      "display_name": "BARRY ELWOOD JONES",
+      "city": "GARDNERVILLE",
+      "state": "NV",
+      "zip": "89410",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "NV"
+        },
+        {
+          "kind": "city",
+          "city": "GARDNERVILLE",
+          "state": "NV"
+        },
+        {
+          "kind": "zip",
+          "zip": "89410"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/barry-elwood-jones",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/nevada",
+      "search_terms": [
+        "barry elwood jones",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "gardnerville",
+        "nv"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-3978928",
+      "hub": "move",
+      "source_entity_id": "usdot-3978928",
+      "entity_type": "interstate_mover",
+      "display_name": "STANFORD VAN LINES INC",
+      "city": "THORNTON",
+      "state": "IL",
+      "zip": "60476",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "IL"
+        },
+        {
+          "kind": "city",
+          "city": "THORNTON",
+          "state": "IL"
+        },
+        {
+          "kind": "zip",
+          "zip": "60476"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/stanford-van-lines-inc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/illinois",
+      "search_terms": [
+        "stanford van lines inc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "thornton",
+        "il"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-4074980",
+      "hub": "move",
+      "source_entity_id": "usdot-4074980",
+      "entity_type": "interstate_mover",
+      "display_name": "CIRTA MOVING LLC",
+      "city": "DENVILLE",
+      "state": "NJ",
+      "zip": "07834",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "NJ"
+        },
+        {
+          "kind": "city",
+          "city": "DENVILLE",
+          "state": "NJ"
+        },
+        {
+          "kind": "zip",
+          "zip": "07834"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/cirta-moving-llc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/new-jersey",
+      "search_terms": [
+        "cirta moving llc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "denville",
+        "nj"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-4086767",
+      "hub": "move",
+      "source_entity_id": "usdot-4086767",
+      "entity_type": "interstate_mover",
+      "display_name": "RUSHMORE VAN LINES INC",
+      "city": "LOS ANGELES",
+      "state": "CA",
+      "zip": "90014",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "CA"
+        },
+        {
+          "kind": "city",
+          "city": "LOS ANGELES",
+          "state": "CA"
+        },
+        {
+          "kind": "zip",
+          "zip": "90014"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/rushmore-van-lines-inc",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/california",
+      "search_terms": [
+        "rushmore van lines inc",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "los angeles",
+        "ca"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-614506",
+      "hub": "move",
+      "source_entity_id": "usdot-614506",
+      "entity_type": "interstate_mover",
+      "display_name": "American Van Lines",
+      "city": "Davie",
+      "state": "FL",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "FL"
+        },
+        {
+          "kind": "city",
+          "city": "Davie",
+          "state": "FL"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/american-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/florida",
+      "search_terms": [
+        "american van lines",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "davie",
+        "fl"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-70851--national-van-lines",
+      "hub": "move",
+      "source_entity_id": "usdot-70851--national-van-lines",
+      "entity_type": "interstate_mover",
+      "display_name": "National Van Lines",
+      "city": "Broadview",
+      "state": "IL",
+      "categories": [
+        "mover",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "IL"
+        },
+        {
+          "kind": "city",
+          "city": "Broadview",
+          "state": "IL"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/national-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/illinois",
+      "search_terms": [
+        "national van lines",
+        "interstate mover",
+        "mover",
+        "interstate",
+        "carrier",
+        "broadview",
+        "il"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-70851--north-american-van-lines",
+      "hub": "move",
+      "source_entity_id": "usdot-70851--north-american-van-lines",
+      "entity_type": "interstate_mover",
+      "display_name": "North American Van Lines",
+      "city": "Fort Wayne",
+      "state": "IN",
+      "categories": [
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "IN"
+        },
+        {
+          "kind": "city",
+          "city": "Fort Wayne",
+          "state": "IN"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/north-american-van-lines",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/indiana",
+      "search_terms": [
+        "north american van lines",
+        "interstate mover",
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier",
+        "fort wayne",
+        "in"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    },
+    {
+      "network_entity_id": "move:usdot-72029",
+      "hub": "move",
+      "source_entity_id": "usdot-72029",
+      "entity_type": "interstate_mover",
+      "display_name": "Stevens Worldwide Van Lines",
+      "city": "Saginaw",
+      "state": "MI",
+      "categories": [
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier"
+      ],
+      "service_areas": [
+        {
+          "kind": "state",
+          "state": "MI"
+        },
+        {
+          "kind": "city",
+          "city": "Saginaw",
+          "state": "MI"
+        },
+        {
+          "kind": "interstate",
+          "label": "interstate_hhg"
+        }
+      ],
+      "regulatory_status_summary": "Federal authority verified",
+      "trust_report_available": true,
+      "canonical_profile_url": "https://www.movetrusthub.com/companies/stevens-worldwide",
+      "canonical_search_url": "https://www.movetrusthub.com/local-movers/michigan",
+      "search_terms": [
+        "stevens worldwide van lines",
+        "stevens worldwide",
+        "interstate mover",
+        "mover",
+        "auto_transport",
+        "interstate",
+        "carrier",
+        "saginaw",
+        "mi"
+      ],
+      "discovery_status": "active",
+      "source_version": "active-verified-companies.json#n=129",
+      "updated_at": "2026-08-22T16:34:59.812Z"
+    }
+  ]
+}

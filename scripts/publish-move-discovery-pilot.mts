@@ -1,0 +1,38 @@
+/**
+ * ASK-SEARCH-006A — emit Move discovery pilot JSON (read-only source snapshot).
+ *
+ * Usage: npx tsx scripts/publish-move-discovery-pilot.mts
+ */
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { publishMoveDiscoveryPilot } from '../lib/network-discovery/publish';
+
+const root = process.cwd();
+const outDir = join(root, 'data', 'network-discovery');
+mkdirSync(outDir, { recursive: true });
+
+const result = publishMoveDiscoveryPilot(root);
+if (!result.validationOk) {
+  console.error('VALIDATION FAILED', result.validationIssues.slice(0, 20));
+  process.exit(1);
+}
+
+const outPath = join(outDir, 'move-discovery-pilot.v1.json');
+writeFileSync(outPath, JSON.stringify(result.manifest, null, 2) + '\n', 'utf8');
+
+console.log(
+  JSON.stringify(
+    {
+      wrote: outPath,
+      entity_count: result.manifest.entity_count,
+      fingerprint: result.manifest.content_fingerprint,
+      eligibility: result.manifest.eligibility,
+      entity_type_breakdown: result.manifest.entity_type_breakdown,
+      geography_states: result.manifest.geography.states,
+      timings_ms: result.timings_ms,
+      external_calls: { Google: 0, LLM: 0, external_geo: 0, other_enrichment: 0 },
+    },
+    null,
+    2
+  )
+);
