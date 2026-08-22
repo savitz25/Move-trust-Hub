@@ -1,0 +1,25 @@
+{
+  "google_places_requests": 0,
+  "historical_post_fl011d": {
+    "companies": 5940,
+    "fl_im": 849,
+    "fl_im_ingested": 762,
+    "publishable": 5022,
+    "indexable": 4905
+  },
+  "current": {
+    "companies": 5940,
+    "indexable": 4905,
+    "fl_im": 849,
+    "fl_im_ingested": 762,
+    "publishable": 5022,
+    "ingested": 882
+  },
+  "drift": {
+    "companies": 0,
+    "fl_im": 0,
+    "fl_im_ingested": 0,
+    "publishable": 0,
+    "indexable": 0
+  }
+}

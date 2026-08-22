@@ -1,0 +1,1032 @@
+{
+  "google_places_requests": 0,
+  "n": 113,
+  "tally": {
+    "PASS": 113,
+    "IDENTITY_DRIFT": 0,
+    "STATUS_DRIFT": 0,
+    "AUTHORITY_DRIFT": 0,
+    "CANONICAL_DRIFT": 0,
+    "REVIEW_REQUIRED": 0
+  },
+  "wrong_company": 0,
+  "rows": [
+    {
+      "fdacsIm": "IM2099",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2303737",
+      "slug": "1776-moving-and-storage-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3355",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3005919",
+      "slug": "24-7-logistic-services",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM426",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1472849",
+      "slug": "royal-moving-storage-apple-moving-storage",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1954",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-1954",
+      "slug": "a-1-freeman-moving-storage-llc-im1954",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2518",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3161573",
+      "slug": "a1a-moving-transport-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4167",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-4167",
+      "slug": "blubox-movers",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2431",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2564711",
+      "slug": "agility-van-lines",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2621",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "all-about-moving-tampa-bay",
+      "slug": "all-about-moving-tampa-bay",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3680",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3507074",
+      "slug": "allegiance-van-lines-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM684",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-684",
+      "slug": "american-international-movers-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2089",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "america-s-family-moving-and-storage-llc",
+      "slug": "america-s-family-moving-and-storage-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3038",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3168341",
+      "slug": "americas-movers-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3953",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "fl-im-3952",
+      "slug": "amigos-on-the-move-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3755",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "angel-movers-llc",
+      "slug": "angel-movers-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3995",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "apollos-moving-logistics-llc",
+      "slug": "apollos-moving-logistics-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM469",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1040023",
+      "slug": "baymeadows-moving-and-storage-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2583",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2823665",
+      "slug": "bayside-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM300",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-459518",
+      "slug": "florida-southern-van-lines",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1799",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-1799",
+      "slug": "berger-transfer-storage-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3879",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3879",
+      "slug": "big-ant-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3260",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "black-swan-moving-llc",
+      "slug": "black-swan-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM184",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-89774",
+      "slug": "bonded-transportation-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3968",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3968",
+      "slug": "boxrunners-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2838",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "bull-moving",
+      "slug": "bull-moving",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM457",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-700628",
+      "slug": "c-f-movers-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM401",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1991298",
+      "slug": "apple-moving-usdot-1991298",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1626",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1526680",
+      "slug": "chosen-one-movers-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2754",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3146919",
+      "slug": "moving-america",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2247",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4431751",
+      "slug": "christtown-ministries-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3143",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3252722",
+      "slug": "ciao-moving-storage-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3701",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "clever-carriers-llc",
+      "slug": "clever-carriers-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM117",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-117",
+      "slug": "coastal-moving-storage-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM212",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-212",
+      "slug": "coleman-american-moving-services-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3212",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3212",
+      "slug": "commercial-relocation-group-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM213",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-213",
+      "slug": "covan-worldwide-moving-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM107",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4071591",
+      "slug": "curry-moving-storage-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4082",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4520643",
+      "slug": "destination-moving-furnishings-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM308",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-767421",
+      "slug": "dick-s-moving-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1419",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1424728",
+      "slug": "discovery-moving-group-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2609",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3080327",
+      "slug": "dixie-movers",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2381",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "eagle-moving-co",
+      "slug": "eagle-moving-co",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3621",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3621",
+      "slug": "einstein-moving-company-fl-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4142",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3998447",
+      "slug": "e-logic-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3444",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2491702",
+      "slug": "expedite-moving-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2753",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2968831",
+      "slug": "ez-moving-services-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3974",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "florida-pro-movers-home-solutions",
+      "slug": "florida-pro-movers-home-solutions",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4104",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-4104",
+      "slug": "flv-logistics-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM259",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-259",
+      "slug": "1-castine-movers-2-castine-moving-storage",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM1447",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1568346",
+      "slug": "gm-van-lines-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2851",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-2851",
+      "slug": "hammock-transfer-storage-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM1210",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-162012",
+      "slug": "harold-haycook-moving-storage-corp",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2822",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3034432",
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3124",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3338540",
+      "slug": "hello-movers-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4146",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3794613",
+      "slug": "here-to-there-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2033",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2192602",
+      "slug": "hilton-moving-storage-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3778",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3778",
+      "slug": "hometeam-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2175",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2368777",
+      "slug": "joe-s-speedy-delivery-moving-services",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4145",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4482118",
+      "slug": "jvm-moving-transport-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM119",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-119",
+      "slug": "1-allways-moving-and-storage-2-spradlin-relocation",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM2160",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1847236",
+      "slug": "flagler-moving-storage",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1178",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2270761",
+      "slug": "let-s-get-moving-inc-usdot-2270761",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3723",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4018257",
+      "slug": "level-up-moving-company",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3947",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4022357",
+      "slug": "first-southern-van-lines",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1335",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "master-movers-of-tallahassee",
+      "slug": "master-movers-of-tallahassee",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3553",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3784138",
+      "slug": "matthews-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3176",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3301146",
+      "slug": "mbm-enterprises-of-brevard-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1881",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3199979",
+      "slug": "father-son-moving-storage",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3134",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3134",
+      "slug": "mid-state-moving-storage-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3201",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3201",
+      "slug": "mighty-men-moving-incorporated",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4132",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4438821",
+      "slug": "forward-moving",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM482",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2443347",
+      "slug": "moving-buddies-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM146",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-811031",
+      "slug": "moving-on-up-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3523",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3523",
+      "slug": "moyer-and-sons-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4178",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4544882",
+      "slug": "pink-zebra-moving-of-tampa-usdot-4544882",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3148",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3286720",
+      "slug": "muscle-4-hire-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3594",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1160157",
+      "slug": "naples-movers-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1794",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-976593",
+      "slug": "nationwide-van-lines-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4134",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-4134",
+      "slug": "ts-van-lines",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM290",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-290",
+      "slug": "new-world-van-lines-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3772",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "fl-im-3150",
+      "slug": "southwest-florida-movers",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_email"
+    },
+    {
+      "fdacsIm": "IM1204",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1329594",
+      "slug": "nobel-van-lines",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2763",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "ohana-moving-company-llc",
+      "slug": "ohana-moving-company-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4165",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-4165",
+      "slug": "old-florida-moving-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4014",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-4014",
+      "slug": "on-site-specialty-cleaning-and-restoration-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3103",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "patriot-moving-and-storage",
+      "slug": "patriot-moving-and-storage",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1823",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2059049",
+      "slug": "pensacola-moving-storage-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3344",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "premier-movers-4-less-llc",
+      "slug": "premier-movers-4-less-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3779",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "premium-q-moving-and-storage",
+      "slug": "premium-q-moving-and-storage",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2140",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2402239",
+      "slug": "prestige-moving-storage-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1026",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1377633",
+      "slug": "amwat-moving-warehousing",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM145",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-145",
+      "slug": "rock-s-moving-company",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3192",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3192",
+      "slug": "rushmore-movers",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3375",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4001518",
+      "slug": "the-moving-specialists",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2384",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2562486",
+      "slug": "good-greek-moving-and-storage",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3111",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3111",
+      "slug": "shield-moving-and-storage-logistics-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3766",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4063852",
+      "slug": "2-college-brothers-of-gainesville",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM201",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1943394",
+      "slug": "simmons-amerimove",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3729",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3729",
+      "slug": "craine-n-sons-moving-service",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM549",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "sunbelt-moving-delivery-inc",
+      "slug": "sunbelt-moving-delivery-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM471",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "sunshine-movers",
+      "slug": "sunshine-movers",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3511",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2833135",
+      "slug": "coffey-bros-moving",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3559",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-3092893",
+      "slug": "trend-moving-storage",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1795",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-1951425",
+      "slug": "unique-van-lines-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM1931",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-2119975",
+      "slug": "unlimited-moving-out-of-state-moves-only",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2456",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-2456",
+      "slug": "valle-moving-deliveries-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM4051",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-4051",
+      "slug": "moving-pals",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM3856",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "whatamove",
+      "slug": "whatamove",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM4169",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-4528522",
+      "slug": "square-cow-moovers-usdot-4528522",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM3920",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-3920",
+      "slug": "birdseye-transport-logistics-llc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM1232",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-381994",
+      "slug": "joseph-barton",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM26",
+      "op": "LINK_EXISTING_CANONICAL",
+      "companyId": "usdot-966624",
+      "slug": "drn-moving-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "exact_legal_name_and_phone"
+    },
+    {
+      "fdacsIm": "IM2181",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-2181",
+      "slug": "florida-state-movers",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    },
+    {
+      "fdacsIm": "IM31",
+      "op": "INSERT_NEW_CANONICAL",
+      "companyId": "fl-im-31",
+      "slug": "coastal-van-lines-inc",
+      "state": "PASS",
+      "failures": [],
+      "evidence": "new_canonical_from_official_fdacs_im"
+    }
+  ]
+}
