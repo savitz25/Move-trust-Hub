@@ -5,6 +5,7 @@ import {
   type NetworkHubId,
 } from '@/lib/network/ask-trust-hub';
 import { SwitchHubMenu } from '@/components/switch-hub-menu';
+import type { NetworkHubId as RegistryHubId } from '@/lib/network/registry';
 import { cn } from '@/lib/utils';
 
 /**
@@ -45,7 +46,7 @@ export function AskNetworkBarStatic({
           >
             {NETWORK_HUBS.find((h) => h.id === activeHub)?.shortLabel ?? 'Move'}
           </span>
-          <SwitchHubMenu compact />
+          <SwitchHubMenu compact currentHubId={activeHub as RegistryHubId} />
           <a
             href={ASK_TRUST_HUB.standardsUrl}
             className="rounded-md px-2.5 py-1.5 font-medium text-[#3d4f63] hover:bg-background/80 hover:text-[#0A2540]"

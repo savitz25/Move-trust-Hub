@@ -16,6 +16,7 @@ import { ThirdPartyOrchestrator } from '@/components/performance/third-party-orc
 import { ClientRuntimeGuard } from '@/components/reliability/client-runtime-guard';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
+import { TH_CHASSIS_VERSION } from '@/lib/design/trusthub-visual-standard';
 
 export const metadata = rootLayoutMetadata;
 
@@ -60,6 +61,7 @@ export default async function RootLayout({
       <body
         className="font-sans antialiased"
         data-network-standard={ASK_NETWORK_STANDARD_VERSION}
+        data-th-chassis={TH_CHASSIS_VERSION}
         suppressHydrationWarning
       >
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}

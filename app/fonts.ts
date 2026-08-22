@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Inter } from 'next/font/google';
 
 /**
  * LCP weight (600) is self-hosted in public/fonts + critical.css.
@@ -26,4 +26,17 @@ export const geistMono = Geist_Mono({
   fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
 });
 
-export const siteFontVariables = [geistSans.variable, geistMono.variable].join(' ');
+/**
+ * Network chrome only (header / drawer / Switch Hub). preload:false so Geist 600 stays LCP.
+ */
+export const interUi = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  display: 'swap',
+  preload: false,
+  adjustFontFallback: true,
+  fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+});
+
+export const siteFontVariables = [geistSans.variable, geistMono.variable, interUi.variable].join(' ');

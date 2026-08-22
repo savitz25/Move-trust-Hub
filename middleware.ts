@@ -43,7 +43,12 @@ export async function middleware(request: NextRequest) {
   try {
     // Force HTTPS when Vercel/edge reports plain HTTP (GSC: http://www.movetrusthub.com/)
     const proto = request.headers.get('x-forwarded-proto');
-    if (proto === 'http') {
+    const isLocalHost =
+      !!host &&
+      (host.startsWith('localhost') ||
+        host.startsWith('127.0.0.1') ||
+        host.startsWith('[::1]'));
+    if (proto === 'http' && !isLocalHost) {
       const httpsUrl = request.nextUrl.clone();
       httpsUrl.protocol = 'https:';
       return NextResponse.redirect(httpsUrl, 308);

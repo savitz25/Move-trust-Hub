@@ -3,13 +3,13 @@ import { HubLogo } from '@/components/hub/hub-logo';
 import { HubMobileNavLoader } from '@/components/hub/hub-mobile-nav-loader';
 import { InsuranceDesktopNavLoader } from '@/components/nav/insurance-desktop-nav-loader';
 import { InsuranceMobileNavLoader } from '@/components/nav/insurance-mobile-nav-loader';
-import { MoveDesktopNavLoader } from '@/components/nav/move-desktop-nav-loader';
-import { MoveMobileNavLoader } from '@/components/nav/move-mobile-nav-loader';
+
 import { Button } from '@/components/ui/button';
 import { getHubConfig } from '@/lib/hub/config';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import { HeaderTrustBadge } from '@/components/trust/header-trust-badge';
+import { MoveNetworkHeader } from '@/components/move-network-header';
 
 export function HubNavbar({ hubId }: { hubId: HubId }) {
   const hub = getHubConfig(hubId);
@@ -17,6 +17,10 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
   const navLinks = hub.navLinks;
   const isMoveHub = hubId === 'move';
   const isInsuranceHub = hubId === 'insurance';
+
+  if (isMoveHub) {
+    return <MoveNetworkHeader />;
+  }
 
   return (
     <nav
@@ -32,16 +36,14 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
             aria-label={`${hub.siteName} home`}
           >
             {/* eager but not fetchPriority=high — keep SSR H1 as LCP */}
-            <span className={isMoveHub ? 'move-hub-pulse inline-block' : undefined}>
+            <span>
               <HubLogo hubId={hubId} priority />
             </span>
           </Link>
-          <HeaderTrustBadge moving={isMoveHub} insurance={isInsuranceHub} />
+          <HeaderTrustBadge moving={false} insurance={isInsuranceHub} />
         </div>
 
-        {isMoveHub ? (
-          <MoveDesktopNavLoader />
-        ) : isInsuranceHub ? (
+        {isInsuranceHub ? (
           <InsuranceDesktopNavLoader />
         ) : (
           <div className="hidden lg:flex items-center gap-6 text-sm">
@@ -65,9 +67,7 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
           </div>
         )}
 
-        {isMoveHub ? (
-          <MoveMobileNavLoader />
-        ) : isInsuranceHub ? (
+        {isInsuranceHub ? (
           <InsuranceMobileNavLoader />
         ) : (
           <HubMobileNavLoader

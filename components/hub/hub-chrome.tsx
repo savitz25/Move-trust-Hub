@@ -32,7 +32,7 @@ export async function HubChrome({
       data-hub={hubId}
       className="flex min-h-screen flex-col pt-[env(safe-area-inset-top)]"
     >
-      <AskNetworkBar activeHub={networkHubId} />
+      {isMove ? null : <AskNetworkBar activeHub={networkHubId} />}
       <HubNavbar hubId={hubId} />
       <DeferredLegacyWelcomeBanner hubId={hubId} />
       {isMove ? (
@@ -41,7 +41,7 @@ export async function HubChrome({
           <DeferredJourneyTracker hub={hubId} />
         </>
       ) : null}
-      <main className="flex-1 pb-[env(safe-area-inset-bottom)] sm:pb-0">{children}</main>
+      <main id="main-content" className="flex-1 pb-[env(safe-area-inset-bottom)] sm:pb-0">{children}</main>
       <HubFooter hubId={hubId} />
       {isMove ? <DeferredMoveTipsOptIn /> : null}
       {isInsurance ? <InsurancePwaProvider /> : null}
