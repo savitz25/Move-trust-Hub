@@ -1,0 +1,9 @@
+{
+  "task": "MDC-PROD-001",
+  "origin_main_sha": "990f212c3ad457485616339d2af36a73f4b9da79",
+  "production_sha_at_branch": "00df7f8c40eda00be9b7239180c548b6d92c0a5c",
+  "note": "Main includes FL-011E (#80). Production deployment may lag; DB ingest used live DATABASE_URL.",
+  "latest_builder1_pr": 80,
+  "latest_builder2_pr_before": 79,
+  "palm_beach_observation": "PBC_CREDENTIAL_CANARY_OBSERVATION_V1 still WAITING maturity 2026-08-29T19:56:00Z"
+}

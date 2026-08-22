@@ -1,0 +1,56 @@
+{
+  "task": "MDC-PROD-001",
+  "sampled": 8,
+  "mdc_profile_blocks": 0,
+  "search": 0,
+  "directory": 0,
+  "compare": 0,
+  "api": 0,
+  "json_ld": 0,
+  "og": 0,
+  "county_page": 0,
+  "anon_storage": "DENIED",
+  "pass": true,
+  "samples": [
+    {
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "raul-s-moving-inc",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "gomez-moving-co-inc",
+      "status": 404,
+      "mdc_block": false
+    },
+    {
+      "slug": "homestead-transfer-storage-co",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "small-time-movers-inc",
+      "status": 404,
+      "mdc_block": false
+    },
+    {
+      "slug": "mudanzas-diaz-inc",
+      "status": 404,
+      "mdc_block": false
+    },
+    {
+      "slug": "genesis-moving-storage-inc",
+      "status": 200,
+      "mdc_block": false
+    },
+    {
+      "slug": "millennium-relocation-services-inc",
+      "status": 404,
+      "mdc_block": false
+    }
+  ]
+}

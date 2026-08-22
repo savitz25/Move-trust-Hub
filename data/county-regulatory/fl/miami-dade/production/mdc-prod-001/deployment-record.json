@@ -1,0 +1,11 @@
+{
+  "task": "MDC-PROD-001",
+  "merge_sha": "0dfe69e8f166df9dd9d1764633d52ca3972eb101",
+  "pr": 81,
+  "expected_sha": "0dfe69e8f166df9dd9d1764633d52ca3972eb101",
+  "production_sha": "0dfe69e8f166df9dd9d1764633d52ca3972eb101",
+  "match": true,
+  "deployment_id": 6042047516,
+  "deployed_at": "2026-08-22T22:37:52Z",
+  "note": "INTERNAL_ONLY ingest has no public runtime surface; production now serves merge SHA."
+}
