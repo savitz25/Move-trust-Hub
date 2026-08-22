@@ -1,0 +1,43 @@
+{
+  "google_places_requests": 0,
+  "production_db_writes": 0,
+  "before_fl011d": {
+    "canonical_companies": 5908,
+    "florida_im_canonical_companies": 817,
+    "active_ims_represented": 817,
+    "state_only_companies_represented": 836,
+    "existing_companies_fdacs_linked": "pre-existing PSA on later-confirmed 81 plus prior fl-im cohort",
+    "internal_ingested_florida_im": 730,
+    "fdacs_authority_attachments_fl011d": 0,
+    "contact_observation_attachments_fl011d": 0,
+    "public_publishable_count": 5022,
+    "indexable_count": 4905,
+    "unresolved_active_ims": 281
+  },
+  "after_fl011d": {
+    "canonical_companies": 5940,
+    "florida_im_canonical_companies": 849,
+    "active_ims_represented": 930,
+    "state_only_companies_represented": 868,
+    "existing_companies_fdacs_linked": 81,
+    "internal_ingested_florida_im": 762,
+    "fdacs_authority_attachments_fl011d": 32,
+    "contact_observation_attachments_fl011d": 104,
+    "public_publishable_count": 5022,
+    "indexable_count": 4905,
+    "unresolved_active_ims": 168
+  },
+  "net_gain": {
+    "canonical_companies": 32,
+    "florida_im_canonical_companies": 32,
+    "active_ims_represented": 113,
+    "state_only_companies_represented": 32,
+    "existing_companies_fdacs_linked": 81,
+    "internal_ingested_florida_im": 32,
+    "fdacs_authority_attachments_fl011d": 32,
+    "contact_observation_attachments_fl011d": 104,
+    "public_publishable_count": 0,
+    "indexable_count": 0,
+    "unresolved_active_ims": -113
+  }
+}

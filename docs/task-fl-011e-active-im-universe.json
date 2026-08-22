@@ -1,0 +1,13 @@
+{
+  "google_places_requests": 0,
+  "source_timestamp": "2026-08-21T17:11:52.759Z",
+  "im_source_records_unique_after_broker_filter": 1314,
+  "historical_bulk_im_records": 1330,
+  "status_tally": {
+    "active": 1099,
+    "expired": 112,
+    "unknown": 103
+  },
+  "unique_active": 1098,
+  "duplicate_active_im_keys": 1
+}

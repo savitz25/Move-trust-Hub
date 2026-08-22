@@ -1,0 +1,15 @@
+{
+  "google_places_requests": 0,
+  "fdacs_linked_companies": 939,
+  "state_only": 868,
+  "federal_plus_state": 71,
+  "state_only_public": 107,
+  "state_only_internal": 761,
+  "state_only_wave1": 37,
+  "state_only_wave2_ready": 720,
+  "state_only_fl011d": 32,
+  "publication_distribution": {
+    "PUBLISHABLE": 176,
+    "INGESTED": 763
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "google_places_requests": 0,
+  "source_timestamp": "2026-08-21T17:11:52.759Z",
+  "im_source_records": 1314,
+  "status_tally": {
+    "active": 1099,
+    "expired": 112,
+    "unknown": 103
+  },
+  "active": 1098,
+  "partition": {
+    "WAVE2_READY_INTERNAL": 721,
+    "PUBLIC_CANONICAL_WITH_FDACS": 79,
+    "KEEP80": 50,
+    "NEW_FL011D_INTERNAL": 32,
+    "WAVE1_PUBLISHABLE": 37,
+    "INTERNAL_CANONICAL_WITH_FDACS": 11,
+    "CORPORATE_FAMILY_REVIEW": 46,
+    "POSSIBLE_DUPLICATE": 114,
+    "CONFLICT": 5,
+    "STATUS_BLOCKED": 3
+  },
+  "partition_sum": 1098,
+  "represented": 930,
+  "unresolved": 168,
+  "percentage": 84.7,
+  "historical_gap": 281,
+  "historical_withheld": 168,
+  "current_unresolved_by_class": {
+    "CORPORATE_FAMILY_REVIEW": 46,
+    "POSSIBLE_DUPLICATE": 114,
+    "CONFLICT": 5,
+    "SOURCE_STATUS_BLOCKED": 3
+  },
+  "naive_936_not_used": true
+}

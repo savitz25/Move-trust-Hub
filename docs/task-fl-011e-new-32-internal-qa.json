@@ -1,0 +1,13 @@
+{
+  "google_places_requests": 0,
+  "http404": 32,
+  "tested": 32,
+  "non404": [],
+  "im1954": {
+    "slug": "a-1-freeman-moving-storage-llc-im1954",
+    "status": 404,
+    "stolen_alias_status": 307,
+    "stolen_location": "/companies/a-1-freeman-moving-storage-l-l-c",
+    "usdot_896791_slug": "a-1-freeman-moving-storage-l-l-c"
+  }
+}

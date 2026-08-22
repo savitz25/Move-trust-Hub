@@ -1,0 +1,16 @@
+{
+  "google_places_requests": 0,
+  "event_counts": {
+    "NEW_COMPANY_CREATED": 32,
+    "EXISTING_COMPANY_GAINED_FDACS_IDENTITY_LINK": 81,
+    "EXISTING_COMPANY_GAINED_NEW_PSA_ROW": 0,
+    "EXISTING_COMPANY_ALREADY_HAD_PSA_BUT_NOW_IDENTITY_CONFIRMED": 81,
+    "COMPANY_GAINED_CONTACT_OBSERVATION_ATTACHMENT": 35
+  },
+  "unique_company_counts": {
+    "new_companies": 32,
+    "existing_companies_linked": 81,
+    "existing_companies_with_contact_attachments": 35,
+    "unique_companies_materially_enriched": 113
+  }
+}
