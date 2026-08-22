@@ -1,0 +1,43 @@
+{
+  "task": "MDC-PROD-002",
+  "components": [
+    {
+      "name": "server-only county credential reader",
+      "classification": "GENERALIZE",
+      "note": "Extract shared helper; MDC adapter for source key + DTO labels"
+    },
+    {
+      "name": "sanitized public DTO",
+      "classification": "GENERALIZE",
+      "note": "Same shape; statusPublicLabel differs (Issued vs LICENSED)"
+    },
+    {
+      "name": "program-scoped query",
+      "classification": "REUSE_AS_IS",
+      "note": "eq(source, programKey) + PUBLISHED"
+    },
+    {
+      "name": "company-publication gate",
+      "classification": "REUSE_AS_IS",
+      "note": "isAnonymousPublicProfileAllowed"
+    },
+    {
+      "name": "PUBLISHED evidence gate",
+      "classification": "REUSE_AS_IS"
+    },
+    {
+      "name": "jurisdiction rendering component",
+      "classification": "MIAMI_SPECIFIC_ADAPTER_REQUIRED",
+      "note": "Heading/copy/regulator strings; reuse Card layout pattern"
+    },
+    {
+      "name": "source/disclaimer model",
+      "classification": "GENERALIZE"
+    },
+    {
+      "name": "RLS security pattern",
+      "classification": "REUSE_AS_IS"
+    }
+  ],
+  "do_not_build_second_system": true
+}

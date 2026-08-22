@@ -1,0 +1,11 @@
+{
+  "task": "MDC-PROD-002",
+  "status": "READY_FOR_MDC_MR_PUBLICATION_CANARY",
+  "production_db_writes": 0,
+  "freshness": {
+    "CURRENT": 70
+  },
+  "company_ready": 9,
+  "credential_publication_ready": 9,
+  "concurrent_issued_multi_mr": 0
+}

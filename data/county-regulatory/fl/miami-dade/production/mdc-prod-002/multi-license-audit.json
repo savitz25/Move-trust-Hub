@@ -1,0 +1,8 @@
+{
+  "task": "MDC-PROD-002",
+  "historical_multi_license_businesses": 25,
+  "wave_a_companies_with_multiple_concurrent_issued_mrs": 0,
+  "confirmed_zero_concurrent_issued_pairs": true,
+  "concurrent_rows": [],
+  "historical_archived_outside_wave_a_note": "FL-C006 CURRENT_PLUS_HISTORICAL_VERSIONS pairs remain research-only; Archived MRs not in Wave A publication canary"
+}
