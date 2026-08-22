@@ -1,0 +1,17 @@
+{
+  "google_places_requests": 0,
+  "maturity": "2026-09-05T14:45:00.000Z",
+  "may_execute_now": false,
+  "inputs": {
+    "wave1_manifest_intact": true,
+    "observation_clock": {
+      "launch": "2026-08-22T14:45:00.000Z",
+      "maturity": "2026-09-05T14:45:00.000Z",
+      "elapsed_hours": 8.4
+    },
+    "coverage_checkpoint_frozen": true,
+    "unresolved_hold_frozen": true,
+    "broker_disposition_known": true,
+    "wave2_draft_frozen": true
+  }
+}

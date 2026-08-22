@@ -1,0 +1,6 @@
+{
+  "google_places_requests": 0,
+  "disposition": "BROKER_SCOPE_REQUIRES_BOUNDED_FOLLOWUP",
+  "future_task": "FL-011H — Florida FDACS MB/broker identity model and internal staging (no Wave 1 change)",
+  "reason": "MB credentials are distinct from IM movers; Wave 1 chrome is mover-only; no broker publication model is approved."
+}

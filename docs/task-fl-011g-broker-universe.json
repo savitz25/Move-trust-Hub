@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "total_mb": 29,
+  "status_tally": {
+    "active": 26,
+    "expired": 2,
+    "unknown": 1
+  },
+  "active": 26,
+  "note": "MB broker registrations are excluded from the 1098 IM coverage denominator."
+}

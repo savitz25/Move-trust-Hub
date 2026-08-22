@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "not_wave2_publication": true,
+  "decisions": {
+    "KEEP_WAVE_1": "Maturity reached; 37/37 200/noindex; sitemap 0; wrong-company 0; no unresolved critical incident; KEEP_80 and INDEXABLE healthy.",
+    "KEEP_WITH_BOUNDED_REMEDIATION": "Maturity reached; Wave 1 still consumer-safe but a bounded shell/copy/QA defect remains (same class as FL-011A).",
+    "ROLLBACK_WAVE_1": "Maturity reached and a material identity, wrong-company, or publication-contract failure is still live.",
+    "WAIT_FOR_MORE_OBSERVATION": "Current UTC is before 2026-09-05T14:45:00Z — FL-012 is prohibited."
+  },
+  "executed_in_fl011g": false
+}

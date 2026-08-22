@@ -1,0 +1,3380 @@
+{
+  "google_places_requests": 0,
+  "freeze": "FL_STATE_UNRESOLVED_HOLD_V1",
+  "n": 168,
+  "tally": {
+    "EXISTING_CANONICAL_LINK_READY": 0,
+    "NEW_CANONICAL_COMPANY_READY": 0,
+    "DISTINCT_ENTITY_ALREADY_REPRESENTED": 0,
+    "NO_LONGER_ACTIVE": 0,
+    "REMAINS_POSSIBLE_DUPLICATE": 114,
+    "REMAINS_CORPORATE_FAMILY_REVIEW": 46,
+    "CONFLICT_REMAINS": 5,
+    "SOURCE_STATUS_BLOCKED": 3,
+    "OTHER_REVIEW_REQUIRED": 0
+  },
+  "withheld": true,
+  "not_publication_failures": true,
+  "rows": [
+    {
+      "fdacsIm": "IM3962",
+      "legalName": "ADVANCE SORENSEN MOVERS LLC",
+      "dba": "1. Sorensen Logistics; 2. Sorensen Moving & Storage; 3. The Advance Group",
+      "status": "active",
+      "phone": "321-254-2770",
+      "email": "jmolloy@sorensenmovers.com",
+      "address": "950 W EAU GALLIE BLVD",
+      "city": "MELBOURNE",
+      "zip": "32935",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4055942"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3897",
+      "legalName": "ALEX BUITRAGO LLC",
+      "dba": "Alex Moving",
+      "status": "active",
+      "phone": "754-248-2935",
+      "email": "alexbuitragologistic@gmail.com",
+      "address": "4930 RANGER DR APT 1307",
+      "city": "DAVIE",
+      "zip": "33328",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3789",
+      "legalName": "ALMA MOVING INC",
+      "dba": null,
+      "status": "active",
+      "phone": "224-330-9483",
+      "email": "almamovinggroup@gmail.com",
+      "address": "6950 CYPRESS RD STE 218",
+      "city": "PLANTATION",
+      "zip": "33317",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4085770"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM105",
+      "legalName": "AMERICAN VAN LINES, INC.",
+      "dba": "*American Van Lines",
+      "status": "active",
+      "phone": "954-630-0316",
+      "email": "karen@americanvanlines.com",
+      "address": "1351 NW 22ND ST",
+      "city": "POMPANO BEACH",
+      "zip": "33069",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4093",
+      "legalName": "AMS MOVING INC",
+      "dba": "Amerisafe Vanlines",
+      "status": "active",
+      "phone": "501-257-3470",
+      "email": "frankd410@gmail.com",
+      "address": "2500 QUANTUM LAKES DR STE 105",
+      "city": "BOYNTON BEACH",
+      "zip": "33426",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "amerisafe"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2401",
+      "legalName": "APCOM ENTERPRISE, LLC",
+      "dba": "Jensen Moving And Storage",
+      "status": "active",
+      "phone": "772-538-9456",
+      "email": "apcomenterprise@gmail.com",
+      "address": "4433 SW CARGO WAY",
+      "city": "PALM CITY",
+      "zip": "34990",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1107",
+      "legalName": "APPROVED MOVING & STORAGE, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "954-972-0042",
+      "email": "chuck@approvedmoving.com",
+      "address": "1501 GREEN RD STE C & D",
+      "city": "POMPANO BEACH",
+      "zip": "33064",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1260913"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4027",
+      "legalName": "ARROW SERVICES US INC",
+      "dba": null,
+      "status": "active",
+      "phone": "888-982-7769",
+      "email": "arrowservicesus@gmail.com",
+      "address": "3000 STIRLING RD STE 136",
+      "city": "HOLLYWOOD",
+      "zip": "33021",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3365195"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3236",
+      "legalName": "B&B MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "907-997-1844",
+      "email": "bandbmovers@comcast.net",
+      "address": "6558 BEACH BLVD",
+      "city": "JACKSONVILLE",
+      "zip": "32216",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1028204"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3265",
+      "legalName": "B&H MOVING SERVICES LLC",
+      "dba": "Best & Honest Moving & Storage",
+      "status": "active",
+      "phone": "305-322-3230",
+      "email": "southfloridamoves@gmail.com",
+      "address": "14040 NW 22ND AVE",
+      "city": "OPA LOCKA",
+      "zip": "33054",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2942",
+      "legalName": "BAILEY MOVING & STORAGE LLC",
+      "dba": "Eagle Eye Movers",
+      "status": "active",
+      "phone": "239-351-1234",
+      "email": "gr8move@eagleeyemovers.com",
+      "address": "1301 PIPER BLVD",
+      "city": "NAPLES",
+      "zip": "34110",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3444601"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3528",
+      "legalName": "BAYSHORE TRANSPORTATION SYSTEM, INC.",
+      "dba": "Shoreview Moving & Storage",
+      "status": "active",
+      "phone": "302-366-0220",
+      "email": "mboyer@bayshoreteam.com",
+      "address": "280 NORTH DR",
+      "city": "MELBOURNE",
+      "zip": "32934",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-540129"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM158",
+      "legalName": "BELTMANN GROUP INCORPORATED",
+      "dba": "Beltmann Relocation Group",
+      "status": "active",
+      "phone": "651-639-2800",
+      "email": "cassandra.young@beltmann.com",
+      "address": "2480 LONG LAKE RD",
+      "city": "ROSEVILLE",
+      "zip": "55113",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3561",
+      "legalName": "BLANDON ENTERPRISES SVCS INC",
+      "dba": "The Perfect Moving",
+      "status": "active",
+      "phone": "786-389-4166",
+      "email": "leninblandon@gmail.com",
+      "address": "3501 NW 25TH ST",
+      "city": "LAUDERDALE LAKES",
+      "zip": "33311",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3252",
+      "legalName": "BLUNT ENTERPRISE INC",
+      "dba": "Movebright Moving & Storage",
+      "status": "active",
+      "phone": "904-707-6683",
+      "email": "craig@movebrighttoday.com",
+      "address": "11234 SAN JOSE BLVD STE 3",
+      "city": "JACKSONVILLE",
+      "zip": "32223",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4193",
+      "legalName": "BLVD MOVING INC",
+      "dba": "Blvd Moving Florida Inc",
+      "status": "active",
+      "phone": "844-274-0500",
+      "email": "info@blvdmoving.com",
+      "address": "3151 NW 27TH AVE UNIT 7",
+      "city": "POMPANO BEACH",
+      "zip": "33069",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2892909"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM885",
+      "legalName": "BOOSKA MOVERS, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "239-431-7466",
+      "email": "mbooska@booskaworldwide.com",
+      "address": "5700 TAYLOR RD STE B",
+      "city": "NAPLES",
+      "zip": "34109",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-786533"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM415",
+      "legalName": "BROWNING MOVING & STORAGE, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "850-576-1231",
+      "email": "michaels@browningmoving.com",
+      "address": "3965 W PENSACOLA ST",
+      "city": "TALLAHASSEE",
+      "zip": "32304",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "browning-moving-storage-inc"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3820",
+      "legalName": "BUSY BEE MOVERS, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "941-404-3519",
+      "email": "derekmardones@gmail.com",
+      "address": "2223 BAY ST",
+      "city": "SARASOTA",
+      "zip": "34237",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "busy-bee-movers-llc-2",
+        "busy-bee-movers-llc"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3732",
+      "legalName": "CHHJ PANHANDLE LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "850-279-9580",
+      "email": "cliff.sabo@chhj.com",
+      "address": "119 HOLLYWOOD BLVD NW STE 104",
+      "city": "FORT WALTON BEACH",
+      "zip": "32548",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4037783"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3682",
+      "legalName": "CLUTTER, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "800-805-4023",
+      "email": "Amanda.gonzalez@ironmountain.com",
+      "address": "8605 SANTA MONICA BLVD",
+      "city": "WEST HOLLYWOOD",
+      "zip": "90069",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2719785"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1663",
+      "legalName": "COMMUNITY MOVING & STORAGE, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "863-683-6976",
+      "email": "lakeland@communitymover.com",
+      "address": "3725 FRONTAGE RD N STE 1",
+      "city": "LAKELAND",
+      "zip": "33810",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3753099"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2148",
+      "legalName": "CONSER MOVING AND STORAGE OF JACKSONVILLE, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "904-786-0242",
+      "email": "aroese@consermoving.com",
+      "address": "8451 WESTERN WAY",
+      "city": "JACKSONVILLE",
+      "zip": "32256",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2341993"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2964",
+      "legalName": "D & J MOVING LLC",
+      "dba": "Direct Relocation Services",
+      "status": "active",
+      "phone": "954-557-7056",
+      "email": "info@directrelocate.com",
+      "address": "4901 NW 17TH WAY STE 605",
+      "city": "FORT LAUDERDALE",
+      "zip": "33309",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1591",
+      "legalName": "DALEY & WANZER, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "561-882-0778",
+      "email": "melisa@daleywanzer.com",
+      "address": "7880 CENTRAL INDUSTRIAL DR STE 250",
+      "city": "WEST PALM BEACH",
+      "zip": "33404",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-101934"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1400",
+      "legalName": "DEPENDABLE MOVING COMPANY, INC",
+      "dba": null,
+      "status": "active",
+      "phone": "863-815-9829",
+      "email": "dependablemovingco@hotmail.com",
+      "address": "125 N INGRAHAM AVE",
+      "city": "LAKELAND",
+      "zip": "33801",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2549424"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4127",
+      "legalName": "DO IT NOW MOVING SERVICES LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "415-815-6850",
+      "email": "doitnowmoving@outlook.com",
+      "address": "13146 SW 233RD ST",
+      "city": "HOMESTEAD",
+      "zip": "33032",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "do-it-now-moving-services-llc"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM563",
+      "legalName": "DOUGLAS A AUSTIN",
+      "dba": "Bayside Moving & Storage",
+      "status": "active",
+      "phone": "813-931-4411",
+      "email": "doug@baysidemovingandstorage.com",
+      "address": "4719 N THATCHER AVE",
+      "city": "TAMPA",
+      "zip": "33614",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3981",
+      "legalName": "DPI MOVE, LLC",
+      "dba": "A Mother'S Touch Movers",
+      "status": "active",
+      "phone": "407-203-8534",
+      "email": "amtmorlando@gmail.com",
+      "address": "494 W LANDSTREET RD STE 3",
+      "city": "ORLANDO",
+      "zip": "32824",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4030",
+      "legalName": "EAZY MOVING CORP.",
+      "dba": null,
+      "status": "active",
+      "phone": "305-316-6436",
+      "email": "eazy1moving@gmail.com",
+      "address": "8355 W FLAGLER ST #150",
+      "city": "MIAMI",
+      "zip": "33144",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2336118"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3991",
+      "legalName": "ECO MOVERS INC",
+      "dba": null,
+      "status": "active",
+      "phone": "954-999-2988",
+      "email": "ecomoverssf@gmail.com",
+      "address": "732 SE 11TH AVE",
+      "city": "DEERFIELD BEACH",
+      "zip": "33441",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3227005"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM116",
+      "legalName": "EFFORT ENTERPRISES OF SARASOTA, INC.",
+      "dba": "Atlantic Relocation Systems",
+      "status": "active",
+      "phone": "941-758-3844",
+      "email": "matt.borrusch@atlanticrelocation.com",
+      "address": "6314 31ST ST E",
+      "city": "SARASOTA",
+      "zip": "34243",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4038",
+      "legalName": "ELI MOVING & STORAGE LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "754-251-9154",
+      "email": "elimoving470@gmail.com",
+      "address": "4765 SABLE PINE CIR APT B1",
+      "city": "WEST PALM BEACH",
+      "zip": "33417",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4347312"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1930",
+      "legalName": "ELITE CAMPUS MOVERS, LLC",
+      "dba": "Elite Movers",
+      "status": "active",
+      "phone": "850-980-2152",
+      "email": "info@elitecampusmovers.com",
+      "address": "1872 MILL ST STE D10",
+      "city": "TALLAHASSEE",
+      "zip": "32310",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2749",
+      "legalName": "EXCELLENCE MOVING AND STORAGE LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "954-652-9314",
+      "email": "excellencemove@gmail.com",
+      "address": "2436 N FEDERAL HWY # 398",
+      "city": "LIGHTHOUSE POINT",
+      "zip": "33064",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3659464"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3951",
+      "legalName": "FAITHFUL MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "941-284-2329",
+      "email": "info@faithfulmoversofsrq.com",
+      "address": "6421 EASY GOER CT",
+      "city": "SARASOTA",
+      "zip": "34240",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "faithful-movers"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3240",
+      "legalName": "FAMILY MOVERS INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "813-735-8630",
+      "email": "familymoverslakeland@yahoo.com",
+      "address": "14416 ANGUS RD",
+      "city": "POLK CITY",
+      "zip": "33868",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1006044"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM236",
+      "legalName": "FERRISS MOVING & STORAGE CO., INC.",
+      "dba": "Ferriss Warehouse & Storage Co.",
+      "status": "active",
+      "phone": "850-433-2127",
+      "email": "wils9055@bellsouth.net",
+      "address": "3783 N PALAFOX ST",
+      "city": "PENSACOLA",
+      "zip": "32505",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4137",
+      "legalName": "FLAT RATE SHIPPING INC",
+      "dba": null,
+      "status": "active",
+      "phone": "305-831-0686",
+      "email": "marie@flatrateshipping.com",
+      "address": "4020 NW 126TH AVE STE 110",
+      "city": "CORAL SPRINGS",
+      "zip": "33065",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4108514"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM299",
+      "legalName": "FLORIDA UNPACKING SERVICES INCORPORATED",
+      "dba": "Kushner Moving Group",
+      "status": "active",
+      "phone": "305-588-2147",
+      "email": "info@kushnermoving.com",
+      "address": "3966 PEMBROKE RD",
+      "city": "HOLLYWOOD",
+      "zip": "33021",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3989",
+      "legalName": "FORWARD MOVING, LLC",
+      "dba": "Zippy Shell Of Fl",
+      "status": "active",
+      "phone": "207-650-7552",
+      "email": "zippygeneralmanagers@zippyshell.com",
+      "address": "4740 OAK FAIR BLVD STE B",
+      "city": "TAMPA",
+      "zip": "33610",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4438821"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM139",
+      "legalName": "FREIGHTHAULERS, INC.",
+      "dba": "A-1 Moving & Storage",
+      "status": "active",
+      "phone": "561-625-0600",
+      "email": "holly@a1moving.com",
+      "address": "15070 CORPORATE RD N",
+      "city": "JUPITER",
+      "zip": "33478",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3710",
+      "legalName": "GENESIS MOVING GROUP LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "561-453-2633",
+      "email": "info@allinmoving.net",
+      "address": "2089 W ATLANTIC AVE APT 6210",
+      "city": "DELRAY BEACH",
+      "zip": "33445",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3925242"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3497",
+      "legalName": "HAULIN' A- WAY LLC",
+      "dba": "It'S Your Move",
+      "status": "active",
+      "phone": "850-583-0653",
+      "email": "jason@itsyourmovetlh.com",
+      "address": "300 HANNON MILL RD STE A",
+      "city": "TALLAHASSEE",
+      "zip": "32305",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4017",
+      "legalName": "HILK ENTERPRISE LLC",
+      "dba": "T&T Moving And Packing",
+      "status": "active",
+      "phone": "912-481-8481",
+      "email": "contact@tandtmoving.com",
+      "address": "602 S MAIN ST",
+      "city": "GAINESVILLE",
+      "zip": "32601",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2972",
+      "legalName": "HOUSE TO HOUSE MOVING LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "850-210-2613",
+      "email": "house2housemoving@icloud.com",
+      "address": "108 BENT OAK CIR",
+      "city": "THOMASVILLE",
+      "zip": "31757",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "house-to-house-moving"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM278",
+      "legalName": "INDEPENDENT MOVING & STORAGE, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "727-845-0511",
+      "email": "INDEPENDENTMOVING@VERIZON.NET",
+      "address": "4529 WHITTON WAY APT 225",
+      "city": "NEW PORT RICHEY",
+      "zip": "34653",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-607998"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3406",
+      "legalName": "INTEGRITY VAN LINES INC.",
+      "dba": "A Plus Moving And Storage",
+      "status": "active",
+      "phone": "786-975-7841",
+      "email": "daniel@centraldispatchoffice.com",
+      "address": "600 NE 185TH ST",
+      "city": "NORTH MIAMI BEACH",
+      "zip": "33179",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2098",
+      "legalName": "INTERNATIONAL VAN LINES, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "855-674-7447",
+      "email": "erika@internationalvanlines.com",
+      "address": "3957 NW 126TH AVE",
+      "city": "CORAL SPRINGS",
+      "zip": "33065",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2293832"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2799",
+      "legalName": "IN-TO-IT TRANSPORTATION LLC",
+      "dba": "All Area Moving And Storage",
+      "status": "active",
+      "phone": "772-468-7273",
+      "email": "allareamovingandstorage@gmail.com",
+      "address": "562 NW ARGOSY AVE",
+      "city": "PORT SAINT LUCIE",
+      "zip": "34983",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM385",
+      "legalName": "LA ROSA DEL MONTE EXPRESS (MIAMI), LLC",
+      "dba": "La Rosa Del Monte Express",
+      "status": "active",
+      "phone": "305-884-7470",
+      "email": "grodriguez@lrdm.com",
+      "address": "7600 NW 68TH ST",
+      "city": "MIAMI",
+      "zip": "33166",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2998",
+      "legalName": "M&M MOVING, CO.",
+      "dba": null,
+      "status": "active",
+      "phone": "305-609-5562",
+      "email": "info@mmmove.com",
+      "address": "16250 SW 52ND AVE",
+      "city": "HIALEAH",
+      "zip": "33014",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2015288"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4140",
+      "legalName": "MACKENZIE ENDEAVORS LLC",
+      "dba": "Johnson'S Moving And Hauling",
+      "status": "active",
+      "phone": "352-279-8538",
+      "email": "johnsons.moving.and.h@gmail.com",
+      "address": "119 SHELBY AVE",
+      "city": "SPRING HILL",
+      "zip": "34608",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2323",
+      "legalName": "MASTER MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "941-451-9904",
+      "email": "chad.coatney@yahoo.com",
+      "address": "250 CENTER CT UNIT A",
+      "city": "VENICE",
+      "zip": "34285",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "master-movers-llc",
+        "usdot-75065"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1888",
+      "legalName": "MCCORQUODALE TRANSFER LLC",
+      "dba": "Vault Logistics",
+      "status": "active",
+      "phone": "561-296-6222",
+      "email": "bnye@mccorquodale.biz",
+      "address": "1715 MEATHE DR STE 1400",
+      "city": "WEST PALM BEACH",
+      "zip": "33411",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "mccorquodale-transfer"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2137",
+      "legalName": "MEEHAN'S FAMILY MOVING, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "561-904-6000",
+      "email": "meehansfamilymoving@gmail.com",
+      "address": "1320 53RD ST",
+      "city": "MANGONIA PARK",
+      "zip": "33407",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "meehan-s-family-moving"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3758",
+      "legalName": "MERIDIAN MOVING & STORAGE CORP",
+      "dba": null,
+      "status": "active",
+      "phone": "941-661-3631",
+      "email": "morgan@meridianmoving.com",
+      "address": "1720 EL JOBEAN RD STE 212",
+      "city": "PORT CHARLOTTE",
+      "zip": "34286",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3285650"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3153",
+      "legalName": "MINDFUL MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "407-670-9543",
+      "email": "mindfulmoversllc@gmail.com",
+      "address": "382 MORNING CREEK CIR",
+      "city": "APOPKA",
+      "zip": "32712",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "mindful-movers"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM219",
+      "legalName": "MODERN MOVERS, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "800-226-4663",
+      "email": "odette@morefla.com",
+      "address": "5607 8TH ST W",
+      "city": "LEHIGH ACRES",
+      "zip": "33971",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3531948"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3083",
+      "legalName": "MONSTER MOVERS LLC",
+      "dba": "Momster Cleaning Services",
+      "status": "active",
+      "phone": "863-528-9397",
+      "email": "cole@monstermoversllc.net",
+      "address": "504 PINTAIL CIR",
+      "city": "AUBURNDALE",
+      "zip": "33823",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2184730"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3706",
+      "legalName": "MOVE & STORE, LLC",
+      "dba": "Motivated Movers",
+      "status": "active",
+      "phone": "855-624-4537",
+      "email": "whit@waypointinvest.com",
+      "address": "3014 LISENBY AVE",
+      "city": "PANAMA CITY",
+      "zip": "32405",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3612",
+      "legalName": "MOVE HUB LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "954-263-6753",
+      "email": "movehubllc@gmail.com",
+      "address": "1420 NE 40TH ST",
+      "city": "POMPANO BEACH",
+      "zip": "33064",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3704875"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4018",
+      "legalName": "MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "239-351-1234",
+      "email": "moversllc25@gmail.com",
+      "address": "5900 COPE LN",
+      "city": "NAPLES",
+      "zip": "34112",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1499121",
+        "usdot-4064811",
+        "usdot-2503053",
+        "usdot-812503"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4010",
+      "legalName": "MOVEWISE LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "561-449-4620",
+      "email": "bambamrob1@aol.com",
+      "address": "23123 STATE ROAD 7 STE 315",
+      "city": "BOCA RATON",
+      "zip": "33428",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4182879"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2895",
+      "legalName": "MOVING & STORAGE SF INC",
+      "dba": "1. Cross Country Movers; 2. Prodigy Moving & Storage",
+      "status": "active",
+      "phone": "855-374-3990",
+      "email": "info@crosscountrymovers.info",
+      "address": "1841 SW 31ST AVE",
+      "city": "HALLANDALE BEACH",
+      "zip": "33009",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2780116"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2421",
+      "legalName": "MOVING MANIA INC",
+      "dba": null,
+      "status": "active",
+      "phone": "844-668-3871",
+      "email": "movingmaniainc@yahoo.com",
+      "address": "271 SW 33RD CT BAY 3",
+      "city": "FORT LAUDERDALE",
+      "zip": "33315",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1750338"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4057",
+      "legalName": "MTR VENTURES, LLC",
+      "dba": "Modern Moving & Storage",
+      "status": "active",
+      "phone": "321-328-6683",
+      "email": "matt@movememodern.com",
+      "address": "571 HAVERTY CT STE Y",
+      "city": "ROCKLEDGE",
+      "zip": "32955",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4053",
+      "legalName": "MVM CLEARWATER LLC",
+      "dba": "Reliable Moving And Storage",
+      "status": "active",
+      "phone": "419-478-6979",
+      "email": "tony@mvmmoving.com",
+      "address": "1009 ELDRIDGE ST",
+      "city": "CLEARWATER",
+      "zip": "33755",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3845",
+      "legalName": "MY MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "904-994-3636",
+      "email": "mymoversjax@gmail.com",
+      "address": "9951 ATLANTIC BLVD STE 231",
+      "city": "JACKSONVILLE",
+      "zip": "32225",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2572145"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4204",
+      "legalName": "MY SMOOTH MOVE LLC",
+      "dba": "Smooth Move",
+      "status": "active",
+      "phone": "407-505-3223",
+      "email": "andrew@mysmoothmovefl.com",
+      "address": "66 W HARDING ST UNIT B",
+      "city": "ORLANDO",
+      "zip": "32806",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4095",
+      "legalName": "NEXT DOOR MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "813-563-7788",
+      "email": "nextdoormoversfl@gmail.com",
+      "address": "12893 PALAPA LOOP",
+      "city": "SPRING HILL",
+      "zip": "34610",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "next-door-movers"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1551",
+      "legalName": "OCEAN MOVING & STORAGE CORP.",
+      "dba": null,
+      "status": "active",
+      "phone": "866-956-2326",
+      "email": "hadar@oceanmovingandstorage.com",
+      "address": "2208 N 42ND AVE",
+      "city": "HOLLYWOOD",
+      "zip": "33021",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "ocean-moving-storage-corp"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM891",
+      "legalName": "OLD BAYMEADOWS MOVERS, INC.",
+      "dba": "1. 1st Choice Movers; 2. First Choice Movers",
+      "status": "active",
+      "phone": "904-731-7223",
+      "email": "jawad@wemovejax.com",
+      "address": "8230 BAYCENTER RD STE 4",
+      "city": "JACKSONVILLE",
+      "zip": "32256",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1473292"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3832",
+      "legalName": "OLYMPIA MOVING & STORAGE INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "800-627-1916",
+      "email": "mgilmartin@olympiamoving.com",
+      "address": "17 BRIDGE ST",
+      "city": "WATERTOWN",
+      "zip": "02472",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-597632"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM161",
+      "legalName": "ONTIME MOVING SYSTEM, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "305-621-0802",
+      "email": "info@ontimemoving.us",
+      "address": "11455 NW 122ND ST",
+      "city": "MEDLEY",
+      "zip": "33178",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1233813"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3253",
+      "legalName": "OUR FAMILY MOVING AND STORAGE LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "954-453-1185",
+      "email": "joey@ourfamilymoving.com",
+      "address": "940 ELLER DR BAY 4",
+      "city": "FT LAUDERDALE",
+      "zip": "33316",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "our-family-moving-storage"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3530",
+      "legalName": "OX STRONG MOVING LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "352-665-7784",
+      "email": "info@oxstrongmoving.com",
+      "address": "1120 NW 53RD AVE",
+      "city": "GAINESVILLE",
+      "zip": "32609",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "ox-strong-moving"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3117",
+      "legalName": "PRESTIGE MOVING SYSTEM, INC",
+      "dba": "Jacob And Sons Moving & Storage",
+      "status": "active",
+      "phone": "877-611-6684",
+      "email": "info@centraldispatchoffice.com",
+      "address": "600 NE 185TH ST",
+      "city": "MIAMI",
+      "zip": "33179",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3334",
+      "legalName": "PRIDE MOVING LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "813-580-7557",
+      "email": "info@pride-moving.com",
+      "address": "8027 INTERBAY BLVD",
+      "city": "TAMPA",
+      "zip": "33616",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1319267"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3736",
+      "legalName": "PRIORITIES DONE LLC",
+      "dba": "1. Village Pack & Ship Plus; 2. Village Pack-N-Ship",
+      "status": "active",
+      "phone": "352-459-7096",
+      "email": "mdowning@villagepacknship.com",
+      "address": "1080 BICHARA BLVD",
+      "city": "THE VILLAGES",
+      "zip": "32159",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4143661"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3737",
+      "legalName": "ROADWAY MOVING AND STORAGE, INC",
+      "dba": "Roadway Moving",
+      "status": "active",
+      "phone": "305-487-8887",
+      "email": "ross@roadwaymoving.com",
+      "address": "4750 NW 15TH AVE",
+      "city": "FORT LAUDERDALE",
+      "zip": "33309",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4189",
+      "legalName": "RS MOVING & WAREHOUSING LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "850-582-2074",
+      "email": "sfaust@rsmoves.com",
+      "address": "5 JEFFERSON PL NW",
+      "city": "FORT WALTON BEACH",
+      "zip": "32548",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3000204"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2415",
+      "legalName": "RSVP GLOBAL, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "561-659-9077",
+      "email": "support@rsvpglb.com",
+      "address": "350 HIATT DR STE 130",
+      "city": "PALM BEACH GARDENS",
+      "zip": "33418",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2460900"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4008",
+      "legalName": "SAFE HANDS RELOCATION LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "781-607-7167",
+      "email": null,
+      "address": "132 W INTERNATIONAL SPEEDWAY BLVD",
+      "city": "DAYTONA BEACH",
+      "zip": "32114",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "safe-hands-relocation-llc"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2839",
+      "legalName": "SAFEBOUND LOGISTICS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "561-510-7191",
+      "email": "jamie@safebound.com",
+      "address": "6051 SOUTHERN BLVD #300",
+      "city": "WEST PALM BEACH",
+      "zip": "33413",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "safebound-logistics-llc"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3818",
+      "legalName": "SAFEWAY MOVING SYSTEMS INC",
+      "dba": "Safeway Moving",
+      "status": "active",
+      "phone": "954-727-1630",
+      "email": "boris@safewaymovinginc.com",
+      "address": "5213 NW 33RD AVE",
+      "city": "FORT LAUDERDALE",
+      "zip": "33309",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM396",
+      "legalName": "SAFEWAY VANLINES, INC.",
+      "dba": "Safeway Moving & Storage",
+      "status": "active",
+      "phone": "386-446-8001",
+      "email": "safewaymoversfl@gmail.com",
+      "address": "241 PINE GROVE DR",
+      "city": "PALM COAST",
+      "zip": "32164",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM809",
+      "legalName": "SEAL VAN LINES, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "772-222-5210",
+      "email": "sealvanlines@gmail.com",
+      "address": "2750 CENTER RD",
+      "city": "FORT PIERCE",
+      "zip": "34946",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-581596"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4150",
+      "legalName": "SERENITY MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "240-586-3644",
+      "email": "david@serenitymover.com",
+      "address": "10231 BRIGHT CRYSTAL AVE",
+      "city": "RIVERVIEW",
+      "zip": "33578",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "serenity-movers-inc"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3214",
+      "legalName": "SHAMROCK MOVING & DELIVERIES INC",
+      "dba": null,
+      "status": "active",
+      "phone": "561-398-0154",
+      "email": "shamrockdeliveries@gmail.com",
+      "address": "294 ARABIAN RD",
+      "city": "PALM SPRINGS",
+      "zip": "33461",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "shamrock-moving-deliveries"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2329",
+      "legalName": "SHLEPPERS FL LLC",
+      "dba": "Shleppers Moving & Storage",
+      "status": "active",
+      "phone": "561-886-0868",
+      "email": "eyal@shleppers.com",
+      "address": "3625 N COUNTRY CLUB DR APT 2203",
+      "city": "AVENTURA",
+      "zip": "33180",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3045",
+      "legalName": "SHUR-WAY MOVING & CARTAGE CO.",
+      "dba": null,
+      "status": "active",
+      "phone": "224-206-2885",
+      "email": "peggyk@shurwaymovers.com",
+      "address": "6117 JET PORT INDUSTRIAL BLVD",
+      "city": "TAMPA",
+      "zip": "33634",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-172887"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3685",
+      "legalName": "SMOOTH MOVING",
+      "dba": null,
+      "status": "active",
+      "phone": "941-961-5854",
+      "email": "smoothmoving3@gmail.com",
+      "address": "613 VALENCIA ST",
+      "city": "NOKOMIS",
+      "zip": "34275",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "smooth-moving"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4162",
+      "legalName": "SOUTHERN HOSPITALITY MOVING LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "772-631-7503",
+      "email": "southernhospitalitymoving@gmail.com",
+      "address": "7926 SE TRENTON AVE",
+      "city": "HOBE SOUND",
+      "zip": "33455",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4153772"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM320",
+      "legalName": "STEVENS MOVING & STORAGE, INC",
+      "dba": null,
+      "status": "active",
+      "phone": "573-450-3866",
+      "email": "admin@botgmoves.com",
+      "address": "15 SAINT MARK ST",
+      "city": "AUBURN",
+      "zip": "01501",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "stevens"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1411",
+      "legalName": "SUDDATH VAN LINES, INC",
+      "dba": "Suddath Moving And Logistics",
+      "status": "active",
+      "phone": "904-390-7100",
+      "email": "legal@suddath.com",
+      "address": "815 S MAIN ST",
+      "city": "JACKSONVILLE",
+      "zip": "32207",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "suddath-relocation-systems-charlotte"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2511",
+      "legalName": "SUITABLE MOVERS LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "954-257-3191",
+      "email": "suitablemovers@gmail.com",
+      "address": "531 SAWGRASS CORPORATE PKWY",
+      "city": "SUNRISE",
+      "zip": "33325",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2813031"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1820",
+      "legalName": "SUMMIT MOVERS INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "850-784-6683",
+      "email": "moveup@summitmoversinc.com",
+      "address": "2143 SHERMAN AVE",
+      "city": "PANAMA CITY",
+      "zip": "32405",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1995595"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4036",
+      "legalName": "TLZ VENTURES, LLC",
+      "dba": "Modern Moving & Storage",
+      "status": "active",
+      "phone": "407-787-6683",
+      "email": "matt@movememodern.com",
+      "address": "6000 METROWEST BLVD STE 200",
+      "city": "ORLANDO",
+      "zip": "32835",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3447",
+      "legalName": "TWO CHICKS MOVING LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "239-977-2097",
+      "email": "twochicksmoving@gmail.com",
+      "address": "13300 S CLEVELAND AVE STE 56",
+      "city": "FORT MYERS",
+      "zip": "33907",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "two-chicks-moving-llc"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3775",
+      "legalName": "UOVO ART LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "305-751-1175",
+      "email": "dbeck@uovo.art",
+      "address": "346 NW 29TH ST",
+      "city": "MIAMI",
+      "zip": "33127",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2439112"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3149",
+      "legalName": "VICTORY VAN CORPORATION",
+      "dba": null,
+      "status": "active",
+      "phone": "703-461-6425",
+      "email": "tarpei@victoryvan.com",
+      "address": "1701 GREEN ROAD SUITES D, E, F",
+      "city": "DEERFIELD BEACH",
+      "zip": "33064",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-36816"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1541",
+      "legalName": "VIDAL MOVING & STORAGE INC",
+      "dba": null,
+      "status": "active",
+      "phone": "305-758-7797",
+      "email": "vidalmoving@aol.com",
+      "address": "270 NE 70TH ST",
+      "city": "MIAMI",
+      "zip": "33138",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1293198"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3891",
+      "legalName": "W MOVING CORP",
+      "dba": null,
+      "status": "active",
+      "phone": "305-395-5395",
+      "email": "info@wmovingandstorage.com",
+      "address": "1818 SW 1ST AVE APT 1211",
+      "city": "MIAMI",
+      "zip": "33129",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4205069"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3855",
+      "legalName": "ZADAN HOLDING LLC",
+      "dba": "Bereket Moving And Storage Llc",
+      "status": "active",
+      "phone": "813-345-2522",
+      "email": "info@bereketmoving.com",
+      "address": "1910 NADINE ROAD",
+      "city": "WESLEY CHAPEL",
+      "zip": "33544",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM785",
+      "legalName": "Rice's Moving and Transport, Inc.",
+      "dba": "Rice's Moving and Transport Inc.",
+      "status": "active",
+      "phone": "(239) 290-1519",
+      "email": "ricesmoving@comcast.net",
+      "address": "830 DeSoto Boulevard North",
+      "city": "Naples",
+      "zip": "34120",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3000",
+      "legalName": "EEM Inc.",
+      "dba": "Door 2 Door Movers",
+      "status": "active",
+      "phone": "(904) 295-1972",
+      "email": "d2dmoving@gmail.com",
+      "address": "232 State Road 16, Ste 512",
+      "city": "Saint Augustine",
+      "zip": "32084",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3912",
+      "legalName": "Esea Van Lines Inc.",
+      "dba": null,
+      "status": "active",
+      "phone": "(305) 776-3782",
+      "email": "operations@eseavanlines.com",
+      "address": "745 Northwest 7th Terrace",
+      "city": "Fort Lauderdale",
+      "zip": "33311",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3605240"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1355",
+      "legalName": "The Wes Stewart Corporation",
+      "dba": "Stewart Moving & Storage",
+      "status": "active",
+      "phone": "(904) 783-0715",
+      "email": "scordeiro@stewartms.com",
+      "address": "6580 West 5th Street",
+      "city": "Jacksonville",
+      "zip": "32254",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3932",
+      "legalName": "PJS FL LLC",
+      "dba": "Anywhere Anytime Moving & Storage",
+      "status": "active",
+      "phone": "(863) 471-6495",
+      "email": "rose@anywhereanytimemovingstorage.com",
+      "address": "603 Avocado Street",
+      "city": "Sebring",
+      "zip": "33870",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-4253453"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM150010",
+      "legalName": "T&E Moving and Storage Branch LLC",
+      "dba": "Moving Hub",
+      "status": "active",
+      "phone": "(980) 279-5945",
+      "email": "info@moving-hub.net",
+      "address": "5201 Ravenswood Road, 115",
+      "city": "Dania Beach",
+      "zip": "33312",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "dba_without_unique_corroboration"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3003",
+      "legalName": "Expert Movers Inc.",
+      "dba": null,
+      "status": "active",
+      "phone": "(813) 856-6565",
+      "email": "Expertmovers2014@Gmail.com",
+      "address": "3000 West Columbus Drive",
+      "city": "Tampa",
+      "zip": "33607",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-2097824",
+        "usdot-4125548"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM7",
+      "legalName": "Freedom Movers, Inc",
+      "dba": null,
+      "status": "active",
+      "phone": "(941) 358-4984",
+      "email": "freedommovers@aol.com",
+      "address": "4813 Country Oaks Boulevard",
+      "city": "Sarasota",
+      "zip": "34243",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-1491888"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1582",
+      "legalName": "T&E Moving and Storage LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "(904) 997-1884",
+      "email": "t-emoving@hotmail.com",
+      "address": "11337 Hillsong Court",
+      "city": "Jacksonville",
+      "zip": "32256",
+      "priorClassification": "POSSIBLE_DUPLICATE",
+      "priorReasons": [
+        "name_similarity_insufficient_without_corroboration"
+      ],
+      "priorCandidateIds": [
+        "usdot-3699092"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "POSSIBLE_DUPLICATE",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3270",
+      "legalName": "ACKMAN BROTHERS LLC",
+      "dba": "College Hunks Hauling Junk & Moving",
+      "status": "active",
+      "phone": "772-281-7323",
+      "email": "brad.ackman@chhj.com",
+      "address": "8249 BUSINESS PARK DR",
+      "city": "PORT ST LUCIE",
+      "zip": "34952",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3590",
+      "legalName": "AGIOS RAFAEL HOLDINGS LLC",
+      "dba": "Good Greek Moving & Storage",
+      "status": "active",
+      "phone": "813-438-2700",
+      "email": "dstottsberry@goodgreek.com",
+      "address": "1855 S COUNTY LINE RD",
+      "city": "PLANT CITY",
+      "zip": "33566",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1451",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF FT. LAUDERDALE, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "954-760-4556",
+      "email": "safety@allmysons.com",
+      "address": "3762 PARK CENTRAL BLVD. N",
+      "city": "POMPANO BEACH",
+      "zip": "33064",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1751",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF JACKSONVILLE, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "469-461-5000",
+      "email": "amijares@allmysons.com",
+      "address": "6805 STUART LN S # 1",
+      "city": "JACKSONVILLE",
+      "zip": "32254",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2301",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF MIAMI, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "469-461-5000 Ext. 6669",
+      "email": "compliance@allmysons.com",
+      "address": "987 SE 11TH PL",
+      "city": "HIALEAH",
+      "zip": "33010",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM113",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF ORLANDO, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "469-461-5000",
+      "email": "compliance@allmysons.com",
+      "address": "639 W ROBINSON ST",
+      "city": "ORLANDO",
+      "zip": "32801",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1457",
+      "legalName": "ALL MY SONS MOVING & STORAGE OF PENSACOLA, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "850-435-9000",
+      "email": "compliance@allmysons.com",
+      "address": "6208 N 9TH AVE",
+      "city": "PENSACOLA",
+      "zip": "32504",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3413",
+      "legalName": "ALL MY SONS OF NAPLES, LLC",
+      "dba": "All My Sons Of Ft Myers",
+      "status": "active",
+      "phone": "469-461-5000",
+      "email": "compliance@allmysons.com",
+      "address": "14660 JETPORT LOOP, STE 7",
+      "city": "FORT MYERS",
+      "zip": "33913",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3554",
+      "legalName": "ALL MY SONS OF TAMPA II LLC",
+      "dba": "All My Sons Of Tampa North",
+      "status": "active",
+      "phone": "469-461-5000",
+      "email": "compliance@allmysons.com",
+      "address": "4410 W CREST AVE STE A",
+      "city": "TAMPA",
+      "zip": "33614",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3409",
+      "legalName": "ALL MY SONS OF TAMPA, LLC",
+      "dba": "All My Sons Of Sarasota",
+      "status": "active",
+      "phone": "469-461-5000",
+      "email": "compliance@allmysons.com",
+      "address": "4410 W CREST AVE STE A",
+      "city": "TAMPA",
+      "zip": "33614",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2513",
+      "legalName": "ALL MY SONS OF THE PALM BEACHES, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "561-475-3493",
+      "email": "compliance@allmysons.com",
+      "address": "838 W 13TH CT",
+      "city": "RIVIERA BEACH",
+      "zip": "33404",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3877",
+      "legalName": "ATLANTIC COAST MUSCLES LLC",
+      "dba": "Two Men And A Truck West Palm Beach",
+      "status": "active",
+      "phone": "513-205-5851",
+      "email": "michael.lally@twomen.com",
+      "address": "355 HIATT DR STE A-C",
+      "city": "PALM BEACH GARDENS",
+      "zip": "33418",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM950",
+      "legalName": "BEKINS A-1 MOVERS INC.",
+      "dba": "1. Bms Commercial Services; 2. Bms Moving & Storage",
+      "status": "active",
+      "phone": "941-259-4447",
+      "email": "Bjones@movebms.com",
+      "address": "7810 25TH CT E UNIT 102",
+      "city": "SARASOTA",
+      "zip": "34243",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1809",
+      "legalName": "BLACK WOLF MOVING FLORIDA, LLC",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "727-736-8000",
+      "email": "brian.wehrs@twomen.com",
+      "address": "156 DOUGLAS RD E",
+      "city": "OLDSMAR",
+      "zip": "34677",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2535",
+      "legalName": "BLACK WOLF MOVING MIAMI, LLC",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "305-819-3340",
+      "email": "brian.wehrs2@twomen.com",
+      "address": "1521 NW 82ND AVE",
+      "city": "DORAL",
+      "zip": "33126",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3078",
+      "legalName": "BLACKFISH ENTERPRISES LLC",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "407-852-1777",
+      "email": "jonathan.crain@twomen.com",
+      "address": "603 CENTRAL FLORIDA PKWY STE 106 A",
+      "city": "ORLANDO",
+      "zip": "32824",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3548",
+      "legalName": "CHHJ 305 LLC",
+      "dba": "College Hunks Hauling Junk & Moving",
+      "status": "active",
+      "phone": "202-549-4480",
+      "email": "omar.soliman@chhj.com",
+      "address": "4411 W TAMPA BAY BLVD",
+      "city": "TAMPA",
+      "zip": "33614",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2198",
+      "legalName": "COLONIAL VAN LINES, INC.",
+      "dba": null,
+      "status": "active",
+      "phone": "800-351-2523",
+      "email": "scott@colonialvanlines.com",
+      "address": "1441 SW 29TH AVE STE 100",
+      "city": "POMPANO BEACH",
+      "zip": "33069",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1475",
+      "legalName": "DESTINY SERVICES, INC.",
+      "dba": "Two Men And A Truck / Panama City",
+      "status": "active",
+      "phone": "850-785-2222",
+      "email": "sean.wise@twomen.com",
+      "address": "2500 W 15TH ST",
+      "city": "PANAMA CITY",
+      "zip": "32401",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4009",
+      "legalName": "FUNKY FREIGHT LLC",
+      "dba": "College Hunks Hauling Junk & Moving",
+      "status": "active",
+      "phone": "561-526-3879",
+      "email": "michael.ricca@chhj.com",
+      "address": "2110 TALLY RD STE 1",
+      "city": "LEESBURG",
+      "zip": "34748",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM61",
+      "legalName": "GOBUCKS, INC",
+      "dba": "Coral Springs Moving & Storage",
+      "status": "active",
+      "phone": "954-752-7366",
+      "email": "danm@coralspringsmoving.com",
+      "address": "12090 NW 40TH ST",
+      "city": "CORAL SPRINGS",
+      "zip": "33065",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1531",
+      "legalName": "GOLDEN MOVING SYSTEMS, INC.",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "352-372-0300",
+      "email": "mark.golden@twomen.com",
+      "address": "1120 NW 53RD AVE",
+      "city": "GAINESVILLE",
+      "zip": "32609",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1517",
+      "legalName": "J & J FAMILY MOVING & STORAGE, LLC",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "863-646-6683",
+      "email": "jonathan.crain@twomen.com",
+      "address": "3220 ATLANTIC AVE",
+      "city": "LAKELAND",
+      "zip": "33803",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1323",
+      "legalName": "JASMOV, INC.",
+      "dba": "Bekins Of South Florida",
+      "status": "active",
+      "phone": "954-776-2226",
+      "email": "tkule@bekinssf.com",
+      "address": "5300 POWERLINE RD STE 100",
+      "city": "FORT LAUDERDALE",
+      "zip": "33309",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1909",
+      "legalName": "JCAL HOLDINGS LLC",
+      "dba": "College Hunks Hauling Junk And Moving",
+      "status": "active",
+      "phone": "561-602-5009",
+      "email": "barry.reiss@chhj.com",
+      "address": "1802 4TH AVE N",
+      "city": "LAKE WORTH",
+      "zip": "33461",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3960",
+      "legalName": "JESSUP & CLARK ENTERPRISES, INC.",
+      "dba": "College Hunks Hauling Junk & Moving - Brevard",
+      "status": "active",
+      "phone": "352-455-1533",
+      "email": "john.jessup@chhj.com",
+      "address": "500 NORTH DRIVE",
+      "city": "MELBOURNE",
+      "zip": "32934",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM49",
+      "legalName": "LANIER SERVICES, INC.",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "954-616-6683",
+      "email": "Britt.Lanier@twomen.com",
+      "address": "5850 ORANGE DR BLDG A",
+      "city": "DAVIE",
+      "zip": "33314",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2631",
+      "legalName": "LET'S MOVE FLORIDA, LLC",
+      "dba": "College Hunks Hauling Junk And Moving",
+      "status": "active",
+      "phone": "407-718-2599",
+      "email": "billmc42@gmail.com",
+      "address": "6105 CYRIL AVE",
+      "city": "ORLANDO",
+      "zip": "32809",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2351",
+      "legalName": "MANSARI, LLC",
+      "dba": "College Hunks Hauling Junk - Tampa",
+      "status": "active",
+      "phone": "813-701-2020",
+      "email": "dan.whalen@chhj.com",
+      "address": "4756 N DALE MABRY HWY",
+      "city": "TAMPA",
+      "zip": "33614",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM561",
+      "legalName": "MAYFLOWER TRANSIT LLC",
+      "dba": "Aero Mayflower Transit Company",
+      "status": "active",
+      "phone": "636-305-4000",
+      "email": "laurel_soykin@unigroup.com",
+      "address": "1 MAYFLOWER DR",
+      "city": "FENTON",
+      "zip": "63026",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1543",
+      "legalName": "MIAMI MOVERS FOR LESS, INC",
+      "dba": "Move For Less",
+      "status": "active",
+      "phone": "305-915-3881",
+      "email": "sv@moveforless.biz",
+      "address": "17854 NE 5TH AVE",
+      "city": "MIAMI",
+      "zip": "33162",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4152",
+      "legalName": "MIDLINE FLORIDA ENTERPRISES, INC",
+      "dba": "1. College Hunks Hauling Junk; 2. College Hunks Moving",
+      "status": "active",
+      "phone": "813-486-1717",
+      "email": "deryk.shepherd@chhj.com",
+      "address": "3045 SE 157TH LANE RD",
+      "city": "SUMMERFIELD",
+      "zip": "34491",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2721",
+      "legalName": "PRO MOVERS MIAMI, INC",
+      "dba": "Pro Movers",
+      "status": "active",
+      "phone": "305-707-7007",
+      "email": "sv@promovers.biz",
+      "address": "475 BRICKELL AVE",
+      "city": "MIAMI",
+      "zip": "33131",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2333",
+      "legalName": "SAVIVECO, INC.",
+      "dba": "Two Men And A Truck/Ocala",
+      "status": "active",
+      "phone": "352-347-3337",
+      "email": "david.lakin@twomen.com",
+      "address": "160 SE HIGHWAY 484",
+      "city": "OCALA",
+      "zip": "34480",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM109",
+      "legalName": "S'EILLIW, INC.",
+      "dba": "Willie'S Transfer And Storage",
+      "status": "active",
+      "phone": "561-848-2503",
+      "email": "info@williestransfer.com",
+      "address": "1320 53RD ST",
+      "city": "WEST PALM BEACH",
+      "zip": "33407",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2861",
+      "legalName": "SERINO SOLUTIONS LLC",
+      "dba": "Tropic Moving",
+      "status": "active",
+      "phone": "321-604-0555",
+      "email": "dmocerino@tropicmoving.com",
+      "address": "727 NORTH DR STE E",
+      "city": "MELBOURNE",
+      "zip": "32934",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "corporate_or_franchise_family_not_auto_same_entity"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3451",
+      "legalName": "TMT BREVARD, INC.",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "321-348-4739",
+      "email": "justin.langston2@twomen.com",
+      "address": "285 NORTH DR STE H",
+      "city": "MELBOURNE",
+      "zip": "32934",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2611",
+      "legalName": "TMT JAX, LLC",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "904-745-0705",
+      "email": "jeremy.king@twomen.com",
+      "address": "9450 PHILIPS HWY STE 1",
+      "city": "JACKSONVILLE",
+      "zip": "32256",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2723",
+      "legalName": "TMT NAPLES LLC",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "239-337-3331",
+      "email": "mark.golden@twomen.com",
+      "address": "17050 CAM CT",
+      "city": "FORT MYERS",
+      "zip": "33967",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4115",
+      "legalName": "TMT NAPLES LLC",
+      "dba": "Two Men And A Truck",
+      "status": "active",
+      "phone": "941-359-1904",
+      "email": "kayla.collins@twomen.com",
+      "address": "7455 16TH ST E STE 107",
+      "city": "SARASOTA",
+      "zip": "34243",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM460",
+      "legalName": "UNITED VAN LINES, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "954-473-5503",
+      "email": "laurel_soykin@unigroup.com",
+      "address": "1200 S PINE ISLAND RD STE 250",
+      "city": "PLANTATION",
+      "zip": "33324",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3872",
+      "legalName": "WE MAKE MOVING EASY, LLC",
+      "dba": "College Hunks Moving",
+      "status": "active",
+      "phone": "850-545-3046",
+      "email": "jimmy.aloi@chhj.com",
+      "address": "5277 TOWER RD STE A3",
+      "city": "TALLAHASSEE",
+      "zip": "32303",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4161",
+      "legalName": "WRWS LLC",
+      "dba": "College Hunks Hauling Junk & Moving Of Daytona",
+      "status": "active",
+      "phone": "540-892-7878",
+      "email": "will.webster@chhj.com",
+      "address": "6695 FLORIDANA AVE",
+      "city": "MELBOURNE BEACH",
+      "zip": "32951",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2492",
+      "legalName": "ZINDAGI ENTERPRISE, LLC.",
+      "dba": "College Hunks Hauling Junk And Moving Of Naples",
+      "status": "active",
+      "phone": "239-777-9175",
+      "email": "joby.pallipatte@chhj.com",
+      "address": "3821 3RD AVE NW",
+      "city": "NAPLES",
+      "zip": "34120",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2068",
+      "legalName": "NBF Moving, LLC",
+      "dba": "Two Men and a Truck",
+      "status": "active",
+      "phone": "(864) 444-2621",
+      "email": "rebecca.feldman@twomen.com",
+      "address": "130 Four Points Way",
+      "city": "Tallahassee",
+      "zip": "32305",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3636",
+      "legalName": "Jacksonville Moving Inc.",
+      "dba": "College Hunks Hauling Junk and Moving",
+      "status": "active",
+      "phone": "(904) 510-5667",
+      "email": "mark.roth@chhj.com",
+      "address": "9836 Beach Boulevard",
+      "city": "Jacksonville",
+      "zip": "32246",
+      "priorClassification": "CORPORATE_FAMILY_REVIEW",
+      "priorReasons": [
+        "franchise_or_network_brand_fail_closed"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CORPORATE_FAMILY_REVIEW",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4211",
+      "legalName": "BUDD VAN LINES, LLC",
+      "dba": null,
+      "status": "active",
+      "phone": "800-833-2833",
+      "email": "carolina@trellisvineconsulting.com",
+      "address": "7901 4TH ST N STE 300",
+      "city": "SAINT PETERSBURG",
+      "zip": "33702",
+      "priorClassification": "CONFLICT",
+      "priorReasons": [
+        "corporate_form_conflict_LLC_vs_INC"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CONFLICT",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM4020",
+      "legalName": "FORWARD VAN LINES INC",
+      "dba": "Brooks Moving And Hauling",
+      "status": "active",
+      "phone": "954-678-4747",
+      "email": "guy@forwardvanlines.com",
+      "address": "1300 N FLORIDA MANGO RD STE 4",
+      "city": "WEST PALM BEACH",
+      "zip": "33409",
+      "priorClassification": "CONFLICT",
+      "priorReasons": [
+        "legal_names_differ"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CONFLICT",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM386",
+      "legalName": "NEWESCO, INC.",
+      "dba": "Nelson Westerberg Of Georgia",
+      "status": "active",
+      "phone": "847-437-2080",
+      "email": "epionke@nelsonwesterberg.com",
+      "address": "429 MEADOW LARK DR",
+      "city": "SARASOTA",
+      "zip": "34236",
+      "priorClassification": "CONFLICT",
+      "priorReasons": [
+        "legal_name_phone_collision"
+      ],
+      "priorCandidateIds": [
+        "usdot-2216183",
+        "usdot-818102"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CONFLICT",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM940",
+      "legalName": "PONTE VEDRA MOVERS INC",
+      "dba": null,
+      "status": "active",
+      "phone": "904-285-9940",
+      "email": "pontevedramovers@bellsouth.net",
+      "address": "4265 MICKLER RD",
+      "city": "PONTE VEDRA BEACH",
+      "zip": "32082",
+      "priorClassification": "CONFLICT",
+      "priorReasons": [
+        "legal_names_differ"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CONFLICT",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM3813",
+      "legalName": "SUDDATH MOVING & STORAGE, LLC",
+      "dba": "Suddath Workplace Solutions",
+      "status": "active",
+      "phone": "904-390-7100",
+      "email": "legal@suddath.com",
+      "address": "2001 SUDDATH PARK STREET",
+      "city": "TAMPA",
+      "zip": "33619",
+      "priorClassification": "CONFLICT",
+      "priorReasons": [
+        "legal_name_email_collision"
+      ],
+      "priorCandidateIds": [
+        "fl-im-4099",
+        "wa-hg-064493"
+      ],
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "CONFLICT",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2994",
+      "legalName": "FORMULA GLOBAL MOBILITY LLC",
+      "dba": "Granero Moving",
+      "status": "active",
+      "phone": "305-960-9997",
+      "email": "quality@formulaglobalmobility.com",
+      "address": "4740 NW 15TH ST STE 3D",
+      "city": "FORT LAUDERDALE",
+      "zip": "33309",
+      "priorClassification": "SOURCE_STATUS_BLOCKED",
+      "priorReasons": [
+        "freshness_STATUS_REFRESH_REQUIRED"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "SOURCE_STATUS_BLOCKED",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM2933",
+      "legalName": "IRON MOUNTAIN INFORMATION MANAGEMENT SERVICES, INC",
+      "dba": null,
+      "status": "active",
+      "phone": "610-831-2566",
+      "email": "ey.lcs@ey.com",
+      "address": "1101 ENTERPRISE DR",
+      "city": "ROYERSFORD",
+      "zip": "19468",
+      "priorClassification": "SOURCE_STATUS_BLOCKED",
+      "priorReasons": [
+        "freshness_STATUS_REFRESH_REQUIRED"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "SOURCE_STATUS_BLOCKED",
+      "google_places_requests": 0
+    },
+    {
+      "fdacsIm": "IM1865",
+      "legalName": "JUST GOOD MOVERS LLC",
+      "dba": "Just Good Movers",
+      "status": "active",
+      "phone": "321-305-8404",
+      "email": "justgoodmovers@gmail.com",
+      "address": "5329 N WICKHAM RD #106",
+      "city": "MELBOURNE",
+      "zip": "32940",
+      "priorClassification": "SOURCE_STATUS_BLOCKED",
+      "priorReasons": [
+        "freshness_STATUS_REFRESH_REQUIRED"
+      ],
+      "priorCandidateIds": null,
+      "sourceProvenance": "fdacs_legacy_xls",
+      "liveClassification": "SOURCE_STATUS_BLOCKED",
+      "google_places_requests": 0
+    }
+  ]
+}
