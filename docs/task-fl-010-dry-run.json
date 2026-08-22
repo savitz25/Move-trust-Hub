@@ -1,0 +1,47 @@
+{
+  "google_places_requests": 0,
+  "apply_executed": false,
+  "dry_run": true,
+  "hash": "a9165ec652ad7a27",
+  "count": 37,
+  "preconditions": {
+    "ok": true,
+    "reasons": []
+  },
+  "delta": {
+    "ok": true,
+    "companies": 0,
+    "indexable": 0,
+    "publicationStateChanges": 37,
+    "psa": 0,
+    "contacts": 0,
+    "trustScore": 0,
+    "keep80CanaryTouched": 0,
+    "applyExecuted": false,
+    "reasons": []
+  },
+  "freeze_before": {
+    "companies": 5908,
+    "indexable": 4905,
+    "ingested": 887,
+    "publishable": 4985,
+    "fl_psa": 1359,
+    "psa_attached": 1124,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80,
+    "wave1_membership": 0
+  },
+  "freeze_after": {
+    "companies": 5908,
+    "indexable": 4905,
+    "ingested": 887,
+    "publishable": 4985,
+    "fl_psa": 1359,
+    "psa_attached": 1124,
+    "canary_fl": 50,
+    "canary_wa": 30,
+    "canary_total": 80,
+    "wave1_membership": 0
+  }
+}
