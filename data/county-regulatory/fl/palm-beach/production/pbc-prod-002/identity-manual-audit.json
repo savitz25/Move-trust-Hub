@@ -1,0 +1,394 @@
+{
+  "task": "PBC-PROD-002",
+  "companies_audited": 43,
+  "wrong_company_credentials": 0,
+  "rows": [
+    {
+      "company_id": "america-s-family-moving-and-storage-llc",
+      "slug": "america-s-family-moving-and-storage-llc",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3378",
+      "slug": "blue-line-moving-llc",
+      "credential_count": 2,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Multi-credential company reviewed; VALID_MULTI_CREDENTIAL unless flagged"
+    },
+    {
+      "company_id": "usdot-2562486",
+      "slug": "good-greek-moving-and-storage",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "usdot-1568346",
+      "slug": "gm-van-lines-inc",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-2520",
+      "slug": "larkins-moving-delivery-inc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-2565",
+      "slug": "qwik-moving-and-storage",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-4147",
+      "slug": "gator-relocators-moving-storage-inc",
+      "credential_count": 2,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Multi-credential company reviewed; VALID_MULTI_CREDENTIAL unless flagged"
+    },
+    {
+      "company_id": "fl-im-3223",
+      "slug": "e-c-moving-delivery-service-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-2731",
+      "slug": "bald-eagle-moving-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3304",
+      "slug": "e-and-c-removal-and-delivery-services-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3048",
+      "slug": "jay-c-moving-company-hauling-cargo-delivery-and-more",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "patriot-moving-and-storage",
+      "slug": "patriot-moving-and-storage",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-2788",
+      "slug": "silver-lining-moving-delivery-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3320",
+      "slug": "1-ashley-furniture-homestore-2-kc-cafe-wine-bar-3-kevin-charles-cafe",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3408",
+      "slug": "bernard-s-reliable-moving-service-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3418",
+      "slug": "juan-got-you-moving-inc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-2770",
+      "slug": "stable-solutions-fla-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-2932",
+      "slug": "established-moving-of-south-florida-inc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3417",
+      "slug": "allexcellent-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-400",
+      "slug": "u-me-moving-storage",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "whatamove",
+      "slug": "whatamove",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3903",
+      "slug": "csv-moving-and-delivery-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "usdot-709590",
+      "slug": "forward-van-lines",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3867",
+      "slug": "moving-with-sebastian-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-4097",
+      "slug": "champions-moving-and-storage-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-114",
+      "slug": "merritt-transfer-and-storage-co-inc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-2589",
+      "slug": "perez-brothers-moving-inc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-688",
+      "slug": "smooth-movers-inc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "usdot-1917905",
+      "slug": "willie-s-transfer-storage",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-893",
+      "slug": "quicksilver-services-corp",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3185",
+      "slug": "express-moving-usa-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-182",
+      "slug": "brandon-transfer-storage-co-inc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "usdot-3034432",
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "credential_count": 2,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Multi-credential company reviewed; VALID_MULTI_CREDENTIAL unless flagged"
+    },
+    {
+      "company_id": "fl-im-1058",
+      "slug": "supreme-relocation-inc",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-408",
+      "slug": "designers-logistics-support-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-756",
+      "slug": "dixon-moving",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "usdot-381994",
+      "slug": "joseph-barton",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-1399",
+      "slug": "pack-on-the-go-inc",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-2182",
+      "slug": "tk-fine-arts-services",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-88",
+      "slug": "dependable-pro-movers-inc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-3437",
+      "slug": "village-moving-services-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "usdot-3199979",
+      "slug": "father-son-moving-storage",
+      "credential_count": 1,
+      "publication_state": "PUBLISHABLE",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    },
+    {
+      "company_id": "fl-im-1913",
+      "slug": "aa-condo-movers-llc",
+      "credential_count": 1,
+      "publication_state": "INGESTED",
+      "audited": true,
+      "wrong_company": false,
+      "notes": "Single-credential company; live revalidation exact"
+    }
+  ]
+}

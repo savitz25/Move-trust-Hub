@@ -1,0 +1,1036 @@
+{
+  "task": "PBC-PROD-002",
+  "required_fields": [
+    "credential_number",
+    "company_id",
+    "fdacs_im",
+    "source_status",
+    "source",
+    "retrieved_at",
+    "match_method",
+    "ruleset_version",
+    "evidence_publication_state"
+  ],
+  "optional_fields": [
+    "issue_date",
+    "expiration_date",
+    "legal_name",
+    "dba_name",
+    "source_url"
+  ],
+  "required_complete": 46,
+  "rows": [
+    {
+      "credential_number": "MV1029",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1062",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1097",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1108",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1123",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1128",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1130",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1132",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1147",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1174",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1175",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1184",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1191",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1210",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1224",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1226",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1229",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1231",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1238",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1241",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1244",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV13",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1315",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1316",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1323",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1325",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV1328",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV15",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV18",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV23",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV3",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV344",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV367",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV47",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV50",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV624",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV747",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV75",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV773",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV802",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV809",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV86",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV868",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV890",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV954",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    },
+    {
+      "credential_number": "MV969",
+      "required_ok": true,
+      "required": {
+        "credential_number": true,
+        "company_id": true,
+        "fdacs_im": true,
+        "source_status": true,
+        "source": true,
+        "retrieved_at": true,
+        "match_method": true,
+        "ruleset_version": true,
+        "evidence_publication_state": true
+      },
+      "optional": {
+        "issue_date": true,
+        "expiration_date": true,
+        "legal_name": true,
+        "dba_name": false,
+        "source_url": true
+      }
+    }
+  ]
+}

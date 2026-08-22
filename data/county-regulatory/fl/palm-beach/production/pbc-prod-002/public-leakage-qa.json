@@ -1,0 +1,16 @@
+{
+  "task": "PBC-PROD-002",
+  "retrieved_at": "2026-08-22T17:35:00.000Z",
+  "host": "https://www.movetrusthub.com",
+  "profile_county_mv_exposure": 0,
+  "directory_exposure": 0,
+  "search_exposure": 0,
+  "compare_exposure": 0,
+  "public_api_exposure": 0,
+  "json_ld_exposure": 0,
+  "og_exposure": 0,
+  "county_page_exposure": 0,
+  "probed_canary_profiles": 5,
+  "leaks_found": 0,
+  "note": "PBC-PROD-002 publishes nothing; INTERNAL_ONLY remains closed."
+}

@@ -1,0 +1,331 @@
+{
+  "task": "PBC-PROD-002",
+  "distribution": {
+    "CURRENT": 46
+  },
+  "rows": [
+    {
+      "credential_number": "MV1029",
+      "company_id": "america-s-family-moving-and-storage-llc",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1062",
+      "company_id": "fl-im-3378",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1097",
+      "company_id": "usdot-2562486",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1108",
+      "company_id": "usdot-1568346",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1123",
+      "company_id": "fl-im-2520",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1128",
+      "company_id": "fl-im-2565",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1130",
+      "company_id": "fl-im-4147",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1132",
+      "company_id": "fl-im-3223",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1147",
+      "company_id": "fl-im-2731",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1174",
+      "company_id": "fl-im-4147",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1175",
+      "company_id": "fl-im-3304",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1184",
+      "company_id": "fl-im-3048",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1191",
+      "company_id": "patriot-moving-and-storage",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1210",
+      "company_id": "fl-im-2788",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1224",
+      "company_id": "fl-im-3320",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1226",
+      "company_id": "fl-im-3408",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1229",
+      "company_id": "fl-im-3378",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1231",
+      "company_id": "fl-im-3418",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1238",
+      "company_id": "fl-im-2770",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1241",
+      "company_id": "fl-im-2932",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1244",
+      "company_id": "fl-im-3417",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV13",
+      "company_id": "fl-im-400",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1315",
+      "company_id": "whatamove",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1316",
+      "company_id": "fl-im-3903",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1323",
+      "company_id": "usdot-709590",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1325",
+      "company_id": "fl-im-3867",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV1328",
+      "company_id": "fl-im-4097",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV15",
+      "company_id": "fl-im-114",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV18",
+      "company_id": "fl-im-2589",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV23",
+      "company_id": "fl-im-688",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV3",
+      "company_id": "usdot-1917905",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV344",
+      "company_id": "fl-im-893",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV367",
+      "company_id": "fl-im-3185",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV47",
+      "company_id": "fl-im-182",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV50",
+      "company_id": "usdot-3034432",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV624",
+      "company_id": "fl-im-1058",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV747",
+      "company_id": "fl-im-408",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV75",
+      "company_id": "fl-im-756",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV773",
+      "company_id": "usdot-381994",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV802",
+      "company_id": "fl-im-1399",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV809",
+      "company_id": "fl-im-2182",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV86",
+      "company_id": "fl-im-88",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV868",
+      "company_id": "usdot-3034432",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV890",
+      "company_id": "fl-im-3437",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV954",
+      "company_id": "usdot-3199979",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    },
+    {
+      "credential_number": "MV969",
+      "company_id": "fl-im-1913",
+      "retrieved_at": "2026-08-21T17:36:35.678Z",
+      "days_since_retrieval": 0,
+      "class": "CURRENT"
+    }
+  ],
+  "threshold_note": "CURRENT<=30d; ACCEPTABLE_FOR_CANARY<=90d; REFRESH_REQUIRED<=180d; else STALE. Wave A retrieved_at is research ingest timestamp."
+}

@@ -1,0 +1,633 @@
+{
+  "task": "PBC-PROD-002",
+  "counts": {
+    "READY_FOR_PUBLICATION_CANARY": 12,
+    "WITHHOLD_IDENTITY": 31
+  },
+  "rows": [
+    {
+      "company_id": "america-s-family-moving-and-storage-llc",
+      "slug": "america-s-family-moving-and-storage-llc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV1029"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-3378",
+      "slug": "blue-line-moving-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 2,
+      "credentials": [
+        "MV1062",
+        "MV1229"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "usdot-2562486",
+      "slug": "good-greek-moving-and-storage",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV1097"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "usdot-1568346",
+      "slug": "gm-van-lines-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV1108"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-2520",
+      "slug": "larkins-moving-delivery-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1123"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-2565",
+      "slug": "qwik-moving-and-storage",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1128"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-4147",
+      "slug": "gator-relocators-moving-storage-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 2,
+      "credentials": [
+        "MV1130",
+        "MV1174"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3223",
+      "slug": "e-c-moving-delivery-service-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1132"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-2731",
+      "slug": "bald-eagle-moving-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1147"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3304",
+      "slug": "e-and-c-removal-and-delivery-services-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1175"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3048",
+      "slug": "jay-c-moving-company-hauling-cargo-delivery-and-more",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1184"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "patriot-moving-and-storage",
+      "slug": "patriot-moving-and-storage",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV1191"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-2788",
+      "slug": "silver-lining-moving-delivery-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1210"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3320",
+      "slug": "1-ashley-furniture-homestore-2-kc-cafe-wine-bar-3-kevin-charles-cafe",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1224"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3408",
+      "slug": "bernard-s-reliable-moving-service-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1226"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3418",
+      "slug": "juan-got-you-moving-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1231"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-2770",
+      "slug": "stable-solutions-fla-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1238"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-2932",
+      "slug": "established-moving-of-south-florida-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1241"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3417",
+      "slug": "allexcellent-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1244"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-400",
+      "slug": "u-me-moving-storage",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV13"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "whatamove",
+      "slug": "whatamove",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV1315"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-3903",
+      "slug": "csv-moving-and-delivery-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1316"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "usdot-709590",
+      "slug": "forward-van-lines",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV1323"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-3867",
+      "slug": "moving-with-sebastian-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1325"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-4097",
+      "slug": "champions-moving-and-storage-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV1328"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-114",
+      "slug": "merritt-transfer-and-storage-co-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV15"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-2589",
+      "slug": "perez-brothers-moving-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV18"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-688",
+      "slug": "smooth-movers-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV23"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "usdot-1917905",
+      "slug": "willie-s-transfer-storage",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV3"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-893",
+      "slug": "quicksilver-services-corp",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV344"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3185",
+      "slug": "express-moving-usa-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV367"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-182",
+      "slug": "brandon-transfer-storage-co-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV47"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "usdot-3034432",
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 2,
+      "credentials": [
+        "MV50",
+        "MV868"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-1058",
+      "slug": "supreme-relocation-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV624"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-408",
+      "slug": "designers-logistics-support-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV747"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-756",
+      "slug": "dixon-moving",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV75"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "usdot-381994",
+      "slug": "joseph-barton",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV773"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-1399",
+      "slug": "pack-on-the-go-inc",
+      "publication_state": "PUBLISHABLE",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV802"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-2182",
+      "slug": "tk-fine-arts-services",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV809"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-88",
+      "slug": "dependable-pro-movers-inc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV86"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "fl-im-3437",
+      "slug": "village-moving-services-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV890"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    },
+    {
+      "company_id": "usdot-3199979",
+      "slug": "father-son-moving-storage",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "credential_count": 1,
+      "credentials": [
+        "MV954"
+      ],
+      "class": "READY_FOR_PUBLICATION_CANARY",
+      "withhold_reasons": [],
+      "publicly_reachable": true
+    },
+    {
+      "company_id": "fl-im-1913",
+      "slug": "aa-condo-movers-llc",
+      "publication_state": "INGESTED",
+      "indexable": false,
+      "credential_count": 1,
+      "credentials": [
+        "MV969"
+      ],
+      "class": "WITHHOLD_IDENTITY",
+      "withhold_reasons": [
+        "COMPANY_NOT_ANONYMOUSLY_PUBLIC"
+      ],
+      "publicly_reachable": false
+    }
+  ]
+}

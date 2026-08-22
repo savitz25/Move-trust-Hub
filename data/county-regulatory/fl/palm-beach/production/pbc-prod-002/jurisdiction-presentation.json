@@ -1,0 +1,29 @@
+{
+  "task": "PBC-PROD-002",
+  "hierarchy": ["FEDERAL", "STATE", "COUNTY"],
+  "profile_order": [
+    {
+      "layer": "FEDERAL",
+      "label": "FMCSA / USDOT",
+      "source": "existing federal evidence"
+    },
+    {
+      "layer": "STATE",
+      "label": "Florida FDACS household goods authority",
+      "source": "provider_state_authority (STATE only)"
+    },
+    {
+      "layer": "COUNTY",
+      "label": "Palm Beach County Moving Permit",
+      "source": "provider_county_credential when PUBLISHED"
+    }
+  ],
+  "rules": [
+    "Do not imply county credential confers interstate authority",
+    "Do not imply FDACS confers county permit",
+    "Do not collapse jurisdictions into one licensed badge",
+    "Omit county block entirely while evidence is INTERNAL_ONLY"
+  ],
+  "multi_credential_presentation": "LIST_ALL_CURRENT_DISTINCT_PERMITS",
+  "multi_credential_note": "Valid multi-permit companies list each distinct MV with shared regulator/status context; no unexplained duplicates"
+}

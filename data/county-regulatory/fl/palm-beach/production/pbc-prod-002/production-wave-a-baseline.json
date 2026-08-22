@@ -1,0 +1,24 @@
+{
+  "task": "PBC-PROD-002",
+  "retrieved_at": "2026-08-22T17:33:01.872Z",
+  "wave_id": "PBC_COUNTY_CREDENTIAL_WAVE_A_INTERNAL_V1",
+  "manifest_hash": "39c66453d512203e3cf0fb5d2942dc9d7581ee2a7f63052092a1a70d75e5d871",
+  "credentials": 46,
+  "companies": 43,
+  "internal_only": 46,
+  "publication_eligible": 0,
+  "published": 0,
+  "orphans": 0,
+  "duplicates": 0,
+  "duplicate_rows": [],
+  "expected": {
+    "credentials": 46,
+    "companies": 43,
+    "internal_only": 46,
+    "publication_eligible": 0,
+    "published": 0,
+    "duplicates": 0,
+    "orphans": 0
+  },
+  "match": true
+}

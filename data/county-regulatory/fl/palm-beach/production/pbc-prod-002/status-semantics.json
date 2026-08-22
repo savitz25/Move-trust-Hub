@@ -1,0 +1,24 @@
+{
+  "task": "PBC-PROD-002",
+  "regulator": "Palm Beach County Public Safety — Consumer Affairs Division",
+  "source_status_counts": {
+    "LICENSED": 46
+  },
+  "public_normalization": {
+    "LICENSED": {
+      "public_label": "Active county moving-business permit",
+      "safe": true,
+      "notes": "Source reports LICENSED; preserve permit terminology, not license endorsement"
+    }
+  },
+  "forbidden_public_terms": [
+    "licensed by MoveTrustHub",
+    "approved",
+    "certified",
+    "safe",
+    "recommended",
+    "fully compliant",
+    "legitimate mover"
+  ],
+  "preferred_noun": "permit"
+}
