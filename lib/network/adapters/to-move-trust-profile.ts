@@ -7,6 +7,10 @@ import {
   type TrustSourceRef,
 } from '@/lib/network/trust-profile';
 import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
+import {
+  FL_FDACS_VERIFICATION_WORDING,
+} from '@/lib/state-hhg/fl/profile-presentation';
+import { shouldRenderFloridaStateWaveChrome } from '@/lib/state-hhg/fl/wave-1';
 
 /**
  * Map a Move Trust Hub company into the shared Trust Profile shell.
@@ -14,9 +18,17 @@ import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
 export function toMoveTrustProfile(company: Company): TrustProfileShell {
   const verification = getCompanyVerificationStatus(company);
   const sources: TrustSourceRef[] = [];
+  const waveChrome = shouldRenderFloridaStateWaveChrome({
+    id: company.id,
+    publicationState: company.publicationState,
+  });
+  const hasFederalId = Boolean(company.usdotNumber?.trim() || company.mcNumber?.trim());
 
   const fmcsaStatus = verification.fmcsa;
-  if (fmcsaStatus === 'verified' || fmcsaStatus === 'warning' || fmcsaStatus === 'critical') {
+  const emitFmcsaChip =
+    (fmcsaStatus === 'verified' || fmcsaStatus === 'warning' || fmcsaStatus === 'critical') &&
+    !(waveChrome && !hasFederalId);
+  if (emitFmcsaChip) {
     sources.push({
       id: 'fmcsa',
       label: 'FMCSA / SAFER',
@@ -36,6 +48,15 @@ export function toMoveTrustProfile(company: Company): TrustProfileShell {
           : fmcsaStatus === 'warning'
             ? 'Safety rating needs attention — re-check SAFER'
             : 'Authority and safety context from public FMCSA records',
+    });
+  }
+
+  if (waveChrome) {
+    sources.unshift({
+      id: 'fdacs',
+      label: 'Florida FDACS',
+      status: 'verified',
+      note: 'Intrastate household-goods registration — not an FMCSA endorsement',
     });
   }
   // Prefer hide: do not emit unverified FMCSA chips (re-check SAFER via primary label / extensions)
@@ -78,6 +99,15 @@ export function toMoveTrustProfile(company: Company): TrustProfileShell {
     company.physicalAddress?.trim() || company.headquarters?.trim() || undefined;
 
   const fmcsaOk = fmcsaStatus === 'verified' || fmcsaStatus === 'warning';
+  const primaryLabel = waveChrome
+    ? FL_FDACS_VERIFICATION_WORDING
+    : fmcsaStatus === 'critical'
+      ? 'FMCSA record reviewed — check authority carefully'
+      : fmcsaOk
+        ? 'FMCSA authority checked'
+        : verification.directoryVerified
+          ? 'Directory listing verified'
+          : 'Verify USDOT on FMCSA SAFER';
 
   return {
     hub: 'move',
@@ -87,15 +117,8 @@ export function toMoveTrustProfile(company: Company): TrustProfileShell {
     profileUrl: hubCanonicalUrl('move', `/companies/${company.slug}`),
     serviceScope: scope,
     verification: {
-      primaryLabel:
-        fmcsaStatus === 'critical'
-          ? 'FMCSA record reviewed — check authority carefully'
-          : fmcsaOk
-            ? 'FMCSA authority checked'
-            : verification.directoryVerified
-              ? 'Directory listing verified'
-              : 'Verify USDOT on FMCSA SAFER',
-      isVerified: Boolean(verification.directoryVerified || fmcsaOk),
+      primaryLabel,
+      isVerified: waveChrome ? true : Boolean(verification.directoryVerified || fmcsaOk),
       sources,
     },
     reputation: score
