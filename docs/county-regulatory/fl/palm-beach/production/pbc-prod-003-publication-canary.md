@@ -1,6 +1,13 @@
 # PBC-PROD-003 — Palm Beach County Credential Controlled Publication Canary
 
-**Target status:** `PBC CREDENTIAL CANARY PUBLISHED — OBSERVATION ACTIVE`
+**Status:** `PBC CREDENTIAL CANARY PUBLISHED — OBSERVATION ACTIVE`
+
+| Field | Value |
+|---|---|
+| Implementation PR | [#74](https://github.com/savitz25/Move-trust-Hub/pull/74) merge `2fc416c2` |
+| Cache hotfix PR | [#75](https://github.com/savitz25/Move-trust-Hub/pull/75) merge `c3ea773a` |
+| Manifest hash | `f9d56097fa4b2d1c6dfb729e208a6d13c7b75d5ecac13b674a77b3240a167b3f` |
+| Published / Internal | **11 / 35** (46 total) |
 
 ## Hard rules
 
