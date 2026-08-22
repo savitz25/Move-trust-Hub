@@ -1,0 +1,24 @@
+{
+  "task": "MDC-PROD-002",
+  "department": "Miami-Dade Department of Regulatory and Economic Resources (RER)",
+  "division": "Consumer and Neighborhood Protection Division",
+  "program_name": "Moving Business Registration / License",
+  "public_credential_type": "Miami-Dade Moving Business Registration",
+  "identifier_format": "MR-#####",
+  "raw_source_status": "Issued",
+  "normalized_status": "ISSUED",
+  "consumer_status_label": "Issued county moving-business registration",
+  "do_not_strengthen_to": [
+    "Licensed",
+    "Fully licensed",
+    "Approved"
+  ],
+  "source_url": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+  "disclaimer": "Regulatory record verification is not a MoveTrustHub endorsement.",
+  "hierarchy": {
+    "federal": "FMCSA",
+    "state": "FDACS Chapter 507",
+    "county": "Miami-Dade MR",
+    "lbt": "NOT mover authority"
+  }
+}
