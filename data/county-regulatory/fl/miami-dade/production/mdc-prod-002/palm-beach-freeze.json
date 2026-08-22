@@ -1,0 +1,13 @@
+{
+  "task": "MDC-PROD-002",
+  "total": 46,
+  "published": 11,
+  "internal_only": 35,
+  "expected": {
+    "total": 46,
+    "published": 11,
+    "internal_only": 35
+  },
+  "pbc_prod_004_clock_unchanged": true,
+  "pass": true
+}

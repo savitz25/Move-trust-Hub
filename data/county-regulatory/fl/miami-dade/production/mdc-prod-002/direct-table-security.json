@@ -1,0 +1,7 @@
+{
+  "task": "MDC-PROD-002",
+  "anon_select": "DENIED",
+  "authenticated_select": "DENIED",
+  "recommend_broad_anon_published_policy": false,
+  "future_path": "controlled server-side read only"
+}

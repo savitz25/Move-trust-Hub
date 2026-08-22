@@ -1,0 +1,17 @@
+{
+  "task": "MDC-PROD-002",
+  "location": "Trust/Profile regulatory section",
+  "hierarchy": [
+    "Federal FMCSA/USDOT",
+    "State FDACS",
+    "County Miami-Dade MR"
+  ],
+  "not_in": [
+    "hero badge",
+    "star rating",
+    "Trust Score badge",
+    "company name chrome",
+    "search card badge"
+  ],
+  "initial_canary": "PROFILE_ONLY"
+}

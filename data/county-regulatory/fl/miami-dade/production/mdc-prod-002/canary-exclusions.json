@@ -1,0 +1,13 @@
+{
+  "task": "MDC-PROD-002",
+  "excluded": [
+    "INGESTED companies",
+    "stale MR",
+    "ambiguous status",
+    "identity-review",
+    "multi-license ambiguity",
+    "unsupported date semantics",
+    "unresolved legal entity complexity"
+  ],
+  "do_not_force_count": true
+}

@@ -1,0 +1,26 @@
+{
+  "task": "MDC-PROD-002",
+  "safe_fields": [
+    "jurisdiction",
+    "regulator",
+    "credentialType",
+    "credentialNumber",
+    "status",
+    "statusPublicLabel",
+    "sourceName",
+    "sourceReferenceUrl",
+    "retrievedAt",
+    "disclaimer"
+  ],
+  "never_expose": [
+    "manifestHash",
+    "matchScores",
+    "internalQaNotes",
+    "rawIdentityReasoning",
+    "internalSourceKeys",
+    "serviceRoleMetadata",
+    "waveId",
+    "matchMethod",
+    "rulesetVersion"
+  ]
+}

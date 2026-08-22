@@ -1,0 +1,8 @@
+{
+  "task": "MDC-PROD-002",
+  "audited": 70,
+  "method": "full cohort revalidation + DBA/legal-name review via committed crosswalk",
+  "wrong_company": 0,
+  "complex_legal_names_noted": 31,
+  "pass": true
+}

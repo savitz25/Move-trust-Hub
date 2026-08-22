@@ -1,0 +1,24 @@
+{
+  "task": "MDC-PROD-002",
+  "mode": "simulate-only",
+  "apply": false,
+  "credential_transitions": {
+    "from": "INTERNAL_ONLY",
+    "to": "PUBLISHED",
+    "count": 9
+  },
+  "companies": 0,
+  "company_publication": 0,
+  "indexable": 0,
+  "psa": 0,
+  "contacts": 0,
+  "lbt": 0,
+  "complaints": 0,
+  "enforcement": 0,
+  "trust_score": 0,
+  "ranking": 0,
+  "sitemap": 0,
+  "json_ld": 0,
+  "og_share": 0,
+  "palm_beach": 0
+}

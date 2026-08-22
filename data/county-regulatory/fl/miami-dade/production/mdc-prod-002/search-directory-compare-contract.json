@@ -1,0 +1,10 @@
+{
+  "task": "MDC-PROD-002",
+  "initial_publication_surface": "PROFILE_ONLY",
+  "search_ranking_delta": 0,
+  "directory_ranking_delta": 0,
+  "search_eligibility_delta": 0,
+  "directory_eligibility_delta": 0,
+  "compare_eligibility_delta": 0,
+  "county_page_eligibility_delta": 0
+}
