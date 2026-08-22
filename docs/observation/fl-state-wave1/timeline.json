@@ -37,6 +37,31 @@
       "kind": "FL011_SNAPSHOT",
       "production_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
       "note": "Wave contracts hold; Trust Profile shell empty-state Verify USDOT on FMCSA SAFER on 37/37"
+    },
+    {
+      "at": "2026-08-22T16:06:11.000Z",
+      "kind": "MAIN_MERGE",
+      "production_sha": "f2c3df6d0f0ad0c0549ce74d68e5737fc1b5c75f",
+      "note": "PR #65 FL-011 observation audit merged (docs/QA only)"
+    },
+    {
+      "at": "2026-08-22T16:17:34.000Z",
+      "kind": "MAIN_MERGE",
+      "production_sha": "cf42ae005ab2e616f10342b19a40692132410601",
+      "note": "PR #66 FL-011A FDACS shell empty-state remediation merged"
+    },
+    {
+      "at": "2026-08-22T16:17:36.976Z",
+      "kind": "PRODUCTION_SHA_TRANSITION",
+      "production_sha": "cf42ae005ab2e616f10342b19a40692132410601",
+      "deployment_id": "dpl_8M3BR2aQAWc42bjf5CBQANGiPxHW",
+      "note": "Canonical production serving FL-011A merge SHA"
+    },
+    {
+      "at": "2026-08-22T16:25:46.216Z",
+      "kind": "FL011A_RECOVERY_SNAPSHOT",
+      "production_sha": "cf42ae005ab2e616f10342b19a40692132410601",
+      "note": "OBSERVATION HEALTHY — CONTINUE; Verify USDOT shell 0/37; FDACS shell 37/37; clock not reset"
     }
   ]
 }

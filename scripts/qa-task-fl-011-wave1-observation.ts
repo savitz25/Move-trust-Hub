@@ -52,7 +52,7 @@ const SITEMAPS = [
 const SEARCH_QUERIES = ['gentletouch', 'clover systems', 'adios moving', 'keys movers'];
 
 const PROHIBITED =
-  /TrustHub Approved|Certified by TrustHub|cannot move interstate|not federally licensed|no USDOT exists/i;
+  /TrustHub Approved|Approved mover|Certified by TrustHub|Safe mover|Recommended mover|TrustHub Verified|Verified mover|cannot move interstate|not federally licensed|no USDOT exists/i;
 
 type Probe = {
   path: string;
@@ -66,6 +66,9 @@ type Probe = {
   fdacsImExact: boolean;
   noFederalIdCopy: boolean;
   verifyUsdOtEmptyState: boolean;
+  fdacsShellLabel: boolean;
+  fdacsSourceChip: boolean;
+  fmcsaSaferChip: boolean;
   fmcsaHeadline: boolean;
   licensingCard: boolean;
   phoneLabel: boolean;
@@ -155,6 +158,9 @@ async function probeProfile(slug: string, fdacsIm?: string): Promise<Probe> {
     fdacsImExact: im ? im.test(text) : false,
     noFederalIdCopy: /No federal mover identifier is currently linked/i.test(text),
     verifyUsdOtEmptyState: /Verify USDOT on FMCSA SAFER/i.test(text),
+    fdacsShellLabel: /Registration verified from Florida FDACS records/i.test(text),
+    fdacsSourceChip: /Florida FDACS/.test(text),
+    fmcsaSaferChip: /FMCSA \/ SAFER/.test(text),
     fmcsaHeadline: /FMCSA Profile/i.test(title),
     licensingCard: /Licensing &amp; Compliance|Licensing & Compliance/i.test(text),
     phoneLabel: /Phone reported in Florida FDACS registration/i.test(text),
@@ -363,6 +369,9 @@ async function main() {
   const fdacsExact = wave.filter((p) => p.fdacsImExact).length;
   const sitemapWaveHits = [...new Set(sitemaps.flatMap((s) => s.hits))];
   const verifyUsdOt = wave.filter((p) => p.verifyUsdOtEmptyState).length;
+  const fdacsShell = wave.filter((p) => p.fdacsShellLabel).length;
+  const fdacsChip = wave.filter((p) => p.fdacsSourceChip).length;
+  const fmcsaChip = wave.filter((p) => p.fmcsaSaferChip).length;
   const keep200 = keep80.filter((p) => p.status === 200).length;
   const keepNoindex = keep80.filter((p) => p.noindex).length;
   const keepFdacs = keep80.filter((p) => p.floridaChrome || p.fdacsBlock).length;
@@ -388,7 +397,7 @@ async function main() {
   const fdacsOk = fdacsExact === 37;
   const keepOk = keep200 === 80 && keepNoindex === 80 && keepFdacs === 0;
   const chromeOk = florida === 37 && wave.filter((p) => p.prohibited).length === 0;
-  const shellOk = verifyUsdOt === 0;
+  const shellOk = verifyUsdOt === 0 && fdacsShell === 37 && fdacsChip === 37 && fmcsaChip === 0;
 
   let status: 'OBSERVATION HEALTHY — CONTINUE' | 'OBSERVATION DEGRADED — REMEDIATION REQUIRED' | 'ROLLED_BACK' =
     'OBSERVATION HEALTHY — CONTINUE';
@@ -429,6 +438,9 @@ async function main() {
       florida_chrome: florida,
       fdacs_exact: fdacsExact,
       verify_usdot_empty_state: verifyUsdOt,
+      fdacs_shell_label: fdacsShell,
+      fdacs_source_chip: fdacsChip,
+      fmcsa_safer_chip: fmcsaChip,
       prohibited: wave.filter((p) => p.prohibited).map((p) => p.path),
       jsonld_parsed: wave.filter((p) => p.jsonLdParsed).length,
       jsonld_aggregate_rating: wave.filter((p) => p.jsonLdAggregateRating).length,
@@ -492,7 +504,13 @@ async function main() {
     })),
   };
 
-  const snapshotPath = resolve(OUT_DIR, `snapshot-${SNAPSHOT_DATE}.json`);
+  const requested = process.env.FL011_SNAPSHOT;
+  let snapshotFile = requested || `snapshot-${SNAPSHOT_DATE}.json`;
+  let snapshotPath = resolve(OUT_DIR, snapshotFile);
+  if (!requested && existsSync(snapshotPath)) {
+    snapshotFile = `snapshot-${SNAPSHOT_DATE}-recovery.json`;
+    snapshotPath = resolve(OUT_DIR, snapshotFile);
+  }
   writeFileSync(snapshotPath, JSON.stringify(snapshot, null, 2) + '\n');
 
   const baselinePath = resolve(OUT_DIR, 'baseline-launch.json');
@@ -522,7 +540,7 @@ async function main() {
     keep80: `${keep200}/80`,
     directory_cache: directoryCache,
     observation: window,
-    snapshot: `docs/observation/fl-state-wave1/snapshot-${SNAPSHOT_DATE}.json`,
+    snapshot: `docs/observation/fl-state-wave1/${snapshotFile}`,
   };
   writeFileSync(resolve(OUT_DIR, 'observation-summary.json'), JSON.stringify(summary, null, 2) + '\n');
 
