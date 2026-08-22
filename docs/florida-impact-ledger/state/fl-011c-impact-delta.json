@@ -1,0 +1,20 @@
+{
+  "google_places_requests": 0,
+  "discovered": {
+    "target_active_im": 281,
+    "existing_canonical_links": 81,
+    "new_canonical_company_ready": 32,
+    "unresolved": 168,
+    "emails_observed": 278,
+    "phones_observed": 281,
+    "addresses_observed": 281,
+    "fdacs_authorities_represented": 281,
+    "federal_state_deterministic_links": 0,
+    "state_only_new_ready": 32,
+    "rejected_or_held": 168
+  },
+  "canonicalized": 0,
+  "publicly_published": 0,
+  "production_writes": 0,
+  "public_publication_change": 0
+}

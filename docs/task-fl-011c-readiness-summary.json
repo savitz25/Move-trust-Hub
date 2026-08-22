@@ -1,0 +1,73 @@
+{
+  "google_places_requests": 0,
+  "production_db_writes": 0,
+  "apply": false,
+  "gap": {
+    "google_places_requests": 0,
+    "ruleset": "FL_STATE_ACTIVE_IM_CANONICALIZATION_GAP_V1",
+    "historical_target": 281,
+    "current_target": 281,
+    "as_of": "2026-08-22",
+    "apply": false
+  },
+  "classification": {
+    "CONFLICT": 5,
+    "CORPORATE_FAMILY_REVIEW": 46,
+    "EXISTING_CANONICAL_LINK_READY": 81,
+    "NEW_CANONICAL_COMPANY_READY": 32,
+    "POSSIBLE_DUPLICATE": 114,
+    "SOURCE_STATUS_BLOCKED": 3
+  },
+  "draft": {
+    "hash": "491de1629fa00c44",
+    "link_count": 81,
+    "insert_count": 32,
+    "total": 113,
+    "apply": false
+  },
+  "contact": {
+    "google_places_requests": 0,
+    "n": 281,
+    "with_phone": 281,
+    "with_email": 278,
+    "with_address": 281,
+    "unique_phones": 273,
+    "unique_emails": 265,
+    "note": "SOURCE OBSERVATIONS only — not canonical overwrites"
+  },
+  "simulated": {
+    "google_places_requests": 0,
+    "apply": false,
+    "companies_inserted": 32,
+    "psa_links": 81,
+    "publication_state": "INGESTED",
+    "indexable": false,
+    "public_routes": "HTTP 404 after future internal ingest",
+    "sitemap": 0,
+    "directory": 0,
+    "compare": 0,
+    "county_discovery": 0
+  },
+  "new_ready_city_distribution": {
+    "MIAMI": 3,
+    "SAVANNAH": 2,
+    "MIDLAND CITY": 2,
+    "OKLAHOMA CITY": 1,
+    "TAVARES": 1,
+    "FORSYTH": 1,
+    "SAINT PAUL": 1,
+    "WESLEY CHAPEL": 1,
+    "EAGLE LAKE": 1,
+    "DEERFIELD BEACH": 1,
+    "AUSTIN": 1,
+    "MASON": 1,
+    "ATHOL": 1,
+    "APOPKA": 1,
+    "CLERMONT": 1,
+    "SUFFOLK": 1,
+    "FAIRFAX": 1,
+    "CLARKSBURG": 1,
+    "PINE BROOK": 1,
+    "CHICAGO": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "google_places_requests": 0,
+  "n": 281,
+  "with_phone": 281,
+  "with_email": 278,
+  "with_address": 281,
+  "unique_phones": 273,
+  "unique_emails": 265,
+  "note": "SOURCE OBSERVATIONS only — not canonical overwrites"
+}
