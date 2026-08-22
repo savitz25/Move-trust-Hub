@@ -1,0 +1,39 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "implementation_in_c009": false,
+  "internal": {
+    "authz": "service_or_staff_only",
+    "may_return_internal_only": true,
+    "resources": [
+      "programs",
+      "credentials",
+      "complaints",
+      "dispositions",
+      "enforcement"
+    ]
+  },
+  "public": {
+    "enabled_in_wave_a_first_ingest": false,
+    "must_filter": [
+      "evidence_publication_state in PUBLICATION_ELIGIBLE|PUBLISHED",
+      "company publicly reachable",
+      "not WITHHELD"
+    ],
+    "must_not_include": [
+      "INTERNAL_ONLY rows",
+      "consumer_pii",
+      "complaint-free claims",
+      "trust_score fields derived from county evidence"
+    ]
+  },
+  "credential_response_required_fields": [
+    "jurisdiction",
+    "credential_type",
+    "credential_number",
+    "status",
+    "source",
+    "retrieved_at",
+    "evidence_publication_state"
+  ]
+}

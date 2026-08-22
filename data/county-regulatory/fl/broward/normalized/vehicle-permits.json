@@ -1,0 +1,17 @@
+{
+  "task": "FL-C004",
+  "completeness_classification": "PRA_REQUIRED",
+  "row_count": 0,
+  "records": [],
+  "schema_example_from_application": {
+    "source_record_id_pattern": "FL-BROWARD-VEHICLE-DECAL-{permit_or_vin}",
+    "fields": [
+      "vin",
+      "license_tag",
+      "gvw",
+      "permit_number_last6",
+      "decal_status",
+      "parent_mover_registration"
+    ]
+  }
+}

@@ -1,0 +1,628 @@
+{
+  "source": "fdacs-legacy-im-active.json",
+  "filter": "Pinellas County municipalities only",
+  "count": 69,
+  "records": [
+    {
+      "im": "IM2736",
+      "name": "123 MOVING FLORIDA LLC",
+      "dba": "",
+      "address": "631 BLUE TAVERNA LN, CLEARWATER, FL 33756-5351",
+      "city": "CLEARWATER",
+      "phone": "727-471-6123",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4149",
+      "name": "1TRUCK 2MOVERS LLC",
+      "dba": "",
+      "address": "334 E LAKE RD, PALM HARBOR, FL 34685-2427",
+      "city": "PALM HARBOR",
+      "phone": "800-314-0246",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3657",
+      "name": "727 MOVING LLC",
+      "dba": "Moving Match",
+      "address": "334 E LAKE RD S, PALM HARBOR, FL 34685-2427",
+      "city": "PALM HARBOR",
+      "phone": "727-487-2076",
+      "status": "Registered"
+    },
+    {
+      "im": "IM1979",
+      "name": "A-1 AFFORDABLE MOVERS, LLC",
+      "dba": "",
+      "address": "39820 US HIGHWAY 19 N LOT 257, TARPON SPRINGS, FL 34689-8325",
+      "city": "TARPON SPRINGS",
+      "phone": "727-642-4588",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3961",
+      "name": "ABLE MOVER'S LLC",
+      "dba": "",
+      "address": "7901 4TH ST N STE 300, SAINT PETERSBURG, FL 33702-4399",
+      "city": "SAINT PETERSBURG",
+      "phone": "352-207-8371",
+      "status": "Registered"
+    },
+    {
+      "im": "IM2654",
+      "name": "ACBR LLC",
+      "dba": "College Hunks Hauling Junk And Moving",
+      "address": "13801 66TH ST, LARGO, FL 33771-4910",
+      "city": "LARGO",
+      "phone": "813-503-2700",
+      "status": "Expired"
+    },
+    {
+      "im": "IM2621",
+      "name": "ALL ABOUT MOVING TAMPA BAY INC",
+      "dba": "",
+      "address": "6438 126TH AVE, LARGO, FL 33773-1850",
+      "city": "LARGO",
+      "phone": "727-657-4077",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3921",
+      "name": "ALPHA MOVERS",
+      "dba": "",
+      "address": "2594 1/2 32ND AVE N, SAINT PETERSBURG, FL 33713-2732",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-265-1383",
+      "status": "Expired"
+    },
+    {
+      "im": "IM581",
+      "name": "AMERICAN FREIGHT COMPANY",
+      "dba": "",
+      "address": "13847 WALSINGHAM RD STE D, LARGO, FL 33774-3239",
+      "city": "LARGO",
+      "phone": "727-595-5950",
+      "status": "Law NA -No Intrastate Moves"
+    },
+    {
+      "im": "IM820",
+      "name": "AMERIMOVE",
+      "dba": "",
+      "address": "611 BRIGHTWATERS BLVD NE, SAINT PETERSBURG, FL 33704-3715",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-822-3300",
+      "status": "Law NA -No Intrastate Moves"
+    },
+    {
+      "im": "IM4209",
+      "name": "AVENOR CORP",
+      "dba": "",
+      "address": "5530 HAINES RD N, ST PETERSBURG, FL 33714-1999",
+      "city": "ST PETERSBURG",
+      "phone": "727-579-0214",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4194",
+      "name": "BAYSIDE MOVERS LLC",
+      "dba": "",
+      "address": "6026 112TH AVE N, PINELLAS PARK, FL 33782-2026",
+      "city": "PINELLAS PARK",
+      "phone": "727-480-6631",
+      "status": "Registered"
+    },
+    {
+      "im": "IM2726",
+      "name": "BIG MAN'S MOVING COMPANY LLC",
+      "dba": "",
+      "address": "4860 E BAY DR, CLEARWATER, FL 33764-6870",
+      "city": "CLEARWATER",
+      "phone": "727-772-3458",
+      "status": "Registered"
+    },
+    {
+      "im": "IM1809",
+      "name": "BLACK WOLF MOVING FLORIDA, LLC",
+      "dba": "Two Men And A Truck",
+      "address": "156 DOUGLAS RD E, OLDSMAR, FL 34677-2939",
+      "city": "OLDSMAR",
+      "phone": "727-736-8000",
+      "status": "Registered"
+    },
+    {
+      "im": "IM288",
+      "name": "BLOCKER TRANSFER COMPANY",
+      "dba": "Blocker Transfer & Storage Co., Inc.",
+      "address": "5181 110TH AVE N STE A, CLEARWATER, FL 33760-4817",
+      "city": "CLEARWATER",
+      "phone": "727-323-1888",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4211",
+      "name": "BUDD VAN LINES, LLC",
+      "dba": "",
+      "address": "7901 4TH ST N STE 300, SAINT PETERSBURG, FL 33702-4399",
+      "city": "SAINT PETERSBURG",
+      "phone": "800-833-2833",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3998",
+      "name": "CARE PACKAGE SERVICES LLC",
+      "dba": "",
+      "address": "2935 166TH AVE N, CLEARWATER, FL 33760-1916",
+      "city": "CLEARWATER",
+      "phone": "727-266-0586",
+      "status": "Registered"
+    },
+    {
+      "im": "IM1025",
+      "name": "CHARLES L CARTER",
+      "dba": "Gentletouch Moving Company",
+      "address": "1900 FLORA RD, CLEARWATER, FL 33755-1516",
+      "city": "CLEARWATER",
+      "phone": "727-446-0712",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3414",
+      "name": "CITY WIDE SELF-STORAGE LLC",
+      "dba": "",
+      "address": "2151 CENTRAL AVE, SAINT PETERSBURG, FL 33713-8815",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-350-3350",
+      "status": "Registered"
+    },
+    {
+      "im": "LX41397",
+      "name": "CITY WIDE SELF-STORAGE LLC",
+      "dba": "",
+      "address": "2151 CENTRAL AVE, SAINT PETERSBURG, FL 33713-8815",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-350-3350",
+      "status": "Expired"
+    },
+    {
+      "im": "IM1793",
+      "name": "COMMERCIAL MOVING SOLUTIONS INC",
+      "dba": "",
+      "address": "5160 140TH AVE N STE A, CLEARWATER, FL 33760-3769",
+      "city": "CLEARWATER",
+      "phone": "813-740-1444",
+      "status": "Registered"
+    },
+    {
+      "im": "IM879",
+      "name": "DAVID LEE HOERNER",
+      "dba": "Fast Moves",
+      "address": "7685 40TH ST N APT C, PINELLAS PARK, FL 33781-3650",
+      "city": "PINELLAS PARK",
+      "phone": "727-556-2530",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4199",
+      "name": "DIVISIONAL TRANSFER COMPANY, INC.",
+      "dba": "Tailwind Movers",
+      "address": "3951 34TH ST S APT 4114, ST PETERSBURG, FL 33711-5905",
+      "city": "ST PETERSBURG",
+      "phone": "727-685-7971",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3656",
+      "name": "EDM FL ENTERPRISES LLC",
+      "dba": "Diligent Services",
+      "address": "29712 US HWY 19 N, CLEARWATER, FL 33761",
+      "city": "CLEARWATER",
+      "phone": "727-316-2337",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3313",
+      "name": "ELITE POWER MOVES LLC",
+      "dba": "Power Moves",
+      "address": "3665 E BAY DR STE 204 MB 238, LARGO, FL 33771-1989",
+      "city": "LARGO",
+      "phone": "727-323-3334",
+      "status": "Expired"
+    },
+    {
+      "im": "IM539",
+      "name": "EXACT PRICE MOVERS, INC.",
+      "dba": "",
+      "address": "2031 HEIDELBERG AVE, DUNEDIN, FL 34698-2333",
+      "city": "DUNEDIN",
+      "phone": "727-442-1585",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3184",
+      "name": "GRAND MOVING & STORAGE LLC",
+      "dba": "",
+      "address": "8517 MOCKINGBIRD LN, SEMINOLE, FL 33777-3530",
+      "city": "SEMINOLE",
+      "phone": "727-498-2221",
+      "status": "Registered"
+    },
+    {
+      "im": "IM2969",
+      "name": "GREENLITE MOVERS INC",
+      "dba": "",
+      "address": "2071 AUSTRALIA WAY W APT 37, CLEARWATER, FL 33763-3621",
+      "city": "CLEARWATER",
+      "phone": "727-252-9991",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3077",
+      "name": "HALL BROTHERS MOVING COMPANY LLC",
+      "dba": "",
+      "address": "1744 DAYTON ST S, SAINT PETERSBURG, FL 33712-2544",
+      "city": "SAINT PETERSBURG",
+      "phone": "813-732-5054",
+      "status": "Registered"
+    },
+    {
+      "im": "IM311",
+      "name": "HARRIS MOVING CO., INC.",
+      "dba": "",
+      "address": "8721 ROBIN RD, LARGO, FL 33777-3423",
+      "city": "LARGO",
+      "phone": "727-532-8277",
+      "status": "Law NA -No Intrastate Moves"
+    },
+    {
+      "im": "IM1620",
+      "name": "INTEGRITY DELIVERY AND MOVING SERVICES INC.",
+      "dba": "Integrity Moving",
+      "address": "11407 3RD ST N APT 2, SAINT PETERSBURG, FL 33716-2815",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-459-1718",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3427",
+      "name": "KOWALSKI MOVES LLC",
+      "dba": "",
+      "address": "6614 297TH AVE N, CLEARWATER, FL 33761-1615",
+      "city": "CLEARWATER",
+      "phone": "727-688-6306",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3190",
+      "name": "LANCES MOVING LIMITED LIABILITY COMPANY",
+      "dba": "",
+      "address": "11839 108TH AVE, SEMINOLE, FL 33778-3661",
+      "city": "SEMINOLE",
+      "phone": "727-398-7073",
+      "status": "Registered"
+    },
+    {
+      "im": "IM1178",
+      "name": "LET'S GET MOVING, INC",
+      "dba": "",
+      "address": "6599 HAINES RD N, SAINT PETERSBURG, FL 33702-6147",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-532-9080",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4083",
+      "name": "LETS GOO MOVING LLC",
+      "dba": "",
+      "address": "156 TALLEY DR, PALM HARBOR, FL 34684-4650",
+      "city": "PALM HARBOR",
+      "phone": "727-967-5930",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4114",
+      "name": "LOTTERY MOVING LLC",
+      "dba": "",
+      "address": "220 BELCHER RD S UNIT H001, LARGO, FL 33771-5515",
+      "city": "LARGO",
+      "phone": "813-526-9474",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3495",
+      "name": "MOVERS WITH MUSCLE, INC.",
+      "dba": "",
+      "address": "14948 NEWPORT RD, CLEARWATER, FL 33764-7085",
+      "city": "CLEARWATER",
+      "phone": "727-565-7183",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4177",
+      "name": "MR BOX MOVING & STORAGE LLC",
+      "dba": "",
+      "address": "334 E LAKE RD, PALM HARBOR, FL 34685-2427",
+      "city": "PALM HARBOR",
+      "phone": "800-314-0246",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4053",
+      "name": "MVM CLEARWATER LLC",
+      "dba": "Reliable Moving And Storage",
+      "address": "1009 ELDRIDGE ST, CLEARWATER, FL 33755-4206",
+      "city": "CLEARWATER",
+      "phone": "419-478-6979",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4106",
+      "name": "MY TOWN MOVERS OF FLORIDA LLC",
+      "dba": "",
+      "address": "111 12TH AVE N, SAINT PETERSBURG, FL 33701-1825",
+      "city": "SAINT PETERSBURG",
+      "phone": "813-482-6683",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4059",
+      "name": "N.A.T SERVICES HAULING LLC",
+      "dba": "",
+      "address": "650 CLEVELAND ST STE 892, CLEARWATER, FL 33755-4042",
+      "city": "CLEARWATER",
+      "phone": "727-203-2924",
+      "status": "Registered"
+    },
+    {
+      "im": "IM1788",
+      "name": "PACK & LOAD SERVICES INC",
+      "dba": "1. All Moves; 2. Small Moves",
+      "address": "2960 E BAY DR, LARGO, FL 33771-2637",
+      "city": "LARGO",
+      "phone": "888-313-6328",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3433",
+      "name": "PARRIS MOVING LLC",
+      "dba": "",
+      "address": "200 MELODY LN, LARGO, FL 33771-2635",
+      "city": "LARGO",
+      "phone": "727-657-8415",
+      "status": "Registered"
+    },
+    {
+      "im": "IM1270",
+      "name": "PAUL HAULS INC.",
+      "dba": "Paul Hauls Moving & Storage",
+      "address": "950 WISCONSIN AVE, PALM HARBOR, FL 34683-4251",
+      "city": "PALM HARBOR",
+      "phone": "727-224-2923",
+      "status": "Registered"
+    },
+    {
+      "im": "IM660",
+      "name": "PETE PALMIERI",
+      "dba": "A 2 Z Moving",
+      "address": "2000 E BAY DR LOT 36, LARGO, FL 33771-2388",
+      "city": "LARGO",
+      "phone": "727-678-4859",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3980",
+      "name": "PIANO AUTOMATIC LLC",
+      "dba": "",
+      "address": "7901 4TH ST N STE 300, SAINT PETERSBURG, FL 33702-4399",
+      "city": "SAINT PETERSBURG",
+      "phone": "850-209-9983",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4045",
+      "name": "PRECISION MOVING/TRANSPORTING LLC",
+      "dba": "",
+      "address": "ATTN:  ANGELO G VALLTOS, 5283 48TH AVE N, ST PETERSBURG, FL 33709",
+      "city": "ST PETERSBURG",
+      "phone": "727-643-8246",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3708",
+      "name": "PRIORITY ONE MOVING AND STORAGE LLC",
+      "dba": "Reliable Moving And Storage",
+      "address": "1151 NE CLEVELAND ST, CLEARWATER, FL 33755-4815",
+      "city": "CLEARWATER",
+      "phone": "727-442-9815",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3928",
+      "name": "PRIVATEER MOVING SERVICES LLC",
+      "dba": "",
+      "address": "2754 NAVEL DR, CLEARWATER, FL 33759-2311",
+      "city": "CLEARWATER",
+      "phone": "727-902-8838",
+      "status": "Expired"
+    },
+    {
+      "im": "IM330",
+      "name": "PURPLE PEOPLE MOVERS, INC.",
+      "dba": "Purple People Movers",
+      "address": "4500 29TH AVE N, ST PETERSBURG, FL 33713-2106",
+      "city": "ST PETERSBURG",
+      "phone": "727-556-2982",
+      "status": "Registered"
+    },
+    {
+      "im": "IM914",
+      "name": "R & M MOVING, INC.",
+      "dba": "",
+      "address": "9597 121ST ST, SEMINOLE, FL 33772-2604",
+      "city": "SEMINOLE",
+      "phone": "727-687-3970",
+      "status": "Registered"
+    },
+    {
+      "im": "IM479",
+      "name": "REX MOVING & STORAGE, INC",
+      "dba": "",
+      "address": "7573 46TH AVE N, SAINT PETERSBURG, FL 33709-2401",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-545-8323",
+      "status": "Registered"
+    },
+    {
+      "im": "IM145",
+      "name": "ROCK'S MOVING COMPANY",
+      "dba": "",
+      "address": "6000 ULMERTON RD, CLEARWATER, FL 33760-3944",
+      "city": "CLEARWATER",
+      "phone": "727-579-0214",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3677",
+      "name": "RUSKIN LOGISTICS LLC",
+      "dba": "Veterans Moving Florida",
+      "address": "7901 4TH ST, ST PETERSBURG, FL 33702",
+      "city": "ST PETERSBURG",
+      "phone": "813-756-2594",
+      "status": "Registered"
+    },
+    {
+      "im": "IM2317",
+      "name": "SAVANNAH'S MOVING, INC.",
+      "dba": "",
+      "address": "11117 54TH AVE N, SAINT PETERSBURG, FL 33708-2946",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-455-1055",
+      "status": "Registered"
+    },
+    {
+      "im": "IM1528",
+      "name": "SHAWN & SHAWN MOVING, INC",
+      "dba": "",
+      "address": "1135 STARKEY RD STE 7, LARGO, FL 33771-3199",
+      "city": "LARGO",
+      "phone": "727-234-7204",
+      "status": "Registered"
+    },
+    {
+      "im": "IM342",
+      "name": "SHORT MOVES, INC.",
+      "dba": "",
+      "address": "3201 28TH ST N, SAINT PETERSBURG, FL 33713-1635",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-527-1986",
+      "status": "Registered"
+    },
+    {
+      "im": "IM247",
+      "name": "SMART MOVE MOVING AND STORAGE, INC.",
+      "dba": "",
+      "address": "1601 22ND ST N, SAINT PETERSBURG, FL 33713-5600",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-327-5520",
+      "status": "Registered"
+    },
+    {
+      "im": "IM2250",
+      "name": "SPARTAN VAN LINES LLC",
+      "dba": "",
+      "address": "2120 SUNNYDALE BLVD STE B, CLEARWATER, FL 33765-1241",
+      "city": "CLEARWATER",
+      "phone": "727-333-7222",
+      "status": "Registered"
+    },
+    {
+      "im": "IM2765",
+      "name": "STARVING ARTIST MOVERS LLC",
+      "dba": "",
+      "address": "6711 9TH AVE N, ST PETERSBURG, FL 33710-6139",
+      "city": "ST PETERSBURG",
+      "phone": "727-422-8326",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4196",
+      "name": "STRATOPS PINELLAS LLC",
+      "dba": "",
+      "address": "4920 38TH WAY S APT 211, SAINT PETERSBURG, FL 33711-4840",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-661-0983",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4136",
+      "name": "SUNRISE MOVING AND PACKING LLC",
+      "dba": "",
+      "address": "5225 TECH DATA DR, CLEARWATER, FL 33760-3133",
+      "city": "CLEARWATER",
+      "phone": "727-977-8350",
+      "status": "Registered"
+    },
+    {
+      "im": "IM471",
+      "name": "SUNSHINE MOVERS, INC.",
+      "dba": "",
+      "address": "16809 US HIGHWAY 19 N, CLEARWATER, FL 33764-6729",
+      "city": "CLEARWATER",
+      "phone": "727-934-2020",
+      "status": "Registered"
+    },
+    {
+      "im": "IM2599",
+      "name": "SWIFT MOVES LLC",
+      "dba": "",
+      "address": "1101 ALHAMBRA WAY S, SAINT PETERSBURG, FL 33705-4618",
+      "city": "SAINT PETERSBURG",
+      "phone": "727-501-3447",
+      "status": "Registered"
+    },
+    {
+      "im": "IM2233",
+      "name": "TAC COMMERCIAL MOVING LLC",
+      "dba": "",
+      "address": "1111 N BAYSHORE BLVD APT E12, CLEARWATER, FL 33759-3344",
+      "city": "CLEARWATER",
+      "phone": "727-224-0516",
+      "status": "Law NA - Commercial"
+    },
+    {
+      "im": "IM3599",
+      "name": "TAKE CARE TRUCK & DOLLY MOVING SERVICES LLC",
+      "dba": "",
+      "address": "1943 NUGGET DR, CLEARWATER, FL 33755-1623",
+      "city": "CLEARWATER",
+      "phone": "727-513-4195",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4071",
+      "name": "TAMPATUFF HAULING LLC",
+      "dba": "",
+      "address": "8598 ORCHID DR, SEMINOLE, FL 33777-3327",
+      "city": "SEMINOLE",
+      "phone": "727-729-2811",
+      "status": "Registered"
+    },
+    {
+      "im": "IM4052",
+      "name": "WAY 2 GO MOVING COMPANY LLC",
+      "dba": "",
+      "address": "1390 GREAT OAK DR, CLEARWATER, FL 33764-3754",
+      "city": "CLEARWATER",
+      "phone": "727-744-6473",
+      "status": "Registered"
+    },
+    {
+      "im": "IM3346",
+      "name": "WOODY AND SONS MOVING LLC",
+      "dba": "",
+      "address": "12841 66TH ST, LARGO, FL 33773-1806",
+      "city": "LARGO",
+      "phone": "727-900-2826",
+      "status": "Registered"
+    }
+  ]
+}

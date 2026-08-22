@@ -1,0 +1,8 @@
+{
+  "task": "FL-C004",
+  "county_stack_preserved": true,
+  "rebase_performed": false,
+  "origin_main_at_task_start": "a381203beb61cb5a2a12f80ed007a672a204be31",
+  "c003_head": "0af416b8d8d43f3b46703af38f039c438834eb04",
+  "analysis_technically_valid_without_rebase": true
+}

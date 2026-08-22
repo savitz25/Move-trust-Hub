@@ -1,0 +1,233 @@
+﻿{
+    "business_seq":  1100270,
+    "license_number":  "MV964",
+    "business_name":  "JCAL Holdings, LLC",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV964",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ActType":  "Citation",
+                                                "ItemSeq":  652245,
+                                                "ItemTypeSeq":  51,
+                                                "intBusinessSeq":  1100270,
+                                                "KeyField":  null,
+                                                "Field2":  "2026-07-09T04:00:00.000Z",
+                                                "Field3":  "MOV00-10 Sec 4 Failed to obtain required decal for vehicle",
+                                                "Field4":  "$500.00",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  230450,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1100270,
+                                                "KeyField":  null,
+                                                "Field2":  "2010-11-12 00:00:00.0000000",
+                                                "Field3":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                "Field4":  "1100240",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "11/19/2010",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "3",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  353257,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1100270,
+                                                "KeyField":  null,
+                                                "Field2":  "2015-12-21 10:04:57.0000000",
+                                                "Field3":  "MOV05-07 Sec 8(A) Failed to provide shipper w/written contract prior to move",
+                                                "Field4":  "N/A",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "12/21/2015",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "4",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  353258,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  1100270,
+                                                "KeyField":  null,
+                                                "Field2":  "2015-12-21 10:06:19.0000000",
+                                                "Field3":  "MOV05-07 Sec 9 Failed to provide shipper w/req. household mov. co. disclosures \u0026/or sign req form  ",
+                                                "Field4":  "N/A",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "12/21/2015",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            }
+                                        ],
+                              "Count":  4
+                          },
+    "company_action_details":  {
+                                   "value":  [
+                                                 {
+                                                     "$id":  "1",
+                                                     "Citation_Number":  "CA008286",
+                                                     "Business_Seq":  null,
+                                                     "License_Seq":  0,
+                                                     "Date_Issued":  "2026-07-09T04:00:00.000Z",
+                                                     "Ord_Section":  "MOV00-10 Sec 4 Failed to obtain required decal for vehicle",
+                                                     "Final_Disposition":  null
+                                                 }
+                                             ],
+                                   "Count":  1
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "JCAL Holdings, LLC",
+                               "Established_Yr":  "0",
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1100270,
+                               "Does_Business_As":  "College Hunks Hauling Junk and Moving ",
+                               "Address":  "1802 4th",
+                               "City":  "Lake Worth",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33461",
+                               "MailingAddress":  "1802 4th",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Lake Worth",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33461",
+                               "PhoneNumber":  "5616025009",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "barry.reiss@chhj.com",
+                               "WebsiteURL":  "www.collegehunks.com",
+                               "Fax":  "5612290190",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ComplaintSeq":  "1905029",
+                                                "ResolutionShortDesc":  "Resolved prior to Consumer Affairs intervention",
+                                                "AllegedViolation":  "Alleged damage to consumer\u0027s goods or property ",
+                                                "Status":  "CLOSED/REVIEWED",
+                                                "ResolutionCode":  "A06",
+                                                "DateClosed":  "9/26/2023"
+                                            }
+                                        ],
+                              "Count":  1
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  1,
+                         "caseSummary":  [
+                                             {
+                                                 "$id":  "2",
+                                                 "ResolutionCode":  "A06",
+                                                 "ResoultionShortDesc":  "Resolved prior to Consumer Affairs intervention",
+                                                 "TotalCase":  1,
+                                                 "Status":  "closed"
+                                             }
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  1100270,
+                                           "LastName":  "Reiss",
+                                           "FirstName":  "Barry",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "5616025009"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "JCAL Holdings, LLC",
+                                         "Established_Yr":  "0",
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1100270,
+                                         "Does_Business_As":  "College Hunks Hauling Junk and Moving ",
+                                         "Address":  "1802 4th",
+                                         "City":  "Lake Worth",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33461",
+                                         "MailingAddress":  "1802 4th",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Lake Worth",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33461",
+                                         "PhoneNumber":  "5616025009",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "barry.reiss@chhj.com",
+                                         "WebsiteURL":  "www.collegehunks.com",
+                                         "Fax":  "5612290190",
+                                         "License_Required":  "Y"
+                                     }
+}

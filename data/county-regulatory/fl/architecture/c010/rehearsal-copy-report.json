@@ -1,0 +1,15 @@
+{
+  "task": "FL-C010",
+  "rehearsal_worktree": "C:\\Users\\makei\\move-trust-hub-c010-rehearsal",
+  "base": "origin/main",
+  "base_sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "source_county_head": "1256170855439413242acadf68e659e53f4aabc3",
+  "include_attempted": 379,
+  "include_copied": 379,
+  "review_copied_for_rehearsal_only": 6,
+  "missing": 0,
+  "errors": [],
+  "node_modules": "junction -> C:\\Users\\makei\\move-trust-hub-fl-county\\node_modules",
+  "persistent": false,
+  "note": "Disposable worktree only. County paths remain untracked on detached origin/main. No commit/push from rehearsal."
+}

@@ -1,0 +1,18 @@
+{
+  "task": "FL-C005",
+  "inventory_basis": "APPLICATION_SCHEMA",
+  "access_class": "APPLICATION_SCHEMA_PUBLIC_ONLY",
+  "row_count": 0,
+  "records": [],
+  "note": "Application collects YEAR/MAKE/MODEL, VIN, GVW, TAG. Public roster/detail samples do not expose vehicle inventory.",
+  "schema_example_from_application": {
+    "source_record_id_pattern": "FL-MDC-VEHICLE-{mr}-{vin_or_seq}",
+    "fields": [
+      "year_make_model",
+      "vin",
+      "gvw",
+      "tag",
+      "parent_mr_license"
+    ]
+  }
+}

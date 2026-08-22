@@ -1,0 +1,53 @@
+{
+  "task": "FL-C008",
+  "status": "COMPLETE",
+  "title": "Florida County Regulatory Architecture Discovery V1 & Stack Integration Plan",
+  "origin_main_observed": "4711355486f3787e5c154cadeb0ff6d11dbb0118",
+  "c007_head": "05e018e2236cd1f865ef3808874aa388065720df",
+  "architecture_discovery": true,
+  "production_schema_created": false,
+  "production_db_migrations": 0,
+  "production_writes": false,
+  "google_places_api_requests": 0,
+  "consumer_pii_committed": 0,
+  "trust_score_connection": false,
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "recommended_stack_strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "storage_recommendation": "OPTION_D_HYBRID",
+  "first_production_pilot": "Palm Beach",
+  "feature_waves": [
+    "A_credential",
+    "B_identity",
+    "C_complaints_dispositions",
+    "D_enforcement"
+  ],
+  "postures_supported": [
+    "CREDENTIAL_BASED",
+    "ORDINANCE_ONLY"
+  ],
+  "psa_overload_forbidden": true,
+  "key_decisions": [
+    "Smallest durable model supports CREDENTIAL_BASED and ORDINANCE_ONLY",
+    "Hybrid storage: NEW county credentials + generic observations; do not overload PSA",
+    "LBT != mover authority",
+    "COMPLAINT != DISPOSITION; ENFORCEMENT_EVENT != FINAL_OUTCOME",
+    "REQUIREMENT_DOCUMENTED != CURRENT_POLICY_OBSERVED != COMPLIANCE_VERIFIED",
+    "SCHEMA_ONLY != company observation",
+    "FAIL CLOSED identity matching",
+    "County evidence does NOT change Trust Score in V1",
+    "Lifecycle DISCOVERED→…→PUBLISHED with INTERNAL_ONLY/WITHHELD",
+    "Zero-result never consumer-facing as complaint-free",
+    "Stack strategy Strategy 3 preferred",
+    "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW = NO",
+    "First production county = Palm Beach"
+  ],
+  "recommended_fl_c009": "FL-C009 — Palm Beach County Production Evidence Integration Spec V1 (design-only; no merge/no publish)",
+  "docs": [
+    "docs/county-regulatory/architecture/COUNTY_REGULATORY_ARCHITECTURE_V1.md",
+    "docs/county-regulatory/architecture/stack-integration-runbook.md",
+    "docs/county-regulatory/architecture/future-county-onboarding-playbook.md",
+    "docs/county-regulatory/architecture/schema-sketch.md"
+  ],
+  "package_hash": "e5d7b8c566724656",
+  "emitted_at": "2026-08-22T14:15:33.032Z"
+}

@@ -1,0 +1,21 @@
+{
+  "task": "FL-C009",
+  "wave": "B",
+  "name": "Identity_Contact",
+  "depends_on": ["A"],
+  "design_only": true,
+  "scope": [
+    "county-reported legal name / DBA",
+    "address",
+    "phone",
+    "email when business-level",
+    "website",
+    "provider_contact_observation EXTEND_REUSE with county provenance"
+  ],
+  "owner_officer": "V1_OPTIONAL_NOT_REQUIRED",
+  "fleet": "OPTIONAL_COUNTY_REPORTED_TOTAL_NOT_VERIFIED_VIN",
+  "never_overwrite_companies": true,
+  "default_evidence_publication_state": "INTERNAL_ONLY",
+  "trust_score": "UNCHANGED",
+  "google_places_api_requests": 0
+}

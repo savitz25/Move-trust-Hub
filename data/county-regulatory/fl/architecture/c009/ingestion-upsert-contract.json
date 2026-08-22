@@ -1,0 +1,36 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "production_db_migrations": 0,
+  "wave_a": {
+    "entity": "provider_county_credential",
+    "natural_key": ["program_id", "credential_number", "source"],
+    "cohort": "PRODUCTION_LINK_READY",
+    "cohort_count": 46,
+    "force_evidence_publication_state": "INTERNAL_ONLY",
+    "publish_count": 0,
+    "write_psa": false,
+    "write_companies_publication": false,
+    "write_trust_score": false,
+    "google_places_api_requests": 0
+  },
+  "wave_b_contacts": {
+    "entity": "provider_contact_observation",
+    "decision": "EXTEND_REUSE",
+    "never_overwrite_companies": true
+  },
+  "wave_c": {
+    "entities": [
+      "regulatory_disposition_code",
+      "county_complaint_observation",
+      "county_disposition_observation"
+    ],
+    "disposition_catalog_count": 44
+  },
+  "wave_d": {
+    "entity": "county_enforcement_event",
+    "natural_key": ["program_id", "event_key"]
+  },
+  "pii_gate": "reject_rows_with_consumer_pii",
+  "idempotent": true
+}

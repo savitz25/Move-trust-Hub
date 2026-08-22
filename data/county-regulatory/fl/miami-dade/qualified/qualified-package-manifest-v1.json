@@ -1,0 +1,151 @@
+{
+  "task": "FL-C006",
+  "version": "v1",
+  "retrieved_at": "2026-08-21T22:01:02.420Z",
+  "production_writes": false,
+  "google_places_api_requests": 0,
+  "consumer_pii_committed": 0,
+  "files": [
+    {
+      "file": "architecture-pressure-test-v1.json",
+      "bytes": 579,
+      "sha256": "ca0d5a50226625ee80ebedfbf7195f6e5943839e91812d9de48693f0b073df05"
+    },
+    {
+      "file": "county-page-metrics-mock-v1.json",
+      "bytes": 915,
+      "sha256": "9cd8d6ad43e4b5f8a6ff240a6f2d11e9ac52100e7f1e44aee4442e6df803f43f"
+    },
+    {
+      "file": "fl-c006-summary.json",
+      "bytes": 1636,
+      "sha256": "0b49d720b469e49aa929f0d38f5d37126ddc52c6c3e1f6416c4b05eebedecf35"
+    },
+    {
+      "file": "future-profile-presentation-design-v1.json",
+      "bytes": 908,
+      "sha256": "a6cdaffc513721378097ec0dd90592377b811a8a889302e67b24763635e63ddb"
+    },
+    {
+      "file": "incremental-value-after-qualification-v1.json",
+      "bytes": 1037,
+      "sha256": "fc592f823acf0c63981af34b6860e69e84cfbd513477156fc1223fdbf103d497"
+    },
+    {
+      "file": "mdc-business-tax-evidence-v1.json",
+      "bytes": 74075,
+      "sha256": "2eecab1e94e99dc6af5cc7589481284fccf0213fdcfc577dfa1970bb94569ac2"
+    },
+    {
+      "file": "mdc-cross-source-conflicts-v1.json",
+      "bytes": 55478,
+      "sha256": "7065fafc773fa6267bfd1a4e865b3280d27d456fec35952ee199c21dcfa01132"
+    },
+    {
+      "file": "mdc-evidence-ruleset-v1.json",
+      "bytes": 2589,
+      "sha256": "7fd5846aa678e0c281cd1884aa8a760bb1e8b8f3ba2cab7da0ca7d8ba1021fdb"
+    },
+    {
+      "file": "mdc-fdacs-crosswalk-v1.json",
+      "bytes": 106924,
+      "sha256": "958a15af9b2479e8220d890f542f6ff4e88216bcf97c98940b1f4477a2a34db8"
+    },
+    {
+      "file": "mdc-fdacs-unresolved-v1.json",
+      "bytes": 13919,
+      "sha256": "ffccc16224db2fb447a80e4a90870b3f7689ed2e369762a3bfd45c168d49c9a1"
+    },
+    {
+      "file": "mdc-historical-license-evidence-v1.json",
+      "bytes": 125568,
+      "sha256": "c74fbc362996140b1fb5d389f963b54eb3b7ff1b422be76548299bf9821b7e3b"
+    },
+    {
+      "file": "mdc-lbt-crosswalk-v1.json",
+      "bytes": 66103,
+      "sha256": "7a3308e330dc07da21bbd6977feefaffbf462f55d32bf418add26949d3bcea28"
+    },
+    {
+      "file": "mdc-moving-credential-evidence-v1.json",
+      "bytes": 70914,
+      "sha256": "3db4eddd1f54b6cf600f5f188f96cd971f8770d1d138fd3c861c6d6f8e80c90b"
+    },
+    {
+      "file": "mdc-source-authority-model-v1.json",
+      "bytes": 1352,
+      "sha256": "f49f0462ecb527f8625800b70df5421f9aa0bcc9bcd5f004d4bc79af199c56e7"
+    },
+    {
+      "file": "network-reuse-note-v1.json",
+      "bytes": 589,
+      "sha256": "ab80b83dbc7a229620f2ebcaf260d8715687ca3f402cb564b4fc4573984e9c2e"
+    },
+    {
+      "file": "qualified-package-manifest-v1.json",
+      "bytes": 4652,
+      "sha256": "6310db42380662ecfbbfe1290112cf6d0d0a3b119012679ac2c535f7e2ce2ff7"
+    },
+    {
+      "file": "three-county-qualified-comparison-v1.json",
+      "bytes": 3158,
+      "sha256": "c4d36f28952a9d5e1743c0f43a15ed87beb0370c4ce8d4962e433dcf87ec0dfa"
+    }
+  ],
+  "summary": {
+    "task": "FL-C006",
+    "status": "COMPLETE",
+    "origin_main_observed": "2959930c0a149eb961fa3d2b6306f23c7cba820d",
+    "stacked_on_c005": "2dd88cb5371891ec3af916fbedbe52d48dcf6d22",
+    "baseline": {
+      "total_licenses": 409,
+      "unique_businesses": 378,
+      "issued": 117,
+      "lbt_rows": 188
+    },
+    "issued_reconciliation": {
+      "VERIFIED": 86,
+      "REVIEW_REQUIRED": 17,
+      "NOT_FOUND": 14,
+      "CONFLICT": 0,
+      "NOT_APPLICABLE": 0
+    },
+    "verified_precision": {
+      "checked": 86,
+      "correct": 86,
+      "incorrect": 0,
+      "precision": 100,
+      "gate": "PASS"
+    },
+    "canonical": {
+      "CANONICAL_LINKED": 70,
+      "CANONICAL_CANDIDATE": 0,
+      "STATE_RECORD_ONLY": 16,
+      "COUNTY_ONLY_REVIEW": 31
+    },
+    "lbt_crosswalk": {
+      "VERIFIED_LBT_LINK": 54,
+      "REVIEW_REQUIRED": 13,
+      "NOT_FOUND": 50
+    },
+    "multi_license_businesses": 25,
+    "insurance": {
+      "REQUIREMENT_DOCUMENTED": true,
+      "CURRENT_POLICY_OBSERVED": false,
+      "COMPLIANCE_VERIFIED": false
+    },
+    "vehicles_observed": 0,
+    "branches_observed": 0,
+    "complaints_observed": 0,
+    "citations_observed": 0,
+    "google_places_api_requests": 0,
+    "production_writes": false,
+    "production_db_migrations": 0,
+    "consumer_pii_committed": 0,
+    "PATTERNS_CONVERGING": "YES",
+    "PINELLAS_REQUIRED_BEFORE_LOCK": "YES",
+    "recommended_fl_c007": "FL-C007 — Pinellas County Mover Regulatory Acquisition & Staging",
+    "recommended_fl_c007_rationale": "MDC qualification complete. Collect Pinellas as County Pilot #4 before locking generalized county architecture. Do not start architecture or Pinellas automatically in this task.",
+    "package_hash": "bac8ce4f15908a4a"
+  }
+}

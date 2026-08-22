@@ -1,0 +1,1213 @@
+{
+  "task": "FL-C003",
+  "count": 66,
+  "records": [
+    {
+      "mv_permit": "MV837",
+      "legal_name": "Monster Moving, Inc.",
+      "dba": "5 Star Moving Inc.",
+      "phone": "5615781099",
+      "address": "712    Park Place, West Palm Beach, FL, 33401",
+      "issue_date": "2016-06-02T09:03:18",
+      "likely_explanations": [
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1121",
+      "legal_name": "Andigo Movers LLC",
+      "dba": "Andigo Movers LLC",
+      "phone": "5618394385",
+      "address": "5867   Cayman Cir E, West Palm Beach, FL, 33407",
+      "issue_date": "2021-03-31T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1081",
+      "legal_name": "W & W Moving Solutions , LLC",
+      "dba": "Two Men and a Truck of Boynton Delray ",
+      "phone": "5614048807",
+      "address": "1515  N Congress Ave  Ste B, Delray Beach, FL, 33445",
+      "issue_date": "2017-04-05T12:42:14",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV42",
+      "legal_name": "A Man With A Van, Inc. ",
+      "dba": "A Man With A Van, Inc.",
+      "phone": "5617849772",
+      "address": "3132 Fortune Way Unit D-30, Wellington, FL, 33414",
+      "issue_date": "2013-05-21T14:51:20",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1163",
+      "legal_name": "Iron Tree Relocations, LLC",
+      "dba": "Iron Tree Movers",
+      "phone": "5618092163",
+      "address": "111   Evergreen Pkwy, Palm Beach Gardens, FL, 33410",
+      "issue_date": "2018-06-07T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1133",
+      "legal_name": "Drop A Truck LLC",
+      "dba": "Drop A Truck LLC",
+      "phone": "5616676513",
+      "address": "5618   Dewberry Way, West Palm Beach, FL, 33415",
+      "issue_date": "2024-07-29T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV984",
+      "legal_name": "White Lion Moving Systems of South Florida, Inc.",
+      "dba": "White Lion Moving Systems of South Florida, Inc.",
+      "phone": "5619972400",
+      "address": "3350 NW 2nd  Ave Suite A28, Boca Raton, FL, 33431",
+      "issue_date": "2016-05-17T10:06:44",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1017",
+      "legal_name": "Move For You, Inc",
+      "dba": "Move For You, Inc",
+      "phone": "5617773100",
+      "address": "18863   Schooner Dr, Boca Raton, FL, 33496",
+      "issue_date": "2023-06-20T04:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1013",
+      "legal_name": "Elite Handling, LLC ",
+      "dba": "Elite Handling, LLC",
+      "phone": "5616627062",
+      "address": "1547  N Florida Mango Road  Unit 12-15, West Palm Beach, FL, 33403",
+      "issue_date": "2012-06-07T15:29:24",
+      "likely_explanations": [
+        "truly unresolved / state crosswalk unavailable"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV59",
+      "legal_name": "A-1 Sun Movers, Inc. ",
+      "dba": "A-1 Sun Movers, Inc. ",
+      "phone": "5612724635",
+      "address": "651 Seaview Ave , Boynton Beach, FL, 33435",
+      "issue_date": "2016-05-26T08:25:49",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1269",
+      "legal_name": "Select Residential Moving",
+      "dba": "Select Residential Moving",
+      "phone": "5613296175",
+      "address": "2890   Twin Oaks Way, Wellington, FL, 33414",
+      "issue_date": "2022-08-01T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV904",
+      "legal_name": "All-Dixie Moving Services, LLC",
+      "dba": "All-Dixie Moving Services, LLC",
+      "phone": "5612629080",
+      "address": "255    Murcia Dr   Apt 202, Jupiter, FL, 33458",
+      "issue_date": "2018-03-09T05:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV789",
+      "legal_name": "All Family Moving,  Inc.",
+      "dba": "All Family Moving, Inc.",
+      "phone": "5613640870",
+      "address": "2209 NW 20th. Ave , Boynton Beach, FL, 33436",
+      "issue_date": "2012-05-14T14:57:19",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1093",
+      "legal_name": "Good Job Moving, Inc.",
+      "dba": "Good Job Moving, Inc.",
+      "phone": "5618086013",
+      "address": "3111 SW 20th Terr Apt 22D1, Delray Beach, FL, 33445",
+      "issue_date": "2014-10-30T16:24:51",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV29",
+      "legal_name": "Walton P. Davis Moving & Storage Co. Inc,",
+      "dba": "Walton P. Davis Moving & Storage Co. Inc.",
+      "phone": "5618443033",
+      "address": "1125   53rd Ct N, West Palm Beach, FL, 33407",
+      "issue_date": "2023-04-13T04:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1282",
+      "legal_name": "Lee East Coast Moving LLC",
+      "dba": "Lee East Coast Moving LLC",
+      "phone": "5617242457",
+      "address": "1830   Hypoluxo Rd  Ste B125, Lake Worth, FL, 33462",
+      "issue_date": "2023-07-12T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1180",
+      "legal_name": "Moving Kings Van Lines Inc.",
+      "dba": "Moving Kings Van Lines Inc.",
+      "phone": "8445615464",
+      "address": "1979   10th Ave N, Lake Worth, FL, 33461",
+      "issue_date": "2019-08-14T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1055",
+      "legal_name": "South West Movers, LLC",
+      "dba": "South West Movers, LLC",
+      "phone": "8005621084",
+      "address": "301  W Atlantic Ave  Ste 0-5, Delray Beach, FL, 33444",
+      "issue_date": "2016-06-09T08:17:40",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV708",
+      "legal_name": "M.J. Moving, Inc.",
+      "dba": "M. J. Moving, Inc.",
+      "phone": "5613020329",
+      "address": "7517 W Country Club  Blvd , Boca Raton, FL, 33487",
+      "issue_date": "2015-06-02T16:04:16",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV20",
+      "legal_name": "Bohren's Moving & Storage Inc",
+      "dba": "Bohren's Moving & Storage Inc. ",
+      "phone": "5616861200",
+      "address": "2951   Electronics Way, West Palm Beach, FL, 33407",
+      "issue_date": "2020-04-21T04:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1172",
+      "legal_name": "Auction Auto Outlet, Inc",
+      "dba": "Palm Beach Movers",
+      "phone": "5613512258",
+      "address": "6976   Houlton Cir, Lake Worth, FL, 33467",
+      "issue_date": "2018-07-16T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV545",
+      "legal_name": "Mr. Jimmy's Local Moving and Delivery Service, Inc",
+      "dba": "Mr. Jimmy's Local Moving and Delivery Service, Inc",
+      "phone": "5612416255",
+      "address": "330 Redwood   Lane , Boca Raton, FL, 33487",
+      "issue_date": "2011-04-25T15:04:13",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1260",
+      "legal_name": "Eldorado Transporting And Moving LLC",
+      "dba": "Eldorado Transporting And Moving LLC",
+      "phone": "5615317689",
+      "address": "1075   Moonlight Way, Royal Palm Beach, FL, 33411",
+      "issue_date": "2021-12-20T05:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1118",
+      "legal_name": "A King Moving Services, LLC",
+      "dba": "A King Moving Services, LLC",
+      "phone": "5615371283",
+      "address": "252 Alemeda Drive , Palm Springs , FL, 33461",
+      "issue_date": "2015-08-31T16:34:57",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1144",
+      "legal_name": "Safe and Easy Moving,LLC ",
+      "dba": "Safe and Easy Moving,LLC ",
+      "phone": "5614195504",
+      "address": "5279 Tennis  Lane , Delray Beach, FL, 33484",
+      "issue_date": "2017-08-22T15:14:43",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1135",
+      "legal_name": "Move Pro Moving And Storage ",
+      "dba": "Move Pro Moving and Storage ",
+      "phone": "5613152560",
+      "address": "5110   St. John  Ave S, Boynton Beach, FL, 33472",
+      "issue_date": "2019-08-07T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1198",
+      "legal_name": "City Movers LLC",
+      "dba": "City Movers LLC",
+      "phone": "7862029256",
+      "address": "4400  N Federal Hwy  Unit 53, Boca Raton, FL, 33431",
+      "issue_date": "2025-04-25T04:00:00",
+      "likely_explanations": [
+        "county permit possibly newer than FDACS snapshot",
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV729",
+      "legal_name": "Lord's  Moving,Co  LLC",
+      "dba": "Lord's  Moving,Co  LLC",
+      "phone": "5617346302",
+      "address": "106    Suffolk Dr, Royal Palm Beach, FL, 33411",
+      "issue_date": "2018-06-08T04:00:00",
+      "likely_explanations": [
+        "truly unresolved / state crosswalk unavailable"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1275",
+      "legal_name": "Royalty Mover Inc",
+      "dba": "Royalty Mover Inc",
+      "phone": "6169352262",
+      "address": "1005   Lake Ave  Ste 413, Lake Worth, FL, 33460",
+      "issue_date": "2022-11-15T05:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV736",
+      "legal_name": "A Special Packing Service, Inc.",
+      "dba": "A Special Packing Service, Inc.",
+      "phone": "5615477175",
+      "address": "1605    Siesta St, Lantana, FL, 33462",
+      "issue_date": "2019-05-03T04:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1245",
+      "legal_name": "Hawthorne And Sons Trucking, LLC",
+      "dba": "Here to Home Moving Services",
+      "phone": "5616750022",
+      "address": "5576   Souchak Dr, West Palm Beach, FL, 33413",
+      "issue_date": "2021-04-22T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1080",
+      "legal_name": "M&D Professional Moving,Inc.",
+      "dba": "M&D Professional Moving Inc",
+      "phone": "5615413355",
+      "address": "4791 Carefree Cove Blvd , West Palm Beach, FL, 33415",
+      "issue_date": "2017-05-25T10:11:03",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1188",
+      "legal_name": "Three Friends Moving, LLC",
+      "dba": "Three Friends Moving, LLC",
+      "phone": "5613034023",
+      "address": "870   Old Dixie Hwy, Lake Park, FL, 33403",
+      "issue_date": "2023-08-10T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1267",
+      "legal_name": "King Moving And Storage II, Inc",
+      "dba": "King Moving And Storage",
+      "phone": "9545757028",
+      "address": "15257   Goldfinch Cir, Westlake, FL, 33470",
+      "issue_date": "2023-06-12T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1020",
+      "legal_name": "IMove South Florida, LLC",
+      "dba": "IMove South Florida, LLC",
+      "phone": "5613461125",
+      "address": "1920 NE 1st Lane , Boynton Beach, FL, 33435",
+      "issue_date": "2012-05-21T11:03:39",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1046",
+      "legal_name": "A Smooth Move Moving & Storage, LLC",
+      "dba": "A Smooth Move Moving & Storage, LLC",
+      "phone": "5616882744",
+      "address": "1900 Australian Ave , Riviera Beach, FL, 33404",
+      "issue_date": "2013-02-07T00:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1076",
+      "legal_name": "365 Home Maintenance, Inc",
+      "dba": "365 Home Maintenance, Inc",
+      "phone": "5616629335",
+      "address": "1172 West 36th St , Riviera Beach, FL, 33404",
+      "issue_date": "2014-07-31T15:24:53",
+      "likely_explanations": [
+        "truly unresolved / state crosswalk unavailable"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV688",
+      "legal_name": "Move Me Joe, Inc. ",
+      "dba": "Move Me Joe, Inc. ",
+      "phone": "5615401484",
+      "address": "160   Commerce Rd  Ste F, Boynton Beach, FL, 33426",
+      "issue_date": "2021-06-28T04:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1086",
+      "legal_name": "Florida Licensed Moving Corporation",
+      "dba": "Duck Movers",
+      "phone": "5612934110",
+      "address": "542   Douglas Ave  No, Altamonte Springs, FL, 32714",
+      "issue_date": "2016-05-17T10:13:52",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1001",
+      "legal_name": "Five O Movers, LLC",
+      "dba": "Five O Movers, LLC",
+      "phone": "5617455599",
+      "address": "1615 Cypress Drive Suite 1, Jupiter, FL, 33469",
+      "issue_date": "2012-04-05T00:00:00",
+      "likely_explanations": [
+        "truly unresolved / state crosswalk unavailable"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV680",
+      "legal_name": "MVP Movers, Inc.",
+      "dba": "MVP Movers, Inc.",
+      "phone": "5612555209",
+      "address": "683   Snead  Cir, West Palm Beach, FL, 33413",
+      "issue_date": "2022-05-10T04:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1205",
+      "legal_name": "Moving Heroes, LLC",
+      "dba": "Moving Heroes",
+      "phone": "5616625715",
+      "address": "2947   Saginaw Ave, West Palm Beach, FL, 33409",
+      "issue_date": "2022-05-04T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV95",
+      "legal_name": "Father & Son Storage Warehouse, Inc. ",
+      "dba": "Father & Son Storage Warehouse, Inc. ",
+      "phone": "5618819800",
+      "address": "843 W 13th Court Suite 8, Riviera Beach, FL, 33404",
+      "issue_date": "2012-05-11T15:57:01",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1060",
+      "legal_name": "Strawn's Moving LLC",
+      "dba": "Strawn's Moving LLC.",
+      "phone": "5616131706",
+      "address": "4700  NW Boca Raton Blvd  Unit 304, Boca Raton, FL, 33431",
+      "issue_date": "2021-05-17T04:00:00",
+      "likely_explanations": [
+        "truly unresolved / state crosswalk unavailable"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV22",
+      "legal_name": "Crystal Coast Moving & Storage, Inc.",
+      "dba": "Crystal Coast Moving & Storage, Inc.",
+      "phone": "5618638343",
+      "address": "7880   Central Industrial Dr  Unit 250, Riviera Beach, FL, 33404",
+      "issue_date": "2024-04-25T04:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV669",
+      "legal_name": "McGovern Moving & Storage, Inc.",
+      "dba": "McGovern Moving & Storage, Inc. ",
+      "phone": "5617441111",
+      "address": "14701 US Highway 1 Unit 21, Juno Beach, FL, 33408",
+      "issue_date": "2011-10-06T08:57:36",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV509",
+      "legal_name": "All My Sons Moving & Storage Of West Palm Beach Inc.",
+      "dba": "True Van Lines, All My Sons Moving & Storage, Quick N Easy Moving",
+      "phone": "5612337900",
+      "address": "15827    Guild Court, Jupiter, FL, 33478",
+      "issue_date": "2016-12-14T11:19:36",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1214",
+      "legal_name": "Camille's Professional Flat Rate Moving Services, LLC",
+      "dba": "Camille's Professional Flat Rate Moving Services, LLC",
+      "phone": "5618090209",
+      "address": "8377   Morning Star Road, Lake Worth, FL, 33467",
+      "issue_date": "2021-03-24T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV883",
+      "legal_name": "H. Martone, Inc.",
+      "dba": "Antique Restoration Sales and Services",
+      "phone": "5619514413",
+      "address": "709  Omar Road , West Palm Beach, FL, 33405",
+      "issue_date": "2015-04-30T10:16:07",
+      "likely_explanations": [
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV880",
+      "legal_name": "I & S Delivery",
+      "dba": "I & S Delivery",
+      "phone": "5613131032",
+      "address": "225 Hawthorne Drive , Lake Park, FL, 33403",
+      "issue_date": "2014-07-01T16:39:25",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV7",
+      "legal_name": "Fazio's Moving, Inc.",
+      "dba": "Fazio's Moving, Inc.",
+      "phone": "5618443848",
+      "address": "7535    Garden Rd  Bay 42, Riviera Beach, FL, 33404",
+      "issue_date": "2018-05-23T04:00:00",
+      "likely_explanations": [
+        "truly unresolved / state crosswalk unavailable"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1137",
+      "legal_name": "Lambert's Moving & Storage, LLC",
+      "dba": "Lambert's Moving & Storage, LLC",
+      "phone": "9544040325",
+      "address": "5050   Sanctuary Way  Apt F, West Palm Beach, FL, 33417",
+      "issue_date": "2017-08-23T08:19:36",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1022",
+      "legal_name": "A1 Priority Moving, LLC.",
+      "dba": "A1 Priority Moving, LLC.",
+      "phone": "5613021742",
+      "address": "2788 Quantum Lakes Drive , Boynton Beach, FL, 33426",
+      "issue_date": "2017-08-24T08:53:38",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1095",
+      "legal_name": "Icon Moving",
+      "dba": "Icon Moving",
+      "phone": "5613383157",
+      "address": "2790  N Federal Hwy  Ste 320, Boca Raton, FL, 33431",
+      "issue_date": "2022-07-13T04:00:00",
+      "likely_explanations": [
+        "truly unresolved / state crosswalk unavailable"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1091",
+      "legal_name": "Emergency Delivery, LLC.",
+      "dba": "Emergency Delivery, LLC.",
+      "phone": "8005682220",
+      "address": "115 E Boca Raton Road Suite 1, Boca Raton, FL, 33432",
+      "issue_date": "2015-05-15T16:07:45",
+      "likely_explanations": [
+        "truly unresolved / state crosswalk unavailable"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1056",
+      "legal_name": "Rainbow Movers of Florida, Inc.",
+      "dba": "Rainbow Movers of Florida, Inc.",
+      "phone": "5617418801",
+      "address": "407 Commerce Way No 16A, Jupiter, FL, 33458",
+      "issue_date": "2013-05-31T16:05:37",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1019",
+      "legal_name": "North Pole Moving, Inc.",
+      "dba": "North Pole Moving, Inc.",
+      "phone": "5613459377",
+      "address": "4807   Via Palm Lakes   Apt 1521, West Palm Beach, FL, 33417",
+      "issue_date": "2022-06-23T04:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1120",
+      "legal_name": "Move 4 You, LLC",
+      "dba": "Move 4 You, LLC",
+      "phone": "5612886255",
+      "address": "301 Yamato Road S 1240, Boca Raton, FL, 33431",
+      "issue_date": "2016-02-01T09:40:01",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV962",
+      "legal_name": "Ross Parker, LLC",
+      "dba": "Home Town Moving Company",
+      "phone": "5616998379",
+      "address": "9640 Gulfstate Park Circle , Boca Raton, FL, 33428",
+      "issue_date": "2011-04-04T11:53:01",
+      "likely_explanations": [
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1141",
+      "legal_name": "Thompson & Sons Moving and Storage Inc.",
+      "dba": "Thompson & Sons Moving and Storage Inc.",
+      "phone": "9545311354",
+      "address": "1746 Avendia del Sol , Boca Raton, FL, 33432",
+      "issue_date": "2016-09-21T15:19:48",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1197",
+      "legal_name": "Cross Moving & Storage Co.",
+      "dba": "Cross Moving & Storage Co.",
+      "phone": "5615709464",
+      "address": "730   Neptune St, West Palm Beach, FL, 33406",
+      "issue_date": "2019-10-17T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1169",
+      "legal_name": "Iurkenty Corp",
+      "dba": "I & A Moving and Storage",
+      "phone": "9548041645",
+      "address": "5057   Breckenridge Pl  Apt 204, West Palm Beach, FL, 33417",
+      "issue_date": "2018-04-11T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV1176",
+      "legal_name": "Lifetime Moving And Junk Removal, Inc",
+      "dba": "Demo Boyzz",
+      "phone": "5613980442",
+      "address": "13051   Anthorne Ln, Boynton Beach, FL, 33436",
+      "issue_date": "2021-07-08T04:00:00",
+      "likely_explanations": [
+        "high MV sequence — possibly recent county permit",
+        "legal/DBA naming mismatch possible (partial token overlap exists)",
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV631",
+      "legal_name": "Big Star Services Inc.",
+      "dba": "Big Star Moving",
+      "phone": "5616159889",
+      "address": "1499   Forest Hill Blvd  Ste 118, West Palm Beach, FL, 33406",
+      "issue_date": "2023-05-10T04:00:00",
+      "likely_explanations": [
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV794",
+      "legal_name": "Move America, Inc.",
+      "dba": "Move America, Inc.",
+      "phone": "5617048748",
+      "address": "9370  SW 8th St  Apt 117, Boca Raton, FL, 33428",
+      "issue_date": "2023-11-28T05:00:00",
+      "likely_explanations": [
+        "legal/DBA naming mismatch possible (partial token overlap exists)"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    },
+    {
+      "mv_permit": "MV937",
+      "legal_name": "Patmar, LLC",
+      "dba": "Delivery Done Now",
+      "phone": "5619290267",
+      "address": "1865 SW 24th Ave , Fort Lauderdale, FL",
+      "issue_date": "2011-05-09T16:49:22",
+      "likely_explanations": [
+        "corporate-name / DBA differences possible"
+      ],
+      "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact."
+    }
+  ],
+  "bounded_manual_qa": {
+    "target": 25,
+    "checked": 25,
+    "records": [
+      {
+        "mv_permit": "MV1001",
+        "legal_name": "Five O Movers, LLC",
+        "dba": "Five O Movers, LLC",
+        "phone": "5617455599",
+        "address": "1615 Cypress Drive Suite 1, Jupiter, FL, 33469",
+        "issue_date": "2012-04-05T00:00:00",
+        "likely_explanations": [
+          "truly unresolved / state crosswalk unavailable"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1017",
+        "legal_name": "Move For You, Inc",
+        "dba": "Move For You, Inc",
+        "phone": "5617773100",
+        "address": "18863   Schooner Dr, Boca Raton, FL, 33496",
+        "issue_date": "2023-06-20T04:00:00",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1022",
+        "legal_name": "A1 Priority Moving, LLC.",
+        "dba": "A1 Priority Moving, LLC.",
+        "phone": "5613021742",
+        "address": "2788 Quantum Lakes Drive , Boynton Beach, FL, 33426",
+        "issue_date": "2017-08-24T08:53:38",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1055",
+        "legal_name": "South West Movers, LLC",
+        "dba": "South West Movers, LLC",
+        "phone": "8005621084",
+        "address": "301  W Atlantic Ave  Ste 0-5, Delray Beach, FL, 33444",
+        "issue_date": "2016-06-09T08:17:40",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1076",
+        "legal_name": "365 Home Maintenance, Inc",
+        "dba": "365 Home Maintenance, Inc",
+        "phone": "5616629335",
+        "address": "1172 West 36th St , Riviera Beach, FL, 33404",
+        "issue_date": "2014-07-31T15:24:53",
+        "likely_explanations": [
+          "truly unresolved / state crosswalk unavailable"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1086",
+        "legal_name": "Florida Licensed Moving Corporation",
+        "dba": "Duck Movers",
+        "phone": "5612934110",
+        "address": "542   Douglas Ave  No, Altamonte Springs, FL, 32714",
+        "issue_date": "2016-05-17T10:13:52",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)",
+          "corporate-name / DBA differences possible"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1093",
+        "legal_name": "Good Job Moving, Inc.",
+        "dba": "Good Job Moving, Inc.",
+        "phone": "5618086013",
+        "address": "3111 SW 20th Terr Apt 22D1, Delray Beach, FL, 33445",
+        "issue_date": "2014-10-30T16:24:51",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1120",
+        "legal_name": "Move 4 You, LLC",
+        "dba": "Move 4 You, LLC",
+        "phone": "5612886255",
+        "address": "301 Yamato Road S 1240, Boca Raton, FL, 33431",
+        "issue_date": "2016-02-01T09:40:01",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit",
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1135",
+        "legal_name": "Move Pro Moving And Storage ",
+        "dba": "Move Pro Moving and Storage ",
+        "phone": "5613152560",
+        "address": "5110   St. John  Ave S, Boynton Beach, FL, 33472",
+        "issue_date": "2019-08-07T04:00:00",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit",
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1141",
+        "legal_name": "Thompson & Sons Moving and Storage Inc.",
+        "dba": "Thompson & Sons Moving and Storage Inc.",
+        "phone": "9545311354",
+        "address": "1746 Avendia del Sol , Boca Raton, FL, 33432",
+        "issue_date": "2016-09-21T15:19:48",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit",
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1169",
+        "legal_name": "Iurkenty Corp",
+        "dba": "I & A Moving and Storage",
+        "phone": "9548041645",
+        "address": "5057   Breckenridge Pl  Apt 204, West Palm Beach, FL, 33417",
+        "issue_date": "2018-04-11T04:00:00",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit",
+          "corporate-name / DBA differences possible"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1180",
+        "legal_name": "Moving Kings Van Lines Inc.",
+        "dba": "Moving Kings Van Lines Inc.",
+        "phone": "8445615464",
+        "address": "1979   10th Ave N, Lake Worth, FL, 33461",
+        "issue_date": "2019-08-14T04:00:00",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit",
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1197",
+        "legal_name": "Cross Moving & Storage Co.",
+        "dba": "Cross Moving & Storage Co.",
+        "phone": "5615709464",
+        "address": "730   Neptune St, West Palm Beach, FL, 33406",
+        "issue_date": "2019-10-17T04:00:00",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit",
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1214",
+        "legal_name": "Camille's Professional Flat Rate Moving Services, LLC",
+        "dba": "Camille's Professional Flat Rate Moving Services, LLC",
+        "phone": "5618090209",
+        "address": "8377   Morning Star Road, Lake Worth, FL, 33467",
+        "issue_date": "2021-03-24T04:00:00",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit",
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1260",
+        "legal_name": "Eldorado Transporting And Moving LLC",
+        "dba": "Eldorado Transporting And Moving LLC",
+        "phone": "5615317689",
+        "address": "1075   Moonlight Way, Royal Palm Beach, FL, 33411",
+        "issue_date": "2021-12-20T05:00:00",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit",
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV1275",
+        "legal_name": "Royalty Mover Inc",
+        "dba": "Royalty Mover Inc",
+        "phone": "6169352262",
+        "address": "1005   Lake Ave  Ste 413, Lake Worth, FL, 33460",
+        "issue_date": "2022-11-15T05:00:00",
+        "likely_explanations": [
+          "high MV sequence — possibly recent county permit"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV22",
+        "legal_name": "Crystal Coast Moving & Storage, Inc.",
+        "dba": "Crystal Coast Moving & Storage, Inc.",
+        "phone": "5618638343",
+        "address": "7880   Central Industrial Dr  Unit 250, Riviera Beach, FL, 33404",
+        "issue_date": "2024-04-25T04:00:00",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV42",
+        "legal_name": "A Man With A Van, Inc. ",
+        "dba": "A Man With A Van, Inc.",
+        "phone": "5617849772",
+        "address": "3132 Fortune Way Unit D-30, Wellington, FL, 33414",
+        "issue_date": "2013-05-21T14:51:20",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV59",
+        "legal_name": "A-1 Sun Movers, Inc. ",
+        "dba": "A-1 Sun Movers, Inc. ",
+        "phone": "5612724635",
+        "address": "651 Seaview Ave , Boynton Beach, FL, 33435",
+        "issue_date": "2016-05-26T08:25:49",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV680",
+        "legal_name": "MVP Movers, Inc.",
+        "dba": "MVP Movers, Inc.",
+        "phone": "5612555209",
+        "address": "683   Snead  Cir, West Palm Beach, FL, 33413",
+        "issue_date": "2022-05-10T04:00:00",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV7",
+        "legal_name": "Fazio's Moving, Inc.",
+        "dba": "Fazio's Moving, Inc.",
+        "phone": "5618443848",
+        "address": "7535    Garden Rd  Bay 42, Riviera Beach, FL, 33404",
+        "issue_date": "2018-05-23T04:00:00",
+        "likely_explanations": [
+          "truly unresolved / state crosswalk unavailable"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV736",
+        "legal_name": "A Special Packing Service, Inc.",
+        "dba": "A Special Packing Service, Inc.",
+        "phone": "5615477175",
+        "address": "1605    Siesta St, Lantana, FL, 33462",
+        "issue_date": "2019-05-03T04:00:00",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV837",
+        "legal_name": "Monster Moving, Inc.",
+        "dba": "5 Star Moving Inc.",
+        "phone": "5615781099",
+        "address": "712    Park Place, West Palm Beach, FL, 33401",
+        "issue_date": "2016-06-02T09:03:18",
+        "likely_explanations": [
+          "corporate-name / DBA differences possible"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV883",
+        "legal_name": "H. Martone, Inc.",
+        "dba": "Antique Restoration Sales and Services",
+        "phone": "5619514413",
+        "address": "709  Omar Road , West Palm Beach, FL, 33405",
+        "issue_date": "2015-04-30T10:16:07",
+        "likely_explanations": [
+          "corporate-name / DBA differences possible"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      },
+      {
+        "mv_permit": "MV95",
+        "legal_name": "Father & Son Storage Warehouse, Inc. ",
+        "dba": "Father & Son Storage Warehouse, Inc. ",
+        "phone": "5618819800",
+        "address": "843 W 13th Court Suite 8, Riviera Beach, FL, 33404",
+        "issue_date": "2012-05-11T15:57:01",
+        "likely_explanations": [
+          "legal/DBA naming mismatch possible (partial token overlap exists)"
+        ],
+        "note": "NOT_FOUND does not mean unlicensed. County permit remains a county regulatory fact.",
+        "qa_status": "MANUAL_BOUNDED_QA_RECORDED",
+        "qa_conclusion": "REMAINS_NOT_FOUND",
+        "qa_note": "Fail-closed: no deterministic FDACS corroboration under PBC_FDACS_RECONCILIATION_V1. Rules not loosened."
+      }
+    ]
+  }
+}

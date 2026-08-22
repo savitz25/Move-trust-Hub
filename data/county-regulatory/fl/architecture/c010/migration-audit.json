@@ -1,0 +1,11 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T15:35:04.265Z",
+  "production_migrations_introduced_by_c001_c010": 0,
+  "executable_migrations_in_supabase_migrations": 0,
+  "sql_mutation_files_in_county_trees": [],
+  "design_sketch_paths": [
+    "data/county-regulatory/fl/architecture/c009/migration-specification.json"
+  ],
+  "note": "C009 contains migration DESIGN sketches only; no executable supabase/migrations from county stack."
+}

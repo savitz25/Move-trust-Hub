@@ -1,0 +1,9 @@
+{
+  "task": "FL-C006",
+  "PUBLIC_COMPLAINT_RECORDS": 0,
+  "PUBLIC_DISPOSITIONS": 0,
+  "PRA_REQUIRED": true,
+  "access_class": "INTAKE_ONLY",
+  "evidence_class_system_only": "COMPLAINT_SYSTEM_OBSERVATION",
+  "note": "Complaint intake/program description is not complaint history. No company-level complaint observations invented."
+}

@@ -1,0 +1,107 @@
+{
+  "task": "FL-C005",
+  "inventory_basis": "APPLICATION_SCHEMA_PUBLIC + PUBLIC_ROSTER_FIELDS",
+  "completeness_classification": "NEAR_FULL_ACTIVE_ROSTER",
+  "note": "Public EnerGov roster exposes identity/status/dates/address. Application schema documents phones, emails, owners, branches, vehicles, insurance, WC — not returned on public detail samples.",
+  "application_schema_public": [
+    {
+      "field": "company_name",
+      "present_in_application": "YES",
+      "present_in_public_roster": "YES"
+    },
+    {
+      "field": "dba",
+      "present_in_application": "YES",
+      "present_in_public_roster": "YES"
+    },
+    {
+      "field": "physical_address",
+      "present_in_application": "YES",
+      "present_in_public_roster": "YES"
+    },
+    {
+      "field": "mailing_address",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO"
+    },
+    {
+      "field": "phone_fax_cell",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO"
+    },
+    {
+      "field": "email",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO"
+    },
+    {
+      "field": "county_moving_registration_number",
+      "present_in_application": "YES",
+      "present_in_public_roster": "YES"
+    },
+    {
+      "field": "feid_tax_id",
+      "present_in_application": "YES",
+      "present_in_public_roster": "SOMETIMES"
+    },
+    {
+      "field": "owners_officers_dob",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO",
+      "pii_note": "DOB not committed"
+    },
+    {
+      "field": "additional_branch_offices",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO"
+    },
+    {
+      "field": "vehicles_vin_tag_gvw_ymm",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO"
+    },
+    {
+      "field": "local_business_tax_receipt",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO_DIRECT_JOIN"
+    },
+    {
+      "field": "insurance_gl_auto_cargo",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO"
+    },
+    {
+      "field": "workers_comp_or_exemption",
+      "present_in_application": "YES",
+      "present_in_public_roster": "NO"
+    },
+    {
+      "field": "fdacs_im_number",
+      "present_in_application": "HISTORICAL_DISCLOSURE_POSSIBLE",
+      "present_in_public_roster": "NO"
+    }
+  ],
+  "public_roster_fields": [
+    "case_id",
+    "license_number",
+    "license_type",
+    "status",
+    "company_name",
+    "dba",
+    "company_type",
+    "business_type",
+    "business_status",
+    "business_id",
+    "address_display",
+    "address{}",
+    "apply_date",
+    "issue_date",
+    "expire_date",
+    "opened_date",
+    "closed_date",
+    "license_year",
+    "description",
+    "tax_id"
+  ],
+  "detail_sample_note": "Public detail endpoint returns identity/status/dates. Phones, emails, owners, vehicles, insurance certificates are NOT exposed on this public API response. Attachments referenced in Description are not downloadable without authenticated portal access."
+}

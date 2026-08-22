@@ -1,0 +1,120 @@
+﻿{
+    "business_seq":  1184,
+    "license_number":  "MV86",
+    "business_name":  "Dependable Pro Movers, Inc.",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV86",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Dependable Pro Movers, Inc.",
+                               "Established_Yr":  "1995",
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1184,
+                               "Does_Business_As":  "Dependable Pro Movers, Inc.",
+                               "Address":  "371 Las Palmas",
+                               "City":  "Royal Palm Beach",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33411",
+                               "MailingAddress":  "371 Las Palmas",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Royal Palm Beach",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33411",
+                               "PhoneNumber":  "5617982241",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "krcaa@aol.com",
+                               "WebsiteURL":  null,
+                               "Fax":  "5617986412",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  1184,
+                                           "LastName":  "Cerdas",
+                                           "FirstName":  "Kris",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "5617982241"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Dependable Pro Movers, Inc.",
+                                         "Established_Yr":  "1995",
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1184,
+                                         "Does_Business_As":  "Dependable Pro Movers, Inc.",
+                                         "Address":  "371 Las Palmas",
+                                         "City":  "Royal Palm Beach",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33411",
+                                         "MailingAddress":  "371 Las Palmas",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Royal Palm Beach",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33411",
+                                         "PhoneNumber":  "5617982241",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "krcaa@aol.com",
+                                         "WebsiteURL":  null,
+                                         "Fax":  "5617986412",
+                                         "License_Required":  "Y"
+                                     }
+}

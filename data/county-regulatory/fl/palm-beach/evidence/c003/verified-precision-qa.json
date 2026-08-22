@@ -1,0 +1,960 @@
+{
+  "task": "FL-C003",
+  "verified_checked": 64,
+  "correct": 64,
+  "incorrect": 0,
+  "precision": 100,
+  "required_target_pct": 98,
+  "gate": "PASS",
+  "records": [
+    {
+      "mv_permit": "MV1039",
+      "fdacs_id": "IM2137",
+      "company_id": null,
+      "match_method": "exact_business_email+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1145",
+      "fdacs_id": "IM2513",
+      "company_id": null,
+      "match_method": "exact_business_email+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV747",
+      "fdacs_id": "IM408",
+      "company_id": "fl-im-408",
+      "match_method": "exact_business_email+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV802",
+      "fdacs_id": "IM1399",
+      "company_id": "fl-im-1399",
+      "match_method": "exact_business_email+exact_legal_name",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1132",
+      "fdacs_id": "IM3223",
+      "company_id": "fl-im-3223",
+      "match_method": "exact_business_email+exact_legal_name+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV624",
+      "fdacs_id": "IM1058",
+      "company_id": "fl-im-1058",
+      "match_method": "exact_business_email+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1097",
+      "fdacs_id": "IM2384",
+      "company_id": "usdot-2562486",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV2",
+      "fdacs_id": "IM32",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV86",
+      "fdacs_id": "IM88",
+      "company_id": "fl-im-88",
+      "match_method": "exact_business_email+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1210",
+      "fdacs_id": "IM2788",
+      "company_id": "fl-im-2788",
+      "match_method": "exact_business_email+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1191",
+      "fdacs_id": "IM3103",
+      "company_id": "patriot-moving-and-storage",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1193",
+      "fdacs_id": "IM2839",
+      "company_id": null,
+      "match_method": "exact_business_email+exact_legal_name+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV809",
+      "fdacs_id": "IM2182",
+      "company_id": "fl-im-2182",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV969",
+      "fdacs_id": "IM1913",
+      "company_id": "fl-im-1913",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV890",
+      "fdacs_id": "IM3437",
+      "company_id": "fl-im-3437",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV75",
+      "fdacs_id": "IM756",
+      "company_id": "fl-im-756",
+      "match_method": "exact_dba+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV867",
+      "fdacs_id": "IM2415",
+      "company_id": null,
+      "match_method": "exact_business_email+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1123",
+      "fdacs_id": "IM2520",
+      "company_id": "fl-im-2520",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1079",
+      "fdacs_id": "IM2306",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1029",
+      "fdacs_id": "IM2089",
+      "company_id": "america-s-family-moving-and-storage-llc",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1174",
+      "fdacs_id": "IM4147",
+      "company_id": "fl-im-4147",
+      "match_method": "exact_legal_name+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV367",
+      "fdacs_id": "IM3185",
+      "company_id": "fl-im-3185",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV772",
+      "fdacs_id": "IM3877",
+      "company_id": null,
+      "match_method": "exact_business_email+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1244",
+      "fdacs_id": "IM3417",
+      "company_id": "fl-im-3417",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1175",
+      "fdacs_id": "IM3304",
+      "company_id": "fl-im-3304",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV47",
+      "fdacs_id": "IM182",
+      "company_id": "fl-im-182",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1231",
+      "fdacs_id": "IM3418",
+      "company_id": "fl-im-3418",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV964",
+      "fdacs_id": "IM1909",
+      "company_id": null,
+      "match_method": "exact_business_email+exact_dba+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1062",
+      "fdacs_id": "IM3378",
+      "company_id": "fl-im-3378",
+      "match_method": "exact_dba+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV18",
+      "fdacs_id": "IM2589",
+      "company_id": "fl-im-2589",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV17",
+      "fdacs_id": "IM93",
+      "company_id": null,
+      "match_method": "exact_dba+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1147",
+      "fdacs_id": "IM2731",
+      "company_id": "fl-im-2731",
+      "match_method": "exact_legal_name+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV15",
+      "fdacs_id": "IM114",
+      "company_id": "fl-im-114",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV773",
+      "fdacs_id": "IM1232",
+      "company_id": "usdot-381994",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV50",
+      "fdacs_id": "IM2822",
+      "company_id": "usdot-3034432",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1130",
+      "fdacs_id": "IM4147",
+      "company_id": "fl-im-4147",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV344",
+      "fdacs_id": "IM893",
+      "company_id": "fl-im-893",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1041",
+      "fdacs_id": "IM2005",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV513",
+      "fdacs_id": "IM1591",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1184",
+      "fdacs_id": "IM3048",
+      "company_id": "fl-im-3048",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1226",
+      "fdacs_id": "IM3408",
+      "company_id": "fl-im-3408",
+      "match_method": "exact_legal_name+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV996",
+      "fdacs_id": "IM1982",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1128",
+      "fdacs_id": "IM2565",
+      "company_id": "fl-im-2565",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1323",
+      "fdacs_id": "IM4020",
+      "company_id": "usdot-709590",
+      "match_method": "exact_dba+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV13",
+      "fdacs_id": "IM400",
+      "company_id": "fl-im-400",
+      "match_method": "exact_dba+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1316",
+      "fdacs_id": "IM3903",
+      "company_id": "fl-im-3903",
+      "match_method": "exact_legal_name+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1238",
+      "fdacs_id": "IM2770",
+      "company_id": "fl-im-2770",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV3",
+      "fdacs_id": "IM109",
+      "company_id": "usdot-1917905",
+      "match_method": "exact_dba+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1108",
+      "fdacs_id": "IM1447",
+      "company_id": "usdot-1568346",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1224",
+      "fdacs_id": "IM3320",
+      "company_id": "fl-im-3320",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1317",
+      "fdacs_id": "IM3920",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1229",
+      "fdacs_id": "IM3378",
+      "company_id": "fl-im-3378",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1084",
+      "fdacs_id": "IM2325",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1204",
+      "fdacs_id": "IM3214",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV954",
+      "fdacs_id": "IM1881",
+      "company_id": "usdot-3199979",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV956",
+      "fdacs_id": "IM1888",
+      "company_id": null,
+      "match_method": "exact_business_email+exact_legal_name+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV23",
+      "fdacs_id": "IM688",
+      "company_id": "fl-im-688",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1183",
+      "fdacs_id": "IM73",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1325",
+      "fdacs_id": "IM3867",
+      "company_id": "fl-im-3867",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1241",
+      "fdacs_id": "IM2932",
+      "company_id": "fl-im-2932",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV868",
+      "fdacs_id": "IM2822",
+      "company_id": "usdot-3034432",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1328",
+      "fdacs_id": "IM4097",
+      "company_id": "fl-im-4097",
+      "match_method": "exact_legal_name+exact_phone",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV11",
+      "fdacs_id": "IM139",
+      "company_id": null,
+      "match_method": "exact_dba+exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "canonical_candidate_consistent": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mv_permit": "MV1315",
+      "fdacs_id": "IM3856",
+      "company_id": "whatamove",
+      "match_method": "exact_legal_name+exact_phone+exact_physical_address",
+      "checks": {
+        "palm_beach_identity_present": true,
+        "fdacs_identity_present": true,
+        "corroborating_evidence_ok": true,
+        "phone_matches_if_claimed": true,
+        "address_matches_if_claimed": true
+      },
+      "qa_result": "correct"
+    }
+  ]
+}

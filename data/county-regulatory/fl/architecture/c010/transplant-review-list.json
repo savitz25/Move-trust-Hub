@@ -1,0 +1,12 @@
+{
+  "task": "FL-C010",
+  "count": 6,
+  "paths": [
+    "data/county-regulatory/fl/miami-dade/evidence/florida-im-company-crosswalk.json",
+    "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-business-20tax-page-5Bsi.json",
+    "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-local-20business-20tax-f.json",
+    "data/county-regulatory/fl/miami-dade/raw/instructions-self-service-portal.pdf",
+    "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+    "data/county-regulatory/fl/palm-beach/raw/MovingCo_Application.pdf"
+  ]
+}

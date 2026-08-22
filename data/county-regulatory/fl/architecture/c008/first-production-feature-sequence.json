@@ -1,0 +1,61 @@
+{
+  "task": "FL-C008",
+  "pilot_county": "Palm Beach",
+  "waves": [
+    {
+      "id": "A",
+      "name": "Credential",
+      "scope": [
+        "Moving Business Permit number",
+        "county status",
+        "issue/expiration dates",
+        "regulator",
+        "source provenance"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "B",
+      "name": "Identity",
+      "scope": [
+        "county-reported legal name / DBA",
+        "address",
+        "phone",
+        "owner/contact title where public",
+        "fail-closed canonical link"
+      ],
+      "depends_on": ["A"]
+    },
+    {
+      "id": "C",
+      "name": "Complaints_Dispositions",
+      "scope": [
+        "BIR complaint observations with explicit window",
+        "official disposition codes (44-code catalog)",
+        "allegation vs disposition separation"
+      ],
+      "depends_on": ["A", "B"],
+      "consumer_rules": [
+        "complaint existence is not misconduct",
+        "no complaint-free claims"
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Enforcement",
+      "scope": [
+        "administrative actions / citations SAMPLE",
+        "explicit finality only when present",
+        "enforcement event != final outcome"
+      ],
+      "depends_on": ["A", "B"]
+    }
+  ],
+  "deferred_optional": [
+    "vehicle/fleet beyond public fleet count",
+    "insurance layers when CURRENT_POLICY_OBSERVED",
+    "LBT secondary",
+    "branches"
+  ],
+  "trust_score": "UNCHANGED_IN_ALL_WAVES_V1"
+}

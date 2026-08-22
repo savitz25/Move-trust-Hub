@@ -1,0 +1,15 @@
+{
+  "task": "FL-C005",
+  "availability": "APPLICATION_REQUIRED_FIELDS_DOCUMENTED",
+  "access": "PRA_OR_AUTHENTICATED_INTERNAL — not observed as public bulk/search",
+  "sample_full_pra": "PRA_REQUIRED",
+  "fields_documented": [
+    "YEAR/MAKE/MODEL",
+    "VEHICLE ID/VIN",
+    "Gross Vehicle Weight (GVW)",
+    "VEHICLE TAG NO."
+  ],
+  "relationship": "One Moving Business Registration may list multiple vehicles on application attachments.",
+  "public_rows_acquired": 0,
+  "pii_note": "VIN/tag are business-operated vehicle identifiers; no vehicle rows acquired publicly in FL-C005."
+}

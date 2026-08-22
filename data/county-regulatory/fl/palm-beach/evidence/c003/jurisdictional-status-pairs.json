@@ -1,0 +1,454 @@
+{
+  "task": "FL-C003",
+  "count": 64,
+  "records": [
+    {
+      "mv_permit": "MV1039",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1145",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV747",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV802",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1132",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV624",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1097",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV2",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV86",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1210",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1191",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1193",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV809",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV969",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV890",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV75",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV867",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1123",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1079",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1029",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1174",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV367",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV772",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1244",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1175",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV47",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1231",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV964",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1062",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV18",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV17",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1147",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV15",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "CRM - Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV773",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV50",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1130",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV344",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1041",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV513",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1184",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1226",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV996",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1128",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1323",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV13",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1316",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1238",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV3",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1108",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1224",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1317",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1229",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1084",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1204",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV954",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV956",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV23",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1183",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Expired",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1325",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1241",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV868",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1328",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV11",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    },
+    {
+      "mv_permit": "MV1315",
+      "palm_beach_status": "LICENSED",
+      "fdacs_status": "Registered",
+      "conflict_type": "JURISDICTIONAL_DIFFERENCE",
+      "note": "Both statuses retained as separate jurisdictional facts; neither overwrites the other."
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+﻿{
+    "business_seq":  2617,
+    "license_number":  "MV509",
+    "business_name":  "All My Sons Moving \u0026 Storage Of West Palm Beach Inc.",
+    "license_list":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  243371,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  2617,
+                                                "KeyField":  null,
+                                                "Field2":  "2011-11-28 00:00:00.0000000",
+                                                "Field3":  "MOV05-07 Sec 10(A) Failed to relinquish shipper\u0027s household goods",
+                                                "Field4":  "1101664",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "11/28/2011",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  388069,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  2617,
+                                                "KeyField":  null,
+                                                "Field2":  "2017-03-15 09:32:25.0000000",
+                                                "Field3":  "MOV05-07 Sec 8(A) Failed to provide shipper w/written contract prior to move",
+                                                "Field4":  "N/A",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "03/15/2017",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "3",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  388144,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  2617,
+                                                "KeyField":  null,
+                                                "Field2":  "2017-03-15 09:35:00.0000000",
+                                                "Field3":  "MOV05-07 Sec 9 Failed to provide shipper w/req. household mov. co. disclosures \u0026/or sign req form  ",
+                                                "Field4":  "N/A",
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  "YES",
+                                                "Field10":  "03/15/2017",
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            }
+                                        ],
+                              "Count":  3
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "All My Sons Moving \u0026 Storage Of West Palm Beach Inc.",
+                               "Established_Yr":  "2000",
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  2617,
+                               "Does_Business_As":  "True Van Lines, All My Sons Moving \u0026 Storage, Quick N Easy Moving",
+                               "Address":  "15827 Guild",
+                               "City":  "Jupiter",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33478",
+                               "MailingAddress":  "2400 Old Mill",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Carrollton",
+                               "MailingState":  "TX",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "75007",
+                               "PhoneNumber":  "5612337900",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "privera@allmysons.com",
+                               "WebsiteURL":  "www.allmysons.com",
+                               "Fax":  "5616274003",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  2617,
+                                           "LastName":  "Hudnall",
+                                           "FirstName":  "Ashley",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "4694615000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "All My Sons Moving \u0026 Storage Of West Palm Beach Inc.",
+                                         "Established_Yr":  "2000",
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  2617,
+                                         "Does_Business_As":  "True Van Lines, All My Sons Moving \u0026 Storage, Quick N Easy Moving",
+                                         "Address":  "15827 Guild",
+                                         "City":  "Jupiter",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33478",
+                                         "MailingAddress":  "2400 Old Mill",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Carrollton",
+                                         "MailingState":  "TX",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "75007",
+                                         "PhoneNumber":  "5612337900",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "privera@allmysons.com",
+                                         "WebsiteURL":  "www.allmysons.com",
+                                         "Fax":  "5616274003",
+                                         "License_Required":  "Y"
+                                     }
+}

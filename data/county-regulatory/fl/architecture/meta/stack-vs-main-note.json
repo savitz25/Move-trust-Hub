@@ -1,0 +1,11 @@
+{
+  "task": "FL-C008",
+  "county_stack_preserved": true,
+  "rebase_performed": false,
+  "origin_main_at_task_start": "4711355486f3787e5c154cadeb0ff6d11dbb0118",
+  "c007_head": "05e018e2236cd1f865ef3808874aa388065720df",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "note": "Builder 1 advanced main (FL-010). County stack not rebased. Architecture discovery only.",
+  "merge_performed": false,
+  "analysis_technically_valid_without_rebase": true
+}

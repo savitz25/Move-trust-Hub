@@ -1,0 +1,40 @@
+{
+  "task": "FL-C003",
+  "authorities": {
+    "FDACS": {
+      "authoritative_for": [
+        "Florida Chapter 507 state mover registration"
+      ],
+      "status_examples": [
+        "Registered",
+        "active"
+      ]
+    },
+    "Palm_Beach_County_Consumer_Affairs": {
+      "authoritative_for": [
+        "Palm Beach Moving Business Permit",
+        "Palm Beach Consumer Affairs cases",
+        "Palm Beach dispositions",
+        "Palm Beach county enforcement"
+      ],
+      "status_examples": [
+        "LICENSED",
+        "EXPIRED",
+        "SUSPEND",
+        "REVOKED"
+      ]
+    }
+  },
+  "rule": "Do not allow one jurisdiction status to overwrite another. FDACS ACTIVE and Palm Beach LICENSED are distinct facts.",
+  "conflict_types": {
+    "JURISDICTIONAL_DIFFERENCE": "Both facts can be correct (different regulators / jurisdictions). Preserve both with provenance.",
+    "TEMPORAL_DIFFERENCE": "Retrieval or effective dates differ; both observations may be historically correct.",
+    "IDENTITY_REVIEW": "Potentially different businesses. Plausible overlap without deterministic same-entity proof.",
+    "TRUE_DATA_CONFLICT": "Same fact / same jurisdiction / same time window genuinely conflicts. Preserve both source values; do not silently overwrite.",
+    "IDENTITY_CONFLICT": "Evidence supports incompatible business identities under deterministic rules.",
+    "CROSS_SOURCE_REVIEW_REQUIRED": "Needs human review before any canonical attachment."
+  },
+  "provenance_rule": "Every retained observation must keep source agency, source URL/record id, and retrieval timestamp. Never collapse multi-jurisdiction facts into one field.",
+  "updated_for": "FL-C003 Phase 16",
+  "retrieved_at": "2026-08-21T19:51:45.682Z"
+}

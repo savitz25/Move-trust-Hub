@@ -1,0 +1,53 @@
+{
+  "task": "FL-C007",
+  "published": false,
+  "trust_score_connection": false,
+  "sections": [
+    {
+      "id": "pinellas_regulatory_posture",
+      "title": "Pinellas Moving Ordinance posture",
+      "fields": [
+        "ordinance cite (Ch.42 Art.VIII)",
+        "Monitoring (not Licensing)",
+        "geographic applicability",
+        "no separate county credential",
+        "source"
+      ]
+    },
+    {
+      "id": "pinellas_transaction_requirements",
+      "title": "Required consumer transaction disclosures",
+      "fields": [
+        "written estimate",
+        "contract for service",
+        "disclosure statement",
+        "inventory",
+        "liability disclosure"
+      ]
+    },
+    {
+      "id": "pinellas_disputes",
+      "title": "Consumer complaint history (Accela)",
+      "fields": [
+        "5-year window",
+        "RECORD ID",
+        "dates opened/closed",
+        "RECORD STATUS",
+        "RECORD STATUS (disposition-like official values)",
+        "ASSOCIATED NAMES",
+        "5-year window; exact-name may return empty"
+      ]
+    },
+    {
+      "id": "pinellas_enforcement",
+      "title": "County enforcement authority",
+      "fields": [
+        "civil (42-368)",
+        "criminal (42-368)",
+        "Closed-Criminal / CP-CRM boundary only",
+        "final actions PRA"
+      ]
+    }
+  ],
+  "presentation_note": "Do not display a fake Pinellas mover license number. Prefer ordinance-compliance / complaint-history framing over credential badges. Never treat complaint RECORD STATUS as misconduct proof."
+}

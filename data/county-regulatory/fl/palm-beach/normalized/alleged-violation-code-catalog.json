@@ -1,0 +1,477 @@
+{
+  "county": "Palm Beach",
+  "agency": "Palm Beach County Public Safety — Consumer Affairs Division",
+  "observation_type": "OFFICIAL_CODE_TABLE",
+  "retrieved_at": "2026-08-21T17:36:35.678Z",
+  "count": 78,
+  "values": [
+    {
+      "alleged_violation_code": "001",
+      "alleged_violation_desc": "Alleged violation of the Consumer Affairs Ordinance of Palm Beach County.",
+      "alleged_violation_seq": 1,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "002",
+      "alleged_violation_desc": "Alleged violation of the Florida Business Opportunities Law",
+      "alleged_violation_seq": 2,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "003",
+      "alleged_violation_desc": "Alleged violation of the Florida Repair of Motor Vehicles Law",
+      "alleged_violation_seq": 3,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "004",
+      "alleged_violation_desc": "Alleged violation of the Florida Health Spa Law",
+      "alleged_violation_seq": 4,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "005",
+      "alleged_violation_desc": "Alleged violation of the Florida Consumer Finance Act",
+      "alleged_violation_seq": 5,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "006",
+      "alleged_violation_desc": "Alleged violation of the Florida Motor Vehicle Sales Finance Law",
+      "alleged_violation_seq": 6,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "007",
+      "alleged_violation_desc": "Alleged violation of the Florida Retail Installment Sales Law",
+      "alleged_violation_seq": 7,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "008",
+      "alleged_violation_desc": "Alleged violation of the Florida Installment Sales Finance Law",
+      "alleged_violation_seq": 8,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "009",
+      "alleged_violation_desc": "Alleged violation of the Florida Home Improvement Sales & Finance Law",
+      "alleged_violation_seq": 9,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "010",
+      "alleged_violation_desc": "Alleged violation of the Florida Consumer Collection Practices Law",
+      "alleged_violation_seq": 10,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "011",
+      "alleged_violation_desc": "Alleged violation of the Florida State Building Codes",
+      "alleged_violation_seq": 11,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "012",
+      "alleged_violation_desc": "Alleged violation of the Florida Weights & Measures Standard",
+      "alleged_violation_seq": 12,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "013",
+      "alleged_violation_desc": "Alleged violation of the Florida Department of Professional Regulation regulations",
+      "alleged_violation_seq": 13,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "030",
+      "alleged_violation_desc": "Alleged violation of the Palm Beach County Moving Ordinance",
+      "alleged_violation_seq": 14,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "014",
+      "alleged_violation_desc": "Alleged violation of the Florida Motor Vehicle Laws (odometer tampering, titling, etc.)",
+      "alleged_violation_seq": 15,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "015",
+      "alleged_violation_desc": "Alleged violation of the Florida Credit Services Organization Law",
+      "alleged_violation_seq": 16,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "016",
+      "alleged_violation_desc": "Alleged violation of other Florida Law or regulations",
+      "alleged_violation_seq": 17,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "017",
+      "alleged_violation_desc": "Alleged violation of the Palm Beach County Vehicle for Hire Ordinance",
+      "alleged_violation_seq": 18,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "018",
+      "alleged_violation_desc": "Alleged violation of the Palm Beach County Towing And immobilization Services Ordinance",
+      "alleged_violation_seq": 19,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "019",
+      "alleged_violation_desc": "Alleged violation of other Palm Beach County Ordinance or Code",
+      "alleged_violation_seq": 20,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "020",
+      "alleged_violation_desc": "Alleged violation of the Federal Truth in Lending Act",
+      "alleged_violation_seq": 21,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "021",
+      "alleged_violation_desc": "Alleged violation of the Federal Truth in Leasing Act",
+      "alleged_violation_seq": 22,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "022",
+      "alleged_violation_desc": "Alleged violation of the Federal Equal Credit Opportunity Act",
+      "alleged_violation_seq": 23,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "023",
+      "alleged_violation_desc": "Alleged violation of the Federal Fair Credit Billing Act",
+      "alleged_violation_seq": 24,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "024",
+      "alleged_violation_desc": "Alleged violation of the Federal Fair Credit Reporting Act",
+      "alleged_violation_seq": 25,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "025",
+      "alleged_violation_desc": "Alleged violation of the Federal Electronic Fund Transfer Act",
+      "alleged_violation_seq": 26,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "026",
+      "alleged_violation_desc": "Alleged violation of the Federal Mail Order regulations",
+      "alleged_violation_seq": 27,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "027",
+      "alleged_violation_desc": "Alleged violation of the Federal Trade Commission regulations",
+      "alleged_violation_seq": 28,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "028",
+      "alleged_violation_desc": "Alleged violation of other Federal statutes or regulations",
+      "alleged_violation_seq": 29,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "029",
+      "alleged_violation_desc": "Alleged violation of the PBC Motor Vehicle Repair Ordinance",
+      "alleged_violation_seq": 30,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "238",
+      "alleged_violation_desc": "Alleged false or misleading advertising",
+      "alleged_violation_seq": 31,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "239",
+      "alleged_violation_desc": "Alleged misrepresentation",
+      "alleged_violation_seq": 32,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "240",
+      "alleged_violation_desc": "Alleged omission of a material fact(s)",
+      "alleged_violation_seq": 33,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "241",
+      "alleged_violation_desc": "Alleged failure to provide refund",
+      "alleged_violation_seq": 34,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "242",
+      "alleged_violation_desc": "Alleged failure to provide service",
+      "alleged_violation_seq": 35,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "243",
+      "alleged_violation_desc": "Alleged failure to perform, complete or adhere to contract",
+      "alleged_violation_seq": 36,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "244",
+      "alleged_violation_desc": "Alleged failure to repair",
+      "alleged_violation_seq": 37,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "245",
+      "alleged_violation_desc": "Alleged failure to honor warranty",
+      "alleged_violation_seq": 38,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "246",
+      "alleged_violation_desc": "Alleged failure to complete warranty repairs",
+      "alleged_violation_seq": 39,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "247",
+      "alleged_violation_desc": "Alleged failure to provide goods in a timely manner",
+      "alleged_violation_seq": 40,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "248",
+      "alleged_violation_desc": "Alleged failure to deliver goods",
+      "alleged_violation_seq": 41,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "249",
+      "alleged_violation_desc": "Alleged failure to provide services in a timely manner",
+      "alleged_violation_seq": 42,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "250",
+      "alleged_violation_desc": "Alleged failure to deliver services",
+      "alleged_violation_seq": 43,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "251",
+      "alleged_violation_desc": "Alleged failure to process the loan in a timely manner",
+      "alleged_violation_seq": 44,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "252",
+      "alleged_violation_desc": "Alleged failure to cancel contract, subscription, membership, etc.",
+      "alleged_violation_seq": 45,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "253",
+      "alleged_violation_desc": "Alleged faulty goods",
+      "alleged_violation_seq": 46,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "254",
+      "alleged_violation_desc": "Alleged unsafe goods",
+      "alleged_violation_seq": 47,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "255",
+      "alleged_violation_desc": "Alleged faulty services or repairs",
+      "alleged_violation_seq": 48,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "256",
+      "alleged_violation_desc": "Alleged billing dispute",
+      "alleged_violation_seq": 49,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "257",
+      "alleged_violation_desc": "Alleged unfair business practice",
+      "alleged_violation_seq": 50,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "258",
+      "alleged_violation_desc": "Alleged overcharge or excessive price on a bill, receipt, or invoice",
+      "alleged_violation_seq": 51,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "259",
+      "alleged_violation_desc": "Alleged rude treatment",
+      "alleged_violation_seq": 52,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "260",
+      "alleged_violation_desc": "Alleged wrongful repossession, attachment, etc.",
+      "alleged_violation_seq": 53,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "261",
+      "alleged_violation_desc": "Alleged discrimination",
+      "alleged_violation_seq": 54,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "262",
+      "alleged_violation_desc": "Alleged wrongful denial of a claim (including insurance, etc.)",
+      "alleged_violation_seq": 55,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "263",
+      "alleged_violation_desc": "Alleged unauthorized service or other activity",
+      "alleged_violation_seq": 56,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "264",
+      "alleged_violation_desc": "Alleged exceeded the estimate or contract",
+      "alleged_violation_seq": 57,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "265",
+      "alleged_violation_desc": "Alleged damage to consumer's goods or property ",
+      "alleged_violation_seq": 58,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "266",
+      "alleged_violation_desc": "Alleged Respondent/Business gone out of business, bankruptcy, cannot be located, etc.",
+      "alleged_violation_seq": 59,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "267",
+      "alleged_violation_desc": "Inquiry regarding _______________________________",
+      "alleged_violation_seq": 60,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "268",
+      "alleged_violation_desc": "Alleged unnecessary repairs",
+      "alleged_violation_seq": 61,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "269",
+      "alleged_violation_desc": "Alleged unauthorized charge or debit to account",
+      "alleged_violation_seq": 62,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "476",
+      "alleged_violation_desc": "Alleged lack of maintenance or essential service(s)",
+      "alleged_violation_seq": 63,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "477",
+      "alleged_violation_desc": "Alleged failure to provide by rental rules (other than lease)",
+      "alleged_violation_seq": 64,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "478",
+      "alleged_violation_desc": "Alleged unfair rental rules",
+      "alleged_violation_seq": 65,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "479",
+      "alleged_violation_desc": "Alleged breach of lease",
+      "alleged_violation_seq": 66,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "480",
+      "alleged_violation_desc": "Alleged desire to terminate lease",
+      "alleged_violation_seq": 67,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "481",
+      "alleged_violation_desc": "Alleged violation of the Florida Landlord-Tenant Statute",
+      "alleged_violation_seq": 68,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "482",
+      "alleged_violation_desc": "Alleged eviction",
+      "alleged_violation_seq": 69,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "483",
+      "alleged_violation_desc": "Alleged failure to return security deposit and/or interest",
+      "alleged_violation_seq": 70,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "484",
+      "alleged_violation_desc": "Alleged improper deduction from security deposit",
+      "alleged_violation_seq": 71,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "485",
+      "alleged_violation_desc": "Alleged failure to return rental application fee",
+      "alleged_violation_seq": 72,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "486",
+      "alleged_violation_desc": "Alleged rent increase",
+      "alleged_violation_seq": 73,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "487",
+      "alleged_violation_desc": "Alleged other landlord-tenant problem(s)",
+      "alleged_violation_seq": 74,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "488",
+      "alleged_violation_desc": "E-mail inquiry received through consumer affairs mailbox",
+      "alleged_violation_seq": 76,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "031",
+      "alleged_violation_desc": "Alleged violation of the Palm Beach County Title Loan Ordinance",
+      "alleged_violation_seq": 77,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "032",
+      "alleged_violation_desc": "Alleged violation of the Palm Beach County Price-Gouging Ordinance.",
+      "alleged_violation_seq": 78,
+      "source": "api/Complaint/GetAllegedViolation"
+    },
+    {
+      "alleged_violation_code": "270",
+      "alleged_violation_desc": "Internet inquiry for information, services, assistance, or referrals",
+      "alleged_violation_seq": 79,
+      "source": "api/Complaint/GetAllegedViolation"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "task": "FL-C010",
+  "rehearsal_worktree": "C:\\\\Users\\\\makei\\\\move-trust-hub-c010-rehearsal",
+  "rehearsal_branch": "rehearsal/fl-county-v1-transplant",
+  "removed": true,
+  "pushed": false,
+  "env_local_removed": true,
+  "note": "Disposable rehearsal deleted after artifacts captured. Not pushed."
+}

@@ -1,0 +1,13 @@
+{
+  "task": "FL-C007",
+  "architecture_implemented": false,
+  "note": "Pinellas Consumer Protection Accela ConsumerProt module also supports licensing workflows for bingo/adult use/etc and complaint history for businesses generally — potential later reuse for other TrustHubs. Catalog only; no non-mover ingestion in FL-C007.",
+  "potential_later_reuse": [
+    "ContractorTrustHub",
+    "SeniorTrustHub",
+    "InsuranceTrustHub",
+    "other Move counties"
+  ],
+  "accela_complaint_history_pattern_reusable": true,
+  "ordinance_without_credential_pattern_reusable": true
+}

@@ -1,0 +1,14 @@
+{
+  "task": "FL-C007",
+  "mode": "FAIL_CLOSED",
+  "production_writes": false,
+  "google_places_api_requests": 0,
+  "rule": "NAME_ONLY_FROM_COMPLAINT_PDF_INSUFFICIENT",
+  "sample_businesses_in_complaint_pdf": 23,
+  "counts": {
+    "DETERMINISTIC_BUSINESS_LINK": 0,
+    "REVIEW_REQUIRED": 24,
+    "NOT_FOUND": 0
+  },
+  "note": "Complaint PDF business names alone are insufficient for DETERMINISTIC_BUSINESS_LINK to FDACS/canonical companies (fail closed). REVIEW_REQUIRED for all SAMPLE_ONLY complaint respondents until address/phone/IM corroboration exists."
+}

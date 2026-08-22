@@ -1,0 +1,23 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "implementation_in_c009": false,
+  "page_type": "future_county_regulatory_explainer_or_directory_section",
+  "may_describe": [
+    "Palm Beach CREDENTIAL_BASED posture",
+    "Moving Business Permit program existence",
+    "That county credentials are distinct from FDACS",
+    "Sample-coverage limitations for complaints/enforcement"
+  ],
+  "must_not": [
+    "Claim complete complaint universe",
+    "Claim complaint-free operators",
+    "Publish INTERNAL_ONLY company credential lists",
+    "Alter Trust Score explanations using county evidence as scoring inputs",
+    "Imply criminal records productization"
+  ],
+  "listing_companies_with_county_credentials": {
+    "allowed_when": "each company publicly reachable AND credential PUBLICATION_ELIGIBLE|PUBLISHED",
+    "wave_a_now": false
+  }
+}

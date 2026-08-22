@@ -1,0 +1,12 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T15:35:04.265Z",
+  "historical_c009_production_link_ready": 46,
+  "current_link_ready_vs_c009_snapshot": 46,
+  "newly_linkable_after_c009": [],
+  "newly_linkable_count": 0,
+  "dropped_vs_snapshot": [],
+  "dropped_count": 0,
+  "frozen_cohort_changed": false,
+  "note": "Frozen C009 cohort remains auditable and unchanged. Newly linkable listed for future review only. Live DB recompute deferred if env unavailable."
+}

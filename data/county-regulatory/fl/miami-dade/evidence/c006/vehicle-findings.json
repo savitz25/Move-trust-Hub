@@ -1,0 +1,15 @@
+{
+  "task": "FL-C006",
+  "REGULATORY_SCHEMA": true,
+  "REQUIREMENT_DOCUMENTED": true,
+  "CURRENT_VEHICLE_RECORDS_OBSERVED": 0,
+  "fields_on_application": [
+    "year/make/model",
+    "VIN",
+    "tag",
+    "GVW",
+    "truck/decal marking"
+  ],
+  "pra_required_for_inventory": true,
+  "note": "Schema/requirement only — not company-specific current fleet evidence."
+}

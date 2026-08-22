@@ -1,0 +1,10 @@
+{
+  "task": "FL-C005",
+  "model": "APPLICATION_SCHEMA_BRANCH_OFFICES",
+  "public_branch_rows": 0,
+  "notes": [
+    "Application section ADDITIONAL BRANCH OFFICES collects address + primary/secondary phones.",
+    "Public MR roster is license-centric; branch rows not exposed.",
+    "Do not invent branch entities from address differences alone without explicit branch evidence."
+  ]
+}

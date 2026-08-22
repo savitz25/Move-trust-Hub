@@ -1,0 +1,55 @@
+{
+  "task": "FL-C010",
+  "since_sha": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140",
+  "current_origin_main": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "county_path_conflicts_on_main": [],
+  "county_paths_touched_on_main_since_baseline": [],
+  "material_main_changes_overlapping_concerns": [
+    {
+      "sha": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+      "subject": "Merge pull request #61 FL-010A florida-state-wave1-apply",
+      "overlap": "state publication / Wave 1 apply — do not integrate county stack while active",
+      "blocks_integrate_now": true
+    },
+    {
+      "sha": "3c7d205b8ff98a3a2beb3c104c077006b24a54e3",
+      "subject": "VISUAL-006 MoveTrustHub network shell (#63)",
+      "overlap": "app/layout, hub chrome, network components — low risk for county data-only transplant",
+      "blocks_integrate_now": false
+    }
+  ],
+  "file_level_merge_conflicts_in_rehearsal": 0,
+  "obsolete_artifacts_flagged": [
+    {
+      "path": "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "note": "Duplicate snapshot; prefer architecture/c009/florida-im-company-crosswalk-current.json"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/evidence/florida-im-company-crosswalk.json",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "note": "Duplicate snapshot; prefer architecture/c009 current snapshot"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/instructions-self-service-portal.pdf",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "recommended_action": "EXCLUDE_FROM_MAIN_TRANSPLANT_BUT_ARCHIVE_LATER"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-local-20business-20tax-f.json",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "recommended_action": "EXCLUDE_FROM_MAIN_TRANSPLANT_BUT_ARCHIVE_LATER"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-business-20tax-page-5Bsi.json",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "recommended_action": "EXCLUDE_FROM_MAIN_TRANSPLANT_BUT_ARCHIVE_LATER"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/MovingCo_Application.pdf",
+      "classification": "REVIEW_BEFORE_TRANSPLANT",
+      "recommended_action": "REVIEW"
+    }
+  ],
+  "assessment": "No path collisions between county allowlist trees and current main. Organizational gate blocked by active state-track Wave 1 apply/observation, not by file conflicts."
+}

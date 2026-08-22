@@ -1,0 +1,1646 @@
+{
+  "task": "FL-C006",
+  "records_checked": 86,
+  "correct": 86,
+  "incorrect": 0,
+  "precision": 100,
+  "required_target_pct": 98,
+  "gate": "PASS",
+  "sample_incorrect": [],
+  "records": [
+    {
+      "mr_license": "MR-00002",
+      "fdacs_id": "IM27",
+      "company_id": "fl-im-27",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Withers Transfer and Storage of Coral Gables, Inc.",
+      "fdacs_name": "WITHERS TRANSFER AND STORAGE OF CORAL GABLES, INC.",
+      "county_address": "11431 NW 107 ST Unit: #1 Miami FL 33178",
+      "fdacs_address": "11431 NW 107TH ST STE 1, MIAMI, FL 33178-4632",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00015",
+      "fdacs_id": "IM106",
+      "company_id": "fl-im-106",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Raul's Moving, Inc.",
+      "fdacs_name": "RAUL'S MOVING, INC.",
+      "county_address": "9105 NW 105 CIR Medley FL 33178",
+      "fdacs_address": "9105 NW 105TH CIR, MIAMI, FL 33178-1306",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00018",
+      "fdacs_id": "IM125",
+      "company_id": "fl-im-125",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Gomez Moving Co., Inc.",
+      "fdacs_name": "GOMEZ MOVING CO., INC.",
+      "county_address": "9881 SW 4 ST Miami FL 33174",
+      "fdacs_address": "9881 SW 4TH ST, MIAMI, FL 33174-1974",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00049",
+      "fdacs_id": "IM366",
+      "company_id": "fl-im-366",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Homestead Transfer & Storage Co.",
+      "fdacs_name": "HOMESTEAD TRANSFER & STORAGE CO.",
+      "county_address": "32100 SW 187 AVE Homestead FL 33030",
+      "fdacs_address": "32100 SW 187TH AVE, HOMESTEAD, FL 33030-6801",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00067",
+      "fdacs_id": "IM160",
+      "company_id": "fl-im-160",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Small Time Movers, Inc.",
+      "fdacs_name": "SMALL TIME MOVERS, INC.",
+      "county_address": "9124 SW 148 Ct Miami FL 33196",
+      "fdacs_address": "9124 SW 148TH CT, MIAMI, FL 33196-4121",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00068",
+      "fdacs_id": "IM1573",
+      "company_id": "fl-im-1573",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Mudanzas Diaz Inc.",
+      "fdacs_name": "MUDANZAS DIAZ, INC.",
+      "county_address": "7540 W 34 CT Hialeah FL 33018",
+      "fdacs_address": "7540 W 34TH CT, HIALEAH, FL 33018-6700",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00106",
+      "fdacs_id": "IM385",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "La Rosa Del Monte Express (Miami), LLC",
+      "fdacs_name": "LA ROSA DEL MONTE EXPRESS (MIAMI), LLC",
+      "county_address": "7600 NW 68 ST Miami FL 33166",
+      "fdacs_address": "7600 NW 68TH ST, MIAMI, FL 33166-2812",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00113",
+      "fdacs_id": "IM333",
+      "company_id": "fl-im-333",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Genesis Moving and Storage, Inc.",
+      "fdacs_name": "GENESIS MOVING & STORAGE, INC.",
+      "county_address": "1688 NE 205 TER North Miami Beach FL 33179",
+      "fdacs_address": "1688 NE 205TH TER, MIAMI, FL 33179-2117",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00207",
+      "fdacs_id": "IM260",
+      "company_id": "fl-im-260",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Millennium Relocation Services, Inc.",
+      "fdacs_name": "MILLENNIUM RELOCATION SERVICES, INC.",
+      "county_address": "9220 NW 102 ST Medley FL 33178",
+      "fdacs_address": "9220 NW 102ND ST, MEDLEY, FL 33178-1315",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00278",
+      "fdacs_id": "IM607",
+      "company_id": "fl-im-607",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "South Florida Van Line, Inc.",
+      "fdacs_name": "SOUTH FLORIDA VAN LINE, INC.",
+      "county_address": "2670 W 84 ST Hialeah FL 33016",
+      "fdacs_address": "2670 W 84TH ST, HIALEAH, FL 33016-5703",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00310",
+      "fdacs_id": "IM512",
+      "company_id": "fl-im-512",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Sergio's Moving, Corp.",
+      "fdacs_name": "SERGIO'S MOVING CORP.",
+      "county_address": "9200 SW 154 PL Miami FL 33196",
+      "fdacs_address": "9200 SW 154TH PL, MIAMI, FL 33196-1126",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00313",
+      "fdacs_id": "IM755",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "American Connection Moving, LLC",
+      "fdacs_name": "AMERICAN CONNECTION MOVING, LLC",
+      "county_address": "1708 NE 205 TER Miami FL 33179",
+      "fdacs_address": "1708 NE 205TH TER, MIAMI, FL 33179-2112",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00317",
+      "fdacs_id": "IM22",
+      "company_id": "fl-im-22",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Fuentes Moving Corp.",
+      "fdacs_name": "FUENTES MOVING CORP.",
+      "county_address": "9730 NW 10 ST Miami FL 33172",
+      "fdacs_address": "9730 NW 10TH ST, MIAMI, FL 33172-3322",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00332",
+      "fdacs_id": "IM810",
+      "company_id": "fl-im-810",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "A-1 Southeast Moving, Inc.",
+      "fdacs_name": "A 1 SOUTHEAST MOVING, INC",
+      "county_address": "3323 SW 154 CT Miami FL 33185",
+      "fdacs_address": "3323 SW 154TH CT, MIAMI, FL 33185-4734",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00338",
+      "fdacs_id": "IM668",
+      "company_id": "fl-im-668",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Johnny Moving & Delivery, Inc.",
+      "fdacs_name": "JOHNNY MOVING AND DELIVERY, INC.",
+      "county_address": "5871 W 20 LN Hialeah FL 33016",
+      "fdacs_address": "5871 W 20TH LN, HIALEAH, FL 33016-2663",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00359",
+      "fdacs_id": "IM161",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "OnTime Moving System, Inc.",
+      "fdacs_name": "ONTIME MOVING SYSTEM, INC.",
+      "county_address": "11455 NW 122 ST Miami FL 33178",
+      "fdacs_address": "11455 NW 122ND ST, MEDLEY, FL 33178",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00366",
+      "fdacs_id": "IM500",
+      "company_id": "fl-im-500",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Brickell Moving and Packing Inc.",
+      "fdacs_name": "BRICKELL MOVING AND PACKING INC.",
+      "county_address": "1014 E 29 ST Hialeah FL 33013",
+      "fdacs_address": "1014 E 29TH ST, HIALEAH, FL 33013-3518",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00378",
+      "fdacs_id": "IM2724",
+      "company_id": "fl-im-2724",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Jesus Moving, LLC",
+      "fdacs_name": "JESUS MOVING, LLC",
+      "county_address": "11 Flagami Blvd Miami FL 33144",
+      "fdacs_address": "11 FLAGAMI BLVD, MIAMI, FL 33144-2661",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00385",
+      "fdacs_id": "IM1541",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Vidal Moving & Storage, Inc.",
+      "fdacs_name": "VIDAL MOVING & STORAGE INC",
+      "county_address": "270 NE 70 ST Miami FL 33138",
+      "fdacs_address": "270 NE 70TH ST, MIAMI, FL 33138-5524",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00416",
+      "fdacs_id": "IM1503",
+      "company_id": "fl-im-1503",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Luis & Son Moving, Inc.",
+      "fdacs_name": "LUIS AND SON MOVING, INC.",
+      "county_address": "17201 SW 119 CT Miami FL 33177",
+      "fdacs_address": "17201 SW 119TH CT, MIAMI, FL 33177-2215",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00444",
+      "fdacs_id": "IM1100",
+      "company_id": "fl-im-1100",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "ABA Moving, Inc.",
+      "fdacs_name": "ABA MOVING INC.",
+      "county_address": "12429 W Dixie Hwy North Miami FL 33161",
+      "fdacs_address": "12429 W DIXIE HWY, NORTH MIAMI, FL 33161-5440",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00449",
+      "fdacs_id": "IM1079",
+      "company_id": "fl-im-1079",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "A.B.C. Moving, Inc.",
+      "fdacs_name": "A.B.C. MOVING, INC.",
+      "county_address": "18235 NE 4 CT Miami FL 33162",
+      "fdacs_address": "18235 NE 4TH CT, MIAMI, FL 33162-1011",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00450",
+      "fdacs_id": "IM1214",
+      "company_id": "fl-im-1214",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Powerloaders Corporation",
+      "fdacs_name": "POWERLOADERS CORPORATION",
+      "county_address": "2007 NW 79 AVE Doral FL 33122",
+      "fdacs_address": "2007 NW 79TH AVE, DORAL, FL 33122-1612",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00458",
+      "fdacs_id": "IM1319",
+      "company_id": "fl-im-1319",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "American Moving & Packaging Inc",
+      "fdacs_name": "AMERICAN MOVING & PACKAGING, INC.",
+      "county_address": "16121 NW 79 CT Miami FL 33016",
+      "fdacs_address": "16121 NW 79TH CT, MIAMI LAKES, FL 33016-6646",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00476",
+      "fdacs_id": "IM1204",
+      "company_id": "usdot-1329594",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Nobel Van Lines Inc.",
+      "fdacs_name": "NOBEL VAN LINES INC.",
+      "county_address": "17901 NW Miami Ct. Miami FL 33169",
+      "fdacs_address": "17901 NW MIAMI CT, MIAMI, FL 33169-5018",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00512",
+      "fdacs_id": "IM1320",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Flat Rate Moving & Storage, LLC",
+      "fdacs_name": "FLAT RATE MOVING & STORAGE, LLC",
+      "county_address": "16501 NW 8 AVE Miami FL 33169",
+      "fdacs_address": "16501 NW 8TH AVE, MIAMI, FL 33169-5813",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-00570",
+      "fdacs_id": "IM2476",
+      "company_id": "fl-im-2476",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Torito's Moving Corp",
+      "fdacs_name": "TORITO'S MOVING CORP",
+      "county_address": "19061 NW 90 CT Miami FL 33018",
+      "fdacs_address": "19061 NW 90TH CT, HIALEAH, FL 33018-8425",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01006",
+      "fdacs_id": "IM2442",
+      "company_id": "fl-im-2442",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Sainz Moving & Delivery",
+      "fdacs_name": "DANILO SAINZ",
+      "county_address": "1246 NW 6 ST Unit: #6 Miami FL 33125",
+      "fdacs_address": "1246 NW 6TH ST APT 6, MIAMI, FL 33125-4749",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01016",
+      "fdacs_id": "IM1689",
+      "company_id": "fl-im-1689",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "CMR Transport, Inc.",
+      "fdacs_name": "CMR TRANSPORT, INC.",
+      "county_address": "10049 NW 89 AVE Unit: #5 Medley FL 33178",
+      "fdacs_address": "10049 NW 89TH AVE UNIT 5, MEDLEY, FL 33178-1442",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01020",
+      "fdacs_id": "IM2474",
+      "company_id": "fl-im-2474",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Varela Moving Pickup & Delivery LLC",
+      "fdacs_name": "VARELA MOVING, PICKUP & DELIVERY LLC",
+      "county_address": "321 E 6 ST Unit: #226 Hialeah FL 33010",
+      "fdacs_address": "321 E 6TH ST APT 226, HIALEAH, FL 33010-6810",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01029",
+      "fdacs_id": "IM1624",
+      "company_id": "fl-im-1624",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Orellana AV Moving, Corp.",
+      "fdacs_name": "ORELLANA AV MOVING, CORP.",
+      "county_address": "15383 SW 23 ST Miami FL 33185",
+      "fdacs_address": "15383 SW 23RD ST, MIAMI, FL 33185-5734",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01045",
+      "fdacs_id": "IM1723",
+      "company_id": "fl-im-1723",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Laprom Moving Inc.",
+      "fdacs_name": "LAPROM MOVING INC.",
+      "county_address": "10812 NW 6 CT Miami FL 33168",
+      "fdacs_address": "10812 NW 6TH CT, MIAMI, FL 33168-3259",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01049",
+      "fdacs_id": "IM2549",
+      "company_id": "fl-im-2549",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Tacha's Movi, Corp.",
+      "fdacs_name": "TACHA'S MOVI, CORP",
+      "county_address": "9631 Fontainebleau Blvd Unit: #202 Miami FL 33172",
+      "fdacs_address": "9631 FONTAINEBLEAU BLVD APT 202, MIAMI, FL 33172-6859",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01054",
+      "fdacs_id": "IM2983",
+      "company_id": "fl-im-2983",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Inter-American Movers and Forwarders,LLC",
+      "fdacs_name": "INTER-AMERICAN MOVERS AND FORWARDERS,LLC",
+      "county_address": "6332 NW 97 AVE Doral FL 33178",
+      "fdacs_address": "6332 NW 97TH AVE, DORAL, FL 33178-1645",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01063",
+      "fdacs_id": "IM2456",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Valle Moving & Deliveries, Inc.",
+      "fdacs_name": "VALLE MOVING & DELIVERIES, INC.",
+      "county_address": "934 SW 149 CT Miami FL 33194",
+      "fdacs_address": "934 SW 149TH CT, MIAMI, FL 33194-2938",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01074",
+      "fdacs_id": "IM2551",
+      "company_id": "fl-im-2551",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Ojeda Moving and Delivery Inc",
+      "fdacs_name": "OJEDA MOVING AND DELIVERY INC.",
+      "county_address": "2606 W 9 LN Hialeah FL 33010",
+      "fdacs_address": "2606 W 9TH LN, HIALEAH, FL 33010-1228",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01079",
+      "fdacs_id": "IM2446",
+      "company_id": "fl-im-2446",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Martinez Delivery Corp",
+      "fdacs_name": "MARTINEZ DELIVERY CORP",
+      "county_address": "13006 SW 151 LN Miami FL 33186",
+      "fdacs_address": "13006 SW 151ST LN, MIAMI, FL 33186-7621",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01109",
+      "fdacs_id": "IM2051",
+      "company_id": "fl-im-2051",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Same Day Moving & Storage, Inc.",
+      "fdacs_name": "SAME DAY MOVING & STORAGE, INC.",
+      "county_address": "8871 SW 208 TER Miami FL 33189",
+      "fdacs_address": "8871 SW 208TH TER, CUTLER BAY, FL 33189-3882",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01137",
+      "fdacs_id": "IM2478",
+      "company_id": "fl-im-2478",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Shark Junior, L.L.C.",
+      "fdacs_name": "SHARK JUNIOR, L.L.C.",
+      "county_address": "13760 NW 19 AVE Unit: #8 Opa Locka FL 33054",
+      "fdacs_address": "13760 NW 19TH AVE UNIT 8, OPA LOCKA, FL 33054-4233",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01139",
+      "fdacs_id": "IM2239",
+      "company_id": "fl-im-2239",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "SF Local Moving Inc",
+      "fdacs_name": "SF LOCAL MOVING INC",
+      "county_address": "420 NE 152 ST Miami FL 33162",
+      "fdacs_address": "420 NE 152ND ST, MIAMI, FL 33162-5020",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01140",
+      "fdacs_id": "IM2467",
+      "company_id": "fl-im-2467",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Cuba Moving, Inc.",
+      "fdacs_name": "CUBA MOVING INC",
+      "county_address": "8446 NW 103 ST Unit: #101-D Hialeah Gardens FL 33016",
+      "fdacs_address": "8446 NW 103RD ST APT 101D, HIALEAH GARDENS, FL 33016-4693",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01141",
+      "fdacs_id": "IM2438",
+      "company_id": "fl-im-2438",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Chiquis Moving,Inc",
+      "fdacs_name": "CHIQUIS MOVING, INC.",
+      "county_address": "1321 SW 142 AVE Miami FL 33184",
+      "fdacs_address": "1321 SW 142ND AVE, MIAMI, FL 33184-3212",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01147",
+      "fdacs_id": "IM3470",
+      "company_id": "fl-im-3470",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Bermen Moving & Delivery LLC",
+      "fdacs_name": "BERMEN MOVING & DELIVERY LLC",
+      "county_address": "1132 W 39 TER Hialeah FL 33012",
+      "fdacs_address": "1132 W 39TH TER, HIALEAH, FL 33012-7787",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01164",
+      "fdacs_id": "IM2284",
+      "company_id": "fl-im-2284",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Nina International Transport Inc.",
+      "fdacs_name": "NINA INTERNATIONAL TRANSPORT INC",
+      "county_address": "4450 NW 74 AVE Miami FL 33166",
+      "fdacs_address": "4450 NW 74TH AVE, MIAMI, FL 33166-6443",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01192",
+      "fdacs_id": "IM2781",
+      "company_id": "fl-im-2781",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Mancav Furniture Delivery LLC",
+      "fdacs_name": "MANCAV FURNITURE DELIVERY LLC",
+      "county_address": "11112 SW 161 ST Miami FL 33157",
+      "fdacs_address": "11112 SW 161ST ST, MIAMI, FL 33157-2839",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01203",
+      "fdacs_id": "IM2535",
+      "company_id": null,
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Black Wolf Moving Miami, LLC",
+      "fdacs_name": "BLACK WOLF MOVING MIAMI, LLC",
+      "county_address": "1521 NW 82 AVE Doral FL 33126",
+      "fdacs_address": "1521 NW 82ND AVE, DORAL, FL 33126-1019",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01208",
+      "fdacs_id": "IM2606",
+      "company_id": "fl-im-2606",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Wilfredo's Moving",
+      "fdacs_name": "WILFREDO HERNANDEZ",
+      "county_address": "17974 NW 74 CT Hialeah FL 33015",
+      "fdacs_address": "17974 NW 74TH CT, HIALEAH, FL 33015-8443",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01209",
+      "fdacs_id": "IM2609",
+      "company_id": "usdot-3080327",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Dixie Movers LLC",
+      "fdacs_name": "DIXIE MOVERS LLC",
+      "county_address": "2221 NE 164 ST Unit: #273 North Miami Beach FL 33160",
+      "fdacs_address": "2221 NE 164TH ST # 273, NORTH MIAMI BEACH, FL 33160-3703",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01216",
+      "fdacs_id": "IM2463",
+      "company_id": "fl-im-2463",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Quintero Delivery & Moving, Inc.",
+      "fdacs_name": "QUINTERO DELIVERY & MOVING, INC.",
+      "county_address": "1721 NW 79 AVE Doral FL 33126",
+      "fdacs_address": "1721 NW 79TH AVE, DORAL, FL 33126-1112",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01221",
+      "fdacs_id": "IM2721",
+      "company_id": "pro-movers-2",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Pro Movers Miami, Inc.",
+      "fdacs_name": "PRO MOVERS MIAMI, INC",
+      "county_address": "475 Brickell Ave Miami FL 33131",
+      "fdacs_address": "475 BRICKELL AVE, MIAMI, FL 33131-2500",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01237",
+      "fdacs_id": "IM3034",
+      "company_id": "fl-im-3034",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Related Moving & Service, LLC",
+      "fdacs_name": "RELATED MOVING & SERVICE, LLC",
+      "county_address": "7950 NW 53 ST Unit: #337 Doral FL 33166",
+      "fdacs_address": "7950 NW 53RD ST STE 337, MIAMI, FL 33166-4791",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01244",
+      "fdacs_id": "IM2830",
+      "company_id": "fl-im-2830",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Metayer Moving Corp",
+      "fdacs_name": "METAYER MOVING CORP",
+      "county_address": "11519 SW 124 PL Miami FL 33186",
+      "fdacs_address": "11519 SW 124TH PL, MIAMI, FL 33186-4917",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01249",
+      "fdacs_id": "IM4103",
+      "company_id": "fl-im-4103",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "AN Mudanzas & Delivery LLC",
+      "fdacs_name": "AN MUDANZAS & DELIVERY LLC",
+      "county_address": "16222 NW 38 PL Opa-locka FL 33054",
+      "fdacs_address": "16222 NW 38TH PL, MIAMI GARDENS, FL 33054-6237",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01253",
+      "fdacs_id": "IM2986",
+      "company_id": "fl-im-2986",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "J.V. Express Deliveries, Inc.",
+      "fdacs_name": "J.V. EXPRESS DELIVERIES, INC.",
+      "county_address": "13005 SW 50 LN Miami FL 33175",
+      "fdacs_address": "13005 SW 50TH LN, MIAMI, FL 33175-5353",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01267",
+      "fdacs_id": "IM2521",
+      "company_id": "fl-im-2521",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Xpress Relocations, LLC",
+      "fdacs_name": "XPRESS RELOCATIONS LLC",
+      "county_address": "6158 NW 74 AVE Miami FL 33166",
+      "fdacs_address": "6158 NW 74TH AVE, MIAMI, FL 33166-3710",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01269",
+      "fdacs_id": "IM3111",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Shield Moving and Storage Logistics, Inc",
+      "fdacs_name": "SHIELD MOVING AND STORAGE LOGISTICS, INC",
+      "county_address": "2420 NW 116 ST Unit: #100 Miami FL 33167",
+      "fdacs_address": "2420 NW 116TH ST BLDG 4 STE 100, MIAMI, FL 33167-0018",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01282",
+      "fdacs_id": "IM3117",
+      "company_id": null,
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Prestige Moving System, Inc",
+      "fdacs_name": "PRESTIGE MOVING SYSTEM, INC",
+      "county_address": "600 NE 185 ST Miami FL 33179",
+      "fdacs_address": "600 NE 185TH ST, MIAMI, FL 33179-4514",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01283",
+      "fdacs_id": "IM3135",
+      "company_id": "fl-im-3135",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Fargo Partners LLC",
+      "fdacs_name": "FARGO PARTNERS, LLC",
+      "county_address": "3353 NW 74 AVE Miami FL 33122",
+      "fdacs_address": "3353 NW 74TH AVE, MIAMI, FL 33122-1229",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01295",
+      "fdacs_id": "IM3245",
+      "company_id": "fl-im-3245",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Your Stuff In The Truck, LLC",
+      "fdacs_name": "YOUR STUFF IN THE TRUCK, LLC",
+      "county_address": "2075 SW 122 AVE Unit: #413 Miami FL 33175",
+      "fdacs_address": "2075 SW 122ND AVE APT 413, MIAMI, FL 33175-7338",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01296",
+      "fdacs_id": "IM3250",
+      "company_id": "fl-im-3250",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Online Movers Corp",
+      "fdacs_name": "ONLINE MOVERS CORP",
+      "county_address": "6451 NW 102 AVE Unit: #11 Doral FL 33178",
+      "fdacs_address": "6451 NW 102ND AVE UNIT 11, DORAL, FL 33178-4745",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-01314",
+      "fdacs_id": "IM3395",
+      "company_id": "fl-im-3395",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "On Point Moving Corp",
+      "fdacs_name": "ON POINT MOVING CORP.",
+      "county_address": "16931 SW 111 CT Miami FL 33157",
+      "fdacs_address": "16931 SW 111TH CT, MIAMI, FL 33157-0300",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-090497",
+      "fdacs_id": "IM3192",
+      "company_id": null,
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "ScoreUnion, LLC",
+      "fdacs_name": "SCOREUNION LLC",
+      "county_address": "2140 S Dixie Hwy Unit: #301C Miami FL 33133",
+      "fdacs_address": "2140 S DIXIE HWY STE 301C, MIAMI, FL 33133-2464",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-091229",
+      "fdacs_id": "IM3775",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "UOVO Art LLC",
+      "fdacs_name": "UOVO ART LLC",
+      "county_address": "346 NW 29 ST Miami 33127",
+      "fdacs_address": "346 NW 29TH ST, MIAMI, FL 33127-3914",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-092140",
+      "fdacs_id": "IM3382",
+      "company_id": "fl-im-3382",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "P&P Moving and Delivery Inc",
+      "fdacs_name": "P & P MOVING AND DELIVERY INC",
+      "county_address": "12020 SW 31 ST Miami FL 33175",
+      "fdacs_address": "12020 SW 31ST ST, MIAMI, FL 33175-2328",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-092297",
+      "fdacs_id": "IM3711",
+      "company_id": "fl-im-3711",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Total Moving Corporation",
+      "fdacs_name": "TOTAL MOVING CORPORATION",
+      "county_address": "20005 NE 6 CT CIR North Miami FL 33179",
+      "fdacs_address": "20005 NE 6TH COURT CIR, MIAMI, FL 33179-2408",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-092523",
+      "fdacs_id": "IM3385",
+      "company_id": "fl-im-3385",
+      "match_method": "exact_dba+exact_physical_address",
+      "county_name": "JJ Brothers Groups LLC",
+      "fdacs_name": "JJ BROTHERS GROUP LLC.",
+      "county_address": "10900 NW 146 ST Unit: #105 Hialeah Gardens FL 33018",
+      "fdacs_address": "10900 NW 146 ST STE 5, HIALEAH GARDENS, FL 33018",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-092562",
+      "fdacs_id": "IM3718",
+      "company_id": "fl-im-3718",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Confianca Moving & Storage LLC",
+      "fdacs_name": "CONFIANCA MOVING & STORAGE LLC",
+      "county_address": "7831 NW 72 AVE Medley FL 33166",
+      "fdacs_address": "7831 NW 72ND AVE, MEDLEY, FL 33166-2215",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-092619",
+      "fdacs_id": "IM16",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Joe's Moving and Storage, Inc.",
+      "fdacs_name": "JOE'S MOVING AND STORAGE, INC",
+      "county_address": "2201 SW 145 AVE Unit: #207 Miramar FL 33027",
+      "fdacs_address": "2201 SW 145TH AVE STE 207, MIRAMAR, FL 33027-6600",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-093002",
+      "fdacs_id": "IM4075",
+      "company_id": "fl-im-4075",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Happy Moving Happy Life LLC",
+      "fdacs_name": "HAPPY MOVING HAPPY LIFE LLC",
+      "county_address": "8175 NW 107 AVE Unit: #813 Doral FL 33178",
+      "fdacs_address": "8175 NW 107TH AVE APT 813, DORAL, FL 33178-5061",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-093500",
+      "fdacs_id": "IM3812",
+      "company_id": "fl-im-3812",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Benny and the Moving, Corp",
+      "fdacs_name": "BENNY AND THE MOVING CORP",
+      "county_address": "225 NE 23 ST Unit: #1203 Miami FL 33137",
+      "fdacs_address": "225 NE 23RD ST APT 1203, MIAMI, FL 33137-4037",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-094141",
+      "fdacs_id": "IM3619",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Sanford 7 Enterprise LLC",
+      "fdacs_name": "SANFORD 7 ENTERPRISE LLC",
+      "county_address": "1200 N Federal Hwy Hollywood FL 33020",
+      "fdacs_address": "1200 N FEDERAL HWY, HOLLYWOOD, FL 33020-3630",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-094336",
+      "fdacs_id": "IM3891",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "W Moving Corp",
+      "fdacs_name": "W MOVING CORP",
+      "county_address": "1818 SW 1 AVE Unit: #1211 Miami FL 33129",
+      "fdacs_address": "1818 SW 1ST AVE APT 1211, MIAMI, FL 33129-1187",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-094438",
+      "fdacs_id": "IM3934",
+      "company_id": null,
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Romanos Delivery and Moving, Corp",
+      "fdacs_name": "ROMANOS DELIVERY AND MOVING ,CORP",
+      "county_address": "18841 NW 42 AVE Miami Gardens FL 33055",
+      "fdacs_address": "18841 NW 42ND AVE, MIAMI GARDENS, FL 33055-2733",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-094574",
+      "fdacs_id": "IM4203",
+      "company_id": "fl-im-4203",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Anthony's B Delivery LLC",
+      "fdacs_name": "ANTHONY'S B DELIVERY LLC",
+      "county_address": "13882 SW 63 ST Miami FL 33183",
+      "fdacs_address": "13882 SW 63RD ST, MIAMI, FL 33183-1173",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-095117",
+      "fdacs_id": "IM4019",
+      "company_id": "fl-im-4019",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Octoplus Moving LLC",
+      "fdacs_name": "OCTOPLUS MOVING LLC",
+      "county_address": "1939 SW 23 TER Miami FL 33145",
+      "fdacs_address": "1939 SW 23RD TER, MIAMI, FL 33145-3716",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-095236",
+      "fdacs_id": "IM3869",
+      "company_id": "fl-im-3869",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Mivamove LLC",
+      "fdacs_name": "MIVAMOVE LLC",
+      "county_address": "785 NW 126 ST Miami FL 33168",
+      "fdacs_address": "785 NW 126TH ST, NORTH MIAMI, FL 33168-2627",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-095332",
+      "fdacs_id": "IM3978",
+      "company_id": "fl-im-3978",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "QBA Multiservices Inc",
+      "fdacs_name": "QBA MULTISERVICES INC",
+      "county_address": "2315 W Okeechobee Rd Unit: #209 Hialeah FL 33010",
+      "fdacs_address": "2315 W OKEECHOBEE RD APT 209, HIALEAH, FL 33010-1822",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-095349",
+      "fdacs_id": "IM2293",
+      "company_id": "fl-im-2293",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Brautigam Delivery Corp.",
+      "fdacs_name": "BRAUTIGAM DELIVERY CORP",
+      "county_address": "12673 SW 146 TER Miami FL 33186",
+      "fdacs_address": "12673 SW 146 TERRACE, MIAMI, FL 33186",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-095401",
+      "fdacs_id": "IM4089",
+      "company_id": "fl-im-4089",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Roy & Ois Moving LLC",
+      "fdacs_name": "ROY & OIS MOVING LLC",
+      "county_address": "501 NW 57 AVE Miami FL 33126",
+      "fdacs_address": "501 NW 57TH AVE APT 33, MIAMI, FL 33126-4835",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-095487",
+      "fdacs_id": "IM4154",
+      "company_id": "fl-im-4154",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Expremoving LLC",
+      "fdacs_name": "EXPREMOVING LLC",
+      "county_address": "689 NE 206 TER Miami FL 33179",
+      "fdacs_address": "689 NE 206TH TER, MIAMI, FL 33179-2431",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-095542",
+      "fdacs_id": "IM4044",
+      "company_id": "fl-im-4044",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Nikki Moving LLC",
+      "fdacs_name": "NIKKI MOVING LLC",
+      "county_address": "9071 NW 13 ST Plantation FL 33322",
+      "fdacs_address": "9071 NW 13TH ST, PLANTATION, FL 33322-4915",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-095935",
+      "fdacs_id": "IM4006",
+      "company_id": "fl-im-4006",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Johnson Storage & Moving Co. - Miami, L.L.C.",
+      "fdacs_name": "JOHNSON STORAGE & MOVING CO. - MIAMI, L.L.C.",
+      "county_address": "6451 NW 102 AVE Unit: #2 Doral FL 33178",
+      "fdacs_address": "6451 NW 102ND AVE UNIT 2, DORAL, FL 33178-4745",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-096207",
+      "fdacs_id": "IM4084",
+      "company_id": "fl-im-4084",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "AYCS Delivery Service LLC",
+      "fdacs_name": "AYCS DELIVERY SERVICE LLC",
+      "county_address": "1011 NW 53 ST Miami FL 33127",
+      "fdacs_address": "1011 NW 53RD ST, MIAMI, FL 33127-1835",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-096653",
+      "fdacs_id": "IM4120",
+      "company_id": "fl-im-4120",
+      "match_method": "exact_legal_name+exact_physical_address",
+      "county_name": "Adelit LLC",
+      "fdacs_name": "ADELIT LLC",
+      "county_address": "629 SW 2 ST Miami FL 33130",
+      "fdacs_address": "629 SW 2ND ST APT 202, MIAMI, FL 33130-2382",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-096763",
+      "fdacs_id": "IM3265",
+      "company_id": null,
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "B&H Moving Services LLC",
+      "fdacs_name": "B&H MOVING SERVICES LLC",
+      "county_address": "14040 NW 22 AVE Opa Locka FL 33054",
+      "fdacs_address": "14040 NW 22ND AVE, OPA LOCKA, FL 33054-4169",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    },
+    {
+      "mr_license": "MR-097254",
+      "fdacs_id": "IM4179",
+      "company_id": "fl-im-4179",
+      "match_method": "exact_dba+exact_legal_name+exact_physical_address",
+      "county_name": "Palacio Holdings LLC",
+      "fdacs_name": "PALACIO HOLDINGS LLC",
+      "county_address": "3161 SW 2 ST Miami FL 33135",
+      "fdacs_address": "3161 SW 2ND ST, MIAMI, FL 33135-2754",
+      "checks": {
+        "miami_dade_identity_present": true,
+        "fdacs_identity_present": true,
+        "name_match_after_normalization": true,
+        "address_corroboration_holds": true,
+        "corroborating_evidence_ok": true,
+        "corporate_normalization_false_positive_risk": "LOW"
+      },
+      "qa_result": "correct"
+    }
+  ]
+}

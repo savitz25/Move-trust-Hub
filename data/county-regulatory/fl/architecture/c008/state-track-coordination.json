@@ -1,0 +1,20 @@
+{
+  "task": "FL-C008",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "reason": "Builder 1 just merged FL-010 wave1 apply; state/publication path still active. County stack must remain isolated.",
+  "origin_main_observed": "4711355486f3787e5c154cadeb0ff6d11dbb0118",
+  "c007_head": "05e018e2236cd1f865ef3808874aa388065720df",
+  "builder_1_constraints": [
+    "Do not touch Builder 1 state publication paths",
+    "Do not rebase county stack onto main during active state wave",
+    "Do not merge county PRs automatically"
+  ],
+  "integration_triggers_all_required": [
+    "state wave stable",
+    "no overlapping publication work",
+    "clean main",
+    "frozen county head validators green"
+  ],
+  "recommended_integration_strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "next_coordination_action": "Keep county architecture/design progressing (FL-C009 design-only) without stack merge"
+}

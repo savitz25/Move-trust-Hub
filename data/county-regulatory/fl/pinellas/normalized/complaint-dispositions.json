@@ -1,0 +1,298 @@
+{
+  "task": "FL-C007",
+  "access_class": "PUBLIC_SAMPLE_VIA_RECORD_STATUS",
+  "sample_only": true,
+  "row_count": 24,
+  "official_values": [
+    "No Compromise",
+    "Resolved",
+    "Judicial System",
+    "Referred",
+    "Closed: Resolved-Adjusted",
+    "Closed-Criminal"
+  ],
+  "advisory_grouping_only": {
+    "note": "Advisory conceptual buckets only — preserve exact official RECORD STATUS strings",
+    "RESOLVED_LIKE": [
+      "Resolved",
+      "Closed: Resolved-Adjusted"
+    ],
+    "NO_AGREEMENT_LIKE": [
+      "No Compromise"
+    ],
+    "REFERRED_LIKE": [
+      "Referred",
+      "Judicial System"
+    ],
+    "CRIMINAL_BOUNDARY_LIKE": [
+      "Closed-Criminal"
+    ]
+  },
+  "records": [
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-22-00515",
+      "record_id": "CP-DIS-22-00515",
+      "business_name": "AJS Building Moving & Leveling Inc.",
+      "official_record_status": "No Compromise",
+      "date_opened": "8/17/22",
+      "date_closed": "12/22/22",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-24-00423",
+      "record_id": "CP-DIS-24-00423",
+      "business_name": "All My Sons Moving & Storage",
+      "official_record_status": "Resolved",
+      "date_opened": "7/16/24",
+      "date_closed": "9/10/24",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-24-00072",
+      "record_id": "CP-DIS-24-00072",
+      "business_name": "ALLIED ONE MOVING AND STORAGE",
+      "official_record_status": "No Compromise",
+      "date_opened": "2/1/24",
+      "date_closed": "5/6/24",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-23-00470",
+      "record_id": "CP-DIS-23-00470",
+      "business_name": "America First Moving",
+      "official_record_status": "Resolved",
+      "date_opened": "8/11/23",
+      "date_closed": "9/21/23",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-25-00569",
+      "record_id": "CP-DIS-25-00569",
+      "business_name": "Beach Transfer Moving and Storage, LLC",
+      "official_record_status": "No Compromise",
+      "date_opened": "8/27/25",
+      "date_closed": "12/5/25",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-25-00487",
+      "record_id": "CP-DIS-25-00487",
+      "business_name": "Bronze Star Moving and Storage",
+      "official_record_status": "No Compromise",
+      "date_opened": "7/25/25",
+      "date_closed": "10/21/25",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-25-00490",
+      "record_id": "CP-DIS-25-00490",
+      "business_name": "Discount Moving and Storage",
+      "official_record_status": "Judicial System",
+      "date_opened": "7/31/25",
+      "date_closed": "9/30/25",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-25-00345",
+      "record_id": "CP-DIS-25-00345",
+      "business_name": "Golden Touch Relocators Moving & Storage",
+      "official_record_status": "No Compromise",
+      "date_opened": "5/27/25",
+      "date_closed": "8/21/25",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-26-00132",
+      "record_id": "CP-DIS-26-00132",
+      "business_name": "Good Greek Moving & Storage",
+      "official_record_status": "Resolved",
+      "date_opened": "3/2/26",
+      "date_closed": "4/28/26",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-24-00435",
+      "record_id": "CP-DIS-24-00435",
+      "business_name": "Good Greek Moving and Storage",
+      "official_record_status": "Resolved",
+      "date_opened": "7/20/24",
+      "date_closed": "9/10/24",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-24-00427",
+      "record_id": "CP-DIS-24-00427",
+      "business_name": "Grand Moving and Storage LLC",
+      "official_record_status": "Resolved",
+      "date_opened": "7/17/24",
+      "date_closed": "10/1/24",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-22-00598",
+      "record_id": "CP-DIS-22-00598",
+      "business_name": "J and D Moving Company",
+      "official_record_status": "No Compromise",
+      "date_opened": "9/19/22",
+      "date_closed": "11/2/22",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-25-00249",
+      "record_id": "CP-DIS-25-00249",
+      "business_name": "KeepMoving Logistics LLC",
+      "official_record_status": "Resolved",
+      "date_opened": "4/17/25",
+      "date_closed": "5/19/25",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-22-00471",
+      "record_id": "CP-DIS-22-00471",
+      "business_name": "Let's Get Moving",
+      "official_record_status": "Referred",
+      "date_opened": "8/1/22",
+      "date_closed": "9/2/22",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-24-00273",
+      "record_id": "CP-DIS-24-00273",
+      "business_name": "Master Moving",
+      "official_record_status": "Resolved",
+      "date_opened": "5/7/24",
+      "date_closed": "6/18/24",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-H-2109060",
+      "record_id": "CP-DIS-H-2109060",
+      "business_name": "Moving Express & Storage",
+      "official_record_status": "Closed: Resolved-Adjusted",
+      "date_opened": "9/27/21",
+      "date_closed": "11/1/21",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-25-00639",
+      "record_id": "CP-DIS-25-00639",
+      "business_name": "Moving Match",
+      "official_record_status": "No Compromise",
+      "date_opened": "9/26/25",
+      "date_closed": "12/19/25",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-24-00123",
+      "record_id": "CP-DIS-24-00123",
+      "business_name": "PODS Enterprises, Inc. d/b/a PODS Moving & Storage",
+      "official_record_status": "Resolved",
+      "date_opened": "2/23/24",
+      "date_closed": "5/10/24",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-22-00353",
+      "record_id": "CP-DIS-22-00353",
+      "business_name": "PODS Moving & Storage",
+      "official_record_status": "Resolved",
+      "date_opened": "6/20/22",
+      "date_closed": "6/27/22",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-23-00593",
+      "record_id": "CP-DIS-23-00593",
+      "business_name": "Safebound Moving & Storage",
+      "official_record_status": "Resolved",
+      "date_opened": "10/24/23",
+      "date_closed": "12/5/23",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-23-00320",
+      "record_id": "CP-DIS-23-00320",
+      "business_name": "Smart Move Moving & Storage, Inc.",
+      "official_record_status": "No Compromise",
+      "date_opened": "5/22/23",
+      "date_closed": "8/7/23",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-25-00765",
+      "record_id": "CP-DIS-25-00765",
+      "business_name": "Smart Move Moving & Storage, Inc.",
+      "official_record_status": "No Compromise",
+      "date_opened": "12/2/25",
+      "date_closed": "1/28/26",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-CRM-24-00133",
+      "record_id": "CP-CRM-24-00133",
+      "business_name": "Strong Guys Handyman Services",
+      "official_record_status": "Closed-Criminal",
+      "date_opened": "7/19/24",
+      "date_closed": null,
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    },
+    {
+      "source_record_id": "FL-PINELLAS-COMPLAINT-CP-DIS-22-00556",
+      "record_id": "CP-DIS-22-00556",
+      "business_name": "Thoughtful Moving",
+      "official_record_status": "Resolved",
+      "date_opened": "8/29/22",
+      "date_closed": "9/20/22",
+      "evidence_class": "COMPLAINT_DISPOSITION",
+      "misconduct_inference": "FORBIDDEN",
+      "source": "Accela ConsumerProt public PDF RECORD STATUS field"
+    }
+  ],
+  "note": "Public Accela PDF has no separate Disposition column; RECORD STATUS carries disposition-like official values observed in SAMPLE_ONLY. Full-universe disposition catalog/export remains PRA_REQUIRED. Never treat complaint/disposition as misconduct proof."
+}

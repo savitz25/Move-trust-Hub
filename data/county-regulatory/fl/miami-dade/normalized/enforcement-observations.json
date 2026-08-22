@@ -1,0 +1,7 @@
+{
+  "task": "FL-C005",
+  "access_class": "DOCUMENT_PUBLIC_PROCESS_ONLY",
+  "row_count": 0,
+  "records": [],
+  "note": "No case-level enforcement dataset acquired publicly; do not invent FINAL_ENFORCEMENT_ACTION rows."
+}

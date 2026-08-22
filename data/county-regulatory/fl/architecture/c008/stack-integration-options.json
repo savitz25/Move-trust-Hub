@@ -1,0 +1,53 @@
+{
+  "task": "FL-C008",
+  "compare_count": 3,
+  "strategies": [
+    {
+      "id": "STRATEGY_1_FULL_STACK_REBASE_MERGE",
+      "name": "Rebase/merge entire C001–C008 stack onto main",
+      "pros": [
+        "Preserves linear county task history on main",
+        "Single integration path if main is quiet"
+      ],
+      "cons": [
+        "High collision risk while Builder 1 advances state/publication",
+        "Forces resolution of unrelated drift across long stack",
+        "Harder to review against current main"
+      ],
+      "recommendation": "REJECTED_FOR_NOW"
+    },
+    {
+      "id": "STRATEGY_2_SQUASH",
+      "name": "Squash county stack into one (or few) commits on main",
+      "pros": [
+        "Compact history",
+        "Faster merge once gates clear"
+      ],
+      "cons": [
+        "Less reviewable artifact-by-artifact against current main",
+        "Opaque blame for multi-county research trail",
+        "Still risky if publication paths overlap"
+      ],
+      "recommendation": "ACCEPTABLE_FALLBACK"
+    },
+    {
+      "id": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+      "name": "Clean branch from current main + selective transplant of county artifacts",
+      "pros": [
+        "Reviewable against current main while Builder 1 advances",
+        "Avoids rewriting live research stack history in place",
+        "Limits blast radius to county docs/data/scripts paths",
+        "Keeps Builder 1 state publication paths untouched"
+      ],
+      "cons": [
+        "Requires careful path allowlist",
+        "Second branch to maintain until transplant PR merges"
+      ],
+      "recommendation": "RECOMMENDED"
+    }
+  ],
+  "recommended_strategy_id": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "recommended_strategy_name": "Strategy 3 — clean branch from current main + selective transplant of county artifacts",
+  "rationale": "Prefer Strategy 3 for reviewability against current main while Builder 1 advances (including FL-010 wave1 apply). Strategy 2 squash is a fallback if a compact landing is required after gates clear. Strategy 1 full-stack rebase is rejected while publication work remains active.",
+  "execute_now": false
+}

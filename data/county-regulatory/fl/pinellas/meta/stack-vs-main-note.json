@@ -1,0 +1,9 @@
+{
+  "task": "FL-C007",
+  "county_stack_preserved": true,
+  "rebase_performed": false,
+  "origin_main_at_task_start": "52afb48b6e7976f16651f8b19fc89886caec56d6",
+  "c006_head": "1aa496b0b36b1f7ffadd9db6285d90db8b14f8ef",
+  "analysis_technically_valid_without_rebase": true,
+  "note": "Stacked on FL-C006 head; Pinellas acquisition is Pilot #4 pattern discovery (no public mover credential roster to qualify)."
+}

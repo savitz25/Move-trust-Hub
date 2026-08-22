@@ -1,0 +1,140 @@
+{
+  "task": "FL-C004",
+  "inventory_basis": "APPLICATION_SCHEMA_PUBLIC",
+  "completeness_classification": "PRA_REQUIRED",
+  "note": "No public searchable/bulk mover roster was located. Fields below are those the official Mover Registration Application and Consumer Affairs program materials require applicants to provide / that the county issues. Coverage % against a live roster cannot be computed until PRA or public roster becomes available.",
+  "fields": [
+    {
+      "field": "legal_name_business",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Mover Registration Application"
+    },
+    {
+      "field": "dba_fictitious_name",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Application + fictitious name docs requirement"
+    },
+    {
+      "field": "credential_registration",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Mover's Registration issued by county"
+    },
+    {
+      "field": "status",
+      "present_in_application": "IMPLIED",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Issued/renewed registration; Tri-County disclosure says consumers may call to determine current license status"
+    },
+    {
+      "field": "issue_expiration_dates",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Expire September 30 annually"
+    },
+    {
+      "field": "physical_address",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Application"
+    },
+    {
+      "field": "mailing_address",
+      "present_in_application": "LIKELY",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Application packet / certified mail issuance"
+    },
+    {
+      "field": "phone",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Application"
+    },
+    {
+      "field": "email",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Invoice emailed; application contact"
+    },
+    {
+      "field": "website",
+      "present_in_application": "UNKNOWN",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Not observed as required field on application form pages reviewed"
+    },
+    {
+      "field": "owner_partner_director_officer",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Application section; DL/Fed ID collected — public disclosure of personal IDs not confirmed"
+    },
+    {
+      "field": "prior_mover_business_5yr",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Application disclosure questions"
+    },
+    {
+      "field": "enforcement_judgment_disclosures",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Application yes/no questions + attachments"
+    },
+    {
+      "field": "fdacs_im_license",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Required copy of current FDACS Movers/IM License"
+    },
+    {
+      "field": "vehicle_decal_permit",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Mover Permit (decal) per vehicle"
+    },
+    {
+      "field": "vehicle_vin",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Permit and Vehicle Information table"
+    },
+    {
+      "field": "vehicle_license_tag",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Application"
+    },
+    {
+      "field": "vehicle_gvw",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Vehicle Gross Weight"
+    },
+    {
+      "field": "vehicle_permit_number_last6",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Permit # (Last 6 digits)"
+    },
+    {
+      "field": "fleet_count",
+      "present_in_application": "DERIVABLE",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Count of vehicle/decal lines × $75"
+    },
+    {
+      "field": "insurance_indicators",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "Cargo/BI-PD/GL/WC certificates required"
+    },
+    {
+      "field": "local_business_tax_receipt",
+      "present_in_application": "YES",
+      "present_in_public_lookup": "NO_LOOKUP_FOUND",
+      "source": "County (+ city if applicable) BTR required in packet"
+    }
+  ]
+}

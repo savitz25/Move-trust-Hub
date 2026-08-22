@@ -1,0 +1,17 @@
+{
+  "task": "FL-C003",
+  "mode": "READ_ONLY_SUPABASE_REST",
+  "retrieved_at": "2026-08-21T18:27:11.838Z",
+  "origin_main_at_task_start": "d486e5a8eadef9639f70561ecac31ba2b226e7b4",
+  "identity_reference_note": "Snapshot taken from live Supabase via service role (read-only GETs). County stack not rebased onto main. FL-006 worktree may be ahead of origin/main; live DB is the identity authority.",
+  "google_places_api_requests": 0,
+  "production_writes": false,
+  "counts": {
+    "psa_fl_rows": 1359,
+    "companies_fl_heuristic": 819,
+    "fl_im_company_ids": 817,
+    "fl_im_indexable": 0
+  },
+  "im_key_count": 1303,
+  "note": "Full PSA/company row arrays omitted from git package; compact crosswalk retained in florida-im-company-crosswalk.json"
+}

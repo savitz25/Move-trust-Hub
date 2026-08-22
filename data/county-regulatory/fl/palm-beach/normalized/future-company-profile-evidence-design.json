@@ -1,0 +1,55 @@
+{
+  "task": "FL-C002",
+  "published": false,
+  "sections": [
+    {
+      "id": "pbc_permit",
+      "title": "Palm Beach County Permit",
+      "fields": [
+        "county permit/license (MV#)",
+        "status",
+        "issue/expiry",
+        "regulator",
+        "source"
+      ],
+      "language": "Neutral regulatory credential observation"
+    },
+    {
+      "id": "pbc_dispute_history",
+      "title": "Consumer Dispute History",
+      "fields": [
+        "published observation window (~3 years)",
+        "complaint count",
+        "allegation categories",
+        "dispositions",
+        "source"
+      ],
+      "language": "Complaints are OBSERVATIONS / ALLEGATIONS — never label a company unsafe merely because a complaint exists"
+    },
+    {
+      "id": "pbc_enforcement",
+      "title": "County Enforcement",
+      "fields": [
+        "action type",
+        "date",
+        "ordinance section",
+        "fine if any",
+        "disposition if any",
+        "source"
+      ],
+      "language": "Separate investigation / allegation / citation / final order layers"
+    },
+    {
+      "id": "pbc_business_info",
+      "title": "Business Information",
+      "fields": [
+        "county-reported owner/officer/dispute contact",
+        "phone",
+        "address",
+        "website",
+        "fleet size where available"
+      ],
+      "language": "County-reported identity/contact enrichment"
+    }
+  ]
+}

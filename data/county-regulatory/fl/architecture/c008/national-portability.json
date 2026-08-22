@@ -1,0 +1,32 @@
+{
+  "task": "FL-C008",
+  "version": "V1",
+  "portable_elements": [
+    "CREDENTIAL_BASED vs ORDINANCE_ONLY posture model",
+    "evidence lifecycle stages",
+    "conflict model types",
+    "insurance state layers",
+    "complaint vs disposition vs enforcement vs finality separation",
+    "adapter contract shape",
+    "coverage classes",
+    "fail-closed identity linking",
+    "Trust Score boundary (local evidence display-only in V1)",
+    "zero-result semantics (never complaint-free)"
+  ],
+  "florida_specific_today": [
+    "FDACS IM crosswalk rulesets",
+    "Palm Beach API/BIR adapters",
+    "Miami-Dade EnerGov + LBT adapters",
+    "Broward PRA-gated registration/decal schema",
+    "Pinellas Accela ConsumerProt complaint-history pattern"
+  ],
+  "future_targets": [
+    "Other FL counties via onboarding playbook",
+    "Out-of-state county/local mover programs",
+    "Municipal credential programs where distinct from county"
+  ],
+  "non_goals_v1": [
+    "Multi-state county production rollout",
+    "Automatic national crawler"
+  ]
+}

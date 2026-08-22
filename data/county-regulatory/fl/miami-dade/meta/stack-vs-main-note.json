@@ -1,0 +1,10 @@
+{
+  "task": "FL-C005",
+  "county_stack_preserved": true,
+  "rebase_performed": false,
+  "origin_main_at_task_start": "a381203beb61cb5a2a12f80ed007a672a204be31",
+  "c004_head": "f085c923b48230f97cd073de30b77b603f047ee3",
+  "analysis_technically_valid_without_rebase": true,
+  "origin_main_at_task_completion": "2959930c0a149eb961fa3d2b6306f23c7cba820d",
+  "origin_main_completion_note": "Builder 1 advanced main (FL-008 merge #53). County stack not rebased per isolation rules."
+}

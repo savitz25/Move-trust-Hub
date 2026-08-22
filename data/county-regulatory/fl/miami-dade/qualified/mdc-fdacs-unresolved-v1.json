@@ -1,0 +1,456 @@
+{
+  "task": "FL-C006",
+  "file": "mdc-fdacs-unresolved-v1.json",
+  "version": "v1",
+  "retrieved_at": "2026-08-21T22:01:02.420Z",
+  "row_count": 31,
+  "records": [
+    {
+      "miami_dade_mr": "MR-00032",
+      "legal_name": "George Lima Moving, Inc.",
+      "dba": "",
+      "address": "9105 NW 105 CIR Medley FL 33178",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM58",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-00094",
+      "legal_name": "The Fortress-Miami Corporation",
+      "dba": "Fortress",
+      "address": "1629 NE 1 AVE Miami FL 33132",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM162",
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-00231",
+      "legal_name": "Rene Chinique Moving & Delivery",
+      "dba": "",
+      "address": "13195 SW 10 TER Miami FL 33184",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-00447",
+      "legal_name": "Clover Systems, LLC",
+      "dba": "",
+      "address": "3505 NW 107 AVE Unit: #C Miami FL 33178",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM1103",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-00496",
+      "legal_name": "Nippon Express USA, Inc",
+      "dba": "",
+      "address": "2100 NW 129 AVE Unit: #106-108 SweetWater FL 33182",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-00515",
+      "legal_name": "William Moving Service, Inc.",
+      "dba": "",
+      "address": "1250 Naples Ave Clewiston FL 33440",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-00564",
+      "legal_name": "Miami Movers For Less, Inc.",
+      "dba": "Move For Less",
+      "address": "17854 STATE RD. 9 Miami FL 33162",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM1543",
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-01076",
+      "legal_name": "Hypermovers Max '' LLC''",
+      "dba": "",
+      "address": "6741 SW 15 ST Miami FL 33144",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM2712",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-01113",
+      "legal_name": "First Class Movers, LLC",
+      "dba": "",
+      "address": "7905 NW 60 ST Miami FL 33166",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM2122",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-01125",
+      "legal_name": "La Barata Oves Moving",
+      "dba": "",
+      "address": "4721 NW 4 ST Miami FL 33126",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-01280",
+      "legal_name": "Atelier 4, LLC",
+      "dba": "",
+      "address": "2170 NW 87 AVE Doral FL 33172",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-01287",
+      "legal_name": "Ciao Moving & Storage LLC.",
+      "dba": "",
+      "address": "35 NE 179 ST Miami FL 33162",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM3143",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-01297",
+      "legal_name": "Lu's Delivery LLC",
+      "dba": "Lux Moving Service",
+      "address": "900 SW 8 ST Unit: #1207 Miami FL 33130",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM3267",
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-01306",
+      "legal_name": "Lazy Bear Solutions. Inc",
+      "dba": "The Lazy Bear",
+      "address": "4115 NW 132 ST Unit: #D Opa Locka FL 33054",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM3366",
+      "supporting_evidence": [
+        "exact_dba",
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-01320",
+      "legal_name": "305 + Movers LLC",
+      "dba": "",
+      "address": "3715 SW 29 ST Miami FL 33134",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-092238",
+      "legal_name": "Flex Storage Inc.",
+      "dba": "",
+      "address": "1060 SW 8 ST Unit: PBM 5012 Miami FL 33130",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM3819",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-092532",
+      "legal_name": "Mitjans Moving and Delivery Inc",
+      "dba": "",
+      "address": "25364 SW 116 AVE Homestead FL 33032",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM3794",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-092997",
+      "legal_name": "Latin Moving, Corp",
+      "dba": "",
+      "address": "11317 NW 50 TER Doral FL 33178",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM3926",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-093105",
+      "legal_name": "U.S.A. On the Move L.L.C.",
+      "dba": "",
+      "address": "14323 SW 142 ST Miami FL 33186",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-093387",
+      "legal_name": "JLG Services Inc.",
+      "dba": "",
+      "address": "9654 SW 138 AVE Miami FL 33186",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-093876",
+      "legal_name": "Murillo's Mudanza and Delivery Inc",
+      "dba": "",
+      "address": "9065 NW 32 CT RD Miami FL 33147",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-094070",
+      "legal_name": "A&D Moving Florida Corp",
+      "dba": "",
+      "address": "2160 SW 16 AVE Unit: #312 Miami FL 33145",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-094106",
+      "legal_name": "Navarro Worldwide LLC",
+      "dba": "",
+      "address": "21914 SW 97 PL Cutler Bay FL 33190",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-094170",
+      "legal_name": "Heat Mover Inc",
+      "dba": "",
+      "address": "16263 SW 103 ST Miami FL 33196",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-094205",
+      "legal_name": "Powerhouse Moving and Delivery Co.",
+      "dba": "",
+      "address": "2984 W 84 ST Unit: #142 Hialeah FL 33018",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM2675",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-095152",
+      "legal_name": "JP Moving & Delivery Service Corp",
+      "dba": "",
+      "address": "21943 SW 88 PATH Cutler Bay FL 33190",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM4080",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-095241",
+      "legal_name": "305 Pro Movers Corp",
+      "dba": "305 Pro Movers Miami",
+      "address": "10030 NW 9 ST CIR Unit: #203 Miami FL 33172",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM3744",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-096460",
+      "legal_name": "DY Moving and Delivery Services, Inc.",
+      "dba": "",
+      "address": "5342 NW 190 LN Miami Gardens FL 33055",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    },
+    {
+      "miami_dade_mr": "MR-096496",
+      "legal_name": "RapidGolden Transport LLC",
+      "dba": "",
+      "address": "1250 SW 6 ST Unit: #113E Miami FL 33135",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM4119",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-096782",
+      "legal_name": "Do It Now Moving Services LLC",
+      "dba": "",
+      "address": "2220 NE 2 AVE Unit: #504 Miami FL 33137",
+      "match_result": "REVIEW_REQUIRED",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [
+        "legal-name-only candidate",
+        "address mismatch / historical address"
+      ],
+      "candidate_fdacs_id": "IM4127",
+      "supporting_evidence": [
+        "exact_legal_name",
+        "name_only_insufficient"
+      ]
+    },
+    {
+      "miami_dade_mr": "MR-096905",
+      "legal_name": "Benjamin Moving and Delivery Service Inc",
+      "dba": "",
+      "address": "57 NW 17 PL Unit: #3 Miami FL 33150",
+      "match_result": "NOT_FOUND",
+      "canonical_class": "COUNTY_ONLY_REVIEW",
+      "review_reasons": [],
+      "candidate_fdacs_id": null,
+      "supporting_evidence": []
+    }
+  ]
+}

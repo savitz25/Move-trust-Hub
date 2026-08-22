@@ -1,0 +1,2188 @@
+{
+  "task": "FL-C005",
+  "mode": "OFFLINE_READ_ONLY",
+  "production_writes": false,
+  "google_places_api_requests": 0,
+  "primary_scope": "ISSUED",
+  "fdacs_sources": [
+    "data/state-hhg/fl/fdacs-legacy-im-active.json",
+    "data/state-hhg/fl/fdacs-intrastate-movers-newdb.csv"
+  ],
+  "match_rules": [
+    "Name-only is NEVER DETERMINISTIC_MATCH",
+    "Name/DBA + address corroboration required for DETERMINISTIC without phone",
+    "No IM number on public EnerGov fields → no IM direct join",
+    "No phone on county public roster → phone path unavailable"
+  ],
+  "county_records_issued": 117,
+  "county_records_full_roster": 409,
+  "counts": {
+    "DETERMINISTIC_MATCH": 75,
+    "REVIEW_REQUIRED": 28,
+    "NOT_FOUND": 14,
+    "INSUFFICIENT_EVIDENCE": 0
+  },
+  "counts_full_roster": {
+    "DETERMINISTIC_MATCH": 113,
+    "REVIEW_REQUIRED": 91,
+    "NOT_FOUND": 205,
+    "INSUFFICIENT_EVIDENCE": 0
+  },
+  "retrieved_at": "2026-08-21T20:41:01.552Z",
+  "results": [
+    {
+      "county_license": "MR-00002",
+      "county_business_name": "Withers Transfer and Storage of Coral Gables, Inc.",
+      "county_dba": "Withers Worldwide",
+      "county_phone": null,
+      "county_address": "11431 NW 107 ST Unit: #1 Miami FL 33178",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM27",
+      "fdacs_name": "WITHERS TRANSFER AND STORAGE OF CORAL GABLES, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-702-7467",
+      "fdacs_address": "11431 NW 107TH ST STE 1, MIAMI, FL 33178-4632",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00015",
+      "county_business_name": "Raul's Moving, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9105 NW 105 CIR Medley FL 33178",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM106",
+      "fdacs_name": "RAUL'S MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-266-0859",
+      "fdacs_address": "9105 NW 105TH CIR, MIAMI, FL 33178-1306",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00018",
+      "county_business_name": "Gomez Moving Co., Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9881 SW 4 ST Miami FL 33174",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM125",
+      "fdacs_name": "GOMEZ MOVING CO., INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-373-1758",
+      "fdacs_address": "9881 SW 4TH ST, MIAMI, FL 33174-1974",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00032",
+      "county_business_name": "George Lima Moving, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9105 NW 105 CIR Medley FL 33178",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM58",
+      "fdacs_name": "George Lima Moving, Inc.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "(305) 261-3030",
+      "fdacs_address": "9105 Northwest 105th Circle, Medley, FL 33178  ",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00049",
+      "county_business_name": "Homestead Transfer & Storage Co.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "32100 SW 187 AVE Homestead FL 33030",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM366",
+      "fdacs_name": "HOMESTEAD TRANSFER & STORAGE CO.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-247-5012",
+      "fdacs_address": "32100 SW 187TH AVE, HOMESTEAD, FL 33030-6801",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00067",
+      "county_business_name": "Small Time Movers, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9124 SW 148 Ct Miami FL 33196",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM160",
+      "fdacs_name": "SMALL TIME MOVERS, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-234-5452",
+      "fdacs_address": "9124 SW 148TH CT, MIAMI, FL 33196-4121",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00068",
+      "county_business_name": "Mudanzas Diaz Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "7540 W 34 CT Hialeah FL 33018",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1573",
+      "fdacs_name": "MUDANZAS DIAZ, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-301-1623",
+      "fdacs_address": "7540 W 34TH CT, HIALEAH, FL 33018-6700",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00094",
+      "county_business_name": "The Fortress-Miami Corporation",
+      "county_dba": "Fortress",
+      "county_phone": null,
+      "county_address": "1629 NE 1 AVE Miami FL 33132",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM162",
+      "fdacs_name": "The Fortress-Miami Corporation",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "(305) 374-6161",
+      "fdacs_address": "1629 Northeast 1st Avenue, Miami, FL 33132  ",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00106",
+      "county_business_name": "La Rosa Del Monte Express (Miami), LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "7600 NW 68 ST Miami FL 33166",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM385",
+      "fdacs_name": "LA ROSA DEL MONTE EXPRESS (MIAMI), LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-884-7470",
+      "fdacs_address": "7600 NW 68TH ST, MIAMI, FL 33166-2812",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00113",
+      "county_business_name": "Genesis Moving and Storage, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1688 NE 205 TER North Miami Beach FL 33179",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM333",
+      "fdacs_name": "GENESIS MOVING & STORAGE, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-652-3200",
+      "fdacs_address": "1688 NE 205TH TER, MIAMI, FL 33179-2117",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00207",
+      "county_business_name": "Millennium Relocation Services, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9220 NW 102 ST Medley FL 33178",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM260",
+      "fdacs_name": "MILLENNIUM RELOCATION SERVICES, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-805-1264",
+      "fdacs_address": "9220 NW 102ND ST, MEDLEY, FL 33178-1315",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00231",
+      "county_business_name": "Rene Chinique Moving & Delivery",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "13195 SW 10 TER Miami FL 33184",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-00278",
+      "county_business_name": "South Florida Van Line, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2670 W 84 ST Hialeah FL 33016",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM607",
+      "fdacs_name": "SOUTH FLORIDA VAN LINE, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-691-2700",
+      "fdacs_address": "2670 W 84TH ST, HIALEAH, FL 33016-5703",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00310",
+      "county_business_name": "Sergio's Moving, Corp.",
+      "county_dba": "South Express Moving",
+      "county_phone": null,
+      "county_address": "9200 SW 154 PL Miami FL 33196",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM512",
+      "fdacs_name": "SERGIO'S MOVING CORP.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-631-5858",
+      "fdacs_address": "9200 SW 154TH PL, MIAMI, FL 33196-1126",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00313",
+      "county_business_name": "American Connection Moving, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1708 NE 205 TER Miami FL 33179",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM755",
+      "fdacs_name": "AMERICAN CONNECTION MOVING, LLC",
+      "fdacs_status": "Expired",
+      "fdacs_phone": "305-653-2030",
+      "fdacs_address": "1708 NE 205TH TER, MIAMI, FL 33179-2112",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00317",
+      "county_business_name": "Fuentes Moving Corp.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9730 NW 10 ST Miami FL 33172",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM22",
+      "fdacs_name": "FUENTES MOVING CORP.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-231-0980",
+      "fdacs_address": "9730 NW 10TH ST, MIAMI, FL 33172-3322",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00332",
+      "county_business_name": "A-1 Southeast Moving, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "3323 SW 154 CT Miami FL 33185",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM810",
+      "fdacs_name": "A 1 SOUTHEAST MOVING, INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-485-9098",
+      "fdacs_address": "3323 SW 154TH CT, MIAMI, FL 33185-4734",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00338",
+      "county_business_name": "Johnny Moving & Delivery, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "5871 W 20 LN Hialeah FL 33016",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM668",
+      "fdacs_name": "JOHNNY MOVING AND DELIVERY, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-362-0924",
+      "fdacs_address": "5871 W 20TH LN, HIALEAH, FL 33016-2663",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00359",
+      "county_business_name": "OnTime Moving System, Inc.",
+      "county_dba": "ArtPort",
+      "county_phone": null,
+      "county_address": "11455 NW 122 ST Miami FL 33178",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM161",
+      "fdacs_name": "ONTIME MOVING SYSTEM, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-621-0802",
+      "fdacs_address": "11455 NW 122ND ST, MEDLEY, FL 33178",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00366",
+      "county_business_name": "Brickell Moving and Packing Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1014 E 29 ST Hialeah FL 33013",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM500",
+      "fdacs_name": "BRICKELL MOVING AND PACKING INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-285-9760",
+      "fdacs_address": "1014 E 29TH ST, HIALEAH, FL 33013-3518",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00378",
+      "county_business_name": "Jesus Moving, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "11 Flagami Blvd Miami FL 33144",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2724",
+      "fdacs_name": "JESUS MOVING, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-978-8859",
+      "fdacs_address": "11 FLAGAMI BLVD, MIAMI, FL 33144-2661",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00385",
+      "county_business_name": "Vidal Moving & Storage, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "270 NE 70 ST Miami FL 33138",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1541",
+      "fdacs_name": "VIDAL MOVING & STORAGE INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-758-7797",
+      "fdacs_address": "270 NE 70TH ST, MIAMI, FL 33138-5524",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00416",
+      "county_business_name": "Luis & Son Moving, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "17201 SW 119 CT Miami FL 33177",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1503",
+      "fdacs_name": "LUIS AND SON MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-608-9162",
+      "fdacs_address": "17201 SW 119TH CT, MIAMI, FL 33177-2215",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00444",
+      "county_business_name": "ABA Moving, Inc.",
+      "county_dba": "Movers Pompano Beach,Fort Lauderdale Movers,The Miami Movers,Mudanzas Miami,SouthFloridaPianoMoving",
+      "county_phone": null,
+      "county_address": "12429 W Dixie Hwy North Miami FL 33161",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1100",
+      "fdacs_name": "ABA MOVING INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-919-0333",
+      "fdacs_address": "12429 W DIXIE HWY, NORTH MIAMI, FL 33161-5440",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00447",
+      "county_business_name": "Clover Systems, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "3505 NW 107 AVE Unit: #C Miami FL 33178",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM1103",
+      "fdacs_name": "CLOVER SYSTEMS, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-592-4300",
+      "fdacs_address": "14350 NW 56TH CT STE 120, OPA LOCKA, FL 33054-2354",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00449",
+      "county_business_name": "A.B.C. Moving, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "18235 NE 4 CT Miami FL 33162",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1079",
+      "fdacs_name": "A.B.C. MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "866-392-4222",
+      "fdacs_address": "18235 NE 4TH CT, MIAMI, FL 33162-1011",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00450",
+      "county_business_name": "Powerloaders Corporation",
+      "county_dba": "Powerloaders",
+      "county_phone": null,
+      "county_address": "2007 NW 79 AVE Doral FL 33122",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1214",
+      "fdacs_name": "POWERLOADERS CORPORATION",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-607-4303",
+      "fdacs_address": "2007 NW 79TH AVE, DORAL, FL 33122-1612",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00458",
+      "county_business_name": "American Moving & Packaging Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "16121 NW 79 CT Miami FL 33016",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1319",
+      "fdacs_name": "AMERICAN MOVING & PACKAGING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-499-9020",
+      "fdacs_address": "16121 NW 79TH CT, MIAMI LAKES, FL 33016-6646",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00476",
+      "county_business_name": "Nobel Van Lines Inc.",
+      "county_dba": "Nobel Relocation",
+      "county_phone": null,
+      "county_address": "17901 NW Miami Ct. Miami FL 33169",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1204",
+      "fdacs_name": "NOBEL VAN LINES INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-620-2002",
+      "fdacs_address": "17901 NW MIAMI CT, MIAMI, FL 33169-5018",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00496",
+      "county_business_name": "Nippon Express USA, Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2100 NW 129 AVE Unit: #106-108 SweetWater FL 33182",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-00512",
+      "county_business_name": "Flat Rate Moving & Storage, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "16501 NW 8 AVE Miami FL 33169",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1320",
+      "fdacs_name": "FLAT RATE MOVING & STORAGE, LLC",
+      "fdacs_status": "Expired",
+      "fdacs_phone": "305-622-5262",
+      "fdacs_address": "16501 NW 8TH AVE, MIAMI, FL 33169-5813",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00515",
+      "county_business_name": "William Moving Service, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1250 Naples Ave Clewiston FL 33440",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-00564",
+      "county_business_name": "Miami Movers For Less, Inc.",
+      "county_dba": "Move For Less",
+      "county_phone": null,
+      "county_address": "17854 STATE RD. 9 Miami FL 33162",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM1543",
+      "fdacs_name": "MIAMI MOVERS FOR LESS, INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-915-3881",
+      "fdacs_address": "17854 NE 5TH AVE, MIAMI, FL 33162-1022",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-00570",
+      "county_business_name": "Torito's Moving Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "19061 NW 90 CT Miami FL 33018",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2476",
+      "fdacs_name": "TORITO'S MOVING CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-457-9267",
+      "fdacs_address": "19061 NW 90TH CT, HIALEAH, FL 33018-8425",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01006",
+      "county_business_name": "Sainz Moving & Delivery",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1246 NW 6 ST Unit: #6 Miami FL 33125",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2442",
+      "fdacs_name": "DANILO SAINZ",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-399-9413",
+      "fdacs_address": "1246 NW 6TH ST APT 6, MIAMI, FL 33125-4749",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01016",
+      "county_business_name": "CMR Transport, Inc.",
+      "county_dba": "Blason International Movers",
+      "county_phone": null,
+      "county_address": "10049 NW 89 AVE Unit: #5 Medley FL 33178",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1689",
+      "fdacs_name": "CMR TRANSPORT, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-883-0108",
+      "fdacs_address": "10049 NW 89TH AVE UNIT 5, MEDLEY, FL 33178-1442",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01020",
+      "county_business_name": "Varela Moving Pickup & Delivery LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "321 E 6 ST Unit: #226 Hialeah FL 33010",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2474",
+      "fdacs_name": "VARELA MOVING, PICKUP & DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-888-8189",
+      "fdacs_address": "321 E 6TH ST APT 226, HIALEAH, FL 33010-6810",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01029",
+      "county_business_name": "Orellana AV Moving, Corp.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "15383 SW 23 ST Miami FL 33185",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1624",
+      "fdacs_name": "ORELLANA AV MOVING, CORP.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-388-0404",
+      "fdacs_address": "15383 SW 23RD ST, MIAMI, FL 33185-5734",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01045",
+      "county_business_name": "Laprom Moving Inc.",
+      "county_dba": "24 Moving / Skyroad Moving / Pink Truck Moving",
+      "county_phone": null,
+      "county_address": "10812 NW 6 CT Miami FL 33168",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM1723",
+      "fdacs_name": "LAPROM MOVING INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "888-719-6248",
+      "fdacs_address": "10812 NW 6TH CT, MIAMI, FL 33168-3259",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01049",
+      "county_business_name": "Tacha's Movi, Corp.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9631 Fontainebleau Blvd Unit: #202 Miami FL 33172",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2549",
+      "fdacs_name": "TACHA'S MOVI, CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-234-5955",
+      "fdacs_address": "9631 FONTAINEBLEAU BLVD APT 202, MIAMI, FL 33172-6859",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01054",
+      "county_business_name": "Inter-American Movers and Forwarders,LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "6332 NW 97 AVE Doral FL 33178",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2983",
+      "fdacs_name": "INTER-AMERICAN MOVERS AND FORWARDERS,LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-406-3327",
+      "fdacs_address": "6332 NW 97TH AVE, DORAL, FL 33178-1645",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01063",
+      "county_business_name": "Valle Moving & Deliveries, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "934 SW 149 CT Miami FL 33194",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2456",
+      "fdacs_name": "VALLE MOVING & DELIVERIES, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-350-5723",
+      "fdacs_address": "934 SW 149TH CT, MIAMI, FL 33194-2938",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01074",
+      "county_business_name": "Ojeda Moving and Delivery Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2606 W 9 LN Hialeah FL 33010",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2551",
+      "fdacs_name": "OJEDA MOVING AND DELIVERY INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-319-8964",
+      "fdacs_address": "2606 W 9TH LN, HIALEAH, FL 33010-1228",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01076",
+      "county_business_name": "Hypermovers Max '' LLC''",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "6741 SW 15 ST Miami FL 33144",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM2712",
+      "fdacs_name": "HYPERMOVERS MAX LLC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-351-4806",
+      "fdacs_address": "2530 SE 15TH CT, HOMESTEAD, FL 33035-2112",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01079",
+      "county_business_name": "Martinez Delivery Corp",
+      "county_dba": "Martinez Moving",
+      "county_phone": null,
+      "county_address": "13006 SW 151 LN Miami FL 33186",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2446",
+      "fdacs_name": "MARTINEZ DELIVERY CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-917-3995",
+      "fdacs_address": "13006 SW 151ST LN, MIAMI, FL 33186-7621",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01109",
+      "county_business_name": "Same Day Moving & Storage, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "8871 SW 208 TER Miami FL 33189",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM2051",
+      "fdacs_name": "SAME DAY MOVING & STORAGE, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-776-0068",
+      "fdacs_address": "8871 SW 208TH TER, CUTLER BAY, FL 33189-3882",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01113",
+      "county_business_name": "First Class Movers, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "7905 NW 60 ST Miami FL 33166",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM2122",
+      "fdacs_name": "First Class Movers, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "(786) 336-1982",
+      "fdacs_address": "7905 Northwest 60th Street, Miami, FL 33166  ",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01125",
+      "county_business_name": "La Barata Oves Moving",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "4721 NW 4 ST Miami FL 33126",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-01137",
+      "county_business_name": "Shark Junior, L.L.C.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "13760 NW 19 AVE Unit: #8 Opa Locka FL 33054",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2478",
+      "fdacs_name": "SHARK JUNIOR, L.L.C.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-308-9545",
+      "fdacs_address": "13760 NW 19TH AVE UNIT 8, OPA LOCKA, FL 33054-4233",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01139",
+      "county_business_name": "SF Local Moving Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "420 NE 152 ST Miami FL 33162",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2239",
+      "fdacs_name": "SF LOCAL MOVING INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-228-5917",
+      "fdacs_address": "420 NE 152ND ST, MIAMI, FL 33162-5020",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01140",
+      "county_business_name": "Cuba Moving, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "8446 NW 103 ST Unit: #101-D Hialeah Gardens FL 33016",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2467",
+      "fdacs_name": "CUBA MOVING INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-372-3748",
+      "fdacs_address": "8446 NW 103RD ST APT 101D, HIALEAH GARDENS, FL 33016-4693",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01141",
+      "county_business_name": "Chiquis Moving,Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1321 SW 142 AVE Miami FL 33184",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2438",
+      "fdacs_name": "CHIQUIS MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-300-8254",
+      "fdacs_address": "1321 SW 142ND AVE, MIAMI, FL 33184-3212",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01147",
+      "county_business_name": "Bermen Moving & Delivery LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1132 W 39 TER Hialeah FL 33012",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3470",
+      "fdacs_name": "BERMEN MOVING & DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-546-6888",
+      "fdacs_address": "1132 W 39TH TER, HIALEAH, FL 33012-7787",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01164",
+      "county_business_name": "Nina International Transport Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "4450 NW 74 AVE Miami FL 33166",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2284",
+      "fdacs_name": "NINA INTERNATIONAL TRANSPORT INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-953-4988",
+      "fdacs_address": "4450 NW 74TH AVE, MIAMI, FL 33166-6443",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01192",
+      "county_business_name": "Mancav Furniture Delivery LLC",
+      "county_dba": "Mancav Movers",
+      "county_phone": null,
+      "county_address": "11112 SW 161 ST Miami FL 33157",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2781",
+      "fdacs_name": "MANCAV FURNITURE DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "844-626-2284",
+      "fdacs_address": "11112 SW 161ST ST, MIAMI, FL 33157-2839",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01203",
+      "county_business_name": "Black Wolf Moving Miami, LLC",
+      "county_dba": "Two Men and A Truck",
+      "county_phone": null,
+      "county_address": "1521 NW 82 AVE Doral FL 33126",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2535",
+      "fdacs_name": "BLACK WOLF MOVING MIAMI, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-819-3340",
+      "fdacs_address": "1521 NW 82ND AVE, DORAL, FL 33126-1019",
+      "candidate_count": 13
+    },
+    {
+      "county_license": "MR-01208",
+      "county_business_name": "Wilfredo's Moving",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "17974 NW 74 CT Hialeah FL 33015",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2606",
+      "fdacs_name": "WILFREDO HERNANDEZ",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-299-7087",
+      "fdacs_address": "17974 NW 74TH CT, HIALEAH, FL 33015-8443",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01209",
+      "county_business_name": "Dixie Movers LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2221 NE 164 ST Unit: #273 North Miami Beach FL 33160",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2609",
+      "fdacs_name": "DIXIE MOVERS LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-697-6252",
+      "fdacs_address": "2221 NE 164TH ST # 273, NORTH MIAMI BEACH, FL 33160-3703",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01216",
+      "county_business_name": "Quintero Delivery & Moving, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1721 NW 79 AVE Doral FL 33126",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2463",
+      "fdacs_name": "QUINTERO DELIVERY & MOVING, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-456-1834",
+      "fdacs_address": "1721 NW 79TH AVE, DORAL, FL 33126-1112",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01221",
+      "county_business_name": "Pro Movers Miami, Inc.",
+      "county_dba": "Pro Movers",
+      "county_phone": null,
+      "county_address": "475 Brickell Ave Miami FL 33131",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2721",
+      "fdacs_name": "PRO MOVERS MIAMI, INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-707-7007",
+      "fdacs_address": "475 BRICKELL AVE, MIAMI, FL 33131-2500",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01237",
+      "county_business_name": "Related Moving & Service, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "7950 NW 53 ST Unit: #337 Doral FL 33166",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3034",
+      "fdacs_name": "RELATED MOVING & SERVICE, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-772-0044",
+      "fdacs_address": "7950 NW 53RD ST STE 337, MIAMI, FL 33166-4791",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01244",
+      "county_business_name": "Metayer Moving Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "11519 SW 124 PL Miami FL 33186",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM2830",
+      "fdacs_name": "METAYER MOVING CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-301-5545",
+      "fdacs_address": "11519 SW 124TH PL, MIAMI, FL 33186-4917",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01249",
+      "county_business_name": "AN Mudanzas & Delivery LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "16222 NW 38 PL Opa-locka FL 33054",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM4103",
+      "fdacs_name": "AN MUDANZAS & DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-487-7504",
+      "fdacs_address": "16222 NW 38TH PL, MIAMI GARDENS, FL 33054-6237",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01253",
+      "county_business_name": "J.V. Express Deliveries, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "13005 SW 50 LN Miami FL 33175",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2986",
+      "fdacs_name": "J.V. EXPRESS DELIVERIES, INC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-632-4817",
+      "fdacs_address": "13005 SW 50TH LN, MIAMI, FL 33175-5353",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01267",
+      "county_business_name": "Xpress Relocations, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "6158 NW 74 AVE Miami FL 33166",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2521",
+      "fdacs_name": "XPRESS RELOCATIONS LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-705-6833",
+      "fdacs_address": "6158 NW 74TH AVE, MIAMI, FL 33166-3710",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01269",
+      "county_business_name": "Shield Moving and Storage Logistics, Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2420 NW 116 ST Unit: #100 Miami FL 33167",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3111",
+      "fdacs_name": "SHIELD MOVING AND STORAGE LOGISTICS, INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-704-6023",
+      "fdacs_address": "2420 NW 116TH ST BLDG 4 STE 100, MIAMI, FL 33167-0018",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01280",
+      "county_business_name": "Atelier 4, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2170 NW 87 AVE Doral FL 33172",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-01282",
+      "county_business_name": "Prestige Moving System, Inc",
+      "county_dba": "Jacob and Sons Moving & Storage",
+      "county_phone": null,
+      "county_address": "600 NE 185 ST Miami FL 33179",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3117",
+      "fdacs_name": "PRESTIGE MOVING SYSTEM, INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "877-611-6684",
+      "fdacs_address": "600 NE 185TH ST, MIAMI, FL 33179-4514",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01283",
+      "county_business_name": "Fargo Partners LLC",
+      "county_dba": "American Fargo",
+      "county_phone": null,
+      "county_address": "3353 NW 74 AVE Miami FL 33122",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3135",
+      "fdacs_name": "FARGO PARTNERS, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-670-9501",
+      "fdacs_address": "3353 NW 74TH AVE, MIAMI, FL 33122-1229",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01287",
+      "county_business_name": "Ciao Moving & Storage LLC.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "35 NE 179 ST Miami FL 33162",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3143",
+      "fdacs_name": "CIAO MOVING & STORAGE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-531-4222",
+      "fdacs_address": "3022 NW 73RD ST STE 1, MIAMI, FL 33147-5919",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01295",
+      "county_business_name": "Your Stuff In The Truck, LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2075 SW 122 AVE Unit: #413 Miami FL 33175",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3245",
+      "fdacs_name": "YOUR STUFF IN THE TRUCK, LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-849-5203",
+      "fdacs_address": "2075 SW 122ND AVE APT 413, MIAMI, FL 33175-7338",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01296",
+      "county_business_name": "Online Movers Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "6451 NW 102 AVE Unit: #11 Doral FL 33178",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3250",
+      "fdacs_name": "ONLINE MOVERS CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-539-0553",
+      "fdacs_address": "6451 NW 102ND AVE UNIT 11, DORAL, FL 33178-4745",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01297",
+      "county_business_name": "Lu's Delivery LLC",
+      "county_dba": "Lux Moving Service",
+      "county_phone": null,
+      "county_address": "900 SW 8 ST Unit: #1207 Miami FL 33130",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3267",
+      "fdacs_name": "Lu's Delivery LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "(786) 837-1397",
+      "fdacs_address": "3925 Northwest 4th Street, Miami, FL 33126  ",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01306",
+      "county_business_name": "Lazy Bear Solutions. Inc",
+      "county_dba": "The Lazy Bear",
+      "county_phone": null,
+      "county_address": "4115 NW 132 ST Unit: #D Opa Locka FL 33054",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3366",
+      "fdacs_name": "LAZY BEAR SOLUTIONS. INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-457-2165",
+      "fdacs_address": "8724 SW 72ND ST, MIAMI, FL 33173-3512",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01314",
+      "county_business_name": "On Point Moving Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "16931 SW 111 CT Miami FL 33157",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3395",
+      "fdacs_name": "ON POINT MOVING CORP.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-208-4088",
+      "fdacs_address": "16931 SW 111TH CT, MIAMI, FL 33157-0300",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-01320",
+      "county_business_name": "305 + Movers LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "3715 SW 29 ST Miami FL 33134",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-090497",
+      "county_business_name": "ScoreUnion, LLC",
+      "county_dba": "Rushmore Movers",
+      "county_phone": null,
+      "county_address": "2140 S Dixie Hwy Unit: #301C Miami FL 33133",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3192",
+      "fdacs_name": "SCOREUNION LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-812-6670",
+      "fdacs_address": "2140 S DIXIE HWY STE 301C, MIAMI, FL 33133-2464",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-091229",
+      "county_business_name": "UOVO Art LLC",
+      "county_dba": "UOVO",
+      "county_phone": null,
+      "county_address": "346 NW 29 ST Miami 33127",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3775",
+      "fdacs_name": "UOVO ART LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-751-1175",
+      "fdacs_address": "346 NW 29TH ST, MIAMI, FL 33127-3914",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-092140",
+      "county_business_name": "P&P Moving and Delivery Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "12020 SW 31 ST Miami FL 33175",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3382",
+      "fdacs_name": "P & P MOVING AND DELIVERY INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-838-1239",
+      "fdacs_address": "12020 SW 31ST ST, MIAMI, FL 33175-2328",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-092238",
+      "county_business_name": "Flex Storage Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1060 SW 8 ST Unit: PBM 5012 Miami FL 33130",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3819",
+      "fdacs_name": "FLEX STORAGE INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "888-990-3539",
+      "fdacs_address": "1065 SW 8TH ST, MIAMI, FL 33130-3601",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-092297",
+      "county_business_name": "Total Moving Corporation",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "20005 NE 6 CT CIR North Miami FL 33179",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3711",
+      "fdacs_name": "TOTAL MOVING CORPORATION",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-487-3448",
+      "fdacs_address": "20005 NE 6TH COURT CIR, MIAMI, FL 33179-2408",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-092523",
+      "county_business_name": "JJ Brothers Groups LLC",
+      "county_dba": "Global Movers Relocators",
+      "county_phone": null,
+      "county_address": "10900 NW 146 ST Unit: #105 Hialeah Gardens FL 33018",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3385",
+      "fdacs_name": "JJ BROTHERS GROUP LLC.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-422-1433",
+      "fdacs_address": "10900 NW 146 ST STE 5, HIALEAH GARDENS, FL 33018",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-092532",
+      "county_business_name": "Mitjans Moving and Delivery Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "25364 SW 116 AVE Homestead FL 33032",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3794",
+      "fdacs_name": "MITJANS MOVING & DELIVERY INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-829-9528",
+      "fdacs_address": "100 NE 6TH AVE LOT 801, HOMESTEAD, FL 33030-6270",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-092562",
+      "county_business_name": "Confianca Moving & Storage LLC",
+      "county_dba": "ConfiMove",
+      "county_phone": null,
+      "county_address": "7831 NW 72 AVE Medley FL 33166",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3718",
+      "fdacs_name": "CONFIANCA MOVING & STORAGE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-635-4949",
+      "fdacs_address": "7831 NW 72ND AVE, MEDLEY, FL 33166-2215",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-092619",
+      "county_business_name": "Joe's Moving and Storage, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2201 SW 145 AVE Unit: #207 Miramar FL 33027",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM16",
+      "fdacs_name": "JOE'S MOVING AND STORAGE, INC",
+      "fdacs_status": "Expired",
+      "fdacs_phone": "305-888-3963",
+      "fdacs_address": "2201 SW 145TH AVE STE 207, MIRAMAR, FL 33027-6600",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-092997",
+      "county_business_name": "Latin Moving, Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "11317 NW 50 TER Doral FL 33178",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3926",
+      "fdacs_name": "Latin Moving. Corp",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "(786) 863-6413",
+      "fdacs_address": "11317 Northwest 50th Terrace, Doral, FL 33178  ",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-093002",
+      "county_business_name": "Happy Moving Happy Life LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "8175 NW 107 AVE Unit: #813 Doral FL 33178",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM4075",
+      "fdacs_name": "HAPPY MOVING HAPPY LIFE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-922-8926",
+      "fdacs_address": "8175 NW 107TH AVE APT 813, DORAL, FL 33178-5061",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-093105",
+      "county_business_name": "U.S.A. On the Move L.L.C.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "14323 SW 142 ST Miami FL 33186",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-093387",
+      "county_business_name": "JLG Services Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9654 SW 138 AVE Miami FL 33186",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-093500",
+      "county_business_name": "Benny and the Moving, Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "225 NE 23 ST Unit: #1203 Miami FL 33137",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3812",
+      "fdacs_name": "BENNY AND THE MOVING CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-531-0033",
+      "fdacs_address": "225 NE 23RD ST APT 1203, MIAMI, FL 33137-4037",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-093876",
+      "county_business_name": "Murillo's Mudanza and Delivery Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9065 NW 32 CT RD Miami FL 33147",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-094070",
+      "county_business_name": "A&D Moving Florida Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2160 SW 16 AVE Unit: #312 Miami FL 33145",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-094106",
+      "county_business_name": "Navarro Worldwide LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "21914 SW 97 PL Cutler Bay FL 33190",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-094141",
+      "county_business_name": "Sanford 7 Enterprise LLC",
+      "county_dba": "College Hunks NMB",
+      "county_phone": null,
+      "county_address": "1200 N Federal Hwy Hollywood FL 33020",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3619",
+      "fdacs_name": "SANFORD 7 ENTERPRISE LLC",
+      "fdacs_status": "Expired",
+      "fdacs_phone": "954-333-8869",
+      "fdacs_address": "1200 N FEDERAL HWY, HOLLYWOOD, FL 33020-3630",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-094170",
+      "county_business_name": "Heat Mover Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "16263 SW 103 ST Miami FL 33196",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-094205",
+      "county_business_name": "Powerhouse Moving and Delivery Co.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2984 W 84 ST Unit: #142 Hialeah FL 33018",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM2675",
+      "fdacs_name": "POWERHOUSE MOVING AND DELIVERY CO.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-543-5836",
+      "fdacs_address": "8004 NW 154TH ST #248, MIAMI LAKES, FL 33016",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-094336",
+      "county_business_name": "W Moving Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1818 SW 1 AVE Unit: #1211 Miami FL 33129",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3891",
+      "fdacs_name": "W MOVING CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-395-5395",
+      "fdacs_address": "1818 SW 1ST AVE APT 1211, MIAMI, FL 33129-1187",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-094438",
+      "county_business_name": "Romanos Delivery and Moving, Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "18841 NW 42 AVE Miami Gardens FL 33055",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3934",
+      "fdacs_name": "ROMANOS DELIVERY AND MOVING ,CORP",
+      "fdacs_status": "Expired",
+      "fdacs_phone": "786-474-5234",
+      "fdacs_address": "18841 NW 42ND AVE, MIAMI GARDENS, FL 33055-2733",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-094574",
+      "county_business_name": "Anthony's B Delivery LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "13882 SW 63 ST Miami FL 33183",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM4203",
+      "fdacs_name": "ANTHONY'S B DELIVERY LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-597-4277",
+      "fdacs_address": "13882 SW 63RD ST, MIAMI, FL 33183-1173",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095117",
+      "county_business_name": "Octoplus Moving LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1939 SW 23 TER Miami FL 33145",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM4019",
+      "fdacs_name": "OCTOPLUS MOVING LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-721-6372",
+      "fdacs_address": "1939 SW 23RD TER, MIAMI, FL 33145-3716",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095152",
+      "county_business_name": "JP Moving & Delivery Service Corp",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "21943 SW 88 PATH Cutler Bay FL 33190",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM4080",
+      "fdacs_name": "JP MOVING & DELIVERY SERVICE CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-560-3859",
+      "fdacs_address": "12571 SW 76TH ST, MIAMI, FL 33183-3503",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095236",
+      "county_business_name": "Mivamove LLC",
+      "county_dba": "MovaMove",
+      "county_phone": null,
+      "county_address": "785 NW 126 ST Miami FL 33168",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3869",
+      "fdacs_name": "MIVAMOVE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-419-3013",
+      "fdacs_address": "785 NW 126TH ST, NORTH MIAMI, FL 33168-2627",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095241",
+      "county_business_name": "305 Pro Movers Corp",
+      "county_dba": "305 Pro Movers Miami",
+      "county_phone": null,
+      "county_address": "10030 NW 9 ST CIR Unit: #203 Miami FL 33172",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM3744",
+      "fdacs_name": "305 PRO MOVERS CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-699-7327",
+      "fdacs_address": "601 BRICKELL KEY DR STE 700, MIAMI, FL 33131-2649",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095332",
+      "county_business_name": "QBA Multiservices Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2315 W Okeechobee Rd Unit: #209 Hialeah FL 33010",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3978",
+      "fdacs_name": "QBA MULTISERVICES INC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-794-4957",
+      "fdacs_address": "2315 W OKEECHOBEE RD APT 209, HIALEAH, FL 33010-1822",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095349",
+      "county_business_name": "Brautigam Delivery Corp.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "12673 SW 146 TER Miami FL 33186",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM2293",
+      "fdacs_name": "BRAUTIGAM DELIVERY CORP",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-443-3248",
+      "fdacs_address": "12673 SW 146 TERRACE, MIAMI, FL 33186",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095401",
+      "county_business_name": "Roy & Ois Moving LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "501 NW 57 AVE Miami FL 33126",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM4089",
+      "fdacs_name": "ROY & OIS MOVING LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "754-667-1852",
+      "fdacs_address": "501 NW 57TH AVE APT 33, MIAMI, FL 33126-4835",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095487",
+      "county_business_name": "Expremoving LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "689 NE 206 TER Miami FL 33179",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM4154",
+      "fdacs_name": "EXPREMOVING LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-307-7953",
+      "fdacs_address": "689 NE 206TH TER, MIAMI, FL 33179-2431",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095542",
+      "county_business_name": "Nikki Moving LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "9071 NW 13 ST Plantation FL 33322",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM4044",
+      "fdacs_name": "NIKKI MOVING LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-813-7595",
+      "fdacs_address": "9071 NW 13TH ST, PLANTATION, FL 33322-4915",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-095935",
+      "county_business_name": "Johnson Storage & Moving Co. - Miami, L.L.C.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "6451 NW 102 AVE Unit: #2 Doral FL 33178",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM4006",
+      "fdacs_name": "JOHNSON STORAGE & MOVING CO. - MIAMI, L.L.C.",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-418-9230",
+      "fdacs_address": "6451 NW 102ND AVE UNIT 2, DORAL, FL 33178-4745",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-096207",
+      "county_business_name": "AYCS Delivery Service LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1011 NW 53 ST Miami FL 33127",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM4084",
+      "fdacs_name": "AYCS DELIVERY SERVICE LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-407-3173",
+      "fdacs_address": "1011 NW 53RD ST, MIAMI, FL 33127-1835",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-096460",
+      "county_business_name": "DY Moving and Delivery Services, Inc.",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "5342 NW 190 LN Miami Gardens FL 33055",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-096496",
+      "county_business_name": "RapidGolden Transport LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "1250 SW 6 ST Unit: #113E Miami FL 33135",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM4119",
+      "fdacs_name": "RAPIDGOLDEN TRANSPORT LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "513-258-8495",
+      "fdacs_address": "542 SW 7TH ST APT 301, MIAMI, FL 33130-4602",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-096653",
+      "county_business_name": "Adelit LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "629 SW 2 ST Miami FL 33130",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM4120",
+      "fdacs_name": "ADELIT LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-582-8320",
+      "fdacs_address": "629 SW 2ND ST APT 202, MIAMI, FL 33130-2382",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-096763",
+      "county_business_name": "B&H Moving Services LLC",
+      "county_dba": "Best & Honest Moving & Storage",
+      "county_phone": null,
+      "county_address": "14040 NW 22 AVE Opa Locka FL 33054",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM3265",
+      "fdacs_name": "B&H MOVING SERVICES LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "305-322-3230",
+      "fdacs_address": "14040 NW 22ND AVE, OPA LOCKA, FL 33054-4169",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-096782",
+      "county_business_name": "Do It Now Moving Services LLC",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "2220 NE 2 AVE Unit: #504 Miami FL 33137",
+      "county_status": "Issued",
+      "classification": "REVIEW_REQUIRED",
+      "signals": [
+        "exact_legal_or_dba_name_only"
+      ],
+      "fdacs_license_no": "IM4127",
+      "fdacs_name": "DO IT NOW MOVING SERVICES LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "415-815-6850",
+      "fdacs_address": "13146 SW 233RD ST, HOMESTEAD, FL 33032-9238",
+      "candidate_count": 1
+    },
+    {
+      "county_license": "MR-096905",
+      "county_business_name": "Benjamin Moving and Delivery Service Inc",
+      "county_dba": null,
+      "county_phone": null,
+      "county_address": "57 NW 17 PL Unit: #3 Miami FL 33150",
+      "county_status": "Issued",
+      "classification": "NOT_FOUND",
+      "signals": [],
+      "fdacs_license_no": null,
+      "fdacs_name": null,
+      "fdacs_status": null,
+      "fdacs_phone": null,
+      "fdacs_address": null,
+      "candidate_count": 0
+    },
+    {
+      "county_license": "MR-097254",
+      "county_business_name": "Palacio Holdings LLC",
+      "county_dba": "Miami Moving Company",
+      "county_phone": null,
+      "county_address": "3161 SW 2 ST Miami FL 33135",
+      "county_status": "Issued",
+      "classification": "DETERMINISTIC_MATCH",
+      "signals": [
+        "exact_legal_or_dba_name",
+        "address_corroboration"
+      ],
+      "fdacs_license_no": "IM4179",
+      "fdacs_name": "PALACIO HOLDINGS LLC",
+      "fdacs_status": "Registered",
+      "fdacs_phone": "786-216-5209",
+      "fdacs_address": "3161 SW 2ND ST, MIAMI, FL 33135-2754",
+      "candidate_count": 1
+    }
+  ],
+  "results_full_roster_note": "Full-roster classifications available in counts_full_roster; primary results array is ISSUED-only."
+}

@@ -1,0 +1,19 @@
+{
+  "task": "FL-C004",
+  "shared_concepts_observed": [
+    "county regulatory credential",
+    "identity observation",
+    "owner/officer",
+    "complaint",
+    "disposition",
+    "enforcement event"
+  ],
+  "broward_specific_concepts": [
+    "vehicle permit/decal as first-class credential component",
+    "hearing process as explicit enforcement stage",
+    "license/registration suspension/revocation as documented ordinance outcome",
+    "mandatory FDACS IM attachment at county application time"
+  ],
+  "architecture_finalized": false,
+  "production_schema_created": false
+}

@@ -1,0 +1,7 @@
+{
+  "freeze_id": "FL_COUNTY_RESEARCH_V1_FREEZE",
+  "alias_of": "fl-county-research-v1-freeze.json",
+  "frozen_head_sha": "1256170855439413242acadf68e659e53f4aabc3",
+  "transplant_manifest": "transplant-manifest-v1.json",
+  "package_hash": "b975dc344f7d31aebb085f3a6c698001"
+}

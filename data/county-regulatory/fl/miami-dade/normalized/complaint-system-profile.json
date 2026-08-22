@@ -1,0 +1,14 @@
+{
+  "task": "FL-C005",
+  "availability": "INTAKE_ONLY_PUBLIC",
+  "access_class": "INTAKE_ONLY",
+  "records_public": 0,
+  "sample_or_full": "PRA_REQUIRED for history",
+  "case_status_public": false,
+  "disposition_public": false,
+  "pii": "Consumer complaints via Mediation Center; normalized staging contains no complaint rows; Consumer PII committed: 0",
+  "notes": [
+    "No Miami-Dade equivalent of Palm Beach BIR (3-year allegation+disposition) found publicly.",
+    "Disposition taxonomy not publicly published as a structured code table."
+  ]
+}

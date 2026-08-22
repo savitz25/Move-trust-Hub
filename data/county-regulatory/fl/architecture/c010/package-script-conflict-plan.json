@@ -1,0 +1,60 @@
+{
+  "task": "FL-C010",
+  "retrieved_at": "2026-08-22T15:35:04.265Z",
+  "package_json_diff_vs_origin_main": "NONE",
+  "decision": "OMIT_PACKAGE_JSON_CHANGES",
+  "rationale": "C001–C010 did not modify package.json relative to origin/main. Invoke validators via `node scripts/validate-fl-c0XX.mjs` directly. Do not overwrite newer main package.json.",
+  "optional_future_script_entries": [
+    {
+      "suggested_key": "validate:fl-c001-catalog",
+      "command": "node scripts/validate-fl-c001-catalog.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c002-palm-beach",
+      "command": "node scripts/validate-fl-c002-palm-beach.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c003-palm-beach-evidence",
+      "command": "node scripts/validate-fl-c003-palm-beach-evidence.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c003-palm-beach-qualification",
+      "command": "node scripts/validate-fl-c003-palm-beach-qualification.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c004-broward-acquisition",
+      "command": "node scripts/validate-fl-c004-broward-acquisition.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c005-miami-dade-acquisition",
+      "command": "node scripts/validate-fl-c005-miami-dade-acquisition.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c006-miami-dade-qualification",
+      "command": "node scripts/validate-fl-c006-miami-dade-qualification.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c007-pinellas-acquisition",
+      "command": "node scripts/validate-fl-c007-pinellas-acquisition.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c008-county-architecture-discovery",
+      "command": "node scripts/validate-fl-c008-county-architecture-discovery.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    },
+    {
+      "suggested_key": "validate:fl-c009-palm-beach-production-spec",
+      "command": "node scripts/validate-fl-c009-palm-beach-production-spec.mjs",
+      "include_in_transplant": "OPTIONAL_OMIT_PREFERRED"
+    }
+  ],
+  "required_package_script_additions": []
+}

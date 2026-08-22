@@ -1,0 +1,133 @@
+{
+  "task": "FL-C008",
+  "version": "V1",
+  "concepts": [
+    {
+      "id": "source",
+      "classification": "V1_REQUIRED",
+      "summary": "Official origin of an observation with agency, system, URL/record id, retrieval timestamp."
+    },
+    {
+      "id": "jurisdiction",
+      "classification": "V1_REQUIRED",
+      "summary": "Legal/geographic authority scope; statuses do not overwrite across jurisdictions."
+    },
+    {
+      "id": "county_credential",
+      "classification": "V1_REQUIRED",
+      "summary": "Mover-specific county permit/registration/license; nullable for ORDINANCE_ONLY. Not stored in provider_state_authority.",
+      "notes": "Required concept in model; row presence depends on posture."
+    },
+    {
+      "id": "ordinance_posture",
+      "classification": "V1_REQUIRED",
+      "summary": "CREDENTIAL_BASED vs ORDINANCE_ONLY program posture, including Monitoring vs Licensing taxonomy."
+    },
+    {
+      "id": "identity_observation",
+      "classification": "V1_REQUIRED",
+      "summary": "County-reported legal name, DBA, address, phone, email, website — not canonical until fail-closed link."
+    },
+    {
+      "id": "owner_officer_observation",
+      "classification": "V1_OPTIONAL",
+      "summary": "Public/PRA owner, officer, or dispute-contact name/title. No consumer PII / DOB."
+    },
+    {
+      "id": "lbt",
+      "classification": "V1_OPTIONAL",
+      "summary": "Local Business Tax corroboration. Architectural rule: LBT != mover authority."
+    },
+    {
+      "id": "branch",
+      "classification": "V1_OPTIONAL",
+      "summary": "Additional location only with explicit branch record; SCHEMA_ONLY != observed branch."
+    },
+    {
+      "id": "vehicle",
+      "classification": "V1_OPTIONAL",
+      "summary": "Fleet count or VIN/tag/GVW/decal observations; schema-only fields are not company observations."
+    },
+    {
+      "id": "insurance_states",
+      "classification": "V1_REQUIRED",
+      "summary": "Vocabulary layers REQUIREMENT_DOCUMENTED / CURRENT_POLICY_OBSERVED / COMPLIANCE_VERIFIED must stay distinct.",
+      "notes": "Observation rows themselves may be V1_OPTIONAL per county."
+    },
+    {
+      "id": "complaint",
+      "classification": "V1_REQUIRED",
+      "summary": "Allegation/intake/case observation. Not a misconduct finding by itself."
+    },
+    {
+      "id": "disposition",
+      "classification": "V1_REQUIRED",
+      "summary": "Official resolution of a complaint. COMPLAINT != DISPOSITION."
+    },
+    {
+      "id": "enforcement_event",
+      "classification": "V1_REQUIRED",
+      "summary": "Citation/notice/hearing/admin action. ENFORCEMENT_EVENT != FINAL_OUTCOME."
+    },
+    {
+      "id": "final_outcome",
+      "classification": "V1_OPTIONAL",
+      "summary": "Explicit finality/final order when source provides it; never inferred."
+    },
+    {
+      "id": "zero_result",
+      "classification": "RESEARCH_ONLY",
+      "summary": "NO_COMPLAINT_RECORD_RETURNED_FOR_SEARCH_WINDOW (and analogs). Optional INTERNAL only; never consumer complaint-free."
+    },
+    {
+      "id": "legal_criminal_boundary",
+      "classification": "V1_REQUIRED",
+      "summary": "Policy boundary: do not productize criminal records or imply guilt from referral statuses."
+    },
+    {
+      "id": "cross_source_link",
+      "classification": "V1_REQUIRED",
+      "summary": "Fail-closed versioned links among county credential, FDACS/state, canonical company, LBT secondary."
+    },
+    {
+      "id": "conflict_model",
+      "classification": "V1_REQUIRED",
+      "summary": "Preserve multi-jurisdiction and true conflicts with provenance; no silent overwrite."
+    },
+    {
+      "id": "lifecycle",
+      "classification": "V1_REQUIRED",
+      "summary": "DISCOVERED → ACQUIRED → NORMALIZED → QUALIFIED → LINKED → PUBLICATION_ELIGIBLE → PUBLISHED."
+    },
+    {
+      "id": "publication_states",
+      "classification": "V1_REQUIRED",
+      "summary": "INTERNAL_ONLY / PUBLICATION_ELIGIBLE / PUBLISHED / WITHHELD; Trust Score untouched in V1."
+    },
+    {
+      "id": "adapter_contract",
+      "classification": "V1_REQUIRED",
+      "summary": "Per-county adapter declaration of posture, interfaces, normalize/qualify/link, PII and publication defaults."
+    },
+    {
+      "id": "pii_policy",
+      "classification": "V1_REQUIRED",
+      "summary": "Consumer PII committed = 0; business-level regulatory fields only."
+    },
+    {
+      "id": "coverage_classes",
+      "classification": "V1_REQUIRED",
+      "summary": "NEAR_FULL, SAMPLE, PRA_REQUIRED, SCHEMA_ONLY, INTAKE_ONLY, NO_SEPARATE_ROSTER_IDENTIFIED, REQUIREMENT_DOCUMENTED."
+    },
+    {
+      "id": "trust_score_boundary",
+      "classification": "V1_REQUIRED",
+      "summary": "County evidence does not change Trust Score in V1."
+    },
+    {
+      "id": "national_multi_state_rollout",
+      "classification": "FUTURE",
+      "summary": "Portability is designed in; multi-state county rollout is out of V1 execution."
+    }
+  ]
+}

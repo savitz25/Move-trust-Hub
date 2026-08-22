@@ -1,0 +1,13 @@
+{
+  "task": "FL-C005",
+  "nov_citations": "AUTHORITY_DOCUMENTED — civil citations referenced; bulk roster not public",
+  "hearings": "Process may exist under RER/Consumer Protection; case-level data PRA",
+  "suspension_revocation": "Documented on application acknowledgements / ordinance",
+  "final_action": "PRA_REQUIRED for structured final orders / outcomes extract",
+  "access": "DOCUMENT_PUBLIC for process; PRA_REQUIRED for case-level history",
+  "observations_acquired": 0,
+  "notes": [
+    "Do not invent complaint dispositions or final enforcement actions.",
+    "Court bulk discovery noted separately as LEGAL_OBSERVATION future."
+  ]
+}

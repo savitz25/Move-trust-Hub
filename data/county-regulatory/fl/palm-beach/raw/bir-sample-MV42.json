@@ -1,0 +1,116 @@
+﻿{
+    "business_seq":  1000,
+    "license_number":  "MV42",
+    "business_name":  "A Man With A Van, Inc. ",
+    "license_list":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "A Man With A Van, Inc. ",
+                               "Established_Yr":  "1997",
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1000,
+                               "Does_Business_As":  "A Man With A Van, Inc.",
+                               "Address":  "3132 Fortune",
+                               "City":  "Wellington",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33414",
+                               "MailingAddress":  "3132 Fortune",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Wellington",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33414",
+                               "PhoneNumber":  "5617849772",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "Johnpiacovetti@aol.com",
+                               "WebsiteURL":  "www.amanwithavaninc.com",
+                               "Fax":  "5617849772",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  1000,
+                                           "LastName":  "Iacovetti",
+                                           "FirstName":  "Jade",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "5617849772"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "A Man With A Van, Inc. ",
+                                         "Established_Yr":  "1997",
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1000,
+                                         "Does_Business_As":  "A Man With A Van, Inc.",
+                                         "Address":  "3132 Fortune",
+                                         "City":  "Wellington",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33414",
+                                         "MailingAddress":  "3132 Fortune",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Wellington",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33414",
+                                         "PhoneNumber":  "5617849772",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "Johnpiacovetti@aol.com",
+                                         "WebsiteURL":  "www.amanwithavaninc.com",
+                                         "Fax":  "5617849772",
+                                         "License_Required":  "Y"
+                                     }
+}

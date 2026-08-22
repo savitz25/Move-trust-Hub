@@ -1,0 +1,31 @@
+{
+  "task": "FL-C005",
+  "discovery_class": "LEGAL_OBSERVATION",
+  "status": "DISCOVERY_ONLY_NOT_INGESTED",
+  "priority_vs_regulator": "LOWER — court data remains lower priority than Consumer Mediation / citation / enforcement data",
+  "agency": "Clerk of the Court and Comptroller of Miami-Dade County — Technical Services / Commercial Data Services",
+  "official_urls": [
+    "https://www.miamidadeclerk.gov/clerk/commercial-data-services.page",
+    "https://www2.miamidadeclerk.gov/Developers/",
+    "https://www.miamidadeclerk.gov/library/FTP_File_Layouts/FTP_Layout_Civil.pdf"
+  ],
+  "offers": {
+    "bulk_daily_civil_filings": true,
+    "defendant_business_party_names": true,
+    "case_number": true,
+    "filing_date": true,
+    "disposition": true,
+    "judgment": "via Official Records / civil folder layouts where present"
+  },
+  "access": {
+    "class": "PAID_COMMERCIAL_BULK_AND_API",
+    "registration": "Self-register + notarized identity / data-download forms required before Civil folder access",
+    "bulk_ftp_cost_observed": "$110.00 per folder per month (Official Records images FTP higher)",
+    "api_cost_observed": "$0.20 per unit / request from prepaid balance",
+    "retention_window": "Files available ~30 days then require continued paid access",
+    "civil_layout": "daily_civil_MMDDYYYY.zip with Cases.exp / Parties.exp / Dockets.exp (caret-delimited layouts published)"
+  },
+  "future_label_only": "LEGAL_OBSERVATION",
+  "rows_acquired": 0,
+  "note": "Catalog only. Do NOT ingest into mover profiles in FL-C005. No case rows invented. Prefer regulator complaint/citation/enforcement completeness via PRA before court bulk spend."
+}

@@ -1,0 +1,73 @@
+{
+  "retrieved_at": "2026-08-21T20:29:48.774Z",
+  "source": "https://energov.miamidade.gov/energov_prod/selfservice/api/energov/licenses/business/{case_id}",
+  "access": "PUBLIC_UNAUTHENTICATED_GET_with_tenant_headers",
+  "n": 8,
+  "note": "Public detail endpoint returns identity/status/dates. Phones, emails, owners, vehicles, insurance certificates are NOT exposed on this public API response. Attachments referenced in Description are not downloadable without authenticated portal access.",
+  "samples": [
+    {
+      "case_id": "beb244a5-cf5c-45c5-9404-f154b2823715",
+      "Company": "Withers Transfer & Storage of Coral Gables, Inc.",
+      "DBAName": "Withers Worldwide",
+      "CaseNumber": "MR-00002",
+      "LicenseNumber": "MR-00002",
+      "LicenseType": "Moving",
+      "LicenseDetailsStatus": "Issued",
+      "BusinessDetailsStatus": "Active",
+      "ApplicationDate": "2025-12-04T16:19:07.603Z",
+      "IssuedDate": "2026-01-02T05:00:00Z",
+      "ExpirationDate": "2028-01-02T05:00:00Z",
+      "IssuedBy": "Rivera, Juan",
+      "Description": "2YR Renewal /ISSUED/ Please see ATTACHMENTS for LICENSE/ JR /// $82 credit was applied for the third truck that was removed and not inspected. MMC"
+    },
+    {
+      "case_id": "44d89c8f-3ebf-419a-8e63-8b8b8edc8cb0",
+      "Company": "Raul's Moving, Inc.",
+      "DBAName": "",
+      "CaseNumber": "MR-00015",
+      "LicenseNumber": "MR-00015",
+      "LicenseType": "Moving",
+      "LicenseDetailsStatus": "Issued",
+      "BusinessDetailsStatus": "Active",
+      "IssuedDate": "2025-09-16T04:00:00Z",
+      "ExpirationDate": "2026-09-16T04:00:00Z"
+    },
+    {
+      "case_id": "980f3651-07dd-4906-9fa4-c0acd5ff241f",
+      "Company": "Gomez Moving Co., Inc.",
+      "CaseNumber": "MR-00018",
+      "LicenseDetailsStatus": "Issued"
+    },
+    {
+      "case_id": "a18c3ab6-8561-4895-9a8c-6fc85847e8b7",
+      "Company": "George Lima Moving, Inc.",
+      "CaseNumber": "MR-00032",
+      "LicenseDetailsStatus": "Issued"
+    },
+    {
+      "case_id": "a923a887-8674-403c-ad9f-5ca5120dc269",
+      "Company": "Homestead Transfer & Storage Co.",
+      "CaseNumber": "MR-00049",
+      "LicenseDetailsStatus": "Issued"
+    },
+    {
+      "case_id": "f59030a2-35c4-4503-9038-3fa870abc416",
+      "Company": "Small Time Movers, Inc.",
+      "CaseNumber": "MR-00067",
+      "LicenseDetailsStatus": "Issued"
+    },
+    {
+      "case_id": "89560986-4134-4d35-995c-cb4aa54634b9",
+      "Company": "Mudanzas Diaz Inc.",
+      "CaseNumber": "MR-00068",
+      "LicenseDetailsStatus": "Issued"
+    },
+    {
+      "case_id": "00f17d92-7f33-41ad-a21a-162c66c60d8c",
+      "Company": "The Fortress-Miami Corporation",
+      "DBAName": "Fortress",
+      "CaseNumber": "MR-00094",
+      "LicenseDetailsStatus": "Issued"
+    }
+  ]
+}

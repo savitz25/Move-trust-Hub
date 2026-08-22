@@ -1,0 +1,3723 @@
+{
+  "manifest_id": "FL_COUNTY_RESEARCH_V1_FINAL_INTEGRATION_MANIFEST",
+  "task": "FL-C011",
+  "strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "retrieved_at": "2026-08-22T15:57:35.936Z",
+  "source_c010_head": "027382d75990f13e39093ef3a0cb479165be49f1",
+  "source_freeze_sha": "1256170855439413242acadf68e659e53f4aabc3",
+  "source_root": "C:\\Users\\makei\\move-trust-hub-fl-county",
+  "target_main_base": "ceeaa987982b2871662fbb41fee858b52f1a0651",
+  "include_from_c010_allowlist": 379,
+  "review_resolved_to_include": 2,
+  "review_resolved_to_exclude": 4,
+  "unresolved_review": 0,
+  "extra_tooling_paths": [
+    "scripts/fl-c010-build-integration-gate.mjs",
+    "scripts/fl-c010-complete-remaining-audits.mjs",
+    "scripts/validate-fl-c010-integration-gate.mjs",
+    "scripts/validate-fl-c010-county-stack-integration-gate.mjs"
+  ],
+  "total_files": 407,
+  "total_size_bytes": 16417952,
+  "package_hash": "da851281bf73257ba7438bb01960ea48b6b380031e4dd4a1b92387661e211b76",
+  "c010_transplant_manifest_hash_known": "b975dc344f7d31aebb085f3a6c698001",
+  "files": [
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/adapter-contract.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/adapter-contract.json",
+      "source_sha256": "270de311fdea0f12480858e74ac92fe4fb9f7bdc892b43a93e4021101bd289b3",
+      "size": 2079,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/capability-matrix.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/capability-matrix.json",
+      "source_sha256": "976409a6853c51ba1543f445b3e9600e3e91fbb6b3ed9a40da4186bf8d563bef",
+      "size": 3317,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/concept-catalog.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/concept-catalog.json",
+      "source_sha256": "897717bc19ba25c4f25c97184fe626a771126d12e0ded427220d28b103c1f586",
+      "size": 4982,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/county-regulatory-posture-model.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/county-regulatory-posture-model.json",
+      "source_sha256": "7b170ede36198da6626cf4cc52a1887c12d6d329e3015d150298828605358f72",
+      "size": 1268,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/evidence-lifecycle.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/evidence-lifecycle.json",
+      "source_sha256": "9c826fcabe9d4dc1282035aad38d51b9b5cffd482420fbffd8f67e281fd8db86",
+      "size": 1823,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/first-production-feature-sequence.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/first-production-feature-sequence.json",
+      "source_sha256": "f97f43a8710247b979426e76f1fd2bd3ed47cc47d4ec55218558ff558141df99",
+      "size": 1480,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/first-production-pilot.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/first-production-pilot.json",
+      "source_sha256": "98b778f03ac8b025d5ca061b49721dbe57a117bf0da1171981280dd1190f28ab",
+      "size": 975,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/fl-c008-summary.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/fl-c008-summary.json",
+      "source_sha256": "c27b7307b3026bcac8fdf7f3384a3f573c621bafc7b847860ec36a40fd78da80",
+      "size": 2227,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/four-pilot-summary.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/four-pilot-summary.json",
+      "source_sha256": "db81137c7b701f3bdec2e64591a6f7af5100d5ad8bf9ce9aa54d499a1e43671a",
+      "size": 2035,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/national-portability.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/national-portability.json",
+      "source_sha256": "144fabe4b96447a12462fea0a3fedee6a74a66fd9cd6c0c62194009450f5fc8e",
+      "size": 1043,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/network-reuse.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/network-reuse.json",
+      "source_sha256": "017276a7f1482c7f64a51da716045a8cac1ba71d9ad684241bd1905cb1d61d9e",
+      "size": 904,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/production-schema-reuse-audit.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/production-schema-reuse-audit.json",
+      "source_sha256": "5d9ffddf63079a48a4149d97ab09d2bb504aa87193455bf735f0b431cb498a52",
+      "size": 3945,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/recommended-fl-c009.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/recommended-fl-c009.json",
+      "source_sha256": "1fb1d526528e80590a290662d0a19e269457e6079f9e4f1eb42031b115f64615",
+      "size": 908,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/stack-integration-options.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/stack-integration-options.json",
+      "source_sha256": "f9c338db0f258ad93f83e741091e96ced4d1b6b0ff6d495feb2ec82b901cc813",
+      "size": 2150,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/stack-manifest.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/stack-manifest.json",
+      "source_sha256": "b201dc55861c6de82d545398479ddd004e0b4c757fa98a99474a74c68e7d6338",
+      "size": 1889,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c008/state-track-coordination.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c008/state-track-coordination.json",
+      "source_sha256": "ee09635d587132803676dc17c68ae5c9a255e7fdb12941ed2ee3afc7e3a09818",
+      "size": 891,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/cohort/pbc-production-integration-cohort-v1.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/cohort/pbc-production-integration-cohort-v1.json",
+      "source_sha256": "66c32a4e81e8475b125d88a70268f541313a1607325e1e60b4b2807657e71063",
+      "size": 119741,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/cohort/pbc-production-link-ready-v1.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/cohort/pbc-production-link-ready-v1.json",
+      "source_sha256": "d2eed80bcebc1253d8f96f2ef12be0e413fe3f8d7c951a302f6a4b6aa5a1f063",
+      "size": 19493,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/company-publication-interaction.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/company-publication-interaction.json",
+      "source_sha256": "4cbc124f718c141e0b08503404b5813caf9863696bfe746bb076e3c0cac05a6f",
+      "size": 860,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/complaint-storage-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/complaint-storage-spec.json",
+      "source_sha256": "be3c74ea6e7e918ffb9f13730fa39fcd250b87361c30b3b72929f0fb975036e5",
+      "size": 667,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/contact-observation-reuse.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/contact-observation-reuse.json",
+      "source_sha256": "ef521d420ff22bc1eced596e3283061cf83d304416026c42c85512b67cef6f69",
+      "size": 1046,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/county-page-presentation-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/county-page-presentation-spec.json",
+      "source_sha256": "8af4403e91fb6eb0ca1571f9861bf7701dda84fec4df91bb16fd870861449e78",
+      "size": 843,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/credential-storage-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/credential-storage-spec.json",
+      "source_sha256": "962a559c5a08cd229ff6ed70ff11f7d79ead9d36c01dc2b7ef9d0aec7634bbe0",
+      "size": 1130,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/cross-source-link-decision.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/cross-source-link-decision.json",
+      "source_sha256": "d36fd66be984236c3e8a923a1df3c15ce77aa52567fd22d0a4a4b6a40247b7d3",
+      "size": 728,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/disposition-storage-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/disposition-storage-spec.json",
+      "source_sha256": "bb34d5755609da3d9d6137b5d3f92411a8a0747a52a51446dd8ff04f29143e98",
+      "size": 705,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/duplicate-collision-safety.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/duplicate-collision-safety.json",
+      "source_sha256": "668cb1f068c467a647dad0db3485a8927c1fd323d4c4b0296dc8862b8e80d054",
+      "size": 1075,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/enforcement-storage-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/enforcement-storage-spec.json",
+      "source_sha256": "bb07cc9bc08f17c95961011306da86d96d507a28fe01e9afc708c66362e65258",
+      "size": 733,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/evidence-publication-state.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/evidence-publication-state.json",
+      "source_sha256": "97af5ba94da980d186f867e62726c5d66451467455f08cb4af685477f6ecb081",
+      "size": 1145,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/first-implementation-task-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/first-implementation-task-spec.json",
+      "source_sha256": "0e7973716543c513ea4f65db4f183e6da929cb44eb145b9c5a4c7828262820b4",
+      "size": 1206,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/fl-c009-summary.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/fl-c009-summary.json",
+      "source_sha256": "461ddc56d44c5acc329d59822fbf54810bd04513557e9f33ef6c466517af5dc2",
+      "size": 3640,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/fleet-decision.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/fleet-decision.json",
+      "source_sha256": "bb28bfdb8da2602bdf29345b650981a5146c0f50d802b2c20c536e8367abd57d",
+      "size": 505,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/florida-identity-snapshot-meta.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/florida-identity-snapshot-meta.json",
+      "source_sha256": "28fcbe647b8bb7d99e22b8295be5a7e65ade4669649d8d791ec86901248a9cf9",
+      "size": 752,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/florida-im-company-crosswalk-current.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/florida-im-company-crosswalk-current.json",
+      "source_sha256": "44510e55b687da11bece62ad2d860a3cc1566a17756a3971be61f07c2ab9a80f",
+      "size": 436650,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/freshness-history-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/freshness-history-spec.json",
+      "source_sha256": "733c4c491d51cfd8e1d169545e6b5fb5ad707a8e09fe230c6150a2093aa36faa",
+      "size": 518,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/future-data-delta.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/future-data-delta.json",
+      "source_sha256": "ccbd54c74e0c56d8aa2390c8c5892671f175b58b1e32257da33c94c35481e118",
+      "size": 713,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/implementation-sequence.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/implementation-sequence.json",
+      "source_sha256": "26fef8e7fd6cb00e794bdf3bf8d2efd3aa96e5ded1d0be2ed5d54c58ce2b65ff",
+      "size": 1494,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/ingestion-upsert-contract.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/ingestion-upsert-contract.json",
+      "source_sha256": "14c171ef91259e02a8fb5ebe9d8b3627f9c4244b6402aa0436c02e0580672052",
+      "size": 1002,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/meta/raw-provenance.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/meta/raw-provenance.json",
+      "source_sha256": "665bf9855938fdb8ba431875ec871bad91faf26afc58053c98c3d268f63ca7c7",
+      "size": 2247,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/meta/stack-vs-main-note.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/meta/stack-vs-main-note.json",
+      "source_sha256": "0569f4f47eb4da308b48f2d186b4b5f1d216043d8d85f44df55cc02953ee903b",
+      "size": 808,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/migration-specification.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/migration-specification.json",
+      "source_sha256": "4b38701865ac51172afb2808ba1aff0a3aeaaea242e1344c77ff1906e8d4ee86",
+      "size": 893,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/network-portability.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/network-portability.json",
+      "source_sha256": "ac8b9505d7a4cfae11014b9785b57f02433fd7989630430ea1bede9bb513af20",
+      "size": 1050,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/owner-officer-decision.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/owner-officer-decision.json",
+      "source_sha256": "54989c62cb8761ee921fdaf8ced7ab337df00a93334caa41fd398b84a85018ff",
+      "size": 690,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/pii-gate.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/pii-gate.json",
+      "source_sha256": "99ef7a7fd96a468d60a604460e14f492d7e135faac621c4c0e206f651a532028",
+      "size": 451,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/production-storage-decision.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/production-storage-decision.json",
+      "source_sha256": "84799ffc775d886be626407b5c54774044a97a40373dd8c0a0c19c519601363c",
+      "size": 2836,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/profile-presentation-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/profile-presentation-spec.json",
+      "source_sha256": "4a58222b3de50bbeeb9544c5490831ac730ba27a9ad452476daf733eacdbb520",
+      "size": 1005,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/read-api-contract.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/read-api-contract.json",
+      "source_sha256": "f428827a08caf2e20f2402d9e441b2c4b2fb9a18e9238ac3f4d628b8215c29c3",
+      "size": 890,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/recommended-fl-c010.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/recommended-fl-c010.json",
+      "source_sha256": "b2310f365559f85320fe54b17560ea641e783892d60d5fdb3e29e2773a9b8a97",
+      "size": 1159,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/rollback-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/rollback-spec.json",
+      "source_sha256": "d6793563ec17915aa3a88ba7eefb3b7ae50151c1d52a7541998fa144fbde8a83",
+      "size": 681,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/selective-transplant-allowlist.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/selective-transplant-allowlist.json",
+      "source_sha256": "f8ba9ea64b7e5658646016cee22bbd700a0af5aa430b24816d3ee98a20c054e4",
+      "size": 780,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/source-provenance-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/source-provenance-spec.json",
+      "source_sha256": "b0da0b9481f6a3038c8429cd943b86987fe160393e6ef97063c22dcf5afcf69e",
+      "size": 1026,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/state-track-coordination.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/state-track-coordination.json",
+      "source_sha256": "5412b79ac0cef7479867b1aa324b5dc6bd68df447eeb2925e5c5e3aa6d80d418",
+      "size": 1279,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/wave-a-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/wave-a-spec.json",
+      "source_sha256": "eab4b71eaa6af976d3abd060eff18ebf0118ffa3ffac60b1113c1b91d8437af8",
+      "size": 1196,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/wave-b-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/wave-b-spec.json",
+      "source_sha256": "b850f669c498d2bbca158a681c213f8470ae3d405ecdf5b8e08a266818a4e247",
+      "size": 588,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/wave-c-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/wave-c-spec.json",
+      "source_sha256": "996d196243dbaee10069746ad738ecd14f29918c9a7450b09e3b05c7f5212a48",
+      "size": 695,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c009/wave-d-spec.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c009/wave-d-spec.json",
+      "source_sha256": "d3afc19cca3e61568bbf19263f2fa51bbc254d56fb3830422dcdb6d8d3d7f983",
+      "size": 548,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/conflict-report.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/conflict-report.json",
+      "source_sha256": "d4301de69c8a80d4d94fcf12547d1f9053560c1b3d9438369b796577c4d28704",
+      "size": 2609,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/county-research-freeze-manifest.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/county-research-freeze-manifest.json",
+      "source_sha256": "7e57628e6c2db395771fdcd3c988521834794fcbcbaaeae0e99d8ebe76fdb0a7",
+      "size": 276,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/current-main-linkage-delta.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/current-main-linkage-delta.json",
+      "source_sha256": "36dfed2492845dcdf15a30125cf6b750ea046885cc841b8045f0de9926087aa1",
+      "size": 1042,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/current-main-path-collision-audit.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/current-main-path-collision-audit.json",
+      "source_sha256": "fc4488ad4739c050a5a22bdbab4c8f17a0e852b92510ad84e3b9c1f058f6c8a8",
+      "size": 607,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/file-inventory.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/file-inventory.json",
+      "source_sha256": "c0f63ff847343eb9a8e3df054b0106e86b55275ef2204cba59d3ff3c43e283d3",
+      "size": 131373,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/fl-c010-summary.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/fl-c010-summary.json",
+      "source_sha256": "d5b2d327d42e7daed6beb7ebe1f03acadb725e7bcb97529b389f62b6f3940343",
+      "size": 1567,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/fl-county-research-v1-freeze.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/fl-county-research-v1-freeze.json",
+      "source_sha256": "7cf1171733c41b69d394050cc95adb1b5552987916ea7ccd3e547d6fac71b708",
+      "size": 3767,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/future-integration-manifest.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/future-integration-manifest.json",
+      "source_sha256": "58d6a235bc8b922373e5ad689af36fdf7f3d027ebb3e323064c19afd3232b18f",
+      "size": 2101,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/google-audit.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/google-audit.json",
+      "source_sha256": "4a46ca71e46080c6862eaf9d15bb794e578aba6e070813af1ee3c79b8ad1b0f2",
+      "size": 362,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/integration-readiness.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/integration-readiness.json",
+      "source_sha256": "452975a1407196b867becd2d051a84cd64ee71623773248bb74fe01e1dd96b08",
+      "size": 1882,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/large-artifact-audit.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/large-artifact-audit.json",
+      "source_sha256": "077177dc0aec3f9a6a1f1cb7fb1eb614e3c27bb2c3d4b7522b917b625bcc0978",
+      "size": 9278,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/main-compatibility-audit.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/main-compatibility-audit.json",
+      "source_sha256": "d95eb1d7be6b7d54fc0550fb11789eaca916009f44717cf570dc3eea3d902b34",
+      "size": 2219,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/migration-audit.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/migration-audit.json",
+      "source_sha256": "6357ce8b8ca1f4e6f1fdeb118d11fcc29fcf831c6d13a4e4f189b46c9de48c85",
+      "size": 444,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/NEWLY_LINKABLE_AFTER_C009.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/NEWLY_LINKABLE_AFTER_C009.json",
+      "source_sha256": "f204f1fcd6c1bf7ca54f3c936f5254f7da9e038c8172d96e1f8fbb100ee33103",
+      "size": 55,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/package-script-conflict-plan.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/package-script-conflict-plan.json",
+      "source_sha256": "d78abc2863ff8cbeaf51be62ca519c7b55a9bf58d16d8d23f264ec0179d8f71e",
+      "size": 2527,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/palm-beach-current-cohort-recheck.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/palm-beach-current-cohort-recheck.json",
+      "source_sha256": "e24bc42d2bc6e305924aca56d9e3517f5ec725bc0d0bcc47619c8605ef1969c1",
+      "size": 469,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/pii-audit.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/pii-audit.json",
+      "source_sha256": "640d46f891871cfbd916b1ab8ec9f665c62c595b3771a37b00041019db05efbd",
+      "size": 212,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/pr-status-audit.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/pr-status-audit.json",
+      "source_sha256": "6ad72bcbaeb0b6b0d4cf0dca7927b06b5cb2bc3621aa03ba015f1e7bb2c54592",
+      "size": 6133,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/rehearsal-build-and-tests.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/rehearsal-build-and-tests.json",
+      "source_sha256": "c1b393f94dadc2e40503e6ea0255d79e0dbdc4abb38dbcf3299330ecd2e7ae31",
+      "size": 820,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/rehearsal-cleanup.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/rehearsal-cleanup.json",
+      "source_sha256": "808eca4a63cb113f82f51f31e21ef46febbb14342dd2fa9fa21b56d28c17befe",
+      "size": 311,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/rehearsal-copy-report.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/rehearsal-copy-report.json",
+      "source_sha256": "0f84863c554309d9c0961fa1923c99e562b3c3c1c48b22c94e20b5e5e4e35bbd",
+      "size": 613,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/rehearsal-diff-summary.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/rehearsal-diff-summary.json",
+      "source_sha256": "c33329d4f0be45353ed7f04f342f6bfa70ed10dd361a0941117a5518ef660b3d",
+      "size": 739,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/rehearsal-results.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/rehearsal-results.json",
+      "source_sha256": "9fd791778d70dde6cfe4f9bcde73cfd8e4385186bf71136b4fbfa981fdf4bfe6",
+      "size": 2587,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/source-hash-validation.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/source-hash-validation.json",
+      "source_sha256": "968f7219737a7c5c946be2c1cf0f1943a7717a7d50f609882fe457559956cbc7",
+      "size": 38196,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/state-track-gate.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/state-track-gate.json",
+      "source_sha256": "123654f1b28aeeaab86a44d90f62b989311d163d4e2ef3960d59de91589b7c39",
+      "size": 1624,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/transplant-allowlist.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/transplant-allowlist.json",
+      "source_sha256": "16f4549aacdce349a96907f3d922ad6f205d93ceaf160b8ab93d1f0f4699bc05",
+      "size": 30764,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/transplant-exclude-list.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/transplant-exclude-list.json",
+      "source_sha256": "5bdc0b8c6ce6fcadde30d527f5b1255892690b7ad65f2aab486dd7b917ea8fce",
+      "size": 248,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/transplant-manifest-v1.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/transplant-manifest-v1.json",
+      "source_sha256": "337bf9ae70be7e96396944ac8221060ce32d4172027d7e0878dd56583247a527",
+      "size": 32121,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/c010/transplant-review-list.json",
+      "destination_path": "data/county-regulatory/fl/architecture/c010/transplant-review-list.json",
+      "source_sha256": "c32eff7ef8cc4f43ce8bb0306a303d71802445c98a8756aa95d33a59da345f19",
+      "size": 635,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/meta/raw-provenance.json",
+      "destination_path": "data/county-regulatory/fl/architecture/meta/raw-provenance.json",
+      "source_sha256": "35e3a080fc832f858a217f75d8734bc21cc895a3b1be81603cfc3a77599e40be",
+      "size": 976,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/architecture/meta/stack-vs-main-note.json",
+      "destination_path": "data/county-regulatory/fl/architecture/meta/stack-vs-main-note.json",
+      "source_sha256": "fdbedc9864c0b30e4847f11c774153e95a3417db52ec852329c0e20465c39572",
+      "size": 459,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/meta/raw-provenance.json",
+      "destination_path": "data/county-regulatory/fl/broward/meta/raw-provenance.json",
+      "source_sha256": "2e9d949159bf77f3f445a45894b4be092c85ca9220e903fb2f6512f498f83faa",
+      "size": 7702,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/meta/stack-vs-main-note.json",
+      "destination_path": "data/county-regulatory/fl/broward/meta/stack-vs-main-note.json",
+      "source_sha256": "ae208d890d51b6d24e52bd6aa8b642faa370377dd7a9428e767f619f9e6f3069",
+      "size": 273,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/architecture-observations.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/architecture-observations.json",
+      "source_sha256": "63858708bfb3878c774ad1391865b0a2329b5d8fff038155fe26c3023a984dc6",
+      "size": 578,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/broward-vs-palm-beach.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/broward-vs-palm-beach.json",
+      "source_sha256": "941c794148d1923fc6e20765affe51a960a8f0fabd33c73908452cf5d519dab7",
+      "size": 2517,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/canonical-matchability.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/canonical-matchability.json",
+      "source_sha256": "ee3e9ab51ea80bba1bf76f0c057e891fc7df9a0eb1816edc6f11daecc2abb650",
+      "size": 242,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/complaint-observations.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/complaint-observations.json",
+      "source_sha256": "2898668c7a28c8edfe482490697f50bc6e2638655a078dc970c7b924e938e24e",
+      "size": 122,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/complaint-system-profile.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/complaint-system-profile.json",
+      "source_sha256": "804ce82d0c0e93ec9147bb2c9f07de503fb97949134c57dc3610c9b73edbcb42",
+      "size": 735,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/county-page-potential-mock.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/county-page-potential-mock.json",
+      "source_sha256": "9bc80d04fa0ea4d31dc1ded64fdf496062c20b732176b462b8e6496b8c54b0a5",
+      "size": 775,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/cross-source-anomalies.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/cross-source-anomalies.json",
+      "source_sha256": "8dc13865e31c9dd61cb5d81d6d876640d09f01d54c474c7fd9ff1f6d8e576948",
+      "size": 541,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/enforcement-observations.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/enforcement-observations.json",
+      "source_sha256": "f10761f8fca92fb9bf7d40982c4bc17dc21e911732a3b65455b660315e7e106c",
+      "size": 213,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/enforcement-system-profile.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/enforcement-system-profile.json",
+      "source_sha256": "86ea688402f0800641255cb6775fb0c202402309b150d04dbf46c1f8a82a4a1f",
+      "size": 855,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/fdacs-matchability.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/fdacs-matchability.json",
+      "source_sha256": "2fca09e587c668fd8c9f32bd6dd889a47206defe69423ea44c053bfde280fe38",
+      "size": 668,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/field-inventory.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/field-inventory.json",
+      "source_sha256": "d0e649678f4fae664113e6473b846285a16a04b7a131291ef7d1fc5a14f028c6",
+      "size": 4893,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/fl-c004-summary.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/fl-c004-summary.json",
+      "source_sha256": "e51558e435605319296827e2db9a2924d731e458cf7ca891a7dc40bbcae6e7d7",
+      "size": 1292,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/future-company-profile-evidence-design.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/future-company-profile-evidence-design.json",
+      "source_sha256": "1497f8793e3c477452b1f3ace516eaf676f2cdba2bfa34417fc03f04dd09ec08",
+      "size": 1141,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/identity-contact-observations.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/identity-contact-observations.json",
+      "source_sha256": "ac2b2b1cabbd5041ed63774f7cebf7bb57931f0f8b9292ffe9e6ab561ac0eb2c",
+      "size": 414,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/mover-registrations.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/mover-registrations.json",
+      "source_sha256": "5723257ac45e41d15be956a292be19374c650e8b9c469fafb6d7c1fa332f8883",
+      "size": 637,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/network-reuse-note.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/network-reuse-note.json",
+      "source_sha256": "ef7123e44066f5c1338d99444b1c465cd1b4a1036323921c68f462fb7a40de37",
+      "size": 444,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/program-verification.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/program-verification.json",
+      "source_sha256": "f61a94ad851efe773a9cfe0a6a9c3c019d851dced8aa22d5936341895f390e28",
+      "size": 2549,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/roster-completeness.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/roster-completeness.json",
+      "source_sha256": "296e68d8096527a37ecf5c53e4737f25666b5a2028ef3cc25efff06ed52fe571",
+      "size": 1009,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/source-interfaces.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/source-interfaces.json",
+      "source_sha256": "947f8149016c077cca1efbe22c1421df680097fe6ca2513d193284d3bb216353",
+      "size": 4117,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/vehicle-decal-profile.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/vehicle-decal-profile.json",
+      "source_sha256": "07d1939222530a04673b6cd16830d122fa410c1df2521e2be6bc89abda48d0af",
+      "size": 766,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/normalized/vehicle-permits.json",
+      "destination_path": "data/county-regulatory/fl/broward/normalized/vehicle-permits.json",
+      "source_sha256": "10e049fdb79b3f2722b117f16a61bb274e38602ddc215589116452310074b28d",
+      "size": 381,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.pdf",
+      "destination_path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.pdf",
+      "source_sha256": "b8f6529700f39251b8960987747952adb6081d9aa47373eae3ea20a2bf7ad28d",
+      "size": 722047,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.txt",
+      "destination_path": "data/county-regulatory/fl/broward/raw/cdn-consumer-affairs.txt",
+      "source_sha256": "ca44dc75fc8d4b5cd185e388f79c49a3c3c1493dfb498b4718baf402e207c5f9",
+      "size": 22909,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.pdf",
+      "destination_path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.pdf",
+      "source_sha256": "588c7412d27a3741c5e9743aaeb8d468f2920c74b7d49c658fef3d8e67311abd",
+      "size": 322580,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.txt",
+      "destination_path": "data/county-regulatory/fl/broward/raw/cdn-consumer-complaints.txt",
+      "source_sha256": "2a2690832ee5b0ffa21c998590678c76680855e65c5d6a053e6a8722aed63a1d",
+      "size": 5506,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/cdn-faq.pdf",
+      "destination_path": "data/county-regulatory/fl/broward/raw/cdn-faq.pdf",
+      "source_sha256": "784951348c0ba062a0ff4abea2be9e73e27319a67aa96531d1cc2f9c598bc527",
+      "size": 501418,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/cdn-faq.txt",
+      "destination_path": "data/county-regulatory/fl/broward/raw/cdn-faq.txt",
+      "source_sha256": "e31740c4f8bbed251b22cb8b82bdae68a4a7c0c73a4c2627e4cc92b570361ad6",
+      "size": 24353,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.pdf",
+      "destination_path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.pdf",
+      "source_sha256": "d5cb2e244939a6a1d67d1be84625f031513ea45bba8b084cce860c3aff352bd3",
+      "size": 395768,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.txt",
+      "destination_path": "data/county-regulatory/fl/broward/raw/cdn-regulated-enforcement.txt",
+      "source_sha256": "856b7a0dc0aee7db664d862d6642e213bbd0c7dbdaccfdbb669f4f93b7daa97a",
+      "size": 9683,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.pdf",
+      "destination_path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.pdf",
+      "source_sha256": "9f7e136f17f0456b072d069d0788f444e324373b9039c54e0decd339073a0e66",
+      "size": 982024,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.txt",
+      "destination_path": "data/county-regulatory/fl/broward/raw/epermits-a-z-cards.txt",
+      "source_sha256": "96221cd96ecbf29e15670084d343c36d4ba9a051a93fa8d177841115a386c17f",
+      "size": 83972,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/excerpt-movers-registration-program.txt",
+      "destination_path": "data/county-regulatory/fl/broward/raw/excerpt-movers-registration-program.txt",
+      "source_sha256": "27d453faca86c5339cc527f61bc78721fd9aa075a13424f367d293db4845db9e",
+      "size": 7868,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.pdf",
+      "destination_path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.pdf",
+      "source_sha256": "dcd364c45225bee2cfdfd25eb59757cc2c1805e40c0572bda151a47d51c9611b",
+      "size": 721042,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.txt",
+      "destination_path": "data/county-regulatory/fl/broward/raw/MoverRegistrationApplication.txt",
+      "source_sha256": "885091c7d2bfb6bc40cc2465c1f55e26ced577340e2dfbf0dafae932076bc2aa",
+      "size": 6795,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/page-broward-consumer-home.html",
+      "destination_path": "data/county-regulatory/fl/broward/raw/page-broward-consumer-home.html",
+      "source_sha256": "14ceb61bb306b5428fb97c0e152651a27103551cd25db2dc75bf406dc81de988",
+      "size": 239810,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/page-municode-ch20-movers.html",
+      "destination_path": "data/county-regulatory/fl/broward/raw/page-municode-ch20-movers.html",
+      "source_sha256": "dd21473c395524a7d57b0c710aca2257097b1320c7e1a4834ece1553afcfd1f7",
+      "size": 6100,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/TriCountyMovingDisclosureForm.pdf",
+      "destination_path": "data/county-regulatory/fl/broward/raw/TriCountyMovingDisclosureForm.pdf",
+      "source_sha256": "d5dc6bb0be65f3dbe05637597854161931a24a00c724a6d6ffcb81c20a7109ad",
+      "size": 232687,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/broward/raw/TriCountyMovingDisclosureForm.txt",
+      "destination_path": "data/county-regulatory/fl/broward/raw/TriCountyMovingDisclosureForm.txt",
+      "source_sha256": "f2d059ce9dda38474dddce7c16b2fa91bc6f48f190aaeae469e25f53bcf8891b",
+      "size": 8227,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/address-branch-analysis.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/address-branch-analysis.json",
+      "source_sha256": "2130bd8804d2bda97fc12b77b031673d82ee11a38cdc584366c2e7b969cf0067",
+      "size": 52226,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/c005-baseline-recomputed.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/c005-baseline-recomputed.json",
+      "source_sha256": "22a6438f22c20440c6e46a4397c84226c522c79b179d5171ea28fe74a89aee1c",
+      "size": 814,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/canonical-crosswalk-summary.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/canonical-crosswalk-summary.json",
+      "source_sha256": "4343b1ddb75c35c8f5f1a352ac4647c92426dadede65c169310927b185f62552",
+      "size": 412,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/citation-enforcement-qualification.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/citation-enforcement-qualification.json",
+      "source_sha256": "a0e2e08a860b9da2f38fac33d39d3c8c9031d1f0ed82c0127aff04a2975b3e7a",
+      "size": 433,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/complaint-mediation-qualification.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/complaint-mediation-qualification.json",
+      "source_sha256": "07ed0c7b1ff6ad0f731384653a1a3c65b0c29ce584f543b80cef58c623315dcd",
+      "size": 331,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/cross-source-conflicts.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/cross-source-conflicts.json",
+      "source_sha256": "ed5b24576965e719f1a7cf677caf17de3f94fe24e3483b6b448d8972c552edf9",
+      "size": 55459,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/fl-c006-summary.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/fl-c006-summary.json",
+      "source_sha256": "0b49d720b469e49aa929f0d38f5d37126ddc52c6c3e1f6416c4b05eebedecf35",
+      "size": 1636,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/historical-status-model.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/historical-status-model.json",
+      "source_sha256": "229fc0559ff12c91a5329ada9a83d0f29cc328ffeb1d066fe7c85c516ea9b7a7",
+      "size": 133790,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/insurance-workers-comp-safety.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/insurance-workers-comp-safety.json",
+      "source_sha256": "8697275057bcd462d83cae7de54bead4271ad3a8f033421beabe0220aac8f495",
+      "size": 630,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/issued-fdacs-reconciliation.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/issued-fdacs-reconciliation.json",
+      "source_sha256": "9776c5c02a988283f66eda0d62d2047bc510475a4d1bccc133faa0530047baf2",
+      "size": 251956,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/lbt-crosswalk-qualification.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/lbt-crosswalk-qualification.json",
+      "source_sha256": "d333b0fcdfd6cfc54562b9191de9919c1b518e714f6f7a7a2bcb3a34d4851f8a",
+      "size": 66110,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/MDC_COUNTY_EVIDENCE_V1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/MDC_COUNTY_EVIDENCE_V1.json",
+      "source_sha256": "82676534bce4547021af93206dc6f1dcf6de24247d394ad999c4fc1189f5de50",
+      "size": 1133,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/MDC_FDACS_RECONCILIATION_V1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/MDC_FDACS_RECONCILIATION_V1.json",
+      "source_sha256": "472cd5c2508b80cad8fef810d3ebfdc3887e9e22572ee8b4bdc2ee8d1afd04bb",
+      "size": 1214,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/moving-credential-evidence.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/moving-credential-evidence.json",
+      "source_sha256": "a5f5fd659b6a6809ad98a69ee18d62916a8d9ff326817c5b2092908554ab69b5",
+      "size": 196283,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/multi-license-relationships.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/multi-license-relationships.json",
+      "source_sha256": "1c347e18a0ef82d2d88f8eb6390561abc5fb73995b9897b9220fb89957ec4bb2",
+      "size": 22475,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/not-found-analysis.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/not-found-analysis.json",
+      "source_sha256": "19f4f53be8d0b33d81d0e4e1b333fb50277d8a74396a5b852147016ca4169c2b",
+      "size": 10994,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/review-triage.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/review-triage.json",
+      "source_sha256": "972e2b4aa3fad543b6ffea635bd5ed0bce658b12879ce04fb2c47868523c4dd7",
+      "size": 16745,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/source-authority-model.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/source-authority-model.json",
+      "source_sha256": "f49f0462ecb527f8625800b70df5421f9aa0bcc9bcd5f004d4bc79af199c56e7",
+      "size": 1352,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/stack-vs-main-note.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/stack-vs-main-note.json",
+      "source_sha256": "af7cd842b7e4558b5e353681a44e0df53f305f8c0786065f5e7d9b6b0e3bc638",
+      "size": 268,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/vehicle-findings.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/vehicle-findings.json",
+      "source_sha256": "63dfd6203a08767efaf88986c5d1bafd6a5fff18027f1c32546e0cb9b7a7984a",
+      "size": 367,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/c006/verified-precision-qa.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/c006/verified-precision-qa.json",
+      "source_sha256": "2b3e61014fd9e20338c727982ca19e90e90d111e0b518578fbddf4668ca9c031",
+      "size": 63588,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/florida-identity-snapshot-meta.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/florida-identity-snapshot-meta.json",
+      "source_sha256": "28fcbe647b8bb7d99e22b8295be5a7e65ade4669649d8d791ec86901248a9cf9",
+      "size": 752,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/evidence/florida-im-company-crosswalk.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/evidence/florida-im-company-crosswalk.json",
+      "source_sha256": "f4b36a35733ae50816dd852236a19192504dc593324b8f0f2fbb52d1cbe5677f",
+      "size": 436650,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "REVIEW→INCLUDE validator/script dependency"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/meta/raw-provenance.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/meta/raw-provenance.json",
+      "source_sha256": "644edee6150efeefdda039a0bca4eaed669660be44ca0f5778dc4d9e95a63f05",
+      "size": 11329,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/meta/stack-vs-main-note.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/meta/stack-vs-main-note.json",
+      "source_sha256": "b85473269a384abfb8f0b449136d85e5ea8b93eccbeb9c2dc8e779aa56ddaee6",
+      "size": 488,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/architecture-pressure-test.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/architecture-pressure-test.json",
+      "source_sha256": "37d935193957fc346448226c8d3e0d421fece26c293bee86d7e5d0f9300d45b8",
+      "size": 1371,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/branch-model.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/branch-model.json",
+      "source_sha256": "ac5573c93c9206829d8a51f27893fcc989acf972d841696b90493d3c64dca01b",
+      "size": 384,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/branch-observations.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/branch-observations.json",
+      "source_sha256": "8c17f9617a2a3d645c19906add7eb12acc4cf7c7f209bf415409dc57145374aa",
+      "size": 575,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/business-tax-observations.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/business-tax-observations.json",
+      "source_sha256": "b2def1447e0ce510c6e028164e5c526a087aa5d4a8dd91841cc60ac4fd046135",
+      "size": 152209,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/canonical-matchability.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/canonical-matchability.json",
+      "source_sha256": "e598340970f161b634ad0ed8863a02b93f54f98f3e1cbd7a017f6a844eda9ae5",
+      "size": 43723,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/citation-observations.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/citation-observations.json",
+      "source_sha256": "f15af193b0c2ca0f81067e24a9ad5f8af56a10deeafeecff6820d9464cf211cd",
+      "size": 216,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/complaint-dispositions.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/complaint-dispositions.json",
+      "source_sha256": "05fd99d87c0f5b091eeca6b8cad92f3c2d916339936708b2b2811ce180a56dd0",
+      "size": 174,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/complaint-observations.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/complaint-observations.json",
+      "source_sha256": "5ccd12079dafb59ada3421f66ea0c47c68ea6e42cbf4de392cf07616c1976b0b",
+      "size": 235,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/complaint-system-profile.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/complaint-system-profile.json",
+      "source_sha256": "2db3808ea1561e875cace0ecfa74c089e144b572bd87798af62d0064dab21796",
+      "size": 550,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/county-page-potential-mock.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/county-page-potential-mock.json",
+      "source_sha256": "342c29366fcb7d4c168259859d33ba40279b1cd0e0f7eb2c65542dbef4a796a8",
+      "size": 1054,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/court-bulk-discovery-note.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/court-bulk-discovery-note.json",
+      "source_sha256": "633f3fea5a466fa1c59a57220b83daefed1dee9af57890593bd68487c7561b5d",
+      "size": 1666,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/cross-source-anomalies.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/cross-source-anomalies.json",
+      "source_sha256": "cfddc9a253ad4e4dbd225f1966ea41f650e1d2cd0d2c150e5366d20e7d4640ba",
+      "size": 6666,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/enforcement-observations.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/enforcement-observations.json",
+      "source_sha256": "b48fd0324fbf6a1b8a0417a8304688267bcfd0980344723e9c9e7e34daa6feb2",
+      "size": 219,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/enforcement-system-profile.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/enforcement-system-profile.json",
+      "source_sha256": "2b8b8340164cb2fa2d53bc0b5aba446006715064ea12631b61d0b60051b5f934",
+      "size": 648,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/fdacs-matchability.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/fdacs-matchability.json",
+      "source_sha256": "92a83ee3bcd598b9d19da8a309b9db5f3c7438261572927b58e3c4412179b422",
+      "size": 74527,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/field-inventory.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/field-inventory.json",
+      "source_sha256": "3b58f9f5e196a2c32e4f00e4c049973826b2f1636d713e0c231b518b3901be6f",
+      "size": 3084,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/fl-c005-summary.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/fl-c005-summary.json",
+      "source_sha256": "da79a9e36c35d0a303831d07cb348e524e21ef9faa1cab3c22a6f46219be0bfe",
+      "size": 2139,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/future-company-profile-evidence-design.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/future-company-profile-evidence-design.json",
+      "source_sha256": "1e46449c75836920953c07f89f4324d43c73eed3670cfeddd1d01e3170e66b50",
+      "size": 1778,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/identity-contact-observations.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/identity-contact-observations.json",
+      "source_sha256": "bf236f350b88d1400607428e3bf4ca8725b7d13637d88932e9126ff8ede6da7d",
+      "size": 186284,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/incremental-value.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/incremental-value.json",
+      "source_sha256": "a2d8c55962cf3334c18dc87da4fb28e876a37286d2e356772d556ee5e6d749a1",
+      "size": 1380,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/insurance-workers-comp-observations.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/insurance-workers-comp-observations.json",
+      "source_sha256": "b751e7adf814a11137baf9eddf72e75dccca591ac2b5cc7528f8621a037ddea1",
+      "size": 669,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/lbt-crosswalk.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/lbt-crosswalk.json",
+      "source_sha256": "70d31ce8514035542c7b42749c339640efef18117b52b6d1f25e822093abd5b0",
+      "size": 60231,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/mover-licenses.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/mover-licenses.json",
+      "source_sha256": "0095698e3ce1bf4e31aa844ad3a90169ea5ad4e7f8ee85b4826803d8a7be157a",
+      "size": 599404,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/network-reuse-note.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/network-reuse-note.json",
+      "source_sha256": "8998f2e93ba4ca4fb1fa0aaae672bd51014e4d189710193a7d8ccbb67f6f6d3c",
+      "size": 509,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/program-verification.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/program-verification.json",
+      "source_sha256": "90f21c14272a9f2c3ea1692fa949608d977d3b41c3c98ad244dcbb97a4ff40e1",
+      "size": 2145,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/roster-completeness.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/roster-completeness.json",
+      "source_sha256": "220cec66d3f11b88079eae859f74fe678039cda4eba4997688eb7785f5c3d5aa",
+      "size": 1261,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/source-interfaces.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/source-interfaces.json",
+      "source_sha256": "d6a5938c248be342a7f13dd71307906e6fe32b458f265fff2e42153a3f7b5c65",
+      "size": 2246,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/three-county-comparison.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/three-county-comparison.json",
+      "source_sha256": "651300560251fd5e205af3bfdda20ba64d1b6821302f7c98b9fd755c71367056",
+      "size": 3454,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/vehicle-observations.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/vehicle-observations.json",
+      "source_sha256": "1c823b68fcc86de01653e01e2abd8b9c7988893d32c5e4d32d257f137851614f",
+      "size": 505,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/normalized/vehicle-profile.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/normalized/vehicle-profile.json",
+      "source_sha256": "926c051e5d985d9e564a3ce0226fd426ed00c59e4242f019a2afb61c1ddfd66a",
+      "size": 587,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/architecture-pressure-test-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/architecture-pressure-test-v1.json",
+      "source_sha256": "ca0d5a50226625ee80ebedfbf7195f6e5943839e91812d9de48693f0b073df05",
+      "size": 579,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/county-page-metrics-mock-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/county-page-metrics-mock-v1.json",
+      "source_sha256": "9cd8d6ad43e4b5f8a6ff240a6f2d11e9ac52100e7f1e44aee4442e6df803f43f",
+      "size": 915,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/fl-c006-summary.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/fl-c006-summary.json",
+      "source_sha256": "0b49d720b469e49aa929f0d38f5d37126ddc52c6c3e1f6416c4b05eebedecf35",
+      "size": 1636,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/future-profile-presentation-design-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/future-profile-presentation-design-v1.json",
+      "source_sha256": "a6cdaffc513721378097ec0dd90592377b811a8a889302e67b24763635e63ddb",
+      "size": 908,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/incremental-value-after-qualification-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/incremental-value-after-qualification-v1.json",
+      "source_sha256": "fc592f823acf0c63981af34b6860e69e84cfbd513477156fc1223fdbf103d497",
+      "size": 1037,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-business-tax-evidence-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-business-tax-evidence-v1.json",
+      "source_sha256": "2eecab1e94e99dc6af5cc7589481284fccf0213fdcfc577dfa1970bb94569ac2",
+      "size": 74075,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-cross-source-conflicts-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-cross-source-conflicts-v1.json",
+      "source_sha256": "7065fafc773fa6267bfd1a4e865b3280d27d456fec35952ee199c21dcfa01132",
+      "size": 55478,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-evidence-ruleset-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-evidence-ruleset-v1.json",
+      "source_sha256": "7fd5846aa678e0c281cd1884aa8a760bb1e8b8f3ba2cab7da0ca7d8ba1021fdb",
+      "size": 2589,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-fdacs-crosswalk-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-fdacs-crosswalk-v1.json",
+      "source_sha256": "958a15af9b2479e8220d890f542f6ff4e88216bcf97c98940b1f4477a2a34db8",
+      "size": 106924,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-fdacs-unresolved-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-fdacs-unresolved-v1.json",
+      "source_sha256": "ffccc16224db2fb447a80e4a90870b3f7689ed2e369762a3bfd45c168d49c9a1",
+      "size": 13919,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-historical-license-evidence-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-historical-license-evidence-v1.json",
+      "source_sha256": "c74fbc362996140b1fb5d389f963b54eb3b7ff1b422be76548299bf9821b7e3b",
+      "size": 125568,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-lbt-crosswalk-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-lbt-crosswalk-v1.json",
+      "source_sha256": "7a3308e330dc07da21bbd6977feefaffbf462f55d32bf418add26949d3bcea28",
+      "size": 66103,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-moving-credential-evidence-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-moving-credential-evidence-v1.json",
+      "source_sha256": "3db4eddd1f54b6cf600f5f188f96cd971f8770d1d138fd3c861c6d6f8e80c90b",
+      "size": 70914,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-source-authority-model-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/mdc-source-authority-model-v1.json",
+      "source_sha256": "f49f0462ecb527f8625800b70df5421f9aa0bcc9bcd5f004d4bc79af199c56e7",
+      "size": 1352,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/network-reuse-note-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/network-reuse-note-v1.json",
+      "source_sha256": "ab80b83dbc7a229620f2ebcaf260d8715687ca3f402cb564b4fc4573984e9c2e",
+      "size": 589,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/qualified-package-manifest-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/qualified-package-manifest-v1.json",
+      "source_sha256": "881cac736bacd004f484b97b52feebadc53adf137ef25ebadcd7cf62042dbfb2",
+      "size": 4822,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/qualified/three-county-qualified-comparison-v1.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/qualified/three-county-qualified-comparison-v1.json",
+      "source_sha256": "c4d36f28952a9d5e1743c0f43a15ed87beb0370c4ce8d4962e433dcf87ec0dfa",
+      "size": 3158,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-detail-samples.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-detail-samples.json",
+      "source_sha256": "3f6fc5f57bf87ceccbd5e817656dadafc0c9a643eaf7eeea25944e05b92143ba",
+      "size": 2771,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-moving-roster.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/energov-mr-moving-roster.json",
+      "source_sha256": "a69fcb9a7add06a1080c8f4e77e17f7ed06ae3cc19880983986f4e84977c6b52",
+      "size": 498884,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/lbt-mover-related-extract.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/lbt-mover-related-extract.json",
+      "source_sha256": "5b333746fb13130d81b9bf23286d16bdb72692358d8c8c4bcdffa200d7bde27a",
+      "size": 245730,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/lbt-moving-category-extract.json",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/lbt-moving-category-extract.json",
+      "source_sha256": "01c484270a00781473f9a2fd1674130146b1d64b5f3cea7deda19504235af06d",
+      "size": 183552,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/movers-consumer-disclosure.pdf",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/movers-consumer-disclosure.pdf",
+      "source_sha256": "222c0cd32c55f04202148758389c79b42b414463c043003802891538655d8279",
+      "size": 164921,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.pdf",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.pdf",
+      "source_sha256": "d7831aad670d694f6e99a5d3486205ccac1a2856a1c2396b9abea7578049ebae",
+      "size": 252180,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.txt",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/movers-moving-registration.txt",
+      "source_sha256": "408181babc750a024103dd61041b85d9ec07bb93deb5225841247878a8f16cfb",
+      "size": 8729,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/page-business-tracker.html",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/page-business-tracker.html",
+      "source_sha256": "5b3139273cbe1b2ce55b1ae1c4b71b0a14c7afbc0f4a87e301a0aeb7205cf35e",
+      "size": 110777,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/page-consumer-protection-home.html",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/page-consumer-protection-home.html",
+      "source_sha256": "3582be7a4e45681420b1c5623d25149026dc26114a3811a519064231084ff335",
+      "size": 96767,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/page-lbt-opendata-maps.html",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/page-lbt-opendata-maps.html",
+      "source_sha256": "dee61eabfd0f62f666ab38cf84a47cdb3e67624ca5fe032b3a5d3686beaed895",
+      "size": 126949,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/page-lbt-opendata.html",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/page-lbt-opendata.html",
+      "source_sha256": "38f036387b75cd80ff95b2047fa39f6e1b84ef73146a75d73fe408b48cc11cfc",
+      "size": 126961,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/page-moving-business-license.html",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/page-moving-business-license.html",
+      "source_sha256": "f996af452ddd0a2bb09d81e2b3992b428839a6b5a3eafa1e9a902a29380cc946",
+      "size": 71740,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/miami-dade/raw/page-moving-companies.html",
+      "destination_path": "data/county-regulatory/fl/miami-dade/raw/page-moving-companies.html",
+      "source_sha256": "a3fda6ff29b84b05fc6c4775c0a673d52c15c679e8193ed0a70638004dc0a2e5",
+      "size": 74467,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/c002-baseline-recomputed.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/c002-baseline-recomputed.json",
+      "source_sha256": "4ba5c3be52019b5f6c3ca0f572df4645a45ebba14046bdb5ef6d90a3f1039400",
+      "size": 633,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/canonical-crosswalk-summary.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/canonical-crosswalk-summary.json",
+      "source_sha256": "32502e29cb95528cd106693f832aab68e1fa8e9e327209b585f63678bbe39764",
+      "size": 329,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/complaint-evidence-qualification.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/complaint-evidence-qualification.json",
+      "source_sha256": "27404a920ab77be348f44fc75f890bedd47d1bc54a7cb4af954f9d91db22648e",
+      "size": 17885,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/county-pilot-readiness.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/county-pilot-readiness.json",
+      "source_sha256": "adf616d49de5a21c22e715abe1c7b8c137b62eac058959259f707b44c4d59608",
+      "size": 1537,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/disposition-catalog-with-groups.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/disposition-catalog-with-groups.json",
+      "source_sha256": "7fbe6a9a4653c7e875c2322dfc027cea916fd002557150e46e984b4382244cfc",
+      "size": 21176,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/enforcement-evidence-qualification.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/enforcement-evidence-qualification.json",
+      "source_sha256": "7283a1bd4410899635d964be39e12d7f28cec692db38c08f5b3fffadd8f9f5d5",
+      "size": 53887,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/fl-c003-summary.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/fl-c003-summary.json",
+      "source_sha256": "4c4605926853374caeb80f1c58c6fa39d9ca8301c7ce64736d8adbffd2df1eb0",
+      "size": 1558,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/identity-observation-qualification.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/identity-observation-qualification.json",
+      "source_sha256": "d659e4ff4223e56190b52e1dd72e10c8130a36fe7fbba20d02cff6ec8042c757",
+      "size": 84539,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/jurisdictional-status-pairs.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/jurisdictional-status-pairs.json",
+      "source_sha256": "c9da7882698d53f0e18f73478737f4311df42a0f004c06c757c992c23d808c36",
+      "size": 17401,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/not-found-analysis.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/not-found-analysis.json",
+      "source_sha256": "b1f857a0b382b9adbf1ded297dfb697dc4c017d99e081e690abeb597c8cc5b12",
+      "size": 52432,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/PBC_COUNTY_EVIDENCE_V1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/PBC_COUNTY_EVIDENCE_V1.json",
+      "source_sha256": "a27ee88d1291d89cbd18bde0d9a22fc451f4447bf78b1324a34094a8bbea51ea",
+      "size": 642,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/PBC_FDACS_RECONCILIATION_V1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/PBC_FDACS_RECONCILIATION_V1.json",
+      "source_sha256": "ac71804faf902b4353788e21e1c5b4f793e68ffbe97ae780dbde390d9c6edbb3",
+      "size": 1034,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/permit-evidence-qualification.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/permit-evidence-qualification.json",
+      "source_sha256": "2cc0ddb9a92490c8aa24fbd097b9d00341d8bdc4fddef09fb5a6339ddbf16fde",
+      "size": 101686,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/permit-fdacs-reconciliation.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/permit-fdacs-reconciliation.json",
+      "source_sha256": "e2bdeb02b47d2511aa98a4a27046f8858e2e89809f3e4c91197f053d45f9025c",
+      "size": 265976,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/review-required-triage.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/review-required-triage.json",
+      "source_sha256": "c0b877a78133902145c7d5c74312e6d147b925ec8674eb9f0cfd489b45707c63",
+      "size": 9404,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/source-authority-model.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/source-authority-model.json",
+      "source_sha256": "8d6bcaac0c565166fc68036dd3d362df7d2452cdfcdc9da897b10aa50a068776",
+      "size": 1735,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/stack-vs-main-identity-note.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/stack-vs-main-identity-note.json",
+      "source_sha256": "6a62cb209dc057fc35319dadcbc73b8eb3511775c7cc1ee41bf22bdb9f3ead72",
+      "size": 903,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/c003/verified-precision-qa.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/c003/verified-precision-qa.json",
+      "source_sha256": "07d98e80afe067ba4d59fb9aad96a5478d00f9ddaeb203a0f51d2dd709de40df",
+      "size": 31409,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/florida-identity-snapshot-meta.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/florida-identity-snapshot-meta.json",
+      "source_sha256": "28fcbe647b8bb7d99e22b8295be5a7e65ade4669649d8d791ec86901248a9cf9",
+      "size": 752,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/florida-im-company-crosswalk.json",
+      "source_sha256": "fae823e26231327a2ef117071048087ac8a2c01e845727baaa456d43709f2808",
+      "size": 436650,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "REVIEW→INCLUDE validator/script dependency"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/evidence/ref-fl-004-canonicalization-manifest.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/evidence/ref-fl-004-canonicalization-manifest.json",
+      "source_sha256": "cfe97f850da361ee8a121a826c012741db9e80e79c3610cd6cc4b6e98e40b324",
+      "size": 41850,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/meta/raw-provenance.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/meta/raw-provenance.json",
+      "source_sha256": "2c682d0992e6dd4a3b87bf4e4c16def4618a2b7aa1ff62bc7e7a689d69f266e5",
+      "size": 35280,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/alleged-violation-code-catalog.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/alleged-violation-code-catalog.json",
+      "source_sha256": "87046f5004b3f88da59d42700f0f144603d36087e95b49c92ec746365a7ba4f6",
+      "size": 17786,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/business-information-reports.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/business-information-reports.json",
+      "source_sha256": "34f1ecbcfdc16a0d27772633e6ee25859552ce356cbf368bac4f0b7c04dc02f4",
+      "size": 38206,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/complaint-disposition-quality.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/complaint-disposition-quality.json",
+      "source_sha256": "2f84ed86741658514f7d38fde9a883596ab8a7fd8c040fc4d262f765aa7254cd",
+      "size": 711,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/complaint-observations.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/complaint-observations.json",
+      "source_sha256": "fa783c2aa192dcf19e51d432cacf8da172ba95b4669b7a3187314ff8c65eeccd",
+      "size": 23481,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/county-page-potential-mock.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/county-page-potential-mock.json",
+      "source_sha256": "d81d90733927ca0980162656c6d28cc0d4a532ab12fedb623ffe8578a5dd5d18",
+      "size": 986,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/cross-source-anomalies.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/cross-source-anomalies.json",
+      "source_sha256": "2d6e8d01133d07ac64272c035e1035738869f5b24b38b6557dd1a914797fb78a",
+      "size": 45603,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/disposition-code-catalog.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/disposition-code-catalog.json",
+      "source_sha256": "b82af0740aecafd58fa2d4f5a93a47a7f9653f8da8e1bd6736c17b8e98a0de94",
+      "size": 22275,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/enforcement-observations.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/enforcement-observations.json",
+      "source_sha256": "3ec3fcbe5bd8feb4d640136a688483168a67cb2e0f1a39ff24b35466d218151e",
+      "size": 62542,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/fdacs-matchability.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/fdacs-matchability.json",
+      "source_sha256": "19a8219f7fcceecc240460a6533d20a9806e81e88b68c3927456e4b66da6408c",
+      "size": 87951,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/field-coverage.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/field-coverage.json",
+      "source_sha256": "6b8b212073c52d794aa9f927405bacc80761a443becef79af6310b82d4270de7",
+      "size": 2847,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/fl-c002-summary.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/fl-c002-summary.json",
+      "source_sha256": "2f6c76007c4fa0a7a1871451c9c01350664619536b6d03f9fa0858610150bffd",
+      "size": 864,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/future-company-profile-evidence-design.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/future-company-profile-evidence-design.json",
+      "source_sha256": "d84a6d64a263b1d95d1e3088d7529aa644ad23323ff383e0e329dc50aa385fe4",
+      "size": 1413,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/identity-contact-observations.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/identity-contact-observations.json",
+      "source_sha256": "e8dfa3c18ec805ba94622347f91283429f7cf12e898473cbb5c1ff962004fcca",
+      "size": 255302,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/incremental-value.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/incremental-value.json",
+      "source_sha256": "3f04200b0de5483ed199a182641ca983dc670292b976076e71f5b7a5a07d5c33",
+      "size": 1154,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/normalized/mover-permits.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/normalized/mover-permits.json",
+      "source_sha256": "b1c85ac4488494263bccd127bcec8920225a253277495d591bd571609292e20b",
+      "size": 235987,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/complaint-evidence-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/complaint-evidence-v1.json",
+      "source_sha256": "d5692f1a7bdfcb252bef184c09e259833729cc0aa5761d1c798e5c0a1f3dea66",
+      "size": 18815,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/county-page-metrics-mock-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/county-page-metrics-mock-v1.json",
+      "source_sha256": "cd0ec66f74c6362016e6ebab4925ade11fec6cd5ed82d5e68cd5d2ca90536d90",
+      "size": 1236,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/enforcement-evidence-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/enforcement-evidence-v1.json",
+      "source_sha256": "d2b925239612a3df26e038dd617fb685a64808f7688959386498f999505fc0ce",
+      "size": 52929,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/future-profile-presentation-design-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/future-profile-presentation-design-v1.json",
+      "source_sha256": "b73b0be226e32152d809767e0f73b190c9d2d7dd936a553cfdb52fde14b42a51",
+      "size": 1158,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/incremental-value-after-qualification-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/incremental-value-after-qualification-v1.json",
+      "source_sha256": "f085701008bdb943a102ee133488ee594c94eb866b26becfe9fcf1ff9a7d694b",
+      "size": 859,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/network-reuse-note-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/network-reuse-note-v1.json",
+      "source_sha256": "651eadc8858c1b4a42e823f507fef6909083a484e56c9b5eacf6bee52252312c",
+      "size": 806,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/pbc-fdacs-crosswalk-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/pbc-fdacs-crosswalk-v1.json",
+      "source_sha256": "231e1dcdbfbe8760cea98b89699edf483d6ec5e70cdfeda8d8f4b18c95aa922e",
+      "size": 102053,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/pbc-fdacs-unresolved-review-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/pbc-fdacs-unresolved-review-v1.json",
+      "source_sha256": "f99e2e53739c4b03934d309211086b86b595bfd4971849819b78a5a54728ad5d",
+      "size": 68072,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/qualified-package-manifest-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/qualified-package-manifest-v1.json",
+      "source_sha256": "88597ab253aa482d326df80e42a7bbc6324058d64b1820984f4c15b39daf0455",
+      "size": 1365,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/qualified/source-authority-conflict-model-v1.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/qualified/source-authority-conflict-model-v1.json",
+      "source_sha256": "8d6bcaac0c565166fc68036dd3d362df7d2452cdfcdc9da897b10aa50a068776",
+      "size": 1735,
+      "class": "qualified",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-BIR-GetListOfProducts-58.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-BIR-GetListOfProducts-58.json",
+      "source_sha256": "2ba151941a2414cf1eb983ec1720bcc8e58b2c5989ae237b802a17e792356847",
+      "size": 3045,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetAllegedViolation.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetAllegedViolation.json",
+      "source_sha256": "428fc5754c3c6bfa0b35313212bff926a375f6a65ac93393b353036d0b7aac3d",
+      "size": 26013,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetBusinessTypes.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetBusinessTypes.json",
+      "source_sha256": "2ea5c93f837729a8d645d3a95965cd75effef5705d86e3b2463d7a16d7eea3a5",
+      "size": 2433,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCities-Moving.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCities-Moving.json",
+      "source_sha256": "fb399106d032db60b491fef006ce03167b5254db64fd83b1015c61122df9b6ba",
+      "size": 11814,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-sample-merged.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-sample-merged.json",
+      "source_sha256": "b5dc703c68c058ce65beebc74f11778e74d612d055ac9616fe9ecc5703706075",
+      "size": 182780,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-a.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-a.json",
+      "source_sha256": "1e891ac684bc06f9384ce40e8450916432e6cee1de074f4908079afd20b5881f",
+      "size": 151010,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-college.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-college.json",
+      "source_sha256": "f3c4f38813b482393fa1f780dfce5d305e3f4a5637ff874d31d5daf49c41ecb1",
+      "size": 1167,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-e.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-e.json",
+      "source_sha256": "8285b9e700a8fa87ad79f476afbf8ba6aede7b407c98575000303b70e3394587",
+      "size": 166222,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-express.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-express.json",
+      "source_sha256": "275ca70e92685b4ae37e9b67f7591eeb80864578503e33f3d9d99b4fa39acbc2",
+      "size": 1155,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-i.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-i.json",
+      "source_sha256": "f8b36a8b6978e85fa85d22f8142c49fb19ccd987de3e74413a764d804e564708",
+      "size": 171352,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-movers.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-movers.json",
+      "source_sha256": "34527526ad77b1cb964045f76bec8b80cef5eec678df31d81061bad36cc84ff9",
+      "size": 21547,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-moving.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-moving.json",
+      "source_sha256": "3831eaa03101f06e38c3d6c26462be9cda56e516ab3b6bd7825ea457e6273bfa",
+      "size": 112630,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-o.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-o.json",
+      "source_sha256": "7580f688c8935f52d4455bd07cc746d68b1b555b9655c9beb42a1359eae8558c",
+      "size": 171333,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-storage.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-storage.json",
+      "source_sha256": "c86ff81944d472c6fbd0db32ef5b12be7888a8b0895565d70e3657ffbbcd5c94",
+      "size": 43102,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-two-men.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-two-men.json",
+      "source_sha256": "abdc1a97f217c4064c7e5d37da473fe939a4b242e10ac9990aafa889f1b97b77",
+      "size": 3919,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-u.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-u.json",
+      "source_sha256": "f3353f4a9db17f77529ef2b7ce40cbd3872a7b3868d59002e7615e6cbe552688",
+      "size": 56766,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-van.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetCompanies-term-van.json",
+      "source_sha256": "f80674275000d74a8ff5b0ee6e56f346da3d511393c9e7792fce191997b84414",
+      "size": 6436,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseStatus.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseStatus.json",
+      "source_sha256": "5bc728a394e1628e36b966c175edd7b55a170ac47f039386c70a5e3eaceb455d",
+      "size": 3782,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseType.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseType.json",
+      "source_sha256": "7d48ceb2538c2eda59ceab4a3c378ae9d4f4db83b052586df650a268dc5d3659",
+      "size": 3356,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseTypeNotExpired.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetLicenseTypeNotExpired.json",
+      "source_sha256": "7dbb60463375ed61b9f12da139e0e942a099577766594c1fd5a8febb278b2416",
+      "size": 2007,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/api-GetResolutions.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/api-GetResolutions.json",
+      "source_sha256": "22a19d9d2b034f0a009d25fb52106c63a8bec641f84c0871dd6c56aea20181da",
+      "size": 30136,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1017.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1017.json",
+      "source_sha256": "acd4cd994f0f0208b18c1dfbeddaf813a46462160d0b9abbcdfb8e165dd048b1",
+      "size": 6913,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1039.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1039.json",
+      "source_sha256": "7c2ef30faebfcecf35ec5c6f643e1b405edb5fb701eefc7bc17006519900c287",
+      "size": 6162,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1097.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1097.json",
+      "source_sha256": "5f583ce135375d863fa041096f267231be82a57e9ec3c901eab85912d743b570",
+      "size": 21951,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV11.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV11.json",
+      "source_sha256": "6aae01b7e9e1ca438d80b7344ad0765ebaf7d0e454a6d6e11032490352e4a7c9",
+      "size": 5576,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1121.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1121.json",
+      "source_sha256": "cedbc4c7c0f401ec8c4e68193e21dccd64d12311e4dafc1ac6d7d6f74bfa246c",
+      "size": 19124,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1132.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1132.json",
+      "source_sha256": "3c2461030a3cc468a431a831b744527c31d5762d1742d2d844786aaeca00882f",
+      "size": 24857,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1145.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1145.json",
+      "source_sha256": "9af68f051fc5b05a6dd0b43208e6278fff9aa9502d749f1af82528b7b831ad33",
+      "size": 10686,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1191.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1191.json",
+      "source_sha256": "159be9884e6c36af1e8894face3227ae26a3efb0d524ecf93a1c330ecfc55deb",
+      "size": 5561,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1193.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1193.json",
+      "source_sha256": "ea3baecd7074a3aa06aa7fd8d73594d49aca27dd1917df81380aac23252c5a52",
+      "size": 15356,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1210.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV1210.json",
+      "source_sha256": "7707ba12651aa0436feac26badb753b983e7aa95c853b06e410c5e2697e6cbc8",
+      "size": 7290,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV42.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV42.json",
+      "source_sha256": "a14226adcc639a80b8aa5eb24809f995b7d56cd4de5556a40c2aad6aa4431e64",
+      "size": 5769,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV509.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV509.json",
+      "source_sha256": "de9f256c92ed3f50d97737dc0efa816b45e5eb098da26d05d4c9a6ab0d7b4266",
+      "size": 10891,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV624.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV624.json",
+      "source_sha256": "6842ac8028020652a9f9e94f3b95b136f4676e68e788cd7dca0c7bd94b1994c6",
+      "size": 5648,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV747.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV747.json",
+      "source_sha256": "bfc2200f78b93f94d366e293019dcb4dd54b609754f480a2614a0521a0834c0f",
+      "size": 5622,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV772.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV772.json",
+      "source_sha256": "ed6ff562db4224bff380dc3f432a02c8e3ad677d2ec27a52466d636e44770194",
+      "size": 6128,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV802.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV802.json",
+      "source_sha256": "5d297eff00c40b6bb25b4070a982b830c83b577ad7526ac26334aa596bcecd23",
+      "size": 9023,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV837.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV837.json",
+      "source_sha256": "33fdfe649cdbab72639630d3f427ac5d028b6e7544c464dea945e7de3c757cce",
+      "size": 13938,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV86.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV86.json",
+      "source_sha256": "18048566ba2b2dd2eafa017459729c3499f9df9698552c8ac4356c48c4229d55",
+      "size": 6068,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV867.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV867.json",
+      "source_sha256": "6a8218dd3ae7b795fb8ad0530a218e5a54e4e0aa55efd5eca968021c3b860174",
+      "size": 5529,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV956.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV956.json",
+      "source_sha256": "06080fcf75014b4bc3ece5b155756f5255ec150443f40721700559ec30c887a4",
+      "size": 7251,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV964.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV964.json",
+      "source_sha256": "c9475e27e3496d94a31663358c55f339004d91a5b9c2fc9496aae4a99269ec2f",
+      "size": 14566,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV969.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-sample-MV969.json",
+      "source_sha256": "1eabf883fe38dedd2e36dd54962bf7d1ad94534ec0efdb05523239ebcf70b37d",
+      "size": 12182,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/bir-samples-merged.json",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/bir-samples-merged.json",
+      "source_sha256": "6c9c885f0a102c932772639959b48a46239037dc4c990a935f82a35111781199",
+      "size": 241191,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/DisclosureFormPBCMoving2018.pdf",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/DisclosureFormPBCMoving2018.pdf",
+      "source_sha256": "4c0e066a79956acfa8c8b2268c04bf8a2ede62bd078bcfb5bf2d283aacfce307",
+      "size": 137873,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/js-BusinessDataService.js",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/js-BusinessDataService.js",
+      "source_sha256": "dd91017b7a32f87987dfece8e543726fe3d8495af16d04576d1d3bb8c57f3594",
+      "size": 10201,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/js-ComplaintDataService.js",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/js-ComplaintDataService.js",
+      "source_sha256": "7c7782ab80972ab7a39e0603e002ac81ef39eb493cb36f4657d28f6258b625db",
+      "size": 15204,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseCodesDataService.js",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseCodesDataService.js",
+      "source_sha256": "57d3de4896bf73f3a2b6e8e0573250c9f643450932559935f0de7db6a2159c29",
+      "size": 1643,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseDataService.js",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseDataService.js",
+      "source_sha256": "af6b011d58b5482d6219928ddcfba065174bb64c33e4048783860901db86c361",
+      "size": 2611,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseTracking.js",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/js-LicenseTracking.js",
+      "source_sha256": "d910a86854b4046c14908cd7e6cb863fc0e3d59d541e0929dc21c65887b50a58",
+      "size": 29066,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/js-moving.js",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/js-moving.js",
+      "source_sha256": "29683ae6d92d81274f2529c7096688020019b6fe582cd469f1c7333efa1f03b4",
+      "size": 7402,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/js-PortalDataService.js",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/js-PortalDataService.js",
+      "source_sha256": "dd5768e2ddab4b4a7246c2aa3f3d08456697a2fd56fec65f286adc5a61fa47e5",
+      "size": 9953,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/js-ReportDataService.js",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/js-ReportDataService.js",
+      "source_sha256": "1f0d1bc5780c38ef876639f834408449593a7448fe93ef4e0aa66d001740c1c7",
+      "size": 4205,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/page-BIR-Lookup.html",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/page-BIR-Lookup.html",
+      "source_sha256": "e7affbaeb392a865163c689faf23cfe771412203bc4b6576471e4f81edaf5163",
+      "size": 13996,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/page-Moving-Home.html",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/page-Moving-Home.html",
+      "source_sha256": "16bd4b48f2065a75bb4f8a6230199172594b6d2523b211173fb61f2e6430b01e",
+      "size": 23533,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/palm-beach/raw/TriCountyMovingDisclrForm2019.pdf",
+      "destination_path": "data/county-regulatory/fl/palm-beach/raw/TriCountyMovingDisclrForm2019.pdf",
+      "source_sha256": "1ea024d2445a2ee5af467b2ba04acf489ca522135c65dcb411640ea22c3a2419",
+      "size": 230075,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/meta/raw-provenance.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/meta/raw-provenance.json",
+      "source_sha256": "b042474a8a5e87a0f44ce4117484577892f732323f8a97e60da6af0762abc6ac",
+      "size": 9047,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/meta/stack-vs-main-note.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/meta/stack-vs-main-note.json",
+      "source_sha256": "de5b0c53338d1365fba96e2662906848c6593cea20e4adf16349a8c157e783ac",
+      "size": 411,
+      "class": "other",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/architecture-pressure-test.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/architecture-pressure-test.json",
+      "source_sha256": "50bf6ebb8951fe1ed403242cf3e7ab2e8420caa4536fa1b25f82cedc875f34b0",
+      "size": 1931,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/canonical-matchability.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/canonical-matchability.json",
+      "source_sha256": "43d49c79ec922178dbe1a68b2af3f30367ef3731848648265f1c351f4a61e01c",
+      "size": 417,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/complaint-business-matchability.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/complaint-business-matchability.json",
+      "source_sha256": "1f8e6d56d2b4715c97629b145d365b249f85e5389522929c5e0782839f0272fd",
+      "size": 560,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/complaint-dispositions.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/complaint-dispositions.json",
+      "source_sha256": "b2ff349b6263fd74e9940189d24e9e6849f56f861bfb11667cf5972590839d0c",
+      "size": 11624,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/complaint-history-observations.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/complaint-history-observations.json",
+      "source_sha256": "b8ddd9a66eeebdd1a24e021fc9faea123540f6633408011bb099a96f457b3e15",
+      "size": 22603,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/complaint-system-profile.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/complaint-system-profile.json",
+      "source_sha256": "5f47829c3836a7d75ff51ddec8f09feaf4b1697d459122c2c19a65f6b8b55383",
+      "size": 2624,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/county-page-potential-mock.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/county-page-potential-mock.json",
+      "source_sha256": "6fbb0dee101778e163feb00a1fb9690b9d20ca2f654a2f8bf7c84de293f50532",
+      "size": 983,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/enforcement-observations.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/enforcement-observations.json",
+      "source_sha256": "13b34d0bcc4c12c9537acb36c7f9a5baa6083ddf39bb2e00904e3e6d1a3c2725",
+      "size": 205,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/enforcement-system-profile.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/enforcement-system-profile.json",
+      "source_sha256": "cac503ab7f08aa30b54d678b5de49bd4f1bcfc9a84a6fc699bdf6b0abfe61103",
+      "size": 1107,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/fdacs-matchability.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/fdacs-matchability.json",
+      "source_sha256": "62eee35b79b18e3b0d95f8d206e9e6dba595522f74c306bfabbf8f6791f679c3",
+      "size": 500,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/field-inventory.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/field-inventory.json",
+      "source_sha256": "dc004dfb2ad39a7598016cb6db340e9c615f4366e1c302f10a49f8ed04333f5e",
+      "size": 2625,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/fl-c007-summary.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/fl-c007-summary.json",
+      "source_sha256": "7f98f3acd054722d76ae22c5d181a6beffaf6c07992f29f4e28c5e90a4b84763",
+      "size": 2098,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/four-county-comparison.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/four-county-comparison.json",
+      "source_sha256": "4ed95524ec02808853c96e9c0b074111e041cb3ef7a1a81d3abc4def1c4d3538",
+      "size": 4166,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/future-company-profile-evidence-design.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/future-company-profile-evidence-design.json",
+      "source_sha256": "1ff7b87de756b2ccfca0f973a748b6149858a051d9b3320bb82682c2ed796a70",
+      "size": 1542,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/identity-contact-observations.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/identity-contact-observations.json",
+      "source_sha256": "763d71887bb571ccf74a55b9005793a168672f7273bb9fe48dc59d6fa6270611",
+      "size": 647,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/incremental-value.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/incremental-value.json",
+      "source_sha256": "3878948a4a5154047c164227f18873334087dd972a408d2c65d7a83fddb4c3b5",
+      "size": 1313,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/mover-regulatory-records.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/mover-regulatory-records.json",
+      "source_sha256": "722b1e8be9ebc8ee6adcf458221883cb53564cb5b58381cd5d935f3ef120df3e",
+      "size": 449,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/network-reuse-note.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/network-reuse-note.json",
+      "source_sha256": "48f142856ba748fd9c41d7f66e95d5b18f6138aea42cad780b09df307fbd5721",
+      "size": 574,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/program-verification.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/program-verification.json",
+      "source_sha256": "23ea2a52cd2b69a990c32c5126cf7b3bb52e073f884523fbd90284f01ee8b8ec",
+      "size": 2642,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/roster-completeness.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/roster-completeness.json",
+      "source_sha256": "c5408912d7b60b34eca0a59dae8da81b226f0257af1cce10ee87d9be3187d3c9",
+      "size": 798,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/source-interfaces.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/source-interfaces.json",
+      "source_sha256": "b17cbda11e94ddedd468495780e0fd92164d21492b7b25e57afc03de250a0c22",
+      "size": 3290,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/normalized/zero-result-semantics.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/normalized/zero-result-semantics.json",
+      "source_sha256": "53473e76b9c8ca85eb5cc1df6418f5e1eaa2f8cac3c9ef588b46c0af3faf006d",
+      "size": 562,
+      "class": "normalized",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-MoversWithMuscle.pdf",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-MoversWithMuscle.pdf",
+      "source_sha256": "f06e9957b41481d8d6632be8b2cd0b2310c0d4512cffc205c802340f67d0dda6",
+      "size": 30715,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-partial-Moving.pdf",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-partial-Moving.pdf",
+      "source_sha256": "9e3c2f85533b415b087e861dec69ce14c7c9e6b0beda6ae3dbaf7ef491fdb47f",
+      "size": 52925,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-partial-Moving.txt",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-partial-Moving.txt",
+      "source_sha256": "7f0595ed152dc0746a34589984604324dc8425831e58bc0b83ec6c106ce81496",
+      "size": 4104,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-TwoMenAndATruck.pdf",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-TwoMenAndATruck.pdf",
+      "source_sha256": "957e77269f36e95ea6814a6f74287b0063836fc00e35c99e7ba375a2ffcc12a5",
+      "size": 30715,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-TwoMenAndATruck.txt",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/complaint-pdf-TwoMenAndATruck.txt",
+      "source_sha256": "6981105df54100d142c27278f4f7506822c30bd6897b84b5463a7e41cadb6e1e",
+      "size": 167,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/complaint-sample-moving-partial-parsed.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/complaint-sample-moving-partial-parsed.json",
+      "source_sha256": "c4c69ab6a43b8377fb1467a3f0c68da0cbf7b3b4e18265ac0157ab44b51f0b8c",
+      "size": 22980,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/complaint-search-sample-businesses.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/complaint-search-sample-businesses.json",
+      "source_sha256": "3b5a2798a9f66868529ca600dfa767fbce377d8a0547482e661807dc681beb91",
+      "size": 6706,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/fdacs-pinellas-geography-sample-universe.json",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/fdacs-pinellas-geography-sample-universe.json",
+      "source_sha256": "6c840262cf2fd334b799f9b0abd133c31fe772fe7140a415a23d47790f4f906a",
+      "size": 18333,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/municode-art-viii-moving.txt",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/municode-art-viii-moving.txt",
+      "source_sha256": "d0c6e1a870dceb7804fdc1410f953eaa624612c6655d07c88f9f845aba861d33",
+      "size": 1552,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/page-complaint-history-service.html",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/page-complaint-history-service.html",
+      "source_sha256": "8e1a3bd4e90ff212a85139ce8a6e8d86391262752498513bbcff682ef60b3180",
+      "size": 252015,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-faq.html",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-faq.html",
+      "source_sha256": "0f09610fa9c7d45093a8a0cc61c8e6fc59299b8f013292418e8efda19682836d",
+      "size": 270192,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-home.html",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/page-consumer-protection-home.html",
+      "source_sha256": "8de65169949cde3613c97aeea7689070a18b20eeb37a80b991cea49ef65438aa",
+      "size": 273893,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/county-regulatory/fl/pinellas/raw/page-moving-ordinance.html",
+      "destination_path": "data/county-regulatory/fl/pinellas/raw/page-moving-ordinance.html",
+      "source_sha256": "b1ab281806e2c056e60e283b20f03456e28cfdc88ad8f99f5c8af6a3514ad608",
+      "size": 251211,
+      "class": "raw",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "data/regulatory-source-catalog/fl/county-sources.json",
+      "destination_path": "data/regulatory-source-catalog/fl/county-sources.json",
+      "source_sha256": "170c620ca77767c6187e973c0a18e5da32fda1e3e4e739da9fdbdc4d290e1bf7",
+      "size": 22230,
+      "class": "catalog",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/COUNTY_REGULATORY_ARCHITECTURE_V1.md",
+      "destination_path": "docs/county-regulatory/architecture/COUNTY_REGULATORY_ARCHITECTURE_V1.md",
+      "source_sha256": "984258215ba88caeafd0be23a8490417a2efc9e72e336711bcc8ae66cc558743",
+      "size": 16133,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/future-county-onboarding-playbook.md",
+      "destination_path": "docs/county-regulatory/architecture/future-county-onboarding-playbook.md",
+      "source_sha256": "6c71af98c8d17d0b626ff0fab4b51eeaf87258be5b20c5661a42b357a7e7596d",
+      "size": 4387,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/integration/FL_C010_INTEGRATION_GATE.md",
+      "destination_path": "docs/county-regulatory/architecture/integration/FL_C010_INTEGRATION_GATE.md",
+      "source_sha256": "1a992b4126650695c311925f0212b611d20ac882bc63b9fcb9db94932be3e286",
+      "size": 1924,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/integration/FL_COUNTY_STACK_INTEGRATION_RUNBOOK_V1.md",
+      "destination_path": "docs/county-regulatory/architecture/integration/FL_COUNTY_STACK_INTEGRATION_RUNBOOK_V1.md",
+      "source_sha256": "0365c21158956704a09e37343658f20bf85cec719b06a2cf29e955e4c3c088da",
+      "size": 5040,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/current-main-compatibility.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/current-main-compatibility.md",
+      "source_sha256": "b9b1e86733de8cc7b4dd58bc8dc619569c95809f90a2a652275ee3573d194a5e",
+      "size": 2575,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/implementation-sequence.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/implementation-sequence.md",
+      "source_sha256": "ff346e6bbf6f95d7ceeb2704ac5c4ecd4b3412fbacd3ed24f9db2bd6431f1b29",
+      "size": 3476,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/PALM_BEACH_COUNTY_REGULATORY_PILOT_V1.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/PALM_BEACH_COUNTY_REGULATORY_PILOT_V1.md",
+      "source_sha256": "229ab7062ea1f15d5b3dcb70f0de66873e2152f78cb9621889635a9e69460bfc",
+      "size": 9010,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/read-api-and-ingestion-contracts.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/read-api-and-ingestion-contracts.md",
+      "source_sha256": "8e77898f0e9fb96cbecf4cc49f0accf0b7eb1958ba59c877ad9e253d8f950f04",
+      "size": 3764,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/selective-transplant-allowlist.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/selective-transplant-allowlist.md",
+      "source_sha256": "a52124126e57a583643a198fd4749be3ab9ea04bd269cb0b51a658d5b83220e2",
+      "size": 2350,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/storage-and-schema-spec.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/storage-and-schema-spec.md",
+      "source_sha256": "ca8df7f9650c66c1e4591380aa3dd17930fd95afc929b66f2587dfd7b6ecfdbe",
+      "size": 11173,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/wave-a-credential-spec.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/wave-a-credential-spec.md",
+      "source_sha256": "ad3e21d0f6d053c9cd3073cc5b06a7d6d3b3dc6f92ef3db20342adf98f787252",
+      "size": 4126,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/wave-b-identity-contact-spec.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/wave-b-identity-contact-spec.md",
+      "source_sha256": "1ffa140d1f10d9429f2426110b4d10200904b8df4552e0d7bf22bf1397866886",
+      "size": 2978,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/wave-c-complaint-disposition-spec.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/wave-c-complaint-disposition-spec.md",
+      "source_sha256": "4a2724df380998764cba5e66f08ef82f09b0b14844c86bf2dd72896c3a0636e6",
+      "size": 2655,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/palm-beach-v1/wave-d-enforcement-spec.md",
+      "destination_path": "docs/county-regulatory/architecture/palm-beach-v1/wave-d-enforcement-spec.md",
+      "source_sha256": "3a373d9e83b460cadb602c4338b09db05237f5d83bfdf380d6a2d0a017e0f287",
+      "size": 2051,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/schema-sketch.md",
+      "destination_path": "docs/county-regulatory/architecture/schema-sketch.md",
+      "source_sha256": "c474c544c14066676491264b88c537a9af2d6fad9982b4afb76a7e5c9b11988e",
+      "size": 6703,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/architecture/stack-integration-runbook.md",
+      "destination_path": "docs/county-regulatory/architecture/stack-integration-runbook.md",
+      "source_sha256": "50c26e79c21a35470ee4b7f4c7b294a31f0c1903cf85ec9bc2f481b4d9153f37",
+      "size": 4367,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/integration/current-main-compatibility.md",
+      "destination_path": "docs/county-regulatory/fl/integration/current-main-compatibility.md",
+      "source_sha256": "23478f5be372fd5272b7c28be97488f3689f922a27a6ce624d8080c76e0236eb",
+      "size": 985,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/integration/fl-county-research-v1-freeze.md",
+      "destination_path": "docs/county-regulatory/fl/integration/fl-county-research-v1-freeze.md",
+      "source_sha256": "254044fc45aa8772472e59ba1dfdcf783e04c9d2689894743ac8e3c338e4143b",
+      "size": 1542,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/integration/future-integration-runbook.md",
+      "destination_path": "docs/county-regulatory/fl/integration/future-integration-runbook.md",
+      "source_sha256": "f8f66f66228da2d16b62e595f3b86cb7949f53ac4da0ff24a6e4f37231044a6b",
+      "size": 1683,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/integration/research-pr-disposition-plan.md",
+      "destination_path": "docs/county-regulatory/fl/integration/research-pr-disposition-plan.md",
+      "source_sha256": "02b600da1c87230940f8602ab4e9fb09b7d2e689299c43e3e7db6656947277ef",
+      "size": 747,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/integration/selective-transplant-rehearsal.md",
+      "destination_path": "docs/county-regulatory/fl/integration/selective-transplant-rehearsal.md",
+      "source_sha256": "bb79e4a6e4c4555c6ec8c76328ba9a78c9a11f8d2c4cf8d324bcc0500b723739",
+      "size": 911,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/integration/state-track-integration-gate.md",
+      "destination_path": "docs/county-regulatory/fl/integration/state-track-integration-gate.md",
+      "source_sha256": "ddbd4714ae62fe08604e4632e41a44b138bede85c145eb32c150a0d7b33e5b2a",
+      "size": 1168,
+      "class": "architecture",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "C010 durable gate/docs artifact synced after allowlist lag"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/pra-drafts/broward-county-mover-regulatory-pra.md",
+      "destination_path": "docs/county-regulatory/fl/pra-drafts/broward-county-mover-regulatory-pra.md",
+      "source_sha256": "48f650fd5e4d0bf2a17abc1ca27b995c560bf1371a22a67f96fa70c81a4eda1e",
+      "size": 3308,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/pra-drafts/miami-dade-county-mover-regulatory-pra.md",
+      "destination_path": "docs/county-regulatory/fl/pra-drafts/miami-dade-county-mover-regulatory-pra.md",
+      "source_sha256": "6c90b65313790c1dc5b45424753cd71ce26c3d3ad746a43bafc0cb2cc859613a",
+      "size": 4937,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/pra-drafts/palm-beach-county-mover-regulatory-pra.md",
+      "destination_path": "docs/county-regulatory/fl/pra-drafts/palm-beach-county-mover-regulatory-pra.md",
+      "source_sha256": "cfc1fb31e4bce0e17a21b124d6a374ea2711de4c42ea81132e94f264857f1937",
+      "size": 6387,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/pra-drafts/pinellas-county-mover-regulatory-pra.md",
+      "destination_path": "docs/county-regulatory/fl/pra-drafts/pinellas-county-mover-regulatory-pra.md",
+      "source_sha256": "757ac779e9b4fb65ef4538ef431a3d417e6a46fde0fde67af8f165c7ab09977a",
+      "size": 3498,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/task-fl-c001-county-ranking.json",
+      "destination_path": "docs/county-regulatory/fl/task-fl-c001-county-ranking.json",
+      "source_sha256": "637dd7301d8c8a43058f65661340d3cfa930e53db1a4a01568810a0d09b094bd",
+      "size": 14032,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/task-fl-c001-florida-county-regulatory-discovery.md",
+      "destination_path": "docs/county-regulatory/fl/task-fl-c001-florida-county-regulatory-discovery.md",
+      "source_sha256": "a8432df7bdcff91f470d574a9ed88f213cffdb4962d5bdc455e8d336b927cc2b",
+      "size": 7237,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/task-fl-c002-palm-beach-regulatory-acquisition.md",
+      "destination_path": "docs/county-regulatory/fl/task-fl-c002-palm-beach-regulatory-acquisition.md",
+      "source_sha256": "2264864d4bfac9d62be63211219583e8bcfe52a627c95b9f46ba6058680859ba",
+      "size": 3885,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/task-fl-c003-palm-beach-evidence-qualification.md",
+      "destination_path": "docs/county-regulatory/fl/task-fl-c003-palm-beach-evidence-qualification.md",
+      "source_sha256": "6c9dff9f8aa0a43e3721f66040e405f5f838c7110eeac4dd22c7ee95e385212a",
+      "size": 3604,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "docs/county-regulatory/fl/task-fl-c004-broward-regulatory-acquisition.md",
+      "destination_path": "docs/county-regulatory/fl/task-fl-c004-broward-regulatory-acquisition.md",
+      "source_sha256": "2151ee0f68e5d01c4e3f43e3e531b0e4403e23870357fc12a64a0e364830cba3",
+      "size": 1922,
+      "class": "docs",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c002-palm-beach-normalize.mjs",
+      "destination_path": "scripts/fl-c002-palm-beach-normalize.mjs",
+      "source_sha256": "4649f56f0be67c742c206dccba68e0b4d72e259647a5744167ea90f0df4c6f78",
+      "size": 37512,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c003-emit-qualified-package.mjs",
+      "destination_path": "scripts/fl-c003-emit-qualified-package.mjs",
+      "source_sha256": "6eb60e617cfceccad3fa554b9bc60a38eb76b736883f5851c9b39aa6604e1e21",
+      "size": 16667,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c003-palm-beach-evidence-qualification.mjs",
+      "destination_path": "scripts/fl-c003-palm-beach-evidence-qualification.mjs",
+      "source_sha256": "5110c0c5ad33b5d1da76df0a392caac9814ad4085783ca6b4f6c7755c56245c1",
+      "size": 41779,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c003-read-florida-identity-snapshot.mjs",
+      "destination_path": "scripts/fl-c003-read-florida-identity-snapshot.mjs",
+      "source_sha256": "8c09342177d7d2729e8e7e0ae3fc1d66bb354d52d6e70b21117e9032ded9cddd",
+      "size": 6047,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c004-broward-normalize.mjs",
+      "destination_path": "scripts/fl-c004-broward-normalize.mjs",
+      "source_sha256": "1476b575931aacc6fd5270c0c011f823f8ea45239e8bdfadeb1d12b743785850",
+      "size": 26177,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c005-miami-dade-normalize.mjs",
+      "destination_path": "scripts/fl-c005-miami-dade-normalize.mjs",
+      "source_sha256": "7469b92815ff8aeab1657cc6b92376c89290049cec2a15a76fad97784589606a",
+      "size": 52675,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c006-miami-dade-evidence-qualification.mjs",
+      "destination_path": "scripts/fl-c006-miami-dade-evidence-qualification.mjs",
+      "source_sha256": "376d52e66d1e7d0976a936124930027d49f2fc0b74dae1ebfd7f0aea8397e63b",
+      "size": 56796,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c007-pinellas-normalize.mjs",
+      "destination_path": "scripts/fl-c007-pinellas-normalize.mjs",
+      "source_sha256": "a60d88f1608f9db2735466ba01364120d69604f88531969a6db80b180ee538c8",
+      "size": 42339,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c008-emit-architecture-package.mjs",
+      "destination_path": "scripts/fl-c008-emit-architecture-package.mjs",
+      "source_sha256": "08114cc794e3e8c701684fcad36f7f3bfd9d3a46cfed45469b49ce58f18038ab",
+      "size": 2692,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c009-emit-palm-beach-production-spec.mjs",
+      "destination_path": "scripts/fl-c009-emit-palm-beach-production-spec.mjs",
+      "source_sha256": "6f9f6d447f55466499f47f2f9c20c2c8f6283ca4a14bb3dd9b9792d0d31e67df",
+      "size": 4051,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c010-build-integration-gate.mjs",
+      "destination_path": "scripts/fl-c010-build-integration-gate.mjs",
+      "source_sha256": "b602b5c6b5d7af31d896d399c1ff6e33c0a726ed802bd55ff635bea14efb958e",
+      "size": 15347,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/fl-c010-complete-remaining-audits.mjs",
+      "destination_path": "scripts/fl-c010-complete-remaining-audits.mjs",
+      "source_sha256": "05f502453bb404fbdc696b9728eeedf4da1b4f2e8380d32f011950d8f9f80a0a",
+      "size": 18166,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c001-catalog.mjs",
+      "destination_path": "scripts/validate-fl-c001-catalog.mjs",
+      "source_sha256": "ee7f6d2795a18f65ee637dd9e7b375e5c48405c693efaa2252e3d32f8ea3d6ad",
+      "size": 1758,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c002-palm-beach.mjs",
+      "destination_path": "scripts/validate-fl-c002-palm-beach.mjs",
+      "source_sha256": "22522ccf0634ce07049763cbbf72073f83f998ebc1822a2307c7f8d87421278c",
+      "size": 5164,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c003-palm-beach-evidence.mjs",
+      "destination_path": "scripts/validate-fl-c003-palm-beach-evidence.mjs",
+      "source_sha256": "212037cec5858a43cd96912c39761b62983b751b79ca2076b185a2f7a68d2127",
+      "size": 4602,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c003-palm-beach-qualification.mjs",
+      "destination_path": "scripts/validate-fl-c003-palm-beach-qualification.mjs",
+      "source_sha256": "bad6574b4289217fbefc328a8503814cde9da570ccb6a8424d8393cfbc8022ee",
+      "size": 8457,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c004-broward-acquisition.mjs",
+      "destination_path": "scripts/validate-fl-c004-broward-acquisition.mjs",
+      "source_sha256": "dd068a5a23089a475e61b7045df82385fb313416537701cb3128f169e59ec321",
+      "size": 4527,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c005-miami-dade-acquisition.mjs",
+      "destination_path": "scripts/validate-fl-c005-miami-dade-acquisition.mjs",
+      "source_sha256": "b21c8ebf0f8a3de3c597935b0b64ceed4b7a0fc3c12072c770c7d562fd9db9a5",
+      "size": 8710,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c006-miami-dade-qualification.mjs",
+      "destination_path": "scripts/validate-fl-c006-miami-dade-qualification.mjs",
+      "source_sha256": "7f13af770612d3ad271ceffc5a83706e494825cd66de46485403d3e95e92d4da",
+      "size": 6948,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c007-pinellas-acquisition.mjs",
+      "destination_path": "scripts/validate-fl-c007-pinellas-acquisition.mjs",
+      "source_sha256": "f5ef4c76d490df02bbf7eb03c5f52fe3a22efb1813ea3c9c0620372c03334ace",
+      "size": 9555,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c008-county-architecture-discovery.mjs",
+      "destination_path": "scripts/validate-fl-c008-county-architecture-discovery.mjs",
+      "source_sha256": "e623502be1b0762b613eef6854d1226f1a54784de8fa7fdf34ae4c6490a0110b",
+      "size": 8454,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c009-palm-beach-production-spec.mjs",
+      "destination_path": "scripts/validate-fl-c009-palm-beach-production-spec.mjs",
+      "source_sha256": "1dc1fa4098a9d279348aaeaf726db96a5dd9e280f1e0baa3916b9af9930a142f",
+      "size": 7235,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c010-county-stack-integration-gate.mjs",
+      "destination_path": "scripts/validate-fl-c010-county-stack-integration-gate.mjs",
+      "source_sha256": "d2b79379c9953ec1f2e7e19da588863761913777d58954e287cb1540a29b04d2",
+      "size": 6511,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    },
+    {
+      "source_path": "scripts/validate-fl-c010-integration-gate.mjs",
+      "destination_path": "scripts/validate-fl-c010-integration-gate.mjs",
+      "source_sha256": "d2b79379c9953ec1f2e7e19da588863761913777d58954e287cb1540a29b04d2",
+      "size": 6511,
+      "class": "scripts",
+      "pii_class": "NONE_HEURISTIC",
+      "purpose": "INCLUDE durable county research artifact"
+    }
+  ],
+  "excluded_review_paths": [
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-business-20tax-page-5Bsi.json",
+      "reason": "Large GIS open-data discovery dump; not validator-critical; archive on research stack"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/gis-mdc-opendata-arcgis-com-api-v3-datasets-q-local-20business-20tax-f.json",
+      "reason": "Large GIS open-data discovery dump; not validator-critical; archive on research stack"
+    },
+    {
+      "path": "data/county-regulatory/fl/miami-dade/raw/instructions-self-service-portal.pdf",
+      "reason": "Large instructional PDF; not validator-critical; archive on research stack"
+    },
+    {
+      "path": "data/county-regulatory/fl/palm-beach/raw/MovingCo_Application.pdf",
+      "reason": "Large application PDF; provenance metadata retained; binary archive on research stack"
+    }
+  ],
+  "missing": [],
+  "errors": [],
+  "expected_runtime_delta": 0,
+  "expected_db_delta": 0,
+  "consumer_pii_included": 0,
+  "google_places_api_requests": 0,
+  "production_migrations": 0,
+  "package_json_changed": false,
+  "diff_vs_rehearsal": {
+    "rehearsal_added": 399,
+    "integration_added_estimate": "~389 + C011 artifacts",
+    "review_excluded": 4,
+    "review_included": 2,
+    "note": "Count differs from rehearsal 399 primarily because 4 REVIEW large artifacts were EXCLUDE and durable C011 gate artifacts were added"
+  },
+  "post_sync_note": "Re-synced full c010/integration docs into final manifest after discovering allowlist lagged C010 completion artifacts"
+}

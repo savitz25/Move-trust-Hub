@@ -1,0 +1,14 @@
+{
+  "task": "FL-C004",
+  "data_scope": "APPLICATION_SCHEMA_ONLY",
+  "row_count": 0,
+  "fields_beyond_fdacs_potential": [
+    "county Mover Registration credential",
+    "vehicle-level decal/permit + VIN/tag/GVW",
+    "owner/partner/director/officer disclosures",
+    "prior mover business (5 years)",
+    "enforcement/judgment disclosures on application",
+    "local BTR linkage requirement"
+  ],
+  "records": []
+}

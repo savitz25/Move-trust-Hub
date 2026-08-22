@@ -1,0 +1,120 @@
+﻿{
+    "business_seq":  1300123,
+    "license_number":  "MV1039",
+    "business_name":  "Meehan\u0027s Family Moving, Inc.",
+    "license_list":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "License_Number":  "MV1039",
+                                           "License_Expiry_Date":  "2027-05-31 04:00:00.0000000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Meehan\u0027s Family Moving, Inc.",
+                               "Established_Yr":  null,
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  1300123,
+                               "Does_Business_As":  "Meehan\u0027s Family Moving, Inc.",
+                               "Address":  "1320 53rd",
+                               "City":  "Mangonia Park",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33407",
+                               "MailingAddress":  "1320 53rd",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Mangonia Park",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33407",
+                               "PhoneNumber":  "5619046000",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "meehansfamilymoving@gmail.com",
+                               "WebsiteURL":  "www.meehansfamilymoving.com",
+                               "Fax":  "5613703655",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  1300123,
+                                           "LastName":  "Meehan",
+                                           "FirstName":  "Sheila",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "5619046000"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Meehan\u0027s Family Moving, Inc.",
+                                         "Established_Yr":  null,
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  1300123,
+                                         "Does_Business_As":  "Meehan\u0027s Family Moving, Inc.",
+                                         "Address":  "1320 53rd",
+                                         "City":  "Mangonia Park",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33407",
+                                         "MailingAddress":  "1320 53rd",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Mangonia Park",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33407",
+                                         "PhoneNumber":  "5619046000",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "meehansfamilymoving@gmail.com",
+                                         "WebsiteURL":  "www.meehansfamilymoving.com",
+                                         "Fax":  "5613703655",
+                                         "License_Required":  "Y"
+                                     }
+}

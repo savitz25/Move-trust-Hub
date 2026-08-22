@@ -1,0 +1,25 @@
+{
+  "task": "FL-C009",
+  "SAFE_TO_INTEGRATE_COUNTY_STACK_NOW": "NO",
+  "reason": "Builder 1 still changing publication/404 behavior after FL-010r hard-404 remediation merge; state/publication path remains active. County stack must stay isolated.",
+  "origin_main_observed": "ab93c84195f3b36c7e2bbd70495a0ee1432d8140",
+  "c008_head": "13f409cc17e6c18e27388773848fc995c518cd27",
+  "builder_1_constraints": [
+    "Do not touch Builder 1 state publication paths",
+    "Do not rebase county stack onto main during active state/publication work",
+    "Do not merge county PRs automatically",
+    "Do not execute selective transplant until SAFE_TO_INTEGRATE_COUNTY_STACK_NOW=YES"
+  ],
+  "integration_triggers_all_required": [
+    "state wave stable",
+    "publication/404/indexable behavior stable",
+    "no overlapping publication work",
+    "clean main",
+    "frozen county head validators green (C001–C009)"
+  ],
+  "recommended_integration_strategy": "STRATEGY_3_SELECTIVE_TRANSPLANT",
+  "execute_transplant_now": false,
+  "stack_transplant_before_pbc_prod": true,
+  "next_coordination_action": "FL-C010 — County Stack Integration Gate — WAIT_FOR_STATE_TRACK_STABILITY",
+  "recommended_fl_c010": "FL-C010 — County Stack Integration Gate — WAIT_FOR_STATE_TRACK_STABILITY"
+}

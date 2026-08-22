@@ -1,0 +1,91 @@
+{
+  "task": "FL-C008",
+  "version": "V1",
+  "counties": ["Palm Beach", "Broward", "Miami-Dade", "Pinellas"],
+  "capabilities": [
+    {
+      "capability": "mover_credential",
+      "palm_beach": "CREDENTIAL_BASED NEAR_FULL MV####",
+      "broward": "CREDENTIAL_BASED PRA_REQUIRED registration+decal",
+      "miami_dade": "CREDENTIAL_BASED NEAR_FULL MR-#####",
+      "pinellas": "ORDINANCE_ONLY — no separate credential"
+    },
+    {
+      "capability": "identity_contact",
+      "palm_beach": "STRONG public phone; email via BIR",
+      "broward": "SCHEMA_ONLY / PRA",
+      "miami_dade": "Address/DBA public; phone/email not on public EnerGov",
+      "pinellas": "N/A roster; agency contacts only"
+    },
+    {
+      "capability": "owner_officer",
+      "palm_beach": "Public contact name/title on roster",
+      "broward": "Application / PRA",
+      "miami_dade": "Application / not public",
+      "pinellas": "N/A"
+    },
+    {
+      "capability": "lbt_secondary",
+      "palm_beach": "Packet requirement (not primary public roster)",
+      "broward": "Packet requirement",
+      "miami_dade": "Open data + qualified MR↔LBT links (54 verified)",
+      "pinellas": "Not primary"
+    },
+    {
+      "capability": "branch",
+      "palm_beach": "Not first-class public",
+      "broward": "Not public",
+      "miami_dade": "SCHEMA_SUPPORTED; observed 0",
+      "pinellas": "N/A"
+    },
+    {
+      "capability": "vehicle_fleet",
+      "palm_beach": "Fleet count public",
+      "broward": "VIN/tag/GVW/decal SCHEMA; inventory PRA",
+      "miami_dade": "VIN/tag/GVW SCHEMA; observed 0",
+      "pinellas": "Not observed"
+    },
+    {
+      "capability": "insurance",
+      "palm_beach": "Not primary public evidence",
+      "broward": "REQUIREMENT_DOCUMENTED (application)",
+      "miami_dade": "REQUIREMENT_DOCUMENTED; CURRENT_POLICY_OBSERVED=false; COMPLIANCE_VERIFIED=false",
+      "pinellas": "Ordinance liability rules; not policy observations"
+    },
+    {
+      "capability": "complaints",
+      "palm_beach": "BIR SAMPLE searchable ~3yr",
+      "broward": "INTAKE_ONLY / history PRA",
+      "miami_dade": "INTAKE_ONLY / history PRA",
+      "pinellas": "Accela 5yr SAMPLE (24 cases)"
+    },
+    {
+      "capability": "dispositions",
+      "palm_beach": "44-code official catalog + BIR",
+      "broward": "No public catalog",
+      "miami_dade": "No public catalog",
+      "pinellas": "RECORD STATUS disposition-like on PDF; FAQ/PRA for fuller catalog"
+    },
+    {
+      "capability": "enforcement",
+      "palm_beach": "BIR SAMPLE admin actions/citations",
+      "broward": "Hearing process public; cases PRA",
+      "miami_dade": "Authority documented; company events 0 public",
+      "pinellas": "Civil/criminal authority; 0 public event rows"
+    },
+    {
+      "capability": "zero_result_semantics",
+      "palm_beach": "Not primary lesson",
+      "broward": "N/A (no public history search)",
+      "miami_dade": "N/A (no public history search)",
+      "pinellas": "NO_COMPLAINT_RECORD_RETURNED_FOR_SEARCH_WINDOW — never COMPLAINT_FREE"
+    },
+    {
+      "capability": "fdacs_crosswalk",
+      "palm_beach": "Qualified VERIFIED 64 @ 100%",
+      "broward": "INSUFFICIENT_PUBLIC_ROSTER",
+      "miami_dade": "Qualified VERIFIED 86 @ 100%",
+      "pinellas": "NOT_APPLICABLE_NO_PUBLIC_ROSTER"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task": "FL-C007",
+  "completeness_classification": "NO_SEPARATE_ROSTER_IDENTIFIED",
+  "public_roster_found": false,
+  "records": 0,
+  "active": null,
+  "inactive_expired_visibility": "NOT_APPLICABLE_NO_ROSTER",
+  "credential_coverage": null,
+  "unique_business_count": null,
+  "notes": [
+    "Credential model: ORDINANCE_REGULATION_WITHOUT_SEPARATE_PUBLIC_CREDENTIAL.",
+    "Municode Art. VIII has no license/registration/permit/roster section.",
+    "Consumer Protection lists Moving under Monitoring, not Licensing.",
+    "PRA may still ask whether any internal regulated-business list is maintained despite no public roster.",
+    "FDACS Pinellas-municipality movers (n=69) are SAMPLE search seeds only — not a Pinellas county roster."
+  ],
+  "retrieved_at": "2026-08-21T22:28:47.942Z"
+}

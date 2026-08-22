@@ -1,0 +1,33 @@
+{
+  "task": "FL-C006",
+  "after_qualification": true,
+  "current_miami_dade_credentials_issued": 117,
+  "historical_miami_dade_credentials": 281,
+  "verified_fdacs_crosswalk": 86,
+  "canonical_linked": 70,
+  "canonical_candidate": 0,
+  "state_record_only": 16,
+  "county_only_review": 31,
+  "verified_lbt_links": 54,
+  "branches_actually_observed": 0,
+  "vehicles_actually_observed": 0,
+  "insurance_policies_actually_observed": 0,
+  "complaint_cases_actually_observed": 0,
+  "citations_actually_observed": 0,
+  "final_actions_actually_observed": 0,
+  "schema_requirements_separate_from_observations": true,
+  "fdacs_typically_lacks": [
+    "county MR-##### credential",
+    "county multi-status license history",
+    "county issue/expire under Art. XVI Ch.8A",
+    "LBT category linkage when crosswalkable"
+  ],
+  "still_pra_or_schema_gated": [
+    "phone/email/owner on public roster",
+    "branch records",
+    "vehicle inventory",
+    "insurance policy observations",
+    "complaint dispositions",
+    "citations/final actions"
+  ]
+}

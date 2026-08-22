@@ -1,0 +1,13 @@
+{
+  "task": "FL-C011",
+  "validators_c001_c011": "12/12 PASS",
+  "build": true,
+  "test_state_hhg": true,
+  "test_state_hhg_canary": true,
+  "test_directory_engine": true,
+  "files_added_approx": 419,
+  "files_modified": 0,
+  "files_deleted": 0,
+  "package_hash": "da851281bf73257ba7438bb01960ea48b6b380031e4dd4a1b92387661e211b76",
+  "unresolved_review": 0
+}

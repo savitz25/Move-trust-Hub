@@ -1,0 +1,38 @@
+{
+  "task": "FL-C005",
+  "county": "Miami-Dade",
+  "agency": "Miami-Dade Department of Regulatory and Economic Resources (RER) — Consumer and Neighborhood Protection Division",
+  "agency_address": "11805 SW 26th Street, Suite 230, Miami, FL 33175",
+  "agency_phone": "786-469-2300",
+  "agency_email": "license@miamidade.gov",
+  "credential_primary_name": "Moving Business Registration / Moving Business License (MR-#####)",
+  "credential_pattern": "MR-#####",
+  "ordinance": "Article XVI, Chapter 8A (Moving Ordinance) of Miami-Dade County Code",
+  "geographic_scope": "Local moves within Miami-Dade County; tri-county South Florida disclosure practices documented with Palm Beach / Broward programs",
+  "current_status": "OPERATING",
+  "energov_tenant": "MiamiDadeProd",
+  "energov_selfservice": "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+  "application_collects": [
+    "company name / DBA",
+    "physical and mailing addresses",
+    "phones / fax / cell / email",
+    "FEID",
+    "owners/officers (including DOB — do not commit personal IDs)",
+    "additional branch offices",
+    "vehicles year/make/model / VIN / tag / GVW",
+    "Local Business Tax receipt",
+    "insurance certificates (GL any; Auto liability min $50k/<35k GVW or $100k/>35k; Cargo $10k)",
+    "Workers Compensation or exemption",
+    "enforcement / prior-business disclosures"
+  ],
+  "advertising_marking_requirements_documented": true,
+  "complaints_channel": "Consumer Mediation Center — intake; no public structured business complaint history found",
+  "civil_citations": "Authority documented; no public bulk citation roster found",
+  "grandfathered_local_authority": "Consistent with Fla. Stat. §507.13 grandfathering of pre-2011 local mover ordinances (documented in FL-C001); Miami-Dade continues Moving Ordinance program as of 2026 materials.",
+  "official_sources": [
+    "https://energov.miamidade.gov/EnerGov_Prod/SelfService",
+    "https://www.miamidade.gov",
+    "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Local_Business_Tax_Feature_Layer_View/FeatureServer/0"
+  ],
+  "retrieved_at": "2026-08-21T20:41:01.552Z"
+}

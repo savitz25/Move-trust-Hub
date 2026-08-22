@@ -1,0 +1,161 @@
+﻿{
+    "business_seq":  700502,
+    "license_number":  "MV802",
+    "business_name":  "Pack On The Go, Inc.",
+    "license_list":  {
+                         "value":  [
+
+                                   ],
+                         "Count":  0
+                     },
+    "admin_actions_bir":  {
+                              "value":  [
+                                            {
+                                                "$id":  "1",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  495277,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  700502,
+                                                "KeyField":  null,
+                                                "Field2":  "2020-12-22T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Sec 4(A) Failed to obtain required PBC moving permit and/or vehicle decals",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            },
+                                            {
+                                                "$id":  "2",
+                                                "ActType":  "Notice of Violation",
+                                                "ItemSeq":  495278,
+                                                "ItemTypeSeq":  50,
+                                                "intBusinessSeq":  700502,
+                                                "KeyField":  null,
+                                                "Field2":  "2020-12-22T05:00:00.000Z",
+                                                "Field3":  "MOV05-07 Section 17 -303: Deceptive and Unfair Trade Practices",
+                                                "Field4":  null,
+                                                "Field5":  null,
+                                                "Field6":  null,
+                                                "Field7":  null,
+                                                "Field8":  null,
+                                                "Field9":  null,
+                                                "Field10":  null,
+                                                "Field13":  null,
+                                                "Field20":  null,
+                                                "ActiveDate":  null,
+                                                "InactiveDate":  null,
+                                                "RecordingDate":  null,
+                                                "Field11":  null
+                                            }
+                                        ],
+                              "Count":  2
+                          },
+    "company_action_details":  {
+                                   "value":  [
+
+                                             ],
+                                   "Count":  0
+                               },
+    "complaint_bus_info":  {
+                               "$id":  "1",
+                               "businessInfo":  null,
+                               "Business_Name":  "Pack On The Go, Inc.",
+                               "Established_Yr":  "2005",
+                               "Comments":  null,
+                               "Fiscal_Begginning":  null,
+                               "BusinessTypeSeq":  0,
+                               "businessDesc":  "Moving \u0026 Storage",
+                               "MVP_Status":  null,
+                               "License_Status":  null,
+                               "Product":  null,
+                               "Business_Seq":  700502,
+                               "Does_Business_As":  "Pack On The Go, Inc.",
+                               "Address":  "730 Military",
+                               "City":  "Deerfield Beach",
+                               "State":  "FL",
+                               "Country":  "USA",
+                               "Zip":  "33442",
+                               "MailingAddress":  "730 Military",
+                               "MailingAddress2":  null,
+                               "MailingCity":  "Deerfield Beach",
+                               "MailingState":  "FL",
+                               "MailingCountry":  "USA",
+                               "MailingZip":  "33442",
+                               "PhoneNumber":  "5614987801",
+                               "PhoneExt":  null,
+                               "EmailAddress":  "info@packonthego.com",
+                               "WebsiteURL":  "www.packonthego.com",
+                               "Fax":  "5614987805",
+                               "License_Required":  "Y"
+                           },
+    "complaint_details":  {
+                              "value":  [
+
+                                        ],
+                              "Count":  0
+                          },
+    "case_summary":  {
+                         "$id":  "1",
+                         "TotalCaseSummary":  0,
+                         "caseSummary":  [
+
+                                         ]
+                     },
+    "dispute_info":  {
+                         "value":  [
+                                       {
+                                           "$id":  "1",
+                                           "Business_Seq":  700502,
+                                           "LastName":  "Ford",
+                                           "FirstName":  "Nicholas J.",
+                                           "Title":  "Dispute Contact",
+                                           "PhoneNumber":  "5614987801"
+                                       }
+                                   ],
+                         "Count":  1
+                     },
+    "errors":  [
+
+               ],
+    "complaint_bus_info_noproduct":  {
+                                         "$id":  "1",
+                                         "businessInfo":  null,
+                                         "Business_Name":  "Pack On The Go, Inc.",
+                                         "Established_Yr":  "2005",
+                                         "Comments":  null,
+                                         "Fiscal_Begginning":  null,
+                                         "BusinessTypeSeq":  0,
+                                         "businessDesc":  "Moving \u0026 Storage",
+                                         "MVP_Status":  null,
+                                         "License_Status":  null,
+                                         "Product":  null,
+                                         "Business_Seq":  700502,
+                                         "Does_Business_As":  "Pack On The Go, Inc.",
+                                         "Address":  "730 Military",
+                                         "City":  "Deerfield Beach",
+                                         "State":  "FL",
+                                         "Country":  "USA",
+                                         "Zip":  "33442",
+                                         "MailingAddress":  "730 Military",
+                                         "MailingAddress2":  null,
+                                         "MailingCity":  "Deerfield Beach",
+                                         "MailingState":  "FL",
+                                         "MailingCountry":  "USA",
+                                         "MailingZip":  "33442",
+                                         "PhoneNumber":  "5614987801",
+                                         "PhoneExt":  null,
+                                         "EmailAddress":  "info@packonthego.com",
+                                         "WebsiteURL":  "www.packonthego.com",
+                                         "Fax":  "5614987805",
+                                         "License_Required":  "Y"
+                                     }
+}

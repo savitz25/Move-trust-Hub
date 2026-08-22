@@ -1,0 +1,26 @@
+{
+  "task": "FL-C009",
+  "design_only": true,
+  "preference": "SMALLEST",
+  "decision": "STORE_VERIFIED_LINK_FIELDS_ON_COUNTY_CREDENTIAL",
+  "on_credential_fields": [
+    "company_id",
+    "fdacs_im",
+    "match_result",
+    "match_method",
+    "ruleset_version",
+    "linked_at",
+    "canonical_class"
+  ],
+  "separate_cross_source_link_table": {
+    "status": "OPTIONAL_V1",
+    "proposed_name": "county_cross_source_link",
+    "use_when": [
+      "Need immutable versioned link history beyond in-place credential refresh",
+      "Need multi-edge links (credential↔LBT, etc.) that do not fit credential row"
+    ]
+  },
+  "ruleset": "PBC_FDACS_RECONCILIATION_V1",
+  "fail_closed": true,
+  "production_link_ready_count": 46
+}

@@ -1,0 +1,19 @@
+{
+  "task": "FL-C003",
+  "retrieved_at": "2026-08-21T19:51:45.682Z",
+  "note": "Qualified county-layer value beyond FDACS. Complaint/enforcement counts are SAMPLE_ONLY (22 BIR businesses).",
+  "qualified_counts": {
+    "county_permits": 142,
+    "deterministic_fdacs_associations": 64,
+    "canonical_company_associations": 46,
+    "owner_officer_observations": 142,
+    "websites": 83,
+    "fleet_data": 137,
+    "operating_history_data": 51,
+    "complaint_observations": 20,
+    "verified_dispositions": 17,
+    "enforcement_observations": 49,
+    "final_enforcement_actions": 0
+  },
+  "engineering_cost_signal": "Palm Beach county layer earns engineering cost for credential identity, owner/fleet/website enrichment, and disposition/enforcement observation classes — even before full BIR bulk. Sample complaint/enforcement should not be extrapolated."
+}
