@@ -1,0 +1,25 @@
+{
+  "task": "FL-C008",
+  "architecture_implemented": false,
+  "reusable_patterns": [
+    "state credential + local credential coexistence with explicit jurisdiction",
+    "ordinance-without-credential posture",
+    "complaint observation != disposition",
+    "enforcement observation != final action",
+    "LBT/tax category as secondary corroboration only",
+    "Accela-style name→PDF complaint history windowing",
+    "versioned fail-closed crosswalk evidence objects",
+    "SCHEMA_ONLY vs observed-row discipline"
+  ],
+  "potential_later_reuse": [
+    "ContractorTrustHub",
+    "SeniorTrustHub",
+    "InsuranceTrustHub",
+    "other Move counties/states"
+  ],
+  "do_not_ingest_now": [
+    "Non-mover PBC Consumer Affairs categories",
+    "Non-mover Accela licensing modules (bingo/adult use/etc.) beyond catalog notes"
+  ],
+  "note": "Catalog network reuse only; no non-mover ingestion in FL-C008."
+}

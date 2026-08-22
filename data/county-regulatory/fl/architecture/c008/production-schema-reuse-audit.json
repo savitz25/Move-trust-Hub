@@ -1,0 +1,114 @@
+{
+  "task": "FL-C008",
+  "version": "V1",
+  "design_only": true,
+  "production_db_migrations": 0,
+  "storage_recommendation": "OPTION_D_HYBRID",
+  "storage_recommendation_summary": "Reuse companies + provider_state_authority for state; NEW county credential tables + generic county observation/event layer. Do not overload PSA with county credentials.",
+  "audits": [
+    {
+      "concept": "companies",
+      "decision": "REUSE_EXISTING",
+      "notes": "Canonical identity attachment target for fail-closed links."
+    },
+    {
+      "concept": "provider_state_authority",
+      "decision": "REUSE_EXISTING",
+      "notes": "Exists for STATE authority (Task 011B). County credentials must NOT overload this table."
+    },
+    {
+      "concept": "state_hhg_registry_staging",
+      "decision": "REUSE_EXISTING",
+      "notes": "State ingest staging; out of county credential scope."
+    },
+    {
+      "concept": "county_credential",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "proposed_name": "provider_county_credential",
+      "notes": "County MV/MR/registration/decal identities with county program FK."
+    },
+    {
+      "concept": "ordinance_posture_program",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "proposed_name": "county_regulatory_program",
+      "notes": "CREDENTIAL_BASED / ORDINANCE_ONLY program record."
+    },
+    {
+      "concept": "identity_observation",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "May live in generic county_regulatory_observation; do not silently write companies fields."
+    },
+    {
+      "concept": "owner_officer_observation",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Observation layer; optional."
+    },
+    {
+      "concept": "lbt",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Secondary tax observation; never authority_type on PSA."
+    },
+    {
+      "concept": "branch",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Only when explicit branch records exist."
+    },
+    {
+      "concept": "vehicle",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Fleet/VIN/decal observations; SCHEMA_ONLY separate."
+    },
+    {
+      "concept": "insurance_observation",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Must encode layered insurance states; not compliance by default."
+    },
+    {
+      "concept": "complaint",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Generic observation/event; distinct from disposition."
+    },
+    {
+      "concept": "disposition",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Distinct from complaint."
+    },
+    {
+      "concept": "enforcement_event",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Distinct from final outcome."
+    },
+    {
+      "concept": "final_outcome",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Explicit finality marker only."
+    },
+    {
+      "concept": "zero_result",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Optional INTERNAL/RESEARCH_ONLY observation type."
+    },
+    {
+      "concept": "cross_source_link",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Versioned evidence objects; staging JSON acceptable until DDL."
+    },
+    {
+      "concept": "conflict_model",
+      "decision": "NEW_CONCEPT_REQUIRED",
+      "notes": "Rules + stored conflict records with provenance."
+    },
+    {
+      "concept": "publication_eligibility",
+      "decision": "EXTEND_EXISTING",
+      "notes": "Future careful extension of publication model; do NOT touch Builder 1 state publication paths in V1 design tasks."
+    },
+    {
+      "concept": "trust_score",
+      "decision": "REUSE_EXISTING",
+      "notes": "Reuse existing Trust Score systems unchanged — county evidence must not write or weight Trust Score in V1."
+    }
+  ],
+  "psa_overload_forbidden": true,
+  "psa_note": "provider_state_authority exists for state authority — county credentials should NOT overload it"
+}

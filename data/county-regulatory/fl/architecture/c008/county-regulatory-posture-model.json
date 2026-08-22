@@ -1,0 +1,35 @@
+{
+  "task": "FL-C008",
+  "version": "V1",
+  "postures": [
+    {
+      "id": "CREDENTIAL_BASED",
+      "definition": "County issues a mover-specific credential (permit, registration, and/or license/decal) with identity that may be public or PRA-gated.",
+      "credential_rows_expected": true,
+      "exemplars": ["Palm Beach", "Broward", "Miami-Dade"],
+      "roster_coverage_examples": ["NEAR_FULL", "PRA_REQUIRED", "SAMPLE"]
+    },
+    {
+      "id": "ORDINANCE_ONLY",
+      "definition": "County regulates mover conduct by ordinance without a separate public mover credential program (e.g., Monitoring vs Licensing).",
+      "credential_rows_expected": false,
+      "exemplars": ["Pinellas"],
+      "roster_coverage_examples": ["NO_SEPARATE_ROSTER_IDENTIFIED"]
+    }
+  ],
+  "invariants": [
+    "Model remains valid when credential row_count = 0",
+    "Ordinance posture is always recorded even for CREDENTIAL_BASED counties",
+    "LBT or general business tax is never a substitute posture for mover credential",
+    "State HHG authority remains a separate jurisdiction layer"
+  ],
+  "coverage_classes": [
+    "NEAR_FULL",
+    "SAMPLE",
+    "PRA_REQUIRED",
+    "SCHEMA_ONLY",
+    "INTAKE_ONLY",
+    "NO_SEPARATE_ROSTER_IDENTIFIED",
+    "REQUIREMENT_DOCUMENTED"
+  ]
+}
