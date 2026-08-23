@@ -1,0 +1,76 @@
+{
+  "checked_at": "2026-08-23T00:07:51.092Z",
+  "mdc": {
+    "total": 70,
+    "published": 9,
+    "internal_only": 61,
+    "companies": 70,
+    "orphans": 0,
+    "duplicates": 0,
+    "wrong_company": 0,
+    "canary_published": 9,
+    "non_canary_published": 0
+  },
+  "pbc": {
+    "total": 46,
+    "published": 11,
+    "internal_only": 35
+  },
+  "company_freeze": {
+    "all_publishable": true,
+    "inserts": 0,
+    "publication_state_changes": 0,
+    "indexable_changes": 0,
+    "rows": [
+      {
+        "company_id": "fl-im-27",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "company_id": "fl-im-106",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "company_id": "fl-im-366",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "company_id": "fl-im-333",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "company_id": "fl-im-607",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "company_id": "fl-im-22",
+        "publication_state": "PUBLISHABLE",
+        "indexable": false
+      },
+      {
+        "company_id": "usdot-1329594",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "company_id": "usdot-3080327",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      },
+      {
+        "company_id": "pro-movers-2",
+        "publication_state": "PUBLISHABLE",
+        "indexable": true
+      }
+    ]
+  },
+  "security": {
+    "anon_denied": true
+  },
+  "pass": true
+}

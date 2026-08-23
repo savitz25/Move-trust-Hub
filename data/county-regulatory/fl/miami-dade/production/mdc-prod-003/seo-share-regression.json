@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-08-23T00:14:14.936Z",
+  "rows": [
+    {
+      "url": "https://www.movetrusthub.com/companies/fuentes-moving-corp",
+      "status": 200,
+      "jsonld_mr": false,
+      "og_mr": false,
+      "has_mdc_block": true,
+      "cache": "max-age=300"
+    },
+    {
+      "url": "https://www.movetrusthub.com/companies/america-s-family-moving-and-storage-llc",
+      "status": 200,
+      "jsonld_mr": false,
+      "og_mr": false,
+      "has_mdc_block": false,
+      "cache": "max-age=300"
+    }
+  ],
+  "mr_json_ld": 0,
+  "mr_og": 0,
+  "pass": true
+}

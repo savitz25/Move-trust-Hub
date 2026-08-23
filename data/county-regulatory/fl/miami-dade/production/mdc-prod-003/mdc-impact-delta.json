@@ -1,0 +1,21 @@
+{
+  "miami_dade": {
+    "mr_credentials_internally_represented": 70,
+    "mr_credentials_publicly_published": 9,
+    "distinct_companies_internally_enriched": 70,
+    "distinct_companies_publicly_county_enriched": 9,
+    "companies_created_by_county_work": 0,
+    "lbt_published": 0,
+    "contacts_promoted": 0,
+    "complaints": 0,
+    "enforcement": 0,
+    "wrong_company": 0
+  },
+  "palm_beach": {
+    "internal_credentials": 46,
+    "public_credentials": 11,
+    "internally_enriched_companies": 43,
+    "publicly_enriched_companies": 11
+  },
+  "cross_county_dedupe": "not_combined_without_separate_analysis"
+}

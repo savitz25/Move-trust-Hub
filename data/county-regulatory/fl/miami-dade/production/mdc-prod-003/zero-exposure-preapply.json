@@ -1,0 +1,111 @@
+{
+  "mode": "zero-exposure-preapply",
+  "checked_at": "2026-08-23T00:06:54.357Z",
+  "base": "https://www.movetrusthub.com",
+  "http_200": "9/9",
+  "miami_dade_mr_block": "0/9",
+  "mr_text_visible": "0/9",
+  "regulator_text_attributable": "0/9",
+  "rows": [
+    {
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "mr": "MR-00002",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    },
+    {
+      "slug": "raul-s-moving-inc",
+      "mr": "MR-00015",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    },
+    {
+      "slug": "homestead-transfer-storage-co",
+      "mr": "MR-00049",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    },
+    {
+      "slug": "genesis-moving-storage-inc",
+      "mr": "MR-00113",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    },
+    {
+      "slug": "south-florida-van-line-inc",
+      "mr": "MR-00278",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    },
+    {
+      "slug": "fuentes-moving-corp",
+      "mr": "MR-00317",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    },
+    {
+      "slug": "nobel-van-lines",
+      "mr": "MR-00476",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    },
+    {
+      "slug": "dixie-movers",
+      "mr": "MR-01209",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    },
+    {
+      "slug": "pro-movers-2",
+      "mr": "MR-01221",
+      "status": 200,
+      "visible": false,
+      "hasMr": false,
+      "hasHeading": false,
+      "hasRegulator": false,
+      "hasStatus": false,
+      "cache": "max-age=300"
+    }
+  ],
+  "pass": true
+}

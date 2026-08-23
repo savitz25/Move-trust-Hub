@@ -1,13 +1,18 @@
 # MDC-PROD-003 — Miami-Dade MR Controlled Publication Canary
 
-**Status:** Implementation PR (code before data) — DB publish only after production serves merge SHA.
+**Status:** `MIAMI-DADE MR CANARY PUBLISHED — OBSERVATION ACTIVE`
 
 | Field | Value |
 |---|---|
+| Implementation PR | [#88](https://github.com/savitz25/Move-trust-Hub/pull/88) merge `1f6ff4b2` |
+| Production deployed SHA | `1735cd53` (contains merge; also FL-011H #89) |
+| Deployment ID | `dpl_C5A6ykB1x5Qa3pkPCr1igXSQk6Zh` |
 | Final wave | `MDC_MR_PUBLICATION_CANARY_V1` |
+| Final hash | `1fca47ceee8c6f35e58b622cce61f48076b2c064a6a3861be9344f0676065f2c` |
 | Draft | `MDC_MR_PUBLICATION_CANARY_V1_DRAFT` (`b50ba162…`) |
 | Companies / credentials | **9 / 9** |
-| Wave A freeze | 70 INTERNAL_ONLY (`56cfc4c3…`) |
+| DB after apply | **70 total / 9 PUBLISHED / 61 INTERNAL_ONLY** |
+| Observation | `MDC_MR_CANARY_OBSERVATION_V1` → maturity `2026-08-30T00:07:51.092Z` |
 
 ## Hard rules
 

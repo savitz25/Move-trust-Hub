@@ -1,29 +1,15 @@
 {
   "task": "MDC-PROD-003",
-  "phase": "implementation_pr_code_before_data",
+  "status": "MIAMI-DADE MR CANARY PUBLISHED — OBSERVATION ACTIVE",
   "pr": 88,
-  "head_sha": "efbe125047c30c3ba733938534d6a157145669f3",
-  "final_wave_id": "MDC_MR_PUBLICATION_CANARY_V1",
-  "final_manifest_hash": "1fca47ceee8c6f35e58b622cce61f48076b2c064a6a3861be9344f0676065f2c",
-  "draft_hash": "b50ba162bc3630b24bf8f9fff93c8f60f3beeebb06f1aca6ee9ae56f2bfdd1ac",
-  "companies": 9,
-  "credentials": 9,
-  "production_db_writes_in_pr": 0,
-  "would_publish_dry_run": 9,
-  "already_published": 0,
-  "mdc_baseline_pre_apply": {
-    "total": 70,
-    "published": 0,
-    "internal_only": 70
-  },
-  "pbc_freeze": {
-    "total": 46,
-    "published": 11,
-    "internal_only": 35
-  },
-  "structured_data_hold": "HOLD_FROM_STRUCTURED_DATA_V1",
-  "lbt_mutations": 0,
-  "google_places_api_requests": 0,
-  "consumer_pii": 0,
-  "next": "merge → wait production SHA → zero-exposure → apply 9"
+  "merge_sha": "1f6ff4b24cc41b8dd88d2134e04fba90094cd02d",
+  "deployed_sha": "1735cd53fc50a5ec9fcc9365498778a7f3218da8",
+  "manifest_hash": "1fca47ceee8c6f35e58b622cce61f48076b2c064a6a3861be9344f0676065f2c",
+  "published": 9,
+  "internal_only": 61,
+  "total": 70,
+  "observation": "MDC_MR_CANARY_OBSERVATION_V1",
+  "maturity": "2026-08-30T00:07:51.092Z",
+  "google_places": 0,
+  "consumer_pii": 0
 }
