@@ -1,0 +1,18 @@
+{
+  "google_places_requests": 0,
+  "total_fl_psa": 1359,
+  "by_type": {
+    "intrastate_mover_registration": 1314,
+    "other": 16,
+    "intrastate_hhg_broker": 29
+  },
+  "im_rows": 1314,
+  "mb_rows": 29,
+  "other": 16,
+  "orphan_im": 373,
+  "orphan_mb": 10,
+  "distinct_companies_im": 939,
+  "distinct_companies_mb": 19,
+  "distinct_both": 1,
+  "wrong_company": 0
+}

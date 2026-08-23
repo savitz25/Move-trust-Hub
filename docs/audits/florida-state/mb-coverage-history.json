@@ -1,0 +1,26 @@
+{
+  "google_places_requests": 0,
+  "rows": [
+    {
+      "checkpoint": "pre-FL-011H",
+      "active": 26,
+      "represented": 1,
+      "unresolved": 25,
+      "pct": 3.8
+    },
+    {
+      "checkpoint": "post-FL-011H simulated",
+      "active": 26,
+      "represented": 19,
+      "unresolved": 7,
+      "pct": 73.1
+    },
+    {
+      "checkpoint": "post-FL-011I live",
+      "active": 26,
+      "represented": 19,
+      "unresolved": 7,
+      "pct": 73.1
+    }
+  ]
+}

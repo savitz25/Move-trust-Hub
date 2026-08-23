@@ -1,0 +1,21 @@
+{
+  "google_places_requests": 0,
+  "samples": [
+    {
+      "kind": "new_state_only_mover",
+      "companyId": "fl-im-1025"
+    },
+    {
+      "kind": "existing_federal_gaining_state",
+      "companyId": "usdot-2303737"
+    },
+    {
+      "kind": "mover_plus_broker",
+      "companyId": "fl-im-3405"
+    },
+    {
+      "kind": "new_broker_only",
+      "companyId": "fl-mb-1"
+    }
+  ]
+}

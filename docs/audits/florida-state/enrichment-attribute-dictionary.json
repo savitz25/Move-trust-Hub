@@ -1,0 +1,20 @@
+{
+  "google_places_requests": 0,
+  "id": "FL_STATE_ENRICHMENT_ATTRIBUTE_DICTIONARY_V1",
+  "attributes": [
+    "deterministic_fl_state_regulatory_identity",
+    "im_identifier",
+    "im_source_status",
+    "im_source_freshness_provenance",
+    "mb_identifier",
+    "mb_source_status",
+    "mb_source_freshness_provenance",
+    "source_phone_observation_newly_gained",
+    "source_email_observation_newly_gained",
+    "source_address_observation_newly_gained",
+    "deterministic_federal_state_relationship_newly_established",
+    "deterministic_mover_broker_relationship_newly_established",
+    "new_canonical_company_identity_created",
+    "consumer_visible_florida_state_regulatory_presentation"
+  ]
+}

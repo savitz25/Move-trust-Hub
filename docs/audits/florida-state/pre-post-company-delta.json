@@ -1,0 +1,54 @@
+{
+  "google_places_requests": 0,
+  "rows": [
+    {
+      "metric": "companies",
+      "pre": 5870,
+      "post_im": 5940,
+      "current": 5957,
+      "net_state": 86
+    },
+    {
+      "metric": "state_created",
+      "pre": 0,
+      "post_im": 69,
+      "current": 86,
+      "net_state": 86
+    },
+    {
+      "metric": "represented_im",
+      "pre": 817,
+      "post_im": 930,
+      "current": 941,
+      "net_state": 124
+    },
+    {
+      "metric": "represented_mb",
+      "pre": 1,
+      "post_im": 1,
+      "current": 19,
+      "net_state": 18
+    },
+    {
+      "metric": "indexable",
+      "pre": 4905,
+      "post_im": 4905,
+      "current": 4905,
+      "net_state": 0
+    },
+    {
+      "metric": "public_im_chrome",
+      "pre": 0,
+      "post_im": 37,
+      "current": 37,
+      "net_state": 37
+    },
+    {
+      "metric": "public_mb_chrome",
+      "pre": 0,
+      "post_im": 0,
+      "current": 0,
+      "net_state": 0
+    }
+  ]
+}

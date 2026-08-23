@@ -1,0 +1,36 @@
+{
+  "google_places_requests": 0,
+  "FL002": {
+    "companies": 0,
+    "observations_inserted": 3875,
+    "canonical_promotions": 0
+  },
+  "FL004": {
+    "companies_inserted": 37,
+    "psa_attached": 37,
+    "observations_attached": 110
+  },
+  "FL006": {
+    "companies": 0,
+    "psa_attached": 1
+  },
+  "FL010A": {
+    "companies": 0,
+    "publication_transitions": 37,
+    "indexable": 0
+  },
+  "FL011D": {
+    "companies_inserted": 32,
+    "psa_attached": 32,
+    "psa_noop": 81,
+    "observations_attached": 104
+  },
+  "FL011I": {
+    "companies_inserted": 17,
+    "psa_attached": 18,
+    "observations_attached": 53,
+    "first_attempt": "FAILED_TRANSACTION_ROLLED_BACK_CLEANLY",
+    "first_attempt_reason": "service_scope NOT NULL CHECK (interstate|intrastate)",
+    "successful_transaction": 1
+  }
+}

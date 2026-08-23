@@ -1,0 +1,12 @@
+{
+  "google_places_requests": 0,
+  "new_canonical_companies": 86,
+  "existing_canonical_enriched": 94,
+  "distinct_touched": 180,
+  "new_im": 69,
+  "new_mb": 17,
+  "existing_gaining_im": 83,
+  "existing_gaining_mb": 2,
+  "both_roles_companies": 1,
+  "state_only_created": 86
+}

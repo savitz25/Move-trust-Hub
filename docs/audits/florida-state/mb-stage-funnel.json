@@ -1,0 +1,13 @@
+{
+  "google_places_requests": 0,
+  "stages": {
+    "DISCOVERED_IN_OFFICIAL_SOURCE": 29,
+    "DETERMINISTICALLY_CANONICALIZED": 19,
+    "INTERNALLY_REPRESENTED": 19,
+    "PUBLICLY_PRESENTED": 0
+  },
+  "pct_of_active": {
+    "canonicalized": 65.5,
+    "public": 0
+  }
+}

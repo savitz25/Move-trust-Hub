@@ -1,0 +1,26 @@
+{
+  "google_places_requests": 0,
+  "status": "FLORIDA STATE ENRICHMENT AUDIT COMPLETE — IMPACT FROZEN",
+  "new_companies": 86,
+  "existing_enriched": 94,
+  "distinct_touched": 180,
+  "im": {
+    "active": 1098,
+    "represented": 930,
+    "unresolved": 168,
+    "pct": 84.7,
+    "operational_psa_linked": 941
+  },
+  "mb": {
+    "active": 26,
+    "represented": 19,
+    "unresolved": 7,
+    "pct": 73.1
+  },
+  "material": 180,
+  "public_im": 37,
+  "public_mb": 0,
+  "withheld_im": 168,
+  "google": 0,
+  "production_writes": 0
+}

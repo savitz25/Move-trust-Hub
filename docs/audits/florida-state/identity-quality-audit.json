@@ -1,0 +1,14 @@
+{
+  "google_places_requests": 0,
+  "exact_deterministic_links": 172,
+  "new_canonical_inserts": 86,
+  "possible_duplicate_holds": 114,
+  "corporate_family_holds": 46,
+  "status_holds": 3,
+  "conflicts": 5,
+  "name_only_accepted": 0,
+  "fuzzy_auto_links": 0,
+  "wrong_company": 0,
+  "duplicate_canonical_created": 0,
+  "fl004_holds": 2
+}

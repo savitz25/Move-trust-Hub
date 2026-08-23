@@ -1,0 +1,20 @@
+{
+  "google_places_requests": 0,
+  "remaining": 168,
+  "tally": {
+    "EXISTING_CANONICAL_LINK_READY": 0,
+    "NEW_CANONICAL_COMPANY_READY": 0,
+    "DISTINCT_ENTITY_ALREADY_REPRESENTED": 0,
+    "NO_LONGER_ACTIVE": 0,
+    "REMAINS_POSSIBLE_DUPLICATE": 114,
+    "REMAINS_CORPORATE_FAMILY_REVIEW": 46,
+    "CONFLICT_REMAINS": 5,
+    "SOURCE_STATUS_BLOCKED": 3,
+    "OTHER_REVIEW_REQUIRED": 0
+  },
+  "n_rows": 168,
+  "possible_duplicate": 114,
+  "corporate_family": 46,
+  "conflict": 5,
+  "status_blocked": 3
+}

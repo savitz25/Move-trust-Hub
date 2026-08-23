@@ -1,0 +1,8 @@
+{
+  "google_places_requests": 0,
+  "definition": "MATERIALLY_RESEARCHABLE_FROM_STATE_ENRICHMENT: company gained at least one deterministic Florida state regulatory identity/authority AND at least two additional state-derived useful fields/relationships (status, contact observation, federal-state relationship, broker role, or new canonical identity). Frozen in FL-AUDIT-STATE-001. Not a marketing metric.",
+  "count": 180,
+  "pct_touched": 100,
+  "new_count": 86,
+  "existing_count": 94
+}

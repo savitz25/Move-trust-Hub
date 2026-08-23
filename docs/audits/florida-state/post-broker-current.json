@@ -1,0 +1,12 @@
+{
+  "google_places_requests": 0,
+  "source": "live production SELECT",
+  "companies": 5957,
+  "indexable": 4905,
+  "fl_im": 849,
+  "fl_mb": 17,
+  "ingested": 899,
+  "publishable": 5022,
+  "represented_im": 941,
+  "represented_mb": 19
+}

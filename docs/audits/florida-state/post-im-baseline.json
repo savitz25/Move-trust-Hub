@@ -1,0 +1,12 @@
+{
+  "google_places_requests": 0,
+  "source": "FL-011E cumulative ledger after FL-011D, before FL-011I",
+  "companies": 5940,
+  "florida_im_canonical_companies": 849,
+  "new_im_created_fl004_plus_fl011d": 69,
+  "represented_im": 930,
+  "unresolved_im": 168,
+  "coverage": 84.7,
+  "mb_created": 0,
+  "wave1_public": 37
+}

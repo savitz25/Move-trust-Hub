@@ -1,0 +1,20 @@
+{
+  "google_places_requests": 0,
+  "unique_im": 1303,
+  "status_tally": {
+    "active": 1098,
+    "expired": 104,
+    "unknown": 101
+  },
+  "active": 1098,
+  "represented_operational_psa_linked": 941,
+  "unresolved_operational": 157,
+  "coverage_pct_operational": 85.7,
+  "partition_ok_operational": true,
+  "fail_closed_unresolved_hold": 168,
+  "fail_closed_represented": 930,
+  "fail_closed_coverage_pct": 84.7,
+  "hold_ims_with_psa_company_id": 11,
+  "note": "Operational PSA-linked IMs can exceed fail-closed 930 when a held IM still has a company_id (unsafe/family/duplicate). Official program coverage remains 930/1098 = 84.7% from FL-011E/F hold.",
+  "source": "approved FDACS snapshot + live provider_state_authority + FL-011F hold freeze"
+}
