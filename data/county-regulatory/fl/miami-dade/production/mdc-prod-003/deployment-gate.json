@@ -1,0 +1,12 @@
+{
+  "expected_merge_sha": "1f6ff4b24cc41b8dd88d2134e04fba90094cd02d",
+  "deployed_sha": "1735cd53fc50a5ec9fcc9365498778a7f3218da8",
+  "sha_match": "deployed_contains_merge",
+  "note": "Production serves main tip 1735cd53 which includes MDC-PROD-003 merge 1f6ff4b2 (also includes FL-011H #89).",
+  "deployment_id": "dpl_C5A6ykB1x5Qa3pkPCr1igXSQk6Zh",
+  "production_aliases": [
+    "https://www.movetrusthub.com"
+  ],
+  "cdn_company_max_age": 300,
+  "checked_at": "2026-08-23T00:10:53.168Z"
+}

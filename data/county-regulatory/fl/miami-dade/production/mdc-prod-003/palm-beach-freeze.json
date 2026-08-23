@@ -1,5 +1,5 @@
 {
-  "credentials": 46,
+  "total": 46,
   "published": 11,
   "internal_only": 35,
   "expected": {
@@ -8,5 +8,5 @@
     "internal_only": 35
   },
   "match": true,
-  "checked_at": "2026-08-22T23:25:00.738Z"
+  "mdc_task_mutations": 0
 }

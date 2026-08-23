@@ -1,0 +1,6 @@
+{
+  "internal_only": 61,
+  "published_non_canary": 0,
+  "public_credential_leakage": 0,
+  "pass": true
+}
