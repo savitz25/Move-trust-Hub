@@ -1,0 +1,14 @@
+{
+  "status": "FLORIDA COUNTY ENRICHMENT PRE-MATURITY AUDIT COMPLETE — BASELINE FROZEN",
+  "answer": "Florida county work added a production county-regulatory stack with 2 programs and 116 credentials on 113 distinct companies (43 PBC + 70 MDC − overlaps). 20 credentials are publicly profile-only; 96 remain internal research value. Architecture generalized shared public-read/RLS/publication gates with PBC/MDC adapters. Broward contributed source-access/PRA intelligence (0 production rows). Pinellas contributed ordinance/complaint policy intelligence (0 production rows). Trust/SEO/index/Google/PII impact: 0. Observation clocks unchanged; no maturity decisions.",
+  "production_regulatory_records": 116,
+  "distinct_companies_enriched": 113,
+  "current_public_evidence": 20,
+  "internal_only_evidence": 96,
+  "cross_county_companies": 0,
+  "new_companies_created": 0,
+  "wrong_company": 0,
+  "google": 0,
+  "consumer_pii": 0,
+  "production_writes": 0
+}

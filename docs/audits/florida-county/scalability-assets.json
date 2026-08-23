@@ -1,0 +1,17 @@
+{
+  "assets": [
+    "source acquisition template",
+    "regulatory-program abstraction",
+    "county credential storage",
+    "publication-state model",
+    "RLS model",
+    "server reader",
+    "public-read gate",
+    "profile adapter pattern",
+    "cache safety",
+    "multi-credential handling",
+    "observation clock model",
+    "PRA decision framework",
+    "complaint/disposition safety rules"
+  ]
+}

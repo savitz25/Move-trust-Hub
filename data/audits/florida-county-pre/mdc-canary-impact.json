@@ -1,0 +1,12 @@
+{
+  "wave_id": "MDC_MR_PUBLICATION_CANARY_V1",
+  "companies": 9,
+  "credentials": 9,
+  "profile_only": true,
+  "search_exposure": 0,
+  "directory_exposure": 0,
+  "compare_exposure": 0,
+  "structured_data_exposure": 0,
+  "trust_score_effect": 0,
+  "maturity_decision": "NOT_MADE_THIS_AUDIT"
+}

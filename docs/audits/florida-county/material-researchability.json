@@ -1,0 +1,8 @@
+{
+  "definition": "MATERIALLY_RESEARCHABLE_FROM_COUNTY_ENRICHMENT",
+  "criterion": "deterministic county credential AND >=2 of {status, dates, regulator, provenance, cross-jurisdiction, public presentation}",
+  "count": 113,
+  "pct_of_county_enriched": 100,
+  "pbc_pct": 100,
+  "mdc_pct": 100
+}

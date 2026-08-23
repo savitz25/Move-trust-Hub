@@ -1,0 +1,9 @@
+{
+  "palm_beach_created": 0,
+  "miami_dade_created": 0,
+  "broward_created": 0,
+  "pinellas_created": 0,
+  "total_distinct": 0,
+  "method": "County production attaches credentials to existing canonical companies. No county task created companies (PBC/MDC ingest manifests apply=company_create:false / company inserts 0).",
+  "source": "production_write_ledgers_and_task_docs"
+}

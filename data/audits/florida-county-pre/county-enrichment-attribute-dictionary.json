@@ -1,0 +1,20 @@
+{
+  "dictionary_id": "FL_COUNTY_ENRICHMENT_ATTRIBUTE_DICTIONARY_PRE_V1",
+  "attributes": [
+    "deterministic_county_regulatory_identity",
+    "county_program_identity",
+    "county_credential_number",
+    "raw_county_status",
+    "normalized_county_status",
+    "issue_or_start_date",
+    "expiration_or_end_date",
+    "county_regulator",
+    "source_url_or_retrieval_provenance",
+    "second_county_credential",
+    "second_county_jurisdiction",
+    "state_county_relationship",
+    "federal_county_relationship",
+    "public_county_regulatory_presentation",
+    "county_non_endorsement_source_semantics"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "pbc_distinct": 43,
+  "mdc_distinct": 70,
+  "cross_county_overlap": 0,
+  "total_distinct_production_county_enriched": 113,
+  "broward_pinellas_counted_as_enriched": false
+}

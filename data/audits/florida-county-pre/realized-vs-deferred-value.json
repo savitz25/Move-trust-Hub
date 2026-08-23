@@ -1,0 +1,22 @@
+{
+  "REALIZED_INTERNAL": {
+    "credentials": 116,
+    "companies": 113
+  },
+  "REALIZED_PUBLIC": {
+    "credentials": 20,
+    "companies": 20
+  },
+  "READY_BUT_NOT_PUBLIC": {
+    "pbc_internal": 35,
+    "mdc_internal": 61
+  },
+  "SOURCE_BLOCKED": {
+    "broward_roster": true,
+    "pra_sent": false
+  },
+  "MODEL_DEFERRED": {
+    "pinellas_complaint_observation": true,
+    "broward_vehicle_decal_extension": true
+  }
+}

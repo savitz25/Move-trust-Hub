@@ -1,0 +1,9 @@
+{
+  "county_evidence_only": 0,
+  "florida_state_plus_county": 104,
+  "federal_plus_county": 0,
+  "federal_plus_florida_state_plus_county": 9,
+  "two_production_counties": 0,
+  "state_plus_two_counties": 0,
+  "federal_plus_state_plus_two_counties": 0
+}

@@ -1,0 +1,20 @@
+{
+  "total_credentials": 46,
+  "distinct_companies": 43,
+  "published": 11,
+  "internal_only": 35,
+  "public_companies": 11,
+  "internal_only_companies": 32,
+  "wrong_company": 0,
+  "duplicates": 0,
+  "orphans": 0,
+  "multi_credential_companies": 3,
+  "credential_company_ratio": 1.07,
+  "expected": {
+    "credentials": 46,
+    "companies": 43,
+    "published": 11,
+    "internal": 35
+  },
+  "match": true
+}

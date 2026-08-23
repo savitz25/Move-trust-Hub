@@ -1,0 +1,11 @@
+{
+  "note": "Conceptual baseline immediately before PBC-PROD-001 foundation + Wave A ingest. Proven by migration introducing tables then first ingest.",
+  "county_regulatory_program": 0,
+  "provider_county_credential": 0,
+  "companies_with_county_evidence": 0,
+  "companies_with_public_county_evidence": 0,
+  "public_county_blocks": 0,
+  "trust_score_effect": 0,
+  "ranking_effect": 0,
+  "source": "schema_intro_PBC-PROD-001 + pre-ingest state"
+}

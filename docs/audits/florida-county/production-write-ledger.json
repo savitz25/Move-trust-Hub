@@ -1,0 +1,61 @@
+{
+  "note": "Reconstructed from merged production tasks. This audit performs 0 writes.",
+  "tasks": [
+    {
+      "task": "PBC-PROD-001",
+      "type": "INTERNAL_INGEST",
+      "programs_inserted": 1,
+      "credentials_inserted": 46,
+      "publication_transitions": 0,
+      "company_inserts": 0,
+      "company_updates": 0,
+      "contact_writes": 0,
+      "state_writes": 0
+    },
+    {
+      "task": "PBC-PROD-003",
+      "type": "PUBLICATION",
+      "programs_inserted": 0,
+      "credentials_inserted": 0,
+      "publication_transitions": 11,
+      "company_inserts": 0,
+      "contact_writes": 0,
+      "state_writes": 0,
+      "note": "11 INTERNAL_ONLY → PUBLISHED canary"
+    },
+    {
+      "task": "MDC-PROD-001",
+      "type": "INTERNAL_INGEST",
+      "programs_inserted": 1,
+      "credentials_inserted": 70,
+      "publication_transitions": 0,
+      "company_inserts": 0,
+      "contact_writes": 0,
+      "state_writes": 0
+    },
+    {
+      "task": "MDC-PROD-003",
+      "type": "PUBLICATION",
+      "programs_inserted": 0,
+      "credentials_inserted": 0,
+      "publication_transitions": 9,
+      "company_inserts": 0,
+      "contact_writes": 0,
+      "state_writes": 0,
+      "note": "9 INTERNAL_ONLY → PUBLISHED canary"
+    },
+    {
+      "task": "BROWARD-PROD-001",
+      "type": "BLOCKED_SOURCE_ACCESS",
+      "programs_inserted": 0,
+      "credentials_inserted": 0
+    },
+    {
+      "task": "PINELLAS-PROD-001",
+      "type": "READINESS",
+      "programs_inserted": 0,
+      "credentials_inserted": 0
+    }
+  ],
+  "audit_task_writes": 0
+}

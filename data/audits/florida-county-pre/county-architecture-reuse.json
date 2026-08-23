@@ -1,0 +1,13 @@
+{
+  "county_regulatory_program": true,
+  "provider_county_credential": true,
+  "evidence_publication_state": true,
+  "server_only_public_read": true,
+  "anonymous_company_gate": true,
+  "published_gate": true,
+  "direct_table_rls_deny": true,
+  "sanitized_dto": true,
+  "county_adapter_presentation_pattern": true,
+  "bounded_cache_behavior": true,
+  "generalized_during": "MDC-PROD-003 shared public-read gate/reader"
+}

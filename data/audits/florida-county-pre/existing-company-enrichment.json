@@ -1,0 +1,2058 @@
+{
+  "wave_id": "FL_COUNTY_EXISTING_COMPANY_ENRICHMENT_PRE_V1",
+  "count": 113,
+  "rows": [
+    {
+      "company_id": "fl-im-27",
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00002",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-106",
+      "slug": "raul-s-moving-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00015",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-125",
+      "slug": "gomez-moving-co-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00018",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-366",
+      "slug": "homestead-transfer-storage-co",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00049",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-160",
+      "slug": "small-time-movers-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00067",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1573",
+      "slug": "mudanzas-diaz-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00068",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-333",
+      "slug": "genesis-moving-storage-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00113",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-260",
+      "slug": "millennium-relocation-services-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00207",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-607",
+      "slug": "south-florida-van-line-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00278",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-512",
+      "slug": "south-express-moving",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00310",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-22",
+      "slug": "fuentes-moving-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00317",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-810",
+      "slug": "a-1-southeast-moving-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00332",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-668",
+      "slug": "johnny-moving-and-delivery-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00338",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-500",
+      "slug": "brickell-moving-and-packing-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00366",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2724",
+      "slug": "jesus-moving-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00378",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1503",
+      "slug": "luis-and-son-moving-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00416",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1100",
+      "slug": "1-best-miami-movers-2-boynton-beach-movers-3-deerfield-beach-moving-stor",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00444",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1079",
+      "slug": "a-b-c-moving-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00449",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1214",
+      "slug": "powerloaders",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00450",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1319",
+      "slug": "american-moving-packaging-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00458",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "usdot-1329594",
+      "slug": "nobel-van-lines",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00476",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-2476",
+      "slug": "torito-s-moving-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-00570",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2442",
+      "slug": "sainz-moving-delivery",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01006",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1689",
+      "slug": "blason-int-l-movers",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01016",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2474",
+      "slug": "varela-moving-pickup-delivery-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01020",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1624",
+      "slug": "orellana-av-moving-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01029",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1723",
+      "slug": "1-24-moving-2-pink-truck-moving-3-skyroad-moving",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01045",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2549",
+      "slug": "tacha-s-movi-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01049",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2983",
+      "slug": "inter-american-movers-and-forwarders-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01054",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2551",
+      "slug": "ojeda-moving-and-delivery-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01074",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2446",
+      "slug": "martinez-moving",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01079",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2051",
+      "slug": "same-day-moving-storage-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01109",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2478",
+      "slug": "shark-junior-l-l-c",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01137",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2239",
+      "slug": "sf-local-moving-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01139",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2467",
+      "slug": "cuba-moving-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01140",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2438",
+      "slug": "chiquis-moving-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01141",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3470",
+      "slug": "bermen-moving-delivery-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01147",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2284",
+      "slug": "nina-international-transport-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01164",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2781",
+      "slug": "mancav-movers",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01192",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2606",
+      "slug": "wilfredo-s-moving",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01208",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "usdot-3080327",
+      "slug": "dixie-movers",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01209",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-2463",
+      "slug": "quintero-delivery-moving-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01216",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "pro-movers-2",
+      "slug": "pro-movers-2",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01221",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-3034",
+      "slug": "related-moving-service-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01237",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2830",
+      "slug": "metayer-moving-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01244",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4103",
+      "slug": "an-mudanzas-delivery-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01249",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2986",
+      "slug": "j-v-express-deliveries-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01253",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2521",
+      "slug": "xpress-relocations-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01267",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3135",
+      "slug": "1-a1-fargo-van-and-storage-2-american-fargo",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01283",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3245",
+      "slug": "your-stuff-in-the-truck-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01295",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3250",
+      "slug": "online-movers-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01296",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3395",
+      "slug": "on-point-moving-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-01314",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3382",
+      "slug": "p-p-moving-and-delivery-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-092140",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3711",
+      "slug": "total-moving-corporation",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-092297",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3385",
+      "slug": "global-movers-relocators",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-092523",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3718",
+      "slug": "confimove",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-092562",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4075",
+      "slug": "happy-moving-happy-life-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-093002",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3812",
+      "slug": "benny-and-the-moving-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-093500",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4203",
+      "slug": "anthony-s-b-delivery-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-094574",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4019",
+      "slug": "octoplus-moving-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-095117",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3869",
+      "slug": "movamove",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-095236",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3978",
+      "slug": "qba-multiservices-inc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-095332",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2293",
+      "slug": "brautigam-delivery-corp",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-095349",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4089",
+      "slug": "roy-ois-moving-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-095401",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4154",
+      "slug": "expremoving-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-095487",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4044",
+      "slug": "nikki-moving-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-095542",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4006",
+      "slug": "johnson-storage-moving-co-miami-l-l-c",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-095935",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4084",
+      "slug": "aycs-delivery-service-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-096207",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4120",
+      "slug": "adelit-llc",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-096653",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4179",
+      "slug": "miami-moving-company",
+      "counties": [
+        "miami-dade"
+      ],
+      "credentials": [
+        {
+          "number": "MR-097254",
+          "source": "mdc-moving-business-registration",
+          "status": "ISSUED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "america-s-family-moving-and-storage-llc",
+      "slug": "america-s-family-moving-and-storage-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1029",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-3378",
+      "slug": "blue-line-moving-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1062",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        },
+        {
+          "number": "MV1229",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "usdot-2562486",
+      "slug": "good-greek-moving-and-storage",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1097",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "usdot-1568346",
+      "slug": "gm-van-lines-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1108",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-2520",
+      "slug": "larkins-moving-delivery-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1123",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2565",
+      "slug": "qwik-moving-and-storage",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1128",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4147",
+      "slug": "gator-relocators-moving-storage-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1130",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        },
+        {
+          "number": "MV1174",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3223",
+      "slug": "e-c-moving-delivery-service-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1132",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2731",
+      "slug": "bald-eagle-moving-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1147",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3304",
+      "slug": "e-and-c-removal-and-delivery-services-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1175",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3048",
+      "slug": "jay-c-moving-company-hauling-cargo-delivery-and-more",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1184",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "patriot-moving-and-storage",
+      "slug": "patriot-moving-and-storage",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1191",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-2788",
+      "slug": "silver-lining-moving-delivery-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1210",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3320",
+      "slug": "1-ashley-furniture-homestore-2-kc-cafe-wine-bar-3-kevin-charles-cafe",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1224",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3408",
+      "slug": "bernard-s-reliable-moving-service-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1226",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3418",
+      "slug": "juan-got-you-moving-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1231",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2770",
+      "slug": "stable-solutions-fla-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1238",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2932",
+      "slug": "established-moving-of-south-florida-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1241",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3417",
+      "slug": "allexcellent-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1244",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-400",
+      "slug": "u-me-moving-storage",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV13",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "whatamove",
+      "slug": "whatamove",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1315",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-3903",
+      "slug": "csv-moving-and-delivery-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1316",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "usdot-709590",
+      "slug": "forward-van-lines",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1323",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-3867",
+      "slug": "moving-with-sebastian-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1325",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-4097",
+      "slug": "champions-moving-and-storage-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV1328",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-114",
+      "slug": "merritt-transfer-and-storage-co-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV15",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-2589",
+      "slug": "perez-brothers-moving-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV18",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-688",
+      "slug": "smooth-movers-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV23",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "usdot-1917905",
+      "slug": "willie-s-transfer-storage",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV3",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-893",
+      "slug": "quicksilver-services-corp",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV344",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3185",
+      "slug": "express-moving-usa-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV367",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-182",
+      "slug": "brandon-transfer-storage-co-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV47",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "usdot-3034432",
+      "slug": "lee-s-moving-company-usdot-3034432",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV50",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        },
+        {
+          "number": "MV868",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-1058",
+      "slug": "supreme-relocation-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV624",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-408",
+      "slug": "designers-logistics-support-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV747",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-756",
+      "slug": "dixon-moving",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV75",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "usdot-381994",
+      "slug": "joseph-barton",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV773",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-1399",
+      "slug": "pack-on-the-go-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV802",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-2182",
+      "slug": "tk-fine-arts-services",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV809",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-88",
+      "slug": "dependable-pro-movers-inc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV86",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "fl-im-3437",
+      "slug": "village-moving-services-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV890",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    },
+    {
+      "company_id": "usdot-3199979",
+      "slug": "father-son-moving-storage",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV954",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "PUBLISHED"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": true,
+      "public_profile_county": true
+    },
+    {
+      "company_id": "fl-im-1913",
+      "slug": "aa-condo-movers-llc",
+      "counties": [
+        "palm-beach"
+      ],
+      "credentials": [
+        {
+          "number": "MV969",
+          "source": "pbc-consumer-affairs-moving-business-permit",
+          "status": "LICENSED",
+          "publication": "INTERNAL_ONLY"
+        }
+      ],
+      "state_authority": true,
+      "federal_usdot": false,
+      "public_profile_county": false
+    }
+  ]
+}
