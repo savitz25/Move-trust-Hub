@@ -1,0 +1,14 @@
+{
+  "google_places_requests": 0,
+  "unique_mb": 29,
+  "status_tally": {
+    "active": 26,
+    "expired": 2,
+    "unknown": 1
+  },
+  "active": 26,
+  "represented": 19,
+  "unrepresented_active": 7,
+  "coverage_pct": 73.1,
+  "partition_ok": true
+}

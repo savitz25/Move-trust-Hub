@@ -1,0 +1,12 @@
+{
+  "google_places_requests": 0,
+  "DISTINCT_EXISTING_COMPANY_ENRICHED": 94,
+  "events": {
+    "fl002_verified": 88,
+    "fl004_link": 1,
+    "fl006_suddath_attach": 1,
+    "fl011d_link": 81,
+    "fl011i_link": 1
+  },
+  "event_count": 172
+}

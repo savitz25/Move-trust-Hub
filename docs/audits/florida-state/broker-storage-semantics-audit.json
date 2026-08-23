@@ -1,0 +1,7 @@
+{
+  "google_places_requests": 0,
+  "SCHEMA_STORAGE_COMPATIBILITY_ONLY": 17,
+  "HAS_AUTHORITATIVE_FEDERAL_ID": 0,
+  "without_federal_authority_evidence": 17,
+  "note": "service_scope=interstate on fl-mb-* is schema CHECK compatibility, not FMCSA interstate broker authority."
+}

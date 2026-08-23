@@ -1,0 +1,137 @@
+{
+  "google_places_requests": 0,
+  "rows": [
+    {
+      "task": "FL-001",
+      "classification": "RESEARCH_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Discovery; no company writes."
+    },
+    {
+      "task": "FL-002",
+      "classification": "INTERNAL_WRITE",
+      "productionCompanyDelta": 0,
+      "notes": "3875 source observations; 0 company inserts; 0 canonical promotions."
+    },
+    {
+      "task": "FL-003",
+      "classification": "RESEARCH_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Qualification cohort; no writes."
+    },
+    {
+      "task": "FL-004",
+      "classification": "INTERNAL_WRITE",
+      "productionCompanyDelta": 37,
+      "notes": "37 INSERT INGESTED + 1 LINK; 2 Suddath HOLD."
+    },
+    {
+      "task": "FL-005",
+      "classification": "QA_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Internal profile QA."
+    },
+    {
+      "task": "FL-006",
+      "classification": "INTERNAL_WRITE",
+      "productionCompanyDelta": 0,
+      "notes": "Suddath IM3813 attach to existing wa-hg-064493; no new company."
+    },
+    {
+      "task": "FL-007",
+      "classification": "MODEL_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Cross-state holds; no bulk writes."
+    },
+    {
+      "task": "FL-008",
+      "classification": "RESEARCH_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Publication readiness; no apply."
+    },
+    {
+      "task": "FL-009",
+      "classification": "RESEARCH_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Wave 1 manifest prep apply=false."
+    },
+    {
+      "task": "FL-010",
+      "classification": "QA_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Blocked; not applied."
+    },
+    {
+      "task": "FL-010A",
+      "classification": "PUBLICATION_WRITE",
+      "productionCompanyDelta": 0,
+      "notes": "37 INGESTED→PUBLISHABLE; companies count 0; indexable 0."
+    },
+    {
+      "task": "FL-010R",
+      "classification": "REMEDIATION",
+      "productionCompanyDelta": 0,
+      "notes": "Hard-404 remediation."
+    },
+    {
+      "task": "FL-011",
+      "classification": "OBSERVATION",
+      "productionCompanyDelta": 0,
+      "notes": "Wave 1 observation."
+    },
+    {
+      "task": "FL-011A",
+      "classification": "REMEDIATION",
+      "productionCompanyDelta": 0,
+      "notes": "Wave 1 FDACS shell copy."
+    },
+    {
+      "task": "FL-011B",
+      "classification": "INTERNAL_WRITE",
+      "productionCompanyDelta": 0,
+      "notes": "PSA ingest/staging; company count 0."
+    },
+    {
+      "task": "FL-011C",
+      "classification": "RESEARCH_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "281 gap classified; apply=false."
+    },
+    {
+      "task": "FL-011D",
+      "classification": "INTERNAL_WRITE",
+      "productionCompanyDelta": 32,
+      "notes": "32 INSERT + 81 LINK; 168 withheld."
+    },
+    {
+      "task": "FL-011E",
+      "classification": "QA_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Coverage recompute 930/1098."
+    },
+    {
+      "task": "FL-011F",
+      "classification": "RESEARCH_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Unresolved 168; ready 0."
+    },
+    {
+      "task": "FL-011G",
+      "classification": "OBSERVATION",
+      "productionCompanyDelta": 0,
+      "notes": "Checkpoint; FL-012 wait."
+    },
+    {
+      "task": "FL-011H",
+      "classification": "RESEARCH_ONLY",
+      "productionCompanyDelta": 0,
+      "notes": "Broker model; apply=false draft."
+    },
+    {
+      "task": "FL-011I",
+      "classification": "INTERNAL_WRITE",
+      "productionCompanyDelta": 17,
+      "notes": "17 fl-mb INSERT + 1 MB LINK; 18 PSA ATTACH."
+    }
+  ]
+}

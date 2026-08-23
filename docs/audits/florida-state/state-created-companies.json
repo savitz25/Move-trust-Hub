@@ -1,0 +1,14 @@
+{
+  "google_places_requests": 0,
+  "IM_MOVER_CREATED": 69,
+  "MB_BROKER_CREATED": 17,
+  "OTHER_STATE_CREATED": 0,
+  "total_distinct": 86,
+  "live_present": 86,
+  "missing": [],
+  "provenance": {
+    "fl004_insert": 37,
+    "fl011d_insert": 32,
+    "fl011i_insert": 17
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "google_places_requests": 0,
+  "represented": 19,
+  "identity_review": 7,
+  "status_blocked": 1,
+  "expired": 2,
+  "conflict": 0,
+  "new_broker_only": 17,
+  "existing_newly_enriched": 1,
+  "already_modeled_before_fl011i": 1,
+  "mover_and_broker": 1
+}

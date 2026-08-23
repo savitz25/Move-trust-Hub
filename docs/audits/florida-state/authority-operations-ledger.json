@@ -1,0 +1,16 @@
+{
+  "google_places_requests": 0,
+  "IM": {
+    "FL004_ATTACH": 37,
+    "FL011D_ATTACH": 32,
+    "FL011D_NOOP": 81,
+    "FL006_ATTACH": 1,
+    "INSERT_new_rows": 0,
+    "note": "011B ingested PSA orphans; later tasks ATTACHED. Row count stayed 1359 through FL-011I."
+  },
+  "MB": {
+    "FL011I_ATTACH": 18,
+    "FL011I_INSERT": 0,
+    "already_modeled_mb171": 1
+  }
+}

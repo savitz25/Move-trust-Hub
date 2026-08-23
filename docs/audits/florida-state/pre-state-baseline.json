@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "source": "FL-004 before-apply freeze + FL-002 company freeze (observations existed; no state companies yet)",
+  "companies_fl002": 4941,
+  "indexable_fl002": 4905,
+  "companies_pre_fl004": 5870,
+  "indexable": 4905,
+  "florida_state_created_companies": 0,
+  "fdacs_linked_companies": 0,
+  "note": "Company count grew 4941→5870 from non-state (federal) work between FL-002 and FL-004. That growth is excluded from state impact."
+}

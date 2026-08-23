@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "ready_pool": 720,
+  "draft_count": 50,
+  "draft_hash": "a5d15f3dca32a59a",
+  "recomputed_hash": "a5d15f3dca32a59a",
+  "apply": false,
+  "expected_hash": "a5d15f3dca32a59a",
+  "expected_count": 50,
+  "publication_writes": 0
+}
