@@ -1,0 +1,14 @@
+{
+  "task": "PINELLAS-PROD-001",
+  "model": "ORDINANCE_REGULATION_WITHOUT_SEPARATE_PUBLIC_CREDENTIAL",
+  "roster": "NO_SEPARATE_ROSTER_IDENTIFIED",
+  "fake_credential_created": false,
+  "provider_county_credential_pinellas_rows": 0,
+  "notes": [
+    "Pinellas regulates moving practices by ordinance (Monitoring program taxonomy historically).",
+    "No separate public mover license/registration/permit roster identified.",
+    "Do not create provider_county_credential rows to imitate PBC/MDC."
+  ],
+  "landing_revalidated": true,
+  "landing_error": null
+}

@@ -1,0 +1,12 @@
+{
+  "agency": "Pinellas County Consumer Protection",
+  "vendor": "Accela Civic Platform",
+  "landing": "https://pinellas.gov/services/find-a-business-complaint-history/",
+  "report_url": "https://aca-prod.accela.com/PINELLAS/Report/ReportParameter.aspx?module=ConsumerProt&reportID=31870&reportType=LINK_REPORT_LIST",
+  "history_window_years": 5,
+  "access": "Public browser business-name form → PDF report",
+  "structured_export_api": false,
+  "landing_http_ok": true,
+  "disposition_on_pdf": "RECORD STATUS field carries disposition-like values",
+  "sample_or_full": "SAMPLE_ONLY for FL-C007 package; bulk universe PRA_REQUIRED"
+}

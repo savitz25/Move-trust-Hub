@@ -1,0 +1,26 @@
+{
+  "publish": false,
+  "intended_future_state": "INTERNAL_ONLY",
+  "trust_score_effect": 0,
+  "ranking_effect": 0,
+  "search_effect": 0,
+  "directory_effect": 0,
+  "compare_effect": 0,
+  "seo_effect": 0,
+  "prohibited_language": [
+    "Complaint upheld",
+    "Violation confirmed",
+    "Bad mover",
+    "Unsafe mover",
+    "Fraud",
+    "Guilty",
+    "Government violation",
+    "Complaint-free",
+    "No complaints",
+    "Clean record"
+  ],
+  "draft_copy_only": {
+    "heading": "Pinellas County Complaint History",
+    "disclaimer": "A complaint record does not by itself establish wrongdoing. Status and disposition are shown separately when available."
+  }
+}

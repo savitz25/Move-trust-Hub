@@ -1,0 +1,10 @@
+{
+  "note": "Accela Civic Platform complaint history is a browser form that returns a PDF. PINELLAS-PROD-001 revalidated the official landing + Accela report URL. Interactive PDF generation for each cohort company was not automated (would risk incomplete/non-deterministic capture). Historical SAMPLE_ONLY PDF (partial-name Moving) remains the official case artifact set.",
+  "searches_executed": 0,
+  "nonzero": 0,
+  "zero": 0,
+  "ambiguous": 0,
+  "errors": 0,
+  "cohort_prepared": 6,
+  "reason_no_automated_search": "Official interface is name-form → PDF report, not machine-readable export/API. Fail closed: do not invent search results."
+}

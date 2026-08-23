@@ -1,0 +1,19 @@
+{
+  "historical_complaint_rows": 24,
+  "historical_unique_cases": 24,
+  "historical_dispositions": 24,
+  "historical_deterministic_company_links": 0,
+  "new_searches_executed": 0,
+  "new_nonzero_searches": 0,
+  "new_zero_result_searches": 0,
+  "new_official_cases_recovered": 0,
+  "total_unique_official_cases": 24,
+  "cases_canonical_link_ready": 0,
+  "distinct_companies_enriched_if_staged": 0,
+  "identity_review_cases": 24,
+  "pii_held_rejected": 0,
+  "formal_enforcement_events": 0,
+  "credential_rows": 0,
+  "production_writes": 0,
+  "draft_rows_do_not_count_as_production_enrichment": true
+}
