@@ -1,0 +1,28 @@
+{
+  "task": "BROWARD-PROD-001",
+  "mover_registration": {
+    "classification": "REUSE_AS_IS",
+    "tables": [
+      "county_regulatory_program",
+      "provider_county_credential"
+    ],
+    "note": "Generic county credential model used by PBC/MDC is structurally sufficient for Broward registration certificates once rows exist."
+  },
+  "vehicle_decal": {
+    "classification": "MINIMAL_EXTENSION_REQUIRED",
+    "options": [
+      "child credential relation under same company + parent registration",
+      "secondary evidence / observation model",
+      "future bounded extension table"
+    ],
+    "migration_in_this_task": false,
+    "note": "Do not collapse decal numbers into mover-registration credential_number."
+  },
+  "complaints_enforcement": {
+    "classification": "REUSE_AS_IS",
+    "note": "Keep as separate observation/enforcement events; do not merge into license DTO."
+  },
+  "overall_for_registration_ingest": "REUSE_AS_IS",
+  "overall_for_full_broward_stack": "MINIMAL_EXTENSION_REQUIRED",
+  "model_not_safe": false
+}

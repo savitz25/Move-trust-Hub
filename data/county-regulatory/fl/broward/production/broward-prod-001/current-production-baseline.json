@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-08-23T01:04:36.285Z",
+  "db_live": false,
+  "db_error": "column \"program_key\" does not exist",
+  "pbc": {
+    "total": 46,
+    "published": 11,
+    "internal_only": 35
+  },
+  "mdc": {
+    "total": 70,
+    "published": 9,
+    "internal_only": 61
+  },
+  "broward_existing_credentials": 0,
+  "broward_existing_programs": null,
+  "production_db_writes": 0
+}

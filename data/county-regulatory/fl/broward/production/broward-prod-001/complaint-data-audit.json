@@ -1,0 +1,9 @@
+{
+  "task": "BROWARD-PROD-001",
+  "historical_rows": 0,
+  "recovered_rows": 0,
+  "classification": "PRA_REQUIRED",
+  "allegation_equals_violation": false,
+  "consumer_pii": 0,
+  "note": "Public complaint intake exists; no public historical disposition database recovered."
+}

@@ -1,0 +1,7 @@
+{
+  "task": "BROWARD-PROD-001",
+  "historical_process_documented": true,
+  "recovered_rows": 0,
+  "classification": "PRA_REQUIRED",
+  "note": "Hearing/suspension/revocation process documented in ordinance and Consumer Affairs PDFs; zero row-level enforcement events recovered."
+}

@@ -1,0 +1,20 @@
+{
+  "task": "BROWARD-PROD-001",
+  "records": 0,
+  "relationship_model": {
+    "company": "→",
+    "county_mover_registration": "→",
+    "vehicle_decal_credentials": "(subordinate evidence)"
+  },
+  "publication_safety": {
+    "vin": "INTERNAL_ONLY / NOT_NEEDED for public profile by default",
+    "plate": "INTERNAL_ONLY / NOT_NEEDED for public profile by default",
+    "public_safe": [
+      "registered_vehicle_or_decal_count",
+      "current_regulatory_decal_evidence_flag",
+      "regulator_source"
+    ]
+  },
+  "treat_decal_as_mover_registration": false,
+  "completeness": "PRA_REQUIRED"
+}

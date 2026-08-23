@@ -1,0 +1,7 @@
+{
+  "total": 46,
+  "published": 11,
+  "internal_only": 35,
+  "expected_note": "Recomputed live; MDC/Broward tasks must not mutate. Observation maturity 2026-08-29T19:56:00Z unchanged by this task.",
+  "broward_task_pbc_writes": 0
+}

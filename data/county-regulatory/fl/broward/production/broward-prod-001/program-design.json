@@ -1,0 +1,21 @@
+{
+  "task": "BROWARD-PROD-001",
+  "apply": false,
+  "fips": "12011",
+  "program_key_proposed": "broward-consumer-affairs-mover-registration",
+  "regulator": "Broward County Consumer Protection Division — Consumer Affairs Division (CAD)",
+  "jurisdiction": "Broward County, Florida",
+  "credential_type": "Broward County Mover Registration",
+  "official_terms": [
+    "registration",
+    "registration certificate"
+  ],
+  "source": "Broward County Consumer Affairs official records (PRA extract when obtained)",
+  "authority_semantics": "County registration required to engage in household-goods moving business in Broward County; separate from FDACS IM and FMCSA.",
+  "identifier_format": "UNKNOWN_UNTIL_ROSTER — do not invent",
+  "freshness_policy": "TBD after PRA extract (expected annual registration cycle)",
+  "provenance_required": true,
+  "evidence_publication_default": "INTERNAL_ONLY",
+  "structured_data_hold": "HOLD_FROM_STRUCTURED_DATA_V1",
+  "production_writes": 0
+}
