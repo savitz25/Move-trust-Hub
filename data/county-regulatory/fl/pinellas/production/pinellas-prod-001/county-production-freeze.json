@@ -1,0 +1,8 @@
+{
+  "pbc_writes": 0,
+  "mdc_writes": 0,
+  "broward_writes": 0,
+  "pinellas_production_writes": 0,
+  "county_credential_writes": 0,
+  "fake_pinellas_credentials": 0
+}

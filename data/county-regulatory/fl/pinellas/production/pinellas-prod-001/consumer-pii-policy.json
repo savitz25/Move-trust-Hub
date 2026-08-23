@@ -1,0 +1,15 @@
+{
+  "never_commit": [
+    "consumer_name",
+    "consumer_phone",
+    "consumer_email",
+    "consumer_street_address",
+    "payment_information",
+    "claimant_narrative_with_identifying_details",
+    "signatures",
+    "account_numbers"
+  ],
+  "associated_names_rule": "Official ASSOCIATED NAMES from Accela retained only as business-associated identity fields when present; never treated as complainant PII.",
+  "consumer_pii_committed": 0,
+  "consumer_pii_published": 0
+}

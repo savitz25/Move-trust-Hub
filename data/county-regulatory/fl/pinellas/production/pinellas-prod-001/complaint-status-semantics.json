@@ -1,0 +1,19 @@
+{
+  "raw_statuses_preserved": [
+    "No Compromise",
+    "Resolved",
+    "Judicial System",
+    "Referred",
+    "Closed: Resolved-Adjusted",
+    "Closed-Criminal"
+  ],
+  "remapping_forbidden": [
+    "GUILTY",
+    "VIOLATION CONFIRMED",
+    "BAD MOVER",
+    "COMPLAINT UPHELD"
+  ],
+  "complaint_vs_disposition": "SEPARATE",
+  "allegation_equals_violation": false,
+  "complaint_equals_enforcement": false
+}

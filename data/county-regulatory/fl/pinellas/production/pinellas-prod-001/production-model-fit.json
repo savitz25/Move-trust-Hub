@@ -1,0 +1,26 @@
+{
+  "classification": "MINIMAL_EXTENSION_REQUIRED",
+  "reason": "No case-level county complaint/disposition observation table exists. provider_contact_observation is contact-only. Aggregate FMCSA/BBB complaint counters on companies are not suitable for Pinellas Accela case rows. Do NOT force into provider_county_credential.",
+  "tables_observed": [
+    "provider_contact_observation"
+  ],
+  "required_abilities": [
+    "canonical_company_link",
+    "jurisdiction",
+    "agency",
+    "event_case_identifier",
+    "event_date",
+    "complaint_category",
+    "raw_status",
+    "normalized_status",
+    "disposition",
+    "source",
+    "provenance",
+    "retrieval_date",
+    "publication_state",
+    "pii_safe_payload",
+    "allegation_disposition_separation"
+  ],
+  "migration_in_this_task": false,
+  "force_into_provider_county_credential": false
+}

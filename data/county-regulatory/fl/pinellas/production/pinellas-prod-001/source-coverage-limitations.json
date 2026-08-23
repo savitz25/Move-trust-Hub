@@ -1,0 +1,7 @@
+{
+  "completeness_class": "SAMPLE_ONLY",
+  "timeframe": "official_5_year_business_complaint_history",
+  "zero_result_semantics": "NO_COMPLAINT_RECORD_RETURNED_FOR_SEARCH_WINDOW",
+  "forbidden_zero_label": "COMPLAINT_FREE",
+  "do_not_publish_lifetime_counts": true
+}

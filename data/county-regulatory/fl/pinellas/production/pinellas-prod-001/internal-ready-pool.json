@@ -1,0 +1,9 @@
+{
+  "wave_id": "PINELLAS_COMPLAINT_INTERNAL_READY_POOL_V1",
+  "apply": false,
+  "cases": 0,
+  "distinct_companies": 0,
+  "disposition_present": 0,
+  "disposition_missing": 0,
+  "reason": "All historical Accela complaint rows remain BUSINESS_IDENTITY_REVIEW under fail-closed name-only rule. No CANONICAL_LINK_READY cases."
+}

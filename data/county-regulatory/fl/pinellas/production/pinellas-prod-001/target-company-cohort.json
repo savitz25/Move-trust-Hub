@@ -1,0 +1,49 @@
+{
+  "methodology": "EXISTING MoveTrustHub companies with repository/DB physical_address Pinellas municipality or 337xx ZIP evidence. Not derived from complaint results. No Google.",
+  "companies": [
+    {
+      "company_id": "fl-im-2141",
+      "slug": "atlantic-project-solutions",
+      "name": "Atlantic Project Solutions",
+      "publication_state": "PUBLISHABLE",
+      "presence_evidence": "physical_address_pinellas_municipality_or_337xx"
+    },
+    {
+      "company_id": "fl-im-2726",
+      "slug": "big-man-s-moving-company-llc",
+      "name": "BIG MAN'S MOVING COMPANY LLC",
+      "publication_state": "PUBLISHABLE",
+      "presence_evidence": "physical_address_pinellas_municipality_or_337xx"
+    },
+    {
+      "company_id": "fl-im-1025",
+      "slug": "gentletouch-moving-company",
+      "name": "Gentletouch Moving Company",
+      "publication_state": "PUBLISHABLE",
+      "presence_evidence": "physical_address_pinellas_municipality_or_337xx"
+    },
+    {
+      "company_id": "fl-im-3433",
+      "slug": "parris-moving-llc",
+      "name": "PARRIS MOVING LLC",
+      "publication_state": "PUBLISHABLE",
+      "presence_evidence": "physical_address_pinellas_municipality_or_337xx"
+    },
+    {
+      "company_id": "fl-im-150001",
+      "slug": "pink-zebra-moving-of-clearwater-fl",
+      "name": "PINK ZEBRA MOVING OF CLEARWATER FL",
+      "publication_state": "PUBLISHABLE",
+      "presence_evidence": "physical_address_pinellas_municipality_or_337xx"
+    },
+    {
+      "company_id": "pods",
+      "slug": "pods",
+      "name": "Pods",
+      "publication_state": "PUBLISHABLE",
+      "presence_evidence": "physical_address_pinellas_municipality_or_337xx"
+    }
+  ],
+  "count": 6,
+  "google_places_api_requests": 0
+}

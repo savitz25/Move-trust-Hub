@@ -1,0 +1,19 @@
+{
+  "task": "FL-C007",
+  "credential_model": "ORDINANCE_REGULATION_WITHOUT_SEPARATE_PUBLIC_CREDENTIAL",
+  "roster_completeness": "NO_SEPARATE_ROSTER_IDENTIFIED",
+  "complaint_case_rows": 24,
+  "complaint_disposition_rows": 24,
+  "enforcement_rows": 0,
+  "official_record_status_values": [
+    "No Compromise",
+    "Resolved",
+    "Judicial System",
+    "Referred",
+    "Closed: Resolved-Adjusted",
+    "Closed-Criminal"
+  ],
+  "package_hash": "66ad626deb8cf6b0",
+  "historical_deterministic_links": 0,
+  "historical_review_required": 24
+}

@@ -1,0 +1,14 @@
+{
+  "records_normalized": 24,
+  "fields": [
+    "record_id",
+    "business_name",
+    "associated_names",
+    "date_opened",
+    "date_closed",
+    "record_status_raw",
+    "source_url",
+    "retrieval_date"
+  ],
+  "manufactured_fields": 0
+}
