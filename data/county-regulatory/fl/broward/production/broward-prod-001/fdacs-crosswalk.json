@@ -1,0 +1,13 @@
+{
+  "task": "BROWARD-PROD-001",
+  "rows_evaluated": 0,
+  "FDACS_EXACT_IDENTIFIER": 0,
+  "FDACS_EXACT_LEGAL_PLUS_PHONE": 0,
+  "FDACS_EXACT_LEGAL_PLUS_ADDRESS": 0,
+  "FDACS_REVIEW_REQUIRED": 0,
+  "FDACS_NOT_FOUND": 0,
+  "CONFLICT": 0,
+  "name_only_matches": 0,
+  "wrong_company": 0,
+  "note": "No Broward rows to crosswalk until PRA delivers official roster."
+}

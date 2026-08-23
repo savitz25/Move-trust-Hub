@@ -1,0 +1,33 @@
+{
+  "task": "BROWARD-PROD-001",
+  "palm_beach": {
+    "public_roster": true,
+    "credential": "MV permit",
+    "published_canary": true
+  },
+  "miami_dade": {
+    "public_roster": true,
+    "credential": "MR registration",
+    "published_canary": true
+  },
+  "broward": {
+    "public_roster": false,
+    "credential": "registration certificate (documented)",
+    "published_canary": false,
+    "pra_required": true
+  },
+  "reusable": [
+    "county_regulatory_program",
+    "provider_county_credential",
+    "company anonymous-public gate",
+    "evidence_publication_state",
+    "provenance",
+    "RLS closed",
+    "server-only public read",
+    "HOLD_FROM_STRUCTURED_DATA_V1"
+  ],
+  "broward_specific_extensions": [
+    "vehicle/decal child evidence (MINIMAL_EXTENSION_REQUIRED)",
+    "explicit enforcement/hearing stage modeling when rows exist"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "task": "BROWARD-PROD-001",
+  "recovery_status": "NOT_RECOVERED",
+  "completeness_class": "PRA_REQUIRED",
+  "records": [],
+  "count": 0,
+  "note": "Zero official mover-registration rows recovered. This file does not represent a successful empty roster download."
+}

@@ -1,0 +1,7 @@
+{
+  "decision": "PRA_REQUIRED",
+  "status": "BLOCKED — BROWARD OFFICIAL ROSTER REQUIRES PRA",
+  "records_recovered": 0,
+  "forced_cohort": false,
+  "reason": "Official Broward Consumer Affairs mover program is documented, but no public row-level registration roster/export/API is available for complete enumeration."
+}

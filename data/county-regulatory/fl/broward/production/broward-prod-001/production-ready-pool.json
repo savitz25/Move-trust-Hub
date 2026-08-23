@@ -1,0 +1,13 @@
+{
+  "wave_id": "BROWARD_MOVER_PRODUCTION_READY_POOL_V1",
+  "task": "BROWARD-PROD-001",
+  "apply": false,
+  "credential_rows": 0,
+  "distinct_companies": 0,
+  "CANONICAL_LINK_READY": 0,
+  "STATE_RECORD_ONLY": 0,
+  "COUNTY_ONLY_REVIEW": 0,
+  "REVIEW_REQUIRED": 0,
+  "CONFLICT": 0,
+  "reason": "No official roster recovered"
+}

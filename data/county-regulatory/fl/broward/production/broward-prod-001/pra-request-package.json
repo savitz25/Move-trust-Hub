@@ -1,0 +1,31 @@
+{
+  "package_id": "BROWARD_PRA_ROSTER_REQUEST_V1",
+  "task": "BROWARD-PROD-001",
+  "sent": false,
+  "agency": "Broward County Open Government — Public Records Request",
+  "agency_url": "https://www.broward.org/opengovernment/PRR",
+  "related_program": "Consumer Protection Division — Consumer Affairs (Movers)",
+  "preferred_formats": [
+    "CSV",
+    "XLSX",
+    "database export"
+  ],
+  "submission_method": "Submit via Broward County PRR web portal (or agency-instructed channel). DO NOT transmit until user explicitly authorizes.",
+  "request_text": "PUBLIC RECORDS REQUEST — Broward County Consumer Protection / Consumer Affairs\n\nRequester: MoveTrustHub (research / regulatory evidence project)\nAgency portal: https://www.broward.org/opengovernment/PRR\nDivision: Consumer Protection Division — Consumer Affairs (Movers program)\n\nREQUEST (structured datasets preferred; do not send consumer PII)\n\nPlease provide machine-readable extracts (CSV, XLSX, or database export) of the following public regulatory/business records maintained by Broward County Consumer Affairs regarding household-goods movers:\n\n1. Current mover / business registrations (complete current roster)\n2. Historical mover registrations (all retained historical registration rows)\n3. Registration number / registration certificate identifier\n4. Legal / business name\n5. DBA / trade name\n6. Registration status\n7. Issue date, expiration date, and renewal dates (as maintained)\n8. Florida FDACS Household Moving Services Registration / IM number (as maintained on the county registration file)\n9. Business / physical address fields maintained on the registration\n10. Public business phone and public business email (business contact fields only)\n11. Vehicle / decal permit records tied to each mover registration (decal/permit identifiers, status, dates; VIN/plate only if maintained as public regulatory fields — otherwise omit)\n12. Complaint records concerning movers with consumer personal identifiers removed/redacted\n13. Complaint dispositions / outcomes\n14. Citations, enforcement actions, Consumer Protection Board / hearing outcomes involving movers\n15. Suspension / revocation / denial history for mover registrations\n\nFORMAT PREFERENCE\n- Primary: CSV or XLSX or SQL/database export of existing structured fields\n- Secondary: PDF only if structured export is unavailable\n- Please do NOT produce thousands of individual application PDF scans if a database extract exists\n\nPII EXCLUSIONS (explicit)\nDo NOT provide:\n- consumer names\n- consumer phone numbers\n- consumer email addresses\n- consumer home addresses\n- payment / credit card / banking information\n- other consumer personal identifying information\n\nDATE SCOPE\n- Current roster: no artificial historical restriction (complete current population)\n- Historical registrations: all retained rows if available\n- Complaints / enforcement: if a practical bound is required by the agency, please state the available date range; preferred window is the most recent 7 years or the maximum retained period, whichever is less burdensome\n\nPURPOSE\nRegulatory evidence research for public consumer protection verification tooling. Not a commercial marketing list.\n\nPlease confirm estimated fees, timeline, and whether extracts can be provided electronically.\n",
+  "requested_datasets": [
+    "current_mover_registrations",
+    "historical_mover_registrations",
+    "registration_identifiers",
+    "legal_dba_names",
+    "status_dates",
+    "fdacs_im",
+    "business_address_phone_email",
+    "vehicle_decal_records",
+    "redacted_complaints",
+    "dispositions",
+    "enforcement_hearing_outcomes",
+    "suspension_revocation_history"
+  ],
+  "consumer_pii_requested": false,
+  "next_step": "WAIT FOR USER AUTHORIZATION TO SUBMIT THE PREPARED PUBLIC RECORDS REQUEST."
+}

@@ -1,0 +1,17 @@
+{
+  "task": "BROWARD-PROD-001",
+  "official_mover_records_recovered": 0,
+  "distinct_businesses": 0,
+  "current_credentials": 0,
+  "fdacs_deterministic": 0,
+  "canonical_link_ready": 0,
+  "state_record_only": 0,
+  "county_only_review": 0,
+  "vehicle_decal_records": 0,
+  "complaint_records": 0,
+  "disposition_records": 0,
+  "enforcement_records": 0,
+  "production_qualified_companies": 0,
+  "production_writes": 0,
+  "research_rows_do_not_count_as_production_enrichment": true
+}

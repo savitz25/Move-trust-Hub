@@ -1,0 +1,22 @@
+{
+  "task": "BROWARD-PROD-001",
+  "publish": false,
+  "draft_only": true,
+  "hierarchy": [
+    "Federal FMCSA/USDOT",
+    "State FDACS IM",
+    "County Broward Mover Registration",
+    "Vehicle/decal (secondary county evidence)"
+  ],
+  "heading": "Broward County Mover Registration",
+  "status_wording": "TBD from official source status field after PRA",
+  "regulator": "Broward County Consumer Protection Division — Consumer Affairs Division (CAD)",
+  "disclaimer": "Regulatory record verification is not a MoveTrustHub endorsement.",
+  "prohibited_strengthening": [
+    "Approved",
+    "Certified",
+    "Safe",
+    "Recommended",
+    "Fully licensed by MoveTrustHub"
+  ]
+}

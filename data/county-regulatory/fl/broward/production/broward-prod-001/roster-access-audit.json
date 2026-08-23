@@ -1,0 +1,34 @@
+{
+  "task": "BROWARD-PROD-001",
+  "retrieved_at": "2026-08-23T01:04:36.285Z",
+  "completeness_class": "PRA_REQUIRED",
+  "records_recovered": 0,
+  "current_rows": 0,
+  "historical_rows": 0,
+  "complete_enumeration_available": false,
+  "sampling_used": false,
+  "reasons": [
+    "No official downloadable Broward mover registration roster located.",
+    "No official searchable public mover-registration lookup analogous to Palm Beach GetCompanies or Miami-Dade EnerGov MR search.",
+    "Consumer Affairs FAQ/guidance directs consumers to CALL to verify license status (phone gate), not self-serve roster.",
+    "ePermits A-Z does not expose Mover Registration as an online permit/license type.",
+    "ArcGIS Citizen Data Portal / open-data probes did not surface a mover-registration dataset.",
+    "Certified Vendor Directory and BCS contractor portals are different programs and are not used as substitutes."
+  ],
+  "incomplete_detail": {
+    "known_pagination_limit": null,
+    "date_range_limitation": null,
+    "missing_record_classes": [
+      "current_mover_registrations",
+      "historical_mover_registrations",
+      "vehicle_decal_inventory",
+      "complaint_dispositions",
+      "enforcement_hearing_outcomes"
+    ],
+    "inaccessible_endpoint": null,
+    "captcha_manual_barrier": "Phone verification is the documented public status-check path; no machine-readable public roster endpoint.",
+    "pra_requirement": true
+  },
+  "public_program_evidence_available": true,
+  "commercial_substitution": false
+}

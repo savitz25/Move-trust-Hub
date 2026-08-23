@@ -1,0 +1,26 @@
+{
+  "task": "FL-C004",
+  "status": "COMPLETE",
+  "publicly_acquired": [
+    "program verification",
+    "application schema",
+    "vehicle/decal schema",
+    "complaint intake characterization",
+    "enforcement/hearing process characterization"
+  ],
+  "roster_completeness": "PRA_REQUIRED",
+  "mover_registration_rows": 0,
+  "vehicle_permit_rows": 0,
+  "complaint_rows": 0,
+  "enforcement_rows": 0,
+  "pra_required_for_complete_bulk_data": true,
+  "package_hash": "709f5f60c972e4e5",
+  "historical_roster_notes": [
+    "No public bulk download of Broward mover registrations located.",
+    "No public searchable mover lookup analogous to Palm Beach Companies/GetCompanies located.",
+    "ePermits A-Z does not list Mover Registration as an online permit type (Chauffeur Registration is listed).",
+    "Consumer Affairs materials state consumers may call to determine current license status — implies phone-based status check, not self-serve roster.",
+    "PUBLICLY_ACQUIRED: program docs, application schema, enforcement/complaint process docs.",
+    "PRA_REQUIRED_FOR_COMPLETE_BULK_DATA: current/historical registrations, vehicle/decal inventory, complaint dispositions, enforcement/hearing outcomes."
+  ]
+}
