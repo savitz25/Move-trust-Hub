@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "total": 70,
+  "PUBLISHED": 9,
+  "INTERNAL_ONLY": 61,
+  "observation_id": "MDC_MR_CANARY_OBSERVATION_V1",
+  "launch_at": "2026-08-23T00:07:51.092Z",
+  "maturity_at": "2026-08-30T00:07:51.092Z",
+  "clock_reset": false,
+  "delta": 0
+}

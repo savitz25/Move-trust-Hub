@@ -1,0 +1,19 @@
+{
+  "google_places_requests": 0,
+  "MB159": {
+    "slug": "real-time-relocation-llc",
+    "status": 404,
+    "brokerChrome": false,
+    "fdacs": false,
+    "publication_unchanged": true
+  },
+  "MB171": {
+    "slug": "pinnacle-van-lines-llc",
+    "status": 200,
+    "brokerChrome": false,
+    "fdacs": false,
+    "robots": "index, follow",
+    "usdot_number_authoritative": "3197443"
+  },
+  "new_broker_chrome": 0
+}

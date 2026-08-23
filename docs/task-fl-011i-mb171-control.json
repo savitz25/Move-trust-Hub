@@ -1,0 +1,16 @@
+{
+  "google_places_requests": 0,
+  "outside_manifest": true,
+  "rows": [
+    {
+      "company_id": "usdot-3197443",
+      "authority_number": "MB171",
+      "authority_type": "intrastate_hhg_broker",
+      "status": "active",
+      "publication_state": "PUBLISHABLE",
+      "indexable": true,
+      "usdot_number": "3197443"
+    }
+  ],
+  "duplicate_insert_planned": false
+}
