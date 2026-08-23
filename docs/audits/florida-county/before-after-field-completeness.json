@@ -1,0 +1,13 @@
+{
+  "companies_gaining": {
+    "county_regulatory_identity": 113,
+    "credential_number": 113,
+    "status": 113,
+    "dates": 113,
+    "regulator": 113,
+    "source_provenance": 113,
+    "county_relationship": 113,
+    "public_county_block": 20
+  },
+  "note": "Pre-county all county fields absent; post-county counts are companies gaining each field."
+}

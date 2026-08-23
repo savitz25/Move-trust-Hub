@@ -1,0 +1,19 @@
+{
+  "INTERNAL_RESEARCH_VALUE": {
+    "internally_represented_credentials": 116,
+    "internally_enriched_companies": 113,
+    "internal_only_credentials": 96,
+    "internal_only_companies": 93
+  },
+  "PUBLIC_CONSUMER_VALUE": {
+    "publicly_displayed_credentials": 20,
+    "publicly_county_enriched_companies": 20,
+    "public_pct_credentials": 17.2,
+    "public_pct_companies": 17.7
+  },
+  "broad_check": {
+    "total_production_credentials": 116,
+    "public": 20,
+    "internal": 96
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "ledger_id": "MDC_COUNTY_IMPACT_PRE_MATURITY_V1",
+  "official_mr_rows": 70,
+  "deterministically_linked": 70,
+  "internalized": 70,
+  "public_credentials": 9,
+  "public_companies": 9,
+  "internal_credentials": 61,
+  "wrong_company": 0,
+  "rls_health": "DENIED_ANON_AUTH",
+  "public_read_health": "FAIL_CLOSED_PUBLISHED_GATE",
+  "trust_effect": 0,
+  "index_effect": 0
+}

@@ -1,0 +1,13 @@
+{
+  "ledger_id": "PBC_COUNTY_IMPACT_PRE_MATURITY_V1",
+  "official_source_rows": 46,
+  "credentials_internalized": 46,
+  "distinct_companies": 43,
+  "public_credentials": 11,
+  "public_companies": 11,
+  "internal_credentials": 35,
+  "multi_credential_companies": 3,
+  "wrong_company": 0,
+  "trust_effect": 0,
+  "index_effect": 0
+}

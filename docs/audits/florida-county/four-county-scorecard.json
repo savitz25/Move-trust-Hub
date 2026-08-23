@@ -1,0 +1,56 @@
+{
+  "rows": [
+    {
+      "county": "Palm Beach",
+      "model": "TYPE A — county credential/permit",
+      "official_rows_recovered": 46,
+      "production_rows": 46,
+      "distinct_enriched_companies": 43,
+      "public_rows": 11,
+      "public_companies": 11,
+      "internal_rows": 35,
+      "wrong_company": 0,
+      "current_blocker": "OBSERVATION_NOT_MATURE",
+      "architecture": "generic credential + PBC adapter"
+    },
+    {
+      "county": "Miami-Dade",
+      "model": "TYPE B — county business registration",
+      "official_rows_recovered": 70,
+      "production_rows": 70,
+      "distinct_enriched_companies": 70,
+      "public_rows": 9,
+      "public_companies": 9,
+      "internal_rows": 61,
+      "wrong_company": 0,
+      "current_blocker": "OBSERVATION_NOT_MATURE",
+      "architecture": "shared public-read + MDC adapter"
+    },
+    {
+      "county": "Broward",
+      "model": "TYPE C — credential program, roster PRA",
+      "official_rows_recovered": 0,
+      "production_rows": 0,
+      "distinct_enriched_companies": 0,
+      "public_rows": 0,
+      "public_companies": 0,
+      "internal_rows": 0,
+      "wrong_company": 0,
+      "current_blocker": "SOURCE_ACCESS_PRA",
+      "architecture": "PRA framework + vehicle/decal extension identified"
+    },
+    {
+      "county": "Pinellas",
+      "model": "TYPE D — ordinance without public credential",
+      "official_rows_recovered": 24,
+      "production_rows": 0,
+      "distinct_enriched_companies": 0,
+      "public_rows": 0,
+      "public_companies": 0,
+      "internal_rows": 0,
+      "wrong_company": 0,
+      "current_blocker": "IDENTITY_EVIDENCE_INSUFFICIENT / OBSERVATION_MODEL_EXTENSION_DEFERRED",
+      "architecture": "complaint≠enforcement + PII rules + zero-result semantics"
+    }
+  ]
+}

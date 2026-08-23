@@ -1,0 +1,10 @@
+{
+  "identity_ambiguity": 0,
+  "company_not_public": 93,
+  "note_company_not_public": "INTERNAL_ONLY credentials may still sit on PUBLISHABLE companies; withheld from public presentation by evidence gate.",
+  "stale_source": 0,
+  "status_ambiguity": 0,
+  "multi_license_ambiguity": 0,
+  "source_unavailable": "Broward roster PRA",
+  "model_unavailable": "Pinellas complaint observation store"
+}

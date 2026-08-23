@@ -1,0 +1,45 @@
+{
+  "samples": {
+    "single_pbc": {
+      "company_id": "america-s-family-moving-and-storage-llc",
+      "slug": "america-s-family-moving-and-storage-llc",
+      "className": "STATE_PLUS_COUNTY",
+      "attrs": 11,
+      "published": true,
+      "cred_count": 1
+    },
+    "multi_pbc": {
+      "company_id": "fl-im-3378",
+      "slug": "blue-line-moving-llc",
+      "className": "STATE_PLUS_COUNTY",
+      "attrs": 11,
+      "published": false,
+      "cred_count": 2
+    },
+    "mdc_reg": {
+      "company_id": "fl-im-27",
+      "slug": "1-withers-transportation-systems-2-withers-worldwide",
+      "className": "STATE_PLUS_COUNTY",
+      "attrs": 11,
+      "published": true,
+      "cred_count": 1
+    },
+    "fed_state_pbc": {
+      "company_id": "usdot-2562486",
+      "slug": "good-greek-moving-and-storage",
+      "className": "FEDERAL_PLUS_STATE_PLUS_COUNTY",
+      "attrs": 12,
+      "published": true,
+      "cred_count": 1
+    },
+    "fed_state_mdc": {
+      "company_id": "usdot-1329594",
+      "slug": "nobel-van-lines",
+      "className": "FEDERAL_PLUS_STATE_PLUS_COUNTY",
+      "attrs": 12,
+      "published": true,
+      "cred_count": 1
+    },
+    "cross_county": null
+  }
+}

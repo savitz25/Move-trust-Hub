@@ -1,0 +1,12 @@
+{
+  "ledger_id": "BROWARD_COUNTY_RESEARCH_IMPACT_V1",
+  "regulatory_program_confirmed": true,
+  "public_roster_recovered": 0,
+  "production_rows": 0,
+  "vehicle_decal_model_discovered": true,
+  "complaint_model_discovered": true,
+  "enforcement_model_discovered": true,
+  "pra_package_created": true,
+  "pra_sent": false,
+  "future_acquisition_dependency": "BROWARD_PRA_ROSTER_REQUEST_V1"
+}

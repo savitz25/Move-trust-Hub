@@ -1,0 +1,8 @@
+{
+  "pbc_only": 43,
+  "mdc_only": 70,
+  "both": 0,
+  "total_distinct": 113,
+  "both_detail": [],
+  "method": "canonical company_id union"
+}

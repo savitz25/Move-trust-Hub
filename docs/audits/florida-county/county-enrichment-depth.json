@@ -1,0 +1,18 @@
+{
+  "buckets": {
+    "0": 0,
+    "1": 0,
+    "2-3": 0,
+    "4-6": 0,
+    "7-9": 0,
+    "10+": 113
+  },
+  "mean": 10.28,
+  "median": 10,
+  "max": 12,
+  "total_county_contributed_attributes": 1162,
+  "pbc_companies": 43,
+  "mdc_companies": 70,
+  "cross_county_companies": 0,
+  "all_distinct": 113
+}

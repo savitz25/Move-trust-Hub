@@ -1,0 +1,10 @@
+{
+  "wrong_company": 0,
+  "duplicate_credential": 0,
+  "orphan_credential": 0,
+  "identity_review": 0,
+  "held_rows": 0,
+  "stale_rows": 0,
+  "ambiguous_multi_license": 0,
+  "forced_name_only_links": 0
+}

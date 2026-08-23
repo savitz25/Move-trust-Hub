@@ -1,0 +1,20 @@
+{
+  "ledger_id": "PINELLAS_COUNTY_RESEARCH_IMPACT_V1",
+  "regulatory_model": "ORDINANCE_REGULATION_WITHOUT_SEPARATE_PUBLIC_CREDENTIAL",
+  "official_complaint_cases_recovered": 24,
+  "dispositions_recovered": 24,
+  "canonical_ready_cases": 0,
+  "production_rows": 0,
+  "fake_credential_rows": 0,
+  "observation_model_extension_required": true,
+  "pii_impact": 0,
+  "knowledge_value": [
+    "ordinance requirements identified",
+    "complaint system characterized",
+    "zero-result semantics defined",
+    "disposition taxonomy identified",
+    "PII publication constraints",
+    "complaint ≠ enforcement",
+    "generic observation-store gap identified"
+  ]
+}

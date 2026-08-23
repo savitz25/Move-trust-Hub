@@ -1,0 +1,19 @@
+{
+  "total_mr_credentials": 70,
+  "distinct_companies": 70,
+  "published": 9,
+  "internal_only": 61,
+  "wrong_company": 0,
+  "duplicates": 0,
+  "orphans": 0,
+  "public_leakage_non_canary": 0,
+  "multi_mr_companies": 0,
+  "issued_rows": 70,
+  "expected": {
+    "credentials": 70,
+    "companies": 70,
+    "published": 9,
+    "internal": 61
+  },
+  "match": true
+}

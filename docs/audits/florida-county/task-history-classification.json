@@ -1,0 +1,54 @@
+{
+  "tasks": [
+    {
+      "id": "FL-C001..C011",
+      "class": "ARCHITECTURE"
+    },
+    {
+      "id": "PBC-PROD-001",
+      "class": "INTERNAL_INGEST"
+    },
+    {
+      "id": "PBC-PROD-002",
+      "class": "READINESS"
+    },
+    {
+      "id": "PBC-PROD-003",
+      "class": "PUBLICATION"
+    },
+    {
+      "id": "PBC-PROD-004",
+      "class": "OBSERVATION",
+      "note": "interim/WAITING until maturity"
+    },
+    {
+      "id": "MDC-PROD-001",
+      "class": "INTERNAL_INGEST"
+    },
+    {
+      "id": "MDC-PROD-002",
+      "class": "READINESS"
+    },
+    {
+      "id": "MDC-PROD-003",
+      "class": "PUBLICATION"
+    },
+    {
+      "id": "MDC-PROD-004",
+      "class": "OBSERVATION",
+      "note": "WAITING — not mature"
+    },
+    {
+      "id": "FL-C004 / BROWARD-PROD-001",
+      "class": "BLOCKED_SOURCE_ACCESS"
+    },
+    {
+      "id": "FL-C007 / PINELLAS-PROD-001",
+      "class": "RESEARCH_ONLY"
+    },
+    {
+      "id": "FL-AUDIT-COUNTY-PRE-001",
+      "class": "QA_ONLY"
+    }
+  ]
+}

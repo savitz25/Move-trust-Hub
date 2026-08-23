@@ -1,0 +1,18 @@
+{
+  "palm_beach": {
+    "concept": "county moving permit",
+    "status": "PRODUCTION_PUBLIC"
+  },
+  "miami_dade": {
+    "concept": "moving business registration",
+    "status": "PRODUCTION_PUBLIC"
+  },
+  "broward": {
+    "concept": "registration certificate model documented",
+    "status": "RESEARCH_ONLY"
+  },
+  "pinellas": {
+    "concept": "ordinance/complaint-context model",
+    "status": "RESEARCH_ONLY"
+  }
+}

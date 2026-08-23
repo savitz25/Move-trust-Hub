@@ -1,0 +1,19 @@
+{
+  "TYPE_A": {
+    "label": "County credential / permit model",
+    "county": "Palm Beach"
+  },
+  "TYPE_B": {
+    "label": "County business-registration model",
+    "county": "Miami-Dade"
+  },
+  "TYPE_C": {
+    "label": "County credential program exists but roster access requires PRA",
+    "county": "Broward"
+  },
+  "TYPE_D": {
+    "label": "Ordinance regulation without separate public mover credential",
+    "county": "Pinellas"
+  },
+  "terminology_verified": true
+}

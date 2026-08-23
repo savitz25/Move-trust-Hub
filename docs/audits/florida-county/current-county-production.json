@@ -1,0 +1,34 @@
+{
+  "programs": 2,
+  "program_rows": [
+    {
+      "id": "0d4fc3af-a1bb-4c98-96a8-909bf30d9657",
+      "state_code": "FL",
+      "county_name": "Miami-Dade",
+      "program_name": "Moving Business Registration / License",
+      "source_key": "mdc-moving-business-registration",
+      "posture": "CREDENTIAL_BASED",
+      "agency_name": "Miami-Dade Department of Regulatory and Economic Resources (RER) — Consumer and Neighborhood Protection Division",
+      "credential_type": "moving_business_registration"
+    },
+    {
+      "id": "7e5122be-b5a9-4a1f-bb4a-e359074429a1",
+      "state_code": "FL",
+      "county_name": "Palm Beach",
+      "program_name": "Moving Business Permit",
+      "source_key": "pbc-consumer-affairs-moving-business-permit",
+      "posture": "CREDENTIAL_BASED",
+      "agency_name": "Palm Beach County Public Safety — Consumer Affairs Division",
+      "credential_type": "moving_business_permit"
+    }
+  ],
+  "credentials": 116,
+  "published": 20,
+  "internal_only": 96,
+  "other_evidence_states": 0,
+  "distinct_companies_any": 113,
+  "distinct_companies_published": 20,
+  "distinct_companies_internal_only": 93,
+  "other_sources": 0,
+  "reconcile": true
+}

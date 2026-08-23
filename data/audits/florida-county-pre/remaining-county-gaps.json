@@ -1,0 +1,22 @@
+{
+  "OBSERVATION_NOT_MATURE": [
+    "Palm Beach",
+    "Miami-Dade"
+  ],
+  "PUBLICATION_DEFERRED": [
+    "PBC 35 INTERNAL_ONLY",
+    "MDC 61 INTERNAL_ONLY"
+  ],
+  "SOURCE_ACCESS_PRA": [
+    "Broward"
+  ],
+  "NO_SEPARATE_CREDENTIAL_MODEL": [
+    "Pinellas"
+  ],
+  "IDENTITY_EVIDENCE_INSUFFICIENT": [
+    "Pinellas complaints"
+  ],
+  "OBSERVATION_MODEL_EXTENSION_DEFERRED": [
+    "Pinellas complaint store"
+  ]
+}

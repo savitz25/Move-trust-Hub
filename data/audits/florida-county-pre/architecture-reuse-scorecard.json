@@ -1,0 +1,21 @@
+{
+  "GENERIC_REUSABLE": [
+    "county_regulatory_program",
+    "provider_county_credential",
+    "evidence_publication_state",
+    "RLS deny",
+    "server-only public read",
+    "anonymous company gate",
+    "PUBLISHED gate",
+    "observation clock model",
+    "PRA decision framework"
+  ],
+  "COUNTY_SPECIFIC_ADAPTER": [
+    "PBC permit adapter/UI",
+    "MDC registration adapter/UI"
+  ],
+  "MODEL_EXTENSION_REQUIRED": [
+    "Broward vehicle/decal child evidence",
+    "Pinellas complaint/disposition observation store"
+  ]
+}

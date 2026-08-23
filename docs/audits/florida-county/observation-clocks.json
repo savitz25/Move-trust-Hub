@@ -1,0 +1,17 @@
+{
+  "read_only": true,
+  "maturity_decisions_made": false,
+  "clocks_reset": false,
+  "palm_beach": {
+    "launch": "2026-08-22T19:56:00Z",
+    "maturity": "2026-08-29T19:56:00Z",
+    "elapsed_hours": 7.22,
+    "mature": false
+  },
+  "miami_dade": {
+    "launch": "2026-08-23T00:07:51.092Z",
+    "maturity": "2026-08-30T00:07:51.092Z",
+    "elapsed_hours": 3.02,
+    "mature": false
+  }
+}
