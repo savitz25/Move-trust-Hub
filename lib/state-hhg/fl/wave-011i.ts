@@ -175,10 +175,16 @@ export function evaluateSuddathMb12Gate(input: {
   const exactNameHits = input.candidates.filter((c) =>
     [c.legalName, c.dbaName, c.publicName].some((n) => normalizeLegalName(n) === subjectName)
   );
-  if (exactNameHits.length === 1) {
+  if (exactNameHits.length === 1 && exactNameHits[0].companyId !== input.proposedCompanyId) {
     return {
       result: 'BLOCK_SAME_CANONICAL',
       reasons: ['exact_legal_name_already_canonical', exactNameHits[0].companyId],
+    };
+  }
+  if (exactNameHits.length === 1 && exactNameHits[0].companyId === input.proposedCompanyId) {
+    return {
+      result: 'DISTINCT_INSERT_SAFE',
+      reasons: ['already_applied_self', 'distinct_legal_name_inc_form'],
     };
   }
   if (exactNameHits.length > 1) {
@@ -229,6 +235,9 @@ export function brokerInsertRoleSafety(input: {
   if (input.entityType !== SAFE_BROKER_ENTITY_TYPE) failures.push(`entity_type_${input.entityType}`);
   const scope = String(input.serviceScope ?? '').toLowerCase();
   if (scope === 'intrastate') failures.push('service_scope_intrastate_implies_local_mover');
+  if (scope && scope !== 'interstate' && scope !== 'intrastate') {
+    failures.push('service_scope_not_in_schema_check');
+  }
   const blob = `${input.shortDescription} ${input.description}`.toLowerCase();
   for (const term of PROHIBITED_BROKER_LANGUAGE) {
     if (blob.includes(term)) failures.push(`prohibited_copy_${term}`);
@@ -314,6 +323,13 @@ export function revalidateBrokerDraftOp(input: {
   }
   if (input.draft.operation === 'INSERT') {
     const proposed = input.draft.proposedCompanyId ?? proposedMbCompanyId(mb);
+    const alreadyInternal =
+      input.liveCompany?.companyId === proposed &&
+      input.liveCompany.publicationState === 'INGESTED' &&
+      input.liveCompany.indexable === false;
+    if (alreadyInternal) {
+      return { pass: failures.length === 0, failures };
+    }
     if (input.takenIds.has(proposed)) failures.push(`company_id_collision_${proposed}`);
     const match = matchStateRegistryIdentity(
       {

@@ -1,0 +1,20 @@
+{
+  "google_places_requests": 0,
+  "status": "FL BROKER INTERNAL STAGING APPLIED — PUBLIC FREEZE HEALTHY",
+  "implementation_pr": 92,
+  "merge_sha": "61969c5e2054690f32342e5d38744d766a43302f",
+  "production_deployment_id": 6043253852,
+  "manifest_hash": "228e2fa252322c93",
+  "draft_hash": "e1e78a4d18cf2c0c",
+  "apply": {
+    "attempted": 18,
+    "successful": 18,
+    "failed": 0,
+    "companies_inserted": 17,
+    "psa_attached": 18,
+    "contacts_attached": 53
+  },
+  "public_broker_chrome": 0,
+  "wave1": "OBSERVATION HEALTHY — CONTINUE",
+  "next": "WAIT for FL-012 maturity 2026-09-05T14:45:00Z"
+}

@@ -1,0 +1,13 @@
+{
+  "google_places_requests": 0,
+  "total_mb": 29,
+  "active": 26,
+  "represented": 19,
+  "unrepresented_active": 7,
+  "coverage_pct": 73.1,
+  "held_identity_review": 7,
+  "status_blocked": 1,
+  "expired": 2,
+  "already_modeled_control": 1,
+  "note": "19 = MB171 already modeled + MB159 LINK + 17 INSERT. 7 remaining active are identity-review. Independent of IM 84.7%."
+}
