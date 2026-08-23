@@ -9,119 +9,136 @@
       "companyId": "fl-mb-1",
       "slug": "lexicon-relocation-l-l-c",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB106",
       "companyId": "fl-mb-106",
       "slug": "elder-move-helper-inc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB110",
       "companyId": "fl-mb-110",
       "slug": "move-masters-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB111",
       "companyId": "fl-mb-111",
       "slug": "nelan-relocation-services-inc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB113",
       "companyId": "fl-mb-113",
       "slug": "all-around-moving-services-company-inc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB12",
       "companyId": "fl-mb-12",
       "slug": "suddath-container-services-inc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB136",
       "companyId": "fl-mb-136",
       "slug": "eagle-moving-group-inc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB144",
       "companyId": "fl-mb-144",
       "slug": "bronze-star-moving-and-storage-incorporated",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB149",
       "companyId": "fl-mb-149",
       "slug": "big-burns-moving-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB157",
       "companyId": "fl-mb-157",
       "slug": "coastal-moving-services-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB161",
       "companyId": "fl-mb-161",
       "slug": "swift-shift-van-lines-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB166",
       "companyId": "fl-mb-166",
       "slug": "america-s-choice-van-lines-inc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB169",
       "companyId": "fl-mb-169",
       "slug": "northern-relocation-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB170",
       "companyId": "fl-mb-170",
       "slug": "mba-relocation-solutions-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB172",
       "companyId": "fl-mb-172",
       "slug": "america-s-finest-moving-storage-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB173",
       "companyId": "fl-mb-173",
       "slug": "haul-operator-logistics-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     },
     {
       "mb": "MB174",
       "companyId": "fl-mb-174",
       "slug": "easy-day-moving-llc",
       "idTaken": false,
-      "slugTaken": false
+      "slugTaken": false,
+      "appliedSelf": true
     }
   ]
 }

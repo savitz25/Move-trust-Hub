@@ -1,6 +1,6 @@
 # Task FL-011I — Florida FDACS moving broker internal staging apply
 
-**Status:** implementation PR (apply=false until production SHA match)  
+**Status:** `FL BROKER INTERNAL STAGING APPLIED — PUBLIC FREEZE HEALTHY`  
 **Draft hash:** `e1e78a4d18cf2c0c`  
 **Final hash:** `228e2fa252322c93`  
 **Google API:** `0`  
@@ -21,7 +21,7 @@ Live revalidation: **18/18 PASS**. MB12 Suddath gate: **DISTINCT_INSERT_SAFE**.
 
 ## Role safety
 
-New companies use `entity_type=BROKER`, `service_scope=NULL` (not `intrastate`, which would classify as local mover). Broker role lives on `provider_state_authority.authority_type=intrastate_hhg_broker`. Canonical phone/email/address are not written; observations only.
+New companies use `entity_type=BROKER`. `companies.service_scope` is NOT NULL and CHECK-constrained to `interstate|intrastate`; `intrastate` would classify as a local mover, so INSERT uses `interstate` plus `entity_type=BROKER`, which resolves to the Broker consumer role (not Local Mover / Carrier). Broker authority lives on `provider_state_authority.authority_type=intrastate_hhg_broker`. Canonical phone/email/address are not written; observations only.
 
 Existing PSA MB rows are orphans (29 MB authorities already ingested). Apply **ATTACH**s them; it does not insert duplicate authorities.
 

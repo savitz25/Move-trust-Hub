@@ -1,0 +1,11 @@
+{
+  "google_places_requests": 0,
+  "id": "FL_STATE_COMPLETION_CRITERIA_V1",
+  "BROKER_SCOPE_MODEL_DEFINED": "YES",
+  "BROKER_IDENTITY_COHORT_FROZEN": "YES",
+  "BROKER_INTERNAL_READY_POOL_APPLIED": "YES",
+  "BROKER_PUBLICATION_MODEL_DEFINED": "YES",
+  "BROKER_PUBLICATION": "DEFERRED / NOT YET PUBLIC",
+  "final_state_production_completion": false,
+  "fl012_prohibited_until": "2026-09-05T14:45:00.000Z"
+}

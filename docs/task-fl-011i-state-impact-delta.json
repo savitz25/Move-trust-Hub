@@ -1,0 +1,25 @@
+{
+  "google_places_requests": 0,
+  "im_lane": {
+    "active": 1098,
+    "represented": 930,
+    "unresolved": 168,
+    "coverage": 84.7
+  },
+  "mb_lane": {
+    "total": 29,
+    "active": 26,
+    "represented": 19,
+    "coverage_pct": 73.1,
+    "new_broker_only_companies": 17,
+    "existing_companies_newly_broker_enriched": 1,
+    "already_modeled": 1,
+    "held_identity_review": 7,
+    "status_blocked": 1,
+    "expired": 2,
+    "fdacs_broker_authority_operations": 18,
+    "broker_contact_source_observations_attached": 53,
+    "broker_public_companies": 0,
+    "broker_public_evidence": 0
+  }
+}

@@ -314,12 +314,20 @@ async function main() {
         ? String(byId.get(companyId)?.slug ?? draft.existingSlug ?? '')
         : String(draft.proposedSlug ?? '');
     if (draft.operation === 'INSERT') {
+      const existing = byId.get(companyId);
+      const appliedSelf =
+        Boolean(existing) &&
+        String(existing?.publication_state) === 'INGESTED' &&
+        existing?.indexable === false;
+      const slugOwner = [...byId.values()].find((r) => String(r.slug) === slug);
+      const slugSelf = slugOwner && String(slugOwner.id) === companyId;
       collisionAudit.push({
         mb: draft.mb,
         companyId,
         slug,
-        idTaken: takenIds.has(companyId),
-        slugTaken: takenSlugs.has(slug),
+        idTaken: takenIds.has(companyId) && !appliedSelf,
+        slugTaken: takenSlugs.has(slug) && !slugSelf,
+        appliedSelf,
       });
     }
     const psaPlan = planPsaAction({ fdacsIm: draft.mb, companyId, existing: livePsa });
@@ -381,7 +389,7 @@ async function main() {
 
   const roleSafety = brokerInsertRoleSafety({
     entityType: SAFE_BROKER_ENTITY_TYPE,
-    serviceScope: null,
+    serviceScope: 'interstate',
     shortDescription: 'Florida FDACS moving-broker registration (internal). Confirm current FDACS status before treating this record as a mover.',
     description: 'Staged from official FDACS MB evidence. This is a moving-broker registration and is distinct from registration as an intrastate household-goods mover. Internal profile; not published.',
   });
@@ -686,7 +694,7 @@ async function main() {
         const description = `${display} is staged from official FDACS MB evidence as a moving-broker registration (${op.mb}). This is distinct from registration as an intrastate household-goods mover. This internal profile is not published.`;
         const roleCheck = brokerInsertRoleSafety({
           entityType: SAFE_BROKER_ENTITY_TYPE,
-          serviceScope: null,
+          serviceScope: 'interstate',
           shortDescription: short,
           description,
         });
@@ -704,7 +712,7 @@ async function main() {
              $1,$2,$3,$4,$5,$6,
              NULL,NULL,NULL,NULL,$7,
              'Not Rated',0,0,
-             false,false,$8,NULL,
+             false,false,$8,'interstate',
              'Florida FDACS MB (internal)','[]'::jsonb,'[]'::jsonb,0,0,
              0,NULL,NULL,NULL,
              false,now(),'INGESTED',false,false

@@ -170,20 +170,21 @@ test('Suddath MB12 remains DISTINCT_INSERT_SAFE against the enterprise family', 
 test('broker INSERT payload is not classified as a local mover or carrier', () => {
   const safe = brokerInsertRoleSafety({
     entityType: SAFE_BROKER_ENTITY_TYPE,
-    serviceScope: null,
+    serviceScope: 'interstate',
     shortDescription: 'Florida FDACS moving-broker registration (internal).',
     description: 'Staged from official FDACS MB evidence. Not an intrastate mover registration.',
   });
   assert.equal(safe.ok, true);
-  assert.equal(isLocalMover({ entityType: 'BROKER', serviceScope: null, services: [], usdotNumber: null }), false);
+  assert.equal(isLocalMover({ entityType: 'BROKER', serviceScope: 'interstate', services: [], usdotNumber: null }), false);
   const classified = classifyProvider({
     entityType: 'BROKER',
-    serviceScope: null,
+    serviceScope: 'interstate',
     services: [],
     usdotNumber: null,
   });
   assert.equal(classified.hhgLabel === 'Local Mover', false);
   assert.equal(classified.hhgLabel === 'Carrier', false);
+  assert.equal(classified.hhgLabel, 'Broker');
 
   const unsafe = brokerInsertRoleSafety({
     entityType: 'Moving Company',

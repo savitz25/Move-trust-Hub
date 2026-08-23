@@ -12,10 +12,10 @@
   },
   "county_writes": 0,
   "snapshot": {
-    "companies": 5940,
+    "companies": 5957,
     "indexable": 4905,
     "fl_im": 849,
-    "fl_mb": 0,
+    "fl_mb": 17,
     "publishable": 5022,
     "fl_psa": 1359,
     "fl_psa_mb": 29,
