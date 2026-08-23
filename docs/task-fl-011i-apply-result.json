@@ -1,0 +1,63 @@
+{
+  "google_places_requests": 0,
+  "status": "DRY_RUN",
+  "hash": "228e2fa252322c93",
+  "stats": {
+    "companies_inserted": 0,
+    "psa_inserted": 0,
+    "psa_attached": 0,
+    "contacts_inserted": 0,
+    "contacts_attached": 0
+  },
+  "before": {
+    "companies": 5940,
+    "indexable": 4905,
+    "fl_im": 849,
+    "fl_mb": 0,
+    "publishable": 5022,
+    "fl_psa": 1359,
+    "fl_psa_mb": 29,
+    "fdacs_observations": 3875,
+    "county_regulatory_program": 2,
+    "provider_county_credential": 116
+  },
+  "after": {
+    "companies": 5940,
+    "indexable": 4905,
+    "fl_im": 849,
+    "fl_mb": 0,
+    "publishable": 5022,
+    "fl_psa": 1359,
+    "fl_psa_mb": 29,
+    "fdacs_observations": 3875,
+    "county_regulatory_program": 2,
+    "provider_county_credential": 116
+  },
+  "countyBefore": {
+    "palm_beach": {
+      "total": 46,
+      "INTERNAL_ONLY": 35,
+      "PUBLISHED": 11
+    },
+    "miami_dade": {
+      "total": 70,
+      "PUBLISHED": 9,
+      "INTERNAL_ONLY": 61
+    },
+    "county_writes": 0
+  },
+  "countyAfter": {
+    "palm_beach": {
+      "total": 46,
+      "INTERNAL_ONLY": 35,
+      "PUBLISHED": 11
+    },
+    "miami_dade": {
+      "total": 70,
+      "PUBLISHED": 9,
+      "INTERNAL_ONLY": 61
+    },
+    "county_writes": 0
+  },
+  "wave1_members": 37
+}

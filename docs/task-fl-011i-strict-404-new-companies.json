@@ -1,0 +1,203 @@
+{
+  "google_places_requests": 0,
+  "new_slugs_404": 17,
+  "new_slugs_tested": 17,
+  "new_broker_chrome": 0,
+  "existing": [
+    {
+      "kind": "MB159",
+      "slug": "real-time-relocation-llc",
+      "path": "/companies/real-time-relocation-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "kind": "MB171",
+      "slug": "pinnacle-van-lines-llc",
+      "path": "/companies/pinnacle-van-lines-llc",
+      "status": 200,
+      "location": null,
+      "robots": "index, follow",
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": "Pinnacle Van Lines LLC — FMCSA Profile, Ratings &amp; Pricing | Move Trust Hub"
+    }
+  ],
+  "existing_broker_chrome": 0,
+  "new": [
+    {
+      "slug": "lexicon-relocation-l-l-c",
+      "path": "/companies/lexicon-relocation-l-l-c",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "elder-move-helper-inc",
+      "path": "/companies/elder-move-helper-inc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "move-masters-llc",
+      "path": "/companies/move-masters-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "nelan-relocation-services-inc",
+      "path": "/companies/nelan-relocation-services-inc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "all-around-moving-services-company-inc",
+      "path": "/companies/all-around-moving-services-company-inc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "suddath-container-services-inc",
+      "path": "/companies/suddath-container-services-inc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "eagle-moving-group-inc",
+      "path": "/companies/eagle-moving-group-inc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "bronze-star-moving-and-storage-incorporated",
+      "path": "/companies/bronze-star-moving-and-storage-incorporated",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "big-burns-moving-llc",
+      "path": "/companies/big-burns-moving-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "coastal-moving-services-llc",
+      "path": "/companies/coastal-moving-services-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "swift-shift-van-lines-llc",
+      "path": "/companies/swift-shift-van-lines-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "america-s-choice-van-lines-inc",
+      "path": "/companies/america-s-choice-van-lines-inc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "northern-relocation-llc",
+      "path": "/companies/northern-relocation-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "mba-relocation-solutions-llc",
+      "path": "/companies/mba-relocation-solutions-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "america-s-finest-moving-storage-llc",
+      "path": "/companies/america-s-finest-moving-storage-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "haul-operator-logistics-llc",
+      "path": "/companies/haul-operator-logistics-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    },
+    {
+      "slug": "easy-day-moving-llc",
+      "path": "/companies/easy-day-moving-llc",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "fdacs": false,
+      "brokerChrome": false,
+      "title": null
+    }
+  ]
+}
