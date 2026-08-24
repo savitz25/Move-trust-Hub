@@ -24,7 +24,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
   const networkId = (hub.id === 'move' || hub.id === 'insurance' || hub.id === 'lender'
     ? hub.id
     : 'move') as NetworkHubId;
-  // Move contact is always hello@movetrusthub.com (product requirement).
+  // Every Hub uses the canonical Ask Trust Hub network contact address.
   const contactEmail =
     hub.id === 'insurance'
       ? INSURANCE_SITE_EMAIL

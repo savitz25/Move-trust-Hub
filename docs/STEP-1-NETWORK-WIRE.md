@@ -18,9 +18,9 @@
 ## Contact emails
 | Hub | Email |
 |-----|--------|
-| Move | hello@movetrusthub.com |
-| Insurance | hello@insurancetrusthub.com |
-| Lender | hello@lendertrusthub.com |
+| Move | hello@asktrusthub.com |
+| Insurance | hello@asktrusthub.com |
+| Lender | hello@asktrusthub.com |
 
 ## Heroes
 - Lender + Insurance how-it-works / hero rewritten (vertical-specific, not noun-swapped)

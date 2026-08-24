@@ -54,8 +54,8 @@ export default function Footer() {
           <AskNetworkSeal currentHub="lender" showSiblings inverted />
           <p className="text-center text-xs text-zinc-500">
             Support:{' '}
-            <a href="mailto:hello@lendertrusthub.com" className="underline underline-offset-2 hover:text-white">
-              hello@lendertrusthub.com
+            <a href="mailto:hello@asktrusthub.com" className="underline underline-offset-2 hover:text-white">
+              hello@asktrusthub.com
             </a>
             {' · '}© {new Date().getFullYear()} Lender Trust Hub
           </p>

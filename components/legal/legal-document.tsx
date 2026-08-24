@@ -64,8 +64,8 @@ export function LegalDocument({ title, subtitle, lastUpdated, sections }: Props)
           Contact us
         </Link>{' '}
         or email{' '}
-        <a href="mailto:hello@movetrusthub.com" className="text-primary underline underline-offset-2">
-          hello@movetrusthub.com
+        <a href="mailto:hello@asktrusthub.com" className="text-primary underline underline-offset-2">
+          hello@asktrusthub.com
         </a>
         .
       </Card>

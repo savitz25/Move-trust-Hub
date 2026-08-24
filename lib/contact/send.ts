@@ -48,7 +48,7 @@ export async function sendContactMessage(
     return {
       success: false,
       error:
-        'Email delivery is temporarily unavailable. Please email us directly at hello@movetrusthub.com.',
+        'Email delivery is temporarily unavailable. Please email us directly at hello@asktrusthub.com.',
       emailSent: false,
     };
   }
@@ -73,7 +73,7 @@ export async function sendContactMessage(
   if (result.error) {
     return {
       success: false,
-      error: 'We could not send your message. Please try again or email hello@movetrusthub.com.',
+      error: 'We could not send your message. Please try again or email hello@asktrusthub.com.',
       emailSent: false,
     };
   }

@@ -35,7 +35,7 @@ export const NETWORK_HUBS = [
     compactName: 'MoveTrustHub',
     shortLabel: 'Move',
     url: 'https://www.movetrusthub.com',
-    email: 'hello@movetrusthub.com',
+    email: 'hello@asktrusthub.com',
   },
   {
     id: 'insurance' as const,
@@ -43,7 +43,7 @@ export const NETWORK_HUBS = [
     compactName: 'InsuranceTrustHub',
     shortLabel: 'Insurance',
     url: 'https://www.insurancetrusthub.com',
-    email: 'hello@insurancetrusthub.com',
+    email: 'hello@asktrusthub.com',
   },
   {
     id: 'lender' as const,
@@ -51,7 +51,7 @@ export const NETWORK_HUBS = [
     compactName: 'LenderTrustHub',
     shortLabel: 'Lending',
     url: 'https://www.lendertrusthub.com',
-    email: 'hello@lendertrusthub.com',
+    email: 'hello@asktrusthub.com',
   },
   {
     id: 'contractor' as const,
@@ -59,7 +59,7 @@ export const NETWORK_HUBS = [
     compactName: 'ContractorTrustHub',
     shortLabel: 'Contractor',
     url: 'https://www.contractortrusthub.com',
-    email: 'hello@contractortrusthub.com',
+    email: 'hello@asktrusthub.com',
   },
   {
     id: 'senior' as const,
@@ -67,7 +67,7 @@ export const NETWORK_HUBS = [
     compactName: 'SeniorTrustHub',
     shortLabel: 'Senior',
     url: 'https://www.seniortrusthub.com',
-    email: 'hello@seniortrusthub.com',
+    email: 'hello@asktrusthub.com',
   },
   {
     id: 'investor' as const,
@@ -75,7 +75,7 @@ export const NETWORK_HUBS = [
     compactName: 'InvestorTrustHub',
     shortLabel: 'Investor',
     url: 'https://www.investortrusthub.com',
-    email: 'hello@investortrusthub.com',
+    email: 'hello@asktrusthub.com',
   },
 ] as const;
 

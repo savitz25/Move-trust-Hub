@@ -1,1 +1,1 @@
-export const SITE_EMAIL = 'hello@movetrusthub.com';
+export const SITE_EMAIL = 'hello@asktrusthub.com';

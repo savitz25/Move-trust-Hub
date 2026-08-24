@@ -78,7 +78,7 @@ const sections = [
       'Depending on your location, you may have the right to access, correct, delete, or export your personal data, and to opt out of certain processing. To exercise these rights:',
     ],
     list: [
-      'Email hello@movetrusthub.com with subject "Privacy Request".',
+      'Email hello@asktrusthub.com with subject "Privacy Request".',
       'Use our contact form and select "Privacy / data deletion request".',
       'Include enough detail for us to locate your records (email used on submission).',
     ],
@@ -101,7 +101,7 @@ const sections = [
     id: 'contact',
     title: 'Contact us',
     paragraphs: [
-      'For privacy questions or data requests, contact us at hello@movetrusthub.com or via our contact page at movetrusthub.com/contact.',
+      'For privacy questions or data requests, contact us at hello@asktrusthub.com or via our contact page at movetrusthub.com/contact.',
     ],
   },
 ];

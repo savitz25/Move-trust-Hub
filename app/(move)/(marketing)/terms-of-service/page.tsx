@@ -87,7 +87,7 @@ const sections = [
     id: 'contact',
     title: 'Contact',
     paragraphs: [
-      'Questions about these terms: hello@movetrusthub.com or movetrusthub.com/contact.',
+      'Questions about these terms: hello@asktrusthub.com or movetrusthub.com/contact.',
     ],
   },
 ];
