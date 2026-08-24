@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import {
@@ -38,12 +37,12 @@ export function CompanyProfileBack() {
   const label = returnPath ? companyProfileBackLabel(returnPath) : 'Back to Directory';
 
   return (
-    <Link
+    <a
       href={href}
       className="inline-flex items-center gap-1 text-sm mb-4 text-muted-foreground hover:text-foreground"
     >
       <ArrowLeft className="h-4 w-4" aria-hidden="true" />
       {label}
-    </Link>
+    </a>
   );
 }

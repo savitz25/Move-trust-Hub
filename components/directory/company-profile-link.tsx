@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import type { ComponentProps, MouseEvent, ReactNode } from 'react';
+import type { ComponentProps, KeyboardEvent, MouseEvent, ReactNode } from 'react';
 import {
   buildCompanyProfileHref,
   storeCompanyReturnPath,
@@ -35,10 +34,10 @@ export function CompanyProfileLink({
   returnPath,
   children,
   onClick,
+  onKeyDown,
   className,
   ...rest
 }: Props) {
-  const router = useRouter();
   const cleanSlug = (slug || '').trim().replace(/^\/+|\/+$/g, '');
   const href = buildCompanyProfileHref(cleanSlug);
 
@@ -61,7 +60,15 @@ export function CompanyProfileLink({
     // - invalid <a><button> nested control swallowing navigation
     // - soft-nav races with directory URL sync leaving users on /companies
     event.preventDefault();
-    router.push(href);
+    window.location.assign(href);
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLAnchorElement>) => {
+    onKeyDown?.(event);
+    if (event.defaultPrevented || event.key !== 'Enter') return;
+    if (returnPath) storeCompanyReturnPath(returnPath);
+    event.preventDefault();
+    window.location.assign(href);
   };
 
   return (
@@ -69,6 +76,7 @@ export function CompanyProfileLink({
       href={href}
       prefetch
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
       className={className}
       data-profile-slug={cleanSlug}
       {...rest}
