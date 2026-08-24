@@ -46,8 +46,8 @@ const MOVE_ORG = {
 
 const HUB_CONTACT_EMAIL: Record<HubId, string> = {
   move: SITE_EMAIL,
-  insurance: 'hello@insurancetrusthub.com',
-  lender: 'hello@lendertrusthub.com',
+  insurance: SITE_EMAIL,
+  lender: SITE_EMAIL,
 };
 
 export function buildHubOrganizationSchema(hub: HubId) {

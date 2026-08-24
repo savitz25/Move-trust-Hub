@@ -35,7 +35,7 @@ const BRAND = {
   border: '#e2e8f0',
   bg: '#f1f5f9',
   card: '#ffffff',
-  supportEmail: 'hello@insurancetrusthub.com',
+  supportEmail: 'hello@asktrusthub.com',
   trustLine: 'Independent research workspace — no paid placements, no lead selling.',
   askNetworkUrl: 'https://www.asktrusthub.com',
   independenceUrl: 'https://www.asktrusthub.com/promise',
