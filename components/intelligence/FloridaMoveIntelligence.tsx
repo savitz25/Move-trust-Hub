@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { SITE_URL } from '@/lib/seo/site-metadata';
-import { COVERAGE_LABEL } from '@/lib/intelligence/coverage';
 import type { FloridaMoveIntelligencePayload } from '@/lib/intelligence/florida-snapshot';
 import { metricById } from '@/lib/intelligence/florida-snapshot';
+import { CoverageChip } from './CoverageChip';
 import { formatAsOf, formatIntelNumber } from './format';
 
 const TASKS = [
@@ -194,8 +194,8 @@ export function FloridaMoveIntelligence({ payload }: { payload: FloridaMoveIntel
             {payload.researchCounties.map((c) => (
               <li key={c.slug} className="rounded-2xl border border-border px-4 py-4">
                 <p className="text-sm font-semibold">{c.name} County</p>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  {COVERAGE_LABEL[c.coverageLevel]}
+                <p className="mt-1">
+                  <CoverageChip level={c.coverageLevel} />
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">{c.evidenceNote}</p>
                 <Link href={c.href} className="mt-3 inline-block text-sm text-primary hover:underline">

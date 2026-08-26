@@ -1,6 +1,10 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { countyResearchCoverage, FLORIDA_RESEARCH_COUNTIES } from './coverage';
+import {
+  countyResearchCoverage,
+  evaluateEnhancedLocalResearchGate,
+  FLORIDA_RESEARCH_COUNTIES,
+} from './coverage';
 import { FLORIDA_MOVE_EDUCATION } from './education';
 import { MOVE_FL_METRIC_DICTIONARY } from './metric-dictionary';
 import { isPublicReady } from './readiness';
@@ -10,6 +14,20 @@ test('no Florida county is hard-coded Enhanced', () => {
   for (const c of FLORIDA_RESEARCH_COUNTIES) {
     assert.equal(countyResearchCoverage(c.slug), 'statewide');
   }
+});
+
+test('Enhanced gate stays inactive when operating geography is unproven', () => {
+  assert.equal(
+    evaluateEnhancedLocalResearchGate({
+      countyCredentialCensusValidated: true,
+      complaintsAttributed: false,
+      enforcementFinalDispositionsAttributed: false,
+      operatingGeographyProven: false,
+      identityReviewed: false,
+      publicEligibilityReviewed: true,
+    }),
+    'statewide'
+  );
 });
 
 test('READY public metrics never claim all movers or equate inspections with quality', () => {

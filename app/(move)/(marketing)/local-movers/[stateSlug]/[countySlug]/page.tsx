@@ -231,6 +231,10 @@ import {
 } from '@/lib/local-movers/county-display-copy';
 import { getCountyIntelligencePack } from '@/lib/local-movers/county-intelligence/registry';
 import { CountyIntelligenceHub } from '@/components/local-movers/county-intelligence-hub';
+import { CoverageChip } from '@/components/intelligence/CoverageChip';
+import { CountyResearchIntelligence } from '@/components/intelligence/CountyResearchIntelligence';
+import { isFloridaResearchCounty } from '@/lib/intelligence/coverage';
+import { getFloridaCountyIntelligenceSnapshot } from '@/lib/intelligence/county-snapshot';
 import { CountyZoneMoverFilter } from '@/components/local-movers/county-zone-mover-filter';
 import { ssgParams } from '@/lib/ssg/ssg-params';
 import {
@@ -285,6 +289,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   } = seo;
   const countyLabel = buildCountyLabel(county);
   const intelligence = getCountyIntelligencePack(stateSlug, countySlug);
+  const countyResearch =
+    stateSlug === 'florida' && isFloridaResearchCounty(countySlug)
+      ? await getFloridaCountyIntelligenceSnapshot(countySlug)
+      : null;
   const faqItems = buildCountyFaqItems(county, state.name, movers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
@@ -533,6 +541,14 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               {intelligence.heroCredibility}
             </p>
           ) : null}
+          {countyResearch ? (
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <CoverageChip level={countyResearch.coverageLevel} href="#county-research" />
+              <span className="text-xs text-muted-foreground">
+                County research snapshot — not Enhanced Local Research
+              </span>
+            </div>
+          ) : null}
           {marketNotes && !intelligence ? (
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed rounded-xl border bg-muted/20 px-4 py-3">
               {marketNotes}
@@ -672,6 +688,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             description={`Find any licensed mover nationwide — same search as /companies. Prefer listings serving ${countyLabel}.`}
           />
         </div>
+
+        {countyResearch ? <CountyResearchIntelligence payload={countyResearch} /> : null}
 
         <CountyGuideAccordion
           countyLabel={countyLabel}
