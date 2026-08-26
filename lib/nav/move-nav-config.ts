@@ -30,6 +30,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'County guides in all 50 states',
       },
       {
+        label: 'Florida research',
+        href: '/florida',
+        description: 'State registrations, authority & HQ',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
@@ -124,5 +129,6 @@ export const MOVE_NAV_AUDIT_PATHS = [
   '/moving-calculator',
   '/tools/move-quote-check',
   '/verify-dot',
+  '/florida',
   '/resources',
 ] as const;
