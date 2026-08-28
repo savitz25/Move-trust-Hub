@@ -6,6 +6,8 @@ export * from './coverage';
 export * from './education';
 export * from './source-catalog';
 export * from './florida-snapshot';
+export * from './home-types';
+export * from './home-assemble';
 export * from './county-catalog';
 export * from './county-education';
 export * from './county-payload';

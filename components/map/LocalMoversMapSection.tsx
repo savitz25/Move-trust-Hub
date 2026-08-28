@@ -29,13 +29,14 @@ export function LocalMoversMapSection() {
     () => statesMeta.filter((s) => s.curated).length,
     [statesMeta]
   );
+  const allLandingsEquivalent = curatedCount === statesMeta.length;
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Browse Local Movers by State & County',
     description:
-      'Interactive map of U.S. states and counties linking to local mover guides with vetted companies, ratings, and FMCSA licensing data.',
+      'Interactive map of U.S. states and counties linking to local mover research guides and FMCSA tools. Color marks a landing page, not a ranking.',
     numberOfItems: statesMeta.length,
     itemListElement: statesMeta.map((state, index) => ({
       '@type': 'ListItem',
@@ -62,21 +63,22 @@ export function LocalMoversMapSection() {
             id="local-movers-map-heading"
             className="mb-3 text-3xl font-semibold tracking-tight text-[#0A2540] md:text-4xl dark:text-white"
           >
-            Browse local movers by state &amp; county
+            Explore moving research by state
           </h2>
           <p className="mx-auto max-w-2xl leading-relaxed text-muted-foreground">
-            Click any state for county guides, mover counts, and FMCSA research tools.
-            Prefer text? Use the directory grid below.
+            Click any state for county guides and FMCSA research tools.
+            Prefer text? Use the directory grid below. Map color marks a landing page — not quality.
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
-            {curatedCount} fully curated states · {statesMeta.length} total landings
+            {statesMeta.length} state and D.C. research landings
           </p>
         </div>
 
         <LocalMoversMapLazy
           statesMeta={statesMeta}
-          viewMode={viewMode}
-          onViewModeChange={setViewMode}
+          viewMode={allLandingsEquivalent ? 'all' : viewMode}
+          onViewModeChange={allLandingsEquivalent ? undefined : setViewMode}
+          hideCoverageToggle={allLandingsEquivalent}
         />
 
         <nav
@@ -89,11 +91,14 @@ export function LocalMoversMapSection() {
                 State directory
               </h3>
               <p className="mt-1 text-xs text-muted-foreground">
-                {viewMode === 'curated'
-                  ? `Showing ${listedStates.length} fully curated guides`
-                  : `Showing all ${listedStates.length} states`}
+                {allLandingsEquivalent
+                  ? `Showing ${listedStates.length} state and D.C. research landings`
+                  : viewMode === 'curated'
+                    ? `Showing ${listedStates.length} fully curated guides`
+                    : `Showing all ${listedStates.length} states`}
               </p>
             </div>
+            {allLandingsEquivalent ? null : (
             <div
               className="inline-flex rounded-xl border border-border/80 bg-background p-1"
               role="group"
@@ -126,6 +131,7 @@ export function LocalMoversMapSection() {
                 All states
               </button>
             </div>
+            )}
           </div>
 
           <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -133,6 +139,7 @@ export function LocalMoversMapSection() {
               <li key={state.slug}>
                 <Link
                   href={state.href}
+                  data-intel-event="move_intel_state_click"
                   className={cn(
                     'group move-surface-card flex items-center gap-1.5 !rounded-xl px-3 py-2.5 text-sm',
                     'hover:text-primary',
@@ -148,7 +155,7 @@ export function LocalMoversMapSection() {
                   {isCuratedState(state.slug) ? (
                     <CheckCircle2
                       className="ml-auto h-3.5 w-3.5 shrink-0 text-primary"
-                      aria-label="Fully curated"
+                      aria-label="State guide available"
                     />
                   ) : null}
                 </Link>

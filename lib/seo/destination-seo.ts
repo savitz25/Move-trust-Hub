@@ -11,9 +11,9 @@ export const DESTINATIONS_INDEX_DESCRIPTION =
 
 /** Refined homepage meta — brand suffix applied via formatDocumentTitle / absoluteDocumentTitle */
 export const HOMEPAGE_SEO_TITLE =
-  'Where Are You Going? Route Planner + FMCSA Mover Research';
+  'Moving Company Research, FMCSA Authority & Moving Intelligence';
 export const HOMEPAGE_SEO_DESCRIPTION =
-  'Where are you going? Enter From & To to research FMCSA-licensed movers for your route, estimate volume, and compare carriers. Independent directory — no lead fees, no paid placements.';
+  'Independent moving-company research: carrier vs broker identity, FMCSA authority, state guides, then planner, calculator, Verify DOT, Compare, and My Move. Not a ranking or marketplace.';
 
 export function buildCityHubMetadata(content: CityHubContent): Metadata {
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;

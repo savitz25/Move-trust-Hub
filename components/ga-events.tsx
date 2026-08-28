@@ -318,6 +318,16 @@ export function trackResearchPathClick(params: {
   });
 }
 
+/** MOVE-HOME-002 — homepage intelligence (additive; does not rename Phase 5 events). */
+export const MOVE_INTEL_EVENTS = [
+  'move_intel_explore',
+  'move_intel_trace_number',
+  'move_intel_explain_chart',
+  'move_intel_state_click',
+  'move_intel_research_mover',
+  'move_intel_plan_continue',
+] as const;
+
 // ── Insurance Trust Hub Phase 5 priority events ─────────────────────────────
 
 /** User initiated official state DOI / regulator lookup (consent confirmed). */

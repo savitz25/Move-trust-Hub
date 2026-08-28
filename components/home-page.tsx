@@ -1,48 +1,78 @@
 import type { ReactNode } from 'react';
-import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
-import { HomeBelowFold } from '@/components/home/home-below-fold';
-import { MoveHero } from '@/components/move/hero';
+import Link from 'next/link';
+import { HomeIntelEvents } from '@/components/home/home-intel-events';
+import { HomeIntelHero } from '@/components/home/home-intel-hero';
+import { HomePlanSection } from '@/components/home/home-plan-section';
+import { HomePlaybook } from '@/components/home/home-playbook';
+import { HomeToolsSection } from '@/components/home/home-tools-section';
+import { HomeBelowFoldReviews } from '@/components/home/home-below-fold-reviews';
+import {
+  HomeAskTheMarket,
+  HomeSourcesSection,
+  MoveNationalIntelligence,
+} from '@/components/intelligence/MoveNationalIntelligence';
 import { NetworkTrustBlock } from '@/components/move/network-trust-block';
+import { FaqSection } from '@/components/seo/faq-section';
+import { homepageFaqItems } from '@/lib/seo/schemas';
+import type { MoveHomeIntelligencePayload } from '@/lib/intelligence/home-types';
 
 /**
- * Homepage — SSR H1 in MoveHero is the LCP candidate.
- * Rhythm: Hero → tools → Map → Network → Playbook/FAQ → Footer.
+ * Intelligence-first homepage.
+ * Rhythm: Hero → snapshot/roles/authority/gaps → state browse → plan → tools.
  */
-export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
+export async function HomePage({
+  payload,
+  mapSection,
+}: {
+  payload: MoveHomeIntelligencePayload;
+  mapSection?: ReactNode;
+}) {
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden border-b border-border/60">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-50/80 via-[#F7F8FA] to-[#EEF2F7] dark:from-primary/10 dark:via-background dark:to-background"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -right-20 top-0 h-[26rem] w-[26rem] rounded-full bg-primary/[0.09] blur-3xl"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -bottom-20 -left-12 h-64 w-64 rounded-full bg-move-soft/15 blur-3xl"
-          aria-hidden
-        />
+      <HomeIntelEvents />
+      <HomeIntelHero />
+      <MoveNationalIntelligence payload={payload} />
 
-        <div className="move-section-inner relative py-10 sm:py-12 md:py-16 lg:py-18">
-          <MoveHero />
+      <div id="explore-states" className="scroll-mt-24">
+        <div className="move-section-inner pt-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+            Explore the moving market
+          </p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[#0A2540] sm:text-4xl">
+            Explore moving research by state
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Color on the map is a landing-page marker, not quality, ranking, or safety.
+            Headquarters is not service territory.
+          </p>
+          <p className="mt-4">
+            <Link
+              href="/florida"
+              className="inline-flex min-h-11 items-center rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary no-underline hover:border-primary/50"
+            >
+              Explore Florida Moving Intelligence
+            </Link>
+          </p>
         </div>
-      </section>
-
-      {/* Quick tools — tight bridge between hero and map */}
-      <div className="border-b border-border/50 bg-background">
-        <div className="move-section-inner flex justify-center py-6 md:py-7">
-          <TrustToolsBar className="justify-center" />
-        </div>
+        {mapSection}
       </div>
 
-      {mapSection}
-
+      <HomeAskTheMarket />
+      <HomePlanSection />
+      <HomeToolsSection />
+      <HomePlaybook />
       <NetworkTrustBlock />
+      <HomeSourcesSection payload={payload} />
 
-      <div className="content-auto">
-        <HomeBelowFold />
+      <HomeBelowFoldReviews
+        className="py-14 border-t"
+        compact
+        title="Featured review highlights"
+        subtitle="Named Google review excerpts with reviewer attribution — not inflated industry totals."
+      />
+
+      <div className="content-auto border-t">
+        <FaqSection title="Frequently asked questions" items={homepageFaqItems} />
       </div>
     </div>
   );

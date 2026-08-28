@@ -15,6 +15,7 @@ import {
   SITE_URL,
 } from '@/lib/seo/site-metadata';
 import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
+import { getMoveHomeIntelligenceSnapshot } from '@/lib/intelligence/home-snapshot';
 
 export const dynamic = 'force-static';
 /** Pick up chrome/nav deploy updates without waiting for full CDN max-age. */
@@ -42,11 +43,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const payload = await getMoveHomeIntelligenceSnapshot();
   return (
     <>
       <JsonLd data={buildHomepageSchemaGraph()} />
-      <HomePage mapSection={<LocalMoversMapLoader />} />
+      <HomePage payload={payload} mapSection={<LocalMoversMapLoader />} />
     </>
   );
 }

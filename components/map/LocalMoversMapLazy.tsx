@@ -13,18 +13,21 @@ type Props = {
   statesMeta: MapStateMeta[];
   viewMode?: 'all' | 'curated';
   onViewModeChange?: (mode: 'all' | 'curated') => void;
+  hideCoverageToggle?: boolean;
 };
 
 export function LocalMoversMapLazy({
   statesMeta,
   viewMode,
   onViewModeChange,
+  hideCoverageToggle,
 }: Props) {
   return (
     <InteractiveUSMap
       statesMeta={statesMeta}
       viewMode={viewMode}
       onViewModeChange={onViewModeChange}
+      hideCoverageToggle={hideCoverageToggle}
     />
   );
 }

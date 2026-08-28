@@ -50,15 +50,15 @@ export const websiteSchema = {
 export const homepageServiceSchema = {
   '@type': 'Service',
   '@id': `${SITE_URL}/#moving-directory-service`,
-  name: 'Interstate Moving Company Directory',
-  serviceType: 'Interstate moving company research and comparison',
+  name: 'Interstate Moving Company Research',
+  serviceType: 'Moving company research, FMCSA authority lookup, and move planning tools',
   provider: { '@id': `${SITE_URL}/#organization` },
   areaServed: {
     '@type': 'Country',
     name: 'United States',
   },
   description:
-    'Compare FMCSA-licensed interstate movers by reputation, reviews, and pricing. Free moving calculator, destination guides, and county-level directories — independent research with no lead fees.',
+    'Independent research of mover identity, carrier and broker roles, FMCSA authority, and state guides, plus free calculator, Verify DOT, Compare, and My Move planning tools. No lead fees and no paid placements.',
   url: SITE_URL,
   offers: {
     '@type': 'Offer',
@@ -72,12 +72,12 @@ export const homepageFaqItems = [
   {
     question: 'How do I research interstate movers on Move Trust Hub?',
     answer:
-      'Start with our free moving calculator to estimate volume and weight, then browse our FMCSA-licensed mover directory. Filter by reputation, compare companies side-by-side, and contact movers directly when you are ready.',
+      'Start with mover identity: carrier vs broker, USDOT / MC, and current authority on the official record. Browse the research directory, use Verify DOT, then estimate volume with the calculator and compare companies side-by-side. Contact movers directly when you are ready — MoveTrustHub is not a lead marketplace.',
   },
   {
     question: 'How does Move Trust Hub help me compare long-distance movers?',
     answer:
-      'Move Trust Hub combines attributed customer reviews where available, FMCSA licensing data, reputation scores, and side-by-side comparison tools so you can research movers independently before contacting carriers.',
+      'Move Trust Hub organizes attributed customer reviews where available, FMCSA licensing and authority identifiers, and a side-by-side comparison tool so you can research movers independently before contacting carriers. The homepage does not rank movers.',
   },
   {
     question: 'Why should I use the moving calculator before contacting movers?',

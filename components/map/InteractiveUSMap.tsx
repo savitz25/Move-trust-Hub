@@ -14,6 +14,8 @@ type Props = {
   /** Controlled filter from parent (optional). */
   viewMode?: 'all' | 'curated';
   onViewModeChange?: (mode: 'all' | 'curated') => void;
+  /** Hide curated/all toggle when every landing is equivalent. */
+  hideCoverageToggle?: boolean;
 };
 
 /** Move redesign: soft orange for curated coverage */
@@ -32,6 +34,7 @@ export function InteractiveUSMap({
   statesMeta,
   viewMode: controlledMode,
   onViewModeChange,
+  hideCoverageToggle = false,
 }: Props) {
   const searchId = useId();
   const listboxId = useId();
@@ -239,7 +242,8 @@ export function InteractiveUSMap({
           )}
         </div>
 
-        {/* Toggle: Fully curated / All states */}
+        {/* Toggle: Fully curated / All states — omitted when all landings are equivalent. */}
+        {hideCoverageToggle ? null : (
         <div
           className="inline-flex shrink-0 rounded-xl border border-border/80 bg-muted/40 p-1"
           role="group"
@@ -272,6 +276,7 @@ export function InteractiveUSMap({
             All states
           </button>
         </div>
+        )}
       </div>
 
       <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
@@ -281,19 +286,11 @@ export function InteractiveUSMap({
             style={{ backgroundColor: CURATED_FILL }}
             aria-hidden="true"
           />
-          Curated county guides
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <span
-            className="inline-block h-3 w-3 rounded-sm"
-            style={{ backgroundColor: DEFAULT_FILL }}
-            aria-hidden="true"
-          />
-          All states (landing pages)
+          State research landing
         </span>
         <span className="inline-flex items-center gap-1.5">
           <CheckCircle2 className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-          Click a state for county guides
+          Click a state for county guides — color does not mean quality
         </span>
       </div>
 

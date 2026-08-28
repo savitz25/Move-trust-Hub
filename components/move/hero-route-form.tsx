@@ -38,7 +38,14 @@ function WizardLoadingSlot() {
   );
 }
 
-function RouteFormGate({ onStart }: { onStart: () => void }) {
+function RouteFormGate({
+  onStart,
+  headingAs = 'h2',
+}: {
+  onStart: () => void;
+  headingAs?: 'h2' | 'h3';
+}) {
+  const Heading = headingAs;
   return (
     <div className="move-surface-card relative overflow-hidden p-5 sm:p-6 md:p-7">
       <div
@@ -53,9 +60,9 @@ function RouteFormGate({ onStart }: { onStart: () => void }) {
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
         {MOVE_HERO_FORM.stepLabel}
       </p>
-      <h2 className="mt-1.5 text-xl font-semibold tracking-tight text-[#0A2540] sm:text-2xl">
+      <Heading className="mt-1.5 text-xl font-semibold tracking-tight text-[#0A2540] sm:text-2xl">
         {MOVE_HERO_FORM.title}
-      </h2>
+      </Heading>
 
       <div className="relative mt-5 grid gap-3 sm:grid-cols-2">
         <label className="block text-left">
@@ -147,7 +154,7 @@ function RouteFormGate({ onStart }: { onStart: () => void }) {
 /**
  * Primary hero form card — loads full Move Plan wizard on intent.
  */
-export function HeroRouteForm() {
+export function HeroRouteForm({ headingAs = 'h2' }: { headingAs?: 'h2' | 'h3' } = {}) {
   const [started, setStarted] = useState(false);
 
   const start = useCallback(() => {
@@ -162,5 +169,5 @@ export function HeroRouteForm() {
     );
   }
 
-  return <RouteFormGate onStart={start} />;
+  return <RouteFormGate onStart={start} headingAs={headingAs} />;
 }
