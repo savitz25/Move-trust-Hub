@@ -68,6 +68,11 @@ test('mature tool routes remain linked from homepage surfaces', () => {
   }
 });
 
+test('homepage does not mount the calculator coach over the intelligence H1', () => {
+  const coach = read('components/ux/move-coach-tip.tsx');
+  assert.match(coach, /pathname === '\/'/);
+});
+
 test('planner is rendered once in the plan section, not duplicated in the hero', () => {
   const hero = read('components/home/home-intel-hero.tsx');
   const plan = read('components/home/home-plan-section.tsx');
