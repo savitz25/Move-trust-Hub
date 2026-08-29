@@ -109,7 +109,7 @@ export function MoverOmnibox({
         label: payload.verification_action.label,
       });
     }
-    if (payload.intent === 'COMPANY_IDENTITY' || payload.ambiguity || (payload.result_count > 1 && payload.results.length)) {
+    if (payload.results.length > 0 && (payload.ambiguity || payload.exact_name_group_size > 1 || payload.result_count > 1)) {
       options.push({
         kind: 'all',
         id: 'all',

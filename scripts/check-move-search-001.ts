@@ -42,6 +42,7 @@ assert.match(omnibox, /role="listbox"/);
 assert.match(omnibox, /AbortController/);
 assert.doesNotMatch(omnibox, /reputationScore|Trust Score|Google Places/);
 assert.match(omnibox, /Search all matching companies/);
+assert.match(omnibox, /payload\.results\.length > 0/);
 
 const api = read('app/api/search/movers/route.ts');
 assert.match(api, /searchMovers/);
