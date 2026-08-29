@@ -1,0 +1,48 @@
+{
+  "extensions": [],
+  "cohort": {
+    "n": 5022
+  },
+  "coverage": {
+    "public_name": 5022,
+    "legal_name": 4786,
+    "usdot": 4640,
+    "mc": 4383,
+    "hq": 5022,
+    "display_ne_legal": 1675
+  },
+  "duplicateNameKeys": {
+    "n": 60
+  },
+  "duplicateNameProfiles": {
+    "n": 276
+  },
+  "twoMenAndATruck": {
+    "n": 99
+  },
+  "shifl": [
+    {
+      "id": "usdot-3244649",
+      "slug": "shifl-inc",
+      "name": "SHIFL INC",
+      "fmcsa_legal_name": "SHIFL INC",
+      "usdot_number": "3244649",
+      "mc_number": "1019808",
+      "headquarters": "AIRMONT, NY",
+      "publication_state": "PUBLISHABLE"
+    }
+  ],
+  "collegeHunks": {
+    "n": 67
+  },
+  "indexes": [
+    "idx_companies_legal_name_lower",
+    "idx_companies_mc_number",
+    "idx_companies_name_lower",
+    "idx_companies_usdot",
+    "idx_companies_usdot_number"
+  ],
+  "rpcs": [
+    "directory_query_page"
+  ]
+}

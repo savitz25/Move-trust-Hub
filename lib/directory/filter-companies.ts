@@ -7,6 +7,7 @@ import {
 } from '@/lib/directory/coverage-filter';
 import { applyScopeToCompanies, type DirectorySearchScope } from '@/lib/directory/search-scope';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
+import { compareIdentityCompanies, matchCompanyIdentity } from '@/lib/search/match';
 import { companyMatchesServiceFilter } from '@/lib/directory/service-filter';
 import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
 import type { Company, DirectoryFilters } from '@/types';
@@ -44,6 +45,8 @@ function compareBySort(
 ): number {
   const mode = sort || 'reputation';
   switch (mode) {
+    case 'relevance':
+      return String(a.id).localeCompare(String(b.id));
     case 'reputation':
       return b.reputationScore - a.reputationScore;
     case 'rating':
@@ -182,6 +185,13 @@ export function filterCompanies(
       const sa = searchScores.get(a.id || a.slug) ?? 0;
       const sb = searchScores.get(b.id || b.slug) ?? 0;
       if (sb !== sa) return sb - sa;
+      const ma = matchCompanyIdentity(a, searchQuery);
+      const mb = matchCompanyIdentity(b, searchQuery);
+      if (ma && mb) return compareIdentityCompanies(a, b, ma, mb);
+      const explicitQuality =
+        filters.sort && filters.sort !== 'relevance' && filters.sort !== 'reputation';
+      if (explicitQuality) return compareBySort(a, b, filters.sort);
+      return String(a.id).localeCompare(String(b.id));
     }
 
     return compareBySort(a, b, filters.sort);

@@ -14,13 +14,16 @@ import {
 } from '@/lib/directory/page-size';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
 import { companyMatchesServiceFilter } from '@/lib/directory/service-filter';
+import { classifySearchQuery } from '@/lib/search/classify-intent';
+import { compareIdentityCompanies, matchCompanyIdentity } from '@/lib/search/match';
+import { loadIdentityCandidates } from '@/lib/search/query';
+import { SEARCH_ALL_CANDIDATE_LIMIT } from '@/lib/search/types';
 import { logger } from '@/lib/logging/logger';
 import { getSupabaseAnonKey, getSupabaseUrl, isSupabaseConfigured } from '@/lib/supabase/config';
 import {
   companyListProjectionCandidates,
   mapCompanyRow,
 } from '@/lib/supabase/queries/companies';
-import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 import type { Company, ServiceType } from '@/types';
 import type { Database } from '@/types/supabase';
 
@@ -423,8 +426,11 @@ function applySearchRerank(
     }))
     .filter((row) => row.score > 0)
     .sort((a, b) => {
+      const ma = matchCompanyIdentity(a.company, search);
+      const mb = matchCompanyIdentity(b.company, search);
+      if (ma && mb) return compareIdentityCompanies(a.company, b.company, ma, mb);
       if (b.score !== a.score) return b.score - a.score;
-      return b.company.reputationScore - a.company.reputationScore || a.company.id.localeCompare(b.company.id);
+      return a.company.id.localeCompare(b.company.id);
     });
 
   const filtered = scored.map((s) => s.company);
@@ -505,17 +511,55 @@ export async function queryDbDirectoryPage(options: {
   }
 
   const search = filters.search?.trim() ?? '';
-  const parsed = search ? parseCarrierNumber(search) : null;
-  const usdot =
-    parsed?.type === 'DOT'
-      ? parsed.value
-      : /^\d{3,8}$/.test(search)
-        ? search
-        : null;
-  const mc = parsed?.type === 'MC' ? parsed.value : null;
+  const classified = search ? classifySearchQuery(search) : null;
+  const usdot = classified?.identifier?.namespace === 'DOT' ? classified.identifier.digits : null;
+  const mc = classified?.identifier?.namespace === 'MC' ? classified.identifier.digits : null;
 
   const excludeLocal = !wantsLocalOrCounty(filters);
   const hybrid = needsHybridCoverage(filters);
+
+  if (search && classified && !hybrid) {
+    const t0 = Date.now();
+    const loaded = await loadIdentityCandidates(classified, SEARCH_ALL_CANDIDATE_LIMIT);
+    const scored = loaded.companies
+      .map((company) => {
+        const match = matchCompanyIdentity(company, classified.companyQuery, {
+          identifierDigits: classified.identifier?.digits,
+          namespace: classified.identifier?.namespace ?? null,
+          locationHint: classified.locationHint?.label ?? classified.locationHint?.city,
+        });
+        return match ? { company, match } : null;
+      })
+      .filter((row): row is NonNullable<typeof row> => Boolean(row))
+      .sort((a, b) =>
+        compareIdentityCompanies(
+          a.company,
+          b.company,
+          a.match,
+          b.match,
+          classified.locationHint?.label ?? classified.locationHint?.city
+        )
+      )
+      .map((row) => row.company);
+    const refined = refineClientFilters(scored, filters);
+    const page = refined.slice(offset, offset + limit);
+    lastDiagnostics = {
+      engine: 'db',
+      path: 'search-rerank',
+      dbMs: loaded.dbMs,
+      mapMs: Date.now() - t0 - loaded.dbMs,
+      rowsFetched: loaded.companies.length,
+      total: refined.length,
+      materializedIntoNode: loaded.companies.length,
+    };
+    return {
+      companies: prepareCompaniesForDirectoryClient(page),
+      total: refined.length,
+      offset,
+      limit,
+      hasMore: offset + page.length < refined.length,
+    };
+  }
 
   // Hybrid county: bounded DB candidates + client coverage/static filter.
   // Must NOT hydrate the full ~4k universe. Plain state uses SQL pagination below.

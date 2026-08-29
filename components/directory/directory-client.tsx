@@ -24,6 +24,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { ChevronDown, Filter, Loader2, X } from 'lucide-react';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { CompanyCard } from '@/components/directory/company-card';
+import { IdentityResultCard } from '@/components/search/identity-result-card';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { DirectoryCoverageFilterControl } from '@/components/directory/directory-coverage-filter';
@@ -147,6 +148,7 @@ function coverageFilterFromUrl(searchParams: URLSearchParams): DirectoryCoverage
   });
 }
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
+  { value: 'relevance', label: 'Identity match' },
   { value: 'reputation', label: 'Reputation Score (High → Low)' },
   { value: 'rating', label: 'Customer Rating' },
   { value: 'reviews', label: 'Number of Reviews' },
@@ -192,7 +194,7 @@ export function DirectoryClient({
   const [isSearchPending, setIsSearchPending] = useState(false);
 
   const [filters, setFilters] = useState<Partial<DirectoryFilters>>({
-    sort: (searchParams.get('sort') as SortOption) || 'reputation',
+    sort: (searchParams.get('sort') as SortOption) || (initialSearch.trim() ? 'relevance' : 'reputation'),
     minRating: Number(searchParams.get('minRating')) || 0,
     maxPrice: Number(searchParams.get('maxPrice')) || 12000,
     coverage: (searchParams.get('coverage') as DirectoryFilters['coverage']) || 'Any',
@@ -444,7 +446,7 @@ export function DirectoryClient({
             <Input
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              placeholder="Search company name, city, USDOT, or MC number..."
+              placeholder="Company, USDOT, MC, city or state"
               className="h-10 pr-9"
               aria-label="Search companies"
               autoComplete="off"
@@ -674,14 +676,23 @@ export function DirectoryClient({
           />
         ) : view === 'grid' ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {companies.map((company) => (
-              <CompanyCard
-                key={company.id || company.slug}
-                company={company}
-                compareStore={compareStore}
-                profileReturnPath={sourcePage}
-              />
-            ))}
+            {companies.map((company) =>
+              debouncedSearch.trim() ? (
+                <IdentityResultCard
+                  key={company.id || company.slug}
+                  company={company}
+                  query={debouncedSearch}
+                  href={`/companies/${company.slug}`}
+                />
+              ) : (
+                <CompanyCard
+                  key={company.id || company.slug}
+                  company={company}
+                  compareStore={compareStore}
+                  profileReturnPath={sourcePage}
+                />
+              )
+            )}
           </div>
         ) : (
           <div className="overflow-x-auto border rounded-xl">

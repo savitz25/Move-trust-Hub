@@ -29,7 +29,9 @@ export async function HomePage({
   return (
     <div className="flex flex-col">
       <HomeIntelEvents />
-      <HomeIntelHero />
+      <HomeIntelHero
+        profileCount={payload.metrics.find((m) => m.id === 'dir_publishable_profiles')?.value ?? null}
+      />
       <MoveNationalIntelligence payload={payload} />
 
       <div id="explore-states" className="scroll-mt-24">

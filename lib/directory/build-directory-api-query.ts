@@ -9,6 +9,7 @@ import { DIRECTORY_PAGE_SIZE } from '@/lib/directory/page-size';
 import { normalizeCoverageFilter } from '@/lib/directory/coverage-filter';
 
 const SORT_OPTIONS = new Set<SortOption>([
+  'relevance',
   'reputation',
   'rating',
   'reviews',
@@ -107,10 +108,13 @@ export function directoryFiltersFromSearchParams(
   searchParams: Record<string, string | string[] | undefined>
 ): DirectoryFilterInput {
   const sortRaw = firstParam(searchParams.sort);
+  const hasSearch = Boolean(firstParam(searchParams.search)?.trim());
   const sort: SortOption =
     sortRaw && SORT_OPTIONS.has(sortRaw as SortOption)
       ? (sortRaw as SortOption)
-      : 'reputation';
+      : hasSearch
+        ? 'relevance'
+        : 'reputation';
 
   const servicesRaw = firstParam(searchParams.services);
   const services = servicesRaw

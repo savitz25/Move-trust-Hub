@@ -56,6 +56,8 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 export default async function CompaniesDirectoryPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const filters = directoryFiltersFromSearchParams(params);
+  const researchQuery = (filters.search ?? '').trim();
+  const researchMode = researchQuery.length > 0;
   // Task 009A.2: DB is default. engine=legacy only when hint allowed (rollback/debug).
   const engineRaw = params.engine;
   const engine = Array.isArray(engineRaw) ? engineRaw[0] : engineRaw;
@@ -78,33 +80,40 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <div className="uppercase tracking-[2px] text-xs text-primary font-semibold">
-            COMPREHENSIVE DIRECTORY
+            {researchMode ? 'RESEARCH RESULTS' : 'COMPREHENSIVE DIRECTORY'}
           </div>
           <h1 className="text-4xl font-semibold tracking-tighter mt-1">
-            Compare FMCSA-Licensed Interstate Movers
+            {researchMode
+              ? `Research results for “${researchQuery}”`
+              : 'Compare FMCSA-Licensed Interstate Movers'}
           </h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Your shortlist starts here. Search interstate movers licensed by the U.S. Department of
-            Transportation (FMCSA) for state-to-state moves — filter by Local Mover, coverage
-            (national / state / county), services, price, and
-            reputation. Every profile includes{' '}
-            <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
-              FMCSA licensing
-            </Link>{' '}
-            context and attributed customer reviews. This is a curated directory —{' '}
-            <Link
-              href="/about/how-we-score-movers#how-we-vet"
-              className="text-primary underline underline-offset-2"
-            >
-              see how we vet our movers
-            </Link>
-            .
+            {researchMode
+              ? 'These are identity matches, not a ranking. Brand name is not the FMCSA legal entity. Headquarters is not service territory. If several operators share a name, use the legal name, city or USDOT on your paperwork.'
+              : (
+                <>
+                  Your shortlist starts here. Search interstate movers licensed by the U.S. Department of
+                  Transportation (FMCSA) for state-to-state moves — filter by Local Mover, coverage
+                  (national / state / county), services, and price. Every profile includes{' '}
+                  <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
+                    FMCSA licensing
+                  </Link>{' '}
+                  context and attributed customer reviews. This is a curated directory —{' '}
+                  <Link
+                    href="/about/how-we-score-movers#how-we-vet"
+                    className="text-primary underline underline-offset-2"
+                  >
+                    see how we vet our movers
+                  </Link>
+                  .
+                </>
+              )}
           </p>
         </div>
 
         <TrustToolsBar className="mb-8" />
 
-        <HowWeScorePanel className="mb-8" collapsible />
+        {researchMode ? null : <HowWeScorePanel className="mb-8" collapsible />}
 
         <DirectoryLoader
           initialCompanies={firstPage.companies}

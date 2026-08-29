@@ -148,6 +148,7 @@ export interface Review {
 }
 
 export type SortOption = 
+  | 'relevance'
   | 'reputation'
   | 'rating'
   | 'reviews'
