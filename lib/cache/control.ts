@@ -22,6 +22,25 @@ export function cdnCacheControl(sMaxAge: number): string {
 }
 
 /**
+ * /florida is force-dynamic with a 6s fail-closed snapshot timeout.
+ * Middleware runs before the snapshot, so it cannot distinguish healthy vs
+ * timed-out HTML. A 60s CDN TTL lets a timeout recover without a 24h pin
+ * while the snapshot itself stays in unstable_cache for 1800s.
+ */
+export const FLORIDA_HTML_CDN_SECONDS = 60;
+
+/**
+ * Path-specific HTML CDN TTL — must stay aligned with vercel.json.
+ * Default is DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds (86400) for most public HTML.
+ */
+export function htmlCacheSecondsForPath(pathname: string, defaultSeconds: number): number {
+  if (pathname.includes('/share-og')) return 3600;
+  if (pathname === '/companies' || pathname.startsWith('/companies/')) return 300;
+  if (pathname === '/florida') return FLORIDA_HTML_CDN_SECONDS;
+  return defaultSeconds;
+}
+
+/**
  * Company profile HTML must not get a middleware CDN TTL.
  * A 300s CDN cache was storing streamed HTTP 200 "not found" shells (FL-010R).
  * `/companies` index and `/share-og` keep their existing TTLs.
