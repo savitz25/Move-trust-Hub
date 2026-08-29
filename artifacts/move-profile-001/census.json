@@ -1,0 +1,249 @@
+{
+  "asOf": "2026-08-29T21:13:17.718Z",
+  "db_writes": 0,
+  "p1_public_cohort": 5022,
+  "p2_publication_states": [
+    {
+      "publication_state": "PUBLISHABLE",
+      "n": 5022
+    }
+  ],
+  "p3_identity_coverage": {
+    "public_name": 5022,
+    "legal_name": 4786,
+    "usdot": 4640,
+    "mc": 4383,
+    "hq": 5022
+  },
+  "p4_display_ne_legal": 1675,
+  "p5_duplicate_name_keys": 60,
+  "p5b_duplicate_name_profiles": 276,
+  "p6_two_men_and_a_truck": 99,
+  "p7_entity_type": {
+    "carrier_entity": 4227,
+    "broker_entity": 278,
+    "dual_entity": 94,
+    "blank_entity": 306
+  },
+  "p8_authority": {
+    "authority_true": 4715,
+    "authority_false": 13,
+    "authority_null": 294
+  },
+  "p9_freshness": {
+    "has_refresh": 4640,
+    "missing_refresh": 382
+  },
+  "p10_identifiers": {
+    "usdot_and_mc": 4383,
+    "usdot_no_mc": 257,
+    "mc_no_usdot": 0,
+    "neither": 382
+  },
+  "p11_reviews_and_score": {
+    "has_reviews": 410,
+    "has_reputation_score": 468
+  },
+  "p12_florida_hq_like": 476,
+  "p13_non_public_states": 935,
+  "p14_companies_table_total": 5957,
+  "samples": {
+    "uniqueCarrier": [
+      {
+        "id": "usdot-1618672",
+        "slug": "1-st-moving-corp",
+        "name": "1 ST MOVING CORP",
+        "fmcsa_legal_name": "1 ST MOVING CORP",
+        "usdot_number": "1618672",
+        "mc_number": "598065",
+        "headquarters": "HOWELL, NJ",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      },
+      {
+        "id": "usdot-4024556",
+        "slug": "101-movers-corp",
+        "name": "101 MOVERS CORP",
+        "fmcsa_legal_name": "101 MOVERS CORP",
+        "usdot_number": "4024556",
+        "mc_number": "1518889",
+        "headquarters": "WALLINGTON, NJ",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      },
+      {
+        "id": "usdot-3858041",
+        "slug": "12-gauge-enterprises-llc",
+        "name": "12 GAUGE ENTERPRISES LLC",
+        "fmcsa_legal_name": "12 GAUGE ENTERPRISES LLC",
+        "usdot_number": "3858041",
+        "mc_number": "1408466",
+        "headquarters": "GRANBURY, TX",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      }
+    ],
+    "broker": [
+      {
+        "id": "usdot-3244649",
+        "slug": "shifl-inc",
+        "name": "SHIFL INC",
+        "fmcsa_legal_name": "SHIFL INC",
+        "usdot_number": "3244649",
+        "mc_number": "1019808",
+        "headquarters": "AIRMONT, NY",
+        "entity_type": "Broker",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      }
+    ],
+    "mismatch": [
+      {
+        "id": "usdot-1199826",
+        "slug": "two-men-and-a-truck-usdot-1199826",
+        "name": "TWO MEN AND A TRUCK",
+        "fmcsa_legal_name": "SAB MOVING, LLC",
+        "usdot_number": "1199826",
+        "mc_number": "464742",
+        "headquarters": "GURNEE, IL",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      }
+    ],
+    "duplicateBrand": [
+      {
+        "id": "usdot-1011878",
+        "slug": "two-men-and-a-truck-usdot-1011878",
+        "name": "TWO MEN AND A TRUCK",
+        "fmcsa_legal_name": "LACEY ENTERPRISES",
+        "usdot_number": "1011878",
+        "mc_number": "428604",
+        "headquarters": "BEAVERCREEK TWP, OH",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      },
+      {
+        "id": "usdot-1037672",
+        "slug": "two-men-and-a-truck-usdot-1037672",
+        "name": "TWO MEN AND A TRUCK",
+        "fmcsa_legal_name": "UPWARD ENDEAVORS LLC",
+        "usdot_number": "1037672",
+        "mc_number": "435975",
+        "headquarters": "GREENVILLE, SC",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      },
+      {
+        "id": "usdot-1061908",
+        "slug": "two-men-and-a-truck-usdot-1061908",
+        "name": "TWO MEN AND A TRUCK",
+        "fmcsa_legal_name": "NAVIN ENTERPRISES, INC.",
+        "usdot_number": "1061908",
+        "mc_number": "441711",
+        "headquarters": "KENNESAW, GA",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      }
+    ],
+    "sparse": [
+      {
+        "id": "fl-im-1025",
+        "slug": "gentletouch-moving-company",
+        "name": "Gentletouch Moving Company",
+        "fmcsa_legal_name": "CHARLES L CARTER",
+        "usdot_number": null,
+        "mc_number": null,
+        "headquarters": "CLEARWATER, FL",
+        "entity_type": "Moving Company",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": null,
+        "review_count": 0
+      }
+    ],
+    "dual": [
+      {
+        "id": "a-c-white-transfer-storage",
+        "slug": "a-c-white-transfer-storage",
+        "name": "A.C. White Transfer & Storage",
+        "fmcsa_legal_name": "A C WHITE TRANSFER & STORAGE COMPANY INC",
+        "usdot_number": "92851",
+        "mc_number": "120606",
+        "headquarters": "Atlanta",
+        "entity_type": "Carrier/Broker",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-23T05:01:40.501Z",
+        "review_count": 91
+      },
+      {
+        "id": "usdot-76507",
+        "slug": "a-n-webber-inc",
+        "name": "A. N. WEBBER, INC.",
+        "fmcsa_legal_name": "A. N. WEBBER, INC.",
+        "usdot_number": "76507",
+        "mc_number": "147008",
+        "headquarters": "KANKAKEE, IL",
+        "entity_type": "Carrier/Broker",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      }
+    ],
+    "usdotNoMc": [
+      {
+        "id": "usdot-2971746",
+        "slug": "a-a-sound-forwarders-inc",
+        "name": "A. A. SOUND FORWARDERS, INC.",
+        "fmcsa_legal_name": "A. A. SOUND FORWARDERS, INC.",
+        "usdot_number": "2971746",
+        "mc_number": null,
+        "headquarters": "MARIETTA, GA",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      },
+      {
+        "id": "usdot-2971728",
+        "slug": "a-advantage-forwarders-inc",
+        "name": "A ADVANTAGE FORWARDERS, INC.",
+        "fmcsa_legal_name": "A ADVANTAGE FORWARDERS, INC.",
+        "usdot_number": "2971728",
+        "mc_number": null,
+        "headquarters": "MIDLAND CITY, AL",
+        "entity_type": "Carrier",
+        "publication_state": "PUBLISHABLE",
+        "authority_active": true,
+        "fmcsa_last_checked": "2026-08-20T13:52:59.596Z",
+        "review_count": 0
+      }
+    ],
+    "missingFreshness": []
+  }
+}

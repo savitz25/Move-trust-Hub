@@ -52,17 +52,6 @@ export function buildCompanyDirectorySchemaGraph(company: Company) {
     });
   }
 
-  // Reputation score as a named property — never AggregateRating
-  if ((company.reputationScore ?? 0) > 0) {
-    additionalProperty.push({
-      '@type': 'PropertyValue',
-      name: 'Move Trust Hub Reputation Score',
-      value: String(company.reputationScore),
-      description:
-        'Editorial composite 0–100 from public licensing and listing signals — not a star rating and not Google/BBB AggregateRating.',
-    });
-  }
-
   const moverNode: Record<string, unknown> = {
     '@type': [...entityTypes],
     '@id': `${canonical}#company`,
