@@ -103,6 +103,48 @@ test('typo Colleg Hunks matches College Hunks', () => {
   assert.ok(match);
 });
 
+test('Two Men Truck ranks TWO MEN AND A TRUCK ahead of Junk Truck', () => {
+  const franchise = company({
+    id: 'franchise',
+    slug: 'franchise',
+    name: 'TWO MEN AND A TRUCK',
+    usdotNumber: '111',
+    reputationScore: 1,
+  });
+  const junk = company({
+    id: 'junk',
+    slug: 'junk',
+    name: 'Two Men And A Junk Truck',
+    usdotNumber: '222',
+    reputationScore: 99,
+  });
+  const mf = matchCompanyIdentity(franchise, 'Two Men Truck')!;
+  const mj = matchCompanyIdentity(junk, 'Two Men Truck')!;
+  assert.ok(mf && mj);
+  assert.equal(mf.tier, mj.tier);
+  assert.ok(mf.textScore > mj.textScore);
+  assert.ok(compareIdentityCompanies(franchise, junk, mf, mj) < 0);
+});
+
+test('text score does not outrank exact USDOT', () => {
+  const named = company({ id: 'n', slug: 'n', name: 'SHIFL INC', usdotNumber: '1', reputationScore: 99 });
+  const exact = company({ id: 'e', slug: 'e', name: 'Other', usdotNumber: '3244649', reputationScore: 1 });
+  const mn = matchCompanyIdentity(named, 'DOT 3244649', { namespace: 'DOT', identifierDigits: '3244649' });
+  const me = matchCompanyIdentity(exact, 'DOT 3244649', { namespace: 'DOT', identifierDigits: '3244649' });
+  assert.equal(me?.tier, 1);
+  assert.notEqual(mn?.type, 'exact_usdot');
+});
+
+test('College Hunks / Colleg Hunks / Square Cow / Apple Moving stay identity matches', () => {
+  const hunks = company({ id: 'h', slug: 'h', name: 'College Hunks Hauling Junk' });
+  const cow = company({ id: 'c', slug: 'c', name: 'Square Cow Movers' });
+  const apple = company({ id: 'a', slug: 'a', name: 'Apple Moving and Storage' });
+  assert.ok(matchCompanyIdentity(hunks, 'College Hunks'));
+  assert.ok(matchCompanyIdentity(hunks, 'Colleg Hunks'));
+  assert.ok(matchCompanyIdentity(cow, 'Square Cow'));
+  assert.ok(matchCompanyIdentity(apple, 'Apple Moving'));
+});
+
 test('HQ hint is not a service-territory claim', () => {
   const c = company({
     id: 'h',

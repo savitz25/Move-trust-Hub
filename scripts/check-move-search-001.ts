@@ -59,6 +59,23 @@ const scoring = read('lib/directory/query-db-directory-page.ts');
 assert.doesNotMatch(scoring, /reputationScore - a.company.reputationScore/);
 assert.match(scoring, /compareIdentityCompanies/);
 
+const query = read('lib/search/query.ts');
+assert.match(query, /countExactPublicDisplayName/);
+assert.match(query, /exactNameCensus/);
+assert.doesNotMatch(query, /matched.filter\(\s*\(row\) => normalizeSearchText\(row.company.name\) === exactName/);
+
+const matchSrc = read('lib/search/match.ts');
+assert.match(matchSrc, /textualIdentityScore/);
+assert.match(matchSrc, /SEARCH_STOPWORDS/);
+assert.match(matchSrc, /bMatch.textScore !== aMatch.textScore/);
+assert.doesNotMatch(matchSrc, /reputationScore/);
+assert.doesNotMatch(matchSrc, /overallRating|reviewCount|fmcsaComplaints/);
+
+const countSql = read('supabase/migrations/20260829193000_move_search_001b_exact_name_count.sql');
+assert.match(countSql, /directory_exact_display_name_count/);
+assert.match(countSql, /PUBLISHABLE/);
+assert.match(countSql, /SECURITY INVOKER/);
+
 assert.equal(classifySearchQuery('DOT 3244649').identifier?.namespace, 'DOT');
 assert.equal(classifySearchQuery('MC 1019808').identifier?.namespace, 'MC');
 assert.equal(classifySearchQuery('1019808').identifier?.namespace, 'BARE');

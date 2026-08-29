@@ -28,9 +28,13 @@ Identity research, not mover ranking. `db_writes` for company identity = 0. Sche
 
 See `docs/move-search-001-golden-live.json`. All 15 curated queries PASS after RPC case-normalization fix.
 
+## 001B corrections
+
+- Exact display-name census via `directory_exact_display_name_count` (not candidate LIMIT). TWO MEN AND A TRUCK live count at correction: **100** (was 99 at 001 audit).
+- Textual identity score (ordered tokens, adjacency, extra-token penalty, stopwords `and/the/a/of/an`). Two Men Truck now ranks TWO MEN AND A TRUCK before Two Men And A Junk Truck.
+
 ## Remaining gaps
 
-- Workstation RPC p50 ~400–700ms (includes TLS + fetch-by-id). Vercel-region warm latency not yet measured.
-- Same-tier token matches sort by name; “Two Men Truck” may list “Two Men And A Junk Truck” first among 40 token matches.
+- Workstation RPC p50 ~400–700ms (includes TLS + fetch-by-id). Vercel-region warm latency measured in 001B closeout.
 - No alias table (not provenance-safe yet).
-- Playwright screenshot pack not captured in this pass.
+- Broad terms remain a bounded candidate set.

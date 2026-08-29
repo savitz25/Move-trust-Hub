@@ -1,10 +1,12 @@
 export { classifySearchQuery } from '@/lib/search/classify-intent';
 export {
+  SEARCH_STOPWORDS,
   authorityStatusLabel,
   compareIdentityCompanies,
   explainMatch,
   matchCompanyIdentity,
   roleLabel,
+  textualIdentityScore,
   uniqueExactIdentity,
 } from '@/lib/search/match';
 export { boundSearchQuery, digitsOnly, normalizeSearchText } from '@/lib/search/normalize';

@@ -24,7 +24,11 @@ async function main() {
   const dry = process.argv.includes('--dry-run');
   const url = process.env.DATABASE_URL || process.env.SUPABASE_DB_URL;
   if (!url) throw new Error('DATABASE_URL missing');
-  const sql = readFileSync(resolve('supabase/migrations/20260829180000_move_search_001_suggestions.sql'), 'utf8');
+  const files = process.argv.filter((a) => a.endsWith('.sql'));
+  const sqlPath =
+    files[0] || resolve('supabase/migrations/20260829180000_move_search_001_suggestions.sql');
+  const sql = readFileSync(sqlPath, 'utf8');
+  console.log('applying', sqlPath);
   if (dry) {
     console.log('dry-run: would apply', sql.length, 'bytes');
     return;

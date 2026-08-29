@@ -40,6 +40,7 @@ type RpcSuggestion = {
   role: string | null;
   authority_active: boolean | null;
   match_tier: number;
+  exact_name_group_size?: number | null;
 };
 
 function anonClient() {
@@ -117,6 +118,52 @@ async function querySuggestionsRpc(query: string, limit: number): Promise<{ ids:
   }
   const ids = ((data ?? []) as RpcSuggestion[]).map((row) => row.company_id).filter(Boolean);
   return { ids, path: 'rpc:directory_search_suggestions' };
+}
+
+export async function countExactPublicDisplayName(rawName: string): Promise<number> {
+  const norm = normalizeSearchText(rawName);
+  if (!norm) return 0;
+
+  const supabase = anonClient();
+  if (supabase) {
+    const { data, error } = await supabase.rpc('directory_exact_display_name_count' as never, {
+      p_query: rawName,
+    } as never);
+    if (!error && typeof data === 'number' && Number.isFinite(data)) {
+      return data;
+    }
+    if (error) {
+      logger.warn('search.exact_name_count_rpc', { message: error.message, code: error.code });
+    }
+  }
+
+  const connectionString = dbUrl();
+  if (!connectionString) return 0;
+  const pg = await import('pg');
+  const client = new pg.Client({
+    connectionString,
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 8_000,
+    query_timeout: 8_000,
+  });
+  await client.connect();
+  try {
+    const result = await client.query<{ n: number }>(
+      `SELECT count(*)::int AS n
+         FROM public.companies c
+        WHERE ${VISIBLE_SQL}
+          AND btrim(regexp_replace(lower(c.name), '[^a-z0-9]+', ' ', 'g')) = $1`,
+      [norm]
+    );
+    return result.rows[0]?.n ?? 0;
+  } catch (err) {
+    logger.warn('search.exact_name_count_sql', {
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return 0;
+  } finally {
+    await client.end().catch(() => undefined);
+  }
 }
 
 export async function loadIdentityCandidates(
@@ -257,7 +304,12 @@ export async function searchMovers(rawQuery: string, options?: { limit?: number 
 
   const candidateLimit =
     classified.intent === 'COMPANY_IDENTITY' ? SEARCH_ALL_CANDIDATE_LIMIT : Math.max(limit * 4, 24);
-  const loaded = await loadIdentityCandidates(classified, candidateLimit);
+  const [loaded, exactNameCensus] = await Promise.all([
+    loadIdentityCandidates(classified, candidateLimit),
+    classified.intent === 'COMPANY_IDENTITY'
+      ? countExactPublicDisplayName(classified.companyQuery)
+      : Promise.resolve(0),
+  ]);
   const { companies, dbMs } = loaded;
 
   const locationHint = classified.locationHint?.label ?? classified.locationHint?.city ?? null;
@@ -288,10 +340,7 @@ export async function searchMovers(rawQuery: string, options?: { limit?: number 
     .filter((row): row is { company: Company; match: IdentityMatch } => Boolean(row))
     .sort((a, b) => compareIdentityCompanies(a.company, b.company, a.match, b.match, locationHint));
 
-  const exactName = normalizeSearchText(classified.companyQuery);
-  const exactNameGroupSize = matched.filter(
-    (row) => normalizeSearchText(row.company.name) === exactName && row.match.tier <= 5
-  ).length;
+  const exactNameGroupSize = exactNameCensus;
 
   const unique = uniqueExactIdentity(matched);
   const ambiguity = exactNameGroupSize > 1 || (Boolean(unique) === false && matched.filter((row) => row.match.tier <= 5).length > 1);
