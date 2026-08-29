@@ -198,7 +198,7 @@ export function InteractiveUSMap({
                 setSearchOpen(false);
               }
             }}
-            className="w-full rounded-xl border border-border/80 bg-background pl-10 pr-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/40"
+            className="h-11 w-full rounded-xl border border-border/80 bg-background pl-10 pr-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/40"
           />
 
           {searchOpen && searchResults.length > 0 && (

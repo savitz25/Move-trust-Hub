@@ -15,7 +15,7 @@ const TOOLS = [
   {
     href: '/compare',
     title: 'Compare movers',
-    body: 'Side-by-side licensing, ratings, and services — you decide.',
+    body: 'Side-by-side licensing, identity, and services — you decide.',
   },
   {
     href: '/my-move',

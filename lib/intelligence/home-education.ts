@@ -9,6 +9,7 @@ export const MOVE_HOME_LIMITATIONS: string[] = [
   'National complaint trend is not yet represented by an immutable dated series.',
   'Insurance-on-file is not yet a defensible national homepage metric.',
   'County Enhanced Local Research is not nationally activated.',
+  'The latest fmcsa_last_checked date is the newest observed refresh in this directory cohort, not an as-of date for every profile.',
 ];
 
 export const MOVE_HOME_EVIDENCE_DEPTH = [

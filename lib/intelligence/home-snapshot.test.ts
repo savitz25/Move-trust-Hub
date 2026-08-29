@@ -12,6 +12,22 @@ import { MOVE_HOME_H1, MOVE_HOME_INTEL_VERSION } from './home-types';
 
 const coverage = buildMoveHomeSiteCoverage();
 
+const SAMPLE_CLOCK = {
+  latestObservedRefresh: '2026-08-27T00:00:00.000Z',
+  oldestObservedRefresh: '2026-08-20T00:00:00.000Z',
+  withRefreshDate: 90,
+  withoutRefreshDate: 10,
+  total: 100,
+  buckets: [
+    { id: '0-30' as const, label: '0–30 days since last recorded refresh', count: 90 },
+    { id: '31-60' as const, label: '31–60 days', count: 0 },
+    { id: '61-90' as const, label: '61–90 days', count: 0 },
+    { id: '91-365' as const, label: '91–365 days', count: 0 },
+    { id: '>365' as const, label: 'More than 365 days', count: 0 },
+    { id: 'unknown' as const, label: 'No refresh date recorded', count: 10 },
+  ],
+};
+
 function sampleCounts(overrides: Partial<Parameters<typeof assembleMoveHomePayload>[0]> = {}) {
   return assembleMoveHomePayload({
     generatedAt: '2026-08-28T12:00:00.000Z',
@@ -25,6 +41,7 @@ function sampleCounts(overrides: Partial<Parameters<typeof assembleMoveHomePaylo
       { class: 'Unknown', count: 5 },
     ],
     authority: { active: 80, notCurrent: 12, unknown: 8, total: 100 },
+    fmcsaClock: SAMPLE_CLOCK,
     siteCoverage: coverage,
     ...overrides,
   });
@@ -61,6 +78,7 @@ test('timeout does not become zero and omits numeric metrics', () => {
   assert.equal(payload.metrics.length, 0);
   assert.equal(payload.entityClasses, null);
   assert.equal(payload.authority, null);
+  assert.equal(payload.fmcsaClock, null);
   assert.equal(
     payload.metrics.some((m) => m.value === 0),
     false
@@ -72,6 +90,7 @@ test('missing asOf omits directory numbers even when counts exist', () => {
   assert.equal(payload.metrics.length, 0);
   assert.equal(payload.entityClasses, null);
   assert.equal(payload.authority, null);
+  assert.equal(payload.fmcsaClock, null);
 });
 
 test('null authority is unknown, not inactive', () => {
@@ -112,6 +131,62 @@ test('authority split that does not sum to total fails closed', () => {
     authority: { active: 80, notCurrent: 10, unknown: 0, total: 100 },
   });
   assert.equal(payload.authority, null);
+});
+
+test('role composition that does not equal the directory cohort fails closed', () => {
+  const payload = sampleCounts({
+    entityClasses: [
+      { class: 'Carrier', count: 70 },
+      { class: 'Broker', count: 10 },
+      { class: 'Carrier/Broker', count: 15 },
+      { class: 'Unknown', count: 0 },
+    ],
+  });
+  assert.equal(payload.entityClasses, null);
+});
+
+test('freshness clock publishes exclusive buckets that sum to the cohort', () => {
+  const payload = sampleCounts();
+  assert.ok(payload.fmcsaClock);
+  assert.equal(payload.fmcsaClock.withRefreshDate + payload.fmcsaClock.withoutRefreshDate, 100);
+  assert.ok(payload.fmcsaClock.buckets);
+  const bucketSum = payload.fmcsaClock.buckets.reduce((sum, row) => sum + row.count, 0);
+  assert.equal(bucketSum, 100);
+  assert.equal(
+    payload.fmcsaClock.latestObservedRefresh,
+    '2026-08-27T00:00:00.000Z'
+  );
+});
+
+test('freshness buckets that do not sum to the cohort omit the chart only', () => {
+  const payload = sampleCounts({
+    fmcsaClock: {
+      ...SAMPLE_CLOCK,
+      buckets: [
+        { id: '0-30', label: '0–30 days since last recorded refresh', count: 50 },
+        { id: '31-60', label: '31–60 days', count: 0 },
+        { id: '61-90', label: '61–90 days', count: 0 },
+        { id: '91-365', label: '91–365 days', count: 0 },
+        { id: '>365', label: 'More than 365 days', count: 0 },
+        { id: 'unknown', label: 'No refresh date recorded', count: 10 },
+      ],
+    },
+  });
+  assert.ok(payload.fmcsaClock);
+  assert.equal(payload.fmcsaClock.withRefreshDate, 90);
+  assert.equal(payload.fmcsaClock.buckets, null);
+});
+
+test('freshness completeness that does not equal F1 fails closed', () => {
+  const payload = sampleCounts({
+    fmcsaClock: {
+      ...SAMPLE_CLOCK,
+      withRefreshDate: 90,
+      withoutRefreshDate: 5,
+      total: 100,
+    },
+  });
+  assert.equal(payload.fmcsaClock, null);
 });
 
 test('site coverage is a landing fact, not service territory', () => {
@@ -156,6 +231,7 @@ test('limitations include the required research-discipline statements', () => {
   assert.match(blob, /does not mean TrustHub endorsement/i);
   assert.match(blob, /inspection volume varies/i);
   assert.match(blob, /complaint found is not proof/i);
+  assert.match(blob, /not an as-of date for every profile/i);
 });
 
 test('payload omits prohibited metric families', () => {

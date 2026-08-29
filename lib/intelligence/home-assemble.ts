@@ -5,6 +5,7 @@ import {
   MOVE_HOME_INTEL_VERSION,
   type MoveHomeAuthoritySplit,
   type MoveHomeEntityClassCount,
+  type MoveHomeFmcsaClock,
   type MoveHomeIntelligencePayload,
   type MoveHomeMetric,
   type MoveHomeSiteCoverage,
@@ -17,6 +18,7 @@ export type MoveHomeLiveCounts = {
   publishableProfiles: number | null;
   entityClasses: MoveHomeEntityClassCount[] | null;
   authority: MoveHomeAuthoritySplit | null;
+  fmcsaClock: MoveHomeFmcsaClock | null;
   siteCoverage: MoveHomeSiteCoverage;
 };
 
@@ -67,8 +69,8 @@ export function assembleMoveHomePayload(input: MoveHomeLiveCounts): MoveHomeInte
   if (entityClasses) {
     const classTotal = entityClasses.reduce((sum, row) => sum + row.count, 0);
     if (
-      input.publishableProfiles !== null &&
-      classTotal > input.publishableProfiles
+      input.publishableProfiles === null ||
+      classTotal !== input.publishableProfiles
     ) {
       entityClasses = null;
     }
@@ -77,8 +79,36 @@ export function assembleMoveHomePayload(input: MoveHomeLiveCounts): MoveHomeInte
   let authority = canPublishNumbers ? input.authority : null;
   if (authority) {
     const splitTotal = authority.active + authority.notCurrent + authority.unknown;
-    if (splitTotal !== authority.total) {
+    if (
+      splitTotal !== authority.total ||
+      (input.publishableProfiles !== null && authority.total !== input.publishableProfiles)
+    ) {
       authority = null;
+    }
+  }
+
+  let fmcsaClock = canPublishNumbers ? input.fmcsaClock : null;
+  if (fmcsaClock) {
+    const datedPlusMissing = fmcsaClock.withRefreshDate + fmcsaClock.withoutRefreshDate;
+    if (
+      datedPlusMissing !== fmcsaClock.total ||
+      (input.publishableProfiles !== null && fmcsaClock.total !== input.publishableProfiles)
+    ) {
+      fmcsaClock = null;
+    } else if (fmcsaClock.buckets) {
+      const bucketSum = fmcsaClock.buckets.reduce((sum, row) => sum + row.count, 0);
+      const datedBucketSum = fmcsaClock.buckets
+        .filter((row) => row.id !== 'unknown')
+        .reduce((sum, row) => sum + row.count, 0);
+      const unknownBucket = fmcsaClock.buckets.find((row) => row.id === 'unknown');
+      if (
+        bucketSum !== fmcsaClock.total ||
+        datedBucketSum !== fmcsaClock.withRefreshDate ||
+        !unknownBucket ||
+        unknownBucket.count !== fmcsaClock.withoutRefreshDate
+      ) {
+        fmcsaClock = { ...fmcsaClock, buckets: null };
+      }
     }
   }
 
@@ -92,6 +122,7 @@ export function assembleMoveHomePayload(input: MoveHomeLiveCounts): MoveHomeInte
     metrics,
     entityClasses,
     authority,
+    fmcsaClock,
     siteCoverage: input.siteCoverage,
     evidenceDepth: MOVE_HOME_EVIDENCE_DEPTH,
   };
@@ -114,6 +145,7 @@ export function emptyMoveHomePayload(
     publishableProfiles: null,
     entityClasses: null,
     authority: null,
+    fmcsaClock: null,
     siteCoverage,
   });
 }

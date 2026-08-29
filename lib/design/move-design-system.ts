@@ -122,7 +122,7 @@ export const MOVE_FOOTER_COLUMNS = [
     links: [
       { href: '/moving-calculator', label: 'Moving Calculator' },
       { href: '/verify-dot', label: 'Verify DOT' },
-      { href: '/about/how-we-score-movers', label: 'How We Vet Movers' },
+      { href: '/about/how-we-score-movers', label: 'Research methodology' },
       { href: '/resources', label: 'Guides' },
       { href: '/review', label: 'Leave a Review' },
       { href: '/for-movers', label: 'For Moving Companies' },

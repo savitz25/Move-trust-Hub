@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { CheckCircle2, MapPin } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { LocalMoversMapLazy } from '@/components/map/LocalMoversMapLazy';
 import { buildStatesMeta } from '@/lib/map/build-search-index';
 import { isCuratedState } from '@/lib/local-movers/curated-states';
@@ -49,40 +49,14 @@ export function LocalMoversMapSection() {
   return (
     <section
       className="move-section border-y border-border/60 bg-gradient-to-b from-background via-orange-50/15 to-muted/10"
-      aria-labelledby="local-movers-map-heading"
+      aria-label="State research map and directory"
     >
       <JsonLd data={schema} />
 
       <div className="move-section-inner">
-        <div className="mb-7 text-center md:mb-9">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
-            <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-            Local mover coverage map
-          </div>
-          <h2
-            id="local-movers-map-heading"
-            className="mb-3 text-3xl font-semibold tracking-tight text-[#0A2540] md:text-4xl dark:text-white"
-          >
-            Explore moving research by state
-          </h2>
-          <p className="mx-auto max-w-2xl leading-relaxed text-muted-foreground">
-            Click any state for county guides and FMCSA research tools.
-            Prefer text? Use the directory grid below. Map color marks a landing page — not quality.
-          </p>
-          <p className="mt-2 text-xs text-muted-foreground">
-            {statesMeta.length} state and D.C. research landings
-          </p>
-        </div>
-
-        <LocalMoversMapLazy
-          statesMeta={statesMeta}
-          viewMode={allLandingsEquivalent ? 'all' : viewMode}
-          onViewModeChange={allLandingsEquivalent ? undefined : setViewMode}
-          hideCoverageToggle={allLandingsEquivalent}
-        />
-
+        <div className="flex flex-col gap-8">
         <nav
-          className="mt-10 border-t border-border/70 pt-8"
+          className="order-1 md:order-2 border-t border-border/70 pt-2 md:mt-0 md:border-t-0 md:pt-0"
           aria-label="Browse local movers by state"
         >
           <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -108,7 +82,7 @@ export function LocalMoversMapSection() {
                 type="button"
                 onClick={() => setViewMode('curated')}
                 className={cn(
-                  'rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors',
+                  'min-h-11 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors',
                   viewMode === 'curated'
                     ? 'bg-primary text-primary-foreground'
                     : 'text-muted-foreground hover:text-foreground'
@@ -121,7 +95,7 @@ export function LocalMoversMapSection() {
                 type="button"
                 onClick={() => setViewMode('all')}
                 className={cn(
-                  'rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors',
+                  'min-h-11 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors',
                   viewMode === 'all'
                     ? 'bg-primary text-primary-foreground'
                     : 'text-muted-foreground hover:text-foreground'
@@ -152,7 +126,7 @@ export function LocalMoversMapSection() {
                   <span className="truncate font-medium group-hover:text-primary">
                     {state.name}
                   </span>
-                  {isCuratedState(state.slug) ? (
+                  {!allLandingsEquivalent && isCuratedState(state.slug) ? (
                     <CheckCircle2
                       className="ml-auto h-3.5 w-3.5 shrink-0 text-primary"
                       aria-label="State guide available"
@@ -166,12 +140,25 @@ export function LocalMoversMapSection() {
           <p className="mt-6 text-center text-sm">
             <Link
               href="/local-movers"
-              className="font-semibold text-primary underline-offset-2 hover:underline"
+              className="inline-flex min-h-11 items-center font-semibold text-primary underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               View full local movers hub →
             </Link>
           </p>
         </nav>
+        <div className="order-2 md:order-1">
+          <p className="mb-3 text-xs text-muted-foreground">
+            {statesMeta.length} state and D.C. research landings. Map color marks a landing page — not quality.
+            Prefer the directory list {allLandingsEquivalent ? 'above on small screens' : 'alongside the map'}.
+          </p>
+          <LocalMoversMapLazy
+            statesMeta={statesMeta}
+            viewMode={allLandingsEquivalent ? 'all' : viewMode}
+            onViewModeChange={allLandingsEquivalent ? undefined : setViewMode}
+            hideCoverageToggle={allLandingsEquivalent}
+          />
+        </div>
+        </div>
       </div>
     </section>
   );
