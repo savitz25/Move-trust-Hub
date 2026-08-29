@@ -1,0 +1,166 @@
+{
+  "rows": [
+    {
+      "query": "SHIFL",
+      "intent": "COMPANY_IDENTITY",
+      "intentPass": true,
+      "top": "Shifl INC",
+      "count": 1,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 1368,
+      "dbMs": 1283,
+      "pass": true
+    },
+    {
+      "query": "SHIFL INC",
+      "intent": "COMPANY_IDENTITY",
+      "intentPass": true,
+      "top": "Shifl INC",
+      "count": 3,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 809,
+      "dbMs": 786,
+      "pass": true
+    },
+    {
+      "query": "DOT 3244649",
+      "intent": "REGULATORY_IDENTIFIER",
+      "intentPass": true,
+      "top": "Shifl INC",
+      "count": 1,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 509,
+      "dbMs": 509,
+      "pass": true
+    },
+    {
+      "query": "USDOT 3244649",
+      "intent": "REGULATORY_IDENTIFIER",
+      "intentPass": true,
+      "top": "Shifl INC",
+      "count": 1,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 504,
+      "dbMs": 504,
+      "pass": true
+    },
+    {
+      "query": "MC 1019808",
+      "intent": "REGULATORY_IDENTIFIER",
+      "intentPass": true,
+      "top": "Shifl INC",
+      "count": 1,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 476,
+      "dbMs": 476,
+      "pass": true
+    },
+    {
+      "query": "MC-1019808",
+      "intent": "REGULATORY_IDENTIFIER",
+      "intentPass": true,
+      "top": "Shifl INC",
+      "count": 1,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 484,
+      "dbMs": 484,
+      "pass": true
+    },
+    {
+      "query": "1019808",
+      "intent": "REGULATORY_IDENTIFIER",
+      "intentPass": true,
+      "top": "Shifl INC",
+      "count": 1,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 420,
+      "dbMs": 419,
+      "pass": true
+    },
+    {
+      "query": "3244649",
+      "intent": "REGULATORY_IDENTIFIER",
+      "intentPass": true,
+      "top": "Shifl INC",
+      "count": 1,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 412,
+      "dbMs": 412,
+      "pass": true
+    },
+    {
+      "query": "TWO MEN AND A TRUCK",
+      "intent": "COMPANY_IDENTITY",
+      "intentPass": true,
+      "top": "Two Men And A Truck",
+      "count": 40,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 572,
+      "dbMs": 527,
+      "pass": true
+    },
+    {
+      "query": "Two Men Truck",
+      "intent": "COMPANY_IDENTITY",
+      "intentPass": true,
+      "top": "Two Men And A Junk Truck",
+      "count": 40,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 513,
+      "dbMs": 490,
+      "pass": true
+    },
+    {
+      "query": "College Hunks",
+      "intent": "COMPANY_IDENTITY",
+      "intentPass": true,
+      "top": "College Hunks Hauling Junk",
+      "count": 40,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 590,
+      "dbMs": 557,
+      "pass": true
+    },
+    {
+      "query": "Colleg Hunks",
+      "intent": "COMPANY_IDENTITY",
+      "intentPass": true,
+      "top": "College Hunks Hauling Junk",
+      "count": 40,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 699,
+      "dbMs": 672,
+      "pass": true
+    },
+    {
+      "query": "Miami, FL",
+      "intent": "PLACE",
+      "intentPass": true,
+      "top": "Local movers in Miami-Dade County, FL",
+      "count": 2,
+      "ms": 3,
+      "pass": true
+    },
+    {
+      "query": "Florida",
+      "intent": "PLACE",
+      "intentPass": true,
+      "top": "Florida Moving Intelligence",
+      "count": 2,
+      "ms": 3,
+      "pass": true
+    },
+    {
+      "query": "xyzzy-no-such-mover-zzzz",
+      "intent": "COMPANY_IDENTITY",
+      "intentPass": true,
+      "top": null,
+      "count": 0,
+      "path": "rpc:directory_search_suggestions",
+      "ms": 353,
+      "dbMs": 335,
+      "pass": true
+    }
+  ],
+  "failed": 0
+}

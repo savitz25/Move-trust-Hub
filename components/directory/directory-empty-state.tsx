@@ -39,12 +39,12 @@ export function DirectoryEmptyState({
   const placeTitle = placeMatch
     ? `${placeMatch.headline} — not a missing interstate carrier`
     : trimmed
-      ? 'No interstate companies matched this search'
+      ? 'No MoveTrustHub research profile matched this query'
       : 'No companies match these filters';
   const placeDescription = placeMatch
     ? placeMatch.detail
     : trimmed
-      ? `No interstate directory profile matched “${trimmed}”. That does not mean a carrier is unlicensed. Verify on FMCSA SAFER, browse local movers by state, or try a USDOT / MC number.`
+      ? `No MoveTrustHub research profile matched “${trimmed}”. That does not mean a company is unlicensed. Verify the number on FMCSA SAFER, browse local or state research, or search the full directory. We do not invent listings.`
       : 'No movers match your current filters. Clear filters or browse the full directory — we do not invent listings to fill gaps.';
 
   return (

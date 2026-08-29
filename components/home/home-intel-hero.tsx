@@ -2,7 +2,7 @@ import { TrustMark } from '@/components/network/trust-mark';
 import { HomeMoverSearch } from '@/components/home/home-mover-search';
 import { MOVE_HOME_H1 } from '@/lib/intelligence/home-types';
 
-export function HomeIntelHero() {
+export function HomeIntelHero({ profileCount = null }: { profileCount?: number | null }) {
   return (
     <section className="relative overflow-hidden border-b border-border/60" aria-labelledby="move-intel-hero-heading">
       <div
@@ -33,7 +33,11 @@ export function HomeIntelHero() {
           already use. Not a marketplace, ranking board, or endorsement.
         </p>
 
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+        <div className="mt-7">
+          <HomeMoverSearch compact profileCount={profileCount} />
+        </div>
+
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href="#moving-intelligence"
             className="move-cta inline-flex h-11 min-w-[12rem] items-center justify-center rounded-xl px-5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
@@ -48,10 +52,6 @@ export function HomeIntelHero() {
           >
             Plan your move
           </a>
-        </div>
-
-        <div className="mt-6">
-          <HomeMoverSearch compact />
         </div>
       </div>
     </section>

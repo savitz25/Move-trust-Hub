@@ -67,6 +67,30 @@ test('maxPrice filter excludes companies with no observed price', () => {
   );
 });
 
+test('search mode does not use reputation to break identity ties', () => {
+  const highRep = company({
+    id: 'z-high',
+    slug: 'z-high',
+    name: 'TWO MEN AND A TRUCK',
+    headquarters: 'Zanesville, OH',
+    usdotNumber: '999',
+    reputationScore: 99,
+  });
+  const lowRep = company({
+    id: 'a-low',
+    slug: 'a-low',
+    name: 'TWO MEN AND A TRUCK',
+    headquarters: 'Austin, TX',
+    usdotNumber: '111',
+    reputationScore: 1,
+  });
+  const result = filterCompanies([highRep, lowRep], {
+    search: 'TWO MEN AND A TRUCK',
+    sort: 'relevance',
+  });
+  assert.equal(result[0]?.id, 'a-low');
+});
+
 test('complaint sort does not treat missing shipment volume as a perfect record', () => {
   const known = company({
     id: 'known',
