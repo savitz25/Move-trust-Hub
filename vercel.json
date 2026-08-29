@@ -70,6 +70,23 @@
       ]
     },
     {
+      "source": "/florida",
+      "headers": [
+        {
+          "key": "X-Trust-Hub",
+          "value": "move"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=60"
+        },
+        {
+          "key": "Vercel-CDN-Cache-Control",
+          "value": "max-age=60"
+        }
+      ]
+    },
+    {
       "source": "/",
       "headers": [
         {

@@ -14,20 +14,13 @@ import { needsAuthSession } from '@/lib/middleware/auth-paths';
 import {
   cdnCacheControl,
   htmlCacheControl,
+  htmlCacheSecondsForPath,
   PRIVATE_NO_STORE,
   shouldApplyMiddlewareHtmlCache,
 } from '@/lib/cache/control';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
-
-/** Path-specific HTML TTL — must stay aligned with page `revalidate` and vercel.json. */
-function htmlCacheSecondsForPath(pathname: string, defaultSeconds: number): number {
-  // Directory + profiles: 5 min CDN (was 60s — high origin churn under crawl/traffic)
-  if (pathname.includes('/share-og')) return 3600;
-  if (pathname === '/companies' || pathname.startsWith('/companies/')) return 300;
-  return defaultSeconds;
-}
 
 function applyPublicCacheHeaders(response: NextResponse, sMaxAge: number) {
   const cache = htmlCacheControl(sMaxAge);
