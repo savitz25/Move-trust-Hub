@@ -80,3 +80,38 @@ test('planner is rendered once in the plan section, not duplicated in the hero',
   assert.match(plan, /<HeroRouteForm/);
   assert.equal((plan.match(/<HeroRouteForm/g) ?? []).length, 1);
 });
+
+test('homepage does not mount Featured Review Highlights', () => {
+  const home = read('components/home-page.tsx');
+  assert.doesNotMatch(home, /HomeBelowFoldReviews/);
+  assert.doesNotMatch(home, /Featured review highlights/);
+});
+
+test('FMCSA clock copy is latest observed refresh, not whole-cohort as-of', () => {
+  const intel = read('components/intelligence/MoveNationalIntelligence.tsx');
+  assert.doesNotMatch(intel, /Directory FMCSA flags as of/);
+  assert.match(intel, /Latest observed FMCSA refresh/);
+  assert.match(intel, /not the as-of date for every profile/);
+  assert.match(intel, /Refresh age is not quality/);
+});
+
+test('Compare tool copy is evidence-oriented, not ratings-as-quality', () => {
+  const tools = read('components/home/home-tools-section.tsx');
+  assert.doesNotMatch(tools, /licensing, ratings, and services/);
+  assert.match(tools, /licensing, identity, and services/);
+});
+
+test('footer methodology label keeps the scoring-firewall href', () => {
+  const hub = read('lib/hub/config.ts');
+  assert.match(hub, /href: '\/about\/how-we-score-movers', label: 'Research methodology'/);
+  assert.doesNotMatch(hub, /How We Vet Movers/);
+});
+
+test('homepage section order puts sources and FAQ before network, without reviews after sources', () => {
+  const home = read('components/home-page.tsx');
+  const sourcesAt = home.indexOf('HomeSourcesSection');
+  const faqAt = home.indexOf('FaqSection');
+  const networkAt = home.lastIndexOf('NetworkTrustBlock');
+  assert.ok(sourcesAt > 0 && faqAt > sourcesAt && networkAt > faqAt);
+  assert.ok(home.indexOf('HomeBelowFoldReviews') === -1);
+});

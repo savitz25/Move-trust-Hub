@@ -27,7 +27,7 @@ function TraceNumber({ metric, retrievedAt }: { metric: MoveHomeMetric; retrieve
         <div><dt className="font-medium text-foreground">Grain</dt><dd>{metric.grain}</dd></div>
         <div><dt className="font-medium text-foreground">Cohort</dt><dd>{metric.cohort}</dd></div>
         <div><dt className="font-medium text-foreground">Source</dt><dd>{metric.source}</dd></div>
-        <div><dt className="font-medium text-foreground">As-of</dt><dd>{formatAsOf(metric.asOf) ?? metric.asOf}</dd></div>
+        <div><dt className="font-medium text-foreground">Latest observed FMCSA refresh</dt><dd>{formatAsOf(metric.asOf) ?? metric.asOf} — not an as-of date for every profile</dd></div>
         <div><dt className="font-medium text-foreground">Retrieved</dt><dd>{formatAsOf(retrievedAt) ?? retrievedAt}</dd></div>
         <div><dt className="font-medium text-foreground">Limitation</dt><dd>{metric.disclosure}</dd></div>
         <div><dt className="font-medium text-foreground">Exclusions</dt><dd>{metric.exclusions}</dd></div>
@@ -52,19 +52,19 @@ function RoleBars({
     'Carrier/Broker': '#1A3654',
     Unknown: '#CBD5E1',
   };
+  const equation = rows.map((row) => formatIntelNumber(row.count, payload.timedOut)).join(' + ');
 
   return (
     <figure className="mt-6">
       <div
         className="flex h-3 overflow-hidden rounded-full"
         role="img"
-        aria-label="Directory role composition bar"
+        aria-label={`Directory role composition: ${rows.map((row) => `${row.class} ${row.count}`).join(', ')}`}
       >
         {rows.map((row) => (
           <span
             key={row.class}
             style={{ width: `${(row.count / total) * 100}%`, backgroundColor: colors[row.class] }}
-            title={`${row.class}: ${row.count}`}
           />
         ))}
       </div>
@@ -89,6 +89,10 @@ function RoleBars({
           ))}
         </tbody>
       </table>
+      <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        {equation} = {formatIntelNumber(total, payload.timedOut)} directory profiles.
+        This is the current MoveTrustHub research directory, not the complete FMCSA universe.
+      </p>
       <details className="mt-3 text-xs text-muted-foreground">
         <summary
           className="inline-flex min-h-11 cursor-pointer items-center font-medium text-primary underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
@@ -101,7 +105,146 @@ function RoleBars({
           <p><strong className="text-foreground">Why might this matter?</strong> A carrier hauls the shipment. A broker arranges it. Dual authority stays dual.</p>
           <p><strong className="text-foreground">What does this not mean?</strong> It is not the complete FMCSA universe, not a ranking, and not a claim that one role is safer.</p>
           <p><strong className="text-foreground">Source</strong> Directory entity_type via existing FMCSA display normalization.</p>
-          <p><strong className="text-foreground">As-of</strong> {formatAsOf(payload.asOf) ?? 'Not available'}</p>
+          <p><strong className="text-foreground">Clock</strong> Latest observed FMCSA refresh {formatAsOf(payload.fmcsaClock?.latestObservedRefresh ?? payload.asOf) ?? 'not available'} — not an as-of date for every profile.</p>
+        </div>
+      </details>
+    </figure>
+  );
+}
+
+function AuthorityBars({ payload }: { payload: MoveHomeIntelligencePayload }) {
+  const auth = payload.authority;
+  if (!auth) return null;
+  const rows = [
+    { id: 'current', label: 'Current / active flag', count: auth.active, color: '#0A2540' },
+    { id: 'not-current', label: 'Not current', count: auth.notCurrent, color: '#FF5A1F' },
+    { id: 'unknown', label: 'Unknown', count: auth.unknown, color: '#CBD5E1' },
+  ];
+  const total = auth.total;
+  if (!total) return null;
+
+  return (
+    <figure className="mt-6">
+      <div
+        className="flex h-3 overflow-hidden rounded-full"
+        role="img"
+        aria-label={`FMCSA authority flags: current ${auth.active}, not current ${auth.notCurrent}, unknown ${auth.unknown}`}
+      >
+        {rows.map((row) => (
+          <span
+            key={row.id}
+            style={{ width: `${(row.count / total) * 100}%`, backgroundColor: row.color }}
+          />
+        ))}
+      </div>
+      <table className="mt-4 w-full text-sm">
+        <caption className="sr-only">
+          Directory cohort by stored FMCSA authority_active flag. Active is not an endorsement.
+        </caption>
+        <thead>
+          <tr className="text-left text-muted-foreground">
+            <th scope="col" className="py-1 font-medium">Authority flag</th>
+            <th scope="col" className="py-1 font-medium">Profiles</th>
+            <th scope="col" className="py-1 font-medium">Share of directory cohort</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.id} className="border-t border-border/60">
+              <th scope="row" className="py-2 font-medium text-foreground">{row.label}</th>
+              <td className="py-2 tabular-nums">{formatIntelNumber(row.count, payload.timedOut)}</td>
+              <td className="py-2 tabular-nums">{Math.round((row.count / total) * 100)}%</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+        {formatIntelNumber(auth.active, payload.timedOut)} + {formatIntelNumber(auth.notCurrent, payload.timedOut)} + {formatIntelNumber(auth.unknown, payload.timedOut)} = {formatIntelNumber(total, payload.timedOut)} directory profiles.
+        Active authority is not a TrustHub recommendation, safety finding, or endorsement. Unknown is not inactive.
+      </p>
+      <details className="mt-3 text-xs text-muted-foreground">
+        <summary
+          className="inline-flex min-h-11 cursor-pointer items-center font-medium text-primary underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          data-intel-event="move_intel_explain_chart"
+        >
+          Explain this chart
+        </summary>
+        <div className="mt-2 space-y-2 rounded-xl border border-border bg-muted/30 px-3 py-3">
+          <p><strong className="text-foreground">What am I looking at?</strong> Stored authority_active on consumer-visible directory profiles.</p>
+          <p><strong className="text-foreground">Why might this matter?</strong> Current operating authority is a regulatory fact you can verify on the official FMCSA record.</p>
+          <p><strong className="text-foreground">What does this not mean?</strong> Active is not quality, not an endorsement, and not a TrustHub recommendation. Null is unknown, not inactive.</p>
+          <p><strong className="text-foreground">Source</strong> companies.authority_active on the consumer-visible directory cohort.</p>
+          <p><strong className="text-foreground">Clock</strong> Latest observed FMCSA refresh {formatAsOf(payload.fmcsaClock?.latestObservedRefresh ?? payload.asOf) ?? 'not available'} — not an as-of date for every profile.</p>
+        </div>
+      </details>
+    </figure>
+  );
+}
+
+function FreshnessBars({ payload }: { payload: MoveHomeIntelligencePayload }) {
+  const clock = payload.fmcsaClock;
+  if (!clock?.buckets) return null;
+  const total = clock.total;
+  if (!total) return null;
+  const colors: Record<string, string> = {
+    '0-30': '#0A2540',
+    '31-60': '#1A3654',
+    '61-90': '#2C5282',
+    '91-365': '#718096',
+    '>365': '#A0AEC0',
+    unknown: '#CBD5E1',
+  };
+
+  return (
+    <figure className="mt-6">
+      <div
+        className="flex h-3 overflow-hidden rounded-full"
+        role="img"
+        aria-label={`FMCSA refresh-age composition: ${clock.buckets.map((row) => `${row.label} ${row.count}`).join(', ')}`}
+      >
+        {clock.buckets.map((row) => (
+          <span
+            key={row.id}
+            style={{ width: `${(row.count / total) * 100}%`, backgroundColor: colors[row.id] ?? '#CBD5E1' }}
+          />
+        ))}
+      </div>
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full min-w-[20rem] text-sm">
+          <caption className="sr-only">
+            Exclusive FMCSA refresh-age buckets for the current directory cohort. Refresh age is not quality.
+          </caption>
+          <thead>
+            <tr className="text-left text-muted-foreground">
+              <th scope="col" className="py-1 font-medium">Refresh age</th>
+              <th scope="col" className="py-1 font-medium">Profiles</th>
+              <th scope="col" className="py-1 font-medium">Share of directory cohort</th>
+            </tr>
+          </thead>
+          <tbody>
+            {clock.buckets.map((row) => (
+              <tr key={row.id} className="border-t border-border/60">
+                <th scope="row" className="py-2 font-medium text-foreground">{row.label}</th>
+                <td className="py-2 tabular-nums">{formatIntelNumber(row.count, payload.timedOut)}</td>
+                <td className="py-2 tabular-nums">{Math.round((row.count / total) * 100)}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <details className="mt-3 text-xs text-muted-foreground">
+        <summary
+          className="inline-flex min-h-11 cursor-pointer items-center font-medium text-primary underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          data-intel-event="move_intel_explain_chart"
+        >
+          Explain this chart
+        </summary>
+        <div className="mt-2 space-y-2 rounded-xl border border-border bg-muted/30 px-3 py-3">
+          <p><strong className="text-foreground">What am I looking at?</strong> Exclusive age buckets of fmcsa_last_checked on consumer-visible directory profiles, plus profiles with no date.</p>
+          <p><strong className="text-foreground">Why might this matter?</strong> It shows how current the stored FMCSA flags are in this research directory, and how many profiles have no refresh date.</p>
+          <p><strong className="text-foreground">What does this not mean?</strong> Refresh age is not quality, safety, or a TrustHub ranking. A recent refresh is not an endorsement.</p>
+          <p><strong className="text-foreground">Source</strong> companies.fmcsa_last_checked on the consumer-visible directory cohort.</p>
+          <p><strong className="text-foreground">Clock</strong> Latest observed {formatAsOf(clock.latestObservedRefresh)}; oldest observed {formatAsOf(clock.oldestObservedRefresh)}. Neither date is the as-of date for the whole cohort.</p>
         </div>
       </details>
     </figure>
@@ -196,9 +339,20 @@ export function MoveNationalIntelligence({
               )}
             </ul>
           )}
-          {asOf ? (
-            <p className="mt-3 text-xs text-muted-foreground">
-              Directory FMCSA flags as of {asOf}. Snapshot {payload.version}.
+          {payload.fmcsaClock ? (
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              Latest observed FMCSA refresh in this directory cohort:{' '}
+              {formatAsOf(payload.fmcsaClock.latestObservedRefresh)}. Oldest observed refresh:{' '}
+              {formatAsOf(payload.fmcsaClock.oldestObservedRefresh)}.{' '}
+              {formatIntelNumber(payload.fmcsaClock.withRefreshDate, payload.timedOut)} of{' '}
+              {formatIntelNumber(payload.fmcsaClock.total, payload.timedOut)} profiles have a
+              recorded refresh date; {formatIntelNumber(payload.fmcsaClock.withoutRefreshDate, payload.timedOut)} do
+              not. The latest date is not the as-of date for every profile. Snapshot {payload.version}.
+            </p>
+          ) : asOf ? (
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              Latest observed FMCSA refresh in this directory cohort: {asOf}. This is not the
+              as-of date for every profile. Snapshot {payload.version}.
             </p>
           ) : null}
         </div>
@@ -236,11 +390,16 @@ export function MoveNationalIntelligence({
       <section aria-labelledby="authority-heading" className="move-section">
         <div className="move-section-inner">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-            Regulatory authority
+            Finding · FMCSA authority status
           </p>
           <h2 id="authority-heading" className="mt-2 text-3xl font-semibold tracking-tight text-[#0A2540] sm:text-4xl">
             Authority is a regulatory fact, not a recommendation
           </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Active FMCSA authority does not mean TrustHub recommends the mover. Unknown is not
+            inactive. Verify the official record before you book.
+          </p>
+          <AuthorityBars payload={payload} />
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             <li className="rounded-2xl border border-border px-4 py-4">
               <h3 className="font-semibold text-[#0A2540]">USDOT</h3>
@@ -279,6 +438,34 @@ export function MoveNationalIntelligence({
           </p>
         </div>
       </section>
+
+      {payload.fmcsaClock ? (
+      <section aria-labelledby="freshness-heading" className="move-section border-t border-border/60 bg-muted/20">
+        <div className="move-section-inner">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+            Finding · FMCSA freshness
+          </p>
+          <h2 id="freshness-heading" className="mt-2 text-3xl font-semibold tracking-tight text-[#0A2540] sm:text-4xl">
+            How current is the stored FMCSA evidence?
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            {formatIntelNumber(payload.fmcsaClock.withRefreshDate, payload.timedOut)} of{' '}
+            {formatIntelNumber(payload.fmcsaClock.total, payload.timedOut)} directory profiles have
+            a recorded refresh date. Latest observed refresh:{' '}
+            {formatAsOf(payload.fmcsaClock.latestObservedRefresh)}. Oldest observed refresh:{' '}
+            {formatAsOf(payload.fmcsaClock.oldestObservedRefresh)}. Refresh age is not quality.
+          </p>
+          {payload.fmcsaClock.buckets ? (
+            <FreshnessBars payload={payload} />
+          ) : (
+            <p className="mt-4 text-sm text-muted-foreground">
+              Exclusive refresh-age buckets are not published because they did not reconcile to the
+              directory cohort.
+            </p>
+          )}
+        </div>
+      </section>
+      ) : null}
 
       <section aria-labelledby="depth-heading" className="move-section border-t border-border/60 bg-muted/20">
         <div className="move-section-inner">

@@ -5,7 +5,6 @@ import { HomeIntelHero } from '@/components/home/home-intel-hero';
 import { HomePlanSection } from '@/components/home/home-plan-section';
 import { HomePlaybook } from '@/components/home/home-playbook';
 import { HomeToolsSection } from '@/components/home/home-tools-section';
-import { HomeBelowFoldReviews } from '@/components/home/home-below-fold-reviews';
 import {
   HomeAskTheMarket,
   HomeSourcesSection,
@@ -18,7 +17,7 @@ import type { MoveHomeIntelligencePayload } from '@/lib/intelligence/home-types'
 
 /**
  * Intelligence-first homepage.
- * Rhythm: Hero → snapshot/roles/authority/gaps → state browse → plan → tools.
+ * Rhythm: Hero → snapshot → findings → state browse → ask → plan → tools → sources → FAQ → network.
  */
 export async function HomePage({
   payload,
@@ -45,10 +44,10 @@ export async function HomePage({
             Color on the map is a landing-page marker, not quality, ranking, or safety.
             Headquarters is not service territory.
           </p>
-          <p className="mt-4">
+          <p className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/florida"
-              className="inline-flex min-h-11 items-center rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary no-underline hover:border-primary/50"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary no-underline hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               Explore Florida Moving Intelligence
             </Link>
@@ -61,19 +60,12 @@ export async function HomePage({
       <HomePlanSection />
       <HomeToolsSection />
       <HomePlaybook />
-      <NetworkTrustBlock />
       <HomeSourcesSection payload={payload} />
-
-      <HomeBelowFoldReviews
-        className="py-14 border-t"
-        compact
-        title="Featured review highlights"
-        subtitle="Named Google review excerpts with reviewer attribution — not inflated industry totals."
-      />
 
       <div className="content-auto border-t">
         <FaqSection title="Frequently asked questions" items={homepageFaqItems} />
       </div>
+      <NetworkTrustBlock />
     </div>
   );
 }

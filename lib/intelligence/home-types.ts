@@ -43,6 +43,33 @@ export type MoveHomeAuthoritySplit = {
   total: number;
 };
 
+export type MoveHomeFreshnessBucketId =
+  | '0-30'
+  | '31-60'
+  | '61-90'
+  | '91-365'
+  | '>365'
+  | 'unknown';
+
+export type MoveHomeFreshnessBucket = {
+  id: MoveHomeFreshnessBucketId;
+  label: string;
+  count: number;
+};
+
+/**
+ * Per-profile FMCSA refresh clock. latestObservedRefresh is the newest
+ * fmcsa_last_checked in the cohort, not an as-of date for every profile.
+ */
+export type MoveHomeFmcsaClock = {
+  latestObservedRefresh: string;
+  oldestObservedRefresh: string;
+  withRefreshDate: number;
+  withoutRefreshDate: number;
+  total: number;
+  buckets: MoveHomeFreshnessBucket[] | null;
+};
+
 export type MoveHomeSiteCoverage = {
   landingCount: number;
   stateCount: number;
@@ -80,6 +107,7 @@ export type MoveHomeIntelligencePayload = {
   metrics: MoveHomeMetric[];
   entityClasses: MoveHomeEntityClassCount[] | null;
   authority: MoveHomeAuthoritySplit | null;
+  fmcsaClock: MoveHomeFmcsaClock | null;
   siteCoverage: MoveHomeSiteCoverage;
   evidenceDepth: MoveHomeEvidenceItem[];
 };
