@@ -21,14 +21,10 @@ import { assessProfileQuality } from '@/lib/directory/profile-quality';
 import { getCompanyAttributableReviewCount } from '@/lib/trust/review-display-policy';
 import { countAttributedReviewsForCompany } from '@/lib/trust/attributed-review-count';
 import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
-import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
-import { SaveMoverButton } from '@/components/save-my-move/save-mover-button';
-import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CoverageAreaCard } from '@/components/map/coverage-area-card';
 import { CompanyLocalCountyLinks } from '@/components/company/company-local-county-links';
 import { InternalLinkHub } from '@/components/seo/internal-link-hub';
 import { getCompanyAssignmentStateSlugs } from '@/lib/map/company-assignment-state-slugs';
-import { ExternalLink } from 'lucide-react';
 import { CompanyProfileBack } from '@/components/directory/company-profile-back-link';
 import {
   buildCompanyProfileHref,
@@ -41,20 +37,20 @@ import { directoryVerifiedLabel } from '@/lib/trust/company-display-policy';
 import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
 import { CompanyContactCard } from '@/components/company/company-contact-card';
 import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
-import { LicenseMetadataDescription } from '@/components/trust/license-display';
+
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
-import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
+
 import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
 import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
 import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
 import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
-import { CompanyTypeBadges } from '@/components/company/company-type-badges';
-import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
+
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness';
-import { TrustProfileShell } from '@/components/network/trust-profile-shell';
-import { toMoveTrustProfile } from '@/lib/network/adapters/to-move-trust-profile';
+import { CompanyResearchHero } from '@/components/company/company-research-hero';
+import { profileSeoDescription, profileSeoTitle } from '@/lib/company/research-profile';
+import { countExactPublicDisplayName } from '@/lib/search/query';
 import { ClaimProfileCta } from '@/components/portal/claim-cta';
 import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
 import { regulatoryCopyForProvider } from '@/lib/provider/copy';
@@ -87,7 +83,6 @@ import {
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import {
-  isDisplayableGoogleForUi,
   resolveConfirmedPublicScrapeForCompany,
   resolveGooglePlacesForCompany,
 } from '@/lib/verification/display-enrichment';
@@ -139,8 +134,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Absolute self-canonical to clean /companies/{slug} (no query params).
   // Thin stubs: noindex,follow — still usable if someone lands with a direct URL.
   return buildMovePageMetadata({
-    title: `${company.name} — FMCSA Profile, Ratings & Pricing`,
-    description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Independent directory — verify FMCSA licensing yourself.`,
+    title: profileSeoTitle(company),
+    description: profileSeoDescription(company),
     path: `/companies/${company.slug}`,
     noIndex: !profileQuality.indexable || !isSeoIndexableCompany(company),
     contextualImage: true,
@@ -189,12 +184,6 @@ export default async function CompanyProfilePage({ params }: Props) {
     countAttributedReviewsForCompany(company),
     getCompanyAttributableReviewCount(company.id)
   );
-
-  const reviewHref = reviewUrlForDirectoryCompany({
-    usdotNumber: company.usdotNumber,
-    mcNumber: company.mcNumber,
-    slug: company.slug,
-  });
 
   const displayCompany = finalizeCompanyEnrichmentForDisplay(company);
   const verification = getCompanyVerificationStatus(displayCompany);
@@ -283,30 +272,9 @@ export default async function CompanyProfilePage({ params }: Props) {
         <CompanyProfileBack />
       </Suspense>
 
-      {/* Shared network Trust Profile shell (Step 5) */}
-      <TrustProfileShell
-        profile={toMoveTrustProfile(company)}
-        variant="move"
-        showContact={false}
-        className="mb-6"
-        actions={
-          <>
-            <CompanyTypeBadges company={company} size="default" className="shrink-0" />
-            <CompanyVerificationBadges company={displayCompanyForTrust} size="profile" className="justify-start shrink-0" />
-            {isDisplayableGoogleForUi(googlePlaces) && googlePlaces ? (
-              <GoogleRatingBadge data={googlePlaces} />
-            ) : null}
-            <UserReviewsCta href={reviewHref} />
-            <SaveMoverButton
-              companySlug={company.slug}
-              companyName={company.name}
-              variant="button"
-            />
-            <Link href={`/compare?add=${company.slug}`}>
-              <Button>Add to Compare</Button>
-            </Link>
-          </>
-        }
+      <CompanyResearchHero
+        company={company}
+        duplicateNameCount={await countExactPublicDisplayName(company.name)}
       />
 
       {/* Vertical detail under shell */}
@@ -373,8 +341,6 @@ export default async function CompanyProfilePage({ params }: Props) {
         className="mb-6"
       />
 
-      <CompanyProfileStats company={company} />
-
       <div className="mb-8 grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-1">
           <CompanyContactCard
@@ -396,19 +362,6 @@ export default async function CompanyProfilePage({ params }: Props) {
           </p>
         </div>
       </div>
-
-      <CompanyProfileReviewSources
-        company={company}
-        googleData={googlePlaces}
-        reputationScore={company.reputationScore}
-        fmcsaSafetyRating={company.fmcsaSafetyRating}
-      />
-
-      <GoogleReviewsSection
-        data={googlePlaces}
-        companyName={company.name}
-        attributableOnSiteCount={attributableOnSiteCount}
-      />
 
       <div className="grid lg:grid-cols-3 gap-6 mt-8">
         {/* Left/Main column */}
@@ -539,6 +492,11 @@ export default async function CompanyProfilePage({ params }: Props) {
           <Card>
             <CardHeader><CardTitle>Services &amp; Specialties</CardTitle></CardHeader>
             <CardContent>
+              <p className="mb-4 text-xs leading-relaxed text-muted-foreground">
+                Service and specialty labels on this profile may be company-supplied directory
+                categories. They are not by themselves interstate authority, packing expertise, or a
+                regulatory claim.
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
                 <div>
                   <div className="font-medium mb-1">Services Offered</div>
@@ -568,6 +526,19 @@ export default async function CompanyProfilePage({ params }: Props) {
             </CardContent>
           </Card>
 
+          <CompanyProfileReviewSources
+            company={company}
+            googleData={googlePlaces}
+            reputationScore={company.reputationScore}
+            fmcsaSafetyRating={company.fmcsaSafetyRating}
+          />
+
+          <GoogleReviewsSection
+            data={googlePlaces}
+            companyName={company.name}
+            attributableOnSiteCount={attributableOnSiteCount}
+          />
+
           {/* Community reviews (user-submitted, moderated) */}
           <LegacyCompanyUserReviews
             legacyId={company.id}
@@ -582,6 +553,8 @@ export default async function CompanyProfilePage({ params }: Props) {
             initialReviews={reviews}
           />
 
+          <CompanyProfileStats company={company} />
+
           <ResearchNextSteps
             title="Next research steps for this mover"
             subtitle="Independent tools — no lead fees, no paid placements."
@@ -595,11 +568,14 @@ export default async function CompanyProfilePage({ params }: Props) {
             <CardHeader><CardTitle className="text-base">Quick Facts</CardTitle></CardHeader>
             <CardContent className="text-sm space-y-3">
               {company.headquarters?.trim() ? (
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">HQ</span>
-                  <span>{company.headquarters}</span>
+                <div className="flex min-w-0 justify-between gap-3">
+                  <span className="shrink-0 text-muted-foreground">HQ evidence</span>
+                  <span className="min-w-0 break-words text-right">{company.headquarters}</span>
                 </div>
               ) : null}
+              <p className="text-[11px] leading-relaxed text-muted-foreground">
+                Headquarters is not service territory.
+              </p>
               {isValidFoundedYear(company.foundedYear) ? (
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Founded</span>
@@ -646,9 +622,11 @@ export default async function CompanyProfilePage({ params }: Props) {
           </Card>
 
           <div>
-            <Link href={`/compare?add=${company.slug}`}>
-              <Button className="w-full" size="lg">Add {company.name.split(' ')[0]} to Comparison</Button>
-            </Link>
+            <Button asChild className="min-h-11 w-full whitespace-normal" size="lg">
+              <Link href={`/compare?add=${company.slug}`}>
+                Add {company.name.split(' ')[0]} to Comparison
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

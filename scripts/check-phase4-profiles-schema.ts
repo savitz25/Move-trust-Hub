@@ -72,7 +72,7 @@ const graph = buildCompanyDirectorySchemaGraph(base as Company);
 const json = JSON.stringify(graph);
 assert(!json.includes('"@type":"AggregateRating"'), 'no AggregateRating type in profile schema');
 assert(!/"@type"\s*:\s*"Review"/.test(json), 'no Review nodes in profile schema');
-assert(json.includes('Move Trust Hub Reputation Score'), 'reputation as PropertyValue');
+assert(!json.includes('Move Trust Hub Reputation Score'), 'no proprietary score in research schema');
 assert(json.includes('BreadcrumbList'), 'breadcrumbs present');
 assert(json.includes('USDOT'), 'USDOT identifier present');
 
