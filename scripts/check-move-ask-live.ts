@@ -49,6 +49,12 @@ async function main() {
   const mc = await executeMoveAsk('Find MC 1019808.');
   console.log('MC 1019808', mc.results.map((r) => r.displayName + ' MC=' + r.mc).join(' | '));
 
+  const auth = await executeMoveAsk('What operating authority does USDOT 3244649 have?');
+  console.log('authority', auth.results.map((r) => r.operatingAuthority || r.whyMatched).join(' | '));
+  assert(auth.resultType === 'evidence', 'authority evidence executes');
+  assert(auth.results.length >= 1, 'authority identity');
+  assert(auth.results.every((r) => !/recommend(ed|ation of)/i.test(r.whyMatched) || /not a (recommendation|MoveTrustHub endorsement)/i.test(r.whyMatched)), 'authority not endorsement');
+
   const unknown = await executeMoveAsk('Find USDOT 0001111.');
   assert(unknown.results.length === 0 || unknown.results.every((r) => r.usdot), 'unknown does not invent');
 

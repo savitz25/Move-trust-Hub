@@ -17,7 +17,8 @@ import {
   DIRECTORY_CARRIER_ENTITY_TYPES,
   DIRECTORY_DUAL_ENTITY_TYPES,
 } from '@/lib/intelligence/home-classify';
-import { authorityLabel, researchRole, roleExplanation } from '@/lib/company/research-profile';
+import { authorityLabel, researchRole } from '@/lib/company/research-profile';
+import { decodeAuthorityCode, formatAuthorityStatus } from '@/lib/fmcsa/carrier-fields';
 
 const INTERNAL_PUBLICATION_STATES = 'REVIEW_REQUIRED,INACTIVE,INGESTED,CLASSIFIED';
 const VISIBLE_OR = `publication_state.is.null,publication_state.not.in.(${INTERNAL_PUBLICATION_STATES})`;
@@ -33,6 +34,7 @@ export type AskCard = {
   fmcsaStatus: string | null;
   headquarters: string | null;
   floridaIm: string | null;
+  operatingAuthority: string | null;
   href: string | null;
   publicationNote: string | null;
   whyMatched: string;
@@ -107,8 +109,10 @@ type CompanyRow = {
   fmcsa_last_checked: string | null;
   publication_state: string | null;
   fmcsa_legal_name: string | null;
+  authority_status?: string | null;
   fmcsa_complaints?: number | null;
   complaints_last_12m?: number | null;
+  fmcsa_raw?: Record<string, unknown> | null;
 };
 
 const COMPANY_COLS =
@@ -127,6 +131,24 @@ function roleTypes(role?: string, includeDual = true): string[] {
 
 function hqPattern(state: string): string {
   return state === 'FL' ? '% FL%' : `% ${state}%`;
+}
+
+function operatingAuthorityFromRow(row: CompanyRow): string | null {
+  if (row.fmcsa_raw && typeof row.fmcsa_raw === 'object') {
+    const nested =
+      (row.fmcsa_raw.carrier as Record<string, unknown> | undefined) ??
+      ((row.fmcsa_raw.content as Record<string, unknown> | undefined)?.carrier as Record<string, unknown> | undefined) ??
+      row.fmcsa_raw;
+    const formatted = formatAuthorityStatus(nested) ?? formatAuthorityStatus(row.fmcsa_raw);
+    if (formatted) return formatted;
+  }
+  if (row.authority_active === true) return 'Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)';
+  if (row.authority_active === false) return 'Authority not current in stored evidence';
+  return null;
+}
+
+function isActiveCode(raw: unknown): boolean {
+  return decodeAuthorityCode(String(raw ?? '')).toUpperCase() === 'ACTIVE';
 }
 
 function cardFromCompany(row: CompanyRow, why: string, extra?: Partial<AskCard>): AskCard {
@@ -151,6 +173,7 @@ function cardFromCompany(row: CompanyRow, why: string, extra?: Partial<AskCard>)
     fmcsaStatus: authorityLabel(company),
     headquarters: row.headquarters,
     floridaIm: null,
+    operatingAuthority: operatingAuthorityFromRow(row),
     href: indexable && row.slug ? `/companies/${row.slug}` : null,
     publicationNote: indexable
       ? null
@@ -189,26 +212,29 @@ async function lookupIdentifier(parsed: ParsedMoveAsk, started: number): Promise
   const variants = id.type === 'usdot' ? [id.value, id.value.replace(/^0+/, '')] : [id.value, `MC-${id.value}`, `MC${id.value}`];
   const { data } = await db()
     .from('companies')
-    .select(COMPANY_COLS)
+    .select(`${COMPANY_COLS}, fmcsa_raw`)
     .in(col, variants)
     .limit(5);
   let rows = (data ?? []) as CompanyRow[];
   if (!rows.length) {
     const { data: fuzzy } = await db()
       .from('companies')
-      .select(COMPANY_COLS)
+      .select(`${COMPANY_COLS}, fmcsa_raw`)
       .ilike(col, `%${id.value}%`)
       .limit(5);
     rows = (fuzzy ?? []) as CompanyRow[];
   }
-  const results = rows.map((row) =>
-    cardFromCompany(
-      row,
+  const results = rows.map((row) => {
+    const authority = operatingAuthorityFromRow(row);
+    const baseWhy =
       id.type === 'usdot'
         ? `This company matches because the indexed FMCSA identity lists USDOT ${id.value}. USDOT is an identifier, not an endorsement.`
-        : `This company matches because the indexed FMCSA record lists MC ${id.value}. An MC docket is not a quality ranking.`,
-    ),
-  );
+        : `This company matches because the indexed FMCSA record lists MC ${id.value}. An MC docket is not a quality ranking.`;
+    const authorityWhy = authority
+      ? ` Stored operating authority (source-native): ${authority}. That is not a recommendation.`
+      : ' Common/Contract/Broker operating-authority text is not available on this row. Missing is not unauthorized.';
+    return cardFromCompany(row, baseWhy + authorityWhy);
+  });
   return finish(parsed, results, results.length, started, `Labeled ${id.type.toUpperCase()} lookup`);
 }
 
@@ -243,9 +269,44 @@ async function lookupEvidence(parsed: ParsedMoveAsk, started: number): Promise<M
     ];
     return result;
   }
-  const row = base.results[0]!;
-  row.whyMatched = `${row.whyMatched} Regulatory role: ${row.role}. ${roleExplanation(row.role as 'Carrier' | 'Broker' | 'Carrier / Broker' | 'Unknown')}`;
-  return finish(parsed, base.results, base.results.length, started, 'Authority / role evidence');
+  const id = parsed.query.identifier!;
+  const col = id.type === 'usdot' ? 'usdot_number' : 'mc_number';
+  const { data } = await db()
+    .from('companies')
+    .select(`${COMPANY_COLS}, fmcsa_raw`)
+    .ilike(col, `%${id.value}%`)
+    .limit(5);
+  const rows = (data ?? []) as CompanyRow[];
+  if (!rows.length) return base;
+  const q = parsed.raw.toLowerCase();
+  const results = rows.map((row) => {
+    const raw = row.fmcsa_raw ?? {};
+    const common = decodeAuthorityCode(String(raw.commonAuthorityStatus ?? raw.commonAuthority ?? ''));
+    const contract = decodeAuthorityCode(String(raw.contractAuthorityStatus ?? raw.contractAuthority ?? ''));
+    const broker = decodeAuthorityCode(String(raw.brokerAuthorityStatus ?? raw.brokerAuthority ?? ''));
+    const formatted = operatingAuthorityFromRow(row);
+    const hhgActive = isActiveCode(raw.commonAuthorityStatus ?? raw.commonAuthority) || isActiveCode(raw.contractAuthorityStatus ?? raw.contractAuthority);
+    const wantsHhg = /household-?goods|hhg carrier/i.test(q);
+    const wantsActive = /\bis .+ active\b|\bcurrently have\b/i.test(q);
+    let why = `This company matches because indexed FMCSA identity ${id.type.toUpperCase()} ${id.value} is attached to it. `;
+    why += formatted
+      ? `Stored operating authority: ${formatted}. `
+      : 'Common / Contract / Broker operating-authority text is not available in the current indexed source. Missing is not unauthorized. ';
+    why += `Regulatory role: ${researchRole({ entityType: row.entity_type ?? '', services: [] })}. `;
+    if (wantsHhg) {
+      why += hhgActive
+        ? 'Common or Contract authority is recorded as Active. That is not household-goods cargo confirmation by itself and is not a recommendation. '
+        : 'Common/Contract authority is not recorded as Active on this row. Broker authority, if present, does not make the company the transporting carrier. ';
+    }
+    if (wantsActive) {
+      why += `USDOT/operating status uses source-native wording (${formatted ?? authorityLabel({ authorityActive: row.authority_active })}). Current/Active is not a safety finding. `;
+    }
+    why += 'Operating authority is not a MoveTrustHub endorsement.';
+    return cardFromCompany(row, why, {
+      operatingAuthority: formatted,
+    });
+  });
+  return finish(parsed, results, results.length, started, 'FMCSA operating authority (Common / Contract / Broker)');
 }
 
 async function counts(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
@@ -382,6 +443,7 @@ async function listFloridaIm(parsed: ParsedMoveAsk, started: number): Promise<Mo
     fmcsaStatus: row.status,
     headquarters: null,
     floridaIm: row.authority_number,
+    operatingAuthority: null,
     href: null,
     publicationNote:
       row.verification_state === 'VERIFIED' && row.company_id
@@ -514,6 +576,7 @@ export function publicAskPayload(result: MoveAskResult) {
       fmcsaStatus: row.fmcsaStatus,
       headquarters: row.headquarters,
       floridaIm: row.floridaIm,
+      operatingAuthority: row.operatingAuthority,
       href: row.href,
       publicationNote: row.publicationNote,
       whyMatched: row.whyMatched,
