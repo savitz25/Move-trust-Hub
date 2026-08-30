@@ -52,6 +52,12 @@ export function HomeIntelHero({ profileCount = null }: { profileCount?: number |
           >
             Plan your move
           </a>
+          <a
+            href="/ask"
+            className="inline-flex h-11 items-center justify-center rounded-xl border border-border bg-white px-5 text-sm font-semibold text-[#0A2540] hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            Ask MoveTrustHub
+          </a>
         </div>
       </div>
     </section>

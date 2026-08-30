@@ -30,6 +30,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'County guides in all 50 states',
       },
       {
+        label: 'Ask MoveTrustHub',
+        href: '/ask',
+        description: 'Structured FMCSA & FDACS research',
+      },
+      {
         label: 'Florida research',
         href: '/florida',
         description: 'State registrations, authority & HQ',
@@ -111,6 +116,7 @@ export const GUIDES_NAV: NavMegaColumn[] = [
  * Order: tools first after Find Movers / Destinations for scannable moving IA.
  */
 export const MOVE_DIRECT_NAV = [
+  { label: 'Ask', href: '/ask' },
   { label: 'Local Movers', href: '/local-movers' },
   { label: 'Calculator', href: '/moving-calculator' },
   { label: 'Quote Check', href: '/tools/move-quote-check' },
@@ -119,6 +125,7 @@ export const MOVE_DIRECT_NAV = [
 
 /** Flat list for scripts/audits that expect simple nav links. */
 export const MOVE_NAV_AUDIT_PATHS = [
+  '/ask',
   '/companies',
   '/local-movers',
   '/auto-transport',
