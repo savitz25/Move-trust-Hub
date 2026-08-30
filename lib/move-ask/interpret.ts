@@ -105,7 +105,12 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  if (/\bwho will actually (move|haul|transport)\b|\bwho (hauls|transports) my (belongings|stuff|shipment)\b/i.test(q)) {
+  if (
+    /\bwho will actually (move|haul|transport)\b/i.test(q) ||
+    /\bwho (hauls|transports) my (belongings|stuff|shipment)\b/i.test(q) ||
+    /\b(is this|will this) broker\b.*\b(actually )?(transport|haul|move)\b/i.test(q) ||
+    /\bbroker the company that will actually transport\b/i.test(q)
+  ) {
     const query = fail(
       'A broker can arrange transportation without physically hauling the shipment. MoveTrustHub does not infer the transporting carrier from broker identity, shared address, similar name, website, or phone.',
       ['What is the difference between a carrier and a broker?', 'Find USDOT 3244649.'],

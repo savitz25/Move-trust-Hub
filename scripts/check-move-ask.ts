@@ -49,6 +49,8 @@ assert(dualQ.query.mode === 'fail_closed' || dualQ.query.mode === 'identifier' |
 
 const transporter = q('Who will actually move my belongings?');
 assert(transporter.query.mode === 'fail_closed', 'broker ≠ transporter');
+const transporter2 = q('Is this broker the company that will actually transport my belongings?');
+assert(transporter2.query.mode === 'fail_closed', 'broker identity ≠ actual transporter');
 
 const serving = q('Movers serving Palm Beach County');
 assert(serving.query.mode === 'fail_closed', 'service territory fail closed');
@@ -71,6 +73,10 @@ assert(mega.query.mode === 'fail_closed', 'no mega count');
 
 const best = q('What is the best mover in Florida?');
 assert(best.query.mode === 'fail_closed', 'best fail closed');
+const safest = q('Which mover is the safest in Florida?');
+assert(safest.query.mode === 'fail_closed', 'safest fail closed');
+const trust = q('Which mover is the most trustworthy in Florida?');
+assert(trust.query.mode === 'fail_closed', 'trustworthy fail closed');
 
 const cheap = q('Cheapest mover from Florida to New York');
 assert(cheap.query.mode === 'fail_closed', 'cheapest fail closed');
