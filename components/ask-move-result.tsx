@@ -124,6 +124,12 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                     <dd>{row.fmcsaStatus}</dd>
                   </div>
                 ) : null}
+                {row.operatingAuthority ? (
+                  <div className="sm:col-span-2">
+                    <dt className="text-xs uppercase">Operating authority</dt>
+                    <dd>{row.operatingAuthority}</dd>
+                  </div>
+                ) : null}
                 {row.headquarters ? (
                   <div>
                     <dt className="text-xs uppercase">Recorded location</dt>

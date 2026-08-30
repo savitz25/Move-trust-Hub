@@ -144,13 +144,17 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
   if (/\bwhat is (a |an )?mc( number)?\b/i.test(q)) return definition(q, 'mc');
   if (/\bwhat is a household-?goods carrier\b/i.test(q)) return definition(q, 'hhg_carrier');
   if (/\bwhat is a moving broker\b|\bwhat is a broker\b/i.test(q)) return definition(q, 'broker');
-  if (/\bwhat is interstate operating authority\b/i.test(q)) return definition(q, 'interstate_authority');
+  if (/\bwhat is (interstate )?operating authority\b/i.test(q)) return definition(q, 'interstate_authority');
   if (/\bwhat is a florida intrastate mover\b/i.test(q)) return definition(q, 'florida_im');
   if (/\bdifference between (a )?(carrier|mover) and (a )?broker\b/i.test(q)) return definition(q, 'carrier_vs_broker');
 
   const usdot = q.match(/\b(?:usdot|dot)\s*#?\s*(\d{3,8})\b/i);
   if (usdot?.[1]) {
-    const evidence = /\bcomplaint/i.test(q) ? 'complaint' : /\bauthorit|status|role|carrier or broker/i.test(q) ? 'authority' : undefined;
+    const evidence = /\bcomplaint/i.test(q)
+      ? 'complaint'
+      : /\b(authorit|operating authority|status|role|carrier or broker|is .+ active|household-?goods)\b/i.test(q)
+        ? 'authority'
+        : undefined;
     const query: MoveResearchQuery = {
       mode: evidence ? 'evidence' : 'identifier',
       identifier: { type: 'usdot', value: usdot[1] },
@@ -161,19 +165,25 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     push('Mode', query.mode);
     push('Identifier', `USDOT ${usdot[1]} (labeled)`);
     push('Identity rule', 'USDOT is a federal identity, not an endorsement.');
+    if (evidence === 'authority') {
+      push('Evidence family', 'FMCSA operating authority (source-native Common / Contract / Broker)');
+    }
     return { raw: q, query, interpretation: lines };
   }
 
   const mc = q.match(/\bmc\s*#?-?\s*(\d{3,8})\b/i);
   if (mc?.[1]) {
+    const evidence = /\b(authorit|operating authority|status|household-?goods|active)\b/i.test(q) ? 'authority' : undefined;
     const query: MoveResearchQuery = {
-      mode: 'identifier',
+      mode: evidence ? 'evidence' : 'identifier',
       identifier: { type: 'mc', value: mc[1] },
       includeDualRole: true,
+      evidenceFamily: evidence,
       page: 1,
     };
-    push('Mode', 'identifier');
+    push('Mode', query.mode);
     push('Identifier', `MC ${mc[1]} (labeled)`);
+    if (evidence) push('Evidence family', 'FMCSA operating authority (source-native Common / Contract / Broker)');
     return { raw: q, query, interpretation: lines };
   }
 

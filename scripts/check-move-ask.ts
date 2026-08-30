@@ -96,8 +96,22 @@ assert(imDef.query.definitionId === 'florida_im', 'im def');
 const complaints = q('Show regulatory evidence for USDOT 3244649.');
 assert(complaints.query.mode === 'evidence' || complaints.query.mode === 'identifier', 'evidence');
 
-const authority = q('What authority does USDOT 3244649 have?');
+const authority = q('What operating authority does USDOT 3244649 have?');
+assert(authority.query.mode === 'evidence', 'operating authority evidence');
+assert(authority.query.evidenceFamily === 'authority', 'authority family');
 assert(authority.query.identifier?.value === '3244649', 'authority USDOT');
+
+const hhgAuth = q('Does USDOT 3244649 currently have household-goods carrier authority?');
+assert(hhgAuth.query.mode === 'evidence' && hhgAuth.query.identifier?.value === '3244649', 'HHG authority');
+
+const activeQ = q('Is USDOT 3244649 active?');
+assert(activeQ.query.mode === 'evidence', 'active status');
+
+const mcAuth = q('Does MC 1019808 have household-goods authority?');
+assert(mcAuth.query.mode === 'evidence' && mcAuth.query.identifier?.type === 'mc', 'MC authority');
+
+const opDef = q('What is operating authority?');
+assert(opDef.query.definitionId === 'interstate_authority', 'operating authority definition');
 
 const compare = q('Compare Florida and Texas headquartered interstate carrier counts.');
 assert(compare.query.mode === 'comparison', 'comparison');

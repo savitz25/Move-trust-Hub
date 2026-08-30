@@ -101,7 +101,7 @@ export const ASK_DEFINITIONS: Record<string, { title: string; body: string }> = 
   },
   interstate_authority: {
     title: 'Interstate operating authority',
-    body: 'Interstate operating authority is a federal FMCSA record. Source-native status wording is preserved. Current authority is not “safe,” “trusted,” or recommended.',
+    body: 'Interstate operating authority is a federal FMCSA record. FMCSA stores Common, Contract, and Broker authority separately with source-native statuses such as Active, Inactive, or None. Current authority is not “safe,” “trusted,” or recommended. Missing authority text is not a finding of unauthorized operation.',
   },
   florida_im: {
     title: 'Florida Intrastate Mover registration',
