@@ -77,6 +77,7 @@ function toHit(company: Company, match: IdentityMatch): SearchCompanyHit {
     matchType: match.type,
     matchTier: match.tier,
     matchExplanation: match.explanation,
+    sourceLastChecked: company.fmcsaLastChecked ?? null,
   };
 }
 

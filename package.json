@@ -52,6 +52,7 @@
     "check:move-home-005": "tsx --test lib/intelligence/florida-ssr-shell.test.ts lib/intelligence/intelligence.test.ts lib/intelligence/home-snapshot.test.ts lib/intelligence/home-page-contract.test.ts",
     "check:move-home-006": "tsx --test lib/cache/control.test.ts lib/intelligence/florida-cdn-timeout.test.ts lib/intelligence/florida-ssr-shell.test.ts lib/intelligence/intelligence.test.ts lib/intelligence/home-snapshot.test.ts lib/intelligence/home-page-contract.test.ts",
     "check:move-search-001": "tsx --test lib/search/classify-intent.test.ts lib/search/match.test.ts lib/directory/filter-companies.test.ts && tsx --require ./scripts/stub-server-only.cjs scripts/check-move-search-001.ts",
+    "check:move-search-net-001": "tsx --require ./scripts/stub-server-only.cjs --test lib/search/network-resolver.test.ts lib/search/classify-intent.test.ts lib/search/match.test.ts lib/directory/filter-companies.test.ts && tsx --require ./scripts/stub-server-only.cjs scripts/check-move-search-001.ts",
     "check:move-ask": "tsx scripts/check-move-ask.ts",
     "check:move-ask-live": "tsx --require ./scripts/stub-server-only.cjs scripts/check-move-ask-live.ts",
     "check:move-profile-001": "tsx --test lib/company/research-profile.test.ts && tsx --require ./scripts/stub-server-only.cjs scripts/check-move-profile-001.ts",
