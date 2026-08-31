@@ -59,6 +59,8 @@ export type SearchCompanyHit = {
   matchType: SearchMatchType;
   matchTier: SearchMatchTier;
   matchExplanation: string;
+  /** Public FMCSA source clock already shown on company research profiles. */
+  sourceLastChecked?: string | null;
 };
 
 export type SearchPlaceHit = {
