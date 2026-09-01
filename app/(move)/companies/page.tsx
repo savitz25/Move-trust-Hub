@@ -12,6 +12,7 @@ import { queryDirectoryPage } from '@/lib/directory/query-directory-page';
 import { buildCompaniesDirectorySchemaGraph } from '@/lib/seo/build-directory-list-schema';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
+import { parseDirectoryResearchQuery } from '@/lib/directory/parse-directory-research-query';
 /**
  * ISR TTL for directory HTML — keep aligned with middleware, vercel.json,
  * and `unstable_cache` revalidate in companies / unified-directory queries.
@@ -56,8 +57,10 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 export default async function CompaniesDirectoryPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const filters = directoryFiltersFromSearchParams(params);
-  const researchQuery = (filters.search ?? '').trim();
-  const researchMode = researchQuery.length > 0;
+  const originalSearch = Array.isArray(params.search) ? params.search[0] ?? '' : params.search ?? '';
+  const queryPlan = parseDirectoryResearchQuery(originalSearch);
+  const researchQuery = queryPlan.identityQuery.trim();
+  const researchMode = originalSearch.trim().length > 0;
   // Task 009A.2: DB is default. engine=legacy only when hint allowed (rollback/debug).
   const engineRaw = params.engine;
   const engine = Array.isArray(engineRaw) ? engineRaw[0] : engineRaw;
@@ -80,15 +83,25 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <div className="uppercase tracking-[2px] text-xs text-primary font-semibold">
-            {researchMode ? 'RESEARCH RESULTS' : 'COMPREHENSIVE DIRECTORY'}
+            {queryPlan.researchMode ? 'RESEARCH COHORT' : researchMode ? 'IDENTITY RESULTS' : 'COMPREHENSIVE DIRECTORY'}
           </div>
           <h1 className="text-4xl font-semibold tracking-tighter mt-1">
-            {researchMode
-              ? `Research results for “${researchQuery}”`
+            {queryPlan.researchMode
+              ? queryPlan.geography
+                ? `Auto Transport research — ${queryPlan.geography.stateName} recorded headquarters`
+                : 'Auto Transport research'
+              : researchMode
+              ? `Research results for “${researchQuery || originalSearch}”`
               : 'Compare FMCSA-Licensed Interstate Movers'}
           </h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            {researchMode
+            {queryPlan.researchMode
+              ? queryPlan.locationIntent === 'SERVICE_TERRITORY' || queryPlan.locationIntent === 'ROUTE_OR_AVAILABILITY'
+                ? 'MoveTrustHub can research source-backed Auto Transport identities and recorded company locations, but does not currently have source-backed service-territory or route-availability data. The results below are a neutral research cohort, not proof that a company serves the requested location or route.'
+                : queryPlan.geography
+                  ? `${queryPlan.geography.stateName} means the company’s recorded headquarters/address. It does not prove the company serves all of ${queryPlan.geography.stateName}. Results are source-backed identities in neutral order, not a ranking.`
+                  : 'These are source-backed Auto Transport identities in neutral order, not a ranking. Carrier and broker are regulatory roles; a broker may arrange transport without physically hauling the vehicle.'
+              : researchMode
               ? 'These are identity matches, not a ranking. Brand name is not the FMCSA legal entity. Headquarters is not service territory. If several operators share a name, use the legal name, city or USDOT on your paperwork.'
               : (
                 <>

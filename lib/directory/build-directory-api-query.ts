@@ -7,6 +7,7 @@ import type {
 import type { DirectoryFilterInput } from '@/lib/directory/filter-companies';
 import { DIRECTORY_PAGE_SIZE } from '@/lib/directory/page-size';
 import { normalizeCoverageFilter } from '@/lib/directory/coverage-filter';
+import { parseDirectoryResearchQuery, queryPlanServices } from '@/lib/directory/parse-directory-research-query';
 
 const SORT_OPTIONS = new Set<SortOption>([
   'relevance',
@@ -107,22 +108,25 @@ function parseCoverageFilterFromParams(
 export function directoryFiltersFromSearchParams(
   searchParams: Record<string, string | string[] | undefined>
 ): DirectoryFilterInput {
+  const originalSearch = firstParam(searchParams.search)?.trim() ?? '';
+  const queryPlan = parseDirectoryResearchQuery(originalSearch);
   const sortRaw = firstParam(searchParams.sort);
-  const hasSearch = Boolean(firstParam(searchParams.search)?.trim());
+  const hasSearch = Boolean(queryPlan.identityQuery);
   const sort: SortOption =
     sortRaw && SORT_OPTIONS.has(sortRaw as SortOption)
       ? (sortRaw as SortOption)
-      : hasSearch
+      : hasSearch || queryPlan.researchMode
         ? 'relevance'
         : 'reputation';
 
   const servicesRaw = firstParam(searchParams.services);
-  const services = servicesRaw
+  const explicitServices = servicesRaw
     ? (servicesRaw
         .split(',')
         .map((s) => s.trim())
         .filter(Boolean) as ServiceType[])
     : [];
+  const services = [...new Set([...explicitServices, ...queryPlanServices(queryPlan)])] as ServiceType[];
 
   const maxPriceRaw = Number(firstParam(searchParams.maxPrice));
   const minRatingRaw = Number(firstParam(searchParams.minRating));
@@ -135,7 +139,7 @@ export function directoryFiltersFromSearchParams(
   const counties = parseCountiesParam(searchParams);
 
   return {
-    search: firstParam(searchParams.search)?.trim() ?? '',
+    search: queryPlan.identityQuery,
     sort,
     minRating: Number.isFinite(minRatingRaw) ? minRatingRaw : 0,
     maxPrice: Number.isFinite(maxPriceRaw) && maxPriceRaw > 0 ? maxPriceRaw : 12000,
@@ -152,6 +156,10 @@ export function directoryFiltersFromSearchParams(
       firstParam(searchParams.verified) === '1',
     bbbMin: firstParam(searchParams.bbbMin) || undefined,
     services,
+    recordedHqState:
+      firstParam(searchParams.hqState)?.trim().toUpperCase() ||
+      queryPlan.geography?.stateCode ||
+      null,
   };
 }
 
@@ -199,6 +207,8 @@ export function buildDirectoryApiQuery(options: {
 
   const { filters, search, services } = options;
   if (search.trim()) params.set('search', search.trim());
+  const plan = parseDirectoryResearchQuery(search);
+  if (plan.geography?.stateCode) params.set('hqState', plan.geography.stateCode);
   if (filters.sort && filters.sort !== 'reputation') params.set('sort', filters.sort);
   if (filters.minRating && filters.minRating > 0) {
     params.set('minRating', String(filters.minRating));
