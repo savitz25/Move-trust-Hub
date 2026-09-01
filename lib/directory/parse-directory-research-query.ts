@@ -10,8 +10,14 @@ export type DirectoryResearchQueryPlan = {
   identityQuery: string;
   identifierQuery?: string;
   evidenceClass?: 'Auto Transport';
+  entityClass?: 'mover' | 'auto_transport';
   role?: DirectoryResearchRole;
-  geography?: { stateCode: string; stateName: string; interpretation: 'recorded headquarters' };
+  geography?: {
+    stateCode: string;
+    stateName: string;
+    city?: string;
+    interpretation: 'recorded headquarters';
+  };
   routeStates: string[];
   locationIntent: DirectoryLocationIntent;
   coverageIntent: 'national' | 'regional' | 'state' | 'local' | 'unspecified';
@@ -24,6 +30,10 @@ const STATES: Record<string, string> = {
   AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'
 };
 
+export function directoryStateName(code: string): string | null {
+  return STATES[code.trim().toUpperCase()] ?? null;
+}
+
 const AUTO_PATTERNS = [
   /\bauto\s+transport(?:er|ers|ation)?(?:\s+compan(?:y|ies))?\b/i,
   /\bvehicle\s+(?:transport(?:er|ers|ation)?|shipping)\b/i,
@@ -31,6 +41,14 @@ const AUTO_PATTERNS = [
   /\bship\s+(?:my|a)\s+car\b/i,
   /\btransport\s+my\s+(?:car|vehicle)\b/i,
 ];
+
+const GENERIC_MOVER_PATTERNS = [
+  /\b(?:movers?|moving\s+compan(?:y|ies)|household[-\s]+goods\s+carriers?)\b/i,
+];
+
+const KNOWN_CITY_STATE: Record<string, { city: string; stateCode: string }> = {
+  dallas: { city: 'Dallas', stateCode: 'TX' },
+};
 
 const LEGAL_SUFFIX = /\b(?:llc|inc\.?|corp\.?|corporation|ltd\.?)\s*$/i;
 const RANKING = /\b(?:best|top|safest|recommended|most trusted|top[- ]?rated)\b/i;
@@ -75,9 +93,20 @@ export function parseDirectoryResearchQuery(raw: string): DirectoryResearchQuery
   if (LEGAL_SUFFIX.test(originalQuery)) return base;
 
   const autoPattern = AUTO_PATTERNS.find((pattern) => pattern.test(originalQuery));
-  if (!autoPattern) return base;
+  const genericMoverPattern = GENERIC_MOVER_PATTERNS.find((pattern) => pattern.test(originalQuery));
+  if (!autoPattern && !genericMoverPattern) return base;
 
-  let remainder = originalQuery.replace(autoPattern, ' ');
+  const statesInQuery = extractStates(originalQuery);
+  const structuralMover = Boolean(
+    genericMoverPattern &&
+    (/\b(?:movers|moving\s+companies|household[-\s]+goods\s+carriers)\b/i.test(originalQuery) ||
+      /\b(?:in|serv(?:e|es|ing)|near\s+me|to|from)\b/i.test(originalQuery)) &&
+    (statesInQuery.length > 0 || /\b(?:serv(?:e|es|ing)|near\s+me|to|from)\b/i.test(originalQuery))
+  );
+  if (!autoPattern && !structuralMover) return base;
+
+  const classPattern = autoPattern ?? genericMoverPattern!;
+  let remainder = originalQuery.replace(classPattern, ' ');
   const routeOrAvailability = /\b(?:to|from|near\s+me|available|availability|ship(?:s|ping)?\s+to)\b/i.test(originalQuery);
   const serving = /\b(?:serve|serves|serving|coverage)\b/i.test(originalQuery);
   const explicitHq = /\b(?:headquartered|headquarters|based)\s+in\b/i.test(originalQuery);
@@ -113,14 +142,29 @@ export function parseDirectoryResearchQuery(raw: string): DirectoryResearchQuery
         ? 'RECORDED_HQ'
         : 'UNSPECIFIED_GEOGRAPHY';
   const hqState = locationIntent === 'RECORDED_HQ' ? states.at(-1) : undefined;
+  const city = Object.entries(KNOWN_CITY_STATE).find(([token, value]) =>
+    hqState?.code === value.stateCode && new RegExp(`\\b${escapeRegex(token)}\\b`, 'i').test(remainder)
+  )?.[1].city;
+  if (city) remainder = remainder.replace(new RegExp(`\\b${escapeRegex(city)}\\b`, 'i'), ' ');
+
+  remainder = remainder
+    .replace(/\b(?:in|of|the|a|an)\b/ig, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 
   return {
     ...base,
     identityQuery: remainder,
-    evidenceClass: 'Auto Transport',
+    evidenceClass: autoPattern ? 'Auto Transport' : undefined,
+    entityClass: autoPattern ? 'auto_transport' : 'mover',
     role,
     geography: hqState
-      ? { stateCode: hqState.code, stateName: hqState.name, interpretation: 'recorded headquarters' }
+      ? {
+          stateCode: hqState.code,
+          stateName: hqState.name,
+          city,
+          interpretation: 'recorded headquarters',
+        }
       : undefined,
     routeStates: states.map((state) => state.code),
     locationIntent,
