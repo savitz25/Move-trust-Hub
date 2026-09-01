@@ -21,6 +21,7 @@ import {
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CompanyCardActions } from '@/components/directory/company-card-actions';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
+import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -57,6 +58,7 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
 
   const services = company.services.slice(0, 2);
   const specialties = company.specialties.slice(0, 1);
+  const autoTransportEvidence = getAutoTransportEvidence(company.usdotNumber);
 
   const reviewHref = reviewUrlForDirectoryCompany({
     usdotNumber: company.usdotNumber,
@@ -128,8 +130,17 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
           {company.shortDescription}
         </div>
 
-        {(services.length > 0 || specialties.length > 0) && (
+        {(services.length > 0 || specialties.length > 0 || autoTransportEvidence) && (
           <div className="mt-4 flex flex-wrap gap-1.5">
+            {autoTransportEvidence ? (
+              <Badge
+                variant="outline"
+                className="text-xs"
+                title="Self-reported MCS-150 cargo classification from the FMCSA Company Census File. This is not a recommendation or a service-territory guarantee."
+              >
+                FMCSA motor-vehicle cargo evidence
+              </Badge>
+            ) : null}
             {services.map((s) => (
               <Badge key={s} variant="outline" className="text-xs">
                 {s}

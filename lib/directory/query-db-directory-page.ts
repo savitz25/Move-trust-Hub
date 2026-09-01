@@ -14,6 +14,7 @@ import {
 } from '@/lib/directory/page-size';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
 import { companyMatchesServiceFilter } from '@/lib/directory/service-filter';
+import { AUTO_TRANSPORT_EVIDENCE_USDOTS } from '@/lib/directory/auto-transport-evidence';
 import { classifySearchQuery } from '@/lib/search/classify-intent';
 import { compareIdentityCompanies, matchCompanyIdentity } from '@/lib/search/match';
 import { loadIdentityCandidates } from '@/lib/search/query';
@@ -26,6 +27,7 @@ import {
 } from '@/lib/supabase/queries/companies';
 import type { Company, ServiceType } from '@/types';
 import type { Database } from '@/types/supabase';
+import { isConsumerVisibleCompany } from '@/lib/provider/publication';
 
 export type DbDirectoryPageResult = {
   companies: Company[];
@@ -38,7 +40,7 @@ export type DbDirectoryPageResult = {
 /** Instrumentation attached for benchmarks / parity harness (not part of public API). */
 export type DbDirectoryQueryDiagnostics = {
   engine: 'db';
-  path: 'rpc' | 'pg' | 'postgrest' | 'hybrid-local' | 'search-rerank';
+  path: 'rpc' | 'pg' | 'postgrest' | 'hybrid-local' | 'search-rerank' | 'source-auto';
   dbMs: number;
   mapMs: number;
   rowsFetched: number;
@@ -77,6 +79,65 @@ function pickRoleFilter(services: ServiceType[] | undefined): string | null {
 function nonRoleServices(services: ServiceType[] | undefined): ServiceType[] {
   if (!services?.length) return [];
   return services.filter((s) => !ROLE_SERVICES.has(s));
+}
+
+function chunkValues<T>(values: readonly T[], size: number): T[][] {
+  const chunks: T[][] = [];
+  for (let index = 0; index < values.length; index += size) {
+    chunks.push(values.slice(index, index + size));
+  }
+  return chunks;
+}
+
+async function fetchSourceBackedAutoTransportCompanies(): Promise<Company[]> {
+  const supabase = createAnonClient();
+  if (!supabase) return [];
+
+  const projections = companyListProjectionCandidates(false);
+  for (const columns of projections) {
+    const rows: Record<string, unknown>[] = [];
+    let projectionUnavailable = false;
+
+    for (const usdots of chunkValues(AUTO_TRANSPORT_EVIDENCE_USDOTS, 75)) {
+      const { data, error } = await supabase
+        .from('companies')
+        .select(columns)
+        .in('usdot_number', usdots);
+      if (error) {
+        if (error.code === '42703' || error.code === 'PGRST204' || /column/i.test(error.message)) {
+          projectionUnavailable = true;
+          break;
+        }
+        logger.warn('directory.auto_transport.fetch_failed', {
+          code: error.code,
+          message: error.message,
+        });
+        return [];
+      }
+      rows.push(...((data ?? []) as unknown as Record<string, unknown>[]));
+    }
+
+    if (projectionUnavailable) continue;
+
+    const unique = new Map<string, Company>();
+    for (const row of rows) {
+      try {
+        const company = mapCompanyRow(row);
+        if (!isConsumerVisibleCompany(company)) continue;
+        if (company.serviceScope === 'intrastate') continue;
+        if (!companyMatchesServiceFilter(company, 'Auto Transport')) continue;
+        unique.set(company.id, company);
+      } catch (error) {
+        logger.warn('directory.auto_transport.map_failed', {
+          id: row.id,
+          message: error instanceof Error ? error.message : String(error),
+        });
+      }
+    }
+    return [...unique.values()];
+  }
+
+  return [];
 }
 
 function wantsLocalOrCounty(filters: DirectoryFilterInput): boolean {
@@ -496,6 +557,29 @@ export async function queryDbDirectoryPage(options: {
   );
   const offset = Math.max(options.offset ?? 0, 0);
   const filters = options.filters ?? {};
+
+  if (filters.services?.includes('Auto Transport')) {
+    const startedAt = Date.now();
+    const candidates = await fetchSourceBackedAutoTransportCompanies();
+    const filtered = filterCompanies(candidates, filters);
+    const page = filtered.slice(offset, offset + limit);
+    lastDiagnostics = {
+      engine: 'db',
+      path: 'source-auto',
+      dbMs: Date.now() - startedAt,
+      mapMs: 0,
+      rowsFetched: candidates.length,
+      total: filtered.length,
+      materializedIntoNode: candidates.length,
+    };
+    return {
+      companies: prepareCompaniesForDirectoryClient(page),
+      total: filtered.length,
+      offset,
+      limit,
+      hasMore: offset + page.length < filtered.length,
+    };
+  }
 
   if (!isSupabaseConfigured()) {
     lastDiagnostics = {
