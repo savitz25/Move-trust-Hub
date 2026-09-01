@@ -650,7 +650,9 @@ export function DirectoryClient({
             </span>
           ) : totalMatches === 0 ? (
             <span>
-              {placeMatch
+              {queryPlan.researchMode && queryPlan.geography
+                ? `No published Auto Transport identities in the current cohort match ${queryPlan.role ? `the ${queryPlan.role} role and ` : ''}recorded ${queryPlan.geography.stateName} headquarters filters.`
+                : placeMatch
                 ? `No interstate name match — see local movers in ${placeMatch.placeLabel}`
                 : 'No companies match your criteria'}
             </span>
