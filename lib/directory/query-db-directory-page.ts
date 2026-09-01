@@ -4,6 +4,7 @@ import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import {
   normalizeCoverageFilter,
   companyMatchesCoverageFilter,
+  extractStateCodeFromHeadquarters,
 } from '@/lib/directory/coverage-filter';
 import { prepareCompaniesForDirectoryClient } from '@/lib/directory/directory-client-payload';
 import type { DirectoryFilterInput } from '@/lib/directory/filter-companies';
@@ -28,6 +29,11 @@ import {
 import type { Company, ServiceType } from '@/types';
 import type { Database } from '@/types/supabase';
 import { isConsumerVisibleCompany } from '@/lib/provider/publication';
+import {
+  DIRECTORY_BROKER_ENTITY_TYPES,
+  DIRECTORY_CARRIER_ENTITY_TYPES,
+  DIRECTORY_DUAL_ENTITY_TYPES,
+} from '@/lib/intelligence/home-classify';
 
 export type DbDirectoryPageResult = {
   companies: Company[];
@@ -49,6 +55,9 @@ export type DbDirectoryQueryDiagnostics = {
 };
 
 let lastDiagnostics: DbDirectoryQueryDiagnostics | null = null;
+
+const INTERNAL_PUBLICATION_STATES = 'REVIEW_REQUIRED,INACTIVE,INGESTED,CLASSIFIED';
+const VISIBLE_OR = `publication_state.is.null,publication_state.not.in.(${INTERNAL_PUBLICATION_STATES})`;
 
 export function getLastDbDirectoryDiagnostics(): DbDirectoryQueryDiagnostics | null {
   return lastDiagnostics;
@@ -74,6 +83,14 @@ function pickRoleFilter(services: ServiceType[] | undefined): string | null {
   if (!services?.length) return null;
   const role = services.find((s) => ROLE_SERVICES.has(s));
   return role ?? null;
+}
+
+function recordedHqRoleTypes(services: ServiceType[] | undefined): string[] | null {
+  const role = pickRoleFilter(services);
+  if (role === 'Carrier') return [...DIRECTORY_CARRIER_ENTITY_TYPES, ...DIRECTORY_DUAL_ENTITY_TYPES];
+  if (role === 'Broker') return [...DIRECTORY_BROKER_ENTITY_TYPES, ...DIRECTORY_DUAL_ENTITY_TYPES];
+  if (role === 'Carrier / Broker') return [...DIRECTORY_DUAL_ENTITY_TYPES];
+  return null;
 }
 
 function nonRoleServices(services: ServiceType[] | undefined): ServiceType[] {
@@ -220,6 +237,77 @@ async function fetchCompaniesByIds(
 
   // Preserve RPC/page order
   return ids.map((id) => byId.get(id)).filter((c): c is Company => Boolean(c));
+}
+
+async function queryRecordedHqPage(options: {
+  offset: number;
+  limit: number;
+  filters: DirectoryFilterInput;
+}): Promise<DbDirectoryPageResult | null> {
+  const supabase = createAnonClient();
+  const state = options.filters.recordedHqState?.trim().toUpperCase();
+  if (!supabase || !state || !/^[A-Z]{2}$/.test(state)) return null;
+
+  const started = Date.now();
+  let query = supabase
+    .from('companies')
+    .select('id, headquarters', { count: 'exact' })
+    .or(VISIBLE_OR)
+    .ilike('headquarters', `%, ${state}%`)
+    .order('name', { ascending: true })
+    .order('usdot_number', { ascending: true })
+    .range(0, 999);
+  const types = recordedHqRoleTypes(options.filters.services);
+  if (types?.length) query = query.in('entity_type', types);
+
+  const { data, count, error } = await query;
+  if (error) {
+    logger.warn('directory.recorded_hq.fetch_failed', { state, code: error.code, message: error.message });
+    throw new Error(`recorded-HQ query failed for ${state}`);
+  }
+
+  if ((count ?? 0) > 1000) {
+    logger.error('directory.recorded_hq.candidate_bound_exceeded', { state, count });
+    throw new Error(`recorded-HQ candidate bound exceeded for ${state}`);
+  }
+  const candidates = ((data ?? []) as Array<{ id: string; headquarters: string | null }>).filter(
+    (row) => extractStateCodeFromHeadquarters(row.headquarters ?? '') === state
+  );
+  const total = candidates.length;
+  const ids = candidates
+    .slice(options.offset, options.offset + options.limit)
+    .map((row) => row.id)
+    .filter(Boolean);
+  const fetched = await fetchCompaniesByIds(ids);
+  const companies = fetched.filter(
+    (company) =>
+      isConsumerVisibleCompany(company) &&
+      extractStateCodeFromHeadquarters(company.headquarters) === state
+  );
+  if (companies.length !== ids.length) {
+    logger.error('directory.recorded_hq.semantic_mismatch', {
+      state,
+      requested: ids.length,
+      accepted: companies.length,
+    });
+    throw new Error(`recorded-HQ publication/mapping mismatch for ${state}`);
+  }
+  lastDiagnostics = {
+    engine: 'db',
+    path: 'postgrest',
+    dbMs: Date.now() - started,
+    mapMs: 0,
+    rowsFetched: candidates.length,
+    total,
+    materializedIntoNode: candidates.length,
+  };
+  return {
+    companies: prepareCompaniesForDirectoryClient(companies),
+    total,
+    offset: options.offset,
+    limit: options.limit,
+    hasMore: options.offset + companies.length < total,
+  };
 }
 
 type RpcRow = {
@@ -579,6 +667,11 @@ export async function queryDbDirectoryPage(options: {
       limit,
       hasMore: offset + page.length < filtered.length,
     };
+  }
+
+  if (filters.recordedHqState) {
+    const recordedHq = await queryRecordedHqPage({ offset, limit, filters });
+    if (recordedHq) return recordedHq;
   }
 
   if (!isSupabaseConfigured()) {

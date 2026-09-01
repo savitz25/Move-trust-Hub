@@ -66,3 +66,33 @@ test('legacy Auto Transport URL and ordinary identity URL remain compatible', ()
   assert.equal(identity.search, 'SHIFL');
   assert.equal(identity.sort, 'relevance');
 });
+
+test('generic mover class plus state becomes a recorded-HQ cohort plan', () => {
+  for (const [query, stateCode] of [
+    ['movers in New York', 'NY'],
+    ['movers in Florida', 'FL'],
+    ['moving company in Dallas Texas', 'TX'],
+  ] as const) {
+    const plan = parseDirectoryResearchQuery(query);
+    assert.equal(plan.researchMode, true, query);
+    assert.equal(plan.entityClass, 'mover', query);
+    assert.equal(plan.evidenceClass, undefined, query);
+    assert.equal(plan.identityQuery, '', query);
+    assert.equal(plan.geography?.stateCode, stateCode, query);
+    assert.equal(plan.locationIntent, 'RECORDED_HQ', query);
+  }
+  assert.equal(parseDirectoryResearchQuery('moving company in Dallas Texas').geography?.city, 'Dallas');
+});
+
+test('generic mover service and route intent stays unsupported geography', () => {
+  const serving = parseDirectoryResearchQuery('movers serving New York');
+  assert.equal(serving.researchMode, true);
+  assert.equal(serving.locationIntent, 'SERVICE_TERRITORY');
+  assert.equal(serving.geography, undefined);
+  assert.deepEqual(serving.routeStates, ['NY']);
+
+  const route = parseDirectoryResearchQuery('moving companies from Florida to New York');
+  assert.equal(route.researchMode, true);
+  assert.equal(route.locationIntent, 'ROUTE_OR_AVAILABILITY');
+  assert.deepEqual(route.routeStates, ['FL', 'NY']);
+});
