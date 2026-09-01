@@ -45,6 +45,8 @@ import {
   shouldShowReputationScore,
 } from '@/lib/data-quality/metrics';
 import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
+import { parseDirectoryResearchQuery, queryPlanServices } from '@/lib/directory/parse-directory-research-query';
+import { stateCodeToName } from '@/lib/directory/coverage-filter';
 
 const SEARCH_DEBOUNCE_MS = 350;
 const URL_SYNC_DEBOUNCE_MS = 450;
@@ -189,6 +191,7 @@ export function DirectoryClient({
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialSearch = searchParams.get('search') || '';
+  const initialQueryPlan = parseDirectoryResearchQuery(initialSearch);
 
   const [searchInput, setSearchInput] = useState(initialSearch);
   const [debouncedSearch, setDebouncedSearch] = useState(initialSearch);
@@ -209,11 +212,11 @@ export function DirectoryClient({
   const [view, setView] = useState<'grid' | 'table'>('grid');
   const [selectedServices, setSelectedServices] = useState<ServiceType[]>(() => {
     const raw = searchParams.get('services');
-    if (!raw) return [];
-    return raw
+    const explicit = raw ? raw
       .split(',')
       .map((s) => s.trim())
-      .filter(Boolean) as ServiceType[];
+      .filter(Boolean) as ServiceType[] : [];
+    return [...new Set([...explicit, ...queryPlanServices(initialQueryPlan)])] as ServiceType[];
   });
 
   const [companies, setCompanies] = useState(() =>
@@ -276,6 +279,17 @@ export function DirectoryClient({
     if (!q) return null;
     return parseCarrierNumber(q);
   }, [debouncedSearch]);
+  const queryPlan = useMemo(() => parseDirectoryResearchQuery(debouncedSearch), [debouncedSearch]);
+  const queryDerivedServices = useRef<ServiceType[]>(queryPlanServices(initialQueryPlan) as ServiceType[]);
+
+  useEffect(() => {
+    const nextDerived = queryPlanServices(queryPlan) as ServiceType[];
+    setSelectedServices((current) => {
+      const withoutPrior = current.filter((service) => !queryDerivedServices.current.includes(service));
+      return [...new Set([...withoutPrior, ...nextDerived])] as ServiceType[];
+    });
+    queryDerivedServices.current = nextDerived;
+  }, [queryPlan]);
 
   const carrierNotInDirectory = useMemo(() => {
     if (!parsedCarrierSearch) return false;
@@ -636,7 +650,9 @@ export function DirectoryClient({
             </span>
           ) : totalMatches === 0 ? (
             <span>
-              {placeMatch
+              {queryPlan.researchMode && queryPlan.geography
+                ? `No published Auto Transport identities in the current cohort match ${queryPlan.role ? `the ${queryPlan.role} role and ` : ''}recorded ${queryPlan.geography.stateName} headquarters filters.`
+                : placeMatch
                 ? `No interstate name match — see local movers in ${placeMatch.placeLabel}`
                 : 'No companies match your criteria'}
             </span>
@@ -663,6 +679,26 @@ export function DirectoryClient({
           driveaway/towaway. This source evidence is not a recommendation, service-territory claim,
           or guarantee of current availability; carrier and broker roles remain distinct.
         </p>
+      ) : null}
+
+      {queryPlan.researchMode ? (
+        <div className="mb-4 flex flex-wrap items-center gap-2 rounded-lg border bg-background px-3 py-2 text-sm">
+          <Badge variant="secondary">Research cohort</Badge>
+          <Badge variant="outline">Auto Transport evidence</Badge>
+          {queryPlan.role ? <Badge variant="outline">Role: {queryPlan.role}</Badge> : null}
+          {queryPlan.geography ? (
+            <Badge variant="outline">Recorded HQ: {stateCodeToName(queryPlan.geography.stateCode)}</Badge>
+          ) : null}
+          {queryPlan.locationIntent === 'SERVICE_TERRITORY' || queryPlan.locationIntent === 'ROUTE_OR_AVAILABILITY' ? (
+            <span className="basis-full text-muted-foreground">
+              Service territory and route availability are not established by recorded headquarters. View these identities as research options only.
+            </span>
+          ) : queryPlan.geography ? (
+            <span className="basis-full text-muted-foreground">
+              Recorded headquarters is not service territory or availability.
+            </span>
+          ) : null}
+        </div>
       ) : null}
 
       {placeMatch && !showEmptyState ? <PlaceCoverageBanner place={placeMatch} compact /> : null}

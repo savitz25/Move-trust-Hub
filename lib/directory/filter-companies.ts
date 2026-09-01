@@ -4,13 +4,14 @@ import {
   companyMatchesCoverageFilter,
   normalizeCoverageFilter,
   shouldPrioritizeLocalMoversInCoverage,
+  extractStateCodeFromHeadquarters,
 } from '@/lib/directory/coverage-filter';
 import { applyScopeToCompanies, type DirectorySearchScope } from '@/lib/directory/search-scope';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
 import { compareIdentityCompanies, matchCompanyIdentity } from '@/lib/search/match';
 import { companyMatchesServiceFilter } from '@/lib/directory/service-filter';
 import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
-import type { Company, DirectoryFilters } from '@/types';
+import type { Company, DirectoryFilters, ServiceType } from '@/types';
 
 export type DirectoryFilterInput = Partial<DirectoryFilters> & {
   scope?: DirectorySearchScope;
@@ -18,6 +19,8 @@ export type DirectoryFilterInput = Partial<DirectoryFilters> & {
   state?: string | null;
   /** URL shorthand: counties / counties[] */
   counties?: string[] | null;
+  /** Exact recorded headquarters/address state. Never service territory. */
+  recordedHqState?: string | null;
 };
 
 function hasObservedPrice(company: Company): boolean {
@@ -109,9 +112,21 @@ export function filterCompanies(
   }
 
   if (filters.services && filters.services.length > 0) {
-    result = result.filter((c) =>
-      filters.services!.some((svc) => companyMatchesServiceFilter(c, svc))
-    );
+    const services = filters.services;
+    const hasAuto = services.includes('Auto Transport');
+    const roleServices = new Set<ServiceType>(['Carrier', 'Broker', 'Carrier / Broker']);
+    const roles = services.filter((svc) => roleServices.has(svc));
+    result = result.filter((c) => {
+      if (hasAuto && !companyMatchesServiceFilter(c, 'Auto Transport')) return false;
+      if (roles.length && !roles.some((role) => companyMatchesServiceFilter(c, role))) return false;
+      const remaining = services.filter((svc) => svc !== 'Auto Transport' && !roleServices.has(svc));
+      return remaining.length === 0 || remaining.some((svc) => companyMatchesServiceFilter(c, svc));
+    });
+  }
+
+  if (filters.recordedHqState) {
+    const state = filters.recordedHqState.trim().toUpperCase();
+    result = result.filter((company) => extractStateCodeFromHeadquarters(company.headquarters) === state);
   }
 
   const coverageFilter = normalizeCoverageFilter({
