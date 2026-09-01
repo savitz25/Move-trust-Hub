@@ -11,6 +11,7 @@ import {
   type CompanyTypeBadgeId,
 } from '@/lib/companies/type-badges';
 import type { Company, ServiceType } from '@/types';
+import { hasSourceBackedAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
 
 /** Service filter chips that map 1:1 to top-of-card type badges. */
 const TYPE_SERVICE_TO_BADGE_ID: Partial<Record<ServiceType, CompanyTypeBadgeId>> = {
@@ -41,7 +42,11 @@ export function companyMatchesServiceFilter(
     return resolveCompanyTypeBadgesFromCompany(company).some((b) => b.id === badgeId);
   }
 
-  // Non-type services (Full Service, Storage, Auto Transport, …) use the services array.
+  if (service === 'Auto Transport') {
+    return hasSourceBackedAutoTransportEvidence(company);
+  }
+
+  // Remaining legacy service filters use the curated services array.
   const services = Array.isArray(company.services) ? company.services : [];
   return services.includes(service);
 }

@@ -44,6 +44,7 @@ import {
   shouldShowComplaintRatio,
   shouldShowReputationScore,
 } from '@/lib/data-quality/metrics';
+import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
 
 const SEARCH_DEBOUNCE_MS = 350;
 const URL_SYNC_DEBOUNCE_MS = 450;
@@ -475,11 +476,11 @@ export function DirectoryClient({
           </Button>
         </div>
 
-        <div className="flex items-center gap-3 w-full lg:w-auto">
+        <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
           <Select
             value={filters.sort}
             onChange={(e) => updateFilter('sort', e.target.value as SortOption)}
-            className="w-full lg:w-72 h-10"
+            className="min-w-0 flex-1 basis-full sm:basis-auto sm:w-64 lg:w-72 h-10"
           >
             {SORT_OPTIONS.map((o) => (
               <option key={o.value} value={o.value}>
@@ -656,6 +657,14 @@ export function DirectoryClient({
         </div>
       </div>
 
+      {selectedServices.includes('Auto Transport') ? (
+        <p className="mb-4 rounded-lg border bg-muted/30 px-3 py-2 text-sm text-muted-foreground">
+          Auto transport results have an FMCSA Company Census cargo record for motor vehicles or
+          driveaway/towaway. This source evidence is not a recommendation, service-territory claim,
+          or guarantee of current availability; carrier and broker roles remain distinct.
+        </p>
+      ) : null}
+
       {placeMatch && !showEmptyState ? <PlaceCoverageBanner place={placeMatch} compact /> : null}
 
       <div className={`relative ${RESULTS_MIN_HEIGHT}`} aria-busy={isBusy}>
@@ -750,6 +759,15 @@ export function DirectoryClient({
                             size="compact"
                             className="justify-start"
                           />
+                          {getAutoTransportEvidence(c.usdotNumber) ? (
+                            <Badge
+                              variant="outline"
+                              className="text-xs"
+                              title="Self-reported MCS-150 cargo classification from the FMCSA Company Census File. Not a recommendation or service-territory guarantee."
+                            >
+                              FMCSA motor-vehicle cargo evidence
+                            </Badge>
+                          ) : null}
                         </div>
                       </td>
                       <td className="font-semibold text-center">

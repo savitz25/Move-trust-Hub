@@ -1,0 +1,1890 @@
+{
+    "version":  "move-dir-001-auto-evidence-v1",
+    "source":  {
+                   "agency":  "Federal Motor Carrier Safety Administration",
+                   "dataset":  "Company Census File",
+                   "datasetId":  "az4n-8mr2",
+                   "sourceUrl":  "https://data.transportation.gov/resource/az4n-8mr2.json",
+                   "rowsUpdatedAt":  "2026-08-30T17:23:28Z",
+                   "retrievedAt":  "2026-09-01T01:38:45.562Z",
+                   "semantics":  "Self-reported MCS-150 cargo classifications; not an endorsement, service-territory claim, or guarantee of current availability."
+               },
+    "records":  [
+                    {
+                        "usdot":  "1170867",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260327 0210",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1925341",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250410 1930",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1463768",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260209 1546",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "125550",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260504 2019",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3335675",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250724 2142",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "153343",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260401 1248",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "223672",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250422 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "125563",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260318 2051",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "70851",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20251112 1653",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "242599",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250926 1815",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4085166",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260220 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1778016",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250814 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1002530",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250826 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "100277",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250410 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1003748",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250804 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1016516",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250421 1705",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "101934",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250522 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "103251",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250325 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1040023",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260409 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "105213",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250304 1945",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1067696",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250626 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1074472",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250424 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1161596",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250217 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "120912",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250321 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "122614",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260217 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1304578",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260421 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "131735",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260508 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1319267",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20240529 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "13210",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250924 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "135120",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20241017 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1381131",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250203 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1402190",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260325 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1415648",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260406 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1419266",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20251223 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1458935",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260406 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1460168",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20240815 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1465363",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260302 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1471037",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250519 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1505481",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260326 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "153368",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240816 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1536682",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260303 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1545437",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250813 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1561072",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250415 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1563980",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240328 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1573462",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20061103 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "1581633",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250701 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1596307",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260226 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1719809",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20241112 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1740025",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260504 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1754912",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250730 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1763361",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260716 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1856565",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20110929 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "185771",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260127 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1948559",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260123 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "1997514",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260430 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "210213",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250509 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2132766",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260127 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2134415",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260114 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "214717",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250728 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2155079",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20141202 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "2159248",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260506 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2201885",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250227 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2215563",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250513 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2216402",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260410 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2226453",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20230914 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2233590",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250317 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2256641",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260327 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "228634",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250507 1558",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2291921",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251024 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2324715",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260506 2129",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2335297",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250519 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2344109",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260306 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2368858",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251117 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2375124",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260415 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2376754",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250310 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2378291",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20251114 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2385545",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260127 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2478216",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260320 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2490936",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20221115 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2492000",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20241030 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2503053",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240823 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2515633",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250512 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2553264",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260306 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2562486",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260506 1847",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2578221",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250306 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2589845",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250821 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2594954",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250409 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "25982",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260126 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2780116",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260216 0500",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2796654",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260423 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2820899",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260311 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2823865",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20151228 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "2837329",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20160111 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "2838934",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240412 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "285920",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20240130 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2860343",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260511 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2868314",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20160519 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "2883425",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260506 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2888739",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20180104 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "289919",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251028 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2902870",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251024 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2907565",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250430 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2916237",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251115 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "294565",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260316 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2966807",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260410 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "297386",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20240603 1722",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2983771",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250612 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "2992227",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20251217 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "2996704",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20220610 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "3015590",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250923 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3028544",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260207 2045",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3054148",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251203 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3058203",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260315 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3069990",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20171117 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3096540",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250709 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3108628",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240904 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3113258",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260330 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3115234",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240717 1813",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3116640",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260319 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3144681",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250723 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3147084",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260429 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3163067",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260716 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3165277",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251021 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3185200",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20220929 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "31912",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250219 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3194908",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240618 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3215417",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240822 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3240573",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250619 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3252893",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240513 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "326053",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20230719 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "32658",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260306 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "327540",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250604 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "3288917",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250731 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "3290850",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20241203 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3348878",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260121 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3356449",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250909 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "335900",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20241029 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3364327",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260313 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3390371",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250203 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3473557",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250801 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3513866",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251113 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3537902",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260508 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3552230",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260209 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3600228",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260402 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3617480",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240924 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "363252",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260427 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3656396",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20210618 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3675581",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260127 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3675920",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260421 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3704602",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20230519 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3750381",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260429 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "37587",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240306 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3761239",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250724 0400",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3777236",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250808 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3789420",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20220323 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "3816714",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20220208 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "381994",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250313 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3826755",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20220304 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3842484",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20220511 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "3856962",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251229 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3880050",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260506 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "3928359",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260113 2358",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3959773",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250418 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3985366",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20221227 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "3993175",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260208 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4004044",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260204 2221",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4009791",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250618 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4013604",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250923 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4018407",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250630 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4031620",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250630 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4039300",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250820 1836",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4043382",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20230313 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4050603",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260426 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4064811",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250124 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4068447",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260326 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4094266",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20230623 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4111026",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251104 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4129629",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20241120 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4131919",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20231103 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4152157",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250925 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4192857",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250829 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4198665",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240425 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4225971",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240910 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "4229413",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240422 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4261684",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20240913 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "4272331",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260813 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4277748",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260323 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4283326",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260115 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4308507",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260806 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4346840",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251024 1815",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4347252",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260303 1445",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4358877",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250207 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4370368",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260310 1125",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4380605",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250714 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4383490",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260809 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4383796",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250918 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4391690",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250409 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4407990",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260421 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4410111",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251014 1956",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4412962",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260513 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "4413077",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260402 1030",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4413536",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260204 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4427409",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250620 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4427527",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250620 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4441379",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250903 1048",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "444539",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260316 1919",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4451210",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250811 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4453050",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260415 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4454824",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251121 1551",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4476876",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251201 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4478542",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251007 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4481132",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20251204 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4503907",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260224 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4504674",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20251210 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4506458",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260331 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4512265",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260302 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4512673",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260413 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4514968",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260108 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "452996",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250812 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "4531503",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260316 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4540619",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260226 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4545459",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260307 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4553010",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260320 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4555607",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260410 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4556233",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260421 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4563565",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260409 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "4572752",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260425 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "46293",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251030 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "466500",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251203 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "502203",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260217 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "513249",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240826 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "516419",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250805 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "522818",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20251008 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "540129",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260117 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "565162",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260320 2029",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "587180",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20241106 2138",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "610712",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260107 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "620780",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260716 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "623950",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260309 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "62963",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20230309 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "631155",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250715 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "633949",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240728 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "641917",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250605 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "658578",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260211 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "672425",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20160517 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "675983",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260723 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "684370",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251031 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "710236",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250630 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "72097",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250702 1654",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "748281",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260130 1553",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "75914",
+                        "motorVehicles":  false,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260422 1725",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "77949",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240930 1235",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "78272",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260108 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "78387",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240502 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "786533",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250811 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "80806",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250707 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "812503",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20220331 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "821114",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20250425 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "86305",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260128 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "868269",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20240909 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "875866",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260327 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "877758",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250826 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "888572",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20241012 1633",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "908926",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20221227 0000",
+                        "statusCode":  "I"
+                    },
+                    {
+                        "usdot":  "916912",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20260114 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "952110",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20251101 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "980236",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  false,
+                        "mcs150Date":  "20250131 0000",
+                        "statusCode":  "A"
+                    },
+                    {
+                        "usdot":  "986609",
+                        "motorVehicles":  true,
+                        "driveawayTowaway":  true,
+                        "mcs150Date":  "20260512 0000",
+                        "statusCode":  "A"
+                    }
+                ]
+}
