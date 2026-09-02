@@ -4,6 +4,7 @@ import {
   moveClaimProfile,
 } from "@/lib/customer-integration/eligibility";
 import { mintMoveHandoff } from "@/lib/customer-integration/handoff";
+import { createClaimHandoffRedirect } from "@/lib/customer-integration/security";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 const HEADERS = {
@@ -34,9 +35,7 @@ export async function GET(
       process.env.ATH_HANDOFF_SECRET || "",
       profile,
     );
-    const target = new URL("https://www.asktrusthub.com/claim/continue");
-    target.searchParams.set("handoff", token);
-    return Response.redirect(target, 302);
+    return createClaimHandoffRedirect(token);
   } catch {
     return Response.json(
       {

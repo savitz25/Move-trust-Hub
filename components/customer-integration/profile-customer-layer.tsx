@@ -2,6 +2,7 @@ import type {
   PublicBusinessProfile,
   PublicBusinessReplies,
 } from "@/lib/customer-integration/public";
+import { safeBusinessWebsite } from "@/lib/customer-integration/security";
 export function ProfileCustomerLayer({
   id,
   enabled,
@@ -13,6 +14,7 @@ export function ProfileCustomerLayer({
   profile: PublicBusinessProfile | null;
   replies: PublicBusinessReplies | null;
 }) {
+  const businessWebsite = safeBusinessWebsite(profile?.fields.website);
   return (
     <div className="mb-6 space-y-4">
       {profile ? (
@@ -33,13 +35,13 @@ export function ProfileCustomerLayer({
             </p>
           ) : null}
           <dl className="mt-4 grid gap-2 text-sm sm:grid-cols-2">
-            {profile.fields.website ? (
+            {businessWebsite ? (
               <div>
                 <dt className="text-muted-foreground">Business website</dt>
                 <dd>
                   <a
                     className="underline"
-                    href={profile.fields.website}
+                    href={businessWebsite}
                     rel="nofollow noopener noreferrer"
                     target="_blank"
                   >
