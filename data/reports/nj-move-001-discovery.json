@@ -1,0 +1,110 @@
+[
+  {
+    "key": "pmw_home",
+    "url": "https://www.njconsumeraffairs.gov/pmw",
+    "status": 200,
+    "final_url": "https://www.njconsumeraffairs.gov/pmw",
+    "bytes": 1051,
+    "sha256": "16f61b2f3444ca1dbdee9a94360ac19431b6d0b5427009e9fce8cd62aac71758",
+    "content_type": "text/html"
+  },
+  {
+    "key": "pmw_pages",
+    "url": "https://www.njconsumeraffairs.gov/pmw/Pages/default.aspx",
+    "status": 200,
+    "final_url": "https://www.njconsumeraffairs.gov/pmw/Pages/default.aspx",
+    "bytes": 1049,
+    "sha256": "4a8c69cf98fbb879ed9e683d25c45984a2937b1e129e4740a83d49d466f947c9",
+    "content_type": "text/html"
+  },
+  {
+    "key": "pmw_faq",
+    "url": "https://www.njconsumeraffairs.gov/pmw/Pages/FAQ.aspx",
+    "status": 200,
+    "final_url": "https://www.njconsumeraffairs.gov/pmw/Pages/FAQ.aspx",
+    "bytes": 1046,
+    "sha256": "3f7abe933087c104a2bf6b414015739c8adcfa97d1d09ddd6338d46c35bc80a6",
+    "content_type": "text/html"
+  },
+  {
+    "key": "mylicense",
+    "url": "https://newjersey.mylicense.com/verification/",
+    "status": 200,
+    "final_url": "https://newjersey.mylicense.com/verification/",
+    "bytes": 4614,
+    "sha256": "3a721c38e64662bbd31a418c964fe44d39d784284aefa5720b8c327050da4b22",
+    "content_type": "text/html"
+  },
+  {
+    "key": "bulk",
+    "url": "https://newjersey.mylicense.com/Verification_Bulk/",
+    "status": 200,
+    "final_url": "https://newjersey.mylicense.com/Verification_Bulk/",
+    "bytes": 3458,
+    "sha256": "55ce9455263d623dc3b6385298c6e0fbe3eb44bda2003668021127108ce3c07d",
+    "content_type": "text/html"
+  },
+  {
+    "key": "rgbportal",
+    "url": "https://rgbportal.dca.njoag.gov/",
+    "status": 200,
+    "final_url": "https://rgbportal.dca.njoag.gov/",
+    "bytes": 45854,
+    "sha256": "9c0073bd0d1fb4a19a1dc911e2c44a7f460d690078c940591390fbd69f0c0196",
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "key": "rgb_public_view",
+    "url": "https://rgbportal.dca.njoag.gov/public-view/",
+    "status": 200,
+    "final_url": "https://rgbportal.dca.njoag.gov/public-view/",
+    "bytes": 152390,
+    "sha256": "d881e89a6b578aa95aa5083feffaf973224e97919bbfb3eb5fb8cab9fecb145a",
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "key": "mymovers",
+    "url": "https://mymoversnj.gov/",
+    "status": 200,
+    "final_url": "https://rgbportal.dca.njoag.gov/public-view/",
+    "bytes": 152391,
+    "sha256": "8f6d50d94a3b1d561dddc8d5c8a47e7bbf5c1e197dd033102f77dc81b2a0b8c9",
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "key": "osm_2025",
+    "url": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
+    "status": 200,
+    "final_url": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
+    "bytes": 192704,
+    "sha256": "edc3f59cf5e5770da3ba04e0c7b020ddae8603610c191922fdd719e4dc760197",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "key": "osm_2024",
+    "url": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
+    "status": 200,
+    "final_url": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
+    "bytes": 186484,
+    "sha256": "f16ffb03c6314a01f8ebe8f2dcb185701d185087801aad0d59cac998d7d963f8",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "key": "osm_2023_highlights",
+    "url": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-announce-2023-consumer-protection-enforcement-highlights/",
+    "status": 200,
+    "final_url": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-announce-2023-consumer-protection-enforcement-highlights/",
+    "bytes": 185357,
+    "sha256": "6cb7e6b294d6806937d05e949248b46e3ae8772370f066efced531343a2c4afb",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "key": "osm_2015",
+    "url": "https://www.njoag.gov/new-jersey-division-of-consumer-affairs-cites-19-unlicensed-movers-following-undercover-sting-operation-partnership-with-ice-results-in-several-arrests-including-moving-company-worker-with/",
+    "status": 200,
+    "final_url": "https://www.njoag.gov/new-jersey-division-of-consumer-affairs-cites-19-unlicensed-movers-following-undercover-sting-operation-partnership-with-ice-results-in-several-arrests-including-moving-company-worker-with/",
+    "bytes": 168977,
+    "sha256": "b17c9c0729038fee0f7ad88c78eda4889d1625cb1fc69e526b809cd3cc046dba",
+    "content_type": "text/html; charset=UTF-8"
+  }
+]

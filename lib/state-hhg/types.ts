@@ -45,6 +45,9 @@ export const STATE_AUTHORITY_TYPES = [
   'intrastate_certificate',
   'local_mover_license',
   'warehouse',
+  'intrastate_public_mover',
+  'intrastate_public_warehouseman',
+  'intrastate_public_mover_and_warehouseman',
   'other',
 ] as const;
 export type StateAuthorityType = (typeof STATE_AUTHORITY_TYPES)[number];

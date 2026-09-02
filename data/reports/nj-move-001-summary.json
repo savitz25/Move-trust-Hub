@@ -1,0 +1,116 @@
+{
+  "ticket": "NJ-MOVE-001",
+  "generated_at": "2026-09-02T20:08:01Z",
+  "publication": {
+    "new_jersey_route_created": false,
+    "sitemap_change": false,
+    "rankings": false,
+    "trust_score": false,
+    "manual_vercel": false,
+    "pw_only_as_mover": false
+  },
+  "roster": {
+    "access_classification": "SOURCE_AVAILABLE_BY_REQUEST",
+    "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+    "mylicense_verification": "PMW redirected to RGB Custom Portal",
+    "mylicense_bulk_professions": 142,
+    "pmw_in_mylicense_bulk": false,
+    "rgb_public_view": "OPEN_SEARCH_ONLY",
+    "rgb_scrape_bypass": false,
+    "captcha_bypass": false,
+    "notes": "Current PMW verification is the DCA RGB Custom Portal (rgbportal.dca.njoag.gov / mymoversnj.gov public-view). MyLicense bulk business download lists 142 professions and does not include Public Movers and Warehousemen. Portal search is not a complete statewide export. Do not scrape the entity-grid."
+  },
+  "license_classes": {
+    "PM": "public mover / move-only",
+    "PW": "public warehouseman / warehouse-only",
+    "PC": "combined public mover and warehouseman"
+  },
+  "enforcement": {
+    "osm_respondents": 34,
+    "by_operation": {
+      "Operation Safe Move 2025": 11,
+      "Operation Safe Move 2024": 23
+    },
+    "event_classes": {
+      "NOTICE_OF_VIOLATION": 34,
+      "FINAL_ORDER": 1
+    },
+    "nov_is_not_final_order": true
+  },
+  "identity": {
+    "exact_usdot": 0,
+    "exact_mc": 0,
+    "review_required": 34,
+    "unsafe_rejected": 0,
+    "unresolved": 0
+  },
+  "coverage": [
+    {
+      "family": "NJ_DCA_PMW_ROSTER",
+      "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+      "url": "https://rgbportal.dca.njoag.gov/public-view/",
+      "notes": "Current PMW verification is the DCA RGB Custom Portal (rgbportal.dca.njoag.gov / mymoversnj.gov public-view). MyLicense bulk business download lists 142 professions and does not include Public Movers and Warehousemen. Portal search is not a complete statewide export. Do not scrape the entity-grid."
+    },
+    {
+      "family": "NJ_DCA_PMW_LICENSE_CLASSES",
+      "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+      "url": "https://www.njconsumeraffairs.gov/pmw/Pages/FAQ.aspx",
+      "notes": "PM/PW/PC from official FAQ."
+    },
+    {
+      "family": "NJ_DCA_OPERATION_SAFE_MOVE",
+      "coverage_state": "ACQUIRED_PARTIAL_HISTORY",
+      "url": "https://www.njoag.gov/tag/operation-safe-move/",
+      "notes": "Official press releases 2015, 2023 highlights, 2024, 2025. NOV != final order."
+    },
+    {
+      "family": "NJ_DCA_OCP_LEGAL_FILINGS",
+      "coverage_state": "PARTIAL_SOURCE_COVERAGE",
+      "url": "https://www.njconsumeraffairs.gov/ocp/Legal%20Filings/20241218_JDMoversLLCandJasonDotts.pdf",
+      "notes": "SharePoint filings index Incapsula-blocked; deterministic PDF acquired."
+    },
+    {
+      "family": "NJ_DCA_PMW_COMPLAINTS",
+      "coverage_state": "OPEN_SEARCH_ONLY",
+      "url": "https://rgbportal.dca.njoag.gov/public-view/",
+      "notes": "Complaint history via license verification; not a machine-readable export. Complaint != violation."
+    },
+    {
+      "family": "NJ_DCA_PMW_TARIFFS",
+      "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+      "url": "https://rgbportal.dca.njoag.gov/Instructions-Download-PublicMovers",
+      "notes": "Tariffs viewed by appointment at Division offices. Rate/rule evidence, not quality."
+    },
+    {
+      "family": "NJ_DCA_PMW_INSURANCE",
+      "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+      "url": "https://www.njconsumeraffairs.gov/pmw",
+      "notes": "Insurance required for licensure; current coverage not published as a roster. License != proof of current coverage."
+    },
+    {
+      "family": "NJ_FMCSA_CROSSWALK",
+      "coverage_state": "SOURCE_NOT_ACQUIRED",
+      "url": null,
+      "notes": "No official NJ source in this ticket prints USDOT/MC on a statewide roster."
+    }
+  ],
+  "monitoring": {
+    "baseline_only": true,
+    "historical_alerts": 0
+  },
+  "database": {
+    "available": false,
+    "production_blocker": "No authorized MoveTrustHub database session in this worktree. Safe dormant code may merge."
+  },
+  "invariants": {
+    "nj_intrastate_ne_fmcsa_interstate": true,
+    "pm_ne_pw_ne_pc": true,
+    "pw_not_consumer_mover": true,
+    "nov_ne_final_order": true,
+    "proposed_penalty_ne_paid_fine": true,
+    "complaint_ne_violation": true,
+    "tariff_ne_quality": true,
+    "license_ne_current_insurance": true
+  },
+  "mode": "inspect"
+}

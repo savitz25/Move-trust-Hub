@@ -1,0 +1,50 @@
+[
+  {
+    "family": "NJ_DCA_PMW_ROSTER",
+    "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+    "url": "https://rgbportal.dca.njoag.gov/public-view/",
+    "notes": "Current PMW verification is the DCA RGB Custom Portal (rgbportal.dca.njoag.gov / mymoversnj.gov public-view). MyLicense bulk business download lists 142 professions and does not include Public Movers and Warehousemen. Portal search is not a complete statewide export. Do not scrape the entity-grid."
+  },
+  {
+    "family": "NJ_DCA_PMW_LICENSE_CLASSES",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "url": "https://www.njconsumeraffairs.gov/pmw/Pages/FAQ.aspx",
+    "notes": "PM/PW/PC from official FAQ."
+  },
+  {
+    "family": "NJ_DCA_OPERATION_SAFE_MOVE",
+    "coverage_state": "ACQUIRED_PARTIAL_HISTORY",
+    "url": "https://www.njoag.gov/tag/operation-safe-move/",
+    "notes": "Official press releases 2015, 2023 highlights, 2024, 2025. NOV != final order."
+  },
+  {
+    "family": "NJ_DCA_OCP_LEGAL_FILINGS",
+    "coverage_state": "PARTIAL_SOURCE_COVERAGE",
+    "url": "https://www.njconsumeraffairs.gov/ocp/Legal%20Filings/20241218_JDMoversLLCandJasonDotts.pdf",
+    "notes": "SharePoint filings index Incapsula-blocked; deterministic PDF acquired."
+  },
+  {
+    "family": "NJ_DCA_PMW_COMPLAINTS",
+    "coverage_state": "OPEN_SEARCH_ONLY",
+    "url": "https://rgbportal.dca.njoag.gov/public-view/",
+    "notes": "Complaint history via license verification; not a machine-readable export. Complaint != violation."
+  },
+  {
+    "family": "NJ_DCA_PMW_TARIFFS",
+    "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+    "url": "https://rgbportal.dca.njoag.gov/Instructions-Download-PublicMovers",
+    "notes": "Tariffs viewed by appointment at Division offices. Rate/rule evidence, not quality."
+  },
+  {
+    "family": "NJ_DCA_PMW_INSURANCE",
+    "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+    "url": "https://www.njconsumeraffairs.gov/pmw",
+    "notes": "Insurance required for licensure; current coverage not published as a roster. License != proof of current coverage."
+  },
+  {
+    "family": "NJ_FMCSA_CROSSWALK",
+    "coverage_state": "SOURCE_NOT_ACQUIRED",
+    "url": null,
+    "notes": "No official NJ source in this ticket prints USDOT/MC on a statewide roster."
+  }
+]
