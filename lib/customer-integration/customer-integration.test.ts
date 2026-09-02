@@ -9,7 +9,7 @@ import {
   parseBusinessProfile,
   parseReplies,
 } from "./public";
-const ID = "11111111-1111-4111-8111-111111111111",
+const ID = "usdot-3244649",
   SECRET = "test-secret-that-is-at-least-32-characters";
 test("exact published USDOT profile is eligible and flags default off", () => {
   const c = {

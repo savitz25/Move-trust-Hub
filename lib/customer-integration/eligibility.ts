@@ -3,6 +3,7 @@ import { isAnonymousPublicProfileAllowed } from "@/lib/provider/publication";
 
 const UUID =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const LEGACY_USDOT_ID = /^usdot-(\d{5,8})$/;
 export type MoveClaimProfile = {
   id: string;
   slug: string;
@@ -12,7 +13,7 @@ export type MoveClaimProfile = {
 export function moveClaimProfile(company: Company): MoveClaimProfile | null {
   const usdot = String(company.usdotNumber || "").replace(/\D/g, "");
   if (
-    !UUID.test(company.id) ||
+    (!UUID.test(company.id) && LEGACY_USDOT_ID.exec(company.id)?.[1] !== usdot) ||
     !company.slug.trim() ||
     !/^\d{5,8}$/.test(usdot) ||
     !isAnonymousPublicProfileAllowed(company)

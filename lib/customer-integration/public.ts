@@ -47,8 +47,8 @@ export type PublicBusinessReplies = {
     updatedAt: string | null;
   }>;
 };
-const UUID =
-    /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
+const PROFILE_ID =
+    /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|usdot-\d{5,8})$/i,
   FIELDS = new Set([
     "description",
     "website",
@@ -68,7 +68,7 @@ export function parseBusinessProfile(
   v: unknown,
   id: string,
 ): PublicBusinessProfile | null {
-  if (!v || typeof v !== "object" || !UUID.test(id)) return null;
+  if (!v || typeof v !== "object" || !PROFILE_ID.test(id)) return null;
   const r = v as Record<string, unknown>;
   if (
     ![1, 2].includes(Number(r.contractVersion)) ||
@@ -105,7 +105,7 @@ export function parseReplies(
   v: unknown,
   id: string,
 ): PublicBusinessReplies | null {
-  if (!v || typeof v !== "object" || !UUID.test(id)) return null;
+  if (!v || typeof v !== "object" || !PROFILE_ID.test(id)) return null;
   const r = v as Record<string, unknown>;
   if (
     ![1, 2].includes(Number(r.contractVersion)) ||
