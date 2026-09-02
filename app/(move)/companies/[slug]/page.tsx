@@ -51,7 +51,6 @@ import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness'
 import { CompanyResearchHero } from '@/components/company/company-research-hero';
 import { profileSeoDescription, profileSeoTitle } from '@/lib/company/research-profile';
 import { countExactPublicDisplayName } from '@/lib/search/query';
-import { ClaimProfileCta } from '@/components/portal/claim-cta';
 import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
 import { regulatoryCopyForProvider } from '@/lib/provider/copy';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
@@ -81,6 +80,9 @@ import {
   isValidFoundedYear,
 } from '@/lib/directory/normalize-company';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
+import { ProfileCustomerLayer } from '@/components/customer-integration/profile-customer-layer';
+import { claimCtaEnabledFor, moveClaimProfile } from '@/lib/customer-integration/eligibility';
+import { fetchBusinessProfile, fetchBusinessReplies } from '@/lib/customer-integration/public';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import {
   resolveConfirmedPublicScrapeForCompany,
@@ -171,6 +173,13 @@ export default async function CompanyProfilePage({ params }: Props) {
     ...resolved,
     slug: canonical || slug,
   };
+  const customerProfile = moveClaimProfile(company);
+  const [businessProfile, businessReplies] = customerProfile
+    ? await Promise.all([
+        fetchBusinessProfile(customerProfile.id),
+        fetchBusinessReplies(customerProfile.id),
+      ])
+    : [null, null];
 
   const reviews = await getReviews(company.id, 8);
   const assignmentStateSlugs = await getCompanyAssignmentStateSlugs(company.slug);
@@ -332,13 +341,6 @@ export default async function CompanyProfilePage({ params }: Props) {
       <CompanyProfileIdentity
         company={displayCompany}
         presentation={waveChrome ? 'florida-state-wave' : 'default'}
-      />
-
-      <ClaimProfileCta
-        companySlug={company.slug}
-        companyName={company.name}
-        variant="profile"
-        className="mb-6"
       />
 
       <div className="mb-8 grid gap-6 lg:grid-cols-3">
@@ -630,6 +632,15 @@ export default async function CompanyProfilePage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {customerProfile ? (
+        <ProfileCustomerLayer
+          id={company.slug}
+          enabled={claimCtaEnabledFor(customerProfile.id)}
+          profile={businessProfile}
+          replies={businessReplies}
+        />
+      ) : null}
 
       <div className="mt-10 max-w-3xl">
         <BeforeYouReachOut
