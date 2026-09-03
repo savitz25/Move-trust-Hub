@@ -24,9 +24,9 @@ export function moveFallbackShareModel(): MoveShareCardModel {
   return {
     kind: 'fallback',
     eyebrow: '',
-    title: 'Plan your move with better information',
-    subtitle: 'Mover research · licensing · calculators · comparisons',
-    fact: 'Independent consumer research',
+    title: 'Move Trust Hub',
+    subtitle: 'Independent Moving Research',
+    fact: 'movetrusthub.com',
   };
 }
 
@@ -36,7 +36,7 @@ export function moveEntityShareModel(input: {
   usdotLabel?: string | null;
   profileLabel?: string | null;
 }): MoveShareCardModel {
-  const name = truncateShareText(input.name || '', 48);
+  const name = truncateShareText(input.name || '', 72);
   const location = truncateShareText(input.headquarters || '', 52);
   const usdot = (input.usdotLabel || '').trim();
   const profile = (input.profileLabel || 'Company profile').trim();
@@ -44,7 +44,7 @@ export function moveEntityShareModel(input: {
 
   return {
     kind: 'entity',
-    eyebrow: 'MOVING COMPANY RESEARCH',
+    eyebrow: 'MOVER RESEARCH · EVIDENCE SUMMARY',
     title: name || 'Moving company profile',
     subtitle: location || undefined,
     fact: truncateShareText(fact, 72),
@@ -69,9 +69,9 @@ export function moveStateShareModel(input: { stateName: string }): MoveShareCard
   const name = truncateShareText(input.stateName || '', 36);
   return {
     kind: 'content',
-    eyebrow: 'STATE MOVING RESEARCH',
-    title: name ? `${name} movers` : 'State moving research',
-    fact: 'County guides · licensing · moving tools',
+    eyebrow: name ? `${name.toUpperCase()} INTELLIGENCE` : 'STATE INTELLIGENCE',
+    title: name ? `${name} Moving Intelligence` : 'State Moving Intelligence',
+    fact: 'Registration · authority · public-source research',
   };
 }
 
