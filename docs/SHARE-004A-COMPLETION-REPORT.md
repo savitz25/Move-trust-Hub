@@ -49,7 +49,7 @@ Ask `origin/main` audited at `4a78502d2300d5fcf54921cfc94880ff593e18b5`. Ask rem
 - Original starting SHA: `6fb35632c20436427220c16476f3f4796765aeca`
 - Intervening compatible docs-only main: `f6bf82cc3fd5e49a2c6fd178e4d8d2abfd5bb096`
 - Feature implementation SHA: `c4349a6d7c5e6b9101e2188ae3da9a3ffaef0531`
-- Documentation/handoff commit and PR: recorded after publication
+- Pull request: `savitz25/Move-trust-Hub#111` — `https://github.com/savitz25/Move-trust-Hub/pull/111`
 
 ## K–L. Files and variants
 
