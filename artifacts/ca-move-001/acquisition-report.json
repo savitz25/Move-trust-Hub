@@ -1,0 +1,66 @@
+{
+  "ticket": "CA-MOVE-001",
+  "generated_at": "2026-09-03T19:09:30.390160+00:00",
+  "bhgs_home": {
+    "status": 200,
+    "bytes": 29002,
+    "sha256": "612746d93851948a9fedadf6af43bb70e6dde583d0ef5b427431fa87e26eacd2",
+    "url": "https://bhgs.dca.ca.gov/"
+  },
+  "enforcement": {
+    "source": "https://bhgs.dca.ca.gov/enforcement/lookup.shtml",
+    "agency": "Bureau of Household Goods and Services",
+    "http_status": 200,
+    "bytes": 456060,
+    "sha256": "f760098182281c22ca03da75a8fd17c5bbf78e6915d880c9123768c66dade11a",
+    "filter": "Violation Section contains 19237 (household-mover operating without/against permit)",
+    "rows": 132,
+    "unlicensed_rows": 120,
+    "exact_cal_t_rows": 12,
+    "year_counts": {
+      "2022": 19,
+      "2023": 51,
+      "2024": 27,
+      "2025": 29,
+      "2026": 6
+    },
+    "grain": "citation row on official BHGS HTML table",
+    "citation_is_not_revocation": true,
+    "fine_is_not_confirmed_paid": true,
+    "name_only_is_unsafe": true,
+    "profile_attachments": 0,
+    "other_bhgs_industries_excluded": true
+  },
+  "tariff": {
+    "source": "https://bhgs.dca.ca.gov/forms_pubs/2026_max_rate_tariff.pdf",
+    "title": "Maximum Rate Tariff, effective January 1, 2026",
+    "effective": "2026-01-01",
+    "http_status": 200,
+    "bytes": 1422797,
+    "sha256": "e290863513378acfbce3dc7b396ea45e198c9f8223555f9dff87258e03d415c3",
+    "pdf": true,
+    "tariff_is_not_invoice": true,
+    "tariff_is_not_quality": true
+  },
+  "authority_pages": {
+    "faq": {
+      "url": "https://bhgs.dca.ca.gov/licensee/hhm_faqs.shtml",
+      "status": 200,
+      "sha256": "95158454c99158927fcd7008a988bc3875bc37aa74d578751e6a95e94ac88e26"
+    },
+    "consumers": {
+      "url": "https://bhgs.dca.ca.gov/consumers/movers.shtml",
+      "status": 200,
+      "sha256": "9c721bbebbe4baed8bb0e5467b6c950d8e29f49e323d11f8c83d1693a77ae7af"
+    },
+    "search": "https://search.dca.ca.gov/hhm_search"
+  },
+  "unlicensed_sweep": {
+    "source": "https://bhgs.dca.ca.gov/forms_pubs/news_20251223.pdf",
+    "status": 200,
+    "bytes": 205841,
+    "sha256": "4803eb38085b258e501b83158b43a95e0d55d2f59b81f65b39cf30173238c00d",
+    "as_of": "2025-12-23",
+    "title": "Bureau of Household Goods and Services Conducts Statewide Sweep of Unlicensed Movers"
+  }
+}

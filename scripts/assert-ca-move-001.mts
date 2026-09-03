@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+
+const page = readFileSync('app/(move)/california/page.tsx', 'utf8');
+const ui = readFileSync('components/intelligence/CaliforniaMoveIntelligence.tsx', 'utf8');
+const sitemap = readFileSync('app/sitemap.ts', 'utf8');
+const home = readFileSync('components/home-page.tsx', 'utf8');
+const snap = JSON.parse(readFileSync('lib/california-intelligence/accepted-snapshot.json', 'utf8'));
+
+assert.match(page, /path: CALIFORNIA_INTELLIGENCE_GATE.path|path: '\/california'/);
+assert.match(page, /buildMovePageMetadata/);
+assert.match(page, /getCaliforniaMoveIntelligenceSnapshot/);
+assert.doesNotMatch(page, /robots:\s*\{\s*index:\s*false/);
+assert.equal((ui.match(/<h1\b/g) ?? []).length, 1);
+assert.match(ui, /California Moving &amp; Household-Goods Intelligence/);
+assert.match(ui, /CAL-T is not a USDOT number/);
+assert.match(ui, /FMCSA interstate records with a California business\/HQ location/);
+assert.match(ui, /Complete CAL-T roster is search-only/);
+assert.doesNotMatch(ui, /0 California movers|0 CAL-T/);
+assert.doesNotMatch(ui, /best movers|safest movers|Trust Score ranking/);
+assert.match(ui, /citation is not a revocation/);
+assert.match(ui, /tariff is not an actual invoice/);
+assert.match(ui, /permit is not proof of confirmed current insurance/);
+assert.match(sitemap, /['"]\/california['"]/);
+assert.match(home, /href="\/california"/);
+assert.equal(existsSync('app/(move)/california/[county]'), false);
+assert.equal(snap.enforcement.rows, 132);
+assert.equal(snap.enforcement.profile_attachments, 0);
+assert.equal(snap.authority.license_count_published, null);
+console.log('CA-MOVE-001 publication assertions: PASS');

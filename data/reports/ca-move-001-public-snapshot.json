@@ -1,0 +1,397 @@
+{
+  "as_of": "2026-09-03",
+  "authority": {
+    "cal_t_is_not_usdot": true,
+    "california_licensed_is_not_interstate_authorized": true,
+    "classes": {
+      "GENERAL_HOUSEHOLD_MOVER": {
+        "consumer_intrastate": true,
+        "covers": "Moves of used household goods entirely within California, or both within California and into/out of California.",
+        "label": "General Household Mover permit"
+      },
+      "INTERSTATE_MOVER": {
+        "consumer_intrastate": false,
+        "covers": "Moves of used household goods only into or out of California (BHGS interstate application).",
+        "label": "Interstate Mover permit",
+        "not_a_substitute_for_fmcsa": true
+      }
+    },
+    "exemptions_source_native": [
+      "Freight forwarder (49 U.S.C. 13102(8))",
+      "Motor carrier of property other than household goods / office moves (DMV)",
+      "Storage-container company where the customer loads and unloads (49 U.S.C. 13102(12)(C))",
+      "Packing or unpacking services only"
+    ],
+    "fmcsa_active_is_not_california_licensed": true,
+    "license_count_published": null,
+    "roster_coverage": "OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED",
+    "state_authority_is_not_fmcsa": true
+  },
+  "complaints": {
+    "bulk_report": "SOURCE_NOT_ACQUIRED",
+    "complaint_is_not_violation": true,
+    "coverage": "OPEN_SEARCH / CONSUMER COMPLAINT PROCESS",
+    "form_pdf": "https://bhgs.dca.ca.gov/forms_pubs/complaint_form.pdf",
+    "loss_damage_claim_window": "written claim within nine months after delivery (official consumer page)",
+    "no_complaint_is_not_clean": true,
+    "path": "https://connect.dca.ca.gov/bhgs/public/submitcomplaint/bhgs"
+  },
+  "contacts": {
+    "fmcsa_contacts_remain_federal_source": true,
+    "provenance_separate": true,
+    "state_roster_contacts": "NOT_SCRAPED"
+  },
+  "coverage_gaps": [
+    {
+      "id": "cal-t-roster",
+      "label": "Complete CAL-T mover roster",
+      "state": "OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED"
+    },
+    {
+      "id": "licensed-denominator",
+      "label": "Complete current licensed-mover denominator",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "enforcement-history",
+      "label": "Complete enforcement history",
+      "state": "PARTIAL_HTML_TABLE"
+    },
+    {
+      "id": "insurance-certificates",
+      "label": "Current insurance certificate universe",
+      "state": "SEARCH_OR_REQUEST"
+    },
+    {
+      "id": "bulk-complaints",
+      "label": "Bulk complaints",
+      "state": "SOURCE_NOT_ACQUIRED"
+    },
+    {
+      "id": "state-usdot-crosswalk",
+      "label": "State CAL-T \u2194 USDOT exact crosswalk",
+      "state": "SOURCE_NOT_ACQUIRED"
+    }
+  ],
+  "enforcement": {
+    "agency": "Bureau of Household Goods and Services",
+    "citation_is_not_revocation": true,
+    "coverage": "ACQUIRED_OFFICIAL_HTML_TABLE_FILTERED",
+    "exact_cal_t_events": [
+      {
+        "business_name": "SMART MOVING LLC",
+        "cal_t": "191728",
+        "citation_date": "02/04/2026",
+        "city": "FREMONT",
+        "fine_amount": "$2,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "CHIARELLA TRANSPORTATION AND RELOCATION SERVICE INC. DBA WEST COAST EXPRESS",
+        "cal_t": "192349",
+        "citation_date": "03/02/2026",
+        "city": "PORTLAND",
+        "fine_amount": "$2,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "BUZZ MOVING DBA CALIFORNIA MOVERS",
+        "cal_t": "192676",
+        "citation_date": "10/08/2024",
+        "city": "SANFRANCISCO",
+        "fine_amount": "$5,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "UNIVERSAL MOVERS LLC",
+        "cal_t": "190965",
+        "citation_date": "10/17/2024",
+        "city": "HAYWARD",
+        "fine_amount": "$5,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "SOUTH BAY MOVING SYSTEMS, INC. DBA SOUTHBAY MOVING SYSTEMS",
+        "cal_t": "191825",
+        "citation_date": "07/16/2025",
+        "city": "SALINAS",
+        "fine_amount": "$1,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "CIAO BELLA MOVING CO LLC",
+        "cal_t": "200414",
+        "citation_date": "07/29/2025",
+        "city": "NORWALK",
+        "fine_amount": "$1,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "BARAHONA'S PROFESSIONAL MOVING & STORAGE LLC",
+        "cal_t": "191914",
+        "citation_date": "10/20/2025",
+        "city": "SUN VALLEY",
+        "fine_amount": "$100.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "CZ VENTURES LLC DBA COLLEGE HUNKS",
+        "cal_t": "192320",
+        "citation_date": "10/29/2025",
+        "city": "SAN DIEGO",
+        "fine_amount": "$2,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "ELMISA MOVE & JUNK CORP",
+        "cal_t": "192424",
+        "citation_date": "10/29/2025",
+        "city": "POWAY",
+        "fine_amount": "$2,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "CLUTCH MOVING COMPANY",
+        "cal_t": "191689",
+        "citation_date": "10/30/2025",
+        "city": "SAN FRANCISCO",
+        "fine_amount": "$2,000.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "CHEAP MOVERS CLUB LLC",
+        "cal_t": "202393",
+        "citation_date": "11/24/2025",
+        "city": "UNION CITY",
+        "fine_amount": "$7,500.00",
+        "identity_tier": "EXACT"
+      },
+      {
+        "business_name": "SF EZ MOVING LLC",
+        "cal_t": "192437",
+        "citation_date": "12/18/2025",
+        "city": "DALY CITY",
+        "fine_amount": "$1,000.00",
+        "identity_tier": "EXACT"
+      }
+    ],
+    "exact_cal_t_rows": 12,
+    "filter": "Violation Section contains 19237 (household-mover operating without/against permit)",
+    "fine_is_not_confirmed_paid": true,
+    "html_sha256": "f760098182281c22ca03da75a8fd17c5bbf78e6915d880c9123768c66dade11a",
+    "name_only_is_unsafe": true,
+    "other_bhgs_industries_excluded": true,
+    "profile_attachments": 0,
+    "rows": 132,
+    "source": "https://bhgs.dca.ca.gov/enforcement/lookup.shtml",
+    "unlicensed_names_not_profile_attached": true,
+    "unlicensed_rows": 120,
+    "year_counts": {
+      "2022": 19,
+      "2023": 51,
+      "2024": 27,
+      "2025": 29,
+      "2026": 6
+    }
+  },
+  "evidence_depth": [
+    {
+      "access_class": "OPEN_OFFICIAL",
+      "agency": "BHGS / DCA",
+      "as_of": "2026-09-03",
+      "family": "BHGS authority",
+      "grain": "regulator / permit class",
+      "identity": "CAL-T Household Mover permit",
+      "limitations": "No bulk roster. CPUC terminology is historical.",
+      "rows": null,
+      "source": "https://bhgs.dca.ca.gov/"
+    },
+    {
+      "access_class": "OPEN_SEARCH_ONLY",
+      "agency": "DCA / BHGS",
+      "as_of": "2026-09-03",
+      "family": "California license verification",
+      "grain": "individual permit search",
+      "identity": "CAL-T",
+      "limitations": "Not scraped. Complete count UNKNOWN.",
+      "rows": null,
+      "source": "https://search.dca.ca.gov/hhm_search"
+    },
+    {
+      "access_class": "EXISTING_GRAPH",
+      "agency": "FMCSA",
+      "as_of": "live directory when available",
+      "family": "FMCSA",
+      "grain": "publishable company with CA headquarters",
+      "identity": "USDOT",
+      "limitations": "Not CAL-T. Not California licensed.",
+      "rows": null,
+      "source": "MoveTrustHub FMCSA-keyed publishable companies"
+    },
+    {
+      "access_class": "OPEN_HTML_TABLE",
+      "agency": "BHGS",
+      "as_of": "2026-09-03",
+      "family": "state enforcement",
+      "grain": "BPC 19237 citation row",
+      "identity": "CAL-T when present; name-only otherwise UNSAFE",
+      "limitations": "Mixed BHGS industries on the same page; only 19237 counted. Citation \u2260 revocation.",
+      "rows": 132,
+      "source": "https://bhgs.dca.ca.gov/enforcement/lookup.shtml"
+    },
+    {
+      "access_class": "OPEN_PDF",
+      "agency": "BHGS",
+      "as_of": "2026-01-01",
+      "family": "tariff/rate source",
+      "grain": "Maximum Rate Tariff 4",
+      "identity": "n/a",
+      "limitations": "Tariff \u2260 invoice. Tariff \u2260 quality.",
+      "rows": null,
+      "source": "https://bhgs.dca.ca.gov/forms_pubs/2026_max_rate_tariff.pdf"
+    },
+    {
+      "access_class": "OPEN_FAQ",
+      "agency": "BHGS",
+      "as_of": "2026-09-03",
+      "family": "insurance/financial responsibility",
+      "grain": "permit application filing minima (GO 100 / GO 136)",
+      "identity": "n/a",
+      "limitations": "Permit presence is not a live insurance certificate check.",
+      "rows": null,
+      "source": "https://bhgs.dca.ca.gov/licensee/hhm_faqs.shtml"
+    },
+    {
+      "access_class": "OPEN_SEARCH / CONSUMER PROCESS",
+      "agency": "BHGS",
+      "as_of": "2026-09-03",
+      "family": "complaint process",
+      "grain": "consumer complaint intake",
+      "identity": "n/a",
+      "limitations": "No bulk complaint report acquired. Complaint \u2260 violation.",
+      "rows": null,
+      "source": "https://bhgs.dca.ca.gov/consumers/index.shtml"
+    },
+    {
+      "access_class": "OPEN_HTML",
+      "agency": "BHGS",
+      "as_of": "2026-09-03",
+      "family": "consumer guide",
+      "grain": "official consumer moving rules",
+      "identity": "n/a",
+      "limitations": "Guidance, not a quote calculator.",
+      "rows": null,
+      "source": "https://bhgs.dca.ca.gov/consumers/movers.shtml"
+    }
+  ],
+  "federal": {
+    "coverage": "LIVE_DIRECTORY_WHEN_AVAILABLE",
+    "directory_href": "/companies?state=CA",
+    "disclaimer": "Federal interstate authority and California intrastate authority are separate. FMCSA ACTIVE is not California licensed. California licensed is not interstate authorized. CAL-T is not USDOT.",
+    "fmcsa_safer": "https://safer.fmcsa.dot.gov/",
+    "grain": "MoveTrustHub publishable company profiles with California headquarters (FMCSA-keyed), not CAL-T permits",
+    "hq_count_committed": null,
+    "label": "FMCSA interstate records with a California business/HQ location",
+    "verify_href": "/verify-dot"
+  },
+  "findings": [
+    {
+      "id": "cal-t-vs-usdot",
+      "text": "California household-goods moves inside the state are licensed by BHGS under a Household Mover permit identified as a CAL-T number. That is not a USDOT number and not FMCSA interstate authority. CPUC is not the current regulator; household-goods authority transferred to BHGS."
+    },
+    {
+      "id": "no-bulk-roster",
+      "text": "No official bulk CAL-T mover roster was acquired. Public verification is OPEN_SEARCH_ONLY at search.dca.ca.gov/hhm_search. The complete California licensed-mover count is UNKNOWN, not zero."
+    },
+    {
+      "id": "enforcement-19237",
+      "text": "The official BHGS citations table includes 132 rows whose violation section is 19237 (household-mover permit). 120 are marked UNLICENSED and 12 carry a CAL-T/T number. A citation is not a revocation. A listed fine amount is not confirmed paid. Name-only unlicensed rows are not attached to MoveTrustHub profiles."
+    },
+    {
+      "id": "max-rate-tariff",
+      "text": "BHGS publishes Maximum Rate Tariff 4 effective January 1, 2026. The tariff sets maximum rates and rules for moves within California. A tariff is not an actual invoice and not a quality score. Written estimates after visual inspection and a not-to-exceed price are official consumer rules."
+    }
+  ],
+  "fingerprint": "3e0f221d7b46bd6c5904a2ea546456d76d2c96ffc62f74a3ad8a2f3fcfd0e567",
+  "generated_at": "2026-09-03T19:10:38+00:00",
+  "insurance": {
+    "cargo_minimum": "GO 136: $20,000 per shipment",
+    "coverage": "APPLICATION_FILING_REQUIREMENT / CERTIFICATE_SEARCH_OR_REQUEST",
+    "forms": [
+      "TL 676 liability certificate",
+      "TL 672 cargo certificate"
+    ],
+    "liability_minimums": "GO 100: $250,000 BI one person; $500,000 BI more than one person; $100,000 property damage other than cargo; or $600,000 combined single limit",
+    "license_is_not_confirmed_current_insurance": true,
+    "no_insured_badge_from_permit": true,
+    "source": "https://bhgs.dca.ca.gov/licensee/hhm_faqs.shtml",
+    "workers_comp": "when applicable"
+  },
+  "no_paid_ranking": true,
+  "no_trust_score": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/california",
+    "indexable": true,
+    "no_california_counties": true,
+    "rankings": false,
+    "robots": "index,follow",
+    "route": "/california",
+    "trustScore": false
+  },
+  "regulator": {
+    "agency": "Bureau of Household Goods and Services",
+    "connect_is_not_scraped": true,
+    "connect_url": "https://connect.dca.ca.gov/bhgs/",
+    "department": "California Department of Consumer Affairs",
+    "home_url": "https://bhgs.dca.ca.gov/",
+    "identifier": "CAL-T number (Household Mover permit)",
+    "not_the_current_regulator": "California Public Utilities Commission (household-goods authority transferred 2018; historical only)",
+    "program": "Household Movers (HHM)",
+    "short": "BHGS",
+    "verification_coverage": "OPEN_SEARCH_ONLY",
+    "verification_url": "https://search.dca.ca.gov/hhm_search"
+  },
+  "semantics": [
+    "CAL-T != USDOT",
+    "CALIFORNIA STATE AUTHORITY != FMCSA INTERSTATE AUTHORITY",
+    "FMCSA ACTIVE != CALIFORNIA LICENSED",
+    "CALIFORNIA LICENSED != INTERSTATE AUTHORIZED",
+    "LICENSE != CONFIRMED CURRENT INSURANCE",
+    "TARIFF != ACTUAL PRICE",
+    "COMPLAINT != VIOLATION",
+    "NOTICE != FINAL ACTION",
+    "MISSING != ZERO",
+    "NO TRUST SCORE",
+    "NO PAID RANKING"
+  ],
+  "tariff": {
+    "bytes": 1422797,
+    "consumer_rules_from_official_pages": [
+      "Written estimate only after visual inspection of the goods",
+      "Verbal or internet-only estimates are prohibited",
+      "Not-to-exceed price required for household moves",
+      "Additional services require a Change Order for Moving Services",
+      "Valuation / additional protection choices are in the official consumer booklet",
+      "Required documents include the moving services agreement and Important Notice About Your Move"
+    ],
+    "effective": "2026-01-01",
+    "laws_url": "https://bhgs.dca.ca.gov/laws/hhm_law_book_eff_1_1_26.pdf",
+    "sha256": "e290863513378acfbce3dc7b396ea45e198c9f8223555f9dff87258e03d415c3",
+    "source": "https://bhgs.dca.ca.gov/forms_pubs/2026_max_rate_tariff.pdf",
+    "tariff_is_not_invoice": true,
+    "tariff_is_not_quality": true,
+    "title": "Maximum Rate Tariff, effective January 1, 2026"
+  },
+  "ticket": "CA-MOVE-001",
+  "verify": {
+    "bhgs_enforcement": "https://bhgs.dca.ca.gov/enforcement/lookup.shtml",
+    "bhgs_home": "https://bhgs.dca.ca.gov/",
+    "bhgs_search": "https://search.dca.ca.gov/hhm_search",
+    "fmcsa_safer": "https://safer.fmcsa.dot.gov/",
+    "interstate_tips": "https://bhgs.dca.ca.gov/forms_pubs/moving_tips_flyer_into_out_ca.pdf",
+    "intrastate_tips": "https://bhgs.dca.ca.gov/forms_pubs/moving_tips_flyer_ca.pdf",
+    "movetrusthub_federal": "/companies?state=CA",
+    "movetrusthub_verify_dot": "/verify-dot"
+  },
+  "version": "move-ca-state-intel-v1"
+}
