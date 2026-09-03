@@ -4,6 +4,8 @@ import {
   MOVE_HOME_ASK_THE_MARKET,
   MOVE_HOME_MARKET_ROLES,
 } from '@/lib/intelligence/home-education';
+import { loadMoveNetworkMetrics } from '@/lib/metrics/load-network-metrics';
+import { metricByKey } from '@/lib/metrics/move-network-metrics-v1';
 import type {
   MoveHomeIntelligencePayload,
   MoveHomeMetric,
@@ -259,6 +261,12 @@ export function MoveNationalIntelligence({
   const asOf = formatAsOf(payload.asOf);
   const profiles = metricById(payload, 'dir_publishable_profiles');
   const snapshotUnavailable = payload.timedOut || payload.metrics.length === 0;
+  const network = loadMoveNetworkMetrics();
+  const njRoster = metricByKey(network, 'nj_pmw_authority_roster');
+  const caUniverse = metricByKey(network, 'ca_cal_t_household_mover_universe');
+  const flIm = metricByKey(network, 'florida_fdacs_im_active_registrations');
+  const generatedDay = network.generatedAt.slice(0, 10);
+  const newestSource = network.newestDocumentedSourceAsOf;
 
   return (
     <div id="moving-intelligence" className="scroll-mt-24">
@@ -321,6 +329,33 @@ export function MoveNationalIntelligence({
                   </p>
                 </li>
               ) : null}
+              {flIm.valueState === 'KNOWN' && flIm.value !== null ? (
+                <li className="rounded-2xl border border-border bg-card px-4 py-4">
+                  <p className="text-3xl font-semibold tabular-nums tracking-tight text-[#0A2540]">
+                    {formatIntelNumber(flIm.value, false)}
+                  </p>
+                  <p className="mt-1 text-sm font-medium">{flIm.label}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                    Florida intrastate registrations. Not FMCSA interstate records and not a national mover total.
+                  </p>
+                </li>
+              ) : null}
+              <li className="rounded-2xl border border-border bg-card px-4 py-4">
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary">Unacquired state universes</p>
+                <ul className="mt-2 space-y-2 text-sm">
+                  <li>
+                    <span className="font-medium">New Jersey PM/PW/PC roster:</span>{' '}
+                    {njRoster.valueState.replaceAll('_', ' ')} — not zero.
+                  </li>
+                  <li>
+                    <span className="font-medium">California CAL-T roster:</span>{' '}
+                    {caUniverse.valueState.replaceAll('_', ' ')} — not zero.
+                  </li>
+                </ul>
+                <p className="mt-2 text-xs text-muted-foreground">
+                  Missing authority is unknown, never a count of zero movers.
+                </p>
+              </li>
               {payload.siteCoverage.allFiftyStatesAndDc ? (
                 <li className="rounded-2xl border border-border bg-card px-4 py-4">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">State research</p>
@@ -339,6 +374,16 @@ export function MoveNationalIntelligence({
               )}
             </ul>
           )}
+          <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+            Network rollup generated {generatedDay}
+            {newestSource ? (
+              <>
+                . Newest documented official source date {newestSource} — not Git or deploy time,
+                and not the as-of date of every contributing source
+              </>
+            ) : null}
+            . Snapshot {payload.version} projected from {network.schemaVersion}.
+          </p>
           {payload.fmcsaClock ? (
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
               Latest observed FMCSA refresh in this directory cohort:{' '}
@@ -347,7 +392,7 @@ export function MoveNationalIntelligence({
               {formatIntelNumber(payload.fmcsaClock.withRefreshDate, payload.timedOut)} of{' '}
               {formatIntelNumber(payload.fmcsaClock.total, payload.timedOut)} profiles have a
               recorded refresh date; {formatIntelNumber(payload.fmcsaClock.withoutRefreshDate, payload.timedOut)} do
-              not. The latest date is not the as-of date for every profile. Snapshot {payload.version}.
+              not. The latest date is not the as-of date for every profile.
             </p>
           ) : asOf ? (
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
