@@ -23,10 +23,10 @@ export const revalidate = 300;
 
 /** Trailing-slash policy: no trailing slash (canonical = https://www.movetrusthub.com). */
 const HOMEPAGE_CANONICAL = SITE_URL.replace(/\/$/, '');
-const HOMEPAGE_DOCUMENT_TITLE = formatDocumentTitle(HOMEPAGE_SEO_TITLE, SITE_NAME);
+const HOMEPAGE_DOCUMENT_TITLE = formatDocumentTitle('Independent Moving Research', SITE_NAME);
 
 export const metadata: Metadata = {
-  title: absoluteDocumentTitle(HOMEPAGE_SEO_TITLE, SITE_NAME),
+  title: absoluteDocumentTitle('Independent Moving Research', SITE_NAME),
   description: HOMEPAGE_SEO_DESCRIPTION,
   robots: { index: true, follow: true },
   openGraph: buildOpenGraph({

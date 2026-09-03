@@ -7,10 +7,12 @@ export const dynamic = 'force-dynamic';
 
 export function generateMetadata(): Metadata {
   return buildMovePageMetadata({
-    title: 'Research Florida Movers — Registration, Authority & Headquarters',
+    title: 'Florida Moving Intelligence',
     description:
       'Research Florida mover registrations, interstate directory headquarters, and public authority identifiers. Independent MoveTrustHub research — not a marketplace or ranking.',
     path: '/florida',
+    contextualImage: true,
+    imageAlt: 'Move Trust Hub — Florida Moving Intelligence',
   });
 }
 

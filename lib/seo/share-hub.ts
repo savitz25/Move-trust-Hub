@@ -11,9 +11,10 @@ export const SHARE_HUB = {
   apexHost: 'movetrusthub.com',
   origin: 'https://www.movetrusthub.com',
   ogImagePath: '/opengraph-image',
+  ogImageRevision: '20260903',
   ogWidth: 1200,
   ogHeight: 630,
-  ogAlt: 'MoveTrustHub — independent moving company research and moving tools',
+  ogAlt: 'Move Trust Hub — Independent Moving Research',
   twitterCard: 'summary_large_image',
   networkLabel: 'ASK TRUST HUB NETWORK',
 } as const;
