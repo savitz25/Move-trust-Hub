@@ -101,6 +101,8 @@ export const HUBS: Record<HubId, HubConfig> = {
         title: 'DIRECTORY',
         links: [
           { href: '/companies', label: 'Find Movers' },
+          { href: '/florida', label: 'Florida research' },
+          { href: '/new-jersey', label: 'New Jersey research' },
           { href: '/local-movers', label: 'Local Movers by State' },
           { href: '/auto-transport', label: 'Auto Transport' },
           { href: '/compare', label: 'Compare Movers' },

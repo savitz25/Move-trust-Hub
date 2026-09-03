@@ -40,6 +40,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'State registrations, authority & HQ',
       },
       {
+        label: 'New Jersey research',
+        href: '/new-jersey',
+        description: 'State authority, Safe Move & interstate evidence',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

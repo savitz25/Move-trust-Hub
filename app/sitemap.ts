@@ -92,6 +92,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/companies',
     '/florida',
+    '/new-jersey',
     '/local-movers',
     '/moving-to',
     ...clusterRoutes,
@@ -125,7 +126,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority:
         route === ''
           ? 1
-          : route === '/local-movers' || route === '/florida'
+          : route === '/local-movers' || route === '/florida' || route === '/new-jersey'
             ? 0.9
             : route === '/verify-dot' || route === '/review'
               ? 0.88

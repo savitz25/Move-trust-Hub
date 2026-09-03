@@ -56,6 +56,7 @@ import { regulatoryCopyForProvider } from '@/lib/provider/copy';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import { isAnonymousCompanyNotFound } from '@/lib/provider/anonymous-company-route';
 import { FloridaFdacsEvidenceBlock } from '@/components/company/florida-fdacs-evidence-block';
+import { NjPmwEvidenceBlock } from '@/components/company/nj-pmw-evidence-block';
 import { PalmBeachCountyPermitBlock } from '@/components/company/palm-beach-county-permit-block';
 import { MiamiDadeRegistrationBlock } from '@/components/company/miami-dade-registration-block';
 import { getPublishedPalmBeachCountyPermitsForPublicProfile } from '@/lib/county-regulatory/pbc/public-read';
@@ -329,6 +330,12 @@ export default async function CompanyProfilePage({ params }: Props) {
           address={company.physicalAddress}
         />
       ) : null}
+
+      <NjPmwEvidenceBlock
+        usdot={company.usdotNumber}
+        legalName={company.fmcsaLegalName ?? company.name}
+        city={company.headquarters}
+      />
 
       {palmBeachPermits.length > 0 ? (
         <PalmBeachCountyPermitBlock permits={palmBeachPermits} />

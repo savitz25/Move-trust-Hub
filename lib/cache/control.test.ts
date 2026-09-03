@@ -28,6 +28,10 @@ test('Florida HTML CDN TTL is 60s, not the 86400 default', () => {
   assert.notEqual(htmlCacheSecondsForPath('/florida', 86_400), 86_400);
 });
 
+test('New Jersey HTML CDN TTL matches Florida force-dynamic snapshot pages', () => {
+  assert.equal(htmlCacheSecondsForPath('/new-jersey', 86_400), 60);
+});
+
 test('homepage and other public HTML keep the default CDN TTL', () => {
   assert.equal(htmlCacheSecondsForPath('/', 86_400), 86_400);
   assert.equal(htmlCacheSecondsForPath('/resources/fmcsa', 86_400), 86_400);

@@ -36,7 +36,7 @@ export const FLORIDA_HTML_CDN_SECONDS = 60;
 export function htmlCacheSecondsForPath(pathname: string, defaultSeconds: number): number {
   if (pathname.includes('/share-og')) return 3600;
   if (pathname === '/companies' || pathname.startsWith('/companies/')) return 300;
-  if (pathname === '/florida') return FLORIDA_HTML_CDN_SECONDS;
+  if (pathname === '/florida' || pathname === '/new-jersey') return FLORIDA_HTML_CDN_SECONDS;
   return defaultSeconds;
 }
 

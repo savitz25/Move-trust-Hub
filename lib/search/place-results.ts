@@ -28,7 +28,8 @@ export function placeResultsForQuery(raw: string): SearchPlaceHit[] {
       place.stateCode === 'FL'
         ? 'Florida Moving Intelligence'
         : `${place.stateName} local movers`,
-    href: place.stateCode === 'FL' ? '/florida' : place.stateHref,
+    href:
+      place.stateCode === 'FL' ? '/florida' : place.stateCode === 'NJ' ? '/new-jersey' : place.stateHref,
     explanation:
       place.stateCode === 'FL'
         ? 'Open Florida state intelligence. This is place research, not a company ranking.'
