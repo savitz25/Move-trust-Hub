@@ -45,6 +45,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'State authority, Safe Move & interstate evidence',
       },
       {
+        label: 'Texas research',
+        href: '/texas',
+        description: 'TxDMV household-goods certificates & interstate overlay',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
@@ -142,5 +147,6 @@ export const MOVE_NAV_AUDIT_PATHS = [
   '/tools/move-quote-check',
   '/verify-dot',
   '/florida',
+  '/texas',
   '/resources',
 ] as const;

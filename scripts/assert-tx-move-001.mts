@@ -1,0 +1,38 @@
+import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+
+const page = readFileSync('app/(move)/texas/page.tsx', 'utf8');
+const ui = readFileSync('components/intelligence/TexasMoveIntelligence.tsx', 'utf8');
+const sitemap = readFileSync('app/sitemap.ts', 'utf8');
+const home = readFileSync('components/home-page.tsx', 'utf8');
+const nav = readFileSync('lib/nav/move-nav-config.ts', 'utf8');
+const snap = JSON.parse(readFileSync('lib/texas-intelligence/accepted-snapshot.json', 'utf8'));
+const claim = readFileSync('lib/customer-integration/eligibility.ts', 'utf8');
+
+assert.match(page, /path: TEXAS_INTELLIGENCE_GATE.path|path: '\/texas'/);
+assert.match(page, /buildMovePageMetadata/);
+assert.match(page, /getTexasMoveIntelligenceSnapshot/);
+assert.doesNotMatch(page, /robots:\s*\{\s*index:\s*false/);
+assert.equal((ui.match(/<h1\b/g) ?? []).length, 1);
+assert.match(ui, /Texas Moving &amp; Household-Goods Intelligence/);
+assert.match(ui, /certificate is not a USDOT number/);
+assert.match(ui, /FMCSA interstate records with a Texas business\/HQ location/);
+assert.match(ui, /search-only/);
+assert.doesNotMatch(ui, /0 Texas movers|0 TxDMV certificates/);
+assert.doesNotMatch(ui, /best movers|safest movers|Trust Score ranking/);
+assert.match(ui, /insured/);
+assert.match(ui, /not an/);
+assert.match(ui, /tow company is not a household-goods mover|Tow-company data is a separate family/i);
+assert.match(sitemap, /['"]\/texas['"]/);
+assert.match(home, /href="\/texas"/);
+assert.match(nav, /href: '\/texas'/);
+assert.equal(existsSync('app/(move)/texas/[county]'), false);
+assert.equal(snap.authority.license_count_published, null);
+assert.equal(snap.tow.hero_inclusion, false);
+assert.equal(snap.crosswalk.coverage, 'SOURCE_NOT_ACQUIRED');
+assert.match(claim, /usdotNumber/);
+assert.doesNotMatch(claim, /txdmv/);
+assert.match(readFileSync('app/(move)/california/page.tsx', 'utf8'), /california/);
+assert.match(readFileSync('app/(move)/new-jersey/page.tsx', 'utf8'), /new-jersey/);
+assert.match(readFileSync('app/(move)/florida/page.tsx', 'utf8'), /florida/);
+console.log('TX-MOVE-001 publication assertions: PASS');
