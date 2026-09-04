@@ -71,6 +71,12 @@ export async function HomePage({
             >
               Explore Texas Moving Intelligence
             </Link>
+            <Link
+              href="/washington"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary no-underline hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              Explore Washington Moving Intelligence
+            </Link>
           </p>
         </div>
         {mapSection}

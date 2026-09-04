@@ -1,0 +1,184 @@
+{
+  "ticket": "WA-MOVE-001",
+  "retrieved_at": "2026-09-04T16:52:37.571398+00:00",
+  "no_pagination_crawl": true,
+  "no_id_bruteforce": true,
+  "directory": {
+    "requested_url": "https://www.utc.wa.gov/companies?combine=&usdot=&exposed_select_industry=568&regulatory_status=1",
+    "final_url": "https://www.utc.wa.gov/companies?combine=&usdot=&exposed_select_industry=568&regulatory_status=1",
+    "filter": "exposed_select_industry=568 (Household Goods Carriers), regulatory_status=1 (Active)",
+    "bytes": 298964,
+    "content_type": "text/html; charset=UTF-8",
+    "displaying": [
+      "1",
+      "50",
+      "284"
+    ],
+    "active_result_count": 284,
+    "csv_links": [],
+    "api_like_links": [],
+    "sample_company_hrefs": [
+      "/regulated-industries/utilities/energy/information-energy-companies/customer-deposit-interest-rates",
+      "/regulated-industries/utilities/energy/information-energy-companies/energy-news",
+      "/MovingCompanies/mover-news"
+    ],
+    "has_csv_export": false
+  },
+  "data_wa_hits": [
+    {
+      "id": "dagv-8sut",
+      "name": "CTE Perkins Concentrators 2025 Cohort",
+      "category": "education"
+    },
+    {
+      "id": "92ri-kedi",
+      "name": "CTE Perkins Concentrators 2024 Cohort",
+      "category": "education"
+    },
+    {
+      "id": "5ix9-u7ys",
+      "name": "Juvenile Rehabilitation Annual Fact Sheet",
+      "category": "education"
+    },
+    {
+      "id": "wy9m-whyx",
+      "name": "CTE Perkins Concentrators 2023 Cohort",
+      "category": "education"
+    },
+    {
+      "id": "54b5-qypa",
+      "name": "CTE Perkins Concentrators 2022 Cohort",
+      "category": "education"
+    },
+    {
+      "id": "f9pj-rdpi",
+      "name": "CTE Perkins Concentrators 2021 Cohort",
+      "category": "education"
+    },
+    {
+      "id": "yw4v-246p",
+      "name": "CTE Perkins Concentrators 2020 Cohort",
+      "category": "education"
+    },
+    {
+      "id": "4vrm-kge5",
+      "name": "CTE Perkins Concentrators 2019 Cohort",
+      "category": "education"
+    },
+    {
+      "id": "r5ki-dmfz",
+      "name": "Washington State Criminal Justice Training Commission Officer Certification Cases",
+      "category": "Public Safety"
+    },
+    {
+      "id": "tsxw-5hpt",
+      "name": "High School Graduate Outcomes - Enrollment by Institution",
+      "category": "education"
+    },
+    {
+      "id": "f4u4-uezp",
+      "name": "Student Course Outcomes by Student",
+      "category": "Education"
+    },
+    {
+      "id": "cjza-wqsm",
+      "name": "Student Course Outcomes by Outcome",
+      "category": null
+    },
+    {
+      "id": "6xgf-ceg4",
+      "name": "Juvenile Justice Dashboard - Workforce Outcomes",
+      "category": "Education"
+    },
+    {
+      "id": "5dup-ie9a",
+      "name": "Juvenile Justice Dashboard - Post Secondary Completion",
+      "category": "Education"
+    },
+    {
+      "id": "ej5m-hutb",
+      "name": "Juvenile Justice Dashboard - HS Completion",
+      "category": "Education"
+    },
+    {
+      "id": "6he9-ya4y",
+      "name": "High School Graduate Outcomes - Earnings by Industry",
+      "category": "Employment"
+    },
+    {
+      "id": "udag-wz3k",
+      "name": "High School Graduate Outcomes - Post Secondary Completion",
+      "category": "education"
+    },
+    {
+      "id": "7hx3-t3pn",
+      "name": "High School Graduate Outcomes - Persistence / Retention",
+      "category": "education"
+    },
+    {
+      "id": "y8qh-965v",
+      "name": "High School Graduate Outcomes - Remedial Coursetaking",
+      "category": "education"
+    },
+    {
+      "id": "vk6s-am8z",
+      "name": "High School Graduate Outcomes - First Year Enrollment by Sector",
+      "category": "education"
+    },
+    {
+      "id": "39uh-rsgs",
+      "name": "High School Graduate Outcomes - Earnings",
+      "category": "Employment"
+    },
+    {
+      "id": "7ma7-qs6m",
+      "name": "High School Graduate Outcomes - First Year Enrollment",
+      "category": "education"
+    },
+    {
+      "id": "f6st-whvb",
+      "name": "Summer Low Flow Indicator 1975-2017",
+      "category": "Natural Resources & Environment"
+    }
+  ],
+  "detail_samples": [
+    {
+      "url": "https://www.utc.wa.gov/regulated-industries/utilities/energy/information-energy-companies/customer-deposit-interest-rates",
+      "bytes": 201416,
+      "has_phone": true,
+      "has_email": true,
+      "has_ubi": false,
+      "has_usdot": true,
+      "has_permit": true,
+      "has_address": false,
+      "status_mentions": [],
+      "title": "Customer Deposit Interest Rates"
+    },
+    {
+      "url": "https://www.utc.wa.gov/regulated-industries/utilities/energy/information-energy-companies/energy-news",
+      "bytes": 205299,
+      "has_phone": true,
+      "has_email": true,
+      "has_ubi": false,
+      "has_usdot": true,
+      "has_permit": true,
+      "has_address": false,
+      "status_mentions": [],
+      "title": "Energy News"
+    },
+    {
+      "url": "https://www.utc.wa.gov/MovingCompanies/mover-news",
+      "bytes": 200263,
+      "has_phone": true,
+      "has_email": true,
+      "has_ubi": false,
+      "has_usdot": true,
+      "has_permit": true,
+      "has_address": false,
+      "status_mentions": [],
+      "title": "Mover News"
+    }
+  ],
+  "utc_hhg_bulk_roster": "SOURCE_NOT_ACQUIRED",
+  "utc_active_directory": "OPEN_HTML_TABLE / OPEN_SEARCH_ONLY"
+}

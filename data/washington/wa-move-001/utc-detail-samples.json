@@ -1,0 +1,113 @@
+[
+  {
+    "url": "https://www.utc.wa.gov/company/49374",
+    "utc_id": "22841",
+    "bytes": 190704,
+    "title": "UTC Company Detail Page | UTC",
+    "field_labels": [
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image"
+    ],
+    "h23": [
+      "7Lenora, LLC",
+      "Basic Information",
+      "Company Contacts",
+      "Company Address",
+      "Permits / Industry"
+    ],
+    "has_phone": true,
+    "has_email": false,
+    "has_ubi": true,
+    "has_usdot": true,
+    "has_permit": true,
+    "has_physical": true,
+    "has_mailing": true,
+    "has_tariff": true,
+    "has_docket": true,
+    "status": [
+      "Active",
+      "Active",
+      "Permanent"
+    ]
+  },
+  {
+    "url": "https://www.utc.wa.gov/company/46379",
+    "utc_id": "19874",
+    "bytes": 190703,
+    "title": "UTC Company Detail Page | UTC",
+    "field_labels": [
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image"
+    ],
+    "h23": [
+      "A Perfect Mover LLC",
+      "Basic Information",
+      "Company Contacts",
+      "Company Address",
+      "Permits / Industry"
+    ],
+    "has_phone": true,
+    "has_email": false,
+    "has_ubi": true,
+    "has_usdot": true,
+    "has_permit": true,
+    "has_physical": true,
+    "has_mailing": true,
+    "has_tariff": true,
+    "has_docket": true,
+    "status": [
+      "Active",
+      "Active",
+      "Permanent"
+    ]
+  },
+  {
+    "url": "https://www.utc.wa.gov/company/43780",
+    "utc_id": "17298",
+    "bytes": 190692,
+    "title": "UTC Company Detail Page | UTC",
+    "field_labels": [
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image",
+      "Image"
+    ],
+    "h23": [
+      "A2B Moving &amp; Storage LLC  ",
+      "Basic Information",
+      "Company Contacts",
+      "Company Address",
+      "Permits / Industry"
+    ],
+    "has_phone": true,
+    "has_email": false,
+    "has_ubi": true,
+    "has_usdot": true,
+    "has_permit": true,
+    "has_physical": true,
+    "has_mailing": true,
+    "has_tariff": true,
+    "has_docket": true,
+    "status": [
+      "Active",
+      "Active",
+      "Permanent"
+    ]
+  }
+]

@@ -50,6 +50,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'TxDMV household-goods certificates & interstate overlay',
       },
       {
+        label: 'Washington research',
+        href: '/washington',
+        description: 'UTC household-goods permits & interstate overlay',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
@@ -148,5 +153,6 @@ export const MOVE_NAV_AUDIT_PATHS = [
   '/verify-dot',
   '/florida',
   '/texas',
+  '/washington',
   '/resources',
 ] as const;
