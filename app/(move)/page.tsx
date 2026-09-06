@@ -18,7 +18,7 @@ import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-t
 import { getMoveHomeIntelligenceSnapshot } from '@/lib/intelligence/home-snapshot';
 
 export const dynamic = 'force-static';
-/** Pick up chrome/nav deploy updates without waiting for full CDN max-age. */
+/** Revalidate static homepage chrome and navigation independently of the longer CDN max-age. */
 export const revalidate = 300;
 
 /** Trailing-slash policy: no trailing slash (canonical = https://www.movetrusthub.com). */
