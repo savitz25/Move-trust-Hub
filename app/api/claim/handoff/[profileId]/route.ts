@@ -35,6 +35,7 @@ export async function GET(
       process.env.ATH_HANDOFF_SECRET || "",
       profile,
     );
+    console.info(JSON.stringify({ event: "claim_cta_clicked", hub: "move", profile_class: "mover", state: "unknown", acquisition_source: "organic" }));
     return createClaimHandoffRedirect(token);
   } catch {
     return Response.json(
