@@ -1,0 +1,36 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { buildMoveHomepageEvidenceInventory, MOVE_EVIDENCE_FAMILY_LABELS, MOVE_HOMEPAGE_STATE_CARDS } from '../lib/intelligence/move-home-evidence-inventory';
+import { loadMoveNetworkMetrics } from '../lib/metrics/load-network-metrics';
+
+const root = process.cwd();
+const metrics = loadMoveNetworkMetrics();
+const inventory = buildMoveHomepageEvidenceInventory(metrics);
+const byKey = Object.fromEntries(inventory.map((row) => [row.key, row]));
+const homepage = readFileSync(join(root, 'components/intelligence/MoveEvidenceShowcase.tsx'), 'utf8');
+const page = readFileSync(join(root, 'app/(move)/page.tsx'), 'utf8');
+
+assert.equal(metrics.network.publishedStateIntelligencePages, MOVE_HOMEPAGE_STATE_CARDS.length);
+assert.deepEqual(metrics.network.publishedStateIntelligencePaths, MOVE_HOMEPAGE_STATE_CARDS.map((s) => s.href));
+assert.deepEqual(MOVE_HOMEPAGE_STATE_CARDS.map((s) => s.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington']);
+assert.ok(!MOVE_HOMEPAGE_STATE_CARDS.some((s) => s.href === '/arizona'));
+assert.equal(Object.keys(MOVE_EVIDENCE_FAMILY_LABELS).length, 9);
+assert.equal(inventory.length, metrics.metrics.length);
+assert.ok(inventory.every((m) => ['PUBLIC', 'PUBLIC_PARTIAL', 'PUBLIC_UNKNOWN'].includes(m.publicationStatus)));
+assert.throws(() => buildMoveHomepageEvidenceInventory({ ...metrics, metrics: [{ ...metrics.metrics[0], publicationStatus: 'INTERNAL' }] }), /not publication eligible/);
+assert.throws(() => buildMoveHomepageEvidenceInventory({ ...metrics, metrics: [{ ...metrics.metrics[0], publicationStatus: 'REJECTED' }] }), /not publication eligible/);
+assert.equal(byKey.tx_txdmv_household_goods_mover_universe.value, null);
+assert.match(byKey.tx_txdmv_household_goods_mover_universe.description, /unknown, not zero/i);
+assert.equal(byKey.wa_utc_active_household_goods_directory_results.value, 284);
+assert.match(byKey.wa_utc_active_household_goods_directory_results.description, /not a bulk roster/i);
+assert.equal(byKey.nj_pmw_authority_roster.value, null);
+assert.equal(byKey.ca_cal_t_household_mover_universe.value, null);
+assert.notEqual(byKey.florida_fdacs_im_active_registrations.value, metrics.florida.hqPublishable);
+assert.match(byKey.nj_operation_safe_move_novs_acquired.description, /not a final order/i);
+assert.match(byKey.ca_bhgs_19237_citation_rows.description, /not.*movers|not California movers/i);
+assert.match(homepage, /USDOT|MC|authority/i);
+assert.match(homepage, /complaint|regulatory/i);
+assert.doesNotMatch(homepage, /AggregateRating|best mover|safest mover|trusted mover|approved mover|recommended mover/i);
+assert.match(page, /buildHomepageSchemaGraph/);
+console.log(`MOVE-HOME-003 PASS: ${inventory.length} measures, 9 families, 5 specialist states`);

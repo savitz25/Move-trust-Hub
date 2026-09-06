@@ -13,7 +13,7 @@ export const DESTINATIONS_INDEX_DESCRIPTION =
 export const HOMEPAGE_SEO_TITLE =
   'Moving Company Research, FMCSA Authority & Moving Intelligence';
 export const HOMEPAGE_SEO_DESCRIPTION =
-  'Independent moving-company research: carrier vs broker identity, FMCSA authority, state guides, then planner, calculator, Verify DOT, Compare, and My Move. Not a ranking or marketplace.';
+  'Research moving companies through USDOT and MC identity, FMCSA authority, state mover registrations, regulatory evidence, complaints, safety records, and consumer moving rules. No ranking or marketplace.';
 
 export function buildCityHubMetadata(content: CityHubContent): Metadata {
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;

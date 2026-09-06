@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
+import { MOVE_HOMEPAGE_STATE_CARDS } from '../lib/intelligence/move-home-evidence-inventory';
 
 const page = readFileSync('app/(move)/washington/page.tsx', 'utf8');
 const ui = readFileSync('components/intelligence/WashingtonMoveIntelligence.tsx', 'utf8');
 const sitemap = readFileSync('app/sitemap.ts', 'utf8');
-const home = readFileSync('components/home-page.tsx', 'utf8');
 const nav = readFileSync('lib/nav/move-nav-config.ts', 'utf8');
 const snap = JSON.parse(readFileSync('lib/washington-intelligence/accepted-snapshot.json', 'utf8'));
 const claim = readFileSync('lib/customer-integration/eligibility.ts', 'utf8');
@@ -22,7 +22,7 @@ assert.match(ui, /284/);
 assert.doesNotMatch(ui, /best movers|safest movers|top mover|Trust Score ranking/);
 assert.match(ui, /does not authorize interstate/);
 assert.match(sitemap, /['"]\/washington['"]/);
-assert.match(home, /href="\/washington"/);
+assert.ok(MOVE_HOMEPAGE_STATE_CARDS.some((state) => state.href === '/washington'));
 assert.match(nav, /href: '\/washington'/);
 assert.equal(existsSync('app/(move)/washington/[county]'), false);
 assert.equal(existsSync('app/(move)/washington/seattle'), false);

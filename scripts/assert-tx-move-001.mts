@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
+import { MOVE_HOMEPAGE_STATE_CARDS } from '../lib/intelligence/move-home-evidence-inventory';
 
 const page = readFileSync('app/(move)/texas/page.tsx', 'utf8');
 const ui = readFileSync('components/intelligence/TexasMoveIntelligence.tsx', 'utf8');
 const sitemap = readFileSync('app/sitemap.ts', 'utf8');
-const home = readFileSync('components/home-page.tsx', 'utf8');
 const nav = readFileSync('lib/nav/move-nav-config.ts', 'utf8');
 const snap = JSON.parse(readFileSync('lib/texas-intelligence/accepted-snapshot.json', 'utf8'));
 const claim = readFileSync('lib/customer-integration/eligibility.ts', 'utf8');
@@ -24,7 +24,7 @@ assert.match(ui, /insured/);
 assert.match(ui, /not an/);
 assert.match(ui, /tow company is not a household-goods mover|Tow-company data is a separate family/i);
 assert.match(sitemap, /['"]\/texas['"]/);
-assert.match(home, /href="\/texas"/);
+assert.ok(MOVE_HOMEPAGE_STATE_CARDS.some((state) => state.href === '/texas'));
 assert.match(nav, /href: '\/texas'/);
 assert.equal(existsSync('app/(move)/texas/[county]'), false);
 assert.equal(snap.authority.license_count_published, null);

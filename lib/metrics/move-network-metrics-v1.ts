@@ -19,6 +19,12 @@ export type MetricGrain =
   | 'directory_profile_authority_active'
   | 'federal_usdot_identity'
   | 'federal_mc_identity'
+  | 'directory_profile_authority_not_current'
+  | 'directory_profile_authority_unknown'
+  | 'directory_profile_carrier'
+  | 'directory_profile_broker'
+  | 'directory_profile_carrier_broker'
+  | 'directory_profile_unknown_role'
   | 'fdacs_intrastate_mover_registration'
   | 'fdacs_intrastate_mover_registration_active'
   | 'fdacs_moving_broker_registration_active'
@@ -33,6 +39,9 @@ export type MetricGrain =
   | 'bhgs_bpc_19237_unlicensed_row'
   | 'bhgs_bpc_19237_exact_cal_t_row'
   | 'ca_hq_publishable_profile'
+  | 'txdmv_household_goods_certificate_roster'
+  | 'utc_active_household_goods_directory_result'
+  | 'utc_household_goods_bulk_roster'
   | 'published_state_intelligence_page'
   | 'florida_research_county_landing'
   | 'local_movers_state_landing';
@@ -114,6 +123,18 @@ export type MoveNetworkMetricsV1 = {
     exactCalTCitationRows: number;
     hqPublishable: number;
     tariffEffective: string;
+  };
+  texas: {
+    rosterCoverage: 'OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED';
+    currentCertificateUniverse: null;
+    complaintBulkCoverage: 'SOURCE_NOT_ACQUIRED';
+    statewideExactCrosswalkCoverage: 'SOURCE_NOT_ACQUIRED';
+  };
+  washington: {
+    activeDirectoryResults: number;
+    activeDirectoryRetrievedAt: string;
+    bulkRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    historicalMoverUniverse: null;
   };
   network: {
     publishedStateIntelligencePages: number;

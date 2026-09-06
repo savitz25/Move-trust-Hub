@@ -53,7 +53,15 @@ function baseInput(over: Partial<MoveNetworkMetricsInput> = {}): MoveNetworkMetr
     caHqPublishable: 403,
     caSourceAsOf: '2026-09-03',
     caTariffEffective: '2026-01-01',
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california'],
+    txRosterCoverage: 'OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED',
+    txSourceAsOf: '2026-09-03',
+    txComplaintBulkCoverage: 'SOURCE_NOT_ACQUIRED',
+    txCrosswalkCoverage: 'SOURCE_NOT_ACQUIRED',
+    waActiveDirectoryResults: 284,
+    waDirectoryRetrievedAt: '2026-09-04T16:52:37.571398+00:00',
+    waBulkRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    waSourceAsOf: '2026-09-04',
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington'],
     floridaResearchCountyLandings: 4,
     localMoverStateLandings: 51,
     ...over,
@@ -137,7 +145,7 @@ describe('move-network-metrics-v1 grain safety', () => {
     const m = computeMoveNetworkMetrics(baseInput({ generatedAt: '2026-09-03T22:00:00.000Z' }));
     assert.equal(metricByKey(m, 'florida_fdacs_im_active_registrations').sourceAsOf, '2026-08-21');
     assert.notEqual(metricByKey(m, 'florida_fdacs_im_active_registrations').sourceAsOf, m.generatedAt.slice(0, 10));
-    assert.equal(m.newestDocumentedSourceAsOf, '2026-09-03');
+    assert.equal(m.newestDocumentedSourceAsOf, '2026-09-04');
   });
 
   it('requires published state routes in coverage', () => {
