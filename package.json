@@ -25,6 +25,7 @@
     "assert:wa-move-001": "tsx lib/washington-intelligence/publication.test.ts && tsx scripts/assert-wa-move-001.mts",
     "home:metrics": "node --import tsx scripts/build_network_metrics_v1.mjs",
     "assert:network-metrics": "node scripts/assert_network_metrics_v1.mjs && npx --yes tsx --test scripts/test_move_network_metrics.ts",
+    "assert:move-home-003": "tsx scripts/assert-move-home-003.ts",
     "assert:visual": "node scripts/assert-visual-006.mjs",
     "lint": "next lint",
     "lint:fix": "next lint --fix",

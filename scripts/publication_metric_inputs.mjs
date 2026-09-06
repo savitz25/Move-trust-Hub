@@ -18,6 +18,8 @@ export function publicationMetricInputs() {
   const site = read("lib/intelligence/home-site-coverage.ts");
   const caSnap = JSON.parse(read("lib/california-intelligence/accepted-snapshot.json"));
   const njSnap = JSON.parse(read("data/reports/nj-move-002-public-snapshot.json"));
+  const txSnap = JSON.parse(read("lib/texas-intelligence/accepted-snapshot.json"));
+  const waSnap = JSON.parse(read("lib/washington-intelligence/accepted-snapshot.json"));
 
   const paths = [];
   const caPath = caPub.match(/CA_MOVE_PUBLIC_PATH = '(\/[^']+)'/)?.[1];
@@ -25,6 +27,12 @@ export function publicationMetricInputs() {
   if (flSnap.includes("/florida") && existsSync(join(root, "app/(move)/florida/page.tsx"))) paths.push("/florida");
   if (njPath) paths.push(njPath);
   if (caPath) paths.push(caPath);
+  for (const snapshot of [txSnap, waSnap]) {
+    const route = snapshot.publication?.route;
+    if (route && snapshot.publication.indexable && existsSync(join(root, `app/(move)${route}/page.tsx`))) {
+      paths.push(route);
+    }
+  }
 
   const floridaResearchCountyLandings = [
     ...coverage.match(/export const FLORIDA_RESEARCH_COUNTIES = \[([\s\S]*?)\] as const/)[1].matchAll(/slug: '([^']+)'/g),
@@ -45,5 +53,7 @@ export function publicationMetricInputs() {
     njOsmNovs2025: njSnap.osm.years["2025"].novs,
     njOsmNovs2024: njSnap.osm.years["2024"].novs,
     njOsmAcquiredRows: njSnap.osm.rows.length,
+    txSnapshot: txSnap,
+    waSnapshot: waSnap,
   };
 }

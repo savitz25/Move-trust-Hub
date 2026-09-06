@@ -28,9 +28,9 @@ export function HomeIntelHero({ profileCount = null }: { profileCount?: number |
           {MOVE_HOME_H1}
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#1E293B] sm:text-lg">
-          Independent research of mover identity, carrier and broker roles, FMCSA authority,
-          and state guides — then the planner, calculator, Compare, and My Move tools you
-          already use. Not a marketplace, ranking board, or endorsement.
+          Connect mover identity to USDOT and MC records, federal and state authority,
+          carrier or broker roles, regulatory evidence, and consumer moving rules where
+          official sources support them. No paid ranking or proprietary score. You decide.
         </p>
 
         <div className="mt-7">

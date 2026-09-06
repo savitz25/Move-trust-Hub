@@ -2,7 +2,7 @@ import type { MetricPublicEligibility } from './types';
 
 export const MOVE_HOME_INTEL_VERSION = 'move-home-intel-v1' as const;
 
-export const MOVE_HOME_H1 = 'Understand the moving market before you book.';
+export const MOVE_HOME_H1 = 'Research the mover. Verify the authority. Understand the evidence.';
 
 export type HomeEntityClass = 'Carrier' | 'Broker' | 'Carrier/Broker' | 'Unknown';
 

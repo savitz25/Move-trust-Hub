@@ -19,7 +19,7 @@ test('homepage uses a single intelligence H1 and keeps planner as H2/H3', () => 
   const hero = read('components/home/home-intel-hero.tsx');
   assert.match(home, /HomeIntelHero/);
   assert.match(hero, /MOVE_HOME_H1/);
-  assert.equal(MOVE_HOME_H1, 'Understand the moving market before you book.');
+  assert.equal(MOVE_HOME_H1, 'Research the mover. Verify the authority. Understand the evidence.');
   assert.equal((hero.match(/<h1\b/g) ?? []).length, 1);
   assert.doesNotMatch(hero, /Where are you going\?/);
   assert.match(page, /robots: \{ index: true, follow: true \}/);
@@ -63,8 +63,11 @@ test('mature tool routes remain linked from homepage surfaces', () => {
   const home = read('components/home-page.tsx') + read('components/home/home-tools-section.tsx') +
     read('components/home/home-intel-hero.tsx') +
     read('components/intelligence/MoveNationalIntelligence.tsx');
+  const showcase = read('components/intelligence/MoveEvidenceShowcase.tsx');
+  const stateModel = read('lib/intelligence/move-home-evidence-inventory.ts');
+  const surfaces = home + showcase + stateModel;
   for (const href of ['/verify-dot', '/compare', '/moving-calculator', '/my-move', '/companies', '/local-movers', '/florida']) {
-    assert.match(home, new RegExp(href.replace('/', '\\/')));
+    assert.match(surfaces, new RegExp(href.replace('/', '\\/')));
   }
 });
 

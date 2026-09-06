@@ -36,6 +36,14 @@ export type MoveNetworkMetricsInput = {
   caHqPublishable: number;
   caSourceAsOf: string;
   caTariffEffective: string;
+  txRosterCoverage: 'OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED';
+  txSourceAsOf: string;
+  txComplaintBulkCoverage: 'SOURCE_NOT_ACQUIRED';
+  txCrosswalkCoverage: 'SOURCE_NOT_ACQUIRED';
+  waActiveDirectoryResults: number;
+  waDirectoryRetrievedAt: string;
+  waBulkRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+  waSourceAsOf: string;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -94,6 +102,10 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/california')) {
     throw new Error('California state intelligence path missing');
   }
+  if (!input.publishedStateIntelligencePaths.includes('/texas')) throw new Error('Texas state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/washington')) throw new Error('Washington state intelligence path missing');
+  if (input.publishedStateIntelligencePaths.includes('/arizona')) throw new Error('Arizona state intelligence path must not be published');
+  if (input.waActiveDirectoryResults <= 0) throw new Error('Washington active directory result count missing');
   if (input.localMoverStateLandings === input.publishableProfiles) {
     throw new Error('local-mover landings must not be used as mover counts');
   }
@@ -106,7 +118,7 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
   assertGrainSafety(input);
   const generatedAt = input.generatedAt;
   const unknownEntity = input.publishableProfiles - input.carriers - input.brokers - input.dual;
-  const documentedDates = [input.flSourceAsOf, input.njSourceAsOf, input.caSourceAsOf, input.latestObservedRefresh]
+  const documentedDates = [input.flSourceAsOf, input.njSourceAsOf, input.caSourceAsOf, input.txSourceAsOf, input.waSourceAsOf, input.latestObservedRefresh]
     .filter(Boolean)
     .map((d) => d.slice(0, 10))
     .sort();
@@ -436,20 +448,56 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'tx_txdmv_household_goods_mover_universe',
+      label: 'Texas TxDMV household-goods certificate universe',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'txdmv_household_goods_certificate_roster',
+      denominator: 'Complete current TxDMV household-goods certificate roster — OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED',
+      description: 'The complete current Texas certificate denominator is unknown, not zero. TxDMV authority is separate from FMCSA authority.',
+      coverage: 'Texas', contributingSourceSystems: ['txdmv'], sourceAsOf: input.txSourceAsOf.slice(0, 10), generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      trace: commonTrace('No statewide numeric denominator is published.', 'Not Texas-HQ federal profiles, not USDOT identities, and not a count of complaints or sanctions.', ['txdmv'], 'Texas intrastate household-goods authority', `Accepted Texas snapshot as of ${input.txSourceAsOf.slice(0, 10)}`, { whyUnknown: 'The official roster is open-search only and was not bulk acquired.' }),
+    }),
+    metric({
+      key: 'wa_utc_active_household_goods_directory_results',
+      label: 'Washington UTC active household-goods directory results',
+      value: input.waActiveDirectoryResults,
+      valueState: 'PARTIAL',
+      grain: 'utc_active_household_goods_directory_result',
+      denominator: 'Official UTC HTML directory filtered to Household Goods Carriers and Active',
+      description: 'The displayed active-result count in the UTC directory. Not a bulk roster, historical universe, or federal mover count.',
+      coverage: 'Washington', contributingSourceSystems: ['washington_utc_directory'], sourceAsOf: input.waSourceAsOf.slice(0, 10), generatedAt,
+      publicationStatus: 'PUBLIC_PARTIAL',
+      trace: commonTrace('Active results shown in the official UTC directory header.', 'Not all historically permitted movers, all Washington businesses, or FMCSA-authorized interstate movers.', ['washington_utc_directory'], 'Washington intrastate household-goods directory', `Directory retrieved ${input.waDirectoryRetrievedAt}`, { currentActiveRule: 'UTC directory filter: Household Goods Carriers; Regulatory status = Active.' }),
+    }),
+    metric({
+      key: 'wa_utc_household_goods_bulk_roster',
+      label: 'Washington UTC household-goods bulk roster',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'utc_household_goods_bulk_roster',
+      denominator: 'Complete downloadable UTC household-goods roster',
+      description: 'No supported bulk roster was acquired. The open HTML directory remains a verification surface.',
+      coverage: 'Washington', contributingSourceSystems: ['washington_utc'], sourceAsOf: input.waSourceAsOf.slice(0, 10), generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      trace: commonTrace('No numeric bulk-roster denominator is published.', 'The 284 active directory results are not relabeled as an acquired bulk roster.', ['washington_utc'], 'Washington', `Accepted Washington snapshot as of ${input.waSourceAsOf.slice(0, 10)}`, { whyUnknown: 'OPEN_HTML_TABLE / OPEN_SEARCH_ONLY; no pagination crawl.' }),
+    }),
+    metric({
       key: 'published_state_intelligence_pages',
       label: 'Published state moving-intelligence pages',
       value: input.publishedStateIntelligencePaths.length,
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, and California state intelligence pages. Not a count of movers.',
+      description: 'Florida, New Jersey, California, Texas, and Washington specialist intelligence pages. Not a count of movers.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['move-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, and /california intelligence routes.',
+        `Published ${input.publishedStateIntelligencePaths.join(', ')} intelligence routes.`,
         'Not local-mover landings and not federal directory rows.',
         ['move-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -457,6 +505,16 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
   ];
+
+  metrics.splice(metrics.length - 1, 0,
+    metric({ key: 'federal_directory_authority_not_current', label: 'Directory profiles with authority not current', value: input.authorityNotCurrent, valueState: 'KNOWN', grain: 'directory_profile_authority_not_current', denominator: 'PUBLISHABLE profiles with authority_active=false', description: 'A source-native directory status subset. Not a quality judgment or state-authority result.', coverage: 'National research directory', contributingSourceSystems: ['companies', 'fmcsa'], sourceAsOf: input.latestObservedRefresh.slice(0, 10), generatedAt, publicationStatus: 'PUBLIC', trace: commonTrace('Publishable profiles with authority_active=false.', 'Not state authority, a safety rating, or every FMCSA registration.', ['companies', 'fmcsa'], 'National directory', `Latest observed refresh ${input.latestObservedRefresh.slice(0, 10)}`) }),
+    metric({ key: 'federal_directory_authority_unknown', label: 'Directory profiles with authority unknown', value: input.authorityUnknown, valueState: 'KNOWN', grain: 'directory_profile_authority_unknown', denominator: 'PUBLISHABLE profiles with authority_active=null', description: 'Profiles without a stored current/not-current authority result. Unknown does not mean unauthorized.', coverage: 'National research directory', contributingSourceSystems: ['companies', 'fmcsa'], sourceAsOf: input.latestObservedRefresh.slice(0, 10), generatedAt, publicationStatus: 'PUBLIC', trace: commonTrace('Publishable profiles with a null authority flag.', 'Not inactive authority and not zero evidence.', ['companies', 'fmcsa'], 'National directory', `Latest observed refresh ${input.latestObservedRefresh.slice(0, 10)}`) }),
+    ...([['carrier', input.carriers, 'directory_profile_carrier'], ['broker', input.brokers, 'directory_profile_broker'], ['carrier/broker', input.dual, 'directory_profile_carrier_broker'], ['unknown role', unknownEntity, 'directory_profile_unknown_role']] as const).map(([role, value, grain]) => metric({ key: `federal_directory_${role.replace('/', '_').replace(' ', '_')}_profiles`, label: `${role[0].toUpperCase()}${role.slice(1)} profiles`, value, valueState: 'KNOWN', grain, denominator: `PUBLISHABLE directory profiles classified as ${role}`, description: `Source-native ${role} role within the publication cohort. Roles partition profiles; they are not extra entities.`, coverage: 'National research directory', contributingSourceSystems: ['companies', 'fmcsa'], sourceAsOf: input.latestObservedRefresh.slice(0, 10), generatedAt, publicationStatus: 'PUBLIC', trace: commonTrace(`Profiles classified as ${role}.`, 'Not a ranking, endorsement, or complete FMCSA census.', ['companies', 'fmcsa'], 'National directory', `Latest observed refresh ${input.latestObservedRefresh.slice(0, 10)}`) })),
+    metric({ key: 'florida_fdacs_verified_identity_links', label: 'Florida verified state-to-profile identity links', value: input.flImVerifiedLinks, valueState: 'KNOWN', grain: 'fdacs_im_verified_link', denominator: 'Florida IM authority rows with verification_state=VERIFIED', description: 'Deterministic accepted identity links between state registration evidence and research profiles. A link is not an endorsement.', coverage: 'Florida', contributingSourceSystems: ['fdacs', 'provider_state_authority'], sourceAsOf: input.flSourceAsOf.slice(0, 10), generatedAt, publicationStatus: 'PUBLIC', trace: commonTrace('Verified Florida state-authority identity links.', 'Not unique movers, recommendations, or contact rows.', ['fdacs', 'provider_state_authority'], 'Florida', `Retrieved ${input.flSourceAsOf.slice(0, 10)}`) }),
+    metric({ key: 'florida_public_contact_observations', label: 'Florida public business-contact observations', value: input.flContactObservations, valueState: 'KNOWN', grain: 'public_contact_observation', denominator: 'Publication-safe provider_contact_observation rows for Florida', description: 'Public business-contact observations. Multiple observations can belong to one entity; an address is not service territory.', coverage: 'Florida', contributingSourceSystems: ['provider_contact_observation'], sourceAsOf: input.flSourceAsOf.slice(0, 10), generatedAt, publicationStatus: 'PUBLIC', trace: commonTrace('Publication-safe contact observations.', 'Not unique movers, private contacts, or verified service areas.', ['provider_contact_observation'], 'Florida', `Retrieved ${input.flSourceAsOf.slice(0, 10)}`) }),
+    metric({ key: 'nj_hq_publishable_profiles', label: 'Publishable federal profiles with New Jersey headquarters', value: input.njHqPublishable, valueState: 'KNOWN', grain: 'nj_hq_publishable_profile', denominator: 'PUBLISHABLE federal profiles with NJ headquarters', description: 'Federal research profiles with New Jersey HQ. Not the request-only state authority roster.', coverage: 'New Jersey headquarters', contributingSourceSystems: ['companies', 'fmcsa'], sourceAsOf: input.latestObservedRefresh.slice(0, 10), generatedAt, publicationStatus: 'PUBLIC', trace: commonTrace('Federal profiles with NJ headquarters.', 'Not state-licensed movers or service territory.', ['companies', 'fmcsa'], 'New Jersey HQ', `Latest observed refresh ${input.latestObservedRefresh.slice(0, 10)}`) }),
+    metric({ key: 'ca_hq_publishable_profiles', label: 'Publishable federal profiles with California headquarters', value: input.caHqPublishable, valueState: 'KNOWN', grain: 'ca_hq_publishable_profile', denominator: 'PUBLISHABLE federal profiles with CA headquarters', description: 'Federal research profiles with California HQ. Not the unknown CAL-T permit universe.', coverage: 'California headquarters', contributingSourceSystems: ['companies', 'fmcsa'], sourceAsOf: input.latestObservedRefresh.slice(0, 10), generatedAt, publicationStatus: 'PUBLIC', trace: commonTrace('Federal profiles with CA headquarters.', 'Not CAL-T permits or service territory.', ['companies', 'fmcsa'], 'California HQ', `Latest observed refresh ${input.latestObservedRefresh.slice(0, 10)}`) })
+  );
 
   const canonical = {
     publishable: input.publishableProfiles,
@@ -480,6 +538,9 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
     caUnlicensed: input.caUnlicensedCitationRows,
     caExact: input.caExactCalTCitationRows,
     caHq: input.caHqPublishable,
+    txRoster: input.txRosterCoverage,
+    waActiveDirectoryResults: input.waActiveDirectoryResults,
+    waBulkRoster: input.waBulkRosterCoverage,
     statePages: input.publishedStateIntelligencePaths,
     flCounties: input.floridaResearchCountyLandings,
     landings: input.localMoverStateLandings,
@@ -528,6 +589,18 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       exactCalTCitationRows: input.caExactCalTCitationRows,
       hqPublishable: input.caHqPublishable,
       tariffEffective: input.caTariffEffective,
+    },
+    texas: {
+      rosterCoverage: input.txRosterCoverage,
+      currentCertificateUniverse: null,
+      complaintBulkCoverage: input.txComplaintBulkCoverage,
+      statewideExactCrosswalkCoverage: input.txCrosswalkCoverage,
+    },
+    washington: {
+      activeDirectoryResults: input.waActiveDirectoryResults,
+      activeDirectoryRetrievedAt: input.waDirectoryRetrievedAt,
+      bulkRosterCoverage: input.waBulkRosterCoverage,
+      historicalMoverUniverse: null,
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

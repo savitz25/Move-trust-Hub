@@ -198,7 +198,7 @@ test('site coverage is a landing fact, not service territory', () => {
 });
 
 test('H1 constant is the intelligence identity', () => {
-  assert.equal(MOVE_HOME_H1, 'Understand the moving market before you book.');
+  assert.equal(MOVE_HOME_H1, 'Research the mover. Verify the authority. Understand the evidence.');
 });
 
 test('evidence depth has required families and no invented percentages', () => {
