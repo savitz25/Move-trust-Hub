@@ -40,3 +40,9 @@ test('Move regulatory boundaries and shared UI are explicit', () => {
   assert.match(home, /SpecialistSearchShell/);
   assert.doesNotMatch(shell + result, /best mover|recommended mover|quality rank/i);
 });
+
+test('carrier vs broker remains an educational definition, not a directory ranking', () => {
+  const parsed = interpretMoveAskQuery('carrier vs broker');
+  assert.equal(parsed.query.mode, 'definition');
+  assert.equal(parsed.query.definitionId, 'carrier_vs_broker');
+});
