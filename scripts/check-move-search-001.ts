@@ -27,7 +27,7 @@ for (const file of intelFiles) {
 }
 
 assert.equal(MOVE_HOME_INTEL_VERSION, 'move-home-intel-v1');
-assert.equal(MOVE_HOME_H1, 'Understand the moving market before you book.');
+assert.equal(MOVE_HOME_H1, 'Research the mover. Verify the authority. Understand the evidence.');
 
 const hero = read('components/home/home-intel-hero.tsx');
 assert.match(hero, /HomeMoverSearch/);
