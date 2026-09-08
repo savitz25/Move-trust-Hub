@@ -126,7 +126,8 @@ const better = q('Which state has better movers?');
 assert(better.query.mode === 'fail_closed', 'better movers fail closed');
 
 const name = q('Who is SHIFL INC');
-assert(name.query.mode === 'fail_closed', 'name is not identity');
+assert(name.query.mode === 'entity' && name.query.nameQuery === 'SHIFL INC', 'bounded name candidate search');
+assert(JSON.stringify(name.interpretation).includes('candidate match'), 'name is not canonical identity');
 
 const overlap = q('Show companies with both FMCSA interstate authority and Florida Intrastate Mover registration.');
 assert(overlap.query.overlapFmcsaFdacs === true, 'overlap VERIFIED only');

@@ -72,6 +72,7 @@ export type MoveResearchQuery = {
   failReason?: string;
   alternatives?: string[];
   aggregateMetric?: 'entity_count' | 'florida_im_active' | 'role_split';
+  coverageState?: 'KNOWN' | 'UNKNOWN' | 'PARTIAL' | 'NOT_ACQUIRED' | 'REQUEST_ONLY' | 'UNSUPPORTED';
 };
 
 export type InterpretationLine = { label: string; value: string };

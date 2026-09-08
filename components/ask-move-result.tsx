@@ -8,6 +8,13 @@ function href(q: string, page?: number) {
   return `/ask?${params.toString()}`;
 }
 
+function removeCriterion(query: string, label: string): string {
+  if (/state|geography/i.test(label)) return query.replace(/\b(headquartered|based) in (florida|new jersey|california|texas|FL|NJ|CA|TX)\b/gi, '').trim();
+  if (/status|authority/i.test(label)) return query.replace(/\b(current|active|inactive|not current)\b/gi, '').trim();
+  if (/role|entity/i.test(label)) return query.replace(/\b(household[- ]goods )?(carriers?|brokers?|movers?)\b/gi, '').trim();
+  return '';
+}
+
 export function AskMoveResultView({ result }: { result: MoveAskResult }) {
   const q = result.parsed.query;
   const def = q.definitionId ? ASK_DEFINITIONS[q.definitionId] : undefined;
@@ -15,14 +22,15 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
   return (
     <div className="space-y-8">
       <section className="rounded-2xl border border-[#E2E8F0] bg-white p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#FF5A1F]">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C2410C]">
           We interpreted your question as
         </p>
         <dl className="mt-4 grid gap-3 sm:grid-cols-2">
           {result.parsed.interpretation.map((row) => (
-            <div key={`${row.label}-${row.value}`}>
+            <div key={`${row.label}-${row.value}`} className="rounded-xl border border-[#E2E8F0] p-3">
               <dt className="text-xs uppercase text-[#475569]">{row.label}</dt>
               <dd className="text-base font-semibold text-[#0A2540]">{row.value}</dd>
+              <dd><Link href={href(removeCriterion(result.queryText, row.label))} className="mt-1 inline-flex min-h-8 items-center text-xs font-semibold text-[#C2410C]" aria-label={`Remove ${row.label} criterion`}>Remove criterion</Link></dd>
             </div>
           ))}
         </dl>
@@ -150,10 +158,24 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
               {row.complaintsNote ? <p className="mt-2 text-xs text-[#475569]">{row.complaintsNote}</p> : null}
               {row.publicationNote ? <p className="mt-2 text-xs text-[#475569]">{row.publicationNote}</p> : null}
               {row.href ? (
-                <Link href={row.href} className="mt-4 inline-flex min-h-11 items-center font-semibold text-[#FF5A1F]">
-                  View research report
+                <Link href={row.href} className="mt-4 inline-flex min-h-11 items-center font-semibold text-[#C2410C]">
+                  Research this mover
                 </Link>
               ) : null}
+              <div className="mt-3 border-t border-[#E2E8F0] pt-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#475569]">Evidence available</p>
+                <p className="mt-1 text-sm text-[#1E293B]">FMCSA identity and role evidence{row.floridaIm ? '; verified Florida FDACS registration linkage' : ''}{row.complaintsNote ? '; partial complaint observations' : ''}.</p>
+              </div>
+              <details className="mt-3 rounded-xl bg-[#F8FAFC] p-3">
+                <summary className="flex min-h-11 cursor-pointer items-center font-semibold text-[#0A2540]">Trace this result</summary>
+                <dl className="grid gap-2 pt-2 text-sm sm:grid-cols-2">
+                  <div><dt className="text-xs uppercase text-[#475569]">Why matched</dt><dd>{row.whyMatched}</dd></div>
+                  <div><dt className="text-xs uppercase text-[#475569]">Identifiers</dt><dd>{[row.usdot && `USDOT ${row.usdot}`, row.mc && `MC ${row.mc}`].filter(Boolean).join(' · ') || 'State registration row'}</dd></div>
+                  <div><dt className="text-xs uppercase text-[#475569]">Geography rule</dt><dd>Recorded headquarters is not service territory.</dd></div>
+                  <div><dt className="text-xs uppercase text-[#475569]">Sources</dt><dd>{row.floridaIm ? 'Florida FDACS; FMCSA only when verified-linked' : 'FMCSA published directory extract'}</dd></div>
+                </dl>
+                <p className="mt-2 text-xs text-[#475569]">Source timing: {result.provenance.officialAsOf}. Current authority is not a recommendation; missing evidence is not zero.</p>
+              </details>
             </li>
           ))}
         </ol>

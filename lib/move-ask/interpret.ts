@@ -2,8 +2,12 @@ import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type 
 
 const STATE_NAMES: Record<string, string> = {
   florida: 'FL',
+  'new jersey': 'NJ',
+  california: 'CA',
   texas: 'TX',
   fl: 'FL',
+  nj: 'NJ',
+  ca: 'CA',
   tx: 'TX',
 };
 
@@ -31,7 +35,7 @@ function fail(reason: string, alternatives: string[]): MoveResearchQuery {
 
 function isRanking(q: string): boolean {
   return (
-    /\b(best|safest|most trustworthy|least risky|top[- ]?rated|most trusted|recommended)\b/i.test(q) &&
+    /\b(best|safest|most trustworthy|least risky|top[- ]?rated|highest[- ]?rated|most trusted|recommended)\b/i.test(q) &&
     /\b(mover|carrier|broker|moving compan)/i.test(q)
   );
 }
@@ -46,7 +50,7 @@ function isScam(q: string): boolean {
 }
 
 export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
-  const q = raw.trim().slice(0, 400);
+  const q = raw.trim().slice(0, 180);
   const lines: ParsedMoveAsk['interpretation'] = [];
   const push = (label: string, value: string) => lines.push({ label, value });
   const safePage = Math.max(1, Math.min(200, page));
@@ -60,6 +64,12 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       ]),
       interpretation: [{ label: 'Status', value: 'No question yet' }],
     };
+  }
+
+  if (raw.trim().length > 180 || /<\/?[a-z][^>]*>|\b(select|drop|delete|insert)\b.*\b(from|table|into)\b|\bor\s+1\s*=\s*1/i.test(raw)) {
+    const query = fail('The question is too long or contains unsupported syntax. Enter a short mover research question or labeled identifier.', ['Find USDOT 3244649.']);
+    push('Status', 'Input rejected safely');
+    return { raw: q, query, interpretation: lines };
   }
 
   if (/\bhow many moving companies\b|\btotal movers\b/i.test(q)) {
@@ -105,6 +115,64 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
+  if (/\bverify (the )?(company|mover).*(quote|estimate)\b/i.test(q)) {
+    const query = fail('A quote does not establish regulatory identity. Find the USDOT and MC numbers on the estimate, then research those labeled identifiers.', ['Find USDOT 3244649.', 'What is a USDOT number?']);
+    push('Research path', 'Use the quote to locate a labeled USDOT or MC identifier');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\b(moving|move|mover)\b.*\b(from|between)\b|\bmoving from\b/i.test(q)) {
+    const query = fail('Origin and destination do not establish which mover serves a route. Research a company identifier or the authority relevant to an interstate move; recorded headquarters is not service territory.', ['What is interstate operating authority?', 'I want to verify the company that gave me a quote.']);
+    query.coverageState = 'UNSUPPORTED';
+    push('Capability', 'Service territory — unsupported');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\b(no complaints|without complaints)\b/i.test(q)) {
+    const query = fail('Complaint coverage is partial. MoveTrustHub cannot turn missing complaint observations into “no complaints” or a clean record.', ['Show complaint observations for USDOT 3244649.']);
+    query.coverageState = 'PARTIAL';
+    push('Evidence', 'Complaint observations — partial coverage');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\bcomplaints?\b/i.test(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail('Complaint observations are only shown when safely attributable to a specific labeled mover identity. They are partial evidence and are not findings of wrongdoing.', ['Show complaint observations for USDOT 3244649.']);
+    query.coverageState = 'PARTIAL';
+    push('Evidence', 'Complaint observations — specific identity required');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\bunknown authority\b/i.test(q)) {
+    const query = fail('Missing authority text is unknown, not a source-native authority status and not proof of inactivity. Research a labeled USDOT or MC identifier for the available record.', ['What does USDOT status mean?', 'Find USDOT 3244649.']);
+    query.coverageState = 'PARTIAL';
+    push('Authority', 'Unknown is not inactive');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\b(fdacs mb|mb registration)\b/i.test(q)) {
+    const query = fail('Florida Moving Broker (MB) records are a distinct state-registration grain and are not served by the current IM list executor.', ['Show Florida intrastate movers registered with FDACS.', 'What is a moving broker?']);
+    query.coverageState = 'PARTIAL';
+    push('Coverage', 'Florida FDACS MB — partial');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\bcompare (carriers?|movers?) (and|vs\.?|versus) brokers?\b/i.test(q)) return definition(q, 'carrier_vs_broker');
+  if (/\bcompare (federal|fmcsa).*(florida|fdacs|intrastate)|\bcompare (florida|fdacs|intrastate).*(federal|fmcsa)/i.test(q)) {
+    const query = fail('Federal profiles and Florida intrastate registrations have different grains. They can be shown side-by-side or linked through a VERIFIED company_id, but they cannot be summed or treated as one authority universe.', ['Show companies with both FMCSA interstate authority and Florida Intrastate Mover registration.']);
+    query.coverageState = 'PARTIAL';
+    push('Comparison', 'Different source grains — no combined population');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\b(allowed|authorized|legal|licensed)\b.*\b(cross state|interstate)|\bknow if .* authorized\b/i.test(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail('Interstate authority must be checked against a specific labeled USDOT or MC identity. A company name or route alone cannot establish authority.', ['What is interstate operating authority?', 'Find USDOT 3244649.']);
+    query.coverageState = 'PARTIAL';
+    push('Authority', 'Specific regulatory identity required');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\bhow (do|can) i check.*(dot|usdot) number\b/i.test(q)) return definition(q, 'usdot');
+
   if (
     /\bwho will actually (move|haul|transport)\b/i.test(q) ||
     /\bwho (hauls|transports) my (belongings|stuff|shipment)\b/i.test(q) ||
@@ -139,6 +207,12 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     push('Mode', 'fail_closed');
     push('Identifier', 'Unlabeled digits');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\b(usdot|dot|mc)\b/i.test(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q) && !/\bwhat (is|does)\b/i.test(q)) {
+    const query = fail('The identifier is malformed. Use a labeled USDOT or MC number containing 3–8 digits.', ['Find USDOT 3244649.', 'Find MC 1019808.']);
+    push('Identifier', 'Malformed or incomplete');
     return { raw: q, query, interpretation: lines };
   }
 
@@ -194,7 +268,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
 
   const state = detectState(q);
   const role = detectRole(q);
-  const floridaIm = /\b(fdacs|intrastate mover|im registration)\b/i.test(q);
+  const floridaIm = /\b(fdacs|intrastate movers?|im registrations?)\b/i.test(q);
   const overlap = /\bboth\b/i.test(q) && /\b(fmcsa|interstate)\b/i.test(q) && /\b(fdacs|intrastate)\b/i.test(q);
   const serving = /\bserv(e|es|ing)\b/i.test(q);
   const hq = /\bheadquarter|recorded (company )?address|based in\b/i.test(q) || /\bcredentialed\b/i.test(q) === false;
@@ -203,6 +277,20 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     : serving
       ? 'service_territory_unsupported'
       : 'recorded_headquarters_state';
+
+  if (state === 'NJ' && /\b(licensed|movers?|pm|pw|pc)\b/i.test(q)) {
+    const query = fail("New Jersey's statewide PM/PW/PC mover roster is available through a request/search process rather than a complete acquired bulk universe. Acquired NOV observations are evidence rows, not the mover population.", ['What is interstate operating authority?', 'Find USDOT 3244649.']);
+    query.coverageState = 'REQUEST_ONLY';
+    push('Coverage', 'New Jersey statewide roster — REQUEST_ONLY');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (state === 'CA' && /\b(cal-?t|licensed|movers?)\b/i.test(q)) {
+    const query = fail("California's complete CAL-T mover roster is not currently acquired as a bulk dataset. Citation observations are not a mover population count.", ['What is interstate operating authority?', 'Find USDOT 3244649.']);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'California CAL-T roster — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
 
   if (geoMeaning === 'service_territory_unsupported' && state) {
     const query = fail(
@@ -295,7 +383,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  if (/\b(carrier or a broker|mover or broker|broker or (a )?carrier)\b/i.test(q) && !/\b(usdot|dot|mc)\s*#?\s*\d/i.test(q)) {
+  if (/\b(carrier or (just )?(a )?broker|mover or broker|broker or (just )?(a )?carrier)\b/i.test(q) && !/\b(usdot|dot|mc)\s*#?\s*\d/i.test(q)) {
     const query = fail(
       'Role answers require a labeled USDOT or MC. Ask will not guess carrier vs broker from a trade name.',
       ['Find USDOT 3244649.', 'What is the difference between a carrier and a broker?'],
@@ -305,11 +393,19 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
   }
 
   if (/\bwho is\b|\bnamed\b/i.test(q) || (/^\s*find\b/i.test(q) && !/\b(usdot|dot|mc|carrier|broker|mover)/i.test(q))) {
-    const query = fail(
-      'Name is not canonical identity. Prefer a labeled USDOT or MC number. Name appearance is not a merge key.',
-      ['Find USDOT 3244649.', 'Find MC 1019808.'],
-    );
-    push('Mode', 'fail_closed');
+    const nameQuery = q.replace(/^\s*(find|who is|company named)\s+/i, '').trim();
+    const query: MoveResearchQuery = { mode: 'entity', nameQuery, includeDualRole: true, page: safePage };
+    push('Mode', 'company identity');
+    push('Company name', nameQuery);
+    push('Identity rule', 'Name similarity is a candidate match; USDOT/MC establishes exact regulatory identity.');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/^[a-z0-9][a-z0-9 '&.,-]{2,100}$/i.test(q) && !role && !state && !/\b(current|active|inactive|authority|complaint|mover|moving|company)\b/i.test(q)) {
+    const query: MoveResearchQuery = { mode: 'entity', nameQuery: q, includeDualRole: true, page: safePage };
+    push('Mode', 'company identity');
+    push('Company name', q);
+    push('Identity rule', 'Name similarity is a candidate match; USDOT/MC establishes exact regulatory identity.');
     return { raw: q, query, interpretation: lines };
   }
 
