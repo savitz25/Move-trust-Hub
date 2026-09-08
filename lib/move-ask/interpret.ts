@@ -156,7 +156,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  if (/\bcompare (carriers?|movers?) (and|vs\.?|versus) brokers?\b/i.test(q)) return definition(q, 'carrier_vs_broker');
+  if (/\b(?:compare )?(carriers?|movers?) (?:and|vs\.?|versus) brokers?\b/i.test(q)) return definition(q, 'carrier_vs_broker');
   if (/\bcompare (federal|fmcsa).*(florida|fdacs|intrastate)|\bcompare (florida|fdacs|intrastate).*(federal|fmcsa)/i.test(q)) {
     const query = fail('Federal profiles and Florida intrastate registrations have different grains. They can be shown side-by-side or linked through a VERIFIED company_id, but they cannot be summed or treated as one authority universe.', ['Show companies with both FMCSA interstate authority and Florida Intrastate Mover registration.']);
     query.coverageState = 'PARTIAL';
