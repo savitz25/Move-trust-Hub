@@ -1,87 +1,36 @@
-import Link from 'next/link';
 import { AskMoveResultView } from '@/components/ask-move-result';
+import { SearchAnalytics } from '@/components/specialist-search/SearchAnalytics';
+import { SpecialistSearchShell } from '@/components/specialist-search/SpecialistSearchShell';
 import { executeMoveAsk } from '@/lib/move-ask/execute';
+import { searchResultCountBucket } from '@/lib/specialist-search/analytics';
 
 export const dynamic = 'force-dynamic';
 
-const EXAMPLES = [
-  'Show current interstate household-goods carriers headquartered in Florida.',
-  'Show household-goods brokers headquartered in Florida.',
-  'Find USDOT 3244649.',
-  'What is the difference between a carrier and a broker?',
-  'Show Florida intrastate movers registered with FDACS.',
-];
-
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams: Promise<{ q?: string }>;
-}) {
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
   const { q } = await searchParams;
-  const title = q?.trim() ? `Ask: ${q.trim().slice(0, 80)}` : 'Ask MoveTrustHub';
-  return {
-    title,
-    description:
-      'Structured moving-company regulatory research. Carriers, brokers, and Florida IM registrations stay separate. Not a ranking or quote engine.',
-    robots: { index: false, follow: true },
-  };
+  return { title: q?.trim() ? `Research: ${q.trim().slice(0, 80)}` : 'Research movers', description: 'Source-backed moving-company research across FMCSA and supported state records.', robots: { index: false, follow: true } };
 }
 
-export default async function AskPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ q?: string; page?: string }>;
-}) {
+export default async function AskPage({ searchParams }: { searchParams: Promise<{ q?: string; page?: string; role?: string; state?: string; authority?: string }> }) {
   const params = await searchParams;
-  const q = (params.q ?? '').trim();
-  const page = Number(params.page ?? '1') || 1;
+  const baseQuery = (params.q ?? '').trim().slice(0, 180);
+  const role = ['carrier', 'broker', 'carrier_broker'].includes(params.role ?? '') ? params.role : '';
+  const state = ['FL', 'NJ', 'CA'].includes(params.state ?? '') ? params.state : '';
+  const authority = ['current', 'not_current'].includes(params.authority ?? '') ? params.authority : '';
+  const additions = [role ? (role === 'carrier_broker' ? 'carriers and brokers' : `${role}s`) : '', state ? `headquartered in ${state}` : '', authority === 'current' ? 'with current authority' : authority === 'not_current' ? 'with not current authority' : ''].filter(Boolean);
+  const q = [baseQuery, ...additions].filter(Boolean).join(' ').slice(0, 180);
+  const page = Math.max(1, Math.min(200, Number(params.page ?? '1') || 1));
   const result = q ? await executeMoveAsk(q, page) : null;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:py-14">
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#FF5A1F]">Ask MoveTrustHub</p>
-      <h1 className="mt-3 text-3xl font-semibold text-[#0A2540] sm:text-4xl">
-        Structured mover research, not a recommendation engine.
-      </h1>
-      <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">
-        Ask interprets the question. Current FMCSA and FDACS extracts answer it. A carrier is not a broker.
-        Florida IM registration is not interstate authority. Headquarters is not service territory.
-      </p>
-      <form action="/ask" method="get" className="mt-8" role="search" aria-label="Ask MoveTrustHub">
-        <label htmlFor="ask-q" className="sr-only">
-          Research question
-        </label>
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <input
-            id="ask-q"
-            name="q"
-            defaultValue={q}
-            placeholder="Show current interstate household-goods carriers headquartered in Florida."
-            className="min-h-12 flex-1 rounded-xl border border-[#E2E8F0] px-4 text-[#0A2540]"
-          />
-          <button type="submit" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#0A2540] px-5 font-semibold text-white">
-            Ask
-          </button>
-        </div>
-      </form>
-      {result ? (
-        <div className="mt-10">
-          <AskMoveResultView result={result} />
-        </div>
-      ) : (
-        <ul className="mt-8 flex flex-wrap gap-2">
-          {EXAMPLES.map((ex) => (
-            <li key={ex}>
-              <Link
-                href={`/ask?q=${encodeURIComponent(ex)}`}
-                className="inline-flex min-h-11 items-center rounded-full border border-[#E2E8F0] px-3 text-sm text-[#0A2540]"
-              >
-                {ex}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:py-14">
+      <h1 className="text-3xl font-semibold text-[#0A2540] sm:text-4xl">MoveTrustHub specialist research</h1>
+      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#1E293B]">Ask interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.</p>
+      <div className="mt-7"><SpecialistSearchShell query={baseQuery} /></div>
+      {result ? <div className="mt-10">
+        <SearchAnalytics dimensions={{ hub: 'move', intent: result.parsed.query.mode, role: result.parsed.query.role, state: result.parsed.query.jurisdiction?.state, hasIdentifier: Boolean(result.parsed.query.identifier), identifierType: result.parsed.query.identifier?.type, authorityFilter: String(result.parsed.query.authorityCurrent ?? ''), hasStateRegistrationFilter: Boolean(result.parsed.query.floridaIm), hasEvidenceFilter: Boolean(result.parsed.query.evidenceFamily), coverageState: result.coverageState, resultCountBucket: searchResultCountBucket(result.pagination.total) }} hasResults={result.results.length > 0 || result.counts.length > 0} />
+        <AskMoveResultView result={result} />
+      </div> : null}
     </div>
   );
 }

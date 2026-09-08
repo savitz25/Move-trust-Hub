@@ -60,6 +60,7 @@ export type MoveAskResult = {
   };
   limitations: string[];
   elapsedMs: number;
+  coverageState: 'KNOWN' | 'UNKNOWN' | 'PARTIAL' | 'NOT_ACQUIRED' | 'REQUEST_ONLY' | 'UNSUPPORTED';
 };
 
 const LIMITATIONS = [
@@ -203,7 +204,27 @@ export async function executeMoveAsk(raw: string, page = 1): Promise<MoveAskResu
   if (q.mode === 'count' || q.mode === 'aggregate' || q.mode === 'comparison') return counts(parsed, started);
   if (q.floridaIm) return listFloridaIm(parsed, started);
   if (q.overlapFmcsaFdacs) return listOverlap(parsed, started);
+  if (q.nameQuery) return lookupName(parsed, started);
   return listCompanies(parsed, started);
+}
+
+async function lookupName(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
+  const name = parsed.query.nameQuery!.replace(/[%_,]/g, ' ').trim().slice(0, 100);
+  const { data, count } = await db()
+    .from('companies')
+    .select(COMPANY_COLS, { count: 'exact' })
+    .or(VISIBLE_OR)
+    .ilike('name', `%${name}%`)
+    .order('name', { ascending: true })
+    .limit(MOVE_ASK_PAGE_SIZE);
+  const rows = (data ?? []) as CompanyRow[];
+  return finish(
+    parsed,
+    rows.map((row) => cardFromCompany(row, `The published company name contains “${name}”. Name similarity is a candidate match, not proof that two records are the same entity.`)),
+    count ?? rows.length,
+    started,
+    'bounded published company-name match',
+  );
 }
 
 async function lookupIdentifier(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
@@ -511,6 +532,7 @@ function emptyBase(parsed: ParsedMoveAsk, started: number): MoveAskResult {
     },
     limitations: LIMITATIONS,
     elapsedMs: Date.now() - started,
+    coverageState: parsed.query.coverageState ?? (parsed.query.mode === 'fail_closed' ? 'UNSUPPORTED' : 'KNOWN'),
   };
 }
 
@@ -549,6 +571,7 @@ function finish(
     },
     limitations: LIMITATIONS,
     elapsedMs: Date.now() - started,
+    coverageState: parsed.query.coverageState ?? (parsed.query.evidenceFamily === 'complaint' ? 'PARTIAL' : 'KNOWN'),
   };
 }
 

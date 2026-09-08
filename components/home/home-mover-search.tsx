@@ -1,6 +1,4 @@
-'use client';
-
-import { MoverOmnibox } from '@/components/search/mover-omnibox';
+import { SpecialistSearchShell } from '@/components/specialist-search/SpecialistSearchShell';
 
 /** Homepage research omnibox. Identity search only — no Places, no ranking. */
 export function HomeMoverSearch({
@@ -10,5 +8,6 @@ export function HomeMoverSearch({
   compact?: boolean;
   profileCount?: number | null;
 }) {
-  return <MoverOmnibox compact={compact} profileCount={profileCount} />;
+  void profileCount;
+  return <SpecialistSearchShell compact={compact} />;
 }
