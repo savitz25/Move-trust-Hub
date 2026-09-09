@@ -1,4 +1,5 @@
 import caSnapshot from '@/lib/california-intelligence/accepted-snapshot.json';
+import coSnapshot from '@/lib/colorado-intelligence/accepted-snapshot.json';
 import txSnapshot from '@/lib/texas-intelligence/accepted-snapshot.json';
 import waSnapshot from '@/lib/washington-intelligence/accepted-snapshot.json';
 import njSnapshot from '@/data/reports/nj-move-002-public-snapshot.json';
@@ -53,6 +54,9 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
   tx_txdmv_household_goods_mover_universe: { family: 'STATE_AUTHORITY', entityClass: 'TxDMV certificate roster', destination: '/texas', acceptedArtifact: 'move-tx-state-intel-v1' },
   wa_utc_active_household_goods_directory_results: { family: 'STATE_AUTHORITY', entityClass: 'Active UTC HTML directory result', destination: '/washington', acceptedArtifact: 'move-wa-state-intel-v1' },
   wa_utc_household_goods_bulk_roster: { family: 'STATE_AUTHORITY', entityClass: 'UTC downloadable roster', destination: '/washington', acceptedArtifact: 'move-wa-state-intel-v1' },
+  co_puc_active_household_goods_permit_listings: { family: 'STATE_AUTHORITY', entityClass: 'Active Colorado PUC HHG permit listing', destination: '/colorado', acceptedArtifact: 'move-co-state-intel-v1' },
+  co_puc_revoked_household_goods_permit_listings: { family: 'REGULATORY', entityClass: 'Revoked Colorado PUC HHG listing', destination: '/colorado', acceptedArtifact: 'move-co-state-intel-v1' },
+  co_puc_suspended_household_goods_permit_listings: { family: 'REGULATORY', entityClass: 'Suspended Colorado PUC HHG listing', destination: '/colorado', acceptedArtifact: 'move-co-state-intel-v1' },
   published_state_intelligence_pages: { family: 'PUBLIC_SURFACES', entityClass: 'Published specialist state page', destination: '#state-intelligence', acceptedArtifact: 'canonical state publication model' },
 };
 
@@ -71,9 +75,11 @@ export const MOVE_HOMEPAGE_STATE_CARDS = [
   { state: 'California', href: '/california', regulator: 'BHGS', authority: 'CAL-T household-mover permit', roster: caSnapshot.authority.roster_coverage.replaceAll('_', ' '), evidence: `${caSnapshot.enforcement.rows} BPC 19237 citation rows; exact CAL-T identity retained where printed`, sourceClock: `Accepted snapshot as of ${caSnapshot.as_of}` },
   { state: 'Texas', href: txSnapshot.publication.route, regulator: 'TxDMV', authority: 'Household-goods certificate of registration', roster: txSnapshot.authority.roster_coverage.replaceAll('_', ' '), evidence: 'Authority verification, complaint and insurance-filing paths, contracts, claims, mediation, and tariff rules', sourceClock: `Accepted snapshot as of ${txSnapshot.as_of}` },
   { state: 'Washington', href: waSnapshot.publication.route, regulator: 'Washington UTC', authority: 'Household-goods permit', roster: waSnapshot.bulk.utc_hhg_bulk_roster.replaceAll('_', ' '), evidence: `${waSnapshot.directory.active_result_count} active directory results plus permit, tariff, complaint, and federal-verification paths`, sourceClock: `Directory retrieved ${waSnapshot.directory.retrieved_at.slice(0, 10)}; accepted snapshot as of ${waSnapshot.as_of}` },
+  { state: 'Colorado', href: coSnapshot.publication.route, regulator: 'Colorado PUC', authority: 'Household-goods permit', roster: `${coSnapshot.active_universe.official_total_permits} Active OPR listings`, evidence: 'Official Active HHG permit listings plus revoked/suspended status evidence, kept separate from FMCSA', sourceClock: `OPR list ${coSnapshot.source.source_publication_date}; accepted snapshot as of ${coSnapshot.as_of}` },
 ] as const;
 
 export const MOVE_CONSUMER_RULES = {
   Texas: txSnapshot.consumer_rules.rules.slice(0, 4),
   Washington: waSnapshot.consumer_rules.rules.slice(0, 4),
+  Colorado: coSnapshot.consumer_rules.rules.slice(0, 4),
 };

@@ -1,0 +1,260 @@
+{
+  "ticket": "CO-MOVE-001",
+  "dataset": "colorado_puc_opr_hhg_carriers_with_permits",
+  "index_url": "https://spl.cde.state.co.us/artemis/regserials/reg764internet/",
+  "source_url": "https://spl.cde.state.co.us/artemis/regserials/reg764internet/reg764202507internet.pdf",
+  "document_title": "Carriers with permits. Household goods. July 2025 (REG7.64)",
+  "access": "OFFICIAL_PDF",
+  "no_search_form_scrape": true,
+  "no_id_bruteforce": true,
+  "retrieved_at": "2026-09-09T15:42:05+00:00",
+  "source_publication_date": "2025-06-27",
+  "source_clocks": {
+    "ACTIVE": "06/27/2025 15:24",
+    "CANCELLED": "06/27/2025 15:25",
+    "INACTIVE": "06/27/2025 15:27",
+    "INACTIVE-TRANSFERRED": "06/27/2025 15:29",
+    "REVOKED": "06/27/2025 15:31",
+    "SUSPENDED": "06/27/2025 15:32"
+  },
+  "raw_bytes": 263614,
+  "raw_sha256": "f52ac936086cf87921dbeabd0a893ac92bf9088890dc419e119fa37223a2f7b0",
+  "pages": 33,
+  "official_totals": {
+    "ACTIVE": 203,
+    "CANCELLED": 82,
+    "INACTIVE": 295,
+    "INACTIVE-TRANSFERRED": 17,
+    "REVOKED": 207,
+    "SUSPENDED": 5
+  },
+  "extracted_distinct_by_status": {
+    "ACTIVE": 203,
+    "CANCELLED": 82,
+    "INACTIVE": 289,
+    "INACTIVE-TRANSFERRED": 17,
+    "REVOKED": 205,
+    "SUSPENDED": 5
+  },
+  "extracted_row_counts": {
+    "ACTIVE": 203,
+    "CANCELLED": 82,
+    "INACTIVE": 295,
+    "INACTIVE-TRANSFERRED": 17,
+    "REVOKED": 207,
+    "SUSPENDED": 5
+  },
+  "active_extracted_distinct": 203,
+  "grain": "Colorado PUC household-goods carrier permit listing",
+  "identity": "CO-PUC-HHG:{permitNumber}",
+  "usdot_printed_on_list": false,
+  "mc_printed_on_list": false,
+  "crosswalk_default": "REVIEW",
+  "name_only": "UNSAFE",
+  "do_not_sum_historical_into_active": true,
+  "name_overlap": {
+    "name_fields_source_native_on_pdf": true,
+    "normalized_name_dedupe_published_as_identity": false,
+    "reason": "Five-column OPR PDF interleaves names across columns in text extraction. Permit number is the stable identity. Normalized-name overlap is not published as exact identity."
+  },
+  "page_map": [
+    {
+      "page": 1,
+      "status": "ACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 2,
+      "status": "ACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 3,
+      "status": "ACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 4,
+      "status": "ACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 5,
+      "status": "ACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 6,
+      "status": "ACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 7,
+      "status": "ACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 8,
+      "status": "ACTIVE",
+      "hhg_extracted": 7,
+      "total_line": 203
+    },
+    {
+      "page": 9,
+      "status": "CANCELLED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 10,
+      "status": "CANCELLED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 11,
+      "status": "CANCELLED",
+      "hhg_extracted": 24,
+      "total_line": null
+    },
+    {
+      "page": 12,
+      "status": "CANCELLED",
+      "hhg_extracted": 2,
+      "total_line": 82
+    },
+    {
+      "page": 13,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 14,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 15,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 16,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 17,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 18,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 19,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 20,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 21,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 22,
+      "status": "INACTIVE",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 23,
+      "status": "INACTIVE",
+      "hhg_extracted": 15,
+      "total_line": 295
+    },
+    {
+      "page": 24,
+      "status": "INACTIVE-TRANSFERRED",
+      "hhg_extracted": 17,
+      "total_line": 17
+    },
+    {
+      "page": 25,
+      "status": "REVOKED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 26,
+      "status": "REVOKED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 27,
+      "status": "REVOKED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 28,
+      "status": "REVOKED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 29,
+      "status": "REVOKED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 30,
+      "status": "REVOKED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 31,
+      "status": "REVOKED",
+      "hhg_extracted": 28,
+      "total_line": null
+    },
+    {
+      "page": 32,
+      "status": "REVOKED",
+      "hhg_extracted": 11,
+      "total_line": 207
+    },
+    {
+      "page": 33,
+      "status": "SUSPENDED",
+      "hhg_extracted": 5,
+      "total_line": 5
+    }
+  ]
+}

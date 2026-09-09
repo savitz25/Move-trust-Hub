@@ -5,10 +5,14 @@ const STATE_NAMES: Record<string, string> = {
   'new jersey': 'NJ',
   california: 'CA',
   texas: 'TX',
+  washington: 'WA',
+  colorado: 'CO',
   fl: 'FL',
   nj: 'NJ',
   ca: 'CA',
   tx: 'TX',
+  wa: 'WA',
+  co: 'CO',
 };
 
 function detectState(q: string): string | undefined {

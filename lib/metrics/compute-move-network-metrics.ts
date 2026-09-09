@@ -44,6 +44,10 @@ export type MoveNetworkMetricsInput = {
   waDirectoryRetrievedAt: string;
   waBulkRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   waSourceAsOf: string;
+  coActiveHhgPermitListings: number;
+  coRevokedHhgListings: number;
+  coSuspendedHhgListings: number;
+  coSourceAsOf: string;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -104,8 +108,13 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   }
   if (!input.publishedStateIntelligencePaths.includes('/texas')) throw new Error('Texas state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/washington')) throw new Error('Washington state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/colorado')) throw new Error('Colorado state intelligence path missing');
   if (input.publishedStateIntelligencePaths.includes('/arizona')) throw new Error('Arizona state intelligence path must not be published');
   if (input.waActiveDirectoryResults <= 0) throw new Error('Washington active directory result count missing');
+  if (input.coActiveHhgPermitListings <= 0) throw new Error('Colorado active HHG permit listing count missing');
+  if (input.coActiveHhgPermitListings === input.publishableProfiles) {
+    throw new Error('Colorado HHG permits must not equal federal directory profiles');
+  }
   if (input.localMoverStateLandings === input.publishableProfiles) {
     throw new Error('local-mover landings must not be used as mover counts');
   }
@@ -118,7 +127,7 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
   assertGrainSafety(input);
   const generatedAt = input.generatedAt;
   const unknownEntity = input.publishableProfiles - input.carriers - input.brokers - input.dual;
-  const documentedDates = [input.flSourceAsOf, input.njSourceAsOf, input.caSourceAsOf, input.txSourceAsOf, input.waSourceAsOf, input.latestObservedRefresh]
+  const documentedDates = [input.flSourceAsOf, input.njSourceAsOf, input.caSourceAsOf, input.txSourceAsOf, input.waSourceAsOf, input.coSourceAsOf, input.latestObservedRefresh]
     .filter(Boolean)
     .map((d) => d.slice(0, 10))
     .sort();
@@ -484,13 +493,77 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       trace: commonTrace('No numeric bulk-roster denominator is published.', 'The 284 active directory results are not relabeled as an acquired bulk roster.', ['washington_utc'], 'Washington', `Accepted Washington snapshot as of ${input.waSourceAsOf.slice(0, 10)}`, { whyUnknown: 'OPEN_HTML_TABLE / OPEN_SEARCH_ONLY; no pagination crawl.' }),
     }),
     metric({
+      key: 'co_puc_active_household_goods_permit_listings',
+      label: 'Active Colorado PUC household-goods permit listings',
+      value: input.coActiveHhgPermitListings,
+      valueState: 'KNOWN',
+      grain: 'co_puc_hhg_active_permit_listing',
+      denominator: 'Official OPR Total Permits on the ACTIVE household-goods listing',
+      description: 'Active Colorado PUC household-goods permit listings. Not all moving companies in Colorado and not federal directory profiles.',
+      coverage: 'Colorado',
+      contributingSourceSystems: ['co_puc_opr'],
+      sourceAsOf: input.coSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'Official ACTIVE Total Permits on the PUC OPR household-goods PDF.',
+        'Not cancelled, inactive, revoked, or suspended listings. Not FMCSA profiles. Not a national + state mover total.',
+        ['co_puc_opr'],
+        'Colorado intrastate household-goods permits',
+        `Accepted Colorado snapshot as of ${input.coSourceAsOf.slice(0, 10)}`,
+        { currentActiveRule: 'Permit Status: ACTIVE on the official OPR listing.' },
+      ),
+    }),
+    metric({
+      key: 'co_puc_revoked_household_goods_permit_listings',
+      label: 'Colorado PUC revoked household-goods permit listings',
+      value: input.coRevokedHhgListings,
+      valueState: 'KNOWN',
+      grain: 'co_puc_hhg_revoked_status_observation',
+      denominator: 'Official OPR Total Permits on the REVOKED household-goods listing',
+      description: 'Source-native revoked permit-status evidence. Not criminal convictions and not a bad-mover ranking.',
+      coverage: 'Colorado',
+      contributingSourceSystems: ['co_puc_opr'],
+      sourceAsOf: input.coSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'Official REVOKED Total Permits on the PUC OPR household-goods PDF.',
+        'Not the current active universe. Not convictions. Name-only attachment is unsafe.',
+        ['co_puc_opr'],
+        'Colorado',
+        `Accepted Colorado snapshot as of ${input.coSourceAsOf.slice(0, 10)}`,
+      ),
+    }),
+    metric({
+      key: 'co_puc_suspended_household_goods_permit_listings',
+      label: 'Colorado PUC suspended household-goods permit listings',
+      value: input.coSuspendedHhgListings,
+      valueState: 'KNOWN',
+      grain: 'co_puc_hhg_suspended_status_observation',
+      denominator: 'Official OPR Total Permits on the SUSPENDED household-goods listing',
+      description: 'Source-native suspended permit-status evidence. Suspended is not permanently revoked.',
+      coverage: 'Colorado',
+      contributingSourceSystems: ['co_puc_opr'],
+      sourceAsOf: input.coSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'Official SUSPENDED Total Permits on the PUC OPR household-goods PDF.',
+        'Not the current active universe. Not permanently revoked.',
+        ['co_puc_opr'],
+        'Colorado',
+        `Accepted Colorado snapshot as of ${input.coSourceAsOf.slice(0, 10)}`,
+      ),
+    }),
+    metric({
       key: 'published_state_intelligence_pages',
       label: 'Published state moving-intelligence pages',
       value: input.publishedStateIntelligencePaths.length,
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, Texas, and Washington specialist intelligence pages. Not a count of movers.',
+      description: 'Florida, New Jersey, California, Texas, Washington, and Colorado specialist intelligence pages. Not a count of movers.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['move-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
@@ -541,6 +614,9 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
     txRoster: input.txRosterCoverage,
     waActiveDirectoryResults: input.waActiveDirectoryResults,
     waBulkRoster: input.waBulkRosterCoverage,
+    coActiveHhgPermitListings: input.coActiveHhgPermitListings,
+    coRevokedHhgListings: input.coRevokedHhgListings,
+    coSuspendedHhgListings: input.coSuspendedHhgListings,
     statePages: input.publishedStateIntelligencePaths,
     flCounties: input.floridaResearchCountyLandings,
     landings: input.localMoverStateLandings,
@@ -601,6 +677,12 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       activeDirectoryRetrievedAt: input.waDirectoryRetrievedAt,
       bulkRosterCoverage: input.waBulkRosterCoverage,
       historicalMoverUniverse: null,
+    },
+    colorado: {
+      activeHhgPermitListings: input.coActiveHhgPermitListings,
+      revokedHhgListings: input.coRevokedHhgListings,
+      suspendedHhgListings: input.coSuspendedHhgListings,
+      sourceAsOf: input.coSourceAsOf.slice(0, 10),
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

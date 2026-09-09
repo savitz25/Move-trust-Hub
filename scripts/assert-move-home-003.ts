@@ -13,7 +13,7 @@ const page = readFileSync(join(root, 'app/(move)/page.tsx'), 'utf8');
 
 assert.equal(metrics.network.publishedStateIntelligencePages, MOVE_HOMEPAGE_STATE_CARDS.length);
 assert.deepEqual(metrics.network.publishedStateIntelligencePaths, MOVE_HOMEPAGE_STATE_CARDS.map((s) => s.href));
-assert.deepEqual(MOVE_HOMEPAGE_STATE_CARDS.map((s) => s.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington']);
+assert.deepEqual(MOVE_HOMEPAGE_STATE_CARDS.map((s) => s.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado']);
 assert.ok(!MOVE_HOMEPAGE_STATE_CARDS.some((s) => s.href === '/arizona'));
 assert.equal(Object.keys(MOVE_EVIDENCE_FAMILY_LABELS).length, 9);
 assert.equal(inventory.length, metrics.metrics.length);
@@ -23,6 +23,8 @@ assert.throws(() => buildMoveHomepageEvidenceInventory({ ...metrics, metrics: [{
 assert.equal(byKey.tx_txdmv_household_goods_mover_universe.value, null);
 assert.match(byKey.tx_txdmv_household_goods_mover_universe.description, /unknown, not zero/i);
 assert.equal(byKey.wa_utc_active_household_goods_directory_results.value, 284);
+assert.equal(byKey.co_puc_active_household_goods_permit_listings.value, 203);
+assert.notEqual(byKey.co_puc_active_household_goods_permit_listings.value, metrics.federalDirectory.publishableProfiles);
 assert.match(byKey.wa_utc_active_household_goods_directory_results.description, /not a bulk roster/i);
 assert.equal(byKey.nj_pmw_authority_roster.value, null);
 assert.equal(byKey.ca_cal_t_household_mover_universe.value, null);
@@ -33,4 +35,4 @@ assert.match(homepage, /USDOT|MC|authority/i);
 assert.match(homepage, /complaint|regulatory/i);
 assert.doesNotMatch(homepage, /AggregateRating|best mover|safest mover|trusted mover|approved mover|recommended mover/i);
 assert.match(page, /buildHomepageSchemaGraph/);
-console.log(`MOVE-HOME-003 PASS: ${inventory.length} measures, 9 families, 5 specialist states`);
+console.log(`MOVE-HOME-003 PASS: ${inventory.length} measures, 9 families, 6 specialist states`);
