@@ -61,7 +61,11 @@ function baseInput(over: Partial<MoveNetworkMetricsInput> = {}): MoveNetworkMetr
     waDirectoryRetrievedAt: '2026-09-04T16:52:37.571398+00:00',
     waBulkRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     waSourceAsOf: '2026-09-04',
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington'],
+    coActiveHhgPermitListings: 203,
+    coRevokedHhgListings: 207,
+    coSuspendedHhgListings: 5,
+    coSourceAsOf: '2025-06-27',
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado'],
     floridaResearchCountyLandings: 4,
     localMoverStateLandings: 51,
     ...over,
@@ -93,6 +97,19 @@ describe('move-network-metrics-v1 grain safety', () => {
           })
         ),
       /federal\+state mix|authority split/
+    );
+  });
+
+  it('does not add Colorado HHG permits to the federal directory', () => {
+    const m = computeMoveNetworkMetrics(baseInput());
+    assert.equal(metricByKey(m, 'co_puc_active_household_goods_permit_listings').value, 203);
+    assert.notEqual(
+      metricByKey(m, 'co_puc_active_household_goods_permit_listings').value,
+      metricByKey(m, 'federal_publishable_directory_profiles').value
+    );
+    assert.throws(
+      () => computeMoveNetworkMetrics(baseInput({ coActiveHhgPermitListings: 5022 })),
+      /Colorado HHG permits must not equal federal directory profiles/
     );
   });
 

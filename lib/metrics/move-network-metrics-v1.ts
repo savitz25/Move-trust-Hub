@@ -42,6 +42,9 @@ export type MetricGrain =
   | 'txdmv_household_goods_certificate_roster'
   | 'utc_active_household_goods_directory_result'
   | 'utc_household_goods_bulk_roster'
+  | 'co_puc_hhg_active_permit_listing'
+  | 'co_puc_hhg_revoked_status_observation'
+  | 'co_puc_hhg_suspended_status_observation'
   | 'published_state_intelligence_page'
   | 'florida_research_county_landing'
   | 'local_movers_state_landing';
@@ -135,6 +138,12 @@ export type MoveNetworkMetricsV1 = {
     activeDirectoryRetrievedAt: string;
     bulkRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     historicalMoverUniverse: null;
+  };
+  colorado: {
+    activeHhgPermitListings: number;
+    revokedHhgListings: number;
+    suspendedHhgListings: number;
+    sourceAsOf: string;
   };
   network: {
     publishedStateIntelligencePages: number;

@@ -55,6 +55,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'UTC household-goods permits & interstate overlay',
       },
       {
+        label: 'Colorado research',
+        href: '/colorado',
+        description: 'PUC household-goods permits & interstate overlay',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
@@ -154,5 +159,6 @@ export const MOVE_NAV_AUDIT_PATHS = [
   '/florida',
   '/texas',
   '/washington',
+  '/colorado',
   '/resources',
 ] as const;

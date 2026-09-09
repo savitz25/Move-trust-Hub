@@ -1,0 +1,6437 @@
+{
+  "version": "co-move-001-permits-v1",
+  "source_url": "https://spl.cde.state.co.us/artemis/regserials/reg764internet/reg764202507internet.pdf",
+  "source_publication_date": "2025-06-27",
+  "official_totals": {
+    "ACTIVE": 203,
+    "CANCELLED": 82,
+    "INACTIVE": 295,
+    "INACTIVE-TRANSFERRED": 17,
+    "REVOKED": 207,
+    "SUSPENDED": 5
+  },
+  "records": [
+    {
+      "permitNumber": "HHG-00513",
+      "identity": "CO-PUC-HHG:HHG-00513",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00212",
+      "identity": "CO-PUC-HHG:HHG-00212",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00229",
+      "identity": "CO-PUC-HHG:HHG-00229",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00750",
+      "identity": "CO-PUC-HHG:HHG-00750",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00712",
+      "identity": "CO-PUC-HHG:HHG-00712",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00269",
+      "identity": "CO-PUC-HHG:HHG-00269",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00236",
+      "identity": "CO-PUC-HHG:HHG-00236",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00291",
+      "identity": "CO-PUC-HHG:HHG-00291",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00643",
+      "identity": "CO-PUC-HHG:HHG-00643",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00638",
+      "identity": "CO-PUC-HHG:HHG-00638",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00509",
+      "identity": "CO-PUC-HHG:HHG-00509",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00577",
+      "identity": "CO-PUC-HHG:HHG-00577",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00504",
+      "identity": "CO-PUC-HHG:HHG-00504",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00759",
+      "identity": "CO-PUC-HHG:HHG-00759",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00036",
+      "identity": "CO-PUC-HHG:HHG-00036",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00061",
+      "identity": "CO-PUC-HHG:HHG-00061",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00102",
+      "identity": "CO-PUC-HHG:HHG-00102",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00487",
+      "identity": "CO-PUC-HHG:HHG-00487",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00042",
+      "identity": "CO-PUC-HHG:HHG-00042",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00141",
+      "identity": "CO-PUC-HHG:HHG-00141",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00725",
+      "identity": "CO-PUC-HHG:HHG-00725",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00405",
+      "identity": "CO-PUC-HHG:HHG-00405",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00113",
+      "identity": "CO-PUC-HHG:HHG-00113",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00173",
+      "identity": "CO-PUC-HHG:HHG-00173",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00455",
+      "identity": "CO-PUC-HHG:HHG-00455",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00083",
+      "identity": "CO-PUC-HHG:HHG-00083",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00691",
+      "identity": "CO-PUC-HHG:HHG-00691",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00078",
+      "identity": "CO-PUC-HHG:HHG-00078",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00223",
+      "identity": "CO-PUC-HHG:HHG-00223",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00019",
+      "identity": "CO-PUC-HHG:HHG-00019",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00481",
+      "identity": "CO-PUC-HHG:HHG-00481",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00652",
+      "identity": "CO-PUC-HHG:HHG-00652",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00340",
+      "identity": "CO-PUC-HHG:HHG-00340",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00310",
+      "identity": "CO-PUC-HHG:HHG-00310",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00751",
+      "identity": "CO-PUC-HHG:HHG-00751",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00209",
+      "identity": "CO-PUC-HHG:HHG-00209",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00628",
+      "identity": "CO-PUC-HHG:HHG-00628",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00739",
+      "identity": "CO-PUC-HHG:HHG-00739",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00622",
+      "identity": "CO-PUC-HHG:HHG-00622",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00158",
+      "identity": "CO-PUC-HHG:HHG-00158",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00473",
+      "identity": "CO-PUC-HHG:HHG-00473",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00579",
+      "identity": "CO-PUC-HHG:HHG-00579",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00058",
+      "identity": "CO-PUC-HHG:HHG-00058",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00374",
+      "identity": "CO-PUC-HHG:HHG-00374",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00375",
+      "identity": "CO-PUC-HHG:HHG-00375",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00033",
+      "identity": "CO-PUC-HHG:HHG-00033",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00075",
+      "identity": "CO-PUC-HHG:HHG-00075",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00419",
+      "identity": "CO-PUC-HHG:HHG-00419",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00434",
+      "identity": "CO-PUC-HHG:HHG-00434",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00314",
+      "identity": "CO-PUC-HHG:HHG-00314",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00227",
+      "identity": "CO-PUC-HHG:HHG-00227",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00464",
+      "identity": "CO-PUC-HHG:HHG-00464",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00267",
+      "identity": "CO-PUC-HHG:HHG-00267",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00294",
+      "identity": "CO-PUC-HHG:HHG-00294",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00580",
+      "identity": "CO-PUC-HHG:HHG-00580",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00705",
+      "identity": "CO-PUC-HHG:HHG-00705",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00711",
+      "identity": "CO-PUC-HHG:HHG-00711",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00733",
+      "identity": "CO-PUC-HHG:HHG-00733",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00738",
+      "identity": "CO-PUC-HHG:HHG-00738",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00203",
+      "identity": "CO-PUC-HHG:HHG-00203",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00593",
+      "identity": "CO-PUC-HHG:HHG-00593",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00475",
+      "identity": "CO-PUC-HHG:HHG-00475",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00005",
+      "identity": "CO-PUC-HHG:HHG-00005",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00576",
+      "identity": "CO-PUC-HHG:HHG-00576",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00046",
+      "identity": "CO-PUC-HHG:HHG-00046",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00757",
+      "identity": "CO-PUC-HHG:HHG-00757",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00327",
+      "identity": "CO-PUC-HHG:HHG-00327",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00741",
+      "identity": "CO-PUC-HHG:HHG-00741",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00494",
+      "identity": "CO-PUC-HHG:HHG-00494",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00305",
+      "identity": "CO-PUC-HHG:HHG-00305",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00613",
+      "identity": "CO-PUC-HHG:HHG-00613",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00268",
+      "identity": "CO-PUC-HHG:HHG-00268",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00575",
+      "identity": "CO-PUC-HHG:HHG-00575",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00071",
+      "identity": "CO-PUC-HHG:HHG-00071",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00581",
+      "identity": "CO-PUC-HHG:HHG-00581",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00243",
+      "identity": "CO-PUC-HHG:HHG-00243",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00761",
+      "identity": "CO-PUC-HHG:HHG-00761",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00210",
+      "identity": "CO-PUC-HHG:HHG-00210",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00734",
+      "identity": "CO-PUC-HHG:HHG-00734",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00183",
+      "identity": "CO-PUC-HHG:HHG-00183",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00755",
+      "identity": "CO-PUC-HHG:HHG-00755",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00662",
+      "identity": "CO-PUC-HHG:HHG-00662",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00649",
+      "identity": "CO-PUC-HHG:HHG-00649",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00124",
+      "identity": "CO-PUC-HHG:HHG-00124",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00241",
+      "identity": "CO-PUC-HHG:HHG-00241",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00719",
+      "identity": "CO-PUC-HHG:HHG-00719",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00139",
+      "identity": "CO-PUC-HHG:HHG-00139",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00132",
+      "identity": "CO-PUC-HHG:HHG-00132",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00193",
+      "identity": "CO-PUC-HHG:HHG-00193",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00758",
+      "identity": "CO-PUC-HHG:HHG-00758",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00140",
+      "identity": "CO-PUC-HHG:HHG-00140",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00296",
+      "identity": "CO-PUC-HHG:HHG-00296",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00730",
+      "identity": "CO-PUC-HHG:HHG-00730",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00619",
+      "identity": "CO-PUC-HHG:HHG-00619",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00128",
+      "identity": "CO-PUC-HHG:HHG-00128",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00399",
+      "identity": "CO-PUC-HHG:HHG-00399",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00329",
+      "identity": "CO-PUC-HHG:HHG-00329",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00477",
+      "identity": "CO-PUC-HHG:HHG-00477",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00199",
+      "identity": "CO-PUC-HHG:HHG-00199",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00040",
+      "identity": "CO-PUC-HHG:HHG-00040",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00001",
+      "identity": "CO-PUC-HHG:HHG-00001",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00727",
+      "identity": "CO-PUC-HHG:HHG-00727",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00256",
+      "identity": "CO-PUC-HHG:HHG-00256",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00682",
+      "identity": "CO-PUC-HHG:HHG-00682",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00764",
+      "identity": "CO-PUC-HHG:HHG-00764",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00167",
+      "identity": "CO-PUC-HHG:HHG-00167",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00510",
+      "identity": "CO-PUC-HHG:HHG-00510",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00762",
+      "identity": "CO-PUC-HHG:HHG-00762",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00587",
+      "identity": "CO-PUC-HHG:HHG-00587",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00673",
+      "identity": "CO-PUC-HHG:HHG-00673",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00038",
+      "identity": "CO-PUC-HHG:HHG-00038",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00065",
+      "identity": "CO-PUC-HHG:HHG-00065",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00647",
+      "identity": "CO-PUC-HHG:HHG-00647",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00502",
+      "identity": "CO-PUC-HHG:HHG-00502",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00612",
+      "identity": "CO-PUC-HHG:HHG-00612",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00346",
+      "identity": "CO-PUC-HHG:HHG-00346",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00080",
+      "identity": "CO-PUC-HHG:HHG-00080",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00400",
+      "identity": "CO-PUC-HHG:HHG-00400",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00657",
+      "identity": "CO-PUC-HHG:HHG-00657",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00714",
+      "identity": "CO-PUC-HHG:HHG-00714",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00723",
+      "identity": "CO-PUC-HHG:HHG-00723",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00698",
+      "identity": "CO-PUC-HHG:HHG-00698",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00376",
+      "identity": "CO-PUC-HHG:HHG-00376",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00499",
+      "identity": "CO-PUC-HHG:HHG-00499",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00695",
+      "identity": "CO-PUC-HHG:HHG-00695",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00680",
+      "identity": "CO-PUC-HHG:HHG-00680",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00313",
+      "identity": "CO-PUC-HHG:HHG-00313",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00126",
+      "identity": "CO-PUC-HHG:HHG-00126",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00699",
+      "identity": "CO-PUC-HHG:HHG-00699",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00525",
+      "identity": "CO-PUC-HHG:HHG-00525",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00024",
+      "identity": "CO-PUC-HHG:HHG-00024",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00745",
+      "identity": "CO-PUC-HHG:HHG-00745",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00693",
+      "identity": "CO-PUC-HHG:HHG-00693",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00534",
+      "identity": "CO-PUC-HHG:HHG-00534",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00508",
+      "identity": "CO-PUC-HHG:HHG-00508",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00348",
+      "identity": "CO-PUC-HHG:HHG-00348",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00703",
+      "identity": "CO-PUC-HHG:HHG-00703",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00100",
+      "identity": "CO-PUC-HHG:HHG-00100",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00459",
+      "identity": "CO-PUC-HHG:HHG-00459",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00589",
+      "identity": "CO-PUC-HHG:HHG-00589",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00451",
+      "identity": "CO-PUC-HHG:HHG-00451",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00756",
+      "identity": "CO-PUC-HHG:HHG-00756",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00523",
+      "identity": "CO-PUC-HHG:HHG-00523",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00606",
+      "identity": "CO-PUC-HHG:HHG-00606",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00679",
+      "identity": "CO-PUC-HHG:HHG-00679",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00760",
+      "identity": "CO-PUC-HHG:HHG-00760",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00418",
+      "identity": "CO-PUC-HHG:HHG-00418",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00731",
+      "identity": "CO-PUC-HHG:HHG-00731",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00558",
+      "identity": "CO-PUC-HHG:HHG-00558",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00597",
+      "identity": "CO-PUC-HHG:HHG-00597",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00639",
+      "identity": "CO-PUC-HHG:HHG-00639",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00732",
+      "identity": "CO-PUC-HHG:HHG-00732",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00681",
+      "identity": "CO-PUC-HHG:HHG-00681",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00728",
+      "identity": "CO-PUC-HHG:HHG-00728",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00356",
+      "identity": "CO-PUC-HHG:HHG-00356",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00553",
+      "identity": "CO-PUC-HHG:HHG-00553",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00397",
+      "identity": "CO-PUC-HHG:HHG-00397",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00472",
+      "identity": "CO-PUC-HHG:HHG-00472",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00275",
+      "identity": "CO-PUC-HHG:HHG-00275",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00708",
+      "identity": "CO-PUC-HHG:HHG-00708",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00660",
+      "identity": "CO-PUC-HHG:HHG-00660",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00752",
+      "identity": "CO-PUC-HHG:HHG-00752",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00736",
+      "identity": "CO-PUC-HHG:HHG-00736",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00743",
+      "identity": "CO-PUC-HHG:HHG-00743",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00369",
+      "identity": "CO-PUC-HHG:HHG-00369",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00039",
+      "identity": "CO-PUC-HHG:HHG-00039",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00406",
+      "identity": "CO-PUC-HHG:HHG-00406",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00747",
+      "identity": "CO-PUC-HHG:HHG-00747",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00763",
+      "identity": "CO-PUC-HHG:HHG-00763",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00724",
+      "identity": "CO-PUC-HHG:HHG-00724",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00646",
+      "identity": "CO-PUC-HHG:HHG-00646",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00408",
+      "identity": "CO-PUC-HHG:HHG-00408",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00163",
+      "identity": "CO-PUC-HHG:HHG-00163",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00688",
+      "identity": "CO-PUC-HHG:HHG-00688",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00342",
+      "identity": "CO-PUC-HHG:HHG-00342",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00337",
+      "identity": "CO-PUC-HHG:HHG-00337",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00582",
+      "identity": "CO-PUC-HHG:HHG-00582",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00533",
+      "identity": "CO-PUC-HHG:HHG-00533",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00321",
+      "identity": "CO-PUC-HHG:HHG-00321",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00720",
+      "identity": "CO-PUC-HHG:HHG-00720",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00478",
+      "identity": "CO-PUC-HHG:HHG-00478",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00706",
+      "identity": "CO-PUC-HHG:HHG-00706",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00422",
+      "identity": "CO-PUC-HHG:HHG-00422",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00322",
+      "identity": "CO-PUC-HHG:HHG-00322",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00009",
+      "identity": "CO-PUC-HHG:HHG-00009",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00540",
+      "identity": "CO-PUC-HHG:HHG-00540",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00069",
+      "identity": "CO-PUC-HHG:HHG-00069",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00225",
+      "identity": "CO-PUC-HHG:HHG-00225",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00463",
+      "identity": "CO-PUC-HHG:HHG-00463",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00490",
+      "identity": "CO-PUC-HHG:HHG-00490",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00753",
+      "identity": "CO-PUC-HHG:HHG-00753",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00272",
+      "identity": "CO-PUC-HHG:HHG-00272",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00096",
+      "identity": "CO-PUC-HHG:HHG-00096",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00740",
+      "identity": "CO-PUC-HHG:HHG-00740",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00532",
+      "identity": "CO-PUC-HHG:HHG-00532",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00713",
+      "identity": "CO-PUC-HHG:HHG-00713",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00170",
+      "identity": "CO-PUC-HHG:HHG-00170",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00632",
+      "identity": "CO-PUC-HHG:HHG-00632",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00546",
+      "identity": "CO-PUC-HHG:HHG-00546",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00281",
+      "identity": "CO-PUC-HHG:HHG-00281",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00426",
+      "identity": "CO-PUC-HHG:HHG-00426",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00413",
+      "identity": "CO-PUC-HHG:HHG-00413",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00669",
+      "identity": "CO-PUC-HHG:HHG-00669",
+      "status": "ACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00637",
+      "identity": "CO-PUC-HHG:HHG-00637",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00415",
+      "identity": "CO-PUC-HHG:HHG-00415",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00569",
+      "identity": "CO-PUC-HHG:HHG-00569",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00143",
+      "identity": "CO-PUC-HHG:HHG-00143",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00192",
+      "identity": "CO-PUC-HHG:HHG-00192",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00007",
+      "identity": "CO-PUC-HHG:HHG-00007",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00345",
+      "identity": "CO-PUC-HHG:HHG-00345",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00119",
+      "identity": "CO-PUC-HHG:HHG-00119",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00078",
+      "identity": "CO-PUC-HHG:HHG-00078",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00721",
+      "identity": "CO-PUC-HHG:HHG-00721",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00295",
+      "identity": "CO-PUC-HHG:HHG-00295",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00567",
+      "identity": "CO-PUC-HHG:HHG-00567",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00031",
+      "identity": "CO-PUC-HHG:HHG-00031",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00489",
+      "identity": "CO-PUC-HHG:HHG-00489",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00279",
+      "identity": "CO-PUC-HHG:HHG-00279",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00653",
+      "identity": "CO-PUC-HHG:HHG-00653",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00661",
+      "identity": "CO-PUC-HHG:HHG-00661",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00561",
+      "identity": "CO-PUC-HHG:HHG-00561",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00117",
+      "identity": "CO-PUC-HHG:HHG-00117",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00635",
+      "identity": "CO-PUC-HHG:HHG-00635",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00521",
+      "identity": "CO-PUC-HHG:HHG-00521",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00439",
+      "identity": "CO-PUC-HHG:HHG-00439",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00123",
+      "identity": "CO-PUC-HHG:HHG-00123",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00710",
+      "identity": "CO-PUC-HHG:HHG-00710",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00045",
+      "identity": "CO-PUC-HHG:HHG-00045",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00016",
+      "identity": "CO-PUC-HHG:HHG-00016",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00563",
+      "identity": "CO-PUC-HHG:HHG-00563",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00160",
+      "identity": "CO-PUC-HHG:HHG-00160",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00104",
+      "identity": "CO-PUC-HHG:HHG-00104",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00697",
+      "identity": "CO-PUC-HHG:HHG-00697",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00611",
+      "identity": "CO-PUC-HHG:HHG-00611",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00195",
+      "identity": "CO-PUC-HHG:HHG-00195",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00387",
+      "identity": "CO-PUC-HHG:HHG-00387",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00013",
+      "identity": "CO-PUC-HHG:HHG-00013",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00057",
+      "identity": "CO-PUC-HHG:HHG-00057",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00134",
+      "identity": "CO-PUC-HHG:HHG-00134",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00285",
+      "identity": "CO-PUC-HHG:HHG-00285",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00047",
+      "identity": "CO-PUC-HHG:HHG-00047",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00315",
+      "identity": "CO-PUC-HHG:HHG-00315",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00185",
+      "identity": "CO-PUC-HHG:HHG-00185",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00347",
+      "identity": "CO-PUC-HHG:HHG-00347",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00678",
+      "identity": "CO-PUC-HHG:HHG-00678",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00043",
+      "identity": "CO-PUC-HHG:HHG-00043",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00556",
+      "identity": "CO-PUC-HHG:HHG-00556",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00470",
+      "identity": "CO-PUC-HHG:HHG-00470",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00335",
+      "identity": "CO-PUC-HHG:HHG-00335",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00484",
+      "identity": "CO-PUC-HHG:HHG-00484",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00091",
+      "identity": "CO-PUC-HHG:HHG-00091",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00025",
+      "identity": "CO-PUC-HHG:HHG-00025",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00053",
+      "identity": "CO-PUC-HHG:HHG-00053",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00064",
+      "identity": "CO-PUC-HHG:HHG-00064",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00526",
+      "identity": "CO-PUC-HHG:HHG-00526",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00480",
+      "identity": "CO-PUC-HHG:HHG-00480",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00674",
+      "identity": "CO-PUC-HHG:HHG-00674",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00694",
+      "identity": "CO-PUC-HHG:HHG-00694",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00176",
+      "identity": "CO-PUC-HHG:HHG-00176",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00056",
+      "identity": "CO-PUC-HHG:HHG-00056",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00528",
+      "identity": "CO-PUC-HHG:HHG-00528",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00507",
+      "identity": "CO-PUC-HHG:HHG-00507",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00684",
+      "identity": "CO-PUC-HHG:HHG-00684",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00702",
+      "identity": "CO-PUC-HHG:HHG-00702",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00048",
+      "identity": "CO-PUC-HHG:HHG-00048",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00010",
+      "identity": "CO-PUC-HHG:HHG-00010",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00333",
+      "identity": "CO-PUC-HHG:HHG-00333",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00050",
+      "identity": "CO-PUC-HHG:HHG-00050",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00131",
+      "identity": "CO-PUC-HHG:HHG-00131",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00107",
+      "identity": "CO-PUC-HHG:HHG-00107",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00447",
+      "identity": "CO-PUC-HHG:HHG-00447",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00332",
+      "identity": "CO-PUC-HHG:HHG-00332",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00334",
+      "identity": "CO-PUC-HHG:HHG-00334",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00029",
+      "identity": "CO-PUC-HHG:HHG-00029",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00620",
+      "identity": "CO-PUC-HHG:HHG-00620",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00585",
+      "identity": "CO-PUC-HHG:HHG-00585",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00027",
+      "identity": "CO-PUC-HHG:HHG-00027",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00602",
+      "identity": "CO-PUC-HHG:HHG-00602",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00161",
+      "identity": "CO-PUC-HHG:HHG-00161",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00570",
+      "identity": "CO-PUC-HHG:HHG-00570",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00564",
+      "identity": "CO-PUC-HHG:HHG-00564",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00054",
+      "identity": "CO-PUC-HHG:HHG-00054",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00670",
+      "identity": "CO-PUC-HHG:HHG-00670",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00270",
+      "identity": "CO-PUC-HHG:HHG-00270",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00262",
+      "identity": "CO-PUC-HHG:HHG-00262",
+      "status": "CANCELLED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00608",
+      "identity": "CO-PUC-HHG:HHG-00608",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00627",
+      "identity": "CO-PUC-HHG:HHG-00627",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00414",
+      "identity": "CO-PUC-HHG:HHG-00414",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00384",
+      "identity": "CO-PUC-HHG:HHG-00384",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00156",
+      "identity": "CO-PUC-HHG:HHG-00156",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00248",
+      "identity": "CO-PUC-HHG:HHG-00248",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00084",
+      "identity": "CO-PUC-HHG:HHG-00084",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00359",
+      "identity": "CO-PUC-HHG:HHG-00359",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00204",
+      "identity": "CO-PUC-HHG:HHG-00204",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00516",
+      "identity": "CO-PUC-HHG:HHG-00516",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00638",
+      "identity": "CO-PUC-HHG:HHG-00638",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00596",
+      "identity": "CO-PUC-HHG:HHG-00596",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00072",
+      "identity": "CO-PUC-HHG:HHG-00072",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00249",
+      "identity": "CO-PUC-HHG:HHG-00249",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00255",
+      "identity": "CO-PUC-HHG:HHG-00255",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00142",
+      "identity": "CO-PUC-HHG:HHG-00142",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00002",
+      "identity": "CO-PUC-HHG:HHG-00002",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00394",
+      "identity": "CO-PUC-HHG:HHG-00394",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00030",
+      "identity": "CO-PUC-HHG:HHG-00030",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00218",
+      "identity": "CO-PUC-HHG:HHG-00218",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00671",
+      "identity": "CO-PUC-HHG:HHG-00671",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00544",
+      "identity": "CO-PUC-HHG:HHG-00544",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00324",
+      "identity": "CO-PUC-HHG:HHG-00324",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00034",
+      "identity": "CO-PUC-HHG:HHG-00034",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00004",
+      "identity": "CO-PUC-HHG:HHG-00004",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00021",
+      "identity": "CO-PUC-HHG:HHG-00021",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00254",
+      "identity": "CO-PUC-HHG:HHG-00254",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00003",
+      "identity": "CO-PUC-HHG:HHG-00003",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00206",
+      "identity": "CO-PUC-HHG:HHG-00206",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00111",
+      "identity": "CO-PUC-HHG:HHG-00111",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00085",
+      "identity": "CO-PUC-HHG:HHG-00085",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00108",
+      "identity": "CO-PUC-HHG:HHG-00108",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00231",
+      "identity": "CO-PUC-HHG:HHG-00231",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00172",
+      "identity": "CO-PUC-HHG:HHG-00172",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00197",
+      "identity": "CO-PUC-HHG:HHG-00197",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00184",
+      "identity": "CO-PUC-HHG:HHG-00184",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00299",
+      "identity": "CO-PUC-HHG:HHG-00299",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00092",
+      "identity": "CO-PUC-HHG:HHG-00092",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00122",
+      "identity": "CO-PUC-HHG:HHG-00122",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00354",
+      "identity": "CO-PUC-HHG:HHG-00354",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00300",
+      "identity": "CO-PUC-HHG:HHG-00300",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00189",
+      "identity": "CO-PUC-HHG:HHG-00189",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00379",
+      "identity": "CO-PUC-HHG:HHG-00379",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00169",
+      "identity": "CO-PUC-HHG:HHG-00169",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00155",
+      "identity": "CO-PUC-HHG:HHG-00155",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00383",
+      "identity": "CO-PUC-HHG:HHG-00383",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00121",
+      "identity": "CO-PUC-HHG:HHG-00121",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00041",
+      "identity": "CO-PUC-HHG:HHG-00041",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00454",
+      "identity": "CO-PUC-HHG:HHG-00454",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00130",
+      "identity": "CO-PUC-HHG:HHG-00130",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00151",
+      "identity": "CO-PUC-HHG:HHG-00151",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00174",
+      "identity": "CO-PUC-HHG:HHG-00174",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00031",
+      "identity": "CO-PUC-HHG:HHG-00031",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00625",
+      "identity": "CO-PUC-HHG:HHG-00625",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00090",
+      "identity": "CO-PUC-HHG:HHG-00090",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00402",
+      "identity": "CO-PUC-HHG:HHG-00402",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00449",
+      "identity": "CO-PUC-HHG:HHG-00449",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00032",
+      "identity": "CO-PUC-HHG:HHG-00032",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00215",
+      "identity": "CO-PUC-HHG:HHG-00215",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00552",
+      "identity": "CO-PUC-HHG:HHG-00552",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00052",
+      "identity": "CO-PUC-HHG:HHG-00052",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00055",
+      "identity": "CO-PUC-HHG:HHG-00055",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00471",
+      "identity": "CO-PUC-HHG:HHG-00471",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00205",
+      "identity": "CO-PUC-HHG:HHG-00205",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00601",
+      "identity": "CO-PUC-HHG:HHG-00601",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00178",
+      "identity": "CO-PUC-HHG:HHG-00178",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00094",
+      "identity": "CO-PUC-HHG:HHG-00094",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00063",
+      "identity": "CO-PUC-HHG:HHG-00063",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00006",
+      "identity": "CO-PUC-HHG:HHG-00006",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00257",
+      "identity": "CO-PUC-HHG:HHG-00257",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00259",
+      "identity": "CO-PUC-HHG:HHG-00259",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00583",
+      "identity": "CO-PUC-HHG:HHG-00583",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00062",
+      "identity": "CO-PUC-HHG:HHG-00062",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00476",
+      "identity": "CO-PUC-HHG:HHG-00476",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00644",
+      "identity": "CO-PUC-HHG:HHG-00644",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00023",
+      "identity": "CO-PUC-HHG:HHG-00023",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00298",
+      "identity": "CO-PUC-HHG:HHG-00298",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00194",
+      "identity": "CO-PUC-HHG:HHG-00194",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00378",
+      "identity": "CO-PUC-HHG:HHG-00378",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00233",
+      "identity": "CO-PUC-HHG:HHG-00233",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00017",
+      "identity": "CO-PUC-HHG:HHG-00017",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00227",
+      "identity": "CO-PUC-HHG:HHG-00227",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00014",
+      "identity": "CO-PUC-HHG:HHG-00014",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00423",
+      "identity": "CO-PUC-HHG:HHG-00423",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00689",
+      "identity": "CO-PUC-HHG:HHG-00689",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00573",
+      "identity": "CO-PUC-HHG:HHG-00573",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00386",
+      "identity": "CO-PUC-HHG:HHG-00386",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00129",
+      "identity": "CO-PUC-HHG:HHG-00129",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00572",
+      "identity": "CO-PUC-HHG:HHG-00572",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00306",
+      "identity": "CO-PUC-HHG:HHG-00306",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00026",
+      "identity": "CO-PUC-HHG:HHG-00026",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00519",
+      "identity": "CO-PUC-HHG:HHG-00519",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00626",
+      "identity": "CO-PUC-HHG:HHG-00626",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00234",
+      "identity": "CO-PUC-HHG:HHG-00234",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00115",
+      "identity": "CO-PUC-HHG:HHG-00115",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00216",
+      "identity": "CO-PUC-HHG:HHG-00216",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00358",
+      "identity": "CO-PUC-HHG:HHG-00358",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00438",
+      "identity": "CO-PUC-HHG:HHG-00438",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00468",
+      "identity": "CO-PUC-HHG:HHG-00468",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00222",
+      "identity": "CO-PUC-HHG:HHG-00222",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00530",
+      "identity": "CO-PUC-HHG:HHG-00530",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00079",
+      "identity": "CO-PUC-HHG:HHG-00079",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00500",
+      "identity": "CO-PUC-HHG:HHG-00500",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00353",
+      "identity": "CO-PUC-HHG:HHG-00353",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00230",
+      "identity": "CO-PUC-HHG:HHG-00230",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00442",
+      "identity": "CO-PUC-HHG:HHG-00442",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00665",
+      "identity": "CO-PUC-HHG:HHG-00665",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00186",
+      "identity": "CO-PUC-HHG:HHG-00186",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00436",
+      "identity": "CO-PUC-HHG:HHG-00436",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00722",
+      "identity": "CO-PUC-HHG:HHG-00722",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00692",
+      "identity": "CO-PUC-HHG:HHG-00692",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00541",
+      "identity": "CO-PUC-HHG:HHG-00541",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00584",
+      "identity": "CO-PUC-HHG:HHG-00584",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00190",
+      "identity": "CO-PUC-HHG:HHG-00190",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00387",
+      "identity": "CO-PUC-HHG:HHG-00387",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00428",
+      "identity": "CO-PUC-HHG:HHG-00428",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00214",
+      "identity": "CO-PUC-HHG:HHG-00214",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00621",
+      "identity": "CO-PUC-HHG:HHG-00621",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00437",
+      "identity": "CO-PUC-HHG:HHG-00437",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00137",
+      "identity": "CO-PUC-HHG:HHG-00137",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00274",
+      "identity": "CO-PUC-HHG:HHG-00274",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00458",
+      "identity": "CO-PUC-HHG:HHG-00458",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00650",
+      "identity": "CO-PUC-HHG:HHG-00650",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00592",
+      "identity": "CO-PUC-HHG:HHG-00592",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00495",
+      "identity": "CO-PUC-HHG:HHG-00495",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00403",
+      "identity": "CO-PUC-HHG:HHG-00403",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00363",
+      "identity": "CO-PUC-HHG:HHG-00363",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00675",
+      "identity": "CO-PUC-HHG:HHG-00675",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00506",
+      "identity": "CO-PUC-HHG:HHG-00506",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00193",
+      "identity": "CO-PUC-HHG:HHG-00193",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00116",
+      "identity": "CO-PUC-HHG:HHG-00116",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00372",
+      "identity": "CO-PUC-HHG:HHG-00372",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00658",
+      "identity": "CO-PUC-HHG:HHG-00658",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00264",
+      "identity": "CO-PUC-HHG:HHG-00264",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00106",
+      "identity": "CO-PUC-HHG:HHG-00106",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00716",
+      "identity": "CO-PUC-HHG:HHG-00716",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00605",
+      "identity": "CO-PUC-HHG:HHG-00605",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00082",
+      "identity": "CO-PUC-HHG:HHG-00082",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00075",
+      "identity": "CO-PUC-HHG:HHG-00075",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00522",
+      "identity": "CO-PUC-HHG:HHG-00522",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00547",
+      "identity": "CO-PUC-HHG:HHG-00547",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00303",
+      "identity": "CO-PUC-HHG:HHG-00303",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00655",
+      "identity": "CO-PUC-HHG:HHG-00655",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00073",
+      "identity": "CO-PUC-HHG:HHG-00073",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00351",
+      "identity": "CO-PUC-HHG:HHG-00351",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00112",
+      "identity": "CO-PUC-HHG:HHG-00112",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00401",
+      "identity": "CO-PUC-HHG:HHG-00401",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00396",
+      "identity": "CO-PUC-HHG:HHG-00396",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00501",
+      "identity": "CO-PUC-HHG:HHG-00501",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00199",
+      "identity": "CO-PUC-HHG:HHG-00199",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00629",
+      "identity": "CO-PUC-HHG:HHG-00629",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00543",
+      "identity": "CO-PUC-HHG:HHG-00543",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00368",
+      "identity": "CO-PUC-HHG:HHG-00368",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00088",
+      "identity": "CO-PUC-HHG:HHG-00088",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00503",
+      "identity": "CO-PUC-HHG:HHG-00503",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00551",
+      "identity": "CO-PUC-HHG:HHG-00551",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00395",
+      "identity": "CO-PUC-HHG:HHG-00395",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00742",
+      "identity": "CO-PUC-HHG:HHG-00742",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00292",
+      "identity": "CO-PUC-HHG:HHG-00292",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00357",
+      "identity": "CO-PUC-HHG:HHG-00357",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00511",
+      "identity": "CO-PUC-HHG:HHG-00511",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00420",
+      "identity": "CO-PUC-HHG:HHG-00420",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00188",
+      "identity": "CO-PUC-HHG:HHG-00188",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00726",
+      "identity": "CO-PUC-HHG:HHG-00726",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00288",
+      "identity": "CO-PUC-HHG:HHG-00288",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00672",
+      "identity": "CO-PUC-HHG:HHG-00672",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00607",
+      "identity": "CO-PUC-HHG:HHG-00607",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00238",
+      "identity": "CO-PUC-HHG:HHG-00238",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00389",
+      "identity": "CO-PUC-HHG:HHG-00389",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00191",
+      "identity": "CO-PUC-HHG:HHG-00191",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00590",
+      "identity": "CO-PUC-HHG:HHG-00590",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00127",
+      "identity": "CO-PUC-HHG:HHG-00127",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00103",
+      "identity": "CO-PUC-HHG:HHG-00103",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00571",
+      "identity": "CO-PUC-HHG:HHG-00571",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00099",
+      "identity": "CO-PUC-HHG:HHG-00099",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00266",
+      "identity": "CO-PUC-HHG:HHG-00266",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00020",
+      "identity": "CO-PUC-HHG:HHG-00020",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00220",
+      "identity": "CO-PUC-HHG:HHG-00220",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00737",
+      "identity": "CO-PUC-HHG:HHG-00737",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00252",
+      "identity": "CO-PUC-HHG:HHG-00252",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00654",
+      "identity": "CO-PUC-HHG:HHG-00654",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00077",
+      "identity": "CO-PUC-HHG:HHG-00077",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00319",
+      "identity": "CO-PUC-HHG:HHG-00319",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00520",
+      "identity": "CO-PUC-HHG:HHG-00520",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00416",
+      "identity": "CO-PUC-HHG:HHG-00416",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00035",
+      "identity": "CO-PUC-HHG:HHG-00035",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00246",
+      "identity": "CO-PUC-HHG:HHG-00246",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00320",
+      "identity": "CO-PUC-HHG:HHG-00320",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00549",
+      "identity": "CO-PUC-HHG:HHG-00549",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00253",
+      "identity": "CO-PUC-HHG:HHG-00253",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00514",
+      "identity": "CO-PUC-HHG:HHG-00514",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00392",
+      "identity": "CO-PUC-HHG:HHG-00392",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00198",
+      "identity": "CO-PUC-HHG:HHG-00198",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00397",
+      "identity": "CO-PUC-HHG:HHG-00397",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00219",
+      "identity": "CO-PUC-HHG:HHG-00219",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00486",
+      "identity": "CO-PUC-HHG:HHG-00486",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00407",
+      "identity": "CO-PUC-HHG:HHG-00407",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00488",
+      "identity": "CO-PUC-HHG:HHG-00488",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00599",
+      "identity": "CO-PUC-HHG:HHG-00599",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00360",
+      "identity": "CO-PUC-HHG:HHG-00360",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00531",
+      "identity": "CO-PUC-HHG:HHG-00531",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00566",
+      "identity": "CO-PUC-HHG:HHG-00566",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00744",
+      "identity": "CO-PUC-HHG:HHG-00744",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00668",
+      "identity": "CO-PUC-HHG:HHG-00668",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00251",
+      "identity": "CO-PUC-HHG:HHG-00251",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00250",
+      "identity": "CO-PUC-HHG:HHG-00250",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00630",
+      "identity": "CO-PUC-HHG:HHG-00630",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00278",
+      "identity": "CO-PUC-HHG:HHG-00278",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00207",
+      "identity": "CO-PUC-HHG:HHG-00207",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00086",
+      "identity": "CO-PUC-HHG:HHG-00086",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00293",
+      "identity": "CO-PUC-HHG:HHG-00293",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00664",
+      "identity": "CO-PUC-HHG:HHG-00664",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00221",
+      "identity": "CO-PUC-HHG:HHG-00221",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00589",
+      "identity": "CO-PUC-HHG:HHG-00589",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00696",
+      "identity": "CO-PUC-HHG:HHG-00696",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00446",
+      "identity": "CO-PUC-HHG:HHG-00446",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00508",
+      "identity": "CO-PUC-HHG:HHG-00508",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00200",
+      "identity": "CO-PUC-HHG:HHG-00200",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00361",
+      "identity": "CO-PUC-HHG:HHG-00361",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00651",
+      "identity": "CO-PUC-HHG:HHG-00651",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00136",
+      "identity": "CO-PUC-HHG:HHG-00136",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00133",
+      "identity": "CO-PUC-HHG:HHG-00133",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00301",
+      "identity": "CO-PUC-HHG:HHG-00301",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00209",
+      "identity": "CO-PUC-HHG:HHG-00209",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00404",
+      "identity": "CO-PUC-HHG:HHG-00404",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00187",
+      "identity": "CO-PUC-HHG:HHG-00187",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00148",
+      "identity": "CO-PUC-HHG:HHG-00148",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00349",
+      "identity": "CO-PUC-HHG:HHG-00349",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00380",
+      "identity": "CO-PUC-HHG:HHG-00380",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00153",
+      "identity": "CO-PUC-HHG:HHG-00153",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00318",
+      "identity": "CO-PUC-HHG:HHG-00318",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00273",
+      "identity": "CO-PUC-HHG:HHG-00273",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00633",
+      "identity": "CO-PUC-HHG:HHG-00633",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00642",
+      "identity": "CO-PUC-HHG:HHG-00642",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00391",
+      "identity": "CO-PUC-HHG:HHG-00391",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00445",
+      "identity": "CO-PUC-HHG:HHG-00445",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00015",
+      "identity": "CO-PUC-HHG:HHG-00015",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00224",
+      "identity": "CO-PUC-HHG:HHG-00224",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00700",
+      "identity": "CO-PUC-HHG:HHG-00700",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00181",
+      "identity": "CO-PUC-HHG:HHG-00181",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00245",
+      "identity": "CO-PUC-HHG:HHG-00245",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00594",
+      "identity": "CO-PUC-HHG:HHG-00594",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00539",
+      "identity": "CO-PUC-HHG:HHG-00539",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00555",
+      "identity": "CO-PUC-HHG:HHG-00555",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00435",
+      "identity": "CO-PUC-HHG:HHG-00435",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00492",
+      "identity": "CO-PUC-HHG:HHG-00492",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00201",
+      "identity": "CO-PUC-HHG:HHG-00201",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00202",
+      "identity": "CO-PUC-HHG:HHG-00202",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00701",
+      "identity": "CO-PUC-HHG:HHG-00701",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00624",
+      "identity": "CO-PUC-HHG:HHG-00624",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00059",
+      "identity": "CO-PUC-HHG:HHG-00059",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00228",
+      "identity": "CO-PUC-HHG:HHG-00228",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00479",
+      "identity": "CO-PUC-HHG:HHG-00479",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00105",
+      "identity": "CO-PUC-HHG:HHG-00105",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00735",
+      "identity": "CO-PUC-HHG:HHG-00735",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00037",
+      "identity": "CO-PUC-HHG:HHG-00037",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00496",
+      "identity": "CO-PUC-HHG:HHG-00496",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00175",
+      "identity": "CO-PUC-HHG:HHG-00175",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00704",
+      "identity": "CO-PUC-HHG:HHG-00704",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00089",
+      "identity": "CO-PUC-HHG:HHG-00089",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00054",
+      "identity": "CO-PUC-HHG:HHG-00054",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00067",
+      "identity": "CO-PUC-HHG:HHG-00067",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00515",
+      "identity": "CO-PUC-HHG:HHG-00515",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00276",
+      "identity": "CO-PUC-HHG:HHG-00276",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00177",
+      "identity": "CO-PUC-HHG:HHG-00177",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00161",
+      "identity": "CO-PUC-HHG:HHG-00161",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00554",
+      "identity": "CO-PUC-HHG:HHG-00554",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00535",
+      "identity": "CO-PUC-HHG:HHG-00535",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00427",
+      "identity": "CO-PUC-HHG:HHG-00427",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00081",
+      "identity": "CO-PUC-HHG:HHG-00081",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00244",
+      "identity": "CO-PUC-HHG:HHG-00244",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00616",
+      "identity": "CO-PUC-HHG:HHG-00616",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00028",
+      "identity": "CO-PUC-HHG:HHG-00028",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00168",
+      "identity": "CO-PUC-HHG:HHG-00168",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00098",
+      "identity": "CO-PUC-HHG:HHG-00098",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00529",
+      "identity": "CO-PUC-HHG:HHG-00529",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00138",
+      "identity": "CO-PUC-HHG:HHG-00138",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00634",
+      "identity": "CO-PUC-HHG:HHG-00634",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00538",
+      "identity": "CO-PUC-HHG:HHG-00538",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00135",
+      "identity": "CO-PUC-HHG:HHG-00135",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00297",
+      "identity": "CO-PUC-HHG:HHG-00297",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00044",
+      "identity": "CO-PUC-HHG:HHG-00044",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00011",
+      "identity": "CO-PUC-HHG:HHG-00011",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00154",
+      "identity": "CO-PUC-HHG:HHG-00154",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00598",
+      "identity": "CO-PUC-HHG:HHG-00598",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00381",
+      "identity": "CO-PUC-HHG:HHG-00381",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00666",
+      "identity": "CO-PUC-HHG:HHG-00666",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00265",
+      "identity": "CO-PUC-HHG:HHG-00265",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00609",
+      "identity": "CO-PUC-HHG:HHG-00609",
+      "status": "INACTIVE",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00192",
+      "identity": "CO-PUC-HHG:HHG-00192",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00152",
+      "identity": "CO-PUC-HHG:HHG-00152",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00173",
+      "identity": "CO-PUC-HHG:HHG-00173",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00221",
+      "identity": "CO-PUC-HHG:HHG-00221",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00005",
+      "identity": "CO-PUC-HHG:HHG-00005",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00134",
+      "identity": "CO-PUC-HHG:HHG-00134",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00252",
+      "identity": "CO-PUC-HHG:HHG-00252",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00040",
+      "identity": "CO-PUC-HHG:HHG-00040",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00450",
+      "identity": "CO-PUC-HHG:HHG-00450",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00613",
+      "identity": "CO-PUC-HHG:HHG-00613",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00080",
+      "identity": "CO-PUC-HHG:HHG-00080",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00224",
+      "identity": "CO-PUC-HHG:HHG-00224",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00417",
+      "identity": "CO-PUC-HHG:HHG-00417",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00037",
+      "identity": "CO-PUC-HHG:HHG-00037",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00582",
+      "identity": "CO-PUC-HHG:HHG-00582",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00262",
+      "identity": "CO-PUC-HHG:HHG-00262",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00011",
+      "identity": "CO-PUC-HHG:HHG-00011",
+      "status": "INACTIVE-TRANSFERRED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00196",
+      "identity": "CO-PUC-HHG:HHG-00196",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00146",
+      "identity": "CO-PUC-HHG:HHG-00146",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00149",
+      "identity": "CO-PUC-HHG:HHG-00149",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00147",
+      "identity": "CO-PUC-HHG:HHG-00147",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00120",
+      "identity": "CO-PUC-HHG:HHG-00120",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00390",
+      "identity": "CO-PUC-HHG:HHG-00390",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00355",
+      "identity": "CO-PUC-HHG:HHG-00355",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00440",
+      "identity": "CO-PUC-HHG:HHG-00440",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00260",
+      "identity": "CO-PUC-HHG:HHG-00260",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00076",
+      "identity": "CO-PUC-HHG:HHG-00076",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00093",
+      "identity": "CO-PUC-HHG:HHG-00093",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00457",
+      "identity": "CO-PUC-HHG:HHG-00457",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00232",
+      "identity": "CO-PUC-HHG:HHG-00232",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00441",
+      "identity": "CO-PUC-HHG:HHG-00441",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00284",
+      "identity": "CO-PUC-HHG:HHG-00284",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00108",
+      "identity": "CO-PUC-HHG:HHG-00108",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00615",
+      "identity": "CO-PUC-HHG:HHG-00615",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00239",
+      "identity": "CO-PUC-HHG:HHG-00239",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00410",
+      "identity": "CO-PUC-HHG:HHG-00410",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00182",
+      "identity": "CO-PUC-HHG:HHG-00182",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00211",
+      "identity": "CO-PUC-HHG:HHG-00211",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00430",
+      "identity": "CO-PUC-HHG:HHG-00430",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00119",
+      "identity": "CO-PUC-HHG:HHG-00119",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00425",
+      "identity": "CO-PUC-HHG:HHG-00425",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00114",
+      "identity": "CO-PUC-HHG:HHG-00114",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00365",
+      "identity": "CO-PUC-HHG:HHG-00365",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00339",
+      "identity": "CO-PUC-HHG:HHG-00339",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00299",
+      "identity": "CO-PUC-HHG:HHG-00299",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00398",
+      "identity": "CO-PUC-HHG:HHG-00398",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00373",
+      "identity": "CO-PUC-HHG:HHG-00373",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00603",
+      "identity": "CO-PUC-HHG:HHG-00603",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00304",
+      "identity": "CO-PUC-HHG:HHG-00304",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00385",
+      "identity": "CO-PUC-HHG:HHG-00385",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00518",
+      "identity": "CO-PUC-HHG:HHG-00518",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00258",
+      "identity": "CO-PUC-HHG:HHG-00258",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00217",
+      "identity": "CO-PUC-HHG:HHG-00217",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00286",
+      "identity": "CO-PUC-HHG:HHG-00286",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00524",
+      "identity": "CO-PUC-HHG:HHG-00524",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00277",
+      "identity": "CO-PUC-HHG:HHG-00277",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00311",
+      "identity": "CO-PUC-HHG:HHG-00311",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00497",
+      "identity": "CO-PUC-HHG:HHG-00497",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00309",
+      "identity": "CO-PUC-HHG:HHG-00309",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00066",
+      "identity": "CO-PUC-HHG:HHG-00066",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00409",
+      "identity": "CO-PUC-HHG:HHG-00409",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00171",
+      "identity": "CO-PUC-HHG:HHG-00171",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00421",
+      "identity": "CO-PUC-HHG:HHG-00421",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00717",
+      "identity": "CO-PUC-HHG:HHG-00717",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00667",
+      "identity": "CO-PUC-HHG:HHG-00667",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00450",
+      "identity": "CO-PUC-HHG:HHG-00450",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00610",
+      "identity": "CO-PUC-HHG:HHG-00610",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00008",
+      "identity": "CO-PUC-HHG:HHG-00008",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00060",
+      "identity": "CO-PUC-HHG:HHG-00060",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00364",
+      "identity": "CO-PUC-HHG:HHG-00364",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00307",
+      "identity": "CO-PUC-HHG:HHG-00307",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00498",
+      "identity": "CO-PUC-HHG:HHG-00498",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00545",
+      "identity": "CO-PUC-HHG:HHG-00545",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00290",
+      "identity": "CO-PUC-HHG:HHG-00290",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00663",
+      "identity": "CO-PUC-HHG:HHG-00663",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00559",
+      "identity": "CO-PUC-HHG:HHG-00559",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00411",
+      "identity": "CO-PUC-HHG:HHG-00411",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00505",
+      "identity": "CO-PUC-HHG:HHG-00505",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00485",
+      "identity": "CO-PUC-HHG:HHG-00485",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00350",
+      "identity": "CO-PUC-HHG:HHG-00350",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00572",
+      "identity": "CO-PUC-HHG:HHG-00572",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00444",
+      "identity": "CO-PUC-HHG:HHG-00444",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00129",
+      "identity": "CO-PUC-HHG:HHG-00129",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00452",
+      "identity": "CO-PUC-HHG:HHG-00452",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00016",
+      "identity": "CO-PUC-HHG:HHG-00016",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00074",
+      "identity": "CO-PUC-HHG:HHG-00074",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00656",
+      "identity": "CO-PUC-HHG:HHG-00656",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00162",
+      "identity": "CO-PUC-HHG:HHG-00162",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00574",
+      "identity": "CO-PUC-HHG:HHG-00574",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00312",
+      "identity": "CO-PUC-HHG:HHG-00312",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00370",
+      "identity": "CO-PUC-HHG:HHG-00370",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00271",
+      "identity": "CO-PUC-HHG:HHG-00271",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00676",
+      "identity": "CO-PUC-HHG:HHG-00676",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00512",
+      "identity": "CO-PUC-HHG:HHG-00512",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00326",
+      "identity": "CO-PUC-HHG:HHG-00326",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00536",
+      "identity": "CO-PUC-HHG:HHG-00536",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00586",
+      "identity": "CO-PUC-HHG:HHG-00586",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00614",
+      "identity": "CO-PUC-HHG:HHG-00614",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00344",
+      "identity": "CO-PUC-HHG:HHG-00344",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00412",
+      "identity": "CO-PUC-HHG:HHG-00412",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00125",
+      "identity": "CO-PUC-HHG:HHG-00125",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00618",
+      "identity": "CO-PUC-HHG:HHG-00618",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00550",
+      "identity": "CO-PUC-HHG:HHG-00550",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00145",
+      "identity": "CO-PUC-HHG:HHG-00145",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00338",
+      "identity": "CO-PUC-HHG:HHG-00338",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00433",
+      "identity": "CO-PUC-HHG:HHG-00433",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00604",
+      "identity": "CO-PUC-HHG:HHG-00604",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00640",
+      "identity": "CO-PUC-HHG:HHG-00640",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00548",
+      "identity": "CO-PUC-HHG:HHG-00548",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00362",
+      "identity": "CO-PUC-HHG:HHG-00362",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00165",
+      "identity": "CO-PUC-HHG:HHG-00165",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00068",
+      "identity": "CO-PUC-HHG:HHG-00068",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00619",
+      "identity": "CO-PUC-HHG:HHG-00619",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00562",
+      "identity": "CO-PUC-HHG:HHG-00562",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00396",
+      "identity": "CO-PUC-HHG:HHG-00396",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00591",
+      "identity": "CO-PUC-HHG:HHG-00591",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00709",
+      "identity": "CO-PUC-HHG:HHG-00709",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00247",
+      "identity": "CO-PUC-HHG:HHG-00247",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00377",
+      "identity": "CO-PUC-HHG:HHG-00377",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00095",
+      "identity": "CO-PUC-HHG:HHG-00095",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00159",
+      "identity": "CO-PUC-HHG:HHG-00159",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00429",
+      "identity": "CO-PUC-HHG:HHG-00429",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00238",
+      "identity": "CO-PUC-HHG:HHG-00238",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00467",
+      "identity": "CO-PUC-HHG:HHG-00467",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00453",
+      "identity": "CO-PUC-HHG:HHG-00453",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00687",
+      "identity": "CO-PUC-HHG:HHG-00687",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00101",
+      "identity": "CO-PUC-HHG:HHG-00101",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00466",
+      "identity": "CO-PUC-HHG:HHG-00466",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00049",
+      "identity": "CO-PUC-HHG:HHG-00049",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00242",
+      "identity": "CO-PUC-HHG:HHG-00242",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00330",
+      "identity": "CO-PUC-HHG:HHG-00330",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00323",
+      "identity": "CO-PUC-HHG:HHG-00323",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00462",
+      "identity": "CO-PUC-HHG:HHG-00462",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00179",
+      "identity": "CO-PUC-HHG:HHG-00179",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00641",
+      "identity": "CO-PUC-HHG:HHG-00641",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00261",
+      "identity": "CO-PUC-HHG:HHG-00261",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00287",
+      "identity": "CO-PUC-HHG:HHG-00287",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00180",
+      "identity": "CO-PUC-HHG:HHG-00180",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00035",
+      "identity": "CO-PUC-HHG:HHG-00035",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00382",
+      "identity": "CO-PUC-HHG:HHG-00382",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00237",
+      "identity": "CO-PUC-HHG:HHG-00237",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00392",
+      "identity": "CO-PUC-HHG:HHG-00392",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00461",
+      "identity": "CO-PUC-HHG:HHG-00461",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00659",
+      "identity": "CO-PUC-HHG:HHG-00659",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00631",
+      "identity": "CO-PUC-HHG:HHG-00631",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00636",
+      "identity": "CO-PUC-HHG:HHG-00636",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00424",
+      "identity": "CO-PUC-HHG:HHG-00424",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00623",
+      "identity": "CO-PUC-HHG:HHG-00623",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00366",
+      "identity": "CO-PUC-HHG:HHG-00366",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00331",
+      "identity": "CO-PUC-HHG:HHG-00331",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00336",
+      "identity": "CO-PUC-HHG:HHG-00336",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00566",
+      "identity": "CO-PUC-HHG:HHG-00566",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00208",
+      "identity": "CO-PUC-HHG:HHG-00208",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00110",
+      "identity": "CO-PUC-HHG:HHG-00110",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00491",
+      "identity": "CO-PUC-HHG:HHG-00491",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00022",
+      "identity": "CO-PUC-HHG:HHG-00022",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00729",
+      "identity": "CO-PUC-HHG:HHG-00729",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00465",
+      "identity": "CO-PUC-HHG:HHG-00465",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00166",
+      "identity": "CO-PUC-HHG:HHG-00166",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00282",
+      "identity": "CO-PUC-HHG:HHG-00282",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00352",
+      "identity": "CO-PUC-HHG:HHG-00352",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00645",
+      "identity": "CO-PUC-HHG:HHG-00645",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00683",
+      "identity": "CO-PUC-HHG:HHG-00683",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00118",
+      "identity": "CO-PUC-HHG:HHG-00118",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00157",
+      "identity": "CO-PUC-HHG:HHG-00157",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00018",
+      "identity": "CO-PUC-HHG:HHG-00018",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00109",
+      "identity": "CO-PUC-HHG:HHG-00109",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00317",
+      "identity": "CO-PUC-HHG:HHG-00317",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00474",
+      "identity": "CO-PUC-HHG:HHG-00474",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00565",
+      "identity": "CO-PUC-HHG:HHG-00565",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00367",
+      "identity": "CO-PUC-HHG:HHG-00367",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00097",
+      "identity": "CO-PUC-HHG:HHG-00097",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00316",
+      "identity": "CO-PUC-HHG:HHG-00316",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00226",
+      "identity": "CO-PUC-HHG:HHG-00226",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00648",
+      "identity": "CO-PUC-HHG:HHG-00648",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00707",
+      "identity": "CO-PUC-HHG:HHG-00707",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00283",
+      "identity": "CO-PUC-HHG:HHG-00283",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00280",
+      "identity": "CO-PUC-HHG:HHG-00280",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00235",
+      "identity": "CO-PUC-HHG:HHG-00235",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00718",
+      "identity": "CO-PUC-HHG:HHG-00718",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00483",
+      "identity": "CO-PUC-HHG:HHG-00483",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00150",
+      "identity": "CO-PUC-HHG:HHG-00150",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00343",
+      "identity": "CO-PUC-HHG:HHG-00343",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00537",
+      "identity": "CO-PUC-HHG:HHG-00537",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00152",
+      "identity": "CO-PUC-HHG:HHG-00152",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00690",
+      "identity": "CO-PUC-HHG:HHG-00690",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00417",
+      "identity": "CO-PUC-HHG:HHG-00417",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00560",
+      "identity": "CO-PUC-HHG:HHG-00560",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00328",
+      "identity": "CO-PUC-HHG:HHG-00328",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00685",
+      "identity": "CO-PUC-HHG:HHG-00685",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00263",
+      "identity": "CO-PUC-HHG:HHG-00263",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00578",
+      "identity": "CO-PUC-HHG:HHG-00578",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00240",
+      "identity": "CO-PUC-HHG:HHG-00240",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00617",
+      "identity": "CO-PUC-HHG:HHG-00617",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00070",
+      "identity": "CO-PUC-HHG:HHG-00070",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00443",
+      "identity": "CO-PUC-HHG:HHG-00443",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00460",
+      "identity": "CO-PUC-HHG:HHG-00460",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00289",
+      "identity": "CO-PUC-HHG:HHG-00289",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00325",
+      "identity": "CO-PUC-HHG:HHG-00325",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00388",
+      "identity": "CO-PUC-HHG:HHG-00388",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00448",
+      "identity": "CO-PUC-HHG:HHG-00448",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00087",
+      "identity": "CO-PUC-HHG:HHG-00087",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00051",
+      "identity": "CO-PUC-HHG:HHG-00051",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00686",
+      "identity": "CO-PUC-HHG:HHG-00686",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00431",
+      "identity": "CO-PUC-HHG:HHG-00431",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00213",
+      "identity": "CO-PUC-HHG:HHG-00213",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00568",
+      "identity": "CO-PUC-HHG:HHG-00568",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00456",
+      "identity": "CO-PUC-HHG:HHG-00456",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00393",
+      "identity": "CO-PUC-HHG:HHG-00393",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00469",
+      "identity": "CO-PUC-HHG:HHG-00469",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00588",
+      "identity": "CO-PUC-HHG:HHG-00588",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00308",
+      "identity": "CO-PUC-HHG:HHG-00308",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00482",
+      "identity": "CO-PUC-HHG:HHG-00482",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00254",
+      "identity": "CO-PUC-HHG:HHG-00254",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00302",
+      "identity": "CO-PUC-HHG:HHG-00302",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00371",
+      "identity": "CO-PUC-HHG:HHG-00371",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00493",
+      "identity": "CO-PUC-HHG:HHG-00493",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00542",
+      "identity": "CO-PUC-HHG:HHG-00542",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00527",
+      "identity": "CO-PUC-HHG:HHG-00527",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00600",
+      "identity": "CO-PUC-HHG:HHG-00600",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00432",
+      "identity": "CO-PUC-HHG:HHG-00432",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00677",
+      "identity": "CO-PUC-HHG:HHG-00677",
+      "status": "REVOKED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00557",
+      "identity": "CO-PUC-HHG:HHG-00557",
+      "status": "SUSPENDED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00754",
+      "identity": "CO-PUC-HHG:HHG-00754",
+      "status": "SUSPENDED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00595",
+      "identity": "CO-PUC-HHG:HHG-00595",
+      "status": "SUSPENDED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00715",
+      "identity": "CO-PUC-HHG:HHG-00715",
+      "status": "SUSPENDED",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "permitNumber": "HHG-00517",
+      "identity": "CO-PUC-HHG:HHG-00517",
+      "status": "SUSPENDED",
+      "usdot": null,
+      "mc": null
+    }
+  ],
+  "distinct_by_status": {
+    "ACTIVE": [
+      "HHG-00001",
+      "HHG-00005",
+      "HHG-00009",
+      "HHG-00019",
+      "HHG-00024",
+      "HHG-00033",
+      "HHG-00036",
+      "HHG-00038",
+      "HHG-00039",
+      "HHG-00040",
+      "HHG-00042",
+      "HHG-00046",
+      "HHG-00058",
+      "HHG-00061",
+      "HHG-00065",
+      "HHG-00069",
+      "HHG-00071",
+      "HHG-00075",
+      "HHG-00078",
+      "HHG-00080",
+      "HHG-00083",
+      "HHG-00096",
+      "HHG-00100",
+      "HHG-00102",
+      "HHG-00113",
+      "HHG-00124",
+      "HHG-00126",
+      "HHG-00128",
+      "HHG-00132",
+      "HHG-00139",
+      "HHG-00140",
+      "HHG-00141",
+      "HHG-00158",
+      "HHG-00163",
+      "HHG-00167",
+      "HHG-00170",
+      "HHG-00173",
+      "HHG-00183",
+      "HHG-00193",
+      "HHG-00199",
+      "HHG-00203",
+      "HHG-00209",
+      "HHG-00210",
+      "HHG-00212",
+      "HHG-00223",
+      "HHG-00225",
+      "HHG-00227",
+      "HHG-00229",
+      "HHG-00236",
+      "HHG-00241",
+      "HHG-00243",
+      "HHG-00256",
+      "HHG-00267",
+      "HHG-00268",
+      "HHG-00269",
+      "HHG-00272",
+      "HHG-00275",
+      "HHG-00281",
+      "HHG-00291",
+      "HHG-00294",
+      "HHG-00296",
+      "HHG-00305",
+      "HHG-00310",
+      "HHG-00313",
+      "HHG-00314",
+      "HHG-00321",
+      "HHG-00322",
+      "HHG-00327",
+      "HHG-00329",
+      "HHG-00337",
+      "HHG-00340",
+      "HHG-00342",
+      "HHG-00346",
+      "HHG-00348",
+      "HHG-00356",
+      "HHG-00369",
+      "HHG-00374",
+      "HHG-00375",
+      "HHG-00376",
+      "HHG-00397",
+      "HHG-00399",
+      "HHG-00400",
+      "HHG-00405",
+      "HHG-00406",
+      "HHG-00408",
+      "HHG-00413",
+      "HHG-00418",
+      "HHG-00419",
+      "HHG-00422",
+      "HHG-00426",
+      "HHG-00434",
+      "HHG-00451",
+      "HHG-00455",
+      "HHG-00459",
+      "HHG-00463",
+      "HHG-00464",
+      "HHG-00472",
+      "HHG-00473",
+      "HHG-00475",
+      "HHG-00477",
+      "HHG-00478",
+      "HHG-00481",
+      "HHG-00487",
+      "HHG-00490",
+      "HHG-00494",
+      "HHG-00499",
+      "HHG-00502",
+      "HHG-00504",
+      "HHG-00508",
+      "HHG-00509",
+      "HHG-00510",
+      "HHG-00513",
+      "HHG-00523",
+      "HHG-00525",
+      "HHG-00532",
+      "HHG-00533",
+      "HHG-00534",
+      "HHG-00540",
+      "HHG-00546",
+      "HHG-00553",
+      "HHG-00558",
+      "HHG-00575",
+      "HHG-00576",
+      "HHG-00577",
+      "HHG-00579",
+      "HHG-00580",
+      "HHG-00581",
+      "HHG-00582",
+      "HHG-00587",
+      "HHG-00589",
+      "HHG-00593",
+      "HHG-00597",
+      "HHG-00606",
+      "HHG-00612",
+      "HHG-00613",
+      "HHG-00619",
+      "HHG-00622",
+      "HHG-00628",
+      "HHG-00632",
+      "HHG-00638",
+      "HHG-00639",
+      "HHG-00643",
+      "HHG-00646",
+      "HHG-00647",
+      "HHG-00649",
+      "HHG-00652",
+      "HHG-00657",
+      "HHG-00660",
+      "HHG-00662",
+      "HHG-00669",
+      "HHG-00673",
+      "HHG-00679",
+      "HHG-00680",
+      "HHG-00681",
+      "HHG-00682",
+      "HHG-00688",
+      "HHG-00691",
+      "HHG-00693",
+      "HHG-00695",
+      "HHG-00698",
+      "HHG-00699",
+      "HHG-00703",
+      "HHG-00705",
+      "HHG-00706",
+      "HHG-00708",
+      "HHG-00711",
+      "HHG-00712",
+      "HHG-00713",
+      "HHG-00714",
+      "HHG-00719",
+      "HHG-00720",
+      "HHG-00723",
+      "HHG-00724",
+      "HHG-00725",
+      "HHG-00727",
+      "HHG-00728",
+      "HHG-00730",
+      "HHG-00731",
+      "HHG-00732",
+      "HHG-00733",
+      "HHG-00734",
+      "HHG-00736",
+      "HHG-00738",
+      "HHG-00739",
+      "HHG-00740",
+      "HHG-00741",
+      "HHG-00743",
+      "HHG-00745",
+      "HHG-00747",
+      "HHG-00750",
+      "HHG-00751",
+      "HHG-00752",
+      "HHG-00753",
+      "HHG-00755",
+      "HHG-00756",
+      "HHG-00757",
+      "HHG-00758",
+      "HHG-00759",
+      "HHG-00760",
+      "HHG-00761",
+      "HHG-00762",
+      "HHG-00763",
+      "HHG-00764"
+    ],
+    "CANCELLED": [
+      "HHG-00007",
+      "HHG-00010",
+      "HHG-00013",
+      "HHG-00016",
+      "HHG-00025",
+      "HHG-00027",
+      "HHG-00029",
+      "HHG-00031",
+      "HHG-00043",
+      "HHG-00045",
+      "HHG-00047",
+      "HHG-00048",
+      "HHG-00050",
+      "HHG-00053",
+      "HHG-00054",
+      "HHG-00056",
+      "HHG-00057",
+      "HHG-00064",
+      "HHG-00078",
+      "HHG-00091",
+      "HHG-00104",
+      "HHG-00107",
+      "HHG-00117",
+      "HHG-00119",
+      "HHG-00123",
+      "HHG-00131",
+      "HHG-00134",
+      "HHG-00143",
+      "HHG-00160",
+      "HHG-00161",
+      "HHG-00176",
+      "HHG-00185",
+      "HHG-00192",
+      "HHG-00195",
+      "HHG-00262",
+      "HHG-00270",
+      "HHG-00279",
+      "HHG-00285",
+      "HHG-00295",
+      "HHG-00315",
+      "HHG-00332",
+      "HHG-00333",
+      "HHG-00334",
+      "HHG-00335",
+      "HHG-00345",
+      "HHG-00347",
+      "HHG-00387",
+      "HHG-00415",
+      "HHG-00439",
+      "HHG-00447",
+      "HHG-00470",
+      "HHG-00480",
+      "HHG-00484",
+      "HHG-00489",
+      "HHG-00507",
+      "HHG-00521",
+      "HHG-00526",
+      "HHG-00528",
+      "HHG-00556",
+      "HHG-00561",
+      "HHG-00563",
+      "HHG-00564",
+      "HHG-00567",
+      "HHG-00569",
+      "HHG-00570",
+      "HHG-00585",
+      "HHG-00602",
+      "HHG-00611",
+      "HHG-00620",
+      "HHG-00635",
+      "HHG-00637",
+      "HHG-00653",
+      "HHG-00661",
+      "HHG-00670",
+      "HHG-00674",
+      "HHG-00678",
+      "HHG-00684",
+      "HHG-00694",
+      "HHG-00697",
+      "HHG-00702",
+      "HHG-00710",
+      "HHG-00721"
+    ],
+    "INACTIVE": [
+      "HHG-00002",
+      "HHG-00003",
+      "HHG-00004",
+      "HHG-00006",
+      "HHG-00011",
+      "HHG-00014",
+      "HHG-00015",
+      "HHG-00017",
+      "HHG-00020",
+      "HHG-00021",
+      "HHG-00023",
+      "HHG-00026",
+      "HHG-00028",
+      "HHG-00030",
+      "HHG-00031",
+      "HHG-00032",
+      "HHG-00034",
+      "HHG-00035",
+      "HHG-00037",
+      "HHG-00041",
+      "HHG-00044",
+      "HHG-00052",
+      "HHG-00054",
+      "HHG-00055",
+      "HHG-00059",
+      "HHG-00062",
+      "HHG-00063",
+      "HHG-00067",
+      "HHG-00072",
+      "HHG-00073",
+      "HHG-00075",
+      "HHG-00077",
+      "HHG-00079",
+      "HHG-00081",
+      "HHG-00082",
+      "HHG-00084",
+      "HHG-00085",
+      "HHG-00086",
+      "HHG-00088",
+      "HHG-00089",
+      "HHG-00090",
+      "HHG-00092",
+      "HHG-00094",
+      "HHG-00098",
+      "HHG-00099",
+      "HHG-00103",
+      "HHG-00105",
+      "HHG-00106",
+      "HHG-00108",
+      "HHG-00111",
+      "HHG-00112",
+      "HHG-00115",
+      "HHG-00116",
+      "HHG-00121",
+      "HHG-00122",
+      "HHG-00127",
+      "HHG-00129",
+      "HHG-00130",
+      "HHG-00133",
+      "HHG-00135",
+      "HHG-00136",
+      "HHG-00137",
+      "HHG-00138",
+      "HHG-00142",
+      "HHG-00148",
+      "HHG-00151",
+      "HHG-00153",
+      "HHG-00154",
+      "HHG-00155",
+      "HHG-00156",
+      "HHG-00161",
+      "HHG-00168",
+      "HHG-00169",
+      "HHG-00172",
+      "HHG-00174",
+      "HHG-00175",
+      "HHG-00177",
+      "HHG-00178",
+      "HHG-00181",
+      "HHG-00184",
+      "HHG-00186",
+      "HHG-00187",
+      "HHG-00188",
+      "HHG-00189",
+      "HHG-00190",
+      "HHG-00191",
+      "HHG-00193",
+      "HHG-00194",
+      "HHG-00197",
+      "HHG-00198",
+      "HHG-00199",
+      "HHG-00200",
+      "HHG-00201",
+      "HHG-00202",
+      "HHG-00204",
+      "HHG-00205",
+      "HHG-00206",
+      "HHG-00207",
+      "HHG-00209",
+      "HHG-00214",
+      "HHG-00215",
+      "HHG-00216",
+      "HHG-00218",
+      "HHG-00219",
+      "HHG-00220",
+      "HHG-00221",
+      "HHG-00222",
+      "HHG-00224",
+      "HHG-00227",
+      "HHG-00228",
+      "HHG-00230",
+      "HHG-00231",
+      "HHG-00233",
+      "HHG-00234",
+      "HHG-00238",
+      "HHG-00244",
+      "HHG-00245",
+      "HHG-00246",
+      "HHG-00248",
+      "HHG-00249",
+      "HHG-00250",
+      "HHG-00251",
+      "HHG-00252",
+      "HHG-00253",
+      "HHG-00254",
+      "HHG-00255",
+      "HHG-00257",
+      "HHG-00259",
+      "HHG-00264",
+      "HHG-00265",
+      "HHG-00266",
+      "HHG-00273",
+      "HHG-00274",
+      "HHG-00276",
+      "HHG-00278",
+      "HHG-00288",
+      "HHG-00292",
+      "HHG-00293",
+      "HHG-00297",
+      "HHG-00298",
+      "HHG-00299",
+      "HHG-00300",
+      "HHG-00301",
+      "HHG-00303",
+      "HHG-00306",
+      "HHG-00318",
+      "HHG-00319",
+      "HHG-00320",
+      "HHG-00324",
+      "HHG-00349",
+      "HHG-00351",
+      "HHG-00353",
+      "HHG-00354",
+      "HHG-00357",
+      "HHG-00358",
+      "HHG-00359",
+      "HHG-00360",
+      "HHG-00361",
+      "HHG-00363",
+      "HHG-00368",
+      "HHG-00372",
+      "HHG-00378",
+      "HHG-00379",
+      "HHG-00380",
+      "HHG-00381",
+      "HHG-00383",
+      "HHG-00384",
+      "HHG-00386",
+      "HHG-00387",
+      "HHG-00389",
+      "HHG-00391",
+      "HHG-00392",
+      "HHG-00394",
+      "HHG-00395",
+      "HHG-00396",
+      "HHG-00397",
+      "HHG-00401",
+      "HHG-00402",
+      "HHG-00403",
+      "HHG-00404",
+      "HHG-00407",
+      "HHG-00414",
+      "HHG-00416",
+      "HHG-00420",
+      "HHG-00423",
+      "HHG-00427",
+      "HHG-00428",
+      "HHG-00435",
+      "HHG-00436",
+      "HHG-00437",
+      "HHG-00438",
+      "HHG-00442",
+      "HHG-00445",
+      "HHG-00446",
+      "HHG-00449",
+      "HHG-00454",
+      "HHG-00458",
+      "HHG-00468",
+      "HHG-00471",
+      "HHG-00476",
+      "HHG-00479",
+      "HHG-00486",
+      "HHG-00488",
+      "HHG-00492",
+      "HHG-00495",
+      "HHG-00496",
+      "HHG-00500",
+      "HHG-00501",
+      "HHG-00503",
+      "HHG-00506",
+      "HHG-00508",
+      "HHG-00511",
+      "HHG-00514",
+      "HHG-00515",
+      "HHG-00516",
+      "HHG-00519",
+      "HHG-00520",
+      "HHG-00522",
+      "HHG-00529",
+      "HHG-00530",
+      "HHG-00531",
+      "HHG-00535",
+      "HHG-00538",
+      "HHG-00539",
+      "HHG-00541",
+      "HHG-00543",
+      "HHG-00544",
+      "HHG-00547",
+      "HHG-00549",
+      "HHG-00551",
+      "HHG-00552",
+      "HHG-00554",
+      "HHG-00555",
+      "HHG-00566",
+      "HHG-00571",
+      "HHG-00572",
+      "HHG-00573",
+      "HHG-00583",
+      "HHG-00584",
+      "HHG-00589",
+      "HHG-00590",
+      "HHG-00592",
+      "HHG-00594",
+      "HHG-00596",
+      "HHG-00598",
+      "HHG-00599",
+      "HHG-00601",
+      "HHG-00605",
+      "HHG-00607",
+      "HHG-00608",
+      "HHG-00609",
+      "HHG-00616",
+      "HHG-00621",
+      "HHG-00624",
+      "HHG-00625",
+      "HHG-00626",
+      "HHG-00627",
+      "HHG-00629",
+      "HHG-00630",
+      "HHG-00633",
+      "HHG-00634",
+      "HHG-00638",
+      "HHG-00642",
+      "HHG-00644",
+      "HHG-00650",
+      "HHG-00651",
+      "HHG-00654",
+      "HHG-00655",
+      "HHG-00658",
+      "HHG-00664",
+      "HHG-00665",
+      "HHG-00666",
+      "HHG-00668",
+      "HHG-00671",
+      "HHG-00672",
+      "HHG-00675",
+      "HHG-00689",
+      "HHG-00692",
+      "HHG-00696",
+      "HHG-00700",
+      "HHG-00701",
+      "HHG-00704",
+      "HHG-00716",
+      "HHG-00722",
+      "HHG-00726",
+      "HHG-00735",
+      "HHG-00737",
+      "HHG-00742",
+      "HHG-00744"
+    ],
+    "INACTIVE-TRANSFERRED": [
+      "HHG-00005",
+      "HHG-00011",
+      "HHG-00037",
+      "HHG-00040",
+      "HHG-00080",
+      "HHG-00134",
+      "HHG-00152",
+      "HHG-00173",
+      "HHG-00192",
+      "HHG-00221",
+      "HHG-00224",
+      "HHG-00252",
+      "HHG-00262",
+      "HHG-00417",
+      "HHG-00450",
+      "HHG-00582",
+      "HHG-00613"
+    ],
+    "REVOKED": [
+      "HHG-00008",
+      "HHG-00016",
+      "HHG-00018",
+      "HHG-00022",
+      "HHG-00035",
+      "HHG-00049",
+      "HHG-00051",
+      "HHG-00060",
+      "HHG-00066",
+      "HHG-00068",
+      "HHG-00070",
+      "HHG-00074",
+      "HHG-00076",
+      "HHG-00087",
+      "HHG-00093",
+      "HHG-00095",
+      "HHG-00097",
+      "HHG-00101",
+      "HHG-00108",
+      "HHG-00109",
+      "HHG-00110",
+      "HHG-00114",
+      "HHG-00118",
+      "HHG-00119",
+      "HHG-00120",
+      "HHG-00125",
+      "HHG-00129",
+      "HHG-00145",
+      "HHG-00146",
+      "HHG-00147",
+      "HHG-00149",
+      "HHG-00150",
+      "HHG-00152",
+      "HHG-00157",
+      "HHG-00159",
+      "HHG-00162",
+      "HHG-00165",
+      "HHG-00166",
+      "HHG-00171",
+      "HHG-00179",
+      "HHG-00180",
+      "HHG-00182",
+      "HHG-00196",
+      "HHG-00208",
+      "HHG-00211",
+      "HHG-00213",
+      "HHG-00217",
+      "HHG-00226",
+      "HHG-00232",
+      "HHG-00235",
+      "HHG-00237",
+      "HHG-00238",
+      "HHG-00239",
+      "HHG-00240",
+      "HHG-00242",
+      "HHG-00247",
+      "HHG-00254",
+      "HHG-00258",
+      "HHG-00260",
+      "HHG-00261",
+      "HHG-00263",
+      "HHG-00271",
+      "HHG-00277",
+      "HHG-00280",
+      "HHG-00282",
+      "HHG-00283",
+      "HHG-00284",
+      "HHG-00286",
+      "HHG-00287",
+      "HHG-00289",
+      "HHG-00290",
+      "HHG-00299",
+      "HHG-00302",
+      "HHG-00304",
+      "HHG-00307",
+      "HHG-00308",
+      "HHG-00309",
+      "HHG-00311",
+      "HHG-00312",
+      "HHG-00316",
+      "HHG-00317",
+      "HHG-00323",
+      "HHG-00325",
+      "HHG-00326",
+      "HHG-00328",
+      "HHG-00330",
+      "HHG-00331",
+      "HHG-00336",
+      "HHG-00338",
+      "HHG-00339",
+      "HHG-00343",
+      "HHG-00344",
+      "HHG-00350",
+      "HHG-00352",
+      "HHG-00355",
+      "HHG-00362",
+      "HHG-00364",
+      "HHG-00365",
+      "HHG-00366",
+      "HHG-00367",
+      "HHG-00370",
+      "HHG-00371",
+      "HHG-00373",
+      "HHG-00377",
+      "HHG-00382",
+      "HHG-00385",
+      "HHG-00388",
+      "HHG-00390",
+      "HHG-00392",
+      "HHG-00393",
+      "HHG-00396",
+      "HHG-00398",
+      "HHG-00409",
+      "HHG-00410",
+      "HHG-00411",
+      "HHG-00412",
+      "HHG-00417",
+      "HHG-00421",
+      "HHG-00424",
+      "HHG-00425",
+      "HHG-00429",
+      "HHG-00430",
+      "HHG-00431",
+      "HHG-00432",
+      "HHG-00433",
+      "HHG-00440",
+      "HHG-00441",
+      "HHG-00443",
+      "HHG-00444",
+      "HHG-00448",
+      "HHG-00450",
+      "HHG-00452",
+      "HHG-00453",
+      "HHG-00456",
+      "HHG-00457",
+      "HHG-00460",
+      "HHG-00461",
+      "HHG-00462",
+      "HHG-00465",
+      "HHG-00466",
+      "HHG-00467",
+      "HHG-00469",
+      "HHG-00474",
+      "HHG-00482",
+      "HHG-00483",
+      "HHG-00485",
+      "HHG-00491",
+      "HHG-00493",
+      "HHG-00497",
+      "HHG-00498",
+      "HHG-00505",
+      "HHG-00512",
+      "HHG-00518",
+      "HHG-00524",
+      "HHG-00527",
+      "HHG-00536",
+      "HHG-00537",
+      "HHG-00542",
+      "HHG-00545",
+      "HHG-00548",
+      "HHG-00550",
+      "HHG-00559",
+      "HHG-00560",
+      "HHG-00562",
+      "HHG-00565",
+      "HHG-00566",
+      "HHG-00568",
+      "HHG-00572",
+      "HHG-00574",
+      "HHG-00578",
+      "HHG-00586",
+      "HHG-00588",
+      "HHG-00591",
+      "HHG-00600",
+      "HHG-00603",
+      "HHG-00604",
+      "HHG-00610",
+      "HHG-00614",
+      "HHG-00615",
+      "HHG-00617",
+      "HHG-00618",
+      "HHG-00619",
+      "HHG-00623",
+      "HHG-00631",
+      "HHG-00636",
+      "HHG-00640",
+      "HHG-00641",
+      "HHG-00645",
+      "HHG-00648",
+      "HHG-00656",
+      "HHG-00659",
+      "HHG-00663",
+      "HHG-00667",
+      "HHG-00676",
+      "HHG-00677",
+      "HHG-00683",
+      "HHG-00685",
+      "HHG-00686",
+      "HHG-00687",
+      "HHG-00690",
+      "HHG-00707",
+      "HHG-00709",
+      "HHG-00717",
+      "HHG-00718",
+      "HHG-00729"
+    ],
+    "SUSPENDED": [
+      "HHG-00517",
+      "HHG-00557",
+      "HHG-00595",
+      "HHG-00715",
+      "HHG-00754"
+    ]
+  }
+}
