@@ -97,6 +97,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/texas',
     '/washington',
     '/colorado',
+    '/virginia',
     '/local-movers',
     '/moving-to',
     ...clusterRoutes,
@@ -130,7 +131,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority:
         route === ''
           ? 1
-          : route === '/local-movers' || route === '/california' || route === '/florida' || route === '/new-jersey' || route === '/texas' || route === '/washington' || route === '/colorado'
+          : route === '/local-movers' || route === '/california' || route === '/florida' || route === '/new-jersey' || route === '/texas' || route === '/washington' || route === '/colorado' || route === '/virginia'
             ? 0.9
             : route === '/verify-dot' || route === '/review'
               ? 0.88

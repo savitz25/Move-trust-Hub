@@ -7,12 +7,14 @@ const STATE_NAMES: Record<string, string> = {
   texas: 'TX',
   washington: 'WA',
   colorado: 'CO',
+  virginia: 'VA',
   fl: 'FL',
   nj: 'NJ',
   ca: 'CA',
   tx: 'TX',
   wa: 'WA',
   co: 'CO',
+  va: 'VA',
 };
 
 function detectState(q: string): string | undefined {
@@ -86,6 +88,46 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       ],
     );
     push('Mode', 'fail_closed');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\blicensed in virginia\b|\bvirginia mover(s)? licensed\b/i.test(q) && !/\b(mile|interstate|household goods|property carrier)\b/i.test(q)) {
+    const query = fail(
+      'Virginia has two state authority types. A Household Goods Carrier certificate is not a Property Carrier permit, and neither is FMCSA interstate authority. Distance matters.',
+      [
+        'Can this company move me more than 30 miles inside Virginia?',
+        'Can this company move household goods 15 miles in Virginia?',
+        'Can this Virginia mover take me to North Carolina?',
+      ],
+    );
+    push('Capability', 'Virginia authority is distance-sensitive');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\b(80|more than 30|over 30|further than 30)\s*miles?\b/i.test(q) && /\bvirginia\b/i.test(q)) {
+    const query = fail(
+      'A Virginia move further than 30 miles from pickup is Household Goods Carrier certificate research. Property Carrier authority is not the matching grain for that distance.',
+      ['What is a Virginia Household Goods Carrier certificate?'],
+    );
+    push('Virginia grain', 'Household Goods Carrier certificate');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\b(15|short|local|30 miles or less|less than 31)\b/i.test(q) && /\bvirginia\b/i.test(q) && /\b(move|mover|miles)\b/i.test(q)) {
+    const query = fail(
+      'A short local Virginia household-goods move may involve a Household Goods Carrier certificate or qualifying Property Carrier authority under current DMV rules. Those credentials are not the same.',
+      ['What is the difference between a Virginia Household Goods certificate and a Property Carrier permit?'],
+    );
+    push('Virginia grain', 'HHG certificate or qualifying Property Carrier permit');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\b(north carolina|out of state|across (a )?state line|interstate)\b/i.test(q) && /\bvirginia\b/i.test(q)) {
+    const query = fail(
+      'Virginia DMV authority is not a substitute for FMCSA interstate operating authority. A USDOT number alone is not proof of active interstate household-goods authority.',
+      ['What is interstate operating authority?', 'Find USDOT 3244649.'],
+    );
+    push('Jurisdiction', 'FMCSA interstate — not Virginia DMV');
     return { raw: q, query, interpretation: lines };
   }
 
