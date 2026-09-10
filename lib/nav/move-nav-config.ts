@@ -60,6 +60,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'PUC household-goods permits & interstate overlay',
       },
       {
+        label: 'Virginia research',
+        href: '/virginia',
+        description: 'DMV Household Goods certificates & Property Carrier permits',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

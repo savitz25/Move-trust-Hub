@@ -48,6 +48,9 @@ export type MoveNetworkMetricsInput = {
   coRevokedHhgListings: number;
   coSuspendedHhgListings: number;
   coSourceAsOf: string;
+  vaHhgListingRows: number;
+  vaPropertyListingRows: number;
+  vaSourceRetrievedAt: string;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -109,12 +112,15 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/texas')) throw new Error('Texas state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/washington')) throw new Error('Washington state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/colorado')) throw new Error('Colorado state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/virginia')) throw new Error('Virginia state intelligence path missing');
   if (input.publishedStateIntelligencePaths.includes('/arizona')) throw new Error('Arizona state intelligence path must not be published');
   if (input.waActiveDirectoryResults <= 0) throw new Error('Washington active directory result count missing');
   if (input.coActiveHhgPermitListings <= 0) throw new Error('Colorado active HHG permit listing count missing');
   if (input.coActiveHhgPermitListings === input.publishableProfiles) {
     throw new Error('Colorado HHG permits must not equal federal directory profiles');
   }
+  if (input.vaHhgListingRows <= 0) throw new Error('Virginia HHG listing count missing');
+  if (input.vaPropertyListingRows <= 0) throw new Error('Virginia Property Carrier listing count missing');
   if (input.localMoverStateLandings === input.publishableProfiles) {
     throw new Error('local-mover landings must not be used as mover counts');
   }
@@ -515,6 +521,48 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'va_dmv_household_goods_carrier_listings',
+      label: 'Virginia DMV Household Goods Carrier listings',
+      value: input.vaHhgListingRows,
+      valueState: 'KNOWN',
+      grain: 'va_dmv_hhg_certificate_listing',
+      denominator: 'Official Authorized Motor Carriers rows typed Household goods carrier',
+      description: 'Household Goods Carrier certificate listings. Not Property Carriers and not unique companies.',
+      coverage: 'Virginia',
+      contributingSourceSystems: ['va_dmv_authorized_carriers'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'Filtered official DMV Authorized Motor Carriers directory (Household goods carrier).',
+        'Not Property Carrier listings, not applicants, not FMCSA profiles, not unique companies.',
+        ['va_dmv_authorized_carriers'],
+        'Virginia intrastate Household Goods Carrier certificates',
+        `Retrieved ${input.vaSourceRetrievedAt}; listing sourceAsOf UNKNOWN`,
+      ),
+    }),
+    metric({
+      key: 'va_dmv_property_carrier_listings',
+      label: 'Virginia DMV Property Carrier listings',
+      value: input.vaPropertyListingRows,
+      valueState: 'KNOWN',
+      grain: 'va_dmv_property_carrier_permit_listing',
+      denominator: 'Official Authorized Motor Carriers rows typed Property carrier',
+      description: 'All Property Carrier authority listings. Not household-goods movers and not local movers.',
+      coverage: 'Virginia',
+      contributingSourceSystems: ['va_dmv_authorized_carriers'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'Filtered official DMV Authorized Motor Carriers directory (Property carrier).',
+        'Not a mover census. Not added to Household Goods Carrier listings.',
+        ['va_dmv_authorized_carriers'],
+        'Virginia Property Carrier permits',
+        `Retrieved ${input.vaSourceRetrievedAt}; listing sourceAsOf UNKNOWN`,
+      ),
+    }),
+    metric({
       key: 'co_puc_revoked_household_goods_permit_listings',
       label: 'Colorado PUC revoked household-goods permit listings',
       value: input.coRevokedHhgListings,
@@ -563,7 +611,7 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, Texas, Washington, and Colorado specialist intelligence pages. Not a count of movers.',
+      description: 'Published specialist state intelligence pages. Not a count of movers.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['move-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
@@ -683,6 +731,12 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       revokedHhgListings: input.coRevokedHhgListings,
       suspendedHhgListings: input.coSuspendedHhgListings,
       sourceAsOf: input.coSourceAsOf.slice(0, 10),
+    },
+    virginia: {
+      hhgListingRows: input.vaHhgListingRows,
+      propertyListingRows: input.vaPropertyListingRows,
+      retrievedAt: input.vaSourceRetrievedAt,
+      sourceAsOf: null,
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

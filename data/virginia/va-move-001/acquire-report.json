@@ -1,0 +1,1710 @@
+{
+  "ticket": "VA-MOVE-001A",
+  "retrieved_at": "2026-09-10T15:05:33.623358+00:00",
+  "sourceAsOf": null,
+  "sourceAsOf_reason": "Authorized Motor Carriers listing has no published source date. retrievedAt is not sourceAsOf.",
+  "listing_term": "Authorized Motor Carriers",
+  "no_authority_bruteforce": true,
+  "household_goods_carrier": {
+    "filter": {
+      "field_carrier_type_target_id": "476"
+    },
+    "expected_type": "Household goods carrier",
+    "url": "https://www.dmv.virginia.gov/businesses/motor-carriers/auth-mc/authorized-motor-carriers?field_carrier_type_target_id=476",
+    "http_last_modified": "Thu, 10 Sep 2026 15:05:33 GMT",
+    "pages_traversed": 8,
+    "page_log": [
+      {
+        "pg": 1,
+        "status": 200,
+        "bytes": 81464,
+        "rows": 25
+      },
+      {
+        "pg": 2,
+        "status": 200,
+        "bytes": 81489,
+        "rows": 25
+      },
+      {
+        "pg": 3,
+        "status": 200,
+        "bytes": 81550,
+        "rows": 25
+      },
+      {
+        "pg": 4,
+        "status": 200,
+        "bytes": 81611,
+        "rows": 25
+      },
+      {
+        "pg": 5,
+        "status": 200,
+        "bytes": 81642,
+        "rows": 25
+      },
+      {
+        "pg": 6,
+        "status": 200,
+        "bytes": 81611,
+        "rows": 25
+      },
+      {
+        "pg": 7,
+        "status": 200,
+        "bytes": 81583,
+        "rows": 25
+      },
+      {
+        "pg": 8,
+        "status": 200,
+        "bytes": 74797,
+        "rows": 17
+      }
+    ],
+    "rows": 192,
+    "distinct_authority_numbers": 192,
+    "duplicate_authority_numbers": [],
+    "null_identifiers": 0,
+    "distinct_labels": 192,
+    "out_of_state": 17
+  },
+  "property_carrier": {
+    "filter": {
+      "field_carrier_type_target_id": "456"
+    },
+    "expected_type": "Property carrier",
+    "url": "https://www.dmv.virginia.gov/businesses/motor-carriers/auth-mc/authorized-motor-carriers?field_carrier_type_target_id=456",
+    "http_last_modified": "Thu, 10 Sep 2026 15:05:41 GMT",
+    "pages_traversed": 197,
+    "page_log": [
+      {
+        "pg": 1,
+        "status": 200,
+        "bytes": 81861,
+        "rows": 25
+      },
+      {
+        "pg": 2,
+        "status": 200,
+        "bytes": 81980,
+        "rows": 25
+      },
+      {
+        "pg": 3,
+        "status": 200,
+        "bytes": 82048,
+        "rows": 25
+      },
+      {
+        "pg": 4,
+        "status": 200,
+        "bytes": 82033,
+        "rows": 25
+      },
+      {
+        "pg": 5,
+        "status": 200,
+        "bytes": 82185,
+        "rows": 25
+      },
+      {
+        "pg": 6,
+        "status": 200,
+        "bytes": 82600,
+        "rows": 25
+      },
+      {
+        "pg": 7,
+        "status": 200,
+        "bytes": 82579,
+        "rows": 25
+      },
+      {
+        "pg": 8,
+        "status": 200,
+        "bytes": 82472,
+        "rows": 25
+      },
+      {
+        "pg": 9,
+        "status": 200,
+        "bytes": 82638,
+        "rows": 25
+      },
+      {
+        "pg": 10,
+        "status": 200,
+        "bytes": 82600,
+        "rows": 25
+      },
+      {
+        "pg": 11,
+        "status": 200,
+        "bytes": 82470,
+        "rows": 25
+      },
+      {
+        "pg": 12,
+        "status": 200,
+        "bytes": 82629,
+        "rows": 25
+      },
+      {
+        "pg": 13,
+        "status": 200,
+        "bytes": 82664,
+        "rows": 25
+      },
+      {
+        "pg": 14,
+        "status": 200,
+        "bytes": 82547,
+        "rows": 25
+      },
+      {
+        "pg": 15,
+        "status": 200,
+        "bytes": 82587,
+        "rows": 25
+      },
+      {
+        "pg": 16,
+        "status": 200,
+        "bytes": 82542,
+        "rows": 25
+      },
+      {
+        "pg": 17,
+        "status": 200,
+        "bytes": 82542,
+        "rows": 25
+      },
+      {
+        "pg": 18,
+        "status": 200,
+        "bytes": 82604,
+        "rows": 25
+      },
+      {
+        "pg": 19,
+        "status": 200,
+        "bytes": 82626,
+        "rows": 25
+      },
+      {
+        "pg": 20,
+        "status": 200,
+        "bytes": 82593,
+        "rows": 25
+      },
+      {
+        "pg": 21,
+        "status": 200,
+        "bytes": 82537,
+        "rows": 25
+      },
+      {
+        "pg": 22,
+        "status": 200,
+        "bytes": 82658,
+        "rows": 25
+      },
+      {
+        "pg": 23,
+        "status": 200,
+        "bytes": 82549,
+        "rows": 25
+      },
+      {
+        "pg": 24,
+        "status": 200,
+        "bytes": 82569,
+        "rows": 25
+      },
+      {
+        "pg": 25,
+        "status": 200,
+        "bytes": 82620,
+        "rows": 25
+      },
+      {
+        "pg": 26,
+        "status": 200,
+        "bytes": 82588,
+        "rows": 25
+      },
+      {
+        "pg": 27,
+        "status": 200,
+        "bytes": 82506,
+        "rows": 25
+      },
+      {
+        "pg": 28,
+        "status": 200,
+        "bytes": 82576,
+        "rows": 25
+      },
+      {
+        "pg": 29,
+        "status": 200,
+        "bytes": 82518,
+        "rows": 25
+      },
+      {
+        "pg": 30,
+        "status": 200,
+        "bytes": 82527,
+        "rows": 25
+      },
+      {
+        "pg": 31,
+        "status": 200,
+        "bytes": 82552,
+        "rows": 25
+      },
+      {
+        "pg": 32,
+        "status": 200,
+        "bytes": 82551,
+        "rows": 25
+      },
+      {
+        "pg": 33,
+        "status": 200,
+        "bytes": 82539,
+        "rows": 25
+      },
+      {
+        "pg": 34,
+        "status": 200,
+        "bytes": 82598,
+        "rows": 25
+      },
+      {
+        "pg": 35,
+        "status": 200,
+        "bytes": 82724,
+        "rows": 25
+      },
+      {
+        "pg": 36,
+        "status": 200,
+        "bytes": 82603,
+        "rows": 25
+      },
+      {
+        "pg": 37,
+        "status": 200,
+        "bytes": 82661,
+        "rows": 25
+      },
+      {
+        "pg": 38,
+        "status": 200,
+        "bytes": 82636,
+        "rows": 25
+      },
+      {
+        "pg": 39,
+        "status": 200,
+        "bytes": 82634,
+        "rows": 25
+      },
+      {
+        "pg": 40,
+        "status": 200,
+        "bytes": 82631,
+        "rows": 25
+      },
+      {
+        "pg": 41,
+        "status": 200,
+        "bytes": 82588,
+        "rows": 25
+      },
+      {
+        "pg": 42,
+        "status": 200,
+        "bytes": 82652,
+        "rows": 25
+      },
+      {
+        "pg": 43,
+        "status": 200,
+        "bytes": 82598,
+        "rows": 25
+      },
+      {
+        "pg": 44,
+        "status": 200,
+        "bytes": 82701,
+        "rows": 25
+      },
+      {
+        "pg": 45,
+        "status": 200,
+        "bytes": 82513,
+        "rows": 25
+      },
+      {
+        "pg": 46,
+        "status": 200,
+        "bytes": 82668,
+        "rows": 25
+      },
+      {
+        "pg": 47,
+        "status": 200,
+        "bytes": 82573,
+        "rows": 25
+      },
+      {
+        "pg": 48,
+        "status": 200,
+        "bytes": 82742,
+        "rows": 25
+      },
+      {
+        "pg": 49,
+        "status": 200,
+        "bytes": 82696,
+        "rows": 25
+      },
+      {
+        "pg": 50,
+        "status": 200,
+        "bytes": 82498,
+        "rows": 25
+      },
+      {
+        "pg": 51,
+        "status": 200,
+        "bytes": 82622,
+        "rows": 25
+      },
+      {
+        "pg": 52,
+        "status": 200,
+        "bytes": 82575,
+        "rows": 25
+      },
+      {
+        "pg": 53,
+        "status": 200,
+        "bytes": 82598,
+        "rows": 25
+      },
+      {
+        "pg": 54,
+        "status": 200,
+        "bytes": 82675,
+        "rows": 25
+      },
+      {
+        "pg": 55,
+        "status": 200,
+        "bytes": 82677,
+        "rows": 25
+      },
+      {
+        "pg": 56,
+        "status": 200,
+        "bytes": 82484,
+        "rows": 25
+      },
+      {
+        "pg": 57,
+        "status": 200,
+        "bytes": 82421,
+        "rows": 25
+      },
+      {
+        "pg": 58,
+        "status": 200,
+        "bytes": 82642,
+        "rows": 25
+      },
+      {
+        "pg": 59,
+        "status": 200,
+        "bytes": 82513,
+        "rows": 25
+      },
+      {
+        "pg": 60,
+        "status": 200,
+        "bytes": 82547,
+        "rows": 25
+      },
+      {
+        "pg": 61,
+        "status": 200,
+        "bytes": 82537,
+        "rows": 25
+      },
+      {
+        "pg": 62,
+        "status": 200,
+        "bytes": 82412,
+        "rows": 25
+      },
+      {
+        "pg": 63,
+        "status": 200,
+        "bytes": 82556,
+        "rows": 25
+      },
+      {
+        "pg": 64,
+        "status": 200,
+        "bytes": 82616,
+        "rows": 25
+      },
+      {
+        "pg": 65,
+        "status": 200,
+        "bytes": 82550,
+        "rows": 25
+      },
+      {
+        "pg": 66,
+        "status": 200,
+        "bytes": 82479,
+        "rows": 25
+      },
+      {
+        "pg": 67,
+        "status": 200,
+        "bytes": 82583,
+        "rows": 25
+      },
+      {
+        "pg": 68,
+        "status": 200,
+        "bytes": 82664,
+        "rows": 25
+      },
+      {
+        "pg": 69,
+        "status": 200,
+        "bytes": 82593,
+        "rows": 25
+      },
+      {
+        "pg": 70,
+        "status": 200,
+        "bytes": 82608,
+        "rows": 25
+      },
+      {
+        "pg": 71,
+        "status": 200,
+        "bytes": 82526,
+        "rows": 25
+      },
+      {
+        "pg": 72,
+        "status": 200,
+        "bytes": 82578,
+        "rows": 25
+      },
+      {
+        "pg": 73,
+        "status": 200,
+        "bytes": 82549,
+        "rows": 25
+      },
+      {
+        "pg": 74,
+        "status": 200,
+        "bytes": 82688,
+        "rows": 25
+      },
+      {
+        "pg": 75,
+        "status": 200,
+        "bytes": 82600,
+        "rows": 25
+      },
+      {
+        "pg": 76,
+        "status": 200,
+        "bytes": 82551,
+        "rows": 25
+      },
+      {
+        "pg": 77,
+        "status": 200,
+        "bytes": 82648,
+        "rows": 25
+      },
+      {
+        "pg": 78,
+        "status": 200,
+        "bytes": 82656,
+        "rows": 25
+      },
+      {
+        "pg": 79,
+        "status": 200,
+        "bytes": 82489,
+        "rows": 25
+      },
+      {
+        "pg": 80,
+        "status": 200,
+        "bytes": 82606,
+        "rows": 25
+      },
+      {
+        "pg": 81,
+        "status": 200,
+        "bytes": 82555,
+        "rows": 25
+      },
+      {
+        "pg": 82,
+        "status": 200,
+        "bytes": 82558,
+        "rows": 25
+      },
+      {
+        "pg": 83,
+        "status": 200,
+        "bytes": 82637,
+        "rows": 25
+      },
+      {
+        "pg": 84,
+        "status": 200,
+        "bytes": 82566,
+        "rows": 25
+      },
+      {
+        "pg": 85,
+        "status": 200,
+        "bytes": 82642,
+        "rows": 25
+      },
+      {
+        "pg": 86,
+        "status": 200,
+        "bytes": 82610,
+        "rows": 25
+      },
+      {
+        "pg": 87,
+        "status": 200,
+        "bytes": 82482,
+        "rows": 25
+      },
+      {
+        "pg": 88,
+        "status": 200,
+        "bytes": 82491,
+        "rows": 25
+      },
+      {
+        "pg": 89,
+        "status": 200,
+        "bytes": 82454,
+        "rows": 25
+      },
+      {
+        "pg": 90,
+        "status": 200,
+        "bytes": 82680,
+        "rows": 25
+      },
+      {
+        "pg": 91,
+        "status": 200,
+        "bytes": 82711,
+        "rows": 25
+      },
+      {
+        "pg": 92,
+        "status": 200,
+        "bytes": 82450,
+        "rows": 25
+      },
+      {
+        "pg": 93,
+        "status": 200,
+        "bytes": 82527,
+        "rows": 25
+      },
+      {
+        "pg": 94,
+        "status": 200,
+        "bytes": 82523,
+        "rows": 25
+      },
+      {
+        "pg": 95,
+        "status": 200,
+        "bytes": 82514,
+        "rows": 25
+      },
+      {
+        "pg": 96,
+        "status": 200,
+        "bytes": 82627,
+        "rows": 25
+      },
+      {
+        "pg": 97,
+        "status": 200,
+        "bytes": 82540,
+        "rows": 25
+      },
+      {
+        "pg": 98,
+        "status": 200,
+        "bytes": 82590,
+        "rows": 25
+      },
+      {
+        "pg": 99,
+        "status": 200,
+        "bytes": 82573,
+        "rows": 25
+      },
+      {
+        "pg": 100,
+        "status": 200,
+        "bytes": 82507,
+        "rows": 25
+      },
+      {
+        "pg": 101,
+        "status": 200,
+        "bytes": 82667,
+        "rows": 25
+      },
+      {
+        "pg": 102,
+        "status": 200,
+        "bytes": 82513,
+        "rows": 25
+      },
+      {
+        "pg": 103,
+        "status": 200,
+        "bytes": 82577,
+        "rows": 25
+      },
+      {
+        "pg": 104,
+        "status": 200,
+        "bytes": 82626,
+        "rows": 25
+      },
+      {
+        "pg": 105,
+        "status": 200,
+        "bytes": 82582,
+        "rows": 25
+      },
+      {
+        "pg": 106,
+        "status": 200,
+        "bytes": 82522,
+        "rows": 25
+      },
+      {
+        "pg": 107,
+        "status": 200,
+        "bytes": 82599,
+        "rows": 25
+      },
+      {
+        "pg": 108,
+        "status": 200,
+        "bytes": 82595,
+        "rows": 25
+      },
+      {
+        "pg": 109,
+        "status": 200,
+        "bytes": 82654,
+        "rows": 25
+      },
+      {
+        "pg": 110,
+        "status": 200,
+        "bytes": 82684,
+        "rows": 25
+      },
+      {
+        "pg": 111,
+        "status": 200,
+        "bytes": 82675,
+        "rows": 25
+      },
+      {
+        "pg": 112,
+        "status": 200,
+        "bytes": 82707,
+        "rows": 25
+      },
+      {
+        "pg": 113,
+        "status": 200,
+        "bytes": 82578,
+        "rows": 25
+      },
+      {
+        "pg": 114,
+        "status": 200,
+        "bytes": 82671,
+        "rows": 25
+      },
+      {
+        "pg": 115,
+        "status": 200,
+        "bytes": 82574,
+        "rows": 25
+      },
+      {
+        "pg": 116,
+        "status": 200,
+        "bytes": 82507,
+        "rows": 25
+      },
+      {
+        "pg": 117,
+        "status": 200,
+        "bytes": 82610,
+        "rows": 25
+      },
+      {
+        "pg": 118,
+        "status": 200,
+        "bytes": 82613,
+        "rows": 25
+      },
+      {
+        "pg": 119,
+        "status": 200,
+        "bytes": 82583,
+        "rows": 25
+      },
+      {
+        "pg": 120,
+        "status": 200,
+        "bytes": 82663,
+        "rows": 25
+      },
+      {
+        "pg": 121,
+        "status": 200,
+        "bytes": 82580,
+        "rows": 25
+      },
+      {
+        "pg": 122,
+        "status": 200,
+        "bytes": 82493,
+        "rows": 25
+      },
+      {
+        "pg": 123,
+        "status": 200,
+        "bytes": 82692,
+        "rows": 25
+      },
+      {
+        "pg": 124,
+        "status": 200,
+        "bytes": 82658,
+        "rows": 25
+      },
+      {
+        "pg": 125,
+        "status": 200,
+        "bytes": 82732,
+        "rows": 25
+      },
+      {
+        "pg": 126,
+        "status": 200,
+        "bytes": 82554,
+        "rows": 25
+      },
+      {
+        "pg": 127,
+        "status": 200,
+        "bytes": 82644,
+        "rows": 25
+      },
+      {
+        "pg": 128,
+        "status": 200,
+        "bytes": 82555,
+        "rows": 25
+      },
+      {
+        "pg": 129,
+        "status": 200,
+        "bytes": 82599,
+        "rows": 25
+      },
+      {
+        "pg": 130,
+        "status": 200,
+        "bytes": 82624,
+        "rows": 25
+      },
+      {
+        "pg": 131,
+        "status": 200,
+        "bytes": 82604,
+        "rows": 25
+      },
+      {
+        "pg": 132,
+        "status": 200,
+        "bytes": 82472,
+        "rows": 25
+      },
+      {
+        "pg": 133,
+        "status": 200,
+        "bytes": 82611,
+        "rows": 25
+      },
+      {
+        "pg": 134,
+        "status": 200,
+        "bytes": 82684,
+        "rows": 25
+      },
+      {
+        "pg": 135,
+        "status": 200,
+        "bytes": 82592,
+        "rows": 25
+      },
+      {
+        "pg": 136,
+        "status": 200,
+        "bytes": 82630,
+        "rows": 25
+      },
+      {
+        "pg": 137,
+        "status": 200,
+        "bytes": 82641,
+        "rows": 25
+      },
+      {
+        "pg": 138,
+        "status": 200,
+        "bytes": 82575,
+        "rows": 25
+      },
+      {
+        "pg": 139,
+        "status": 200,
+        "bytes": 82638,
+        "rows": 25
+      },
+      {
+        "pg": 140,
+        "status": 200,
+        "bytes": 82580,
+        "rows": 25
+      },
+      {
+        "pg": 141,
+        "status": 200,
+        "bytes": 82557,
+        "rows": 25
+      },
+      {
+        "pg": 142,
+        "status": 200,
+        "bytes": 82763,
+        "rows": 25
+      },
+      {
+        "pg": 143,
+        "status": 200,
+        "bytes": 82528,
+        "rows": 25
+      },
+      {
+        "pg": 144,
+        "status": 200,
+        "bytes": 82734,
+        "rows": 25
+      },
+      {
+        "pg": 145,
+        "status": 200,
+        "bytes": 82551,
+        "rows": 25
+      },
+      {
+        "pg": 146,
+        "status": 200,
+        "bytes": 82631,
+        "rows": 25
+      },
+      {
+        "pg": 147,
+        "status": 200,
+        "bytes": 82652,
+        "rows": 25
+      },
+      {
+        "pg": 148,
+        "status": 200,
+        "bytes": 82657,
+        "rows": 25
+      },
+      {
+        "pg": 149,
+        "status": 200,
+        "bytes": 82613,
+        "rows": 25
+      },
+      {
+        "pg": 150,
+        "status": 200,
+        "bytes": 82635,
+        "rows": 25
+      },
+      {
+        "pg": 151,
+        "status": 200,
+        "bytes": 82731,
+        "rows": 25
+      },
+      {
+        "pg": 152,
+        "status": 200,
+        "bytes": 82560,
+        "rows": 25
+      },
+      {
+        "pg": 153,
+        "status": 200,
+        "bytes": 82562,
+        "rows": 25
+      },
+      {
+        "pg": 154,
+        "status": 200,
+        "bytes": 82631,
+        "rows": 25
+      },
+      {
+        "pg": 155,
+        "status": 200,
+        "bytes": 82680,
+        "rows": 25
+      },
+      {
+        "pg": 156,
+        "status": 200,
+        "bytes": 82642,
+        "rows": 25
+      },
+      {
+        "pg": 157,
+        "status": 200,
+        "bytes": 82745,
+        "rows": 25
+      },
+      {
+        "pg": 158,
+        "status": 200,
+        "bytes": 82542,
+        "rows": 25
+      },
+      {
+        "pg": 159,
+        "status": 200,
+        "bytes": 82474,
+        "rows": 25
+      },
+      {
+        "pg": 160,
+        "status": 200,
+        "bytes": 82595,
+        "rows": 25
+      },
+      {
+        "pg": 161,
+        "status": 200,
+        "bytes": 82670,
+        "rows": 25
+      },
+      {
+        "pg": 162,
+        "status": 200,
+        "bytes": 82662,
+        "rows": 25
+      },
+      {
+        "pg": 163,
+        "status": 200,
+        "bytes": 82667,
+        "rows": 25
+      },
+      {
+        "pg": 164,
+        "status": 200,
+        "bytes": 82671,
+        "rows": 25
+      },
+      {
+        "pg": 165,
+        "status": 200,
+        "bytes": 82679,
+        "rows": 25
+      },
+      {
+        "pg": 166,
+        "status": 200,
+        "bytes": 82575,
+        "rows": 25
+      },
+      {
+        "pg": 167,
+        "status": 200,
+        "bytes": 82614,
+        "rows": 25
+      },
+      {
+        "pg": 168,
+        "status": 200,
+        "bytes": 82669,
+        "rows": 25
+      },
+      {
+        "pg": 169,
+        "status": 200,
+        "bytes": 82623,
+        "rows": 25
+      },
+      {
+        "pg": 170,
+        "status": 200,
+        "bytes": 82716,
+        "rows": 25
+      },
+      {
+        "pg": 171,
+        "status": 200,
+        "bytes": 82677,
+        "rows": 25
+      },
+      {
+        "pg": 172,
+        "status": 200,
+        "bytes": 82628,
+        "rows": 25
+      },
+      {
+        "pg": 173,
+        "status": 200,
+        "bytes": 82592,
+        "rows": 25
+      },
+      {
+        "pg": 174,
+        "status": 200,
+        "bytes": 82709,
+        "rows": 25
+      },
+      {
+        "pg": 175,
+        "status": 200,
+        "bytes": 82713,
+        "rows": 25
+      },
+      {
+        "pg": 176,
+        "status": 200,
+        "bytes": 82679,
+        "rows": 25
+      },
+      {
+        "pg": 177,
+        "status": 200,
+        "bytes": 82716,
+        "rows": 25
+      },
+      {
+        "pg": 178,
+        "status": 200,
+        "bytes": 82699,
+        "rows": 25
+      },
+      {
+        "pg": 179,
+        "status": 200,
+        "bytes": 82584,
+        "rows": 25
+      },
+      {
+        "pg": 180,
+        "status": 200,
+        "bytes": 82489,
+        "rows": 25
+      },
+      {
+        "pg": 181,
+        "status": 200,
+        "bytes": 82712,
+        "rows": 25
+      },
+      {
+        "pg": 182,
+        "status": 200,
+        "bytes": 82646,
+        "rows": 25
+      },
+      {
+        "pg": 183,
+        "status": 200,
+        "bytes": 82543,
+        "rows": 25
+      },
+      {
+        "pg": 184,
+        "status": 200,
+        "bytes": 82523,
+        "rows": 25
+      },
+      {
+        "pg": 185,
+        "status": 200,
+        "bytes": 82616,
+        "rows": 25
+      },
+      {
+        "pg": 186,
+        "status": 200,
+        "bytes": 82642,
+        "rows": 25
+      },
+      {
+        "pg": 187,
+        "status": 200,
+        "bytes": 82635,
+        "rows": 25
+      },
+      {
+        "pg": 188,
+        "status": 200,
+        "bytes": 82518,
+        "rows": 25
+      },
+      {
+        "pg": 189,
+        "status": 200,
+        "bytes": 82669,
+        "rows": 25
+      },
+      {
+        "pg": 190,
+        "status": 200,
+        "bytes": 82620,
+        "rows": 25
+      },
+      {
+        "pg": 191,
+        "status": 200,
+        "bytes": 82571,
+        "rows": 25
+      },
+      {
+        "pg": 192,
+        "status": 200,
+        "bytes": 82624,
+        "rows": 25
+      },
+      {
+        "pg": 193,
+        "status": 200,
+        "bytes": 82253,
+        "rows": 25
+      },
+      {
+        "pg": 194,
+        "status": 200,
+        "bytes": 82218,
+        "rows": 25
+      },
+      {
+        "pg": 195,
+        "status": 200,
+        "bytes": 82135,
+        "rows": 25
+      },
+      {
+        "pg": 196,
+        "status": 200,
+        "bytes": 82121,
+        "rows": 25
+      },
+      {
+        "pg": 197,
+        "status": 200,
+        "bytes": 74609,
+        "rows": 16
+      }
+    ],
+    "rows": 4916,
+    "distinct_authority_numbers": 4915,
+    "duplicate_authority_numbers": [
+      "1276"
+    ],
+    "null_identifiers": 1,
+    "distinct_labels": 4915,
+    "out_of_state": 165
+  },
+  "cross_authority": {
+    "exact_authority_number_overlap": [
+      "180",
+      "228",
+      "266",
+      "314",
+      "343",
+      "443",
+      "460",
+      "521",
+      "523",
+      "554",
+      "566",
+      "579",
+      "642",
+      "657",
+      "672",
+      "679",
+      "684",
+      "694",
+      "712",
+      "718",
+      "748",
+      "749",
+      "776",
+      "821",
+      "832"
+    ],
+    "normalized_name_overlap_review_only": [
+      "1 800 PACK RAT LLC",
+      "2GT INC",
+      "A E MOVING AND STORAGE INC",
+      "A SURE MOVE INC",
+      "ABLE MOVING AND STORAGE INC",
+      "ACE PIANO MOVING COMPANY INC",
+      "ALL IN ONE MOVING STORAGE INC",
+      "AMERICAN MOVING STORAGE INC",
+      "AMERICAN OF VIRGINIA INC",
+      "AMERICAN SMART MOVING SERVICES LLC",
+      "AYRO INTERNATIONAL LLC",
+      "BLUERIDGE LOGISTICS LLC",
+      "BOBBY E HARRIS MOVING LLC",
+      "BOXCART INC",
+      "BRAUNS INTERNATIONAL INC",
+      "BROOKS TRANSFER STORAGE CO INC VA",
+      "C J SYSTEMS LLC",
+      "CENTRE CARRIERS CORP",
+      "CLARK TRANSFER STORAGE CO C",
+      "CLINTON S TRANSFER STORAGE INC",
+      "COLEMAN AMERICAN MOVING SERVICES INC",
+      "COLLEGIATE MOVERS INC",
+      "COLLINS BROTHERS MOVING STORAGE LLC",
+      "COMMONWEALTH TRANSFER STORAGE INC",
+      "COVAN WORLD WIDE MOVING INCORPORATED",
+      "CRAIG VAN LINES INC",
+      "D1 MOVING LLC",
+      "EUREKA VAN STORAGE CO INC",
+      "FERGUSON TRANSFER STORAGE CORP",
+      "FGF ENTERPRISES INC",
+      "FIVE STAR MOVING TRANSPORTATION SERVICES L L C",
+      "G J MOVING LLC",
+      "GENTLE GIANT MOVING COMPANY DC LLC",
+      "GLOBAL MOVING SYSTEMS LLC",
+      "HARRISONS MOVING STORAGE CO INC",
+      "HERITAGE MOVING AND STORAGE INC",
+      "HILLDRUP COMPANIES INC",
+      "HILLPOINT EXPRESS LLC",
+      "HOMETOWN SERVICES LLC",
+      "HUNKS MOVING LLC",
+      "JAWCS LLC",
+      "JOE MOHOLLAND INC",
+      "LAWRENCE TRANSPORTATION SYSTEMS INC",
+      "LEON WHITE MOVERS INC",
+      "MIGHTEE MOVERS LLC",
+      "MITCHELL S MOVERS LLC",
+      "MODERN TRANSPORTATION SERVICES INC",
+      "MOODY MOVING AND STORAGE INC",
+      "MPAS MOVING SPRINGFIELD LLC",
+      "MY GUYS MOVING STORAGE INC",
+      "NBF CHARLOTTESVILLE LLC",
+      "NBF NEWPORT NEWS LLC",
+      "NBF NORFOLK LLC",
+      "NBF RICHMOND LLC",
+      "NBF VIRGINIA BEACH LLC",
+      "O K MOVING AND STORAGE CO",
+      "PATTONS MOVERS INC",
+      "PAXTON VAN LINES INCORPORATED",
+      "PREMIER RELOCATION SERVICES INC",
+      "PROFESSIONAL MOVERS INC",
+      "PROFESSIONAL MOVING STORAGE INC",
+      "PULLEN MOVING COMPANY INC",
+      "QUALITY MOVING SERVICES INC",
+      "QUICK REACTION MOVERS LLC",
+      "R J CONSOLIDATORS INC",
+      "R J LAMBERT INC",
+      "RANDALL MOVERS INCORPORATED",
+      "READS MOVING SYSTEMS OF RICHMOND INC",
+      "REGENCY MOVING STORAGE CO INC",
+      "RELOCATION SYSTEMS L L C",
+      "SECURITY STORAGE VAN COMPANY OF NORFOLK VIRGINIA INC",
+      "SNT FOOD AND BEVERAGE INC",
+      "SPIKE INC",
+      "STUDENT SERVICES MOVING CO INC",
+      "TANNER INTERNATIONAL FORWARDING INC",
+      "TANNER VAN LINES INC",
+      "TGH MOVING SERVICES LLC",
+      "THE OTHER MOVING COMPANY INC",
+      "TIDEWATER MOVING AND HAULING LLC",
+      "TOWN AND COUNTRY MOVERS INC",
+      "TRIUMPH MOVING STORAGE INC",
+      "VICTORY VAN CORPORATION",
+      "WES STEWART CORPORATION THE"
+    ],
+    "no_unsafe_auto_merge": true
+  },
+  "applications": {
+    "url": "https://www.dmv.virginia.gov/businesses/motor-carriers/auth-mc",
+    "http_status": 200,
+    "notice_rows": 52,
+    "household_goods_notices": 2,
+    "records": [
+      {
+        "posted": "09/10/2026",
+        "applicant": "Pollyana Transportation LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/10/2026",
+        "applicant": "Chapters Transportation LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/09/2026",
+        "applicant": "RIDE BOOK FAIRFAX LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/09/2026",
+        "applicant": "Karb AnchorPoint Medical Transportation LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/09/2026",
+        "applicant": "Ewan Transports LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/08/2026",
+        "applicant": "Alex Care LLC",
+        "authority_requested": "Non-Emergency Medical Transportation : IM",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/08/2026",
+        "applicant": "Black Tie Luxury LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/08/2026",
+        "applicant": "GLIDEWAY LLC",
+        "authority_requested": "Transportation Network Company : TN",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/08/2026",
+        "applicant": "14 Stars Executive Transportation LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/08/2026",
+        "applicant": "Bodhi Group Inc",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/08/2026",
+        "applicant": "My Favorite Transportation NEMT LLC",
+        "authority_requested": "Non-Emergency Medical Transportation : IM",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/08/2026",
+        "applicant": "AXIS TRANSPORT INCORPORATED",
+        "authority_requested": "Non-Emergency Medical Transportation : IM",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/08/2026",
+        "applicant": "MAXIMA TRANSPORT LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/04/2026",
+        "applicant": "Alem LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/04/2026",
+        "applicant": "Asem LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/03/2026",
+        "applicant": "NOIR EXECUTIVE LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/03/2026",
+        "applicant": "Chapters Transportation LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/03/2026",
+        "applicant": "PINNACLE MEDICAL TRANSPORT LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/02/2026",
+        "applicant": "PrimeCare Moving Services Inc.",
+        "authority_requested": "Household Goods Carrier : HG",
+        "is_household_goods": true
+      },
+      {
+        "posted": "09/02/2026",
+        "applicant": "Supreme Rides LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/02/2026",
+        "applicant": "LUCY TRANSPORTATION INC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/02/2026",
+        "applicant": "FAITHCARE TRANSPORTATION LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/01/2026",
+        "applicant": "GENIUS LIMO LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/01/2026",
+        "applicant": "MODERN TRANSPORTATION LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/01/2026",
+        "applicant": "Upward Transport LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/01/2026",
+        "applicant": "WOLLOYE LIMO LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/01/2026",
+        "applicant": "Kotaloglu Black Luxury LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/01/2026",
+        "applicant": "Maldon Medical Transportation LLC",
+        "authority_requested": "Non-Emergency Medical Transportation : IM",
+        "is_household_goods": false
+      },
+      {
+        "posted": "09/01/2026",
+        "applicant": "PKTR Transportation LLC dba PKTR Elite Rides",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/31/2026",
+        "applicant": "K Street Limo LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/31/2026",
+        "applicant": "PEGASUS CHAUFFEUR SERVICES LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/31/2026",
+        "applicant": "Affiliated Movers of Oklahoma City LLC",
+        "authority_requested": "Household Goods Carrier : HG",
+        "is_household_goods": true
+      },
+      {
+        "posted": "08/31/2026",
+        "applicant": "Omnipresent Transport Services LLC",
+        "authority_requested": "Non-Emergency Medical Transportation : IM",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/31/2026",
+        "applicant": "PUBLIC HEALTH CORPS LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/31/2026",
+        "applicant": "PIRANOGLU L.L.C.",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "MEDIGO TRANSPORTATION LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "EBL TRANSPORTATION LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "AM TRANSPORTATION SERVICE LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "RideCare Inc.",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "Insignia Transportation LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "Kima Limo LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "Tetahe LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "Sada Limo LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "Limoxpress LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/28/2026",
+        "applicant": "Cleopatra VIP Transportation LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/27/2026",
+        "applicant": "Universal Fortune LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/27/2026",
+        "applicant": "Competency Care Connect Transportation LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/27/2026",
+        "applicant": "VILLANES GROUP LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/27/2026",
+        "applicant": "Havilah Medical Transport LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/27/2026",
+        "applicant": "NOUN LOGISTICS LLC",
+        "authority_requested": "Common Carrier of Passengers Over Irregular Routes : IR",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/26/2026",
+        "applicant": "AAMIR KHAN LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      },
+      {
+        "posted": "08/26/2026",
+        "applicant": "EQUINOX LIMOUSINE LLC",
+        "authority_requested": "Contract Passenger Carrier : PC",
+        "is_household_goods": false
+      }
+    ],
+    "not_added_to_authorized_roster": true
+  }
+}

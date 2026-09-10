@@ -45,6 +45,8 @@ export type MetricGrain =
   | 'co_puc_hhg_active_permit_listing'
   | 'co_puc_hhg_revoked_status_observation'
   | 'co_puc_hhg_suspended_status_observation'
+  | 'va_dmv_hhg_certificate_listing'
+  | 'va_dmv_property_carrier_permit_listing'
   | 'published_state_intelligence_page'
   | 'florida_research_county_landing'
   | 'local_movers_state_landing';
@@ -144,6 +146,12 @@ export type MoveNetworkMetricsV1 = {
     revokedHhgListings: number;
     suspendedHhgListings: number;
     sourceAsOf: string;
+  };
+  virginia: {
+    hhgListingRows: number;
+    propertyListingRows: number;
+    retrievedAt: string;
+    sourceAsOf: null;
   };
   network: {
     publishedStateIntelligencePages: number;
