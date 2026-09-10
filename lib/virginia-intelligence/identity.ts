@@ -31,3 +31,12 @@ export function virginiaMoveIdentity(kind: 'HHG' | 'PROP', number: string): stri
   if (!n) return null;
   return kind === 'HHG' ? `VA-DMV-HHG:${n}` : `VA-DMV-PROP:${n}`;
 }
+
+/** Source-native Property number 1276 is used by two different listing rows. */
+export const PROPERTY_SOURCE_IDENTIFIER_CONFLICTS = ['1276'] as const;
+
+export function propertyAuthorityResolvesUniqueCarrier(number: string): boolean {
+  const n = String(number || '').replace(/\D/g, '');
+  if (!n) return false;
+  return !PROPERTY_SOURCE_IDENTIFIER_CONFLICTS.includes(n as (typeof PROPERTY_SOURCE_IDENTIFIER_CONFLICTS)[number]);
+}

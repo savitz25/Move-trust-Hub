@@ -100,6 +100,54 @@ def parse_rows(html: str, expected_type: str) -> list[dict]:
     return rows
 
 
+def virginia_move_identity(kind: str, number: str) -> str | None:
+    """Blank authority numbers are not state identities. Do not invent IDs from names."""
+    n = re.sub(r"\D", "", str(number or ""))
+    if not n:
+        return None
+    if kind == "HHG":
+        return f"VA-DMV-HHG:{n}"
+    if kind == "PROP":
+        return f"VA-DMV-PROP:{n}"
+    raise ValueError(f"unknown identity kind {kind}")
+
+
+def authority_id_stats(rows: list[dict]) -> dict:
+    """Blank identifiers are listing observations, not state identities."""
+    raw = [(r.get("source_displayed_authority_number") or "").strip() for r in rows]
+    non_null = [i for i in raw if i]
+    counts = Counter(non_null)
+    dups = sorted(i for i, n in counts.items() if n > 1)
+    conflicts = []
+    for number in dups:
+        labels = sorted(
+            {
+                (r.get("name") or "").strip()
+                for r in rows
+                if (r.get("source_displayed_authority_number") or "").strip() == number
+            }
+        )
+        conflicts.append(
+            {
+                "source_displayed_authority_number": number,
+                "listing_rows": counts[number],
+                "carrier_labels": labels,
+                "status": "SOURCE_IDENTIFIER_CONFLICT",
+                "unique_carrier": False,
+                "canonical_organization_forbidden": True,
+            }
+        )
+    return {
+        "non_null_authority_rows": len(non_null),
+        "distinct_authority_numbers": len(counts),
+        "distinct_non_null_authority_numbers": len(counts),
+        "duplicate_authority_numbers": dups,
+        "duplicate_non_null_authority_numbers": dups,
+        "null_identifiers": sum(1 for i in raw if not i),
+        "source_identifier_conflicts": conflicts,
+    }
+
+
 def crawl(tid: str, expected_type: str, sleep_s: float = 0.2) -> dict:
     query = {"field_carrier_type_target_id": tid}
     url0 = BASE + "?" + urllib.parse.urlencode(query)
@@ -123,9 +171,8 @@ def crawl(tid: str, expected_type: str, sleep_s: float = 0.2) -> dict:
         if pg == last:
             (RAW / f"auth-{tid}-pg{pg}.html").write_bytes(data)
         print(expected_type, "pg", pg, "/", last, "rows", len(page_rows), flush=True)
-    ids = [r["source_displayed_authority_number"] for r in all_rows]
-    names = [r["name"] for r in all_rows]
-    dup_ids = [i for i, n in Counter(ids).items() if n > 1]
+    stats = authority_id_stats(all_rows)
+    names = [(r.get("name") or "").strip() for r in all_rows]
     return {
         "filter": query,
         "expected_type": expected_type,
@@ -134,9 +181,7 @@ def crawl(tid: str, expected_type: str, sleep_s: float = 0.2) -> dict:
         "pages_traversed": last,
         "page_log": pages,
         "rows": len(all_rows),
-        "distinct_authority_numbers": len(set(ids)),
-        "duplicate_authority_numbers": dup_ids,
-        "null_identifiers": sum(1 for i in ids if not i),
+        **stats,
         "distinct_labels": len(set(names)),
         "out_of_state": sum(1 for r in all_rows if not any(", VA" in a or ",VA" in a for a in r["address_lines"])),
         "records": all_rows,
@@ -176,8 +221,16 @@ def main() -> None:
     st, app_html, _ = fetch(APPLICANTS)
     (RAW / "applicants.html").write_bytes(app_html)
     apps = parse_applicants(app_html.decode("utf-8", "replace"))
-    hhg_ids = {r["source_displayed_authority_number"] for r in hhg["records"]}
-    prop_ids = {r["source_displayed_authority_number"] for r in prop["records"]}
+    hhg_ids = {
+        (r["source_displayed_authority_number"] or "").strip()
+        for r in hhg["records"]
+        if (r["source_displayed_authority_number"] or "").strip()
+    }
+    prop_ids = {
+        (r["source_displayed_authority_number"] or "").strip()
+        for r in prop["records"]
+        if (r["source_displayed_authority_number"] or "").strip()
+    }
 
     def norm(name: str) -> str:
         return re.sub(r"[^A-Z0-9]+", " ", name.upper()).strip()

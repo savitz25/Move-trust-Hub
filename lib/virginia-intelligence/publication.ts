@@ -1,7 +1,7 @@
 export const VA_MOVE_INTEL_VERSION = 'move-va-state-intel-v1' as const;
 export const VA_MOVE_PUBLIC_PATH = '/virginia' as const;
 export const VA_MOVE_PUBLIC_FINGERPRINT =
-  '6cfd8c7bf05b7c7f8dc3dcfca6d03437fc68a57b8751dfc30dee71895f19fb22';
+  'dfe6091caa29d71d5f045734346861af8c69ae3c2eed06ca37c7cf717425eca9';
 
 export const VIRGINIA_INTELLIGENCE_GATE = {
   path: VA_MOVE_PUBLIC_PATH,

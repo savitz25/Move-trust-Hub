@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 import shutil
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -12,6 +13,8 @@ STAGE = ROOT / "data" / "virginia" / "va-move-001"
 LIB = ROOT / "lib" / "virginia-intelligence"
 ART = ROOT / "data" / "reports"
 VERSION = "move-va-state-intel-v1"
+sys.path.insert(0, str(ROOT / "scripts" / "virginia"))
+from acquire_va_move_001 import authority_id_stats  # noqa: E402
 
 HHG_PAGE = "https://www.dmv.virginia.gov/businesses/motor-carriers/intrastate/house-goods"
 PROP_PAGE = "https://www.dmv.virginia.gov/businesses/motor-carriers/intrastate"
@@ -37,6 +40,13 @@ def main() -> None:
     acq = json.loads((STAGE / "acquire-report.json").read_text(encoding="utf-8"))
     hhg = acq["household_goods_carrier"]
     prop = acq["property_carrier"]
+    hhg_records = json.loads((STAGE / "hhg-records.json").read_text(encoding="utf-8"))
+    prop_records = json.loads((STAGE / "property-records.json").read_text(encoding="utf-8"))
+    if hhg["rows"] != len(hhg_records) or prop["rows"] != len(prop_records):
+        raise SystemExit("Acquire-report row counts must match accepted listing records")
+    hhg_stats = authority_id_stats(hhg_records)
+    prop_stats = authority_id_stats(prop_records)
+    hhg_labels = len({(r.get("name") or "").strip() for r in hhg_records if (r.get("name") or "").strip()})
     retrieved = acq["retrieved_at"]
     body = {
         "version": VERSION,
@@ -124,11 +134,16 @@ def main() -> None:
             "access": "OFFICIAL_PUBLIC_DIRECTORY_FILTERED_TRAVERSAL",
             "filter": {"field_carrier_type_target_id": "476"},
             "pages_traversed": hhg["pages_traversed"],
+            "grain": "authorized_listing_row",
+            "identity_grain": "distinct_non_null_authority_number",
             "rows": hhg["rows"],
-            "distinct_authority_numbers": hhg["distinct_authority_numbers"],
-            "duplicate_authority_numbers": hhg["duplicate_authority_numbers"],
-            "null_identifiers": hhg["null_identifiers"],
-            "distinct_labels": hhg["distinct_labels"],
+            "non_null_authority_rows": hhg_stats["non_null_authority_rows"],
+            "distinct_authority_numbers": hhg_stats["distinct_non_null_authority_numbers"],
+            "distinct_non_null_authority_numbers": hhg_stats["distinct_non_null_authority_numbers"],
+            "duplicate_authority_numbers": hhg_stats["duplicate_non_null_authority_numbers"],
+            "null_identifiers": hhg_stats["null_identifiers"],
+            "source_identifier_conflicts": hhg_stats["source_identifier_conflicts"],
+            "distinct_labels": hhg_labels,
             "out_of_state": hhg["out_of_state"],
             "completeness": "last official pager page reached; last page has fewer than 25 rows",
             "legal_authority_document": "Certificate",
@@ -142,10 +157,16 @@ def main() -> None:
             "access": "OFFICIAL_PUBLIC_DIRECTORY_FILTERED_TRAVERSAL",
             "filter": {"field_carrier_type_target_id": "456"},
             "pages_traversed": prop["pages_traversed"],
+            "grain": "authorized_listing_row",
+            "identity_grain": "distinct_non_null_authority_number",
             "rows": prop["rows"],
-            "distinct_authority_numbers": prop["distinct_authority_numbers"],
-            "duplicate_authority_numbers": prop["duplicate_authority_numbers"],
-            "null_identifiers": prop["null_identifiers"],
+            "non_null_authority_rows": prop_stats["non_null_authority_rows"],
+            "distinct_authority_numbers": prop_stats["distinct_non_null_authority_numbers"],
+            "distinct_non_null_authority_numbers": prop_stats["distinct_non_null_authority_numbers"],
+            "duplicate_authority_numbers": prop_stats["duplicate_non_null_authority_numbers"],
+            "null_identifiers": prop_stats["null_identifiers"],
+            "source_identifier_conflicts": prop_stats["source_identifier_conflicts"],
+            "null_identifier_row_is_not_state_identity": True,
             "household_goods_relevance": "May legally cover household-goods transportation when delivery is less than 31 road-miles from pickup, subject to current DMV rules. Not a household-goods mover census.",
             "not_called_movers": True,
             "not_added_to_hhg_denominator": True,
@@ -160,7 +181,11 @@ def main() -> None:
             "name_is_not_canonical_identity": True,
             "state_dmv_is_not_usdot": True,
             "authority_number_is_not_unique_company": True,
+            "blank_authority_is_not_state_identity": True,
             "duplicate_property_number_1276_two_carriers": True,
+            "property_1276_status": "SOURCE_IDENTIFIER_CONFLICT",
+            "property_1276_does_not_resolve_unique_carrier": True,
+            "property_1276_canonical_organization_forbidden": True,
         },
         "federal": {
             "virginia_state_authority_is_not_fmcsa": True,
@@ -243,9 +268,15 @@ def main() -> None:
         },
         "expansion_ledger": {
             "PRE_INGEST_MOVE_CANONICAL_ORGANIZATIONS": 5022,
-            "NEW_VA_STATE_IDENTITIES": hhg["distinct_authority_numbers"] + prop["distinct_authority_numbers"],
-            "NEW_VA_HHG_AUTHORITY_IDENTITIES": hhg["distinct_authority_numbers"],
-            "NEW_VA_PROPERTY_AUTHORITY_IDENTITIES": prop["distinct_authority_numbers"],
+            "NEW_VA_STATE_IDENTITIES": hhg_stats["distinct_non_null_authority_numbers"]
+            + prop_stats["distinct_non_null_authority_numbers"],
+            "NEW_VA_HHG_AUTHORITY_IDENTITIES": hhg_stats["distinct_non_null_authority_numbers"],
+            "NEW_VA_PROPERTY_AUTHORITY_IDENTITIES": prop_stats["distinct_non_null_authority_numbers"],
+            "identity_grain": "distinct_non_null_authority_number",
+            "credential_row_grain": "authorized_listing_row",
+            "credential_rows_are_not_authority_identities": True,
+            "blank_identifier_is_not_state_identity": True,
+            "duplicate_source_identifier_counts_once": True,
             "NET_NEW_CANONICAL_ORGANIZATIONS": 0,
             "NET_NEW_PUBLIC_MOVE_PROFILES": 0,
             "EXISTING_ORGANIZATIONS_ENRICHED": 0,
@@ -301,7 +332,24 @@ export const VIRGINIA_INTELLIGENCE_GATE = {{
 }} as const;
 """
     (LIB / "publication.ts").write_text(pub, encoding="utf-8")
-    print("fingerprint", fp, "hhg", hhg["rows"], "prop", prop["rows"])
+    print(
+        "fingerprint",
+        fp,
+        "hhg_rows",
+        hhg["rows"],
+        "hhg_ids",
+        hhg_stats["distinct_non_null_authority_numbers"],
+        "hhg_labels",
+        hhg_labels,
+        "prop_rows",
+        prop["rows"],
+        "prop_ids",
+        prop_stats["distinct_non_null_authority_numbers"],
+        "ledger_identities",
+        hhg_stats["distinct_non_null_authority_numbers"] + prop_stats["distinct_non_null_authority_numbers"],
+        "ledger_rows",
+        hhg["rows"] + prop["rows"],
+    )
 
 
 if __name__ == "__main__":

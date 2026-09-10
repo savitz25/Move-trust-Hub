@@ -68,7 +68,11 @@
     "duplicate_authority_numbers": [],
     "null_identifiers": 0,
     "distinct_labels": 192,
-    "out_of_state": 17
+    "out_of_state": 17,
+    "non_null_authority_rows": 192,
+    "distinct_non_null_authority_numbers": 192,
+    "duplicate_non_null_authority_numbers": [],
+    "source_identifier_conflicts": []
   },
   "property_carrier": {
     "filter": {
@@ -1263,13 +1267,31 @@
       }
     ],
     "rows": 4916,
-    "distinct_authority_numbers": 4915,
+    "distinct_authority_numbers": 4914,
     "duplicate_authority_numbers": [
       "1276"
     ],
     "null_identifiers": 1,
     "distinct_labels": 4915,
-    "out_of_state": 165
+    "out_of_state": 165,
+    "non_null_authority_rows": 4915,
+    "distinct_non_null_authority_numbers": 4914,
+    "duplicate_non_null_authority_numbers": [
+      "1276"
+    ],
+    "source_identifier_conflicts": [
+      {
+        "source_displayed_authority_number": "1276",
+        "listing_rows": 2,
+        "carrier_labels": [
+          "MARK L & KATHY A ROSE",
+          "TROY G LEWIS"
+        ],
+        "status": "SOURCE_IDENTIFIER_CONFLICT",
+        "unique_carrier": false,
+        "canonical_organization_forbidden": true
+      }
+    ]
   },
   "cross_authority": {
     "exact_authority_number_overlap": [

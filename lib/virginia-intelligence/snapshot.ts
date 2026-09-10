@@ -43,6 +43,34 @@ export function assertVirginiaMoveSnapshot(
   if (value.expansion_ledger.NET_NEW_CANONICAL_ORGANIZATIONS !== 0) {
     throw new Error('Do not auto-publish Virginia identities as canonical organizations');
   }
+  if (value.property_roster.null_identifier_row_is_not_state_identity !== true) {
+    throw new Error('Blank Property authority numbers are not state identities');
+  }
+  if (value.identity.property_1276_status !== 'SOURCE_IDENTIFIER_CONFLICT') {
+    throw new Error('Property 1276 must remain a source-identifier conflict');
+  }
+  if (value.expansion_ledger.identity_grain !== 'distinct_non_null_authority_number') {
+    throw new Error('Identity grain is distinct non-null authority numbers');
+  }
+  if (value.expansion_ledger.credential_row_grain !== 'authorized_listing_row') {
+    throw new Error('Credential grain is authorized listing rows');
+  }
+  if (value.expansion_ledger.identity_grain === value.expansion_ledger.credential_row_grain) {
+    throw new Error('Identity grain must stay distinct from listing-row grain');
+  }
+  if (value.expansion_ledger.credential_rows_are_not_authority_identities !== true) {
+    throw new Error('Credential rows and authority identities are different grains');
+  }
+  const identityTotal =
+    value.hhg_roster.distinct_non_null_authority_numbers +
+    value.property_roster.distinct_non_null_authority_numbers;
+  const credentialTotal = value.hhg_roster.rows + value.property_roster.rows;
+  if (value.expansion_ledger.NEW_VA_STATE_IDENTITIES !== identityTotal) {
+    throw new Error('State identities must equal distinct non-null authority numbers');
+  }
+  if (value.expansion_ledger.NEW_STATE_CREDENTIAL_ROWS !== credentialTotal) {
+    throw new Error('Credential rows must equal authorized listing rows');
+  }
   if (!value.gate.passed) {
     throw new Error('VA-MOVE-001 publication gate failed');
   }

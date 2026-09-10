@@ -168,8 +168,13 @@ export function VirginiaMoveIntelligence({ payload }: { payload: VirginiaMoveInt
       <section className="mt-10 space-y-3">
         <h2 className="text-xl font-semibold">Property Carrier short-distance authority</h2>
         <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-          Legal authority document: <strong>permit</strong>. {prop} listing rows. These are all
-          Property Carrier authority listings, not a count of moving companies. Do not add this
+          Legal authority document: <strong>permit</strong>. Identity namespace{' '}
+          <code>VA-DMV-PROP:&#123;authorityNumber&#125;</code>. {prop} listing rows (listing-row grain)
+          and {fmtInt(s.property_roster.distinct_non_null_authority_numbers)} distinct non-null
+          authority numbers (identity grain). A blank authority number is a listing observation,
+          not a state identity. Property number 1276 appears on two carrier listings and is a
+          source-identifier conflict — that number does not uniquely resolve a carrier. These are
+          all Property Carrier authority listings, not a count of moving companies. Do not add this
           number to Household Goods Carrier listings.
         </p>
       </section>
