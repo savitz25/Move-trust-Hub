@@ -4,6 +4,8 @@ export const MOVE_ASK_CONTRACT = 'move-ask-v1' as const;
 export const MOVE_ASK_ROUTE = 'https://www.movetrusthub.com/ask';
 export const MOVE_ASK_API = 'https://www.movetrusthub.com/api/ask';
 export const MOVE_ASK_PAGE_SIZE = 20;
+export const MOVE_ASK_MAX_QUERY = 180;
+export type MoveConstraint = { field: string; value: string; outcome: 'APPLIED' | 'NEEDS_CLARIFICATION' | 'UNSUPPORTED' | 'CONFLICT'; detail: string };
 
 export const MOVE_ASK_CAPABILITY = {
   contract: MOVE_ASK_CONTRACT,
@@ -60,6 +62,11 @@ export type MoveResearchQuery = {
   role?: MoveRegulatoryRole;
   includeDualRole: boolean;
   identifier?: { type: 'usdot' | 'mc'; value: string };
+  identifiers?: import('./identifier').MoveIdentifier[];
+  constraints?: MoveConstraint[];
+  overrides?: { role?: string; state?: string; authority?: string };
+  executor?: 'records' | 'directory';
+  directoryRequest?: import('../specialist-execution/contract').MoveSpecialistExecutionRequest;
   jurisdiction?: { state: string; meaning: MoveGeographyMeaning };
   compareJurisdiction?: { state: string; meaning: MoveGeographyMeaning };
   authorityCurrent?: boolean | 'not_current' | 'any';

@@ -1,3 +1,4 @@
+import { parseMoveIdentifiers } from './identifier';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
 
 const STATE_NAMES: Record<string, string> = {
@@ -18,6 +19,7 @@ const STATE_NAMES: Record<string, string> = {
 };
 
 function detectState(q: string): string | undefined {
+  if (/\bnj\b/i.test(q)) return 'NJ';
   for (const [name, code] of Object.entries(STATE_NAMES)) {
     if (name.length === 2) {
       if (new RegExp(`\\bin ${name}\\b`, 'i').test(q)) return code;
@@ -28,10 +30,10 @@ function detectState(q: string): string | undefined {
 
 function detectRole(q: string): MoveRegulatoryRole | undefined {
   const broker = /\bbrokers?\b/i.test(q);
-  const carrier = /\bcarriers?\b|\bmotor carriers?\b|\bhousehold-?goods carriers?\b/i.test(q);
+  const carrier = /\bcarriers?\b|\bmotor carriers?\b|\bhousehold[- ]?goods carriers?\b/i.test(q);
   if (broker && carrier) return 'carrier_broker';
   if (broker) return 'broker';
-  if (carrier || /\binterstate movers?\b|\bhhg\b|\bhousehold-?goods\b/i.test(q)) return 'carrier';
+  if (carrier || /\binterstate movers?\b|\bhhg\b|\bhousehold[- ]?goods\b/i.test(q)) return 'carrier';
   return undefined;
 }
 
@@ -256,59 +258,38 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  if (/\b(usdot|dot|mc)\b/i.test(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q) && !/\bwhat (is|does)\b/i.test(q)) {
-    const query = fail('The identifier is malformed. Use a labeled USDOT or MC number containing 3–8 digits.', ['Find USDOT 3244649.', 'Find MC 1019808.']);
-    push('Identifier', 'Malformed or incomplete');
-    return { raw: q, query, interpretation: lines };
-  }
-
   if (/\bwhat is (a |an )?usdot\b/i.test(q) || /\bwhat does usdot( number| status)? mean\b/i.test(q)) {
     if (/\bstatus\b/i.test(q)) return definition(q, 'usdot_status');
     return definition(q, 'usdot');
   }
   if (/\bwhat is (a |an )?mc( number)?\b/i.test(q)) return definition(q, 'mc');
-  if (/\bwhat is a household-?goods carrier\b/i.test(q)) return definition(q, 'hhg_carrier');
+  if (/\bwhat is a household[- ]?goods carrier\b/i.test(q)) return definition(q, 'hhg_carrier');
   if (/\bwhat is a moving broker\b|\bwhat is a broker\b/i.test(q)) return definition(q, 'broker');
   if (/\bwhat is (interstate )?operating authority\b/i.test(q)) return definition(q, 'interstate_authority');
   if (/\bwhat is a florida intrastate mover\b/i.test(q)) return definition(q, 'florida_im');
   if (/\bdifference between (a )?(carrier|mover) and (a )?broker\b/i.test(q)) return definition(q, 'carrier_vs_broker');
 
-  const usdot = q.match(/\b(?:usdot|dot)\s*#?\s*(\d{3,8})\b/i);
-  if (usdot?.[1]) {
-    const evidence = /\bcomplaint/i.test(q)
-      ? 'complaint'
-      : /\b(authorit|operating authority|status|role|carrier or broker|is .+ active|household-?goods)\b/i.test(q)
-        ? 'authority'
-        : undefined;
-    const query: MoveResearchQuery = {
-      mode: evidence ? 'evidence' : 'identifier',
-      identifier: { type: 'usdot', value: usdot[1] },
-      includeDualRole: true,
-      evidenceFamily: evidence,
-      page: 1,
-    };
-    push('Mode', query.mode);
-    push('Identifier', `USDOT ${usdot[1]} (labeled)`);
-    push('Identity rule', 'USDOT is a federal identity, not an endorsement.');
-    if (evidence === 'authority') {
-      push('Evidence family', 'FMCSA operating authority (source-native Common / Contract / Broker)');
-    }
+  const identity = parseMoveIdentifiers(q);
+  if (identity.error) {
+    const query = fail(identity.error, ['Find USDOT 3244649.', 'Find MC 1019808.']);
+    push('Identifier', 'Clarification required');
     return { raw: q, query, interpretation: lines };
   }
-
-  const mc = q.match(/\bmc\s*#?-?\s*(\d{3,8})\b/i);
-  if (mc?.[1]) {
-    const evidence = /\b(authorit|operating authority|status|household-?goods|active)\b/i.test(q) ? 'authority' : undefined;
+  if (identity.identifiers.length) {
+    const id = identity.identifiers[0]!;
+    const evidence = /\bcomplaint/i.test(q) ? 'complaint'
+      : /\b(authorit|operating authority|status|role|carrier or broker|is .+ active|household[- ]?goods)\b/i.test(q) ? 'authority' : undefined;
     const query: MoveResearchQuery = {
-      mode: evidence ? 'evidence' : 'identifier',
-      identifier: { type: 'mc', value: mc[1] },
-      includeDualRole: true,
-      evidenceFamily: evidence,
-      page: 1,
+      mode: evidence ? 'evidence' : 'identifier', identifier: { type: id.type, value: id.value },
+      identifiers: identity.identifiers, includeDualRole: true, evidenceFamily: evidence, page: 1,
     };
     push('Mode', query.mode);
-    push('Identifier', `MC ${mc[1]} (labeled)`);
-    if (evidence) push('Evidence family', 'FMCSA operating authority (source-native Common / Contract / Broker)');
+    for (const item of identity.identifiers) {
+      push('Identifier', `${item.type.toUpperCase()} ${item.value} (labeled)`);
+      for (const operation of item.normalization) push('Normalization', `${item.rawSpan}: ${operation}`);
+    }
+    if (identity.identifiers.length === 2) push('Identity rule', 'Both identifiers must occur on the same published identity; no name-based merge.');
+    if (evidence) push('Evidence family', evidence === 'authority' ? 'FMCSA operating authority (source-native Common / Contract / Broker)' : 'Partial complaint observations');
     return { raw: q, query, interpretation: lines };
   }
 
@@ -324,7 +305,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       ? 'service_territory_unsupported'
       : 'recorded_headquarters_state';
 
-  if (state === 'NJ' && /\b(licensed|movers?|pm|pw|pc)\b/i.test(q)) {
+  if (state === 'NJ' && /\b(licen[sc]ed?|intrastate|pm|pw|pc|pmw)\b/i.test(q)) {
     const query = fail("New Jersey's statewide PM/PW/PC mover roster is available through a request/search process rather than a complete acquired bulk universe. Acquired NOV observations are evidence rows, not the mover population.", ['What is interstate operating authority?', 'Find USDOT 3244649.']);
     query.coverageState = 'REQUEST_ONLY';
     push('Coverage', 'New Jersey statewide roster — REQUEST_ONLY');
@@ -373,7 +354,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       role: role ?? 'carrier',
       includeDualRole: true,
       jurisdiction: state ? { state, meaning: 'recorded_headquarters_state' } : undefined,
-      authorityCurrent: /\bcurrent|active\b/i.test(q) ? true : 'any',
+      authorityCurrent: /\b(inactive|revoked|not current)\b/i.test(q) ? 'not_current' : /\b(current|active)\b/i.test(q) ? true : 'any',
       aggregateMetric: 'entity_count',
       page: 1,
     };
@@ -460,7 +441,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     role: role ?? 'carrier',
     includeDualRole: true,
     jurisdiction: state ? { state, meaning: 'recorded_headquarters_state' } : undefined,
-    authorityCurrent: /\bcurrent|active\b/i.test(q) ? true : /\binactive|revoked|not current\b/i.test(q) ? 'not_current' : 'any',
+    authorityCurrent: /\b(inactive|revoked|not current)\b/i.test(q) ? 'not_current' : /\b(current|active)\b/i.test(q) ? true : 'any',
     page: safePage,
   };
   push('Mode', 'entity');

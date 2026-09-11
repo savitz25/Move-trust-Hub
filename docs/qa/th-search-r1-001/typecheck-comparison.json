@@ -1,0 +1,7 @@
+{
+  "baselineSourceErrors": 534,
+  "candidateSourceErrors": 534,
+  "candidateGeneratedRouteErrorsAfterInterruptedLocalBuild": 326,
+  "newSourceDiagnostics": [],
+  "globalTypecheck": "FAIL; unrelated baseline diagnostics remain"
+}

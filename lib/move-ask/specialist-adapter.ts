@@ -1,5 +1,21 @@
 import type { MoveSpecialistExecutionResponse } from '@/lib/specialist-execution/contract';
 import { MOVE_ASK_CONTRACT, MOVE_ASK_PAGE_SIZE } from './contract';
+import type { ParsedMoveAsk } from './contract';
+import type { MoveAskResult } from './execute';
+
+export function moveAskResultFromSpecialist(result: MoveSpecialistExecutionResponse, parsed: ParsedMoveAsk): MoveAskResult {
+  const payload = publicAskPayloadFromSpecialist(result);
+  const unsupported = result.resultType === 'UNSUPPORTED_CAPABILITY';
+  if (unsupported) { parsed.query.mode = 'fail_closed'; parsed.query.failReason = result.limitations[0]; }
+  return { contract: MOVE_ASK_CONTRACT, queryText: parsed.raw, parsed, resultType: payload.resultType,
+    terminalState: unsupported ? 'UNSUPPORTED' : result.total ? 'FOUND' : 'NO_MATCH',
+    results: result.rows.map((row) => ({ entityId: row.canonicalSlug, displayName: row.publicDisplayName, legalName: row.legalName, dba: null,
+      usdot: row.usdot, mc: row.mc, role: row.role, fmcsaStatus: row.authorityState, headquarters: row.recordedHq.raw,
+      floridaIm: null, operatingAuthority: row.authorityState, href: new URL(row.canonicalProfileUrl).pathname,
+      publicationNote: null, whyMatched: row.whyMatched, complaintsNote: null, sourceLastChecked: row.sourceLastChecked, officialAsOf: null })),
+    counts: payload.counts, pagination: payload.pagination, provenance: { ...payload.provenance, officialAsOf: 'Official effective time is not supplied by this extract. Stored source check times are shown separately.' }, limitations: payload.limitations,
+    elapsedMs: payload.elapsedMs, coverageState: unsupported ? 'UNSUPPORTED' : 'KNOWN' };
+}
 
 /**
  * Backward-compatible move-ask-v1 view over the shared V2 cohort executor.

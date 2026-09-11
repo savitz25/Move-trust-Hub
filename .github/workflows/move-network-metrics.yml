@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: npm
       - run: npm ci
       - name: Fail if publication catalogs diverge from the checked-in manifest
@@ -21,3 +21,6 @@ jobs:
         run: npx --yes tsx --test lib/intelligence/home-page-contract.test.ts lib/intelligence/home-snapshot.test.ts
       - name: Grain-safety unit tests
         run: npx --yes tsx --test scripts/test_move_network_metrics.ts
+
+      - name: Exact identifier and canonical Move request behavior (TH-SEARCH-R1-001)
+        run: npm run check:th-search-r1-001

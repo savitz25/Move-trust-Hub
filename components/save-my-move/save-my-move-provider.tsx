@@ -1,9 +1,7 @@
 'use client';
 
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useState,
@@ -35,46 +33,10 @@ import {
 import { emailMoverDetailsClient } from '@/lib/save-my-move/email-mover-client';
 import { toast } from 'sonner';
 
-type SaveMyMoveContextValue = {
-  user: User | null;
-  loading: boolean;
-  savedMoverSlugs: ReadonlySet<string>;
-  isMoverSaved: (companySlug: string) => boolean;
-  markMoverSaved: (companySlug: string) => void;
-  openSaveModal: (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => void;
-  requireAuth: (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => boolean;
-};
+import { Ctx, type SaveMyMoveContextValue } from './save-my-move-context';
+export { useSaveMyMove, useSaveMyMoveOptional } from './save-my-move-context';
 
-const Ctx = createContext<SaveMyMoveContextValue | null>(null);
-
-/**
- * Used while DeferredSaveMyMove has not mounted the real provider yet.
- * loading: true prevents save/auth clicks from firing against a half-ready client.
- */
-const DEFERRED_FALLBACK: SaveMyMoveContextValue = {
-  user: null,
-  loading: true,
-  savedMoverSlugs: new Set(),
-  isMoverSaved: () => false,
-  markMoverSaved: () => {},
-  openSaveModal: () => {},
-  requireAuth: () => false,
-};
-
-/**
- * Always safe during DeferredSaveMyMove hydration — never throws.
- * Prefer this (or useSaveMyMoveOptional) over assuming the provider is mounted.
- */
-export function useSaveMyMove() {
-  return useContext(Ctx) ?? DEFERRED_FALLBACK;
-}
-
-/** Safe for navbar chrome while DeferredSaveMyMove hydrates — returns null outside provider. */
-export function useSaveMyMoveOptional() {
-  return useContext(Ctx);
-}
-
-export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) {
+export function SaveMyMoveProvider({ children, onValue }: { children?: React.ReactNode; onValue?: (value: SaveMyMoveContextValue) => void }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [savedMoverSlugs, setSavedMoverSlugs] = useState<Set<string>>(new Set());
@@ -257,6 +219,8 @@ export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) 
     }),
     [user, loading, savedMoverSlugs, isMoverSaved, markMoverSaved, openSaveModal, requireAuth]
   );
+
+  useEffect(() => { onValue?.(value); }, [onValue, value]);
 
   return (
     <Ctx.Provider value={value}>
