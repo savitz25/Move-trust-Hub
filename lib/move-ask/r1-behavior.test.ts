@@ -31,6 +31,11 @@ async function source<T>(run: (calls: URL[]) => Promise<T>, rows: Array<Record<s
   finally { globalThis.fetch = prior.fetch; for (const [key, value] of Object.entries({ NEXT_PUBLIC_SUPABASE_URL: prior.url, SUPABASE_SERVICE_ROLE_KEY: prior.key })) { if (value === undefined) delete process.env[key]; else process.env[key] = value; } }
 }
 
+test('existing supported state override remains selected in the research form', () => {
+  const form=renderToStaticMarkup(React.createElement(SpecialistSearchShell,{query:'USDOT 3244649',filters:{state:'NY'}}));
+  assert.match(form, /<option value="NY" selected="">NY \(recorded state\)<\/option>/);
+});
+
 test('missing identifier has an explicit recoverable terminal state', async () => {
   const r=await executeMoveRequest({q:'USDOT lookup'}); assert.equal(r.terminalState,'NEEDS_CLARIFICATION'); assert.equal(r.results.length,0);
 });
