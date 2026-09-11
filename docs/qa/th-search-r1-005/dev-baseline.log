@@ -1,0 +1,25 @@
+node.exe :  ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( ⚠ Warning: Nex...not be correct.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+ We detected multiple lockfiles and selected the directory of C:\Users\makei\package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the
+lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles:
+   * C:\Users\makei\th-search-r1-005-base\package-lock.json
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3056
+   - Network:      http://10.0.0.249:3056
+   - Experiments (use with caution):
+     · staleTimes
+     · optimizePackageImports
+
+ ✓ Starting...
+[Error: You cannot define a route with the same specificity as a optional catch-all route ("/insurance" and
+"/insurance[[...legacy]]").]
+[?25h

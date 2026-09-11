@@ -1,0 +1,1004 @@
+{
+  "time": "2026-09-11T23:23:57.930Z",
+  "base": "https://www.movetrusthub.com",
+  "sha": "0db8f6215097960625f33ea100352818fba6ff54",
+  "budgetMs": 25000,
+  "observations": [
+    {
+      "q": "JK Moving Services",
+      "width": 1280,
+      "home": true,
+      "ms": 6662,
+      "url": "https://www.movetrusthub.com/ask?q=JK+Moving+Services&role=&state=&authority=",
+      "terminal": "NEEDS_CLARIFICATION",
+      "name": "JK Moving Services",
+      "task": "research",
+      "conditions": [],
+      "candidates": [
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "usdot": "1065394",
+          "field": "fmcsa_raw.dbaName",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "usdot": "1300300",
+          "field": "name",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "usdot": "2222803",
+          "field": "fmcsa_legal_name",
+          "value": "JK MOVING & STORAGE, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "usdot": "2972877",
+          "field": "fmcsa_legal_name",
+          "value": "JK FORWARDERS, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "usdot": "486366",
+          "field": "fmcsa_legal_name",
+          "value": "JK VAN LINES, INC.",
+          "match": "distinctive_token_candidate"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 5,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 5,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "JK Moving Services licensed?",
+      "width": 1280,
+      "home": false,
+      "ms": 2156,
+      "url": "https://www.movetrusthub.com/ask?q=JK+Moving+Services+licensed%3F",
+      "terminal": "NEEDS_CLARIFICATION",
+      "name": "JK Moving Services",
+      "task": "authority",
+      "conditions": [
+        {
+          "field": "licensing / authority question",
+          "value": "stored evidence",
+          "outcome": "NEEDS_CLARIFICATION",
+          "detail": "Stored federal role and authority evidence is shown for each identity. It does not establish current license approval or state intrastate authorization; verify the sourced identifier with the regulator."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "usdot": "1065394",
+          "field": "fmcsa_raw.dbaName",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "usdot": "1300300",
+          "field": "name",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "usdot": "2222803",
+          "field": "fmcsa_legal_name",
+          "value": "JK MOVING & STORAGE, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "usdot": "2972877",
+          "field": "fmcsa_legal_name",
+          "value": "JK FORWARDERS, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "usdot": "486366",
+          "field": "fmcsa_legal_name",
+          "value": "JK VAN LINES, INC.",
+          "match": "distinctive_token_candidate"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 5,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 5,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "SHIFL INC",
+      "width": 1280,
+      "home": false,
+      "ms": 931,
+      "url": "https://www.movetrusthub.com/ask?q=SHIFL+INC",
+      "terminal": "FOUND",
+      "name": "SHIFL INC",
+      "task": "research",
+      "conditions": [],
+      "candidates": [
+        {
+          "id": "usdot-3244649",
+          "name": "SHIFL INC",
+          "usdot": "3244649",
+          "field": "fmcsa_legal_name",
+          "value": "SHIFL INC",
+          "match": "exact_source_name"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 1,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 1,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "ALLIED VAN LINES INC",
+      "width": 1280,
+      "home": false,
+      "ms": 2135,
+      "url": "https://www.movetrusthub.com/ask?q=ALLIED+VAN+LINES+INC",
+      "terminal": "FOUND",
+      "name": "ALLIED VAN LINES INC",
+      "task": "research",
+      "conditions": [],
+      "candidates": [
+        {
+          "id": "allied",
+          "name": "Allied Van Lines",
+          "usdot": "76235",
+          "field": "fmcsa_legal_name",
+          "value": "ALLIED VAN LINES INC",
+          "match": "exact_source_name"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 1,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 1,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "BKQ LOGISTICS, LLC",
+      "width": 1280,
+      "home": false,
+      "ms": 1872,
+      "url": "https://www.movetrusthub.com/ask?q=BKQ+LOGISTICS%2C+LLC",
+      "terminal": "FOUND",
+      "name": "BKQ LOGISTICS, LLC",
+      "task": "research",
+      "conditions": [],
+      "candidates": [
+        {
+          "id": "fl-im-3743",
+          "name": "1. Keepit Safe Storage & Moving; 2. Moversone",
+          "usdot": null,
+          "field": "fmcsa_legal_name",
+          "value": "BKQ LOGISTICS, LLC",
+          "match": "exact_source_name"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 1,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 1,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "JK",
+      "width": 1280,
+      "home": false,
+      "ms": 1517,
+      "url": "https://www.movetrusthub.com/ask?q=JK",
+      "terminal": "NEEDS_CLARIFICATION",
+      "name": "JK",
+      "task": "research",
+      "conditions": [],
+      "candidates": [
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "usdot": "2222803",
+          "field": "fmcsa_legal_name",
+          "value": "JK MOVING & STORAGE, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "usdot": "2972877",
+          "field": "fmcsa_legal_name",
+          "value": "JK FORWARDERS, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "usdot": "1065394",
+          "field": "fmcsa_legal_name",
+          "value": "JK MOVING & STORAGE INC",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "usdot": "1300300",
+          "field": "fmcsa_legal_name",
+          "value": "JK MOVING & STORAGE OF MARYLAND, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "usdot": "486366",
+          "field": "fmcsa_legal_name",
+          "value": "JK VAN LINES, INC.",
+          "match": "distinctive_token_candidate"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 5,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 5,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "Impossiblequokka Moving Services",
+      "width": 1280,
+      "home": false,
+      "ms": 1758,
+      "url": "https://www.movetrusthub.com/ask?q=Impossiblequokka+Moving+Services",
+      "terminal": "NO_MATCH",
+      "name": "Impossiblequokka Moving Services",
+      "task": "research",
+      "conditions": [],
+      "candidates": [],
+      "counts": [],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 0,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "Is SHIFL INC a carrier or broker?",
+      "width": 1280,
+      "home": false,
+      "ms": 1898,
+      "url": "https://www.movetrusthub.com/ask?q=Is+SHIFL+INC+a+carrier+or+broker%3F",
+      "terminal": "FOUND",
+      "name": "SHIFL INC",
+      "task": "classification",
+      "conditions": [],
+      "candidates": [
+        {
+          "id": "usdot-3244649",
+          "name": "SHIFL INC",
+          "usdot": "3244649",
+          "field": "fmcsa_legal_name",
+          "value": "SHIFL INC",
+          "match": "exact_source_name"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 1,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 1,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "JK Moving Services licensed in New Jersey?",
+      "width": 1280,
+      "home": false,
+      "ms": 2602,
+      "url": "https://www.movetrusthub.com/ask?q=JK+Moving+Services+licensed+in+New+Jersey%3F",
+      "terminal": "NEEDS_CLARIFICATION",
+      "name": "JK Moving Services",
+      "task": "authority",
+      "conditions": [
+        {
+          "field": "additional condition",
+          "value": "in New Jersey",
+          "outcome": "NEEDS_CLARIFICATION",
+          "detail": "The name identity is researched independently. This location, licensing or other condition is not established by the name match."
+        },
+        {
+          "field": "licensing / authority question",
+          "value": "stored evidence",
+          "outcome": "NEEDS_CLARIFICATION",
+          "detail": "Stored federal role and authority evidence is shown for each identity. It does not establish current license approval or state intrastate authorization; verify the sourced identifier with the regulator."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "usdot": "1065394",
+          "field": "fmcsa_raw.dbaName",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "usdot": "1300300",
+          "field": "name",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "usdot": "2222803",
+          "field": "fmcsa_legal_name",
+          "value": "JK MOVING & STORAGE, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "usdot": "2972877",
+          "field": "fmcsa_legal_name",
+          "value": "JK FORWARDERS, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "usdot": "486366",
+          "field": "fmcsa_legal_name",
+          "value": "JK VAN LINES, INC.",
+          "match": "distinctive_token_candidate"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 5,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 5,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "USDOT 3244649",
+      "width": 1280,
+      "home": false,
+      "ms": 1228,
+      "url": "https://www.movetrusthub.com/ask?q=USDOT+3244649",
+      "terminal": "FOUND",
+      "conditions": [
+        {
+          "field": "usdot",
+          "value": "3244649",
+          "outcome": "APPLIED",
+          "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "usdot-3244649",
+          "name": "SHIFL INC",
+          "usdot": "3244649"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Matching research identities",
+          "value": 1,
+          "grain": "Exact published identity (additional context is not a service-area match)"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 20,
+        "total": 1,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "usdot 3244 649 miama movers",
+      "width": 1280,
+      "home": false,
+      "ms": 1415,
+      "url": "https://www.movetrusthub.com/ask?q=usdot+3244+649+miama+movers",
+      "terminal": "FOUND",
+      "conditions": [
+        {
+          "field": "additional context",
+          "value": "miama movers",
+          "outcome": "NEEDS_CLARIFICATION",
+          "detail": "Only the exact identity is resolved. This text is not verified as name, location, service territory or authority criteria."
+        },
+        {
+          "field": "usdot",
+          "value": "3244649",
+          "outcome": "APPLIED",
+          "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "usdot-3244649",
+          "name": "SHIFL INC",
+          "usdot": "3244649"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Matching research identities",
+          "value": 1,
+          "grain": "Exact published identity (additional context is not a service-area match)"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 20,
+        "total": 1,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "USDOT 3244",
+      "width": 1280,
+      "home": false,
+      "ms": 1157,
+      "url": "https://www.movetrusthub.com/ask?q=USDOT+3244",
+      "terminal": "NO_MATCH",
+      "conditions": [
+        {
+          "field": "usdot",
+          "value": "3244",
+          "outcome": "APPLIED",
+          "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+        }
+      ],
+      "candidates": [],
+      "counts": [],
+      "pagination": {
+        "page": 1,
+        "pageSize": 20,
+        "total": 0,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "movers in New Jersey",
+      "width": 1280,
+      "home": false,
+      "ms": 2306,
+      "url": "https://www.movetrusthub.com/ask?q=movers+in+New+Jersey",
+      "terminal": "FOUND",
+      "conditions": [
+        {
+          "field": "recorded headquarters state",
+          "value": "NJ",
+          "outcome": "APPLIED",
+          "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "1-st-moving-corp",
+          "name": "1 St Moving CORP",
+          "usdot": "1618672"
+        },
+        {
+          "id": "101-movers-corp",
+          "name": "101 Movers CORP",
+          "usdot": "4024556"
+        },
+        {
+          "id": "a-1-steedle",
+          "name": "A-1 Steedle",
+          "usdot": null
+        },
+        {
+          "id": "a-fazio-moving-storage-inc",
+          "name": "A. Fazio Moving & Storage, INC.",
+          "usdot": "117631"
+        },
+        {
+          "id": "a-pensa-modern-movers",
+          "name": "A. Pensa Modern Movers",
+          "usdot": "31457"
+        },
+        {
+          "id": "a-santini-moving-storage-co",
+          "name": "A. Santini Moving & Storage CO.",
+          "usdot": "6045"
+        },
+        {
+          "id": "ab-moving-services",
+          "name": "Ab Moving Services",
+          "usdot": "4094266"
+        },
+        {
+          "id": "accessible-movers-moving-storage-inc",
+          "name": "Accessible Movers Moving&Storage INC",
+          "usdot": "3488885"
+        },
+        {
+          "id": "acosta-shipping-inc",
+          "name": "Acosta Shipping INC",
+          "usdot": "1594244"
+        },
+        {
+          "id": "adam-moving-and-storage-llc",
+          "name": "Adam Moving And Storage LLC",
+          "usdot": "4462100"
+        },
+        {
+          "id": "ae-moving",
+          "name": "Ae Moving",
+          "usdot": "4348852"
+        },
+        {
+          "id": "affordable-movers-usa",
+          "name": "Affordable Movers USA",
+          "usdot": null
+        },
+        {
+          "id": "affordable-moving-storage",
+          "name": "Affordable Moving & Storage",
+          "usdot": null
+        },
+        {
+          "id": "ak-connect-inc",
+          "name": "Ak Connect, INC.",
+          "usdot": "2244218"
+        },
+        {
+          "id": "aladdin-movers-llc",
+          "name": "Aladdin Movers LLC",
+          "usdot": "3346552"
+        },
+        {
+          "id": "all-around-moves",
+          "name": "All Around Moves",
+          "usdot": null
+        },
+        {
+          "id": "all-jersey-movers",
+          "name": "All Jersey Movers",
+          "usdot": "812418"
+        },
+        {
+          "id": "alluel",
+          "name": "Alluel",
+          "usdot": "2867354"
+        },
+        {
+          "id": "amb-moving-storage-inc",
+          "name": "Amb Moving & Storage INC",
+          "usdot": "3839636"
+        },
+        {
+          "id": "american-dream-movers",
+          "name": "American Dream Movers",
+          "usdot": null
+        }
+      ],
+      "counts": [
+        {
+          "label": "Matching research identities",
+          "value": 267,
+          "grain": "public mover identity cohort"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 20,
+        "total": 267,
+        "hasMore": true
+      },
+      "overflow": false
+    },
+    {
+      "q": "How many current household-goods carriers are headquartered in New Jersey?",
+      "width": 1280,
+      "home": false,
+      "ms": 1761,
+      "url": "https://www.movetrusthub.com/ask?q=How+many+current+household-goods+carriers+are+headquartered+in+New+Jersey%3F",
+      "terminal": "FOUND",
+      "conditions": [
+        {
+          "field": "role",
+          "value": "carrier",
+          "outcome": "APPLIED",
+          "detail": "Applied to source role classes; dual-role treatment is explicit."
+        },
+        {
+          "field": "recorded headquarters state",
+          "value": "NJ",
+          "outcome": "APPLIED",
+          "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+        },
+        {
+          "field": "authority",
+          "value": "current",
+          "outcome": "APPLIED",
+          "detail": "Source authority_active must equal the requested boolean; unknown is excluded."
+        },
+        {
+          "field": "operation",
+          "value": "count",
+          "outcome": "APPLIED",
+          "detail": "Count the published role-specific cohort; do not return a general directory instead."
+        }
+      ],
+      "candidates": [],
+      "counts": [
+        {
+          "label": "Carrier-only directory profiles",
+          "value": 220,
+          "grain": "directory profile"
+        },
+        {
+          "label": "Carrier/Broker dual-role directory profiles",
+          "value": 1,
+          "grain": "directory profile — dual role is disclosed, not double-counted as two companies"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 20,
+        "total": 221,
+        "hasMore": true
+      },
+      "overflow": false
+    },
+    {
+      "q": "carrier vs broker",
+      "width": 1280,
+      "home": false,
+      "ms": 827,
+      "url": "https://www.movetrusthub.com/ask?q=carrier+vs+broker",
+      "terminal": "FOUND",
+      "conditions": [],
+      "candidates": [],
+      "counts": [],
+      "pagination": {
+        "page": 1,
+        "pageSize": 20,
+        "total": 0,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "Show intrastate movers in New York",
+      "width": 1280,
+      "home": false,
+      "ms": 672,
+      "url": "https://www.movetrusthub.com/ask?q=Show+intrastate+movers+in+New+York",
+      "terminal": "NEEDS_CLARIFICATION",
+      "conditions": [
+        {
+          "field": "recorded headquarters state",
+          "value": "NY",
+          "outcome": "APPLIED",
+          "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+        }
+      ],
+      "candidates": [],
+      "counts": [],
+      "pagination": {
+        "page": 1,
+        "pageSize": 20,
+        "total": 0,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "q": "JK Moving Services licensed?",
+      "width": 390,
+      "home": true,
+      "ms": 2873,
+      "url": "https://www.movetrusthub.com/ask?q=JK+Moving+Services+licensed%3F&role=&state=&authority=",
+      "terminal": "NEEDS_CLARIFICATION",
+      "name": "JK Moving Services",
+      "task": "authority",
+      "conditions": [
+        {
+          "field": "licensing / authority question",
+          "value": "stored evidence",
+          "outcome": "NEEDS_CLARIFICATION",
+          "detail": "Stored federal role and authority evidence is shown for each identity. It does not establish current license approval or state intrastate authorization; verify the sourced identifier with the regulator."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "usdot": "1065394",
+          "field": "fmcsa_raw.dbaName",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "usdot": "1300300",
+          "field": "name",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "usdot": "2222803",
+          "field": "fmcsa_legal_name",
+          "value": "JK MOVING & STORAGE, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "usdot": "2972877",
+          "field": "fmcsa_legal_name",
+          "value": "JK FORWARDERS, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "usdot": "486366",
+          "field": "fmcsa_legal_name",
+          "value": "JK VAN LINES, INC.",
+          "match": "distinctive_token_candidate"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 5,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 5,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "flow": "keyboard selection/reload/back/forward",
+      "width": 390,
+      "selected": "jk-moving",
+      "originalTask": "authority"
+    },
+    {
+      "flow": "success to miss via edit; no stale cards/selection",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "q": "JK Moving Services licensed?",
+      "width": 320,
+      "home": false,
+      "ms": 857,
+      "url": "https://www.movetrusthub.com/ask?q=JK+Moving+Services+licensed%3F",
+      "terminal": "NEEDS_CLARIFICATION",
+      "name": "JK Moving Services",
+      "task": "authority",
+      "conditions": [
+        {
+          "field": "licensing / authority question",
+          "value": "stored evidence",
+          "outcome": "NEEDS_CLARIFICATION",
+          "detail": "Stored federal role and authority evidence is shown for each identity. It does not establish current license approval or state intrastate authorization; verify the sourced identifier with the regulator."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "usdot": "1065394",
+          "field": "fmcsa_raw.dbaName",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "usdot": "1300300",
+          "field": "name",
+          "value": "JK MOVING SERVICES",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "usdot": "2222803",
+          "field": "fmcsa_legal_name",
+          "value": "JK MOVING & STORAGE, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "usdot": "2972877",
+          "field": "fmcsa_legal_name",
+          "value": "JK FORWARDERS, INC.",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "usdot": "486366",
+          "field": "fmcsa_legal_name",
+          "value": "JK VAN LINES, INC.",
+          "match": "distinctive_token_candidate"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 5,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 5,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "flow": "keyboard selection/reload/back/forward",
+      "width": 320,
+      "selected": "jk-moving",
+      "originalTask": "authority"
+    },
+    {
+      "flow": "success to miss via edit; no stale cards/selection",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "q": "ALLIED VAN LINES INC",
+      "width": 1280,
+      "home": true,
+      "ms": 3153,
+      "url": "https://www.movetrusthub.com/ask?q=ALLIED+VAN+LINES+INC&role=&state=&authority=",
+      "terminal": "FOUND",
+      "name": "ALLIED VAN LINES INC",
+      "task": "research",
+      "conditions": [],
+      "candidates": [
+        {
+          "id": "allied",
+          "name": "Allied Van Lines",
+          "usdot": "76235",
+          "field": "fmcsa_legal_name",
+          "value": "ALLIED VAN LINES INC",
+          "match": "exact_source_name"
+        }
+      ],
+      "counts": [
+        {
+          "label": "Displayed name candidates",
+          "value": 1,
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+        }
+      ],
+      "pagination": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 1,
+        "hasMore": false
+      },
+      "overflow": false
+    },
+    {
+      "flow": "typed state override retains name; conflict shown; refresh",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    "jk-390.png",
+    "jk-320.png"
+  ],
+  "failures": []
+}

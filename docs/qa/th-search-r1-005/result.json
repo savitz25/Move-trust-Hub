@@ -1,42 +1,131 @@
 {
   "ticket": "TH-SEARCH-R1-005",
-  "status": "IMPLEMENTED_VALIDATION_IN_PROGRESS",
-  "timestamp": "2026-09-11T22:39:12.512730+00:00",
-  "model": "GPT-6 Astra / High USER-CONFIRMED",
+  "status": "RELEASED_AND_VERIFIED",
+  "time": "2026-09-11T23:25:56.842638+00:00",
+  "model": {
+    "requested": "GPT-6 Astra / High",
+    "confirmation": "USER-CONFIRMED; no independent session metadata"
+  },
   "baseline": "866bde6eeeed692d23257c7de75ebca38cb11e78",
-  "candidate": null,
-  "merge": null,
-  "deployment": null,
-  "sourceOracleSha256": "61a89e81cec57876edc5f94f77521888c29bef99aaec1c1fa90d4c68fa83bed7",
+  "implementationCore": "f768cd7e",
+  "testedCoreHead": "dcaca0871c36febbe1efa09e552220d8cc159fb2",
+  "runtimeMerge125": "bb63ed6531e401ba7297a5a3d0eea663f4292829",
+  "completionCandidate": "141825dc584a445ba9b27e808b8a00cf70ed623a",
+  "runtimeMerge126": "0db8f6215097960625f33ea100352818fba6ff54",
+  "deployedRuntime": {
+    "sha": "0db8f6215097960625f33ea100352818fba6ff54",
+    "id": "dpl_7jZWyzWMViKT14H85A36YxjMHbe6",
+    "alias": "https://www.movetrusthub.com",
+    "verifiedAt": "2026-09-11T23:23:57.930Z"
+  },
+  "prs": [
+    125,
+    126
+  ],
+  "evidenceFollowup": {
+    "firstEvidenceCommit": "31140759c52b627f2aab4581c91c04e918e39a1d",
+    "merge": null,
+    "note": "Runtime release is production-verified. This record is authored before the evidence PR merge; final documentation-only merge/deployment receipt follows in PR and final report. No future SHA invented."
+  },
+  "sourceOracle": {
+    "file": "source-oracle.json",
+    "sha256": "61a89e81cec57876edc5f94f77521888c29bef99aaec1c1fa90d4c68fa83bed7",
+    "method": "bounded independent read-only SQL, published records, stored clocks only"
+  },
   "tests": {
     "focused": {
-      "pass": 12,
-      "fail": 0
+      "pass": 15,
+      "fail": 0,
+      "skip": 0
     },
     "r1-001": {
       "pass": 17,
-      "fail": 0
+      "fail": 0,
+      "skip": 0
     },
     "additional": {
       "pass": 65,
-      "fail": 0
+      "fail": 0,
+      "skip": 0
     },
     "ny-routing": {
       "pass": 10,
       "fail": 0
     },
-    "typecheck": {
-      "baseline": 535,
-      "candidate": "running",
-      "changedFileErrors": "initial missing includeDualRole fixed; final run pending"
+    "customer": {
+      "pass": 6,
+      "fail": 0
     },
-    "lint": "Unconfigured baseline/candidate; setup cancelled without config changes",
-    "build": "running; not yet certified",
-    "browser": "baseline native 2779ms; candidate pending"
+    "npm-test": "full configured regression chain passed",
+    "redBefore": "unchanged base lost name; red-before.log",
+    "mutationSensitivity": {
+      "time": "2026-09-11T22:34:44.834246+00:00",
+      "results": [
+        {
+          "mutation": "name-to-directory",
+          "exit": 1,
+          "detected": true
+        },
+        {
+          "mutation": "false-source-provenance",
+          "exit": 1,
+          "detected": true
+        }
+      ],
+      "restored": true
+    },
+    "typecheck": {
+      "time": "2026-09-11T23:18:40.158652+00:00",
+      "baseline": "866bde6eeeed692d23257c7de75ebca38cb11e78",
+      "candidate": "141825dc584a445ba9b27e808b8a00cf70ed623a",
+      "baseDiagnostics": 535,
+      "candidateDiagnostics": 535,
+      "newDiagnostics": [],
+      "resolvedDiagnostics": []
+    },
+    "lint": "unconfigured on baseline and candidate; setup cancelled",
+    "build": "stable core local production build passed; final completion preview and production Vercel builds passed",
+    "mainCI": {
+      "networkMetrics": "pass",
+      "countySEO": "existing 1695 > 400 failure, independently reproduced on exact baseline"
+    }
   },
-  "review": "separate self-review; automated PR review pending; not independent human review",
+  "browser": {
+    "localOptimized": {
+      "sha": "dcaca0871c36febbe1efa09e552220d8cc159fb2",
+      "observations": 23,
+      "failures": [],
+      "maximumQueryMs": 15498
+    },
+    "preview": "SSO blocked; no bypass; not certified",
+    "supplementalDevelopment": "next dev blocked by baseline /insurance optional catch-all route conflict; not certified",
+    "production": {
+      "sha": "0db8f6215097960625f33ea100352818fba6ff54",
+      "observations": 24,
+      "failures": [],
+      "maximumQueryMs": 6662,
+      "widths": [
+        1280,
+        390,
+        320
+      ],
+      "evidence": "production/browser.json"
+    }
+  },
+  "review": "separate self-review plus Vercel automated review; no independent human review",
+  "limits": {
+    "candidateDisplay": 10,
+    "rpcQueries": 2,
+    "referencesPerRPC": 100,
+    "hydratedMaximum": 200,
+    "sourceNameCharacters": 80,
+    "aliasOnlyIndex": false
+  },
   "knownGaps": [
-    "DBAs absent from existing legal/display name index may remain undiscoverable",
-    "complete intrastate licensing/local service area and other tickets remain outside scope"
-  ]
+    "Alias absent from existing legal/display index may remain undiscoverable",
+    "JK stored MC225850 differs from SAFER snapshot MC196957 for DOT1065394; separate source reconciliation needed, no writes performed",
+    "Full intrastate licensing, local service territory, ownership/complaints, Ask/Senior routing remain separate",
+    "Existing TypeScript/lint/county SEO/dev route issues remain open"
+  ],
+  "rollback": "Normal reviewed revert/deployment of this ticket only; no DB rollback; preserve R1-001 and NY work"
 }
