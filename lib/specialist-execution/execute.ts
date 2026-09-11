@@ -172,7 +172,7 @@ function publicRole(company: Company): MoveSpecialistPublicRow['role'] {
 function rowFromCompany(company: Company, autoTransport: boolean, stateCode?: string): MoveSpecialistPublicRow {
   const role = publicRole(company);
   const geographyReason = stateCode
-    ? `The indexed FMCSA record lists ${stateCode} as the company's recorded headquarters/address state.`
+    ? `The published directory identity records ${stateCode} as the company's headquarters/address state.`
     : 'The identity is in the current public MoveTrustHub directory cohort.';
   return {
     publicDisplayName: company.name,
@@ -231,7 +231,7 @@ function baseResponse(
     provenance: {
       sourceFamily: request.entityClass === 'auto_transport'
         ? 'FMCSA Company Census cargo evidence + public MoveTrustHub directory identities'
-        : 'FMCSA public MoveTrustHub directory identities',
+        : 'Published MoveTrustHub directory identities with available source-specific evidence',
       sourceContract: request.entityClass === 'auto_transport' ? 'move-dir-001' : 'move-dir-002',
       queryGrain: request.queryType === 'cohort' ? 'public mover identity cohort' : 'public mover identity',
       geographyMeaning: geography?.intent === 'RECORDED_HQ' && geography.stateCode
@@ -415,7 +415,7 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
     provenance: {
       sourceFamily: request.entityClass === 'auto_transport'
         ? 'FMCSA Company Census cargo evidence + public MoveTrustHub directory identities'
-        : 'FMCSA public MoveTrustHub directory identities',
+        : 'Published MoveTrustHub directory identities with available source-specific evidence',
       sourceContract: request.entityClass === 'auto_transport' ? 'move-dir-001 + move-dir-002' : 'move-dir-002',
       queryGrain: request.entityClass === 'auto_transport'
         ? 'source-backed Auto Transport public identity cohort'

@@ -1,0 +1,16 @@
+{
+  "testedAt": "2026-09-11T16:35:02.313Z",
+  "mutations": [
+    {
+      "mutation": "truncate-spaced-identifier",
+      "exitCode": 1,
+      "detectedByBehavioralAssertion": true
+    },
+    {
+      "mutation": "false-returned-identifier-explanation",
+      "exitCode": 1,
+      "detectedByBehavioralAssertion": true
+    }
+  ],
+  "originalFilesRestored": true
+}

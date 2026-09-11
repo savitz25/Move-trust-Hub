@@ -1,10 +1,15 @@
+import 'server-only';
 import { createClient } from '@supabase/supabase-js';
 import {
   ASK_DEFINITIONS,
   MOVE_ASK_CONTRACT,
   MOVE_ASK_PAGE_SIZE,
 } from './contract';
-import { interpretMoveAskQuery, type ParsedMoveAsk } from './interpret';
+import type { ParsedMoveAsk } from './interpret';
+import { planMoveRequest, MoveRequestError, type MoveRequestInput } from './plan';
+import { identifierVariants, normalizeStoredIdentifier } from './identifier';
+import { buildSaferLookupUrl } from '../verify-dot/fmcsa';
+import { extractStateCodeFromHeadquarters } from '../directory/coverage-filter';
 import {
   getSupabaseServiceRoleKey,
   getSupabaseUrl,
@@ -18,7 +23,7 @@ import {
   DIRECTORY_DUAL_ENTITY_TYPES,
 } from '@/lib/intelligence/home-classify';
 import { authorityLabel, researchRole } from '@/lib/company/research-profile';
-import { decodeAuthorityCode, formatAuthorityStatus } from '@/lib/fmcsa/carrier-fields';
+import { formatAuthorityStatus } from '@/lib/fmcsa/carrier-fields';
 
 const INTERNAL_PUBLICATION_STATES = 'REVIEW_REQUIRED,INACTIVE,INGESTED,CLASSIFIED';
 const VISIBLE_OR = `publication_state.is.null,publication_state.not.in.(${INTERNAL_PUBLICATION_STATES})`;
@@ -39,6 +44,10 @@ export type AskCard = {
   publicationNote: string | null;
   whyMatched: string;
   complaintsNote: string | null;
+  sourceLastChecked?: string | null;
+  officialAsOf?: string | null;
+  officialVerificationUrl?: string;
+  matchEvidence?: { method: 'exact_identifier'; fields: Array<{ field: 'usdot_number' | 'mc_number'; requested: string; returned: string }>; normalization: string[] };
 };
 
 export type AskCountRow = { label: string; value: number; grain: string };
@@ -48,6 +57,7 @@ export type MoveAskResult = {
   queryText: string;
   parsed: ParsedMoveAsk;
   resultType: string;
+  terminalState?: 'FOUND' | 'NO_MATCH' | 'NEEDS_CLARIFICATION' | 'INVALID_INPUT' | 'UNAVAILABLE' | 'UNSUPPORTED';
   results: AskCard[];
   counts: AskCountRow[];
   pagination: { page: number; pageSize: number; total: number; hasMore: boolean };
@@ -93,9 +103,13 @@ function db(): AdminDb {
   const url = getSupabaseUrl();
   const key = getSupabaseServiceRoleKey();
   if (!url || !key) throw new Error('Supabase admin client requires SUPABASE_SERVICE_ROLE_KEY (server-only).');
-  return createClient(url, key, {
+  const client = createClient(url, key, {
     auth: { autoRefreshToken: false, persistSession: false },
-  }) as unknown as AdminDb;
+    global: { fetch: (input, init) => fetch(input, { ...init, signal: AbortSignal.timeout(12_000) }) },
+  });
+  return { from: (table: string) => ({ select: (columns: string, opts?: { count?: 'exact'; head?: boolean }) =>
+    client.from(table).select(columns, opts).throwOnError() as unknown as Chain }) };
+
 }
 
 type CompanyRow = {
@@ -120,6 +134,7 @@ const COMPANY_COLS =
   'id, name, slug, usdot_number, mc_number, entity_type, headquarters, authority_active, fmcsa_last_checked, publication_state, fmcsa_legal_name';
 
 function roleTypes(role?: string, includeDual = true): string[] {
+  if (role === 'carrier_broker') return [...DIRECTORY_DUAL_ENTITY_TYPES];
   if (role === 'broker') {
     return includeDual
       ? [...DIRECTORY_BROKER_ENTITY_TYPES, ...DIRECTORY_DUAL_ENTITY_TYPES]
@@ -130,9 +145,7 @@ function roleTypes(role?: string, includeDual = true): string[] {
     : [...DIRECTORY_CARRIER_ENTITY_TYPES];
 }
 
-function hqPattern(state: string): string {
-  return state === 'FL' ? '% FL%' : `% ${state}%`;
-}
+function hqPattern(state: string): string { return `%, ${state}%`; }
 
 function operatingAuthorityFromRow(row: CompanyRow): string | null {
   if (row.fmcsa_raw && typeof row.fmcsa_raw === 'object') {
@@ -148,9 +161,6 @@ function operatingAuthorityFromRow(row: CompanyRow): string | null {
   return null;
 }
 
-function isActiveCode(raw: unknown): boolean {
-  return decodeAuthorityCode(String(raw ?? '')).toUpperCase() === 'ACTIVE';
-}
 
 function cardFromCompany(row: CompanyRow, why: string, extra?: Partial<AskCard>): AskCard {
   const company = {
@@ -181,31 +191,47 @@ function cardFromCompany(row: CompanyRow, why: string, extra?: Partial<AskCard>)
       : 'Research identity — this row is not currently an indexable public profile.',
     whyMatched: why,
     complaintsNote: null,
+    sourceLastChecked: row.fmcsa_last_checked ?? null,
+    officialAsOf: null,
     ...extra,
   };
 }
 
 export async function executeMoveAsk(raw: string, page = 1): Promise<MoveAskResult> {
+  return executeMoveRequest({ q: raw, page });
+}
+
+export async function executeMoveRequest(input: MoveRequestInput, options?: { directory?: typeof import('../specialist-execution/execute').executeMoveSpecialist }): Promise<MoveAskResult> {
   const started = Date.now();
-  const parsed = interpretMoveAskQuery(raw, page);
+  let parsed: ParsedMoveAsk;
+  try { parsed = planMoveRequest(input); }
+  catch (error) {
+    if (!(error instanceof MoveRequestError)) throw error;
+    parsed = { raw: typeof input.q === 'string' ? input.q : '', query: { mode: 'fail_closed', includeDualRole: true, page: 1, failReason: error.message }, interpretation: [{ label: 'Request', value: 'Input needs correction' }] };
+    return { ...emptyBase(parsed, started), terminalState: 'INVALID_INPUT' };
+  }
   const q = parsed.query;
-  const empty = emptyBase(parsed, started);
-  if (q.mode === 'fail_closed' || q.mode === 'definition') {
-    empty.elapsedMs = Date.now() - started;
-    return empty;
+  if (q.mode === 'fail_closed' || q.mode === 'definition') return emptyBase(parsed, started);
+  try {
+    if (q.executor === 'directory' && q.directoryRequest) {
+      const executor = options?.directory ?? (await import('../specialist-execution/execute')).executeMoveSpecialist;
+      const result = await executor(q.directoryRequest);
+      if (['BACKEND_UNAVAILABLE', 'TIMEOUT'].includes(result.resultType)) throw new Error('Source unavailable');
+      const { moveAskResultFromSpecialist } = await import('./specialist-adapter');
+      return moveAskResultFromSpecialist(result, parsed);
+    }
+    if (!isSupabaseAdminConfigured()) throw new Error('Source unavailable');
+    if ((q.mode === 'identifier' || q.mode === 'evidence') && q.identifier) return await lookupIdentifier(parsed, started);
+    if (q.mode === 'count' || q.mode === 'aggregate' || q.mode === 'comparison') return await counts(parsed, started);
+    if (q.floridaIm) return await listFloridaIm(parsed, started);
+    if (q.overlapFmcsaFdacs) return await listOverlap(parsed, started);
+    if (q.nameQuery) return await lookupName(parsed, started);
+    return await listCompanies(parsed, started);
+  } catch {
+    // Never log the request, raw source response or credentials.
+    console.warn('move_research_source_unavailable', { executor: q.executor, mode: q.mode });
+    return { ...emptyBase(parsed, started), terminalState: 'UNAVAILABLE', coverageState: 'UNKNOWN', limitations: ['The research source could not be checked. Try again; no zero-result conclusion was made.', ...LIMITATIONS] };
   }
-  if (!isSupabaseAdminConfigured()) {
-    empty.limitations = ['Research database is not configured in this environment.', ...LIMITATIONS];
-    empty.elapsedMs = Date.now() - started;
-    return empty;
-  }
-  if (q.mode === 'identifier' && q.identifier) return lookupIdentifier(parsed, started);
-  if (q.mode === 'evidence' && q.identifier) return lookupEvidence(parsed, started);
-  if (q.mode === 'count' || q.mode === 'aggregate' || q.mode === 'comparison') return counts(parsed, started);
-  if (q.floridaIm) return listFloridaIm(parsed, started);
-  if (q.overlapFmcsaFdacs) return listOverlap(parsed, started);
-  if (q.nameQuery) return lookupName(parsed, started);
-  return listCompanies(parsed, started);
 }
 
 async function lookupName(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
@@ -228,106 +254,41 @@ async function lookupName(parsed: ParsedMoveAsk, started: number): Promise<MoveA
 }
 
 async function lookupIdentifier(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
-  const id = parsed.query.identifier!;
-  const col = id.type === 'usdot' ? 'usdot_number' : 'mc_number';
-  const variants = id.type === 'usdot' ? [id.value, id.value.replace(/^0+/, '')] : [id.value, `MC-${id.value}`, `MC${id.value}`];
-  const { data } = await db()
-    .from('companies')
-    .select(`${COMPANY_COLS}, fmcsa_raw`)
-    .in(col, variants)
-    .limit(5);
-  let rows = (data ?? []) as CompanyRow[];
-  if (!rows.length) {
-    const { data: fuzzy } = await db()
-      .from('companies')
-      .select(`${COMPANY_COLS}, fmcsa_raw`)
-      .ilike(col, `%${id.value}%`)
-      .limit(5);
-    rows = (fuzzy ?? []) as CompanyRow[];
-  }
-  const results = rows.map((row) => {
-    const authority = operatingAuthorityFromRow(row);
-    const baseWhy =
-      id.type === 'usdot'
-        ? `This company matches because the indexed FMCSA identity lists USDOT ${id.value}. USDOT is an identifier, not an endorsement.`
-        : `This company matches because the indexed FMCSA record lists MC ${id.value}. An MC docket is not a quality ranking.`;
-    const authorityWhy = authority
-      ? ` Stored operating authority (source-native): ${authority}. That is not a recommendation.`
-      : ' Common/Contract/Broker operating-authority text is not available on this row. Missing is not unauthorized.';
-    return cardFromCompany(row, baseWhy + authorityWhy);
-  });
-  return finish(parsed, results, results.length, started, `Labeled ${id.type.toUpperCase()} lookup`);
-}
-
-async function lookupEvidence(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
-  const base = await lookupIdentifier(parsed, started);
-  if (!base.results.length) return base;
-  if (parsed.query.evidenceFamily === 'complaint') {
-    const id = parsed.query.identifier!.value;
-    const { data } = await db()
-      .from('companies')
-      .select(`${COMPANY_COLS}, fmcsa_complaints, complaints_last_12m`)
-      .eq('usdot_number', id)
-      .limit(5);
-    const rows = (data ?? []) as CompanyRow[];
-    const results = (rows.length ? rows : []).map((row) => {
-      const n = row.fmcsa_complaints ?? row.complaints_last_12m;
-      return cardFromCompany(
-        row,
-        `Complaint observations are attached to USDOT ${id} as stored counts, not as a finding of wrongdoing.`,
-        {
-          complaintsNote:
-            n == null
-              ? 'No complaint count is available in the current indexed source. Missing is not “no complaints” and not a clean record.'
-              : `Indexed complaint observation count: ${n}. A complaint is not confirmed wrongdoing and is not a fraud score.`,
-        },
-      );
+  const ids = parsed.query.identifiers ?? [{ ...parsed.query.identifier!, normalization: [] }];
+  let query = db().from('companies').select(`${COMPANY_COLS}, fmcsa_raw${parsed.query.evidenceFamily === 'complaint' ? ', fmcsa_complaints, complaints_last_12m' : ''}`, { count: 'exact' }).or(VISIBLE_OR);
+  for (const id of ids) query = query.in(id.type === 'usdot' ? 'usdot_number' : 'mc_number', identifierVariants(id));
+  const { data, count } = await query.order('name', { ascending: true }).order('id', { ascending: true }).range((parsed.query.page - 1) * MOVE_ASK_PAGE_SIZE, parsed.query.page * MOVE_ASK_PAGE_SIZE);
+  const rows = [...new Map(((data ?? []) as CompanyRow[]).map((row) => [row.id, row])).values()];
+  const results = rows.slice(0, MOVE_ASK_PAGE_SIZE).map((row) => {
+    const fields = ids.map((id) => {
+      const field = id.type === 'usdot' ? 'usdot_number' as const : 'mc_number' as const;
+      const returned = normalizeStoredIdentifier(row[field], id.type);
+      if (returned !== id.value) throw new Error('Exact identity invariant failed');
+      return { field, requested: id.value, returned };
     });
-    const result = finish(parsed, results.length ? results : base.results, results.length || base.results.length, started, 'Complaint observations (not wrongdoing)');
-    result.limitations = [
-      'Complaint observations are not confirmed wrongdoing and are not a scam or safety score.',
-      ...LIMITATIONS,
-    ];
-    return result;
-  }
-  const id = parsed.query.identifier!;
-  const col = id.type === 'usdot' ? 'usdot_number' : 'mc_number';
-  const { data } = await db()
-    .from('companies')
-    .select(`${COMPANY_COLS}, fmcsa_raw`)
-    .ilike(col, `%${id.value}%`)
-    .limit(5);
-  const rows = (data ?? []) as CompanyRow[];
-  if (!rows.length) return base;
-  const q = parsed.raw.toLowerCase();
-  const results = rows.map((row) => {
-    const raw = row.fmcsa_raw ?? {};
-    const common = decodeAuthorityCode(String(raw.commonAuthorityStatus ?? raw.commonAuthority ?? ''));
-    const contract = decodeAuthorityCode(String(raw.contractAuthorityStatus ?? raw.contractAuthority ?? ''));
-    const broker = decodeAuthorityCode(String(raw.brokerAuthorityStatus ?? raw.brokerAuthority ?? ''));
-    const formatted = operatingAuthorityFromRow(row);
-    const hhgActive = isActiveCode(raw.commonAuthorityStatus ?? raw.commonAuthority) || isActiveCode(raw.contractAuthorityStatus ?? raw.contractAuthority);
-    const wantsHhg = /household-?goods|hhg carrier/i.test(q);
-    const wantsActive = /\bis .+ active\b|\bcurrently have\b/i.test(q);
-    let why = `This company matches because indexed FMCSA identity ${id.type.toUpperCase()} ${id.value} is attached to it. `;
-    why += formatted
-      ? `Stored operating authority: ${formatted}. `
-      : 'Common / Contract / Broker operating-authority text is not available in the current indexed source. Missing is not unauthorized. ';
-    why += `Regulatory role: ${researchRole({ entityType: row.entity_type ?? '', services: [] })}. `;
-    if (wantsHhg) {
-      why += hhgActive
-        ? 'Common or Contract authority is recorded as Active. That is not household-goods cargo confirmation by itself and is not a recommendation. '
-        : 'Common/Contract authority is not recorded as Active on this row. Broker authority, if present, does not make the company the transporting carrier. ';
-    }
-    if (wantsActive) {
-      why += `USDOT/operating status uses source-native wording (${formatted ?? authorityLabel({ authorityActive: row.authority_active })}). Current/Active is not a safety finding. `;
-    }
-    why += 'Operating authority is not a MoveTrustHub endorsement.';
+    const labels = fields.map((f) => `${f.field === 'usdot_number' ? 'USDOT' : 'MC'} ${f.returned}`).join(' and ');
+    const id = ids[0]!;
+    const why = `Exact identifier match: the published directory identity records ${labels}. ${ids.length > 1 ? 'Both identifiers are recorded on this same identity. ' : ''}Identifier equality does not establish service territory, authority eligibility or a recommendation.`;
+    const complaint = row.fmcsa_complaints ?? row.complaints_last_12m;
     return cardFromCompany(row, why, {
-      operatingAuthority: formatted,
+      matchEvidence: { method: 'exact_identifier', fields, normalization: ids.flatMap((v) => v.normalization) },
+      officialVerificationUrl: buildSaferLookupUrl({ type: id.type === 'usdot' ? 'DOT' : 'MC', value: id.value, display: labels }),
+      complaintsNote: parsed.query.evidenceFamily === 'complaint' ? complaint == null ? 'No stored complaint observation is available. Missing is not no complaints or a clean record.' : `Stored complaint observations: ${complaint}. These are not findings of wrongdoing.` : null,
     });
   });
-  return finish(parsed, results, results.length, started, 'FMCSA operating authority (Common / Contract / Broker)');
+  for (const constraint of parsed.query.constraints ?? []) {
+    if (!['role', 'authority', 'recorded headquarters state'].includes(constraint.field) || !results.length) continue;
+    const satisfied = rows.every((row) => constraint.field === 'authority' ? row.authority_active === (constraint.value === 'current') : constraint.field === 'recorded headquarters state' ? extractStateCodeFromHeadquarters(row.headquarters ?? '') === constraint.value : roleTypes(constraint.value, true).includes(row.entity_type ?? ''));
+    constraint.outcome = satisfied ? 'APPLIED' : 'CONFLICT';
+    constraint.detail = satisfied ? 'The stored identity evidence satisfies this criterion.' : 'The exact identity was resolved, but its stored evidence does not establish this criterion.';
+  }
+  for (const c of parsed.query.constraints ?? []) { const line = parsed.interpretation.find((v) => v.label === c.field); if (line) line.value = `${c.value} ? ${c.outcome.replaceAll('_', ' ').toLowerCase()}`; }
+  const result = finish(parsed, results, parsed.query.page > 1 || (count ?? 0) > MOVE_ASK_PAGE_SIZE + 1 ? count ?? rows.length : rows.length, started, 'Exact published identity (additional context is not a service-area match)');
+  if (!results.length && ids.length === 2) {
+    result.terminalState = 'NEEDS_CLARIFICATION';
+    result.limitations = ['No published identity confirms this USDOT/MC pair. Check each number; they were not merged.', ...result.limitations];
+  } else result.terminalState = rows.length > 1 ? 'NEEDS_CLARIFICATION' : rows.length ? 'FOUND' : 'NO_MATCH';
+  return result;
 }
 
 async function counts(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
@@ -350,9 +311,10 @@ async function counts(parsed: ParsedMoveAsk, started: number): Promise<MoveAskRe
       { label: `${q.compareJurisdiction.state} headquartered profiles with carrier authority`, value: b, grain: 'directory profile; headquarters ≠ service territory' },
     ]);
   }
-  const carrierOnly = await countTypes([...DIRECTORY_CARRIER_ENTITY_TYPES], q.jurisdiction?.state, q.authorityCurrent === true);
-  const brokerOnly = await countTypes([...DIRECTORY_BROKER_ENTITY_TYPES], q.jurisdiction?.state, q.authorityCurrent === true);
-  const dual = await countTypes([...DIRECTORY_DUAL_ENTITY_TYPES], q.jurisdiction?.state, q.authorityCurrent === true);
+  const carrierOnly = await countTypes([...DIRECTORY_CARRIER_ENTITY_TYPES], q.jurisdiction?.state, q.authorityCurrent === true ? true : q.authorityCurrent === 'not_current' ? false : undefined);
+  const brokerOnly = await countTypes([...DIRECTORY_BROKER_ENTITY_TYPES], q.jurisdiction?.state, q.authorityCurrent === true ? true : q.authorityCurrent === 'not_current' ? false : undefined);
+  const dual = await countTypes([...DIRECTORY_DUAL_ENTITY_TYPES], q.jurisdiction?.state, q.authorityCurrent === true ? true : q.authorityCurrent === 'not_current' ? false : undefined);
+  if (q.role === 'carrier_broker') return finish(parsed, [], dual, started, 'dual-role published profiles', [{ label: 'Carrier/Broker profiles', value: dual, grain: 'one profile with both source roles' }]);
   if (q.role === 'broker') {
     return finish(parsed, [], brokerOnly + dual, started, 'broker authority profiles', [
       { label: 'Broker-only directory profiles', value: brokerOnly, grain: 'directory profile' },
@@ -376,15 +338,13 @@ async function countIm(): Promise<number> {
 }
 
 async function countTypes(types: string[], state?: string, current?: boolean): Promise<number> {
-  let query = db()
-    .from('companies')
-    .select('id', { count: 'exact', head: true })
-    .or(VISIBLE_OR)
-    .in('entity_type', types);
-  if (state) query = query.ilike('headquarters', hqPattern(state));
-  if (current) query = query.eq('authority_active', true);
-  const { count } = await query;
-  return count ?? 0;
+  let query = db().from('companies').select(state ? 'id, headquarters' : 'id', { count: 'exact', head: !state }).or(VISIBLE_OR).in('entity_type', types);
+  if (state) query = query.ilike('headquarters', hqPattern(state)).limit(1000);
+  if (current !== undefined) query = query.eq('authority_active', current);
+  const { data, count } = await query;
+  if (!state) return count ?? 0;
+  if ((count ?? 0) > 1000) throw new Error('Recorded-headquarters candidate bound exceeded');
+  return new Set(((data ?? []) as CompanyRow[]).filter((row) => extractStateCodeFromHeadquarters(row.headquarters ?? '') === state).map((row) => row.id)).size;
 }
 
 async function countRole(role: string, state?: string, current?: boolean): Promise<number> {
@@ -401,15 +361,17 @@ async function listCompanies(parsed: ParsedMoveAsk, started: number): Promise<Mo
     .from('companies')
     .select(COMPANY_COLS, { count: 'exact' })
     .or(VISIBLE_OR)
-    .in('entity_type', types)
     .order('name', { ascending: true })
     .order('usdot_number', { ascending: true })
     .range(from, to);
-  if (q.jurisdiction?.state) query = query.ilike('headquarters', hqPattern(q.jurisdiction.state));
+  if (q.role) query = query.in('entity_type', types);
+  if (q.jurisdiction?.state) query = query.ilike('headquarters', hqPattern(q.jurisdiction.state)).range(0, 999);
   if (q.authorityCurrent === true) query = query.eq('authority_active', true);
   if (q.authorityCurrent === 'not_current') query = query.eq('authority_active', false);
   const { data, count } = await query;
-  const rows = (data ?? []) as CompanyRow[];
+  if (q.jurisdiction?.state && (count ?? 0) > 1000) throw new Error('Recorded-headquarters candidate bound exceeded');
+  const candidates = ((data ?? []) as CompanyRow[]).filter((row) => !q.jurisdiction?.state || extractStateCodeFromHeadquarters(row.headquarters ?? '') === q.jurisdiction.state);
+  const rows = q.jurisdiction?.state ? candidates.slice(from, to + 1) : candidates;
   const geo = q.jurisdiction
     ? `lists ${q.jurisdiction.state} as its recorded company address / headquarters state (not service territory)`
     : 'is in the current indexed FMCSA directory extract';
@@ -423,7 +385,7 @@ async function listCompanies(parsed: ParsedMoveAsk, started: number): Promise<Mo
   return finish(
     parsed,
     results,
-    count ?? results.length,
+    q.jurisdiction?.state ? candidates.length : count ?? results.length,
     started,
     q.jurisdiction
       ? `recorded headquarters state = ${q.jurisdiction.state}`
@@ -526,7 +488,7 @@ function emptyBase(parsed: ParsedMoveAsk, started: number): MoveAskResult {
       geographyMeaning: parsed.query.jurisdiction
         ? `${parsed.query.jurisdiction.meaning} = ${parsed.query.jurisdiction.state}`
         : 'Not geography-filtered',
-      officialAsOf: 'See fmcsa_last_checked / retrieved_at',
+      officialAsOf: 'Official effective time is not supplied by this extract.',
       grain: parsed.query.role ?? parsed.query.mode,
       exclusions: LIMITATIONS,
     },
@@ -550,6 +512,7 @@ function finish(
     queryText: parsed.raw,
     parsed,
     resultType: parsed.query.mode,
+    terminalState: results.length || total ? 'FOUND' : 'NO_MATCH',
     results,
     counts: counts.length ? counts : total ? [{ label: 'Matching research identities', value: total, grain }] : [],
     pagination: {
@@ -561,11 +524,11 @@ function finish(
     provenance: {
       sourceFamily: parsed.query.floridaIm
         ? 'provider_state_authority (FDACS IM)'
-        : 'companies (FMCSA directory extract; service-role; not a client-side dump)',
+        : 'Published MoveTrustHub directory identities and stored FMCSA evidence',
       geographyMeaning: parsed.query.jurisdiction
         ? `${parsed.query.jurisdiction.meaning} = ${parsed.query.jurisdiction.state}`
         : 'Not geography-filtered',
-      officialAsOf: results[0] ? 'See FMCSA last-checked / FDACS retrieved_at' : 'See source clocks',
+      officialAsOf: 'Official effective time is not supplied by this extract. Stored source check times are shown separately.',
       grain,
       exclusions: LIMITATIONS,
     },
@@ -578,11 +541,17 @@ function finish(
 export function publicAskPayload(result: MoveAskResult) {
   return {
     contract: result.contract,
+    terminalState: result.terminalState,
+    coverageState: result.coverageState,
     capability: { federatedExecution: 'execute', askStatus: 'live' },
     interpretation: result.parsed.interpretation,
     query: {
       mode: result.parsed.query.mode,
       role: result.parsed.query.role,
+      authorityCurrent: result.parsed.query.authorityCurrent,
+      constraints: result.parsed.query.constraints,
+      identifiers: result.parsed.query.identifiers,
+      executor: result.parsed.query.executor,
       identifier: result.parsed.query.identifier,
       jurisdiction: result.parsed.query.jurisdiction,
       failReason: result.parsed.query.failReason,
@@ -604,6 +573,10 @@ export function publicAskPayload(result: MoveAskResult) {
       publicationNote: row.publicationNote,
       whyMatched: row.whyMatched,
       complaintsNote: row.complaintsNote,
+      sourceLastChecked: row.sourceLastChecked,
+      officialAsOf: row.officialAsOf,
+      officialVerificationUrl: row.officialVerificationUrl,
+      matchEvidence: row.matchEvidence,
     })),
     counts: result.counts,
     pagination: result.pagination,
