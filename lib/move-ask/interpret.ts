@@ -8,6 +8,8 @@ const STATE_NAMES: Record<string, string> = {
   washington: 'WA',
   colorado: 'CO',
   virginia: 'VA',
+  'new york': 'NY',
+  ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
   ca: 'CA',
@@ -78,6 +80,39 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
+  if (
+    (/\blicensed movers in new york\b|\bnew york dot mover\b|\bis this mover licensed in new york\b|\bnydot mover\b/i.test(
+      q,
+    ) ||
+      (/\bnew york\b/i.test(q) && /\blicensed mover/i.test(q))) &&
+    !/\binterstate\b/i.test(q)
+  ) {
+    const query = fail(
+      'New York intrastate household-goods authority is NYSDOT. Current CarCert search is under development. A Weekly Bulletin application is not current authority. A USDOT number alone is not New York intrastate authority.',
+      [
+        'Open New York household-goods research.',
+        'Find USDOT 3244649.',
+      ],
+    );
+    push('Coverage', 'STATE_PAGE_NOT_SEARCH_V1');
+    return { raw: q, query, interpretation: lines };
+  }
+  if (/\binterstate mover in new york\b/i.test(q) || (/\bnew york\b/i.test(q) && /\binterstate mover\b/i.test(q))) {
+    const query = fail(
+      'Interstate household-goods authority is FMCSA, not NYSDOT. A New York headquarters is not New York state authority.',
+      ['What is interstate operating authority?', 'Find USDOT 3244649.'],
+    );
+    push('Jurisdiction', 'FMCSA interstate — not NYSDOT');
+    return { raw: q, query, interpretation: lines };
+  }
+  if ((/\bnew york\b|\bnyc\b/i.test(q) || detectState(q) === 'NY') && /\bcomplaint/i.test(q) && /\bmover/i.test(q)) {
+    const query = fail(
+      'A New York mover complaint requires an exact identity. NYSDOT complaint intake is not a bulk complaint census. Complaint is not a violation.',
+      ['Open New York household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'STATE_PAGE_NOT_SEARCH_V1');
+    return { raw: q, query, interpretation: lines };
+  }
   if (/\bhow many moving companies\b|\btotal movers\b/i.test(q)) {
     const query = fail(
       'Counts require a regulatory grain. Carrier, broker, dual-role, and Florida IM registrations are not added into one “moving companies” total.',

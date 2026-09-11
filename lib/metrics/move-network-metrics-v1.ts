@@ -153,6 +153,11 @@ export type MoveNetworkMetricsV1 = {
     retrievedAt: string;
     sourceAsOf: null;
   };
+  newYork: {
+    currentHhgRosterCoverage: 'OPEN_SEARCH_ONLY';
+    bulletinIssues: number;
+    hhgBulletinObservations: number;
+  };
   network: {
     publishedStateIntelligencePages: number;
     publishedStateIntelligencePaths: string[];

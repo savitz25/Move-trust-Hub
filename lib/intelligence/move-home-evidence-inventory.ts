@@ -1,6 +1,7 @@
 import caSnapshot from '@/lib/california-intelligence/accepted-snapshot.json';
 import coSnapshot from '@/lib/colorado-intelligence/accepted-snapshot.json';
 import vaSnapshot from '@/lib/virginia-intelligence/accepted-snapshot.json';
+import nySnapshot from '@/lib/new-york-intelligence/accepted-snapshot.json';
 import txSnapshot from '@/lib/texas-intelligence/accepted-snapshot.json';
 import waSnapshot from '@/lib/washington-intelligence/accepted-snapshot.json';
 import njSnapshot from '@/data/reports/nj-move-002-public-snapshot.json';
@@ -60,6 +61,7 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
   co_puc_suspended_household_goods_permit_listings: { family: 'REGULATORY', entityClass: 'Suspended Colorado PUC HHG listing', destination: '/colorado', acceptedArtifact: 'move-co-state-intel-v1' },
   va_dmv_household_goods_carrier_listings: { family: 'STATE_AUTHORITY', entityClass: 'Virginia DMV Household Goods Carrier certificate listing', destination: '/virginia', acceptedArtifact: 'move-va-state-intel-v1' },
   va_dmv_property_carrier_listings: { family: 'STATE_AUTHORITY', entityClass: 'Virginia DMV Property Carrier permit listing', destination: '/virginia', acceptedArtifact: 'move-va-state-intel-v1' },
+  ny_dot_2026_hhg_bulletin_observations: { family: 'STATE_AUTHORITY', entityClass: 'NYSDOT Weekly Bulletin household-goods application observation', destination: '/new-york', acceptedArtifact: 'move-ny-state-intel-v1' },
   published_state_intelligence_pages: { family: 'PUBLIC_SURFACES', entityClass: 'Published specialist state page', destination: '#state-intelligence', acceptedArtifact: 'canonical state publication model' },
 };
 
@@ -80,6 +82,7 @@ export const MOVE_HOMEPAGE_STATE_CARDS = [
   { state: 'Washington', href: waSnapshot.publication.route, regulator: 'Washington UTC', authority: 'Household-goods permit', roster: waSnapshot.bulk.utc_hhg_bulk_roster.replaceAll('_', ' '), evidence: `${waSnapshot.directory.active_result_count} active directory results plus permit, tariff, complaint, and federal-verification paths`, sourceClock: `Directory retrieved ${waSnapshot.directory.retrieved_at.slice(0, 10)}; accepted snapshot as of ${waSnapshot.as_of}` },
   { state: 'Colorado', href: coSnapshot.publication.route, regulator: 'Colorado PUC', authority: 'Household-goods permit', roster: `${coSnapshot.active_universe.official_total_permits} Active OPR listings`, evidence: 'Official Active HHG permit listings plus revoked/suspended status evidence, kept separate from FMCSA', sourceClock: `OPR list ${coSnapshot.source.source_publication_date}; accepted snapshot as of ${coSnapshot.as_of}` },
   { state: 'Virginia', href: vaSnapshot.publication.route, regulator: 'Virginia DMV', authority: 'Household Goods Carrier certificate / Property Carrier permit', roster: `${vaSnapshot.hhg_roster.rows} HHG listings; ${vaSnapshot.property_roster.rows} Property Carrier listings (not movers)`, evidence: 'Distance-sensitive DMV authority; applicants kept separate; FMCSA interstate kept separate', sourceClock: `retrieved ${vaSnapshot.clocks.authorized_carriers_retrievedAt}; sourceAsOf UNKNOWN` },
+  { state: 'New York', href: nySnapshot.publication.route, regulator: 'NYSDOT', authority: 'Intrastate household-goods authority', roster: 'Current roster OPEN_SEARCH_ONLY; 2026 Weekly Bulletin HHG applications acquired', evidence: `${nySnapshot.bulletin_2026.hhgApplicationObservations} 2026 HHG bulletin observations across ${nySnapshot.bulletin_2026.issues} issues`, sourceClock: `Bulletin window ${nySnapshot.bulletin_2026.windowStart}–${nySnapshot.bulletin_2026.windowEnd}` },
 ] as const;
 
 export const MOVE_CONSUMER_RULES = {

@@ -7,4 +7,5 @@ export const MOVE_SEARCH_CAPABILITIES: SpecialistSearchCapability[] = [
   { key: 'nj-roster', label: 'New Jersey PM/PW/PC roster', supportState: 'REQUEST_ONLY', coverage: 'Agency request/search process', sourceSystems: ['NJ public sources'], limitations: ['NOV observations are not a complete mover population.'] },
   { key: 'ca-roster', label: 'California CAL-T roster', supportState: 'NOT_ACQUIRED', coverage: 'No complete acquired bulk universe', sourceSystems: ['California public sources'], limitations: ['Citation rows are not mover population counts.'] },
   { key: 'service-territory', label: 'Service territory', supportState: 'UNSUPPORTED', coverage: 'Recorded headquarters only', sourceSystems: ['FMCSA'], limitations: ['Headquarters does not establish where a mover serves.'] },
+  { key: 'ny-dot-hhg', label: 'New York household-goods authority', supportState: 'PARTIAL', coverage: '2026 Weekly Bulletin HHG applications on /new-york; current roster search-only', sourceSystems: ['NYSDOT'], limitations: ['Application is not current authority. CarCert search is under development.'] },
 ];

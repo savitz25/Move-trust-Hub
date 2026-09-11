@@ -1,0 +1,1491 @@
+{
+  "retrievedAt": "2026-09-11T18:00:00Z",
+  "archiveUrl": "https://www.dot.ny.gov/main/publications/wb-motor-carrier-applications",
+  "window": {
+    "start": "2026-01-07",
+    "end": "2026-09-09"
+  },
+  "issuesAttempted": 36,
+  "issuesAcquired": 36,
+  "failed": [],
+  "hhgObservationCount": 108,
+  "applicationTypes": [
+    [
+      "New Service",
+      101
+    ],
+    [
+      "Transfer",
+      3
+    ],
+    [
+      "Extension",
+      1
+    ],
+    [
+      "Partial Transfer of Authority",
+      1
+    ],
+    [
+      "UNKNOWN",
+      1
+    ],
+    [
+      "Name Change",
+      1
+    ]
+  ],
+  "rowsWithUsdot": 0,
+  "rowsWithNydot": 0,
+  "rowsWithCertificate": 0,
+  "distinctCaseNumbers": 103,
+  "issues": [
+    {
+      "date": "2026-01-07",
+      "pages": 2,
+      "chars": 5619,
+      "caseBlocks": 6,
+      "hhgCount": 2,
+      "sha256": "94df11a5f9690b05c973e8566b34607ad416542f59a7822ffc6ac9880a57f347",
+      "bytes": 190241,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%201-7-26.pdf"
+    },
+    {
+      "date": "2026-01-14",
+      "pages": 2,
+      "chars": 4959,
+      "caseBlocks": 5,
+      "hhgCount": 3,
+      "sha256": "93871aaeaa1c4117397c48c6d540c3dd5ab91e2f7aceb10e7ce8a8eb69bd19a1",
+      "bytes": 194746,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%201-14-26.pdf"
+    },
+    {
+      "date": "2026-01-21",
+      "pages": 2,
+      "chars": 4862,
+      "caseBlocks": 4,
+      "hhgCount": 1,
+      "sha256": "eda36033de2fad848603bbc2e17757d642232430062e75f438292dbac022cf66",
+      "bytes": 191058,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%201-21-26.pdf"
+    },
+    {
+      "date": "2026-01-28",
+      "pages": 2,
+      "chars": 4981,
+      "caseBlocks": 4,
+      "hhgCount": 3,
+      "sha256": "aa57cc08cb68aacbecde6c76addbfb1b63c8a3aadc80757daf5fd8593479d168",
+      "bytes": 193388,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%201-28-26.pdf"
+    },
+    {
+      "date": "2026-02-04",
+      "pages": 3,
+      "chars": 6343,
+      "caseBlocks": 7,
+      "hhgCount": 4,
+      "sha256": "d537ceafdabbed30b15a03dac2c348673f53e0fa6fcdbb2084aea7dc6922994a",
+      "bytes": 197801,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%202-4-26.pdf"
+    },
+    {
+      "date": "2026-02-11",
+      "pages": 2,
+      "chars": 3982,
+      "caseBlocks": 3,
+      "hhgCount": 3,
+      "sha256": "998a608a5c7baa3bac0109c2ead240325e0e41930ce0becc36649706af00a728",
+      "bytes": 186527,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%202-11-26.pdf"
+    },
+    {
+      "date": "2026-02-18",
+      "pages": 2,
+      "chars": 5037,
+      "caseBlocks": 5,
+      "hhgCount": 3,
+      "sha256": "fca43c334e792a47fbe3bb048b6b81547e29feaa00601b2d972ba5a9e5517702",
+      "bytes": 191601,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%202-18-26.pdf"
+    },
+    {
+      "date": "2026-02-25",
+      "pages": 3,
+      "chars": 7992,
+      "caseBlocks": 10,
+      "hhgCount": 2,
+      "sha256": "3b00a5e619cec2c03149bfd4c26ce6f5172eb6583de2254acf6f38802b9c7113",
+      "bytes": 245244,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%202-25-26.pdf"
+    },
+    {
+      "date": "2026-03-04",
+      "pages": 3,
+      "chars": 7175,
+      "caseBlocks": 7,
+      "hhgCount": 1,
+      "sha256": "78aa234c4fc4c9cd14d1eedc9fdf0671c2bbd9ed5f6a2f8a07ff3130a7e064f0",
+      "bytes": 244374,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%203-4-26.pdf"
+    },
+    {
+      "date": "2026-03-11",
+      "pages": 2,
+      "chars": 5144,
+      "caseBlocks": 5,
+      "hhgCount": 2,
+      "sha256": "664af64aca77059c5b438db75f74dcadc1aa3b1a27f0193a97cbdcaf3d8102e5",
+      "bytes": 196554,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%203-11-26.pdf"
+    },
+    {
+      "date": "2026-03-18",
+      "pages": 3,
+      "chars": 6100,
+      "caseBlocks": 7,
+      "hhgCount": 3,
+      "sha256": "025177385c24f70f604b1830a54075b2120b0446486f73d274a694cc2400a32e",
+      "bytes": 242729,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%203-18-26.pdf"
+    },
+    {
+      "date": "2026-03-25",
+      "pages": 3,
+      "chars": 6780,
+      "caseBlocks": 8,
+      "hhgCount": 6,
+      "sha256": "8c9a3c059cf405effc4dd1edeb255e6a5f3f89c9a473c474a26d4feabc56568a",
+      "bytes": 243104,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%203-25-26.pdf"
+    },
+    {
+      "date": "2026-04-01",
+      "pages": 2,
+      "chars": 4339,
+      "caseBlocks": 3,
+      "hhgCount": 2,
+      "sha256": "61c0dbf973ea77e352ebf65143af1a46fdb1a300217bee2edee1a10e78541ba4",
+      "bytes": 236520,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%204-1-26.pdf"
+    },
+    {
+      "date": "2026-04-08",
+      "pages": 3,
+      "chars": 6445,
+      "caseBlocks": 8,
+      "hhgCount": 4,
+      "sha256": "0c7c2a7313906b53b3344e36f42dddc50de0dd2a7e707e36d173ad75ebad6454",
+      "bytes": 244463,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%204-8-26.pdf"
+    },
+    {
+      "date": "2026-04-15",
+      "pages": 2,
+      "chars": 4918,
+      "caseBlocks": 5,
+      "hhgCount": 3,
+      "sha256": "36baf1b28f08252d931aab570b87d8d29c33635b40c7aed2109af8ba83cb5971",
+      "bytes": 238536,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%204-15-26.pdf"
+    },
+    {
+      "date": "2026-04-22",
+      "pages": 2,
+      "chars": 3862,
+      "caseBlocks": 2,
+      "hhgCount": 1,
+      "sha256": "b91c59f417ca23568e0f79b3abb2b8c6003e4abda7d3675fa6513d20ff03ff77",
+      "bytes": 234605,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%204-22-26.pdf"
+    },
+    {
+      "date": "2026-04-29",
+      "pages": 3,
+      "chars": 6684,
+      "caseBlocks": 8,
+      "hhgCount": 4,
+      "sha256": "6664ab275dfdce16feb3b48caee4d5977d33aa29d4ad2fc2815c035aba16cee8",
+      "bytes": 243822,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%204-29-26.pdf"
+    },
+    {
+      "date": "2026-05-06",
+      "pages": 2,
+      "chars": 5392,
+      "caseBlocks": 6,
+      "hhgCount": 5,
+      "sha256": "b34734d6ff8aff4e4af4391e59463e0f89179246937ab572a0f90c1984ed004e",
+      "bytes": 239483,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%205-6-26.pdf"
+    },
+    {
+      "date": "2026-05-13",
+      "pages": 2,
+      "chars": 5787,
+      "caseBlocks": 6,
+      "hhgCount": 4,
+      "sha256": "09e4fad4710e129935cecff55df424e0cf8b51ce211bbfaf3a7b6214bd22a1a5",
+      "bytes": 241029,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%205-13-26.pdf"
+    },
+    {
+      "date": "2026-05-20",
+      "pages": 3,
+      "chars": 7370,
+      "caseBlocks": 9,
+      "hhgCount": 3,
+      "sha256": "206dabea4fec440b7fc5f51471d24aae724b5a131284cd76c2af483a6bd82abe",
+      "bytes": 244444,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%205-20-26.pdf"
+    },
+    {
+      "date": "2026-05-27",
+      "pages": 2,
+      "chars": 3896,
+      "caseBlocks": 2,
+      "hhgCount": 0,
+      "sha256": "13a4c059ee7cb5d2bd62da5eb9f28b813d5b9824c47a250f7a24fd93111678d7",
+      "bytes": 235576,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%205-27-26_%20%28002%29.pdf"
+    },
+    {
+      "date": "2026-06-03",
+      "pages": 3,
+      "chars": 7507,
+      "caseBlocks": 10,
+      "hhgCount": 3,
+      "sha256": "1d0d26a49df00658681c4ed9def22947738321d12ca360282dd2720779f965ca",
+      "bytes": 245863,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%206-3-26.pdf"
+    },
+    {
+      "date": "2026-06-10",
+      "pages": 2,
+      "chars": 5255,
+      "caseBlocks": 5,
+      "hhgCount": 0,
+      "sha256": "fb1d82c3f01f0297475168e95c67e3bca53dd344c5b76b7d8a905f2af78d0843",
+      "bytes": 239586,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%206-10-26.pdf"
+    },
+    {
+      "date": "2026-06-17",
+      "pages": 4,
+      "chars": 9500,
+      "caseBlocks": 9,
+      "hhgCount": 4,
+      "sha256": "3cdebc62fef3ffd16ea2583c41c3b9500bc437ad70ab4bb4289cf4e457e3e726",
+      "bytes": 220259,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/54878F8A9D8B023CE0630A6C8948023C"
+    },
+    {
+      "date": "2026-06-24",
+      "pages": 2,
+      "chars": 5197,
+      "caseBlocks": 6,
+      "hhgCount": 5,
+      "sha256": "00e98b16436e9cbc56ede4c7a2fcd81b7842b1a62d929bbdbd4fcf521f39bf14",
+      "bytes": 240009,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%206-24-26.pdf"
+    },
+    {
+      "date": "2026-07-01",
+      "pages": 2,
+      "chars": 4573,
+      "caseBlocks": 4,
+      "hhgCount": 3,
+      "sha256": "3e4aff2b4f3c0c76b8e41905ea7ddc70380a44daab84f7e3c3a32d8bef0b5287",
+      "bytes": 224523,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%207-1-26.pdf"
+    },
+    {
+      "date": "2026-07-08",
+      "pages": 3,
+      "chars": 6551,
+      "caseBlocks": 8,
+      "hhgCount": 5,
+      "sha256": "93af2b9b058e6e826f033d43ab2a6d3da8d96a67bc9d31a8490206e336d1a2f2",
+      "bytes": 231543,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%207-8-26%20%28002%29.pdf"
+    },
+    {
+      "date": "2026-07-15",
+      "pages": 2,
+      "chars": 5381,
+      "caseBlocks": 5,
+      "hhgCount": 2,
+      "sha256": "c3d0416e3227a1b352ed20d2e2813c051bb032ccb2ff15ccc291476c1b559ec1",
+      "bytes": 226939,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%207-15-26.pdf"
+    },
+    {
+      "date": "2026-07-22",
+      "pages": 2,
+      "chars": 5915,
+      "caseBlocks": 7,
+      "hhgCount": 4,
+      "sha256": "11134b2489b20693cfe2fc108cb1f6c8ce29de0db65fdced2869efdc9a53701d",
+      "bytes": 200249,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%207-22-26.pdf"
+    },
+    {
+      "date": "2026-07-29",
+      "pages": 2,
+      "chars": 4695,
+      "caseBlocks": 4,
+      "hhgCount": 2,
+      "sha256": "2c60abbb0cba5117937adffb422d10bbdb95d03531fb84080a01ecc32f19c1ef",
+      "bytes": 200179,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%207-29-26.pdf"
+    },
+    {
+      "date": "2026-08-05",
+      "pages": 2,
+      "chars": 5719,
+      "caseBlocks": 6,
+      "hhgCount": 4,
+      "sha256": "0045b3e048b15a7b9f3f63538ba8d5789ea2b4cd85897d326bdae9444ff62bcb",
+      "bytes": 199601,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%208-5-26%20%28002%29.pdf"
+    },
+    {
+      "date": "2026-08-12",
+      "pages": 2,
+      "chars": 4238,
+      "caseBlocks": 3,
+      "hhgCount": 2,
+      "sha256": "271e53907aff87aafe6106c24c9a09c9ba773301e719ee129f0afbbf9d94ddac",
+      "bytes": 195889,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%208-12-26.pdf"
+    },
+    {
+      "date": "2026-08-19",
+      "pages": 2,
+      "chars": 3324,
+      "caseBlocks": 1,
+      "hhgCount": 1,
+      "sha256": "f1a20c33ed71a30ecf030bdb8f6c8d5ebfd2d480f6fdc86970594bdd9d116a98",
+      "bytes": 192781,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%208-19-26.pdf"
+    },
+    {
+      "date": "2026-08-26",
+      "pages": 3,
+      "chars": 7912,
+      "caseBlocks": 10,
+      "hhgCount": 5,
+      "sha256": "cd7b012ec664df611591a6ed5c205517a1f901251f11a57b78b0ce2d0d1112a6",
+      "bytes": 205261,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%208-26-26.pdf"
+    },
+    {
+      "date": "2026-09-02",
+      "pages": 2,
+      "chars": 5018,
+      "caseBlocks": 5,
+      "hhgCount": 3,
+      "sha256": "ad633deb77900167ded68dc4bf41fbd7fab47704e7b155977627eaaf769c7ce5",
+      "bytes": 198695,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%209-2-26.pdf"
+    },
+    {
+      "date": "2026-09-09",
+      "pages": 2,
+      "chars": 5841,
+      "caseBlocks": 7,
+      "hhgCount": 6,
+      "sha256": "9b762397916f800eabe0d239ff81b3508db66ee84687979039ea27e4f3c155d6",
+      "bytes": 200186,
+      "url": "https://www.dot.ny.gov/main/publications/publications-repository/Bulletin%209-9-26.pdf"
+    }
+  ],
+  "hhgObservations": [
+    {
+      "caseNumber": "43388",
+      "bulletinDate": "2026-01-07",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43405",
+      "bulletinDate": "2026-01-07",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43403",
+      "bulletinDate": "2026-01-14",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43410",
+      "bulletinDate": "2026-01-14",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43415",
+      "bulletinDate": "2026-01-14",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43418",
+      "bulletinDate": "2026-01-21",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43396",
+      "bulletinDate": "2026-01-28",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43419",
+      "bulletinDate": "2026-01-28",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43423",
+      "bulletinDate": "2026-01-28",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "40244",
+      "bulletinDate": "2026-02-04",
+      "hhgRelevant": true,
+      "applicationType": "Extension",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43417",
+      "bulletinDate": "2026-02-04",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43427",
+      "bulletinDate": "2026-02-04",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "Page 2"
+    },
+    {
+      "caseNumber": "43434",
+      "bulletinDate": "2026-02-04",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "Page 3"
+    },
+    {
+      "caseNumber": "43433",
+      "bulletinDate": "2026-02-11",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43436",
+      "bulletinDate": "2026-02-11",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43437",
+      "bulletinDate": "2026-02-11",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43440",
+      "bulletinDate": "2026-02-18",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43442",
+      "bulletinDate": "2026-02-18",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43444",
+      "bulletinDate": "2026-02-18",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "Page 2"
+    },
+    {
+      "caseNumber": "41705",
+      "bulletinDate": "2026-02-25",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43447",
+      "bulletinDate": "2026-02-25",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "2939",
+      "bulletinDate": "2026-03-04",
+      "hhgRelevant": true,
+      "applicationType": "Transfer",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "AND"
+    },
+    {
+      "caseNumber": "43455",
+      "bulletinDate": "2026-03-11",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43465",
+      "bulletinDate": "2026-03-11",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43464",
+      "bulletinDate": "2026-03-18",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43470",
+      "bulletinDate": "2026-03-18",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43479",
+      "bulletinDate": "2026-03-18",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43443",
+      "bulletinDate": "2026-03-25",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43472",
+      "bulletinDate": "2026-03-25",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43476",
+      "bulletinDate": "2026-03-25",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43477",
+      "bulletinDate": "2026-03-25",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43480",
+      "bulletinDate": "2026-03-25",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43483",
+      "bulletinDate": "2026-03-25",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43268",
+      "bulletinDate": "2026-04-01",
+      "hhgRelevant": true,
+      "applicationType": "Partial Transfer of Authority",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43486",
+      "bulletinDate": "2026-04-01",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43482",
+      "bulletinDate": "2026-04-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43488",
+      "bulletinDate": "2026-04-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43490",
+      "bulletinDate": "2026-04-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43493",
+      "bulletinDate": "2026-04-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43494",
+      "bulletinDate": "2026-04-15",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43496",
+      "bulletinDate": "2026-04-15",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43498",
+      "bulletinDate": "2026-04-15",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43502",
+      "bulletinDate": "2026-04-22",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "40955",
+      "bulletinDate": "2026-04-29",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43511",
+      "bulletinDate": "2026-04-29",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43512",
+      "bulletinDate": "2026-04-29",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43519",
+      "bulletinDate": "2026-04-29",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "Page 3"
+    },
+    {
+      "caseNumber": "43513",
+      "bulletinDate": "2026-05-06",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43521",
+      "bulletinDate": "2026-05-06",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43522",
+      "bulletinDate": "2026-05-06",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "And"
+    },
+    {
+      "caseNumber": "43523",
+      "bulletinDate": "2026-05-06",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "6945",
+      "bulletinDate": "2026-05-06",
+      "hhgRelevant": true,
+      "applicationType": "Transfer",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43527",
+      "bulletinDate": "2026-05-13",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43534",
+      "bulletinDate": "2026-05-13",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43536",
+      "bulletinDate": "2026-05-13",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43538",
+      "bulletinDate": "2026-05-13",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "35444",
+      "bulletinDate": "2026-05-20",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "40955",
+      "bulletinDate": "2026-05-20",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43541",
+      "bulletinDate": "2026-05-20",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43549",
+      "bulletinDate": "2026-06-03",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43553",
+      "bulletinDate": "2026-06-03",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43554",
+      "bulletinDate": "2026-06-03",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "Page 3"
+    },
+    {
+      "caseNumber": "41735",
+      "bulletinDate": "2026-06-17",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43482",
+      "bulletinDate": "2026-06-17",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43562",
+      "bulletinDate": "2026-06-17",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43567",
+      "bulletinDate": "2026-06-17",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "36936",
+      "bulletinDate": "2026-06-24",
+      "hhgRelevant": true,
+      "applicationType": "UNKNOWN",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43569",
+      "bulletinDate": "2026-06-24",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43571",
+      "bulletinDate": "2026-06-24",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43578",
+      "bulletinDate": "2026-06-24",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43580",
+      "bulletinDate": "2026-06-24",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43527",
+      "bulletinDate": "2026-07-01",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43562",
+      "bulletinDate": "2026-07-01",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43589",
+      "bulletinDate": "2026-07-01",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "42150",
+      "bulletinDate": "2026-07-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43561",
+      "bulletinDate": "2026-07-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43596",
+      "bulletinDate": "2026-07-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43599",
+      "bulletinDate": "2026-07-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43601",
+      "bulletinDate": "2026-07-08",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43581",
+      "bulletinDate": "2026-07-15",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43594",
+      "bulletinDate": "2026-07-15",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43605",
+      "bulletinDate": "2026-07-22",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43607",
+      "bulletinDate": "2026-07-22",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43611",
+      "bulletinDate": "2026-07-22",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43612",
+      "bulletinDate": "2026-07-22",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "38310",
+      "bulletinDate": "2026-07-29",
+      "hhgRelevant": true,
+      "applicationType": "Transfer",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43627",
+      "bulletinDate": "2026-07-29",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43597",
+      "bulletinDate": "2026-08-05",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43610",
+      "bulletinDate": "2026-08-05",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43615",
+      "bulletinDate": "2026-08-05",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43621",
+      "bulletinDate": "2026-08-05",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "Page 2"
+    },
+    {
+      "caseNumber": "43561",
+      "bulletinDate": "2026-08-12",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43633",
+      "bulletinDate": "2026-08-12",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43643",
+      "bulletinDate": "2026-08-19",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "1921",
+      "bulletinDate": "2026-08-26",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43365",
+      "bulletinDate": "2026-08-26",
+      "hhgRelevant": true,
+      "applicationType": "Name Change",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43646",
+      "bulletinDate": "2026-08-26",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43652",
+      "bulletinDate": "2026-08-26",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43655",
+      "bulletinDate": "2026-08-26",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "Page 3"
+    },
+    {
+      "caseNumber": "39267",
+      "bulletinDate": "2026-09-02",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43658",
+      "bulletinDate": "2026-09-02",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43662",
+      "bulletinDate": "2026-09-02",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43222",
+      "bulletinDate": "2026-09-09",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43609",
+      "bulletinDate": "2026-09-09",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43617",
+      "bulletinDate": "2026-09-09",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43665",
+      "bulletinDate": "2026-09-09",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43667",
+      "bulletinDate": "2026-09-09",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": null
+    },
+    {
+      "caseNumber": "43671",
+      "bulletinDate": "2026-09-09",
+      "hhgRelevant": true,
+      "applicationType": "New Service",
+      "usdot": null,
+      "nydot": null,
+      "certificate": null,
+      "nameGuess": "Page 2"
+    }
+  ],
+  "carrierSearch": {
+    "url": "https://carcert.dot.ny.gov/",
+    "status": "OPEN_SEARCH_ONLY",
+    "note": "CarCert home page states Search New York State Carriers (Functionality Under Development)."
+  }
+}

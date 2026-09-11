@@ -186,6 +186,8 @@ async function main() {
     vaHhgListingRows: pub.vaSnapshot.hhg_roster.rows,
     vaPropertyListingRows: pub.vaSnapshot.property_roster.rows,
     vaSourceRetrievedAt: pub.vaSnapshot.clocks.authorized_carriers_retrievedAt,
+    nyHhgBulletinObservations: pub.nySnapshot.bulletin_2026.hhgApplicationObservations,
+    nyBulletinIssues: pub.nySnapshot.bulletin_2026.issues,
     publishedStateIntelligencePaths: pub.publishedStateIntelligencePaths,
     floridaResearchCountyLandings: pub.floridaResearchCountyLandings.length,
     localMoverStateLandings: localStates.length,
