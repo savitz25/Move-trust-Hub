@@ -8,6 +8,7 @@ import {
 } from 'react';
 import { usePathname } from 'next/navigation';
 import { useDeferredLoad } from '@/lib/hooks/use-deferred-load';
+import { Ctx, DEFERRED_FALLBACK, type SaveMyMoveContextValue } from '@/components/save-my-move/save-my-move-context';
 
 /**
  * Routes that need auth/session soon after load (not the anonymous homepage).
@@ -23,7 +24,7 @@ function needsAuthSoon(pathname: string | null): boolean {
   );
 }
 
-type ProviderComponent = ComponentType<{ children: ReactNode }>;
+type ProviderComponent = ComponentType<{ onValue: (value: SaveMyMoveContextValue) => void }>;
 
 /**
  * Lazily mounts SaveMyMoveProvider without blanking children.
@@ -42,6 +43,7 @@ export function DeferredSaveMyMove({ children }: { children: ReactNode }) {
       : { idleTimeout: 12_000, maxWait: 45_000, interactionOnly: true }
   );
 
+  const [value, setValue] = useState<SaveMyMoveContextValue>(DEFERRED_FALLBACK);
   const [Provider, setProvider] = useState<ProviderComponent | null>(null);
 
   useEffect(() => {
@@ -59,6 +61,10 @@ export function DeferredSaveMyMove({ children }: { children: ReactNode }) {
     };
   }, [ready]);
 
-  if (!Provider) return <>{children}</>;
-  return <Provider>{children}</Provider>;
+  // Keep the context and children at the same positions when deferred runtime
+  // arrives. Changing Fragment -> Provider remounted inputs during first keydown.
+  return <Ctx.Provider value={value}>
+    {Provider ? <Provider onValue={setValue} /> : null}
+    {children}
+  </Ctx.Provider>;
 }

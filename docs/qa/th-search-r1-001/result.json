@@ -1,0 +1,14 @@
+{
+  "ticket": "TH-SEARCH-R1-001",
+  "status": "CANDIDATE_PENDING_PREVIEW",
+  "builder": { "model": "GPT-6 Astra", "reasoning": "High", "confirmation": "USER-CONFIRMED; exact active session metadata unavailable" },
+  "baseline": { "main": "8dc82faecc1ece6f7cf02e26cccc0e6f2739008a", "deployment": "dpl_3i76DeFAjJrEMNNoXBCWJ1vgKdfq", "alias": "https://www.movetrusthub.com", "verifiedDateUTC": "2026-09-11" },
+  "candidate": { "head": null, "preview": null },
+  "release": { "merge": null, "deployment": null, "productionBrowserVerified": false },
+  "before": { "spacedIdentifierTruncated": true, "exactMissBroadened": true, "falseExplanation": true, "nativeApiDivergence": true, "reproductionTestsFailed": 3 },
+  "sourceSnapshot": { "usdot": "3244649", "mc": "1019808", "name": "SHIFL INC", "role": "Broker", "recordedLocation": "AIRMONT, NY", "storedCheckedAt": "2026-08-20T13:52:59.596+00:00", "officialEffectiveAt": null },
+  "deterministic": { "command": "npm run check:th-search-r1-001", "groupsPassed": 14, "sensitivityMutationsDetected": 2, "syntheticProductionWrites": 0 },
+  "regressions": { "ask": "PASS", "searchAndSpecialist": "41 PASS", "directory": "30 PASS", "npmTest": "PASS with ignored Vercel local-link file temporarily relocated/restored", "lint": "UNCONFIGURED on base and candidate", "baselineTypeScriptErrors": 534 },
+  "browser": { "baselineReproduction": "baseline-messy.png", "preview": "PENDING", "production": "PENDING" },
+  "scope": "Move exact identity and certified canonical request set only; no data writes, migrations, production configuration changes, or other hub edits"
+}

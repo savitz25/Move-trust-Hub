@@ -2,17 +2,11 @@ import Link from 'next/link';
 import { ASK_DEFINITIONS, MOVE_ASK_PAGE_SIZE } from '@/lib/move-ask/contract';
 import type { MoveAskResult } from '@/lib/move-ask/execute';
 
-function href(q: string, page?: number) {
+function href(q: string, page?: number, overrides?: {role?: string; state?: string; authority?: string}) {
   const params = new URLSearchParams({ q });
+  for (const [key, value] of Object.entries(overrides ?? {})) if (value) params.set(key, value);
   if (page && page > 1) params.set('page', String(page));
   return `/ask?${params.toString()}`;
-}
-
-function removeCriterion(query: string, label: string): string {
-  if (/state|geography/i.test(label)) return query.replace(/\b(headquartered|based) in (florida|new jersey|california|texas|FL|NJ|CA|TX)\b/gi, '').trim();
-  if (/status|authority/i.test(label)) return query.replace(/\b(current|active|inactive|not current)\b/gi, '').trim();
-  if (/role|entity/i.test(label)) return query.replace(/\b(household[- ]goods )?(carriers?|brokers?|movers?)\b/gi, '').trim();
-  return '';
 }
 
 export function AskMoveResultView({ result }: { result: MoveAskResult }) {
@@ -20,7 +14,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
   const def = q.definitionId ? ASK_DEFINITIONS[q.definitionId] : undefined;
 
   return (
-    <div className="space-y-8">
+    <div className="min-w-0 space-y-8 break-words">
       <section className="rounded-2xl border border-[#E2E8F0] bg-white p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C2410C]">
           We interpreted your question as
@@ -30,7 +24,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
             <div key={`${row.label}-${row.value}`} className="rounded-xl border border-[#E2E8F0] p-3">
               <dt className="text-xs uppercase text-[#475569]">{row.label}</dt>
               <dd className="text-base font-semibold text-[#0A2540]">{row.value}</dd>
-              <dd><Link href={href(removeCriterion(result.queryText, row.label))} className="mt-1 inline-flex min-h-8 items-center text-xs font-semibold text-[#C2410C]" aria-label={`Remove ${row.label} criterion`}>Remove criterion</Link></dd>
+              <dd><Link href="#ask-edit" className="mt-1 inline-flex min-h-8 items-center text-xs font-semibold text-[#C2410C]" aria-label={`Edit ${row.label} in your request`}>Edit request</Link></dd>
             </div>
           ))}
         </dl>
@@ -45,17 +39,21 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
             id="ask-edit"
             name="q"
             defaultValue={result.queryText}
-            className="min-h-11 flex-1 rounded-xl border border-[#E2E8F0] px-3 text-sm text-[#0A2540]"
+            className="min-h-11 min-w-0 flex-1 rounded-xl border border-[#E2E8F0] px-3 text-sm text-[#0A2540]"
           />
+          {Object.entries(q.overrides ?? {}).map(([key, value]) => value ? <input key={key} type="hidden" name={key} value={value} /> : null)}
           <button type="submit" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[#0A2540] px-4 text-sm font-semibold text-white">
             Change interpretation
           </button>
         </form>
       </section>
 
+      {result.terminalState === 'UNAVAILABLE' ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Research is temporarily unavailable</h2><p className="mt-3">The source could not be checked. Try again; this is not a zero-result search.</p></section> : null}
+      {result.terminalState === 'NEEDS_CLARIFICATION' && q.mode !== 'fail_closed' ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
+      {q.constraints?.length ? <section className="rounded-2xl border p-5"><h2 className="text-xl font-semibold">Requested conditions</h2><ul className="mt-3 space-y-3">{q.constraints.map((c, i) => <li key={i}><strong>{c.field}: {c.value}</strong><p>{c.outcome === 'APPLIED' ? 'Applied' : c.outcome === 'CONFLICT' ? 'Does not agree with the evidence' : c.outcome === 'UNSUPPORTED' ? 'Not available' : 'Not established'}: {c.detail}</p></li>)}</ul></section> : null}
       {q.mode === 'fail_closed' ? (
         <section className="rounded-2xl border border-[#E2E8F0] bg-[#FFF7F3] p-5">
-          <h2 className="text-2xl font-semibold text-[#0A2540]">This question is not supported as asked</h2>
+          <h2 className="text-2xl font-semibold text-[#0A2540]">{result.terminalState === 'INVALID_INPUT' ? 'Check your request' : 'This question needs clarification'}</h2>
           <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">{q.failReason}</p>
           {q.alternatives?.length ? (
             <ul className="mt-4 space-y-2">
@@ -93,7 +91,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
         </section>
       ) : null}
 
-      {q.mode !== 'fail_closed' && !def && !result.results.length && !result.counts.length ? (
+      {q.mode !== 'fail_closed' && result.terminalState !== 'UNAVAILABLE' && result.terminalState !== 'NEEDS_CLARIFICATION' && !def && !result.results.length && !result.counts.length ? (
         <section className="rounded-2xl border border-[#E2E8F0] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#0A2540]">No matching research identities in this extract</h2>
           <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">
@@ -128,7 +126,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                 ) : null}
                 {row.fmcsaStatus ? (
                   <div>
-                    <dt className="text-xs uppercase">FMCSA status (stored)</dt>
+                    <dt className="text-xs uppercase">Authority status (stored)</dt>
                     <dd>{row.fmcsaStatus}</dd>
                   </div>
                 ) : null}
@@ -151,6 +149,8 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                   </div>
                 ) : null}
               </dl>
+              {row.sourceLastChecked !== undefined ? <p className="mt-3 text-sm">Stored source checked-at: {row.sourceLastChecked ?? 'Not available'}. Official effective time: {row.officialAsOf ?? 'Not supplied by this extract'}. These records were not checked live today.</p> : null}
+              {row.officialVerificationUrl ? <a href={row.officialVerificationUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center font-semibold text-[#C2410C] underline">Verify this identifier with FMCSA</a> : null}
               <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">
                 <span className="font-semibold">Why this matched. </span>
                 {row.whyMatched}
@@ -164,15 +164,15 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
               ) : null}
               <div className="mt-3 border-t border-[#E2E8F0] pt-3">
                 <p className="text-xs font-semibold uppercase tracking-wide text-[#475569]">Evidence available</p>
-                <p className="mt-1 text-sm text-[#1E293B]">FMCSA identity and role evidence{row.floridaIm ? '; verified Florida FDACS registration linkage' : ''}{row.complaintsNote ? '; partial complaint observations' : ''}.</p>
+                <p className="mt-1 text-sm text-[#1E293B]">Published identity and stored role evidence{row.floridaIm ? '; verified Florida FDACS registration linkage' : ''}{row.complaintsNote ? '; partial complaint observations' : ''}.</p>
               </div>
               <details className="mt-3 rounded-xl bg-[#F8FAFC] p-3">
-                <summary className="flex min-h-11 cursor-pointer items-center font-semibold text-[#0A2540]">Trace this result</summary>
+                <summary className="scroll-mt-24 flex min-h-11 cursor-pointer items-center font-semibold text-[#0A2540]">Trace this result</summary>
                 <dl className="grid gap-2 pt-2 text-sm sm:grid-cols-2">
                   <div><dt className="text-xs uppercase text-[#475569]">Why matched</dt><dd>{row.whyMatched}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Identifiers</dt><dd>{[row.usdot && `USDOT ${row.usdot}`, row.mc && `MC ${row.mc}`].filter(Boolean).join(' · ') || 'State registration row'}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Geography rule</dt><dd>Recorded headquarters is not service territory.</dd></div>
-                  <div><dt className="text-xs uppercase text-[#475569]">Sources</dt><dd>{row.floridaIm ? 'Florida FDACS; FMCSA only when verified-linked' : 'FMCSA published directory extract'}</dd></div>
+                  <div><dt className="text-xs uppercase text-[#475569]">Sources</dt><dd>{row.floridaIm ? 'Florida FDACS; FMCSA only when verified-linked' : 'Published directory record; verify federal evidence with FMCSA'}</dd></div>
                 </dl>
                 <p className="mt-2 text-xs text-[#475569]">Source timing: {result.provenance.officialAsOf}. Current authority is not a recommendation; missing evidence is not zero.</p>
               </details>
@@ -184,12 +184,12 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
       {result.results.length > 0 && result.pagination.total > MOVE_ASK_PAGE_SIZE ? (
         <nav className="flex gap-3" aria-label="Pagination">
           {result.pagination.page > 1 ? (
-            <Link href={href(result.queryText, result.pagination.page - 1)} className="inline-flex min-h-11 items-center rounded-xl border px-4">
+            <Link href={href(result.queryText, result.pagination.page - 1, q.overrides)} className="inline-flex min-h-11 items-center rounded-xl border px-4">
               Previous
             </Link>
           ) : null}
           {result.pagination.hasMore ? (
-            <Link href={href(result.queryText, result.pagination.page + 1)} className="inline-flex min-h-11 items-center rounded-xl bg-[#0A2540] px-4 text-white">
+            <Link href={href(result.queryText, result.pagination.page + 1, q.overrides)} className="inline-flex min-h-11 items-center rounded-xl bg-[#0A2540] px-4 text-white">
               Next
             </Link>
           ) : null}
@@ -200,7 +200,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
       ) : null}
 
       <details className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
-        <summary className="min-h-11 cursor-pointer font-semibold text-[#0A2540]">Trace this query</summary>
+        <summary className="scroll-mt-24 min-h-11 cursor-pointer font-semibold text-[#0A2540]">Trace this query</summary>
         <dl className="mt-4 grid gap-2 text-sm sm:grid-cols-2">
           <div>
             <dt className="text-xs uppercase">Contract</dt>

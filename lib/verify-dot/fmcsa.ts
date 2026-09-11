@@ -18,11 +18,10 @@ export type FmcsaPreview = FmcsaEnrichedFields & {
 
 /** Official FMCSA SAFER Company Snapshot — opens with number pre-filled */
 export function buildSaferLookupUrl(parsed: ParsedCarrierNumber): string {
-  const searchtype = parsed.type === 'MC' ? 'MC' : 'DOT';
-  const param = parsed.type === 'MC' ? 'MC' : 'DOT';
+  const param = parsed.type === 'MC' ? 'MC_MX' : 'USDOT';
   const params = new URLSearchParams({
-    searchtype,
-    querytype: 'queryCarrier',
+    searchtype: 'ANY',
+    query_type: 'queryCarrierSnapshot',
     query_param: param,
     query_string: parsed.value,
   });
