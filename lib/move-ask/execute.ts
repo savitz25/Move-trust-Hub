@@ -282,7 +282,7 @@ async function lookupIdentifier(parsed: ParsedMoveAsk, started: number): Promise
     constraint.outcome = satisfied ? 'APPLIED' : 'CONFLICT';
     constraint.detail = satisfied ? 'The stored identity evidence satisfies this criterion.' : 'The exact identity was resolved, but its stored evidence does not establish this criterion.';
   }
-  for (const c of parsed.query.constraints ?? []) { const line = parsed.interpretation.find((v) => v.label === c.field); if (line) line.value = `${c.value} ? ${c.outcome.replaceAll('_', ' ').toLowerCase()}`; }
+  for (const c of parsed.query.constraints ?? []) { const line = parsed.interpretation.find((v) => v.label === c.field); if (line) line.value = `${c.value}: ${c.outcome.replaceAll('_', ' ').toLowerCase()}`; }
   const result = finish(parsed, results, parsed.query.page > 1 || (count ?? 0) > MOVE_ASK_PAGE_SIZE + 1 ? count ?? rows.length : rows.length, started, 'Exact published identity (additional context is not a service-area match)');
   if (!results.length && ids.length === 2) {
     result.terminalState = 'NEEDS_CLARIFICATION';

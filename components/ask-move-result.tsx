@@ -57,7 +57,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
 
       {result.terminalState === 'UNAVAILABLE' ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Research is temporarily unavailable</h2><p className="mt-3">The source could not be checked. Try again; this is not a zero-result search.</p></section> : null}
       {result.terminalState === 'NEEDS_CLARIFICATION' ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
-      {q.constraints?.length ? <section className="rounded-2xl border p-5"><h2 className="text-xl font-semibold">Requested conditions</h2><ul className="mt-3 space-y-3">{q.constraints.map((c, i) => <li key={i}><strong>{c.field}: {c.value}</strong><p>{c.outcome === 'APPLIED' ? 'Applied' : c.outcome === 'CONFLICT' ? 'Does not agree with the evidence' : c.outcome === 'UNSUPPORTED' ? 'Not available' : 'Not established'} ? {c.detail}</p></li>)}</ul></section> : null}
+      {q.constraints?.length ? <section className="rounded-2xl border p-5"><h2 className="text-xl font-semibold">Requested conditions</h2><ul className="mt-3 space-y-3">{q.constraints.map((c, i) => <li key={i}><strong>{c.field}: {c.value}</strong><p>{c.outcome === 'APPLIED' ? 'Applied' : c.outcome === 'CONFLICT' ? 'Does not agree with the evidence' : c.outcome === 'UNSUPPORTED' ? 'Not available' : 'Not established'}: {c.detail}</p></li>)}</ul></section> : null}
       {q.mode === 'fail_closed' ? (
         <section className="rounded-2xl border border-[#E2E8F0] bg-[#FFF7F3] p-5">
           <h2 className="text-2xl font-semibold text-[#0A2540]">{result.terminalState === 'INVALID_INPUT' ? 'Check your request' : 'This question needs clarification'}</h2>
@@ -174,12 +174,12 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                 <p className="mt-1 text-sm text-[#1E293B]">Published identity and stored role evidence{row.floridaIm ? '; verified Florida FDACS registration linkage' : ''}{row.complaintsNote ? '; partial complaint observations' : ''}.</p>
               </div>
               <details className="mt-3 rounded-xl bg-[#F8FAFC] p-3">
-                <summary className="flex min-h-11 cursor-pointer items-center font-semibold text-[#0A2540]">Trace this result</summary>
+                <summary className="scroll-mt-24 flex min-h-11 cursor-pointer items-center font-semibold text-[#0A2540]">Trace this result</summary>
                 <dl className="grid gap-2 pt-2 text-sm sm:grid-cols-2">
                   <div><dt className="text-xs uppercase text-[#475569]">Why matched</dt><dd>{row.whyMatched}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Identifiers</dt><dd>{[row.usdot && `USDOT ${row.usdot}`, row.mc && `MC ${row.mc}`].filter(Boolean).join(' · ') || 'State registration row'}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Geography rule</dt><dd>Recorded headquarters is not service territory.</dd></div>
-                  <div><dt className="text-xs uppercase text-[#475569]">Sources</dt><dd>{row.floridaIm ? 'Florida FDACS; FMCSA only when verified-linked' : 'FMCSA published directory extract'}</dd></div>
+                  <div><dt className="text-xs uppercase text-[#475569]">Sources</dt><dd>{row.floridaIm ? 'Florida FDACS; FMCSA only when verified-linked' : 'Published directory record; verify federal evidence with FMCSA'}</dd></div>
                 </dl>
                 <p className="mt-2 text-xs text-[#475569]">Source timing: {result.provenance.officialAsOf}. Current authority is not a recommendation; missing evidence is not zero.</p>
               </details>
@@ -207,7 +207,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
       ) : null}
 
       <details className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
-        <summary className="min-h-11 cursor-pointer font-semibold text-[#0A2540]">Trace this query</summary>
+        <summary className="scroll-mt-24 min-h-11 cursor-pointer font-semibold text-[#0A2540]">Trace this query</summary>
         <dl className="mt-4 grid gap-2 text-sm sm:grid-cols-2">
           <div>
             <dt className="text-xs uppercase">Contract</dt>
