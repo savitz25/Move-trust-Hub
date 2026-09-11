@@ -23,7 +23,7 @@ try {
     let view=await ui();assert.equal(view.path,'/ask');assert.ok(view.text.includes('SHIFL INC'));assert.ok(view.text.includes('records USDOT 3244649.'));assert.ok(!view.text.includes('records USDOT 3244.'));assert.ok(view.scroll<=width);assert.match(view.robots,/noindex/);
     if(width===390){assert.match(view.text,/miama movers/);assert.match(view.text,/Not established/);}
     for(const name of ['Trace this result','Trace this query']){
-      const summary=page.locator('summary').filter({hasText:name});await summary.evaluate(e=>e.scrollIntoView({behavior:'instant',block:'center'}));await page.waitForTimeout(300);await summary.click();assert.ok(await summary.evaluate(e=>e.parentElement.open));
+      const summary=page.locator('summary').filter({hasText:name});await summary.evaluate(e=>e.scrollIntoView({behavior:'instant',block:'center'}));await page.waitForTimeout(300);const original=await summary.elementHandle();await summary.click();assert.ok(await original.evaluate(e=>e.isConnected));assert.ok(await summary.evaluate(e=>e.parentElement.open));
       await summary.press('Enter');assert.equal(await summary.evaluate(e=>e.parentElement.open),false);
       await summary.press('Enter');assert.ok(await summary.evaluate(e=>e.parentElement.open));
     }

@@ -494,6 +494,9 @@ function emptyBase(parsed: ParsedMoveAsk, started: number): MoveAskResult {
     queryText: parsed.raw,
     parsed,
     resultType: parsed.query.mode,
+    terminalState: parsed.query.mode === 'fail_closed'
+      ? parsed.query.constraints?.some((c) => c.outcome === 'UNSUPPORTED') ? 'UNSUPPORTED' : 'NEEDS_CLARIFICATION'
+      : parsed.query.mode === 'definition' ? 'FOUND' : 'NO_MATCH',
     results: [],
     counts: [],
     pagination: { page: parsed.query.page, pageSize: MOVE_ASK_PAGE_SIZE, total: 0, hasMore: false },
@@ -560,6 +563,7 @@ export function publicAskPayload(result: MoveAskResult) {
     capability: { federatedExecution: 'execute', askStatus: 'live' },
     interpretation: result.parsed.interpretation,
     query: {
+      ...(result.parsed.query.directoryRequest ? { specialistContract: result.parsed.query.directoryRequest.contract } : {}),
       mode: result.parsed.query.mode,
       role: result.parsed.query.role,
       authorityCurrent: result.parsed.query.authorityCurrent,

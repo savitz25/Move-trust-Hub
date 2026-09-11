@@ -31,6 +31,10 @@ async function source<T>(run: (calls: URL[]) => Promise<T>, rows: Array<Record<s
   finally { globalThis.fetch = prior.fetch; for (const [key, value] of Object.entries({ NEXT_PUBLIC_SUPABASE_URL: prior.url, SUPABASE_SERVICE_ROLE_KEY: prior.key })) { if (value === undefined) delete process.env[key]; else process.env[key] = value; } }
 }
 
+test('missing identifier has an explicit recoverable terminal state', async () => {
+  const r=await executeMoveRequest({q:'USDOT lookup'}); assert.equal(r.terminalState,'NEEDS_CLARIFICATION'); assert.equal(r.results.length,0);
+});
+
 test('identifier variants, full grouped span, leading zeroes and MC family', async () => source(async (calls) => {
   for (const q of ['USDOT 3244649', 'USDOT 3244 649', 'usdot #3244649', 'DOT-3244649', 'USDOT\t3244\t649', 'usdot 3244 649 miama movers', 'USDOT 3244 649 in Miami 33101', 'USDOT 3244649 in Miami in 2026', 'Find USDOT 3244649.']) {
     const result = await executeMoveRequest({ q });
