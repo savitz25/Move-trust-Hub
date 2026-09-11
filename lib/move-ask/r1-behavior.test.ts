@@ -76,7 +76,7 @@ test('matching and conflicting USDOT/MC pairs retain both grains', async () => s
 }));
 
 test('malformed/ambiguous/missing identifiers never reach a source', async () => source(async (calls) => {
-  for (const q of ['USDOT lookup', 'MC lookup', 'USDOT 3244.649', 'USDOT 3.244649e6', 'USDOT 3244649e2', 'USDOT -3244649.5', 'USDOT 3244 649 2026', 'USDOT 3244649 33101', 'USDOT 3244 USDOT 649', 'USDOT 123456789', 'USDOT 3244649 MC lookup', '3244649', 'x'.repeat(181)]) {
+  for (const q of ['USDOT lookup', 'MC lookup', 'USDOT 3244.649', 'USDOT 3244, 649', 'USDOT 3244 / 649', 'USDOT 3244 and 649', 'USDOT 3.244649e6', 'USDOT 3244649e2', 'USDOT -3244649.5', 'USDOT 3244 649 2026', 'USDOT 3244649 33101', 'USDOT 3244 USDOT 649', 'USDOT 123456789', 'USDOT 3244649 MC lookup', '3244649', 'x'.repeat(181)]) {
     const result = await executeMoveRequest({ q });
     assert.equal(result.results.length, 0, q); assert.equal(result.parsed.query.mode, 'fail_closed', q);
   }
