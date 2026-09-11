@@ -1,0 +1,77 @@
+{
+  "utc": "2026-09-11T17:22:59.207112+00:00",
+  "deployment": "dpl_7s6TKvtM7DovhiGQ1eGnv9joaVC5",
+  "sha": "c6c409d6cdb5440c6b446236b564b50884383c6c",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/",
+      "noindexHeader": null
+    },
+    {
+      "path": "/companies/shifl-inc",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/companies/shifl-inc",
+      "noindexHeader": null
+    },
+    {
+      "path": "/companies",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/companies",
+      "noindexHeader": null
+    },
+    {
+      "path": "/verify-dot",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/verify-dot",
+      "noindexHeader": null
+    },
+    {
+      "path": "/my-move",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/my-move",
+      "noindexHeader": null
+    },
+    {
+      "path": "/portal",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/portal",
+      "noindexHeader": null
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/robots.txt",
+      "noindexHeader": null
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/sitemap.xml",
+      "noindexHeader": null
+    },
+    {
+      "path": "/ask?q=carrier%20vs%20broker",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/ask?q=carrier%20vs%20broker",
+      "noindexHeader": null
+    },
+    {
+      "path": "/ask?q=Florida%20intrastate%20movers",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/ask?q=Florida%20intrastate%20movers",
+      "noindexHeader": null
+    },
+    {
+      "path": "bare-host exact research",
+      "status": 200,
+      "finalUrl": "https://www.movetrusthub.com/ask?q=USDOT%203244649"
+    }
+  ],
+  "clientBundleScan": {
+    "scriptFiles": 22,
+    "knownServerValues": 4,
+    "matches": 0
+  }
+}
