@@ -11,7 +11,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   return { title: q?.trim() ? `Research: ${q.trim().slice(0, 80)}` : 'Research movers', description: 'Source-backed moving-company research across FMCSA and supported state records.', robots: { index: false, follow: true } };
 }
 
-export default async function AskPage({ searchParams }: { searchParams: Promise<{ q?: string; page?: string; role?: string; state?: string; authority?: string }> }) {
+export default async function AskPage({ searchParams }: { searchParams: Promise<{ q?: string; page?: string; role?: string; state?: string; authority?: string; company?: string }> }) {
   const params = await searchParams;
   const baseQuery = typeof params.q === 'string' ? params.q : '';
   const result = params.q !== undefined ? await executeMoveRequest(params) : null;

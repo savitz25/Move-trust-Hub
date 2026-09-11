@@ -1,0 +1,16 @@
+{
+  "time": "2026-09-11T22:34:44.834246+00:00",
+  "results": [
+    {
+      "mutation": "name-to-directory",
+      "exit": 1,
+      "detected": true
+    },
+    {
+      "mutation": "false-source-provenance",
+      "exit": 1,
+      "detected": true
+    }
+  ],
+  "restored": true
+}

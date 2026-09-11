@@ -1,0 +1,151 @@
+{
+  "time": "2026-09-11T22:32:52.107Z",
+  "observed": [
+    {
+      "q": "JK Moving Services licensed?",
+      "terminal": "NEEDS_CLARIFICATION",
+      "nameSearch": {
+        "requested": "JK Moving Services",
+        "candidateLimit": 10,
+        "retrievalLimit": 200,
+        "truncated": false,
+        "selected": false,
+        "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+      },
+      "results": [
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "field": "fmcsa_raw.dbaName",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "field": "name",
+          "match": "exact_source_name"
+        },
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "field": "fmcsa_legal_name",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "field": "fmcsa_legal_name",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "field": "fmcsa_legal_name",
+          "match": "distinctive_token_candidate"
+        }
+      ],
+      "elapsedMs": 1649
+    },
+    {
+      "q": "SHIFL INC",
+      "terminal": "FOUND",
+      "nameSearch": {
+        "requested": "SHIFL INC",
+        "candidateLimit": 10,
+        "retrievalLimit": 200,
+        "truncated": false,
+        "selected": false,
+        "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+      },
+      "results": [
+        {
+          "id": "usdot-3244649",
+          "name": "SHIFL INC",
+          "field": "fmcsa_legal_name",
+          "match": "exact_source_name"
+        }
+      ],
+      "elapsedMs": 815
+    },
+    {
+      "q": "ALLIED VAN LINES INC",
+      "terminal": "FOUND",
+      "nameSearch": {
+        "requested": "ALLIED VAN LINES INC",
+        "candidateLimit": 10,
+        "retrievalLimit": 200,
+        "truncated": false,
+        "selected": false,
+        "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+      },
+      "results": [
+        {
+          "id": "allied",
+          "name": "Allied Van Lines",
+          "field": "fmcsa_legal_name",
+          "match": "exact_source_name"
+        }
+      ],
+      "elapsedMs": 799
+    },
+    {
+      "q": "JK",
+      "terminal": "NEEDS_CLARIFICATION",
+      "nameSearch": {
+        "requested": "JK",
+        "candidateLimit": 10,
+        "retrievalLimit": 200,
+        "truncated": false,
+        "selected": false,
+        "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+      },
+      "results": [
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "field": "fmcsa_legal_name",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "field": "fmcsa_legal_name",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "field": "fmcsa_legal_name",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "field": "fmcsa_legal_name",
+          "match": "distinctive_token_candidate"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "field": "fmcsa_legal_name",
+          "match": "distinctive_token_candidate"
+        }
+      ],
+      "elapsedMs": 439
+    },
+    {
+      "q": "Impossiblequokka Moving Services",
+      "terminal": "NO_MATCH",
+      "nameSearch": {
+        "requested": "Impossiblequokka Moving Services",
+        "candidateLimit": 10,
+        "retrievalLimit": 200,
+        "truncated": false,
+        "selected": false,
+        "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+      },
+      "results": [],
+      "elapsedMs": 522
+    }
+  ]
+}

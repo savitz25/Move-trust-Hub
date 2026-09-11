@@ -1,0 +1,42 @@
+{
+  "ticket": "TH-SEARCH-R1-005",
+  "status": "IMPLEMENTED_VALIDATION_IN_PROGRESS",
+  "timestamp": "2026-09-11T22:39:12.512730+00:00",
+  "model": "GPT-6 Astra / High USER-CONFIRMED",
+  "baseline": "866bde6eeeed692d23257c7de75ebca38cb11e78",
+  "candidate": null,
+  "merge": null,
+  "deployment": null,
+  "sourceOracleSha256": "61a89e81cec57876edc5f94f77521888c29bef99aaec1c1fa90d4c68fa83bed7",
+  "tests": {
+    "focused": {
+      "pass": 12,
+      "fail": 0
+    },
+    "r1-001": {
+      "pass": 17,
+      "fail": 0
+    },
+    "additional": {
+      "pass": 65,
+      "fail": 0
+    },
+    "ny-routing": {
+      "pass": 10,
+      "fail": 0
+    },
+    "typecheck": {
+      "baseline": 535,
+      "candidate": 0,
+      "changedFileErrors": 0
+    },
+    "lint": "Unconfigured baseline/candidate; setup cancelled without config changes",
+    "build": "running; not yet certified",
+    "browser": "baseline native 2779ms; candidate pending"
+  },
+  "review": "separate self-review; automated PR review pending; not independent human review",
+  "knownGaps": [
+    "DBAs absent from existing legal/display name index may remain undiscoverable",
+    "complete intrastate licensing/local service area and other tickets remain outside scope"
+  ]
+}

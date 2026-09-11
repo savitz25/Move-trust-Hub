@@ -1,3 +1,4 @@
+import { parseNameRequest, distinctiveTokens } from './name';
 import { parseMoveIdentifiers } from './identifier';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
 
@@ -99,6 +100,19 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail('The question is too long or contains unsupported syntax. Enter a short mover research question or labeled identifier.', ['Find USDOT 3244649.']);
     push('Status', 'Input rejected safely');
     return { raw: q, query, interpretation: lines };
+  }
+
+  const named = !isRanking(q) && !isQuote(q) && !isScam(q) && !/\b(?:complaints?|usdot|dot|mc)\b/i.test(q) ? parseNameRequest(q) : null;
+  if (named) {
+    if (!named.name || !distinctiveTokens(named.name).length || named.name.length > 80 || /[\x00-\x1f\x7f]/.test(raw)) {
+      const query = fail('Enter a distinctive company name (up to 80 characters), or a labeled USDOT/MC identifier. Generic industry words alone do not identify a company.', ['USDOT lookup', 'MC lookup']);
+      return { raw: q, query, interpretation: [{ label: 'Name research', value: 'Identity required' }] };
+    }
+    return { raw: q, query: { mode: 'entity', includeDualRole: true, page: safePage, nameQuery: named.name, nameRequest: named, evidenceFamily: named.task === 'authority' ? 'authority' : undefined },
+      interpretation: [{ label: 'Company name', value: named.name }, { label: 'Research task', value: named.task }, { label: 'Match policy', value: 'Source-backed name candidates; confirm the intended public identity' }] };
+  }
+  if (/^who owns (?:this|that|the) (?:moving )?company|^how (?:do|can) i check whether (?:a|the) mover is licensed/i.test(q)) {
+    return { raw: q, query: fail('Provide the company name or a labeled USDOT/MC identifier to research its stored public evidence. Ownership and license approval are not inferred.', ['USDOT lookup', 'MC lookup']), interpretation: [{label:'Identity',value:'Required'}] };
   }
 
   if (/\bhow many moving companies\b|\btotal movers\b/i.test(q)) {
@@ -465,23 +479,6 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       ['Find USDOT 3244649.', 'What is the difference between a carrier and a broker?'],
     );
     push('Mode', 'fail_closed');
-    return { raw: q, query, interpretation: lines };
-  }
-
-  if (/\bwho is\b|\bnamed\b/i.test(q) || (/^\s*find\b/i.test(q) && !/\b(usdot|dot|mc|carrier|broker|mover)/i.test(q))) {
-    const nameQuery = q.replace(/^\s*(find|who is|company named)\s+/i, '').trim();
-    const query: MoveResearchQuery = { mode: 'entity', nameQuery, includeDualRole: true, page: safePage };
-    push('Mode', 'company identity');
-    push('Company name', nameQuery);
-    push('Identity rule', 'Name similarity is a candidate match; USDOT/MC establishes exact regulatory identity.');
-    return { raw: q, query, interpretation: lines };
-  }
-
-  if (/^[a-z0-9][a-z0-9 '&.,-]{2,100}$/i.test(q) && !role && !state && !/\b(current|active|inactive|authority|complaint|mover|moving|company)\b/i.test(q)) {
-    const query: MoveResearchQuery = { mode: 'entity', nameQuery: q, includeDualRole: true, page: safePage };
-    push('Mode', 'company identity');
-    push('Company name', q);
-    push('Identity rule', 'Name similarity is a candidate match; USDOT/MC establishes exact regulatory identity.');
     return { raw: q, query, interpretation: lines };
   }
 
