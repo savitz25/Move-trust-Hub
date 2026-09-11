@@ -1,0 +1,2055 @@
+{
+  "utc": "2026-09-11T17:21:51.696Z",
+  "surface": "Persistent Chrome, Playwright attached via local CDP",
+  "origin": "https://www.movetrusthub.com",
+  "sha": "c6c409d6cdb5440c6b446236b564b50884383c6c",
+  "deployment": "dpl_7s6TKvtM7DovhiGQ1eGnv9joaVC5",
+  "checks": [
+    {
+      "name": "homepage-keyboard-native-api-trace",
+      "width": 1280,
+      "q": "USDOT 3244649",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nidentifier\nEdit request\nIDENTIFIER\nUSDOT 3244649 (labeled)\nEdit request\nUSDOT\n3244649: applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nusdot: 3244649\n\nApplied: Exact stored identifier equality; no prefix or approximate fallback.\n\nCount\nMatching research identities\n1\n\nExact published identity (additional context is not a service-area match)\n\nSHIFL INC\nBroker\nUSDOT\n3244649\nMC\n1019808\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nAIRMONT, NY\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nWHY MATCHED\nExact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.\nIDENTIFIERS\nUSDOT 3244649 · MC 1019808\nGEOGRAPHY RULE\nRecorded headquarters is not service territory.\nSOURCES\nPublished directory record; verify federal evidence with FMCSA\n\nSource timing: Official effective time is not supplied by this extract. Stored source check times are shown separately.. Current authority is not a recommendation; missing evidence is not zero.\n\nTrace this query\nCONTRACT\nmove-ask-v1\nGRAIN\nExact published identity (additional context is not a service-area match)\nGEOGRAPHY MEANING\nNot geography-filtered\nOFFICIAL AS-OF\nOfficial effective time is not supplied by this extract. Stored source check times are shown separately.\nELAPSED\n287 ms\nA broker is not the carrier that necessarily transports household goods.\nFlorida IM registration is not federal interstate household-goods authority.\nHeadquarters is not service territory.\nCurrent authority is not a recommendation.\nComplaint observations are not confirmed wrongdoing.\nMissing evidence is not inactive, unauthorized, fraudulent, or clean.",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "FOUND",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "identifier"
+            },
+            {
+              "label": "Identifier",
+              "value": "USDOT 3244649 (labeled)"
+            },
+            {
+              "label": "usdot",
+              "value": "3244649: applied"
+            }
+          ],
+          "query": {
+            "mode": "identifier",
+            "constraints": [
+              {
+                "field": "usdot",
+                "value": "3244649",
+                "outcome": "APPLIED",
+                "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+              }
+            ],
+            "identifiers": [
+              {
+                "type": "usdot",
+                "value": "3244649",
+                "rawSpan": "USDOT 3244649",
+                "start": 0,
+                "end": 13,
+                "normalization": []
+              }
+            ],
+            "executor": "records",
+            "identifier": {
+              "type": "usdot",
+              "value": "3244649"
+            },
+            "page": 1
+          },
+          "resultType": "identifier",
+          "results": [
+            {
+              "name": "SHIFL INC",
+              "usdot": "3244649",
+              "mc": "1019808",
+              "role": "Broker",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "AIRMONT, NY",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/shifl-inc",
+              "publicationNote": null,
+              "whyMatched": "Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null,
+              "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3244649",
+              "matchEvidence": {
+                "method": "exact_identifier",
+                "fields": [
+                  {
+                    "field": "usdot_number",
+                    "requested": "3244649",
+                    "returned": "3244649"
+                  }
+                ],
+                "normalization": []
+              }
+            }
+          ],
+          "counts": [
+            {
+              "label": "Matching research identities",
+              "value": 1,
+              "grain": "Exact published identity (additional context is not a service-area match)"
+            }
+          ],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 1,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+            "geographyMeaning": "Not geography-filtered",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "Exact published identity (additional context is not a service-area match)",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 438
+        }
+      }
+    },
+    {
+      "name": "homepage-keyboard-native-api-trace",
+      "width": 390,
+      "q": "usdot 3244 649 miama movers",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nidentifier\nEdit request\nIDENTIFIER\nUSDOT 3244649 (labeled)\nEdit request\nNORMALIZATION\nusdot 3244 649: Removed formatting whitespace within the labelled number\nEdit request\nNORMALIZATION\nusdot 3244 649: Standardized identifier label\nEdit request\nADDITIONAL CONTEXT\nmiama movers: needs clarification\nEdit request\nUSDOT\n3244649: applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nadditional context: miama movers\n\nNot established: Only the exact identity is resolved. This text is not verified as name, location, service territory or authority criteria.\n\nusdot: 3244649\n\nApplied: Exact stored identifier equality; no prefix or approximate fallback.\n\nCount\nMatching research identities\n1\n\nExact published identity (additional context is not a service-area match)\n\nSHIFL INC\nBroker\nUSDOT\n3244649\nMC\n1019808\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nAIRMONT, NY\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nWHY MATCHED\nExact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.\nIDENTIFIERS\nUSDOT 3244649 · MC 1019808\nGEOGRAPHY RULE\nRecorded headquarters is not service territory.\nSOURCES\nPublished directory record; verify federal evidence with FMCSA\n\nSource timing: Official effective time is not supplied by this extract. Stored source check times are shown separately.. Current authority is not a recommendation; missing evidence is not zero.\n\nTrace this query\nCONTRACT\nmove-ask-v1\nGRAIN\nExact published identity (additional context is not a service-area match)\nGEOGRAPHY MEANING\nNot geography-filtered\nOFFICIAL AS-OF\nOfficial effective time is not supplied by this extract. Stored source check times are shown separately.\nELAPSED\n210 ms\nA broker is not the carrier that necessarily transports household goods.\nFlorida IM registration is not federal interstate household-goods authority.\nHeadquarters is not service territory.\nCurrent authority is not a recommendation.\nComplaint observations are not confirmed wrongdoing.\nMissing evidence is not inactive, unauthorized, fraudulent, or clean.",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "FOUND",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "identifier"
+            },
+            {
+              "label": "Identifier",
+              "value": "USDOT 3244649 (labeled)"
+            },
+            {
+              "label": "Normalization",
+              "value": "usdot 3244 649: Removed formatting whitespace within the labelled number"
+            },
+            {
+              "label": "Normalization",
+              "value": "usdot 3244 649: Standardized identifier label"
+            },
+            {
+              "label": "additional context",
+              "value": "miama movers: needs clarification"
+            },
+            {
+              "label": "usdot",
+              "value": "3244649: applied"
+            }
+          ],
+          "query": {
+            "mode": "identifier",
+            "constraints": [
+              {
+                "field": "additional context",
+                "value": "miama movers",
+                "outcome": "NEEDS_CLARIFICATION",
+                "detail": "Only the exact identity is resolved. This text is not verified as name, location, service territory or authority criteria."
+              },
+              {
+                "field": "usdot",
+                "value": "3244649",
+                "outcome": "APPLIED",
+                "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+              }
+            ],
+            "identifiers": [
+              {
+                "type": "usdot",
+                "value": "3244649",
+                "rawSpan": "usdot 3244 649",
+                "start": 0,
+                "end": 14,
+                "normalization": [
+                  "Removed formatting whitespace within the labelled number",
+                  "Standardized identifier label"
+                ]
+              }
+            ],
+            "executor": "records",
+            "identifier": {
+              "type": "usdot",
+              "value": "3244649"
+            },
+            "page": 1
+          },
+          "resultType": "identifier",
+          "results": [
+            {
+              "name": "SHIFL INC",
+              "usdot": "3244649",
+              "mc": "1019808",
+              "role": "Broker",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "AIRMONT, NY",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/shifl-inc",
+              "publicationNote": null,
+              "whyMatched": "Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null,
+              "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3244649",
+              "matchEvidence": {
+                "method": "exact_identifier",
+                "fields": [
+                  {
+                    "field": "usdot_number",
+                    "requested": "3244649",
+                    "returned": "3244649"
+                  }
+                ],
+                "normalization": [
+                  "Removed formatting whitespace within the labelled number",
+                  "Standardized identifier label"
+                ]
+              }
+            }
+          ],
+          "counts": [
+            {
+              "label": "Matching research identities",
+              "value": 1,
+              "grain": "Exact published identity (additional context is not a service-area match)"
+            }
+          ],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 1,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+            "geographyMeaning": "Not geography-filtered",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "Exact published identity (additional context is not a service-area match)",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 260
+        }
+      }
+    },
+    {
+      "name": "320-overflow",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "name": "USDOT 3244 649",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nidentifier\nEdit request\nIDENTIFIER\nUSDOT 3244649 (labeled)\nEdit request\nNORMALIZATION\nUSDOT 3244 649: Removed formatting whitespace within the labelled number\nEdit request\nUSDOT\n3244649: applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nusdot: 3244649\n\nApplied: Exact stored identifier equality; no prefix or approximate fallback.\n\nCount\nMatching research identities\n1\n\nExact published identity (additional context is not a service-area match)\n\nSHIFL INC\nBroker\nUSDOT\n3244649\nMC\n1019808\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nAIRMONT, NY\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "FOUND",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "identifier"
+            },
+            {
+              "label": "Identifier",
+              "value": "USDOT 3244649 (labeled)"
+            },
+            {
+              "label": "Normalization",
+              "value": "USDOT 3244 649: Removed formatting whitespace within the labelled number"
+            },
+            {
+              "label": "usdot",
+              "value": "3244649: applied"
+            }
+          ],
+          "query": {
+            "mode": "identifier",
+            "constraints": [
+              {
+                "field": "usdot",
+                "value": "3244649",
+                "outcome": "APPLIED",
+                "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+              }
+            ],
+            "identifiers": [
+              {
+                "type": "usdot",
+                "value": "3244649",
+                "rawSpan": "USDOT 3244 649",
+                "start": 0,
+                "end": 14,
+                "normalization": [
+                  "Removed formatting whitespace within the labelled number"
+                ]
+              }
+            ],
+            "executor": "records",
+            "identifier": {
+              "type": "usdot",
+              "value": "3244649"
+            },
+            "page": 1
+          },
+          "resultType": "identifier",
+          "results": [
+            {
+              "name": "SHIFL INC",
+              "usdot": "3244649",
+              "mc": "1019808",
+              "role": "Broker",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "AIRMONT, NY",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/shifl-inc",
+              "publicationNote": null,
+              "whyMatched": "Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null,
+              "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3244649",
+              "matchEvidence": {
+                "method": "exact_identifier",
+                "fields": [
+                  {
+                    "field": "usdot_number",
+                    "requested": "3244649",
+                    "returned": "3244649"
+                  }
+                ],
+                "normalization": [
+                  "Removed formatting whitespace within the labelled number"
+                ]
+              }
+            }
+          ],
+          "counts": [
+            {
+              "label": "Matching research identities",
+              "value": 1,
+              "grain": "Exact published identity (additional context is not a service-area match)"
+            }
+          ],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 1,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+            "geographyMeaning": "Not geography-filtered",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "Exact published identity (additional context is not a service-area match)",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 259
+        }
+      }
+    },
+    {
+      "name": "MC 1019 808",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nidentifier\nEdit request\nIDENTIFIER\nMC 1019808 (labeled)\nEdit request\nNORMALIZATION\nMC 1019 808: Removed formatting whitespace within the labelled number\nEdit request\nMC\n1019808: applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nmc: 1019808\n\nApplied: Exact stored identifier equality; no prefix or approximate fallback.\n\nCount\nMatching research identities\n1\n\nExact published identity (additional context is not a service-area match)\n\nSHIFL INC\nBroker\nUSDOT\n3244649\nMC\n1019808\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nAIRMONT, NY\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Exact identifier match: the published directory identity records MC 1019808. Identifier equality does not establish service territory, authority eligibility or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "FOUND",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "identifier"
+            },
+            {
+              "label": "Identifier",
+              "value": "MC 1019808 (labeled)"
+            },
+            {
+              "label": "Normalization",
+              "value": "MC 1019 808: Removed formatting whitespace within the labelled number"
+            },
+            {
+              "label": "mc",
+              "value": "1019808: applied"
+            }
+          ],
+          "query": {
+            "mode": "identifier",
+            "constraints": [
+              {
+                "field": "mc",
+                "value": "1019808",
+                "outcome": "APPLIED",
+                "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+              }
+            ],
+            "identifiers": [
+              {
+                "type": "mc",
+                "value": "1019808",
+                "rawSpan": "MC 1019 808",
+                "start": 0,
+                "end": 11,
+                "normalization": [
+                  "Removed formatting whitespace within the labelled number"
+                ]
+              }
+            ],
+            "executor": "records",
+            "identifier": {
+              "type": "mc",
+              "value": "1019808"
+            },
+            "page": 1
+          },
+          "resultType": "identifier",
+          "results": [
+            {
+              "name": "SHIFL INC",
+              "usdot": "3244649",
+              "mc": "1019808",
+              "role": "Broker",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "AIRMONT, NY",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/shifl-inc",
+              "publicationNote": null,
+              "whyMatched": "Exact identifier match: the published directory identity records MC 1019808. Identifier equality does not establish service territory, authority eligibility or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null,
+              "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string=1019808",
+              "matchEvidence": {
+                "method": "exact_identifier",
+                "fields": [
+                  {
+                    "field": "mc_number",
+                    "requested": "1019808",
+                    "returned": "1019808"
+                  }
+                ],
+                "normalization": [
+                  "Removed formatting whitespace within the labelled number"
+                ]
+              }
+            }
+          ],
+          "counts": [
+            {
+              "label": "Matching research identities",
+              "value": 1,
+              "grain": "Exact published identity (additional context is not a service-area match)"
+            }
+          ],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 1,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+            "geographyMeaning": "Not geography-filtered",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "Exact published identity (additional context is not a service-area match)",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 270
+        }
+      }
+    },
+    {
+      "name": "USDOT 3244",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nidentifier\nEdit request\nIDENTIFIER\nUSDOT 3244 (labeled)\nEdit request\nUSDOT\n3244: applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nusdot: 3244\n\nApplied: Exact stored identifier equality; no prefix or approximate fallback.\n\nNo matching research identities in this extract\n\nAbsence is not inactive, unauthorized, fraudulent, or a clean record. Not available in the current indexed source.\n\nTrace this query",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "NO_MATCH",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "identifier"
+            },
+            {
+              "label": "Identifier",
+              "value": "USDOT 3244 (labeled)"
+            },
+            {
+              "label": "usdot",
+              "value": "3244: applied"
+            }
+          ],
+          "query": {
+            "mode": "identifier",
+            "constraints": [
+              {
+                "field": "usdot",
+                "value": "3244",
+                "outcome": "APPLIED",
+                "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+              }
+            ],
+            "identifiers": [
+              {
+                "type": "usdot",
+                "value": "3244",
+                "rawSpan": "USDOT 3244",
+                "start": 0,
+                "end": 10,
+                "normalization": []
+              }
+            ],
+            "executor": "records",
+            "identifier": {
+              "type": "usdot",
+              "value": "3244"
+            },
+            "page": 1
+          },
+          "resultType": "identifier",
+          "results": [],
+          "counts": [],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 0,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+            "geographyMeaning": "Not geography-filtered",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "Exact published identity (additional context is not a service-area match)",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 333
+        }
+      }
+    },
+    {
+      "name": "USDOT lookup",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nIDENTIFIER\nClarification required\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nThis question needs clarification\n\nEnter a labelled USDOT or MC number (3–8 digits).\n\nFind USDOT 3244649.\nFind MC 1019808.\nTrace this query",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "NEEDS_CLARIFICATION",
+          "coverageState": "UNSUPPORTED",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Identifier",
+              "value": "Clarification required"
+            }
+          ],
+          "query": {
+            "mode": "fail_closed",
+            "constraints": [],
+            "executor": "records",
+            "failReason": "Enter a labelled USDOT or MC number (3–8 digits).",
+            "alternatives": [
+              "Find USDOT 3244649.",
+              "Find MC 1019808."
+            ],
+            "page": 1
+          },
+          "resultType": "fail_closed",
+          "results": [],
+          "counts": [],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 0,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "FMCSA directory + FDACS IM where used",
+            "geographyMeaning": "Not geography-filtered",
+            "officialAsOf": "Official effective time is not supplied by this extract.",
+            "grain": "fail_closed",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 1
+        }
+      }
+    },
+    {
+      "name": "USDOT 3244 MC 649",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nidentifier\nEdit request\nIDENTIFIER\nUSDOT 3244 (labeled)\nEdit request\nIDENTIFIER\nMC 649 (labeled)\nEdit request\nIDENTITY RULE\nBoth identifiers must occur on the same published identity; no name-based merge.\nEdit request\nUSDOT\n3244: applied\nEdit request\nMC\n649: applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nConfirm the identity\n\nNo published identity confirms both identifiers. Check each number and research them separately.\n\nRequested conditions\nusdot: 3244\n\nApplied: Exact stored identifier equality; no prefix or approximate fallback.\n\nmc: 649\n\nApplied: Exact stored identifier equality; no prefix or approximate fallback.\n\nTrace this query",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "NEEDS_CLARIFICATION",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "identifier"
+            },
+            {
+              "label": "Identifier",
+              "value": "USDOT 3244 (labeled)"
+            },
+            {
+              "label": "Identifier",
+              "value": "MC 649 (labeled)"
+            },
+            {
+              "label": "Identity rule",
+              "value": "Both identifiers must occur on the same published identity; no name-based merge."
+            },
+            {
+              "label": "usdot",
+              "value": "3244: applied"
+            },
+            {
+              "label": "mc",
+              "value": "649: applied"
+            }
+          ],
+          "query": {
+            "mode": "identifier",
+            "constraints": [
+              {
+                "field": "usdot",
+                "value": "3244",
+                "outcome": "APPLIED",
+                "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+              },
+              {
+                "field": "mc",
+                "value": "649",
+                "outcome": "APPLIED",
+                "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+              }
+            ],
+            "identifiers": [
+              {
+                "type": "usdot",
+                "value": "3244",
+                "rawSpan": "USDOT 3244",
+                "start": 0,
+                "end": 10,
+                "normalization": []
+              },
+              {
+                "type": "mc",
+                "value": "649",
+                "rawSpan": "MC 649",
+                "start": 11,
+                "end": 17,
+                "normalization": []
+              }
+            ],
+            "executor": "records",
+            "identifier": {
+              "type": "usdot",
+              "value": "3244"
+            },
+            "page": 1
+          },
+          "resultType": "identifier",
+          "results": [],
+          "counts": [],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 0,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+            "geographyMeaning": "Not geography-filtered",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "Exact published identity (additional context is not a service-area match)",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "No published identity confirms this USDOT/MC pair. Check each number; they were not merged.",
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 159
+        }
+      }
+    },
+    {
+      "name": "mover in new jersey",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nentity\nEdit request\nREGULATORY SYSTEM\nFMCSA\nEdit request\nGEOGRAPHY\nRecorded company address / headquarters state\nEdit request\nSORT\nCompany name, then USDOT\nEdit request\nDOES NOT MEAN\nServes only this state. Interstate carriers may operate in many states.\nEdit request\nRECORDED HEADQUARTERS STATE\nNJ — applied\nEdit request\nDISCOVERY\nPublished identities by recorded headquarters/address. Includes available directory and regulatory identities; not an NJ licensing roster.\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nrecorded headquarters state: NJ\n\nApplied: Recorded address only; does not establish service territory or NJ state licensing.\n\nCount\nMatching research identities\n267\n\npublic mover identity cohort\n\n1 St Moving CORP\nCarrier\nUSDOT\n1618672\nMC\n598065\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nHOWELL, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n101 Movers CORP\nCarrier\nUSDOT\n4024556\nMC\n1518889\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nWALLINGTON, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA-1 Steedle\nUnknown\nAUTHORITY STATUS (STORED)\nAuthority status unknown\nOPERATING AUTHORITY\nAuthority status unknown\nRECORDED LOCATION\n1152 Crown Point Rd, West Deptford, NJ 08093\n\nStored source checked-at: Not available. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA. Fazio Moving & Storage, INC.\nCarrier\nUSDOT\n117631\nMC\n36426\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nRAMSEY, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA. Pensa Modern Movers\nCarrier\nUSDOT\n31457\nMC\n56378\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nUNION CITY, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA. Santini Moving & Storage CO.\nCarrier\nUSDOT\n6045\nMC\n53438\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nDAYTON, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAb Moving Services\nBroker\nUSDOT\n4094266\nMC\n1560398\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nCHERRY HILL, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAccessible Movers Moving&Storage INC\nCarrier\nUSDOT\n3488885\nMC\n1147567\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nMARLBORO, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAcosta Shipping INC\nCarrier\nUSDOT\n1594244\nMC\n589815\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nVINELAND, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAdam Moving And Storage LLC\nCarrier\nUSDOT\n4462100\nMC\n1759875\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nNORTH BERGEN, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAe Moving\nCarrier\nUSDOT\n4348852\nMC\n1700128\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nPENNSVILLE, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAffordable Movers USA\nUnknown\nAUTHORITY STATUS (STORED)\nAuthority status unknown\nOPERATING AUTHORITY\nAuthority status unknown\nRECORDED LOCATION\n107 Tindall Rd, Middletown Township, NJ 07748\n\nStored source checked-at: Not available. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAffordable Moving & Storage\nUnknown\nAUTHORITY STATUS (STORED)\nAuthority status unknown\nOPERATING AUTHORITY\nAuthority status unknown\nRECORDED LOCATION\n107 Tindall Rd, Middletown Township, NJ 07748\n\nStored source checked-at: Not available. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAk Connect, INC.\nBroker\nUSDOT\n2244218\nMC\n675667\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nJERSEY CITY, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAladdin Movers LLC\nCarrier\nUSDOT\n3346552\nMC\n1069144\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nEDISON, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAll Around Moves\nUnknown\nAUTHORITY STATUS (STORED)\nAuthority status unknown\nOPERATING AUTHORITY\nAuthority status unknown\nRECORDED LOCATION\n125 Half Mile Rd Ste 200, Red Bank, NJ 07701\n\nStored source checked-at: Not available. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAll Jersey Movers\nCarrier\nUSDOT\n812418\nMC\n443945\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nPISCATAWAY, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAlluel\nCarrier\nUSDOT\n2867354\nMC\n960773\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nSOUTH ORANGE, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAmb Moving & Storage INC\nCarrier\nUSDOT\n3839636\nMC\n1395855\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nGARFIELD, NJ\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAmerican Dream Movers\nUnknown\nAUTHORITY STATUS (STORED)\nAuthority status unknown\nOPERATING AUTHORITY\nAuthority status unknown\nRECORDED LOCATION\n1 S Main St Ste 17, Toms River, NJ 08757\n\nStored source checked-at: Not available. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nNext\n\nPage 1 · 267 identities\n\nTrace this query",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "FOUND",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "entity"
+            },
+            {
+              "label": "Regulatory system",
+              "value": "FMCSA"
+            },
+            {
+              "label": "Geography",
+              "value": "Recorded company address / headquarters state"
+            },
+            {
+              "label": "Sort",
+              "value": "Company name, then USDOT"
+            },
+            {
+              "label": "Does not mean",
+              "value": "Serves only this state. Interstate carriers may operate in many states."
+            },
+            {
+              "label": "recorded headquarters state",
+              "value": "NJ — applied"
+            },
+            {
+              "label": "Discovery",
+              "value": "Published identities by recorded headquarters/address. Includes available directory and regulatory identities; not an NJ licensing roster."
+            }
+          ],
+          "query": {
+            "specialistContract": "trusthub-specialist-execution-v2",
+            "mode": "entity",
+            "authorityCurrent": "any",
+            "constraints": [
+              {
+                "field": "recorded headquarters state",
+                "value": "NJ",
+                "outcome": "APPLIED",
+                "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+              }
+            ],
+            "executor": "directory",
+            "jurisdiction": {
+              "state": "NJ",
+              "meaning": "recorded_headquarters_state"
+            },
+            "page": 1
+          },
+          "resultType": "entity",
+          "results": [
+            {
+              "name": "1 St Moving CORP",
+              "usdot": "1618672",
+              "mc": "598065",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "HOWELL, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/1-st-moving-corp",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "101 Movers CORP",
+              "usdot": "4024556",
+              "mc": "1518889",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "WALLINGTON, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/101-movers-corp",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A-1 Steedle",
+              "usdot": null,
+              "mc": null,
+              "role": "Unknown",
+              "fmcsaStatus": "Authority status unknown",
+              "headquarters": "1152 Crown Point Rd, West Deptford, NJ 08093",
+              "floridaIm": null,
+              "operatingAuthority": "Authority status unknown",
+              "href": "/companies/a-1-steedle",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": null,
+              "officialAsOf": null
+            },
+            {
+              "name": "A. Fazio Moving & Storage, INC.",
+              "usdot": "117631",
+              "mc": "36426",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "RAMSEY, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/a-fazio-moving-storage-inc",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A. Pensa Modern Movers",
+              "usdot": "31457",
+              "mc": "56378",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "UNION CITY, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/a-pensa-modern-movers",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A. Santini Moving & Storage CO.",
+              "usdot": "6045",
+              "mc": "53438",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "DAYTON, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/a-santini-moving-storage-co",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Ab Moving Services",
+              "usdot": "4094266",
+              "mc": "1560398",
+              "role": "Broker",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "CHERRY HILL, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/ab-moving-services",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Accessible Movers Moving&Storage INC",
+              "usdot": "3488885",
+              "mc": "1147567",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "MARLBORO, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/accessible-movers-moving-storage-inc",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Acosta Shipping INC",
+              "usdot": "1594244",
+              "mc": "589815",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "VINELAND, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/acosta-shipping-inc",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Adam Moving And Storage LLC",
+              "usdot": "4462100",
+              "mc": "1759875",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "NORTH BERGEN, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/adam-moving-and-storage-llc",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Ae Moving",
+              "usdot": "4348852",
+              "mc": "1700128",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "PENNSVILLE, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/ae-moving",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Affordable Movers USA",
+              "usdot": null,
+              "mc": null,
+              "role": "Unknown",
+              "fmcsaStatus": "Authority status unknown",
+              "headquarters": "107 Tindall Rd, Middletown Township, NJ 07748",
+              "floridaIm": null,
+              "operatingAuthority": "Authority status unknown",
+              "href": "/companies/affordable-movers-usa",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": null,
+              "officialAsOf": null
+            },
+            {
+              "name": "Affordable Moving & Storage",
+              "usdot": null,
+              "mc": null,
+              "role": "Unknown",
+              "fmcsaStatus": "Authority status unknown",
+              "headquarters": "107 Tindall Rd, Middletown Township, NJ 07748",
+              "floridaIm": null,
+              "operatingAuthority": "Authority status unknown",
+              "href": "/companies/affordable-moving-storage",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": null,
+              "officialAsOf": null
+            },
+            {
+              "name": "Ak Connect, INC.",
+              "usdot": "2244218",
+              "mc": "675667",
+              "role": "Broker",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "JERSEY CITY, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/ak-connect-inc",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Aladdin Movers LLC",
+              "usdot": "3346552",
+              "mc": "1069144",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "EDISON, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/aladdin-movers-llc",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "All Around Moves",
+              "usdot": null,
+              "mc": null,
+              "role": "Unknown",
+              "fmcsaStatus": "Authority status unknown",
+              "headquarters": "125 Half Mile Rd Ste 200, Red Bank, NJ 07701",
+              "floridaIm": null,
+              "operatingAuthority": "Authority status unknown",
+              "href": "/companies/all-around-moves",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": null,
+              "officialAsOf": null
+            },
+            {
+              "name": "All Jersey Movers",
+              "usdot": "812418",
+              "mc": "443945",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "PISCATAWAY, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/all-jersey-movers",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Alluel",
+              "usdot": "2867354",
+              "mc": "960773",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "SOUTH ORANGE, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/alluel",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "Amb Moving & Storage INC",
+              "usdot": "3839636",
+              "mc": "1395855",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "GARFIELD, NJ",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded",
+              "href": "/companies/amb-moving-storage-inc",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "American Dream Movers",
+              "usdot": null,
+              "mc": null,
+              "role": "Unknown",
+              "fmcsaStatus": "Authority status unknown",
+              "headquarters": "1 S Main St Ste 17, Toms River, NJ 08757",
+              "floridaIm": null,
+              "operatingAuthority": "Authority status unknown",
+              "href": "/companies/american-dream-movers",
+              "publicationNote": null,
+              "whyMatched": "The published directory identity records NJ as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": null,
+              "officialAsOf": null
+            }
+          ],
+          "counts": [
+            {
+              "label": "Matching research identities",
+              "value": 267,
+              "grain": "public mover identity cohort"
+            }
+          ],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 267,
+            "hasMore": true
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities with available source-specific evidence",
+            "geographyMeaning": "Recorded headquarters/address state = NJ; headquarters is not service territory.",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "public mover identity cohort",
+            "exclusions": [
+              "Only identities already eligible for the public MoveTrustHub directory are returned.",
+              "Recorded headquarters is not service territory, route availability, pickup availability, or delivery availability.",
+              "A broker may arrange transportation without physically hauling the shipment.",
+              "Authority state is regulatory evidence, not approval, safety, quality, or a recommendation.",
+              "Results use neutral source order. Ratings, reputation, paid, claimed, and subscription status do not affect ordering."
+            ],
+            "sourceContract": "trusthub-specialist-execution-v2"
+          },
+          "limitations": [
+            "Only identities already eligible for the public MoveTrustHub directory are returned.",
+            "Recorded headquarters is not service territory, route availability, pickup availability, or delivery availability.",
+            "A broker may arrange transportation without physically hauling the shipment.",
+            "Authority state is regulatory evidence, not approval, safety, quality, or a recommendation.",
+            "Results use neutral source order. Ratings, reputation, paid, claimed, and subscription status do not affect ordering."
+          ],
+          "elapsedMs": 409
+        }
+      }
+    },
+    {
+      "name": "How many current household-goods carriers are headquartered in New Jersey?",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\ncount\nEdit request\nGRAIN\ndirectory profiles with that authority (dual-role rows disclosed, not double-summed into a mega-count)\nEdit request\nROLE\ncarrier — applied\nEdit request\nRECORDED HEADQUARTERS STATE\nNJ — applied\nEdit request\nAUTHORITY\ncurrent — applied\nEdit request\nOPERATION\ncount — applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nrole: carrier\n\nApplied: Applied to source role classes; dual-role treatment is explicit.\n\nrecorded headquarters state: NJ\n\nApplied: Recorded address only; does not establish service territory or NJ state licensing.\n\nauthority: current\n\nApplied: Source authority_active must equal the requested boolean; unknown is excluded.\n\noperation: count\n\nApplied: Count the published role-specific cohort; do not return a general directory instead.\n\nCount\nCarrier-only directory profiles\n220\nCarrier/Broker dual-role directory profiles\n1\n\ndirectory profile\n\nTrace this query",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "FOUND",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "count"
+            },
+            {
+              "label": "Grain",
+              "value": "directory profiles with that authority (dual-role rows disclosed, not double-summed into a mega-count)"
+            },
+            {
+              "label": "role",
+              "value": "carrier — applied"
+            },
+            {
+              "label": "recorded headquarters state",
+              "value": "NJ — applied"
+            },
+            {
+              "label": "authority",
+              "value": "current — applied"
+            },
+            {
+              "label": "operation",
+              "value": "count — applied"
+            }
+          ],
+          "query": {
+            "mode": "count",
+            "role": "carrier",
+            "authorityCurrent": true,
+            "constraints": [
+              {
+                "field": "role",
+                "value": "carrier",
+                "outcome": "APPLIED",
+                "detail": "Applied to source role classes; dual-role treatment is explicit."
+              },
+              {
+                "field": "recorded headquarters state",
+                "value": "NJ",
+                "outcome": "APPLIED",
+                "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+              },
+              {
+                "field": "authority",
+                "value": "current",
+                "outcome": "APPLIED",
+                "detail": "Source authority_active must equal the requested boolean; unknown is excluded."
+              },
+              {
+                "field": "operation",
+                "value": "count",
+                "outcome": "APPLIED",
+                "detail": "Count the published role-specific cohort; do not return a general directory instead."
+              }
+            ],
+            "executor": "records",
+            "jurisdiction": {
+              "state": "NJ",
+              "meaning": "recorded_headquarters_state"
+            },
+            "page": 1
+          },
+          "resultType": "count",
+          "results": [],
+          "counts": [
+            {
+              "label": "Carrier-only directory profiles",
+              "value": 220,
+              "grain": "directory profile"
+            },
+            {
+              "label": "Carrier/Broker dual-role directory profiles",
+              "value": 1,
+              "grain": "directory profile — dual role is disclosed, not double-counted as two companies"
+            }
+          ],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 221,
+            "hasMore": true
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+            "geographyMeaning": "recorded_headquarters_state = NJ",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "carrier authority profiles",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 809
+        }
+      }
+    },
+    {
+      "name": "NJ PM/PW/PC licensed movers",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nCOVERAGE\nNew Jersey statewide roster — REQUEST_ONLY\nEdit request\nNJ LICENSING\nPM/PW/PC — unsupported\nEdit request\nRECORDED HEADQUARTERS STATE\nNJ — applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nNJ licensing: PM/PW/PC\n\nNot available: New Jersey PM/PW/PC intrastate licensing requires its separate roster/search process. A headquarters cohort does not satisfy this condition.\n\nrecorded headquarters state: NJ\n\nApplied: Recorded address only; does not establish service territory or NJ state licensing.\n\nThis question needs clarification\n\nNew Jersey PM/PW/PC intrastate licensing requires its separate roster/search process. A headquarters cohort does not satisfy this condition.\n\nFind USDOT 3244649.\nShow movers headquartered in New Jersey.\nTrace this query",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "UNSUPPORTED",
+          "coverageState": "REQUEST_ONLY",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Coverage",
+              "value": "New Jersey statewide roster — REQUEST_ONLY"
+            },
+            {
+              "label": "NJ licensing",
+              "value": "PM/PW/PC — unsupported"
+            },
+            {
+              "label": "recorded headquarters state",
+              "value": "NJ — applied"
+            }
+          ],
+          "query": {
+            "mode": "fail_closed",
+            "constraints": [
+              {
+                "field": "NJ licensing",
+                "value": "PM/PW/PC",
+                "outcome": "UNSUPPORTED",
+                "detail": "New Jersey PM/PW/PC intrastate licensing requires its separate roster/search process. A headquarters cohort does not satisfy this condition."
+              },
+              {
+                "field": "recorded headquarters state",
+                "value": "NJ",
+                "outcome": "APPLIED",
+                "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+              }
+            ],
+            "executor": "records",
+            "jurisdiction": {
+              "state": "NJ",
+              "meaning": "recorded_headquarters_state"
+            },
+            "failReason": "New Jersey PM/PW/PC intrastate licensing requires its separate roster/search process. A headquarters cohort does not satisfy this condition.",
+            "alternatives": [
+              "Find USDOT 3244649.",
+              "Show movers headquartered in New Jersey."
+            ],
+            "page": 1
+          },
+          "resultType": "fail_closed",
+          "results": [],
+          "counts": [],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 0,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "FMCSA directory + FDACS IM where used",
+            "geographyMeaning": "recorded_headquarters_state = NJ",
+            "officialAsOf": "Official effective time is not supplied by this extract.",
+            "grain": "fail_closed",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 1
+        }
+      }
+    },
+    {
+      "name": "movers in Miami",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\ncompany identity\nEdit request\nCOMPANY NAME\nmovers in Miami\nEdit request\nIDENTITY RULE\nName similarity is a candidate match; USDOT/MC establishes exact regulatory identity.\nEdit request\nGEOGRAPHY\nMiami — unsupported\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\ngeography: Miami\n\nNot available: The requested local geography (Miami) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened.\n\nThis question needs clarification\n\nThe requested local geography (Miami) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened.\n\nFind USDOT 3244649.\nTrace this query",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "UNSUPPORTED",
+          "coverageState": "UNSUPPORTED",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "company identity"
+            },
+            {
+              "label": "Company name",
+              "value": "movers in Miami"
+            },
+            {
+              "label": "Identity rule",
+              "value": "Name similarity is a candidate match; USDOT/MC establishes exact regulatory identity."
+            },
+            {
+              "label": "geography",
+              "value": "Miami — unsupported"
+            }
+          ],
+          "query": {
+            "mode": "fail_closed",
+            "constraints": [
+              {
+                "field": "geography",
+                "value": "Miami",
+                "outcome": "UNSUPPORTED",
+                "detail": "The requested local geography (Miami) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened."
+              }
+            ],
+            "executor": "records",
+            "failReason": "The requested local geography (Miami) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened.",
+            "alternatives": [
+              "Find USDOT 3244649."
+            ],
+            "page": 1
+          },
+          "resultType": "fail_closed",
+          "results": [],
+          "counts": [],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 0,
+            "hasMore": false
+          },
+          "provenance": {
+            "sourceFamily": "FMCSA directory + FDACS IM where used",
+            "geographyMeaning": "Not geography-filtered",
+            "officialAsOf": "Official effective time is not supplied by this extract.",
+            "grain": "fail_closed",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 2
+        }
+      }
+    },
+    {
+      "name": "current interstate movers headquartered in Florida",
+      "ui": {
+        "path": "/ask",
+        "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nentity\nEdit request\nREGULATORY SYSTEM\nFMCSA\nEdit request\nGEOGRAPHY\nRecorded company address / headquarters state\nEdit request\nSORT\nCompany name, then USDOT\nEdit request\nDOES NOT MEAN\nServes only this state. Interstate carriers may operate in many states.\nEdit request\nROLE\ncarrier — applied\nEdit request\nRECORDED HEADQUARTERS STATE\nFL — applied\nEdit request\nAUTHORITY\ncurrent — applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nrole: carrier\n\nApplied: Applied to source role classes; dual-role treatment is explicit.\n\nrecorded headquarters state: FL\n\nApplied: Recorded address only; does not establish service territory or NJ state licensing.\n\nauthority: current\n\nApplied: Source authority_active must equal the requested boolean; unknown is excluded.\n\nCount\nMatching research identities\n269\n\nrecorded headquarters state = FL\n\n1776 MOVING AND STORAGE INC\nCarrier\nUSDOT\n2303737\nMC\n1202526\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nORLANDO, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n2 COLLEGE BROTHERS OF GAINESVILLE\nCarrier\nUSDOT\n4063852\nMC\n1542498\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nGAINESVILLE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n24 7 LOGISTIC SERVICES\nCarrier\nUSDOT\n3005919\nMC\n26561\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nHOLLYWOOD, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n52 CHECKS & INVESTMENTS LLC\nCarrier\nUSDOT\n3985620\nMC\n1493659\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nLUTZ, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA & M MOVING & STORAGE, LLC\nCarrier\nUSDOT\n2110929\nMC\n496622\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nJACKSONVILLE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA COLUMBIA FORWARDERS, LLC\nCarrier\nUSDOT\n3147829\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nJACKSONVILLE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA G A TRANSPORTATION INC\nCarrier\nUSDOT\n1618084\nMC\n598689\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nDAVIE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA PLUS MOVING AND STORAGE\nCarrier\nUSDOT\n3006268\nMC\n26730\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nMIAMI, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA S A P MOVING & STORAGE LLC\nCarrier\nUSDOT\n3610763\nMC\n1229813\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nN LAUDERDALE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA-TEAM LOGISTICS\nCarrier\nUSDOT\n3459329\nMC\n1128649\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nWESLEY CHAPEL, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA1A MOVERS LLC\nCarrier\nUSDOT\n2821065\nMC\n940714\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nMIAMI, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA1A MOVING & TRANSPORT LLC\nCarrier\nUSDOT\n3161573\nMC\n111581\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nJACKSONVILLE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nACTION HOUSEHOLD GOODS FORWARDERS, INC.\nCarrier\nUSDOT\n527721\nMC\n264348\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nJACKSONVILLE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nADVANCE SORENSEN MOVERS LLC\nCarrier\nUSDOT\n4055942\nMC\n1537994\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nMELBOURNE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAGILITY VAN LINES\nCarrier\nUSDOT\n2564711\nMC\n895410\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nFORT LAUDERDALE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAGIOS IOANNIS LLC\nCarrier\nUSDOT\n4233333\nMC\n1638143\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nWEST PALM BEACH, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nALL AMERICAN MOVING SERVICES NM, INC.\nCarrier\nUSDOT\n2527431\nMC\n448878\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nJACKSONVILLE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nALL AREA MOVING AND STORAGE\nCarrier\nUSDOT\n1989988\nMC\n1053223\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nPORT ST LUCIE, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nALL IN MOVING\nCarrier\nUSDOT\n3925242\nMC\n1547149\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nBOCA RATON, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAM9\nCarrier\nUSDOT\n4553010\nMC\n1808472\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSAINT CLOUD, FL\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nNext\n\nPage 1 · 269 identities\n\nTrace this query",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "move-ask-v1",
+          "terminalState": "FOUND",
+          "coverageState": "KNOWN",
+          "capability": {
+            "federatedExecution": "execute",
+            "askStatus": "live"
+          },
+          "interpretation": [
+            {
+              "label": "Mode",
+              "value": "entity"
+            },
+            {
+              "label": "Regulatory system",
+              "value": "FMCSA"
+            },
+            {
+              "label": "Geography",
+              "value": "Recorded company address / headquarters state"
+            },
+            {
+              "label": "Sort",
+              "value": "Company name, then USDOT"
+            },
+            {
+              "label": "Does not mean",
+              "value": "Serves only this state. Interstate carriers may operate in many states."
+            },
+            {
+              "label": "role",
+              "value": "carrier — applied"
+            },
+            {
+              "label": "recorded headquarters state",
+              "value": "FL — applied"
+            },
+            {
+              "label": "authority",
+              "value": "current — applied"
+            }
+          ],
+          "query": {
+            "mode": "entity",
+            "role": "carrier",
+            "authorityCurrent": true,
+            "constraints": [
+              {
+                "field": "role",
+                "value": "carrier",
+                "outcome": "APPLIED",
+                "detail": "Applied to source role classes; dual-role treatment is explicit."
+              },
+              {
+                "field": "recorded headquarters state",
+                "value": "FL",
+                "outcome": "APPLIED",
+                "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+              },
+              {
+                "field": "authority",
+                "value": "current",
+                "outcome": "APPLIED",
+                "detail": "Source authority_active must equal the requested boolean; unknown is excluded."
+              }
+            ],
+            "executor": "records",
+            "jurisdiction": {
+              "state": "FL",
+              "meaning": "recorded_headquarters_state"
+            },
+            "page": 1
+          },
+          "resultType": "entity",
+          "results": [
+            {
+              "name": "1776 MOVING AND STORAGE INC",
+              "usdot": "2303737",
+              "mc": "1202526",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "ORLANDO, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/1776-moving-and-storage-inc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "2 COLLEGE BROTHERS OF GAINESVILLE",
+              "usdot": "4063852",
+              "mc": "1542498",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "GAINESVILLE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/2-college-brothers-of-gainesville",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "24 7 LOGISTIC SERVICES",
+              "usdot": "3005919",
+              "mc": "26561",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "HOLLYWOOD, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/24-7-logistic-services",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "52 CHECKS & INVESTMENTS LLC",
+              "usdot": "3985620",
+              "mc": "1493659",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "LUTZ, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/52-checks-investments-llc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A & M MOVING & STORAGE, LLC",
+              "usdot": "2110929",
+              "mc": "496622",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "JACKSONVILLE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/a-m-moving-storage-llc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A COLUMBIA FORWARDERS, LLC",
+              "usdot": "3147829",
+              "mc": null,
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "JACKSONVILLE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/a-columbia-forwarders-llc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A G A TRANSPORTATION INC",
+              "usdot": "1618084",
+              "mc": "598689",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "DAVIE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/a-g-a-transportation-inc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A PLUS MOVING AND STORAGE",
+              "usdot": "3006268",
+              "mc": "26730",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "MIAMI, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/a-plus-moving-and-storage",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A S A P MOVING & STORAGE LLC",
+              "usdot": "3610763",
+              "mc": "1229813",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "N LAUDERDALE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/a-s-a-p-moving-storage-llc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A-TEAM LOGISTICS",
+              "usdot": "3459329",
+              "mc": "1128649",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "WESLEY CHAPEL, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/a-team-logistics",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A1A MOVERS LLC",
+              "usdot": "2821065",
+              "mc": "940714",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "MIAMI, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/a1a-movers-llc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "A1A MOVING & TRANSPORT LLC",
+              "usdot": "3161573",
+              "mc": "111581",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "JACKSONVILLE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/a1a-moving-transport-llc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "ACTION HOUSEHOLD GOODS FORWARDERS, INC.",
+              "usdot": "527721",
+              "mc": "264348",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "JACKSONVILLE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/action-household-goods-forwarders-inc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "ADVANCE SORENSEN MOVERS LLC",
+              "usdot": "4055942",
+              "mc": "1537994",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "MELBOURNE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/advance-sorensen-movers-llc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "AGILITY VAN LINES",
+              "usdot": "2564711",
+              "mc": "895410",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "FORT LAUDERDALE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/agility-van-lines",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "AGIOS IOANNIS LLC",
+              "usdot": "4233333",
+              "mc": "1638143",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "WEST PALM BEACH, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/agios-ioannis-llc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "ALL AMERICAN MOVING SERVICES NM, INC.",
+              "usdot": "2527431",
+              "mc": "448878",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "JACKSONVILLE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/all-american-moving-services-nm-inc",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "ALL AREA MOVING AND STORAGE",
+              "usdot": "1989988",
+              "mc": "1053223",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "PORT ST LUCIE, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/all-area-moving-and-storage",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "ALL IN MOVING",
+              "usdot": "3925242",
+              "mc": "1547149",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "BOCA RATON, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/all-in-moving",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            },
+            {
+              "name": "AM9",
+              "usdot": "4553010",
+              "mc": "1808472",
+              "role": "Carrier",
+              "fmcsaStatus": "Current authority recorded",
+              "headquarters": "SAINT CLOUD, FL",
+              "floridaIm": null,
+              "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+              "href": "/companies/am9",
+              "publicationNote": null,
+              "whyMatched": "This company matches because the published directory record classifies it as a carrier and lists FL as its recorded company address / headquarters state (not service territory). This is not a recommendation.",
+              "complaintsNote": null,
+              "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+              "officialAsOf": null
+            }
+          ],
+          "counts": [
+            {
+              "label": "Matching research identities",
+              "value": 269,
+              "grain": "recorded headquarters state = FL"
+            }
+          ],
+          "pagination": {
+            "page": 1,
+            "pageSize": 20,
+            "total": 269,
+            "hasMore": true
+          },
+          "provenance": {
+            "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+            "geographyMeaning": "recorded_headquarters_state = FL",
+            "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+            "grain": "recorded headquarters state = FL",
+            "exclusions": [
+              "A broker is not the carrier that necessarily transports household goods.",
+              "Florida IM registration is not federal interstate household-goods authority.",
+              "Headquarters is not service territory.",
+              "Current authority is not a recommendation.",
+              "Complaint observations are not confirmed wrongdoing.",
+              "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+            ]
+          },
+          "limitations": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ],
+          "elapsedMs": 290
+        }
+      }
+    }
+  ],
+  "status": "PASS"
+}

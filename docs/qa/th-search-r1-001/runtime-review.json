@@ -1,0 +1,17 @@
+{
+  "deployment": "dpl_C7FzgiRCAAMJ81ibGum2zjWHEyWC",
+  "since": "2026-09-11T17:37:00Z",
+  "searchRouteErrorsReturned": 0,
+  "unrelatedStateRoute": {
+    "path": "/local-movers/california",
+    "httpStatus": 200,
+    "event": "approved_movers.companies_failed",
+    "message": "column companies.usdot_status does not exist",
+    "baselineReproduction": {
+      "base": "8dc82faecc1ece6f7cf02e26cccc0e6f2739008a",
+      "errorCode": "42703",
+      "method": "Read-only one-column/one-row schema query from isolated base; approved-county-movers.ts identical between base and final code merge"
+    },
+    "changedByTicket": false
+  }
+}

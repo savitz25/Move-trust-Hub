@@ -1,0 +1,33 @@
+
+> move-trust-hub@1.0.0 check:th-search-r1-001
+> tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-reproduction.test.ts lib/move-ask/r1-behavior.test.ts
+
+move_research_source_unavailable { executor: 'directory', mode: 'entity' }
+✔ existing supported state override remains selected in the research form (9.3494ms)
+✔ missing identifier has an explicit recoverable terminal state (3.9547ms)
+✔ identifier variants, full grouped span, leading zeroes and MC family (24.665ms)
+✔ prefix fixture, exact miss and publication gates (2.665ms)
+✔ matching and conflicting USDOT/MC pairs retain both grains (1.1309ms)
+✔ malformed/ambiguous/missing identifiers never reach a source (0.6694ms)
+✔ native/API request validation, encoding and typed overrides agree (9.9984ms)
+✔ homepage GET form and actual native page execute the same identity request as API (8.8371ms)
+✔ directory dispatch preserves NJ, structured role, integer pagination and unavailable state (5.1652ms)
+✔ NJ current carrier count preserves operation, role, source boolean and recorded state (6.8719ms)
+✔ constraint conflicts stay visible and no implicit relaxation is applied (1.4619ms)
+✔ supported state cohorts larger than one database response remain complete (20.0872ms)
+✔ duplicate observations of one identity do not inflate the identity count (0.7274ms)
+move_research_source_unavailable { executor: 'records', mode: 'identifier' }
+move_research_source_unavailable { executor: 'records', mode: 'identifier' }
+move_research_source_unavailable { executor: 'records', mode: 'identifier' }
+✔ source error/timeout and contradictory evidence are unavailable, never zero or fallback (14067.8007ms)
+✔ R1: spaced and messy explicitly labelled identifiers preserve the complete value (4.563ms)
+✔ R1: broad NJ discovery is independent of the state-license roster (1.6072ms)
+✔ R1: exact 3244 miss does not query or explain a substring identity (29.982ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14878.1786

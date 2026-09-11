@@ -1,7 +1,7 @@
 {
   "baselineSourceErrors": 534,
   "candidateSourceErrors": 534,
-  "candidateGeneratedRouteErrorsAfterInterruptedLocalBuild": 326,
+  "generatedValidatorErrors": 326,
   "newSourceDiagnostics": [],
-  "globalTypecheck": "FAIL; unrelated baseline diagnostics remain"
+  "globalTypecheck": "FAIL: unchanged baseline source diagnostics; local generated validators also fail"
 }
