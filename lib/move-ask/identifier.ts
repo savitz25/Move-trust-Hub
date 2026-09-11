@@ -15,6 +15,9 @@ export function parseMoveIdentifiers(raw: string): IdentifierParse {
     const value = groups.join('');
     const end = start + label[0].length + span[0].length;
     const following = raw.slice(end);
+    if (/^\s*(?:[,./:+-]\s*|(?:and|or)\s+)\d/i.test(following)) {
+      return { identifiers, error: 'The additional number is ambiguous. Label each identifier separately; no partial lookup was performed.' };
+    }
     if (!/^\d{3,8}$/.test(value) || /^[\w+-]|^[.,]\d/.test(following)) {
       return { identifiers, error: 'The labelled identifier is malformed or too long. No partial lookup was performed.' };
     }

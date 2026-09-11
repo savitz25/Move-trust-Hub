@@ -1,0 +1,19 @@
+{
+  "utc": "2026-09-11T17:03:39.391393+00:00",
+  "checks": [
+    {
+      "url": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3244649",
+      "status": 200,
+      "name": true,
+      "usdot": true,
+      "mc": true
+    },
+    {
+      "url": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string=1019808",
+      "status": 200,
+      "name": true,
+      "usdot": true,
+      "mc": true
+    }
+  ]
+}

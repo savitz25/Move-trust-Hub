@@ -31,6 +31,11 @@ async function source<T>(run: (calls: URL[]) => Promise<T>, rows: Array<Record<s
   finally { globalThis.fetch = prior.fetch; for (const [key, value] of Object.entries({ NEXT_PUBLIC_SUPABASE_URL: prior.url, SUPABASE_SERVICE_ROLE_KEY: prior.key })) { if (value === undefined) delete process.env[key]; else process.env[key] = value; } }
 }
 
+test('existing supported state override remains selected in the research form', () => {
+  const form=renderToStaticMarkup(React.createElement(SpecialistSearchShell,{query:'USDOT 3244649',filters:{state:'NY'}}));
+  assert.match(form, /<option value="NY" selected="">NY \(recorded state\)<\/option>/);
+});
+
 test('missing identifier has an explicit recoverable terminal state', async () => {
   const r=await executeMoveRequest({q:'USDOT lookup'}); assert.equal(r.terminalState,'NEEDS_CLARIFICATION'); assert.equal(r.results.length,0);
 });
@@ -71,7 +76,7 @@ test('matching and conflicting USDOT/MC pairs retain both grains', async () => s
 }));
 
 test('malformed/ambiguous/missing identifiers never reach a source', async () => source(async (calls) => {
-  for (const q of ['USDOT lookup', 'MC lookup', 'USDOT 3244.649', 'USDOT 3.244649e6', 'USDOT 3244649e2', 'USDOT -3244649.5', 'USDOT 3244 649 2026', 'USDOT 3244649 33101', 'USDOT 3244 USDOT 649', 'USDOT 123456789', 'USDOT 3244649 MC lookup', '3244649', 'x'.repeat(181)]) {
+  for (const q of ['USDOT lookup', 'MC lookup', 'USDOT 3244.649', 'USDOT 3244, 649', 'USDOT 3244 / 649', 'USDOT 3244 and 649', 'USDOT 3.244649e6', 'USDOT 3244649e2', 'USDOT -3244649.5', 'USDOT 3244 649 2026', 'USDOT 3244649 33101', 'USDOT 3244 USDOT 649', 'USDOT 123456789', 'USDOT 3244649 MC lookup', '3244649', 'x'.repeat(181)]) {
     const result = await executeMoveRequest({ q });
     assert.equal(result.results.length, 0, q); assert.equal(result.parsed.query.mode, 'fail_closed', q);
   }

@@ -1,0 +1,32 @@
+{
+  "utc": "2026-09-11T17:39:02.420000+00:00",
+  "sha": "40775bada5594d39364ef994c11f2e7f806e54ac",
+  "deployment": "dpl_C7FzgiRCAAMJ81ibGum2zjWHEyWC",
+  "api": [
+    {
+      "query": "USDOT 3244, 649",
+      "terminal": "NEEDS_CLARIFICATION",
+      "results": 0
+    },
+    {
+      "query": "USDOT 3244 / 649",
+      "terminal": "NEEDS_CLARIFICATION",
+      "results": 0
+    },
+    {
+      "query": "USDOT 3244 and 649",
+      "terminal": "NEEDS_CLARIFICATION",
+      "results": 0
+    },
+    {
+      "query": "USDOT 3244 649",
+      "terminal": "FOUND",
+      "results": 1
+    }
+  ],
+  "clientBundleScan": {
+    "files": 22,
+    "knownServerValues": 4,
+    "matches": 0
+  }
+}

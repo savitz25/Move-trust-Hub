@@ -1,0 +1,18 @@
+{
+  "base": "8dc82faecc1ece6f7cf02e26cccc0e6f2739008a",
+  "release": {
+    "exitCode": 1,
+    "tier1": 1695,
+    "tier2": 1448,
+    "maxAllowed": 400
+  },
+  "command": "npx tsx scripts/lib/tier1-circuit-breaker.ts",
+  "baseline": {
+    "exitCode": 1,
+    "tier1": 1695,
+    "tier2": 1448,
+    "maxAllowed": 400
+  },
+  "workflow": "https://github.com/savitz25/Move-trust-Hub/actions/runs/34626865635",
+  "gateModified": false
+}

@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-09-11T16:35:02.313Z",
+  "testedAt": "2026-09-11T17:29:35.931Z",
   "mutations": [
     {
       "mutation": "truncate-spaced-identifier",
@@ -12,5 +12,6 @@
       "detectedByBehavioralAssertion": true
     }
   ],
-  "originalFilesRestored": true
+  "originalFilesRestored": true,
+  "codeHead": "2ff4ec71a20af932bac135930886569f771c8735"
 }

@@ -1,14 +1,86 @@
 {
   "ticket": "TH-SEARCH-R1-001",
-  "status": "CANDIDATE_PENDING_PREVIEW",
-  "builder": { "model": "GPT-6 Astra", "reasoning": "High", "confirmation": "USER-CONFIRMED; exact active session metadata unavailable" },
-  "baseline": { "main": "8dc82faecc1ece6f7cf02e26cccc0e6f2739008a", "deployment": "dpl_3i76DeFAjJrEMNNoXBCWJ1vgKdfq", "alias": "https://www.movetrusthub.com", "verifiedDateUTC": "2026-09-11" },
-  "candidate": { "head": null, "preview": null },
-  "release": { "merge": null, "deployment": null, "productionBrowserVerified": false },
-  "before": { "spacedIdentifierTruncated": true, "exactMissBroadened": true, "falseExplanation": true, "nativeApiDivergence": true, "reproductionTestsFailed": 3 },
-  "sourceSnapshot": { "usdot": "3244649", "mc": "1019808", "name": "SHIFL INC", "role": "Broker", "recordedLocation": "AIRMONT, NY", "storedCheckedAt": "2026-08-20T13:52:59.596+00:00", "officialEffectiveAt": null },
-  "deterministic": { "command": "npm run check:th-search-r1-001", "groupsPassed": 14, "sensitivityMutationsDetected": 2, "syntheticProductionWrites": 0 },
-  "regressions": { "ask": "PASS", "searchAndSpecialist": "41 PASS", "directory": "30 PASS", "npmTest": "PASS with ignored Vercel local-link file temporarily relocated/restored", "lint": "UNCONFIGURED on base and candidate", "baselineTypeScriptErrors": 534 },
-  "browser": { "baselineReproduction": "baseline-messy.png", "preview": "PENDING", "production": "PENDING" },
-  "scope": "Move exact identity and certified canonical request set only; no data writes, migrations, production configuration changes, or other hub edits"
+  "status": "RELEASED_AND_VERIFIED",
+  "builder": {
+    "model": "GPT-6 Astra",
+    "reasoning": "High",
+    "confirmation": "USER-CONFIRMED; exact active session metadata unavailable"
+  },
+  "baseline": {
+    "main": "8dc82faecc1ece6f7cf02e26cccc0e6f2739008a",
+    "deployment": "dpl_3i76DeFAjJrEMNNoXBCWJ1vgKdfq",
+    "alias": "https://www.movetrusthub.com",
+    "verifiedDateUTC": "2026-09-11"
+  },
+  "candidate": {
+    "head": "2ff4ec71a20af932bac135930886569f771c8735",
+    "preview": "dpl_G3mpNqqFWatQH2atvi2U2jtihv6W",
+    "browserReport": "final-preview-browser.json"
+  },
+  "release": {
+    "merge": "40775bada5594d39364ef994c11f2e7f806e54ac",
+    "deployment": "dpl_C7FzgiRCAAMJ81ibGum2zjWHEyWC",
+    "alias": "https://www.movetrusthub.com",
+    "productionBrowserVerified": true,
+    "report": "final-production-browser.json",
+    "coreMerge": "c6c409d6cdb5440c6b446236b564b50884383c6c",
+    "prs": [
+      121,
+      122
+    ],
+    "note": "A subsequent documentation-only commit may advance main; these identify the browser-certified runtime code."
+  },
+  "before": {
+    "spacedIdentifierTruncated": true,
+    "exactMissBroadened": true,
+    "falseExplanation": true,
+    "nativeApiDivergence": true,
+    "reproductionTestsFailed": 3,
+    "firstInteractionRemountedSearch": true
+  },
+  "sourceSnapshot": {
+    "usdot": "3244649",
+    "mc": "1019808",
+    "name": "SHIFL INC",
+    "role": "Broker",
+    "recordedLocation": "AIRMONT, NY",
+    "storedCheckedAt": "2026-08-20T13:52:59.596+00:00",
+    "officialEffectiveAt": null
+  },
+  "deterministic": {
+    "command": "npm run check:th-search-r1-001",
+    "groupsPassed": 17,
+    "sensitivityMutationsDetected": 2,
+    "syntheticProductionWrites": 0
+  },
+  "regressions": {
+    "ask": "PASS",
+    "searchAndSpecialist": "41 PASS",
+    "directory": "30 PASS",
+    "npmTest": "PASS with ignored Vercel local-link file temporarily relocated/restored",
+    "lint": "UNCONFIGURED on base and candidate",
+    "baselineTypeScriptErrors": 534,
+    "productionBuild": "PASS on exact candidate preview",
+    "newSourceTypeScriptDiagnostics": 0,
+    "countySeo": "UNCHANGED BASELINE FAILURE: 1695 Tier 1 pages exceeds 400",
+    "stateDirectoryLoader": "UNCHANGED BASELINE ERROR: companies.usdot_status absent"
+  },
+  "browser": {
+    "baselineReproduction": "baseline-messy.png",
+    "preview": "PASS: 13 bounded checks plus override resubmission",
+    "production": "PASS: 13 bounded checks plus NY/broker/current override resubmission at all three widths"
+  },
+  "scope": "Move exact identity and certified canonical request set only; no data writes, migrations, production configuration changes, or other hub edits",
+  "review": {
+    "method": "Separate self-review passes and existing Vercel Agent Review check",
+    "vercelGate": "PASS",
+    "humanIndependentReview": false,
+    "pr": "https://github.com/savitz25/Move-trust-Hub/pull/121"
+  },
+  "security": {
+    "finalClientScan": "final-security.json",
+    "secretMatches": 0,
+    "productionSyntheticWrites": 0
+  },
+  "closureScope": "Only TH-SEARCH-R1-001; MT-T1, unsupported local geography, unrelated county problems and Search Reliability R1 as a whole remain separate."
 }

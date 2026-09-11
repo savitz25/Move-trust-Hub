@@ -1,0 +1,184 @@
+{
+  "utc": "2026-09-11T17:33:28.393Z",
+  "origin": "https://move-trust-6mjf4tvzw-savitz25-s-projects.vercel.app",
+  "sha": "2ff4ec71a20af932bac135930886569f771c8735",
+  "deployment": "dpl_G3mpNqqFWatQH2atvi2U2jtihv6W",
+  "status": "PASS",
+  "url": "https://move-trust-6mjf4tvzw-savitz25-s-projects.vercel.app/ask?q=MC+1019808&role=broker&state=NY&authority=current",
+  "viewports": [
+    {
+      "selected": "NY",
+      "width": 1280,
+      "scroll": 1280,
+      "focus": true,
+      "outline": "solid"
+    },
+    {
+      "selected": "NY",
+      "width": 390,
+      "scroll": 390,
+      "focus": true,
+      "outline": "solid"
+    },
+    {
+      "selected": "NY",
+      "width": 320,
+      "scroll": 320,
+      "focus": true,
+      "outline": "solid"
+    }
+  ],
+  "api": {
+    "contract": "move-ask-v1",
+    "terminalState": "FOUND",
+    "coverageState": "KNOWN",
+    "capability": {
+      "federatedExecution": "execute",
+      "askStatus": "live"
+    },
+    "interpretation": [
+      {
+        "label": "Mode",
+        "value": "identifier"
+      },
+      {
+        "label": "Identifier",
+        "value": "MC 1019808 (labeled)"
+      },
+      {
+        "label": "mc",
+        "value": "1019808: applied"
+      },
+      {
+        "label": "role",
+        "value": "broker: applied"
+      },
+      {
+        "label": "recorded headquarters state",
+        "value": "NY: applied"
+      },
+      {
+        "label": "authority",
+        "value": "current: applied"
+      }
+    ],
+    "query": {
+      "mode": "identifier",
+      "role": "broker",
+      "authorityCurrent": true,
+      "constraints": [
+        {
+          "field": "mc",
+          "value": "1019808",
+          "outcome": "APPLIED",
+          "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+        },
+        {
+          "field": "role",
+          "value": "broker",
+          "outcome": "APPLIED",
+          "detail": "The stored identity evidence satisfies this criterion."
+        },
+        {
+          "field": "recorded headquarters state",
+          "value": "NY",
+          "outcome": "APPLIED",
+          "detail": "The stored identity evidence satisfies this criterion."
+        },
+        {
+          "field": "authority",
+          "value": "current",
+          "outcome": "APPLIED",
+          "detail": "The stored identity evidence satisfies this criterion."
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "mc",
+          "value": "1019808",
+          "rawSpan": "MC 1019808",
+          "start": 0,
+          "end": 10,
+          "normalization": []
+        }
+      ],
+      "executor": "records",
+      "identifier": {
+        "type": "mc",
+        "value": "1019808"
+      },
+      "jurisdiction": {
+        "state": "NY",
+        "meaning": "recorded_headquarters_state"
+      },
+      "page": 1
+    },
+    "resultType": "identifier",
+    "results": [
+      {
+        "name": "SHIFL INC",
+        "usdot": "3244649",
+        "mc": "1019808",
+        "role": "Broker",
+        "fmcsaStatus": "Current authority recorded",
+        "headquarters": "AIRMONT, NY",
+        "floridaIm": null,
+        "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+        "href": "/companies/shifl-inc",
+        "publicationNote": null,
+        "whyMatched": "Exact identifier match: the published directory identity records MC 1019808. Identifier equality does not establish service territory, authority eligibility or a recommendation.",
+        "complaintsNote": null,
+        "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+        "officialAsOf": null,
+        "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string=1019808",
+        "matchEvidence": {
+          "method": "exact_identifier",
+          "fields": [
+            {
+              "field": "mc_number",
+              "requested": "1019808",
+              "returned": "1019808"
+            }
+          ],
+          "normalization": []
+        }
+      }
+    ],
+    "counts": [
+      {
+        "label": "Matching research identities",
+        "value": 1,
+        "grain": "Exact published identity (additional context is not a service-area match)"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 1,
+      "hasMore": false
+    },
+    "provenance": {
+      "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+      "geographyMeaning": "recorded_headquarters_state = NY",
+      "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+      "grain": "Exact published identity (additional context is not a service-area match)",
+      "exclusions": [
+        "A broker is not the carrier that necessarily transports household goods.",
+        "Florida IM registration is not federal interstate household-goods authority.",
+        "Headquarters is not service territory.",
+        "Current authority is not a recommendation.",
+        "Complaint observations are not confirmed wrongdoing.",
+        "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+      ]
+    },
+    "limitations": [
+      "A broker is not the carrier that necessarily transports household goods.",
+      "Florida IM registration is not federal interstate household-goods authority.",
+      "Headquarters is not service territory.",
+      "Current authority is not a recommendation.",
+      "Complaint observations are not confirmed wrongdoing.",
+      "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+    ],
+    "elapsedMs": 208
+  }
+}
