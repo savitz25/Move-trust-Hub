@@ -294,7 +294,7 @@ async function lookupName(parsed: ParsedMoveAsk, started: number): Promise<MoveA
     for (const c of q.constraints ?? []) {
       if (!['state','role','authority'].includes(c.field)) continue;
       const known = c.field === 'state' ? Boolean(extractStateCodeFromHeadquarters(row.headquarters ?? '')) : c.field === 'authority' ? typeof row.authority_active === 'boolean' : Boolean(row.entity_type);
-      const matches = c.field === 'state' ? extractStateCodeFromHeadquarters(row.headquarters ?? '') === c.value : c.field === 'authority' ? row.authority_active === (c.value === 'current') : roleTypes(c.value,true).includes((row.entity_type ?? '').toUpperCase());
+      const matches = c.field === 'state' ? extractStateCodeFromHeadquarters(row.headquarters ?? '') === c.value : c.field === 'authority' ? row.authority_active === (c.value === 'current') : roleTypes(c.value,true).some(type => type.toLowerCase() === (row.entity_type ?? '').toLowerCase());
       c.outcome = !known ? 'NEEDS_CLARIFICATION' : matches ? 'APPLIED' : 'CONFLICT';
       c.detail = !known ? 'The stored identity has no evidence for this condition.' : matches ? 'The stored public identity supports this condition; no service territory or license approval is inferred.' : 'The name identity remains visible, but its stored evidence does not agree with this filter.';
     }

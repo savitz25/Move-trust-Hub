@@ -37,3 +37,16 @@ Selection carries original q/overrides and public company ID. The server refetch
 Read-only Ask lib/network/move-ask.ts inspection: existing move-ask-v1 mode/results/name/identifier/whyMatched/count/provenance fields remain. Name metadata, selection links, legal/DBA fields and entity keys are additive. No parent edits. Existing SAFER URL builder uses validated returned identifiers.
 
 Deferred: alias-only index, broad spelling coverage, complete jurisdictional licensing, local service territory, ownership/complaint joins, Ask routing and Senior work. No DB writes. Rollback is a reviewed revert/deployment of this ticket only. Self-review/automated review is not independent human review.
+
+
+## Separate review and official-action check
+
+Separate self-review inspected the final parser/planner, RPC bounds, eligibility, source-field matching, public selection, additional conditions, role derivation and additive API fields. It identified and fixed guidance/category interception, missing includeDualRole typing, and Unicode/apostrophe handling. The final source-role helper uses entity_type rather than name wording. Automated Vercel PR review is separately tracked; no independent human review is claimed.
+
+SAFER's existing DOT query route was opened for1065394 during verification: https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394 . It identifies the same legal name and DBA. Its displayed snapshot date was2026-09-07; the browser action is not a new runtime live-source acquisition.
+
+Separate existing source discrepancy: the stored JK row reports MC225850, while that SAFER snapshot lists MC196957 for DOT1065394. No record was changed. Name results label evidence as stored and use the verified DOT destination. This requires a source reconciliation ticket, not an invented MC relationship or a write under this repair.
+
+Preview browser access reached Vercel SSO. No protection bypass. Local production-build checks and post-release canonical Production checks are recorded separately.
+
+Automated Vercel review found that uppercasing a stored spaced dual-role value before comparing it to mixed-case roleTypes could incorrectly show a conflict. Fixed with case-insensitive source-enum comparison and a behavioral test across three stored dual-role spellings and all supported role overrides.

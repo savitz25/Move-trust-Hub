@@ -116,3 +116,9 @@ test('source normalization preserves apostrophes, Unicode letters, names with ro
  for(const name of ["O'Neil & Sons 7 Moving",'O\u2019Neil & Sons 7 Moving','Active Carrier Moving 7','Florida Active Carrier 7','Jos\u00e9 Moving 7']) { const p=planMoveRequest({q:name});assert.equal(p.query.nameQuery,name);assert.equal(p.query.role,undefined);assert.ok(matchSourceName(name,record('same',name))); }
  assert.equal(matchSourceName('Jos Moving 7',record('different','Jos\u00e9 Moving 7')),null);
 });
+
+test('source dual-role casing and spaced slash preserve supported role overrides',async()=>{
+ for(const entity_type of ['Carrier / Broker','CARRIER/BROKER','Carrier/Broker'])await source(async()=>{
+  for(const role of ['carrier','broker','carrier_broker']){const r=await executeMoveRequest({q:'Dualexample Moving',role});assert.equal(r.parsed.query.constraints?.find(c=>c.field==='role')?.outcome,'APPLIED',entity_type+role)}
+ },[record('dual','Dualexample Moving',{entity_type})]);
+});
