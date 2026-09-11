@@ -1,0 +1,178 @@
+
+> move-trust-hub@1.0.0 test
+> node scripts/assert-share-002.mjs && tsx scripts/assert-share-003.ts && tsx scripts/assert-share-004a.ts && node scripts/assert-visual-006.mjs && npm run assert:network-metrics && npm run assert:nj-move-001 && npm run assert:nj-move-002 && npm run assert:ca-move-001 && npm run assert:tx-move-001 && npm run assert:wa-move-001 && npm run assert:co-move-001 && npm run assert:va-move-001 && npm run assert:ny-move-001
+
+SHARE-002 Move assertions passed (host, Move-only OG, no Lender/Insurance leak, 1200×630 ImageResponse).
+SHARE-003 Move assertions passed (entity/content models, truncation, fallback, publication safety).
+SHARE-004A social card contract passed.
+VISUAL-006 Move network-shell assertions passed.
+
+> move-trust-hub@1.0.0 assert:network-metrics
+> node scripts/assert_network_metrics_v1.mjs && npx --yes tsx --test scripts/test_move_network_metrics.ts
+
+ATH-METRICS-002A PASS network metric grain and staleness gates
+▶ move-network-metrics-v1 grain safety
+  ✔ does not sum federal and state universes (3.9942ms)
+  ✔ does not add Colorado HHG permits to the federal directory (0.709ms)
+  ✔ keeps FDACS IM out of federal directory and Florida HQ profiles (1.0172ms)
+  ✔ does not convert NJ unknown roster or CA CAL-T universe to zero (0.9969ms)
+  ✔ does not treat CA citation rows as CAL-T mover count or USDOT (0.6509ms)
+  ✔ keeps NJ NOV grain out of final orders and HQ profiles (0.6167ms)
+  ✔ does not replace sourceAsOf with generatedAt (0.457ms)
+  ✔ requires published state routes in coverage (0.2577ms)
+✔ move-network-metrics-v1 grain safety (11.0404ms)
+▶ checked-in manifest vs homepage wiring
+  ✔ keeps homepage consumers on the v1 artifact path (1.9909ms)
+✔ checked-in manifest vs homepage wiring (2.5223ms)
+ℹ tests 9
+ℹ suites 2
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 571.6167
+
+> move-trust-hub@1.0.0 assert:nj-move-001
+> python scripts/nj-move-001-tests.py && tsx scripts/assert-nj-move-001.mts && tsx lib/state-hhg/nj/adapter.test.ts
+
+PASS pm_move_only
+PASS pw_not_consumer_mover
+PASS pc_combined
+PASS pm_ne_pw_ne_pc
+PASS 11_missing_status_not_active
+PASS 8_state_license_identifier
+PASS 9_current_vs_historical
+PASS 10_expiration_parsing
+PASS exact_usdot
+PASS name_only_unsafe
+PASS name_city_review
+PASS authorities_not_inferred
+PASS 14_exact_mc
+PASS 16_name_address_high_confidence
+PASS 18_shared_owner_not_auto_attached
+PASS 19_state_only_preserved
+PASS 20_fmcsa_only_carrier_preserved
+PASS 21_one_license_many_usdot_review
+PASS 22_successor_predecessor_review
+PASS osm_count 3
+PASS nov_not_final
+PASS proposed_not_paid
+PASS press_not_disposition
+PASS unlicensed_not_conviction
+PASS dba_preserved
+PASS ocp_final_order
+PASS nov_class
+PASS 26_consent_order_classification
+PASS 28_duplicate_event_prevention
+PASS 29_multi_party_event
+PASS 30_mover_vs_hic_separation
+PASS 31_complaint_ne_violation
+PASS 32_absence_ne_zero
+PASS 33_source_period_required
+PASS 34_tariff_ne_invoice
+PASS 37_baseline_only
+PASS 41_no_public_unresolved
+PASS 43_no_trust_score
+PASS 44_no_ranking
+PASS roster_by_request
+PASS no_rgb_scrape
+PASS no_nj_silo
+PASS rls_forced
+PASS internal_default
+PASS nullable_fmcsa
+PASS nj_move_002_route
+PASS sitemap_has_state_page
+PASS no_vercel_project
+PASS records_request
+PASS no_fuzzy
+PASS adapter_state_nj
+PASS pw_gate
+PASS nj-move-001-tests
+NJ-MOVE-001 assertions: PASS
+NJ PMW adapter tests: PASS
+
+> move-trust-hub@1.0.0 assert:nj-move-002
+> tsx lib/state-hhg/nj/publication.test.ts && tsx scripts/assert-nj-move-002.mts
+
+NJ-MOVE-002 publication contract: PASS
+NJ-MOVE-002 publication assertions: PASS
+
+> move-trust-hub@1.0.0 assert:ca-move-001
+> tsx lib/california-intelligence/publication.test.ts && tsx scripts/assert-ca-move-001.mts
+
+CA-MOVE-001 publication contract: PASS
+CA-MOVE-001 publication assertions: PASS
+
+> move-trust-hub@1.0.0 assert:tx-move-001
+> tsx lib/texas-intelligence/publication.test.ts && tsx scripts/assert-tx-move-001.mts
+
+TX-MOVE-001 publication contract: PASS
+TX-MOVE-001 publication assertions: PASS
+
+> move-trust-hub@1.0.0 assert:wa-move-001
+> tsx lib/washington-intelligence/publication.test.ts && tsx scripts/assert-wa-move-001.mts
+
+WA-MOVE-001 publication contract: PASS
+WA-MOVE-001 publication assertions: PASS
+
+> move-trust-hub@1.0.0 assert:co-move-001
+> tsx lib/colorado-intelligence/publication.test.ts && tsx scripts/assert-co-move-001.mts
+
+CO-MOVE-001 publication contract: PASS
+CO-MOVE-001 publication assertions: PASS
+
+> move-trust-hub@1.0.0 assert:va-move-001
+> python -X utf8 -m unittest scripts.test_va_move_001 && tsx lib/virginia-intelligence/publication.test.ts && tsx scripts/assert-va-move-001.mts
+
+node.exe : ........
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (........:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.020s
+
+OK
+VA-MOVE-001 publication contract: PASS
+VA-MOVE-001 publication assert: PASS
+
+> move-trust-hub@1.0.0 assert:ny-move-001
+> python -X utf8 -m unittest scripts.test_ny_move_001 && tsx lib/new-york-intelligence/publication.test.ts && tsx scripts/assert-ny-move-001.mts && tsx --test lib/move-ask/ny-routing.test.ts
+
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK
+✔ NY-MOVE-001 snapshot grains stay separate (1.4693ms)
+✔ nested mutations change the NY snapshot fingerprint input (0.5499ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14.7262
+NY-MOVE-001 publication assert: PASS
+✔ NY intrastate roster requests do not execute Florida IM (15.6501ms)
+✔ Florida IM queries still execute Florida registration grain (1.0479ms)
+✔ explicit New York headquarters interstate research uses federal directory (3.2678ms)
+✔ labeled USDOT lookup with NY geography stays identifier research (1.0631ms)
+✔ TH-SEARCH-R1-001 labeled identifiers still parse (1.3193ms)
+✔ labeled USDOT complaint research is not blocked by New York geography (0.7641ms)
+✔ explicit NYSDOT complaint corpus stays unavailable even with a USDOT (0.563ms)
+✔ USDOT does not prove New York intrastate authority (0.3621ms)
+✔ name-only New York complaint still requires a labeled identity (0.3551ms)
+✔ ranking, route, and malformed identifier safeguards still fail closed (2.257ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 524.5995

@@ -1,0 +1,63 @@
+{
+  "time": "2026-09-11T23:23:19.669Z",
+  "sha": "0db8f6215097960625f33ea100352818fba6ff54",
+  "base": "https://www.movetrusthub.com",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "url": "https://www.movetrusthub.com/",
+      "ms": 543,
+      "robots": null
+    },
+    {
+      "path": "/companies",
+      "status": 200,
+      "url": "https://www.movetrusthub.com/companies",
+      "ms": 3895,
+      "robots": null
+    },
+    {
+      "path": "/verify-dot",
+      "status": 200,
+      "url": "https://www.movetrusthub.com/verify-dot",
+      "ms": 1714,
+      "robots": null
+    },
+    {
+      "path": "/new-york",
+      "status": 200,
+      "url": "https://www.movetrusthub.com/new-york",
+      "ms": 265,
+      "robots": null
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "url": "https://www.movetrusthub.com/robots.txt",
+      "ms": 961,
+      "robots": null
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "url": "https://www.movetrusthub.com/sitemap.xml",
+      "ms": 3679,
+      "robots": null
+    },
+    {
+      "path": "/ask?q=SHIFL+INC",
+      "status": 200,
+      "url": "https://www.movetrusthub.com/ask?q=SHIFL+INC",
+      "ms": 828,
+      "robots": null,
+      "noindex": true,
+      "privatePayloadLeak": false
+    },
+    {
+      "path": "/companies/shifl-inc",
+      "status": 200
+    }
+  ],
+  "failures": []
+}

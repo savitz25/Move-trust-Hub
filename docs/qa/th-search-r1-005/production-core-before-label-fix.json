@@ -1,0 +1,95 @@
+{
+  "time": "2026-09-11T23:10:00.341Z",
+  "sha": "bb63ed6531e401ba7297a5a3d0eea663f4292829",
+  "deployment": "dpl_CMjHk15MPut58d1zF2uGoxbRkY2L",
+  "rows": [
+    {
+      "q": "JK Moving Services licensed?",
+      "terminal": "NEEDS_CLARIFICATION",
+      "results": [
+        {
+          "id": "jk-moving",
+          "name": "JK Moving Services",
+          "usdot": "1065394",
+          "mc": "225850",
+          "why": "Source-name match: stored FMCSA DBA records \"JK MOVING SERVICES\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+          "field": "fmcsa_raw.dbaName",
+          "role": "Carrier",
+          "authority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)"
+        },
+        {
+          "id": "usdot-1300300",
+          "name": "JK MOVING SERVICES",
+          "usdot": "1300300",
+          "mc": "504611",
+          "why": "Source-name match: directory display name records \"JK MOVING SERVICES\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+          "field": "name",
+          "role": "Carrier",
+          "authority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)"
+        },
+        {
+          "id": "usdot-2222803",
+          "name": "JK BROKERAGE SERVICES",
+          "usdot": "2222803",
+          "mc": "312255",
+          "why": "Distinctive name-token candidate: stored FMCSA legal name records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+          "field": "fmcsa_legal_name",
+          "role": "Broker",
+          "authority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)"
+        },
+        {
+          "id": "usdot-2972877",
+          "name": "JK FORWARDERS, INC.",
+          "usdot": "2972877",
+          "mc": null,
+          "why": "Distinctive name-token candidate: stored FMCSA legal name records \"JK FORWARDERS, INC.\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+          "field": "fmcsa_legal_name",
+          "role": "Carrier",
+          "authority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)"
+        },
+        {
+          "id": "usdot-486366",
+          "name": "JK VAN LINES, INC.",
+          "usdot": "486366",
+          "mc": "279412",
+          "why": "Distinctive name-token candidate: stored FMCSA legal name records \"JK VAN LINES, INC.\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+          "field": "fmcsa_legal_name",
+          "role": "Carrier",
+          "authority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)"
+        }
+      ],
+      "nameSearch": {
+        "requested": "JK Moving Services",
+        "candidateLimit": 10,
+        "retrievalLimit": 200,
+        "truncated": false,
+        "selected": false,
+        "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+      }
+    },
+    {
+      "q": "BKQ LOGISTICS, LLC",
+      "terminal": "FOUND",
+      "results": [
+        {
+          "id": "fl-im-3743",
+          "name": "1. Keepit Safe Storage & Moving; 2. Moversone",
+          "usdot": null,
+          "mc": null,
+          "why": "Source-name match: stored FMCSA legal name records \"BKQ LOGISTICS, LLC\" for this identity. Requested name: \"BKQ LOGISTICS, LLC\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+          "field": "fmcsa_legal_name",
+          "role": "Unknown",
+          "authority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)"
+        }
+      ],
+      "nameSearch": {
+        "requested": "BKQ LOGISTICS, LLC",
+        "candidateLimit": 10,
+        "retrievalLimit": 200,
+        "truncated": false,
+        "selected": false,
+        "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+      }
+    }
+  ]
+}

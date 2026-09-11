@@ -1,0 +1,18 @@
+
+> move-trust-hub@1.0.0 check:ath-cust-net-001a
+> tsx --require ./scripts/stub-server-only.cjs --test lib/customer-integration/customer-integration.test.ts
+
+✔ exact published USDOT profile is eligible and flags default off (5.1027ms)
+✔ v2 token binds exact profile, expires, and tampering changes signature (4.0302ms)
+✔ Layer C and replies require exact hub/id and approved public shape (3.9063ms)
+✔ Ask outage omits overlays without failing the mover profile (2.1656ms)
+✔ business website permits only absolute HTTP(S) URLs (0.9122ms)
+✔ successful handoff redirect is private and non-indexable (91.6331ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1627.7804

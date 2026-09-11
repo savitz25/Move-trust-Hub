@@ -1,0 +1,17 @@
+{
+  "time": "2026-09-11T23:26:29.020853+00:00",
+  "deployment": "dpl_7jZWyzWMViKT14H85A36YxjMHbe6",
+  "window": "2026-09-11T23:23:00Z to 2026-09-11T23:25:54.225Z",
+  "method": "Vercel error/fatal runtime logs, limit20",
+  "newSearchErrorsObserved": false,
+  "observedExistingErrors": [
+    "approved_movers.companies_failed: companies.usdot_status missing on county journey pages",
+    "county journey cache payloads 10717305 and13012556 bytes exceed2MB"
+  ],
+  "scope": "Only this bounded window; not a claim of globally error-free production",
+  "baselineEvidence": [
+    "county-base.log",
+    "county-candidate.log",
+    "read-only SQL confirmed missing column; unchanged county loader"
+  ]
+}

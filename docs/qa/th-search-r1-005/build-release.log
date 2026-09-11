@@ -1,0 +1,481 @@
+
+> move-trust-hub@1.0.0 build
+> tsx scripts/guard-supabase-project.ts && next build
+
+NEXT_PUBLIC_SUPABASE_URL ref: arepfylnilkjmyduhwbz
+canonical: arepfylnilkjmyduhwbz
+forbidden: uvqkyupfnpswdozmuzih
+OK: Supabase project guard passed
+node.exe :  ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( ⚠ Warning: Nex...not be correct.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+ We detected multiple lockfiles and selected the directory of C:\Users\makei\package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the
+lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles:
+   * C:\Users\makei\th-search-r1-005-work\package-lock.json
+
+   ▲ Next.js 15.5.19
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · staleTimes
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+(node:41092) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of
+file:///C:/Users/makei/th-search-r1-005-work/tailwind.config.ts?id=1789167492081 is not specified and it doesn't parse
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\makei\th-search-r1-005-work\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ Compiled successfully in 6.1min
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/1877) ...
+   Generating static pages (372/1877)
+   Generating static pages (469/1877)
+Failed to set Next.js data cache for unstable_cache /about/how-we-score-movers  H, items over 2MB can not be cached
+(10717305 bytes)
+   Generating static pages (938/1877)
+Failed to set Next.js data cache for unstable_cache /about/how-we-score-movers  o, items over 2MB can not be cached
+(13012556 bytes)
+   Generating static pages (1407/1877)
+ ✓ Generating static pages (1877/1877)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                                                Size  First Load JS  Revalidate  Expire
+┌ ○ /                                                                                   5.38 kB         190 kB          5m      1y
+├ ƒ /_not-found                                                                           360 B         105 kB
+├ ƒ /about                                                                               1.8 kB         118 kB
+├ ƒ /about/editorial-team                                                               1.81 kB         118 kB
+├ ƒ /about/how-we-score-movers                                                           1.8 kB         118 kB
+├ ƒ /admin                                                                              24.5 kB         193 kB
+├ ƒ /admin/api/login                                                                      360 B         105 kB
+├ ƒ /admin/bbb                                                                          4.87 kB         121 kB
+├ ƒ /admin/fmcsa                                                                        4.87 kB         121 kB
+├ ƒ /admin/login                                                                        2.97 kB         125 kB
+├ ƒ /admin/my-move-users                                                                10.4 kB         176 kB
+├ ƒ /admin/portal-claims                                                                4.47 kB         130 kB
+├ ƒ /admin/portal-disputes                                                              5.21 kB         131 kB
+├ ƒ /admin/quotes                                                                         239 B         108 kB
+├ ƒ /admin/reviews                                                                      6.26 kB         139 kB
+├ ƒ /admin/suggestions                                                                   8.5 kB         145 kB
+├ ƒ /api/ask                                                                              360 B         105 kB
+├ ƒ /api/auth/facebook                                                                    360 B         105 kB
+├ ƒ /api/auth/google                                                                      360 B         105 kB
+├ ƒ /api/auth/magic-link                                                                  360 B         105 kB
+├ ƒ /api/auth/network-handoff/health                                                      360 B         105 kB
+├ ƒ /api/auth/network-handoff/start                                                       360 B         105 kB
+├ ƒ /api/chat                                                                             360 B         105 kB
+├ ƒ /api/claim/handoff/[profileId]                                                        360 B         105 kB
+├ ƒ /api/client-errors                                                                    360 B         105 kB
+├ ƒ /api/companies                                                                        360 B         105 kB
+├ ƒ /api/compare/companies                                                                360 B         105 kB
+├ ƒ /api/directory/companies                                                              360 B         105 kB
+├ ƒ /api/directory/enrichment-health                                                      360 B         105 kB
+├ ƒ /api/health/local-movers                                                              360 B         105 kB
+├ ƒ /api/home-route                                                                       360 B         105 kB
+├ ƒ /api/insurance-auth/facebook                                                          360 B         105 kB
+├ ƒ /api/insurance-auth/google                                                            360 B         105 kB
+├ ƒ /api/insurance-auth/magic-link                                                        360 B         105 kB
+├ ƒ /api/network/identity-resolver                                                        360 B         105 kB
+├ ƒ /api/performance-flags                                                                360 B         105 kB
+├ ƒ /api/place-resolve                                                                    360 B         105 kB
+├ ƒ /api/place-search                                                                     360 B         105 kB
+├ ƒ /api/refresh/bbb                                                                      360 B         105 kB
+├ ƒ /api/refresh/fmcsa                                                                    360 B         105 kB
+├ ƒ /api/refresh/insurance-providers                                                      360 B         105 kB
+├ ƒ /api/refresh/lenders                                                                  360 B         105 kB
+├ ƒ /api/revalidate-directory                                                             360 B         105 kB
+├ ƒ /api/revalidate-local-movers                                                          360 B         105 kB
+├ ƒ /api/reviews                                                                          360 B         105 kB
+├ ƒ /api/save-my-move/email-inventory                                                     360 B         105 kB
+├ ƒ /api/save-my-move/email-mover                                                         360 B         105 kB
+├ ƒ /api/save-my-move/inventory/[id]                                                      360 B         105 kB
+├ ƒ /api/search/movers                                                                    360 B         105 kB
+├ ƒ /api/send-quote-email                                                                 360 B         105 kB
+├ ƒ /api/specialist-execution/v2                                                          360 B         105 kB
+├ ƒ /api/test-places                                                                      360 B         105 kB
+├ ƒ /api/zip-distance                                                                     360 B         105 kB
+├ ƒ /api/zip-lookup                                                                       360 B         105 kB
+├ ƒ /ask                                                                                  585 B         108 kB
+├ ƒ /auth/callback                                                                        360 B         105 kB
+├ ƒ /auth/confirm                                                                         360 B         105 kB
+├ ƒ /auth/insurance/callback                                                              360 B         105 kB
+├ ƒ /auth/insurance/confirm                                                               360 B         105 kB
+├ ƒ /auth/network-handoff                                                                 360 B         105 kB
+├ ƒ /auto-transport                                                                     11.3 kB         224 kB
+├ ƒ /auto-transport/[slug]                                                              2.48 kB         119 kB
+├ ƒ /california                                                                           206 B         108 kB
+├ ƒ /colorado                                                                             206 B         108 kB
+├ ƒ /companies                                                                          3.73 kB         120 kB
+├ ƒ /companies/[slug]                                                                     11 kB         354 kB
+├ ƒ /companies/[slug]/share-og                                                            360 B         105 kB
+├ ƒ /company/[slug]                                                                     1.81 kB         219 kB
+├ ƒ /compare                                                                            12.7 kB         268 kB
+├ ƒ /contact                                                                            5.08 kB         135 kB
+├ ƒ /florida                                                                              206 B         108 kB
+├ ƒ /florida/share-og                                                                     360 B         105 kB
+├ ƒ /for-movers                                                                           239 B         108 kB
+├ ○ /insurance                                                                          6.34 kB         122 kB
+├ ƒ /insurance/[[...legacy]]                                                              239 B         108 kB
+├ ƒ /insurance/about                                                                    1.81 kB         118 kB
+├ ƒ /insurance/admin                                                                      239 B         108 kB
+├ ƒ /insurance/admin/api/login                                                            360 B         105 kB
+├ ƒ /insurance/admin/api/logout                                                           360 B         105 kB
+├ ƒ /insurance/admin/leads                                                                360 B         105 kB
+├ ƒ /insurance/admin/login                                                              5.45 kB         142 kB
+├ ƒ /insurance/admin/providers                                                          3.53 kB         120 kB
+├ ƒ /insurance/admin/providers/[id]/edit                                                  151 B         150 kB
+├ ƒ /insurance/admin/providers/new                                                        150 B         150 kB
+├ ƒ /insurance/admin/reviews                                                            3.47 kB         116 kB
+├ ƒ /insurance/api/admin/providers                                                        360 B         105 kB
+├ ƒ /insurance/api/admin/reviews                                                          360 B         105 kB
+├ ƒ /insurance/calculators                                                                149 B         190 kB
+├ ƒ /insurance/calculators/aca-subsidy                                                    210 B         213 kB
+├ ƒ /insurance/calculators/medicare-gap                                                 3.66 kB         120 kB
+├ ƒ /insurance/calculators/premium-estimator                                              360 B         105 kB
+├ ƒ /insurance/contact                                                                  6.33 kB         146 kB
+├ ƒ /insurance/data/counties                                                              206 B         108 kB
+├ ● /insurance/data/counties/[slug]                                                       206 B         108 kB
+├   ├ /insurance/data/counties/miami-dade-fl
+├   ├ /insurance/data/counties/broward-fl
+├   └ /insurance/data/counties/palm-beach-fl
+├ ƒ /insurance/data/plan-complaint-index                                                15.3 kB         132 kB
+├ ƒ /insurance/destinations                                                             3.89 kB         190 kB
+├ ● /insurance/destinations/[state]                                                       149 B         190 kB
+├   ├ /insurance/destinations/florida
+├   ├ /insurance/destinations/texas
+├   ├ /insurance/destinations/california
+├   └ [+31 more paths]
+├ ● /insurance/destinations/[state]/[city]                                               2.4 kB         188 kB
+├ ƒ /insurance/directory                                                                7.41 kB         199 kB
+├ ƒ /insurance/hubs                                                                     7.76 kB         124 kB
+├ ● /insurance/hubs/[state]                                                               239 B         108 kB
+├   ├ /insurance/hubs/new-york
+├   ├ /insurance/hubs/california
+├   ├ /insurance/hubs/illinois
+├   └ [+31 more paths]
+├ ○ /insurance/hubs/[state]/[slug]                                                        144 B         129 kB
+├ ƒ /insurance/hubs/aca                                                                   153 B         194 kB
+├ ƒ /insurance/hubs/browse                                                                239 B         108 kB
+├ ● /insurance/hubs/browse/[state]                                                        239 B         108 kB
+├   ├ /insurance/hubs/browse/new-york
+├   ├ /insurance/hubs/browse/california
+├   ├ /insurance/hubs/browse/illinois
+├   └ [+31 more paths]
+├ ƒ /insurance/hubs/health-insurance                                                      152 B         194 kB
+├ ƒ /insurance/hubs/medicare                                                              152 B         194 kB
+├ ƒ /insurance/hubs/south-florida                                                         144 B         129 kB
+├ ƒ /insurance/methodology                                                              1.81 kB         118 kB
+├ ƒ /insurance/my-insurance                                                             5.93 kB         203 kB
+├ ƒ /insurance/my-insurance/compare                                                     4.54 kB         199 kB
+├ ƒ /insurance/offline                                                                    239 B         108 kB
+├ ƒ /insurance/privacy                                                                    360 B         105 kB
+├ ƒ /insurance/providers                                                                  206 B         108 kB
+├ ● /insurance/providers/[slug]                                                         7.53 kB         231 kB
+├   ├ /insurance/providers/summit-insurance-group-miami-fl
+├   ├ /insurance/providers/heritage-insurance-group-dallas-tx
+├   ├ /insurance/providers/guardian-insurance-group-san-francisco-ca
+├   └ [+741 more paths]
+├ ƒ /insurance/resources                                                                  149 B         190 kB
+├ ● /insurance/resources/[slug]                                                           149 B         190 kB
+├   ├ /insurance/resources/how-to-choose-insurance-agent
+├   ├ /insurance/resources/auto-insurance-costs-by-state
+├   ├ /insurance/resources/homeowners-insurance-basics
+├   └ [+13 more paths]
+├ ƒ /insurance/resources/health-savings-accounts-hsa-2026                                 239 B         108 kB
+├ ƒ /insurance/resources/how-to-choose-health-insurance-plan                              239 B         108 kB
+├ ƒ /insurance/sitemap.xml                                                                360 B         105 kB
+├ ƒ /insurance/terms                                                                      360 B         105 kB
+├ ƒ /insurance/tools                                                                      206 B         108 kB
+├ ƒ /insurance/tools/aca-eligibility-checker                                              210 B         213 kB
+├ ƒ /insurance/tools/cost-estimator                                                     6.88 kB         212 kB
+├ ƒ /insurance/tools/license-verification                                               9.04 kB         125 kB
+├ ƒ /insurance/tools/medicare-plan-finder                                               6.72 kB         123 kB
+├ ƒ /insurance/tools/medicare-provider-lookup                                           7.82 kB         124 kB
+├ ƒ /insurance/tools/needs-assessment                                                   12.7 kB         129 kB
+├ ƒ /insurance/tools/prescription-drug-list                                             6.14 kB         203 kB
+├ ƒ /insurance/tools/quote-comparison                                                     360 B         105 kB
+├ ○ /lender                                                                               519 B         200 kB
+├ ƒ /lender/[[...legacy]]                                                                 239 B         108 kB
+├ ○ /lender/about                                                                       1.81 kB         118 kB
+├ ƒ /lender/admin/api/login                                                               360 B         105 kB
+├ ƒ /lender/admin/login                                                                 1.93 kB         106 kB
+├ ƒ /lender/api/health/supabase                                                           360 B         105 kB
+├ ƒ /lender/api/leads                                                                     360 B         105 kB
+├ ƒ /lender/auto-loan-companies                                                         5.17 kB         113 kB
+├ ● /lender/auto-loan-companies/[state]                                                 3.92 kB         112 kB
+├   ├ /lender/auto-loan-companies/arizona
+├   ├ /lender/auto-loan-companies/california
+├   ├ /lender/auto-loan-companies/colorado
+├   └ [+9 more paths]
+├ ○ /lender/calculators                                                                 3.59 kB         189 kB
+├ ○ /lender/compare                                                                     1.42 kB         106 kB
+├ ƒ /lender/contact                                                                       360 B         105 kB
+├ ƒ /lender/fdic-insured-banks                                                          2.85 kB         110 kB
+├ ● /lender/fdic-insured-banks/[state]                                                  4.04 kB         112 kB
+├   ├ /lender/fdic-insured-banks/alabama
+├   ├ /lender/fdic-insured-banks/alaska
+├   ├ /lender/fdic-insured-banks/arizona
+├   └ [+48 more paths]
+├ ● /lender/lenders/[slug]                                                              2.37 kB         187 kB
+├   ├ /lender/lenders/pacific-trust-mortgage
+├   ├ /lender/lenders/metro-home-finance
+├   ├ /lender/lenders/lone-star-lending
+├   └ [+644 more paths]
+├ ƒ /lender/local-lenders                                                               7.66 kB         207 kB
+├ ● /lender/local-lenders/[state]                                                       5.29 kB         191 kB
+├   ├ /lender/local-lenders/arizona
+├   ├ /lender/local-lenders/california
+├   ├ /lender/local-lenders/colorado
+├   └ [+14 more paths]
+├ ○ /lender/local-lenders/[state]/[county]                                              6.39 kB         127 kB
+├ ƒ /lender/local-lenders/[state]/ann-arbor-kalamazoo-college-town-demand                 146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/central-eastern-pa-affordability-havens                 146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/central-florida                                         146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/central-illinois-affordability-gems                     146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/central-valley-alternatives                             146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/charlotte-metro                                         146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/chicago-proper-urban-resurgence                         146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/coastal-savannah                                        146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/colorado-springs-stability-volume                       146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/denver-metro-outer-rings-north-suburbs                  146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/dfw-suburbs-silicon-prairie                             146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/first-time-buyer-waterfront-hubs                        146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/foothills-turnkey-mountain-towns                        146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/gateway-cities-suburban-alternatives                    146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/grand-rapids-fast-moving-core                           146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/grand-strand                                            146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/greater-detroits-value-pockets                          146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/greater-houston-metro                                   146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/greater-nashville-metro                                 146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/greater-pittsburgh-key-suburbs                          146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/high-demand-boston-neighborhoods                        146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/high-velocity-mid-city-core                             146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/highly-competitive-chicago-suburbs                      146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/hudson-river-gold-coast                                 146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/inland-empire-affordability-magnets                     146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/jacksonville                                            146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/knoxville-east-tennessee                                146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/lansing-multi-family-investor-magnet                    146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/lowcountry                                              146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/metro-outer-ring                                        146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/metrowest-bread-and-butter-markets                      146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/middle-georgia                                          146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/national-superstars-suburban-velocity                   146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/north-atlanta                                           146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/nyc-boroughs-brooklyn-queens-manhattan                  146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/nyc-suburbs-westchester-putnam                          146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/panhandle                                               146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/philadelphia-metro-area-collar-counties                 146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/piedmont-triad                                          146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/research-triangle                                       146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/rockford-national-standout                              146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/san-antonio-value-play                                  146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/silicon-valley-spine                                    146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/snohomish-transit-corridor                              146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/south-florida                                           146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/south-jersey-shore-surge                                146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/south-sound-tacoma-puyallup                             146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/southeast-valley-pinal-border                           146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/southwest-washington-portland-border                    146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/spacex-corridor-sleepy-town-booms                       146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/sweet-spot-commuter-towns                               144 B         191 kB
+├ ƒ /lender/local-lenders/[state]/tampa-bay                                               146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/transit-oriented-urban-hotspots-somerville-cambridge    146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/upper-northwest-value-surge                             146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/upstate                                                 146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/upstate-powerhouses-buffalo-albany                      146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/west-valley-boomtowns                                   146 B         191 kB
+├ ƒ /lender/local-lenders/[state]/worcester-undisputed-growth-leader                      146 B         191 kB
+├ ƒ /lender/methodology                                                                 1.81 kB         118 kB
+├ ƒ /lender/privacy                                                                       360 B         105 kB
+├ ○ /lender/resources                                                                   2.41 kB         188 kB
+├ ƒ /lender/resources/first-time-homebuyer-programs                                     2.41 kB         188 kB
+├ ƒ /lender/resources/fixed-vs-adjustable-rate-mortgages                                  239 B         108 kB
+├ ƒ /lender/resources/how-to-choose-mortgage-lender                                     2.41 kB         188 kB
+├ ○ /lender/sitemap.xml                                                                   360 B         105 kB
+├ ƒ /lender/terms                                                                         360 B         105 kB
+├ ○ /local-movers                                                                       6.24 kB         122 kB
+├ ○ /local-movers/[stateSlug]                                                           4.79 kB         369 kB
+├ ○ /local-movers/[stateSlug]/[countySlug]                                              12.3 kB         441 kB
+├ ƒ /local-movers/[stateSlug]/[countySlug]/share-og                                       360 B         105 kB
+├ ƒ /local-movers/[stateSlug]/share-og                                                    360 B         105 kB
+├ ƒ /moving-calculator                                                                  26.5 kB         414 kB
+├ ○ /moving-to                                                                          2.09 kB         110 kB
+├ ○ /moving-to/[slug]                                                                   1.97 kB         122 kB
+├ ○ /moving-to/alabama                                                                  2.47 kB         179 kB
+├ ○ /moving-to/alabama/[slug]                                                           1.97 kB         122 kB
+├ ○ /moving-to/alaska                                                                   2.47 kB         179 kB
+├ ○ /moving-to/alaska/[slug]                                                            1.97 kB         122 kB
+├ ○ /moving-to/arizona                                                                  2.47 kB         179 kB
+├ ○ /moving-to/arizona/[slug]                                                           1.97 kB         122 kB
+├ ○ /moving-to/arkansas                                                                 2.47 kB         179 kB
+├ ○ /moving-to/arkansas/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/california                                                               2.47 kB         179 kB
+├ ○ /moving-to/california/[slug]                                                        1.97 kB         122 kB
+├ ○ /moving-to/colorado                                                                 2.47 kB         179 kB
+├ ○ /moving-to/colorado/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/connecticut                                                              2.47 kB         179 kB
+├ ○ /moving-to/connecticut/[slug]                                                       1.97 kB         122 kB
+├ ○ /moving-to/delaware                                                                 2.47 kB         179 kB
+├ ○ /moving-to/delaware/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/florida                                                                  2.47 kB         179 kB
+├ ○ /moving-to/florida/[slug]                                                           1.97 kB         122 kB
+├ ○ /moving-to/georgia                                                                  2.47 kB         179 kB
+├ ○ /moving-to/georgia/[slug]                                                           1.97 kB         122 kB
+├ ○ /moving-to/hawaii                                                                   2.47 kB         179 kB
+├ ○ /moving-to/hawaii/[slug]                                                            1.97 kB         122 kB
+├ ○ /moving-to/idaho                                                                    2.47 kB         179 kB
+├ ○ /moving-to/idaho/[slug]                                                             1.97 kB         122 kB
+├ ○ /moving-to/illinois                                                                 2.47 kB         179 kB
+├ ○ /moving-to/illinois/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/indiana                                                                  2.47 kB         179 kB
+├ ○ /moving-to/indiana/[slug]                                                           1.97 kB         122 kB
+├ ○ /moving-to/iowa                                                                     2.47 kB         179 kB
+├ ○ /moving-to/iowa/[slug]                                                              1.97 kB         122 kB
+├ ○ /moving-to/kansas                                                                   2.47 kB         179 kB
+├ ○ /moving-to/kansas/[slug]                                                            1.97 kB         122 kB
+├ ○ /moving-to/kentucky                                                                 2.47 kB         179 kB
+├ ○ /moving-to/kentucky/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/louisiana                                                                2.47 kB         179 kB
+├ ○ /moving-to/louisiana/[slug]                                                         1.97 kB         122 kB
+├ ○ /moving-to/maine                                                                    2.47 kB         179 kB
+├ ○ /moving-to/maine/[slug]                                                             1.97 kB         122 kB
+├ ○ /moving-to/maryland                                                                 2.47 kB         179 kB
+├ ○ /moving-to/maryland/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/massachusetts                                                            2.47 kB         179 kB
+├ ○ /moving-to/massachusetts/[slug]                                                     1.97 kB         122 kB
+├ ○ /moving-to/minnesota                                                                2.47 kB         179 kB
+├ ○ /moving-to/minnesota/[slug]                                                         1.97 kB         122 kB
+├ ○ /moving-to/mississippi                                                              2.47 kB         179 kB
+├ ○ /moving-to/mississippi/[slug]                                                       1.97 kB         122 kB
+├ ○ /moving-to/missouri                                                                 2.47 kB         179 kB
+├ ○ /moving-to/missouri/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/montana                                                                  2.47 kB         179 kB
+├ ○ /moving-to/montana/[slug]                                                           1.97 kB         122 kB
+├ ○ /moving-to/nebraska                                                                 2.47 kB         179 kB
+├ ○ /moving-to/nebraska/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/nevada                                                                   2.47 kB         179 kB
+├ ○ /moving-to/nevada/[slug]                                                            1.97 kB         122 kB
+├ ○ /moving-to/new-hampshire                                                            2.47 kB         179 kB
+├ ○ /moving-to/new-hampshire/[slug]                                                     1.97 kB         122 kB
+├ ○ /moving-to/new-jersey                                                               2.47 kB         179 kB
+├ ○ /moving-to/new-jersey/[slug]                                                        1.97 kB         122 kB
+├ ○ /moving-to/new-mexico                                                               2.47 kB         179 kB
+├ ○ /moving-to/new-mexico/[slug]                                                        1.97 kB         122 kB
+├ ○ /moving-to/new-york                                                                 2.47 kB         179 kB
+├ ○ /moving-to/new-york/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/north-carolina                                                           2.47 kB         179 kB
+├ ○ /moving-to/north-carolina/[slug]                                                    1.97 kB         122 kB
+├ ○ /moving-to/north-dakota                                                             2.47 kB         179 kB
+├ ○ /moving-to/north-dakota/[slug]                                                      1.97 kB         122 kB
+├ ○ /moving-to/ohio                                                                     2.47 kB         179 kB
+├ ○ /moving-to/ohio/[slug]                                                              1.97 kB         122 kB
+├ ○ /moving-to/oklahoma                                                                 2.47 kB         179 kB
+├ ○ /moving-to/oklahoma/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/oregon                                                                   2.47 kB         179 kB
+├ ○ /moving-to/oregon/[slug]                                                            1.97 kB         122 kB
+├ ○ /moving-to/pennsylvania                                                             2.47 kB         179 kB
+├ ○ /moving-to/pennsylvania/[slug]                                                      1.97 kB         122 kB
+├ ○ /moving-to/rhode-island                                                             2.47 kB         179 kB
+├ ○ /moving-to/rhode-island/[slug]                                                      1.97 kB         122 kB
+├ ○ /moving-to/south-carolina                                                           3.65 kB         433 kB
+├ ○ /moving-to/south-carolina/[slug]                                                    1.97 kB         122 kB
+├ ○ /moving-to/south-dakota                                                             2.47 kB         179 kB
+├ ○ /moving-to/south-dakota/[slug]                                                      1.97 kB         122 kB
+├ ○ /moving-to/tennessee                                                                2.47 kB         179 kB
+├ ○ /moving-to/tennessee/[slug]                                                         1.97 kB         122 kB
+├ ○ /moving-to/texas                                                                    2.47 kB         179 kB
+├ ○ /moving-to/texas/[slug]                                                             1.97 kB         122 kB
+├ ○ /moving-to/utah                                                                     2.47 kB         179 kB
+├ ○ /moving-to/utah/[slug]                                                              1.97 kB         122 kB
+├ ○ /moving-to/vermont                                                                  2.47 kB         179 kB
+├ ○ /moving-to/vermont/[slug]                                                           1.97 kB         122 kB
+├ ○ /moving-to/virginia                                                                 2.47 kB         179 kB
+├ ○ /moving-to/virginia/[slug]                                                          1.97 kB         122 kB
+├ ○ /moving-to/washington                                                               2.47 kB         179 kB
+├ ○ /moving-to/washington/[slug]                                                        1.97 kB         122 kB
+├ ○ /moving-to/west-virginia                                                            2.47 kB         179 kB
+├ ○ /moving-to/west-virginia/[slug]                                                     1.97 kB         122 kB
+├ ○ /moving-to/wisconsin                                                                2.47 kB         179 kB
+├ ○ /moving-to/wisconsin/[slug]                                                         1.97 kB         122 kB
+├ ○ /moving-to/wyoming                                                                  2.47 kB         179 kB
+├ ○ /moving-to/wyoming/[slug]                                                           1.97 kB         122 kB
+├ ƒ /my-move                                                                            20.5 kB         421 kB
+├ ƒ /my-move/create-password                                                             6.6 kB         119 kB
+├ ƒ /my-move/plans/[planId]                                                             27.3 kB         374 kB
+├ ƒ /my-move/reports                                                                    1.84 kB         273 kB
+├ ƒ /new-jersey                                                                           206 B         108 kB
+├ ƒ /new-york                                                                             239 B         108 kB
+├ ƒ /opengraph-image                                                                      360 B         105 kB
+├ ƒ /portal                                                                             4.42 kB         196 kB
+├ ƒ /portal/claim/[companySlug]                                                            5 kB         121 kB
+├ ƒ /portal/create-password                                                             6.58 kB         119 kB
+├ ƒ /portal/login                                                                       2.74 kB         188 kB
+├ ƒ /portal/mfa                                                                         1.82 kB         187 kB
+├ ƒ /portal/reviews                                                                     5.51 kB         129 kB
+├ ƒ /portal/security                                                                     7.9 kB         199 kB
+├ ƒ /portal/service-area                                                                6.34 kB         122 kB
+├ ƒ /privacy-policy                                                                       239 B         108 kB
+├ ƒ /resources                                                                          2.09 kB         110 kB
+├ ƒ /resources/best-time-to-move                                                         2.2 kB         110 kB
+├ ƒ /resources/bill-of-lading-shipper-rights                                            2.23 kB         110 kB
+├ ƒ /resources/carrier-vs-broker                                                        2.23 kB         110 kB
+├ ƒ /resources/checklist                                                                2.23 kB         110 kB
+├ ƒ /resources/fmcsa                                                                    2.23 kB         110 kB
+├ ● /resources/guides/[slug]                                                             2.2 kB         110 kB
+├   ├ /resources/guides/moving-to-myrtle-beach-2026
+├   ├ /resources/guides/moving-to-coeur-dalene-2026
+├   ├ /resources/guides/moving-to-idaho-falls-2026
+├   └ [+3 more paths]
+├ ƒ /resources/how-to-choose                                                            2.23 kB         110 kB
+├ ƒ /resources/interstate-moving-costs                                                   2.2 kB         110 kB
+├ ƒ /resources/interstate-moving-damage-claims                                          2.23 kB         110 kB
+├ ƒ /resources/interstate-moving-insurance                                              2.23 kB         110 kB
+├ ƒ /resources/move-size-weight                                                         2.23 kB         110 kB
+├ ƒ /resources/packing-checklist                                                        2.23 kB         110 kB
+├ ƒ /resources/routes                                                                   2.23 kB         110 kB
+├ ● /resources/routes/[slug]                                                            3.01 kB         119 kB
+├   ├ /resources/routes/california-to-texas
+├   ├ /resources/routes/california-to-oregon
+├   ├ /resources/routes/california-to-washington
+├   └ [+46 more paths]
+├ ƒ /resources/scams                                                                    2.23 kB         110 kB
+├ ƒ /review                                                                             10.6 kB         127 kB
+├ ƒ /robots.txt                                                                           360 B         105 kB
+├ ○ /sitemap-local/sitemap.xml                                                            239 B         108 kB
+├ ● /sitemap-local/sitemap/[__metadata_id__]                                              360 B         105 kB
+├   ├ /sitemap-local/sitemap/alabama.xml
+├   ├ /sitemap-local/sitemap/alaska.xml
+├   ├ /sitemap-local/sitemap/arizona.xml
+├   └ [+48 more paths]
+├ ƒ /sitemap.xml                                                                          360 B         105 kB
+├ ƒ /terms-of-service                                                                     239 B         108 kB
+├ ƒ /texas                                                                                206 B         108 kB
+├ ƒ /tools/move-quote-check                                                             14.1 kB         148 kB
+├ ƒ /tools/move-quote-check/compare                                                     5.32 kB         139 kB
+├ ƒ /twitter-image                                                                        360 B         105 kB
+├ ƒ /verify-dot                                                                         10.7 kB         214 kB
+├ ƒ /virginia                                                                             239 B         108 kB
+└ ƒ /washington                                                                           206 B         108 kB
++ First Load JS shared by all                                                            104 kB
+  ├ chunks/31255-5c7e8aab970a05ae.js                                                    45.9 kB
+  ├ chunks/4bd1b696-bad92808725a934a.js                                                 54.2 kB
+  └ other shared chunks (total)                                                         4.05 kB
+
+
+ƒ Middleware                                                                            95.4 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

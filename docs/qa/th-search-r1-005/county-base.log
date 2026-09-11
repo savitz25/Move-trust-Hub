@@ -1,0 +1,24 @@
+node.exe : {
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ({:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+  "tier1": 1695,
+  "tier2": 1448,
+  "maxAllowed": 400,
+  "pass": false,
+  "haltReason": "Tier 1 count 1695 exceeds maximum 400. Halting deploy.",
+  "producingRule": "evaluateCountyIndexabilityFromResult: 3+ explicit county movers, no regional fallback, non-batch
+cited research, deep-county or premium-metro wave only",
+  "tier1Reasons": {
+    "standard_quality_bar": 1287,
+    "premium_intelligence_pack": 199,
+    "premium_deep_research": 209
+  },
+  "tier2Reasons": {
+    "batch_template_research": 1398,
+    "missing_county_research": 50
+  }
+}

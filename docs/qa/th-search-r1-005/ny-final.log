@@ -1,0 +1,44 @@
+
+> move-trust-hub@1.0.0 assert:ny-move-001
+> python -X utf8 -m unittest scripts.test_ny_move_001 && tsx lib/new-york-intelligence/publication.test.ts && tsx scripts/assert-ny-move-001.mts && tsx --test lib/move-ask/ny-routing.test.ts
+
+node.exe : .....
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (.....:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK
+✔ NY-MOVE-001 snapshot grains stay separate (1.3627ms)
+✔ nested mutations change the NY snapshot fingerprint input (0.8586ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 22.2397
+NY-MOVE-001 publication assert: PASS
+✔ NY intrastate roster requests do not execute Florida IM (18.0193ms)
+✔ Florida IM queries still execute Florida registration grain (1.5301ms)
+✔ explicit New York headquarters interstate research uses federal directory (6.1322ms)
+✔ labeled USDOT lookup with NY geography stays identifier research (1.3593ms)
+✔ TH-SEARCH-R1-001 labeled identifiers still parse (1.2654ms)
+✔ labeled USDOT complaint research is not blocked by New York geography (0.7148ms)
+✔ explicit NYSDOT complaint corpus stays unavailable even with a USDOT (1.1023ms)
+✔ USDOT does not prove New York intrastate authority (0.6415ms)
+✔ name-only New York complaint still requires a labeled identity (0.8571ms)
+✔ ranking, route, and malformed identifier safeguards still fail closed (3.1242ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 672.6975
