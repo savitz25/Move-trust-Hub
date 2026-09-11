@@ -1,6 +1,6 @@
 {
   "ticket": "TH-SEARCH-R1-005",
-  "status": "RUNTIME_RELEASED_AND_VERIFIED_EVIDENCE_FOLLOWUP_PENDING",
+  "status": "RELEASED_AND_VERIFIED",
   "time": "2026-09-11T23:25:56.842638+00:00",
   "model": {
     "requested": "GPT-6 Astra / High",
@@ -23,9 +23,9 @@
     126
   ],
   "evidenceFollowup": {
-    "head": null,
+    "firstEvidenceCommit": "31140759c52b627f2aab4581c91c04e918e39a1d",
     "merge": null,
-    "note": "This artifact precedes the evidence commit; no future SHA invented. Runtime content is already production-verified. Final main/deployment receipt is reported after it exists."
+    "note": "Runtime release is production-verified. This record is authored before the evidence PR merge; final documentation-only merge/deployment receipt follows in PR and final report. No future SHA invented."
   },
   "sourceOracle": {
     "file": "source-oracle.json",
