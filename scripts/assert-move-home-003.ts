@@ -13,7 +13,7 @@ const page = readFileSync(join(root, 'app/(move)/page.tsx'), 'utf8');
 
 assert.equal(metrics.network.publishedStateIntelligencePages, MOVE_HOMEPAGE_STATE_CARDS.length);
 assert.deepEqual(metrics.network.publishedStateIntelligencePaths, MOVE_HOMEPAGE_STATE_CARDS.map((s) => s.href));
-assert.deepEqual(MOVE_HOMEPAGE_STATE_CARDS.map((s) => s.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia']);
+assert.deepEqual(MOVE_HOMEPAGE_STATE_CARDS.map((s) => s.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york']);
 assert.ok(!MOVE_HOMEPAGE_STATE_CARDS.some((s) => s.href === '/arizona'));
 assert.equal(Object.keys(MOVE_EVIDENCE_FAMILY_LABELS).length, 9);
 assert.equal(inventory.length, metrics.metrics.length);

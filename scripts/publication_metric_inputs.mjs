@@ -22,6 +22,7 @@ export function publicationMetricInputs() {
   const waSnap = JSON.parse(read("lib/washington-intelligence/accepted-snapshot.json"));
   const coSnap = JSON.parse(read("lib/colorado-intelligence/accepted-snapshot.json"));
   const vaSnap = JSON.parse(read("lib/virginia-intelligence/accepted-snapshot.json"));
+  const nySnap = JSON.parse(read("lib/new-york-intelligence/accepted-snapshot.json"));
 
   const paths = [];
   const caPath = caPub.match(/CA_MOVE_PUBLIC_PATH = '(\/[^']+)'/)?.[1];
@@ -29,7 +30,7 @@ export function publicationMetricInputs() {
   if (flSnap.includes("/florida") && existsSync(join(root, "app/(move)/florida/page.tsx"))) paths.push("/florida");
   if (njPath) paths.push(njPath);
   if (caPath) paths.push(caPath);
-  for (const snapshot of [txSnap, waSnap, coSnap, vaSnap]) {
+  for (const snapshot of [txSnap, waSnap, coSnap, vaSnap, nySnap]) {
     const route = snapshot.publication?.route;
     if (route && snapshot.publication.indexable && existsSync(join(root, `app/(move)${route}/page.tsx`))) {
       paths.push(route);
@@ -59,5 +60,6 @@ export function publicationMetricInputs() {
     waSnapshot: waSnap,
     coSnapshot: coSnap,
     vaSnapshot: vaSnap,
+    nySnapshot: nySnap,
   };
 }

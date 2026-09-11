@@ -51,6 +51,8 @@ export type MoveNetworkMetricsInput = {
   vaHhgListingRows: number;
   vaPropertyListingRows: number;
   vaSourceRetrievedAt: string;
+  nyHhgBulletinObservations: number;
+  nyBulletinIssues: number;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -113,6 +115,8 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/washington')) throw new Error('Washington state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/colorado')) throw new Error('Colorado state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/virginia')) throw new Error('Virginia state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/new-york')) throw new Error('New York state intelligence path missing');
+  if (input.nyHhgBulletinObservations <= 0) throw new Error('New York HHG bulletin observation count missing');
   if (input.publishedStateIntelligencePaths.includes('/arizona')) throw new Error('Arizona state intelligence path must not be published');
   if (input.waActiveDirectoryResults <= 0) throw new Error('Washington active directory result count missing');
   if (input.coActiveHhgPermitListings <= 0) throw new Error('Colorado active HHG permit listing count missing');
@@ -605,6 +609,28 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'ny_dot_2026_hhg_bulletin_observations',
+      label: 'NYSDOT 2026 household-goods bulletin application observations',
+      value: input.nyHhgBulletinObservations,
+      valueState: 'KNOWN',
+      grain: 'ny_dot_weekly_bulletin_hhg_application_observation',
+      denominator: 'Household-goods application blocks in acquired 2026 Weekly Bulletin PDFs',
+      description:
+        '2026 NYSDOT Weekly Bulletin household-goods application observations. Not current authorized movers and not a New York mover total.',
+      coverage: 'New York',
+      contributingSourceSystems: ['nysdot_weekly_bulletin'],
+      sourceAsOf: '2026-09-09',
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        `Count household-goods application blocks across ${input.nyBulletinIssues} 2026 bulletin issues.`,
+        'Not current NYDOT authority. Not FMCSA. Not unique companies. Application is not authorization.',
+        ['nysdot_weekly_bulletin'],
+        'New York',
+        'Bulletin window 2026-01-07 through 2026-09-09',
+      ),
+    }),
+    metric({
       key: 'published_state_intelligence_pages',
       label: 'Published state moving-intelligence pages',
       value: input.publishedStateIntelligencePaths.length,
@@ -737,6 +763,11 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       propertyListingRows: input.vaPropertyListingRows,
       retrievedAt: input.vaSourceRetrievedAt,
       sourceAsOf: null,
+    },
+    newYork: {
+      currentHhgRosterCoverage: 'OPEN_SEARCH_ONLY',
+      bulletinIssues: input.nyBulletinIssues,
+      hhgBulletinObservations: input.nyHhgBulletinObservations,
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

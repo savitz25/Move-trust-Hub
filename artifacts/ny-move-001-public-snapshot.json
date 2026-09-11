@@ -1,0 +1,176 @@
+{
+  "version": "move-ny-state-intel-v1",
+  "ticket": "NY-MOVE-001A",
+  "as_of": null,
+  "generated_at": "2026-09-11T18:14:28.274740+00:00",
+  "snapshotAsOf": "2026-09-11",
+  "retrievedAt": "2026-09-11",
+  "no_trust_score": true,
+  "no_paid_ranking": true,
+  "no_new_york_local_routes": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/new-york",
+    "indexable": true,
+    "robots": "index,follow",
+    "route": "/new-york",
+    "rankings": false,
+    "trustScore": false,
+    "h1": "New York Household-Goods Moving Intelligence"
+  },
+  "uiGrains": {
+    "currentHhgRoster": "VISIBLE_SUPPORTING_CONTEXT",
+    "bulletinIssues": "VISIBLE_PUBLIC_METRIC",
+    "hhgBulletinObservations": "VISIBLE_PUBLIC_METRIC",
+    "federalOverlay": "VISIBLE_SUPPORTING_CONTEXT",
+    "complaints": "VISIBLE_SUPPORTING_CONTEXT",
+    "insurance": "VISIBLE_SUPPORTING_CONTEXT"
+  },
+  "regulator": {
+    "agency": "New York State Department of Transportation \u2014 Office of Modal Safety and Security",
+    "short": "NYSDOT",
+    "notDfs": true,
+    "hhg_url": "https://www.dot.ny.gov/divisions/operating/osss/truck/registration-licensing",
+    "carcert_url": "https://carcert.dot.ny.gov/",
+    "bulletin_url": "https://www.dot.ny.gov/main/publications/wb-motor-carrier-applications",
+    "complaint_url": "https://www.dot.ny.gov/divisions/operating/osss/truck",
+    "fuel_surcharge_url": "https://www.dot.ny.gov/divisions/operating/osss/truck"
+  },
+  "current_hhg_roster": {
+    "coverage": "OPEN_SEARCH_ONLY",
+    "CURRENT_NY_HHG_AUTHORIZED_ROSTER": "OPEN_SEARCH_ONLY",
+    "rows": null,
+    "distinctAuthorityIds": null,
+    "reason": "CarCert states Search New York State Carriers (Functionality Under Development). No complete current Household Goods roster was enumerated. Search-only is not zero."
+  },
+  "bulletin_2026": {
+    "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source": "NYSDOT Weekly Bulletin of Motor Carrier Applications",
+    "sourceAsOf": "2026-09-09",
+    "windowStart": "2026-01-07",
+    "windowEnd": "2026-09-09",
+    "retrievedAt": "2026-09-11",
+    "issues": 36,
+    "hhgApplicationObservations": 108,
+    "distinctCaseNumbers": 103,
+    "applicationTypes": {
+      "New Service": 101,
+      "Transfer": 3,
+      "Extension": 1,
+      "Partial Transfer of Authority": 1,
+      "Name Change": 1,
+      "UNKNOWN": 1
+    },
+    "rowsWithUsdot": 0,
+    "rowsWithNydot": 0,
+    "rowsWithCertificate": 0,
+    "application_ne_authority": true,
+    "application_ne_current_mover": true,
+    "observation_ne_carrier_count": true,
+    "probationary_ne_permanent": true
+  },
+  "identity": {
+    "native_id_field": "Case Number on bulletin observations; NYDOT number required for consumer verification when available",
+    "namespace": null,
+    "namespace_note": "No source-native NYDOT number field was printed on 2026 bulletin HHG observations. Do not invent NY-DOT-HHG:{n} until the source field is confirmed.",
+    "usdot_alone_is_not_ny_intrastate_authority": true
+  },
+  "federal": {
+    "name_only": "UNSAFE",
+    "name_plus_address": "REVIEW_REQUIRED",
+    "exact_state_to_federal_crosswalks": 0,
+    "review_required_crosswalks": 0,
+    "rejected_unsafe_crosswalks": 0,
+    "nydot_authority_ne_usdot": true,
+    "usdot_ne_active_interstate_authority": true,
+    "state_mover_ne_federal_mover": true,
+    "hq_geography_ne_nydot_authority": true,
+    "overlay_note": "Existing MoveTrustHub FMCSA spine is reused. A New York-address USDOT carrier is not a New York-authorized intrastate household-goods mover."
+  },
+  "complaints": {
+    "coverage": "PUBLIC_RESEARCH_PATH",
+    "NY_HHG_COMPLAINT_ROWS": null,
+    "path": "NYSDOT Motor Carrier Investigators mci@dot.ny.gov / 518-485-1010; household-goods complaint form in the truck repository",
+    "complaint_ne_violation": true
+  },
+  "compliance": {
+    "coverage": "PUBLIC_RESEARCH_PATH",
+    "reason": "No bounded household-goods-only Notice of Violation bulk table was acquired."
+  },
+  "insurance": {
+    "CURRENT_INSURANCE_COMPLIANCE": "OPEN_SEARCH_ONLY",
+    "historical_application_ne_insured_today": true,
+    "insurance_ne_quality": true
+  },
+  "tariff": {
+    "coverage": "REGULATORY_CONTEXT",
+    "corpus": "NOT_ACQUIRED",
+    "tariff_ne_quality": true,
+    "rate_ne_recommendation": true
+  },
+  "applications": {
+    "applicant_ne_authorized_carrier": true,
+    "publication_ne_operating_authority": true,
+    "approval_ne_current_authority": true
+  },
+  "expansion_ledger": {
+    "NY_CURRENT_HHG_AUTHORITY_ROWS": null,
+    "NY_CURRENT_HHG_DISTINCT_AUTHORITY_IDS": null,
+    "NY_DOT_2026_BULLETIN_ISSUES": 36,
+    "NY_DOT_2026_HHG_APPLICATION_OBSERVATIONS": 108,
+    "NY_DOT_2026_HHG_DISTINCT_SOURCE_IDS": 103,
+    "EXACT_NY_STATE_TO_FEDERAL_CROSSWALKS": 0,
+    "REVIEW_REQUIRED_CROSSWALKS": 0,
+    "REJECTED_UNSAFE_CROSSWALKS": 0,
+    "NY_HHG_COMPLAINT_ROWS": null,
+    "NET_NEW_CANONICAL_ORGANIZATIONS": 0,
+    "NET_NEW_PUBLIC_MOVE_PROFILES": 0,
+    "EXISTING_ORGANIZATIONS_ENRICHED": 0,
+    "EXACT_PROFILE_ATTACHMENTS": 0,
+    "GRAPH_WRITES": 0
+  },
+  "claimEligibilityBroadened": false,
+  "noCombinedNewYorkMoversTotal": true,
+  "unknownIsNotZero": true,
+  "searchOnlyIsNotZero": true,
+  "juiceSqueeze": [
+    {
+      "decision": "GRABBED \u2014 HIGH YIELD",
+      "source": "NYSDOT Household Goods authority framework"
+    },
+    {
+      "decision": "GRABBED \u2014 HIGH YIELD",
+      "source": "2026 Weekly Bulletin of Motor Carrier Applications (36 issues; 108 HHG observations)"
+    },
+    {
+      "decision": "GRABBED \u2014 HIGH YIELD",
+      "source": "Existing FMCSA federal overlay (not treated as NYDOT authority)"
+    },
+    {
+      "decision": "GRABBED \u2014 EASY SECONDARY",
+      "source": "Complaint path, fuel-surcharge/tariff context, bulletin Case Numbers"
+    },
+    {
+      "decision": "LEFT \u2014 SEARCH ONLY",
+      "source": "Current CarCert Household Goods roster (functionality under development)"
+    },
+    {
+      "decision": "LEFT \u2014 SEARCH ONLY",
+      "source": "Current insurance compliance"
+    },
+    {
+      "decision": "LEFT \u2014 TOO MUCH WORK FOR CURRENT YIELD",
+      "source": "Tariff corpus, historical bulletins, complaint-by-complaint retrieval"
+    },
+    {
+      "decision": "LEFT \u2014 REQUEST ONLY",
+      "source": "FOIL"
+    },
+    {
+      "decision": "LEFT \u2014 LOCAL / FUTURE",
+      "source": "NYC / boroughs / counties"
+    }
+  ],
+  "censusIssuesAcquired": 36,
+  "censusFailed": [],
+  "fingerprint": "9dce86a315eb652f36026620361b8ac0657c734ccafe576d533ed240f6338b83"
+}

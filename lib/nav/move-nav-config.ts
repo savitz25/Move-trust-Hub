@@ -65,6 +65,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'DMV Household Goods certificates & Property Carrier permits',
       },
       {
+        label: 'New York research',
+        href: '/new-york',
+        description: 'NYSDOT household-goods authority & 2026 Weekly Bulletin',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

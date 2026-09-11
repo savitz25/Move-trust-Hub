@@ -3,7 +3,7 @@
   "generatedAt": "2026-09-10T15:17:31.702Z",
   "newestDocumentedSourceAsOf": "2026-09-04",
   "newestDocumentedSourceAsOfNote": "Newest documented official source-effective date among metrics that carry a sourceAsOf. Not the as-of date of every federal profile, not Git time, and not deploy time.",
-  "sourceFingerprint": "ded7a32a88bb4616809802397be81b4329080c5bfb94b98c4580cc112e783195",
+  "sourceFingerprint": "ad550ff3980bf5f625b0814ba6ebf2e2bfb54f3d11a2741b2c12e3241f30d461",
   "federalDirectory": {
     "publishableProfiles": 5022,
     "indexableProfiles": 4905,
@@ -65,8 +65,13 @@
     "retrievedAt": "2026-09-10T15:05:33.623358+00:00",
     "sourceAsOf": null
   },
+  "newYork": {
+    "currentHhgRosterCoverage": "OPEN_SEARCH_ONLY",
+    "bulletinIssues": 36,
+    "hhgBulletinObservations": 108
+  },
   "network": {
-    "publishedStateIntelligencePages": 7,
+    "publishedStateIntelligencePages": 8,
     "publishedStateIntelligencePaths": [
       "/florida",
       "/new-jersey",
@@ -74,7 +79,8 @@
       "/texas",
       "/washington",
       "/colorado",
-      "/virginia"
+      "/virginia",
+      "/new-york"
     ],
     "floridaResearchCountyLandings": 4,
     "localMoverStateLandings": 51
@@ -106,16 +112,16 @@
       "total": 5022
     },
     "fmcsaClock": {
-      "latestObservedRefresh": "2026-08-23T05:02:52.712+00:00",
-      "oldestObservedRefresh": "2026-08-20T13:52:59.596+00:00",
-      "withRefreshDate": 4640,
-      "withoutRefreshDate": 382,
+      "latestObservedRefresh": "2026-08-23T05:02:52.712Z",
+      "oldestObservedRefresh": "2026-08-01T00:00:00.000Z",
+      "withRefreshDate": 5022,
+      "withoutRefreshDate": 0,
       "total": 5022,
       "buckets": [
         {
           "id": "0-30",
           "label": "0–30 days since last recorded refresh",
-          "count": 4640
+          "count": 5022
         },
         {
           "id": "31-60",
@@ -140,7 +146,7 @@
         {
           "id": "unknown",
           "label": "No refresh date recorded",
-          "count": 382
+          "count": 0
         }
       ]
     }
@@ -764,6 +770,33 @@
     },
     {
       "unit": "count",
+      "key": "ny_dot_2026_hhg_bulletin_observations",
+      "label": "NYSDOT 2026 household-goods bulletin application observations",
+      "value": 108,
+      "valueState": "KNOWN",
+      "grain": "ny_dot_weekly_bulletin_hhg_application_observation",
+      "denominator": "Household-goods application blocks in acquired 2026 Weekly Bulletin PDFs",
+      "description": "2026 NYSDOT Weekly Bulletin household-goods application observations. Not current authorized movers and not a New York mover total.",
+      "coverage": "New York",
+      "contributingSourceSystems": [
+        "nysdot_weekly_bulletin"
+      ],
+      "sourceAsOf": "2026-09-09",
+      "generatedAt": "2026-09-10T15:17:31.702Z",
+      "publicationStatus": "PUBLIC",
+      "trace": {
+        "counts": "Count household-goods application blocks across 36 2026 bulletin issues.",
+        "doesNotCount": "Not current NYDOT authority. Not FMCSA. Not unique companies. Application is not authorization.",
+        "contributingSourceSystems": [
+          "nysdot_weekly_bulletin"
+        ],
+        "geographicCoverage": "New York",
+        "sourceDates": "Bulletin window 2026-01-07 through 2026-09-09",
+        "generationDate": "2026-09-10"
+      }
+    },
+    {
+      "unit": "count",
       "key": "federal_directory_authority_not_current",
       "label": "Directory profiles with authority not current",
       "value": 13,
@@ -1054,12 +1087,12 @@
       "unit": "count",
       "key": "published_state_intelligence_pages",
       "label": "Published state moving-intelligence pages",
-      "value": 7,
+      "value": 8,
       "valueState": "KNOWN",
       "grain": "published_state_intelligence_page",
       "denominator": "Indexable specialist state intelligence routes currently published",
       "description": "Published specialist state intelligence pages. Not a count of movers.",
-      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia",
+      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york",
       "contributingSourceSystems": [
         "move-state-intel"
       ],
@@ -1067,12 +1100,12 @@
       "generatedAt": "2026-09-10T15:17:31.702Z",
       "publicationStatus": "PUBLIC",
       "trace": {
-        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia intelligence routes.",
+        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york intelligence routes.",
         "doesNotCount": "Not local-mover landings and not federal directory rows.",
         "contributingSourceSystems": [
           "move-state-intel"
         ],
-        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia",
+        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york",
         "sourceDates": "Publication gates in specialist catalogs",
         "generationDate": "2026-09-10"
       }
