@@ -153,6 +153,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                 ) : null}
               </dl>
               {row.sourceLastChecked !== undefined ? <p className="mt-3 text-sm">Stored source checked-at: {row.sourceLastChecked ?? 'Not available'}. Official effective time: {row.officialAsOf ?? 'Not supplied by this extract'}. These records were not checked live today.</p> : null}
+              {row.nameMatchEvidence && !row.officialVerificationUrl ? <p className="mt-3 text-sm">No stored USDOT/MC identifier is available for federal verification. Refine the company identity or supply a labeled number; this name match does not establish federal or state authorization.</p> : null}
               {row.officialVerificationUrl ? <a href={row.officialVerificationUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center font-semibold text-[#C2410C] underline">Verify this identifier with FMCSA</a> : null}
               <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">
                 <span className="font-semibold">Why this matched. </span>
@@ -174,7 +175,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                 <dl className="grid gap-2 pt-2 text-sm sm:grid-cols-2">
                   {row.nameMatchEvidence ? <div><dt className="text-xs uppercase">Name match evidence</dt><dd>{row.nameMatchEvidence.field}: {row.nameMatchEvidence.returned}. {row.nameMatchEvidence.matchType.replaceAll('_', ' ')}. {row.nameMatchEvidence.normalization.join('; ')}</dd></div> : null}
                   <div><dt className="text-xs uppercase text-[#475569]">Why matched</dt><dd>{row.whyMatched}</dd></div>
-                  <div><dt className="text-xs uppercase text-[#475569]">Identifiers</dt><dd>{[row.usdot && `USDOT ${row.usdot}`, row.mc && `MC ${row.mc}`].filter(Boolean).join(' · ') || 'State registration row'}</dd></div>
+                  <div><dt className="text-xs uppercase text-[#475569]">Identifiers</dt><dd>{[row.usdot && `USDOT ${row.usdot}`, row.mc && `MC ${row.mc}`].filter(Boolean).join(' · ') || (row.floridaIm ? 'State registration row' : 'No stored USDOT/MC identifier')}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Geography rule</dt><dd>Recorded headquarters is not service territory.</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Sources</dt><dd>{row.floridaIm ? 'Florida FDACS; FMCSA only when verified-linked' : 'Published directory record; verify federal evidence with FMCSA'}</dd></div>
                 </dl>

@@ -283,7 +283,7 @@ async function lookupName(parsed: ParsedMoveAsk, started: number): Promise<MoveA
   const cards = ordered.slice(0,NAME_CANDIDATE_LIMIT).map(({row,evidence}) => {
     const params = new URLSearchParams({q: parsed.raw, company: row.id});
     for (const [key,value] of Object.entries(q.overrides ?? {})) if (value) params.set(key,value);
-    const fieldLabel = evidence.field === 'name' ? 'directory display name' : evidence.field === 'fmcsa_legal_name' ? 'stored FMCSA legal name' : 'stored FMCSA DBA';
+    const fieldLabel = evidence.field === 'name' ? 'directory display name' : evidence.field === 'fmcsa_legal_name' ? 'published legal-name field' : 'stored FMCSA DBA';
     const why = `${evidence.matchType === 'distinctive_token_candidate' ? 'Distinctive name-token candidate' : evidence.matchType === 'normalized_exact_name' ? 'Normalized source-name match' : 'Source-name match'}: ${fieldLabel} records "${evidence.returned}" for this identity. Requested name: "${name}". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.`;
     const dot = normalizeStoredIdentifier(row.usdot_number, 'usdot'), mc = normalizeStoredIdentifier(row.mc_number, 'mc');
     const id = dot ? {type:'DOT' as const,value:dot,display:`USDOT ${dot}`} : mc ? {type:'MC' as const,value:mc,display:`MC ${mc}`} : null;

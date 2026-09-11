@@ -50,7 +50,7 @@ export function matchSourceName(requested: string, row: {id: string; name: strin
     evidence.push({ method: 'source_name', requested, field, returned: value, entityId: row.id,
       matchType: exact ? 'exact_source_name' : normalizedExact ? 'normalized_exact_name' : 'distinctive_token_candidate',
       normalization: exact ? ['case and outer whitespace'] : ['case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed'],
-      source: field === 'name' ? 'Published directory display name' : 'Stored FMCSA identity evidence',
+      source: field === 'name' ? 'Published directory display name' : field === 'fmcsa_legal_name' ? 'Published directory legal-name field; original source depends on the record' : 'Stored FMCSA DBA field',
       rank: (normalizedExact ? 0 : 10) + (field === 'fmcsa_legal_name' ? 0 : field === 'fmcsa_raw.dbaName' ? 1 : 2) });
   }
   return evidence.sort((a,b) => a.rank-b.rank)[0] ?? null;
