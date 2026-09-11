@@ -27,8 +27,8 @@
     },
     "typecheck": {
       "baseline": 535,
-      "candidate": 0,
-      "changedFileErrors": 0
+      "candidate": "running",
+      "changedFileErrors": "initial missing includeDualRole fixed; final run pending"
     },
     "lint": "Unconfigured baseline/candidate; setup cancelled without config changes",
     "build": "running; not yet certified",

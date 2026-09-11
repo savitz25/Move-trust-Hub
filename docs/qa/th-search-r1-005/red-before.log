@@ -1,0 +1,32 @@
+✖ R1-005 original named licensing question retains its subject rather than a carrier directory (19.8489ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1187.2952
+
+✖ failing tests:
+
+test at lib\move-ask\r1-name.test.ts:2:932
+✖ R1-005 original named licensing question retains its subject rather than a carrier directory (19.8489ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'JK Moving Services'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:6:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'JK Moving Services',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

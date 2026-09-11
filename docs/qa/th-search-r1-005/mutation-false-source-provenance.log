@@ -1,0 +1,148 @@
+
+> move-trust-hub@1.0.0 check:th-search-r1-005
+> tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-name.test.ts
+
+move_research_source_unavailable { executor: 'records', mode: 'entity' }
+✔ R1-005 original named licensing question retains its subject rather than a carrier directory (33.8272ms)
+✖ bare/find/check/research/licensed and role questions retrieve actual named positives (219.4595ms)
+✔ legal, documented DBA and display-only provenance stay separate (75.0716ms)
+✖ generic overlap, punctuation safety, normalization, meaningful words and numbers (19.7606ms)
+✖ JK ambiguity is not auto-selected and selection revalidates the original name/task (14.1092ms)
+✔ bounds disclose incomplete candidates; positive beyond old alphabetic page remains discoverable (17.9347ms)
+✔ name conditions and overrides preserve identity; IDs cannot be replaced by name matching (70.8968ms)
+✔ definitions/discovery/guidance/journey and missing identity are not company-name research (51.8202ms)
+✔ invalid input and source errors never become a name miss or broad directory (11.7655ms)
+✖ duplicate identity observation deduplication and unrelated source records cannot assert a match (14.7389ms)
+✔ homepage/native/API share candidate meaning; miss and selected panels finish truthfully (460.4362ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 7
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5741.0927
+
+✖ failing tests:
+
+test at lib\move-ask\r1-name.test.ts:2:4443
+✖ bare/find/check/research/licensed and role questions retrieve actual named positives (219.4595ms)
+  AssertionError [ERR_ASSERTION]: Zyphora Moving Services
+  + actual - expected
+
+    [
+      'beyond',
+  +   'a-0',
+  +   'a-1',
+  +   'a-10',
+  +   'a-11',
+  +   'a-12',
+  +   'a-13',
+  +   'a-14',
+  +   'a-15',
+  +   'a-16'
+    ]
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:58:48)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'beyond', 'a-0',
+      'a-1',    'a-10',
+      'a-11',   'a-12',
+      'a-13',   'a-14',
+      'a-15',   'a-16'
+    ],
+    expected: [ 'beyond' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:6345
+✖ generic overlap, punctuation safety, normalization, meaningful words and numbers (19.7606ms)
+  AssertionError [ERR_ASSERTION]: Find Impossiblequokka Moving Services
+
+  10 !== 0
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:68:136)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 10,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:7548
+✖ JK ambiguity is not auto-selected and selection revalidates the original name/task (14.1092ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'jk-a',
+      'jk-b',
+  +   'a-0',
+  +   'a-1',
+  +   'a-10',
+  +   'a-11',
+  +   'a-12',
+  +   'a-13',
+  +   'a-14',
+  +   'a-15'
+    ]
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:76:130)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'jk-a', 'jk-b',
+      'a-0',  'a-1',
+      'a-10', 'a-11',
+      'a-12', 'a-13',
+      'a-14', 'a-15'
+    ],
+    expected: [ 'jk-a', 'jk-b' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:11830
+✖ duplicate identity observation deduplication and unrelated source records cannot assert a match (14.7389ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + {
+  +   entityId: 'unrelated',
+  +   field: 'fmcsa_legal_name',
+  +   matchType: 'distinctive_token_candidate',
+  +   method: 'source_name',
+  +   normalization: [
+  +     'case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed'
+  +   ],
+  +   rank: 10,
+  +   requested: 'Imaginary Moving',
+  +   returned: 'Unrelated Moving Services',
+  +   source: 'Stored FMCSA identity evidence'
+  + }
+  - null
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:102:9)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { method: 'source_name', requested: 'Imaginary Moving', field: 'fmcsa_legal_name', returned: 'Unrelated Moving Services', entityId: 'unrelated', matchType: 'distinctive_token_candidate', normalization: [ 'case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed' ], source: 'Stored FMCSA identity evidence', rank: 10 },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
