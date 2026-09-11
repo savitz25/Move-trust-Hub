@@ -31,7 +31,7 @@ export function parseNameRequest(raw: string): NameRequest | null {
   if (/^(?:(?:a|an|the|this|that|my)\s+)*(?:mover|moving company|company|carrier|broker)$/i.test(text)) return { name: '', task, condition };
   // Discovery uses plural/common category syntax. Names such as "Florida Active Carrier 7" survive.
   if (/^(?:(?:current|active|licensed|interstate|intrastate|household[- ]goods)\s+)*(?:movers?|carriers?|brokers?)$/i.test(text) || /\b(?:registered with FDACS|headquartered profiles|indexed)\b/i.test(text)) return null;
-  if (!explicit && (!/^[\p{L}\p{N} '\u2019&.,()_%-]+$/u.test(text) || text.split(/\s+/).length > 12)) return null;
+  if (!explicit && (!/^[\p{L}\p{N} '\u2019&.,()_%-]+$/u.test(text) || text.split(/\s+/).length > 12)) return {name:'',task,condition};
   if (!explicit && /\b(?:how|whether|from|between|total|many|count|authority|licensed)\b/i.test(text)) return null;
   return { name: text, task, condition };
 }

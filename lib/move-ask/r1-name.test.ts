@@ -122,3 +122,8 @@ test('source dual-role casing and spaced slash preserve supported role overrides
   for(const role of ['carrier','broker','carrier_broker']){const r=await executeMoveRequest({q:'Dualexample Moving',role});assert.equal(r.parsed.query.constraints?.find(c=>c.field==='role')?.outcome,'APPLIED',entity_type+role)}
  },[record('dual','Dualexample Moving',{entity_type})]);
 });
+
+test('unknown source role remains unestablished and malformed name syntax cannot become a directory',async()=>source(async()=>{
+ const r=await executeMoveRequest({q:'Unknownexample Moving',role:'carrier'});assert.equal(r.parsed.query.constraints?.find(c=>c.field==='role')?.outcome,'NEEDS_CLARIFICATION');
+ for(const q of ['Oddname / Anothername Moving','"Unclosedname Moving']){const p=planMoveRequest({q});assert.equal(p.query.mode,'fail_closed');assert.notEqual(p.query.executor,'directory')}
+},[record('unknown','Unknownexample Moving',{entity_type:'UNKNOWN'})]));
