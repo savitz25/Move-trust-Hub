@@ -19,6 +19,7 @@ const STATE_NAMES: Record<string, string> = {
 };
 
 function detectState(q: string): string | undefined {
+  if (/\bnj\b/i.test(q)) return 'NJ';
   for (const [name, code] of Object.entries(STATE_NAMES)) {
     if (name.length === 2) {
       if (new RegExp(`\\bin ${name}\\b`, 'i').test(q)) return code;

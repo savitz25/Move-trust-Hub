@@ -64,6 +64,10 @@ function extractStates(query: string): Array<{ code: string; name: string; match
     for (const candidate of [name, code]) {
       const re = new RegExp(`\\b${escapeRegex(candidate).replace(/\\ /g, '\\s+')}\\b`, 'ig');
       for (const match of query.matchAll(re)) {
+        // English connectors/pronouns are not state abbreviations. Keep an
+        // explicit uppercase abbreviation or a labelled geographic occurrence.
+        if (candidate.length === 2 && ['IN', 'OR', 'ME', 'OK', 'HI'].includes(code) && match[0] !== code &&
+          !/\b(?:in|from|to|state)\s+$/i.test(query.slice(0, match.index))) continue;
         matches.push({ code, name, match: match[0], index: match.index ?? 0 });
       }
     }

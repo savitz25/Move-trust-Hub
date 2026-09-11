@@ -117,6 +117,8 @@ test('NJ current carrier count preserves operation, role, source boolean and rec
   assert.equal(result.pagination.total, 2); assert.equal(result.counts.reduce((n, r) => n + r.value, 0), 2);
   const p = planMoveRequest({q: 'mover in new jersey'}); assert.equal(p.query.executor, 'directory'); assert.equal(p.query.directoryRequest?.geography?.stateCode, 'NJ');
   const licensed = planMoveRequest({q:'licensed New Jersey PM movers'}); assert.equal(licensed.query.mode, 'fail_closed'); assert.equal(licensed.query.coverageState, 'REQUEST_ONLY');
+  assert.equal(planMoveRequest({q:'NJ intrastate movers'}).query.mode, 'fail_closed');
+  assert.equal(planMoveRequest({q:'movers in New Jersey and Florida'}).query.mode, 'fail_closed');
   for (const q of ['movers in Miami', 'movers in Broward County, Florida', 'movers in Dallas, Texas']) {
     const p = planMoveRequest({q}); assert.equal(p.query.mode, 'fail_closed', q); assert.ok(p.query.constraints?.some((c) => c.outcome === 'UNSUPPORTED'), q);
   }
