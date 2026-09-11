@@ -2,9 +2,9 @@
   "version": "move-ny-state-intel-v1",
   "ticket": "NY-MOVE-001A",
   "as_of": null,
-  "generated_at": "2026-09-11T18:00:00Z",
+  "generated_at": "2026-09-11T18:14:28.274740+00:00",
   "snapshotAsOf": "2026-09-11",
-  "retrievedAt": "2026-09-11T18:00:00Z",
+  "retrievedAt": "2026-09-11",
   "no_trust_score": true,
   "no_paid_ranking": true,
   "no_new_york_local_routes": true,
@@ -48,7 +48,7 @@
     "sourceAsOf": "2026-09-09",
     "windowStart": "2026-01-07",
     "windowEnd": "2026-09-09",
-    "retrievedAt": "2026-09-11T18:00:00Z",
+    "retrievedAt": "2026-09-11",
     "issues": 36,
     "hhgApplicationObservations": 108,
     "distinctCaseNumbers": 103,
@@ -172,5 +172,5 @@
   ],
   "censusIssuesAcquired": 36,
   "censusFailed": [],
-  "fingerprint": "41ea8c6ce56b578e21efad51046248012cc7482f23ed2af8865fad753fefa4f6"
+  "fingerprint": "9dce86a315eb652f36026620361b8ac0657c734ccafe576d533ed240f6338b83"
 }

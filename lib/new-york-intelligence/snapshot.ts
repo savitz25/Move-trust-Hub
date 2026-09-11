@@ -14,6 +14,12 @@ export function assertNewYorkMoveSnapshot(
 ): NewYorkMoveSnapshot {
   if (value.version !== NY_MOVE_INTEL_VERSION) throw new Error('NY move contract mismatch');
   if (value.fingerprint !== NY_MOVE_PUBLIC_FINGERPRINT) throw new Error('NY-MOVE-001 fingerprint mismatch');
+  if (value.retrievedAt === '2026-09-11T18:00:00Z' || value.generated_at === '2026-09-11T18:00:00Z') {
+    throw new Error('NY retrieval/generation clock must not use an invented exact instant');
+  }
+  if (value.bulletin_2026.retrievedAt === '2026-09-11T18:00:00Z') {
+    throw new Error('NY bulletin retrievedAt must not use an invented exact instant');
+  }
   if (value.current_hhg_roster.coverage !== 'OPEN_SEARCH_ONLY') {
     throw new Error('Current NY HHG roster must remain OPEN_SEARCH_ONLY');
   }

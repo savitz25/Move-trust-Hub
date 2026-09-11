@@ -18,7 +18,41 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "new-york" / "ny-move-001"
 RAW = OUT / "raw" / "bulletins"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
-RETRIEVED = "2026-09-11T18:00:00Z"
+INVENTED_RETRIEVAL_INSTANT = "2026-09-11T18:00:00Z"
+FROZEN_RETRIEVAL_DATE = "2026-09-11"
+
+
+def utc_now_z() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def honest_retrieved_at(value: object | None) -> str | None:
+    if not value:
+        return None
+    text = str(value)
+    if text == INVENTED_RETRIEVAL_INSTANT:
+        return FROZEN_RETRIEVAL_DATE
+    return text
+
+
+def load_prior_census() -> dict:
+    path = OUT / "ny-move-census.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def census_retrieval_clock(issues: list[dict], prior: dict) -> tuple[str, str, bool]:
+    values = [honest_retrieved_at(item.get("retrievedAt")) for item in issues]
+    values = [value for value in values if value]
+    if not values:
+        fallback = honest_retrieved_at(prior.get("retrievedAt")) or FROZEN_RETRIEVAL_DATE
+        return fallback, "date", True
+    instants = [value for value in values if "T" in value]
+    if instants and len(instants) == len(values) and len(set(instants)) == 1:
+        return instants[0], "instant", False
+    dates = sorted({value[:10] for value in values})
+    return dates[0], "date", True
 
 # 2026 YTD from official archive page as of 2026-09-11.
 BULLETINS = [
@@ -144,6 +178,8 @@ def parse_bulletin(date: str, data: bytes) -> dict:
 
 def main() -> None:
     RAW.mkdir(parents=True, exist_ok=True)
+    prior = load_prior_census()
+    prior_by_date = {item.get("date"): item for item in prior.get("issues", [])}
     issues = []
     hhg_all = []
     failed = []
@@ -152,16 +188,22 @@ def main() -> None:
         try:
             if dest.exists() and dest.stat().st_size > 1000:
                 data = dest.read_bytes()
-                print("CACHE", date, dest.stat().st_size, flush=True)
+                prior_issue = prior_by_date.get(date) or {}
+                retrieved_at = honest_retrieved_at(prior_issue.get("retrievedAt")) or honest_retrieved_at(
+                    prior.get("retrievedAt")
+                ) or FROZEN_RETRIEVAL_DATE
+                print("CACHE", date, dest.stat().st_size, retrieved_at, flush=True)
             else:
                 data = get(url)
                 dest.write_bytes(data)
-                print("GET", date, len(data), flush=True)
+                retrieved_at = utc_now_z()
+                print("GET", date, len(data), retrieved_at, flush=True)
                 time.sleep(0.25)
             parsed = parse_bulletin(date, data)
             parsed["sha256"] = sha256(data)
             parsed["bytes"] = len(data)
             parsed["url"] = url
+            parsed["retrievedAt"] = retrieved_at
             issues.append({k: v for k, v in parsed.items() if k != "hhgObservations"})
             hhg_all.extend(parsed["hhgObservations"])
             print(" ", date, "cases", parsed["caseBlocks"], "hhg", parsed["hhgCount"], flush=True)
@@ -173,8 +215,11 @@ def main() -> None:
     with_usdot = sum(1 for c in hhg_all if c.get("usdot"))
     with_nydot = sum(1 for c in hhg_all if c.get("nydot"))
     with_cert = sum(1 for c in hhg_all if c.get("certificate"))
+    retrieved_at, retrieved_precision, retrieved_exact_unknown = census_retrieval_clock(issues, prior)
     census = {
-        "retrievedAt": RETRIEVED,
+        "retrievedAt": retrieved_at,
+        "retrievedAtPrecision": retrieved_precision,
+        "retrievedAtExactUnknown": retrieved_exact_unknown,
         "archiveUrl": "https://www.dot.ny.gov/main/publications/wb-motor-carrier-applications",
         "window": {"start": "2026-01-07", "end": "2026-09-09"},
         "issuesAttempted": len(BULLETINS),

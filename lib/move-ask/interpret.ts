@@ -59,6 +59,25 @@ function isScam(q: string): boolean {
   return /\b(scam|fraud|fraudulent|trust score)\b/i.test(q) && /\b(mover|carrier|broker|usdot|mc)\b/i.test(q);
 }
 
+function mentionsNewYork(q: string): boolean {
+  return /\bnew york\b|\bnysdot\b|\bnydot\b/i.test(q) || detectState(q) === 'NY';
+}
+
+function isNysdotComplaintAsk(q: string): boolean {
+  return /\bcomplaint/i.test(q) && /\b(nysdot|nysd?ot|new york (state )?dot)\b/i.test(q);
+}
+
+function isNyIntrastateAuthorityAsk(q: string): boolean {
+  if (!mentionsNewYork(q)) return false;
+  if (/\bheadquarter/i.test(q) && /\binterstate\b/i.test(q)) return false;
+  return (
+    /\bintrastate\b/i.test(q) ||
+    /\bnydot\b|\bnysdot\b|\bnew york dot mover\b/i.test(q) ||
+    (/\blicensed movers?\b/i.test(q) && !/\binterstate\b/i.test(q)) ||
+    /\bis this mover licensed in new york\b/i.test(q)
+  );
+}
+
 export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
   const q = raw.trim().slice(0, 180);
   const lines: ParsedMoveAsk['interpretation'] = [];
@@ -82,39 +101,6 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  if (
-    (/\blicensed movers in new york\b|\bnew york dot mover\b|\bis this mover licensed in new york\b|\bnydot mover\b/i.test(
-      q,
-    ) ||
-      (/\bnew york\b/i.test(q) && /\blicensed mover/i.test(q))) &&
-    !/\binterstate\b/i.test(q)
-  ) {
-    const query = fail(
-      'New York intrastate household-goods authority is NYSDOT. Current CarCert search is under development. A Weekly Bulletin application is not current authority. A USDOT number alone is not New York intrastate authority.',
-      [
-        'Open New York household-goods research.',
-        'Find USDOT 3244649.',
-      ],
-    );
-    push('Coverage', 'STATE_PAGE_NOT_SEARCH_V1');
-    return { raw: q, query, interpretation: lines };
-  }
-  if (/\binterstate mover in new york\b/i.test(q) || (/\bnew york\b/i.test(q) && /\binterstate mover\b/i.test(q))) {
-    const query = fail(
-      'Interstate household-goods authority is FMCSA, not NYSDOT. A New York headquarters is not New York state authority.',
-      ['What is interstate operating authority?', 'Find USDOT 3244649.'],
-    );
-    push('Jurisdiction', 'FMCSA interstate — not NYSDOT');
-    return { raw: q, query, interpretation: lines };
-  }
-  if ((/\bnew york\b|\bnyc\b/i.test(q) || detectState(q) === 'NY') && /\bcomplaint/i.test(q) && /\bmover/i.test(q)) {
-    const query = fail(
-      'A New York mover complaint requires an exact identity. NYSDOT complaint intake is not a bulk complaint census. Complaint is not a violation.',
-      ['Open New York household-goods research.', 'Find USDOT 3244649.'],
-    );
-    push('Coverage', 'STATE_PAGE_NOT_SEARCH_V1');
-    return { raw: q, query, interpretation: lines };
-  }
   if (/\bhow many moving companies\b|\btotal movers\b/i.test(q)) {
     const query = fail(
       'Counts require a regulatory grain. Carrier, broker, dual-role, and Florida IM registrations are not added into one “moving companies” total.',
@@ -310,6 +296,24 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     push('Identifier', 'Clarification required');
     return { raw: q, query, interpretation: lines };
   }
+  if (identity.identifiers.length && isNysdotComplaintAsk(q)) {
+    const query = fail(
+      'NYSDOT household-mover complaint records are not acquired as a bulk corpus. A labeled USDOT does not substitute NYSDOT complaint evidence with federal complaint observations.',
+      ['Open New York household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'NYSDOT complaints — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+  if (identity.identifiers.length && isNyIntrastateAuthorityAsk(q)) {
+    const query = fail(
+      'A USDOT or MC number does not prove New York intrastate household-goods authority. Current NYSDOT CarCert search is under development. Federal authority is a different grain.',
+      ['Open New York household-goods research.', 'Find USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'NYSDOT current authority — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
   if (identity.identifiers.length) {
     const id = identity.identifiers[0]!;
     const evidence = /\bcomplaint/i.test(q) ? 'complaint'
@@ -330,7 +334,17 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
 
   const state = detectState(q);
   const role = detectRole(q);
-  const floridaIm = /\b(fdacs|intrastate movers?|im registrations?)\b/i.test(q);
+  const floridaIm = /\b(fdacs|intrastate movers?|im registrations?)\b/i.test(q) && !mentionsNewYork(q);
+
+  if (isNyIntrastateAuthorityAsk(q) || (mentionsNewYork(q) && /\bintrastate movers?\b/i.test(q))) {
+    const query = fail(
+      "New York intrastate household-goods authority is NYSDOT. Current CarCert search is under development. A Weekly Bulletin application is not current authority. Search-only is not zero, and another state's registration grain is not a substitute.",
+      ['Open New York household-goods research.', 'Show current interstate household-goods carriers headquartered in New York.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'NYSDOT current roster — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
   const overlap = /\bboth\b/i.test(q) && /\b(fmcsa|interstate)\b/i.test(q) && /\b(fdacs|intrastate)\b/i.test(q);
   const serving = /\bserv(e|es|ing)\b/i.test(q);
   const hq = /\bheadquarter|recorded (company )?address|based in\b/i.test(q) || /\bcredentialed\b/i.test(q) === false;

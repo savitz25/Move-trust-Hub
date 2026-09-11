@@ -1,5 +1,7 @@
 {
-  "retrievedAt": "2026-09-11T18:00:00Z",
+  "retrievedAt": "2026-09-11",
+  "retrievedAtPrecision": "date",
+  "retrievedAtExactUnknown": true,
   "archiveUrl": "https://www.dot.ny.gov/main/publications/wb-motor-carrier-applications",
   "window": {
     "start": "2026-01-07",

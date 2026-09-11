@@ -4,29 +4,38 @@ from __future__ import annotations
 
 import hashlib
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CENSUS = ROOT / "data" / "new-york" / "ny-move-001" / "ny-move-census.json"
 OUT_JSON = ROOT / "lib" / "new-york-intelligence" / "accepted-snapshot.json"
+INVENTED_RETRIEVAL_INSTANT = "2026-09-11T18:00:00Z"
+VOLATILE = {"fingerprint", "generated_at"}
 
-RETRIEVED = "2026-09-11T18:00:00Z"
 
-
-def sha256_obj(obj: object) -> str:
-    blob = json.dumps(obj, sort_keys=True, separators=(",", ":")).encode()
+def fingerprint(body: dict) -> str:
+    payload = {key: value for key, value in body.items() if key not in VOLATILE}
+    blob = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(blob).hexdigest()
 
 
 def main() -> int:
     census = json.loads(CENSUS.read_text(encoding="utf-8"))
+    retrieved = census.get("retrievedAt")
+    if retrieved == INVENTED_RETRIEVAL_INSTANT:
+        raise SystemExit("census retrievedAt still uses an invented exact instant")
+    if not retrieved:
+        raise SystemExit("census retrievedAt missing")
+    if census.get("issuesAcquired") != 36 or census.get("hhgObservationCount") != 108:
+        raise SystemExit("frozen NY bulletin counts drifted")
     snapshot = {
         "version": "move-ny-state-intel-v1",
         "ticket": "NY-MOVE-001A",
         "as_of": None,
-        "generated_at": RETRIEVED,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "snapshotAsOf": "2026-09-11",
-        "retrievedAt": RETRIEVED,
+        "retrievedAt": retrieved,
         "no_trust_score": True,
         "no_paid_ranking": True,
         "no_new_york_local_routes": True,
@@ -70,7 +79,7 @@ def main() -> int:
             "sourceAsOf": "2026-09-09",
             "windowStart": "2026-01-07",
             "windowEnd": "2026-09-09",
-            "retrievedAt": RETRIEVED,
+            "retrievedAt": retrieved,
             "issues": 36,
             "hhgApplicationObservations": 108,
             "distinctCaseNumbers": 103,
@@ -168,7 +177,7 @@ def main() -> int:
         "censusIssuesAcquired": census["issuesAcquired"],
         "censusFailed": census["failed"],
     }
-    snapshot["fingerprint"] = sha256_obj({k: v for k, v in snapshot.items() if k != "fingerprint"})
+    snapshot["fingerprint"] = fingerprint(snapshot)
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(snapshot, indent=2) + "\n", encoding="utf-8")
     (ROOT / "artifacts" / "ny-move-001-public-snapshot.json").parent.mkdir(parents=True, exist_ok=True)
