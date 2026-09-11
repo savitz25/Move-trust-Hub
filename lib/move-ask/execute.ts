@@ -283,17 +283,17 @@ async function lookupName(parsed: ParsedMoveAsk, started: number): Promise<MoveA
   const cards = ordered.slice(0,NAME_CANDIDATE_LIMIT).map(({row,evidence}) => {
     const params = new URLSearchParams({q: parsed.raw, company: row.id});
     for (const [key,value] of Object.entries(q.overrides ?? {})) if (value) params.set(key,value);
-    const fieldLabel = evidence.field === 'name' ? 'directory display name' : evidence.field === 'fmcsa_legal_name' ? 'stored FMCSA legal name' : 'stored FMCSA DBA';
+    const fieldLabel = evidence.field === 'name' ? 'directory display name' : evidence.field === 'fmcsa_legal_name' ? 'published legal-name field' : 'stored FMCSA DBA';
     const why = `${evidence.matchType === 'distinctive_token_candidate' ? 'Distinctive name-token candidate' : evidence.matchType === 'normalized_exact_name' ? 'Normalized source-name match' : 'Source-name match'}: ${fieldLabel} records "${evidence.returned}" for this identity. Requested name: "${name}". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.`;
     const dot = normalizeStoredIdentifier(row.usdot_number, 'usdot'), mc = normalizeStoredIdentifier(row.mc_number, 'mc');
     const id = dot ? {type:'DOT' as const,value:dot,display:`USDOT ${dot}`} : mc ? {type:'MC' as const,value:mc,display:`MC ${mc}`} : null;
-    return cardFromCompany(row, why, {nameMatchEvidence:evidence, selectionHref:q.selectedCompany ? undefined : `/ask?${params}`, officialVerificationUrl:id ? buildSaferLookupUrl(id) : undefined});
+    return cardFromCompany(row, why, { ...(!id ? {fmcsaStatus:'Federal authority not established by this identity',operatingAuthority:null} : {}), nameMatchEvidence:evidence, selectionHref:q.selectedCompany ? undefined : `/ask?${params}`, officialVerificationUrl:id ? buildSaferLookupUrl(id) : undefined});
   });
   if (cards.length === 1 && !truncated) {
     const row = ordered[0]!.row;
     for (const c of q.constraints ?? []) {
       if (!['state','role','authority'].includes(c.field)) continue;
-      const known = c.field === 'state' ? Boolean(extractStateCodeFromHeadquarters(row.headquarters ?? '')) : c.field === 'authority' ? typeof row.authority_active === 'boolean' : researchRole({entityType:row.entity_type,services:[]}) !== 'Unknown';
+      const known = c.field === 'state' ? Boolean(extractStateCodeFromHeadquarters(row.headquarters ?? '')) : c.field === 'authority' ? typeof row.authority_active === 'boolean' && Boolean(normalizeStoredIdentifier(row.usdot_number,'usdot') || normalizeStoredIdentifier(row.mc_number,'mc')) : researchRole({entityType:row.entity_type,services:[]}) !== 'Unknown';
       const matches = c.field === 'state' ? extractStateCodeFromHeadquarters(row.headquarters ?? '') === c.value : c.field === 'authority' ? row.authority_active === (c.value === 'current') : roleTypes(c.value,true).some(type => type.toLowerCase() === (row.entity_type ?? '').toLowerCase());
       c.outcome = !known ? 'NEEDS_CLARIFICATION' : matches ? 'APPLIED' : 'CONFLICT';
       c.detail = !known ? 'The stored identity has no evidence for this condition.' : matches ? 'The stored public identity supports this condition; no service territory or license approval is inferred.' : 'The name identity remains visible, but its stored evidence does not agree with this filter.';

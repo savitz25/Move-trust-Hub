@@ -127,3 +127,8 @@ test('unknown source role remains unestablished and malformed name syntax cannot
  const r=await executeMoveRequest({q:'Unknownexample Moving',role:'carrier'});assert.equal(r.parsed.query.constraints?.find(c=>c.field==='role')?.outcome,'NEEDS_CLARIFICATION');
  for(const q of ['Oddname / Anothername Moving','"Unclosedname Moving']){const p=planMoveRequest({q});assert.equal(p.query.mode,'fail_closed');assert.notEqual(p.query.executor,'directory')}
 },[record('unknown','Unknownexample Moving',{entity_type:'UNKNOWN'})]));
+
+test('permitted directory-only names do not invent a federal identity or registration grain',async()=>source(async()=>{
+ const r=await executeMoveRequest({q:'Stateexample Holdings LLC',authority:'current'});assert.match(r.results[0]?.fmcsaStatus??'',/not established/);assert.equal(r.results[0]?.operatingAuthority,null);assert.equal(r.parsed.query.constraints?.find(c=>c.field==='authority')?.outcome,'NEEDS_CLARIFICATION');assert.equal(r.results.length,1);assert.equal(r.results[0]?.officialVerificationUrl,undefined);assert.doesNotMatch(r.results[0]?.whyMatched??'',/FMCSA legal name/);
+ const html=renderToStaticMarkup(React.createElement(AskMoveResultView,{result:r}));assert.match(html,/No stored USDOT\/MC identifier/);assert.doesNotMatch(html,/State registration row/);assert.equal(r.results[0]?.dba,null);
+},[record('directory-only','Stateexample Moving',{fmcsa_legal_name:'Stateexample Holdings LLC',usdot_number:null,mc_number:null,entity_type:null,fmcsa_last_checked:null})]));
