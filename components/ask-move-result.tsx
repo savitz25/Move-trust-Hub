@@ -9,13 +9,6 @@ function href(q: string, page?: number, overrides?: {role?: string; state?: stri
   return `/ask?${params.toString()}`;
 }
 
-function removeCriterion(query: string, label: string): string {
-  if (/state|geography/i.test(label)) return query.replace(/\b(headquartered|based) in (florida|new jersey|california|texas|FL|NJ|CA|TX)\b/gi, '').trim();
-  if (/status|authority/i.test(label)) return query.replace(/\b(current|active|inactive|not current)\b/gi, '').trim();
-  if (/role|entity/i.test(label)) return query.replace(/\b(household[- ]goods )?(carriers?|brokers?|movers?)\b/gi, '').trim();
-  return '';
-}
-
 export function AskMoveResultView({ result }: { result: MoveAskResult }) {
   const q = result.parsed.query;
   const def = q.definitionId ? ASK_DEFINITIONS[q.definitionId] : undefined;
@@ -31,7 +24,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
             <div key={`${row.label}-${row.value}`} className="rounded-xl border border-[#E2E8F0] p-3">
               <dt className="text-xs uppercase text-[#475569]">{row.label}</dt>
               <dd className="text-base font-semibold text-[#0A2540]">{row.value}</dd>
-              <dd><Link href={href(removeCriterion(result.queryText, row.label))} className="mt-1 inline-flex min-h-8 items-center text-xs font-semibold text-[#C2410C]" aria-label={`Remove ${row.label} criterion`}>Remove criterion</Link></dd>
+              <dd><Link href="#ask-edit" className="mt-1 inline-flex min-h-8 items-center text-xs font-semibold text-[#C2410C]" aria-label={`Edit ${row.label} in your request`}>Edit request</Link></dd>
             </div>
           ))}
         </dl>
@@ -56,7 +49,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
       </section>
 
       {result.terminalState === 'UNAVAILABLE' ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Research is temporarily unavailable</h2><p className="mt-3">The source could not be checked. Try again; this is not a zero-result search.</p></section> : null}
-      {result.terminalState === 'NEEDS_CLARIFICATION' ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
+      {result.terminalState === 'NEEDS_CLARIFICATION' && q.mode !== 'fail_closed' ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
       {q.constraints?.length ? <section className="rounded-2xl border p-5"><h2 className="text-xl font-semibold">Requested conditions</h2><ul className="mt-3 space-y-3">{q.constraints.map((c, i) => <li key={i}><strong>{c.field}: {c.value}</strong><p>{c.outcome === 'APPLIED' ? 'Applied' : c.outcome === 'CONFLICT' ? 'Does not agree with the evidence' : c.outcome === 'UNSUPPORTED' ? 'Not available' : 'Not established'}: {c.detail}</p></li>)}</ul></section> : null}
       {q.mode === 'fail_closed' ? (
         <section className="rounded-2xl border border-[#E2E8F0] bg-[#FFF7F3] p-5">

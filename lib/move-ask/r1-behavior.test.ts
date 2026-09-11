@@ -132,6 +132,14 @@ test('constraint conflicts stay visible and no implicit relaxation is applied', 
   assert.ok((await executeMoveRequest({q:'usdot 3244 649 miama movers'})).parsed.query.constraints?.some((c) => c.value.includes('miama') && c.outcome === 'NEEDS_CLARIFICATION'));
 }));
 
+test('supported state cohorts larger than one database response remain complete', async () => source(async (calls) => {
+  const result = await executeMoveRequest({q:'How many current carriers are headquartered in Florida?'});
+  assert.equal(result.pagination.total, 1001);
+  assert.ok(calls.some((url) => url.searchParams.get('offset') === '1000'));
+  const page = await executeMoveRequest({q:'current carriers headquartered in Florida',page:'51'});
+  assert.equal(page.results.length, 1); assert.equal(page.pagination.total, 1001);
+}, Array.from({length:1001}, (_,i)=>({...publishedIdentity,id:`fixture-large-${i}`,entity_type:'CARRIER',headquarters:'ORLANDO, FL'}))));
+
 test('duplicate observations of one identity do not inflate the identity count', async () => source(async () => {
   const result = await executeMoveRequest({q:'USDOT 3244649'}); assert.equal(result.results.length, 1); assert.equal(result.pagination.total, 1);
 }, [publishedIdentity, {...publishedIdentity}]));

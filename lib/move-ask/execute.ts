@@ -339,12 +339,25 @@ async function countIm(): Promise<number> {
 
 async function countTypes(types: string[], state?: string, current?: boolean): Promise<number> {
   let query = db().from('companies').select(state ? 'id, headquarters' : 'id', { count: 'exact', head: !state }).or(VISIBLE_OR).in('entity_type', types);
-  if (state) query = query.ilike('headquarters', hqPattern(state)).limit(1000);
+  if (state) query = query.ilike('headquarters', hqPattern(state)).order('id', { ascending: true }).limit(1000);
   if (current !== undefined) query = query.eq('authority_active', current);
   const { data, count } = await query;
   if (!state) return count ?? 0;
-  if ((count ?? 0) > 1000) throw new Error('Recorded-headquarters candidate bound exceeded');
-  return new Set(((data ?? []) as CompanyRow[]).filter((row) => extractStateCodeFromHeadquarters(row.headquarters ?? '') === state).map((row) => row.id)).size;
+  const rows = await collectHeadquartersRows(query, data, count);
+  return new Set(rows.filter((row) => extractStateCodeFromHeadquarters(row.headquarters ?? '') === state).map((row) => row.id)).size;
+}
+
+/** Supabase caps one response at 1,000 rows. Preserve larger supported state
+ * cohorts with bounded stable pages, then apply the exact recorded-state rule. */
+async function collectHeadquartersRows(query: Chain, data: unknown[] | null, count: number | null): Promise<CompanyRow[]> {
+  if (count === null || count > 10_000) throw new Error('Recorded-headquarters candidate bound exceeded');
+  const rows = [...(data ?? [])] as CompanyRow[];
+  for (let offset = 1000; offset < count; offset += 1000) {
+    const page = await query.range(offset, Math.min(offset + 999, count - 1));
+    rows.push(...((page.data ?? []) as CompanyRow[]));
+  }
+  if (rows.length !== count) throw new Error('Incomplete recorded-headquarters source response');
+  return [...new Map(rows.map((row) => [row.id, row])).values()];
 }
 
 async function countRole(role: string, state?: string, current?: boolean): Promise<number> {
@@ -363,14 +376,15 @@ async function listCompanies(parsed: ParsedMoveAsk, started: number): Promise<Mo
     .or(VISIBLE_OR)
     .order('name', { ascending: true })
     .order('usdot_number', { ascending: true })
+    .order('id', { ascending: true })
     .range(from, to);
   if (q.role) query = query.in('entity_type', types);
   if (q.jurisdiction?.state) query = query.ilike('headquarters', hqPattern(q.jurisdiction.state)).range(0, 999);
   if (q.authorityCurrent === true) query = query.eq('authority_active', true);
   if (q.authorityCurrent === 'not_current') query = query.eq('authority_active', false);
   const { data, count } = await query;
-  if (q.jurisdiction?.state && (count ?? 0) > 1000) throw new Error('Recorded-headquarters candidate bound exceeded');
-  const candidates = ((data ?? []) as CompanyRow[]).filter((row) => !q.jurisdiction?.state || extractStateCodeFromHeadquarters(row.headquarters ?? '') === q.jurisdiction.state);
+  const sourceRows = q.jurisdiction?.state ? await collectHeadquartersRows(query, data, count) : (data ?? []) as CompanyRow[];
+  const candidates = sourceRows.filter((row) => !q.jurisdiction?.state || extractStateCodeFromHeadquarters(row.headquarters ?? '') === q.jurisdiction.state);
   const rows = q.jurisdiction?.state ? candidates.slice(from, to + 1) : candidates;
   const geo = q.jurisdiction
     ? `lists ${q.jurisdiction.state} as its recorded company address / headquarters state (not service territory)`
@@ -379,7 +393,7 @@ async function listCompanies(parsed: ParsedMoveAsk, started: number): Promise<Mo
     const role = researchRole({ entityType: row.entity_type, services: [] });
     return cardFromCompany(
       row,
-      `This company matches because the indexed FMCSA record classifies it as a ${role.toLowerCase()} and ${geo}. This is not a recommendation.`,
+      `This company matches because the published directory record classifies it as a ${role.toLowerCase()} and ${geo}. This is not a recommendation.`,
     );
   });
   return finish(
