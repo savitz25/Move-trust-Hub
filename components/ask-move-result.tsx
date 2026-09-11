@@ -49,7 +49,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
       </section>
 
       {result.terminalState === 'UNAVAILABLE' ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Research is temporarily unavailable</h2><p className="mt-3">The source could not be checked. Try again; this is not a zero-result search.</p></section> : null}
-      {result.terminalState === 'NEEDS_CLARIFICATION' && q.mode !== 'fail_closed' ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
+      {result.terminalState === 'NEEDS_CLARIFICATION' && q.mode !== 'fail_closed' ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{q.nameQuery ? (result.nameSearch?.truncated ? 'The candidate search reached its bound. Refine the name or select a sourced identity to continue the original question.' : result.results.length ? 'These source-backed names belong to distinct identities. Select the intended company to continue this question.' : 'The selected record does not establish this name match. Edit the name and try again.') : result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
       {q.constraints?.length ? <section className="rounded-2xl border p-5"><h2 className="text-xl font-semibold">Requested conditions</h2><ul className="mt-3 space-y-3">{q.constraints.map((c, i) => <li key={i}><strong>{c.field}: {c.value}</strong><p>{c.outcome === 'APPLIED' ? 'Applied' : c.outcome === 'CONFLICT' ? 'Does not agree with the evidence' : c.outcome === 'UNSUPPORTED' ? 'Not available' : 'Not established'}: {c.detail}</p></li>)}</ul></section> : null}
       {q.mode === 'fail_closed' ? (
         <section className="rounded-2xl border border-[#E2E8F0] bg-[#FFF7F3] p-5">
@@ -95,7 +95,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
         <section className="rounded-2xl border border-[#E2E8F0] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#0A2540]">No matching research identities in this extract</h2>
           <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">
-            Absence is not inactive, unauthorized, fraudulent, or a clean record. Not available in the current indexed
+            {q.nameQuery ? `No plausible match for "${q.nameQuery}" was found in the published legal/display-name index. Refine the name above or enter a labeled USDOT/MC identifier. ` : ''}Absence is not inactive, unauthorized, fraudulent, or a clean record. Not available in the current indexed
             source.
           </p>
         </section>
@@ -111,6 +111,9 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                   {row.role}
                 </span>
               </div>
+              {row.legalName ? <p className="mt-2 text-sm">Stored legal name: {row.legalName}</p> : null}
+              {row.dba ? <p className="mt-2 text-sm">Stored FMCSA DBA: {row.dba}</p> : null}
+              {row.selectionHref ? <Link href={row.selectionHref} className="mt-3 inline-flex min-h-11 items-center rounded-xl border px-3 font-semibold focus-visible:outline focus-visible:outline-2">Select this company and continue</Link> : null}
               <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
                 {row.usdot ? (
                   <div>
@@ -169,6 +172,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
               <details className="mt-3 rounded-xl bg-[#F8FAFC] p-3">
                 <summary className="scroll-mt-24 flex min-h-11 cursor-pointer items-center font-semibold text-[#0A2540]">Trace this result</summary>
                 <dl className="grid gap-2 pt-2 text-sm sm:grid-cols-2">
+                  {row.nameMatchEvidence ? <div><dt className="text-xs uppercase">Name match evidence</dt><dd>{row.nameMatchEvidence.field}: {row.nameMatchEvidence.returned}. {row.nameMatchEvidence.matchType.replaceAll('_', ' ')}. {row.nameMatchEvidence.normalization.join('; ')}</dd></div> : null}
                   <div><dt className="text-xs uppercase text-[#475569]">Why matched</dt><dd>{row.whyMatched}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Identifiers</dt><dd>{[row.usdot && `USDOT ${row.usdot}`, row.mc && `MC ${row.mc}`].filter(Boolean).join(' · ') || 'State registration row'}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Geography rule</dt><dd>Recorded headquarters is not service territory.</dd></div>

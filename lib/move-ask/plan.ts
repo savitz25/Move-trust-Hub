@@ -3,13 +3,15 @@ import { interpretMoveAskQuery } from './interpret';
 import { directoryStateName, parseDirectoryResearchQuery } from '../directory/parse-directory-research-query';
 import { MOVE_SPECIALIST_EXECUTION_CONTRACT } from '../specialist-execution/contract';
 
-export type MoveRequestInput = { q?: unknown; page?: unknown; role?: unknown; state?: unknown; authority?: unknown };
+export type MoveRequestInput = { q?: unknown; page?: unknown; role?: unknown; state?: unknown; authority?: unknown; company?: unknown };
 export class MoveRequestError extends Error {}
 
 export function validateMoveRequest(input: MoveRequestInput) {
   if (typeof input.q !== 'string' || !input.q.trim()) throw new MoveRequestError('Enter a mover research question or a labelled USDOT/MC number.');
   const q = input.q.trim();
+  if (/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/.test(q)) throw new MoveRequestError('Remove unsupported control characters from the request.');
   if (q.length > MOVE_ASK_MAX_QUERY) throw new MoveRequestError(`Use no more than ${MOVE_ASK_MAX_QUERY} characters. The request was not shortened or executed.`);
+  if (input.company !== undefined && (typeof input.company !== 'string' || !/^[a-zA-Z0-9][a-zA-Z0-9_-]{0,100}$/.test(input.company))) throw new MoveRequestError('Choose a valid public company reference.');
   const value = input.page ?? '1';
   if (!/^\d+$/.test(String(value)) || !Number.isInteger(Number(value)) || Number(value) < 1 || Number(value) > 200) throw new MoveRequestError('Page must be a whole number from 1 to 200.');
   for (const [field, allowed] of Object.entries({ role: ['carrier', 'broker', 'carrier_broker'], authority: ['current', 'not_current'] })) {
@@ -17,12 +19,12 @@ export function validateMoveRequest(input: MoveRequestInput) {
     if (item !== undefined && item !== '' && (typeof item !== 'string' || !allowed.includes(item))) throw new MoveRequestError(`Choose a supported ${field} filter.`);
   }
   if (input.state !== undefined && input.state !== '' && (typeof input.state !== 'string' || !/^[A-Z]{2}$/.test(input.state) || !directoryStateName(input.state))) throw new MoveRequestError('Choose a supported recorded state filter.');
-  return { q, page: Number(value), role: input.role as string | undefined, state: input.state as string | undefined, authority: input.authority as string | undefined };
+  return { q, company: input.company as string | undefined, page: Number(value), role: input.role as string | undefined, state: input.state as string | undefined, authority: input.authority as string | undefined };
 }
 
 export function inputFromSearchParams(params: URLSearchParams): MoveRequestInput {
   const input: MoveRequestInput = {};
-  for (const key of ['q', 'page', 'role', 'state', 'authority'] as const) {
+  for (const key of ['q', 'page', 'role', 'state', 'authority', 'company'] as const) {
     const values = params.getAll(key);
     input[key] = values.length > 1 ? values : values[0];
   }
@@ -38,6 +40,17 @@ export function planMoveRequest(raw: MoveRequestInput): ParsedMoveAsk {
   const constraints: MoveConstraint[] = [];
   q.constraints = constraints;
   q.overrides = { role: input.role || undefined, state: input.state || undefined, authority: input.authority || undefined };
+  if (input.company && !q.nameQuery) throw new MoveRequestError('Company selection requires the original name research question.');
+  if (q.nameRequest) {
+    q.selectedCompany = input.company;
+    q.page = 1;
+    const condition = q.nameRequest.condition;
+    if (condition) constraints.push({ field: 'additional condition', value: condition, outcome: 'NEEDS_CLARIFICATION', detail: 'The name identity is researched independently. This location, licensing or other condition is not established by the name match.' });
+    if (q.nameRequest.task === 'authority') constraints.push({ field: 'licensing / authority question', value: 'stored evidence', outcome: 'NEEDS_CLARIFICATION', detail: 'Stored federal role and authority evidence is shown for each identity. It does not establish current license approval or state intrastate authorization; verify the sourced identifier with the regulator.' });
+    for (const [field, value] of Object.entries(q.overrides)) if (value) constraints.push({ field, value, outcome: 'NEEDS_CLARIFICATION', detail: 'Compared with the selected public identity where supported. The company name is never replaced by a cohort filter.' });
+    parsed.interpretation.push(...constraints.map(c => ({label:c.field, value:c.value + ' - not established'})));
+    return parsed;
+  }
   const directory = parseDirectoryResearchQuery(input.q);
   if (/^[\d\s.,+-]+$/.test(input.q) && !q.identifier) {
     q.mode = 'fail_closed'; q.failReason = 'Numbers without a label are ambiguous. Specify USDOT or MC before searching.';

@@ -24,3 +24,6 @@ jobs:
 
       - name: Exact identifier and canonical Move request behavior (TH-SEARCH-R1-001)
         run: npm run check:th-search-r1-001
+
+      - name: Source-backed named-company behavior (TH-SEARCH-R1-005)
+        run: npm run check:th-search-r1-005

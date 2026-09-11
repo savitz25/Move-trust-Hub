@@ -1,0 +1,60 @@
+{
+  "ticket": "TH-SEARCH-R1-005",
+  "time": "2026-09-11T22:35:44.322Z",
+  "project": "arepfylnilkjmyduhwbz",
+  "method": "Read-only SQL by independently established public record IDs; no use of new natural-language parser.",
+  "rows": [
+    {
+      "id": "allied",
+      "name": "Allied Van Lines",
+      "fmcsa_legal_name": "ALLIED VAN LINES INC",
+      "source_dba": null,
+      "usdot_number": "76235",
+      "mc_number": "15735",
+      "headquarters": "Oakbrook Terrace, IL",
+      "entity_type": "Carrier/Broker",
+      "authority_active": true,
+      "fmcsa_last_checked": "2026-08-23 05:01:44.832+00",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "jk-moving",
+      "name": "JK Moving Services",
+      "fmcsa_legal_name": "JK MOVING & STORAGE INC",
+      "source_dba": "JK MOVING SERVICES",
+      "usdot_number": "1065394",
+      "mc_number": "225850",
+      "headquarters": "Sterling, VA",
+      "entity_type": "Carrier",
+      "authority_active": true,
+      "fmcsa_last_checked": "2026-08-23 05:02:18.368+00",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "usdot-1300300",
+      "name": "JK MOVING SERVICES",
+      "fmcsa_legal_name": "JK MOVING & STORAGE OF MARYLAND, INC.",
+      "source_dba": null,
+      "usdot_number": "1300300",
+      "mc_number": "504611",
+      "headquarters": "GAITHERSBURG, MD",
+      "entity_type": "Carrier",
+      "authority_active": true,
+      "fmcsa_last_checked": "2026-08-20 13:52:59.596+00",
+      "publication_state": "PUBLISHABLE"
+    },
+    {
+      "id": "usdot-3244649",
+      "name": "SHIFL INC",
+      "fmcsa_legal_name": "SHIFL INC",
+      "source_dba": null,
+      "usdot_number": "3244649",
+      "mc_number": "1019808",
+      "headquarters": "AIRMONT, NY",
+      "entity_type": "Broker",
+      "authority_active": true,
+      "fmcsa_last_checked": "2026-08-20 13:52:59.596+00",
+      "publication_state": "PUBLISHABLE"
+    }
+  ]
+}

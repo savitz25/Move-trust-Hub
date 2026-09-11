@@ -1,0 +1,223 @@
+
+> move-trust-hub@1.0.0 check:th-search-r1-005
+> tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-name.test.ts
+
+✖ R1-005 original named licensing question retains its subject rather than a carrier directory (65.8572ms)
+✖ bare/find/check/research/licensed and role questions retrieve actual named positives (88.341ms)
+✖ legal, documented DBA and display-only provenance stay separate (12.3286ms)
+✖ generic overlap, punctuation safety, normalization, meaningful words and numbers (25.4811ms)
+✖ JK ambiguity is not auto-selected and selection revalidates the original name/task (9.9135ms)
+✖ bounds disclose incomplete candidates; positive beyond old alphabetic page remains discoverable (10.0103ms)
+✖ name conditions and overrides preserve identity; IDs cannot be replaced by name matching (17.1232ms)
+✖ definitions/discovery/guidance/journey and missing identity are not company-name research (39.3524ms)
+✖ invalid input and source errors never become a name miss or broad directory (11.5053ms)
+✖ duplicate identity observation deduplication and unrelated source records cannot assert a match (7.4403ms)
+✔ homepage/native/API share candidate meaning; miss and selected panels finish truthfully (173.9298ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 1
+ℹ fail 10
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4495.7415
+
+✖ failing tests:
+
+test at lib\move-ask\r1-name.test.ts:2:1577
+✖ R1-005 original named licensing question retains its subject rather than a carrier directory (65.8572ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'JK Moving Services'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:6:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'JK Moving Services',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:4443
+✖ bare/find/check/research/licensed and role questions retrieve actual named positives (88.341ms)
+  AssertionError [ERR_ASSERTION]: Zyphora Moving Services
+  + actual - expected
+
+  + []
+  - [
+  -   'beyond'
+  - ]
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:58:48)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [ 'beyond' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:5227
+✖ legal, documented DBA and display-only provenance stay separate (12.3286ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'fmcsa_legal_name'
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:62:83)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'fmcsa_legal_name',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:6345
+✖ generic overlap, punctuation safety, normalization, meaningful words and numbers (25.4811ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'legal'
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:69:91)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'legal',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:7548
+✖ JK ambiguity is not auto-selected and selection revalidates the original name/task (9.9135ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'NO_MATCH'
+  - 'NEEDS_CLARIFICATION'
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:76:78)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'NO_MATCH',
+    expected: 'NEEDS_CLARIFICATION',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:8846
+✖ bounds disclose incomplete candidates; positive beyond old alphabetic page remains discoverable (10.0103ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 10
+
+      at Array.from.length (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:83:66)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 10,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:9455
+✖ name conditions and overrides preserve identity; IDs cannot be replaced by name matching (17.1232ms)
+  AssertionError [ERR_ASSERTION]: Zyphora Moving Services licensed in New Jersey?
+  + actual - expected
+
+  + undefined
+  - 'beyond'
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:87:94)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'beyond',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:10454
+✖ definitions/discovery/guidance/journey and missing identity are not company-name research (39.3524ms)
+  AssertionError [ERR_ASSERTION]: Find moving services company LLC
+  + actual - expected
+
+  + 'entity'
+  - 'fail_closed'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:93:96)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'entity',
+    expected: 'fail_closed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:11142
+✖ invalid input and source errors never become a name miss or broad directory (11.5053ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:97:9)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-name.test.ts:2:11830
+✖ duplicate identity observation deduplication and unrelated source records cannot assert a match (7.4403ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at <anonymous> (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:101:63)
+      at async source (C:\Users\makei\th-search-r1-005-work\lib\move-ask\r1-name.test.ts:54:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

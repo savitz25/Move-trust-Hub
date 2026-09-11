@@ -73,6 +73,8 @@ export type MoveResearchQuery = {
   floridaIm?: boolean;
   overlapFmcsaFdacs?: boolean;
   nameQuery?: string;
+  nameRequest?: import('./name').NameRequest;
+  selectedCompany?: string;
   evidenceFamily?: 'complaint' | 'authority';
   page: number;
   definitionId?: string;

@@ -1,3 +1,4 @@
+import { distinctiveTokens, matchSourceName, NAME_CANDIDATE_LIMIT, NAME_RETRIEVAL_LIMIT, type NameEvidence } from './name';
 import 'server-only';
 import { createClient } from '@supabase/supabase-js';
 import {
@@ -47,12 +48,15 @@ export type AskCard = {
   sourceLastChecked?: string | null;
   officialAsOf?: string | null;
   officialVerificationUrl?: string;
+  nameMatchEvidence?: NameEvidence;
+  selectionHref?: string;
   matchEvidence?: { method: 'exact_identifier'; fields: Array<{ field: 'usdot_number' | 'mc_number'; requested: string; returned: string }>; normalization: string[] };
 };
 
 export type AskCountRow = { label: string; value: number; grain: string };
 
 export type MoveAskResult = {
+  nameSearch?: { requested: string; candidateLimit: number; retrievalLimit: number; truncated: boolean; selected: boolean; countMeaning: string };
   contract: typeof MOVE_ASK_CONTRACT;
   queryText: string;
   parsed: ParsedMoveAsk;
@@ -99,7 +103,7 @@ type Chain = {
   then: Promise<{ data: unknown[] | null; count: number | null; error: { message: string } | null }>['then'];
 };
 
-function db(): AdminDb {
+function admin() {
   const url = getSupabaseUrl();
   const key = getSupabaseServiceRoleKey();
   if (!url || !key) throw new Error('Supabase admin client requires SUPABASE_SERVICE_ROLE_KEY (server-only).');
@@ -107,6 +111,11 @@ function db(): AdminDb {
     auth: { autoRefreshToken: false, persistSession: false },
     global: { fetch: (input, init) => fetch(input, { ...init, signal: AbortSignal.timeout(12_000) }) },
   });
+  return client;
+}
+
+function db(): AdminDb {
+  const client = admin();
   return { from: (table: string) => ({ select: (columns: string, opts?: { count?: 'exact'; head?: boolean }) =>
     client.from(table).select(columns, opts).throwOnError() as unknown as Chain }) };
 
@@ -124,6 +133,7 @@ type CompanyRow = {
   fmcsa_last_checked: string | null;
   publication_state: string | null;
   fmcsa_legal_name: string | null;
+  sourceDba?: string | null;
   authority_status?: string | null;
   fmcsa_complaints?: number | null;
   complaints_last_12m?: number | null;
@@ -177,7 +187,7 @@ function cardFromCompany(row: CompanyRow, why: string, extra?: Partial<AskCard>)
     entityId: row.id,
     displayName: row.name,
     legalName: row.fmcsa_legal_name,
-    dba: row.fmcsa_legal_name && row.fmcsa_legal_name !== row.name ? row.name : null,
+    dba: row.sourceDba ?? null,
     usdot: row.usdot_number,
     mc: row.mc_number,
     role,
@@ -235,22 +245,74 @@ export async function executeMoveRequest(input: MoveRequestInput, options?: { di
 }
 
 async function lookupName(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
-  const name = parsed.query.nameQuery!.replace(/[%_,]/g, ' ').trim().slice(0, 100);
-  const { data, count } = await db()
-    .from('companies')
-    .select(COMPANY_COLS, { count: 'exact' })
-    .or(VISIBLE_OR)
-    .ilike('name', `%${name}%`)
-    .order('name', { ascending: true })
-    .limit(MOVE_ASK_PAGE_SIZE);
-  const rows = (data ?? []) as CompanyRow[];
-  return finish(
-    parsed,
-    rows.map((row) => cardFromCompany(row, `The published company name contains “${name}”. Name similarity is a candidate match, not proof that two records are the same entity.`)),
-    count ?? rows.length,
-    started,
-    'bounded published company-name match',
-  );
+  const q = parsed.query, name = q.nameQuery!;
+  let ids: string[], capped = false;
+  if (q.selectedCompany) ids = [q.selectedCompany];
+  else {
+    // Existing read-only, publication-filtered RPC. Names are JSON values, never filter grammar.
+    // Its 80-character bound is checked before execution; no silent truncation.
+    const terms = [...new Set([name, distinctiveTokens(name).join(' ')])];
+    const batches = await Promise.all(terms.map(async term => {
+      const { data, error } = await admin().rpc('directory_search_suggestions', { p_query: term, p_limit: NAME_RETRIEVAL_LIMIT });
+      if (error || !Array.isArray(data)) throw new Error('Name candidate source unavailable');
+      return data;
+    }));
+    capped = batches[batches.length - 1]!.length >= NAME_RETRIEVAL_LIMIT;
+    ids = [...new Set(batches.flat().map((r: {company_id?: unknown}) => {
+      if (typeof r.company_id !== 'string' || !r.company_id) throw new Error('Invalid candidate reference');
+      return r.company_id;
+    }))];
+  }
+  let rows: CompanyRow[] = [];
+  if (ids.length) {
+    const response = await db().from('companies').select(`${COMPANY_COLS},sourceDba:fmcsa_raw->>dbaName`).or(VISIBLE_OR).in('id', ids).limit(NAME_RETRIEVAL_LIMIT * 2);
+    if (!Array.isArray(response.data)) throw new Error('Name identity source unavailable');
+    rows = response.data as CompanyRow[];
+  }
+  const candidates = new Map<string, {row: CompanyRow; evidence: NameEvidence}>();
+  for (const row of rows) {
+    if (!ids.includes(row.id) || !row.name || ['REVIEW_REQUIRED','INACTIVE','INGESTED','CLASSIFIED'].includes(row.publication_state ?? '')) throw new Error('Name publication invariant failed');
+    const evidence = matchSourceName(name, row);
+    if (!evidence) continue; // RPC recall is deliberately broader than a justified name match.
+    const prior = candidates.get(row.id);
+    if (prior && JSON.stringify(prior.row) !== JSON.stringify(row)) throw new Error('Conflicting identity observations');
+    candidates.set(row.id, {row, evidence});
+  }
+  const ordered = [...candidates.values()].sort((a,b) => a.evidence.rank-b.evidence.rank || a.row.name.localeCompare(b.row.name) || a.row.id.localeCompare(b.row.id));
+  const truncated = capped || ordered.length > NAME_CANDIDATE_LIMIT;
+  const cards = ordered.slice(0,NAME_CANDIDATE_LIMIT).map(({row,evidence}) => {
+    const params = new URLSearchParams({q: parsed.raw, company: row.id});
+    for (const [key,value] of Object.entries(q.overrides ?? {})) if (value) params.set(key,value);
+    const fieldLabel = evidence.field === 'name' ? 'directory display name' : evidence.field === 'fmcsa_legal_name' ? 'stored FMCSA legal name' : 'stored FMCSA DBA';
+    const why = `${evidence.matchType === 'distinctive_token_candidate' ? 'Distinctive name-token candidate' : evidence.matchType === 'normalized_exact_name' ? 'Normalized source-name match' : 'Source-name match'}: ${fieldLabel} records "${evidence.returned}" for this identity. Requested name: "${name}". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.`;
+    const dot = normalizeStoredIdentifier(row.usdot_number, 'usdot'), mc = normalizeStoredIdentifier(row.mc_number, 'mc');
+    const id = dot ? {type:'DOT' as const,value:dot,display:`USDOT ${dot}`} : mc ? {type:'MC' as const,value:mc,display:`MC ${mc}`} : null;
+    return cardFromCompany(row, why, {nameMatchEvidence:evidence, selectionHref:q.selectedCompany ? undefined : `/ask?${params}`, officialVerificationUrl:id ? buildSaferLookupUrl(id) : undefined});
+  });
+  if (cards.length === 1 && !truncated) {
+    const row = ordered[0]!.row;
+    for (const c of q.constraints ?? []) {
+      if (!['state','role','authority'].includes(c.field)) continue;
+      const known = c.field === 'state' ? Boolean(extractStateCodeFromHeadquarters(row.headquarters ?? '')) : c.field === 'authority' ? typeof row.authority_active === 'boolean' : researchRole({entityType:row.entity_type,services:[]}) !== 'Unknown';
+      const matches = c.field === 'state' ? extractStateCodeFromHeadquarters(row.headquarters ?? '') === c.value : c.field === 'authority' ? row.authority_active === (c.value === 'current') : roleTypes(c.value,true).some(type => type.toLowerCase() === (row.entity_type ?? '').toLowerCase());
+      c.outcome = !known ? 'NEEDS_CLARIFICATION' : matches ? 'APPLIED' : 'CONFLICT';
+      c.detail = !known ? 'The stored identity has no evidence for this condition.' : matches ? 'The stored public identity supports this condition; no service territory or license approval is inferred.' : 'The name identity remains visible, but its stored evidence does not agree with this filter.';
+    }
+  }
+  for (const c of q.constraints ?? []) { const line = parsed.interpretation.find(v => v.label === c.field); if (line) line.value = `${c.value} - ${c.outcome.replaceAll('_', ' ').toLowerCase()}`; }
+  const result = finish(parsed,cards,cards.length,started,'Source-backed name candidate identities; distinct public record keys, not a national directory count');
+  result.nameSearch = {requested:name,candidateLimit:NAME_CANDIDATE_LIMIT,retrievalLimit:NAME_RETRIEVAL_LIMIT * 2,truncated,selected:Boolean(q.selectedCompany),countMeaning:'Displayed source-backed candidate identities; not an exhaustive population estimate'};
+  result.terminalState = truncated || cards.length > 1 || (q.selectedCompany && !cards.length) ? 'NEEDS_CLARIFICATION' : cards.length ? 'FOUND' : 'NO_MATCH';
+  result.counts = cards.length ? [{label:'Displayed name candidates',value:cards.length,grain:result.provenance.grain}] : [];
+  result.pagination = {page:1,pageSize:NAME_CANDIDATE_LIMIT,total:cards.length,hasMore:false};
+  result.provenance.geographyMeaning = 'Name identity research; requested location conditions are evaluated separately, never service territory.';
+  result.limitations = [
+    ...(truncated ? ['Candidate retrieval reached its bound. Refine the company name or enter a labeled USDOT/MC; uniqueness and exhaustive totals are not established.'] : []),
+    ...(q.selectedCompany && !cards.length ? ['The selected public record no longer establishes this name match. Refine the name or choose a current candidate.'] : []),
+    'Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.',
+    'Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.',
+    ...result.limitations];
+  return result;
 }
 
 async function lookupIdentifier(parsed: ParsedMoveAsk, started: number): Promise<MoveAskResult> {
@@ -559,12 +621,16 @@ export function publicAskPayload(result: MoveAskResult) {
   return {
     contract: result.contract,
     terminalState: result.terminalState,
+    nameSearch: result.nameSearch,
     coverageState: result.coverageState,
     capability: { federatedExecution: 'execute', askStatus: 'live' },
     interpretation: result.parsed.interpretation,
     query: {
       ...(result.parsed.query.directoryRequest ? { specialistContract: result.parsed.query.directoryRequest.contract } : {}),
       mode: result.parsed.query.mode,
+      nameQuery: result.parsed.query.nameQuery,
+      nameRequest: result.parsed.query.nameRequest,
+      selectedCompany: result.parsed.query.selectedCompany,
       role: result.parsed.query.role,
       authorityCurrent: result.parsed.query.authorityCurrent,
       constraints: result.parsed.query.constraints,
@@ -580,6 +646,11 @@ export function publicAskPayload(result: MoveAskResult) {
     resultType: result.resultType,
     results: result.results.map((row) => ({
       name: row.displayName,
+      entityId: row.entityId,
+      legalName: row.legalName,
+      dba: row.dba,
+      nameMatchEvidence: row.nameMatchEvidence,
+      selectionHref: row.selectionHref,
       usdot: row.usdot,
       mc: row.mc,
       role: row.role,
