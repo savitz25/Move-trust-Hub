@@ -1,0 +1,76 @@
+move_research_source_unavailable { executor: 'records', mode: 'entity' }
+move_research_source_unavailable { executor: 'directory', mode: 'entity' }
+move_research_source_unavailable { executor: 'records', mode: 'entity' }
+move_research_source_unavailable { executor: 'records', mode: 'entity' }
+✔ structured city/ZIP requests cannot bypass the locality consent boundary (3.4912ms)
+✔ R1-014 endpoints survive the production planner (4.838ms)
+✔ independent endpoints, abbreviations, multiple states and city ambiguity (2.5215ms)
+✖ journeys and bookings never dispatch unrelated cohorts or names (8.1109ms)
+✔ capability grains are source-native, never FMCSA-as-intrastate authority (0.5997ms)
+✔ locality and near me retain conditions and require explicit query-bound broadening (7.4033ms)
+✔ role, auto transport, filters and pagination cannot lose scope (3.2809ms)
+✔ name plus journey and server selection retain the protected exact identity path (18.1422ms)
+✖ API/native transport, rendered guidance and actions share the same meaning (14.5956ms)
+✔ legal-name signals are not converted to locality requests (1.9293ms)
+✔ natural-language authority and unsupported route counts stay visible through broadening (0.7177ms)
+✖ booking paraphrases retain supplied local places and both endpoints (0.447ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 9
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2447.3688
+
+✖ failing tests:
+
+test at lib\move-ask\r1-journey.test.ts:2:4629
+✖ journeys and bookings never dispatch unrelated cohorts or names (8.1109ms)
+  AssertionError [ERR_ASSERTION]: book a mover for tomorrow
+  + actual - expected
+
+  + 'book a mover for tomorrow'
+  - undefined
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:88:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'book a mover for tomorrow',
+    expected: undefined,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-journey.test.ts:2:12617
+✖ API/native transport, rendered guidance and actions share the same meaning (14.5956ms)
+  SyntaxError: "undefined" is not valid JSON
+      at JSON.parse (<anonymous>)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:288:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at lib\move-ask\r1-journey.test.ts:2:15372
+✖ booking paraphrases retain supplied local places and both endpoints (0.447ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'Austin'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:327:80)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'Austin',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

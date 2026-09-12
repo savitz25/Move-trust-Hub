@@ -1,0 +1,128 @@
+move_research_source_unavailable { executor: 'directory', mode: 'entity' }
+✔ structured city/ZIP requests cannot bypass the locality consent boundary (8.1762ms)
+✖ R1-014 endpoints survive the production planner (16.1731ms)
+✖ independent endpoints, abbreviations, multiple states and city ambiguity (1.384ms)
+✔ journeys and bookings never dispatch unrelated cohorts or names (1.5188ms)
+✖ capability grains are source-native, never FMCSA-as-intrastate authority (0.9898ms)
+✔ locality and near me retain conditions and require explicit query-bound broadening (10.4897ms)
+✔ role, auto transport, filters and pagination cannot lose scope (4.7154ms)
+✖ name plus journey and server selection retain the protected exact identity path (14.8468ms)
+✔ API/native transport, rendered guidance and actions share the same meaning (39.6669ms)
+✔ legal-name signals are not converted to locality requests (2.2074ms)
+✔ natural-language authority and unsupported route counts stay visible through broadening (0.8019ms)
+✖ booking paraphrases retain supplied local places and both endpoints (0.5893ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 7
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3820.8529
+
+✖ failing tests:
+
+test at lib\move-ask\r1-journey.test.ts:2:2676
+✖ R1-014 endpoints survive the production planner (16.1731ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(j.destination)
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:32:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-journey.test.ts:2:3307
+✖ independent endpoints, abbreviations, multiple states and city ambiguity (1.384ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'New York City'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:47:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'New York City',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-journey.test.ts:2:5630
+✖ capability grains are source-native, never FMCSA-as-intrastate authority (0.9898ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'unresolved'
+  - 'state_intrastate_research'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:113:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unresolved',
+    expected: 'state_intrastate_research',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-journey.test.ts:2:9638
+✖ name plus journey and server selection retain the protected exact identity path (14.8468ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  undefined !== 'FL'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:233:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'FL',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-journey.test.ts:2:15372
+✖ booking paraphrases retain supplied local places and both endpoints (0.5893ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  undefined !== 'NJ'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:329:150)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'NJ',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,10 @@
+{
+  "base": "f17650ed5c9a695cb97c0b7a111e38ef93f2e3dc",
+  "candidateAndBase": {
+    "exit": 1,
+    "tier1": 1695,
+    "tier2": 1448,
+    "maxAllowed": 400
+  },
+  "changed": false
+}

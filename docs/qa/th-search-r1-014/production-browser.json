@@ -1,0 +1,2609 @@
+{
+  "base": "https://www.movetrusthub.com",
+  "at": "2026-09-12T23:09:17.690Z",
+  "rows": [
+    {
+      "q": "moving from Miami Florida to New York City",
+      "at": "2026-09-12T23:09:02.309Z",
+      "ms": 2099,
+      "settledMs": 877,
+      "apiMs": 1035,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nMOVE JOURNEY\nEdit request\nORIGIN\nMiami Florida (exact)\nEdit request\nDESTINATION\nNew York City (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\norigin: Miami Florida\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: New York City\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nFlorida intrastate research\n\nhhg-registration: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Florida state research\nNew York intrastate research\n\nhhg-roster: SEARCH ONLY\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen New York state research\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "MOVE JOURNEY"
+          },
+          {
+            "label": "Origin",
+            "value": "Miami Florida (exact)"
+          },
+          {
+            "label": "Destination",
+            "value": "New York City (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "federal interstate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "MOVE_JOURNEY",
+            "origin": {
+              "raw": "Miami Florida",
+              "city": "Miami",
+              "state": "FL",
+              "resolution": "EXACT"
+            },
+            "destination": {
+              "raw": "New York City",
+              "city": "New York City",
+              "state": "NY",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "interstate",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "federal_interstate_research",
+            "booking": false,
+            "summary": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "FL",
+                "route": "/florida",
+                "authority": [
+                  {
+                    "id": "hhg-registration",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "florida_fdacs_im_registrations"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              },
+              {
+                "state": "NY",
+                "route": "/new-york",
+                "authority": [
+                  {
+                    "id": "hhg-roster",
+                    "status": "SEARCH_ONLY",
+                    "metricKeys": [
+                      "ny_current_hhg_roster"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "definition",
+          "constraints": [
+            {
+              "field": "origin",
+              "value": "Miami Florida",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "destination",
+              "value": "New York City",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "definitionId": "journey_research",
+          "page": 1
+        },
+        "resultType": "definition",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Accepted state-capability registry; research guidance only, no provider query executed",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "definition",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 5,
+        "definition": {
+          "title": "Research your move",
+          "body": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability. Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker. For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity. Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory. Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+        }
+      }
+    },
+    {
+      "q": "moving from Boca Raton Florida to Austin Texas",
+      "at": "2026-09-12T23:09:02.978Z",
+      "ms": 668,
+      "settledMs": 274,
+      "apiMs": 149,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nMOVE JOURNEY\nEdit request\nORIGIN\nBoca Raton Florida (exact)\nEdit request\nDESTINATION\nAustin Texas (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\norigin: Boca Raton Florida\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: Austin Texas\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nFlorida intrastate research\n\nhhg-registration: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Florida state research\nTexas intrastate research\n\nhhg-roster: SEARCH ONLY\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Texas state research\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "MOVE JOURNEY"
+          },
+          {
+            "label": "Origin",
+            "value": "Boca Raton Florida (exact)"
+          },
+          {
+            "label": "Destination",
+            "value": "Austin Texas (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "federal interstate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "MOVE_JOURNEY",
+            "origin": {
+              "raw": "Boca Raton Florida",
+              "city": "Boca Raton",
+              "state": "FL",
+              "resolution": "EXACT"
+            },
+            "destination": {
+              "raw": "Austin Texas",
+              "city": "Austin",
+              "state": "TX",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "interstate",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "federal_interstate_research",
+            "booking": false,
+            "summary": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "FL",
+                "route": "/florida",
+                "authority": [
+                  {
+                    "id": "hhg-registration",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "florida_fdacs_im_registrations"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              },
+              {
+                "state": "TX",
+                "route": "/texas",
+                "authority": [
+                  {
+                    "id": "hhg-roster",
+                    "status": "SEARCH_ONLY",
+                    "metricKeys": [
+                      "tx_txdmv_household_goods_mover_universe"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "definition",
+          "constraints": [
+            {
+              "field": "origin",
+              "value": "Boca Raton Florida",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "destination",
+              "value": "Austin Texas",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "definitionId": "journey_research",
+          "page": 1
+        },
+        "resultType": "definition",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Accepted state-capability registry; research guidance only, no provider query executed",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "definition",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 1,
+        "definition": {
+          "title": "Research your move",
+          "body": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability. Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker. For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity. Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory. Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+        }
+      }
+    },
+    {
+      "q": "movers near me",
+      "at": "2026-09-12T23:09:03.511Z",
+      "ms": 533,
+      "settledMs": 240,
+      "apiMs": 112,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nUNSUPPORTED LOCALITY\nEdit request\nREQUESTED LOCALITY\nme (needs clarification)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nunresolved\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nlocality: me\n\nNot established: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nThe requested locality is retained. This search cannot establish local service or availability. You may explicitly choose recorded-state identity research instead.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nRequested city and state\nApply location\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "UNSUPPORTED",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "UNSUPPORTED LOCALITY"
+          },
+          {
+            "label": "Requested locality",
+            "value": "me (needs clarification)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "unresolved"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "UNSUPPORTED_LOCALITY",
+            "locality": {
+              "raw": "me",
+              "resolution": "NEEDS_CLARIFICATION"
+            },
+            "moveType": "household_goods",
+            "moveScope": "unresolved",
+            "outcome": "NEEDS_CLARIFICATION",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "unresolved",
+            "booking": false,
+            "summary": "The requested locality is retained. This search cannot establish local service or availability. You may explicitly choose recorded-state identity research instead.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": []
+          },
+          "mode": "fail_closed",
+          "constraints": [
+            {
+              "field": "locality",
+              "value": "me",
+              "outcome": "NEEDS_CLARIFICATION",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "failReason": "The requested locality is retained. This search cannot establish local service or availability. You may explicitly choose recorded-state identity research instead.",
+          "definitionId": "journey_research",
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Accepted state-capability registry; research guidance only, no provider query executed",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 0,
+        "definition": {
+          "title": "Research your move",
+          "body": "Research identity, carrier versus broker role, and the appropriate federal or state authority. Recorded headquarters does not establish service territory, exact-route service or availability. MoveTrustHub does not book or dispatch movers."
+        }
+      }
+    },
+    {
+      "q": "movers in Austin Texas",
+      "at": "2026-09-12T23:09:04.055Z",
+      "ms": 544,
+      "settledMs": 251,
+      "apiMs": 90,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nUNSUPPORTED LOCALITY\nEdit request\nREQUESTED LOCALITY\nAustin Texas (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nunresolved\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nlocality: Austin Texas\n\nNot available: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nThe requested locality is retained. This search cannot establish local service or availability. You may explicitly choose recorded-state identity research instead.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nResearch Texas recorded identities instead\nTexas intrastate research\n\nhhg-roster: SEARCH ONLY\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Texas state research\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "UNSUPPORTED",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "UNSUPPORTED LOCALITY"
+          },
+          {
+            "label": "Requested locality",
+            "value": "Austin Texas (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "unresolved"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "UNSUPPORTED_LOCALITY",
+            "locality": {
+              "raw": "Austin Texas",
+              "city": "Austin",
+              "state": "TX",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "unresolved",
+            "outcome": "UNSUPPORTED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "unresolved",
+            "booking": false,
+            "summary": "The requested locality is retained. This search cannot establish local service or availability. You may explicitly choose recorded-state identity research instead.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "TX",
+                "route": "/texas",
+                "authority": [
+                  {
+                    "id": "hhg-roster",
+                    "status": "SEARCH_ONLY",
+                    "metricKeys": [
+                      "tx_txdmv_household_goods_mover_universe"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "fail_closed",
+          "constraints": [
+            {
+              "field": "locality",
+              "value": "Austin Texas",
+              "outcome": "UNSUPPORTED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "failReason": "The requested locality is retained. This search cannot establish local service or availability. You may explicitly choose recorded-state identity research instead.",
+          "definitionId": "journey_research",
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Accepted state-capability registry; research guidance only, no provider query executed",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 0,
+        "definition": {
+          "title": "Research your move",
+          "body": "Research identity, carrier versus broker role, and the appropriate federal or state authority. Recorded headquarters does not establish service territory, exact-route service or availability. MoveTrustHub does not book or dispatch movers."
+        }
+      }
+    },
+    {
+      "q": "local mover in New Jersey",
+      "at": "2026-09-12T23:09:04.625Z",
+      "ms": 570,
+      "settledMs": 283,
+      "apiMs": 80,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nMOVE JOURNEY\nEdit request\nREQUESTED LOCALITY\nNew Jersey (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nstate intrastate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nlocality: New Jersey\n\nNot available: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch the applicable state intrastate authority. Federal FMCSA presence is not a substitute for state authority.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nUse the relevant state authority research below. Search-only or request-only coverage is not zero movers; FMCSA is not state intrastate permission.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nNew Jersey intrastate research\n\nhhg-roster: REQUEST ONLY\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen New Jersey state research\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "MOVE JOURNEY"
+          },
+          {
+            "label": "Requested locality",
+            "value": "New Jersey (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "state intrastate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "MOVE_JOURNEY",
+            "locality": {
+              "raw": "New Jersey",
+              "state": "NJ",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "intrastate",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "state_intrastate_research",
+            "booking": false,
+            "summary": "Research the applicable state intrastate authority. Federal FMCSA presence is not a substitute for state authority.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "Use the relevant state authority research below. Search-only or request-only coverage is not zero movers; FMCSA is not state intrastate permission.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "NJ",
+                "route": "/new-jersey",
+                "authority": [
+                  {
+                    "id": "hhg-roster",
+                    "status": "REQUEST_ONLY",
+                    "metricKeys": [
+                      "nj_pmw_authority_roster"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "definition",
+          "constraints": [
+            {
+              "field": "locality",
+              "value": "New Jersey",
+              "outcome": "UNSUPPORTED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "definitionId": "journey_research",
+          "page": 1
+        },
+        "resultType": "definition",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Accepted state-capability registry; research guidance only, no provider query executed",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "definition",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 0,
+        "definition": {
+          "title": "Research your move",
+          "body": "Research the applicable state intrastate authority. Federal FMCSA presence is not a substitute for state authority. Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker. Use the relevant state authority research below. Search-only or request-only coverage is not zero movers; FMCSA is not state intrastate permission. Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory. Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+        }
+      }
+    },
+    {
+      "q": "interstate mover Florida to New Jersey",
+      "at": "2026-09-12T23:09:05.101Z",
+      "ms": 476,
+      "settledMs": 206,
+      "apiMs": 78,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nMOVE JOURNEY\nEdit request\nORIGIN\nFlorida (exact)\nEdit request\nDESTINATION\nNew Jersey (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\norigin: Florida\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: New Jersey\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nFlorida intrastate research\n\nhhg-registration: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Florida state research\nNew Jersey intrastate research\n\nhhg-roster: REQUEST ONLY\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen New Jersey state research\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "MOVE JOURNEY"
+          },
+          {
+            "label": "Origin",
+            "value": "Florida (exact)"
+          },
+          {
+            "label": "Destination",
+            "value": "New Jersey (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "federal interstate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "MOVE_JOURNEY",
+            "origin": {
+              "raw": "Florida",
+              "state": "FL",
+              "resolution": "EXACT"
+            },
+            "destination": {
+              "raw": "New Jersey",
+              "state": "NJ",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "interstate",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "federal_interstate_research",
+            "booking": false,
+            "summary": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "FL",
+                "route": "/florida",
+                "authority": [
+                  {
+                    "id": "hhg-registration",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "florida_fdacs_im_registrations"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              },
+              {
+                "state": "NJ",
+                "route": "/new-jersey",
+                "authority": [
+                  {
+                    "id": "hhg-roster",
+                    "status": "REQUEST_ONLY",
+                    "metricKeys": [
+                      "nj_pmw_authority_roster"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "definition",
+          "constraints": [
+            {
+              "field": "origin",
+              "value": "Florida",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "destination",
+              "value": "New Jersey",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "definitionId": "journey_research",
+          "page": 1
+        },
+        "resultType": "definition",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Accepted state-capability registry; research guidance only, no provider query executed",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "definition",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 0,
+        "definition": {
+          "title": "Research your move",
+          "body": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability. Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker. For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity. Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory. Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+        }
+      }
+    },
+    {
+      "q": "auto transport Florida to Texas",
+      "at": "2026-09-12T23:09:05.648Z",
+      "ms": 547,
+      "settledMs": 311,
+      "apiMs": 82,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nAUTO TRANSPORT\nEdit request\nORIGIN\nFlorida (exact)\nEdit request\nDESTINATION\nTexas (exact)\nEdit request\nMOVE TYPE\nauto transport\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\norigin: Florida\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: Texas\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nResearch vehicle-transport identity and source-native carrier/broker authority; household-goods status is not vehicle-shipping evidence.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nFlorida state research context\n\nThis household-goods state registry does not establish vehicle-transport authority. State research links are context, not auto-transport permission.\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Florida state research\nTexas state research context\n\nThis household-goods state registry does not establish vehicle-transport authority. State research links are context, not auto-transport permission.\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Texas state research\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "AUTO TRANSPORT"
+          },
+          {
+            "label": "Origin",
+            "value": "Florida (exact)"
+          },
+          {
+            "label": "Destination",
+            "value": "Texas (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "auto transport"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "federal interstate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "AUTO_TRANSPORT",
+            "origin": {
+              "raw": "Florida",
+              "state": "FL",
+              "resolution": "EXACT"
+            },
+            "destination": {
+              "raw": "Texas",
+              "state": "TX",
+              "resolution": "EXACT"
+            },
+            "moveType": "auto_transport",
+            "moveScope": "interstate",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "federal_interstate_research",
+            "booking": false,
+            "summary": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "Research vehicle-transport identity and source-native carrier/broker authority; household-goods status is not vehicle-shipping evidence.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "FL",
+                "route": "/florida",
+                "authority": [],
+                "source": "data/home/move-network-metrics-v1.json"
+              },
+              {
+                "state": "TX",
+                "route": "/texas",
+                "authority": [],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "definition",
+          "constraints": [
+            {
+              "field": "origin",
+              "value": "Florida",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "destination",
+              "value": "Texas",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "definitionId": "journey_research",
+          "page": 1
+        },
+        "resultType": "definition",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Accepted state-capability registry; research guidance only, no provider query executed",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "definition",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 0,
+        "definition": {
+          "title": "Research your move",
+          "body": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability. Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker. Research vehicle-transport identity and source-native carrier/broker authority; household-goods status is not vehicle-shipping evidence. Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory. Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+        }
+      }
+    },
+    {
+      "q": "book a mover tomorrow",
+      "at": "2026-09-12T23:09:06.121Z",
+      "ms": 473,
+      "settledMs": 196,
+      "apiMs": 126,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nTRANSACTION OR BOOKING\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nunresolved\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch before contacting a mover\n\nMoveTrustHub does not book, dispatch, or confirm mover availability. We can help you research identities and authority before you contact providers. Keep the move details and clarify the missing endpoint or state below. No mover cohort has been selected.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nRequested city and state\nApply location\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "TRANSACTION OR BOOKING"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "unresolved"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "TRANSACTION_OR_BOOKING",
+            "moveType": "household_goods",
+            "moveScope": "unresolved",
+            "outcome": "NEEDS_CLARIFICATION",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "unresolved",
+            "booking": true,
+            "summary": "MoveTrustHub does not book, dispatch, or confirm mover availability. We can help you research identities and authority before you contact providers. Keep the move details and clarify the missing endpoint or state below. No mover cohort has been selected.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": []
+          },
+          "mode": "definition",
+          "constraints": [
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "definitionId": "journey_research",
+          "page": 1
+        },
+        "resultType": "definition",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Accepted state-capability registry; research guidance only, no provider query executed",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "definition",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 0,
+        "definition": {
+          "title": "Research your move",
+          "body": "MoveTrustHub does not book, dispatch, or confirm mover availability. We can help you research identities and authority before you contact providers. Keep the move details and clarify the missing endpoint or state below. No mover cohort has been selected. Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker. For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity. Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory. Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+        }
+      }
+    },
+    {
+      "q": "JK Moving from Virginia to Florida",
+      "at": "2026-09-12T23:09:08.037Z",
+      "ms": 1916,
+      "settledMs": 965,
+      "apiMs": 615,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nCOMPANY NAME\nJK Moving\nEdit request\nTASK\nMOVE JOURNEY\nEdit request\nORIGIN\nVirginia (exact)\nEdit request\nDESTINATION\nFlorida (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nConfirm the identity\n\nThese source-backed names belong to distinct identities. Select the intended company to continue this question.\n\nRequested conditions\norigin: Virginia\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: Florida\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nVirginia intrastate research\n\nhhg-authority: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Virginia state research\nFlorida intrastate research\n\nhhg-registration: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Florida state research\nTrace this journey\nCount\nDisplayed name candidates\n5\n\nSource-backed name candidate identities; distinct public record keys, not a national directory count\n\nJK BROKERAGE SERVICES\nBroker\n\nStored legal name: JK MOVING & STORAGE, INC.\n\nSelect this company and continue\nUSDOT\n2222803\nMC\n312255\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSTERLING, VA\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nJK FORWARDERS, INC.\nCarrier\n\nStored legal name: JK FORWARDERS, INC.\n\nSelect this company and continue\nUSDOT\n2972877\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSTERLING, VA\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK FORWARDERS, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nJK Moving Services\nCarrier\n\nStored legal name: JK MOVING & STORAGE INC\n\nStored FMCSA DBA: JK MOVING SERVICES\n\nSelect this company and continue\nUSDOT\n1065394\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSterling, VA\nMC association under review\n\nThe stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research.\n\nStored observation: MC 225850, checked 2026-08-23T05:02:18.368+00:00. This value is excluded from confirmed identifier fields.\n\nThe official USDOT 1065394 snapshot dated 2026-09-10 lists MC 196957. Retrieved 2026-09-12T00:04:29.566Z; this is a separate source observation, not an automatic replacement in this research index.\n\nCheck the corroborated USDOT with FMCSA\n\nStored source checked-at: 2026-08-23T05:02:18.368+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify the corroborated USDOT with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE INC\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nJK MOVING SERVICES\nCarrier\n\nStored legal name: JK MOVING & STORAGE OF MARYLAND, INC.\n\nSelect this company and continue\nUSDOT\n1300300\nMC\n504611\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nGAITHERSBURG, MD\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE OF MARYLAND, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nJK VAN LINES, INC.\nCarrier\n\nStored legal name: JK VAN LINES, INC.\n\nSelect this company and continue\nUSDOT\n486366\nMC\n279412\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSTERLING, VA\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK VAN LINES, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "nameSearch": {
+          "requested": "JK Moving",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": false,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "JK Moving"
+          },
+          {
+            "label": "Task",
+            "value": "MOVE JOURNEY"
+          },
+          {
+            "label": "Origin",
+            "value": "Virginia (exact)"
+          },
+          {
+            "label": "Destination",
+            "value": "Florida (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "federal interstate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "MOVE_JOURNEY",
+            "origin": {
+              "raw": "Virginia",
+              "state": "VA",
+              "resolution": "EXACT"
+            },
+            "destination": {
+              "raw": "Florida",
+              "state": "FL",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "interstate",
+            "companyName": "JK Moving",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "federal_interstate_research",
+            "booking": false,
+            "summary": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "VA",
+                "route": "/virginia",
+                "authority": [
+                  {
+                    "id": "hhg-authority",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "va_hhg_authority_identities"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              },
+              {
+                "state": "FL",
+                "route": "/florida",
+                "authority": [
+                  {
+                    "id": "hhg-registration",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "florida_fdacs_im_registrations"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "entity",
+          "nameQuery": "JK Moving",
+          "nameRequest": {
+            "name": "JK Moving",
+            "task": "research",
+            "condition": "Requested route service and availability remain unestablished."
+          },
+          "constraints": [
+            {
+              "field": "origin",
+              "value": "Virginia",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "destination",
+              "value": "Florida",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "JK BROKERAGE SERVICES",
+            "entityId": "usdot-2222803",
+            "legalName": "JK MOVING & STORAGE, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE, INC.",
+              "entityId": "usdot-2222803",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=JK+Moving+from+Virginia+to+Florida&company=usdot-2222803",
+            "usdot": "2222803",
+            "mc": "312255",
+            "role": "Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-brokerage-services",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2222803"
+          },
+          {
+            "name": "JK FORWARDERS, INC.",
+            "entityId": "usdot-2972877",
+            "legalName": "JK FORWARDERS, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK FORWARDERS, INC.",
+              "entityId": "usdot-2972877",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=JK+Moving+from+Virginia+to+Florida&company=usdot-2972877",
+            "usdot": "2972877",
+            "mc": null,
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-forwarders-inc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK FORWARDERS, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2972877"
+          },
+          {
+            "name": "JK Moving Services",
+            "entityId": "jk-moving",
+            "legalName": "JK MOVING & STORAGE INC",
+            "dba": "JK MOVING SERVICES",
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE INC",
+              "entityId": "jk-moving",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=JK+Moving+from+Virginia+to+Florida&company=jk-moving",
+            "usdot": "1065394",
+            "mc": null,
+            "identifierIntegrity": {
+              "status": "under_review",
+              "issueId": "TH-SEARCH-R1-006-jk-mc",
+              "recordId": "jk-moving",
+              "observedMc": "225850",
+              "observedAt": "2026-08-23T05:02:18.368+00:00",
+              "observedFingerprint": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01",
+              "disputedMc": "225850",
+              "officialObservedUsdot": "1065394",
+              "sourceAsOf": "2026-09-10",
+              "officialObservedMc": "196957",
+              "officialObservedAt": "2026-09-12T00:04:29.566Z",
+              "corroboratedUsdot": "1065394",
+              "officialUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394",
+              "message": "The stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research."
+            },
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "Sterling, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-moving-services",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE INC\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-23T05:02:18.368+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394"
+          },
+          {
+            "name": "JK MOVING SERVICES",
+            "entityId": "usdot-1300300",
+            "legalName": "JK MOVING & STORAGE OF MARYLAND, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE OF MARYLAND, INC.",
+              "entityId": "usdot-1300300",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=JK+Moving+from+Virginia+to+Florida&company=usdot-1300300",
+            "usdot": "1300300",
+            "mc": "504611",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "GAITHERSBURG, MD",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-moving-services-usdot-1300300",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE OF MARYLAND, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1300300"
+          },
+          {
+            "name": "JK VAN LINES, INC.",
+            "entityId": "usdot-486366",
+            "legalName": "JK VAN LINES, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK VAN LINES, INC.",
+              "entityId": "usdot-486366",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=JK+Moving+from+Virginia+to+Florida&company=usdot-486366",
+            "usdot": "486366",
+            "mc": "279412",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-van-lines-inc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK VAN LINES, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=486366"
+          }
+        ],
+        "counts": [
+          {
+            "label": "Displayed name candidates",
+            "value": 5,
+            "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 5,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 533
+      }
+    },
+    {
+      "q": "USDOT 3244649",
+      "at": "2026-09-12T23:09:08.952Z",
+      "ms": 915,
+      "settledMs": 346,
+      "apiMs": 393,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nidentifier\nEdit request\nIDENTIFIER\nUSDOT 3244649 (labeled)\nEdit request\nUSDOT\n3244649: applied\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nusdot: 3244649\n\nApplied: Exact stored identifier equality; no prefix or approximate fallback.\n\nCount\nMatching research identities\n1\n\nExact published identity (additional context is not a service-area match)\n\nSHIFL INC\nBroker\n\nStored legal name: SHIFL INC\n\nUSDOT\n3244649\nMC\n1019808\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nAIRMONT, NY\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "identifier"
+          },
+          {
+            "label": "Identifier",
+            "value": "USDOT 3244649 (labeled)"
+          },
+          {
+            "label": "usdot",
+            "value": "3244649: applied"
+          }
+        ],
+        "query": {
+          "mode": "identifier",
+          "constraints": [
+            {
+              "field": "usdot",
+              "value": "3244649",
+              "outcome": "APPLIED",
+              "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+            }
+          ],
+          "identifiers": [
+            {
+              "type": "usdot",
+              "value": "3244649",
+              "rawSpan": "USDOT 3244649",
+              "start": 0,
+              "end": 13,
+              "normalization": []
+            }
+          ],
+          "executor": "records",
+          "identifier": {
+            "type": "usdot",
+            "value": "3244649"
+          },
+          "page": 1
+        },
+        "resultType": "identifier",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "SHIFL INC",
+            "entityId": "usdot-3244649",
+            "legalName": "SHIFL INC",
+            "dba": null,
+            "usdot": "3244649",
+            "mc": "1019808",
+            "role": "Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "AIRMONT, NY",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/shifl-inc",
+            "publicationNote": null,
+            "whyMatched": "Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3244649",
+            "matchEvidence": {
+              "method": "exact_identifier",
+              "fields": [
+                {
+                  "field": "usdot_number",
+                  "requested": "3244649",
+                  "returned": "3244649"
+                }
+              ],
+              "normalization": []
+            }
+          }
+        ],
+        "counts": [
+          {
+            "label": "Matching research identities",
+            "value": 1,
+            "grain": "Exact published identity (additional context is not a service-area match)"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 1,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Exact published identity (additional context is not a service-area match)",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 119
+      }
+    },
+    {
+      "q": "MC 225850",
+      "at": "2026-09-12T23:09:10.473Z",
+      "ms": 1521,
+      "settledMs": 321,
+      "apiMs": 1046,
+      "width": 390,
+      "overflow": false,
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nMODE\nidentifier\nEdit request\nIDENTIFIER\nMC 225850 (labeled)\nEdit request\nMC\n225850: needs clarification\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nIdentifier association needs review\n\nA stored record contains the requested number, but the company relationship is not confirmed. This is not a finding of an invalid identifier or zero movers.\n\nRequested conditions\nmc: 225850\n\nNot established: Stored-field equality was observed, but this MC-to-company association is under review and is not confirmed.\n\nJK Moving Services\nCarrier\n\nStored legal name: JK MOVING & STORAGE INC\n\nUSDOT\n1065394\nRECORDED LOCATION\nSterling, VA\nMC association under review\n\nThe stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research.\n\nStored observation: MC 225850, checked 2026-08-23T05:02:18.368+00:00. This value is excluded from confirmed identifier fields.\n\nThe official USDOT 1065394 snapshot dated 2026-09-10 lists MC 196957. Retrieved 2026-09-12T00:04:29.566Z; this is a separate source observation, not an automatic replacement in this research index.\n\nCheck the corroborated USDOT with FMCSA\nInspect the submitted MC separately; company association unconfirmed\n\nStored source checked-at: 2026-08-23T05:02:18.368+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify the corroborated USDOT with FMCSA\n\nWhy this matched. Stored-field candidate only: the requested MC 225850 occurs in this record, but its association with this company is under review. This does not confirm the requested MC or USDOT/MC pair. Research the corroborated USDOT separately.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "SOURCE_CONFLICT",
+        "coverageState": "PARTIAL",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "identifier"
+          },
+          {
+            "label": "Identifier",
+            "value": "MC 225850 (labeled)"
+          },
+          {
+            "label": "mc",
+            "value": "225850: needs clarification"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "constraints": [
+            {
+              "field": "mc",
+              "value": "225850",
+              "outcome": "NEEDS_CLARIFICATION",
+              "detail": "Stored-field equality was observed, but this MC-to-company association is under review and is not confirmed."
+            }
+          ],
+          "identifiers": [
+            {
+              "type": "mc",
+              "value": "225850",
+              "rawSpan": "MC 225850",
+              "start": 0,
+              "end": 9,
+              "normalization": []
+            }
+          ],
+          "executor": "records",
+          "identifier": {
+            "type": "mc",
+            "value": "225850"
+          },
+          "failReason": "The stored MC association is under review. No company association is confirmed for the submitted MC or pair. Continue on MoveTrustHub to inspect the stored candidate and corroborated USDOT.",
+          "page": 1
+        },
+        "resultType": "Stored identifier association requires review",
+        "sourceConflictCandidates": [
+          {
+            "entityId": "jk-moving",
+            "displayName": "JK Moving Services",
+            "legalName": "JK MOVING & STORAGE INC",
+            "dba": null,
+            "usdot": "1065394",
+            "mc": null,
+            "role": "Carrier",
+            "fmcsaStatus": null,
+            "headquarters": "Sterling, VA",
+            "floridaIm": null,
+            "operatingAuthority": null,
+            "href": "/companies/jk-moving-services",
+            "publicationNote": null,
+            "whyMatched": "Stored-field candidate only: the requested MC 225850 occurs in this record, but its association with this company is under review. This does not confirm the requested MC or USDOT/MC pair. Research the corroborated USDOT separately.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-23T05:02:18.368+00:00",
+            "officialAsOf": null,
+            "submittedIdentifierUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string=225850",
+            "identifierIntegrity": {
+              "status": "under_review",
+              "issueId": "TH-SEARCH-R1-006-jk-mc",
+              "recordId": "jk-moving",
+              "observedMc": "225850",
+              "observedAt": "2026-08-23T05:02:18.368+00:00",
+              "observedFingerprint": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01",
+              "disputedMc": "225850",
+              "officialObservedUsdot": "1065394",
+              "sourceAsOf": "2026-09-10",
+              "officialObservedMc": "196957",
+              "officialObservedAt": "2026-09-12T00:04:29.566Z",
+              "corroboratedUsdot": "1065394",
+              "officialUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394",
+              "message": "The stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research."
+            },
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394"
+          }
+        ],
+        "sourceIntegrity": {
+          "status": "SOURCE_CONFLICT",
+          "trustedResultCount": 0,
+          "countMeaning": "Trusted result rows only; not a count of movers or valid licenses"
+        },
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Stored candidate identities; requested MC association is not confirmed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "The stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 277
+      }
+    },
+    {
+      "flow": "Homepage first Enter",
+      "url": "https://www.movetrusthub.com/ask?q=moving+from+Boca+Raton+Florida+to+Austin+Texas&role=&state=&authority=",
+      "text": "Research your move"
+    },
+    {
+      "flow": "Explicit broadening",
+      "url": "https://www.movetrusthub.com/ask?q=movers+in+Austin+Texas&research=recorded_state&consent=7da955b30771c2dc27ea2ccd",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Task",
+            "value": "UNSUPPORTED LOCALITY"
+          },
+          {
+            "label": "Requested locality",
+            "value": "Austin Texas (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "unresolved"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "UNSUPPORTED_LOCALITY",
+            "locality": {
+              "raw": "Austin Texas",
+              "city": "Austin",
+              "state": "TX",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "unresolved",
+            "outcome": "USER_APPROVED_RELAXATION",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "unresolved",
+            "booking": false,
+            "summary": "You selected broader recorded-state identity research. The original locality is retained; these records do not establish local service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "TX",
+                "route": "/texas",
+                "authority": [
+                  {
+                    "id": "hhg-roster",
+                    "status": "SEARCH_ONLY",
+                    "metricKeys": [
+                      "tx_txdmv_household_goods_mover_universe"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ],
+            "executionGeography": {
+              "state": "TX",
+              "meaning": "recorded_headquarters_state"
+            }
+          },
+          "specialistContract": "trusthub-specialist-execution-v2",
+          "mode": "entity",
+          "authorityCurrent": "any",
+          "constraints": [
+            {
+              "field": "recorded headquarters state",
+              "value": "TX",
+              "outcome": "APPLIED",
+              "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+            },
+            {
+              "field": "locality",
+              "value": "Austin Texas",
+              "outcome": "UNSUPPORTED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            },
+            {
+              "field": "execution geography",
+              "value": "TX",
+              "outcome": "USER_APPROVED_RELAXATION",
+              "detail": "User selected broader recorded-headquarters state research. No local service predicate was applied."
+            }
+          ],
+          "executor": "directory",
+          "jurisdiction": {
+            "state": "TX",
+            "meaning": "recorded_headquarters_state"
+          },
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "12 Gauge Enterprises LLC",
+            "entityId": "12-gauge-enterprises-llc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "3858041",
+            "mc": "1408466",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "GRANBURY, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/12-gauge-enterprises-llc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "2 Austin Movers",
+            "entityId": "2-austin-movers",
+            "legalName": null,
+            "dba": null,
+            "usdot": null,
+            "mc": null,
+            "role": "Unknown",
+            "fmcsaStatus": "Authority status unknown",
+            "headquarters": "11910 Research Blvd, Austin, TX 78759",
+            "floridaIm": null,
+            "operatingAuthority": "Authority status unknown",
+            "href": "/companies/2-austin-movers",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": null,
+            "officialAsOf": null
+          },
+          {
+            "name": "2bbj's INC LLC",
+            "entityId": "2bbj-s-inc-llc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "4491274",
+            "mc": "1775377",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "COUPLAND, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/2bbj-s-inc-llc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "3 Men Movers LTD",
+            "entityId": "3-men-movers-ltd",
+            "legalName": null,
+            "dba": null,
+            "usdot": null,
+            "mc": null,
+            "role": "Unknown",
+            "fmcsaStatus": "Authority status unknown",
+            "headquarters": "6805 Sands Point Dr, Houston, TX 77074",
+            "floridaIm": null,
+            "operatingAuthority": "Authority status unknown",
+            "href": "/companies/3-men-movers-ltd",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": null,
+            "officialAsOf": null
+          },
+          {
+            "name": "3033 View Lane LLC",
+            "entityId": "3033-view-lane-llc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "4127473",
+            "mc": "1579819",
+            "role": "Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "PLANO, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/3033-view-lane-llc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "5g Hauling",
+            "entityId": "5g-hauling",
+            "legalName": null,
+            "dba": null,
+            "usdot": "1341811",
+            "mc": "517004",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "EDINBURG, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/5g-hauling",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "A ' 'sharp' ' Moving Company",
+            "entityId": "a-sharp-moving-company",
+            "legalName": null,
+            "dba": null,
+            "usdot": "1291990",
+            "mc": "507910",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "POTTSBORO, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/a-sharp-moving-company",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "A-1 Allstate Services, INC.",
+            "entityId": "a-1-allstate-services-inc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "1097061",
+            "mc": "452558",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "HOUSTON, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/a-1-allstate-services-inc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "A#1 Movers",
+            "entityId": "a-1-movers",
+            "legalName": null,
+            "dba": null,
+            "usdot": null,
+            "mc": null,
+            "role": "Unknown",
+            "fmcsaStatus": "Authority status unknown",
+            "headquarters": "1707 Hinton St, Dallas, TX 75235",
+            "floridaIm": null,
+            "operatingAuthority": "Authority status unknown",
+            "href": "/companies/a-1-movers",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": null,
+            "officialAsOf": null
+          },
+          {
+            "name": "Aaa Oasis Moving & Storage LLC",
+            "entityId": "aaa-oasis-moving-storage-llc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "3182802",
+            "mc": "1704550",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "DALLAS, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/aaa-oasis-moving-storage-llc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Across States Moving LLC",
+            "entityId": "across-states-moving-llc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "4377254",
+            "mc": "1715342",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "LITTLE ELM, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/across-states-moving-llc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Adcs Group LLC",
+            "entityId": "adcs-group-llc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "4043680",
+            "mc": "1530693",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "SAN ANTONIO, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/adcs-group-llc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Addison Forwarding Company",
+            "entityId": "addison-forwarding-company",
+            "legalName": null,
+            "dba": null,
+            "usdot": "2363119",
+            "mc": "810226",
+            "role": "Carrier/Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "WICHITA FALLS, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/addison-forwarding-company",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Admiral Van Lines, LLC",
+            "entityId": "admiral-van-lines-llc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "1031103",
+            "mc": "251558",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "SAN ANTONIO, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/admiral-van-lines-llc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Aer Logistics",
+            "entityId": "aer-logistics",
+            "legalName": null,
+            "dba": null,
+            "usdot": "3999950",
+            "mc": "1503035",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "HOUSTON, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/aer-logistics",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Affiliated Movers Of Killeen, INC.",
+            "entityId": "affiliated-movers-of-killeen-inc",
+            "legalName": null,
+            "dba": null,
+            "usdot": "3110316",
+            "mc": "82352",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "KILLEEN, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/affiliated-movers-of-killeen-inc",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Ag Moving And Storage",
+            "entityId": "ag-moving-and-storage",
+            "legalName": null,
+            "dba": null,
+            "usdot": "4416315",
+            "mc": "1735600",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "WYLIE, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/ag-moving-and-storage",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Aj's Moving And Storage",
+            "entityId": "aj-s-moving-and-storage",
+            "legalName": null,
+            "dba": null,
+            "usdot": "3343599",
+            "mc": "1067637",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "KILLEEN, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/aj-s-moving-and-storage",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Al's Relocation & Storage",
+            "entityId": "al-s-relocation-storage",
+            "legalName": null,
+            "dba": null,
+            "usdot": "1287398",
+            "mc": "499511",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "KILLEEN, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/al-s-relocation-storage",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          },
+          {
+            "name": "Albert Furniture Company",
+            "entityId": "albert-furniture-company",
+            "legalName": null,
+            "dba": null,
+            "usdot": "225115",
+            "mc": "164426",
+            "role": "Carrier/Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "SAN ANTONIO, TX",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded",
+            "href": "/companies/albert-furniture-company",
+            "publicationNote": null,
+            "whyMatched": "The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null
+          }
+        ],
+        "counts": [
+          {
+            "label": "Matching research identities",
+            "value": 342,
+            "grain": "public mover identity cohort"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 342,
+          "hasMore": true
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities with available source-specific evidence",
+          "geographyMeaning": "Recorded headquarters/address state = TX; headquarters is not service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "public mover identity cohort",
+          "exclusions": [
+            "Only identities already eligible for the public MoveTrustHub directory are returned.",
+            "Recorded headquarters is not service territory, route availability, pickup availability, or delivery availability.",
+            "A broker may arrange transportation without physically hauling the shipment.",
+            "Authority state is regulatory evidence, not approval, safety, quality, or a recommendation.",
+            "Results use neutral source order. Ratings, reputation, paid, claimed, and subscription status do not affect ordering."
+          ],
+          "sourceContract": "trusthub-specialist-execution-v2"
+        },
+        "limitations": [
+          "Only identities already eligible for the public MoveTrustHub directory are returned.",
+          "Recorded headquarters is not service territory, route availability, pickup availability, or delivery availability.",
+          "A broker may arrange transportation without physically hauling the shipment.",
+          "Authority state is regulatory evidence, not approval, safety, quality, or a recommendation.",
+          "Results use neutral source order. Ratings, reputation, paid, claimed, and subscription status do not affect ordering."
+        ],
+        "elapsedMs": 332
+      },
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nUNSUPPORTED LOCALITY\nEdit request\nREQUESTED LOCALITY\nAustin Texas (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nunresolved\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\nrecorded headquarters state: TX\n\nApplied: Recorded address only; does not establish service territory or NJ state licensing.\n\nlocality: Austin Texas\n\nNot available: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nexecution geography: TX\n\nNot established: User selected broader recorded-headquarters state research. No local service predicate was applied.\n\nResearch your move\n\nYou selected broader recorded-state identity research. The original locality is retained; these records do not establish local service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nTexas intrastate research\n\nhhg-roster: SEARCH ONLY\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Texas state research\nResearch a specific company for this move\nResearch company\nTrace this journey\nCount\nMatching research identities\n342\n\npublic mover identity cohort\n\n12 Gauge Enterprises LLC\nCarrier\nUSDOT\n3858041\nMC\n1408466\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nGRANBURY, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n2 Austin Movers\nUnknown\nAUTHORITY STATUS (STORED)\nAuthority status unknown\nOPERATING AUTHORITY\nAuthority status unknown\nRECORDED LOCATION\n11910 Research Blvd, Austin, TX 78759\n\nStored source checked-at: Not available. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n2bbj's INC LLC\nCarrier\nUSDOT\n4491274\nMC\n1775377\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nCOUPLAND, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n3 Men Movers LTD\nUnknown\nAUTHORITY STATUS (STORED)\nAuthority status unknown\nOPERATING AUTHORITY\nAuthority status unknown\nRECORDED LOCATION\n6805 Sands Point Dr, Houston, TX 77074\n\nStored source checked-at: Not available. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n3033 View Lane LLC\nBroker\nUSDOT\n4127473\nMC\n1579819\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nPLANO, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\n5g Hauling\nCarrier\nUSDOT\n1341811\nMC\n517004\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nEDINBURG, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA ' 'sharp' ' Moving Company\nCarrier\nUSDOT\n1291990\nMC\n507910\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nPOTTSBORO, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA-1 Allstate Services, INC.\nCarrier\nUSDOT\n1097061\nMC\n452558\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nHOUSTON, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nA#1 Movers\nUnknown\nAUTHORITY STATUS (STORED)\nAuthority status unknown\nOPERATING AUTHORITY\nAuthority status unknown\nRECORDED LOCATION\n1707 Hinton St, Dallas, TX 75235\n\nStored source checked-at: Not available. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAaa Oasis Moving & Storage LLC\nCarrier\nUSDOT\n3182802\nMC\n1704550\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nDALLAS, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAcross States Moving LLC\nCarrier\nUSDOT\n4377254\nMC\n1715342\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nLITTLE ELM, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAdcs Group LLC\nCarrier\nUSDOT\n4043680\nMC\n1530693\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nSAN ANTONIO, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAddison Forwarding Company\nCarrier/Broker\nUSDOT\n2363119\nMC\n810226\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nWICHITA FALLS, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAdmiral Van Lines, LLC\nCarrier\nUSDOT\n1031103\nMC\n251558\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nSAN ANTONIO, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAer Logistics\nCarrier\nUSDOT\n3999950\nMC\n1503035\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nHOUSTON, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAffiliated Movers Of Killeen, INC.\nCarrier\nUSDOT\n3110316\nMC\n82352\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nKILLEEN, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAg Moving And Storage\nCarrier\nUSDOT\n4416315\nMC\n1735600\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nWYLIE, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAj's Moving And Storage\nCarrier\nUSDOT\n3343599\nMC\n1067637\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nKILLEEN, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAl's Relocation & Storage\nCarrier\nUSDOT\n1287398\nMC\n499511\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nKILLEEN, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nAlbert Furniture Company\nCarrier/Broker\nUSDOT\n225115\nMC\n164426\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded\nRECORDED LOCATION\nSAN ANTONIO, TX\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nWhy this matched. The published directory identity records TX as the company's headquarters/address state. This is not service-territory evidence or a recommendation.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nNext\n\nPage 1 · 342 identities\n\nTrace this query"
+    },
+    {
+      "flow": "Endpoint state choice",
+      "url": "https://www.movetrusthub.com/ask?q=moving+from+Springfield+to+Dallas+Texas&originState=IL",
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nTASK\nMOVE JOURNEY\nEdit request\nORIGIN\nSpringfield IL (exact)\nEdit request\nDESTINATION\nDallas Texas (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\norigin: Springfield IL\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: Dallas Texas\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nIllinois intrastate research\n\nhhg-roster: SEARCH ONLY\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Illinois state research\nTexas intrastate research\n\nhhg-roster: SEARCH ONLY\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Texas state research\nResearch a specific company for this move\nResearch company\nTrace this journey\nTrace this query"
+    },
+    {
+      "flow": "Company selection",
+      "url": "https://www.movetrusthub.com/ask?q=JK+Moving+from+Virginia+to+Florida&company=usdot-2222803",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "nameSearch": {
+          "requested": "JK Moving",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": true,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "JK Moving"
+          },
+          {
+            "label": "Task",
+            "value": "MOVE JOURNEY"
+          },
+          {
+            "label": "Origin",
+            "value": "Virginia (exact)"
+          },
+          {
+            "label": "Destination",
+            "value": "Florida (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "federal interstate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "MOVE_JOURNEY",
+            "origin": {
+              "raw": "Virginia",
+              "state": "VA",
+              "resolution": "EXACT"
+            },
+            "destination": {
+              "raw": "Florida",
+              "state": "FL",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "interstate",
+            "companyName": "JK Moving",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "federal_interstate_research",
+            "booking": false,
+            "summary": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "VA",
+                "route": "/virginia",
+                "authority": [
+                  {
+                    "id": "hhg-authority",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "va_hhg_authority_identities"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              },
+              {
+                "state": "FL",
+                "route": "/florida",
+                "authority": [
+                  {
+                    "id": "hhg-registration",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "florida_fdacs_im_registrations"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "entity",
+          "nameQuery": "JK Moving",
+          "nameRequest": {
+            "name": "JK Moving",
+            "task": "research",
+            "condition": "Requested route service and availability remain unestablished."
+          },
+          "selectedCompany": "usdot-2222803",
+          "constraints": [
+            {
+              "field": "origin",
+              "value": "Virginia",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "destination",
+              "value": "Florida",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "JK BROKERAGE SERVICES",
+            "entityId": "usdot-2222803",
+            "legalName": "JK MOVING & STORAGE, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE, INC.",
+              "entityId": "usdot-2222803",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "usdot": "2222803",
+            "mc": "312255",
+            "role": "Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-brokerage-services",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2222803"
+          }
+        ],
+        "counts": [
+          {
+            "label": "Displayed name candidates",
+            "value": 1,
+            "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 1,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 156
+      },
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nCOMPANY NAME\nJK Moving\nEdit request\nTASK\nMOVE JOURNEY\nEdit request\nORIGIN\nVirginia (exact)\nEdit request\nDESTINATION\nFlorida (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\norigin: Virginia\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: Florida\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nVirginia intrastate research\n\nhhg-authority: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Virginia state research\nFlorida intrastate research\n\nhhg-registration: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Florida state research\nTrace this journey\nCount\nDisplayed name candidates\n1\n\nSource-backed name candidate identities; distinct public record keys, not a national directory count\n\nJK BROKERAGE SERVICES\nBroker\n\nStored legal name: JK MOVING & STORAGE, INC.\n\nUSDOT\n2222803\nMC\n312255\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSTERLING, VA\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query"
+    },
+    {
+      "flow": "Responsive and Trace",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "flow": "Responsive and Trace",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "flow": "Responsive and Trace",
+      "width": 1280,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

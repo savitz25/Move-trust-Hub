@@ -1,0 +1,46 @@
+move_research_source_unavailable { executor: 'directory', mode: 'entity' }
+✔ structured city/ZIP requests cannot bypass the locality consent boundary (3.1288ms)
+✔ R1-014 endpoints survive the production planner (5.8604ms)
+✔ independent endpoints, abbreviations, multiple states and city ambiguity (3.4402ms)
+✔ journeys and bookings never dispatch unrelated cohorts or names (1.3242ms)
+✖ capability grains are source-native, never FMCSA-as-intrastate authority (2.8501ms)
+✔ locality and near me retain conditions and require explicit query-bound broadening (9.4661ms)
+✔ role, auto transport, filters and pagination cannot lose scope (4.0988ms)
+✔ name plus journey and server selection retain the protected exact identity path (20.0484ms)
+✔ API/native transport, rendered guidance and actions share the same meaning (26.9743ms)
+✔ legal-name signals are not converted to locality requests (1.9407ms)
+✔ natural-language authority and unsupported route counts stay visible through broadening (0.7529ms)
+✔ booking paraphrases retain supplied local places and both endpoints (0.2539ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 11
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3071.5434
+
+✖ failing tests:
+
+test at lib\move-ask\r1-journey.test.ts:2:5630
+✖ capability grains are source-native, never FMCSA-as-intrastate authority (2.8501ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'federal_interstate_research'
+  - 'state_intrastate_research'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:113:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'federal_interstate_research',
+    expected: 'state_intrastate_research',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

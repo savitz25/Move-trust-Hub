@@ -1,0 +1,42 @@
+move_research_source_unavailable { executor: 'directory', mode: 'entity' }
+✔ structured city/ZIP requests cannot bypass the locality consent boundary (3.7524ms)
+✔ R1-014 endpoints survive the production planner (6.6047ms)
+✔ independent endpoints, abbreviations, multiple states and city ambiguity (3.3846ms)
+✔ journeys and bookings never dispatch unrelated cohorts or names (1.8486ms)
+✔ capability grains are source-native, never FMCSA-as-intrastate authority (0.7673ms)
+✔ locality and near me retain conditions and require explicit query-bound broadening (10.8177ms)
+✔ role, auto transport, filters and pagination cannot lose scope (5.509ms)
+✖ name plus journey and server selection retain the protected exact identity path (23.2006ms)
+✔ API/native transport, rendered guidance and actions share the same meaning (47.0641ms)
+✔ legal-name signals are not converted to locality requests (5.4223ms)
+✔ natural-language authority and unsupported route counts stay visible through broadening (0.8561ms)
+✔ booking paraphrases retain supplied local places and both endpoints (0.3155ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 11
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3348.1343
+
+✖ failing tests:
+
+test at lib\move-ask\r1-journey.test.ts:2:9638
+✖ name plus journey and server selection retain the protected exact identity path (23.2006ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'ESTABLISHED_BY_HQ'
+  - 'NOT_ESTABLISHED'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-014-work\lib\move-ask\r1-journey.test.ts:234:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'ESTABLISHED_BY_HQ',
+    expected: 'NOT_ESTABLISHED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

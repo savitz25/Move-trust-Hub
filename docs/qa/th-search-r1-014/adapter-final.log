@@ -1,0 +1,26 @@
+move_research_source_unavailable { executor: 'directory', mode: 'entity' }
+✔ structured city/ZIP requests cannot bypass the locality consent boundary (5.2707ms)
+✔ R1-014 endpoints survive the production planner (6.6036ms)
+✔ independent endpoints, abbreviations, multiple states and city ambiguity (3.5611ms)
+✔ journeys and bookings never dispatch unrelated cohorts or names (1.2216ms)
+✔ capability grains are source-native, never FMCSA-as-intrastate authority (0.416ms)
+✔ locality and near me retain conditions and require explicit query-bound broadening (12.9119ms)
+✔ role, auto transport, filters and pagination cannot lose scope (5.1383ms)
+✔ name plus journey and server selection retain the protected exact identity path (30.0851ms)
+✔ API/native transport, rendered guidance and actions share the same meaning (35.5789ms)
+✔ legal-name signals are not converted to locality requests (2.0334ms)
+✔ natural-language authority and unsupported route counts stay visible through broadening (1.3591ms)
+✔ V2 contract version and deterministic fingerprints are present (0.9853ms)
+✔ natural state cohorts reuse the MOVE-DIR-002 plan (6.5481ms)
+✔ Auto Transport class and regulatory role stay separate (1.3702ms)
+✔ service-territory and route intent fail closed without a data call (3.7443ms)
+✔ identifier precedence and malformed inputs are deterministic (1.2644ms)
+✔ public contract has no scoring, rating, paid, subscription or internal-id field (0.3895ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2671.9449
